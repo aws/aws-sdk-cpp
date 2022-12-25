@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RightsizingRecommendation
+  class RightsizingRecommendation
   {
   public:
-    RightsizingRecommendation();
-    RightsizingRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    RightsizingRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RightsizingRecommendation();
+    AWS_COSTEXPLORER_API RightsizingRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RightsizingRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     CurrentInstance m_currentInstance;
-    bool m_currentInstanceHasBeenSet;
+    bool m_currentInstanceHasBeenSet = false;
 
     RightsizingType m_rightsizingType;
-    bool m_rightsizingTypeHasBeenSet;
+    bool m_rightsizingTypeHasBeenSet = false;
 
     ModifyRecommendationDetail m_modifyRecommendationDetail;
-    bool m_modifyRecommendationDetailHasBeenSet;
+    bool m_modifyRecommendationDetailHasBeenSet = false;
 
     TerminateRecommendationDetail m_terminateRecommendationDetail;
-    bool m_terminateRecommendationDetailHasBeenSet;
+    bool m_terminateRecommendationDetailHasBeenSet = false;
 
     Aws::Vector<FindingReasonCode> m_findingReasonCodes;
-    bool m_findingReasonCodesHasBeenSet;
+    bool m_findingReasonCodesHasBeenSet = false;
   };
 
 } // namespace Model

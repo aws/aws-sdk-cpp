@@ -30,61 +30,69 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaTransformationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration
+  class ObjectLambdaTransformationConfiguration
   {
   public:
-    ObjectLambdaTransformationConfiguration();
-    ObjectLambdaTransformationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectLambdaTransformationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration();
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& GetActions() const{ return m_actions; }
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline void SetActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline void SetActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& WithActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { SetActions(value); return *this;}
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& WithActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& AddActions(const ObjectLambdaTransformationConfigurationAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
      * <p>A container for the action of an Object Lambda Access Point configuration.
-     * Valid input is <code>GetObject</code>.</p>
+     * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
+     * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
     inline ObjectLambdaTransformationConfiguration& AddActions(ObjectLambdaTransformationConfigurationAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
@@ -128,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<ObjectLambdaTransformationConfigurationAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ObjectLambdaContentTransformation m_contentTransformation;
-    bool m_contentTransformationHasBeenSet;
+    bool m_contentTransformationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UsageStatisticsFilter
+  class UsageStatisticsFilter
   {
   public:
-    UsageStatisticsFilter();
-    UsageStatisticsFilter(Aws::Utils::Json::JsonView jsonValue);
-    UsageStatisticsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UsageStatisticsFilter();
+    AWS_MACIE2_API UsageStatisticsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UsageStatisticsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -136,10 +137,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
@@ -150,10 +152,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -164,10 +167,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -178,10 +182,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline UsageStatisticsFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -192,10 +197,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline UsageStatisticsFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -206,10 +212,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline UsageStatisticsFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -220,10 +227,11 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline UsageStatisticsFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -234,23 +242,24 @@ namespace Model
      * specify only one value.</p> <p>Valid values for each supported field are:</p>
      * <ul><li><p>accountId - The unique identifier for an Amazon Web Services
      * account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and
-     * extended ISO 8601 format, when the free trial started for an account.</p></li>
-     * <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an
-     * account has reached its monthly quota.</p></li> <li><p>total - A string that
-     * represents the current estimated cost for an account.</p></li></ul>
+     * extended ISO 8601 format, when the Amazon Macie free trial started for an
+     * account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that
+     * indicates whether an account has reached its monthly quota.</p></li>
+     * <li><p>total - A string that represents the current estimated cost for an
+     * account.</p></li></ul>
      */
     inline UsageStatisticsFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
 
     UsageStatisticsFilterComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     UsageStatisticsFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

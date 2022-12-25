@@ -20,13 +20,15 @@ namespace Model
 
 RuleGroupReferenceStatement::RuleGroupReferenceStatement() : 
     m_aRNHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false)
+    m_excludedRulesHasBeenSet(false),
+    m_ruleActionOverridesHasBeenSet(false)
 {
 }
 
 RuleGroupReferenceStatement::RuleGroupReferenceStatement(JsonView jsonValue) : 
     m_aRNHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false)
+    m_excludedRulesHasBeenSet(false),
+    m_ruleActionOverridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,12 +44,22 @@ RuleGroupReferenceStatement& RuleGroupReferenceStatement::operator =(JsonView js
 
   if(jsonValue.ValueExists("ExcludedRules"))
   {
-    Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
+    Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
     for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
     {
       m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
     }
     m_excludedRulesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RuleActionOverrides"))
+  {
+    Aws::Utils::Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
+    for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
+    {
+      m_ruleActionOverrides.push_back(ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject());
+    }
+    m_ruleActionOverridesHasBeenSet = true;
   }
 
   return *this;
@@ -65,12 +77,23 @@ JsonValue RuleGroupReferenceStatement::Jsonize() const
 
   if(m_excludedRulesHasBeenSet)
   {
-   Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
+   Aws::Utils::Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
    for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
    {
      excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());
    }
    payload.WithArray("ExcludedRules", std::move(excludedRulesJsonList));
+
+  }
+
+  if(m_ruleActionOverridesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ruleActionOverridesJsonList(m_ruleActionOverrides.size());
+   for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
+   {
+     ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject(m_ruleActionOverrides[ruleActionOverridesIndex].Jsonize());
+   }
+   payload.WithArray("RuleActionOverrides", std::move(ruleActionOverridesJsonList));
 
   }
 

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API UpdateContainerServiceRequest : public LightsailRequest
+  class UpdateContainerServiceRequest : public LightsailRequest
   {
   public:
-    UpdateContainerServiceRequest();
+    AWS_LIGHTSAIL_API UpdateContainerServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateContainerService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -470,22 +470,22 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ContainerServicePowerName m_power;
-    bool m_powerHasBeenSet;
+    bool m_powerHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     bool m_isDisabled;
-    bool m_isDisabledHasBeenSet;
+    bool m_isDisabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-    bool m_publicDomainNamesHasBeenSet;
+    bool m_publicDomainNamesHasBeenSet = false;
 
     PrivateRegistryAccessRequest m_privateRegistryAccess;
-    bool m_privateRegistryAccessHasBeenSet;
+    bool m_privateRegistryAccessHasBeenSet = false;
   };
 
 } // namespace Model

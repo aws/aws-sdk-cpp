@@ -26,18 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a rule for sharing snapshots across Amazon Web Services
-   * accounts.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots
+   * across Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ShareRule">AWS API
    * Reference</a></p>
    */
-  class AWS_DLM_API ShareRule
+  class ShareRule
   {
   public:
-    ShareRule();
-    ShareRule(Aws::Utils::Json::JsonView jsonValue);
-    ShareRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API ShareRule();
+    AWS_DLM_API ShareRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API ShareRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targetAccounts;
-    bool m_targetAccountsHasBeenSet;
+    bool m_targetAccountsHasBeenSet = false;
 
     int m_unshareInterval;
-    bool m_unshareIntervalHasBeenSet;
+    bool m_unshareIntervalHasBeenSet = false;
 
     RetentionIntervalUnitValues m_unshareIntervalUnit;
-    bool m_unshareIntervalUnitHasBeenSet;
+    bool m_unshareIntervalUnitHasBeenSet = false;
   };
 
 } // namespace Model

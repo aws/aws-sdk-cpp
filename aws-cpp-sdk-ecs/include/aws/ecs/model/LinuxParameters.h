@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LinuxParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API LinuxParameters
+  class LinuxParameters
   {
   public:
-    LinuxParameters();
-    LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
-    LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API LinuxParameters();
+    AWS_ECS_API LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -488,25 +488,25 @@ namespace Model
   private:
 
     KernelCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Device> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
 
     bool m_initProcessEnabled;
-    bool m_initProcessEnabledHasBeenSet;
+    bool m_initProcessEnabledHasBeenSet = false;
 
     int m_sharedMemorySize;
-    bool m_sharedMemorySizeHasBeenSet;
+    bool m_sharedMemorySizeHasBeenSet = false;
 
     Aws::Vector<Tmpfs> m_tmpfs;
-    bool m_tmpfsHasBeenSet;
+    bool m_tmpfsHasBeenSet = false;
 
     int m_maxSwap;
-    bool m_maxSwapHasBeenSet;
+    bool m_maxSwapHasBeenSet = false;
 
     int m_swappiness;
-    bool m_swappinessHasBeenSet;
+    bool m_swappinessHasBeenSet = false;
   };
 
 } // namespace Model

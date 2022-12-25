@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultSetMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultSetMetadata
+  class ResultSetMetadata
   {
   public:
-    ResultSetMetadata();
-    ResultSetMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ResultSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultSetMetadata();
+    AWS_ATHENA_API ResultSetMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<ColumnInfo> m_columnInfo;
-    bool m_columnInfoHasBeenSet;
+    bool m_columnInfoHasBeenSet = false;
   };
 
 } // namespace Model

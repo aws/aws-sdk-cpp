@@ -5,103 +5,16 @@
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
-#include <aws/polly/PollyErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/polly/model/DeleteLexiconResult.h>
-#include <aws/polly/model/DescribeVoicesResult.h>
-#include <aws/polly/model/GetLexiconResult.h>
-#include <aws/polly/model/GetSpeechSynthesisTaskResult.h>
-#include <aws/polly/model/ListLexiconsResult.h>
-#include <aws/polly/model/ListSpeechSynthesisTasksResult.h>
-#include <aws/polly/model/PutLexiconResult.h>
-#include <aws/polly/model/StartSpeechSynthesisTaskResult.h>
-#include <aws/polly/model/SynthesizeSpeechResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/polly/PollyServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Polly
 {
-
-namespace Model
-{
-        class DeleteLexiconRequest;
-        class DescribeVoicesRequest;
-        class GetLexiconRequest;
-        class GetSpeechSynthesisTaskRequest;
-        class ListLexiconsRequest;
-        class ListSpeechSynthesisTasksRequest;
-        class PutLexiconRequest;
-        class StartSpeechSynthesisTaskRequest;
-        class SynthesizeSpeechRequest;
-
-        typedef Aws::Utils::Outcome<DeleteLexiconResult, PollyError> DeleteLexiconOutcome;
-        typedef Aws::Utils::Outcome<DescribeVoicesResult, PollyError> DescribeVoicesOutcome;
-        typedef Aws::Utils::Outcome<GetLexiconResult, PollyError> GetLexiconOutcome;
-        typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, PollyError> GetSpeechSynthesisTaskOutcome;
-        typedef Aws::Utils::Outcome<ListLexiconsResult, PollyError> ListLexiconsOutcome;
-        typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, PollyError> ListSpeechSynthesisTasksOutcome;
-        typedef Aws::Utils::Outcome<PutLexiconResult, PollyError> PutLexiconOutcome;
-        typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, PollyError> StartSpeechSynthesisTaskOutcome;
-        typedef Aws::Utils::Outcome<SynthesizeSpeechResult, PollyError> SynthesizeSpeechOutcome;
-
-        typedef std::future<DeleteLexiconOutcome> DeleteLexiconOutcomeCallable;
-        typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
-        typedef std::future<GetLexiconOutcome> GetLexiconOutcomeCallable;
-        typedef std::future<GetSpeechSynthesisTaskOutcome> GetSpeechSynthesisTaskOutcomeCallable;
-        typedef std::future<ListLexiconsOutcome> ListLexiconsOutcomeCallable;
-        typedef std::future<ListSpeechSynthesisTasksOutcome> ListSpeechSynthesisTasksOutcomeCallable;
-        typedef std::future<PutLexiconOutcome> PutLexiconOutcomeCallable;
-        typedef std::future<StartSpeechSynthesisTaskOutcome> StartSpeechSynthesisTaskOutcomeCallable;
-        typedef std::future<SynthesizeSpeechOutcome> SynthesizeSpeechOutcomeCallable;
-} // namespace Model
-
-  class PollyClient;
-
-    typedef std::function<void(const PollyClient*, const Model::DeleteLexiconRequest&, const Model::DeleteLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLexiconResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::DescribeVoicesRequest&, const Model::DescribeVoicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVoicesResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::GetLexiconRequest&, const Model::GetLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLexiconResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::GetSpeechSynthesisTaskRequest&, const Model::GetSpeechSynthesisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpeechSynthesisTaskResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::ListLexiconsRequest&, const Model::ListLexiconsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLexiconsResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::ListSpeechSynthesisTasksRequest&, const Model::ListSpeechSynthesisTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpeechSynthesisTasksResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::PutLexiconRequest&, const Model::PutLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLexiconResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesisTaskRequest&, const Model::StartSpeechSynthesisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSpeechSynthesisTaskResponseReceivedHandler;
-    typedef std::function<void(const PollyClient*, const Model::SynthesizeSpeechRequest&, Model::SynthesizeSpeechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SynthesizeSpeechResponseReceivedHandler;
-
   /**
    * <p>Amazon Polly is a web service that makes it easy to synthesize speech from
    * text.</p> <p>The Amazon Polly service provides API operations for synthesizing
@@ -109,32 +22,60 @@ namespace Model
    * along with managing pronunciations lexicons that enable you to get the best
    * results for your application domain.</p>
    */
-  class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient
+  class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PollyClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PollyClient(const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration(),
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PollyClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PollyClient(const Aws::Auth::AWSCredentials& credentials,
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PollyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<PollyEndpointProviderBase> endpointProvider = Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Polly::PollyClientConfiguration& clientConfiguration = Aws::Polly::PollyClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PollyClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PollyClient(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        PollyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~PollyClient();
-
 
         /**
          * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
@@ -339,21 +280,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<PollyEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteLexiconAsyncHelper(const Model::DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVoicesAsyncHelper(const Model::DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLexiconAsyncHelper(const Model::GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSpeechSynthesisTaskAsyncHelper(const Model::GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLexiconsAsyncHelper(const Model::ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSpeechSynthesisTasksAsyncHelper(const Model::ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLexiconAsyncHelper(const Model::PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSpeechSynthesisTaskAsyncHelper(const Model::StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SynthesizeSpeechAsyncHelper(const Model::SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>;
+      void init(const PollyClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      PollyClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<PollyEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Polly

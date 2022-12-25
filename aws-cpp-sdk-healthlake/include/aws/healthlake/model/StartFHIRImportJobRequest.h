@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_HEALTHLAKE_API StartFHIRImportJobRequest : public HealthLakeRequest
+  class StartFHIRImportJobRequest : public HealthLakeRequest
   {
   public:
-    StartFHIRImportJobRequest();
+    AWS_HEALTHLAKE_API StartFHIRImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartFHIRImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_jobOutputDataConfig;
-    bool m_jobOutputDataConfigHasBeenSet;
+    bool m_jobOutputDataConfigHasBeenSet = false;
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

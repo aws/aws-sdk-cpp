@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PublicAccessBlockConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API PublicAccessBlockConfiguration
+  class PublicAccessBlockConfiguration
   {
   public:
-    PublicAccessBlockConfiguration();
-    PublicAccessBlockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicAccessBlockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API PublicAccessBlockConfiguration();
+    AWS_S3CRT_API PublicAccessBlockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API PublicAccessBlockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     bool m_blockPublicAcls;
-    bool m_blockPublicAclsHasBeenSet;
+    bool m_blockPublicAclsHasBeenSet = false;
 
     bool m_ignorePublicAcls;
-    bool m_ignorePublicAclsHasBeenSet;
+    bool m_ignorePublicAclsHasBeenSet = false;
 
     bool m_blockPublicPolicy;
-    bool m_blockPublicPolicyHasBeenSet;
+    bool m_blockPublicPolicyHasBeenSet = false;
 
     bool m_restrictPublicBuckets;
-    bool m_restrictPublicBucketsHasBeenSet;
+    bool m_restrictPublicBucketsHasBeenSet = false;
   };
 
 } // namespace Model

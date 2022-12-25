@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsInstanceBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API EbsInstanceBlockDevice
+  class EbsInstanceBlockDevice
   {
   public:
-    EbsInstanceBlockDevice();
-    EbsInstanceBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EbsInstanceBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsInstanceBlockDevice();
+    AWS_EC2_API EbsInstanceBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsInstanceBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_attachTime;
-    bool m_attachTimeHasBeenSet;
+    bool m_attachTimeHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     AttachmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

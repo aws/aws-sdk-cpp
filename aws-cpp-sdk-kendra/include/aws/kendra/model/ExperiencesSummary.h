@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperiencesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ExperiencesSummary
+  class ExperiencesSummary
   {
   public:
-    ExperiencesSummary();
-    ExperiencesSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExperiencesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ExperiencesSummary();
+    AWS_KENDRA_API ExperiencesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ExperiencesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,19 +240,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ExperienceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<ExperienceEndpoint> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

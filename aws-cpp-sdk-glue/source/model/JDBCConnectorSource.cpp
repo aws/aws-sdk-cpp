@@ -96,7 +96,7 @@ JDBCConnectorSource& JDBCConnectorSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OutputSchemas"))
   {
-    Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
     for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
     {
       m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
@@ -155,7 +155,7 @@ JsonValue JDBCConnectorSource::Jsonize() const
 
   if(m_outputSchemasHasBeenSet)
   {
-   Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
    {
      outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());

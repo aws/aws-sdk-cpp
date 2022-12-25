@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResolvedAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ResolvedAttributes
+  class ResolvedAttributes
   {
   public:
-    ResolvedAttributes();
-    ResolvedAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ResolvedAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ResolvedAttributes();
+    AWS_SAGEMAKER_API ResolvedAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ResolvedAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -110,13 +110,13 @@ namespace Model
   private:
 
     AutoMLJobObjective m_autoMLJobObjective;
-    bool m_autoMLJobObjectiveHasBeenSet;
+    bool m_autoMLJobObjectiveHasBeenSet = false;
 
     ProblemType m_problemType;
-    bool m_problemTypeHasBeenSet;
+    bool m_problemTypeHasBeenSet = false;
 
     AutoMLJobCompletionCriteria m_completionCriteria;
-    bool m_completionCriteriaHasBeenSet;
+    bool m_completionCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Xavc4kIntraVbrProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Xavc4kIntraVbrProfileSettings
+  class Xavc4kIntraVbrProfileSettings
   {
   public:
-    Xavc4kIntraVbrProfileSettings();
-    Xavc4kIntraVbrProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    Xavc4kIntraVbrProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Xavc4kIntraVbrProfileSettings();
+    AWS_MEDIACONVERT_API Xavc4kIntraVbrProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Xavc4kIntraVbrProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Xavc4kIntraVbrProfileClass m_xavcClass;
-    bool m_xavcClassHasBeenSet;
+    bool m_xavcClassHasBeenSet = false;
   };
 
 } // namespace Model

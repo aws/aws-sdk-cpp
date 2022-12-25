@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SelectedVideoStreams">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SelectedVideoStreams
+  class SelectedVideoStreams
   {
   public:
-    SelectedVideoStreams();
-    SelectedVideoStreams(Aws::Utils::Json::JsonView jsonValue);
-    SelectedVideoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SelectedVideoStreams();
+    AWS_CHIME_API SelectedVideoStreams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SelectedVideoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_attendeeIds;
-    bool m_attendeeIdsHasBeenSet;
+    bool m_attendeeIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_externalUserIds;
-    bool m_externalUserIdsHasBeenSet;
+    bool m_externalUserIdsHasBeenSet = false;
   };
 
 } // namespace Model

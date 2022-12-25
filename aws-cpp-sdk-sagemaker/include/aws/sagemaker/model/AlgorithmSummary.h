@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmSummary
+  class AlgorithmSummary
   {
   public:
-    AlgorithmSummary();
-    AlgorithmSummary(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmSummary();
+    AWS_SAGEMAKER_API AlgorithmSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
 
     Aws::String m_algorithmDescription;
-    bool m_algorithmDescriptionHasBeenSet;
+    bool m_algorithmDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     AlgorithmStatus m_algorithmStatus;
-    bool m_algorithmStatusHasBeenSet;
+    bool m_algorithmStatusHasBeenSet = false;
   };
 
 } // namespace Model

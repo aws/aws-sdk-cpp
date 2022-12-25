@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingAction">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ScalingAction
+  class ScalingAction
   {
   public:
-    ScalingAction();
-    ScalingAction(Aws::Utils::Json::JsonView jsonValue);
-    ScalingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ScalingAction();
+    AWS_EMR_API ScalingAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ScalingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     SimpleScalingPolicyConfiguration m_simpleScalingPolicyConfiguration;
-    bool m_simpleScalingPolicyConfigurationHasBeenSet;
+    bool m_simpleScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

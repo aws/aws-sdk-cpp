@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Consumer">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API Consumer
+  class Consumer
   {
   public:
-    Consumer();
-    Consumer(Aws::Utils::Json::JsonView jsonValue);
-    Consumer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API Consumer();
+    AWS_KINESIS_API Consumer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Consumer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_consumerName;
-    bool m_consumerNameHasBeenSet;
+    bool m_consumerNameHasBeenSet = false;
 
     Aws::String m_consumerARN;
-    bool m_consumerARNHasBeenSet;
+    bool m_consumerARNHasBeenSet = false;
 
     ConsumerStatus m_consumerStatus;
-    bool m_consumerStatusHasBeenSet;
+    bool m_consumerStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_consumerCreationTimestamp;
-    bool m_consumerCreationTimestampHasBeenSet;
+    bool m_consumerCreationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

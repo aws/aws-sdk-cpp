@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/HttpAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API HttpAction
+  class HttpAction
   {
   public:
-    HttpAction();
-    HttpAction(Aws::Utils::Json::JsonView jsonValue);
-    HttpAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API HttpAction();
+    AWS_IOT_API HttpAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API HttpAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_confirmationUrl;
-    bool m_confirmationUrlHasBeenSet;
+    bool m_confirmationUrlHasBeenSet = false;
 
     Aws::Vector<HttpActionHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     HttpAuthorization m_auth;
-    bool m_authHasBeenSet;
+    bool m_authHasBeenSet = false;
   };
 
 } // namespace Model

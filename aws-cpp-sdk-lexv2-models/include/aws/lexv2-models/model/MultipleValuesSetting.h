@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/MultipleValuesSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API MultipleValuesSetting
+  class MultipleValuesSetting
   {
   public:
-    MultipleValuesSetting();
-    MultipleValuesSetting(Aws::Utils::Json::JsonView jsonValue);
-    MultipleValuesSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API MultipleValuesSetting();
+    AWS_LEXMODELSV2_API MultipleValuesSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API MultipleValuesSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     bool m_allowMultipleValues;
-    bool m_allowMultipleValuesHasBeenSet;
+    bool m_allowMultipleValuesHasBeenSet = false;
   };
 
 } // namespace Model

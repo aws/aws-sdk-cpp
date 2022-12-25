@@ -24,36 +24,36 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult
+  class GetIdentityProviderByIdentifierResult
   {
   public:
-    GetIdentityProviderByIdentifierResult();
-    GetIdentityProviderByIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdentityProviderByIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult();
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
 

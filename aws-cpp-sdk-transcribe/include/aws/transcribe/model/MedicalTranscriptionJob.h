@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob
+  class MedicalTranscriptionJob
   {
   public:
-    MedicalTranscriptionJob();
-    MedicalTranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
-    MedicalTranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob();
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,22 +203,22 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline MedicalTranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -488,7 +488,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -517,7 +517,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -546,7 +546,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -575,7 +575,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -604,7 +604,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -633,7 +633,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -662,7 +662,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -691,7 +691,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 16,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -709,93 +709,87 @@ namespace Model
 
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline void SetSettings(const MedicalTranscriptionSetting& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline void SetSettings(MedicalTranscriptionSetting&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline MedicalTranscriptionJob& WithSettings(const MedicalTranscriptionSetting& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your medical transcription job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include channel identification, alternative
+     * transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary
+     * filters.</p>
      */
     inline MedicalTranscriptionJob& WithSettings(MedicalTranscriptionSetting&& value) { SetSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline MedicalTranscriptionJob& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
 
     /**
-     * <p>Labels all personal health information (PHI) identified in your transcript.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
-     * personal health information (PHI) in a transcription</a>.</p>
+     * <p>Indicates whether content identification was enabled for your transcription
+     * request.</p>
      */
     inline MedicalTranscriptionJob& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
 
@@ -919,52 +913,52 @@ namespace Model
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
     TranscriptionJobStatus m_transcriptionJobStatus;
-    bool m_transcriptionJobStatusHasBeenSet;
+    bool m_transcriptionJobStatusHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     MedicalTranscript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     MedicalTranscriptionSetting m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     MedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     Specialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

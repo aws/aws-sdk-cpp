@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/LineItemFields">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API LineItemFields
+  class LineItemFields
   {
   public:
-    LineItemFields();
-    LineItemFields(Aws::Utils::Json::JsonView jsonValue);
-    LineItemFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API LineItemFields();
+    AWS_TEXTRACT_API LineItemFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API LineItemFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ExpenseField> m_lineItemExpenseFields;
-    bool m_lineItemExpenseFieldsHasBeenSet;
+    bool m_lineItemExpenseFieldsHasBeenSet = false;
   };
 
 } // namespace Model

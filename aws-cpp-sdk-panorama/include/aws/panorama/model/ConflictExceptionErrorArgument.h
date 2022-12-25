@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ConflictExceptionErrorArgument">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ConflictExceptionErrorArgument
+  class ConflictExceptionErrorArgument
   {
   public:
-    ConflictExceptionErrorArgument();
-    ConflictExceptionErrorArgument(Aws::Utils::Json::JsonView jsonValue);
-    ConflictExceptionErrorArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ConflictExceptionErrorArgument();
+    AWS_PANORAMA_API ConflictExceptionErrorArgument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ConflictExceptionErrorArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

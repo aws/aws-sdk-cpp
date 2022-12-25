@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DetectorState">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API DetectorState
+  class DetectorState
   {
   public:
-    DetectorState();
-    DetectorState(Aws::Utils::Json::JsonView jsonValue);
-    DetectorState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API DetectorState();
+    AWS_IOTEVENTSDATA_API DetectorState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API DetectorState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     Aws::Vector<Variable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::Vector<Timer> m_timers;
-    bool m_timersHasBeenSet;
+    bool m_timersHasBeenSet = false;
   };
 
 } // namespace Model

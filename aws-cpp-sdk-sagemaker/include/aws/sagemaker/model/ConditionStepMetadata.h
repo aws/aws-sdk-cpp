@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ConditionStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ConditionStepMetadata
+  class ConditionStepMetadata
   {
   public:
-    ConditionStepMetadata();
-    ConditionStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ConditionStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ConditionStepMetadata();
+    AWS_SAGEMAKER_API ConditionStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ConditionStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ConditionOutcome m_outcome;
-    bool m_outcomeHasBeenSet;
+    bool m_outcomeHasBeenSet = false;
   };
 
 } // namespace Model

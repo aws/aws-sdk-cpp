@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AlternateContact">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCOUNT_API AlternateContact
+  class AlternateContact
   {
   public:
-    AlternateContact();
-    AlternateContact(Aws::Utils::Json::JsonView jsonValue);
-    AlternateContact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCOUNT_API AlternateContact();
+    AWS_ACCOUNT_API AlternateContact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API AlternateContact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     AlternateContactType m_alternateContactType;
-    bool m_alternateContactTypeHasBeenSet;
+    bool m_alternateContactTypeHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

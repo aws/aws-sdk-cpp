@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSqsQueueDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSqsQueueDetails
+  class AwsSqsQueueDetails
   {
   public:
-    AwsSqsQueueDetails();
-    AwsSqsQueueDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsSqsQueueDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSqsQueueDetails();
+    AWS_SECURITYHUB_API AwsSqsQueueDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSqsQueueDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     int m_kmsDataKeyReusePeriodSeconds;
-    bool m_kmsDataKeyReusePeriodSecondsHasBeenSet;
+    bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     Aws::String m_deadLetterTargetArn;
-    bool m_deadLetterTargetArnHasBeenSet;
+    bool m_deadLetterTargetArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateCapacityReservationFleetRequest : public EC2Request
+  class CreateCapacityReservationFleetRequest : public EC2Request
   {
   public:
-    CreateCapacityReservationFleetRequest();
+    AWS_EC2_API CreateCapacityReservationFleetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCapacityReservationFleet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -566,31 +566,31 @@ namespace Model
   private:
 
     Aws::String m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<ReservationFleetInstanceSpecification> m_instanceTypeSpecifications;
-    bool m_instanceTypeSpecificationsHasBeenSet;
+    bool m_instanceTypeSpecificationsHasBeenSet = false;
 
     FleetCapacityReservationTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     FleetInstanceMatchCriteria m_instanceMatchCriteria;
-    bool m_instanceMatchCriteriaHasBeenSet;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

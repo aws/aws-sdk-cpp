@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/LensReviewReport">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API LensReviewReport
+  class LensReviewReport
   {
   public:
-    LensReviewReport();
-    LensReviewReport(Aws::Utils::Json::JsonView jsonValue);
-    LensReviewReport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API LensReviewReport();
+    AWS_WELLARCHITECTED_API LensReviewReport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API LensReviewReport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_base64String;
-    bool m_base64StringHasBeenSet;
+    bool m_base64StringHasBeenSet = false;
   };
 
 } // namespace Model

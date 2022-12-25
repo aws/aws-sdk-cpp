@@ -24,168 +24,175 @@ namespace Model
 {
 
   /**
-   * <p>Credentials for the master user: username and password, ARN, or
-   * both.</p><p><h3>See Also:</h3>   <a
+   * <p>Credentials for the master user for a domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/MasterUserOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API MasterUserOptions
+  class MasterUserOptions
   {
   public:
-    MasterUserOptions();
-    MasterUserOptions(Aws::Utils::Json::JsonView jsonValue);
-    MasterUserOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API MasterUserOptions();
+    AWS_OPENSEARCHSERVICE_API MasterUserOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API MasterUserOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline const Aws::String& GetMasterUserARN() const{ return m_masterUserARN; }
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline bool MasterUserARNHasBeenSet() const { return m_masterUserARNHasBeenSet; }
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline void SetMasterUserARN(const Aws::String& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = value; }
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline void SetMasterUserARN(Aws::String&& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = std::move(value); }
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline void SetMasterUserARN(const char* value) { m_masterUserARNHasBeenSet = true; m_masterUserARN.assign(value); }
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserARN(const Aws::String& value) { SetMasterUserARN(value); return *this;}
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserARN(Aws::String&& value) { SetMasterUserARN(std::move(value)); return *this;}
 
     /**
-     * <p>ARN for the master user (if IAM is enabled).</p>
+     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserARN(const char* value) { SetMasterUserARN(value); return *this;}
 
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline const Aws::String& GetMasterUserName() const{ return m_masterUserName; }
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline bool MasterUserNameHasBeenSet() const { return m_masterUserNameHasBeenSet; }
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserName(const Aws::String& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = value; }
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserName(Aws::String&& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = std::move(value); }
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserName(const char* value) { m_masterUserNameHasBeenSet = true; m_masterUserName.assign(value); }
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserName(const Aws::String& value) { SetMasterUserName(value); return *this;}
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserName(Aws::String&& value) { SetMasterUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The master user's username, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>User name for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserName(const char* value) { SetMasterUserName(value); return *this;}
 
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The master user's password, which is stored in the Amazon OpenSearch Service
-     * domain's internal database.</p>
+     * <p>Password for the master user. Only specify if
+     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline MasterUserOptions& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
   private:
 
     Aws::String m_masterUserARN;
-    bool m_masterUserARNHasBeenSet;
+    bool m_masterUserARNHasBeenSet = false;
 
     Aws::String m_masterUserName;
-    bool m_masterUserNameHasBeenSet;
+    bool m_masterUserNameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
   };
 
 } // namespace Model

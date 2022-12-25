@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/MissionProfileListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API MissionProfileListItem
+  class MissionProfileListItem
   {
   public:
-    MissionProfileListItem();
-    MissionProfileListItem(Aws::Utils::Json::JsonView jsonValue);
-    MissionProfileListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API MissionProfileListItem();
+    AWS_GROUNDSTATION_API MissionProfileListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API MissionProfileListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::String m_missionProfileId;
-    bool m_missionProfileIdHasBeenSet;
+    bool m_missionProfileIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

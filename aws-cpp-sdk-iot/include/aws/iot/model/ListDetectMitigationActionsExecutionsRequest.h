@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API ListDetectMitigationActionsExecutionsRequest : public IoTRequest
+  class ListDetectMitigationActionsExecutionsRequest : public IoTRequest
   {
   public:
-    ListDetectMitigationActionsExecutionsRequest();
+    AWS_IOT_API ListDetectMitigationActionsExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDetectMitigationActionsExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -300,25 +300,25 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_violationId;
-    bool m_violationIdHasBeenSet;
+    bool m_violationIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API DescribeCustomKeyStoresRequest : public KMSRequest
+  class DescribeCustomKeyStoresRequest : public KMSRequest
   {
   public:
-    DescribeCustomKeyStoresRequest();
+    AWS_KMS_API DescribeCustomKeyStoresRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,16 +29,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeCustomKeyStores"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
@@ -47,7 +47,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
@@ -83,7 +83,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline DescribeCustomKeyStoresRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
@@ -92,7 +92,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline DescribeCustomKeyStoresRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
@@ -101,7 +101,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the key
      * store ID.</p> <p>By default, this operation gets information about all custom
      * key stores in the account and Region. To limit the output to a particular custom
-     * key store, you can use either the <code>CustomKeyStoreId</code> or
+     * key store, provide either the <code>CustomKeyStoreId</code> or
      * <code>CustomKeyStoreName</code> parameter, but not both.</p>
      */
     inline DescribeCustomKeyStoresRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
@@ -111,7 +111,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -121,7 +121,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -151,7 +151,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -171,7 +171,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
      * <p>Gets only information about the specified custom key store. Enter the
      * friendly name of the custom key store.</p> <p>By default, this operation gets
      * information about all custom key stores in the account and Region. To limit the
-     * output to a particular custom key store, you can use either the
+     * output to a particular custom key store, provide either the
      * <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but
      * not both.</p>
      */
@@ -276,16 +276,16 @@ namespace Model
   private:
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_customKeyStoreName;
-    bool m_customKeyStoreNameHasBeenSet;
+    bool m_customKeyStoreNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

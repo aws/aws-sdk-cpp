@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API CapacityProvider
+  class CapacityProvider
   {
   public:
-    CapacityProvider();
-    CapacityProvider(Aws::Utils::Json::JsonView jsonValue);
-    CapacityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API CapacityProvider();
+    AWS_ECS_API CapacityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API CapacityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,25 +477,25 @@ namespace Model
   private:
 
     Aws::String m_capacityProviderArn;
-    bool m_capacityProviderArnHasBeenSet;
+    bool m_capacityProviderArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CapacityProviderStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AutoScalingGroupProvider m_autoScalingGroupProvider;
-    bool m_autoScalingGroupProviderHasBeenSet;
+    bool m_autoScalingGroupProviderHasBeenSet = false;
 
     CapacityProviderUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_updateStatusReason;
-    bool m_updateStatusReasonHasBeenSet;
+    bool m_updateStatusReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

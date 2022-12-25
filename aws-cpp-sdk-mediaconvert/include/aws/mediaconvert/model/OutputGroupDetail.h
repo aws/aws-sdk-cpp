@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/OutputGroupDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API OutputGroupDetail
+  class OutputGroupDetail
   {
   public:
-    OutputGroupDetail();
-    OutputGroupDetail(Aws::Utils::Json::JsonView jsonValue);
-    OutputGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API OutputGroupDetail();
+    AWS_MEDIACONVERT_API OutputGroupDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API OutputGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<OutputDetail> m_outputDetails;
-    bool m_outputDetailsHasBeenSet;
+    bool m_outputDetailsHasBeenSet = false;
   };
 
 } // namespace Model

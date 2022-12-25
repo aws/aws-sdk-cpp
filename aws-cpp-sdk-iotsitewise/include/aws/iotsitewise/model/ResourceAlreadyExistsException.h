@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ResourceAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ResourceAlreadyExistsException
+  class ResourceAlreadyExistsException
   {
   public:
-    ResourceAlreadyExistsException();
-    ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ResourceAlreadyExistsException();
+    AWS_IOTSITEWISE_API ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

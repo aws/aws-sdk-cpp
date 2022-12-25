@@ -10,12 +10,14 @@
 #include <aws/migrationhubstrategy/model/AntipatternReportStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhubstrategy/model/AppType.h>
+#include <aws/migrationhubstrategy/model/AppUnitError.h>
 #include <aws/migrationhubstrategy/model/DatabaseConfigDetail.h>
 #include <aws/migrationhubstrategy/model/InclusionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/migrationhubstrategy/model/RecommendationSet.h>
 #include <aws/migrationhubstrategy/model/ResourceSubType.h>
+#include <aws/migrationhubstrategy/model/RuntimeAnalysisStatus.h>
 #include <aws/migrationhubstrategy/model/AntipatternSeveritySummary.h>
 #include <aws/migrationhubstrategy/model/SourceCodeRepository.h>
 #include <utility>
@@ -41,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ApplicationComponentDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail
+  class ApplicationComponentDetail
   {
   public:
-    ApplicationComponentDetail();
-    ApplicationComponentDetail(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationComponentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -225,6 +227,37 @@ namespace Model
      * <p> The type of application component. </p>
      */
     inline ApplicationComponentDetail& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline const AppUnitError& GetAppUnitError() const{ return m_appUnitError; }
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline bool AppUnitErrorHasBeenSet() const { return m_appUnitErrorHasBeenSet; }
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline void SetAppUnitError(const AppUnitError& value) { m_appUnitErrorHasBeenSet = true; m_appUnitError = value; }
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline void SetAppUnitError(AppUnitError&& value) { m_appUnitErrorHasBeenSet = true; m_appUnitError = std::move(value); }
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline ApplicationComponentDetail& WithAppUnitError(const AppUnitError& value) { SetAppUnitError(value); return *this;}
+
+    /**
+     * <p>The error in the analysis of the source code or database.</p>
+     */
+    inline ApplicationComponentDetail& WithAppUnitError(AppUnitError&& value) { SetAppUnitError(std::move(value)); return *this;}
 
 
     /**
@@ -662,6 +695,78 @@ namespace Model
 
 
     /**
+     * <p>The status of the application unit.</p>
+     */
+    inline const RuntimeAnalysisStatus& GetRuntimeStatus() const{ return m_runtimeStatus; }
+
+    /**
+     * <p>The status of the application unit.</p>
+     */
+    inline bool RuntimeStatusHasBeenSet() const { return m_runtimeStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the application unit.</p>
+     */
+    inline void SetRuntimeStatus(const RuntimeAnalysisStatus& value) { m_runtimeStatusHasBeenSet = true; m_runtimeStatus = value; }
+
+    /**
+     * <p>The status of the application unit.</p>
+     */
+    inline void SetRuntimeStatus(RuntimeAnalysisStatus&& value) { m_runtimeStatusHasBeenSet = true; m_runtimeStatus = std::move(value); }
+
+    /**
+     * <p>The status of the application unit.</p>
+     */
+    inline ApplicationComponentDetail& WithRuntimeStatus(const RuntimeAnalysisStatus& value) { SetRuntimeStatus(value); return *this;}
+
+    /**
+     * <p>The status of the application unit.</p>
+     */
+    inline ApplicationComponentDetail& WithRuntimeStatus(RuntimeAnalysisStatus&& value) { SetRuntimeStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline const Aws::String& GetRuntimeStatusMessage() const{ return m_runtimeStatusMessage; }
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline bool RuntimeStatusMessageHasBeenSet() const { return m_runtimeStatusMessageHasBeenSet; }
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline void SetRuntimeStatusMessage(const Aws::String& value) { m_runtimeStatusMessageHasBeenSet = true; m_runtimeStatusMessage = value; }
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline void SetRuntimeStatusMessage(Aws::String&& value) { m_runtimeStatusMessageHasBeenSet = true; m_runtimeStatusMessage = std::move(value); }
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline void SetRuntimeStatusMessage(const char* value) { m_runtimeStatusMessageHasBeenSet = true; m_runtimeStatusMessage.assign(value); }
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline ApplicationComponentDetail& WithRuntimeStatusMessage(const Aws::String& value) { SetRuntimeStatusMessage(value); return *this;}
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline ApplicationComponentDetail& WithRuntimeStatusMessage(Aws::String&& value) { SetRuntimeStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The status message for the application unit.</p>
+     */
+    inline ApplicationComponentDetail& WithRuntimeStatusMessage(const char* value) { SetRuntimeStatusMessage(value); return *this;}
+
+
+    /**
      * <p> Details about the source code repository associated with the application
      * component. </p>
      */
@@ -753,61 +858,70 @@ namespace Model
   private:
 
     SrcCodeOrDbAnalysisStatus m_analysisStatus;
-    bool m_analysisStatusHasBeenSet;
+    bool m_analysisStatusHasBeenSet = false;
 
     S3Object m_antipatternReportS3Object;
-    bool m_antipatternReportS3ObjectHasBeenSet;
+    bool m_antipatternReportS3ObjectHasBeenSet = false;
 
     AntipatternReportStatus m_antipatternReportStatus;
-    bool m_antipatternReportStatusHasBeenSet;
+    bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;
-    bool m_antipatternReportStatusMessageHasBeenSet;
+    bool m_antipatternReportStatusMessageHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
+
+    AppUnitError m_appUnitError;
+    bool m_appUnitErrorHasBeenSet = false;
 
     Aws::String m_associatedServerId;
-    bool m_associatedServerIdHasBeenSet;
+    bool m_associatedServerIdHasBeenSet = false;
 
     DatabaseConfigDetail m_databaseConfigDetail;
-    bool m_databaseConfigDetailHasBeenSet;
+    bool m_databaseConfigDetailHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InclusionStatus m_inclusionStatus;
-    bool m_inclusionStatusHasBeenSet;
+    bool m_inclusionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTimestamp;
-    bool m_lastAnalyzedTimestampHasBeenSet;
+    bool m_lastAnalyzedTimestampHasBeenSet = false;
 
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-    bool m_listAntipatternSeveritySummaryHasBeenSet;
+    bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
     bool m_moreServerAssociationExists;
-    bool m_moreServerAssociationExistsHasBeenSet;
+    bool m_moreServerAssociationExistsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_osDriver;
-    bool m_osDriverHasBeenSet;
+    bool m_osDriverHasBeenSet = false;
 
     Aws::String m_osVersion;
-    bool m_osVersionHasBeenSet;
+    bool m_osVersionHasBeenSet = false;
 
     RecommendationSet m_recommendationSet;
-    bool m_recommendationSetHasBeenSet;
+    bool m_recommendationSetHasBeenSet = false;
 
     ResourceSubType m_resourceSubType;
-    bool m_resourceSubTypeHasBeenSet;
+    bool m_resourceSubTypeHasBeenSet = false;
+
+    RuntimeAnalysisStatus m_runtimeStatus;
+    bool m_runtimeStatusHasBeenSet = false;
+
+    Aws::String m_runtimeStatusMessage;
+    bool m_runtimeStatusMessageHasBeenSet = false;
 
     Aws::Vector<SourceCodeRepository> m_sourceCodeRepositories;
-    bool m_sourceCodeRepositoriesHasBeenSet;
+    bool m_sourceCodeRepositoriesHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

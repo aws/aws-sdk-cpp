@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ReservedElasticsearchInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstance
+  class ReservedElasticsearchInstance
   {
   public:
-    ReservedElasticsearchInstance();
-    ReservedElasticsearchInstance(Aws::Utils::Json::JsonView jsonValue);
-    ReservedElasticsearchInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstance();
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -499,43 +499,43 @@ namespace Model
   private:
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     Aws::String m_reservedElasticsearchInstanceId;
-    bool m_reservedElasticsearchInstanceIdHasBeenSet;
+    bool m_reservedElasticsearchInstanceIdHasBeenSet = false;
 
     Aws::String m_reservedElasticsearchInstanceOfferingId;
-    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet;
+    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
     ESPartitionInstanceType m_elasticsearchInstanceType;
-    bool m_elasticsearchInstanceTypeHasBeenSet;
+    bool m_elasticsearchInstanceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_elasticsearchInstanceCount;
-    bool m_elasticsearchInstanceCountHasBeenSet;
+    bool m_elasticsearchInstanceCountHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ReservedElasticsearchInstancePaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
   };
 
 } // namespace Model

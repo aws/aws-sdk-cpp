@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API AgentInfo
+  class AgentInfo
   {
   public:
-    AgentInfo();
-    AgentInfo(Aws::Utils::Json::JsonView jsonValue);
-    AgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -454,34 +454,34 @@ namespace Model
   private:
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::Vector<AgentNetworkInfo> m_agentNetworkInfoList;
-    bool m_agentNetworkInfoListHasBeenSet;
+    bool m_agentNetworkInfoListHasBeenSet = false;
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     AgentStatus m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::String m_lastHealthPingTime;
-    bool m_lastHealthPingTimeHasBeenSet;
+    bool m_lastHealthPingTimeHasBeenSet = false;
 
     Aws::String m_collectionStatus;
-    bool m_collectionStatusHasBeenSet;
+    bool m_collectionStatusHasBeenSet = false;
 
     Aws::String m_agentType;
-    bool m_agentTypeHasBeenSet;
+    bool m_agentTypeHasBeenSet = false;
 
     Aws::String m_registeredTime;
-    bool m_registeredTimeHasBeenSet;
+    bool m_registeredTimeHasBeenSet = false;
   };
 
 } // namespace Model

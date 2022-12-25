@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineDefinitionS3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineDefinitionS3Location
+  class PipelineDefinitionS3Location
   {
   public:
-    PipelineDefinitionS3Location();
-    PipelineDefinitionS3Location(Aws::Utils::Json::JsonView jsonValue);
-    PipelineDefinitionS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineDefinitionS3Location();
+    AWS_SAGEMAKER_API PipelineDefinitionS3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineDefinitionS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_objectKey;
-    bool m_objectKeyHasBeenSet;
+    bool m_objectKeyHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

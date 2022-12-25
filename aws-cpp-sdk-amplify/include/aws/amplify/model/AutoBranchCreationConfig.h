@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/AutoBranchCreationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API AutoBranchCreationConfig
+  class AutoBranchCreationConfig
   {
   public:
-    AutoBranchCreationConfig();
-    AutoBranchCreationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoBranchCreationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API AutoBranchCreationConfig();
+    AWS_AMPLIFY_API AutoBranchCreationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API AutoBranchCreationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -415,34 +415,34 @@ namespace Model
   private:
 
     Stage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     bool m_enableAutoBuild;
-    bool m_enableAutoBuildHasBeenSet;
+    bool m_enableAutoBuildHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     bool m_enablePerformanceMode;
-    bool m_enablePerformanceModeHasBeenSet;
+    bool m_enablePerformanceModeHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     bool m_enablePullRequestPreview;
-    bool m_enablePullRequestPreviewHasBeenSet;
+    bool m_enablePullRequestPreviewHasBeenSet = false;
 
     Aws::String m_pullRequestEnvironmentName;
-    bool m_pullRequestEnvironmentNameHasBeenSet;
+    bool m_pullRequestEnvironmentNameHasBeenSet = false;
   };
 
 } // namespace Model

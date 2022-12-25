@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ServiceUpdateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ServiceUpdateRequest
+  class ServiceUpdateRequest
   {
   public:
-    ServiceUpdateRequest();
-    ServiceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ServiceUpdateRequest();
+    AWS_MEMORYDB_API ServiceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ServiceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateNameToApply;
-    bool m_serviceUpdateNameToApplyHasBeenSet;
+    bool m_serviceUpdateNameToApplyHasBeenSet = false;
   };
 
 } // namespace Model

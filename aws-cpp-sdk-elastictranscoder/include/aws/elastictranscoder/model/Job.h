@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Job">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Job();
+    AWS_ELASTICTRANSCODER_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -841,40 +841,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     JobInput m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::Vector<JobInput> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     JobOutput m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     Aws::Vector<JobOutput> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_outputKeyPrefix;
-    bool m_outputKeyPrefixHasBeenSet;
+    bool m_outputKeyPrefixHasBeenSet = false;
 
     Aws::Vector<Playlist> m_playlists;
-    bool m_playlistsHasBeenSet;
+    bool m_playlistsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
-    bool m_userMetadataHasBeenSet;
+    bool m_userMetadataHasBeenSet = false;
 
     Timing m_timing;
-    bool m_timingHasBeenSet;
+    bool m_timingHasBeenSet = false;
   };
 
 } // namespace Model

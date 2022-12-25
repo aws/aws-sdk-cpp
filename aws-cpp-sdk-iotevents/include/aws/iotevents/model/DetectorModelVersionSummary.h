@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DetectorModelVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DetectorModelVersionSummary
+  class DetectorModelVersionSummary
   {
   public:
-    DetectorModelVersionSummary();
-    DetectorModelVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectorModelVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DetectorModelVersionSummary();
+    AWS_IOTEVENTS_API DetectorModelVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DetectorModelVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_detectorModelVersion;
-    bool m_detectorModelVersionHasBeenSet;
+    bool m_detectorModelVersionHasBeenSet = false;
 
     Aws::String m_detectorModelArn;
-    bool m_detectorModelArnHasBeenSet;
+    bool m_detectorModelArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     DetectorModelVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     EvaluationMethod m_evaluationMethod;
-    bool m_evaluationMethodHasBeenSet;
+    bool m_evaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

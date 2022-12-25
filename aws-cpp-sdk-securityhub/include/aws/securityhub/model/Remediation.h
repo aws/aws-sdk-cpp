@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Remediation">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Remediation
+  class Remediation
   {
   public:
-    Remediation();
-    Remediation(Aws::Utils::Json::JsonView jsonValue);
-    Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Remediation();
+    AWS_SECURITYHUB_API Remediation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Recommendation m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
   };
 
 } // namespace Model

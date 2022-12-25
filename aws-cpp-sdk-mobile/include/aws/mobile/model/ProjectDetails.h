@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ProjectDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API ProjectDetails
+  class ProjectDetails
   {
   public:
-    ProjectDetails();
-    ProjectDetails(Aws::Utils::Json::JsonView jsonValue);
-    ProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API ProjectDetails();
+    AWS_MOBILE_API ProjectDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API ProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -266,28 +266,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ProjectState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_consoleUrl;
-    bool m_consoleUrlHasBeenSet;
+    bool m_consoleUrlHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

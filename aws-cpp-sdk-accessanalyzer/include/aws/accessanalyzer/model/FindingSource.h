@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/model/FindingSourceDetail.h>
 #include <aws/accessanalyzer/model/FindingSourceType.h>
+#include <aws/accessanalyzer/model/FindingSourceDetail.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +31,44 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/FindingSource">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API FindingSource
+  class FindingSource
   {
   public:
-    FindingSource();
-    FindingSource(Aws::Utils::Json::JsonView jsonValue);
-    FindingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API FindingSource();
+    AWS_ACCESSANALYZER_API FindingSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API FindingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline const FindingSourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline void SetType(const FindingSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline void SetType(FindingSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline FindingSource& WithType(const FindingSourceType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Indicates the type of access that generated the finding.</p>
+     */
+    inline FindingSource& WithType(FindingSourceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -76,44 +107,13 @@ namespace Model
      */
     inline FindingSource& WithDetail(FindingSourceDetail&& value) { SetDetail(std::move(value)); return *this;}
 
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline const FindingSourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline void SetType(const FindingSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline void SetType(FindingSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline FindingSource& WithType(const FindingSourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
-    inline FindingSource& WithType(FindingSourceType&& value) { SetType(std::move(value)); return *this;}
-
   private:
 
-    FindingSourceDetail m_detail;
-    bool m_detailHasBeenSet;
-
     FindingSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
+
+    FindingSourceDetail m_detail;
+    bool m_detailHasBeenSet = false;
   };
 
 } // namespace Model

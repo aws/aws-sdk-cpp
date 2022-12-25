@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAnswerInput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API UpdateAnswerRequest : public WellArchitectedRequest
+  class UpdateAnswerRequest : public WellArchitectedRequest
   {
   public:
-    UpdateAnswerRequest();
+    AWS_WELLARCHITECTED_API UpdateAnswerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAnswer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
     
@@ -286,28 +286,28 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedChoices;
-    bool m_selectedChoicesHasBeenSet;
+    bool m_selectedChoicesHasBeenSet = false;
 
     Aws::Map<Aws::String, ChoiceUpdate> m_choiceUpdates;
-    bool m_choiceUpdatesHasBeenSet;
+    bool m_choiceUpdatesHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     bool m_isApplicable;
-    bool m_isApplicableHasBeenSet;
+    bool m_isApplicableHasBeenSet = false;
 
     AnswerReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

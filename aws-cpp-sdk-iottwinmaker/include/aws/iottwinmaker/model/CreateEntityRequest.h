@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iottwinmaker/model/ComponentRequest.h>
 #include <utility>
 
@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTTWINMAKER_API CreateEntityRequest : public IoTTwinMakerRequest
+  class CreateEntityRequest : public IoTTwinMakerRequest
   {
   public:
-    CreateEntityRequest();
+    AWS_IOTTWINMAKER_API CreateEntityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,121 +31,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateEntity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTTWINMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentRequest>& GetComponents() const{ return m_components; }
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline void SetComponents(const Aws::Map<Aws::String, ComponentRequest>& value) { m_componentsHasBeenSet = true; m_components = value; }
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline void SetComponents(Aws::Map<Aws::String, ComponentRequest>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline CreateEntityRequest& WithComponents(const Aws::Map<Aws::String, ComponentRequest>& value) { SetComponents(value); return *this;}
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline CreateEntityRequest& WithComponents(Aws::Map<Aws::String, ComponentRequest>&& value) { SetComponents(std::move(value)); return *this;}
+    inline CreateEntityRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline CreateEntityRequest& AddComponents(const Aws::String& key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
+    inline CreateEntityRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
+     * <p>The ID of the workspace that contains the entity.</p>
      */
-    inline CreateEntityRequest& AddComponents(Aws::String&& key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
-     */
-    inline CreateEntityRequest& AddComponents(const Aws::String& key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
-     */
-    inline CreateEntityRequest& AddComponents(Aws::String&& key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
-     */
-    inline CreateEntityRequest& AddComponents(const char* key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An object that maps strings to the components in the entity. Each string in
-     * the mapping must be unique to this object.</p>
-     */
-    inline CreateEntityRequest& AddComponents(const char* key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline CreateEntityRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline CreateEntityRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the entity.</p>
-     */
-    inline CreateEntityRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline CreateEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -228,6 +155,120 @@ namespace Model
      * <p>The name of the entity.</p>
      */
     inline CreateEntityRequest& WithEntityName(const char* value) { SetEntityName(value); return *this;}
+
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline CreateEntityRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline CreateEntityRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the entity.</p>
+     */
+    inline CreateEntityRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentRequest>& GetComponents() const{ return m_components; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline void SetComponents(const Aws::Map<Aws::String, ComponentRequest>& value) { m_componentsHasBeenSet = true; m_components = value; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline void SetComponents(Aws::Map<Aws::String, ComponentRequest>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& WithComponents(const Aws::Map<Aws::String, ComponentRequest>& value) { SetComponents(value); return *this;}
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& WithComponents(Aws::Map<Aws::String, ComponentRequest>&& value) { SetComponents(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(const Aws::String& key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(Aws::String&& key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(const Aws::String& key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(Aws::String&& key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(const char* key, ComponentRequest&& value) { m_componentsHasBeenSet = true; m_components.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>An object that maps strings to the components in the entity. Each string in
+     * the mapping must be unique to this object.</p>
+     */
+    inline CreateEntityRequest& AddComponents(const char* key, const ComponentRequest& value) { m_componentsHasBeenSet = true; m_components.emplace(key, value); return *this; }
 
 
     /**
@@ -336,69 +377,28 @@ namespace Model
      */
     inline CreateEntityRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline CreateEntityRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline CreateEntityRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the entity.</p>
-     */
-    inline CreateEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
 
-    Aws::Map<Aws::String, ComponentRequest> m_components;
-    bool m_componentsHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Map<Aws::String, ComponentRequest> m_components;
+    bool m_componentsHasBeenSet = false;
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

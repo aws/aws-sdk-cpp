@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/TableObject">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API TableObject
+  class TableObject
   {
   public:
-    TableObject();
-    TableObject(Aws::Utils::Json::JsonView jsonValue);
-    TableObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API TableObject();
+    AWS_LAKEFORMATION_API TableObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API TableObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/OpusSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API OpusSettings
+  class OpusSettings
   {
   public:
-    OpusSettings();
-    OpusSettings(Aws::Utils::Json::JsonView jsonValue);
-    OpusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API OpusSettings();
+    AWS_MEDIACONVERT_API OpusSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API OpusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,13 +121,13 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     int m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

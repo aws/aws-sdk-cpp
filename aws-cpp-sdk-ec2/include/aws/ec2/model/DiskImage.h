@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DiskImage">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API DiskImage
+  class DiskImage
   {
   public:
-    DiskImage();
-    DiskImage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DiskImage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskImage();
+    AWS_EC2_API DiskImage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskImage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DiskImageDetail m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     VolumeDetail m_volume;
-    bool m_volumeHasBeenSet;
+    bool m_volumeHasBeenSet = false;
   };
 
 } // namespace Model

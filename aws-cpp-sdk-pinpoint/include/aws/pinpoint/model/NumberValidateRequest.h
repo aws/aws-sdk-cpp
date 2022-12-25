@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API NumberValidateRequest
+  class NumberValidateRequest
   {
   public:
-    NumberValidateRequest();
-    NumberValidateRequest(Aws::Utils::Json::JsonView jsonValue);
-    NumberValidateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API NumberValidateRequest();
+    AWS_PINPOINT_API NumberValidateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API NumberValidateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

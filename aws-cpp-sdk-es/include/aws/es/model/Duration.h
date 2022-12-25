@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/Duration">AWS API
    * Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API Duration
+  class Duration
   {
   public:
-    Duration();
-    Duration(Aws::Utils::Json::JsonView jsonValue);
-    Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API Duration();
+    AWS_ELASTICSEARCHSERVICE_API Duration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TimeUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

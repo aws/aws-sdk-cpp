@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API PhoneNumber
+  class PhoneNumber
   {
   public:
-    PhoneNumber();
-    PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API PhoneNumber();
+    AWS_CHIME_API PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -501,43 +501,43 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_e164PhoneNumber;
-    bool m_e164PhoneNumberHasBeenSet;
+    bool m_e164PhoneNumberHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     PhoneNumberType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     PhoneNumberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     PhoneNumberCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<PhoneNumberAssociation> m_associations;
-    bool m_associationsHasBeenSet;
+    bool m_associationsHasBeenSet = false;
 
     Aws::String m_callingName;
-    bool m_callingNameHasBeenSet;
+    bool m_callingNameHasBeenSet = false;
 
     CallingNameStatus m_callingNameStatus;
-    bool m_callingNameStatusHasBeenSet;
+    bool m_callingNameStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionTimestamp;
-    bool m_deletionTimestampHasBeenSet;
+    bool m_deletionTimestampHasBeenSet = false;
   };
 
 } // namespace Model

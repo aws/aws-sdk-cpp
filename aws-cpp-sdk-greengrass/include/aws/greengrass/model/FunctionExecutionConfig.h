@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionExecutionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionExecutionConfig
+  class FunctionExecutionConfig
   {
   public:
-    FunctionExecutionConfig();
-    FunctionExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
-    FunctionExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionExecutionConfig();
+    AWS_GREENGRASS_API FunctionExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     FunctionIsolationMode m_isolationMode;
-    bool m_isolationModeHasBeenSet;
+    bool m_isolationModeHasBeenSet = false;
 
     FunctionRunAsConfig m_runAs;
-    bool m_runAsHasBeenSet;
+    bool m_runAsHasBeenSet = false;
   };
 
 } // namespace Model

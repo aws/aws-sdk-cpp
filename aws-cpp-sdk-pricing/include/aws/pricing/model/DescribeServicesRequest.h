@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PRICING_API DescribeServicesRequest : public PricingRequest
+  class DescribeServicesRequest : public PricingRequest
   {
   public:
-    DescribeServicesRequest();
+    AWS_PRICING_API DescribeServicesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeServices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PRICING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PRICING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_formatVersion;
-    bool m_formatVersionHasBeenSet;
+    bool m_formatVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

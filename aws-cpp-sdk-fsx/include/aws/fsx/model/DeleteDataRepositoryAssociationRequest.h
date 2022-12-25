@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_FSX_API DeleteDataRepositoryAssociationRequest : public FSxRequest
+  class DeleteDataRepositoryAssociationRequest : public FSxRequest
   {
   public:
-    DeleteDataRepositoryAssociationRequest();
+    AWS_FSX_API DeleteDataRepositoryAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDataRepositoryAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -128,13 +128,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_deleteDataInFileSystem;
-    bool m_deleteDataInFileSystemHasBeenSet;
+    bool m_deleteDataInFileSystemHasBeenSet = false;
   };
 
 } // namespace Model

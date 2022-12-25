@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API PersonMatch
+  class PersonMatch
   {
   public:
-    PersonMatch();
-    PersonMatch(Aws::Utils::Json::JsonView jsonValue);
-    PersonMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API PersonMatch();
+    AWS_REKOGNITION_API PersonMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API PersonMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;
-    bool m_personHasBeenSet;
+    bool m_personHasBeenSet = false;
 
     Aws::Vector<FaceMatch> m_faceMatches;
-    bool m_faceMatchesHasBeenSet;
+    bool m_faceMatchesHasBeenSet = false;
   };
 
 } // namespace Model

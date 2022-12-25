@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DLM_API CreateLifecyclePolicyRequest : public DLMRequest
+  class CreateLifecyclePolicyRequest : public DLMRequest
   {
   public:
-    CreateLifecyclePolicyRequest();
+    AWS_DLM_API CreateLifecyclePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLifecyclePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DLM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     PolicyDetails m_policyDetails;
-    bool m_policyDetailsHasBeenSet;
+    bool m_policyDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

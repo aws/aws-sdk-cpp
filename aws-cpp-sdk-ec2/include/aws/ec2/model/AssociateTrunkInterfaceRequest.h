@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API AssociateTrunkInterfaceRequest : public EC2Request
+  class AssociateTrunkInterfaceRequest : public EC2Request
   {
   public:
-    AssociateTrunkInterfaceRequest();
+    AWS_EC2_API AssociateTrunkInterfaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateTrunkInterface"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_branchInterfaceId;
-    bool m_branchInterfaceIdHasBeenSet;
+    bool m_branchInterfaceIdHasBeenSet = false;
 
     Aws::String m_trunkInterfaceId;
-    bool m_trunkInterfaceIdHasBeenSet;
+    bool m_trunkInterfaceIdHasBeenSet = false;
 
     int m_vlanId;
-    bool m_vlanIdHasBeenSet;
+    bool m_vlanIdHasBeenSet = false;
 
     int m_greKey;
-    bool m_greKeyHasBeenSet;
+    bool m_greKeyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

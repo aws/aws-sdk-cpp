@@ -26,12 +26,12 @@ namespace CodeStarNotifications
 {
 namespace Model
 {
-  class AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult
+  class ListNotificationRulesResult
   {
   public:
-    ListNotificationRulesResult();
-    ListNotificationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNotificationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult();
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -78,44 +78,44 @@ namespace Model
 
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline const Aws::Vector<NotificationRuleSummary>& GetNotificationRules() const{ return m_notificationRules; }
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline void SetNotificationRules(const Aws::Vector<NotificationRuleSummary>& value) { m_notificationRules = value; }
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline void SetNotificationRules(Aws::Vector<NotificationRuleSummary>&& value) { m_notificationRules = std::move(value); }
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline ListNotificationRulesResult& WithNotificationRules(const Aws::Vector<NotificationRuleSummary>& value) { SetNotificationRules(value); return *this;}
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline ListNotificationRulesResult& WithNotificationRules(Aws::Vector<NotificationRuleSummary>&& value) { SetNotificationRules(std::move(value)); return *this;}
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline ListNotificationRulesResult& AddNotificationRules(const NotificationRuleSummary& value) { m_notificationRules.push_back(value); return *this; }
 
     /**
-     * <p>The list of notification rules for the AWS account, by Amazon Resource Name
-     * (ARN) and ID. </p>
+     * <p>The list of notification rules for the Amazon Web Services account, by Amazon
+     * Resource Name (ARN) and ID. </p>
      */
     inline ListNotificationRulesResult& AddNotificationRules(NotificationRuleSummary&& value) { m_notificationRules.push_back(std::move(value)); return *this; }
 

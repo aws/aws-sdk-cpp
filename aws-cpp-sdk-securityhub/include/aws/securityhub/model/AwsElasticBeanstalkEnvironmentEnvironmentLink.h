@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticBeanstalkEnvironmentEnvironmentLink">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentEnvironmentLink
+  class AwsElasticBeanstalkEnvironmentEnvironmentLink
   {
   public:
-    AwsElasticBeanstalkEnvironmentEnvironmentLink();
-    AwsElasticBeanstalkEnvironmentEnvironmentLink(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticBeanstalkEnvironmentEnvironmentLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentEnvironmentLink();
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentEnvironmentLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentEnvironmentLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

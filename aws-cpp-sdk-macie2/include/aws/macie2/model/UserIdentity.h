@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UserIdentity
+  class UserIdentity
   {
   public:
-    UserIdentity();
-    UserIdentity(Aws::Utils::Json::JsonView jsonValue);
-    UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UserIdentity();
+    AWS_MACIE2_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -317,25 +317,25 @@ namespace Model
   private:
 
     AssumedRole m_assumedRole;
-    bool m_assumedRoleHasBeenSet;
+    bool m_assumedRoleHasBeenSet = false;
 
     AwsAccount m_awsAccount;
-    bool m_awsAccountHasBeenSet;
+    bool m_awsAccountHasBeenSet = false;
 
     AwsService m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     FederatedUser m_federatedUser;
-    bool m_federatedUserHasBeenSet;
+    bool m_federatedUserHasBeenSet = false;
 
     IamUser m_iamUser;
-    bool m_iamUserHasBeenSet;
+    bool m_iamUserHasBeenSet = false;
 
     UserIdentityRoot m_root;
-    bool m_rootHasBeenSet;
+    bool m_rootHasBeenSet = false;
 
     UserIdentityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

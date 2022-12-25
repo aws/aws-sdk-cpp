@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafEncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmafEncryptionSettings
+  class CmafEncryptionSettings
   {
   public:
-    CmafEncryptionSettings();
-    CmafEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    CmafEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmafEncryptionSettings();
+    AWS_MEDIACONVERT_API CmafEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmafEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -292,22 +292,22 @@ namespace Model
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     CmafEncryptionType m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     CmafInitializationVectorInManifest m_initializationVectorInManifest;
-    bool m_initializationVectorInManifestHasBeenSet;
+    bool m_initializationVectorInManifestHasBeenSet = false;
 
     SpekeKeyProviderCmaf m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
 
     StaticKeyProvider m_staticKeyProvider;
-    bool m_staticKeyProviderHasBeenSet;
+    bool m_staticKeyProviderHasBeenSet = false;
 
     CmafKeyProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

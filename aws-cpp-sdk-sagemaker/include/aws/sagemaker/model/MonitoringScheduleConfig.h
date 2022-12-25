@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringScheduleConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringScheduleConfig
+  class MonitoringScheduleConfig
   {
   public:
-    MonitoringScheduleConfig();
-    MonitoringScheduleConfig(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringScheduleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringScheduleConfig();
+    AWS_SAGEMAKER_API MonitoringScheduleConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringScheduleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     ScheduleConfig m_scheduleConfig;
-    bool m_scheduleConfigHasBeenSet;
+    bool m_scheduleConfigHasBeenSet = false;
 
     MonitoringJobDefinition m_monitoringJobDefinition;
-    bool m_monitoringJobDefinitionHasBeenSet;
+    bool m_monitoringJobDefinitionHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     MonitoringType m_monitoringType;
-    bool m_monitoringTypeHasBeenSet;
+    bool m_monitoringTypeHasBeenSet = false;
   };
 
 } // namespace Model

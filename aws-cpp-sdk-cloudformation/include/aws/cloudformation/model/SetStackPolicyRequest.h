@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicyInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API SetStackPolicyRequest : public CloudFormationRequest
+  class SetStackPolicyRequest : public CloudFormationRequest
   {
   public:
-    SetStackPolicyRequest();
+    AWS_CLOUDFORMATION_API SetStackPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetStackPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -228,13 +228,13 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackPolicyBody;
-    bool m_stackPolicyBodyHasBeenSet;
+    bool m_stackPolicyBodyHasBeenSet = false;
 
     Aws::String m_stackPolicyURL;
-    bool m_stackPolicyURLHasBeenSet;
+    bool m_stackPolicyURLHasBeenSet = false;
   };
 
 } // namespace Model

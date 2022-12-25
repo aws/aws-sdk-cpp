@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ActionTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ActionTarget
+  class ActionTarget
   {
   public:
-    ActionTarget();
-    ActionTarget(Aws::Utils::Json::JsonView jsonValue);
-    ActionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ActionTarget();
+    AWS_FMS_API ActionTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ActionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

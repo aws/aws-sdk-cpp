@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectAttributeAction">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API ObjectAttributeAction
+  class ObjectAttributeAction
   {
   public:
-    ObjectAttributeAction();
-    ObjectAttributeAction(Aws::Utils::Json::JsonView jsonValue);
-    ObjectAttributeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API ObjectAttributeAction();
+    AWS_CLOUDDIRECTORY_API ObjectAttributeAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API ObjectAttributeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     UpdateActionType m_objectAttributeActionType;
-    bool m_objectAttributeActionTypeHasBeenSet;
+    bool m_objectAttributeActionTypeHasBeenSet = false;
 
     TypedAttributeValue m_objectAttributeUpdateValue;
-    bool m_objectAttributeUpdateValueHasBeenSet;
+    bool m_objectAttributeUpdateValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SES_API TestRenderTemplateRequest : public SESRequest
+  class TestRenderTemplateRequest : public SESRequest
   {
   public:
-    TestRenderTemplateRequest();
+    AWS_SES_API TestRenderTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestRenderTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateData;
-    bool m_templateDataHasBeenSet;
+    bool m_templateDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RtmpOutputSettings
+  class RtmpOutputSettings
   {
   public:
-    RtmpOutputSettings();
-    RtmpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    RtmpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API RtmpOutputSettings();
+    AWS_MEDIALIVE_API RtmpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API RtmpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,16 +172,16 @@ namespace Model
   private:
 
     RtmpOutputCertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
   };
 
 } // namespace Model

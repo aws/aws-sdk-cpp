@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API GetImportRequest : public LexModelBuildingServiceRequest
+  class GetImportRequest : public LexModelBuildingServiceRequest
   {
   public:
-    GetImportRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetImportRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetImport"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_importId;
-    bool m_importIdHasBeenSet;
+    bool m_importIdHasBeenSet = false;
   };
 
 } // namespace Model

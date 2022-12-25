@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/model/DataProtectionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -28,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API LogGroup
+  class LogGroup
   {
   public:
-    LogGroup();
-    LogGroup(Aws::Utils::Json::JsonView jsonValue);
-    LogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API LogGroup();
+    AWS_CLOUDWATCHLOGS_API LogGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API LogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,75 +201,121 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline LogGroup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline LogGroup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log
+     * <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
      * data.</p>
      */
     inline LogGroup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline const DataProtectionStatus& GetDataProtectionStatus() const{ return m_dataProtectionStatus; }
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline bool DataProtectionStatusHasBeenSet() const { return m_dataProtectionStatusHasBeenSet; }
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline void SetDataProtectionStatus(const DataProtectionStatus& value) { m_dataProtectionStatusHasBeenSet = true; m_dataProtectionStatus = value; }
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline void SetDataProtectionStatus(DataProtectionStatus&& value) { m_dataProtectionStatusHasBeenSet = true; m_dataProtectionStatus = std::move(value); }
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline LogGroup& WithDataProtectionStatus(const DataProtectionStatus& value) { SetDataProtectionStatus(value); return *this;}
+
+    /**
+     * <p>Displays whether this log group has a protection policy, or whether it had
+     * one in the past. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
+     */
+    inline LogGroup& WithDataProtectionStatus(DataProtectionStatus&& value) { SetDataProtectionStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     int m_retentionInDays;
-    bool m_retentionInDaysHasBeenSet;
+    bool m_retentionInDaysHasBeenSet = false;
 
     int m_metricFilterCount;
-    bool m_metricFilterCountHasBeenSet;
+    bool m_metricFilterCountHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_storedBytes;
-    bool m_storedBytesHasBeenSet;
+    bool m_storedBytesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
+
+    DataProtectionStatus m_dataProtectionStatus;
+    bool m_dataProtectionStatusHasBeenSet = false;
   };
 
 } // namespace Model

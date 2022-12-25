@@ -1,9 +1,0 @@
-void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, ${refText}request, handler, context](){ this->${operation.name}AsyncHelper( request, handler, context ); } );
-}
-
-void ${className}::${operation.name}AsyncHelper(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ${operation.name}(request), context);
-}

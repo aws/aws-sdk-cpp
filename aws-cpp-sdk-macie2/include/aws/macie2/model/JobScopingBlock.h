@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobScopingBlock
+  class JobScopingBlock
   {
   public:
-    JobScopingBlock();
-    JobScopingBlock(Aws::Utils::Json::JsonView jsonValue);
-    JobScopingBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobScopingBlock();
+    AWS_MACIE2_API JobScopingBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobScopingBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::Vector<JobScopeTerm> m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
   };
 
 } // namespace Model

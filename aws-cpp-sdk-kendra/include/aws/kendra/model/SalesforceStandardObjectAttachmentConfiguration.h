@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectAttachmentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceStandardObjectAttachmentConfiguration
+  class SalesforceStandardObjectAttachmentConfiguration
   {
   public:
-    SalesforceStandardObjectAttachmentConfiguration();
-    SalesforceStandardObjectAttachmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceStandardObjectAttachmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceStandardObjectAttachmentConfiguration();
+    AWS_KENDRA_API SalesforceStandardObjectAttachmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceStandardObjectAttachmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

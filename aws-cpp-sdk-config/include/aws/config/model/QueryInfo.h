@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/QueryInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API QueryInfo
+  class QueryInfo
   {
   public:
-    QueryInfo();
-    QueryInfo(Aws::Utils::Json::JsonView jsonValue);
-    QueryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API QueryInfo();
+    AWS_CONFIGSERVICE_API QueryInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API QueryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<FieldInfo> m_selectFields;
-    bool m_selectFieldsHasBeenSet;
+    bool m_selectFieldsHasBeenSet = false;
   };
 
 } // namespace Model

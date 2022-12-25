@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayClientPolicyTls">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayClientPolicyTls
+  class VirtualGatewayClientPolicyTls
   {
   public:
-    VirtualGatewayClientPolicyTls();
-    VirtualGatewayClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls();
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     VirtualGatewayClientTlsCertificate m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     bool m_enforce;
-    bool m_enforceHasBeenSet;
+    bool m_enforceHasBeenSet = false;
 
     Aws::Vector<int> m_ports;
-    bool m_portsHasBeenSet;
+    bool m_portsHasBeenSet = false;
 
     VirtualGatewayTlsValidationContext m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

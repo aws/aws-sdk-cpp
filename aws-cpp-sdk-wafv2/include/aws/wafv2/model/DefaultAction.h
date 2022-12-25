@@ -27,18 +27,17 @@ namespace Model
   /**
    * <p>In a <a>WebACL</a>, this is the action that you want WAF to perform when a
    * web request doesn't match any of the rules in the <code>WebACL</code>. The
-   * default action must be a terminating action, so you can't use
-   * count.</p><p><h3>See Also:</h3>   <a
+   * default action must be a terminating action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API DefaultAction
+  class DefaultAction
   {
   public:
-    DefaultAction();
-    DefaultAction(Aws::Utils::Json::JsonView jsonValue);
-    DefaultAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API DefaultAction();
+    AWS_WAFV2_API DefaultAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API DefaultAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +104,10 @@ namespace Model
   private:
 
     BlockAction m_block;
-    bool m_blockHasBeenSet;
+    bool m_blockHasBeenSet = false;
 
     AllowAction m_allow;
-    bool m_allowHasBeenSet;
+    bool m_allowHasBeenSet = false;
   };
 
 } // namespace Model

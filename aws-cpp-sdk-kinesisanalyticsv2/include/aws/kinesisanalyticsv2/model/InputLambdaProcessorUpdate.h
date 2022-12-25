@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputLambdaProcessorUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API InputLambdaProcessorUpdate
+  class InputLambdaProcessorUpdate
   {
   public:
-    InputLambdaProcessorUpdate();
-    InputLambdaProcessorUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputLambdaProcessorUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorUpdate();
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,7 +130,7 @@ namespace Model
   private:
 
     Aws::String m_resourceARNUpdate;
-    bool m_resourceARNUpdateHasBeenSet;
+    bool m_resourceARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

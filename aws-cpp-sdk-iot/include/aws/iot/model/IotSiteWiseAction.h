@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotSiteWiseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API IotSiteWiseAction
+  class IotSiteWiseAction
   {
   public:
-    IotSiteWiseAction();
-    IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
-    IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API IotSiteWiseAction();
+    AWS_IOT_API IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<PutAssetPropertyValueEntry> m_putAssetPropertyValueEntries;
-    bool m_putAssetPropertyValueEntriesHasBeenSet;
+    bool m_putAssetPropertyValueEntriesHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

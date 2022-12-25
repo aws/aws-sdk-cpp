@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFabricConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration
+  class MemberFabricConfiguration
   {
   public:
-    MemberFabricConfiguration();
-    MemberFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MemberFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_adminUsername;
-    bool m_adminUsernameHasBeenSet;
+    bool m_adminUsernameHasBeenSet = false;
 
     Aws::String m_adminPassword;
-    bool m_adminPasswordHasBeenSet;
+    bool m_adminPasswordHasBeenSet = false;
   };
 
 } // namespace Model

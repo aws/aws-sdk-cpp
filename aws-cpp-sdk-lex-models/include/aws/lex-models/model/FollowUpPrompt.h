@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/FollowUpPrompt">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API FollowUpPrompt
+  class FollowUpPrompt
   {
   public:
-    FollowUpPrompt();
-    FollowUpPrompt(Aws::Utils::Json::JsonView jsonValue);
-    FollowUpPrompt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API FollowUpPrompt();
+    AWS_LEXMODELBUILDINGSERVICE_API FollowUpPrompt(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API FollowUpPrompt& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Prompt m_prompt;
-    bool m_promptHasBeenSet;
+    bool m_promptHasBeenSet = false;
 
     Statement m_rejectionStatement;
-    bool m_rejectionStatementHasBeenSet;
+    bool m_rejectionStatementHasBeenSet = false;
   };
 
 } // namespace Model

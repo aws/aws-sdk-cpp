@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ClusterConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ClusterConfiguration
+  class ClusterConfiguration
   {
   public:
-    ClusterConfiguration();
-    ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ClusterConfiguration();
+    AWS_MEMORYDB_API ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -563,46 +563,46 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_maintenanceWindow;
-    bool m_maintenanceWindowHasBeenSet;
+    bool m_maintenanceWindowHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     int m_numShards;
-    bool m_numShardsHasBeenSet;
+    bool m_numShardsHasBeenSet = false;
 
     Aws::Vector<ShardDetail> m_shards;
-    bool m_shardsHasBeenSet;
+    bool m_shardsHasBeenSet = false;
   };
 
 } // namespace Model

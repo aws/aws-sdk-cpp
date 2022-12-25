@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Parameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Parameters
+  class Parameters
   {
   public:
-    Parameters();
-    Parameters(Aws::Utils::Json::JsonView jsonValue);
-    Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Parameters();
+    AWS_QUICKSIGHT_API Parameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<StringParameter> m_stringParameters;
-    bool m_stringParametersHasBeenSet;
+    bool m_stringParametersHasBeenSet = false;
 
     Aws::Vector<IntegerParameter> m_integerParameters;
-    bool m_integerParametersHasBeenSet;
+    bool m_integerParametersHasBeenSet = false;
 
     Aws::Vector<DecimalParameter> m_decimalParameters;
-    bool m_decimalParametersHasBeenSet;
+    bool m_decimalParametersHasBeenSet = false;
 
     Aws::Vector<DateTimeParameter> m_dateTimeParameters;
-    bool m_dateTimeParametersHasBeenSet;
+    bool m_dateTimeParametersHasBeenSet = false;
   };
 
 } // namespace Model

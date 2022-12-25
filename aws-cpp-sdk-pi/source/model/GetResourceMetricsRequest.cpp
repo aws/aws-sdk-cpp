@@ -44,7 +44,7 @@ Aws::String GetResourceMetricsRequest::SerializePayload() const
 
   if(m_metricQueriesHasBeenSet)
   {
-   Array<JsonValue> metricQueriesJsonList(m_metricQueries.size());
+   Aws::Utils::Array<JsonValue> metricQueriesJsonList(m_metricQueries.size());
    for(unsigned metricQueriesIndex = 0; metricQueriesIndex < metricQueriesJsonList.GetLength(); ++metricQueriesIndex)
    {
      metricQueriesJsonList[metricQueriesIndex].AsObject(m_metricQueries[metricQueriesIndex].Jsonize());

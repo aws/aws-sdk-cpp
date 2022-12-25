@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/EventConfigurationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API EventConfigurationItem
+  class EventConfigurationItem
   {
   public:
-    EventConfigurationItem();
-    EventConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
-    EventConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API EventConfigurationItem();
+    AWS_IOTWIRELESS_API EventConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API EventConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     IdentifierType m_identifierType;
-    bool m_identifierTypeHasBeenSet;
+    bool m_identifierTypeHasBeenSet = false;
 
     EventNotificationPartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
 
     EventNotificationItemConfigurations m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

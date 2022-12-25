@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Invite">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Invite
+  class Invite
   {
   public:
-    Invite();
-    Invite(Aws::Utils::Json::JsonView jsonValue);
-    Invite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Invite();
+    AWS_CHIME_API Invite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Invite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_inviteId;
-    bool m_inviteIdHasBeenSet;
+    bool m_inviteIdHasBeenSet = false;
 
     InviteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     EmailStatus m_emailStatus;
-    bool m_emailStatusHasBeenSet;
+    bool m_emailStatusHasBeenSet = false;
   };
 
 } // namespace Model

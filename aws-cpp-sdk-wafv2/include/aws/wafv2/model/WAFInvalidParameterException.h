@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WAFInvalidParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API WAFInvalidParameterException
+  class WAFInvalidParameterException
   {
   public:
-    WAFInvalidParameterException();
-    WAFInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
-    WAFInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API WAFInvalidParameterException();
+    AWS_WAFV2_API WAFInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API WAFInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ParameterExceptionField m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_parameter;
-    bool m_parameterHasBeenSet;
+    bool m_parameterHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

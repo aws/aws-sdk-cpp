@@ -7,6 +7,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DiskIopsConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemOntapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemOntapConfiguration
+  class UpdateFileSystemOntapConfiguration
   {
   public:
-    UpdateFileSystemOntapConfiguration();
-    UpdateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemOntapConfiguration();
+    AWS_FSX_API UpdateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -206,51 +207,185 @@ namespace Model
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
-     * MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
+     * 4096 MBps.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
-     * MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
+     * 4096 MBps.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
-     * MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
+     * 4096 MBps.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in
-     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, or 2048
-     * MB/s.</p>
+     * megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and
+     * 4096 MBps.</p>
      */
     inline UpdateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
+
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline bool AddRouteTableIdsHasBeenSet() const { return m_addRouteTableIdsHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline bool RemoveRouteTableIdsHasBeenSet() const { return m_removeRouteTableIdsHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline void SetRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = value; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline void SetRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRemoveRouteTableIds(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& WithRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRemoveRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(const Aws::String& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file
+     * system. You can use the API operation to retrieve the list of VPC route table
+     * IDs for a file system.</p>
+     */
+    inline UpdateFileSystemOntapConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
 
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     Aws::String m_fsxAdminPassword;
-    bool m_fsxAdminPasswordHasBeenSet;
+    bool m_fsxAdminPasswordHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_addRouteTableIds;
+    bool m_addRouteTableIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_removeRouteTableIds;
+    bool m_removeRouteTableIdsHasBeenSet = false;
   };
 
 } // namespace Model

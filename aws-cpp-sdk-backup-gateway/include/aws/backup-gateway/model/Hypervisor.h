@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/Hypervisor">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API Hypervisor
+  class Hypervisor
   {
   public:
-    Hypervisor();
-    Hypervisor(Aws::Utils::Json::JsonView jsonValue);
-    Hypervisor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API Hypervisor();
+    AWS_BACKUPGATEWAY_API Hypervisor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Hypervisor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,19 +254,19 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_hypervisorArn;
-    bool m_hypervisorArnHasBeenSet;
+    bool m_hypervisorArnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     HypervisorState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

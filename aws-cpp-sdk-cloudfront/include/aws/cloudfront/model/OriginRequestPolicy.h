@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An origin request policy.</p> <p>When it’s attached to a cache behavior, the
+   * <p>An origin request policy.</p> <p>When it's attached to a cache behavior, the
    * origin request policy determines the values that CloudFront includes in requests
    * that it sends to the origin. Each request that CloudFront sends to the origin
    * includes the following:</p> <ul> <li> <p>The request body and the URL path
@@ -36,20 +36,20 @@ namespace Model
    * specified in the cache policy or the origin request policy. These can include
    * items from the viewer request and, in the case of headers, additional ones that
    * are added by CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it
-   * can’t find an object in its cache that matches the request. If you want to send
+   * can't find an object in its cache that matches the request. If you want to send
    * values to the origin and also include them in the cache key, use
    * <code>CachePolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginRequestPolicy
+  class OriginRequestPolicy
   {
   public:
-    OriginRequestPolicy();
-    OriginRequestPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginRequestPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicy();
+    AWS_CLOUDFRONT_API OriginRequestPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     OriginRequestPolicyConfig m_originRequestPolicyConfig;
-    bool m_originRequestPolicyConfigHasBeenSet;
+    bool m_originRequestPolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

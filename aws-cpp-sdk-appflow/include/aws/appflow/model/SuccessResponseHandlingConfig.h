@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SuccessResponseHandlingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SuccessResponseHandlingConfig
+  class SuccessResponseHandlingConfig
   {
   public:
-    SuccessResponseHandlingConfig();
-    SuccessResponseHandlingConfig(Aws::Utils::Json::JsonView jsonValue);
-    SuccessResponseHandlingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SuccessResponseHandlingConfig();
+    AWS_APPFLOW_API SuccessResponseHandlingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SuccessResponseHandlingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
   };
 
 } // namespace Model

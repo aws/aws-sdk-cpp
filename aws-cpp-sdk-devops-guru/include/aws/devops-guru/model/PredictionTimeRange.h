@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PredictionTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PredictionTimeRange
+  class PredictionTimeRange
   {
   public:
-    PredictionTimeRange();
-    PredictionTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    PredictionTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PredictionTimeRange();
+    AWS_DEVOPSGURU_API PredictionTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PredictionTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CoreDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API CoreDefinitionVersion
+  class CoreDefinitionVersion
   {
   public:
-    CoreDefinitionVersion();
-    CoreDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    CoreDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API CoreDefinitionVersion();
+    AWS_GREENGRASS_API CoreDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API CoreDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Core> m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
   };
 
 } // namespace Model

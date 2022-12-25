@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogTarget
+  class CatalogTarget
   {
   public:
-    CatalogTarget();
-    CatalogTarget(Aws::Utils::Json::JsonView jsonValue);
-    CatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogTarget();
+    AWS_GLUE_API CatalogTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,16 +181,120 @@ namespace Model
      */
     inline CatalogTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline const Aws::String& GetEventQueueArn() const{ return m_eventQueueArn; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline bool EventQueueArnHasBeenSet() const { return m_eventQueueArnHasBeenSet; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(const Aws::String& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = value; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(Aws::String&& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = std::move(value); }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(const char* value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn.assign(value); }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline CatalogTarget& WithEventQueueArn(const Aws::String& value) { SetEventQueueArn(value); return *this;}
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline CatalogTarget& WithEventQueueArn(Aws::String&& value) { SetEventQueueArn(std::move(value)); return *this;}
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline CatalogTarget& WithEventQueueArn(const char* value) { SetEventQueueArn(value); return *this;}
+
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline const Aws::String& GetDlqEventQueueArn() const{ return m_dlqEventQueueArn; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline bool DlqEventQueueArnHasBeenSet() const { return m_dlqEventQueueArnHasBeenSet; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(const Aws::String& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = value; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(Aws::String&& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = std::move(value); }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(const char* value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn.assign(value); }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline CatalogTarget& WithDlqEventQueueArn(const Aws::String& value) { SetDlqEventQueueArn(value); return *this;}
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline CatalogTarget& WithDlqEventQueueArn(Aws::String&& value) { SetDlqEventQueueArn(std::move(value)); return *this;}
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline CatalogTarget& WithDlqEventQueueArn(const char* value) { SetDlqEventQueueArn(value); return *this;}
+
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tables;
-    bool m_tablesHasBeenSet;
+    bool m_tablesHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
+
+    Aws::String m_eventQueueArn;
+    bool m_eventQueueArnHasBeenSet = false;
+
+    Aws::String m_dlqEventQueueArn;
+    bool m_dlqEventQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

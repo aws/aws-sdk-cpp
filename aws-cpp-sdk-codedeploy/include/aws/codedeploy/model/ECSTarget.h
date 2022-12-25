@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ECSTarget
+  class ECSTarget
   {
   public:
-    ECSTarget();
-    ECSTarget(Aws::Utils::Json::JsonView jsonValue);
-    ECSTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ECSTarget();
+    AWS_CODEDEPLOY_API ECSTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ECSTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-    bool m_lifecycleEventsHasBeenSet;
+    bool m_lifecycleEventsHasBeenSet = false;
 
     TargetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<ECSTaskSet> m_taskSetsInfo;
-    bool m_taskSetsInfoHasBeenSet;
+    bool m_taskSetsInfoHasBeenSet = false;
   };
 
 } // namespace Model

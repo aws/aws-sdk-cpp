@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The order in which compute environments are tried for job placement within a
+   * <p>The order that compute environments are tried in for job placement within a
    * queue. Compute environments are tried in ascending order. For example, if two
    * compute environments are associated with a job queue, the compute environment
    * with a lower order integer value is tried for job placement first. Compute
@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentOrder">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ComputeEnvironmentOrder
+  class ComputeEnvironmentOrder
   {
   public:
-    ComputeEnvironmentOrder();
-    ComputeEnvironmentOrder(Aws::Utils::Json::JsonView jsonValue);
-    ComputeEnvironmentOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ComputeEnvironmentOrder();
+    AWS_BATCH_API ComputeEnvironmentOrder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ComputeEnvironmentOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
 
     Aws::String m_computeEnvironment;
-    bool m_computeEnvironmentHasBeenSet;
+    bool m_computeEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

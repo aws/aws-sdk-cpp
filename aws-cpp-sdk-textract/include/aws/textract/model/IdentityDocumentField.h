@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/IdentityDocumentField">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API IdentityDocumentField
+  class IdentityDocumentField
   {
   public:
-    IdentityDocumentField();
-    IdentityDocumentField(Aws::Utils::Json::JsonView jsonValue);
-    IdentityDocumentField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API IdentityDocumentField();
+    AWS_TEXTRACT_API IdentityDocumentField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API IdentityDocumentField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     AnalyzeIDDetections m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AnalyzeIDDetections m_valueDetection;
-    bool m_valueDetectionHasBeenSet;
+    bool m_valueDetectionHasBeenSet = false;
   };
 
 } // namespace Model

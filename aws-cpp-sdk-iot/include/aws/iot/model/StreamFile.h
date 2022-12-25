@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StreamFile">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API StreamFile
+  class StreamFile
   {
   public:
-    StreamFile();
-    StreamFile(Aws::Utils::Json::JsonView jsonValue);
-    StreamFile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StreamFile();
+    AWS_IOT_API StreamFile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StreamFile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_fileId;
-    bool m_fileIdHasBeenSet;
+    bool m_fileIdHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

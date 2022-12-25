@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentCondition
+  class SegmentCondition
   {
   public:
-    SegmentCondition();
-    SegmentCondition(Aws::Utils::Json::JsonView jsonValue);
-    SegmentCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentCondition();
+    AWS_PINPOINT_API SegmentCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
   };
 
 } // namespace Model

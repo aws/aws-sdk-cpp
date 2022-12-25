@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE_API AssociateS3ResourcesRequest : public MacieRequest
+  class AssociateS3ResourcesRequest : public MacieRequest
   {
   public:
-    AssociateS3ResourcesRequest();
+    AWS_MACIE_API AssociateS3ResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateS3Resources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MACIE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_memberAccountId;
-    bool m_memberAccountIdHasBeenSet;
+    bool m_memberAccountIdHasBeenSet = false;
 
     Aws::Vector<S3ResourceClassification> m_s3Resources;
-    bool m_s3ResourcesHasBeenSet;
+    bool m_s3ResourcesHasBeenSet = false;
   };
 
 } // namespace Model

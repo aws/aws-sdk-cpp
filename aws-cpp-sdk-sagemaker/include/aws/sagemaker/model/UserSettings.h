@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/TensorBoardAppSettings.h>
 #include <aws/sagemaker/model/RStudioServerProAppSettings.h>
 #include <aws/sagemaker/model/RSessionAppSettings.h>
+#include <aws/sagemaker/model/CanvasAppSettings.h>
 #include <utility>
 
 namespace Aws
@@ -42,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UserSettings
+  class UserSettings
   {
   public:
-    UserSettings();
-    UserSettings(Aws::Utils::Json::JsonView jsonValue);
-    UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UserSettings();
+    AWS_SAGEMAKER_API UserSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -398,31 +399,65 @@ namespace Model
      */
     inline UserSettings& WithRSessionAppSettings(RSessionAppSettings&& value) { SetRSessionAppSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline const CanvasAppSettings& GetCanvasAppSettings() const{ return m_canvasAppSettings; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline bool CanvasAppSettingsHasBeenSet() const { return m_canvasAppSettingsHasBeenSet; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline void SetCanvasAppSettings(const CanvasAppSettings& value) { m_canvasAppSettingsHasBeenSet = true; m_canvasAppSettings = value; }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline void SetCanvasAppSettings(CanvasAppSettings&& value) { m_canvasAppSettingsHasBeenSet = true; m_canvasAppSettings = std::move(value); }
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline UserSettings& WithCanvasAppSettings(const CanvasAppSettings& value) { SetCanvasAppSettings(value); return *this;}
+
+    /**
+     * <p>The Canvas app settings.</p>
+     */
+    inline UserSettings& WithCanvasAppSettings(CanvasAppSettings&& value) { SetCanvasAppSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     SharingSettings m_sharingSettings;
-    bool m_sharingSettingsHasBeenSet;
+    bool m_sharingSettingsHasBeenSet = false;
 
     JupyterServerAppSettings m_jupyterServerAppSettings;
-    bool m_jupyterServerAppSettingsHasBeenSet;
+    bool m_jupyterServerAppSettingsHasBeenSet = false;
 
     KernelGatewayAppSettings m_kernelGatewayAppSettings;
-    bool m_kernelGatewayAppSettingsHasBeenSet;
+    bool m_kernelGatewayAppSettingsHasBeenSet = false;
 
     TensorBoardAppSettings m_tensorBoardAppSettings;
-    bool m_tensorBoardAppSettingsHasBeenSet;
+    bool m_tensorBoardAppSettingsHasBeenSet = false;
 
     RStudioServerProAppSettings m_rStudioServerProAppSettings;
-    bool m_rStudioServerProAppSettingsHasBeenSet;
+    bool m_rStudioServerProAppSettingsHasBeenSet = false;
 
     RSessionAppSettings m_rSessionAppSettings;
-    bool m_rSessionAppSettingsHasBeenSet;
+    bool m_rSessionAppSettingsHasBeenSet = false;
+
+    CanvasAppSettings m_canvasAppSettings;
+    bool m_canvasAppSettingsHasBeenSet = false;
   };
 
 } // namespace Model

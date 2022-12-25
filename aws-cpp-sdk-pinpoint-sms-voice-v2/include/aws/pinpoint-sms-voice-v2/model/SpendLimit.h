@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SpendLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API SpendLimit
+  class SpendLimit
   {
   public:
-    SpendLimit();
-    SpendLimit(Aws::Utils::Json::JsonView jsonValue);
-    SpendLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API SpendLimit();
+    AWS_PINPOINTSMSVOICEV2_API SpendLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API SpendLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,16 +162,16 @@ namespace Model
   private:
 
     SpendLimitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_enforcedLimit;
-    bool m_enforcedLimitHasBeenSet;
+    bool m_enforcedLimitHasBeenSet = false;
 
     long long m_maxLimit;
-    bool m_maxLimitHasBeenSet;
+    bool m_maxLimitHasBeenSet = false;
 
     bool m_overridden;
-    bool m_overriddenHasBeenSet;
+    bool m_overriddenHasBeenSet = false;
   };
 
 } // namespace Model

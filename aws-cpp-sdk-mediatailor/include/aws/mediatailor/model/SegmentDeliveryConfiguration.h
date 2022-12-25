@@ -24,29 +24,25 @@ namespace Model
 {
 
   /**
-   * <p>The base URL of the host or path of the segment delivery server that you're
-   * using to serve segments. This is typically a content delivery network (CDN). The
-   * URL can be absolute or relative. To use an absolute URL include the protocol,
-   * such as https://example.com/some/path. To use a relative URL specify the
-   * relative path, such as /some/path*.</p><p><h3>See Also:</h3>   <a
+   * <p>The segment delivery configuration settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SegmentDeliveryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SegmentDeliveryConfiguration
+  class SegmentDeliveryConfiguration
   {
   public:
-    SegmentDeliveryConfiguration();
-    SegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration();
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline const Aws::String& GetBaseUrl() const{ return m_baseUrl; }
 
@@ -54,8 +50,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
 
@@ -63,8 +59,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline void SetBaseUrl(const Aws::String& value) { m_baseUrlHasBeenSet = true; m_baseUrl = value; }
 
@@ -72,8 +68,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline void SetBaseUrl(Aws::String&& value) { m_baseUrlHasBeenSet = true; m_baseUrl = std::move(value); }
 
@@ -81,8 +77,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline void SetBaseUrl(const char* value) { m_baseUrlHasBeenSet = true; m_baseUrl.assign(value); }
 
@@ -90,8 +86,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline SegmentDeliveryConfiguration& WithBaseUrl(const Aws::String& value) { SetBaseUrl(value); return *this;}
 
@@ -99,8 +95,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline SegmentDeliveryConfiguration& WithBaseUrl(Aws::String&& value) { SetBaseUrl(std::move(value)); return *this;}
 
@@ -108,8 +104,8 @@ namespace Model
      * <p>The base URL of the host or path of the segment delivery server that you're
      * using to serve segments. This is typically a content delivery network (CDN). The
      * URL can be absolute or relative. To use an absolute URL include the protocol,
-     * such as https://example.com/some/path. To use a relative URL specify the
-     * relative path, such as /some/path*.</p>
+     * such as <code>https://example.com/some/path</code>. To use a relative URL
+     * specify the relative path, such as <code>/some/path*</code>.</p>
      */
     inline SegmentDeliveryConfiguration& WithBaseUrl(const char* value) { SetBaseUrl(value); return *this;}
 
@@ -165,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

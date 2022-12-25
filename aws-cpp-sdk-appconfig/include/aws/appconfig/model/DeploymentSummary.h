@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeploymentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API DeploymentSummary
+  class DeploymentSummary
   {
   public:
-    DeploymentSummary();
-    DeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API DeploymentSummary();
+    AWS_APPCONFIG_API DeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API DeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,37 +361,37 @@ namespace Model
   private:
 
     int m_deploymentNumber;
-    bool m_deploymentNumberHasBeenSet;
+    bool m_deploymentNumberHasBeenSet = false;
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
 
     Aws::String m_configurationVersion;
-    bool m_configurationVersionHasBeenSet;
+    bool m_configurationVersionHasBeenSet = false;
 
     int m_deploymentDurationInMinutes;
-    bool m_deploymentDurationInMinutesHasBeenSet;
+    bool m_deploymentDurationInMinutesHasBeenSet = false;
 
     GrowthType m_growthType;
-    bool m_growthTypeHasBeenSet;
+    bool m_growthTypeHasBeenSet = false;
 
     double m_growthFactor;
-    bool m_growthFactorHasBeenSet;
+    bool m_growthFactorHasBeenSet = false;
 
     int m_finalBakeTimeInMinutes;
-    bool m_finalBakeTimeInMinutesHasBeenSet;
+    bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
     DeploymentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     double m_percentageComplete;
-    bool m_percentageCompleteHasBeenSet;
+    bool m_percentageCompleteHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
   };
 
 } // namespace Model

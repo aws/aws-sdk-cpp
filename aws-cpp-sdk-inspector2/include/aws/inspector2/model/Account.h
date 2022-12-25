@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Account">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Account();
+    AWS_INSPECTOR2_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     ResourceStatus m_resourceStatus;
-    bool m_resourceStatusHasBeenSet;
+    bool m_resourceStatusHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

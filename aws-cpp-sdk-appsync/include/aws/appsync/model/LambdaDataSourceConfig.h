@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API LambdaDataSourceConfig
+  class LambdaDataSourceConfig
   {
   public:
-    LambdaDataSourceConfig();
-    LambdaDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    LambdaDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API LambdaDataSourceConfig();
+    AWS_APPSYNC_API LambdaDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API LambdaDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
   };
 
 } // namespace Model

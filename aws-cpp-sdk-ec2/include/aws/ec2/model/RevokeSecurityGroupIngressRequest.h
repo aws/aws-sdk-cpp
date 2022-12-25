@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API RevokeSecurityGroupIngressRequest : public EC2Request
+  class RevokeSecurityGroupIngressRequest : public EC2Request
   {
   public:
-    RevokeSecurityGroupIngressRequest();
+    AWS_EC2_API RevokeSecurityGroupIngressRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeSecurityGroupIngress"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -175,49 +175,57 @@ namespace Model
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request.</p>
+     * either the security group ID or the security group name in the request. For
+     * security groups in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -608,37 +616,37 @@ namespace Model
   private:
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
+    bool m_ipPermissionsHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupName;
-    bool m_sourceSecurityGroupNameHasBeenSet;
+    bool m_sourceSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupOwnerId;
-    bool m_sourceSecurityGroupOwnerIdHasBeenSet;
+    bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupRuleIds;
-    bool m_securityGroupRuleIdsHasBeenSet;
+    bool m_securityGroupRuleIdsHasBeenSet = false;
   };
 
 } // namespace Model

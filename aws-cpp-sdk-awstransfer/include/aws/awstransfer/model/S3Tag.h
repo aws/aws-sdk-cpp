@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_TRANSFER_API S3Tag
+  class S3Tag
   {
   public:
-    S3Tag();
-    S3Tag(Aws::Utils::Json::JsonView jsonValue);
-    S3Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API S3Tag();
+    AWS_TRANSFER_API S3Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API S3Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

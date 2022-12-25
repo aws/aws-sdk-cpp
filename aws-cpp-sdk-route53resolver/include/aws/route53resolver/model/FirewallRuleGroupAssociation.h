@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleGroupAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API FirewallRuleGroupAssociation
+  class FirewallRuleGroupAssociation
   {
   public:
-    FirewallRuleGroupAssociation();
-    FirewallRuleGroupAssociation(Aws::Utils::Json::JsonView jsonValue);
-    FirewallRuleGroupAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroupAssociation();
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroupAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroupAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -603,43 +603,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_firewallRuleGroupId;
-    bool m_firewallRuleGroupIdHasBeenSet;
+    bool m_firewallRuleGroupIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     MutationProtectionStatus m_mutationProtection;
-    bool m_mutationProtectionHasBeenSet;
+    bool m_mutationProtectionHasBeenSet = false;
 
     Aws::String m_managedOwnerName;
-    bool m_managedOwnerNameHasBeenSet;
+    bool m_managedOwnerNameHasBeenSet = false;
 
     FirewallRuleGroupAssociationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_modificationTime;
-    bool m_modificationTimeHasBeenSet;
+    bool m_modificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API LambdaFunctionFailedEventAttributes
+  class LambdaFunctionFailedEventAttributes
   {
   public:
-    LambdaFunctionFailedEventAttributes();
-    LambdaFunctionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API LambdaFunctionFailedEventAttributes();
+    AWS_SWF_API LambdaFunctionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API LambdaFunctionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,16 +180,16 @@ namespace Model
   private:
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

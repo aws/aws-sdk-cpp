@@ -5,133 +5,16 @@
 
 #pragma once
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
-#include <aws/timestream-write/TimestreamWriteErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/timestream-write/model/CreateDatabaseResult.h>
-#include <aws/timestream-write/model/CreateTableResult.h>
-#include <aws/timestream-write/model/DescribeDatabaseResult.h>
-#include <aws/timestream-write/model/DescribeEndpointsResult.h>
-#include <aws/timestream-write/model/DescribeTableResult.h>
-#include <aws/timestream-write/model/ListDatabasesResult.h>
-#include <aws/timestream-write/model/ListTablesResult.h>
-#include <aws/timestream-write/model/ListTagsForResourceResult.h>
-#include <aws/timestream-write/model/TagResourceResult.h>
-#include <aws/timestream-write/model/UntagResourceResult.h>
-#include <aws/timestream-write/model/UpdateDatabaseResult.h>
-#include <aws/timestream-write/model/UpdateTableResult.h>
-#include <aws/timestream-write/model/WriteRecordsResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <aws/core/utils/ConcurrentCache.h>
-#include <future>
-#include <functional>
+#include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace TimestreamWrite
 {
-
-namespace Model
-{
-        class CreateDatabaseRequest;
-        class CreateTableRequest;
-        class DeleteDatabaseRequest;
-        class DeleteTableRequest;
-        class DescribeDatabaseRequest;
-        class DescribeEndpointsRequest;
-        class DescribeTableRequest;
-        class ListDatabasesRequest;
-        class ListTablesRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDatabaseRequest;
-        class UpdateTableRequest;
-        class WriteRecordsRequest;
-
-        typedef Aws::Utils::Outcome<CreateDatabaseResult, TimestreamWriteError> CreateDatabaseOutcome;
-        typedef Aws::Utils::Outcome<CreateTableResult, TimestreamWriteError> CreateTableOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamWriteError> DeleteDatabaseOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamWriteError> DeleteTableOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatabaseResult, TimestreamWriteError> DescribeDatabaseOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointsResult, TimestreamWriteError> DescribeEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTableResult, TimestreamWriteError> DescribeTableOutcome;
-        typedef Aws::Utils::Outcome<ListDatabasesResult, TimestreamWriteError> ListDatabasesOutcome;
-        typedef Aws::Utils::Outcome<ListTablesResult, TimestreamWriteError> ListTablesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, TimestreamWriteError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, TimestreamWriteError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, TimestreamWriteError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDatabaseResult, TimestreamWriteError> UpdateDatabaseOutcome;
-        typedef Aws::Utils::Outcome<UpdateTableResult, TimestreamWriteError> UpdateTableOutcome;
-        typedef Aws::Utils::Outcome<WriteRecordsResult, TimestreamWriteError> WriteRecordsOutcome;
-
-        typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
-        typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
-        typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
-        typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
-        typedef std::future<DescribeDatabaseOutcome> DescribeDatabaseOutcomeCallable;
-        typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
-        typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
-        typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
-        typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDatabaseOutcome> UpdateDatabaseOutcomeCallable;
-        typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
-        typedef std::future<WriteRecordsOutcome> WriteRecordsOutcomeCallable;
-} // namespace Model
-
-  class TimestreamWriteClient;
-
-    typedef std::function<void(const TimestreamWriteClient*, const Model::CreateDatabaseRequest&, const Model::CreateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatabaseResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::CreateTableRequest&, const Model::CreateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTableResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::DeleteDatabaseRequest&, const Model::DeleteDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatabaseResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::DeleteTableRequest&, const Model::DeleteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTableResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::DescribeDatabaseRequest&, const Model::DescribeDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatabaseResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::ListTablesRequest&, const Model::ListTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTablesResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::UpdateDatabaseRequest&, const Model::UpdateDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatabaseResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
-    typedef std::function<void(const TimestreamWriteClient*, const Model::WriteRecordsRequest&, const Model::WriteRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > WriteRecordsResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Timestream Write</fullname> <p>Amazon Timestream is a fast,
    * scalable, fully managed time series database service that makes it easy to store
@@ -147,32 +30,60 @@ namespace Model
    * grows over time, Timestream’s adaptive query processing engine spans across
    * storage tiers to provide fast analysis while reducing costs.</p>
    */
-  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient
+  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TimestreamWriteClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TimestreamWriteClient(const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration(),
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TimestreamWriteClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TimestreamWriteClient(const Aws::Auth::AWSCredentials& credentials,
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TimestreamWriteClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<TimestreamWriteEndpointProviderBase> endpointProvider = Aws::MakeShared<TimestreamWriteEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::TimestreamWrite::TimestreamWriteClientConfiguration& clientConfiguration = Aws::TimestreamWrite::TimestreamWriteClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TimestreamWriteClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        TimestreamWriteClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        TimestreamWriteClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~TimestreamWriteClient();
-
 
         /**
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
@@ -549,30 +460,15 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-      void LoadTimestreamWriteSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDatabaseAsyncHelper(const Model::CreateDatabaseRequest& request, const CreateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTableAsyncHelper(const Model::CreateTableRequest& request, const CreateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatabaseAsyncHelper(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTableAsyncHelper(const Model::DeleteTableRequest& request, const DeleteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatabaseAsyncHelper(const Model::DescribeDatabaseRequest& request, const DescribeDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatabasesAsyncHelper(const Model::ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTablesAsyncHelper(const Model::ListTablesRequest& request, const ListTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDatabaseAsyncHelper(const Model::UpdateDatabaseRequest& request, const UpdateDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void WriteRecordsAsyncHelper(const Model::WriteRecordsRequest& request, const WriteRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;
+      void init(const TimestreamWriteClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      bool m_enableEndpointDiscovery;
-      Aws::String m_configScheme;
+      TimestreamWriteClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<TimestreamWriteEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TimestreamWrite

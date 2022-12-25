@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GeneratedManifestEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API GeneratedManifestEncryption
+  class GeneratedManifestEncryption
   {
   public:
-    GeneratedManifestEncryption();
-    GeneratedManifestEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GeneratedManifestEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API GeneratedManifestEncryption();
+    AWS_S3CONTROL_API GeneratedManifestEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API GeneratedManifestEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SSES3Encryption m_sSES3;
-    bool m_sSES3HasBeenSet;
+    bool m_sSES3HasBeenSet = false;
 
     SSEKMSEncryption m_sSEKMS;
-    bool m_sSEKMSHasBeenSet;
+    bool m_sSEKMSHasBeenSet = false;
   };
 
 } // namespace Model

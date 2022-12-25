@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API ListQualificationTypesRequest : public MTurkRequest
+  class ListQualificationTypesRequest : public MTurkRequest
   {
   public:
-    ListQualificationTypesRequest();
+    AWS_MTURK_API ListQualificationTypesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListQualificationTypes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -197,19 +197,19 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     bool m_mustBeRequestable;
-    bool m_mustBeRequestableHasBeenSet;
+    bool m_mustBeRequestableHasBeenSet = false;
 
     bool m_mustBeOwnedByCaller;
-    bool m_mustBeOwnedByCallerHasBeenSet;
+    bool m_mustBeOwnedByCallerHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

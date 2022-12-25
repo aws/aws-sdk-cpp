@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FreeTrialAccountInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FreeTrialAccountInfo
+  class FreeTrialAccountInfo
   {
   public:
-    FreeTrialAccountInfo();
-    FreeTrialAccountInfo(Aws::Utils::Json::JsonView jsonValue);
-    FreeTrialAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FreeTrialAccountInfo();
+    AWS_INSPECTOR2_API FreeTrialAccountInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FreeTrialAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<FreeTrialInfo> m_freeTrialInfo;
-    bool m_freeTrialInfoHasBeenSet;
+    bool m_freeTrialInfoHasBeenSet = false;
   };
 
 } // namespace Model

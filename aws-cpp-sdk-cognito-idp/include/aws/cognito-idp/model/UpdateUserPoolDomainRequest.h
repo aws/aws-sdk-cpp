@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomainRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolDomainRequest : public CognitoIdentityProviderRequest
+  class UpdateUserPoolDomainRequest : public CognitoIdentityProviderRequest
   {
   public:
-    UpdateUserPoolDomainRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateUserPoolDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateUserPoolDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -205,13 +205,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;
-    bool m_customDomainConfigHasBeenSet;
+    bool m_customDomainConfigHasBeenSet = false;
   };
 
 } // namespace Model

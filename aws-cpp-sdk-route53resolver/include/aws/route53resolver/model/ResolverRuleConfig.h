@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRuleConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverRuleConfig
+  class ResolverRuleConfig
   {
   public:
-    ResolverRuleConfig();
-    ResolverRuleConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResolverRuleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverRuleConfig();
+    AWS_ROUTE53RESOLVER_API ResolverRuleConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverRuleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<TargetAddress> m_targetIps;
-    bool m_targetIpsHasBeenSet;
+    bool m_targetIpsHasBeenSet = false;
 
     Aws::String m_resolverEndpointId;
-    bool m_resolverEndpointIdHasBeenSet;
+    bool m_resolverEndpointIdHasBeenSet = false;
   };
 
 } // namespace Model

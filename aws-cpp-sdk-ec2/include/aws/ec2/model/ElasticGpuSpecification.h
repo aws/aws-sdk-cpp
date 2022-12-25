@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ElasticGpuSpecification
+  class ElasticGpuSpecification
   {
   public:
-    ElasticGpuSpecification();
-    ElasticGpuSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ElasticGpuSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpuSpecification();
+    AWS_EC2_API ElasticGpuSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpuSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

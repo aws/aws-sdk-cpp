@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API DeregisterResourceRequest : public LakeFormationRequest
+  class DeregisterResourceRequest : public LakeFormationRequest
   {
   public:
-    DeregisterResourceRequest();
+    AWS_LAKEFORMATION_API DeregisterResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeregisterResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

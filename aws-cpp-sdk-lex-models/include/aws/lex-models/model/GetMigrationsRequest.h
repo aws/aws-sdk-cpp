@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API GetMigrationsRequest : public LexModelBuildingServiceRequest
+  class GetMigrationsRequest : public LexModelBuildingServiceRequest
   {
   public:
-    GetMigrationsRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetMigrationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMigrations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LEXMODELBUILDINGSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -281,22 +281,22 @@ namespace Model
   private:
 
     MigrationSortAttribute m_sortByAttribute;
-    bool m_sortByAttributeHasBeenSet;
+    bool m_sortByAttributeHasBeenSet = false;
 
     SortOrder m_sortByOrder;
-    bool m_sortByOrderHasBeenSet;
+    bool m_sortByOrderHasBeenSet = false;
 
     Aws::String m_v1BotNameContains;
-    bool m_v1BotNameContainsHasBeenSet;
+    bool m_v1BotNameContainsHasBeenSet = false;
 
     MigrationStatus m_migrationStatusEquals;
-    bool m_migrationStatusEqualsHasBeenSet;
+    bool m_migrationStatusEqualsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

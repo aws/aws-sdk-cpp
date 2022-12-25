@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/MemberAccountStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API MemberAccountStatus
+  class MemberAccountStatus
   {
   public:
-    MemberAccountStatus();
-    MemberAccountStatus(Aws::Utils::Json::JsonView jsonValue);
-    MemberAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API MemberAccountStatus();
+    AWS_CONFIGSERVICE_API MemberAccountStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API MemberAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,19 +125,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -151,19 +151,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -177,19 +177,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -203,19 +203,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -229,19 +229,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -255,19 +255,19 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for Config rule in the member account. When
-     * master account calls <code>PutOrganizationConfigRule</code> action for the first
-     * time, Config rule status is created in the member account. When master account
-     * calls <code>PutOrganizationConfigRule</code> action for the second time, Config
-     * rule status is updated in the member account. Config rule status is deleted when
-     * the master account deletes <code>OrganizationConfigRule</code> and disables
-     * service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>
-     * Config sets the state of the rule to:</p> <ul> <li> <p>
-     * <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member
-     * account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is
-     * being created in the member account.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> when Config rule creation has failed in the member
-     * account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when Config rule deletion
-     * has failed in the member account.</p> </li> <li> <p>
+     * management account calls <code>PutOrganizationConfigRule</code> action for the
+     * first time, Config rule status is created in the member account. When management
+     * account calls <code>PutOrganizationConfigRule</code> action for the second time,
+     * Config rule status is updated in the member account. Config rule status is
+     * deleted when the management account deletes <code>OrganizationConfigRule</code>
+     * and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when
+     * Config rule has been created in the member account. </p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member
+     * account.</p> </li> <li> <p> <code>CREATE_FAILED</code> when Config rule creation
+     * has failed in the member account.</p> </li> <li> <p> <code>DELETE_FAILED</code>
+     * when Config rule deletion has failed in the member account.</p> </li> <li> <p>
      * <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member
      * account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has
      * been deleted in the member account. </p> </li> <li> <p>
@@ -411,22 +411,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     MemberAccountRuleStatus m_memberAccountRuleStatus;
-    bool m_memberAccountRuleStatusHasBeenSet;
+    bool m_memberAccountRuleStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

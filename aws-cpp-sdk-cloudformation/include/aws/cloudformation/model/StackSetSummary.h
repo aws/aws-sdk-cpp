@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSetSummary
+  class StackSetSummary
   {
   public:
-    StackSetSummary();
-    StackSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetSummary();
+    AWS_CLOUDFORMATION_API StackSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -521,31 +521,31 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_stackSetId;
-    bool m_stackSetIdHasBeenSet;
+    bool m_stackSetIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     StackSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
-    bool m_autoDeploymentHasBeenSet;
+    bool m_autoDeploymentHasBeenSet = false;
 
     PermissionModels m_permissionModel;
-    bool m_permissionModelHasBeenSet;
+    bool m_permissionModelHasBeenSet = false;
 
     StackDriftStatus m_driftStatus;
-    bool m_driftStatusHasBeenSet;
+    bool m_driftStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
-    bool m_lastDriftCheckTimestampHasBeenSet;
+    bool m_lastDriftCheckTimestampHasBeenSet = false;
 
     ManagedExecution m_managedExecution;
-    bool m_managedExecutionHasBeenSet;
+    bool m_managedExecutionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DestinationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DestinationDetails
+  class DestinationDetails
   {
   public:
-    DestinationDetails();
-    DestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API DestinationDetails();
+    AWS_ELASTICACHE_API DestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API DestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     CloudWatchLogsDestinationDetails m_cloudWatchLogsDetails;
-    bool m_cloudWatchLogsDetailsHasBeenSet;
+    bool m_cloudWatchLogsDetailsHasBeenSet = false;
 
     KinesisFirehoseDestinationDetails m_kinesisFirehoseDetails;
-    bool m_kinesisFirehoseDetailsHasBeenSet;
+    bool m_kinesisFirehoseDetailsHasBeenSet = false;
   };
 
 } // namespace Model

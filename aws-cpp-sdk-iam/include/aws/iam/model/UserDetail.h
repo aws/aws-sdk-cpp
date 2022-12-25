@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UserDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API UserDetail
+  class UserDetail
   {
   public:
-    UserDetail();
-    UserDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API UserDetail();
+    AWS_IAM_API UserDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API UserDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -517,34 +517,34 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<PolicyDetail> m_userPolicyList;
-    bool m_userPolicyListHasBeenSet;
+    bool m_userPolicyListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupList;
-    bool m_groupListHasBeenSet;
+    bool m_groupListHasBeenSet = false;
 
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     AttachedPermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

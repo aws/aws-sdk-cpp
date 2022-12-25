@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Attribute">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(Aws::Utils::Json::JsonView jsonValue);
-    Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Attribute();
+    AWS_CONNECT_API Attribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     InstanceAttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

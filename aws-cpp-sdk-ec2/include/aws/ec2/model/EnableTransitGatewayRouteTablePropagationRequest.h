@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API EnableTransitGatewayRouteTablePropagationRequest : public EC2Request
+  class EnableTransitGatewayRouteTablePropagationRequest : public EC2Request
   {
   public:
-    EnableTransitGatewayRouteTablePropagationRequest();
+    AWS_EC2_API EnableTransitGatewayRouteTablePropagationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "EnableTransitGatewayRouteTablePropagation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -150,16 +150,60 @@ namespace Model
      */
     inline EnableTransitGatewayRouteTablePropagationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline const Aws::String& GetTransitGatewayRouteTableAnnouncementId() const{ return m_transitGatewayRouteTableAnnouncementId; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline bool TransitGatewayRouteTableAnnouncementIdHasBeenSet() const { return m_transitGatewayRouteTableAnnouncementIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = value; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const char* value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline EnableTransitGatewayRouteTablePropagationRequest& WithTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline EnableTransitGatewayRouteTablePropagationRequest& WithTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { SetTransitGatewayRouteTableAnnouncementId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement.</p>
+     */
+    inline EnableTransitGatewayRouteTablePropagationRequest& WithTransitGatewayRouteTableAnnouncementId(const char* value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_transitGatewayRouteTableAnnouncementId;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
   };
 
 } // namespace Model

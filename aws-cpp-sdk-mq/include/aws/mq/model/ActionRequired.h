@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ActionRequired">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API ActionRequired
+  class ActionRequired
   {
   public:
-    ActionRequired();
-    ActionRequired(Aws::Utils::Json::JsonView jsonValue);
-    ActionRequired& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API ActionRequired();
+    AWS_MQ_API ActionRequired(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API ActionRequired& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_actionRequiredCode;
-    bool m_actionRequiredCodeHasBeenSet;
+    bool m_actionRequiredCodeHasBeenSet = false;
 
     Aws::String m_actionRequiredInfo;
-    bool m_actionRequiredInfoHasBeenSet;
+    bool m_actionRequiredInfoHasBeenSet = false;
   };
 
 } // namespace Model

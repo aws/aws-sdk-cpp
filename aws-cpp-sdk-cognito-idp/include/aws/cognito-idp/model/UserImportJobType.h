@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserImportJobType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserImportJobType
+  class UserImportJobType
   {
   public:
-    UserImportJobType();
-    UserImportJobType(Aws::Utils::Json::JsonView jsonValue);
-    UserImportJobType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserImportJobType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserImportJobType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserImportJobType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -570,43 +570,43 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     UserImportJobStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     long long m_importedUsers;
-    bool m_importedUsersHasBeenSet;
+    bool m_importedUsersHasBeenSet = false;
 
     long long m_skippedUsers;
-    bool m_skippedUsersHasBeenSet;
+    bool m_skippedUsersHasBeenSet = false;
 
     long long m_failedUsers;
-    bool m_failedUsersHasBeenSet;
+    bool m_failedUsersHasBeenSet = false;
 
     Aws::String m_completionMessage;
-    bool m_completionMessageHasBeenSet;
+    bool m_completionMessageHasBeenSet = false;
   };
 
 } // namespace Model

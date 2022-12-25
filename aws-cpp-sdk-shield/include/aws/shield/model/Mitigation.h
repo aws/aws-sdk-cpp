@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Mitigation">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API Mitigation
+  class Mitigation
   {
   public:
-    Mitigation();
-    Mitigation(Aws::Utils::Json::JsonView jsonValue);
-    Mitigation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API Mitigation();
+    AWS_SHIELD_API Mitigation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Mitigation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_mitigationName;
-    bool m_mitigationNameHasBeenSet;
+    bool m_mitigationNameHasBeenSet = false;
   };
 
 } // namespace Model

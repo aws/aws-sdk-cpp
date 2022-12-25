@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingRule
+  class SamplingRule
   {
   public:
-    SamplingRule();
-    SamplingRule(Aws::Utils::Json::JsonView jsonValue);
-    SamplingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingRule();
+    AWS_XRAY_API SamplingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -573,43 +573,43 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_ruleARN;
-    bool m_ruleARNHasBeenSet;
+    bool m_ruleARNHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     double m_fixedRate;
-    bool m_fixedRateHasBeenSet;
+    bool m_fixedRateHasBeenSet = false;
 
     int m_reservoirSize;
-    bool m_reservoirSizeHasBeenSet;
+    bool m_reservoirSizeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_hTTPMethod;
-    bool m_hTTPMethodHasBeenSet;
+    bool m_hTTPMethodHasBeenSet = false;
 
     Aws::String m_uRLPath;
-    bool m_uRLPathHasBeenSet;
+    bool m_uRLPathHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Statistics">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Statistics
+  class Statistics
   {
   public:
-    Statistics();
-    Statistics(Aws::Utils::Json::JsonView jsonValue);
-    Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Statistics();
+    AWS_FORECASTSERVICE_API Statistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -378,40 +378,40 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_countDistinct;
-    bool m_countDistinctHasBeenSet;
+    bool m_countDistinctHasBeenSet = false;
 
     int m_countNull;
-    bool m_countNullHasBeenSet;
+    bool m_countNullHasBeenSet = false;
 
     int m_countNan;
-    bool m_countNanHasBeenSet;
+    bool m_countNanHasBeenSet = false;
 
     Aws::String m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     Aws::String m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     double m_avg;
-    bool m_avgHasBeenSet;
+    bool m_avgHasBeenSet = false;
 
     double m_stddev;
-    bool m_stddevHasBeenSet;
+    bool m_stddevHasBeenSet = false;
 
     long long m_countLong;
-    bool m_countLongHasBeenSet;
+    bool m_countLongHasBeenSet = false;
 
     long long m_countDistinctLong;
-    bool m_countDistinctLongHasBeenSet;
+    bool m_countDistinctLongHasBeenSet = false;
 
     long long m_countNullLong;
-    bool m_countNullLongHasBeenSet;
+    bool m_countNullLongHasBeenSet = false;
 
     long long m_countNanLong;
-    bool m_countNanLongHasBeenSet;
+    bool m_countNanLongHasBeenSet = false;
   };
 
 } // namespace Model

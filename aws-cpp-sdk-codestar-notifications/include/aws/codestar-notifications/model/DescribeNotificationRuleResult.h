@@ -31,12 +31,12 @@ namespace CodeStarNotifications
 {
 namespace Model
 {
-  class AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult
+  class DescribeNotificationRuleResult
   {
   public:
-    DescribeNotificationRuleResult();
-    DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNotificationRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult();
+    AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -191,44 +191,51 @@ namespace Model
 
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline const Aws::Vector<TargetSummary>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline void SetTargets(const Aws::Vector<TargetSummary>& value) { m_targets = value; }
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline void SetTargets(Aws::Vector<TargetSummary>&& value) { m_targets = std::move(value); }
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline DescribeNotificationRuleResult& WithTargets(const Aws::Vector<TargetSummary>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline DescribeNotificationRuleResult& WithTargets(Aws::Vector<TargetSummary>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline DescribeNotificationRuleResult& AddTargets(const TargetSummary& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <p>A list of the SNS topics associated with the notification rule.</p>
+     * <p>A list of the Chatbot topics and Chatbot clients associated with the
+     * notification rule.</p>
      */
     inline DescribeNotificationRuleResult& AddTargets(TargetSummary&& value) { m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -237,7 +244,7 @@ namespace Model
 
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -246,7 +253,7 @@ namespace Model
 
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -255,7 +262,7 @@ namespace Model
 
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
@@ -264,7 +271,7 @@ namespace Model
 
     /**
      * <p>The level of detail included in the notifications for this resource. BASIC
-     * will include only the contents of the event as it would appear in AWS
+     * will include only the contents of the event as it would appear in Amazon
      * CloudWatch. FULL will include any supplemental information provided by AWS
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>

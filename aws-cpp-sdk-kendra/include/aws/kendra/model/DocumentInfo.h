@@ -31,52 +31,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentInfo
+  class DocumentInfo
   {
   public:
-    DocumentInfo();
-    DocumentInfo(Aws::Utils::Json::JsonView jsonValue);
-    DocumentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentInfo();
+    AWS_KENDRA_API DocumentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline DocumentInfo& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline DocumentInfo& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline DocumentInfo& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
@@ -188,10 +188,10 @@ namespace Model
   private:
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::Vector<DocumentAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

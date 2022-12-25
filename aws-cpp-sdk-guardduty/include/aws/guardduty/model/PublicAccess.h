@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API PublicAccess
+  class PublicAccess
   {
   public:
-    PublicAccess();
-    PublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API PublicAccess();
+    AWS_GUARDDUTY_API PublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     PermissionConfiguration m_permissionConfiguration;
-    bool m_permissionConfigurationHasBeenSet;
+    bool m_permissionConfigurationHasBeenSet = false;
 
     Aws::String m_effectivePermission;
-    bool m_effectivePermissionHasBeenSet;
+    bool m_effectivePermissionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClustersMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeDBClustersRequest : public RDSRequest
+  class DescribeDBClustersRequest : public RDSRequest
   {
   public:
-    DescribeDBClustersRequest();
+    AWS_RDS_API DescribeDBClustersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,74 +34,82 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDBClusters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -352,19 +360,19 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_includeShared;
-    bool m_includeSharedHasBeenSet;
+    bool m_includeSharedHasBeenSet = false;
   };
 
 } // namespace Model

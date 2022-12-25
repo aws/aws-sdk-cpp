@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API ListRecoveryPointsByBackupVaultRequest : public BackupRequest
+  class ListRecoveryPointsByBackupVaultRequest : public BackupRequest
   {
   public:
-    ListRecoveryPointsByBackupVaultRequest();
+    AWS_BACKUP_API ListRecoveryPointsByBackupVaultRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRecoveryPointsByBackupVault"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -402,31 +402,83 @@ namespace Model
      */
     inline ListRecoveryPointsByBackupVaultRequest& WithByCreatedAfter(Aws::Utils::DateTime&& value) { SetByCreatedAfter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetByParentRecoveryPointArn() const{ return m_byParentRecoveryPointArn; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline bool ByParentRecoveryPointArnHasBeenSet() const { return m_byParentRecoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(const Aws::String& value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn = value; }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(Aws::String&& value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn = std::move(value); }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByParentRecoveryPointArn(const char* value) { m_byParentRecoveryPointArnHasBeenSet = true; m_byParentRecoveryPointArn.assign(value); }
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(const Aws::String& value) { SetByParentRecoveryPointArn(value); return *this;}
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(Aws::String&& value) { SetByParentRecoveryPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns only recovery points that match the specified parent (composite)
+     * recovery point Amazon Resource Name (ARN).</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithByParentRecoveryPointArn(const char* value) { SetByParentRecoveryPointArn(value); return *this;}
+
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_byResourceArn;
-    bool m_byResourceArnHasBeenSet;
+    bool m_byResourceArnHasBeenSet = false;
 
     Aws::String m_byResourceType;
-    bool m_byResourceTypeHasBeenSet;
+    bool m_byResourceTypeHasBeenSet = false;
 
     Aws::String m_byBackupPlanId;
-    bool m_byBackupPlanIdHasBeenSet;
+    bool m_byBackupPlanIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
-    bool m_byCreatedBeforeHasBeenSet;
+    bool m_byCreatedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedAfter;
-    bool m_byCreatedAfterHasBeenSet;
+    bool m_byCreatedAfterHasBeenSet = false;
+
+    Aws::String m_byParentRecoveryPointArn;
+    bool m_byParentRecoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

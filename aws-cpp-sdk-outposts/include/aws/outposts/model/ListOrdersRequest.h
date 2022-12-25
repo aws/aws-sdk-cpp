@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API ListOrdersRequest : public OutpostsRequest
+  class ListOrdersRequest : public OutpostsRequest
   {
   public:
-    ListOrdersRequest();
+    AWS_OUTPOSTS_API ListOrdersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListOrders"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -119,13 +119,13 @@ namespace Model
   private:
 
     Aws::String m_outpostIdentifierFilter;
-    bool m_outpostIdentifierFilterHasBeenSet;
+    bool m_outpostIdentifierFilterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

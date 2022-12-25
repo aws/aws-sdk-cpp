@@ -30,7 +30,7 @@ BatchDescribeMergeConflictsResult& BatchDescribeMergeConflictsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("conflicts"))
   {
-    Array<JsonView> conflictsJsonList = jsonValue.GetArray("conflicts");
+    Aws::Utils::Array<JsonView> conflictsJsonList = jsonValue.GetArray("conflicts");
     for(unsigned conflictsIndex = 0; conflictsIndex < conflictsJsonList.GetLength(); ++conflictsIndex)
     {
       m_conflicts.push_back(conflictsJsonList[conflictsIndex].AsObject());
@@ -45,7 +45,7 @@ BatchDescribeMergeConflictsResult& BatchDescribeMergeConflictsResult::operator =
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

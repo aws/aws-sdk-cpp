@@ -28,46 +28,46 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API UpdateVodSourceResult
+  class UpdateVodSourceResult
   {
   public:
-    UpdateVodSourceResult();
-    UpdateVodSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVodSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateVodSourceResult();
+    AWS_MEDIATAILOR_API UpdateVodSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateVodSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline UpdateVodSourceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline UpdateVodSourceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the VOD source.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
      */
     inline UpdateVodSourceResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -99,63 +99,63 @@ namespace Model
 
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline const Aws::Vector<HttpPackageConfiguration>& GetHttpPackageConfigurations() const{ return m_httpPackageConfigurations; }
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline void SetHttpPackageConfigurations(const Aws::Vector<HttpPackageConfiguration>& value) { m_httpPackageConfigurations = value; }
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline void SetHttpPackageConfigurations(Aws::Vector<HttpPackageConfiguration>&& value) { m_httpPackageConfigurations = std::move(value); }
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline UpdateVodSourceResult& WithHttpPackageConfigurations(const Aws::Vector<HttpPackageConfiguration>& value) { SetHttpPackageConfigurations(value); return *this;}
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline UpdateVodSourceResult& WithHttpPackageConfigurations(Aws::Vector<HttpPackageConfiguration>&& value) { SetHttpPackageConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline UpdateVodSourceResult& AddHttpPackageConfigurations(const HttpPackageConfiguration& value) { m_httpPackageConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The HTTP package configurations.</p>
+     * <p>A list of HTTP package configurations for the VOD source on this account.</p>
      */
     inline UpdateVodSourceResult& AddHttpPackageConfigurations(HttpPackageConfiguration&& value) { m_httpPackageConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The last modified time of the VOD source.</p>
+     * <p>The timestamp that indicates when the VOD source was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last modified time of the VOD source.</p>
+     * <p>The timestamp that indicates when the VOD source was last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The last modified time of the VOD source.</p>
+     * <p>The timestamp that indicates when the VOD source was last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The last modified time of the VOD source.</p>
+     * <p>The timestamp that indicates when the VOD source was last modified.</p>
      */
     inline UpdateVodSourceResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The last modified time of the VOD source.</p>
+     * <p>The timestamp that indicates when the VOD source was last modified.</p>
      */
     inline UpdateVodSourceResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
@@ -197,62 +197,110 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateVodSourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareInvitation">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceShareInvitation
+  class ResourceShareInvitation
   {
   public:
-    ResourceShareInvitation();
-    ResourceShareInvitation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceShareInvitation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceShareInvitation();
+    AWS_RAM_API ResourceShareInvitation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceShareInvitation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -398,28 +398,28 @@ namespace Model
   private:
 
     Aws::String m_resourceShareInvitationArn;
-    bool m_resourceShareInvitationArnHasBeenSet;
+    bool m_resourceShareInvitationArnHasBeenSet = false;
 
     Aws::String m_resourceShareName;
-    bool m_resourceShareNameHasBeenSet;
+    bool m_resourceShareNameHasBeenSet = false;
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::String m_senderAccountId;
-    bool m_senderAccountIdHasBeenSet;
+    bool m_senderAccountIdHasBeenSet = false;
 
     Aws::String m_receiverAccountId;
-    bool m_receiverAccountIdHasBeenSet;
+    bool m_receiverAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_invitationTimestamp;
-    bool m_invitationTimestampHasBeenSet;
+    bool m_invitationTimestampHasBeenSet = false;
 
     ResourceShareInvitationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_receiverArn;
-    bool m_receiverArnHasBeenSet;
+    bool m_receiverArnHasBeenSet = false;
   };
 
 } // namespace Model

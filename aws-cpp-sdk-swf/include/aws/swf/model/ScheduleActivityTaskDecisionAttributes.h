@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ScheduleActivityTaskDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ScheduleActivityTaskDecisionAttributes
+  class ScheduleActivityTaskDecisionAttributes
   {
   public:
-    ScheduleActivityTaskDecisionAttributes();
-    ScheduleActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes();
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -848,34 +848,34 @@ namespace Model
   private:
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_scheduleToCloseTimeout;
-    bool m_scheduleToCloseTimeoutHasBeenSet;
+    bool m_scheduleToCloseTimeoutHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_taskPriority;
-    bool m_taskPriorityHasBeenSet;
+    bool m_taskPriorityHasBeenSet = false;
 
     Aws::String m_scheduleToStartTimeout;
-    bool m_scheduleToStartTimeoutHasBeenSet;
+    bool m_scheduleToStartTimeoutHasBeenSet = false;
 
     Aws::String m_startToCloseTimeout;
-    bool m_startToCloseTimeoutHasBeenSet;
+    bool m_startToCloseTimeoutHasBeenSet = false;
 
     Aws::String m_heartbeatTimeout;
-    bool m_heartbeatTimeoutHasBeenSet;
+    bool m_heartbeatTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

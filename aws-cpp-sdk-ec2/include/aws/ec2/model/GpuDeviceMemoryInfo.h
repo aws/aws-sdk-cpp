@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GpuDeviceMemoryInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API GpuDeviceMemoryInfo
+  class GpuDeviceMemoryInfo
   {
   public:
-    GpuDeviceMemoryInfo();
-    GpuDeviceMemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GpuDeviceMemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuDeviceMemoryInfo();
+    AWS_EC2_API GpuDeviceMemoryInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuDeviceMemoryInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -61,7 +61,7 @@ namespace Model
   private:
 
     int m_sizeInMiB;
-    bool m_sizeInMiBHasBeenSet;
+    bool m_sizeInMiBHasBeenSet = false;
   };
 
 } // namespace Model

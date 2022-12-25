@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedDatastoreS3Storage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API CustomerManagedDatastoreS3Storage
+  class CustomerManagedDatastoreS3Storage
   {
   public:
-    CustomerManagedDatastoreS3Storage();
-    CustomerManagedDatastoreS3Storage(Aws::Utils::Json::JsonView jsonValue);
-    CustomerManagedDatastoreS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API CustomerManagedDatastoreS3Storage();
+    AWS_IOTANALYTICS_API CustomerManagedDatastoreS3Storage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API CustomerManagedDatastoreS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

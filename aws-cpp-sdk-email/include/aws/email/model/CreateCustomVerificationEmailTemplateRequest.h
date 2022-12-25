@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateCustomVerificationEmailTemplateRequest : public SESRequest
+  class CreateCustomVerificationEmailTemplateRequest : public SESRequest
   {
   public:
-    CreateCustomVerificationEmailTemplateRequest();
+    AWS_SES_API CreateCustomVerificationEmailTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCustomVerificationEmailTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -344,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_templateSubject;
-    bool m_templateSubjectHasBeenSet;
+    bool m_templateSubjectHasBeenSet = false;
 
     Aws::String m_templateContent;
-    bool m_templateContentHasBeenSet;
+    bool m_templateContentHasBeenSet = false;
 
     Aws::String m_successRedirectionURL;
-    bool m_successRedirectionURLHasBeenSet;
+    bool m_successRedirectionURLHasBeenSet = false;
 
     Aws::String m_failureRedirectionURL;
-    bool m_failureRedirectionURLHasBeenSet;
+    bool m_failureRedirectionURLHasBeenSet = false;
   };
 
 } // namespace Model

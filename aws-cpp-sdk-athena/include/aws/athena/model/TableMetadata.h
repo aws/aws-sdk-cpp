@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TableMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API TableMetadata
+  class TableMetadata
   {
   public:
-    TableMetadata();
-    TableMetadata(Aws::Utils::Json::JsonView jsonValue);
-    TableMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API TableMetadata();
+    AWS_ATHENA_API TableMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API TableMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     Aws::String m_tableType;
-    bool m_tableTypeHasBeenSet;
+    bool m_tableTypeHasBeenSet = false;
 
     Aws::Vector<Column> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::Vector<Column> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

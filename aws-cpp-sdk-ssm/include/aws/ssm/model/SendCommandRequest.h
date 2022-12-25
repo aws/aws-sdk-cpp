@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <utility>
 
@@ -24,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API SendCommandRequest : public SSMRequest
+  class SendCommandRequest : public SSMRequest
   {
   public:
-    SendCommandRequest();
+    AWS_SSM_API SendCommandRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendCommand"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1050,56 +1051,96 @@ namespace Model
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Identity and Access Management (IAM) service role to use to
      * publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-     * Command commands.</p>
+     * Command commands.</p> <p>This role must provide the <code>sns:Publish</code>
+     * permission for your notification topic. For information about creating and using
+     * this service role, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the
+     * <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -1177,58 +1218,92 @@ namespace Model
      */
     inline SendCommandRequest& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline SendCommandRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline SendCommandRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_documentHash;
-    bool m_documentHashHasBeenSet;
+    bool m_documentHashHasBeenSet = false;
 
     DocumentHashType m_documentHashType;
-    bool m_documentHashTypeHasBeenSet;
+    bool m_documentHashTypeHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_outputS3Region;
-    bool m_outputS3RegionHasBeenSet;
+    bool m_outputS3RegionHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     NotificationConfig m_notificationConfig;
-    bool m_notificationConfigHasBeenSet;
+    bool m_notificationConfigHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
-    bool m_cloudWatchOutputConfigHasBeenSet;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowIdentityForTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API MaintenanceWindowIdentityForTarget
+  class MaintenanceWindowIdentityForTarget
   {
   public:
-    MaintenanceWindowIdentityForTarget();
-    MaintenanceWindowIdentityForTarget(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceWindowIdentityForTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API MaintenanceWindowIdentityForTarget();
+    AWS_SSM_API MaintenanceWindowIdentityForTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API MaintenanceWindowIdentityForTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

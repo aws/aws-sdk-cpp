@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ProgressDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API ProgressDetail
+  class ProgressDetail
   {
   public:
-    ProgressDetail();
-    ProgressDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProgressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API ProgressDetail();
+    AWS_ROBOMAKER_API ProgressDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API ProgressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     RobotDeploymentStep m_currentProgress;
-    bool m_currentProgressHasBeenSet;
+    bool m_currentProgressHasBeenSet = false;
 
     double m_percentDone;
-    bool m_percentDoneHasBeenSet;
+    bool m_percentDoneHasBeenSet = false;
 
     int m_estimatedTimeRemainingSeconds;
-    bool m_estimatedTimeRemainingSecondsHasBeenSet;
+    bool m_estimatedTimeRemainingSecondsHasBeenSet = false;
 
     Aws::String m_targetResource;
-    bool m_targetResourceHasBeenSet;
+    bool m_targetResourceHasBeenSet = false;
   };
 
 } // namespace Model

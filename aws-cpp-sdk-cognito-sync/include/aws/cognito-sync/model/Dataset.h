@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API Dataset();
+    AWS_COGNITOSYNC_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     long long m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
 
     long long m_numRecords;
-    bool m_numRecordsHasBeenSet;
+    bool m_numRecordsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/BackendEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API BackendEnvironment
+  class BackendEnvironment
   {
   public:
-    BackendEnvironment();
-    BackendEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    BackendEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API BackendEnvironment();
+    AWS_AMPLIFY_API BackendEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API BackendEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,22 +287,22 @@ namespace Model
   private:
 
     Aws::String m_backendEnvironmentArn;
-    bool m_backendEnvironmentArnHasBeenSet;
+    bool m_backendEnvironmentArnHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_deploymentArtifacts;
-    bool m_deploymentArtifactsHasBeenSet;
+    bool m_deploymentArtifactsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

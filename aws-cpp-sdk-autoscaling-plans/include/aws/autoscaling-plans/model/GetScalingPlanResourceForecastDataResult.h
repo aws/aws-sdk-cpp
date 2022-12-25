@@ -25,12 +25,12 @@ namespace AutoScalingPlans
 {
 namespace Model
 {
-  class AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataResult
+  class GetScalingPlanResourceForecastDataResult
   {
   public:
-    GetScalingPlanResourceForecastDataResult();
-    GetScalingPlanResourceForecastDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetScalingPlanResourceForecastDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataResult();
+    AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -5,6 +5,7 @@
 
 #include <aws/datasync/model/UpdateLocationObjectStorageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -21,7 +22,8 @@ UpdateLocationObjectStorageRequest::UpdateLocationObjectStorageRequest() :
     m_subdirectoryHasBeenSet(false),
     m_accessKeyHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
-    m_agentArnsHasBeenSet(false)
+    m_agentArnsHasBeenSet(false),
+    m_serverCertificateHasBeenSet(false)
 {
 }
 
@@ -66,13 +68,18 @@ Aws::String UpdateLocationObjectStorageRequest::SerializePayload() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
    }
    payload.WithArray("AgentArns", std::move(agentArnsJsonList));
 
+  }
+
+  if(m_serverCertificateHasBeenSet)
+  {
+   payload.WithString("ServerCertificate", HashingUtils::Base64Encode(m_serverCertificate));
   }
 
   return payload.View().WriteReadable();

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/TextInputEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API TextInputEvent
+  class TextInputEvent
   {
   public:
-    TextInputEvent();
-    TextInputEvent(Aws::Utils::Json::JsonView jsonValue);
-    TextInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API TextInputEvent();
+    AWS_LEXRUNTIMEV2_API TextInputEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API TextInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

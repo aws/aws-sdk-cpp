@@ -24,53 +24,53 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API CreateIndexResult
+  class CreateIndexResult
   {
   public:
-    CreateIndexResult();
-    CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateIndexResult();
+    AWS_KENDRA_API CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline CreateIndexResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline CreateIndexResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the index. Use this identifier when you query an
-     * index, set up a data source, or index a document.</p>
+     * <p>The identifier of the index. Use this identifier when you query an index, set
+     * up a data source, or index a document.</p>
      */
     inline CreateIndexResult& WithId(const char* value) { SetId(value); return *this;}
 

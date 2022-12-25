@@ -40,15 +40,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstances">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstances
+  class ReservedInstances
   {
   public:
-    ReservedInstances();
-    ReservedInstances(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstances& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstances();
+    AWS_EC2_API ReservedInstances(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstances& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -623,58 +623,58 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     ReservedInstanceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    bool m_instanceTenancyHasBeenSet = false;
 
     OfferingClassType m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
 
     OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

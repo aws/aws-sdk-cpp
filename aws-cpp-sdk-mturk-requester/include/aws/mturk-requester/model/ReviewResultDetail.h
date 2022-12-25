@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ReviewResultDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ReviewResultDetail
+  class ReviewResultDetail
   {
   public:
-    ReviewResultDetail();
-    ReviewResultDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReviewResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ReviewResultDetail();
+    AWS_MTURK_API ReviewResultDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ReviewResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -350,22 +350,22 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_subjectId;
-    bool m_subjectIdHasBeenSet;
+    bool m_subjectIdHasBeenSet = false;
 
     Aws::String m_subjectType;
-    bool m_subjectTypeHasBeenSet;
+    bool m_subjectTypeHasBeenSet = false;
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

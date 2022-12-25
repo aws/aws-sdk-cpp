@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeadLetterConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API DeadLetterConfig
+  class DeadLetterConfig
   {
   public:
-    DeadLetterConfig();
-    DeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API DeadLetterConfig();
+    AWS_EVENTBRIDGE_API DeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API DeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

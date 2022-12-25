@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateTaskTemplateRequest : public ConnectRequest
+  class UpdateTaskTemplateRequest : public ConnectRequest
   {
   public:
-    UpdateTaskTemplateRequest();
+    AWS_CONNECT_API UpdateTaskTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTaskTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -418,31 +418,31 @@ namespace Model
   private:
 
     Aws::String m_taskTemplateId;
-    bool m_taskTemplateIdHasBeenSet;
+    bool m_taskTemplateIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_contactFlowId;
-    bool m_contactFlowIdHasBeenSet;
+    bool m_contactFlowIdHasBeenSet = false;
 
     TaskTemplateConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     TaskTemplateDefaults m_defaults;
-    bool m_defaultsHasBeenSet;
+    bool m_defaultsHasBeenSet = false;
 
     TaskTemplateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<TaskTemplateField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

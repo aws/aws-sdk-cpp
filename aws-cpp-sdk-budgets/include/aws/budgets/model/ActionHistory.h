@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ActionHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API ActionHistory
+  class ActionHistory
   {
   public:
-    ActionHistory();
-    ActionHistory(Aws::Utils::Json::JsonView jsonValue);
-    ActionHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API ActionHistory();
+    AWS_BUDGETS_API ActionHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API ActionHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -160,16 +160,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     ActionHistoryDetails m_actionHistoryDetails;
-    bool m_actionHistoryDetailsHasBeenSet;
+    bool m_actionHistoryDetailsHasBeenSet = false;
   };
 
 } // namespace Model

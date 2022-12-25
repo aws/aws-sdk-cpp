@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API ListPoliciesRequest : public IAMRequest
+  class ListPoliciesRequest : public IAMRequest
   {
   public:
-    ListPoliciesRequest();
+    AWS_IAM_API ListPoliciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPolicies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -410,22 +410,22 @@ namespace Model
   private:
 
     PolicyScopeType m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     bool m_onlyAttached;
-    bool m_onlyAttachedHasBeenSet;
+    bool m_onlyAttachedHasBeenSet = false;
 
     Aws::String m_pathPrefix;
-    bool m_pathPrefixHasBeenSet;
+    bool m_pathPrefixHasBeenSet = false;
 
     PolicyUsageType m_policyUsageFilter;
-    bool m_policyUsageFilterHasBeenSet;
+    bool m_policyUsageFilterHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

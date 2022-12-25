@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentFilter
+  class IntentFilter
   {
   public:
-    IntentFilter();
-    IntentFilter(Aws::Utils::Json::JsonView jsonValue);
-    IntentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentFilter();
+    AWS_LEXMODELSV2_API IntentFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     IntentFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     IntentFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

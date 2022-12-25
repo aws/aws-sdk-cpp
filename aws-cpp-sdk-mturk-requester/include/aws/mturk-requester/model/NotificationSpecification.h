@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotificationSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API NotificationSpecification
+  class NotificationSpecification
   {
   public:
-    NotificationSpecification();
-    NotificationSpecification(Aws::Utils::Json::JsonView jsonValue);
-    NotificationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API NotificationSpecification();
+    AWS_MTURK_API NotificationSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API NotificationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,16 +267,16 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     NotificationTransport m_transport;
-    bool m_transportHasBeenSet;
+    bool m_transportHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<EventType> m_eventTypes;
-    bool m_eventTypesHasBeenSet;
+    bool m_eventTypesHasBeenSet = false;
   };
 
 } // namespace Model

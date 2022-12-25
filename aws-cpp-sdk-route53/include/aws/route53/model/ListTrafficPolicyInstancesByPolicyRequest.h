@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListTrafficPolicyInstancesByPolicyRequest : public Route53Request
+  class ListTrafficPolicyInstancesByPolicyRequest : public Route53Request
   {
   public:
-    ListTrafficPolicyInstancesByPolicyRequest();
+    AWS_ROUTE53_API ListTrafficPolicyInstancesByPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTrafficPolicyInstancesByPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -509,22 +509,22 @@ namespace Model
   private:
 
     Aws::String m_trafficPolicyId;
-    bool m_trafficPolicyIdHasBeenSet;
+    bool m_trafficPolicyIdHasBeenSet = false;
 
     int m_trafficPolicyVersion;
-    bool m_trafficPolicyVersionHasBeenSet;
+    bool m_trafficPolicyVersionHasBeenSet = false;
 
     Aws::String m_hostedZoneIdMarker;
-    bool m_hostedZoneIdMarkerHasBeenSet;
+    bool m_hostedZoneIdMarkerHasBeenSet = false;
 
     Aws::String m_trafficPolicyInstanceNameMarker;
-    bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
     RRType m_trafficPolicyInstanceTypeMarker;
-    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

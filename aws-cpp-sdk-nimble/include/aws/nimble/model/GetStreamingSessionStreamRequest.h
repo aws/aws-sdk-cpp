@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API GetStreamingSessionStreamRequest : public NimbleStudioRequest
+  class GetStreamingSessionStreamRequest : public NimbleStudioRequest
   {
   public:
-    GetStreamingSessionStreamRequest();
+    AWS_NIMBLESTUDIO_API GetStreamingSessionStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetStreamingSessionStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

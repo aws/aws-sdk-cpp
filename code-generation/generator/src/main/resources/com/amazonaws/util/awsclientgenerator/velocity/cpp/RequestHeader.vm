@@ -4,6 +4,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
 #if($operation.result.shape.hasEventStreamMembers())
@@ -42,11 +43,23 @@ namespace Model
    * $shape.documentation
 #end
    */
-  class ${typeInfo.exportValue} ${typeInfo.className} : public ${typeInfo.baseClass}
+  class ${typeInfo.className} : public ${typeInfo.baseClass}
   {
   public:
-    ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}();
 
+#if(false) ## TODO: revisit later
+    /**
+     * Virtual Copy Constructor idiom;
+     * Override in an inherited class to have overridden functions (such as GetRequestSpecificHeaders) be called by the SDK.
+     * (If you are creating a child of this: don't forget to keep the original return type or (better) just use the 'override' keyword)
+    */
+    virtual Aws::UniquePtr<${typeInfo.className}> Clone() const
+    {
+      return Aws::MakeUnique<${typeInfo.className}>(GetServiceRequestName(), *this);
+    }
+
+#end
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
@@ -57,40 +70,43 @@ namespace Model
     inline virtual bool IsEventStreamRequest() const override { return true; }
 #end
 #if(!$shape.hasStreamMembers() && !$shape.hasEventStreamMembers())
-    Aws::String SerializePayload() const override;
+    ${exportMacro} Aws::String SerializePayload() const override;
 
 #elseif($shape.hasEventStreamMembers())
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
-    Aws::String SerializePayload() const override { return {}; }
-    std::shared_ptr<Aws::IOStream> GetBody() const override;
+    ${exportMacro} Aws::String SerializePayload() const override { return {}; }
+    ${exportMacro} std::shared_ptr<Aws::IOStream> GetBody() const override;
 #end
 #if($shape.hasQueryStringMembers())
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    ${exportMacro} void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 #end
 #if($shape.hasHeaderMembers() || $metadata.targetPrefix)
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    ${exportMacro} Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($shape.hasEmbeddedErrors())
+    ${exportMacro} bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
+#end
 #if($operation.requestAlgorithmMember)
-    Aws::String GetChecksumAlgorithmName() const override;
+    ${exportMacro} Aws::String GetChecksumAlgorithmName() const override;
 
 #end
 #if($operation.requestValidationModeMember)
-    bool ShouldValidateResponseChecksum() const override;
+    ${exportMacro} bool ShouldValidateResponseChecksum() const override;
 
 #end
 #if($operation.responseAlgorithms)
-    Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
+    ${exportMacro} Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
 
 #end
 #if($shape.computeContentMd5)
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    ${exportMacro} inline bool ShouldComputeContentMd5() const override { return true; }
 
 #end
 #if(!$shape.signBody && $shape.members.size() > 0)
-    bool SignBody() const override { return false; }
+    ${exportMacro} bool SignBody() const override { return false; }
 
 #end
 #if ($metadata.serviceId.equals("MediaStore Data") || $operation.supportsChunkedEncoding)
@@ -99,7 +115,7 @@ namespace Model
 #set($supportsChunkedEncoding = false)
 #end
 #if($shape.hasStreamMembers() && !$shape.signBody && $shape.members.size() > 0 && $supportsChunkedEncoding)
-    bool IsChunked() const override { return true; }
+    ${exportMacro} bool IsChunked() const override { return true; }
 
 #end
 #if($operation.result.shape.hasEventStreamMembers())
@@ -126,10 +142,11 @@ namespace Model
 #end
 #if($shape.supportsPresigning)
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    ${exportMacro} void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDeclaration.vm")
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
   };

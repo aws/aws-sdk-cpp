@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/rds/model/Option.h>
 #include <utility>
 
@@ -30,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API OptionGroup
+  class OptionGroup
   {
   public:
-    OptionGroup();
-    OptionGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroup();
+    AWS_RDS_API OptionGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -365,70 +366,208 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline const Aws::String& GetOptionGroupArn() const{ return m_optionGroupArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline bool OptionGroupArnHasBeenSet() const { return m_optionGroupArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline void SetOptionGroupArn(const Aws::String& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline void SetOptionGroupArn(Aws::String&& value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline void SetOptionGroupArn(const char* value) { m_optionGroupArnHasBeenSet = true; m_optionGroupArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline OptionGroup& WithOptionGroupArn(const Aws::String& value) { SetOptionGroupArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline OptionGroup& WithOptionGroupArn(Aws::String&& value) { SetOptionGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
      */
     inline OptionGroup& WithOptionGroupArn(const char* value) { SetOptionGroupArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline const Aws::String& GetSourceOptionGroup() const{ return m_sourceOptionGroup; }
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline bool SourceOptionGroupHasBeenSet() const { return m_sourceOptionGroupHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline void SetSourceOptionGroup(const Aws::String& value) { m_sourceOptionGroupHasBeenSet = true; m_sourceOptionGroup = value; }
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline void SetSourceOptionGroup(Aws::String&& value) { m_sourceOptionGroupHasBeenSet = true; m_sourceOptionGroup = std::move(value); }
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline void SetSourceOptionGroup(const char* value) { m_sourceOptionGroupHasBeenSet = true; m_sourceOptionGroup.assign(value); }
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline OptionGroup& WithSourceOptionGroup(const Aws::String& value) { SetSourceOptionGroup(value); return *this;}
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline OptionGroup& WithSourceOptionGroup(Aws::String&& value) { SetSourceOptionGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name of the option group from which this option group is
+     * copied.</p>
+     */
+    inline OptionGroup& WithSourceOptionGroup(const char* value) { SetSourceOptionGroup(value); return *this;}
+
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline const Aws::String& GetSourceAccountId() const{ return m_sourceAccountId; }
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline void SetSourceAccountId(const Aws::String& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = value; }
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline void SetSourceAccountId(Aws::String&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::move(value); }
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline void SetSourceAccountId(const char* value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId.assign(value); }
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline OptionGroup& WithSourceAccountId(const Aws::String& value) { SetSourceAccountId(value); return *this;}
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline OptionGroup& WithSourceAccountId(Aws::String&& value) { SetSourceAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the Amazon Web Services account ID for the option group from which
+     * this option group is copied.</p>
+     */
+    inline OptionGroup& WithSourceAccountId(const char* value) { SetSourceAccountId(value); return *this;}
+
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCopyTimestamp() const{ return m_copyTimestamp; }
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline bool CopyTimestampHasBeenSet() const { return m_copyTimestampHasBeenSet; }
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline void SetCopyTimestamp(const Aws::Utils::DateTime& value) { m_copyTimestampHasBeenSet = true; m_copyTimestamp = value; }
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline void SetCopyTimestamp(Aws::Utils::DateTime&& value) { m_copyTimestampHasBeenSet = true; m_copyTimestamp = std::move(value); }
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline OptionGroup& WithCopyTimestamp(const Aws::Utils::DateTime& value) { SetCopyTimestamp(value); return *this;}
+
+    /**
+     * <p>Indicates when the option group was copied.</p>
+     */
+    inline OptionGroup& WithCopyTimestamp(Aws::Utils::DateTime&& value) { SetCopyTimestamp(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_optionGroupDescription;
-    bool m_optionGroupDescriptionHasBeenSet;
+    bool m_optionGroupDescriptionHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::Vector<Option> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     bool m_allowsVpcAndNonVpcInstanceMemberships;
-    bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet;
+    bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_optionGroupArn;
-    bool m_optionGroupArnHasBeenSet;
+    bool m_optionGroupArnHasBeenSet = false;
+
+    Aws::String m_sourceOptionGroup;
+    bool m_sourceOptionGroupHasBeenSet = false;
+
+    Aws::String m_sourceAccountId;
+    bool m_sourceAccountIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_copyTimestamp;
+    bool m_copyTimestampHasBeenSet = false;
   };
 
 } // namespace Model

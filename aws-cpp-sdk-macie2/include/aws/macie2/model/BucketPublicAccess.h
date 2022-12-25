@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketPublicAccess
+  class BucketPublicAccess
   {
   public:
-    BucketPublicAccess();
-    BucketPublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    BucketPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketPublicAccess();
+    AWS_MACIE2_API BucketPublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     EffectivePermission m_effectivePermission;
-    bool m_effectivePermissionHasBeenSet;
+    bool m_effectivePermissionHasBeenSet = false;
 
     BucketPermissionConfiguration m_permissionConfiguration;
-    bool m_permissionConfigurationHasBeenSet;
+    bool m_permissionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

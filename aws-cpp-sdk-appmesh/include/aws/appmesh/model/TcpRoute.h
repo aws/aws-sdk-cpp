@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/TcpRouteAction.h>
+#include <aws/appmesh/model/TcpRouteMatch.h>
 #include <aws/appmesh/model/TcpTimeout.h>
 #include <utility>
 
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TcpRoute
+  class TcpRoute
   {
   public:
-    TcpRoute();
-    TcpRoute(Aws::Utils::Json::JsonView jsonValue);
-    TcpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TcpRoute();
+    AWS_APPMESH_API TcpRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TcpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,6 +68,37 @@ namespace Model
      * <p>The action to take if a match is determined.</p>
      */
     inline TcpRoute& WithAction(TcpRouteAction&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline const TcpRouteMatch& GetMatch() const{ return m_match; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline void SetMatch(const TcpRouteMatch& value) { m_matchHasBeenSet = true; m_match = value; }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline void SetMatch(TcpRouteMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline TcpRoute& WithMatch(const TcpRouteMatch& value) { SetMatch(value); return *this;}
+
+    /**
+     * <p>An object that represents the criteria for determining a request match.</p>
+     */
+    inline TcpRoute& WithMatch(TcpRouteMatch&& value) { SetMatch(std::move(value)); return *this;}
 
 
     /**
@@ -102,10 +134,13 @@ namespace Model
   private:
 
     TcpRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
+
+    TcpRouteMatch m_match;
+    bool m_matchHasBeenSet = false;
 
     TcpTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

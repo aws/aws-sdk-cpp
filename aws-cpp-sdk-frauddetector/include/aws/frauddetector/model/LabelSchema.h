@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/LabelSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API LabelSchema
+  class LabelSchema
   {
   public:
-    LabelSchema();
-    LabelSchema(Aws::Utils::Json::JsonView jsonValue);
-    LabelSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API LabelSchema();
+    AWS_FRAUDDETECTOR_API LabelSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API LabelSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,10 +242,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_labelMapper;
-    bool m_labelMapperHasBeenSet;
+    bool m_labelMapperHasBeenSet = false;
 
     UnlabeledEventsTreatment m_unlabeledEventsTreatment;
-    bool m_unlabeledEventsTreatmentHasBeenSet;
+    bool m_unlabeledEventsTreatmentHasBeenSet = false;
   };
 
 } // namespace Model

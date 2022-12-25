@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ContactList">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ContactList
+  class ContactList
   {
   public:
-    ContactList();
-    ContactList(Aws::Utils::Json::JsonView jsonValue);
-    ContactList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ContactList();
+    AWS_SESV2_API ContactList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ContactList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

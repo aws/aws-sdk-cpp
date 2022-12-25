@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/InforNexusConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API InforNexusConnectorProfileCredentials
+  class InforNexusConnectorProfileCredentials
   {
   public:
-    InforNexusConnectorProfileCredentials();
-    InforNexusConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    InforNexusConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API InforNexusConnectorProfileCredentials();
+    AWS_APPFLOW_API InforNexusConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API InforNexusConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_datakey;
-    bool m_datakeyHasBeenSet;
+    bool m_datakeyHasBeenSet = false;
   };
 
 } // namespace Model

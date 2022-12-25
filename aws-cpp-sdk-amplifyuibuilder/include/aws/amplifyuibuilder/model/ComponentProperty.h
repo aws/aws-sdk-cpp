@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentProperty
+  class ComponentProperty
   {
   public:
-    ComponentProperty();
-    ComponentProperty(Aws::Utils::Json::JsonView jsonValue);
-    ComponentProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty();
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,37 +268,37 @@ namespace Model
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    const ComponentConditionProperty& GetCondition() const;
+    AWS_AMPLIFYUIBUILDER_API const ComponentConditionProperty& GetCondition() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    bool ConditionHasBeenSet() const;
+    AWS_AMPLIFYUIBUILDER_API bool ConditionHasBeenSet() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    void SetCondition(const ComponentConditionProperty& value);
+    AWS_AMPLIFYUIBUILDER_API void SetCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    void SetCondition(ComponentConditionProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API void SetCondition(ComponentConditionProperty&& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    ComponentProperty& WithCondition(const ComponentConditionProperty& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    ComponentProperty& WithCondition(ComponentConditionProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(ComponentConditionProperty&& value);
 
 
     /**
@@ -672,49 +672,49 @@ namespace Model
   private:
 
     ComponentPropertyBindingProperties m_bindingProperties;
-    bool m_bindingPropertiesHasBeenSet;
+    bool m_bindingPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, FormBindingElement> m_bindings;
-    bool m_bindingsHasBeenSet;
+    bool m_bindingsHasBeenSet = false;
 
     ComponentPropertyBindingProperties m_collectionBindingProperties;
-    bool m_collectionBindingPropertiesHasBeenSet;
+    bool m_collectionBindingPropertiesHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::Vector<ComponentProperty> m_concat;
-    bool m_concatHasBeenSet;
+    bool m_concatHasBeenSet = false;
 
     std::shared_ptr<ComponentConditionProperty> m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     bool m_configured;
-    bool m_configuredHasBeenSet;
+    bool m_configuredHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_importedValue;
-    bool m_importedValueHasBeenSet;
+    bool m_importedValueHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_userAttribute;
-    bool m_userAttributeHasBeenSet;
+    bool m_userAttributeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

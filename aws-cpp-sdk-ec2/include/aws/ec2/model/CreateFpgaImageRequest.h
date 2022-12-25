@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateFpgaImageRequest : public EC2Request
+  class CreateFpgaImageRequest : public EC2Request
   {
   public:
-    CreateFpgaImageRequest();
+    AWS_EC2_API CreateFpgaImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFpgaImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -330,25 +330,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     StorageLocation m_inputStorageLocation;
-    bool m_inputStorageLocationHasBeenSet;
+    bool m_inputStorageLocationHasBeenSet = false;
 
     StorageLocation m_logsStorageLocation;
-    bool m_logsStorageLocationHasBeenSet;
+    bool m_logsStorageLocationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

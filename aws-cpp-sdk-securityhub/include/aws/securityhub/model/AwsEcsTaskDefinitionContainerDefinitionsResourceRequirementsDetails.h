@@ -28,52 +28,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource to assign to a container.</p>
+     * <p>The type of resource to assign to a container. Valid values are
+     * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails& WithType(const char* value) { SetType(value); return *this;}
 
@@ -153,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

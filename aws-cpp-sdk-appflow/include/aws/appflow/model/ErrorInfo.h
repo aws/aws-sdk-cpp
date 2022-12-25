@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ErrorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ErrorInfo
+  class ErrorInfo
   {
   public:
-    ErrorInfo();
-    ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ErrorInfo();
+    AWS_APPFLOW_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     long long m_putFailuresCount;
-    bool m_putFailuresCountHasBeenSet;
+    bool m_putFailuresCountHasBeenSet = false;
 
     Aws::String m_executionMessage;
-    bool m_executionMessageHasBeenSet;
+    bool m_executionMessageHasBeenSet = false;
   };
 
 } // namespace Model

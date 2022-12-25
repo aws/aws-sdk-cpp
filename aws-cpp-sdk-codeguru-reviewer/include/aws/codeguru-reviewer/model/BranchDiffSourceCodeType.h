@@ -24,20 +24,20 @@ namespace Model
 {
 
   /**
-   * <p> A type of <a
-   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-   * <code>SourceCodeType</code> </a> that specifies a code diff between a source and
-   * destination branch in an associated repository. </p><p><h3>See Also:</h3>   <a
+   * <p>A type of <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+   * that specifies a code diff between a source and destination branch in an
+   * associated repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/BranchDiffSourceCodeType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType
+  class BranchDiffSourceCodeType
   {
   public:
-    BranchDiffSourceCodeType();
-    BranchDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
-    BranchDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType();
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_sourceBranchName;
-    bool m_sourceBranchNameHasBeenSet;
+    bool m_sourceBranchNameHasBeenSet = false;
 
     Aws::String m_destinationBranchName;
-    bool m_destinationBranchNameHasBeenSet;
+    bool m_destinationBranchNameHasBeenSet = false;
   };
 
 } // namespace Model

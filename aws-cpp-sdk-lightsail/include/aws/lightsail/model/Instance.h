@@ -14,6 +14,7 @@
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
+#include <aws/lightsail/model/InstanceMetadataOptions.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOn.h>
 #include <utility>
@@ -39,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Instance">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Instance
+  class Instance
   {
   public:
-    Instance();
-    Instance(Aws::Utils::Json::JsonView jsonValue);
-    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Instance();
+    AWS_LIGHTSAIL_API Instance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -929,70 +930,104 @@ namespace Model
      */
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline Instance& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the Amazon Lightsail instance.</p>
+     */
+    inline Instance& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_blueprintId;
-    bool m_blueprintIdHasBeenSet;
+    bool m_blueprintIdHasBeenSet = false;
 
     Aws::String m_blueprintName;
-    bool m_blueprintNameHasBeenSet;
+    bool m_blueprintNameHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::Vector<AddOn> m_addOns;
-    bool m_addOnsHasBeenSet;
+    bool m_addOnsHasBeenSet = false;
 
     bool m_isStaticIp;
-    bool m_isStaticIpHasBeenSet;
+    bool m_isStaticIpHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_publicIpAddress;
-    bool m_publicIpAddressHasBeenSet;
+    bool m_publicIpAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     InstanceHardware m_hardware;
-    bool m_hardwareHasBeenSet;
+    bool m_hardwareHasBeenSet = false;
 
     InstanceNetworking m_networking;
-    bool m_networkingHasBeenSet;
+    bool m_networkingHasBeenSet = false;
 
     InstanceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_sshKeyName;
-    bool m_sshKeyNameHasBeenSet;
+    bool m_sshKeyNameHasBeenSet = false;
+
+    InstanceMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet = false;
   };
 
 } // namespace Model

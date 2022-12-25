@@ -25,17 +25,17 @@ namespace CodeGuruReviewer
 {
 namespace Model
 {
-  class AWS_CODEGURUREVIEWER_API ListTagsForResourceResult
+  class ListTagsForResourceResult
   {
   public:
-    ListTagsForResourceResult();
-    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API ListTagsForResourceResult();
+    AWS_CODEGURUREVIEWER_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -46,8 +46,8 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -58,8 +58,8 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -70,8 +70,8 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -82,8 +82,8 @@ namespace Model
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -94,8 +94,8 @@ namespace Model
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -106,8 +106,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -118,8 +118,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -130,8 +130,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -142,8 +142,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -154,8 +154,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,
@@ -166,8 +166,8 @@ namespace Model
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> An array of key-value pairs used to tag an associated repository. A tag is a
-     * custom attribute label with two parts: </p> <ul> <li> <p>A <i>tag key</i> (for
+     * <p>An array of key-value pairs used to tag an associated repository. A tag is a
+     * custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for
      * example, <code>CostCenter</code>, <code>Environment</code>,
      * <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p>
      * </li> <li> <p>An optional field known as a <i>tag value</i> (for example,

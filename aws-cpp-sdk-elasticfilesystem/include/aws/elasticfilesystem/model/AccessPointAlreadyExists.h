@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointAlreadyExists">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API AccessPointAlreadyExists
+  class AccessPointAlreadyExists
   {
   public:
-    AccessPointAlreadyExists();
-    AccessPointAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
-    AccessPointAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API AccessPointAlreadyExists();
+    AWS_EFS_API AccessPointAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API AccessPointAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -116,13 +116,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
   };
 
 } // namespace Model

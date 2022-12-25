@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ResultRow">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ResultRow
+  class ResultRow
   {
   public:
-    ResultRow();
-    ResultRow(Aws::Utils::Json::JsonView jsonValue);
-    ResultRow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ResultRow();
+    AWS_HONEYCODE_API ResultRow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ResultRow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Vector<DataItem> m_dataItems;
-    bool m_dataItemsHasBeenSet;
+    bool m_dataItemsHasBeenSet = false;
   };
 
 } // namespace Model

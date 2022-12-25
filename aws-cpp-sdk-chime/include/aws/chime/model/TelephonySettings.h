@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TelephonySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API TelephonySettings
+  class TelephonySettings
   {
   public:
-    TelephonySettings();
-    TelephonySettings(Aws::Utils::Json::JsonView jsonValue);
-    TelephonySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API TelephonySettings();
+    AWS_CHIME_API TelephonySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API TelephonySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,13 +102,13 @@ namespace Model
   private:
 
     bool m_inboundCalling;
-    bool m_inboundCallingHasBeenSet;
+    bool m_inboundCallingHasBeenSet = false;
 
     bool m_outboundCalling;
-    bool m_outboundCallingHasBeenSet;
+    bool m_outboundCallingHasBeenSet = false;
 
     bool m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
   };
 
 } // namespace Model

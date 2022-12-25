@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Condition();
+    AWS_GUARDDUTY_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_equals;
-    bool m_equalsHasBeenSet;
+    bool m_equalsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notEquals;
-    bool m_notEqualsHasBeenSet;
+    bool m_notEqualsHasBeenSet = false;
 
     long long m_greaterThan;
-    bool m_greaterThanHasBeenSet;
+    bool m_greaterThanHasBeenSet = false;
 
     long long m_greaterThanOrEqual;
-    bool m_greaterThanOrEqualHasBeenSet;
+    bool m_greaterThanOrEqualHasBeenSet = false;
 
     long long m_lessThan;
-    bool m_lessThanHasBeenSet;
+    bool m_lessThanHasBeenSet = false;
 
     long long m_lessThanOrEqual;
-    bool m_lessThanOrEqualHasBeenSet;
+    bool m_lessThanOrEqualHasBeenSet = false;
   };
 
 } // namespace Model

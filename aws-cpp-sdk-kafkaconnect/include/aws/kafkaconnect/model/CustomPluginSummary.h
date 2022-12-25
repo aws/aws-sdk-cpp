@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPluginSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CustomPluginSummary
+  class CustomPluginSummary
   {
   public:
-    CustomPluginSummary();
-    CustomPluginSummary(Aws::Utils::Json::JsonView jsonValue);
-    CustomPluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CustomPluginSummary();
+    AWS_KAFKACONNECT_API CustomPluginSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CustomPluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
 
     CustomPluginState m_customPluginState;
-    bool m_customPluginStateHasBeenSet;
+    bool m_customPluginStateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     CustomPluginRevisionSummary m_latestRevision;
-    bool m_latestRevisionHasBeenSet;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

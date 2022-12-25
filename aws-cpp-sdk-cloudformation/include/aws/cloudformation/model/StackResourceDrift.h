@@ -46,15 +46,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackResourceDrift">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackResourceDrift
+  class StackResourceDrift
   {
   public:
-    StackResourceDrift();
-    StackResourceDrift(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackResourceDrift& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackResourceDrift();
+    AWS_CLOUDFORMATION_API StackResourceDrift(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackResourceDrift& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -636,37 +636,37 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::Vector<PhysicalResourceIdContextKeyValuePair> m_physicalResourceIdContext;
-    bool m_physicalResourceIdContextHasBeenSet;
+    bool m_physicalResourceIdContextHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_expectedProperties;
-    bool m_expectedPropertiesHasBeenSet;
+    bool m_expectedPropertiesHasBeenSet = false;
 
     Aws::String m_actualProperties;
-    bool m_actualPropertiesHasBeenSet;
+    bool m_actualPropertiesHasBeenSet = false;
 
     Aws::Vector<PropertyDifference> m_propertyDifferences;
-    bool m_propertyDifferencesHasBeenSet;
+    bool m_propertyDifferencesHasBeenSet = false;
 
     StackResourceDriftStatus m_stackResourceDriftStatus;
-    bool m_stackResourceDriftStatusHasBeenSet;
+    bool m_stackResourceDriftStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ModuleInfo m_moduleInfo;
-    bool m_moduleInfoHasBeenSet;
+    bool m_moduleInfoHasBeenSet = false;
   };
 
 } // namespace Model

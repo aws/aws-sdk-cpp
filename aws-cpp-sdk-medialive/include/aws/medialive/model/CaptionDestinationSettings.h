@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionDestinationSettings
+  class CaptionDestinationSettings
   {
   public:
-    CaptionDestinationSettings();
-    CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionDestinationSettings();
+    AWS_MEDIALIVE_API CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -298,43 +298,43 @@ namespace Model
   private:
 
     AribDestinationSettings m_aribDestinationSettings;
-    bool m_aribDestinationSettingsHasBeenSet;
+    bool m_aribDestinationSettingsHasBeenSet = false;
 
     BurnInDestinationSettings m_burnInDestinationSettings;
-    bool m_burnInDestinationSettingsHasBeenSet;
+    bool m_burnInDestinationSettingsHasBeenSet = false;
 
     DvbSubDestinationSettings m_dvbSubDestinationSettings;
-    bool m_dvbSubDestinationSettingsHasBeenSet;
+    bool m_dvbSubDestinationSettingsHasBeenSet = false;
 
     EbuTtDDestinationSettings m_ebuTtDDestinationSettings;
-    bool m_ebuTtDDestinationSettingsHasBeenSet;
+    bool m_ebuTtDDestinationSettingsHasBeenSet = false;
 
     EmbeddedDestinationSettings m_embeddedDestinationSettings;
-    bool m_embeddedDestinationSettingsHasBeenSet;
+    bool m_embeddedDestinationSettingsHasBeenSet = false;
 
     EmbeddedPlusScte20DestinationSettings m_embeddedPlusScte20DestinationSettings;
-    bool m_embeddedPlusScte20DestinationSettingsHasBeenSet;
+    bool m_embeddedPlusScte20DestinationSettingsHasBeenSet = false;
 
     RtmpCaptionInfoDestinationSettings m_rtmpCaptionInfoDestinationSettings;
-    bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet;
+    bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet = false;
 
     Scte20PlusEmbeddedDestinationSettings m_scte20PlusEmbeddedDestinationSettings;
-    bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet;
+    bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet = false;
 
     Scte27DestinationSettings m_scte27DestinationSettings;
-    bool m_scte27DestinationSettingsHasBeenSet;
+    bool m_scte27DestinationSettingsHasBeenSet = false;
 
     SmpteTtDestinationSettings m_smpteTtDestinationSettings;
-    bool m_smpteTtDestinationSettingsHasBeenSet;
+    bool m_smpteTtDestinationSettingsHasBeenSet = false;
 
     TeletextDestinationSettings m_teletextDestinationSettings;
-    bool m_teletextDestinationSettingsHasBeenSet;
+    bool m_teletextDestinationSettingsHasBeenSet = false;
 
     TtmlDestinationSettings m_ttmlDestinationSettings;
-    bool m_ttmlDestinationSettingsHasBeenSet;
+    bool m_ttmlDestinationSettingsHasBeenSet = false;
 
     WebvttDestinationSettings m_webvttDestinationSettings;
-    bool m_webvttDestinationSettingsHasBeenSet;
+    bool m_webvttDestinationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

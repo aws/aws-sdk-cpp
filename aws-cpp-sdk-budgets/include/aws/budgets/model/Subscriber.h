@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Subscriber">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API Subscriber
+  class Subscriber
   {
   public:
-    Subscriber();
-    Subscriber(Aws::Utils::Json::JsonView jsonValue);
-    Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API Subscriber();
+    AWS_BUDGETS_API Subscriber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     SubscriptionType m_subscriptionType;
-    bool m_subscriptionTypeHasBeenSet;
+    bool m_subscriptionTypeHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
   };
 
 } // namespace Model

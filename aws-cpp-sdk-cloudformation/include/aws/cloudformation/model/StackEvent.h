@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackEvent
+  class StackEvent
   {
   public:
-    StackEvent();
-    StackEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackEvent();
+    AWS_CLOUDFORMATION_API StackEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -788,52 +788,52 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ResourceStatus m_resourceStatus;
-    bool m_resourceStatusHasBeenSet;
+    bool m_resourceStatusHasBeenSet = false;
 
     Aws::String m_resourceStatusReason;
-    bool m_resourceStatusReasonHasBeenSet;
+    bool m_resourceStatusReasonHasBeenSet = false;
 
     Aws::String m_resourceProperties;
-    bool m_resourcePropertiesHasBeenSet;
+    bool m_resourcePropertiesHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_hookType;
-    bool m_hookTypeHasBeenSet;
+    bool m_hookTypeHasBeenSet = false;
 
     HookStatus m_hookStatus;
-    bool m_hookStatusHasBeenSet;
+    bool m_hookStatusHasBeenSet = false;
 
     Aws::String m_hookStatusReason;
-    bool m_hookStatusReasonHasBeenSet;
+    bool m_hookStatusReasonHasBeenSet = false;
 
     HookInvocationPoint m_hookInvocationPoint;
-    bool m_hookInvocationPointHasBeenSet;
+    bool m_hookInvocationPointHasBeenSet = false;
 
     HookFailureMode m_hookFailureMode;
-    bool m_hookFailureModeHasBeenSet;
+    bool m_hookFailureModeHasBeenSet = false;
   };
 
 } // namespace Model

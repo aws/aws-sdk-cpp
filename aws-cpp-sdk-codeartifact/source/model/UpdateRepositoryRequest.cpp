@@ -36,7 +36,7 @@ Aws::String UpdateRepositoryRequest::SerializePayload() const
 
   if(m_upstreamsHasBeenSet)
   {
-   Array<JsonValue> upstreamsJsonList(m_upstreams.size());
+   Aws::Utils::Array<JsonValue> upstreamsJsonList(m_upstreams.size());
    for(unsigned upstreamsIndex = 0; upstreamsIndex < upstreamsJsonList.GetLength(); ++upstreamsIndex)
    {
      upstreamsJsonList[upstreamsIndex].AsObject(m_upstreams[upstreamsIndex].Jsonize());

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainPrice">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API DomainPrice
+  class DomainPrice
   {
   public:
-    DomainPrice();
-    DomainPrice(Aws::Utils::Json::JsonView jsonValue);
-    DomainPrice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API DomainPrice();
+    AWS_ROUTE53DOMAINS_API DomainPrice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API DomainPrice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PriceWithCurrency m_registrationPrice;
-    bool m_registrationPriceHasBeenSet;
+    bool m_registrationPriceHasBeenSet = false;
 
     PriceWithCurrency m_transferPrice;
-    bool m_transferPriceHasBeenSet;
+    bool m_transferPriceHasBeenSet = false;
 
     PriceWithCurrency m_renewalPrice;
-    bool m_renewalPriceHasBeenSet;
+    bool m_renewalPriceHasBeenSet = false;
 
     PriceWithCurrency m_changeOwnershipPrice;
-    bool m_changeOwnershipPriceHasBeenSet;
+    bool m_changeOwnershipPriceHasBeenSet = false;
 
     PriceWithCurrency m_restorationPrice;
-    bool m_restorationPriceHasBeenSet;
+    bool m_restorationPriceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API CopyImageRequest : public AppStreamRequest
+  class CopyImageRequest : public AppStreamRequest
   {
   public:
-    CopyImageRequest();
+    AWS_APPSTREAM_API CopyImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_sourceImageName;
-    bool m_sourceImageNameHasBeenSet;
+    bool m_sourceImageNameHasBeenSet = false;
 
     Aws::String m_destinationImageName;
-    bool m_destinationImageNameHasBeenSet;
+    bool m_destinationImageNameHasBeenSet = false;
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     Aws::String m_destinationImageDescription;
-    bool m_destinationImageDescriptionHasBeenSet;
+    bool m_destinationImageDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

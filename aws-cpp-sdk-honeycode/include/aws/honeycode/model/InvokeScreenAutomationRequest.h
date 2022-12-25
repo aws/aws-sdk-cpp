@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_HONEYCODE_API InvokeScreenAutomationRequest : public HoneycodeRequest
+  class InvokeScreenAutomationRequest : public HoneycodeRequest
   {
   public:
-    InvokeScreenAutomationRequest();
+    AWS_HONEYCODE_API InvokeScreenAutomationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeScreenAutomation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HONEYCODE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -455,25 +455,25 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_screenId;
-    bool m_screenIdHasBeenSet;
+    bool m_screenIdHasBeenSet = false;
 
     Aws::String m_screenAutomationId;
-    bool m_screenAutomationIdHasBeenSet;
+    bool m_screenAutomationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, VariableValue> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

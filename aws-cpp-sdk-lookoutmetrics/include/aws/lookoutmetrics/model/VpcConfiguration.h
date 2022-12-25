@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/VpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API VpcConfiguration
+  class VpcConfiguration
   {
   public:
-    VpcConfiguration();
-    VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API VpcConfiguration();
+    AWS_LOOKOUTMETRICS_API VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIdList;
-    bool m_subnetIdListHasBeenSet;
+    bool m_subnetIdListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIdList;
-    bool m_securityGroupIdListHasBeenSet;
+    bool m_securityGroupIdListHasBeenSet = false;
   };
 
 } // namespace Model

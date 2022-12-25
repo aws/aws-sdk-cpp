@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NotificationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API NotificationConfiguration();
+    AWS_S3_API NotificationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API NotificationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
-    bool m_topicConfigurationsHasBeenSet;
+    bool m_topicConfigurationsHasBeenSet = false;
 
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
-    bool m_queueConfigurationsHasBeenSet;
+    bool m_queueConfigurationsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
-    bool m_lambdaFunctionConfigurationsHasBeenSet;
+    bool m_lambdaFunctionConfigurationsHasBeenSet = false;
 
     EventBridgeConfiguration m_eventBridgeConfiguration;
-    bool m_eventBridgeConfigurationHasBeenSet;
+    bool m_eventBridgeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

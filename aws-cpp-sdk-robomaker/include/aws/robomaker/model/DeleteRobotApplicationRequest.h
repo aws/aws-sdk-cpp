@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API DeleteRobotApplicationRequest : public RoboMakerRequest
+  class DeleteRobotApplicationRequest : public RoboMakerRequest
   {
   public:
-    DeleteRobotApplicationRequest();
+    AWS_ROBOMAKER_API DeleteRobotApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRobotApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
   };
 
 } // namespace Model

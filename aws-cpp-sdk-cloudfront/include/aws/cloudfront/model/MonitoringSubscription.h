@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/MonitoringSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API MonitoringSubscription
+  class MonitoringSubscription
   {
   public:
-    MonitoringSubscription();
-    MonitoringSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MonitoringSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API MonitoringSubscription();
+    AWS_CLOUDFRONT_API MonitoringSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API MonitoringSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     RealtimeMetricsSubscriptionConfig m_realtimeMetricsSubscriptionConfig;
-    bool m_realtimeMetricsSubscriptionConfigHasBeenSet;
+    bool m_realtimeMetricsSubscriptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

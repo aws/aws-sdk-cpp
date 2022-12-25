@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASS_API CreateCoreDefinitionVersionRequest : public GreengrassRequest
+  class CreateCoreDefinitionVersionRequest : public GreengrassRequest
   {
   public:
-    CreateCoreDefinitionVersionRequest();
+    AWS_GREENGRASS_API CreateCoreDefinitionVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCoreDefinitionVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GREENGRASS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     Aws::String m_coreDefinitionId;
-    bool m_coreDefinitionIdHasBeenSet;
+    bool m_coreDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Core> m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
   };
 
 } // namespace Model

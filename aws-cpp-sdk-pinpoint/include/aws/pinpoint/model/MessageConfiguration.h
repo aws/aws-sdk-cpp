@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API MessageConfiguration
+  class MessageConfiguration
   {
   public:
-    MessageConfiguration();
-    MessageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MessageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API MessageConfiguration();
+    AWS_PINPOINT_API MessageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API MessageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -389,31 +389,31 @@ namespace Model
   private:
 
     Message m_aDMMessage;
-    bool m_aDMMessageHasBeenSet;
+    bool m_aDMMessageHasBeenSet = false;
 
     Message m_aPNSMessage;
-    bool m_aPNSMessageHasBeenSet;
+    bool m_aPNSMessageHasBeenSet = false;
 
     Message m_baiduMessage;
-    bool m_baiduMessageHasBeenSet;
+    bool m_baiduMessageHasBeenSet = false;
 
     CampaignCustomMessage m_customMessage;
-    bool m_customMessageHasBeenSet;
+    bool m_customMessageHasBeenSet = false;
 
     Message m_defaultMessage;
-    bool m_defaultMessageHasBeenSet;
+    bool m_defaultMessageHasBeenSet = false;
 
     CampaignEmailMessage m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Message m_gCMMessage;
-    bool m_gCMMessageHasBeenSet;
+    bool m_gCMMessageHasBeenSet = false;
 
     CampaignSmsMessage m_sMSMessage;
-    bool m_sMSMessageHasBeenSet;
+    bool m_sMSMessageHasBeenSet = false;
 
     CampaignInAppMessage m_inAppMessage;
-    bool m_inAppMessageHasBeenSet;
+    bool m_inAppMessageHasBeenSet = false;
   };
 
 } // namespace Model

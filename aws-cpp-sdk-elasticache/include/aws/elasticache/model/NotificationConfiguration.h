@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NotificationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NotificationConfiguration();
+    AWS_ELASTICACHE_API NotificationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NotificationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_topicStatus;
-    bool m_topicStatusHasBeenSet;
+    bool m_topicStatusHasBeenSet = false;
   };
 
 } // namespace Model

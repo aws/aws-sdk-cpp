@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTANALYTICS_API DescribeChannelRequest : public IoTAnalyticsRequest
+  class DescribeChannelRequest : public IoTAnalyticsRequest
   {
   public:
-    DescribeChannelRequest();
+    AWS_IOTANALYTICS_API DescribeChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTANALYTICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     bool m_includeStatistics;
-    bool m_includeStatisticsHasBeenSet;
+    bool m_includeStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

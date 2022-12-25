@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/CommitTransactionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API CommitTransactionResult
+  class CommitTransactionResult
   {
   public:
-    CommitTransactionResult();
-    CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
-    CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API CommitTransactionResult();
+    AWS_QLDBSESSION_API CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_commitDigest;
-    bool m_commitDigestHasBeenSet;
+    bool m_commitDigestHasBeenSet = false;
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
 
     IOUsage m_consumedIOs;
-    bool m_consumedIOsHasBeenSet;
+    bool m_consumedIOsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImagePermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ImagePermissions
+  class ImagePermissions
   {
   public:
-    ImagePermissions();
-    ImagePermissions(Aws::Utils::Json::JsonView jsonValue);
-    ImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ImagePermissions();
+    AWS_APPSTREAM_API ImagePermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     bool m_allowFleet;
-    bool m_allowFleetHasBeenSet;
+    bool m_allowFleetHasBeenSet = false;
 
     bool m_allowImageBuilder;
-    bool m_allowImageBuilderHasBeenSet;
+    bool m_allowImageBuilderHasBeenSet = false;
   };
 
 } // namespace Model

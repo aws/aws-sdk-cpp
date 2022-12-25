@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyContentTypeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions
+  class ResponseHeadersPolicyContentTypeOptions
   {
   public:
-    ResponseHeadersPolicyContentTypeOptions();
-    ResponseHeadersPolicyContentTypeOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyContentTypeOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentTypeOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,10 @@ ExecutionListItem::ExecutionListItem() :
     m_status(ExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false)
+    m_stopDateHasBeenSet(false),
+    m_mapRunArnHasBeenSet(false),
+    m_itemCount(0),
+    m_itemCountHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ ExecutionListItem::ExecutionListItem(JsonView jsonValue) :
     m_status(ExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startDateHasBeenSet(false),
-    m_stopDateHasBeenSet(false)
+    m_stopDateHasBeenSet(false),
+    m_mapRunArnHasBeenSet(false),
+    m_itemCount(0),
+    m_itemCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +91,20 @@ ExecutionListItem& ExecutionListItem::operator =(JsonView jsonValue)
     m_stopDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mapRunArn"))
+  {
+    m_mapRunArn = jsonValue.GetString("mapRunArn");
+
+    m_mapRunArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("itemCount"))
+  {
+    m_itemCount = jsonValue.GetInteger("itemCount");
+
+    m_itemCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +143,18 @@ JsonValue ExecutionListItem::Jsonize() const
   if(m_stopDateHasBeenSet)
   {
    payload.WithDouble("stopDate", m_stopDate.SecondsWithMSPrecision());
+  }
+
+  if(m_mapRunArnHasBeenSet)
+  {
+   payload.WithString("mapRunArn", m_mapRunArn);
+
+  }
+
+  if(m_itemCountHasBeenSet)
+  {
+   payload.WithInteger("itemCount", m_itemCount);
+
   }
 
   return payload;

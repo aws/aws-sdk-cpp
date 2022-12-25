@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSnapshotConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate
+  class ApplicationSnapshotConfigurationUpdate
   {
   public:
-    ApplicationSnapshotConfigurationUpdate();
-    ApplicationSnapshotConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSnapshotConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationSnapshotConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_snapshotsEnabledUpdate;
-    bool m_snapshotsEnabledUpdateHasBeenSet;
+    bool m_snapshotsEnabledUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/model/CollectorHealth.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/model/ConfigurationSummary.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/Collector">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Collector
+  class Collector
   {
   public:
-    Collector();
-    Collector(Aws::Utils::Json::JsonView jsonValue);
-    Collector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Collector();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Collector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Collector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,6 +159,37 @@ namespace Model
      * specify. </p>
      */
     inline Collector& WithCollectorVersion(const char* value) { SetCollectorVersion(value); return *this;}
+
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline const ConfigurationSummary& GetConfigurationSummary() const{ return m_configurationSummary; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline bool ConfigurationSummaryHasBeenSet() const { return m_configurationSummaryHasBeenSet; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline void SetConfigurationSummary(const ConfigurationSummary& value) { m_configurationSummaryHasBeenSet = true; m_configurationSummary = value; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline void SetConfigurationSummary(ConfigurationSummary&& value) { m_configurationSummaryHasBeenSet = true; m_configurationSummary = std::move(value); }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline Collector& WithConfigurationSummary(const ConfigurationSummary& value) { SetConfigurationSummary(value); return *this;}
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline Collector& WithConfigurationSummary(ConfigurationSummary&& value) { SetConfigurationSummary(std::move(value)); return *this;}
 
 
     /**
@@ -326,25 +358,28 @@ namespace Model
   private:
 
     CollectorHealth m_collectorHealth;
-    bool m_collectorHealthHasBeenSet;
+    bool m_collectorHealthHasBeenSet = false;
 
     Aws::String m_collectorId;
-    bool m_collectorIdHasBeenSet;
+    bool m_collectorIdHasBeenSet = false;
 
     Aws::String m_collectorVersion;
-    bool m_collectorVersionHasBeenSet;
+    bool m_collectorVersionHasBeenSet = false;
+
+    ConfigurationSummary m_configurationSummary;
+    bool m_configurationSummaryHasBeenSet = false;
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_lastActivityTimeStamp;
-    bool m_lastActivityTimeStampHasBeenSet;
+    bool m_lastActivityTimeStampHasBeenSet = false;
 
     Aws::String m_registeredTimeStamp;
-    bool m_registeredTimeStampHasBeenSet;
+    bool m_registeredTimeStampHasBeenSet = false;
   };
 
 } // namespace Model

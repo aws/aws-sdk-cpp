@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/S3Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API S3Configuration
+  class S3Configuration
   {
   public:
-    S3Configuration();
-    S3Configuration(Aws::Utils::Json::JsonView jsonValue);
-    S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API S3Configuration();
+    AWS_TIMESTREAMWRITE_API S3Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_objectKeyPrefix;
-    bool m_objectKeyPrefixHasBeenSet;
+    bool m_objectKeyPrefixHasBeenSet = false;
 
     S3EncryptionOption m_encryptionOption;
-    bool m_encryptionOptionHasBeenSet;
+    bool m_encryptionOptionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/WebhookAuthConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API WebhookAuthConfiguration
+  class WebhookAuthConfiguration
   {
   public:
-    WebhookAuthConfiguration();
-    WebhookAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WebhookAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API WebhookAuthConfiguration();
+    AWS_CODEPIPELINE_API WebhookAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API WebhookAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_allowedIPRange;
-    bool m_allowedIPRangeHasBeenSet;
+    bool m_allowedIPRangeHasBeenSet = false;
 
     Aws::String m_secretToken;
-    bool m_secretTokenHasBeenSet;
+    bool m_secretTokenHasBeenSet = false;
   };
 
 } // namespace Model

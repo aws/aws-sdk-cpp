@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ItemizedMetricStats">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API ItemizedMetricStats
+  class ItemizedMetricStats
   {
   public:
-    ItemizedMetricStats();
-    ItemizedMetricStats(Aws::Utils::Json::JsonView jsonValue);
-    ItemizedMetricStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API ItemizedMetricStats();
+    AWS_LOOKOUTMETRICS_API ItemizedMetricStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API ItemizedMetricStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     int m_occurrenceCount;
-    bool m_occurrenceCountHasBeenSet;
+    bool m_occurrenceCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDataSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSDataSpec
+  class RDSDataSpec
   {
   public:
-    RDSDataSpec();
-    RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
-    RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSDataSpec();
+    AWS_MACHINELEARNING_API RDSDataSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1214,37 +1214,37 @@ namespace Model
   private:
 
     RDSDatabase m_databaseInformation;
-    bool m_databaseInformationHasBeenSet;
+    bool m_databaseInformationHasBeenSet = false;
 
     Aws::String m_selectSqlQuery;
-    bool m_selectSqlQueryHasBeenSet;
+    bool m_selectSqlQueryHasBeenSet = false;
 
     RDSDatabaseCredentials m_databaseCredentials;
-    bool m_databaseCredentialsHasBeenSet;
+    bool m_databaseCredentialsHasBeenSet = false;
 
     Aws::String m_s3StagingLocation;
-    bool m_s3StagingLocationHasBeenSet;
+    bool m_s3StagingLocationHasBeenSet = false;
 
     Aws::String m_dataRearrangement;
-    bool m_dataRearrangementHasBeenSet;
+    bool m_dataRearrangementHasBeenSet = false;
 
     Aws::String m_dataSchema;
-    bool m_dataSchemaHasBeenSet;
+    bool m_dataSchemaHasBeenSet = false;
 
     Aws::String m_dataSchemaUri;
-    bool m_dataSchemaUriHasBeenSet;
+    bool m_dataSchemaUriHasBeenSet = false;
 
     Aws::String m_resourceRole;
-    bool m_resourceRoleHasBeenSet;
+    bool m_resourceRoleHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

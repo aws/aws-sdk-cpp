@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/SourceDataColumnProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API SourceDataColumnProperties
+  class SourceDataColumnProperties
   {
   public:
-    SourceDataColumnProperties();
-    SourceDataColumnProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceDataColumnProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API SourceDataColumnProperties();
+    AWS_HONEYCODE_API SourceDataColumnProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API SourceDataColumnProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_columnIndex;
-    bool m_columnIndexHasBeenSet;
+    bool m_columnIndexHasBeenSet = false;
   };
 
 } // namespace Model

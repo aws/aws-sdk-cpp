@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API ImageDetail
+  class ImageDetail
   {
   public:
-    ImageDetail();
-    ImageDetail(Aws::Utils::Json::JsonView jsonValue);
-    ImageDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API ImageDetail();
+    AWS_ECRPUBLIC_API ImageDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API ImageDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -383,28 +383,28 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     long long m_imageSizeInBytes;
-    bool m_imageSizeInBytesHasBeenSet;
+    bool m_imageSizeInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_imagePushedAt;
-    bool m_imagePushedAtHasBeenSet;
+    bool m_imagePushedAtHasBeenSet = false;
 
     Aws::String m_imageManifestMediaType;
-    bool m_imageManifestMediaTypeHasBeenSet;
+    bool m_imageManifestMediaTypeHasBeenSet = false;
 
     Aws::String m_artifactMediaType;
-    bool m_artifactMediaTypeHasBeenSet;
+    bool m_artifactMediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

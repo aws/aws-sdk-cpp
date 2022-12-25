@@ -10,6 +10,7 @@
 #include <aws/iot/model/DeviceDefenderIndexingMode.h>
 #include <aws/iot/model/NamedShadowIndexingMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/IndexingFilter.h>
 #include <aws/iot/model/Field.h>
 #include <utility>
 
@@ -35,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingIndexingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingIndexingConfiguration
+  class ThingIndexingConfiguration
   {
   public:
-    ThingIndexingConfiguration();
-    ThingIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ThingIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingIndexingConfiguration();
+    AWS_IOT_API ThingIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,25 +366,83 @@ namespace Model
      */
     inline ThingIndexingConfiguration& AddCustomFields(Field&& value) { m_customFieldsHasBeenSet = true; m_customFields.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline const IndexingFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline void SetFilter(const IndexingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline void SetFilter(IndexingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline ThingIndexingConfiguration& WithFilter(const IndexingFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>Provides additional filters for specific data sources. Named shadow is the
+     * only data source that currently supports and requires a filter. To add named
+     * shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
+     * shadow names in <code>filter</code>.</p>
+     */
+    inline ThingIndexingConfiguration& WithFilter(IndexingFilter&& value) { SetFilter(std::move(value)); return *this;}
+
   private:
 
     ThingIndexingMode m_thingIndexingMode;
-    bool m_thingIndexingModeHasBeenSet;
+    bool m_thingIndexingModeHasBeenSet = false;
 
     ThingConnectivityIndexingMode m_thingConnectivityIndexingMode;
-    bool m_thingConnectivityIndexingModeHasBeenSet;
+    bool m_thingConnectivityIndexingModeHasBeenSet = false;
 
     DeviceDefenderIndexingMode m_deviceDefenderIndexingMode;
-    bool m_deviceDefenderIndexingModeHasBeenSet;
+    bool m_deviceDefenderIndexingModeHasBeenSet = false;
 
     NamedShadowIndexingMode m_namedShadowIndexingMode;
-    bool m_namedShadowIndexingModeHasBeenSet;
+    bool m_namedShadowIndexingModeHasBeenSet = false;
 
     Aws::Vector<Field> m_managedFields;
-    bool m_managedFieldsHasBeenSet;
+    bool m_managedFieldsHasBeenSet = false;
 
     Aws::Vector<Field> m_customFields;
-    bool m_customFieldsHasBeenSet;
+    bool m_customFieldsHasBeenSet = false;
+
+    IndexingFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

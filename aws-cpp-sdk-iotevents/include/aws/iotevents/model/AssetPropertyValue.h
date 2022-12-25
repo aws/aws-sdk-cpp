@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AssetPropertyValue
+  class AssetPropertyValue
   {
   public:
-    AssetPropertyValue();
-    AssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
-    AssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AssetPropertyValue();
+    AWS_IOTEVENTS_API AssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     AssetPropertyVariant m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AssetPropertyTimestamp m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
   };
 
 } // namespace Model

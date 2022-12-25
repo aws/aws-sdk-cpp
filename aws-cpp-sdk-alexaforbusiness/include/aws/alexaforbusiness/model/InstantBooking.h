@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/InstantBooking">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API InstantBooking
+  class InstantBooking
   {
   public:
-    InstantBooking();
-    InstantBooking(Aws::Utils::Json::JsonView jsonValue);
-    InstantBooking& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API InstantBooking();
+    AWS_ALEXAFORBUSINESS_API InstantBooking(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API InstantBooking& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_durationInMinutes;
-    bool m_durationInMinutesHasBeenSet;
+    bool m_durationInMinutesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

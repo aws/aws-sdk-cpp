@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/IntentResultEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API IntentResultEvent
+  class IntentResultEvent
   {
   public:
-    IntentResultEvent();
-    IntentResultEvent(Aws::Utils::Json::JsonView jsonValue);
-    IntentResultEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API IntentResultEvent();
+    AWS_LEXRUNTIMEV2_API IntentResultEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API IntentResultEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -332,22 +332,22 @@ namespace Model
   private:
 
     InputMode m_inputMode;
-    bool m_inputModeHasBeenSet;
+    bool m_inputModeHasBeenSet = false;
 
     Aws::Vector<Interpretation> m_interpretations;
-    bool m_interpretationsHasBeenSet;
+    bool m_interpretationsHasBeenSet = false;
 
     SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/OnDemandProvisioningSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API OnDemandProvisioningSpecification
+  class OnDemandProvisioningSpecification
   {
   public:
-    OnDemandProvisioningSpecification();
-    OnDemandProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
-    OnDemandProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API OnDemandProvisioningSpecification();
+    AWS_EMR_API OnDemandProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API OnDemandProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     OnDemandProvisioningAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandCapacityReservationOptions m_capacityReservationOptions;
-    bool m_capacityReservationOptionsHasBeenSet;
+    bool m_capacityReservationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

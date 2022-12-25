@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamInstanceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamInstanceProfile
+  class AwsIamInstanceProfile
   {
   public:
-    AwsIamInstanceProfile();
-    AwsIamInstanceProfile(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamInstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamInstanceProfile();
+    AWS_SECURITYHUB_API AwsIamInstanceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamInstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -319,22 +319,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_instanceProfileId;
-    bool m_instanceProfileIdHasBeenSet;
+    bool m_instanceProfileIdHasBeenSet = false;
 
     Aws::String m_instanceProfileName;
-    bool m_instanceProfileNameHasBeenSet;
+    bool m_instanceProfileNameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<AwsIamInstanceProfileRole> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
   };
 
 } // namespace Model

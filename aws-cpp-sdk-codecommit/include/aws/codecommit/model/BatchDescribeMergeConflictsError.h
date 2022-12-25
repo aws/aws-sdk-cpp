@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflictsError">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API BatchDescribeMergeConflictsError
+  class BatchDescribeMergeConflictsError
   {
   public:
-    BatchDescribeMergeConflictsError();
-    BatchDescribeMergeConflictsError(Aws::Utils::Json::JsonView jsonValue);
-    BatchDescribeMergeConflictsError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API BatchDescribeMergeConflictsError();
+    AWS_CODECOMMIT_API BatchDescribeMergeConflictsError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API BatchDescribeMergeConflictsError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_exceptionName;
-    bool m_exceptionNameHasBeenSet;
+    bool m_exceptionNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

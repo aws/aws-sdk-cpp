@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/OutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API OutputDataConfig
+  class OutputDataConfig
   {
   public:
-    OutputDataConfig();
-    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API OutputDataConfig();
+    AWS_TRANSLATE_API OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
   };
 
 } // namespace Model

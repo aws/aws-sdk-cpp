@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/BucketMetadataErrorCode.h>
 #include <aws/macie2/model/JobDetails.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/macie2/model/ObjectCountByEncryptionType.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
 #include <utility>
@@ -31,19 +32,19 @@ namespace Model
    * <p>Provides statistical data and other information about an S3 bucket that
    * Amazon Macie monitors and analyzes for your account. If an error occurs when
    * Macie attempts to retrieve and process information about the bucket or the
-   * bucket's objects, the value for most of these properties is null. Exceptions are
-   * accountId and bucketName. To identify the cause of the error, refer to the
+   * bucket's objects, the value for most of these properties is null. Key exceptions
+   * are accountId and bucketName. To identify the cause of the error, refer to the
    * errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingBucket">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API MatchingBucket
+  class MatchingBucket
   {
   public:
-    MatchingBucket();
-    MatchingBucket(Aws::Utils::Json::JsonView jsonValue);
-    MatchingBucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API MatchingBucket();
+    AWS_MACIE2_API MatchingBucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API MatchingBucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -380,6 +381,55 @@ namespace Model
 
 
     /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline void SetLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = value; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline void SetLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = std::move(value); }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline MatchingBucket& WithLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastAutomatedDiscoveryTime(value); return *this;}
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline MatchingBucket& WithLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastAutomatedDiscoveryTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The total number of objects in the bucket.</p>
      */
     inline long long GetObjectCount() const{ return m_objectCount; }
@@ -401,46 +451,75 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline const ObjectCountByEncryptionType& GetObjectCountByEncryptionType() const{ return m_objectCountByEncryptionType; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline bool ObjectCountByEncryptionTypeHasBeenSet() const { return m_objectCountByEncryptionTypeHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = value; }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = std::move(value); }
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline MatchingBucket& WithObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { SetObjectCountByEncryptionType(value); return *this;}
 
     /**
-     * <p>The total number of objects that are in the bucket, grouped by server-side
-     * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted or use client-side encryption.</p>
+     * <p>The total number of objects in the bucket, grouped by server-side encryption
+     * type. This includes a grouping that reports the total number of objects that
+     * aren't encrypted or use client-side encryption.</p>
      */
     inline MatchingBucket& WithObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { SetObjectCountByEncryptionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
+     * due to an error) to 100 (sensitive). This value is null if automated sensitive
+     * data discovery is currently disabled for your account.</p>
+     */
+    inline int GetSensitivityScore() const{ return m_sensitivityScore; }
+
+    /**
+     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
+     * due to an error) to 100 (sensitive). This value is null if automated sensitive
+     * data discovery is currently disabled for your account.</p>
+     */
+    inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
+
+    /**
+     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
+     * due to an error) to 100 (sensitive). This value is null if automated sensitive
+     * data discovery is currently disabled for your account.</p>
+     */
+    inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
+
+    /**
+     * <p>The current sensitivity score for the bucket, ranging from -1 (no analysis
+     * due to an error) to 100 (sensitive). This value is null if automated sensitive
+     * data discovery is currently disabled for your account.</p>
+     */
+    inline MatchingBucket& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
 
 
     /**
@@ -601,43 +680,49 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     long long m_classifiableObjectCount;
-    bool m_classifiableObjectCountHasBeenSet;
+    bool m_classifiableObjectCountHasBeenSet = false;
 
     long long m_classifiableSizeInBytes;
-    bool m_classifiableSizeInBytesHasBeenSet;
+    bool m_classifiableSizeInBytesHasBeenSet = false;
 
     BucketMetadataErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     JobDetails m_jobDetails;
-    bool m_jobDetailsHasBeenSet;
+    bool m_jobDetailsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastAutomatedDiscoveryTime;
+    bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     ObjectCountByEncryptionType m_objectCountByEncryptionType;
-    bool m_objectCountByEncryptionTypeHasBeenSet;
+    bool m_objectCountByEncryptionTypeHasBeenSet = false;
+
+    int m_sensitivityScore;
+    bool m_sensitivityScoreHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     long long m_sizeInBytesCompressed;
-    bool m_sizeInBytesCompressedHasBeenSet;
+    bool m_sizeInBytesCompressedHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectCount;
-    bool m_unclassifiableObjectCountHasBeenSet;
+    bool m_unclassifiableObjectCountHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-    bool m_unclassifiableObjectSizeInBytesHasBeenSet;
+    bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

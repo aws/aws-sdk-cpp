@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VTLDevice
+  class VTLDevice
   {
   public:
-    VTLDevice();
-    VTLDevice(Aws::Utils::Json::JsonView jsonValue);
-    VTLDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VTLDevice();
+    AWS_STORAGEGATEWAY_API VTLDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VTLDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_vTLDeviceARN;
-    bool m_vTLDeviceARNHasBeenSet;
+    bool m_vTLDeviceARNHasBeenSet = false;
 
     Aws::String m_vTLDeviceType;
-    bool m_vTLDeviceTypeHasBeenSet;
+    bool m_vTLDeviceTypeHasBeenSet = false;
 
     Aws::String m_vTLDeviceVendor;
-    bool m_vTLDeviceVendorHasBeenSet;
+    bool m_vTLDeviceVendorHasBeenSet = false;
 
     Aws::String m_vTLDeviceProductIdentifier;
-    bool m_vTLDeviceProductIdentifierHasBeenSet;
+    bool m_vTLDeviceProductIdentifierHasBeenSet = false;
 
     DeviceiSCSIAttributes m_deviceiSCSIAttributes;
-    bool m_deviceiSCSIAttributesHasBeenSet;
+    bool m_deviceiSCSIAttributesHasBeenSet = false;
   };
 
 } // namespace Model

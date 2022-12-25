@@ -5,158 +5,16 @@
 
 #pragma once
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
-#include <aws/cloudhsm/CloudHSMErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cloudhsm/model/AddTagsToResourceResult.h>
-#include <aws/cloudhsm/model/CreateHapgResult.h>
-#include <aws/cloudhsm/model/CreateHsmResult.h>
-#include <aws/cloudhsm/model/CreateLunaClientResult.h>
-#include <aws/cloudhsm/model/DeleteHapgResult.h>
-#include <aws/cloudhsm/model/DeleteHsmResult.h>
-#include <aws/cloudhsm/model/DeleteLunaClientResult.h>
-#include <aws/cloudhsm/model/DescribeHapgResult.h>
-#include <aws/cloudhsm/model/DescribeHsmResult.h>
-#include <aws/cloudhsm/model/DescribeLunaClientResult.h>
-#include <aws/cloudhsm/model/GetConfigResult.h>
-#include <aws/cloudhsm/model/ListAvailableZonesResult.h>
-#include <aws/cloudhsm/model/ListHapgsResult.h>
-#include <aws/cloudhsm/model/ListHsmsResult.h>
-#include <aws/cloudhsm/model/ListLunaClientsResult.h>
-#include <aws/cloudhsm/model/ListTagsForResourceResult.h>
-#include <aws/cloudhsm/model/ModifyHapgResult.h>
-#include <aws/cloudhsm/model/ModifyHsmResult.h>
-#include <aws/cloudhsm/model/ModifyLunaClientResult.h>
-#include <aws/cloudhsm/model/RemoveTagsFromResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cloudhsm/CloudHSMServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudHSM
 {
-
-namespace Model
-{
-        class AddTagsToResourceRequest;
-        class CreateHapgRequest;
-        class CreateHsmRequest;
-        class CreateLunaClientRequest;
-        class DeleteHapgRequest;
-        class DeleteHsmRequest;
-        class DeleteLunaClientRequest;
-        class DescribeHapgRequest;
-        class DescribeHsmRequest;
-        class DescribeLunaClientRequest;
-        class GetConfigRequest;
-        class ListAvailableZonesRequest;
-        class ListHapgsRequest;
-        class ListHsmsRequest;
-        class ListLunaClientsRequest;
-        class ListTagsForResourceRequest;
-        class ModifyHapgRequest;
-        class ModifyHsmRequest;
-        class ModifyLunaClientRequest;
-        class RemoveTagsFromResourceRequest;
-
-        typedef Aws::Utils::Outcome<AddTagsToResourceResult, CloudHSMError> AddTagsToResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateHapgResult, CloudHSMError> CreateHapgOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmResult, CloudHSMError> CreateHsmOutcome;
-        typedef Aws::Utils::Outcome<CreateLunaClientResult, CloudHSMError> CreateLunaClientOutcome;
-        typedef Aws::Utils::Outcome<DeleteHapgResult, CloudHSMError> DeleteHapgOutcome;
-        typedef Aws::Utils::Outcome<DeleteHsmResult, CloudHSMError> DeleteHsmOutcome;
-        typedef Aws::Utils::Outcome<DeleteLunaClientResult, CloudHSMError> DeleteLunaClientOutcome;
-        typedef Aws::Utils::Outcome<DescribeHapgResult, CloudHSMError> DescribeHapgOutcome;
-        typedef Aws::Utils::Outcome<DescribeHsmResult, CloudHSMError> DescribeHsmOutcome;
-        typedef Aws::Utils::Outcome<DescribeLunaClientResult, CloudHSMError> DescribeLunaClientOutcome;
-        typedef Aws::Utils::Outcome<GetConfigResult, CloudHSMError> GetConfigOutcome;
-        typedef Aws::Utils::Outcome<ListAvailableZonesResult, CloudHSMError> ListAvailableZonesOutcome;
-        typedef Aws::Utils::Outcome<ListHapgsResult, CloudHSMError> ListHapgsOutcome;
-        typedef Aws::Utils::Outcome<ListHsmsResult, CloudHSMError> ListHsmsOutcome;
-        typedef Aws::Utils::Outcome<ListLunaClientsResult, CloudHSMError> ListLunaClientsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudHSMError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ModifyHapgResult, CloudHSMError> ModifyHapgOutcome;
-        typedef Aws::Utils::Outcome<ModifyHsmResult, CloudHSMError> ModifyHsmOutcome;
-        typedef Aws::Utils::Outcome<ModifyLunaClientResult, CloudHSMError> ModifyLunaClientOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, CloudHSMError> RemoveTagsFromResourceOutcome;
-
-        typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
-        typedef std::future<CreateHapgOutcome> CreateHapgOutcomeCallable;
-        typedef std::future<CreateHsmOutcome> CreateHsmOutcomeCallable;
-        typedef std::future<CreateLunaClientOutcome> CreateLunaClientOutcomeCallable;
-        typedef std::future<DeleteHapgOutcome> DeleteHapgOutcomeCallable;
-        typedef std::future<DeleteHsmOutcome> DeleteHsmOutcomeCallable;
-        typedef std::future<DeleteLunaClientOutcome> DeleteLunaClientOutcomeCallable;
-        typedef std::future<DescribeHapgOutcome> DescribeHapgOutcomeCallable;
-        typedef std::future<DescribeHsmOutcome> DescribeHsmOutcomeCallable;
-        typedef std::future<DescribeLunaClientOutcome> DescribeLunaClientOutcomeCallable;
-        typedef std::future<GetConfigOutcome> GetConfigOutcomeCallable;
-        typedef std::future<ListAvailableZonesOutcome> ListAvailableZonesOutcomeCallable;
-        typedef std::future<ListHapgsOutcome> ListHapgsOutcomeCallable;
-        typedef std::future<ListHsmsOutcome> ListHsmsOutcomeCallable;
-        typedef std::future<ListLunaClientsOutcome> ListLunaClientsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ModifyHapgOutcome> ModifyHapgOutcomeCallable;
-        typedef std::future<ModifyHsmOutcome> ModifyHsmOutcomeCallable;
-        typedef std::future<ModifyLunaClientOutcome> ModifyLunaClientOutcomeCallable;
-        typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
-} // namespace Model
-
-  class CloudHSMClient;
-
-    typedef std::function<void(const CloudHSMClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::CreateHapgRequest&, const Model::CreateHapgOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHapgResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::CreateHsmRequest&, const Model::CreateHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::CreateLunaClientRequest&, const Model::CreateLunaClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLunaClientResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DeleteHapgRequest&, const Model::DeleteHapgOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHapgResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DeleteHsmRequest&, const Model::DeleteHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DeleteLunaClientRequest&, const Model::DeleteLunaClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLunaClientResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DescribeHapgRequest&, const Model::DescribeHapgOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHapgResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DescribeHsmRequest&, const Model::DescribeHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::DescribeLunaClientRequest&, const Model::DescribeLunaClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLunaClientResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::GetConfigRequest&, const Model::GetConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ListAvailableZonesRequest&, const Model::ListAvailableZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableZonesResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ListHapgsRequest&, const Model::ListHapgsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHapgsResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ListHsmsRequest&, const Model::ListHsmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHsmsResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ListLunaClientsRequest&, const Model::ListLunaClientsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLunaClientsResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ModifyHapgRequest&, const Model::ModifyHapgOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyHapgResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ModifyHsmRequest&, const Model::ModifyHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyHsmResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::ModifyLunaClientRequest&, const Model::ModifyLunaClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLunaClientResponseReceivedHandler;
-    typedef std::function<void(const CloudHSMClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
-
   /**
    * <fullname>AWS CloudHSM Service</fullname> <p>This is documentation for <b>AWS
    * CloudHSM Classic</b>. For more information, see <a
@@ -173,32 +31,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM
    * API Reference</a>.</p>
    */
-  class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudHSMClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudHSMClient(const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration(),
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudHSMClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudHSMClient(const Aws::Auth::AWSCredentials& credentials,
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudHSMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<CloudHSMEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudHSMEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::CloudHSM::CloudHSMClientConfiguration& clientConfiguration = Aws::CloudHSM::CloudHSMClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudHSMClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudHSMClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudHSMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudHSMClient();
-
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -830,32 +716,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudHSMEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHapgAsyncHelper(const Model::CreateHapgRequest& request, const CreateHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHsmAsyncHelper(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLunaClientAsyncHelper(const Model::CreateLunaClientRequest& request, const CreateLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHapgAsyncHelper(const Model::DeleteHapgRequest& request, const DeleteHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHsmAsyncHelper(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLunaClientAsyncHelper(const Model::DeleteLunaClientRequest& request, const DeleteLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeHapgAsyncHelper(const Model::DescribeHapgRequest& request, const DescribeHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeHsmAsyncHelper(const Model::DescribeHsmRequest& request, const DescribeHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLunaClientAsyncHelper(const Model::DescribeLunaClientRequest& request, const DescribeLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConfigAsyncHelper(const Model::GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAvailableZonesAsyncHelper(const Model::ListAvailableZonesRequest& request, const ListAvailableZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHapgsAsyncHelper(const Model::ListHapgsRequest& request, const ListHapgsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHsmsAsyncHelper(const Model::ListHsmsRequest& request, const ListHsmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLunaClientsAsyncHelper(const Model::ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyHapgAsyncHelper(const Model::ModifyHapgRequest& request, const ModifyHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyHsmAsyncHelper(const Model::ModifyHsmRequest& request, const ModifyHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyLunaClientAsyncHelper(const Model::ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>;
+      void init(const CloudHSMClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudHSMClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudHSMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudHSM

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API GetNetworkRoutesRequest : public NetworkManagerRequest
+  class GetNetworkRoutesRequest : public NetworkManagerRequest
   {
   public:
-    GetNetworkRoutesRequest();
+    AWS_NETWORKMANAGER_API GetNetworkRoutesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetNetworkRoutes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -505,34 +505,34 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     RouteTableIdentifier m_routeTableIdentifier;
-    bool m_routeTableIdentifierHasBeenSet;
+    bool m_routeTableIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exactCidrMatches;
-    bool m_exactCidrMatchesHasBeenSet;
+    bool m_exactCidrMatchesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_longestPrefixMatches;
-    bool m_longestPrefixMatchesHasBeenSet;
+    bool m_longestPrefixMatchesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetOfMatches;
-    bool m_subnetOfMatchesHasBeenSet;
+    bool m_subnetOfMatchesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supernetOfMatches;
-    bool m_supernetOfMatchesHasBeenSet;
+    bool m_supernetOfMatchesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_prefixListIds;
-    bool m_prefixListIdsHasBeenSet;
+    bool m_prefixListIdsHasBeenSet = false;
 
     Aws::Vector<RouteState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::Vector<RouteType> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_destinationFilters;
-    bool m_destinationFiltersHasBeenSet;
+    bool m_destinationFiltersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,78 +5,16 @@
 
 #pragma once
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
-#include <aws/meteringmarketplace/MarketplaceMeteringErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
-#include <aws/meteringmarketplace/model/MeterUsageResult.h>
-#include <aws/meteringmarketplace/model/RegisterUsageResult.h>
-#include <aws/meteringmarketplace/model/ResolveCustomerResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MarketplaceMetering
 {
-
-namespace Model
-{
-        class BatchMeterUsageRequest;
-        class MeterUsageRequest;
-        class RegisterUsageRequest;
-        class ResolveCustomerRequest;
-
-        typedef Aws::Utils::Outcome<BatchMeterUsageResult, MarketplaceMeteringError> BatchMeterUsageOutcome;
-        typedef Aws::Utils::Outcome<MeterUsageResult, MarketplaceMeteringError> MeterUsageOutcome;
-        typedef Aws::Utils::Outcome<RegisterUsageResult, MarketplaceMeteringError> RegisterUsageOutcome;
-        typedef Aws::Utils::Outcome<ResolveCustomerResult, MarketplaceMeteringError> ResolveCustomerOutcome;
-
-        typedef std::future<BatchMeterUsageOutcome> BatchMeterUsageOutcomeCallable;
-        typedef std::future<MeterUsageOutcome> MeterUsageOutcomeCallable;
-        typedef std::future<RegisterUsageOutcome> RegisterUsageOutcomeCallable;
-        typedef std::future<ResolveCustomerOutcome> ResolveCustomerOutcomeCallable;
-} // namespace Model
-
-  class MarketplaceMeteringClient;
-
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::BatchMeterUsageRequest&, const Model::BatchMeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchMeterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::MeterUsageRequest&, const Model::MeterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MeterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::RegisterUsageRequest&, const Model::RegisterUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUsageResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceMeteringClient*, const Model::ResolveCustomerRequest&, const Model::ResolveCustomerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveCustomerResponseReceivedHandler;
-
   /**
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
    * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS
@@ -114,32 +52,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS
    * CloudTrail User Guide</a>.</i> </p>
    */
-  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient
+  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MarketplaceMeteringClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MarketplaceMeteringClient(const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration(),
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MarketplaceMeteringClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MarketplaceMeteringClient(const Aws::Auth::AWSCredentials& credentials,
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MarketplaceMeteringClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MarketplaceMeteringClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MarketplaceMeteringClient(const Aws::Auth::AWSCredentials& credentials,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MarketplaceMeteringClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MarketplaceMeteringClient();
-
 
         /**
          * <p> <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS
@@ -280,16 +246,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MarketplaceMeteringEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchMeterUsageAsyncHelper(const Model::BatchMeterUsageRequest& request, const BatchMeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MeterUsageAsyncHelper(const Model::MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterUsageAsyncHelper(const Model::RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResolveCustomerAsyncHelper(const Model::ResolveCustomerRequest& request, const ResolveCustomerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>;
+      void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MarketplaceMeteringClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MarketplaceMeteringEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceMetering

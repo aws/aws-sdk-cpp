@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API MetricSetSummary
+  class MetricSetSummary
   {
   public:
-    MetricSetSummary();
-    MetricSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    MetricSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API MetricSetSummary();
+    AWS_LOOKOUTMETRICS_API MetricSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API MetricSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
-    bool m_metricSetDescriptionHasBeenSet;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
     Aws::String m_metricSetName;
-    bool m_metricSetNameHasBeenSet;
+    bool m_metricSetNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

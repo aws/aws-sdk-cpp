@@ -44,7 +44,7 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Containers"))
   {
-    Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
+    Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
     for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
     {
       m_containers.push_back(containersJsonList[containersIndex].AsObject());

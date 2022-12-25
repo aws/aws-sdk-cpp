@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API DeleteAuditSuppressionRequest : public IoTRequest
+  class DeleteAuditSuppressionRequest : public IoTRequest
   {
   public:
-    DeleteAuditSuppressionRequest();
+    AWS_IOT_API DeleteAuditSuppressionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAuditSuppression"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

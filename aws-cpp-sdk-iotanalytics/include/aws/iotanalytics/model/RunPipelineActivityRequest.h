@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTANALYTICS_API RunPipelineActivityRequest : public IoTAnalyticsRequest
+  class RunPipelineActivityRequest : public IoTAnalyticsRequest
   {
   public:
-    RunPipelineActivityRequest();
+    AWS_IOTANALYTICS_API RunPipelineActivityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RunPipelineActivity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     PipelineActivity m_pipelineActivity;
-    bool m_pipelineActivityHasBeenSet;
+    bool m_pipelineActivityHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
-    bool m_payloadsHasBeenSet;
+    bool m_payloadsHasBeenSet = false;
   };
 
 } // namespace Model

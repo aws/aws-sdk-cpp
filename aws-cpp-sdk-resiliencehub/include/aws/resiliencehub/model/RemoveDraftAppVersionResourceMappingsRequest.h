@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API RemoveDraftAppVersionResourceMappingsRequest : public ResilienceHubRequest
+  class RemoveDraftAppVersionResourceMappingsRequest : public ResilienceHubRequest
   {
   public:
-    RemoveDraftAppVersionResourceMappingsRequest();
+    AWS_RESILIENCEHUB_API RemoveDraftAppVersionResourceMappingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveDraftAppVersionResourceMappings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -364,22 +364,22 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_appRegistryAppNames;
-    bool m_appRegistryAppNamesHasBeenSet;
+    bool m_appRegistryAppNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logicalStackNames;
-    bool m_logicalStackNamesHasBeenSet;
+    bool m_logicalStackNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceGroupNames;
-    bool m_resourceGroupNamesHasBeenSet;
+    bool m_resourceGroupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceNames;
-    bool m_resourceNamesHasBeenSet;
+    bool m_resourceNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terraformSourceNames;
-    bool m_terraformSourceNamesHasBeenSet;
+    bool m_terraformSourceNamesHasBeenSet = false;
   };
 
 } // namespace Model

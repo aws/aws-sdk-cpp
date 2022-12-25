@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ProvisionalConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ProvisionalConfiguration
+  class ProvisionalConfiguration
   {
   public:
-    ProvisionalConfiguration();
-    ProvisionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ProvisionalConfiguration();
+    AWS_LICENSEMANAGER_API ProvisionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ProvisionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_maxTimeToLiveInMinutes;
-    bool m_maxTimeToLiveInMinutesHasBeenSet;
+    bool m_maxTimeToLiveInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

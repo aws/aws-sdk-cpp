@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API FilterLogEventsRequest : public CloudWatchLogsRequest
+  class FilterLogEventsRequest : public CloudWatchLogsRequest
   {
   public:
-    FilterLogEventsRequest();
+    AWS_CLOUDWATCHLOGS_API FilterLogEventsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,50 +30,139 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "FilterLogEvents"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline FilterLogEventsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline FilterLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log group to search.</p>
+     * <p>The name of the log group to search.</p>  <p> If you specify values for
+     * both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error. </p> 
      */
     inline FilterLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline FilterLogEventsRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline FilterLogEventsRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify either the name or ARN of the log group to view log events from. If
+     * the log group is in a source account and you are using a monitoring account, you
+     * must use the log group ARN.</p> <p>If you specify values for both
+     * <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     * returns an <code>InvalidParameterException</code> error.</p>
+     */
+    inline FilterLogEventsRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
 
 
     /**
@@ -232,58 +321,58 @@ namespace Model
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time
+     * are not returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time
+     * are not returned.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time
+     * are not returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time
+     * are not returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-     * returned.</p>
+     * <p>The end of the time range, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
+     * time are not returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-     * returned.</p>
+     * <p>The end of the time range, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
+     * time are not returned.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-     * returned.</p>
+     * <p>The end of the time range, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
+     * time are not returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-     * returned.</p>
+     * <p>The end of the time range, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
+     * time are not returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
 
@@ -414,31 +503,70 @@ namespace Model
      */
     inline FilterLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool GetUnmask() const{ return m_unmask; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline FilterLogEventsRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
+
+    Aws::String m_logGroupIdentifier;
+    bool m_logGroupIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logStreamNames;
-    bool m_logStreamNamesHasBeenSet;
+    bool m_logStreamNamesHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
 
     long long m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     long long m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
+
+    bool m_unmask;
+    bool m_unmaskHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeEmergencyContactSettingsResult& DescribeEmergencyContactSettingsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EmergencyContactList"))
   {
-    Array<JsonView> emergencyContactListJsonList = jsonValue.GetArray("EmergencyContactList");
+    Aws::Utils::Array<JsonView> emergencyContactListJsonList = jsonValue.GetArray("EmergencyContactList");
     for(unsigned emergencyContactListIndex = 0; emergencyContactListIndex < emergencyContactListJsonList.GetLength(); ++emergencyContactListIndex)
     {
       m_emergencyContactList.push_back(emergencyContactListJsonList[emergencyContactListIndex].AsObject());

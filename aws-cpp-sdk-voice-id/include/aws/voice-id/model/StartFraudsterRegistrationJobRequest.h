@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_VOICEID_API StartFraudsterRegistrationJobRequest : public VoiceIDRequest
+  class StartFraudsterRegistrationJobRequest : public VoiceIDRequest
   {
   public:
-    StartFraudsterRegistrationJobRequest();
+    AWS_VOICEID_API StartFraudsterRegistrationJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartFraudsterRegistrationJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_VOICEID_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -335,67 +335,67 @@ namespace Model
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline bool RegistrationConfigHasBeenSet() const { return m_registrationConfigHasBeenSet; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::move(value); }
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline StartFraudsterRegistrationJobRequest& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
 
     /**
      * <p>The registration config containing details such as the action to take when a
      * duplicate fraudster is detected, and the similarity threshold to use for
-     * detecting a duplicate fraudster.</p>
+     * detecting a duplicate fraudster. </p>
      */
     inline StartFraudsterRegistrationJobRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
-    bool m_registrationConfigHasBeenSet;
+    bool m_registrationConfigHasBeenSet = false;
   };
 
 } // namespace Model

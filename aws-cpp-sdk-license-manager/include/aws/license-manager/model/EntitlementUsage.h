@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/EntitlementUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API EntitlementUsage
+  class EntitlementUsage
   {
   public:
-    EntitlementUsage();
-    EntitlementUsage(Aws::Utils::Json::JsonView jsonValue);
-    EntitlementUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API EntitlementUsage();
+    AWS_LICENSEMANAGER_API EntitlementUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API EntitlementUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_consumedValue;
-    bool m_consumedValueHasBeenSet;
+    bool m_consumedValueHasBeenSet = false;
 
     Aws::String m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     EntitlementDataUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

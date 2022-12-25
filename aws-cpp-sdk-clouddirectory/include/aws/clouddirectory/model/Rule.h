@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Rule">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API Rule();
+    AWS_CLOUDDIRECTORY_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

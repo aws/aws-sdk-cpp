@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API PutPlaybackConfigurationRequest : public MediaTailorRequest
+  class PutPlaybackConfigurationRequest : public MediaTailorRequest
   {
   public:
-    PutPlaybackConfigurationRequest();
+    AWS_MEDIATAILOR_API PutPlaybackConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutPlaybackConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -251,7 +251,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetConfigurationAliases() const{ return m_configurationAliases; }
 
@@ -259,7 +259,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline bool ConfigurationAliasesHasBeenSet() const { return m_configurationAliasesHasBeenSet; }
 
@@ -267,7 +267,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline void SetConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases = value; }
 
@@ -275,7 +275,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline void SetConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases = std::move(value); }
 
@@ -283,7 +283,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& WithConfigurationAliases(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetConfigurationAliases(value); return *this;}
 
@@ -291,7 +291,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& WithConfigurationAliases(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetConfigurationAliases(std::move(value)); return *this;}
 
@@ -299,7 +299,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, value); return *this; }
 
@@ -307,7 +307,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(std::move(key), value); return *this; }
 
@@ -315,7 +315,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, std::move(value)); return *this; }
 
@@ -323,7 +323,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -331,7 +331,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, std::move(value)); return *this; }
 
@@ -339,7 +339,7 @@ namespace Model
      * <p>The player parameters and aliases used as dynamic variables during session
      * initialization. For more information, see <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
-     * Variables</a>.</p> 
+     * Variables</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddConfigurationAliases(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_configurationAliasesHasBeenSet = true; m_configurationAliases.emplace(key, value); return *this; }
 
@@ -619,67 +619,119 @@ namespace Model
 
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the playback configuration.</p>
+     * <p>The tags to assign to the playback configuration. Tags are key-value pairs
+     * that you can associate with Amazon resources to help with organization, access
+     * control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline PutPlaybackConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -800,46 +852,46 @@ namespace Model
   private:
 
     Aws::String m_adDecisionServerUrl;
-    bool m_adDecisionServerUrlHasBeenSet;
+    bool m_adDecisionServerUrlHasBeenSet = false;
 
     AvailSuppression m_availSuppression;
-    bool m_availSuppressionHasBeenSet;
+    bool m_availSuppressionHasBeenSet = false;
 
     Bumper m_bumper;
-    bool m_bumperHasBeenSet;
+    bool m_bumperHasBeenSet = false;
 
     CdnConfiguration m_cdnConfiguration;
-    bool m_cdnConfigurationHasBeenSet;
+    bool m_cdnConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_configurationAliases;
-    bool m_configurationAliasesHasBeenSet;
+    bool m_configurationAliasesHasBeenSet = false;
 
     DashConfigurationForPut m_dashConfiguration;
-    bool m_dashConfigurationHasBeenSet;
+    bool m_dashConfigurationHasBeenSet = false;
 
     LivePreRollConfiguration m_livePreRollConfiguration;
-    bool m_livePreRollConfigurationHasBeenSet;
+    bool m_livePreRollConfigurationHasBeenSet = false;
 
     ManifestProcessingRules m_manifestProcessingRules;
-    bool m_manifestProcessingRulesHasBeenSet;
+    bool m_manifestProcessingRulesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_personalizationThresholdSeconds;
-    bool m_personalizationThresholdSecondsHasBeenSet;
+    bool m_personalizationThresholdSecondsHasBeenSet = false;
 
     Aws::String m_slateAdUrl;
-    bool m_slateAdUrlHasBeenSet;
+    bool m_slateAdUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_transcodeProfileName;
-    bool m_transcodeProfileNameHasBeenSet;
+    bool m_transcodeProfileNameHasBeenSet = false;
 
     Aws::String m_videoContentSourceUrl;
-    bool m_videoContentSourceUrlHasBeenSet;
+    bool m_videoContentSourceUrlHasBeenSet = false;
   };
 
 } // namespace Model

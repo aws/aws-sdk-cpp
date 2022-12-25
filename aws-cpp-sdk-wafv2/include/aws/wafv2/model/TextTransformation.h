@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TextTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API TextTransformation
+  class TextTransformation
   {
   public:
-    TextTransformation();
-    TextTransformation(Aws::Utils::Json::JsonView jsonValue);
-    TextTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API TextTransformation();
+    AWS_WAFV2_API TextTransformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API TextTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -525,10 +525,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     TextTransformationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

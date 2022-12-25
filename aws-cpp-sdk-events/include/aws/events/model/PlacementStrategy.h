@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PlacementStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PlacementStrategy
+  class PlacementStrategy
   {
   public:
-    PlacementStrategy();
-    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PlacementStrategy();
+    AWS_CLOUDWATCHEVENTS_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,10 +191,10 @@ namespace Model
   private:
 
     PlacementStrategyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

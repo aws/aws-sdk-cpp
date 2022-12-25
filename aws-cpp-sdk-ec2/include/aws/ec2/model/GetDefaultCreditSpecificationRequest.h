@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API GetDefaultCreditSpecificationRequest : public EC2Request
+  class GetDefaultCreditSpecificationRequest : public EC2Request
   {
   public:
-    GetDefaultCreditSpecificationRequest();
+    AWS_EC2_API GetDefaultCreditSpecificationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDefaultCreditSpecification"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     UnlimitedSupportedInstanceFamily m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,84 +30,84 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamEncryptionConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput
+  class DeliveryStreamEncryptionConfigurationInput
   {
   public:
-    DeliveryStreamEncryptionConfigurationInput();
-    DeliveryStreamEncryptionConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    DeliveryStreamEncryptionConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput();
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline const Aws::String& GetKeyARN() const{ return m_keyARN; }
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline bool KeyARNHasBeenSet() const { return m_keyARNHasBeenSet; }
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline void SetKeyARN(const Aws::String& value) { m_keyARNHasBeenSet = true; m_keyARN = value; }
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline void SetKeyARN(Aws::String&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::move(value); }
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline void SetKeyARN(const char* value) { m_keyARNHasBeenSet = true; m_keyARN.assign(value); }
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const Aws::String& value) { SetKeyARN(value); return *this;}
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(Aws::String&& value) { SetKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you
      * must specify the Amazon Resource Name (ARN) of the CMK. If you set
-     * <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.</p>
+     * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.</p>
      */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const char* value) { SetKeyARN(value); return *this;}
 
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -126,15 +126,15 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -153,15 +153,15 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -180,15 +180,15 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -207,15 +207,15 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -234,15 +234,15 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
 
     /**
      * <p>Indicates the type of customer master key (CMK) to use for encryption. The
-     * default setting is <code>AWS_OWNED_CMK</code>. For more information about CMKs,
-     * see <a
+     * default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or
      * <a>StartDeliveryStreamEncryption</a> with <code>KeyType</code> set to
@@ -261,18 +261,18 @@ namespace Model
      * support asymmetric CMKs. For information about symmetric and asymmetric CMKs,
      * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About
-     * Symmetric and Asymmetric CMKs</a> in the AWS Key Management Service developer
-     * guide.</p> 
+     * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
+     * Service developer guide.</p> 
      */
     inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_keyARN;
-    bool m_keyARNHasBeenSet;
+    bool m_keyARNHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

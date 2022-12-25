@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API UntagResourceRequest : public RAMRequest
+  class UntagResourceRequest : public RAMRequest
   {
   public:
-    UntagResourceRequest();
+    AWS_RAM_API UntagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

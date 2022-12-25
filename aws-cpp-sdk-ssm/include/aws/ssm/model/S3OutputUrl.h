@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/S3OutputUrl">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API S3OutputUrl
+  class S3OutputUrl
   {
   public:
-    S3OutputUrl();
-    S3OutputUrl(Aws::Utils::Json::JsonView jsonValue);
-    S3OutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API S3OutputUrl();
+    AWS_SSM_API S3OutputUrl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API S3OutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_outputUrl;
-    bool m_outputUrlHasBeenSet;
+    bool m_outputUrlHasBeenSet = false;
   };
 
 } // namespace Model

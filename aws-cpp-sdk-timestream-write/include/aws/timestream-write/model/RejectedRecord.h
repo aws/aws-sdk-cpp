@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RejectedRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API RejectedRecord
+  class RejectedRecord
   {
   public:
-    RejectedRecord();
-    RejectedRecord(Aws::Utils::Json::JsonView jsonValue);
-    RejectedRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API RejectedRecord();
+    AWS_TIMESTREAMWRITE_API RejectedRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API RejectedRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -320,13 +320,13 @@ namespace Model
   private:
 
     int m_recordIndex;
-    bool m_recordIndexHasBeenSet;
+    bool m_recordIndexHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     long long m_existingVersion;
-    bool m_existingVersionHasBeenSet;
+    bool m_existingVersionHasBeenSet = false;
   };
 
 } // namespace Model

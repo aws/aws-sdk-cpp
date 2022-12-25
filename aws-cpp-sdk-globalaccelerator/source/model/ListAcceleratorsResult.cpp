@@ -30,7 +30,7 @@ ListAcceleratorsResult& ListAcceleratorsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Accelerators"))
   {
-    Array<JsonView> acceleratorsJsonList = jsonValue.GetArray("Accelerators");
+    Aws::Utils::Array<JsonView> acceleratorsJsonList = jsonValue.GetArray("Accelerators");
     for(unsigned acceleratorsIndex = 0; acceleratorsIndex < acceleratorsJsonList.GetLength(); ++acceleratorsIndex)
     {
       m_accelerators.push_back(acceleratorsJsonList[acceleratorsIndex].AsObject());

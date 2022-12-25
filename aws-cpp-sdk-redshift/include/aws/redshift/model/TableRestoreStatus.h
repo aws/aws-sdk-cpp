@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/TableRestoreStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API TableRestoreStatus
+  class TableRestoreStatus
   {
   public:
-    TableRestoreStatus();
-    TableRestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TableRestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API TableRestoreStatus();
+    AWS_REDSHIFT_API TableRestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API TableRestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -600,46 +600,46 @@ namespace Model
   private:
 
     Aws::String m_tableRestoreRequestId;
-    bool m_tableRestoreRequestIdHasBeenSet;
+    bool m_tableRestoreRequestIdHasBeenSet = false;
 
     TableRestoreStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
+    bool m_requestTimeHasBeenSet = false;
 
     long long m_progressInMegaBytes;
-    bool m_progressInMegaBytesHasBeenSet;
+    bool m_progressInMegaBytesHasBeenSet = false;
 
     long long m_totalDataInMegaBytes;
-    bool m_totalDataInMegaBytesHasBeenSet;
+    bool m_totalDataInMegaBytesHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_sourceDatabaseName;
-    bool m_sourceDatabaseNameHasBeenSet;
+    bool m_sourceDatabaseNameHasBeenSet = false;
 
     Aws::String m_sourceSchemaName;
-    bool m_sourceSchemaNameHasBeenSet;
+    bool m_sourceSchemaNameHasBeenSet = false;
 
     Aws::String m_sourceTableName;
-    bool m_sourceTableNameHasBeenSet;
+    bool m_sourceTableNameHasBeenSet = false;
 
     Aws::String m_targetDatabaseName;
-    bool m_targetDatabaseNameHasBeenSet;
+    bool m_targetDatabaseNameHasBeenSet = false;
 
     Aws::String m_targetSchemaName;
-    bool m_targetSchemaNameHasBeenSet;
+    bool m_targetSchemaNameHasBeenSet = false;
 
     Aws::String m_newTableName;
-    bool m_newTableNameHasBeenSet;
+    bool m_newTableNameHasBeenSet = false;
   };
 
 } // namespace Model

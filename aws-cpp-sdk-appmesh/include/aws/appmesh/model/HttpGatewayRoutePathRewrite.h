@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpGatewayRoutePathRewrite">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpGatewayRoutePathRewrite
+  class HttpGatewayRoutePathRewrite
   {
   public:
-    HttpGatewayRoutePathRewrite();
-    HttpGatewayRoutePathRewrite(Aws::Utils::Json::JsonView jsonValue);
-    HttpGatewayRoutePathRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpGatewayRoutePathRewrite();
+    AWS_APPMESH_API HttpGatewayRoutePathRewrite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpGatewayRoutePathRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_exact;
-    bool m_exactHasBeenSet;
+    bool m_exactHasBeenSet = false;
   };
 
 } // namespace Model

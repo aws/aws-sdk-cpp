@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignLimits
+  class CampaignLimits
   {
   public:
-    CampaignLimits();
-    CampaignLimits(Aws::Utils::Json::JsonView jsonValue);
-    CampaignLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignLimits();
+    AWS_PINPOINT_API CampaignLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,19 +188,19 @@ namespace Model
   private:
 
     int m_daily;
-    bool m_dailyHasBeenSet;
+    bool m_dailyHasBeenSet = false;
 
     int m_maximumDuration;
-    bool m_maximumDurationHasBeenSet;
+    bool m_maximumDurationHasBeenSet = false;
 
     int m_messagesPerSecond;
-    bool m_messagesPerSecondHasBeenSet;
+    bool m_messagesPerSecondHasBeenSet = false;
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     int m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PolicyAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API PolicyAttachment
+  class PolicyAttachment
   {
   public:
-    PolicyAttachment();
-    PolicyAttachment(Aws::Utils::Json::JsonView jsonValue);
-    PolicyAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API PolicyAttachment();
+    AWS_CLOUDDIRECTORY_API PolicyAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API PolicyAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

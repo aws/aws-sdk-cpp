@@ -41,7 +41,7 @@ Aws::String ListNamespacesRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListNamespacesRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListNamespaces"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListNamespaces"));
   return headers;
 
 }

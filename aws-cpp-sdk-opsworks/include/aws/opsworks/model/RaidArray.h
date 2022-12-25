@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RaidArray">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API RaidArray
+  class RaidArray
   {
   public:
-    RaidArray();
-    RaidArray(Aws::Utils::Json::JsonView jsonValue);
-    RaidArray& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API RaidArray();
+    AWS_OPSWORKS_API RaidArray(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API RaidArray& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -512,43 +512,43 @@ namespace Model
   private:
 
     Aws::String m_raidArrayId;
-    bool m_raidArrayIdHasBeenSet;
+    bool m_raidArrayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_raidLevel;
-    bool m_raidLevelHasBeenSet;
+    bool m_raidLevelHasBeenSet = false;
 
     int m_numberOfDisks;
-    bool m_numberOfDisksHasBeenSet;
+    bool m_numberOfDisksHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliasesInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ListAliasesRequest : public GameLiftRequest
+  class ListAliasesRequest : public GameLiftRequest
   {
   public:
-    ListAliasesRequest();
+    AWS_GAMELIFT_API ListAliasesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAliases"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -46,7 +43,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline const RoutingStrategyType& GetRoutingStrategyType() const{ return m_routingStrategyType; }
 
@@ -58,7 +57,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline bool RoutingStrategyTypeHasBeenSet() const { return m_routingStrategyTypeHasBeenSet; }
 
@@ -70,7 +71,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
@@ -82,7 +85,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = std::move(value); }
 
@@ -94,7 +99,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(const RoutingStrategyType& value) { SetRoutingStrategyType(value); return *this;}
 
@@ -106,7 +113,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(std::move(value)); return *this;}
 
@@ -244,16 +253,16 @@ namespace Model
   private:
 
     RoutingStrategyType m_routingStrategyType;
-    bool m_routingStrategyTypeHasBeenSet;
+    bool m_routingStrategyTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegion">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API SourceRegion
+  class SourceRegion
   {
   public:
-    SourceRegion();
-    SourceRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SourceRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API SourceRegion();
+    AWS_RDS_API SourceRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API SourceRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_supportsDBInstanceAutomatedBackupsReplication;
-    bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet;
+    bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = false;
   };
 
 } // namespace Model

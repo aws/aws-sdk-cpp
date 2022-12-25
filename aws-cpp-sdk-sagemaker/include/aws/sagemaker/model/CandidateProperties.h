@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CandidateProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CandidateProperties
+  class CandidateProperties
   {
   public:
-    CandidateProperties();
-    CandidateProperties(Aws::Utils::Json::JsonView jsonValue);
-    CandidateProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CandidateProperties();
+    AWS_SAGEMAKER_API CandidateProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CandidateProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     CandidateArtifactLocations m_candidateArtifactLocations;
-    bool m_candidateArtifactLocationsHasBeenSet;
+    bool m_candidateArtifactLocationsHasBeenSet = false;
 
     Aws::Vector<MetricDatum> m_candidateMetrics;
-    bool m_candidateMetricsHasBeenSet;
+    bool m_candidateMetricsHasBeenSet = false;
   };
 
 } // namespace Model

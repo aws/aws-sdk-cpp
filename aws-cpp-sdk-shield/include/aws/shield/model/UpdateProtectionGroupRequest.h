@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API UpdateProtectionGroupRequest : public ShieldRequest
+  class UpdateProtectionGroupRequest : public ShieldRequest
   {
   public:
-    UpdateProtectionGroupRequest();
+    AWS_SHIELD_API UpdateProtectionGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProtectionGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -359,19 +359,19 @@ namespace Model
   private:
 
     Aws::String m_protectionGroupId;
-    bool m_protectionGroupIdHasBeenSet;
+    bool m_protectionGroupIdHasBeenSet = false;
 
     ProtectionGroupAggregation m_aggregation;
-    bool m_aggregationHasBeenSet;
+    bool m_aggregationHasBeenSet = false;
 
     ProtectionGroupPattern m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     ProtectedResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
   };
 
 } // namespace Model

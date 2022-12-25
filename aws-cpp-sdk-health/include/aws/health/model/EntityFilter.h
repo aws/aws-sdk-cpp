@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EntityFilter
+  class EntityFilter
   {
   public:
-    EntityFilter();
-    EntityFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EntityFilter();
+    AWS_HEALTH_API EntityFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,22 +349,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventArns;
-    bool m_eventArnsHasBeenSet;
+    bool m_eventArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityArns;
-    bool m_entityArnsHasBeenSet;
+    bool m_entityArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityValues;
-    bool m_entityValuesHasBeenSet;
+    bool m_entityValuesHasBeenSet = false;
 
     Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
-    bool m_lastUpdatedTimesHasBeenSet;
+    bool m_lastUpdatedTimesHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<EntityStatusCode> m_statusCodes;
-    bool m_statusCodesHasBeenSet;
+    bool m_statusCodesHasBeenSet = false;
   };
 
 } // namespace Model

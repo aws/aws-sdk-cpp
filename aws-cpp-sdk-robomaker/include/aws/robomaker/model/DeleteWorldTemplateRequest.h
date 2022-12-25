@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API DeleteWorldTemplateRequest : public RoboMakerRequest
+  class DeleteWorldTemplateRequest : public RoboMakerRequest
   {
   public:
-    DeleteWorldTemplateRequest();
+    AWS_ROBOMAKER_API DeleteWorldTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteWorldTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

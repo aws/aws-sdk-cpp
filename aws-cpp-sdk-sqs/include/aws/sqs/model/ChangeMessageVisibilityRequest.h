@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SQS_API ChangeMessageVisibilityRequest : public SQSRequest
+  class ChangeMessageVisibilityRequest : public SQSRequest
   {
   public:
-    ChangeMessageVisibilityRequest();
+    AWS_SQS_API ChangeMessageVisibilityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChangeMessageVisibility"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SQS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     int m_visibilityTimeout;
-    bool m_visibilityTimeoutHasBeenSet;
+    bool m_visibilityTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

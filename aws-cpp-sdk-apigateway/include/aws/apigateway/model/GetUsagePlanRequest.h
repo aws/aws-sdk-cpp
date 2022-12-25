@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetUsagePlanRequest : public APIGatewayRequest
+  class GetUsagePlanRequest : public APIGatewayRequest
   {
   public:
-    GetUsagePlanRequest();
+    AWS_APIGATEWAY_API GetUsagePlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetUsagePlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
   };
 
 } // namespace Model

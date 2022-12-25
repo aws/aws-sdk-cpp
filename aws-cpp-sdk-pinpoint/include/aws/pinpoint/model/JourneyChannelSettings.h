@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyChannelSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyChannelSettings
+  class JourneyChannelSettings
   {
   public:
-    JourneyChannelSettings();
-    JourneyChannelSettings(Aws::Utils::Json::JsonView jsonValue);
-    JourneyChannelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyChannelSettings();
+    AWS_PINPOINT_API JourneyChannelSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyChannelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_connectCampaignArn;
-    bool m_connectCampaignArnHasBeenSet;
+    bool m_connectCampaignArnHasBeenSet = false;
 
     Aws::String m_connectCampaignExecutionRoleArn;
-    bool m_connectCampaignExecutionRoleArnHasBeenSet;
+    bool m_connectCampaignExecutionRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateTrafficMirrorFilterRuleRequest : public EC2Request
+  class CreateTrafficMirrorFilterRuleRequest : public EC2Request
   {
   public:
-    CreateTrafficMirrorFilterRuleRequest();
+    AWS_EC2_API CreateTrafficMirrorFilterRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTrafficMirrorFilterRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -490,40 +490,40 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorFilterId;
-    bool m_trafficMirrorFilterIdHasBeenSet;
+    bool m_trafficMirrorFilterIdHasBeenSet = false;
 
     TrafficDirection m_trafficDirection;
-    bool m_trafficDirectionHasBeenSet;
+    bool m_trafficDirectionHasBeenSet = false;
 
     int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet;
+    bool m_ruleNumberHasBeenSet = false;
 
     TrafficMirrorRuleAction m_ruleAction;
-    bool m_ruleActionHasBeenSet;
+    bool m_ruleActionHasBeenSet = false;
 
     TrafficMirrorPortRangeRequest m_destinationPortRange;
-    bool m_destinationPortRangeHasBeenSet;
+    bool m_destinationPortRangeHasBeenSet = false;
 
     TrafficMirrorPortRangeRequest m_sourcePortRange;
-    bool m_sourcePortRangeHasBeenSet;
+    bool m_sourcePortRangeHasBeenSet = false;
 
     int m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_sourceCidrBlock;
-    bool m_sourceCidrBlockHasBeenSet;
+    bool m_sourceCidrBlockHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

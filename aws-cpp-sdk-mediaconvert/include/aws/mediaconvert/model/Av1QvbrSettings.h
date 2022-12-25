@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Av1QvbrSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Av1QvbrSettings
+  class Av1QvbrSettings
   {
   public:
-    Av1QvbrSettings();
-    Av1QvbrSettings(Aws::Utils::Json::JsonView jsonValue);
-    Av1QvbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Av1QvbrSettings();
+    AWS_MEDIACONVERT_API Av1QvbrSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Av1QvbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     int m_qvbrQualityLevel;
-    bool m_qvbrQualityLevelHasBeenSet;
+    bool m_qvbrQualityLevelHasBeenSet = false;
 
     double m_qvbrQualityLevelFineTune;
-    bool m_qvbrQualityLevelFineTuneHasBeenSet;
+    bool m_qvbrQualityLevelFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

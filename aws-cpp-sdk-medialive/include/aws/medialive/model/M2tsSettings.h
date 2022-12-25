@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/M2tsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API M2tsSettings
+  class M2tsSettings
   {
   public:
-    M2tsSettings();
-    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
-    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API M2tsSettings();
+    AWS_MEDIALIVE_API M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2134,145 +2134,145 @@ When
   private:
 
     M2tsAbsentInputAudioBehavior m_absentInputAudioBehavior;
-    bool m_absentInputAudioBehaviorHasBeenSet;
+    bool m_absentInputAudioBehaviorHasBeenSet = false;
 
     M2tsArib m_arib;
-    bool m_aribHasBeenSet;
+    bool m_aribHasBeenSet = false;
 
     Aws::String m_aribCaptionsPid;
-    bool m_aribCaptionsPidHasBeenSet;
+    bool m_aribCaptionsPidHasBeenSet = false;
 
     M2tsAribCaptionsPidControl m_aribCaptionsPidControl;
-    bool m_aribCaptionsPidControlHasBeenSet;
+    bool m_aribCaptionsPidControlHasBeenSet = false;
 
     M2tsAudioBufferModel m_audioBufferModel;
-    bool m_audioBufferModelHasBeenSet;
+    bool m_audioBufferModelHasBeenSet = false;
 
     int m_audioFramesPerPes;
-    bool m_audioFramesPerPesHasBeenSet;
+    bool m_audioFramesPerPesHasBeenSet = false;
 
     Aws::String m_audioPids;
-    bool m_audioPidsHasBeenSet;
+    bool m_audioPidsHasBeenSet = false;
 
     M2tsAudioStreamType m_audioStreamType;
-    bool m_audioStreamTypeHasBeenSet;
+    bool m_audioStreamTypeHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     M2tsBufferModel m_bufferModel;
-    bool m_bufferModelHasBeenSet;
+    bool m_bufferModelHasBeenSet = false;
 
     M2tsCcDescriptor m_ccDescriptor;
-    bool m_ccDescriptorHasBeenSet;
+    bool m_ccDescriptorHasBeenSet = false;
 
     DvbNitSettings m_dvbNitSettings;
-    bool m_dvbNitSettingsHasBeenSet;
+    bool m_dvbNitSettingsHasBeenSet = false;
 
     DvbSdtSettings m_dvbSdtSettings;
-    bool m_dvbSdtSettingsHasBeenSet;
+    bool m_dvbSdtSettingsHasBeenSet = false;
 
     Aws::String m_dvbSubPids;
-    bool m_dvbSubPidsHasBeenSet;
+    bool m_dvbSubPidsHasBeenSet = false;
 
     DvbTdtSettings m_dvbTdtSettings;
-    bool m_dvbTdtSettingsHasBeenSet;
+    bool m_dvbTdtSettingsHasBeenSet = false;
 
     Aws::String m_dvbTeletextPid;
-    bool m_dvbTeletextPidHasBeenSet;
+    bool m_dvbTeletextPidHasBeenSet = false;
 
     M2tsEbifControl m_ebif;
-    bool m_ebifHasBeenSet;
+    bool m_ebifHasBeenSet = false;
 
     M2tsAudioInterval m_ebpAudioInterval;
-    bool m_ebpAudioIntervalHasBeenSet;
+    bool m_ebpAudioIntervalHasBeenSet = false;
 
     int m_ebpLookaheadMs;
-    bool m_ebpLookaheadMsHasBeenSet;
+    bool m_ebpLookaheadMsHasBeenSet = false;
 
     M2tsEbpPlacement m_ebpPlacement;
-    bool m_ebpPlacementHasBeenSet;
+    bool m_ebpPlacementHasBeenSet = false;
 
     Aws::String m_ecmPid;
-    bool m_ecmPidHasBeenSet;
+    bool m_ecmPidHasBeenSet = false;
 
     M2tsEsRateInPes m_esRateInPes;
-    bool m_esRateInPesHasBeenSet;
+    bool m_esRateInPesHasBeenSet = false;
 
     Aws::String m_etvPlatformPid;
-    bool m_etvPlatformPidHasBeenSet;
+    bool m_etvPlatformPidHasBeenSet = false;
 
     Aws::String m_etvSignalPid;
-    bool m_etvSignalPidHasBeenSet;
+    bool m_etvSignalPidHasBeenSet = false;
 
     double m_fragmentTime;
-    bool m_fragmentTimeHasBeenSet;
+    bool m_fragmentTimeHasBeenSet = false;
 
     M2tsKlv m_klv;
-    bool m_klvHasBeenSet;
+    bool m_klvHasBeenSet = false;
 
     Aws::String m_klvDataPids;
-    bool m_klvDataPidsHasBeenSet;
+    bool m_klvDataPidsHasBeenSet = false;
 
     M2tsNielsenId3Behavior m_nielsenId3Behavior;
-    bool m_nielsenId3BehaviorHasBeenSet;
+    bool m_nielsenId3BehaviorHasBeenSet = false;
 
     double m_nullPacketBitrate;
-    bool m_nullPacketBitrateHasBeenSet;
+    bool m_nullPacketBitrateHasBeenSet = false;
 
     int m_patInterval;
-    bool m_patIntervalHasBeenSet;
+    bool m_patIntervalHasBeenSet = false;
 
     M2tsPcrControl m_pcrControl;
-    bool m_pcrControlHasBeenSet;
+    bool m_pcrControlHasBeenSet = false;
 
     int m_pcrPeriod;
-    bool m_pcrPeriodHasBeenSet;
+    bool m_pcrPeriodHasBeenSet = false;
 
     Aws::String m_pcrPid;
-    bool m_pcrPidHasBeenSet;
+    bool m_pcrPidHasBeenSet = false;
 
     int m_pmtInterval;
-    bool m_pmtIntervalHasBeenSet;
+    bool m_pmtIntervalHasBeenSet = false;
 
     Aws::String m_pmtPid;
-    bool m_pmtPidHasBeenSet;
+    bool m_pmtPidHasBeenSet = false;
 
     int m_programNum;
-    bool m_programNumHasBeenSet;
+    bool m_programNumHasBeenSet = false;
 
     M2tsRateMode m_rateMode;
-    bool m_rateModeHasBeenSet;
+    bool m_rateModeHasBeenSet = false;
 
     Aws::String m_scte27Pids;
-    bool m_scte27PidsHasBeenSet;
+    bool m_scte27PidsHasBeenSet = false;
 
     M2tsScte35Control m_scte35Control;
-    bool m_scte35ControlHasBeenSet;
+    bool m_scte35ControlHasBeenSet = false;
 
     Aws::String m_scte35Pid;
-    bool m_scte35PidHasBeenSet;
+    bool m_scte35PidHasBeenSet = false;
 
     M2tsSegmentationMarkers m_segmentationMarkers;
-    bool m_segmentationMarkersHasBeenSet;
+    bool m_segmentationMarkersHasBeenSet = false;
 
     M2tsSegmentationStyle m_segmentationStyle;
-    bool m_segmentationStyleHasBeenSet;
+    bool m_segmentationStyleHasBeenSet = false;
 
     double m_segmentationTime;
-    bool m_segmentationTimeHasBeenSet;
+    bool m_segmentationTimeHasBeenSet = false;
 
     M2tsTimedMetadataBehavior m_timedMetadataBehavior;
-    bool m_timedMetadataBehaviorHasBeenSet;
+    bool m_timedMetadataBehaviorHasBeenSet = false;
 
     Aws::String m_timedMetadataPid;
-    bool m_timedMetadataPidHasBeenSet;
+    bool m_timedMetadataPidHasBeenSet = false;
 
     int m_transportStreamId;
-    bool m_transportStreamIdHasBeenSet;
+    bool m_transportStreamIdHasBeenSet = false;
 
     Aws::String m_videoPid;
-    bool m_videoPidHasBeenSet;
+    bool m_videoPidHasBeenSet = false;
   };
 
 } // namespace Model

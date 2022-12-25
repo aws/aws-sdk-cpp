@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API UpdatePatchBaselineRequest : public SSMRequest
+  class UpdatePatchBaselineRequest : public SSMRequest
   {
   public:
-    UpdatePatchBaselineRequest();
+    AWS_SSM_API UpdatePatchBaselineRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePatchBaseline"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -652,40 +652,40 @@ namespace Model
   private:
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PatchFilterGroup m_globalFilters;
-    bool m_globalFiltersHasBeenSet;
+    bool m_globalFiltersHasBeenSet = false;
 
     PatchRuleGroup m_approvalRules;
-    bool m_approvalRulesHasBeenSet;
+    bool m_approvalRulesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_approvedPatches;
-    bool m_approvedPatchesHasBeenSet;
+    bool m_approvedPatchesHasBeenSet = false;
 
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
-    bool m_approvedPatchesComplianceLevelHasBeenSet;
+    bool m_approvedPatchesComplianceLevelHasBeenSet = false;
 
     bool m_approvedPatchesEnableNonSecurity;
-    bool m_approvedPatchesEnableNonSecurityHasBeenSet;
+    bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rejectedPatches;
-    bool m_rejectedPatchesHasBeenSet;
+    bool m_rejectedPatchesHasBeenSet = false;
 
     PatchAction m_rejectedPatchesAction;
-    bool m_rejectedPatchesActionHasBeenSet;
+    bool m_rejectedPatchesActionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<PatchSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     bool m_replace;
-    bool m_replaceHasBeenSet;
+    bool m_replaceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DAX_API DecreaseReplicationFactorRequest : public DAXRequest
+  class DecreaseReplicationFactorRequest : public DAXRequest
   {
   public:
-    DecreaseReplicationFactorRequest();
+    AWS_DAX_API DecreaseReplicationFactorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DecreaseReplicationFactor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DAX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DAX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     int m_newReplicationFactor;
-    bool m_newReplicationFactorHasBeenSet;
+    bool m_newReplicationFactorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nodeIdsToRemove;
-    bool m_nodeIdsToRemoveHasBeenSet;
+    bool m_nodeIdsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

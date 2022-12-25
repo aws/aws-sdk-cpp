@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayEndpointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration
+  class AwsApiGatewayEndpointConfiguration
   {
   public:
-    AwsApiGatewayEndpointConfiguration();
-    AwsApiGatewayEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration();
+    AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
   };
 
 } // namespace Model

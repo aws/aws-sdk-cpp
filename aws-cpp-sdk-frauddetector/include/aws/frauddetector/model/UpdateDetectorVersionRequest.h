@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API UpdateDetectorVersionRequest : public FraudDetectorRequest
+  class UpdateDetectorVersionRequest : public FraudDetectorRequest
   {
   public:
-    UpdateDetectorVersionRequest();
+    AWS_FRAUDDETECTOR_API UpdateDetectorVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDetectorVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -364,25 +364,25 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_externalModelEndpoints;
-    bool m_externalModelEndpointsHasBeenSet;
+    bool m_externalModelEndpointsHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ModelVersion> m_modelVersions;
-    bool m_modelVersionsHasBeenSet;
+    bool m_modelVersionsHasBeenSet = false;
 
     RuleExecutionMode m_ruleExecutionMode;
-    bool m_ruleExecutionModeHasBeenSet;
+    bool m_ruleExecutionModeHasBeenSet = false;
   };
 
 } // namespace Model

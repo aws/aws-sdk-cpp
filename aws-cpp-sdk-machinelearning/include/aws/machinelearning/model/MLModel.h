@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/MLModel">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API MLModel
+  class MLModel
   {
   public:
-    MLModel();
-    MLModel(Aws::Utils::Json::JsonView jsonValue);
-    MLModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API MLModel();
+    AWS_MACHINELEARNING_API MLModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API MLModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1185,61 +1185,61 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_trainingDataSourceId;
-    bool m_trainingDataSourceIdHasBeenSet;
+    bool m_trainingDataSourceIdHasBeenSet = false;
 
     Aws::String m_createdByIamUser;
-    bool m_createdByIamUserHasBeenSet;
+    bool m_createdByIamUserHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EntityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     RealtimeEndpointInfo m_endpointInfo;
-    bool m_endpointInfoHasBeenSet;
+    bool m_endpointInfoHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_trainingParameters;
-    bool m_trainingParametersHasBeenSet;
+    bool m_trainingParametersHasBeenSet = false;
 
     Aws::String m_inputDataLocationS3;
-    bool m_inputDataLocationS3HasBeenSet;
+    bool m_inputDataLocationS3HasBeenSet = false;
 
     Algorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     MLModelType m_mLModelType;
-    bool m_mLModelTypeHasBeenSet;
+    bool m_mLModelTypeHasBeenSet = false;
 
     double m_scoreThreshold;
-    bool m_scoreThresholdHasBeenSet;
+    bool m_scoreThresholdHasBeenSet = false;
 
     Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
-    bool m_scoreThresholdLastUpdatedAtHasBeenSet;
+    bool m_scoreThresholdLastUpdatedAtHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     long long m_computeTime;
-    bool m_computeTimeHasBeenSet;
+    bool m_computeTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedAt;
-    bool m_finishedAtHasBeenSet;
+    bool m_finishedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatusEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceStatusEvent
+  class InstanceStatusEvent
   {
   public:
-    InstanceStatusEvent();
-    InstanceStatusEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceStatusEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatusEvent();
+    AWS_EC2_API InstanceStatusEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatusEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_instanceEventId;
-    bool m_instanceEventIdHasBeenSet;
+    bool m_instanceEventIdHasBeenSet = false;
 
     EventCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBeforeDeadline;
-    bool m_notBeforeDeadlineHasBeenSet;
+    bool m_notBeforeDeadlineHasBeenSet = false;
   };
 
 } // namespace Model

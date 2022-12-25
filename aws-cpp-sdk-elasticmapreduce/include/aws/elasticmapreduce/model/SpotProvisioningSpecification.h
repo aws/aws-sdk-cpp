@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SpotProvisioningSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SpotProvisioningSpecification
+  class SpotProvisioningSpecification
   {
   public:
-    SpotProvisioningSpecification();
-    SpotProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
-    SpotProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API SpotProvisioningSpecification();
+    AWS_EMR_API SpotProvisioningSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API SpotProvisioningSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,16 +259,16 @@ namespace Model
   private:
 
     int m_timeoutDurationMinutes;
-    bool m_timeoutDurationMinutesHasBeenSet;
+    bool m_timeoutDurationMinutesHasBeenSet = false;
 
     SpotProvisioningTimeoutAction m_timeoutAction;
-    bool m_timeoutActionHasBeenSet;
+    bool m_timeoutActionHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     SpotProvisioningAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

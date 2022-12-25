@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1591,121 +1591,121 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     bool m_disableNetworking;
-    bool m_disableNetworkingHasBeenSet;
+    bool m_disableNetworkingHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsSearchDomains;
-    bool m_dnsSearchDomainsHasBeenSet;
+    bool m_dnsSearchDomainsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
-    bool m_dnsServersHasBeenSet;
+    bool m_dnsServersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dockerLabels;
-    bool m_dockerLabelsHasBeenSet;
+    bool m_dockerLabelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dockerSecurityOptions;
-    bool m_dockerSecurityOptionsHasBeenSet;
+    bool m_dockerSecurityOptionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails> m_environmentFiles;
-    bool m_environmentFilesHasBeenSet;
+    bool m_environmentFilesHasBeenSet = false;
 
     bool m_essential;
-    bool m_essentialHasBeenSet;
+    bool m_essentialHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails> m_extraHosts;
-    bool m_extraHostsHasBeenSet;
+    bool m_extraHostsHasBeenSet = false;
 
     AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails m_firelensConfiguration;
-    bool m_firelensConfigurationHasBeenSet;
+    bool m_firelensConfigurationHasBeenSet = false;
 
     AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     bool m_interactive;
-    bool m_interactiveHasBeenSet;
+    bool m_interactiveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_links;
-    bool m_linksHasBeenSet;
+    bool m_linksHasBeenSet = false;
 
     AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     int m_memoryReservation;
-    bool m_memoryReservationHasBeenSet;
+    bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails> m_portMappings;
-    bool m_portMappingsHasBeenSet;
+    bool m_portMappingsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     bool m_pseudoTerminal;
-    bool m_pseudoTerminalHasBeenSet;
+    bool m_pseudoTerminalHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails m_repositoryCredentials;
-    bool m_repositoryCredentialsHasBeenSet;
+    bool m_repositoryCredentialsHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     int m_startTimeout;
-    bool m_startTimeoutHasBeenSet;
+    bool m_startTimeoutHasBeenSet = false;
 
     int m_stopTimeout;
-    bool m_stopTimeoutHasBeenSet;
+    bool m_stopTimeoutHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails> m_systemControls;
-    bool m_systemControlsHasBeenSet;
+    bool m_systemControlsHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails> m_volumesFrom;
-    bool m_volumesFromHasBeenSet;
+    bool m_volumesFromHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

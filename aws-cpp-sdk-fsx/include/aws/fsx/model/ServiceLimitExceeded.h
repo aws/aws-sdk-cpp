@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ServiceLimitExceeded">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API ServiceLimitExceeded
+  class ServiceLimitExceeded
   {
   public:
-    ServiceLimitExceeded();
-    ServiceLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
-    ServiceLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API ServiceLimitExceeded();
+    AWS_FSX_API ServiceLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API ServiceLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     ServiceLimit m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

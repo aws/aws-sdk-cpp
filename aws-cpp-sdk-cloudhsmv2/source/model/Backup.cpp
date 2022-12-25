@@ -127,7 +127,7 @@ Backup& Backup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagList"))
   {
-    Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
+    Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
@@ -200,7 +200,7 @@ JsonValue Backup::Jsonize() const
 
   if(m_tagListHasBeenSet)
   {
-   Array<JsonValue> tagListJsonList(m_tagList.size());
+   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
    {
      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());

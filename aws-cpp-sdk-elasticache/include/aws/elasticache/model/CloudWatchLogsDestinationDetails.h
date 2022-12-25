@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CloudWatchLogsDestinationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CloudWatchLogsDestinationDetails
+  class CloudWatchLogsDestinationDetails
   {
   public:
-    CloudWatchLogsDestinationDetails();
-    CloudWatchLogsDestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudWatchLogsDestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CloudWatchLogsDestinationDetails();
+    AWS_ELASTICACHE_API CloudWatchLogsDestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CloudWatchLogsDestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CustomCode">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API CustomCode
+  class CustomCode
   {
   public:
-    CustomCode();
-    CustomCode(Aws::Utils::Json::JsonView jsonValue);
-    CustomCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CustomCode();
+    AWS_GLUE_API CustomCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CustomCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_className;
-    bool m_classNameHasBeenSet;
+    bool m_classNameHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

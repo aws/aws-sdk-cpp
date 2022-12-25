@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyRequest : public EC2InstanceConnectRequest
+  class SendSSHPublicKeyRequest : public EC2InstanceConnectRequest
   {
   public:
-    SendSSHPublicKeyRequest();
+    AWS_EC2INSTANCECONNECT_API SendSSHPublicKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendSSHPublicKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2INSTANCECONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EC2INSTANCECONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceOSUser;
-    bool m_instanceOSUserHasBeenSet;
+    bool m_instanceOSUserHasBeenSet = false;
 
     Aws::String m_sSHPublicKey;
-    bool m_sSHPublicKeyHasBeenSet;
+    bool m_sSHPublicKeyHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

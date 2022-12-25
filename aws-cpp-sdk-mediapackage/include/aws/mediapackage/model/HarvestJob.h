@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HarvestJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HarvestJob
+  class HarvestJob
   {
   public:
-    HarvestJob();
-    HarvestJob(Aws::Utils::Json::JsonView jsonValue);
-    HarvestJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HarvestJob();
+    AWS_MEDIAPACKAGE_API HarvestJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HarvestJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -496,31 +496,31 @@ include an explanation of why the HarvestJob failed.
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_originEndpointId;
-    bool m_originEndpointIdHasBeenSet;
+    bool m_originEndpointIdHasBeenSet = false;
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

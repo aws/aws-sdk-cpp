@@ -1,10 +1,4 @@
-#macro( parseOverrideOrDefault $OverrideKey $DefaultTemplate )
-#set($TemplateToParse = $DefaultTemplate)
-#if($TemplateOverride)
-#set($TemplateToParse = $TemplateOverride.getOrDefault($OverrideKey, $DefaultTemplate))
-#end
-#parse($TemplateToParse)
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
@@ -12,7 +6,12 @@
 #set($serviceNamespace = $metadata.namespace)
 #set($className = "${metadata.classNamePrefix}Client")
 \#include <aws/core/utils/Outcome.h>
+#if($serviceModel.hasBearerAuth())
+\#include <aws/core/auth/signer/AWSAuthBearerSigner.h>
+#end
+#if($serviceModel.hasSigV4Auth())
 \#include <aws/core/auth/AWSAuthSigner.h>
+#end
 \#include <aws/core/client/CoreErrors.h>
 \#include <aws/core/client/RetryStrategy.h>
 \#include <aws/core/http/HttpClient.h>
@@ -24,6 +23,9 @@
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/DNS.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -33,10 +35,13 @@ using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
 
-static const char* SERVICE_NAME = "${metadata.signingName}";
-static const char* ALLOCATION_TAG = "${className}";
+const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
+const char* ${className}::ALLOCATION_TAG = "${className}";
 
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationsSource.vm")

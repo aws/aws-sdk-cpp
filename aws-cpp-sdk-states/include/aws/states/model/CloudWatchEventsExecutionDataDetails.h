@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CloudWatchEventsExecutionDataDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API CloudWatchEventsExecutionDataDetails
+  class CloudWatchEventsExecutionDataDetails
   {
   public:
-    CloudWatchEventsExecutionDataDetails();
-    CloudWatchEventsExecutionDataDetails(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchEventsExecutionDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API CloudWatchEventsExecutionDataDetails();
+    AWS_SFN_API CloudWatchEventsExecutionDataDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API CloudWatchEventsExecutionDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_included;
-    bool m_includedHasBeenSet;
+    bool m_includedHasBeenSet = false;
   };
 
 } // namespace Model

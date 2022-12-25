@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageVersionInputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageVersionInputConfig
+  class PackageVersionInputConfig
   {
   public:
-    PackageVersionInputConfig();
-    PackageVersionInputConfig(Aws::Utils::Json::JsonView jsonValue);
-    PackageVersionInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageVersionInputConfig();
+    AWS_PANORAMA_API PackageVersionInputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageVersionInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

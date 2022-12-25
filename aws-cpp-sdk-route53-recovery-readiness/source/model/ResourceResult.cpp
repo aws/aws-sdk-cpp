@@ -82,7 +82,7 @@ JsonValue ResourceResult::Jsonize() const
 
   if(m_lastCheckedTimestampHasBeenSet)
   {
-   payload.WithString("lastCheckedTimestamp", m_lastCheckedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastCheckedTimestamp", m_lastCheckedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_readinessHasBeenSet)

@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLinkRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API CreateVpcLinkRequest : public APIGatewayRequest
+  class CreateVpcLinkRequest : public APIGatewayRequest
   {
   public:
-    CreateVpcLinkRequest();
+    AWS_APIGATEWAY_API CreateVpcLinkRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcLink"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetArns;
-    bool m_targetArnsHasBeenSet;
+    bool m_targetArnsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

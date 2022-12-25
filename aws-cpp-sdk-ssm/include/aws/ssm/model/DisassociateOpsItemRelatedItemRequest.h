@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API DisassociateOpsItemRelatedItemRequest : public SSMRequest
+  class DisassociateOpsItemRelatedItemRequest : public SSMRequest
   {
   public:
-    DisassociateOpsItemRelatedItemRequest();
+    AWS_SSM_API DisassociateOpsItemRelatedItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateOpsItemRelatedItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
   };
 
 } // namespace Model

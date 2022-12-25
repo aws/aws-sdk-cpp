@@ -28,12 +28,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetServersResult
+  class GetServersResult
   {
   public:
-    GetServersResult();
-    GetServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetServersResult();
+    AWS_SMS_API GetServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

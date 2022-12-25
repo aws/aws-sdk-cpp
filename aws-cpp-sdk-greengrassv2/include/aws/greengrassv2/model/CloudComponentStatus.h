@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CloudComponentStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API CloudComponentStatus
+  class CloudComponentStatus
   {
   public:
-    CloudComponentStatus();
-    CloudComponentStatus(Aws::Utils::Json::JsonView jsonValue);
-    CloudComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API CloudComponentStatus();
+    AWS_GREENGRASSV2_API CloudComponentStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API CloudComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -370,19 +370,19 @@ namespace Model
   private:
 
     CloudComponentState m_componentState;
-    bool m_componentStateHasBeenSet;
+    bool m_componentStateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     VendorGuidance m_vendorGuidance;
-    bool m_vendorGuidanceHasBeenSet;
+    bool m_vendorGuidanceHasBeenSet = false;
 
     Aws::String m_vendorGuidanceMessage;
-    bool m_vendorGuidanceMessageHasBeenSet;
+    bool m_vendorGuidanceMessageHasBeenSet = false;
   };
 
 } // namespace Model

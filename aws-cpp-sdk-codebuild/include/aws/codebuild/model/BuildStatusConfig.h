@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildStatusConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildStatusConfig
+  class BuildStatusConfig
   {
   public:
-    BuildStatusConfig();
-    BuildStatusConfig(Aws::Utils::Json::JsonView jsonValue);
-    BuildStatusConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildStatusConfig();
+    AWS_CODEBUILD_API BuildStatusConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildStatusConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,10 +266,10 @@ namespace Model
   private:
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_targetUrl;
-    bool m_targetUrlHasBeenSet;
+    bool m_targetUrlHasBeenSet = false;
   };
 
 } // namespace Model

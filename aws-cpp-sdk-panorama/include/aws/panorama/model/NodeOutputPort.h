@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeOutputPort">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeOutputPort
+  class NodeOutputPort
   {
   public:
-    NodeOutputPort();
-    NodeOutputPort(Aws::Utils::Json::JsonView jsonValue);
-    NodeOutputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeOutputPort();
+    AWS_PANORAMA_API NodeOutputPort(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeOutputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PortType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

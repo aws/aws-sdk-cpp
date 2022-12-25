@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/IntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API IntentSummary
+  class IntentSummary
   {
   public:
-    IntentSummary();
-    IntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API IntentSummary();
+    AWS_LEXRUNTIMESERVICE_API IntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -512,25 +512,25 @@ namespace Model
   private:
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_checkpointLabel;
-    bool m_checkpointLabelHasBeenSet;
+    bool m_checkpointLabelHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     ConfirmationStatus m_confirmationStatus;
-    bool m_confirmationStatusHasBeenSet;
+    bool m_confirmationStatusHasBeenSet = false;
 
     DialogActionType m_dialogActionType;
-    bool m_dialogActionTypeHasBeenSet;
+    bool m_dialogActionTypeHasBeenSet = false;
 
     FulfillmentState m_fulfillmentState;
-    bool m_fulfillmentStateHasBeenSet;
+    bool m_fulfillmentStateHasBeenSet = false;
 
     Aws::String m_slotToElicit;
-    bool m_slotToElicitHasBeenSet;
+    bool m_slotToElicitHasBeenSet = false;
   };
 
 } // namespace Model

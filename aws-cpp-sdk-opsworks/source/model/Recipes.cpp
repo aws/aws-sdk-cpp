@@ -41,7 +41,7 @@ Recipes& Recipes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Setup"))
   {
-    Array<JsonView> setupJsonList = jsonValue.GetArray("Setup");
+    Aws::Utils::Array<JsonView> setupJsonList = jsonValue.GetArray("Setup");
     for(unsigned setupIndex = 0; setupIndex < setupJsonList.GetLength(); ++setupIndex)
     {
       m_setup.push_back(setupJsonList[setupIndex].AsString());
@@ -51,7 +51,7 @@ Recipes& Recipes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Configure"))
   {
-    Array<JsonView> configureJsonList = jsonValue.GetArray("Configure");
+    Aws::Utils::Array<JsonView> configureJsonList = jsonValue.GetArray("Configure");
     for(unsigned configureIndex = 0; configureIndex < configureJsonList.GetLength(); ++configureIndex)
     {
       m_configure.push_back(configureJsonList[configureIndex].AsString());
@@ -61,7 +61,7 @@ Recipes& Recipes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Deploy"))
   {
-    Array<JsonView> deployJsonList = jsonValue.GetArray("Deploy");
+    Aws::Utils::Array<JsonView> deployJsonList = jsonValue.GetArray("Deploy");
     for(unsigned deployIndex = 0; deployIndex < deployJsonList.GetLength(); ++deployIndex)
     {
       m_deploy.push_back(deployJsonList[deployIndex].AsString());
@@ -71,7 +71,7 @@ Recipes& Recipes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Undeploy"))
   {
-    Array<JsonView> undeployJsonList = jsonValue.GetArray("Undeploy");
+    Aws::Utils::Array<JsonView> undeployJsonList = jsonValue.GetArray("Undeploy");
     for(unsigned undeployIndex = 0; undeployIndex < undeployJsonList.GetLength(); ++undeployIndex)
     {
       m_undeploy.push_back(undeployJsonList[undeployIndex].AsString());
@@ -81,7 +81,7 @@ Recipes& Recipes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shutdown"))
   {
-    Array<JsonView> shutdownJsonList = jsonValue.GetArray("Shutdown");
+    Aws::Utils::Array<JsonView> shutdownJsonList = jsonValue.GetArray("Shutdown");
     for(unsigned shutdownIndex = 0; shutdownIndex < shutdownJsonList.GetLength(); ++shutdownIndex)
     {
       m_shutdown.push_back(shutdownJsonList[shutdownIndex].AsString());
@@ -98,7 +98,7 @@ JsonValue Recipes::Jsonize() const
 
   if(m_setupHasBeenSet)
   {
-   Array<JsonValue> setupJsonList(m_setup.size());
+   Aws::Utils::Array<JsonValue> setupJsonList(m_setup.size());
    for(unsigned setupIndex = 0; setupIndex < setupJsonList.GetLength(); ++setupIndex)
    {
      setupJsonList[setupIndex].AsString(m_setup[setupIndex]);
@@ -109,7 +109,7 @@ JsonValue Recipes::Jsonize() const
 
   if(m_configureHasBeenSet)
   {
-   Array<JsonValue> configureJsonList(m_configure.size());
+   Aws::Utils::Array<JsonValue> configureJsonList(m_configure.size());
    for(unsigned configureIndex = 0; configureIndex < configureJsonList.GetLength(); ++configureIndex)
    {
      configureJsonList[configureIndex].AsString(m_configure[configureIndex]);
@@ -120,7 +120,7 @@ JsonValue Recipes::Jsonize() const
 
   if(m_deployHasBeenSet)
   {
-   Array<JsonValue> deployJsonList(m_deploy.size());
+   Aws::Utils::Array<JsonValue> deployJsonList(m_deploy.size());
    for(unsigned deployIndex = 0; deployIndex < deployJsonList.GetLength(); ++deployIndex)
    {
      deployJsonList[deployIndex].AsString(m_deploy[deployIndex]);
@@ -131,7 +131,7 @@ JsonValue Recipes::Jsonize() const
 
   if(m_undeployHasBeenSet)
   {
-   Array<JsonValue> undeployJsonList(m_undeploy.size());
+   Aws::Utils::Array<JsonValue> undeployJsonList(m_undeploy.size());
    for(unsigned undeployIndex = 0; undeployIndex < undeployJsonList.GetLength(); ++undeployIndex)
    {
      undeployJsonList[undeployIndex].AsString(m_undeploy[undeployIndex]);
@@ -142,7 +142,7 @@ JsonValue Recipes::Jsonize() const
 
   if(m_shutdownHasBeenSet)
   {
-   Array<JsonValue> shutdownJsonList(m_shutdown.size());
+   Aws::Utils::Array<JsonValue> shutdownJsonList(m_shutdown.size());
    for(unsigned shutdownIndex = 0; shutdownIndex < shutdownJsonList.GetLength(); ++shutdownIndex)
    {
      shutdownJsonList[shutdownIndex].AsString(m_shutdown[shutdownIndex]);

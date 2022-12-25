@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommandConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ExecuteCommandConfiguration
+  class ExecuteCommandConfiguration
   {
   public:
-    ExecuteCommandConfiguration();
-    ExecuteCommandConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteCommandConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ExecuteCommandConfiguration();
+    AWS_ECS_API ExecuteCommandConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ExecuteCommandConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -225,13 +225,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ExecuteCommandLogging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     ExecuteCommandLogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

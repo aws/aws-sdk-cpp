@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API RestoreManagedPrefixListVersionResponse
+  class RestoreManagedPrefixListVersionResponse
   {
   public:
-    RestoreManagedPrefixListVersionResponse();
-    RestoreManagedPrefixListVersionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreManagedPrefixListVersionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreManagedPrefixListVersionResponse();
+    AWS_EC2_API RestoreManagedPrefixListVersionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreManagedPrefixListVersionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

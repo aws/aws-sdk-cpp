@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 RetryDataReplicationResult::RetryDataReplicationResult() : 
-    m_lastLaunchResult(LastLaunchResult::NOT_SET)
+    m_lastLaunchResult(LastLaunchResult::NOT_SET),
+    m_replicationDirection(ReplicationDirection::NOT_SET)
 {
 }
 
 RetryDataReplicationResult::RetryDataReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_lastLaunchResult(LastLaunchResult::NOT_SET)
+    m_lastLaunchResult(LastLaunchResult::NOT_SET),
+    m_replicationDirection(ReplicationDirection::NOT_SET)
 {
   *this = result;
 }
@@ -57,6 +59,24 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("recoveryInstanceId"))
   {
     m_recoveryInstanceId = jsonValue.GetString("recoveryInstanceId");
+
+  }
+
+  if(jsonValue.ValueExists("replicationDirection"))
+  {
+    m_replicationDirection = ReplicationDirectionMapper::GetReplicationDirectionForName(jsonValue.GetString("replicationDirection"));
+
+  }
+
+  if(jsonValue.ValueExists("reversedDirectionSourceServerArn"))
+  {
+    m_reversedDirectionSourceServerArn = jsonValue.GetString("reversedDirectionSourceServerArn");
+
+  }
+
+  if(jsonValue.ValueExists("sourceCloudProperties"))
+  {
+    m_sourceCloudProperties = jsonValue.GetObject("sourceCloudProperties");
 
   }
 

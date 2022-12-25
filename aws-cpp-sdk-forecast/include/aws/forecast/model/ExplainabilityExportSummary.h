@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ExplainabilityExportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ExplainabilityExportSummary
+  class ExplainabilityExportSummary
   {
   public:
-    ExplainabilityExportSummary();
-    ExplainabilityExportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExplainabilityExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ExplainabilityExportSummary();
+    AWS_FORECASTSERVICE_API ExplainabilityExportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ExplainabilityExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -373,25 +373,25 @@ namespace Model
   private:
 
     Aws::String m_explainabilityExportArn;
-    bool m_explainabilityExportArnHasBeenSet;
+    bool m_explainabilityExportArnHasBeenSet = false;
 
     Aws::String m_explainabilityExportName;
-    bool m_explainabilityExportNameHasBeenSet;
+    bool m_explainabilityExportNameHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

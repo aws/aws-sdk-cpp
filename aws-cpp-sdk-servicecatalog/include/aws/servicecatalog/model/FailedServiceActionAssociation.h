@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/FailedServiceActionAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API FailedServiceActionAssociation
+  class FailedServiceActionAssociation
   {
   public:
-    FailedServiceActionAssociation();
-    FailedServiceActionAssociation(Aws::Utils::Json::JsonView jsonValue);
-    FailedServiceActionAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API FailedServiceActionAssociation();
+    AWS_SERVICECATALOG_API FailedServiceActionAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API FailedServiceActionAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_serviceActionId;
-    bool m_serviceActionIdHasBeenSet;
+    bool m_serviceActionIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     ServiceActionAssociationErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

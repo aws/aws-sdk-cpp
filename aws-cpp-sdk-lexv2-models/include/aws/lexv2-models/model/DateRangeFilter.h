@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DateRangeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DateRangeFilter
+  class DateRangeFilter
   {
   public:
-    DateRangeFilter();
-    DateRangeFilter(Aws::Utils::Json::JsonView jsonValue);
-    DateRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DateRangeFilter();
+    AWS_LEXMODELSV2_API DateRangeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DateRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

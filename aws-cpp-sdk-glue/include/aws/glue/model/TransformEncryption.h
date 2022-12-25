@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TransformEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TransformEncryption
+  class TransformEncryption
   {
   public:
-    TransformEncryption();
-    TransformEncryption(Aws::Utils::Json::JsonView jsonValue);
-    TransformEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TransformEncryption();
+    AWS_GLUE_API TransformEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TransformEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     MLUserDataEncryption m_mlUserDataEncryption;
-    bool m_mlUserDataEncryptionHasBeenSet;
+    bool m_mlUserDataEncryptionHasBeenSet = false;
 
     Aws::String m_taskRunSecurityConfigurationName;
-    bool m_taskRunSecurityConfigurationNameHasBeenSet;
+    bool m_taskRunSecurityConfigurationNameHasBeenSet = false;
   };
 
 } // namespace Model

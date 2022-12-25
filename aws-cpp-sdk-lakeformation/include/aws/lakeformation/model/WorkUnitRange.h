@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/WorkUnitRange">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API WorkUnitRange
+  class WorkUnitRange
   {
   public:
-    WorkUnitRange();
-    WorkUnitRange(Aws::Utils::Json::JsonView jsonValue);
-    WorkUnitRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API WorkUnitRange();
+    AWS_LAKEFORMATION_API WorkUnitRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API WorkUnitRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,13 +127,13 @@ namespace Model
   private:
 
     long long m_workUnitIdMax;
-    bool m_workUnitIdMaxHasBeenSet;
+    bool m_workUnitIdMaxHasBeenSet = false;
 
     long long m_workUnitIdMin;
-    bool m_workUnitIdMinHasBeenSet;
+    bool m_workUnitIdMinHasBeenSet = false;
 
     Aws::String m_workUnitToken;
-    bool m_workUnitTokenHasBeenSet;
+    bool m_workUnitTokenHasBeenSet = false;
   };
 
 } // namespace Model

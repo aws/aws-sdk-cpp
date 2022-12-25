@@ -25,19 +25,21 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DetectSyntaxResult
+  class DetectSyntaxResult
   {
   public:
-    DetectSyntaxResult();
-    DetectSyntaxResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectSyntaxResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectSyntaxResult();
+    AWS_COMPREHEND_API DetectSyntaxResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DetectSyntaxResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline const Aws::Vector<SyntaxToken>& GetSyntaxTokens() const{ return m_syntaxTokens; }
 
@@ -45,7 +47,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetSyntaxTokens(const Aws::Vector<SyntaxToken>& value) { m_syntaxTokens = value; }
 
@@ -53,7 +57,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetSyntaxTokens(Aws::Vector<SyntaxToken>&& value) { m_syntaxTokens = std::move(value); }
 
@@ -61,7 +67,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectSyntaxResult& WithSyntaxTokens(const Aws::Vector<SyntaxToken>& value) { SetSyntaxTokens(value); return *this;}
 
@@ -69,7 +77,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectSyntaxResult& WithSyntaxTokens(Aws::Vector<SyntaxToken>&& value) { SetSyntaxTokens(std::move(value)); return *this;}
 
@@ -77,7 +87,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectSyntaxResult& AddSyntaxTokens(const SyntaxToken& value) { m_syntaxTokens.push_back(value); return *this; }
 
@@ -85,7 +97,9 @@ namespace Model
      * <p>A collection of syntax tokens describing the text. For each token, the
      * response provides the text, the token type, where the text begins and ends, and
      * the level of confidence that Amazon Comprehend has that the token is correct.
-     * For a list of token types, see <a>how-syntax</a>.</p>
+     * For a list of token types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectSyntaxResult& AddSyntaxTokens(SyntaxToken&& value) { m_syntaxTokens.push_back(std::move(value)); return *this; }
 

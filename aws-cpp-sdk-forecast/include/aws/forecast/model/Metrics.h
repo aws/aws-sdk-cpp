@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Metrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Metrics
+  class Metrics
   {
   public:
-    Metrics();
-    Metrics(Aws::Utils::Json::JsonView jsonValue);
-    Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Metrics();
+    AWS_FORECASTSERVICE_API Metrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<WeightedQuantileLoss> m_weightedQuantileLosses;
-    bool m_weightedQuantileLossesHasBeenSet;
+    bool m_weightedQuantileLossesHasBeenSet = false;
 
     Aws::Vector<ErrorMetric> m_errorMetrics;
-    bool m_errorMetricsHasBeenSet;
+    bool m_errorMetricsHasBeenSet = false;
 
     double m_averageWeightedQuantileLoss;
-    bool m_averageWeightedQuantileLossHasBeenSet;
+    bool m_averageWeightedQuantileLossHasBeenSet = false;
   };
 
 } // namespace Model

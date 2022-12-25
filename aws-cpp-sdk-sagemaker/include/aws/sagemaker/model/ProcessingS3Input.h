@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Input">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingS3Input
+  class ProcessingS3Input
   {
   public:
-    ProcessingS3Input();
-    ProcessingS3Input(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingS3Input& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingS3Input();
+    AWS_SAGEMAKER_API ProcessingS3Input(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingS3Input& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -392,22 +392,22 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     ProcessingS3DataType m_s3DataType;
-    bool m_s3DataTypeHasBeenSet;
+    bool m_s3DataTypeHasBeenSet = false;
 
     ProcessingS3InputMode m_s3InputMode;
-    bool m_s3InputModeHasBeenSet;
+    bool m_s3InputModeHasBeenSet = false;
 
     ProcessingS3DataDistributionType m_s3DataDistributionType;
-    bool m_s3DataDistributionTypeHasBeenSet;
+    bool m_s3DataDistributionTypeHasBeenSet = false;
 
     ProcessingS3CompressionType m_s3CompressionType;
-    bool m_s3CompressionTypeHasBeenSet;
+    bool m_s3CompressionTypeHasBeenSet = false;
   };
 
 } // namespace Model

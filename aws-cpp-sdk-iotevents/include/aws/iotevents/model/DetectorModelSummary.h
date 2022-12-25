@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DetectorModelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DetectorModelSummary
+  class DetectorModelSummary
   {
   public:
-    DetectorModelSummary();
-    DetectorModelSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectorModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DetectorModelSummary();
+    AWS_IOTEVENTS_API DetectorModelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DetectorModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

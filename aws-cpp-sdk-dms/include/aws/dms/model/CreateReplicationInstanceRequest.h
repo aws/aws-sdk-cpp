@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstanceMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationInstanceRequest : public DatabaseMigrationServiceRequest
+  class CreateReplicationInstanceRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    CreateReplicationInstanceRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReplicationInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -924,52 +924,112 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of IP address protocol used by a replication instance, such as IPv4
+     * only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not
+     * yet supported.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::String m_replicationInstanceIdentifier;
-    bool m_replicationInstanceIdentifierHasBeenSet;
+    bool m_replicationInstanceIdentifierHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_replicationInstanceClass;
-    bool m_replicationInstanceClassHasBeenSet;
+    bool m_replicationInstanceClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_replicationSubnetGroupIdentifier;
-    bool m_replicationSubnetGroupIdentifierHasBeenSet;
+    bool m_replicationSubnetGroupIdentifierHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_dnsNameServers;
-    bool m_dnsNameServersHasBeenSet;
+    bool m_dnsNameServersHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

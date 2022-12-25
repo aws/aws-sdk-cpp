@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TagOptionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API TagOptionDetail
+  class TagOptionDetail
   {
   public:
-    TagOptionDetail();
-    TagOptionDetail(Aws::Utils::Json::JsonView jsonValue);
-    TagOptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API TagOptionDetail();
+    AWS_SERVICECATALOG_API TagOptionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API TagOptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,61 +182,69 @@ namespace Model
 
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account Id of the owner account that created the TagOption.</p>
+     * <p>The Amazon Web Services account Id of the owner account that created the
+     * TagOption.</p>
      */
     inline TagOptionDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

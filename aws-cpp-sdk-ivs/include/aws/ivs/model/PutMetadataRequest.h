@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API PutMetadataRequest : public IVSRequest
+  class PutMetadataRequest : public IVSRequest
   {
   public:
-    PutMetadataRequest();
+    AWS_IVS_API PutMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

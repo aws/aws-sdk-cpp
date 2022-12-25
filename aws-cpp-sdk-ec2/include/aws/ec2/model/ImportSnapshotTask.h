@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshotTask">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ImportSnapshotTask
+  class ImportSnapshotTask
   {
   public:
-    ImportSnapshotTask();
-    ImportSnapshotTask(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ImportSnapshotTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImportSnapshotTask();
+    AWS_EC2_API ImportSnapshotTask(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImportSnapshotTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_importTaskId;
-    bool m_importTaskIdHasBeenSet;
+    bool m_importTaskIdHasBeenSet = false;
 
     SnapshotTaskDetail m_snapshotTaskDetail;
-    bool m_snapshotTaskDetailHasBeenSet;
+    bool m_snapshotTaskDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

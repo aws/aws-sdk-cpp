@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DataPrivacy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DataPrivacy
+  class DataPrivacy
   {
   public:
-    DataPrivacy();
-    DataPrivacy(Aws::Utils::Json::JsonView jsonValue);
-    DataPrivacy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DataPrivacy();
+    AWS_LEXMODELSV2_API DataPrivacy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DataPrivacy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,7 +149,7 @@ namespace Model
   private:
 
     bool m_childDirected;
-    bool m_childDirectedHasBeenSet;
+    bool m_childDirectedHasBeenSet = false;
   };
 
 } // namespace Model

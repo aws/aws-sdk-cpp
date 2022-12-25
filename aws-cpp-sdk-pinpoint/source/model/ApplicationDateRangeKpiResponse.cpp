@@ -98,7 +98,7 @@ JsonValue ApplicationDateRangeKpiResponse::Jsonize() const
 
   if(m_endTimeHasBeenSet)
   {
-   payload.WithString("EndTime", m_endTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("EndTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_kpiNameHasBeenSet)
@@ -121,7 +121,7 @@ JsonValue ApplicationDateRangeKpiResponse::Jsonize() const
 
   if(m_startTimeHasBeenSet)
   {
-   payload.WithString("StartTime", m_startTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("StartTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

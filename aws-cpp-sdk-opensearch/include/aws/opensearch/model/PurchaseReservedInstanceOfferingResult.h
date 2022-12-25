@@ -26,50 +26,50 @@ namespace Model
 {
   /**
    * <p>Represents the output of a <code>PurchaseReservedInstanceOffering</code>
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOfferingResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult
+  class PurchaseReservedInstanceOfferingResult
   {
   public:
-    PurchaseReservedInstanceOfferingResult();
-    PurchaseReservedInstanceOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PurchaseReservedInstanceOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult();
+    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline const Aws::String& GetReservedInstanceId() const{ return m_reservedInstanceId; }
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline void SetReservedInstanceId(const Aws::String& value) { m_reservedInstanceId = value; }
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline void SetReservedInstanceId(Aws::String&& value) { m_reservedInstanceId = std::move(value); }
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline void SetReservedInstanceId(const char* value) { m_reservedInstanceId.assign(value); }
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(const Aws::String& value) { SetReservedInstanceId(value); return *this;}
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(Aws::String&& value) { SetReservedInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Details of the reserved OpenSearch instance which was purchased.</p>
+     * <p>The ID of the Reserved Instance offering that was purchased.</p>
      */
     inline PurchaseReservedInstanceOfferingResult& WithReservedInstanceId(const char* value) { SetReservedInstanceId(value); return *this;}
 

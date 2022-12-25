@@ -30,7 +30,7 @@ GetDatabasesResult& GetDatabasesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DatabaseList"))
   {
-    Array<JsonView> databaseListJsonList = jsonValue.GetArray("DatabaseList");
+    Aws::Utils::Array<JsonView> databaseListJsonList = jsonValue.GetArray("DatabaseList");
     for(unsigned databaseListIndex = 0; databaseListIndex < databaseListJsonList.GetLength(); ++databaseListIndex)
     {
       m_databaseList.push_back(databaseListJsonList[databaseListIndex].AsObject());

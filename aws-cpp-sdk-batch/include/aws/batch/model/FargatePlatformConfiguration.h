@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FargatePlatformConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API FargatePlatformConfiguration
+  class FargatePlatformConfiguration
   {
   public:
-    FargatePlatformConfiguration();
-    FargatePlatformConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FargatePlatformConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API FargatePlatformConfiguration();
+    AWS_BATCH_API FargatePlatformConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API FargatePlatformConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,7 +138,7 @@ namespace Model
   private:
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
   };
 
 } // namespace Model

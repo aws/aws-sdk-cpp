@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachObject">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchAttachObject
+  class BatchAttachObject
   {
   public:
-    BatchAttachObject();
-    BatchAttachObject(Aws::Utils::Json::JsonView jsonValue);
-    BatchAttachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchAttachObject();
+    AWS_CLOUDDIRECTORY_API BatchAttachObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchAttachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     ObjectReference m_parentReference;
-    bool m_parentReferenceHasBeenSet;
+    bool m_parentReferenceHasBeenSet = false;
 
     ObjectReference m_childReference;
-    bool m_childReferenceHasBeenSet;
+    bool m_childReferenceHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

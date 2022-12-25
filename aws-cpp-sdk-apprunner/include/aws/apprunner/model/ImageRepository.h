@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ImageRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ImageRepository
+  class ImageRepository
   {
   public:
-    ImageRepository();
-    ImageRepository(Aws::Utils::Json::JsonView jsonValue);
-    ImageRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ImageRepository();
+    AWS_APPRUNNER_API ImageRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ImageRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_imageIdentifier;
-    bool m_imageIdentifierHasBeenSet;
+    bool m_imageIdentifierHasBeenSet = false;
 
     ImageConfiguration m_imageConfiguration;
-    bool m_imageConfigurationHasBeenSet;
+    bool m_imageConfigurationHasBeenSet = false;
 
     ImageRepositoryType m_imageRepositoryType;
-    bool m_imageRepositoryTypeHasBeenSet;
+    bool m_imageRepositoryTypeHasBeenSet = false;
   };
 
 } // namespace Model

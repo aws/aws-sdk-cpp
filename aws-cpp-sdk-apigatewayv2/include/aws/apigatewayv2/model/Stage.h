@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Stage">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Stage
+  class Stage
   {
   public:
-    Stage();
-    Stage(Aws::Utils::Json::JsonView jsonValue);
-    Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Stage();
+    AWS_APIGATEWAYV2_API Stage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -682,46 +682,46 @@ namespace Model
   private:
 
     AccessLogSettings m_accessLogSettings;
-    bool m_accessLogSettingsHasBeenSet;
+    bool m_accessLogSettingsHasBeenSet = false;
 
     bool m_apiGatewayManaged;
-    bool m_apiGatewayManagedHasBeenSet;
+    bool m_apiGatewayManagedHasBeenSet = false;
 
     bool m_autoDeploy;
-    bool m_autoDeployHasBeenSet;
+    bool m_autoDeployHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     RouteSettings m_defaultRouteSettings;
-    bool m_defaultRouteSettingsHasBeenSet;
+    bool m_defaultRouteSettingsHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lastDeploymentStatusMessage;
-    bool m_lastDeploymentStatusMessageHasBeenSet;
+    bool m_lastDeploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::Map<Aws::String, RouteSettings> m_routeSettings;
-    bool m_routeSettingsHasBeenSet;
+    bool m_routeSettingsHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

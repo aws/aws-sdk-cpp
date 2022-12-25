@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDeleteDetectorErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API BatchDeleteDetectorErrorEntry
+  class BatchDeleteDetectorErrorEntry
   {
   public:
-    BatchDeleteDetectorErrorEntry();
-    BatchDeleteDetectorErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteDetectorErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API BatchDeleteDetectorErrorEntry();
+    AWS_IOTEVENTSDATA_API BatchDeleteDetectorErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API BatchDeleteDetectorErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

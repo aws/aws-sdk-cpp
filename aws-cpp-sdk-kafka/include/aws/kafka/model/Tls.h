@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/Tls">AWS API
    * Reference</a></p>
    */
-  class AWS_KAFKA_API Tls
+  class Tls
   {
   public:
-    Tls();
-    Tls(Aws::Utils::Json::JsonView jsonValue);
-    Tls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Tls();
+    AWS_KAFKA_API Tls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Tls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_certificateAuthorityArnList;
-    bool m_certificateAuthorityArnListHasBeenSet;
+    bool m_certificateAuthorityArnListHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

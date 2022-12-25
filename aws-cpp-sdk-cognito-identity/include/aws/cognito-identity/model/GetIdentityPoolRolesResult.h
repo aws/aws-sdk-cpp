@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRolesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API GetIdentityPoolRolesResult
+  class GetIdentityPoolRolesResult
   {
   public:
-    GetIdentityPoolRolesResult();
-    GetIdentityPoolRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdentityPoolRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API GetIdentityPoolRolesResult();
+    AWS_COGNITOIDENTITY_API GetIdentityPoolRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API GetIdentityPoolRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

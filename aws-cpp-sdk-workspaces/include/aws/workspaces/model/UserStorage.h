@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API UserStorage
+  class UserStorage
   {
   public:
-    UserStorage();
-    UserStorage(Aws::Utils::Json::JsonView jsonValue);
-    UserStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API UserStorage();
+    AWS_WORKSPACES_API UserStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API UserStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
   };
 
 } // namespace Model

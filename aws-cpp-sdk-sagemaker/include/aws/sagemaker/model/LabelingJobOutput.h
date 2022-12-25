@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobOutput
+  class LabelingJobOutput
   {
   public:
-    LabelingJobOutput();
-    LabelingJobOutput(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobOutput();
+    AWS_SAGEMAKER_API LabelingJobOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_outputDatasetS3Uri;
-    bool m_outputDatasetS3UriHasBeenSet;
+    bool m_outputDatasetS3UriHasBeenSet = false;
 
     Aws::String m_finalActiveLearningModelArn;
-    bool m_finalActiveLearningModelArnHasBeenSet;
+    bool m_finalActiveLearningModelArnHasBeenSet = false;
   };
 
 } // namespace Model

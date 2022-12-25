@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API RevokeSecurityGroupEgressRequest : public EC2Request
+  class RevokeSecurityGroupEgressRequest : public EC2Request
   {
   public:
-    RevokeSecurityGroupEgressRequest();
+    AWS_EC2_API RevokeSecurityGroupEgressRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeSecurityGroupEgress"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -439,34 +439,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet;
+    bool m_ipPermissionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupRuleIds;
-    bool m_securityGroupRuleIdsHasBeenSet;
+    bool m_securityGroupRuleIdsHasBeenSet = false;
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupName;
-    bool m_sourceSecurityGroupNameHasBeenSet;
+    bool m_sourceSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_sourceSecurityGroupOwnerId;
-    bool m_sourceSecurityGroupOwnerIdHasBeenSet;
+    bool m_sourceSecurityGroupOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

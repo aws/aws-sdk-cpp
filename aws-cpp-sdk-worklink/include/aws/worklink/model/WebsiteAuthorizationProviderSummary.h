@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/WebsiteAuthorizationProviderSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKLINK_API WebsiteAuthorizationProviderSummary
+  class WebsiteAuthorizationProviderSummary
   {
   public:
-    WebsiteAuthorizationProviderSummary();
-    WebsiteAuthorizationProviderSummary(Aws::Utils::Json::JsonView jsonValue);
-    WebsiteAuthorizationProviderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKLINK_API WebsiteAuthorizationProviderSummary();
+    AWS_WORKLINK_API WebsiteAuthorizationProviderSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API WebsiteAuthorizationProviderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_authorizationProviderId;
-    bool m_authorizationProviderIdHasBeenSet;
+    bool m_authorizationProviderIdHasBeenSet = false;
 
     AuthorizationProviderType m_authorizationProviderType;
-    bool m_authorizationProviderTypeHasBeenSet;
+    bool m_authorizationProviderTypeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API VpcInterface
+  class VpcInterface
   {
   public:
-    VpcInterface();
-    VpcInterface(Aws::Utils::Json::JsonView jsonValue);
-    VpcInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API VpcInterface();
+    AWS_MEDIACONNECT_API VpcInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API VpcInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,22 +287,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
-    bool m_networkInterfaceIdsHasBeenSet;
+    bool m_networkInterfaceIdsHasBeenSet = false;
 
     NetworkInterfaceType m_networkInterfaceType;
-    bool m_networkInterfaceTypeHasBeenSet;
+    bool m_networkInterfaceTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
   };
 
 } // namespace Model

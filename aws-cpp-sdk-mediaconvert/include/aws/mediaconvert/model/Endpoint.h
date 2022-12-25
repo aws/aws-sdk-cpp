@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Endpoint();
+    AWS_MEDIACONVERT_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

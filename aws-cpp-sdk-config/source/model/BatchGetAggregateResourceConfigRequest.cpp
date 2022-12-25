@@ -30,7 +30,7 @@ Aws::String BatchGetAggregateResourceConfigRequest::SerializePayload() const
 
   if(m_resourceIdentifiersHasBeenSet)
   {
-   Array<JsonValue> resourceIdentifiersJsonList(m_resourceIdentifiers.size());
+   Aws::Utils::Array<JsonValue> resourceIdentifiersJsonList(m_resourceIdentifiers.size());
    for(unsigned resourceIdentifiersIndex = 0; resourceIdentifiersIndex < resourceIdentifiersJsonList.GetLength(); ++resourceIdentifiersIndex)
    {
      resourceIdentifiersJsonList[resourceIdentifiersIndex].AsObject(m_resourceIdentifiers[resourceIdentifiersIndex].Jsonize());

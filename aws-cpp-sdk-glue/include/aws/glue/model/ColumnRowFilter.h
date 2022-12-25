@@ -23,13 +23,13 @@ namespace Glue
 namespace Model
 {
 
-  class AWS_GLUE_API ColumnRowFilter
+  class ColumnRowFilter
   {
   public:
-    ColumnRowFilter();
-    ColumnRowFilter(Aws::Utils::Json::JsonView jsonValue);
-    ColumnRowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ColumnRowFilter();
+    AWS_GLUE_API ColumnRowFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ColumnRowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_rowFilterExpression;
-    bool m_rowFilterExpressionHasBeenSet;
+    bool m_rowFilterExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API CreateStreamRequest : public KinesisVideoRequest
+  class CreateStreamRequest : public KinesisVideoRequest
   {
   public:
-    CreateStreamRequest();
+    AWS_KINESISVIDEO_API CreateStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -455,22 +455,22 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     int m_dataRetentionInHours;
-    bool m_dataRetentionInHoursHasBeenSet;
+    bool m_dataRetentionInHoursHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

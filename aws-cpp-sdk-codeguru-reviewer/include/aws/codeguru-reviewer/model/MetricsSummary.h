@@ -22,21 +22,21 @@ namespace Model
 {
 
   /**
-   * <p> Information about metrics summaries. </p><p><h3>See Also:</h3>   <a
+   * <p>Information about metrics summaries.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/MetricsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API MetricsSummary
+  class MetricsSummary
   {
   public:
-    MetricsSummary();
-    MetricsSummary(Aws::Utils::Json::JsonView jsonValue);
-    MetricsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API MetricsSummary();
+    AWS_CODEGURUREVIEWER_API MetricsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API MetricsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p> Lines of code metered in the code review. For the initial code review pull
+     * <p>Lines of code metered in the code review. For the initial code review pull
      * request and all subsequent revisions, this includes all lines of code in the
      * files added to the pull request. In subsequent revisions, for files that already
      * existed in the pull request, this includes only the changed lines of code. In
@@ -46,12 +46,12 @@ namespace Model
      * 200 lines of code, and also modified a total of 25 lines across the initial 5
      * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
      * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
-     * total of 2,725 lines of code. </p>
+     * total of 2,725 lines of code.</p>
      */
     inline long long GetMeteredLinesOfCodeCount() const{ return m_meteredLinesOfCodeCount; }
 
     /**
-     * <p> Lines of code metered in the code review. For the initial code review pull
+     * <p>Lines of code metered in the code review. For the initial code review pull
      * request and all subsequent revisions, this includes all lines of code in the
      * files added to the pull request. In subsequent revisions, for files that already
      * existed in the pull request, this includes only the changed lines of code. In
@@ -61,12 +61,12 @@ namespace Model
      * 200 lines of code, and also modified a total of 25 lines across the initial 5
      * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
      * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
-     * total of 2,725 lines of code. </p>
+     * total of 2,725 lines of code.</p>
      */
     inline bool MeteredLinesOfCodeCountHasBeenSet() const { return m_meteredLinesOfCodeCountHasBeenSet; }
 
     /**
-     * <p> Lines of code metered in the code review. For the initial code review pull
+     * <p>Lines of code metered in the code review. For the initial code review pull
      * request and all subsequent revisions, this includes all lines of code in the
      * files added to the pull request. In subsequent revisions, for files that already
      * existed in the pull request, this includes only the changed lines of code. In
@@ -76,12 +76,12 @@ namespace Model
      * 200 lines of code, and also modified a total of 25 lines across the initial 5
      * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
      * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
-     * total of 2,725 lines of code. </p>
+     * total of 2,725 lines of code.</p>
      */
     inline void SetMeteredLinesOfCodeCount(long long value) { m_meteredLinesOfCodeCountHasBeenSet = true; m_meteredLinesOfCodeCount = value; }
 
     /**
-     * <p> Lines of code metered in the code review. For the initial code review pull
+     * <p>Lines of code metered in the code review. For the initial code review pull
      * request and all subsequent revisions, this includes all lines of code in the
      * files added to the pull request. In subsequent revisions, for files that already
      * existed in the pull request, this includes only the changed lines of code. In
@@ -91,7 +91,7 @@ namespace Model
      * 200 lines of code, and also modified a total of 25 lines across the initial 5
      * files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500
      * = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a
-     * total of 2,725 lines of code. </p>
+     * total of 2,725 lines of code.</p>
      */
     inline MetricsSummary& WithMeteredLinesOfCodeCount(long long value) { SetMeteredLinesOfCodeCount(value); return *this;}
 
@@ -174,35 +174,35 @@ namespace Model
 
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline long long GetFindingsCount() const{ return m_findingsCount; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline bool FindingsCountHasBeenSet() const { return m_findingsCountHasBeenSet; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline void SetFindingsCount(long long value) { m_findingsCountHasBeenSet = true; m_findingsCount = value; }
 
     /**
-     * <p> Total number of recommendations found in the code review. </p>
+     * <p>Total number of recommendations found in the code review.</p>
      */
     inline MetricsSummary& WithFindingsCount(long long value) { SetFindingsCount(value); return *this;}
 
   private:
 
     long long m_meteredLinesOfCodeCount;
-    bool m_meteredLinesOfCodeCountHasBeenSet;
+    bool m_meteredLinesOfCodeCountHasBeenSet = false;
 
     long long m_suppressedLinesOfCodeCount;
-    bool m_suppressedLinesOfCodeCountHasBeenSet;
+    bool m_suppressedLinesOfCodeCountHasBeenSet = false;
 
     long long m_findingsCount;
-    bool m_findingsCountHasBeenSet;
+    bool m_findingsCountHasBeenSet = false;
   };
 
 } // namespace Model

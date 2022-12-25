@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SAPODataConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SAPODataConnectorProfileProperties
+  class SAPODataConnectorProfileProperties
   {
   public:
-    SAPODataConnectorProfileProperties();
-    SAPODataConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    SAPODataConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SAPODataConnectorProfileProperties();
+    AWS_APPFLOW_API SAPODataConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SAPODataConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,25 +306,25 @@ namespace Model
   private:
 
     Aws::String m_applicationHostUrl;
-    bool m_applicationHostUrlHasBeenSet;
+    bool m_applicationHostUrlHasBeenSet = false;
 
     Aws::String m_applicationServicePath;
-    bool m_applicationServicePathHasBeenSet;
+    bool m_applicationServicePathHasBeenSet = false;
 
     int m_portNumber;
-    bool m_portNumberHasBeenSet;
+    bool m_portNumberHasBeenSet = false;
 
     Aws::String m_clientNumber;
-    bool m_clientNumberHasBeenSet;
+    bool m_clientNumberHasBeenSet = false;
 
     Aws::String m_logonLanguage;
-    bool m_logonLanguageHasBeenSet;
+    bool m_logonLanguageHasBeenSet = false;
 
     Aws::String m_privateLinkServiceName;
-    bool m_privateLinkServiceNameHasBeenSet;
+    bool m_privateLinkServiceNameHasBeenSet = false;
 
     OAuthProperties m_oAuthProperties;
-    bool m_oAuthPropertiesHasBeenSet;
+    bool m_oAuthPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

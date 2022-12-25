@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ReactiveInsightSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ReactiveInsightSummary
+  class ReactiveInsightSummary
   {
   public:
-    ReactiveInsightSummary();
-    ReactiveInsightSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReactiveInsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ReactiveInsightSummary();
+    AWS_DEVOPSGURU_API ReactiveInsightSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ReactiveInsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -326,28 +326,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InsightSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     InsightStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InsightTimeRange m_insightTimeRange;
-    bool m_insightTimeRangeHasBeenSet;
+    bool m_insightTimeRangeHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     ServiceCollection m_serviceCollection;
-    bool m_serviceCollectionHasBeenSet;
+    bool m_serviceCollectionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedResourceArns;
-    bool m_associatedResourceArnsHasBeenSet;
+    bool m_associatedResourceArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3OUTPOSTS_API CreateEndpointRequest : public S3OutpostsRequest
+  class CreateEndpointRequest : public S3OutpostsRequest
   {
   public:
-    CreateEndpointRequest();
+    AWS_S3OUTPOSTS_API CreateEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet;
+    bool m_securityGroupIdHasBeenSet = false;
 
     EndpointAccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
   };
 
 } // namespace Model

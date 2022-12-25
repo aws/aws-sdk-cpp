@@ -34,14 +34,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API MetricsFilter
+  class MetricsFilter
   {
   public:
-    MetricsFilter();
-    MetricsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API MetricsFilter();
+    AWS_S3CRT_API MetricsFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API MetricsFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Tag m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
 
     MetricsAndOperator m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/InterpolationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API InterpolationParameters
+  class InterpolationParameters
   {
   public:
-    InterpolationParameters();
-    InterpolationParameters(Aws::Utils::Json::JsonView jsonValue);
-    InterpolationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API InterpolationParameters();
+    AWS_IOTTWINMAKER_API InterpolationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API InterpolationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     InterpolationType m_interpolationType;
-    bool m_interpolationTypeHasBeenSet;
+    bool m_interpolationTypeHasBeenSet = false;
 
     long long m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

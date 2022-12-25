@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUD9_API CreateEnvironmentEC2Request : public Cloud9Request
+  class CreateEnvironmentEC2Request : public Cloud9Request
   {
   public:
-    CreateEnvironmentEC2Request();
+    AWS_CLOUD9_API CreateEnvironmentEC2Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateEnvironmentEC2"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUD9_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -293,15 +293,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -314,15 +315,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -335,15 +337,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -356,15 +359,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -377,15 +381,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -398,15 +403,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -419,15 +425,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -440,15 +447,16 @@ namespace Model
     /**
      * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
      * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
-     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default AMI
-     * is used if the parameter isn't explicitly assigned a value in the request.
-     * Because Amazon Linux AMI has ended standard support as of December 31, 2020, we
-     * recommend you choose Amazon Linux 2, which includes long term support through
-     * 2023.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
-     * <li> <p> <b>Amazon Linux (default):
+     * alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> <p>The default
+     * Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a
+     * value in the request. </p> <p>In the future the parameter for Amazon Linux will
+     * no longer be available when you specify an AMI for your instance. Amazon Linux 2
+     * will then become the default AMI, which is used to launch your instance if no
+     * parameter is explicitly defined.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+     * <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li>
+     * <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM
+     * paths</b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
@@ -692,37 +700,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     int m_automaticStopTimeMinutes;
-    bool m_automaticStopTimeMinutesHasBeenSet;
+    bool m_automaticStopTimeMinutesHasBeenSet = false;
 
     Aws::String m_ownerArn;
-    bool m_ownerArnHasBeenSet;
+    bool m_ownerArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

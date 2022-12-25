@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseSnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseSnapshot
+  class RelationalDatabaseSnapshot
   {
   public:
-    RelationalDatabaseSnapshot();
-    RelationalDatabaseSnapshot(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseSnapshot();
+    AWS_LIGHTSAIL_API RelationalDatabaseSnapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -707,49 +707,49 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_fromRelationalDatabaseName;
-    bool m_fromRelationalDatabaseNameHasBeenSet;
+    bool m_fromRelationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_fromRelationalDatabaseArn;
-    bool m_fromRelationalDatabaseArnHasBeenSet;
+    bool m_fromRelationalDatabaseArnHasBeenSet = false;
 
     Aws::String m_fromRelationalDatabaseBundleId;
-    bool m_fromRelationalDatabaseBundleIdHasBeenSet;
+    bool m_fromRelationalDatabaseBundleIdHasBeenSet = false;
 
     Aws::String m_fromRelationalDatabaseBlueprintId;
-    bool m_fromRelationalDatabaseBlueprintIdHasBeenSet;
+    bool m_fromRelationalDatabaseBlueprintIdHasBeenSet = false;
   };
 
 } // namespace Model

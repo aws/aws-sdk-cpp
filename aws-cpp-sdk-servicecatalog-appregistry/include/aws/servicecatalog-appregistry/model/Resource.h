@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API Resource();
+    AWS_APPREGISTRY_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_associationTime;
-    bool m_associationTimeHasBeenSet;
+    bool m_associationTimeHasBeenSet = false;
 
     ResourceIntegrations m_integrations;
-    bool m_integrationsHasBeenSet;
+    bool m_integrationsHasBeenSet = false;
   };
 
 } // namespace Model

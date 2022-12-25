@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Xavc4kProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Xavc4kProfileSettings
+  class Xavc4kProfileSettings
   {
   public:
-    Xavc4kProfileSettings();
-    Xavc4kProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    Xavc4kProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings();
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Xavc4kProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -417,28 +417,28 @@ namespace Model
   private:
 
     Xavc4kProfileBitrateClass m_bitrateClass;
-    bool m_bitrateClassHasBeenSet;
+    bool m_bitrateClassHasBeenSet = false;
 
     Xavc4kProfileCodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     XavcFlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
-    bool m_flickerAdaptiveQuantizationHasBeenSet;
+    bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
     XavcGopBReference m_gopBReference;
-    bool m_gopBReferenceHasBeenSet;
+    bool m_gopBReferenceHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     Xavc4kProfileQualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     int m_slices;
-    bool m_slicesHasBeenSet;
+    bool m_slicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomainInput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API JoinDomainRequest : public StorageGatewayRequest
+  class JoinDomainRequest : public StorageGatewayRequest
   {
   public:
-    JoinDomainRequest();
+    AWS_STORAGEGATEWAY_API JoinDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "JoinDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -406,25 +406,25 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_organizationalUnit;
-    bool m_organizationalUnitHasBeenSet;
+    bool m_organizationalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domainControllers;
-    bool m_domainControllersHasBeenSet;
+    bool m_domainControllersHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
   };
 
 } // namespace Model

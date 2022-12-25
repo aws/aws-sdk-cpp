@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API EndpointDetails
+  class EndpointDetails
   {
   public:
-    EndpointDetails();
-    EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
-    EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API EndpointDetails();
+    AWS_TRANSFER_API EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,72 +189,72 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline EndpointDetails& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
     inline EndpointDetails& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
-     * information, see
+     * <p>The identifier of the VPC endpoint.</p>  <p>This property can only be
+     * set when <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p>
+     * <p>For more information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * 
      */
@@ -262,58 +262,58 @@ namespace Model
 
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline EndpointDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline EndpointDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC ID of the VPC in which a server's endpoint will be hosted.</p> 
-     * <p>This property can only be set when <code>EndpointType</code> is set to
-     * <code>VPC</code>.</p> 
+     * <p>The VPC identifier of the VPC in which a server's endpoint will be
+     * hosted.</p>  <p>This property can only be set when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> 
      */
     inline EndpointDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -456,19 +456,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_addressAllocationIds;
-    bool m_addressAllocationIdsHasBeenSet;
+    bool m_addressAllocationIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration
+  class TargetTrackingConfiguration
   {
   public:
-    TargetTrackingConfiguration();
-    TargetTrackingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TargetTrackingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration();
+    AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API TargetTrackingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -313,25 +313,25 @@ namespace Model
   private:
 
     PredefinedScalingMetricSpecification m_predefinedScalingMetricSpecification;
-    bool m_predefinedScalingMetricSpecificationHasBeenSet;
+    bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
 
     CustomizedScalingMetricSpecification m_customizedScalingMetricSpecification;
-    bool m_customizedScalingMetricSpecificationHasBeenSet;
+    bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
 
     int m_scaleOutCooldown;
-    bool m_scaleOutCooldownHasBeenSet;
+    bool m_scaleOutCooldownHasBeenSet = false;
 
     int m_scaleInCooldown;
-    bool m_scaleInCooldownHasBeenSet;
+    bool m_scaleInCooldownHasBeenSet = false;
 
     int m_estimatedInstanceWarmup;
-    bool m_estimatedInstanceWarmupHasBeenSet;
+    bool m_estimatedInstanceWarmupHasBeenSet = false;
   };
 
 } // namespace Model

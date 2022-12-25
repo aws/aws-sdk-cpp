@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Cell">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Cell
+  class Cell
   {
   public:
-    Cell();
-    Cell(Aws::Utils::Json::JsonView jsonValue);
-    Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Cell();
+    AWS_SECURITYHUB_API Cell(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,16 +193,16 @@ namespace Model
   private:
 
     long long m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     long long m_row;
-    bool m_rowHasBeenSet;
+    bool m_rowHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_cellReference;
-    bool m_cellReferenceHasBeenSet;
+    bool m_cellReferenceHasBeenSet = false;
   };
 
 } // namespace Model

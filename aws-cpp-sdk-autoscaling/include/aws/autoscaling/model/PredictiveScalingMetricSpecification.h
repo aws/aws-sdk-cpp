@@ -62,15 +62,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredictiveScalingMetricSpecification
+  class PredictiveScalingMetricSpecification
   {
   public:
-    PredictiveScalingMetricSpecification();
-    PredictiveScalingMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredictiveScalingMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification();
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -308,25 +308,25 @@ namespace Model
   private:
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     PredictiveScalingPredefinedMetricPair m_predefinedMetricPairSpecification;
-    bool m_predefinedMetricPairSpecificationHasBeenSet;
+    bool m_predefinedMetricPairSpecificationHasBeenSet = false;
 
     PredictiveScalingPredefinedScalingMetric m_predefinedScalingMetricSpecification;
-    bool m_predefinedScalingMetricSpecificationHasBeenSet;
+    bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingPredefinedLoadMetric m_predefinedLoadMetricSpecification;
-    bool m_predefinedLoadMetricSpecificationHasBeenSet;
+    bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedScalingMetric m_customizedScalingMetricSpecification;
-    bool m_customizedScalingMetricSpecificationHasBeenSet;
+    bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedLoadMetric m_customizedLoadMetricSpecification;
-    bool m_customizedLoadMetricSpecificationHasBeenSet;
+    bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
     PredictiveScalingCustomizedCapacityMetric m_customizedCapacityMetricSpecification;
-    bool m_customizedCapacityMetricSpecificationHasBeenSet;
+    bool m_customizedCapacityMetricSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

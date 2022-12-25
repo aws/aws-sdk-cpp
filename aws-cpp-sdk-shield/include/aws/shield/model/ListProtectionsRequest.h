@@ -7,6 +7,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/ShieldRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/model/InclusionProtectionFilters.h>
 #include <utility>
 
 namespace Aws
@@ -18,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API ListProtectionsRequest : public ShieldRequest
+  class ListProtectionsRequest : public ShieldRequest
   {
   public:
-    ListProtectionsRequest();
+    AWS_SHIELD_API ListProtectionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListProtections"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -199,13 +200,77 @@ namespace Model
      */
     inline ListProtectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline const InclusionProtectionFilters& GetInclusionFilters() const{ return m_inclusionFilters; }
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline bool InclusionFiltersHasBeenSet() const { return m_inclusionFiltersHasBeenSet; }
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline void SetInclusionFilters(const InclusionProtectionFilters& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = value; }
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline void SetInclusionFilters(InclusionProtectionFilters&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::move(value); }
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline ListProtectionsRequest& WithInclusionFilters(const InclusionProtectionFilters& value) { SetInclusionFilters(value); return *this;}
+
+    /**
+     * <p>Narrows the set of protections that the call retrieves. You can retrieve a
+     * single protection by providing its name or the ARN (Amazon Resource Name) of its
+     * protected resource. You can also retrieve all protections for a specific
+     * resource type. You can provide up to one criteria per filter type. Shield
+     * Advanced returns protections that exactly match all of the filter criteria that
+     * you provide.</p>
+     */
+    inline ListProtectionsRequest& WithInclusionFilters(InclusionProtectionFilters&& value) { SetInclusionFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
+
+    InclusionProtectionFilters m_inclusionFilters;
+    bool m_inclusionFiltersHasBeenSet = false;
   };
 
 } // namespace Model

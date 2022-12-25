@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AdditionalLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AdditionalLimit
+  class AdditionalLimit
   {
   public:
-    AdditionalLimit();
-    AdditionalLimit(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AdditionalLimit();
+    AWS_ELASTICSEARCHSERVICE_API AdditionalLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AdditionalLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_limitName;
-    bool m_limitNameHasBeenSet;
+    bool m_limitNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_limitValues;
-    bool m_limitValuesHasBeenSet;
+    bool m_limitValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeRegistriesResult& DescribeRegistriesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("registries"))
   {
-    Array<JsonView> registriesJsonList = jsonValue.GetArray("registries");
+    Aws::Utils::Array<JsonView> registriesJsonList = jsonValue.GetArray("registries");
     for(unsigned registriesIndex = 0; registriesIndex < registriesJsonList.GetLength(); ++registriesIndex)
     {
       m_registries.push_back(registriesJsonList[registriesIndex].AsObject());

@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZone">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HostedZone
+  class HostedZone
   {
   public:
-    HostedZone();
-    HostedZone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostedZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZone();
+    AWS_ROUTE53_API HostedZone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -340,22 +340,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     HostedZoneConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
 
     long long m_resourceRecordSetCount;
-    bool m_resourceRecordSetCountHasBeenSet;
+    bool m_resourceRecordSetCountHasBeenSet = false;
 
     LinkedService m_linkedService;
-    bool m_linkedServiceHasBeenSet;
+    bool m_linkedServiceHasBeenSet = false;
   };
 
 } // namespace Model

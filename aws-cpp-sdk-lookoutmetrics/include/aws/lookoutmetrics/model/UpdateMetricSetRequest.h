@@ -12,6 +12,7 @@
 #include <aws/lookoutmetrics/model/Frequency.h>
 #include <aws/lookoutmetrics/model/MetricSource.h>
 #include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API UpdateMetricSetRequest : public LookoutMetricsRequest
+  class UpdateMetricSetRequest : public LookoutMetricsRequest
   {
   public:
-    UpdateMetricSetRequest();
+    AWS_LOOKOUTMETRICS_API UpdateMetricSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMetricSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -162,25 +163,29 @@ namespace Model
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline UpdateMetricSetRequest& WithOffset(int value) { SetOffset(value); return *this;}
 
@@ -311,31 +316,107 @@ namespace Model
     
     inline UpdateMetricSetRequest& WithMetricSource(MetricSource&& value) { SetMetricSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline bool DimensionFilterListHasBeenSet() const { return m_dimensionFilterListHasBeenSet; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = value; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = std::move(value); }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a list of filters for choosing specific dimensions and specific
+     * values. Each filter consists of the dimension and one of its values that you
+     * want to include. When multiple dimensions or values are specified, the
+     * dimensions are joined with an AND operation and the values are joined with an OR
+     * operation.</p>
+     */
+    inline UpdateMetricSetRequest& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_metricSetArn;
-    bool m_metricSetArnHasBeenSet;
+    bool m_metricSetArnHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
-    bool m_metricSetDescriptionHasBeenSet;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
     Aws::Vector<Metric> m_metricList;
-    bool m_metricListHasBeenSet;
+    bool m_metricListHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     TimestampColumn m_timestampColumn;
-    bool m_timestampColumnHasBeenSet;
+    bool m_timestampColumnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionList;
-    bool m_dimensionListHasBeenSet;
+    bool m_dimensionListHasBeenSet = false;
 
     Frequency m_metricSetFrequency;
-    bool m_metricSetFrequencyHasBeenSet;
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     MetricSource m_metricSource;
-    bool m_metricSourceHasBeenSet;
+    bool m_metricSourceHasBeenSet = false;
+
+    Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

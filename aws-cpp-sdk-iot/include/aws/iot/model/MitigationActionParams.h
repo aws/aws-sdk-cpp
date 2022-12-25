@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MitigationActionParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MitigationActionParams
+  class MitigationActionParams
   {
   public:
-    MitigationActionParams();
-    MitigationActionParams(Aws::Utils::Json::JsonView jsonValue);
-    MitigationActionParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MitigationActionParams();
+    AWS_IOT_API MitigationActionParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MitigationActionParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -274,22 +274,22 @@ namespace Model
   private:
 
     UpdateDeviceCertificateParams m_updateDeviceCertificateParams;
-    bool m_updateDeviceCertificateParamsHasBeenSet;
+    bool m_updateDeviceCertificateParamsHasBeenSet = false;
 
     UpdateCACertificateParams m_updateCACertificateParams;
-    bool m_updateCACertificateParamsHasBeenSet;
+    bool m_updateCACertificateParamsHasBeenSet = false;
 
     AddThingsToThingGroupParams m_addThingsToThingGroupParams;
-    bool m_addThingsToThingGroupParamsHasBeenSet;
+    bool m_addThingsToThingGroupParamsHasBeenSet = false;
 
     ReplaceDefaultPolicyVersionParams m_replaceDefaultPolicyVersionParams;
-    bool m_replaceDefaultPolicyVersionParamsHasBeenSet;
+    bool m_replaceDefaultPolicyVersionParamsHasBeenSet = false;
 
     EnableIoTLoggingParams m_enableIoTLoggingParams;
-    bool m_enableIoTLoggingParamsHasBeenSet;
+    bool m_enableIoTLoggingParamsHasBeenSet = false;
 
     PublishFindingToSnsParams m_publishFindingToSnsParams;
-    bool m_publishFindingToSnsParamsHasBeenSet;
+    bool m_publishFindingToSnsParamsHasBeenSet = false;
   };
 
 } // namespace Model

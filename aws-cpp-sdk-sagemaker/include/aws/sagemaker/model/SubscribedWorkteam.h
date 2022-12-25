@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SubscribedWorkteam">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SubscribedWorkteam
+  class SubscribedWorkteam
   {
   public:
-    SubscribedWorkteam();
-    SubscribedWorkteam(Aws::Utils::Json::JsonView jsonValue);
-    SubscribedWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SubscribedWorkteam();
+    AWS_SAGEMAKER_API SubscribedWorkteam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SubscribedWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_marketplaceTitle;
-    bool m_marketplaceTitleHasBeenSet;
+    bool m_marketplaceTitleHasBeenSet = false;
 
     Aws::String m_sellerName;
-    bool m_sellerNameHasBeenSet;
+    bool m_sellerNameHasBeenSet = false;
 
     Aws::String m_marketplaceDescription;
-    bool m_marketplaceDescriptionHasBeenSet;
+    bool m_marketplaceDescriptionHasBeenSet = false;
 
     Aws::String m_listingId;
-    bool m_listingIdHasBeenSet;
+    bool m_listingIdHasBeenSet = false;
   };
 
 } // namespace Model

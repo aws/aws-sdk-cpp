@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Destination();
+    AWS_GUARDDUTY_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     PublishingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

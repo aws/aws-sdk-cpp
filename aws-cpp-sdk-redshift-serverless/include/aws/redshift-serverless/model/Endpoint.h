@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Endpoint();
+    AWS_REDSHIFTSERVERLESS_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;
-    bool m_vpcEndpointsHasBeenSet;
+    bool m_vpcEndpointsHasBeenSet = false;
   };
 
 } // namespace Model

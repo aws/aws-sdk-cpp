@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SolutionStackDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API SolutionStackDescription
+  class SolutionStackDescription
   {
   public:
-    SolutionStackDescription();
-    SolutionStackDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SolutionStackDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SolutionStackDescription();
+    AWS_ELASTICBEANSTALK_API SolutionStackDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SolutionStackDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_solutionStackName;
-    bool m_solutionStackNameHasBeenSet;
+    bool m_solutionStackNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permittedFileTypes;
-    bool m_permittedFileTypesHasBeenSet;
+    bool m_permittedFileTypesHasBeenSet = false;
   };
 
 } // namespace Model

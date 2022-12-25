@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AppComponent
+  class AppComponent
   {
   public:
-    AppComponent();
-    AppComponent(Aws::Utils::Json::JsonView jsonValue);
-    AppComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AppComponent();
+    AWS_RESILIENCEHUB_API AppComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AppComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

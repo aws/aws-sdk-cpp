@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapStateStartedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapStateStartedEventDetails
+  class MapStateStartedEventDetails
   {
   public:
-    MapStateStartedEventDetails();
-    MapStateStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    MapStateStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapStateStartedEventDetails();
+    AWS_SFN_API MapStateStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapStateStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
   };
 
 } // namespace Model

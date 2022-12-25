@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Step">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Step
+  class Step
   {
   public:
-    Step();
-    Step(Aws::Utils::Json::JsonView jsonValue);
-    Step& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Step();
+    AWS_AMPLIFY_API Step(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -497,37 +497,37 @@ namespace Model
   private:
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_logUrl;
-    bool m_logUrlHasBeenSet;
+    bool m_logUrlHasBeenSet = false;
 
     Aws::String m_artifactsUrl;
-    bool m_artifactsUrlHasBeenSet;
+    bool m_artifactsUrlHasBeenSet = false;
 
     Aws::String m_testArtifactsUrl;
-    bool m_testArtifactsUrlHasBeenSet;
+    bool m_testArtifactsUrlHasBeenSet = false;
 
     Aws::String m_testConfigUrl;
-    bool m_testConfigUrlHasBeenSet;
+    bool m_testConfigUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_screenshots;
-    bool m_screenshotsHasBeenSet;
+    bool m_screenshotsHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

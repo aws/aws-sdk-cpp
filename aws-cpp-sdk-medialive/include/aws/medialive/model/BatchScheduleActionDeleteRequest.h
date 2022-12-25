@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionDeleteRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest
+  class BatchScheduleActionDeleteRequest
   {
   public:
-    BatchScheduleActionDeleteRequest();
-    BatchScheduleActionDeleteRequest(Aws::Utils::Json::JsonView jsonValue);
-    BatchScheduleActionDeleteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest();
+    AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BatchScheduleActionDeleteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actionNames;
-    bool m_actionNamesHasBeenSet;
+    bool m_actionNamesHasBeenSet = false;
   };
 
 } // namespace Model

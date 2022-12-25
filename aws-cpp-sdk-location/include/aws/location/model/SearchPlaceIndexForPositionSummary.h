@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForPositionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary
+  class SearchPlaceIndexForPositionSummary
   {
   public:
-    SearchPlaceIndexForPositionSummary();
-    SearchPlaceIndexForPositionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SearchPlaceIndexForPositionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForPositionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
   };
 
 } // namespace Model

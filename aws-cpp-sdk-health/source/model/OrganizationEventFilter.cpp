@@ -53,7 +53,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventTypeCodes"))
   {
-    Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
+    Aws::Utils::Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
     for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
     {
       m_eventTypeCodes.push_back(eventTypeCodesJsonList[eventTypeCodesIndex].AsString());
@@ -63,7 +63,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("awsAccountIds"))
   {
-    Array<JsonView> awsAccountIdsJsonList = jsonValue.GetArray("awsAccountIds");
+    Aws::Utils::Array<JsonView> awsAccountIdsJsonList = jsonValue.GetArray("awsAccountIds");
     for(unsigned awsAccountIdsIndex = 0; awsAccountIdsIndex < awsAccountIdsJsonList.GetLength(); ++awsAccountIdsIndex)
     {
       m_awsAccountIds.push_back(awsAccountIdsJsonList[awsAccountIdsIndex].AsString());
@@ -73,7 +73,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsString());
@@ -83,7 +83,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("regions"))
   {
-    Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
@@ -114,7 +114,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entityArns"))
   {
-    Array<JsonView> entityArnsJsonList = jsonValue.GetArray("entityArns");
+    Aws::Utils::Array<JsonView> entityArnsJsonList = jsonValue.GetArray("entityArns");
     for(unsigned entityArnsIndex = 0; entityArnsIndex < entityArnsJsonList.GetLength(); ++entityArnsIndex)
     {
       m_entityArns.push_back(entityArnsJsonList[entityArnsIndex].AsString());
@@ -124,7 +124,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entityValues"))
   {
-    Array<JsonView> entityValuesJsonList = jsonValue.GetArray("entityValues");
+    Aws::Utils::Array<JsonView> entityValuesJsonList = jsonValue.GetArray("entityValues");
     for(unsigned entityValuesIndex = 0; entityValuesIndex < entityValuesJsonList.GetLength(); ++entityValuesIndex)
     {
       m_entityValues.push_back(entityValuesJsonList[entityValuesIndex].AsString());
@@ -134,7 +134,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventTypeCategories"))
   {
-    Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
+    Aws::Utils::Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
     for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
     {
       m_eventTypeCategories.push_back(EventTypeCategoryMapper::GetEventTypeCategoryForName(eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString()));
@@ -144,7 +144,7 @@ OrganizationEventFilter& OrganizationEventFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("eventStatusCodes"))
   {
-    Array<JsonView> eventStatusCodesJsonList = jsonValue.GetArray("eventStatusCodes");
+    Aws::Utils::Array<JsonView> eventStatusCodesJsonList = jsonValue.GetArray("eventStatusCodes");
     for(unsigned eventStatusCodesIndex = 0; eventStatusCodesIndex < eventStatusCodesJsonList.GetLength(); ++eventStatusCodesIndex)
     {
       m_eventStatusCodes.push_back(EventStatusCodeMapper::GetEventStatusCodeForName(eventStatusCodesJsonList[eventStatusCodesIndex].AsString()));
@@ -161,7 +161,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_eventTypeCodesHasBeenSet)
   {
-   Array<JsonValue> eventTypeCodesJsonList(m_eventTypeCodes.size());
+   Aws::Utils::Array<JsonValue> eventTypeCodesJsonList(m_eventTypeCodes.size());
    for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
    {
      eventTypeCodesJsonList[eventTypeCodesIndex].AsString(m_eventTypeCodes[eventTypeCodesIndex]);
@@ -172,7 +172,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_awsAccountIdsHasBeenSet)
   {
-   Array<JsonValue> awsAccountIdsJsonList(m_awsAccountIds.size());
+   Aws::Utils::Array<JsonValue> awsAccountIdsJsonList(m_awsAccountIds.size());
    for(unsigned awsAccountIdsIndex = 0; awsAccountIdsIndex < awsAccountIdsJsonList.GetLength(); ++awsAccountIdsIndex)
    {
      awsAccountIdsJsonList[awsAccountIdsIndex].AsString(m_awsAccountIds[awsAccountIdsIndex]);
@@ -183,7 +183,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_servicesHasBeenSet)
   {
-   Array<JsonValue> servicesJsonList(m_services.size());
+   Aws::Utils::Array<JsonValue> servicesJsonList(m_services.size());
    for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
    {
      servicesJsonList[servicesIndex].AsString(m_services[servicesIndex]);
@@ -194,7 +194,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_regionsHasBeenSet)
   {
-   Array<JsonValue> regionsJsonList(m_regions.size());
+   Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
    {
      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
@@ -223,7 +223,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_entityArnsHasBeenSet)
   {
-   Array<JsonValue> entityArnsJsonList(m_entityArns.size());
+   Aws::Utils::Array<JsonValue> entityArnsJsonList(m_entityArns.size());
    for(unsigned entityArnsIndex = 0; entityArnsIndex < entityArnsJsonList.GetLength(); ++entityArnsIndex)
    {
      entityArnsJsonList[entityArnsIndex].AsString(m_entityArns[entityArnsIndex]);
@@ -234,7 +234,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_entityValuesHasBeenSet)
   {
-   Array<JsonValue> entityValuesJsonList(m_entityValues.size());
+   Aws::Utils::Array<JsonValue> entityValuesJsonList(m_entityValues.size());
    for(unsigned entityValuesIndex = 0; entityValuesIndex < entityValuesJsonList.GetLength(); ++entityValuesIndex)
    {
      entityValuesJsonList[entityValuesIndex].AsString(m_entityValues[entityValuesIndex]);
@@ -245,7 +245,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_eventTypeCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventTypeCategoriesJsonList(m_eventTypeCategories.size());
+   Aws::Utils::Array<JsonValue> eventTypeCategoriesJsonList(m_eventTypeCategories.size());
    for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
    {
      eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString(EventTypeCategoryMapper::GetNameForEventTypeCategory(m_eventTypeCategories[eventTypeCategoriesIndex]));
@@ -256,7 +256,7 @@ JsonValue OrganizationEventFilter::Jsonize() const
 
   if(m_eventStatusCodesHasBeenSet)
   {
-   Array<JsonValue> eventStatusCodesJsonList(m_eventStatusCodes.size());
+   Aws::Utils::Array<JsonValue> eventStatusCodesJsonList(m_eventStatusCodes.size());
    for(unsigned eventStatusCodesIndex = 0; eventStatusCodesIndex < eventStatusCodesJsonList.GetLength(); ++eventStatusCodesIndex)
    {
      eventStatusCodesJsonList[eventStatusCodesIndex].AsString(EventStatusCodeMapper::GetNameForEventStatusCode(m_eventStatusCodes[eventStatusCodesIndex]));

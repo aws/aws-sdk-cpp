@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEksClusterResourcesVpcConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEksClusterResourcesVpcConfigDetails
+  class AwsEksClusterResourcesVpcConfigDetails
   {
   public:
-    AwsEksClusterResourcesVpcConfigDetails();
-    AwsEksClusterResourcesVpcConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEksClusterResourcesVpcConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEksClusterResourcesVpcConfigDetails();
+    AWS_SECURITYHUB_API AwsEksClusterResourcesVpcConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEksClusterResourcesVpcConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

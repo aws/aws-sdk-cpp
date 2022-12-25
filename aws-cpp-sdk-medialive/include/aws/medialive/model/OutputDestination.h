@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputDestination
+  class OutputDestination
   {
   public:
-    OutputDestination();
-    OutputDestination(Aws::Utils::Json::JsonView jsonValue);
-    OutputDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputDestination();
+    AWS_MEDIALIVE_API OutputDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<MediaPackageOutputDestinationSettings> m_mediaPackageSettings;
-    bool m_mediaPackageSettingsHasBeenSet;
+    bool m_mediaPackageSettingsHasBeenSet = false;
 
     MultiplexProgramChannelDestinationSettings m_multiplexSettings;
-    bool m_multiplexSettingsHasBeenSet;
+    bool m_multiplexSettingsHasBeenSet = false;
 
     Aws::Vector<OutputDestinationSettings> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

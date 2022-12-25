@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalyDateInterval">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API AnomalyDateInterval
+  class AnomalyDateInterval
   {
   public:
-    AnomalyDateInterval();
-    AnomalyDateInterval(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyDateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API AnomalyDateInterval();
+    AWS_COSTEXPLORER_API AnomalyDateInterval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API AnomalyDateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
   };
 
 } // namespace Model

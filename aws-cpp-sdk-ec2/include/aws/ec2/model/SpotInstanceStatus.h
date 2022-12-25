@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotInstanceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SpotInstanceStatus
+  class SpotInstanceStatus
   {
   public:
-    SpotInstanceStatus();
-    SpotInstanceStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SpotInstanceStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotInstanceStatus();
+    AWS_EC2_API SpotInstanceStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotInstanceStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

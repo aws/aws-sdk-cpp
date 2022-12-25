@@ -28,10 +28,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateIntegrationRequest : public ApiGatewayV2Request
+  class CreateIntegrationRequest : public ApiGatewayV2Request
   {
   public:
-    CreateIntegrationRequest();
+    AWS_APIGATEWAYV2_API CreateIntegrationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIntegration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -1705,58 +1705,58 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     ContentHandlingStrategy m_contentHandlingStrategy;
-    bool m_contentHandlingStrategyHasBeenSet;
+    bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_credentialsArn;
-    bool m_credentialsArnHasBeenSet;
+    bool m_credentialsArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_integrationMethod;
-    bool m_integrationMethodHasBeenSet;
+    bool m_integrationMethodHasBeenSet = false;
 
     Aws::String m_integrationSubtype;
-    bool m_integrationSubtypeHasBeenSet;
+    bool m_integrationSubtypeHasBeenSet = false;
 
     IntegrationType m_integrationType;
-    bool m_integrationTypeHasBeenSet;
+    bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_integrationUri;
-    bool m_integrationUriHasBeenSet;
+    bool m_integrationUriHasBeenSet = false;
 
     PassthroughBehavior m_passthroughBehavior;
-    bool m_passthroughBehaviorHasBeenSet;
+    bool m_passthroughBehaviorHasBeenSet = false;
 
     Aws::String m_payloadFormatVersion;
-    bool m_payloadFormatVersionHasBeenSet;
+    bool m_payloadFormatVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
-    bool m_requestTemplatesHasBeenSet;
+    bool m_requestTemplatesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::String m_templateSelectionExpression;
-    bool m_templateSelectionExpressionHasBeenSet;
+    bool m_templateSelectionExpressionHasBeenSet = false;
 
     int m_timeoutInMillis;
-    bool m_timeoutInMillisHasBeenSet;
+    bool m_timeoutInMillisHasBeenSet = false;
 
     TlsConfigInput m_tlsConfig;
-    bool m_tlsConfigHasBeenSet;
+    bool m_tlsConfigHasBeenSet = false;
   };
 
 } // namespace Model

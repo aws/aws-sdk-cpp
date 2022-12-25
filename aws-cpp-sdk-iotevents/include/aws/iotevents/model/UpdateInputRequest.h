@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTEVENTS_API UpdateInputRequest : public IoTEventsRequest
+  class UpdateInputRequest : public IoTEventsRequest
   {
   public:
-    UpdateInputRequest();
+    AWS_IOTEVENTS_API UpdateInputRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInput"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_inputDescription;
-    bool m_inputDescriptionHasBeenSet;
+    bool m_inputDescriptionHasBeenSet = false;
 
     InputDefinition m_inputDefinition;
-    bool m_inputDefinitionHasBeenSet;
+    bool m_inputDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorConfiguration
+  class ConnectorConfiguration
   {
   public:
-    ConnectorConfiguration();
-    ConnectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorConfiguration();
+    AWS_APPFLOW_API ConnectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1000,82 +1000,82 @@ namespace Model
   private:
 
     bool m_canUseAsSource;
-    bool m_canUseAsSourceHasBeenSet;
+    bool m_canUseAsSourceHasBeenSet = false;
 
     bool m_canUseAsDestination;
-    bool m_canUseAsDestinationHasBeenSet;
+    bool m_canUseAsDestinationHasBeenSet = false;
 
     Aws::Vector<ConnectorType> m_supportedDestinationConnectors;
-    bool m_supportedDestinationConnectorsHasBeenSet;
+    bool m_supportedDestinationConnectorsHasBeenSet = false;
 
     Aws::Vector<ScheduleFrequencyType> m_supportedSchedulingFrequencies;
-    bool m_supportedSchedulingFrequenciesHasBeenSet;
+    bool m_supportedSchedulingFrequenciesHasBeenSet = false;
 
     bool m_isPrivateLinkEnabled;
-    bool m_isPrivateLinkEnabledHasBeenSet;
+    bool m_isPrivateLinkEnabledHasBeenSet = false;
 
     bool m_isPrivateLinkEndpointUrlRequired;
-    bool m_isPrivateLinkEndpointUrlRequiredHasBeenSet;
+    bool m_isPrivateLinkEndpointUrlRequiredHasBeenSet = false;
 
     Aws::Vector<TriggerType> m_supportedTriggerTypes;
-    bool m_supportedTriggerTypesHasBeenSet;
+    bool m_supportedTriggerTypesHasBeenSet = false;
 
     ConnectorMetadata m_connectorMetadata;
-    bool m_connectorMetadataHasBeenSet;
+    bool m_connectorMetadataHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     Aws::String m_connectorDescription;
-    bool m_connectorDescriptionHasBeenSet;
+    bool m_connectorDescriptionHasBeenSet = false;
 
     Aws::String m_connectorOwner;
-    bool m_connectorOwnerHasBeenSet;
+    bool m_connectorOwnerHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     Aws::String m_connectorVersion;
-    bool m_connectorVersionHasBeenSet;
+    bool m_connectorVersionHasBeenSet = false;
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectorModes;
-    bool m_connectorModesHasBeenSet;
+    bool m_connectorModesHasBeenSet = false;
 
     AuthenticationConfig m_authenticationConfig;
-    bool m_authenticationConfigHasBeenSet;
+    bool m_authenticationConfigHasBeenSet = false;
 
     Aws::Vector<ConnectorRuntimeSetting> m_connectorRuntimeSettings;
-    bool m_connectorRuntimeSettingsHasBeenSet;
+    bool m_connectorRuntimeSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedApiVersions;
-    bool m_supportedApiVersionsHasBeenSet;
+    bool m_supportedApiVersionsHasBeenSet = false;
 
     Aws::Vector<Operators> m_supportedOperators;
-    bool m_supportedOperatorsHasBeenSet;
+    bool m_supportedOperatorsHasBeenSet = false;
 
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;
-    bool m_supportedWriteOperationsHasBeenSet;
+    bool m_supportedWriteOperationsHasBeenSet = false;
 
     ConnectorProvisioningType m_connectorProvisioningType;
-    bool m_connectorProvisioningTypeHasBeenSet;
+    bool m_connectorProvisioningTypeHasBeenSet = false;
 
     ConnectorProvisioningConfig m_connectorProvisioningConfig;
-    bool m_connectorProvisioningConfigHasBeenSet;
+    bool m_connectorProvisioningConfigHasBeenSet = false;
 
     Aws::String m_logoURL;
-    bool m_logoURLHasBeenSet;
+    bool m_logoURLHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
 
     Aws::String m_registeredBy;
-    bool m_registeredByHasBeenSet;
+    bool m_registeredByHasBeenSet = false;
   };
 
 } // namespace Model

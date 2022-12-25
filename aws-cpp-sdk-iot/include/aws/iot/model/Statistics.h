@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Statistics">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Statistics
+  class Statistics
   {
   public:
-    Statistics();
-    Statistics(Aws::Utils::Json::JsonView jsonValue);
-    Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Statistics();
+    AWS_IOT_API Statistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,28 +212,28 @@ namespace Model
   private:
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_sumOfSquares;
-    bool m_sumOfSquaresHasBeenSet;
+    bool m_sumOfSquaresHasBeenSet = false;
 
     double m_variance;
-    bool m_varianceHasBeenSet;
+    bool m_varianceHasBeenSet = false;
 
     double m_stdDeviation;
-    bool m_stdDeviationHasBeenSet;
+    bool m_stdDeviationHasBeenSet = false;
   };
 
 } // namespace Model

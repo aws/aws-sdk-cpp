@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API DeleteActionTargetRequest : public SecurityHubRequest
+  class DeleteActionTargetRequest : public SecurityHubRequest
   {
   public:
-    DeleteActionTargetRequest();
+    AWS_SECURITYHUB_API DeleteActionTargetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteActionTarget"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_actionTargetArn;
-    bool m_actionTargetArnHasBeenSet;
+    bool m_actionTargetArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ItemIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ItemIdentifier
+  class ItemIdentifier
   {
   public:
-    ItemIdentifier();
-    ItemIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ItemIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ItemIdentifier();
+    AWS_SSMINCIDENTS_API ItemIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ItemIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ItemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ItemValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

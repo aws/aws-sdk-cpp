@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API AccountUsage
+  class AccountUsage
   {
   public:
-    AccountUsage();
-    AccountUsage(Aws::Utils::Json::JsonView jsonValue);
-    AccountUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API AccountUsage();
+    AWS_LAMBDA_API AccountUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API AccountUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_totalCodeSize;
-    bool m_totalCodeSizeHasBeenSet;
+    bool m_totalCodeSizeHasBeenSet = false;
 
     long long m_functionCount;
-    bool m_functionCountHasBeenSet;
+    bool m_functionCountHasBeenSet = false;
   };
 
 } // namespace Model

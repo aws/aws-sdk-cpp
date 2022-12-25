@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API StartTimeRange
+  class StartTimeRange
   {
   public:
-    StartTimeRange();
-    StartTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    StartTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API StartTimeRange();
+    AWS_DEVOPSGURU_API StartTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API StartTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_fromTime;
-    bool m_fromTimeHasBeenSet;
+    bool m_fromTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_toTime;
-    bool m_toTimeHasBeenSet;
+    bool m_toTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentMember">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUD9_API EnvironmentMember
+  class EnvironmentMember
   {
   public:
-    EnvironmentMember();
-    EnvironmentMember(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUD9_API EnvironmentMember();
+    AWS_CLOUD9_API EnvironmentMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API EnvironmentMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Permissions m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccess;
-    bool m_lastAccessHasBeenSet;
+    bool m_lastAccessHasBeenSet = false;
   };
 
 } // namespace Model

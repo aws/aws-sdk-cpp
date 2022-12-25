@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeDeclaration
+  class ActionTypeDeclaration
   {
   public:
-    ActionTypeDeclaration();
-    ActionTypeDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeDeclaration();
+    AWS_CODEPIPELINE_API ActionTypeDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,28 +351,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ActionTypeExecutor m_executor;
-    bool m_executorHasBeenSet;
+    bool m_executorHasBeenSet = false;
 
     ActionTypeIdentifier m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ActionTypeArtifactDetails m_inputArtifactDetails;
-    bool m_inputArtifactDetailsHasBeenSet;
+    bool m_inputArtifactDetailsHasBeenSet = false;
 
     ActionTypeArtifactDetails m_outputArtifactDetails;
-    bool m_outputArtifactDetailsHasBeenSet;
+    bool m_outputArtifactDetailsHasBeenSet = false;
 
     ActionTypePermissions m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::Vector<ActionTypeProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     ActionTypeUrls m_urls;
-    bool m_urlsHasBeenSet;
+    bool m_urlsHasBeenSet = false;
   };
 
 } // namespace Model

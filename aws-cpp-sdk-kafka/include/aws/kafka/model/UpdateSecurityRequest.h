@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API UpdateSecurityRequest : public KafkaRequest
+  class UpdateSecurityRequest : public KafkaRequest
   {
   public:
-    UpdateSecurityRequest();
+    AWS_KAFKA_API UpdateSecurityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSecurity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -274,16 +274,16 @@ namespace Model
   private:
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
   };
 
 } // namespace Model

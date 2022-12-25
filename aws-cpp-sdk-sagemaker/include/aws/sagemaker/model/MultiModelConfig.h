@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MultiModelConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MultiModelConfig
+  class MultiModelConfig
   {
   public:
-    MultiModelConfig();
-    MultiModelConfig(Aws::Utils::Json::JsonView jsonValue);
-    MultiModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MultiModelConfig();
+    AWS_SAGEMAKER_API MultiModelConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MultiModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     ModelCacheSetting m_modelCacheSetting;
-    bool m_modelCacheSettingHasBeenSet;
+    bool m_modelCacheSettingHasBeenSet = false;
   };
 
 } // namespace Model

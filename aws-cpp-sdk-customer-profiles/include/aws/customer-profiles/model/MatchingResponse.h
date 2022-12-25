@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MatchingResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API MatchingResponse
+  class MatchingResponse
   {
   public:
-    MatchingResponse();
-    MatchingResponse(Aws::Utils::Json::JsonView jsonValue);
-    MatchingResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API MatchingResponse();
+    AWS_CUSTOMERPROFILES_API MatchingResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API MatchingResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     JobSchedule m_jobSchedule;
-    bool m_jobScheduleHasBeenSet;
+    bool m_jobScheduleHasBeenSet = false;
 
     AutoMerging m_autoMerging;
-    bool m_autoMergingHasBeenSet;
+    bool m_autoMergingHasBeenSet = false;
 
     ExportingConfig m_exportingConfig;
-    bool m_exportingConfigHasBeenSet;
+    bool m_exportingConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AmplitudeSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API AmplitudeSourceProperties
+  class AmplitudeSourceProperties
   {
   public:
-    AmplitudeSourceProperties();
-    AmplitudeSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    AmplitudeSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API AmplitudeSourceProperties();
+    AWS_APPFLOW_API AmplitudeSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API AmplitudeSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

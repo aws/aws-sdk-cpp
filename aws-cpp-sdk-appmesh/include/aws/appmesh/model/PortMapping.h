@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/PortMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API PortMapping
+  class PortMapping
   {
   public:
-    PortMapping();
-    PortMapping(Aws::Utils::Json::JsonView jsonValue);
-    PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API PortMapping();
+    AWS_APPMESH_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     PortProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

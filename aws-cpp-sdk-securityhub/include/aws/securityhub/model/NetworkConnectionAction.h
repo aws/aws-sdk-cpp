@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/NetworkConnectionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API NetworkConnectionAction
+  class NetworkConnectionAction
   {
   public:
-    NetworkConnectionAction();
-    NetworkConnectionAction(Aws::Utils::Json::JsonView jsonValue);
-    NetworkConnectionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API NetworkConnectionAction();
+    AWS_SECURITYHUB_API NetworkConnectionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API NetworkConnectionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_connectionDirection;
-    bool m_connectionDirectionHasBeenSet;
+    bool m_connectionDirectionHasBeenSet = false;
 
     ActionRemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     ActionRemotePortDetails m_remotePortDetails;
-    bool m_remotePortDetailsHasBeenSet;
+    bool m_remotePortDetailsHasBeenSet = false;
 
     ActionLocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
   };
 
 } // namespace Model

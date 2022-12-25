@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PlacementConstraint">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PlacementConstraint
+  class PlacementConstraint
   {
   public:
-    PlacementConstraint();
-    PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
-    PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PlacementConstraint();
+    AWS_CLOUDWATCHEVENTS_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,10 +159,10 @@ namespace Model
   private:
 
     PlacementConstraintType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

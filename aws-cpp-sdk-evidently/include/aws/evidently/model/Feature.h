@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/Feature">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API Feature
+  class Feature
   {
   public:
-    Feature();
-    Feature(Aws::Utils::Json::JsonView jsonValue);
-    Feature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API Feature();
+    AWS_CLOUDWATCHEVIDENTLY_API Feature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Feature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -797,46 +797,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_defaultVariation;
-    bool m_defaultVariationHasBeenSet;
+    bool m_defaultVariationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-    bool m_entityOverridesHasBeenSet;
+    bool m_entityOverridesHasBeenSet = false;
 
     Aws::Vector<EvaluationRule> m_evaluationRules;
-    bool m_evaluationRulesHasBeenSet;
+    bool m_evaluationRulesHasBeenSet = false;
 
     FeatureEvaluationStrategy m_evaluationStrategy;
-    bool m_evaluationStrategyHasBeenSet;
+    bool m_evaluationStrategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     FeatureStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VariationValueType m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
 
     Aws::Vector<Variation> m_variations;
-    bool m_variationsHasBeenSet;
+    bool m_variationsHasBeenSet = false;
   };
 
 } // namespace Model

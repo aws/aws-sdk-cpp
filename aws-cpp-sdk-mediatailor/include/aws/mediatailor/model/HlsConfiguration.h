@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HlsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API HlsConfiguration
+  class HlsConfiguration
   {
   public:
-    HlsConfiguration();
-    HlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API HlsConfiguration();
+    AWS_MEDIATAILOR_API HlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API HlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_manifestEndpointPrefix;
-    bool m_manifestEndpointPrefixHasBeenSet;
+    bool m_manifestEndpointPrefixHasBeenSet = false;
   };
 
 } // namespace Model

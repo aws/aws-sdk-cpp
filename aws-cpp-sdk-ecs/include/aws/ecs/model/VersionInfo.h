@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VersionInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API VersionInfo
+  class VersionInfo
   {
   public:
-    VersionInfo();
-    VersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    VersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API VersionInfo();
+    AWS_ECS_API VersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API VersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_agentHash;
-    bool m_agentHashHasBeenSet;
+    bool m_agentHashHasBeenSet = false;
 
     Aws::String m_dockerVersion;
-    bool m_dockerVersionHasBeenSet;
+    bool m_dockerVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainSuggestion">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API DomainSuggestion
+  class DomainSuggestion
   {
   public:
-    DomainSuggestion();
-    DomainSuggestion(Aws::Utils::Json::JsonView jsonValue);
-    DomainSuggestion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API DomainSuggestion();
+    AWS_ROUTE53DOMAINS_API DomainSuggestion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API DomainSuggestion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,10 +257,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_availability;
-    bool m_availabilityHasBeenSet;
+    bool m_availabilityHasBeenSet = false;
   };
 
 } // namespace Model

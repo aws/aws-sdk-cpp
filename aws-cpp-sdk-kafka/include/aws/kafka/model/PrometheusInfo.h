@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PrometheusInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API PrometheusInfo
+  class PrometheusInfo
   {
   public:
-    PrometheusInfo();
-    PrometheusInfo(Aws::Utils::Json::JsonView jsonValue);
-    PrometheusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API PrometheusInfo();
+    AWS_KAFKA_API PrometheusInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API PrometheusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     JmxExporterInfo m_jmxExporter;
-    bool m_jmxExporterHasBeenSet;
+    bool m_jmxExporterHasBeenSet = false;
 
     NodeExporterInfo m_nodeExporter;
-    bool m_nodeExporterHasBeenSet;
+    bool m_nodeExporterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/IdentityMailFromDomainAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API IdentityMailFromDomainAttributes
+  class IdentityMailFromDomainAttributes
   {
   public:
-    IdentityMailFromDomainAttributes();
-    IdentityMailFromDomainAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IdentityMailFromDomainAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityMailFromDomainAttributes();
+    AWS_SES_API IdentityMailFromDomainAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API IdentityMailFromDomainAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -219,13 +219,13 @@ namespace Model
   private:
 
     Aws::String m_mailFromDomain;
-    bool m_mailFromDomainHasBeenSet;
+    bool m_mailFromDomainHasBeenSet = false;
 
     CustomMailFromStatus m_mailFromDomainStatus;
-    bool m_mailFromDomainStatusHasBeenSet;
+    bool m_mailFromDomainStatusHasBeenSet = false;
 
     BehaviorOnMXFailure m_behaviorOnMXFailure;
-    bool m_behaviorOnMXFailureHasBeenSet;
+    bool m_behaviorOnMXFailureHasBeenSet = false;
   };
 
 } // namespace Model

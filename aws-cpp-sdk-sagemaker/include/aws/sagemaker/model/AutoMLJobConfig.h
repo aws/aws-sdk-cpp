@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
 #include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
 #include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
+#include <aws/sagemaker/model/AutoMLMode.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLJobConfig
+  class AutoMLJobConfig
   {
   public:
-    AutoMLJobConfig();
-    AutoMLJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLJobConfig();
+    AWS_SAGEMAKER_API AutoMLJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,19 +183,179 @@ namespace Model
      */
     inline AutoMLJobConfig& WithCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline const AutoMLMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline void SetMode(const AutoMLMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline void SetMode(AutoMLMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline AutoMLJobConfig& WithMode(const AutoMLMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The method that Autopilot uses to train the data. You can either specify the
+     * mode manually or let Autopilot choose for you based on the dataset size by
+     * selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses
+     * <code>ENSEMBLING</code> for datasets smaller than 100 MB, and
+     * <code>HYPERPARAMETER_TUNING</code> for larger ones.</p> <p>The
+     * <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict
+     * classification and regression tasks directly from your dataset. This machine
+     * learning mode combines several base models to produce an optimal predictive
+     * model. It then uses a stacking ensemble method to combine predictions from
+     * contributing members. A multi-stack ensemble model can provide better
+     * performance over a single model by combining the predictive capabilities of
+     * multiple models. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>ENSEMBLING</code> mode.</p> <p>The <code>HYPERPARAMETER_TUNING</code>
+     * (HPO) mode uses the best hyperparameters to train the best version of a model.
+     * HPO will automatically select an algorithm for the type of problem you want to
+     * solve. Then HPO finds the best hyperparameters according to your objective
+     * metric. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
+     * algorithm support</a> for a list of algorithms supported by
+     * <code>HYPERPARAMETER_TUNING</code> mode.</p>
+     */
+    inline AutoMLJobConfig& WithMode(AutoMLMode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     AutoMLJobCompletionCriteria m_completionCriteria;
-    bool m_completionCriteriaHasBeenSet;
+    bool m_completionCriteriaHasBeenSet = false;
 
     AutoMLSecurityConfig m_securityConfig;
-    bool m_securityConfigHasBeenSet;
+    bool m_securityConfigHasBeenSet = false;
 
     AutoMLDataSplitConfig m_dataSplitConfig;
-    bool m_dataSplitConfigHasBeenSet;
+    bool m_dataSplitConfigHasBeenSet = false;
 
     AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
-    bool m_candidateGenerationConfigHasBeenSet;
+    bool m_candidateGenerationConfigHasBeenSet = false;
+
+    AutoMLMode m_mode;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

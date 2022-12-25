@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AnalysisLoadBalancerTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AnalysisLoadBalancerTarget
+  class AnalysisLoadBalancerTarget
   {
   public:
-    AnalysisLoadBalancerTarget();
-    AnalysisLoadBalancerTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisLoadBalancerTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisLoadBalancerTarget();
+    AWS_EC2_API AnalysisLoadBalancerTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisLoadBalancerTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     AnalysisComponent m_instance;
-    bool m_instanceHasBeenSet;
+    bool m_instanceHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

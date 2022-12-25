@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EnvironmentVariable">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API EnvironmentVariable
+  class EnvironmentVariable
   {
   public:
-    EnvironmentVariable();
-    EnvironmentVariable(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API EnvironmentVariable();
+    AWS_OPSWORKS_API EnvironmentVariable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API EnvironmentVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_secure;
-    bool m_secureHasBeenSet;
+    bool m_secureHasBeenSet = false;
   };
 
 } // namespace Model

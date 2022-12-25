@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentTarget
+  class AssessmentTarget
   {
   public:
-    AssessmentTarget();
-    AssessmentTarget(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentTarget();
+    AWS_INSPECTOR_API AssessmentTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resourceGroupArn;
-    bool m_resourceGroupArnHasBeenSet;
+    bool m_resourceGroupArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

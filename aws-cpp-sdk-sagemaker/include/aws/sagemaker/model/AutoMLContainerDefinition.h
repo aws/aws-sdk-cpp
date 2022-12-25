@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLContainerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLContainerDefinition
+  class AutoMLContainerDefinition
   {
   public:
-    AutoMLContainerDefinition();
-    AutoMLContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLContainerDefinition();
+    AWS_SAGEMAKER_API AutoMLContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_modelDataUrl;
-    bool m_modelDataUrlHasBeenSet;
+    bool m_modelDataUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomConnectorProfileCredentials
+  class CustomConnectorProfileCredentials
   {
   public:
-    CustomConnectorProfileCredentials();
-    CustomConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    CustomConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomConnectorProfileCredentials();
+    AWS_APPFLOW_API CustomConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     BasicAuthCredentials m_basic;
-    bool m_basicHasBeenSet;
+    bool m_basicHasBeenSet = false;
 
     OAuth2Credentials m_oauth2;
-    bool m_oauth2HasBeenSet;
+    bool m_oauth2HasBeenSet = false;
 
     ApiKeyCredentials m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     CustomAuthCredentials m_custom;
-    bool m_customHasBeenSet;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/RemediationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API RemediationAction
+  class RemediationAction
   {
   public:
-    RemediationAction();
-    RemediationAction(Aws::Utils::Json::JsonView jsonValue);
-    RemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API RemediationAction();
+    AWS_FMS_API RemediationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API RemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -343,31 +343,31 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EC2CreateRouteAction m_eC2CreateRouteAction;
-    bool m_eC2CreateRouteActionHasBeenSet;
+    bool m_eC2CreateRouteActionHasBeenSet = false;
 
     EC2ReplaceRouteAction m_eC2ReplaceRouteAction;
-    bool m_eC2ReplaceRouteActionHasBeenSet;
+    bool m_eC2ReplaceRouteActionHasBeenSet = false;
 
     EC2DeleteRouteAction m_eC2DeleteRouteAction;
-    bool m_eC2DeleteRouteActionHasBeenSet;
+    bool m_eC2DeleteRouteActionHasBeenSet = false;
 
     EC2CopyRouteTableAction m_eC2CopyRouteTableAction;
-    bool m_eC2CopyRouteTableActionHasBeenSet;
+    bool m_eC2CopyRouteTableActionHasBeenSet = false;
 
     EC2ReplaceRouteTableAssociationAction m_eC2ReplaceRouteTableAssociationAction;
-    bool m_eC2ReplaceRouteTableAssociationActionHasBeenSet;
+    bool m_eC2ReplaceRouteTableAssociationActionHasBeenSet = false;
 
     EC2AssociateRouteTableAction m_eC2AssociateRouteTableAction;
-    bool m_eC2AssociateRouteTableActionHasBeenSet;
+    bool m_eC2AssociateRouteTableActionHasBeenSet = false;
 
     EC2CreateRouteTableAction m_eC2CreateRouteTableAction;
-    bool m_eC2CreateRouteTableActionHasBeenSet;
+    bool m_eC2CreateRouteTableActionHasBeenSet = false;
 
     FMSPolicyUpdateFirewallCreationConfigAction m_fMSPolicyUpdateFirewallCreationConfigAction;
-    bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet;
+    bool m_fMSPolicyUpdateFirewallCreationConfigActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyPreviewFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API LifecyclePolicyPreviewFilter
+  class LifecyclePolicyPreviewFilter
   {
   public:
-    LifecyclePolicyPreviewFilter();
-    LifecyclePolicyPreviewFilter(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicyPreviewFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API LifecyclePolicyPreviewFilter();
+    AWS_ECR_API LifecyclePolicyPreviewFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API LifecyclePolicyPreviewFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     TagStatus m_tagStatus;
-    bool m_tagStatusHasBeenSet;
+    bool m_tagStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPFLOW_API DeleteFlowRequest : public AppflowRequest
+  class DeleteFlowRequest : public AppflowRequest
   {
   public:
-    DeleteFlowRequest();
+    AWS_APPFLOW_API DeleteFlowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteFlow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

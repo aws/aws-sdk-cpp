@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeKeyPairsRequest : public EC2Request
+  class DescribeKeyPairsRequest : public EC2Request
   {
   public:
-    DescribeKeyPairsRequest();
+    AWS_EC2_API DescribeKeyPairsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeKeyPairs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keyNames;
-    bool m_keyNamesHasBeenSet;
+    bool m_keyNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keyPairIds;
-    bool m_keyPairIdsHasBeenSet;
+    bool m_keyPairIdsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_includePublicKey;
-    bool m_includePublicKeyHasBeenSet;
+    bool m_includePublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

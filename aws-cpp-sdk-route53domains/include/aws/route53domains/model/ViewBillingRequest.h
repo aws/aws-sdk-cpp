@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBillingRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API ViewBillingRequest : public Route53DomainsRequest
+  class ViewBillingRequest : public Route53DomainsRequest
   {
   public:
-    ViewBillingRequest();
+    AWS_ROUTE53DOMAINS_API ViewBillingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ViewBilling"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53DOMAINS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -253,16 +253,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

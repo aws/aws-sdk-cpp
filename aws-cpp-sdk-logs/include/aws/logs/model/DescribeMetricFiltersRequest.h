@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API DescribeMetricFiltersRequest : public CloudWatchLogsRequest
+  class DescribeMetricFiltersRequest : public CloudWatchLogsRequest
   {
   public:
-    DescribeMetricFiltersRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeMetricFiltersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeMetricFilters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -76,50 +76,50 @@ namespace Model
 
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline bool FilterNamePrefixHasBeenSet() const { return m_filterNamePrefixHasBeenSet; }
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(const Aws::String& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = value; }
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(Aws::String&& value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix = std::move(value); }
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline void SetFilterNamePrefix(const char* value) { m_filterNamePrefixHasBeenSet = true; m_filterNamePrefix.assign(value); }
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const Aws::String& value) { SetFilterNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(Aws::String&& value) { SetFilterNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to match. CloudWatch Logs uses the value you set here only if you
-     * also include the <code>logGroupName</code> parameter in your request.</p>
+     * <p>The prefix to match. CloudWatch Logs uses the value that you set here only if
+     * you also include the <code>logGroupName</code> parameter in your request.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
 
@@ -314,22 +314,22 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_filterNamePrefix;
-    bool m_filterNamePrefixHasBeenSet;
+    bool m_filterNamePrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

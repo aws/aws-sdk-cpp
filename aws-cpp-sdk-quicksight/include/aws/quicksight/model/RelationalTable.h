@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RelationalTable">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RelationalTable
+  class RelationalTable
   {
   public:
-    RelationalTable();
-    RelationalTable(Aws::Utils::Json::JsonView jsonValue);
-    RelationalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RelationalTable();
+    AWS_QUICKSIGHT_API RelationalTable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RelationalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,19 +255,19 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<InputColumn> m_inputColumns;
-    bool m_inputColumnsHasBeenSet;
+    bool m_inputColumnsHasBeenSet = false;
   };
 
 } // namespace Model

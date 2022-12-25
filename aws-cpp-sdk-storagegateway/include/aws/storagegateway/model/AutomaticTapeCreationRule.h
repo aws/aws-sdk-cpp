@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AutomaticTapeCreationRule">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule
+  class AutomaticTapeCreationRule
   {
   public:
-    AutomaticTapeCreationRule();
-    AutomaticTapeCreationRule(Aws::Utils::Json::JsonView jsonValue);
-    AutomaticTapeCreationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule();
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_tapeBarcodePrefix;
-    bool m_tapeBarcodePrefixHasBeenSet;
+    bool m_tapeBarcodePrefixHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     int m_minimumNumTapes;
-    bool m_minimumNumTapesHasBeenSet;
+    bool m_minimumNumTapesHasBeenSet = false;
 
     bool m_worm;
-    bool m_wormHasBeenSet;
+    bool m_wormHasBeenSet = false;
   };
 
 } // namespace Model

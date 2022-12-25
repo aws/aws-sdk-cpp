@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GitHubLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API GitHubLocation
+  class GitHubLocation
   {
   public:
-    GitHubLocation();
-    GitHubLocation(Aws::Utils::Json::JsonView jsonValue);
-    GitHubLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API GitHubLocation();
+    AWS_CODEDEPLOY_API GitHubLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API GitHubLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
   };
 
 } // namespace Model

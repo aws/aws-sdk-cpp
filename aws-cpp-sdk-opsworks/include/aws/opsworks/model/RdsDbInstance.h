@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RdsDbInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API RdsDbInstance
+  class RdsDbInstance
   {
   public:
-    RdsDbInstance();
-    RdsDbInstance(Aws::Utils::Json::JsonView jsonValue);
-    RdsDbInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API RdsDbInstance();
+    AWS_OPSWORKS_API RdsDbInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API RdsDbInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -408,31 +408,31 @@ namespace Model
   private:
 
     Aws::String m_rdsDbInstanceArn;
-    bool m_rdsDbInstanceArnHasBeenSet;
+    bool m_rdsDbInstanceArnHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbPassword;
-    bool m_dbPasswordHasBeenSet;
+    bool m_dbPasswordHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     bool m_missingOnRds;
-    bool m_missingOnRdsHasBeenSet;
+    bool m_missingOnRdsHasBeenSet = false;
   };
 
 } // namespace Model

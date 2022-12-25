@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateClusterRequest::UpdateClusterRequest() : 
     m_clusterHasBeenSet(false),
     m_settingsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
 }
 
@@ -31,7 +32,7 @@ Aws::String UpdateClusterRequest::SerializePayload() const
 
   if(m_settingsHasBeenSet)
   {
-   Array<JsonValue> settingsJsonList(m_settings.size());
+   Aws::Utils::Array<JsonValue> settingsJsonList(m_settings.size());
    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
    {
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
@@ -43,6 +44,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_serviceConnectDefaultsHasBeenSet)
+  {
+   payload.WithObject("serviceConnectDefaults", m_serviceConnectDefaults.Jsonize());
 
   }
 

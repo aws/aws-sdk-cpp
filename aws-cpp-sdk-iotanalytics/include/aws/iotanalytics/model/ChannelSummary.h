@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ChannelSummary
+  class ChannelSummary
   {
   public:
-    ChannelSummary();
-    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ChannelSummary();
+    AWS_IOTANALYTICS_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     ChannelStorageSummary m_channelStorage;
-    bool m_channelStorageHasBeenSet;
+    bool m_channelStorageHasBeenSet = false;
 
     ChannelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageArrivalTime;
-    bool m_lastMessageArrivalTimeHasBeenSet;
+    bool m_lastMessageArrivalTimeHasBeenSet = false;
   };
 
 } // namespace Model

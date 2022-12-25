@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverConfig
+  class ResolverConfig
   {
   public:
-    ResolverConfig();
-    ResolverConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResolverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverConfig();
+    AWS_ROUTE53RESOLVER_API ResolverConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,16 +257,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     ResolverAutodefinedReverseStatus m_autodefinedReverse;
-    bool m_autodefinedReverseHasBeenSet;
+    bool m_autodefinedReverseHasBeenSet = false;
   };
 
 } // namespace Model

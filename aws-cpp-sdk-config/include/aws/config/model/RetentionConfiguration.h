@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RetentionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RetentionConfiguration
+  class RetentionConfiguration
   {
   public:
-    RetentionConfiguration();
-    RetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RetentionConfiguration();
+    AWS_CONFIGSERVICE_API RetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_retentionPeriodInDays;
-    bool m_retentionPeriodInDaysHasBeenSet;
+    bool m_retentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

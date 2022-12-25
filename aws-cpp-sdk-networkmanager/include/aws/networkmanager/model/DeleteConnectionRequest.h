@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API DeleteConnectionRequest : public NetworkManagerRequest
+  class DeleteConnectionRequest : public NetworkManagerRequest
   {
   public:
-    DeleteConnectionRequest();
+    AWS_NETWORKMANAGER_API DeleteConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
   };
 
 } // namespace Model

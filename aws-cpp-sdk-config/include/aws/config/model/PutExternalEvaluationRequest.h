@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONFIGSERVICE_API PutExternalEvaluationRequest : public ConfigServiceRequest
+  class PutExternalEvaluationRequest : public ConfigServiceRequest
   {
   public:
-    PutExternalEvaluationRequest();
+    AWS_CONFIGSERVICE_API PutExternalEvaluationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutExternalEvaluation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     ExternalEvaluation m_externalEvaluation;
-    bool m_externalEvaluationHasBeenSet;
+    bool m_externalEvaluationHasBeenSet = false;
   };
 
 } // namespace Model

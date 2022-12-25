@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntitiesDetectionJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntitiesDetectionJobFilter
+  class EntitiesDetectionJobFilter
   {
   public:
-    EntitiesDetectionJobFilter();
-    EntitiesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntitiesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter();
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeBefore;
-    bool m_submitTimeBeforeHasBeenSet;
+    bool m_submitTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeAfter;
-    bool m_submitTimeAfterHasBeenSet;
+    bool m_submitTimeAfterHasBeenSet = false;
   };
 
 } // namespace Model

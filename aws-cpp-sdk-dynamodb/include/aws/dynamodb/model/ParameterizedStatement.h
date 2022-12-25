@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ParameterizedStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ParameterizedStatement
+  class ParameterizedStatement
   {
   public:
-    ParameterizedStatement();
-    ParameterizedStatement(Aws::Utils::Json::JsonView jsonValue);
-    ParameterizedStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ParameterizedStatement();
+    AWS_DYNAMODB_API ParameterizedStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ParameterizedStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

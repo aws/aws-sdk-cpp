@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/FilterCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API FilterCondition
+  class FilterCondition
   {
   public:
-    FilterCondition();
-    FilterCondition(Aws::Utils::Json::JsonView jsonValue);
-    FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API FilterCondition();
+    AWS_ROUTE53DOMAINS_API FilterCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     ListDomainsAttributeName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

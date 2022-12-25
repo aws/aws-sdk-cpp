@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AgentStatus
+  class AgentStatus
   {
   public:
-    AgentStatus();
-    AgentStatus(Aws::Utils::Json::JsonView jsonValue);
-    AgentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AgentStatus();
+    AWS_CONNECT_API AgentStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AgentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,95 +288,108 @@ namespace Model
 
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline AgentStatus& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
     Aws::String m_agentStatusARN;
-    bool m_agentStatusARNHasBeenSet;
+    bool m_agentStatusARNHasBeenSet = false;
 
     Aws::String m_agentStatusId;
-    bool m_agentStatusIdHasBeenSet;
+    bool m_agentStatusIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AgentStatusType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_displayOrder;
-    bool m_displayOrderHasBeenSet;
+    bool m_displayOrderHasBeenSet = false;
 
     AgentStatusState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

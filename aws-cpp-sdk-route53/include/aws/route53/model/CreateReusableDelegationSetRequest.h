@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53_API CreateReusableDelegationSetRequest : public Route53Request
+  class CreateReusableDelegationSetRequest : public Route53Request
   {
   public:
-    CreateReusableDelegationSetRequest();
+    AWS_ROUTE53_API CreateReusableDelegationSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReusableDelegationSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

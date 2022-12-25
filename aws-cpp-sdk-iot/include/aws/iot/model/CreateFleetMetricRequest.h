@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API CreateFleetMetricRequest : public IoTRequest
+  class CreateFleetMetricRequest : public IoTRequest
   {
   public:
-    CreateFleetMetricRequest();
+    AWS_IOT_API CreateFleetMetricRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFleetMetric"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -430,34 +430,34 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     AggregationType m_aggregationType;
-    bool m_aggregationTypeHasBeenSet;
+    bool m_aggregationTypeHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_aggregationField;
-    bool m_aggregationFieldHasBeenSet;
+    bool m_aggregationFieldHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_queryVersion;
-    bool m_queryVersionHasBeenSet;
+    bool m_queryVersionHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     FleetMetricUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

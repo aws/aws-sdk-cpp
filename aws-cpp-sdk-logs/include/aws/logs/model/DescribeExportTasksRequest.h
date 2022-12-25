@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API DescribeExportTasksRequest : public CloudWatchLogsRequest
+  class DescribeExportTasksRequest : public CloudWatchLogsRequest
   {
   public:
-    DescribeExportTasksRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeExportTasksRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,56 +30,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeExportTasks"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the export task. Specifying a task ID filters the results to zero
-     * or one export tasks.</p>
+     * <p>The ID of the export task. Specifying a task ID filters the results to one or
+     * zero export tasks.</p>
      */
     inline DescribeExportTasksRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     ExportTaskStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

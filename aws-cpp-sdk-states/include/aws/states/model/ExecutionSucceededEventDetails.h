@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionSucceededEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionSucceededEventDetails
+  class ExecutionSucceededEventDetails
   {
   public:
-    ExecutionSucceededEventDetails();
-    ExecutionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionSucceededEventDetails();
+    AWS_SFN_API ExecutionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_outputDetails;
-    bool m_outputDetailsHasBeenSet;
+    bool m_outputDetailsHasBeenSet = false;
   };
 
 } // namespace Model

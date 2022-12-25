@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfacePermission">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfacePermission
+  class NetworkInterfacePermission
   {
   public:
-    NetworkInterfacePermission();
-    NetworkInterfacePermission(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfacePermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfacePermission();
+    AWS_EC2_API NetworkInterfacePermission(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfacePermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_networkInterfacePermissionId;
-    bool m_networkInterfacePermissionIdHasBeenSet;
+    bool m_networkInterfacePermissionIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
 
     InterfacePermissionType m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     NetworkInterfacePermissionState m_permissionState;
-    bool m_permissionStateHasBeenSet;
+    bool m_permissionStateHasBeenSet = false;
   };
 
 } // namespace Model

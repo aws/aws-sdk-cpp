@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/JobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API JobFilter
+  class JobFilter
   {
   public:
-    JobFilter();
-    JobFilter(Aws::Utils::Json::JsonView jsonValue);
-    JobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API JobFilter();
+    AWS_COMPUTEOPTIMIZER_API JobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API JobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,10 +215,10 @@ namespace Model
   private:
 
     JobFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ApplicationState">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API ApplicationState
+  class ApplicationState
   {
   public:
-    ApplicationState();
-    ApplicationState(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API ApplicationState();
+    AWS_MIGRATIONHUB_API ApplicationState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API ApplicationState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

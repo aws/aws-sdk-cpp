@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildArtifacts">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildArtifacts
+  class BuildArtifacts
   {
   public:
-    BuildArtifacts();
-    BuildArtifacts(Aws::Utils::Json::JsonView jsonValue);
-    BuildArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildArtifacts();
+    AWS_CODEBUILD_API BuildArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -329,25 +329,25 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_sha256sum;
-    bool m_sha256sumHasBeenSet;
+    bool m_sha256sumHasBeenSet = false;
 
     Aws::String m_md5sum;
-    bool m_md5sumHasBeenSet;
+    bool m_md5sumHasBeenSet = false;
 
     bool m_overrideArtifactName;
-    bool m_overrideArtifactNameHasBeenSet;
+    bool m_overrideArtifactNameHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_artifactIdentifier;
-    bool m_artifactIdentifierHasBeenSet;
+    bool m_artifactIdentifierHasBeenSet = false;
 
     BucketOwnerAccess m_bucketOwnerAccess;
-    bool m_bucketOwnerAccessHasBeenSet;
+    bool m_bucketOwnerAccessHasBeenSet = false;
   };
 
 } // namespace Model

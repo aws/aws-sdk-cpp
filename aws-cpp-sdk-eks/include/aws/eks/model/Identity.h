@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Identity">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Identity
+  class Identity
   {
   public:
-    Identity();
-    Identity(Aws::Utils::Json::JsonView jsonValue);
-    Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Identity();
+    AWS_EKS_API Identity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     OIDC m_oidc;
-    bool m_oidcHasBeenSet;
+    bool m_oidcHasBeenSet = false;
   };
 
 } // namespace Model

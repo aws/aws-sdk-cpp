@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchRetryOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ElasticsearchRetryOptions
+  class ElasticsearchRetryOptions
   {
   public:
-    ElasticsearchRetryOptions();
-    ElasticsearchRetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ElasticsearchRetryOptions();
+    AWS_FIREHOSE_API ElasticsearchRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ElasticsearchRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

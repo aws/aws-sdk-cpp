@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NielsenNaesIiNw">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NielsenNaesIiNw
+  class NielsenNaesIiNw
   {
   public:
-    NielsenNaesIiNw();
-    NielsenNaesIiNw(Aws::Utils::Json::JsonView jsonValue);
-    NielsenNaesIiNw& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NielsenNaesIiNw();
+    AWS_MEDIALIVE_API NielsenNaesIiNw(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NielsenNaesIiNw& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_checkDigitString;
-    bool m_checkDigitStringHasBeenSet;
+    bool m_checkDigitStringHasBeenSet = false;
 
     double m_sid;
-    bool m_sidHasBeenSet;
+    bool m_sidHasBeenSet = false;
   };
 
 } // namespace Model

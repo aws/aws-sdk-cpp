@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_NEPTUNE_API DescribeEventCategoriesRequest : public NeptuneRequest
+  class DescribeEventCategoriesRequest : public NeptuneRequest
   {
   public:
-    DescribeEventCategoriesRequest();
+    AWS_NEPTUNE_API DescribeEventCategoriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEventCategories"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

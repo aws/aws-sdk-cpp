@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Schema">AWS API
    * Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Schema
+  class Schema
   {
   public:
-    Schema();
-    Schema(Aws::Utils::Json::JsonView jsonValue);
-    Schema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Schema();
+    AWS_FORECASTSERVICE_API Schema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Schema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<SchemaAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

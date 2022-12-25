@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ImportJobSubmitter">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ImportJobSubmitter
+  class ImportJobSubmitter
   {
   public:
-    ImportJobSubmitter();
-    ImportJobSubmitter(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobSubmitter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ImportJobSubmitter();
+    AWS_HONEYCODE_API ImportJobSubmitter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ImportJobSubmitter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
   };
 
 } // namespace Model

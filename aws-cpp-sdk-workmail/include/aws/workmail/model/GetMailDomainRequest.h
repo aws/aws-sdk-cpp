@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API GetMailDomainRequest : public WorkMailRequest
+  class GetMailDomainRequest : public WorkMailRequest
   {
   public:
-    GetMailDomainRequest();
+    AWS_WORKMAIL_API GetMailDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,48 +29,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMailDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline GetMailDomainRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline GetMailDomainRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+     * <p>The WorkMail organization for which the domain is retrieved.</p>
      */
     inline GetMailDomainRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeConnectionPool">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeConnectionPool
+  class VirtualNodeConnectionPool
   {
   public:
-    VirtualNodeConnectionPool();
-    VirtualNodeConnectionPool(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeConnectionPool();
+    AWS_APPMESH_API VirtualNodeConnectionPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,16 +170,16 @@ namespace Model
   private:
 
     VirtualNodeGrpcConnectionPool m_grpc;
-    bool m_grpcHasBeenSet;
+    bool m_grpcHasBeenSet = false;
 
     VirtualNodeHttpConnectionPool m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     VirtualNodeHttp2ConnectionPool m_http2;
-    bool m_http2HasBeenSet;
+    bool m_http2HasBeenSet = false;
 
     VirtualNodeTcpConnectionPool m_tcp;
-    bool m_tcpHasBeenSet;
+    bool m_tcpHasBeenSet = false;
   };
 
 } // namespace Model

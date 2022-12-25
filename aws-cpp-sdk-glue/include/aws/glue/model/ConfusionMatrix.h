@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConfusionMatrix">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ConfusionMatrix
+  class ConfusionMatrix
   {
   public:
-    ConfusionMatrix();
-    ConfusionMatrix(Aws::Utils::Json::JsonView jsonValue);
-    ConfusionMatrix& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ConfusionMatrix();
+    AWS_GLUE_API ConfusionMatrix(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ConfusionMatrix& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,16 +140,16 @@ namespace Model
   private:
 
     long long m_numTruePositives;
-    bool m_numTruePositivesHasBeenSet;
+    bool m_numTruePositivesHasBeenSet = false;
 
     long long m_numFalsePositives;
-    bool m_numFalsePositivesHasBeenSet;
+    bool m_numFalsePositivesHasBeenSet = false;
 
     long long m_numTrueNegatives;
-    bool m_numTrueNegativesHasBeenSet;
+    bool m_numTrueNegativesHasBeenSet = false;
 
     long long m_numFalseNegatives;
-    bool m_numFalseNegativesHasBeenSet;
+    bool m_numFalseNegativesHasBeenSet = false;
   };
 
 } // namespace Model

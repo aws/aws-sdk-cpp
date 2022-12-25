@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Principal">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Principal
+  class Principal
   {
   public:
-    Principal();
-    Principal(Aws::Utils::Json::JsonView jsonValue);
-    Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Principal();
+    AWS_WORKDOCS_API Principal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     PrincipalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<PermissionInfo> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
   };
 
 } // namespace Model

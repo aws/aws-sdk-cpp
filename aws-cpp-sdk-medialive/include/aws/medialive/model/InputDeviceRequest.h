@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceRequest
+  class InputDeviceRequest
   {
   public:
-    InputDeviceRequest();
-    InputDeviceRequest(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceRequest();
+    AWS_MEDIALIVE_API InputDeviceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

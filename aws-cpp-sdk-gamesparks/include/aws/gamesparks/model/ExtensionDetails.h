@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/ExtensionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API ExtensionDetails
+  class ExtensionDetails
   {
   public:
-    ExtensionDetails();
-    ExtensionDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExtensionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API ExtensionDetails();
+    AWS_GAMESPARKS_API ExtensionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API ExtensionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

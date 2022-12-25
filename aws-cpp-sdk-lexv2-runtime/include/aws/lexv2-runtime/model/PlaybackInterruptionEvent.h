@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PlaybackInterruptionEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API PlaybackInterruptionEvent
+  class PlaybackInterruptionEvent
   {
   public:
-    PlaybackInterruptionEvent();
-    PlaybackInterruptionEvent(Aws::Utils::Json::JsonView jsonValue);
-    PlaybackInterruptionEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API PlaybackInterruptionEvent();
+    AWS_LEXRUNTIMEV2_API PlaybackInterruptionEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API PlaybackInterruptionEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     PlaybackInterruptionReason m_eventReason;
-    bool m_eventReasonHasBeenSet;
+    bool m_eventReasonHasBeenSet = false;
 
     Aws::String m_causedByEventId;
-    bool m_causedByEventIdHasBeenSet;
+    bool m_causedByEventIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
   };
 
 } // namespace Model

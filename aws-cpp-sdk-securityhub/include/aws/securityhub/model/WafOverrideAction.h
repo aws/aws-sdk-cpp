@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WafOverrideAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API WafOverrideAction
+  class WafOverrideAction
   {
   public:
-    WafOverrideAction();
-    WafOverrideAction(Aws::Utils::Json::JsonView jsonValue);
-    WafOverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API WafOverrideAction();
+    AWS_SECURITYHUB_API WafOverrideAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API WafOverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

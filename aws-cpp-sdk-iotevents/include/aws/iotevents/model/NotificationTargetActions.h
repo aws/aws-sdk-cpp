@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/NotificationTargetActions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API NotificationTargetActions
+  class NotificationTargetActions
   {
   public:
-    NotificationTargetActions();
-    NotificationTargetActions(Aws::Utils::Json::JsonView jsonValue);
-    NotificationTargetActions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API NotificationTargetActions();
+    AWS_IOTEVENTS_API NotificationTargetActions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API NotificationTargetActions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -61,7 +61,7 @@ namespace Model
   private:
 
     LambdaAction m_lambdaAction;
-    bool m_lambdaActionHasBeenSet;
+    bool m_lambdaActionHasBeenSet = false;
   };
 
 } // namespace Model

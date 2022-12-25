@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API ValidationException();
+    AWS_IVS_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_exceptionMessage;
-    bool m_exceptionMessageHasBeenSet;
+    bool m_exceptionMessageHasBeenSet = false;
   };
 
 } // namespace Model

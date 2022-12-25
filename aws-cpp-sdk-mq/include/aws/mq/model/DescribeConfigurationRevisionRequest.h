@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MQ_API DescribeConfigurationRevisionRequest : public MQRequest
+  class DescribeConfigurationRevisionRequest : public MQRequest
   {
   public:
-    DescribeConfigurationRevisionRequest();
+    AWS_MQ_API DescribeConfigurationRevisionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeConfigurationRevision"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MQ_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_configurationId;
-    bool m_configurationIdHasBeenSet;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::String m_configurationRevision;
-    bool m_configurationRevisionHasBeenSet;
+    bool m_configurationRevisionHasBeenSet = false;
   };
 
 } // namespace Model

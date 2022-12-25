@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AccountAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API AccountAttribute
+  class AccountAttribute
   {
   public:
-    AccountAttribute();
-    AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
-    AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API AccountAttribute();
+    AWS_OPSWORKSCM_API AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     int m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -57,7 +57,7 @@ DevicePosition& DevicePosition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Position"))
   {
-    Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
+    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
     for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
     {
       m_position.push_back(positionJsonList[positionIndex].AsDouble());
@@ -110,7 +110,7 @@ JsonValue DevicePosition::Jsonize() const
 
   if(m_positionHasBeenSet)
   {
-   Array<JsonValue> positionJsonList(m_position.size());
+   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
    for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
    {
      positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
@@ -132,12 +132,12 @@ JsonValue DevicePosition::Jsonize() const
 
   if(m_receivedTimeHasBeenSet)
   {
-   payload.WithString("ReceivedTime", m_receivedTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ReceivedTime", m_receivedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_sampleTimeHasBeenSet)
   {
-   payload.WithString("SampleTime", m_sampleTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("SampleTime", m_sampleTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

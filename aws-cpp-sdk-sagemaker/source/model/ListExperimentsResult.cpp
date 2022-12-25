@@ -30,7 +30,7 @@ ListExperimentsResult& ListExperimentsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ExperimentSummaries"))
   {
-    Array<JsonView> experimentSummariesJsonList = jsonValue.GetArray("ExperimentSummaries");
+    Aws::Utils::Array<JsonView> experimentSummariesJsonList = jsonValue.GetArray("ExperimentSummaries");
     for(unsigned experimentSummariesIndex = 0; experimentSummariesIndex < experimentSummariesJsonList.GetLength(); ++experimentSummariesIndex)
     {
       m_experimentSummaries.push_back(experimentSummariesJsonList[experimentSummariesIndex].AsObject());

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/AlarmState">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API AlarmState
+  class AlarmState
   {
   public:
-    AlarmState();
-    AlarmState(Aws::Utils::Json::JsonView jsonValue);
-    AlarmState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API AlarmState();
+    AWS_IOTEVENTSDATA_API AlarmState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API AlarmState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,16 +269,16 @@ namespace Model
   private:
 
     AlarmStateName m_stateName;
-    bool m_stateNameHasBeenSet;
+    bool m_stateNameHasBeenSet = false;
 
     RuleEvaluation m_ruleEvaluation;
-    bool m_ruleEvaluationHasBeenSet;
+    bool m_ruleEvaluationHasBeenSet = false;
 
     CustomerAction m_customerAction;
-    bool m_customerActionHasBeenSet;
+    bool m_customerActionHasBeenSet = false;
 
     SystemEvent m_systemEvent;
-    bool m_systemEventHasBeenSet;
+    bool m_systemEventHasBeenSet = false;
   };
 
 } // namespace Model

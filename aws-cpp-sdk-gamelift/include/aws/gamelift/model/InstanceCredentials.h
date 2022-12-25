@@ -24,19 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Set of credentials required to remotely access a fleet instance. Access
-   * credentials are requested by calling <a>GetInstanceAccess</a> and returned in an
-   * <a>InstanceAccess</a> object.</p><p><h3>See Also:</h3>   <a
+   * <p>Set of credentials required to remotely access a fleet
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API InstanceCredentials
+  class InstanceCredentials
   {
   public:
-    InstanceCredentials();
-    InstanceCredentials(Aws::Utils::Json::JsonView jsonValue);
-    InstanceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API InstanceCredentials();
+    AWS_GAMELIFT_API InstanceCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API InstanceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_secret;
-    bool m_secretHasBeenSet;
+    bool m_secretHasBeenSet = false;
   };
 
 } // namespace Model

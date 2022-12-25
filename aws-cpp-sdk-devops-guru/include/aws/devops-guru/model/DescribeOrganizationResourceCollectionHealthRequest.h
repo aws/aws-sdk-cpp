@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthRequest : public DevOpsGuruRequest
+  class DescribeOrganizationResourceCollectionHealthRequest : public DevOpsGuruRequest
   {
   public:
-    DescribeOrganizationResourceCollectionHealthRequest();
+    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeOrganizationResourceCollectionHealth"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -279,19 +279,19 @@ namespace Model
   private:
 
     OrganizationResourceCollectionType m_organizationResourceCollectionType;
-    bool m_organizationResourceCollectionTypeHasBeenSet;
+    bool m_organizationResourceCollectionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

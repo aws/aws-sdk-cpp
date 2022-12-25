@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_DYNAMODB_API UpdateTableReplicaAutoScalingRequest : public DynamoDBRequest
+  class UpdateTableReplicaAutoScalingRequest : public DynamoDBRequest
   {
   public:
-    UpdateTableReplicaAutoScalingRequest();
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTableReplicaAutoScaling"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::Vector<GlobalSecondaryIndexAutoScalingUpdate> m_globalSecondaryIndexUpdates;
-    bool m_globalSecondaryIndexUpdatesHasBeenSet;
+    bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingUpdate;
-    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
 
     Aws::Vector<ReplicaAutoScalingUpdate> m_replicaUpdates;
-    bool m_replicaUpdatesHasBeenSet;
+    bool m_replicaUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

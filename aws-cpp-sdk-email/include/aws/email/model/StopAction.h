@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/StopAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API StopAction
+  class StopAction
   {
   public:
-    StopAction();
-    StopAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StopAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API StopAction();
+    AWS_SES_API StopAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API StopAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -165,10 +165,10 @@ namespace Model
   private:
 
     StopScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TeamMember">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API TeamMember
+  class TeamMember
   {
   public:
-    TeamMember();
-    TeamMember(Aws::Utils::Json::JsonView jsonValue);
-    TeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API TeamMember();
+    AWS_CODESTAR_API TeamMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API TeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_projectRole;
-    bool m_projectRoleHasBeenSet;
+    bool m_projectRoleHasBeenSet = false;
 
     bool m_remoteAccessAllowed;
-    bool m_remoteAccessAllowedHasBeenSet;
+    bool m_remoteAccessAllowedHasBeenSet = false;
   };
 
 } // namespace Model

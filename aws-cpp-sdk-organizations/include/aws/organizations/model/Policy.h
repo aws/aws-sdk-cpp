@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Policy">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Policy
+  class Policy
   {
   public:
-    Policy();
-    Policy(Aws::Utils::Json::JsonView jsonValue);
-    Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Policy();
+    AWS_ORGANIZATIONS_API Policy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     PolicySummary m_policySummary;
-    bool m_policySummaryHasBeenSet;
+    bool m_policySummaryHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

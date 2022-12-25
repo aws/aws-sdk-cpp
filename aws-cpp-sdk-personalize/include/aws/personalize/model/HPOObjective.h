@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOObjective">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API HPOObjective
+  class HPOObjective
   {
   public:
-    HPOObjective();
-    HPOObjective(Aws::Utils::Json::JsonView jsonValue);
-    HPOObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API HPOObjective();
+    AWS_PERSONALIZE_API HPOObjective(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API HPOObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricRegex;
-    bool m_metricRegexHasBeenSet;
+    bool m_metricRegexHasBeenSet = false;
   };
 
 } // namespace Model

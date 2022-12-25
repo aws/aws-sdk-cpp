@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API GetResponseHeadersPolicyConfig2020_05_31Request : public CloudFrontRequest
+  class GetResponseHeadersPolicyConfig2020_05_31Request : public CloudFrontRequest
   {
   public:
-    GetResponseHeadersPolicyConfig2020_05_31Request();
+    AWS_CLOUDFRONT_API GetResponseHeadersPolicyConfig2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,13 +29,13 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResponseHeadersPolicyConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -44,8 +44,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -54,8 +54,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -64,8 +64,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -74,8 +74,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -84,8 +84,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -94,8 +94,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -104,8 +104,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

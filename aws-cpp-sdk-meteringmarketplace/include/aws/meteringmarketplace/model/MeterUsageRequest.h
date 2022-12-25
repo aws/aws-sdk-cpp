@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MARKETPLACEMETERING_API MeterUsageRequest : public MarketplaceMeteringRequest
+  class MeterUsageRequest : public MarketplaceMeteringRequest
   {
   public:
-    MeterUsageRequest();
+    AWS_MARKETPLACEMETERING_API MeterUsageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "MeterUsage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACEMETERING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACEMETERING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -323,22 +323,22 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_usageDimension;
-    bool m_usageDimensionHasBeenSet;
+    bool m_usageDimensionHasBeenSet = false;
 
     int m_usageQuantity;
-    bool m_usageQuantityHasBeenSet;
+    bool m_usageQuantityHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
-    bool m_usageAllocationsHasBeenSet;
+    bool m_usageAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ParameterRanges">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ParameterRanges
+  class ParameterRanges
   {
   public:
-    ParameterRanges();
-    ParameterRanges(Aws::Utils::Json::JsonView jsonValue);
-    ParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ParameterRanges();
+    AWS_FORECASTSERVICE_API ParameterRanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::Vector<CategoricalParameterRange> m_categoricalParameterRanges;
-    bool m_categoricalParameterRangesHasBeenSet;
+    bool m_categoricalParameterRangesHasBeenSet = false;
 
     Aws::Vector<ContinuousParameterRange> m_continuousParameterRanges;
-    bool m_continuousParameterRangesHasBeenSet;
+    bool m_continuousParameterRangesHasBeenSet = false;
 
     Aws::Vector<IntegerParameterRange> m_integerParameterRanges;
-    bool m_integerParameterRangesHasBeenSet;
+    bool m_integerParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DomainName
+  class DomainName
   {
   public:
-    DomainName();
-    DomainName(Aws::Utils::Json::JsonView jsonValue);
-    DomainName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DomainName();
+    AWS_APIGATEWAY_API DomainName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DomainName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -967,55 +967,55 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_certificateUploadDate;
-    bool m_certificateUploadDateHasBeenSet;
+    bool m_certificateUploadDateHasBeenSet = false;
 
     Aws::String m_regionalDomainName;
-    bool m_regionalDomainNameHasBeenSet;
+    bool m_regionalDomainNameHasBeenSet = false;
 
     Aws::String m_regionalHostedZoneId;
-    bool m_regionalHostedZoneIdHasBeenSet;
+    bool m_regionalHostedZoneIdHasBeenSet = false;
 
     Aws::String m_regionalCertificateName;
-    bool m_regionalCertificateNameHasBeenSet;
+    bool m_regionalCertificateNameHasBeenSet = false;
 
     Aws::String m_regionalCertificateArn;
-    bool m_regionalCertificateArnHasBeenSet;
+    bool m_regionalCertificateArnHasBeenSet = false;
 
     Aws::String m_distributionDomainName;
-    bool m_distributionDomainNameHasBeenSet;
+    bool m_distributionDomainNameHasBeenSet = false;
 
     Aws::String m_distributionHostedZoneId;
-    bool m_distributionHostedZoneIdHasBeenSet;
+    bool m_distributionHostedZoneIdHasBeenSet = false;
 
     EndpointConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     DomainNameStatus m_domainNameStatus;
-    bool m_domainNameStatusHasBeenSet;
+    bool m_domainNameStatusHasBeenSet = false;
 
     Aws::String m_domainNameStatusMessage;
-    bool m_domainNameStatusMessageHasBeenSet;
+    bool m_domainNameStatusMessageHasBeenSet = false;
 
     SecurityPolicy m_securityPolicy;
-    bool m_securityPolicyHasBeenSet;
+    bool m_securityPolicyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     MutualTlsAuthentication m_mutualTlsAuthentication;
-    bool m_mutualTlsAuthenticationHasBeenSet;
+    bool m_mutualTlsAuthenticationHasBeenSet = false;
 
     Aws::String m_ownershipVerificationCertificateArn;
-    bool m_ownershipVerificationCertificateArnHasBeenSet;
+    bool m_ownershipVerificationCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

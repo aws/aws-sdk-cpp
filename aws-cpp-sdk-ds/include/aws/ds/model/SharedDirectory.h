@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SharedDirectory">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SharedDirectory
+  class SharedDirectory
   {
   public:
-    SharedDirectory();
-    SharedDirectory(Aws::Utils::Json::JsonView jsonValue);
-    SharedDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SharedDirectory();
+    AWS_DIRECTORYSERVICE_API SharedDirectory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SharedDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -439,31 +439,31 @@ namespace Model
   private:
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::String m_ownerDirectoryId;
-    bool m_ownerDirectoryIdHasBeenSet;
+    bool m_ownerDirectoryIdHasBeenSet = false;
 
     ShareMethod m_shareMethod;
-    bool m_shareMethodHasBeenSet;
+    bool m_shareMethodHasBeenSet = false;
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     Aws::String m_sharedDirectoryId;
-    bool m_sharedDirectoryIdHasBeenSet;
+    bool m_sharedDirectoryIdHasBeenSet = false;
 
     ShareStatus m_shareStatus;
-    bool m_shareStatusHasBeenSet;
+    bool m_shareStatusHasBeenSet = false;
 
     Aws::String m_shareNotes;
-    bool m_shareNotesHasBeenSet;
+    bool m_shareNotesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDateTime;
-    bool m_createdDateTimeHasBeenSet;
+    bool m_createdDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

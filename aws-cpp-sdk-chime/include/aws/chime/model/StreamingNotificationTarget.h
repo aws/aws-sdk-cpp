@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StreamingNotificationTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API StreamingNotificationTarget
+  class StreamingNotificationTarget
   {
   public:
-    StreamingNotificationTarget();
-    StreamingNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
-    StreamingNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API StreamingNotificationTarget();
+    AWS_CHIME_API StreamingNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API StreamingNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     NotificationTarget m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
   };
 
 } // namespace Model

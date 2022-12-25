@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CopyStepDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API CopyStepDetails
+  class CopyStepDetails
   {
   public:
-    CopyStepDetails();
-    CopyStepDetails(Aws::Utils::Json::JsonView jsonValue);
-    CopyStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API CopyStepDetails();
+    AWS_TRANSFER_API CopyStepDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API CopyStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputFileLocation m_destinationFileLocation;
-    bool m_destinationFileLocationHasBeenSet;
+    bool m_destinationFileLocationHasBeenSet = false;
 
     OverwriteExisting m_overwriteExisting;
-    bool m_overwriteExistingHasBeenSet;
+    bool m_overwriteExistingHasBeenSet = false;
 
     Aws::String m_sourceFileLocation;
-    bool m_sourceFileLocationHasBeenSet;
+    bool m_sourceFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

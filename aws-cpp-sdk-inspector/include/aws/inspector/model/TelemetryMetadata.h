@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/TelemetryMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API TelemetryMetadata
+  class TelemetryMetadata
   {
   public:
-    TelemetryMetadata();
-    TelemetryMetadata(Aws::Utils::Json::JsonView jsonValue);
-    TelemetryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API TelemetryMetadata();
+    AWS_INSPECTOR_API TelemetryMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API TelemetryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,13 +132,13 @@ namespace Model
   private:
 
     Aws::String m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     long long m_dataSize;
-    bool m_dataSizeHasBeenSet;
+    bool m_dataSizeHasBeenSet = false;
   };
 
 } // namespace Model

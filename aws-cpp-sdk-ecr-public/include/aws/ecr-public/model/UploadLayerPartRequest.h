@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECRPUBLIC_API UploadLayerPartRequest : public ECRPublicRequest
+  class UploadLayerPartRequest : public ECRPublicRequest
   {
   public:
-    UploadLayerPartRequest();
+    AWS_ECRPUBLIC_API UploadLayerPartRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UploadLayerPart"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECRPUBLIC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECRPUBLIC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     long long m_partFirstByte;
-    bool m_partFirstByteHasBeenSet;
+    bool m_partFirstByteHasBeenSet = false;
 
     long long m_partLastByte;
-    bool m_partLastByteHasBeenSet;
+    bool m_partLastByteHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_layerPartBlob;
-    bool m_layerPartBlobHasBeenSet;
+    bool m_layerPartBlobHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DRS_API UpdateLaunchConfigurationRequest : public DrsRequest
+  class UpdateLaunchConfigurationRequest : public DrsRequest
   {
   public:
-    UpdateLaunchConfigurationRequest();
+    AWS_DRS_API UpdateLaunchConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunchConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DRS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -276,25 +276,25 @@ namespace Model
   private:
 
     bool m_copyPrivateIp;
-    bool m_copyPrivateIpHasBeenSet;
+    bool m_copyPrivateIpHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     LaunchDisposition m_launchDisposition;
-    bool m_launchDispositionHasBeenSet;
+    bool m_launchDispositionHasBeenSet = false;
 
     Licensing m_licensing;
-    bool m_licensingHasBeenSet;
+    bool m_licensingHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
-    bool m_targetInstanceTypeRightSizingMethodHasBeenSet;
+    bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   };
 
 } // namespace Model

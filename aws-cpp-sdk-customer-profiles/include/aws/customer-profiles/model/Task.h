@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Task">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Task
+  class Task
   {
   public:
-    Task();
-    Task(Aws::Utils::Json::JsonView jsonValue);
-    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Task();
+    AWS_CUSTOMERPROFILES_API Task(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,19 +281,19 @@ namespace Model
   private:
 
     ConnectorOperator m_connectorOperator;
-    bool m_connectorOperatorHasBeenSet;
+    bool m_connectorOperatorHasBeenSet = false;
 
     Aws::String m_destinationField;
-    bool m_destinationFieldHasBeenSet;
+    bool m_destinationFieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceFields;
-    bool m_sourceFieldsHasBeenSet;
+    bool m_sourceFieldsHasBeenSet = false;
 
     Aws::Map<OperatorPropertiesKeys, Aws::String> m_taskProperties;
-    bool m_taskPropertiesHasBeenSet;
+    bool m_taskPropertiesHasBeenSet = false;
 
     TaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
   };
 
 } // namespace Model

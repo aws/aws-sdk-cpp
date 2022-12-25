@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DetectorVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API DetectorVersionSummary
+  class DetectorVersionSummary
   {
   public:
-    DetectorVersionSummary();
-    DetectorVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectorVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API DetectorVersionSummary();
+    AWS_FRAUDDETECTOR_API DetectorVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API DetectorVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     DetectorVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

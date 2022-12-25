@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerInputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerInputDataConfig
+  class EntityRecognizerInputDataConfig
   {
   public:
-    EntityRecognizerInputDataConfig();
-    EntityRecognizerInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerInputDataConfig();
+    AWS_COMPREHEND_API EntityRecognizerInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -426,22 +426,22 @@ namespace Model
   private:
 
     EntityRecognizerDataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::Vector<EntityTypesListItem> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     EntityRecognizerDocuments m_documents;
-    bool m_documentsHasBeenSet;
+    bool m_documentsHasBeenSet = false;
 
     EntityRecognizerAnnotations m_annotations;
-    bool m_annotationsHasBeenSet;
+    bool m_annotationsHasBeenSet = false;
 
     EntityRecognizerEntityList m_entityList;
-    bool m_entityListHasBeenSet;
+    bool m_entityListHasBeenSet = false;
 
     Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
-    bool m_augmentedManifestsHasBeenSet;
+    bool m_augmentedManifestsHasBeenSet = false;
   };
 
 } // namespace Model

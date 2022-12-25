@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountSuppressionAttributesRequest : public SESV2Request
+  class PutAccountSuppressionAttributesRequest : public SESV2Request
   {
   public:
-    PutAccountSuppressionAttributesRequest();
+    AWS_SESV2_API PutAccountSuppressionAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountSuppressionAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -128,7 +128,7 @@ namespace Model
   private:
 
     Aws::Vector<SuppressionListReason> m_suppressedReasons;
-    bool m_suppressedReasonsHasBeenSet;
+    bool m_suppressedReasonsHasBeenSet = false;
   };
 
 } // namespace Model

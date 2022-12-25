@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API CreateNodegroupRequest : public EKSRequest
+  class CreateNodegroupRequest : public EKSRequest
   {
   public:
-    CreateNodegroupRequest();
+    AWS_EKS_API CreateNodegroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNodegroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -163,8 +163,9 @@ namespace Model
 
     /**
      * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't
-     * specify <code>diskSize</code>, or the node group deployment will fail. For more
+     * disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB
+     * for Windows. If you specify <code>launchTemplate</code>, then don't specify
+     * <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -173,8 +174,9 @@ namespace Model
 
     /**
      * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't
-     * specify <code>diskSize</code>, or the node group deployment will fail. For more
+     * disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB
+     * for Windows. If you specify <code>launchTemplate</code>, then don't specify
+     * <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -183,8 +185,9 @@ namespace Model
 
     /**
      * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't
-     * specify <code>diskSize</code>, or the node group deployment will fail. For more
+     * disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB
+     * for Windows. If you specify <code>launchTemplate</code>, then don't specify
+     * <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -193,8 +196,9 @@ namespace Model
 
     /**
      * <p>The root device disk size (in GiB) for your node group instances. The default
-     * disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't
-     * specify <code>diskSize</code>, or the node group deployment will fail. For more
+     * disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB
+     * for Windows. If you specify <code>launchTemplate</code>, then don't specify
+     * <code>diskSize</code>, or the node group deployment will fail. For more
      * information about using launch templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -313,7 +317,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -332,7 +336,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -351,7 +355,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -370,7 +374,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -389,7 +393,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -408,7 +412,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -427,7 +431,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -446,7 +450,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -465,7 +469,7 @@ namespace Model
 
     /**
      * <p>Specify the instance types for a node group. If you specify a GPU instance
-     * type, be sure to specify <code>AL2_x86_64_GPU</code> with the
+     * type, make sure to also specify an applicable GPU AMI type with the
      * <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then
      * you can specify zero or one instance type in your launch template <i>or</i> you
      * can specify 0-20 instance types for <code>instanceTypes</code>. If however, you
@@ -484,84 +488,78 @@ namespace Model
 
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const AMITypes& GetAmiType() const{ return m_amiType; }
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool AmiTypeHasBeenSet() const { return m_amiTypeHasBeenSet; }
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetAmiType(const AMITypes& value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetAmiType(AMITypes&& value) { m_amiTypeHasBeenSet = true; m_amiType = std::move(value); }
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithAmiType(const AMITypes& value) { SetAmiType(value); return *this;}
 
     /**
-     * <p>The AMI type for your node group. GPU instance types should use the
-     * <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type. Arm instances should use the
-     * <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon
-     * Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch
-     * template uses a custom AMI, then don't specify <code>amiType</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * <p>The AMI type for your node group. If you specify <code>launchTemplate</code>,
+     * and your launch template uses a custom AMI, then don't specify
+     * <code>amiType</code>, or the node group deployment will fail. If your launch
+     * template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code>
+     * to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code>
+     * <code>ConfigMap</code>. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -569,60 +567,66 @@ namespace Model
 
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const RemoteAccessConfig& GetRemoteAccess() const{ return m_remoteAccess; }
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool RemoteAccessHasBeenSet() const { return m_remoteAccessHasBeenSet; }
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetRemoteAccess(const RemoteAccessConfig& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = value; }
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetRemoteAccess(RemoteAccessConfig&& value) { m_remoteAccessHasBeenSet = true; m_remoteAccess = std::move(value); }
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline CreateNodegroupRequest& WithRemoteAccess(const RemoteAccessConfig& value) { SetRemoteAccess(value); return *this;}
 
     /**
-     * <p>The remote access (SSH) configuration to use with your node group. If you
-     * specify <code>launchTemplate</code>, then don't specify
-     * <code>remoteAccess</code>, or the node group deployment will fail. For more
-     * information about using launch templates with Amazon EKS, see <a
+     * <p>The remote access configuration to use with your node group. For Linux, the
+     * protocol is SSH. For Windows, the protocol is RDP. If you specify
+     * <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or
+     * the node group deployment will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1297,13 +1301,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1312,13 +1320,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1327,13 +1339,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1342,13 +1358,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1357,13 +1377,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1372,13 +1396,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1387,13 +1415,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1402,13 +1434,17 @@ namespace Model
     /**
      * <p>The AMI version of the Amazon EKS optimized AMI to use with your node group.
      * By default, the latest available AMI version for the node group's current
-     * Kubernetes version is used. For more information, see <a
+     * Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-     * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-     * Guide</i>. If you specify <code>launchTemplate</code>, and your launch template
-     * uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node
-     * group deployment will fail. For more information about using launch templates
-     * with Amazon EKS, see <a
+     * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS managed node groups support the November 2022 and later releases of
+     * the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+     * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     * <p>If you specify <code>launchTemplate</code>, and your launch template uses a
+     * custom AMI, then don't specify <code>releaseVersion</code>, or the node group
+     * deployment will fail. For more information about using launch templates with
+     * Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
      * template support</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
@@ -1417,58 +1453,58 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     NodegroupScalingConfig m_scalingConfig;
-    bool m_scalingConfigHasBeenSet;
+    bool m_scalingConfigHasBeenSet = false;
 
     int m_diskSize;
-    bool m_diskSizeHasBeenSet;
+    bool m_diskSizeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     AMITypes m_amiType;
-    bool m_amiTypeHasBeenSet;
+    bool m_amiTypeHasBeenSet = false;
 
     RemoteAccessConfig m_remoteAccess;
-    bool m_remoteAccessHasBeenSet;
+    bool m_remoteAccessHasBeenSet = false;
 
     Aws::String m_nodeRole;
-    bool m_nodeRoleHasBeenSet;
+    bool m_nodeRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::Vector<Taint> m_taints;
-    bool m_taintsHasBeenSet;
+    bool m_taintsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     NodegroupUpdateConfig m_updateConfig;
-    bool m_updateConfigHasBeenSet;
+    bool m_updateConfigHasBeenSet = false;
 
     CapacityTypes m_capacityType;
-    bool m_capacityTypeHasBeenSet;
+    bool m_capacityTypeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
   };
 
 } // namespace Model

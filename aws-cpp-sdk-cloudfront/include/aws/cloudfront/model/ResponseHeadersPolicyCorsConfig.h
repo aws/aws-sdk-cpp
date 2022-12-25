@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyCorsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig
+  class ResponseHeadersPolicyCorsConfig
   {
   public:
-    ResponseHeadersPolicyCorsConfig();
-    ResponseHeadersPolicyCorsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyCorsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -402,25 +402,25 @@ namespace Model
   private:
 
     ResponseHeadersPolicyAccessControlAllowOrigins m_accessControlAllowOrigins;
-    bool m_accessControlAllowOriginsHasBeenSet;
+    bool m_accessControlAllowOriginsHasBeenSet = false;
 
     ResponseHeadersPolicyAccessControlAllowHeaders m_accessControlAllowHeaders;
-    bool m_accessControlAllowHeadersHasBeenSet;
+    bool m_accessControlAllowHeadersHasBeenSet = false;
 
     ResponseHeadersPolicyAccessControlAllowMethods m_accessControlAllowMethods;
-    bool m_accessControlAllowMethodsHasBeenSet;
+    bool m_accessControlAllowMethodsHasBeenSet = false;
 
     bool m_accessControlAllowCredentials;
-    bool m_accessControlAllowCredentialsHasBeenSet;
+    bool m_accessControlAllowCredentialsHasBeenSet = false;
 
     ResponseHeadersPolicyAccessControlExposeHeaders m_accessControlExposeHeaders;
-    bool m_accessControlExposeHeadersHasBeenSet;
+    bool m_accessControlExposeHeadersHasBeenSet = false;
 
     int m_accessControlMaxAgeSec;
-    bool m_accessControlMaxAgeSecHasBeenSet;
+    bool m_accessControlMaxAgeSecHasBeenSet = false;
 
     bool m_originOverride;
-    bool m_originOverrideHasBeenSet;
+    bool m_originOverrideHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_HEALTHLAKE_API ListFHIRExportJobsRequest : public HealthLakeRequest
+  class ListFHIRExportJobsRequest : public HealthLakeRequest
   {
   public:
-    ListFHIRExportJobsRequest();
+    AWS_HEALTHLAKE_API ListFHIRExportJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListFHIRExportJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedBefore;
-    bool m_submittedBeforeHasBeenSet;
+    bool m_submittedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submittedAfter;
-    bool m_submittedAfterHasBeenSet;
+    bool m_submittedAfterHasBeenSet = false;
   };
 
 } // namespace Model

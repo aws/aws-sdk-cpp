@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioHlsRenditionSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioHlsRenditionSelection
+  class AudioHlsRenditionSelection
   {
   public:
-    AudioHlsRenditionSelection();
-    AudioHlsRenditionSelection(Aws::Utils::Json::JsonView jsonValue);
-    AudioHlsRenditionSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioHlsRenditionSelection();
+    AWS_MEDIALIVE_API AudioHlsRenditionSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioHlsRenditionSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

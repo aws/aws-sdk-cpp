@@ -22,6 +22,7 @@ namespace Aws
 
         static const int enableDnsSupport_HASH = HashingUtils::HashString("enableDnsSupport");
         static const int enableDnsHostnames_HASH = HashingUtils::HashString("enableDnsHostnames");
+        static const int enableNetworkAddressUsageMetrics_HASH = HashingUtils::HashString("enableNetworkAddressUsageMetrics");
 
 
         VpcAttributeName GetVpcAttributeNameForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == enableDnsHostnames_HASH)
           {
             return VpcAttributeName::enableDnsHostnames;
+          }
+          else if (hashCode == enableNetworkAddressUsageMetrics_HASH)
+          {
+            return VpcAttributeName::enableNetworkAddressUsageMetrics;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "enableDnsSupport";
           case VpcAttributeName::enableDnsHostnames:
             return "enableDnsHostnames";
+          case VpcAttributeName::enableNetworkAddressUsageMetrics:
+            return "enableNetworkAddressUsageMetrics";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeysRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetApiKeysRequest : public APIGatewayRequest
+  class GetApiKeysRequest : public APIGatewayRequest
   {
   public:
-    GetApiKeysRequest();
+    AWS_APIGATEWAY_API GetApiKeysRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetApiKeys"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nameQuery;
-    bool m_nameQueryHasBeenSet;
+    bool m_nameQueryHasBeenSet = false;
 
     Aws::String m_customerId;
-    bool m_customerIdHasBeenSet;
+    bool m_customerIdHasBeenSet = false;
 
     bool m_includeValues;
-    bool m_includeValuesHasBeenSet;
+    bool m_includeValuesHasBeenSet = false;
   };
 
 } // namespace Model

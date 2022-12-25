@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API PutResourceLogLevelRequest : public IoTWirelessRequest
+  class PutResourceLogLevelRequest : public IoTWirelessRequest
   {
   public:
-    PutResourceLogLevelRequest();
+    AWS_IOTWIRELESS_API PutResourceLogLevelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutResourceLogLevel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTWIRELESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

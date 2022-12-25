@@ -22,49 +22,54 @@ namespace Model
 {
 
   /**
-   * <p>Determines how long a <code>CAPTCHA</code> token remains valid after the
-   * client successfully solves a <code>CAPTCHA</code> puzzle. </p><p><h3>See
+   * <p>Used for CAPTCHA and challenge token settings. Determines how long a
+   * <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it
+   * for a successful <code>CAPTCHA</code> or challenge response. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ImmunityTimeProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ImmunityTimeProperty
+  class ImmunityTimeProperty
   {
   public:
-    ImmunityTimeProperty();
-    ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
-    ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ImmunityTimeProperty();
+    AWS_WAFV2_API ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid.
-     * The default setting is 300.</p>
+     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
+     * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
+     * the Challenge action, the minimum setting is 300. </p>
      */
     inline long long GetImmunityTime() const{ return m_immunityTime; }
 
     /**
-     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid.
-     * The default setting is 300.</p>
+     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
+     * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
+     * the Challenge action, the minimum setting is 300. </p>
      */
     inline bool ImmunityTimeHasBeenSet() const { return m_immunityTimeHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid.
-     * The default setting is 300.</p>
+     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
+     * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
+     * the Challenge action, the minimum setting is 300. </p>
      */
     inline void SetImmunityTime(long long value) { m_immunityTimeHasBeenSet = true; m_immunityTime = value; }
 
     /**
-     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> token is valid.
-     * The default setting is 300.</p>
+     * <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge
+     * timestamp is considered valid by WAF. The default setting is 300. </p> <p>For
+     * the Challenge action, the minimum setting is 300. </p>
      */
     inline ImmunityTimeProperty& WithImmunityTime(long long value) { SetImmunityTime(value); return *this;}
 
   private:
 
     long long m_immunityTime;
-    bool m_immunityTimeHasBeenSet;
+    bool m_immunityTimeHasBeenSet = false;
   };
 
 } // namespace Model

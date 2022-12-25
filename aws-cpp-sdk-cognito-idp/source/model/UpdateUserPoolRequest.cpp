@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 UpdateUserPoolRequest::UpdateUserPoolRequest() : 
     m_userPoolIdHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_autoVerifiedAttributesHasBeenSet(false),
     m_smsVerificationMessageHasBeenSet(false),
@@ -51,6 +53,11 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
 
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
+  }
+
   if(m_lambdaConfigHasBeenSet)
   {
    payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
@@ -59,7 +66,7 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
 
   if(m_autoVerifiedAttributesHasBeenSet)
   {
-   Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
    for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
    {
      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));

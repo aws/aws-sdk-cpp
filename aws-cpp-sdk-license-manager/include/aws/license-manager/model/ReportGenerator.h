@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReportGenerator">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ReportGenerator
+  class ReportGenerator
   {
   public:
-    ReportGenerator();
-    ReportGenerator(Aws::Utils::Json::JsonView jsonValue);
-    ReportGenerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ReportGenerator();
+    AWS_LICENSEMANAGER_API ReportGenerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ReportGenerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -548,43 +548,43 @@ namespace Model
   private:
 
     Aws::String m_reportGeneratorName;
-    bool m_reportGeneratorNameHasBeenSet;
+    bool m_reportGeneratorNameHasBeenSet = false;
 
     Aws::Vector<ReportType> m_reportType;
-    bool m_reportTypeHasBeenSet;
+    bool m_reportTypeHasBeenSet = false;
 
     ReportContext m_reportContext;
-    bool m_reportContextHasBeenSet;
+    bool m_reportContextHasBeenSet = false;
 
     ReportFrequency m_reportFrequency;
-    bool m_reportFrequencyHasBeenSet;
+    bool m_reportFrequencyHasBeenSet = false;
 
     Aws::String m_licenseManagerReportGeneratorArn;
-    bool m_licenseManagerReportGeneratorArnHasBeenSet;
+    bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
 
     Aws::String m_lastRunStatus;
-    bool m_lastRunStatusHasBeenSet;
+    bool m_lastRunStatusHasBeenSet = false;
 
     Aws::String m_lastRunFailureReason;
-    bool m_lastRunFailureReasonHasBeenSet;
+    bool m_lastRunFailureReasonHasBeenSet = false;
 
     Aws::String m_lastReportGenerationTime;
-    bool m_lastReportGenerationTimeHasBeenSet;
+    bool m_lastReportGenerationTimeHasBeenSet = false;
 
     Aws::String m_reportCreatorAccount;
-    bool m_reportCreatorAccountHasBeenSet;
+    bool m_reportCreatorAccountHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
 
     Aws::String m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

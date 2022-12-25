@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterLoggingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus
+  class AwsRedshiftClusterLoggingStatus
   {
   public:
-    AwsRedshiftClusterLoggingStatus();
-    AwsRedshiftClusterLoggingStatus(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterLoggingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterLoggingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
 
     Aws::String m_lastFailureTime;
-    bool m_lastFailureTimeHasBeenSet;
+    bool m_lastFailureTimeHasBeenSet = false;
 
     Aws::String m_lastSuccessfulDeliveryTime;
-    bool m_lastSuccessfulDeliveryTimeHasBeenSet;
+    bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
 
     bool m_loggingEnabled;
-    bool m_loggingEnabledHasBeenSet;
+    bool m_loggingEnabledHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

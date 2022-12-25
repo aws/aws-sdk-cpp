@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackRequest : public ChimeSDKMessagingRequest
+  class ChannelFlowCallbackRequest : public ChimeSDKMessagingRequest
   {
   public:
-    ChannelFlowCallbackRequest();
+    AWS_CHIMESDKMESSAGING_API ChannelFlowCallbackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChannelFlowCallback"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_callbackId;
-    bool m_callbackIdHasBeenSet;
+    bool m_callbackIdHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     bool m_deleteResource;
-    bool m_deleteResourceHasBeenSet;
+    bool m_deleteResourceHasBeenSet = false;
 
     ChannelMessageCallback m_channelMessage;
-    bool m_channelMessageHasBeenSet;
+    bool m_channelMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/RecordPatch">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API RecordPatch
+  class RecordPatch
   {
   public:
-    RecordPatch();
-    RecordPatch(Aws::Utils::Json::JsonView jsonValue);
-    RecordPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API RecordPatch();
+    AWS_COGNITOSYNC_API RecordPatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API RecordPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Operation m_op;
-    bool m_opHasBeenSet;
+    bool m_opHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     long long m_syncCount;
-    bool m_syncCountHasBeenSet;
+    bool m_syncCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastModifiedDate;
-    bool m_deviceLastModifiedDateHasBeenSet;
+    bool m_deviceLastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

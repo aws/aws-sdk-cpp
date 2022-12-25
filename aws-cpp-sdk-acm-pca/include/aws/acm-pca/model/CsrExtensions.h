@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CsrExtensions">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CsrExtensions
+  class CsrExtensions
   {
   public:
-    CsrExtensions();
-    CsrExtensions(Aws::Utils::Json::JsonView jsonValue);
-    CsrExtensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CsrExtensions();
+    AWS_ACMPCA_API CsrExtensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CsrExtensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     KeyUsage m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<AccessDescription> m_subjectInformationAccess;
-    bool m_subjectInformationAccessHasBeenSet;
+    bool m_subjectInformationAccessHasBeenSet = false;
   };
 
 } // namespace Model

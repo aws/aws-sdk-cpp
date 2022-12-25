@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API DataSource();
+    AWS_APPSYNC_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -509,37 +509,37 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     DynamodbDataSourceConfig m_dynamodbConfig;
-    bool m_dynamodbConfigHasBeenSet;
+    bool m_dynamodbConfigHasBeenSet = false;
 
     LambdaDataSourceConfig m_lambdaConfig;
-    bool m_lambdaConfigHasBeenSet;
+    bool m_lambdaConfigHasBeenSet = false;
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
-    bool m_elasticsearchConfigHasBeenSet;
+    bool m_elasticsearchConfigHasBeenSet = false;
 
     OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
-    bool m_openSearchServiceConfigHasBeenSet;
+    bool m_openSearchServiceConfigHasBeenSet = false;
 
     HttpDataSourceConfig m_httpConfig;
-    bool m_httpConfigHasBeenSet;
+    bool m_httpConfigHasBeenSet = false;
 
     RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
-    bool m_relationalDatabaseConfigHasBeenSet;
+    bool m_relationalDatabaseConfigHasBeenSet = false;
   };
 
 } // namespace Model

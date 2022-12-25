@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,42 +59,106 @@ namespace Model
 
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the ulimit.</p>
+     * <p>The type of the ulimit. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>core</code> </p> </li> <li> <p> <code>cpu</code> </p> </li> <li> <p>
+     * <code>data</code> </p> </li> <li> <p> <code>fsize</code> </p> </li> <li> <p>
+     * <code>locks</code> </p> </li> <li> <p> <code>memlock</code> </p> </li> <li> <p>
+     * <code>msgqueue</code> </p> </li> <li> <p> <code>nice</code> </p> </li> <li> <p>
+     * <code>nofile</code> </p> </li> <li> <p> <code>nproc</code> </p> </li> <li> <p>
+     * <code>rss</code> </p> </li> <li> <p> <code>rtprio</code> </p> </li> <li> <p>
+     * <code>rttime</code> </p> </li> <li> <p> <code>sigpending</code> </p> </li> <li>
+     * <p> <code>stack</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& WithName(const char* value) { SetName(value); return *this;}
 
@@ -122,13 +186,13 @@ namespace Model
   private:
 
     int m_hardLimit;
-    bool m_hardLimitHasBeenSet;
+    bool m_hardLimitHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_softLimit;
-    bool m_softLimitHasBeenSet;
+    bool m_softLimitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ContentLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API S3ContentLocation
+  class S3ContentLocation
   {
   public:
-    S3ContentLocation();
-    S3ContentLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3ContentLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API S3ContentLocation();
+    AWS_KINESISANALYTICSV2_API S3ContentLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API S3ContentLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_fileKey;
-    bool m_fileKeyHasBeenSet;
+    bool m_fileKeyHasBeenSet = false;
 
     Aws::String m_objectVersion;
-    bool m_objectVersionHasBeenSet;
+    bool m_objectVersionHasBeenSet = false;
   };
 
 } // namespace Model

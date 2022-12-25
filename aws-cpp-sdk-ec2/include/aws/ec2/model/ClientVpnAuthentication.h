@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClientVpnAuthentication
+  class ClientVpnAuthentication
   {
   public:
-    ClientVpnAuthentication();
-    ClientVpnAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientVpnAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnAuthentication();
+    AWS_EC2_API ClientVpnAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     ClientVpnAuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DirectoryServiceAuthentication m_activeDirectory;
-    bool m_activeDirectoryHasBeenSet;
+    bool m_activeDirectoryHasBeenSet = false;
 
     CertificateAuthentication m_mutualAuthentication;
-    bool m_mutualAuthenticationHasBeenSet;
+    bool m_mutualAuthenticationHasBeenSet = false;
 
     FederatedAuthentication m_federatedAuthentication;
-    bool m_federatedAuthenticationHasBeenSet;
+    bool m_federatedAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

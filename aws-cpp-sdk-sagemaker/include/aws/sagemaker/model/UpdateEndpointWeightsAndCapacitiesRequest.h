@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesRequest : public SageMakerRequest
+  class UpdateEndpointWeightsAndCapacitiesRequest : public SageMakerRequest
   {
   public:
-    UpdateEndpointWeightsAndCapacitiesRequest();
+    AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEndpointWeightsAndCapacities"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::Vector<DesiredWeightAndCapacity> m_desiredWeightsAndCapacities;
-    bool m_desiredWeightsAndCapacitiesHasBeenSet;
+    bool m_desiredWeightsAndCapacitiesHasBeenSet = false;
   };
 
 } // namespace Model

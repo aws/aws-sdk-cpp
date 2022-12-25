@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API JobMetadata
+  class JobMetadata
   {
   public:
-    JobMetadata();
-    JobMetadata(Aws::Utils::Json::JsonView jsonValue);
-    JobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API JobMetadata();
+    AWS_SNOWBALL_API JobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API JobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1014,70 +1014,70 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobState m_jobState;
-    bool m_jobStateHasBeenSet;
+    bool m_jobStateHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     JobResource m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyARN;
-    bool m_kmsKeyARNHasBeenSet;
+    bool m_kmsKeyARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_addressId;
-    bool m_addressIdHasBeenSet;
+    bool m_addressIdHasBeenSet = false;
 
     ShippingDetails m_shippingDetails;
-    bool m_shippingDetailsHasBeenSet;
+    bool m_shippingDetailsHasBeenSet = false;
 
     SnowballCapacity m_snowballCapacityPreference;
-    bool m_snowballCapacityPreferenceHasBeenSet;
+    bool m_snowballCapacityPreferenceHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     DataTransfer m_dataTransferProgress;
-    bool m_dataTransferProgressHasBeenSet;
+    bool m_dataTransferProgressHasBeenSet = false;
 
     JobLogs m_jobLogInfo;
-    bool m_jobLogInfoHasBeenSet;
+    bool m_jobLogInfoHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_forwardingAddressId;
-    bool m_forwardingAddressIdHasBeenSet;
+    bool m_forwardingAddressIdHasBeenSet = false;
 
     TaxDocuments m_taxDocuments;
-    bool m_taxDocumentsHasBeenSet;
+    bool m_taxDocumentsHasBeenSet = false;
 
     DeviceConfiguration m_deviceConfiguration;
-    bool m_deviceConfigurationHasBeenSet;
+    bool m_deviceConfigurationHasBeenSet = false;
 
     RemoteManagement m_remoteManagement;
-    bool m_remoteManagementHasBeenSet;
+    bool m_remoteManagementHasBeenSet = false;
 
     Aws::String m_longTermPricingId;
-    bool m_longTermPricingIdHasBeenSet;
+    bool m_longTermPricingIdHasBeenSet = false;
 
     OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-    bool m_onDeviceServiceConfigurationHasBeenSet;
+    bool m_onDeviceServiceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Disk">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API Disk
+  class Disk
   {
   public:
-    Disk();
-    Disk(Aws::Utils::Json::JsonView jsonValue);
-    Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API Disk();
+    AWS_STORAGEGATEWAY_API Disk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,28 +351,28 @@ namespace Model
   private:
 
     Aws::String m_diskId;
-    bool m_diskIdHasBeenSet;
+    bool m_diskIdHasBeenSet = false;
 
     Aws::String m_diskPath;
-    bool m_diskPathHasBeenSet;
+    bool m_diskPathHasBeenSet = false;
 
     Aws::String m_diskNode;
-    bool m_diskNodeHasBeenSet;
+    bool m_diskNodeHasBeenSet = false;
 
     Aws::String m_diskStatus;
-    bool m_diskStatusHasBeenSet;
+    bool m_diskStatusHasBeenSet = false;
 
     long long m_diskSizeInBytes;
-    bool m_diskSizeInBytesHasBeenSet;
+    bool m_diskSizeInBytesHasBeenSet = false;
 
     Aws::String m_diskAllocationType;
-    bool m_diskAllocationTypeHasBeenSet;
+    bool m_diskAllocationTypeHasBeenSet = false;
 
     Aws::String m_diskAllocationResource;
-    bool m_diskAllocationResourceHasBeenSet;
+    bool m_diskAllocationResourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_diskAttributeList;
-    bool m_diskAttributeListHasBeenSet;
+    bool m_diskAttributeListHasBeenSet = false;
   };
 
 } // namespace Model

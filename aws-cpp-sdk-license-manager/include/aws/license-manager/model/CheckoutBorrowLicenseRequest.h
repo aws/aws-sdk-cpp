@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CheckoutBorrowLicenseRequest : public LicenseManagerRequest
+  class CheckoutBorrowLicenseRequest : public LicenseManagerRequest
   {
   public:
-    CheckoutBorrowLicenseRequest();
+    AWS_LICENSEMANAGER_API CheckoutBorrowLicenseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CheckoutBorrowLicense"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -310,22 +310,22 @@ namespace Model
   private:
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::Vector<EntitlementData> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     DigitalSignatureMethod m_digitalSignatureMethod;
-    bool m_digitalSignatureMethodHasBeenSet;
+    bool m_digitalSignatureMethodHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     Aws::Vector<Metadata> m_checkoutMetadata;
-    bool m_checkoutMetadataHasBeenSet;
+    bool m_checkoutMetadataHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

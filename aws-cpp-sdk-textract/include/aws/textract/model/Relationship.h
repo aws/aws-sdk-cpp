@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Relationship">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Relationship
+  class Relationship
   {
   public:
-    Relationship();
-    Relationship(Aws::Utils::Json::JsonView jsonValue);
-    Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Relationship();
+    AWS_TEXTRACT_API Relationship(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     RelationshipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ids;
-    bool m_idsHasBeenSet;
+    bool m_idsHasBeenSet = false;
   };
 
 } // namespace Model

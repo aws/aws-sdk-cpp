@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ConnectivityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ConnectivityInfo
+  class ConnectivityInfo
   {
   public:
-    ConnectivityInfo();
-    ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ConnectivityInfo();
+    AWS_GREENGRASSV2_API ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_hostAddress;
-    bool m_hostAddressHasBeenSet;
+    bool m_hostAddressHasBeenSet = false;
 
     int m_portNumber;
-    bool m_portNumberHasBeenSet;
+    bool m_portNumberHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

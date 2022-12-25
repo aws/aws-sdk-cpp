@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/Capacity">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API Capacity
+  class Capacity
   {
   public:
-    Capacity();
-    Capacity(Aws::Utils::Json::JsonView jsonValue);
-    Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API Capacity();
+    AWS_SNOWDEVICEMANAGEMENT_API Capacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,19 +185,19 @@ namespace Model
   private:
 
     long long m_available;
-    bool m_availableHasBeenSet;
+    bool m_availableHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_used;
-    bool m_usedHasBeenSet;
+    bool m_usedHasBeenSet = false;
   };
 
 } // namespace Model

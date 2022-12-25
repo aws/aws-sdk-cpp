@@ -23,13 +23,13 @@ namespace Pinpoint
 namespace Model
 {
 
-  class AWS_PINPOINT_API ContactCenterActivity
+  class ContactCenterActivity
   {
   public:
-    ContactCenterActivity();
-    ContactCenterActivity(Aws::Utils::Json::JsonView jsonValue);
-    ContactCenterActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ContactCenterActivity();
+    AWS_PINPOINT_API ContactCenterActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ContactCenterActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
   };
 
 } // namespace Model

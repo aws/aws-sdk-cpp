@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Duration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API Duration
+  class Duration
   {
   public:
-    Duration();
-    Duration(Aws::Utils::Json::JsonView jsonValue);
-    Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API Duration();
+    AWS_APPMESH_API Duration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Duration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     DurationUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatusRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API UpdatePipelineStatusRequest : public ElasticTranscoderRequest
+  class UpdatePipelineStatusRequest : public ElasticTranscoderRequest
   {
   public:
-    UpdatePipelineStatusRequest();
+    AWS_ELASTICTRANSCODER_API UpdatePipelineStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePipelineStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICTRANSCODER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemEventFilter
+  class OpsItemEventFilter
   {
   public:
-    OpsItemEventFilter();
-    OpsItemEventFilter(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemEventFilter();
+    AWS_SSM_API OpsItemEventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     OpsItemEventFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     OpsItemEventFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

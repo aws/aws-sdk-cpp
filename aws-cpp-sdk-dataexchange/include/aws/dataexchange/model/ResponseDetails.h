@@ -12,6 +12,8 @@
 #include <aws/dataexchange/model/ImportAssetsFromS3ResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromApiGatewayApiResponseDetails.h>
+#include <aws/dataexchange/model/CreateS3DataAccessFromS3BucketResponseDetails.h>
+#include <aws/dataexchange/model/ImportAssetsFromLakeFormationTagPolicyResponseDetails.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ResponseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ResponseDetails
+  class ResponseDetails
   {
   public:
-    ResponseDetails();
-    ResponseDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ResponseDetails();
+    AWS_DATAEXCHANGE_API ResponseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,28 +261,96 @@ namespace Model
      */
     inline ResponseDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiResponseDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline const CreateS3DataAccessFromS3BucketResponseDetails& GetCreateS3DataAccessFromS3Bucket() const{ return m_createS3DataAccessFromS3Bucket; }
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline bool CreateS3DataAccessFromS3BucketHasBeenSet() const { return m_createS3DataAccessFromS3BucketHasBeenSet; }
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline void SetCreateS3DataAccessFromS3Bucket(const CreateS3DataAccessFromS3BucketResponseDetails& value) { m_createS3DataAccessFromS3BucketHasBeenSet = true; m_createS3DataAccessFromS3Bucket = value; }
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline void SetCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetails&& value) { m_createS3DataAccessFromS3BucketHasBeenSet = true; m_createS3DataAccessFromS3Bucket = std::move(value); }
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline ResponseDetails& WithCreateS3DataAccessFromS3Bucket(const CreateS3DataAccessFromS3BucketResponseDetails& value) { SetCreateS3DataAccessFromS3Bucket(value); return *this;}
+
+    /**
+     * <p>Response details from the CreateS3DataAccessFromS3Bucket job.</p>
+     */
+    inline ResponseDetails& WithCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetails&& value) { SetCreateS3DataAccessFromS3Bucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline const ImportAssetsFromLakeFormationTagPolicyResponseDetails& GetImportAssetsFromLakeFormationTagPolicy() const{ return m_importAssetsFromLakeFormationTagPolicy; }
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline bool ImportAssetsFromLakeFormationTagPolicyHasBeenSet() const { return m_importAssetsFromLakeFormationTagPolicyHasBeenSet; }
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline void SetImportAssetsFromLakeFormationTagPolicy(const ImportAssetsFromLakeFormationTagPolicyResponseDetails& value) { m_importAssetsFromLakeFormationTagPolicyHasBeenSet = true; m_importAssetsFromLakeFormationTagPolicy = value; }
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline void SetImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyResponseDetails&& value) { m_importAssetsFromLakeFormationTagPolicyHasBeenSet = true; m_importAssetsFromLakeFormationTagPolicy = std::move(value); }
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline ResponseDetails& WithImportAssetsFromLakeFormationTagPolicy(const ImportAssetsFromLakeFormationTagPolicyResponseDetails& value) { SetImportAssetsFromLakeFormationTagPolicy(value); return *this;}
+
+    /**
+     * <p>Response details from the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline ResponseDetails& WithImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyResponseDetails&& value) { SetImportAssetsFromLakeFormationTagPolicy(std::move(value)); return *this;}
+
   private:
 
     ExportAssetToSignedUrlResponseDetails m_exportAssetToSignedUrl;
-    bool m_exportAssetToSignedUrlHasBeenSet;
+    bool m_exportAssetToSignedUrlHasBeenSet = false;
 
     ExportAssetsToS3ResponseDetails m_exportAssetsToS3;
-    bool m_exportAssetsToS3HasBeenSet;
+    bool m_exportAssetsToS3HasBeenSet = false;
 
     ExportRevisionsToS3ResponseDetails m_exportRevisionsToS3;
-    bool m_exportRevisionsToS3HasBeenSet;
+    bool m_exportRevisionsToS3HasBeenSet = false;
 
     ImportAssetFromSignedUrlResponseDetails m_importAssetFromSignedUrl;
-    bool m_importAssetFromSignedUrlHasBeenSet;
+    bool m_importAssetFromSignedUrlHasBeenSet = false;
 
     ImportAssetsFromS3ResponseDetails m_importAssetsFromS3;
-    bool m_importAssetsFromS3HasBeenSet;
+    bool m_importAssetsFromS3HasBeenSet = false;
 
     ImportAssetsFromRedshiftDataSharesResponseDetails m_importAssetsFromRedshiftDataShares;
-    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet = false;
 
     ImportAssetFromApiGatewayApiResponseDetails m_importAssetFromApiGatewayApi;
-    bool m_importAssetFromApiGatewayApiHasBeenSet;
+    bool m_importAssetFromApiGatewayApiHasBeenSet = false;
+
+    CreateS3DataAccessFromS3BucketResponseDetails m_createS3DataAccessFromS3Bucket;
+    bool m_createS3DataAccessFromS3BucketHasBeenSet = false;
+
+    ImportAssetsFromLakeFormationTagPolicyResponseDetails m_importAssetsFromLakeFormationTagPolicy;
+    bool m_importAssetsFromLakeFormationTagPolicyHasBeenSet = false;
   };
 
 } // namespace Model

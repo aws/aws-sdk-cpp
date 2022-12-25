@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/IntegerParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API IntegerParameterRange
+  class IntegerParameterRange
   {
   public:
-    IntegerParameterRange();
-    IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API IntegerParameterRange();
+    AWS_FORECASTSERVICE_API IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     int m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     ScalingType m_scalingType;
-    bool m_scalingTypeHasBeenSet;
+    bool m_scalingTypeHasBeenSet = false;
   };
 
 } // namespace Model

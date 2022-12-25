@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API VideoSelector
+  class VideoSelector
   {
   public:
-    VideoSelector();
-    VideoSelector(Aws::Utils::Json::JsonView jsonValue);
-    VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API VideoSelector();
+    AWS_MEDIACONVERT_API VideoSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,85 +108,115 @@ namespace Model
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline const ColorSpace& GetColorSpace() const{ return m_colorSpace; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline void SetColorSpace(const ColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline void SetColorSpace(ColorSpace&& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = std::move(value); }
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline VideoSelector& WithColorSpace(const ColorSpace& value) { SetColorSpace(value); return *this;}
 
     /**
      * If your input video has accurate color space metadata, or if you don't know
-     * about color space, leave this set to the default value Follow (FOLLOW). The
-     * service will automatically detect your input color space. If your input video
-     * has metadata indicating the wrong color space, specify the accurate color space
-     * here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display
-     * Color Volume static metadata isn't present in your video stream, or if that
-     * metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and
-     * specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings.
-     * For more information about MediaConvert HDR jobs, see
-     * https://docs.aws.amazon.com/console/mediaconvert/hdr.
+     * about color space, leave this set to the default value Follow. The service will
+     * automatically detect your input color space. If your input video has metadata
+     * indicating the wrong color space, specify the accurate color space here. If your
+     * input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume
+     * static metadata isn't present in your video stream, or if that metadata is
+     * present but not accurate, choose Force HDR 10 here and specify correct values in
+     * the input HDR 10 metadata settings. For more information about MediaConvert HDR
+     * jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65
+     * (SDR) to set the input color space metadata to the following:
+ * Color
+     * primaries: Display P3
+ * Transfer characteristics: SMPTE 428M
+ * Matrix
+     * coefficients: BT.709
      */
     inline VideoSelector& WithColorSpace(ColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
 
@@ -707,34 +737,34 @@ namespace Model
   private:
 
     AlphaBehavior m_alphaBehavior;
-    bool m_alphaBehaviorHasBeenSet;
+    bool m_alphaBehaviorHasBeenSet = false;
 
     ColorSpace m_colorSpace;
-    bool m_colorSpaceHasBeenSet;
+    bool m_colorSpaceHasBeenSet = false;
 
     ColorSpaceUsage m_colorSpaceUsage;
-    bool m_colorSpaceUsageHasBeenSet;
+    bool m_colorSpaceUsageHasBeenSet = false;
 
     EmbeddedTimecodeOverride m_embeddedTimecodeOverride;
-    bool m_embeddedTimecodeOverrideHasBeenSet;
+    bool m_embeddedTimecodeOverrideHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
-    bool m_hdr10MetadataHasBeenSet;
+    bool m_hdr10MetadataHasBeenSet = false;
 
     PadVideo m_padVideo;
-    bool m_padVideoHasBeenSet;
+    bool m_padVideoHasBeenSet = false;
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     InputRotate m_rotate;
-    bool m_rotateHasBeenSet;
+    bool m_rotateHasBeenSet = false;
 
     InputSampleRange m_sampleRange;
-    bool m_sampleRangeHasBeenSet;
+    bool m_sampleRangeHasBeenSet = false;
   };
 
 } // namespace Model

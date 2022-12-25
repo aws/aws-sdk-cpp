@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Recommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Recommendation
+  class Recommendation
   {
   public:
-    Recommendation();
-    Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Recommendation();
+    AWS_CODEGURUPROFILER_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,22 +249,22 @@ namespace Model
   private:
 
     int m_allMatchesCount;
-    bool m_allMatchesCountHasBeenSet;
+    bool m_allMatchesCountHasBeenSet = false;
 
     double m_allMatchesSum;
-    bool m_allMatchesSumHasBeenSet;
+    bool m_allMatchesSumHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Pattern m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Vector<Match> m_topMatches;
-    bool m_topMatchesHasBeenSet;
+    bool m_topMatchesHasBeenSet = false;
   };
 
 } // namespace Model

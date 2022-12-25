@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API GetCoreNetworkPolicyRequest : public NetworkManagerRequest
+  class GetCoreNetworkPolicyRequest : public NetworkManagerRequest
   {
   public:
-    GetCoreNetworkPolicyRequest();
+    AWS_NETWORKMANAGER_API GetCoreNetworkPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCoreNetworkPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_NETWORKMANAGER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     int m_policyVersionId;
-    bool m_policyVersionIdHasBeenSet;
+    bool m_policyVersionIdHasBeenSet = false;
 
     CoreNetworkPolicyAlias m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

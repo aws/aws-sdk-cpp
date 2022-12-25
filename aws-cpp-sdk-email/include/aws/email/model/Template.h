@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Template">AWS API
    * Reference</a></p>
    */
-  class AWS_SES_API Template
+  class Template
   {
   public:
-    Template();
-    Template(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Template& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Template();
+    AWS_SES_API Template(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Template& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_subjectPart;
-    bool m_subjectPartHasBeenSet;
+    bool m_subjectPartHasBeenSet = false;
 
     Aws::String m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
 
     Aws::String m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
   };
 
 } // namespace Model

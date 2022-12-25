@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Deinterlacer">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Deinterlacer
+  class Deinterlacer
   {
   public:
-    Deinterlacer();
-    Deinterlacer(Aws::Utils::Json::JsonView jsonValue);
-    Deinterlacer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Deinterlacer();
+    AWS_MEDIACONVERT_API Deinterlacer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Deinterlacer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,13 +218,13 @@ namespace Model
   private:
 
     DeinterlaceAlgorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     DeinterlacerControl m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     DeinterlacerMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

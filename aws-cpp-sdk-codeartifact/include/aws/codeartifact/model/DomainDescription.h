@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API DomainDescription
+  class DomainDescription
   {
   public:
-    DomainDescription();
-    DomainDescription(Aws::Utils::Json::JsonView jsonValue);
-    DomainDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API DomainDescription();
+    AWS_CODEARTIFACT_API DomainDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API DomainDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -368,31 +368,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DomainStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     int m_repositoryCount;
-    bool m_repositoryCountHasBeenSet;
+    bool m_repositoryCountHasBeenSet = false;
 
     long long m_assetSizeBytes;
-    bool m_assetSizeBytesHasBeenSet;
+    bool m_assetSizeBytesHasBeenSet = false;
 
     Aws::String m_s3BucketArn;
-    bool m_s3BucketArnHasBeenSet;
+    bool m_s3BucketArnHasBeenSet = false;
   };
 
 } // namespace Model

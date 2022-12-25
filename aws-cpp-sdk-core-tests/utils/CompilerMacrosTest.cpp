@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 AWS_DEPRECATED("Test a deprecated function")
 static bool foo()

@@ -51,7 +51,7 @@ ParameterGroupStatus& ParameterGroupStatus::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NodeIdsToReboot"))
   {
-    Array<JsonView> nodeIdsToRebootJsonList = jsonValue.GetArray("NodeIdsToReboot");
+    Aws::Utils::Array<JsonView> nodeIdsToRebootJsonList = jsonValue.GetArray("NodeIdsToReboot");
     for(unsigned nodeIdsToRebootIndex = 0; nodeIdsToRebootIndex < nodeIdsToRebootJsonList.GetLength(); ++nodeIdsToRebootIndex)
     {
       m_nodeIdsToReboot.push_back(nodeIdsToRebootJsonList[nodeIdsToRebootIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue ParameterGroupStatus::Jsonize() const
 
   if(m_nodeIdsToRebootHasBeenSet)
   {
-   Array<JsonValue> nodeIdsToRebootJsonList(m_nodeIdsToReboot.size());
+   Aws::Utils::Array<JsonValue> nodeIdsToRebootJsonList(m_nodeIdsToReboot.size());
    for(unsigned nodeIdsToRebootIndex = 0; nodeIdsToRebootIndex < nodeIdsToRebootJsonList.GetLength(); ++nodeIdsToRebootIndex)
    {
      nodeIdsToRebootJsonList[nodeIdsToRebootIndex].AsString(m_nodeIdsToReboot[nodeIdsToRebootIndex]);

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkAccountInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkAccountInfo
+  class SidewalkAccountInfo
   {
   public:
-    SidewalkAccountInfo();
-    SidewalkAccountInfo(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkAccountInfo();
+    AWS_IOTWIRELESS_API SidewalkAccountInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_appServerPrivateKey;
-    bool m_appServerPrivateKeyHasBeenSet;
+    bool m_appServerPrivateKeyHasBeenSet = false;
   };
 
 } // namespace Model

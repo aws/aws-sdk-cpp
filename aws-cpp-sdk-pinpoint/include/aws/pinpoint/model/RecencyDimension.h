@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RecencyDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API RecencyDimension
+  class RecencyDimension
   {
   public:
-    RecencyDimension();
-    RecencyDimension(Aws::Utils::Json::JsonView jsonValue);
-    RecencyDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API RecencyDimension();
+    AWS_PINPOINT_API RecencyDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API RecencyDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Duration m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     RecencyType m_recencyType;
-    bool m_recencyTypeHasBeenSet;
+    bool m_recencyTypeHasBeenSet = false;
   };
 
 } // namespace Model

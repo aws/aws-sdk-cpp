@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Information about alarms associated with the deployment group.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about alarms associated with a deployment or deployment
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AlarmConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API AlarmConfiguration
+  class AlarmConfiguration
   {
   public:
-    AlarmConfiguration();
-    AlarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AlarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API AlarmConfiguration();
+    AWS_CODEDEPLOY_API AlarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API AlarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,63 +102,63 @@ namespace Model
 
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline AlarmConfiguration& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline AlarmConfiguration& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline AlarmConfiguration& AddAlarms(const Alarm& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 
     /**
-     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
-     * can be added to a deployment group.</p>
+     * <p>A list of alarms configured for the deployment or deployment group. A maximum
+     * of 10 alarms can be added.</p>
      */
     inline AlarmConfiguration& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_ignorePollAlarmFailure;
-    bool m_ignorePollAlarmFailureHasBeenSet;
+    bool m_ignorePollAlarmFailureHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

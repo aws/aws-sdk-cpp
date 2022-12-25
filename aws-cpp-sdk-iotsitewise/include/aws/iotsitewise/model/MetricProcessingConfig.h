@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/MetricProcessingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API MetricProcessingConfig
+  class MetricProcessingConfig
   {
   public:
-    MetricProcessingConfig();
-    MetricProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
-    MetricProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API MetricProcessingConfig();
+    AWS_IOTSITEWISE_API MetricProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API MetricProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ComputeLocation m_computeLocation;
-    bool m_computeLocationHasBeenSet;
+    bool m_computeLocationHasBeenSet = false;
   };
 
 } // namespace Model

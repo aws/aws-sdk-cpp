@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCacheRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API GetApiCacheRequest : public AppSyncRequest
+  class GetApiCacheRequest : public AppSyncRequest
   {
   public:
-    GetApiCacheRequest();
+    AWS_APPSYNC_API GetApiCacheRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetApiCache"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
   };
 
 } // namespace Model

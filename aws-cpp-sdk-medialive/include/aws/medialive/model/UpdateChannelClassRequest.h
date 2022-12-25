@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelClassRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UpdateChannelClassRequest : public MediaLiveRequest
+  class UpdateChannelClassRequest : public MediaLiveRequest
   {
   public:
-    UpdateChannelClassRequest();
+    AWS_MEDIALIVE_API UpdateChannelClassRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateChannelClass"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ChannelClass m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::Vector<OutputDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

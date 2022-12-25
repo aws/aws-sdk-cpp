@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API CreateServiceTemplateRequest : public ProtonRequest
+  class CreateServiceTemplateRequest : public ProtonRequest
   {
   public:
-    CreateServiceTemplateRequest();
+    AWS_PROTON_API CreateServiceTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateServiceTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -206,8 +206,8 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Provisioning& GetPipelineProvisioning() const{ return m_pipelineProvisioning; }
 
@@ -216,8 +216,8 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool PipelineProvisioningHasBeenSet() const { return m_pipelineProvisioningHasBeenSet; }
 
@@ -226,8 +226,8 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(const Provisioning& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = value; }
 
@@ -236,8 +236,8 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetPipelineProvisioning(Provisioning&& value) { m_pipelineProvisioningHasBeenSet = true; m_pipelineProvisioning = std::move(value); }
 
@@ -246,8 +246,8 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(const Provisioning& value) { SetPipelineProvisioning(value); return *this;}
 
@@ -256,119 +256,95 @@ namespace Model
      * parameter is included, it indicates that an Proton service pipeline <i>isn't</i>
      * provided for your service. After it's included, it <i>can't</i> be changed. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service
-     * template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+     * bundles</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithPipelineProvisioning(Provisioning&& value) { SetPipelineProvisioning(std::move(value)); return *this;}
 
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service template. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service template. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceTemplateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Provisioning m_pipelineProvisioning;
-    bool m_pipelineProvisioningHasBeenSet;
+    bool m_pipelineProvisioningHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

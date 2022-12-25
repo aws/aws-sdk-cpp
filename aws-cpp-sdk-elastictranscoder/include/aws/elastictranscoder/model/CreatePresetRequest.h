@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePresetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API CreatePresetRequest : public ElasticTranscoderRequest
+  class CreatePresetRequest : public ElasticTranscoderRequest
   {
   public:
-    CreatePresetRequest();
+    AWS_ELASTICTRANSCODER_API CreatePresetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePreset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICTRANSCODER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     VideoParameters m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     AudioParameters m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     Thumbnails m_thumbnails;
-    bool m_thumbnailsHasBeenSet;
+    bool m_thumbnailsHasBeenSet = false;
   };
 
 } // namespace Model

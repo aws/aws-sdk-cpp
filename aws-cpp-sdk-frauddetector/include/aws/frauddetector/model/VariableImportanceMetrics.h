@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/VariableImportanceMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API VariableImportanceMetrics
+  class VariableImportanceMetrics
   {
   public:
-    VariableImportanceMetrics();
-    VariableImportanceMetrics(Aws::Utils::Json::JsonView jsonValue);
-    VariableImportanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API VariableImportanceMetrics();
+    AWS_FRAUDDETECTOR_API VariableImportanceMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API VariableImportanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<LogOddsMetric> m_logOddsMetrics;
-    bool m_logOddsMetricsHasBeenSet;
+    bool m_logOddsMetricsHasBeenSet = false;
   };
 
 } // namespace Model

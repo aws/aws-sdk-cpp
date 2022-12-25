@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ConnectionHttpParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API ConnectionHttpParameters
+  class ConnectionHttpParameters
   {
   public:
-    ConnectionHttpParameters();
-    ConnectionHttpParameters(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionHttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API ConnectionHttpParameters();
+    AWS_CLOUDWATCHEVENTS_API ConnectionHttpParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API ConnectionHttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<ConnectionHeaderParameter> m_headerParameters;
-    bool m_headerParametersHasBeenSet;
+    bool m_headerParametersHasBeenSet = false;
 
     Aws::Vector<ConnectionQueryStringParameter> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
 
     Aws::Vector<ConnectionBodyParameter> m_bodyParameters;
-    bool m_bodyParametersHasBeenSet;
+    bool m_bodyParametersHasBeenSet = false;
   };
 
 } // namespace Model

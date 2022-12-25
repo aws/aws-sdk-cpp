@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ResetActionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API ResetActionConfiguration
+  class ResetActionConfiguration
   {
   public:
-    ResetActionConfiguration();
-    ResetActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ResetActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API ResetActionConfiguration();
+    AWS_IOTEVENTSDATA_API ResetActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API ResetActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
   };
 
 } // namespace Model

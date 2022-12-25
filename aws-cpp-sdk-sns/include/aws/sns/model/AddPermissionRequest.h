@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SNS_API AddPermissionRequest : public SNSRequest
+  class AddPermissionRequest : public SNSRequest
   {
   public:
-    AddPermissionRequest();
+    AWS_SNS_API AddPermissionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddPermission"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
   };
 
 } // namespace Model

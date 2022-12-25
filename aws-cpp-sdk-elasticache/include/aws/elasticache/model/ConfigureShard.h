@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ConfigureShard">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ConfigureShard
+  class ConfigureShard
   {
   public:
-    ConfigureShard();
-    ConfigureShard(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConfigureShard& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ConfigureShard();
+    AWS_ELASTICACHE_API ConfigureShard(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ConfigureShard& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -303,16 +303,16 @@ namespace Model
   private:
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
 
     int m_newReplicaCount;
-    bool m_newReplicaCountHasBeenSet;
+    bool m_newReplicaCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
-    bool m_preferredAvailabilityZonesHasBeenSet;
+    bool m_preferredAvailabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_preferredOutpostArns;
-    bool m_preferredOutpostArnsHasBeenSet;
+    bool m_preferredOutpostArnsHasBeenSet = false;
   };
 
 } // namespace Model

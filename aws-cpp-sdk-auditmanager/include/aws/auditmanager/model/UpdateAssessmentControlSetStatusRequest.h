@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusRequest : public AuditManagerRequest
+  class UpdateAssessmentControlSetStatusRequest : public AuditManagerRequest
   {
   public:
-    UpdateAssessmentControlSetStatusRequest();
+    AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssessmentControlSetStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     ControlSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

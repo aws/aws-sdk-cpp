@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TransformOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TransformOperation
+  class TransformOperation
   {
   public:
-    TransformOperation();
-    TransformOperation(Aws::Utils::Json::JsonView jsonValue);
-    TransformOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TransformOperation();
+    AWS_QUICKSIGHT_API TransformOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TransformOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,25 +264,25 @@ namespace Model
   private:
 
     ProjectOperation m_projectOperation;
-    bool m_projectOperationHasBeenSet;
+    bool m_projectOperationHasBeenSet = false;
 
     FilterOperation m_filterOperation;
-    bool m_filterOperationHasBeenSet;
+    bool m_filterOperationHasBeenSet = false;
 
     CreateColumnsOperation m_createColumnsOperation;
-    bool m_createColumnsOperationHasBeenSet;
+    bool m_createColumnsOperationHasBeenSet = false;
 
     RenameColumnOperation m_renameColumnOperation;
-    bool m_renameColumnOperationHasBeenSet;
+    bool m_renameColumnOperationHasBeenSet = false;
 
     CastColumnTypeOperation m_castColumnTypeOperation;
-    bool m_castColumnTypeOperationHasBeenSet;
+    bool m_castColumnTypeOperationHasBeenSet = false;
 
     TagColumnOperation m_tagColumnOperation;
-    bool m_tagColumnOperationHasBeenSet;
+    bool m_tagColumnOperationHasBeenSet = false;
 
     UntagColumnOperation m_untagColumnOperation;
-    bool m_untagColumnOperationHasBeenSet;
+    bool m_untagColumnOperationHasBeenSet = false;
   };
 
 } // namespace Model

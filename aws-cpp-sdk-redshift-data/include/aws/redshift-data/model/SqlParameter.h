@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SqlParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API SqlParameter
+  class SqlParameter
   {
   public:
-    SqlParameter();
-    SqlParameter(Aws::Utils::Json::JsonView jsonValue);
-    SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter();
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -104,7 +104,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -128,7 +128,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -136,7 +136,7 @@ namespace Model
 
     /**
      * <p>The value of the parameter. Amazon Redshift implicitly converts to the proper
-     * data type. For more inforation, see <a
+     * data type. For more information, see <a
      * href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      * types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
      */
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

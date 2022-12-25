@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FindMatchesTaskRunProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FindMatchesTaskRunProperties
+  class FindMatchesTaskRunProperties
   {
   public:
-    FindMatchesTaskRunProperties();
-    FindMatchesTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
-    FindMatchesTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FindMatchesTaskRunProperties();
+    AWS_GLUE_API FindMatchesTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FindMatchesTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobRunId;
-    bool m_jobRunIdHasBeenSet;
+    bool m_jobRunIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListRepositoriesResult
+  class ListRepositoriesResult
   {
   public:
-    ListRepositoriesResult();
-    ListRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListRepositoriesResult();
+    AWS_PROTON_API ListRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline const Aws::Vector<RepositorySummary>& GetRepositories() const{ return m_repositories; }
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline void SetRepositories(const Aws::Vector<RepositorySummary>& value) { m_repositories = value; }
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline void SetRepositories(Aws::Vector<RepositorySummary>&& value) { m_repositories = std::move(value); }
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline ListRepositoriesResult& WithRepositories(const Aws::Vector<RepositorySummary>& value) { SetRepositories(value); return *this;}
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline ListRepositoriesResult& WithRepositories(Aws::Vector<RepositorySummary>&& value) { SetRepositories(std::move(value)); return *this;}
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline ListRepositoriesResult& AddRepositories(const RepositorySummary& value) { m_repositories.push_back(value); return *this; }
 
     /**
-     * <p>An array of repositories.</p>
+     * <p>An array of repository links.</p>
      */
     inline ListRepositoriesResult& AddRepositories(RepositorySummary&& value) { m_repositories.push_back(std::move(value)); return *this; }
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgeModelStat">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgeModelStat
+  class EdgeModelStat
   {
   public:
-    EdgeModelStat();
-    EdgeModelStat(Aws::Utils::Json::JsonView jsonValue);
-    EdgeModelStat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgeModelStat();
+    AWS_SAGEMAKER_API EdgeModelStat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgeModelStat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,22 +221,22 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     long long m_offlineDeviceCount;
-    bool m_offlineDeviceCountHasBeenSet;
+    bool m_offlineDeviceCountHasBeenSet = false;
 
     long long m_connectedDeviceCount;
-    bool m_connectedDeviceCountHasBeenSet;
+    bool m_connectedDeviceCountHasBeenSet = false;
 
     long long m_activeDeviceCount;
-    bool m_activeDeviceCountHasBeenSet;
+    bool m_activeDeviceCountHasBeenSet = false;
 
     long long m_samplingDeviceCount;
-    bool m_samplingDeviceCountHasBeenSet;
+    bool m_samplingDeviceCountHasBeenSet = false;
   };
 
 } // namespace Model

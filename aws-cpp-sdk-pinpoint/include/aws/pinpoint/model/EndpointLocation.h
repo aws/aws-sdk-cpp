@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointLocation
+  class EndpointLocation
   {
   public:
-    EndpointLocation();
-    EndpointLocation(Aws::Utils::Json::JsonView jsonValue);
-    EndpointLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointLocation();
+    AWS_PINPOINT_API EndpointLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,22 +270,22 @@ namespace Model
   private:
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     double m_latitude;
-    bool m_latitudeHasBeenSet;
+    bool m_latitudeHasBeenSet = false;
 
     double m_longitude;
-    bool m_longitudeHasBeenSet;
+    bool m_longitudeHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

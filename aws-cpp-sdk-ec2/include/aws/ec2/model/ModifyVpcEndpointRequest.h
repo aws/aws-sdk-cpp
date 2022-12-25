@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ModifyVpcEndpointRequest : public EC2Request
+  class ModifyVpcEndpointRequest : public EC2Request
   {
   public:
-    ModifyVpcEndpointRequest();
+    AWS_EC2_API ModifyVpcEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyVpcEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -618,43 +618,43 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     bool m_resetPolicy;
-    bool m_resetPolicyHasBeenSet;
+    bool m_resetPolicyHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addRouteTableIds;
-    bool m_addRouteTableIdsHasBeenSet;
+    bool m_addRouteTableIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeRouteTableIds;
-    bool m_removeRouteTableIdsHasBeenSet;
+    bool m_removeRouteTableIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSubnetIds;
-    bool m_addSubnetIdsHasBeenSet;
+    bool m_addSubnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSubnetIds;
-    bool m_removeSubnetIdsHasBeenSet;
+    bool m_removeSubnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSecurityGroupIds;
-    bool m_addSecurityGroupIdsHasBeenSet;
+    bool m_addSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSecurityGroupIds;
-    bool m_removeSecurityGroupIdsHasBeenSet;
+    bool m_removeSecurityGroupIdsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     DnsOptionsSpecification m_dnsOptions;
-    bool m_dnsOptionsHasBeenSet;
+    bool m_dnsOptionsHasBeenSet = false;
 
     bool m_privateDnsEnabled;
-    bool m_privateDnsEnabledHasBeenSet;
+    bool m_privateDnsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

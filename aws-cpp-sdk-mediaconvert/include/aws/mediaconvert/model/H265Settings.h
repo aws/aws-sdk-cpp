@@ -53,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/H265Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API H265Settings
+  class H265Settings
   {
   public:
-    H265Settings();
-    H265Settings(Aws::Utils::Json::JsonView jsonValue);
-    H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API H265Settings();
+    AWS_MEDIACONVERT_API H265Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -885,6 +885,39 @@ namespace Model
      * setting GOP size (GopSize).
      */
     inline H265Settings& WithGopSizeUnits(H265GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
+
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline int GetHrdBufferFinalFillPercentage() const{ return m_hrdBufferFinalFillPercentage; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline bool HrdBufferFinalFillPercentageHasBeenSet() const { return m_hrdBufferFinalFillPercentageHasBeenSet; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline void SetHrdBufferFinalFillPercentage(int value) { m_hrdBufferFinalFillPercentageHasBeenSet = true; m_hrdBufferFinalFillPercentage = value; }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum
+     * percentage of the HRD buffer that's available at the end of each encoded video
+     * segment. For the best video quality: Set to 0 or leave blank to automatically
+     * determine the final buffer fill percentage.
+     */
+    inline H265Settings& WithHrdBufferFinalFillPercentage(int value) { SetHrdBufferFinalFillPercentage(value); return *this;}
 
 
     /**
@@ -2254,124 +2287,127 @@ namespace Model
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     H265AlternateTransferFunctionSei m_alternateTransferFunctionSei;
-    bool m_alternateTransferFunctionSeiHasBeenSet;
+    bool m_alternateTransferFunctionSeiHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     H265CodecLevel m_codecLevel;
-    bool m_codecLevelHasBeenSet;
+    bool m_codecLevelHasBeenSet = false;
 
     H265CodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     H265DynamicSubGop m_dynamicSubGop;
-    bool m_dynamicSubGopHasBeenSet;
+    bool m_dynamicSubGopHasBeenSet = false;
 
     H265FlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
-    bool m_flickerAdaptiveQuantizationHasBeenSet;
+    bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
     H265FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     H265FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     H265GopBReference m_gopBReference;
-    bool m_gopBReferenceHasBeenSet;
+    bool m_gopBReferenceHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     H265GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
+
+    int m_hrdBufferFinalFillPercentage;
+    bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
     int m_hrdBufferInitialFillPercentage;
-    bool m_hrdBufferInitialFillPercentageHasBeenSet;
+    bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     H265InterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_minIInterval;
-    bool m_minIIntervalHasBeenSet;
+    bool m_minIIntervalHasBeenSet = false;
 
     int m_numberBFramesBetweenReferenceFrames;
-    bool m_numberBFramesBetweenReferenceFramesHasBeenSet;
+    bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
     int m_numberReferenceFrames;
-    bool m_numberReferenceFramesHasBeenSet;
+    bool m_numberReferenceFramesHasBeenSet = false;
 
     H265ParControl m_parControl;
-    bool m_parControlHasBeenSet;
+    bool m_parControlHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     H265QualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     H265QvbrSettings m_qvbrSettings;
-    bool m_qvbrSettingsHasBeenSet;
+    bool m_qvbrSettingsHasBeenSet = false;
 
     H265RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     H265SampleAdaptiveOffsetFilterMode m_sampleAdaptiveOffsetFilterMode;
-    bool m_sampleAdaptiveOffsetFilterModeHasBeenSet;
+    bool m_sampleAdaptiveOffsetFilterModeHasBeenSet = false;
 
     H265ScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     H265SceneChangeDetect m_sceneChangeDetect;
-    bool m_sceneChangeDetectHasBeenSet;
+    bool m_sceneChangeDetectHasBeenSet = false;
 
     int m_slices;
-    bool m_slicesHasBeenSet;
+    bool m_slicesHasBeenSet = false;
 
     H265SlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     H265SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
-    bool m_spatialAdaptiveQuantizationHasBeenSet;
+    bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
     H265Telecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
 
     H265TemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
-    bool m_temporalAdaptiveQuantizationHasBeenSet;
+    bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
     H265TemporalIds m_temporalIds;
-    bool m_temporalIdsHasBeenSet;
+    bool m_temporalIdsHasBeenSet = false;
 
     H265Tiles m_tiles;
-    bool m_tilesHasBeenSet;
+    bool m_tilesHasBeenSet = false;
 
     H265UnregisteredSeiTimecode m_unregisteredSeiTimecode;
-    bool m_unregisteredSeiTimecodeHasBeenSet;
+    bool m_unregisteredSeiTimecodeHasBeenSet = false;
 
     H265WriteMp4PackagingType m_writeMp4PackagingType;
-    bool m_writeMp4PackagingTypeHasBeenSet;
+    bool m_writeMp4PackagingTypeHasBeenSet = false;
   };
 
 } // namespace Model

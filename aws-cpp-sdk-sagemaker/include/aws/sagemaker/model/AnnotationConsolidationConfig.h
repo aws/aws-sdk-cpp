@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AnnotationConsolidationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AnnotationConsolidationConfig
+  class AnnotationConsolidationConfig
   {
   public:
-    AnnotationConsolidationConfig();
-    AnnotationConsolidationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AnnotationConsolidationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AnnotationConsolidationConfig();
+    AWS_SAGEMAKER_API AnnotationConsolidationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AnnotationConsolidationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -4889,7 +4889,7 @@ namespace Model
   private:
 
     Aws::String m_annotationConsolidationLambdaArn;
-    bool m_annotationConsolidationLambdaArnHasBeenSet;
+    bool m_annotationConsolidationLambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

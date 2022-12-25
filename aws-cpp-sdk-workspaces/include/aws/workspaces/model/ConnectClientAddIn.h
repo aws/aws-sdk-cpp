@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ConnectClientAddIn">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ConnectClientAddIn
+  class ConnectClientAddIn
   {
   public:
-    ConnectClientAddIn();
-    ConnectClientAddIn(Aws::Utils::Json::JsonView jsonValue);
-    ConnectClientAddIn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ConnectClientAddIn();
+    AWS_WORKSPACES_API ConnectClientAddIn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ConnectClientAddIn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_addInId;
-    bool m_addInIdHasBeenSet;
+    bool m_addInIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_uRL;
-    bool m_uRLHasBeenSet;
+    bool m_uRLHasBeenSet = false;
   };
 
 } // namespace Model

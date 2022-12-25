@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateContainerServiceRequest : public LightsailRequest
+  class CreateContainerServiceRequest : public LightsailRequest
   {
   public:
-    CreateContainerServiceRequest();
+    AWS_LIGHTSAIL_API CreateContainerServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateContainerService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -46,8 +46,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -64,8 +65,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -82,8 +84,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -100,8 +103,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -118,8 +122,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -136,8 +141,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -154,8 +160,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -172,8 +179,9 @@ namespace Model
      * a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
      * If the name of your container service is <code>container-service-1</code>, and
-     * it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the
-     * domain for your container service will be like the following example:
+     * it's located in the US East (Ohio) Amazon Web Services Region
+     * (<code>us-east-2</code>), then the domain for your container service will be
+     * like the following example:
      * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p> <p>The following are the requirements for container service names:</p> <ul>
      * <li> <p>Must be unique within each Amazon Web Services Region in your Lightsail
@@ -689,25 +697,25 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ContainerServicePowerName m_power;
-    bool m_powerHasBeenSet;
+    bool m_powerHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-    bool m_publicDomainNamesHasBeenSet;
+    bool m_publicDomainNamesHasBeenSet = false;
 
     ContainerServiceDeploymentRequest m_deployment;
-    bool m_deploymentHasBeenSet;
+    bool m_deploymentHasBeenSet = false;
 
     PrivateRegistryAccessRequest m_privateRegistryAccess;
-    bool m_privateRegistryAccessHasBeenSet;
+    bool m_privateRegistryAccessHasBeenSet = false;
   };
 
 } // namespace Model

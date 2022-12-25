@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeSnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NodeSnapshot
+  class NodeSnapshot
   {
   public:
-    NodeSnapshot();
-    NodeSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeSnapshot();
+    AWS_ELASTICACHE_API NodeSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -307,25 +307,25 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
 
     Aws::String m_cacheNodeId;
-    bool m_cacheNodeIdHasBeenSet;
+    bool m_cacheNodeIdHasBeenSet = false;
 
     NodeGroupConfiguration m_nodeGroupConfiguration;
-    bool m_nodeGroupConfigurationHasBeenSet;
+    bool m_nodeGroupConfigurationHasBeenSet = false;
 
     Aws::String m_cacheSize;
-    bool m_cacheSizeHasBeenSet;
+    bool m_cacheSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_cacheNodeCreateTime;
-    bool m_cacheNodeCreateTimeHasBeenSet;
+    bool m_cacheNodeCreateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SearchExpression
+  class SearchExpression
   {
   public:
-    SearchExpression();
-    SearchExpression(Aws::Utils::Json::JsonView jsonValue);
-    SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SearchExpression();
+    AWS_SAGEMAKER_API SearchExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<NestedFilters> m_nestedFilters;
-    bool m_nestedFiltersHasBeenSet;
+    bool m_nestedFiltersHasBeenSet = false;
 
     Aws::Vector<SearchExpression> m_subExpressions;
-    bool m_subExpressionsHasBeenSet;
+    bool m_subExpressionsHasBeenSet = false;
 
     BooleanOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

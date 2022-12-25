@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/PermissionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API PermissionInfo
+  class PermissionInfo
   {
   public:
-    PermissionInfo();
-    PermissionInfo(Aws::Utils::Json::JsonView jsonValue);
-    PermissionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API PermissionInfo();
+    AWS_WORKDOCS_API PermissionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API PermissionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     RolePermissionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

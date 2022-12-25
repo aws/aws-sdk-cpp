@@ -42,7 +42,7 @@ ApplicationSource& ApplicationSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagFilters"))
   {
-    Array<JsonView> tagFiltersJsonList = jsonValue.GetArray("TagFilters");
+    Aws::Utils::Array<JsonView> tagFiltersJsonList = jsonValue.GetArray("TagFilters");
     for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
     {
       m_tagFilters.push_back(tagFiltersJsonList[tagFiltersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ApplicationSource::Jsonize() const
 
   if(m_tagFiltersHasBeenSet)
   {
-   Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
+   Aws::Utils::Array<JsonValue> tagFiltersJsonList(m_tagFilters.size());
    for(unsigned tagFiltersIndex = 0; tagFiltersIndex < tagFiltersJsonList.GetLength(); ++tagFiltersIndex)
    {
      tagFiltersJsonList[tagFiltersIndex].AsObject(m_tagFilters[tagFiltersIndex].Jsonize());

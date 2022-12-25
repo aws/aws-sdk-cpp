@@ -40,10 +40,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API SelectObjectContentRequest : public S3CrtRequest
+  class SelectObjectContentRequest : public S3CrtRequest
   {
   public:
-    SelectObjectContentRequest();
+    AWS_S3CRT_API SelectObjectContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,11 +51,11 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SelectObjectContent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CRT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -77,6 +77,10 @@ namespace Model
      */
     inline SelectObjectContentRequest& WithEventStreamHandler(const SelectObjectContentHandler& value) { SetEventStreamHandler(value); return *this; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The S3 bucket.</p>
@@ -746,45 +750,45 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     ExpressionType m_expressionType;
-    bool m_expressionTypeHasBeenSet;
+    bool m_expressionTypeHasBeenSet = false;
 
     RequestProgress m_requestProgress;
-    bool m_requestProgressHasBeenSet;
+    bool m_requestProgressHasBeenSet = false;
 
     InputSerialization m_inputSerialization;
-    bool m_inputSerializationHasBeenSet;
+    bool m_inputSerializationHasBeenSet = false;
 
     OutputSerialization m_outputSerialization;
-    bool m_outputSerializationHasBeenSet;
+    bool m_outputSerializationHasBeenSet = false;
 
     ScanRange m_scanRange;
-    bool m_scanRangeHasBeenSet;
+    bool m_scanRangeHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    bool m_customizedAccessLogTagHasBeenSet = false;
     SelectObjectContentHandler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
   };
 

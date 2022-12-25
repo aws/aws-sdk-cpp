@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ResourceTags">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ResourceTags
+  class ResourceTags
   {
   public:
-    ResourceTags();
-    ResourceTags(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTags& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ResourceTags();
+    AWS_MEDIACONVERT_API ResourceTags(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ResourceTags& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

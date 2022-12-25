@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReplacementEmailContent">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ReplacementEmailContent
+  class ReplacementEmailContent
   {
   public:
-    ReplacementEmailContent();
-    ReplacementEmailContent(Aws::Utils::Json::JsonView jsonValue);
-    ReplacementEmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ReplacementEmailContent();
+    AWS_SESV2_API ReplacementEmailContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ReplacementEmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     ReplacementTemplate m_replacementTemplate;
-    bool m_replacementTemplateHasBeenSet;
+    bool m_replacementTemplateHasBeenSet = false;
   };
 
 } // namespace Model

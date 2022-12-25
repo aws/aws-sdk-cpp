@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3SourceAdditionalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3SourceAdditionalOptions
+  class S3SourceAdditionalOptions
   {
   public:
-    S3SourceAdditionalOptions();
-    S3SourceAdditionalOptions(Aws::Utils::Json::JsonView jsonValue);
-    S3SourceAdditionalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3SourceAdditionalOptions();
+    AWS_GLUE_API S3SourceAdditionalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3SourceAdditionalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     long long m_boundedSize;
-    bool m_boundedSizeHasBeenSet;
+    bool m_boundedSizeHasBeenSet = false;
 
     long long m_boundedFiles;
-    bool m_boundedFilesHasBeenSet;
+    bool m_boundedFilesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Lambda was unable to decrypt the environment variables because KMS access was
+   * <p>Lambda couldn't decrypt the environment variables because KMS access was
    * denied. Check the Lambda function's KMS permissions.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/KMSAccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API KMSAccessDeniedException
+  class KMSAccessDeniedException
   {
   public:
-    KMSAccessDeniedException();
-    KMSAccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    KMSAccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API KMSAccessDeniedException();
+    AWS_LAMBDA_API KMSAccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API KMSAccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

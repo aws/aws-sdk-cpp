@@ -58,6 +58,13 @@ namespace Aws
         static const int TIME_TO_TEST_NAME_HASH = HashingUtils::HashString("TIME_TO_TEST_NAME");
         static const int TIME_TO_PROCEDURE_NAME_HASH = HashingUtils::HashString("TIME_TO_PROCEDURE_NAME");
         static const int TIME_TO_TREATMENT_NAME_HASH = HashingUtils::HashString("TIME_TO_TREATMENT_NAME");
+        static const int AMOUNT_HASH = HashingUtils::HashString("AMOUNT");
+        static const int GENDER_HASH = HashingUtils::HashString("GENDER");
+        static const int RACE_ETHNICITY_HASH = HashingUtils::HashString("RACE_ETHNICITY");
+        static const int ALLERGIES_HASH = HashingUtils::HashString("ALLERGIES");
+        static const int TOBACCO_USE_HASH = HashingUtils::HashString("TOBACCO_USE");
+        static const int ALCOHOL_CONSUMPTION_HASH = HashingUtils::HashString("ALCOHOL_CONSUMPTION");
+        static const int REC_DRUG_USE_HASH = HashingUtils::HashString("REC_DRUG_USE");
 
 
         EntitySubType GetEntitySubTypeForName(const Aws::String& name)
@@ -215,6 +222,34 @@ namespace Aws
           {
             return EntitySubType::TIME_TO_TREATMENT_NAME;
           }
+          else if (hashCode == AMOUNT_HASH)
+          {
+            return EntitySubType::AMOUNT;
+          }
+          else if (hashCode == GENDER_HASH)
+          {
+            return EntitySubType::GENDER;
+          }
+          else if (hashCode == RACE_ETHNICITY_HASH)
+          {
+            return EntitySubType::RACE_ETHNICITY;
+          }
+          else if (hashCode == ALLERGIES_HASH)
+          {
+            return EntitySubType::ALLERGIES;
+          }
+          else if (hashCode == TOBACCO_USE_HASH)
+          {
+            return EntitySubType::TOBACCO_USE;
+          }
+          else if (hashCode == ALCOHOL_CONSUMPTION_HASH)
+          {
+            return EntitySubType::ALCOHOL_CONSUMPTION;
+          }
+          else if (hashCode == REC_DRUG_USE_HASH)
+          {
+            return EntitySubType::REC_DRUG_USE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -305,6 +340,20 @@ namespace Aws
             return "TIME_TO_PROCEDURE_NAME";
           case EntitySubType::TIME_TO_TREATMENT_NAME:
             return "TIME_TO_TREATMENT_NAME";
+          case EntitySubType::AMOUNT:
+            return "AMOUNT";
+          case EntitySubType::GENDER:
+            return "GENDER";
+          case EntitySubType::RACE_ETHNICITY:
+            return "RACE_ETHNICITY";
+          case EntitySubType::ALLERGIES:
+            return "ALLERGIES";
+          case EntitySubType::TOBACCO_USE:
+            return "TOBACCO_USE";
+          case EntitySubType::ALCOHOL_CONSUMPTION:
+            return "ALCOHOL_CONSUMPTION";
+          case EntitySubType::REC_DRUG_USE:
+            return "REC_DRUG_USE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

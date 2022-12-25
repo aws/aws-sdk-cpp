@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MultiConditionalBranch">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API MultiConditionalBranch
+  class MultiConditionalBranch
   {
   public:
-    MultiConditionalBranch();
-    MultiConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
-    MultiConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API MultiConditionalBranch();
+    AWS_PINPOINT_API MultiConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API MultiConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     SimpleCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
   };
 
 } // namespace Model

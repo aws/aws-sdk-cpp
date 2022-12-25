@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigRequest : public CognitoIdentityProviderRequest
+  class SetUserPoolMfaConfigRequest : public CognitoIdentityProviderRequest
   {
   public:
-    SetUserPoolMfaConfigRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUserPoolMfaConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetUserPoolMfaConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only
      * users who have set up an MFA factor can sign in. To learn more, see <a
-     * href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
      * Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
      * <ul> <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li> <li>
      * <p> <code>ON</code> MFA is required for all users to sign in.</p> </li> <li> <p>
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     SmsMfaConfigType m_smsMfaConfiguration;
-    bool m_smsMfaConfigurationHasBeenSet;
+    bool m_smsMfaConfigurationHasBeenSet = false;
 
     SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
-    bool m_softwareTokenMfaConfigurationHasBeenSet;
+    bool m_softwareTokenMfaConfigurationHasBeenSet = false;
 
     UserPoolMfaType m_mfaConfiguration;
-    bool m_mfaConfigurationHasBeenSet;
+    bool m_mfaConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

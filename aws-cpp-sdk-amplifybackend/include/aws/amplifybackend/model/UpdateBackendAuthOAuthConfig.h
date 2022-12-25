@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthOAuthConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthOAuthConfig
+  class UpdateBackendAuthOAuthConfig
   {
   public:
-    UpdateBackendAuthOAuthConfig();
-    UpdateBackendAuthOAuthConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthOAuthConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthOAuthConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthOAuthConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthOAuthConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -308,22 +308,22 @@ namespace Model
   private:
 
     Aws::String m_domainPrefix;
-    bool m_domainPrefixHasBeenSet;
+    bool m_domainPrefixHasBeenSet = false;
 
     OAuthGrantType m_oAuthGrantType;
-    bool m_oAuthGrantTypeHasBeenSet;
+    bool m_oAuthGrantTypeHasBeenSet = false;
 
     Aws::Vector<OAuthScopesElement> m_oAuthScopes;
-    bool m_oAuthScopesHasBeenSet;
+    bool m_oAuthScopesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_redirectSignInURIs;
-    bool m_redirectSignInURIsHasBeenSet;
+    bool m_redirectSignInURIsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_redirectSignOutURIs;
-    bool m_redirectSignOutURIsHasBeenSet;
+    bool m_redirectSignOutURIsHasBeenSet = false;
 
     SocialProviderSettings m_socialProviderSettings;
-    bool m_socialProviderSettingsHasBeenSet;
+    bool m_socialProviderSettingsHasBeenSet = false;
   };
 
 } // namespace Model

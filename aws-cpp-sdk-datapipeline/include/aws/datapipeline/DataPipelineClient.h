@@ -5,152 +5,16 @@
 
 #pragma once
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
-#include <aws/datapipeline/DataPipelineErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/datapipeline/model/ActivatePipelineResult.h>
-#include <aws/datapipeline/model/AddTagsResult.h>
-#include <aws/datapipeline/model/CreatePipelineResult.h>
-#include <aws/datapipeline/model/DeactivatePipelineResult.h>
-#include <aws/datapipeline/model/DescribeObjectsResult.h>
-#include <aws/datapipeline/model/DescribePipelinesResult.h>
-#include <aws/datapipeline/model/EvaluateExpressionResult.h>
-#include <aws/datapipeline/model/GetPipelineDefinitionResult.h>
-#include <aws/datapipeline/model/ListPipelinesResult.h>
-#include <aws/datapipeline/model/PollForTaskResult.h>
-#include <aws/datapipeline/model/PutPipelineDefinitionResult.h>
-#include <aws/datapipeline/model/QueryObjectsResult.h>
-#include <aws/datapipeline/model/RemoveTagsResult.h>
-#include <aws/datapipeline/model/ReportTaskProgressResult.h>
-#include <aws/datapipeline/model/ReportTaskRunnerHeartbeatResult.h>
-#include <aws/datapipeline/model/SetTaskStatusResult.h>
-#include <aws/datapipeline/model/ValidatePipelineDefinitionResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/datapipeline/DataPipelineServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace DataPipeline
 {
-
-namespace Model
-{
-        class ActivatePipelineRequest;
-        class AddTagsRequest;
-        class CreatePipelineRequest;
-        class DeactivatePipelineRequest;
-        class DeletePipelineRequest;
-        class DescribeObjectsRequest;
-        class DescribePipelinesRequest;
-        class EvaluateExpressionRequest;
-        class GetPipelineDefinitionRequest;
-        class ListPipelinesRequest;
-        class PollForTaskRequest;
-        class PutPipelineDefinitionRequest;
-        class QueryObjectsRequest;
-        class RemoveTagsRequest;
-        class ReportTaskProgressRequest;
-        class ReportTaskRunnerHeartbeatRequest;
-        class SetStatusRequest;
-        class SetTaskStatusRequest;
-        class ValidatePipelineDefinitionRequest;
-
-        typedef Aws::Utils::Outcome<ActivatePipelineResult, DataPipelineError> ActivatePipelineOutcome;
-        typedef Aws::Utils::Outcome<AddTagsResult, DataPipelineError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, DataPipelineError> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeactivatePipelineResult, DataPipelineError> DeactivatePipelineOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DataPipelineError> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DescribeObjectsResult, DataPipelineError> DescribeObjectsOutcome;
-        typedef Aws::Utils::Outcome<DescribePipelinesResult, DataPipelineError> DescribePipelinesOutcome;
-        typedef Aws::Utils::Outcome<EvaluateExpressionResult, DataPipelineError> EvaluateExpressionOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineDefinitionResult, DataPipelineError> GetPipelineDefinitionOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, DataPipelineError> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<PollForTaskResult, DataPipelineError> PollForTaskOutcome;
-        typedef Aws::Utils::Outcome<PutPipelineDefinitionResult, DataPipelineError> PutPipelineDefinitionOutcome;
-        typedef Aws::Utils::Outcome<QueryObjectsResult, DataPipelineError> QueryObjectsOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, DataPipelineError> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<ReportTaskProgressResult, DataPipelineError> ReportTaskProgressOutcome;
-        typedef Aws::Utils::Outcome<ReportTaskRunnerHeartbeatResult, DataPipelineError> ReportTaskRunnerHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DataPipelineError> SetStatusOutcome;
-        typedef Aws::Utils::Outcome<SetTaskStatusResult, DataPipelineError> SetTaskStatusOutcome;
-        typedef Aws::Utils::Outcome<ValidatePipelineDefinitionResult, DataPipelineError> ValidatePipelineDefinitionOutcome;
-
-        typedef std::future<ActivatePipelineOutcome> ActivatePipelineOutcomeCallable;
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<CreatePipelineOutcome> CreatePipelineOutcomeCallable;
-        typedef std::future<DeactivatePipelineOutcome> DeactivatePipelineOutcomeCallable;
-        typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
-        typedef std::future<DescribeObjectsOutcome> DescribeObjectsOutcomeCallable;
-        typedef std::future<DescribePipelinesOutcome> DescribePipelinesOutcomeCallable;
-        typedef std::future<EvaluateExpressionOutcome> EvaluateExpressionOutcomeCallable;
-        typedef std::future<GetPipelineDefinitionOutcome> GetPipelineDefinitionOutcomeCallable;
-        typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
-        typedef std::future<PollForTaskOutcome> PollForTaskOutcomeCallable;
-        typedef std::future<PutPipelineDefinitionOutcome> PutPipelineDefinitionOutcomeCallable;
-        typedef std::future<QueryObjectsOutcome> QueryObjectsOutcomeCallable;
-        typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
-        typedef std::future<ReportTaskProgressOutcome> ReportTaskProgressOutcomeCallable;
-        typedef std::future<ReportTaskRunnerHeartbeatOutcome> ReportTaskRunnerHeartbeatOutcomeCallable;
-        typedef std::future<SetStatusOutcome> SetStatusOutcomeCallable;
-        typedef std::future<SetTaskStatusOutcome> SetTaskStatusOutcomeCallable;
-        typedef std::future<ValidatePipelineDefinitionOutcome> ValidatePipelineDefinitionOutcomeCallable;
-} // namespace Model
-
-  class DataPipelineClient;
-
-    typedef std::function<void(const DataPipelineClient*, const Model::ActivatePipelineRequest&, const Model::ActivatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivatePipelineResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePipelineResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::DeactivatePipelineRequest&, const Model::DeactivatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivatePipelineResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::DescribeObjectsRequest&, const Model::DescribeObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObjectsResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::DescribePipelinesRequest&, const Model::DescribePipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePipelinesResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::EvaluateExpressionRequest&, const Model::EvaluateExpressionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvaluateExpressionResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::GetPipelineDefinitionRequest&, const Model::GetPipelineDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineDefinitionResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::PollForTaskRequest&, const Model::PollForTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForTaskResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::PutPipelineDefinitionRequest&, const Model::PutPipelineDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPipelineDefinitionResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::QueryObjectsRequest&, const Model::QueryObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryObjectsResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::ReportTaskProgressRequest&, const Model::ReportTaskProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportTaskProgressResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::ReportTaskRunnerHeartbeatRequest&, const Model::ReportTaskRunnerHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportTaskRunnerHeartbeatResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::SetStatusRequest&, const Model::SetStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStatusResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::SetTaskStatusRequest&, const Model::SetTaskStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTaskStatusResponseReceivedHandler;
-    typedef std::function<void(const DataPipelineClient*, const Model::ValidatePipelineDefinitionRequest&, const Model::ValidatePipelineDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePipelineDefinitionResponseReceivedHandler;
-
   /**
    * <p>AWS Data Pipeline configures and manages a data-driven workflow called a
    * pipeline. AWS Data Pipeline handles the details of scheduling and ensuring that
@@ -171,32 +35,60 @@ namespace Model
    * web service as it does so. When the task is done, the task runner reports the
    * final success or failure of the task to the web service.</p>
    */
-  class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient
+  class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DataPipelineClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DataPipelineClient(const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration(),
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DataPipelineClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DataPipelineClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DataPipelineClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DataPipelineClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DataPipelineClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DataPipelineClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DataPipelineClient();
-
 
         /**
          * <p>Validates the specified pipeline and starts processing pipeline tasks. If the
@@ -604,31 +496,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DataPipelineEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ActivatePipelineAsyncHelper(const Model::ActivatePipelineRequest& request, const ActivatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePipelineAsyncHelper(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeactivatePipelineAsyncHelper(const Model::DeactivatePipelineRequest& request, const DeactivatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePipelineAsyncHelper(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeObjectsAsyncHelper(const Model::DescribeObjectsRequest& request, const DescribeObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePipelinesAsyncHelper(const Model::DescribePipelinesRequest& request, const DescribePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EvaluateExpressionAsyncHelper(const Model::EvaluateExpressionRequest& request, const EvaluateExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPipelineDefinitionAsyncHelper(const Model::GetPipelineDefinitionRequest& request, const GetPipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PollForTaskAsyncHelper(const Model::PollForTaskRequest& request, const PollForTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPipelineDefinitionAsyncHelper(const Model::PutPipelineDefinitionRequest& request, const PutPipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void QueryObjectsAsyncHelper(const Model::QueryObjectsRequest& request, const QueryObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReportTaskProgressAsyncHelper(const Model::ReportTaskProgressRequest& request, const ReportTaskProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReportTaskRunnerHeartbeatAsyncHelper(const Model::ReportTaskRunnerHeartbeatRequest& request, const ReportTaskRunnerHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetStatusAsyncHelper(const Model::SetStatusRequest& request, const SetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetTaskStatusAsyncHelper(const Model::SetTaskStatusRequest& request, const SetTaskStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ValidatePipelineDefinitionAsyncHelper(const Model::ValidatePipelineDefinitionRequest& request, const ValidatePipelineDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;
+      void init(const DataPipelineClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DataPipelineClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DataPipelineEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DataPipeline

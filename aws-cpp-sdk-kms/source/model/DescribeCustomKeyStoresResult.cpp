@@ -32,7 +32,7 @@ DescribeCustomKeyStoresResult& DescribeCustomKeyStoresResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomKeyStores"))
   {
-    Array<JsonView> customKeyStoresJsonList = jsonValue.GetArray("CustomKeyStores");
+    Aws::Utils::Array<JsonView> customKeyStoresJsonList = jsonValue.GetArray("CustomKeyStores");
     for(unsigned customKeyStoresIndex = 0; customKeyStoresIndex < customKeyStoresJsonList.GetLength(); ++customKeyStoresIndex)
     {
       m_customKeyStores.push_back(customKeyStoresJsonList[customKeyStoresIndex].AsObject());

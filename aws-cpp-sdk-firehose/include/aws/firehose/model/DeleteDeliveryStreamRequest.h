@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIREHOSE_API DeleteDeliveryStreamRequest : public FirehoseRequest
+  class DeleteDeliveryStreamRequest : public FirehoseRequest
   {
   public:
-    DeleteDeliveryStreamRequest();
+    AWS_FIREHOSE_API DeleteDeliveryStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDeliveryStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIREHOSE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FIREHOSE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -83,8 +83,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline bool GetAllowForceDelete() const{ return m_allowForceDelete; }
 
@@ -96,8 +97,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline bool AllowForceDeleteHasBeenSet() const { return m_allowForceDeleteHasBeenSet; }
 
@@ -109,8 +111,9 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline void SetAllowForceDelete(bool value) { m_allowForceDeleteHasBeenSet = true; m_allowForceDelete = value; }
 
@@ -122,18 +125,19 @@ namespace Model
      * use the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
      * operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to
-     * retire the grant happens due to an AWS KMS issue, Kinesis Data Firehose keeps
-     * retrying the delete operation.</p> <p>The default value is false.</p>
+     * retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data
+     * Firehose keeps retrying the delete operation.</p> <p>The default value is
+     * false.</p>
      */
     inline DeleteDeliveryStreamRequest& WithAllowForceDelete(bool value) { SetAllowForceDelete(value); return *this;}
 
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     bool m_allowForceDelete;
-    bool m_allowForceDeleteHasBeenSet;
+    bool m_allowForceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

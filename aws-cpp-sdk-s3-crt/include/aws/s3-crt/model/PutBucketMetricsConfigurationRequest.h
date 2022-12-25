@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API PutBucketMetricsConfigurationRequest : public S3CrtRequest
+  class PutBucketMetricsConfigurationRequest : public S3CrtRequest
   {
   public:
-    PutBucketMetricsConfigurationRequest();
+    AWS_S3CRT_API PutBucketMetricsConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutBucketMetricsConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CRT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The name of the bucket for which the metrics configuration is set.</p>
@@ -254,19 +258,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MetricsConfiguration m_metricsConfiguration;
-    bool m_metricsConfigurationHasBeenSet;
+    bool m_metricsConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

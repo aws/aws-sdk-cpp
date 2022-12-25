@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter
+  class CacheNodeTypeSpecificParameter
   {
   public:
-    CacheNodeTypeSpecificParameter();
-    CacheNodeTypeSpecificParameter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheNodeTypeSpecificParameter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter();
+    AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheNodeTypeSpecificParameter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -426,31 +426,31 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
 
     Aws::Vector<CacheNodeTypeSpecificValue> m_cacheNodeTypeSpecificValues;
-    bool m_cacheNodeTypeSpecificValuesHasBeenSet;
+    bool m_cacheNodeTypeSpecificValuesHasBeenSet = false;
 
     ChangeType m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
   };
 
 } // namespace Model

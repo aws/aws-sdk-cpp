@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/IotEventsDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API IotEventsDestinationConfiguration
+  class IotEventsDestinationConfiguration
   {
   public:
-    IotEventsDestinationConfiguration();
-    IotEventsDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    IotEventsDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API IotEventsDestinationConfiguration();
+    AWS_IOTANALYTICS_API IotEventsDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API IotEventsDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

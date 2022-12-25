@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributesParts">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API GetObjectAttributesParts
+  class GetObjectAttributesParts
   {
   public:
-    GetObjectAttributesParts();
-    GetObjectAttributesParts(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GetObjectAttributesParts& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API GetObjectAttributesParts();
+    AWS_S3_API GetObjectAttributesParts(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API GetObjectAttributesParts& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -215,22 +215,22 @@ namespace Model
   private:
 
     int m_totalPartsCount;
-    bool m_totalPartsCountHasBeenSet;
+    bool m_totalPartsCountHasBeenSet = false;
 
     int m_partNumberMarker;
-    bool m_partNumberMarkerHasBeenSet;
+    bool m_partNumberMarkerHasBeenSet = false;
 
     int m_nextPartNumberMarker;
-    bool m_nextPartNumberMarkerHasBeenSet;
+    bool m_nextPartNumberMarkerHasBeenSet = false;
 
     int m_maxParts;
-    bool m_maxPartsHasBeenSet;
+    bool m_maxPartsHasBeenSet = false;
 
     bool m_isTruncated;
-    bool m_isTruncatedHasBeenSet;
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::Vector<ObjectPart> m_parts;
-    bool m_partsHasBeenSet;
+    bool m_partsHasBeenSet = false;
   };
 
 } // namespace Model

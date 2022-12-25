@@ -5,203 +5,74 @@
 
 #pragma once
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
-#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/route53-recovery-control-config/model/CreateClusterResult.h>
-#include <aws/route53-recovery-control-config/model/CreateControlPanelResult.h>
-#include <aws/route53-recovery-control-config/model/CreateRoutingControlResult.h>
-#include <aws/route53-recovery-control-config/model/CreateSafetyRuleResult.h>
-#include <aws/route53-recovery-control-config/model/DeleteClusterResult.h>
-#include <aws/route53-recovery-control-config/model/DeleteControlPanelResult.h>
-#include <aws/route53-recovery-control-config/model/DeleteRoutingControlResult.h>
-#include <aws/route53-recovery-control-config/model/DeleteSafetyRuleResult.h>
-#include <aws/route53-recovery-control-config/model/DescribeClusterResult.h>
-#include <aws/route53-recovery-control-config/model/DescribeControlPanelResult.h>
-#include <aws/route53-recovery-control-config/model/DescribeRoutingControlResult.h>
-#include <aws/route53-recovery-control-config/model/DescribeSafetyRuleResult.h>
-#include <aws/route53-recovery-control-config/model/ListAssociatedRoute53HealthChecksResult.h>
-#include <aws/route53-recovery-control-config/model/ListClustersResult.h>
-#include <aws/route53-recovery-control-config/model/ListControlPanelsResult.h>
-#include <aws/route53-recovery-control-config/model/ListRoutingControlsResult.h>
-#include <aws/route53-recovery-control-config/model/ListSafetyRulesResult.h>
-#include <aws/route53-recovery-control-config/model/ListTagsForResourceResult.h>
-#include <aws/route53-recovery-control-config/model/TagResourceResult.h>
-#include <aws/route53-recovery-control-config/model/UntagResourceResult.h>
-#include <aws/route53-recovery-control-config/model/UpdateControlPanelResult.h>
-#include <aws/route53-recovery-control-config/model/UpdateRoutingControlResult.h>
-#include <aws/route53-recovery-control-config/model/UpdateSafetyRuleResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Route53RecoveryControlConfig
 {
-
-namespace Model
-{
-        class CreateClusterRequest;
-        class CreateControlPanelRequest;
-        class CreateRoutingControlRequest;
-        class CreateSafetyRuleRequest;
-        class DeleteClusterRequest;
-        class DeleteControlPanelRequest;
-        class DeleteRoutingControlRequest;
-        class DeleteSafetyRuleRequest;
-        class DescribeClusterRequest;
-        class DescribeControlPanelRequest;
-        class DescribeRoutingControlRequest;
-        class DescribeSafetyRuleRequest;
-        class ListAssociatedRoute53HealthChecksRequest;
-        class ListClustersRequest;
-        class ListControlPanelsRequest;
-        class ListRoutingControlsRequest;
-        class ListSafetyRulesRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateControlPanelRequest;
-        class UpdateRoutingControlRequest;
-        class UpdateSafetyRuleRequest;
-
-        typedef Aws::Utils::Outcome<CreateClusterResult, Route53RecoveryControlConfigError> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateControlPanelResult, Route53RecoveryControlConfigError> CreateControlPanelOutcome;
-        typedef Aws::Utils::Outcome<CreateRoutingControlResult, Route53RecoveryControlConfigError> CreateRoutingControlOutcome;
-        typedef Aws::Utils::Outcome<CreateSafetyRuleResult, Route53RecoveryControlConfigError> CreateSafetyRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, Route53RecoveryControlConfigError> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteControlPanelResult, Route53RecoveryControlConfigError> DeleteControlPanelOutcome;
-        typedef Aws::Utils::Outcome<DeleteRoutingControlResult, Route53RecoveryControlConfigError> DeleteRoutingControlOutcome;
-        typedef Aws::Utils::Outcome<DeleteSafetyRuleResult, Route53RecoveryControlConfigError> DeleteSafetyRuleOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterResult, Route53RecoveryControlConfigError> DescribeClusterOutcome;
-        typedef Aws::Utils::Outcome<DescribeControlPanelResult, Route53RecoveryControlConfigError> DescribeControlPanelOutcome;
-        typedef Aws::Utils::Outcome<DescribeRoutingControlResult, Route53RecoveryControlConfigError> DescribeRoutingControlOutcome;
-        typedef Aws::Utils::Outcome<DescribeSafetyRuleResult, Route53RecoveryControlConfigError> DescribeSafetyRuleOutcome;
-        typedef Aws::Utils::Outcome<ListAssociatedRoute53HealthChecksResult, Route53RecoveryControlConfigError> ListAssociatedRoute53HealthChecksOutcome;
-        typedef Aws::Utils::Outcome<ListClustersResult, Route53RecoveryControlConfigError> ListClustersOutcome;
-        typedef Aws::Utils::Outcome<ListControlPanelsResult, Route53RecoveryControlConfigError> ListControlPanelsOutcome;
-        typedef Aws::Utils::Outcome<ListRoutingControlsResult, Route53RecoveryControlConfigError> ListRoutingControlsOutcome;
-        typedef Aws::Utils::Outcome<ListSafetyRulesResult, Route53RecoveryControlConfigError> ListSafetyRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53RecoveryControlConfigError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Route53RecoveryControlConfigError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Route53RecoveryControlConfigError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateControlPanelResult, Route53RecoveryControlConfigError> UpdateControlPanelOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoutingControlResult, Route53RecoveryControlConfigError> UpdateRoutingControlOutcome;
-        typedef Aws::Utils::Outcome<UpdateSafetyRuleResult, Route53RecoveryControlConfigError> UpdateSafetyRuleOutcome;
-
-        typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-        typedef std::future<CreateControlPanelOutcome> CreateControlPanelOutcomeCallable;
-        typedef std::future<CreateRoutingControlOutcome> CreateRoutingControlOutcomeCallable;
-        typedef std::future<CreateSafetyRuleOutcome> CreateSafetyRuleOutcomeCallable;
-        typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-        typedef std::future<DeleteControlPanelOutcome> DeleteControlPanelOutcomeCallable;
-        typedef std::future<DeleteRoutingControlOutcome> DeleteRoutingControlOutcomeCallable;
-        typedef std::future<DeleteSafetyRuleOutcome> DeleteSafetyRuleOutcomeCallable;
-        typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
-        typedef std::future<DescribeControlPanelOutcome> DescribeControlPanelOutcomeCallable;
-        typedef std::future<DescribeRoutingControlOutcome> DescribeRoutingControlOutcomeCallable;
-        typedef std::future<DescribeSafetyRuleOutcome> DescribeSafetyRuleOutcomeCallable;
-        typedef std::future<ListAssociatedRoute53HealthChecksOutcome> ListAssociatedRoute53HealthChecksOutcomeCallable;
-        typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
-        typedef std::future<ListControlPanelsOutcome> ListControlPanelsOutcomeCallable;
-        typedef std::future<ListRoutingControlsOutcome> ListRoutingControlsOutcomeCallable;
-        typedef std::future<ListSafetyRulesOutcome> ListSafetyRulesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateControlPanelOutcome> UpdateControlPanelOutcomeCallable;
-        typedef std::future<UpdateRoutingControlOutcome> UpdateRoutingControlOutcomeCallable;
-        typedef std::future<UpdateSafetyRuleOutcome> UpdateSafetyRuleOutcomeCallable;
-} // namespace Model
-
-  class Route53RecoveryControlConfigClient;
-
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::CreateControlPanelRequest&, const Model::CreateControlPanelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateControlPanelResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::CreateRoutingControlRequest&, const Model::CreateRoutingControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingControlResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::CreateSafetyRuleRequest&, const Model::CreateSafetyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSafetyRuleResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DeleteControlPanelRequest&, const Model::DeleteControlPanelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteControlPanelResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DeleteRoutingControlRequest&, const Model::DeleteRoutingControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoutingControlResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DeleteSafetyRuleRequest&, const Model::DeleteSafetyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSafetyRuleResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DescribeControlPanelRequest&, const Model::DescribeControlPanelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeControlPanelResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DescribeRoutingControlRequest&, const Model::DescribeRoutingControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRoutingControlResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::DescribeSafetyRuleRequest&, const Model::DescribeSafetyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSafetyRuleResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListAssociatedRoute53HealthChecksRequest&, const Model::ListAssociatedRoute53HealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedRoute53HealthChecksResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListControlPanelsRequest&, const Model::ListControlPanelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlPanelsResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListRoutingControlsRequest&, const Model::ListRoutingControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingControlsResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListSafetyRulesRequest&, const Model::ListSafetyRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSafetyRulesResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateControlPanelRequest&, const Model::UpdateControlPanelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateControlPanelResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateRoutingControlRequest&, const Model::UpdateRoutingControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryControlConfigClient*, const Model::UpdateSafetyRuleRequest&, const Model::UpdateSafetyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSafetyRuleResponseReceivedHandler;
-
   /**
    * <p>Recovery Control Configuration API Reference for Amazon Route 53 Application
    * Recovery Controller</p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53RecoveryControlConfigClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53RecoveryControlConfigClient(const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration(),
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53RecoveryControlConfigClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53RecoveryControlConfigClient(const Aws::Auth::AWSCredentials& credentials,
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG),
+                                           const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         Route53RecoveryControlConfigClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG),
+                                           const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53RecoveryControlConfigClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53RecoveryControlConfigClient(const Aws::Auth::AWSCredentials& credentials,
+                                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        Route53RecoveryControlConfigClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~Route53RecoveryControlConfigClient();
-
 
         /**
          * <p>Create a new cluster. A cluster is a set of redundant Regional endpoints
@@ -647,35 +518,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateControlPanelAsyncHelper(const Model::CreateControlPanelRequest& request, const CreateControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRoutingControlAsyncHelper(const Model::CreateRoutingControlRequest& request, const CreateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSafetyRuleAsyncHelper(const Model::CreateSafetyRuleRequest& request, const CreateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteControlPanelAsyncHelper(const Model::DeleteControlPanelRequest& request, const DeleteControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRoutingControlAsyncHelper(const Model::DeleteRoutingControlRequest& request, const DeleteRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSafetyRuleAsyncHelper(const Model::DeleteSafetyRuleRequest& request, const DeleteSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeControlPanelAsyncHelper(const Model::DescribeControlPanelRequest& request, const DescribeControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRoutingControlAsyncHelper(const Model::DescribeRoutingControlRequest& request, const DescribeRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSafetyRuleAsyncHelper(const Model::DescribeSafetyRuleRequest& request, const DescribeSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssociatedRoute53HealthChecksAsyncHelper(const Model::ListAssociatedRoute53HealthChecksRequest& request, const ListAssociatedRoute53HealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListControlPanelsAsyncHelper(const Model::ListControlPanelsRequest& request, const ListControlPanelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRoutingControlsAsyncHelper(const Model::ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSafetyRulesAsyncHelper(const Model::ListSafetyRulesRequest& request, const ListSafetyRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateControlPanelAsyncHelper(const Model::UpdateControlPanelRequest& request, const UpdateControlPanelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingControlAsyncHelper(const Model::UpdateRoutingControlRequest& request, const UpdateRoutingControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSafetyRuleAsyncHelper(const Model::UpdateSafetyRuleRequest& request, const UpdateSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;
+      void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53RecoveryControlConfig

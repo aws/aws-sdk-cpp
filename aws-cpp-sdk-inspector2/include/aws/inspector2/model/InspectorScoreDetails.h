@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/InspectorScoreDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API InspectorScoreDetails
+  class InspectorScoreDetails
   {
   public:
-    InspectorScoreDetails();
-    InspectorScoreDetails(Aws::Utils::Json::JsonView jsonValue);
-    InspectorScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API InspectorScoreDetails();
+    AWS_INSPECTOR2_API InspectorScoreDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API InspectorScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CvssScoreDetails m_adjustedCvss;
-    bool m_adjustedCvssHasBeenSet;
+    bool m_adjustedCvssHasBeenSet = false;
   };
 
 } // namespace Model

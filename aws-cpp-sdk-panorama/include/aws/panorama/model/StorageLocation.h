@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/StorageLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API StorageLocation
+  class StorageLocation
   {
   public:
-    StorageLocation();
-    StorageLocation(Aws::Utils::Json::JsonView jsonValue);
-    StorageLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API StorageLocation();
+    AWS_PANORAMA_API StorageLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API StorageLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_binaryPrefixLocation;
-    bool m_binaryPrefixLocationHasBeenSet;
+    bool m_binaryPrefixLocationHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_generatedPrefixLocation;
-    bool m_generatedPrefixLocationHasBeenSet;
+    bool m_generatedPrefixLocationHasBeenSet = false;
 
     Aws::String m_manifestPrefixLocation;
-    bool m_manifestPrefixLocationHasBeenSet;
+    bool m_manifestPrefixLocationHasBeenSet = false;
 
     Aws::String m_repoPrefixLocation;
-    bool m_repoPrefixLocationHasBeenSet;
+    bool m_repoPrefixLocationHasBeenSet = false;
   };
 
 } // namespace Model

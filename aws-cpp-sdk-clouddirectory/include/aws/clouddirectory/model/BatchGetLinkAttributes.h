@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetLinkAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchGetLinkAttributes
+  class BatchGetLinkAttributes
   {
   public:
-    BatchGetLinkAttributes();
-    BatchGetLinkAttributes(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetLinkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchGetLinkAttributes();
+    AWS_CLOUDDIRECTORY_API BatchGetLinkAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchGetLinkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

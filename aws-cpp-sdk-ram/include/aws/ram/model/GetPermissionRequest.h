@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API GetPermissionRequest : public RAMRequest
+  class GetPermissionRequest : public RAMRequest
   {
   public:
-    GetPermissionRequest();
+    AWS_RAM_API GetPermissionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetPermission"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_permissionArn;
-    bool m_permissionArnHasBeenSet;
+    bool m_permissionArnHasBeenSet = false;
 
     int m_permissionVersion;
-    bool m_permissionVersionHasBeenSet;
+    bool m_permissionVersionHasBeenSet = false;
   };
 
 } // namespace Model

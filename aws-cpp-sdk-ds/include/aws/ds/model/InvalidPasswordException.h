@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/InvalidPasswordException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API InvalidPasswordException
+  class InvalidPasswordException
   {
   public:
-    InvalidPasswordException();
-    InvalidPasswordException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidPasswordException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API InvalidPasswordException();
+    AWS_DIRECTORYSERVICE_API InvalidPasswordException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API InvalidPasswordException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/Task">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API Task
+  class Task
   {
   public:
-    Task();
-    Task(Aws::Utils::Json::JsonView jsonValue);
-    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API Task();
+    AWS_MIGRATIONHUB_API Task(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

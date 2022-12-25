@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GPSPointDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API GPSPointDimension
+  class GPSPointDimension
   {
   public:
-    GPSPointDimension();
-    GPSPointDimension(Aws::Utils::Json::JsonView jsonValue);
-    GPSPointDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API GPSPointDimension();
+    AWS_PINPOINT_API GPSPointDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API GPSPointDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     GPSCoordinates m_coordinates;
-    bool m_coordinatesHasBeenSet;
+    bool m_coordinatesHasBeenSet = false;
 
     double m_rangeInKilometers;
-    bool m_rangeInKilometersHasBeenSet;
+    bool m_rangeInKilometersHasBeenSet = false;
   };
 
 } // namespace Model

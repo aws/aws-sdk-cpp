@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/RuntimeVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API RuntimeVersion
+  class RuntimeVersion
   {
   public:
-    RuntimeVersion();
-    RuntimeVersion(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API RuntimeVersion();
+    AWS_SYNTHETICS_API RuntimeVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API RuntimeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_releaseDate;
-    bool m_releaseDateHasBeenSet;
+    bool m_releaseDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
   };
 
 } // namespace Model

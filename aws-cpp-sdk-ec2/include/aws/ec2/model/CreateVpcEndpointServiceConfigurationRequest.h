@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateVpcEndpointServiceConfigurationRequest : public EC2Request
+  class CreateVpcEndpointServiceConfigurationRequest : public EC2Request
   {
   public:
-    CreateVpcEndpointServiceConfigurationRequest();
+    AWS_EC2_API CreateVpcEndpointServiceConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcEndpointServiceConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -409,28 +409,28 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-    bool m_networkLoadBalancerArnsHasBeenSet;
+    bool m_networkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-    bool m_gatewayLoadBalancerArnsHasBeenSet;
+    bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedIpAddressTypes;
-    bool m_supportedIpAddressTypesHasBeenSet;
+    bool m_supportedIpAddressTypesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

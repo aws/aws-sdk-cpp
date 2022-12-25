@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TestingDataResult">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TestingDataResult
+  class TestingDataResult
   {
   public:
-    TestingDataResult();
-    TestingDataResult(Aws::Utils::Json::JsonView jsonValue);
-    TestingDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TestingDataResult();
+    AWS_REKOGNITION_API TestingDataResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TestingDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     TestingData m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     TestingData m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     ValidationData m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

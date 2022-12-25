@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformJob
+  class TransformJob
   {
   public:
-    TransformJob();
-    TransformJob(Aws::Utils::Json::JsonView jsonValue);
-    TransformJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformJob();
+    AWS_SAGEMAKER_API TransformJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -877,67 +877,67 @@ namespace Model
   private:
 
     Aws::String m_transformJobName;
-    bool m_transformJobNameHasBeenSet;
+    bool m_transformJobNameHasBeenSet = false;
 
     Aws::String m_transformJobArn;
-    bool m_transformJobArnHasBeenSet;
+    bool m_transformJobArnHasBeenSet = false;
 
     TransformJobStatus m_transformJobStatus;
-    bool m_transformJobStatusHasBeenSet;
+    bool m_transformJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     int m_maxConcurrentTransforms;
-    bool m_maxConcurrentTransformsHasBeenSet;
+    bool m_maxConcurrentTransformsHasBeenSet = false;
 
     ModelClientConfig m_modelClientConfig;
-    bool m_modelClientConfigHasBeenSet;
+    bool m_modelClientConfigHasBeenSet = false;
 
     int m_maxPayloadInMB;
-    bool m_maxPayloadInMBHasBeenSet;
+    bool m_maxPayloadInMBHasBeenSet = false;
 
     BatchStrategy m_batchStrategy;
-    bool m_batchStrategyHasBeenSet;
+    bool m_batchStrategyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     TransformInput m_transformInput;
-    bool m_transformInputHasBeenSet;
+    bool m_transformInputHasBeenSet = false;
 
     TransformOutput m_transformOutput;
-    bool m_transformOutputHasBeenSet;
+    bool m_transformOutputHasBeenSet = false;
 
     TransformResources m_transformResources;
-    bool m_transformResourcesHasBeenSet;
+    bool m_transformResourcesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_transformStartTime;
-    bool m_transformStartTimeHasBeenSet;
+    bool m_transformStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_transformEndTime;
-    bool m_transformEndTimeHasBeenSet;
+    bool m_transformEndTimeHasBeenSet = false;
 
     Aws::String m_labelingJobArn;
-    bool m_labelingJobArnHasBeenSet;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::String m_autoMLJobArn;
-    bool m_autoMLJobArnHasBeenSet;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     DataProcessing m_dataProcessing;
-    bool m_dataProcessingHasBeenSet;
+    bool m_dataProcessingHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
-    bool m_experimentConfigHasBeenSet;
+    bool m_experimentConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

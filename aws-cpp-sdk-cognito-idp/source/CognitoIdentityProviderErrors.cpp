@@ -41,6 +41,7 @@ static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswo
 static const int INVALID_LAMBDA_RESPONSE_HASH = HashingUtils::HashString("InvalidLambdaResponseException");
 static const int EXPIRED_CODE_HASH = HashingUtils::HashString("ExpiredCodeException");
 static const int UNSUPPORTED_IDENTITY_PROVIDER_HASH = HashingUtils::HashString("UnsupportedIdentityProviderException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CODE_MISMATCH_HASH = HashingUtils::HashString("CodeMismatchException");
 static const int INVALID_O_AUTH_FLOW_HASH = HashingUtils::HashString("InvalidOAuthFlowException");
 static const int USER_POOL_ADD_ON_NOT_ENABLED_HASH = HashingUtils::HashString("UserPoolAddOnNotEnabledException");
@@ -154,6 +155,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_IDENTITY_PROVIDER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_IDENTITY_PROVIDER), false);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::FORBIDDEN), false);
   }
   else if (hashCode == CODE_MISMATCH_HASH)
   {

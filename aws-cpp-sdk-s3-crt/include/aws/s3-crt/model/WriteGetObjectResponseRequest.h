@@ -31,10 +31,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API WriteGetObjectResponseRequest : public StreamingS3CrtRequest
+  class WriteGetObjectResponseRequest : public StreamingS3CrtRequest
   {
   public:
-    WriteGetObjectResponseRequest();
+    AWS_S3CRT_API WriteGetObjectResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "WriteGetObjectResponse"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_S3CRT_API bool SignBody() const override { return false; }
 
-    bool IsChunked() const override { return true; }
+    AWS_S3CRT_API bool IsChunked() const override { return true; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>Route prefix to the HTTP URL generated.</p>
@@ -2070,122 +2074,122 @@ namespace Model
   private:
 
     Aws::String m_requestRoute;
-    bool m_requestRouteHasBeenSet;
+    bool m_requestRouteHasBeenSet = false;
 
     Aws::String m_requestToken;
-    bool m_requestTokenHasBeenSet;
+    bool m_requestTokenHasBeenSet = false;
 
 
     int m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_acceptRanges;
-    bool m_acceptRangesHasBeenSet;
+    bool m_acceptRangesHasBeenSet = false;
 
     Aws::String m_cacheControl;
-    bool m_cacheControlHasBeenSet;
+    bool m_cacheControlHasBeenSet = false;
 
     Aws::String m_contentDisposition;
-    bool m_contentDispositionHasBeenSet;
+    bool m_contentDispositionHasBeenSet = false;
 
     Aws::String m_contentEncoding;
-    bool m_contentEncodingHasBeenSet;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::String m_contentLanguage;
-    bool m_contentLanguageHasBeenSet;
+    bool m_contentLanguageHasBeenSet = false;
 
     long long m_contentLength;
-    bool m_contentLengthHasBeenSet;
+    bool m_contentLengthHasBeenSet = false;
 
     Aws::String m_contentRange;
-    bool m_contentRangeHasBeenSet;
+    bool m_contentRangeHasBeenSet = false;
 
     Aws::String m_checksumCRC32;
-    bool m_checksumCRC32HasBeenSet;
+    bool m_checksumCRC32HasBeenSet = false;
 
     Aws::String m_checksumCRC32C;
-    bool m_checksumCRC32CHasBeenSet;
+    bool m_checksumCRC32CHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
-    bool m_checksumSHA1HasBeenSet;
+    bool m_checksumSHA1HasBeenSet = false;
 
     Aws::String m_checksumSHA256;
-    bool m_checksumSHA256HasBeenSet;
+    bool m_checksumSHA256HasBeenSet = false;
 
     bool m_deleteMarker;
-    bool m_deleteMarkerHasBeenSet;
+    bool m_deleteMarkerHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     Aws::Utils::DateTime m_expires;
-    bool m_expiresHasBeenSet;
+    bool m_expiresHasBeenSet = false;
 
     Aws::String m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     int m_missingMeta;
-    bool m_missingMetaHasBeenSet;
+    bool m_missingMetaHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     ObjectLockMode m_objectLockMode;
-    bool m_objectLockModeHasBeenSet;
+    bool m_objectLockModeHasBeenSet = false;
 
     ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
-    bool m_objectLockLegalHoldStatusHasBeenSet;
+    bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
-    bool m_objectLockRetainUntilDateHasBeenSet;
+    bool m_objectLockRetainUntilDateHasBeenSet = false;
 
     int m_partsCount;
-    bool m_partsCountHasBeenSet;
+    bool m_partsCountHasBeenSet = false;
 
     ReplicationStatus m_replicationStatus;
-    bool m_replicationStatusHasBeenSet;
+    bool m_replicationStatusHasBeenSet = false;
 
     RequestCharged m_requestCharged;
-    bool m_requestChargedHasBeenSet;
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_restore;
-    bool m_restoreHasBeenSet;
+    bool m_restoreHasBeenSet = false;
 
     ServerSideEncryption m_serverSideEncryption;
-    bool m_serverSideEncryptionHasBeenSet;
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSEKMSKeyId;
-    bool m_sSEKMSKeyIdHasBeenSet;
+    bool m_sSEKMSKeyIdHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     int m_tagCount;
-    bool m_tagCountHasBeenSet;
+    bool m_tagCountHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     bool m_bucketKeyEnabled;
-    bool m_bucketKeyEnabledHasBeenSet;
+    bool m_bucketKeyEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

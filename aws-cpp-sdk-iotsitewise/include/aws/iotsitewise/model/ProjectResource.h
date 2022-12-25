@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ProjectResource">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ProjectResource
+  class ProjectResource
   {
   public:
-    ProjectResource();
-    ProjectResource(Aws::Utils::Json::JsonView jsonValue);
-    ProjectResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ProjectResource();
+    AWS_IOTSITEWISE_API ProjectResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ProjectResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

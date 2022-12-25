@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalableTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScalableTarget
+  class ScalableTarget
   {
   public:
-    ScalableTarget();
-    ScalableTarget(Aws::Utils::Json::JsonView jsonValue);
-    ScalableTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget();
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -945,28 +945,28 @@ namespace Model
   private:
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SuspendedState m_suspendedState;
-    bool m_suspendedStateHasBeenSet;
+    bool m_suspendedStateHasBeenSet = false;
   };
 
 } // namespace Model

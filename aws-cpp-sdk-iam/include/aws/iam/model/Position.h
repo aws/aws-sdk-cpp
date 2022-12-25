@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Position">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API Position
+  class Position
   {
   public:
-    Position();
-    Position(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Position& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Position();
+    AWS_IAM_API Position(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Position& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_line;
-    bool m_lineHasBeenSet;
+    bool m_lineHasBeenSet = false;
 
     int m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
   };
 
 } // namespace Model

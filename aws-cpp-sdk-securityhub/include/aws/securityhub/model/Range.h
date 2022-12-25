@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Range">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Range
+  class Range
   {
   public:
-    Range();
-    Range(Aws::Utils::Json::JsonView jsonValue);
-    Range& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Range();
+    AWS_SECURITYHUB_API Range(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,13 +113,13 @@ namespace Model
   private:
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     long long m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     long long m_startColumn;
-    bool m_startColumnHasBeenSet;
+    bool m_startColumnHasBeenSet = false;
   };
 
 } // namespace Model

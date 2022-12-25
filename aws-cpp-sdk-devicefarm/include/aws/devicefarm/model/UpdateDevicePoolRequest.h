@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePoolRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API UpdateDevicePoolRequest : public DeviceFarmRequest
+  class UpdateDevicePoolRequest : public DeviceFarmRequest
   {
   public:
-    UpdateDevicePoolRequest();
+    AWS_DEVICEFARM_API UpdateDevicePoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDevicePool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -316,22 +316,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     int m_maxDevices;
-    bool m_maxDevicesHasBeenSet;
+    bool m_maxDevicesHasBeenSet = false;
 
     bool m_clearMaxDevices;
-    bool m_clearMaxDevicesHasBeenSet;
+    bool m_clearMaxDevicesHasBeenSet = false;
   };
 
 } // namespace Model

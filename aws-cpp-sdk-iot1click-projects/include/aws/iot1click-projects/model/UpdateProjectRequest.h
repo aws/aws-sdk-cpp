@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT1CLICKPROJECTS_API UpdateProjectRequest : public IoT1ClickProjectsRequest
+  class UpdateProjectRequest : public IoT1ClickProjectsRequest
   {
   public:
-    UpdateProjectRequest();
+    AWS_IOT1CLICKPROJECTS_API UpdateProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT1CLICKPROJECTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PlacementTemplate m_placementTemplate;
-    bool m_placementTemplateHasBeenSet;
+    bool m_placementTemplateHasBeenSet = false;
   };
 
 } // namespace Model

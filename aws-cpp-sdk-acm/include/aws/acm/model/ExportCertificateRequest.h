@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACM_API ExportCertificateRequest : public ACMRequest
+  class ExportCertificateRequest : public ACMRequest
   {
   public:
-    ExportCertificateRequest();
+    AWS_ACM_API ExportCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -101,60 +101,72 @@ namespace Model
 
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPassphrase() const{ return m_passphrase; }
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline bool PassphraseHasBeenSet() const { return m_passphraseHasBeenSet; }
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline void SetPassphrase(const Aws::Utils::CryptoBuffer& value) { m_passphraseHasBeenSet = true; m_passphrase = value; }
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline void SetPassphrase(Aws::Utils::CryptoBuffer&& value) { m_passphraseHasBeenSet = true; m_passphrase = std::move(value); }
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline ExportCertificateRequest& WithPassphrase(const Aws::Utils::CryptoBuffer& value) { SetPassphrase(value); return *this;}
 
     /**
-     * <p>Passphrase to associate with the encrypted exported private key. If you want
-     * to later decrypt the private key, you must have the passphrase. You can use the
-     * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
-     * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+     * <p>Passphrase to associate with the encrypted exported private key. </p> 
+     * <p>When creating your passphrase, you can use any ASCII character except #, $,
+     * or %.</p>  <p>If you want to later decrypt the private key, you must have
+     * the passphrase. You can use the following OpenSSL command to decrypt a private
+     * key. After entering the command, you are prompted for the passphrase.</p> <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
     inline ExportCertificateRequest& WithPassphrase(Aws::Utils::CryptoBuffer&& value) { SetPassphrase(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_passphrase;
-    bool m_passphraseHasBeenSet;
+    bool m_passphraseHasBeenSet = false;
   };
 
 } // namespace Model

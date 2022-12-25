@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/AutoMLResult">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API AutoMLResult
+  class AutoMLResult
   {
   public:
-    AutoMLResult();
-    AutoMLResult(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API AutoMLResult();
+    AWS_PERSONALIZE_API AutoMLResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API AutoMLResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_bestRecipeArn;
-    bool m_bestRecipeArnHasBeenSet;
+    bool m_bestRecipeArnHasBeenSet = false;
   };
 
 } // namespace Model

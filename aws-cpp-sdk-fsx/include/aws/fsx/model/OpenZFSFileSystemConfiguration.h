@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSFileSystemConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSFileSystemConfiguration
+  class OpenZFSFileSystemConfiguration
   {
   public:
-    OpenZFSFileSystemConfiguration();
-    OpenZFSFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSFileSystemConfiguration();
+    AWS_FSX_API OpenZFSFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -169,69 +169,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline const OpenZFSDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline void SetDeploymentType(const OpenZFSDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline void SetDeploymentType(OpenZFSDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline OpenZFSFileSystemConfiguration& WithDeploymentType(const OpenZFSDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports
-     * <code>SINGLE_AZ_1</code>. <code>SINGLE_AZ_1</code> is a file system configured
-     * for a single Availability Zone (AZ) of redundancy. </p>
+     * <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS
+     * supports&#x2028; <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
      */
     inline OpenZFSFileSystemConfiguration& WithDeploymentType(OpenZFSDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * (MBps).</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * (MBps).</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * (MBps).</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * (MBps).</p>
      */
     inline OpenZFSFileSystemConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -323,31 +317,31 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     bool m_copyTagsToVolumes;
-    bool m_copyTagsToVolumesHasBeenSet;
+    bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OpenZFSDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     Aws::String m_rootVolumeId;
-    bool m_rootVolumeIdHasBeenSet;
+    bool m_rootVolumeIdHasBeenSet = false;
   };
 
 } // namespace Model

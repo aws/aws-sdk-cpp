@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AuthenticateOidcActionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API AuthenticateOidcActionConfig
+  class AuthenticateOidcActionConfig
   {
   public:
-    AuthenticateOidcActionConfig();
-    AuthenticateOidcActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AuthenticateOidcActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API AuthenticateOidcActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API AuthenticateOidcActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API AuthenticateOidcActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -628,40 +628,40 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_authorizationEndpoint;
-    bool m_authorizationEndpointHasBeenSet;
+    bool m_authorizationEndpointHasBeenSet = false;
 
     Aws::String m_tokenEndpoint;
-    bool m_tokenEndpointHasBeenSet;
+    bool m_tokenEndpointHasBeenSet = false;
 
     Aws::String m_userInfoEndpoint;
-    bool m_userInfoEndpointHasBeenSet;
+    bool m_userInfoEndpointHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_sessionCookieName;
-    bool m_sessionCookieNameHasBeenSet;
+    bool m_sessionCookieNameHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     long long m_sessionTimeout;
-    bool m_sessionTimeoutHasBeenSet;
+    bool m_sessionTimeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
-    bool m_authenticationRequestExtraParamsHasBeenSet;
+    bool m_authenticationRequestExtraParamsHasBeenSet = false;
 
     AuthenticateOidcActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
-    bool m_onUnauthenticatedRequestHasBeenSet;
+    bool m_onUnauthenticatedRequestHasBeenSet = false;
 
     bool m_useExistingClientSecret;
-    bool m_useExistingClientSecretHasBeenSet;
+    bool m_useExistingClientSecretHasBeenSet = false;
   };
 
 } // namespace Model

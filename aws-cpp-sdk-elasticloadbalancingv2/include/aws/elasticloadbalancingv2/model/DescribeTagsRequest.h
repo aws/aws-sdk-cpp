@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCINGV2_API DescribeTagsRequest : public ElasticLoadBalancingv2Request
+  class DescribeTagsRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    DescribeTagsRequest();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTagsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeTags"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCINGV2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCINGV2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
   };
 
 } // namespace Model

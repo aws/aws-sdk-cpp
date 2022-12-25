@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoBlackFailoverSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VideoBlackFailoverSettings
+  class VideoBlackFailoverSettings
   {
   public:
-    VideoBlackFailoverSettings();
-    VideoBlackFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
-    VideoBlackFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VideoBlackFailoverSettings();
+    AWS_MEDIALIVE_API VideoBlackFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VideoBlackFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     double m_blackDetectThreshold;
-    bool m_blackDetectThresholdHasBeenSet;
+    bool m_blackDetectThresholdHasBeenSet = false;
 
     int m_videoBlackThresholdMsec;
-    bool m_videoBlackThresholdMsecHasBeenSet;
+    bool m_videoBlackThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PolicyComplianceStatus
+  class PolicyComplianceStatus
   {
   public:
-    PolicyComplianceStatus();
-    PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
-    PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PolicyComplianceStatus();
+    AWS_FMS_API PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_policyOwner;
-    bool m_policyOwnerHasBeenSet;
+    bool m_policyOwnerHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_memberAccount;
-    bool m_memberAccountHasBeenSet;
+    bool m_memberAccountHasBeenSet = false;
 
     Aws::Vector<EvaluationResult> m_evaluationResults;
-    bool m_evaluationResultsHasBeenSet;
+    bool m_evaluationResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
-    bool m_issueInfoMapHasBeenSet;
+    bool m_issueInfoMapHasBeenSet = false;
   };
 
 } // namespace Model

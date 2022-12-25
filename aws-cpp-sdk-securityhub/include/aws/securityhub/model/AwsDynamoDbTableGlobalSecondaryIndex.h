@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableGlobalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex
+  class AwsDynamoDbTableGlobalSecondaryIndex
   {
   public:
-    AwsDynamoDbTableGlobalSecondaryIndex();
-    AwsDynamoDbTableGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex();
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,42 +167,58 @@ namespace Model
 
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetIndexStatus() const{ return m_indexStatus; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(const Aws::String& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(Aws::String&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetIndexStatus(const char* value) { m_indexStatusHasBeenSet = true; m_indexStatus.assign(value); }
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(const Aws::String& value) { SetIndexStatus(value); return *this;}
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(Aws::String&& value) { SetIndexStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the index.</p>
+     * <p>The current status of the index.</p> <ul> <li> <p> <code>ACTIVE</code> </p>
+     * </li> <li> <p> <code>CREATING</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableGlobalSecondaryIndex& WithIndexStatus(const char* value) { SetIndexStatus(value); return *this;}
 
@@ -333,31 +349,31 @@ namespace Model
   private:
 
     bool m_backfilling;
-    bool m_backfillingHasBeenSet;
+    bool m_backfillingHasBeenSet = false;
 
     Aws::String m_indexArn;
-    bool m_indexArnHasBeenSet;
+    bool m_indexArnHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     long long m_indexSizeBytes;
-    bool m_indexSizeBytesHasBeenSet;
+    bool m_indexSizeBytesHasBeenSet = false;
 
     Aws::String m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     AwsDynamoDbTableProjection m_projection;
-    bool m_projectionHasBeenSet;
+    bool m_projectionHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

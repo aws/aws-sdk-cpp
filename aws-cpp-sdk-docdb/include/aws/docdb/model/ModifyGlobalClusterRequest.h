@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API ModifyGlobalClusterRequest : public DocDBRequest
+  class ModifyGlobalClusterRequest : public DocDBRequest
   {
   public:
-    ModifyGlobalClusterRequest();
+    AWS_DOCDB_API ModifyGlobalClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyGlobalCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DOCDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_newGlobalClusterIdentifier;
-    bool m_newGlobalClusterIdentifierHasBeenSet;
+    bool m_newGlobalClusterIdentifierHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

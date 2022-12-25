@@ -56,7 +56,7 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
 
   if(jsonValue.ValueExists("TrainingJobDefinitions"))
   {
-    Array<JsonView> trainingJobDefinitionsJsonList = jsonValue.GetArray("TrainingJobDefinitions");
+    Aws::Utils::Array<JsonView> trainingJobDefinitionsJsonList = jsonValue.GetArray("TrainingJobDefinitions");
     for(unsigned trainingJobDefinitionsIndex = 0; trainingJobDefinitionsIndex < trainingJobDefinitionsJsonList.GetLength(); ++trainingJobDefinitionsIndex)
     {
       m_trainingJobDefinitions.push_back(trainingJobDefinitionsJsonList[trainingJobDefinitionsIndex].AsObject());

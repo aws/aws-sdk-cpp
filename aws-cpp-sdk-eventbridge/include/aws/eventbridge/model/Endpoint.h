@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Endpoint();
+    AWS_EVENTBRIDGE_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -549,43 +549,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     RoutingConfig m_routingConfig;
-    bool m_routingConfigHasBeenSet;
+    bool m_routingConfigHasBeenSet = false;
 
     ReplicationConfig m_replicationConfig;
-    bool m_replicationConfigHasBeenSet;
+    bool m_replicationConfigHasBeenSet = false;
 
     Aws::Vector<EndpointEventBus> m_eventBuses;
-    bool m_eventBusesHasBeenSet;
+    bool m_eventBusesHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_endpointUrl;
-    bool m_endpointUrlHasBeenSet;
+    bool m_endpointUrlHasBeenSet = false;
 
     EndpointState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

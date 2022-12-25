@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API PutBotAliasRequest : public LexModelBuildingServiceRequest
+  class PutBotAliasRequest : public LexModelBuildingServiceRequest
   {
   public:
-    PutBotAliasRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutBotAliasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutBotAlias"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -394,25 +394,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ConversationLogsRequest m_conversationLogs;
-    bool m_conversationLogsHasBeenSet;
+    bool m_conversationLogsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

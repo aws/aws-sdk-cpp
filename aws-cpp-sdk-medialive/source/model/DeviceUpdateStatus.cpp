@@ -22,6 +22,7 @@ namespace Aws
 
         static const int UP_TO_DATE_HASH = HashingUtils::HashString("UP_TO_DATE");
         static const int NOT_UP_TO_DATE_HASH = HashingUtils::HashString("NOT_UP_TO_DATE");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         DeviceUpdateStatus GetDeviceUpdateStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == NOT_UP_TO_DATE_HASH)
           {
             return DeviceUpdateStatus::NOT_UP_TO_DATE;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return DeviceUpdateStatus::UPDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "UP_TO_DATE";
           case DeviceUpdateStatus::NOT_UP_TO_DATE:
             return "NOT_UP_TO_DATE";
+          case DeviceUpdateStatus::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

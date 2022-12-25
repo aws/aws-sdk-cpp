@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ErrorReason">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API ErrorReason
+  class ErrorReason
   {
   public:
-    ErrorReason();
-    ErrorReason(Aws::Utils::Json::JsonView jsonValue);
-    ErrorReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API ErrorReason();
+    AWS_SERVICEQUOTAS_API ErrorReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API ErrorReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

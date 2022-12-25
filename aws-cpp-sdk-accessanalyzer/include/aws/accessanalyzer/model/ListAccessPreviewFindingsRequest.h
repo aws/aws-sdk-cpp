@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACCESSANALYZER_API ListAccessPreviewFindingsRequest : public AccessAnalyzerRequest
+  class ListAccessPreviewFindingsRequest : public AccessAnalyzerRequest
   {
   public:
-    ListAccessPreviewFindingsRequest();
+    AWS_ACCESSANALYZER_API ListAccessPreviewFindingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAccessPreviewFindings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -194,27 +194,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline ListAccessPreviewFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -254,22 +233,43 @@ namespace Model
      */
     inline ListAccessPreviewFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline ListAccessPreviewFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_accessPreviewId;
-    bool m_accessPreviewIdHasBeenSet;
+    bool m_accessPreviewIdHasBeenSet = false;
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Criterion> m_filter;
-    bool m_filterHasBeenSet;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

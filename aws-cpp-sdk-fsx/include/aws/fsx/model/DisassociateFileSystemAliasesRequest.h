@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliasesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DisassociateFileSystemAliasesRequest : public FSxRequest
+  class DisassociateFileSystemAliasesRequest : public FSxRequest
   {
   public:
-    DisassociateFileSystemAliasesRequest();
+    AWS_FSX_API DisassociateFileSystemAliasesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateFileSystemAliases"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
   };
 
 } // namespace Model

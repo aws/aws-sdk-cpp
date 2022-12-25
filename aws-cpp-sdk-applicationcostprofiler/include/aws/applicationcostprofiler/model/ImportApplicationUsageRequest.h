@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageRequest : public ApplicationCostProfilerRequest
+  class ImportApplicationUsageRequest : public ApplicationCostProfilerRequest
   {
   public:
-    ImportApplicationUsageRequest();
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportApplicationUsage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONCOSTPROFILER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SourceS3Location m_sourceS3Location;
-    bool m_sourceS3LocationHasBeenSet;
+    bool m_sourceS3LocationHasBeenSet = false;
   };
 
 } // namespace Model

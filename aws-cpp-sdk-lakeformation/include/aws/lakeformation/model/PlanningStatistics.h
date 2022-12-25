@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PlanningStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API PlanningStatistics
+  class PlanningStatistics
   {
   public:
-    PlanningStatistics();
-    PlanningStatistics(Aws::Utils::Json::JsonView jsonValue);
-    PlanningStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API PlanningStatistics();
+    AWS_LAKEFORMATION_API PlanningStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API PlanningStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,16 +122,16 @@ namespace Model
   private:
 
     long long m_estimatedDataToScanBytes;
-    bool m_estimatedDataToScanBytesHasBeenSet;
+    bool m_estimatedDataToScanBytesHasBeenSet = false;
 
     long long m_planningTimeMillis;
-    bool m_planningTimeMillisHasBeenSet;
+    bool m_planningTimeMillisHasBeenSet = false;
 
     long long m_queueTimeMillis;
-    bool m_queueTimeMillisHasBeenSet;
+    bool m_queueTimeMillisHasBeenSet = false;
 
     long long m_workUnitsGeneratedCount;
-    bool m_workUnitsGeneratedCountHasBeenSet;
+    bool m_workUnitsGeneratedCountHasBeenSet = false;
   };
 
 } // namespace Model

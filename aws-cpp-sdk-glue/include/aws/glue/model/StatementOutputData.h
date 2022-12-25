@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StatementOutputData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StatementOutputData
+  class StatementOutputData
   {
   public:
-    StatementOutputData();
-    StatementOutputData(Aws::Utils::Json::JsonView jsonValue);
-    StatementOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StatementOutputData();
+    AWS_GLUE_API StatementOutputData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StatementOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_textPlain;
-    bool m_textPlainHasBeenSet;
+    bool m_textPlainHasBeenSet = false;
   };
 
 } // namespace Model

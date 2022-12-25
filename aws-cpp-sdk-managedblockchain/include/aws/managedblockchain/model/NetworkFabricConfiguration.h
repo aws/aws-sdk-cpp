@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NetworkFabricConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration
+  class NetworkFabricConfiguration
   {
   public:
-    NetworkFabricConfiguration();
-    NetworkFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
   };
 
 } // namespace Model

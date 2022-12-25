@@ -58,7 +58,7 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
 
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
-    Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
+    Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
     for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
     {
       m_projectedUtilizationMetrics.push_back(projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject());
@@ -68,7 +68,7 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
 
   if(jsonValue.ValueExists("platformDifferences"))
   {
-    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("platformDifferences");
+    Aws::Utils::Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("platformDifferences");
     for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
     {
       m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
@@ -119,7 +119,7 @@ JsonValue InstanceRecommendationOption::Jsonize() const
 
   if(m_projectedUtilizationMetricsHasBeenSet)
   {
-   Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
+   Aws::Utils::Array<JsonValue> projectedUtilizationMetricsJsonList(m_projectedUtilizationMetrics.size());
    for(unsigned projectedUtilizationMetricsIndex = 0; projectedUtilizationMetricsIndex < projectedUtilizationMetricsJsonList.GetLength(); ++projectedUtilizationMetricsIndex)
    {
      projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject(m_projectedUtilizationMetrics[projectedUtilizationMetricsIndex].Jsonize());
@@ -130,7 +130,7 @@ JsonValue InstanceRecommendationOption::Jsonize() const
 
   if(m_platformDifferencesHasBeenSet)
   {
-   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   Aws::Utils::Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
    {
      platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));

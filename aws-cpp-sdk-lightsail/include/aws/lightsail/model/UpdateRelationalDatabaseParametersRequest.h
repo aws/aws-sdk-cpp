@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersRequest : public LightsailRequest
+  class UpdateRelationalDatabaseParametersRequest : public LightsailRequest
   {
   public:
-    UpdateRelationalDatabaseParametersRequest();
+    AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRelationalDatabaseParameters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::Vector<RelationalDatabaseParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

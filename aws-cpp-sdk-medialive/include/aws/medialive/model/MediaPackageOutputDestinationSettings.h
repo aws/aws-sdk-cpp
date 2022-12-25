@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MediaPackageOutputDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings
+  class MediaPackageOutputDestinationSettings
   {
   public:
-    MediaPackageOutputDestinationSettings();
-    MediaPackageOutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    MediaPackageOutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings();
+    AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MediaPackageOutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
   };
 
 } // namespace Model

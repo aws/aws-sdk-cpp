@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UserDefinedFunctionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UserDefinedFunctionInput
+  class UserDefinedFunctionInput
   {
   public:
-    UserDefinedFunctionInput();
-    UserDefinedFunctionInput(Aws::Utils::Json::JsonView jsonValue);
-    UserDefinedFunctionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UserDefinedFunctionInput();
+    AWS_GLUE_API UserDefinedFunctionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UserDefinedFunctionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,19 +238,19 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_className;
-    bool m_classNameHasBeenSet;
+    bool m_classNameHasBeenSet = false;
 
     Aws::String m_ownerName;
-    bool m_ownerNameHasBeenSet;
+    bool m_ownerNameHasBeenSet = false;
 
     PrincipalType m_ownerType;
-    bool m_ownerTypeHasBeenSet;
+    bool m_ownerTypeHasBeenSet = false;
 
     Aws::Vector<ResourceUri> m_resourceUris;
-    bool m_resourceUrisHasBeenSet;
+    bool m_resourceUrisHasBeenSet = false;
   };
 
 } // namespace Model

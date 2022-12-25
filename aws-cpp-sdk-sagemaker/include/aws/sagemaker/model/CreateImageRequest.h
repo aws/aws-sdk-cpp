@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateImageRequest : public SageMakerRequest
+  class CreateImageRequest : public SageMakerRequest
   {
   public:
-    CreateImageRequest();
+    AWS_SAGEMAKER_API CreateImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -168,50 +168,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline CreateImageRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline CreateImageRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of an IAM role that enables Amazon SageMaker to perform tasks on your
+     * behalf.</p>
      */
     inline CreateImageRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

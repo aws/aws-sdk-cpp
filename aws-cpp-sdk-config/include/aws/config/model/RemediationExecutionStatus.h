@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RemediationExecutionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RemediationExecutionStatus
+  class RemediationExecutionStatus
   {
   public:
-    RemediationExecutionStatus();
-    RemediationExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
-    RemediationExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RemediationExecutionStatus();
+    AWS_CONFIGSERVICE_API RemediationExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RemediationExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -197,19 +197,19 @@ namespace Model
   private:
 
     ResourceKey m_resourceKey;
-    bool m_resourceKeyHasBeenSet;
+    bool m_resourceKeyHasBeenSet = false;
 
     RemediationExecutionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<RemediationExecutionStep> m_stepDetails;
-    bool m_stepDetailsHasBeenSet;
+    bool m_stepDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

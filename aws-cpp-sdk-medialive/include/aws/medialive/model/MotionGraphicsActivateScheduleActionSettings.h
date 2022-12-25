@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MotionGraphicsActivateScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MotionGraphicsActivateScheduleActionSettings
+  class MotionGraphicsActivateScheduleActionSettings
   {
   public:
-    MotionGraphicsActivateScheduleActionSettings();
-    MotionGraphicsActivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    MotionGraphicsActivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MotionGraphicsActivateScheduleActionSettings();
+    AWS_MEDIALIVE_API MotionGraphicsActivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MotionGraphicsActivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_passwordParam;
-    bool m_passwordParamHasBeenSet;
+    bool m_passwordParamHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

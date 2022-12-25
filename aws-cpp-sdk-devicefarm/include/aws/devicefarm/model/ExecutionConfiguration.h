@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ExecutionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ExecutionConfiguration
+  class ExecutionConfiguration
   {
   public:
-    ExecutionConfiguration();
-    ExecutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ExecutionConfiguration();
+    AWS_DEVICEFARM_API ExecutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ExecutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,7 +136,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
@@ -145,7 +145,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
@@ -154,7 +154,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
@@ -163,7 +163,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information about how Device Farm re-signs your apps, see
-     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in
      * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline ExecutionConfiguration& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
@@ -171,19 +171,19 @@ namespace Model
   private:
 
     int m_jobTimeoutMinutes;
-    bool m_jobTimeoutMinutesHasBeenSet;
+    bool m_jobTimeoutMinutesHasBeenSet = false;
 
     bool m_accountsCleanup;
-    bool m_accountsCleanupHasBeenSet;
+    bool m_accountsCleanupHasBeenSet = false;
 
     bool m_appPackagesCleanup;
-    bool m_appPackagesCleanupHasBeenSet;
+    bool m_appPackagesCleanupHasBeenSet = false;
 
     bool m_videoCapture;
-    bool m_videoCaptureHasBeenSet;
+    bool m_videoCaptureHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

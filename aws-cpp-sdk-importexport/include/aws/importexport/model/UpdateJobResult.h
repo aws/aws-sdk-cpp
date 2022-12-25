@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API UpdateJobResult
+  class UpdateJobResult
   {
   public:
-    UpdateJobResult();
-    UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API UpdateJobResult();
+    AWS_IMPORTEXPORT_API UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

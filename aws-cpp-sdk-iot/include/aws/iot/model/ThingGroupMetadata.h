@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingGroupMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingGroupMetadata
+  class ThingGroupMetadata
   {
   public:
-    ThingGroupMetadata();
-    ThingGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ThingGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingGroupMetadata();
+    AWS_IOT_API ThingGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_parentGroupName;
-    bool m_parentGroupNameHasBeenSet;
+    bool m_parentGroupNameHasBeenSet = false;
 
     Aws::Vector<GroupNameAndArn> m_rootToParentThingGroups;
-    bool m_rootToParentThingGroupsHasBeenSet;
+    bool m_rootToParentThingGroupsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

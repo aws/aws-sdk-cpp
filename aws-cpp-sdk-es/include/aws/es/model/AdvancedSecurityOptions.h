@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AdvancedSecurityOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AdvancedSecurityOptions
+  class AdvancedSecurityOptions
   {
   public:
-    AdvancedSecurityOptions();
-    AdvancedSecurityOptions(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedSecurityOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AdvancedSecurityOptions();
+    AWS_ELASTICSEARCHSERVICE_API AdvancedSecurityOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AdvancedSecurityOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,19 +171,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_internalUserDatabaseEnabled;
-    bool m_internalUserDatabaseEnabledHasBeenSet;
+    bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
     SAMLOptionsOutput m_sAMLOptions;
-    bool m_sAMLOptionsHasBeenSet;
+    bool m_sAMLOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_anonymousAuthDisableDate;
-    bool m_anonymousAuthDisableDateHasBeenSet;
+    bool m_anonymousAuthDisableDateHasBeenSet = false;
 
     bool m_anonymousAuthEnabled;
-    bool m_anonymousAuthEnabledHasBeenSet;
+    bool m_anonymousAuthEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatetimeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatetimeOptions
+  class DatetimeOptions
   {
   public:
-    DatetimeOptions();
-    DatetimeOptions(Aws::Utils::Json::JsonView jsonValue);
-    DatetimeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatetimeOptions();
+    AWS_GLUEDATABREW_API DatetimeOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatetimeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_timezoneOffset;
-    bool m_timezoneOffsetHasBeenSet;
+    bool m_timezoneOffsetHasBeenSet = false;
 
     Aws::String m_localeCode;
-    bool m_localeCodeHasBeenSet;
+    bool m_localeCodeHasBeenSet = false;
   };
 
 } // namespace Model

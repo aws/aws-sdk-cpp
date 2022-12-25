@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DashboardEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API DashboardEntry
+  class DashboardEntry
   {
   public:
-    DashboardEntry();
-    DashboardEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DashboardEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API DashboardEntry();
+    AWS_CLOUDWATCH_API DashboardEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API DashboardEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_dashboardName;
-    bool m_dashboardNameHasBeenSet;
+    bool m_dashboardNameHasBeenSet = false;
 
     Aws::String m_dashboardArn;
-    bool m_dashboardArnHasBeenSet;
+    bool m_dashboardArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

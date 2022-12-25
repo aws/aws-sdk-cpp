@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API DescribeProvisioningTemplateVersionRequest : public IoTRequest
+  class DescribeProvisioningTemplateVersionRequest : public IoTRequest
   {
   public:
-    DescribeProvisioningTemplateVersionRequest();
+    AWS_IOT_API DescribeProvisioningTemplateVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProvisioningTemplateVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -74,32 +74,32 @@ namespace Model
 
 
     /**
-     * <p>The fleet provisioning template version ID.</p>
+     * <p>The provisioning template version ID.</p>
      */
     inline int GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The fleet provisioning template version ID.</p>
+     * <p>The provisioning template version ID.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The fleet provisioning template version ID.</p>
+     * <p>The provisioning template version ID.</p>
      */
     inline void SetVersionId(int value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The fleet provisioning template version ID.</p>
+     * <p>The provisioning template version ID.</p>
      */
     inline DescribeProvisioningTemplateVersionRequest& WithVersionId(int value) { SetVersionId(value); return *this;}
 
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     int m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
   };
 
 } // namespace Model

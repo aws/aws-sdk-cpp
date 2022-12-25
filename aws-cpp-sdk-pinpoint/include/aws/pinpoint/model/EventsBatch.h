@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsBatch">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventsBatch
+  class EventsBatch
   {
   public:
-    EventsBatch();
-    EventsBatch(Aws::Utils::Json::JsonView jsonValue);
-    EventsBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventsBatch();
+    AWS_PINPOINT_API EventsBatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventsBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     PublicEndpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Map<Aws::String, Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MultiRegionAccessPointRegionalResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse
+  class MultiRegionAccessPointRegionalResponse
   {
   public:
-    MultiRegionAccessPointRegionalResponse();
-    MultiRegionAccessPointRegionalResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MultiRegionAccessPointRegionalResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse();
+    AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointRegionalResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestStatus;
-    bool m_requestStatusHasBeenSet;
+    bool m_requestStatusHasBeenSet = false;
   };
 
 } // namespace Model

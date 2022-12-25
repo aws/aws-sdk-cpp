@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolumeOpenZFSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DeleteVolumeOpenZFSConfiguration
+  class DeleteVolumeOpenZFSConfiguration
   {
   public:
-    DeleteVolumeOpenZFSConfiguration();
-    DeleteVolumeOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeleteVolumeOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DeleteVolumeOpenZFSConfiguration();
+    AWS_FSX_API DeleteVolumeOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DeleteVolumeOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<DeleteOpenZFSVolumeOption> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

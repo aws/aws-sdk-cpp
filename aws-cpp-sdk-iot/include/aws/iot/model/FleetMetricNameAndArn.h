@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/FleetMetricNameAndArn">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API FleetMetricNameAndArn
+  class FleetMetricNameAndArn
   {
   public:
-    FleetMetricNameAndArn();
-    FleetMetricNameAndArn(Aws::Utils::Json::JsonView jsonValue);
-    FleetMetricNameAndArn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API FleetMetricNameAndArn();
+    AWS_IOT_API FleetMetricNameAndArn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API FleetMetricNameAndArn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricArn;
-    bool m_metricArnHasBeenSet;
+    bool m_metricArnHasBeenSet = false;
   };
 
 } // namespace Model

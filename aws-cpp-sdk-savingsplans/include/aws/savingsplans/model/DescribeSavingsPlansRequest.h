@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAVINGSPLANS_API DescribeSavingsPlansRequest : public SavingsPlansRequest
+  class DescribeSavingsPlansRequest : public SavingsPlansRequest
   {
   public:
-    DescribeSavingsPlansRequest();
+    AWS_SAVINGSPLANS_API DescribeSavingsPlansRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSavingsPlans"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAVINGSPLANS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_savingsPlanArns;
-    bool m_savingsPlanArnsHasBeenSet;
+    bool m_savingsPlanArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_savingsPlanIds;
-    bool m_savingsPlanIdsHasBeenSet;
+    bool m_savingsPlanIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<SavingsPlanState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::Vector<SavingsPlanFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

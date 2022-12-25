@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupRule">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SecurityGroupRule
+  class SecurityGroupRule
   {
   public:
-    SecurityGroupRule();
-    SecurityGroupRule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SecurityGroupRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRule();
+    AWS_EC2_API SecurityGroupRule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -547,43 +547,43 @@ namespace Model
   private:
 
     Aws::String m_securityGroupRuleId;
-    bool m_securityGroupRuleIdHasBeenSet;
+    bool m_securityGroupRuleIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupOwnerId;
-    bool m_groupOwnerIdHasBeenSet;
+    bool m_groupOwnerIdHasBeenSet = false;
 
     bool m_isEgress;
-    bool m_isEgressHasBeenSet;
+    bool m_isEgressHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_cidrIpv4;
-    bool m_cidrIpv4HasBeenSet;
+    bool m_cidrIpv4HasBeenSet = false;
 
     Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet;
+    bool m_cidrIpv6HasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     ReferencedSecurityGroup m_referencedGroupInfo;
-    bool m_referencedGroupInfoHasBeenSet;
+    bool m_referencedGroupInfoHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

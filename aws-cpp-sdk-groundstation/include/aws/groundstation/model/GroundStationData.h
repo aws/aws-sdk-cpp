@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GroundStationData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API GroundStationData
+  class GroundStationData
   {
   public:
-    GroundStationData();
-    GroundStationData(Aws::Utils::Json::JsonView jsonValue);
-    GroundStationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API GroundStationData();
+    AWS_GROUNDSTATION_API GroundStationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API GroundStationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_groundStationId;
-    bool m_groundStationIdHasBeenSet;
+    bool m_groundStationIdHasBeenSet = false;
 
     Aws::String m_groundStationName;
-    bool m_groundStationNameHasBeenSet;
+    bool m_groundStationNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

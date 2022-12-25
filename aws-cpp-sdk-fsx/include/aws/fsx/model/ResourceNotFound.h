@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ResourceNotFound">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API ResourceNotFound
+  class ResourceNotFound
   {
   public:
-    ResourceNotFound();
-    ResourceNotFound(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API ResourceNotFound();
+    AWS_FSX_API ResourceNotFound(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API ResourceNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

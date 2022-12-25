@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchLaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification
+  class FastLaunchLaunchTemplateSpecification
   {
   public:
-    FastLaunchLaunchTemplateSpecification();
-    FastLaunchLaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    FastLaunchLaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification();
+    AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API FastLaunchLaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_launchTemplateVersion;
-    bool m_launchTemplateVersionHasBeenSet;
+    bool m_launchTemplateVersionHasBeenSet = false;
   };
 
 } // namespace Model

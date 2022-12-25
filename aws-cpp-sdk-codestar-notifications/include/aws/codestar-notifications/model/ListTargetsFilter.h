@@ -27,19 +27,20 @@ namespace Model
   /**
    * <p>Information about a filter to apply to the list of returned targets. You can
    * filter by target type, address, or status. For example, to filter results to
-   * notification rules that have active Amazon SNS topics as targets, you could
-   * specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of
-   * TARGET_STATUS and a Value of ACTIVE.</p><p><h3>See Also:</h3>   <a
+   * notification rules that have active Chatbot topics as targets, you could specify
+   * a ListTargetsFilter Name as <code>TargetType</code> and a Value of
+   * <code>SNS</code>, and a Name of <code>TARGET_STATUS</code> and a Value of
+   * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargetsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter
+  class ListTargetsFilter
   {
   public:
-    ListTargetsFilter();
-    ListTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter();
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,67 +76,67 @@ namespace Model
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline ListTargetsFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline ListTargetsFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the attribute you want to use to filter the returned targets.
-     * For example, if you specify <i>SNS</i> for the Target type, you could specify an
-     * Amazon Resource Name (ARN) for a topic as the value.</p>
+     * For example, if you specify <code>SNS</code> for the Target type, you could
+     * specify an Amazon Resource Name (ARN) for a topic as the value.</p>
      */
     inline ListTargetsFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
 
     ListTargetsFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

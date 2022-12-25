@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TimeToLiveSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TimeToLiveSpecification
+  class TimeToLiveSpecification
   {
   public:
-    TimeToLiveSpecification();
-    TimeToLiveSpecification(Aws::Utils::Json::JsonView jsonValue);
-    TimeToLiveSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TimeToLiveSpecification();
+    AWS_DYNAMODB_API TimeToLiveSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TimeToLiveSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

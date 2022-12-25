@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaContainerParams">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaContainerParams
+  class LambdaContainerParams
   {
   public:
-    LambdaContainerParams();
-    LambdaContainerParams(Aws::Utils::Json::JsonView jsonValue);
-    LambdaContainerParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaContainerParams();
+    AWS_GREENGRASSV2_API LambdaContainerParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaContainerParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     int m_memorySizeInKB;
-    bool m_memorySizeInKBHasBeenSet;
+    bool m_memorySizeInKBHasBeenSet = false;
 
     bool m_mountROSysfs;
-    bool m_mountROSysfsHasBeenSet;
+    bool m_mountROSysfsHasBeenSet = false;
 
     Aws::Vector<LambdaVolumeMount> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<LambdaDeviceMount> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
   };
 
 } // namespace Model

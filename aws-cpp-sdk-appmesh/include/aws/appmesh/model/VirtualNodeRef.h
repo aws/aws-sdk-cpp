@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeRef">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeRef
+  class VirtualNodeRef
   {
   public:
-    VirtualNodeRef();
-    VirtualNodeRef(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeRef& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeRef();
+    AWS_APPMESH_API VirtualNodeRef(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeRef& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_virtualNodeName;
-    bool m_virtualNodeNameHasBeenSet;
+    bool m_virtualNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

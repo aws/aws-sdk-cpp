@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseParameter
+  class RelationalDatabaseParameter
   {
   public:
-    RelationalDatabaseParameter();
-    RelationalDatabaseParameter(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter();
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -355,28 +355,28 @@ namespace Model
   private:
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     Aws::String m_applyMethod;
-    bool m_applyMethodHasBeenSet;
+    bool m_applyMethodHasBeenSet = false;
 
     Aws::String m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

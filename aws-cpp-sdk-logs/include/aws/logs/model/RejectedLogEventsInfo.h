@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/RejectedLogEventsInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo
+  class RejectedLogEventsInfo
   {
   public:
-    RejectedLogEventsInfo();
-    RejectedLogEventsInfo(Aws::Utils::Json::JsonView jsonValue);
-    RejectedLogEventsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo();
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -57,22 +57,22 @@ namespace Model
 
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline bool TooOldLogEventEndIndexHasBeenSet() const { return m_tooOldLogEventEndIndexHasBeenSet; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     /**
-     * <p>The log events that are too old.</p>
+     * <p>The log events that are dated too far in the past.</p>
      */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 
@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_tooNewLogEventStartIndex;
-    bool m_tooNewLogEventStartIndexHasBeenSet;
+    bool m_tooNewLogEventStartIndexHasBeenSet = false;
 
     int m_tooOldLogEventEndIndex;
-    bool m_tooOldLogEventEndIndexHasBeenSet;
+    bool m_tooOldLogEventEndIndexHasBeenSet = false;
 
     int m_expiredLogEventEndIndex;
-    bool m_expiredLogEventEndIndexHasBeenSet;
+    bool m_expiredLogEventEndIndexHasBeenSet = false;
   };
 
 } // namespace Model

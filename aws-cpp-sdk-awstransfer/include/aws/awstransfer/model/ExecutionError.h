@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ExecutionError">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ExecutionError
+  class ExecutionError
   {
   public:
-    ExecutionError();
-    ExecutionError(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ExecutionError();
+    AWS_TRANSFER_API ExecutionError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ExecutionError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,10 +217,10 @@ namespace Model
   private:
 
     ExecutionErrorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

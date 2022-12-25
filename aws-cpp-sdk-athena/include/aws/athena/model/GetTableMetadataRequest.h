@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ATHENA_API GetTableMetadataRequest : public AthenaRequest
+  class GetTableMetadataRequest : public AthenaRequest
   {
   public:
-    GetTableMetadataRequest();
+    AWS_ATHENA_API GetTableMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTableMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ATHENA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_catalogName;
-    bool m_catalogNameHasBeenSet;
+    bool m_catalogNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API RegisterUserRequest : public QuickSightRequest
+  class RegisterUserRequest : public QuickSightRequest
   {
   public:
-    RegisterUserRequest();
+    AWS_QUICKSIGHT_API RegisterUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -908,40 +908,40 @@ namespace Model
   private:
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     UserRole m_userRole;
-    bool m_userRoleHasBeenSet;
+    bool m_userRoleHasBeenSet = false;
 
     Aws::String m_iamArn;
-    bool m_iamArnHasBeenSet;
+    bool m_iamArnHasBeenSet = false;
 
     Aws::String m_sessionName;
-    bool m_sessionNameHasBeenSet;
+    bool m_sessionNameHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_customPermissionsName;
-    bool m_customPermissionsNameHasBeenSet;
+    bool m_customPermissionsNameHasBeenSet = false;
 
     Aws::String m_externalLoginFederationProviderType;
-    bool m_externalLoginFederationProviderTypeHasBeenSet;
+    bool m_externalLoginFederationProviderTypeHasBeenSet = false;
 
     Aws::String m_customFederationProviderUrl;
-    bool m_customFederationProviderUrlHasBeenSet;
+    bool m_customFederationProviderUrlHasBeenSet = false;
 
     Aws::String m_externalLoginId;
-    bool m_externalLoginIdHasBeenSet;
+    bool m_externalLoginIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/UpdateDetectorRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API UpdateDetectorRequest
+  class UpdateDetectorRequest
   {
   public:
-    UpdateDetectorRequest();
-    UpdateDetectorRequest(Aws::Utils::Json::JsonView jsonValue);
-    UpdateDetectorRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API UpdateDetectorRequest();
+    AWS_IOTEVENTSDATA_API UpdateDetectorRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API UpdateDetectorRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
 
     DetectorStateDefinition m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

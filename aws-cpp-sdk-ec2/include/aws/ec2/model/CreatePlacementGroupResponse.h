@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreatePlacementGroupResponse
+  class CreatePlacementGroupResponse
   {
   public:
-    CreatePlacementGroupResponse();
-    CreatePlacementGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePlacementGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreatePlacementGroupResponse();
+    AWS_EC2_API CreatePlacementGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreatePlacementGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline const PlacementGroup& GetPlacementGroup() const{ return m_placementGroup; }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline void SetPlacementGroup(const PlacementGroup& value) { m_placementGroup = value; }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline void SetPlacementGroup(PlacementGroup&& value) { m_placementGroup = std::move(value); }
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline CreatePlacementGroupResponse& WithPlacementGroup(const PlacementGroup& value) { SetPlacementGroup(value); return *this;}
 
-    
+    /**
+     * <p>Information about the placement group.</p>
+     */
     inline CreatePlacementGroupResponse& WithPlacementGroup(PlacementGroup&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
 

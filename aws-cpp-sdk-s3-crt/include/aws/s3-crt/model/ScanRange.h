@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ScanRange">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API ScanRange
+  class ScanRange
   {
   public:
-    ScanRange();
-    ScanRange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScanRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ScanRange();
+    AWS_S3CRT_API ScanRange(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ScanRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     long long m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

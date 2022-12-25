@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ApplicationSource">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API ApplicationSource
+  class ApplicationSource
   {
   public:
-    ApplicationSource();
-    ApplicationSource(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API ApplicationSource();
+    AWS_AUTOSCALINGPLANS_API ApplicationSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API ApplicationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_cloudFormationStackARN;
-    bool m_cloudFormationStackARNHasBeenSet;
+    bool m_cloudFormationStackARNHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
   };
 
 } // namespace Model

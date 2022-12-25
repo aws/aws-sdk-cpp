@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ConfigurationEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API ConfigurationEvent
+  class ConfigurationEvent
   {
   public:
-    ConfigurationEvent();
-    ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API ConfigurationEvent();
+    AWS_LEXRUNTIMEV2_API ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,42 +305,82 @@ namespace Model
 
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline const Aws::Vector<Message>& GetWelcomeMessages() const{ return m_welcomeMessages; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline bool WelcomeMessagesHasBeenSet() const { return m_welcomeMessagesHasBeenSet; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline void SetWelcomeMessages(const Aws::Vector<Message>& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages = value; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline void SetWelcomeMessages(Aws::Vector<Message>&& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages = std::move(value); }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& WithWelcomeMessages(const Aws::Vector<Message>& value) { SetWelcomeMessages(value); return *this;}
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& WithWelcomeMessages(Aws::Vector<Message>&& value) { SetWelcomeMessages(std::move(value)); return *this;}
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& AddWelcomeMessages(const Message& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages.push_back(value); return *this; }
 
     /**
-     * <p>A list of messages to send to the user.</p>
+     * <p>A list of messages to send to the user.</p> <p>If you set the
+     * <code>welcomeMessage</code> field, you must also set the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html">
+     * <code>DialogAction</code> </a> structure's <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_runtime_DialogAction.html#lexv2-Type-runtime_DialogAction-type">
+     * <code>type</code> </a> field.</p>
      */
     inline ConfigurationEvent& AddWelcomeMessages(Message&& value) { m_welcomeMessagesHasBeenSet = true; m_welcomeMessages.push_back(std::move(value)); return *this; }
 
@@ -462,25 +502,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_responseContentType;
-    bool m_responseContentTypeHasBeenSet;
+    bool m_responseContentTypeHasBeenSet = false;
 
     SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::Vector<Message> m_welcomeMessages;
-    bool m_welcomeMessagesHasBeenSet;
+    bool m_welcomeMessagesHasBeenSet = false;
 
     bool m_disablePlayback;
-    bool m_disablePlaybackHasBeenSet;
+    bool m_disablePlaybackHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

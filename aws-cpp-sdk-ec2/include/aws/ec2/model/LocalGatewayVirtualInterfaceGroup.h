@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LocalGatewayVirtualInterfaceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LocalGatewayVirtualInterfaceGroup
+  class LocalGatewayVirtualInterfaceGroup
   {
   public:
-    LocalGatewayVirtualInterfaceGroup();
-    LocalGatewayVirtualInterfaceGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LocalGatewayVirtualInterfaceGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayVirtualInterfaceGroup();
+    AWS_EC2_API LocalGatewayVirtualInterfaceGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayVirtualInterfaceGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_localGatewayVirtualInterfaceGroupId;
-    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_localGatewayVirtualInterfaceIds;
-    bool m_localGatewayVirtualInterfaceIdsHasBeenSet;
+    bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
 
     Aws::String m_localGatewayId;
-    bool m_localGatewayIdHasBeenSet;
+    bool m_localGatewayIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CalculatedSpend">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API CalculatedSpend
+  class CalculatedSpend
   {
   public:
-    CalculatedSpend();
-    CalculatedSpend(Aws::Utils::Json::JsonView jsonValue);
-    CalculatedSpend& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API CalculatedSpend();
+    AWS_BUDGETS_API CalculatedSpend(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API CalculatedSpend& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Spend m_actualSpend;
-    bool m_actualSpendHasBeenSet;
+    bool m_actualSpendHasBeenSet = false;
 
     Spend m_forecastedSpend;
-    bool m_forecastedSpendHasBeenSet;
+    bool m_forecastedSpendHasBeenSet = false;
   };
 
 } // namespace Model

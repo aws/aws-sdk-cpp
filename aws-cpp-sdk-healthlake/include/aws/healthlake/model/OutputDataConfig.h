@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/OutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API OutputDataConfig
+  class OutputDataConfig
   {
   public:
-    OutputDataConfig();
-    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API OutputDataConfig();
+    AWS_HEALTHLAKE_API OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3Configuration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

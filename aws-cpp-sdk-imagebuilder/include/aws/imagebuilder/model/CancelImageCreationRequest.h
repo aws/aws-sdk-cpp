@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API CancelImageCreationRequest : public ImagebuilderRequest
+  class CancelImageCreationRequest : public ImagebuilderRequest
   {
   public:
-    CancelImageCreationRequest();
+    AWS_IMAGEBUILDER_API CancelImageCreationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CancelImageCreation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_imageBuildVersionArn;
-    bool m_imageBuildVersionArnHasBeenSet;
+    bool m_imageBuildVersionArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

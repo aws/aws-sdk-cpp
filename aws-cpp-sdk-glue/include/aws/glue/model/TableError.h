@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableError">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API TableError
+  class TableError
   {
   public:
-    TableError();
-    TableError(Aws::Utils::Json::JsonView jsonValue);
-    TableError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TableError();
+    AWS_GLUE_API TableError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TableError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

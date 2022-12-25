@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointResponse
+  class EndpointResponse
   {
   public:
-    EndpointResponse();
-    EndpointResponse(Aws::Utils::Json::JsonView jsonValue);
-    EndpointResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointResponse();
+    AWS_PINPOINT_API EndpointResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -885,49 +885,49 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     ChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
 
     Aws::String m_cohortId;
-    bool m_cohortIdHasBeenSet;
+    bool m_cohortIdHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     EndpointDemographic m_demographic;
-    bool m_demographicHasBeenSet;
+    bool m_demographicHasBeenSet = false;
 
     Aws::String m_effectiveDate;
-    bool m_effectiveDateHasBeenSet;
+    bool m_effectiveDateHasBeenSet = false;
 
     Aws::String m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     EndpointLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_optOut;
-    bool m_optOutHasBeenSet;
+    bool m_optOutHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     EndpointUser m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
   };
 
 } // namespace Model

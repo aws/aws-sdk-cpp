@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ViolationEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ViolationEvent
+  class ViolationEvent
   {
   public:
-    ViolationEvent();
-    ViolationEvent(Aws::Utils::Json::JsonView jsonValue);
-    ViolationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ViolationEvent();
+    AWS_IOT_API ViolationEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ViolationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -396,34 +396,34 @@ namespace Model
   private:
 
     Aws::String m_violationId;
-    bool m_violationIdHasBeenSet;
+    bool m_violationIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Behavior m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
 
     MetricValue m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     ViolationEventAdditionalInfo m_violationEventAdditionalInfo;
-    bool m_violationEventAdditionalInfoHasBeenSet;
+    bool m_violationEventAdditionalInfoHasBeenSet = false;
 
     ViolationEventType m_violationEventType;
-    bool m_violationEventTypeHasBeenSet;
+    bool m_violationEventTypeHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_verificationStateDescription;
-    bool m_verificationStateDescriptionHasBeenSet;
+    bool m_verificationStateDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_violationEventTime;
-    bool m_violationEventTimeHasBeenSet;
+    bool m_violationEventTimeHasBeenSet = false;
   };
 
 } // namespace Model

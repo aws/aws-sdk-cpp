@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PointInTimeRecoverySpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API PointInTimeRecoverySpecification
+  class PointInTimeRecoverySpecification
   {
   public:
-    PointInTimeRecoverySpecification();
-    PointInTimeRecoverySpecification(Aws::Utils::Json::JsonView jsonValue);
-    PointInTimeRecoverySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API PointInTimeRecoverySpecification();
+    AWS_DYNAMODB_API PointInTimeRecoverySpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API PointInTimeRecoverySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_pointInTimeRecoveryEnabled;
-    bool m_pointInTimeRecoveryEnabledHasBeenSet;
+    bool m_pointInTimeRecoveryEnabledHasBeenSet = false;
   };
 
 } // namespace Model

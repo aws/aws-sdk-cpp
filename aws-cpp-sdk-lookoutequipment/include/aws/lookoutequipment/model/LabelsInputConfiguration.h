@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/lookoutequipment/model/LabelsS3InputConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/LabelsInputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API LabelsInputConfiguration
+  class LabelsInputConfiguration
   {
   public:
-    LabelsInputConfiguration();
-    LabelsInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LabelsInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API LabelsInputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API LabelsInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API LabelsInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,10 +75,54 @@ namespace Model
      */
     inline LabelsInputConfiguration& WithS3InputConfiguration(LabelsS3InputConfiguration&& value) { SetS3InputConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline bool LabelGroupNameHasBeenSet() const { return m_labelGroupNameHasBeenSet; }
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = value; }
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::move(value); }
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline void SetLabelGroupName(const char* value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName.assign(value); }
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline LabelsInputConfiguration& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline LabelsInputConfiguration& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the label group to be used for label data. </p>
+     */
+    inline LabelsInputConfiguration& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
+
   private:
 
     LabelsS3InputConfiguration m_s3InputConfiguration;
-    bool m_s3InputConfigurationHasBeenSet;
+    bool m_s3InputConfigurationHasBeenSet = false;
+
+    Aws::String m_labelGroupName;
+    bool m_labelGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

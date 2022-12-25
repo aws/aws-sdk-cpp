@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Information about an origin that is an S3 bucket that is not configured with
-   * static website hosting.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an origin that is an Amazon S3 bucket that is not
+   * configured with static website hosting.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginS3OriginConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig
+  class AwsCloudFrontDistributionOriginS3OriginConfig
   {
   public:
-    AwsCloudFrontDistributionOriginS3OriginConfig();
-    AwsCloudFrontDistributionOriginS3OriginConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginS3OriginConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginS3OriginConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_originAccessIdentity;
-    bool m_originAccessIdentityHasBeenSet;
+    bool m_originAccessIdentityHasBeenSet = false;
   };
 
 } // namespace Model

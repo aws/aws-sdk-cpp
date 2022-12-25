@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/TaskCredentials.h>
 #include <utility>
 
 namespace Aws
@@ -29,93 +30,93 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskScheduledEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TaskScheduledEventDetails
+  class TaskScheduledEventDetails
   {
   public:
-    TaskScheduledEventDetails();
-    TaskScheduledEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    TaskScheduledEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TaskScheduledEventDetails();
+    AWS_SFN_API TaskScheduledEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TaskScheduledEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
 
@@ -259,25 +260,59 @@ namespace Model
      */
     inline TaskScheduledEventDetails& WithHeartbeatInSeconds(long long value) { SetHeartbeatInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline const TaskCredentials& GetTaskCredentials() const{ return m_taskCredentials; }
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline bool TaskCredentialsHasBeenSet() const { return m_taskCredentialsHasBeenSet; }
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline void SetTaskCredentials(const TaskCredentials& value) { m_taskCredentialsHasBeenSet = true; m_taskCredentials = value; }
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline void SetTaskCredentials(TaskCredentials&& value) { m_taskCredentialsHasBeenSet = true; m_taskCredentials = std::move(value); }
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline TaskScheduledEventDetails& WithTaskCredentials(const TaskCredentials& value) { SetTaskCredentials(value); return *this;}
+
+    /**
+     * <p>The credentials that Step Functions uses for the task.</p>
+     */
+    inline TaskScheduledEventDetails& WithTaskCredentials(TaskCredentials&& value) { SetTaskCredentials(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     long long m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     long long m_heartbeatInSeconds;
-    bool m_heartbeatInSecondsHasBeenSet;
+    bool m_heartbeatInSecondsHasBeenSet = false;
+
+    TaskCredentials m_taskCredentials;
+    bool m_taskCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PortProbeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API PortProbeDetail
+  class PortProbeDetail
   {
   public:
-    PortProbeDetail();
-    PortProbeDetail(Aws::Utils::Json::JsonView jsonValue);
-    PortProbeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API PortProbeDetail();
+    AWS_GUARDDUTY_API PortProbeDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API PortProbeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     LocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     LocalIpDetails m_localIpDetails;
-    bool m_localIpDetailsHasBeenSet;
+    bool m_localIpDetailsHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
   };
 
 } // namespace Model

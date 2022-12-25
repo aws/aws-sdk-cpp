@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Lambda was unable to decrypt the environment variables because the KMS key
-   * used is in an invalid state for Decrypt. Check the function's KMS key
+   * <p>Lambda couldn't decrypt the environment variables because the state of the
+   * KMS key used is not valid for Decrypt. Check the function's KMS key
    * settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/KMSInvalidStateException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API KMSInvalidStateException
+  class KMSInvalidStateException
   {
   public:
-    KMSInvalidStateException();
-    KMSInvalidStateException(Aws::Utils::Json::JsonView jsonValue);
-    KMSInvalidStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API KMSInvalidStateException();
+    AWS_LAMBDA_API KMSInvalidStateException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API KMSInvalidStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

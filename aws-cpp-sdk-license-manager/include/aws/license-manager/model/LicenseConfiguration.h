@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConfiguration
+  class LicenseConfiguration
   {
   public:
-    LicenseConfiguration();
-    LicenseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConfiguration();
+    AWS_LICENSEMANAGER_API LicenseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -611,52 +611,52 @@ namespace Model
   private:
 
     Aws::String m_licenseConfigurationId;
-    bool m_licenseConfigurationIdHasBeenSet;
+    bool m_licenseConfigurationIdHasBeenSet = false;
 
     Aws::String m_licenseConfigurationArn;
-    bool m_licenseConfigurationArnHasBeenSet;
+    bool m_licenseConfigurationArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     LicenseCountingType m_licenseCountingType;
-    bool m_licenseCountingTypeHasBeenSet;
+    bool m_licenseCountingTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_licenseRules;
-    bool m_licenseRulesHasBeenSet;
+    bool m_licenseRulesHasBeenSet = false;
 
     long long m_licenseCount;
-    bool m_licenseCountHasBeenSet;
+    bool m_licenseCountHasBeenSet = false;
 
     bool m_licenseCountHardLimit;
-    bool m_licenseCountHardLimitHasBeenSet;
+    bool m_licenseCountHardLimitHasBeenSet = false;
 
     bool m_disassociateWhenNotFound;
-    bool m_disassociateWhenNotFoundHasBeenSet;
+    bool m_disassociateWhenNotFoundHasBeenSet = false;
 
     long long m_consumedLicenses;
-    bool m_consumedLicensesHasBeenSet;
+    bool m_consumedLicensesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::Vector<ConsumedLicenseSummary> m_consumedLicenseSummaryList;
-    bool m_consumedLicenseSummaryListHasBeenSet;
+    bool m_consumedLicenseSummaryListHasBeenSet = false;
 
     Aws::Vector<ManagedResourceSummary> m_managedResourceSummaryList;
-    bool m_managedResourceSummaryListHasBeenSet;
+    bool m_managedResourceSummaryListHasBeenSet = false;
 
     Aws::Vector<ProductInformation> m_productInformationList;
-    bool m_productInformationListHasBeenSet;
+    bool m_productInformationListHasBeenSet = false;
 
     AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
-    bool m_automatedDiscoveryInformationHasBeenSet;
+    bool m_automatedDiscoveryInformationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VorbisSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API VorbisSettings
+  class VorbisSettings
   {
   public:
-    VorbisSettings();
-    VorbisSettings(Aws::Utils::Json::JsonView jsonValue);
-    VorbisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API VorbisSettings();
+    AWS_MEDIACONVERT_API VorbisSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API VorbisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,13 +125,13 @@ namespace Model
   private:
 
     int m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     int m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

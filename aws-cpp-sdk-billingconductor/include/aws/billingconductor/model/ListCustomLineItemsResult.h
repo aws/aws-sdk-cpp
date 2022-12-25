@@ -26,12 +26,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API ListCustomLineItemsResult
+  class ListCustomLineItemsResult
   {
   public:
-    ListCustomLineItemsResult();
-    ListCustomLineItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCustomLineItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsResult();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -71,44 +71,44 @@ namespace Model
 
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline ListCustomLineItemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline ListCustomLineItemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used on subsequent calls to get custom line items
-     * (FFLIs). </p>
+     * <p> The pagination token that's used on subsequent calls to get custom line
+     * items (FFLIs). </p>
      */
     inline ListCustomLineItemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

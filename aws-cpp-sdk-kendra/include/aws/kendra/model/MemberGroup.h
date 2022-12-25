@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/MemberGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API MemberGroup
+  class MemberGroup
   {
   public:
-    MemberGroup();
-    MemberGroup(Aws::Utils::Json::JsonView jsonValue);
-    MemberGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API MemberGroup();
+    AWS_KENDRA_API MemberGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API MemberGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

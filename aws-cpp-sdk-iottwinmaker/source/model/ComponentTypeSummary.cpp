@@ -22,9 +22,10 @@ ComponentTypeSummary::ComponentTypeSummary() :
     m_arnHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
+    m_updateDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+    m_componentTypeNameHasBeenSet(false)
 {
 }
 
@@ -32,9 +33,10 @@ ComponentTypeSummary::ComponentTypeSummary(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
+    m_updateDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
+    m_componentTypeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ ComponentTypeSummary& ComponentTypeSummary::operator =(JsonView jsonValue)
     m_creationDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updateDateTime"))
+  {
+    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
+
+    m_updateDateTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -76,11 +85,11 @@ ComponentTypeSummary& ComponentTypeSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateDateTime"))
+  if(jsonValue.ValueExists("componentTypeName"))
   {
-    m_updateDateTime = jsonValue.GetDouble("updateDateTime");
+    m_componentTypeName = jsonValue.GetString("componentTypeName");
 
-    m_updateDateTimeHasBeenSet = true;
+    m_componentTypeNameHasBeenSet = true;
   }
 
   return *this;
@@ -107,6 +116,11 @@ JsonValue ComponentTypeSummary::Jsonize() const
    payload.WithDouble("creationDateTime", m_creationDateTime.SecondsWithMSPrecision());
   }
 
+  if(m_updateDateTimeHasBeenSet)
+  {
+   payload.WithDouble("updateDateTime", m_updateDateTime.SecondsWithMSPrecision());
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -119,9 +133,10 @@ JsonValue ComponentTypeSummary::Jsonize() const
 
   }
 
-  if(m_updateDateTimeHasBeenSet)
+  if(m_componentTypeNameHasBeenSet)
   {
-   payload.WithDouble("updateDateTime", m_updateDateTime.SecondsWithMSPrecision());
+   payload.WithString("componentTypeName", m_componentTypeName);
+
   }
 
   return payload;

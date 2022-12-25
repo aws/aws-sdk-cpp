@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ProgressUpdateStreamSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary
+  class ProgressUpdateStreamSummary
   {
   public:
-    ProgressUpdateStreamSummary();
-    ProgressUpdateStreamSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProgressUpdateStreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary();
+    AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API ProgressUpdateStreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStreamName;
-    bool m_progressUpdateStreamNameHasBeenSet;
+    bool m_progressUpdateStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

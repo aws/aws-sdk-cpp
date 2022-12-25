@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API GetBucketsAggregationRequest : public IoTRequest
+  class GetBucketsAggregationRequest : public IoTRequest
   {
   public:
-    GetBucketsAggregationRequest();
+    AWS_IOT_API GetBucketsAggregationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetBucketsAggregation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::String m_aggregationField;
-    bool m_aggregationFieldHasBeenSet;
+    bool m_aggregationFieldHasBeenSet = false;
 
     Aws::String m_queryVersion;
-    bool m_queryVersionHasBeenSet;
+    bool m_queryVersionHasBeenSet = false;
 
     BucketsAggregationType m_bucketsAggregationType;
-    bool m_bucketsAggregationTypeHasBeenSet;
+    bool m_bucketsAggregationTypeHasBeenSet = false;
   };
 
 } // namespace Model

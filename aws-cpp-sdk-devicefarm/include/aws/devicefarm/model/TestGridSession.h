@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridSession">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridSession
+  class TestGridSession
   {
   public:
-    TestGridSession();
-    TestGridSession(Aws::Utils::Json::JsonView jsonValue);
-    TestGridSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridSession();
+    AWS_DEVICEFARM_API TestGridSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -239,22 +239,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     TestGridSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_ended;
-    bool m_endedHasBeenSet;
+    bool m_endedHasBeenSet = false;
 
     double m_billingMinutes;
-    bool m_billingMinutesHasBeenSet;
+    bool m_billingMinutesHasBeenSet = false;
 
     Aws::String m_seleniumProperties;
-    bool m_seleniumPropertiesHasBeenSet;
+    bool m_seleniumPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

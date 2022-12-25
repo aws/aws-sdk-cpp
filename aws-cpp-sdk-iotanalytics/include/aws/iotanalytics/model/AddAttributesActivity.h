@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/AddAttributesActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API AddAttributesActivity
+  class AddAttributesActivity
   {
   public:
-    AddAttributesActivity();
-    AddAttributesActivity(Aws::Utils::Json::JsonView jsonValue);
-    AddAttributesActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API AddAttributesActivity();
+    AWS_IOTANALYTICS_API AddAttributesActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API AddAttributesActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,13 +228,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_next;
-    bool m_nextHasBeenSet;
+    bool m_nextHasBeenSet = false;
   };
 
 } // namespace Model

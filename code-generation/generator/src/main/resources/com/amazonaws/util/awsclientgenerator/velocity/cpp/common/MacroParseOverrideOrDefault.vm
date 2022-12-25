@@ -1,0 +1,7 @@
+#macro( parseOverrideOrDefault $OverrideKey $DefaultTemplate )
+#set($TemplateToParse = $DefaultTemplate)
+#if($TemplateOverride)
+#set($TemplateToParse = $TemplateOverride.getOrDefault($OverrideKey, $DefaultTemplate))
+#end
+#parse($TemplateToParse)
+#end##macro

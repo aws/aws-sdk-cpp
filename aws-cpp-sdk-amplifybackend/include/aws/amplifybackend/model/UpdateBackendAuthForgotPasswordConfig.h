@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthForgotPasswordConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig
+  class UpdateBackendAuthForgotPasswordConfig
   {
   public:
-    UpdateBackendAuthForgotPasswordConfig();
-    UpdateBackendAuthForgotPasswordConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthForgotPasswordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     DeliveryMethod m_deliveryMethod;
-    bool m_deliveryMethodHasBeenSet;
+    bool m_deliveryMethodHasBeenSet = false;
 
     EmailSettings m_emailSettings;
-    bool m_emailSettingsHasBeenSet;
+    bool m_emailSettingsHasBeenSet = false;
 
     SmsSettings m_smsSettings;
-    bool m_smsSettingsHasBeenSet;
+    bool m_smsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

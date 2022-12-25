@@ -29,6 +29,7 @@ namespace Aws
         static const int eu_west_2_HASH = HashingUtils::HashString("eu-west-2");
         static const int eu_west_3_HASH = HashingUtils::HashString("eu-west-3");
         static const int eu_central_1_HASH = HashingUtils::HashString("eu-central-1");
+        static const int eu_central_2_HASH = HashingUtils::HashString("eu-central-2");
         static const int ap_southeast_1_HASH = HashingUtils::HashString("ap-southeast-1");
         static const int ap_southeast_2_HASH = HashingUtils::HashString("ap-southeast-2");
         static const int ap_southeast_3_HASH = HashingUtils::HashString("ap-southeast-3");
@@ -41,9 +42,12 @@ namespace Aws
         static const int cn_northwest_1_HASH = HashingUtils::HashString("cn-northwest-1");
         static const int ap_east_1_HASH = HashingUtils::HashString("ap-east-1");
         static const int me_south_1_HASH = HashingUtils::HashString("me-south-1");
+        static const int me_central_1_HASH = HashingUtils::HashString("me-central-1");
         static const int ap_south_1_HASH = HashingUtils::HashString("ap-south-1");
+        static const int ap_south_2_HASH = HashingUtils::HashString("ap-south-2");
         static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
         static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
+        static const int eu_south_2_HASH = HashingUtils::HashString("eu-south-2");
 
 
         ResourceRecordSetRegion GetResourceRecordSetRegionForName(const Aws::String& name)
@@ -84,6 +88,10 @@ namespace Aws
           else if (hashCode == eu_central_1_HASH)
           {
             return ResourceRecordSetRegion::eu_central_1;
+          }
+          else if (hashCode == eu_central_2_HASH)
+          {
+            return ResourceRecordSetRegion::eu_central_2;
           }
           else if (hashCode == ap_southeast_1_HASH)
           {
@@ -133,9 +141,17 @@ namespace Aws
           {
             return ResourceRecordSetRegion::me_south_1;
           }
+          else if (hashCode == me_central_1_HASH)
+          {
+            return ResourceRecordSetRegion::me_central_1;
+          }
           else if (hashCode == ap_south_1_HASH)
           {
             return ResourceRecordSetRegion::ap_south_1;
+          }
+          else if (hashCode == ap_south_2_HASH)
+          {
+            return ResourceRecordSetRegion::ap_south_2;
           }
           else if (hashCode == af_south_1_HASH)
           {
@@ -144,6 +160,10 @@ namespace Aws
           else if (hashCode == eu_south_1_HASH)
           {
             return ResourceRecordSetRegion::eu_south_1;
+          }
+          else if (hashCode == eu_south_2_HASH)
+          {
+            return ResourceRecordSetRegion::eu_south_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -177,6 +197,8 @@ namespace Aws
             return "eu-west-3";
           case ResourceRecordSetRegion::eu_central_1:
             return "eu-central-1";
+          case ResourceRecordSetRegion::eu_central_2:
+            return "eu-central-2";
           case ResourceRecordSetRegion::ap_southeast_1:
             return "ap-southeast-1";
           case ResourceRecordSetRegion::ap_southeast_2:
@@ -201,12 +223,18 @@ namespace Aws
             return "ap-east-1";
           case ResourceRecordSetRegion::me_south_1:
             return "me-south-1";
+          case ResourceRecordSetRegion::me_central_1:
+            return "me-central-1";
           case ResourceRecordSetRegion::ap_south_1:
             return "ap-south-1";
+          case ResourceRecordSetRegion::ap_south_2:
+            return "ap-south-2";
           case ResourceRecordSetRegion::af_south_1:
             return "af-south-1";
           case ResourceRecordSetRegion::eu_south_1:
             return "eu-south-1";
+          case ResourceRecordSetRegion::eu_south_2:
+            return "eu-south-2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

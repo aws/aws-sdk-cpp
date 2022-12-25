@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/KantarWatermarkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API KantarWatermarkSettings
+  class KantarWatermarkSettings
   {
   public:
-    KantarWatermarkSettings();
-    KantarWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
-    KantarWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API KantarWatermarkSettings();
+    AWS_MEDIACONVERT_API KantarWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API KantarWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -706,43 +706,43 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_contentReference;
-    bool m_contentReferenceHasBeenSet;
+    bool m_contentReferenceHasBeenSet = false;
 
     Aws::String m_credentialsSecretName;
-    bool m_credentialsSecretNameHasBeenSet;
+    bool m_credentialsSecretNameHasBeenSet = false;
 
     double m_fileOffset;
-    bool m_fileOffsetHasBeenSet;
+    bool m_fileOffsetHasBeenSet = false;
 
     int m_kantarLicenseId;
-    bool m_kantarLicenseIdHasBeenSet;
+    bool m_kantarLicenseIdHasBeenSet = false;
 
     Aws::String m_kantarServerUrl;
-    bool m_kantarServerUrlHasBeenSet;
+    bool m_kantarServerUrlHasBeenSet = false;
 
     Aws::String m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
 
     Aws::String m_metadata3;
-    bool m_metadata3HasBeenSet;
+    bool m_metadata3HasBeenSet = false;
 
     Aws::String m_metadata4;
-    bool m_metadata4HasBeenSet;
+    bool m_metadata4HasBeenSet = false;
 
     Aws::String m_metadata5;
-    bool m_metadata5HasBeenSet;
+    bool m_metadata5HasBeenSet = false;
 
     Aws::String m_metadata6;
-    bool m_metadata6HasBeenSet;
+    bool m_metadata6HasBeenSet = false;
 
     Aws::String m_metadata7;
-    bool m_metadata7HasBeenSet;
+    bool m_metadata7HasBeenSet = false;
 
     Aws::String m_metadata8;
-    bool m_metadata8HasBeenSet;
+    bool m_metadata8HasBeenSet = false;
   };
 
 } // namespace Model

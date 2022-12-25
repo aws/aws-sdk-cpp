@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API UpdateDomainContactResult
+  class UpdateDomainContactResult
   {
   public:
-    UpdateDomainContactResult();
-    UpdateDomainContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactResult();
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

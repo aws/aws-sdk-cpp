@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionSelector
+  class CaptionSelector
   {
   public:
-    CaptionSelector();
-    CaptionSelector(Aws::Utils::Json::JsonView jsonValue);
-    CaptionSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionSelector();
+    AWS_MEDIALIVE_API CaptionSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CaptionSelectorSettings m_selectorSettings;
-    bool m_selectorSettingsHasBeenSet;
+    bool m_selectorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListDedicatedIpPoolsResult& ListDedicatedIpPoolsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DedicatedIpPools"))
   {
-    Array<JsonView> dedicatedIpPoolsJsonList = jsonValue.GetArray("DedicatedIpPools");
+    Aws::Utils::Array<JsonView> dedicatedIpPoolsJsonList = jsonValue.GetArray("DedicatedIpPools");
     for(unsigned dedicatedIpPoolsIndex = 0; dedicatedIpPoolsIndex < dedicatedIpPoolsJsonList.GetLength(); ++dedicatedIpPoolsIndex)
     {
       m_dedicatedIpPools.push_back(dedicatedIpPoolsJsonList[dedicatedIpPoolsIndex].AsString());

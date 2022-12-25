@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MarginStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MarginStyle
+  class MarginStyle
   {
   public:
-    MarginStyle();
-    MarginStyle(Aws::Utils::Json::JsonView jsonValue);
-    MarginStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MarginStyle();
+    AWS_QUICKSIGHT_API MarginStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MarginStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_show;
-    bool m_showHasBeenSet;
+    bool m_showHasBeenSet = false;
   };
 
 } // namespace Model

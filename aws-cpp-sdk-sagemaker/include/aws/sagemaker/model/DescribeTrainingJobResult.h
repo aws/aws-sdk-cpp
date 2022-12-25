@@ -24,6 +24,7 @@
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
+#include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -49,12 +50,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeTrainingJobResult
+  class DescribeTrainingJobResult
   {
   public:
-    DescribeTrainingJobResult();
-    DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrainingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeTrainingJobResult();
+    AWS_SAGEMAKER_API DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeTrainingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -1307,44 +1308,44 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for Debugger rules for debugging output
-     * tensors.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for debugging
+     * output tensors.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
 
@@ -1366,37 +1367,44 @@ namespace Model
 
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline const Aws::Vector<DebugRuleEvaluationStatus>& GetDebugRuleEvaluationStatuses() const{ return m_debugRuleEvaluationStatuses; }
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline void SetDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { m_debugRuleEvaluationStatuses = value; }
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline void SetDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { m_debugRuleEvaluationStatuses = std::move(value); }
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { SetDebugRuleEvaluationStatuses(value); return *this;}
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { SetDebugRuleEvaluationStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(const DebugRuleEvaluationStatus& value) { m_debugRuleEvaluationStatuses.push_back(value); return *this; }
 
     /**
-     * <p>Evaluation status of Debugger rules for debugging on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for debugging on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
 
@@ -1418,80 +1426,87 @@ namespace Model
 
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline const Aws::Vector<ProfilerRuleConfiguration>& GetProfilerRuleConfigurations() const{ return m_profilerRuleConfigurations; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { m_profilerRuleConfigurations = value; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline void SetProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { m_profilerRuleConfigurations = std::move(value); }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(const Aws::Vector<ProfilerRuleConfiguration>& value) { SetProfilerRuleConfigurations(value); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline DescribeTrainingJobResult& WithProfilerRuleConfigurations(Aws::Vector<ProfilerRuleConfiguration>&& value) { SetProfilerRuleConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(const ProfilerRuleConfiguration& value) { m_profilerRuleConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Configuration information for Debugger rules for profiling system and
-     * framework metrics.</p>
+     * <p>Configuration information for Amazon SageMaker Debugger rules for profiling
+     * system and framework metrics.</p>
      */
     inline DescribeTrainingJobResult& AddProfilerRuleConfigurations(ProfilerRuleConfiguration&& value) { m_profilerRuleConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline const Aws::Vector<ProfilerRuleEvaluationStatus>& GetProfilerRuleEvaluationStatuses() const{ return m_profilerRuleEvaluationStatuses; }
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline void SetProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { m_profilerRuleEvaluationStatuses = value; }
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline void SetProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { m_profilerRuleEvaluationStatuses = std::move(value); }
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(const Aws::Vector<ProfilerRuleEvaluationStatus>& value) { SetProfilerRuleEvaluationStatuses(value); return *this;}
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& WithProfilerRuleEvaluationStatuses(Aws::Vector<ProfilerRuleEvaluationStatus>&& value) { SetProfilerRuleEvaluationStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(const ProfilerRuleEvaluationStatus& value) { m_profilerRuleEvaluationStatuses.push_back(value); return *this; }
 
     /**
-     * <p>Evaluation status of Debugger rules for profiling on a training job.</p>
+     * <p>Evaluation status of Amazon SageMaker Debugger rules for profiling on a
+     * training job.</p>
      */
     inline DescribeTrainingJobResult& AddProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatus&& value) { m_profilerRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
 
@@ -1613,6 +1628,32 @@ namespace Model
      */
     inline DescribeTrainingJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(const WarmPoolStatus& value) { m_warmPoolStatus = value; }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline void SetWarmPoolStatus(WarmPoolStatus&& value) { m_warmPoolStatus = std::move(value); }
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(const WarmPoolStatus& value) { SetWarmPoolStatus(value); return *this;}
+
+    /**
+     * <p>The status of the warm pool associated with the training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithWarmPoolStatus(WarmPoolStatus&& value) { SetWarmPoolStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1694,6 +1735,8 @@ namespace Model
     RetryStrategy m_retryStrategy;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
+
+    WarmPoolStatus m_warmPoolStatus;
   };
 
 } // namespace Model

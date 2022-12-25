@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/RegistrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API RegistrationConfig
+  class RegistrationConfig
   {
   public:
-    RegistrationConfig();
-    RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API RegistrationConfig();
+    AWS_VOICEID_API RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     DuplicateRegistrationAction m_duplicateRegistrationAction;
-    bool m_duplicateRegistrationActionHasBeenSet;
+    bool m_duplicateRegistrationActionHasBeenSet = false;
 
     int m_fraudsterSimilarityThreshold;
-    bool m_fraudsterSimilarityThresholdHasBeenSet;
+    bool m_fraudsterSimilarityThresholdHasBeenSet = false;
   };
 
 } // namespace Model

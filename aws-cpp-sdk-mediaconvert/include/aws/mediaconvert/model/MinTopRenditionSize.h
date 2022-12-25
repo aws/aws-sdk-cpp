@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MinTopRenditionSize">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MinTopRenditionSize
+  class MinTopRenditionSize
   {
   public:
-    MinTopRenditionSize();
-    MinTopRenditionSize(Aws::Utils::Json::JsonView jsonValue);
-    MinTopRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MinTopRenditionSize();
+    AWS_MEDIACONVERT_API MinTopRenditionSize(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MinTopRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,10 +85,10 @@ namespace Model
   private:
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

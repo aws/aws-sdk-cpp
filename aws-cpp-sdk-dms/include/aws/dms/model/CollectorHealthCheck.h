@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CollectorHealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck
+  class CollectorHealthCheck
   {
   public:
-    CollectorHealthCheck();
-    CollectorHealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    CollectorHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck();
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,16 +138,16 @@ namespace Model
   private:
 
     CollectorStatus m_collectorStatus;
-    bool m_collectorStatusHasBeenSet;
+    bool m_collectorStatusHasBeenSet = false;
 
     bool m_localCollectorS3Access;
-    bool m_localCollectorS3AccessHasBeenSet;
+    bool m_localCollectorS3AccessHasBeenSet = false;
 
     bool m_webCollectorS3Access;
-    bool m_webCollectorS3AccessHasBeenSet;
+    bool m_webCollectorS3AccessHasBeenSet = false;
 
     bool m_webCollectorGrantedRoleBasedAccess;
-    bool m_webCollectorGrantedRoleBasedAccessHasBeenSet;
+    bool m_webCollectorGrantedRoleBasedAccessHasBeenSet = false;
   };
 
 } // namespace Model

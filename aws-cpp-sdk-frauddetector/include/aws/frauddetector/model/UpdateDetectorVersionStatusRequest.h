@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API UpdateDetectorVersionStatusRequest : public FraudDetectorRequest
+  class UpdateDetectorVersionStatusRequest : public FraudDetectorRequest
   {
   public:
-    UpdateDetectorVersionStatusRequest();
+    AWS_FRAUDDETECTOR_API UpdateDetectorVersionStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDetectorVersionStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,45 +118,51 @@ namespace Model
 
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline void SetStatus(const DetectorVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline void SetStatus(DetectorVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline UpdateDetectorVersionStatusRequest& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline UpdateDetectorVersionStatusRequest& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     DetectorVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

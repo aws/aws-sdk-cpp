@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ChatChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ChatChannel
+  class ChatChannel
   {
   public:
-    ChatChannel();
-    ChatChannel(Aws::Utils::Json::JsonView jsonValue);
-    ChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ChatChannel();
+    AWS_SSMINCIDENTS_API ChatChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_chatbotSns;
-    bool m_chatbotSnsHasBeenSet;
+    bool m_chatbotSnsHasBeenSet = false;
 
     EmptyChatChannel m_empty;
-    bool m_emptyHasBeenSet;
+    bool m_emptyHasBeenSet = false;
   };
 
 } // namespace Model

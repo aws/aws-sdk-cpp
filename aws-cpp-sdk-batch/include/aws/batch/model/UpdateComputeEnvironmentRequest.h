@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironmentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API UpdateComputeEnvironmentRequest : public BatchRequest
+  class UpdateComputeEnvironmentRequest : public BatchRequest
   {
   public:
-    UpdateComputeEnvironmentRequest();
+    AWS_BATCH_API UpdateComputeEnvironmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateComputeEnvironment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -187,37 +187,37 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. Do not specify this parameter for a managed compute environment.
+     * environment. Don't specify this parameter for a managed compute environment.
      * This parameter is only used for fair share scheduling to reserve vCPU capacity
-     * for new share identifiers. If this parameter is not provided for a fair share
-     * job queue, no vCPU capacity will be reserved.</p>
+     * for new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>
      */
     inline int GetUnmanagedvCpus() const{ return m_unmanagedvCpus; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. Do not specify this parameter for a managed compute environment.
+     * environment. Don't specify this parameter for a managed compute environment.
      * This parameter is only used for fair share scheduling to reserve vCPU capacity
-     * for new share identifiers. If this parameter is not provided for a fair share
-     * job queue, no vCPU capacity will be reserved.</p>
+     * for new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>
      */
     inline bool UnmanagedvCpusHasBeenSet() const { return m_unmanagedvCpusHasBeenSet; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. Do not specify this parameter for a managed compute environment.
+     * environment. Don't specify this parameter for a managed compute environment.
      * This parameter is only used for fair share scheduling to reserve vCPU capacity
-     * for new share identifiers. If this parameter is not provided for a fair share
-     * job queue, no vCPU capacity will be reserved.</p>
+     * for new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>
      */
     inline void SetUnmanagedvCpus(int value) { m_unmanagedvCpusHasBeenSet = true; m_unmanagedvCpus = value; }
 
     /**
      * <p>The maximum number of vCPUs expected to be used for an unmanaged compute
-     * environment. Do not specify this parameter for a managed compute environment.
+     * environment. Don't specify this parameter for a managed compute environment.
      * This parameter is only used for fair share scheduling to reserve vCPU capacity
-     * for new share identifiers. If this parameter is not provided for a fair share
-     * job queue, no vCPU capacity will be reserved.</p>
+     * for new share identifiers. If this parameter isn't provided for a fair share job
+     * queue, no vCPU capacity is reserved.</p>
      */
     inline UpdateComputeEnvironmentRequest& WithUnmanagedvCpus(int value) { SetUnmanagedvCpus(value); return *this;}
 
@@ -523,22 +523,22 @@ namespace Model
   private:
 
     Aws::String m_computeEnvironment;
-    bool m_computeEnvironmentHasBeenSet;
+    bool m_computeEnvironmentHasBeenSet = false;
 
     CEState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_unmanagedvCpus;
-    bool m_unmanagedvCpusHasBeenSet;
+    bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResourceUpdate m_computeResources;
-    bool m_computeResourcesHasBeenSet;
+    bool m_computeResourcesHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     UpdatePolicy m_updatePolicy;
-    bool m_updatePolicyHasBeenSet;
+    bool m_updatePolicyHasBeenSet = false;
   };
 
 } // namespace Model

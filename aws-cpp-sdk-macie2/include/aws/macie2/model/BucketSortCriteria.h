@@ -30,20 +30,20 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketSortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketSortCriteria
+  class BucketSortCriteria
   {
   public:
-    BucketSortCriteria();
-    BucketSortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    BucketSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketSortCriteria();
+    AWS_MACIE2_API BucketSortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
@@ -51,7 +51,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
@@ -59,7 +59,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
@@ -67,7 +67,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
@@ -83,7 +83,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline BucketSortCriteria& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
@@ -91,7 +91,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline BucketSortCriteria& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
@@ -99,7 +99,7 @@ namespace Model
      * <p>The name of the bucket property to sort the results by. This value can be one
      * of the following properties that Amazon Macie defines as bucket metadata:
      * accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.</p>
+     * objectCount, sensitivityScore, or sizeInBytes.</p>
      */
     inline BucketSortCriteria& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,143 +5,16 @@
 
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
-#include <aws/cognito-sync/CognitoSyncErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cognito-sync/model/BulkPublishResult.h>
-#include <aws/cognito-sync/model/DeleteDatasetResult.h>
-#include <aws/cognito-sync/model/DescribeDatasetResult.h>
-#include <aws/cognito-sync/model/DescribeIdentityPoolUsageResult.h>
-#include <aws/cognito-sync/model/DescribeIdentityUsageResult.h>
-#include <aws/cognito-sync/model/GetBulkPublishDetailsResult.h>
-#include <aws/cognito-sync/model/GetCognitoEventsResult.h>
-#include <aws/cognito-sync/model/GetIdentityPoolConfigurationResult.h>
-#include <aws/cognito-sync/model/ListDatasetsResult.h>
-#include <aws/cognito-sync/model/ListIdentityPoolUsageResult.h>
-#include <aws/cognito-sync/model/ListRecordsResult.h>
-#include <aws/cognito-sync/model/RegisterDeviceResult.h>
-#include <aws/cognito-sync/model/SetIdentityPoolConfigurationResult.h>
-#include <aws/cognito-sync/model/SubscribeToDatasetResult.h>
-#include <aws/cognito-sync/model/UnsubscribeFromDatasetResult.h>
-#include <aws/cognito-sync/model/UpdateRecordsResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cognito-sync/CognitoSyncServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CognitoSync
 {
-
-namespace Model
-{
-        class BulkPublishRequest;
-        class DeleteDatasetRequest;
-        class DescribeDatasetRequest;
-        class DescribeIdentityPoolUsageRequest;
-        class DescribeIdentityUsageRequest;
-        class GetBulkPublishDetailsRequest;
-        class GetCognitoEventsRequest;
-        class GetIdentityPoolConfigurationRequest;
-        class ListDatasetsRequest;
-        class ListIdentityPoolUsageRequest;
-        class ListRecordsRequest;
-        class RegisterDeviceRequest;
-        class SetCognitoEventsRequest;
-        class SetIdentityPoolConfigurationRequest;
-        class SubscribeToDatasetRequest;
-        class UnsubscribeFromDatasetRequest;
-        class UpdateRecordsRequest;
-
-        typedef Aws::Utils::Outcome<BulkPublishResult, CognitoSyncError> BulkPublishOutcome;
-        typedef Aws::Utils::Outcome<DeleteDatasetResult, CognitoSyncError> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, CognitoSyncError> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityPoolUsageResult, CognitoSyncError> DescribeIdentityPoolUsageOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityUsageResult, CognitoSyncError> DescribeIdentityUsageOutcome;
-        typedef Aws::Utils::Outcome<GetBulkPublishDetailsResult, CognitoSyncError> GetBulkPublishDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetCognitoEventsResult, CognitoSyncError> GetCognitoEventsOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityPoolConfigurationResult, CognitoSyncError> GetIdentityPoolConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetsResult, CognitoSyncError> ListDatasetsOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityPoolUsageResult, CognitoSyncError> ListIdentityPoolUsageOutcome;
-        typedef Aws::Utils::Outcome<ListRecordsResult, CognitoSyncError> ListRecordsOutcome;
-        typedef Aws::Utils::Outcome<RegisterDeviceResult, CognitoSyncError> RegisterDeviceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoSyncError> SetCognitoEventsOutcome;
-        typedef Aws::Utils::Outcome<SetIdentityPoolConfigurationResult, CognitoSyncError> SetIdentityPoolConfigurationOutcome;
-        typedef Aws::Utils::Outcome<SubscribeToDatasetResult, CognitoSyncError> SubscribeToDatasetOutcome;
-        typedef Aws::Utils::Outcome<UnsubscribeFromDatasetResult, CognitoSyncError> UnsubscribeFromDatasetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRecordsResult, CognitoSyncError> UpdateRecordsOutcome;
-
-        typedef std::future<BulkPublishOutcome> BulkPublishOutcomeCallable;
-        typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
-        typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
-        typedef std::future<DescribeIdentityPoolUsageOutcome> DescribeIdentityPoolUsageOutcomeCallable;
-        typedef std::future<DescribeIdentityUsageOutcome> DescribeIdentityUsageOutcomeCallable;
-        typedef std::future<GetBulkPublishDetailsOutcome> GetBulkPublishDetailsOutcomeCallable;
-        typedef std::future<GetCognitoEventsOutcome> GetCognitoEventsOutcomeCallable;
-        typedef std::future<GetIdentityPoolConfigurationOutcome> GetIdentityPoolConfigurationOutcomeCallable;
-        typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
-        typedef std::future<ListIdentityPoolUsageOutcome> ListIdentityPoolUsageOutcomeCallable;
-        typedef std::future<ListRecordsOutcome> ListRecordsOutcomeCallable;
-        typedef std::future<RegisterDeviceOutcome> RegisterDeviceOutcomeCallable;
-        typedef std::future<SetCognitoEventsOutcome> SetCognitoEventsOutcomeCallable;
-        typedef std::future<SetIdentityPoolConfigurationOutcome> SetIdentityPoolConfigurationOutcomeCallable;
-        typedef std::future<SubscribeToDatasetOutcome> SubscribeToDatasetOutcomeCallable;
-        typedef std::future<UnsubscribeFromDatasetOutcome> UnsubscribeFromDatasetOutcomeCallable;
-        typedef std::future<UpdateRecordsOutcome> UpdateRecordsOutcomeCallable;
-} // namespace Model
-
-  class CognitoSyncClient;
-
-    typedef std::function<void(const CognitoSyncClient*, const Model::BulkPublishRequest&, const Model::BulkPublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BulkPublishResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::DescribeIdentityPoolUsageRequest&, const Model::DescribeIdentityPoolUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityPoolUsageResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::DescribeIdentityUsageRequest&, const Model::DescribeIdentityUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityUsageResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::GetBulkPublishDetailsRequest&, const Model::GetBulkPublishDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBulkPublishDetailsResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::GetCognitoEventsRequest&, const Model::GetCognitoEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCognitoEventsResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::GetIdentityPoolConfigurationRequest&, const Model::GetIdentityPoolConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityPoolConfigurationResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::ListIdentityPoolUsageRequest&, const Model::ListIdentityPoolUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityPoolUsageResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::ListRecordsRequest&, const Model::ListRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecordsResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::RegisterDeviceRequest&, const Model::RegisterDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDeviceResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::SetCognitoEventsRequest&, const Model::SetCognitoEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetCognitoEventsResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::SetIdentityPoolConfigurationRequest&, const Model::SetIdentityPoolConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityPoolConfigurationResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::SubscribeToDatasetRequest&, const Model::SubscribeToDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeToDatasetResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::UnsubscribeFromDatasetRequest&, const Model::UnsubscribeFromDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnsubscribeFromDatasetResponseReceivedHandler;
-    typedef std::function<void(const CognitoSyncClient*, const Model::UpdateRecordsRequest&, const Model::UpdateRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecordsResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Cognito Sync</fullname> <p>Amazon Cognito Sync provides an AWS
    * service and client library that enable cross-device syncing of
@@ -164,32 +37,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-sync.html">Developer
    * Guide for iOS</a>.</p>
    */
-  class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient
+  class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoSyncClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CognitoSyncClient(const Aws::CognitoSync::CognitoSyncClientConfiguration& clientConfiguration = Aws::CognitoSync::CognitoSyncClientConfiguration(),
+                          std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoSyncClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CognitoSyncClient(const Aws::Auth::AWSCredentials& credentials,
+                          std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::CognitoSync::CognitoSyncClientConfiguration& clientConfiguration = Aws::CognitoSync::CognitoSyncClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CognitoSyncClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::CognitoSync::CognitoSyncClientConfiguration& clientConfiguration = Aws::CognitoSync::CognitoSyncClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CognitoSyncClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CognitoSyncClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CognitoSyncClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CognitoSyncClient();
-
 
         /**
          * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the
@@ -552,29 +453,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CognitoSyncEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BulkPublishAsyncHelper(const Model::BulkPublishRequest& request, const BulkPublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeIdentityPoolUsageAsyncHelper(const Model::DescribeIdentityPoolUsageRequest& request, const DescribeIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeIdentityUsageAsyncHelper(const Model::DescribeIdentityUsageRequest& request, const DescribeIdentityUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBulkPublishDetailsAsyncHelper(const Model::GetBulkPublishDetailsRequest& request, const GetBulkPublishDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCognitoEventsAsyncHelper(const Model::GetCognitoEventsRequest& request, const GetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIdentityPoolConfigurationAsyncHelper(const Model::GetIdentityPoolConfigurationRequest& request, const GetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentityPoolUsageAsyncHelper(const Model::ListIdentityPoolUsageRequest& request, const ListIdentityPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecordsAsyncHelper(const Model::ListRecordsRequest& request, const ListRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterDeviceAsyncHelper(const Model::RegisterDeviceRequest& request, const RegisterDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetCognitoEventsAsyncHelper(const Model::SetCognitoEventsRequest& request, const SetCognitoEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetIdentityPoolConfigurationAsyncHelper(const Model::SetIdentityPoolConfigurationRequest& request, const SetIdentityPoolConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubscribeToDatasetAsyncHelper(const Model::SubscribeToDatasetRequest& request, const SubscribeToDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnsubscribeFromDatasetAsyncHelper(const Model::UnsubscribeFromDatasetRequest& request, const UnsubscribeFromDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRecordsAsyncHelper(const Model::UpdateRecordsRequest& request, const UpdateRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;
+      void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CognitoSyncClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CognitoSync

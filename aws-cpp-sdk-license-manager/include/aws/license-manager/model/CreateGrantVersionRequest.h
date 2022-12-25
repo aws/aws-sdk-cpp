@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CreateGrantVersionRequest : public LicenseManagerRequest
+  class CreateGrantVersionRequest : public LicenseManagerRequest
   {
   public:
-    CreateGrantVersionRequest();
+    AWS_LICENSEMANAGER_API CreateGrantVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGrantVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_grantArn;
-    bool m_grantArnHasBeenSet;
+    bool m_grantArnHasBeenSet = false;
 
     Aws::String m_grantName;
-    bool m_grantNameHasBeenSet;
+    bool m_grantNameHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
 
     GrantStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
   };
 
 } // namespace Model

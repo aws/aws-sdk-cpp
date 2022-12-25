@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API MonitoringConfiguration
+  class MonitoringConfiguration
   {
   public:
-    MonitoringConfiguration();
-    MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API MonitoringConfiguration();
+    AWS_KINESISANALYTICSV2_API MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     ConfigurationType m_configurationType;
-    bool m_configurationTypeHasBeenSet;
+    bool m_configurationTypeHasBeenSet = false;
 
     MetricsLevel m_metricsLevel;
-    bool m_metricsLevelHasBeenSet;
+    bool m_metricsLevelHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

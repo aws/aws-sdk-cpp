@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API StopStackSetOperationRequest : public CloudFormationRequest
+  class StopStackSetOperationRequest : public CloudFormationRequest
   {
   public:
-    StopStackSetOperationRequest();
+    AWS_CLOUDFORMATION_API StopStackSetOperationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopStackSetOperation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -226,13 +226,13 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

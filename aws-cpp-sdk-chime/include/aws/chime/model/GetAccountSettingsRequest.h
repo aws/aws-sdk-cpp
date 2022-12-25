@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API GetAccountSettingsRequest : public ChimeRequest
+  class GetAccountSettingsRequest : public ChimeRequest
   {
   public:
-    GetAccountSettingsRequest();
+    AWS_CHIME_API GetAccountSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAccountSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

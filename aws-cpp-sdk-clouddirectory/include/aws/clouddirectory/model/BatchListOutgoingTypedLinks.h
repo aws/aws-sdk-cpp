@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListOutgoingTypedLinks">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks
+  class BatchListOutgoingTypedLinks
   {
   public:
-    BatchListOutgoingTypedLinks();
-    BatchListOutgoingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
-    BatchListOutgoingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks();
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
 
     Aws::Vector<TypedLinkAttributeRange> m_filterAttributeRanges;
-    bool m_filterAttributeRangesHasBeenSet;
+    bool m_filterAttributeRangesHasBeenSet = false;
 
     TypedLinkSchemaAndFacetName m_filterTypedLink;
-    bool m_filterTypedLinkHasBeenSet;
+    bool m_filterTypedLinkHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

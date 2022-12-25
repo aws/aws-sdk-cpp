@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API CreateConfigurationRequest : public MQRequest
+  class CreateConfigurationRequest : public MQRequest
   {
   public:
-    CreateConfigurationRequest();
+    AWS_MQ_API CreateConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MQ_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -304,19 +304,19 @@ namespace Model
   private:
 
     AuthenticationStrategy m_authenticationStrategy;
-    bool m_authenticationStrategyHasBeenSet;
+    bool m_authenticationStrategyHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

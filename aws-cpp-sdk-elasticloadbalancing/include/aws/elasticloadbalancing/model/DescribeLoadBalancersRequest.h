@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccessPointsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API DescribeLoadBalancersRequest : public ElasticLoadBalancingRequest
+  class DescribeLoadBalancersRequest : public ElasticLoadBalancingRequest
   {
   public:
-    DescribeLoadBalancersRequest();
+    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLoadBalancers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerNames;
-    bool m_loadBalancerNamesHasBeenSet;
+    bool m_loadBalancerNamesHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

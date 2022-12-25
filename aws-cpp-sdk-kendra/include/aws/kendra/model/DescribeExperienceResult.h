@@ -29,12 +29,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeExperienceResult
+  class DescribeExperienceResult
   {
   public:
-    DescribeExperienceResult();
-    DescribeExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeExperienceResult();
+    AWS_KENDRA_API DescribeExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -366,56 +366,56 @@ namespace Model
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline DescribeExperienceResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline DescribeExperienceResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information.</p>
      */
     inline DescribeExperienceResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

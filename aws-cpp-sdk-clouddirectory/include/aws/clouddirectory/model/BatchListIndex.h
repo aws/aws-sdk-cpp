@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListIndex
+  class BatchListIndex
   {
   public:
-    BatchListIndex();
-    BatchListIndex(Aws::Utils::Json::JsonView jsonValue);
-    BatchListIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListIndex();
+    AWS_CLOUDDIRECTORY_API BatchListIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
-    bool m_rangesOnIndexedValuesHasBeenSet;
+    bool m_rangesOnIndexedValuesHasBeenSet = false;
 
     ObjectReference m_indexReference;
-    bool m_indexReferenceHasBeenSet;
+    bool m_indexReferenceHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

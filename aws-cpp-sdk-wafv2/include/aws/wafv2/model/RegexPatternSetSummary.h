@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RegexPatternSetSummary
+  class RegexPatternSetSummary
   {
   public:
-    RegexPatternSetSummary();
-    RegexPatternSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RegexPatternSetSummary();
+    AWS_WAFV2_API RegexPatternSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RegexPatternSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -328,19 +328,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lockToken;
-    bool m_lockTokenHasBeenSet;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

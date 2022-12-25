@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/JobProgress">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API JobProgress
+  class JobProgress
   {
   public:
-    JobProgress();
-    JobProgress(Aws::Utils::Json::JsonView jsonValue);
-    JobProgress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API JobProgress();
+    AWS_VOICEID_API JobProgress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API JobProgress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_percentComplete;
-    bool m_percentCompleteHasBeenSet;
+    bool m_percentCompleteHasBeenSet = false;
   };
 
 } // namespace Model

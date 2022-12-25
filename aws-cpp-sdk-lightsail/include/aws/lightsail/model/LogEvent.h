@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LogEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LogEvent
+  class LogEvent
   {
   public:
-    LogEvent();
-    LogEvent(Aws::Utils::Json::JsonView jsonValue);
-    LogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LogEvent();
+    AWS_LIGHTSAIL_API LogEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

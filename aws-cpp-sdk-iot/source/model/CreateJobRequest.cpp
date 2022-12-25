@@ -28,7 +28,8 @@ CreateJobRequest::CreateJobRequest() :
     m_namespaceIdHasBeenSet(false),
     m_jobTemplateArnHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false)
+    m_documentParametersHasBeenSet(false),
+    m_schedulingConfigHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -96,7 +97,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -131,6 +132,12 @@ Aws::String CreateJobRequest::SerializePayload() const
      documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
    }
    payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
+
+  }
+
+  if(m_schedulingConfigHasBeenSet)
+  {
+   payload.WithObject("schedulingConfig", m_schedulingConfig.Jsonize());
 
   }
 

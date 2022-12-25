@@ -12,6 +12,8 @@
 #include <aws/dataexchange/model/ImportAssetsFromS3RequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesRequestDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromApiGatewayApiRequestDetails.h>
+#include <aws/dataexchange/model/CreateS3DataAccessFromS3BucketRequestDetails.h>
+#include <aws/dataexchange/model/ImportAssetsFromLakeFormationTagPolicyRequestDetails.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API RequestDetails
+  class RequestDetails
   {
   public:
-    RequestDetails();
-    RequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API RequestDetails();
+    AWS_DATAEXCHANGE_API RequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,63 +139,63 @@ namespace Model
 
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline const ImportAssetFromSignedUrlRequestDetails& GetImportAssetFromSignedUrl() const{ return m_importAssetFromSignedUrl; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline bool ImportAssetFromSignedUrlHasBeenSet() const { return m_importAssetFromSignedUrlHasBeenSet; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline void SetImportAssetFromSignedUrl(const ImportAssetFromSignedUrlRequestDetails& value) { m_importAssetFromSignedUrlHasBeenSet = true; m_importAssetFromSignedUrl = value; }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline void SetImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails&& value) { m_importAssetFromSignedUrlHasBeenSet = true; m_importAssetFromSignedUrl = std::move(value); }
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline RequestDetails& WithImportAssetFromSignedUrl(const ImportAssetFromSignedUrlRequestDetails& value) { SetImportAssetFromSignedUrl(value); return *this;}
 
     /**
-     * <p>Details about the import from signed URL request.</p>
+     * <p>Details about the import from Amazon S3 request.</p>
      */
     inline RequestDetails& WithImportAssetFromSignedUrl(ImportAssetFromSignedUrlRequestDetails&& value) { SetImportAssetFromSignedUrl(std::move(value)); return *this;}
 
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline const ImportAssetsFromS3RequestDetails& GetImportAssetsFromS3() const{ return m_importAssetsFromS3; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline bool ImportAssetsFromS3HasBeenSet() const { return m_importAssetsFromS3HasBeenSet; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline void SetImportAssetsFromS3(const ImportAssetsFromS3RequestDetails& value) { m_importAssetsFromS3HasBeenSet = true; m_importAssetsFromS3 = value; }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline void SetImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { m_importAssetsFromS3HasBeenSet = true; m_importAssetsFromS3 = std::move(value); }
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline RequestDetails& WithImportAssetsFromS3(const ImportAssetsFromS3RequestDetails& value) { SetImportAssetsFromS3(value); return *this;}
 
     /**
-     * <p>Details about the import from Amazon S3 request.</p>
+     * <p>Details about the import asset from API Gateway API request.</p>
      */
     inline RequestDetails& WithImportAssetsFromS3(ImportAssetsFromS3RequestDetails&& value) { SetImportAssetsFromS3(std::move(value)); return *this;}
 
@@ -230,57 +232,131 @@ namespace Model
 
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline const ImportAssetFromApiGatewayApiRequestDetails& GetImportAssetFromApiGatewayApi() const{ return m_importAssetFromApiGatewayApi; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline bool ImportAssetFromApiGatewayApiHasBeenSet() const { return m_importAssetFromApiGatewayApiHasBeenSet; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline void SetImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = value; }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline void SetImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = std::move(value); }
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline RequestDetails& WithImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiRequestDetails& value) { SetImportAssetFromApiGatewayApi(value); return *this;}
 
     /**
-     * <p>Information about the import asset from API Gateway API request.</p>
+     * <p>Details about the import from signed URL request.</p>
      */
     inline RequestDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiRequestDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline const CreateS3DataAccessFromS3BucketRequestDetails& GetCreateS3DataAccessFromS3Bucket() const{ return m_createS3DataAccessFromS3Bucket; }
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline bool CreateS3DataAccessFromS3BucketHasBeenSet() const { return m_createS3DataAccessFromS3BucketHasBeenSet; }
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline void SetCreateS3DataAccessFromS3Bucket(const CreateS3DataAccessFromS3BucketRequestDetails& value) { m_createS3DataAccessFromS3BucketHasBeenSet = true; m_createS3DataAccessFromS3Bucket = value; }
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline void SetCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketRequestDetails&& value) { m_createS3DataAccessFromS3BucketHasBeenSet = true; m_createS3DataAccessFromS3Bucket = std::move(value); }
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline RequestDetails& WithCreateS3DataAccessFromS3Bucket(const CreateS3DataAccessFromS3BucketRequestDetails& value) { SetCreateS3DataAccessFromS3Bucket(value); return *this;}
+
+    /**
+     * <p>Details of the request to create S3 data access from the Amazon S3
+     * bucket.</p>
+     */
+    inline RequestDetails& WithCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketRequestDetails&& value) { SetCreateS3DataAccessFromS3Bucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline const ImportAssetsFromLakeFormationTagPolicyRequestDetails& GetImportAssetsFromLakeFormationTagPolicy() const{ return m_importAssetsFromLakeFormationTagPolicy; }
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline bool ImportAssetsFromLakeFormationTagPolicyHasBeenSet() const { return m_importAssetsFromLakeFormationTagPolicyHasBeenSet; }
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline void SetImportAssetsFromLakeFormationTagPolicy(const ImportAssetsFromLakeFormationTagPolicyRequestDetails& value) { m_importAssetsFromLakeFormationTagPolicyHasBeenSet = true; m_importAssetsFromLakeFormationTagPolicy = value; }
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline void SetImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyRequestDetails&& value) { m_importAssetsFromLakeFormationTagPolicyHasBeenSet = true; m_importAssetsFromLakeFormationTagPolicy = std::move(value); }
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromLakeFormationTagPolicy(const ImportAssetsFromLakeFormationTagPolicyRequestDetails& value) { SetImportAssetsFromLakeFormationTagPolicy(value); return *this;}
+
+    /**
+     * <p>Request details for the ImportAssetsFromLakeFormationTagPolicy job.</p>
+     */
+    inline RequestDetails& WithImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyRequestDetails&& value) { SetImportAssetsFromLakeFormationTagPolicy(std::move(value)); return *this;}
 
   private:
 
     ExportAssetToSignedUrlRequestDetails m_exportAssetToSignedUrl;
-    bool m_exportAssetToSignedUrlHasBeenSet;
+    bool m_exportAssetToSignedUrlHasBeenSet = false;
 
     ExportAssetsToS3RequestDetails m_exportAssetsToS3;
-    bool m_exportAssetsToS3HasBeenSet;
+    bool m_exportAssetsToS3HasBeenSet = false;
 
     ExportRevisionsToS3RequestDetails m_exportRevisionsToS3;
-    bool m_exportRevisionsToS3HasBeenSet;
+    bool m_exportRevisionsToS3HasBeenSet = false;
 
     ImportAssetFromSignedUrlRequestDetails m_importAssetFromSignedUrl;
-    bool m_importAssetFromSignedUrlHasBeenSet;
+    bool m_importAssetFromSignedUrlHasBeenSet = false;
 
     ImportAssetsFromS3RequestDetails m_importAssetsFromS3;
-    bool m_importAssetsFromS3HasBeenSet;
+    bool m_importAssetsFromS3HasBeenSet = false;
 
     ImportAssetsFromRedshiftDataSharesRequestDetails m_importAssetsFromRedshiftDataShares;
-    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet = false;
 
     ImportAssetFromApiGatewayApiRequestDetails m_importAssetFromApiGatewayApi;
-    bool m_importAssetFromApiGatewayApiHasBeenSet;
+    bool m_importAssetFromApiGatewayApiHasBeenSet = false;
+
+    CreateS3DataAccessFromS3BucketRequestDetails m_createS3DataAccessFromS3Bucket;
+    bool m_createS3DataAccessFromS3BucketHasBeenSet = false;
+
+    ImportAssetsFromLakeFormationTagPolicyRequestDetails m_importAssetsFromLakeFormationTagPolicy;
+    bool m_importAssetsFromLakeFormationTagPolicyHasBeenSet = false;
   };
 
 } // namespace Model

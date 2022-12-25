@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSourceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate
+  class ReferenceDataSourceUpdate
   {
   public:
-    ReferenceDataSourceUpdate();
-    ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate();
+    AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_tableNameUpdate;
-    bool m_tableNameUpdateHasBeenSet;
+    bool m_tableNameUpdateHasBeenSet = false;
 
     S3ReferenceDataSourceUpdate m_s3ReferenceDataSourceUpdate;
-    bool m_s3ReferenceDataSourceUpdateHasBeenSet;
+    bool m_s3ReferenceDataSourceUpdateHasBeenSet = false;
 
     SourceSchema m_referenceSchemaUpdate;
-    bool m_referenceSchemaUpdateHasBeenSet;
+    bool m_referenceSchemaUpdateHasBeenSet = false;
   };
 
 } // namespace Model

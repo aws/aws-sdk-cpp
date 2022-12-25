@@ -22,7 +22,9 @@ CategoryProperties::CategoryProperties() :
     m_categoryNameHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ CategoryProperties::CategoryProperties(JsonView jsonValue) :
     m_categoryNameHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_inputType(InputType::NOT_SET),
+    m_inputTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,7 +50,7 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -68,6 +72,13 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InputType"))
+  {
+    m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
+
+    m_inputTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,7 +94,7 @@ JsonValue CategoryProperties::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -100,6 +111,11 @@ JsonValue CategoryProperties::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_inputTypeHasBeenSet)
+  {
+   payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
   }
 
   return payload;

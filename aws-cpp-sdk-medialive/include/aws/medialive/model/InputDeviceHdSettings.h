@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceHdSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceHdSettings
+  class InputDeviceHdSettings
   {
   public:
-    InputDeviceHdSettings();
-    InputDeviceHdSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceHdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceHdSettings();
+    AWS_MEDIALIVE_API InputDeviceHdSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceHdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,31 +264,59 @@ namespace Model
      */
     inline InputDeviceHdSettings& WithWidth(int value) { SetWidth(value); return *this;}
 
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline int GetLatencyMs() const{ return m_latencyMs; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline InputDeviceHdSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
+
   private:
 
     InputDeviceActiveInput m_activeInput;
-    bool m_activeInputHasBeenSet;
+    bool m_activeInputHasBeenSet = false;
 
     InputDeviceConfiguredInput m_configuredInput;
-    bool m_configuredInputHasBeenSet;
+    bool m_configuredInputHasBeenSet = false;
 
     InputDeviceState m_deviceState;
-    bool m_deviceStateHasBeenSet;
+    bool m_deviceStateHasBeenSet = false;
 
     double m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     InputDeviceScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
+
+    int m_latencyMs;
+    bool m_latencyMsHasBeenSet = false;
   };
 
 } // namespace Model

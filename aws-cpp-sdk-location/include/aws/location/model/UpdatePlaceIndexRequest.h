@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API UpdatePlaceIndexRequest : public LocationServiceRequest
+  class UpdatePlaceIndexRequest : public LocationServiceRequest
   {
   public:
-    UpdatePlaceIndexRequest();
+    AWS_LOCATIONSERVICE_API UpdatePlaceIndexRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePlaceIndex"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     DataSourceConfiguration m_dataSourceConfiguration;
-    bool m_dataSourceConfigurationHasBeenSet;
+    bool m_dataSourceConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
   };
 
 } // namespace Model

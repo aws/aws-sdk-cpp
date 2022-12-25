@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateEndOfMeetingReminder">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API UpdateEndOfMeetingReminder
+  class UpdateEndOfMeetingReminder
   {
   public:
-    UpdateEndOfMeetingReminder();
-    UpdateEndOfMeetingReminder(Aws::Utils::Json::JsonView jsonValue);
-    UpdateEndOfMeetingReminder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API UpdateEndOfMeetingReminder();
+    AWS_ALEXAFORBUSINESS_API UpdateEndOfMeetingReminder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API UpdateEndOfMeetingReminder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::Vector<int> m_reminderAtMinutes;
-    bool m_reminderAtMinutesHasBeenSet;
+    bool m_reminderAtMinutesHasBeenSet = false;
 
     EndOfMeetingReminderType m_reminderType;
-    bool m_reminderTypeHasBeenSet;
+    bool m_reminderTypeHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

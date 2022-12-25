@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CustomMessageActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CustomMessageActivity
+  class CustomMessageActivity
   {
   public:
-    CustomMessageActivity();
-    CustomMessageActivity(Aws::Utils::Json::JsonView jsonValue);
-    CustomMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CustomMessageActivity();
+    AWS_PINPOINT_API CustomMessageActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CustomMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -430,22 +430,22 @@ namespace Model
   private:
 
     Aws::String m_deliveryUri;
-    bool m_deliveryUriHasBeenSet;
+    bool m_deliveryUriHasBeenSet = false;
 
     Aws::Vector<__EndpointTypesElement> m_endpointTypes;
-    bool m_endpointTypesHasBeenSet;
+    bool m_endpointTypesHasBeenSet = false;
 
     JourneyCustomMessage m_messageConfig;
-    bool m_messageConfigHasBeenSet;
+    bool m_messageConfigHasBeenSet = false;
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

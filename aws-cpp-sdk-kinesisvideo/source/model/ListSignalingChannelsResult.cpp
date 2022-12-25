@@ -30,7 +30,7 @@ ListSignalingChannelsResult& ListSignalingChannelsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChannelInfoList"))
   {
-    Array<JsonView> channelInfoListJsonList = jsonValue.GetArray("ChannelInfoList");
+    Aws::Utils::Array<JsonView> channelInfoListJsonList = jsonValue.GetArray("ChannelInfoList");
     for(unsigned channelInfoListIndex = 0; channelInfoListIndex < channelInfoListJsonList.GetLength(); ++channelInfoListIndex)
     {
       m_channelInfoList.push_back(channelInfoListJsonList[channelInfoListIndex].AsObject());

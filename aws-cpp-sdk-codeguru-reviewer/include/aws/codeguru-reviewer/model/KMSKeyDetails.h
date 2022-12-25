@@ -29,65 +29,65 @@ namespace Model
    * repository association. It is either owned by Amazon Web Services Key Management
    * Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed
    * (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web
-   * Services KMS key that is associated with a respository association.</p> </li>
+   * Services KMS key that is associated with a repository association.</p> </li>
    * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/KMSKeyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API KMSKeyDetails
+  class KMSKeyDetails
   {
   public:
-    KMSKeyDetails();
-    KMSKeyDetails(Aws::Utils::Json::JsonView jsonValue);
-    KMSKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API KMSKeyDetails();
+    AWS_CODEGURUREVIEWER_API KMSKeyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API KMSKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
-     * respository association.</p>
+     * repository association.</p>
      */
     inline KMSKeyDetails& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     EncryptionOption m_encryptionOption;
-    bool m_encryptionOptionHasBeenSet;
+    bool m_encryptionOptionHasBeenSet = false;
   };
 
 } // namespace Model

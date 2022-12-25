@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TerminologyProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API TerminologyProperties
+  class TerminologyProperties
   {
   public:
-    TerminologyProperties();
-    TerminologyProperties(Aws::Utils::Json::JsonView jsonValue);
-    TerminologyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API TerminologyProperties();
+    AWS_TRANSLATE_API TerminologyProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API TerminologyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -584,46 +584,46 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetLanguageCodes;
-    bool m_targetLanguageCodesHasBeenSet;
+    bool m_targetLanguageCodesHasBeenSet = false;
 
     EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     int m_sizeBytes;
-    bool m_sizeBytesHasBeenSet;
+    bool m_sizeBytesHasBeenSet = false;
 
     int m_termCount;
-    bool m_termCountHasBeenSet;
+    bool m_termCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Directionality m_directionality;
-    bool m_directionalityHasBeenSet;
+    bool m_directionalityHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_skippedTermCount;
-    bool m_skippedTermCountHasBeenSet;
+    bool m_skippedTermCountHasBeenSet = false;
 
     TerminologyDataFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

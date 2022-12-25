@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AsyncErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API AsyncErrorDetails
+  class AsyncErrorDetails
   {
   public:
-    AsyncErrorDetails();
-    AsyncErrorDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AsyncErrorDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncErrorDetails();
+    AWS_S3CONTROL_API AsyncErrorDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncErrorDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline AsyncErrorDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline AsyncErrorDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A generic descritpion of the error condition in English.</p>
+     * <p>A generic description of the error condition in English.</p>
      */
     inline AsyncErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

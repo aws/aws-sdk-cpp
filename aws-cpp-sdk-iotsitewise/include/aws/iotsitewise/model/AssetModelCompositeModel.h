@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelCompositeModel">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetModelCompositeModel
+  class AssetModelCompositeModel
   {
   public:
-    AssetModelCompositeModel();
-    AssetModelCompositeModel(Aws::Utils::Json::JsonView jsonValue);
-    AssetModelCompositeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetModelCompositeModel();
+    AWS_IOTSITEWISE_API AssetModelCompositeModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetModelCompositeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,19 +212,63 @@ namespace Model
      */
     inline AssetModelCompositeModel& AddProperties(AssetModelProperty&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline AssetModelCompositeModel& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline AssetModelCompositeModel& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p> The ID of the asset model composite model. </p>
+     */
+    inline AssetModelCompositeModel& WithId(const char* value) { SetId(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<AssetModelProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

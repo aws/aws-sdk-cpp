@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpAddressDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API IpAddressDetails
+  class IpAddressDetails
   {
   public:
-    IpAddressDetails();
-    IpAddressDetails(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API IpAddressDetails();
+    AWS_MACIE2_API IpAddressDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API IpAddressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_ipAddressV4;
-    bool m_ipAddressV4HasBeenSet;
+    bool m_ipAddressV4HasBeenSet = false;
 
     IpCity m_ipCity;
-    bool m_ipCityHasBeenSet;
+    bool m_ipCityHasBeenSet = false;
 
     IpCountry m_ipCountry;
-    bool m_ipCountryHasBeenSet;
+    bool m_ipCountryHasBeenSet = false;
 
     IpGeoLocation m_ipGeoLocation;
-    bool m_ipGeoLocationHasBeenSet;
+    bool m_ipGeoLocationHasBeenSet = false;
 
     IpOwner m_ipOwner;
-    bool m_ipOwnerHasBeenSet;
+    bool m_ipOwnerHasBeenSet = false;
   };
 
 } // namespace Model

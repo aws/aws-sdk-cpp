@@ -25,18 +25,19 @@ namespace Model
 
   /**
    * <p>Returned when the <code>CreateAccessPoint</code> API action is called too
-   * quickly and the number of Access Points in the account is nearing the limit of
-   * 120.</p><p><h3>See Also:</h3>   <a
+   * quickly and the number of Access Points on the file system is nearing the <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+   * of 120</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API ThrottlingException();
+    AWS_EFS_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +92,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

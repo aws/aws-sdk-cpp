@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API NetworkInterface();
+    AWS_DRS_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ips;
-    bool m_ipsHasBeenSet;
+    bool m_ipsHasBeenSet = false;
 
     bool m_isPrimary;
-    bool m_isPrimaryHasBeenSet;
+    bool m_isPrimaryHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
   };
 
 } // namespace Model

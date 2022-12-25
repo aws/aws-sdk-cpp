@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/OutputFormatOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API OutputFormatOptions
+  class OutputFormatOptions
   {
   public:
-    OutputFormatOptions();
-    OutputFormatOptions(Aws::Utils::Json::JsonView jsonValue);
-    OutputFormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API OutputFormatOptions();
+    AWS_GLUEDATABREW_API OutputFormatOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API OutputFormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CsvOutputOptions m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

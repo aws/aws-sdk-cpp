@@ -22,7 +22,9 @@ namespace Model
     STOPPED,
     SUCCEEDED,
     FAILED,
-    TIMEOUT
+    TIMEOUT,
+    ERROR_,
+    WAITING
   };
 
 namespace JobRunStateMapper

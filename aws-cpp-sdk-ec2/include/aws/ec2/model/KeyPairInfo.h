@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/KeyPairInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API KeyPairInfo
+  class KeyPairInfo
   {
   public:
-    KeyPairInfo();
-    KeyPairInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KeyPairInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API KeyPairInfo();
+    AWS_EC2_API KeyPairInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API KeyPairInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -428,25 +428,25 @@ namespace Model
   private:
 
     Aws::String m_keyPairId;
-    bool m_keyPairIdHasBeenSet;
+    bool m_keyPairIdHasBeenSet = false;
 
     Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet;
+    bool m_keyFingerprintHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
   };
 
 } // namespace Model

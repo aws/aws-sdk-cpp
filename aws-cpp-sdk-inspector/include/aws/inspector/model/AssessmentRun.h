@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRun">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentRun
+  class AssessmentRun
   {
   public:
-    AssessmentRun();
-    AssessmentRun(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentRun();
+    AWS_INSPECTOR_API AssessmentRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -605,49 +605,49 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_assessmentTemplateArn;
-    bool m_assessmentTemplateArnHasBeenSet;
+    bool m_assessmentTemplateArnHasBeenSet = false;
 
     AssessmentRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_userAttributesForFindings;
-    bool m_userAttributesForFindingsHasBeenSet;
+    bool m_userAttributesForFindingsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateChangedAt;
-    bool m_stateChangedAtHasBeenSet;
+    bool m_stateChangedAtHasBeenSet = false;
 
     bool m_dataCollected;
-    bool m_dataCollectedHasBeenSet;
+    bool m_dataCollectedHasBeenSet = false;
 
     Aws::Vector<AssessmentRunStateChange> m_stateChanges;
-    bool m_stateChangesHasBeenSet;
+    bool m_stateChangesHasBeenSet = false;
 
     Aws::Vector<AssessmentRunNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     Aws::Map<Severity, int> m_findingCounts;
-    bool m_findingCountsHasBeenSet;
+    bool m_findingCountsHasBeenSet = false;
   };
 
 } // namespace Model

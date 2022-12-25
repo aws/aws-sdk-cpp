@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UtilizationByTime">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API UtilizationByTime
+  class UtilizationByTime
   {
   public:
-    UtilizationByTime();
-    UtilizationByTime(Aws::Utils::Json::JsonView jsonValue);
-    UtilizationByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API UtilizationByTime();
+    AWS_COSTEXPLORER_API UtilizationByTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API UtilizationByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::Vector<ReservationUtilizationGroup> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     ReservationAggregates m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

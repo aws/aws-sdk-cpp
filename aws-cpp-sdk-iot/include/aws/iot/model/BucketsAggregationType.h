@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BucketsAggregationType">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BucketsAggregationType
+  class BucketsAggregationType
   {
   public:
-    BucketsAggregationType();
-    BucketsAggregationType(Aws::Utils::Json::JsonView jsonValue);
-    BucketsAggregationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BucketsAggregationType();
+    AWS_IOT_API BucketsAggregationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BucketsAggregationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     TermsAggregation m_termsAggregation;
-    bool m_termsAggregationHasBeenSet;
+    bool m_termsAggregationHasBeenSet = false;
   };
 
 } // namespace Model

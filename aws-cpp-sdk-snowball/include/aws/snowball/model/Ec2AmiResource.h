@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Ec2AmiResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API Ec2AmiResource
+  class Ec2AmiResource
   {
   public:
-    Ec2AmiResource();
-    Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
-    Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API Ec2AmiResource();
+    AWS_SNOWBALL_API Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::String m_snowballAmiId;
-    bool m_snowballAmiIdHasBeenSet;
+    bool m_snowballAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

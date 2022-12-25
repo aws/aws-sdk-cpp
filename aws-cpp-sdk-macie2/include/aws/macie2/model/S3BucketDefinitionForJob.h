@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketDefinitionForJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3BucketDefinitionForJob
+  class S3BucketDefinitionForJob
   {
   public:
-    S3BucketDefinitionForJob();
-    S3BucketDefinitionForJob(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketDefinitionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3BucketDefinitionForJob();
+    AWS_MACIE2_API S3BucketDefinitionForJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3BucketDefinitionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_buckets;
-    bool m_bucketsHasBeenSet;
+    bool m_bucketsHasBeenSet = false;
   };
 
 } // namespace Model

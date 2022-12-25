@@ -30,7 +30,7 @@ ListRecommendationFeedbackResult& ListRecommendationFeedbackResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RecommendationFeedbackSummaries"))
   {
-    Array<JsonView> recommendationFeedbackSummariesJsonList = jsonValue.GetArray("RecommendationFeedbackSummaries");
+    Aws::Utils::Array<JsonView> recommendationFeedbackSummariesJsonList = jsonValue.GetArray("RecommendationFeedbackSummaries");
     for(unsigned recommendationFeedbackSummariesIndex = 0; recommendationFeedbackSummariesIndex < recommendationFeedbackSummariesJsonList.GetLength(); ++recommendationFeedbackSummariesIndex)
     {
       m_recommendationFeedbackSummaries.push_back(recommendationFeedbackSummariesJsonList[recommendationFeedbackSummariesIndex].AsObject());

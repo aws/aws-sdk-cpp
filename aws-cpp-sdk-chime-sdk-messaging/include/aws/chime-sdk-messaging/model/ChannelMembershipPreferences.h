@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelMembershipPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelMembershipPreferences
+  class ChannelMembershipPreferences
   {
   public:
-    ChannelMembershipPreferences();
-    ChannelMembershipPreferences(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMembershipPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelMembershipPreferences();
+    AWS_CHIMESDKMESSAGING_API ChannelMembershipPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelMembershipPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PushNotificationPreferences m_pushNotifications;
-    bool m_pushNotificationsHasBeenSet;
+    bool m_pushNotificationsHasBeenSet = false;
   };
 
 } // namespace Model

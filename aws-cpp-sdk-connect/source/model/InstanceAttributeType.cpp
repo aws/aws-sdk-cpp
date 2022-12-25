@@ -28,6 +28,8 @@ namespace Aws
         static const int USE_CUSTOM_TTS_VOICES_HASH = HashingUtils::HashString("USE_CUSTOM_TTS_VOICES");
         static const int EARLY_MEDIA_HASH = HashingUtils::HashString("EARLY_MEDIA");
         static const int MULTI_PARTY_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CONFERENCE");
+        static const int HIGH_VOLUME_OUTBOUND_HASH = HashingUtils::HashString("HIGH_VOLUME_OUTBOUND");
+        static const int ENHANCED_CONTACT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
 
 
         InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return InstanceAttributeType::MULTI_PARTY_CONFERENCE;
           }
+          else if (hashCode == HIGH_VOLUME_OUTBOUND_HASH)
+          {
+            return InstanceAttributeType::HIGH_VOLUME_OUTBOUND;
+          }
+          else if (hashCode == ENHANCED_CONTACT_MONITORING_HASH)
+          {
+            return InstanceAttributeType::ENHANCED_CONTACT_MONITORING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +105,10 @@ namespace Aws
             return "EARLY_MEDIA";
           case InstanceAttributeType::MULTI_PARTY_CONFERENCE:
             return "MULTI_PARTY_CONFERENCE";
+          case InstanceAttributeType::HIGH_VOLUME_OUTBOUND:
+            return "HIGH_VOLUME_OUTBOUND";
+          case InstanceAttributeType::ENHANCED_CONTACT_MONITORING:
+            return "ENHANCED_CONTACT_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

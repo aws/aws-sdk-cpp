@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskRequest : public DatabaseMigrationServiceRequest
+  class StartReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    StartReplicationTaskRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartReplicationTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -428,19 +428,19 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     StartReplicationTaskTypeValue m_startReplicationTaskType;
-    bool m_startReplicationTaskTypeHasBeenSet;
+    bool m_startReplicationTaskTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_cdcStartTime;
-    bool m_cdcStartTimeHasBeenSet;
+    bool m_cdcStartTimeHasBeenSet = false;
 
     Aws::String m_cdcStartPosition;
-    bool m_cdcStartPositionHasBeenSet;
+    bool m_cdcStartPositionHasBeenSet = false;
 
     Aws::String m_cdcStopPosition;
-    bool m_cdcStopPositionHasBeenSet;
+    bool m_cdcStopPositionHasBeenSet = false;
   };
 
 } // namespace Model

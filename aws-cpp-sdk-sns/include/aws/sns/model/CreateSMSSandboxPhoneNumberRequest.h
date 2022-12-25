@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SNS_API CreateSMSSandboxPhoneNumberRequest : public SNSRequest
+  class CreateSMSSandboxPhoneNumberRequest : public SNSRequest
   {
   public:
-    CreateSMSSandboxPhoneNumberRequest();
+    AWS_SNS_API CreateSMSSandboxPhoneNumberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSMSSandboxPhoneNumber"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     LanguageCodeString m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/KafkaCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API KafkaCluster
+  class KafkaCluster
   {
   public:
-    KafkaCluster();
-    KafkaCluster(Aws::Utils::Json::JsonView jsonValue);
-    KafkaCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API KafkaCluster();
+    AWS_KAFKACONNECT_API KafkaCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API KafkaCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ApacheKafkaCluster m_apacheKafkaCluster;
-    bool m_apacheKafkaClusterHasBeenSet;
+    bool m_apacheKafkaClusterHasBeenSet = false;
   };
 
 } // namespace Model

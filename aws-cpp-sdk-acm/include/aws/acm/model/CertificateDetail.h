@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API CertificateDetail
+  class CertificateDetail
   {
   public:
-    CertificateDetail();
-    CertificateDetail(Aws::Utils::Json::JsonView jsonValue);
-    CertificateDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API CertificateDetail();
+    AWS_ACM_API CertificateDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API CertificateDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -520,69 +520,135 @@ namespace Model
 
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetImportedAt() const{ return m_importedAt; }
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline bool ImportedAtHasBeenSet() const { return m_importedAtHasBeenSet; }
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline void SetImportedAt(const Aws::Utils::DateTime& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline void SetImportedAt(Aws::Utils::DateTime&& value) { m_importedAtHasBeenSet = true; m_importedAt = std::move(value); }
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline CertificateDetail& WithImportedAt(const Aws::Utils::DateTime& value) { SetImportedAt(value); return *this;}
 
     /**
-     * <p>The date and time at which the certificate was imported. This value exists
-     * only when the certificate type is <code>IMPORTED</code>. </p>
+     * <p>The date and time when the certificate was imported. This value exists only
+     * when the certificate type is <code>IMPORTED</code>. </p>
      */
     inline CertificateDetail& WithImportedAt(Aws::Utils::DateTime&& value) { SetImportedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline void SetStatus(CertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline CertificateDetail& WithStatus(const CertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the certificate.</p>
+     * <p>The status of the certificate.</p> <p>A certificate enters status
+     * PENDING_VALIDATION upon being requested, unless it fails for any of the reasons
+     * given in the troubleshooting topic <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+     * request fails</a>. ACM makes repeated attempts to validate a certificate for 72
+     * hours and then times out. If a certificate shows status FAILED or
+     * VALIDATION_TIMED_OUT, delete the request, correct the issue with <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+     * validation</a> or <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+     * validation</a>, and try again. If validation succeeds, the certificate enters
+     * status ISSUED. </p>
      */
     inline CertificateDetail& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -863,8 +929,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -872,8 +937,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -881,8 +945,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -890,8 +953,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -899,8 +961,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -908,8 +969,7 @@ namespace Model
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-     * Request Failed</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Request Failed</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
@@ -924,8 +984,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
 
@@ -939,8 +998,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -954,8 +1012,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -969,8 +1026,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -984,8 +1040,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(const CertificateType& value) { SetType(value); return *this;}
 
@@ -999,8 +1054,7 @@ namespace Model
      * differences between certificates that you import and those that ACM provides,
      * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-     * Guide</i>. </p>
+     * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 
@@ -1177,64 +1231,64 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CertificateDetail& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CertificateDetail& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
-     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that
+     * issued the certificate. This has the following format: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -1341,82 +1395,82 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<DomainValidation> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_importedAt;
-    bool m_importedAtHasBeenSet;
+    bool m_importedAtHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     RevocationReason m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     KeyAlgorithm m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inUseBy;
-    bool m_inUseByHasBeenSet;
+    bool m_inUseByHasBeenSet = false;
 
     FailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     RenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     Aws::Vector<KeyUsage> m_keyUsages;
-    bool m_keyUsagesHasBeenSet;
+    bool m_keyUsagesHasBeenSet = false;
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
-    bool m_extendedKeyUsagesHasBeenSet;
+    bool m_extendedKeyUsagesHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     RenewalEligibility m_renewalEligibility;
-    bool m_renewalEligibilityHasBeenSet;
+    bool m_renewalEligibilityHasBeenSet = false;
 
     CertificateOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Comment">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Comment
+  class Comment
   {
   public:
-    Comment();
-    Comment(Aws::Utils::Json::JsonView jsonValue);
-    Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Comment();
+    AWS_WORKDOCS_API Comment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -398,31 +398,31 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_threadId;
-    bool m_threadIdHasBeenSet;
+    bool m_threadIdHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     User m_contributor;
-    bool m_contributorHasBeenSet;
+    bool m_contributorHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     CommentStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CommentVisibilityType m_visibility;
-    bool m_visibilityHasBeenSet;
+    bool m_visibilityHasBeenSet = false;
 
     Aws::String m_recipientId;
-    bool m_recipientIdHasBeenSet;
+    bool m_recipientIdHasBeenSet = false;
   };
 
 } // namespace Model

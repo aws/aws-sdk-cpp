@@ -1,3 +1,4 @@
+#set($exportMacro = $typeInfo.exportValue)
 #foreach($member in $shape.members.entrySet())
 #set($moveType = '')
 #set($moveValueType = '')
@@ -44,11 +45,11 @@
 #set($witherWithMove = " { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}")
 #set($adderWithCopy = " { ${required}${memberVariableName}.push_back(value); return *this; }")
 #set($adderWithMove = " { ${required}${memberVariableName}.push_back(std::move(value)); return *this; }")
-#if($member.value.shape.getName() == $shape.getName())
+#if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
 #set($getterBody = "{ return ${memberVariableName}[0]; }")
 #set($setterWithCopy = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = value; }")
 #set($setterWithMove = " { ${required}${memberVariableName}.resize(1); ${memberVariableName}[0] = std::move(value); }")
-#elseif($member.value.shape.isMutuallyReferencedWith($shape))
+#elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
 #set($hasBeenSetBody = ";")
 #set($getterBody = ";")
 #set($setterWithCopy = ";")
@@ -57,36 +58,43 @@
 #set($witherWithMove = ";")
 #set($adderWithCopy = ";")
 #set($adderWithMove = ";")
-#set($inline = "")
+#set($inline = "$exportMacro ")
 #else
 #set($getterBody = "{ return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
 #set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); }")
 #end
+#set($getterFunctionName = "Get${memberKeyWithFirstLetterCapitalized}")
+#if($getterFunctionName == ${member.value.shape.name})
+#set($getterFunctionName = "Get${getterFunctionName}")
+#end
 #if($isStream)
     $memberDocumentation
-    ${inline}Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
+    ${inline}Aws::IOStream& ${getterFunctionName}() { return ${memberVariableName}.GetUnderlyingStream(); }
 
     $memberDocumentation
     ${inline}void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
 
 #elseif ($isEventStreamInput)
     $memberDocumentation
-    std::shared_ptr<${member.value.shape.name}> Get${memberKeyWithFirstLetterCapitalized}() const ${getterBody}
+    ${exportMacro} std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
 
     $memberDocumentation
-    void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
+    ${exportMacro} void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
 
     $memberDocumentation
-    ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
+    ${exportMacro} ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
 
 #else
 #set($override = "")
 #if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)
 #set($override = " override ")
 #end
+#if($shape.request)
+#set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
+#end
     $memberDocumentation
-    ${inline}${returnType} Get${memberKeyWithFirstLetterCapitalized}() const$override${getterBody}
+    ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
 
 #end
 #if(!$isStream && !$isEventStreamInput)
@@ -199,9 +207,9 @@
 
 #end
 #end
-#end
-#end
-#if($shape.members.size() > 0)
+#end##if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.request))
+#end##foreach($member in $shape.members.entrySet())
+#if($shape.members.size() > 0)##next contains private only
   private:
 #foreach($member in $shape.members.entrySet())
 
@@ -214,9 +222,9 @@
   Aws::Utils::Stream::ResponseStream $CppViewHelper.computeMemberVariableName($member.key);
 #elseif(($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) && $shape.request)
 #else
-#if($member.value.shape.getName() == $shape.getName())
+#if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
     Aws::Vector<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
-#elseif($member.value.shape.isMutuallyReferencedWith($shape))
+#elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
     std::shared_ptr<$CppViewHelper.computeCppType($member.value.shape)> $CppViewHelper.computeMemberVariableName($member.key);
 #elseif($isEventStreamInput)
     std::shared_ptr<$member.value.shape.name> $CppViewHelper.computeMemberVariableName($member.key);
@@ -224,13 +232,13 @@
     $CppViewHelper.computeCppType($member.value.shape) $CppViewHelper.computeMemberVariableName($member.key);
 #end
 #if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
-    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)};
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
 #end
 #end
 #end
 #if($operation.result.shape.hasEventStreamMembers())
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
     ${operation.name}Handler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
 #end
-#end
+#end##if($shape.members.size() > 0)

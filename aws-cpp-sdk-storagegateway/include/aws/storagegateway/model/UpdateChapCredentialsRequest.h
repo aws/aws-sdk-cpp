@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentialsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateChapCredentialsRequest : public StorageGatewayRequest
+  class UpdateChapCredentialsRequest : public StorageGatewayRequest
   {
   public:
-    UpdateChapCredentialsRequest();
+    AWS_STORAGEGATEWAY_API UpdateChapCredentialsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateChapCredentials"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
 
     Aws::String m_secretToAuthenticateInitiator;
-    bool m_secretToAuthenticateInitiatorHasBeenSet;
+    bool m_secretToAuthenticateInitiatorHasBeenSet = false;
 
     Aws::String m_initiatorName;
-    bool m_initiatorNameHasBeenSet;
+    bool m_initiatorNameHasBeenSet = false;
 
     Aws::String m_secretToAuthenticateTarget;
-    bool m_secretToAuthenticateTargetHasBeenSet;
+    bool m_secretToAuthenticateTargetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagFilter">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API TagFilter
+  class TagFilter
   {
   public:
-    TagFilter();
-    TagFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API TagFilter();
+    AWS_SWF_API TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
   };
 
 } // namespace Model

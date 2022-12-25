@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/PathElement">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API PathElement
+  class PathElement
   {
   public:
-    PathElement();
-    PathElement(Aws::Utils::Json::JsonView jsonValue);
-    PathElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API PathElement();
+    AWS_ACCESSANALYZER_API PathElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API PathElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,16 +175,16 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Substring m_substring;
-    bool m_substringHasBeenSet;
+    bool m_substringHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

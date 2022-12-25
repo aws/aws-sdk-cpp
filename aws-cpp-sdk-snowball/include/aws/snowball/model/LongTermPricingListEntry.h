@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LongTermPricingListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API LongTermPricingListEntry
+  class LongTermPricingListEntry
   {
   public:
-    LongTermPricingListEntry();
-    LongTermPricingListEntry(Aws::Utils::Json::JsonView jsonValue);
-    LongTermPricingListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API LongTermPricingListEntry();
+    AWS_SNOWBALL_API LongTermPricingListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API LongTermPricingListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -337,37 +337,37 @@ namespace Model
 
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline LongTermPricingListEntry& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of Snow Family Devices associated with this long-term pricing
+     * <p>The type of Snow Family devices associated with this long-term pricing
      * job.</p>
      */
     inline LongTermPricingListEntry& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
@@ -421,34 +421,34 @@ namespace Model
   private:
 
     Aws::String m_longTermPricingId;
-    bool m_longTermPricingIdHasBeenSet;
+    bool m_longTermPricingIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_longTermPricingEndDate;
-    bool m_longTermPricingEndDateHasBeenSet;
+    bool m_longTermPricingEndDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_longTermPricingStartDate;
-    bool m_longTermPricingStartDateHasBeenSet;
+    bool m_longTermPricingStartDateHasBeenSet = false;
 
     LongTermPricingType m_longTermPricingType;
-    bool m_longTermPricingTypeHasBeenSet;
+    bool m_longTermPricingTypeHasBeenSet = false;
 
     Aws::String m_currentActiveJob;
-    bool m_currentActiveJobHasBeenSet;
+    bool m_currentActiveJobHasBeenSet = false;
 
     Aws::String m_replacementJob;
-    bool m_replacementJobHasBeenSet;
+    bool m_replacementJobHasBeenSet = false;
 
     bool m_isLongTermPricingAutoRenew;
-    bool m_isLongTermPricingAutoRenewHasBeenSet;
+    bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
     Aws::String m_longTermPricingStatus;
-    bool m_longTermPricingStatusHasBeenSet;
+    bool m_longTermPricingStatusHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jobIds;
-    bool m_jobIdsHasBeenSet;
+    bool m_jobIdsHasBeenSet = false;
   };
 
 } // namespace Model

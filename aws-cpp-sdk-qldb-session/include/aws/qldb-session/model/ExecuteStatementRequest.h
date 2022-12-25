@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/ExecuteStatementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API ExecuteStatementRequest
+  class ExecuteStatementRequest
   {
   public:
-    ExecuteStatementRequest();
-    ExecuteStatementRequest(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteStatementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API ExecuteStatementRequest();
+    AWS_QLDBSESSION_API ExecuteStatementRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API ExecuteStatementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<ValueHolder> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

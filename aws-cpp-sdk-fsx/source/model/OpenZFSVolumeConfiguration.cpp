@@ -35,7 +35,12 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration() :
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
+    m_userAndGroupQuotasHasBeenSet(false),
+    m_restoreToSnapshotHasBeenSet(false),
+    m_deleteIntermediateSnaphots(false),
+    m_deleteIntermediateSnaphotsHasBeenSet(false),
+    m_deleteClonedVolumes(false),
+    m_deleteClonedVolumesHasBeenSet(false)
 {
 }
 
@@ -56,7 +61,12 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue) :
     m_readOnly(false),
     m_readOnlyHasBeenSet(false),
     m_nfsExportsHasBeenSet(false),
-    m_userAndGroupQuotasHasBeenSet(false)
+    m_userAndGroupQuotasHasBeenSet(false),
+    m_restoreToSnapshotHasBeenSet(false),
+    m_deleteIntermediateSnaphots(false),
+    m_deleteIntermediateSnaphotsHasBeenSet(false),
+    m_deleteClonedVolumes(false),
+    m_deleteClonedVolumesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,7 +138,7 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("NfsExports"))
   {
-    Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
+    Aws::Utils::Array<JsonView> nfsExportsJsonList = jsonValue.GetArray("NfsExports");
     for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
     {
       m_nfsExports.push_back(nfsExportsJsonList[nfsExportsIndex].AsObject());
@@ -138,12 +148,33 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("UserAndGroupQuotas"))
   {
-    Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
+    Aws::Utils::Array<JsonView> userAndGroupQuotasJsonList = jsonValue.GetArray("UserAndGroupQuotas");
     for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
     {
       m_userAndGroupQuotas.push_back(userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject());
     }
     m_userAndGroupQuotasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RestoreToSnapshot"))
+  {
+    m_restoreToSnapshot = jsonValue.GetString("RestoreToSnapshot");
+
+    m_restoreToSnapshotHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteIntermediateSnaphots"))
+  {
+    m_deleteIntermediateSnaphots = jsonValue.GetBool("DeleteIntermediateSnaphots");
+
+    m_deleteIntermediateSnaphotsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteClonedVolumes"))
+  {
+    m_deleteClonedVolumes = jsonValue.GetBool("DeleteClonedVolumes");
+
+    m_deleteClonedVolumesHasBeenSet = true;
   }
 
   return *this;
@@ -208,7 +239,7 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
 
   if(m_nfsExportsHasBeenSet)
   {
-   Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
+   Aws::Utils::Array<JsonValue> nfsExportsJsonList(m_nfsExports.size());
    for(unsigned nfsExportsIndex = 0; nfsExportsIndex < nfsExportsJsonList.GetLength(); ++nfsExportsIndex)
    {
      nfsExportsJsonList[nfsExportsIndex].AsObject(m_nfsExports[nfsExportsIndex].Jsonize());
@@ -219,12 +250,30 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
 
   if(m_userAndGroupQuotasHasBeenSet)
   {
-   Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
+   Aws::Utils::Array<JsonValue> userAndGroupQuotasJsonList(m_userAndGroupQuotas.size());
    for(unsigned userAndGroupQuotasIndex = 0; userAndGroupQuotasIndex < userAndGroupQuotasJsonList.GetLength(); ++userAndGroupQuotasIndex)
    {
      userAndGroupQuotasJsonList[userAndGroupQuotasIndex].AsObject(m_userAndGroupQuotas[userAndGroupQuotasIndex].Jsonize());
    }
    payload.WithArray("UserAndGroupQuotas", std::move(userAndGroupQuotasJsonList));
+
+  }
+
+  if(m_restoreToSnapshotHasBeenSet)
+  {
+   payload.WithString("RestoreToSnapshot", m_restoreToSnapshot);
+
+  }
+
+  if(m_deleteIntermediateSnaphotsHasBeenSet)
+  {
+   payload.WithBool("DeleteIntermediateSnaphots", m_deleteIntermediateSnaphots);
+
+  }
+
+  if(m_deleteClonedVolumesHasBeenSet)
+  {
+   payload.WithBool("DeleteClonedVolumes", m_deleteClonedVolumes);
 
   }
 

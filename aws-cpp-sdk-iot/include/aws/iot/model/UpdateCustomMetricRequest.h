@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateCustomMetricRequest : public IoTRequest
+  class UpdateCustomMetricRequest : public IoTRequest
   {
   public:
-    UpdateCustomMetricRequest();
+    AWS_IOT_API UpdateCustomMetricRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCustomMetric"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

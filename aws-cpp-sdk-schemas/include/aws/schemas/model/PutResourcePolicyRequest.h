@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEMAS_API PutResourcePolicyRequest : public SchemasRequest
+  class PutResourcePolicyRequest : public SchemasRequest
   {
   public:
-    PutResourcePolicyRequest();
+    AWS_SCHEMAS_API PutResourcePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutResourcePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SCHEMAS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

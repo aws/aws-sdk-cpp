@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,19 +187,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_retries;
-    bool m_retriesHasBeenSet;
+    bool m_retriesHasBeenSet = false;
 
     int m_startPeriod;
-    bool m_startPeriodHasBeenSet;
+    bool m_startPeriodHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

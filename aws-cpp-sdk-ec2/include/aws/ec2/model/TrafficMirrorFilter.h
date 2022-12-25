@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TrafficMirrorFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TrafficMirrorFilter
+  class TrafficMirrorFilter
   {
   public:
-    TrafficMirrorFilter();
-    TrafficMirrorFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficMirrorFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorFilter();
+    AWS_EC2_API TrafficMirrorFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -315,22 +315,22 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorFilterId;
-    bool m_trafficMirrorFilterIdHasBeenSet;
+    bool m_trafficMirrorFilterIdHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorFilterRule> m_ingressFilterRules;
-    bool m_ingressFilterRulesHasBeenSet;
+    bool m_ingressFilterRulesHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorFilterRule> m_egressFilterRules;
-    bool m_egressFilterRulesHasBeenSet;
+    bool m_egressFilterRulesHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorNetworkService> m_networkServices;
-    bool m_networkServicesHasBeenSet;
+    bool m_networkServicesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

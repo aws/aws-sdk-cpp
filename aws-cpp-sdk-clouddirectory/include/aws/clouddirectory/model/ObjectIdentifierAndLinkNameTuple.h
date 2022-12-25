@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectIdentifierAndLinkNameTuple">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple
+  class ObjectIdentifierAndLinkNameTuple
   {
   public:
-    ObjectIdentifierAndLinkNameTuple();
-    ObjectIdentifierAndLinkNameTuple(Aws::Utils::Json::JsonView jsonValue);
-    ObjectIdentifierAndLinkNameTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple();
+    AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
   };
 
 } // namespace Model

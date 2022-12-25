@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/EngineTranscribeMedicalSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API EngineTranscribeMedicalSettings
+  class EngineTranscribeMedicalSettings
   {
   public:
-    EngineTranscribeMedicalSettings();
-    EngineTranscribeMedicalSettings(Aws::Utils::Json::JsonView jsonValue);
-    EngineTranscribeMedicalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API EngineTranscribeMedicalSettings();
+    AWS_CHIME_API EngineTranscribeMedicalSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API EngineTranscribeMedicalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,22 +253,22 @@ namespace Model
   private:
 
     TranscribeMedicalLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscribeMedicalSpecialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     TranscribeMedicalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     TranscribeMedicalRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     TranscribeMedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
   };
 
 } // namespace Model

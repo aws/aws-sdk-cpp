@@ -24,18 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Represents the Network File System (NFS) protocol that DataSync uses to
-   * access your Amazon FSx for OpenZFS file system.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the Network File System (NFS) protocol configuration that DataSync
+   * uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file
+   * system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolNfs">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API FsxProtocolNfs
+  class FsxProtocolNfs
   {
   public:
-    FsxProtocolNfs();
-    FsxProtocolNfs(Aws::Utils::Json::JsonView jsonValue);
-    FsxProtocolNfs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API FsxProtocolNfs();
+    AWS_DATASYNC_API FsxProtocolNfs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API FsxProtocolNfs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +60,7 @@ namespace Model
   private:
 
     NfsMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateResourceResponseElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement
+  class AssociateResourceResponseElement
   {
   public:
-    AssociateResourceResponseElement();
-    AssociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
-    AssociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement();
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AssociateResourceError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

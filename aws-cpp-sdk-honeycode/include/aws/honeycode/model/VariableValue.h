@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/VariableValue">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API VariableValue
+  class VariableValue
   {
   public:
-    VariableValue();
-    VariableValue(Aws::Utils::Json::JsonView jsonValue);
-    VariableValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API VariableValue();
+    AWS_HONEYCODE_API VariableValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API VariableValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
   };
 
 } // namespace Model

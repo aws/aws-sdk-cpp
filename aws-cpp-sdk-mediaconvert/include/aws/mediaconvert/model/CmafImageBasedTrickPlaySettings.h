@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafImageBasedTrickPlaySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmafImageBasedTrickPlaySettings
+  class CmafImageBasedTrickPlaySettings
   {
   public:
-    CmafImageBasedTrickPlaySettings();
-    CmafImageBasedTrickPlaySettings(Aws::Utils::Json::JsonView jsonValue);
-    CmafImageBasedTrickPlaySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmafImageBasedTrickPlaySettings();
+    AWS_MEDIACONVERT_API CmafImageBasedTrickPlaySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmafImageBasedTrickPlaySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,22 +234,22 @@ namespace Model
   private:
 
     CmafIntervalCadence m_intervalCadence;
-    bool m_intervalCadenceHasBeenSet;
+    bool m_intervalCadenceHasBeenSet = false;
 
     int m_thumbnailHeight;
-    bool m_thumbnailHeightHasBeenSet;
+    bool m_thumbnailHeightHasBeenSet = false;
 
     double m_thumbnailInterval;
-    bool m_thumbnailIntervalHasBeenSet;
+    bool m_thumbnailIntervalHasBeenSet = false;
 
     int m_thumbnailWidth;
-    bool m_thumbnailWidthHasBeenSet;
+    bool m_thumbnailWidthHasBeenSet = false;
 
     int m_tileHeight;
-    bool m_tileHeightHasBeenSet;
+    bool m_tileHeightHasBeenSet = false;
 
     int m_tileWidth;
-    bool m_tileWidthHasBeenSet;
+    bool m_tileWidthHasBeenSet = false;
   };
 
 } // namespace Model

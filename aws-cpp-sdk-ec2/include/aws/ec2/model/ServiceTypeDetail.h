@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ServiceTypeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ServiceTypeDetail
+  class ServiceTypeDetail
   {
   public:
-    ServiceTypeDetail();
-    ServiceTypeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ServiceTypeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ServiceTypeDetail();
+    AWS_EC2_API ServiceTypeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ServiceTypeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

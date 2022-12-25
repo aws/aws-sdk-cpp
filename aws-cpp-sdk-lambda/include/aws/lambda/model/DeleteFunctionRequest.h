@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API DeleteFunctionRequest : public LambdaRequest
+  class DeleteFunctionRequest : public LambdaRequest
   {
   public:
-    DeleteFunctionRequest();
+    AWS_LAMBDA_API DeleteFunctionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,18 +33,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteFunction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -54,11 +54,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -68,11 +68,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -82,11 +82,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -96,11 +96,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -110,11 +110,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -124,11 +124,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -138,11 +138,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function or version.</p> <p class="title"> <b>Name
-     * formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>
      * (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p>
-     * <b>Function ARN</b> -
+     * <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -152,60 +152,60 @@ namespace Model
 
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a version to delete. You can't delete a version that's referenced by
-     * an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that an alias
+     * references.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

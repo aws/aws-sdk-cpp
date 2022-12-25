@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     GROUP,
     USER,
-    IDENTITY_STORE
+    IDENTITY_STORE,
+    GROUP_MEMBERSHIP
   };
 
 namespace ResourceTypeMapper

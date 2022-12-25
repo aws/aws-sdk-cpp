@@ -32,142 +32,142 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PrefetchRetrieval">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API PrefetchRetrieval
+  class PrefetchRetrieval
   {
   public:
-    PrefetchRetrieval();
-    PrefetchRetrieval(Aws::Utils::Json::JsonView jsonValue);
-    PrefetchRetrieval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API PrefetchRetrieval();
+    AWS_MEDIATAILOR_API PrefetchRetrieval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API PrefetchRetrieval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDynamicVariables() const{ return m_dynamicVariables; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline bool DynamicVariablesHasBeenSet() const { return m_dynamicVariablesHasBeenSet; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline void SetDynamicVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables = value; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline void SetDynamicVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables = std::move(value); }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& WithDynamicVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetDynamicVariables(value); return *this;}
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& WithDynamicVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetDynamicVariables(std::move(value)); return *this;}
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(const Aws::String& key, const Aws::String& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, value); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, const Aws::String& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(const Aws::String& key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(const char* key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, const char* value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The dynamic variables to use for substitution during prefetch requests to the
-     * ad decision server (ADS).</p> <p>You intially configure <a
+     * ad decision server (ADS).</p> <p>You initially configure <a
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic
      * variables</a> for the ADS URL when you set up your playback configuration. When
-     * you specify DynamicVariables for prefetch retrieval, MediaTailor includes the
-     * dynamic variables in the request to the ADS.</p>
+     * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
+     * includes the dynamic variables in the request to the ADS.</p>
      */
     inline PrefetchRetrieval& AddDynamicVariables(const char* key, const char* value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, value); return *this; }
 
@@ -260,13 +260,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
-    bool m_dynamicVariablesHasBeenSet;
+    bool m_dynamicVariablesHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

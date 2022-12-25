@@ -24,24 +24,24 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a launch template associated with a compute resource.
-   * You must specify either the launch template ID or launch template name in the
-   * request, but not both.</p> <p>If security groups are specified using both the
+   * <p>An object that represents a launch template that's associated with a compute
+   * resource. You must specify either the launch template ID or launch template name
+   * in the request, but not both.</p> <p>If security groups are specified using both
+   * the <code>securityGroupIds</code> parameter of
+   * <code>CreateComputeEnvironment</code> and the launch template, the values in the
    * <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code>
-   * and the launch template, the values in the <code>securityGroupIds</code>
-   * parameter of <code>CreateComputeEnvironment</code> will be used.</p> 
-   * <p>This object isn't applicable to jobs that are running on Fargate
-   * resources.</p> <p><h3>See Also:</h3>   <a
+   * will be used.</p>  <p>This object isn't applicable to jobs that are
+   * running on Fargate resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API LaunchTemplateSpecification
+  class LaunchTemplateSpecification
   {
   public:
-    LaunchTemplateSpecification();
-    LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API LaunchTemplateSpecification();
+    AWS_BATCH_API LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,13 +297,13 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

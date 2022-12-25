@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStatisticsDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingStatisticsDocument
+  class SamplingStatisticsDocument
   {
   public:
-    SamplingStatisticsDocument();
-    SamplingStatisticsDocument(Aws::Utils::Json::JsonView jsonValue);
-    SamplingStatisticsDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingStatisticsDocument();
+    AWS_XRAY_API SamplingStatisticsDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingStatisticsDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,22 +220,22 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_clientID;
-    bool m_clientIDHasBeenSet;
+    bool m_clientIDHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     int m_requestCount;
-    bool m_requestCountHasBeenSet;
+    bool m_requestCountHasBeenSet = false;
 
     int m_sampledCount;
-    bool m_sampledCountHasBeenSet;
+    bool m_sampledCountHasBeenSet = false;
 
     int m_borrowCount;
-    bool m_borrowCountHasBeenSet;
+    bool m_borrowCountHasBeenSet = false;
   };
 
 } // namespace Model

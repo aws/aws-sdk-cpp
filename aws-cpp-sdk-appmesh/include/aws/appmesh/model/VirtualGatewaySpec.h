@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewaySpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewaySpec
+  class VirtualGatewaySpec
   {
   public:
-    VirtualGatewaySpec();
-    VirtualGatewaySpec(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewaySpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewaySpec();
+    AWS_APPMESH_API VirtualGatewaySpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewaySpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     VirtualGatewayBackendDefaults m_backendDefaults;
-    bool m_backendDefaultsHasBeenSet;
+    bool m_backendDefaultsHasBeenSet = false;
 
     Aws::Vector<VirtualGatewayListener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
 
     VirtualGatewayLogging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/InstanceBlockDeviceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API InstanceBlockDeviceMapping
+  class InstanceBlockDeviceMapping
   {
   public:
-    InstanceBlockDeviceMapping();
-    InstanceBlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
-    InstanceBlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API InstanceBlockDeviceMapping();
+    AWS_SNOWDEVICEMANAGEMENT_API InstanceBlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API InstanceBlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     EbsInstanceBlockDevice m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
   };
 
 } // namespace Model

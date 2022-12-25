@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVICEFARM_API CreateNetworkProfileRequest : public DeviceFarmRequest
+  class CreateNetworkProfileRequest : public DeviceFarmRequest
   {
   public:
-    CreateNetworkProfileRequest();
+    AWS_DEVICEFARM_API CreateNetworkProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNetworkProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -395,40 +395,40 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     NetworkProfileType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_uplinkBandwidthBits;
-    bool m_uplinkBandwidthBitsHasBeenSet;
+    bool m_uplinkBandwidthBitsHasBeenSet = false;
 
     long long m_downlinkBandwidthBits;
-    bool m_downlinkBandwidthBitsHasBeenSet;
+    bool m_downlinkBandwidthBitsHasBeenSet = false;
 
     long long m_uplinkDelayMs;
-    bool m_uplinkDelayMsHasBeenSet;
+    bool m_uplinkDelayMsHasBeenSet = false;
 
     long long m_downlinkDelayMs;
-    bool m_downlinkDelayMsHasBeenSet;
+    bool m_downlinkDelayMsHasBeenSet = false;
 
     long long m_uplinkJitterMs;
-    bool m_uplinkJitterMsHasBeenSet;
+    bool m_uplinkJitterMsHasBeenSet = false;
 
     long long m_downlinkJitterMs;
-    bool m_downlinkJitterMsHasBeenSet;
+    bool m_downlinkJitterMsHasBeenSet = false;
 
     int m_uplinkLossPercent;
-    bool m_uplinkLossPercentHasBeenSet;
+    bool m_uplinkLossPercentHasBeenSet = false;
 
     int m_downlinkLossPercent;
-    bool m_downlinkLossPercentHasBeenSet;
+    bool m_downlinkLossPercentHasBeenSet = false;
   };
 
 } // namespace Model

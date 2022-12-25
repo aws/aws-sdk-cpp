@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API StopPipelineExecutionRequest : public SageMakerRequest
+  class StopPipelineExecutionRequest : public SageMakerRequest
   {
   public:
-    StopPipelineExecutionRequest();
+    AWS_SAGEMAKER_API StopPipelineExecutionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopPipelineExecution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

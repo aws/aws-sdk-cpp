@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HostOffering
+  class HostOffering
   {
   public:
-    HostOffering();
-    HostOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostOffering();
+    AWS_EC2_API HostOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -299,25 +299,25 @@ namespace Model
   private:
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::String m_upfrontPrice;
-    bool m_upfrontPriceHasBeenSet;
+    bool m_upfrontPriceHasBeenSet = false;
   };
 
 } // namespace Model

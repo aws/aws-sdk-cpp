@@ -37,52 +37,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LoggingInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API LoggingInfo
+  class LoggingInfo
   {
   public:
-    LoggingInfo();
-    LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API LoggingInfo();
+    AWS_SSM_API LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an S3 bucket where execution logs are stored .</p>
+     * <p>The name of an S3 bucket where execution logs are stored.</p>
      */
     inline LoggingInfo& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_s3Region;
-    bool m_s3RegionHasBeenSet;
+    bool m_s3RegionHasBeenSet = false;
   };
 
 } // namespace Model

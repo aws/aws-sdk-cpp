@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/FrameworkMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API FrameworkMetadata
+  class FrameworkMetadata
   {
   public:
-    FrameworkMetadata();
-    FrameworkMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FrameworkMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API FrameworkMetadata();
+    AWS_AUDITMANAGER_API FrameworkMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API FrameworkMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_logo;
-    bool m_logoHasBeenSet;
+    bool m_logoHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
   };
 
 } // namespace Model

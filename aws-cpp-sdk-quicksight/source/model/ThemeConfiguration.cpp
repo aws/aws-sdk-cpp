@@ -21,14 +21,16 @@ namespace Model
 ThemeConfiguration::ThemeConfiguration() : 
     m_dataColorPaletteHasBeenSet(false),
     m_uIColorPaletteHasBeenSet(false),
-    m_sheetHasBeenSet(false)
+    m_sheetHasBeenSet(false),
+    m_typographyHasBeenSet(false)
 {
 }
 
 ThemeConfiguration::ThemeConfiguration(JsonView jsonValue) : 
     m_dataColorPaletteHasBeenSet(false),
     m_uIColorPaletteHasBeenSet(false),
-    m_sheetHasBeenSet(false)
+    m_sheetHasBeenSet(false),
+    m_typographyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ThemeConfiguration& ThemeConfiguration::operator =(JsonView jsonValue)
     m_sheetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Typography"))
+  {
+    m_typography = jsonValue.GetObject("Typography");
+
+    m_typographyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ThemeConfiguration::Jsonize() const
   if(m_sheetHasBeenSet)
   {
    payload.WithObject("Sheet", m_sheet.Jsonize());
+
+  }
+
+  if(m_typographyHasBeenSet)
+  {
+   payload.WithObject("Typography", m_typography.Jsonize());
 
   }
 

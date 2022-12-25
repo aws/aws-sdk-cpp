@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotErrorMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API SnapshotErrorMessage
+  class SnapshotErrorMessage
   {
   public:
-    SnapshotErrorMessage();
-    SnapshotErrorMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotErrorMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotErrorMessage();
+    AWS_REDSHIFT_API SnapshotErrorMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotErrorMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotClusterIdentifier;
-    bool m_snapshotClusterIdentifierHasBeenSet;
+    bool m_snapshotClusterIdentifierHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

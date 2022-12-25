@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnectionOAuthClientRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthClientRequestParameters
+  class CreateConnectionOAuthClientRequestParameters
   {
   public:
-    CreateConnectionOAuthClientRequestParameters();
-    CreateConnectionOAuthClientRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    CreateConnectionOAuthClientRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthClientRequestParameters();
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthClientRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthClientRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_clientID;
-    bool m_clientIDHasBeenSet;
+    bool m_clientIDHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayListenerTlsSdsCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayListenerTlsSdsCertificate
+  class VirtualGatewayListenerTlsSdsCertificate
   {
   public:
-    VirtualGatewayListenerTlsSdsCertificate();
-    VirtualGatewayListenerTlsSdsCertificate(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayListenerTlsSdsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayListenerTlsSdsCertificate();
+    AWS_APPMESH_API VirtualGatewayListenerTlsSdsCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayListenerTlsSdsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::String m_secretName;
-    bool m_secretNameHasBeenSet;
+    bool m_secretNameHasBeenSet = false;
   };
 
 } // namespace Model

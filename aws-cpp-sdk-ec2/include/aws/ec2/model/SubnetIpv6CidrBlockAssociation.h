@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetIpv6CidrBlockAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SubnetIpv6CidrBlockAssociation
+  class SubnetIpv6CidrBlockAssociation
   {
   public:
-    SubnetIpv6CidrBlockAssociation();
-    SubnetIpv6CidrBlockAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SubnetIpv6CidrBlockAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetIpv6CidrBlockAssociation();
+    AWS_EC2_API SubnetIpv6CidrBlockAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetIpv6CidrBlockAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     SubnetCidrBlockState m_ipv6CidrBlockState;
-    bool m_ipv6CidrBlockStateHasBeenSet;
+    bool m_ipv6CidrBlockStateHasBeenSet = false;
   };
 
 } // namespace Model

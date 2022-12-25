@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/TaskObject">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API TaskObject
+  class TaskObject
   {
   public:
-    TaskObject();
-    TaskObject(Aws::Utils::Json::JsonView jsonValue);
-    TaskObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API TaskObject();
+    AWS_DATAPIPELINE_API TaskObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API TaskObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,16 +254,16 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::String m_attemptId;
-    bool m_attemptIdHasBeenSet;
+    bool m_attemptIdHasBeenSet = false;
 
     Aws::Map<Aws::String, PipelineObject> m_objects;
-    bool m_objectsHasBeenSet;
+    bool m_objectsHasBeenSet = false;
   };
 
 } // namespace Model

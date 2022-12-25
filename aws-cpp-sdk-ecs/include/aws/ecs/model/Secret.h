@@ -32,18 +32,18 @@ namespace Model
    * <code>secretOptions</code> container definition parameter.</p> </li> </ul>
    * <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-   * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+   * sensitive data</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Secret">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Secret
+  class Secret
   {
   public:
-    Secret();
-    Secret(Aws::Utils::Json::JsonView jsonValue);
-    Secret& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Secret();
+    AWS_ECS_API Secret(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Secret& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_valueFrom;
-    bool m_valueFromHasBeenSet;
+    bool m_valueFromHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,59 +29,59 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SessionCommand">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SessionCommand
+  class SessionCommand
   {
   public:
-    SessionCommand();
-    SessionCommand(Aws::Utils::Json::JsonView jsonValue);
-    SessionCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SessionCommand();
+    AWS_GLUE_API SessionCommand(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SessionCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the SessionCommand.Can be 'glueetl' or
+     * <p>Specifies the name of the SessionCommand. Can be 'glueetl' or
      * 'gluestreaming'.</p>
      */
     inline SessionCommand& WithName(const char* value) { SetName(value); return *this;}
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_pythonVersion;
-    bool m_pythonVersionHasBeenSet;
+    bool m_pythonVersionHasBeenSet = false;
   };
 
 } // namespace Model

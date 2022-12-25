@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerValidationConfiguration
+  class ServerValidationConfiguration
   {
   public:
-    ServerValidationConfiguration();
-    ServerValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerValidationConfiguration();
+    AWS_SMS_API ServerValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -205,19 +205,19 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerValidationStrategy m_serverValidationStrategy;
-    bool m_serverValidationStrategyHasBeenSet;
+    bool m_serverValidationStrategyHasBeenSet = false;
 
     UserDataValidationParameters m_userDataValidationParameters;
-    bool m_userDataValidationParametersHasBeenSet;
+    bool m_userDataValidationParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ListenerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API ListenerDescription
+  class ListenerDescription
   {
   public:
-    ListenerDescription();
-    ListenerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ListenerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API ListenerDescription();
+    AWS_ELASTICLOADBALANCING_API ListenerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API ListenerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Listener m_listener;
-    bool m_listenerHasBeenSet;
+    bool m_listenerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API DescribeProjectsRequest : public RekognitionRequest
+  class DescribeProjectsRequest : public RekognitionRequest
   {
   public:
-    DescribeProjectsRequest();
+    AWS_REKOGNITION_API DescribeProjectsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProjects"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_projectNames;
-    bool m_projectNamesHasBeenSet;
+    bool m_projectNamesHasBeenSet = false;
   };
 
 } // namespace Model

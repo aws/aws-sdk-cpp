@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TraceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API TraceConfiguration
+  class TraceConfiguration
   {
   public:
-    TraceConfiguration();
-    TraceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TraceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API TraceConfiguration();
+    AWS_APPRUNNER_API TraceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API TraceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TracingVendor m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
   };
 
 } // namespace Model

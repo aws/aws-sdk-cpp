@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionConfig
+  class DistributionConfig
   {
   public:
-    DistributionConfig();
-    DistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfig();
+    AWS_CLOUDFRONT_API DistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -169,8 +169,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -189,8 +189,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -209,8 +209,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -229,8 +229,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -249,8 +249,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -269,8 +269,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -289,8 +289,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -309,8 +309,8 @@ namespace Model
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
      * <code>index.html</code>) when a viewer requests the root URL for your
-     * distribution (<code>http://www.example.com</code>) instead of an object in your
-     * distribution (<code>http://www.example.com/product-description.html</code>).
+     * distribution (<code>https://www.example.com</code>) instead of an object in your
+     * distribution (<code>https://www.example.com/product-description.html</code>).
      * Specifying a default root object avoids exposing the contents of your
      * distribution.</p> <p>Specify only the object name, for example,
      * <code>index.html</code>. Don't add a <code>/</code> before the object name.</p>
@@ -328,74 +328,74 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline const Origins& GetOrigins() const{ return m_origins; }
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline void SetOrigins(const Origins& value) { m_originsHasBeenSet = true; m_origins = value; }
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline void SetOrigins(Origins&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline DistributionConfig& WithOrigins(const Origins& value) { SetOrigins(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about origins for this distribution.
-     * </p>
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
      */
     inline DistributionConfig& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
 
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionConfig& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionConfig& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
@@ -452,37 +452,37 @@ namespace Model
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline const CacheBehaviors& GetCacheBehaviors() const{ return m_cacheBehaviors; }
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline bool CacheBehaviorsHasBeenSet() const { return m_cacheBehaviorsHasBeenSet; }
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline void SetCacheBehaviors(CacheBehaviors&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::move(value); }
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline DistributionConfig& WithCacheBehaviors(const CacheBehaviors& value) { SetCacheBehaviors(value); return *this;}
 
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-     * elements. </p>
+     * elements.</p>
      */
     inline DistributionConfig& WithCacheBehaviors(CacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
 
@@ -555,50 +555,50 @@ namespace Model
 
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline DistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline DistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>An optional comment to describe the distribution. The comment cannot be
-     * longer than 128 characters.</p>
+     * <p>A comment to describe the distribution. The comment cannot be longer than 128
+     * characters.</p>
      */
     inline DistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
@@ -783,37 +783,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionConfig& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionConfig& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
@@ -871,7 +871,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
 
@@ -890,7 +890,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
@@ -909,7 +909,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
@@ -928,7 +928,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
 
@@ -947,7 +947,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
 
@@ -966,7 +966,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline DistributionConfig& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
 
@@ -985,7 +985,7 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline DistributionConfig& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
 
@@ -1004,80 +1004,116 @@ namespace Model
      * configure CloudFront to return a custom error page when a request is blocked.
      * For more information about WAF, see the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
-     * Developer Guide</a>. </p>
+     * Developer Guide</a>.</p>
      */
     inline DistributionConfig& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline DistributionConfig& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
 
     /**
-     * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
-     * communicate with CloudFront. The default value for new web distributions is
-     * http2. Viewers that don't support HTTP/2 automatically use an earlier HTTP
-     * version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers must support
-     * TLS 1.2 or later, and must support Server Name Identification (SNI).</p> <p>In
-     * general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
-     * latency. You can improve performance by optimizing for HTTP/2. For more
-     * information, do an Internet search for "http/2 optimization." </p>
+     * <p>(Optional) Specify the maximum HTTP version(s) that you want viewers to use
+     * to communicate with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.</p> <p>For viewers and CloudFront to use HTTP/2, viewers
+     * must support TLSv1.2 or later, and must support Server Name Indication
+     * (SNI).</p> <p>For viewers and CloudFront to use HTTP/3, viewers must support
+     * TLSv1.3 and Server Name Indication (SNI). CloudFront supports HTTP/3 connection
+     * migration to allow the viewer to switch networks without losing connection. For
+     * more information about connection migration, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc9000.html#name-connection-migration">Connection
+     * Migration</a> at RFC 9000. For more information about supported TLSv1.3 ciphers,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
+     * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
     inline DistributionConfig& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
 
@@ -1087,15 +1123,15 @@ namespace Model
      * for your distribution, specify <code>true</code>. If you specify
      * <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS
      * response code <code>NOERROR</code> and with no IP addresses. This allows viewers
-     * to submit a second request, for an IPv4 address for your distribution. </p>
-     * <p>In general, you should enable IPv6 if you have users on IPv6 networks who
-     * want to access your content. However, if you're using signed URLs or signed
-     * cookies to restrict access to your content, and if you're using a custom policy
-     * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, don't enable IPv6. If you want to restrict access
-     * to some content by IP address and not restrict access to other content (or
-     * restrict access but not by IP address), you can create two distributions. For
-     * more information, see <a
+     * to submit a second request, for an IPv4 address for your distribution.</p> <p>In
+     * general, you should enable IPv6 if you have users on IPv6 networks who want to
+     * access your content. However, if you're using signed URLs or signed cookies to
+     * restrict access to your content, and if you're using a custom policy that
+     * includes the <code>IpAddress</code> parameter to restrict the IP addresses that
+     * can access your content, don't enable IPv6. If you want to restrict access to
+     * some content by IP address and not restrict access to other content (or restrict
+     * access but not by IP address), you can create two distributions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
@@ -1119,15 +1155,15 @@ namespace Model
      * for your distribution, specify <code>true</code>. If you specify
      * <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS
      * response code <code>NOERROR</code> and with no IP addresses. This allows viewers
-     * to submit a second request, for an IPv4 address for your distribution. </p>
-     * <p>In general, you should enable IPv6 if you have users on IPv6 networks who
-     * want to access your content. However, if you're using signed URLs or signed
-     * cookies to restrict access to your content, and if you're using a custom policy
-     * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, don't enable IPv6. If you want to restrict access
-     * to some content by IP address and not restrict access to other content (or
-     * restrict access but not by IP address), you can create two distributions. For
-     * more information, see <a
+     * to submit a second request, for an IPv4 address for your distribution.</p> <p>In
+     * general, you should enable IPv6 if you have users on IPv6 networks who want to
+     * access your content. However, if you're using signed URLs or signed cookies to
+     * restrict access to your content, and if you're using a custom policy that
+     * includes the <code>IpAddress</code> parameter to restrict the IP addresses that
+     * can access your content, don't enable IPv6. If you want to restrict access to
+     * some content by IP address and not restrict access to other content (or restrict
+     * access but not by IP address), you can create two distributions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
@@ -1151,15 +1187,15 @@ namespace Model
      * for your distribution, specify <code>true</code>. If you specify
      * <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS
      * response code <code>NOERROR</code> and with no IP addresses. This allows viewers
-     * to submit a second request, for an IPv4 address for your distribution. </p>
-     * <p>In general, you should enable IPv6 if you have users on IPv6 networks who
-     * want to access your content. However, if you're using signed URLs or signed
-     * cookies to restrict access to your content, and if you're using a custom policy
-     * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, don't enable IPv6. If you want to restrict access
-     * to some content by IP address and not restrict access to other content (or
-     * restrict access but not by IP address), you can create two distributions. For
-     * more information, see <a
+     * to submit a second request, for an IPv4 address for your distribution.</p> <p>In
+     * general, you should enable IPv6 if you have users on IPv6 networks who want to
+     * access your content. However, if you're using signed URLs or signed cookies to
+     * restrict access to your content, and if you're using a custom policy that
+     * includes the <code>IpAddress</code> parameter to restrict the IP addresses that
+     * can access your content, don't enable IPv6. If you want to restrict access to
+     * some content by IP address and not restrict access to other content (or restrict
+     * access but not by IP address), you can create two distributions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
@@ -1183,15 +1219,15 @@ namespace Model
      * for your distribution, specify <code>true</code>. If you specify
      * <code>false</code>, CloudFront responds to IPv6 DNS requests with the DNS
      * response code <code>NOERROR</code> and with no IP addresses. This allows viewers
-     * to submit a second request, for an IPv4 address for your distribution. </p>
-     * <p>In general, you should enable IPv6 if you have users on IPv6 networks who
-     * want to access your content. However, if you're using signed URLs or signed
-     * cookies to restrict access to your content, and if you're using a custom policy
-     * that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     * that can access your content, don't enable IPv6. If you want to restrict access
-     * to some content by IP address and not restrict access to other content (or
-     * restrict access but not by IP address), you can create two distributions. For
-     * more information, see <a
+     * to submit a second request, for an IPv4 address for your distribution.</p> <p>In
+     * general, you should enable IPv6 if you have users on IPv6 networks who want to
+     * access your content. However, if you're using signed URLs or signed cookies to
+     * restrict access to your content, and if you're using a custom policy that
+     * includes the <code>IpAddress</code> parameter to restrict the IP addresses that
+     * can access your content, don't enable IPv6. If you want to restrict access to
+     * some content by IP address and not restrict access to other content (or restrict
+     * access but not by IP address), you can create two distributions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
      * a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p> <p>If you're using an Route 53 Amazon Web Services Integration
@@ -1210,58 +1246,142 @@ namespace Model
      */
     inline DistributionConfig& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline const Aws::String& GetContinuousDeploymentPolicyId() const{ return m_continuousDeploymentPolicyId; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline bool ContinuousDeploymentPolicyIdHasBeenSet() const { return m_continuousDeploymentPolicyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(const Aws::String& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = value; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(Aws::String&& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = std::move(value); }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(const char* value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId.assign(value); }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(const Aws::String& value) { SetContinuousDeploymentPolicyId(value); return *this;}
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(Aws::String&& value) { SetContinuousDeploymentPolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(const char* value) { SetContinuousDeploymentPolicyId(value); return *this;}
+
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline bool GetStaging() const{ return m_staging; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline DistributionConfig& WithStaging(bool value) { SetStaging(value); return *this;}
+
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_defaultRootObject;
-    bool m_defaultRootObjectHasBeenSet;
+    bool m_defaultRootObjectHasBeenSet = false;
 
     Origins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     OriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     CustomErrorResponses m_customErrorResponses;
-    bool m_customErrorResponsesHasBeenSet;
+    bool m_customErrorResponsesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     LoggingConfig m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Restrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     HttpVersion m_httpVersion;
-    bool m_httpVersionHasBeenSet;
+    bool m_httpVersionHasBeenSet = false;
 
     bool m_isIPV6Enabled;
-    bool m_isIPV6EnabledHasBeenSet;
+    bool m_isIPV6EnabledHasBeenSet = false;
+
+    Aws::String m_continuousDeploymentPolicyId;
+    bool m_continuousDeploymentPolicyIdHasBeenSet = false;
+
+    bool m_staging;
+    bool m_stagingHasBeenSet = false;
   };
 
 } // namespace Model

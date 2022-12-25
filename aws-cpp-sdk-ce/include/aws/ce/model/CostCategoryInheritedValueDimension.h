@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryInheritedValueDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension
+  class CostCategoryInheritedValueDimension
   {
   public:
-    CostCategoryInheritedValueDimension();
-    CostCategoryInheritedValueDimension(Aws::Utils::Json::JsonView jsonValue);
-    CostCategoryInheritedValueDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension();
+    AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategoryInheritedValueDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     CostCategoryInheritedValueDimensionName m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::String m_dimensionKey;
-    bool m_dimensionKeyHasBeenSet;
+    bool m_dimensionKeyHasBeenSet = false;
   };
 
 } // namespace Model

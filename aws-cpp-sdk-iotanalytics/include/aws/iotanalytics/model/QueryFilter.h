@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/QueryFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API QueryFilter
+  class QueryFilter
   {
   public:
-    QueryFilter();
-    QueryFilter(Aws::Utils::Json::JsonView jsonValue);
-    QueryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API QueryFilter();
+    AWS_IOTANALYTICS_API QueryFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API QueryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     DeltaTime m_deltaTime;
-    bool m_deltaTimeHasBeenSet;
+    bool m_deltaTimeHasBeenSet = false;
   };
 
 } // namespace Model

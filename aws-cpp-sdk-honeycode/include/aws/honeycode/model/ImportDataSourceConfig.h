@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ImportDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ImportDataSourceConfig
+  class ImportDataSourceConfig
   {
   public:
-    ImportDataSourceConfig();
-    ImportDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    ImportDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ImportDataSourceConfig();
+    AWS_HONEYCODE_API ImportDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ImportDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_dataSourceUrl;
-    bool m_dataSourceUrlHasBeenSet;
+    bool m_dataSourceUrlHasBeenSet = false;
   };
 
 } // namespace Model

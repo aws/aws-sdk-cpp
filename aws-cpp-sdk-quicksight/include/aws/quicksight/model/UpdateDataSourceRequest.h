@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API UpdateDataSourceRequest : public QuickSightRequest
+  class UpdateDataSourceRequest : public QuickSightRequest
   {
   public:
-    UpdateDataSourceRequest();
+    AWS_QUICKSIGHT_API UpdateDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataSourceParameters m_dataSourceParameters;
-    bool m_dataSourceParametersHasBeenSet;
+    bool m_dataSourceParametersHasBeenSet = false;
 
     DataSourceCredentials m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
 
     VpcConnectionProperties m_vpcConnectionProperties;
-    bool m_vpcConnectionPropertiesHasBeenSet;
+    bool m_vpcConnectionPropertiesHasBeenSet = false;
 
     SslProperties m_sslProperties;
-    bool m_sslPropertiesHasBeenSet;
+    bool m_sslPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,7 +39,7 @@ RecoveryGroupOutput& RecoveryGroupOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cells"))
   {
-    Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
+    Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
     for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
     {
       m_cells.push_back(cellsJsonList[cellsIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue RecoveryGroupOutput::Jsonize() const
 
   if(m_cellsHasBeenSet)
   {
-   Array<JsonValue> cellsJsonList(m_cells.size());
+   Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
    for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
    {
      cellsJsonList[cellsIndex].AsString(m_cells[cellsIndex]);

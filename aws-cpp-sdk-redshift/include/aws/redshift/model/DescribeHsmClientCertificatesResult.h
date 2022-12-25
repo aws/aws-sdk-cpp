@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmClientCertificateMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeHsmClientCertificatesResult
+  class DescribeHsmClientCertificatesResult
   {
   public:
-    DescribeHsmClientCertificatesResult();
-    DescribeHsmClientCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeHsmClientCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeHsmClientCertificatesResult();
+    AWS_REDSHIFT_API DescribeHsmClientCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeHsmClientCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelinesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ListPipelinesRequest : public DataPipelineRequest
+  class ListPipelinesRequest : public DataPipelineRequest
   {
   public:
-    ListPipelinesRequest();
+    AWS_DATAPIPELINE_API ListPipelinesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPipelines"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATAPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATAPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

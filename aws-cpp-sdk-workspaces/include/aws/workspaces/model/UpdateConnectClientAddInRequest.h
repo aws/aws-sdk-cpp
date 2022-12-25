@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API UpdateConnectClientAddInRequest : public WorkSpacesRequest
+  class UpdateConnectClientAddInRequest : public WorkSpacesRequest
   {
   public:
-    UpdateConnectClientAddInRequest();
+    AWS_WORKSPACES_API UpdateConnectClientAddInRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConnectClientAddIn"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_addInId;
-    bool m_addInIdHasBeenSet;
+    bool m_addInIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_uRL;
-    bool m_uRLHasBeenSet;
+    bool m_uRLHasBeenSet = false;
   };
 
 } // namespace Model

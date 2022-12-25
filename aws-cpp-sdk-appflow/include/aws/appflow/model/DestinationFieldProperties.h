@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DestinationFieldProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DestinationFieldProperties
+  class DestinationFieldProperties
   {
   public:
-    DestinationFieldProperties();
-    DestinationFieldProperties(Aws::Utils::Json::JsonView jsonValue);
-    DestinationFieldProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DestinationFieldProperties();
+    AWS_APPFLOW_API DestinationFieldProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DestinationFieldProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,22 +215,22 @@ namespace Model
   private:
 
     bool m_isCreatable;
-    bool m_isCreatableHasBeenSet;
+    bool m_isCreatableHasBeenSet = false;
 
     bool m_isNullable;
-    bool m_isNullableHasBeenSet;
+    bool m_isNullableHasBeenSet = false;
 
     bool m_isUpsertable;
-    bool m_isUpsertableHasBeenSet;
+    bool m_isUpsertableHasBeenSet = false;
 
     bool m_isUpdatable;
-    bool m_isUpdatableHasBeenSet;
+    bool m_isUpdatableHasBeenSet = false;
 
     bool m_isDefaultedOnCreate;
-    bool m_isDefaultedOnCreateHasBeenSet;
+    bool m_isDefaultedOnCreateHasBeenSet = false;
 
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;
-    bool m_supportedWriteOperationsHasBeenSet;
+    bool m_supportedWriteOperationsHasBeenSet = false;
   };
 
 } // namespace Model

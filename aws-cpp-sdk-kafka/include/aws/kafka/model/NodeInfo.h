@@ -33,13 +33,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/NodeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API NodeInfo
+  class NodeInfo
   {
   public:
-    NodeInfo();
-    NodeInfo(Aws::Utils::Json::JsonView jsonValue);
-    NodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API NodeInfo();
+    AWS_KAFKA_API NodeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API NodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_addedToClusterTime;
-    bool m_addedToClusterTimeHasBeenSet;
+    bool m_addedToClusterTimeHasBeenSet = false;
 
     BrokerNodeInfo m_brokerNodeInfo;
-    bool m_brokerNodeInfoHasBeenSet;
+    bool m_brokerNodeInfoHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_nodeARN;
-    bool m_nodeARNHasBeenSet;
+    bool m_nodeARNHasBeenSet = false;
 
     NodeType m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     ZookeeperNodeInfo m_zookeeperNodeInfo;
-    bool m_zookeeperNodeInfoHasBeenSet;
+    bool m_zookeeperNodeInfoHasBeenSet = false;
   };
 
 } // namespace Model

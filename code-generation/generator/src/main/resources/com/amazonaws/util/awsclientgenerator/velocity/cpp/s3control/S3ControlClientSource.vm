@@ -1,8 +1,11 @@
 #set($arnEndpointSupported = true)
 #set($vpcEndpointSupported = true)
+#if(!$serviceModel.endpointRules)
 #set($AdditionalServiceSpecificConfigLoadString = "LoadS3ControlSpecificConfig(config.profileName);")
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
+#if(!$serviceModel.endpointRules)
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 
@@ -110,3 +113,4 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& na
     Aws::String signerServiceName = hasOutpostId ? "s3-outposts" : SERVICE_NAME;
     return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, signerServiceName));
 }
+#end

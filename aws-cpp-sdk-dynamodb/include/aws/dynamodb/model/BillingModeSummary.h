@@ -25,18 +25,23 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for the read/write capacity mode.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the details for the read/write capacity mode. This page talks about
+   * <code>PROVISIONED</code> and <code>PAY_PER_REQUEST</code> billing modes. For
+   * more information about these modes, see <a
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html">Read/write
+   * capacity mode</a>.</p>  <p>You may need to switch to on-demand mode at
+   * least once in order to return a <code>BillingModeSummary</code> response.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BillingModeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BillingModeSummary
+  class BillingModeSummary
   {
   public:
-    BillingModeSummary();
-    BillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
-    BillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BillingModeSummary();
+    AWS_DYNAMODB_API BillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +150,10 @@ namespace Model
   private:
 
     BillingMode m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateToPayPerRequestDateTime;
-    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet;
+    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API RouteStatus
+  class RouteStatus
   {
   public:
-    RouteStatus();
-    RouteStatus(Aws::Utils::Json::JsonView jsonValue);
-    RouteStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API RouteStatus();
+    AWS_APPMESH_API RouteStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API RouteStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     RouteStatusCode m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

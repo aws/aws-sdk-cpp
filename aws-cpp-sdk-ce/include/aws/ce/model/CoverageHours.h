@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageHours">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CoverageHours
+  class CoverageHours
   {
   public:
-    CoverageHours();
-    CoverageHours(Aws::Utils::Json::JsonView jsonValue);
-    CoverageHours& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CoverageHours();
+    AWS_COSTEXPLORER_API CoverageHours(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CoverageHours& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_onDemandHours;
-    bool m_onDemandHoursHasBeenSet;
+    bool m_onDemandHoursHasBeenSet = false;
 
     Aws::String m_reservedHours;
-    bool m_reservedHoursHasBeenSet;
+    bool m_reservedHoursHasBeenSet = false;
 
     Aws::String m_totalRunningHours;
-    bool m_totalRunningHoursHasBeenSet;
+    bool m_totalRunningHoursHasBeenSet = false;
 
     Aws::String m_coverageHoursPercentage;
-    bool m_coverageHoursPercentageHasBeenSet;
+    bool m_coverageHoursPercentageHasBeenSet = false;
   };
 
 } // namespace Model

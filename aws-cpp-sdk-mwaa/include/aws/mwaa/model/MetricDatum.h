@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/MetricDatum">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API MetricDatum
+  class MetricDatum
   {
   public:
-    MetricDatum();
-    MetricDatum(Aws::Utils::Json::JsonView jsonValue);
-    MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API MetricDatum();
+    AWS_MWAA_API MetricDatum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,22 +243,22 @@ namespace Model
   private:
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     StatisticSet m_statisticValues;
-    bool m_statisticValuesHasBeenSet;
+    bool m_statisticValuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

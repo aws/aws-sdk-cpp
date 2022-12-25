@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/InvalidInputException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API InvalidInputException
+  class InvalidInputException
   {
   public:
-    InvalidInputException();
-    InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API InvalidInputException();
+    AWS_MACHINELEARNING_API InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -78,10 +78,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

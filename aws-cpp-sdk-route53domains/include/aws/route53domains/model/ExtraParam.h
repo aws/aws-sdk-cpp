@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ExtraParam">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API ExtraParam
+  class ExtraParam
   {
   public:
-    ExtraParam();
-    ExtraParam(Aws::Utils::Json::JsonView jsonValue);
-    ExtraParam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API ExtraParam();
+    AWS_ROUTE53DOMAINS_API ExtraParam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API ExtraParam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,7 +183,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -350,7 +350,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -517,7 +517,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -684,7 +684,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -851,7 +851,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -1018,7 +1018,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -1084,10 +1084,10 @@ namespace Model
   private:
 
     ExtraParamName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

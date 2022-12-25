@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetConfiguration
+  class DataSetConfiguration
   {
   public:
-    DataSetConfiguration();
-    DataSetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataSetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetConfiguration();
+    AWS_QUICKSIGHT_API DataSetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_placeholder;
-    bool m_placeholderHasBeenSet;
+    bool m_placeholderHasBeenSet = false;
 
     DataSetSchema m_dataSetSchema;
-    bool m_dataSetSchemaHasBeenSet;
+    bool m_dataSetSchemaHasBeenSet = false;
 
     Aws::Vector<ColumnGroupSchema> m_columnGroupSchemaList;
-    bool m_columnGroupSchemaListHasBeenSet;
+    bool m_columnGroupSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CollectorShortInfoResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CollectorShortInfoResponse
+  class CollectorShortInfoResponse
   {
   public:
-    CollectorShortInfoResponse();
-    CollectorShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
-    CollectorShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorShortInfoResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_collectorReferencedId;
-    bool m_collectorReferencedIdHasBeenSet;
+    bool m_collectorReferencedIdHasBeenSet = false;
 
     Aws::String m_collectorName;
-    bool m_collectorNameHasBeenSet;
+    bool m_collectorNameHasBeenSet = false;
   };
 
 } // namespace Model

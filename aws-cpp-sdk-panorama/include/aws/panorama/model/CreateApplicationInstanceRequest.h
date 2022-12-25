@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API CreateApplicationInstanceRequest : public PanoramaRequest
+  class CreateApplicationInstanceRequest : public PanoramaRequest
   {
   public:
-    CreateApplicationInstanceRequest();
+    AWS_PANORAMA_API CreateApplicationInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplicationInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -370,28 +370,28 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceIdToReplace;
-    bool m_applicationInstanceIdToReplaceHasBeenSet;
+    bool m_applicationInstanceIdToReplaceHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDevice;
-    bool m_defaultRuntimeContextDeviceHasBeenSet;
+    bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ManifestOverridesPayload m_manifestOverridesPayload;
-    bool m_manifestOverridesPayloadHasBeenSet;
+    bool m_manifestOverridesPayloadHasBeenSet = false;
 
     ManifestPayload m_manifestPayload;
-    bool m_manifestPayloadHasBeenSet;
+    bool m_manifestPayloadHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_runtimeRoleArn;
-    bool m_runtimeRoleArnHasBeenSet;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

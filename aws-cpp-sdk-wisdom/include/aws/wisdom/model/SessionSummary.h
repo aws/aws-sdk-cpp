@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SessionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API SessionSummary
+  class SessionSummary
   {
   public:
-    SessionSummary();
-    SessionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary();
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_assistantArn;
-    bool m_assistantArnHasBeenSet;
+    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     Aws::String m_sessionArn;
-    bool m_sessionArnHasBeenSet;
+    bool m_sessionArnHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

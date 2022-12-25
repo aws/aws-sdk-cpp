@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EbuTtDDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API EbuTtDDestinationSettings
+  class EbuTtDDestinationSettings
   {
   public:
-    EbuTtDDestinationSettings();
-    EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings();
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -397,16 +397,16 @@ You specify only the
   private:
 
     Aws::String m_copyrightHolder;
-    bool m_copyrightHolderHasBeenSet;
+    bool m_copyrightHolderHasBeenSet = false;
 
     EbuTtDFillLineGapControl m_fillLineGap;
-    bool m_fillLineGapHasBeenSet;
+    bool m_fillLineGapHasBeenSet = false;
 
     Aws::String m_fontFamily;
-    bool m_fontFamilyHasBeenSet;
+    bool m_fontFamilyHasBeenSet = false;
 
     EbuTtDDestinationStyleControl m_styleControl;
-    bool m_styleControlHasBeenSet;
+    bool m_styleControlHasBeenSet = false;
   };
 
 } // namespace Model

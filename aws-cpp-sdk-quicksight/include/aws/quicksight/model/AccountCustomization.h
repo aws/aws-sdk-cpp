@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountCustomization">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AccountCustomization
+  class AccountCustomization
   {
   public:
-    AccountCustomization();
-    AccountCustomization(Aws::Utils::Json::JsonView jsonValue);
-    AccountCustomization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AccountCustomization();
+    AWS_QUICKSIGHT_API AccountCustomization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AccountCustomization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_defaultTheme;
-    bool m_defaultThemeHasBeenSet;
+    bool m_defaultThemeHasBeenSet = false;
 
     Aws::String m_defaultEmailCustomizationTemplate;
-    bool m_defaultEmailCustomizationTemplateHasBeenSet;
+    bool m_defaultEmailCustomizationTemplateHasBeenSet = false;
   };
 
 } // namespace Model

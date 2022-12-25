@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PinpointDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PinpointDestination
+  class PinpointDestination
   {
   public:
-    PinpointDestination();
-    PinpointDestination(Aws::Utils::Json::JsonView jsonValue);
-    PinpointDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API PinpointDestination();
+    AWS_SESV2_API PinpointDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API PinpointDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

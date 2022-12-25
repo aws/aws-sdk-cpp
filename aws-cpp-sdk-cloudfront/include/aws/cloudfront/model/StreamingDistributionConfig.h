@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingDistributionConfig
+  class StreamingDistributionConfig
   {
   public:
-    StreamingDistributionConfig();
-    StreamingDistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingDistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfig();
+    AWS_CLOUDFRONT_API StreamingDistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -134,152 +134,152 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline const S3Origin& GetS3Origin() const{ return m_s3Origin; }
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline bool S3OriginHasBeenSet() const { return m_s3OriginHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline void SetS3Origin(const S3Origin& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline void SetS3Origin(S3Origin&& value) { m_s3OriginHasBeenSet = true; m_s3Origin = std::move(value); }
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline StreamingDistributionConfig& WithS3Origin(const S3Origin& value) { SetS3Origin(value); return *this;}
 
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
-     * which you want CloudFront to get your media files for distribution. </p>
+     * which you want CloudFront to get your media files for distribution.</p>
      */
     inline StreamingDistributionConfig& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline const Aliases& GetAliases() const{ return m_aliases; }
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
-     * names), if any, for this streaming distribution. </p>
+     * names), if any, for this streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Any comments you want to include about the streaming distribution. </p>
+     * <p>Any comments you want to include about the streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline const StreamingLoggingConfig& GetLogging() const{ return m_logging; }
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline void SetLogging(const StreamingLoggingConfig& value) { m_loggingHasBeenSet = true; m_logging = value; }
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline void SetLogging(StreamingLoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithLogging(const StreamingLoggingConfig& value) { SetLogging(value); return *this;}
 
     /**
      * <p>A complex type that controls whether access logs are written for the
-     * streaming distribution. </p>
+     * streaming distribution.</p>
      */
     inline StreamingDistributionConfig& WithLogging(StreamingLoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
 
@@ -292,7 +292,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
@@ -304,7 +304,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
@@ -316,7 +316,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
@@ -328,7 +328,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
@@ -340,7 +340,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistributionConfig& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
@@ -352,44 +352,44 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistributionConfig& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline StreamingDistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline StreamingDistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
@@ -421,28 +421,28 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     S3Origin m_s3Origin;
-    bool m_s3OriginHasBeenSet;
+    bool m_s3OriginHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     StreamingLoggingConfig m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     TrustedSigners m_trustedSigners;
-    bool m_trustedSignersHasBeenSet;
+    bool m_trustedSignersHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

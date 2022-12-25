@@ -5,273 +5,74 @@
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
-#include <aws/fsx/FSxErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/fsx/model/AssociateFileSystemAliasesResult.h>
-#include <aws/fsx/model/CancelDataRepositoryTaskResult.h>
-#include <aws/fsx/model/CopyBackupResult.h>
-#include <aws/fsx/model/CreateBackupResult.h>
-#include <aws/fsx/model/CreateDataRepositoryAssociationResult.h>
-#include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
-#include <aws/fsx/model/CreateFileSystemResult.h>
-#include <aws/fsx/model/CreateFileSystemFromBackupResult.h>
-#include <aws/fsx/model/CreateSnapshotResult.h>
-#include <aws/fsx/model/CreateStorageVirtualMachineResult.h>
-#include <aws/fsx/model/CreateVolumeResult.h>
-#include <aws/fsx/model/CreateVolumeFromBackupResult.h>
-#include <aws/fsx/model/DeleteBackupResult.h>
-#include <aws/fsx/model/DeleteDataRepositoryAssociationResult.h>
-#include <aws/fsx/model/DeleteFileSystemResult.h>
-#include <aws/fsx/model/DeleteSnapshotResult.h>
-#include <aws/fsx/model/DeleteStorageVirtualMachineResult.h>
-#include <aws/fsx/model/DeleteVolumeResult.h>
-#include <aws/fsx/model/DescribeBackupsResult.h>
-#include <aws/fsx/model/DescribeDataRepositoryAssociationsResult.h>
-#include <aws/fsx/model/DescribeDataRepositoryTasksResult.h>
-#include <aws/fsx/model/DescribeFileSystemAliasesResult.h>
-#include <aws/fsx/model/DescribeFileSystemsResult.h>
-#include <aws/fsx/model/DescribeSnapshotsResult.h>
-#include <aws/fsx/model/DescribeStorageVirtualMachinesResult.h>
-#include <aws/fsx/model/DescribeVolumesResult.h>
-#include <aws/fsx/model/DisassociateFileSystemAliasesResult.h>
-#include <aws/fsx/model/ListTagsForResourceResult.h>
-#include <aws/fsx/model/ReleaseFileSystemNfsV3LocksResult.h>
-#include <aws/fsx/model/RestoreVolumeFromSnapshotResult.h>
-#include <aws/fsx/model/TagResourceResult.h>
-#include <aws/fsx/model/UntagResourceResult.h>
-#include <aws/fsx/model/UpdateDataRepositoryAssociationResult.h>
-#include <aws/fsx/model/UpdateFileSystemResult.h>
-#include <aws/fsx/model/UpdateSnapshotResult.h>
-#include <aws/fsx/model/UpdateStorageVirtualMachineResult.h>
-#include <aws/fsx/model/UpdateVolumeResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/fsx/FSxServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace FSx
 {
-
-namespace Model
-{
-        class AssociateFileSystemAliasesRequest;
-        class CancelDataRepositoryTaskRequest;
-        class CopyBackupRequest;
-        class CreateBackupRequest;
-        class CreateDataRepositoryAssociationRequest;
-        class CreateDataRepositoryTaskRequest;
-        class CreateFileSystemRequest;
-        class CreateFileSystemFromBackupRequest;
-        class CreateSnapshotRequest;
-        class CreateStorageVirtualMachineRequest;
-        class CreateVolumeRequest;
-        class CreateVolumeFromBackupRequest;
-        class DeleteBackupRequest;
-        class DeleteDataRepositoryAssociationRequest;
-        class DeleteFileSystemRequest;
-        class DeleteSnapshotRequest;
-        class DeleteStorageVirtualMachineRequest;
-        class DeleteVolumeRequest;
-        class DescribeBackupsRequest;
-        class DescribeDataRepositoryAssociationsRequest;
-        class DescribeDataRepositoryTasksRequest;
-        class DescribeFileSystemAliasesRequest;
-        class DescribeFileSystemsRequest;
-        class DescribeSnapshotsRequest;
-        class DescribeStorageVirtualMachinesRequest;
-        class DescribeVolumesRequest;
-        class DisassociateFileSystemAliasesRequest;
-        class ListTagsForResourceRequest;
-        class ReleaseFileSystemNfsV3LocksRequest;
-        class RestoreVolumeFromSnapshotRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDataRepositoryAssociationRequest;
-        class UpdateFileSystemRequest;
-        class UpdateSnapshotRequest;
-        class UpdateStorageVirtualMachineRequest;
-        class UpdateVolumeRequest;
-
-        typedef Aws::Utils::Outcome<AssociateFileSystemAliasesResult, FSxError> AssociateFileSystemAliasesOutcome;
-        typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, FSxError> CancelDataRepositoryTaskOutcome;
-        typedef Aws::Utils::Outcome<CopyBackupResult, FSxError> CopyBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateDataRepositoryAssociationResult, FSxError> CreateDataRepositoryAssociationOutcome;
-        typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, FSxError> CreateFileSystemFromBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateSnapshotResult, FSxError> CreateSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateStorageVirtualMachineResult, FSxError> CreateStorageVirtualMachineOutcome;
-        typedef Aws::Utils::Outcome<CreateVolumeResult, FSxError> CreateVolumeOutcome;
-        typedef Aws::Utils::Outcome<CreateVolumeFromBackupResult, FSxError> CreateVolumeFromBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, FSxError> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataRepositoryAssociationResult, FSxError> DeleteDataRepositoryAssociationOutcome;
-        typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
-        typedef Aws::Utils::Outcome<DeleteSnapshotResult, FSxError> DeleteSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteStorageVirtualMachineResult, FSxError> DeleteStorageVirtualMachineOutcome;
-        typedef Aws::Utils::Outcome<DeleteVolumeResult, FSxError> DeleteVolumeOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDataRepositoryAssociationsResult, FSxError> DescribeDataRepositoryAssociationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemAliasesResult, FSxError> DescribeFileSystemAliasesOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
-        typedef Aws::Utils::Outcome<DescribeSnapshotsResult, FSxError> DescribeSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStorageVirtualMachinesResult, FSxError> DescribeStorageVirtualMachinesOutcome;
-        typedef Aws::Utils::Outcome<DescribeVolumesResult, FSxError> DescribeVolumesOutcome;
-        typedef Aws::Utils::Outcome<DisassociateFileSystemAliasesResult, FSxError> DisassociateFileSystemAliasesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, FSxError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ReleaseFileSystemNfsV3LocksResult, FSxError> ReleaseFileSystemNfsV3LocksOutcome;
-        typedef Aws::Utils::Outcome<RestoreVolumeFromSnapshotResult, FSxError> RestoreVolumeFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataRepositoryAssociationResult, FSxError> UpdateDataRepositoryAssociationOutcome;
-        typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
-        typedef Aws::Utils::Outcome<UpdateSnapshotResult, FSxError> UpdateSnapshotOutcome;
-        typedef Aws::Utils::Outcome<UpdateStorageVirtualMachineResult, FSxError> UpdateStorageVirtualMachineOutcome;
-        typedef Aws::Utils::Outcome<UpdateVolumeResult, FSxError> UpdateVolumeOutcome;
-
-        typedef std::future<AssociateFileSystemAliasesOutcome> AssociateFileSystemAliasesOutcomeCallable;
-        typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
-        typedef std::future<CopyBackupOutcome> CopyBackupOutcomeCallable;
-        typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
-        typedef std::future<CreateDataRepositoryAssociationOutcome> CreateDataRepositoryAssociationOutcomeCallable;
-        typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
-        typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
-        typedef std::future<CreateFileSystemFromBackupOutcome> CreateFileSystemFromBackupOutcomeCallable;
-        typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
-        typedef std::future<CreateStorageVirtualMachineOutcome> CreateStorageVirtualMachineOutcomeCallable;
-        typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
-        typedef std::future<CreateVolumeFromBackupOutcome> CreateVolumeFromBackupOutcomeCallable;
-        typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
-        typedef std::future<DeleteDataRepositoryAssociationOutcome> DeleteDataRepositoryAssociationOutcomeCallable;
-        typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
-        typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
-        typedef std::future<DeleteStorageVirtualMachineOutcome> DeleteStorageVirtualMachineOutcomeCallable;
-        typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
-        typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
-        typedef std::future<DescribeDataRepositoryAssociationsOutcome> DescribeDataRepositoryAssociationsOutcomeCallable;
-        typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
-        typedef std::future<DescribeFileSystemAliasesOutcome> DescribeFileSystemAliasesOutcomeCallable;
-        typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
-        typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
-        typedef std::future<DescribeStorageVirtualMachinesOutcome> DescribeStorageVirtualMachinesOutcomeCallable;
-        typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
-        typedef std::future<DisassociateFileSystemAliasesOutcome> DisassociateFileSystemAliasesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ReleaseFileSystemNfsV3LocksOutcome> ReleaseFileSystemNfsV3LocksOutcomeCallable;
-        typedef std::future<RestoreVolumeFromSnapshotOutcome> RestoreVolumeFromSnapshotOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDataRepositoryAssociationOutcome> UpdateDataRepositoryAssociationOutcomeCallable;
-        typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
-        typedef std::future<UpdateSnapshotOutcome> UpdateSnapshotOutcomeCallable;
-        typedef std::future<UpdateStorageVirtualMachineOutcome> UpdateStorageVirtualMachineOutcomeCallable;
-        typedef std::future<UpdateVolumeOutcome> UpdateVolumeOutcomeCallable;
-} // namespace Model
-
-  class FSxClient;
-
-    typedef std::function<void(const FSxClient*, const Model::AssociateFileSystemAliasesRequest&, const Model::AssociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFileSystemAliasesResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CancelDataRepositoryTaskRequest&, const Model::CancelDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDataRepositoryTaskResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CopyBackupRequest&, const Model::CopyBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyBackupResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryAssociationRequest&, const Model::CreateDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryAssociationResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateFileSystemFromBackupRequest&, const Model::CreateFileSystemFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemFromBackupResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateStorageVirtualMachineRequest&, const Model::CreateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStorageVirtualMachineResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateVolumeRequest&, const Model::CreateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::CreateVolumeFromBackupRequest&, const Model::CreateVolumeFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVolumeFromBackupResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteDataRepositoryAssociationRequest&, const Model::DeleteDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataRepositoryAssociationResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteStorageVirtualMachineRequest&, const Model::DeleteStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStorageVirtualMachineResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryAssociationsRequest&, const Model::DescribeDataRepositoryAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryAssociationsResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryTasksRequest&, const Model::DescribeDataRepositoryTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryTasksResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemAliasesRequest&, const Model::DescribeFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAliasesResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeStorageVirtualMachinesRequest&, const Model::DescribeStorageVirtualMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStorageVirtualMachinesResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumesResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::DisassociateFileSystemAliasesRequest&, const Model::DisassociateFileSystemAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemAliasesResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::ReleaseFileSystemNfsV3LocksRequest&, const Model::ReleaseFileSystemNfsV3LocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseFileSystemNfsV3LocksResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::RestoreVolumeFromSnapshotRequest&, const Model::RestoreVolumeFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreVolumeFromSnapshotResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UpdateDataRepositoryAssociationRequest&, const Model::UpdateDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataRepositoryAssociationResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UpdateSnapshotRequest&, const Model::UpdateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSnapshotResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UpdateStorageVirtualMachineRequest&, const Model::UpdateStorageVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStorageVirtualMachineResponseReceivedHandler;
-    typedef std::function<void(const FSxClient*, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVolumeResponseReceivedHandler;
-
   /**
    * <p>Amazon FSx is a fully managed service that makes it easy for storage and
    * application administrators to launch and use shared file storage.</p>
    */
-  class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient
+  class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FSxClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FSxClient(const Aws::FSx::FSxClientConfiguration& clientConfiguration = Aws::FSx::FSxClientConfiguration(),
+                  std::shared_ptr<FSxEndpointProviderBase> endpointProvider = Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FSxClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FSxClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<FSxEndpointProviderBase> endpointProvider = Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FSx::FSxClientConfiguration& clientConfiguration = Aws::FSx::FSxClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         FSxClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<FSxEndpointProviderBase> endpointProvider = Aws::MakeShared<FSxEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FSx::FSxClientConfiguration& clientConfiguration = Aws::FSx::FSxClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FSxClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FSxClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        FSxClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~FSxClient();
-
 
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
@@ -438,7 +239,10 @@ namespace Model
          * for both. To learn more about linking a data repository to your file system, see
          * <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
-         * your file system to an S3 bucket</a>.</p><p><h3>See Also:</h3>   <a
+         * your file system to an S3 bucket</a>.</p>  <p>
+         * <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File
+         * Cache resources. To create a DRA on Amazon File Cache, use the
+         * <code>CreateFileCache</code> operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryAssociation">AWS
          * API Reference</a></p>
          */
@@ -484,6 +288,39 @@ namespace Model
         virtual void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new Amazon File Cache resource.</p> <p>You can use this operation
+         * with a client request token in the request that Amazon File Cache uses to ensure
+         * idempotent creation. If a cache with the specified client request token exists
+         * and the parameters match, <code>CreateFileCache</code> returns the description
+         * of the existing cache. If a cache with the specified client request token exists
+         * and the parameters don't match, this call returns
+         * <code>IncompatibleParameterError</code>. If a file cache with the specified
+         * client request token doesn't exist, <code>CreateFileCache</code> does the
+         * following: </p> <ul> <li> <p>Creates a new, empty Amazon File Cache resourcewith
+         * an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p>
+         * </li> <li> <p>Returns the description of the cache in JSON format.</p> </li>
+         * </ul>  <p>The <code>CreateFileCache</code> call returns while the cache's
+         * lifecycle state is still <code>CREATING</code>. You can check the cache creation
+         * status by calling the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+         * operation, which returns the cache state along with other information.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFileCacheOutcome CreateFileCache(const Model::CreateFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFileCacheOutcomeCallable CreateFileCacheCallable(const Model::CreateFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFileCacheAsync(const Model::CreateFileCacheRequest& request, const CreateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new, empty Amazon FSx file system. You can create the following
          * supported Amazon FSx file systems using the <code>CreateFileSystem</code> API
          * operation:</p> <ul> <li> <p>Amazon FSx for Lustre</p> </li> <li> <p>Amazon FSx
@@ -507,19 +344,9 @@ namespace Model
          * following: </p> <ul> <li> <p>Creates a new, empty Amazon FSx file system with an
          * assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
          * <li> <p>Returns the description of the file system in JSON format.</p> </li>
-         * </ul> <p>This operation requires a client request token in the request that
-         * Amazon FSx uses to ensure idempotent creation. This means that calling the
-         * operation multiple times with the same client request token has no effect. By
-         * using the idempotent operation, you can retry a <code>CreateFileSystem</code>
-         * operation without the risk of creating an extra file system. This approach can
-         * be useful when an initial call fails in a way that makes it unclear whether a
-         * file system was created. Examples are if a transport-level timeout occurred, or
-         * your connection was reset. If you use the same client request token and the
-         * initial call created a file system, the client receives a success message as
-         * long as the parameters are the same.</p>  <p>The
-         * <code>CreateFileSystem</code> call returns while the file system's lifecycle
-         * state is still <code>CREATING</code>. You can check the file-system creation
-         * status by calling the <a
+         * </ul>  <p>The <code>CreateFileSystem</code> call returns while the file
+         * system's lifecycle state is still <code>CREATING</code>. You can check the
+         * file-system creation status by calling the <a
          * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
          * operation, which returns the file system state along with other information.</p>
          * <p><h3>See Also:</h3>   <a
@@ -717,6 +544,32 @@ namespace Model
         virtual void DeleteDataRepositoryAssociationAsync(const Model::DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an Amazon File Cache resource. After deletion, the cache no longer
+         * exists, and its data is gone.</p> <p>The <code>DeleteFileCache</code> operation
+         * returns while the cache has the <code>DELETING</code> status. You can check the
+         * cache deletion status by calling the <a
+         * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+         * operation, which returns a list of caches in your account. If you pass the cache
+         * ID for a deleted cache, the <code>DescribeFileCaches</code> operation returns a
+         * <code>FileCacheNotFound</code> error.</p>  <p>The data in a deleted
+         * cache is also deleted and can't be recovered by any means.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFileCacheOutcome DeleteFileCache(const Model::DeleteFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFileCacheOutcomeCallable DeleteFileCacheCallable(const Model::DeleteFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFileCacheAsync(const Model::DeleteFileCacheRequest& request, const DeleteFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a file system. After deletion, the file system no longer exists, and
          * its data is gone. Any existing automatic backups and snapshots are also
          * deleted.</p> <p>To delete an Amazon FSx for NetApp ONTAP file system, first
@@ -848,23 +701,25 @@ namespace Model
         virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Lustre data repository
-         * associations, if one or more <code>AssociationIds</code> values are provided in
-         * the request, or if filters are used in the request. Data repository associations
-         * are supported only for file systems with the <code>Persistent_2</code>
-         * deployment type.</p> <p>You can use filters to narrow the response to include
+         * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
+         * Cache data repository associations, if one or more <code>AssociationIds</code>
+         * values are provided in the request, or if filters are used in the request. Data
+         * repository associations are supported only for Amazon FSx for Lustre file
+         * systems with the <code>Persistent_2</code> deployment type and for Amazon File
+         * Cache resources.</p> <p>You can use filters to narrow the response to include
          * just data repository associations for specific file systems (use the
-         * <code>file-system-id</code> filter with the ID of the file system) or data
+         * <code>file-system-id</code> filter with the ID of the file system) or caches
+         * (use the <code>file-cache-id</code> filter with the ID of the cache), or data
          * repository associations for a specific repository type (use the
-         * <code>data-repository-type</code> filter with a value of <code>S3</code>). If
-         * you don't use filters, the response returns all data repository associations
-         * owned by your Amazon Web Services account in the Amazon Web Services Region of
-         * the endpoint that you're calling.</p> <p>When retrieving all data repository
-         * associations, you can paginate the response by using the optional
-         * <code>MaxResults</code> parameter to limit the number of data repository
-         * associations returned in a response. If more data repository associations
-         * remain, Amazon FSx returns a <code>NextToken</code> value in the response. In
-         * this case, send a later request with the <code>NextToken</code> request
+         * <code>data-repository-type</code> filter with a value of <code>S3</code> or
+         * <code>NFS</code>). If you don't use filters, the response returns all data
+         * repository associations owned by your Amazon Web Services account in the Amazon
+         * Web Services Region of the endpoint that you're calling.</p> <p>When retrieving
+         * all data repository associations, you can paginate the response by using the
+         * optional <code>MaxResults</code> parameter to limit the number of data
+         * repository associations returned in a response. If more data repository
+         * associations remain, a <code>NextToken</code> value is returned in the response.
+         * In this case, send a later request with the <code>NextToken</code> request
          * parameter set to the value of <code>NextToken</code> from the last
          * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">AWS
@@ -883,18 +738,19 @@ namespace Model
         virtual void DescribeDataRepositoryAssociationsAsync(const Model::DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Lustre data repository
-         * tasks, if one or more <code>TaskIds</code> values are provided in the request,
-         * or if filters are used in the request. You can use filters to narrow the
-         * response to include just tasks for specific file systems, or tasks in a specific
-         * lifecycle state. Otherwise, it returns all data repository tasks owned by your
-         * Amazon Web Services account in the Amazon Web Services Region of the endpoint
-         * that you're calling.</p> <p>When retrieving all tasks, you can paginate the
-         * response by using the optional <code>MaxResults</code> parameter to limit the
-         * number of tasks returned in a response. If more tasks remain, Amazon FSx returns
-         * a <code>NextToken</code> value in the response. In this case, send a later
-         * request with the <code>NextToken</code> request parameter set to the value of
-         * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
+         * Cache data repository tasks, if one or more <code>TaskIds</code> values are
+         * provided in the request, or if filters are used in the request. You can use
+         * filters to narrow the response to include just tasks for specific file systems
+         * or caches, or tasks in a specific lifecycle state. Otherwise, it returns all
+         * data repository tasks owned by your Amazon Web Services account in the Amazon
+         * Web Services Region of the endpoint that you're calling.</p> <p>When retrieving
+         * all tasks, you can paginate the response by using the optional
+         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
+         * response. If more tasks remain, a <code>NextToken</code> value is returned in
+         * the response. In this case, send a later request with the <code>NextToken</code>
+         * request parameter set to the value of <code>NextToken</code> from the last
+         * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
          * API Reference</a></p>
          */
@@ -909,6 +765,44 @@ namespace Model
          * An Async wrapper for DescribeDataRepositoryTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the description of a specific Amazon File Cache resource, if a
+         * <code>FileCacheIds</code> value is provided for that cache. Otherwise, it
+         * returns descriptions of all caches owned by your Amazon Web Services account in
+         * the Amazon Web Services Region of the endpoint that you're calling.</p> <p>When
+         * retrieving all cache descriptions, you can optionally specify the
+         * <code>MaxResults</code> parameter to limit the number of descriptions in a
+         * response. If more cache descriptions remain, the operation returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
+         * <code>NextToken</code> from the last response.</p> <p>This operation is used in
+         * an iterative process to retrieve a list of your cache descriptions.
+         * <code>DescribeFileCaches</code> is called first without a
+         * <code>NextToken</code>value. Then the operation continues to be called with the
+         * <code>NextToken</code> parameter set to the value of the last
+         * <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
+         * <p>When using this operation, keep the following in mind:</p> <ul> <li> <p>The
+         * implementation might return fewer than <code>MaxResults</code> cache
+         * descriptions while still including a <code>NextToken</code> value.</p> </li>
+         * <li> <p>The order of caches returned in the response of one
+         * <code>DescribeFileCaches</code> call and the order of caches returned across the
+         * responses of a multicall iteration is unspecified.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFileCachesOutcome DescribeFileCaches(const Model::DescribeFileCachesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFileCaches that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFileCachesOutcomeCallable DescribeFileCachesCallable(const Model::DescribeFileCachesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFileCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFileCachesAsync(const Model::DescribeFileCachesRequest& request, const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the DNS aliases that are associated with the specified Amazon FSx for
@@ -1067,12 +961,11 @@ namespace Model
         virtual void DisassociateFileSystemAliasesAsync(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon
-         * FSx for Windows File Server.</p> <p>When retrieving all tags, you can optionally
-         * specify the <code>MaxResults</code> parameter to limit the number of tags in a
-         * response. If more tags remain, Amazon FSx returns a <code>NextToken</code> value
-         * in the response. In this case, send a later request with the
-         * <code>NextToken</code> request parameter set to the value of
+         * <p>Lists tags for Amazon FSx resources.</p> <p>When retrieving all tags, you can
+         * optionally specify the <code>MaxResults</code> parameter to limit the number of
+         * tags in a response. If more tags remain, Amazon FSx returns a
+         * <code>NextToken</code> value in the response. In this case, send a later request
+         * with the <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your tags.
          * <code>ListTagsForResource</code> is called first without a
@@ -1121,7 +1014,7 @@ namespace Model
 
         /**
          * <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified
-         * snapshot. </p><p><h3>See Also:</h3>   <a
+         * snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1191,6 +1084,24 @@ namespace Model
          * An Async wrapper for UpdateDataRepositoryAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDataRepositoryAssociationAsync(const Model::UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the configuration of an existing Amazon File Cache resource. You can
+         * update multiple properties in a single request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFileCacheOutcome UpdateFileCache(const Model::UpdateFileCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFileCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFileCacheOutcomeCallable UpdateFileCacheCallable(const Model::UpdateFileCacheRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateFileCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFileCacheAsync(const Model::UpdateFileCacheRequest& request, const UpdateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
@@ -1296,49 +1207,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<FSxEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateFileSystemAliasesAsyncHelper(const Model::AssociateFileSystemAliasesRequest& request, const AssociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelDataRepositoryTaskAsyncHelper(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CopyBackupAsyncHelper(const Model::CopyBackupRequest& request, const CopyBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataRepositoryAssociationAsyncHelper(const Model::CreateDataRepositoryAssociationRequest& request, const CreateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataRepositoryTaskAsyncHelper(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFileSystemFromBackupAsyncHelper(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStorageVirtualMachineAsyncHelper(const Model::CreateStorageVirtualMachineRequest& request, const CreateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVolumeAsyncHelper(const Model::CreateVolumeRequest& request, const CreateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVolumeFromBackupAsyncHelper(const Model::CreateVolumeFromBackupRequest& request, const CreateVolumeFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDataRepositoryAssociationAsyncHelper(const Model::DeleteDataRepositoryAssociationRequest& request, const DeleteDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStorageVirtualMachineAsyncHelper(const Model::DeleteStorageVirtualMachineRequest& request, const DeleteStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDataRepositoryAssociationsAsyncHelper(const Model::DescribeDataRepositoryAssociationsRequest& request, const DescribeDataRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDataRepositoryTasksAsyncHelper(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFileSystemAliasesAsyncHelper(const Model::DescribeFileSystemAliasesRequest& request, const DescribeFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStorageVirtualMachinesAsyncHelper(const Model::DescribeStorageVirtualMachinesRequest& request, const DescribeStorageVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateFileSystemAliasesAsyncHelper(const Model::DisassociateFileSystemAliasesRequest& request, const DisassociateFileSystemAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReleaseFileSystemNfsV3LocksAsyncHelper(const Model::ReleaseFileSystemNfsV3LocksRequest& request, const ReleaseFileSystemNfsV3LocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreVolumeFromSnapshotAsyncHelper(const Model::RestoreVolumeFromSnapshotRequest& request, const RestoreVolumeFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDataRepositoryAssociationAsyncHelper(const Model::UpdateDataRepositoryAssociationRequest& request, const UpdateDataRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFileSystemAsyncHelper(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSnapshotAsyncHelper(const Model::UpdateSnapshotRequest& request, const UpdateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStorageVirtualMachineAsyncHelper(const Model::UpdateStorageVirtualMachineRequest& request, const UpdateStorageVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateVolumeAsyncHelper(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>;
+      void init(const FSxClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      FSxClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<FSxEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FSx

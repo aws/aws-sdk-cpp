@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/AbortTransactionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API AbortTransactionResult
+  class AbortTransactionResult
   {
   public:
-    AbortTransactionResult();
-    AbortTransactionResult(Aws::Utils::Json::JsonView jsonValue);
-    AbortTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API AbortTransactionResult();
+    AWS_QLDBSESSION_API AbortTransactionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API AbortTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
   };
 
 } // namespace Model

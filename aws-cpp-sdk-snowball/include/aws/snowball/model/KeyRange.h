@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/KeyRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API KeyRange
+  class KeyRange
   {
   public:
-    KeyRange();
-    KeyRange(Aws::Utils::Json::JsonView jsonValue);
-    KeyRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API KeyRange();
+    AWS_SNOWBALL_API KeyRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API KeyRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_beginMarker;
-    bool m_beginMarkerHasBeenSet;
+    bool m_beginMarkerHasBeenSet = false;
 
     Aws::String m_endMarker;
-    bool m_endMarkerHasBeenSet;
+    bool m_endMarkerHasBeenSet = false;
   };
 
 } // namespace Model

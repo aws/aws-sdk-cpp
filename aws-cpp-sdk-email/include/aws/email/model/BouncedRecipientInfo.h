@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BouncedRecipientInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API BouncedRecipientInfo
+  class BouncedRecipientInfo
   {
   public:
-    BouncedRecipientInfo();
-    BouncedRecipientInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BouncedRecipientInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BouncedRecipientInfo();
+    AWS_SES_API BouncedRecipientInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BouncedRecipientInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_recipient;
-    bool m_recipientHasBeenSet;
+    bool m_recipientHasBeenSet = false;
 
     Aws::String m_recipientArn;
-    bool m_recipientArnHasBeenSet;
+    bool m_recipientArnHasBeenSet = false;
 
     BounceType m_bounceType;
-    bool m_bounceTypeHasBeenSet;
+    bool m_bounceTypeHasBeenSet = false;
 
     RecipientDsnFields m_recipientDsnFields;
-    bool m_recipientDsnFieldsHasBeenSet;
+    bool m_recipientDsnFieldsHasBeenSet = false;
   };
 
 } // namespace Model

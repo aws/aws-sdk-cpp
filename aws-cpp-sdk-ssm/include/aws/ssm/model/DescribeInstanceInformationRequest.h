@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API DescribeInstanceInformationRequest : public SSMRequest
+  class DescribeInstanceInformationRequest : public SSMRequest
   {
   public:
-    DescribeInstanceInformationRequest();
+    AWS_SSM_API DescribeInstanceInformationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeInstanceInformation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -128,7 +128,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -136,7 +136,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -144,7 +144,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -160,7 +160,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to EC2 instances. Use this
+     * nodes. You can filter based on tags applied to your managed nodes. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
@@ -263,16 +263,16 @@ namespace Model
   private:
 
     Aws::Vector<InstanceInformationFilter> m_instanceInformationFilterList;
-    bool m_instanceInformationFilterListHasBeenSet;
+    bool m_instanceInformationFilterListHasBeenSet = false;
 
     Aws::Vector<InstanceInformationStringFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

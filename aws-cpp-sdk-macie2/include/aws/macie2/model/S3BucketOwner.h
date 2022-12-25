@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketOwner">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3BucketOwner
+  class S3BucketOwner
   {
   public:
-    S3BucketOwner();
-    S3BucketOwner(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketOwner& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3BucketOwner();
+    AWS_MACIE2_API S3BucketOwner(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3BucketOwner& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

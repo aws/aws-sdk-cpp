@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessGatewayTaskCreate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate
+  class UpdateWirelessGatewayTaskCreate
   {
   public:
-    UpdateWirelessGatewayTaskCreate();
-    UpdateWirelessGatewayTaskCreate(Aws::Utils::Json::JsonView jsonValue);
-    UpdateWirelessGatewayTaskCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate();
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_updateDataSource;
-    bool m_updateDataSourceHasBeenSet;
+    bool m_updateDataSourceHasBeenSet = false;
 
     Aws::String m_updateDataRole;
-    bool m_updateDataRoleHasBeenSet;
+    bool m_updateDataRoleHasBeenSet = false;
 
     LoRaWANUpdateGatewayTaskCreate m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

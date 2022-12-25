@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/WorkspaceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API WorkspaceStatus
+  class WorkspaceStatus
   {
   public:
-    WorkspaceStatus();
-    WorkspaceStatus(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API WorkspaceStatus();
+    AWS_PROMETHEUSSERVICE_API WorkspaceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API WorkspaceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     WorkspaceStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

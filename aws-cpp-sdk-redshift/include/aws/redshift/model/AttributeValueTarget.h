@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AttributeValueTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API AttributeValueTarget
+  class AttributeValueTarget
   {
   public:
-    AttributeValueTarget();
-    AttributeValueTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AttributeValueTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AttributeValueTarget();
+    AWS_REDSHIFT_API AttributeValueTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AttributeValueTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

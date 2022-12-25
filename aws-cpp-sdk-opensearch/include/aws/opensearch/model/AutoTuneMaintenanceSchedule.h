@@ -26,182 +26,147 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the Auto-Tune maintenance schedule. See <a
-   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-   * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-   * information. </p><p><h3>See Also:</h3>   <a
+   * <p>The Auto-Tune maintenance schedule. For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+   * for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneMaintenanceSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AutoTuneMaintenanceSchedule
+  class AutoTuneMaintenanceSchedule
   {
   public:
-    AutoTuneMaintenanceSchedule();
-    AutoTuneMaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneMaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AutoTuneMaintenanceSchedule();
+    AWS_OPENSEARCHSERVICE_API AutoTuneMaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AutoTuneMaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline const Aws::Utils::DateTime& GetStartAt() const{ return m_startAt; }
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline bool StartAtHasBeenSet() const { return m_startAtHasBeenSet; }
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline void SetStartAt(const Aws::Utils::DateTime& value) { m_startAtHasBeenSet = true; m_startAt = value; }
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline void SetStartAt(Aws::Utils::DateTime&& value) { m_startAtHasBeenSet = true; m_startAt = std::move(value); }
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithStartAt(const Aws::Utils::DateTime& value) { SetStartAt(value); return *this;}
 
     /**
-     * <p>The timestamp at which the Auto-Tune maintenance schedule starts.</p>
+     * <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithStartAt(Aws::Utils::DateTime&& value) { SetStartAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline const Duration& GetDuration() const{ return m_duration; }
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline void SetDuration(const Duration& value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline void SetDuration(Duration&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithDuration(const Duration& value) { SetDuration(value); return *this;}
 
     /**
-     * <p>Specifies maintenance schedule duration: duration value and duration unit.
-     * See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>The duration of the maintenance schedule. For example, <code>"Duration":
+     * {"Value": 2, "Unit": "HOURS"}</code>.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithDuration(Duration&& value) { SetDuration(std::move(value)); return *this;}
 
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline const Aws::String& GetCronExpressionForRecurrence() const{ return m_cronExpressionForRecurrence; }
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline bool CronExpressionForRecurrenceHasBeenSet() const { return m_cronExpressionForRecurrenceHasBeenSet; }
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline void SetCronExpressionForRecurrence(const Aws::String& value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence = value; }
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline void SetCronExpressionForRecurrence(Aws::String&& value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence = std::move(value); }
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline void SetCronExpressionForRecurrence(const char* value) { m_cronExpressionForRecurrenceHasBeenSet = true; m_cronExpressionForRecurrence.assign(value); }
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(const Aws::String& value) { SetCronExpressionForRecurrence(value); return *this;}
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(Aws::String&& value) { SetCronExpressionForRecurrence(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more
-     * information. </p>
+     * <p>A cron expression for a recurring maintenance schedule during which Auto-Tune
+     * can deploy changes.</p>
      */
     inline AutoTuneMaintenanceSchedule& WithCronExpressionForRecurrence(const char* value) { SetCronExpressionForRecurrence(value); return *this;}
 
   private:
 
     Aws::Utils::DateTime m_startAt;
-    bool m_startAtHasBeenSet;
+    bool m_startAtHasBeenSet = false;
 
     Duration m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_cronExpressionForRecurrence;
-    bool m_cronExpressionForRecurrenceHasBeenSet;
+    bool m_cronExpressionForRecurrenceHasBeenSet = false;
   };
 
 } // namespace Model

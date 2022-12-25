@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/OTAUpdateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API OTAUpdateSummary
+  class OTAUpdateSummary
   {
   public:
-    OTAUpdateSummary();
-    OTAUpdateSummary(Aws::Utils::Json::JsonView jsonValue);
-    OTAUpdateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API OTAUpdateSummary();
+    AWS_IOT_API OTAUpdateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API OTAUpdateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
 
     Aws::String m_otaUpdateArn;
-    bool m_otaUpdateArnHasBeenSet;
+    bool m_otaUpdateArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

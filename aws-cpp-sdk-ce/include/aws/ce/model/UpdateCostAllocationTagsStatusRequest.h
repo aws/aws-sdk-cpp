@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusRequest : public CostExplorerRequest
+  class UpdateCostAllocationTagsStatusRequest : public CostExplorerRequest
   {
   public:
-    UpdateCostAllocationTagsStatusRequest();
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCostAllocationTagsStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<CostAllocationTagStatusEntry> m_costAllocationTagsStatus;
-    bool m_costAllocationTagsStatusHasBeenSet;
+    bool m_costAllocationTagsStatusHasBeenSet = false;
   };
 
 } // namespace Model

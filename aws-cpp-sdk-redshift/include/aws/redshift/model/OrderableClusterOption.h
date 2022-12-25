@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/OrderableClusterOption">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API OrderableClusterOption
+  class OrderableClusterOption
   {
   public:
-    OrderableClusterOption();
-    OrderableClusterOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OrderableClusterOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API OrderableClusterOption();
+    AWS_REDSHIFT_API OrderableClusterOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API OrderableClusterOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

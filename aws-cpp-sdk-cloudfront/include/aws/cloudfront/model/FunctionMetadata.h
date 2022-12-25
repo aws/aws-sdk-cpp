@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FunctionMetadata
+  class FunctionMetadata
   {
   public:
-    FunctionMetadata();
-    FunctionMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FunctionMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionMetadata();
+    AWS_CLOUDFRONT_API FunctionMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -93,8 +93,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline const FunctionStage& GetStage() const{ return m_stage; }
 
@@ -103,8 +103,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
@@ -113,8 +113,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
@@ -123,8 +123,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
@@ -133,8 +133,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline FunctionMetadata& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
 
@@ -143,8 +143,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline FunctionMetadata& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
 
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_functionARN;
-    bool m_functionARNHasBeenSet;
+    bool m_functionARNHasBeenSet = false;
 
     FunctionStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

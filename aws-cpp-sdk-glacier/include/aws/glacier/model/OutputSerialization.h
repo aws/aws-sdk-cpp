@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/OutputSerialization">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API OutputSerialization
+  class OutputSerialization
   {
   public:
-    OutputSerialization();
-    OutputSerialization(Aws::Utils::Json::JsonView jsonValue);
-    OutputSerialization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API OutputSerialization();
+    AWS_GLACIER_API OutputSerialization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API OutputSerialization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CSVOutput m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

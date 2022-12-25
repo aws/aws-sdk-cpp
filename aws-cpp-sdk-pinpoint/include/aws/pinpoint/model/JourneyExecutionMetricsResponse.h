@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyExecutionMetricsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyExecutionMetricsResponse
+  class JourneyExecutionMetricsResponse
   {
   public:
-    JourneyExecutionMetricsResponse();
-    JourneyExecutionMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
-    JourneyExecutionMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyExecutionMetricsResponse();
+    AWS_PINPOINT_API JourneyExecutionMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyExecutionMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -278,16 +278,16 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_journeyId;
-    bool m_journeyIdHasBeenSet;
+    bool m_journeyIdHasBeenSet = false;
 
     Aws::String m_lastEvaluatedTime;
-    bool m_lastEvaluatedTimeHasBeenSet;
+    bool m_lastEvaluatedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

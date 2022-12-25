@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AuthenticationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API AuthenticationResult
+  class AuthenticationResult
   {
   public:
-    AuthenticationResult();
-    AuthenticationResult(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API AuthenticationResult();
+    AWS_VOICEID_API AuthenticationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API AuthenticationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -407,28 +407,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_audioAggregationEndedAt;
-    bool m_audioAggregationEndedAtHasBeenSet;
+    bool m_audioAggregationEndedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_audioAggregationStartedAt;
-    bool m_audioAggregationStartedAtHasBeenSet;
+    bool m_audioAggregationStartedAtHasBeenSet = false;
 
     Aws::String m_authenticationResultId;
-    bool m_authenticationResultIdHasBeenSet;
+    bool m_authenticationResultIdHasBeenSet = false;
 
     AuthenticationConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_customerSpeakerId;
-    bool m_customerSpeakerIdHasBeenSet;
+    bool m_customerSpeakerIdHasBeenSet = false;
 
     AuthenticationDecision m_decision;
-    bool m_decisionHasBeenSet;
+    bool m_decisionHasBeenSet = false;
 
     Aws::String m_generatedSpeakerId;
-    bool m_generatedSpeakerIdHasBeenSet;
+    bool m_generatedSpeakerIdHasBeenSet = false;
 
     int m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

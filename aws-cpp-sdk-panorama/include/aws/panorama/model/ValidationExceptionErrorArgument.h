@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ValidationExceptionErrorArgument">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ValidationExceptionErrorArgument
+  class ValidationExceptionErrorArgument
   {
   public:
-    ValidationExceptionErrorArgument();
-    ValidationExceptionErrorArgument(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionErrorArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ValidationExceptionErrorArgument();
+    AWS_PANORAMA_API ValidationExceptionErrorArgument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ValidationExceptionErrorArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

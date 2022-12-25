@@ -5,68 +5,16 @@
 
 #pragma once
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
-#include <aws/appconfigdata/AppConfigDataErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/appconfigdata/model/GetLatestConfigurationResult.h>
-#include <aws/appconfigdata/model/StartConfigurationSessionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppConfigData
 {
-
-namespace Model
-{
-        class GetLatestConfigurationRequest;
-        class StartConfigurationSessionRequest;
-
-        typedef Aws::Utils::Outcome<GetLatestConfigurationResult, AppConfigDataError> GetLatestConfigurationOutcome;
-        typedef Aws::Utils::Outcome<StartConfigurationSessionResult, AppConfigDataError> StartConfigurationSessionOutcome;
-
-        typedef std::future<GetLatestConfigurationOutcome> GetLatestConfigurationOutcomeCallable;
-        typedef std::future<StartConfigurationSessionOutcome> StartConfigurationSessionOutcomeCallable;
-} // namespace Model
-
-  class AppConfigDataClient;
-
-    typedef std::function<void(const AppConfigDataClient*, const Model::GetLatestConfigurationRequest&, Model::GetLatestConfigurationOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLatestConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigDataClient*, const Model::StartConfigurationSessionRequest&, const Model::StartConfigurationSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationSessionResponseReceivedHandler;
-
   /**
    * <p>AppConfig Data provides the data plane APIs your application uses to retrieve
    * configuration data. Here's how it works:</p> <p>Your application retrieves
@@ -100,32 +48,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
    * the configuration</a> in the <i>AppConfig User Guide</i>.</p>
    */
-  class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient
+  class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppConfigDataClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppConfigDataClient(const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration(),
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppConfigDataClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppConfigDataClient(const Aws::Auth::AWSCredentials& credentials,
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppConfigDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppConfigDataClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppConfigDataClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AppConfigDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AppConfigDataClient();
-
 
         /**
          * <p>Retrieves the latest deployed configuration. This API may return empty
@@ -182,14 +158,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AppConfigDataEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetLatestConfigurationAsyncHelper(const Model::GetLatestConfigurationRequest& request, const GetLatestConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartConfigurationSessionAsyncHelper(const Model::StartConfigurationSessionRequest& request, const StartConfigurationSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>;
+      void init(const AppConfigDataClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AppConfigDataClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AppConfigDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppConfigData

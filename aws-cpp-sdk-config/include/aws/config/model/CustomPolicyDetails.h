@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/CustomPolicyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API CustomPolicyDetails
+  class CustomPolicyDetails
   {
   public:
-    CustomPolicyDetails();
-    CustomPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
-    CustomPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API CustomPolicyDetails();
+    AWS_CONFIGSERVICE_API CustomPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API CustomPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_policyRuntime;
-    bool m_policyRuntimeHasBeenSet;
+    bool m_policyRuntimeHasBeenSet = false;
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
 
     bool m_enableDebugLogDelivery;
-    bool m_enableDebugLogDeliveryHasBeenSet;
+    bool m_enableDebugLogDeliveryHasBeenSet = false;
   };
 
 } // namespace Model

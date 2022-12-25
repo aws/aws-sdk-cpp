@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TrafficMirrorPortRangeRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TrafficMirrorPortRangeRequest
+  class TrafficMirrorPortRangeRequest
   {
   public:
-    TrafficMirrorPortRangeRequest();
-    TrafficMirrorPortRangeRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficMirrorPortRangeRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorPortRangeRequest();
+    AWS_EC2_API TrafficMirrorPortRangeRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrafficMirrorPortRangeRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
   };
 
 } // namespace Model

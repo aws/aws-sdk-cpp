@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API GetClusterCredentialsRequest : public RedshiftRequest
+  class GetClusterCredentialsRequest : public RedshiftRequest
   {
   public:
-    GetClusterCredentialsRequest();
+    AWS_REDSHIFT_API GetClusterCredentialsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetClusterCredentials"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -55,10 +55,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -78,10 +79,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -101,10 +103,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -124,10 +127,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -147,10 +151,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -170,10 +175,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -193,10 +199,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -216,10 +223,11 @@ namespace Model
      * USER</a> in the Amazon Redshift Database Developer Guide. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or
      * hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must
-     * contain only lowercase letters, numbers, underscore, plus sign, period (dot), at
-     * symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+     * (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p>
+     * </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found
+     * in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>
      */
@@ -230,9 +238,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -244,9 +252,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -258,9 +266,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -272,9 +280,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -286,9 +294,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -300,9 +308,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -314,9 +322,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -328,9 +336,9 @@ namespace Model
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any
      * existing database.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 64
-     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase
-     * letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     * hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * alphanumeric characters or hyphens</p> </li> <li> <p>Must contain uppercase or
+     * lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@),
+     * or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a
      * reserved word. A list of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
@@ -576,22 +584,22 @@ namespace Model
   private:
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbName;
-    bool m_dbNameHasBeenSet;
+    bool m_dbNameHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     bool m_autoCreate;
-    bool m_autoCreateHasBeenSet;
+    bool m_autoCreateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dbGroups;
-    bool m_dbGroupsHasBeenSet;
+    bool m_dbGroupsHasBeenSet = false;
   };
 
 } // namespace Model

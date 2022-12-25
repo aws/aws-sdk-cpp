@@ -77,7 +77,7 @@ DescribeBotAliasResult& DescribeBotAliasResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("botAliasHistoryEvents"))
   {
-    Array<JsonView> botAliasHistoryEventsJsonList = jsonValue.GetArray("botAliasHistoryEvents");
+    Aws::Utils::Array<JsonView> botAliasHistoryEventsJsonList = jsonValue.GetArray("botAliasHistoryEvents");
     for(unsigned botAliasHistoryEventsIndex = 0; botAliasHistoryEventsIndex < botAliasHistoryEventsJsonList.GetLength(); ++botAliasHistoryEventsIndex)
     {
       m_botAliasHistoryEvents.push_back(botAliasHistoryEventsJsonList[botAliasHistoryEventsIndex].AsObject());

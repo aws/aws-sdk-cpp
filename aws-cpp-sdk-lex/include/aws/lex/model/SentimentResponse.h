@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/SentimentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API SentimentResponse
+  class SentimentResponse
   {
   public:
-    SentimentResponse();
-    SentimentResponse(Aws::Utils::Json::JsonView jsonValue);
-    SentimentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API SentimentResponse();
+    AWS_LEXRUNTIMESERVICE_API SentimentResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API SentimentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_sentimentLabel;
-    bool m_sentimentLabelHasBeenSet;
+    bool m_sentimentLabelHasBeenSet = false;
 
     Aws::String m_sentimentScore;
-    bool m_sentimentScoreHasBeenSet;
+    bool m_sentimentScoreHasBeenSet = false;
   };
 
 } // namespace Model

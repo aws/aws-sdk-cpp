@@ -25,146 +25,158 @@ namespace Model
 {
 
   /**
-   * <p>The connection status of an inbound cross-cluster connection.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The status of an inbound cross-cluster connection for OpenSearch
+   * Service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InboundConnectionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API InboundConnectionStatus
+  class InboundConnectionStatus
   {
   public:
-    InboundConnectionStatus();
-    InboundConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
-    InboundConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API InboundConnectionStatus();
+    AWS_OPENSEARCHSERVICE_API InboundConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API InboundConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline const InboundConnectionStatusCode& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline void SetStatusCode(const InboundConnectionStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline void SetStatusCode(InboundConnectionStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline InboundConnectionStatus& WithStatusCode(const InboundConnectionStatusCode& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>The state code for the inbound connection. Can be one of the following:</p>
-     * <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the
-     * remote domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance
-     * by the remote domain owner.</li> <li>PROVISIONING: Inbound connection
-     * provisioning is in progress.</li> <li>ACTIVE: Inbound connection is active and
-     * ready to use.</li> <li>REJECTING: Inbound connection rejection is in
-     * process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING:
-     * Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection
-     * is deleted and can no longer be used.</li> </ul>
+     * <p>The status code for the connection. Can be one of the following:</p> <ul>
+     * <li> <p> <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by
+     * the remote domain owner.</p> </li> <li> <p> <b>APPROVED</b>: Inbound connection
+     * is pending acceptance by the remote domain owner.</p> </li> <li> <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.</p> </li> <li> <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.</p> </li> <li> <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.</p> </li> <li> <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.</p> </li> <li> <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li> <li> <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p>
+     * </li> </ul>
      */
     inline InboundConnectionStatus& WithStatusCode(InboundConnectionStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline InboundConnectionStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline InboundConnectionStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Verbose information for the inbound connection status.</p>
+     * <p>Information about the connection.</p>
      */
     inline InboundConnectionStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
 
     InboundConnectionStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,12 +22,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DeleteExperienceResult
+  class DeleteExperienceResult
   {
   public:
-    DeleteExperienceResult();
-    DeleteExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DeleteExperienceResult();
+    AWS_KENDRA_API DeleteExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DeleteExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

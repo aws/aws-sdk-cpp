@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API EncryptionConfiguration();
+    AWS_NETWORKFIREWALL_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,10 +174,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     EncryptionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

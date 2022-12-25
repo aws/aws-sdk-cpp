@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SnapshotOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API SnapshotOptionsStatus
+  class SnapshotOptionsStatus
   {
   public:
-    SnapshotOptionsStatus();
-    SnapshotOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptionsStatus();
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     SnapshotOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

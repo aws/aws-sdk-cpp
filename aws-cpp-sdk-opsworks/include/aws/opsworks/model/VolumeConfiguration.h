@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/VolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API VolumeConfiguration
+  class VolumeConfiguration
   {
   public:
-    VolumeConfiguration();
-    VolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API VolumeConfiguration();
+    AWS_OPSWORKS_API VolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API VolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,25 +330,25 @@ namespace Model
   private:
 
     Aws::String m_mountPoint;
-    bool m_mountPointHasBeenSet;
+    bool m_mountPointHasBeenSet = false;
 
     int m_raidLevel;
-    bool m_raidLevelHasBeenSet;
+    bool m_raidLevelHasBeenSet = false;
 
     int m_numberOfDisks;
-    bool m_numberOfDisksHasBeenSet;
+    bool m_numberOfDisksHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
   };
 
 } // namespace Model

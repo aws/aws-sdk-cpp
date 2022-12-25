@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ConflictResolution">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ConflictResolution
+  class ConflictResolution
   {
   public:
-    ConflictResolution();
-    ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
-    ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ConflictResolution();
+    AWS_CODECOMMIT_API ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<ReplaceContentEntry> m_replaceContents;
-    bool m_replaceContentsHasBeenSet;
+    bool m_replaceContentsHasBeenSet = false;
 
     Aws::Vector<DeleteFileEntry> m_deleteFiles;
-    bool m_deleteFilesHasBeenSet;
+    bool m_deleteFilesHasBeenSet = false;
 
     Aws::Vector<SetFileModeEntry> m_setFileModes;
-    bool m_setFileModesHasBeenSet;
+    bool m_setFileModesHasBeenSet = false;
   };
 
 } // namespace Model

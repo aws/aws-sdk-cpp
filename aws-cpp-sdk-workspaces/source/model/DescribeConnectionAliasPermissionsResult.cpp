@@ -36,7 +36,7 @@ DescribeConnectionAliasPermissionsResult& DescribeConnectionAliasPermissionsResu
 
   if(jsonValue.ValueExists("ConnectionAliasPermissions"))
   {
-    Array<JsonView> connectionAliasPermissionsJsonList = jsonValue.GetArray("ConnectionAliasPermissions");
+    Aws::Utils::Array<JsonView> connectionAliasPermissionsJsonList = jsonValue.GetArray("ConnectionAliasPermissions");
     for(unsigned connectionAliasPermissionsIndex = 0; connectionAliasPermissionsIndex < connectionAliasPermissionsJsonList.GetLength(); ++connectionAliasPermissionsIndex)
     {
       m_connectionAliasPermissions.push_back(connectionAliasPermissionsJsonList[connectionAliasPermissionsIndex].AsObject());

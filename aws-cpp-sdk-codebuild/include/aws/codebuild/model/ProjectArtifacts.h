@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectArtifacts">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectArtifacts
+  class ProjectArtifacts
   {
   public:
-    ProjectArtifacts();
-    ProjectArtifacts(Aws::Utils::Json::JsonView jsonValue);
-    ProjectArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectArtifacts();
+    AWS_CODEBUILD_API ProjectArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -872,34 +872,34 @@ namespace Model
   private:
 
     ArtifactsType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     ArtifactNamespace m_namespaceType;
-    bool m_namespaceTypeHasBeenSet;
+    bool m_namespaceTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ArtifactPackaging m_packaging;
-    bool m_packagingHasBeenSet;
+    bool m_packagingHasBeenSet = false;
 
     bool m_overrideArtifactName;
-    bool m_overrideArtifactNameHasBeenSet;
+    bool m_overrideArtifactNameHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_artifactIdentifier;
-    bool m_artifactIdentifierHasBeenSet;
+    bool m_artifactIdentifierHasBeenSet = false;
 
     BucketOwnerAccess m_bucketOwnerAccess;
-    bool m_bucketOwnerAccessHasBeenSet;
+    bool m_bucketOwnerAccessHasBeenSet = false;
   };
 
 } // namespace Model

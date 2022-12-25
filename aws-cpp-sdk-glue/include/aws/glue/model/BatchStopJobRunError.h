@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRunError">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BatchStopJobRunError
+  class BatchStopJobRunError
   {
   public:
-    BatchStopJobRunError();
-    BatchStopJobRunError(Aws::Utils::Json::JsonView jsonValue);
-    BatchStopJobRunError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BatchStopJobRunError();
+    AWS_GLUE_API BatchStopJobRunError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BatchStopJobRunError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobRunId;
-    bool m_jobRunIdHasBeenSet;
+    bool m_jobRunIdHasBeenSet = false;
 
     ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

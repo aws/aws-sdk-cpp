@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SSOIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API SSOIdentity
+  class SSOIdentity
   {
   public:
-    SSOIdentity();
-    SSOIdentity(Aws::Utils::Json::JsonView jsonValue);
-    SSOIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API SSOIdentity();
+    AWS_IOTEVENTS_API SSOIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API SSOIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

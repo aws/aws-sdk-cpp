@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RedshiftSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API RedshiftSource
+  class RedshiftSource
   {
   public:
-    RedshiftSource();
-    RedshiftSource(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RedshiftSource();
+    AWS_GLUE_API RedshiftSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RedshiftSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_redshiftTmpDir;
-    bool m_redshiftTmpDirHasBeenSet;
+    bool m_redshiftTmpDirHasBeenSet = false;
 
     Aws::String m_tmpDirIAMRole;
-    bool m_tmpDirIAMRoleHasBeenSet;
+    bool m_tmpDirIAMRoleHasBeenSet = false;
   };
 
 } // namespace Model

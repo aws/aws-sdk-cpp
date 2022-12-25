@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API CreateContainerRecipeRequest : public ImagebuilderRequest
+  class CreateContainerRecipeRequest : public ImagebuilderRequest
   {
   public:
-    CreateContainerRecipeRequest();
+    AWS_IMAGEBUILDER_API CreateContainerRecipeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateContainerRecipe"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -777,52 +777,52 @@ namespace Model
   private:
 
     ContainerType m_containerType;
-    bool m_containerTypeHasBeenSet;
+    bool m_containerTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_semanticVersion;
-    bool m_semanticVersionHasBeenSet;
+    bool m_semanticVersionHasBeenSet = false;
 
     Aws::Vector<ComponentConfiguration> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     InstanceConfiguration m_instanceConfiguration;
-    bool m_instanceConfigurationHasBeenSet;
+    bool m_instanceConfigurationHasBeenSet = false;
 
     Aws::String m_dockerfileTemplateData;
-    bool m_dockerfileTemplateDataHasBeenSet;
+    bool m_dockerfileTemplateDataHasBeenSet = false;
 
     Aws::String m_dockerfileTemplateUri;
-    bool m_dockerfileTemplateUriHasBeenSet;
+    bool m_dockerfileTemplateUriHasBeenSet = false;
 
     Platform m_platformOverride;
-    bool m_platformOverrideHasBeenSet;
+    bool m_platformOverrideHasBeenSet = false;
 
     Aws::String m_imageOsVersionOverride;
-    bool m_imageOsVersionOverrideHasBeenSet;
+    bool m_imageOsVersionOverrideHasBeenSet = false;
 
     Aws::String m_parentImage;
-    bool m_parentImageHasBeenSet;
+    bool m_parentImageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     TargetContainerRepository m_targetRepository;
-    bool m_targetRepositoryHasBeenSet;
+    bool m_targetRepositoryHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

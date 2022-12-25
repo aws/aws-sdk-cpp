@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignResponse
+  class CampaignResponse
   {
   public:
-    CampaignResponse();
-    CampaignResponse(Aws::Utils::Json::JsonView jsonValue);
-    CampaignResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignResponse();
+    AWS_PINPOINT_API CampaignResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1018,79 +1018,79 @@ namespace Model
   private:
 
     Aws::Vector<TreatmentResource> m_additionalTreatments;
-    bool m_additionalTreatmentsHasBeenSet;
+    bool m_additionalTreatmentsHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     CustomDeliveryConfiguration m_customDeliveryConfiguration;
-    bool m_customDeliveryConfigurationHasBeenSet;
+    bool m_customDeliveryConfigurationHasBeenSet = false;
 
     CampaignState m_defaultState;
-    bool m_defaultStateHasBeenSet;
+    bool m_defaultStateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_holdoutPercent;
-    bool m_holdoutPercentHasBeenSet;
+    bool m_holdoutPercentHasBeenSet = false;
 
     CampaignHook m_hook;
-    bool m_hookHasBeenSet;
+    bool m_hookHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_isPaused;
-    bool m_isPausedHasBeenSet;
+    bool m_isPausedHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     CampaignLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     MessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     int m_segmentVersion;
-    bool m_segmentVersionHasBeenSet;
+    bool m_segmentVersionHasBeenSet = false;
 
     CampaignState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_treatmentDescription;
-    bool m_treatmentDescriptionHasBeenSet;
+    bool m_treatmentDescriptionHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

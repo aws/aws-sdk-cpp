@@ -42,7 +42,7 @@ RoleLastUsed& RoleLastUsed::operator =(const XmlNode& xmlNode)
     XmlNode lastUsedDateNode = resultNode.FirstChild("LastUsedDate");
     if(!lastUsedDateNode.IsNull())
     {
-      m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
@@ -60,7 +60,7 @@ void RoleLastUsed::OutputToStream(Aws::OStream& oStream, const char* location, u
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_regionHasBeenSet)
@@ -74,7 +74,7 @@ void RoleLastUsed::OutputToStream(Aws::OStream& oStream, const char* location) c
 {
   if(m_lastUsedDateHasBeenSet)
   {
-      oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_regionHasBeenSet)
   {

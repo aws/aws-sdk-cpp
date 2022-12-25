@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelMessage
+  class ChannelMessage
   {
   public:
-    ChannelMessage();
-    ChannelMessage(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelMessage();
+    AWS_CHIME_API ChannelMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,37 +414,37 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     ChannelMessageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastEditedTimestamp;
-    bool m_lastEditedTimestampHasBeenSet;
+    bool m_lastEditedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Identity m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     bool m_redacted;
-    bool m_redactedHasBeenSet;
+    bool m_redactedHasBeenSet = false;
 
     ChannelMessagePersistenceType m_persistence;
-    bool m_persistenceHasBeenSet;
+    bool m_persistenceHasBeenSet = false;
   };
 
 } // namespace Model

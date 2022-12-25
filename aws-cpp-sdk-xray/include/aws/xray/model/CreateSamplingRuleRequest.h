@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API CreateSamplingRuleRequest : public XRayRequest
+  class CreateSamplingRuleRequest : public XRayRequest
   {
   public:
-    CreateSamplingRuleRequest();
+    AWS_XRAY_API CreateSamplingRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSamplingRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -196,10 +196,10 @@ namespace Model
   private:
 
     SamplingRule m_samplingRule;
-    bool m_samplingRuleHasBeenSet;
+    bool m_samplingRuleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

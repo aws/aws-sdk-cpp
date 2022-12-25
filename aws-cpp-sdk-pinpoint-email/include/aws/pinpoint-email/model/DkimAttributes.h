@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DkimAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DkimAttributes
+  class DkimAttributes
   {
   public:
-    DkimAttributes();
-    DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DkimAttributes();
+    AWS_PINPOINTEMAIL_API DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,13 +266,13 @@ namespace Model
   private:
 
     bool m_signingEnabled;
-    bool m_signingEnabledHasBeenSet;
+    bool m_signingEnabledHasBeenSet = false;
 
     DkimStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokens;
-    bool m_tokensHasBeenSet;
+    bool m_tokensHasBeenSet = false;
   };
 
 } // namespace Model

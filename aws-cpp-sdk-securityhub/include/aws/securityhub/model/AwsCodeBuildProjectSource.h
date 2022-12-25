@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectSource
+  class AwsCodeBuildProjectSource
   {
   public:
-    AwsCodeBuildProjectSource();
-    AwsCodeBuildProjectSource(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectSource();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -384,16 +384,16 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     int m_gitCloneDepth;
-    bool m_gitCloneDepthHasBeenSet;
+    bool m_gitCloneDepthHasBeenSet = false;
 
     bool m_insecureSsl;
-    bool m_insecureSslHasBeenSet;
+    bool m_insecureSslHasBeenSet = false;
   };
 
 } // namespace Model

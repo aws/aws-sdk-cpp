@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayRoute
+  class TransitGatewayRoute
   {
   public:
-    TransitGatewayRoute();
-    TransitGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRoute();
+    AWS_EC2_API TransitGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,6 +124,47 @@ namespace Model
      * <p>The ID of the prefix list used for destination matches.</p>
      */
     inline TransitGatewayRoute& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline const Aws::String& GetTransitGatewayRouteTableAnnouncementId() const{ return m_transitGatewayRouteTableAnnouncementId; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline bool TransitGatewayRouteTableAnnouncementIdHasBeenSet() const { return m_transitGatewayRouteTableAnnouncementIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = value; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const char* value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { SetTransitGatewayRouteTableAnnouncementId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const char* value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
 
 
     /**
@@ -231,19 +272,22 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
+
+    Aws::String m_transitGatewayRouteTableAnnouncementId;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
-    bool m_transitGatewayAttachmentsHasBeenSet;
+    bool m_transitGatewayAttachmentsHasBeenSet = false;
 
     TransitGatewayRouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TransitGatewayRouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

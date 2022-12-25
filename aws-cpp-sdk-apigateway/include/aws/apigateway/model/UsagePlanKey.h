@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlanKey">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UsagePlanKey
+  class UsagePlanKey
   {
   public:
-    UsagePlanKey();
-    UsagePlanKey(Aws::Utils::Json::JsonView jsonValue);
-    UsagePlanKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API UsagePlanKey();
+    AWS_APIGATEWAY_API UsagePlanKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API UsagePlanKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

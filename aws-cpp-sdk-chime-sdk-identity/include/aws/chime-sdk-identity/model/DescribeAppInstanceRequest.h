@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKIDENTITY_API DescribeAppInstanceRequest : public ChimeSDKIdentityRequest
+  class DescribeAppInstanceRequest : public ChimeSDKIdentityRequest
   {
   public:
-    DescribeAppInstanceRequest();
+    AWS_CHIMESDKIDENTITY_API DescribeAppInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAppInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKIDENTITY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

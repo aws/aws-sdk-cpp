@@ -30,93 +30,109 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/TargetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API TargetSummary
+  class TargetSummary
   {
   public:
-    TargetSummary();
-    TargetSummary(Aws::Utils::Json::JsonView jsonValue);
-    TargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API TargetSummary();
+    AWS_CODESTARNOTIFICATIONS_API TargetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API TargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline TargetSummary& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline TargetSummary& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic.</p>
+     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
     inline TargetSummary& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
 
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline TargetSummary& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline TargetSummary& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the target (for example, SNS).</p>
+     * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
+     * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
+     * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
     inline TargetSummary& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -154,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_targetAddress;
-    bool m_targetAddressHasBeenSet;
+    bool m_targetAddressHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     TargetStatus m_targetStatus;
-    bool m_targetStatusHasBeenSet;
+    bool m_targetStatusHasBeenSet = false;
   };
 
 } // namespace Model

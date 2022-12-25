@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/Answer">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API Answer
+  class Answer
   {
   public:
-    Answer();
-    Answer(Aws::Utils::Json::JsonView jsonValue);
-    Answer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API Answer();
+    AWS_WELLARCHITECTED_API Answer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Answer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -417,46 +417,46 @@ namespace Model
   private:
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     Aws::String m_questionTitle;
-    bool m_questionTitleHasBeenSet;
+    bool m_questionTitleHasBeenSet = false;
 
     Aws::String m_questionDescription;
-    bool m_questionDescriptionHasBeenSet;
+    bool m_questionDescriptionHasBeenSet = false;
 
     Aws::String m_improvementPlanUrl;
-    bool m_improvementPlanUrlHasBeenSet;
+    bool m_improvementPlanUrlHasBeenSet = false;
 
     Aws::String m_helpfulResourceUrl;
-    bool m_helpfulResourceUrlHasBeenSet;
+    bool m_helpfulResourceUrlHasBeenSet = false;
 
     Aws::String m_helpfulResourceDisplayText;
-    bool m_helpfulResourceDisplayTextHasBeenSet;
+    bool m_helpfulResourceDisplayTextHasBeenSet = false;
 
     Aws::Vector<Choice> m_choices;
-    bool m_choicesHasBeenSet;
+    bool m_choicesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedChoices;
-    bool m_selectedChoicesHasBeenSet;
+    bool m_selectedChoicesHasBeenSet = false;
 
     Aws::Vector<ChoiceAnswer> m_choiceAnswers;
-    bool m_choiceAnswersHasBeenSet;
+    bool m_choiceAnswersHasBeenSet = false;
 
     bool m_isApplicable;
-    bool m_isApplicableHasBeenSet;
+    bool m_isApplicableHasBeenSet = false;
 
     Risk m_risk;
-    bool m_riskHasBeenSet;
+    bool m_riskHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     AnswerReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

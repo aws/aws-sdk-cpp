@@ -25,20 +25,20 @@ namespace Model
 {
 
   /**
-   * <p>A record returned by a call.</p>  <p>This data structure is only
-   * used with the deprecated <code>ExecuteSql</code> operation. Use the
+   * <p>A record returned by a call.</p>  <p>This data structure is only used
+   * with the deprecated <code>ExecuteSql</code> operation. Use the
    * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
    * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Record">AWS API
    * Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API Record();
+    AWS_RDSDATASERVICE_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<Value> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

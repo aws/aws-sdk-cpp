@@ -8,6 +8,7 @@
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appsync/model/SyncConfig.h>
+#include <aws/appsync/model/AppSyncRuntime.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSYNC_API CreateFunctionRequest : public AppSyncRequest
+  class CreateFunctionRequest : public AppSyncRequest
   {
   public:
-    CreateFunctionRequest();
+    AWS_APPSYNC_API CreateFunctionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFunction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -297,49 +298,57 @@ namespace Model
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
      * <p>The <code>version</code> of the request mapping template. Currently, the
-     * supported value is 2018-05-29.</p>
+     * supported value is 2018-05-29. Note that when using VTL and mapping templates,
+     * the <code>functionVersion</code> is required.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
 
@@ -383,34 +392,116 @@ namespace Model
      */
     inline CreateFunctionRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
+
+    
+    inline const AppSyncRuntime& GetRuntime() const{ return m_runtime; }
+
+    
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+
+    
+    inline void SetRuntime(const AppSyncRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    
+    inline void SetRuntime(AppSyncRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
+
+    
+    inline CreateFunctionRequest& WithRuntime(const AppSyncRuntime& value) { SetRuntime(value); return *this;}
+
+    
+    inline CreateFunctionRequest& WithRuntime(AppSyncRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline CreateFunctionRequest& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline CreateFunctionRequest& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>function</code> code that contains the request and response
+     * functions. When code is used, the <code>runtime</code> is required. The
+     * <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+     */
+    inline CreateFunctionRequest& WithCode(const char* value) { SetCode(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     Aws::String m_requestMappingTemplate;
-    bool m_requestMappingTemplateHasBeenSet;
+    bool m_requestMappingTemplateHasBeenSet = false;
 
     Aws::String m_responseMappingTemplate;
-    bool m_responseMappingTemplateHasBeenSet;
+    bool m_responseMappingTemplateHasBeenSet = false;
 
     Aws::String m_functionVersion;
-    bool m_functionVersionHasBeenSet;
+    bool m_functionVersionHasBeenSet = false;
 
     SyncConfig m_syncConfig;
-    bool m_syncConfigHasBeenSet;
+    bool m_syncConfigHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
+
+    AppSyncRuntime m_runtime;
+    bool m_runtimeHasBeenSet = false;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

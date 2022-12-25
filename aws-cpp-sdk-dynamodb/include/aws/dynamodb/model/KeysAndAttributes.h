@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeysAndAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API KeysAndAttributes
+  class KeysAndAttributes
   {
   public:
-    KeysAndAttributes();
-    KeysAndAttributes(Aws::Utils::Json::JsonView jsonValue);
-    KeysAndAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API KeysAndAttributes();
+    AWS_DYNAMODB_API KeysAndAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API KeysAndAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -647,19 +647,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesToGet;
-    bool m_attributesToGetHasBeenSet;
+    bool m_attributesToGetHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
 
     Aws::String m_projectionExpression;
-    bool m_projectionExpressionHasBeenSet;
+    bool m_projectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

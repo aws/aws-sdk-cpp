@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ExperienceConfiguration
+  class ExperienceConfiguration
   {
   public:
-    ExperienceConfiguration();
-    ExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ExperienceConfiguration();
+    AWS_KENDRA_API ExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline const UserIdentityConfiguration& GetUserIdentityConfiguration() const{ return m_userIdentityConfiguration; }
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline bool UserIdentityConfigurationHasBeenSet() const { return m_userIdentityConfigurationHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline void SetUserIdentityConfiguration(const UserIdentityConfiguration& value) { m_userIdentityConfigurationHasBeenSet = true; m_userIdentityConfiguration = value; }
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline void SetUserIdentityConfiguration(UserIdentityConfiguration&& value) { m_userIdentityConfigurationHasBeenSet = true; m_userIdentityConfiguration = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline ExperienceConfiguration& WithUserIdentityConfiguration(const UserIdentityConfiguration& value) { SetUserIdentityConfiguration(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO field name that contains the identifiers of your
+     * <p>The IAM Identity Center field name that contains the identifiers of your
      * users, such as their emails.</p>
      */
     inline ExperienceConfiguration& WithUserIdentityConfiguration(UserIdentityConfiguration&& value) { SetUserIdentityConfiguration(std::move(value)); return *this;}
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ContentSourceConfiguration m_contentSourceConfiguration;
-    bool m_contentSourceConfigurationHasBeenSet;
+    bool m_contentSourceConfigurationHasBeenSet = false;
 
     UserIdentityConfiguration m_userIdentityConfiguration;
-    bool m_userIdentityConfigurationHasBeenSet;
+    bool m_userIdentityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

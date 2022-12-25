@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/NormalizedValue">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API NormalizedValue
+  class NormalizedValue
   {
   public:
-    NormalizedValue();
-    NormalizedValue(Aws::Utils::Json::JsonView jsonValue);
-    NormalizedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API NormalizedValue();
+    AWS_TEXTRACT_API NormalizedValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API NormalizedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ValueType m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
   };
 
 } // namespace Model

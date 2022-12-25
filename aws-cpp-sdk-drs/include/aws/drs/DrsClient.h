@@ -5,242 +5,73 @@
 
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
-#include <aws/drs/DrsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/drs/model/CreateExtendedSourceServerResult.h>
-#include <aws/drs/model/CreateReplicationConfigurationTemplateResult.h>
-#include <aws/drs/model/DeleteJobResult.h>
-#include <aws/drs/model/DeleteReplicationConfigurationTemplateResult.h>
-#include <aws/drs/model/DeleteSourceServerResult.h>
-#include <aws/drs/model/DescribeJobLogItemsResult.h>
-#include <aws/drs/model/DescribeJobsResult.h>
-#include <aws/drs/model/DescribeRecoveryInstancesResult.h>
-#include <aws/drs/model/DescribeRecoverySnapshotsResult.h>
-#include <aws/drs/model/DescribeReplicationConfigurationTemplatesResult.h>
-#include <aws/drs/model/DescribeSourceServersResult.h>
-#include <aws/drs/model/DisconnectSourceServerResult.h>
-#include <aws/drs/model/GetFailbackReplicationConfigurationResult.h>
-#include <aws/drs/model/GetLaunchConfigurationResult.h>
-#include <aws/drs/model/GetReplicationConfigurationResult.h>
-#include <aws/drs/model/InitializeServiceResult.h>
-#include <aws/drs/model/ListExtensibleSourceServersResult.h>
-#include <aws/drs/model/ListStagingAccountsResult.h>
-#include <aws/drs/model/ListTagsForResourceResult.h>
-#include <aws/drs/model/RetryDataReplicationResult.h>
-#include <aws/drs/model/StartFailbackLaunchResult.h>
-#include <aws/drs/model/StartRecoveryResult.h>
-#include <aws/drs/model/TerminateRecoveryInstancesResult.h>
-#include <aws/drs/model/UpdateLaunchConfigurationResult.h>
-#include <aws/drs/model/UpdateReplicationConfigurationResult.h>
-#include <aws/drs/model/UpdateReplicationConfigurationTemplateResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/drs/DrsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace drs
 {
-
-namespace Model
-{
-        class CreateExtendedSourceServerRequest;
-        class CreateReplicationConfigurationTemplateRequest;
-        class DeleteJobRequest;
-        class DeleteRecoveryInstanceRequest;
-        class DeleteReplicationConfigurationTemplateRequest;
-        class DeleteSourceServerRequest;
-        class DescribeJobLogItemsRequest;
-        class DescribeJobsRequest;
-        class DescribeRecoveryInstancesRequest;
-        class DescribeRecoverySnapshotsRequest;
-        class DescribeReplicationConfigurationTemplatesRequest;
-        class DescribeSourceServersRequest;
-        class DisconnectRecoveryInstanceRequest;
-        class DisconnectSourceServerRequest;
-        class GetFailbackReplicationConfigurationRequest;
-        class GetLaunchConfigurationRequest;
-        class GetReplicationConfigurationRequest;
-        class InitializeServiceRequest;
-        class ListExtensibleSourceServersRequest;
-        class ListStagingAccountsRequest;
-        class ListTagsForResourceRequest;
-        class RetryDataReplicationRequest;
-        class StartFailbackLaunchRequest;
-        class StartRecoveryRequest;
-        class StopFailbackRequest;
-        class TagResourceRequest;
-        class TerminateRecoveryInstancesRequest;
-        class UntagResourceRequest;
-        class UpdateFailbackReplicationConfigurationRequest;
-        class UpdateLaunchConfigurationRequest;
-        class UpdateReplicationConfigurationRequest;
-        class UpdateReplicationConfigurationTemplateRequest;
-
-        typedef Aws::Utils::Outcome<CreateExtendedSourceServerResult, DrsError> CreateExtendedSourceServerOutcome;
-        typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, DrsError> CreateReplicationConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobResult, DrsError> DeleteJobOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> DeleteRecoveryInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, DrsError> DeleteReplicationConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteSourceServerResult, DrsError> DeleteSourceServerOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobLogItemsResult, DrsError> DescribeJobLogItemsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobsResult, DrsError> DescribeJobsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecoveryInstancesResult, DrsError> DescribeRecoveryInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecoverySnapshotsResult, DrsError> DescribeRecoverySnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReplicationConfigurationTemplatesResult, DrsError> DescribeReplicationConfigurationTemplatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSourceServersResult, DrsError> DescribeSourceServersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> DisconnectRecoveryInstanceOutcome;
-        typedef Aws::Utils::Outcome<DisconnectSourceServerResult, DrsError> DisconnectSourceServerOutcome;
-        typedef Aws::Utils::Outcome<GetFailbackReplicationConfigurationResult, DrsError> GetFailbackReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchConfigurationResult, DrsError> GetLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, DrsError> GetReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<InitializeServiceResult, DrsError> InitializeServiceOutcome;
-        typedef Aws::Utils::Outcome<ListExtensibleSourceServersResult, DrsError> ListExtensibleSourceServersOutcome;
-        typedef Aws::Utils::Outcome<ListStagingAccountsResult, DrsError> ListStagingAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DrsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RetryDataReplicationResult, DrsError> RetryDataReplicationOutcome;
-        typedef Aws::Utils::Outcome<StartFailbackLaunchResult, DrsError> StartFailbackLaunchOutcome;
-        typedef Aws::Utils::Outcome<StartRecoveryResult, DrsError> StartRecoveryOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> StopFailbackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TerminateRecoveryInstancesResult, DrsError> TerminateRecoveryInstancesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UpdateFailbackReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, DrsError> UpdateLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, DrsError> UpdateReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, DrsError> UpdateReplicationConfigurationTemplateOutcome;
-
-        typedef std::future<CreateExtendedSourceServerOutcome> CreateExtendedSourceServerOutcomeCallable;
-        typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
-        typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
-        typedef std::future<DeleteRecoveryInstanceOutcome> DeleteRecoveryInstanceOutcomeCallable;
-        typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
-        typedef std::future<DeleteSourceServerOutcome> DeleteSourceServerOutcomeCallable;
-        typedef std::future<DescribeJobLogItemsOutcome> DescribeJobLogItemsOutcomeCallable;
-        typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
-        typedef std::future<DescribeRecoveryInstancesOutcome> DescribeRecoveryInstancesOutcomeCallable;
-        typedef std::future<DescribeRecoverySnapshotsOutcome> DescribeRecoverySnapshotsOutcomeCallable;
-        typedef std::future<DescribeReplicationConfigurationTemplatesOutcome> DescribeReplicationConfigurationTemplatesOutcomeCallable;
-        typedef std::future<DescribeSourceServersOutcome> DescribeSourceServersOutcomeCallable;
-        typedef std::future<DisconnectRecoveryInstanceOutcome> DisconnectRecoveryInstanceOutcomeCallable;
-        typedef std::future<DisconnectSourceServerOutcome> DisconnectSourceServerOutcomeCallable;
-        typedef std::future<GetFailbackReplicationConfigurationOutcome> GetFailbackReplicationConfigurationOutcomeCallable;
-        typedef std::future<GetLaunchConfigurationOutcome> GetLaunchConfigurationOutcomeCallable;
-        typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
-        typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
-        typedef std::future<ListExtensibleSourceServersOutcome> ListExtensibleSourceServersOutcomeCallable;
-        typedef std::future<ListStagingAccountsOutcome> ListStagingAccountsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCallable;
-        typedef std::future<StartFailbackLaunchOutcome> StartFailbackLaunchOutcomeCallable;
-        typedef std::future<StartRecoveryOutcome> StartRecoveryOutcomeCallable;
-        typedef std::future<StopFailbackOutcome> StopFailbackOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TerminateRecoveryInstancesOutcome> TerminateRecoveryInstancesOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateFailbackReplicationConfigurationOutcome> UpdateFailbackReplicationConfigurationOutcomeCallable;
-        typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
-        typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
-        typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
-} // namespace Model
-
-  class DrsClient;
-
-    typedef std::function<void(const DrsClient*, const Model::CreateExtendedSourceServerRequest&, const Model::CreateExtendedSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExtendedSourceServerResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::CreateReplicationConfigurationTemplateRequest&, const Model::CreateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationTemplateResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryInstanceRequest&, const Model::DeleteRecoveryInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecoveryInstanceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DeleteReplicationConfigurationTemplateRequest&, const Model::DeleteReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationTemplateResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DeleteSourceServerRequest&, const Model::DeleteSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceServerResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeJobLogItemsRequest&, const Model::DescribeJobLogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobLogItemsResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeRecoveryInstancesRequest&, const Model::DescribeRecoveryInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoveryInstancesResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeRecoverySnapshotsRequest&, const Model::DescribeRecoverySnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoverySnapshotsResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeReplicationConfigurationTemplatesRequest&, const Model::DescribeReplicationConfigurationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationConfigurationTemplatesResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DescribeSourceServersRequest&, const Model::DescribeSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSourceServersResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DisconnectRecoveryInstanceRequest&, const Model::DisconnectRecoveryInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectRecoveryInstanceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::DisconnectSourceServerRequest&, const Model::DisconnectSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectSourceServerResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::GetFailbackReplicationConfigurationRequest&, const Model::GetFailbackReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFailbackReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::GetLaunchConfigurationRequest&, const Model::GetLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::GetReplicationConfigurationRequest&, const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::InitializeServiceRequest&, const Model::InitializeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeServiceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::ListExtensibleSourceServersRequest&, const Model::ListExtensibleSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExtensibleSourceServersResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::ListStagingAccountsRequest&, const Model::ListStagingAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStagingAccountsResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::RetryDataReplicationRequest&, const Model::RetryDataReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryDataReplicationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::StartFailbackLaunchRequest&, const Model::StartFailbackLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFailbackLaunchResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::StartRecoveryRequest&, const Model::StartRecoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRecoveryResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::StopFailbackRequest&, const Model::StopFailbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFailbackResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::TerminateRecoveryInstancesRequest&, const Model::TerminateRecoveryInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateRecoveryInstancesResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::UpdateFailbackReplicationConfigurationRequest&, const Model::UpdateFailbackReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFailbackReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::UpdateLaunchConfigurationRequest&, const Model::UpdateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::UpdateReplicationConfigurationRequest&, const Model::UpdateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::UpdateReplicationConfigurationTemplateRequest&, const Model::UpdateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationTemplateResponseReceivedHandler;
-
   /**
    * <p>AWS Elastic Disaster Recovery Service.</p>
    */
-  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient
+  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DrsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DrsClient(const Aws::drs::DrsClientConfiguration& clientConfiguration = Aws::drs::DrsClientConfiguration(),
+                  std::shared_ptr<DrsEndpointProviderBase> endpointProvider = Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DrsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DrsClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<DrsEndpointProviderBase> endpointProvider = Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::drs::DrsClientConfiguration& clientConfiguration = Aws::drs::DrsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DrsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<DrsEndpointProviderBase> endpointProvider = Aws::MakeShared<DrsEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::drs::DrsClientConfiguration& clientConfiguration = Aws::drs::DrsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DrsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DrsClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DrsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DrsClient();
-
 
         /**
          * <p>Create an extended source server in the target Account based on the source
@@ -665,6 +496,27 @@ namespace Model
         virtual void RetryDataReplicationAsync(const Model::RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Start replication to origin / target region - applies only to protected
+         * instances that originated in EC2. For recovery instances on target region -
+         * starts replication back to origin region. For failback instances on origin
+         * region - starts replication to target region to re-protect them. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReverseReplicationOutcome ReverseReplication(const Model::ReverseReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReverseReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReverseReplicationOutcomeCallable ReverseReplicationCallable(const Model::ReverseReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for ReverseReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReverseReplicationAsync(const Model::ReverseReplicationRequest& request, const ReverseReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Initiates a Job for launching the machine that is being failed back to from
          * the specified Recovery Instance. This will run conversion on the failback client
          * and will reboot your machine, thus completing the failback
@@ -704,6 +556,25 @@ namespace Model
         virtual void StartRecoveryAsync(const Model::StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts replication for a stopped Source Server. This action would make the
+         * Source Server protected again and restart billing for it.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplicationOutcome StartReplication(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartReplicationOutcomeCallable StartReplicationCallable(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for StartReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartReplicationAsync(const Model::StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops the failback process for a specified Recovery Instance. This changes
          * the Failback State of the Recovery Instance back to
          * FAILBACK_NOT_STARTED.</p><p><h3>See Also:</h3>   <a
@@ -721,6 +592,25 @@ namespace Model
          * An Async wrapper for StopFailback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopFailbackAsync(const Model::StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops replication for a Source Server. This action would make the Source
+         * Server unprotected, delete its existing snapshots and stop billing for
+         * it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationOutcome StopReplication(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopReplicationOutcomeCallable StopReplicationCallable(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for StopReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopReplicationAsync(const Model::StopReplicationRequest& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or overwrites only the specified tags for the specified Elastic Disaster
@@ -853,44 +743,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateExtendedSourceServerAsyncHelper(const Model::CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateReplicationConfigurationTemplateAsyncHelper(const Model::CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRecoveryInstanceAsyncHelper(const Model::DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReplicationConfigurationTemplateAsyncHelper(const Model::DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSourceServerAsyncHelper(const Model::DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobLogItemsAsyncHelper(const Model::DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobsAsyncHelper(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRecoveryInstancesAsyncHelper(const Model::DescribeRecoveryInstancesRequest& request, const DescribeRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRecoverySnapshotsAsyncHelper(const Model::DescribeRecoverySnapshotsRequest& request, const DescribeRecoverySnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReplicationConfigurationTemplatesAsyncHelper(const Model::DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSourceServersAsyncHelper(const Model::DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisconnectRecoveryInstanceAsyncHelper(const Model::DisconnectRecoveryInstanceRequest& request, const DisconnectRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisconnectSourceServerAsyncHelper(const Model::DisconnectSourceServerRequest& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFailbackReplicationConfigurationAsyncHelper(const Model::GetFailbackReplicationConfigurationRequest& request, const GetFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchConfigurationAsyncHelper(const Model::GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReplicationConfigurationAsyncHelper(const Model::GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitializeServiceAsyncHelper(const Model::InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExtensibleSourceServersAsyncHelper(const Model::ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStagingAccountsAsyncHelper(const Model::ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RetryDataReplicationAsyncHelper(const Model::RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartFailbackLaunchAsyncHelper(const Model::StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartRecoveryAsyncHelper(const Model::StartRecoveryRequest& request, const StartRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopFailbackAsyncHelper(const Model::StopFailbackRequest& request, const StopFailbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TerminateRecoveryInstancesAsyncHelper(const Model::TerminateRecoveryInstancesRequest& request, const TerminateRecoveryInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFailbackReplicationConfigurationAsyncHelper(const Model::UpdateFailbackReplicationConfigurationRequest& request, const UpdateFailbackReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLaunchConfigurationAsyncHelper(const Model::UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReplicationConfigurationAsyncHelper(const Model::UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReplicationConfigurationTemplateAsyncHelper(const Model::UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
+      void init(const DrsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      DrsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DrsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace drs

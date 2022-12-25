@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateMissionProfileRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API UpdateMissionProfileRequest : public GroundStationRequest
+  class UpdateMissionProfileRequest : public GroundStationRequest
   {
   public:
-    UpdateMissionProfileRequest();
+    AWS_GROUNDSTATION_API UpdateMissionProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMissionProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -289,25 +289,25 @@ namespace Model
   private:
 
     int m_contactPostPassDurationSeconds;
-    bool m_contactPostPassDurationSecondsHasBeenSet;
+    bool m_contactPostPassDurationSecondsHasBeenSet = false;
 
     int m_contactPrePassDurationSeconds;
-    bool m_contactPrePassDurationSecondsHasBeenSet;
+    bool m_contactPrePassDurationSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_dataflowEdges;
-    bool m_dataflowEdgesHasBeenSet;
+    bool m_dataflowEdgesHasBeenSet = false;
 
     int m_minimumViableContactDurationSeconds;
-    bool m_minimumViableContactDurationSecondsHasBeenSet;
+    bool m_minimumViableContactDurationSecondsHasBeenSet = false;
 
     Aws::String m_missionProfileId;
-    bool m_missionProfileIdHasBeenSet;
+    bool m_missionProfileIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_trackingConfigArn;
-    bool m_trackingConfigArnHasBeenSet;
+    bool m_trackingConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

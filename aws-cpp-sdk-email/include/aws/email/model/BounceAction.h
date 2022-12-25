@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BounceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API BounceAction
+  class BounceAction
   {
   public:
-    BounceAction();
-    BounceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BounceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BounceAction();
+    AWS_SES_API BounceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BounceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -316,19 +316,19 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_smtpReplyCode;
-    bool m_smtpReplyCodeHasBeenSet;
+    bool m_smtpReplyCodeHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
   };
 
 } // namespace Model

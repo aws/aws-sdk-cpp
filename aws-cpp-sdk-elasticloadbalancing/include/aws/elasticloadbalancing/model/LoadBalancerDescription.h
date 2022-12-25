@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/LoadBalancerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API LoadBalancerDescription
+  class LoadBalancerDescription
   {
   public:
-    LoadBalancerDescription();
-    LoadBalancerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoadBalancerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API LoadBalancerDescription();
+    AWS_ELASTICLOADBALANCING_API LoadBalancerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API LoadBalancerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -755,52 +755,52 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::String m_canonicalHostedZoneName;
-    bool m_canonicalHostedZoneNameHasBeenSet;
+    bool m_canonicalHostedZoneNameHasBeenSet = false;
 
     Aws::String m_canonicalHostedZoneNameID;
-    bool m_canonicalHostedZoneNameIDHasBeenSet;
+    bool m_canonicalHostedZoneNameIDHasBeenSet = false;
 
     Aws::Vector<ListenerDescription> m_listenerDescriptions;
-    bool m_listenerDescriptionsHasBeenSet;
+    bool m_listenerDescriptionsHasBeenSet = false;
 
     Policies m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
 
     Aws::Vector<BackendServerDescription> m_backendServerDescriptions;
-    bool m_backendServerDescriptionsHasBeenSet;
+    bool m_backendServerDescriptionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     HealthCheck m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     SourceSecurityGroup m_sourceSecurityGroup;
-    bool m_sourceSecurityGroupHasBeenSet;
+    bool m_sourceSecurityGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_scheme;
-    bool m_schemeHasBeenSet;
+    bool m_schemeHasBeenSet = false;
   };
 
 } // namespace Model

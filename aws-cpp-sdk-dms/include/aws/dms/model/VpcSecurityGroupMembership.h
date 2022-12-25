@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API VpcSecurityGroupMembership
+  class VpcSecurityGroupMembership
   {
   public:
-    VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
-    VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API VpcSecurityGroupMembership();
+    AWS_DATABASEMIGRATIONSERVICE_API VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_vpcSecurityGroupId;
-    bool m_vpcSecurityGroupIdHasBeenSet;
+    bool m_vpcSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

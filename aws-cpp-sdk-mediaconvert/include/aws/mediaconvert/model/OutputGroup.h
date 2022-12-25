@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/OutputGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API OutputGroup
+  class OutputGroup
   {
   public:
-    OutputGroup();
-    OutputGroup(Aws::Utils::Json::JsonView jsonValue);
-    OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API OutputGroup();
+    AWS_MEDIACONVERT_API OutputGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,19 +258,19 @@ namespace Model
   private:
 
     AutomatedEncodingSettings m_automatedEncodingSettings;
-    bool m_automatedEncodingSettingsHasBeenSet;
+    bool m_automatedEncodingSettingsHasBeenSet = false;
 
     Aws::String m_customName;
-    bool m_customNameHasBeenSet;
+    bool m_customNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutputGroupSettings m_outputGroupSettings;
-    bool m_outputGroupSettingsHasBeenSet;
+    bool m_outputGroupSettingsHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

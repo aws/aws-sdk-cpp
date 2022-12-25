@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_DRS_API UpdateReplicationConfigurationRequest : public DrsRequest
+  class UpdateReplicationConfigurationRequest : public DrsRequest
   {
   public:
-    UpdateReplicationConfigurationRequest();
+    AWS_DRS_API UpdateReplicationConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateReplicationConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DRS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -650,52 +650,52 @@ namespace Model
   private:
 
     bool m_associateDefaultSecurityGroup;
-    bool m_associateDefaultSecurityGroupHasBeenSet;
+    bool m_associateDefaultSecurityGroupHasBeenSet = false;
 
     long long m_bandwidthThrottling;
-    bool m_bandwidthThrottlingHasBeenSet;
+    bool m_bandwidthThrottlingHasBeenSet = false;
 
     bool m_createPublicIP;
-    bool m_createPublicIPHasBeenSet;
+    bool m_createPublicIPHasBeenSet = false;
 
     ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting;
-    bool m_dataPlaneRoutingHasBeenSet;
+    bool m_dataPlaneRoutingHasBeenSet = false;
 
     ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType;
-    bool m_defaultLargeStagingDiskTypeHasBeenSet;
+    bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
 
     ReplicationConfigurationEbsEncryption m_ebsEncryption;
-    bool m_ebsEncryptionHasBeenSet;
+    bool m_ebsEncryptionHasBeenSet = false;
 
     Aws::String m_ebsEncryptionKeyArn;
-    bool m_ebsEncryptionKeyArnHasBeenSet;
+    bool m_ebsEncryptionKeyArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<PITPolicyRule> m_pitPolicy;
-    bool m_pitPolicyHasBeenSet;
+    bool m_pitPolicyHasBeenSet = false;
 
     Aws::Vector<ReplicationConfigurationReplicatedDisk> m_replicatedDisks;
-    bool m_replicatedDisksHasBeenSet;
+    bool m_replicatedDisksHasBeenSet = false;
 
     Aws::String m_replicationServerInstanceType;
-    bool m_replicationServerInstanceTypeHasBeenSet;
+    bool m_replicationServerInstanceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
-    bool m_replicationServersSecurityGroupsIDsHasBeenSet;
+    bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::String m_stagingAreaSubnetId;
-    bool m_stagingAreaSubnetIdHasBeenSet;
+    bool m_stagingAreaSubnetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
-    bool m_stagingAreaTagsHasBeenSet;
+    bool m_stagingAreaTagsHasBeenSet = false;
 
     bool m_useDedicatedReplicationServer;
-    bool m_useDedicatedReplicationServerHasBeenSet;
+    bool m_useDedicatedReplicationServerHasBeenSet = false;
   };
 
 } // namespace Model

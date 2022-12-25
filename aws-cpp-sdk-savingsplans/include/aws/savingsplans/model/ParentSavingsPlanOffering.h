@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ParentSavingsPlanOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_SAVINGSPLANS_API ParentSavingsPlanOffering
+  class ParentSavingsPlanOffering
   {
   public:
-    ParentSavingsPlanOffering();
-    ParentSavingsPlanOffering(Aws::Utils::Json::JsonView jsonValue);
-    ParentSavingsPlanOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAVINGSPLANS_API ParentSavingsPlanOffering();
+    AWS_SAVINGSPLANS_API ParentSavingsPlanOffering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API ParentSavingsPlanOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,22 +238,22 @@ namespace Model
   private:
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     SavingsPlanPaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     SavingsPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     long long m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     CurrencyCode m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     Aws::String m_planDescription;
-    bool m_planDescriptionHasBeenSet;
+    bool m_planDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

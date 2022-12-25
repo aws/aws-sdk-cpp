@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ArchivalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ArchivalSummary
+  class ArchivalSummary
   {
   public:
-    ArchivalSummary();
-    ArchivalSummary(Aws::Utils::Json::JsonView jsonValue);
-    ArchivalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ArchivalSummary();
+    AWS_DYNAMODB_API ArchivalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ArchivalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_archivalDateTime;
-    bool m_archivalDateTimeHasBeenSet;
+    bool m_archivalDateTimeHasBeenSet = false;
 
     Aws::String m_archivalReason;
-    bool m_archivalReasonHasBeenSet;
+    bool m_archivalReasonHasBeenSet = false;
 
     Aws::String m_archivalBackupArn;
-    bool m_archivalBackupArnHasBeenSet;
+    bool m_archivalBackupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorResourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorResourceDetail
+  class TrustedAdvisorResourceDetail
   {
   public:
-    TrustedAdvisorResourceDetail();
-    TrustedAdvisorResourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorResourceDetail();
+    AWS_SUPPORT_API TrustedAdvisorResourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     bool m_isSuppressed;
-    bool m_isSuppressedHasBeenSet;
+    bool m_isSuppressedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EVENTBRIDGE_API PutEventsRequest : public EventBridgeRequest
+  class PutEventsRequest : public EventBridgeRequest
   {
   public:
-    PutEventsRequest();
+    AWS_EVENTBRIDGE_API PutEventsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutEvents"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EVENTBRIDGE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EVENTBRIDGE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_EVENTBRIDGE_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The entry that defines an event in your system. You can specify several
@@ -160,10 +164,10 @@ namespace Model
   private:
 
     Aws::Vector<PutEventsRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Change">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API Change
+  class Change
   {
   public:
-    Change();
-    Change(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Change& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Change();
+    AWS_CLOUDFORMATION_API Change(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Change& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     ChangeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_hookInvocationCount;
-    bool m_hookInvocationCountHasBeenSet;
+    bool m_hookInvocationCountHasBeenSet = false;
 
     ResourceChange m_resourceChange;
-    bool m_resourceChangeHasBeenSet;
+    bool m_resourceChangeHasBeenSet = false;
   };
 
 } // namespace Model

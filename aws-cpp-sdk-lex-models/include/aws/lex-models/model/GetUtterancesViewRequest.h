@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API GetUtterancesViewRequest : public LexModelBuildingServiceRequest
+  class GetUtterancesViewRequest : public LexModelBuildingServiceRequest
   {
   public:
-    GetUtterancesViewRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetUtterancesViewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetUtterancesView"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LEXMODELBUILDINGSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_botVersions;
-    bool m_botVersionsHasBeenSet;
+    bool m_botVersionsHasBeenSet = false;
 
     StatusType m_statusType;
-    bool m_statusTypeHasBeenSet;
+    bool m_statusTypeHasBeenSet = false;
   };
 
 } // namespace Model

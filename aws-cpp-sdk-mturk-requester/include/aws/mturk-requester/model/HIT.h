@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/HIT">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API HIT
+  class HIT
   {
   public:
-    HIT();
-    HIT(Aws::Utils::Json::JsonView jsonValue);
-    HIT& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API HIT();
+    AWS_MTURK_API HIT(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API HIT& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -851,67 +851,67 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet;
+    bool m_hITTypeIdHasBeenSet = false;
 
     Aws::String m_hITGroupId;
-    bool m_hITGroupIdHasBeenSet;
+    bool m_hITGroupIdHasBeenSet = false;
 
     Aws::String m_hITLayoutId;
-    bool m_hITLayoutIdHasBeenSet;
+    bool m_hITLayoutIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_question;
-    bool m_questionHasBeenSet;
+    bool m_questionHasBeenSet = false;
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     HITStatus m_hITStatus;
-    bool m_hITStatusHasBeenSet;
+    bool m_hITStatusHasBeenSet = false;
 
     int m_maxAssignments;
-    bool m_maxAssignmentsHasBeenSet;
+    bool m_maxAssignmentsHasBeenSet = false;
 
     Aws::String m_reward;
-    bool m_rewardHasBeenSet;
+    bool m_rewardHasBeenSet = false;
 
     long long m_autoApprovalDelayInSeconds;
-    bool m_autoApprovalDelayInSecondsHasBeenSet;
+    bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
 
     long long m_assignmentDurationInSeconds;
-    bool m_assignmentDurationInSecondsHasBeenSet;
+    bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_requesterAnnotation;
-    bool m_requesterAnnotationHasBeenSet;
+    bool m_requesterAnnotationHasBeenSet = false;
 
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
-    bool m_qualificationRequirementsHasBeenSet;
+    bool m_qualificationRequirementsHasBeenSet = false;
 
     HITReviewStatus m_hITReviewStatus;
-    bool m_hITReviewStatusHasBeenSet;
+    bool m_hITReviewStatusHasBeenSet = false;
 
     int m_numberOfAssignmentsPending;
-    bool m_numberOfAssignmentsPendingHasBeenSet;
+    bool m_numberOfAssignmentsPendingHasBeenSet = false;
 
     int m_numberOfAssignmentsAvailable;
-    bool m_numberOfAssignmentsAvailableHasBeenSet;
+    bool m_numberOfAssignmentsAvailableHasBeenSet = false;
 
     int m_numberOfAssignmentsCompleted;
-    bool m_numberOfAssignmentsCompletedHasBeenSet;
+    bool m_numberOfAssignmentsCompletedHasBeenSet = false;
   };
 
 } // namespace Model

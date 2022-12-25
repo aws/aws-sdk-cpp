@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ResourceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API ResourceMetadata
+  class ResourceMetadata
   {
   public:
-    ResourceMetadata();
-    ResourceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ResourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API ResourceMetadata();
+    AWS_WORKDOCS_API ResourceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API ResourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -316,25 +316,25 @@ namespace Model
   private:
 
     ResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_originalName;
-    bool m_originalNameHasBeenSet;
+    bool m_originalNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     UserMetadata m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
   };
 
 } // namespace Model

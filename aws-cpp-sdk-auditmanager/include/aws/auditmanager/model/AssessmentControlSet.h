@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentControlSet">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API AssessmentControlSet
+  class AssessmentControlSet
   {
   public:
-    AssessmentControlSet();
-    AssessmentControlSet(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API AssessmentControlSet();
+    AWS_AUDITMANAGER_API AssessmentControlSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API AssessmentControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ControlSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Vector<AssessmentControl> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
 
     Aws::Vector<Delegation> m_delegations;
-    bool m_delegationsHasBeenSet;
+    bool m_delegationsHasBeenSet = false;
 
     int m_systemEvidenceCount;
-    bool m_systemEvidenceCountHasBeenSet;
+    bool m_systemEvidenceCountHasBeenSet = false;
 
     int m_manualEvidenceCount;
-    bool m_manualEvidenceCountHasBeenSet;
+    bool m_manualEvidenceCountHasBeenSet = false;
   };
 
 } // namespace Model

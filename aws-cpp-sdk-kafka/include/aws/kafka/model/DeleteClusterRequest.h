@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API DeleteClusterRequest : public KafkaRequest
+  class DeleteClusterRequest : public KafkaRequest
   {
   public:
-    DeleteClusterRequest();
+    AWS_KAFKA_API DeleteClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_KAFKA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

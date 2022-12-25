@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetStatus
+  class AssetStatus
   {
   public:
-    AssetStatus();
-    AssetStatus(Aws::Utils::Json::JsonView jsonValue);
-    AssetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetStatus();
+    AWS_IOTSITEWISE_API AssetStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     AssetState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ErrorDetails m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

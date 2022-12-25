@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AccountLevelPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API AccountLevelPermissions
+  class AccountLevelPermissions
   {
   public:
-    AccountLevelPermissions();
-    AccountLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
-    AccountLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API AccountLevelPermissions();
+    AWS_GUARDDUTY_API AccountLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API AccountLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     BlockPublicAccess m_blockPublicAccess;
-    bool m_blockPublicAccessHasBeenSet;
+    bool m_blockPublicAccessHasBeenSet = false;
   };
 
 } // namespace Model

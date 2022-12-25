@@ -41,14 +41,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionSummary
+  class DistributionSummary
   {
   public:
-    DistributionSummary();
-    DistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionSummary();
+    AWS_CLOUDFRONT_API DistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -369,37 +369,37 @@ namespace Model
 
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionSummary& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionSummary& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
@@ -571,37 +571,37 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline DistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline DistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
@@ -628,37 +628,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
@@ -743,7 +743,7 @@ namespace Model
 
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -751,7 +751,7 @@ namespace Model
     inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -759,7 +759,7 @@ namespace Model
     inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -767,7 +767,7 @@ namespace Model
     inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -775,7 +775,7 @@ namespace Model
     inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -783,7 +783,7 @@ namespace Model
     inline DistributionSummary& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -912,67 +912,91 @@ namespace Model
      */
     inline DistributionSummary& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline bool GetStaging() const{ return m_staging; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline DistributionSummary& WithStaging(bool value) { SetStaging(value); return *this;}
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     Origins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     OriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     CacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     CustomErrorResponses m_customErrorResponses;
-    bool m_customErrorResponsesHasBeenSet;
+    bool m_customErrorResponsesHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Restrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     HttpVersion m_httpVersion;
-    bool m_httpVersionHasBeenSet;
+    bool m_httpVersionHasBeenSet = false;
 
     bool m_isIPV6Enabled;
-    bool m_isIPV6EnabledHasBeenSet;
+    bool m_isIPV6EnabledHasBeenSet = false;
 
     Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
-    bool m_aliasICPRecordalsHasBeenSet;
+    bool m_aliasICPRecordalsHasBeenSet = false;
+
+    bool m_staging;
+    bool m_stagingHasBeenSet = false;
   };
 
 } // namespace Model

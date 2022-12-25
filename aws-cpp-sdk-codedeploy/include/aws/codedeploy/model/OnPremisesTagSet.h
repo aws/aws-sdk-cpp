@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/OnPremisesTagSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API OnPremisesTagSet
+  class OnPremisesTagSet
   {
   public:
-    OnPremisesTagSet();
-    OnPremisesTagSet(Aws::Utils::Json::JsonView jsonValue);
-    OnPremisesTagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API OnPremisesTagSet();
+    AWS_CODEDEPLOY_API OnPremisesTagSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API OnPremisesTagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<TagFilter>> m_onPremisesTagSetList;
-    bool m_onPremisesTagSetListHasBeenSet;
+    bool m_onPremisesTagSetListHasBeenSet = false;
   };
 
 } // namespace Model

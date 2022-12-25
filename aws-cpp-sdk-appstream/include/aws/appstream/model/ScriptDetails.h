@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ScriptDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ScriptDetails
+  class ScriptDetails
   {
   public:
-    ScriptDetails();
-    ScriptDetails(Aws::Utils::Json::JsonView jsonValue);
-    ScriptDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ScriptDetails();
+    AWS_APPSTREAM_API ScriptDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ScriptDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     S3Location m_scriptS3Location;
-    bool m_scriptS3LocationHasBeenSet;
+    bool m_scriptS3LocationHasBeenSet = false;
 
     Aws::String m_executablePath;
-    bool m_executablePathHasBeenSet;
+    bool m_executablePathHasBeenSet = false;
 
     Aws::String m_executableParameters;
-    bool m_executableParametersHasBeenSet;
+    bool m_executableParametersHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/QueryPlanningContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API QueryPlanningContext
+  class QueryPlanningContext
   {
   public:
-    QueryPlanningContext();
-    QueryPlanningContext(Aws::Utils::Json::JsonView jsonValue);
-    QueryPlanningContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API QueryPlanningContext();
+    AWS_LAKEFORMATION_API QueryPlanningContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API QueryPlanningContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -314,19 +314,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_queryAsOfTime;
-    bool m_queryAsOfTimeHasBeenSet;
+    bool m_queryAsOfTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
   };
 
 } // namespace Model

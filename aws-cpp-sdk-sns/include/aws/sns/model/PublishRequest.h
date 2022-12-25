@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API PublishRequest : public SNSRequest
+  class PublishRequest : public SNSRequest
   {
   public:
-    PublishRequest();
+    AWS_SNS_API PublishRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Publish"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -968,31 +968,31 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_messageStructure;
-    bool m_messageStructureHasBeenSet;
+    bool m_messageStructureHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::String m_messageDeduplicationId;
-    bool m_messageDeduplicationIdHasBeenSet;
+    bool m_messageDeduplicationIdHasBeenSet = false;
 
     Aws::String m_messageGroupId;
-    bool m_messageGroupIdHasBeenSet;
+    bool m_messageGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

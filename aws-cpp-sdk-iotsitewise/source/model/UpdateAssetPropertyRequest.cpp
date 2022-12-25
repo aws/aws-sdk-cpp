@@ -19,7 +19,8 @@ UpdateAssetPropertyRequest::UpdateAssetPropertyRequest() :
     m_propertyNotificationState(PropertyNotificationState::NOT_SET),
     m_propertyNotificationStateHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_propertyUnitHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String UpdateAssetPropertyRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_propertyUnitHasBeenSet)
+  {
+   payload.WithString("propertyUnit", m_propertyUnit);
 
   }
 

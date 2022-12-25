@@ -7,6 +7,7 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/RoomSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API RoomSummary
+  class RoomSummary
   {
   public:
-    RoomSummary();
-    RoomSummary(Aws::Utils::Json::JsonView jsonValue);
-    RoomSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API RoomSummary();
+    AWS_IVSCHAT_API RoomSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API RoomSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,6 +169,52 @@ namespace Model
 
 
     /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline bool LoggingConfigurationIdentifiersHasBeenSet() const { return m_loggingConfigurationIdentifiersHasBeenSet; }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = value; }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers = std::move(value); }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline RoomSummary& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline RoomSummary& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline RoomSummary& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline RoomSummary& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of logging-configuration identifiers attached to the room.</p>
+     */
+    inline RoomSummary& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiersHasBeenSet = true; m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+
+    /**
      * <p>Configuration information for optional review of messages.</p>
      */
     inline const MessageReviewHandler& GetMessageReviewHandler() const{ return m_messageReviewHandler; }
@@ -240,67 +287,132 @@ namespace Model
 
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags attached to the resource. </p>
+     * <p>Tags attached to the resource. Array of maps, each of the form
+     * <code>string:string (key:value)</code>. See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * AWS Resources</a> for details, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond
+     * what is documented there.</p>
      */
     inline RoomSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -344,25 +456,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
+    bool m_loggingConfigurationIdentifiersHasBeenSet = false;
 
     MessageReviewHandler m_messageReviewHandler;
-    bool m_messageReviewHandlerHasBeenSet;
+    bool m_messageReviewHandlerHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

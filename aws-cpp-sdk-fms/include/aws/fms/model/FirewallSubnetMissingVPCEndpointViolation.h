@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/FirewallSubnetMissingVPCEndpointViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation
+  class FirewallSubnetMissingVPCEndpointViolation
   {
   public:
-    FirewallSubnetMissingVPCEndpointViolation();
-    FirewallSubnetMissingVPCEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
-    FirewallSubnetMissingVPCEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation();
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_firewallSubnetId;
-    bool m_firewallSubnetIdHasBeenSet;
+    bool m_firewallSubnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZoneId;
-    bool m_subnetAvailabilityZoneIdHasBeenSet;
+    bool m_subnetAvailabilityZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

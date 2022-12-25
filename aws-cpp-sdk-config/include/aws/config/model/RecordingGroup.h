@@ -25,40 +25,48 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the types of Amazon Web Services resource for which Config records
-   * configuration changes.</p> <p>In the recording group, you specify whether all
-   * supported types or specific types of resources are recorded.</p> <p>By default,
-   * Config records configuration changes for all supported types of regional
-   * resources that Config discovers in the region in which it is running. Regional
-   * resources are tied to a region and can be used only in that region. Examples of
-   * regional resources are EC2 instances and EBS volumes.</p> <p>You can also have
-   * Config record configuration changes for supported types of global resources (for
-   * example, IAM resources). Global resources are not tied to an individual region
-   * and can be used in all regions.</p>  <p>The configuration details for
-   * any global resource are the same in all regions. If you customize Config in
-   * multiple regions to record global resources, it will create multiple
-   * configuration items each time a global resource changes: one configuration item
-   * for each region. These configuration items will contain identical data. To
-   * prevent duplicate configuration items, you should consider customizing Config in
-   * only one region to record global resources, unless you want the configuration
-   * items to be available in multiple regions.</p>  <p>If you don't want
-   * Config to record all resources, you can specify which types of resources it will
-   * record with the <code>resourceTypes</code> parameter.</p> <p>For a list of
-   * supported resource types, see <a
+   * <p>Specifies which Amazon Web Services resource types Config records for
+   * configuration changes. In the recording group, you specify whether you want to
+   * record all supported resource types or only specific types of resources.</p>
+   * <p>By default, Config records the configuration changes for all supported types
+   * of <i>regional resources</i> that Config discovers in the region in which it is
+   * running. Regional resources are tied to a region and can be used only in that
+   * region. Examples of regional resources are EC2 instances and EBS volumes.</p>
+   * <p>You can also have Config record supported types of <i>global resources</i>.
+   * Global resources are not tied to a specific region and can be used in all
+   * regions. The global resource types that Config supports include IAM users,
+   * groups, roles, and customer managed policies.</p>  <p>Global resource
+   * types onboarded to Config recording after February 2022 will only be recorded in
+   * the service's home region for the commercial partition and Amazon Web Services
+   * GovCloud (US) West for the GovCloud partition. You can view the Configuration
+   * Items for these new global resource types only in their home region and Amazon
+   * Web Services GovCloud (US) West.</p> <p>Supported global resource types
+   * onboarded before February 2022 such as <code>AWS::IAM::Group</code>,
+   * <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>,
+   * <code>AWS::IAM::User</code> remain unchanged, and they will continue to deliver
+   * Configuration Items in all supported regions in Config. The change will only
+   * affect new global resource types onboarded after February 2022.</p> <p>To record
+   * global resource types onboarded after February 2022, enable All Supported
+   * Resource Types in the home region of the global resource type you want to
+   * record.</p>  <p>If you don't want Config to record all resources,
+   * you can specify which types of resources it will record with the
+   * <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource
+   * types, see <a
    * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
-   * Resource Types</a>.</p> <p>For more information, see <a
+   * Resource Types</a>.</p> <p>For more information and a table of the Home Regions
+   * for Global Resource Types Onboarded after February 2022, see <a
    * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
    * Which Resources Config Records</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RecordingGroup
+  class RecordingGroup
   {
   public:
-    RecordingGroup();
-    RecordingGroup(Aws::Utils::Json::JsonView jsonValue);
-    RecordingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RecordingGroup();
+    AWS_CONFIGSERVICE_API RecordingGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RecordingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,13 +294,13 @@ namespace Model
   private:
 
     bool m_allSupported;
-    bool m_allSupportedHasBeenSet;
+    bool m_allSupportedHasBeenSet = false;
 
     bool m_includeGlobalResourceTypes;
-    bool m_includeGlobalResourceTypesHasBeenSet;
+    bool m_includeGlobalResourceTypesHasBeenSet = false;
 
     Aws::Vector<ResourceType> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

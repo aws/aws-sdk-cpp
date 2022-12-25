@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API PutComponentPolicyRequest : public ImagebuilderRequest
+  class PutComponentPolicyRequest : public ImagebuilderRequest
   {
   public:
-    PutComponentPolicyRequest();
+    AWS_IMAGEBUILDER_API PutComponentPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutComponentPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_componentArn;
-    bool m_componentArnHasBeenSet;
+    bool m_componentArnHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

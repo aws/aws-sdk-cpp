@@ -22,12 +22,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API DeleteUserResult
+  class DeleteUserResult
   {
   public:
-    DeleteUserResult();
-    DeleteUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API DeleteUserResult();
+    AWS_MQ_API DeleteUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API DeleteUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

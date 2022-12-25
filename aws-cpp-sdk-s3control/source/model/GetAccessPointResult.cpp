@@ -61,7 +61,7 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
@@ -87,6 +87,11 @@ GetAccessPointResult& GetAccessPointResult::operator =(const Aws::AmazonWebServi
         endpointsEntry = endpointsEntry.NextNode("entry");
       }
 
+    }
+    XmlNode bucketAccountIdNode = resultNode.FirstChild("BucketAccountId");
+    if(!bucketAccountIdNode.IsNull())
+    {
+      m_bucketAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(bucketAccountIdNode.GetText());
     }
   }
 

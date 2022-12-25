@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteSqlInjectionMatchSetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetRequest : public WAFRegionalRequest
+  class DeleteSqlInjectionMatchSetRequest : public WAFRegionalRequest
   {
   public:
-    DeleteSqlInjectionMatchSetRequest();
+    AWS_WAFREGIONAL_API DeleteSqlInjectionMatchSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSqlInjectionMatchSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_sqlInjectionMatchSetId;
-    bool m_sqlInjectionMatchSetIdHasBeenSet;
+    bool m_sqlInjectionMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

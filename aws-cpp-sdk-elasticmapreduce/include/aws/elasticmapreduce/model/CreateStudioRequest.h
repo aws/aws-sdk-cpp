@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMR_API CreateStudioRequest : public EMRRequest
+  class CreateStudioRequest : public EMRRequest
   {
   public:
-    CreateStudioRequest();
+    AWS_EMR_API CreateStudioRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStudio"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -776,43 +776,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AuthMode m_authMode;
-    bool m_authModeHasBeenSet;
+    bool m_authModeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_userRole;
-    bool m_userRoleHasBeenSet;
+    bool m_userRoleHasBeenSet = false;
 
     Aws::String m_workspaceSecurityGroupId;
-    bool m_workspaceSecurityGroupIdHasBeenSet;
+    bool m_workspaceSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_engineSecurityGroupId;
-    bool m_engineSecurityGroupIdHasBeenSet;
+    bool m_engineSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_defaultS3Location;
-    bool m_defaultS3LocationHasBeenSet;
+    bool m_defaultS3LocationHasBeenSet = false;
 
     Aws::String m_idpAuthUrl;
-    bool m_idpAuthUrlHasBeenSet;
+    bool m_idpAuthUrlHasBeenSet = false;
 
     Aws::String m_idpRelayStateParameterName;
-    bool m_idpRelayStateParameterNameHasBeenSet;
+    bool m_idpRelayStateParameterNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

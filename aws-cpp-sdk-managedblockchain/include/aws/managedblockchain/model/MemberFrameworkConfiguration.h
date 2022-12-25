@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFrameworkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkConfiguration
+  class MemberFrameworkConfiguration
   {
   public:
-    MemberFrameworkConfiguration();
-    MemberFrameworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MemberFrameworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API MemberFrameworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     MemberFabricConfiguration m_fabric;
-    bool m_fabricHasBeenSet;
+    bool m_fabricHasBeenSet = false;
   };
 
 } // namespace Model

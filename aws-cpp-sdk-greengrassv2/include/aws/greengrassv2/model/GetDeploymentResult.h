@@ -30,12 +30,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API GetDeploymentResult
+  class GetDeploymentResult
   {
   public:
-    GetDeploymentResult();
-    GetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetDeploymentResult();
+    AWS_GREENGRASSV2_API GetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -501,6 +501,56 @@ namespace Model
 
 
     /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArn = value; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArn = std::move(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const char* value) { m_parentTargetArn.assign(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline GetDeploymentResult& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline GetDeploymentResult& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline GetDeploymentResult& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+
+
+    /**
      * <p>A list of key-value pairs that contain metadata for the resource. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
@@ -621,6 +671,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTimestamp;
 
     bool m_isLatestForTarget;
+
+    Aws::String m_parentTargetArn;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

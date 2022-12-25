@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API AssociatePricingRulesRequest : public BillingConductorRequest
+  class AssociatePricingRulesRequest : public BillingConductorRequest
   {
   public:
-    AssociatePricingRulesRequest();
+    AWS_BILLINGCONDUCTOR_API AssociatePricingRulesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociatePricingRules"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pricingRuleArns;
-    bool m_pricingRuleArnsHasBeenSet;
+    bool m_pricingRuleArnsHasBeenSet = false;
   };
 
 } // namespace Model

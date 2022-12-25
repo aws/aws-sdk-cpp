@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyPairIds">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API KeyPairIds
+  class KeyPairIds
   {
   public:
-    KeyPairIds();
-    KeyPairIds(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KeyPairIds& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyPairIds();
+    AWS_CLOUDFRONT_API KeyPairIds(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyPairIds& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/AffectedEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API AffectedEntity
+  class AffectedEntity
   {
   public:
-    AffectedEntity();
-    AffectedEntity(Aws::Utils::Json::JsonView jsonValue);
-    AffectedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API AffectedEntity();
+    AWS_HEALTH_API AffectedEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API AffectedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -481,28 +481,28 @@ namespace Model
   private:
 
     Aws::String m_entityArn;
-    bool m_entityArnHasBeenSet;
+    bool m_entityArnHasBeenSet = false;
 
     Aws::String m_eventArn;
-    bool m_eventArnHasBeenSet;
+    bool m_eventArnHasBeenSet = false;
 
     Aws::String m_entityValue;
-    bool m_entityValueHasBeenSet;
+    bool m_entityValueHasBeenSet = false;
 
     Aws::String m_entityUrl;
-    bool m_entityUrlHasBeenSet;
+    bool m_entityUrlHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     EntityStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

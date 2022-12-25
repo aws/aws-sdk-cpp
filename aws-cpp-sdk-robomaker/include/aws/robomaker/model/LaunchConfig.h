@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/LaunchConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API LaunchConfig
+  class LaunchConfig
   {
   public:
-    LaunchConfig();
-    LaunchConfig(Aws::Utils::Json::JsonView jsonValue);
-    LaunchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API LaunchConfig();
+    AWS_ROBOMAKER_API LaunchConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API LaunchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,22 +349,22 @@ namespace Model
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_launchFile;
-    bool m_launchFileHasBeenSet;
+    bool m_launchFileHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     PortForwardingConfig m_portForwardingConfig;
-    bool m_portForwardingConfigHasBeenSet;
+    bool m_portForwardingConfigHasBeenSet = false;
 
     bool m_streamUI;
-    bool m_streamUIHasBeenSet;
+    bool m_streamUIHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
   };
 
 } // namespace Model

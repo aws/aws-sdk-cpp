@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_FSX_API CreateDataRepositoryAssociationRequest : public FSxRequest
+  class CreateDataRepositoryAssociationRequest : public FSxRequest
   {
   public:
-    CreateDataRepositoryAssociationRequest();
+    AWS_FSX_API CreateDataRepositoryAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataRepositoryAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -75,7 +75,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -93,7 +93,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -111,7 +111,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -129,7 +129,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -147,7 +147,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -165,7 +165,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -183,7 +183,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -201,7 +201,7 @@ namespace Model
      * This file system directory can be linked to only one Amazon S3 bucket, and no
      * other S3 bucket can be linked to the directory.</p>  <p>If you specify
      * only a forward slash (<code>/</code>) as the file system path, you can link only
-     * 1 data repository to the file system. You can only specify "/" as the file
+     * one data repository to the file system. You can only specify "/" as the file
      * system path for the first data repository associated with a file system.</p>
      * 
      */
@@ -450,28 +450,28 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_fileSystemPath;
-    bool m_fileSystemPathHasBeenSet;
+    bool m_fileSystemPathHasBeenSet = false;
 
     Aws::String m_dataRepositoryPath;
-    bool m_dataRepositoryPathHasBeenSet;
+    bool m_dataRepositoryPathHasBeenSet = false;
 
     bool m_batchImportMetaDataOnCreate;
-    bool m_batchImportMetaDataOnCreateHasBeenSet;
+    bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     S3DataRepositoryConfiguration m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

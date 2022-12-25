@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CloudwatchLogsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CloudwatchLogsAction
+  class CloudwatchLogsAction
   {
   public:
-    CloudwatchLogsAction();
-    CloudwatchLogsAction(Aws::Utils::Json::JsonView jsonValue);
-    CloudwatchLogsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CloudwatchLogsAction();
+    AWS_IOT_API CloudwatchLogsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CloudwatchLogsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

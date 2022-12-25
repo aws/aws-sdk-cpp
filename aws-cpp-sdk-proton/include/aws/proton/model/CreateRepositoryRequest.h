@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API CreateRepositoryRequest : public ProtonRequest
+  class CreateRepositoryRequest : public ProtonRequest
   {
   public:
-    CreateRepositoryRequest();
+    AWS_PROTON_API CreateRepositoryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,72 +32,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRepository"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar
-     * connection. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html">Setting
-     * up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+     * <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects
+     * Proton to your repository provider account. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
+     * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 
@@ -225,108 +225,84 @@ namespace Model
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * repository. A tag is a key-value pair.</p> <p>For more information, see
-     * <i>Proton resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * repository. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateRepositoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

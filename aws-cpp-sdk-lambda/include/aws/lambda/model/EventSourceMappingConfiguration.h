@@ -12,6 +12,8 @@
 #include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda/model/SelfManagedEventSource.h>
+#include <aws/lambda/model/AmazonManagedKafkaEventSourceConfig.h>
+#include <aws/lambda/model/SelfManagedKafkaEventSourceConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -37,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EventSourceMappingConfiguration
+  class EventSourceMappingConfiguration
   {
   public:
-    EventSourceMappingConfiguration();
-    EventSourceMappingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EventSourceMappingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EventSourceMappingConfiguration();
+    AWS_LAMBDA_API EventSourceMappingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EventSourceMappingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,38 +215,70 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline EventSourceMappingConfiguration& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -316,48 +350,48 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline EventSourceMappingConfiguration& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
@@ -975,76 +1009,156 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline const AmazonManagedKafkaEventSourceConfig& GetAmazonManagedKafkaEventSourceConfig() const{ return m_amazonManagedKafkaEventSourceConfig; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline bool AmazonManagedKafkaEventSourceConfigHasBeenSet() const { return m_amazonManagedKafkaEventSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline void SetAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = value; }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline void SetAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = std::move(value); }
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { SetAmazonManagedKafkaEventSourceConfig(value); return *this;}
+
+    /**
+     * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
+     * Kafka (Amazon MSK) event source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { SetAmazonManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline const SelfManagedKafkaEventSourceConfig& GetSelfManagedKafkaEventSourceConfig() const{ return m_selfManagedKafkaEventSourceConfig; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline bool SelfManagedKafkaEventSourceConfigHasBeenSet() const { return m_selfManagedKafkaEventSourceConfigHasBeenSet; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline void SetSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = value; }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline void SetSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = std::move(value); }
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { SetSelfManagedKafkaEventSourceConfig(value); return *this;}
+
+    /**
+     * <p>Specific configuration settings for a self-managed Apache Kafka event
+     * source.</p>
+     */
+    inline EventSourceMappingConfiguration& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_uUID;
-    bool m_uUIDHasBeenSet;
+    bool m_uUIDHasBeenSet = false;
 
     EventSourcePosition m_startingPosition;
-    bool m_startingPositionHasBeenSet;
+    bool m_startingPositionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startingPositionTimestamp;
-    bool m_startingPositionTimestampHasBeenSet;
+    bool m_startingPositionTimestampHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     int m_maximumBatchingWindowInSeconds;
-    bool m_maximumBatchingWindowInSecondsHasBeenSet;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
     int m_parallelizationFactor;
-    bool m_parallelizationFactorHasBeenSet;
+    bool m_parallelizationFactorHasBeenSet = false;
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_lastProcessingResult;
-    bool m_lastProcessingResultHasBeenSet;
+    bool m_lastProcessingResultHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateTransitionReason;
-    bool m_stateTransitionReasonHasBeenSet;
+    bool m_stateTransitionReasonHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topics;
-    bool m_topicsHasBeenSet;
+    bool m_topicsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queues;
-    bool m_queuesHasBeenSet;
+    bool m_queuesHasBeenSet = false;
 
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-    bool m_sourceAccessConfigurationsHasBeenSet;
+    bool m_sourceAccessConfigurationsHasBeenSet = false;
 
     SelfManagedEventSource m_selfManagedEventSource;
-    bool m_selfManagedEventSourceHasBeenSet;
+    bool m_selfManagedEventSourceHasBeenSet = false;
 
     int m_maximumRecordAgeInSeconds;
-    bool m_maximumRecordAgeInSecondsHasBeenSet;
+    bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
     bool m_bisectBatchOnFunctionError;
-    bool m_bisectBatchOnFunctionErrorHasBeenSet;
+    bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_tumblingWindowInSeconds;
-    bool m_tumblingWindowInSecondsHasBeenSet;
+    bool m_tumblingWindowInSecondsHasBeenSet = false;
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-    bool m_functionResponseTypesHasBeenSet;
+    bool m_functionResponseTypesHasBeenSet = false;
+
+    AmazonManagedKafkaEventSourceConfig m_amazonManagedKafkaEventSourceConfig;
+    bool m_amazonManagedKafkaEventSourceConfigHasBeenSet = false;
+
+    SelfManagedKafkaEventSourceConfig m_selfManagedKafkaEventSourceConfig;
+    bool m_selfManagedKafkaEventSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

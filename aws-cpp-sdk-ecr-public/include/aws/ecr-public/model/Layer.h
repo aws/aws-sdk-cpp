@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Layer">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API Layer
+  class Layer
   {
   public:
-    Layer();
-    Layer(Aws::Utils::Json::JsonView jsonValue);
-    Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API Layer();
+    AWS_ECRPUBLIC_API Layer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_layerDigest;
-    bool m_layerDigestHasBeenSet;
+    bool m_layerDigestHasBeenSet = false;
 
     LayerAvailability m_layerAvailability;
-    bool m_layerAvailabilityHasBeenSet;
+    bool m_layerAvailabilityHasBeenSet = false;
 
     long long m_layerSize;
-    bool m_layerSizeHasBeenSet;
+    bool m_layerSizeHasBeenSet = false;
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

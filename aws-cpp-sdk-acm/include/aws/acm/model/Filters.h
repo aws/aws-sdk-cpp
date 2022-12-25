@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/Filters">AWS API
    * Reference</a></p>
    */
-  class AWS_ACM_API Filters
+  class Filters
   {
   public:
-    Filters();
-    Filters(Aws::Utils::Json::JsonView jsonValue);
-    Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API Filters();
+    AWS_ACM_API Filters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline const Aws::Vector<KeyAlgorithm>& GetKeyTypes() const{ return m_keyTypes; }
@@ -140,7 +140,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline bool KeyTypesHasBeenSet() const { return m_keyTypesHasBeenSet; }
@@ -151,7 +151,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline void SetKeyTypes(const Aws::Vector<KeyAlgorithm>& value) { m_keyTypesHasBeenSet = true; m_keyTypes = value; }
@@ -162,7 +162,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline void SetKeyTypes(Aws::Vector<KeyAlgorithm>&& value) { m_keyTypesHasBeenSet = true; m_keyTypes = std::move(value); }
@@ -173,7 +173,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline Filters& WithKeyTypes(const Aws::Vector<KeyAlgorithm>& value) { SetKeyTypes(value); return *this;}
@@ -184,7 +184,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline Filters& WithKeyTypes(Aws::Vector<KeyAlgorithm>&& value) { SetKeyTypes(std::move(value)); return *this;}
@@ -195,7 +195,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline Filters& AddKeyTypes(const KeyAlgorithm& value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(value); return *this; }
@@ -206,7 +206,7 @@ namespace Model
      * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
-     * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
     inline Filters& AddKeyTypes(KeyAlgorithm&& value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(std::move(value)); return *this; }
@@ -214,13 +214,13 @@ namespace Model
   private:
 
     Aws::Vector<ExtendedKeyUsageName> m_extendedKeyUsage;
-    bool m_extendedKeyUsageHasBeenSet;
+    bool m_extendedKeyUsageHasBeenSet = false;
 
     Aws::Vector<KeyUsageName> m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     Aws::Vector<KeyAlgorithm> m_keyTypes;
-    bool m_keyTypesHasBeenSet;
+    bool m_keyTypesHasBeenSet = false;
   };
 
 } // namespace Model

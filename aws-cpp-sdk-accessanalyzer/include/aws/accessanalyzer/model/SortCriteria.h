@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API SortCriteria
+  class SortCriteria
   {
   public:
-    SortCriteria();
-    SortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API SortCriteria();
+    AWS_ACCESSANALYZER_API SortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

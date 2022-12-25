@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/EvaluationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API EvaluationParameters
+  class EvaluationParameters
   {
   public:
-    EvaluationParameters();
-    EvaluationParameters(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API EvaluationParameters();
+    AWS_FORECASTSERVICE_API EvaluationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API EvaluationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     int m_numberOfBacktestWindows;
-    bool m_numberOfBacktestWindowsHasBeenSet;
+    bool m_numberOfBacktestWindowsHasBeenSet = false;
 
     int m_backTestWindowOffset;
-    bool m_backTestWindowOffsetHasBeenSet;
+    bool m_backTestWindowOffsetHasBeenSet = false;
   };
 
 } // namespace Model

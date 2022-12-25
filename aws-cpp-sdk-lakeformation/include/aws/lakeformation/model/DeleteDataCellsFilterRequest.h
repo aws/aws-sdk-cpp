@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API DeleteDataCellsFilterRequest : public LakeFormationRequest
+  class DeleteDataCellsFilterRequest : public LakeFormationRequest
   {
   public:
-    DeleteDataCellsFilterRequest();
+    AWS_LAKEFORMATION_API DeleteDataCellsFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDataCellsFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_tableCatalogId;
-    bool m_tableCatalogIdHasBeenSet;
+    bool m_tableCatalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

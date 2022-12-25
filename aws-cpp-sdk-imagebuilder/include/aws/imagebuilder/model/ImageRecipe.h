@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageRecipe">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ImageRecipe
+  class ImageRecipe
   {
   public:
-    ImageRecipe();
-    ImageRecipe(Aws::Utils::Json::JsonView jsonValue);
-    ImageRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ImageRecipe();
+    AWS_IMAGEBUILDER_API ImageRecipe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ImageRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -639,46 +639,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ImageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<ComponentConfiguration> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     Aws::String m_parentImage;
-    bool m_parentImageHasBeenSet;
+    bool m_parentImageHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
-    bool m_additionalInstanceConfigurationHasBeenSet;
+    bool m_additionalInstanceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

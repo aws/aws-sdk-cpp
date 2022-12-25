@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRuleOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulRuleOptions
+  class StatefulRuleOptions
   {
   public:
-    StatefulRuleOptions();
-    StatefulRuleOptions(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRuleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulRuleOptions();
+    AWS_NETWORKFIREWALL_API StatefulRuleOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulRuleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     RuleOrder m_ruleOrder;
-    bool m_ruleOrderHasBeenSet;
+    bool m_ruleOrderHasBeenSet = false;
   };
 
 } // namespace Model

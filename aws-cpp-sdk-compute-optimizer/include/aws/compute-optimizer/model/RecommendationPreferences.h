@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/RecommendationPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API RecommendationPreferences
+  class RecommendationPreferences
   {
   public:
-    RecommendationPreferences();
-    RecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API RecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API RecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API RecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,7 +172,7 @@ namespace Model
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
-    bool m_cpuVendorArchitecturesHasBeenSet;
+    bool m_cpuVendorArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

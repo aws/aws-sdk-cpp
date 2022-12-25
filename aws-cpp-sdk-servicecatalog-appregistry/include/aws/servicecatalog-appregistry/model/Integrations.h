@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/Integrations">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API Integrations
+  class Integrations
   {
   public:
-    Integrations();
-    Integrations(Aws::Utils::Json::JsonView jsonValue);
-    Integrations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API Integrations();
+    AWS_APPREGISTRY_API Integrations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Integrations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ResourceGroup m_resourceGroup;
-    bool m_resourceGroupHasBeenSet;
+    bool m_resourceGroupHasBeenSet = false;
   };
 
 } // namespace Model

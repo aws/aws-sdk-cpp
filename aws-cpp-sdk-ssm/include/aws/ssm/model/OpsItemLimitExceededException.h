@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemLimitExceededException
+  class OpsItemLimitExceededException
   {
   public:
-    OpsItemLimitExceededException();
-    OpsItemLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemLimitExceededException();
+    AWS_SSM_API OpsItemLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -134,16 +134,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_limitType;
-    bool m_limitTypeHasBeenSet;
+    bool m_limitTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

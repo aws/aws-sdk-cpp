@@ -45,14 +45,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Origin">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Origin
+  class Origin
   {
   public:
-    Origin();
-    Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Origin();
+    AWS_CLOUDFRONT_API Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -389,9 +389,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -403,9 +403,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -417,9 +417,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -431,9 +431,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -457,7 +457,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -467,7 +467,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -477,7 +477,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -533,34 +533,110 @@ namespace Model
      */
     inline Origin& WithOriginShield(OriginShield&& value) { SetOriginShield(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetOriginAccessControlId() const{ return m_originAccessControlId; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline bool OriginAccessControlIdHasBeenSet() const { return m_originAccessControlIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(const Aws::String& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = value; }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(Aws::String&& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline void SetOriginAccessControlId(const char* value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId.assign(value); }
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(const Aws::String& value) { SetOriginAccessControlId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(Aws::String&& value) { SetOriginAccessControlId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of an origin access control for this origin.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+     * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline Origin& WithOriginAccessControlId(const char* value) { SetOriginAccessControlId(value); return *this;}
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_originPath;
-    bool m_originPathHasBeenSet;
+    bool m_originPathHasBeenSet = false;
 
     CustomHeaders m_customHeaders;
-    bool m_customHeadersHasBeenSet;
+    bool m_customHeadersHasBeenSet = false;
 
     S3OriginConfig m_s3OriginConfig;
-    bool m_s3OriginConfigHasBeenSet;
+    bool m_s3OriginConfigHasBeenSet = false;
 
     CustomOriginConfig m_customOriginConfig;
-    bool m_customOriginConfigHasBeenSet;
+    bool m_customOriginConfigHasBeenSet = false;
 
     int m_connectionAttempts;
-    bool m_connectionAttemptsHasBeenSet;
+    bool m_connectionAttemptsHasBeenSet = false;
 
     int m_connectionTimeout;
-    bool m_connectionTimeoutHasBeenSet;
+    bool m_connectionTimeoutHasBeenSet = false;
 
     OriginShield m_originShield;
-    bool m_originShieldHasBeenSet;
+    bool m_originShieldHasBeenSet = false;
+
+    Aws::String m_originAccessControlId;
+    bool m_originAccessControlIdHasBeenSet = false;
   };
 
 } // namespace Model

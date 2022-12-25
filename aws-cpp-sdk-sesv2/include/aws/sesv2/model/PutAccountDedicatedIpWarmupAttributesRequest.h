@@ -20,10 +20,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDedicatedIpWarmupAttributesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesRequest : public SESV2Request
+  class PutAccountDedicatedIpWarmupAttributesRequest : public SESV2Request
   {
   public:
-    PutAccountDedicatedIpWarmupAttributesRequest();
+    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountDedicatedIpWarmupAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -69,7 +69,7 @@ namespace Model
   private:
 
     bool m_autoWarmupEnabled;
-    bool m_autoWarmupEnabledHasBeenSet;
+    bool m_autoWarmupEnabledHasBeenSet = false;
   };
 
 } // namespace Model

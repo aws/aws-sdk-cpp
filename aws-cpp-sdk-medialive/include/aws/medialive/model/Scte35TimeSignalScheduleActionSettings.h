@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35TimeSignalScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings
+  class Scte35TimeSignalScheduleActionSettings
   {
   public:
-    Scte35TimeSignalScheduleActionSettings();
-    Scte35TimeSignalScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte35TimeSignalScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35TimeSignalScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Scte35Descriptor> m_scte35Descriptors;
-    bool m_scte35DescriptorsHasBeenSet;
+    bool m_scte35DescriptorsHasBeenSet = false;
   };
 
 } // namespace Model

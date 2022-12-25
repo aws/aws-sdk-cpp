@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Maintenance">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Maintenance
+  class Maintenance
   {
   public:
-    Maintenance();
-    Maintenance(Aws::Utils::Json::JsonView jsonValue);
-    Maintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Maintenance();
+    AWS_MEDIACONNECT_API Maintenance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Maintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     MaintenanceDay m_maintenanceDay;
-    bool m_maintenanceDayHasBeenSet;
+    bool m_maintenanceDayHasBeenSet = false;
 
     Aws::String m_maintenanceDeadline;
-    bool m_maintenanceDeadlineHasBeenSet;
+    bool m_maintenanceDeadlineHasBeenSet = false;
 
     Aws::String m_maintenanceScheduledDate;
-    bool m_maintenanceScheduledDateHasBeenSet;
+    bool m_maintenanceScheduledDateHasBeenSet = false;
 
     Aws::String m_maintenanceStartHour;
-    bool m_maintenanceStartHourHasBeenSet;
+    bool m_maintenanceStartHourHasBeenSet = false;
   };
 
 } // namespace Model

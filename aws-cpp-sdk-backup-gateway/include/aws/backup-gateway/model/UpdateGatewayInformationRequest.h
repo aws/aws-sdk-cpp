@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPGATEWAY_API UpdateGatewayInformationRequest : public BackupGatewayRequest
+  class UpdateGatewayInformationRequest : public BackupGatewayRequest
   {
   public:
-    UpdateGatewayInformationRequest();
+    AWS_BACKUPGATEWAY_API UpdateGatewayInformationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateGatewayInformation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_gatewayDisplayName;
-    bool m_gatewayDisplayNameHasBeenSet;
+    bool m_gatewayDisplayNameHasBeenSet = false;
   };
 
 } // namespace Model

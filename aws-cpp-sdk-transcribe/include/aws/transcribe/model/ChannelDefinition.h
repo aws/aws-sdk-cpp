@@ -24,21 +24,21 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to specify which speaker is on which channel. For example, if your
-   * agent is the first participant to speak, you would set <code>ChannelId</code> to
-   * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-   * to <code>AGENT</code> (to indicate that it's the agent speaking).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Makes it possible to specify which speaker is on which channel. For example,
+   * if your agent is the first participant to speak, you would set
+   * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+   * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+   * agent speaking).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ChannelDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API ChannelDefinition
+  class ChannelDefinition
   {
   public:
-    ChannelDefinition();
-    ChannelDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ChannelDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API ChannelDefinition();
+    AWS_TRANSCRIBESERVICE_API ChannelDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API ChannelDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     ParticipantRole m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
   };
 
 } // namespace Model

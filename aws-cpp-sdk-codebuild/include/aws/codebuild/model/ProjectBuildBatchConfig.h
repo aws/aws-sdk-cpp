@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectBuildBatchConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectBuildBatchConfig
+  class ProjectBuildBatchConfig
   {
   public:
-    ProjectBuildBatchConfig();
-    ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectBuildBatchConfig();
+    AWS_CODEBUILD_API ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,19 +243,19 @@ namespace Model
   private:
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     bool m_combineArtifacts;
-    bool m_combineArtifactsHasBeenSet;
+    bool m_combineArtifactsHasBeenSet = false;
 
     BatchRestrictions m_restrictions;
-    bool m_restrictionsHasBeenSet;
+    bool m_restrictionsHasBeenSet = false;
 
     int m_timeoutInMins;
-    bool m_timeoutInMinsHasBeenSet;
+    bool m_timeoutInMinsHasBeenSet = false;
 
     BatchReportModeType m_batchReportMode;
-    bool m_batchReportModeHasBeenSet;
+    bool m_batchReportModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ColumnMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ColumnMetadata
+  class ColumnMetadata
   {
   public:
-    ColumnMetadata();
-    ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ColumnMetadata();
+    AWS_HONEYCODE_API ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

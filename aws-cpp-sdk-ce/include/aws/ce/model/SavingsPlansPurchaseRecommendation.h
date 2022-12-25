@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansPurchaseRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendation
+  class SavingsPlansPurchaseRecommendation
   {
   public:
-    SavingsPlansPurchaseRecommendation();
-    SavingsPlansPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendation();
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -312,25 +312,25 @@ namespace Model
   private:
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     SupportedSavingsPlansType m_savingsPlansType;
-    bool m_savingsPlansTypeHasBeenSet;
+    bool m_savingsPlansTypeHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Aws::Vector<SavingsPlansPurchaseRecommendationDetail> m_savingsPlansPurchaseRecommendationDetails;
-    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = false;
 
     SavingsPlansPurchaseRecommendationSummary m_savingsPlansPurchaseRecommendationSummary;
-    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet;
+    bool m_savingsPlansPurchaseRecommendationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API ListThingsInThingGroupRequest : public IoTRequest
+  class ListThingsInThingGroupRequest : public IoTRequest
   {
   public:
-    ListThingsInThingGroupRequest();
+    AWS_IOT_API ListThingsInThingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListThingsInThingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     bool m_recursive;
-    bool m_recursiveHasBeenSet;
+    bool m_recursiveHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

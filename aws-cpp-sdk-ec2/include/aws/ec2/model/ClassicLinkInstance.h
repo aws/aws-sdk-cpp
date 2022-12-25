@@ -27,19 +27,24 @@ namespace Model
 {
 
   /**
-   * <p>Describes a linked EC2-Classic instance.</p><p><h3>See Also:</h3>   <a
+   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+   * EC2-Classic to a VPC. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+   * Guide</i>.</p>  <p>Describes a linked EC2-Classic instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClassicLinkInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClassicLinkInstance
+  class ClassicLinkInstance
   {
   public:
-    ClassicLinkInstance();
-    ClassicLinkInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClassicLinkInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClassicLinkInstance();
+    AWS_EC2_API ClassicLinkInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClassicLinkInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -208,16 +213,16 @@ namespace Model
   private:
 
     Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ChoiceImprovementPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ChoiceImprovementPlan
+  class ChoiceImprovementPlan
   {
   public:
-    ChoiceImprovementPlan();
-    ChoiceImprovementPlan(Aws::Utils::Json::JsonView jsonValue);
-    ChoiceImprovementPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API ChoiceImprovementPlan();
+    AWS_WELLARCHITECTED_API ChoiceImprovementPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API ChoiceImprovementPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -130,13 +130,13 @@ namespace Model
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     Aws::String m_displayText;
-    bool m_displayTextHasBeenSet;
+    bool m_displayTextHasBeenSet = false;
 
     Aws::String m_improvementPlanUrl;
-    bool m_improvementPlanUrlHasBeenSet;
+    bool m_improvementPlanUrlHasBeenSet = false;
   };
 
 } // namespace Model

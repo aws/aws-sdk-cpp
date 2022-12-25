@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsBasicPutSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsBasicPutSettings
+  class HlsBasicPutSettings
   {
   public:
-    HlsBasicPutSettings();
-    HlsBasicPutSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsBasicPutSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsBasicPutSettings();
+    AWS_MEDIALIVE_API HlsBasicPutSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsBasicPutSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,16 +133,16 @@ namespace Model
   private:
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     int m_filecacheDuration;
-    bool m_filecacheDurationHasBeenSet;
+    bool m_filecacheDurationHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateLogConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API CreateExperimentTemplateLogConfigurationInput
+  class CreateExperimentTemplateLogConfigurationInput
   {
   public:
-    CreateExperimentTemplateLogConfigurationInput();
-    CreateExperimentTemplateLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    CreateExperimentTemplateLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API CreateExperimentTemplateLogConfigurationInput();
+    AWS_FIS_API CreateExperimentTemplateLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API CreateExperimentTemplateLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,13 +124,13 @@ namespace Model
   private:
 
     ExperimentTemplateCloudWatchLogsLogConfigurationInput m_cloudWatchLogsConfiguration;
-    bool m_cloudWatchLogsConfigurationHasBeenSet;
+    bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
     ExperimentTemplateS3LogConfigurationInput m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     int m_logSchemaVersion;
-    bool m_logSchemaVersionHasBeenSet;
+    bool m_logSchemaVersionHasBeenSet = false;
   };
 
 } // namespace Model

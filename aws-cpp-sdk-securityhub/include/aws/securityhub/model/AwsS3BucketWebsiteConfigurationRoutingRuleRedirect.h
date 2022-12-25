@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketWebsiteConfigurationRoutingRuleRedirect">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect
+  class AwsS3BucketWebsiteConfigurationRoutingRuleRedirect
   {
   public:
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect();
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_httpRedirectCode;
-    bool m_httpRedirectCodeHasBeenSet;
+    bool m_httpRedirectCodeHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_replaceKeyPrefixWith;
-    bool m_replaceKeyPrefixWithHasBeenSet;
+    bool m_replaceKeyPrefixWithHasBeenSet = false;
 
     Aws::String m_replaceKeyWith;
-    bool m_replaceKeyWithHasBeenSet;
+    bool m_replaceKeyWithHasBeenSet = false;
   };
 
 } // namespace Model

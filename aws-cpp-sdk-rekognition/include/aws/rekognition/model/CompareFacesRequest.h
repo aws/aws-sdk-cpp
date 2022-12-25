@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API CompareFacesRequest : public RekognitionRequest
+  class CompareFacesRequest : public RekognitionRequest
   {
   public:
-    CompareFacesRequest();
+    AWS_REKOGNITION_API CompareFacesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CompareFaces"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Image m_sourceImage;
-    bool m_sourceImageHasBeenSet;
+    bool m_sourceImageHasBeenSet = false;
 
     Image m_targetImage;
-    bool m_targetImageHasBeenSet;
+    bool m_targetImageHasBeenSet = false;
 
     double m_similarityThreshold;
-    bool m_similarityThresholdHasBeenSet;
+    bool m_similarityThresholdHasBeenSet = false;
 
     QualityFilter m_qualityFilter;
-    bool m_qualityFilterHasBeenSet;
+    bool m_qualityFilterHasBeenSet = false;
   };
 
 } // namespace Model

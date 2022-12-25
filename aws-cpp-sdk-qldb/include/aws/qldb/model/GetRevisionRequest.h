@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_QLDB_API GetRevisionRequest : public QLDBRequest
+  class GetRevisionRequest : public QLDBRequest
   {
   public:
-    GetRevisionRequest();
+    AWS_QLDB_API GetRevisionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRevision"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QLDB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ValueHolder m_blockAddress;
-    bool m_blockAddressHasBeenSet;
+    bool m_blockAddressHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     ValueHolder m_digestTipAddress;
-    bool m_digestTipAddressHasBeenSet;
+    bool m_digestTipAddressHasBeenSet = false;
   };
 
 } // namespace Model

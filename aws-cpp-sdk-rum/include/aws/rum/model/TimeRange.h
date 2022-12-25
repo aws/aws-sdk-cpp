@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/TimeRange">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API TimeRange();
+    AWS_CLOUDWATCHRUM_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     long long m_after;
-    bool m_afterHasBeenSet;
+    bool m_afterHasBeenSet = false;
 
     long long m_before;
-    bool m_beforeHasBeenSet;
+    bool m_beforeHasBeenSet = false;
   };
 
 } // namespace Model

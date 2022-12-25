@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API IndexFacesRequest : public RekognitionRequest
+  class IndexFacesRequest : public RekognitionRequest
   {
   public:
-    IndexFacesRequest();
+    AWS_REKOGNITION_API IndexFacesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "IndexFaces"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -464,22 +464,22 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_externalImageId;
-    bool m_externalImageIdHasBeenSet;
+    bool m_externalImageIdHasBeenSet = false;
 
     Aws::Vector<Attribute> m_detectionAttributes;
-    bool m_detectionAttributesHasBeenSet;
+    bool m_detectionAttributesHasBeenSet = false;
 
     int m_maxFaces;
-    bool m_maxFacesHasBeenSet;
+    bool m_maxFacesHasBeenSet = false;
 
     QualityFilter m_qualityFilter;
-    bool m_qualityFilterHasBeenSet;
+    bool m_qualityFilterHasBeenSet = false;
   };
 
 } // namespace Model

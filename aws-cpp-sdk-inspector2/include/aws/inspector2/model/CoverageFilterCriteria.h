@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoverageFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoverageFilterCriteria
+  class CoverageFilterCriteria
   {
   public:
-    CoverageFilterCriteria();
-    CoverageFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    CoverageFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoverageFilterCriteria();
+    AWS_INSPECTOR2_API CoverageFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoverageFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,6 +213,137 @@ namespace Model
 
 
     /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline void SetLambdaFunctionName(const Aws::Vector<CoverageStringFilter>& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline void SetLambdaFunctionName(Aws::Vector<CoverageStringFilter>&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionName(const Aws::Vector<CoverageStringFilter>& value) { SetLambdaFunctionName(value); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionName(Aws::Vector<CoverageStringFilter>&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionName(const CoverageStringFilter& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(value); return *this; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by function
+     * names.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionName(CoverageStringFilter&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline const Aws::Vector<CoverageStringFilter>& GetLambdaFunctionRuntime() const{ return m_lambdaFunctionRuntime; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline bool LambdaFunctionRuntimeHasBeenSet() const { return m_lambdaFunctionRuntimeHasBeenSet; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline void SetLambdaFunctionRuntime(const Aws::Vector<CoverageStringFilter>& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = value; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline void SetLambdaFunctionRuntime(Aws::Vector<CoverageStringFilter>&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = std::move(value); }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionRuntime(const Aws::Vector<CoverageStringFilter>& value) { SetLambdaFunctionRuntime(value); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionRuntime(Aws::Vector<CoverageStringFilter>&& value) { SetLambdaFunctionRuntime(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionRuntime(const CoverageStringFilter& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(value); return *this; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionRuntime(CoverageStringFilter&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline const Aws::Vector<CoverageMapFilter>& GetLambdaFunctionTags() const{ return m_lambdaFunctionTags; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline bool LambdaFunctionTagsHasBeenSet() const { return m_lambdaFunctionTagsHasBeenSet; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline void SetLambdaFunctionTags(const Aws::Vector<CoverageMapFilter>& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = value; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline void SetLambdaFunctionTags(Aws::Vector<CoverageMapFilter>&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = std::move(value); }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionTags(const Aws::Vector<CoverageMapFilter>& value) { SetLambdaFunctionTags(value); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline CoverageFilterCriteria& WithLambdaFunctionTags(Aws::Vector<CoverageMapFilter>&& value) { SetLambdaFunctionTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionTags(const CoverageMapFilter& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(value); return *this; }
+
+    /**
+     * <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+     */
+    inline CoverageFilterCriteria& AddLambdaFunctionTags(CoverageMapFilter&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>An array of Amazon Web Services resource IDs to return coverage statistics
      * for.</p>
      */
@@ -263,49 +394,57 @@ namespace Model
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline const Aws::Vector<CoverageStringFilter>& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(const Aws::Vector<CoverageStringFilter>& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline void SetResourceType(Aws::Vector<CoverageStringFilter>&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(const Aws::Vector<CoverageStringFilter>& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& WithResourceType(Aws::Vector<CoverageStringFilter>&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(const CoverageStringFilter& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(value); return *this; }
 
     /**
      * <p>An array of Amazon Web Services resource types to return coverage statistics
-     * for.</p>
+     * for. The values can be <code>AWS_EC2_INSTANCE</code> or
+     * <code>AWS_ECR_REPOSITORY</code>.</p>
      */
     inline CoverageFilterCriteria& AddResourceType(CoverageStringFilter&& value) { m_resourceTypeHasBeenSet = true; m_resourceType.push_back(std::move(value)); return *this; }
 
@@ -443,31 +582,40 @@ namespace Model
   private:
 
     Aws::Vector<CoverageStringFilter> m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<CoverageMapFilter> m_ec2InstanceTags;
-    bool m_ec2InstanceTagsHasBeenSet;
+    bool m_ec2InstanceTagsHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_ecrImageTags;
-    bool m_ecrImageTagsHasBeenSet;
+    bool m_ecrImageTagsHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_ecrRepositoryName;
-    bool m_ecrRepositoryNameHasBeenSet;
+    bool m_ecrRepositoryNameHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_lambdaFunctionName;
+    bool m_lambdaFunctionNameHasBeenSet = false;
+
+    Aws::Vector<CoverageStringFilter> m_lambdaFunctionRuntime;
+    bool m_lambdaFunctionRuntimeHasBeenSet = false;
+
+    Aws::Vector<CoverageMapFilter> m_lambdaFunctionTags;
+    bool m_lambdaFunctionTagsHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanStatusCode;
-    bool m_scanStatusCodeHasBeenSet;
+    bool m_scanStatusCodeHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanStatusReason;
-    bool m_scanStatusReasonHasBeenSet;
+    bool m_scanStatusReasonHasBeenSet = false;
 
     Aws::Vector<CoverageStringFilter> m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

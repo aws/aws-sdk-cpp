@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API RotateSecretRequest : public SecretsManagerRequest
+  class RotateSecretRequest : public SecretsManagerRequest
   {
   public:
-    RotateSecretRequest();
+    AWS_SECRETSMANAGER_API RotateSecretRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RotateSecret"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -255,42 +255,74 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetRotationLambdaARN() const{ return m_rotationLambdaARN; }
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline bool RotationLambdaARNHasBeenSet() const { return m_rotationLambdaARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline void SetRotationLambdaARN(const Aws::String& value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN = value; }
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline void SetRotationLambdaARN(Aws::String&& value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN = std::move(value); }
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline void SetRotationLambdaARN(const char* value) { m_rotationLambdaARNHasBeenSet = true; m_rotationLambdaARN.assign(value); }
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline RotateSecretRequest& WithRotationLambdaARN(const Aws::String& value) { SetRotationLambdaARN(value); return *this;}
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline RotateSecretRequest& WithRotationLambdaARN(Aws::String&& value) { SetRotationLambdaARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+     * <p>For secrets that use a Lambda rotation function to rotate, the ARN of the
+     * Lambda rotation function. </p> <p>For secrets that use <i>managed rotation</i>,
+     * omit this field. For more information, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed
+     * rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
      */
     inline RotateSecretRequest& WithRotationLambdaARN(const char* value) { SetRotationLambdaARN(value); return *this;}
 
@@ -329,8 +361,9 @@ namespace Model
     /**
      * <p>Specifies whether to rotate the secret immediately or wait until the next
      * scheduled rotation window. The rotation schedule is defined in
-     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
-     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>For secrets that use a Lambda
+     * rotation function to rotate, if you don't immediately rotate the secret, Secrets
+     * Manager tests the rotation configuration by running the <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
      * <code>testSecret</code> step</a> of the Lambda rotation function. The test
      * creates an <code>AWSPENDING</code> version of the secret and then removes
@@ -342,8 +375,9 @@ namespace Model
     /**
      * <p>Specifies whether to rotate the secret immediately or wait until the next
      * scheduled rotation window. The rotation schedule is defined in
-     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
-     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>For secrets that use a Lambda
+     * rotation function to rotate, if you don't immediately rotate the secret, Secrets
+     * Manager tests the rotation configuration by running the <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
      * <code>testSecret</code> step</a> of the Lambda rotation function. The test
      * creates an <code>AWSPENDING</code> version of the secret and then removes
@@ -355,8 +389,9 @@ namespace Model
     /**
      * <p>Specifies whether to rotate the secret immediately or wait until the next
      * scheduled rotation window. The rotation schedule is defined in
-     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
-     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>For secrets that use a Lambda
+     * rotation function to rotate, if you don't immediately rotate the secret, Secrets
+     * Manager tests the rotation configuration by running the <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
      * <code>testSecret</code> step</a> of the Lambda rotation function. The test
      * creates an <code>AWSPENDING</code> version of the secret and then removes
@@ -368,8 +403,9 @@ namespace Model
     /**
      * <p>Specifies whether to rotate the secret immediately or wait until the next
      * scheduled rotation window. The rotation schedule is defined in
-     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>If you don't immediately rotate
-     * the secret, Secrets Manager tests the rotation configuration by running the <a
+     * <a>RotateSecretRequest$RotationRules</a>.</p> <p>For secrets that use a Lambda
+     * rotation function to rotate, if you don't immediately rotate the secret, Secrets
+     * Manager tests the rotation configuration by running the <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
      * <code>testSecret</code> step</a> of the Lambda rotation function. The test
      * creates an <code>AWSPENDING</code> version of the secret and then removes
@@ -381,19 +417,19 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_rotationLambdaARN;
-    bool m_rotationLambdaARNHasBeenSet;
+    bool m_rotationLambdaARNHasBeenSet = false;
 
     RotationRulesType m_rotationRules;
-    bool m_rotationRulesHasBeenSet;
+    bool m_rotationRulesHasBeenSet = false;
 
     bool m_rotateImmediately;
-    bool m_rotateImmediatelyHasBeenSet;
+    bool m_rotateImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

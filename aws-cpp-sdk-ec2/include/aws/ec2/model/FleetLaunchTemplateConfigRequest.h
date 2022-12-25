@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetLaunchTemplateConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FleetLaunchTemplateConfigRequest
+  class FleetLaunchTemplateConfigRequest
   {
   public:
-    FleetLaunchTemplateConfigRequest();
-    FleetLaunchTemplateConfigRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FleetLaunchTemplateConfigRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetLaunchTemplateConfigRequest();
+    AWS_EC2_API FleetLaunchTemplateConfigRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetLaunchTemplateConfigRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     FleetLaunchTemplateSpecificationRequest m_launchTemplateSpecification;
-    bool m_launchTemplateSpecificationHasBeenSet;
+    bool m_launchTemplateSpecificationHasBeenSet = false;
 
     Aws::Vector<FleetLaunchTemplateOverridesRequest> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

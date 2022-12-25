@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API CreateAdditionalAssignmentsForHITRequest : public MTurkRequest
+  class CreateAdditionalAssignmentsForHITRequest : public MTurkRequest
   {
   public:
-    CreateAdditionalAssignmentsForHITRequest();
+    AWS_MTURK_API CreateAdditionalAssignmentsForHITRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAdditionalAssignmentsForHIT"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     int m_numberOfAdditionalAssignments;
-    bool m_numberOfAdditionalAssignmentsHasBeenSet;
+    bool m_numberOfAdditionalAssignmentsHasBeenSet = false;
 
     Aws::String m_uniqueRequestToken;
-    bool m_uniqueRequestTokenHasBeenSet;
+    bool m_uniqueRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

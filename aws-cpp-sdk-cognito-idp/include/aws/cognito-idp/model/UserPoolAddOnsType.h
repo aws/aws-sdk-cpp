@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolAddOnsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType
+  class UserPoolAddOnsType
   {
   public:
-    UserPoolAddOnsType();
-    UserPoolAddOnsType(Aws::Utils::Json::JsonView jsonValue);
-    UserPoolAddOnsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AdvancedSecurityModeType m_advancedSecurityMode;
-    bool m_advancedSecurityModeHasBeenSet;
+    bool m_advancedSecurityModeHasBeenSet = false;
   };
 
 } // namespace Model

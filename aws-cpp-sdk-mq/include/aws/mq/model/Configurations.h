@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Configurations">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API Configurations
+  class Configurations
   {
   public:
-    Configurations();
-    Configurations(Aws::Utils::Json::JsonView jsonValue);
-    Configurations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API Configurations();
+    AWS_MQ_API Configurations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Configurations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     ConfigurationId m_current;
-    bool m_currentHasBeenSet;
+    bool m_currentHasBeenSet = false;
 
     Aws::Vector<ConfigurationId> m_history;
-    bool m_historyHasBeenSet;
+    bool m_historyHasBeenSet = false;
 
     ConfigurationId m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
   };
 
 } // namespace Model

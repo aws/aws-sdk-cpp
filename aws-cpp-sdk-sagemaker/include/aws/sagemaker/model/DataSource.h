@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DataSource();
+    AWS_SAGEMAKER_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     S3DataSource m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
 
     FileSystemDataSource m_fileSystemDataSource;
-    bool m_fileSystemDataSourceHasBeenSet;
+    bool m_fileSystemDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

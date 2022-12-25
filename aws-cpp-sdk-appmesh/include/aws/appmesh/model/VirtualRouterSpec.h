@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualRouterSpec
+  class VirtualRouterSpec
   {
   public:
-    VirtualRouterSpec();
-    VirtualRouterSpec(Aws::Utils::Json::JsonView jsonValue);
-    VirtualRouterSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualRouterSpec();
+    AWS_APPMESH_API VirtualRouterSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualRouterSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<VirtualRouterListener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
   };
 
 } // namespace Model

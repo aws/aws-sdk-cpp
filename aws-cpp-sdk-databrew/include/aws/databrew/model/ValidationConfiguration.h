@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ValidationConfiguration
+  class ValidationConfiguration
   {
   public:
-    ValidationConfiguration();
-    ValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ValidationConfiguration();
+    AWS_GLUEDATABREW_API ValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_rulesetArn;
-    bool m_rulesetArnHasBeenSet;
+    bool m_rulesetArnHasBeenSet = false;
 
     ValidationMode m_validationMode;
-    bool m_validationModeHasBeenSet;
+    bool m_validationModeHasBeenSet = false;
   };
 
 } // namespace Model

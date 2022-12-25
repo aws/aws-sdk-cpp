@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/Policy">AWS API
    * Reference</a></p>
    */
-  class AWS_FMS_API Policy
+  class Policy
   {
   public:
-    Policy();
-    Policy(Aws::Utils::Json::JsonView jsonValue);
-    Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API Policy();
+    AWS_FMS_API Policy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -629,7 +629,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
@@ -652,7 +652,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
@@ -675,7 +675,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
@@ -698,7 +698,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
@@ -721,7 +721,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
@@ -744,7 +744,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
@@ -767,7 +767,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
@@ -790,7 +790,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
@@ -813,7 +813,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
@@ -836,7 +836,7 @@ namespace Model
      * <code>ORG_UNIT</code>. For example, the following is a valid map:
      * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
      * accounts and OUs together in a single map, separated with a comma. For example,
-     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2��],
      * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
@@ -1072,43 +1072,136 @@ namespace Model
      */
     inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceSetIds() const{ return m_resourceSetIds; }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline bool ResourceSetIdsHasBeenSet() const { return m_resourceSetIdsHasBeenSet; }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline void SetResourceSetIds(const Aws::Vector<Aws::String>& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds = value; }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline void SetResourceSetIds(Aws::Vector<Aws::String>&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds = std::move(value); }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline Policy& WithResourceSetIds(const Aws::Vector<Aws::String>& value) { SetResourceSetIds(value); return *this;}
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline Policy& WithResourceSetIds(Aws::Vector<Aws::String>&& value) { SetResourceSetIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline Policy& AddResourceSetIds(const Aws::String& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(value); return *this; }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline Policy& AddResourceSetIds(Aws::String&& value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The unique identifiers of the resource sets used by the policy.</p>
+     */
+    inline Policy& AddResourceSetIds(const char* value) { m_resourceSetIdsHasBeenSet = true; m_resourceSetIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline void SetPolicyDescription(const Aws::String& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = value; }
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline void SetPolicyDescription(Aws::String&& value) { m_policyDescriptionHasBeenSet = true; m_policyDescription = std::move(value); }
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline void SetPolicyDescription(const char* value) { m_policyDescriptionHasBeenSet = true; m_policyDescription.assign(value); }
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline Policy& WithPolicyDescription(const Aws::String& value) { SetPolicyDescription(value); return *this;}
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline Policy& WithPolicyDescription(Aws::String&& value) { SetPolicyDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The definition of the Network Firewall firewall policy.</p>
+     */
+    inline Policy& WithPolicyDescription(const char* value) { SetPolicyDescription(value); return *this;}
+
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyUpdateToken;
-    bool m_policyUpdateTokenHasBeenSet;
+    bool m_policyUpdateTokenHasBeenSet = false;
 
     SecurityServicePolicyData m_securityServicePolicyData;
-    bool m_securityServicePolicyDataHasBeenSet;
+    bool m_securityServicePolicyDataHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeList;
-    bool m_resourceTypeListHasBeenSet;
+    bool m_resourceTypeListHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     bool m_excludeResourceTags;
-    bool m_excludeResourceTagsHasBeenSet;
+    bool m_excludeResourceTagsHasBeenSet = false;
 
     bool m_remediationEnabled;
-    bool m_remediationEnabledHasBeenSet;
+    bool m_remediationEnabledHasBeenSet = false;
 
     bool m_deleteUnusedFMManagedResources;
-    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
-    bool m_includeMapHasBeenSet;
+    bool m_includeMapHasBeenSet = false;
 
     Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_excludeMap;
-    bool m_excludeMapHasBeenSet;
+    bool m_excludeMapHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_resourceSetIds;
+    bool m_resourceSetIdsHasBeenSet = false;
+
+    Aws::String m_policyDescription;
+    bool m_policyDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

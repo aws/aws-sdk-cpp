@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_BRAKET_API CreateQuantumTaskRequest : public BraketRequest
+  class CreateQuantumTaskRequest : public BraketRequest
   {
   public:
-    CreateQuantumTaskRequest();
+    AWS_BRAKET_API CreateQuantumTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateQuantumTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BRAKET_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -426,31 +426,31 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceParameters;
-    bool m_deviceParametersHasBeenSet;
+    bool m_deviceParametersHasBeenSet = false;
 
     Aws::String m_jobToken;
-    bool m_jobTokenHasBeenSet;
+    bool m_jobTokenHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
-    bool m_outputS3BucketHasBeenSet;
+    bool m_outputS3BucketHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     long long m_shots;
-    bool m_shotsHasBeenSet;
+    bool m_shotsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

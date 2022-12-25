@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/User">AWS API
    * Reference</a></p>
    */
-  class AWS_WORKDOCS_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API User();
+    AWS_WORKDOCS_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -599,49 +599,49 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_givenName;
-    bool m_givenNameHasBeenSet;
+    bool m_givenNameHasBeenSet = false;
 
     Aws::String m_surname;
-    bool m_surnameHasBeenSet;
+    bool m_surnameHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_rootFolderId;
-    bool m_rootFolderIdHasBeenSet;
+    bool m_rootFolderIdHasBeenSet = false;
 
     Aws::String m_recycleBinFolderId;
-    bool m_recycleBinFolderIdHasBeenSet;
+    bool m_recycleBinFolderIdHasBeenSet = false;
 
     UserStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimestamp;
-    bool m_modifiedTimestampHasBeenSet;
+    bool m_modifiedTimestampHasBeenSet = false;
 
     Aws::String m_timeZoneId;
-    bool m_timeZoneIdHasBeenSet;
+    bool m_timeZoneIdHasBeenSet = false;
 
     LocaleType m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     UserStorageMetadata m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API UpdateEndpointAccessRequest : public RedshiftServerlessRequest
+  class UpdateEndpointAccessRequest : public RedshiftServerlessRequest
   {
   public:
-    UpdateEndpointAccessRequest();
+    AWS_REDSHIFTSERVERLESS_API UpdateEndpointAccessRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEndpointAccess"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

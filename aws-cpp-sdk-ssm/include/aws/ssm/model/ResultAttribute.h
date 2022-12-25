@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResultAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResultAttribute
+  class ResultAttribute
   {
   public:
-    ResultAttribute();
-    ResultAttribute(Aws::Utils::Json::JsonView jsonValue);
-    ResultAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResultAttribute();
+    AWS_SSM_API ResultAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResultAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
   };
 
 } // namespace Model

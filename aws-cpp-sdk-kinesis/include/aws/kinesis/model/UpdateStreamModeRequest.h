@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESIS_API UpdateStreamModeRequest : public KinesisRequest
+  class UpdateStreamModeRequest : public KinesisRequest
   {
   public:
-    UpdateStreamModeRequest();
+    AWS_KINESIS_API UpdateStreamModeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStreamMode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESIS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p> Specifies the ARN of the data stream whose capacity mode you want to update.
@@ -129,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     StreamModeDetails m_streamModeDetails;
-    bool m_streamModeDetailsHasBeenSet;
+    bool m_streamModeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpsertRedshiftTargetOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UpsertRedshiftTargetOptions
+  class UpsertRedshiftTargetOptions
   {
   public:
-    UpsertRedshiftTargetOptions();
-    UpsertRedshiftTargetOptions(Aws::Utils::Json::JsonView jsonValue);
-    UpsertRedshiftTargetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UpsertRedshiftTargetOptions();
+    AWS_GLUE_API UpsertRedshiftTargetOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UpsertRedshiftTargetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_tableLocation;
-    bool m_tableLocationHasBeenSet;
+    bool m_tableLocationHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_upsertKeys;
-    bool m_upsertKeysHasBeenSet;
+    bool m_upsertKeysHasBeenSet = false;
   };
 
 } // namespace Model

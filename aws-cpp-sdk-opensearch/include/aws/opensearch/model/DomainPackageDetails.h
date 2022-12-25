@@ -28,57 +28,59 @@ namespace Model
 {
 
   /**
-   * <p>Information on a package associated with a domain.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about a package that is associated with a domain. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+   * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainPackageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainPackageDetails
+  class DomainPackageDetails
   {
   public:
-    DomainPackageDetails();
-    DomainPackageDetails(Aws::Utils::Json::JsonView jsonValue);
-    DomainPackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainPackageDetails();
+    AWS_OPENSEARCHSERVICE_API DomainPackageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainPackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline DomainPackageDetails& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline DomainPackageDetails& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
 
     /**
-     * <p>The internal ID of the package.</p>
+     * <p>Internal ID of the package.</p>
      */
     inline DomainPackageDetails& WithPackageID(const char* value) { SetPackageID(value); return *this;}
 
@@ -125,221 +127,225 @@ namespace Model
 
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline const PackageType& GetPackageType() const{ return m_packageType; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline DomainPackageDetails& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline DomainPackageDetails& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline DomainPackageDetails& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * <p>The timestamp of the most recent update to the package association
-     * status.</p>
+     * <p>Timestamp of the most recent update to the package association status.</p>
      */
     inline DomainPackageDetails& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline DomainPackageDetails& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline DomainPackageDetails& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain you've associated a package with.</p>
+     * <p>Name of the domain that the package is associated with.</p>
      */
     inline DomainPackageDetails& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline const DomainPackageStatus& GetDomainPackageStatus() const{ return m_domainPackageStatus; }
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline bool DomainPackageStatusHasBeenSet() const { return m_domainPackageStatusHasBeenSet; }
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline void SetDomainPackageStatus(const DomainPackageStatus& value) { m_domainPackageStatusHasBeenSet = true; m_domainPackageStatus = value; }
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline void SetDomainPackageStatus(DomainPackageStatus&& value) { m_domainPackageStatusHasBeenSet = true; m_domainPackageStatus = std::move(value); }
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline DomainPackageDetails& WithDomainPackageStatus(const DomainPackageStatus& value) { SetDomainPackageStatus(value); return *this;}
 
     /**
-     * <p>State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE,
-     * DISSOCIATING, and DISSOCIATION_FAILED.</p>
+     * <p>State of the association.</p>
      */
     inline DomainPackageDetails& WithDomainPackageStatus(DomainPackageStatus&& value) { SetDomainPackageStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline DomainPackageDetails& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline DomainPackageDetails& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The current version of the package.</p>
+     */
     inline DomainPackageDetails& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
 
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline const Aws::String& GetReferencePath() const{ return m_referencePath; }
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline bool ReferencePathHasBeenSet() const { return m_referencePathHasBeenSet; }
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline void SetReferencePath(const Aws::String& value) { m_referencePathHasBeenSet = true; m_referencePath = value; }
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline void SetReferencePath(Aws::String&& value) { m_referencePathHasBeenSet = true; m_referencePath = std::move(value); }
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline void SetReferencePath(const char* value) { m_referencePathHasBeenSet = true; m_referencePath.assign(value); }
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(const Aws::String& value) { SetReferencePath(value); return *this;}
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(Aws::String&& value) { SetReferencePath(std::move(value)); return *this;}
 
     /**
-     * <p>The relative path on Amazon OpenSearch Service nodes, which can be used as
-     * synonym_path when the package is a synonym file.</p>
+     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
+     * It's the same as <code>synonym_path</code> for dictionary files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(const char* value) { SetReferencePath(value); return *this;}
 
@@ -383,31 +389,31 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     DomainPackageStatus m_domainPackageStatus;
-    bool m_domainPackageStatusHasBeenSet;
+    bool m_domainPackageStatusHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_referencePath;
-    bool m_referencePathHasBeenSet;
+    bool m_referencePathHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

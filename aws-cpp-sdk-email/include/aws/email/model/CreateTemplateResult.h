@@ -24,12 +24,12 @@ namespace SES
 {
 namespace Model
 {
-  class AWS_SES_API CreateTemplateResult
+  class CreateTemplateResult
   {
   public:
-    CreateTemplateResult();
-    CreateTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateTemplateResult();
+    AWS_SES_API CreateTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

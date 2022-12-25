@@ -16,7 +16,8 @@ StartTaskExecutionRequest::StartTaskExecutionRequest() :
     m_taskArnHasBeenSet(false),
     m_overrideOptionsHasBeenSet(false),
     m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
+    m_excludesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,7 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
 
   if(m_includesHasBeenSet)
   {
-   Array<JsonValue> includesJsonList(m_includes.size());
+   Aws::Utils::Array<JsonValue> includesJsonList(m_includes.size());
    for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
    {
      includesJsonList[includesIndex].AsObject(m_includes[includesIndex].Jsonize());
@@ -49,12 +50,23 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
 
   if(m_excludesHasBeenSet)
   {
-   Array<JsonValue> excludesJsonList(m_excludes.size());
+   Aws::Utils::Array<JsonValue> excludesJsonList(m_excludes.size());
    for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
    {
      excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
    }
    payload.WithArray("Excludes", std::move(excludesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

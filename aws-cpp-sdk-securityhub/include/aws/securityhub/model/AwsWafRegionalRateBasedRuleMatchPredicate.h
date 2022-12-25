@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRateBasedRuleMatchPredicate">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleMatchPredicate
+  class AwsWafRegionalRateBasedRuleMatchPredicate
   {
   public:
-    AwsWafRegionalRateBasedRuleMatchPredicate();
-    AwsWafRegionalRateBasedRuleMatchPredicate(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalRateBasedRuleMatchPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleMatchPredicate();
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleMatchPredicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleMatchPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,55 +114,95 @@ namespace Model
 
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline AwsWafRegionalRateBasedRuleMatchPredicate& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline AwsWafRegionalRateBasedRuleMatchPredicate& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of predicate.</p>
+     * <p>The type of predicate. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>ByteMatch</code> </p> </li> <li> <p> <code>GeoMatch</code> </p> </li> <li>
+     * <p> <code>IPMatch</code> </p> </li> <li> <p> <code>RegexMatch</code> </p> </li>
+     * <li> <p> <code>SizeConstraint</code> </p> </li> <li> <p>
+     * <code>SqlInjectionMatch</code> </p> </li> <li> <p> <code>XssMatch</code> </p>
+     * </li> </ul>
      */
     inline AwsWafRegionalRateBasedRuleMatchPredicate& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::String m_dataId;
-    bool m_dataIdHasBeenSet;
+    bool m_dataIdHasBeenSet = false;
 
     bool m_negated;
-    bool m_negatedHasBeenSet;
+    bool m_negatedHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationCodeConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription
+  class ApplicationCodeConfigurationDescription
   {
   public:
-    ApplicationCodeConfigurationDescription();
-    ApplicationCodeConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationCodeConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     CodeContentType m_codeContentType;
-    bool m_codeContentTypeHasBeenSet;
+    bool m_codeContentTypeHasBeenSet = false;
 
     CodeContentDescription m_codeContentDescription;
-    bool m_codeContentDescriptionHasBeenSet;
+    bool m_codeContentDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

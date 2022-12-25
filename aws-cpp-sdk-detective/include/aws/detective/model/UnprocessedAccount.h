@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UnprocessedAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API UnprocessedAccount
+  class UnprocessedAccount
   {
   public:
-    UnprocessedAccount();
-    UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API UnprocessedAccount();
+    AWS_DETECTIVE_API UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

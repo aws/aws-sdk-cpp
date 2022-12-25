@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API CopyDBParameterGroupRequest : public RDSRequest
+  class CopyDBParameterGroupRequest : public RDSRequest
   {
   public:
-    CopyDBParameterGroupRequest();
+    AWS_RDS_API CopyDBParameterGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyDBParameterGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -263,16 +263,16 @@ namespace Model
   private:
 
     Aws::String m_sourceDBParameterGroupIdentifier;
-    bool m_sourceDBParameterGroupIdentifierHasBeenSet;
+    bool m_sourceDBParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBParameterGroupIdentifier;
-    bool m_targetDBParameterGroupIdentifierHasBeenSet;
+    bool m_targetDBParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBParameterGroupDescription;
-    bool m_targetDBParameterGroupDescriptionHasBeenSet;
+    bool m_targetDBParameterGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

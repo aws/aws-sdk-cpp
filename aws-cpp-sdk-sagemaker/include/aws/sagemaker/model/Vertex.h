@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Vertex">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Vertex
+  class Vertex
   {
   public:
-    Vertex();
-    Vertex(Aws::Utils::Json::JsonView jsonValue);
-    Vertex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Vertex();
+    AWS_SAGEMAKER_API Vertex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Vertex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     LineageType m_lineageType;
-    bool m_lineageTypeHasBeenSet;
+    bool m_lineageTypeHasBeenSet = false;
   };
 
 } // namespace Model

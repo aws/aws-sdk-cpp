@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CodeRepositorySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CodeRepositorySummary
+  class CodeRepositorySummary
   {
   public:
-    CodeRepositorySummary();
-    CodeRepositorySummary(Aws::Utils::Json::JsonView jsonValue);
-    CodeRepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CodeRepositorySummary();
+    AWS_SAGEMAKER_API CodeRepositorySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CodeRepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_codeRepositoryName;
-    bool m_codeRepositoryNameHasBeenSet;
+    bool m_codeRepositoryNameHasBeenSet = false;
 
     Aws::String m_codeRepositoryArn;
-    bool m_codeRepositoryArnHasBeenSet;
+    bool m_codeRepositoryArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     GitConfig m_gitConfig;
-    bool m_gitConfigHasBeenSet;
+    bool m_gitConfigHasBeenSet = false;
   };
 
 } // namespace Model

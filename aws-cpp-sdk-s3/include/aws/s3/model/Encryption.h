@@ -28,14 +28,14 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Encryption">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API Encryption
+  class Encryption
   {
   public:
-    Encryption();
-    Encryption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Encryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API Encryption();
+    AWS_S3_API Encryption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API Encryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -207,13 +207,13 @@ namespace Model
   private:
 
     ServerSideEncryption m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     Aws::String m_kMSContext;
-    bool m_kMSContextHasBeenSet;
+    bool m_kMSContextHasBeenSet = false;
   };
 
 } // namespace Model

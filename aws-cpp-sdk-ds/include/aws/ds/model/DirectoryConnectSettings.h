@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryConnectSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryConnectSettings
+  class DirectoryConnectSettings
   {
   public:
-    DirectoryConnectSettings();
-    DirectoryConnectSettings(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryConnectSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettings();
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,16 +257,16 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customerDnsIps;
-    bool m_customerDnsIpsHasBeenSet;
+    bool m_customerDnsIpsHasBeenSet = false;
 
     Aws::String m_customerUserName;
-    bool m_customerUserNameHasBeenSet;
+    bool m_customerUserNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API OrganizationEvent
+  class OrganizationEvent
   {
   public:
-    OrganizationEvent();
-    OrganizationEvent(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API OrganizationEvent();
+    AWS_HEALTH_API OrganizationEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API OrganizationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -543,34 +543,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_eventTypeCode;
-    bool m_eventTypeCodeHasBeenSet;
+    bool m_eventTypeCodeHasBeenSet = false;
 
     EventTypeCategory m_eventTypeCategory;
-    bool m_eventTypeCategoryHasBeenSet;
+    bool m_eventTypeCategoryHasBeenSet = false;
 
     EventScopeCode m_eventScopeCode;
-    bool m_eventScopeCodeHasBeenSet;
+    bool m_eventScopeCodeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     EventStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

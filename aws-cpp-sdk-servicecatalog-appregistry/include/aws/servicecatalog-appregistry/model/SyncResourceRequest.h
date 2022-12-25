@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPREGISTRY_API SyncResourceRequest : public AppRegistryRequest
+  class SyncResourceRequest : public AppRegistryRequest
   {
   public:
-    SyncResourceRequest();
+    AWS_APPREGISTRY_API SyncResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SyncResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
   };
 
 } // namespace Model

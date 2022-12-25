@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API BatchPutGeofenceRequest : public LocationServiceRequest
+  class BatchPutGeofenceRequest : public LocationServiceRequest
   {
   public:
-    BatchPutGeofenceRequest();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchPutGeofence"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::Vector<BatchPutGeofenceRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
   };
 
 } // namespace Model

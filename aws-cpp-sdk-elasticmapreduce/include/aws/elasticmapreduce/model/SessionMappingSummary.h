@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SessionMappingSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SessionMappingSummary
+  class SessionMappingSummary
   {
   public:
-    SessionMappingSummary();
-    SessionMappingSummary(Aws::Utils::Json::JsonView jsonValue);
-    SessionMappingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API SessionMappingSummary();
+    AWS_EMR_API SessionMappingSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API SessionMappingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_identityName;
-    bool m_identityNameHasBeenSet;
+    bool m_identityNameHasBeenSet = false;
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_sessionPolicyArn;
-    bool m_sessionPolicyArnHasBeenSet;
+    bool m_sessionPolicyArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

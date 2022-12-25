@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DependencyRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API DependencyRevision
+  class DependencyRevision
   {
   public:
-    DependencyRevision();
-    DependencyRevision(Aws::Utils::Json::JsonView jsonValue);
-    DependencyRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API DependencyRevision();
+    AWS_IOTTHINGSGRAPH_API DependencyRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API DependencyRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_revisionNumber;
-    bool m_revisionNumberHasBeenSet;
+    bool m_revisionNumberHasBeenSet = false;
   };
 
 } // namespace Model

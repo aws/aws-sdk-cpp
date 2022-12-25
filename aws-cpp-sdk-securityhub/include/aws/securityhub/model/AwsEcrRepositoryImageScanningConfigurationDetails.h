@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrRepositoryImageScanningConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails
+  class AwsEcrRepositoryImageScanningConfigurationDetails
   {
   public:
-    AwsEcrRepositoryImageScanningConfigurationDetails();
-    AwsEcrRepositoryImageScanningConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrRepositoryImageScanningConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_scanOnPush;
-    bool m_scanOnPushHasBeenSet;
+    bool m_scanOnPushHasBeenSet = false;
   };
 
 } // namespace Model

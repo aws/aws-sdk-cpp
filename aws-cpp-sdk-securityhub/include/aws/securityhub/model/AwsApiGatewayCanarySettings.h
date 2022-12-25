@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayCanarySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayCanarySettings
+  class AwsApiGatewayCanarySettings
   {
   public:
-    AwsApiGatewayCanarySettings();
-    AwsApiGatewayCanarySettings(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayCanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayCanarySettings();
+    AWS_SECURITYHUB_API AwsApiGatewayCanarySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayCanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     double m_percentTraffic;
-    bool m_percentTrafficHasBeenSet;
+    bool m_percentTrafficHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariableOverrides;
-    bool m_stageVariableOverridesHasBeenSet;
+    bool m_stageVariableOverridesHasBeenSet = false;
 
     bool m_useStageCache;
-    bool m_useStageCacheHasBeenSet;
+    bool m_useStageCacheHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TimeoutConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TimeoutConfig
+  class TimeoutConfig
   {
   public:
-    TimeoutConfig();
-    TimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
-    TimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TimeoutConfig();
+    AWS_IOT_API TimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     long long m_inProgressTimeoutInMinutes;
-    bool m_inProgressTimeoutInMinutesHasBeenSet;
+    bool m_inProgressTimeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

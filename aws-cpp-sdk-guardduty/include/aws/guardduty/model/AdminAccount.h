@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AdminAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API AdminAccount
+  class AdminAccount
   {
   public:
-    AdminAccount();
-    AdminAccount(Aws::Utils::Json::JsonView jsonValue);
-    AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API AdminAccount();
+    AWS_GUARDDUTY_API AdminAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_adminAccountId;
-    bool m_adminAccountIdHasBeenSet;
+    bool m_adminAccountIdHasBeenSet = false;
 
     AdminStatus m_adminStatus;
-    bool m_adminStatusHasBeenSet;
+    bool m_adminStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerRequest : public LightsailRequest
+  class DetachInstancesFromLoadBalancerRequest : public LightsailRequest
   {
   public:
-    DetachInstancesFromLoadBalancerRequest();
+    AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DetachInstancesFromLoadBalancer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceNames;
-    bool m_instanceNamesHasBeenSet;
+    bool m_instanceNamesHasBeenSet = false;
   };
 
 } // namespace Model

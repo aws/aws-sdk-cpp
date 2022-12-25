@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterBacktrack">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterBacktrack
+  class DBClusterBacktrack
   {
   public:
-    DBClusterBacktrack();
-    DBClusterBacktrack(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterBacktrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterBacktrack();
+    AWS_RDS_API DBClusterBacktrack(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterBacktrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_backtrackIdentifier;
-    bool m_backtrackIdentifierHasBeenSet;
+    bool m_backtrackIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackTo;
-    bool m_backtrackToHasBeenSet;
+    bool m_backtrackToHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackedFrom;
-    bool m_backtrackedFromHasBeenSet;
+    bool m_backtrackedFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_backtrackRequestCreationTime;
-    bool m_backtrackRequestCreationTimeHasBeenSet;
+    bool m_backtrackRequestCreationTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

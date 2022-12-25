@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregatesEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesEntry
+  class BatchGetAssetPropertyAggregatesEntry
   {
   public:
-    BatchGetAssetPropertyAggregatesEntry();
-    BatchGetAssetPropertyAggregatesEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyAggregatesEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,34 +492,34 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     Aws::Vector<AggregateType> m_aggregateTypes;
-    bool m_aggregateTypesHasBeenSet;
+    bool m_aggregateTypesHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Vector<Quality> m_qualities;
-    bool m_qualitiesHasBeenSet;
+    bool m_qualitiesHasBeenSet = false;
 
     TimeOrdering m_timeOrdering;
-    bool m_timeOrderingHasBeenSet;
+    bool m_timeOrderingHasBeenSet = false;
   };
 
 } // namespace Model

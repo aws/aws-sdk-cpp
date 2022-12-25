@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/Suggester">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API Suggester
+  class Suggester
   {
   public:
-    Suggester();
-    Suggester(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Suggester& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API Suggester();
+    AWS_CLOUDSEARCH_API Suggester(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API Suggester& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_suggesterName;
-    bool m_suggesterNameHasBeenSet;
+    bool m_suggesterNameHasBeenSet = false;
 
     DocumentSuggesterOptions m_documentSuggesterOptions;
-    bool m_documentSuggesterOptionsHasBeenSet;
+    bool m_documentSuggesterOptionsHasBeenSet = false;
   };
 
 } // namespace Model

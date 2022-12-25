@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3OUTPOSTS_API DeleteEndpointRequest : public S3OutpostsRequest
+  class DeleteEndpointRequest : public S3OutpostsRequest
   {
   public:
-    DeleteEndpointRequest();
+    AWS_S3OUTPOSTS_API DeleteEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3OUTPOSTS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
   };
 
 } // namespace Model

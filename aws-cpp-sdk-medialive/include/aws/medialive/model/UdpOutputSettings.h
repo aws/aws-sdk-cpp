@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UdpOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UdpOutputSettings
+  class UdpOutputSettings
   {
   public:
-    UdpOutputSettings();
-    UdpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    UdpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API UdpOutputSettings();
+    AWS_MEDIALIVE_API UdpOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API UdpOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,16 +161,16 @@ namespace Model
   private:
 
     int m_bufferMsec;
-    bool m_bufferMsecHasBeenSet;
+    bool m_bufferMsecHasBeenSet = false;
 
     UdpContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     FecOutputSettings m_fecOutputSettings;
-    bool m_fecOutputSettingsHasBeenSet;
+    bool m_fecOutputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

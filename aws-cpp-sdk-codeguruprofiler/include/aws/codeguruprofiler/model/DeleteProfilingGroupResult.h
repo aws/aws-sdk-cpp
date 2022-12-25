@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API DeleteProfilingGroupResult
+  class DeleteProfilingGroupResult
   {
   public:
-    DeleteProfilingGroupResult();
-    DeleteProfilingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProfilingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API DeleteProfilingGroupResult();
+    AWS_CODEGURUPROFILER_API DeleteProfilingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API DeleteProfilingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

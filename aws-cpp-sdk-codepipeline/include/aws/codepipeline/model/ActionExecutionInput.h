@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecutionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionExecutionInput
+  class ActionExecutionInput
   {
   public:
-    ActionExecutionInput();
-    ActionExecutionInput(Aws::Utils::Json::JsonView jsonValue);
-    ActionExecutionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionExecutionInput();
+    AWS_CODEPIPELINE_API ActionExecutionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionExecutionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -395,25 +395,25 @@ namespace Model
   private:
 
     ActionTypeId m_actionTypeId;
-    bool m_actionTypeIdHasBeenSet;
+    bool m_actionTypeIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_resolvedConfiguration;
-    bool m_resolvedConfigurationHasBeenSet;
+    bool m_resolvedConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<ArtifactDetail> m_inputArtifacts;
-    bool m_inputArtifactsHasBeenSet;
+    bool m_inputArtifactsHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

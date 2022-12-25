@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ServiceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceSummary
+  class ServiceSummary
   {
   public:
-    ServiceSummary();
-    ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API ServiceSummary();
+    AWS_SERVICEDISCOVERY_API ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -310,37 +310,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline ServiceSummary& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
+     * <p>Information about the Route 53 DNS records that you want Cloud Map to create
      * when you register an instance.</p>
      */
     inline ServiceSummary& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
@@ -519,34 +519,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServiceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     DnsConfig m_dnsConfig;
-    bool m_dnsConfigHasBeenSet;
+    bool m_dnsConfigHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
 
     HealthCheckCustomConfig m_healthCheckCustomConfig;
-    bool m_healthCheckCustomConfigHasBeenSet;
+    bool m_healthCheckCustomConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

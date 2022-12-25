@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CodeCoverageReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API CodeCoverageReportSummary
+  class CodeCoverageReportSummary
   {
   public:
-    CodeCoverageReportSummary();
-    CodeCoverageReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    CodeCoverageReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API CodeCoverageReportSummary();
+    AWS_CODEBUILD_API CodeCoverageReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API CodeCoverageReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,22 +167,22 @@ namespace Model
   private:
 
     double m_lineCoveragePercentage;
-    bool m_lineCoveragePercentageHasBeenSet;
+    bool m_lineCoveragePercentageHasBeenSet = false;
 
     int m_linesCovered;
-    bool m_linesCoveredHasBeenSet;
+    bool m_linesCoveredHasBeenSet = false;
 
     int m_linesMissed;
-    bool m_linesMissedHasBeenSet;
+    bool m_linesMissedHasBeenSet = false;
 
     double m_branchCoveragePercentage;
-    bool m_branchCoveragePercentageHasBeenSet;
+    bool m_branchCoveragePercentageHasBeenSet = false;
 
     int m_branchesCovered;
-    bool m_branchesCoveredHasBeenSet;
+    bool m_branchesCoveredHasBeenSet = false;
 
     int m_branchesMissed;
-    bool m_branchesMissedHasBeenSet;
+    bool m_branchesMissedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceConfigurableSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceConfigurableSettings
+  class InputDeviceConfigurableSettings
   {
   public:
-    InputDeviceConfigurableSettings();
-    InputDeviceConfigurableSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceConfigurableSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings();
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,13 +110,37 @@ namespace Model
      */
     inline InputDeviceConfigurableSettings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline int GetLatencyMs() const{ return m_latencyMs; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline InputDeviceConfigurableSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
+
   private:
 
     InputDeviceConfiguredInput m_configuredInput;
-    bool m_configuredInputHasBeenSet;
+    bool m_configuredInputHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
+
+    int m_latencyMs;
+    bool m_latencyMsHasBeenSet = false;
   };
 
 } // namespace Model

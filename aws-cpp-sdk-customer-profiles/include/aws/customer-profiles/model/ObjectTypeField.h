@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ObjectTypeField">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ObjectTypeField
+  class ObjectTypeField
   {
   public:
-    ObjectTypeField();
-    ObjectTypeField(Aws::Utils::Json::JsonView jsonValue);
-    ObjectTypeField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ObjectTypeField();
+    AWS_CUSTOMERPROFILES_API ObjectTypeField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ObjectTypeField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     FieldContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

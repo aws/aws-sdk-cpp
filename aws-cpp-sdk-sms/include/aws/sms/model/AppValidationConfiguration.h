@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/AppValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API AppValidationConfiguration
+  class AppValidationConfiguration
   {
   public:
-    AppValidationConfiguration();
-    AppValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AppValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API AppValidationConfiguration();
+    AWS_SMS_API AppValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API AppValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AppValidationStrategy m_appValidationStrategy;
-    bool m_appValidationStrategyHasBeenSet;
+    bool m_appValidationStrategyHasBeenSet = false;
 
     SSMValidationParameters m_ssmValidationParameters;
-    bool m_ssmValidationParametersHasBeenSet;
+    bool m_ssmValidationParametersHasBeenSet = false;
   };
 
 } // namespace Model

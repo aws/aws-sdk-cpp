@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUploadInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API InitiateMultipartUploadRequest : public GlacierRequest
+  class InitiateMultipartUploadRequest : public GlacierRequest
   {
   public:
-    InitiateMultipartUploadRequest();
+    AWS_GLACIER_API InitiateMultipartUploadRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InitiateMultipartUpload"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLACIER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLACIER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_archiveDescription;
-    bool m_archiveDescriptionHasBeenSet;
+    bool m_archiveDescriptionHasBeenSet = false;
 
     Aws::String m_partSize;
-    bool m_partSizeHasBeenSet;
+    bool m_partSizeHasBeenSet = false;
   };
 
 } // namespace Model

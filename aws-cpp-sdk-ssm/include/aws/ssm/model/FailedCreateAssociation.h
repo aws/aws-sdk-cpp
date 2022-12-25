@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/FailedCreateAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API FailedCreateAssociation
+  class FailedCreateAssociation
   {
   public:
-    FailedCreateAssociation();
-    FailedCreateAssociation(Aws::Utils::Json::JsonView jsonValue);
-    FailedCreateAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API FailedCreateAssociation();
+    AWS_SSM_API FailedCreateAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API FailedCreateAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     CreateAssociationBatchRequestEntry m_entry;
-    bool m_entryHasBeenSet;
+    bool m_entryHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Fault m_fault;
-    bool m_faultHasBeenSet;
+    bool m_faultHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
-#include <aws/ssm-incidents/model/ItemIdentifier.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-incidents/model/ItemIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +30,70 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RelatedItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RelatedItem
+  class RelatedItem
   {
   public:
-    RelatedItem();
-    RelatedItem(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RelatedItem();
+    AWS_SSMINCIDENTS_API RelatedItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RelatedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline const Aws::String& GetGeneratedId() const{ return m_generatedId; }
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline bool GeneratedIdHasBeenSet() const { return m_generatedIdHasBeenSet; }
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline void SetGeneratedId(const Aws::String& value) { m_generatedIdHasBeenSet = true; m_generatedId = value; }
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline void SetGeneratedId(Aws::String&& value) { m_generatedIdHasBeenSet = true; m_generatedId = std::move(value); }
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline void SetGeneratedId(const char* value) { m_generatedIdHasBeenSet = true; m_generatedId.assign(value); }
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline RelatedItem& WithGeneratedId(const Aws::String& value) { SetGeneratedId(value); return *this;}
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline RelatedItem& WithGeneratedId(Aws::String&& value) { SetGeneratedId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique ID for a <code>RelatedItem</code>.</p>  <p>Don't specify
+     * this parameter when you add a <code>RelatedItem</code> by using the
+     * <a>UpdateRelatedItems</a> API action.</p> 
+     */
+    inline RelatedItem& WithGeneratedId(const char* value) { SetGeneratedId(value); return *this;}
 
 
     /**
@@ -112,11 +169,14 @@ namespace Model
 
   private:
 
+    Aws::String m_generatedId;
+    bool m_generatedIdHasBeenSet = false;
+
     ItemIdentifier m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

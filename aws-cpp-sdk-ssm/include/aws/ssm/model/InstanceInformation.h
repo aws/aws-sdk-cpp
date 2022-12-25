@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceInformation
+  class InstanceInformation
   {
   public:
-    InstanceInformation();
-    InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
-    InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceInformation();
+    AWS_SSM_API InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1039,67 +1039,67 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     PingStatus m_pingStatus;
-    bool m_pingStatusHasBeenSet;
+    bool m_pingStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastPingDateTime;
-    bool m_lastPingDateTimeHasBeenSet;
+    bool m_lastPingDateTimeHasBeenSet = false;
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     bool m_isLatestVersion;
-    bool m_isLatestVersionHasBeenSet;
+    bool m_isLatestVersionHasBeenSet = false;
 
     PlatformType m_platformType;
-    bool m_platformTypeHasBeenSet;
+    bool m_platformTypeHasBeenSet = false;
 
     Aws::String m_platformName;
-    bool m_platformNameHasBeenSet;
+    bool m_platformNameHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_activationId;
-    bool m_activationIdHasBeenSet;
+    bool m_activationIdHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     Aws::Utils::DateTime m_registrationDate;
-    bool m_registrationDateHasBeenSet;
+    bool m_registrationDateHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_iPAddress;
-    bool m_iPAddressHasBeenSet;
+    bool m_iPAddressHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::String m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAssociationExecutionDate;
-    bool m_lastAssociationExecutionDateHasBeenSet;
+    bool m_lastAssociationExecutionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulAssociationExecutionDate;
-    bool m_lastSuccessfulAssociationExecutionDateHasBeenSet;
+    bool m_lastSuccessfulAssociationExecutionDateHasBeenSet = false;
 
     InstanceAggregatedAssociationOverview m_associationOverview;
-    bool m_associationOverviewHasBeenSet;
+    bool m_associationOverviewHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

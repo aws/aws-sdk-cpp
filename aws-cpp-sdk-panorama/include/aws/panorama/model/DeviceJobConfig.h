@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeviceJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API DeviceJobConfig
+  class DeviceJobConfig
   {
   public:
-    DeviceJobConfig();
-    DeviceJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeviceJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API DeviceJobConfig();
+    AWS_PANORAMA_API DeviceJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API DeviceJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     OTAJobConfig m_oTAJobConfig;
-    bool m_oTAJobConfigHasBeenSet;
+    bool m_oTAJobConfigHasBeenSet = false;
   };
 
 } // namespace Model

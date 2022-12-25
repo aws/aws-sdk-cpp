@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Definition">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API Definition
+  class Definition
   {
   public:
-    Definition();
-    Definition(Aws::Utils::Json::JsonView jsonValue);
-    Definition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API Definition();
+    AWS_BUDGETS_API Definition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Definition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     IamActionDefinition m_iamActionDefinition;
-    bool m_iamActionDefinitionHasBeenSet;
+    bool m_iamActionDefinitionHasBeenSet = false;
 
     ScpActionDefinition m_scpActionDefinition;
-    bool m_scpActionDefinitionHasBeenSet;
+    bool m_scpActionDefinitionHasBeenSet = false;
 
     SsmActionDefinition m_ssmActionDefinition;
-    bool m_ssmActionDefinitionHasBeenSet;
+    bool m_ssmActionDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

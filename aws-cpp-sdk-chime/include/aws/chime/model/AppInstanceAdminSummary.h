@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdminSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AppInstanceAdminSummary
+  class AppInstanceAdminSummary
   {
   public:
-    AppInstanceAdminSummary();
-    AppInstanceAdminSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceAdminSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AppInstanceAdminSummary();
+    AWS_CHIME_API AppInstanceAdminSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AppInstanceAdminSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_admin;
-    bool m_adminHasBeenSet;
+    bool m_adminHasBeenSet = false;
   };
 
 } // namespace Model

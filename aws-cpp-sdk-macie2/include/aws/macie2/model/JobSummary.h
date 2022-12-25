@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/model/S3BucketCriteriaForJob.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -12,7 +13,6 @@
 #include <aws/macie2/model/JobType.h>
 #include <aws/macie2/model/LastRunErrorStatus.h>
 #include <aws/macie2/model/UserPausedDetails.h>
-#include <aws/macie2/model/S3BucketCriteriaForJob.h>
 #include <aws/macie2/model/S3BucketDefinitionForJob.h>
 #include <utility>
 
@@ -37,13 +37,62 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobSummary
+  class JobSummary
   {
   public:
-    JobSummary();
-    JobSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobSummary();
+    AWS_MACIE2_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline const S3BucketCriteriaForJob& GetBucketCriteria() const{ return m_bucketCriteria; }
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline bool BucketCriteriaHasBeenSet() const { return m_bucketCriteriaHasBeenSet; }
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline void SetBucketCriteria(const S3BucketCriteriaForJob& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = value; }
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline void SetBucketCriteria(S3BucketCriteriaForJob&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::move(value); }
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline JobSummary& WithBucketCriteria(const S3BucketCriteriaForJob& value) { SetBucketCriteria(value); return *this;}
+
+    /**
+     * <p>The property- and tag-based conditions that determine which S3 buckets are
+     * included or excluded from the job's analysis. Each time the job runs, the job
+     * uses these criteria to determine which buckets to analyze. A job's definition
+     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
+     */
+    inline JobSummary& WithBucketCriteria(S3BucketCriteriaForJob&& value) { SetBucketCriteria(std::move(value)); return *this;}
 
 
     /**
@@ -493,83 +542,34 @@ namespace Model
      */
     inline JobSummary& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline const S3BucketCriteriaForJob& GetBucketCriteria() const{ return m_bucketCriteria; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline bool BucketCriteriaHasBeenSet() const { return m_bucketCriteriaHasBeenSet; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline void SetBucketCriteria(const S3BucketCriteriaForJob& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = value; }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline void SetBucketCriteria(S3BucketCriteriaForJob&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::move(value); }
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline JobSummary& WithBucketCriteria(const S3BucketCriteriaForJob& value) { SetBucketCriteria(value); return *this;}
-
-    /**
-     * <p>The property- and tag-based conditions that determine which S3 buckets are
-     * included or excluded from the job's analysis. Each time the job runs, the job
-     * uses these criteria to determine which buckets to analyze. A job's definition
-     * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-     */
-    inline JobSummary& WithBucketCriteria(S3BucketCriteriaForJob&& value) { SetBucketCriteria(std::move(value)); return *this;}
-
   private:
 
+    S3BucketCriteriaForJob m_bucketCriteria;
+    bool m_bucketCriteriaHasBeenSet = false;
+
     Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
-    bool m_bucketDefinitionsHasBeenSet;
+    bool m_bucketDefinitionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     LastRunErrorStatus m_lastRunErrorStatus;
-    bool m_lastRunErrorStatusHasBeenSet;
+    bool m_lastRunErrorStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     UserPausedDetails m_userPausedDetails;
-    bool m_userPausedDetailsHasBeenSet;
-
-    S3BucketCriteriaForJob m_bucketCriteria;
-    bool m_bucketCriteriaHasBeenSet;
+    bool m_userPausedDetailsHasBeenSet = false;
   };
 
 } // namespace Model

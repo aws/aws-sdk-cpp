@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Message">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API Message
+  class Message
   {
   public:
-    Message();
-    Message(Aws::Utils::Json::JsonView jsonValue);
-    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API Message();
+    AWS_LEXMODELSV2_API Message(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     PlainTextMessage m_plainTextMessage;
-    bool m_plainTextMessageHasBeenSet;
+    bool m_plainTextMessageHasBeenSet = false;
 
     CustomPayload m_customPayload;
-    bool m_customPayloadHasBeenSet;
+    bool m_customPayloadHasBeenSet = false;
 
     SSMLMessage m_ssmlMessage;
-    bool m_ssmlMessageHasBeenSet;
+    bool m_ssmlMessageHasBeenSet = false;
 
     ImageResponseCard m_imageResponseCard;
-    bool m_imageResponseCardHasBeenSet;
+    bool m_imageResponseCardHasBeenSet = false;
   };
 
 } // namespace Model

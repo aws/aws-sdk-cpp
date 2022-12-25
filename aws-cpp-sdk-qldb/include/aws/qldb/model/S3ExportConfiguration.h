@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/S3ExportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API S3ExportConfiguration
+  class S3ExportConfiguration
   {
   public:
-    S3ExportConfiguration();
-    S3ExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3ExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API S3ExportConfiguration();
+    AWS_QLDB_API S3ExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API S3ExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,13 +256,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     S3EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

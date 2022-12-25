@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableVersionError">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TableVersionError
+  class TableVersionError
   {
   public:
-    TableVersionError();
-    TableVersionError(Aws::Utils::Json::JsonView jsonValue);
-    TableVersionError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TableVersionError();
+    AWS_GLUE_API TableVersionError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TableVersionError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     ErrorDetail m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

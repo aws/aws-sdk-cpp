@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TieringPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API TieringPolicy
+  class TieringPolicy
   {
   public:
-    TieringPolicy();
-    TieringPolicy(Aws::Utils::Json::JsonView jsonValue);
-    TieringPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API TieringPolicy();
+    AWS_FSX_API TieringPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API TieringPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,10 +166,10 @@ namespace Model
   private:
 
     int m_coolingPeriod;
-    bool m_coolingPeriodHasBeenSet;
+    bool m_coolingPeriodHasBeenSet = false;
 
     TieringPolicyName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

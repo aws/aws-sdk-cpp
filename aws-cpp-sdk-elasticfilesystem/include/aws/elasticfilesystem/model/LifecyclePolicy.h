@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/LifecyclePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API LifecyclePolicy
+  class LifecyclePolicy
   {
   public:
-    LifecyclePolicy();
-    LifecyclePolicy(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API LifecyclePolicy();
+    AWS_EFS_API LifecyclePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API LifecyclePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     TransitionToIARules m_transitionToIA;
-    bool m_transitionToIAHasBeenSet;
+    bool m_transitionToIAHasBeenSet = false;
 
     TransitionToPrimaryStorageClassRules m_transitionToPrimaryStorageClass;
-    bool m_transitionToPrimaryStorageClassHasBeenSet;
+    bool m_transitionToPrimaryStorageClassHasBeenSet = false;
   };
 
 } // namespace Model

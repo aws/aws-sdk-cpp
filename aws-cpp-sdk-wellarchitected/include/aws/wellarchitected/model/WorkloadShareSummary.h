@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/WorkloadShareSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API WorkloadShareSummary
+  class WorkloadShareSummary
   {
   public:
-    WorkloadShareSummary();
-    WorkloadShareSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorkloadShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API WorkloadShareSummary();
+    AWS_WELLARCHITECTED_API WorkloadShareSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API WorkloadShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -126,19 +126,63 @@ namespace Model
     
     inline WorkloadShareSummary& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
   private:
 
     Aws::String m_shareId;
-    bool m_shareIdHasBeenSet;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_sharedWith;
-    bool m_sharedWithHasBeenSet;
+    bool m_sharedWithHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     ShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

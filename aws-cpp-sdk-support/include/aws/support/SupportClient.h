@@ -5,128 +5,16 @@
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
-#include <aws/support/SupportErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/support/model/AddAttachmentsToSetResult.h>
-#include <aws/support/model/AddCommunicationToCaseResult.h>
-#include <aws/support/model/CreateCaseResult.h>
-#include <aws/support/model/DescribeAttachmentResult.h>
-#include <aws/support/model/DescribeCasesResult.h>
-#include <aws/support/model/DescribeCommunicationsResult.h>
-#include <aws/support/model/DescribeServicesResult.h>
-#include <aws/support/model/DescribeSeverityLevelsResult.h>
-#include <aws/support/model/DescribeTrustedAdvisorCheckRefreshStatusesResult.h>
-#include <aws/support/model/DescribeTrustedAdvisorCheckResultResult.h>
-#include <aws/support/model/DescribeTrustedAdvisorCheckSummariesResult.h>
-#include <aws/support/model/DescribeTrustedAdvisorChecksResult.h>
-#include <aws/support/model/RefreshTrustedAdvisorCheckResult.h>
-#include <aws/support/model/ResolveCaseResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/support/SupportServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Support
 {
-
-namespace Model
-{
-        class AddAttachmentsToSetRequest;
-        class AddCommunicationToCaseRequest;
-        class CreateCaseRequest;
-        class DescribeAttachmentRequest;
-        class DescribeCasesRequest;
-        class DescribeCommunicationsRequest;
-        class DescribeServicesRequest;
-        class DescribeSeverityLevelsRequest;
-        class DescribeTrustedAdvisorCheckRefreshStatusesRequest;
-        class DescribeTrustedAdvisorCheckResultRequest;
-        class DescribeTrustedAdvisorCheckSummariesRequest;
-        class DescribeTrustedAdvisorChecksRequest;
-        class RefreshTrustedAdvisorCheckRequest;
-        class ResolveCaseRequest;
-
-        typedef Aws::Utils::Outcome<AddAttachmentsToSetResult, SupportError> AddAttachmentsToSetOutcome;
-        typedef Aws::Utils::Outcome<AddCommunicationToCaseResult, SupportError> AddCommunicationToCaseOutcome;
-        typedef Aws::Utils::Outcome<CreateCaseResult, SupportError> CreateCaseOutcome;
-        typedef Aws::Utils::Outcome<DescribeAttachmentResult, SupportError> DescribeAttachmentOutcome;
-        typedef Aws::Utils::Outcome<DescribeCasesResult, SupportError> DescribeCasesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCommunicationsResult, SupportError> DescribeCommunicationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeServicesResult, SupportError> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSeverityLevelsResult, SupportError> DescribeSeverityLevelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckRefreshStatusesResult, SupportError> DescribeTrustedAdvisorCheckRefreshStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckResultResult, SupportError> DescribeTrustedAdvisorCheckResultOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckSummariesResult, SupportError> DescribeTrustedAdvisorCheckSummariesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorChecksResult, SupportError> DescribeTrustedAdvisorChecksOutcome;
-        typedef Aws::Utils::Outcome<RefreshTrustedAdvisorCheckResult, SupportError> RefreshTrustedAdvisorCheckOutcome;
-        typedef Aws::Utils::Outcome<ResolveCaseResult, SupportError> ResolveCaseOutcome;
-
-        typedef std::future<AddAttachmentsToSetOutcome> AddAttachmentsToSetOutcomeCallable;
-        typedef std::future<AddCommunicationToCaseOutcome> AddCommunicationToCaseOutcomeCallable;
-        typedef std::future<CreateCaseOutcome> CreateCaseOutcomeCallable;
-        typedef std::future<DescribeAttachmentOutcome> DescribeAttachmentOutcomeCallable;
-        typedef std::future<DescribeCasesOutcome> DescribeCasesOutcomeCallable;
-        typedef std::future<DescribeCommunicationsOutcome> DescribeCommunicationsOutcomeCallable;
-        typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
-        typedef std::future<DescribeSeverityLevelsOutcome> DescribeSeverityLevelsOutcomeCallable;
-        typedef std::future<DescribeTrustedAdvisorCheckRefreshStatusesOutcome> DescribeTrustedAdvisorCheckRefreshStatusesOutcomeCallable;
-        typedef std::future<DescribeTrustedAdvisorCheckResultOutcome> DescribeTrustedAdvisorCheckResultOutcomeCallable;
-        typedef std::future<DescribeTrustedAdvisorCheckSummariesOutcome> DescribeTrustedAdvisorCheckSummariesOutcomeCallable;
-        typedef std::future<DescribeTrustedAdvisorChecksOutcome> DescribeTrustedAdvisorChecksOutcomeCallable;
-        typedef std::future<RefreshTrustedAdvisorCheckOutcome> RefreshTrustedAdvisorCheckOutcomeCallable;
-        typedef std::future<ResolveCaseOutcome> ResolveCaseOutcomeCallable;
-} // namespace Model
-
-  class SupportClient;
-
-    typedef std::function<void(const SupportClient*, const Model::AddAttachmentsToSetRequest&, const Model::AddAttachmentsToSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddAttachmentsToSetResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::AddCommunicationToCaseRequest&, const Model::AddCommunicationToCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddCommunicationToCaseResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::CreateCaseRequest&, const Model::CreateCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCaseResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeAttachmentRequest&, const Model::DescribeAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttachmentResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeCasesRequest&, const Model::DescribeCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCasesResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeCommunicationsRequest&, const Model::DescribeCommunicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCommunicationsResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeSeverityLevelsRequest&, const Model::DescribeSeverityLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSeverityLevelsResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckRefreshStatusesRequest&, const Model::DescribeTrustedAdvisorCheckRefreshStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckResultRequest&, const Model::DescribeTrustedAdvisorCheckResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckResultResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckSummariesRequest&, const Model::DescribeTrustedAdvisorCheckSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorChecksRequest&, const Model::DescribeTrustedAdvisorChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorChecksResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::RefreshTrustedAdvisorCheckRequest&, const Model::RefreshTrustedAdvisorCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshTrustedAdvisorCheckResponseReceivedHandler;
-    typedef std::function<void(const SupportClient*, const Model::ResolveCaseRequest&, const Model::ResolveCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveCaseResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Web Services Support</fullname> <p>The <i>Amazon Web Services
    * Support API Reference</i> is intended for programmers who need detailed
@@ -135,77 +23,92 @@ namespace Model
    * Services Support API uses HTTP methods that return results in JSON format.</p>
    *  <ul> <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise
    * Support plan to use the Amazon Web Services Support API. </p> </li> <li> <p>If
-   * you call the Amazon Web Services Support API from an account that does not have
-   * a Business, Enterprise On-Ramp, or Enterprise Support plan, the
+   * you call the Amazon Web Services Support API from an account that doesn't have a
+   * Business, Enterprise On-Ramp, or Enterprise Support plan, the
    * <code>SubscriptionRequiredException</code> error message appears. For
    * information about changing your support plan, see <a
    * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-   * Support</a>.</p> </li> </ul>  <p>The Amazon Web Services Support service
-   * also exposes a set of <a
-   * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a>
-   * features. You can retrieve a list of checks and their descriptions, get check
-   * results, specify checks to refresh, and get the refresh status of checks.</p>
-   * <p>The following list describes the Amazon Web Services Support case management
-   * operations:</p> <ul> <li> <p> Service names, issue categories, and available
-   * severity levels - The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a>
-   * operations return Amazon Web Services service names, service codes, service
-   * categories, and problem severity levels. You use these values when you call the
-   * <a>CreateCase</a> operation.</p> </li> <li> <p> Case creation, case details, and
-   * case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
+   * Support</a>.</p> </li> </ul>  <p>You can also use the Amazon Web Services
+   * Support API to access features for <a
+   * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a>.
+   * You can return a list of checks and their descriptions, get check results,
+   * specify checks to refresh, and get the refresh status of checks.</p> <p>You can
+   * manage your support cases with the following Amazon Web Services Support API
+   * operations:</p> <ul> <li> <p>The <a>CreateCase</a>, <a>DescribeCases</a>,
    * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create Amazon Web
    * Services Support cases, retrieve information about cases, and resolve cases.</p>
-   * </li> <li> <p> Case communication - The <a>DescribeCommunications</a>,
-   * <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations
-   * retrieve and add communications and attachments to Amazon Web Services Support
-   * cases.</p> </li> </ul> <p>The following list describes the operations available
-   * from the Amazon Web Services Support service for Trusted Advisor:</p> <ul> <li>
-   * <p> <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run
-   * against your Amazon Web Services resources.</p> </li> <li> <p>Using the
-   * <code>checkId</code> for a specific check returned by
-   * <a>DescribeTrustedAdvisorChecks</a>, you can call
-   * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check
-   * that you specified.</p> </li> <li> <p>
-   * <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for one
-   * or more Trusted Advisor checks.</p> </li> <li> <p>
-   * <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a
-   * specified check.</p> </li> <li> <p>
-   * <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of
-   * one or more checks.</p> </li> </ul> <p>For authentication of requests, Amazon
+   * </li> <li> <p>The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>,
+   * and <a>AddAttachmentsToSet</a> operations retrieve and add communications and
+   * attachments to Amazon Web Services Support cases.</p> </li> <li> <p>The
+   * <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return
+   * Amazon Web Service names, service codes, service categories, and problem
+   * severity levels. You use these values when you call the <a>CreateCase</a>
+   * operation.</p> </li> </ul> <p>You can also use the Amazon Web Services Support
+   * API to call the Trusted Advisor operations. For more information, see <a
+   * href="https://docs.aws.amazon.com/">Trusted Advisor</a> in the <i>Amazon Web
+   * Services Support User Guide</i>.</p> <p>For authentication of requests, Amazon
    * Web Services Support uses <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-   * Version 4 Signing Process</a>.</p> <p>See <a
-   * href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the
-   * Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User
-   * Guide</i> for information about how to use this service to create and manage
-   * your support cases, and how to call Trusted Advisor for results of checks on
-   * your resources.</p>
+   * Version 4 Signing Process</a>.</p> <p>For more information about this service
+   * and the endpoints to use, see <a
+   * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html">About
+   * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+   * User Guide</i>.</p>
    */
-  class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient
+  class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SupportClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SupportClient(const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration(),
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SupportClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SupportClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SupportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SupportClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SupportClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SupportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SupportClient();
-
 
         /**
          * <p>Adds one or more attachments to an attachment set. </p> <p>An attachment set
@@ -214,8 +117,8 @@ namespace Model
          * <code>expiryTime</code> returned in the response is when the set expires. </p>
          *  <ul> <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise
          * Support plan to use the Amazon Web Services Support API. </p> </li> <li> <p>If
-         * you call the Amazon Web Services Support API from an account that does not have
-         * a Business, Enterprise On-Ramp, or Enterprise Support plan, the
+         * you call the Amazon Web Services Support API from an account that doesn't have a
+         * Business, Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
@@ -243,8 +146,8 @@ namespace Model
          * <code>communicationBody</code> value contains the text of the communication.</p>
          *  <ul> <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise
          * Support plan to use the Amazon Web Services Support API. </p> </li> <li> <p>If
-         * you call the Amazon Web Services Support API from an account that does not have
-         * a Business, Enterprise On-Ramp, or Enterprise Support plan, the
+         * you call the Amazon Web Services Support API from an account that doesn't have a
+         * Business, Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
@@ -287,7 +190,7 @@ namespace Model
          * <code>displayId</code>.</p>  <ul> <li> <p>You must have a Business,
          * Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services
          * Support API. </p> </li> <li> <p>If you call the Amazon Web Services Support API
-         * from an account that does not have a Business, Enterprise On-Ramp, or Enterprise
+         * from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
          * Support plan, the <code>SubscriptionRequiredException</code> error message
          * appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
@@ -316,8 +219,8 @@ namespace Model
          * <a>DescribeCommunications</a> operation.</p>  <ul> <li> <p>You must have a
          * Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web
          * Services Support API. </p> </li> <li> <p>If you call the Amazon Web Services
-         * Support API from an account that does not have a Business, Enterprise On-Ramp,
-         * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
+         * Support API from an account that doesn't have a Business, Enterprise On-Ramp, or
+         * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
          * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
@@ -351,7 +254,7 @@ namespace Model
          * request might return an error.</p>  <ul> <li> <p>You must have a Business,
          * Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services
          * Support API. </p> </li> <li> <p>If you call the Amazon Web Services Support API
-         * from an account that does not have a Business, Enterprise On-Ramp, or Enterprise
+         * from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
          * Support plan, the <code>SubscriptionRequiredException</code> error message
          * appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
@@ -383,7 +286,7 @@ namespace Model
          * <code>nextToken</code> to specify the resumption of pagination.</p>  <ul>
          * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
          * to use the Amazon Web Services Support API. </p> </li> <li> <p>If you call the
-         * Amazon Web Services Support API from an account that does not have a Business,
+         * Amazon Web Services Support API from an account that doesn't have a Business,
          * Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
@@ -419,7 +322,7 @@ namespace Model
          * codes.</p>  <ul> <li> <p>You must have a Business, Enterprise On-Ramp, or
          * Enterprise Support plan to use the Amazon Web Services Support API. </p> </li>
          * <li> <p>If you call the Amazon Web Services Support API from an account that
-         * does not have a Business, Enterprise On-Ramp, or Enterprise Support plan, the
+         * doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
@@ -445,7 +348,7 @@ namespace Model
          * type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
          * <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to
          * use the Amazon Web Services Support API. </p> </li> <li> <p>If you call the
-         * Amazon Web Services Support API from an account that does not have a Business,
+         * Amazon Web Services Support API from an account that doesn't have a Business,
          * Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
@@ -476,11 +379,17 @@ namespace Model
          * <code>InvalidParameterValue</code> error.</p>  <ul> <li> <p>You must have
          * a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web
          * Services Support API. </p> </li> <li> <p>If you call the Amazon Web Services
-         * Support API from an account that does not have a Business, Enterprise On-Ramp,
-         * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
+         * Support API from an account that doesn't have a Business, Enterprise On-Ramp, or
+         * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Support</a>.</p> </li> </ul>  <p>To call the Trusted Advisor operations
+         * in the Amazon Web Services Support API, you must use the US East (N. Virginia)
+         * endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't
+         * support the Trusted Advisor operations. For more information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+         * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">AWS
          * API Reference</a></p>
          */
@@ -511,12 +420,18 @@ namespace Model
          * <li> <p> <b>checkId</b> - The unique identifier for the check.</p> </li> </ul>
          *  <ul> <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise
          * Support plan to use the Amazon Web Services Support API. </p> </li> <li> <p>If
-         * you call the Amazon Web Services Support API from an account that does not have
-         * a Business, Enterprise On-Ramp, or Enterprise Support plan, the
+         * you call the Amazon Web Services Support API from an account that doesn't have a
+         * Business, Enterprise On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Support</a>.</p> </li> </ul>  <p>To call the Trusted Advisor operations
+         * in the Amazon Web Services Support API, you must use the US East (N. Virginia)
+         * endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't
+         * support the Trusted Advisor operations. For more information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+         * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">AWS
          * API Reference</a></p>
          */
@@ -539,12 +454,18 @@ namespace Model
          * array of <a>TrustedAdvisorCheckSummary</a> objects.</p>  <ul> <li> <p>You
          * must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
          * Amazon Web Services Support API. </p> </li> <li> <p>If you call the Amazon Web
-         * Services Support API from an account that does not have a Business, Enterprise
+         * Services Support API from an account that doesn't have a Business, Enterprise
          * On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Support</a>.</p> </li> </ul>  <p>To call the Trusted Advisor operations
+         * in the Amazon Web Services Support API, you must use the US East (N. Virginia)
+         * endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't
+         * support the Trusted Advisor operations. For more information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+         * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">AWS
          * API Reference</a></p>
          */
@@ -562,21 +483,26 @@ namespace Model
 
         /**
          * <p>Returns information about all available Trusted Advisor checks, including the
-         * name, ID, category, description, and metadata. You must specify a language code.
-         * The Amazon Web Services Support API currently supports English ("en") and
-         * Japanese ("ja"). The response contains a <a>TrustedAdvisorCheckDescription</a>
+         * name, ID, category, description, and metadata. You must specify a language
+         * code.</p> <p>The response contains a <a>TrustedAdvisorCheckDescription</a>
          * object for each check. You must set the Amazon Web Services Region to
          * us-east-1.</p>  <ul> <li> <p>You must have a Business, Enterprise On-Ramp,
          * or Enterprise Support plan to use the Amazon Web Services Support API. </p>
          * </li> <li> <p>If you call the Amazon Web Services Support API from an account
-         * that does not have a Business, Enterprise On-Ramp, or Enterprise Support plan,
+         * that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan,
          * the <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
          * Support</a>.</p> </li> <li> <p>The names and descriptions for Trusted Advisor
          * checks are subject to change. We recommend that you specify the check ID in your
-         * code to uniquely identify a check.</p> </li> </ul> <p><h3>See Also:</h3> 
-         * <a
+         * code to uniquely identify a check.</p> </li> </ul>  <p>To call the
+         * Trusted Advisor operations in the Amazon Web Services Support API, you must use
+         * the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe
+         * (Ireland) endpoints don't support the Trusted Advisor operations. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+         * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          */
@@ -595,18 +521,24 @@ namespace Model
         /**
          * <p>Refreshes the Trusted Advisor check that you specify using the check ID. You
          * can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a>
-         * operation.</p>  <p>Some checks are refreshed automatically. If you call
-         * the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might
-         * see the <code>InvalidParameterValue</code> error.</p>  <p>The response
-         * contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.</p>  <ul> <li>
-         * <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to
-         * use the Amazon Web Services Support API. </p> </li> <li> <p>If you call the
-         * Amazon Web Services Support API from an account that does not have a Business,
-         * Enterprise On-Ramp, or Enterprise Support plan, the
+         * operation.</p> <p>Some checks are refreshed automatically. If you call the
+         * <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might see
+         * the <code>InvalidParameterValue</code> error.</p> <p>The response contains a
+         * <a>TrustedAdvisorCheckRefreshStatus</a> object.</p>  <ul> <li> <p>You must
+         * have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+         * Amazon Web Services Support API. </p> </li> <li> <p>If you call the Amazon Web
+         * Services Support API from an account that doesn't have a Business, Enterprise
+         * On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
-         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * Support</a>.</p> </li> </ul>  <p>To call the Trusted Advisor operations
+         * in the Amazon Web Services Support API, you must use the US East (N. Virginia)
+         * endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't
+         * support the Trusted Advisor operations. For more information, see <a
+         * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
+         * the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">AWS
          * API Reference</a></p>
          */
@@ -627,7 +559,7 @@ namespace Model
          * returns the initial and final state of the case.</p>  <ul> <li> <p>You
          * must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
          * Amazon Web Services Support API. </p> </li> <li> <p>If you call the Amazon Web
-         * Services Support API from an account that does not have a Business, Enterprise
+         * Services Support API from an account that doesn't have a Business, Enterprise
          * On-Ramp, or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
@@ -650,26 +582,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SupportEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddAttachmentsToSetAsyncHelper(const Model::AddAttachmentsToSetRequest& request, const AddAttachmentsToSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddCommunicationToCaseAsyncHelper(const Model::AddCommunicationToCaseRequest& request, const AddCommunicationToCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCaseAsyncHelper(const Model::CreateCaseRequest& request, const CreateCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAttachmentAsyncHelper(const Model::DescribeAttachmentRequest& request, const DescribeAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCasesAsyncHelper(const Model::DescribeCasesRequest& request, const DescribeCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCommunicationsAsyncHelper(const Model::DescribeCommunicationsRequest& request, const DescribeCommunicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSeverityLevelsAsyncHelper(const Model::DescribeSeverityLevelsRequest& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTrustedAdvisorCheckRefreshStatusesAsyncHelper(const Model::DescribeTrustedAdvisorCheckRefreshStatusesRequest& request, const DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTrustedAdvisorCheckResultAsyncHelper(const Model::DescribeTrustedAdvisorCheckResultRequest& request, const DescribeTrustedAdvisorCheckResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTrustedAdvisorCheckSummariesAsyncHelper(const Model::DescribeTrustedAdvisorCheckSummariesRequest& request, const DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTrustedAdvisorChecksAsyncHelper(const Model::DescribeTrustedAdvisorChecksRequest& request, const DescribeTrustedAdvisorChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RefreshTrustedAdvisorCheckAsyncHelper(const Model::RefreshTrustedAdvisorCheckRequest& request, const RefreshTrustedAdvisorCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResolveCaseAsyncHelper(const Model::ResolveCaseRequest& request, const ResolveCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;
+      void init(const SupportClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SupportClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SupportEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Support

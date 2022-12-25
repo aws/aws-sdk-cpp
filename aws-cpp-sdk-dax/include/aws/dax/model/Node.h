@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Node">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Node
+  class Node
   {
   public:
-    Node();
-    Node(Aws::Utils::Json::JsonView jsonValue);
-    Node& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Node();
+    AWS_DAX_API Node(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Node& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeCreateTime;
-    bool m_nodeCreateTimeHasBeenSet;
+    bool m_nodeCreateTimeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_nodeStatus;
-    bool m_nodeStatusHasBeenSet;
+    bool m_nodeStatusHasBeenSet = false;
 
     Aws::String m_parameterGroupStatus;
-    bool m_parameterGroupStatusHasBeenSet;
+    bool m_parameterGroupStatusHasBeenSet = false;
   };
 
 } // namespace Model

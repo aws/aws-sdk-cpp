@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingsToThingGroupParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AddThingsToThingGroupParams
+  class AddThingsToThingGroupParams
   {
   public:
-    AddThingsToThingGroupParams();
-    AddThingsToThingGroupParams(Aws::Utils::Json::JsonView jsonValue);
-    AddThingsToThingGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AddThingsToThingGroupParams();
+    AWS_IOT_API AddThingsToThingGroupParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AddThingsToThingGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_thingGroupNames;
-    bool m_thingGroupNamesHasBeenSet;
+    bool m_thingGroupNamesHasBeenSet = false;
 
     bool m_overrideDynamicGroups;
-    bool m_overrideDynamicGroupsHasBeenSet;
+    bool m_overrideDynamicGroupsHasBeenSet = false;
   };
 
 } // namespace Model

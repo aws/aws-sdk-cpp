@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetectMitigationActionsTaskSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DetectMitigationActionsTaskSummary
+  class DetectMitigationActionsTaskSummary
   {
   public:
-    DetectMitigationActionsTaskSummary();
-    DetectMitigationActionsTaskSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectMitigationActionsTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DetectMitigationActionsTaskSummary();
+    AWS_IOT_API DetectMitigationActionsTaskSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DetectMitigationActionsTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -362,34 +362,34 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     DetectMitigationActionsTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskStartTime;
-    bool m_taskStartTimeHasBeenSet;
+    bool m_taskStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskEndTime;
-    bool m_taskEndTimeHasBeenSet;
+    bool m_taskEndTimeHasBeenSet = false;
 
     DetectMitigationActionsTaskTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     ViolationEventOccurrenceRange m_violationEventOccurrenceRange;
-    bool m_violationEventOccurrenceRangeHasBeenSet;
+    bool m_violationEventOccurrenceRangeHasBeenSet = false;
 
     bool m_onlyActiveViolationsIncluded;
-    bool m_onlyActiveViolationsIncludedHasBeenSet;
+    bool m_onlyActiveViolationsIncludedHasBeenSet = false;
 
     bool m_suppressedAlertsIncluded;
-    bool m_suppressedAlertsIncludedHasBeenSet;
+    bool m_suppressedAlertsIncludedHasBeenSet = false;
 
     Aws::Vector<MitigationAction> m_actionsDefinition;
-    bool m_actionsDefinitionHasBeenSet;
+    bool m_actionsDefinitionHasBeenSet = false;
 
     DetectMitigationActionsTaskStatistics m_taskStatistics;
-    bool m_taskStatisticsHasBeenSet;
+    bool m_taskStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

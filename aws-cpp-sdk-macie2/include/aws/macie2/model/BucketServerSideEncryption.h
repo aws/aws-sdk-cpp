@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketServerSideEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketServerSideEncryption
+  class BucketServerSideEncryption
   {
   public:
-    BucketServerSideEncryption();
-    BucketServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
-    BucketServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketServerSideEncryption();
+    AWS_MACIE2_API BucketServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,10 +182,10 @@ namespace Model
   private:
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

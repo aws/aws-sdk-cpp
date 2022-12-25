@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API DisassociateLambdaFunctionRequest : public ConnectRequest
+  class DisassociateLambdaFunctionRequest : public ConnectRequest
   {
   public:
-    DisassociateLambdaFunctionRequest();
+    AWS_CONNECT_API DisassociateLambdaFunctionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateLambdaFunction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
   };
 
 } // namespace Model

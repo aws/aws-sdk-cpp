@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudsterRegistrationJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudsterRegistrationJobSummary
+  class FraudsterRegistrationJobSummary
   {
   public:
-    FraudsterRegistrationJobSummary();
-    FraudsterRegistrationJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    FraudsterRegistrationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudsterRegistrationJobSummary();
+    AWS_VOICEID_API FraudsterRegistrationJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudsterRegistrationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,42 +242,42 @@ namespace Model
 
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The client-provied name for the fraudster registration job.</p>
+     * <p>The client-provided name for the fraudster registration job.</p>
      */
     inline FraudsterRegistrationJobSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
 
@@ -352,28 +352,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet;
+    bool m_endedAtHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobProgress m_jobProgress;
-    bool m_jobProgressHasBeenSet;
+    bool m_jobProgressHasBeenSet = false;
 
     FraudsterRegistrationJobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
   };
 
 } // namespace Model

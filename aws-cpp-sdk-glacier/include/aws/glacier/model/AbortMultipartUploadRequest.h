@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUploadInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API AbortMultipartUploadRequest : public GlacierRequest
+  class AbortMultipartUploadRequest : public GlacierRequest
   {
   public:
-    AbortMultipartUploadRequest();
+    AWS_GLACIER_API AbortMultipartUploadRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AbortMultipartUpload"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLACIER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
   };
 
 } // namespace Model

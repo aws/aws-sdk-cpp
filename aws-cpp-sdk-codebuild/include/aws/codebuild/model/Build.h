@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Build">AWS API
    * Reference</a></p>
    */
-  class AWS_CODEBUILD_API Build
+  class Build
   {
   public:
-    Build();
-    Build(Aws::Utils::Json::JsonView jsonValue);
-    Build& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Build();
+    AWS_CODEBUILD_API Build(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Build& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1585,100 +1585,100 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_buildNumber;
-    bool m_buildNumberHasBeenSet;
+    bool m_buildNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_currentPhase;
-    bool m_currentPhaseHasBeenSet;
+    bool m_currentPhaseHasBeenSet = false;
 
     StatusType m_buildStatus;
-    bool m_buildStatusHasBeenSet;
+    bool m_buildStatusHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::String m_resolvedSourceVersion;
-    bool m_resolvedSourceVersionHasBeenSet;
+    bool m_resolvedSourceVersionHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::Vector<BuildPhase> m_phases;
-    bool m_phasesHasBeenSet;
+    bool m_phasesHasBeenSet = false;
 
     ProjectSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<ProjectSource> m_secondarySources;
-    bool m_secondarySourcesHasBeenSet;
+    bool m_secondarySourcesHasBeenSet = false;
 
     Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-    bool m_secondarySourceVersionsHasBeenSet;
+    bool m_secondarySourceVersionsHasBeenSet = false;
 
     BuildArtifacts m_artifacts;
-    bool m_artifactsHasBeenSet;
+    bool m_artifactsHasBeenSet = false;
 
     Aws::Vector<BuildArtifacts> m_secondaryArtifacts;
-    bool m_secondaryArtifactsHasBeenSet;
+    bool m_secondaryArtifactsHasBeenSet = false;
 
     ProjectCache m_cache;
-    bool m_cacheHasBeenSet;
+    bool m_cacheHasBeenSet = false;
 
     ProjectEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     LogsLocation m_logs;
-    bool m_logsHasBeenSet;
+    bool m_logsHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
 
     int m_queuedTimeoutInMinutes;
-    bool m_queuedTimeoutInMinutesHasBeenSet;
+    bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
     bool m_buildComplete;
-    bool m_buildCompleteHasBeenSet;
+    bool m_buildCompleteHasBeenSet = false;
 
     Aws::String m_initiator;
-    bool m_initiatorHasBeenSet;
+    bool m_initiatorHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     NetworkInterface m_networkInterface;
-    bool m_networkInterfaceHasBeenSet;
+    bool m_networkInterfaceHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Vector<ExportedEnvironmentVariable> m_exportedEnvironmentVariables;
-    bool m_exportedEnvironmentVariablesHasBeenSet;
+    bool m_exportedEnvironmentVariablesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reportArns;
-    bool m_reportArnsHasBeenSet;
+    bool m_reportArnsHasBeenSet = false;
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-    bool m_fileSystemLocationsHasBeenSet;
+    bool m_fileSystemLocationsHasBeenSet = false;
 
     DebugSession m_debugSession;
-    bool m_debugSessionHasBeenSet;
+    bool m_debugSessionHasBeenSet = false;
 
     Aws::String m_buildBatchArn;
-    bool m_buildBatchArnHasBeenSet;
+    bool m_buildBatchArnHasBeenSet = false;
   };
 
 } // namespace Model

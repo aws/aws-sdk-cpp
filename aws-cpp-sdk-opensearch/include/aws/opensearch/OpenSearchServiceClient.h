@@ -5,302 +5,91 @@
 
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
-#include <aws/opensearch/OpenSearchServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/opensearch/model/AcceptInboundConnectionResult.h>
-#include <aws/opensearch/model/AssociatePackageResult.h>
-#include <aws/opensearch/model/CancelServiceSoftwareUpdateResult.h>
-#include <aws/opensearch/model/CreateDomainResult.h>
-#include <aws/opensearch/model/CreateOutboundConnectionResult.h>
-#include <aws/opensearch/model/CreatePackageResult.h>
-#include <aws/opensearch/model/DeleteDomainResult.h>
-#include <aws/opensearch/model/DeleteInboundConnectionResult.h>
-#include <aws/opensearch/model/DeleteOutboundConnectionResult.h>
-#include <aws/opensearch/model/DeletePackageResult.h>
-#include <aws/opensearch/model/DescribeDomainResult.h>
-#include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
-#include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
-#include <aws/opensearch/model/DescribeDomainConfigResult.h>
-#include <aws/opensearch/model/DescribeDomainsResult.h>
-#include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
-#include <aws/opensearch/model/DescribeInstanceTypeLimitsResult.h>
-#include <aws/opensearch/model/DescribeOutboundConnectionsResult.h>
-#include <aws/opensearch/model/DescribePackagesResult.h>
-#include <aws/opensearch/model/DescribeReservedInstanceOfferingsResult.h>
-#include <aws/opensearch/model/DescribeReservedInstancesResult.h>
-#include <aws/opensearch/model/DissociatePackageResult.h>
-#include <aws/opensearch/model/GetCompatibleVersionsResult.h>
-#include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
-#include <aws/opensearch/model/GetUpgradeHistoryResult.h>
-#include <aws/opensearch/model/GetUpgradeStatusResult.h>
-#include <aws/opensearch/model/ListDomainNamesResult.h>
-#include <aws/opensearch/model/ListDomainsForPackageResult.h>
-#include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
-#include <aws/opensearch/model/ListPackagesForDomainResult.h>
-#include <aws/opensearch/model/ListTagsResult.h>
-#include <aws/opensearch/model/ListVersionsResult.h>
-#include <aws/opensearch/model/PurchaseReservedInstanceOfferingResult.h>
-#include <aws/opensearch/model/RejectInboundConnectionResult.h>
-#include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
-#include <aws/opensearch/model/UpdateDomainConfigResult.h>
-#include <aws/opensearch/model/UpdatePackageResult.h>
-#include <aws/opensearch/model/UpgradeDomainResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace OpenSearchService
 {
-
-namespace Model
-{
-        class AcceptInboundConnectionRequest;
-        class AddTagsRequest;
-        class AssociatePackageRequest;
-        class CancelServiceSoftwareUpdateRequest;
-        class CreateDomainRequest;
-        class CreateOutboundConnectionRequest;
-        class CreatePackageRequest;
-        class DeleteDomainRequest;
-        class DeleteInboundConnectionRequest;
-        class DeleteOutboundConnectionRequest;
-        class DeletePackageRequest;
-        class DescribeDomainRequest;
-        class DescribeDomainAutoTunesRequest;
-        class DescribeDomainChangeProgressRequest;
-        class DescribeDomainConfigRequest;
-        class DescribeDomainsRequest;
-        class DescribeInboundConnectionsRequest;
-        class DescribeInstanceTypeLimitsRequest;
-        class DescribeOutboundConnectionsRequest;
-        class DescribePackagesRequest;
-        class DescribeReservedInstanceOfferingsRequest;
-        class DescribeReservedInstancesRequest;
-        class DissociatePackageRequest;
-        class GetCompatibleVersionsRequest;
-        class GetPackageVersionHistoryRequest;
-        class GetUpgradeHistoryRequest;
-        class GetUpgradeStatusRequest;
-        class ListDomainNamesRequest;
-        class ListDomainsForPackageRequest;
-        class ListInstanceTypeDetailsRequest;
-        class ListPackagesForDomainRequest;
-        class ListTagsRequest;
-        class ListVersionsRequest;
-        class PurchaseReservedInstanceOfferingRequest;
-        class RejectInboundConnectionRequest;
-        class RemoveTagsRequest;
-        class StartServiceSoftwareUpdateRequest;
-        class UpdateDomainConfigRequest;
-        class UpdatePackageRequest;
-        class UpgradeDomainRequest;
-
-        typedef Aws::Utils::Outcome<AcceptInboundConnectionResult, OpenSearchServiceError> AcceptInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<AssociatePackageResult, OpenSearchServiceError> AssociatePackageOutcome;
-        typedef Aws::Utils::Outcome<CancelServiceSoftwareUpdateResult, OpenSearchServiceError> CancelServiceSoftwareUpdateOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, OpenSearchServiceError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateOutboundConnectionResult, OpenSearchServiceError> CreateOutboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreatePackageResult, OpenSearchServiceError> CreatePackageOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, OpenSearchServiceError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteInboundConnectionResult, OpenSearchServiceError> DeleteInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteOutboundConnectionResult, OpenSearchServiceError> DeleteOutboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeletePackageResult, OpenSearchServiceError> DeletePackageOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, OpenSearchServiceError> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainAutoTunesResult, OpenSearchServiceError> DescribeDomainAutoTunesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainConfigResult, OpenSearchServiceError> DescribeDomainConfigOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceTypeLimitsResult, OpenSearchServiceError> DescribeInstanceTypeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOutboundConnectionsResult, OpenSearchServiceError> DescribeOutboundConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePackagesResult, OpenSearchServiceError> DescribePackagesOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedInstanceOfferingsResult, OpenSearchServiceError> DescribeReservedInstanceOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedInstancesResult, OpenSearchServiceError> DescribeReservedInstancesOutcome;
-        typedef Aws::Utils::Outcome<DissociatePackageResult, OpenSearchServiceError> DissociatePackageOutcome;
-        typedef Aws::Utils::Outcome<GetCompatibleVersionsResult, OpenSearchServiceError> GetCompatibleVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetPackageVersionHistoryResult, OpenSearchServiceError> GetPackageVersionHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetUpgradeHistoryResult, OpenSearchServiceError> GetUpgradeHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetUpgradeStatusResult, OpenSearchServiceError> GetUpgradeStatusOutcome;
-        typedef Aws::Utils::Outcome<ListDomainNamesResult, OpenSearchServiceError> ListDomainNamesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsForPackageResult, OpenSearchServiceError> ListDomainsForPackageOutcome;
-        typedef Aws::Utils::Outcome<ListInstanceTypeDetailsResult, OpenSearchServiceError> ListInstanceTypeDetailsOutcome;
-        typedef Aws::Utils::Outcome<ListPackagesForDomainResult, OpenSearchServiceError> ListPackagesForDomainOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, OpenSearchServiceError> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ListVersionsResult, OpenSearchServiceError> ListVersionsOutcome;
-        typedef Aws::Utils::Outcome<PurchaseReservedInstanceOfferingResult, OpenSearchServiceError> PurchaseReservedInstanceOfferingOutcome;
-        typedef Aws::Utils::Outcome<RejectInboundConnectionResult, OpenSearchServiceError> RejectInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainConfigResult, OpenSearchServiceError> UpdateDomainConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdatePackageResult, OpenSearchServiceError> UpdatePackageOutcome;
-        typedef Aws::Utils::Outcome<UpgradeDomainResult, OpenSearchServiceError> UpgradeDomainOutcome;
-
-        typedef std::future<AcceptInboundConnectionOutcome> AcceptInboundConnectionOutcomeCallable;
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<AssociatePackageOutcome> AssociatePackageOutcomeCallable;
-        typedef std::future<CancelServiceSoftwareUpdateOutcome> CancelServiceSoftwareUpdateOutcomeCallable;
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<CreateOutboundConnectionOutcome> CreateOutboundConnectionOutcomeCallable;
-        typedef std::future<CreatePackageOutcome> CreatePackageOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DeleteInboundConnectionOutcome> DeleteInboundConnectionOutcomeCallable;
-        typedef std::future<DeleteOutboundConnectionOutcome> DeleteOutboundConnectionOutcomeCallable;
-        typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
-        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-        typedef std::future<DescribeDomainAutoTunesOutcome> DescribeDomainAutoTunesOutcomeCallable;
-        typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
-        typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
-        typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
-        typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
-        typedef std::future<DescribeInstanceTypeLimitsOutcome> DescribeInstanceTypeLimitsOutcomeCallable;
-        typedef std::future<DescribeOutboundConnectionsOutcome> DescribeOutboundConnectionsOutcomeCallable;
-        typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
-        typedef std::future<DescribeReservedInstanceOfferingsOutcome> DescribeReservedInstanceOfferingsOutcomeCallable;
-        typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
-        typedef std::future<DissociatePackageOutcome> DissociatePackageOutcomeCallable;
-        typedef std::future<GetCompatibleVersionsOutcome> GetCompatibleVersionsOutcomeCallable;
-        typedef std::future<GetPackageVersionHistoryOutcome> GetPackageVersionHistoryOutcomeCallable;
-        typedef std::future<GetUpgradeHistoryOutcome> GetUpgradeHistoryOutcomeCallable;
-        typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
-        typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
-        typedef std::future<ListDomainsForPackageOutcome> ListDomainsForPackageOutcomeCallable;
-        typedef std::future<ListInstanceTypeDetailsOutcome> ListInstanceTypeDetailsOutcomeCallable;
-        typedef std::future<ListPackagesForDomainOutcome> ListPackagesForDomainOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
-        typedef std::future<PurchaseReservedInstanceOfferingOutcome> PurchaseReservedInstanceOfferingOutcomeCallable;
-        typedef std::future<RejectInboundConnectionOutcome> RejectInboundConnectionOutcomeCallable;
-        typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
-        typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
-        typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
-        typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
-        typedef std::future<UpgradeDomainOutcome> UpgradeDomainOutcomeCallable;
-} // namespace Model
-
-  class OpenSearchServiceClient;
-
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AcceptInboundConnectionRequest&, const Model::AcceptInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AssociatePackageRequest&, const Model::AssociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CancelServiceSoftwareUpdateRequest&, const Model::CancelServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelServiceSoftwareUpdateResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateOutboundConnectionRequest&, const Model::CreateOutboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreatePackageRequest&, const Model::CreatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteInboundConnectionRequest&, const Model::DeleteInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteOutboundConnectionRequest&, const Model::DeleteOutboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeletePackageRequest&, const Model::DeletePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainAutoTunesRequest&, const Model::DescribeDomainAutoTunesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainAutoTunesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainChangeProgressRequest&, const Model::DescribeDomainChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainChangeProgressResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainConfigRequest&, const Model::DescribeDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&, const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundConnectionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInstanceTypeLimitsRequest&, const Model::DescribeInstanceTypeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeLimitsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeOutboundConnectionsRequest&, const Model::DescribeOutboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOutboundConnectionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribePackagesRequest&, const Model::DescribePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePackagesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeReservedInstanceOfferingsRequest&, const Model::DescribeReservedInstanceOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstanceOfferingsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeReservedInstancesRequest&, const Model::DescribeReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DissociatePackageRequest&, const Model::DissociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DissociatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetCompatibleVersionsRequest&, const Model::GetCompatibleVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCompatibleVersionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetPackageVersionHistoryRequest&, const Model::GetPackageVersionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPackageVersionHistoryResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgradeHistoryRequest&, const Model::GetUpgradeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeHistoryResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgradeStatusRequest&, const Model::GetUpgradeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeStatusResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainNamesRequest&, const Model::ListDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainNamesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainsForPackageRequest&, const Model::ListDomainsForPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsForPackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInstanceTypeDetailsRequest&, const Model::ListInstanceTypeDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceTypeDetailsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListPackagesForDomainRequest&, const Model::ListPackagesForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackagesForDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::PurchaseReservedInstanceOfferingRequest&, const Model::PurchaseReservedInstanceOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstanceOfferingResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::RejectInboundConnectionRequest&, const Model::RejectInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::StartServiceSoftwareUpdateRequest&, const Model::StartServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServiceSoftwareUpdateResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateDomainConfigRequest&, const Model::UpdateDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdatePackageRequest&, const Model::UpdatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpgradeDomainRequest&, const Model::UpgradeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeDomainResponseReceivedHandler;
-
   /**
-   * <fullname>Amazon OpenSearch Configuration Service</fullname> <p>Use the Amazon
-   * OpenSearch configuration API to create, configure, and manage Amazon OpenSearch
-   * Service domains.</p> <p>For sample code that uses the configuration API, see the
-   * <a
+   * <p>Use the Amazon OpenSearch Service configuration API to create, configure, and
+   * manage OpenSearch Service domains.</p> <p>For sample code that uses the
+   * configuration API, see the <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html">
-   * Amazon OpenSearch Service Developer Guide</a>. The guide also contains <a
-   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">
-   * sample code for sending signed HTTP requests to the OpenSearch APIs</a>. </p>
-   * <p>The endpoint for configuration service requests is region-specific:
+   * <i>Amazon OpenSearch Service Developer Guide</i> </a>. The guide also contains
+   * <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">sample
+   * code</a> for sending signed HTTP requests to the OpenSearch APIs. The endpoint
+   * for configuration service requests is Region specific:
    * es.<i>region</i>.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a
-   * current list of supported regions and endpoints, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions"
-   * target="_blank">Regions and Endpoints</a>. </p>
+   * current list of supported Regions and endpoints, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
+   * Web Services service endpoints</a>.</p>
    */
-  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpenSearchServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpenSearchServiceClient(const Aws::OpenSearchService::OpenSearchServiceClientConfiguration& clientConfiguration = Aws::OpenSearchService::OpenSearchServiceClientConfiguration(),
+                                std::shared_ptr<OpenSearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpenSearchServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpenSearchServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                std::shared_ptr<OpenSearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::OpenSearchService::OpenSearchServiceClientConfiguration& clientConfiguration = Aws::OpenSearchService::OpenSearchServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         OpenSearchServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<OpenSearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<OpenSearchServiceEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::OpenSearchService::OpenSearchServiceClientConfiguration& clientConfiguration = Aws::OpenSearchService::OpenSearchServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpenSearchServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpenSearchServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        OpenSearchServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~OpenSearchServiceClient();
 
-
         /**
-         * <p>Allows the remote domain owner to accept an inbound cross-cluster connection
-         * request.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows the destination Amazon OpenSearch Service domain owner to accept an
+         * inbound cross-cluster search connection request. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">AWS
          * API Reference</a></p>
          */
@@ -317,11 +106,11 @@ namespace Model
         virtual void AcceptInboundConnectionAsync(const Model::AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches tags to an existing domain. Tags are a set of case-sensitive key
-         * value pairs. An domain can have up to 10 tags. See <a
-         * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
-         * target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more
-         * information. </p><p><h3>See Also:</h3>   <a
+         * <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set
+         * of case-sensitive key-value pairs. An domain can have up to 10 tags. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+         * Tagging Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -338,8 +127,10 @@ namespace Model
         virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a package with an Amazon OpenSearch Service domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates a package with an Amazon OpenSearch Service domain. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackage">AWS
          * API Reference</a></p>
          */
@@ -356,10 +147,30 @@ namespace Model
         virtual void AssociatePackageAsync(const Model::AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides access to an Amazon OpenSearch Service domain through the use of an
+         * interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AuthorizeVpcEndpointAccessOutcome AuthorizeVpcEndpointAccess(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for AuthorizeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AuthorizeVpcEndpointAccessOutcomeCallable AuthorizeVpcEndpointAccessCallable(const Model::AuthorizeVpcEndpointAccessRequest& request) const;
+
+        /**
+         * An Async wrapper for AuthorizeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AuthorizeVpcEndpointAccessAsync(const Model::AuthorizeVpcEndpointAccessRequest& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels a scheduled service software update for an Amazon OpenSearch Service
          * domain. You can only perform this operation before the
-         * <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in
-         * the <code>PENDING_UPDATE</code> state. </p><p><h3>See Also:</h3>   <a
+         * <code>AutomatedUpdateDate</code> and when the domain's <code>UpdateStatus</code>
+         * is <code>PENDING_UPDATE</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+         * software updates in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">AWS
          * API Reference</a></p>
          */
@@ -376,10 +187,9 @@ namespace Model
         virtual void CancelServiceSoftwareUpdateAsync(const Model::CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon OpenSearch Service domain. For more information, see <a
-         * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html"
-         * target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in
-         * the <i>Amazon OpenSearch Service Developer Guide</i>. </p><p><h3>See Also:</h3> 
+         * <p>Creates an Amazon OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating
+         * and managing Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomain">AWS
          * API Reference</a></p>
@@ -397,8 +207,10 @@ namespace Model
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new cross-cluster connection from a local OpenSearch domain to a
-         * remote OpenSearch domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch
+         * Service domain to a destination domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateOutboundConnection">AWS
          * API Reference</a></p>
          */
@@ -415,8 +227,10 @@ namespace Model
         virtual void CreateOutboundConnectionAsync(const Model::CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a package for use with Amazon OpenSearch Service
-         * domains.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a package for use with Amazon OpenSearch Service domains. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackage">AWS
          * API Reference</a></p>
          */
@@ -433,8 +247,26 @@ namespace Model
         virtual void CreatePackageAsync(const Model::CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Permanently deletes the specified domain and all of its data. Once a domain
-         * is deleted, it cannot be recovered. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcEndpointOutcome CreateVpcEndpoint(const Model::CreateVpcEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcEndpointOutcomeCallable CreateVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon OpenSearch Service domain and all of its data. You can't
+         * recover a domain after you delete it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomain">AWS
          * API Reference</a></p>
          */
@@ -451,8 +283,10 @@ namespace Model
         virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the remote domain owner to delete an existing inbound cross-cluster
-         * connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows the destination Amazon OpenSearch Service domain owner to delete an
+         * existing inbound cross-cluster search connection. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">AWS
          * API Reference</a></p>
          */
@@ -469,8 +303,10 @@ namespace Model
         virtual void DeleteInboundConnectionAsync(const Model::DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the local domain owner to delete an existing outbound cross-cluster
-         * connection.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows the source Amazon OpenSearch Service domain owner to delete an
+         * existing outbound cross-cluster search connection. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">AWS
          * API Reference</a></p>
          */
@@ -487,7 +323,9 @@ namespace Model
         virtual void DeleteOutboundConnectionAsync(const Model::DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the package.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon OpenSearch Service package. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeletePackage">AWS
          * API Reference</a></p>
          */
@@ -504,9 +342,27 @@ namespace Model
         virtual void DeletePackageAsync(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns domain configuration information about the specified domain,
-         * including the domain ID, domain endpoint, and domain ARN. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an Amazon OpenSearch Service-managed interface VPC
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcEndpointOutcome DeleteVpcEndpoint(const Model::DeleteVpcEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcEndpointOutcomeCallable DeleteVpcEndpointCallable(const Model::DeleteVpcEndpointRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcEndpointAsync(const Model::DeleteVpcEndpointRequest& request, const DeleteVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the domain configuration for the specified Amazon OpenSearch
+         * Service domain, including the domain ID, domain service endpoint, and domain
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomain">AWS
          * API Reference</a></p>
          */
@@ -523,9 +379,10 @@ namespace Model
         virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune
-         * action type, description, severity, and scheduled date. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the list of optimizations that Auto-Tune has made to an Amazon
+         * OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+         * for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainAutoTunes">AWS
          * API Reference</a></p>
          */
@@ -542,9 +399,11 @@ namespace Model
         virtual void DescribeDomainAutoTunesAsync(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the current blue/green deployment happening on a
-         * domain, including a change ID, status, and progress stages.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the current blue/green deployment happening on an
+         * Amazon OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making
+         * configuration changes in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">AWS
          * API Reference</a></p>
          */
@@ -561,9 +420,8 @@ namespace Model
         virtual void DescribeDomainChangeProgressAsync(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides cluster configuration information about the specified domain, such
-         * as the state, creation date, update version, and update date for cluster
-         * options. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the configuration of an Amazon OpenSearch Service
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">AWS
          * API Reference</a></p>
          */
@@ -580,9 +438,8 @@ namespace Model
         virtual void DescribeDomainConfigAsync(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns domain configuration information about the specified domains,
-         * including the domain ID, domain endpoint, and domain ARN. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns domain configuration information about the specified Amazon
+         * OpenSearch Service domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">AWS
          * API Reference</a></p>
          */
@@ -599,8 +456,10 @@ namespace Model
         virtual void DescribeDomainsAsync(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the inbound cross-cluster connections for a remote
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the inbound cross-cluster search connections for a destination
+         * (remote) Amazon OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">AWS
          * API Reference</a></p>
          */
@@ -617,10 +476,9 @@ namespace Model
         virtual void DescribeInboundConnectionsAsync(const Model::DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Describe the limits for a given instance type and OpenSearch or
-         * Elasticsearch version. When modifying an existing domain, specify the <code>
-         * <a>DomainName</a> </code> to see which limits you can modify. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the instance count, storage, and master node limits for a given
+         * OpenSearch or Elasticsearch version and instance type.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInstanceTypeLimits">AWS
          * API Reference</a></p>
          */
@@ -637,8 +495,10 @@ namespace Model
         virtual void DescribeInstanceTypeLimitsAsync(const Model::DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the outbound cross-cluster connections for a local
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the outbound cross-cluster connections for a local (source) Amazon
+         * OpenSearch Service domain. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+         * search for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">AWS
          * API Reference</a></p>
          */
@@ -655,9 +515,10 @@ namespace Model
         virtual void DescribeOutboundConnectionsAsync(const Model::DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes all packages available to Amazon OpenSearch Service domains.
-         * Includes options for filtering, limiting the number of results, and pagination.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Describes all packages available to OpenSearch Service. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">AWS
          * API Reference</a></p>
          */
@@ -674,8 +535,10 @@ namespace Model
         virtual void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists available reserved OpenSearch instance offerings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the available Amazon OpenSearch Service Reserved Instance offerings
+         * for a given Region. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+         * Instances in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">AWS
          * API Reference</a></p>
          */
@@ -692,8 +555,10 @@ namespace Model
         virtual void DescribeReservedInstanceOfferingsAsync(const Model::DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about reserved OpenSearch instances for this
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the Amazon OpenSearch Service instances that you have reserved in a
+         * given Region. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+         * Instances in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -710,8 +575,30 @@ namespace Model
         virtual void DescribeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Dissociates a package from the Amazon OpenSearch Service
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more Amazon OpenSearch Service-managed VPC
+         * endpoints.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcEndpointsOutcome DescribeVpcEndpoints(const Model::DescribeVpcEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcEndpointsOutcomeCallable DescribeVpcEndpointsCallable(const Model::DescribeVpcEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcEndpointsAsync(const Model::DescribeVpcEndpointsRequest& request, const DescribeVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a package from the specified Amazon OpenSearch Service domain. The
+         * package can't be in use with any OpenSearch index for the dissociation to
+         * succeed. The package is still available in OpenSearch Service for association
+         * later. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackage">AWS
          * API Reference</a></p>
          */
@@ -728,10 +615,8 @@ namespace Model
         virtual void DissociatePackageAsync(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch.
-         * You can optionally pass a <code> <a>DomainName</a> </code> to get all
-         * upgrade-compatible versions of OpenSearch/Elasticsearch for that specific
-         * domain. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a map of OpenSearch or Elasticsearch versions and the versions you
+         * can upgrade them to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">AWS
          * API Reference</a></p>
          */
@@ -748,8 +633,10 @@ namespace Model
         virtual void GetCompatibleVersionsAsync(const Model::GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of package versions, along with their creation time and commit
-         * message.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of Amazon OpenSearch Service package versions, along with
+         * their creation time and commit message. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">AWS
          * API Reference</a></p>
          */
@@ -766,8 +653,8 @@ namespace Model
         virtual void GetPackageVersionHistoryAsync(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the complete history of the last 10 upgrades performed on the
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the complete history of the last 10 upgrades performed on an Amazon
+         * OpenSearch Service domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeHistory">AWS
          * API Reference</a></p>
          */
@@ -784,8 +671,9 @@ namespace Model
         virtual void GetUpgradeHistoryAsync(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the latest status of the last upgrade or upgrade eligibility check
-         * performed on the domain. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the most recent status of the last upgrade or upgrade eligibility
+         * check performed on an Amazon OpenSearch Service domain.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatus">AWS
          * API Reference</a></p>
          */
@@ -802,8 +690,8 @@ namespace Model
         virtual void GetUpgradeStatusAsync(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the names of all domains owned by the current user's
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the names of all Amazon OpenSearch Service domains owned by the
+         * current user in the active Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">AWS
          * API Reference</a></p>
          */
@@ -820,8 +708,10 @@ namespace Model
         virtual void ListDomainNamesAsync(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all Amazon OpenSearch Service domains associated with the
-         * package.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all Amazon OpenSearch Service domains associated with a given package.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackage">AWS
          * API Reference</a></p>
          */
@@ -838,7 +728,10 @@ namespace Model
         virtual void ListDomainsForPackageAsync(const Model::ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Lists all instance types and available features for a given OpenSearch or
+         * Elasticsearch version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListInstanceTypeDetailsOutcome ListInstanceTypeDetails(const Model::ListInstanceTypeDetailsRequest& request) const;
 
@@ -853,8 +746,10 @@ namespace Model
         virtual void ListInstanceTypeDetailsAsync(const Model::ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all packages associated with the Amazon OpenSearch Service
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all packages associated with an Amazon OpenSearch Service domain. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomain">AWS
          * API Reference</a></p>
          */
@@ -871,7 +766,10 @@ namespace Model
         virtual void ListPackagesForDomainAsync(const Model::ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns all tags for the given domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+         * Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">AWS
          * API Reference</a></p>
          */
@@ -888,8 +786,8 @@ namespace Model
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all supported versions of OpenSearch and Elasticsearch.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch
+         * Service supports.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">AWS
          * API Reference</a></p>
          */
@@ -906,8 +804,63 @@ namespace Model
         virtual void ListVersionsAsync(const Model::ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows you to purchase reserved OpenSearch instances.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about each Amazon Web Services principal that is
+         * allowed to access a given Amazon OpenSearch Service domain through the use of an
+         * interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcEndpointAccessOutcome ListVpcEndpointAccess(const Model::ListVpcEndpointAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcEndpointAccessOutcomeCallable ListVpcEndpointAccessCallable(const Model::ListVpcEndpointAccessRequest& request) const;
+
+        /**
+         * An Async wrapper for ListVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcEndpointAccessAsync(const Model::ListVpcEndpointAccessRequest& request, const ListVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current
+         * Amazon Web Services account and Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcEndpointsOutcome ListVpcEndpoints(const Model::ListVpcEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcEndpointsOutcomeCallable ListVpcEndpointsCallable(const Model::ListVpcEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListVpcEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcEndpointsAsync(const Model::ListVpcEndpointsRequest& request, const ListVpcEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with
+         * a particular domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcEndpointsForDomainOutcome ListVpcEndpointsForDomain(const Model::ListVpcEndpointsForDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcEndpointsForDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcEndpointsForDomainOutcomeCallable ListVpcEndpointsForDomainCallable(const Model::ListVpcEndpointsForDomainRequest& request) const;
+
+        /**
+         * An Async wrapper for ListVpcEndpointsForDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcEndpointsForDomainAsync(const Model::ListVpcEndpointsForDomainRequest& request, const ListVpcEndpointsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows you to purchase Amazon OpenSearch Service Reserved
+         * Instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOffering">AWS
          * API Reference</a></p>
          */
@@ -924,8 +877,8 @@ namespace Model
         virtual void PurchaseReservedInstanceOfferingAsync(const Model::PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the remote domain owner to reject an inbound cross-cluster connection
-         * request.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows the remote Amazon OpenSearch Service domain owner to reject an inbound
+         * cross-cluster connection request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">AWS
          * API Reference</a></p>
          */
@@ -942,8 +895,10 @@ namespace Model
         virtual void RejectInboundConnectionAsync(const Model::RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified set of tags from the given domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the specified set of tags from an Amazon OpenSearch Service domain.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+         * Tagging Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">AWS
          * API Reference</a></p>
          */
@@ -960,8 +915,28 @@ namespace Model
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Schedules a service software update for an Amazon OpenSearch Service
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Revokes access to an Amazon OpenSearch Service domain that was provided
+         * through an interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RevokeVpcEndpointAccessOutcome RevokeVpcEndpointAccess(const Model::RevokeVpcEndpointAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for RevokeVpcEndpointAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RevokeVpcEndpointAccessOutcomeCallable RevokeVpcEndpointAccessCallable(const Model::RevokeVpcEndpointAccessRequest& request) const;
+
+        /**
+         * An Async wrapper for RevokeVpcEndpointAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RevokeVpcEndpointAccessAsync(const Model::RevokeVpcEndpointAccessRequest& request, const RevokeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Schedules a service software update for an Amazon OpenSearch Service domain.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+         * software updates in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">AWS
          * API Reference</a></p>
          */
@@ -978,8 +953,8 @@ namespace Model
         virtual void StartServiceSoftwareUpdateAsync(const Model::StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the cluster configuration of the specified domain, such as setting
-         * the instance type and the number of instances. </p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">AWS
          * API Reference</a></p>
          */
@@ -996,8 +971,10 @@ namespace Model
         virtual void UpdateDomainConfigAsync(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a package for use with Amazon OpenSearch Service
-         * domains.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a package for use with Amazon OpenSearch Service domains. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+         * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackage">AWS
          * API Reference</a></p>
          */
@@ -1014,9 +991,27 @@ namespace Model
         virtual void UpdatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows you to either upgrade your domain or perform an upgrade eligibility
-         * check to a compatible version of OpenSearch or Elasticsearch. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Modifies an Amazon OpenSearch Service-managed interface VPC
+         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVpcEndpointOutcome UpdateVpcEndpoint(const Model::UpdateVpcEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateVpcEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVpcEndpointOutcomeCallable UpdateVpcEndpointCallable(const Model::UpdateVpcEndpointRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateVpcEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVpcEndpointAsync(const Model::UpdateVpcEndpointRequest& request, const UpdateVpcEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform
+         * an upgrade eligibility check to a compatible version of OpenSearch or
+         * Elasticsearch.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeDomain">AWS
          * API Reference</a></p>
          */
@@ -1034,52 +1029,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInboundConnectionAsyncHelper(const Model::AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociatePackageAsyncHelper(const Model::AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelServiceSoftwareUpdateAsyncHelper(const Model::CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOutboundConnectionAsyncHelper(const Model::CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePackageAsyncHelper(const Model::CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInboundConnectionAsyncHelper(const Model::DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOutboundConnectionAsyncHelper(const Model::DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePackageAsyncHelper(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAutoTunesAsyncHelper(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainChangeProgressAsyncHelper(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainConfigAsyncHelper(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainsAsyncHelper(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInboundConnectionsAsyncHelper(const Model::DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceTypeLimitsAsyncHelper(const Model::DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOutboundConnectionsAsyncHelper(const Model::DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePackagesAsyncHelper(const Model::DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReservedInstanceOfferingsAsyncHelper(const Model::DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReservedInstancesAsyncHelper(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DissociatePackageAsyncHelper(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCompatibleVersionsAsyncHelper(const Model::GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPackageVersionHistoryAsyncHelper(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUpgradeHistoryAsyncHelper(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUpgradeStatusAsyncHelper(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainNamesAsyncHelper(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsForPackageAsyncHelper(const Model::ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstanceTypeDetailsAsyncHelper(const Model::ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackagesForDomainAsyncHelper(const Model::ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVersionsAsyncHelper(const Model::ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PurchaseReservedInstanceOfferingAsyncHelper(const Model::PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RejectInboundConnectionAsyncHelper(const Model::RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartServiceSoftwareUpdateAsyncHelper(const Model::StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDomainConfigAsyncHelper(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePackageAsyncHelper(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpgradeDomainAsyncHelper(const Model::UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;
+      void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      OpenSearchServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<OpenSearchServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpenSearchService

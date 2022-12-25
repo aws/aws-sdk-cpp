@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ConnectionAliasAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ConnectionAliasAssociation
+  class ConnectionAliasAssociation
   {
   public:
-    ConnectionAliasAssociation();
-    ConnectionAliasAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionAliasAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ConnectionAliasAssociation();
+    AWS_WORKSPACES_API ConnectionAliasAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ConnectionAliasAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     AssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_associatedAccountId;
-    bool m_associatedAccountIdHasBeenSet;
+    bool m_associatedAccountIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_connectionIdentifier;
-    bool m_connectionIdentifierHasBeenSet;
+    bool m_connectionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

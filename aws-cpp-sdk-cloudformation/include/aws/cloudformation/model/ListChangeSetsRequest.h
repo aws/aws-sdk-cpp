@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSetsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ListChangeSetsRequest : public CloudFormationRequest
+  class ListChangeSetsRequest : public CloudFormationRequest
   {
   public:
-    ListChangeSetsRequest();
+    AWS_CLOUDFORMATION_API ListChangeSetsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListChangeSets"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

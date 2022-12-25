@@ -26,22 +26,22 @@ namespace Model
 {
 
   /**
-   * <p> Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-   * An Amazon ECS task set includes details such as the desired number of tasks, how
+   * <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An
+   * Amazon ECS task set includes details such as the desired number of tasks, how
    * many tasks are running, and whether the task set serves production traffic. An
-   * AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a
+   * CodeDeploy application that uses the Amazon ECS compute platform deploys a
    * containerized application in an Amazon ECS service as a task set. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ECSTaskSet
+  class ECSTaskSet
   {
   public:
-    ECSTaskSet();
-    ECSTaskSet(Aws::Utils::Json::JsonView jsonValue);
-    ECSTaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ECSTaskSet();
+    AWS_CODEDEPLOY_API ECSTaskSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ECSTaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,37 +288,37 @@ namespace Model
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline const TargetGroupInfo& GetTargetGroup() const{ return m_targetGroup; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline bool TargetGroupHasBeenSet() const { return m_targetGroupHasBeenSet; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline void SetTargetGroup(const TargetGroupInfo& value) { m_targetGroupHasBeenSet = true; m_targetGroup = value; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline void SetTargetGroup(TargetGroupInfo&& value) { m_targetGroupHasBeenSet = true; m_targetGroup = std::move(value); }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline ECSTaskSet& WithTargetGroup(const TargetGroupInfo& value) { SetTargetGroup(value); return *this;}
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline ECSTaskSet& WithTargetGroup(TargetGroupInfo&& value) { SetTargetGroup(std::move(value)); return *this;}
 
@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_identifer;
-    bool m_identiferHasBeenSet;
+    bool m_identiferHasBeenSet = false;
 
     long long m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     long long m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     long long m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     double m_trafficWeight;
-    bool m_trafficWeightHasBeenSet;
+    bool m_trafficWeightHasBeenSet = false;
 
     TargetGroupInfo m_targetGroup;
-    bool m_targetGroupHasBeenSet;
+    bool m_targetGroupHasBeenSet = false;
 
     TargetLabel m_taskSetLabel;
-    bool m_taskSetLabelHasBeenSet;
+    bool m_taskSetLabelHasBeenSet = false;
   };
 
 } // namespace Model

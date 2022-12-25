@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackInputParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackInputParameter
+  class ConformancePackInputParameter
   {
   public:
-    ConformancePackInputParameter();
-    ConformancePackInputParameter(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackInputParameter();
+    AWS_CONFIGSERVICE_API ConformancePackInputParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

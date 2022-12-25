@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopicInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API CreateTopicRequest : public SNSRequest
+  class CreateTopicRequest : public SNSRequest
   {
   public:
-    CreateTopicRequest();
+    AWS_SNS_API CreateTopicRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTopic"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -125,8 +125,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -164,8 +174,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -203,8 +223,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -242,8 +272,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -281,8 +321,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -320,8 +370,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -359,8 +419,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -398,8 +468,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -437,8 +517,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -476,8 +566,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -515,8 +615,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -554,8 +664,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -593,8 +713,18 @@ namespace Model
      * subscriptions.</p> </li> <li> <p> <code>FifoTopic</code> – Set to true to create
      * a FIFO topic.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
      * who can access your topic. By default, only the topic owner can publish or
-     * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
-     * to <a
+     * subscribe to the topic.</p> </li> <li> <p> <code>SignatureVersion</code> – The
+     * signature version corresponds to the hashing algorithm used while creating the
+     * signature of the notifications, subscription confirmations, or unsubscribe
+     * confirmation messages sent by Amazon SNS. By default,
+     * <code>SignatureVersion</code> is set to 1.</p> </li> <li> <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default
+     * <code>TracingConfig</code> is set to <code>PassThrough</code>, and the topic
+     * passes through the tracing header it receives from an Amazon SNS publisher to
+     * its subscriptions. If set to Active, Amazon SNS will vend X-Ray segment data to
+     * topic owner account if the sampled flag in the tracing header is true. This is
+     * only supported on standard topics.</p> </li> </ul> <p>The following attribute
+     * applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
      * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an
      * Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
@@ -679,16 +809,76 @@ namespace Model
      */
     inline CreateTopicRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline const Aws::String& GetDataProtectionPolicy() const{ return m_dataProtectionPolicy; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline bool DataProtectionPolicyHasBeenSet() const { return m_dataProtectionPolicyHasBeenSet; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(const Aws::String& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = value; }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(Aws::String&& value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy = std::move(value); }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline void SetDataProtectionPolicy(const char* value) { m_dataProtectionPolicyHasBeenSet = true; m_dataProtectionPolicy.assign(value); }
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(const Aws::String& value) { SetDataProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(Aws::String&& value) { SetDataProtectionPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>The body of the policy document you want to use for this topic.</p> <p>You
+     * can only add one policy per topic.</p> <p>The policy must be in JSON string
+     * format.</p> <p>Length Constraints: Maximum length of 30,720.</p>
+     */
+    inline CreateTopicRequest& WithDataProtectionPolicy(const char* value) { SetDataProtectionPolicy(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_dataProtectionPolicy;
+    bool m_dataProtectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

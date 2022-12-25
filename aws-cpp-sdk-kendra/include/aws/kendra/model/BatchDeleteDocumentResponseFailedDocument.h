@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocumentResponseFailedDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument
+  class BatchDeleteDocumentResponseFailedDocument
   {
   public:
-    BatchDeleteDocumentResponseFailedDocument();
-    BatchDeleteDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument();
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

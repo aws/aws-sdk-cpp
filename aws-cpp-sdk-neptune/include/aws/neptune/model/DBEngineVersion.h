@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBEngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API DBEngineVersion
+  class DBEngineVersion
   {
   public:
-    DBEngineVersion();
-    DBEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBEngineVersion();
+    AWS_NEPTUNE_API DBEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -547,43 +547,43 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_dBEngineDescription;
-    bool m_dBEngineDescriptionHasBeenSet;
+    bool m_dBEngineDescriptionHasBeenSet = false;
 
     Aws::String m_dBEngineVersionDescription;
-    bool m_dBEngineVersionDescriptionHasBeenSet;
+    bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
     CharacterSet m_defaultCharacterSet;
-    bool m_defaultCharacterSetHasBeenSet;
+    bool m_defaultCharacterSetHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
-    bool m_supportedCharacterSetsHasBeenSet;
+    bool m_supportedCharacterSetsHasBeenSet = false;
 
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-    bool m_validUpgradeTargetHasBeenSet;
+    bool m_validUpgradeTargetHasBeenSet = false;
 
     Aws::Vector<Timezone> m_supportedTimezones;
-    bool m_supportedTimezonesHasBeenSet;
+    bool m_supportedTimezonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportableLogTypes;
-    bool m_exportableLogTypesHasBeenSet;
+    bool m_exportableLogTypesHasBeenSet = false;
 
     bool m_supportsLogExportsToCloudwatchLogs;
-    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
+    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
     bool m_supportsReadReplica;
-    bool m_supportsReadReplicaHasBeenSet;
+    bool m_supportsReadReplicaHasBeenSet = false;
 
     bool m_supportsGlobalDatabases;
-    bool m_supportsGlobalDatabasesHasBeenSet;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
   };
 
 } // namespace Model

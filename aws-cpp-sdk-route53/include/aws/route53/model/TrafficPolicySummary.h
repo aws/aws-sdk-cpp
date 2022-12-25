@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TrafficPolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API TrafficPolicySummary
+  class TrafficPolicySummary
   {
   public:
-    TrafficPolicySummary();
-    TrafficPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicySummary();
+    AWS_ROUTE53_API TrafficPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RRType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_latestVersion;
-    bool m_latestVersionHasBeenSet;
+    bool m_latestVersionHasBeenSet = false;
 
     int m_trafficPolicyCount;
-    bool m_trafficPolicyCountHasBeenSet;
+    bool m_trafficPolicyCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotSiteWiseAssetModelPropertyIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier
+  class IotSiteWiseAssetModelPropertyIdentifier
   {
   public:
-    IotSiteWiseAssetModelPropertyIdentifier();
-    IotSiteWiseAssetModelPropertyIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    IotSiteWiseAssetModelPropertyIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier();
+    AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API IotSiteWiseAssetModelPropertyIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
   };
 
 } // namespace Model

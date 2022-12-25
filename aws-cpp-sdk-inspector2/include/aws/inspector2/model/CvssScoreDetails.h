@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CvssScoreDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CvssScoreDetails
+  class CvssScoreDetails
   {
   public:
-    CvssScoreDetails();
-    CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CvssScoreDetails();
+    AWS_INSPECTOR2_API CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::Vector<CvssScoreAdjustment> m_adjustments;
-    bool m_adjustmentsHasBeenSet;
+    bool m_adjustmentsHasBeenSet = false;
 
     Aws::String m_cvssSource;
-    bool m_cvssSourceHasBeenSet;
+    bool m_cvssSourceHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_scoreSource;
-    bool m_scoreSourceHasBeenSet;
+    bool m_scoreSourceHasBeenSet = false;
 
     Aws::String m_scoringVector;
-    bool m_scoringVectorHasBeenSet;
+    bool m_scoringVectorHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

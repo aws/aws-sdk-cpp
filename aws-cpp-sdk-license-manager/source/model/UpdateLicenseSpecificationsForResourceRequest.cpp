@@ -31,7 +31,7 @@ Aws::String UpdateLicenseSpecificationsForResourceRequest::SerializePayload() co
 
   if(m_addLicenseSpecificationsHasBeenSet)
   {
-   Array<JsonValue> addLicenseSpecificationsJsonList(m_addLicenseSpecifications.size());
+   Aws::Utils::Array<JsonValue> addLicenseSpecificationsJsonList(m_addLicenseSpecifications.size());
    for(unsigned addLicenseSpecificationsIndex = 0; addLicenseSpecificationsIndex < addLicenseSpecificationsJsonList.GetLength(); ++addLicenseSpecificationsIndex)
    {
      addLicenseSpecificationsJsonList[addLicenseSpecificationsIndex].AsObject(m_addLicenseSpecifications[addLicenseSpecificationsIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String UpdateLicenseSpecificationsForResourceRequest::SerializePayload() co
 
   if(m_removeLicenseSpecificationsHasBeenSet)
   {
-   Array<JsonValue> removeLicenseSpecificationsJsonList(m_removeLicenseSpecifications.size());
+   Aws::Utils::Array<JsonValue> removeLicenseSpecificationsJsonList(m_removeLicenseSpecifications.size());
    for(unsigned removeLicenseSpecificationsIndex = 0; removeLicenseSpecificationsIndex < removeLicenseSpecificationsJsonList.GetLength(); ++removeLicenseSpecificationsIndex)
    {
      removeLicenseSpecificationsJsonList[removeLicenseSpecificationsIndex].AsObject(m_removeLicenseSpecifications[removeLicenseSpecificationsIndex].Jsonize());

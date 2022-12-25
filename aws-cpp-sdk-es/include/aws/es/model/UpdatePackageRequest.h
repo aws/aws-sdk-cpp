@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API UpdatePackageRequest : public ElasticsearchServiceRequest
+  class UpdatePackageRequest : public ElasticsearchServiceRequest
   {
   public:
-    UpdatePackageRequest();
+    AWS_ELASTICSEARCHSERVICE_API UpdatePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
   };
 
 } // namespace Model

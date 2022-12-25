@@ -28,12 +28,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API CreateDevEndpointResult
+  class CreateDevEndpointResult
   {
   public:
-    CreateDevEndpointResult();
-    CreateDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CreateDevEndpointResult();
+    AWS_GLUE_API CreateDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CreateDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -421,37 +421,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline CreateDevEndpointResult& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline CreateDevEndpointResult& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline CreateDevEndpointResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

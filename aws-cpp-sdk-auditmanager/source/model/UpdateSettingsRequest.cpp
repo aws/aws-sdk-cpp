@@ -16,7 +16,9 @@ UpdateSettingsRequest::UpdateSettingsRequest() :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnabled(false),
+    m_evidenceFinderEnabledHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,7 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
 
   if(m_defaultProcessOwnersHasBeenSet)
   {
-   Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
+   Aws::Utils::Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
    for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
    {
      defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject(m_defaultProcessOwners[defaultProcessOwnersIndex].Jsonize());
@@ -50,6 +52,12 @@ Aws::String UpdateSettingsRequest::SerializePayload() const
   if(m_kmsKeyHasBeenSet)
   {
    payload.WithString("kmsKey", m_kmsKey);
+
+  }
+
+  if(m_evidenceFinderEnabledHasBeenSet)
+  {
+   payload.WithBool("evidenceFinderEnabled", m_evidenceFinderEnabled);
 
   }
 

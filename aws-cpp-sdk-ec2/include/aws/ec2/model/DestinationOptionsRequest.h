@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DestinationOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DestinationOptionsRequest
+  class DestinationOptionsRequest
   {
   public:
-    DestinationOptionsRequest();
-    DestinationOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DestinationOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DestinationOptionsRequest();
+    AWS_EC2_API DestinationOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DestinationOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     DestinationFileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     bool m_hiveCompatiblePartitions;
-    bool m_hiveCompatiblePartitionsHasBeenSet;
+    bool m_hiveCompatiblePartitionsHasBeenSet = false;
 
     bool m_perHourPartition;
-    bool m_perHourPartitionHasBeenSet;
+    bool m_perHourPartitionHasBeenSet = false;
   };
 
 } // namespace Model

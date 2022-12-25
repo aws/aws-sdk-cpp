@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/BaselineMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API BaselineMetric
+  class BaselineMetric
   {
   public:
-    BaselineMetric();
-    BaselineMetric(Aws::Utils::Json::JsonView jsonValue);
-    BaselineMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API BaselineMetric();
+    AWS_FORECASTSERVICE_API BaselineMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API BaselineMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

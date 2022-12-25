@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/StorageInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API StorageInfo
+  class StorageInfo
   {
   public:
-    StorageInfo();
-    StorageInfo(Aws::Utils::Json::JsonView jsonValue);
-    StorageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API StorageInfo();
+    AWS_KAFKA_API StorageInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API StorageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     EBSStorageInfo m_ebsStorageInfo;
-    bool m_ebsStorageInfoHasBeenSet;
+    bool m_ebsStorageInfoHasBeenSet = false;
   };
 
 } // namespace Model

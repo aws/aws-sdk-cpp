@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchImport">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API BatchImport
+  class BatchImport
   {
   public:
-    BatchImport();
-    BatchImport(Aws::Utils::Json::JsonView jsonValue);
-    BatchImport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API BatchImport();
+    AWS_FRAUDDETECTOR_API BatchImport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API BatchImport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -503,43 +503,43 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     AsyncJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_inputPath;
-    bool m_inputPathHasBeenSet;
+    bool m_inputPathHasBeenSet = false;
 
     Aws::String m_outputPath;
-    bool m_outputPathHasBeenSet;
+    bool m_outputPathHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     int m_processedRecordsCount;
-    bool m_processedRecordsCountHasBeenSet;
+    bool m_processedRecordsCountHasBeenSet = false;
 
     int m_failedRecordsCount;
-    bool m_failedRecordsCountHasBeenSet;
+    bool m_failedRecordsCountHasBeenSet = false;
 
     int m_totalRecordsCount;
-    bool m_totalRecordsCountHasBeenSet;
+    bool m_totalRecordsCountHasBeenSet = false;
   };
 
 } // namespace Model

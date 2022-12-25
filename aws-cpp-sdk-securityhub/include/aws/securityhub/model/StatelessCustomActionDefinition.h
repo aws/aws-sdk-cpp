@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StatelessCustomActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StatelessCustomActionDefinition
+  class StatelessCustomActionDefinition
   {
   public:
-    StatelessCustomActionDefinition();
-    StatelessCustomActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    StatelessCustomActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StatelessCustomActionDefinition();
+    AWS_SECURITYHUB_API StatelessCustomActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StatelessCustomActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     StatelessCustomPublishMetricAction m_publishMetricAction;
-    bool m_publishMetricActionHasBeenSet;
+    bool m_publishMetricActionHasBeenSet = false;
   };
 
 } // namespace Model

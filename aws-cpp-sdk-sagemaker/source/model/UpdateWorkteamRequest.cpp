@@ -32,7 +32,7 @@ Aws::String UpdateWorkteamRequest::SerializePayload() const
 
   if(m_memberDefinitionsHasBeenSet)
   {
-   Array<JsonValue> memberDefinitionsJsonList(m_memberDefinitions.size());
+   Aws::Utils::Array<JsonValue> memberDefinitionsJsonList(m_memberDefinitions.size());
    for(unsigned memberDefinitionsIndex = 0; memberDefinitionsIndex < memberDefinitionsJsonList.GetLength(); ++memberDefinitionsIndex)
    {
      memberDefinitionsJsonList[memberDefinitionsIndex].AsObject(m_memberDefinitions[memberDefinitionsIndex].Jsonize());

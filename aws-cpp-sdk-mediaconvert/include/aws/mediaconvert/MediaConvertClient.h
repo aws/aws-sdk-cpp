@@ -5,227 +5,73 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/MediaConvertErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/mediaconvert/model/AssociateCertificateResult.h>
-#include <aws/mediaconvert/model/CancelJobResult.h>
-#include <aws/mediaconvert/model/CreateJobResult.h>
-#include <aws/mediaconvert/model/CreateJobTemplateResult.h>
-#include <aws/mediaconvert/model/CreatePresetResult.h>
-#include <aws/mediaconvert/model/CreateQueueResult.h>
-#include <aws/mediaconvert/model/DeleteJobTemplateResult.h>
-#include <aws/mediaconvert/model/DeletePolicyResult.h>
-#include <aws/mediaconvert/model/DeletePresetResult.h>
-#include <aws/mediaconvert/model/DeleteQueueResult.h>
-#include <aws/mediaconvert/model/DescribeEndpointsResult.h>
-#include <aws/mediaconvert/model/DisassociateCertificateResult.h>
-#include <aws/mediaconvert/model/GetJobResult.h>
-#include <aws/mediaconvert/model/GetJobTemplateResult.h>
-#include <aws/mediaconvert/model/GetPolicyResult.h>
-#include <aws/mediaconvert/model/GetPresetResult.h>
-#include <aws/mediaconvert/model/GetQueueResult.h>
-#include <aws/mediaconvert/model/ListJobTemplatesResult.h>
-#include <aws/mediaconvert/model/ListJobsResult.h>
-#include <aws/mediaconvert/model/ListPresetsResult.h>
-#include <aws/mediaconvert/model/ListQueuesResult.h>
-#include <aws/mediaconvert/model/ListTagsForResourceResult.h>
-#include <aws/mediaconvert/model/PutPolicyResult.h>
-#include <aws/mediaconvert/model/TagResourceResult.h>
-#include <aws/mediaconvert/model/UntagResourceResult.h>
-#include <aws/mediaconvert/model/UpdateJobTemplateResult.h>
-#include <aws/mediaconvert/model/UpdatePresetResult.h>
-#include <aws/mediaconvert/model/UpdateQueueResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mediaconvert/MediaConvertServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MediaConvert
 {
-
-namespace Model
-{
-        class AssociateCertificateRequest;
-        class CancelJobRequest;
-        class CreateJobRequest;
-        class CreateJobTemplateRequest;
-        class CreatePresetRequest;
-        class CreateQueueRequest;
-        class DeleteJobTemplateRequest;
-        class DeletePolicyRequest;
-        class DeletePresetRequest;
-        class DeleteQueueRequest;
-        class DescribeEndpointsRequest;
-        class DisassociateCertificateRequest;
-        class GetJobRequest;
-        class GetJobTemplateRequest;
-        class GetPolicyRequest;
-        class GetPresetRequest;
-        class GetQueueRequest;
-        class ListJobTemplatesRequest;
-        class ListJobsRequest;
-        class ListPresetsRequest;
-        class ListQueuesRequest;
-        class ListTagsForResourceRequest;
-        class PutPolicyRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateJobTemplateRequest;
-        class UpdatePresetRequest;
-        class UpdateQueueRequest;
-
-        typedef Aws::Utils::Outcome<AssociateCertificateResult, MediaConvertError> AssociateCertificateOutcome;
-        typedef Aws::Utils::Outcome<CancelJobResult, MediaConvertError> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, MediaConvertError> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobTemplateResult, MediaConvertError> CreateJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreatePresetResult, MediaConvertError> CreatePresetOutcome;
-        typedef Aws::Utils::Outcome<CreateQueueResult, MediaConvertError> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobTemplateResult, MediaConvertError> DeleteJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeletePolicyResult, MediaConvertError> DeletePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeletePresetResult, MediaConvertError> DeletePresetOutcome;
-        typedef Aws::Utils::Outcome<DeleteQueueResult, MediaConvertError> DeleteQueueOutcome;
-        typedef Aws::Utils::Outcome<DescribeEndpointsResult, MediaConvertError> DescribeEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DisassociateCertificateResult, MediaConvertError> DisassociateCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetJobResult, MediaConvertError> GetJobOutcome;
-        typedef Aws::Utils::Outcome<GetJobTemplateResult, MediaConvertError> GetJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetPolicyResult, MediaConvertError> GetPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetPresetResult, MediaConvertError> GetPresetOutcome;
-        typedef Aws::Utils::Outcome<GetQueueResult, MediaConvertError> GetQueueOutcome;
-        typedef Aws::Utils::Outcome<ListJobTemplatesResult, MediaConvertError> ListJobTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, MediaConvertError> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListPresetsResult, MediaConvertError> ListPresetsOutcome;
-        typedef Aws::Utils::Outcome<ListQueuesResult, MediaConvertError> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConvertError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutPolicyResult, MediaConvertError> PutPolicyOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, MediaConvertError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, MediaConvertError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobTemplateResult, MediaConvertError> UpdateJobTemplateOutcome;
-        typedef Aws::Utils::Outcome<UpdatePresetResult, MediaConvertError> UpdatePresetOutcome;
-        typedef Aws::Utils::Outcome<UpdateQueueResult, MediaConvertError> UpdateQueueOutcome;
-
-        typedef std::future<AssociateCertificateOutcome> AssociateCertificateOutcomeCallable;
-        typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
-        typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
-        typedef std::future<CreateJobTemplateOutcome> CreateJobTemplateOutcomeCallable;
-        typedef std::future<CreatePresetOutcome> CreatePresetOutcomeCallable;
-        typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
-        typedef std::future<DeleteJobTemplateOutcome> DeleteJobTemplateOutcomeCallable;
-        typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
-        typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
-        typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
-        typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
-        typedef std::future<DisassociateCertificateOutcome> DisassociateCertificateOutcomeCallable;
-        typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
-        typedef std::future<GetJobTemplateOutcome> GetJobTemplateOutcomeCallable;
-        typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
-        typedef std::future<GetPresetOutcome> GetPresetOutcomeCallable;
-        typedef std::future<GetQueueOutcome> GetQueueOutcomeCallable;
-        typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
-        typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
-        typedef std::future<ListPresetsOutcome> ListPresetsOutcomeCallable;
-        typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateJobTemplateOutcome> UpdateJobTemplateOutcomeCallable;
-        typedef std::future<UpdatePresetOutcome> UpdatePresetOutcomeCallable;
-        typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
-} // namespace Model
-
-  class MediaConvertClient;
-
-    typedef std::function<void(const MediaConvertClient*, const Model::AssociateCertificateRequest&, const Model::AssociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateCertificateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::CreateJobTemplateRequest&, const Model::CreateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobTemplateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresetResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DeleteJobTemplateRequest&, const Model::DeleteJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobTemplateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::DisassociateCertificateRequest&, const Model::DisassociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCertificateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::GetJobTemplateRequest&, const Model::GetJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTemplateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::GetPresetRequest&, const Model::GetPresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPresetResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::GetQueueRequest&, const Model::GetQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPresetsResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::UpdateJobTemplateRequest&, const Model::UpdateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobTemplateResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::UpdatePresetRequest&, const Model::UpdatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePresetResponseReceivedHandler;
-    typedef std::function<void(const MediaConvertClient*, const Model::UpdateQueueRequest&, const Model::UpdateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueResponseReceivedHandler;
-
   /**
    * AWS Elemental MediaConvert
    */
-  class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaConvertClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaConvertClient(const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration(),
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaConvertClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaConvertClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MediaConvertClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaConvertClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaConvertClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MediaConvertClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MediaConvertClient();
-
 
         /**
          * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
@@ -743,40 +589,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MediaConvertEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateCertificateAsyncHelper(const Model::AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobTemplateAsyncHelper(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePresetAsyncHelper(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteJobTemplateAsyncHelper(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteQueueAsyncHelper(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateCertificateAsyncHelper(const Model::DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetJobTemplateAsyncHelper(const Model::GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPresetAsyncHelper(const Model::GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueueAsyncHelper(const Model::GetQueueRequest& request, const GetQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobTemplatesAsyncHelper(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPolicyAsyncHelper(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateJobTemplateAsyncHelper(const Model::UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePresetAsyncHelper(const Model::UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueAsyncHelper(const Model::UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>;
+      void init(const MediaConvertClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MediaConvertClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MediaConvertEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaConvert

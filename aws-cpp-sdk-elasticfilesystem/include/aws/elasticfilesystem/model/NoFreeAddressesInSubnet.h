@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/NoFreeAddressesInSubnet">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API NoFreeAddressesInSubnet
+  class NoFreeAddressesInSubnet
   {
   public:
-    NoFreeAddressesInSubnet();
-    NoFreeAddressesInSubnet(Aws::Utils::Json::JsonView jsonValue);
-    NoFreeAddressesInSubnet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API NoFreeAddressesInSubnet();
+    AWS_EFS_API NoFreeAddressesInSubnet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API NoFreeAddressesInSubnet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

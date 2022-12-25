@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UsernameField">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API UsernameField
+  class UsernameField
   {
   public:
-    UsernameField();
-    UsernameField(Aws::Utils::Json::JsonView jsonValue);
-    UsernameField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API UsernameField();
+    AWS_WAFV2_API UsernameField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API UsernameField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

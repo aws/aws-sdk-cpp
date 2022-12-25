@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/UpdateResult">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API UpdateResult
+  class UpdateResult
   {
   public:
-    UpdateResult();
-    UpdateResult(Aws::Utils::Json::JsonView jsonValue);
-    UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API UpdateResult();
+    AWS_RDSDATASERVICE_API UpdateResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Field> m_generatedFields;
-    bool m_generatedFieldsHasBeenSet;
+    bool m_generatedFieldsHasBeenSet = false;
   };
 
 } // namespace Model

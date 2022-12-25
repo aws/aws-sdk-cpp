@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/Account">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API Account();
+    AWS_DETECTIVE_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

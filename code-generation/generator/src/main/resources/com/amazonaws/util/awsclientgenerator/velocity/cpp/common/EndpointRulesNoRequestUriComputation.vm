@@ -1,0 +1,14 @@
+#if($serviceModel.endpointRules)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+#if($operation.staticContextParams)
+  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters = {
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+  {"${staticParamPair.key}", "${staticParamPair.value.get("value").getValue()}"}#if( $foreach.hasNext ),#end
+#end
+  };
+#else
+  static const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+#end
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#end

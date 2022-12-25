@@ -11,6 +11,7 @@
 #include <aws/codedeploy/model/TargetInstances.h>
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 #include <aws/codedeploy/model/FileExistsBehavior.h>
+#include <aws/codedeploy/model/AlarmConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -26,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API CreateDeploymentRequest : public CodeDeployRequest
+  class CreateDeploymentRequest : public CodeDeployRequest
   {
   public:
-    CreateDeploymentRequest();
+    AWS_CODEDEPLOY_API CreateDeploymentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,56 +38,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDeployment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-     * account.</p>
+     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -164,73 +165,73 @@ namespace Model
 
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or AWS
-     * account.</p> <p>If not specified, the value configured in the deployment group
-     * is used as the default. If the deployment group does not have a deployment
-     * configuration associated with it,
+     * <p>The name of a deployment configuration associated with the IAM user or Amazon
+     * Web Services account.</p> <p>If not specified, the value configured in the
+     * deployment group is used as the default. If the deployment group does not have a
+     * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
@@ -290,7 +291,7 @@ namespace Model
      * that deployment fails. If deployment to that instance is part of an overall
      * deployment and the number of healthy hosts is not less than the minimum number
      * of healthy hosts, then a deployment to the next instance is attempted. </p> <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+     * During a deployment, the CodeDeploy agent runs the scripts specified for
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
      * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
      * deployment. (All other scripts are run from the AppSpec file in the current
@@ -316,7 +317,7 @@ namespace Model
      * that deployment fails. If deployment to that instance is part of an overall
      * deployment and the number of healthy hosts is not less than the minimum number
      * of healthy hosts, then a deployment to the next instance is attempted. </p> <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+     * During a deployment, the CodeDeploy agent runs the scripts specified for
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
      * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
      * deployment. (All other scripts are run from the AppSpec file in the current
@@ -342,7 +343,7 @@ namespace Model
      * that deployment fails. If deployment to that instance is part of an overall
      * deployment and the number of healthy hosts is not less than the minimum number
      * of healthy hosts, then a deployment to the next instance is attempted. </p> <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+     * During a deployment, the CodeDeploy agent runs the scripts specified for
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
      * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
      * deployment. (All other scripts are run from the AppSpec file in the current
@@ -368,7 +369,7 @@ namespace Model
      * that deployment fails. If deployment to that instance is part of an overall
      * deployment and the number of healthy hosts is not less than the minimum number
      * of healthy hosts, then a deployment to the next instance is attempted. </p> <p>
-     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for
+     * During a deployment, the CodeDeploy agent runs the scripts specified for
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
      * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
      * deployment. (All other scripts are run from the AppSpec file in the current
@@ -482,7 +483,7 @@ namespace Model
 
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -495,7 +496,7 @@ namespace Model
     inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -508,7 +509,7 @@ namespace Model
     inline bool FileExistsBehaviorHasBeenSet() const { return m_fileExistsBehaviorHasBeenSet; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -521,7 +522,7 @@ namespace Model
     inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -534,7 +535,7 @@ namespace Model
     inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -547,7 +548,7 @@ namespace Model
     inline CreateDeploymentRequest& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <p>The <code>fileExistsBehavior</code> parameter takes any of
      * the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is
@@ -559,37 +560,143 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline const AlarmConfiguration& GetOverrideAlarmConfiguration() const{ return m_overrideAlarmConfiguration; }
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline bool OverrideAlarmConfigurationHasBeenSet() const { return m_overrideAlarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline void SetOverrideAlarmConfiguration(const AlarmConfiguration& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = value; }
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline void SetOverrideAlarmConfiguration(AlarmConfiguration&& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = std::move(value); }
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline CreateDeploymentRequest& WithOverrideAlarmConfiguration(const AlarmConfiguration& value) { SetOverrideAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>Allows you to specify information about alarms associated with a deployment.
+     * The alarm configuration that you specify here will override the alarm
+     * configuration at the deployment group level. Consider overriding the alarm
+     * configuration if you have set up alarms at the deployment group level that are
+     * causing deployment failures. In this case, you would call
+     * <code>CreateDeployment</code> to create a new deployment that uses a previous
+     * application revision that is known to work, and set its alarm configuration to
+     * turn off alarm polling. Turning off alarm polling ensures that the new
+     * deployment proceeds without being blocked by the alarm that was generated by the
+     * previous, failed, deployment.</p>  <p>If you specify an
+     * <code>overrideAlarmConfiguration</code>, you need the
+     * <code>UpdateDeploymentGroup</code> IAM permission when calling
+     * <code>CreateDeployment</code>.</p> 
+     */
+    inline CreateDeploymentRequest& WithOverrideAlarmConfiguration(AlarmConfiguration&& value) { SetOverrideAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     RevisionLocation m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_ignoreApplicationStopFailures;
-    bool m_ignoreApplicationStopFailuresHasBeenSet;
+    bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
     TargetInstances m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     bool m_updateOutdatedInstancesOnly;
-    bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
     FileExistsBehavior m_fileExistsBehavior;
-    bool m_fileExistsBehaviorHasBeenSet;
+    bool m_fileExistsBehaviorHasBeenSet = false;
+
+    AlarmConfiguration m_overrideAlarmConfiguration;
+    bool m_overrideAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

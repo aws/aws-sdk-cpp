@@ -24,26 +24,26 @@ namespace Model
 {
 
   /**
-   * <p> A revision for an AWS Lambda or Amazon ECS deployment that is a
-   * YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS
-   * deployments, the revision is the same as the AppSpec file. This method replaces
-   * the deprecated <code>RawString</code> data type. </p><p><h3>See Also:</h3>   <a
+   * <p> A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted
+   * or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is
+   * the same as the AppSpec file. This method replaces the deprecated
+   * <code>RawString</code> data type. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AppSpecContent">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API AppSpecContent
+  class AppSpecContent
   {
   public:
-    AppSpecContent();
-    AppSpecContent(Aws::Utils::Json::JsonView jsonValue);
-    AppSpecContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API AppSpecContent();
+    AWS_CODEDEPLOY_API AppSpecContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API AppSpecContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -54,9 +54,9 @@ namespace Model
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -67,9 +67,9 @@ namespace Model
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -80,9 +80,9 @@ namespace Model
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -93,9 +93,9 @@ namespace Model
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -106,9 +106,9 @@ namespace Model
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -119,9 +119,9 @@ namespace Model
     inline AppSpecContent& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -132,9 +132,9 @@ namespace Model
     inline AppSpecContent& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment, the content includes a Lambda function name, the alias for
-     * its original version, and the alias for its replacement version. The deployment
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda
+     * deployment, the content includes a Lambda function name, the alias for its
+     * original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
      * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
@@ -188,10 +188,10 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_sha256;
-    bool m_sha256HasBeenSet;
+    bool m_sha256HasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFrameworkControlSet">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet
+  class CreateAssessmentFrameworkControlSet
   {
   public:
-    CreateAssessmentFrameworkControlSet();
-    CreateAssessmentFrameworkControlSet(Aws::Utils::Json::JsonView jsonValue);
-    CreateAssessmentFrameworkControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet();
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<CreateAssessmentFrameworkControl> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
   };
 
 } // namespace Model

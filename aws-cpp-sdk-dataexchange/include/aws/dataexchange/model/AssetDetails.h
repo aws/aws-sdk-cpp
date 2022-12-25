@@ -8,6 +8,8 @@
 #include <aws/dataexchange/model/S3SnapshotAsset.h>
 #include <aws/dataexchange/model/RedshiftDataShareAsset.h>
 #include <aws/dataexchange/model/ApiGatewayApiAsset.h>
+#include <aws/dataexchange/model/S3DataAccessAsset.h>
+#include <aws/dataexchange/model/LakeFormationDataPermissionAsset.h>
 #include <utility>
 
 namespace Aws
@@ -26,46 +28,46 @@ namespace Model
 {
 
   /**
-   * <p>Information about the asset.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the asset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AssetDetails
+  class AssetDetails
   {
   public:
-    AssetDetails();
-    AssetDetails(Aws::Utils::Json::JsonView jsonValue);
-    AssetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AssetDetails();
+    AWS_DATAEXCHANGE_API AssetDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AssetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline const S3SnapshotAsset& GetS3SnapshotAsset() const{ return m_s3SnapshotAsset; }
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline bool S3SnapshotAssetHasBeenSet() const { return m_s3SnapshotAssetHasBeenSet; }
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline void SetS3SnapshotAsset(const S3SnapshotAsset& value) { m_s3SnapshotAssetHasBeenSet = true; m_s3SnapshotAsset = value; }
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline void SetS3SnapshotAsset(S3SnapshotAsset&& value) { m_s3SnapshotAssetHasBeenSet = true; m_s3SnapshotAsset = std::move(value); }
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline AssetDetails& WithS3SnapshotAsset(const S3SnapshotAsset& value) { SetS3SnapshotAsset(value); return *this;}
 
     /**
-     * <p>The S3 object that is the asset.</p>
+     * <p>The Amazon S3 object that is the asset.</p>
      */
     inline AssetDetails& WithS3SnapshotAsset(S3SnapshotAsset&& value) { SetS3SnapshotAsset(std::move(value)); return *this;}
 
@@ -131,16 +133,84 @@ namespace Model
      */
     inline AssetDetails& WithApiGatewayApiAsset(ApiGatewayApiAsset&& value) { SetApiGatewayApiAsset(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline const S3DataAccessAsset& GetS3DataAccessAsset() const{ return m_s3DataAccessAsset; }
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline bool S3DataAccessAssetHasBeenSet() const { return m_s3DataAccessAssetHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline void SetS3DataAccessAsset(const S3DataAccessAsset& value) { m_s3DataAccessAssetHasBeenSet = true; m_s3DataAccessAsset = value; }
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline void SetS3DataAccessAsset(S3DataAccessAsset&& value) { m_s3DataAccessAssetHasBeenSet = true; m_s3DataAccessAsset = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline AssetDetails& WithS3DataAccessAsset(const S3DataAccessAsset& value) { SetS3DataAccessAsset(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 data access that is the asset.</p>
+     */
+    inline AssetDetails& WithS3DataAccessAsset(S3DataAccessAsset&& value) { SetS3DataAccessAsset(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline const LakeFormationDataPermissionAsset& GetLakeFormationDataPermissionAsset() const{ return m_lakeFormationDataPermissionAsset; }
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline bool LakeFormationDataPermissionAssetHasBeenSet() const { return m_lakeFormationDataPermissionAssetHasBeenSet; }
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline void SetLakeFormationDataPermissionAsset(const LakeFormationDataPermissionAsset& value) { m_lakeFormationDataPermissionAssetHasBeenSet = true; m_lakeFormationDataPermissionAsset = value; }
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline void SetLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset&& value) { m_lakeFormationDataPermissionAssetHasBeenSet = true; m_lakeFormationDataPermissionAsset = std::move(value); }
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline AssetDetails& WithLakeFormationDataPermissionAsset(const LakeFormationDataPermissionAsset& value) { SetLakeFormationDataPermissionAsset(value); return *this;}
+
+    /**
+     * <p>The AWS Lake Formation data permission that is the asset.</p>
+     */
+    inline AssetDetails& WithLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset&& value) { SetLakeFormationDataPermissionAsset(std::move(value)); return *this;}
+
   private:
 
     S3SnapshotAsset m_s3SnapshotAsset;
-    bool m_s3SnapshotAssetHasBeenSet;
+    bool m_s3SnapshotAssetHasBeenSet = false;
 
     RedshiftDataShareAsset m_redshiftDataShareAsset;
-    bool m_redshiftDataShareAssetHasBeenSet;
+    bool m_redshiftDataShareAssetHasBeenSet = false;
 
     ApiGatewayApiAsset m_apiGatewayApiAsset;
-    bool m_apiGatewayApiAssetHasBeenSet;
+    bool m_apiGatewayApiAssetHasBeenSet = false;
+
+    S3DataAccessAsset m_s3DataAccessAsset;
+    bool m_s3DataAccessAssetHasBeenSet = false;
+
+    LakeFormationDataPermissionAsset m_lakeFormationDataPermissionAsset;
+    bool m_lakeFormationDataPermissionAssetHasBeenSet = false;
   };
 
 } // namespace Model

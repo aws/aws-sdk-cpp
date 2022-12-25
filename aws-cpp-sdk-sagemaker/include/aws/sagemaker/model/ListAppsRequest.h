@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API ListAppsRequest : public SageMakerRequest
+  class ListAppsRequest : public SageMakerRequest
   {
   public:
-    ListAppsRequest();
+    AWS_SAGEMAKER_API ListAppsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListApps"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -210,64 +210,124 @@ namespace Model
 
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline const Aws::String& GetUserProfileNameEquals() const{ return m_userProfileNameEquals; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline bool UserProfileNameEqualsHasBeenSet() const { return m_userProfileNameEqualsHasBeenSet; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(const Aws::String& value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals = value; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(Aws::String&& value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals = std::move(value); }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(const char* value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals.assign(value); }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(const Aws::String& value) { SetUserProfileNameEquals(value); return *this;}
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(Aws::String&& value) { SetUserProfileNameEquals(std::move(value)); return *this;}
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(const char* value) { SetUserProfileNameEquals(value); return *this;}
+
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline const Aws::String& GetSpaceNameEquals() const{ return m_spaceNameEquals; }
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline bool SpaceNameEqualsHasBeenSet() const { return m_spaceNameEqualsHasBeenSet; }
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline void SetSpaceNameEquals(const Aws::String& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = value; }
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline void SetSpaceNameEquals(Aws::String&& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = std::move(value); }
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline void SetSpaceNameEquals(const char* value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals.assign(value); }
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(const Aws::String& value) { SetSpaceNameEquals(value); return *this;}
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(Aws::String&& value) { SetSpaceNameEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
+     */
+    inline ListAppsRequest& WithSpaceNameEquals(const char* value) { SetSpaceNameEquals(value); return *this;}
 
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     AppSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     Aws::String m_domainIdEquals;
-    bool m_domainIdEqualsHasBeenSet;
+    bool m_domainIdEqualsHasBeenSet = false;
 
     Aws::String m_userProfileNameEquals;
-    bool m_userProfileNameEqualsHasBeenSet;
+    bool m_userProfileNameEqualsHasBeenSet = false;
+
+    Aws::String m_spaceNameEquals;
+    bool m_spaceNameEqualsHasBeenSet = false;
   };
 
 } // namespace Model

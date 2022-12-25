@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceGroupDetail
+  class InstanceGroupDetail
   {
   public:
-    InstanceGroupDetail();
-    InstanceGroupDetail(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceGroupDetail();
+    AWS_EMR_API InstanceGroupDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -578,49 +578,49 @@ namespace Model
   private:
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     InstanceRoleType m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
 
     Aws::String m_bidPrice;
-    bool m_bidPriceHasBeenSet;
+    bool m_bidPriceHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceRequestCount;
-    bool m_instanceRequestCountHasBeenSet;
+    bool m_instanceRequestCountHasBeenSet = false;
 
     int m_instanceRunningCount;
-    bool m_instanceRunningCountHasBeenSet;
+    bool m_instanceRunningCountHasBeenSet = false;
 
     InstanceGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_lastStateChangeReason;
-    bool m_lastStateChangeReasonHasBeenSet;
+    bool m_lastStateChangeReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_readyDateTime;
-    bool m_readyDateTimeHasBeenSet;
+    bool m_readyDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

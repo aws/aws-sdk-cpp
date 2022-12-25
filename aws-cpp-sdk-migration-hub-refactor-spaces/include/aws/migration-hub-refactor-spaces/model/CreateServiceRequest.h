@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API CreateServiceRequest : public MigrationHubRefactorSpacesRequest
+  class CreateServiceRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    CreateServiceRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -398,32 +398,56 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline const UrlEndpointInput& GetUrlEndpoint() const{ return m_urlEndpoint; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline bool UrlEndpointHasBeenSet() const { return m_urlEndpointHasBeenSet; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(const UrlEndpointInput& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = value; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(UrlEndpointInput&& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = std::move(value); }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(const UrlEndpointInput& value) { SetUrlEndpoint(value); return *this;}
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(UrlEndpointInput&& value) { SetUrlEndpoint(std::move(value)); return *this;}
 
@@ -471,34 +495,34 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ServiceEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     LambdaEndpointInput m_lambdaEndpoint;
-    bool m_lambdaEndpointHasBeenSet;
+    bool m_lambdaEndpointHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     UrlEndpointInput m_urlEndpoint;
-    bool m_urlEndpointHasBeenSet;
+    bool m_urlEndpointHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

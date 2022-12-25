@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWriteOperationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchWriteOperationResponse
+  class BatchWriteOperationResponse
   {
   public:
-    BatchWriteOperationResponse();
-    BatchWriteOperationResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchWriteOperationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchWriteOperationResponse();
+    AWS_CLOUDDIRECTORY_API BatchWriteOperationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchWriteOperationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -573,49 +573,49 @@ namespace Model
   private:
 
     BatchCreateObjectResponse m_createObject;
-    bool m_createObjectHasBeenSet;
+    bool m_createObjectHasBeenSet = false;
 
     BatchAttachObjectResponse m_attachObject;
-    bool m_attachObjectHasBeenSet;
+    bool m_attachObjectHasBeenSet = false;
 
     BatchDetachObjectResponse m_detachObject;
-    bool m_detachObjectHasBeenSet;
+    bool m_detachObjectHasBeenSet = false;
 
     BatchUpdateObjectAttributesResponse m_updateObjectAttributes;
-    bool m_updateObjectAttributesHasBeenSet;
+    bool m_updateObjectAttributesHasBeenSet = false;
 
     BatchDeleteObjectResponse m_deleteObject;
-    bool m_deleteObjectHasBeenSet;
+    bool m_deleteObjectHasBeenSet = false;
 
     BatchAddFacetToObjectResponse m_addFacetToObject;
-    bool m_addFacetToObjectHasBeenSet;
+    bool m_addFacetToObjectHasBeenSet = false;
 
     BatchRemoveFacetFromObjectResponse m_removeFacetFromObject;
-    bool m_removeFacetFromObjectHasBeenSet;
+    bool m_removeFacetFromObjectHasBeenSet = false;
 
     BatchAttachPolicyResponse m_attachPolicy;
-    bool m_attachPolicyHasBeenSet;
+    bool m_attachPolicyHasBeenSet = false;
 
     BatchDetachPolicyResponse m_detachPolicy;
-    bool m_detachPolicyHasBeenSet;
+    bool m_detachPolicyHasBeenSet = false;
 
     BatchCreateIndexResponse m_createIndex;
-    bool m_createIndexHasBeenSet;
+    bool m_createIndexHasBeenSet = false;
 
     BatchAttachToIndexResponse m_attachToIndex;
-    bool m_attachToIndexHasBeenSet;
+    bool m_attachToIndexHasBeenSet = false;
 
     BatchDetachFromIndexResponse m_detachFromIndex;
-    bool m_detachFromIndexHasBeenSet;
+    bool m_detachFromIndexHasBeenSet = false;
 
     BatchAttachTypedLinkResponse m_attachTypedLink;
-    bool m_attachTypedLinkHasBeenSet;
+    bool m_attachTypedLinkHasBeenSet = false;
 
     BatchDetachTypedLinkResponse m_detachTypedLink;
-    bool m_detachTypedLinkHasBeenSet;
+    bool m_detachTypedLinkHasBeenSet = false;
 
     BatchUpdateLinkAttributesResponse m_updateLinkAttributes;
-    bool m_updateLinkAttributesHasBeenSet;
+    bool m_updateLinkAttributesHasBeenSet = false;
   };
 
 } // namespace Model

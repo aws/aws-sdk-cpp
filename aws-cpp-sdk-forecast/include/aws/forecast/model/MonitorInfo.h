@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/MonitorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API MonitorInfo
+  class MonitorInfo
   {
   public:
-    MonitorInfo();
-    MonitorInfo(Aws::Utils::Json::JsonView jsonValue);
-    MonitorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API MonitorInfo();
+    AWS_FORECASTSERVICE_API MonitorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API MonitorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,43 +24,22 @@ namespace Model
 {
 
   /**
-   * <p>The result of a SQL statement.</p> <pre><code> &lt;important&gt;
-   * &lt;p&gt;This data structure is only used with the deprecated
+   * <p>The result of a SQL statement.</p> <pre><code> &lt;note&gt; &lt;p&gt;This
+   * data structure is only used with the deprecated
    * &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the
    * &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or
    * &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt;
-   * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
+   * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API SqlStatementResult
+  class SqlStatementResult
   {
   public:
-    SqlStatementResult();
-    SqlStatementResult(Aws::Utils::Json::JsonView jsonValue);
-    SqlStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
-    inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
-    inline bool NumberOfRecordsUpdatedHasBeenSet() const { return m_numberOfRecordsUpdatedHasBeenSet; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
-    inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdatedHasBeenSet = true; m_numberOfRecordsUpdated = value; }
-
-    /**
-     * <p>The number of records updated by a SQL statement.</p>
-     */
-    inline SqlStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
+    AWS_RDSDATASERVICE_API SqlStatementResult();
+    AWS_RDSDATASERVICE_API SqlStatementResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API SqlStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,13 +72,34 @@ namespace Model
      */
     inline SqlStatementResult& WithResultFrame(ResultFrame&& value) { SetResultFrame(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of records updated by a SQL statement.</p>
+     */
+    inline long long GetNumberOfRecordsUpdated() const{ return m_numberOfRecordsUpdated; }
+
+    /**
+     * <p>The number of records updated by a SQL statement.</p>
+     */
+    inline bool NumberOfRecordsUpdatedHasBeenSet() const { return m_numberOfRecordsUpdatedHasBeenSet; }
+
+    /**
+     * <p>The number of records updated by a SQL statement.</p>
+     */
+    inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdatedHasBeenSet = true; m_numberOfRecordsUpdated = value; }
+
+    /**
+     * <p>The number of records updated by a SQL statement.</p>
+     */
+    inline SqlStatementResult& WithNumberOfRecordsUpdated(long long value) { SetNumberOfRecordsUpdated(value); return *this;}
+
   private:
 
-    long long m_numberOfRecordsUpdated;
-    bool m_numberOfRecordsUpdatedHasBeenSet;
-
     ResultFrame m_resultFrame;
-    bool m_resultFrameHasBeenSet;
+    bool m_resultFrameHasBeenSet = false;
+
+    long long m_numberOfRecordsUpdated;
+    bool m_numberOfRecordsUpdatedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstanceAvailability">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ScheduledInstanceAvailability
+  class ScheduledInstanceAvailability
   {
   public:
-    ScheduledInstanceAvailability();
-    ScheduledInstanceAvailability(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledInstanceAvailability& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstanceAvailability();
+    AWS_EC2_API ScheduledInstanceAvailability(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstanceAvailability& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -465,43 +465,43 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_availableInstanceCount;
-    bool m_availableInstanceCountHasBeenSet;
+    bool m_availableInstanceCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSlotStartTime;
-    bool m_firstSlotStartTimeHasBeenSet;
+    bool m_firstSlotStartTimeHasBeenSet = false;
 
     Aws::String m_hourlyPrice;
-    bool m_hourlyPriceHasBeenSet;
+    bool m_hourlyPriceHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_maxTermDurationInDays;
-    bool m_maxTermDurationInDaysHasBeenSet;
+    bool m_maxTermDurationInDaysHasBeenSet = false;
 
     int m_minTermDurationInDays;
-    bool m_minTermDurationInDaysHasBeenSet;
+    bool m_minTermDurationInDaysHasBeenSet = false;
 
     Aws::String m_networkPlatform;
-    bool m_networkPlatformHasBeenSet;
+    bool m_networkPlatformHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_purchaseToken;
-    bool m_purchaseTokenHasBeenSet;
+    bool m_purchaseTokenHasBeenSet = false;
 
     ScheduledInstanceRecurrence m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     int m_slotDurationInHours;
-    bool m_slotDurationInHoursHasBeenSet;
+    bool m_slotDurationInHoursHasBeenSet = false;
 
     int m_totalScheduledInstanceHours;
-    bool m_totalScheduledInstanceHoursHasBeenSet;
+    bool m_totalScheduledInstanceHoursHasBeenSet = false;
   };
 
 } // namespace Model

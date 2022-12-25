@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ReplicationJob
+  class ReplicationJob
   {
   public:
-    ReplicationJob();
-    ReplicationJob(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ReplicationJob();
+    AWS_SMS_API ReplicationJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ReplicationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -694,58 +694,58 @@ namespace Model
   private:
 
     Aws::String m_replicationJobId;
-    bool m_replicationJobIdHasBeenSet;
+    bool m_replicationJobIdHasBeenSet = false;
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     ServerType m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     VmServer m_vmServer;
-    bool m_vmServerHasBeenSet;
+    bool m_vmServerHasBeenSet = false;
 
     Aws::Utils::DateTime m_seedReplicationTime;
-    bool m_seedReplicationTimeHasBeenSet;
+    bool m_seedReplicationTimeHasBeenSet = false;
 
     int m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     bool m_runOnce;
-    bool m_runOnceHasBeenSet;
+    bool m_runOnceHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextReplicationRunStartTime;
-    bool m_nextReplicationRunStartTimeHasBeenSet;
+    bool m_nextReplicationRunStartTimeHasBeenSet = false;
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_latestAmiId;
-    bool m_latestAmiIdHasBeenSet;
+    bool m_latestAmiIdHasBeenSet = false;
 
     ReplicationJobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_numberOfRecentAmisToKeep;
-    bool m_numberOfRecentAmisToKeepHasBeenSet;
+    bool m_numberOfRecentAmisToKeepHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<ReplicationRun> m_replicationRunList;
-    bool m_replicationRunListHasBeenSet;
+    bool m_replicationRunListHasBeenSet = false;
   };
 
 } // namespace Model

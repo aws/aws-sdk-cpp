@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API XssMatchSetSummary
+  class XssMatchSetSummary
   {
   public:
-    XssMatchSetSummary();
-    XssMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    XssMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API XssMatchSetSummary();
+    AWS_WAF_API XssMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API XssMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,10 +193,10 @@ namespace Model
   private:
 
     Aws::String m_xssMatchSetId;
-    bool m_xssMatchSetIdHasBeenSet;
+    bool m_xssMatchSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

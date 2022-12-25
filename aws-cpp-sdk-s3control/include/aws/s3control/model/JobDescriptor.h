@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobDescriptor
+  class JobDescriptor
   {
   public:
-    JobDescriptor();
-    JobDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobDescriptor();
+    AWS_S3CONTROL_API JobDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -781,61 +781,61 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     bool m_confirmationRequired;
-    bool m_confirmationRequiredHasBeenSet;
+    bool m_confirmationRequiredHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     JobManifest m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     JobOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     JobProgressSummary m_progressSummary;
-    bool m_progressSummaryHasBeenSet;
+    bool m_progressSummaryHasBeenSet = false;
 
     Aws::String m_statusUpdateReason;
-    bool m_statusUpdateReasonHasBeenSet;
+    bool m_statusUpdateReasonHasBeenSet = false;
 
     Aws::Vector<JobFailure> m_failureReasons;
-    bool m_failureReasonsHasBeenSet;
+    bool m_failureReasonsHasBeenSet = false;
 
     JobReport m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationDate;
-    bool m_terminationDateHasBeenSet;
+    bool m_terminationDateHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_suspendedDate;
-    bool m_suspendedDateHasBeenSet;
+    bool m_suspendedDateHasBeenSet = false;
 
     Aws::String m_suspendedCause;
-    bool m_suspendedCauseHasBeenSet;
+    bool m_suspendedCauseHasBeenSet = false;
 
     JobManifestGenerator m_manifestGenerator;
-    bool m_manifestGeneratorHasBeenSet;
+    bool m_manifestGeneratorHasBeenSet = false;
 
     S3GeneratedManifestDescriptor m_generatedManifestDescriptor;
-    bool m_generatedManifestDescriptorHasBeenSet;
+    bool m_generatedManifestDescriptorHasBeenSet = false;
   };
 
 } // namespace Model

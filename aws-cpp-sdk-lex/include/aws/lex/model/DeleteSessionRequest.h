@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMESERVICE_API DeleteSessionRequest : public LexRuntimeServiceRequest
+  class DeleteSessionRequest : public LexRuntimeServiceRequest
   {
   public:
-    DeleteSessionRequest();
+    AWS_LEXRUNTIMESERVICE_API DeleteSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

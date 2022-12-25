@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegistryScanningRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API RegistryScanningRule
+  class RegistryScanningRule
   {
   public:
-    RegistryScanningRule();
-    RegistryScanningRule(Aws::Utils::Json::JsonView jsonValue);
-    RegistryScanningRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API RegistryScanningRule();
+    AWS_ECR_API RegistryScanningRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API RegistryScanningRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     ScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_repositoryFilters;
-    bool m_repositoryFiltersHasBeenSet;
+    bool m_repositoryFiltersHasBeenSet = false;
   };
 
 } // namespace Model

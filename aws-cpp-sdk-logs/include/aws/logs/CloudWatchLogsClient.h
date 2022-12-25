@@ -5,320 +5,114 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
-#include <aws/logs/CloudWatchLogsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/logs/model/CreateExportTaskResult.h>
-#include <aws/logs/model/DeleteQueryDefinitionResult.h>
-#include <aws/logs/model/DescribeDestinationsResult.h>
-#include <aws/logs/model/DescribeExportTasksResult.h>
-#include <aws/logs/model/DescribeLogGroupsResult.h>
-#include <aws/logs/model/DescribeLogStreamsResult.h>
-#include <aws/logs/model/DescribeMetricFiltersResult.h>
-#include <aws/logs/model/DescribeQueriesResult.h>
-#include <aws/logs/model/DescribeQueryDefinitionsResult.h>
-#include <aws/logs/model/DescribeResourcePoliciesResult.h>
-#include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
-#include <aws/logs/model/FilterLogEventsResult.h>
-#include <aws/logs/model/GetLogEventsResult.h>
-#include <aws/logs/model/GetLogGroupFieldsResult.h>
-#include <aws/logs/model/GetLogRecordResult.h>
-#include <aws/logs/model/GetQueryResultsResult.h>
-#include <aws/logs/model/ListTagsLogGroupResult.h>
-#include <aws/logs/model/PutDestinationResult.h>
-#include <aws/logs/model/PutLogEventsResult.h>
-#include <aws/logs/model/PutQueryDefinitionResult.h>
-#include <aws/logs/model/PutResourcePolicyResult.h>
-#include <aws/logs/model/StartQueryResult.h>
-#include <aws/logs/model/StopQueryResult.h>
-#include <aws/logs/model/TestMetricFilterResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/logs/CloudWatchLogsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudWatchLogs
 {
-
-namespace Model
-{
-        class AssociateKmsKeyRequest;
-        class CancelExportTaskRequest;
-        class CreateExportTaskRequest;
-        class CreateLogGroupRequest;
-        class CreateLogStreamRequest;
-        class DeleteDestinationRequest;
-        class DeleteLogGroupRequest;
-        class DeleteLogStreamRequest;
-        class DeleteMetricFilterRequest;
-        class DeleteQueryDefinitionRequest;
-        class DeleteResourcePolicyRequest;
-        class DeleteRetentionPolicyRequest;
-        class DeleteSubscriptionFilterRequest;
-        class DescribeDestinationsRequest;
-        class DescribeExportTasksRequest;
-        class DescribeLogGroupsRequest;
-        class DescribeLogStreamsRequest;
-        class DescribeMetricFiltersRequest;
-        class DescribeQueriesRequest;
-        class DescribeQueryDefinitionsRequest;
-        class DescribeResourcePoliciesRequest;
-        class DescribeSubscriptionFiltersRequest;
-        class DisassociateKmsKeyRequest;
-        class FilterLogEventsRequest;
-        class GetLogEventsRequest;
-        class GetLogGroupFieldsRequest;
-        class GetLogRecordRequest;
-        class GetQueryResultsRequest;
-        class ListTagsLogGroupRequest;
-        class PutDestinationRequest;
-        class PutDestinationPolicyRequest;
-        class PutLogEventsRequest;
-        class PutMetricFilterRequest;
-        class PutQueryDefinitionRequest;
-        class PutResourcePolicyRequest;
-        class PutRetentionPolicyRequest;
-        class PutSubscriptionFilterRequest;
-        class StartQueryRequest;
-        class StopQueryRequest;
-        class TagLogGroupRequest;
-        class TestMetricFilterRequest;
-        class UntagLogGroupRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> AssociateKmsKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CancelExportTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateExportTaskResult, CloudWatchLogsError> CreateExportTaskOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDestinationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteLogGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteLogStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteMetricFilterOutcome;
-        typedef Aws::Utils::Outcome<DeleteQueryDefinitionResult, CloudWatchLogsError> DeleteQueryDefinitionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteRetentionPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSubscriptionFilterOutcome;
-        typedef Aws::Utils::Outcome<DescribeDestinationsResult, CloudWatchLogsError> DescribeDestinationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeExportTasksResult, CloudWatchLogsError> DescribeExportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeLogGroupsResult, CloudWatchLogsError> DescribeLogGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLogStreamsResult, CloudWatchLogsError> DescribeLogStreamsOutcome;
-        typedef Aws::Utils::Outcome<DescribeMetricFiltersResult, CloudWatchLogsError> DescribeMetricFiltersOutcome;
-        typedef Aws::Utils::Outcome<DescribeQueriesResult, CloudWatchLogsError> DescribeQueriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeQueryDefinitionsResult, CloudWatchLogsError> DescribeQueryDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeResourcePoliciesResult, CloudWatchLogsError> DescribeResourcePoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, CloudWatchLogsError> DescribeSubscriptionFiltersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DisassociateKmsKeyOutcome;
-        typedef Aws::Utils::Outcome<FilterLogEventsResult, CloudWatchLogsError> FilterLogEventsOutcome;
-        typedef Aws::Utils::Outcome<GetLogEventsResult, CloudWatchLogsError> GetLogEventsOutcome;
-        typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, CloudWatchLogsError> GetLogGroupFieldsOutcome;
-        typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
-        typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQueryResultsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsLogGroupResult, CloudWatchLogsError> ListTagsLogGroupOutcome;
-        typedef Aws::Utils::Outcome<PutDestinationResult, CloudWatchLogsError> PutDestinationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutDestinationPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutLogEventsResult, CloudWatchLogsError> PutLogEventsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutMetricFilterOutcome;
-        typedef Aws::Utils::Outcome<PutQueryDefinitionResult, CloudWatchLogsError> PutQueryDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutResourcePolicyResult, CloudWatchLogsError> PutResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutRetentionPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutSubscriptionFilterOutcome;
-        typedef Aws::Utils::Outcome<StartQueryResult, CloudWatchLogsError> StartQueryOutcome;
-        typedef Aws::Utils::Outcome<StopQueryResult, CloudWatchLogsError> StopQueryOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> TagLogGroupOutcome;
-        typedef Aws::Utils::Outcome<TestMetricFilterResult, CloudWatchLogsError> TestMetricFilterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> UntagLogGroupOutcome;
-
-        typedef std::future<AssociateKmsKeyOutcome> AssociateKmsKeyOutcomeCallable;
-        typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
-        typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
-        typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
-        typedef std::future<CreateLogStreamOutcome> CreateLogStreamOutcomeCallable;
-        typedef std::future<DeleteDestinationOutcome> DeleteDestinationOutcomeCallable;
-        typedef std::future<DeleteLogGroupOutcome> DeleteLogGroupOutcomeCallable;
-        typedef std::future<DeleteLogStreamOutcome> DeleteLogStreamOutcomeCallable;
-        typedef std::future<DeleteMetricFilterOutcome> DeleteMetricFilterOutcomeCallable;
-        typedef std::future<DeleteQueryDefinitionOutcome> DeleteQueryDefinitionOutcomeCallable;
-        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
-        typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
-        typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
-        typedef std::future<DescribeDestinationsOutcome> DescribeDestinationsOutcomeCallable;
-        typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
-        typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
-        typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
-        typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
-        typedef std::future<DescribeQueriesOutcome> DescribeQueriesOutcomeCallable;
-        typedef std::future<DescribeQueryDefinitionsOutcome> DescribeQueryDefinitionsOutcomeCallable;
-        typedef std::future<DescribeResourcePoliciesOutcome> DescribeResourcePoliciesOutcomeCallable;
-        typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
-        typedef std::future<DisassociateKmsKeyOutcome> DisassociateKmsKeyOutcomeCallable;
-        typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
-        typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
-        typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
-        typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
-        typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
-        typedef std::future<ListTagsLogGroupOutcome> ListTagsLogGroupOutcomeCallable;
-        typedef std::future<PutDestinationOutcome> PutDestinationOutcomeCallable;
-        typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
-        typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
-        typedef std::future<PutMetricFilterOutcome> PutMetricFilterOutcomeCallable;
-        typedef std::future<PutQueryDefinitionOutcome> PutQueryDefinitionOutcomeCallable;
-        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
-        typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
-        typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
-        typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
-        typedef std::future<StopQueryOutcome> StopQueryOutcomeCallable;
-        typedef std::future<TagLogGroupOutcome> TagLogGroupOutcomeCallable;
-        typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
-        typedef std::future<UntagLogGroupOutcome> UntagLogGroupOutcomeCallable;
-} // namespace Model
-
-  class CloudWatchLogsClient;
-
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::AssociateKmsKeyRequest&, const Model::AssociateKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateKmsKeyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateExportTaskRequest&, const Model::CreateExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportTaskResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogGroupResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogStreamResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteDestinationRequest&, const Model::DeleteDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDestinationResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteLogGroupRequest&, const Model::DeleteLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogGroupResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteLogStreamRequest&, const Model::DeleteLogStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogStreamResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteMetricFilterRequest&, const Model::DeleteMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMetricFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteQueryDefinitionRequest&, const Model::DeleteQueryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDestinationsRequest&, const Model::DescribeDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDestinationsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogGroupsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogStreamsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricFiltersResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeQueriesRequest&, const Model::DescribeQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueriesResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeQueryDefinitionsRequest&, const Model::DescribeQueryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueryDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeResourcePoliciesRequest&, const Model::DescribeResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePoliciesResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionFiltersResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::DisassociateKmsKeyRequest&, const Model::DisassociateKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateKmsKeyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FilterLogEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogGroupFieldsRequest&, const Model::GetLogGroupFieldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogGroupFieldsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecordRequest&, const Model::GetLogRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogRecordResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsLogGroupRequest&, const Model::ListTagsLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsLogGroupResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationRequest&, const Model::PutDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLogEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutQueryDefinitionRequest&, const Model::PutQueryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutQueryDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::StopQueryRequest&, const Model::StopQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::TagLogGroupRequest&, const Model::TagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagLogGroupResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagLogGroupRequest&, const Model::UntagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagLogGroupResponseReceivedHandler;
-
   /**
    * <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log
    * files from EC2 instances, CloudTrail, and other sources. You can then retrieve
-   * the associated log data from CloudWatch Logs using the CloudWatch console,
-   * CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or
-   * CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p> <ul> <li> <p>
-   * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs
-   * to monitor applications and systems using log data. For example, CloudWatch Logs
-   * can track the number of errors that occur in your application logs and send you
-   * a notification whenever the rate of errors exceeds a threshold that you specify.
-   * CloudWatch Logs uses your log data for monitoring so no code changes are
-   * required. For example, you can monitor application logs for specific literal
-   * terms (such as "NullReferenceException") or count the number of occurrences of a
-   * literal term at a particular position in log data (such as "404" status codes in
-   * an Apache access log). When the term you are searching for is found, CloudWatch
-   * Logs reports the data to a CloudWatch metric that you specify.</p> </li> <li>
-   * <p> <b>Monitor CloudTrail logged events</b>: You can create alarms in CloudWatch
-   * and receive notifications of particular API activity as captured by CloudTrail.
-   * You can use the notification to perform troubleshooting.</p> </li> <li> <p>
-   * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in
-   * highly durable storage. You can change the log retention setting so that any log
-   * events older than this setting are automatically deleted. The CloudWatch Logs
-   * agent makes it easy to quickly send both rotated and non-rotated log data off of
-   * a host and into the log service. You can then access the raw log data when you
-   * need it.</p> </li> </ul>
+   * the associated log data from CloudWatch Logs using the CloudWatch console.
+   * Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services
+   * CLI, CloudWatch Logs API, or CloudWatch Logs SDK.</p> <p>You can use CloudWatch
+   * Logs to:</p> <ul> <li> <p> <b>Monitor logs from EC2 instances in real time</b>:
+   * You can use CloudWatch Logs to monitor applications and systems using log data.
+   * For example, CloudWatch Logs can track the number of errors that occur in your
+   * application logs. Then, it can send you a notification whenever the rate of
+   * errors exceeds a threshold that you specify. CloudWatch Logs uses your log data
+   * for monitoring so no code changes are required. For example, you can monitor
+   * application logs for specific literal terms (such as "NullReferenceException").
+   * You can also count the number of occurrences of a literal term at a particular
+   * position in log data (such as "404" status codes in an Apache access log). When
+   * the term you are searching for is found, CloudWatch Logs reports the data to a
+   * CloudWatch metric that you specify.</p> </li> <li> <p> <b>Monitor CloudTrail
+   * logged events</b>: You can create alarms in CloudWatch and receive notifications
+   * of particular API activity as captured by CloudTrail. You can use the
+   * notification to perform troubleshooting.</p> </li> <li> <p> <b>Archive log
+   * data</b>: You can use CloudWatch Logs to store your log data in highly durable
+   * storage. You can change the log retention setting so that any log events earlier
+   * than this setting are automatically deleted. The CloudWatch Logs agent helps to
+   * quickly send both rotated and non-rotated log data off of a host and into the
+   * log service. You can then access the raw log data when you need it.</p> </li>
+   * </ul>
    */
-  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchLogsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudWatchLogsClient(const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration(),
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials,
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudWatchLogsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<CloudWatchLogsEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchLogsEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration& clientConfiguration = Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudWatchLogsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudWatchLogsClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudWatchLogsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudWatchLogsClient();
 
-
         /**
-         * <p>Associates the specified Key Management Service customer master key (CMK)
-         * with the specified log group.</p> <p>Associating an KMS CMK with a log group
-         * overrides any existing associations between the log group and a CMK. After a CMK
-         * is associated with a log group, all newly ingested data for the log group is
-         * encrypted using the CMK. This association is stored as long as the data
-         * encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
-         * Logs to decrypt this data whenever it is requested.</p> 
-         * <p>CloudWatch Logs supports only symmetric CMKs. Do not use an associate an
-         * asymmetric CMK with your log group. For more information, see <a
+         * <p>Associates the specified KMS key with the specified log group.</p>
+         * <p>Associating a KMS key with a log group overrides any existing associations
+         * between the log group and a KMS key. After a KMS key is associated with a log
+         * group, all newly ingested data for the log group is encrypted using the KMS key.
+         * This association is stored as long as the data encrypted with the KMS keyis
+         * still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data
+         * whenever it is requested.</p>  <p>CloudWatch Logs supports only
+         * symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log
+         * group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
          * Symmetric and Asymmetric Keys</a>.</p>  <p>It can take up to 5
          * minutes for this operation to take effect.</p> <p>If you attempt to associate a
-         * CMK with a log group but the CMK does not exist or the CMK is disabled, you
-         * receive an <code>InvalidParameterException</code> error. </p><p><h3>See
-         * Also:</h3>   <a
+         * KMS key with a log group but the KMS key does not exist or the KMS key is
+         * disabled, you receive an <code>InvalidParameterException</code> error.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey">AWS
          * API Reference</a></p>
          */
@@ -354,27 +148,26 @@ namespace Model
         virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an export task, which allows you to efficiently export data from a
-         * log group to an Amazon S3 bucket. When you perform a
-         * <code>CreateExportTask</code> operation, you must use credentials that have
-         * permission to write to the S3 bucket that you specify as the destination.</p>
-         *  <p>Exporting log data to Amazon S3 buckets that are encrypted by KMS
-         * is not supported. Exporting log data to Amazon S3 buckets that have S3 Object
-         * Lock enabled with a retention period is not supported.</p> <p>Exporting to S3
-         * buckets that are encrypted with AES-256 is supported. </p>  <p>This
-         * is an asynchronous call. If all the required information is provided, this
-         * operation initiates an export task and responds with the ID of the task. After
-         * the task has started, you can use <a
+         * <p>Creates an export task so that you can efficiently export data from a log
+         * group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code>
+         * operation, you must use credentials that have permission to write to the S3
+         * bucket that you specify as the destination.</p> <p>Exporting log data to S3
+         * buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3
+         * buckets that have S3 Object Lock enabled with a retention period is also
+         * supported.</p> <p>Exporting to S3 buckets that are encrypted with AES-256 is
+         * supported. </p> <p>This is an asynchronous call. If all the required information
+         * is provided, this operation initiates an export task and responds with the ID of
+         * the task. After the task has started, you can use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
          * to get the status of the export task. Each account can only have one active
          * (<code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel
          * an export task, use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
-         * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix to be used as the Amazon S3 key prefix for all exported objects.</p>
-         *  <p>Time-based sorting on chunks of log data inside an exported file is
-         * not guaranteed. You can sort the exported log fild data by using Linux
+         * same S3 bucket. To separate log data for each export task, specify a prefix to
+         * be used as the Amazon S3 key prefix for all exported objects.</p> 
+         * <p>Time-based sorting on chunks of log data inside an exported file is not
+         * guaranteed. You can sort the exported log field data by using Linux
          * utilities.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
@@ -394,23 +187,24 @@ namespace Model
         /**
          * <p>Creates a log group with the specified name. You can create up to 20,000 log
          * groups per account.</p> <p>You must use the following guidelines when naming a
-         * log group:</p> <ul> <li> <p>Log group names must be unique within a region for
+         * log group:</p> <ul> <li> <p>Log group names must be unique within a Region for
          * an Amazon Web Services account.</p> </li> <li> <p>Log group names can be between
          * 1 and 512 characters long.</p> </li> <li> <p>Log group names consist of the
          * following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
          * (forward slash), '.' (period), and '#' (number sign)</p> </li> </ul> <p>When you
-         * create a log group, by default the log events in the log group never expire. To
+         * create a log group, by default the log events in the log group do not expire. To
          * set a retention policy so that events expire and are deleted after a specified
          * time, use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
-         * <p>If you associate a Key Management Service customer master key (CMK) with the
-         * log group, ingested data is encrypted using the CMK. This association is stored
-         * as long as the data encrypted with the CMK is still within CloudWatch Logs. This
-         * enables CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
-         * you attempt to associate a CMK with the log group but the CMK does not exist or
-         * the CMK is disabled, you receive an <code>InvalidParameterException</code>
-         * error. </p>  <p>CloudWatch Logs supports only symmetric CMKs. Do not
-         * associate an asymmetric CMK with your log group. For more information, see <a
+         * <p>If you associate an KMS key with the log group, ingested data is encrypted
+         * using the KMS key. This association is stored as long as the data encrypted with
+         * the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to
+         * decrypt this data whenever it is requested.</p> <p>If you attempt to associate a
+         * KMS key with the log group but the KMS keydoes not exist or the KMS key is
+         * disabled, you receive an <code>InvalidParameterException</code> error. </p>
+         *  <p>CloudWatch Logs supports only symmetric KMS keys. Do not
+         * associate an asymmetric KMS key with your log group. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
          * Symmetric and Asymmetric Keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
@@ -437,8 +231,8 @@ namespace Model
          * throttled.</p> <p>You must use the following guidelines when naming a log
          * stream:</p> <ul> <li> <p>Log stream names must be unique within the log
          * group.</p> </li> <li> <p>Log stream names can be between 1 and 512 characters
-         * long.</p> </li> <li> <p>The ':' (colon) and '*' (asterisk) characters are not
-         * allowed.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * long.</p> </li> <li> <p>Don't use ':' (colon) or '*' (asterisk) characters.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">AWS
          * API Reference</a></p>
          */
@@ -453,6 +247,26 @@ namespace Model
          * An Async wrapper for CreateLogStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateLogStreamAsync(const Model::CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the data protection policy from the specified log group. </p> <p>For
+         * more information about data protection policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDataProtectionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataProtectionPolicyOutcome DeleteDataProtectionPolicy(const Model::DeleteDataProtectionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDataProtectionPolicyOutcomeCallable DeleteDataProtectionPolicyCallable(const Model::DeleteDataProtectionPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDataProtectionPolicyAsync(const Model::DeleteDataProtectionPolicyRequest& request, const DeleteDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified destination, and eventually disables all the
@@ -649,8 +463,12 @@ namespace Model
          * </code> condition key to control access. For more information about using tags
          * to control access, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
-         * access to Amazon Web Services resources using tags</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * access to Amazon Web Services resources using tags</a>.</p> <p>If you are using
+         * CloudWatch cross-account observability, you can use this operation in a
+         * monitoring account and view data from the linked source accounts. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">AWS
          * API Reference</a></p>
          */
@@ -670,7 +488,11 @@ namespace Model
          * <p>Lists the log streams for the specified log group. You can list all the log
          * streams or filter the results by prefix. You can also control how the results
          * are ordered.</p> <p>This operation has a limit of five transactions per second,
-         * after which transactions are throttled.</p><p><h3>See Also:</h3>   <a
+         * after which transactions are throttled.</p> <p>If you are using CloudWatch
+         * cross-account observability, you can use this operation in a monitoring account
+         * and view data from the linked source accounts. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">AWS
          * API Reference</a></p>
          */
@@ -707,8 +529,8 @@ namespace Model
 
         /**
          * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
-         * executing, or have been executed recently in this account. You can request all
-         * queries or limit it to queries of a specific log group or queries with a certain
+         * running, or have been run recently in this account. You can request all queries
+         * or limit it to queries of a specific log group or queries with a certain
          * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
          * API Reference</a></p>
@@ -783,13 +605,12 @@ namespace Model
         virtual void DescribeSubscriptionFiltersAsync(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the associated Key Management Service customer master key (CMK)
-         * from the specified log group.</p> <p>After the KMS CMK is disassociated from the
-         * log group, CloudWatch Logs stops encrypting newly ingested data for the log
-         * group. All previously ingested data remains encrypted, and CloudWatch Logs
-         * requires permissions for the CMK whenever the encrypted data is requested.</p>
-         * <p>Note that it can take up to 5 minutes for this operation to take
-         * effect.</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the associated KMS key from the specified log group.</p>
+         * <p>After the KMS key is disassociated from the log group, CloudWatch Logs stops
+         * encrypting newly ingested data for the log group. All previously ingested data
+         * remains encrypted, and CloudWatch Logs requires permissions for the KMS key
+         * whenever the encrypted data is requested.</p> <p>Note that it can take up to 5
+         * minutes for this operation to take effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey">AWS
          * API Reference</a></p>
          */
@@ -808,15 +629,20 @@ namespace Model
         /**
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
-         * of the log stream.</p> <p>By default, this operation returns as many log events
-         * as can fit in 1 MB (up to 10,000 log events) or all the events found within the
-         * time range that you specify. If the results include a token, then there are more
-         * log events available, and you can get additional results by specifying the token
-         * in a subsequent call. This operation can return empty results while there are
-         * more log events available through the token.</p> <p>The returned log events are
-         * sorted by event timestamp, the timestamp when the event was ingested by
-         * CloudWatch Logs, and the ID of the <code>PutLogEvents</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * of the log stream.</p> <p>You must have the <code>logs;FilterLogEvents</code>
+         * permission to perform this operation.</p> <p>By default, this operation returns
+         * as many log events as can fit in 1 MB (up to 10,000 log events) or all the
+         * events found within the specified time range. If the results include a token,
+         * that means there are more log events available. You can get additional results
+         * by specifying the token in a subsequent call. This operation can return empty
+         * results while there are more log events available through the token.</p> <p>The
+         * returned log events are sorted by event timestamp, the timestamp when the event
+         * was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code>
+         * request.</p> <p>If you are using CloudWatch cross-account observability, you can
+         * use this operation in a monitoring account and view data from the linked source
+         * accounts. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">AWS
          * API Reference</a></p>
          */
@@ -833,12 +659,34 @@ namespace Model
         virtual void FilterLogEventsAsync(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a log group data protection policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDataProtectionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataProtectionPolicyOutcome GetDataProtectionPolicy(const Model::GetDataProtectionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDataProtectionPolicyOutcomeCallable GetDataProtectionPolicyCallable(const Model::GetDataProtectionPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDataProtectionPolicyAsync(const Model::GetDataProtectionPolicyRequest& request, const GetDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists log events from the specified log stream. You can list all of the log
          * events or filter using a time range.</p> <p>By default, this operation returns
          * as many log events as can fit in a response size of 1MB (up to 10,000 log
          * events). You can get additional log events by specifying one of the tokens in a
          * subsequent call. This operation can return empty results while there are more
-         * log events available through the token.</p><p><h3>See Also:</h3>   <a
+         * log events available through the token.</p> <p>If you are using CloudWatch
+         * cross-account observability, you can use this operation in a monitoring account
+         * and view data from the linked source accounts. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
          * API Reference</a></p>
          */
@@ -856,15 +704,19 @@ namespace Model
 
         /**
          * <p>Returns a list of the fields that are included in log events in the specified
-         * log group, along with the percentage of log events that contain each field. The
+         * log group. Includes the percentage of log events that contain each field. The
          * search is limited to a time period that you specify.</p> <p>In the results,
-         * fields that start with @ are fields generated by CloudWatch Logs. For example,
-         * <code>@timestamp</code> is the timestamp of each log event. For more information
-         * about the fields that are generated by CloudWatch logs, see <a
+         * fields that start with <code>@</code> are fields generated by CloudWatch Logs.
+         * For example, <code>@timestamp</code> is the timestamp of each log event. For
+         * more information about the fields that are generated by CloudWatch logs, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
          * Logs and Discovered Fields</a>.</p> <p>The response results are sorted by the
-         * frequency percentage, starting with the highest percentage.</p><p><h3>See
-         * Also:</h3>   <a
+         * frequency percentage, starting with the highest percentage.</p> <p>If you are
+         * using CloudWatch cross-account observability, you can use this operation in a
+         * monitoring account and view data from the linked source accounts. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">AWS
          * API Reference</a></p>
          */
@@ -908,13 +760,17 @@ namespace Model
          * in a <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
          * operation to get the full log record.</p> <p> <code>GetQueryResults</code> does
-         * not start a query execution. To run a query, use <a
+         * not start running a query. To run a query, use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.</p>
          * <p>If the value of the <code>Status</code> field in the output is
          * <code>Running</code>, this operation returns only partial results. If you see a
          * value of <code>Scheduled</code> or <code>Running</code> for the status, you can
-         * retry the operation later to see the final results. </p><p><h3>See Also:</h3>  
-         * <a
+         * retry the operation later to see the final results. </p> <p>If you are using
+         * CloudWatch cross-account observability, you can use this operation in a
+         * monitoring account to start queries in linked source accounts. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
          * API Reference</a></p>
          */
@@ -931,28 +787,64 @@ namespace Model
         virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
+         * <p>Displays the tags associated with a CloudWatch Logs resource. Currently, log
+         * groups and destinations support tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTagsLogGroupOutcome ListTagsLogGroup(const Model::ListTagsLogGroupRequest& request) const;
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for ListTagsLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListTagsLogGroupOutcomeCallable ListTagsLogGroupCallable(const Model::ListTagsLogGroupRequest& request) const;
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * An Async wrapper for ListTagsLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListTagsLogGroupAsync(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a data protection policy for the specified log group. A data
+         * protection policy can help safeguard sensitive data that's ingested by the log
+         * group by auditing and masking the sensitive log data.</p> 
+         * <p>Sensitive data is detected and masked when it is ingested into the log group.
+         * When you set a data protection policy, log events ingested into the log group
+         * before that time are not masked.</p>  <p>By default, when a user
+         * views a log event that includes masked data, the sensitive data is replaced by
+         * asterisks. A user who has the <code>logs:Unmask</code> permission can use a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
+         * operation with the <code>unmask</code> parameter set to <code>true</code> to
+         * view the unmasked log events. Users with the <code>logs:Unmask</code> can also
+         * view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs
+         * Insights query with the <code>unmask</code> query command.</p> <p>For more
+         * information, including a list of types of data that can be audited and masked,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
+         * sensitive log data with masking</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDataProtectionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDataProtectionPolicyOutcome PutDataProtectionPolicy(const Model::PutDataProtectionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutDataProtectionPolicyOutcomeCallable PutDataProtectionPolicyCallable(const Model::PutDataProtectionPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutDataProtectionPolicyAsync(const Model::PutDataProtectionPolicyRequest& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates or updates a destination. This operation is used only to create
          * destinations for cross-account subscriptions.</p> <p>A destination encapsulates
-         * a physical resource (such as an Amazon Kinesis stream) and enables you to
-         * subscribe to a real-time stream of log events for a different account, ingested
-         * using <a
+         * a physical resource (such as an Amazon Kinesis stream). With a destination, you
+         * can subscribe to a real-time stream of log events for a different account,
+         * ingested using <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>Through an access policy, a destination controls what is written to it. By
          * default, <code>PutDestination</code> does not set any access policy with the
@@ -1015,21 +907,22 @@ namespace Model
          * <ul> <li> <p>The maximum batch size is 1,048,576 bytes. This size is calculated
          * as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
          * </li> <li> <p>None of the log events in the batch can be more than 2 hours in
-         * the future.</p> </li> <li> <p>None of the log events in the batch can be older
-         * than 14 days or older than the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological order by their
-         * timestamp. The timestamp is the time the event occurred, expressed as the number
-         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools
-         * for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is
-         * specified in .NET format: yyyy-mm-ddThh:mm:ss. For example,
-         * 2017-09-15T13:45:30.) </p> </li> <li> <p>A batch of log events in a single
-         * request cannot span more than 24 hours. Otherwise, the operation fails.</p>
-         * </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li>
-         * <li> <p>There is a quota of 5 requests per second per log stream. Additional
-         * requests are throttled. This quota can't be changed.</p> </li> </ul> <p>If a
-         * call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-         * likely cause is an invalid Amazon Web Services access key ID or secret key.
-         * </p><p><h3>See Also:</h3>   <a
+         * the future.</p> </li> <li> <p>None of the log events in the batch can be more
+         * than 14 days in the past. Also, none of the log events can be from earlier than
+         * the retention period of the log group.</p> </li> <li> <p>The log events in the
+         * batch must be in chronological order by their timestamp. The timestamp is the
+         * time that the event occurred, expressed as the number of milliseconds after
+         * <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for
+         * PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified
+         * in .NET format: <code>yyyy-mm-ddThh:mm:ss</code>. For example,
+         * <code>2017-09-15T13:45:30</code>.) </p> </li> <li> <p>A batch of log events in a
+         * single request cannot span more than 24 hours. Otherwise, the operation
+         * fails.</p> </li> <li> <p>The maximum number of log events in a batch is
+         * 10,000.</p> </li> <li> <p>There is a quota of five requests per second per log
+         * stream. Additional requests are throttled. This quota can't be changed.</p>
+         * </li> </ul> <p>If a call to <code>PutLogEvents</code> returns
+         * "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web
+         * Services access key ID or secret key. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">AWS
          * API Reference</a></p>
          */
@@ -1047,7 +940,7 @@ namespace Model
 
         /**
          * <p>Creates or updates a metric filter and associates it with the specified log
-         * group. Metric filters allow you to configure rules to extract metric data from
+         * group. With metric filters, you can configure rules to extract metric data from
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
@@ -1057,11 +950,11 @@ namespace Model
          * high charges, do not specify high-cardinality fields such as
          * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
          * value found for a dimension is treated as a separate metric and accrues charges
-         * as a separate custom metric. </p> <p>To help prevent accidental high charges,
-         * Amazon disables a metric filter if it generates 1000 different name/value pairs
-         * for the dimensions that you have specified within a certain amount of time.</p>
-         * <p>You can also set up a billing alarm to alert you if your charges are higher
-         * than expected. For more information, see <a
+         * as a separate custom metric. </p> <p>CloudWatch Logs disables a metric filter if
+         * it generates 1,000 different name/value pairs for your specified dimensions
+         * within a certain amount of time. This helps to prevent accidental high
+         * charges.</p> <p>You can also set up a billing alarm to alert you if your charges
+         * are higher than expected. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
          * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
          * Charges</a>. </p> <p><h3>See Also:</h3>   <a
@@ -1088,8 +981,8 @@ namespace Model
          * specify its <code>queryDefinitionId</code> in your request. The values of
          * <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are
          * changed to the values that you specify in your update operation. No current
-         * values are retained from the current query definition. For example, if you
-         * update a current query definition that includes log groups, and you don't
+         * values are retained from the current query definition. For example, imagine
+         * updating a current query definition that includes log groups. If you don't
          * specify the <code>logGroupNames</code> parameter in your update operation, the
          * query definition changes to contain no log groups.</p> <p>You must have the
          * <code>logs:PutQueryDefinition</code> permission to be able to perform this
@@ -1130,9 +1023,19 @@ namespace Model
         virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the retention of the specified log group. A retention policy allows you
-         * to configure the number of days for which to retain log events in the specified
-         * log group.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the retention of the specified log group. With a retention policy, you
+         * can configure the number of days for which to retain log events in the specified
+         * log group.</p>  <p>CloudWatch Logs doesn’t immediately delete log events
+         * when they reach their retention setting. It typically takes up to 72 hours after
+         * that before log events are deleted, but in rare situations might take
+         * longer.</p> <p>To illustrate, imagine that you change a log group to have a
+         * longer retention setting when it contains log events that are past the
+         * expiration date, but haven’t been deleted. Those log events will take up to 72
+         * hours to be deleted after the new retention date is reached. To make sure that
+         * log data is deleted permanently, keep a log group at its lower retention setting
+         * until 72 hours after the previous retention period ends. Alternatively, wait to
+         * change the retention setting until you confirm that the earlier log events are
+         * deleted. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
          */
@@ -1150,16 +1053,16 @@ namespace Model
 
         /**
          * <p>Creates or updates a subscription filter and associates it with the specified
-         * log group. Subscription filters allow you to subscribe to a real-time stream of
+         * log group. With subscription filters, you can subscribe to a real-time stream of
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>
          * and have them delivered to a specific destination. When log events are sent to
-         * the receiving service, they are Base64 encoded and compressed with the gzip
+         * the receiving service, they are Base64 encoded and compressed with the GZIP
          * format.</p> <p>The following destinations are supported for subscription
-         * filters:</p> <ul> <li> <p>An Amazon Kinesis stream belonging to the same account
-         * as the subscription filter, for same-account delivery.</p> </li> <li> <p>A
-         * logical destination that belongs to a different account, for cross-account
-         * delivery.</p> </li> <li> <p>An Amazon Kinesis Firehose delivery stream that
+         * filters:</p> <ul> <li> <p>An Amazon Kinesis data stream belonging to the same
+         * account as the subscription filter, for same-account delivery.</p> </li> <li>
+         * <p>A logical destination that belongs to a different account, for cross-account
+         * delivery.</p> </li> <li> <p>An Amazon Kinesis Data Firehose delivery stream that
          * belongs to the same account as the subscription filter, for same-account
          * delivery.</p> </li> <li> <p>An Lambda function that belongs to the same account
          * as the subscription filter, for same-account delivery.</p> </li> </ul> <p>Each
@@ -1189,8 +1092,16 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
          * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
-         * execution. If your queries are timing out, reduce the time range being searched
-         * or partition your query into a number of queries.</p><p><h3>See Also:</h3>   <a
+         * runtime. If your queries are timing out, reduce the time range being searched or
+         * partition your query into a number of queries.</p> <p>If you are using
+         * CloudWatch cross-account observability, you can use this operation in a
+         * monitoring account to start a query in a linked source account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
+         * cross-account observability</a>. For a cross-account <code>StartQuery</code>
+         * operation, the query definition must be defined in the monitoring account.</p>
+         * <p>You can have up to 20 concurrent CloudWatch Logs insights queries, including
+         * queries that have been added to dashboards. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>
          */
@@ -1226,34 +1137,33 @@ namespace Model
         virtual void StopQueryAsync(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
-         * list the tags for a log group, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-         * To remove tags, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.</p>
-         * <p>For more information about tags, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag
-         * Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User
-         * Guide</i>.</p> <p>CloudWatch Logs doesn’t support IAM policies that prevent
-         * users from assigning specified tags to log groups using the
-         * <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition
-         * keys. For more information about using tags to control access, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
-         * access to Amazon Web Services resources using tags</a>.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">AWS
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs
+         * resource. Currently, the only CloudWatch Logs resources that can be tagged are
+         * log groups and destinations. </p> <p>Tags can help you organize and categorize
+         * your resources. You can also use them to scope user permissions by granting a
+         * user permission to access or change only resources with certain tag values.</p>
+         * <p>Tags don't have any semantic meaning to Amazon Web Services and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a resource that already has tags. If you
+         * specify a new tag key for the alarm, this tag is appended to the list of tags
+         * associated with the alarm. If you specify a tag key that is already associated
+         * with the alarm, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a CloudWatch Logs
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::TagLogGroupOutcome TagLogGroup(const Model::TagLogGroupRequest& request) const;
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for TagLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::TagLogGroupOutcomeCallable TagLogGroupCallable(const Model::TagLogGroupRequest& request) const;
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * An Async wrapper for TagLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void TagLogGroupAsync(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tests the filter pattern of a metric filter against a sample of log event
@@ -1275,80 +1185,33 @@ namespace Model
         virtual void TestMetricFilterAsync(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tags from the specified log group.</p> <p>To list the
-         * tags for a log group, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-         * To add tags, use <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.</p>
-         * <p>CloudWatch Logs doesn’t support IAM policies that prevent users from
-         * assigning specified tags to log groups using the
-         * <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition
-         * keys. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">AWS
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::UntagLogGroupOutcome UntagLogGroup(const Model::UntagLogGroupRequest& request) const;
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * A Callable wrapper for UntagLogGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UntagLogGroupOutcomeCallable UntagLogGroupCallable(const Model::UntagLogGroupRequest& request) const;
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * An Async wrapper for UntagLogGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UntagLogGroupAsync(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudWatchLogsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateKmsKeyAsyncHelper(const Model::AssociateKmsKeyRequest& request, const AssociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelExportTaskAsyncHelper(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateExportTaskAsyncHelper(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLogGroupAsyncHelper(const Model::CreateLogGroupRequest& request, const CreateLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLogStreamAsyncHelper(const Model::CreateLogStreamRequest& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDestinationAsyncHelper(const Model::DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLogGroupAsyncHelper(const Model::DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLogStreamAsyncHelper(const Model::DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMetricFilterAsyncHelper(const Model::DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteQueryDefinitionAsyncHelper(const Model::DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSubscriptionFilterAsyncHelper(const Model::DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDestinationsAsyncHelper(const Model::DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeQueriesAsyncHelper(const Model::DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeQueryDefinitionsAsyncHelper(const Model::DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeResourcePoliciesAsyncHelper(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateKmsKeyAsyncHelper(const Model::DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLogGroupFieldsAsyncHelper(const Model::GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLogRecordAsyncHelper(const Model::GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueryResultsAsyncHelper(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsLogGroupAsyncHelper(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutDestinationAsyncHelper(const Model::PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutDestinationPolicyAsyncHelper(const Model::PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLogEventsAsyncHelper(const Model::PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutMetricFilterAsyncHelper(const Model::PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutQueryDefinitionAsyncHelper(const Model::PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSubscriptionFilterAsyncHelper(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartQueryAsyncHelper(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopQueryAsyncHelper(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagLogGroupAsyncHelper(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestMetricFilterAsyncHelper(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagLogGroupAsyncHelper(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
+      void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudWatchLogsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudWatchLogs

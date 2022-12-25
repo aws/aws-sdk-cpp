@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API EbsInfo
+  class EbsInfo
   {
   public:
-    EbsInfo();
-    EbsInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EbsInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsInfo();
+    AWS_EC2_API EbsInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport;
-    bool m_ebsOptimizedSupportHasBeenSet;
+    bool m_ebsOptimizedSupportHasBeenSet = false;
 
     EbsEncryptionSupport m_encryptionSupport;
-    bool m_encryptionSupportHasBeenSet;
+    bool m_encryptionSupportHasBeenSet = false;
 
     EbsOptimizedInfo m_ebsOptimizedInfo;
-    bool m_ebsOptimizedInfoHasBeenSet;
+    bool m_ebsOptimizedInfoHasBeenSet = false;
 
     EbsNvmeSupport m_nvmeSupport;
-    bool m_nvmeSupportHasBeenSet;
+    bool m_nvmeSupportHasBeenSet = false;
   };
 
 } // namespace Model

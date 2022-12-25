@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AttributeDefinition
+  class AttributeDefinition
   {
   public:
-    AttributeDefinition();
-    AttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
-    AttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AttributeDefinition();
+    AWS_DYNAMODB_API AttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     ScalarAttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
   };
 
 } // namespace Model

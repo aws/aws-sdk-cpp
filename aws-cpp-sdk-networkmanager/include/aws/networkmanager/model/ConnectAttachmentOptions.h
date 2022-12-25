@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectAttachmentOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectAttachmentOptions
+  class ConnectAttachmentOptions
   {
   public:
-    ConnectAttachmentOptions();
-    ConnectAttachmentOptions(Aws::Utils::Json::JsonView jsonValue);
-    ConnectAttachmentOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectAttachmentOptions();
+    AWS_NETWORKMANAGER_API ConnectAttachmentOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectAttachmentOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TunnelProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,103 +32,103 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AuthenticationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AuthenticationDescription
+  class AuthenticationDescription
   {
   public:
-    AuthenticationDescription();
-    AuthenticationDescription(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AuthenticationDescription();
+    AWS_MANAGEDGRAFANA_API AuthenticationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AuthenticationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline const AwsSsoAuthentication& GetAwsSso() const{ return m_awsSso; }
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline bool AwsSsoHasBeenSet() const { return m_awsSsoHasBeenSet; }
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline void SetAwsSso(const AwsSsoAuthentication& value) { m_awsSsoHasBeenSet = true; m_awsSso = value; }
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline void SetAwsSso(AwsSsoAuthentication&& value) { m_awsSsoHasBeenSet = true; m_awsSso = std::move(value); }
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline AuthenticationDescription& WithAwsSso(const AwsSsoAuthentication& value) { SetAwsSso(value); return *this;}
 
     /**
-     * <p>A structure containing information about how this workspace works with Amazon
-     * Web Services SSO. </p>
+     * <p>A structure containing information about how this workspace works with IAM
+     * Identity Center. </p>
      */
     inline AuthenticationDescription& WithAwsSso(AwsSsoAuthentication&& value) { SetAwsSso(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetProviders() const{ return m_providers; }
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline void SetProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_providersHasBeenSet = true; m_providers = value; }
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline void SetProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_providersHasBeenSet = true; m_providers = std::move(value); }
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline AuthenticationDescription& WithProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetProviders(value); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline AuthenticationDescription& WithProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetProviders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
     inline AuthenticationDescription& AddProviders(const AuthenticationProviderTypes& value) { m_providersHasBeenSet = true; m_providers.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both
+     * <p>Specifies whether this workspace uses IAM Identity Center, SAML, or both
      * methods to authenticate users to use the Grafana console in the Amazon Managed
      * Grafana workspace.</p>
      */
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     AwsSsoAuthentication m_awsSso;
-    bool m_awsSsoHasBeenSet;
+    bool m_awsSsoHasBeenSet = false;
 
     Aws::Vector<AuthenticationProviderTypes> m_providers;
-    bool m_providersHasBeenSet;
+    bool m_providersHasBeenSet = false;
 
     SamlAuthentication m_saml;
-    bool m_samlHasBeenSet;
+    bool m_samlHasBeenSet = false;
   };
 
 } // namespace Model

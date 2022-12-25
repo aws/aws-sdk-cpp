@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelMembership
+  class ChannelMembership
   {
   public:
-    ChannelMembership();
-    ChannelMembership(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelMembership();
+    AWS_CHIME_API ChannelMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,22 +238,22 @@ namespace Model
   private:
 
     Identity m_invitedBy;
-    bool m_invitedByHasBeenSet;
+    bool m_invitedByHasBeenSet = false;
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Identity m_member;
-    bool m_memberHasBeenSet;
+    bool m_memberHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

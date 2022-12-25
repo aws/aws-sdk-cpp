@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceBackend">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualServiceBackend
+  class VirtualServiceBackend
   {
   public:
-    VirtualServiceBackend();
-    VirtualServiceBackend(Aws::Utils::Json::JsonView jsonValue);
-    VirtualServiceBackend& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualServiceBackend();
+    AWS_APPMESH_API VirtualServiceBackend(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualServiceBackend& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ClientPolicy m_clientPolicy;
-    bool m_clientPolicyHasBeenSet;
+    bool m_clientPolicyHasBeenSet = false;
 
     Aws::String m_virtualServiceName;
-    bool m_virtualServiceNameHasBeenSet;
+    bool m_virtualServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

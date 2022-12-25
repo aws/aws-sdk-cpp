@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MachineLearningDetectionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MachineLearningDetectionConfig
+  class MachineLearningDetectionConfig
   {
   public:
-    MachineLearningDetectionConfig();
-    MachineLearningDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
-    MachineLearningDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MachineLearningDetectionConfig();
+    AWS_IOT_API MachineLearningDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MachineLearningDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ConfidenceLevel m_confidenceLevel;
-    bool m_confidenceLevelHasBeenSet;
+    bool m_confidenceLevelHasBeenSet = false;
   };
 
 } // namespace Model

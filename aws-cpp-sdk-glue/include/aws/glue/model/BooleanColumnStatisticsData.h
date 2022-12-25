@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BooleanColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BooleanColumnStatisticsData
+  class BooleanColumnStatisticsData
   {
   public:
-    BooleanColumnStatisticsData();
-    BooleanColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    BooleanColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BooleanColumnStatisticsData();
+    AWS_GLUE_API BooleanColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BooleanColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_numberOfTrues;
-    bool m_numberOfTruesHasBeenSet;
+    bool m_numberOfTruesHasBeenSet = false;
 
     long long m_numberOfFalses;
-    bool m_numberOfFalsesHasBeenSet;
+    bool m_numberOfFalsesHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListClustersResult& ListClustersResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clusterArns"))
   {
-    Array<JsonView> clusterArnsJsonList = jsonValue.GetArray("clusterArns");
+    Aws::Utils::Array<JsonView> clusterArnsJsonList = jsonValue.GetArray("clusterArns");
     for(unsigned clusterArnsIndex = 0; clusterArnsIndex < clusterArnsJsonList.GetLength(); ++clusterArnsIndex)
     {
       m_clusterArns.push_back(clusterArnsJsonList[clusterArnsIndex].AsString());

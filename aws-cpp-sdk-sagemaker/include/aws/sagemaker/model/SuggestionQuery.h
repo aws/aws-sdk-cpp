@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SuggestionQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SuggestionQuery
+  class SuggestionQuery
   {
   public:
-    SuggestionQuery();
-    SuggestionQuery(Aws::Utils::Json::JsonView jsonValue);
-    SuggestionQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SuggestionQuery();
+    AWS_SAGEMAKER_API SuggestionQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SuggestionQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PropertyNameQuery m_propertyNameQuery;
-    bool m_propertyNameQueryHasBeenSet;
+    bool m_propertyNameQueryHasBeenSet = false;
   };
 
 } // namespace Model

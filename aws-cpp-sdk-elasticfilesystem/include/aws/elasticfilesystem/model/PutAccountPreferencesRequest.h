@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EFS_API PutAccountPreferencesRequest : public EFSRequest
+  class PutAccountPreferencesRequest : public EFSRequest
   {
   public:
-    PutAccountPreferencesRequest();
+    AWS_EFS_API PutAccountPreferencesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountPreferences"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EFS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -101,7 +101,7 @@ namespace Model
   private:
 
     ResourceIdType m_resourceIdType;
-    bool m_resourceIdTypeHasBeenSet;
+    bool m_resourceIdTypeHasBeenSet = false;
   };
 
 } // namespace Model

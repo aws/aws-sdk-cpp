@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API SetResourceAccessForBucketResult
+  class SetResourceAccessForBucketResult
   {
   public:
-    SetResourceAccessForBucketResult();
-    SetResourceAccessForBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetResourceAccessForBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API SetResourceAccessForBucketResult();
+    AWS_LIGHTSAIL_API SetResourceAccessForBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API SetResourceAccessForBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

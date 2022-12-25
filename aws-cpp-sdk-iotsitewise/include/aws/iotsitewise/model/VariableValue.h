@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/VariableValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API VariableValue
+  class VariableValue
   {
   public:
-    VariableValue();
-    VariableValue(Aws::Utils::Json::JsonView jsonValue);
-    VariableValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API VariableValue();
+    AWS_IOTSITEWISE_API VariableValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API VariableValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_hierarchyId;
-    bool m_hierarchyIdHasBeenSet;
+    bool m_hierarchyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SAMLOptionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API SAMLOptionsInput
+  class SAMLOptionsInput
   {
   public:
-    SAMLOptionsInput();
-    SAMLOptionsInput(Aws::Utils::Json::JsonView jsonValue);
-    SAMLOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsInput();
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,25 +290,25 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     SAMLIdp m_idp;
-    bool m_idpHasBeenSet;
+    bool m_idpHasBeenSet = false;
 
     Aws::String m_masterUserName;
-    bool m_masterUserNameHasBeenSet;
+    bool m_masterUserNameHasBeenSet = false;
 
     Aws::String m_masterBackendRole;
-    bool m_masterBackendRoleHasBeenSet;
+    bool m_masterBackendRoleHasBeenSet = false;
 
     Aws::String m_subjectKey;
-    bool m_subjectKeyHasBeenSet;
+    bool m_subjectKeyHasBeenSet = false;
 
     Aws::String m_rolesKey;
-    bool m_rolesKeyHasBeenSet;
+    bool m_rolesKeyHasBeenSet = false;
 
     int m_sessionTimeoutMinutes;
-    bool m_sessionTimeoutMinutesHasBeenSet;
+    bool m_sessionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

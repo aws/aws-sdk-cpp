@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageImportJobInputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageImportJobInputConfig
+  class PackageImportJobInputConfig
   {
   public:
-    PackageImportJobInputConfig();
-    PackageImportJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
-    PackageImportJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageImportJobInputConfig();
+    AWS_PANORAMA_API PackageImportJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageImportJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PackageVersionInputConfig m_packageVersionInputConfig;
-    bool m_packageVersionInputConfigHasBeenSet;
+    bool m_packageVersionInputConfigHasBeenSet = false;
   };
 
 } // namespace Model

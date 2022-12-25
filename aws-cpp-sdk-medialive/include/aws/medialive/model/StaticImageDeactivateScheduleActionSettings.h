@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticImageDeactivateScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings
+  class StaticImageDeactivateScheduleActionSettings
   {
   public:
-    StaticImageDeactivateScheduleActionSettings();
-    StaticImageDeactivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    StaticImageDeactivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings();
+    AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API StaticImageDeactivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_fadeOut;
-    bool m_fadeOutHasBeenSet;
+    bool m_fadeOutHasBeenSet = false;
 
     int m_layer;
-    bool m_layerHasBeenSet;
+    bool m_layerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,19 +26,19 @@ namespace Model
 
   /**
    * <p>Configuration values that override the container image Dockerfile settings.
-   * See <a
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
-   * settings</a>. </p><p><h3>See Also:</h3>   <a
+   * image settings</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ImageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ImageConfig
+  class ImageConfig
   {
   public:
-    ImageConfig();
-    ImageConfig(Aws::Utils::Json::JsonView jsonValue);
-    ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ImageConfig();
+    AWS_LAMBDA_API ImageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,47 +97,47 @@ namespace Model
 
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline ImageConfig& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline ImageConfig& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline ImageConfig& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline ImageConfig& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT. </p>
+     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline ImageConfig& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

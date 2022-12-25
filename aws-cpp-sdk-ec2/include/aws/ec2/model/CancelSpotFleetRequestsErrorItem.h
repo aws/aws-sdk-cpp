@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequestsErrorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CancelSpotFleetRequestsErrorItem
+  class CancelSpotFleetRequestsErrorItem
   {
   public:
-    CancelSpotFleetRequestsErrorItem();
-    CancelSpotFleetRequestsErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CancelSpotFleetRequestsErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CancelSpotFleetRequestsErrorItem();
+    AWS_EC2_API CancelSpotFleetRequestsErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CancelSpotFleetRequestsErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     CancelSpotFleetRequestsError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

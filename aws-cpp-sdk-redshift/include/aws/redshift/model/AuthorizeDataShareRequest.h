@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API AuthorizeDataShareRequest : public RedshiftRequest
+  class AuthorizeDataShareRequest : public RedshiftRequest
   {
   public:
-    AuthorizeDataShareRequest();
+    AWS_REDSHIFT_API AuthorizeDataShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AuthorizeDataShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
 
     Aws::String m_consumerIdentifier;
-    bool m_consumerIdentifierHasBeenSet;
+    bool m_consumerIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/VcenterClient">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API VcenterClient
+  class VcenterClient
   {
   public:
-    VcenterClient();
-    VcenterClient(Aws::Utils::Json::JsonView jsonValue);
-    VcenterClient& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API VcenterClient();
+    AWS_MGN_API VcenterClient(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API VcenterClient& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -418,28 +418,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_datacenterName;
-    bool m_datacenterNameHasBeenSet;
+    bool m_datacenterNameHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_lastSeenDatetime;
-    bool m_lastSeenDatetimeHasBeenSet;
+    bool m_lastSeenDatetimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceServerTags;
-    bool m_sourceServerTagsHasBeenSet;
+    bool m_sourceServerTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
 
     Aws::String m_vcenterUUID;
-    bool m_vcenterUUIDHasBeenSet;
+    bool m_vcenterUUIDHasBeenSet = false;
   };
 
 } // namespace Model

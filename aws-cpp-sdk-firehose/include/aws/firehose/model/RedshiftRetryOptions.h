@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API RedshiftRetryOptions
+  class RedshiftRetryOptions
   {
   public:
-    RedshiftRetryOptions();
-    RedshiftRetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API RedshiftRetryOptions();
+    AWS_FIREHOSE_API RedshiftRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API RedshiftRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

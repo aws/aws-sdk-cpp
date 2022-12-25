@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SoftwarePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SoftwarePackage
+  class SoftwarePackage
   {
   public:
-    SoftwarePackage();
-    SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
-    SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SoftwarePackage();
+    AWS_SECURITYHUB_API SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,28 +323,220 @@ namespace Model
      */
     inline SoftwarePackage& WithFilePath(const char* value) { SetFilePath(value); return *this;}
 
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline const Aws::String& GetFixedInVersion() const{ return m_fixedInVersion; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline bool FixedInVersionHasBeenSet() const { return m_fixedInVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(const Aws::String& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = value; }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(Aws::String&& value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion = std::move(value); }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline void SetFixedInVersion(const char* value) { m_fixedInVersionHasBeenSet = true; m_fixedInVersion.assign(value); }
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(const Aws::String& value) { SetFixedInVersion(value); return *this;}
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(Aws::String&& value) { SetFixedInVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the software package in which the vulnerability has been
+     * resolved. </p>
+     */
+    inline SoftwarePackage& WithFixedInVersion(const char* value) { SetFixedInVersion(value); return *this;}
+
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline const Aws::String& GetRemediation() const{ return m_remediation; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(const Aws::String& value) { m_remediationHasBeenSet = true; m_remediation = value; }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(Aws::String&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline void SetRemediation(const char* value) { m_remediationHasBeenSet = true; m_remediation.assign(value); }
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(const Aws::String& value) { SetRemediation(value); return *this;}
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(Aws::String&& value) { SetRemediation(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the actions a customer can take to resolve the vulnerability in the
+     * software package. </p>
+     */
+    inline SoftwarePackage& WithRemediation(const char* value) { SetRemediation(value); return *this;}
+
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline const Aws::String& GetSourceLayerHash() const{ return m_sourceLayerHash; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline bool SourceLayerHashHasBeenSet() const { return m_sourceLayerHashHasBeenSet; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(const Aws::String& value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash = value; }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(Aws::String&& value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash = std::move(value); }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline void SetSourceLayerHash(const char* value) { m_sourceLayerHashHasBeenSet = true; m_sourceLayerHash.assign(value); }
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(const Aws::String& value) { SetSourceLayerHash(value); return *this;}
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(Aws::String&& value) { SetSourceLayerHash(std::move(value)); return *this;}
+
+    /**
+     * <p>The source layer hash of the vulnerable package. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerHash(const char* value) { SetSourceLayerHash(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline const Aws::String& GetSourceLayerArn() const{ return m_sourceLayerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline bool SourceLayerArnHasBeenSet() const { return m_sourceLayerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(const Aws::String& value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(Aws::String&& value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline void SetSourceLayerArn(const char* value) { m_sourceLayerArnHasBeenSet = true; m_sourceLayerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(const Aws::String& value) { SetSourceLayerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(Aws::String&& value) { SetSourceLayerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source layer. </p>
+     */
+    inline SoftwarePackage& WithSourceLayerArn(const char* value) { SetSourceLayerArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_epoch;
-    bool m_epochHasBeenSet;
+    bool m_epochHasBeenSet = false;
 
     Aws::String m_release;
-    bool m_releaseHasBeenSet;
+    bool m_releaseHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_packageManager;
-    bool m_packageManagerHasBeenSet;
+    bool m_packageManagerHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
+
+    Aws::String m_fixedInVersion;
+    bool m_fixedInVersionHasBeenSet = false;
+
+    Aws::String m_remediation;
+    bool m_remediationHasBeenSet = false;
+
+    Aws::String m_sourceLayerHash;
+    bool m_sourceLayerHashHasBeenSet = false;
+
+    Aws::String m_sourceLayerArn;
+    bool m_sourceLayerArnHasBeenSet = false;
   };
 
 } // namespace Model

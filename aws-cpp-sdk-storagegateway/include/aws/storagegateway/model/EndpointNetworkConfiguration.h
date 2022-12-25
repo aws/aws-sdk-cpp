@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/EndpointNetworkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration
+  class EndpointNetworkConfiguration
   {
   public:
-    EndpointNetworkConfiguration();
-    EndpointNetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointNetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration();
+    AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API EndpointNetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

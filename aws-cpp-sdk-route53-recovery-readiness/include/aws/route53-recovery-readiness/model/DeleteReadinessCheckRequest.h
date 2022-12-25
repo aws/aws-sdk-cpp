@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API DeleteReadinessCheckRequest : public Route53RecoveryReadinessRequest
+  class DeleteReadinessCheckRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    DeleteReadinessCheckRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API DeleteReadinessCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteReadinessCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
   };
 
 } // namespace Model

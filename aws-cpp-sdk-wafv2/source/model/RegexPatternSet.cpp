@@ -69,7 +69,7 @@ RegexPatternSet& RegexPatternSet::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RegularExpressionList"))
   {
-    Array<JsonView> regularExpressionListJsonList = jsonValue.GetArray("RegularExpressionList");
+    Aws::Utils::Array<JsonView> regularExpressionListJsonList = jsonValue.GetArray("RegularExpressionList");
     for(unsigned regularExpressionListIndex = 0; regularExpressionListIndex < regularExpressionListJsonList.GetLength(); ++regularExpressionListIndex)
     {
       m_regularExpressionList.push_back(regularExpressionListJsonList[regularExpressionListIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue RegexPatternSet::Jsonize() const
 
   if(m_regularExpressionListHasBeenSet)
   {
-   Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
+   Aws::Utils::Array<JsonValue> regularExpressionListJsonList(m_regularExpressionList.size());
    for(unsigned regularExpressionListIndex = 0; regularExpressionListIndex < regularExpressionListJsonList.GetLength(); ++regularExpressionListIndex)
    {
      regularExpressionListJsonList[regularExpressionListIndex].AsObject(m_regularExpressionList[regularExpressionListIndex].Jsonize());

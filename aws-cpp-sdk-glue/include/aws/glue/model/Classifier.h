@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Classifier
+  class Classifier
   {
   public:
-    Classifier();
-    Classifier(Aws::Utils::Json::JsonView jsonValue);
-    Classifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Classifier();
+    AWS_GLUE_API Classifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Classifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     GrokClassifier m_grokClassifier;
-    bool m_grokClassifierHasBeenSet;
+    bool m_grokClassifierHasBeenSet = false;
 
     XMLClassifier m_xMLClassifier;
-    bool m_xMLClassifierHasBeenSet;
+    bool m_xMLClassifierHasBeenSet = false;
 
     JsonClassifier m_jsonClassifier;
-    bool m_jsonClassifierHasBeenSet;
+    bool m_jsonClassifierHasBeenSet = false;
 
     CsvClassifier m_csvClassifier;
-    bool m_csvClassifierHasBeenSet;
+    bool m_csvClassifierHasBeenSet = false;
   };
 
 } // namespace Model

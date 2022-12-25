@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SnowflakeConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SnowflakeConnectorProfileProperties
+  class SnowflakeConnectorProfileProperties
   {
   public:
-    SnowflakeConnectorProfileProperties();
-    SnowflakeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    SnowflakeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties();
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -359,25 +359,25 @@ namespace Model
   private:
 
     Aws::String m_warehouse;
-    bool m_warehouseHasBeenSet;
+    bool m_warehouseHasBeenSet = false;
 
     Aws::String m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     Aws::String m_privateLinkServiceName;
-    bool m_privateLinkServiceNameHasBeenSet;
+    bool m_privateLinkServiceNameHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/ExternalSourceSetting.h>
+#include <aws/lexv2-models/model/CompositeSlotTypeSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -29,12 +30,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API DescribeSlotTypeResult
+  class DescribeSlotTypeResult
   {
   public:
-    DescribeSlotTypeResult();
-    DescribeSlotTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSlotTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeSlotTypeResult();
+    AWS_LEXMODELSV2_API DescribeSlotTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeSlotTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -430,6 +431,32 @@ namespace Model
     
     inline DescribeSlotTypeResult& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline const CompositeSlotTypeSetting& GetCompositeSlotTypeSetting() const{ return m_compositeSlotTypeSetting; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { m_compositeSlotTypeSetting = value; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { m_compositeSlotTypeSetting = std::move(value); }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline DescribeSlotTypeResult& WithCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { SetCompositeSlotTypeSetting(value); return *this;}
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline DescribeSlotTypeResult& WithCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { SetCompositeSlotTypeSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
@@ -455,6 +482,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedDateTime;
 
     ExternalSourceSetting m_externalSourceSetting;
+
+    CompositeSlotTypeSetting m_compositeSlotTypeSetting;
   };
 
 } // namespace Model

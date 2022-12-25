@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ZendeskDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ZendeskDestinationProperties
+  class ZendeskDestinationProperties
   {
   public:
-    ZendeskDestinationProperties();
-    ZendeskDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    ZendeskDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ZendeskDestinationProperties();
+    AWS_APPFLOW_API ZendeskDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ZendeskDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,16 +150,16 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;
-    bool m_idFieldNamesHasBeenSet;
+    bool m_idFieldNamesHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
 
     WriteOperationType m_writeOperationType;
-    bool m_writeOperationTypeHasBeenSet;
+    bool m_writeOperationTypeHasBeenSet = false;
   };
 
 } // namespace Model

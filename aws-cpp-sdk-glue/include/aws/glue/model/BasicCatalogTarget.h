@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BasicCatalogTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BasicCatalogTarget
+  class BasicCatalogTarget
   {
   public:
-    BasicCatalogTarget();
-    BasicCatalogTarget(Aws::Utils::Json::JsonView jsonValue);
-    BasicCatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BasicCatalogTarget();
+    AWS_GLUE_API BasicCatalogTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BasicCatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
   };
 
 } // namespace Model

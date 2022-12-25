@@ -30,36 +30,40 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CelebrityRecognition">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API CelebrityRecognition
+  class CelebrityRecognition
   {
   public:
-    CelebrityRecognition();
-    CelebrityRecognition(Aws::Utils::Json::JsonView jsonValue);
-    CelebrityRecognition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API CelebrityRecognition();
+    AWS_REKOGNITION_API CelebrityRecognition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API CelebrityRecognition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
-     * recognized.</p>
+     * recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to
+     * the individual frame where the celebrity first appears.</p>
      */
     inline CelebrityRecognition& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -97,10 +101,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     CelebrityDetail m_celebrity;
-    bool m_celebrityHasBeenSet;
+    bool m_celebrityHasBeenSet = false;
   };
 
 } // namespace Model

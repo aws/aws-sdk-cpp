@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API SeverityLevel
+  class SeverityLevel
   {
   public:
-    SeverityLevel();
-    SeverityLevel(Aws::Utils::Json::JsonView jsonValue);
-    SeverityLevel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API SeverityLevel();
+    AWS_SUPPORT_API SeverityLevel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API SeverityLevel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,10 +230,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

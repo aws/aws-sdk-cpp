@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TimeBasedAutoScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API TimeBasedAutoScalingConfiguration
+  class TimeBasedAutoScalingConfiguration
   {
   public:
-    TimeBasedAutoScalingConfiguration();
-    TimeBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TimeBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API TimeBasedAutoScalingConfiguration();
+    AWS_OPSWORKS_API TimeBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API TimeBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     WeeklyAutoScalingSchedule m_autoScalingSchedule;
-    bool m_autoScalingScheduleHasBeenSet;
+    bool m_autoScalingScheduleHasBeenSet = false;
   };
 
 } // namespace Model

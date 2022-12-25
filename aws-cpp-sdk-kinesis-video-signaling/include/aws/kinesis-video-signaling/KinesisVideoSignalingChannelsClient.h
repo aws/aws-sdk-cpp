@@ -5,100 +5,76 @@
 
 #pragma once
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
-#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis-video-signaling/model/GetIceServerConfigResult.h>
-#include <aws/kinesis-video-signaling/model/SendAlexaOfferToMasterResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideoSignalingChannels
 {
-
-namespace Model
-{
-        class GetIceServerConfigRequest;
-        class SendAlexaOfferToMasterRequest;
-
-        typedef Aws::Utils::Outcome<GetIceServerConfigResult, KinesisVideoSignalingChannelsError> GetIceServerConfigOutcome;
-        typedef Aws::Utils::Outcome<SendAlexaOfferToMasterResult, KinesisVideoSignalingChannelsError> SendAlexaOfferToMasterOutcome;
-
-        typedef std::future<GetIceServerConfigOutcome> GetIceServerConfigOutcomeCallable;
-        typedef std::future<SendAlexaOfferToMasterOutcome> SendAlexaOfferToMasterOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoSignalingChannelsClient;
-
-    typedef std::function<void(const KinesisVideoSignalingChannelsClient*, const Model::GetIceServerConfigRequest&, const Model::GetIceServerConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIceServerConfigResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoSignalingChannelsClient*, const Model::SendAlexaOfferToMasterRequest&, const Model::SendAlexaOfferToMasterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAlexaOfferToMasterResponseReceivedHandler;
-
   /**
    * <p>Kinesis Video Streams Signaling Service is a intermediate service that
    * establishes a communication channel for discovering peers, transmitting offers
    * and answers in order to establish peer-to-peer connection in webRTC
    * technology.</p>
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoSignalingChannelsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoSignalingChannelsClient(const Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration = Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration(),
+                                            std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoSignalingChannelsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoSignalingChannelsClient(const Aws::Auth::AWSCredentials& credentials,
+                                            std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG),
+                                            const Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration = Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisVideoSignalingChannelsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                            std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG),
+                                            const Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration = Aws::KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoSignalingChannelsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoSignalingChannelsClient(const Aws::Auth::AWSCredentials& credentials,
+                                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KinesisVideoSignalingChannelsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoSignalingChannelsClient();
-
 
         /**
          * <p>Gets the Interactive Connectivity Establishment (ICE) server configuration
@@ -156,14 +132,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetIceServerConfigAsyncHelper(const Model::GetIceServerConfigRequest& request, const GetIceServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendAlexaOfferToMasterAsyncHelper(const Model::SendAlexaOfferToMasterRequest& request, const SendAlexaOfferToMasterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>;
+      void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideoSignalingChannels

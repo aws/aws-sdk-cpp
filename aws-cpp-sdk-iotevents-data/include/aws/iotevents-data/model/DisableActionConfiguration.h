@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DisableActionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API DisableActionConfiguration
+  class DisableActionConfiguration
   {
   public:
-    DisableActionConfiguration();
-    DisableActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DisableActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API DisableActionConfiguration();
+    AWS_IOTEVENTSDATA_API DisableActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API DisableActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API CreateIAMPolicyAssignmentRequest : public QuickSightRequest
+  class CreateIAMPolicyAssignmentRequest : public QuickSightRequest
   {
   public:
-    CreateIAMPolicyAssignmentRequest();
+    AWS_QUICKSIGHT_API CreateIAMPolicyAssignmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIAMPolicyAssignment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -359,22 +359,22 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_assignmentName;
-    bool m_assignmentNameHasBeenSet;
+    bool m_assignmentNameHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
-    bool m_identitiesHasBeenSet;
+    bool m_identitiesHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

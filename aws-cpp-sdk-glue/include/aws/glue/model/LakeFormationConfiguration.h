@@ -24,41 +24,41 @@ namespace Model
 {
 
   /**
-   * <p>Specifies AWS Lake Formation configuration settings for the
+   * <p>Specifies Lake Formation configuration settings for the
    * crawler.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LakeFormationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LakeFormationConfiguration
+  class LakeFormationConfiguration
   {
   public:
-    LakeFormationConfiguration();
-    LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LakeFormationConfiguration();
+    AWS_GLUE_API LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Specifies whether to use AWS Lake Formation credentials for the crawler
-     * instead of the IAM role credentials.</p>
+     * <p>Specifies whether to use Lake Formation credentials for the crawler instead
+     * of the IAM role credentials.</p>
      */
     inline bool GetUseLakeFormationCredentials() const{ return m_useLakeFormationCredentials; }
 
     /**
-     * <p>Specifies whether to use AWS Lake Formation credentials for the crawler
-     * instead of the IAM role credentials.</p>
+     * <p>Specifies whether to use Lake Formation credentials for the crawler instead
+     * of the IAM role credentials.</p>
      */
     inline bool UseLakeFormationCredentialsHasBeenSet() const { return m_useLakeFormationCredentialsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to use AWS Lake Formation credentials for the crawler
-     * instead of the IAM role credentials.</p>
+     * <p>Specifies whether to use Lake Formation credentials for the crawler instead
+     * of the IAM role credentials.</p>
      */
     inline void SetUseLakeFormationCredentials(bool value) { m_useLakeFormationCredentialsHasBeenSet = true; m_useLakeFormationCredentials = value; }
 
     /**
-     * <p>Specifies whether to use AWS Lake Formation credentials for the crawler
-     * instead of the IAM role credentials.</p>
+     * <p>Specifies whether to use Lake Formation credentials for the crawler instead
+     * of the IAM role credentials.</p>
      */
     inline LakeFormationConfiguration& WithUseLakeFormationCredentials(bool value) { SetUseLakeFormationCredentials(value); return *this;}
 
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     bool m_useLakeFormationCredentials;
-    bool m_useLakeFormationCredentialsHasBeenSet;
+    bool m_useLakeFormationCredentialsHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

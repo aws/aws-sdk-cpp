@@ -24,17 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>The service is currently unavailable.</p><p><h3>See Also:</h3>   <a
+   * <p>The service encountered an unexpected error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ServiceFailureException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API ServiceFailureException
+  class ServiceFailureException
   {
   public:
-    ServiceFailureException();
-    ServiceFailureException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API ServiceFailureException();
+    AWS_CHIMESDKMEETINGS_API ServiceFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API ServiceFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -87,40 +87,56 @@ namespace Model
     inline ServiceFailureException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline ServiceFailureException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline ServiceFailureException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the failed request.</p>
+     */
     inline ServiceFailureException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

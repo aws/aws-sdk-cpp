@@ -18,13 +18,15 @@ using namespace Aws;
 
 CreateRuleResult::CreateRuleResult() : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
 }
 
 CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_resourceType(ResourceType::NOT_SET),
-    m_status(RuleStatus::NOT_SET)
+    m_status(RuleStatus::NOT_SET),
+    m_lockState(LockState::NOT_SET)
 {
   *this = result;
 }
@@ -52,7 +54,7 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -67,7 +69,7 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("ResourceTags"))
   {
-    Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
+    Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
     for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
     {
       m_resourceTags.push_back(resourceTagsJsonList[resourceTagsIndex].AsObject());
@@ -77,6 +79,18 @@ CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RuleStatusMapper::GetRuleStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("LockConfiguration"))
+  {
+    m_lockConfiguration = jsonValue.GetObject("LockConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("LockState"))
+  {
+    m_lockState = LockStateMapper::GetLockStateForName(jsonValue.GetString("LockState"));
 
   }
 

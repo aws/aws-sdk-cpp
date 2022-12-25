@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamCidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API IpamCidrAuthorizationContext
+  class IpamCidrAuthorizationContext
   {
   public:
-    IpamCidrAuthorizationContext();
-    IpamCidrAuthorizationContext(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IpamCidrAuthorizationContext& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamCidrAuthorizationContext();
+    AWS_EC2_API IpamCidrAuthorizationContext(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamCidrAuthorizationContext& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
   };
 
 } // namespace Model

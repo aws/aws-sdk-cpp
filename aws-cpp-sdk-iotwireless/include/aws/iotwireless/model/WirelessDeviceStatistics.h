@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessDeviceStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessDeviceStatistics
+  class WirelessDeviceStatistics
   {
   public:
-    WirelessDeviceStatistics();
-    WirelessDeviceStatistics(Aws::Utils::Json::JsonView jsonValue);
-    WirelessDeviceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessDeviceStatistics();
+    AWS_IOTWIRELESS_API WirelessDeviceStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessDeviceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -415,37 +415,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     WirelessDeviceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_lastUplinkReceivedAt;
-    bool m_lastUplinkReceivedAtHasBeenSet;
+    bool m_lastUplinkReceivedAtHasBeenSet = false;
 
     LoRaWANListDevice m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     SidewalkListDevice m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
 
     FuotaDeviceStatus m_fuotaDeviceStatus;
-    bool m_fuotaDeviceStatusHasBeenSet;
+    bool m_fuotaDeviceStatusHasBeenSet = false;
 
     Aws::String m_multicastDeviceStatus;
-    bool m_multicastDeviceStatusHasBeenSet;
+    bool m_multicastDeviceStatusHasBeenSet = false;
 
     int m_mcGroupId;
-    bool m_mcGroupIdHasBeenSet;
+    bool m_mcGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

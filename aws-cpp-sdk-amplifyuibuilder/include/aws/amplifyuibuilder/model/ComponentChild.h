@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentChild">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentChild
+  class ComponentChild
   {
   public:
-    ComponentChild();
-    ComponentChild(Aws::Utils::Json::JsonView jsonValue);
-    ComponentChild& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentChild();
+    AWS_AMPLIFYUIBUILDER_API ComponentChild(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentChild& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -374,22 +374,22 @@ namespace Model
   private:
 
     Aws::Vector<ComponentChild> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
   };
 
 } // namespace Model

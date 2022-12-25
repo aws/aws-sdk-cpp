@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/AbortTransactionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API AbortTransactionRequest
+  class AbortTransactionRequest
   {
   public:
-    AbortTransactionRequest();
-    AbortTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
-    AbortTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API AbortTransactionRequest();
+    AWS_QLDBSESSION_API AbortTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API AbortTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

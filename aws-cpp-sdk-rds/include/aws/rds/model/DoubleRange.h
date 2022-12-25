@@ -26,15 +26,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DoubleRange">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API DoubleRange
+  class DoubleRange
   {
   public:
-    DoubleRange();
-    DoubleRange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DoubleRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DoubleRange();
+    AWS_RDS_API DoubleRange(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DoubleRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     double m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     double m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

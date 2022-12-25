@@ -44,7 +44,7 @@ AppSpecification& AppSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
-    Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
+    Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
     for(unsigned containerEntrypointIndex = 0; containerEntrypointIndex < containerEntrypointJsonList.GetLength(); ++containerEntrypointIndex)
     {
       m_containerEntrypoint.push_back(containerEntrypointJsonList[containerEntrypointIndex].AsString());
@@ -54,7 +54,7 @@ AppSpecification& AppSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ContainerArguments"))
   {
-    Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
+    Aws::Utils::Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
     for(unsigned containerArgumentsIndex = 0; containerArgumentsIndex < containerArgumentsJsonList.GetLength(); ++containerArgumentsIndex)
     {
       m_containerArguments.push_back(containerArgumentsJsonList[containerArgumentsIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue AppSpecification::Jsonize() const
 
   if(m_containerEntrypointHasBeenSet)
   {
-   Array<JsonValue> containerEntrypointJsonList(m_containerEntrypoint.size());
+   Aws::Utils::Array<JsonValue> containerEntrypointJsonList(m_containerEntrypoint.size());
    for(unsigned containerEntrypointIndex = 0; containerEntrypointIndex < containerEntrypointJsonList.GetLength(); ++containerEntrypointIndex)
    {
      containerEntrypointJsonList[containerEntrypointIndex].AsString(m_containerEntrypoint[containerEntrypointIndex]);
@@ -88,7 +88,7 @@ JsonValue AppSpecification::Jsonize() const
 
   if(m_containerArgumentsHasBeenSet)
   {
-   Array<JsonValue> containerArgumentsJsonList(m_containerArguments.size());
+   Aws::Utils::Array<JsonValue> containerArgumentsJsonList(m_containerArguments.size());
    for(unsigned containerArgumentsIndex = 0; containerArgumentsIndex < containerArgumentsJsonList.GetLength(); ++containerArgumentsIndex)
    {
      containerArgumentsJsonList[containerArgumentsIndex].AsString(m_containerArguments[containerArgumentsIndex]);

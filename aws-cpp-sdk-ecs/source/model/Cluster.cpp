@@ -37,7 +37,8 @@ Cluster::Cluster() :
     m_capacityProvidersHasBeenSet(false),
     m_defaultCapacityProviderStrategyHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false)
+    m_attachmentsStatusHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_capacityProvidersHasBeenSet(false),
     m_defaultCapacityProviderStrategyHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_attachmentsStatusHasBeenSet(false)
+    m_attachmentsStatusHasBeenSet(false),
+    m_serviceConnectDefaultsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,7 +127,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("statistics"))
   {
-    Array<JsonView> statisticsJsonList = jsonValue.GetArray("statistics");
+    Aws::Utils::Array<JsonView> statisticsJsonList = jsonValue.GetArray("statistics");
     for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
     {
       m_statistics.push_back(statisticsJsonList[statisticsIndex].AsObject());
@@ -135,7 +137,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -145,7 +147,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("settings"))
   {
-    Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
+    Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("settings");
     for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
     {
       m_settings.push_back(settingsJsonList[settingsIndex].AsObject());
@@ -155,7 +157,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("capacityProviders"))
   {
-    Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("capacityProviders");
+    Aws::Utils::Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("capacityProviders");
     for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
     {
       m_capacityProviders.push_back(capacityProvidersJsonList[capacityProvidersIndex].AsString());
@@ -165,7 +167,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("defaultCapacityProviderStrategy"))
   {
-    Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("defaultCapacityProviderStrategy");
+    Aws::Utils::Array<JsonView> defaultCapacityProviderStrategyJsonList = jsonValue.GetArray("defaultCapacityProviderStrategy");
     for(unsigned defaultCapacityProviderStrategyIndex = 0; defaultCapacityProviderStrategyIndex < defaultCapacityProviderStrategyJsonList.GetLength(); ++defaultCapacityProviderStrategyIndex)
     {
       m_defaultCapacityProviderStrategy.push_back(defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject());
@@ -175,7 +177,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attachments"))
   {
-    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
@@ -188,6 +190,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_attachmentsStatus = jsonValue.GetString("attachmentsStatus");
 
     m_attachmentsStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceConnectDefaults"))
+  {
+    m_serviceConnectDefaults = jsonValue.GetObject("serviceConnectDefaults");
+
+    m_serviceConnectDefaultsHasBeenSet = true;
   }
 
   return *this;
@@ -247,7 +256,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_statisticsHasBeenSet)
   {
-   Array<JsonValue> statisticsJsonList(m_statistics.size());
+   Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
    for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
    {
      statisticsJsonList[statisticsIndex].AsObject(m_statistics[statisticsIndex].Jsonize());
@@ -258,7 +267,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -269,7 +278,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_settingsHasBeenSet)
   {
-   Array<JsonValue> settingsJsonList(m_settings.size());
+   Aws::Utils::Array<JsonValue> settingsJsonList(m_settings.size());
    for(unsigned settingsIndex = 0; settingsIndex < settingsJsonList.GetLength(); ++settingsIndex)
    {
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
@@ -280,7 +289,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_capacityProvidersHasBeenSet)
   {
-   Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
+   Aws::Utils::Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
    for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
    {
      capacityProvidersJsonList[capacityProvidersIndex].AsString(m_capacityProviders[capacityProvidersIndex]);
@@ -291,7 +300,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_defaultCapacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> defaultCapacityProviderStrategyJsonList(m_defaultCapacityProviderStrategy.size());
    for(unsigned defaultCapacityProviderStrategyIndex = 0; defaultCapacityProviderStrategyIndex < defaultCapacityProviderStrategyJsonList.GetLength(); ++defaultCapacityProviderStrategyIndex)
    {
      defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject(m_defaultCapacityProviderStrategy[defaultCapacityProviderStrategyIndex].Jsonize());
@@ -302,7 +311,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
@@ -314,6 +323,12 @@ JsonValue Cluster::Jsonize() const
   if(m_attachmentsStatusHasBeenSet)
   {
    payload.WithString("attachmentsStatus", m_attachmentsStatus);
+
+  }
+
+  if(m_serviceConnectDefaultsHasBeenSet)
+  {
+   payload.WithObject("serviceConnectDefaults", m_serviceConnectDefaults.Jsonize());
 
   }
 

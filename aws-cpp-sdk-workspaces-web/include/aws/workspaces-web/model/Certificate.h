@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/Certificate">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API Certificate();
+    AWS_WORKSPACESWEB_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidAfter;
-    bool m_notValidAfterHasBeenSet;
+    bool m_notValidAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidBefore;
-    bool m_notValidBeforeHasBeenSet;
+    bool m_notValidBeforeHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet;
+    bool m_thumbprintHasBeenSet = false;
   };
 
 } // namespace Model

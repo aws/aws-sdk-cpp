@@ -98,7 +98,7 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -110,7 +110,7 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
     Aws::Map<Aws::String, JsonView> versionIdsToStagesJsonMap = jsonValue.GetObject("VersionIdsToStages").GetAllObjects();
     for(auto& versionIdsToStagesItem : versionIdsToStagesJsonMap)
     {
-      Array<JsonView> secretVersionStagesTypeJsonList = versionIdsToStagesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> secretVersionStagesTypeJsonList = versionIdsToStagesItem.second.AsArray();
       Aws::Vector<Aws::String> secretVersionStagesTypeList;
       secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
       for(unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength(); ++secretVersionStagesTypeIndex)
@@ -141,7 +141,7 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ReplicationStatus"))
   {
-    Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
+    Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
     for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
     {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());

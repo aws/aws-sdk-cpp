@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionGroupArbitraryPatternLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ProtectionGroupArbitraryPatternLimits
+  class ProtectionGroupArbitraryPatternLimits
   {
   public:
-    ProtectionGroupArbitraryPatternLimits();
-    ProtectionGroupArbitraryPatternLimits(Aws::Utils::Json::JsonView jsonValue);
-    ProtectionGroupArbitraryPatternLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ProtectionGroupArbitraryPatternLimits();
+    AWS_SHIELD_API ProtectionGroupArbitraryPatternLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ProtectionGroupArbitraryPatternLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     long long m_maxMembers;
-    bool m_maxMembersHasBeenSet;
+    bool m_maxMembersHasBeenSet = false;
   };
 
 } // namespace Model

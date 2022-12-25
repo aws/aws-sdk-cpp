@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageScanFindingsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageScanFindingsSummary
+  class ImageScanFindingsSummary
   {
   public:
-    ImageScanFindingsSummary();
-    ImageScanFindingsSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImageScanFindingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageScanFindingsSummary();
+    AWS_ECR_API ImageScanFindingsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageScanFindingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_imageScanCompletedAt;
-    bool m_imageScanCompletedAtHasBeenSet;
+    bool m_imageScanCompletedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt;
-    bool m_vulnerabilitySourceUpdatedAtHasBeenSet;
+    bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
     Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
-    bool m_findingSeverityCountsHasBeenSet;
+    bool m_findingSeverityCountsHasBeenSet = false;
   };
 
 } // namespace Model

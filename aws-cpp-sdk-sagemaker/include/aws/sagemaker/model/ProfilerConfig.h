@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for Debugger system monitoring, framework
-   * profiling, and storage paths.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information for Amazon SageMaker Debugger system monitoring,
+   * framework profiling, and storage paths.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProfilerConfig
+  class ProfilerConfig
   {
   public:
-    ProfilerConfig();
-    ProfilerConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProfilerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProfilerConfig();
+    AWS_SAGEMAKER_API ProfilerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProfilerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -278,16 +278,44 @@ namespace Model
      */
     inline ProfilerConfig& AddProfilingParameters(const char* key, const char* value) { m_profilingParametersHasBeenSet = true; m_profilingParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
+     */
+    inline bool GetDisableProfiler() const{ return m_disableProfiler; }
+
+    /**
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
+     */
+    inline bool DisableProfilerHasBeenSet() const { return m_disableProfilerHasBeenSet; }
+
+    /**
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
+     */
+    inline void SetDisableProfiler(bool value) { m_disableProfilerHasBeenSet = true; m_disableProfiler = value; }
+
+    /**
+     * <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and
+     * profiling functionality. To turn it off, set to <code>True</code>.</p>
+     */
+    inline ProfilerConfig& WithDisableProfiler(bool value) { SetDisableProfiler(value); return *this;}
+
   private:
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     long long m_profilingIntervalInMilliseconds;
-    bool m_profilingIntervalInMillisecondsHasBeenSet;
+    bool m_profilingIntervalInMillisecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_profilingParameters;
-    bool m_profilingParametersHasBeenSet;
+    bool m_profilingParametersHasBeenSet = false;
+
+    bool m_disableProfiler;
+    bool m_disableProfilerHasBeenSet = false;
   };
 
 } // namespace Model

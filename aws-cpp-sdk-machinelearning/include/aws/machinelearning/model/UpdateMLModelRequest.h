@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACHINELEARNING_API UpdateMLModelRequest : public MachineLearningRequest
+  class UpdateMLModelRequest : public MachineLearningRequest
   {
   public:
-    UpdateMLModelRequest();
+    AWS_MACHINELEARNING_API UpdateMLModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMLModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACHINELEARNING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_mLModelName;
-    bool m_mLModelNameHasBeenSet;
+    bool m_mLModelNameHasBeenSet = false;
 
     double m_scoreThreshold;
-    bool m_scoreThresholdHasBeenSet;
+    bool m_scoreThresholdHasBeenSet = false;
   };
 
 } // namespace Model

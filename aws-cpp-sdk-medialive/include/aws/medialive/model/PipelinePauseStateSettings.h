@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PipelinePauseStateSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API PipelinePauseStateSettings
+  class PipelinePauseStateSettings
   {
   public:
-    PipelinePauseStateSettings();
-    PipelinePauseStateSettings(Aws::Utils::Json::JsonView jsonValue);
-    PipelinePauseStateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API PipelinePauseStateSettings();
+    AWS_MEDIALIVE_API PipelinePauseStateSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API PipelinePauseStateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PipelineId m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

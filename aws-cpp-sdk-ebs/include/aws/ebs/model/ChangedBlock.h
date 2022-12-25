@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ChangedBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_EBS_API ChangedBlock
+  class ChangedBlock
   {
   public:
-    ChangedBlock();
-    ChangedBlock(Aws::Utils::Json::JsonView jsonValue);
-    ChangedBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API ChangedBlock();
+    AWS_EBS_API ChangedBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API ChangedBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_firstBlockToken;
-    bool m_firstBlockTokenHasBeenSet;
+    bool m_firstBlockTokenHasBeenSet = false;
 
     Aws::String m_secondBlockToken;
-    bool m_secondBlockTokenHasBeenSet;
+    bool m_secondBlockTokenHasBeenSet = false;
   };
 
 } // namespace Model

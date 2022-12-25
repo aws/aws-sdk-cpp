@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UplinkSpectrumConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API UplinkSpectrumConfig
+  class UplinkSpectrumConfig
   {
   public:
-    UplinkSpectrumConfig();
-    UplinkSpectrumConfig(Aws::Utils::Json::JsonView jsonValue);
-    UplinkSpectrumConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API UplinkSpectrumConfig();
+    AWS_GROUNDSTATION_API UplinkSpectrumConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API UplinkSpectrumConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Frequency m_centerFrequency;
-    bool m_centerFrequencyHasBeenSet;
+    bool m_centerFrequencyHasBeenSet = false;
 
     Polarization m_polarization;
-    bool m_polarizationHasBeenSet;
+    bool m_polarizationHasBeenSet = false;
   };
 
 } // namespace Model

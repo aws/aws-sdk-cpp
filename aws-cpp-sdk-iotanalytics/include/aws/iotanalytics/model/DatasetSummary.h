@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetSummary
+  class DatasetSummary
   {
   public:
-    DatasetSummary();
-    DatasetSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetSummary();
+    AWS_IOTANALYTICS_API DatasetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -284,22 +284,22 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<DatasetTrigger> m_triggers;
-    bool m_triggersHasBeenSet;
+    bool m_triggersHasBeenSet = false;
 
     Aws::Vector<DatasetActionSummary> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

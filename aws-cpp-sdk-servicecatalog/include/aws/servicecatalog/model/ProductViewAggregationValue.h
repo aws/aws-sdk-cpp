@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewAggregationValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProductViewAggregationValue
+  class ProductViewAggregationValue
   {
   public:
-    ProductViewAggregationValue();
-    ProductViewAggregationValue(Aws::Utils::Json::JsonView jsonValue);
-    ProductViewAggregationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProductViewAggregationValue();
+    AWS_SERVICECATALOG_API ProductViewAggregationValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProductViewAggregationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     int m_approximateCount;
-    bool m_approximateCountHasBeenSet;
+    bool m_approximateCountHasBeenSet = false;
   };
 
 } // namespace Model

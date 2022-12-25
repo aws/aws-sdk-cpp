@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Endpoint();
+    AWS_TIMESTREAMWRITE_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     long long m_cachePeriodInMinutes;
-    bool m_cachePeriodInMinutesHasBeenSet;
+    bool m_cachePeriodInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,7 +20,8 @@ DescribeAccountHealthResult::DescribeAccountHealthResult() :
     m_openReactiveInsights(0),
     m_openProactiveInsights(0),
     m_metricsAnalyzed(0),
-    m_resourceHours(0)
+    m_resourceHours(0),
+    m_analyzedResourceCount(0)
 {
 }
 
@@ -28,7 +29,8 @@ DescribeAccountHealthResult::DescribeAccountHealthResult(const Aws::AmazonWebSer
     m_openReactiveInsights(0),
     m_openProactiveInsights(0),
     m_metricsAnalyzed(0),
-    m_resourceHours(0)
+    m_resourceHours(0),
+    m_analyzedResourceCount(0)
 {
   *this = result;
 }
@@ -57,6 +59,12 @@ DescribeAccountHealthResult& DescribeAccountHealthResult::operator =(const Aws::
   if(jsonValue.ValueExists("ResourceHours"))
   {
     m_resourceHours = jsonValue.GetInt64("ResourceHours");
+
+  }
+
+  if(jsonValue.ValueExists("AnalyzedResourceCount"))
+  {
+    m_analyzedResourceCount = jsonValue.GetInt64("AnalyzedResourceCount");
 
   }
 

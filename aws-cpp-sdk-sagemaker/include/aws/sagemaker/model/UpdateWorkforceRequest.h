@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/SourceIpConfig.h>
 #include <aws/sagemaker/model/OidcConfig.h>
+#include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
 #include <utility>
 
 namespace Aws
@@ -20,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateWorkforceRequest : public SageMakerRequest
+  class UpdateWorkforceRequest : public SageMakerRequest
   {
   public:
-    UpdateWorkforceRequest();
+    AWS_SAGEMAKER_API UpdateWorkforceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorkforce"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -170,16 +171,50 @@ namespace Model
      */
     inline UpdateWorkforceRequest& WithOidcConfig(OidcConfig&& value) { SetOidcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline const WorkforceVpcConfigRequest& GetWorkforceVpcConfig() const{ return m_workforceVpcConfig; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline bool WorkforceVpcConfigHasBeenSet() const { return m_workforceVpcConfigHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = value; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::move(value); }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { SetWorkforceVpcConfig(value); return *this;}
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { SetWorkforceVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     OidcConfig m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
+
+    WorkforceVpcConfigRequest m_workforceVpcConfig;
+    bool m_workforceVpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

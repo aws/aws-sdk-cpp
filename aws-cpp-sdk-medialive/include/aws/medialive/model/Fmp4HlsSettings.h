@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Fmp4HlsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Fmp4HlsSettings
+  class Fmp4HlsSettings
   {
   public:
-    Fmp4HlsSettings();
-    Fmp4HlsSettings(Aws::Utils::Json::JsonView jsonValue);
-    Fmp4HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Fmp4HlsSettings();
+    AWS_MEDIALIVE_API Fmp4HlsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Fmp4HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     Fmp4NielsenId3Behavior m_nielsenId3Behavior;
-    bool m_nielsenId3BehaviorHasBeenSet;
+    bool m_nielsenId3BehaviorHasBeenSet = false;
 
     Fmp4TimedMetadataBehavior m_timedMetadataBehavior;
-    bool m_timedMetadataBehaviorHasBeenSet;
+    bool m_timedMetadataBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

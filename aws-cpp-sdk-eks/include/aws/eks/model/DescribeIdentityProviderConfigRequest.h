@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API DescribeIdentityProviderConfigRequest : public EKSRequest
+  class DescribeIdentityProviderConfigRequest : public EKSRequest
   {
   public:
-    DescribeIdentityProviderConfigRequest();
+    AWS_EKS_API DescribeIdentityProviderConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeIdentityProviderConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline const IdentityProviderConfig& GetIdentityProviderConfig() const{ return m_identityProviderConfig; }
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline bool IdentityProviderConfigHasBeenSet() const { return m_identityProviderConfigHasBeenSet; }
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline void SetIdentityProviderConfig(const IdentityProviderConfig& value) { m_identityProviderConfigHasBeenSet = true; m_identityProviderConfig = value; }
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline void SetIdentityProviderConfig(IdentityProviderConfig&& value) { m_identityProviderConfigHasBeenSet = true; m_identityProviderConfig = std::move(value); }
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline DescribeIdentityProviderConfigRequest& WithIdentityProviderConfig(const IdentityProviderConfig& value) { SetIdentityProviderConfig(value); return *this;}
 
     /**
-     * <p>An object that represents an identity provider configuration.</p>
+     * <p>An object representing an identity provider configuration.</p>
      */
     inline DescribeIdentityProviderConfigRequest& WithIdentityProviderConfig(IdentityProviderConfig&& value) { SetIdentityProviderConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     IdentityProviderConfig m_identityProviderConfig;
-    bool m_identityProviderConfigHasBeenSet;
+    bool m_identityProviderConfigHasBeenSet = false;
   };
 
 } // namespace Model

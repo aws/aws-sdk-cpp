@@ -24,36 +24,36 @@ namespace CodeGuruReviewer
 {
 namespace Model
 {
-  class AWS_CODEGURUREVIEWER_API DescribeRecommendationFeedbackResult
+  class DescribeRecommendationFeedbackResult
   {
   public:
-    DescribeRecommendationFeedbackResult();
-    DescribeRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API DescribeRecommendationFeedbackResult();
+    AWS_CODEGURUREVIEWER_API DescribeRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API DescribeRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p> The recommendation feedback given by the user. </p>
+     * <p>The recommendation feedback given by the user.</p>
      */
     inline const RecommendationFeedback& GetRecommendationFeedback() const{ return m_recommendationFeedback; }
 
     /**
-     * <p> The recommendation feedback given by the user. </p>
+     * <p>The recommendation feedback given by the user.</p>
      */
     inline void SetRecommendationFeedback(const RecommendationFeedback& value) { m_recommendationFeedback = value; }
 
     /**
-     * <p> The recommendation feedback given by the user. </p>
+     * <p>The recommendation feedback given by the user.</p>
      */
     inline void SetRecommendationFeedback(RecommendationFeedback&& value) { m_recommendationFeedback = std::move(value); }
 
     /**
-     * <p> The recommendation feedback given by the user. </p>
+     * <p>The recommendation feedback given by the user.</p>
      */
     inline DescribeRecommendationFeedbackResult& WithRecommendationFeedback(const RecommendationFeedback& value) { SetRecommendationFeedback(value); return *this;}
 
     /**
-     * <p> The recommendation feedback given by the user. </p>
+     * <p>The recommendation feedback given by the user.</p>
      */
     inline DescribeRecommendationFeedbackResult& WithRecommendationFeedback(RecommendationFeedback&& value) { SetRecommendationFeedback(std::move(value)); return *this;}
 

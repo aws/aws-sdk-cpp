@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LastDeploymentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API LastDeploymentInfo
+  class LastDeploymentInfo
   {
   public:
-    LastDeploymentInfo();
-    LastDeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
-    LastDeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API LastDeploymentInfo();
+    AWS_CODEDEPLOY_API LastDeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API LastDeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
   };
 
 } // namespace Model

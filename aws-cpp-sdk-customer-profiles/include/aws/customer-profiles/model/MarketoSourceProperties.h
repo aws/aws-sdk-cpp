@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MarketoSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API MarketoSourceProperties
+  class MarketoSourceProperties
   {
   public:
-    MarketoSourceProperties();
-    MarketoSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    MarketoSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API MarketoSourceProperties();
+    AWS_CUSTOMERPROFILES_API MarketoSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API MarketoSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

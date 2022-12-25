@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AutoRollbackConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API AutoRollbackConfiguration
+  class AutoRollbackConfiguration
   {
   public:
-    AutoRollbackConfiguration();
-    AutoRollbackConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AutoRollbackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API AutoRollbackConfiguration();
+    AWS_CODEDEPLOY_API AutoRollbackConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API AutoRollbackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<AutoRollbackEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

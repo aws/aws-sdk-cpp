@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStat">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricStat
+  class MetricStat
   {
   public:
-    MetricStat();
-    MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStat();
+    AWS_CLOUDWATCH_API MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -272,16 +272,16 @@ namespace Model
   private:
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_stat;
-    bool m_statHasBeenSet;
+    bool m_statHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

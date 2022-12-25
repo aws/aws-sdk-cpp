@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchCreateVariableError">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API BatchCreateVariableError
+  class BatchCreateVariableError
   {
   public:
-    BatchCreateVariableError();
-    BatchCreateVariableError(Aws::Utils::Json::JsonView jsonValue);
-    BatchCreateVariableError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API BatchCreateVariableError();
+    AWS_FRAUDDETECTOR_API BatchCreateVariableError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API BatchCreateVariableError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

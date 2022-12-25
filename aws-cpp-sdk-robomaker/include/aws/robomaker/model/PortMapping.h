@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/PortMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API PortMapping
+  class PortMapping
   {
   public:
-    PortMapping();
-    PortMapping(Aws::Utils::Json::JsonView jsonValue);
-    PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API PortMapping();
+    AWS_ROBOMAKER_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,13 +104,13 @@ namespace Model
   private:
 
     int m_jobPort;
-    bool m_jobPortHasBeenSet;
+    bool m_jobPortHasBeenSet = false;
 
     int m_applicationPort;
-    bool m_applicationPortHasBeenSet;
+    bool m_applicationPortHasBeenSet = false;
 
     bool m_enableOnPublicIp;
-    bool m_enableOnPublicIpHasBeenSet;
+    bool m_enableOnPublicIpHasBeenSet = false;
   };
 
 } // namespace Model

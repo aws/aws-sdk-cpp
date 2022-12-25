@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/VersionInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API VersionInformation
+  class VersionInformation
   {
   public:
-    VersionInformation();
-    VersionInformation(Aws::Utils::Json::JsonView jsonValue);
-    VersionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API VersionInformation();
+    AWS_GREENGRASS_API VersionInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API VersionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

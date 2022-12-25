@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesTagCriterion">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SearchResourcesTagCriterion
+  class SearchResourcesTagCriterion
   {
   public:
-    SearchResourcesTagCriterion();
-    SearchResourcesTagCriterion(Aws::Utils::Json::JsonView jsonValue);
-    SearchResourcesTagCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SearchResourcesTagCriterion();
+    AWS_MACIE2_API SearchResourcesTagCriterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SearchResourcesTagCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     SearchResourcesComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<SearchResourcesTagCriterionPair> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
   };
 
 } // namespace Model

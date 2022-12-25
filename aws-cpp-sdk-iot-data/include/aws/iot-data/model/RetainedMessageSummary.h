@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/RetainedMessageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API RetainedMessageSummary
+  class RetainedMessageSummary
   {
   public:
-    RetainedMessageSummary();
-    RetainedMessageSummary(Aws::Utils::Json::JsonView jsonValue);
-    RetainedMessageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDATAPLANE_API RetainedMessageSummary();
+    AWS_IOTDATAPLANE_API RetainedMessageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDATAPLANE_API RetainedMessageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,16 +147,16 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     long long m_payloadSize;
-    bool m_payloadSizeHasBeenSet;
+    bool m_payloadSizeHasBeenSet = false;
 
     int m_qos;
-    bool m_qosHasBeenSet;
+    bool m_qosHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

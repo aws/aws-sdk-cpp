@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioLanguageSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioLanguageSelection
+  class AudioLanguageSelection
   {
   public:
-    AudioLanguageSelection();
-    AudioLanguageSelection(Aws::Utils::Json::JsonView jsonValue);
-    AudioLanguageSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioLanguageSelection();
+    AWS_MEDIALIVE_API AudioLanguageSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioLanguageSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     AudioLanguageSelectionPolicy m_languageSelectionPolicy;
-    bool m_languageSelectionPolicyHasBeenSet;
+    bool m_languageSelectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

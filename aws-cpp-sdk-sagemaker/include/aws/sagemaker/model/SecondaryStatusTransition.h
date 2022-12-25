@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SecondaryStatusTransition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SecondaryStatusTransition
+  class SecondaryStatusTransition
   {
   public:
-    SecondaryStatusTransition();
-    SecondaryStatusTransition(Aws::Utils::Json::JsonView jsonValue);
-    SecondaryStatusTransition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SecondaryStatusTransition();
+    AWS_SAGEMAKER_API SecondaryStatusTransition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SecondaryStatusTransition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -465,16 +465,16 @@ namespace Model
   private:
 
     SecondaryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

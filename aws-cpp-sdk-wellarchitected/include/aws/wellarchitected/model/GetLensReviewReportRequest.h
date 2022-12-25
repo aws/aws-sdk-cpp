@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLensReviewReportInput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API GetLensReviewReportRequest : public WellArchitectedRequest
+  class GetLensReviewReportRequest : public WellArchitectedRequest
   {
   public:
-    GetLensReviewReportRequest();
+    AWS_WELLARCHITECTED_API GetLensReviewReportRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLensReviewReport"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -106,13 +106,13 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     int m_milestoneNumber;
-    bool m_milestoneNumberHasBeenSet;
+    bool m_milestoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

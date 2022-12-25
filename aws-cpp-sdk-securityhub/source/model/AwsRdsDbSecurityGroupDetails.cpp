@@ -66,7 +66,7 @@ AwsRdsDbSecurityGroupDetails& AwsRdsDbSecurityGroupDetails::operator =(JsonView 
 
   if(jsonValue.ValueExists("Ec2SecurityGroups"))
   {
-    Array<JsonView> ec2SecurityGroupsJsonList = jsonValue.GetArray("Ec2SecurityGroups");
+    Aws::Utils::Array<JsonView> ec2SecurityGroupsJsonList = jsonValue.GetArray("Ec2SecurityGroups");
     for(unsigned ec2SecurityGroupsIndex = 0; ec2SecurityGroupsIndex < ec2SecurityGroupsJsonList.GetLength(); ++ec2SecurityGroupsIndex)
     {
       m_ec2SecurityGroups.push_back(ec2SecurityGroupsJsonList[ec2SecurityGroupsIndex].AsObject());
@@ -76,7 +76,7 @@ AwsRdsDbSecurityGroupDetails& AwsRdsDbSecurityGroupDetails::operator =(JsonView 
 
   if(jsonValue.ValueExists("IpRanges"))
   {
-    Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
+    Aws::Utils::Array<JsonView> ipRangesJsonList = jsonValue.GetArray("IpRanges");
     for(unsigned ipRangesIndex = 0; ipRangesIndex < ipRangesJsonList.GetLength(); ++ipRangesIndex)
     {
       m_ipRanges.push_back(ipRangesJsonList[ipRangesIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue AwsRdsDbSecurityGroupDetails::Jsonize() const
 
   if(m_ec2SecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> ec2SecurityGroupsJsonList(m_ec2SecurityGroups.size());
+   Aws::Utils::Array<JsonValue> ec2SecurityGroupsJsonList(m_ec2SecurityGroups.size());
    for(unsigned ec2SecurityGroupsIndex = 0; ec2SecurityGroupsIndex < ec2SecurityGroupsJsonList.GetLength(); ++ec2SecurityGroupsIndex)
    {
      ec2SecurityGroupsJsonList[ec2SecurityGroupsIndex].AsObject(m_ec2SecurityGroups[ec2SecurityGroupsIndex].Jsonize());
@@ -136,7 +136,7 @@ JsonValue AwsRdsDbSecurityGroupDetails::Jsonize() const
 
   if(m_ipRangesHasBeenSet)
   {
-   Array<JsonValue> ipRangesJsonList(m_ipRanges.size());
+   Aws::Utils::Array<JsonValue> ipRangesJsonList(m_ipRanges.size());
    for(unsigned ipRangesIndex = 0; ipRangesIndex < ipRangesJsonList.GetLength(); ++ipRangesIndex)
    {
      ipRangesJsonList[ipRangesIndex].AsObject(m_ipRanges[ipRangesIndex].Jsonize());

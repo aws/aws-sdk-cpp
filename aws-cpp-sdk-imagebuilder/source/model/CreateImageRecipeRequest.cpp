@@ -51,7 +51,7 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const
 
   if(m_componentsHasBeenSet)
   {
-   Array<JsonValue> componentsJsonList(m_components.size());
+   Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
    for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
    {
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
@@ -68,7 +68,7 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());

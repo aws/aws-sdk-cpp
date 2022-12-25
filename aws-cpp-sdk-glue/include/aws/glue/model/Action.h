@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Action();
+    AWS_GLUE_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -419,22 +419,22 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
-    bool m_argumentsHasBeenSet;
+    bool m_argumentsHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
+    bool m_notificationPropertyHasBeenSet = false;
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
   };
 
 } // namespace Model

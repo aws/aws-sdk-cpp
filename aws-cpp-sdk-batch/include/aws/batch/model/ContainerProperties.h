@@ -35,28 +35,29 @@ namespace Model
 {
 
   /**
-   * <p>Container properties are used in job definitions to describe the container
-   * that's launched as part of a job.</p><p><h3>See Also:</h3>   <a
+   * <p>Container properties are used for Amazon ECS based job definitions. These
+   * properties to describe the container that's launched as part of a
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ContainerProperties
+  class ContainerProperties
   {
   public:
-    ContainerProperties();
-    ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
-    ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ContainerProperties();
+    AWS_BATCH_API ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -71,7 +72,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -85,10 +86,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -103,7 +104,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -117,10 +118,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -135,7 +136,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -149,10 +150,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -167,7 +168,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -181,10 +182,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -199,7 +200,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -213,10 +214,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -231,7 +232,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -245,10 +246,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -263,7 +264,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -277,10 +278,10 @@ namespace Model
      * <p>The image used to start a container. This string is passed directly to the
      * Docker daemon. Images in the Docker Hub registry are available by default. Other
      * repositories are specified with <code>
-     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
-     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
-     * forward slashes, and number signs are allowed. This parameter maps to
-     * <code>Image</code> in the <a
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
+     * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
+     * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
+     * (#). This parameter maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -295,7 +296,7 @@ namespace Model
      * <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i>
      * </code>.</p> </li> <li> <p>Images in Amazon ECR repositories use the full
      * registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
+     * <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</p>
      * </li> <li> <p>Images in official repositories on Docker Hub use a single name
      * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
      * <p>Images in other repositories on Docker Hub are qualified with an organization
@@ -621,9 +622,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -637,9 +637,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -653,9 +652,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -669,9 +667,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -685,9 +682,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline ContainerProperties& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -701,9 +697,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -717,9 +712,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline ContainerProperties& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -733,9 +727,8 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *  <p>We don't recommend using plaintext environment variables for
      * sensitive information, such as credential data.</p>  
-     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
-     * convention is reserved for variables that are set by the Batch service.</p>
-     * 
+     * <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming
+     * convention is reserved for variables that Batch sets.</p> 
      */
     inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
@@ -1304,7 +1297,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1337,7 +1330,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1370,7 +1363,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1403,7 +1396,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1436,7 +1429,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1469,7 +1462,7 @@ namespace Model
      * a subset of the logging drivers available to the Docker daemon (shown in the
      * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
      * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log into your
+     * check the Docker Remote API version on your container instance, log in to your
      * container instance and run the following command: <code>sudo docker version |
      * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
      * running on a container instance must register the logging drivers available on
@@ -1616,58 +1609,58 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_jobRoleArn;
-    bool m_jobRoleArnHasBeenSet;
+    bool m_jobRoleArnHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<MountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     LinuxParameters m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     LogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::Vector<Secret> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
-    bool m_fargatePlatformConfigurationHasBeenSet;
+    bool m_fargatePlatformConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

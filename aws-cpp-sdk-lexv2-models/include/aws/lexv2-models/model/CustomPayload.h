@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CustomPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API CustomPayload
+  class CustomPayload
   {
   public:
-    CustomPayload();
-    CustomPayload(Aws::Utils::Json::JsonView jsonValue);
-    CustomPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API CustomPayload();
+    AWS_LEXMODELSV2_API CustomPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API CustomPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipelineRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API ListJobsByPipelineRequest : public ElasticTranscoderRequest
+  class ListJobsByPipelineRequest : public ElasticTranscoderRequest
   {
   public:
-    ListJobsByPipelineRequest();
+    AWS_ELASTICTRANSCODER_API ListJobsByPipelineRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListJobsByPipeline"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICTRANSCODER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ELASTICTRANSCODER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::String m_ascending;
-    bool m_ascendingHasBeenSet;
+    bool m_ascendingHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DatabaseConfiguration
+  class DatabaseConfiguration
   {
   public:
-    DatabaseConfiguration();
-    DatabaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DatabaseConfiguration();
+    AWS_KENDRA_API DatabaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DatabaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,22 +237,22 @@ namespace Model
   private:
 
     DatabaseEngineType m_databaseEngineType;
-    bool m_databaseEngineTypeHasBeenSet;
+    bool m_databaseEngineTypeHasBeenSet = false;
 
     ConnectionConfiguration m_connectionConfiguration;
-    bool m_connectionConfigurationHasBeenSet;
+    bool m_connectionConfigurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     ColumnConfiguration m_columnConfiguration;
-    bool m_columnConfigurationHasBeenSet;
+    bool m_columnConfigurationHasBeenSet = false;
 
     AclConfiguration m_aclConfiguration;
-    bool m_aclConfigurationHasBeenSet;
+    bool m_aclConfigurationHasBeenSet = false;
 
     SqlConfiguration m_sqlConfiguration;
-    bool m_sqlConfigurationHasBeenSet;
+    bool m_sqlConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ConnectionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ConnectionSummary
+  class ConnectionSummary
   {
   public:
-    ConnectionSummary();
-    ConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ConnectionSummary();
+    AWS_APPRUNNER_API ConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     ConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

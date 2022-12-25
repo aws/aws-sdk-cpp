@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TlsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API TlsConfig
+  class TlsConfig
   {
   public:
-    TlsConfig();
-    TlsConfig(Aws::Utils::Json::JsonView jsonValue);
-    TlsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API TlsConfig();
+    AWS_APIGATEWAYV2_API TlsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API TlsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_serverNameToVerify;
-    bool m_serverNameToVerifyHasBeenSet;
+    bool m_serverNameToVerifyHasBeenSet = false;
   };
 
 } // namespace Model

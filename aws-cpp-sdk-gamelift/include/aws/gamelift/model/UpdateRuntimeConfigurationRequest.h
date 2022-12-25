@@ -18,14 +18,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfigurationInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API UpdateRuntimeConfigurationRequest : public GameLiftRequest
+  class UpdateRuntimeConfigurationRequest : public GameLiftRequest
   {
   public:
-    UpdateRuntimeConfigurationRequest();
+    AWS_GAMELIFT_API UpdateRuntimeConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRuntimeConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -88,7 +85,7 @@ namespace Model
 
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -97,7 +94,7 @@ namespace Model
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -106,7 +103,7 @@ namespace Model
     inline bool RuntimeConfigurationHasBeenSet() const { return m_runtimeConfigurationHasBeenSet; }
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -115,7 +112,7 @@ namespace Model
     inline void SetRuntimeConfiguration(const RuntimeConfiguration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -124,7 +121,7 @@ namespace Model
     inline void SetRuntimeConfiguration(RuntimeConfiguration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -133,7 +130,7 @@ namespace Model
     inline UpdateRuntimeConfigurationRequest& WithRuntimeConfiguration(const RuntimeConfiguration& value) { SetRuntimeConfiguration(value); return *this;}
 
     /**
-     * <p>Instructions for launching server processes on each instance in the fleet.
+     * <p>Instructions for alaunching server processes on each instance in the fleet.
      * Server processes run either a custom game build executable or a Realtime Servers
      * script. The runtime configuration lists the types of server processes to run on
      * an instance, how to launch them, and the number of processes to run
@@ -144,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     RuntimeConfiguration m_runtimeConfiguration;
-    bool m_runtimeConfigurationHasBeenSet;
+    bool m_runtimeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceVpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceVpcConfiguration
+  class DataSourceVpcConfiguration
   {
   public:
-    DataSourceVpcConfiguration();
-    DataSourceVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceVpcConfiguration();
+    AWS_KENDRA_API DataSourceVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

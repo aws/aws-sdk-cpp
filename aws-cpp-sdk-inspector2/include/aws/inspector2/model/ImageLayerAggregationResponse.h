@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ImageLayerAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ImageLayerAggregationResponse
+  class ImageLayerAggregationResponse
   {
   public:
-    ImageLayerAggregationResponse();
-    ImageLayerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    ImageLayerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ImageLayerAggregationResponse();
+    AWS_INSPECTOR2_API ImageLayerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ImageLayerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_layerHash;
-    bool m_layerHashHasBeenSet;
+    bool m_layerHashHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

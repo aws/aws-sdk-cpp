@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Qualifier">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API Qualifier
+  class Qualifier
   {
   public:
-    Qualifier();
-    Qualifier(Aws::Utils::Json::JsonView jsonValue);
-    Qualifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API Qualifier();
+    AWS_ACMPCA_API Qualifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Qualifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_cpsUri;
-    bool m_cpsUriHasBeenSet;
+    bool m_cpsUriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/TagHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API TagHealth
+  class TagHealth
   {
   public:
-    TagHealth();
-    TagHealth(Aws::Utils::Json::JsonView jsonValue);
-    TagHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API TagHealth();
+    AWS_DEVOPSGURU_API TagHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API TagHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -47,12 +47,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -65,12 +66,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -83,12 +85,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -101,12 +104,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -119,12 +123,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -137,12 +142,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -155,12 +161,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -173,12 +180,13 @@ namespace Model
      * application and analysis boundary.</p>  <p>The string used for a
      * <i>key</i> in a tag that you use to define your resource coverage must begin
      * with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-     * <code>Devops-guru-deployment-application</code> or
-     * <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive,
-     * the case of <i>key</i> characters don't matter to DevOps Guru. For example,
-     * DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a
-     * <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i>
-     * pairs in your application might be
+     * <code>DevOps-Guru-deployment-application</code> or
+     * <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case
+     * of characters in the <i>key</i> can be whatever you choose. After you create a
+     * <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a
+     * <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+     * <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>.
+     * Possible <i>key</i>/<i>value</i> pairs in your application might be
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
@@ -322,16 +330,44 @@ namespace Model
      */
     inline TagHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline TagHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
+
   private:
 
     Aws::String m_appBoundaryKey;
-    bool m_appBoundaryKeyHasBeenSet;
+    bool m_appBoundaryKeyHasBeenSet = false;
 
     Aws::String m_tagValue;
-    bool m_tagValueHasBeenSet;
+    bool m_tagValueHasBeenSet = false;
 
     InsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
+
+    long long m_analyzedResourceCount;
+    bool m_analyzedResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

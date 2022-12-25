@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPermissionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketPermissionConfiguration
+  class BucketPermissionConfiguration
   {
   public:
-    BucketPermissionConfiguration();
-    BucketPermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BucketPermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketPermissionConfiguration();
+    AWS_MACIE2_API BucketPermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketPermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AccountLevelPermissions m_accountLevelPermissions;
-    bool m_accountLevelPermissionsHasBeenSet;
+    bool m_accountLevelPermissionsHasBeenSet = false;
 
     BucketLevelPermissions m_bucketLevelPermissions;
-    bool m_bucketLevelPermissionsHasBeenSet;
+    bool m_bucketLevelPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

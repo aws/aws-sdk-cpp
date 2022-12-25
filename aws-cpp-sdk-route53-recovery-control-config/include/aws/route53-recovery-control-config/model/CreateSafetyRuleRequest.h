@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
+  class CreateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    CreateSafetyRuleRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSafetyRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     NewAssertionRule m_assertionRule;
-    bool m_assertionRuleHasBeenSet;
+    bool m_assertionRuleHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     NewGatingRule m_gatingRule;
-    bool m_gatingRuleHasBeenSet;
+    bool m_gatingRuleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

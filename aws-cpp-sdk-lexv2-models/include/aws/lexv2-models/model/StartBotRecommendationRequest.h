@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API StartBotRecommendationRequest : public LexModelsV2Request
+  class StartBotRecommendationRequest : public LexModelsV2Request
   {
   public:
-    StartBotRecommendationRequest();
+    AWS_LEXMODELSV2_API StartBotRecommendationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartBotRecommendation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     TranscriptSourceSetting m_transcriptSourceSetting;
-    bool m_transcriptSourceSettingHasBeenSet;
+    bool m_transcriptSourceSettingHasBeenSet = false;
 
     EncryptionSetting m_encryptionSetting;
-    bool m_encryptionSettingHasBeenSet;
+    bool m_encryptionSettingHasBeenSet = false;
   };
 
 } // namespace Model

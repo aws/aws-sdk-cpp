@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/PhysicalNetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface
+  class PhysicalNetworkInterface
   {
   public:
-    PhysicalNetworkInterface();
-    PhysicalNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    PhysicalNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface();
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,25 +309,25 @@ namespace Model
   private:
 
     Aws::String m_defaultGateway;
-    bool m_defaultGatewayHasBeenSet;
+    bool m_defaultGatewayHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     IpAddressAssignment m_ipAddressAssignment;
-    bool m_ipAddressAssignmentHasBeenSet;
+    bool m_ipAddressAssignmentHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_netmask;
-    bool m_netmaskHasBeenSet;
+    bool m_netmaskHasBeenSet = false;
 
     PhysicalConnectorType m_physicalConnectorType;
-    bool m_physicalConnectorTypeHasBeenSet;
+    bool m_physicalConnectorTypeHasBeenSet = false;
 
     Aws::String m_physicalNetworkInterfaceId;
-    bool m_physicalNetworkInterfaceIdHasBeenSet;
+    bool m_physicalNetworkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

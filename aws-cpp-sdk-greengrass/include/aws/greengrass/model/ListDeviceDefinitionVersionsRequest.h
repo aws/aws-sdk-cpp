@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASS_API ListDeviceDefinitionVersionsRequest : public GreengrassRequest
+  class ListDeviceDefinitionVersionsRequest : public GreengrassRequest
   {
   public:
-    ListDeviceDefinitionVersionsRequest();
+    AWS_GREENGRASS_API ListDeviceDefinitionVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDeviceDefinitionVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GREENGRASS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_deviceDefinitionId;
-    bool m_deviceDefinitionIdHasBeenSet;
+    bool m_deviceDefinitionIdHasBeenSet = false;
 
     Aws::String m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

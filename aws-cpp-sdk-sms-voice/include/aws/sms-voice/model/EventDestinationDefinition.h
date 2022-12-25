@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/EventDestinationDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API EventDestinationDefinition
+  class EventDestinationDefinition
   {
   public:
-    EventDestinationDefinition();
-    EventDestinationDefinition(Aws::Utils::Json::JsonView jsonValue);
-    EventDestinationDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API EventDestinationDefinition();
+    AWS_PINPOINTSMSVOICE_API EventDestinationDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API EventDestinationDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -154,19 +154,19 @@ namespace Model
   private:
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
-    bool m_cloudWatchLogsDestinationHasBeenSet;
+    bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     KinesisFirehoseDestination m_kinesisFirehoseDestination;
-    bool m_kinesisFirehoseDestinationHasBeenSet;
+    bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
     Aws::Vector<EventType> m_matchingEventTypes;
-    bool m_matchingEventTypesHasBeenSet;
+    bool m_matchingEventTypesHasBeenSet = false;
 
     SnsDestination m_snsDestination;
-    bool m_snsDestinationHasBeenSet;
+    bool m_snsDestinationHasBeenSet = false;
   };
 
 } // namespace Model

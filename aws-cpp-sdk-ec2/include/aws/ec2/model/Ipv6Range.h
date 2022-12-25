@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6Range">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Ipv6Range
+  class Ipv6Range
   {
   public:
-    Ipv6Range();
-    Ipv6Range(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Ipv6Range& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipv6Range();
+    AWS_EC2_API Ipv6Range(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipv6Range& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet;
+    bool m_cidrIpv6HasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

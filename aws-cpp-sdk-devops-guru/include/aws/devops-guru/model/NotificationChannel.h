@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/NotificationChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API NotificationChannel
+  class NotificationChannel
   {
   public:
-    NotificationChannel();
-    NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
-    NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API NotificationChannel();
+    AWS_DEVOPSGURU_API NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     NotificationChannelConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
   };
 
 } // namespace Model

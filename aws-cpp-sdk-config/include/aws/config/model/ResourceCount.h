@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceCount
+  class ResourceCount
   {
   public:
-    ResourceCount();
-    ResourceCount(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceCount();
+    AWS_CONFIGSERVICE_API ResourceCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

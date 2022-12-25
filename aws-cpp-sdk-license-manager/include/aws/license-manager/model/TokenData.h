@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TokenData">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API TokenData
+  class TokenData
   {
   public:
-    TokenData();
-    TokenData(Aws::Utils::Json::JsonView jsonValue);
-    TokenData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API TokenData();
+    AWS_LICENSEMANAGER_API TokenData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API TokenData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -353,25 +353,25 @@ namespace Model
   private:
 
     Aws::String m_tokenId;
-    bool m_tokenIdHasBeenSet;
+    bool m_tokenIdHasBeenSet = false;
 
     Aws::String m_tokenType;
-    bool m_tokenTypeHasBeenSet;
+    bool m_tokenTypeHasBeenSet = false;
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::String m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokenProperties;
-    bool m_tokenPropertiesHasBeenSet;
+    bool m_tokenPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration
+  class FastLaunchSnapshotConfiguration
   {
   public:
-    FastLaunchSnapshotConfiguration();
-    FastLaunchSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FastLaunchSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration();
+    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API FastLaunchSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_targetResourceCount;
-    bool m_targetResourceCountHasBeenSet;
+    bool m_targetResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

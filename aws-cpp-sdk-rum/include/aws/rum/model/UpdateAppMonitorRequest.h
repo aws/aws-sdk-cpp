@@ -7,6 +7,7 @@
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/rum/CloudWatchRUMRequest.h>
 #include <aws/rum/model/AppMonitorConfiguration.h>
+#include <aws/rum/model/CustomEvents.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHRUM_API UpdateAppMonitorRequest : public CloudWatchRUMRequest
+  class UpdateAppMonitorRequest : public CloudWatchRUMRequest
   {
   public:
-    UpdateAppMonitorRequest();
+    AWS_CLOUDWATCHRUM_API UpdateAppMonitorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAppMonitor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHRUM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -104,6 +105,61 @@ namespace Model
      * your application to send data to Amazon Web Services</a>.</p>
      */
     inline UpdateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfiguration&& value) { SetAppMonitorConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline const CustomEvents& GetCustomEvents() const{ return m_customEvents; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline bool CustomEventsHasBeenSet() const { return m_customEventsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline void SetCustomEvents(const CustomEvents& value) { m_customEventsHasBeenSet = true; m_customEvents = value; }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline void SetCustomEvents(CustomEvents&& value) { m_customEventsHasBeenSet = true; m_customEvents = std::move(value); }
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline UpdateAppMonitorRequest& WithCustomEvents(const CustomEvents& value) { SetCustomEvents(value); return *this;}
+
+    /**
+     * <p>Specifies whether this app monitor allows the web client to define and send
+     * custom events. The default is for custom events to be <code>DISABLED</code>.</p>
+     * <p>For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.</p>
+     */
+    inline UpdateAppMonitorRequest& WithCustomEvents(CustomEvents&& value) { SetCustomEvents(std::move(value)); return *this;}
 
 
     /**
@@ -231,16 +287,19 @@ namespace Model
   private:
 
     AppMonitorConfiguration m_appMonitorConfiguration;
-    bool m_appMonitorConfigurationHasBeenSet;
+    bool m_appMonitorConfigurationHasBeenSet = false;
+
+    CustomEvents m_customEvents;
+    bool m_customEventsHasBeenSet = false;
 
     bool m_cwLogEnabled;
-    bool m_cwLogEnabledHasBeenSet;
+    bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

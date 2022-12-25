@@ -31,52 +31,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Ec2InstanceAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Ec2InstanceAggregationResponse
+  class Ec2InstanceAggregationResponse
   {
   public:
-    Ec2InstanceAggregationResponse();
-    Ec2InstanceAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    Ec2InstanceAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Ec2InstanceAggregationResponse();
+    AWS_INSPECTOR2_API Ec2InstanceAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Ec2InstanceAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>
+     * <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
      */
     inline Ec2InstanceAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_ami;
-    bool m_amiHasBeenSet;
+    bool m_amiHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_instanceTags;
-    bool m_instanceTagsHasBeenSet;
+    bool m_instanceTagsHasBeenSet = false;
 
     long long m_networkFindings;
-    bool m_networkFindingsHasBeenSet;
+    bool m_networkFindingsHasBeenSet = false;
 
     Aws::String m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

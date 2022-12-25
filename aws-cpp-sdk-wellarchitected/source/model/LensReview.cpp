@@ -88,7 +88,7 @@ LensReview& LensReview::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PillarReviewSummaries"))
   {
-    Array<JsonView> pillarReviewSummariesJsonList = jsonValue.GetArray("PillarReviewSummaries");
+    Aws::Utils::Array<JsonView> pillarReviewSummariesJsonList = jsonValue.GetArray("PillarReviewSummaries");
     for(unsigned pillarReviewSummariesIndex = 0; pillarReviewSummariesIndex < pillarReviewSummariesJsonList.GetLength(); ++pillarReviewSummariesIndex)
     {
       m_pillarReviewSummaries.push_back(pillarReviewSummariesJsonList[pillarReviewSummariesIndex].AsObject());
@@ -165,7 +165,7 @@ JsonValue LensReview::Jsonize() const
 
   if(m_pillarReviewSummariesHasBeenSet)
   {
-   Array<JsonValue> pillarReviewSummariesJsonList(m_pillarReviewSummaries.size());
+   Aws::Utils::Array<JsonValue> pillarReviewSummariesJsonList(m_pillarReviewSummaries.size());
    for(unsigned pillarReviewSummariesIndex = 0; pillarReviewSummariesIndex < pillarReviewSummariesJsonList.GetLength(); ++pillarReviewSummariesIndex)
    {
      pillarReviewSummariesJsonList[pillarReviewSummariesIndex].AsObject(m_pillarReviewSummaries[pillarReviewSummariesIndex].Jsonize());

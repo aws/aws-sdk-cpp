@@ -11,6 +11,7 @@
 #set($cppType = "const Aws::Vector<unsigned char>&")
 #set($moveType = "Aws::Vector<unsigned char>&&")
 #set($classNameRef = "${typeInfo.className}&")
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -32,11 +33,11 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className
+  class $typeInfo.className
   {
   public:
-    ${typeInfo.className}() = default;
-    ${typeInfo.className}(Aws::Vector<unsigned char>&& value) { ${memberVariableName} = std::move(value); }
+    ${exportMacro} ${typeInfo.className}() = default;
+    ${exportMacro} ${typeInfo.className}(Aws::Vector<unsigned char>&& value) { ${memberVariableName} = std::move(value); }
 
     $memberDocumentation
     inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const { return ${memberVariableName}; }
@@ -59,7 +60,7 @@ namespace Model
   private:
 
     Aws::Vector<unsigned char> $memberVariableName;
-    bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)};
+    bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)} = false;
   };
 
 } // namespace Model

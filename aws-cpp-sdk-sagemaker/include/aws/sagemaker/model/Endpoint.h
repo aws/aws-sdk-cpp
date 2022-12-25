@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Endpoint();
+    AWS_SAGEMAKER_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -498,40 +498,100 @@ namespace Model
      */
     inline Endpoint& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline const Aws::Vector<ProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline bool ShadowProductionVariantsHasBeenSet() const { return m_shadowProductionVariantsHasBeenSet; }
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = value; }
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline void SetShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = std::move(value); }
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline Endpoint& WithShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline Endpoint& WithShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline Endpoint& AddShadowProductionVariants(const ProductionVariantSummary& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the shadow variants hosted on the endpoint. Each shadow variant is
+     * a model in shadow mode with production traffic replicated from the proudction
+     * variant.</p>
+     */
+    inline Endpoint& AddShadowProductionVariants(ProductionVariantSummary&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::Vector<ProductionVariantSummary> m_productionVariants;
-    bool m_productionVariantsHasBeenSet;
+    bool m_productionVariantsHasBeenSet = false;
 
     DataCaptureConfigSummary m_dataCaptureConfig;
-    bool m_dataCaptureConfigHasBeenSet;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     EndpointStatus m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<MonitoringSchedule> m_monitoringSchedules;
-    bool m_monitoringSchedulesHasBeenSet;
+    bool m_monitoringSchedulesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
+    bool m_shadowProductionVariantsHasBeenSet = false;
   };
 
 } // namespace Model

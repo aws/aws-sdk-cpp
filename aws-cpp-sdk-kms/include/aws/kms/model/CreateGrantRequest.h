@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API CreateGrantRequest : public KMSRequest
+  class CreateGrantRequest : public KMSRequest
   {
   public:
-    CreateGrantRequest();
+    AWS_KMS_API CreateGrantRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGrant"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -915,25 +915,25 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_granteePrincipal;
-    bool m_granteePrincipalHasBeenSet;
+    bool m_granteePrincipalHasBeenSet = false;
 
     Aws::String m_retiringPrincipal;
-    bool m_retiringPrincipalHasBeenSet;
+    bool m_retiringPrincipalHasBeenSet = false;
 
     Aws::Vector<GrantOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     GrantConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

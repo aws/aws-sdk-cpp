@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API DisassociateIpGroupsRequest : public WorkSpacesRequest
+  class DisassociateIpGroupsRequest : public WorkSpacesRequest
   {
   public:
-    DisassociateIpGroupsRequest();
+    AWS_WORKSPACES_API DisassociateIpGroupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateIpGroups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
+    bool m_groupIdsHasBeenSet = false;
   };
 
 } // namespace Model

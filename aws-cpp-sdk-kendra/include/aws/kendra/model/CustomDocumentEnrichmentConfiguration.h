@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CustomDocumentEnrichmentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API CustomDocumentEnrichmentConfiguration
+  class CustomDocumentEnrichmentConfiguration
   {
   public:
-    CustomDocumentEnrichmentConfiguration();
-    CustomDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API CustomDocumentEnrichmentConfiguration();
+    AWS_KENDRA_API CustomDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API CustomDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -299,16 +299,16 @@ namespace Model
   private:
 
     Aws::Vector<InlineCustomDocumentEnrichmentConfiguration> m_inlineConfigurations;
-    bool m_inlineConfigurationsHasBeenSet;
+    bool m_inlineConfigurationsHasBeenSet = false;
 
     HookConfiguration m_preExtractionHookConfiguration;
-    bool m_preExtractionHookConfigurationHasBeenSet;
+    bool m_preExtractionHookConfigurationHasBeenSet = false;
 
     HookConfiguration m_postExtractionHookConfiguration;
-    bool m_postExtractionHookConfigurationHasBeenSet;
+    bool m_postExtractionHookConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

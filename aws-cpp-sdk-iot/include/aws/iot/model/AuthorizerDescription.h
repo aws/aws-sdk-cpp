@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuthorizerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuthorizerDescription
+  class AuthorizerDescription
   {
   public:
-    AuthorizerDescription();
-    AuthorizerDescription(Aws::Utils::Json::JsonView jsonValue);
-    AuthorizerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuthorizerDescription();
+    AWS_IOT_API AuthorizerDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuthorizerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,34 +432,34 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
 
     Aws::String m_authorizerArn;
-    bool m_authorizerArnHasBeenSet;
+    bool m_authorizerArnHasBeenSet = false;
 
     Aws::String m_authorizerFunctionArn;
-    bool m_authorizerFunctionArnHasBeenSet;
+    bool m_authorizerFunctionArnHasBeenSet = false;
 
     Aws::String m_tokenKeyName;
-    bool m_tokenKeyNameHasBeenSet;
+    bool m_tokenKeyNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tokenSigningPublicKeys;
-    bool m_tokenSigningPublicKeysHasBeenSet;
+    bool m_tokenSigningPublicKeysHasBeenSet = false;
 
     AuthorizerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     bool m_signingDisabled;
-    bool m_signingDisabledHasBeenSet;
+    bool m_signingDisabledHasBeenSet = false;
 
     bool m_enableCachingForHttp;
-    bool m_enableCachingForHttpHasBeenSet;
+    bool m_enableCachingForHttpHasBeenSet = false;
   };
 
 } // namespace Model

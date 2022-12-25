@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectedMetricSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DetectedMetricSource
+  class DetectedMetricSource
   {
   public:
-    DetectedMetricSource();
-    DetectedMetricSource(Aws::Utils::Json::JsonView jsonValue);
-    DetectedMetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DetectedMetricSource();
+    AWS_LOOKOUTMETRICS_API DetectedMetricSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DetectedMetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DetectedS3SourceConfig m_s3SourceConfig;
-    bool m_s3SourceConfigHasBeenSet;
+    bool m_s3SourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

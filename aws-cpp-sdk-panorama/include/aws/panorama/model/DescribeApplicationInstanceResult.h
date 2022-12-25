@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/ApplicationInstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/panorama/model/ReportedRuntimeContextState.h>
 #include <utility>
 
 namespace Aws
@@ -28,12 +30,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API DescribeApplicationInstanceResult
+  class DescribeApplicationInstanceResult
   {
   public:
-    DescribeApplicationInstanceResult();
-    DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeApplicationInstanceResult();
+    AWS_PANORAMA_API DescribeApplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -367,6 +369,42 @@ namespace Model
 
 
     /**
+     * <p>The application instance's state.</p>
+     */
+    inline const Aws::Vector<ReportedRuntimeContextState>& GetRuntimeContextStates() const{ return m_runtimeContextStates; }
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline void SetRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { m_runtimeContextStates = value; }
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline void SetRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { m_runtimeContextStates = std::move(value); }
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { SetRuntimeContextStates(value); return *this;}
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline DescribeApplicationInstanceResult& WithRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { SetRuntimeContextStates(std::move(value)); return *this;}
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline DescribeApplicationInstanceResult& AddRuntimeContextStates(const ReportedRuntimeContextState& value) { m_runtimeContextStates.push_back(value); return *this; }
+
+    /**
+     * <p>The application instance's state.</p>
+     */
+    inline DescribeApplicationInstanceResult& AddRuntimeContextStates(ReportedRuntimeContextState&& value) { m_runtimeContextStates.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The application instance's runtime role ARN.</p>
      */
     inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
@@ -545,6 +583,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedTime;
 
     Aws::String m_name;
+
+    Aws::Vector<ReportedRuntimeContextState> m_runtimeContextStates;
 
     Aws::String m_runtimeRoleArn;
 

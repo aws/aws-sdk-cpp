@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/OutputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API OutputLocation
+  class OutputLocation
   {
   public:
-    OutputLocation();
-    OutputLocation(Aws::Utils::Json::JsonView jsonValue);
-    OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API OutputLocation();
+    AWS_GLACIER_API OutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3Location m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

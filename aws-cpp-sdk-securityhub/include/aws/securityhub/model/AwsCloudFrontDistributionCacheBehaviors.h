@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about caching for the distribution.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides information about caching for the CloudFront
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionCacheBehaviors">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors
+  class AwsCloudFrontDistributionCacheBehaviors
   {
   public:
-    AwsCloudFrontDistributionCacheBehaviors();
-    AwsCloudFrontDistributionCacheBehaviors(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionCacheBehaviors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionCacheBehaviors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudFrontDistributionCacheBehavior> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

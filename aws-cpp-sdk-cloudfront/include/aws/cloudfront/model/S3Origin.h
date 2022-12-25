@@ -29,53 +29,53 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/S3Origin">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API S3Origin
+  class S3Origin
   {
   public:
-    S3Origin();
-    S3Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API S3Origin();
+    AWS_CLOUDFRONT_API S3Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API S3Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -219,10 +219,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_originAccessIdentity;
-    bool m_originAccessIdentityHasBeenSet;
+    bool m_originAccessIdentityHasBeenSet = false;
   };
 
 } // namespace Model

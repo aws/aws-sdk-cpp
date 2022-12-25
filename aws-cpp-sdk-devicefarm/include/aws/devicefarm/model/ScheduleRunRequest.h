@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunRequest : public DeviceFarmRequest
+  class ScheduleRunRequest : public DeviceFarmRequest
   {
   public:
-    ScheduleRunRequest();
+    AWS_DEVICEFARM_API ScheduleRunRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ScheduleRun"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -364,28 +364,28 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_devicePoolArn;
-    bool m_devicePoolArnHasBeenSet;
+    bool m_devicePoolArnHasBeenSet = false;
 
     DeviceSelectionConfiguration m_deviceSelectionConfiguration;
-    bool m_deviceSelectionConfigurationHasBeenSet;
+    bool m_deviceSelectionConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ScheduleRunTest m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     ScheduleRunConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     ExecutionConfiguration m_executionConfiguration;
-    bool m_executionConfigurationHasBeenSet;
+    bool m_executionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

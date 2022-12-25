@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlRequest : public AuditManagerRequest
+  class BatchImportEvidenceToAssessmentControlRequest : public AuditManagerRequest
   {
   public:
-    BatchImportEvidenceToAssessmentControlRequest();
+    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchImportEvidenceToAssessmentControl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::Vector<ManualEvidence> m_manualEvidence;
-    bool m_manualEvidenceHasBeenSet;
+    bool m_manualEvidenceHasBeenSet = false;
   };
 
 } // namespace Model

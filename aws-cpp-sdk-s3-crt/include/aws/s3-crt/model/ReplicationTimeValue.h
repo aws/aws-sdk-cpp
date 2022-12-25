@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationTimeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API ReplicationTimeValue
+  class ReplicationTimeValue
   {
   public:
-    ReplicationTimeValue();
-    ReplicationTimeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReplicationTimeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ReplicationTimeValue();
+    AWS_S3CRT_API ReplicationTimeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ReplicationTimeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_minutes;
-    bool m_minutesHasBeenSet;
+    bool m_minutesHasBeenSet = false;
   };
 
 } // namespace Model

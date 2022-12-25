@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/RecommendationJobStoppingConditions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/InferenceRecommendation.h>
+#include <aws/sagemaker/model/EndpointPerformance.h>
 #include <utility>
 
 namespace Aws
@@ -31,12 +32,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult
+  class DescribeInferenceRecommendationsJobResult
   {
   public:
-    DescribeInferenceRecommendationsJobResult();
-    DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInferenceRecommendationsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult();
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -460,6 +461,49 @@ namespace Model
      */
     inline DescribeInferenceRecommendationsJobResult& AddInferenceRecommendations(InferenceRecommendation&& value) { m_inferenceRecommendations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline const Aws::Vector<EndpointPerformance>& GetEndpointPerformances() const{ return m_endpointPerformances; }
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline void SetEndpointPerformances(const Aws::Vector<EndpointPerformance>& value) { m_endpointPerformances = value; }
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline void SetEndpointPerformances(Aws::Vector<EndpointPerformance>&& value) { m_endpointPerformances = std::move(value); }
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline DescribeInferenceRecommendationsJobResult& WithEndpointPerformances(const Aws::Vector<EndpointPerformance>& value) { SetEndpointPerformances(value); return *this;}
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline DescribeInferenceRecommendationsJobResult& WithEndpointPerformances(Aws::Vector<EndpointPerformance>&& value) { SetEndpointPerformances(std::move(value)); return *this;}
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline DescribeInferenceRecommendationsJobResult& AddEndpointPerformances(const EndpointPerformance& value) { m_endpointPerformances.push_back(value); return *this; }
+
+    /**
+     * <p>The performance results from running an Inference Recommender job on an
+     * existing endpoint.</p>
+     */
+    inline DescribeInferenceRecommendationsJobResult& AddEndpointPerformances(EndpointPerformance&& value) { m_endpointPerformances.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobName;
@@ -487,6 +531,8 @@ namespace Model
     RecommendationJobStoppingConditions m_stoppingConditions;
 
     Aws::Vector<InferenceRecommendation> m_inferenceRecommendations;
+
+    Aws::Vector<EndpointPerformance> m_endpointPerformances;
   };
 
 } // namespace Model

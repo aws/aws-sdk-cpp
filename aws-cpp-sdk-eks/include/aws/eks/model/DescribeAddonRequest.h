@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API DescribeAddonRequest : public EKSRequest
+  class DescribeAddonRequest : public EKSRequest
   {
   public:
-    DescribeAddonRequest();
+    AWS_EKS_API DescribeAddonRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAddon"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
   };
 
 } // namespace Model

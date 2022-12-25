@@ -28,7 +28,8 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
     m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
     m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
+    m_customFieldsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) :
     m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
     m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
+    m_customFieldsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,7 +81,7 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("managedFields"))
   {
-    Array<JsonView> managedFieldsJsonList = jsonValue.GetArray("managedFields");
+    Aws::Utils::Array<JsonView> managedFieldsJsonList = jsonValue.GetArray("managedFields");
     for(unsigned managedFieldsIndex = 0; managedFieldsIndex < managedFieldsJsonList.GetLength(); ++managedFieldsIndex)
     {
       m_managedFields.push_back(managedFieldsJsonList[managedFieldsIndex].AsObject());
@@ -89,12 +91,19 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("customFields"))
   {
-    Array<JsonView> customFieldsJsonList = jsonValue.GetArray("customFields");
+    Aws::Utils::Array<JsonView> customFieldsJsonList = jsonValue.GetArray("customFields");
     for(unsigned customFieldsIndex = 0; customFieldsIndex < customFieldsJsonList.GetLength(); ++customFieldsIndex)
     {
       m_customFields.push_back(customFieldsJsonList[customFieldsIndex].AsObject());
     }
     m_customFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filter"))
+  {
+    m_filter = jsonValue.GetObject("filter");
+
+    m_filterHasBeenSet = true;
   }
 
   return *this;
@@ -126,7 +135,7 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
 
   if(m_managedFieldsHasBeenSet)
   {
-   Array<JsonValue> managedFieldsJsonList(m_managedFields.size());
+   Aws::Utils::Array<JsonValue> managedFieldsJsonList(m_managedFields.size());
    for(unsigned managedFieldsIndex = 0; managedFieldsIndex < managedFieldsJsonList.GetLength(); ++managedFieldsIndex)
    {
      managedFieldsJsonList[managedFieldsIndex].AsObject(m_managedFields[managedFieldsIndex].Jsonize());
@@ -137,12 +146,18 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
 
   if(m_customFieldsHasBeenSet)
   {
-   Array<JsonValue> customFieldsJsonList(m_customFields.size());
+   Aws::Utils::Array<JsonValue> customFieldsJsonList(m_customFields.size());
    for(unsigned customFieldsIndex = 0; customFieldsIndex < customFieldsJsonList.GetLength(); ++customFieldsIndex)
    {
      customFieldsJsonList[customFieldsIndex].AsObject(m_customFields[customFieldsIndex].Jsonize());
    }
    payload.WithArray("customFields", std::move(customFieldsJsonList));
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
 
   }
 

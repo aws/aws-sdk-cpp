@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardSourceEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardSourceEntity
+  class DashboardSourceEntity
   {
   public:
-    DashboardSourceEntity();
-    DashboardSourceEntity(Aws::Utils::Json::JsonView jsonValue);
-    DashboardSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardSourceEntity();
+    AWS_QUICKSIGHT_API DashboardSourceEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DashboardSourceTemplate m_sourceTemplate;
-    bool m_sourceTemplateHasBeenSet;
+    bool m_sourceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerSummary
+  class BrokerSummary
   {
   public:
-    BrokerSummary();
-    BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
-    BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerSummary();
+    AWS_MQ_API BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -355,28 +355,28 @@ namespace Model
   private:
 
     Aws::String m_brokerArn;
-    bool m_brokerArnHasBeenSet;
+    bool m_brokerArnHasBeenSet = false;
 
     Aws::String m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     Aws::String m_brokerName;
-    bool m_brokerNameHasBeenSet;
+    bool m_brokerNameHasBeenSet = false;
 
     BrokerState m_brokerState;
-    bool m_brokerStateHasBeenSet;
+    bool m_brokerStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     DeploymentMode m_deploymentMode;
-    bool m_deploymentModeHasBeenSet;
+    bool m_deploymentModeHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_hostInstanceType;
-    bool m_hostInstanceTypeHasBeenSet;
+    bool m_hostInstanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

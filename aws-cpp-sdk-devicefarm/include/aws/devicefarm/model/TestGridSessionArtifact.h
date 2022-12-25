@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridSessionArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridSessionArtifact
+  class TestGridSessionArtifact
   {
   public:
-    TestGridSessionArtifact();
-    TestGridSessionArtifact(Aws::Utils::Json::JsonView jsonValue);
-    TestGridSessionArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridSessionArtifact();
+    AWS_DEVICEFARM_API TestGridSessionArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridSessionArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_filename;
-    bool m_filenameHasBeenSet;
+    bool m_filenameHasBeenSet = false;
 
     TestGridSessionArtifactType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

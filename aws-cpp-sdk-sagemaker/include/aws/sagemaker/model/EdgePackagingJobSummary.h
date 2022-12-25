@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgePackagingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgePackagingJobSummary
+  class EdgePackagingJobSummary
   {
   public:
-    EdgePackagingJobSummary();
-    EdgePackagingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    EdgePackagingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgePackagingJobSummary();
+    AWS_SAGEMAKER_API EdgePackagingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgePackagingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_edgePackagingJobArn;
-    bool m_edgePackagingJobArnHasBeenSet;
+    bool m_edgePackagingJobArnHasBeenSet = false;
 
     Aws::String m_edgePackagingJobName;
-    bool m_edgePackagingJobNameHasBeenSet;
+    bool m_edgePackagingJobNameHasBeenSet = false;
 
     EdgePackagingJobStatus m_edgePackagingJobStatus;
-    bool m_edgePackagingJobStatusHasBeenSet;
+    bool m_edgePackagingJobStatusHasBeenSet = false;
 
     Aws::String m_compilationJobName;
-    bool m_compilationJobNameHasBeenSet;
+    bool m_compilationJobNameHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

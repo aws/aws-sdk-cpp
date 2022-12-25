@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CloudWatchMonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API CloudWatchMonitoringConfiguration
+  class CloudWatchMonitoringConfiguration
   {
   public:
-    CloudWatchMonitoringConfiguration();
-    CloudWatchMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API CloudWatchMonitoringConfiguration();
+    AWS_EMRCONTAINERS_API CloudWatchMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API CloudWatchMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

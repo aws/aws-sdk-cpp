@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcGatewayRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcGatewayRoute
+  class GrpcGatewayRoute
   {
   public:
-    GrpcGatewayRoute();
-    GrpcGatewayRoute(Aws::Utils::Json::JsonView jsonValue);
-    GrpcGatewayRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcGatewayRoute();
+    AWS_APPMESH_API GrpcGatewayRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcGatewayRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     GrpcGatewayRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     GrpcGatewayRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API PeerVpcResult
+  class PeerVpcResult
   {
   public:
-    PeerVpcResult();
-    PeerVpcResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PeerVpcResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API PeerVpcResult();
+    AWS_LIGHTSAIL_API PeerVpcResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API PeerVpcResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

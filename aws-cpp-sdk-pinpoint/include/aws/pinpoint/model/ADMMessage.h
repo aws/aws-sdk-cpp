@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ADMMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ADMMessage
+  class ADMMessage
   {
   public:
-    ADMMessage();
-    ADMMessage(Aws::Utils::Json::JsonView jsonValue);
-    ADMMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ADMMessage();
+    AWS_PINPOINT_API ADMMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ADMMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -913,52 +913,52 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_consolidationKey;
-    bool m_consolidationKeyHasBeenSet;
+    bool m_consolidationKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_expiresAfter;
-    bool m_expiresAfterHasBeenSet;
+    bool m_expiresAfterHasBeenSet = false;
 
     Aws::String m_iconReference;
-    bool m_iconReferenceHasBeenSet;
+    bool m_iconReferenceHasBeenSet = false;
 
     Aws::String m_imageIconUrl;
-    bool m_imageIconUrlHasBeenSet;
+    bool m_imageIconUrlHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_mD5;
-    bool m_mD5HasBeenSet;
+    bool m_mD5HasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     bool m_silentPush;
-    bool m_silentPushHasBeenSet;
+    bool m_silentPushHasBeenSet = false;
 
     Aws::String m_smallImageIconUrl;
-    bool m_smallImageIconUrlHasBeenSet;
+    bool m_smallImageIconUrlHasBeenSet = false;
 
     Aws::String m_sound;
-    bool m_soundHasBeenSet;
+    bool m_soundHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

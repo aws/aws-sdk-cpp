@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightFeedback">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API InsightFeedback
+  class InsightFeedback
   {
   public:
-    InsightFeedback();
-    InsightFeedback(Aws::Utils::Json::JsonView jsonValue);
-    InsightFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API InsightFeedback();
+    AWS_DEVOPSGURU_API InsightFeedback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API InsightFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InsightFeedbackOption m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
   };
 
 } // namespace Model

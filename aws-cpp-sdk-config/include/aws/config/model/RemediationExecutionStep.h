@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RemediationExecutionStep">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RemediationExecutionStep
+  class RemediationExecutionStep
   {
   public:
-    RemediationExecutionStep();
-    RemediationExecutionStep(Aws::Utils::Json::JsonView jsonValue);
-    RemediationExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RemediationExecutionStep();
+    AWS_CONFIGSERVICE_API RemediationExecutionStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RemediationExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RemediationExecutionStepState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopTime;
-    bool m_stopTimeHasBeenSet;
+    bool m_stopTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,25 +29,26 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AccessConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AccessConfiguration
+  class AccessConfiguration
   {
   public:
-    AccessConfiguration();
-    AccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AccessConfiguration();
+    AWS_MEDIATAILOR_API AccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -60,14 +61,15 @@ namespace Model
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -80,14 +82,15 @@ namespace Model
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -100,14 +103,15 @@ namespace Model
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -120,14 +124,15 @@ namespace Model
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -140,14 +145,15 @@ namespace Model
 
     /**
      * <p>The type of authentication used to access content from
-     * HttpConfiguration::BaseUrl on your source location. Accepted value:
-     * S3_SIGV4.</p> <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3
-     * hosted virtual-style access. If your source location base URL is an Amazon S3
-     * bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to
-     * access the bucket where your source content is stored. Your MediaTailor source
-     * location baseURL must follow the S3 virtual hosted-style request URL format. For
-     * example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you
-     * can use S3_SIGV4, you must meet these requirements:</p> <p>• You must allow
+     * <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value:
+     * <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4
+     * authentication for Amazon S3 hosted virtual-style access. If your source
+     * location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature
+     * Version 4 (SigV4) authentication to access the bucket where your source content
+     * is stored. Your MediaTailor source location baseURL must follow the S3 virtual
+     * hosted-style request URL format. For example,
+     * https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use
+     * <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow
      * MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com
      * principal access in IAM. For information about configuring access in IAM, see
      * Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com
@@ -192,10 +198,10 @@ namespace Model
   private:
 
     AccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     SecretsManagerAccessTokenConfiguration m_secretsManagerAccessTokenConfiguration;
-    bool m_secretsManagerAccessTokenConfigurationHasBeenSet;
+    bool m_secretsManagerAccessTokenConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

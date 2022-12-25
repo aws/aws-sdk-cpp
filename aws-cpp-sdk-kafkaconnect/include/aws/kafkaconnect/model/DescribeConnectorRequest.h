@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKACONNECT_API DescribeConnectorRequest : public KafkaConnectRequest
+  class DescribeConnectorRequest : public KafkaConnectRequest
   {
   public:
-    DescribeConnectorRequest();
+    AWS_KAFKACONNECT_API DescribeConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
   };
 
 } // namespace Model

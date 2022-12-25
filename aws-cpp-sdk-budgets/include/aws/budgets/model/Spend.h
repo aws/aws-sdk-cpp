@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Spend">AWS API
    * Reference</a></p>
    */
-  class AWS_BUDGETS_API Spend
+  class Spend
   {
   public:
-    Spend();
-    Spend(Aws::Utils::Json::JsonView jsonValue);
-    Spend& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API Spend();
+    AWS_BUDGETS_API Spend(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Spend& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

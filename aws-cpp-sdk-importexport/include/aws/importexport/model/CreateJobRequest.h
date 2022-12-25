@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API CreateJobRequest : public ImportExportRequest
+  class CreateJobRequest : public ImportExportRequest
   {
   public:
-    CreateJobRequest();
+    AWS_IMPORTEXPORT_API CreateJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMPORTEXPORT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IMPORTEXPORT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -149,19 +149,19 @@ namespace Model
   private:
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     Aws::String m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     Aws::String m_manifestAddendum;
-    bool m_manifestAddendumHasBeenSet;
+    bool m_manifestAddendumHasBeenSet = false;
 
     bool m_validateOnly;
-    bool m_validateOnlyHasBeenSet;
+    bool m_validateOnlyHasBeenSet = false;
 
     Aws::String m_aPIVersion;
-    bool m_aPIVersionHasBeenSet;
+    bool m_aPIVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API RollbackConfiguration
+  class RollbackConfiguration
   {
   public:
-    RollbackConfiguration();
-    RollbackConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RollbackConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API RollbackConfiguration();
+    AWS_CLOUDFORMATION_API RollbackConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API RollbackConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -271,10 +271,10 @@ namespace Model
   private:
 
     Aws::Vector<RollbackTrigger> m_rollbackTriggers;
-    bool m_rollbackTriggersHasBeenSet;
+    bool m_rollbackTriggersHasBeenSet = false;
 
     int m_monitoringTimeInMinutes;
-    bool m_monitoringTimeInMinutesHasBeenSet;
+    bool m_monitoringTimeInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

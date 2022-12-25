@@ -24,12 +24,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API GetAWSDefaultServiceQuotaResult
+  class GetAWSDefaultServiceQuotaResult
   {
   public:
-    GetAWSDefaultServiceQuotaResult();
-    GetAWSDefaultServiceQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAWSDefaultServiceQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API GetAWSDefaultServiceQuotaResult();
+    AWS_SERVICEQUOTAS_API GetAWSDefaultServiceQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API GetAWSDefaultServiceQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

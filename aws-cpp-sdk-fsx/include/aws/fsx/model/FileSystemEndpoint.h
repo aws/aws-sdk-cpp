@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystemEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileSystemEndpoint
+  class FileSystemEndpoint
   {
   public:
-    FileSystemEndpoint();
-    FileSystemEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileSystemEndpoint();
+    AWS_FSX_API FileSystemEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileSystemEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

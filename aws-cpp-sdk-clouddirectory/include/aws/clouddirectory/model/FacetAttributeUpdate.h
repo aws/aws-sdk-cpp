@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API FacetAttributeUpdate
+  class FacetAttributeUpdate
   {
   public:
-    FacetAttributeUpdate();
-    FacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
-    FacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API FacetAttributeUpdate();
+    AWS_CLOUDDIRECTORY_API FacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API FacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     FacetAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     UpdateActionType m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GpuInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API GpuInfo
+  class GpuInfo
   {
   public:
-    GpuInfo();
-    GpuInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GpuInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuInfo();
+    AWS_EC2_API GpuInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::Vector<GpuDeviceInfo> m_gpus;
-    bool m_gpusHasBeenSet;
+    bool m_gpusHasBeenSet = false;
 
     int m_totalGpuMemoryInMiB;
-    bool m_totalGpuMemoryInMiBHasBeenSet;
+    bool m_totalGpuMemoryInMiBHasBeenSet = false;
   };
 
 } // namespace Model

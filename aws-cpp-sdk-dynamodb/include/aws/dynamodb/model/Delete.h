@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Delete">AWS API
    * Reference</a></p>
    */
-  class AWS_DYNAMODB_API Delete
+  class Delete
   {
   public:
-    Delete();
-    Delete(Aws::Utils::Json::JsonView jsonValue);
-    Delete& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Delete();
+    AWS_DYNAMODB_API Delete(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Delete& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -382,22 +382,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
 
     ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure;
-    bool m_returnValuesOnConditionCheckFailureHasBeenSet;
+    bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
   };
 
 } // namespace Model

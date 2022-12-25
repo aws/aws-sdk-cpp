@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UserDoesNotExistException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API UserDoesNotExistException
+  class UserDoesNotExistException
   {
   public:
-    UserDoesNotExistException();
-    UserDoesNotExistException(Aws::Utils::Json::JsonView jsonValue);
-    UserDoesNotExistException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API UserDoesNotExistException();
+    AWS_DIRECTORYSERVICE_API UserDoesNotExistException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API UserDoesNotExistException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

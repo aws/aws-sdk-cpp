@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,52 +171,60 @@ namespace Model
 
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The log router to use. </p>
+     * <p>The log router to use. Valid values are <code>fluentbit</code> or
+     * <code>fluentd</code>.</p>
      */
     inline AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::Map<Aws::String, Aws::String> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

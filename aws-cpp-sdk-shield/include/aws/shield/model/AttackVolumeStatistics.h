@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackVolumeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackVolumeStatistics
+  class AttackVolumeStatistics
   {
   public:
-    AttackVolumeStatistics();
-    AttackVolumeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    AttackVolumeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackVolumeStatistics();
+    AWS_SHIELD_API AttackVolumeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackVolumeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

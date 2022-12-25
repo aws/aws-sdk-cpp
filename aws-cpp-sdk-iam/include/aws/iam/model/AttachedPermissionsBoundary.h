@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachedPermissionsBoundary">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API AttachedPermissionsBoundary
+  class AttachedPermissionsBoundary
   {
   public:
-    AttachedPermissionsBoundary();
-    AttachedPermissionsBoundary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AttachedPermissionsBoundary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AttachedPermissionsBoundary();
+    AWS_IAM_API AttachedPermissionsBoundary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AttachedPermissionsBoundary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     PermissionsBoundaryAttachmentType m_permissionsBoundaryType;
-    bool m_permissionsBoundaryTypeHasBeenSet;
+    bool m_permissionsBoundaryTypeHasBeenSet = false;
 
     Aws::String m_permissionsBoundaryArn;
-    bool m_permissionsBoundaryArnHasBeenSet;
+    bool m_permissionsBoundaryArnHasBeenSet = false;
   };
 
 } // namespace Model

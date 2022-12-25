@@ -21,14 +21,18 @@ namespace Model
 DocumentClass::DocumentClass() : 
     m_nameHasBeenSet(false),
     m_score(0.0),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_page(0),
+    m_pageHasBeenSet(false)
 {
 }
 
 DocumentClass::DocumentClass(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_score(0.0),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_page(0),
+    m_pageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ DocumentClass& DocumentClass::operator =(JsonView jsonValue)
     m_scoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Page"))
+  {
+    m_page = jsonValue.GetInteger("Page");
+
+    m_pageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,12 @@ JsonValue DocumentClass::Jsonize() const
   if(m_scoreHasBeenSet)
   {
    payload.WithDouble("Score", m_score);
+
+  }
+
+  if(m_pageHasBeenSet)
+  {
+   payload.WithInteger("Page", m_page);
 
   }
 

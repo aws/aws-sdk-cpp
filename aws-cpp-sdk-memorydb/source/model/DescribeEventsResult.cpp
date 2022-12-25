@@ -36,7 +36,7 @@ DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());

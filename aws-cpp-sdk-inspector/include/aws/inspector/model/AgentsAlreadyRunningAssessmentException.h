@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentsAlreadyRunningAssessmentException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException
+  class AgentsAlreadyRunningAssessmentException
   {
   public:
-    AgentsAlreadyRunningAssessmentException();
-    AgentsAlreadyRunningAssessmentException(Aws::Utils::Json::JsonView jsonValue);
-    AgentsAlreadyRunningAssessmentException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException();
+    AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<AgentAlreadyRunningAssessment> m_agents;
-    bool m_agentsHasBeenSet;
+    bool m_agentsHasBeenSet = false;
 
     bool m_agentsTruncated;
-    bool m_agentsTruncatedHasBeenSet;
+    bool m_agentsTruncatedHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

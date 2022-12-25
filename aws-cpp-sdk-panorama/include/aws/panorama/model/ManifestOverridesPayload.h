@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ManifestOverridesPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ManifestOverridesPayload
+  class ManifestOverridesPayload
   {
   public:
-    ManifestOverridesPayload();
-    ManifestOverridesPayload(Aws::Utils::Json::JsonView jsonValue);
-    ManifestOverridesPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ManifestOverridesPayload();
+    AWS_PANORAMA_API ManifestOverridesPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ManifestOverridesPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_payloadData;
-    bool m_payloadDataHasBeenSet;
+    bool m_payloadDataHasBeenSet = false;
   };
 
 } // namespace Model

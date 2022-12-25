@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Topic">AWS API
    * Reference</a></p>
    */
-  class AWS_SNS_API Topic
+  class Topic
   {
   public:
-    Topic();
-    Topic(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Topic& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API Topic();
+    AWS_SNS_API Topic(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API Topic& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

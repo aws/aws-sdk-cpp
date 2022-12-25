@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReplaceContentEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ReplaceContentEntry
+  class ReplaceContentEntry
   {
   public:
-    ReplaceContentEntry();
-    ReplaceContentEntry(Aws::Utils::Json::JsonView jsonValue);
-    ReplaceContentEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ReplaceContentEntry();
+    AWS_CODECOMMIT_API ReplaceContentEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ReplaceContentEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     ReplacementTypeEnum m_replacementType;
-    bool m_replacementTypeHasBeenSet;
+    bool m_replacementTypeHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
   };
 
 } // namespace Model

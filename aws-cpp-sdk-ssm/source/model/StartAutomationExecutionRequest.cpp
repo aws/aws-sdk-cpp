@@ -25,7 +25,8 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_targetLocationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,7 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(parametersItem.second.size());
      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
      {
        automationParameterValueListJsonList[automationParameterValueListIndex].AsString(parametersItem.second[automationParameterValueListIndex]);
@@ -80,7 +81,7 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
@@ -91,13 +92,13 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   if(m_targetMapsHasBeenSet)
   {
-   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   Aws::Utils::Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
    for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
    {
      JsonValue targetMapJsonMap;
      for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
      {
-       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       Aws::Utils::Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
        for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
        {
          targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
@@ -124,7 +125,7 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   if(m_targetLocationsHasBeenSet)
   {
-   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   Aws::Utils::Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
    {
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
@@ -135,12 +136,18 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
 
   }
 

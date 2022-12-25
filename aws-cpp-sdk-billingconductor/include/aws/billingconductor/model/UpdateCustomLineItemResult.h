@@ -25,12 +25,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemResult
+  class UpdateCustomLineItemResult
   {
   public:
-    UpdateCustomLineItemResult();
-    UpdateCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -209,17 +209,17 @@ namespace Model
 
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the custom line item was modified. </p>
+     * <p> The most recent time when the custom line item was modified. </p>
      */
     inline UpdateCustomLineItemResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/Image">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Image();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timeStamp;
-    bool m_timeStampHasBeenSet;
+    bool m_timeStampHasBeenSet = false;
 
     ImageError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_imageContent;
-    bool m_imageContentHasBeenSet;
+    bool m_imageContentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Operation">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Operation
+  class Operation
   {
   public:
-    Operation();
-    Operation(Aws::Utils::Json::JsonView jsonValue);
-    Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Operation();
+    AWS_LIGHTSAIL_API Operation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -468,40 +468,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_isTerminal;
-    bool m_isTerminalHasBeenSet;
+    bool m_isTerminalHasBeenSet = false;
 
     Aws::String m_operationDetails;
-    bool m_operationDetailsHasBeenSet;
+    bool m_operationDetailsHasBeenSet = false;
 
     OperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     OperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusChangedAt;
-    bool m_statusChangedAtHasBeenSet;
+    bool m_statusChangedAtHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

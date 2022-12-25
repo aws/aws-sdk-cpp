@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/NotificationsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API NotificationsConfiguration
+  class NotificationsConfiguration
   {
   public:
-    NotificationsConfiguration();
-    NotificationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration();
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_sqsQueueArn;
-    bool m_sqsQueueArnHasBeenSet;
+    bool m_sqsQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API CreateAgentRequest : public DataSyncRequest
+  class CreateAgentRequest : public DataSyncRequest
   {
   public:
-    CreateAgentRequest();
+    AWS_DATASYNC_API CreateAgentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAgent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -513,22 +513,22 @@ namespace Model
   private:
 
     Aws::String m_activationKey;
-    bool m_activationKeyHasBeenSet;
+    bool m_activationKeyHasBeenSet = false;
 
     Aws::String m_agentName;
-    bool m_agentNameHasBeenSet;
+    bool m_agentNameHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetArns;
-    bool m_subnetArnsHasBeenSet;
+    bool m_subnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

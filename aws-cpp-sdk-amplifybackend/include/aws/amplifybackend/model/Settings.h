@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API Settings
+  class Settings
   {
   public:
-    Settings();
-    Settings(Aws::Utils::Json::JsonView jsonValue);
-    Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API Settings();
+    AWS_AMPLIFYBACKEND_API Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<MfaTypesElement> m_mfaTypes;
-    bool m_mfaTypesHasBeenSet;
+    bool m_mfaTypesHasBeenSet = false;
 
     Aws::String m_smsMessage;
-    bool m_smsMessageHasBeenSet;
+    bool m_smsMessageHasBeenSet = false;
   };
 
 } // namespace Model

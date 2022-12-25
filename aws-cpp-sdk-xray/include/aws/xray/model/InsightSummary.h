@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/InsightSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API InsightSummary
+  class InsightSummary
   {
   public:
-    InsightSummary();
-    InsightSummary(Aws::Utils::Json::JsonView jsonValue);
-    InsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API InsightSummary();
+    AWS_XRAY_API InsightSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API InsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -521,43 +521,43 @@ namespace Model
   private:
 
     Aws::String m_insightId;
-    bool m_insightIdHasBeenSet;
+    bool m_insightIdHasBeenSet = false;
 
     Aws::String m_groupARN;
-    bool m_groupARNHasBeenSet;
+    bool m_groupARNHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     ServiceId m_rootCauseServiceId;
-    bool m_rootCauseServiceIdHasBeenSet;
+    bool m_rootCauseServiceIdHasBeenSet = false;
 
     Aws::Vector<InsightCategory> m_categories;
-    bool m_categoriesHasBeenSet;
+    bool m_categoriesHasBeenSet = false;
 
     InsightState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     RequestImpactStatistics m_clientRequestImpactStatistics;
-    bool m_clientRequestImpactStatisticsHasBeenSet;
+    bool m_clientRequestImpactStatisticsHasBeenSet = false;
 
     RequestImpactStatistics m_rootCauseServiceRequestImpactStatistics;
-    bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet;
+    bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
 
     Aws::Vector<AnomalousService> m_topAnomalousServices;
-    bool m_topAnomalousServicesHasBeenSet;
+    bool m_topAnomalousServicesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

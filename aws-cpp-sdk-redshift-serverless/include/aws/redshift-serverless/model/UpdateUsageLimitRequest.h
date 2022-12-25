@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API UpdateUsageLimitRequest : public RedshiftServerlessRequest
+  class UpdateUsageLimitRequest : public RedshiftServerlessRequest
   {
   public:
-    UpdateUsageLimitRequest();
+    AWS_REDSHIFTSERVERLESS_API UpdateUsageLimitRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,28 +30,40 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateUsageLimit"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline long long GetAmount() const{ return m_amount; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline void SetAmount(long long value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline UpdateUsageLimitRequest& WithAmount(long long value) { SetAmount(value); return *this;}
 
@@ -136,13 +148,13 @@ namespace Model
   private:
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
   };
 
 } // namespace Model

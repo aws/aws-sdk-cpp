@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DatabaseResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseResponse
+  class DatabaseResponse
   {
   public:
-    DatabaseResponse();
-    DatabaseResponse(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,25 +297,25 @@ namespace Model
   private:
 
     Aws::String m_databaseId;
-    bool m_databaseIdHasBeenSet;
+    bool m_databaseIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     long long m_numberOfSchemas;
-    bool m_numberOfSchemasHasBeenSet;
+    bool m_numberOfSchemasHasBeenSet = false;
 
     ServerShortInfoResponse m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     DatabaseInstanceSoftwareDetailsResponse m_softwareDetails;
-    bool m_softwareDetailsHasBeenSet;
+    bool m_softwareDetailsHasBeenSet = false;
 
     Aws::Vector<CollectorShortInfoResponse> m_collectors;
-    bool m_collectorsHasBeenSet;
+    bool m_collectorsHasBeenSet = false;
   };
 
 } // namespace Model

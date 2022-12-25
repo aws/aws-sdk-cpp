@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICEDISCOVERY_API DiscoverInstancesRequest : public ServiceDiscoveryRequest
+  class DiscoverInstancesRequest : public ServiceDiscoveryRequest
   {
   public:
-    DiscoverInstancesRequest();
+    AWS_SERVICEDISCOVERY_API DiscoverInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DiscoverInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICEDISCOVERY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICEDISCOVERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -469,22 +469,22 @@ namespace Model
   private:
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_optionalParameters;
-    bool m_optionalParametersHasBeenSet;
+    bool m_optionalParametersHasBeenSet = false;
 
     HealthStatusFilter m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API UnauthorizedException
+  class UnauthorizedException
   {
   public:
-    UnauthorizedException();
-    UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API UnauthorizedException();
+    AWS_SCHEMAS_API UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

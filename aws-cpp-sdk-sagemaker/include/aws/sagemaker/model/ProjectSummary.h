@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProjectSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProjectSummary
+  class ProjectSummary
   {
   public:
-    ProjectSummary();
-    ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProjectSummary();
+    AWS_SAGEMAKER_API ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_projectDescription;
-    bool m_projectDescriptionHasBeenSet;
+    bool m_projectDescriptionHasBeenSet = false;
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ProjectStatus m_projectStatus;
-    bool m_projectStatusHasBeenSet;
+    bool m_projectStatusHasBeenSet = false;
   };
 
 } // namespace Model

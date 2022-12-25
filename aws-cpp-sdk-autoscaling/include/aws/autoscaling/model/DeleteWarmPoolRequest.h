@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API DeleteWarmPoolRequest : public AutoScalingRequest
+  class DeleteWarmPoolRequest : public AutoScalingRequest
   {
   public:
-    DeleteWarmPoolRequest();
+    AWS_AUTOSCALING_API DeleteWarmPoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteWarmPool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

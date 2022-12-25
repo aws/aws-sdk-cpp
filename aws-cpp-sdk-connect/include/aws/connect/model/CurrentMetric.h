@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API CurrentMetric
+  class CurrentMetric
   {
   public:
-    CurrentMetric();
-    CurrentMetric(Aws::Utils::Json::JsonView jsonValue);
-    CurrentMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API CurrentMetric();
+    AWS_CONNECT_API CurrentMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API CurrentMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     CurrentMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

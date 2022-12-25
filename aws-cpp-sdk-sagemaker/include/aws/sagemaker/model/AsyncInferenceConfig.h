@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AsyncInferenceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AsyncInferenceConfig
+  class AsyncInferenceConfig
   {
   public:
-    AsyncInferenceConfig();
-    AsyncInferenceConfig(Aws::Utils::Json::JsonView jsonValue);
-    AsyncInferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AsyncInferenceConfig();
+    AWS_SAGEMAKER_API AsyncInferenceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AsyncInferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     AsyncInferenceClientConfig m_clientConfig;
-    bool m_clientConfigHasBeenSet;
+    bool m_clientConfigHasBeenSet = false;
 
     AsyncInferenceOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
   };
 
 } // namespace Model

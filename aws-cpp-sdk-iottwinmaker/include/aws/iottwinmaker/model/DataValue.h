@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DataValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API DataValue
+  class DataValue
   {
   public:
-    DataValue();
-    DataValue(Aws::Utils::Json::JsonView jsonValue);
-    DataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API DataValue();
+    AWS_IOTTWINMAKER_API DataValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API DataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,47 +84,6 @@ namespace Model
 
 
     /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline DataValue& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline DataValue& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>An expression that produces the value.</p>
-     */
-    inline DataValue& WithExpression(const char* value) { SetExpression(value); return *this;}
-
-
-    /**
      * <p>An integer value.</p>
      */
     inline int GetIntegerValue() const{ return m_integerValue; }
@@ -143,6 +102,68 @@ namespace Model
      * <p>An integer value.</p>
      */
     inline DataValue& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+
+
+    /**
+     * <p>A long value.</p>
+     */
+    inline long long GetLongValue() const{ return m_longValue; }
+
+    /**
+     * <p>A long value.</p>
+     */
+    inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
+
+    /**
+     * <p>A long value.</p>
+     */
+    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
+
+    /**
+     * <p>A long value.</p>
+     */
+    inline DataValue& WithLongValue(long long value) { SetLongValue(value); return *this;}
+
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline DataValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline DataValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
+
+    /**
+     * <p>A string value.</p>
+     */
+    inline DataValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
 
     /**
@@ -184,27 +205,6 @@ namespace Model
      * <p>A list of multiple values.</p>
      */
     inline DataValue& AddListValue(DataValue&& value) { m_listValueHasBeenSet = true; m_listValue.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>A long value.</p>
-     */
-    inline long long GetLongValue() const{ return m_longValue; }
-
-    /**
-     * <p>A long value.</p>
-     */
-    inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
-
-    /**
-     * <p>A long value.</p>
-     */
-    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
-
-    /**
-     * <p>A long value.</p>
-     */
-    inline DataValue& WithLongValue(long long value) { SetLongValue(value); return *this;}
 
 
     /**
@@ -300,73 +300,73 @@ namespace Model
 
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
+    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
+    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
+    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline DataValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
+    inline DataValue& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline DataValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
+    inline DataValue& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A string value.</p>
+     * <p>An expression that produces the value.</p>
      */
-    inline DataValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    inline DataValue& WithExpression(const char* value) { SetExpression(value); return *this;}
 
   private:
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
-
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
-
-    Aws::Vector<DataValue> m_listValue;
-    bool m_listValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
-
-    Aws::Map<Aws::String, DataValue> m_mapValue;
-    bool m_mapValueHasBeenSet;
-
-    RelationshipValue m_relationshipValue;
-    bool m_relationshipValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
+
+    Aws::Vector<DataValue> m_listValue;
+    bool m_listValueHasBeenSet = false;
+
+    Aws::Map<Aws::String, DataValue> m_mapValue;
+    bool m_mapValueHasBeenSet = false;
+
+    RelationshipValue m_relationshipValue;
+    bool m_relationshipValueHasBeenSet = false;
+
+    Aws::String m_expression;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

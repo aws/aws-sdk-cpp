@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
+  class UpdateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    UpdateSafetyRuleRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateSafetyRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSafetyRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     AssertionRuleUpdate m_assertionRuleUpdate;
-    bool m_assertionRuleUpdateHasBeenSet;
+    bool m_assertionRuleUpdateHasBeenSet = false;
 
     GatingRuleUpdate m_gatingRuleUpdate;
-    bool m_gatingRuleUpdateHasBeenSet;
+    bool m_gatingRuleUpdateHasBeenSet = false;
   };
 
 } // namespace Model

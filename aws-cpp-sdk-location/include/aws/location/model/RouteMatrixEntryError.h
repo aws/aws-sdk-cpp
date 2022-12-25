@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/RouteMatrixEntryError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API RouteMatrixEntryError
+  class RouteMatrixEntryError
   {
   public:
-    RouteMatrixEntryError();
-    RouteMatrixEntryError(Aws::Utils::Json::JsonView jsonValue);
-    RouteMatrixEntryError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API RouteMatrixEntryError();
+    AWS_LOCATIONSERVICE_API RouteMatrixEntryError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API RouteMatrixEntryError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     RouteMatrixErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

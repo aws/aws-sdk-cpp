@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ExecutionTimeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ExecutionTimeFilter
+  class ExecutionTimeFilter
   {
   public:
-    ExecutionTimeFilter();
-    ExecutionTimeFilter(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionTimeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ExecutionTimeFilter();
+    AWS_SWF_API ExecutionTimeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ExecutionTimeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_oldestDate;
-    bool m_oldestDateHasBeenSet;
+    bool m_oldestDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestDate;
-    bool m_latestDateHasBeenSet;
+    bool m_latestDateHasBeenSet = false;
   };
 
 } // namespace Model

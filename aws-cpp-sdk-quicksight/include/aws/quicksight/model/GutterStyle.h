@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GutterStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GutterStyle
+  class GutterStyle
   {
   public:
-    GutterStyle();
-    GutterStyle(Aws::Utils::Json::JsonView jsonValue);
-    GutterStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GutterStyle();
+    AWS_QUICKSIGHT_API GutterStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GutterStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_show;
-    bool m_showHasBeenSet;
+    bool m_showHasBeenSet = false;
   };
 
 } // namespace Model

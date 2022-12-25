@@ -30,7 +30,7 @@ ListOfferingTransactionsResult& ListOfferingTransactionsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("offeringTransactions"))
   {
-    Array<JsonView> offeringTransactionsJsonList = jsonValue.GetArray("offeringTransactions");
+    Aws::Utils::Array<JsonView> offeringTransactionsJsonList = jsonValue.GetArray("offeringTransactions");
     for(unsigned offeringTransactionsIndex = 0; offeringTransactionsIndex < offeringTransactionsJsonList.GetLength(); ++offeringTransactionsIndex)
     {
       m_offeringTransactions.push_back(offeringTransactionsJsonList[offeringTransactionsIndex].AsObject());

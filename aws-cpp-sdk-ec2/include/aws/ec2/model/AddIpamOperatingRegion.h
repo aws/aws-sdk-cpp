@@ -28,20 +28,21 @@ namespace Model
    * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
    * discovers and monitors resources in the Amazon Web Services Regions you select
    * as operating Regions.</p> <p>For more information about operating Regions, see
-   * <a href="/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon
-   * VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
+   * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AddIpamOperatingRegion">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AddIpamOperatingRegion
+  class AddIpamOperatingRegion
   {
   public:
-    AddIpamOperatingRegion();
-    AddIpamOperatingRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AddIpamOperatingRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddIpamOperatingRegion();
+    AWS_EC2_API AddIpamOperatingRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddIpamOperatingRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -87,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
   };
 
 } // namespace Model

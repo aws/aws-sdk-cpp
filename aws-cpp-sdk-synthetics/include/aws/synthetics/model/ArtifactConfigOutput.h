@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ArtifactConfigOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API ArtifactConfigOutput
+  class ArtifactConfigOutput
   {
   public:
-    ArtifactConfigOutput();
-    ArtifactConfigOutput(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API ArtifactConfigOutput();
+    AWS_SYNTHETICS_API ArtifactConfigOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API ArtifactConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3EncryptionConfig m_s3Encryption;
-    bool m_s3EncryptionHasBeenSet;
+    bool m_s3EncryptionHasBeenSet = false;
   };
 
 } // namespace Model

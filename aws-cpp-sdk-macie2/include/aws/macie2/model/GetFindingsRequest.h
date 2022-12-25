@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API GetFindingsRequest : public Macie2Request
+  class GetFindingsRequest : public Macie2Request
   {
   public:
-    GetFindingsRequest();
+    AWS_MACIE2_API GetFindingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetFindings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_findingIds;
-    bool m_findingIdsHasBeenSet;
+    bool m_findingIdsHasBeenSet = false;
 
     SortCriteria m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

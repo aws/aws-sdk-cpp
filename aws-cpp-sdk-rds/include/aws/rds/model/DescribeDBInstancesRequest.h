@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstancesMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeDBInstancesRequest : public RDSRequest
+  class DescribeDBInstancesRequest : public RDSRequest
   {
   public:
-    DescribeDBInstancesRequest();
+    AWS_RDS_API DescribeDBInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,74 +34,82 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDBInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The user-supplied instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
-     * identifier of an existing DBInstance.</p> </li> </ul>
+     * <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of
+     * the DB instance. If this parameter is specified, information from only the
+     * specific DB instance is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
+     * existing DBInstance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -363,16 +371,16 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

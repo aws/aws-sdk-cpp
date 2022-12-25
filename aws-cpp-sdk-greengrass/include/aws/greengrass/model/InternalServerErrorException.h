@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/InternalServerErrorException">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API InternalServerErrorException
+  class InternalServerErrorException
   {
   public:
-    InternalServerErrorException();
-    InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API InternalServerErrorException();
+    AWS_GREENGRASS_API InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<ErrorDetail> m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

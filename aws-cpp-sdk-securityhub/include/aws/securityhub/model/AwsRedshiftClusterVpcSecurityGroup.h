@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterVpcSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterVpcSecurityGroup
+  class AwsRedshiftClusterVpcSecurityGroup
   {
   public:
-    AwsRedshiftClusterVpcSecurityGroup();
-    AwsRedshiftClusterVpcSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterVpcSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterVpcSecurityGroup();
+    AWS_SECURITYHUB_API AwsRedshiftClusterVpcSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterVpcSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcSecurityGroupId;
-    bool m_vpcSecurityGroupIdHasBeenSet;
+    bool m_vpcSecurityGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

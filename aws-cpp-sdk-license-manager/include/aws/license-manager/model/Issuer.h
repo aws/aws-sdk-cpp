@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Issuer">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API Issuer
+  class Issuer
   {
   public:
-    Issuer();
-    Issuer(Aws::Utils::Json::JsonView jsonValue);
-    Issuer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API Issuer();
+    AWS_LICENSEMANAGER_API Issuer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Issuer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_signKey;
-    bool m_signKeyHasBeenSet;
+    bool m_signKeyHasBeenSet = false;
   };
 
 } // namespace Model

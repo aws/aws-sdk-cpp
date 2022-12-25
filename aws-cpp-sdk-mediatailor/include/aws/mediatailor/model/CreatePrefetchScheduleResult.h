@@ -26,252 +26,271 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API CreatePrefetchScheduleResult
+  class CreatePrefetchScheduleResult
   {
   public:
-    CreatePrefetchScheduleResult();
-    CreatePrefetchScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePrefetchScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreatePrefetchScheduleResult();
+    AWS_MEDIATAILOR_API CreatePrefetchScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreatePrefetchScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+     * <p>The ARN to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
+     * prefetched ads from the ad decision server. Each consumption configuration
+     * contains an end time and an optional start time that define the <i>consumption
+     * window</i>. Prefetch schedules automatically expire no earlier than seven days
+     * after the end time.</p>
      */
     inline const PrefetchConsumption& GetConsumption() const{ return m_consumption; }
 
     /**
-     * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
+     * prefetched ads from the ad decision server. Each consumption configuration
+     * contains an end time and an optional start time that define the <i>consumption
+     * window</i>. Prefetch schedules automatically expire no earlier than seven days
+     * after the end time.</p>
      */
     inline void SetConsumption(const PrefetchConsumption& value) { m_consumption = value; }
 
     /**
-     * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
+     * prefetched ads from the ad decision server. Each consumption configuration
+     * contains an end time and an optional start time that define the <i>consumption
+     * window</i>. Prefetch schedules automatically expire no earlier than seven days
+     * after the end time.</p>
      */
     inline void SetConsumption(PrefetchConsumption&& value) { m_consumption = std::move(value); }
 
     /**
-     * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
+     * prefetched ads from the ad decision server. Each consumption configuration
+     * contains an end time and an optional start time that define the <i>consumption
+     * window</i>. Prefetch schedules automatically expire no earlier than seven days
+     * after the end time.</p>
      */
     inline CreatePrefetchScheduleResult& WithConsumption(const PrefetchConsumption& value) { SetConsumption(value); return *this;}
 
     /**
-     * <p>Consumption settings determine how, and when, MediaTailor places the
-     * prefetched ads into ad breaks. Ad consumption occurs within a span of time that
-     * you define, called a <i>consumption window</i>. You can designate which ad
-     * breaks that MediaTailor fills with prefetch ads by setting avail matching
-     * criteria.</p>
+     * <p>The configuration settings for MediaTailor's <i>consumption</i> of the
+     * prefetched ads from the ad decision server. Each consumption configuration
+     * contains an end time and an optional start time that define the <i>consumption
+     * window</i>. Prefetch schedules automatically expire no earlier than seven days
+     * after the end time.</p>
      */
     inline CreatePrefetchScheduleResult& WithConsumption(PrefetchConsumption&& value) { SetConsumption(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the prefetch schedule. The name must be unique among all prefetch
-     * schedules that are associated with the specified playback configuration.</p>
+     * <p>The name to assign to the prefetch schedule.</p>
      */
     inline CreatePrefetchScheduleResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline const Aws::String& GetPlaybackConfigurationName() const{ return m_playbackConfigurationName; }
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationName(const Aws::String& value) { m_playbackConfigurationName = value; }
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationName(Aws::String&& value) { m_playbackConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline void SetPlaybackConfigurationName(const char* value) { m_playbackConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline CreatePrefetchScheduleResult& WithPlaybackConfigurationName(const Aws::String& value) { SetPlaybackConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline CreatePrefetchScheduleResult& WithPlaybackConfigurationName(Aws::String&& value) { SetPlaybackConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the playback configuration to create the prefetch schedule
-     * for.</p>
+     * <p>The name to assign to the playback configuration.</p>
      */
     inline CreatePrefetchScheduleResult& WithPlaybackConfigurationName(const char* value) { SetPlaybackConfigurationName(value); return *this;}
 
 
     /**
-     * <p>A complex type that contains settings for prefetch retrieval from the ad
-     * decision server (ADS).</p>
+     * <p>The configuration settings for retrieval of prefetched ads from the ad
+     * decision server. Only one set of prefetched ads will be retrieved and
+     * subsequently consumed for each ad break.</p>
      */
     inline const PrefetchRetrieval& GetRetrieval() const{ return m_retrieval; }
 
     /**
-     * <p>A complex type that contains settings for prefetch retrieval from the ad
-     * decision server (ADS).</p>
+     * <p>The configuration settings for retrieval of prefetched ads from the ad
+     * decision server. Only one set of prefetched ads will be retrieved and
+     * subsequently consumed for each ad break.</p>
      */
     inline void SetRetrieval(const PrefetchRetrieval& value) { m_retrieval = value; }
 
     /**
-     * <p>A complex type that contains settings for prefetch retrieval from the ad
-     * decision server (ADS).</p>
+     * <p>The configuration settings for retrieval of prefetched ads from the ad
+     * decision server. Only one set of prefetched ads will be retrieved and
+     * subsequently consumed for each ad break.</p>
      */
     inline void SetRetrieval(PrefetchRetrieval&& value) { m_retrieval = std::move(value); }
 
     /**
-     * <p>A complex type that contains settings for prefetch retrieval from the ad
-     * decision server (ADS).</p>
+     * <p>The configuration settings for retrieval of prefetched ads from the ad
+     * decision server. Only one set of prefetched ads will be retrieved and
+     * subsequently consumed for each ad break.</p>
      */
     inline CreatePrefetchScheduleResult& WithRetrieval(const PrefetchRetrieval& value) { SetRetrieval(value); return *this;}
 
     /**
-     * <p>A complex type that contains settings for prefetch retrieval from the ad
-     * decision server (ADS).</p>
+     * <p>The configuration settings for retrieval of prefetched ads from the ad
+     * decision server. Only one set of prefetched ads will be retrieved and
+     * subsequently consumed for each ad break.</p>
      */
     inline CreatePrefetchScheduleResult& WithRetrieval(PrefetchRetrieval&& value) { SetRetrieval(std::move(value)); return *this;}
 
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline void SetStreamId(const Aws::String& value) { m_streamId = value; }
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline void SetStreamId(Aws::String&& value) { m_streamId = std::move(value); }
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline void SetStreamId(const char* value) { m_streamId.assign(value); }
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline CreatePrefetchScheduleResult& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline CreatePrefetchScheduleResult& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional stream identifier that you can specify in order to prefetch for
-     * multiple streams that use the same playback configuration.</p>
+     * <p>An optional stream identifier that MediaTailor uses to prefetch ads for
+     * multiple streams that use the same playback configuration. If
+     * <code>StreamId</code> is specified, MediaTailor returns all of the prefetch
+     * schedules with an exact match on <code>StreamId</code>. If not specified,
+     * MediaTailor returns all of the prefetch schedules for the playback
+     * configuration, regardless of <code>StreamId</code>.</p>
      */
     inline CreatePrefetchScheduleResult& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 

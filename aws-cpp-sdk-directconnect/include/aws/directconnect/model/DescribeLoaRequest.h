@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API DescribeLoaRequest : public DirectConnectRequest
+  class DescribeLoaRequest : public DirectConnectRequest
   {
   public:
-    DescribeLoaRequest();
+    AWS_DIRECTCONNECT_API DescribeLoaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLoa"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     LoaContentType m_loaContentType;
-    bool m_loaContentTypeHasBeenSet;
+    bool m_loaContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

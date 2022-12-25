@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/LambdaOutputDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API LambdaOutputDescription
+  class LambdaOutputDescription
   {
   public:
-    LambdaOutputDescription();
-    LambdaOutputDescription(Aws::Utils::Json::JsonView jsonValue);
-    LambdaOutputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API LambdaOutputDescription();
+    AWS_KINESISANALYTICSV2_API LambdaOutputDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API LambdaOutputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

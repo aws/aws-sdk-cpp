@@ -41,15 +41,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API DBInstance
+  class DBInstance
   {
   public:
-    DBInstance();
-    DBInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBInstance();
+    AWS_NEPTUNE_API DBInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -2134,160 +2134,160 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_dBInstanceStatus;
-    bool m_dBInstanceStatusHasBeenSet;
+    bool m_dBInstanceStatusHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::Utils::DateTime m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroups;
-    bool m_dBSecurityGroupsHasBeenSet;
+    bool m_dBSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<DBParameterGroupStatus> m_dBParameterGroups;
-    bool m_dBParameterGroupsHasBeenSet;
+    bool m_dBParameterGroupsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     DBSubnetGroup m_dBSubnetGroup;
-    bool m_dBSubnetGroupHasBeenSet;
+    bool m_dBSubnetGroupHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     PendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_readReplicaSourceDBInstanceIdentifier;
-    bool m_readReplicaSourceDBInstanceIdentifierHasBeenSet;
+    bool m_readReplicaSourceDBInstanceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaDBInstanceIdentifiers;
-    bool m_readReplicaDBInstanceIdentifiersHasBeenSet;
+    bool m_readReplicaDBInstanceIdentifiersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaDBClusterIdentifiers;
-    bool m_readReplicaDBClusterIdentifiersHasBeenSet;
+    bool m_readReplicaDBClusterIdentifiersHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::Vector<OptionGroupMembership> m_optionGroupMemberships;
-    bool m_optionGroupMembershipsHasBeenSet;
+    bool m_optionGroupMembershipsHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_secondaryAvailabilityZone;
-    bool m_secondaryAvailabilityZoneHasBeenSet;
+    bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
     Aws::Vector<DBInstanceStatusInfo> m_statusInfos;
-    bool m_statusInfosHasBeenSet;
+    bool m_statusInfosHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     int m_dbInstancePort;
-    bool m_dbInstancePortHasBeenSet;
+    bool m_dbInstancePortHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     Aws::Vector<DomainMembership> m_domainMemberships;
-    bool m_domainMembershipsHasBeenSet;
+    bool m_domainMembershipsHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_enhancedMonitoringResourceArn;
-    bool m_enhancedMonitoringResourceArnHasBeenSet;
+    bool m_enhancedMonitoringResourceArnHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_dBInstanceArn;
-    bool m_dBInstanceArnHasBeenSet;
+    bool m_dBInstanceArnHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     bool m_performanceInsightsEnabled;
-    bool m_performanceInsightsEnabledHasBeenSet;
+    bool m_performanceInsightsEnabledHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-    bool m_enabledCloudwatchLogsExportsHasBeenSet;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

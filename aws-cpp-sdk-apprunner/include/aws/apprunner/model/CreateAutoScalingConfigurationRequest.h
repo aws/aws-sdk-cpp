@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API CreateAutoScalingConfigurationRequest : public AppRunnerRequest
+  class CreateAutoScalingConfigurationRequest : public AppRunnerRequest
   {
   public:
-    CreateAutoScalingConfigurationRequest();
+    AWS_APPRUNNER_API CreateAutoScalingConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAutoScalingConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingConfigurationName;
-    bool m_autoScalingConfigurationNameHasBeenSet;
+    bool m_autoScalingConfigurationNameHasBeenSet = false;
 
     int m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

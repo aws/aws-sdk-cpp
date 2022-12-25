@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsNetworkFirewallFirewallDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsNetworkFirewallFirewallDetails
+  class AwsNetworkFirewallFirewallDetails
   {
   public:
-    AwsNetworkFirewallFirewallDetails();
-    AwsNetworkFirewallFirewallDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsNetworkFirewallFirewallDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallDetails();
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -419,34 +419,34 @@ namespace Model
   private:
 
     bool m_deleteProtection;
-    bool m_deleteProtectionHasBeenSet;
+    bool m_deleteProtectionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallId;
-    bool m_firewallIdHasBeenSet;
+    bool m_firewallIdHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     bool m_firewallPolicyChangeProtection;
-    bool m_firewallPolicyChangeProtectionHasBeenSet;
+    bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
     bool m_subnetChangeProtection;
-    bool m_subnetChangeProtectionHasBeenSet;
+    bool m_subnetChangeProtectionHasBeenSet = false;
 
     Aws::Vector<AwsNetworkFirewallFirewallSubnetMappingsDetails> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

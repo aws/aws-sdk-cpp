@@ -23,7 +23,9 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_tagsHasBeenSet(false),
     m_autoStartConfigurationHasBeenSet(false),
     m_autoStopConfigurationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_architecture(Architecture::NOT_SET),
+    m_architectureHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,11 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
+  }
+
+  if(m_architectureHasBeenSet)
+  {
+   payload.WithString("architecture", ArchitectureMapper::GetNameForArchitecture(m_architecture));
   }
 
   return payload.View().WriteReadable();

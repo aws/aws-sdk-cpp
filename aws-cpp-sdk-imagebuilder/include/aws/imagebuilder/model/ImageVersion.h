@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ImageVersion
+  class ImageVersion
   {
   public:
-    ImageVersion();
-    ImageVersion(Aws::Utils::Json::JsonView jsonValue);
-    ImageVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ImageVersion();
+    AWS_IMAGEBUILDER_API ImageVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ImageVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -604,31 +604,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ImageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_osVersion;
-    bool m_osVersionHasBeenSet;
+    bool m_osVersionHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     BuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
   };
 
 } // namespace Model

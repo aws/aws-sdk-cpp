@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/panorama/model/ApplicationInstanceHealthStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/panorama/model/ApplicationInstanceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/panorama/model/ReportedRuntimeContextState.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ApplicationInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ApplicationInstance
+  class ApplicationInstance
   {
   public:
-    ApplicationInstance();
-    ApplicationInstance(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ApplicationInstance();
+    AWS_PANORAMA_API ApplicationInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ApplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -350,6 +352,47 @@ namespace Model
 
 
     /**
+     * <p>The application's state.</p>
+     */
+    inline const Aws::Vector<ReportedRuntimeContextState>& GetRuntimeContextStates() const{ return m_runtimeContextStates; }
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline bool RuntimeContextStatesHasBeenSet() const { return m_runtimeContextStatesHasBeenSet; }
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline void SetRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates = value; }
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline void SetRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates = std::move(value); }
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline ApplicationInstance& WithRuntimeContextStates(const Aws::Vector<ReportedRuntimeContextState>& value) { SetRuntimeContextStates(value); return *this;}
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline ApplicationInstance& WithRuntimeContextStates(Aws::Vector<ReportedRuntimeContextState>&& value) { SetRuntimeContextStates(std::move(value)); return *this;}
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline ApplicationInstance& AddRuntimeContextStates(const ReportedRuntimeContextState& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates.push_back(value); return *this; }
+
+    /**
+     * <p>The application's state.</p>
+     */
+    inline ApplicationInstance& AddRuntimeContextStates(ReportedRuntimeContextState&& value) { m_runtimeContextStatesHasBeenSet = true; m_runtimeContextStates.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The application instance's status.</p>
      */
     inline const ApplicationInstanceStatus& GetStatus() const{ return m_status; }
@@ -489,37 +532,40 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceId;
-    bool m_applicationInstanceIdHasBeenSet;
+    bool m_applicationInstanceIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDevice;
-    bool m_defaultRuntimeContextDeviceHasBeenSet;
+    bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDeviceName;
-    bool m_defaultRuntimeContextDeviceNameHasBeenSet;
+    bool m_defaultRuntimeContextDeviceNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ApplicationInstanceHealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::Vector<ReportedRuntimeContextState> m_runtimeContextStates;
+    bool m_runtimeContextStatesHasBeenSet = false;
 
     ApplicationInstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDescription;
-    bool m_statusDescriptionHasBeenSet;
+    bool m_statusDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

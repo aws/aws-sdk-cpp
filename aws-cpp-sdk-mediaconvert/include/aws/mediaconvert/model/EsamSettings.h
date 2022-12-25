@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EsamSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API EsamSettings
+  class EsamSettings
   {
   public:
-    EsamSettings();
-    EsamSettings(Aws::Utils::Json::JsonView jsonValue);
-    EsamSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API EsamSettings();
+    AWS_MEDIACONVERT_API EsamSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API EsamSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     EsamManifestConfirmConditionNotification m_manifestConfirmConditionNotification;
-    bool m_manifestConfirmConditionNotificationHasBeenSet;
+    bool m_manifestConfirmConditionNotificationHasBeenSet = false;
 
     int m_responseSignalPreroll;
-    bool m_responseSignalPrerollHasBeenSet;
+    bool m_responseSignalPrerollHasBeenSet = false;
 
     EsamSignalProcessingNotification m_signalProcessingNotification;
-    bool m_signalProcessingNotificationHasBeenSet;
+    bool m_signalProcessingNotificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OntapFileSystemConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OntapFileSystemConfiguration
+  class OntapFileSystemConfiguration
   {
   public:
-    OntapFileSystemConfiguration();
-    OntapFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OntapFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OntapFileSystemConfiguration();
+    AWS_FSX_API OntapFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OntapFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -432,34 +432,34 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OntapDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_endpointIpAddressRange;
-    bool m_endpointIpAddressRangeHasBeenSet;
+    bool m_endpointIpAddressRangeHasBeenSet = false;
 
     FileSystemEndpoints m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     Aws::String m_preferredSubnetId;
-    bool m_preferredSubnetIdHasBeenSet;
+    bool m_preferredSubnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_routeTableIds;
-    bool m_routeTableIdsHasBeenSet;
+    bool m_routeTableIdsHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

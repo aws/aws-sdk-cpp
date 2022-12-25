@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API StepDetail
+  class StepDetail
   {
   public:
-    StepDetail();
-    StepDetail(Aws::Utils::Json::JsonView jsonValue);
-    StepDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API StepDetail();
+    AWS_EMR_API StepDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API StepDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     StepConfig m_stepConfig;
-    bool m_stepConfigHasBeenSet;
+    bool m_stepConfigHasBeenSet = false;
 
     StepExecutionStatusDetail m_executionStatusDetail;
-    bool m_executionStatusDetailHasBeenSet;
+    bool m_executionStatusDetailHasBeenSet = false;
   };
 
 } // namespace Model

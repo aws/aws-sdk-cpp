@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API ClusterMetadata
+  class ClusterMetadata
   {
   public:
-    ClusterMetadata();
-    ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API ClusterMetadata();
+    AWS_SNOWBALL_API ClusterMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API ClusterMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -717,49 +717,49 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyARN;
-    bool m_kmsKeyARNHasBeenSet;
+    bool m_kmsKeyARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     ClusterState m_clusterState;
-    bool m_clusterStateHasBeenSet;
+    bool m_clusterStateHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     JobResource m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_addressId;
-    bool m_addressIdHasBeenSet;
+    bool m_addressIdHasBeenSet = false;
 
     ShippingOption m_shippingOption;
-    bool m_shippingOptionHasBeenSet;
+    bool m_shippingOptionHasBeenSet = false;
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Aws::String m_forwardingAddressId;
-    bool m_forwardingAddressIdHasBeenSet;
+    bool m_forwardingAddressIdHasBeenSet = false;
 
     TaxDocuments m_taxDocuments;
-    bool m_taxDocumentsHasBeenSet;
+    bool m_taxDocumentsHasBeenSet = false;
 
     OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
-    bool m_onDeviceServiceConfigurationHasBeenSet;
+    bool m_onDeviceServiceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

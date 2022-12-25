@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDDIRECTORY_API PublishSchemaRequest : public CloudDirectoryRequest
+  class PublishSchemaRequest : public CloudDirectoryRequest
   {
   public:
-    PublishSchemaRequest();
+    AWS_CLOUDDIRECTORY_API PublishSchemaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PublishSchema"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDDIRECTORY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_developmentSchemaArn;
-    bool m_developmentSchemaArnHasBeenSet;
+    bool m_developmentSchemaArnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

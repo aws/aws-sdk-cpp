@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResourceServerScopeType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType
+  class ResourceServerScopeType
   {
   public:
-    ResourceServerScopeType();
-    ResourceServerScopeType(Aws::Utils::Json::JsonView jsonValue);
-    ResourceServerScopeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType();
+    AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API ResourceServerScopeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_scopeName;
-    bool m_scopeNameHasBeenSet;
+    bool m_scopeNameHasBeenSet = false;
 
     Aws::String m_scopeDescription;
-    bool m_scopeDescriptionHasBeenSet;
+    bool m_scopeDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

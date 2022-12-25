@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API UpdateApplicationRequest : public AppStreamRequest
+  class UpdateApplicationRequest : public AppStreamRequest
   {
   public:
-    UpdateApplicationRequest();
+    AWS_APPSTREAM_API UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -414,31 +414,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     S3Location m_iconS3Location;
-    bool m_iconS3LocationHasBeenSet;
+    bool m_iconS3LocationHasBeenSet = false;
 
     Aws::String m_launchPath;
-    bool m_launchPathHasBeenSet;
+    bool m_launchPathHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     Aws::String m_launchParameters;
-    bool m_launchParametersHasBeenSet;
+    bool m_launchParametersHasBeenSet = false;
 
     Aws::String m_appBlockArn;
-    bool m_appBlockArnHasBeenSet;
+    bool m_appBlockArnHasBeenSet = false;
 
     Aws::Vector<ApplicationAttribute> m_attributesToDelete;
-    bool m_attributesToDeleteHasBeenSet;
+    bool m_attributesToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

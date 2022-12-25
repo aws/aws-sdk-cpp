@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMEV2_API RecognizeTextRequest : public LexRuntimeV2Request
+  class RecognizeTextRequest : public LexRuntimeV2Request
   {
   public:
-    RecognizeTextRequest();
+    AWS_LEXRUNTIMEV2_API RecognizeTextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RecognizeText"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXRUNTIMEV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -377,25 +377,25 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     SessionState m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
   };
 
 } // namespace Model

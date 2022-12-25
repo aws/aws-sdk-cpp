@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourcesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API DescribeStackResourcesRequest : public CloudFormationRequest
+  class DescribeStackResourcesRequest : public CloudFormationRequest
   {
   public:
-    DescribeStackResourcesRequest();
+    AWS_CLOUDFORMATION_API DescribeStackResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeStackResources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -269,13 +269,13 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

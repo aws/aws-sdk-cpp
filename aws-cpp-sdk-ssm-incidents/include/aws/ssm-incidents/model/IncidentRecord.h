@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/IncidentRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API IncidentRecord
+  class IncidentRecord
   {
   public:
-    IncidentRecord();
-    IncidentRecord(Aws::Utils::Json::JsonView jsonValue);
-    IncidentRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API IncidentRecord();
+    AWS_SSMINCIDENTS_API IncidentRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API IncidentRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -579,46 +579,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<AutomationExecution> m_automationExecutions;
-    bool m_automationExecutionsHasBeenSet;
+    bool m_automationExecutionsHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_dedupeString;
-    bool m_dedupeStringHasBeenSet;
+    bool m_dedupeStringHasBeenSet = false;
 
     int m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     IncidentRecordSource m_incidentRecordSource;
-    bool m_incidentRecordSourceHasBeenSet;
+    bool m_incidentRecordSourceHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<NotificationTargetItem> m_notificationTargets;
-    bool m_notificationTargetsHasBeenSet;
+    bool m_notificationTargetsHasBeenSet = false;
 
     Aws::Utils::DateTime m_resolvedTime;
-    bool m_resolvedTimeHasBeenSet;
+    bool m_resolvedTimeHasBeenSet = false;
 
     IncidentRecordStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

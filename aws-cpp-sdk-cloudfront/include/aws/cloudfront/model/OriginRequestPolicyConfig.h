@@ -36,21 +36,21 @@ namespace Model
    * HTTP headers, cookies, and URL query strings that are specified in the cache
    * policy or the origin request policy. These can include items from the viewer
    * request and, in the case of headers, additional ones that are added by
-   * CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can’t find an
+   * CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can't find an
    * object in its cache that matches the request. If you want to send values to the
    * origin and also include them in the cache key, use
    * <code>CachePolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginRequestPolicyConfig
+  class OriginRequestPolicyConfig
   {
   public:
-    OriginRequestPolicyConfig();
-    OriginRequestPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginRequestPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicyConfig();
+    AWS_CLOUDFRONT_API OriginRequestPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OriginRequestPolicyHeadersConfig m_headersConfig;
-    bool m_headersConfigHasBeenSet;
+    bool m_headersConfigHasBeenSet = false;
 
     OriginRequestPolicyCookiesConfig m_cookiesConfig;
-    bool m_cookiesConfigHasBeenSet;
+    bool m_cookiesConfigHasBeenSet = false;
 
     OriginRequestPolicyQueryStringsConfig m_queryStringsConfig;
-    bool m_queryStringsConfigHasBeenSet;
+    bool m_queryStringsConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SummarizedCounter">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API SummarizedCounter
+  class SummarizedCounter
   {
   public:
-    SummarizedCounter();
-    SummarizedCounter(Aws::Utils::Json::JsonView jsonValue);
-    SummarizedCounter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API SummarizedCounter();
+    AWS_SHIELD_API SummarizedCounter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API SummarizedCounter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,22 +205,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     double m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     int m_n;
-    bool m_nHasBeenSet;
+    bool m_nHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

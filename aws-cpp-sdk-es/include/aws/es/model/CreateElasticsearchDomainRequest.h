@@ -33,10 +33,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICSEARCHSERVICE_API CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest
+  class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest
   {
   public:
-    CreateElasticsearchDomainRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreateElasticsearchDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateElasticsearchDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -824,52 +824,52 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_elasticsearchVersion;
-    bool m_elasticsearchVersionHasBeenSet;
+    bool m_elasticsearchVersionHasBeenSet = false;
 
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
-    bool m_elasticsearchClusterConfigHasBeenSet;
+    bool m_elasticsearchClusterConfigHasBeenSet = false;
 
     EBSOptions m_eBSOptions;
-    bool m_eBSOptionsHasBeenSet;
+    bool m_eBSOptionsHasBeenSet = false;
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
-    bool m_snapshotOptionsHasBeenSet;
+    bool m_snapshotOptionsHasBeenSet = false;
 
     VPCOptions m_vPCOptions;
-    bool m_vPCOptionsHasBeenSet;
+    bool m_vPCOptionsHasBeenSet = false;
 
     CognitoOptions m_cognitoOptions;
-    bool m_cognitoOptionsHasBeenSet;
+    bool m_cognitoOptionsHasBeenSet = false;
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-    bool m_advancedOptionsHasBeenSet;
+    bool m_advancedOptionsHasBeenSet = false;
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     DomainEndpointOptions m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
-    bool m_advancedSecurityOptionsHasBeenSet;
+    bool m_advancedSecurityOptionsHasBeenSet = false;
 
     AutoTuneOptionsInput m_autoTuneOptions;
-    bool m_autoTuneOptionsHasBeenSet;
+    bool m_autoTuneOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

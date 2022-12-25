@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DataIntegrationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API DataIntegrationSummary
+  class DataIntegrationSummary
   {
   public:
-    DataIntegrationSummary();
-    DataIntegrationSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataIntegrationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationSummary();
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sourceURI;
-    bool m_sourceURIHasBeenSet;
+    bool m_sourceURIHasBeenSet = false;
   };
 
 } // namespace Model

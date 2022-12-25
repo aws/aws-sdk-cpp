@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/QueryStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API QueryStatistics
+  class QueryStatistics
   {
   public:
-    QueryStatistics();
-    QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
-    QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API QueryStatistics();
+    AWS_CLOUDWATCHLOGS_API QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,13 +102,13 @@ namespace Model
   private:
 
     double m_recordsMatched;
-    bool m_recordsMatchedHasBeenSet;
+    bool m_recordsMatchedHasBeenSet = false;
 
     double m_recordsScanned;
-    bool m_recordsScannedHasBeenSet;
+    bool m_recordsScannedHasBeenSet = false;
 
     double m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
   };
 
 } // namespace Model

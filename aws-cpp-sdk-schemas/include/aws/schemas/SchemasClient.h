@@ -5,236 +5,73 @@
 
 #pragma once
 #include <aws/schemas/Schemas_EXPORTS.h>
-#include <aws/schemas/SchemasErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/schemas/model/CreateDiscovererResult.h>
-#include <aws/schemas/model/CreateRegistryResult.h>
-#include <aws/schemas/model/CreateSchemaResult.h>
-#include <aws/schemas/model/DescribeCodeBindingResult.h>
-#include <aws/schemas/model/DescribeDiscovererResult.h>
-#include <aws/schemas/model/DescribeRegistryResult.h>
-#include <aws/schemas/model/DescribeSchemaResult.h>
-#include <aws/schemas/model/ExportSchemaResult.h>
-#include <aws/schemas/model/GetCodeBindingSourceResult.h>
-#include <aws/schemas/model/GetDiscoveredSchemaResult.h>
-#include <aws/schemas/model/GetResourcePolicyResult.h>
-#include <aws/schemas/model/ListDiscoverersResult.h>
-#include <aws/schemas/model/ListRegistriesResult.h>
-#include <aws/schemas/model/ListSchemaVersionsResult.h>
-#include <aws/schemas/model/ListSchemasResult.h>
-#include <aws/schemas/model/ListTagsForResourceResult.h>
-#include <aws/schemas/model/PutCodeBindingResult.h>
-#include <aws/schemas/model/PutResourcePolicyResult.h>
-#include <aws/schemas/model/SearchSchemasResult.h>
-#include <aws/schemas/model/StartDiscovererResult.h>
-#include <aws/schemas/model/StopDiscovererResult.h>
-#include <aws/schemas/model/UpdateDiscovererResult.h>
-#include <aws/schemas/model/UpdateRegistryResult.h>
-#include <aws/schemas/model/UpdateSchemaResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/schemas/SchemasServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Schemas
 {
-
-namespace Model
-{
-        class CreateDiscovererRequest;
-        class CreateRegistryRequest;
-        class CreateSchemaRequest;
-        class DeleteDiscovererRequest;
-        class DeleteRegistryRequest;
-        class DeleteResourcePolicyRequest;
-        class DeleteSchemaRequest;
-        class DeleteSchemaVersionRequest;
-        class DescribeCodeBindingRequest;
-        class DescribeDiscovererRequest;
-        class DescribeRegistryRequest;
-        class DescribeSchemaRequest;
-        class ExportSchemaRequest;
-        class GetCodeBindingSourceRequest;
-        class GetDiscoveredSchemaRequest;
-        class GetResourcePolicyRequest;
-        class ListDiscoverersRequest;
-        class ListRegistriesRequest;
-        class ListSchemaVersionsRequest;
-        class ListSchemasRequest;
-        class ListTagsForResourceRequest;
-        class PutCodeBindingRequest;
-        class PutResourcePolicyRequest;
-        class SearchSchemasRequest;
-        class StartDiscovererRequest;
-        class StopDiscovererRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDiscovererRequest;
-        class UpdateRegistryRequest;
-        class UpdateSchemaRequest;
-
-        typedef Aws::Utils::Outcome<CreateDiscovererResult, SchemasError> CreateDiscovererOutcome;
-        typedef Aws::Utils::Outcome<CreateRegistryResult, SchemasError> CreateRegistryOutcome;
-        typedef Aws::Utils::Outcome<CreateSchemaResult, SchemasError> CreateSchemaOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> DeleteDiscovererOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> DeleteRegistryOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> DeleteResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> DeleteSchemaOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> DeleteSchemaVersionOutcome;
-        typedef Aws::Utils::Outcome<DescribeCodeBindingResult, SchemasError> DescribeCodeBindingOutcome;
-        typedef Aws::Utils::Outcome<DescribeDiscovererResult, SchemasError> DescribeDiscovererOutcome;
-        typedef Aws::Utils::Outcome<DescribeRegistryResult, SchemasError> DescribeRegistryOutcome;
-        typedef Aws::Utils::Outcome<DescribeSchemaResult, SchemasError> DescribeSchemaOutcome;
-        typedef Aws::Utils::Outcome<ExportSchemaResult, SchemasError> ExportSchemaOutcome;
-        typedef Aws::Utils::Outcome<GetCodeBindingSourceResult, SchemasError> GetCodeBindingSourceOutcome;
-        typedef Aws::Utils::Outcome<GetDiscoveredSchemaResult, SchemasError> GetDiscoveredSchemaOutcome;
-        typedef Aws::Utils::Outcome<GetResourcePolicyResult, SchemasError> GetResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<ListDiscoverersResult, SchemasError> ListDiscoverersOutcome;
-        typedef Aws::Utils::Outcome<ListRegistriesResult, SchemasError> ListRegistriesOutcome;
-        typedef Aws::Utils::Outcome<ListSchemaVersionsResult, SchemasError> ListSchemaVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListSchemasResult, SchemasError> ListSchemasOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SchemasError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutCodeBindingResult, SchemasError> PutCodeBindingOutcome;
-        typedef Aws::Utils::Outcome<PutResourcePolicyResult, SchemasError> PutResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<SearchSchemasResult, SchemasError> SearchSchemasOutcome;
-        typedef Aws::Utils::Outcome<StartDiscovererResult, SchemasError> StartDiscovererOutcome;
-        typedef Aws::Utils::Outcome<StopDiscovererResult, SchemasError> StopDiscovererOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SchemasError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDiscovererResult, SchemasError> UpdateDiscovererOutcome;
-        typedef Aws::Utils::Outcome<UpdateRegistryResult, SchemasError> UpdateRegistryOutcome;
-        typedef Aws::Utils::Outcome<UpdateSchemaResult, SchemasError> UpdateSchemaOutcome;
-
-        typedef std::future<CreateDiscovererOutcome> CreateDiscovererOutcomeCallable;
-        typedef std::future<CreateRegistryOutcome> CreateRegistryOutcomeCallable;
-        typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
-        typedef std::future<DeleteDiscovererOutcome> DeleteDiscovererOutcomeCallable;
-        typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
-        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
-        typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
-        typedef std::future<DeleteSchemaVersionOutcome> DeleteSchemaVersionOutcomeCallable;
-        typedef std::future<DescribeCodeBindingOutcome> DescribeCodeBindingOutcomeCallable;
-        typedef std::future<DescribeDiscovererOutcome> DescribeDiscovererOutcomeCallable;
-        typedef std::future<DescribeRegistryOutcome> DescribeRegistryOutcomeCallable;
-        typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
-        typedef std::future<ExportSchemaOutcome> ExportSchemaOutcomeCallable;
-        typedef std::future<GetCodeBindingSourceOutcome> GetCodeBindingSourceOutcomeCallable;
-        typedef std::future<GetDiscoveredSchemaOutcome> GetDiscoveredSchemaOutcomeCallable;
-        typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
-        typedef std::future<ListDiscoverersOutcome> ListDiscoverersOutcomeCallable;
-        typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
-        typedef std::future<ListSchemaVersionsOutcome> ListSchemaVersionsOutcomeCallable;
-        typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutCodeBindingOutcome> PutCodeBindingOutcomeCallable;
-        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
-        typedef std::future<SearchSchemasOutcome> SearchSchemasOutcomeCallable;
-        typedef std::future<StartDiscovererOutcome> StartDiscovererOutcomeCallable;
-        typedef std::future<StopDiscovererOutcome> StopDiscovererOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDiscovererOutcome> UpdateDiscovererOutcomeCallable;
-        typedef std::future<UpdateRegistryOutcome> UpdateRegistryOutcomeCallable;
-        typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
-} // namespace Model
-
-  class SchemasClient;
-
-    typedef std::function<void(const SchemasClient*, const Model::CreateDiscovererRequest&, const Model::CreateDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::CreateRegistryRequest&, const Model::CreateRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegistryResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DeleteDiscovererRequest&, const Model::DeleteDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DeleteRegistryRequest&, const Model::DeleteRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegistryResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DeleteSchemaVersionRequest&, const Model::DeleteSchemaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaVersionResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DescribeCodeBindingRequest&, const Model::DescribeCodeBindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeBindingResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DescribeDiscovererRequest&, const Model::DescribeDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DescribeRegistryRequest&, const Model::DescribeRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegistryResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ExportSchemaRequest&, const Model::ExportSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportSchemaResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::GetCodeBindingSourceRequest&, Model::GetCodeBindingSourceOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCodeBindingSourceResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::GetDiscoveredSchemaRequest&, const Model::GetDiscoveredSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredSchemaResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ListDiscoverersRequest&, const Model::ListDiscoverersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoverersResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ListRegistriesRequest&, const Model::ListRegistriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegistriesResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ListSchemaVersionsRequest&, const Model::ListSchemaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemaVersionsResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::PutCodeBindingRequest&, const Model::PutCodeBindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCodeBindingResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::SearchSchemasRequest&, const Model::SearchSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSchemasResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::StartDiscovererRequest&, const Model::StartDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::StopDiscovererRequest&, const Model::StopDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::UpdateDiscovererRequest&, const Model::UpdateDiscovererOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDiscovererResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::UpdateRegistryRequest&, const Model::UpdateRegistryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegistryResponseReceivedHandler;
-    typedef std::function<void(const SchemasClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
-
   /**
    * <p>Amazon EventBridge Schema Registry</p>
    */
-  class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient
+  class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SchemasClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SchemasClient(const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration(),
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SchemasClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SchemasClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SchemasClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SchemasClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SchemasClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SchemasClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SchemasClient();
-
 
         /**
          * <p>Creates a discoverer.</p><p><h3>See Also:</h3>   <a
@@ -769,43 +606,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SchemasEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDiscovererAsyncHelper(const Model::CreateDiscovererRequest& request, const CreateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRegistryAsyncHelper(const Model::CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDiscovererAsyncHelper(const Model::DeleteDiscovererRequest& request, const DeleteDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRegistryAsyncHelper(const Model::DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSchemaVersionAsyncHelper(const Model::DeleteSchemaVersionRequest& request, const DeleteSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCodeBindingAsyncHelper(const Model::DescribeCodeBindingRequest& request, const DescribeCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDiscovererAsyncHelper(const Model::DescribeDiscovererRequest& request, const DescribeDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRegistryAsyncHelper(const Model::DescribeRegistryRequest& request, const DescribeRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSchemaAsyncHelper(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExportSchemaAsyncHelper(const Model::ExportSchemaRequest& request, const ExportSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCodeBindingSourceAsyncHelper(const Model::GetCodeBindingSourceRequest& request, const GetCodeBindingSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDiscoveredSchemaAsyncHelper(const Model::GetDiscoveredSchemaRequest& request, const GetDiscoveredSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDiscoverersAsyncHelper(const Model::ListDiscoverersRequest& request, const ListDiscoverersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRegistriesAsyncHelper(const Model::ListRegistriesRequest& request, const ListRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSchemaVersionsAsyncHelper(const Model::ListSchemaVersionsRequest& request, const ListSchemaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutCodeBindingAsyncHelper(const Model::PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchSchemasAsyncHelper(const Model::SearchSchemasRequest& request, const SearchSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDiscovererAsyncHelper(const Model::StartDiscovererRequest& request, const StartDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopDiscovererAsyncHelper(const Model::StopDiscovererRequest& request, const StopDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDiscovererAsyncHelper(const Model::UpdateDiscovererRequest& request, const UpdateDiscovererResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRegistryAsyncHelper(const Model::UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSchemaAsyncHelper(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>;
+      void init(const SchemasClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SchemasClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SchemasEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Schemas

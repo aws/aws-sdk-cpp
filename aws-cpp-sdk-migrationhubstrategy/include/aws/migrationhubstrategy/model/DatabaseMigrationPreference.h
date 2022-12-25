@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/DatabaseMigrationPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference
+  class DatabaseMigrationPreference
   {
   public:
-    DatabaseMigrationPreference();
-    DatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Heterogeneous m_heterogeneous;
-    bool m_heterogeneousHasBeenSet;
+    bool m_heterogeneousHasBeenSet = false;
 
     Homogeneous m_homogeneous;
-    bool m_homogeneousHasBeenSet;
+    bool m_homogeneousHasBeenSet = false;
 
     NoDatabaseMigrationPreference m_noPreference;
-    bool m_noPreferenceHasBeenSet;
+    bool m_noPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

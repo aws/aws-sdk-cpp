@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ProxyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ProxyConfiguration
+  class ProxyConfiguration
   {
   public:
-    ProxyConfiguration();
-    ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ProxyConfiguration();
+    AWS_KENDRA_API ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
   };
 
 } // namespace Model

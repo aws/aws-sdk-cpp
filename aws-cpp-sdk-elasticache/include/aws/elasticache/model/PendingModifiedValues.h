@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API PendingModifiedValues
+  class PendingModifiedValues
   {
   public:
-    PendingModifiedValues();
-    PendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API PendingModifiedValues();
+    AWS_ELASTICACHE_API PendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API PendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     int m_numCacheNodes;
-    bool m_numCacheNodesHasBeenSet;
+    bool m_numCacheNodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
-    bool m_cacheNodeIdsToRemoveHasBeenSet;
+    bool m_cacheNodeIdsToRemoveHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     AuthTokenUpdateStatus m_authTokenStatus;
-    bool m_authTokenStatusHasBeenSet;
+    bool m_authTokenStatusHasBeenSet = false;
 
     Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

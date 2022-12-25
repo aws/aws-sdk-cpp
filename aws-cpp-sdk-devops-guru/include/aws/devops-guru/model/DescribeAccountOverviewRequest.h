@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API DescribeAccountOverviewRequest : public DevOpsGuruRequest
+  class DescribeAccountOverviewRequest : public DevOpsGuruRequest
   {
   public:
-    DescribeAccountOverviewRequest();
+    AWS_DEVOPSGURU_API DescribeAccountOverviewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAccountOverview"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_fromTime;
-    bool m_fromTimeHasBeenSet;
+    bool m_fromTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_toTime;
-    bool m_toTimeHasBeenSet;
+    bool m_toTimeHasBeenSet = false;
   };
 
 } // namespace Model

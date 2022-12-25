@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationKubernetesConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API OrganizationKubernetesConfiguration
+  class OrganizationKubernetesConfiguration
   {
   public:
-    OrganizationKubernetesConfiguration();
-    OrganizationKubernetesConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationKubernetesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API OrganizationKubernetesConfiguration();
+    AWS_GUARDDUTY_API OrganizationKubernetesConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API OrganizationKubernetesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OrganizationKubernetesAuditLogsConfiguration m_auditLogs;
-    bool m_auditLogsHasBeenSet;
+    bool m_auditLogsHasBeenSet = false;
   };
 
 } // namespace Model

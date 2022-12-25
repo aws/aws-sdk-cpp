@@ -21,8 +21,13 @@ namespace Model
 Finding::Finding() : 
     m_awsAccountIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_exploitAvailable(ExploitAvailable::NOT_SET),
+    m_exploitAvailableHasBeenSet(false),
+    m_exploitabilityDetailsHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailable(FixAvailable::NOT_SET),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScore(0.0),
     m_inspectorScoreHasBeenSet(false),
     m_inspectorScoreDetailsHasBeenSet(false),
@@ -45,8 +50,13 @@ Finding::Finding() :
 Finding::Finding(JsonView jsonValue) : 
     m_awsAccountIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_exploitAvailable(ExploitAvailable::NOT_SET),
+    m_exploitAvailableHasBeenSet(false),
+    m_exploitabilityDetailsHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailable(FixAvailable::NOT_SET),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScore(0.0),
     m_inspectorScoreHasBeenSet(false),
     m_inspectorScoreDetailsHasBeenSet(false),
@@ -83,6 +93,20 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exploitAvailable"))
+  {
+    m_exploitAvailable = ExploitAvailableMapper::GetExploitAvailableForName(jsonValue.GetString("exploitAvailable"));
+
+    m_exploitAvailableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exploitabilityDetails"))
+  {
+    m_exploitabilityDetails = jsonValue.GetObject("exploitabilityDetails");
+
+    m_exploitabilityDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
@@ -95,6 +119,13 @@ Finding& Finding::operator =(JsonView jsonValue)
     m_firstObservedAt = jsonValue.GetDouble("firstObservedAt");
 
     m_firstObservedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fixAvailable"))
+  {
+    m_fixAvailable = FixAvailableMapper::GetFixAvailableForName(jsonValue.GetString("fixAvailable"));
+
+    m_fixAvailableHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inspectorScore"))
@@ -141,7 +172,7 @@ Finding& Finding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -203,6 +234,17 @@ JsonValue Finding::Jsonize() const
 
   }
 
+  if(m_exploitAvailableHasBeenSet)
+  {
+   payload.WithString("exploitAvailable", ExploitAvailableMapper::GetNameForExploitAvailable(m_exploitAvailable));
+  }
+
+  if(m_exploitabilityDetailsHasBeenSet)
+  {
+   payload.WithObject("exploitabilityDetails", m_exploitabilityDetails.Jsonize());
+
+  }
+
   if(m_findingArnHasBeenSet)
   {
    payload.WithString("findingArn", m_findingArn);
@@ -212,6 +254,11 @@ JsonValue Finding::Jsonize() const
   if(m_firstObservedAtHasBeenSet)
   {
    payload.WithDouble("firstObservedAt", m_firstObservedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_fixAvailableHasBeenSet)
+  {
+   payload.WithString("fixAvailable", FixAvailableMapper::GetNameForFixAvailable(m_fixAvailable));
   }
 
   if(m_inspectorScoreHasBeenSet)
@@ -251,7 +298,7 @@ JsonValue Finding::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceRetentionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AppInstanceRetentionSettings
+  class AppInstanceRetentionSettings
   {
   public:
-    AppInstanceRetentionSettings();
-    AppInstanceRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AppInstanceRetentionSettings();
+    AWS_CHIME_API AppInstanceRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AppInstanceRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ChannelRetentionSettings m_channelRetentionSettings;
-    bool m_channelRetentionSettingsHasBeenSet;
+    bool m_channelRetentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

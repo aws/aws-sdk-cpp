@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AllRowsWildcard">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API AllRowsWildcard
+  class AllRowsWildcard
   {
   public:
-    AllRowsWildcard();
-    AllRowsWildcard(Aws::Utils::Json::JsonView jsonValue);
-    AllRowsWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API AllRowsWildcard();
+    AWS_LAKEFORMATION_API AllRowsWildcard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API AllRowsWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

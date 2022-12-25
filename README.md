@@ -4,9 +4,9 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.9 is now Available!
+## Version 1.10 is now Available!
 
-This release introduces a new Amazon S3 client, providing high throughput for Amazon S3 GET and PUT operations. The all new S3 Client is implemented on the top of the AWS Common Runtime (CRT) libraries, and is aptly named the "S3 CRT client". Lastly, there are also configuration updates related to Endpoint Discovery.
+This release introduces a new endpoint resolution based on client configuration and request input parameters.
 
 All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
 * New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
@@ -101,7 +101,7 @@ To build for Docker, ensure your container meets the [minimum requirements](#min
 
 
 ### Building and running an app on EC2
-Checkout this walkthrough on how to set up an enviroment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
+Checkout this walk through on how to set up an environment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
 
 # Issues and Contributions
 We welcome all kinds of contributions, check [this guideline](./CONTRIBUTING.md) to learn how you can contribute or report issues.

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingTypeDefinition
+  class ThingTypeDefinition
   {
   public:
-    ThingTypeDefinition();
-    ThingTypeDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ThingTypeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingTypeDefinition();
+    AWS_IOT_API ThingTypeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingTypeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::String m_thingTypeArn;
-    bool m_thingTypeArnHasBeenSet;
+    bool m_thingTypeArnHasBeenSet = false;
 
     ThingTypeProperties m_thingTypeProperties;
-    bool m_thingTypePropertiesHasBeenSet;
+    bool m_thingTypePropertiesHasBeenSet = false;
 
     ThingTypeMetadata m_thingTypeMetadata;
-    bool m_thingTypeMetadataHasBeenSet;
+    bool m_thingTypeMetadataHasBeenSet = false;
   };
 
 } // namespace Model

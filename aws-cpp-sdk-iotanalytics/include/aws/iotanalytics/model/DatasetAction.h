@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetAction
+  class DatasetAction
   {
   public:
-    DatasetAction();
-    DatasetAction(Aws::Utils::Json::JsonView jsonValue);
-    DatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetAction();
+    AWS_IOTANALYTICS_API DatasetAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     SqlQueryDatasetAction m_queryAction;
-    bool m_queryActionHasBeenSet;
+    bool m_queryActionHasBeenSet = false;
 
     ContainerDatasetAction m_containerAction;
-    bool m_containerActionHasBeenSet;
+    bool m_containerActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/VaultAccessPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API VaultAccessPolicy
+  class VaultAccessPolicy
   {
   public:
-    VaultAccessPolicy();
-    VaultAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
-    VaultAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API VaultAccessPolicy();
+    AWS_GLACIER_API VaultAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API VaultAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

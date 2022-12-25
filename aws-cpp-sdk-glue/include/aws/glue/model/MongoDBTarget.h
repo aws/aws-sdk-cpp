@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MongoDBTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MongoDBTarget
+  class MongoDBTarget
   {
   public:
-    MongoDBTarget();
-    MongoDBTarget(Aws::Utils::Json::JsonView jsonValue);
-    MongoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MongoDBTarget();
+    AWS_GLUE_API MongoDBTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MongoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     bool m_scanAll;
-    bool m_scanAllHasBeenSet;
+    bool m_scanAllHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UserData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API UserData
+  class UserData
   {
   public:
-    UserData();
-    UserData(Aws::Utils::Json::JsonView jsonValue);
-    UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API UserData();
+    AWS_ALEXAFORBUSINESS_API UserData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     EnrollmentStatus m_enrollmentStatus;
-    bool m_enrollmentStatusHasBeenSet;
+    bool m_enrollmentStatusHasBeenSet = false;
 
     Aws::String m_enrollmentId;
-    bool m_enrollmentIdHasBeenSet;
+    bool m_enrollmentIdHasBeenSet = false;
   };
 
 } // namespace Model

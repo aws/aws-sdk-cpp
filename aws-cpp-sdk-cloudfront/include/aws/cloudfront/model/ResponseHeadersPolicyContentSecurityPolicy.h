@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyContentSecurityPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy
+  class ResponseHeadersPolicyContentSecurityPolicy
   {
   public:
-    ResponseHeadersPolicyContentSecurityPolicy();
-    ResponseHeadersPolicyContentSecurityPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyContentSecurityPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     Aws::String m_contentSecurityPolicy;
-    bool m_contentSecurityPolicyHasBeenSet;
+    bool m_contentSecurityPolicyHasBeenSet = false;
   };
 
 } // namespace Model

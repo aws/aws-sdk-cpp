@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/LambdaFunction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API LambdaFunction
+  class LambdaFunction
   {
   public:
-    LambdaFunction();
-    LambdaFunction(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API LambdaFunction();
+    AWS_IOTTWINMAKER_API LambdaFunction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API LambdaFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

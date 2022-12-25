@@ -22,7 +22,9 @@ OfflineStoreConfig::OfflineStoreConfig() :
     m_s3StorageConfigHasBeenSet(false),
     m_disableGlueTableCreation(false),
     m_disableGlueTableCreationHasBeenSet(false),
-    m_dataCatalogConfigHasBeenSet(false)
+    m_dataCatalogConfigHasBeenSet(false),
+    m_tableFormat(TableFormat::NOT_SET),
+    m_tableFormatHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ OfflineStoreConfig::OfflineStoreConfig(JsonView jsonValue) :
     m_s3StorageConfigHasBeenSet(false),
     m_disableGlueTableCreation(false),
     m_disableGlueTableCreationHasBeenSet(false),
-    m_dataCatalogConfigHasBeenSet(false)
+    m_dataCatalogConfigHasBeenSet(false),
+    m_tableFormat(TableFormat::NOT_SET),
+    m_tableFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ OfflineStoreConfig& OfflineStoreConfig::operator =(JsonView jsonValue)
     m_dataCatalogConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableFormat"))
+  {
+    m_tableFormat = TableFormatMapper::GetTableFormatForName(jsonValue.GetString("TableFormat"));
+
+    m_tableFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,11 @@ JsonValue OfflineStoreConfig::Jsonize() const
   {
    payload.WithObject("DataCatalogConfig", m_dataCatalogConfig.Jsonize());
 
+  }
+
+  if(m_tableFormatHasBeenSet)
+  {
+   payload.WithString("TableFormat", TableFormatMapper::GetNameForTableFormat(m_tableFormat));
   }
 
   return payload;

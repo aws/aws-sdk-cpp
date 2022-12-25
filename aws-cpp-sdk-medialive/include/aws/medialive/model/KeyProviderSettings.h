@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/KeyProviderSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API KeyProviderSettings
+  class KeyProviderSettings
   {
   public:
-    KeyProviderSettings();
-    KeyProviderSettings(Aws::Utils::Json::JsonView jsonValue);
-    KeyProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API KeyProviderSettings();
+    AWS_MEDIALIVE_API KeyProviderSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API KeyProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     StaticKeySettings m_staticKeySettings;
-    bool m_staticKeySettingsHasBeenSet;
+    bool m_staticKeySettingsHasBeenSet = false;
   };
 
 } // namespace Model

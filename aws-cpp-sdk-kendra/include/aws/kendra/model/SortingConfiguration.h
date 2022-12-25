@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SortingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SortingConfiguration
+  class SortingConfiguration
   {
   public:
-    SortingConfiguration();
-    SortingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SortingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SortingConfiguration();
+    AWS_KENDRA_API SortingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SortingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,10 +163,10 @@ namespace Model
   private:
 
     Aws::String m_documentAttributeKey;
-    bool m_documentAttributeKeyHasBeenSet;
+    bool m_documentAttributeKeyHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

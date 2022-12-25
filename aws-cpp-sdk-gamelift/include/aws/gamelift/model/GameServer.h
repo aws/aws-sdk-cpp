@@ -29,72 +29,67 @@ namespace Model
   /**
    * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties describing a game server that is running on an
-   * instance in a <a>GameServerGroup</a>. </p> <p>A game server is created by a
+   * instance in a game server group. </p> <p>A game server is created by a
    * successful call to <code>RegisterGameServer</code> and deleted by calling
    * <code>DeregisterGameServer</code>. A game server is claimed to host a game
-   * session by calling <code>ClaimGameServer</code>. </p> <p> <b>Related actions</b>
-   * </p> <p> <a>RegisterGameServer</a> | <a>ListGameServers</a> |
-   * <a>ClaimGameServer</a> | <a>DescribeGameServer</a> | <a>UpdateGameServer</a> |
-   * <a>DeregisterGameServer</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * session by calling <code>ClaimGameServer</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServer">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameServer
+  class GameServer
   {
   public:
-    GameServer();
-    GameServer(Aws::Utils::Json::JsonView jsonValue);
-    GameServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameServer();
+    AWS_GAMELIFT_API GameServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline GameServer& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline GameServer& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline GameServer& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
@@ -314,56 +309,56 @@ namespace Model
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline const Aws::String& GetGameServerData() const{ return m_gameServerData; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline bool GameServerDataHasBeenSet() const { return m_gameServerDataHasBeenSet; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline void SetGameServerData(const Aws::String& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = value; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline void SetGameServerData(Aws::String&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::move(value); }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline void SetGameServerData(const char* value) { m_gameServerDataHasBeenSet = true; m_gameServerData.assign(value); }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline GameServer& WithGameServerData(const Aws::String& value) { SetGameServerData(value); return *this;}
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline GameServer& WithGameServerData(Aws::String&& value) { SetGameServerData(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.</p>
+     * game servers.</p>
      */
     inline GameServer& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
 
@@ -491,185 +486,185 @@ namespace Model
 
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetRegistrationTime() const{ return m_registrationTime; }
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool RegistrationTimeHasBeenSet() const { return m_registrationTimeHasBeenSet; }
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetRegistrationTime(const Aws::Utils::DateTime& value) { m_registrationTimeHasBeenSet = true; m_registrationTime = value; }
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetRegistrationTime(Aws::Utils::DateTime&& value) { m_registrationTimeHasBeenSet = true; m_registrationTime = std::move(value); }
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline GameServer& WithRegistrationTime(const Aws::Utils::DateTime& value) { SetRegistrationTime(value); return *this;}
 
     /**
-     * <p>Timestamp that indicates when the game server was created with a
-     * <a>RegisterGameServer</a> request. The format is a number expressed in Unix time
-     * as milliseconds (for example <code>"1469498468.057"</code>).</p>
+     * <p>Timestamp that indicates when the game server registered. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline GameServer& WithRegistrationTime(Aws::Utils::DateTime&& value) { SetRegistrationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline const Aws::Utils::DateTime& GetLastClaimTime() const{ return m_lastClaimTime; }
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline bool LastClaimTimeHasBeenSet() const { return m_lastClaimTimeHasBeenSet; }
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline void SetLastClaimTime(const Aws::Utils::DateTime& value) { m_lastClaimTimeHasBeenSet = true; m_lastClaimTime = value; }
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline void SetLastClaimTime(Aws::Utils::DateTime&& value) { m_lastClaimTimeHasBeenSet = true; m_lastClaimTime = std::move(value); }
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline GameServer& WithLastClaimTime(const Aws::Utils::DateTime& value) { SetLastClaimTime(value); return *this;}
 
     /**
-     * <p>Timestamp that indicates the last time the game server was claimed with a
-     * <a>ClaimGameServer</a> request. The format is a number expressed in Unix time as
-     * milliseconds (for example <code>"1469498468.057"</code>). This value is used to
-     * calculate when a claimed game server's status should revert to null.</p>
+     * <p>Timestamp that indicates the last time the game server was claimed. The
+     * format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>). This value is used to calculate when a claimed
+     * game server's status should revert to null.</p>
      */
     inline GameServer& WithLastClaimTime(Aws::Utils::DateTime&& value) { SetLastClaimTime(std::move(value)); return *this;}
 
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline const Aws::Utils::DateTime& GetLastHealthCheckTime() const{ return m_lastHealthCheckTime; }
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline bool LastHealthCheckTimeHasBeenSet() const { return m_lastHealthCheckTimeHasBeenSet; }
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline void SetLastHealthCheckTime(const Aws::Utils::DateTime& value) { m_lastHealthCheckTimeHasBeenSet = true; m_lastHealthCheckTime = value; }
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline void SetLastHealthCheckTime(Aws::Utils::DateTime&& value) { m_lastHealthCheckTimeHasBeenSet = true; m_lastHealthCheckTime = std::move(value); }
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline GameServer& WithLastHealthCheckTime(const Aws::Utils::DateTime& value) { SetLastHealthCheckTime(value); return *this;}
 
     /**
      * <p>Timestamp that indicates the last time the game server was updated with
-     * health status using an <a>UpdateGameServer</a> request. The format is a number
-     * expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is
-     * only changed when a game server update specifies a health check value.</p>
+     * health status. The format is a number expressed in Unix time as milliseconds
+     * (for example <code>"1469498468.057"</code>). After game server registration,
+     * this property is only changed when a game server update specifies a health check
+     * value.</p>
      */
     inline GameServer& WithLastHealthCheckTime(Aws::Utils::DateTime&& value) { SetLastHealthCheckTime(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerGroupArn;
-    bool m_gameServerGroupArnHasBeenSet;
+    bool m_gameServerGroupArnHasBeenSet = false;
 
     Aws::String m_gameServerId;
-    bool m_gameServerIdHasBeenSet;
+    bool m_gameServerIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_connectionInfo;
-    bool m_connectionInfoHasBeenSet;
+    bool m_connectionInfoHasBeenSet = false;
 
     Aws::String m_gameServerData;
-    bool m_gameServerDataHasBeenSet;
+    bool m_gameServerDataHasBeenSet = false;
 
     GameServerClaimStatus m_claimStatus;
-    bool m_claimStatusHasBeenSet;
+    bool m_claimStatusHasBeenSet = false;
 
     GameServerUtilizationStatus m_utilizationStatus;
-    bool m_utilizationStatusHasBeenSet;
+    bool m_utilizationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_registrationTime;
-    bool m_registrationTimeHasBeenSet;
+    bool m_registrationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastClaimTime;
-    bool m_lastClaimTimeHasBeenSet;
+    bool m_lastClaimTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastHealthCheckTime;
-    bool m_lastHealthCheckTimeHasBeenSet;
+    bool m_lastHealthCheckTimeHasBeenSet = false;
   };
 
 } // namespace Model

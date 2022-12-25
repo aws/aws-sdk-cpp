@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/PortRangeFromTo">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API PortRangeFromTo
+  class PortRangeFromTo
   {
   public:
-    PortRangeFromTo();
-    PortRangeFromTo(Aws::Utils::Json::JsonView jsonValue);
-    PortRangeFromTo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API PortRangeFromTo();
+    AWS_SECURITYHUB_API PortRangeFromTo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API PortRangeFromTo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     int m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UnindexedFace">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API UnindexedFace
+  class UnindexedFace
   {
   public:
-    UnindexedFace();
-    UnindexedFace(Aws::Utils::Json::JsonView jsonValue);
-    UnindexedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API UnindexedFace();
+    AWS_REKOGNITION_API UnindexedFace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API UnindexedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,10 +185,10 @@ namespace Model
   private:
 
     Aws::Vector<Reason> m_reasons;
-    bool m_reasonsHasBeenSet;
+    bool m_reasonsHasBeenSet = false;
 
     FaceDetail m_faceDetail;
-    bool m_faceDetailHasBeenSet;
+    bool m_faceDetailHasBeenSet = false;
   };
 
 } // namespace Model

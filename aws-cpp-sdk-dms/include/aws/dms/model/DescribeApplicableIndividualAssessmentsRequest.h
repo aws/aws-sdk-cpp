@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessmentsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsRequest : public DatabaseMigrationServiceRequest
+  class DescribeApplicableIndividualAssessmentsRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    DescribeApplicableIndividualAssessmentsRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeApplicableIndividualAssessmentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeApplicableIndividualAssessments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     Aws::String m_sourceEngineName;
-    bool m_sourceEngineNameHasBeenSet;
+    bool m_sourceEngineNameHasBeenSet = false;
 
     Aws::String m_targetEngineName;
-    bool m_targetEngineNameHasBeenSet;
+    bool m_targetEngineNameHasBeenSet = false;
 
     MigrationTypeValue m_migrationType;
-    bool m_migrationTypeHasBeenSet;
+    bool m_migrationTypeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

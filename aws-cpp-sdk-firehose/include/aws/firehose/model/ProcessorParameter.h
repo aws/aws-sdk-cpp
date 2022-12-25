@@ -25,46 +25,76 @@ namespace Model
 {
 
   /**
-   * <p>Describes the processor parameter.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the processor parameter. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ProcessorParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ProcessorParameter
+  class ProcessorParameter
   {
   public:
-    ProcessorParameter();
-    ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
-    ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ProcessorParameter();
+    AWS_FIREHOSE_API ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline const ProcessorParameterName& GetParameterName() const{ return m_parameterName; }
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline void SetParameterName(const ProcessorParameterName& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline void SetParameterName(ProcessorParameterName&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline ProcessorParameter& WithParameterName(const ProcessorParameterName& value) { SetParameterName(value); return *this;}
 
     /**
-     * <p>The name of the parameter.</p>
+     * <p>The name of the parameter. Currently the following default values are
+     * supported: 3 for <code>NumberOfRetries</code> and 60 for the
+     * <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges
+     * between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
+     * </p>
      */
     inline ProcessorParameter& WithParameterName(ProcessorParameterName&& value) { SetParameterName(std::move(value)); return *this;}
 
@@ -112,10 +142,10 @@ namespace Model
   private:
 
     ProcessorParameterName m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

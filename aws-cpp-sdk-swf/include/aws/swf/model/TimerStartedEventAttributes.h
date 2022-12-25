@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TimerStartedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API TimerStartedEventAttributes
+  class TimerStartedEventAttributes
   {
   public:
-    TimerStartedEventAttributes();
-    TimerStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    TimerStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API TimerStartedEventAttributes();
+    AWS_SWF_API TimerStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API TimerStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_timerId;
-    bool m_timerIdHasBeenSet;
+    bool m_timerIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     Aws::String m_startToFireTimeout;
-    bool m_startToFireTimeoutHasBeenSet;
+    bool m_startToFireTimeoutHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

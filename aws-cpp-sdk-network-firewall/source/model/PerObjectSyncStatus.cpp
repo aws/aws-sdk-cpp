@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int IN_SYNC_HASH = HashingUtils::HashString("IN_SYNC");
+        static const int CAPACITY_CONSTRAINED_HASH = HashingUtils::HashString("CAPACITY_CONSTRAINED");
 
 
         PerObjectSyncStatus GetPerObjectSyncStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == IN_SYNC_HASH)
           {
             return PerObjectSyncStatus::IN_SYNC;
+          }
+          else if (hashCode == CAPACITY_CONSTRAINED_HASH)
+          {
+            return PerObjectSyncStatus::CAPACITY_CONSTRAINED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "PENDING";
           case PerObjectSyncStatus::IN_SYNC:
             return "IN_SYNC";
+          case PerObjectSyncStatus::CAPACITY_CONSTRAINED:
+            return "CAPACITY_CONSTRAINED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

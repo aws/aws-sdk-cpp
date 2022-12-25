@@ -23,7 +23,8 @@ UpdateEventDataStoreRequest::UpdateEventDataStoreRequest() :
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
     m_terminationProtectionEnabled(false),
-    m_terminationProtectionEnabledHasBeenSet(false)
+    m_terminationProtectionEnabledHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,7 @@ Aws::String UpdateEventDataStoreRequest::SerializePayload() const
 
   if(m_advancedEventSelectorsHasBeenSet)
   {
-   Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
    for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
    {
      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
@@ -75,6 +76,12 @@ Aws::String UpdateEventDataStoreRequest::SerializePayload() const
   if(m_terminationProtectionEnabledHasBeenSet)
   {
    payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

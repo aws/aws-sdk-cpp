@@ -25,12 +25,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult
+  class UpdateApplicationMaintenanceConfigurationResult
   {
   public:
-    UpdateApplicationMaintenanceConfigurationResult();
-    UpdateApplicationMaintenanceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApplicationMaintenanceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API UpdateApplicationMaintenanceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PrivateDnsNamespaceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties
+  class PrivateDnsNamespaceProperties
   {
   public:
-    PrivateDnsNamespaceProperties();
-    PrivateDnsNamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
-    PrivateDnsNamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties();
+    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PrivateDnsPropertiesMutable m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet;
+    bool m_dnsPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

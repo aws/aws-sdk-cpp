@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AlternatePathHint">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AlternatePathHint
+  class AlternatePathHint
   {
   public:
-    AlternatePathHint();
-    AlternatePathHint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AlternatePathHint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AlternatePathHint();
+    AWS_EC2_API AlternatePathHint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AlternatePathHint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentArn;
-    bool m_componentArnHasBeenSet;
+    bool m_componentArnHasBeenSet = false;
   };
 
 } // namespace Model

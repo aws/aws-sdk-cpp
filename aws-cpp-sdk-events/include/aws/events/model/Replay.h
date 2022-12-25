@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Replay">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API Replay
+  class Replay
   {
   public:
-    Replay();
-    Replay(Aws::Utils::Json::JsonView jsonValue);
-    Replay& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API Replay();
+    AWS_CLOUDWATCHEVENTS_API Replay(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Replay& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,31 +369,31 @@ namespace Model
   private:
 
     Aws::String m_replayName;
-    bool m_replayNameHasBeenSet;
+    bool m_replayNameHasBeenSet = false;
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     ReplayState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventStartTime;
-    bool m_eventStartTimeHasBeenSet;
+    bool m_eventStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventEndTime;
-    bool m_eventEndTimeHasBeenSet;
+    bool m_eventEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventLastReplayedTime;
-    bool m_eventLastReplayedTimeHasBeenSet;
+    bool m_eventLastReplayedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_replayStartTime;
-    bool m_replayStartTimeHasBeenSet;
+    bool m_replayStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_replayEndTime;
-    bool m_replayEndTimeHasBeenSet;
+    bool m_replayEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DynatraceSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DynatraceSourceProperties
+  class DynatraceSourceProperties
   {
   public:
-    DynatraceSourceProperties();
-    DynatraceSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    DynatraceSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DynatraceSourceProperties();
+    AWS_APPFLOW_API DynatraceSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DynatraceSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

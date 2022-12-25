@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterIamRole">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ClusterIamRole
+  class ClusterIamRole
   {
   public:
-    ClusterIamRole();
-    ClusterIamRole(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterIamRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterIamRole();
+    AWS_REDSHIFT_API ClusterIamRole(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterIamRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_applyStatus;
-    bool m_applyStatusHasBeenSet;
+    bool m_applyStatusHasBeenSet = false;
   };
 
 } // namespace Model

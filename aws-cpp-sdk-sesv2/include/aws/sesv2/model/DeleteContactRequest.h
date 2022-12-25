@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SESV2_API DeleteContactRequest : public SESV2Request
+  class DeleteContactRequest : public SESV2Request
   {
   public:
-    DeleteContactRequest();
+    AWS_SESV2_API DeleteContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

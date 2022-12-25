@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/InsightsByAssessment">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API InsightsByAssessment
+  class InsightsByAssessment
   {
   public:
-    InsightsByAssessment();
-    InsightsByAssessment(Aws::Utils::Json::JsonView jsonValue);
-    InsightsByAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API InsightsByAssessment();
+    AWS_AUDITMANAGER_API InsightsByAssessment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API InsightsByAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,22 +244,22 @@ namespace Model
   private:
 
     int m_noncompliantEvidenceCount;
-    bool m_noncompliantEvidenceCountHasBeenSet;
+    bool m_noncompliantEvidenceCountHasBeenSet = false;
 
     int m_compliantEvidenceCount;
-    bool m_compliantEvidenceCountHasBeenSet;
+    bool m_compliantEvidenceCountHasBeenSet = false;
 
     int m_inconclusiveEvidenceCount;
-    bool m_inconclusiveEvidenceCountHasBeenSet;
+    bool m_inconclusiveEvidenceCountHasBeenSet = false;
 
     int m_assessmentControlsCountByNoncompliantEvidence;
-    bool m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet;
+    bool m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = false;
 
     int m_totalAssessmentControlsCount;
-    bool m_totalAssessmentControlsCountHasBeenSet;
+    bool m_totalAssessmentControlsCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
   };
 
 } // namespace Model

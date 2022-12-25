@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CollectorResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CollectorResponse
+  class CollectorResponse
   {
   public:
-    CollectorResponse();
-    CollectorResponse(Aws::Utils::Json::JsonView jsonValue);
-    CollectorResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -577,43 +577,43 @@ namespace Model
   private:
 
     Aws::String m_collectorReferencedId;
-    bool m_collectorReferencedIdHasBeenSet;
+    bool m_collectorReferencedIdHasBeenSet = false;
 
     Aws::String m_collectorName;
-    bool m_collectorNameHasBeenSet;
+    bool m_collectorNameHasBeenSet = false;
 
     Aws::String m_collectorVersion;
-    bool m_collectorVersionHasBeenSet;
+    bool m_collectorVersionHasBeenSet = false;
 
     VersionStatus m_versionStatus;
-    bool m_versionStatusHasBeenSet;
+    bool m_versionStatusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     CollectorHealthCheck m_collectorHealthCheck;
-    bool m_collectorHealthCheckHasBeenSet;
+    bool m_collectorHealthCheckHasBeenSet = false;
 
     Aws::String m_lastDataReceived;
-    bool m_lastDataReceivedHasBeenSet;
+    bool m_lastDataReceivedHasBeenSet = false;
 
     Aws::String m_registeredDate;
-    bool m_registeredDateHasBeenSet;
+    bool m_registeredDateHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_modifiedDate;
-    bool m_modifiedDateHasBeenSet;
+    bool m_modifiedDateHasBeenSet = false;
 
     InventoryData m_inventoryData;
-    bool m_inventoryDataHasBeenSet;
+    bool m_inventoryDataHasBeenSet = false;
   };
 
 } // namespace Model

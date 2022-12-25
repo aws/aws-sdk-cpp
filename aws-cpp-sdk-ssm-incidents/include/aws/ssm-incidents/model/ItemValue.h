@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-incidents/model/PagerDutyIncidentDetail.h>
 #include <utility>
 
 namespace Aws
@@ -28,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ItemValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ItemValue
+  class ItemValue
   {
   public:
-    ItemValue();
-    ItemValue(Aws::Utils::Json::JsonView jsonValue);
-    ItemValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ItemValue();
+    AWS_SSMINCIDENTS_API ItemValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ItemValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,6 +137,37 @@ namespace Model
 
 
     /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline const PagerDutyIncidentDetail& GetPagerDutyIncidentDetail() const{ return m_pagerDutyIncidentDetail; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline bool PagerDutyIncidentDetailHasBeenSet() const { return m_pagerDutyIncidentDetailHasBeenSet; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline void SetPagerDutyIncidentDetail(const PagerDutyIncidentDetail& value) { m_pagerDutyIncidentDetailHasBeenSet = true; m_pagerDutyIncidentDetail = value; }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline void SetPagerDutyIncidentDetail(PagerDutyIncidentDetail&& value) { m_pagerDutyIncidentDetailHasBeenSet = true; m_pagerDutyIncidentDetail = std::move(value); }
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline ItemValue& WithPagerDutyIncidentDetail(const PagerDutyIncidentDetail& value) { SetPagerDutyIncidentDetail(value); return *this;}
+
+    /**
+     * <p>Details about an incident that is associated with a PagerDuty incident.</p>
+     */
+    inline ItemValue& WithPagerDutyIncidentDetail(PagerDutyIncidentDetail&& value) { SetPagerDutyIncidentDetail(std::move(value)); return *this;}
+
+
+    /**
      * <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
@@ -178,13 +210,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_metricDefinition;
-    bool m_metricDefinitionHasBeenSet;
+    bool m_metricDefinitionHasBeenSet = false;
+
+    PagerDutyIncidentDetail m_pagerDutyIncidentDetail;
+    bool m_pagerDutyIncidentDetailHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONINSIGHTS_API UpdateApplicationRequest : public ApplicationInsightsRequest
+  class UpdateApplicationRequest : public ApplicationInsightsRequest
   {
   public:
-    UpdateApplicationRequest();
+    AWS_APPLICATIONINSIGHTS_API UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -234,22 +234,22 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     bool m_opsCenterEnabled;
-    bool m_opsCenterEnabledHasBeenSet;
+    bool m_opsCenterEnabledHasBeenSet = false;
 
     bool m_cWEMonitorEnabled;
-    bool m_cWEMonitorEnabledHasBeenSet;
+    bool m_cWEMonitorEnabledHasBeenSet = false;
 
     Aws::String m_opsItemSNSTopicArn;
-    bool m_opsItemSNSTopicArnHasBeenSet;
+    bool m_opsItemSNSTopicArnHasBeenSet = false;
 
     bool m_removeSNSTopic;
-    bool m_removeSNSTopicHasBeenSet;
+    bool m_removeSNSTopicHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
   };
 
 } // namespace Model

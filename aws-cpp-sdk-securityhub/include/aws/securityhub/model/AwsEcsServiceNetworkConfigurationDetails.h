@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceNetworkConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationDetails
+  class AwsEcsServiceNetworkConfigurationDetails
   {
   public:
-    AwsEcsServiceNetworkConfigurationDetails();
-    AwsEcsServiceNetworkConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceNetworkConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails m_awsVpcConfiguration;
-    bool m_awsVpcConfigurationHasBeenSet;
+    bool m_awsVpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

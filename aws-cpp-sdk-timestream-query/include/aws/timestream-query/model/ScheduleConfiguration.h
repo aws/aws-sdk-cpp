@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ScheduleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ScheduleConfiguration
+  class ScheduleConfiguration
   {
   public:
-    ScheduleConfiguration();
-    ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ScheduleConfiguration();
+    AWS_TIMESTREAMQUERY_API ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClassifierSummary
+  class DocumentClassifierSummary
   {
   public:
-    DocumentClassifierSummary();
-    DocumentClassifierSummary(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClassifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClassifierSummary();
+    AWS_COMPREHEND_API DocumentClassifierSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClassifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierName;
-    bool m_documentClassifierNameHasBeenSet;
+    bool m_documentClassifierNameHasBeenSet = false;
 
     int m_numberOfVersions;
-    bool m_numberOfVersionsHasBeenSet;
+    bool m_numberOfVersionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestVersionCreatedAt;
-    bool m_latestVersionCreatedAtHasBeenSet;
+    bool m_latestVersionCreatedAtHasBeenSet = false;
 
     Aws::String m_latestVersionName;
-    bool m_latestVersionNameHasBeenSet;
+    bool m_latestVersionNameHasBeenSet = false;
 
     ModelStatus m_latestVersionStatus;
-    bool m_latestVersionStatusHasBeenSet;
+    bool m_latestVersionStatusHasBeenSet = false;
   };
 
 } // namespace Model

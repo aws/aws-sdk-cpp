@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelPackagingOutputDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelPackagingOutputDetails
+  class ModelPackagingOutputDetails
   {
   public:
-    ModelPackagingOutputDetails();
-    ModelPackagingOutputDetails(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackagingOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelPackagingOutputDetails();
+    AWS_LOOKOUTFORVISION_API ModelPackagingOutputDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelPackagingOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     GreengrassOutputDetails m_greengrass;
-    bool m_greengrassHasBeenSet;
+    bool m_greengrassHasBeenSet = false;
   };
 
 } // namespace Model

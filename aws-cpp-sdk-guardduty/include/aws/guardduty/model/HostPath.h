@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/HostPath">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API HostPath
+  class HostPath
   {
   public:
-    HostPath();
-    HostPath(Aws::Utils::Json::JsonView jsonValue);
-    HostPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API HostPath();
+    AWS_GUARDDUTY_API HostPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API HostPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

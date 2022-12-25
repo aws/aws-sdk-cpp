@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestinationVpc">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDestinationVpc
+  class InputDestinationVpc
   {
   public:
-    InputDestinationVpc();
-    InputDestinationVpc(Aws::Utils::Json::JsonView jsonValue);
-    InputDestinationVpc& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDestinationVpc();
+    AWS_MEDIALIVE_API InputDestinationVpc(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDestinationVpc& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

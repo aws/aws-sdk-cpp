@@ -20,7 +20,9 @@ namespace Model
     OS_NAME,
     STRATEGY,
     DESTINATION,
-    SERVER_ID
+    SERVER_ID,
+    ANALYSIS_STATUS,
+    ERROR_CATEGORY
   };
 
 namespace ServerCriteriaMapper

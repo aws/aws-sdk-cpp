@@ -23,6 +23,7 @@ namespace Aws
         static const int AWS_EC2_INSTANCE_HASH = HashingUtils::HashString("AWS_EC2_INSTANCE");
         static const int AWS_ECR_CONTAINER_IMAGE_HASH = HashingUtils::HashString("AWS_ECR_CONTAINER_IMAGE");
         static const int AWS_ECR_REPOSITORY_HASH = HashingUtils::HashString("AWS_ECR_REPOSITORY");
+        static const int AWS_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("AWS_LAMBDA_FUNCTION");
 
 
         CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AWS_ECR_REPOSITORY_HASH)
           {
             return CoverageResourceType::AWS_ECR_REPOSITORY;
+          }
+          else if (hashCode == AWS_LAMBDA_FUNCTION_HASH)
+          {
+            return CoverageResourceType::AWS_LAMBDA_FUNCTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "AWS_ECR_CONTAINER_IMAGE";
           case CoverageResourceType::AWS_ECR_REPOSITORY:
             return "AWS_ECR_REPOSITORY";
+          case CoverageResourceType::AWS_LAMBDA_FUNCTION:
+            return "AWS_LAMBDA_FUNCTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

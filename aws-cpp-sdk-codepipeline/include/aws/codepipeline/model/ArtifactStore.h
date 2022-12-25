@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactStore
+  class ArtifactStore
   {
   public:
-    ArtifactStore();
-    ArtifactStore(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactStore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactStore();
+    AWS_CODEPIPELINE_API ArtifactStore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactStore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,13 +192,13 @@ namespace Model
   private:
 
     ArtifactStoreType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
   };
 
 } // namespace Model

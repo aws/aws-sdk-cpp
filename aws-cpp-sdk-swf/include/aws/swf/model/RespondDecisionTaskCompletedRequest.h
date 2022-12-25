@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompletedInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API RespondDecisionTaskCompletedRequest : public SWFRequest
+  class RespondDecisionTaskCompletedRequest : public SWFRequest
   {
   public:
-    RespondDecisionTaskCompletedRequest();
+    AWS_SWF_API RespondDecisionTaskCompletedRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RespondDecisionTaskCompleted"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_taskToken;
-    bool m_taskTokenHasBeenSet;
+    bool m_taskTokenHasBeenSet = false;
 
     Aws::Vector<Decision> m_decisions;
-    bool m_decisionsHasBeenSet;
+    bool m_decisionsHasBeenSet = false;
 
     Aws::String m_executionContext;
-    bool m_executionContextHasBeenSet;
+    bool m_executionContextHasBeenSet = false;
   };
 
 } // namespace Model

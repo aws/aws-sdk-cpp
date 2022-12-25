@@ -33,7 +33,7 @@ ColumnWildcard& ColumnWildcard::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ExcludedColumnNames"))
   {
-    Array<JsonView> excludedColumnNamesJsonList = jsonValue.GetArray("ExcludedColumnNames");
+    Aws::Utils::Array<JsonView> excludedColumnNamesJsonList = jsonValue.GetArray("ExcludedColumnNames");
     for(unsigned excludedColumnNamesIndex = 0; excludedColumnNamesIndex < excludedColumnNamesJsonList.GetLength(); ++excludedColumnNamesIndex)
     {
       m_excludedColumnNames.push_back(excludedColumnNamesJsonList[excludedColumnNamesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ColumnWildcard::Jsonize() const
 
   if(m_excludedColumnNamesHasBeenSet)
   {
-   Array<JsonValue> excludedColumnNamesJsonList(m_excludedColumnNames.size());
+   Aws::Utils::Array<JsonValue> excludedColumnNamesJsonList(m_excludedColumnNames.size());
    for(unsigned excludedColumnNamesIndex = 0; excludedColumnNamesIndex < excludedColumnNamesJsonList.GetLength(); ++excludedColumnNamesIndex)
    {
      excludedColumnNamesJsonList[excludedColumnNamesIndex].AsString(m_excludedColumnNames[excludedColumnNamesIndex]);

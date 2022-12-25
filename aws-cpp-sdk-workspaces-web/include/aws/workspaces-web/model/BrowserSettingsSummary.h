@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/BrowserSettingsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API BrowserSettingsSummary
+  class BrowserSettingsSummary
   {
   public:
-    BrowserSettingsSummary();
-    BrowserSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
-    BrowserSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API BrowserSettingsSummary();
+    AWS_WORKSPACESWEB_API BrowserSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API BrowserSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

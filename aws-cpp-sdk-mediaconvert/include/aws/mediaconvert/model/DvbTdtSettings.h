@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbTdtSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DvbTdtSettings
+  class DvbTdtSettings
   {
   public:
-    DvbTdtSettings();
-    DvbTdtSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbTdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DvbTdtSettings();
+    AWS_MEDIACONVERT_API DvbTdtSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DvbTdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_tdtInterval;
-    bool m_tdtIntervalHasBeenSet;
+    bool m_tdtIntervalHasBeenSet = false;
   };
 
 } // namespace Model

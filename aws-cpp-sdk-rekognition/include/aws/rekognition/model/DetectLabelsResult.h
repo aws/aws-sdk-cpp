@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/model/DetectLabelsImageProperties.h>
 #include <aws/rekognition/model/Label.h>
 #include <utility>
 
@@ -27,12 +28,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API DetectLabelsResult
+  class DetectLabelsResult
   {
   public:
-    DetectLabelsResult();
-    DetectLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DetectLabelsResult();
+    AWS_REKOGNITION_API DetectLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DetectLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -189,6 +190,37 @@ namespace Model
      */
     inline DetectLabelsResult& WithLabelModelVersion(const char* value) { SetLabelModelVersion(value); return *this;}
 
+
+    /**
+     * <p>Information about the properties of the input image, such as brightness,
+     * sharpness, contrast, and dominant colors.</p>
+     */
+    inline const DetectLabelsImageProperties& GetImageProperties() const{ return m_imageProperties; }
+
+    /**
+     * <p>Information about the properties of the input image, such as brightness,
+     * sharpness, contrast, and dominant colors.</p>
+     */
+    inline void SetImageProperties(const DetectLabelsImageProperties& value) { m_imageProperties = value; }
+
+    /**
+     * <p>Information about the properties of the input image, such as brightness,
+     * sharpness, contrast, and dominant colors.</p>
+     */
+    inline void SetImageProperties(DetectLabelsImageProperties&& value) { m_imageProperties = std::move(value); }
+
+    /**
+     * <p>Information about the properties of the input image, such as brightness,
+     * sharpness, contrast, and dominant colors.</p>
+     */
+    inline DetectLabelsResult& WithImageProperties(const DetectLabelsImageProperties& value) { SetImageProperties(value); return *this;}
+
+    /**
+     * <p>Information about the properties of the input image, such as brightness,
+     * sharpness, contrast, and dominant colors.</p>
+     */
+    inline DetectLabelsResult& WithImageProperties(DetectLabelsImageProperties&& value) { SetImageProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Label> m_labels;
@@ -196,6 +228,8 @@ namespace Model
     OrientationCorrection m_orientationCorrection;
 
     Aws::String m_labelModelVersion;
+
+    DetectLabelsImageProperties m_imageProperties;
   };
 
 } // namespace Model

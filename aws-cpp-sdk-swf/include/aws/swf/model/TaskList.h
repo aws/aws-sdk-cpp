@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TaskList">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API TaskList
+  class TaskList
   {
   public:
-    TaskList();
-    TaskList(Aws::Utils::Json::JsonView jsonValue);
-    TaskList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API TaskList();
+    AWS_SWF_API TaskList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API TaskList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

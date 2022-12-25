@@ -5,226 +5,16 @@
 
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
-#include <aws/swf/SWFErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/swf/model/CountClosedWorkflowExecutionsResult.h>
-#include <aws/swf/model/CountOpenWorkflowExecutionsResult.h>
-#include <aws/swf/model/CountPendingActivityTasksResult.h>
-#include <aws/swf/model/CountPendingDecisionTasksResult.h>
-#include <aws/swf/model/DescribeActivityTypeResult.h>
-#include <aws/swf/model/DescribeDomainResult.h>
-#include <aws/swf/model/DescribeWorkflowExecutionResult.h>
-#include <aws/swf/model/DescribeWorkflowTypeResult.h>
-#include <aws/swf/model/GetWorkflowExecutionHistoryResult.h>
-#include <aws/swf/model/ListActivityTypesResult.h>
-#include <aws/swf/model/ListClosedWorkflowExecutionsResult.h>
-#include <aws/swf/model/ListDomainsResult.h>
-#include <aws/swf/model/ListOpenWorkflowExecutionsResult.h>
-#include <aws/swf/model/ListTagsForResourceResult.h>
-#include <aws/swf/model/ListWorkflowTypesResult.h>
-#include <aws/swf/model/PollForActivityTaskResult.h>
-#include <aws/swf/model/PollForDecisionTaskResult.h>
-#include <aws/swf/model/RecordActivityTaskHeartbeatResult.h>
-#include <aws/swf/model/StartWorkflowExecutionResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/swf/SWFServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SWF
 {
-
-namespace Model
-{
-        class CountClosedWorkflowExecutionsRequest;
-        class CountOpenWorkflowExecutionsRequest;
-        class CountPendingActivityTasksRequest;
-        class CountPendingDecisionTasksRequest;
-        class DeprecateActivityTypeRequest;
-        class DeprecateDomainRequest;
-        class DeprecateWorkflowTypeRequest;
-        class DescribeActivityTypeRequest;
-        class DescribeDomainRequest;
-        class DescribeWorkflowExecutionRequest;
-        class DescribeWorkflowTypeRequest;
-        class GetWorkflowExecutionHistoryRequest;
-        class ListActivityTypesRequest;
-        class ListClosedWorkflowExecutionsRequest;
-        class ListDomainsRequest;
-        class ListOpenWorkflowExecutionsRequest;
-        class ListTagsForResourceRequest;
-        class ListWorkflowTypesRequest;
-        class PollForActivityTaskRequest;
-        class PollForDecisionTaskRequest;
-        class RecordActivityTaskHeartbeatRequest;
-        class RegisterActivityTypeRequest;
-        class RegisterDomainRequest;
-        class RegisterWorkflowTypeRequest;
-        class RequestCancelWorkflowExecutionRequest;
-        class RespondActivityTaskCanceledRequest;
-        class RespondActivityTaskCompletedRequest;
-        class RespondActivityTaskFailedRequest;
-        class RespondDecisionTaskCompletedRequest;
-        class SignalWorkflowExecutionRequest;
-        class StartWorkflowExecutionRequest;
-        class TagResourceRequest;
-        class TerminateWorkflowExecutionRequest;
-        class UndeprecateActivityTypeRequest;
-        class UndeprecateDomainRequest;
-        class UndeprecateWorkflowTypeRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CountClosedWorkflowExecutionsResult, SWFError> CountClosedWorkflowExecutionsOutcome;
-        typedef Aws::Utils::Outcome<CountOpenWorkflowExecutionsResult, SWFError> CountOpenWorkflowExecutionsOutcome;
-        typedef Aws::Utils::Outcome<CountPendingActivityTasksResult, SWFError> CountPendingActivityTasksOutcome;
-        typedef Aws::Utils::Outcome<CountPendingDecisionTasksResult, SWFError> CountPendingDecisionTasksOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> DeprecateWorkflowTypeOutcome;
-        typedef Aws::Utils::Outcome<DescribeActivityTypeResult, SWFError> DescribeActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, SWFError> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkflowExecutionResult, SWFError> DescribeWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkflowTypeResult, SWFError> DescribeWorkflowTypeOutcome;
-        typedef Aws::Utils::Outcome<GetWorkflowExecutionHistoryResult, SWFError> GetWorkflowExecutionHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListActivityTypesResult, SWFError> ListActivityTypesOutcome;
-        typedef Aws::Utils::Outcome<ListClosedWorkflowExecutionsResult, SWFError> ListClosedWorkflowExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, SWFError> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<ListOpenWorkflowExecutionsResult, SWFError> ListOpenWorkflowExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SWFError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorkflowTypesResult, SWFError> ListWorkflowTypesOutcome;
-        typedef Aws::Utils::Outcome<PollForActivityTaskResult, SWFError> PollForActivityTaskOutcome;
-        typedef Aws::Utils::Outcome<PollForDecisionTaskResult, SWFError> PollForDecisionTaskOutcome;
-        typedef Aws::Utils::Outcome<RecordActivityTaskHeartbeatResult, SWFError> RecordActivityTaskHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RegisterActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RegisterDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RegisterWorkflowTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RequestCancelWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RespondActivityTaskCanceledOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RespondActivityTaskCompletedOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RespondActivityTaskFailedOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> RespondDecisionTaskCompletedOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> SignalWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<StartWorkflowExecutionResult, SWFError> StartWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> TerminateWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> UndeprecateActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> UndeprecateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> UndeprecateWorkflowTypeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SWFError> UntagResourceOutcome;
-
-        typedef std::future<CountClosedWorkflowExecutionsOutcome> CountClosedWorkflowExecutionsOutcomeCallable;
-        typedef std::future<CountOpenWorkflowExecutionsOutcome> CountOpenWorkflowExecutionsOutcomeCallable;
-        typedef std::future<CountPendingActivityTasksOutcome> CountPendingActivityTasksOutcomeCallable;
-        typedef std::future<CountPendingDecisionTasksOutcome> CountPendingDecisionTasksOutcomeCallable;
-        typedef std::future<DeprecateActivityTypeOutcome> DeprecateActivityTypeOutcomeCallable;
-        typedef std::future<DeprecateDomainOutcome> DeprecateDomainOutcomeCallable;
-        typedef std::future<DeprecateWorkflowTypeOutcome> DeprecateWorkflowTypeOutcomeCallable;
-        typedef std::future<DescribeActivityTypeOutcome> DescribeActivityTypeOutcomeCallable;
-        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-        typedef std::future<DescribeWorkflowExecutionOutcome> DescribeWorkflowExecutionOutcomeCallable;
-        typedef std::future<DescribeWorkflowTypeOutcome> DescribeWorkflowTypeOutcomeCallable;
-        typedef std::future<GetWorkflowExecutionHistoryOutcome> GetWorkflowExecutionHistoryOutcomeCallable;
-        typedef std::future<ListActivityTypesOutcome> ListActivityTypesOutcomeCallable;
-        typedef std::future<ListClosedWorkflowExecutionsOutcome> ListClosedWorkflowExecutionsOutcomeCallable;
-        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-        typedef std::future<ListOpenWorkflowExecutionsOutcome> ListOpenWorkflowExecutionsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorkflowTypesOutcome> ListWorkflowTypesOutcomeCallable;
-        typedef std::future<PollForActivityTaskOutcome> PollForActivityTaskOutcomeCallable;
-        typedef std::future<PollForDecisionTaskOutcome> PollForDecisionTaskOutcomeCallable;
-        typedef std::future<RecordActivityTaskHeartbeatOutcome> RecordActivityTaskHeartbeatOutcomeCallable;
-        typedef std::future<RegisterActivityTypeOutcome> RegisterActivityTypeOutcomeCallable;
-        typedef std::future<RegisterDomainOutcome> RegisterDomainOutcomeCallable;
-        typedef std::future<RegisterWorkflowTypeOutcome> RegisterWorkflowTypeOutcomeCallable;
-        typedef std::future<RequestCancelWorkflowExecutionOutcome> RequestCancelWorkflowExecutionOutcomeCallable;
-        typedef std::future<RespondActivityTaskCanceledOutcome> RespondActivityTaskCanceledOutcomeCallable;
-        typedef std::future<RespondActivityTaskCompletedOutcome> RespondActivityTaskCompletedOutcomeCallable;
-        typedef std::future<RespondActivityTaskFailedOutcome> RespondActivityTaskFailedOutcomeCallable;
-        typedef std::future<RespondDecisionTaskCompletedOutcome> RespondDecisionTaskCompletedOutcomeCallable;
-        typedef std::future<SignalWorkflowExecutionOutcome> SignalWorkflowExecutionOutcomeCallable;
-        typedef std::future<StartWorkflowExecutionOutcome> StartWorkflowExecutionOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TerminateWorkflowExecutionOutcome> TerminateWorkflowExecutionOutcomeCallable;
-        typedef std::future<UndeprecateActivityTypeOutcome> UndeprecateActivityTypeOutcomeCallable;
-        typedef std::future<UndeprecateDomainOutcome> UndeprecateDomainOutcomeCallable;
-        typedef std::future<UndeprecateWorkflowTypeOutcome> UndeprecateWorkflowTypeOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class SWFClient;
-
-    typedef std::function<void(const SWFClient*, const Model::CountClosedWorkflowExecutionsRequest&, const Model::CountClosedWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountClosedWorkflowExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::CountOpenWorkflowExecutionsRequest&, const Model::CountOpenWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountOpenWorkflowExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::CountPendingActivityTasksRequest&, const Model::CountPendingActivityTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountPendingActivityTasksResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::CountPendingDecisionTasksRequest&, const Model::CountPendingDecisionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CountPendingDecisionTasksResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DeprecateActivityTypeRequest&, const Model::DeprecateActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateActivityTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DeprecateDomainRequest&, const Model::DeprecateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateDomainResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DeprecateWorkflowTypeRequest&, const Model::DeprecateWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprecateWorkflowTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DescribeActivityTypeRequest&, const Model::DescribeActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActivityTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DescribeWorkflowExecutionRequest&, const Model::DescribeWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkflowExecutionResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::DescribeWorkflowTypeRequest&, const Model::DescribeWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkflowTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::GetWorkflowExecutionHistoryRequest&, const Model::GetWorkflowExecutionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowExecutionHistoryResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListActivityTypesRequest&, const Model::ListActivityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActivityTypesResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListClosedWorkflowExecutionsRequest&, const Model::ListClosedWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClosedWorkflowExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListOpenWorkflowExecutionsRequest&, const Model::ListOpenWorkflowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpenWorkflowExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::ListWorkflowTypesRequest&, const Model::ListWorkflowTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowTypesResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::PollForActivityTaskRequest&, const Model::PollForActivityTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForActivityTaskResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::PollForDecisionTaskRequest&, const Model::PollForDecisionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForDecisionTaskResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RecordActivityTaskHeartbeatRequest&, const Model::RecordActivityTaskHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordActivityTaskHeartbeatResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RegisterActivityTypeRequest&, const Model::RegisterActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterActivityTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RegisterDomainRequest&, const Model::RegisterDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDomainResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RegisterWorkflowTypeRequest&, const Model::RegisterWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterWorkflowTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RequestCancelWorkflowExecutionRequest&, const Model::RequestCancelWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestCancelWorkflowExecutionResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RespondActivityTaskCanceledRequest&, const Model::RespondActivityTaskCanceledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondActivityTaskCanceledResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RespondActivityTaskCompletedRequest&, const Model::RespondActivityTaskCompletedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondActivityTaskCompletedResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RespondActivityTaskFailedRequest&, const Model::RespondActivityTaskFailedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondActivityTaskFailedResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::RespondDecisionTaskCompletedRequest&, const Model::RespondDecisionTaskCompletedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondDecisionTaskCompletedResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::SignalWorkflowExecutionRequest&, const Model::SignalWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalWorkflowExecutionResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::StartWorkflowExecutionRequest&, const Model::StartWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkflowExecutionResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::TerminateWorkflowExecutionRequest&, const Model::TerminateWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkflowExecutionResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::UndeprecateActivityTypeRequest&, const Model::UndeprecateActivityTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateActivityTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::UndeprecateDomainRequest&, const Model::UndeprecateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateDomainResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::UndeprecateWorkflowTypeRequest&, const Model::UndeprecateWorkflowTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UndeprecateWorkflowTypeResponseReceivedHandler;
-    typedef std::function<void(const SWFClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Simple Workflow Service</fullname> <p>The Amazon Simple
    * Workflow Service (Amazon SWF) makes it easy to build applications that use
@@ -240,32 +30,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF
    * Developer Guide</a> </i>.</p>
    */
-  class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient
+  class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SWFClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SWFClient(const Aws::SWF::SWFClientConfiguration& clientConfiguration = Aws::SWF::SWFClientConfiguration(),
+                  std::shared_ptr<SWFEndpointProviderBase> endpointProvider = Aws::MakeShared<SWFEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SWFClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SWFClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<SWFEndpointProviderBase> endpointProvider = Aws::MakeShared<SWFEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SWF::SWFClientConfiguration& clientConfiguration = Aws::SWF::SWFClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SWFClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SWFEndpointProviderBase> endpointProvider = Aws::MakeShared<SWFEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SWF::SWFClientConfiguration& clientConfiguration = Aws::SWF::SWFClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SWFClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SWFClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SWFClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SWFClient();
-
 
         /**
          * <p>Returns the number of closed workflow executions within the given domain that
@@ -1637,49 +1455,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SWFEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CountClosedWorkflowExecutionsAsyncHelper(const Model::CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CountOpenWorkflowExecutionsAsyncHelper(const Model::CountOpenWorkflowExecutionsRequest& request, const CountOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CountPendingActivityTasksAsyncHelper(const Model::CountPendingActivityTasksRequest& request, const CountPendingActivityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CountPendingDecisionTasksAsyncHelper(const Model::CountPendingDecisionTasksRequest& request, const CountPendingDecisionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeprecateActivityTypeAsyncHelper(const Model::DeprecateActivityTypeRequest& request, const DeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeprecateDomainAsyncHelper(const Model::DeprecateDomainRequest& request, const DeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeprecateWorkflowTypeAsyncHelper(const Model::DeprecateWorkflowTypeRequest& request, const DeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeActivityTypeAsyncHelper(const Model::DescribeActivityTypeRequest& request, const DescribeActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkflowExecutionAsyncHelper(const Model::DescribeWorkflowExecutionRequest& request, const DescribeWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkflowTypeAsyncHelper(const Model::DescribeWorkflowTypeRequest& request, const DescribeWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWorkflowExecutionHistoryAsyncHelper(const Model::GetWorkflowExecutionHistoryRequest& request, const GetWorkflowExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListActivityTypesAsyncHelper(const Model::ListActivityTypesRequest& request, const ListActivityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListClosedWorkflowExecutionsAsyncHelper(const Model::ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOpenWorkflowExecutionsAsyncHelper(const Model::ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkflowTypesAsyncHelper(const Model::ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PollForActivityTaskAsyncHelper(const Model::PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PollForDecisionTaskAsyncHelper(const Model::PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecordActivityTaskHeartbeatAsyncHelper(const Model::RecordActivityTaskHeartbeatRequest& request, const RecordActivityTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterActivityTypeAsyncHelper(const Model::RegisterActivityTypeRequest& request, const RegisterActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterDomainAsyncHelper(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterWorkflowTypeAsyncHelper(const Model::RegisterWorkflowTypeRequest& request, const RegisterWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RequestCancelWorkflowExecutionAsyncHelper(const Model::RequestCancelWorkflowExecutionRequest& request, const RequestCancelWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RespondActivityTaskCanceledAsyncHelper(const Model::RespondActivityTaskCanceledRequest& request, const RespondActivityTaskCanceledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RespondActivityTaskCompletedAsyncHelper(const Model::RespondActivityTaskCompletedRequest& request, const RespondActivityTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RespondActivityTaskFailedAsyncHelper(const Model::RespondActivityTaskFailedRequest& request, const RespondActivityTaskFailedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RespondDecisionTaskCompletedAsyncHelper(const Model::RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SignalWorkflowExecutionAsyncHelper(const Model::SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartWorkflowExecutionAsyncHelper(const Model::StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TerminateWorkflowExecutionAsyncHelper(const Model::TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UndeprecateActivityTypeAsyncHelper(const Model::UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UndeprecateDomainAsyncHelper(const Model::UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UndeprecateWorkflowTypeAsyncHelper(const Model::UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;
+      void init(const SWFClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SWFClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SWFEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SWF

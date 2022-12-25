@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/LogDestinationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API LogDestinationConfig
+  class LogDestinationConfig
   {
   public:
-    LogDestinationConfig();
-    LogDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
-    LogDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API LogDestinationConfig();
+    AWS_NETWORKFIREWALL_API LogDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API LogDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -383,13 +383,13 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
   };
 
 } // namespace Model

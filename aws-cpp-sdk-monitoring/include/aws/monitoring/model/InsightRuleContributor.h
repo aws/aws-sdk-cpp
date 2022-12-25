@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributor">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API InsightRuleContributor
+  class InsightRuleContributor
   {
   public:
-    InsightRuleContributor();
-    InsightRuleContributor(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InsightRuleContributor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API InsightRuleContributor();
+    AWS_CLOUDWATCH_API InsightRuleContributor(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API InsightRuleContributor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     double m_approximateAggregateValue;
-    bool m_approximateAggregateValueHasBeenSet;
+    bool m_approximateAggregateValueHasBeenSet = false;
 
     Aws::Vector<InsightRuleContributorDatapoint> m_datapoints;
-    bool m_datapointsHasBeenSet;
+    bool m_datapointsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API DataDestination
+  class DataDestination
   {
   public:
-    DataDestination();
-    DataDestination(Aws::Utils::Json::JsonView jsonValue);
-    DataDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API DataDestination();
+    AWS_FORECASTSERVICE_API DataDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API DataDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     S3Config m_s3Config;
-    bool m_s3ConfigHasBeenSet;
+    bool m_s3ConfigHasBeenSet = false;
   };
 
 } // namespace Model

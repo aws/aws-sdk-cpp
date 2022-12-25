@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Attribute">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(Aws::Utils::Json::JsonView jsonValue);
-    Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Attribute();
+    AWS_DIRECTORYSERVICE_API Attribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

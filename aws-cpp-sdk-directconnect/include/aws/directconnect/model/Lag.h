@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Lag">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API Lag
+  class Lag
   {
   public:
-    Lag();
-    Lag(Aws::Utils::Json::JsonView jsonValue);
-    Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API Lag();
+    AWS_DIRECTCONNECT_API Lag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -895,67 +895,67 @@ namespace Model
   private:
 
     Aws::String m_connectionsBandwidth;
-    bool m_connectionsBandwidthHasBeenSet;
+    bool m_connectionsBandwidthHasBeenSet = false;
 
     int m_numberOfConnections;
-    bool m_numberOfConnectionsHasBeenSet;
+    bool m_numberOfConnectionsHasBeenSet = false;
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_lagName;
-    bool m_lagNameHasBeenSet;
+    bool m_lagNameHasBeenSet = false;
 
     LagState m_lagState;
-    bool m_lagStateHasBeenSet;
+    bool m_lagStateHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     int m_minimumLinks;
-    bool m_minimumLinksHasBeenSet;
+    bool m_minimumLinksHasBeenSet = false;
 
     Aws::String m_awsDevice;
-    bool m_awsDeviceHasBeenSet;
+    bool m_awsDeviceHasBeenSet = false;
 
     Aws::String m_awsDeviceV2;
-    bool m_awsDeviceV2HasBeenSet;
+    bool m_awsDeviceV2HasBeenSet = false;
 
     Aws::String m_awsLogicalDeviceId;
-    bool m_awsLogicalDeviceIdHasBeenSet;
+    bool m_awsLogicalDeviceIdHasBeenSet = false;
 
     Aws::Vector<Connection> m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     bool m_allowsHostedConnections;
-    bool m_allowsHostedConnectionsHasBeenSet;
+    bool m_allowsHostedConnectionsHasBeenSet = false;
 
     bool m_jumboFrameCapable;
-    bool m_jumboFrameCapableHasBeenSet;
+    bool m_jumboFrameCapableHasBeenSet = false;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
-    bool m_hasLogicalRedundancyHasBeenSet;
+    bool m_hasLogicalRedundancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     bool m_macSecCapable;
-    bool m_macSecCapableHasBeenSet;
+    bool m_macSecCapableHasBeenSet = false;
 
     Aws::String m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::Vector<MacSecKey> m_macSecKeys;
-    bool m_macSecKeysHasBeenSet;
+    bool m_macSecKeysHasBeenSet = false;
   };
 
 } // namespace Model

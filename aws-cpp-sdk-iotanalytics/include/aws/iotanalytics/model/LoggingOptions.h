@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/LoggingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API LoggingOptions
+  class LoggingOptions
   {
   public:
-    LoggingOptions();
-    LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
-    LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API LoggingOptions();
+    AWS_IOTANALYTICS_API LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,13 +141,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LoggingLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

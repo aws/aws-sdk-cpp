@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API StartDetectMitigationActionsTaskRequest : public IoTRequest
+  class StartDetectMitigationActionsTaskRequest : public IoTRequest
   {
   public:
-    StartDetectMitigationActionsTaskRequest();
+    AWS_IOT_API StartDetectMitigationActionsTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartDetectMitigationActionsTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -300,25 +300,25 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     DetectMitigationActionsTaskTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ViolationEventOccurrenceRange m_violationEventOccurrenceRange;
-    bool m_violationEventOccurrenceRangeHasBeenSet;
+    bool m_violationEventOccurrenceRangeHasBeenSet = false;
 
     bool m_includeOnlyActiveViolations;
-    bool m_includeOnlyActiveViolationsHasBeenSet;
+    bool m_includeOnlyActiveViolationsHasBeenSet = false;
 
     bool m_includeSuppressedAlerts;
-    bool m_includeSuppressedAlertsHasBeenSet;
+    bool m_includeSuppressedAlertsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemFromBackupRequest : public FSxRequest
+  class CreateFileSystemFromBackupRequest : public FSxRequest
   {
   public:
-    CreateFileSystemFromBackupRequest();
+    AWS_FSX_API CreateFileSystemFromBackupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFileSystemFromBackup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -672,40 +672,96 @@ namespace Model
      */
     inline CreateFileSystemFromBackupRequest& WithOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CreateFileSystemWindowsConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     CreateFileSystemLustreConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_fileSystemTypeVersion;
-    bool m_fileSystemTypeVersionHasBeenSet;
+    bool m_fileSystemTypeVersionHasBeenSet = false;
 
     CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
+
+    int m_storageCapacity;
+    bool m_storageCapacityHasBeenSet = false;
   };
 
 } // namespace Model

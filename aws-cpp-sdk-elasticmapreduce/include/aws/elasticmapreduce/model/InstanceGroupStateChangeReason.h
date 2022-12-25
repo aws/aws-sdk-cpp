@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupStateChangeReason">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceGroupStateChangeReason
+  class InstanceGroupStateChangeReason
   {
   public:
-    InstanceGroupStateChangeReason();
-    InstanceGroupStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroupStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceGroupStateChangeReason();
+    AWS_EMR_API InstanceGroupStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceGroupStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     InstanceGroupStateChangeReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

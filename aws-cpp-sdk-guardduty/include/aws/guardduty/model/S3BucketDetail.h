@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/S3BucketDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API S3BucketDetail
+  class S3BucketDetail
   {
   public:
-    S3BucketDetail();
-    S3BucketDetail(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API S3BucketDetail();
+    AWS_GUARDDUTY_API S3BucketDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API S3BucketDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Owner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DefaultServerSideEncryption m_defaultServerSideEncryption;
-    bool m_defaultServerSideEncryptionHasBeenSet;
+    bool m_defaultServerSideEncryptionHasBeenSet = false;
 
     PublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
   };
 
 } // namespace Model

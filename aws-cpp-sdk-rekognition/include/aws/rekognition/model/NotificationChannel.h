@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/NotificationChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API NotificationChannel
+  class NotificationChannel
   {
   public:
-    NotificationChannel();
-    NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
-    NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API NotificationChannel();
+    AWS_REKOGNITION_API NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

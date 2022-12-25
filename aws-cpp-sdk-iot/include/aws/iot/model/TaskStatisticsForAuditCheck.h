@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TaskStatisticsForAuditCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TaskStatisticsForAuditCheck
+  class TaskStatisticsForAuditCheck
   {
   public:
-    TaskStatisticsForAuditCheck();
-    TaskStatisticsForAuditCheck(Aws::Utils::Json::JsonView jsonValue);
-    TaskStatisticsForAuditCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TaskStatisticsForAuditCheck();
+    AWS_IOT_API TaskStatisticsForAuditCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TaskStatisticsForAuditCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,19 +160,19 @@ namespace Model
   private:
 
     long long m_totalFindingsCount;
-    bool m_totalFindingsCountHasBeenSet;
+    bool m_totalFindingsCountHasBeenSet = false;
 
     long long m_failedFindingsCount;
-    bool m_failedFindingsCountHasBeenSet;
+    bool m_failedFindingsCountHasBeenSet = false;
 
     long long m_succeededFindingsCount;
-    bool m_succeededFindingsCountHasBeenSet;
+    bool m_succeededFindingsCountHasBeenSet = false;
 
     long long m_skippedFindingsCount;
-    bool m_skippedFindingsCountHasBeenSet;
+    bool m_skippedFindingsCountHasBeenSet = false;
 
     long long m_canceledFindingsCount;
-    bool m_canceledFindingsCountHasBeenSet;
+    bool m_canceledFindingsCountHasBeenSet = false;
   };
 
 } // namespace Model

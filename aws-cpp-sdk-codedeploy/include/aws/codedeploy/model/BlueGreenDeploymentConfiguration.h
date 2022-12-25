@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BlueGreenDeploymentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration
+  class BlueGreenDeploymentConfiguration
   {
   public:
-    BlueGreenDeploymentConfiguration();
-    BlueGreenDeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BlueGreenDeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration();
+    AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     BlueInstanceTerminationOption m_terminateBlueInstancesOnDeploymentSuccess;
-    bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet;
+    bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = false;
 
     DeploymentReadyOption m_deploymentReadyOption;
-    bool m_deploymentReadyOptionHasBeenSet;
+    bool m_deploymentReadyOptionHasBeenSet = false;
 
     GreenFleetProvisioningOption m_greenFleetProvisioningOption;
-    bool m_greenFleetProvisioningOptionHasBeenSet;
+    bool m_greenFleetProvisioningOptionHasBeenSet = false;
   };
 
 } // namespace Model

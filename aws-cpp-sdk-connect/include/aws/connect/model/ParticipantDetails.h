@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ParticipantDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ParticipantDetails
+  class ParticipantDetails
   {
   public:
-    ParticipantDetails();
-    ParticipantDetails(Aws::Utils::Json::JsonView jsonValue);
-    ParticipantDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ParticipantDetails();
+    AWS_CONNECT_API ParticipantDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ParticipantDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

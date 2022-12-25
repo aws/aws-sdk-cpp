@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TrialMinutes">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TrialMinutes
+  class TrialMinutes
   {
   public:
-    TrialMinutes();
-    TrialMinutes(Aws::Utils::Json::JsonView jsonValue);
-    TrialMinutes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TrialMinutes();
+    AWS_DEVICEFARM_API TrialMinutes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TrialMinutes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     double m_remaining;
-    bool m_remainingHasBeenSet;
+    bool m_remainingHasBeenSet = false;
   };
 
 } // namespace Model

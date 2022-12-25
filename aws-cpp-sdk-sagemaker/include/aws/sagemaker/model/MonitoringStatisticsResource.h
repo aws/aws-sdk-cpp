@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringStatisticsResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringStatisticsResource
+  class MonitoringStatisticsResource
   {
   public:
-    MonitoringStatisticsResource();
-    MonitoringStatisticsResource(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringStatisticsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringStatisticsResource();
+    AWS_SAGEMAKER_API MonitoringStatisticsResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringStatisticsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

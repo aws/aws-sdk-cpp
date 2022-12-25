@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/FileMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API FileMetadata
+  class FileMetadata
   {
   public:
-    FileMetadata();
-    FileMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FileMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API FileMetadata();
+    AWS_CODECOMMIT_API FileMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API FileMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_absolutePath;
-    bool m_absolutePathHasBeenSet;
+    bool m_absolutePathHasBeenSet = false;
 
     Aws::String m_blobId;
-    bool m_blobIdHasBeenSet;
+    bool m_blobIdHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
   };
 
 } // namespace Model

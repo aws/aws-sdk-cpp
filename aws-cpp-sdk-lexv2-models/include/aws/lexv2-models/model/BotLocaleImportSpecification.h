@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleImportSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleImportSpecification
+  class BotLocaleImportSpecification
   {
   public:
-    BotLocaleImportSpecification();
-    BotLocaleImportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification();
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,19 +296,19 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     double m_nluIntentConfidenceThreshold;
-    bool m_nluIntentConfidenceThresholdHasBeenSet;
+    bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     VoiceSettings m_voiceSettings;
-    bool m_voiceSettingsHasBeenSet;
+    bool m_voiceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

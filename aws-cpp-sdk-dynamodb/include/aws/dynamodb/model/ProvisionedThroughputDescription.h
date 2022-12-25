@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughputDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ProvisionedThroughputDescription
+  class ProvisionedThroughputDescription
   {
   public:
-    ProvisionedThroughputDescription();
-    ProvisionedThroughputDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedThroughputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ProvisionedThroughputDescription();
+    AWS_DYNAMODB_API ProvisionedThroughputDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ProvisionedThroughputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,19 +210,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastIncreaseDateTime;
-    bool m_lastIncreaseDateTimeHasBeenSet;
+    bool m_lastIncreaseDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDecreaseDateTime;
-    bool m_lastDecreaseDateTimeHasBeenSet;
+    bool m_lastDecreaseDateTimeHasBeenSet = false;
 
     long long m_numberOfDecreasesToday;
-    bool m_numberOfDecreasesTodayHasBeenSet;
+    bool m_numberOfDecreasesTodayHasBeenSet = false;
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

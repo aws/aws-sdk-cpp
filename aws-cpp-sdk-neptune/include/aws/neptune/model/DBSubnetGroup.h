@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBSubnetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API DBSubnetGroup
+  class DBSubnetGroup
   {
   public:
-    DBSubnetGroup();
-    DBSubnetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBSubnetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBSubnetGroup();
+    AWS_NEPTUNE_API DBSubnetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBSubnetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupDescription;
-    bool m_dBSubnetGroupDescriptionHasBeenSet;
+    bool m_dBSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetGroupStatus;
-    bool m_subnetGroupStatusHasBeenSet;
+    bool m_subnetGroupStatusHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupArn;
-    bool m_dBSubnetGroupArnHasBeenSet;
+    bool m_dBSubnetGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

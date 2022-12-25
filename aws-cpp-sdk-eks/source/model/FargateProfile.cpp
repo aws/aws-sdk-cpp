@@ -86,7 +86,7 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -96,7 +96,7 @@ FargateProfile& FargateProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("selectors"))
   {
-    Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
+    Aws::Utils::Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
     for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
     {
       m_selectors.push_back(selectorsJsonList[selectorsIndex].AsObject());
@@ -159,7 +159,7 @@ JsonValue FargateProfile::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);
@@ -170,7 +170,7 @@ JsonValue FargateProfile::Jsonize() const
 
   if(m_selectorsHasBeenSet)
   {
-   Array<JsonValue> selectorsJsonList(m_selectors.size());
+   Aws::Utils::Array<JsonValue> selectorsJsonList(m_selectors.size());
    for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
    {
      selectorsJsonList[selectorsIndex].AsObject(m_selectors[selectorsIndex].Jsonize());

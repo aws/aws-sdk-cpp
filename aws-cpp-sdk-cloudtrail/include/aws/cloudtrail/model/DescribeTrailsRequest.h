@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrailsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API DescribeTrailsRequest : public CloudTrailRequest
+  class DescribeTrailsRequest : public CloudTrailRequest
   {
   public:
-    DescribeTrailsRequest();
+    AWS_CLOUDTRAIL_API DescribeTrailsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeTrails"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -235,10 +235,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_trailNameList;
-    bool m_trailNameListHasBeenSet;
+    bool m_trailNameListHasBeenSet = false;
 
     bool m_includeShadowTrails;
-    bool m_includeShadowTrailsHasBeenSet;
+    bool m_includeShadowTrailsHasBeenSet = false;
   };
 
 } // namespace Model

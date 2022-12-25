@@ -36,6 +36,7 @@ Reservation::Reservation() :
     m_offeringType(OfferingType::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_renewalSettingsHasBeenSet(false),
     m_reservationIdHasBeenSet(false),
     m_resourceSpecificationHasBeenSet(false),
     m_startHasBeenSet(false),
@@ -65,6 +66,7 @@ Reservation::Reservation(JsonView jsonValue) :
     m_offeringType(OfferingType::NOT_SET),
     m_offeringTypeHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_renewalSettingsHasBeenSet(false),
     m_reservationIdHasBeenSet(false),
     m_resourceSpecificationHasBeenSet(false),
     m_startHasBeenSet(false),
@@ -161,6 +163,13 @@ Reservation& Reservation::operator =(JsonView jsonValue)
     m_region = jsonValue.GetString("region");
 
     m_regionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("renewalSettings"))
+  {
+    m_renewalSettings = jsonValue.GetObject("renewalSettings");
+
+    m_renewalSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("reservationId"))
@@ -282,6 +291,12 @@ JsonValue Reservation::Jsonize() const
   if(m_regionHasBeenSet)
   {
    payload.WithString("region", m_region);
+
+  }
+
+  if(m_renewalSettingsHasBeenSet)
+  {
+   payload.WithObject("renewalSettings", m_renewalSettings.Jsonize());
 
   }
 

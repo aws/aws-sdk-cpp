@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CodeSigningSignature">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CodeSigningSignature
+  class CodeSigningSignature
   {
   public:
-    CodeSigningSignature();
-    CodeSigningSignature(Aws::Utils::Json::JsonView jsonValue);
-    CodeSigningSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CodeSigningSignature();
+    AWS_IOT_API CodeSigningSignature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CodeSigningSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_inlineDocument;
-    bool m_inlineDocumentHasBeenSet;
+    bool m_inlineDocumentHasBeenSet = false;
   };
 
 } // namespace Model

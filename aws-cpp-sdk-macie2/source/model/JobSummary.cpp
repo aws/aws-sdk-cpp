@@ -19,6 +19,7 @@ namespace Model
 {
 
 JobSummary::JobSummary() : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
@@ -28,12 +29,12 @@ JobSummary::JobSummary() :
     m_jobTypeHasBeenSet(false),
     m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_userPausedDetailsHasBeenSet(false)
 {
 }
 
 JobSummary::JobSummary(JsonView jsonValue) : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_jobIdHasBeenSet(false),
@@ -43,17 +44,23 @@ JobSummary::JobSummary(JsonView jsonValue) :
     m_jobTypeHasBeenSet(false),
     m_lastRunErrorStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_userPausedDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("bucketCriteria"))
+  {
+    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
+
+    m_bucketCriteriaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
-    Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
+    Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
     for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
     {
       m_bucketDefinitions.push_back(bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject());
@@ -110,13 +117,6 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     m_userPausedDetailsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("bucketCriteria"))
-  {
-    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
-
-    m_bucketCriteriaHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -124,9 +124,15 @@ JsonValue JobSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_bucketCriteriaHasBeenSet)
+  {
+   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
+
+  }
+
   if(m_bucketDefinitionsHasBeenSet)
   {
-   Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
+   Aws::Utils::Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
    for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
    {
      bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject(m_bucketDefinitions[bucketDefinitionsIndex].Jsonize());
@@ -137,7 +143,7 @@ JsonValue JobSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_jobIdHasBeenSet)
@@ -171,12 +177,6 @@ JsonValue JobSummary::Jsonize() const
   if(m_userPausedDetailsHasBeenSet)
   {
    payload.WithObject("userPausedDetails", m_userPausedDetails.Jsonize());
-
-  }
-
-  if(m_bucketCriteriaHasBeenSet)
-  {
-   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
 
   }
 

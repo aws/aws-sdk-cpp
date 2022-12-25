@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateKeyUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateKeyUsage
+  class AwsCertificateManagerCertificateKeyUsage
   {
   public:
-    AwsCertificateManagerCertificateKeyUsage();
-    AwsCertificateManagerCertificateKeyUsage(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateKeyUsage();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateKeyUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

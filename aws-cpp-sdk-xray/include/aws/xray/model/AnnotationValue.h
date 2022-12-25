@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AnnotationValue">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API AnnotationValue
+  class AnnotationValue
   {
   public:
-    AnnotationValue();
-    AnnotationValue(Aws::Utils::Json::JsonView jsonValue);
-    AnnotationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API AnnotationValue();
+    AWS_XRAY_API AnnotationValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API AnnotationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     double m_numberValue;
-    bool m_numberValueHasBeenSet;
+    bool m_numberValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

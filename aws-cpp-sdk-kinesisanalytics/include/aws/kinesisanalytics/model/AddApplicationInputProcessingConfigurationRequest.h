@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationRequest : public KinesisAnalyticsRequest
+  class AddApplicationInputProcessingConfigurationRequest : public KinesisAnalyticsRequest
   {
   public:
-    AddApplicationInputProcessingConfigurationRequest();
+    AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddApplicationInputProcessingConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     InputProcessingConfiguration m_inputProcessingConfiguration;
-    bool m_inputProcessingConfigurationHasBeenSet;
+    bool m_inputProcessingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

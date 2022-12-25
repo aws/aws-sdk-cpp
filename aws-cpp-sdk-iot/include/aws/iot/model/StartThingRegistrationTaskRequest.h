@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API StartThingRegistrationTaskRequest : public IoTRequest
+  class StartThingRegistrationTaskRequest : public IoTRequest
   {
   public:
-    StartThingRegistrationTaskRequest();
+    AWS_IOT_API StartThingRegistrationTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartThingRegistrationTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_inputFileBucket;
-    bool m_inputFileBucketHasBeenSet;
+    bool m_inputFileBucketHasBeenSet = false;
 
     Aws::String m_inputFileKey;
-    bool m_inputFileKeyHasBeenSet;
+    bool m_inputFileKeyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

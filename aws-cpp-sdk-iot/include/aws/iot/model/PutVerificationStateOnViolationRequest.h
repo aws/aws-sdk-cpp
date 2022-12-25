@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API PutVerificationStateOnViolationRequest : public IoTRequest
+  class PutVerificationStateOnViolationRequest : public IoTRequest
   {
   public:
-    PutVerificationStateOnViolationRequest();
+    AWS_IOT_API PutVerificationStateOnViolationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutVerificationStateOnViolation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_violationId;
-    bool m_violationIdHasBeenSet;
+    bool m_violationIdHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_verificationStateDescription;
-    bool m_verificationStateDescriptionHasBeenSet;
+    bool m_verificationStateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

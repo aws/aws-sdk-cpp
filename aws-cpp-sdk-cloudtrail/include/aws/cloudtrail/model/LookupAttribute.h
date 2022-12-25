@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API LookupAttribute
+  class LookupAttribute
   {
   public:
-    LookupAttribute();
-    LookupAttribute(Aws::Utils::Json::JsonView jsonValue);
-    LookupAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API LookupAttribute();
+    AWS_CLOUDTRAIL_API LookupAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API LookupAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     LookupAttributeKey m_attributeKey;
-    bool m_attributeKeyHasBeenSet;
+    bool m_attributeKeyHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

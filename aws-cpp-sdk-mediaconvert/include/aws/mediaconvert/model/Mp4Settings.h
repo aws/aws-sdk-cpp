@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp4Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Mp4Settings
+  class Mp4Settings
   {
   public:
-    Mp4Settings();
-    Mp4Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mp4Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Mp4Settings();
+    AWS_MEDIACONVERT_API Mp4Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Mp4Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -362,22 +362,22 @@ namespace Model
   private:
 
     CmfcAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     Mp4CslgAtom m_cslgAtom;
-    bool m_cslgAtomHasBeenSet;
+    bool m_cslgAtomHasBeenSet = false;
 
     int m_cttsVersion;
-    bool m_cttsVersionHasBeenSet;
+    bool m_cttsVersionHasBeenSet = false;
 
     Mp4FreeSpaceBox m_freeSpaceBox;
-    bool m_freeSpaceBoxHasBeenSet;
+    bool m_freeSpaceBoxHasBeenSet = false;
 
     Mp4MoovPlacement m_moovPlacement;
-    bool m_moovPlacementHasBeenSet;
+    bool m_moovPlacementHasBeenSet = false;
 
     Aws::String m_mp4MajorBrand;
-    bool m_mp4MajorBrandHasBeenSet;
+    bool m_mp4MajorBrandHasBeenSet = false;
   };
 
 } // namespace Model

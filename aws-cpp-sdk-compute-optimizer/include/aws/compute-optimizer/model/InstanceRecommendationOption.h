@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/InstanceRecommendationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption
+  class InstanceRecommendationOption
   {
   public:
-    InstanceRecommendationOption();
-    InstanceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-    InstanceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption();
+    AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API InstanceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1130,25 +1130,25 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
-    bool m_projectedUtilizationMetricsHasBeenSet;
+    bool m_projectedUtilizationMetricsHasBeenSet = false;
 
     Aws::Vector<PlatformDifference> m_platformDifferences;
-    bool m_platformDifferencesHasBeenSet;
+    bool m_platformDifferencesHasBeenSet = false;
 
     double m_performanceRisk;
-    bool m_performanceRiskHasBeenSet;
+    bool m_performanceRiskHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
 
     MigrationEffort m_migrationEffort;
-    bool m_migrationEffortHasBeenSet;
+    bool m_migrationEffortHasBeenSet = false;
   };
 
 } // namespace Model

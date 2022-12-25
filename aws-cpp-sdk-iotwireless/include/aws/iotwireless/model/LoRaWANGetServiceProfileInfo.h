@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGetServiceProfileInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo
+  class LoRaWANGetServiceProfileInfo
   {
   public:
-    LoRaWANGetServiceProfileInfo();
-    LoRaWANGetServiceProfileInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGetServiceProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo();
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -498,61 +498,61 @@ namespace Model
   private:
 
     int m_ulRate;
-    bool m_ulRateHasBeenSet;
+    bool m_ulRateHasBeenSet = false;
 
     int m_ulBucketSize;
-    bool m_ulBucketSizeHasBeenSet;
+    bool m_ulBucketSizeHasBeenSet = false;
 
     Aws::String m_ulRatePolicy;
-    bool m_ulRatePolicyHasBeenSet;
+    bool m_ulRatePolicyHasBeenSet = false;
 
     int m_dlRate;
-    bool m_dlRateHasBeenSet;
+    bool m_dlRateHasBeenSet = false;
 
     int m_dlBucketSize;
-    bool m_dlBucketSizeHasBeenSet;
+    bool m_dlBucketSizeHasBeenSet = false;
 
     Aws::String m_dlRatePolicy;
-    bool m_dlRatePolicyHasBeenSet;
+    bool m_dlRatePolicyHasBeenSet = false;
 
     bool m_addGwMetadata;
-    bool m_addGwMetadataHasBeenSet;
+    bool m_addGwMetadataHasBeenSet = false;
 
     int m_devStatusReqFreq;
-    bool m_devStatusReqFreqHasBeenSet;
+    bool m_devStatusReqFreqHasBeenSet = false;
 
     bool m_reportDevStatusBattery;
-    bool m_reportDevStatusBatteryHasBeenSet;
+    bool m_reportDevStatusBatteryHasBeenSet = false;
 
     bool m_reportDevStatusMargin;
-    bool m_reportDevStatusMarginHasBeenSet;
+    bool m_reportDevStatusMarginHasBeenSet = false;
 
     int m_drMin;
-    bool m_drMinHasBeenSet;
+    bool m_drMinHasBeenSet = false;
 
     int m_drMax;
-    bool m_drMaxHasBeenSet;
+    bool m_drMaxHasBeenSet = false;
 
     Aws::String m_channelMask;
-    bool m_channelMaskHasBeenSet;
+    bool m_channelMaskHasBeenSet = false;
 
     bool m_prAllowed;
-    bool m_prAllowedHasBeenSet;
+    bool m_prAllowedHasBeenSet = false;
 
     bool m_hrAllowed;
-    bool m_hrAllowedHasBeenSet;
+    bool m_hrAllowedHasBeenSet = false;
 
     bool m_raAllowed;
-    bool m_raAllowedHasBeenSet;
+    bool m_raAllowedHasBeenSet = false;
 
     bool m_nwkGeoLoc;
-    bool m_nwkGeoLocHasBeenSet;
+    bool m_nwkGeoLocHasBeenSet = false;
 
     int m_targetPer;
-    bool m_targetPerHasBeenSet;
+    bool m_targetPerHasBeenSet = false;
 
     int m_minGwDiversity;
-    bool m_minGwDiversityHasBeenSet;
+    bool m_minGwDiversityHasBeenSet = false;
   };
 
 } // namespace Model

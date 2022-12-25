@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACHINELEARNING_API GetDataSourceRequest : public MachineLearningRequest
+  class GetDataSourceRequest : public MachineLearningRequest
   {
   public:
-    GetDataSourceRequest();
+    AWS_MACHINELEARNING_API GetDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACHINELEARNING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     bool m_verbose;
-    bool m_verboseHasBeenSet;
+    bool m_verboseHasBeenSet = false;
   };
 
 } // namespace Model

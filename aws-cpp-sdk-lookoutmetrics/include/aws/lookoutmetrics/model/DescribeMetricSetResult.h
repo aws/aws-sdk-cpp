@@ -12,6 +12,7 @@
 #include <aws/lookoutmetrics/model/Frequency.h>
 #include <aws/lookoutmetrics/model/MetricSource.h>
 #include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -30,12 +31,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API DescribeMetricSetResult
+  class DescribeMetricSetResult
   {
   public:
-    DescribeMetricSetResult();
-    DescribeMetricSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMetricSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API DescribeMetricSetResult();
+    AWS_LOOKOUTMETRICS_API DescribeMetricSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API DescribeMetricSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -235,17 +236,23 @@ namespace Model
 
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline void SetOffset(int value) { m_offset = value; }
 
     /**
-     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
+     * <p>After an interval ends, the amount of seconds that the detector waits before
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline DescribeMetricSetResult& WithOffset(int value) { SetOffset(value); return *this;}
 
@@ -445,6 +452,42 @@ namespace Model
      */
     inline DescribeMetricSetResult& WithMetricSource(MetricSource&& value) { SetMetricSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterList = value; }
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterList = std::move(value); }
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline DescribeMetricSetResult& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline DescribeMetricSetResult& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline DescribeMetricSetResult& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterList.push_back(value); return *this; }
+
+    /**
+     * <p>The dimensions and their values that were used to filter the dataset.</p>
+     */
+    inline DescribeMetricSetResult& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_metricSetArn;
@@ -472,6 +515,8 @@ namespace Model
     Aws::String m_timezone;
 
     MetricSource m_metricSource;
+
+    Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionSetting
+  class OptionSetting
   {
   public:
-    OptionSetting();
-    OptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionSetting();
+    AWS_RDS_API OptionSetting(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionSetting& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -378,31 +378,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_applyType;
-    bool m_applyTypeHasBeenSet;
+    bool m_applyTypeHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     bool m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     bool m_isCollection;
-    bool m_isCollectionHasBeenSet;
+    bool m_isCollectionHasBeenSet = false;
   };
 
 } // namespace Model

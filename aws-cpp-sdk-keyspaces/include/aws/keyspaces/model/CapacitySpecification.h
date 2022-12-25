@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CapacitySpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API CapacitySpecification
+  class CapacitySpecification
   {
   public:
-    CapacitySpecification();
-    CapacitySpecification(Aws::Utils::Json::JsonView jsonValue);
-    CapacitySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API CapacitySpecification();
+    AWS_KEYSPACES_API CapacitySpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API CapacitySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

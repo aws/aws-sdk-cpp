@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DateInterval">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API DateInterval
+  class DateInterval
   {
   public:
-    DateInterval();
-    DateInterval(Aws::Utils::Json::JsonView jsonValue);
-    DateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API DateInterval();
+    AWS_COSTEXPLORER_API DateInterval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API DateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

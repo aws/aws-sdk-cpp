@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobArtifacts">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLJobArtifacts
+  class AutoMLJobArtifacts
   {
   public:
-    AutoMLJobArtifacts();
-    AutoMLJobArtifacts(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLJobArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLJobArtifacts();
+    AWS_SAGEMAKER_API AutoMLJobArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLJobArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_candidateDefinitionNotebookLocation;
-    bool m_candidateDefinitionNotebookLocationHasBeenSet;
+    bool m_candidateDefinitionNotebookLocationHasBeenSet = false;
 
     Aws::String m_dataExplorationNotebookLocation;
-    bool m_dataExplorationNotebookLocationHasBeenSet;
+    bool m_dataExplorationNotebookLocationHasBeenSet = false;
   };
 
 } // namespace Model

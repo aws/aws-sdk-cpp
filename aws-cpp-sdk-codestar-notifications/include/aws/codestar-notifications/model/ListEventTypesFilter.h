@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListEventTypesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API ListEventTypesFilter
+  class ListEventTypesFilter
   {
   public:
-    ListEventTypesFilter();
-    ListEventTypesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListEventTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API ListEventTypesFilter();
+    AWS_CODESTARNOTIFICATIONS_API ListEventTypesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API ListEventTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     ListEventTypesFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

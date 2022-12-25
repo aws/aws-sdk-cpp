@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API StartOutboundVoiceContactResult
+  class StartOutboundVoiceContactResult
   {
   public:
-    StartOutboundVoiceContactResult();
-    StartOutboundVoiceContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartOutboundVoiceContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartOutboundVoiceContactResult();
+    AWS_CONNECT_API StartOutboundVoiceContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartOutboundVoiceContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

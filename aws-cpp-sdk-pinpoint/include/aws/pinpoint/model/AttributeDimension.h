@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AttributeDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API AttributeDimension
+  class AttributeDimension
   {
   public:
-    AttributeDimension();
-    AttributeDimension(Aws::Utils::Json::JsonView jsonValue);
-    AttributeDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API AttributeDimension();
+    AWS_PINPOINT_API AttributeDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API AttributeDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,10 +203,10 @@ namespace Model
   private:
 
     AttributeType m_attributeType;
-    bool m_attributeTypeHasBeenSet;
+    bool m_attributeTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

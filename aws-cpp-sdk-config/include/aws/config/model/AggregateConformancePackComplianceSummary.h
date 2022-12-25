@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateConformancePackComplianceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummary
+  class AggregateConformancePackComplianceSummary
   {
   public:
-    AggregateConformancePackComplianceSummary();
-    AggregateConformancePackComplianceSummary(Aws::Utils::Json::JsonView jsonValue);
-    AggregateConformancePackComplianceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummary();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     AggregateConformancePackComplianceCount m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
   };
 
 } // namespace Model

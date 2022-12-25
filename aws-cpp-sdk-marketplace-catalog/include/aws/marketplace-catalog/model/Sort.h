@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/Sort">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECATALOG_API Sort
+  class Sort
   {
   public:
-    Sort();
-    Sort(Aws::Utils::Json::JsonView jsonValue);
-    Sort& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACECATALOG_API Sort();
+    AWS_MARKETPLACECATALOG_API Sort(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API Sort& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

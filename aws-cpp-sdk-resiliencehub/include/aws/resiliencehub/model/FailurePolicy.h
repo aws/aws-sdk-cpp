@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/FailurePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API FailurePolicy
+  class FailurePolicy
   {
   public:
-    FailurePolicy();
-    FailurePolicy(Aws::Utils::Json::JsonView jsonValue);
-    FailurePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API FailurePolicy();
+    AWS_RESILIENCEHUB_API FailurePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API FailurePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_rpoInSecs;
-    bool m_rpoInSecsHasBeenSet;
+    bool m_rpoInSecsHasBeenSet = false;
 
     int m_rtoInSecs;
-    bool m_rtoInSecsHasBeenSet;
+    bool m_rtoInSecsHasBeenSet = false;
   };
 
 } // namespace Model

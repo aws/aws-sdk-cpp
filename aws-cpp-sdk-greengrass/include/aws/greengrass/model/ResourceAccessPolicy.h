@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceAccessPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ResourceAccessPolicy
+  class ResourceAccessPolicy
   {
   public:
-    ResourceAccessPolicy();
-    ResourceAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ResourceAccessPolicy();
+    AWS_GREENGRASS_API ResourceAccessPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ResourceAccessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

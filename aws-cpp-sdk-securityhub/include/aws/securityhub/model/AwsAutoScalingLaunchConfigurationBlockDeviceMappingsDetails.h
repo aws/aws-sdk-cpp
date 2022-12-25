@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails
+  class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails
   {
   public:
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails();
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
 
     bool m_noDevice;
-    bool m_noDeviceHasBeenSet;
+    bool m_noDeviceHasBeenSet = false;
 
     Aws::String m_virtualName;
-    bool m_virtualNameHasBeenSet;
+    bool m_virtualNameHasBeenSet = false;
   };
 
 } // namespace Model

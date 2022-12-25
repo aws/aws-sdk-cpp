@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RecommendationTriggerData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API RecommendationTriggerData
+  class RecommendationTriggerData
   {
   public:
-    RecommendationTriggerData();
-    RecommendationTriggerData(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationTriggerData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTriggerData();
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTriggerData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTriggerData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     QueryRecommendationTriggerData m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
   };
 
 } // namespace Model

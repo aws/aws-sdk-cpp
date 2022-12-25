@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TimeSeriesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API TimeSeriesSummary
+  class TimeSeriesSummary
   {
   public:
-    TimeSeriesSummary();
-    TimeSeriesSummary(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API TimeSeriesSummary();
+    AWS_IOTSITEWISE_API TimeSeriesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API TimeSeriesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -384,28 +384,28 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_timeSeriesId;
-    bool m_timeSeriesIdHasBeenSet;
+    bool m_timeSeriesIdHasBeenSet = false;
 
     PropertyDataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_dataTypeSpec;
-    bool m_dataTypeSpecHasBeenSet;
+    bool m_dataTypeSpecHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeSeriesCreationDate;
-    bool m_timeSeriesCreationDateHasBeenSet;
+    bool m_timeSeriesCreationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeSeriesLastUpdateDate;
-    bool m_timeSeriesLastUpdateDateHasBeenSet;
+    bool m_timeSeriesLastUpdateDateHasBeenSet = false;
   };
 
 } // namespace Model

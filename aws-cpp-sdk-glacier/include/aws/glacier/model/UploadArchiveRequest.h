@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchiveInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API UploadArchiveRequest : public StreamingGlacierRequest
+  class UploadArchiveRequest : public StreamingGlacierRequest
   {
   public:
-    UploadArchiveRequest();
+    AWS_GLACIER_API UploadArchiveRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UploadArchive"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLACIER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -234,16 +234,16 @@ namespace Model
   private:
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_archiveDescription;
-    bool m_archiveDescriptionHasBeenSet;
+    bool m_archiveDescriptionHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
   };
 

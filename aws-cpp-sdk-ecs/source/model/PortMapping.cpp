@@ -24,7 +24,11 @@ PortMapping::PortMapping() :
     m_hostPort(0),
     m_hostPortHasBeenSet(false),
     m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_appProtocol(ApplicationProtocol::NOT_SET),
+    m_appProtocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ PortMapping::PortMapping(JsonView jsonValue) :
     m_hostPort(0),
     m_hostPortHasBeenSet(false),
     m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_appProtocol(ApplicationProtocol::NOT_SET),
+    m_appProtocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +70,27 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
     m_protocolHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("appProtocol"))
+  {
+    m_appProtocol = ApplicationProtocolMapper::GetApplicationProtocolForName(jsonValue.GetString("appProtocol"));
+
+    m_appProtocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerPortRange"))
+  {
+    m_containerPortRange = jsonValue.GetString("containerPortRange");
+
+    m_containerPortRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +113,23 @@ JsonValue PortMapping::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", TransportProtocolMapper::GetNameForTransportProtocol(m_protocol));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_appProtocolHasBeenSet)
+  {
+   payload.WithString("appProtocol", ApplicationProtocolMapper::GetNameForApplicationProtocol(m_appProtocol));
+  }
+
+  if(m_containerPortRangeHasBeenSet)
+  {
+   payload.WithString("containerPortRange", m_containerPortRange);
+
   }
 
   return payload;

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListData">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API AppsListData
+  class AppsListData
   {
   public:
-    AppsListData();
-    AppsListData(Aws::Utils::Json::JsonView jsonValue);
-    AppsListData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API AppsListData();
+    AWS_FMS_API AppsListData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API AppsListData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -358,25 +358,25 @@ namespace Model
   private:
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
 
     Aws::String m_listName;
-    bool m_listNameHasBeenSet;
+    bool m_listNameHasBeenSet = false;
 
     Aws::String m_listUpdateToken;
-    bool m_listUpdateTokenHasBeenSet;
+    bool m_listUpdateTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<App> m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<App>> m_previousAppsList;
-    bool m_previousAppsListHasBeenSet;
+    bool m_previousAppsListHasBeenSet = false;
   };
 
 } // namespace Model

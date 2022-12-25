@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistoryEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryEntry
+  class BatchGetAssetPropertyValueHistoryEntry
   {
   public:
-    BatchGetAssetPropertyValueHistoryEntry();
-    BatchGetAssetPropertyValueHistoryEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyValueHistoryEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -409,28 +409,28 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Vector<Quality> m_qualities;
-    bool m_qualitiesHasBeenSet;
+    bool m_qualitiesHasBeenSet = false;
 
     TimeOrdering m_timeOrdering;
-    bool m_timeOrderingHasBeenSet;
+    bool m_timeOrderingHasBeenSet = false;
   };
 
 } // namespace Model

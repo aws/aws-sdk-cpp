@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplexRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StartMultiplexRequest : public MediaLiveRequest
+  class StartMultiplexRequest : public MediaLiveRequest
   {
   public:
-    StartMultiplexRequest();
+    AWS_MEDIALIVE_API StartMultiplexRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartMultiplex"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_multiplexId;
-    bool m_multiplexIdHasBeenSet;
+    bool m_multiplexIdHasBeenSet = false;
   };
 
 } // namespace Model

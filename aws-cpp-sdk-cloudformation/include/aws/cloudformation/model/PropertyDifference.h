@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PropertyDifference">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API PropertyDifference
+  class PropertyDifference
   {
   public:
-    PropertyDifference();
-    PropertyDifference(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PropertyDifference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API PropertyDifference();
+    AWS_CLOUDFORMATION_API PropertyDifference(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API PropertyDifference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_propertyPath;
-    bool m_propertyPathHasBeenSet;
+    bool m_propertyPathHasBeenSet = false;
 
     Aws::String m_expectedValue;
-    bool m_expectedValueHasBeenSet;
+    bool m_expectedValueHasBeenSet = false;
 
     Aws::String m_actualValue;
-    bool m_actualValueHasBeenSet;
+    bool m_actualValueHasBeenSet = false;
 
     DifferenceType m_differenceType;
-    bool m_differenceTypeHasBeenSet;
+    bool m_differenceTypeHasBeenSet = false;
   };
 
 } // namespace Model

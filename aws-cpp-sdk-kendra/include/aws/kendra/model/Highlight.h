@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Highlight">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API Highlight
+  class Highlight
   {
   public:
-    Highlight();
-    Highlight(Aws::Utils::Json::JsonView jsonValue);
-    Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Highlight();
+    AWS_KENDRA_API Highlight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,16 +142,16 @@ namespace Model
   private:
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     bool m_topAnswer;
-    bool m_topAnswerHasBeenSet;
+    bool m_topAnswerHasBeenSet = false;
 
     HighlightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

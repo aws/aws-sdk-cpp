@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchInferenceJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchInferenceJobInput
+  class BatchInferenceJobInput
   {
   public:
-    BatchInferenceJobInput();
-    BatchInferenceJobInput(Aws::Utils::Json::JsonView jsonValue);
-    BatchInferenceJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchInferenceJobInput();
+    AWS_PERSONALIZE_API BatchInferenceJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchInferenceJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3DataConfig m_s3DataSource;
-    bool m_s3DataSourceHasBeenSet;
+    bool m_s3DataSourceHasBeenSet = false;
   };
 
 } // namespace Model

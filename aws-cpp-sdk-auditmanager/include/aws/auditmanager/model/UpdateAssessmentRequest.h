@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API UpdateAssessmentRequest : public AuditManagerRequest
+  class UpdateAssessmentRequest : public AuditManagerRequest
   {
   public:
-    UpdateAssessmentRequest();
+    AWS_AUDITMANAGER_API UpdateAssessmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssessment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -270,22 +270,22 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::String m_assessmentDescription;
-    bool m_assessmentDescriptionHasBeenSet;
+    bool m_assessmentDescriptionHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     AssessmentReportsDestination m_assessmentReportsDestination;
-    bool m_assessmentReportsDestinationHasBeenSet;
+    bool m_assessmentReportsDestinationHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/OutPutS3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API OutPutS3Location
+  class OutPutS3Location
   {
   public:
-    OutPutS3Location();
-    OutPutS3Location(Aws::Utils::Json::JsonView jsonValue);
-    OutPutS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API OutPutS3Location();
+    AWS_PANORAMA_API OutPutS3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API OutPutS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_objectKey;
-    bool m_objectKeyHasBeenSet;
+    bool m_objectKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Node">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API Node
+  class Node
   {
   public:
-    Node();
-    Node(Aws::Utils::Json::JsonView jsonValue);
-    Node& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API Node();
+    AWS_MANAGEDBLOCKCHAIN_API Node(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Node& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -370,15 +370,15 @@ namespace Model
 
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -386,24 +386,25 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline const NodeStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -411,24 +412,25 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -436,24 +438,25 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const NodeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -461,24 +464,25 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline void SetStatus(NodeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -486,24 +490,25 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline Node& WithStatus(const NodeStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a node.</p> </li> <li> <p>
+     * <p>The status of the node.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a node.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The node has been created and can participate in the
      * network.</p> </li> <li> <p> <code>UNHEALTHY</code> - The node is impaired and
      * might not function as expected. Amazon Managed Blockchain automatically finds
      * nodes in this state and tries to recover them. If a node is recoverable, it
      * returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code>
-     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a node and creation failed.</p> </li> <li> <p>
+     * status.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a node and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The node is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The node is in the process of being
      * deleted.</p> </li> <li> <p> <code>DELETED</code> - The node can no longer
@@ -511,11 +516,12 @@ namespace Model
      * no longer functional, cannot be recovered, and must be deleted.</p> </li> <li>
      * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might
      * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
-     * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The node resource might
-     * take some time to find that the key is inaccessible. When a resource is in this
-     * state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * key in KMS for encryption at rest. Either the KMS key was disabled or deleted,
+     * or the grants on the key were revoked.</p> <p>The effect of disabling or
+     * deleting a key or of revoking a grant isn't immediate. It might take some time
+     * for the node resource to discover that the key is inaccessible. When a resource
+     * is in this state, we recommend deleting and recreating the resource.</p> </li>
+     * </ul>
      */
     inline Node& WithStatus(NodeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -712,7 +718,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -720,7 +727,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -728,7 +736,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -736,7 +745,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -744,7 +754,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -752,7 +763,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Node& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -760,7 +772,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Node& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -768,123 +781,148 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Node& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline Node& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline Node& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the node uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
-     * AWS owned KMS key for encryption. The node inherits this parameter from the
-     * member that it belongs to.</p> <p>Applies only to Hyperledger Fabric.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the node uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web
+     * Services owned KMS key for encryption. The node inherits this parameter from the
+     * member that it belongs to.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p> <p>Applies only to Hyperledger Fabric.</p>
      */
     inline Node& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     NodeFrameworkAttributes m_frameworkAttributes;
-    bool m_frameworkAttributesHasBeenSet;
+    bool m_frameworkAttributesHasBeenSet = false;
 
     NodeLogPublishingConfiguration m_logPublishingConfiguration;
-    bool m_logPublishingConfigurationHasBeenSet;
+    bool m_logPublishingConfigurationHasBeenSet = false;
 
     StateDBType m_stateDB;
-    bool m_stateDBHasBeenSet;
+    bool m_stateDBHasBeenSet = false;
 
     NodeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

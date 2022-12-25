@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/AuthScheme.h>
 #include <aws/rds/model/IAMAuthMode.h>
+#include <aws/rds/model/ClientPasswordAuthType.h>
 #include <utility>
 
 namespace Aws
@@ -31,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UserAuthConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API UserAuthConfig
+  class UserAuthConfig
   {
   public:
-    UserAuthConfig();
-    UserAuthConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserAuthConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfig();
+    AWS_RDS_API UserAuthConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -228,56 +229,102 @@ namespace Model
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline const IAMAuthMode& GetIAMAuth() const{ return m_iAMAuth; }
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline bool IAMAuthHasBeenSet() const { return m_iAMAuthHasBeenSet; }
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline void SetIAMAuth(const IAMAuthMode& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = value; }
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline void SetIAMAuth(IAMAuthMode&& value) { m_iAMAuthHasBeenSet = true; m_iAMAuth = std::move(value); }
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline UserAuthConfig& WithIAMAuth(const IAMAuthMode& value) { SetIAMAuth(value); return *this;}
 
     /**
      * <p>Whether to require or disallow Amazon Web Services Identity and Access
-     * Management (IAM) authentication for connections to the proxy.</p>
+     * Management (IAM) authentication for connections to the proxy. The
+     * <code>ENABLED</code> value is valid only for proxies with RDS for Microsoft SQL
+     * Server.</p>
      */
     inline UserAuthConfig& WithIAMAuth(IAMAuthMode&& value) { SetIAMAuth(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline const ClientPasswordAuthType& GetClientPasswordAuthType() const{ return m_clientPasswordAuthType; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline bool ClientPasswordAuthTypeHasBeenSet() const { return m_clientPasswordAuthTypeHasBeenSet; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline void SetClientPasswordAuthType(const ClientPasswordAuthType& value) { m_clientPasswordAuthTypeHasBeenSet = true; m_clientPasswordAuthType = value; }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline void SetClientPasswordAuthType(ClientPasswordAuthType&& value) { m_clientPasswordAuthTypeHasBeenSet = true; m_clientPasswordAuthType = std::move(value); }
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline UserAuthConfig& WithClientPasswordAuthType(const ClientPasswordAuthType& value) { SetClientPasswordAuthType(value); return *this;}
+
+    /**
+     * <p>The type of authentication the proxy uses for connections from clients.</p>
+     */
+    inline UserAuthConfig& WithClientPasswordAuthType(ClientPasswordAuthType&& value) { SetClientPasswordAuthType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     AuthScheme m_authScheme;
-    bool m_authSchemeHasBeenSet;
+    bool m_authSchemeHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     IAMAuthMode m_iAMAuth;
-    bool m_iAMAuthHasBeenSet;
+    bool m_iAMAuthHasBeenSet = false;
+
+    ClientPasswordAuthType m_clientPasswordAuthType;
+    bool m_clientPasswordAuthTypeHasBeenSet = false;
   };
 
 } // namespace Model

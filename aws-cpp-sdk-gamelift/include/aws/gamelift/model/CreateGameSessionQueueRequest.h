@@ -23,14 +23,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueueInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CreateGameSessionQueueRequest : public GameLiftRequest
+  class CreateGameSessionQueueRequest : public GameLiftRequest
   {
   public:
-    CreateGameSessionQueueRequest();
+    AWS_GAMELIFT_API CreateGameSessionQueueRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGameSessionQueue"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -366,50 +363,50 @@ namespace Model
 
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline CreateGameSessionQueueRequest& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline CreateGameSessionQueueRequest& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline CreateGameSessionQueueRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
 
@@ -486,10 +483,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -500,10 +494,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -514,10 +505,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -528,10 +516,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -542,10 +527,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameSessionQueueRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -556,10 +538,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameSessionQueueRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -570,10 +549,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameSessionQueueRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -584,41 +560,38 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameSessionQueueRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
-    bool m_playerLatencyPoliciesHasBeenSet;
+    bool m_playerLatencyPoliciesHasBeenSet = false;
 
     Aws::Vector<GameSessionQueueDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     FilterConfiguration m_filterConfiguration;
-    bool m_filterConfigurationHasBeenSet;
+    bool m_filterConfigurationHasBeenSet = false;
 
     PriorityConfiguration m_priorityConfiguration;
-    bool m_priorityConfigurationHasBeenSet;
+    bool m_priorityConfigurationHasBeenSet = false;
 
     Aws::String m_customEventData;
-    bool m_customEventDataHasBeenSet;
+    bool m_customEventDataHasBeenSet = false;
 
     Aws::String m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

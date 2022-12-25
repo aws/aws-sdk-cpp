@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/TGWOnDeviceServiceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration
+  class TGWOnDeviceServiceConfiguration
   {
   public:
-    TGWOnDeviceServiceConfiguration();
-    TGWOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TGWOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration();
+    AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_storageLimit;
-    bool m_storageLimitHasBeenSet;
+    bool m_storageLimitHasBeenSet = false;
 
     StorageUnit m_storageUnit;
-    bool m_storageUnitHasBeenSet;
+    bool m_storageUnitHasBeenSet = false;
   };
 
 } // namespace Model

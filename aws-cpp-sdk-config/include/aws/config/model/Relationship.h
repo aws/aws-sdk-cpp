@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Relationship">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API Relationship
+  class Relationship
   {
   public:
-    Relationship();
-    Relationship(Aws::Utils::Json::JsonView jsonValue);
-    Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API Relationship();
+    AWS_CONFIGSERVICE_API Relationship(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_relationshipName;
-    bool m_relationshipNameHasBeenSet;
+    bool m_relationshipNameHasBeenSet = false;
   };
 
 } // namespace Model

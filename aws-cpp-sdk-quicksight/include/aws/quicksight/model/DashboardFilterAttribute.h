@@ -16,7 +16,13 @@ namespace Model
   enum class DashboardFilterAttribute
   {
     NOT_SET,
-    QUICKSIGHT_USER
+    QUICKSIGHT_USER,
+    QUICKSIGHT_VIEWER_OR_OWNER,
+    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+    QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_SOLE_OWNER,
+    DASHBOARD_NAME
   };
 
 namespace DashboardFilterAttributeMapper

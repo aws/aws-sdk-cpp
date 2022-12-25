@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEARTIFACT_API ListPackageVersionDependenciesRequest : public CodeArtifactRequest
+  class ListPackageVersionDependenciesRequest : public CodeArtifactRequest
   {
   public:
-    ListPackageVersionDependenciesRequest();
+    AWS_CODEARTIFACT_API ListPackageVersionDependenciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPackageVersionDependencies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEARTIFACT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CODEARTIFACT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -210,82 +210,90 @@ namespace Model
 
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p> The namespace of the package. The package component that specifies its
-     * namespace depends on its type. For example: </p> <ul> <li> <p> The namespace of
-     * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
-     * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
-     * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> </ul>
+     * <p>The namespace of the package version with the requested dependencies. The
+     * package version component that specifies its namespace depends on its type. For
+     * example:</p> <ul> <li> <p> The namespace of a Maven package version is its
+     * <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package
+     * version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package
+     * versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionDependenciesRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -431,28 +439,28 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     PackageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
-    bool m_packageHasBeenSet;
+    bool m_packageHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -64,7 +65,7 @@ DescribeLocationObjectStorageResult& DescribeLocationObjectStorageResult::operat
 
   if(jsonValue.ValueExists("AgentArns"))
   {
-    Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
+    Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
     for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
@@ -75,6 +76,11 @@ DescribeLocationObjectStorageResult& DescribeLocationObjectStorageResult::operat
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
 
+  }
+
+  if(jsonValue.ValueExists("ServerCertificate"))
+  {
+    m_serverCertificate = HashingUtils::Base64Decode(jsonValue.GetString("ServerCertificate"));
   }
 
 

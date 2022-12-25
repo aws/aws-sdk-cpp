@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TeletextSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TeletextSourceSettings
+  class TeletextSourceSettings
   {
   public:
-    TeletextSourceSettings();
-    TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TeletextSourceSettings();
+    AWS_MEDIACONVERT_API TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
   };
 
 } // namespace Model

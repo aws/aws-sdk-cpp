@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateHyperParameterTuningJobRequest : public SageMakerRequest
+  class CreateHyperParameterTuningJobRequest : public SageMakerRequest
   {
   public:
-    CreateHyperParameterTuningJobRequest();
+    AWS_SAGEMAKER_API CreateHyperParameterTuningJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateHyperParameterTuningJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -457,22 +457,22 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     HyperParameterTuningJobConfig m_hyperParameterTuningJobConfig;
-    bool m_hyperParameterTuningJobConfigHasBeenSet;
+    bool m_hyperParameterTuningJobConfigHasBeenSet = false;
 
     HyperParameterTrainingJobDefinition m_trainingJobDefinition;
-    bool m_trainingJobDefinitionHasBeenSet;
+    bool m_trainingJobDefinitionHasBeenSet = false;
 
     Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
-    bool m_trainingJobDefinitionsHasBeenSet;
+    bool m_trainingJobDefinitionsHasBeenSet = false;
 
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
-    bool m_warmStartConfigHasBeenSet;
+    bool m_warmStartConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

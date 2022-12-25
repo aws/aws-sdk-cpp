@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemRequest : public FSxRequest
+  class UpdateFileSystemRequest : public FSxRequest
   {
   public:
-    UpdateFileSystemRequest();
+    AWS_FSX_API UpdateFileSystemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFileSystem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -382,25 +382,25 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     int m_storageCapacity;
-    bool m_storageCapacityHasBeenSet;
+    bool m_storageCapacityHasBeenSet = false;
 
     UpdateFileSystemWindowsConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     UpdateFileSystemLustreConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     UpdateFileSystemOntapConfiguration m_ontapConfiguration;
-    bool m_ontapConfigurationHasBeenSet;
+    bool m_ontapConfigurationHasBeenSet = false;
 
     UpdateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

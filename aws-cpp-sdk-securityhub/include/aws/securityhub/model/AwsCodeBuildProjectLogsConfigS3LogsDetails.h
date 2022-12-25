@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectLogsConfigS3LogsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails
+  class AwsCodeBuildProjectLogsConfigS3LogsDetails
   {
   public:
-    AwsCodeBuildProjectLogsConfigS3LogsDetails();
-    AwsCodeBuildProjectLogsConfigS3LogsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectLogsConfigS3LogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

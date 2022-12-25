@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Session">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API Session
+  class Session
   {
   public:
-    Session();
-    Session(Aws::Utils::Json::JsonView jsonValue);
-    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API Session();
+    AWS_PINPOINT_API Session(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Session& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::String m_stopTimestamp;
-    bool m_stopTimestampHasBeenSet;
+    bool m_stopTimestampHasBeenSet = false;
   };
 
 } // namespace Model

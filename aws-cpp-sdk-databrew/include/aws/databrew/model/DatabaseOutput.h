@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatabaseOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatabaseOutput
+  class DatabaseOutput
   {
   public:
-    DatabaseOutput();
-    DatabaseOutput(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatabaseOutput();
+    AWS_GLUEDATABREW_API DatabaseOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatabaseOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_glueConnectionName;
-    bool m_glueConnectionNameHasBeenSet;
+    bool m_glueConnectionNameHasBeenSet = false;
 
     DatabaseTableOutputOptions m_databaseOptions;
-    bool m_databaseOptionsHasBeenSet;
+    bool m_databaseOptionsHasBeenSet = false;
 
     DatabaseOutputMode m_databaseOutputMode;
-    bool m_databaseOutputModeHasBeenSet;
+    bool m_databaseOutputModeHasBeenSet = false;
   };
 
 } // namespace Model

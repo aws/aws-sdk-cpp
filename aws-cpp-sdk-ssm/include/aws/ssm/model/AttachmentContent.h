@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AttachmentContent">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AttachmentContent
+  class AttachmentContent
   {
   public:
-    AttachmentContent();
-    AttachmentContent(Aws::Utils::Json::JsonView jsonValue);
-    AttachmentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AttachmentContent();
+    AWS_SSM_API AttachmentContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AttachmentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
 
     AttachmentHashType m_hashType;
-    bool m_hashTypeHasBeenSet;
+    bool m_hashTypeHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

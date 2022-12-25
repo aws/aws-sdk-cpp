@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Framework">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API Framework
+  class Framework
   {
   public:
-    Framework();
-    Framework(Aws::Utils::Json::JsonView jsonValue);
-    Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API Framework();
+    AWS_BACKUP_API Framework(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,50 +209,50 @@ namespace Model
 
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline Framework& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The date and time that a framework is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of <code>CreationTime</code> is accurate to
-     * milliseconds. For example, the value 1516925490.087 represents Friday, January
-     * 26, 2018 12:11:30.087 AM.</p>
+     * <p>The date and time that a framework is created, in ISO 8601 representation.
+     * The value of <code>CreationTime</code> is accurate to milliseconds. For example,
+     * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
+     * hours behind UTC.</p>
      */
     inline Framework& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -316,22 +316,22 @@ namespace Model
   private:
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkArn;
-    bool m_frameworkArnHasBeenSet;
+    bool m_frameworkArnHasBeenSet = false;
 
     Aws::String m_frameworkDescription;
-    bool m_frameworkDescriptionHasBeenSet;
+    bool m_frameworkDescriptionHasBeenSet = false;
 
     int m_numberOfControls;
-    bool m_numberOfControlsHasBeenSet;
+    bool m_numberOfControlsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
   };
 
 } // namespace Model

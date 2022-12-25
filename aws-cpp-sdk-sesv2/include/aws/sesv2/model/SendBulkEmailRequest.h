@@ -28,10 +28,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendBulkEmailRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SendBulkEmailRequest : public SESV2Request
+  class SendBulkEmailRequest : public SESV2Request
   {
   public:
-    SendBulkEmailRequest();
+    AWS_SESV2_API SendBulkEmailRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendBulkEmail"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -647,31 +647,31 @@ namespace Model
   private:
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_fromEmailAddressIdentityArn;
-    bool m_fromEmailAddressIdentityArnHasBeenSet;
+    bool m_fromEmailAddressIdentityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replyToAddresses;
-    bool m_replyToAddressesHasBeenSet;
+    bool m_replyToAddressesHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddress;
-    bool m_feedbackForwardingEmailAddressHasBeenSet;
+    bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
     Aws::String m_feedbackForwardingEmailAddressIdentityArn;
-    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet;
+    bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_defaultEmailTags;
-    bool m_defaultEmailTagsHasBeenSet;
+    bool m_defaultEmailTagsHasBeenSet = false;
 
     BulkEmailContent m_defaultContent;
-    bool m_defaultContentHasBeenSet;
+    bool m_defaultContentHasBeenSet = false;
 
     Aws::Vector<BulkEmailEntry> m_bulkEmailEntries;
-    bool m_bulkEmailEntriesHasBeenSet;
+    bool m_bulkEmailEntriesHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

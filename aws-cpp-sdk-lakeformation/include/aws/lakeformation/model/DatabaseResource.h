@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DatabaseResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API DatabaseResource
+  class DatabaseResource
   {
   public:
-    DatabaseResource();
-    DatabaseResource(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API DatabaseResource();
+    AWS_LAKEFORMATION_API DatabaseResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API DatabaseResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

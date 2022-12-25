@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrincipalIdFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PrincipalIdFormat
+  class PrincipalIdFormat
   {
   public:
-    PrincipalIdFormat();
-    PrincipalIdFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrincipalIdFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrincipalIdFormat();
+    AWS_EC2_API PrincipalIdFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrincipalIdFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<IdFormat> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

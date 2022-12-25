@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API MountTargetDescription
+  class MountTargetDescription
   {
   public:
-    MountTargetDescription();
-    MountTargetDescription(Aws::Utils::Json::JsonView jsonValue);
-    MountTargetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API MountTargetDescription();
+    AWS_EFS_API MountTargetDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API MountTargetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -520,34 +520,34 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_mountTargetId;
-    bool m_mountTargetIdHasBeenSet;
+    bool m_mountTargetIdHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     LifeCycleState m_lifeCycleState;
-    bool m_lifeCycleStateHasBeenSet;
+    bool m_lifeCycleStateHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::String m_availabilityZoneName;
-    bool m_availabilityZoneNameHasBeenSet;
+    bool m_availabilityZoneNameHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API ListAccessPoliciesRequest : public IoTSiteWiseRequest
+  class ListAccessPoliciesRequest : public IoTSiteWiseRequest
   {
   public:
-    ListAccessPoliciesRequest();
+    AWS_IOTSITEWISE_API ListAccessPoliciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,49 +35,49 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAccessPolicies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO
-     * group, or IAM user). This parameter is required if you specify
+     * <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or
+     * IAM user). This parameter is required if you specify
      * <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
@@ -351,25 +351,25 @@ namespace Model
   private:
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_iamArn;
-    bool m_iamArnHasBeenSet;
+    bool m_iamArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

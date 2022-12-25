@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Observation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API Observation
+  class Observation
   {
   public:
-    Observation();
-    Observation(Aws::Utils::Json::JsonView jsonValue);
-    Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API Observation();
+    AWS_APPLICATIONINSIGHTS_API Observation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1812,139 +1812,139 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_sourceARN;
-    bool m_sourceARNHasBeenSet;
+    bool m_sourceARNHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
 
     Aws::Utils::DateTime m_lineTime;
-    bool m_lineTimeHasBeenSet;
+    bool m_lineTimeHasBeenSet = false;
 
     Aws::String m_logText;
-    bool m_logTextHasBeenSet;
+    bool m_logTextHasBeenSet = false;
 
     LogFilter m_logFilter;
-    bool m_logFilterHasBeenSet;
+    bool m_logFilterHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_cloudWatchEventId;
-    bool m_cloudWatchEventIdHasBeenSet;
+    bool m_cloudWatchEventIdHasBeenSet = false;
 
     CloudWatchEventSource m_cloudWatchEventSource;
-    bool m_cloudWatchEventSourceHasBeenSet;
+    bool m_cloudWatchEventSourceHasBeenSet = false;
 
     Aws::String m_cloudWatchEventDetailType;
-    bool m_cloudWatchEventDetailTypeHasBeenSet;
+    bool m_cloudWatchEventDetailTypeHasBeenSet = false;
 
     Aws::String m_healthEventArn;
-    bool m_healthEventArnHasBeenSet;
+    bool m_healthEventArnHasBeenSet = false;
 
     Aws::String m_healthService;
-    bool m_healthServiceHasBeenSet;
+    bool m_healthServiceHasBeenSet = false;
 
     Aws::String m_healthEventTypeCode;
-    bool m_healthEventTypeCodeHasBeenSet;
+    bool m_healthEventTypeCodeHasBeenSet = false;
 
     Aws::String m_healthEventTypeCategory;
-    bool m_healthEventTypeCategoryHasBeenSet;
+    bool m_healthEventTypeCategoryHasBeenSet = false;
 
     Aws::String m_healthEventDescription;
-    bool m_healthEventDescriptionHasBeenSet;
+    bool m_healthEventDescriptionHasBeenSet = false;
 
     Aws::String m_codeDeployDeploymentId;
-    bool m_codeDeployDeploymentIdHasBeenSet;
+    bool m_codeDeployDeploymentIdHasBeenSet = false;
 
     Aws::String m_codeDeployDeploymentGroup;
-    bool m_codeDeployDeploymentGroupHasBeenSet;
+    bool m_codeDeployDeploymentGroupHasBeenSet = false;
 
     Aws::String m_codeDeployState;
-    bool m_codeDeployStateHasBeenSet;
+    bool m_codeDeployStateHasBeenSet = false;
 
     Aws::String m_codeDeployApplication;
-    bool m_codeDeployApplicationHasBeenSet;
+    bool m_codeDeployApplicationHasBeenSet = false;
 
     Aws::String m_codeDeployInstanceGroupId;
-    bool m_codeDeployInstanceGroupIdHasBeenSet;
+    bool m_codeDeployInstanceGroupIdHasBeenSet = false;
 
     Aws::String m_ec2State;
-    bool m_ec2StateHasBeenSet;
+    bool m_ec2StateHasBeenSet = false;
 
     Aws::String m_rdsEventCategories;
-    bool m_rdsEventCategoriesHasBeenSet;
+    bool m_rdsEventCategoriesHasBeenSet = false;
 
     Aws::String m_rdsEventMessage;
-    bool m_rdsEventMessageHasBeenSet;
+    bool m_rdsEventMessageHasBeenSet = false;
 
     Aws::String m_s3EventName;
-    bool m_s3EventNameHasBeenSet;
+    bool m_s3EventNameHasBeenSet = false;
 
     Aws::String m_statesExecutionArn;
-    bool m_statesExecutionArnHasBeenSet;
+    bool m_statesExecutionArnHasBeenSet = false;
 
     Aws::String m_statesArn;
-    bool m_statesArnHasBeenSet;
+    bool m_statesArnHasBeenSet = false;
 
     Aws::String m_statesStatus;
-    bool m_statesStatusHasBeenSet;
+    bool m_statesStatusHasBeenSet = false;
 
     Aws::String m_statesInput;
-    bool m_statesInputHasBeenSet;
+    bool m_statesInputHasBeenSet = false;
 
     Aws::String m_ebsEvent;
-    bool m_ebsEventHasBeenSet;
+    bool m_ebsEventHasBeenSet = false;
 
     Aws::String m_ebsResult;
-    bool m_ebsResultHasBeenSet;
+    bool m_ebsResultHasBeenSet = false;
 
     Aws::String m_ebsCause;
-    bool m_ebsCauseHasBeenSet;
+    bool m_ebsCauseHasBeenSet = false;
 
     Aws::String m_ebsRequestId;
-    bool m_ebsRequestIdHasBeenSet;
+    bool m_ebsRequestIdHasBeenSet = false;
 
     int m_xRayFaultPercent;
-    bool m_xRayFaultPercentHasBeenSet;
+    bool m_xRayFaultPercentHasBeenSet = false;
 
     int m_xRayThrottlePercent;
-    bool m_xRayThrottlePercentHasBeenSet;
+    bool m_xRayThrottlePercentHasBeenSet = false;
 
     int m_xRayErrorPercent;
-    bool m_xRayErrorPercentHasBeenSet;
+    bool m_xRayErrorPercentHasBeenSet = false;
 
     int m_xRayRequestCount;
-    bool m_xRayRequestCountHasBeenSet;
+    bool m_xRayRequestCountHasBeenSet = false;
 
     long long m_xRayRequestAverageLatency;
-    bool m_xRayRequestAverageLatencyHasBeenSet;
+    bool m_xRayRequestAverageLatencyHasBeenSet = false;
 
     Aws::String m_xRayNodeName;
-    bool m_xRayNodeNameHasBeenSet;
+    bool m_xRayNodeNameHasBeenSet = false;
 
     Aws::String m_xRayNodeType;
-    bool m_xRayNodeTypeHasBeenSet;
+    bool m_xRayNodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

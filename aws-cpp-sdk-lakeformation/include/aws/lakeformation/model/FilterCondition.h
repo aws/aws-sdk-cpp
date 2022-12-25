@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/FilterCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API FilterCondition
+  class FilterCondition
   {
   public:
-    FilterCondition();
-    FilterCondition(Aws::Utils::Json::JsonView jsonValue);
-    FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API FilterCondition();
+    AWS_LAKEFORMATION_API FilterCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     FieldNameString m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValueList;
-    bool m_stringValueListHasBeenSet;
+    bool m_stringValueListHasBeenSet = false;
   };
 
 } // namespace Model

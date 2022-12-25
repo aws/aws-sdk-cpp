@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentityInput">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API GetOpenIdTokenForDeveloperIdentityRequest : public CognitoIdentityRequest
+  class GetOpenIdTokenForDeveloperIdentityRequest : public CognitoIdentityRequest
   {
   public:
-    GetOpenIdTokenForDeveloperIdentityRequest();
+    AWS_COGNITOIDENTITY_API GetOpenIdTokenForDeveloperIdentityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetOpenIdTokenForDeveloperIdentity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -416,19 +416,19 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logins;
-    bool m_loginsHasBeenSet;
+    bool m_loginsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_principalTags;
-    bool m_principalTagsHasBeenSet;
+    bool m_principalTagsHasBeenSet = false;
 
     long long m_tokenDuration;
-    bool m_tokenDurationHasBeenSet;
+    bool m_tokenDurationHasBeenSet = false;
   };
 
 } // namespace Model

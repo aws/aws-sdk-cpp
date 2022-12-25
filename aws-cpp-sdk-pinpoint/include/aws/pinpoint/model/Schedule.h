@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Schedule">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API Schedule
+  class Schedule
   {
   public:
-    Schedule();
-    Schedule(Aws::Utils::Json::JsonView jsonValue);
-    Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API Schedule();
+    AWS_PINPOINT_API Schedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -441,25 +441,25 @@ namespace Model
   private:
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     CampaignEventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     Frequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     bool m_isLocalTime;
-    bool m_isLocalTimeHasBeenSet;
+    bool m_isLocalTimeHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
   };
 
 } // namespace Model

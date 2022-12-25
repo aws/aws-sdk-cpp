@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SlateSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SlateSource
+  class SlateSource
   {
   public:
-    SlateSource();
-    SlateSource(Aws::Utils::Json::JsonView jsonValue);
-    SlateSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SlateSource();
+    AWS_MEDIATAILOR_API SlateSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SlateSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

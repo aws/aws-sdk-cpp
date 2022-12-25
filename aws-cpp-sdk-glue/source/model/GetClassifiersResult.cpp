@@ -30,7 +30,7 @@ GetClassifiersResult& GetClassifiersResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Classifiers"))
   {
-    Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
+    Aws::Utils::Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
     for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
     {
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsObject());

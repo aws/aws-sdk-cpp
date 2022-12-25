@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/S3DataSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API S3DataSourceConfiguration
+  class S3DataSourceConfiguration
   {
   public:
-    S3DataSourceConfiguration();
-    S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API S3DataSourceConfiguration();
+    AWS_KENDRA_API S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,22 +452,22 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPrefixes;
-    bool m_inclusionPrefixesHasBeenSet;
+    bool m_inclusionPrefixesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DocumentsMetadataConfiguration m_documentsMetadataConfiguration;
-    bool m_documentsMetadataConfigurationHasBeenSet;
+    bool m_documentsMetadataConfigurationHasBeenSet = false;
 
     AccessControlListConfiguration m_accessControlListConfiguration;
-    bool m_accessControlListConfigurationHasBeenSet;
+    bool m_accessControlListConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

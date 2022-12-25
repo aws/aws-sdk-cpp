@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UninitializedAccountException">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API UninitializedAccountException
+  class UninitializedAccountException
   {
   public:
-    UninitializedAccountException();
-    UninitializedAccountException(Aws::Utils::Json::JsonView jsonValue);
-    UninitializedAccountException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API UninitializedAccountException();
+    AWS_DRS_API UninitializedAccountException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API UninitializedAccountException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 RemoveTagsFromStreamRequest::RemoveTagsFromStreamRequest() : 
     m_streamNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+    m_tagKeysHasBeenSet(false),
+    m_streamARNHasBeenSet(false)
 {
 }
 
@@ -30,12 +31,18 @@ Aws::String RemoveTagsFromStreamRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
    for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
    }
    payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+
+  }
+
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
 
   }
 
@@ -51,5 +58,17 @@ Aws::Http::HeaderValueCollection RemoveTagsFromStreamRequest::GetRequestSpecific
 }
 
 
+
+RemoveTagsFromStreamRequest::EndpointParameters RemoveTagsFromStreamRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

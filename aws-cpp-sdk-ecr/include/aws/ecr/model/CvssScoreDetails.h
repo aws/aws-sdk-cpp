@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CvssScoreDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API CvssScoreDetails
+  class CvssScoreDetails
   {
   public:
-    CvssScoreDetails();
-    CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API CvssScoreDetails();
+    AWS_ECR_API CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::Vector<CvssScoreAdjustment> m_adjustments;
-    bool m_adjustmentsHasBeenSet;
+    bool m_adjustmentsHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     Aws::String m_scoreSource;
-    bool m_scoreSourceHasBeenSet;
+    bool m_scoreSourceHasBeenSet = false;
 
     Aws::String m_scoringVector;
-    bool m_scoringVectorHasBeenSet;
+    bool m_scoringVectorHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

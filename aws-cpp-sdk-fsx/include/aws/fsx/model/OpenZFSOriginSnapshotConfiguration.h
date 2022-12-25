@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSOriginSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSOriginSnapshotConfiguration
+  class OpenZFSOriginSnapshotConfiguration
   {
   public:
-    OpenZFSOriginSnapshotConfiguration();
-    OpenZFSOriginSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSOriginSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSOriginSnapshotConfiguration();
+    AWS_FSX_API OpenZFSOriginSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSOriginSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_snapshotARN;
-    bool m_snapshotARNHasBeenSet;
+    bool m_snapshotARNHasBeenSet = false;
 
     OpenZFSCopyStrategy m_copyStrategy;
-    bool m_copyStrategyHasBeenSet;
+    bool m_copyStrategyHasBeenSet = false;
   };
 
 } // namespace Model

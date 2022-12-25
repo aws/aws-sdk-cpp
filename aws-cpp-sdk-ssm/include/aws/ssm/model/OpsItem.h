@@ -53,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItem">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API OpsItem
+  class OpsItem
   {
   public:
-    OpsItem();
-    OpsItem(Aws::Utils::Json::JsonView jsonValue);
-    OpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItem();
+    AWS_SSM_API OpsItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,50 +104,90 @@ namespace Model
 
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline const Aws::String& GetOpsItemType() const{ return m_opsItemType; }
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline bool OpsItemTypeHasBeenSet() const { return m_opsItemTypeHasBeenSet; }
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const Aws::String& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = value; }
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(Aws::String&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::move(value); }
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const char* value) { m_opsItemTypeHasBeenSet = true; m_opsItemType.assign(value); }
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(const Aws::String& value) { SetOpsItemType(value); return *this;}
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(Aws::String&& value) { SetOpsItemType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of OpsItem. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem. Systems Manager supports the following types of
+     * OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem
+     * is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline OpsItem& WithOpsItemType(const char* value) { SetOpsItemType(value); return *this;}
 
@@ -1228,70 +1268,114 @@ namespace Model
      */
     inline OpsItem& WithPlannedEndTime(Aws::Utils::DateTime&& value) { SetPlannedEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline bool OpsItemArnHasBeenSet() const { return m_opsItemArnHasBeenSet; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = value; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = std::move(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const char* value) { m_opsItemArnHasBeenSet = true; m_opsItemArn.assign(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline OpsItem& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline OpsItem& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline OpsItem& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
+
   private:
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_opsItemType;
-    bool m_opsItemTypeHasBeenSet;
+    bool m_opsItemTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<OpsItemNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-    bool m_relatedOpsItemsHasBeenSet;
+    bool m_relatedOpsItemsHasBeenSet = false;
 
     OpsItemStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-    bool m_operationalDataHasBeenSet;
+    bool m_operationalDataHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualStartTime;
-    bool m_actualStartTimeHasBeenSet;
+    bool m_actualStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualEndTime;
-    bool m_actualEndTimeHasBeenSet;
+    bool m_actualEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedStartTime;
-    bool m_plannedStartTimeHasBeenSet;
+    bool m_plannedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedEndTime;
-    bool m_plannedEndTimeHasBeenSet;
+    bool m_plannedEndTimeHasBeenSet = false;
+
+    Aws::String m_opsItemArn;
+    bool m_opsItemArnHasBeenSet = false;
   };
 
 } // namespace Model

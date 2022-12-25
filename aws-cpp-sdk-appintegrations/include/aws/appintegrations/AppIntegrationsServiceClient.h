@@ -5,133 +5,16 @@
 
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
-#include <aws/appintegrations/AppIntegrationsServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/appintegrations/model/CreateDataIntegrationResult.h>
-#include <aws/appintegrations/model/CreateEventIntegrationResult.h>
-#include <aws/appintegrations/model/DeleteDataIntegrationResult.h>
-#include <aws/appintegrations/model/DeleteEventIntegrationResult.h>
-#include <aws/appintegrations/model/GetDataIntegrationResult.h>
-#include <aws/appintegrations/model/GetEventIntegrationResult.h>
-#include <aws/appintegrations/model/ListDataIntegrationAssociationsResult.h>
-#include <aws/appintegrations/model/ListDataIntegrationsResult.h>
-#include <aws/appintegrations/model/ListEventIntegrationAssociationsResult.h>
-#include <aws/appintegrations/model/ListEventIntegrationsResult.h>
-#include <aws/appintegrations/model/ListTagsForResourceResult.h>
-#include <aws/appintegrations/model/TagResourceResult.h>
-#include <aws/appintegrations/model/UntagResourceResult.h>
-#include <aws/appintegrations/model/UpdateDataIntegrationResult.h>
-#include <aws/appintegrations/model/UpdateEventIntegrationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppIntegrationsService
 {
-
-namespace Model
-{
-        class CreateDataIntegrationRequest;
-        class CreateEventIntegrationRequest;
-        class DeleteDataIntegrationRequest;
-        class DeleteEventIntegrationRequest;
-        class GetDataIntegrationRequest;
-        class GetEventIntegrationRequest;
-        class ListDataIntegrationAssociationsRequest;
-        class ListDataIntegrationsRequest;
-        class ListEventIntegrationAssociationsRequest;
-        class ListEventIntegrationsRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDataIntegrationRequest;
-        class UpdateEventIntegrationRequest;
-
-        typedef Aws::Utils::Outcome<CreateDataIntegrationResult, AppIntegrationsServiceError> CreateDataIntegrationOutcome;
-        typedef Aws::Utils::Outcome<CreateEventIntegrationResult, AppIntegrationsServiceError> CreateEventIntegrationOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataIntegrationResult, AppIntegrationsServiceError> DeleteDataIntegrationOutcome;
-        typedef Aws::Utils::Outcome<DeleteEventIntegrationResult, AppIntegrationsServiceError> DeleteEventIntegrationOutcome;
-        typedef Aws::Utils::Outcome<GetDataIntegrationResult, AppIntegrationsServiceError> GetDataIntegrationOutcome;
-        typedef Aws::Utils::Outcome<GetEventIntegrationResult, AppIntegrationsServiceError> GetEventIntegrationOutcome;
-        typedef Aws::Utils::Outcome<ListDataIntegrationAssociationsResult, AppIntegrationsServiceError> ListDataIntegrationAssociationsOutcome;
-        typedef Aws::Utils::Outcome<ListDataIntegrationsResult, AppIntegrationsServiceError> ListDataIntegrationsOutcome;
-        typedef Aws::Utils::Outcome<ListEventIntegrationAssociationsResult, AppIntegrationsServiceError> ListEventIntegrationAssociationsOutcome;
-        typedef Aws::Utils::Outcome<ListEventIntegrationsResult, AppIntegrationsServiceError> ListEventIntegrationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppIntegrationsServiceError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, AppIntegrationsServiceError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, AppIntegrationsServiceError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataIntegrationResult, AppIntegrationsServiceError> UpdateDataIntegrationOutcome;
-        typedef Aws::Utils::Outcome<UpdateEventIntegrationResult, AppIntegrationsServiceError> UpdateEventIntegrationOutcome;
-
-        typedef std::future<CreateDataIntegrationOutcome> CreateDataIntegrationOutcomeCallable;
-        typedef std::future<CreateEventIntegrationOutcome> CreateEventIntegrationOutcomeCallable;
-        typedef std::future<DeleteDataIntegrationOutcome> DeleteDataIntegrationOutcomeCallable;
-        typedef std::future<DeleteEventIntegrationOutcome> DeleteEventIntegrationOutcomeCallable;
-        typedef std::future<GetDataIntegrationOutcome> GetDataIntegrationOutcomeCallable;
-        typedef std::future<GetEventIntegrationOutcome> GetEventIntegrationOutcomeCallable;
-        typedef std::future<ListDataIntegrationAssociationsOutcome> ListDataIntegrationAssociationsOutcomeCallable;
-        typedef std::future<ListDataIntegrationsOutcome> ListDataIntegrationsOutcomeCallable;
-        typedef std::future<ListEventIntegrationAssociationsOutcome> ListEventIntegrationAssociationsOutcomeCallable;
-        typedef std::future<ListEventIntegrationsOutcome> ListEventIntegrationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDataIntegrationOutcome> UpdateDataIntegrationOutcomeCallable;
-        typedef std::future<UpdateEventIntegrationOutcome> UpdateEventIntegrationOutcomeCallable;
-} // namespace Model
-
-  class AppIntegrationsServiceClient;
-
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateDataIntegrationRequest&, const Model::CreateDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::CreateEventIntegrationRequest&, const Model::CreateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteDataIntegrationRequest&, const Model::DeleteDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::DeleteEventIntegrationRequest&, const Model::DeleteEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::GetDataIntegrationRequest&, const Model::GetDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::GetEventIntegrationRequest&, const Model::GetEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListDataIntegrationAssociationsRequest&, const Model::ListDataIntegrationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIntegrationAssociationsResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListDataIntegrationsRequest&, const Model::ListDataIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIntegrationsResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListEventIntegrationAssociationsRequest&, const Model::ListEventIntegrationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventIntegrationAssociationsResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListEventIntegrationsRequest&, const Model::ListEventIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventIntegrationsResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateDataIntegrationRequest&, const Model::UpdateDataIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataIntegrationResponseReceivedHandler;
-    typedef std::function<void(const AppIntegrationsServiceClient*, const Model::UpdateEventIntegrationRequest&, const Model::UpdateEventIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventIntegrationResponseReceivedHandler;
-
   /**
    * <p>The Amazon AppIntegrations service enables you to configure and reuse
    * connections to external applications.</p> <p>For information about how you can
@@ -142,32 +25,60 @@ namespace Model
    * information to agents using Amazon Connect Wisdom</a> in the <i>Amazon Connect
    * Administrator Guide</i>.</p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppIntegrationsServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppIntegrationsServiceClient(const Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration& clientConfiguration = Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration(),
+                                     std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppIntegrationsServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppIntegrationsServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                     std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration& clientConfiguration = Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppIntegrationsServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                     std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<AppIntegrationsServiceEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration& clientConfiguration = Aws::AppIntegrationsService::AppIntegrationsServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppIntegrationsServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppIntegrationsServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AppIntegrationsServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AppIntegrationsServiceClient();
-
 
         /**
          * <p>Creates and persists a DataIntegration resource.</p>  <p>You cannot
@@ -468,27 +379,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDataIntegrationAsyncHelper(const Model::CreateDataIntegrationRequest& request, const CreateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEventIntegrationAsyncHelper(const Model::CreateEventIntegrationRequest& request, const CreateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDataIntegrationAsyncHelper(const Model::DeleteDataIntegrationRequest& request, const DeleteDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEventIntegrationAsyncHelper(const Model::DeleteEventIntegrationRequest& request, const DeleteEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataIntegrationAsyncHelper(const Model::GetDataIntegrationRequest& request, const GetDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEventIntegrationAsyncHelper(const Model::GetEventIntegrationRequest& request, const GetEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDataIntegrationAssociationsAsyncHelper(const Model::ListDataIntegrationAssociationsRequest& request, const ListDataIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDataIntegrationsAsyncHelper(const Model::ListDataIntegrationsRequest& request, const ListDataIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEventIntegrationAssociationsAsyncHelper(const Model::ListEventIntegrationAssociationsRequest& request, const ListEventIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEventIntegrationsAsyncHelper(const Model::ListEventIntegrationsRequest& request, const ListEventIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDataIntegrationAsyncHelper(const Model::UpdateDataIntegrationRequest& request, const UpdateDataIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEventIntegrationAsyncHelper(const Model::UpdateEventIntegrationRequest& request, const UpdateEventIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;
+      void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AppIntegrationsServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppIntegrationsService

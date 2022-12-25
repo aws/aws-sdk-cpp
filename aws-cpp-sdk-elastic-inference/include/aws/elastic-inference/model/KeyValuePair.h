@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/KeyValuePair">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API KeyValuePair
+  class KeyValuePair
   {
   public:
-    KeyValuePair();
-    KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
-    KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API KeyValuePair();
+    AWS_ELASTICINFERENCE_API KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

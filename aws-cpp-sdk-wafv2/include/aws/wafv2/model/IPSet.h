@@ -37,13 +37,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSet">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API IPSet
+  class IPSet
   {
   public:
-    IPSet();
-    IPSet(Aws::Utils::Json::JsonView jsonValue);
-    IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API IPSet();
+    AWS_WAFV2_API IPSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -273,15 +273,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -301,15 +301,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -329,15 +329,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -357,15 +357,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -385,15 +385,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -413,15 +413,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -441,15 +441,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -469,15 +469,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -497,15 +497,15 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specifies zero or more IP addresses or
-     * blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Example address
-     * strings: </p> <ul> <li> <p>To configure WAF to allow, block, or count requests
-     * that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure WAF to allow, block,
-     * or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * blocks of IP addresses. All addresses must be specified using Classless
+     * Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges
+     * except for <code>/0</code>. </p> <p>Example address strings: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
      * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
@@ -526,22 +526,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     IPAddressVersion m_iPAddressVersion;
-    bool m_iPAddressVersionHasBeenSet;
+    bool m_iPAddressVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addresses;
-    bool m_addressesHasBeenSet;
+    bool m_addressesHasBeenSet = false;
   };
 
 } // namespace Model

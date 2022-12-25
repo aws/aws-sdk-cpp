@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API ImportKeyMaterialRequest : public KMSRequest
+  class ImportKeyMaterialRequest : public KMSRequest
   {
   public:
-    ImportKeyMaterialRequest();
+    AWS_KMS_API ImportKeyMaterialRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportKeyMaterial"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -259,124 +259,190 @@ namespace Model
 
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline const Aws::Utils::DateTime& GetValidTo() const{ return m_validTo; }
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline bool ValidToHasBeenSet() const { return m_validToHasBeenSet; }
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline void SetValidTo(const Aws::Utils::DateTime& value) { m_validToHasBeenSet = true; m_validTo = value; }
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline void SetValidTo(Aws::Utils::DateTime&& value) { m_validToHasBeenSet = true; m_validTo = std::move(value); }
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline ImportKeyMaterialRequest& WithValidTo(const Aws::Utils::DateTime& value) { SetValidTo(value); return *this;}
 
     /**
-     * <p>The time at which the imported key material expires. When the key material
-     * expires, KMS deletes the key material and the KMS key becomes unusable. You must
-     * omit this parameter when the <code>ExpirationModel</code> parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
+     * <p>The date and time when the imported key material expires. This parameter is
+     * required when the value of the <code>ExpirationModel</code> parameter is
+     * <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p> <p>The value
+     * of this parameter must be a future date and time. The maximum value is 365 days
+     * from the request date.</p> <p>When the key material expires, KMS deletes the key
+     * material from the KMS key. Without its key material, the KMS key is unusable. To
+     * use the KMS key in cryptographic operations, you must reimport the same key
+     * material.</p> <p>You cannot change the <code>ExpirationModel</code> or
+     * <code>ValidTo</code> values for the current import after the request completes.
+     * To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and
+     * reimport the key material.</p>
      */
     inline ImportKeyMaterialRequest& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline const ExpirationModelType& GetExpirationModel() const{ return m_expirationModel; }
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline bool ExpirationModelHasBeenSet() const { return m_expirationModelHasBeenSet; }
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline void SetExpirationModel(const ExpirationModelType& value) { m_expirationModelHasBeenSet = true; m_expirationModel = value; }
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline void SetExpirationModel(ExpirationModelType&& value) { m_expirationModelHasBeenSet = true; m_expirationModel = std::move(value); }
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline ImportKeyMaterialRequest& WithExpirationModel(const ExpirationModelType& value) { SetExpirationModel(value); return *this;}
 
     /**
      * <p>Specifies whether the key material expires. The default is
-     * <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the
-     * <code>ValidTo</code> parameter. When this parameter is set to
+     * <code>KEY_MATERIAL_EXPIRES</code>.</p> <p>When the value of
+     * <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must
+     * specify a value for the <code>ValidTo</code> parameter. When value is
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
-     * <code>ValidTo</code> parameter.</p>
+     * <code>ValidTo</code> parameter.</p> <p>You cannot change the
+     * <code>ExpirationModel</code> or <code>ValidTo</code> values for the current
+     * import after the request completes. To change either value, you must delete
+     * (<a>DeleteImportedKeyMaterial</a>) and reimport the key material.</p>
      */
     inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_importToken;
-    bool m_importTokenHasBeenSet;
+    bool m_importTokenHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_encryptedKeyMaterial;
-    bool m_encryptedKeyMaterialHasBeenSet;
+    bool m_encryptedKeyMaterialHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTo;
-    bool m_validToHasBeenSet;
+    bool m_validToHasBeenSet = false;
 
     ExpirationModelType m_expirationModel;
-    bool m_expirationModelHasBeenSet;
+    bool m_expirationModelHasBeenSet = false;
   };
 
 } // namespace Model

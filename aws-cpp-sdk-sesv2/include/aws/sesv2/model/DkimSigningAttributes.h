@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimSigningAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DkimSigningAttributes
+  class DkimSigningAttributes
   {
   public:
-    DkimSigningAttributes();
-    DkimSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DkimSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DkimSigningAttributes();
+    AWS_SESV2_API DkimSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DkimSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_domainSigningSelector;
-    bool m_domainSigningSelectorHasBeenSet;
+    bool m_domainSigningSelectorHasBeenSet = false;
 
     Aws::String m_domainSigningPrivateKey;
-    bool m_domainSigningPrivateKeyHasBeenSet;
+    bool m_domainSigningPrivateKeyHasBeenSet = false;
 
     DkimSigningKeyLength m_nextSigningKeyLength;
-    bool m_nextSigningKeyLengthHasBeenSet;
+    bool m_nextSigningKeyLengthHasBeenSet = false;
   };
 
 } // namespace Model

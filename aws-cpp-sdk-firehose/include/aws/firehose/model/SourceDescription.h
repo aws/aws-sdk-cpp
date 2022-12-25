@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API SourceDescription
+  class SourceDescription
   {
   public:
-    SourceDescription();
-    SourceDescription(Aws::Utils::Json::JsonView jsonValue);
-    SourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API SourceDescription();
+    AWS_FIREHOSE_API SourceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API SourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
-    bool m_kinesisStreamSourceDescriptionHasBeenSet;
+    bool m_kinesisStreamSourceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

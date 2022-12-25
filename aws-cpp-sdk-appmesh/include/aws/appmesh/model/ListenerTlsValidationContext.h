@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTlsValidationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListenerTlsValidationContext
+  class ListenerTlsValidationContext
   {
   public:
-    ListenerTlsValidationContext();
-    ListenerTlsValidationContext(Aws::Utils::Json::JsonView jsonValue);
-    ListenerTlsValidationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ListenerTlsValidationContext();
+    AWS_APPMESH_API ListenerTlsValidationContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ListenerTlsValidationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     SubjectAlternativeNames m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     ListenerTlsValidationContextTrust m_trust;
-    bool m_trustHasBeenSet;
+    bool m_trustHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AnswerMachineDetectionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AnswerMachineDetectionConfig
+  class AnswerMachineDetectionConfig
   {
   public:
-    AnswerMachineDetectionConfig();
-    AnswerMachineDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
-    AnswerMachineDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AnswerMachineDetectionConfig();
+    AWS_CONNECT_API AnswerMachineDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AnswerMachineDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_enableAnswerMachineDetection;
-    bool m_enableAnswerMachineDetectionHasBeenSet;
+    bool m_enableAnswerMachineDetectionHasBeenSet = false;
 
     bool m_awaitAnswerMachinePrompt;
-    bool m_awaitAnswerMachinePromptHasBeenSet;
+    bool m_awaitAnswerMachinePromptHasBeenSet = false;
   };
 
 } // namespace Model

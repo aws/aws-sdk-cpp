@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingGroupIndexingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingGroupIndexingConfiguration
+  class ThingGroupIndexingConfiguration
   {
   public:
-    ThingGroupIndexingConfiguration();
-    ThingGroupIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ThingGroupIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingGroupIndexingConfiguration();
+    AWS_IOT_API ThingGroupIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingGroupIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,49 +72,65 @@ namespace Model
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Field>& GetManagedFields() const{ return m_managedFields; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline bool ManagedFieldsHasBeenSet() const { return m_managedFieldsHasBeenSet; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline void SetManagedFields(const Aws::Vector<Field>& value) { m_managedFieldsHasBeenSet = true; m_managedFields = value; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline void SetManagedFields(Aws::Vector<Field>&& value) { m_managedFieldsHasBeenSet = true; m_managedFields = std::move(value); }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline ThingGroupIndexingConfiguration& WithManagedFields(const Aws::Vector<Field>& value) { SetManagedFields(value); return *this;}
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline ThingGroupIndexingConfiguration& WithManagedFields(Aws::Vector<Field>&& value) { SetManagedFields(std::move(value)); return *this;}
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline ThingGroupIndexingConfiguration& AddManagedFields(const Field& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(value); return *this; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
      */
     inline ThingGroupIndexingConfiguration& AddManagedFields(Field&& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(std::move(value)); return *this; }
 
@@ -178,13 +194,13 @@ namespace Model
   private:
 
     ThingGroupIndexingMode m_thingGroupIndexingMode;
-    bool m_thingGroupIndexingModeHasBeenSet;
+    bool m_thingGroupIndexingModeHasBeenSet = false;
 
     Aws::Vector<Field> m_managedFields;
-    bool m_managedFieldsHasBeenSet;
+    bool m_managedFieldsHasBeenSet = false;
 
     Aws::Vector<Field> m_customFields;
-    bool m_customFieldsHasBeenSet;
+    bool m_customFieldsHasBeenSet = false;
   };
 
 } // namespace Model

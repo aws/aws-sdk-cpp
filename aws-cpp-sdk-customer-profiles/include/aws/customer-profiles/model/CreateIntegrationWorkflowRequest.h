@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowRequest : public CustomerProfilesRequest
+  class CreateIntegrationWorkflowRequest : public CustomerProfilesRequest
   {
   public:
-    CreateIntegrationWorkflowRequest();
+    AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIntegrationWorkflow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     IntegrationConfig m_integrationConfig;
-    bool m_integrationConfigHasBeenSet;
+    bool m_integrationConfigHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

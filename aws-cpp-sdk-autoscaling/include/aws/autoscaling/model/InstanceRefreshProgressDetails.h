@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshProgressDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API InstanceRefreshProgressDetails
+  class InstanceRefreshProgressDetails
   {
   public:
-    InstanceRefreshProgressDetails();
-    InstanceRefreshProgressDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceRefreshProgressDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefreshProgressDetails();
+    AWS_AUTOSCALING_API InstanceRefreshProgressDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefreshProgressDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     InstanceRefreshLivePoolProgress m_livePoolProgress;
-    bool m_livePoolProgressHasBeenSet;
+    bool m_livePoolProgressHasBeenSet = false;
 
     InstanceRefreshWarmPoolProgress m_warmPoolProgress;
-    bool m_warmPoolProgressHasBeenSet;
+    bool m_warmPoolProgressHasBeenSet = false;
   };
 
 } // namespace Model

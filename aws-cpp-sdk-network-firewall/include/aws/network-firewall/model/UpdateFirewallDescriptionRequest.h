@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKFIREWALL_API UpdateFirewallDescriptionRequest : public NetworkFirewallRequest
+  class UpdateFirewallDescriptionRequest : public NetworkFirewallRequest
   {
   public:
-    UpdateFirewallDescriptionRequest();
+    AWS_NETWORKFIREWALL_API UpdateFirewallDescriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFirewallDescription"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKFIREWALL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NETWORKFIREWALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

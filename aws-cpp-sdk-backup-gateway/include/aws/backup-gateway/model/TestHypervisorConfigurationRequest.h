@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPGATEWAY_API TestHypervisorConfigurationRequest : public BackupGatewayRequest
+  class TestHypervisorConfigurationRequest : public BackupGatewayRequest
   {
   public:
-    TestHypervisorConfigurationRequest();
+    AWS_BACKUPGATEWAY_API TestHypervisorConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestHypervisorConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

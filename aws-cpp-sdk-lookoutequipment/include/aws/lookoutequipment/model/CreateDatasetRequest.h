@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API CreateDatasetRequest : public LookoutEquipmentRequest
+  class CreateDatasetRequest : public LookoutEquipmentRequest
   {
   public:
-    CreateDatasetRequest();
+    AWS_LOOKOUTEQUIPMENT_API CreateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -257,19 +257,19 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     DatasetSchema m_datasetSchema;
-    bool m_datasetSchemaHasBeenSet;
+    bool m_datasetSchemaHasBeenSet = false;
 
     Aws::String m_serverSideKmsKeyId;
-    bool m_serverSideKmsKeyIdHasBeenSet;
+    bool m_serverSideKmsKeyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Array.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <memory>
 
@@ -28,84 +28,43 @@ namespace Model
   class StructValue;
 
   /**
-   * <p>Contains the value of a column.</p> <pre><code> &lt;important&gt;
-   * &lt;p&gt;This data structure is only used with the deprecated
+   * <p>Contains the value of a column.</p> <pre><code> &lt;note&gt; &lt;p&gt;This
+   * data structure is only used with the deprecated
    * &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the
    * &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or
    * &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt;
-   * &lt;/important&gt; </code></pre><p><h3>See Also:</h3>   <a
+   * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value">AWS API
    * Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API Value
+  class Value
   {
   public:
-    Value();
-    Value(Aws::Utils::Json::JsonView jsonValue);
-    Value& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API Value();
+    AWS_RDSDATASERVICE_API Value(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Value& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>An array of column values.</p>
+     * <p>A NULL value.</p>
      */
-    inline const Aws::Vector<Value>& GetArrayValues() const{ return m_arrayValues; }
+    inline bool GetIsNull() const{ return m_isNull; }
 
     /**
-     * <p>An array of column values.</p>
+     * <p>A NULL value.</p>
      */
-    inline bool ArrayValuesHasBeenSet() const { return m_arrayValuesHasBeenSet; }
+    inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
 
     /**
-     * <p>An array of column values.</p>
+     * <p>A NULL value.</p>
      */
-    inline void SetArrayValues(const Aws::Vector<Value>& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = value; }
+    inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
 
     /**
-     * <p>An array of column values.</p>
+     * <p>A NULL value.</p>
      */
-    inline void SetArrayValues(Aws::Vector<Value>&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = std::move(value); }
-
-    /**
-     * <p>An array of column values.</p>
-     */
-    inline Value& WithArrayValues(const Aws::Vector<Value>& value) { SetArrayValues(value); return *this;}
-
-    /**
-     * <p>An array of column values.</p>
-     */
-    inline Value& WithArrayValues(Aws::Vector<Value>&& value) { SetArrayValues(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of column values.</p>
-     */
-    inline Value& AddArrayValues(const Value& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(value); return *this; }
-
-    /**
-     * <p>An array of column values.</p>
-     */
-    inline Value& AddArrayValues(Value&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>A value for a column of big integer data type.</p>
-     */
-    inline long long GetBigIntValue() const{ return m_bigIntValue; }
-
-    /**
-     * <p>A value for a column of big integer data type.</p>
-     */
-    inline bool BigIntValueHasBeenSet() const { return m_bigIntValueHasBeenSet; }
-
-    /**
-     * <p>A value for a column of big integer data type.</p>
-     */
-    inline void SetBigIntValue(long long value) { m_bigIntValueHasBeenSet = true; m_bigIntValue = value; }
-
-    /**
-     * <p>A value for a column of big integer data type.</p>
-     */
-    inline Value& WithBigIntValue(long long value) { SetBigIntValue(value); return *this;}
+    inline Value& WithIsNull(bool value) { SetIsNull(value); return *this;}
 
 
     /**
@@ -130,55 +89,24 @@ namespace Model
 
 
     /**
-     * <p>A value for a column of BLOB data type.</p>
+     * <p>A value for a column of big integer data type.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
+    inline long long GetBigIntValue() const{ return m_bigIntValue; }
 
     /**
-     * <p>A value for a column of BLOB data type.</p>
+     * <p>A value for a column of big integer data type.</p>
      */
-    inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
+    inline bool BigIntValueHasBeenSet() const { return m_bigIntValueHasBeenSet; }
 
     /**
-     * <p>A value for a column of BLOB data type.</p>
+     * <p>A value for a column of big integer data type.</p>
      */
-    inline void SetBlobValue(const Aws::Utils::ByteBuffer& value) { m_blobValueHasBeenSet = true; m_blobValue = value; }
+    inline void SetBigIntValue(long long value) { m_bigIntValueHasBeenSet = true; m_bigIntValue = value; }
 
     /**
-     * <p>A value for a column of BLOB data type.</p>
+     * <p>A value for a column of big integer data type.</p>
      */
-    inline void SetBlobValue(Aws::Utils::ByteBuffer&& value) { m_blobValueHasBeenSet = true; m_blobValue = std::move(value); }
-
-    /**
-     * <p>A value for a column of BLOB data type.</p>
-     */
-    inline Value& WithBlobValue(const Aws::Utils::ByteBuffer& value) { SetBlobValue(value); return *this;}
-
-    /**
-     * <p>A value for a column of BLOB data type.</p>
-     */
-    inline Value& WithBlobValue(Aws::Utils::ByteBuffer&& value) { SetBlobValue(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A value for a column of double data type.</p>
-     */
-    inline double GetDoubleValue() const{ return m_doubleValue; }
-
-    /**
-     * <p>A value for a column of double data type.</p>
-     */
-    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
-
-    /**
-     * <p>A value for a column of double data type.</p>
-     */
-    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
-
-    /**
-     * <p>A value for a column of double data type.</p>
-     */
-    inline Value& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
+    inline Value& WithBigIntValue(long long value) { SetBigIntValue(value); return *this;}
 
 
     /**
@@ -203,24 +131,24 @@ namespace Model
 
 
     /**
-     * <p>A NULL value.</p>
+     * <p>A value for a column of double data type.</p>
      */
-    inline bool GetIsNull() const{ return m_isNull; }
+    inline double GetDoubleValue() const{ return m_doubleValue; }
 
     /**
-     * <p>A NULL value.</p>
+     * <p>A value for a column of double data type.</p>
      */
-    inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
+    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
 
     /**
-     * <p>A NULL value.</p>
+     * <p>A value for a column of double data type.</p>
      */
-    inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
+    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
 
     /**
-     * <p>A NULL value.</p>
+     * <p>A value for a column of double data type.</p>
      */
-    inline Value& WithIsNull(bool value) { SetIsNull(value); return *this;}
+    inline Value& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
 
 
     /**
@@ -286,66 +214,138 @@ namespace Model
 
 
     /**
-     * <p>A value for a column of STRUCT data type.</p>
+     * <p>A value for a column of BLOB data type.</p>
      */
-    const StructValue& GetStructValue() const;
+    inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
+
+    /**
+     * <p>A value for a column of BLOB data type.</p>
+     */
+    inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
+
+    /**
+     * <p>A value for a column of BLOB data type.</p>
+     */
+    inline void SetBlobValue(const Aws::Utils::ByteBuffer& value) { m_blobValueHasBeenSet = true; m_blobValue = value; }
+
+    /**
+     * <p>A value for a column of BLOB data type.</p>
+     */
+    inline void SetBlobValue(Aws::Utils::ByteBuffer&& value) { m_blobValueHasBeenSet = true; m_blobValue = std::move(value); }
+
+    /**
+     * <p>A value for a column of BLOB data type.</p>
+     */
+    inline Value& WithBlobValue(const Aws::Utils::ByteBuffer& value) { SetBlobValue(value); return *this;}
+
+    /**
+     * <p>A value for a column of BLOB data type.</p>
+     */
+    inline Value& WithBlobValue(Aws::Utils::ByteBuffer&& value) { SetBlobValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline const Aws::Vector<Value>& GetArrayValues() const{ return m_arrayValues; }
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline bool ArrayValuesHasBeenSet() const { return m_arrayValuesHasBeenSet; }
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline void SetArrayValues(const Aws::Vector<Value>& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = value; }
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline void SetArrayValues(Aws::Vector<Value>&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = std::move(value); }
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline Value& WithArrayValues(const Aws::Vector<Value>& value) { SetArrayValues(value); return *this;}
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline Value& WithArrayValues(Aws::Vector<Value>&& value) { SetArrayValues(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline Value& AddArrayValues(const Value& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(value); return *this; }
+
+    /**
+     * <p>An array of column values.</p>
+     */
+    inline Value& AddArrayValues(Value&& value) { m_arrayValuesHasBeenSet = true; m_arrayValues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    bool StructValueHasBeenSet() const;
+    AWS_RDSDATASERVICE_API const StructValue& GetStructValue() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    void SetStructValue(const StructValue& value);
+    AWS_RDSDATASERVICE_API bool StructValueHasBeenSet() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    void SetStructValue(StructValue&& value);
+    AWS_RDSDATASERVICE_API void SetStructValue(const StructValue& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    Value& WithStructValue(const StructValue& value);
+    AWS_RDSDATASERVICE_API void SetStructValue(StructValue&& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    Value& WithStructValue(StructValue&& value);
+    AWS_RDSDATASERVICE_API Value& WithStructValue(const StructValue& value);
+
+    /**
+     * <p>A value for a column of STRUCT data type.</p>
+     */
+    AWS_RDSDATASERVICE_API Value& WithStructValue(StructValue&& value);
 
   private:
 
-    Aws::Vector<Value> m_arrayValues;
-    bool m_arrayValuesHasBeenSet;
-
-    long long m_bigIntValue;
-    bool m_bigIntValueHasBeenSet;
+    bool m_isNull;
+    bool m_isNullHasBeenSet = false;
 
     bool m_bitValue;
-    bool m_bitValueHasBeenSet;
+    bool m_bitValueHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_blobValue;
-    bool m_blobValueHasBeenSet;
-
-    double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    long long m_bigIntValue;
+    bool m_bigIntValueHasBeenSet = false;
 
     int m_intValue;
-    bool m_intValueHasBeenSet;
+    bool m_intValueHasBeenSet = false;
 
-    bool m_isNull;
-    bool m_isNullHasBeenSet;
+    double m_doubleValue;
+    bool m_doubleValueHasBeenSet = false;
 
     double m_realValue;
-    bool m_realValueHasBeenSet;
+    bool m_realValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_blobValue;
+    bool m_blobValueHasBeenSet = false;
+
+    Aws::Vector<Value> m_arrayValues;
+    bool m_arrayValuesHasBeenSet = false;
 
     std::shared_ptr<StructValue> m_structValue;
-    bool m_structValueHasBeenSet;
+    bool m_structValueHasBeenSet = false;
   };
 
 } // namespace Model

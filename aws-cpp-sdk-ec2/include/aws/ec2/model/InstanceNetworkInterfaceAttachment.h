@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceNetworkInterfaceAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceNetworkInterfaceAttachment
+  class InstanceNetworkInterfaceAttachment
   {
   public:
-    InstanceNetworkInterfaceAttachment();
-    InstanceNetworkInterfaceAttachment(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceNetworkInterfaceAttachment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceNetworkInterfaceAttachment();
+    AWS_EC2_API InstanceNetworkInterfaceAttachment(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceNetworkInterfaceAttachment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -217,22 +217,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_attachTime;
-    bool m_attachTimeHasBeenSet;
+    bool m_attachTimeHasBeenSet = false;
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     int m_deviceIndex;
-    bool m_deviceIndexHasBeenSet;
+    bool m_deviceIndexHasBeenSet = false;
 
     AttachmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_networkCardIndex;
-    bool m_networkCardIndexHasBeenSet;
+    bool m_networkCardIndexHasBeenSet = false;
   };
 
 } // namespace Model

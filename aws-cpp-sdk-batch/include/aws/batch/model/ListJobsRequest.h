@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ListJobsRequest : public BatchRequest
+  class ListJobsRequest : public BatchRequest
   {
   public:
-    ListJobsRequest();
+    AWS_BATCH_API ListJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -298,9 +298,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -310,9 +309,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -322,9 +320,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -334,9 +331,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -346,9 +342,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -358,9 +353,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -370,9 +364,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -382,9 +375,8 @@ namespace Model
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
      * value is <code>null</code> when there are no more results to return.</p> 
-     * <p>This token should be treated as an opaque identifier that's only used to
-     * retrieve the next items in a list and not for other programmatic purposes.</p>
-     * 
+     * <p>Treat this token as an opaque identifier that's only used to retrieve the
+     * next items in a list and not for other programmatic purposes.</p> 
      */
     inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -396,25 +388,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -433,25 +425,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -470,25 +462,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -507,25 +499,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -544,25 +536,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -581,25 +573,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -618,25 +610,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -655,25 +647,25 @@ namespace Model
      * sorted by the <code>createdAt</code> field, with the most recent jobs being
      * first.</p> <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
      * case-insensitive match for the job name. If the value ends with an asterisk (*),
-     * the filter will match any job name that begins with the string before the '*'.
-     * This corresponds to the <code>jobName</code> value. For example,
-     * <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and
-     * <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>.
-     * When the <code>JOB_NAME</code> filter is used, the results are grouped by the
-     * job name and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for
-     * the filter is the name or Amazon Resource Name (ARN) of the job definition. This
+     * the filter matches any job name that begins with the string before the '*'. This
+     * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+     * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
+     * matches both <code>test1</code> and <code>Test10</code>. When the
+     * <code>JOB_NAME</code> filter is used, the results are grouped by the job name
+     * and version.</p> </dd> <dt>JOB_DEFINITION</dt> <dd> <p>The value for the filter
+     * is the name or Amazon Resource Name (ARN) of the job definition. This
      * corresponds to the <code>jobDefinition</code> value. The value is case
      * sensitive. When the value for the filter is the job definition name, the results
      * include all the jobs that used any revision of that job definition name. If the
-     * value ends with an asterisk (*), the filter will match any job definition name
-     * that begins with the string before the '*'. For example, <code>jd1</code>
-     * matches only <code>jd1</code>, and <code>jd1*</code> matches both
-     * <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's
-     * used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
-     * is used and the ARN is used (which is in the form
+     * value ends with an asterisk (*), the filter matches any job definition name that
+     * begins with the string before the '*'. For example, <code>jd1</code> matches
+     * only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and
+     * <code>jd1A</code>. The version of the job definition that's used doesn't affect
+     * the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN
+     * is used (which is in the form
      * <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
      * the results include jobs that used the specified revision of the job definition.
-     * Asterisk (*) is not supported when the ARN is used.</p> </dd>
+     * Asterisk (*) isn't supported when the ARN is used.</p> </dd>
      * <dt>BEFORE_CREATED_AT</dt> <dd> <p>The value for the filter is the time that's
      * before the job was created. This corresponds to the <code>createdAt</code>
      * value. The value is a string representation of the number of milliseconds since
@@ -688,25 +680,25 @@ namespace Model
   private:
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
 
     Aws::String m_arrayJobId;
-    bool m_arrayJobIdHasBeenSet;
+    bool m_arrayJobIdHasBeenSet = false;
 
     Aws::String m_multiNodeJobId;
-    bool m_multiNodeJobIdHasBeenSet;
+    bool m_multiNodeJobIdHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<KeyValuesPair> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

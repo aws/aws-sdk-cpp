@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PasswordData">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API PasswordData
+  class PasswordData
   {
   public:
-    PasswordData();
-    PasswordData(Aws::Utils::Json::JsonView jsonValue);
-    PasswordData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API PasswordData();
+    AWS_LIGHTSAIL_API PasswordData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API PasswordData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_ciphertext;
-    bool m_ciphertextHasBeenSet;
+    bool m_ciphertextHasBeenSet = false;
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
   };
 
 } // namespace Model

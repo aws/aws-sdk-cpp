@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducerFilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NoiseReducerFilterSettings
+  class NoiseReducerFilterSettings
   {
   public:
-    NoiseReducerFilterSettings();
-    NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NoiseReducerFilterSettings();
+    AWS_MEDIACONVERT_API NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

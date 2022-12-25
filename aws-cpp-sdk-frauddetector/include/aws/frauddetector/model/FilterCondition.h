@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/FilterCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API FilterCondition
+  class FilterCondition
   {
   public:
-    FilterCondition();
-    FilterCondition(Aws::Utils::Json::JsonView jsonValue);
-    FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API FilterCondition();
+    AWS_FRAUDDETECTOR_API FilterCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

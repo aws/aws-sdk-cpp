@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/Fraudster">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API Fraudster
+  class Fraudster
   {
   public:
-    Fraudster();
-    Fraudster(Aws::Utils::Json::JsonView jsonValue);
-    Fraudster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API Fraudster();
+    AWS_VOICEID_API Fraudster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Fraudster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_generatedFraudsterId;
-    bool m_generatedFraudsterIdHasBeenSet;
+    bool m_generatedFraudsterIdHasBeenSet = false;
   };
 
 } // namespace Model

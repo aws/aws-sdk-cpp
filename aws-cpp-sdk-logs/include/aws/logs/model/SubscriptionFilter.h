@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SubscriptionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API SubscriptionFilter
+  class SubscriptionFilter
   {
   public:
-    SubscriptionFilter();
-    SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
-    SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter();
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,50 +248,50 @@ namespace Model
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
   private:
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Distribution m_distribution;
-    bool m_distributionHasBeenSet;
+    bool m_distributionHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

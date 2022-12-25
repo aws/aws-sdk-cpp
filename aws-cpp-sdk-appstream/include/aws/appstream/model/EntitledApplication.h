@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EntitledApplication">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API EntitledApplication
+  class EntitledApplication
   {
   public:
-    EntitledApplication();
-    EntitledApplication(Aws::Utils::Json::JsonView jsonValue);
-    EntitledApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API EntitledApplication();
+    AWS_APPSTREAM_API EntitledApplication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API EntitledApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

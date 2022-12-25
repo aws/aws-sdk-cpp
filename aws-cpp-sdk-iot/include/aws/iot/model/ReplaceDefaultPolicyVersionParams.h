@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceDefaultPolicyVersionParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ReplaceDefaultPolicyVersionParams
+  class ReplaceDefaultPolicyVersionParams
   {
   public:
-    ReplaceDefaultPolicyVersionParams();
-    ReplaceDefaultPolicyVersionParams(Aws::Utils::Json::JsonView jsonValue);
-    ReplaceDefaultPolicyVersionParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ReplaceDefaultPolicyVersionParams();
+    AWS_IOT_API ReplaceDefaultPolicyVersionParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ReplaceDefaultPolicyVersionParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     PolicyTemplateName m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

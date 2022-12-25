@@ -30,7 +30,7 @@ Aws::String RevokeIpRulesRequest::SerializePayload() const
 
   if(m_userRulesHasBeenSet)
   {
-   Array<JsonValue> userRulesJsonList(m_userRules.size());
+   Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
    for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
    {
      userRulesJsonList[userRulesIndex].AsString(m_userRules[userRulesIndex]);

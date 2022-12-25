@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Listener">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API Listener
+  class Listener
   {
   public:
-    Listener();
-    Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API Listener();
+    AWS_ELASTICLOADBALANCING_API Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -290,19 +290,19 @@ namespace Model
   private:
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_instanceProtocol;
-    bool m_instanceProtocolHasBeenSet;
+    bool m_instanceProtocolHasBeenSet = false;
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
 
     Aws::String m_sSLCertificateId;
-    bool m_sSLCertificateIdHasBeenSet;
+    bool m_sSLCertificateIdHasBeenSet = false;
   };
 
 } // namespace Model

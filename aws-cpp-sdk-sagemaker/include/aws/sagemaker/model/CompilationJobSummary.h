@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CompilationJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CompilationJobSummary
+  class CompilationJobSummary
   {
   public:
-    CompilationJobSummary();
-    CompilationJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    CompilationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CompilationJobSummary();
+    AWS_SAGEMAKER_API CompilationJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CompilationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -430,37 +430,37 @@ namespace Model
   private:
 
     Aws::String m_compilationJobName;
-    bool m_compilationJobNameHasBeenSet;
+    bool m_compilationJobNameHasBeenSet = false;
 
     Aws::String m_compilationJobArn;
-    bool m_compilationJobArnHasBeenSet;
+    bool m_compilationJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_compilationStartTime;
-    bool m_compilationStartTimeHasBeenSet;
+    bool m_compilationStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_compilationEndTime;
-    bool m_compilationEndTimeHasBeenSet;
+    bool m_compilationEndTimeHasBeenSet = false;
 
     TargetDevice m_compilationTargetDevice;
-    bool m_compilationTargetDeviceHasBeenSet;
+    bool m_compilationTargetDeviceHasBeenSet = false;
 
     TargetPlatformOs m_compilationTargetPlatformOs;
-    bool m_compilationTargetPlatformOsHasBeenSet;
+    bool m_compilationTargetPlatformOsHasBeenSet = false;
 
     TargetPlatformArch m_compilationTargetPlatformArch;
-    bool m_compilationTargetPlatformArchHasBeenSet;
+    bool m_compilationTargetPlatformArchHasBeenSet = false;
 
     TargetPlatformAccelerator m_compilationTargetPlatformAccelerator;
-    bool m_compilationTargetPlatformAcceleratorHasBeenSet;
+    bool m_compilationTargetPlatformAcceleratorHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     CompilationJobStatus m_compilationJobStatus;
-    bool m_compilationJobStatusHasBeenSet;
+    bool m_compilationJobStatusHasBeenSet = false;
   };
 
 } // namespace Model

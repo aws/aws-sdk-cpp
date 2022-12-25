@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API CreateObservabilityConfigurationRequest : public AppRunnerRequest
+  class CreateObservabilityConfigurationRequest : public AppRunnerRequest
   {
   public:
-    CreateObservabilityConfigurationRequest();
+    AWS_APPRUNNER_API CreateObservabilityConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateObservabilityConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -230,13 +230,13 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     TraceConfiguration m_traceConfiguration;
-    bool m_traceConfigurationHasBeenSet;
+    bool m_traceConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregatesErrorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesErrorInfo
+  class BatchGetAssetPropertyAggregatesErrorInfo
   {
   public:
-    BatchGetAssetPropertyAggregatesErrorInfo();
-    BatchGetAssetPropertyAggregatesErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyAggregatesErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesErrorInfo();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     BatchGetAssetPropertyAggregatesErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_errorTimestamp;
-    bool m_errorTimestampHasBeenSet;
+    bool m_errorTimestampHasBeenSet = false;
   };
 
 } // namespace Model

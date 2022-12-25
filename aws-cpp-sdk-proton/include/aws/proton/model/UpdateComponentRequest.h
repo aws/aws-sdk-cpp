@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API UpdateComponentRequest : public ProtonRequest
+  class UpdateComponentRequest : public ProtonRequest
   {
   public:
-    UpdateComponentRequest();
+    AWS_PROTON_API UpdateComponentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateComponent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -444,25 +444,25 @@ namespace Model
   private:
 
     ComponentDeploymentUpdateType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_serviceInstanceName;
-    bool m_serviceInstanceNameHasBeenSet;
+    bool m_serviceInstanceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceSpec;
-    bool m_serviceSpecHasBeenSet;
+    bool m_serviceSpecHasBeenSet = false;
 
     Aws::String m_templateFile;
-    bool m_templateFileHasBeenSet;
+    bool m_templateFileHasBeenSet = false;
   };
 
 } // namespace Model

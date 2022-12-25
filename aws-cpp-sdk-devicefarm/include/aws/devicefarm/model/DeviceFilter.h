@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeviceFilter
+  class DeviceFilter
   {
   public:
-    DeviceFilter();
-    DeviceFilter(Aws::Utils::Json::JsonView jsonValue);
-    DeviceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DeviceFilter();
+    AWS_DEVICEFARM_API DeviceFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DeviceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -453,13 +453,13 @@ namespace Model
   private:
 
     DeviceFilterAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     RuleOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

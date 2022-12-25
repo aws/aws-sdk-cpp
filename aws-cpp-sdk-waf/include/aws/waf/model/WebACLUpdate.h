@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WebACLUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API WebACLUpdate
+  class WebACLUpdate
   {
   public:
-    WebACLUpdate();
-    WebACLUpdate(Aws::Utils::Json::JsonView jsonValue);
-    WebACLUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API WebACLUpdate();
+    AWS_WAF_API WebACLUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API WebACLUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ActivatedRule m_activatedRule;
-    bool m_activatedRuleHasBeenSet;
+    bool m_activatedRuleHasBeenSet = false;
   };
 
 } // namespace Model

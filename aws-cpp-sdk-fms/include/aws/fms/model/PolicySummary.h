@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PolicySummary
+  class PolicySummary
   {
   public:
-    PolicySummary();
-    PolicySummary(Aws::Utils::Json::JsonView jsonValue);
-    PolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PolicySummary();
+    AWS_FMS_API PolicySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -413,25 +413,25 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     SecurityServiceType m_securityServiceType;
-    bool m_securityServiceTypeHasBeenSet;
+    bool m_securityServiceTypeHasBeenSet = false;
 
     bool m_remediationEnabled;
-    bool m_remediationEnabledHasBeenSet;
+    bool m_remediationEnabledHasBeenSet = false;
 
     bool m_deleteUnusedFMManagedResources;
-    bool m_deleteUnusedFMManagedResourcesHasBeenSet;
+    bool m_deleteUnusedFMManagedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

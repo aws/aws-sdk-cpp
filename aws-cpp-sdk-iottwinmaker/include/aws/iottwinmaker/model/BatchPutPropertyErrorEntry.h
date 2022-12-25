@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry
+  class BatchPutPropertyErrorEntry
   {
   public:
-    BatchPutPropertyErrorEntry();
-    BatchPutPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry();
+    AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API BatchPutPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<BatchPutPropertyError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

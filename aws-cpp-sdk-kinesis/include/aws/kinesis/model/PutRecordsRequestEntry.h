@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API PutRecordsRequestEntry
+  class PutRecordsRequestEntry
   {
   public:
-    PutRecordsRequestEntry();
-    PutRecordsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutRecordsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API PutRecordsRequestEntry();
+    AWS_KINESIS_API PutRecordsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API PutRecordsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,13 +236,13 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_explicitHashKey;
-    bool m_explicitHashKeyHasBeenSet;
+    bool m_explicitHashKeyHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
   };
 
 } // namespace Model

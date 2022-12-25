@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuiltInIntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BuiltInIntentSummary
+  class BuiltInIntentSummary
   {
   public:
-    BuiltInIntentSummary();
-    BuiltInIntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    BuiltInIntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BuiltInIntentSummary();
+    AWS_LEXMODELSV2_API BuiltInIntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BuiltInIntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_intentSignature;
-    bool m_intentSignatureHasBeenSet;
+    bool m_intentSignatureHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API UpdateApplicationRequest : public ServerlessApplicationRepositoryRequest
+  class UpdateApplicationRequest : public ServerlessApplicationRepositoryRequest
   {
   public:
-    UpdateApplicationRequest();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -385,25 +385,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_homePageUrl;
-    bool m_homePageUrlHasBeenSet;
+    bool m_homePageUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_readmeBody;
-    bool m_readmeBodyHasBeenSet;
+    bool m_readmeBodyHasBeenSet = false;
 
     Aws::String m_readmeUrl;
-    bool m_readmeUrlHasBeenSet;
+    bool m_readmeUrlHasBeenSet = false;
   };
 
 } // namespace Model

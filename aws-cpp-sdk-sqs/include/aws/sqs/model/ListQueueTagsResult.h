@@ -26,12 +26,12 @@ namespace SQS
 {
 namespace Model
 {
-  class AWS_SQS_API ListQueueTagsResult
+  class ListQueueTagsResult
   {
   public:
-    ListQueueTagsResult();
-    ListQueueTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListQueueTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListQueueTagsResult();
+    AWS_SQS_API ListQueueTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListQueueTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

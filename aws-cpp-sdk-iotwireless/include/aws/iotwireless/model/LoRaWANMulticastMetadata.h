@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANMulticastMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANMulticastMetadata
+  class LoRaWANMulticastMetadata
   {
   public:
-    LoRaWANMulticastMetadata();
-    LoRaWANMulticastMetadata(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANMulticastMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANMulticastMetadata();
+    AWS_IOTWIRELESS_API LoRaWANMulticastMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANMulticastMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -51,7 +51,7 @@ namespace Model
   private:
 
     int m_fPort;
-    bool m_fPortHasBeenSet;
+    bool m_fPortHasBeenSet = false;
   };
 
 } // namespace Model

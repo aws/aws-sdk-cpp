@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/TimestreamConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API TimestreamConfiguration
+  class TimestreamConfiguration
   {
   public:
-    TimestreamConfiguration();
-    TimestreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TimestreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API TimestreamConfiguration();
+    AWS_TIMESTREAMQUERY_API TimestreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API TimestreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -354,25 +354,25 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_timeColumn;
-    bool m_timeColumnHasBeenSet;
+    bool m_timeColumnHasBeenSet = false;
 
     Aws::Vector<DimensionMapping> m_dimensionMappings;
-    bool m_dimensionMappingsHasBeenSet;
+    bool m_dimensionMappingsHasBeenSet = false;
 
     MultiMeasureMappings m_multiMeasureMappings;
-    bool m_multiMeasureMappingsHasBeenSet;
+    bool m_multiMeasureMappingsHasBeenSet = false;
 
     Aws::Vector<MixedMeasureMapping> m_mixedMeasureMappings;
-    bool m_mixedMeasureMappingsHasBeenSet;
+    bool m_mixedMeasureMappingsHasBeenSet = false;
 
     Aws::String m_measureNameColumn;
-    bool m_measureNameColumnHasBeenSet;
+    bool m_measureNameColumnHasBeenSet = false;
   };
 
 } // namespace Model

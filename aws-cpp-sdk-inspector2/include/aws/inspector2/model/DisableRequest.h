@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR2_API DisableRequest : public Inspector2Request
+  class DisableRequest : public Inspector2Request
   {
   public:
-    DisableRequest();
+    AWS_INSPECTOR2_API DisableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Disable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<ResourceScanType> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
   };
 
 } // namespace Model

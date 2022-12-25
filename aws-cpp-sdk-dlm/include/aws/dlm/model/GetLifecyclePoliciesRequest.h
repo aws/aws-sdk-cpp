@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_DLM_API GetLifecyclePoliciesRequest : public DLMRequest
+  class GetLifecyclePoliciesRequest : public DLMRequest
   {
   public:
-    GetLifecyclePoliciesRequest();
+    AWS_DLM_API GetLifecyclePoliciesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLifecyclePolicies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DLM_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_DLM_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -280,19 +280,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_policyIds;
-    bool m_policyIdsHasBeenSet;
+    bool m_policyIdsHasBeenSet = false;
 
     GettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<ResourceTypeValues> m_resourceTypes;
-    bool m_resourceTypesHasBeenSet;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetTags;
-    bool m_targetTagsHasBeenSet;
+    bool m_targetTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagsToAdd;
-    bool m_tagsToAddHasBeenSet;
+    bool m_tagsToAddHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/SnoozeActionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API SnoozeActionConfiguration
+  class SnoozeActionConfiguration
   {
   public:
-    SnoozeActionConfiguration();
-    SnoozeActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SnoozeActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration();
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     int m_snoozeDuration;
-    bool m_snoozeDurationHasBeenSet;
+    bool m_snoozeDurationHasBeenSet = false;
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
   };
 
 } // namespace Model

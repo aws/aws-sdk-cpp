@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/ResponseCard">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API ResponseCard
+  class ResponseCard
   {
   public:
-    ResponseCard();
-    ResponseCard(Aws::Utils::Json::JsonView jsonValue);
-    ResponseCard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API ResponseCard();
+    AWS_LEXRUNTIMESERVICE_API ResponseCard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API ResponseCard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::Vector<GenericAttachment> m_genericAttachments;
-    bool m_genericAttachmentsHasBeenSet;
+    bool m_genericAttachmentsHasBeenSet = false;
   };
 
 } // namespace Model

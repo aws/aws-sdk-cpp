@@ -48,7 +48,7 @@ Aws::String CreateOrganizationRequest::SerializePayload() const
 
   if(m_domainsHasBeenSet)
   {
-   Array<JsonValue> domainsJsonList(m_domains.size());
+   Aws::Utils::Array<JsonValue> domainsJsonList(m_domains.size());
    for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
    {
      domainsJsonList[domainsIndex].AsObject(m_domains[domainsIndex].Jsonize());

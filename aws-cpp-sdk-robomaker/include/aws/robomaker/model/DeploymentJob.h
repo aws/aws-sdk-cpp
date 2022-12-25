@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeploymentJob">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API DeploymentJob
+  class DeploymentJob
   {
   public:
-    DeploymentJob();
-    DeploymentJob(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API DeploymentJob();
+    AWS_ROBOMAKER_API DeploymentJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API DeploymentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_fleet;
-    bool m_fleetHasBeenSet;
+    bool m_fleetHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<DeploymentApplicationConfig> m_deploymentApplicationConfigs;
-    bool m_deploymentApplicationConfigsHasBeenSet;
+    bool m_deploymentApplicationConfigsHasBeenSet = false;
 
     DeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     DeploymentJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

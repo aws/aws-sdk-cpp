@@ -41,64 +41,76 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StoppingCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API StoppingCondition
+  class StoppingCondition
   {
   public:
-    StoppingCondition();
-    StoppingCondition(Aws::Utils::Json::JsonView jsonValue);
-    StoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API StoppingCondition();
+    AWS_SAGEMAKER_API StoppingCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API StoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run.</p> <p>For compilation jobs, if the job does not complete during this
-     * time, a <code>TimeOut</code> error is generated. We recommend starting with 900
-     * seconds and increasing as necessary based on your model.</p> <p>For all other
-     * jobs, if the job does not complete during this time, SageMaker ends the job.
-     * When <code>RetryStrategy</code> is specified in the job request,
-     * <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the
-     * attempts in total, not each individual attempt. The default value is 1 day. The
-     * maximum value is 28 days.</p>
+     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
+     * complete during this time, a <code>TimeOut</code> error is generated. We
+     * recommend starting with 900 seconds and increasing as necessary based on your
+     * model.</p> <p>For all other jobs, if the job does not complete during this time,
+     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
+     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
+     * the attempts in total, not each individual attempt. The default value is 1 day.
+     * The maximum value is 28 days.</p> <p>The maximum time that a
+     * <code>TrainingJob</code> can run in total, including any time spent publishing
+     * metrics or archiving and uploading models after it has been stopped, is 30
+     * days.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
 
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run.</p> <p>For compilation jobs, if the job does not complete during this
-     * time, a <code>TimeOut</code> error is generated. We recommend starting with 900
-     * seconds and increasing as necessary based on your model.</p> <p>For all other
-     * jobs, if the job does not complete during this time, SageMaker ends the job.
-     * When <code>RetryStrategy</code> is specified in the job request,
-     * <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the
-     * attempts in total, not each individual attempt. The default value is 1 day. The
-     * maximum value is 28 days.</p>
+     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
+     * complete during this time, a <code>TimeOut</code> error is generated. We
+     * recommend starting with 900 seconds and increasing as necessary based on your
+     * model.</p> <p>For all other jobs, if the job does not complete during this time,
+     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
+     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
+     * the attempts in total, not each individual attempt. The default value is 1 day.
+     * The maximum value is 28 days.</p> <p>The maximum time that a
+     * <code>TrainingJob</code> can run in total, including any time spent publishing
+     * metrics or archiving and uploading models after it has been stopped, is 30
+     * days.</p>
      */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run.</p> <p>For compilation jobs, if the job does not complete during this
-     * time, a <code>TimeOut</code> error is generated. We recommend starting with 900
-     * seconds and increasing as necessary based on your model.</p> <p>For all other
-     * jobs, if the job does not complete during this time, SageMaker ends the job.
-     * When <code>RetryStrategy</code> is specified in the job request,
-     * <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the
-     * attempts in total, not each individual attempt. The default value is 1 day. The
-     * maximum value is 28 days.</p>
+     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
+     * complete during this time, a <code>TimeOut</code> error is generated. We
+     * recommend starting with 900 seconds and increasing as necessary based on your
+     * model.</p> <p>For all other jobs, if the job does not complete during this time,
+     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
+     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
+     * the attempts in total, not each individual attempt. The default value is 1 day.
+     * The maximum value is 28 days.</p> <p>The maximum time that a
+     * <code>TrainingJob</code> can run in total, including any time spent publishing
+     * metrics or archiving and uploading models after it has been stopped, is 30
+     * days.</p>
      */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
 
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run.</p> <p>For compilation jobs, if the job does not complete during this
-     * time, a <code>TimeOut</code> error is generated. We recommend starting with 900
-     * seconds and increasing as necessary based on your model.</p> <p>For all other
-     * jobs, if the job does not complete during this time, SageMaker ends the job.
-     * When <code>RetryStrategy</code> is specified in the job request,
-     * <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of the
-     * attempts in total, not each individual attempt. The default value is 1 day. The
-     * maximum value is 28 days.</p>
+     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
+     * complete during this time, a <code>TimeOut</code> error is generated. We
+     * recommend starting with 900 seconds and increasing as necessary based on your
+     * model.</p> <p>For all other jobs, if the job does not complete during this time,
+     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
+     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
+     * the attempts in total, not each individual attempt. The default value is 1 day.
+     * The maximum value is 28 days.</p> <p>The maximum time that a
+     * <code>TrainingJob</code> can run in total, including any time spent publishing
+     * metrics or archiving and uploading models after it has been stopped, is 30
+     * days.</p>
      */
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
 
@@ -150,10 +162,10 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
 
     int m_maxWaitTimeInSeconds;
-    bool m_maxWaitTimeInSecondsHasBeenSet;
+    bool m_maxWaitTimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessage
+  class InAppMessage
   {
   public:
-    InAppMessage();
-    InAppMessage(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessage();
+    AWS_PINPOINT_API InAppMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     Aws::Vector<InAppMessageContent> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customConfig;
-    bool m_customConfigHasBeenSet;
+    bool m_customConfigHasBeenSet = false;
 
     Layout m_layout;
-    bool m_layoutHasBeenSet;
+    bool m_layoutHasBeenSet = false;
   };
 
 } // namespace Model

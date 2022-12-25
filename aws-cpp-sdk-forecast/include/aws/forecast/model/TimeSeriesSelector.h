@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeSeriesSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeSeriesSelector
+  class TimeSeriesSelector
   {
   public:
-    TimeSeriesSelector();
-    TimeSeriesSelector(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeSeriesSelector();
+    AWS_FORECASTSERVICE_API TimeSeriesSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeSeriesSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     TimeSeriesIdentifiers m_timeSeriesIdentifiers;
-    bool m_timeSeriesIdentifiersHasBeenSet;
+    bool m_timeSeriesIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

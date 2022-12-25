@@ -28,19 +28,19 @@ namespace Model
    * <p>An object representing a constraint on task placement. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
-   * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
+   * placement constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p>  <p>If you're using the Fargate launch type, task placement
    * constraints aren't supported.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API PlacementConstraint
+  class PlacementConstraint
   {
   public:
-    PlacementConstraint();
-    PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
-    PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PlacementConstraint();
+    AWS_ECS_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,10 +183,10 @@ namespace Model
   private:
 
     PlacementConstraintType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

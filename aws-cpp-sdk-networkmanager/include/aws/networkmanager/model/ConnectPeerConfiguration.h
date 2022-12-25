@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeerConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeerConfiguration
+  class ConnectPeerConfiguration
   {
   public:
-    ConnectPeerConfiguration();
-    ConnectPeerConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeerConfiguration();
+    AWS_NETWORKMANAGER_API ConnectPeerConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,19 +243,19 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkAddress;
-    bool m_coreNetworkAddressHasBeenSet;
+    bool m_coreNetworkAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;
-    bool m_insideCidrBlocksHasBeenSet;
+    bool m_insideCidrBlocksHasBeenSet = false;
 
     TunnelProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<ConnectPeerBgpConfiguration> m_bgpConfigurations;
-    bool m_bgpConfigurationsHasBeenSet;
+    bool m_bgpConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

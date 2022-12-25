@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationSummary();
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,38 +178,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline const ApplicationDeploymentLifecycle& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline void SetDeploymentStatus(const ApplicationDeploymentLifecycle& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline void SetDeploymentStatus(ApplicationDeploymentLifecycle&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline ApplicationSummary& WithDeploymentStatus(const ApplicationDeploymentLifecycle& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * <p>Indicates whether there is an ongoing deployment or if the application has
-     * ever deployed successfully.</p>
+     * <p>Indicates either an ongoing deployment or if the application has ever
+     * deployed successfully.</p>
      */
     inline ApplicationSummary& WithDeploymentStatus(ApplicationDeploymentLifecycle&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
@@ -336,38 +336,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStartTime() const{ return m_lastStartTime; }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline bool LastStartTimeHasBeenSet() const { return m_lastStartTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline void SetLastStartTime(const Aws::Utils::DateTime& value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = value; }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline void SetLastStartTime(Aws::Utils::DateTime&& value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = std::move(value); }
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline ApplicationSummary& WithLastStartTime(const Aws::Utils::DateTime& value) { SetLastStartTime(value); return *this;}
 
     /**
-     * <p>The timestamp when the application was last started. Null until the
-     * application has started running for the first time.</p>
+     * <p>The timestamp when you last started the application. Null until the
+     * application runs for the first time.</p>
      */
     inline ApplicationSummary& WithLastStartTime(Aws::Utils::DateTime&& value) { SetLastStartTime(std::move(value)); return *this;}
 
@@ -477,40 +477,40 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ApplicationDeploymentLifecycle m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStartTime;
-    bool m_lastStartTimeHasBeenSet;
+    bool m_lastStartTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ApplicationLifecycle m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ApplicationVersionLifecycle m_versionStatus;
-    bool m_versionStatusHasBeenSet;
+    bool m_versionStatusHasBeenSet = false;
   };
 
 } // namespace Model

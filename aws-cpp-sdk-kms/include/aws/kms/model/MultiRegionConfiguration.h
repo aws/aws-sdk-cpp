@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/MultiRegionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API MultiRegionConfiguration
+  class MultiRegionConfiguration
   {
   public:
-    MultiRegionConfiguration();
-    MultiRegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MultiRegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API MultiRegionConfiguration();
+    AWS_KMS_API MultiRegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API MultiRegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     MultiRegionKeyType m_multiRegionKeyType;
-    bool m_multiRegionKeyTypeHasBeenSet;
+    bool m_multiRegionKeyTypeHasBeenSet = false;
 
     MultiRegionKey m_primaryKey;
-    bool m_primaryKeyHasBeenSet;
+    bool m_primaryKeyHasBeenSet = false;
 
     Aws::Vector<MultiRegionKey> m_replicaKeys;
-    bool m_replicaKeysHasBeenSet;
+    bool m_replicaKeysHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/VpcOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API VpcOptions
+  class VpcOptions
   {
   public:
-    VpcOptions();
-    VpcOptions(Aws::Utils::Json::JsonView jsonValue);
-    VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API VpcOptions();
+    AWS_NETWORKMANAGER_API VpcOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -55,10 +55,46 @@ namespace Model
      */
     inline VpcOptions& WithIpv6Support(bool value) { SetIpv6Support(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether appliance mode is supported. If enabled, traffic flow
+     * between a source and destination use the same Availability Zone for the VPC
+     * attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool GetApplianceModeSupport() const{ return m_applianceModeSupport; }
+
+    /**
+     * <p>Indicates whether appliance mode is supported. If enabled, traffic flow
+     * between a source and destination use the same Availability Zone for the VPC
+     * attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.</p>
+     */
+    inline bool ApplianceModeSupportHasBeenSet() const { return m_applianceModeSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether appliance mode is supported. If enabled, traffic flow
+     * between a source and destination use the same Availability Zone for the VPC
+     * attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.</p>
+     */
+    inline void SetApplianceModeSupport(bool value) { m_applianceModeSupportHasBeenSet = true; m_applianceModeSupport = value; }
+
+    /**
+     * <p>Indicates whether appliance mode is supported. If enabled, traffic flow
+     * between a source and destination use the same Availability Zone for the VPC
+     * attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.</p>
+     */
+    inline VpcOptions& WithApplianceModeSupport(bool value) { SetApplianceModeSupport(value); return *this;}
+
   private:
 
     bool m_ipv6Support;
-    bool m_ipv6SupportHasBeenSet;
+    bool m_ipv6SupportHasBeenSet = false;
+
+    bool m_applianceModeSupport;
+    bool m_applianceModeSupportHasBeenSet = false;
   };
 
 } // namespace Model

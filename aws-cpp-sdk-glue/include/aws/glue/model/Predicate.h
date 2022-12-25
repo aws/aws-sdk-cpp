@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Predicate">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Predicate
+  class Predicate
   {
   public:
-    Predicate();
-    Predicate(Aws::Utils::Json::JsonView jsonValue);
-    Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Predicate();
+    AWS_GLUE_API Predicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Logical m_logical;
-    bool m_logicalHasBeenSet;
+    bool m_logicalHasBeenSet = false;
 
     Aws::Vector<Condition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

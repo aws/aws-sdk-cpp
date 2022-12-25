@@ -26,46 +26,46 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API ListDataSourceSyncJobsResult
+  class ListDataSourceSyncJobsResult
   {
   public:
-    ListDataSourceSyncJobsResult();
-    ListDataSourceSyncJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataSourceSyncJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API ListDataSourceSyncJobsResult();
+    AWS_KENDRA_API ListDataSourceSyncJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API ListDataSourceSyncJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline const Aws::Vector<DataSourceSyncJob>& GetHistory() const{ return m_history; }
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline void SetHistory(const Aws::Vector<DataSourceSyncJob>& value) { m_history = value; }
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline void SetHistory(Aws::Vector<DataSourceSyncJob>&& value) { m_history = std::move(value); }
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline ListDataSourceSyncJobsResult& WithHistory(const Aws::Vector<DataSourceSyncJob>& value) { SetHistory(value); return *this;}
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline ListDataSourceSyncJobsResult& WithHistory(Aws::Vector<DataSourceSyncJob>&& value) { SetHistory(std::move(value)); return *this;}
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline ListDataSourceSyncJobsResult& AddHistory(const DataSourceSyncJob& value) { m_history.push_back(value); return *this; }
 
     /**
-     * <p>A history of synchronization jobs for the data source.</p>
+     * <p>A history of synchronization jobs for the data source connector.</p>
      */
     inline ListDataSourceSyncJobsResult& AddHistory(DataSourceSyncJob&& value) { m_history.push_back(std::move(value)); return *this; }
 

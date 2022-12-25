@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/EntityDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API EntityDescription
+  class EntityDescription
   {
   public:
-    EntityDescription();
-    EntityDescription(Aws::Utils::Json::JsonView jsonValue);
-    EntityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API EntityDescription();
+    AWS_IOTTHINGSGRAPH_API EntityDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API EntityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     EntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DefinitionDocument m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

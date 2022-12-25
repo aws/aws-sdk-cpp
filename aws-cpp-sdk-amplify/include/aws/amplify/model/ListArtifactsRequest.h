@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifactsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API ListArtifactsRequest : public AmplifyRequest
+  class ListArtifactsRequest : public AmplifyRequest
   {
   public:
-    ListArtifactsRequest();
+    AWS_AMPLIFY_API ListArtifactsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListArtifacts"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_AMPLIFY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryRule">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategoryRule
+  class CostCategoryRule
   {
   public:
-    CostCategoryRule();
-    CostCategoryRule(Aws::Utils::Json::JsonView jsonValue);
-    CostCategoryRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategoryRule();
+    AWS_COSTEXPLORER_API CostCategoryRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategoryRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -288,16 +288,16 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Expression m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     CostCategoryInheritedValueDimension m_inheritedValue;
-    bool m_inheritedValueHasBeenSet;
+    bool m_inheritedValueHasBeenSet = false;
 
     CostCategoryRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

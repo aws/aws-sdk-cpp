@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsMfaConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType
+  class SmsMfaConfigType
   {
   public:
-    SmsMfaConfigType();
-    SmsMfaConfigType(Aws::Utils::Json::JsonView jsonValue);
-    SmsMfaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API SmsMfaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_smsAuthenticationMessage;
-    bool m_smsAuthenticationMessageHasBeenSet;
+    bool m_smsAuthenticationMessageHasBeenSet = false;
 
     SmsConfigurationType m_smsConfiguration;
-    bool m_smsConfigurationHasBeenSet;
+    bool m_smsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

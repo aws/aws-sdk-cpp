@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/QopConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API QopConfiguration
+  class QopConfiguration
   {
   public:
-    QopConfiguration();
-    QopConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    QopConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API QopConfiguration();
+    AWS_DATASYNC_API QopConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API QopConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     HdfsRpcProtection m_rpcProtection;
-    bool m_rpcProtectionHasBeenSet;
+    bool m_rpcProtectionHasBeenSet = false;
 
     HdfsDataTransferProtection m_dataTransferProtection;
-    bool m_dataTransferProtectionHasBeenSet;
+    bool m_dataTransferProtectionHasBeenSet = false;
   };
 
 } // namespace Model

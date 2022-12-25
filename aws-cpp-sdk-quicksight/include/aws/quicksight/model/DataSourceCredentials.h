@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSourceCredentials
+  class DataSourceCredentials
   {
   public:
-    DataSourceCredentials();
-    DataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSourceCredentials();
+    AWS_QUICKSIGHT_API DataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,65 @@ namespace Model
      */
     inline DataSourceCredentials& WithCopySourceArn(const char* value) { SetCopySourceArn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSourceCredentials& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSourceCredentials& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSourceCredentials& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+
   private:
 
     CredentialPair m_credentialPair;
-    bool m_credentialPairHasBeenSet;
+    bool m_credentialPairHasBeenSet = false;
 
     Aws::String m_copySourceArn;
-    bool m_copySourceArnHasBeenSet;
+    bool m_copySourceArnHasBeenSet = false;
+
+    Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

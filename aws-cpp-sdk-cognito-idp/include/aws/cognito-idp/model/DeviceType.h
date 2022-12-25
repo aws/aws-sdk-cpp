@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API DeviceType
+  class DeviceType
   {
   public:
-    DeviceType();
-    DeviceType(Aws::Utils::Json::JsonView jsonValue);
-    DeviceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceType();
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_deviceKey;
-    bool m_deviceKeyHasBeenSet;
+    bool m_deviceKeyHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_deviceAttributes;
-    bool m_deviceAttributesHasBeenSet;
+    bool m_deviceAttributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceCreateDate;
-    bool m_deviceCreateDateHasBeenSet;
+    bool m_deviceCreateDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastModifiedDate;
-    bool m_deviceLastModifiedDateHasBeenSet;
+    bool m_deviceLastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deviceLastAuthenticatedDate;
-    bool m_deviceLastAuthenticatedDateHasBeenSet;
+    bool m_deviceLastAuthenticatedDateHasBeenSet = false;
   };
 
 } // namespace Model

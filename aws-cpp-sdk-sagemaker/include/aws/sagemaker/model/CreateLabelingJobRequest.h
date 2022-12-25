@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateLabelingJobRequest : public SageMakerRequest
+  class CreateLabelingJobRequest : public SageMakerRequest
   {
   public:
-    CreateLabelingJobRequest();
+    AWS_SAGEMAKER_API CreateLabelingJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLabelingJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1119,34 +1119,34 @@ namespace Model
   private:
 
     Aws::String m_labelingJobName;
-    bool m_labelingJobNameHasBeenSet;
+    bool m_labelingJobNameHasBeenSet = false;
 
     Aws::String m_labelAttributeName;
-    bool m_labelAttributeNameHasBeenSet;
+    bool m_labelAttributeNameHasBeenSet = false;
 
     LabelingJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     LabelingJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_labelCategoryConfigS3Uri;
-    bool m_labelCategoryConfigS3UriHasBeenSet;
+    bool m_labelCategoryConfigS3UriHasBeenSet = false;
 
     LabelingJobStoppingConditions m_stoppingConditions;
-    bool m_stoppingConditionsHasBeenSet;
+    bool m_stoppingConditionsHasBeenSet = false;
 
     LabelingJobAlgorithmsConfig m_labelingJobAlgorithmsConfig;
-    bool m_labelingJobAlgorithmsConfigHasBeenSet;
+    bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
 
     HumanTaskConfig m_humanTaskConfig;
-    bool m_humanTaskConfigHasBeenSet;
+    bool m_humanTaskConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

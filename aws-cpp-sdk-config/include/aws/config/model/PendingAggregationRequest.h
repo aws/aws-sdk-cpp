@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PendingAggregationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API PendingAggregationRequest
+  class PendingAggregationRequest
   {
   public:
-    PendingAggregationRequest();
-    PendingAggregationRequest(Aws::Utils::Json::JsonView jsonValue);
-    PendingAggregationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API PendingAggregationRequest();
+    AWS_CONFIGSERVICE_API PendingAggregationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API PendingAggregationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_requesterAccountId;
-    bool m_requesterAccountIdHasBeenSet;
+    bool m_requesterAccountIdHasBeenSet = false;
 
     Aws::String m_requesterAwsRegion;
-    bool m_requesterAwsRegionHasBeenSet;
+    bool m_requesterAwsRegionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceExecutionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceExecutionConfig
+  class InferenceExecutionConfig
   {
   public:
-    InferenceExecutionConfig();
-    InferenceExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
-    InferenceExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceExecutionConfig();
+    AWS_SAGEMAKER_API InferenceExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     InferenceExecutionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

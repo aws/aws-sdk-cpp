@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTTWINMAKER_API GetEntityRequest : public IoTTwinMakerRequest
+  class GetEntityRequest : public IoTTwinMakerRequest
   {
   public:
-    GetEntityRequest();
+    AWS_IOTTWINMAKER_API GetEntityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,48 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetEntity"; }
 
-    Aws::String SerializePayload() const override;
-
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline GetEntityRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    AWS_IOTTWINMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -113,13 +72,54 @@ namespace Model
      */
     inline GetEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline GetEntityRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
   private:
 
-    Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
-
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet = false;
   };
 
 } // namespace Model

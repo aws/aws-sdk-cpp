@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API ValidationExceptionField
+  class ValidationExceptionField
   {
   public:
-    ValidationExceptionField();
-    ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ValidationExceptionField();
+    AWS_MGN_API ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

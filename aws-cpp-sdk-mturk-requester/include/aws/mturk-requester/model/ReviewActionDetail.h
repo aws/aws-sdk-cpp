@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ReviewActionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ReviewActionDetail
+  class ReviewActionDetail
   {
   public:
-    ReviewActionDetail();
-    ReviewActionDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReviewActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ReviewActionDetail();
+    AWS_MTURK_API ReviewActionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ReviewActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -373,28 +373,28 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     ReviewActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

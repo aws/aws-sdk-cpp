@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceMinutes">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeviceMinutes
+  class DeviceMinutes
   {
   public:
-    DeviceMinutes();
-    DeviceMinutes(Aws::Utils::Json::JsonView jsonValue);
-    DeviceMinutes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DeviceMinutes();
+    AWS_DEVICEFARM_API DeviceMinutes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DeviceMinutes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,13 +114,13 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     double m_metered;
-    bool m_meteredHasBeenSet;
+    bool m_meteredHasBeenSet = false;
 
     double m_unmetered;
-    bool m_unmeteredHasBeenSet;
+    bool m_unmeteredHasBeenSet = false;
   };
 
 } // namespace Model

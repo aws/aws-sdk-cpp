@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TotalLocalStorageGBRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API TotalLocalStorageGBRequest
+  class TotalLocalStorageGBRequest
   {
   public:
-    TotalLocalStorageGBRequest();
-    TotalLocalStorageGBRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TotalLocalStorageGBRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TotalLocalStorageGBRequest();
+    AWS_AUTOSCALING_API TotalLocalStorageGBRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TotalLocalStorageGBRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     double m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

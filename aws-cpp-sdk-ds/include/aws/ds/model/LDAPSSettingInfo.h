@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/LDAPSSettingInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API LDAPSSettingInfo
+  class LDAPSSettingInfo
   {
   public:
-    LDAPSSettingInfo();
-    LDAPSSettingInfo(Aws::Utils::Json::JsonView jsonValue);
-    LDAPSSettingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API LDAPSSettingInfo();
+    AWS_DIRECTORYSERVICE_API LDAPSSettingInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API LDAPSSettingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     LDAPSStatus m_lDAPSStatus;
-    bool m_lDAPSStatusHasBeenSet;
+    bool m_lDAPSStatusHasBeenSet = false;
 
     Aws::String m_lDAPSStatusReason;
-    bool m_lDAPSStatusReasonHasBeenSet;
+    bool m_lDAPSStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

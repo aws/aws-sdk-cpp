@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CustomerNodeEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CustomerNodeEndpoint
+  class CustomerNodeEndpoint
   {
   public:
-    CustomerNodeEndpoint();
-    CustomerNodeEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomerNodeEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CustomerNodeEndpoint();
+    AWS_ELASTICACHE_API CustomerNodeEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CustomerNodeEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

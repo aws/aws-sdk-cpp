@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImageResponseCard">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ImageResponseCard
+  class ImageResponseCard
   {
   public:
-    ImageResponseCard();
-    ImageResponseCard(Aws::Utils::Json::JsonView jsonValue);
-    ImageResponseCard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ImageResponseCard();
+    AWS_LEXMODELSV2_API ImageResponseCard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ImageResponseCard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_subtitle;
-    bool m_subtitleHasBeenSet;
+    bool m_subtitleHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::Vector<Button> m_buttons;
-    bool m_buttonsHasBeenSet;
+    bool m_buttonsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API EncryptRequest : public KMSRequest
+  class EncryptRequest : public KMSRequest
   {
   public:
-    EncryptRequest();
+    AWS_KMS_API EncryptRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Encrypt"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -555,7 +555,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline const EncryptionAlgorithmSpec& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
 
@@ -565,7 +566,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
 
@@ -575,7 +577,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline void SetEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
 
@@ -585,7 +588,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
 
@@ -595,7 +599,8 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline EncryptRequest& WithEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetEncryptionAlgorithm(value); return *this;}
 
@@ -605,26 +610,27 @@ namespace Model
      * <p>This parameter is required only for asymmetric KMS keys. The default value,
      * <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption
      * KMS keys. If you are using an asymmetric KMS key, we recommend
-     * RSAES_OAEP_SHA_256.</p>
+     * RSAES_OAEP_SHA_256.</p> <p>The SM2PKE algorithm is only available in China
+     * Regions.</p>
      */
     inline EncryptRequest& WithEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_plaintext;
-    bool m_plaintextHasBeenSet;
+    bool m_plaintextHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-    bool m_encryptionContextHasBeenSet;
+    bool m_encryptionContextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
 
     EncryptionAlgorithmSpec m_encryptionAlgorithm;
-    bool m_encryptionAlgorithmHasBeenSet;
+    bool m_encryptionAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

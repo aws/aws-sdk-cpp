@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/Scram">AWS API
    * Reference</a></p>
    */
-  class AWS_KAFKA_API Scram
+  class Scram
   {
   public:
-    Scram();
-    Scram(Aws::Utils::Json::JsonView jsonValue);
-    Scram& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Scram();
+    AWS_KAFKA_API Scram(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Scram& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -69,7 +69,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

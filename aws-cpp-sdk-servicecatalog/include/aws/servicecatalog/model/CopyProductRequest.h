@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API CopyProductRequest : public ServiceCatalogRequest
+  class CopyProductRequest : public ServiceCatalogRequest
   {
   public:
-    CopyProductRequest();
+    AWS_SERVICECATALOG_API CopyProductRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyProduct"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -392,25 +392,25 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_sourceProductArn;
-    bool m_sourceProductArnHasBeenSet;
+    bool m_sourceProductArnHasBeenSet = false;
 
     Aws::String m_targetProductId;
-    bool m_targetProductIdHasBeenSet;
+    bool m_targetProductIdHasBeenSet = false;
 
     Aws::String m_targetProductName;
-    bool m_targetProductNameHasBeenSet;
+    bool m_targetProductNameHasBeenSet = false;
 
     Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>> m_sourceProvisioningArtifactIdentifiers;
-    bool m_sourceProvisioningArtifactIdentifiersHasBeenSet;
+    bool m_sourceProvisioningArtifactIdentifiersHasBeenSet = false;
 
     Aws::Vector<CopyOption> m_copyOptions;
-    bool m_copyOptionsHasBeenSet;
+    bool m_copyOptionsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

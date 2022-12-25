@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API BatchDescribeModelPackageRequest : public SageMakerRequest
+  class BatchDescribeModelPackageRequest : public SageMakerRequest
   {
   public:
-    BatchDescribeModelPackageRequest();
+    AWS_SAGEMAKER_API BatchDescribeModelPackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchDescribeModelPackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_modelPackageArnList;
-    bool m_modelPackageArnListHasBeenSet;
+    bool m_modelPackageArnListHasBeenSet = false;
   };
 
 } // namespace Model

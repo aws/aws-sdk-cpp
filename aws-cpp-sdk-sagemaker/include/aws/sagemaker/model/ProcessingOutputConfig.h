@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingOutputConfig
+  class ProcessingOutputConfig
   {
   public:
-    ProcessingOutputConfig();
-    ProcessingOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingOutputConfig();
+    AWS_SAGEMAKER_API ProcessingOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::Vector<ProcessingOutput> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

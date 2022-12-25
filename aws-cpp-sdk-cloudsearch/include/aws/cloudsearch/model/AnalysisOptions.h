@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AnalysisOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API AnalysisOptions
+  class AnalysisOptions
   {
   public:
-    AnalysisOptions();
-    AnalysisOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API AnalysisOptions();
+    AWS_CLOUDSEARCH_API AnalysisOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API AnalysisOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -428,19 +428,19 @@ namespace Model
   private:
 
     Aws::String m_synonyms;
-    bool m_synonymsHasBeenSet;
+    bool m_synonymsHasBeenSet = false;
 
     Aws::String m_stopwords;
-    bool m_stopwordsHasBeenSet;
+    bool m_stopwordsHasBeenSet = false;
 
     Aws::String m_stemmingDictionary;
-    bool m_stemmingDictionaryHasBeenSet;
+    bool m_stemmingDictionaryHasBeenSet = false;
 
     Aws::String m_japaneseTokenizationDictionary;
-    bool m_japaneseTokenizationDictionaryHasBeenSet;
+    bool m_japaneseTokenizationDictionaryHasBeenSet = false;
 
     AlgorithmicStemming m_algorithmicStemming;
-    bool m_algorithmicStemmingHasBeenSet;
+    bool m_algorithmicStemmingHasBeenSet = false;
   };
 
 } // namespace Model

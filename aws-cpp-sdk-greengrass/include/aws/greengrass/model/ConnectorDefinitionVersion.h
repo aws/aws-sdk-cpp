@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ConnectorDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ConnectorDefinitionVersion
+  class ConnectorDefinitionVersion
   {
   public:
-    ConnectorDefinitionVersion();
-    ConnectorDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ConnectorDefinitionVersion();
+    AWS_GREENGRASS_API ConnectorDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ConnectorDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Connector> m_connectors;
-    bool m_connectorsHasBeenSet;
+    bool m_connectorsHasBeenSet = false;
   };
 
 } // namespace Model

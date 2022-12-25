@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/FailoverConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API FailoverConfig
+  class FailoverConfig
   {
   public:
-    FailoverConfig();
-    FailoverConfig(Aws::Utils::Json::JsonView jsonValue);
-    FailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API FailoverConfig();
+    AWS_MEDIACONNECT_API FailoverConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API FailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,16 +161,16 @@ namespace Model
   private:
 
     FailoverMode m_failoverMode;
-    bool m_failoverModeHasBeenSet;
+    bool m_failoverModeHasBeenSet = false;
 
     int m_recoveryWindow;
-    bool m_recoveryWindowHasBeenSet;
+    bool m_recoveryWindowHasBeenSet = false;
 
     SourcePriority m_sourcePriority;
-    bool m_sourcePriorityHasBeenSet;
+    bool m_sourcePriorityHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

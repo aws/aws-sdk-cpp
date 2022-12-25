@@ -25,17 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Response to GetFunctionConfiguration request.</p><p><h3>See Also:</h3>   <a
+   * <p>Response to a <code>GetFunctionConfiguration</code> request.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ImageConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ImageConfigResponse
+  class ImageConfigResponse
   {
   public:
-    ImageConfigResponse();
-    ImageConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    ImageConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ImageConfigResponse();
+    AWS_LAMBDA_API ImageConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ImageConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline const ImageConfigError& GetError() const{ return m_error; }
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline void SetError(const ImageConfigError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline void SetError(ImageConfigError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline ImageConfigResponse& WithError(const ImageConfigError& value) { SetError(value); return *this;}
 
     /**
-     * <p>Error response to GetFunctionConfiguration.</p>
+     * <p>Error response to <code>GetFunctionConfiguration</code>.</p>
      */
     inline ImageConfigResponse& WithError(ImageConfigError&& value) { SetError(std::move(value)); return *this;}
 
   private:
 
     ImageConfig m_imageConfig;
-    bool m_imageConfigHasBeenSet;
+    bool m_imageConfigHasBeenSet = false;
 
     ImageConfigError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

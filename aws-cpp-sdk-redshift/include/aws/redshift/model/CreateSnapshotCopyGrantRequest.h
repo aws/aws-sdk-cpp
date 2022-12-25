@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrantMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateSnapshotCopyGrantRequest : public RedshiftRequest
+  class CreateSnapshotCopyGrantRequest : public RedshiftRequest
   {
   public:
-    CreateSnapshotCopyGrantRequest();
+    AWS_REDSHIFT_API CreateSnapshotCopyGrantRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSnapshotCopyGrant"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -223,13 +223,13 @@ namespace Model
   private:
 
     Aws::String m_snapshotCopyGrantName;
-    bool m_snapshotCopyGrantNameHasBeenSet;
+    bool m_snapshotCopyGrantNameHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CaptionSource">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API CaptionSource
+  class CaptionSource
   {
   public:
-    CaptionSource();
-    CaptionSource(Aws::Utils::Json::JsonView jsonValue);
-    CaptionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API CaptionSource();
+    AWS_ELASTICTRANSCODER_API CaptionSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API CaptionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,19 +336,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_timeOffset;
-    bool m_timeOffsetHasBeenSet;
+    bool m_timeOffsetHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API InputConfiguration
+  class InputConfiguration
   {
   public:
-    InputConfiguration();
-    InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API InputConfiguration();
+    AWS_MEDIACONNECT_API InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_inputIp;
-    bool m_inputIpHasBeenSet;
+    bool m_inputIpHasBeenSet = false;
 
     int m_inputPort;
-    bool m_inputPortHasBeenSet;
+    bool m_inputPortHasBeenSet = false;
 
     Interface m_interface;
-    bool m_interfaceHasBeenSet;
+    bool m_interfaceHasBeenSet = false;
   };
 
 } // namespace Model

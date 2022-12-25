@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIACONNECT_API RemoveFlowSourceRequest : public MediaConnectRequest
+  class RemoveFlowSourceRequest : public MediaConnectRequest
   {
   public:
-    RemoveFlowSourceRequest();
+    AWS_MEDIACONNECT_API RemoveFlowSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveFlowSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
   };
 
 } // namespace Model

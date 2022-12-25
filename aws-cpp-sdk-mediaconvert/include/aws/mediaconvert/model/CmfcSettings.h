@@ -11,9 +11,11 @@
 #include <aws/mediaconvert/model/CmfcDescriptiveVideoServiceFlag.h>
 #include <aws/mediaconvert/model/CmfcIFrameOnlyManifest.h>
 #include <aws/mediaconvert/model/CmfcKlvMetadata.h>
+#include <aws/mediaconvert/model/CmfcManifestMetadataSignaling.h>
 #include <aws/mediaconvert/model/CmfcScte35Esam.h>
 #include <aws/mediaconvert/model/CmfcScte35Source.h>
 #include <aws/mediaconvert/model/CmfcTimedMetadata.h>
+#include <aws/mediaconvert/model/CmfcTimedMetadataBoxVersion.h>
 #include <utility>
 
 namespace Aws
@@ -37,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmfcSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmfcSettings
+  class CmfcSettings
   {
   public:
-    CmfcSettings();
-    CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
-    CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmfcSettings();
+    AWS_MEDIACONVERT_API CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -726,6 +728,73 @@ namespace Model
 
 
     /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline const CmfcManifestMetadataSignaling& GetManifestMetadataSignaling() const{ return m_manifestMetadataSignaling; }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline bool ManifestMetadataSignalingHasBeenSet() const { return m_manifestMetadataSignalingHasBeenSet; }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline void SetManifestMetadataSignaling(const CmfcManifestMetadataSignaling& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = value; }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline void SetManifestMetadataSignaling(CmfcManifestMetadataSignaling&& value) { m_manifestMetadataSignalingHasBeenSet = true; m_manifestMetadataSignaling = std::move(value); }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline CmfcSettings& WithManifestMetadataSignaling(const CmfcManifestMetadataSignaling& value) { SetManifestMetadataSignaling(value); return *this;}
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of
+     * event message, set Manifest metadata signaling to Enabled. For ID3 event
+     * messages, the InbandEventStream element schemeIdUri will be same value that you
+     * specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     * InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To
+     * leave these elements out of your output MPD manifest, set Manifest metadata
+     * signaling to Disabled.
+     */
+    inline CmfcSettings& WithManifestMetadataSignaling(CmfcManifestMetadataSignaling&& value) { SetManifestMetadataSignaling(std::move(value)); return *this;}
+
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT
      * to put SCTE-35 markers in this output at the insertion points that you specify
      * in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
@@ -871,37 +940,254 @@ namespace Model
      */
     inline CmfcSettings& WithTimedMetadata(CmfcTimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline const CmfcTimedMetadataBoxVersion& GetTimedMetadataBoxVersion() const{ return m_timedMetadataBoxVersion; }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline bool TimedMetadataBoxVersionHasBeenSet() const { return m_timedMetadataBoxVersionHasBeenSet; }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataBoxVersion(const CmfcTimedMetadataBoxVersion& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = value; }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion&& value) { m_timedMetadataBoxVersionHasBeenSet = true; m_timedMetadataBoxVersion = std::move(value); }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataBoxVersion(const CmfcTimedMetadataBoxVersion& value) { SetTimedMetadataBoxVersion(value); return *this;}
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your
+     * output.
+For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3
+     * Syntax.
+Leave blank to use the default value Version 0.
+When you specify Version
+     * 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion&& value) { SetTimedMetadataBoxVersion(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline const Aws::String& GetTimedMetadataSchemeIdUri() const{ return m_timedMetadataSchemeIdUri; }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline bool TimedMetadataSchemeIdUriHasBeenSet() const { return m_timedMetadataSchemeIdUriHasBeenSet; }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataSchemeIdUri(const Aws::String& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = value; }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataSchemeIdUri(Aws::String&& value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri = std::move(value); }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataSchemeIdUri(const char* value) { m_timedMetadataSchemeIdUriHasBeenSet = true; m_timedMetadataSchemeIdUri.assign(value); }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataSchemeIdUri(const Aws::String& value) { SetTimedMetadataSchemeIdUri(value); return *this;}
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataSchemeIdUri(Aws::String&& value) { SetTimedMetadataSchemeIdUri(std::move(value)); return *this;}
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed
+     * metadata in your output. For more informaiton, see ISO/IEC 23009-1:2022 section
+     * 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID
+     * URI, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataSchemeIdUri(const char* value) { SetTimedMetadataSchemeIdUri(value); return *this;}
+
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline const Aws::String& GetTimedMetadataValue() const{ return m_timedMetadataValue; }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline bool TimedMetadataValueHasBeenSet() const { return m_timedMetadataValueHasBeenSet; }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataValue(const Aws::String& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = value; }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataValue(Aws::String&& value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue = std::move(value); }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline void SetTimedMetadataValue(const char* value) { m_timedMetadataValueHasBeenSet = true; m_timedMetadataValue.assign(value); }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataValue(const Aws::String& value) { SetTimedMetadataValue(value); return *this;}
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataValue(Aws::String&& value) { SetTimedMetadataValue(std::move(value)); return *this;}
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your
+     * output. For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4
+     * Semantics. When you specify a value for ID3 Metadata Value, you must also set
+     * ID3 metadata (timedMetadata) to Passthrough.
+     */
+    inline CmfcSettings& WithTimedMetadataValue(const char* value) { SetTimedMetadataValue(value); return *this;}
+
   private:
 
     CmfcAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     Aws::String m_audioGroupId;
-    bool m_audioGroupIdHasBeenSet;
+    bool m_audioGroupIdHasBeenSet = false;
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     CmfcAudioTrackType m_audioTrackType;
-    bool m_audioTrackTypeHasBeenSet;
+    bool m_audioTrackTypeHasBeenSet = false;
 
     CmfcDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
-    bool m_descriptiveVideoServiceFlagHasBeenSet;
+    bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
     CmfcIFrameOnlyManifest m_iFrameOnlyManifest;
-    bool m_iFrameOnlyManifestHasBeenSet;
+    bool m_iFrameOnlyManifestHasBeenSet = false;
 
     CmfcKlvMetadata m_klvMetadata;
-    bool m_klvMetadataHasBeenSet;
+    bool m_klvMetadataHasBeenSet = false;
+
+    CmfcManifestMetadataSignaling m_manifestMetadataSignaling;
+    bool m_manifestMetadataSignalingHasBeenSet = false;
 
     CmfcScte35Esam m_scte35Esam;
-    bool m_scte35EsamHasBeenSet;
+    bool m_scte35EsamHasBeenSet = false;
 
     CmfcScte35Source m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
 
     CmfcTimedMetadata m_timedMetadata;
-    bool m_timedMetadataHasBeenSet;
+    bool m_timedMetadataHasBeenSet = false;
+
+    CmfcTimedMetadataBoxVersion m_timedMetadataBoxVersion;
+    bool m_timedMetadataBoxVersionHasBeenSet = false;
+
+    Aws::String m_timedMetadataSchemeIdUri;
+    bool m_timedMetadataSchemeIdUriHasBeenSet = false;
+
+    Aws::String m_timedMetadataValue;
+    bool m_timedMetadataValueHasBeenSet = false;
   };
 
 } // namespace Model

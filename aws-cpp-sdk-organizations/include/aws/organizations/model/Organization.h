@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Organization">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Organization
+  class Organization
   {
   public:
-    Organization();
-    Organization(Aws::Utils::Json::JsonView jsonValue);
-    Organization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Organization();
+    AWS_ORGANIZATIONS_API Organization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Organization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -494,25 +494,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     OrganizationFeatureSet m_featureSet;
-    bool m_featureSetHasBeenSet;
+    bool m_featureSetHasBeenSet = false;
 
     Aws::String m_masterAccountArn;
-    bool m_masterAccountArnHasBeenSet;
+    bool m_masterAccountArnHasBeenSet = false;
 
     Aws::String m_masterAccountId;
-    bool m_masterAccountIdHasBeenSet;
+    bool m_masterAccountIdHasBeenSet = false;
 
     Aws::String m_masterAccountEmail;
-    bool m_masterAccountEmailHasBeenSet;
+    bool m_masterAccountEmailHasBeenSet = false;
 
     Aws::Vector<PolicyTypeSummary> m_availablePolicyTypes;
-    bool m_availablePolicyTypesHasBeenSet;
+    bool m_availablePolicyTypesHasBeenSet = false;
   };
 
 } // namespace Model

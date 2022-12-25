@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ModerationLabel">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ModerationLabel
+  class ModerationLabel
   {
   public:
-    ModerationLabel();
-    ModerationLabel(Aws::Utils::Json::JsonView jsonValue);
-    ModerationLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ModerationLabel();
+    AWS_REKOGNITION_API ModerationLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ModerationLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_parentName;
-    bool m_parentNameHasBeenSet;
+    bool m_parentNameHasBeenSet = false;
   };
 
 } // namespace Model

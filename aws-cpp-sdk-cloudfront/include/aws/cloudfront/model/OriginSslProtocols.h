@@ -25,42 +25,42 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the SSL/TLS protocols that
-   * CloudFront can use when establishing an HTTPS connection with your origin.
-   * </p><p><h3>See Also:</h3>   <a
+   * CloudFront can use when establishing an HTTPS connection with your
+   * origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginSslProtocols">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginSslProtocols
+  class OriginSslProtocols
   {
   public:
-    OriginSslProtocols();
-    OriginSslProtocols(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginSslProtocols& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginSslProtocols();
+    AWS_CLOUDFRONT_API OriginSslProtocols(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginSslProtocols& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline OriginSslProtocols& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<SslProtocol> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

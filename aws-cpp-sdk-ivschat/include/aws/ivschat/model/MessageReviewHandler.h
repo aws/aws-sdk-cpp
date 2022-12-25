@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/MessageReviewHandler">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API MessageReviewHandler
+  class MessageReviewHandler
   {
   public:
-    MessageReviewHandler();
-    MessageReviewHandler(Aws::Utils::Json::JsonView jsonValue);
-    MessageReviewHandler& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API MessageReviewHandler();
+    AWS_IVSCHAT_API MessageReviewHandler(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API MessageReviewHandler& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,10 +157,10 @@ namespace Model
   private:
 
     FallbackResult m_fallbackResult;
-    bool m_fallbackResultHasBeenSet;
+    bool m_fallbackResultHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfigurationMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateHsmConfigurationRequest : public RedshiftRequest
+  class CreateHsmConfigurationRequest : public RedshiftRequest
   {
   public:
-    CreateHsmConfigurationRequest();
+    AWS_REDSHIFT_API CreateHsmConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateHsmConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_hsmIpAddress;
-    bool m_hsmIpAddressHasBeenSet;
+    bool m_hsmIpAddressHasBeenSet = false;
 
     Aws::String m_hsmPartitionName;
-    bool m_hsmPartitionNameHasBeenSet;
+    bool m_hsmPartitionNameHasBeenSet = false;
 
     Aws::String m_hsmPartitionPassword;
-    bool m_hsmPartitionPasswordHasBeenSet;
+    bool m_hsmPartitionPasswordHasBeenSet = false;
 
     Aws::String m_hsmServerPublicCertificate;
-    bool m_hsmServerPublicCertificateHasBeenSet;
+    bool m_hsmServerPublicCertificateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

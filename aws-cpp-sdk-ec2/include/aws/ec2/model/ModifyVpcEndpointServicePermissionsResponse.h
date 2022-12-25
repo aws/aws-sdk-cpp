@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/AddedPrincipal.h>
 #include <utility>
 
 namespace Aws
@@ -24,12 +26,48 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVpcEndpointServicePermissionsResponse
+  class ModifyVpcEndpointServicePermissionsResponse
   {
   public:
-    ModifyVpcEndpointServicePermissionsResponse();
-    ModifyVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpcEndpointServicePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpcEndpointServicePermissionsResponse();
+    AWS_EC2_API ModifyVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpcEndpointServicePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline const Aws::Vector<AddedPrincipal>& GetAddedPrincipals() const{ return m_addedPrincipals; }
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline void SetAddedPrincipals(const Aws::Vector<AddedPrincipal>& value) { m_addedPrincipals = value; }
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline void SetAddedPrincipals(Aws::Vector<AddedPrincipal>&& value) { m_addedPrincipals = std::move(value); }
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline ModifyVpcEndpointServicePermissionsResponse& WithAddedPrincipals(const Aws::Vector<AddedPrincipal>& value) { SetAddedPrincipals(value); return *this;}
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline ModifyVpcEndpointServicePermissionsResponse& WithAddedPrincipals(Aws::Vector<AddedPrincipal>&& value) { SetAddedPrincipals(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline ModifyVpcEndpointServicePermissionsResponse& AddAddedPrincipals(const AddedPrincipal& value) { m_addedPrincipals.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the added principals.</p>
+     */
+    inline ModifyVpcEndpointServicePermissionsResponse& AddAddedPrincipals(AddedPrincipal&& value) { m_addedPrincipals.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -67,6 +105,8 @@ namespace Model
     inline ModifyVpcEndpointServicePermissionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<AddedPrincipal> m_addedPrincipals;
 
     bool m_returnValue;
 

@@ -106,6 +106,16 @@ Aws::Http::HeaderValueCollection PutObjectLockConfigurationRequest::GetRequestSp
   return headers;
 }
 
+PutObjectLockConfigurationRequest::EndpointParameters PutObjectLockConfigurationRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 Aws::String PutObjectLockConfigurationRequest::GetChecksumAlgorithmName() const
 {
   if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)

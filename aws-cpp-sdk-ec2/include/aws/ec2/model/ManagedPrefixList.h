@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ManagedPrefixList">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ManagedPrefixList
+  class ManagedPrefixList
   {
   public:
-    ManagedPrefixList();
-    ManagedPrefixList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ManagedPrefixList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ManagedPrefixList();
+    AWS_EC2_API ManagedPrefixList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ManagedPrefixList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -404,34 +404,34 @@ namespace Model
   private:
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     PrefixListState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
-    bool m_stateMessageHasBeenSet;
+    bool m_stateMessageHasBeenSet = false;
 
     Aws::String m_prefixListArn;
-    bool m_prefixListArnHasBeenSet;
+    bool m_prefixListArnHasBeenSet = false;
 
     Aws::String m_prefixListName;
-    bool m_prefixListNameHasBeenSet;
+    bool m_prefixListNameHasBeenSet = false;
 
     int m_maxEntries;
-    bool m_maxEntriesHasBeenSet;
+    bool m_maxEntriesHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

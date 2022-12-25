@@ -28,61 +28,61 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LogDestination
+  class LogDestination
   {
   public:
-    LogDestination();
-    LogDestination(Aws::Utils::Json::JsonView jsonValue);
-    LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LogDestination();
+    AWS_SFN_API LogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline const CloudWatchLogsLogGroup& GetCloudWatchLogsLogGroup() const{ return m_cloudWatchLogsLogGroup; }
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline bool CloudWatchLogsLogGroupHasBeenSet() const { return m_cloudWatchLogsLogGroupHasBeenSet; }
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline void SetCloudWatchLogsLogGroup(const CloudWatchLogsLogGroup& value) { m_cloudWatchLogsLogGroupHasBeenSet = true; m_cloudWatchLogsLogGroup = value; }
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline void SetCloudWatchLogsLogGroup(CloudWatchLogsLogGroup&& value) { m_cloudWatchLogsLogGroupHasBeenSet = true; m_cloudWatchLogsLogGroup = std::move(value); }
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline LogDestination& WithCloudWatchLogsLogGroup(const CloudWatchLogsLogGroup& value) { SetCloudWatchLogsLogGroup(value); return *this;}
 
     /**
      * <p>An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-     * in the AWS CloudFormation User Guide.</p>
+     * in the CloudFormation User Guide.</p>
      */
     inline LogDestination& WithCloudWatchLogsLogGroup(CloudWatchLogsLogGroup&& value) { SetCloudWatchLogsLogGroup(std::move(value)); return *this;}
 
   private:
 
     CloudWatchLogsLogGroup m_cloudWatchLogsLogGroup;
-    bool m_cloudWatchLogsLogGroupHasBeenSet;
+    bool m_cloudWatchLogsLogGroupHasBeenSet = false;
   };
 
 } // namespace Model

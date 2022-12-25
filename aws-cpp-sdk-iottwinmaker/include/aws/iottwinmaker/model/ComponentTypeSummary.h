@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ComponentTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ComponentTypeSummary
+  class ComponentTypeSummary
   {
   public:
-    ComponentTypeSummary();
-    ComponentTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ComponentTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ComponentTypeSummary();
+    AWS_IOTTWINMAKER_API ComponentTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ComponentTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,6 +154,37 @@ namespace Model
 
 
     /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline ComponentTypeSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the component type was last updated.</p>
+     */
+    inline ComponentTypeSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The description of the component type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -226,54 +257,67 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+    inline const Aws::String& GetComponentTypeName() const{ return m_componentTypeName; }
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+    inline bool ComponentTypeNameHasBeenSet() const { return m_componentTypeNameHasBeenSet; }
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
+    inline void SetComponentTypeName(const Aws::String& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = value; }
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
+    inline void SetComponentTypeName(Aws::String&& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = std::move(value); }
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline ComponentTypeSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
+    inline void SetComponentTypeName(const char* value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName.assign(value); }
 
     /**
-     * <p>The date and time when the component type was last updated.</p>
+     * <p>The component type name.</p>
      */
-    inline ComponentTypeSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+    inline ComponentTypeSummary& WithComponentTypeName(const Aws::String& value) { SetComponentTypeName(value); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline ComponentTypeSummary& WithComponentTypeName(Aws::String&& value) { SetComponentTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline ComponentTypeSummary& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-
-    Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Status m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_componentTypeName;
+    bool m_componentTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

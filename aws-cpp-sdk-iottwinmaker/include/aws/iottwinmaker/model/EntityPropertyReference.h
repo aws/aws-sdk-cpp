@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/EntityPropertyReference">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API EntityPropertyReference
+  class EntityPropertyReference
   {
   public:
-    EntityPropertyReference();
-    EntityPropertyReference(Aws::Utils::Json::JsonView jsonValue);
-    EntityPropertyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API EntityPropertyReference();
+    AWS_IOTTWINMAKER_API EntityPropertyReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API EntityPropertyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,47 +78,6 @@ namespace Model
      * <p>The name of the component.</p>
      */
     inline EntityPropertyReference& WithComponentName(const char* value) { SetComponentName(value); return *this;}
-
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the entity.</p>
-     */
-    inline EntityPropertyReference& WithEntityId(const char* value) { SetEntityId(value); return *this;}
 
 
     /**
@@ -201,6 +160,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the entity.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the entity.</p>
+     */
+    inline EntityPropertyReference& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
      * <p>The name of the property.</p>
      */
     inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
@@ -243,16 +243,16 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
-
-    Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_externalIdProperty;
-    bool m_externalIdPropertyHasBeenSet;
+    bool m_externalIdPropertyHasBeenSet = false;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_propertyName;
-    bool m_propertyNameHasBeenSet;
+    bool m_propertyNameHasBeenSet = false;
   };
 
 } // namespace Model

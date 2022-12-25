@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/PendingMaintenance">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance
+  class PendingMaintenance
   {
   public:
-    PendingMaintenance();
-    PendingMaintenance(Aws::Utils::Json::JsonView jsonValue);
-    PendingMaintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance();
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline const MaintenanceSchedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline void SetSchedule(const MaintenanceSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline void SetSchedule(MaintenanceSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline PendingMaintenance& WithSchedule(const MaintenanceSchedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline PendingMaintenance& WithSchedule(MaintenanceSchedule&& value) { SetSchedule(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     MaintenanceSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
   };
 
 } // namespace Model

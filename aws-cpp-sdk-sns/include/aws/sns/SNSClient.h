@@ -5,256 +5,17 @@
 
 #pragma once
 #include <aws/sns/SNS_EXPORTS.h>
-#include <aws/sns/SNSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/sns/model/CheckIfPhoneNumberIsOptedOutResult.h>
-#include <aws/sns/model/ConfirmSubscriptionResult.h>
-#include <aws/sns/model/CreatePlatformApplicationResult.h>
-#include <aws/sns/model/CreatePlatformEndpointResult.h>
-#include <aws/sns/model/CreateSMSSandboxPhoneNumberResult.h>
-#include <aws/sns/model/CreateTopicResult.h>
-#include <aws/sns/model/DeleteSMSSandboxPhoneNumberResult.h>
-#include <aws/sns/model/GetEndpointAttributesResult.h>
-#include <aws/sns/model/GetPlatformApplicationAttributesResult.h>
-#include <aws/sns/model/GetSMSAttributesResult.h>
-#include <aws/sns/model/GetSMSSandboxAccountStatusResult.h>
-#include <aws/sns/model/GetSubscriptionAttributesResult.h>
-#include <aws/sns/model/GetTopicAttributesResult.h>
-#include <aws/sns/model/ListEndpointsByPlatformApplicationResult.h>
-#include <aws/sns/model/ListOriginationNumbersResult.h>
-#include <aws/sns/model/ListPhoneNumbersOptedOutResult.h>
-#include <aws/sns/model/ListPlatformApplicationsResult.h>
-#include <aws/sns/model/ListSMSSandboxPhoneNumbersResult.h>
-#include <aws/sns/model/ListSubscriptionsResult.h>
-#include <aws/sns/model/ListSubscriptionsByTopicResult.h>
-#include <aws/sns/model/ListTagsForResourceResult.h>
-#include <aws/sns/model/ListTopicsResult.h>
-#include <aws/sns/model/OptInPhoneNumberResult.h>
-#include <aws/sns/model/PublishResult.h>
-#include <aws/sns/model/PublishBatchResult.h>
-#include <aws/sns/model/SetSMSAttributesResult.h>
-#include <aws/sns/model/SubscribeResult.h>
-#include <aws/sns/model/TagResourceResult.h>
-#include <aws/sns/model/UntagResourceResult.h>
-#include <aws/sns/model/VerifySMSSandboxPhoneNumberResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sns/SNSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SNS
 {
-
-namespace Model
-{
-        class AddPermissionRequest;
-        class CheckIfPhoneNumberIsOptedOutRequest;
-        class ConfirmSubscriptionRequest;
-        class CreatePlatformApplicationRequest;
-        class CreatePlatformEndpointRequest;
-        class CreateSMSSandboxPhoneNumberRequest;
-        class CreateTopicRequest;
-        class DeleteEndpointRequest;
-        class DeletePlatformApplicationRequest;
-        class DeleteSMSSandboxPhoneNumberRequest;
-        class DeleteTopicRequest;
-        class GetEndpointAttributesRequest;
-        class GetPlatformApplicationAttributesRequest;
-        class GetSMSAttributesRequest;
-        class GetSMSSandboxAccountStatusRequest;
-        class GetSubscriptionAttributesRequest;
-        class GetTopicAttributesRequest;
-        class ListEndpointsByPlatformApplicationRequest;
-        class ListOriginationNumbersRequest;
-        class ListPhoneNumbersOptedOutRequest;
-        class ListPlatformApplicationsRequest;
-        class ListSMSSandboxPhoneNumbersRequest;
-        class ListSubscriptionsRequest;
-        class ListSubscriptionsByTopicRequest;
-        class ListTagsForResourceRequest;
-        class ListTopicsRequest;
-        class OptInPhoneNumberRequest;
-        class PublishRequest;
-        class PublishBatchRequest;
-        class RemovePermissionRequest;
-        class SetEndpointAttributesRequest;
-        class SetPlatformApplicationAttributesRequest;
-        class SetSMSAttributesRequest;
-        class SetSubscriptionAttributesRequest;
-        class SetTopicAttributesRequest;
-        class SubscribeRequest;
-        class TagResourceRequest;
-        class UnsubscribeRequest;
-        class UntagResourceRequest;
-        class VerifySMSSandboxPhoneNumberRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> AddPermissionOutcome;
-        typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, SNSError> CheckIfPhoneNumberIsOptedOutOutcome;
-        typedef Aws::Utils::Outcome<ConfirmSubscriptionResult, SNSError> ConfirmSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<CreatePlatformApplicationResult, SNSError> CreatePlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreatePlatformEndpointResult, SNSError> CreatePlatformEndpointOutcome;
-        typedef Aws::Utils::Outcome<CreateSMSSandboxPhoneNumberResult, SNSError> CreateSMSSandboxPhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<CreateTopicResult, SNSError> CreateTopicOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeleteEndpointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeletePlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSMSSandboxPhoneNumberResult, SNSError> DeleteSMSSandboxPhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeleteTopicOutcome;
-        typedef Aws::Utils::Outcome<GetEndpointAttributesResult, SNSError> GetEndpointAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetPlatformApplicationAttributesResult, SNSError> GetPlatformApplicationAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetSMSAttributesResult, SNSError> GetSMSAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetSMSSandboxAccountStatusResult, SNSError> GetSMSSandboxAccountStatusOutcome;
-        typedef Aws::Utils::Outcome<GetSubscriptionAttributesResult, SNSError> GetSubscriptionAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetTopicAttributesResult, SNSError> GetTopicAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListEndpointsByPlatformApplicationResult, SNSError> ListEndpointsByPlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<ListOriginationNumbersResult, SNSError> ListOriginationNumbersOutcome;
-        typedef Aws::Utils::Outcome<ListPhoneNumbersOptedOutResult, SNSError> ListPhoneNumbersOptedOutOutcome;
-        typedef Aws::Utils::Outcome<ListPlatformApplicationsResult, SNSError> ListPlatformApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListSMSSandboxPhoneNumbersResult, SNSError> ListSMSSandboxPhoneNumbersOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionsResult, SNSError> ListSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionsByTopicResult, SNSError> ListSubscriptionsByTopicOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SNSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTopicsResult, SNSError> ListTopicsOutcome;
-        typedef Aws::Utils::Outcome<OptInPhoneNumberResult, SNSError> OptInPhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<PublishResult, SNSError> PublishOutcome;
-        typedef Aws::Utils::Outcome<PublishBatchResult, SNSError> PublishBatchOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetEndpointAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetPlatformApplicationAttributesOutcome;
-        typedef Aws::Utils::Outcome<SetSMSAttributesResult, SNSError> SetSMSAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetSubscriptionAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetTopicAttributesOutcome;
-        typedef Aws::Utils::Outcome<SubscribeResult, SNSError> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, SNSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> UnsubscribeOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, SNSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<VerifySMSSandboxPhoneNumberResult, SNSError> VerifySMSSandboxPhoneNumberOutcome;
-
-        typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
-        typedef std::future<CheckIfPhoneNumberIsOptedOutOutcome> CheckIfPhoneNumberIsOptedOutOutcomeCallable;
-        typedef std::future<ConfirmSubscriptionOutcome> ConfirmSubscriptionOutcomeCallable;
-        typedef std::future<CreatePlatformApplicationOutcome> CreatePlatformApplicationOutcomeCallable;
-        typedef std::future<CreatePlatformEndpointOutcome> CreatePlatformEndpointOutcomeCallable;
-        typedef std::future<CreateSMSSandboxPhoneNumberOutcome> CreateSMSSandboxPhoneNumberOutcomeCallable;
-        typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
-        typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
-        typedef std::future<DeletePlatformApplicationOutcome> DeletePlatformApplicationOutcomeCallable;
-        typedef std::future<DeleteSMSSandboxPhoneNumberOutcome> DeleteSMSSandboxPhoneNumberOutcomeCallable;
-        typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
-        typedef std::future<GetEndpointAttributesOutcome> GetEndpointAttributesOutcomeCallable;
-        typedef std::future<GetPlatformApplicationAttributesOutcome> GetPlatformApplicationAttributesOutcomeCallable;
-        typedef std::future<GetSMSAttributesOutcome> GetSMSAttributesOutcomeCallable;
-        typedef std::future<GetSMSSandboxAccountStatusOutcome> GetSMSSandboxAccountStatusOutcomeCallable;
-        typedef std::future<GetSubscriptionAttributesOutcome> GetSubscriptionAttributesOutcomeCallable;
-        typedef std::future<GetTopicAttributesOutcome> GetTopicAttributesOutcomeCallable;
-        typedef std::future<ListEndpointsByPlatformApplicationOutcome> ListEndpointsByPlatformApplicationOutcomeCallable;
-        typedef std::future<ListOriginationNumbersOutcome> ListOriginationNumbersOutcomeCallable;
-        typedef std::future<ListPhoneNumbersOptedOutOutcome> ListPhoneNumbersOptedOutOutcomeCallable;
-        typedef std::future<ListPlatformApplicationsOutcome> ListPlatformApplicationsOutcomeCallable;
-        typedef std::future<ListSMSSandboxPhoneNumbersOutcome> ListSMSSandboxPhoneNumbersOutcomeCallable;
-        typedef std::future<ListSubscriptionsOutcome> ListSubscriptionsOutcomeCallable;
-        typedef std::future<ListSubscriptionsByTopicOutcome> ListSubscriptionsByTopicOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
-        typedef std::future<OptInPhoneNumberOutcome> OptInPhoneNumberOutcomeCallable;
-        typedef std::future<PublishOutcome> PublishOutcomeCallable;
-        typedef std::future<PublishBatchOutcome> PublishBatchOutcomeCallable;
-        typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
-        typedef std::future<SetEndpointAttributesOutcome> SetEndpointAttributesOutcomeCallable;
-        typedef std::future<SetPlatformApplicationAttributesOutcome> SetPlatformApplicationAttributesOutcomeCallable;
-        typedef std::future<SetSMSAttributesOutcome> SetSMSAttributesOutcomeCallable;
-        typedef std::future<SetSubscriptionAttributesOutcome> SetSubscriptionAttributesOutcomeCallable;
-        typedef std::future<SetTopicAttributesOutcome> SetTopicAttributesOutcomeCallable;
-        typedef std::future<SubscribeOutcome> SubscribeOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UnsubscribeOutcome> UnsubscribeOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<VerifySMSSandboxPhoneNumberOutcome> VerifySMSSandboxPhoneNumberOutcomeCallable;
-} // namespace Model
-
-  class SNSClient;
-
-    typedef std::function<void(const SNSClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPermissionResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::CheckIfPhoneNumberIsOptedOutRequest&, const Model::CheckIfPhoneNumberIsOptedOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckIfPhoneNumberIsOptedOutResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ConfirmSubscriptionRequest&, const Model::ConfirmSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmSubscriptionResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::CreatePlatformApplicationRequest&, const Model::CreatePlatformApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlatformApplicationResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::CreatePlatformEndpointRequest&, const Model::CreatePlatformEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlatformEndpointResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::CreateSMSSandboxPhoneNumberRequest&, const Model::CreateSMSSandboxPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSMSSandboxPhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::DeletePlatformApplicationRequest&, const Model::DeletePlatformApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlatformApplicationResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::DeleteSMSSandboxPhoneNumberRequest&, const Model::DeleteSMSSandboxPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSMSSandboxPhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTopicResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetEndpointAttributesRequest&, const Model::GetEndpointAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetPlatformApplicationAttributesRequest&, const Model::GetPlatformApplicationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlatformApplicationAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetSMSAttributesRequest&, const Model::GetSMSAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSMSAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetSMSSandboxAccountStatusRequest&, const Model::GetSMSSandboxAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSMSSandboxAccountStatusResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetSubscriptionAttributesRequest&, const Model::GetSubscriptionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::GetTopicAttributesRequest&, const Model::GetTopicAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTopicAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListEndpointsByPlatformApplicationRequest&, const Model::ListEndpointsByPlatformApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsByPlatformApplicationResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListOriginationNumbersRequest&, const Model::ListOriginationNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginationNumbersResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListPhoneNumbersOptedOutRequest&, const Model::ListPhoneNumbersOptedOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersOptedOutResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListPlatformApplicationsRequest&, const Model::ListPlatformApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformApplicationsResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListSMSSandboxPhoneNumbersRequest&, const Model::ListSMSSandboxPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSMSSandboxPhoneNumbersResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsByTopicRequest&, const Model::ListSubscriptionsByTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsByTopicResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::OptInPhoneNumberRequest&, const Model::OptInPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OptInPhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::PublishBatchRequest&, const Model::PublishBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishBatchResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SetEndpointAttributesRequest&, const Model::SetEndpointAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetEndpointAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SetPlatformApplicationAttributesRequest&, const Model::SetPlatformApplicationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetPlatformApplicationAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SetSMSAttributesRequest&, const Model::SetSMSAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSMSAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SetSubscriptionAttributesRequest&, const Model::SetSubscriptionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSubscriptionAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SetTopicAttributesRequest&, const Model::SetTopicAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTopicAttributesResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::SubscribeRequest&, const Model::SubscribeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::UnsubscribeRequest&, const Model::UnsubscribeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnsubscribeResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SNSClient*, const Model::VerifySMSSandboxPhoneNumberRequest&, const Model::VerifySMSSandboxPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySMSSandboxPhoneNumberResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple
    * Notification Service (Amazon SNS) is a web service that enables you to build
@@ -275,30 +36,59 @@ namespace Model
    * available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon
    * Web Services</a>. </p>
    */
-  class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient
+  class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SNSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SNSClient(const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration(),
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SNSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SNSClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SNSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SNSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SNSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SNSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SNSClient();
 
 
@@ -310,8 +100,11 @@ namespace Model
 
         /**
          * <p>Adds a statement to a topic's access control policy, granting access for the
-         * specified Amazon Web Services accounts to the specified actions.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified Amazon Web Services accounts to the specified actions.</p> 
+         * <p>To remove the ability to change topic permissions, you must deny permissions
+         * to the <code>AddPermission</code>, <code>RemovePermission</code>, and
+         * <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">AWS
          * API Reference</a></p>
          */
@@ -590,6 +383,24 @@ namespace Model
          * An Async wrapper for DeleteTopic that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document
+         * that is stored in the specified Amazon SNS topic. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataProtectionPolicyOutcome GetDataProtectionPolicy(const Model::GetDataProtectionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDataProtectionPolicyOutcomeCallable GetDataProtectionPolicyCallable(const Model::GetDataProtectionPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDataProtectionPolicyAsync(const Model::GetDataProtectionPolicyRequest& request, const GetDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the endpoint attributes for a device on one of the supported push
@@ -1017,8 +828,29 @@ namespace Model
         virtual void PublishBatchAsync(const Model::PublishBatchRequest& request, const PublishBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates an inline policy document that is stored in the specified
+         * Amazon SNS topic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDataProtectionPolicyOutcome PutDataProtectionPolicy(const Model::PutDataProtectionPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDataProtectionPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutDataProtectionPolicyOutcomeCallable PutDataProtectionPolicyCallable(const Model::PutDataProtectionPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutDataProtectionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutDataProtectionPolicyAsync(const Model::PutDataProtectionPolicyRequest& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a statement from a topic's access control policy.</p>  <p>To
+         * remove the ability to change topic permissions, you must deny permissions to the
+         * <code>AddPermission</code>, <code>RemovePermission</code>, and
+         * <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -1125,8 +957,11 @@ namespace Model
         virtual void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a topic owner to set an attribute of the topic to a new
-         * value.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+         *  <p>To remove the ability to change topic permissions, you must deny
+         * permissions to the <code>AddPermission</code>, <code>RemovePermission</code>,
+         * and <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">AWS
          * API Reference</a></p>
          */
@@ -1202,8 +1037,11 @@ namespace Model
          * <code>Unsubscribe</code> call does not require authentication and the requester
          * is not the subscription owner, a final cancellation message is delivered to the
          * endpoint, so that the endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
-         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p>  <p>Amazon SQS queue
+         * subscriptions require authentication for deletion. Only the owner of the
+         * subscription, or the owner of the topic can unsubscribe using the required
+         * Amazon Web Services signature.</p>  <p>This action is throttled at 100
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          */
@@ -1268,52 +1106,14 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<SNSEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CheckIfPhoneNumberIsOptedOutAsyncHelper(const Model::CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ConfirmSubscriptionAsyncHelper(const Model::ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePlatformApplicationAsyncHelper(const Model::CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePlatformEndpointAsyncHelper(const Model::CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSMSSandboxPhoneNumberAsyncHelper(const Model::CreateSMSSandboxPhoneNumberRequest& request, const CreateSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTopicAsyncHelper(const Model::CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePlatformApplicationAsyncHelper(const Model::DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSMSSandboxPhoneNumberAsyncHelper(const Model::DeleteSMSSandboxPhoneNumberRequest& request, const DeleteSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTopicAsyncHelper(const Model::DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEndpointAttributesAsyncHelper(const Model::GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPlatformApplicationAttributesAsyncHelper(const Model::GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSMSAttributesAsyncHelper(const Model::GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSMSSandboxAccountStatusAsyncHelper(const Model::GetSMSSandboxAccountStatusRequest& request, const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSubscriptionAttributesAsyncHelper(const Model::GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTopicAttributesAsyncHelper(const Model::GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEndpointsByPlatformApplicationAsyncHelper(const Model::ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOriginationNumbersAsyncHelper(const Model::ListOriginationNumbersRequest& request, const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPhoneNumbersOptedOutAsyncHelper(const Model::ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPlatformApplicationsAsyncHelper(const Model::ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSMSSandboxPhoneNumbersAsyncHelper(const Model::ListSMSSandboxPhoneNumbersRequest& request, const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSubscriptionsAsyncHelper(const Model::ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSubscriptionsByTopicAsyncHelper(const Model::ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTopicsAsyncHelper(const Model::ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void OptInPhoneNumberAsyncHelper(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PublishAsyncHelper(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PublishBatchAsyncHelper(const Model::PublishBatchRequest& request, const PublishBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetEndpointAttributesAsyncHelper(const Model::SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetPlatformApplicationAttributesAsyncHelper(const Model::SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetSMSAttributesAsyncHelper(const Model::SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetSubscriptionAttributesAsyncHelper(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetTopicAttributesAsyncHelper(const Model::SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubscribeAsyncHelper(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnsubscribeAsyncHelper(const Model::UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void VerifySMSSandboxPhoneNumberAsyncHelper(const Model::VerifySMSSandboxPhoneNumberRequest& request, const VerifySMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>;
+        void init(const SNSClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        SNSClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<SNSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SNS

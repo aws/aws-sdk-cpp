@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlTranslation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API AccessControlTranslation
+  class AccessControlTranslation
   {
   public:
-    AccessControlTranslation();
-    AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AccessControlTranslation();
+    AWS_S3CRT_API AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     OwnerOverride m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

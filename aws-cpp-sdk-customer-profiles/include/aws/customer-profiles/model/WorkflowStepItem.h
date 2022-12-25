@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/WorkflowStepItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API WorkflowStepItem
+  class WorkflowStepItem
   {
   public:
-    WorkflowStepItem();
-    WorkflowStepItem(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API WorkflowStepItem();
+    AWS_CUSTOMERPROFILES_API WorkflowStepItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API WorkflowStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     AppflowIntegrationWorkflowStep m_appflowIntegration;
-    bool m_appflowIntegrationHasBeenSet;
+    bool m_appflowIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

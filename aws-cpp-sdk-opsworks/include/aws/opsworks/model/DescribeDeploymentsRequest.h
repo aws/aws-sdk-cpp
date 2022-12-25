@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API DescribeDeploymentsRequest : public OpsWorksRequest
+  class DescribeDeploymentsRequest : public OpsWorksRequest
   {
   public:
-    DescribeDeploymentsRequest();
+    AWS_OPSWORKS_API DescribeDeploymentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDeployments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentIds;
-    bool m_deploymentIdsHasBeenSet;
+    bool m_deploymentIdsHasBeenSet = false;
   };
 
 } // namespace Model

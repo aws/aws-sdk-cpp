@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AlertTarget">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API AlertTarget
+  class AlertTarget
   {
   public:
-    AlertTarget();
-    AlertTarget(Aws::Utils::Json::JsonView jsonValue);
-    AlertTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AlertTarget();
+    AWS_IOT_API AlertTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AlertTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_alertTargetArn;
-    bool m_alertTargetArnHasBeenSet;
+    bool m_alertTargetArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

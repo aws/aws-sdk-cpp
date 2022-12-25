@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorExecutionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorExecutionDetails
+  class PredictorExecutionDetails
   {
   public:
-    PredictorExecutionDetails();
-    PredictorExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
-    PredictorExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorExecutionDetails();
+    AWS_FORECASTSERVICE_API PredictorExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<PredictorExecution> m_predictorExecutions;
-    bool m_predictorExecutionsHasBeenSet;
+    bool m_predictorExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

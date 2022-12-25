@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DestinationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DestinationInfo
+  class DestinationInfo
   {
   public:
-    DestinationInfo();
-    DestinationInfo(Aws::Utils::Json::JsonView jsonValue);
-    DestinationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DestinationInfo();
+    AWS_LIGHTSAIL_API DestinationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DestinationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
   };
 
 } // namespace Model

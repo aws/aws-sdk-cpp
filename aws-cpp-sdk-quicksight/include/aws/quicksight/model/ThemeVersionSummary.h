@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThemeVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThemeVersionSummary
+  class ThemeVersionSummary
   {
   public:
-    ThemeVersionSummary();
-    ThemeVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ThemeVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThemeVersionSummary();
+    AWS_QUICKSIGHT_API ThemeVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThemeVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,19 +206,19 @@ namespace Model
   private:
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

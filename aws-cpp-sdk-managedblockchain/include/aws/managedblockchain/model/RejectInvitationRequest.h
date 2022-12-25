@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDBLOCKCHAIN_API RejectInvitationRequest : public ManagedBlockchainRequest
+  class RejectInvitationRequest : public ManagedBlockchainRequest
   {
   public:
-    RejectInvitationRequest();
+    AWS_MANAGEDBLOCKCHAIN_API RejectInvitationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RejectInvitation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceRequest : public GreengrassV2Request
+  class BatchAssociateClientDeviceWithCoreDeviceRequest : public GreengrassV2Request
   {
   public:
-    BatchAssociateClientDeviceWithCoreDeviceRequest();
+    AWS_GREENGRASSV2_API BatchAssociateClientDeviceWithCoreDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchAssociateClientDeviceWithCoreDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<AssociateClientDeviceWithCoreDeviceEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_coreDeviceThingName;
-    bool m_coreDeviceThingNameHasBeenSet;
+    bool m_coreDeviceThingNameHasBeenSet = false;
   };
 
 } // namespace Model

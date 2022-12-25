@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Partition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API Partition
+  class Partition
   {
   public:
-    Partition();
-    Partition(Aws::Utils::Json::JsonView jsonValue);
-    Partition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API Partition();
+    AWS_IOTANALYTICS_API Partition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Partition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

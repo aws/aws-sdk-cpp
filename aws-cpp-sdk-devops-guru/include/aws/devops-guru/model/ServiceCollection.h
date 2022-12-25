@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceCollection">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ServiceCollection
+  class ServiceCollection
   {
   public:
-    ServiceCollection();
-    ServiceCollection(Aws::Utils::Json::JsonView jsonValue);
-    ServiceCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ServiceCollection();
+    AWS_DEVOPSGURU_API ServiceCollection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ServiceCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<ServiceName> m_serviceNames;
-    bool m_serviceNamesHasBeenSet;
+    bool m_serviceNamesHasBeenSet = false;
   };
 
 } // namespace Model

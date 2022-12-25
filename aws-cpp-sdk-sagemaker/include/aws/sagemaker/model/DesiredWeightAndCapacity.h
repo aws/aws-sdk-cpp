@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DesiredWeightAndCapacity">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DesiredWeightAndCapacity
+  class DesiredWeightAndCapacity
   {
   public:
-    DesiredWeightAndCapacity();
-    DesiredWeightAndCapacity(Aws::Utils::Json::JsonView jsonValue);
-    DesiredWeightAndCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DesiredWeightAndCapacity();
+    AWS_SAGEMAKER_API DesiredWeightAndCapacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DesiredWeightAndCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     double m_desiredWeight;
-    bool m_desiredWeightHasBeenSet;
+    bool m_desiredWeightHasBeenSet = false;
 
     int m_desiredInstanceCount;
-    bool m_desiredInstanceCountHasBeenSet;
+    bool m_desiredInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

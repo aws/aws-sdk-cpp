@@ -26,23 +26,21 @@ namespace Model
 
   /**
    * <p>The Lustre logging configuration used when creating or updating an Amazon FSx
-   * for Lustre file system. Lustre logging writes the enabled logging events for
-   * your file system to Amazon CloudWatch Logs.</p> <p>Error and warning events can
-   * be logged from the following data repository operations:</p> <ul> <li>
-   * <p>Automatic export</p> </li> <li> <p>Data repository tasks</p> </li> </ul>
-   * <p>To learn more about Lustre logging, see <a
-   * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging
-   * to Amazon CloudWatch Logs</a>.</p><p><h3>See Also:</h3>   <a
+   * for Lustre file system. An Amazon File Cache is created with Lustre logging
+   * enabled by default, with a setting of <code>WARN_ERROR</code> for the logging
+   * events. which can't be changed.</p> <p>Lustre logging writes the enabled logging
+   * events for your file system or cache to Amazon CloudWatch Logs.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreLogCreateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LustreLogCreateConfiguration
+  class LustreLogCreateConfiguration
   {
   public:
-    LustreLogCreateConfiguration();
-    LustreLogCreateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LustreLogCreateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LustreLogCreateConfiguration();
+    AWS_FSX_API LustreLogCreateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LustreLogCreateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,7 +113,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -132,7 +131,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -149,7 +149,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -166,7 +167,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -183,7 +185,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -200,7 +203,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -217,7 +221,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -234,7 +239,8 @@ namespace Model
      * </li> <li> <p>The name of the Amazon CloudWatch Logs log group must begin with
      * the <code>/aws/fsx</code> prefix.</p> </li> <li> <p>If you do not provide a
      * destination, Amazon FSx will create and use a log stream in the CloudWatch Logs
-     * <code>/aws/fsx/lustre</code> log group.</p> </li> <li> <p>If
+     * <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre) or
+     * <code>/aws/fsx/filecache</code> (for Amazon File Cache).</p> </li> <li> <p>If
      * <code>Destination</code> is provided and the resource does not exist, the
      * request will fail with a <code>BadRequest</code> error.</p> </li> <li> <p>If
      * <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a
@@ -245,10 +251,10 @@ namespace Model
   private:
 
     LustreAccessAuditLogLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

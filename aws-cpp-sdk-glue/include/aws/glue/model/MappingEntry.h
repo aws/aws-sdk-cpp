@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MappingEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MappingEntry
+  class MappingEntry
   {
   public:
-    MappingEntry();
-    MappingEntry(Aws::Utils::Json::JsonView jsonValue);
-    MappingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MappingEntry();
+    AWS_GLUE_API MappingEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MappingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_sourceTable;
-    bool m_sourceTableHasBeenSet;
+    bool m_sourceTableHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_targetTable;
-    bool m_targetTableHasBeenSet;
+    bool m_targetTableHasBeenSet = false;
 
     Aws::String m_targetPath;
-    bool m_targetPathHasBeenSet;
+    bool m_targetPathHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
   };
 
 } // namespace Model

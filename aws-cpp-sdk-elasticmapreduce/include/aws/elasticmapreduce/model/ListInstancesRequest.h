@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstancesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ListInstancesRequest : public EMRRequest
+  class ListInstancesRequest : public EMRRequest
   {
   public:
-    ListInstancesRequest();
+    AWS_EMR_API ListInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
 
     Aws::Vector<InstanceGroupType> m_instanceGroupTypes;
-    bool m_instanceGroupTypesHasBeenSet;
+    bool m_instanceGroupTypesHasBeenSet = false;
 
     Aws::String m_instanceFleetId;
-    bool m_instanceFleetIdHasBeenSet;
+    bool m_instanceFleetIdHasBeenSet = false;
 
     InstanceFleetType m_instanceFleetType;
-    bool m_instanceFleetTypeHasBeenSet;
+    bool m_instanceFleetTypeHasBeenSet = false;
 
     Aws::Vector<InstanceState> m_instanceStates;
-    bool m_instanceStatesHasBeenSet;
+    bool m_instanceStatesHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemEventSummary
+  class OpsItemEventSummary
   {
   public:
-    OpsItemEventSummary();
-    OpsItemEventSummary(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemEventSummary();
+    AWS_SSM_API OpsItemEventSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,25 +309,25 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_detailType;
-    bool m_detailTypeHasBeenSet;
+    bool m_detailTypeHasBeenSet = false;
 
     Aws::String m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
 
     OpsItemIdentity m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

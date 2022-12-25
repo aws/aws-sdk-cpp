@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerEntityList">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerEntityList
+  class EntityRecognizerEntityList
   {
   public:
-    EntityRecognizerEntityList();
-    EntityRecognizerEntityList(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerEntityList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerEntityList();
+    AWS_COMPREHEND_API EntityRecognizerEntityList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerEntityList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

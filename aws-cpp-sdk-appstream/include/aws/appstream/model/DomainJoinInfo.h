@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DomainJoinInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API DomainJoinInfo
+  class DomainJoinInfo
   {
   public:
-    DomainJoinInfo();
-    DomainJoinInfo(Aws::Utils::Json::JsonView jsonValue);
-    DomainJoinInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API DomainJoinInfo();
+    AWS_APPSTREAM_API DomainJoinInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API DomainJoinInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/KafkaSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings
+  class KafkaSettings
   {
   public:
-    KafkaSettings();
-    KafkaSettings(Aws::Utils::Json::JsonView jsonValue);
-    KafkaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API KafkaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -854,58 +854,58 @@ namespace Model
   private:
 
     Aws::String m_broker;
-    bool m_brokerHasBeenSet;
+    bool m_brokerHasBeenSet = false;
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     MessageFormatValue m_messageFormat;
-    bool m_messageFormatHasBeenSet;
+    bool m_messageFormatHasBeenSet = false;
 
     bool m_includeTransactionDetails;
-    bool m_includeTransactionDetailsHasBeenSet;
+    bool m_includeTransactionDetailsHasBeenSet = false;
 
     bool m_includePartitionValue;
-    bool m_includePartitionValueHasBeenSet;
+    bool m_includePartitionValueHasBeenSet = false;
 
     bool m_partitionIncludeSchemaTable;
-    bool m_partitionIncludeSchemaTableHasBeenSet;
+    bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
     bool m_includeTableAlterOperations;
-    bool m_includeTableAlterOperationsHasBeenSet;
+    bool m_includeTableAlterOperationsHasBeenSet = false;
 
     bool m_includeControlDetails;
-    bool m_includeControlDetailsHasBeenSet;
+    bool m_includeControlDetailsHasBeenSet = false;
 
     int m_messageMaxBytes;
-    bool m_messageMaxBytesHasBeenSet;
+    bool m_messageMaxBytesHasBeenSet = false;
 
     bool m_includeNullAndEmpty;
-    bool m_includeNullAndEmptyHasBeenSet;
+    bool m_includeNullAndEmptyHasBeenSet = false;
 
     KafkaSecurityProtocol m_securityProtocol;
-    bool m_securityProtocolHasBeenSet;
+    bool m_securityProtocolHasBeenSet = false;
 
     Aws::String m_sslClientCertificateArn;
-    bool m_sslClientCertificateArnHasBeenSet;
+    bool m_sslClientCertificateArnHasBeenSet = false;
 
     Aws::String m_sslClientKeyArn;
-    bool m_sslClientKeyArnHasBeenSet;
+    bool m_sslClientKeyArnHasBeenSet = false;
 
     Aws::String m_sslClientKeyPassword;
-    bool m_sslClientKeyPasswordHasBeenSet;
+    bool m_sslClientKeyPasswordHasBeenSet = false;
 
     Aws::String m_sslCaCertificateArn;
-    bool m_sslCaCertificateArnHasBeenSet;
+    bool m_sslCaCertificateArnHasBeenSet = false;
 
     Aws::String m_saslUsername;
-    bool m_saslUsernameHasBeenSet;
+    bool m_saslUsernameHasBeenSet = false;
 
     Aws::String m_saslPassword;
-    bool m_saslPasswordHasBeenSet;
+    bool m_saslPasswordHasBeenSet = false;
 
     bool m_noHexPrefix;
-    bool m_noHexPrefixHasBeenSet;
+    bool m_noHexPrefixHasBeenSet = false;
   };
 
 } // namespace Model

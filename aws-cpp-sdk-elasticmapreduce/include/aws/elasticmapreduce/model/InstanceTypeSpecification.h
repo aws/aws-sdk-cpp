@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceTypeSpecification
+  class InstanceTypeSpecification
   {
   public:
-    InstanceTypeSpecification();
-    InstanceTypeSpecification(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTypeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceTypeSpecification();
+    AWS_EMR_API InstanceTypeSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceTypeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
 
     Aws::String m_bidPrice;
-    bool m_bidPriceHasBeenSet;
+    bool m_bidPriceHasBeenSet = false;
 
     double m_bidPriceAsPercentageOfOnDemandPrice;
-    bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet;
+    bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
-    bool m_ebsBlockDevicesHasBeenSet;
+    bool m_ebsBlockDevicesHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ApplicationDescription
+  class ApplicationDescription
   {
   public:
-    ApplicationDescription();
-    ApplicationDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ApplicationDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationDescription();
+    AWS_ELASTICBEANSTALK_API ApplicationDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -361,28 +361,28 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_configurationTemplates;
-    bool m_configurationTemplatesHasBeenSet;
+    bool m_configurationTemplatesHasBeenSet = false;
 
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
-    bool m_resourceLifecycleConfigHasBeenSet;
+    bool m_resourceLifecycleConfigHasBeenSet = false;
   };
 
 } // namespace Model

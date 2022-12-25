@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/PatchSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API PatchSummary
+  class PatchSummary
   {
   public:
-    PatchSummary();
-    PatchSummary(Aws::Utils::Json::JsonView jsonValue);
-    PatchSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API PatchSummary();
+    AWS_SECURITYHUB_API PatchSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API PatchSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -475,37 +475,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_installedCount;
-    bool m_installedCountHasBeenSet;
+    bool m_installedCountHasBeenSet = false;
 
     int m_missingCount;
-    bool m_missingCountHasBeenSet;
+    bool m_missingCountHasBeenSet = false;
 
     int m_failedCount;
-    bool m_failedCountHasBeenSet;
+    bool m_failedCountHasBeenSet = false;
 
     int m_installedOtherCount;
-    bool m_installedOtherCountHasBeenSet;
+    bool m_installedOtherCountHasBeenSet = false;
 
     int m_installedRejectedCount;
-    bool m_installedRejectedCountHasBeenSet;
+    bool m_installedRejectedCountHasBeenSet = false;
 
     int m_installedPendingReboot;
-    bool m_installedPendingRebootHasBeenSet;
+    bool m_installedPendingRebootHasBeenSet = false;
 
     Aws::String m_operationStartTime;
-    bool m_operationStartTimeHasBeenSet;
+    bool m_operationStartTimeHasBeenSet = false;
 
     Aws::String m_operationEndTime;
-    bool m_operationEndTimeHasBeenSet;
+    bool m_operationEndTimeHasBeenSet = false;
 
     Aws::String m_rebootOption;
-    bool m_rebootOptionHasBeenSet;
+    bool m_rebootOptionHasBeenSet = false;
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
   };
 
 } // namespace Model

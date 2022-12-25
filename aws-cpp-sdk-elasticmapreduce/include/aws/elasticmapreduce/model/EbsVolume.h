@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API EbsVolume
+  class EbsVolume
   {
   public:
-    EbsVolume();
-    EbsVolume(Aws::Utils::Json::JsonView jsonValue);
-    EbsVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API EbsVolume();
+    AWS_EMR_API EbsVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API EbsVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
   };
 
 } // namespace Model

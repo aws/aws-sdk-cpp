@@ -22,18 +22,18 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the properties of a node that's associated with a
+   * <p>An object that represents the properties of a node that's associated with a
    * multi-node parallel job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertiesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodePropertiesSummary
+  class NodePropertiesSummary
   {
   public:
-    NodePropertiesSummary();
-    NodePropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
-    NodePropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodePropertiesSummary();
+    AWS_BATCH_API NodePropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodePropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,22 +62,22 @@ namespace Model
 
 
     /**
-     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
     inline int GetNumNodes() const{ return m_numNodes; }
 
     /**
-     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
     inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
 
     /**
-     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
 
     /**
-     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
     inline NodePropertiesSummary& WithNumNodes(int value) { SetNumNodes(value); return *this;}
 
@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_isMainNode;
-    bool m_isMainNodeHasBeenSet;
+    bool m_isMainNodeHasBeenSet = false;
 
     int m_numNodes;
-    bool m_numNodesHasBeenSet;
+    bool m_numNodesHasBeenSet = false;
 
     int m_nodeIndex;
-    bool m_nodeIndexHasBeenSet;
+    bool m_nodeIndexHasBeenSet = false;
   };
 
 } // namespace Model

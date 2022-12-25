@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DocumentationVersion
+  class DocumentationVersion
   {
   public:
-    DocumentationVersion();
-    DocumentationVersion(Aws::Utils::Json::JsonView jsonValue);
-    DocumentationVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DocumentationVersion();
+    AWS_APIGATEWAY_API DocumentationVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DocumentationVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelPackagingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelPackagingDescription
+  class ModelPackagingDescription
   {
   public:
-    ModelPackagingDescription();
-    ModelPackagingDescription(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackagingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription();
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelPackagingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -479,37 +479,37 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     ModelPackagingConfiguration m_modelPackagingConfiguration;
-    bool m_modelPackagingConfigurationHasBeenSet;
+    bool m_modelPackagingConfigurationHasBeenSet = false;
 
     Aws::String m_modelPackagingJobDescription;
-    bool m_modelPackagingJobDescriptionHasBeenSet;
+    bool m_modelPackagingJobDescriptionHasBeenSet = false;
 
     Aws::String m_modelPackagingMethod;
-    bool m_modelPackagingMethodHasBeenSet;
+    bool m_modelPackagingMethodHasBeenSet = false;
 
     ModelPackagingOutputDetails m_modelPackagingOutputDetails;
-    bool m_modelPackagingOutputDetailsHasBeenSet;
+    bool m_modelPackagingOutputDetailsHasBeenSet = false;
 
     ModelPackagingJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

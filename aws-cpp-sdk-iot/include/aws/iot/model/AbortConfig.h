@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AbortConfig">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API AbortConfig
+  class AbortConfig
   {
   public:
-    AbortConfig();
-    AbortConfig(Aws::Utils::Json::JsonView jsonValue);
-    AbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AbortConfig();
+    AWS_IOT_API AbortConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AbortCriteria> m_criteriaList;
-    bool m_criteriaListHasBeenSet;
+    bool m_criteriaListHasBeenSet = false;
   };
 
 } // namespace Model

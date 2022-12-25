@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/OrderableDBInstanceOption">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API OrderableDBInstanceOption
+  class OrderableDBInstanceOption
   {
   public:
-    OrderableDBInstanceOption();
-    OrderableDBInstanceOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OrderableDBInstanceOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API OrderableDBInstanceOption();
+    AWS_DOCDB_API OrderableDBInstanceOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API OrderableDBInstanceOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -269,22 +269,22 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     bool m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

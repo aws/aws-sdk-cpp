@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/IngestedEventsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API IngestedEventsDetail
+  class IngestedEventsDetail
   {
   public:
-    IngestedEventsDetail();
-    IngestedEventsDetail(Aws::Utils::Json::JsonView jsonValue);
-    IngestedEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API IngestedEventsDetail();
+    AWS_FRAUDDETECTOR_API IngestedEventsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API IngestedEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     IngestedEventsTimeWindow m_ingestedEventsTimeWindow;
-    bool m_ingestedEventsTimeWindowHasBeenSet;
+    bool m_ingestedEventsTimeWindowHasBeenSet = false;
   };
 
 } // namespace Model

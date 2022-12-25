@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteData">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API RouteData
+  class RouteData
   {
   public:
-    RouteData();
-    RouteData(Aws::Utils::Json::JsonView jsonValue);
-    RouteData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API RouteData();
+    AWS_APPMESH_API RouteData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API RouteData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_routeName;
-    bool m_routeNameHasBeenSet;
+    bool m_routeNameHasBeenSet = false;
 
     RouteSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     RouteStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualRouterName;
-    bool m_virtualRouterNameHasBeenSet;
+    bool m_virtualRouterNameHasBeenSet = false;
   };
 
 } // namespace Model

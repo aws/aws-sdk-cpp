@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API ListTrainingJobsForHyperParameterTuningJobRequest : public SageMakerRequest
+  class ListTrainingJobsForHyperParameterTuningJobRequest : public SageMakerRequest
   {
   public:
-    ListTrainingJobsForHyperParameterTuningJobRequest();
+    AWS_SAGEMAKER_API ListTrainingJobsForHyperParameterTuningJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTrainingJobsForHyperParameterTuningJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TrainingJobStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     TrainingJobSortByOptions m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

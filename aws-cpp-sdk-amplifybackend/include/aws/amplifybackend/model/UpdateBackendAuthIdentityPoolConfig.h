@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthIdentityPoolConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig
+  class UpdateBackendAuthIdentityPoolConfig
   {
   public:
-    UpdateBackendAuthIdentityPoolConfig();
-    UpdateBackendAuthIdentityPoolConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthIdentityPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthIdentityPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -64,7 +64,7 @@ namespace Model
   private:
 
     bool m_unauthenticatedLogin;
-    bool m_unauthenticatedLoginHasBeenSet;
+    bool m_unauthenticatedLoginHasBeenSet = false;
   };
 
 } // namespace Model

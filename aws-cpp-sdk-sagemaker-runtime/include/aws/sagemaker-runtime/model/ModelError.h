@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/ModelError">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERRUNTIME_API ModelError
+  class ModelError
   {
   public:
-    ModelError();
-    ModelError(Aws::Utils::Json::JsonView jsonValue);
-    ModelError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERRUNTIME_API ModelError();
+    AWS_SAGEMAKERRUNTIME_API ModelError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERRUNTIME_API ModelError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     int m_originalStatusCode;
-    bool m_originalStatusCodeHasBeenSet;
+    bool m_originalStatusCodeHasBeenSet = false;
 
     Aws::String m_originalMessage;
-    bool m_originalMessageHasBeenSet;
+    bool m_originalMessageHasBeenSet = false;
 
     Aws::String m_logStreamArn;
-    bool m_logStreamArnHasBeenSet;
+    bool m_logStreamArnHasBeenSet = false;
   };
 
 } // namespace Model

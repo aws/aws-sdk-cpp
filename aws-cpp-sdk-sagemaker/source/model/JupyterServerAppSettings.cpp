@@ -20,13 +20,15 @@ namespace Model
 
 JupyterServerAppSettings::JupyterServerAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+    m_lifecycleConfigArnsHasBeenSet(false),
+    m_codeRepositoriesHasBeenSet(false)
 {
 }
 
 JupyterServerAppSettings::JupyterServerAppSettings(JsonView jsonValue) : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_lifecycleConfigArnsHasBeenSet(false)
+    m_lifecycleConfigArnsHasBeenSet(false),
+    m_codeRepositoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,12 +44,22 @@ JupyterServerAppSettings& JupyterServerAppSettings::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("LifecycleConfigArns"))
   {
-    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    Aws::Utils::Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
     for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
     {
       m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
     }
     m_lifecycleConfigArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CodeRepositories"))
+  {
+    Aws::Utils::Array<JsonView> codeRepositoriesJsonList = jsonValue.GetArray("CodeRepositories");
+    for(unsigned codeRepositoriesIndex = 0; codeRepositoriesIndex < codeRepositoriesJsonList.GetLength(); ++codeRepositoriesIndex)
+    {
+      m_codeRepositories.push_back(codeRepositoriesJsonList[codeRepositoriesIndex].AsObject());
+    }
+    m_codeRepositoriesHasBeenSet = true;
   }
 
   return *this;
@@ -65,12 +77,23 @@ JsonValue JupyterServerAppSettings::Jsonize() const
 
   if(m_lifecycleConfigArnsHasBeenSet)
   {
-   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   Aws::Utils::Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
    {
      lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
    }
    payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
+
+  }
+
+  if(m_codeRepositoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeRepositoriesJsonList(m_codeRepositories.size());
+   for(unsigned codeRepositoriesIndex = 0; codeRepositoriesIndex < codeRepositoriesJsonList.GetLength(); ++codeRepositoriesIndex)
+   {
+     codeRepositoriesJsonList[codeRepositoriesIndex].AsObject(m_codeRepositories[codeRepositoriesIndex].Jsonize());
+   }
+   payload.WithArray("CodeRepositories", std::move(codeRepositoriesJsonList));
 
   }
 

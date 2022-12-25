@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailabilityRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeScheduledInstanceAvailabilityRequest : public EC2Request
+  class DescribeScheduledInstanceAvailabilityRequest : public EC2Request
   {
   public:
-    DescribeScheduledInstanceAvailabilityRequest();
+    AWS_EC2_API DescribeScheduledInstanceAvailabilityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,10 +37,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeScheduledInstanceAvailability"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -358,28 +358,28 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     SlotDateTimeRangeRequest m_firstSlotStartTimeRange;
-    bool m_firstSlotStartTimeRangeHasBeenSet;
+    bool m_firstSlotStartTimeRangeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     int m_maxSlotDurationInHours;
-    bool m_maxSlotDurationInHoursHasBeenSet;
+    bool m_maxSlotDurationInHoursHasBeenSet = false;
 
     int m_minSlotDurationInHours;
-    bool m_minSlotDurationInHoursHasBeenSet;
+    bool m_minSlotDurationInHoursHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScheduledInstanceRecurrenceRequest m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
   };
 
 } // namespace Model

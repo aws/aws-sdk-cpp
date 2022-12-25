@@ -30,25 +30,25 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ShareAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ShareAttributes
+  class ShareAttributes
   {
   public:
-    ShareAttributes();
-    ShareAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ShareAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ShareAttributes();
+    AWS_BATCH_API ShareAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ShareAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
 
@@ -56,12 +56,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
 
@@ -69,12 +69,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
 
@@ -82,12 +82,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
 
@@ -95,12 +95,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
 
@@ -108,12 +108,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline ShareAttributes& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
 
@@ -121,12 +121,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline ShareAttributes& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
 
@@ -134,12 +134,12 @@ namespace Model
      * <p>A fair share identifier or fair share identifier prefix. If the string ends
      * with an asterisk (*), this entry specifies the weight factor to use for fair
      * share identifiers that start with that prefix. The list of fair share
-     * identifiers in a fair share policy cannot overlap. For example, you can't have
+     * identifiers in a fair share policy can't overlap. For example, you can't have
      * one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and
      * another that specifies a <code>shareIdentifier</code> of
      * <code>UserA-1</code>.</p> <p>There can be no more than 500 fair share
      * identifiers active in a job queue.</p> <p>The string is limited to 255
-     * alphanumeric characters, optionally followed by an asterisk (*).</p>
+     * alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline ShareAttributes& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
 
@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::String m_shareIdentifier;
-    bool m_shareIdentifierHasBeenSet;
+    bool m_shareIdentifierHasBeenSet = false;
 
     double m_weightFactor;
-    bool m_weightFactorHasBeenSet;
+    bool m_weightFactorHasBeenSet = false;
   };
 
 } // namespace Model

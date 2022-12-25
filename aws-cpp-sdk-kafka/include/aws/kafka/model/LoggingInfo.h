@@ -23,13 +23,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API LoggingInfo
+  class LoggingInfo
   {
   public:
-    LoggingInfo();
-    LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API LoggingInfo();
+    AWS_KAFKA_API LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -53,7 +53,7 @@ namespace Model
   private:
 
     BrokerLogs m_brokerLogs;
-    bool m_brokerLogsHasBeenSet;
+    bool m_brokerLogsHasBeenSet = false;
   };
 
 } // namespace Model

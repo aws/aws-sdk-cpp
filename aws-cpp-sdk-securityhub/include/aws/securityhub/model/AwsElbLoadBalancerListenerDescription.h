@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerListenerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription
+  class AwsElbLoadBalancerListenerDescription
   {
   public:
-    AwsElbLoadBalancerListenerDescription();
-    AwsElbLoadBalancerListenerDescription(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerListenerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListenerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     AwsElbLoadBalancerListener m_listener;
-    bool m_listenerHasBeenSet;
+    bool m_listenerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

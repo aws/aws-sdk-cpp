@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityPool">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API UpdateIdentityPoolRequest : public CognitoIdentityRequest
+  class UpdateIdentityPoolRequest : public CognitoIdentityRequest
   {
   public:
-    UpdateIdentityPoolRequest();
+    AWS_COGNITOIDENTITY_API UpdateIdentityPoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateIdentityPool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -524,34 +524,34 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityPoolName;
-    bool m_identityPoolNameHasBeenSet;
+    bool m_identityPoolNameHasBeenSet = false;
 
     bool m_allowUnauthenticatedIdentities;
-    bool m_allowUnauthenticatedIdentitiesHasBeenSet;
+    bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;
 
     bool m_allowClassicFlow;
-    bool m_allowClassicFlowHasBeenSet;
+    bool m_allowClassicFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
-    bool m_supportedLoginProvidersHasBeenSet;
+    bool m_supportedLoginProvidersHasBeenSet = false;
 
     Aws::String m_developerProviderName;
-    bool m_developerProviderNameHasBeenSet;
+    bool m_developerProviderNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
-    bool m_openIdConnectProviderARNsHasBeenSet;
+    bool m_openIdConnectProviderARNsHasBeenSet = false;
 
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
-    bool m_cognitoIdentityProvidersHasBeenSet;
+    bool m_cognitoIdentityProvidersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_samlProviderARNs;
-    bool m_samlProviderARNsHasBeenSet;
+    bool m_samlProviderARNsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
-    bool m_identityPoolTagsHasBeenSet;
+    bool m_identityPoolTagsHasBeenSet = false;
   };
 
 } // namespace Model

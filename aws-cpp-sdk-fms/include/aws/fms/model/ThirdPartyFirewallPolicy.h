@@ -24,54 +24,54 @@ namespace Model
 {
 
   /**
-   * <p>Configures the policy for the third-party firewall.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Configures the deployment model for the third-party firewall.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ThirdPartyFirewallPolicy
+  class ThirdPartyFirewallPolicy
   {
   public:
-    ThirdPartyFirewallPolicy();
-    ThirdPartyFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ThirdPartyFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ThirdPartyFirewallPolicy();
+    AWS_FMS_API ThirdPartyFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ThirdPartyFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline const FirewallDeploymentModel& GetFirewallDeploymentModel() const{ return m_firewallDeploymentModel; }
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline bool FirewallDeploymentModelHasBeenSet() const { return m_firewallDeploymentModelHasBeenSet; }
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline void SetFirewallDeploymentModel(const FirewallDeploymentModel& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = value; }
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline void SetFirewallDeploymentModel(FirewallDeploymentModel&& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = std::move(value); }
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline ThirdPartyFirewallPolicy& WithFirewallDeploymentModel(const FirewallDeploymentModel& value) { SetFirewallDeploymentModel(value); return *this;}
 
     /**
-     * <p>Defines the deployment model to use for the third-party firewall.</p>
+     * <p>Defines the deployment model to use for the third-party firewall policy.</p>
      */
     inline ThirdPartyFirewallPolicy& WithFirewallDeploymentModel(FirewallDeploymentModel&& value) { SetFirewallDeploymentModel(std::move(value)); return *this;}
 
   private:
 
     FirewallDeploymentModel m_firewallDeploymentModel;
-    bool m_firewallDeploymentModelHasBeenSet;
+    bool m_firewallDeploymentModelHasBeenSet = false;
   };
 
 } // namespace Model

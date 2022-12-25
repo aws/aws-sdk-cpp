@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ScheduleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API ScheduleConfiguration
+  class ScheduleConfiguration
   {
   public:
-    ScheduleConfiguration();
-    ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API ScheduleConfiguration();
+    AWS_APPINTEGRATIONSSERVICE_API ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_firstExecutionFrom;
-    bool m_firstExecutionFromHasBeenSet;
+    bool m_firstExecutionFromHasBeenSet = false;
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

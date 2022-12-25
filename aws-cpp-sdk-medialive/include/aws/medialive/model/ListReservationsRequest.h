@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservationsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ListReservationsRequest : public MediaLiveRequest
+  class ListReservationsRequest : public MediaLiveRequest
   {
   public:
-    ListReservationsRequest();
+    AWS_MEDIALIVE_API ListReservationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListReservations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MEDIALIVE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -441,34 +441,34 @@ namespace Model
   private:
 
     Aws::String m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     Aws::String m_maximumFramerate;
-    bool m_maximumFramerateHasBeenSet;
+    bool m_maximumFramerateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_specialFeature;
-    bool m_specialFeatureHasBeenSet;
+    bool m_specialFeatureHasBeenSet = false;
 
     Aws::String m_videoQuality;
-    bool m_videoQualityHasBeenSet;
+    bool m_videoQualityHasBeenSet = false;
   };
 
 } // namespace Model

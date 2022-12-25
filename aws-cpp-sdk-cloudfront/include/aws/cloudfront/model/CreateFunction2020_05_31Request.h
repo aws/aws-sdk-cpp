@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API CreateFunction2020_05_31Request : public CloudFrontRequest
+  class CreateFunction2020_05_31Request : public CloudFrontRequest
   {
   public:
-    CreateFunction2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateFunction2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFunction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,37 +77,37 @@ namespace Model
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline const FunctionConfig& GetFunctionConfig() const{ return m_functionConfig; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline bool FunctionConfigHasBeenSet() const { return m_functionConfigHasBeenSet; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline void SetFunctionConfig(const FunctionConfig& value) { m_functionConfigHasBeenSet = true; m_functionConfig = value; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline void SetFunctionConfig(FunctionConfig&& value) { m_functionConfigHasBeenSet = true; m_functionConfig = std::move(value); }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline CreateFunction2020_05_31Request& WithFunctionConfig(const FunctionConfig& value) { SetFunctionConfig(value); return *this;}
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline CreateFunction2020_05_31Request& WithFunctionConfig(FunctionConfig&& value) { SetFunctionConfig(std::move(value)); return *this;}
 
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FunctionConfig m_functionConfig;
-    bool m_functionConfigHasBeenSet;
+    bool m_functionConfigHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_functionCode;
-    bool m_functionCodeHasBeenSet;
+    bool m_functionCodeHasBeenSet = false;
   };
 
 } // namespace Model

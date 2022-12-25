@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TopicRuleDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TopicRuleDestinationConfiguration
+  class TopicRuleDestinationConfiguration
   {
   public:
-    TopicRuleDestinationConfiguration();
-    TopicRuleDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TopicRuleDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TopicRuleDestinationConfiguration();
+    AWS_IOT_API TopicRuleDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TopicRuleDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     HttpUrlDestinationConfiguration m_httpUrlConfiguration;
-    bool m_httpUrlConfigurationHasBeenSet;
+    bool m_httpUrlConfigurationHasBeenSet = false;
 
     VpcDestinationConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

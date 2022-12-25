@@ -48,7 +48,7 @@ Aws::String GetCredentialsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection GetCredentialsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.GetCredentials"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.GetCredentials"));
   return headers;
 
 }

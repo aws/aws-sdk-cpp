@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DialogCodeHookSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DialogCodeHookSettings
+  class DialogCodeHookSettings
   {
   public:
-    DialogCodeHookSettings();
-    DialogCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
-    DialogCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DialogCodeHookSettings();
+    AWS_LEXMODELSV2_API DialogCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DialogCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

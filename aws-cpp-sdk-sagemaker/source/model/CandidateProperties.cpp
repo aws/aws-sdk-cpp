@@ -42,7 +42,7 @@ CandidateProperties& CandidateProperties::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CandidateMetrics"))
   {
-    Array<JsonView> candidateMetricsJsonList = jsonValue.GetArray("CandidateMetrics");
+    Aws::Utils::Array<JsonView> candidateMetricsJsonList = jsonValue.GetArray("CandidateMetrics");
     for(unsigned candidateMetricsIndex = 0; candidateMetricsIndex < candidateMetricsJsonList.GetLength(); ++candidateMetricsIndex)
     {
       m_candidateMetrics.push_back(candidateMetricsJsonList[candidateMetricsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue CandidateProperties::Jsonize() const
 
   if(m_candidateMetricsHasBeenSet)
   {
-   Array<JsonValue> candidateMetricsJsonList(m_candidateMetrics.size());
+   Aws::Utils::Array<JsonValue> candidateMetricsJsonList(m_candidateMetrics.size());
    for(unsigned candidateMetricsIndex = 0; candidateMetricsIndex < candidateMetricsJsonList.GetLength(); ++candidateMetricsIndex)
    {
      candidateMetricsJsonList[candidateMetricsIndex].AsObject(m_candidateMetrics[candidateMetricsIndex].Jsonize());

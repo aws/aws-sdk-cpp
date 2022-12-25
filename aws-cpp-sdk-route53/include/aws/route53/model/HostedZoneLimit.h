@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HostedZoneLimit
+  class HostedZoneLimit
   {
   public:
-    HostedZoneLimit();
-    HostedZoneLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostedZoneLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneLimit();
+    AWS_ROUTE53_API HostedZoneLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     HostedZoneLimitType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

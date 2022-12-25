@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProtectiveEquipmentSummarizationAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ProtectiveEquipmentSummarizationAttributes
+  class ProtectiveEquipmentSummarizationAttributes
   {
   public:
-    ProtectiveEquipmentSummarizationAttributes();
-    ProtectiveEquipmentSummarizationAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ProtectiveEquipmentSummarizationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ProtectiveEquipmentSummarizationAttributes();
+    AWS_REKOGNITION_API ProtectiveEquipmentSummarizationAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ProtectiveEquipmentSummarizationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,10 +171,10 @@ namespace Model
   private:
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     Aws::Vector<ProtectiveEquipmentType> m_requiredEquipmentTypes;
-    bool m_requiredEquipmentTypesHasBeenSet;
+    bool m_requiredEquipmentTypesHasBeenSet = false;
   };
 
 } // namespace Model

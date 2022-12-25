@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesResult
+  class UpdateVirtualInterfaceAttributesResult
   {
   public:
-    UpdateVirtualInterfaceAttributesResult();
-    UpdateVirtualInterfaceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVirtualInterfaceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesResult();
+    AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

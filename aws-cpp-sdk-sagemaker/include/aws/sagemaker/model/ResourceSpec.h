@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ResourceSpec
+  class ResourceSpec
   {
   public:
-    ResourceSpec();
-    ResourceSpec(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ResourceSpec();
+    AWS_SAGEMAKER_API ResourceSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ResourceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,49 +122,55 @@ namespace Model
 
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline const AppInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline void SetInstanceType(const AppInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline void SetInstanceType(AppInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(const AppInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
-     * Apps only support the <code>system</code> value. KernelGateway Apps do not
-     * support the <code>system</code> value, but support all other values for
+     * <p>The instance type that the image version runs on.</p>  <p>
+     * <b>JupyterServer apps</b> only support the <code>system</code> value.</p> <p>For
+     * <b>KernelGateway apps</b>, the <code>system</code> value is translated to
+     * <code>ml.t3.medium</code>. KernelGateway apps also support all other values for
      * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(AppInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -221,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_sageMakerImageArn;
-    bool m_sageMakerImageArnHasBeenSet;
+    bool m_sageMakerImageArnHasBeenSet = false;
 
     Aws::String m_sageMakerImageVersionArn;
-    bool m_sageMakerImageVersionArnHasBeenSet;
+    bool m_sageMakerImageVersionArnHasBeenSet = false;
 
     AppInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_lifecycleConfigArn;
-    bool m_lifecycleConfigArnHasBeenSet;
+    bool m_lifecycleConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

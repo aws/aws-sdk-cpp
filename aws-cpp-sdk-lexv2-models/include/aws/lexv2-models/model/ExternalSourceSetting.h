@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ExternalSourceSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ExternalSourceSetting
+  class ExternalSourceSetting
   {
   public:
-    ExternalSourceSetting();
-    ExternalSourceSetting(Aws::Utils::Json::JsonView jsonValue);
-    ExternalSourceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ExternalSourceSetting();
+    AWS_LEXMODELSV2_API ExternalSourceSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ExternalSourceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     GrammarSlotTypeSetting m_grammarSlotTypeSetting;
-    bool m_grammarSlotTypeSettingHasBeenSet;
+    bool m_grammarSlotTypeSettingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API DescribeComputeEnvironmentsResult
+  class DescribeComputeEnvironmentsResult
   {
   public:
-    DescribeComputeEnvironmentsResult();
-    DescribeComputeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeComputeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DescribeComputeEnvironmentsResult();
+    AWS_BATCH_API DescribeComputeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DescribeComputeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

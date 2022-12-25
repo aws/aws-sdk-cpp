@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API UpdateServerCertificateRequest : public IAMRequest
+  class UpdateServerCertificateRequest : public IAMRequest
   {
   public:
-    UpdateServerCertificateRequest();
+    AWS_IAM_API UpdateServerCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateServerCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -289,13 +289,13 @@ namespace Model
   private:
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
 
     Aws::String m_newPath;
-    bool m_newPathHasBeenSet;
+    bool m_newPathHasBeenSet = false;
 
     Aws::String m_newServerCertificateName;
-    bool m_newServerCertificateNameHasBeenSet;
+    bool m_newServerCertificateNameHasBeenSet = false;
   };
 
 } // namespace Model

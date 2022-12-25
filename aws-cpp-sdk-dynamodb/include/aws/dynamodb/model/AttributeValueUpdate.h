@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AttributeValueUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AttributeValueUpdate
+  class AttributeValueUpdate
   {
   public:
-    AttributeValueUpdate();
-    AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AttributeValueUpdate();
+    AWS_DYNAMODB_API AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,9 +149,9 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline const AttributeAction& GetAction() const{ return m_action; }
 
@@ -203,9 +203,9 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -257,9 +257,9 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline void SetAction(const AttributeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -311,9 +311,9 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline void SetAction(AttributeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -365,9 +365,9 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline AttributeValueUpdate& WithAction(const AttributeAction& value) { SetAction(value); return *this;}
 
@@ -419,19 +419,19 @@ namespace Model
      * <code>PUT</code> - DynamoDB creates a new item with the specified primary key,
      * and then adds the attribute. </p> </li> <li> <p> <code>DELETE</code> - Nothing
      * happens; there is no attribute to delete.</p> </li> <li> <p> <code>ADD</code> -
-     * DynamoDB creates an item with the supplied primary key and number (or set of
-     * numbers) for the attribute value. The only data types allowed are number and
-     * number set; no other data types can be specified.</p> </li> </ul>
+     * DynamoDB creates a new item with the supplied primary key and number (or set)
+     * for the attribute value. The only data types allowed are number, number set,
+     * string set or binary set.</p> </li> </ul>
      */
     inline AttributeValueUpdate& WithAction(AttributeAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
 
     AttributeValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AttributeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

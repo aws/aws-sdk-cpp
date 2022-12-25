@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Fmtp">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Fmtp
+  class Fmtp
   {
   public:
-    Fmtp();
-    Fmtp(Aws::Utils::Json::JsonView jsonValue);
-    Fmtp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Fmtp();
+    AWS_MEDIACONNECT_API Fmtp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Fmtp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,25 +306,25 @@ namespace Model
   private:
 
     Aws::String m_channelOrder;
-    bool m_channelOrderHasBeenSet;
+    bool m_channelOrderHasBeenSet = false;
 
     Colorimetry m_colorimetry;
-    bool m_colorimetryHasBeenSet;
+    bool m_colorimetryHasBeenSet = false;
 
     Aws::String m_exactFramerate;
-    bool m_exactFramerateHasBeenSet;
+    bool m_exactFramerateHasBeenSet = false;
 
     Aws::String m_par;
-    bool m_parHasBeenSet;
+    bool m_parHasBeenSet = false;
 
     Range m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
 
     ScanMode m_scanMode;
-    bool m_scanModeHasBeenSet;
+    bool m_scanModeHasBeenSet = false;
 
     Tcs m_tcs;
-    bool m_tcsHasBeenSet;
+    bool m_tcsHasBeenSet = false;
   };
 
 } // namespace Model

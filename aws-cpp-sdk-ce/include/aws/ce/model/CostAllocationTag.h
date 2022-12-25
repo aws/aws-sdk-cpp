@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostAllocationTag">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostAllocationTag
+  class CostAllocationTag
   {
   public:
-    CostAllocationTag();
-    CostAllocationTag(Aws::Utils::Json::JsonView jsonValue);
-    CostAllocationTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostAllocationTag();
+    AWS_COSTEXPLORER_API CostAllocationTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostAllocationTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     CostAllocationTagType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CostAllocationTagStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

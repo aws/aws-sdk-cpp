@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API ListLayerVersionsRequest : public LambdaRequest
+  class ListLayerVersionsRequest : public LambdaRequest
   {
   public:
-    ListLayerVersionsRequest();
+    AWS_LAMBDA_API ListLayerVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListLayerVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -219,19 +219,19 @@ namespace Model
   private:
 
     Runtime m_compatibleRuntime;
-    bool m_compatibleRuntimeHasBeenSet;
+    bool m_compatibleRuntimeHasBeenSet = false;
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Architecture m_compatibleArchitecture;
-    bool m_compatibleArchitectureHasBeenSet;
+    bool m_compatibleArchitectureHasBeenSet = false;
   };
 
 } // namespace Model

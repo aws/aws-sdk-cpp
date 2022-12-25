@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API GetMaintenanceWindowTaskRequest : public SSMRequest
+  class GetMaintenanceWindowTaskRequest : public SSMRequest
   {
   public:
-    GetMaintenanceWindowTaskRequest();
+    AWS_SSM_API GetMaintenanceWindowTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMaintenanceWindowTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_windowTaskId;
-    bool m_windowTaskIdHasBeenSet;
+    bool m_windowTaskIdHasBeenSet = false;
   };
 
 } // namespace Model

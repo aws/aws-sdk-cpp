@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceSummaryItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ComplianceSummaryItem
+  class ComplianceSummaryItem
   {
   public:
-    ComplianceSummaryItem();
-    ComplianceSummaryItem(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ComplianceSummaryItem();
+    AWS_SSM_API ComplianceSummaryItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ComplianceSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     CompliantSummary m_compliantSummary;
-    bool m_compliantSummaryHasBeenSet;
+    bool m_compliantSummaryHasBeenSet = false;
 
     NonCompliantSummary m_nonCompliantSummary;
-    bool m_nonCompliantSummaryHasBeenSet;
+    bool m_nonCompliantSummaryHasBeenSet = false;
   };
 
 } // namespace Model

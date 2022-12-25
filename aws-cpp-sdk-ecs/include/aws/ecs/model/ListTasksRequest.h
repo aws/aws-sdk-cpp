@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API ListTasksRequest : public ECSRequest
+  class ListTasksRequest : public ECSRequest
   {
   public:
-    ListTasksRequest();
+    AWS_ECS_API ListTasksRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTasks"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -356,56 +356,64 @@ namespace Model
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline ListTasksRequest& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline ListTasksRequest& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
      * <p>The <code>startedBy</code> value to filter the task results with. Specifying
      * a <code>startedBy</code> value limits the results to tasks that were started
-     * with that value.</p>
+     * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
+     * it must be the only filter that you use.</p>
      */
     inline ListTasksRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
@@ -591,31 +599,31 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_containerInstance;
-    bool m_containerInstanceHasBeenSet;
+    bool m_containerInstanceHasBeenSet = false;
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     DesiredStatus m_desiredStatus;
-    bool m_desiredStatusHasBeenSet;
+    bool m_desiredStatusHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
   };
 
 } // namespace Model

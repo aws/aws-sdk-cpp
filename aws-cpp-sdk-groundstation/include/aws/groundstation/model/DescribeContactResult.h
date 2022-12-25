@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContactResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DescribeContactResult
+  class DescribeContactResult
   {
   public:
-    DescribeContactResult();
-    DescribeContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DescribeContactResult();
+    AWS_GROUNDSTATION_API DescribeContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DescribeContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -142,27 +142,27 @@ namespace Model
 
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline DescribeContactResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline DescribeContactResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -436,27 +436,27 @@ namespace Model
 
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline DescribeContactResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline DescribeContactResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

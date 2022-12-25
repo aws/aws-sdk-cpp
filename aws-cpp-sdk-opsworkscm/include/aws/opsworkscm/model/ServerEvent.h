@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ServerEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API ServerEvent
+  class ServerEvent
   {
   public:
-    ServerEvent();
-    ServerEvent(Aws::Utils::Json::JsonView jsonValue);
-    ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API ServerEvent();
+    AWS_OPSWORKSCM_API ServerEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_logUrl;
-    bool m_logUrlHasBeenSet;
+    bool m_logUrlHasBeenSet = false;
   };
 
 } // namespace Model

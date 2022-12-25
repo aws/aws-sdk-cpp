@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ExtensionField">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ExtensionField
+  class ExtensionField
   {
   public:
-    ExtensionField();
-    ExtensionField(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExtensionField& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ExtensionField();
+    AWS_SES_API ExtensionField(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ExtensionField& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

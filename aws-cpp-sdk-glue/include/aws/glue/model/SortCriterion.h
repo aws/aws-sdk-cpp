@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SortCriterion">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SortCriterion
+  class SortCriterion
   {
   public:
-    SortCriterion();
-    SortCriterion(Aws::Utils::Json::JsonView jsonValue);
-    SortCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SortCriterion();
+    AWS_GLUE_API SortCriterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SortCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Sort m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
   };
 
 } // namespace Model

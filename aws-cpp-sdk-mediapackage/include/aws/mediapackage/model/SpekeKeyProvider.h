@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/SpekeKeyProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API SpekeKeyProvider
+  class SpekeKeyProvider
   {
   public:
-    SpekeKeyProvider();
-    SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
-    SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider();
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,22 +336,22 @@ MediaPackage
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     EncryptionContractConfiguration m_encryptionContractConfiguration;
-    bool m_encryptionContractConfigurationHasBeenSet;
+    bool m_encryptionContractConfigurationHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_systemIds;
-    bool m_systemIdsHasBeenSet;
+    bool m_systemIdsHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

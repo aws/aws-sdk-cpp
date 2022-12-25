@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/NotificationRuleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API NotificationRuleSummary
+  class NotificationRuleSummary
   {
   public:
-    NotificationRuleSummary();
-    NotificationRuleSummary(Aws::Utils::Json::JsonView jsonValue);
-    NotificationRuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API NotificationRuleSummary();
+    AWS_CODESTARNOTIFICATIONS_API NotificationRuleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API NotificationRuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

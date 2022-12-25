@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API UpdateEmergencyContactSettingsRequest : public ShieldRequest
+  class UpdateEmergencyContactSettingsRequest : public ShieldRequest
   {
   public:
-    UpdateEmergencyContactSettingsRequest();
+    AWS_SHIELD_API UpdateEmergencyContactSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEmergencyContactSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,7 +110,7 @@ namespace Model
   private:
 
     Aws::Vector<EmergencyContact> m_emergencyContactList;
-    bool m_emergencyContactListHasBeenSet;
+    bool m_emergencyContactListHasBeenSet = false;
   };
 
 } // namespace Model

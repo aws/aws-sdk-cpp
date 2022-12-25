@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ServiceActionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ServiceActionDetail
+  class ServiceActionDetail
   {
   public:
-    ServiceActionDetail();
-    ServiceActionDetail(Aws::Utils::Json::JsonView jsonValue);
-    ServiceActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ServiceActionDetail();
+    AWS_SERVICECATALOG_API ServiceActionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ServiceActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     ServiceActionSummary m_serviceActionSummary;
-    bool m_serviceActionSummaryHasBeenSet;
+    bool m_serviceActionSummaryHasBeenSet = false;
 
     Aws::Map<ServiceActionDefinitionKey, Aws::String> m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

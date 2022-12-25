@@ -29,61 +29,61 @@ namespace Model
    * <p>Specifies that you want Kinesis Data Firehose to convert data from the JSON
    * format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data
    * Firehose uses the serializer and deserializer that you specify, in addition to
-   * the column information from the AWS Glue table, to deserialize your input data
-   * from JSON and then serialize it to the Parquet or ORC format. For more
-   * information, see <a
+   * the column information from the Amazon Web Services Glue table, to deserialize
+   * your input data from JSON and then serialize it to the Parquet or ORC format.
+   * For more information, see <a
    * href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis
    * Data Firehose Record Format Conversion</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DataFormatConversionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API DataFormatConversionConfiguration
+  class DataFormatConversionConfiguration
   {
   public:
-    DataFormatConversionConfiguration();
-    DataFormatConversionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataFormatConversionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API DataFormatConversionConfiguration();
+    AWS_FIREHOSE_API DataFormatConversionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API DataFormatConversionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline const SchemaConfiguration& GetSchemaConfiguration() const{ return m_schemaConfiguration; }
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline bool SchemaConfigurationHasBeenSet() const { return m_schemaConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline void SetSchemaConfiguration(const SchemaConfiguration& value) { m_schemaConfigurationHasBeenSet = true; m_schemaConfiguration = value; }
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline void SetSchemaConfiguration(SchemaConfiguration&& value) { m_schemaConfigurationHasBeenSet = true; m_schemaConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline DataFormatConversionConfiguration& WithSchemaConfiguration(const SchemaConfiguration& value) { SetSchemaConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Glue Data Catalog table that contains the column
-     * information. This parameter is required if <code>Enabled</code> is set to
+     * <p>Specifies the Amazon Web Services Glue Data Catalog table that contains the
+     * column information. This parameter is required if <code>Enabled</code> is set to
      * true.</p>
      */
     inline DataFormatConversionConfiguration& WithSchemaConfiguration(SchemaConfiguration&& value) { SetSchemaConfiguration(std::move(value)); return *this;}
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     SchemaConfiguration m_schemaConfiguration;
-    bool m_schemaConfigurationHasBeenSet;
+    bool m_schemaConfigurationHasBeenSet = false;
 
     InputFormatConfiguration m_inputFormatConfiguration;
-    bool m_inputFormatConfigurationHasBeenSet;
+    bool m_inputFormatConfigurationHasBeenSet = false;
 
     OutputFormatConfiguration m_outputFormatConfiguration;
-    bool m_outputFormatConfigurationHasBeenSet;
+    bool m_outputFormatConfigurationHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIACONVERT_API UpdatePresetRequest : public MediaConvertRequest
+  class UpdatePresetRequest : public MediaConvertRequest
   {
   public:
-    UpdatePresetRequest();
+    AWS_MEDIACONVERT_API UpdatePresetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePreset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PresetSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

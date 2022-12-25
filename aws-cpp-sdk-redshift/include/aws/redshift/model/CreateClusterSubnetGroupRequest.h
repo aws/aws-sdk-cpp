@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateClusterSubnetGroupRequest : public RedshiftRequest
+  class CreateClusterSubnetGroupRequest : public RedshiftRequest
   {
   public:
-    CreateClusterSubnetGroupRequest();
+    AWS_REDSHIFT_API CreateClusterSubnetGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateClusterSubnetGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -261,16 +261,16 @@ namespace Model
   private:
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

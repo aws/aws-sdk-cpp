@@ -29,44 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Span">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Span
+  class Span
   {
   public:
-    Span();
-    Span(Aws::Utils::Json::JsonView jsonValue);
-    Span& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline const Position& GetEnd() const{ return m_end; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
+    AWS_ACCESSANALYZER_API Span();
+    AWS_ACCESSANALYZER_API Span(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Span& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,13 +68,44 @@ namespace Model
      */
     inline Span& WithStart(Position&& value) { SetStart(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline const Position& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
+
   private:
 
-    Position m_end;
-    bool m_endHasBeenSet;
-
     Position m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
+
+    Position m_end;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_STS_API GetSessionTokenRequest : public STSRequest
+  class GetSessionTokenRequest : public STSRequest
   {
   public:
-    GetSessionTokenRequest();
+    AWS_STS_API GetSessionTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSessionToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_STS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -289,13 +289,13 @@ namespace Model
   private:
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_tokenCode;
-    bool m_tokenCodeHasBeenSet;
+    bool m_tokenCodeHasBeenSet = false;
   };
 
 } // namespace Model

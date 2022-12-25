@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LineageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LineageConfiguration
+  class LineageConfiguration
   {
   public:
-    LineageConfiguration();
-    LineageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LineageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LineageConfiguration();
+    AWS_GLUE_API LineageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LineageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     CrawlerLineageSettings m_crawlerLineageSettings;
-    bool m_crawlerLineageSettingsHasBeenSet;
+    bool m_crawlerLineageSettingsHasBeenSet = false;
   };
 
 } // namespace Model

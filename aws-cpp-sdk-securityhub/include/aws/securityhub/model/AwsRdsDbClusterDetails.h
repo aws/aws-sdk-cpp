@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbClusterDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbClusterDetails
+  class AwsRdsDbClusterDetails
   {
   public:
-    AwsRdsDbClusterDetails();
-    AwsRdsDbClusterDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails();
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -376,42 +376,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to use for this DB cluster.</p>
+     * <p>The name of the database engine to use for this DB cluster. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1087,42 +1111,74 @@ namespace Model
 
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine mode of the DB cluster.</p>
+     * <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>global</code> </p> </li> <li> <p> <code>multimaster</code>
+     * </p> </li> <li> <p> <code>parallelquery</code> </p> </li> <li> <p>
+     * <code>provisioned</code> </p> </li> <li> <p> <code>serverless</code> </p> </li>
+     * </ul>
      */
     inline AwsRdsDbClusterDetails& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -1170,42 +1226,66 @@ namespace Model
 
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline const Aws::String& GetActivityStreamStatus() const{ return m_activityStreamStatus; }
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline bool ActivityStreamStatusHasBeenSet() const { return m_activityStreamStatusHasBeenSet; }
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline void SetActivityStreamStatus(const Aws::String& value) { m_activityStreamStatusHasBeenSet = true; m_activityStreamStatus = value; }
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline void SetActivityStreamStatus(Aws::String&& value) { m_activityStreamStatusHasBeenSet = true; m_activityStreamStatus = std::move(value); }
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline void SetActivityStreamStatus(const char* value) { m_activityStreamStatusHasBeenSet = true; m_activityStreamStatus.assign(value); }
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithActivityStreamStatus(const Aws::String& value) { SetActivityStreamStatus(value); return *this;}
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithActivityStreamStatus(Aws::String&& value) { SetActivityStreamStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the database activity stream.</p>
+     * <p>The status of the database activity stream. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>started</code> </p> </li> <li> <p> <code>starting</code>
+     * </p> </li> <li> <p> <code>stopped</code> </p> </li> <li> <p>
+     * <code>stopping</code> </p> </li> </ul>
      */
     inline AwsRdsDbClusterDetails& WithActivityStreamStatus(const char* value) { SetActivityStreamStatus(value); return *this;}
 
@@ -1553,115 +1633,115 @@ namespace Model
   private:
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_readerEndpoint;
-    bool m_readerEndpointHasBeenSet;
+    bool m_readerEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customEndpoints;
-    bool m_customEndpointsHasBeenSet;
+    bool m_customEndpointsHasBeenSet = false;
 
     bool m_multiAz;
-    bool m_multiAzHasBeenSet;
+    bool m_multiAzHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
-    bool m_readReplicaIdentifiersHasBeenSet;
+    bool m_readReplicaIdentifiersHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbInstanceVpcSecurityGroup> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dbClusterResourceId;
-    bool m_dbClusterResourceIdHasBeenSet;
+    bool m_dbClusterResourceIdHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbClusterAssociatedRole> m_associatedRoles;
-    bool m_associatedRolesHasBeenSet;
+    bool m_associatedRolesHasBeenSet = false;
 
     Aws::String m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudWatchLogsExports;
-    bool m_enabledCloudWatchLogsExportsHasBeenSet;
+    bool m_enabledCloudWatchLogsExportsHasBeenSet = false;
 
     Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet;
+    bool m_engineModeHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_httpEndpointEnabled;
-    bool m_httpEndpointEnabledHasBeenSet;
+    bool m_httpEndpointEnabledHasBeenSet = false;
 
     Aws::String m_activityStreamStatus;
-    bool m_activityStreamStatusHasBeenSet;
+    bool m_activityStreamStatusHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     bool m_crossAccountClone;
-    bool m_crossAccountCloneHasBeenSet;
+    bool m_crossAccountCloneHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbDomainMembership> m_domainMemberships;
-    bool m_domainMembershipsHasBeenSet;
+    bool m_domainMembershipsHasBeenSet = false;
 
     Aws::String m_dbClusterParameterGroup;
-    bool m_dbClusterParameterGroupHasBeenSet;
+    bool m_dbClusterParameterGroupHasBeenSet = false;
 
     Aws::String m_dbSubnetGroup;
-    bool m_dbSubnetGroupHasBeenSet;
+    bool m_dbSubnetGroupHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbClusterOptionGroupMembership> m_dbClusterOptionGroupMemberships;
-    bool m_dbClusterOptionGroupMembershipsHasBeenSet;
+    bool m_dbClusterOptionGroupMembershipsHasBeenSet = false;
 
     Aws::String m_dbClusterIdentifier;
-    bool m_dbClusterIdentifierHasBeenSet;
+    bool m_dbClusterIdentifierHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbClusterMember> m_dbClusterMembers;
-    bool m_dbClusterMembersHasBeenSet;
+    bool m_dbClusterMembersHasBeenSet = false;
 
     bool m_iamDatabaseAuthenticationEnabled;
-    bool m_iamDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

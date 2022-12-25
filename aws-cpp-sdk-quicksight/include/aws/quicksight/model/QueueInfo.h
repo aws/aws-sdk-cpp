@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/QueueInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API QueueInfo
+  class QueueInfo
   {
   public:
-    QueueInfo();
-    QueueInfo(Aws::Utils::Json::JsonView jsonValue);
-    QueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API QueueInfo();
+    AWS_QUICKSIGHT_API QueueInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API QueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_waitingOnIngestion;
-    bool m_waitingOnIngestionHasBeenSet;
+    bool m_waitingOnIngestionHasBeenSet = false;
 
     Aws::String m_queuedIngestion;
-    bool m_queuedIngestionHasBeenSet;
+    bool m_queuedIngestionHasBeenSet = false;
   };
 
 } // namespace Model

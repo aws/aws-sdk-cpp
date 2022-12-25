@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryFilter
+  class InventoryFilter
   {
   public:
-    InventoryFilter();
-    InventoryFilter(Aws::Utils::Json::JsonView jsonValue);
-    InventoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryFilter();
+    AWS_SSM_API InventoryFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     InventoryQueryOperatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CloudwatchMetricAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CloudwatchMetricAction
+  class CloudwatchMetricAction
   {
   public:
-    CloudwatchMetricAction();
-    CloudwatchMetricAction(Aws::Utils::Json::JsonView jsonValue);
-    CloudwatchMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CloudwatchMetricAction();
+    AWS_IOT_API CloudwatchMetricAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CloudwatchMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     Aws::String m_metricUnit;
-    bool m_metricUnitHasBeenSet;
+    bool m_metricUnitHasBeenSet = false;
 
     Aws::String m_metricTimestamp;
-    bool m_metricTimestampHasBeenSet;
+    bool m_metricTimestampHasBeenSet = false;
   };
 
 } // namespace Model

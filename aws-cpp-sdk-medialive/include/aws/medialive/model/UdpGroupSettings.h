@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UdpGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UdpGroupSettings
+  class UdpGroupSettings
   {
   public:
-    UdpGroupSettings();
-    UdpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    UdpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API UdpGroupSettings();
+    AWS_MEDIALIVE_API UdpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API UdpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     InputLossActionForUdpOut m_inputLossAction;
-    bool m_inputLossActionHasBeenSet;
+    bool m_inputLossActionHasBeenSet = false;
 
     UdpTimedMetadataId3Frame m_timedMetadataId3Frame;
-    bool m_timedMetadataId3FrameHasBeenSet;
+    bool m_timedMetadataId3FrameHasBeenSet = false;
 
     int m_timedMetadataId3Period;
-    bool m_timedMetadataId3PeriodHasBeenSet;
+    bool m_timedMetadataId3PeriodHasBeenSet = false;
   };
 
 } // namespace Model

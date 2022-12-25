@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesRequest : public DatabaseMigrationServiceRequest
+  class ReloadTablesRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    ReloadTablesRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReloadTables"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::Vector<TableToReload> m_tablesToReload;
-    bool m_tablesToReloadHasBeenSet;
+    bool m_tablesToReloadHasBeenSet = false;
 
     ReloadOptionValue m_reloadOption;
-    bool m_reloadOptionHasBeenSet;
+    bool m_reloadOptionHasBeenSet = false;
   };
 
 } // namespace Model

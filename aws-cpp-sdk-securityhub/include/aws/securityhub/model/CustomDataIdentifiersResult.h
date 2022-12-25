@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CustomDataIdentifiersResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API CustomDataIdentifiersResult
+  class CustomDataIdentifiersResult
   {
   public:
-    CustomDataIdentifiersResult();
-    CustomDataIdentifiersResult(Aws::Utils::Json::JsonView jsonValue);
-    CustomDataIdentifiersResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API CustomDataIdentifiersResult();
+    AWS_SECURITYHUB_API CustomDataIdentifiersResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API CustomDataIdentifiersResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::Vector<CustomDataIdentifiersDetections> m_detections;
-    bool m_detectionsHasBeenSet;
+    bool m_detectionsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

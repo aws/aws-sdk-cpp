@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Hit">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API Hit
+  class Hit
   {
   public:
-    Hit();
-    Hit(Aws::Utils::Json::JsonView jsonValue);
-    Hit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API Hit();
+    AWS_CLOUDSEARCHDOMAIN_API Hit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Hit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,16 +276,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_exprs;
-    bool m_exprsHasBeenSet;
+    bool m_exprsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_highlights;
-    bool m_highlightsHasBeenSet;
+    bool m_highlightsHasBeenSet = false;
   };
 
 } // namespace Model

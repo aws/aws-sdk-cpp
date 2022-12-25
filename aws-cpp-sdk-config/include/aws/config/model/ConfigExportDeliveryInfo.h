@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigExportDeliveryInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigExportDeliveryInfo
+  class ConfigExportDeliveryInfo
   {
   public:
-    ConfigExportDeliveryInfo();
-    ConfigExportDeliveryInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConfigExportDeliveryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigExportDeliveryInfo();
+    AWS_CONFIGSERVICE_API ConfigExportDeliveryInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigExportDeliveryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,22 +250,22 @@ namespace Model
   private:
 
     DeliveryStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAttemptTime;
-    bool m_lastAttemptTimeHasBeenSet;
+    bool m_lastAttemptTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulTime;
-    bool m_lastSuccessfulTimeHasBeenSet;
+    bool m_lastSuccessfulTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextDeliveryTime;
-    bool m_nextDeliveryTimeHasBeenSet;
+    bool m_nextDeliveryTimeHasBeenSet = false;
   };
 
 } // namespace Model

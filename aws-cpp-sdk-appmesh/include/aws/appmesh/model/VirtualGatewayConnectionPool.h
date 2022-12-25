@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayConnectionPool">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayConnectionPool
+  class VirtualGatewayConnectionPool
   {
   public:
-    VirtualGatewayConnectionPool();
-    VirtualGatewayConnectionPool(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayConnectionPool();
+    AWS_APPMESH_API VirtualGatewayConnectionPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     VirtualGatewayGrpcConnectionPool m_grpc;
-    bool m_grpcHasBeenSet;
+    bool m_grpcHasBeenSet = false;
 
     VirtualGatewayHttpConnectionPool m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     VirtualGatewayHttp2ConnectionPool m_http2;
-    bool m_http2HasBeenSet;
+    bool m_http2HasBeenSet = false;
   };
 
 } // namespace Model

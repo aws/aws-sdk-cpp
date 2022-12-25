@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolPolicyType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType
+  class UserPoolPolicyType
   {
   public:
-    UserPoolPolicyType();
-    UserPoolPolicyType(Aws::Utils::Json::JsonView jsonValue);
-    UserPoolPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PasswordPolicyType m_passwordPolicy;
-    bool m_passwordPolicyHasBeenSet;
+    bool m_passwordPolicyHasBeenSet = false;
   };
 
 } // namespace Model

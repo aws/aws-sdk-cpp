@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ResourceGroupTag">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API ResourceGroupTag
+  class ResourceGroupTag
   {
   public:
-    ResourceGroupTag();
-    ResourceGroupTag(Aws::Utils::Json::JsonView jsonValue);
-    ResourceGroupTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API ResourceGroupTag();
+    AWS_INSPECTOR_API ResourceGroupTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API ResourceGroupTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

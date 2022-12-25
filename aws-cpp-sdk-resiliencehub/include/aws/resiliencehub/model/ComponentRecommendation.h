@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ComponentRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ComponentRecommendation
+  class ComponentRecommendation
   {
   public:
-    ComponentRecommendation();
-    ComponentRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ComponentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ComponentRecommendation();
+    AWS_RESILIENCEHUB_API ComponentRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ComponentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_appComponentName;
-    bool m_appComponentNameHasBeenSet;
+    bool m_appComponentNameHasBeenSet = false;
 
     Aws::Vector<ConfigRecommendation> m_configRecommendations;
-    bool m_configRecommendationsHasBeenSet;
+    bool m_configRecommendationsHasBeenSet = false;
 
     RecommendationComplianceStatus m_recommendationStatus;
-    bool m_recommendationStatusHasBeenSet;
+    bool m_recommendationStatusHasBeenSet = false;
   };
 
 } // namespace Model

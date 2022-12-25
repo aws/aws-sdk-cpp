@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/HistoricalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API HistoricalOptions
+  class HistoricalOptions
   {
   public:
-    HistoricalOptions();
-    HistoricalOptions(Aws::Utils::Json::JsonView jsonValue);
-    HistoricalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API HistoricalOptions();
+    AWS_BUDGETS_API HistoricalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API HistoricalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     int m_budgetAdjustmentPeriod;
-    bool m_budgetAdjustmentPeriodHasBeenSet;
+    bool m_budgetAdjustmentPeriodHasBeenSet = false;
 
     int m_lookBackAvailablePeriods;
-    bool m_lookBackAvailablePeriodsHasBeenSet;
+    bool m_lookBackAvailablePeriodsHasBeenSet = false;
   };
 
 } // namespace Model

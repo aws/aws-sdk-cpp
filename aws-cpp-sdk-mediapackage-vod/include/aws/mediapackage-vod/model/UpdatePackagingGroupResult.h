@@ -27,12 +27,28 @@ namespace MediaPackageVod
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupResult
+  class UpdatePackagingGroupResult
   {
   public:
-    UpdatePackagingGroupResult();
-    UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupResult();
+    AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline int GetApproximateAssetCount() const{ return m_approximateAssetCount; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline void SetApproximateAssetCount(int value) { m_approximateAssetCount = value; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline UpdatePackagingGroupResult& WithApproximateAssetCount(int value) { SetApproximateAssetCount(value); return *this;}
 
 
     /**
@@ -212,6 +228,8 @@ namespace Model
     inline UpdatePackagingGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
+    int m_approximateAssetCount;
 
     Aws::String m_arn;
 

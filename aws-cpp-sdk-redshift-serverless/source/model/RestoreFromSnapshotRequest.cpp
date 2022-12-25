@@ -61,7 +61,7 @@ Aws::String RestoreFromSnapshotRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection RestoreFromSnapshotRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.RestoreFromSnapshot"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.RestoreFromSnapshot"));
   return headers;
 
 }

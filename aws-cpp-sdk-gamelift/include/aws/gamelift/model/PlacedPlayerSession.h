@@ -24,25 +24,20 @@ namespace Model
 {
 
   /**
-   * <p>Information about a player session that was created as part of a
-   * <a>StartGameSessionPlacement</a> request. This object contains only the player
-   * ID and player session ID. To retrieve full details on a player session, call
-   * <a>DescribePlayerSessions</a> with the player session ID.</p> <p> <b>Related
-   * actions</b> </p> <p> <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> |
-   * <a>DescribePlayerSessions</a> | <a>StartGameSessionPlacement</a> |
-   * <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * <p>Information about a player session. This object contains only the player ID
+   * and player session ID. To retrieve full details on a player session, call <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a>
+   * with the player session ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlacedPlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlacedPlayerSession
+  class PlacedPlayerSession
   {
   public:
-    PlacedPlayerSession();
-    PlacedPlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    PlacedPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlacedPlayerSession();
+    AWS_GAMELIFT_API PlacedPlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlacedPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

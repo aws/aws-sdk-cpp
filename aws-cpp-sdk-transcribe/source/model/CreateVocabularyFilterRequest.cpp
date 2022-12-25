@@ -39,7 +39,7 @@ Aws::String CreateVocabularyFilterRequest::SerializePayload() const
 
   if(m_wordsHasBeenSet)
   {
-   Array<JsonValue> wordsJsonList(m_words.size());
+   Aws::Utils::Array<JsonValue> wordsJsonList(m_words.size());
    for(unsigned wordsIndex = 0; wordsIndex < wordsJsonList.GetLength(); ++wordsIndex)
    {
      wordsJsonList[wordsIndex].AsString(m_words[wordsIndex]);
@@ -56,7 +56,7 @@ Aws::String CreateVocabularyFilterRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

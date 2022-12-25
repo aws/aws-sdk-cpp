@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RDSInstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RDSInstanceDetails
+  class RDSInstanceDetails
   {
   public:
-    RDSInstanceDetails();
-    RDSInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    RDSInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RDSInstanceDetails();
+    AWS_COSTEXPLORER_API RDSInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RDSInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -389,31 +389,31 @@ namespace Model
   private:
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_databaseEngine;
-    bool m_databaseEngineHasBeenSet;
+    bool m_databaseEngineHasBeenSet = false;
 
     Aws::String m_databaseEdition;
-    bool m_databaseEditionHasBeenSet;
+    bool m_databaseEditionHasBeenSet = false;
 
     Aws::String m_deploymentOption;
-    bool m_deploymentOptionHasBeenSet;
+    bool m_deploymentOptionHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet;
+    bool m_sizeFlexEligibleHasBeenSet = false;
   };
 
 } // namespace Model

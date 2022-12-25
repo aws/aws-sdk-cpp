@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/amplifybackend/AmplifyBackendClient.h>
-#include <aws/amplifybackend/AmplifyBackendEndpoint.h>
 #include <aws/amplifybackend/AmplifyBackendErrorMarshaller.h>
+#include <aws/amplifybackend/AmplifyBackendEndpointProvider.h>
 #include <aws/amplifybackend/model/CloneBackendRequest.h>
 #include <aws/amplifybackend/model/CreateBackendRequest.h>
 #include <aws/amplifybackend/model/CreateBackendAPIRequest.h>
@@ -59,74 +60,129 @@ using namespace Aws::AmplifyBackend;
 using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "amplifybackend";
-static const char* ALLOCATION_TAG = "AmplifyBackendClient";
+const char* AmplifyBackendClient::SERVICE_NAME = "amplifybackend";
+const char* AmplifyBackendClient::ALLOCATION_TAG = "AmplifyBackendClient";
 
-
-AmplifyBackendClient::AmplifyBackendClient(const Client::ClientConfiguration& clientConfiguration) :
+AmplifyBackendClient::AmplifyBackendClient(const AmplifyBackend::AmplifyBackendClientConfiguration& clientConfiguration,
+                                           std::shared_ptr<AmplifyBackendEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
-AmplifyBackendClient::AmplifyBackendClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AmplifyBackendClient::AmplifyBackendClient(const AWSCredentials& credentials,
+                                           std::shared_ptr<AmplifyBackendEndpointProviderBase> endpointProvider,
+                                           const AmplifyBackend::AmplifyBackendClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 AmplifyBackendClient::AmplifyBackendClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                           std::shared_ptr<AmplifyBackendEndpointProviderBase> endpointProvider,
+                                           const AmplifyBackend::AmplifyBackendClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* Legacy constructors due deprecation */
+  AmplifyBackendClient::AmplifyBackendClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<AmplifyBackendEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+AmplifyBackendClient::AmplifyBackendClient(const AWSCredentials& credentials,
+                                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AmplifyBackendEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+AmplifyBackendClient::AmplifyBackendClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AmplifyBackendEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+    /* End of legacy constructors due deprecation */
 AmplifyBackendClient::~AmplifyBackendClient()
 {
 }
 
-void AmplifyBackendClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<AmplifyBackendEndpointProviderBase>& AmplifyBackendClient::accessEndpointProvider()
 {
-  SetServiceClientName("AmplifyBackend");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + AmplifyBackendEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  return m_endpointProvider;
+}
+
+void AmplifyBackendClient::init(const AmplifyBackend::AmplifyBackendClientConfiguration& config)
+{
+  AWSClient::SetServiceClientName("AmplifyBackend");
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void AmplifyBackendClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CloneBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CloneBackend", "Required field: AppId, is not set");
@@ -137,13 +193,14 @@ CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest
     AWS_LOGSTREAM_ERROR("CloneBackend", "Required field: BackendEnvironmentName, is not set");
     return CloneBackendOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/clone");
-  return CloneBackendOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CloneBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/clone");
+  return CloneBackendOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const CloneBackendRequest& request) const
@@ -156,19 +213,19 @@ CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const Clo
 
 void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloneBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CloneBackendAsyncHelper(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CloneBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CloneBackend(request), context);
+    } );
 }
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend");
-  return CreateBackendOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend");
+  return CreateBackendOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const CreateBackendRequest& request) const
@@ -181,26 +238,26 @@ CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const C
 
 void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAsyncHelper(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackend(request), context);
+    } );
 }
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateBackendAPI", "Required field: AppId, is not set");
     return CreateBackendAPIOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api");
-  return CreateBackendAPIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api");
+  return CreateBackendAPIOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(const CreateBackendAPIRequest& request) const
@@ -213,26 +270,26 @@ CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(c
 
 void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAPIAsyncHelper(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendAPI(request), context);
+    } );
 }
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateBackendAuth", "Required field: AppId, is not set");
     return CreateBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/auth");
-  return CreateBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/auth");
+  return CreateBackendAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable(const CreateBackendAuthRequest& request) const
@@ -245,26 +302,26 @@ CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable
 
 void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAuthAsyncHelper(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendAuth(request), context);
+    } );
 }
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateBackendConfig", "Required field: AppId, is not set");
     return CreateBackendConfigOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/config");
-  return CreateBackendConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+  return CreateBackendConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCallable(const CreateBackendConfigRequest& request) const
@@ -277,26 +334,26 @@ CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCall
 
 void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendConfigAsyncHelper(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendConfig(request), context);
+    } );
 }
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateBackendStorage", "Required field: AppId, is not set");
     return CreateBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/storage");
-  return CreateBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/storage");
+  return CreateBackendStorageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCallable(const CreateBackendStorageRequest& request) const
@@ -309,26 +366,26 @@ CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCa
 
 void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendStorageAsyncHelper(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendStorage(request), context);
+    } );
 }
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateToken", "Required field: AppId, is not set");
     return CreateTokenOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/challenge");
-  return CreateTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/challenge");
+  return CreateTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const CreateTokenRequest& request) const
@@ -341,16 +398,15 @@ CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const Creat
 
 void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateToken(request), context);
+    } );
 }
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBackend", "Required field: AppId, is not set");
@@ -361,13 +417,14 @@ DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequ
     AWS_LOGSTREAM_ERROR("DeleteBackend", "Required field: BackendEnvironmentName, is not set");
     return DeleteBackendOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environments/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/remove");
-  return DeleteBackendOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return DeleteBackendOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const DeleteBackendRequest& request) const
@@ -380,16 +437,15 @@ DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const D
 
 void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAsyncHelper(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackend(request), context);
+    } );
 }
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBackendAPI", "Required field: AppId, is not set");
@@ -400,13 +456,14 @@ DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBacke
     AWS_LOGSTREAM_ERROR("DeleteBackendAPI", "Required field: BackendEnvironmentName, is not set");
     return DeleteBackendAPIOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/remove");
-  return DeleteBackendAPIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return DeleteBackendAPIOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(const DeleteBackendAPIRequest& request) const
@@ -419,16 +476,15 @@ DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(c
 
 void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAPIAsyncHelper(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendAPI(request), context);
+    } );
 }
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBackendAuth", "Required field: AppId, is not set");
@@ -439,13 +495,14 @@ DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBac
     AWS_LOGSTREAM_ERROR("DeleteBackendAuth", "Required field: BackendEnvironmentName, is not set");
     return DeleteBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/auth/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/remove");
-  return DeleteBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/auth/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return DeleteBackendAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable(const DeleteBackendAuthRequest& request) const
@@ -458,16 +515,15 @@ DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable
 
 void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAuthAsyncHelper(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendAuth(request), context);
+    } );
 }
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBackendStorage", "Required field: AppId, is not set");
@@ -478,13 +534,14 @@ DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const Del
     AWS_LOGSTREAM_ERROR("DeleteBackendStorage", "Required field: BackendEnvironmentName, is not set");
     return DeleteBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/storage/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/remove");
-  return DeleteBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/storage/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return DeleteBackendStorageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCallable(const DeleteBackendStorageRequest& request) const
@@ -497,16 +554,15 @@ DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCa
 
 void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendStorageAsyncHelper(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendStorage(request), context);
+    } );
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteToken", "Required field: AppId, is not set");
@@ -517,13 +573,14 @@ DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& r
     AWS_LOGSTREAM_ERROR("DeleteToken", "Required field: SessionId, is not set");
     return DeleteTokenOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/challenge/");
-  uri.AddPathSegment(request.GetSessionId());
-  uri.AddPathSegments("/remove");
-  return DeleteTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/challenge/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return DeleteTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const DeleteTokenRequest& request) const
@@ -536,16 +593,15 @@ DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const Delet
 
 void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteTokenAsyncHelper(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteToken(request), context);
+    } );
 }
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GenerateBackendAPIModels", "Required field: AppId, is not set");
@@ -556,13 +612,14 @@ GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(c
     AWS_LOGSTREAM_ERROR("GenerateBackendAPIModels", "Required field: BackendEnvironmentName, is not set");
     return GenerateBackendAPIModelsOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/generateModels");
-  return GenerateBackendAPIModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/generateModels");
+  return GenerateBackendAPIModelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPIModelsCallable(const GenerateBackendAPIModelsRequest& request) const
@@ -575,26 +632,26 @@ GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPI
 
 void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateBackendAPIModelsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GenerateBackendAPIModelsAsyncHelper(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GenerateBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GenerateBackendAPIModels(request), context);
+    } );
 }
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackend", "Required field: AppId, is not set");
     return GetBackendOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/details");
-  return GetBackendOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/details");
+  return GetBackendOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBackendRequest& request) const
@@ -607,16 +664,15 @@ GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBack
 
 void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAsyncHelper(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackend(request), context);
+    } );
 }
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackendAPI", "Required field: AppId, is not set");
@@ -627,13 +683,14 @@ GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequ
     AWS_LOGSTREAM_ERROR("GetBackendAPI", "Required field: BackendEnvironmentName, is not set");
     return GetBackendAPIOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/details");
-  return GetBackendAPIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/details");
+  return GetBackendAPIOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const GetBackendAPIRequest& request) const
@@ -646,16 +703,15 @@ GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const G
 
 void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAPIAsyncHelper(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAPI(request), context);
+    } );
 }
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackendAPIModels", "Required field: AppId, is not set");
@@ -666,13 +722,14 @@ GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBa
     AWS_LOGSTREAM_ERROR("GetBackendAPIModels", "Required field: BackendEnvironmentName, is not set");
     return GetBackendAPIModelsOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/getModels");
-  return GetBackendAPIModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/getModels");
+  return GetBackendAPIModelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCallable(const GetBackendAPIModelsRequest& request) const
@@ -685,16 +742,15 @@ GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCall
 
 void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIModelsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAPIModelsAsyncHelper(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAPIModels(request), context);
+    } );
 }
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackendAuth", "Required field: AppId, is not set");
@@ -705,13 +761,14 @@ GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthR
     AWS_LOGSTREAM_ERROR("GetBackendAuth", "Required field: BackendEnvironmentName, is not set");
     return GetBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/auth/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/details");
-  return GetBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/auth/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/details");
+  return GetBackendAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const GetBackendAuthRequest& request) const
@@ -724,16 +781,15 @@ GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const
 
 void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAuthAsyncHelper(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAuth(request), context);
+    } );
 }
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackendJob", "Required field: AppId, is not set");
@@ -749,13 +805,14 @@ GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequ
     AWS_LOGSTREAM_ERROR("GetBackendJob", "Required field: JobId, is not set");
     return GetBackendJobOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/job/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegment(request.GetJobId());
-  return GetBackendJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/job/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  return GetBackendJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const GetBackendJobRequest& request) const
@@ -768,16 +825,15 @@ GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const G
 
 void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendJobAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendJobAsyncHelper(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendJob(request), context);
+    } );
 }
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBackendStorage", "Required field: AppId, is not set");
@@ -788,13 +844,14 @@ GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBacken
     AWS_LOGSTREAM_ERROR("GetBackendStorage", "Required field: BackendEnvironmentName, is not set");
     return GetBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/storage/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/details");
-  return GetBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/storage/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/details");
+  return GetBackendStorageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable(const GetBackendStorageRequest& request) const
@@ -807,16 +864,15 @@ GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable
 
 void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendStorageAsyncHelper(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendStorage(request), context);
+    } );
 }
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetToken", "Required field: AppId, is not set");
@@ -827,12 +883,13 @@ GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) c
     AWS_LOGSTREAM_ERROR("GetToken", "Required field: SessionId, is not set");
     return GetTokenOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/challenge/");
-  uri.AddPathSegment(request.GetSessionId());
-  return GetTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/challenge/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  return GetTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenRequest& request) const
@@ -845,16 +902,15 @@ GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenReq
 
 void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetTokenAsyncHelper(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetToken(request), context);
+    } );
 }
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ImportBackendAuth", "Required field: AppId, is not set");
@@ -865,13 +921,14 @@ ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBac
     AWS_LOGSTREAM_ERROR("ImportBackendAuth", "Required field: BackendEnvironmentName, is not set");
     return ImportBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/auth/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/import");
-  return ImportBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/auth/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/import");
+  return ImportBackendAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable(const ImportBackendAuthRequest& request) const
@@ -884,16 +941,15 @@ ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable
 
 void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ImportBackendAuthAsyncHelper(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportBackendAuth(request), context);
+    } );
 }
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ImportBackendStorage", "Required field: AppId, is not set");
@@ -904,13 +960,14 @@ ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const Imp
     AWS_LOGSTREAM_ERROR("ImportBackendStorage", "Required field: BackendEnvironmentName, is not set");
     return ImportBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/storage/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegments("/import");
-  return ImportBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/storage/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/import");
+  return ImportBackendStorageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCallable(const ImportBackendStorageRequest& request) const
@@ -923,16 +980,15 @@ ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCa
 
 void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ImportBackendStorageAsyncHelper(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportBackendStorage(request), context);
+    } );
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackendJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListBackendJobs", "Required field: AppId, is not set");
@@ -943,12 +999,13 @@ ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJo
     AWS_LOGSTREAM_ERROR("ListBackendJobs", "Required field: BackendEnvironmentName, is not set");
     return ListBackendJobsOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/job/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  return ListBackendJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackendJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/job/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  return ListBackendJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(const ListBackendJobsRequest& request) const
@@ -961,19 +1018,19 @@ ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(con
 
 void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackendJobsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ListBackendJobsAsyncHelper(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBackendJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBackendJobs(request), context);
+    } );
 }
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/s3Buckets");
-  return ListS3BucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListS3Buckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListS3Buckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/s3Buckets");
+  return ListS3BucketsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const ListS3BucketsRequest& request) const
@@ -986,26 +1043,26 @@ ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const L
 
 void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListS3BucketsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ListS3BucketsAsyncHelper(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListS3Buckets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListS3Buckets(request), context);
+    } );
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAllBackends, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemoveAllBackends", "Required field: AppId, is not set");
     return RemoveAllBackendsOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/remove");
-  return RemoveAllBackendsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveAllBackends, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/remove");
+  return RemoveAllBackendsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable(const RemoveAllBackendsRequest& request) const
@@ -1018,26 +1075,26 @@ RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable
 
 void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAllBackendsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::RemoveAllBackendsAsyncHelper(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveAllBackends(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveAllBackends(request), context);
+    } );
 }
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemoveBackendConfig", "Required field: AppId, is not set");
     return RemoveBackendConfigOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/config/remove");
-  return RemoveBackendConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/config/remove");
+  return RemoveBackendConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCallable(const RemoveBackendConfigRequest& request) const
@@ -1050,16 +1107,15 @@ RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCall
 
 void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::RemoveBackendConfigAsyncHelper(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveBackendConfig(request), context);
+    } );
 }
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBackendAPI", "Required field: AppId, is not set");
@@ -1070,12 +1126,13 @@ UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBacke
     AWS_LOGSTREAM_ERROR("UpdateBackendAPI", "Required field: BackendEnvironmentName, is not set");
     return UpdateBackendAPIOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/api/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  return UpdateBackendAPIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/api/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  return UpdateBackendAPIOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(const UpdateBackendAPIRequest& request) const
@@ -1088,16 +1145,15 @@ UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(c
 
 void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendAPIAsyncHelper(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendAPI(request), context);
+    } );
 }
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBackendAuth", "Required field: AppId, is not set");
@@ -1108,12 +1164,13 @@ UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBac
     AWS_LOGSTREAM_ERROR("UpdateBackendAuth", "Required field: BackendEnvironmentName, is not set");
     return UpdateBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/auth/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  return UpdateBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/auth/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  return UpdateBackendAuthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable(const UpdateBackendAuthRequest& request) const
@@ -1126,26 +1183,26 @@ UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable
 
 void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendAuthAsyncHelper(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendAuth(request), context);
+    } );
 }
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBackendConfig", "Required field: AppId, is not set");
     return UpdateBackendConfigOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/config/update");
-  return UpdateBackendConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/config/update");
+  return UpdateBackendConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCallable(const UpdateBackendConfigRequest& request) const
@@ -1158,16 +1215,15 @@ UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCall
 
 void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendConfigAsyncHelper(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendConfig(request), context);
+    } );
 }
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBackendJob", "Required field: AppId, is not set");
@@ -1183,13 +1239,14 @@ UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBacke
     AWS_LOGSTREAM_ERROR("UpdateBackendJob", "Required field: JobId, is not set");
     return UpdateBackendJobOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/job/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  uri.AddPathSegment(request.GetJobId());
-  return UpdateBackendJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/job/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+  return UpdateBackendJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(const UpdateBackendJobRequest& request) const
@@ -1202,16 +1259,15 @@ UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(c
 
 void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendJobAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendJobAsyncHelper(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendJob(request), context);
+    } );
 }
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBackendStorage", "Required field: AppId, is not set");
@@ -1222,12 +1278,13 @@ UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const Upd
     AWS_LOGSTREAM_ERROR("UpdateBackendStorage", "Required field: BackendEnvironmentName, is not set");
     return UpdateBackendStorageOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/backend/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/storage/");
-  uri.AddPathSegment(request.GetBackendEnvironmentName());
-  return UpdateBackendStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/backend/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/storage/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackendEnvironmentName());
+  return UpdateBackendStorageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCallable(const UpdateBackendStorageRequest& request) const
@@ -1240,11 +1297,9 @@ UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCa
 
 void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendStorageAsyncHelper(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendStorage(request), context);
+    } );
 }
 

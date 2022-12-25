@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/LexBot">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECT_API LexBot
+  class LexBot
   {
   public:
-    LexBot();
-    LexBot(Aws::Utils::Json::JsonView jsonValue);
-    LexBot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API LexBot();
+    AWS_CONNECT_API LexBot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API LexBot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,52 +79,52 @@ namespace Model
 
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline const Aws::String& GetLexRegion() const{ return m_lexRegion; }
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline bool LexRegionHasBeenSet() const { return m_lexRegionHasBeenSet; }
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline void SetLexRegion(const Aws::String& value) { m_lexRegionHasBeenSet = true; m_lexRegion = value; }
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline void SetLexRegion(Aws::String&& value) { m_lexRegionHasBeenSet = true; m_lexRegion = std::move(value); }
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline void SetLexRegion(const char* value) { m_lexRegionHasBeenSet = true; m_lexRegion.assign(value); }
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline LexBot& WithLexRegion(const Aws::String& value) { SetLexRegion(value); return *this;}
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline LexBot& WithLexRegion(Aws::String&& value) { SetLexRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The Region that the Amazon Lex bot was created in.</p>
+     * <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
      */
     inline LexBot& WithLexRegion(const char* value) { SetLexRegion(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_lexRegion;
-    bool m_lexRegionHasBeenSet;
+    bool m_lexRegionHasBeenSet = false;
   };
 
 } // namespace Model

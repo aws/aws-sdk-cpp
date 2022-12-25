@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyFpgaImageAttributeRequest : public EC2Request
+  class ModifyFpgaImageAttributeRequest : public EC2Request
   {
   public:
-    ModifyFpgaImageAttributeRequest();
+    AWS_EC2_API ModifyFpgaImageAttributeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyFpgaImageAttribute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -465,34 +465,34 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;
-    bool m_fpgaImageIdHasBeenSet;
+    bool m_fpgaImageIdHasBeenSet = false;
 
     FpgaImageAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     OperationType m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet;
+    bool m_userGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_productCodes;
-    bool m_productCodesHasBeenSet;
+    bool m_productCodesHasBeenSet = false;
 
     LoadPermissionModifications m_loadPermission;
-    bool m_loadPermissionHasBeenSet;
+    bool m_loadPermissionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

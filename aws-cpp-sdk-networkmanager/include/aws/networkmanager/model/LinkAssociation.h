@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/LinkAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API LinkAssociation
+  class LinkAssociation
   {
   public:
-    LinkAssociation();
-    LinkAssociation(Aws::Utils::Json::JsonView jsonValue);
-    LinkAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API LinkAssociation();
+    AWS_NETWORKMANAGER_API LinkAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API LinkAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_linkId;
-    bool m_linkIdHasBeenSet;
+    bool m_linkIdHasBeenSet = false;
 
     LinkAssociationState m_linkAssociationState;
-    bool m_linkAssociationStateHasBeenSet;
+    bool m_linkAssociationStateHasBeenSet = false;
   };
 
 } // namespace Model

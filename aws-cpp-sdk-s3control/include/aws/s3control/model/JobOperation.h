@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobOperation
+  class JobOperation
   {
   public:
-    JobOperation();
-    JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation();
+    AWS_S3CONTROL_API JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -123,38 +123,38 @@ namespace Model
 
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline const S3SetObjectAclOperation& GetS3PutObjectAcl() const{ return m_s3PutObjectAcl; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline bool S3PutObjectAclHasBeenSet() const { return m_s3PutObjectAclHasBeenSet; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(const S3SetObjectAclOperation& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = value; }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline void SetS3PutObjectAcl(S3SetObjectAclOperation&& value) { m_s3PutObjectAclHasBeenSet = true; m_s3PutObjectAcl = std::move(value); }
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(const S3SetObjectAclOperation& value) { SetS3PutObjectAcl(value); return *this;}
 
     /**
-     * <p>Directs the specified job to run a PUT Object acl call on every object in the
-     * manifest.</p>
+     * <p>Directs the specified job to run a <code>PutObjectAcl</code> call on every
+     * object in the manifest.</p>
      */
     inline JobOperation& WithS3PutObjectAcl(S3SetObjectAclOperation&& value) { SetS3PutObjectAcl(std::move(value)); return *this;}
 
@@ -347,31 +347,31 @@ namespace Model
   private:
 
     LambdaInvokeOperation m_lambdaInvoke;
-    bool m_lambdaInvokeHasBeenSet;
+    bool m_lambdaInvokeHasBeenSet = false;
 
     S3CopyObjectOperation m_s3PutObjectCopy;
-    bool m_s3PutObjectCopyHasBeenSet;
+    bool m_s3PutObjectCopyHasBeenSet = false;
 
     S3SetObjectAclOperation m_s3PutObjectAcl;
-    bool m_s3PutObjectAclHasBeenSet;
+    bool m_s3PutObjectAclHasBeenSet = false;
 
     S3SetObjectTaggingOperation m_s3PutObjectTagging;
-    bool m_s3PutObjectTaggingHasBeenSet;
+    bool m_s3PutObjectTaggingHasBeenSet = false;
 
     S3DeleteObjectTaggingOperation m_s3DeleteObjectTagging;
-    bool m_s3DeleteObjectTaggingHasBeenSet;
+    bool m_s3DeleteObjectTaggingHasBeenSet = false;
 
     S3InitiateRestoreObjectOperation m_s3InitiateRestoreObject;
-    bool m_s3InitiateRestoreObjectHasBeenSet;
+    bool m_s3InitiateRestoreObjectHasBeenSet = false;
 
     S3SetObjectLegalHoldOperation m_s3PutObjectLegalHold;
-    bool m_s3PutObjectLegalHoldHasBeenSet;
+    bool m_s3PutObjectLegalHoldHasBeenSet = false;
 
     S3SetObjectRetentionOperation m_s3PutObjectRetention;
-    bool m_s3PutObjectRetentionHasBeenSet;
+    bool m_s3PutObjectRetentionHasBeenSet = false;
 
     S3ReplicateObjectOperation m_s3ReplicateObject;
-    bool m_s3ReplicateObjectHasBeenSet;
+    bool m_s3ReplicateObjectHasBeenSet = false;
   };
 
 } // namespace Model

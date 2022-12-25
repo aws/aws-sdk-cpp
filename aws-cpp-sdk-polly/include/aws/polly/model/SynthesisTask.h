@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesisTask">AWS
    * API Reference</a></p>
    */
-  class AWS_POLLY_API SynthesisTask
+  class SynthesisTask
   {
   public:
-    SynthesisTask();
-    SynthesisTask(Aws::Utils::Json::JsonView jsonValue);
-    SynthesisTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_POLLY_API SynthesisTask();
+    AWS_POLLY_API SynthesisTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API SynthesisTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -711,49 +711,49 @@ namespace Model
   private:
 
     Engine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     TaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     Aws::String m_taskStatusReason;
-    bool m_taskStatusReasonHasBeenSet;
+    bool m_taskStatusReasonHasBeenSet = false;
 
     Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet;
+    bool m_outputUriHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     int m_requestCharacters;
-    bool m_requestCharactersHasBeenSet;
+    bool m_requestCharactersHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lexiconNames;
-    bool m_lexiconNamesHasBeenSet;
+    bool m_lexiconNamesHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     Aws::String m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     Aws::Vector<SpeechMarkType> m_speechMarkTypes;
-    bool m_speechMarkTypesHasBeenSet;
+    bool m_speechMarkTypesHasBeenSet = false;
 
     TextType m_textType;
-    bool m_textTypeHasBeenSet;
+    bool m_textTypeHasBeenSet = false;
 
     VoiceId m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

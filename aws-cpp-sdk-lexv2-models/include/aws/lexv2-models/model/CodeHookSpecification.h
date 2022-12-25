@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CodeHookSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API CodeHookSpecification
+  class CodeHookSpecification
   {
   public:
-    CodeHookSpecification();
-    CodeHookSpecification(Aws::Utils::Json::JsonView jsonValue);
-    CodeHookSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API CodeHookSpecification();
+    AWS_LEXMODELSV2_API CodeHookSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API CodeHookSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     LambdaCodeHook m_lambdaCodeHook;
-    bool m_lambdaCodeHookHasBeenSet;
+    bool m_lambdaCodeHookHasBeenSet = false;
   };
 
 } // namespace Model

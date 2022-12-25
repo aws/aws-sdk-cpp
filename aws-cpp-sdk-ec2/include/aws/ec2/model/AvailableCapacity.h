@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailableCapacity">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AvailableCapacity
+  class AvailableCapacity
   {
   public:
-    AvailableCapacity();
-    AvailableCapacity(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AvailableCapacity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AvailableCapacity();
+    AWS_EC2_API AvailableCapacity(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AvailableCapacity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
-    bool m_availableInstanceCapacityHasBeenSet;
+    bool m_availableInstanceCapacityHasBeenSet = false;
 
     int m_availableVCpus;
-    bool m_availableVCpusHasBeenSet;
+    bool m_availableVCpusHasBeenSet = false;
   };
 
 } // namespace Model

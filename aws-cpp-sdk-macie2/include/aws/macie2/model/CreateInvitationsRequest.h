@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API CreateInvitationsRequest : public Macie2Request
+  class CreateInvitationsRequest : public Macie2Request
   {
   public:
-    CreateInvitationsRequest();
+    AWS_MACIE2_API CreateInvitationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInvitations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     bool m_disableEmailNotification;
-    bool m_disableEmailNotificationHasBeenSet;
+    bool m_disableEmailNotificationHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

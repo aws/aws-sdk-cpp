@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGatewayVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGatewayVersion
+  class LoRaWANGatewayVersion
   {
   public:
-    LoRaWANGatewayVersion();
-    LoRaWANGatewayVersion(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGatewayVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGatewayVersion();
+    AWS_IOTWIRELESS_API LoRaWANGatewayVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGatewayVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_station;
-    bool m_stationHasBeenSet;
+    bool m_stationHasBeenSet = false;
   };
 
 } // namespace Model

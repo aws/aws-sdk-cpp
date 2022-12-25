@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/S3ExportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API S3ExportConfiguration
+  class S3ExportConfiguration
   {
   public:
-    S3ExportConfiguration();
-    S3ExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3ExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API S3ExportConfiguration();
+    AWS_IMAGEBUILDER_API S3ExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API S3ExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     DiskImageFormat m_diskImageFormat;
-    bool m_diskImageFormatHasBeenSet;
+    bool m_diskImageFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

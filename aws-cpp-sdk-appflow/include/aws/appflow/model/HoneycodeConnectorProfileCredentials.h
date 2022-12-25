@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API HoneycodeConnectorProfileCredentials
+  class HoneycodeConnectorProfileCredentials
   {
   public:
-    HoneycodeConnectorProfileCredentials();
-    HoneycodeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    HoneycodeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials();
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     ConnectorOAuthRequest m_oAuthRequest;
-    bool m_oAuthRequestHasBeenSet;
+    bool m_oAuthRequestHasBeenSet = false;
   };
 
 } // namespace Model

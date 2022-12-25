@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionInferenceAcceleratorsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionInferenceAcceleratorsDetails
+  class AwsEcsTaskDefinitionInferenceAcceleratorsDetails
   {
   public:
-    AwsEcsTaskDefinitionInferenceAcceleratorsDetails();
-    AwsEcsTaskDefinitionInferenceAcceleratorsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionInferenceAcceleratorsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionInferenceAcceleratorsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionInferenceAcceleratorsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionInferenceAcceleratorsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/ConnectionCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API ConnectionCredentials
+  class ConnectionCredentials
   {
   public:
-    ConnectionCredentials();
-    ConnectionCredentials(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API ConnectionCredentials();
+    AWS_CONNECTPARTICIPANT_API ConnectionCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API ConnectionCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
 
     Aws::String m_expiry;
-    bool m_expiryHasBeenSet;
+    bool m_expiryHasBeenSet = false;
   };
 
 } // namespace Model

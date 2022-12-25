@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BillingGroupProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BillingGroupProperties
+  class BillingGroupProperties
   {
   public:
-    BillingGroupProperties();
-    BillingGroupProperties(Aws::Utils::Json::JsonView jsonValue);
-    BillingGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BillingGroupProperties();
+    AWS_IOT_API BillingGroupProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BillingGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_billingGroupDescription;
-    bool m_billingGroupDescriptionHasBeenSet;
+    bool m_billingGroupDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

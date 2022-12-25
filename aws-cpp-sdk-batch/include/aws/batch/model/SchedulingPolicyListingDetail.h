@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyListingDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API SchedulingPolicyListingDetail
+  class SchedulingPolicyListingDetail
   {
   public:
-    SchedulingPolicyListingDetail();
-    SchedulingPolicyListingDetail(Aws::Utils::Json::JsonView jsonValue);
-    SchedulingPolicyListingDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API SchedulingPolicyListingDetail();
+    AWS_BATCH_API SchedulingPolicyListingDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API SchedulingPolicyListingDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

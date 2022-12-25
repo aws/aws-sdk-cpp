@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPFLOW_API UnregisterConnectorRequest : public AppflowRequest
+  class UnregisterConnectorRequest : public AppflowRequest
   {
   public:
-    UnregisterConnectorRequest();
+    AWS_APPFLOW_API UnregisterConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UnregisterConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

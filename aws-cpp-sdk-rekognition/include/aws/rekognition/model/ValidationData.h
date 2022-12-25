@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ValidationData">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ValidationData
+  class ValidationData
   {
   public:
-    ValidationData();
-    ValidationData(Aws::Utils::Json::JsonView jsonValue);
-    ValidationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ValidationData();
+    AWS_REKOGNITION_API ValidationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ValidationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Asset> m_assets;
-    bool m_assetsHasBeenSet;
+    bool m_assetsHasBeenSet = false;
   };
 
 } // namespace Model

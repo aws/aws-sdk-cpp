@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TooManyRequestsException">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API TooManyRequestsException
+  class TooManyRequestsException
   {
   public:
-    TooManyRequestsException();
-    TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
-    TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API TooManyRequestsException();
+    AWS_APIGATEWAYV2_API TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_limitType;
-    bool m_limitTypeHasBeenSet;
+    bool m_limitTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

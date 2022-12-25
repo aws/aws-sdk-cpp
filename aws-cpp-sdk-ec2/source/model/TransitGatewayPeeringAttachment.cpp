@@ -22,8 +22,10 @@ namespace Model
 
 TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment() : 
     m_transitGatewayAttachmentIdHasBeenSet(false),
+    m_accepterTransitGatewayAttachmentIdHasBeenSet(false),
     m_requesterTgwInfoHasBeenSet(false),
     m_accepterTgwInfoHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_state(TransitGatewayAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -34,8 +36,10 @@ TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment() :
 
 TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment(const XmlNode& xmlNode) : 
     m_transitGatewayAttachmentIdHasBeenSet(false),
+    m_accepterTransitGatewayAttachmentIdHasBeenSet(false),
     m_requesterTgwInfoHasBeenSet(false),
     m_accepterTgwInfoHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_state(TransitGatewayAttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -57,6 +61,12 @@ TransitGatewayPeeringAttachment& TransitGatewayPeeringAttachment::operator =(con
       m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
+    XmlNode accepterTransitGatewayAttachmentIdNode = resultNode.FirstChild("accepterTransitGatewayAttachmentId");
+    if(!accepterTransitGatewayAttachmentIdNode.IsNull())
+    {
+      m_accepterTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(accepterTransitGatewayAttachmentIdNode.GetText());
+      m_accepterTransitGatewayAttachmentIdHasBeenSet = true;
+    }
     XmlNode requesterTgwInfoNode = resultNode.FirstChild("requesterTgwInfo");
     if(!requesterTgwInfoNode.IsNull())
     {
@@ -68,6 +78,12 @@ TransitGatewayPeeringAttachment& TransitGatewayPeeringAttachment::operator =(con
     {
       m_accepterTgwInfo = accepterTgwInfoNode;
       m_accepterTgwInfoHasBeenSet = true;
+    }
+    XmlNode optionsNode = resultNode.FirstChild("options");
+    if(!optionsNode.IsNull())
+    {
+      m_options = optionsNode;
+      m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
@@ -84,7 +100,7 @@ TransitGatewayPeeringAttachment& TransitGatewayPeeringAttachment::operator =(con
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
@@ -111,6 +127,11 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
       oStream << location << index << locationValue << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
+  if(m_accepterTransitGatewayAttachmentIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccepterTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_accepterTransitGatewayAttachmentId.c_str()) << "&";
+  }
+
   if(m_requesterTgwInfoHasBeenSet)
   {
       Aws::StringStream requesterTgwInfoLocationAndMemberSs;
@@ -123,6 +144,13 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
       Aws::StringStream accepterTgwInfoLocationAndMemberSs;
       accepterTgwInfoLocationAndMemberSs << location << index << locationValue << ".AccepterTgwInfo";
       m_accepterTgwInfo.OutputToStream(oStream, accepterTgwInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+      Aws::StringStream optionsLocationAndMemberSs;
+      optionsLocationAndMemberSs << location << index << locationValue << ".Options";
+      m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
   }
 
   if(m_statusHasBeenSet)
@@ -139,7 +167,7 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
 
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_tagsHasBeenSet)
@@ -161,6 +189,10 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
   {
       oStream << location << ".TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
+  if(m_accepterTransitGatewayAttachmentIdHasBeenSet)
+  {
+      oStream << location << ".AccepterTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_accepterTransitGatewayAttachmentId.c_str()) << "&";
+  }
   if(m_requesterTgwInfoHasBeenSet)
   {
       Aws::String requesterTgwInfoLocationAndMember(location);
@@ -172,6 +204,12 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
       Aws::String accepterTgwInfoLocationAndMember(location);
       accepterTgwInfoLocationAndMember += ".AccepterTgwInfo";
       m_accepterTgwInfo.OutputToStream(oStream, accepterTgwInfoLocationAndMember.c_str());
+  }
+  if(m_optionsHasBeenSet)
+  {
+      Aws::String optionsLocationAndMember(location);
+      optionsLocationAndMember += ".Options";
+      m_options.OutputToStream(oStream, optionsLocationAndMember.c_str());
   }
   if(m_statusHasBeenSet)
   {
@@ -185,7 +223,7 @@ void TransitGatewayPeeringAttachment::OutputToStream(Aws::OStream& oStream, cons
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

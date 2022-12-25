@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PoolOriginationIdentitiesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PoolOriginationIdentitiesFilter
+  class PoolOriginationIdentitiesFilter
   {
   public:
-    PoolOriginationIdentitiesFilter();
-    PoolOriginationIdentitiesFilter(Aws::Utils::Json::JsonView jsonValue);
-    PoolOriginationIdentitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API PoolOriginationIdentitiesFilter();
+    AWS_PINPOINTSMSVOICEV2_API PoolOriginationIdentitiesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API PoolOriginationIdentitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     PoolOriginationIdentitiesFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

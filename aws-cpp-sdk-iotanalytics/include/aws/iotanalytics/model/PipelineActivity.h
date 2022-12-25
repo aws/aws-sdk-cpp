@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PipelineActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API PipelineActivity
+  class PipelineActivity
   {
   public:
-    PipelineActivity();
-    PipelineActivity(Aws::Utils::Json::JsonView jsonValue);
-    PipelineActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API PipelineActivity();
+    AWS_IOTANALYTICS_API PipelineActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API PipelineActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -371,34 +371,34 @@ namespace Model
   private:
 
     ChannelActivity m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     LambdaActivity m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     DatastoreActivity m_datastore;
-    bool m_datastoreHasBeenSet;
+    bool m_datastoreHasBeenSet = false;
 
     AddAttributesActivity m_addAttributes;
-    bool m_addAttributesHasBeenSet;
+    bool m_addAttributesHasBeenSet = false;
 
     RemoveAttributesActivity m_removeAttributes;
-    bool m_removeAttributesHasBeenSet;
+    bool m_removeAttributesHasBeenSet = false;
 
     SelectAttributesActivity m_selectAttributes;
-    bool m_selectAttributesHasBeenSet;
+    bool m_selectAttributesHasBeenSet = false;
 
     FilterActivity m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     MathActivity m_math;
-    bool m_mathHasBeenSet;
+    bool m_mathHasBeenSet = false;
 
     DeviceRegistryEnrichActivity m_deviceRegistryEnrich;
-    bool m_deviceRegistryEnrichHasBeenSet;
+    bool m_deviceRegistryEnrichHasBeenSet = false;
 
     DeviceShadowEnrichActivity m_deviceShadowEnrich;
-    bool m_deviceShadowEnrichHasBeenSet;
+    bool m_deviceShadowEnrichHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API BatchUnsuspendUserRequest : public ChimeRequest
+  class BatchUnsuspendUserRequest : public ChimeRequest
   {
   public:
-    BatchUnsuspendUserRequest();
+    AWS_CHIME_API BatchUnsuspendUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchUnsuspendUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdList;
-    bool m_userIdListHasBeenSet;
+    bool m_userIdListHasBeenSet = false;
   };
 
 } // namespace Model

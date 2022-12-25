@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallMissingSubnetViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallMissingSubnetViolation
+  class NetworkFirewallMissingSubnetViolation
   {
   public:
-    NetworkFirewallMissingSubnetViolation();
-    NetworkFirewallMissingSubnetViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallMissingSubnetViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallMissingSubnetViolation();
+    AWS_FMS_API NetworkFirewallMissingSubnetViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallMissingSubnetViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_targetViolationReason;
-    bool m_targetViolationReasonHasBeenSet;
+    bool m_targetViolationReasonHasBeenSet = false;
   };
 
 } // namespace Model

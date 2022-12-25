@@ -18,12 +18,13 @@ public class EnumModelTest {
     public void invalidChars() {
 
         EnumModel testEnum = new EnumModel("TestNamespace", "TESTENUM",
-                asList("PACKAGE.NAME", "HYPHENS-ROCK", "OH:DARK:THIRTY"));
+                asList("PACKAGE.NAME", "HYPHENS-ROCK", "OH:DARK:THIRTY", "Evangelion: 3.0+1.0"));
 
-        assertEquals(3, testEnum.getMembers().size());
+        assertEquals(4, testEnum.getMembers().size());
         assertEquals("PACKAGE_NAME", testEnum.getMembers().get(0).getMemberName());
         assertEquals("HYPHENS_ROCK", testEnum.getMembers().get(1).getMemberName());
         assertEquals("OH_DARK_THIRTY", testEnum.getMembers().get(2).getMemberName());
+        assertEquals("Evangelion_3_0_1_0", testEnum.getMembers().get(3).getMemberName());
     }
 
     @Test

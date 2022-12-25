@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteAnalysisCompletion">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteAnalysisCompletion
+  class RouteAnalysisCompletion
   {
   public:
-    RouteAnalysisCompletion();
-    RouteAnalysisCompletion(Aws::Utils::Json::JsonView jsonValue);
-    RouteAnalysisCompletion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteAnalysisCompletion();
+    AWS_NETWORKMANAGER_API RouteAnalysisCompletion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteAnalysisCompletion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -280,13 +280,13 @@ namespace Model
   private:
 
     RouteAnalysisCompletionResultCode m_resultCode;
-    bool m_resultCodeHasBeenSet;
+    bool m_resultCodeHasBeenSet = false;
 
     RouteAnalysisCompletionReasonCode m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_reasonContext;
-    bool m_reasonContextHasBeenSet;
+    bool m_reasonContextHasBeenSet = false;
   };
 
 } // namespace Model

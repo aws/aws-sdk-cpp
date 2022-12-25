@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingJobStatusCounters">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingJobStatusCounters
+  class TrainingJobStatusCounters
   {
   public:
-    TrainingJobStatusCounters();
-    TrainingJobStatusCounters(Aws::Utils::Json::JsonView jsonValue);
-    TrainingJobStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingJobStatusCounters();
+    AWS_SAGEMAKER_API TrainingJobStatusCounters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingJobStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,19 +167,19 @@ namespace Model
   private:
 
     int m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
 
     int m_inProgress;
-    bool m_inProgressHasBeenSet;
+    bool m_inProgressHasBeenSet = false;
 
     int m_retryableError;
-    bool m_retryableErrorHasBeenSet;
+    bool m_retryableErrorHasBeenSet = false;
 
     int m_nonRetryableError;
-    bool m_nonRetryableErrorHasBeenSet;
+    bool m_nonRetryableErrorHasBeenSet = false;
 
     int m_stopped;
-    bool m_stoppedHasBeenSet;
+    bool m_stoppedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/Target">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBCONFIG_API Target
+  class Target
   {
   public:
-    Target();
-    Target(Aws::Utils::Json::JsonView jsonValue);
-    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBCONFIG_API Target();
+    AWS_MIGRATIONHUBCONFIG_API Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     TargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

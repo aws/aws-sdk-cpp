@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API AcknowledgeJobRequest : public CodePipelineRequest
+  class AcknowledgeJobRequest : public CodePipelineRequest
   {
   public:
-    AcknowledgeJobRequest();
+    AWS_CODEPIPELINE_API AcknowledgeJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcknowledgeJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_nonce;
-    bool m_nonceHasBeenSet;
+    bool m_nonceHasBeenSet = false;
   };
 
 } // namespace Model

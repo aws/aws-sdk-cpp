@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshotMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest
+  class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest
   {
   public:
-    RestoreDBInstanceFromDBSnapshotRequest();
+    AWS_RDS_API RestoreDBInstanceFromDBSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreDBInstanceFromDBSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -118,7 +118,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -127,7 +130,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -136,7 +142,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -145,7 +154,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -154,7 +166,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -163,7 +178,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -172,7 +190,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -181,7 +202,10 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
-     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is
+     * specified.</p> </li> <li> <p>Must be specified when
+     * <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li> <li> <p>If
+     * you are restoring from a shared manual DB snapshot, the
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      * </li> </ul>
      */
@@ -799,8 +823,8 @@ namespace Model
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints: Must be an integer greater than 1000.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -813,8 +837,8 @@ namespace Model
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints: Must be an integer greater than 1000.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -827,8 +851,8 @@ namespace Model
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints: Must be an integer greater than 1000.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -841,8 +865,8 @@ namespace Model
      * <p>The provisioned IOPS value must follow the requirements for your database
      * engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
+     * RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints: Must be an integer greater than 1000.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -947,73 +971,73 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1742,7 +1766,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
@@ -1758,7 +1782,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
@@ -1774,7 +1798,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
@@ -1790,7 +1814,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
@@ -2102,103 +2126,271 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore
+     * from.</p> <p>For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing Multi-AZ DB cluster snapshot.</p> </li> <li> <p>Can't
+     * be specified when <code>DBSnapshotIdentifier</code> is specified.</p> </li> <li>
+     * <p>Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.</p>
+     * </li> <li> <p>If you are restoring from a shared manual Multi-AZ DB cluster
+     * snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the
+     * shared snapshot.</p> </li> <li> <p>Can't be the identifier of an Aurora DB
+     * cluster snapshot.</p> </li> <li> <p>Can't be the identifier of an RDS for
+     * PostgreSQL Multi-AZ DB cluster snapshot.</p> </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     Aws::String m_tdeCredentialPassword;
-    bool m_tdeCredentialPasswordHasBeenSet;
+    bool m_tdeCredentialPasswordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     bool m_useDefaultProcessorFeatures;
-    bool m_useDefaultProcessorFeaturesHasBeenSet;
+    bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_enableCustomerOwnedIp;
-    bool m_enableCustomerOwnedIpHasBeenSet;
+    bool m_enableCustomerOwnedIpHasBeenSet = false;
 
     Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     Aws::String m_backupTarget;
-    bool m_backupTargetHasBeenSet;
+    bool m_backupTargetHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_dBClusterSnapshotIdentifier;
+    bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API TestAuthorizationRequest : public IoTRequest
+  class TestAuthorizationRequest : public IoTRequest
   {
   public:
-    TestAuthorizationRequest();
+    AWS_IOT_API TestAuthorizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestAuthorization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -356,22 +356,22 @@ namespace Model
   private:
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_cognitoIdentityPoolId;
-    bool m_cognitoIdentityPoolIdHasBeenSet;
+    bool m_cognitoIdentityPoolIdHasBeenSet = false;
 
     Aws::Vector<AuthInfo> m_authInfos;
-    bool m_authInfosHasBeenSet;
+    bool m_authInfosHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNamesToAdd;
-    bool m_policyNamesToAddHasBeenSet;
+    bool m_policyNamesToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNamesToSkip;
-    bool m_policyNamesToSkipHasBeenSet;
+    bool m_policyNamesToSkipHasBeenSet = false;
   };
 
 } // namespace Model

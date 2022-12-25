@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ResourcePendingMaintenanceActions">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ResourcePendingMaintenanceActions
+  class ResourcePendingMaintenanceActions
   {
   public:
-    ResourcePendingMaintenanceActions();
-    ResourcePendingMaintenanceActions(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePendingMaintenanceActions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ResourcePendingMaintenanceActions();
+    AWS_DATABASEMIGRATIONSERVICE_API ResourcePendingMaintenanceActions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ResourcePendingMaintenanceActions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActionDetails;
-    bool m_pendingMaintenanceActionDetailsHasBeenSet;
+    bool m_pendingMaintenanceActionDetailsHasBeenSet = false;
   };
 
 } // namespace Model

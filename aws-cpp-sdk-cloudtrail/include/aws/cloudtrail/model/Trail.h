@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Trail">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API Trail
+  class Trail
   {
   public:
-    Trail();
-    Trail(Aws::Utils::Json::JsonView jsonValue);
-    Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API Trail();
+    AWS_CLOUDTRAIL_API Trail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -674,49 +674,49 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_snsTopicARN;
-    bool m_snsTopicARNHasBeenSet;
+    bool m_snsTopicARNHasBeenSet = false;
 
     bool m_includeGlobalServiceEvents;
-    bool m_includeGlobalServiceEventsHasBeenSet;
+    bool m_includeGlobalServiceEventsHasBeenSet = false;
 
     bool m_isMultiRegionTrail;
-    bool m_isMultiRegionTrailHasBeenSet;
+    bool m_isMultiRegionTrailHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Aws::String m_trailARN;
-    bool m_trailARNHasBeenSet;
+    bool m_trailARNHasBeenSet = false;
 
     bool m_logFileValidationEnabled;
-    bool m_logFileValidationEnabledHasBeenSet;
+    bool m_logFileValidationEnabledHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_hasCustomEventSelectors;
-    bool m_hasCustomEventSelectorsHasBeenSet;
+    bool m_hasCustomEventSelectorsHasBeenSet = false;
 
     bool m_hasInsightSelectors;
-    bool m_hasInsightSelectorsHasBeenSet;
+    bool m_hasInsightSelectorsHasBeenSet = false;
 
     bool m_isOrganizationTrail;
-    bool m_isOrganizationTrailHasBeenSet;
+    bool m_isOrganizationTrailHasBeenSet = false;
   };
 
 } // namespace Model

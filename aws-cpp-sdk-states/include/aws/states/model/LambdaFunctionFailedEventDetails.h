@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a lambda function that failed during an
+   * <p>Contains details about a Lambda function that failed during an
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LambdaFunctionFailedEventDetails
+  class LambdaFunctionFailedEventDetails
   {
   public:
-    LambdaFunctionFailedEventDetails();
-    LambdaFunctionFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LambdaFunctionFailedEventDetails();
+    AWS_SFN_API LambdaFunctionFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LambdaFunctionFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API ListSigningPlatformsRequest : public SignerRequest
+  class ListSigningPlatformsRequest : public SignerRequest
   {
   public:
-    ListSigningPlatformsRequest();
+    AWS_SIGNER_API ListSigningPlatformsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListSigningPlatforms"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SIGNER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_partner;
-    bool m_partnerHasBeenSet;
+    bool m_partnerHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

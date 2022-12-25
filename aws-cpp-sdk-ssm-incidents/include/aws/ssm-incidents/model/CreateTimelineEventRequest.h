@@ -7,7 +7,9 @@
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/ssm-incidents/SSMIncidentsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ssm-incidents/model/EventReference.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -20,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMINCIDENTS_API CreateTimelineEventRequest : public SSMIncidentsRequest
+  class CreateTimelineEventRequest : public SSMIncidentsRequest
   {
   public:
-    CreateTimelineEventRequest();
+    AWS_SSMINCIDENTS_API CreateTimelineEventRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTimelineEvent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -122,6 +124,95 @@ namespace Model
      * <p>A short description of the event.</p>
      */
     inline CreateTimelineEventRequest& WithEventData(const char* value) { SetEventData(value); return *this;}
+
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline const Aws::Vector<EventReference>& GetEventReferences() const{ return m_eventReferences; }
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline bool EventReferencesHasBeenSet() const { return m_eventReferencesHasBeenSet; }
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline void SetEventReferences(const Aws::Vector<EventReference>& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = value; }
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline void SetEventReferences(Aws::Vector<EventReference>&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = std::move(value); }
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline CreateTimelineEventRequest& WithEventReferences(const Aws::Vector<EventReference>& value) { SetEventReferences(value); return *this;}
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline CreateTimelineEventRequest& WithEventReferences(Aws::Vector<EventReference>&& value) { SetEventReferences(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline CreateTimelineEventRequest& AddEventReferences(const EventReference& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(value); return *this; }
+
+    /**
+     * <p>Adds one or more references to the <code>TimelineEvent</code>. A reference
+     * can be an Amazon Web Services resource involved in the incident or in some way
+     * associated with it. When you specify a reference, you enter the Amazon Resource
+     * Name (ARN) of the resource. You can also specify a related item. As an example,
+     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
+     * this example is the resource. You could also specify a Amazon CloudWatch metric
+     * for that table. The metric is the related item.</p>
+     */
+    inline CreateTimelineEventRequest& AddEventReferences(EventReference&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -255,19 +346,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_eventData;
-    bool m_eventDataHasBeenSet;
+    bool m_eventDataHasBeenSet = false;
+
+    Aws::Vector<EventReference> m_eventReferences;
+    bool m_eventReferencesHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
   };
 
 } // namespace Model

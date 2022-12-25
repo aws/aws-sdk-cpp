@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/OracleSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API OracleSettings
+  class OracleSettings
   {
   public:
-    OracleSettings();
-    OracleSettings(Aws::Utils::Json::JsonView jsonValue);
-    OracleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API OracleSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API OracleSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API OracleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -709,29 +709,29 @@ namespace Model
 
     /**
      * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
-     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
-     * account needs to be granted ASM privileges.</p>
+     * logs. If the archived redo logs are stored on Automatic Storage Management (ASM)
+     * only, the DMS user account needs to be granted ASM privileges.</p>
      */
     inline bool GetArchivedLogsOnly() const{ return m_archivedLogsOnly; }
 
     /**
      * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
-     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
-     * account needs to be granted ASM privileges.</p>
+     * logs. If the archived redo logs are stored on Automatic Storage Management (ASM)
+     * only, the DMS user account needs to be granted ASM privileges.</p>
      */
     inline bool ArchivedLogsOnlyHasBeenSet() const { return m_archivedLogsOnlyHasBeenSet; }
 
     /**
      * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
-     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
-     * account needs to be granted ASM privileges.</p>
+     * logs. If the archived redo logs are stored on Automatic Storage Management (ASM)
+     * only, the DMS user account needs to be granted ASM privileges.</p>
      */
     inline void SetArchivedLogsOnly(bool value) { m_archivedLogsOnlyHasBeenSet = true; m_archivedLogsOnly = value; }
 
     /**
      * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
-     * logs. If the archived redo logs are stored on Oracle ASM only, the DMS user
-     * account needs to be granted ASM privileges.</p>
+     * logs. If the archived redo logs are stored on Automatic Storage Management (ASM)
+     * only, the DMS user account needs to be granted ASM privileges.</p>
      */
     inline OracleSettings& WithArchivedLogsOnly(bool value) { SetArchivedLogsOnly(value); return *this;}
 
@@ -2060,9 +2060,9 @@ namespace Model
 
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2080,9 +2080,9 @@ namespace Model
     inline const Aws::String& GetSecretsManagerOracleAsmAccessRoleArn() const{ return m_secretsManagerOracleAsmAccessRoleArn; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2100,9 +2100,9 @@ namespace Model
     inline bool SecretsManagerOracleAsmAccessRoleArnHasBeenSet() const { return m_secretsManagerOracleAsmAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2120,9 +2120,9 @@ namespace Model
     inline void SetSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = value; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2140,9 +2140,9 @@ namespace Model
     inline void SetSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn = std::move(value); }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2160,9 +2160,9 @@ namespace Model
     inline void SetSecretsManagerOracleAsmAccessRoleArn(const char* value) { m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = true; m_secretsManagerOracleAsmAccessRoleArn.assign(value); }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2180,9 +2180,9 @@ namespace Model
     inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(const Aws::String& value) { SetSecretsManagerOracleAsmAccessRoleArn(value); return *this;}
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2200,9 +2200,9 @@ namespace Model
     inline OracleSettings& WithSecretsManagerOracleAsmAccessRoleArn(Aws::String&& value) { SetSecretsManagerOracleAsmAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN of the IAM role that specifies DMS as the trusted entity and grants
-     * the required permissions to access the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN of the IAM role that specifies DMS as the trusted entity and
+     * grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This
      * <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows
      * access to the Oracle ASM of the endpoint.</p>  <p>You can specify one of
@@ -2221,190 +2221,222 @@ namespace Model
 
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline const Aws::String& GetSecretsManagerOracleAsmSecretId() const{ return m_secretsManagerOracleAsmSecretId; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline bool SecretsManagerOracleAsmSecretIdHasBeenSet() const { return m_secretsManagerOracleAsmSecretIdHasBeenSet; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline void SetSecretsManagerOracleAsmSecretId(const Aws::String& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = value; }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline void SetSecretsManagerOracleAsmSecretId(Aws::String&& value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId = std::move(value); }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline void SetSecretsManagerOracleAsmSecretId(const char* value) { m_secretsManagerOracleAsmSecretIdHasBeenSet = true; m_secretsManagerOracleAsmSecretId.assign(value); }
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const Aws::String& value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline OracleSettings& WithSecretsManagerOracleAsmSecretId(Aws::String&& value) { SetSecretsManagerOracleAsmSecretId(std::move(value)); return *this;}
 
     /**
-     * <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM).
-     * The full ARN, partial ARN, or friendly name of the
+     * <p>Required only if your Oracle endpoint uses Automatic Storage Management
+     * (ASM). The full ARN, partial ARN, or friendly name of the
      * <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
      * connection details for the Oracle endpoint.</p>
      */
     inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const char* value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline OracleSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
-    bool m_addSupplementalLoggingHasBeenSet;
+    bool m_addSupplementalLoggingHasBeenSet = false;
 
     int m_archivedLogDestId;
-    bool m_archivedLogDestIdHasBeenSet;
+    bool m_archivedLogDestIdHasBeenSet = false;
 
     int m_additionalArchivedLogDestId;
-    bool m_additionalArchivedLogDestIdHasBeenSet;
+    bool m_additionalArchivedLogDestIdHasBeenSet = false;
 
     Aws::Vector<int> m_extraArchivedLogDestIds;
-    bool m_extraArchivedLogDestIdsHasBeenSet;
+    bool m_extraArchivedLogDestIdsHasBeenSet = false;
 
     bool m_allowSelectNestedTables;
-    bool m_allowSelectNestedTablesHasBeenSet;
+    bool m_allowSelectNestedTablesHasBeenSet = false;
 
     int m_parallelAsmReadThreads;
-    bool m_parallelAsmReadThreadsHasBeenSet;
+    bool m_parallelAsmReadThreadsHasBeenSet = false;
 
     int m_readAheadBlocks;
-    bool m_readAheadBlocksHasBeenSet;
+    bool m_readAheadBlocksHasBeenSet = false;
 
     bool m_accessAlternateDirectly;
-    bool m_accessAlternateDirectlyHasBeenSet;
+    bool m_accessAlternateDirectlyHasBeenSet = false;
 
     bool m_useAlternateFolderForOnline;
-    bool m_useAlternateFolderForOnlineHasBeenSet;
+    bool m_useAlternateFolderForOnlineHasBeenSet = false;
 
     Aws::String m_oraclePathPrefix;
-    bool m_oraclePathPrefixHasBeenSet;
+    bool m_oraclePathPrefixHasBeenSet = false;
 
     Aws::String m_usePathPrefix;
-    bool m_usePathPrefixHasBeenSet;
+    bool m_usePathPrefixHasBeenSet = false;
 
     bool m_replacePathPrefix;
-    bool m_replacePathPrefixHasBeenSet;
+    bool m_replacePathPrefixHasBeenSet = false;
 
     bool m_enableHomogenousTablespace;
-    bool m_enableHomogenousTablespaceHasBeenSet;
+    bool m_enableHomogenousTablespaceHasBeenSet = false;
 
     bool m_directPathNoLog;
-    bool m_directPathNoLogHasBeenSet;
+    bool m_directPathNoLogHasBeenSet = false;
 
     bool m_archivedLogsOnly;
-    bool m_archivedLogsOnlyHasBeenSet;
+    bool m_archivedLogsOnlyHasBeenSet = false;
 
     Aws::String m_asmPassword;
-    bool m_asmPasswordHasBeenSet;
+    bool m_asmPasswordHasBeenSet = false;
 
     Aws::String m_asmServer;
-    bool m_asmServerHasBeenSet;
+    bool m_asmServerHasBeenSet = false;
 
     Aws::String m_asmUser;
-    bool m_asmUserHasBeenSet;
+    bool m_asmUserHasBeenSet = false;
 
     CharLengthSemantics m_charLengthSemantics;
-    bool m_charLengthSemanticsHasBeenSet;
+    bool m_charLengthSemanticsHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     bool m_directPathParallelLoad;
-    bool m_directPathParallelLoadHasBeenSet;
+    bool m_directPathParallelLoadHasBeenSet = false;
 
     bool m_failTasksOnLobTruncation;
-    bool m_failTasksOnLobTruncationHasBeenSet;
+    bool m_failTasksOnLobTruncationHasBeenSet = false;
 
     int m_numberDatatypeScale;
-    bool m_numberDatatypeScaleHasBeenSet;
+    bool m_numberDatatypeScaleHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     bool m_readTableSpaceName;
-    bool m_readTableSpaceNameHasBeenSet;
+    bool m_readTableSpaceNameHasBeenSet = false;
 
     int m_retryInterval;
-    bool m_retryIntervalHasBeenSet;
+    bool m_retryIntervalHasBeenSet = false;
 
     Aws::String m_securityDbEncryption;
-    bool m_securityDbEncryptionHasBeenSet;
+    bool m_securityDbEncryptionHasBeenSet = false;
 
     Aws::String m_securityDbEncryptionName;
-    bool m_securityDbEncryptionNameHasBeenSet;
+    bool m_securityDbEncryptionNameHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_spatialDataOptionToGeoJsonFunctionName;
-    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet;
+    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = false;
 
     int m_standbyDelayTime;
-    bool m_standbyDelayTimeHasBeenSet;
+    bool m_standbyDelayTimeHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     bool m_useBFile;
-    bool m_useBFileHasBeenSet;
+    bool m_useBFileHasBeenSet = false;
 
     bool m_useDirectPathFullLoad;
-    bool m_useDirectPathFullLoadHasBeenSet;
+    bool m_useDirectPathFullLoadHasBeenSet = false;
 
     bool m_useLogminerReader;
-    bool m_useLogminerReaderHasBeenSet;
+    bool m_useLogminerReaderHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
 
     Aws::String m_secretsManagerOracleAsmAccessRoleArn;
-    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet;
+    bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerOracleAsmSecretId;
-    bool m_secretsManagerOracleAsmSecretIdHasBeenSet;
+    bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
+
+    bool m_trimSpaceInChar;
+    bool m_trimSpaceInCharHasBeenSet = false;
   };
 
 } // namespace Model

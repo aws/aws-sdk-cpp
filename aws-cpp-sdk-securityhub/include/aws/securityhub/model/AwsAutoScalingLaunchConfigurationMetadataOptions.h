@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingLaunchConfigurationMetadataOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationMetadataOptions
+  class AwsAutoScalingLaunchConfigurationMetadataOptions
   {
   public:
-    AwsAutoScalingLaunchConfigurationMetadataOptions();
-    AwsAutoScalingLaunchConfigurationMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingLaunchConfigurationMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationMetadataOptions();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     Aws::String m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
   };
 
 } // namespace Model

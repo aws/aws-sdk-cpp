@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ConnectionAuthResponseParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API ConnectionAuthResponseParameters
+  class ConnectionAuthResponseParameters
   {
   public:
-    ConnectionAuthResponseParameters();
-    ConnectionAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API ConnectionAuthResponseParameters();
+    AWS_CLOUDWATCHEVENTS_API ConnectionAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API ConnectionAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     ConnectionBasicAuthResponseParameters m_basicAuthParameters;
-    bool m_basicAuthParametersHasBeenSet;
+    bool m_basicAuthParametersHasBeenSet = false;
 
     ConnectionOAuthResponseParameters m_oAuthParameters;
-    bool m_oAuthParametersHasBeenSet;
+    bool m_oAuthParametersHasBeenSet = false;
 
     ConnectionApiKeyAuthResponseParameters m_apiKeyAuthParameters;
-    bool m_apiKeyAuthParametersHasBeenSet;
+    bool m_apiKeyAuthParametersHasBeenSet = false;
 
     ConnectionHttpParameters m_invocationHttpParameters;
-    bool m_invocationHttpParametersHasBeenSet;
+    bool m_invocationHttpParametersHasBeenSet = false;
   };
 
 } // namespace Model

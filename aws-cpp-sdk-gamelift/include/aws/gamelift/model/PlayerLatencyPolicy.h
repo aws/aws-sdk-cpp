@@ -27,18 +27,17 @@ namespace Model
    * where a player reports latency higher than the cap. Latency policies are used
    * only with placement request that provide player latency information. Player
    * latency policies can be stacked to gradually relax latency requirements over
-   * time. </p> <p>Latency policies are part of a
-   * <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
+   * time. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlayerLatencyPolicy
+  class PlayerLatencyPolicy
   {
   public:
-    PlayerLatencyPolicy();
-    PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
-    PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlayerLatencyPolicy();
+    AWS_GAMELIFT_API PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,10 +96,10 @@ namespace Model
   private:
 
     int m_maximumIndividualPlayerLatencyMilliseconds;
-    bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet;
+    bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = false;
 
     int m_policyDurationSeconds;
-    bool m_policyDurationSecondsHasBeenSet;
+    bool m_policyDurationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

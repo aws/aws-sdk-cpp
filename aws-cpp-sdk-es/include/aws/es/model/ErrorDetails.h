@@ -23,13 +23,13 @@ namespace ElasticsearchService
 namespace Model
 {
 
-  class AWS_ELASTICSEARCHSERVICE_API ErrorDetails
+  class ErrorDetails
   {
   public:
-    ErrorDetails();
-    ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ErrorDetails();
+    AWS_ELASTICSEARCHSERVICE_API ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     Aws::String m_errorType;
-    bool m_errorTypeHasBeenSet;
+    bool m_errorTypeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

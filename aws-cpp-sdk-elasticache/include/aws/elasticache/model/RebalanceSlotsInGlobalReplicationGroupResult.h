@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupResult
+  class RebalanceSlotsInGlobalReplicationGroupResult
   {
   public:
-    RebalanceSlotsInGlobalReplicationGroupResult();
-    RebalanceSlotsInGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RebalanceSlotsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupResult();
+    AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

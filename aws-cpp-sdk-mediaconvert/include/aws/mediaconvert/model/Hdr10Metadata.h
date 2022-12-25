@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Hdr10Metadata
+  class Hdr10Metadata
   {
   public:
-    Hdr10Metadata();
-    Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
-    Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Hdr10Metadata();
+    AWS_MEDIACONVERT_API Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,40 +381,40 @@ namespace Model
   private:
 
     int m_bluePrimaryX;
-    bool m_bluePrimaryXHasBeenSet;
+    bool m_bluePrimaryXHasBeenSet = false;
 
     int m_bluePrimaryY;
-    bool m_bluePrimaryYHasBeenSet;
+    bool m_bluePrimaryYHasBeenSet = false;
 
     int m_greenPrimaryX;
-    bool m_greenPrimaryXHasBeenSet;
+    bool m_greenPrimaryXHasBeenSet = false;
 
     int m_greenPrimaryY;
-    bool m_greenPrimaryYHasBeenSet;
+    bool m_greenPrimaryYHasBeenSet = false;
 
     int m_maxContentLightLevel;
-    bool m_maxContentLightLevelHasBeenSet;
+    bool m_maxContentLightLevelHasBeenSet = false;
 
     int m_maxFrameAverageLightLevel;
-    bool m_maxFrameAverageLightLevelHasBeenSet;
+    bool m_maxFrameAverageLightLevelHasBeenSet = false;
 
     int m_maxLuminance;
-    bool m_maxLuminanceHasBeenSet;
+    bool m_maxLuminanceHasBeenSet = false;
 
     int m_minLuminance;
-    bool m_minLuminanceHasBeenSet;
+    bool m_minLuminanceHasBeenSet = false;
 
     int m_redPrimaryX;
-    bool m_redPrimaryXHasBeenSet;
+    bool m_redPrimaryXHasBeenSet = false;
 
     int m_redPrimaryY;
-    bool m_redPrimaryYHasBeenSet;
+    bool m_redPrimaryYHasBeenSet = false;
 
     int m_whitePointX;
-    bool m_whitePointXHasBeenSet;
+    bool m_whitePointXHasBeenSet = false;
 
     int m_whitePointY;
-    bool m_whitePointYHasBeenSet;
+    bool m_whitePointYHasBeenSet = false;
   };
 
 } // namespace Model

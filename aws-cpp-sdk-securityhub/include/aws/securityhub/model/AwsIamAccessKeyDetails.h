@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAccessKeyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamAccessKeyDetails
+  class AwsIamAccessKeyDetails
   {
   public:
-    AwsIamAccessKeyDetails();
-    AwsIamAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails();
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,28 +381,28 @@ namespace Model
   private:
 
     AwsIamAccessKeyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalName;
-    bool m_principalNameHasBeenSet;
+    bool m_principalNameHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     AwsIamAccessKeySessionContext m_sessionContext;
-    bool m_sessionContextHasBeenSet;
+    bool m_sessionContextHasBeenSet = false;
   };
 
 } // namespace Model

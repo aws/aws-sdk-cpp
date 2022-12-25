@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PathToObjectIdentifiers">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers
+  class PathToObjectIdentifiers
   {
   public:
-    PathToObjectIdentifiers();
-    PathToObjectIdentifiers(Aws::Utils::Json::JsonView jsonValue);
-    PathToObjectIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers();
+    AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API PathToObjectIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectIdentifiers;
-    bool m_objectIdentifiersHasBeenSet;
+    bool m_objectIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

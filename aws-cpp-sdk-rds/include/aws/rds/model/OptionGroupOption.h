@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupOption">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionGroupOption
+  class OptionGroupOption
   {
   public:
-    OptionGroupOption();
-    OptionGroupOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroupOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOption();
+    AWS_RDS_API OptionGroupOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -611,55 +611,83 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * accounts.</p>
+     */
+    inline bool GetCopyableCrossAccount() const{ return m_copyableCrossAccount; }
+
+    /**
+     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * accounts.</p>
+     */
+    inline bool CopyableCrossAccountHasBeenSet() const { return m_copyableCrossAccountHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * accounts.</p>
+     */
+    inline void SetCopyableCrossAccount(bool value) { m_copyableCrossAccountHasBeenSet = true; m_copyableCrossAccount = value; }
+
+    /**
+     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * accounts.</p>
+     */
+    inline OptionGroupOption& WithCopyableCrossAccount(bool value) { SetCopyableCrossAccount(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::String m_minimumRequiredMinorEngineVersion;
-    bool m_minimumRequiredMinorEngineVersionHasBeenSet;
+    bool m_minimumRequiredMinorEngineVersionHasBeenSet = false;
 
     bool m_portRequired;
-    bool m_portRequiredHasBeenSet;
+    bool m_portRequiredHasBeenSet = false;
 
     int m_defaultPort;
-    bool m_defaultPortHasBeenSet;
+    bool m_defaultPortHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optionsDependedOn;
-    bool m_optionsDependedOnHasBeenSet;
+    bool m_optionsDependedOnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_optionsConflictsWith;
-    bool m_optionsConflictsWithHasBeenSet;
+    bool m_optionsConflictsWithHasBeenSet = false;
 
     bool m_persistent;
-    bool m_persistentHasBeenSet;
+    bool m_persistentHasBeenSet = false;
 
     bool m_permanent;
-    bool m_permanentHasBeenSet;
+    bool m_permanentHasBeenSet = false;
 
     bool m_requiresAutoMinorEngineVersionUpgrade;
-    bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet;
+    bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = false;
 
     bool m_vpcOnly;
-    bool m_vpcOnlyHasBeenSet;
+    bool m_vpcOnlyHasBeenSet = false;
 
     bool m_supportsOptionVersionDowngrade;
-    bool m_supportsOptionVersionDowngradeHasBeenSet;
+    bool m_supportsOptionVersionDowngradeHasBeenSet = false;
 
     Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
-    bool m_optionGroupOptionSettingsHasBeenSet;
+    bool m_optionGroupOptionSettingsHasBeenSet = false;
 
     Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
-    bool m_optionGroupOptionVersionsHasBeenSet;
+    bool m_optionGroupOptionVersionsHasBeenSet = false;
+
+    bool m_copyableCrossAccount;
+    bool m_copyableCrossAccountHasBeenSet = false;
   };
 
 } // namespace Model

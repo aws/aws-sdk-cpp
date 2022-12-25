@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermissionModifications">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateVolumePermissionModifications
+  class CreateVolumePermissionModifications
   {
   public:
-    CreateVolumePermissionModifications();
-    CreateVolumePermissionModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateVolumePermissionModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateVolumePermissionModifications();
+    AWS_EC2_API CreateVolumePermissionModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateVolumePermissionModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<CreateVolumePermission> m_add;
-    bool m_addHasBeenSet;
+    bool m_addHasBeenSet = false;
 
     Aws::Vector<CreateVolumePermission> m_remove;
-    bool m_removeHasBeenSet;
+    bool m_removeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTaskFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryTaskFilter
+  class DataRepositoryTaskFilter
   {
   public:
-    DataRepositoryTaskFilter();
-    DataRepositoryTaskFilter(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryTaskFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryTaskFilter();
+    AWS_FSX_API DataRepositoryTaskFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryTaskFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     DataRepositoryTaskFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

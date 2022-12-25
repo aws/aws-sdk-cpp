@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultConfiguration
+  class ResultConfiguration
   {
   public:
-    ResultConfiguration();
-    ResultConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ResultConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultConfiguration();
+    AWS_ATHENA_API ResultConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,16 +452,16 @@ namespace Model
   private:
 
     Aws::String m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     AclConfiguration m_aclConfiguration;
-    bool m_aclConfigurationHasBeenSet;
+    bool m_aclConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

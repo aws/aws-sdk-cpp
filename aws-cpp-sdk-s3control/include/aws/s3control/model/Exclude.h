@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/Exclude">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API Exclude
+  class Exclude
   {
   public:
-    Exclude();
-    Exclude(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Exclude& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API Exclude();
+    AWS_S3CONTROL_API Exclude(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API Exclude& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_buckets;
-    bool m_bucketsHasBeenSet;
+    bool m_bucketsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

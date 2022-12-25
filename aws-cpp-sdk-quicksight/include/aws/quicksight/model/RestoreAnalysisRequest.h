@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API RestoreAnalysisRequest : public QuickSightRequest
+  class RestoreAnalysisRequest : public QuickSightRequest
   {
   public:
-    RestoreAnalysisRequest();
+    AWS_QUICKSIGHT_API RestoreAnalysisRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreAnalysis"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_analysisId;
-    bool m_analysisIdHasBeenSet;
+    bool m_analysisIdHasBeenSet = false;
   };
 
 } // namespace Model

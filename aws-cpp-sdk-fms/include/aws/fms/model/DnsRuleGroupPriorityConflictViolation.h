@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DnsRuleGroupPriorityConflictViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API DnsRuleGroupPriorityConflictViolation
+  class DnsRuleGroupPriorityConflictViolation
   {
   public:
-    DnsRuleGroupPriorityConflictViolation();
-    DnsRuleGroupPriorityConflictViolation(Aws::Utils::Json::JsonView jsonValue);
-    DnsRuleGroupPriorityConflictViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation();
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
 
     int m_conflictingPriority;
-    bool m_conflictingPriorityHasBeenSet;
+    bool m_conflictingPriorityHasBeenSet = false;
 
     Aws::String m_conflictingPolicyId;
-    bool m_conflictingPolicyIdHasBeenSet;
+    bool m_conflictingPolicyIdHasBeenSet = false;
 
     Aws::Vector<int> m_unavailablePriorities;
-    bool m_unavailablePrioritiesHasBeenSet;
+    bool m_unavailablePrioritiesHasBeenSet = false;
   };
 
 } // namespace Model

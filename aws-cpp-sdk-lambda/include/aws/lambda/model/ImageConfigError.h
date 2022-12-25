@@ -24,17 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Error response to GetFunctionConfiguration.</p><p><h3>See Also:</h3>   <a
+   * <p>Error response to <code>GetFunctionConfiguration</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ImageConfigError">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ImageConfigError
+  class ImageConfigError
   {
   public:
-    ImageConfigError();
-    ImageConfigError(Aws::Utils::Json::JsonView jsonValue);
-    ImageConfigError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ImageConfigError();
+    AWS_LAMBDA_API ImageConfigError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ImageConfigError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

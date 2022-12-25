@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/LogDeliveryConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API LogDeliveryConfigurationRequest
+  class LogDeliveryConfigurationRequest
   {
   public:
-    LogDeliveryConfigurationRequest();
-    LogDeliveryConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LogDeliveryConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API LogDeliveryConfigurationRequest();
+    AWS_ELASTICACHE_API LogDeliveryConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API LogDeliveryConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -208,19 +208,19 @@ namespace Model
   private:
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     DestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     DestinationDetails m_destinationDetails;
-    bool m_destinationDetailsHasBeenSet;
+    bool m_destinationDetailsHasBeenSet = false;
 
     LogFormat m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

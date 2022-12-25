@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUD9_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUD9_API Environment();
+    AWS_CLOUD9_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -457,31 +457,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EnvironmentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_ownerArn;
-    bool m_ownerArnHasBeenSet;
+    bool m_ownerArnHasBeenSet = false;
 
     EnvironmentLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     ManagedCredentialsStatus m_managedCredentialsStatus;
-    bool m_managedCredentialsStatusHasBeenSet;
+    bool m_managedCredentialsStatusHasBeenSet = false;
   };
 
 } // namespace Model

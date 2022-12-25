@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/FailedCreateSimulationJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API FailedCreateSimulationJobRequest
+  class FailedCreateSimulationJobRequest
   {
   public:
-    FailedCreateSimulationJobRequest();
-    FailedCreateSimulationJobRequest(Aws::Utils::Json::JsonView jsonValue);
-    FailedCreateSimulationJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API FailedCreateSimulationJobRequest();
+    AWS_ROBOMAKER_API FailedCreateSimulationJobRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API FailedCreateSimulationJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     SimulationJobRequest m_request;
-    bool m_requestHasBeenSet;
+    bool m_requestHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     SimulationJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_failedAt;
-    bool m_failedAtHasBeenSet;
+    bool m_failedAtHasBeenSet = false;
   };
 
 } // namespace Model

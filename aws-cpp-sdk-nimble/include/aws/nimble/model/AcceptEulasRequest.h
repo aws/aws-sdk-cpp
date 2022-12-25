@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API AcceptEulasRequest : public NimbleStudioRequest
+  class AcceptEulasRequest : public NimbleStudioRequest
   {
   public:
-    AcceptEulasRequest();
+    AWS_NIMBLESTUDIO_API AcceptEulasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,64 +31,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptEulas"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline AcceptEulasRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline AcceptEulasRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline AcceptEulasRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -140,55 +148,55 @@ namespace Model
 
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eulaIds;
-    bool m_eulaIdsHasBeenSet;
+    bool m_eulaIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

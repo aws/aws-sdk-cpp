@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/Statement">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API Statement
+  class Statement
   {
   public:
-    Statement();
-    Statement(Aws::Utils::Json::JsonView jsonValue);
-    Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API Statement();
+    AWS_LEXMODELBUILDINGSERVICE_API Statement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::Vector<Message> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Aws::String m_responseCard;
-    bool m_responseCardHasBeenSet;
+    bool m_responseCardHasBeenSet = false;
   };
 
 } // namespace Model

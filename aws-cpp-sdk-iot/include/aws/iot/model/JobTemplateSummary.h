@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobTemplateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobTemplateSummary
+  class JobTemplateSummary
   {
   public:
-    JobTemplateSummary();
-    JobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobTemplateSummary();
+    AWS_IOT_API JobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_jobTemplateArn;
-    bool m_jobTemplateArnHasBeenSet;
+    bool m_jobTemplateArnHasBeenSet = false;
 
     Aws::String m_jobTemplateId;
-    bool m_jobTemplateIdHasBeenSet;
+    bool m_jobTemplateIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/KeywordFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API KeywordFilter
+  class KeywordFilter
   {
   public:
-    KeywordFilter();
-    KeywordFilter(Aws::Utils::Json::JsonView jsonValue);
-    KeywordFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API KeywordFilter();
+    AWS_SECURITYHUB_API KeywordFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API KeywordFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

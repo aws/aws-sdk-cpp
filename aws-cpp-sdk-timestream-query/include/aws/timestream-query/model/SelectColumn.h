@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/SelectColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API SelectColumn
+  class SelectColumn
   {
   public:
-    SelectColumn();
-    SelectColumn(Aws::Utils::Json::JsonView jsonValue);
-    SelectColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API SelectColumn();
+    AWS_TIMESTREAMQUERY_API SelectColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API SelectColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,19 +204,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     bool m_aliased;
-    bool m_aliasedHasBeenSet;
+    bool m_aliasedHasBeenSet = false;
   };
 
 } // namespace Model

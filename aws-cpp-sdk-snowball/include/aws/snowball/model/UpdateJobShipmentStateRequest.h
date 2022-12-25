@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SNOWBALL_API UpdateJobShipmentStateRequest : public SnowballRequest
+  class UpdateJobShipmentStateRequest : public SnowballRequest
   {
   public:
-    UpdateJobShipmentStateRequest();
+    AWS_SNOWBALL_API UpdateJobShipmentStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateJobShipmentState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNOWBALL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     ShipmentState m_shipmentState;
-    bool m_shipmentStateHasBeenSet;
+    bool m_shipmentStateHasBeenSet = false;
   };
 
 } // namespace Model

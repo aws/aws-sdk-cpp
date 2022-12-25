@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FeatureGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FeatureGroupSummary
+  class FeatureGroupSummary
   {
   public:
-    FeatureGroupSummary();
-    FeatureGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    FeatureGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FeatureGroupSummary();
+    AWS_SAGEMAKER_API FeatureGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FeatureGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,19 +243,19 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_featureGroupArn;
-    bool m_featureGroupArnHasBeenSet;
+    bool m_featureGroupArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     FeatureGroupStatus m_featureGroupStatus;
-    bool m_featureGroupStatusHasBeenSet;
+    bool m_featureGroupStatusHasBeenSet = false;
 
     OfflineStoreStatus m_offlineStoreStatus;
-    bool m_offlineStoreStatusHasBeenSet;
+    bool m_offlineStoreStatusHasBeenSet = false;
   };
 
 } // namespace Model

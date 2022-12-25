@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateReceiptRuleRequest : public SESRequest
+  class CreateReceiptRuleRequest : public SESRequest
   {
   public:
-    CreateReceiptRuleRequest();
+    AWS_SES_API CreateReceiptRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReceiptRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_after;
-    bool m_afterHasBeenSet;
+    bool m_afterHasBeenSet = false;
 
     ReceiptRule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
   };
 
 } // namespace Model

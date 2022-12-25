@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API GetFindingRequest : public AccessAnalyzerRequest
+  class GetFindingRequest : public AccessAnalyzerRequest
   {
   public:
-    GetFindingRequest();
+    AWS_ACCESSANALYZER_API GetFindingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetFinding"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

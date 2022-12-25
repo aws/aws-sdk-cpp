@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbClusterMember">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbClusterMember
+  class AwsRdsDbClusterMember
   {
   public:
-    AwsRdsDbClusterMember();
-    AwsRdsDbClusterMember(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbClusterMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbClusterMember();
+    AWS_SECURITYHUB_API AwsRdsDbClusterMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbClusterMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,16 +176,16 @@ namespace Model
   private:
 
     bool m_isClusterWriter;
-    bool m_isClusterWriterHasBeenSet;
+    bool m_isClusterWriterHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dbClusterParameterGroupStatus;
-    bool m_dbClusterParameterGroupStatusHasBeenSet;
+    bool m_dbClusterParameterGroupStatusHasBeenSet = false;
   };
 
 } // namespace Model

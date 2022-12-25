@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API CreateRealtimeLogConfig2020_05_31Request : public CloudFrontRequest
+  class CreateRealtimeLogConfig2020_05_31Request : public CloudFrontRequest
   {
   public:
-    CreateRealtimeLogConfig2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateRealtimeLogConfig2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRealtimeLogConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::Vector<EndPoint> m_endPoints;
-    bool m_endPointsHasBeenSet;
+    bool m_endPointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
   };
 
 } // namespace Model

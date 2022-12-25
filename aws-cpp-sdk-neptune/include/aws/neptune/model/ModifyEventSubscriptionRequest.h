@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_NEPTUNE_API ModifyEventSubscriptionRequest : public NeptuneRequest
+  class ModifyEventSubscriptionRequest : public NeptuneRequest
   {
   public:
-    ModifyEventSubscriptionRequest();
+    AWS_NEPTUNE_API ModifyEventSubscriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyEventSubscription"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -295,19 +295,19 @@ namespace Model
   private:
 
     Aws::String m_subscriptionName;
-    bool m_subscriptionNameHasBeenSet;
+    bool m_subscriptionNameHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategories;
-    bool m_eventCategoriesHasBeenSet;
+    bool m_eventCategoriesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

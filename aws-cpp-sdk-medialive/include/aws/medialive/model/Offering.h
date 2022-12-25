@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Offering">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Offering
+  class Offering
   {
   public:
-    Offering();
-    Offering(Aws::Utils::Json::JsonView jsonValue);
-    Offering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Offering();
+    AWS_MEDIALIVE_API Offering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Offering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -419,37 +419,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     OfferingDurationUnits m_durationUnits;
-    bool m_durationUnitsHasBeenSet;
+    bool m_durationUnitsHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     Aws::String m_offeringDescription;
-    bool m_offeringDescriptionHasBeenSet;
+    bool m_offeringDescriptionHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     OfferingType m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ReservationResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
   };
 
 } // namespace Model

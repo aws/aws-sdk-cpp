@@ -31,23 +31,17 @@ namespace Model
   /**
    * <p>Configuration for a game session placement mechanism that processes requests
    * for new game sessions. A queue can be used on its own or as part of a
-   * matchmaking solution.</p> <p> <b>Related actions</b> </p> <p> <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">CreateGameSessionQueue</a>
-   * | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html">DescribeGameSessionQueues</a>
-   * | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html">UpdateGameSessionQueue</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * matchmaking solution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueue">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameSessionQueue
+  class GameSessionQueue
   {
   public:
-    GameSessionQueue();
-    GameSessionQueue(Aws::Utils::Json::JsonView jsonValue);
-    GameSessionQueue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameSessionQueue();
+    AWS_GAMELIFT_API GameSessionQueue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameSessionQueue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,49 +457,49 @@ namespace Model
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline GameSessionQueue& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline GameSessionQueue& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
 
     /**
      * <p> Information that is added to all events that are related to this game
-     * session queue. </p>
+     * session queue.</p>
      */
     inline GameSessionQueue& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
 
@@ -577,31 +571,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_gameSessionQueueArn;
-    bool m_gameSessionQueueArnHasBeenSet;
+    bool m_gameSessionQueueArnHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
-    bool m_playerLatencyPoliciesHasBeenSet;
+    bool m_playerLatencyPoliciesHasBeenSet = false;
 
     Aws::Vector<GameSessionQueueDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     FilterConfiguration m_filterConfiguration;
-    bool m_filterConfigurationHasBeenSet;
+    bool m_filterConfigurationHasBeenSet = false;
 
     PriorityConfiguration m_priorityConfiguration;
-    bool m_priorityConfigurationHasBeenSet;
+    bool m_priorityConfigurationHasBeenSet = false;
 
     Aws::String m_customEventData;
-    bool m_customEventDataHasBeenSet;
+    bool m_customEventDataHasBeenSet = false;
 
     Aws::String m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
   };
 
 } // namespace Model

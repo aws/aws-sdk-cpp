@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API DeclineInvitationsRequest : public SecurityHubRequest
+  class DeclineInvitationsRequest : public SecurityHubRequest
   {
   public:
-    DeclineInvitationsRequest();
+    AWS_SECURITYHUB_API DeclineInvitationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeclineInvitations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

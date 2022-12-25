@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/SavingsPlanOfferingRateFilterElement">AWS
    * API Reference</a></p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement
+  class SavingsPlanOfferingRateFilterElement
   {
   public:
-    SavingsPlanOfferingRateFilterElement();
-    SavingsPlanOfferingRateFilterElement(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlanOfferingRateFilterElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement();
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRateFilterElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     SavingsPlanRateFilterAttribute m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

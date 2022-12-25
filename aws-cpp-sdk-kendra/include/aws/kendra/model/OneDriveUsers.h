@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/OneDriveUsers">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API OneDriveUsers
+  class OneDriveUsers
   {
   public:
-    OneDriveUsers();
-    OneDriveUsers(Aws::Utils::Json::JsonView jsonValue);
-    OneDriveUsers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API OneDriveUsers();
+    AWS_KENDRA_API OneDriveUsers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API OneDriveUsers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_oneDriveUserList;
-    bool m_oneDriveUserListHasBeenSet;
+    bool m_oneDriveUserListHasBeenSet = false;
 
     S3Path m_oneDriveUserS3Path;
-    bool m_oneDriveUserS3PathHasBeenSet;
+    bool m_oneDriveUserS3PathHasBeenSet = false;
   };
 
 } // namespace Model

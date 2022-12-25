@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZoneResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API AssociateVPCWithHostedZoneResult
+  class AssociateVPCWithHostedZoneResult
   {
   public:
-    AssociateVPCWithHostedZoneResult();
-    AssociateVPCWithHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateVPCWithHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API AssociateVPCWithHostedZoneResult();
+    AWS_ROUTE53_API AssociateVPCWithHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API AssociateVPCWithHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

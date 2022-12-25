@@ -29,65 +29,83 @@ namespace Model
 {
 
   /**
-   * <p>Represents the transcription result stream from Amazon Transcribe Medical to
-   * your application.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains detailed information about your streaming session.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/MedicalTranscriptResultStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream
+  class MedicalTranscriptResultStream
   {
   public:
-    MedicalTranscriptResultStream();
-    MedicalTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
-    MedicalTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline const MedicalTranscriptEvent& GetTranscriptEvent() const{ return m_transcriptEvent; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline bool TranscriptEventHasBeenSet() const { return m_transcriptEventHasBeenSet; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline void SetTranscriptEvent(const MedicalTranscriptEvent& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = value; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline void SetTranscriptEvent(MedicalTranscriptEvent&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::move(value); }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline MedicalTranscriptResultStream& WithTranscriptEvent(const MedicalTranscriptEvent& value) { SetTranscriptEvent(value); return *this;}
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe Medical to your application. The event can
-     * be a partial transcription of a section of the audio stream, or it can be the
-     * entire transcription of that portion of the audio stream.</p>
+     * <p>The <code>MedicalTranscriptEvent</code> associated with a
+     * <code>MedicalTranscriptResultStream</code>.</p> <p>Contains a set of
+     * transcription results from one or more audio segments, along with additional
+     * information per your request parameters. This can include information relating
+     * to alternative transcriptions, channel identification, partial result
+     * stabilization, language identification, and other transcription-related
+     * data.</p>
      */
     inline MedicalTranscriptResultStream& WithTranscriptEvent(MedicalTranscriptEvent&& value) { SetTranscriptEvent(std::move(value)); return *this;}
 
@@ -189,22 +207,22 @@ namespace Model
   private:
 
     MedicalTranscriptEvent m_transcriptEvent;
-    bool m_transcriptEventHasBeenSet;
+    bool m_transcriptEventHasBeenSet = false;
 
     BadRequestException m_badRequestException;
-    bool m_badRequestExceptionHasBeenSet;
+    bool m_badRequestExceptionHasBeenSet = false;
 
     LimitExceededException m_limitExceededException;
-    bool m_limitExceededExceptionHasBeenSet;
+    bool m_limitExceededExceptionHasBeenSet = false;
 
     InternalFailureException m_internalFailureException;
-    bool m_internalFailureExceptionHasBeenSet;
+    bool m_internalFailureExceptionHasBeenSet = false;
 
     ConflictException m_conflictException;
-    bool m_conflictExceptionHasBeenSet;
+    bool m_conflictExceptionHasBeenSet = false;
 
     ServiceUnavailableException m_serviceUnavailableException;
-    bool m_serviceUnavailableExceptionHasBeenSet;
+    bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
 } // namespace Model

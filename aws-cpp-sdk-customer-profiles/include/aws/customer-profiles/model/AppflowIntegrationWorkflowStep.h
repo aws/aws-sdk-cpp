@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AppflowIntegrationWorkflowStep">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep
+  class AppflowIntegrationWorkflowStep
   {
   public:
-    AppflowIntegrationWorkflowStep();
-    AppflowIntegrationWorkflowStep(Aws::Utils::Json::JsonView jsonValue);
-    AppflowIntegrationWorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep();
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -376,28 +376,28 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_executionMessage;
-    bool m_executionMessageHasBeenSet;
+    bool m_executionMessageHasBeenSet = false;
 
     long long m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
 
     Aws::String m_batchRecordsStartTime;
-    bool m_batchRecordsStartTimeHasBeenSet;
+    bool m_batchRecordsStartTimeHasBeenSet = false;
 
     Aws::String m_batchRecordsEndTime;
-    bool m_batchRecordsEndTimeHasBeenSet;
+    bool m_batchRecordsEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

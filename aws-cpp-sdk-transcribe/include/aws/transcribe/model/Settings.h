@@ -26,19 +26,19 @@ namespace Model
 
   /**
    * <p>Allows additional optional settings in your request, including channel
-   * identification, alternative transcriptions, and speaker labeling; allows you to
-   * apply custom vocabularies to your transcription job.</p><p><h3>See Also:</h3>  
-   * <a
+   * identification, alternative transcriptions, and speaker partitioning. You can
+   * use that to apply custom vocabularies to your transcription job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API Settings
+  class Settings
   {
   public:
-    Settings();
-    Settings(Aws::Utils::Json::JsonView jsonValue);
-    Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API Settings();
+    AWS_TRANSCRIBESERVICE_API Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,90 +99,90 @@ namespace Model
 
 
     /**
-     * <p>Enables speaker identification (diarization) in your transcription output.
-     * Speaker identification labels the speech from individual speakers in your media
+     * <p>Enables speaker partitioning (diarization) in your transcription output.
+     * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
      * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
      * same request. Including both parameters returns a
      * <code>BadRequestException</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
     inline bool GetShowSpeakerLabels() const{ return m_showSpeakerLabels; }
 
     /**
-     * <p>Enables speaker identification (diarization) in your transcription output.
-     * Speaker identification labels the speech from individual speakers in your media
+     * <p>Enables speaker partitioning (diarization) in your transcription output.
+     * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
      * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
      * same request. Including both parameters returns a
      * <code>BadRequestException</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
     inline bool ShowSpeakerLabelsHasBeenSet() const { return m_showSpeakerLabelsHasBeenSet; }
 
     /**
-     * <p>Enables speaker identification (diarization) in your transcription output.
-     * Speaker identification labels the speech from individual speakers in your media
+     * <p>Enables speaker partitioning (diarization) in your transcription output.
+     * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
      * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
      * same request. Including both parameters returns a
      * <code>BadRequestException</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
     inline void SetShowSpeakerLabels(bool value) { m_showSpeakerLabelsHasBeenSet = true; m_showSpeakerLabels = value; }
 
     /**
-     * <p>Enables speaker identification (diarization) in your transcription output.
-     * Speaker identification labels the speech from individual speakers in your media
+     * <p>Enables speaker partitioning (diarization) in your transcription output.
+     * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
      * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include both
      * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
      * same request. Including both parameters returns a
      * <code>BadRequestException</code>.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
     inline Settings& WithShowSpeakerLabels(bool value) { SetShowSpeakerLabels(value); return *this;}
 
 
     /**
-     * <p>Specify the maximum number of speakers you want to identify in your
+     * <p>Specify the maximum number of speakers you want to partition in your
      * media.</p> <p>Note that if your media contains more speakers than the specified
-     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
-     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * number, multiple speakers are treated as a single speaker.</p> <p>If you specify
+     * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline int GetMaxSpeakerLabels() const{ return m_maxSpeakerLabels; }
 
     /**
-     * <p>Specify the maximum number of speakers you want to identify in your
+     * <p>Specify the maximum number of speakers you want to partition in your
      * media.</p> <p>Note that if your media contains more speakers than the specified
-     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
-     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * number, multiple speakers are treated as a single speaker.</p> <p>If you specify
+     * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
 
     /**
-     * <p>Specify the maximum number of speakers you want to identify in your
+     * <p>Specify the maximum number of speakers you want to partition in your
      * media.</p> <p>Note that if your media contains more speakers than the specified
-     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
-     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * number, multiple speakers are treated as a single speaker.</p> <p>If you specify
+     * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline void SetMaxSpeakerLabels(int value) { m_maxSpeakerLabelsHasBeenSet = true; m_maxSpeakerLabels = value; }
 
     /**
-     * <p>Specify the maximum number of speakers you want to identify in your
+     * <p>Specify the maximum number of speakers you want to partition in your
      * media.</p> <p>Note that if your media contains more speakers than the specified
-     * number, multiple speakers will be identified as a single speaker.</p> <p>If you
-     * specify the <code>MaxSpeakerLabels</code> field, you must set the
+     * number, multiple speakers are treated as a single speaker.</p> <p>If you specify
+     * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline Settings& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
@@ -425,78 +425,78 @@ namespace Model
 
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline Settings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
 
     /**
-     * <p>Specify how you want your vocabulary filter applied to your transcript.</p>
-     * <p>To replace words with <code>***</code>, choose <code>mask</code>.</p> <p>To
-     * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
-     * them, choose <code>tag</code>.</p>
+     * <p>Specify how you want your custom vocabulary filter applied to your
+     * transcript.</p> <p>To replace words with <code>***</code>, choose
+     * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
+     * flag words without changing them, choose <code>tag</code>.</p>
      */
     inline Settings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
 
     bool m_showSpeakerLabels;
-    bool m_showSpeakerLabelsHasBeenSet;
+    bool m_showSpeakerLabelsHasBeenSet = false;
 
     int m_maxSpeakerLabels;
-    bool m_maxSpeakerLabelsHasBeenSet;
+    bool m_maxSpeakerLabelsHasBeenSet = false;
 
     bool m_channelIdentification;
-    bool m_channelIdentificationHasBeenSet;
+    bool m_channelIdentificationHasBeenSet = false;
 
     bool m_showAlternatives;
-    bool m_showAlternativesHasBeenSet;
+    bool m_showAlternativesHasBeenSet = false;
 
     int m_maxAlternatives;
-    bool m_maxAlternativesHasBeenSet;
+    bool m_maxAlternativesHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     VocabularyFilterMethod m_vocabularyFilterMethod;
-    bool m_vocabularyFilterMethodHasBeenSet;
+    bool m_vocabularyFilterMethodHasBeenSet = false;
   };
 
 } // namespace Model

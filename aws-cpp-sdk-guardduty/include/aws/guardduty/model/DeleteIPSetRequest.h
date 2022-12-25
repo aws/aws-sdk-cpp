@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API DeleteIPSetRequest : public GuardDutyRequest
+  class DeleteIPSetRequest : public GuardDutyRequest
   {
   public:
-    DeleteIPSetRequest();
+    AWS_GUARDDUTY_API DeleteIPSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteIPSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_ipSetId;
-    bool m_ipSetIdHasBeenSet;
+    bool m_ipSetIdHasBeenSet = false;
   };
 
 } // namespace Model

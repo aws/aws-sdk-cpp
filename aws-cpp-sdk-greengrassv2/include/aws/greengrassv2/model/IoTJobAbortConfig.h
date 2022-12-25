@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/IoTJobAbortConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API IoTJobAbortConfig
+  class IoTJobAbortConfig
   {
   public:
-    IoTJobAbortConfig();
-    IoTJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
-    IoTJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API IoTJobAbortConfig();
+    AWS_GREENGRASSV2_API IoTJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API IoTJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<IoTJobAbortCriteria> m_criteriaList;
-    bool m_criteriaListHasBeenSet;
+    bool m_criteriaListHasBeenSet = false;
   };
 
 } // namespace Model

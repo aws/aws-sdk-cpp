@@ -54,13 +54,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartChildWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API StartChildWorkflowExecutionDecisionAttributes
+  class StartChildWorkflowExecutionDecisionAttributes
   {
   public:
-    StartChildWorkflowExecutionDecisionAttributes();
-    StartChildWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    StartChildWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API StartChildWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API StartChildWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API StartChildWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -896,37 +896,37 @@ namespace Model
   private:
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_executionStartToCloseTimeout;
-    bool m_executionStartToCloseTimeoutHasBeenSet;
+    bool m_executionStartToCloseTimeoutHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_taskPriority;
-    bool m_taskPriorityHasBeenSet;
+    bool m_taskPriorityHasBeenSet = false;
 
     Aws::String m_taskStartToCloseTimeout;
-    bool m_taskStartToCloseTimeoutHasBeenSet;
+    bool m_taskStartToCloseTimeoutHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     Aws::String m_lambdaRole;
-    bool m_lambdaRoleHasBeenSet;
+    bool m_lambdaRoleHasBeenSet = false;
   };
 
 } // namespace Model

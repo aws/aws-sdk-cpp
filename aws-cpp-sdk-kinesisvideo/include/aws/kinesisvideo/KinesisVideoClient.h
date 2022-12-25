@@ -5,202 +5,73 @@
 
 #pragma once
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
-#include <aws/kinesisvideo/KinesisVideoErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesisvideo/model/CreateSignalingChannelResult.h>
-#include <aws/kinesisvideo/model/CreateStreamResult.h>
-#include <aws/kinesisvideo/model/DeleteSignalingChannelResult.h>
-#include <aws/kinesisvideo/model/DeleteStreamResult.h>
-#include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationResult.h>
-#include <aws/kinesisvideo/model/DescribeNotificationConfigurationResult.h>
-#include <aws/kinesisvideo/model/DescribeSignalingChannelResult.h>
-#include <aws/kinesisvideo/model/DescribeStreamResult.h>
-#include <aws/kinesisvideo/model/GetDataEndpointResult.h>
-#include <aws/kinesisvideo/model/GetSignalingChannelEndpointResult.h>
-#include <aws/kinesisvideo/model/ListSignalingChannelsResult.h>
-#include <aws/kinesisvideo/model/ListStreamsResult.h>
-#include <aws/kinesisvideo/model/ListTagsForResourceResult.h>
-#include <aws/kinesisvideo/model/ListTagsForStreamResult.h>
-#include <aws/kinesisvideo/model/TagResourceResult.h>
-#include <aws/kinesisvideo/model/TagStreamResult.h>
-#include <aws/kinesisvideo/model/UntagResourceResult.h>
-#include <aws/kinesisvideo/model/UntagStreamResult.h>
-#include <aws/kinesisvideo/model/UpdateDataRetentionResult.h>
-#include <aws/kinesisvideo/model/UpdateImageGenerationConfigurationResult.h>
-#include <aws/kinesisvideo/model/UpdateNotificationConfigurationResult.h>
-#include <aws/kinesisvideo/model/UpdateSignalingChannelResult.h>
-#include <aws/kinesisvideo/model/UpdateStreamResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideo
 {
-
-namespace Model
-{
-        class CreateSignalingChannelRequest;
-        class CreateStreamRequest;
-        class DeleteSignalingChannelRequest;
-        class DeleteStreamRequest;
-        class DescribeImageGenerationConfigurationRequest;
-        class DescribeNotificationConfigurationRequest;
-        class DescribeSignalingChannelRequest;
-        class DescribeStreamRequest;
-        class GetDataEndpointRequest;
-        class GetSignalingChannelEndpointRequest;
-        class ListSignalingChannelsRequest;
-        class ListStreamsRequest;
-        class ListTagsForResourceRequest;
-        class ListTagsForStreamRequest;
-        class TagResourceRequest;
-        class TagStreamRequest;
-        class UntagResourceRequest;
-        class UntagStreamRequest;
-        class UpdateDataRetentionRequest;
-        class UpdateImageGenerationConfigurationRequest;
-        class UpdateNotificationConfigurationRequest;
-        class UpdateSignalingChannelRequest;
-        class UpdateStreamRequest;
-
-        typedef Aws::Utils::Outcome<CreateSignalingChannelResult, KinesisVideoError> CreateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamResult, KinesisVideoError> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteSignalingChannelResult, KinesisVideoError> DeleteSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamResult, KinesisVideoError> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeImageGenerationConfigurationResult, KinesisVideoError> DescribeImageGenerationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationConfigurationResult, KinesisVideoError> DescribeNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeSignalingChannelResult, KinesisVideoError> DescribeSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisVideoError> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetDataEndpointResult, KinesisVideoError> GetDataEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetSignalingChannelEndpointResult, KinesisVideoError> GetSignalingChannelEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListSignalingChannelsResult, KinesisVideoError> ListSignalingChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisVideoError> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisVideoError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisVideoError> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, KinesisVideoError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TagStreamResult, KinesisVideoError> TagStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisVideoError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagStreamResult, KinesisVideoError> UntagStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataRetentionResult, KinesisVideoError> UpdateDataRetentionOutcome;
-        typedef Aws::Utils::Outcome<UpdateImageGenerationConfigurationResult, KinesisVideoError> UpdateImageGenerationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationConfigurationResult, KinesisVideoError> UpdateNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateSignalingChannelResult, KinesisVideoError> UpdateSignalingChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateStreamResult, KinesisVideoError> UpdateStreamOutcome;
-
-        typedef std::future<CreateSignalingChannelOutcome> CreateSignalingChannelOutcomeCallable;
-        typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
-        typedef std::future<DeleteSignalingChannelOutcome> DeleteSignalingChannelOutcomeCallable;
-        typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
-        typedef std::future<DescribeImageGenerationConfigurationOutcome> DescribeImageGenerationConfigurationOutcomeCallable;
-        typedef std::future<DescribeNotificationConfigurationOutcome> DescribeNotificationConfigurationOutcomeCallable;
-        typedef std::future<DescribeSignalingChannelOutcome> DescribeSignalingChannelOutcomeCallable;
-        typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
-        typedef std::future<GetDataEndpointOutcome> GetDataEndpointOutcomeCallable;
-        typedef std::future<GetSignalingChannelEndpointOutcome> GetSignalingChannelEndpointOutcomeCallable;
-        typedef std::future<ListSignalingChannelsOutcome> ListSignalingChannelsOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTagsForStreamOutcome> ListTagsForStreamOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TagStreamOutcome> TagStreamOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UntagStreamOutcome> UntagStreamOutcomeCallable;
-        typedef std::future<UpdateDataRetentionOutcome> UpdateDataRetentionOutcomeCallable;
-        typedef std::future<UpdateImageGenerationConfigurationOutcome> UpdateImageGenerationConfigurationOutcomeCallable;
-        typedef std::future<UpdateNotificationConfigurationOutcome> UpdateNotificationConfigurationOutcomeCallable;
-        typedef std::future<UpdateSignalingChannelOutcome> UpdateSignalingChannelOutcomeCallable;
-        typedef std::future<UpdateStreamOutcome> UpdateStreamOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoClient;
-
-    typedef std::function<void(const KinesisVideoClient*, const Model::CreateSignalingChannelRequest&, const Model::CreateSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSignalingChannelResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DeleteSignalingChannelRequest&, const Model::DeleteSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSignalingChannelResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeImageGenerationConfigurationRequest&, const Model::DescribeImageGenerationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageGenerationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeNotificationConfigurationRequest&, const Model::DescribeNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeSignalingChannelRequest&, const Model::DescribeSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSignalingChannelResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::GetDataEndpointRequest&, const Model::GetDataEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataEndpointResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::GetSignalingChannelEndpointRequest&, const Model::GetSignalingChannelEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSignalingChannelEndpointResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::ListSignalingChannelsRequest&, const Model::ListSignalingChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSignalingChannelsResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::ListTagsForStreamRequest&, const Model::ListTagsForStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::TagStreamRequest&, const Model::TagStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UntagStreamRequest&, const Model::UntagStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateDataRetentionRequest&, const Model::UpdateDataRetentionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataRetentionResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateImageGenerationConfigurationRequest&, const Model::UpdateImageGenerationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageGenerationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateNotificationConfigurationRequest&, const Model::UpdateNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateSignalingChannelRequest&, const Model::UpdateSignalingChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSignalingChannelResponseReceivedHandler;
-    typedef std::function<void(const KinesisVideoClient*, const Model::UpdateStreamRequest&, const Model::UpdateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamResponseReceivedHandler;
-
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoClient(const Aws::KinesisVideo::KinesisVideoClientConfiguration& clientConfiguration = Aws::KinesisVideo::KinesisVideoClientConfiguration(),
+                           std::shared_ptr<KinesisVideoEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<KinesisVideoEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::KinesisVideo::KinesisVideoClientConfiguration& clientConfiguration = Aws::KinesisVideo::KinesisVideoClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisVideoClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<KinesisVideoEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::KinesisVideo::KinesisVideoClientConfiguration& clientConfiguration = Aws::KinesisVideo::KinesisVideoClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KinesisVideoClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoClient();
-
 
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
@@ -289,6 +160,26 @@ namespace Model
         virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a stream’s edge configuration that was set using the
+         * <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of
+         * the configuration if the configuration is in sync with the Edge
+         * Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEdgeConfigurationOutcome DescribeEdgeConfiguration(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEdgeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEdgeConfigurationOutcomeCallable DescribeEdgeConfigurationCallable(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeEdgeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEdgeConfigurationAsync(const Model::DescribeEdgeConfigurationRequest& request, const DescribeEdgeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">AWS
@@ -305,6 +196,46 @@ namespace Model
          * An Async wrapper for DescribeImageGenerationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeImageGenerationConfigurationAsync(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the most current information about the stream. Either streamName or
+         * streamARN should be provided in the input.</p> <p>Returns the most current
+         * information about the stream. The <code>streamName</code> or
+         * <code>streamARN</code> should be provided in the input.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMappedResourceConfigurationOutcome DescribeMappedResourceConfiguration(const Model::DescribeMappedResourceConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMappedResourceConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMappedResourceConfigurationOutcomeCallable DescribeMappedResourceConfigurationCallable(const Model::DescribeMappedResourceConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMappedResourceConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMappedResourceConfigurationAsync(const Model::DescribeMappedResourceConfigurationRequest& request, const DescribeMappedResourceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the most current information about the channel. Specify the
+         * <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMediaStorageConfigurationOutcome DescribeMediaStorageConfiguration(const Model::DescribeMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMediaStorageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMediaStorageConfigurationOutcomeCallable DescribeMediaStorageConfigurationCallable(const Model::DescribeMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMediaStorageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMediaStorageConfigurationAsync(const Model::DescribeMediaStorageConfigurationRequest& request, const DescribeMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video
@@ -492,6 +423,36 @@ namespace Model
         virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>An asynchronous API that updates a stream’s existing edge configuration. The
+         * Kinesis Video Stream will sync the stream’s edge configuration with the Edge
+         * Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your
+         * premise. The time to sync can vary and depends on the connectivity of the Hub
+         * Device. The <code>SyncStatus</code> will be updated as the edge configuration is
+         * acknowledged, and synced with the Edge Agent. </p> <p>If this API is invoked for
+         * the first time, a new edge configuration will be created for the stream, and the
+         * sync status will be set to <code>SYNCING</code>. You will have to wait for the
+         * sync status to reach a terminal state such as: <code>IN_SYNC</code>, or
+         * <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+         * during the syncing process, a <code>ResourceInUseException</code> will be
+         * thrown. The connectivity of the stream’s edge configuration and the Edge Agent
+         * will be retried for 15 minutes. After 15 minutes, the status will transition
+         * into the <code>SYNC_FAILED</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcome StartEdgeConfigurationUpdate(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEdgeConfigurationUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcomeCallable StartEdgeConfigurationUpdateCallable(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * An Async wrapper for StartEdgeConfigurationUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartEdgeConfigurationUpdateAsync(const Model::StartEdgeConfigurationUpdateRequest& request, const StartEdgeConfigurationUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
          * pair (the value is optional) that you can define and assign to Amazon Web
          * Services resources. If you specify a tag that already exists, the tag value is
@@ -631,6 +592,28 @@ namespace Model
         virtual void UpdateImageGenerationConfigurationAsync(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a <code>SignalingChannel</code> to a stream to store the media.
+         * There are two signaling modes that can specified :</p> <ul> <li> <p>If the
+         * <code>StorageStatus</code> is disabled, no data will be stored, and the
+         * <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If the
+         * <code>StorageStatus</code> is enabled, the data will be stored in the
+         * <code>StreamARN</code> provided. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMediaStorageConfigurationOutcome UpdateMediaStorageConfiguration(const Model::UpdateMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMediaStorageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMediaStorageConfigurationOutcomeCallable UpdateMediaStorageConfigurationCallable(const Model::UpdateMediaStorageConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMediaStorageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMediaStorageConfigurationAsync(const Model::UpdateMediaStorageConfigurationRequest& request, const UpdateMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the notification information for a stream.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">AWS
@@ -696,35 +679,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KinesisVideoEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateSignalingChannelAsyncHelper(const Model::CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamAsyncHelper(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSignalingChannelAsyncHelper(const Model::DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamAsyncHelper(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeImageGenerationConfigurationAsyncHelper(const Model::DescribeImageGenerationConfigurationRequest& request, const DescribeImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeNotificationConfigurationAsyncHelper(const Model::DescribeNotificationConfigurationRequest& request, const DescribeNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSignalingChannelAsyncHelper(const Model::DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataEndpointAsyncHelper(const Model::GetDataEndpointRequest& request, const GetDataEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSignalingChannelEndpointAsyncHelper(const Model::GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSignalingChannelsAsyncHelper(const Model::ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForStreamAsyncHelper(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagStreamAsyncHelper(const Model::TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagStreamAsyncHelper(const Model::UntagStreamRequest& request, const UntagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDataRetentionAsyncHelper(const Model::UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateImageGenerationConfigurationAsyncHelper(const Model::UpdateImageGenerationConfigurationRequest& request, const UpdateImageGenerationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateNotificationConfigurationAsyncHelper(const Model::UpdateNotificationConfigurationRequest& request, const UpdateNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSignalingChannelAsyncHelper(const Model::UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamAsyncHelper(const Model::UpdateStreamRequest& request, const UpdateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
+      void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KinesisVideoClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KinesisVideoEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideo

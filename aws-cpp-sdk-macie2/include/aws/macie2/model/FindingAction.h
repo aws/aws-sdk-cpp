@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingAction">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API FindingAction
+  class FindingAction
   {
   public:
-    FindingAction();
-    FindingAction(Aws::Utils::Json::JsonView jsonValue);
-    FindingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API FindingAction();
+    AWS_MACIE2_API FindingAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API FindingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     FindingActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     ApiCallDetails m_apiCallDetails;
-    bool m_apiCallDetailsHasBeenSet;
+    bool m_apiCallDetailsHasBeenSet = false;
   };
 
 } // namespace Model

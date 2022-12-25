@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Facet">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API Facet
+  class Facet
   {
   public:
-    Facet();
-    Facet(Aws::Utils::Json::JsonView jsonValue);
-    Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API Facet();
+    AWS_CLOUDDIRECTORY_API Facet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ObjectType m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     FacetStyle m_facetStyle;
-    bool m_facetStyleHasBeenSet;
+    bool m_facetStyleHasBeenSet = false;
   };
 
 } // namespace Model

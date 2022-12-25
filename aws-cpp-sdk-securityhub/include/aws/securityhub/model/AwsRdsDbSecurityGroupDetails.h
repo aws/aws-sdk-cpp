@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSecurityGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSecurityGroupDetails
+  class AwsRdsDbSecurityGroupDetails
   {
   public:
-    AwsRdsDbSecurityGroupDetails();
-    AwsRdsDbSecurityGroupDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSecurityGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupDetails();
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -338,25 +338,25 @@ namespace Model
   private:
 
     Aws::String m_dbSecurityGroupArn;
-    bool m_dbSecurityGroupArnHasBeenSet;
+    bool m_dbSecurityGroupArnHasBeenSet = false;
 
     Aws::String m_dbSecurityGroupDescription;
-    bool m_dbSecurityGroupDescriptionHasBeenSet;
+    bool m_dbSecurityGroupDescriptionHasBeenSet = false;
 
     Aws::String m_dbSecurityGroupName;
-    bool m_dbSecurityGroupNameHasBeenSet;
+    bool m_dbSecurityGroupNameHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbSecurityGroupEc2SecurityGroup> m_ec2SecurityGroups;
-    bool m_ec2SecurityGroupsHasBeenSet;
+    bool m_ec2SecurityGroupsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbSecurityGroupIpRange> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SWF_API ListOpenWorkflowExecutionsRequest : public SWFRequest
+  class ListOpenWorkflowExecutionsRequest : public SWFRequest
   {
   public:
-    ListOpenWorkflowExecutionsRequest();
+    AWS_SWF_API ListOpenWorkflowExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListOpenWorkflowExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -416,28 +416,28 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     ExecutionTimeFilter m_startTimeFilter;
-    bool m_startTimeFilterHasBeenSet;
+    bool m_startTimeFilterHasBeenSet = false;
 
     WorkflowTypeFilter m_typeFilter;
-    bool m_typeFilterHasBeenSet;
+    bool m_typeFilterHasBeenSet = false;
 
     TagFilter m_tagFilter;
-    bool m_tagFilterHasBeenSet;
+    bool m_tagFilterHasBeenSet = false;
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     int m_maximumPageSize;
-    bool m_maximumPageSizeHasBeenSet;
+    bool m_maximumPageSizeHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
 
     WorkflowExecutionFilter m_executionFilter;
-    bool m_executionFilterHasBeenSet;
+    bool m_executionFilterHasBeenSet = false;
   };
 
 } // namespace Model

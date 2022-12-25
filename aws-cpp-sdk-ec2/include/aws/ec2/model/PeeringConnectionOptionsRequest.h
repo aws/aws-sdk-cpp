@@ -22,19 +22,24 @@ namespace Model
 {
 
   /**
-   * <p>The VPC peering connection options.</p><p><h3>See Also:</h3>   <a
+   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+   * EC2-Classic to a VPC. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+   * Guide</i>.</p>  <p>The VPC peering connection options.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PeeringConnectionOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PeeringConnectionOptionsRequest
+  class PeeringConnectionOptionsRequest
   {
   public:
-    PeeringConnectionOptionsRequest();
-    PeeringConnectionOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PeeringConnectionOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PeeringConnectionOptionsRequest();
+    AWS_EC2_API PeeringConnectionOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PeeringConnectionOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,13 +119,13 @@ namespace Model
   private:
 
     bool m_allowDnsResolutionFromRemoteVpc;
-    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
+    bool m_allowDnsResolutionFromRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
-    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
+    bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = false;
 
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
-    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
+    bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = false;
   };
 
 } // namespace Model

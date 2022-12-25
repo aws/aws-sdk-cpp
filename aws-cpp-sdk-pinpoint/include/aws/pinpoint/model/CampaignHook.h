@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignHook">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignHook
+  class CampaignHook
   {
   public:
-    CampaignHook();
-    CampaignHook(Aws::Utils::Json::JsonView jsonValue);
-    CampaignHook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignHook();
+    AWS_PINPOINT_API CampaignHook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignHook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionName;
-    bool m_lambdaFunctionNameHasBeenSet;
+    bool m_lambdaFunctionNameHasBeenSet = false;
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_webUrl;
-    bool m_webUrlHasBeenSet;
+    bool m_webUrlHasBeenSet = false;
   };
 
 } // namespace Model

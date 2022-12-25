@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramChannelDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramChannelDestinationSettings
+  class MultiplexProgramChannelDestinationSettings
   {
   public:
-    MultiplexProgramChannelDestinationSettings();
-    MultiplexProgramChannelDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramChannelDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramChannelDestinationSettings();
+    AWS_MEDIALIVE_API MultiplexProgramChannelDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramChannelDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,10 +162,10 @@ The
   private:
 
     Aws::String m_multiplexId;
-    bool m_multiplexIdHasBeenSet;
+    bool m_multiplexIdHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
   };
 
 } // namespace Model

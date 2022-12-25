@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AacSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AacSettings
+  class AacSettings
   {
   public:
-    AacSettings();
-    AacSettings(Aws::Utils::Json::JsonView jsonValue);
-    AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AacSettings();
+    AWS_MEDIACONVERT_API AacSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -55,7 +55,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -68,7 +68,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -81,7 +81,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -94,7 +94,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -107,7 +107,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -120,7 +120,7 @@ namespace Model
      * which signals to downstream systems that this stream contains "broadcaster mixed
      * AD". Note that the input received by the encoder must contain pre-mixed audio;
      * the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD,
-     * the encoder ignores any values you provide in AudioType and 
+     * the encoder ignores any values you provide in AudioType and
      * FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed
      * audio + audio description (AD). In this case, the encoder will use any values
      * you provide for AudioType and FollowInputAudioType.
@@ -205,56 +205,74 @@ namespace Model
 
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline const AacCodingMode& GetCodingMode() const{ return m_codingMode; }
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(const AacCodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(AacCodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(const AacCodingMode& value) { SetCodingMode(value); return *this;}
 
     /**
-     * Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values
-     * depend on rate control mode and profile. "1.0 - Audio Description (Receiver
-     * Mix)" setting receives a stereo description plus control track and emits a mono
-     * AAC encode of the description track, with control data emitted in the PES header
-     * as per ETSI TS 101 154 Annex E.
+     * The Coding mode that you specify determines the number of audio channels and the
+     * audio channel layout metadata in your AAC output. Valid coding modes depend on
+     * the Rate control mode and Profile that you select. The following list shows the
+     * number of audio channels and channel layout for each coding mode. * 1.0 Audio
+     * Description (Receiver Mix): One channel, C. Includes audio description data from
+     * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(AacCodingMode&& value) { SetCodingMode(std::move(value)); return *this;}
 
@@ -328,22 +346,50 @@ namespace Model
 
 
     /**
-     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     * Specify the Sample rate in Hz. Valid sample rates depend on the Profile and
+     * Coding mode that you select. The following list shows valid sample rates for
+     * each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver
+     * Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC
+     * Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding
+     * mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile,
+     * Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode
+     * 2.0: 22050, 24000, 32000, 44100, 48000.
      */
     inline AacSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
 
@@ -418,31 +464,31 @@ namespace Model
   private:
 
     AacAudioDescriptionBroadcasterMix m_audioDescriptionBroadcasterMix;
-    bool m_audioDescriptionBroadcasterMixHasBeenSet;
+    bool m_audioDescriptionBroadcasterMixHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     AacCodecProfile m_codecProfile;
-    bool m_codecProfileHasBeenSet;
+    bool m_codecProfileHasBeenSet = false;
 
     AacCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     AacRateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     AacRawFormat m_rawFormat;
-    bool m_rawFormatHasBeenSet;
+    bool m_rawFormatHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     AacSpecification m_specification;
-    bool m_specificationHasBeenSet;
+    bool m_specificationHasBeenSet = false;
 
     AacVbrQuality m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

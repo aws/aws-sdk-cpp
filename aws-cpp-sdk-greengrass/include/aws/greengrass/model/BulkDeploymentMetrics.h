@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeploymentMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API BulkDeploymentMetrics
+  class BulkDeploymentMetrics
   {
   public:
-    BulkDeploymentMetrics();
-    BulkDeploymentMetrics(Aws::Utils::Json::JsonView jsonValue);
-    BulkDeploymentMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API BulkDeploymentMetrics();
+    AWS_GREENGRASS_API BulkDeploymentMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API BulkDeploymentMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     int m_invalidInputRecords;
-    bool m_invalidInputRecordsHasBeenSet;
+    bool m_invalidInputRecordsHasBeenSet = false;
 
     int m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
 
     int m_retryAttempts;
-    bool m_retryAttemptsHasBeenSet;
+    bool m_retryAttemptsHasBeenSet = false;
   };
 
 } // namespace Model

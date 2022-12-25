@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration
+  class RightsizingRecommendationConfiguration
   {
   public:
-    RightsizingRecommendationConfiguration();
-    RightsizingRecommendationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RightsizingRecommendationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration();
+    AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RightsizingRecommendationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     RecommendationTarget m_recommendationTarget;
-    bool m_recommendationTargetHasBeenSet;
+    bool m_recommendationTargetHasBeenSet = false;
 
     bool m_benefitsConsidered;
-    bool m_benefitsConsideredHasBeenSet;
+    bool m_benefitsConsideredHasBeenSet = false;
   };
 
 } // namespace Model

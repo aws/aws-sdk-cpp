@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API CreateJobRequest : public S3ControlRequest
+  class CreateJobRequest : public S3ControlRequest
   {
   public:
-    CreateJobRequest();
+    AWS_S3CONTROL_API CreateJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The Amazon Web Services account ID that creates the job.</p>
@@ -498,37 +502,37 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_confirmationRequired;
-    bool m_confirmationRequiredHasBeenSet;
+    bool m_confirmationRequiredHasBeenSet = false;
 
     JobOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     JobReport m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     JobManifest m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<S3Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     JobManifestGenerator m_manifestGenerator;
-    bool m_manifestGeneratorHasBeenSet;
+    bool m_manifestGeneratorHasBeenSet = false;
   };
 
 } // namespace Model

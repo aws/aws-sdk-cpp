@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExperimentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ExperimentSummary
+  class ExperimentSummary
   {
   public:
-    ExperimentSummary();
-    ExperimentSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ExperimentSummary();
+    AWS_SAGEMAKER_API ExperimentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ExperimentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,22 +255,22 @@ namespace Model
   private:
 
     Aws::String m_experimentArn;
-    bool m_experimentArnHasBeenSet;
+    bool m_experimentArnHasBeenSet = false;
 
     Aws::String m_experimentName;
-    bool m_experimentNameHasBeenSet;
+    bool m_experimentNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     ExperimentSource m_experimentSource;
-    bool m_experimentSourceHasBeenSet;
+    bool m_experimentSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

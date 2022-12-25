@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerMetadataEntityTypesListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem
+  class EntityRecognizerMetadataEntityTypesListItem
   {
   public:
-    EntityRecognizerMetadataEntityTypesListItem();
-    EntityRecognizerMetadataEntityTypesListItem(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerMetadataEntityTypesListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem();
+    AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EntityTypesEvaluationMetrics m_evaluationMetrics;
-    bool m_evaluationMetricsHasBeenSet;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     int m_numberOfTrainMentions;
-    bool m_numberOfTrainMentionsHasBeenSet;
+    bool m_numberOfTrainMentionsHasBeenSet = false;
   };
 
 } // namespace Model

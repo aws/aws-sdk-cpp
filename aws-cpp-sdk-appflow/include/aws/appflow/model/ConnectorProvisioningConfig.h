@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorProvisioningConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorProvisioningConfig
+  class ConnectorProvisioningConfig
   {
   public:
-    ConnectorProvisioningConfig();
-    ConnectorProvisioningConfig(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorProvisioningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorProvisioningConfig();
+    AWS_APPFLOW_API ConnectorProvisioningConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorProvisioningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LambdaConnectorProvisioningConfig m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

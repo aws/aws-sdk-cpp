@@ -35,7 +35,7 @@ RiskExceptionConfigurationType& RiskExceptionConfigurationType::operator =(JsonV
 {
   if(jsonValue.ValueExists("BlockedIPRangeList"))
   {
-    Array<JsonView> blockedIPRangeListJsonList = jsonValue.GetArray("BlockedIPRangeList");
+    Aws::Utils::Array<JsonView> blockedIPRangeListJsonList = jsonValue.GetArray("BlockedIPRangeList");
     for(unsigned blockedIPRangeListIndex = 0; blockedIPRangeListIndex < blockedIPRangeListJsonList.GetLength(); ++blockedIPRangeListIndex)
     {
       m_blockedIPRangeList.push_back(blockedIPRangeListJsonList[blockedIPRangeListIndex].AsString());
@@ -45,7 +45,7 @@ RiskExceptionConfigurationType& RiskExceptionConfigurationType::operator =(JsonV
 
   if(jsonValue.ValueExists("SkippedIPRangeList"))
   {
-    Array<JsonView> skippedIPRangeListJsonList = jsonValue.GetArray("SkippedIPRangeList");
+    Aws::Utils::Array<JsonView> skippedIPRangeListJsonList = jsonValue.GetArray("SkippedIPRangeList");
     for(unsigned skippedIPRangeListIndex = 0; skippedIPRangeListIndex < skippedIPRangeListJsonList.GetLength(); ++skippedIPRangeListIndex)
     {
       m_skippedIPRangeList.push_back(skippedIPRangeListJsonList[skippedIPRangeListIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue RiskExceptionConfigurationType::Jsonize() const
 
   if(m_blockedIPRangeListHasBeenSet)
   {
-   Array<JsonValue> blockedIPRangeListJsonList(m_blockedIPRangeList.size());
+   Aws::Utils::Array<JsonValue> blockedIPRangeListJsonList(m_blockedIPRangeList.size());
    for(unsigned blockedIPRangeListIndex = 0; blockedIPRangeListIndex < blockedIPRangeListJsonList.GetLength(); ++blockedIPRangeListIndex)
    {
      blockedIPRangeListJsonList[blockedIPRangeListIndex].AsString(m_blockedIPRangeList[blockedIPRangeListIndex]);
@@ -73,7 +73,7 @@ JsonValue RiskExceptionConfigurationType::Jsonize() const
 
   if(m_skippedIPRangeListHasBeenSet)
   {
-   Array<JsonValue> skippedIPRangeListJsonList(m_skippedIPRangeList.size());
+   Aws::Utils::Array<JsonValue> skippedIPRangeListJsonList(m_skippedIPRangeList.size());
    for(unsigned skippedIPRangeListIndex = 0; skippedIPRangeListIndex < skippedIPRangeListJsonList.GetLength(); ++skippedIPRangeListIndex)
    {
      skippedIPRangeListJsonList[skippedIPRangeListIndex].AsString(m_skippedIPRangeList[skippedIPRangeListIndex]);

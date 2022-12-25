@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
+        static const int SQS_HASH = HashingUtils::HashString("SQS");
 
 
         SubscriptionProtocolType GetSubscriptionProtocolTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == HTTPS_HASH)
           {
             return SubscriptionProtocolType::HTTPS;
+          }
+          else if (hashCode == SQS_HASH)
+          {
+            return SubscriptionProtocolType::SQS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case SubscriptionProtocolType::HTTPS:
             return "HTTPS";
+          case SubscriptionProtocolType::SQS:
+            return "SQS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

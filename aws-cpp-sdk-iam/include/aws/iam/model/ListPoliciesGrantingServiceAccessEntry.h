@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccessEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListPoliciesGrantingServiceAccessEntry
+  class ListPoliciesGrantingServiceAccessEntry
   {
   public:
-    ListPoliciesGrantingServiceAccessEntry();
-    ListPoliciesGrantingServiceAccessEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ListPoliciesGrantingServiceAccessEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ListPoliciesGrantingServiceAccessEntry();
+    AWS_IAM_API ListPoliciesGrantingServiceAccessEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ListPoliciesGrantingServiceAccessEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -216,10 +216,10 @@ namespace Model
   private:
 
     Aws::String m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::Vector<PolicyGrantingServiceAccess> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

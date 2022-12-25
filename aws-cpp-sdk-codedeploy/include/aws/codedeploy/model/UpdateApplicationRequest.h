@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplicationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API UpdateApplicationRequest : public CodeDeployRequest
+  class UpdateApplicationRequest : public CodeDeployRequest
   {
   public:
-    UpdateApplicationRequest();
+    AWS_CODEDEPLOY_API UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_newApplicationName;
-    bool m_newApplicationNameHasBeenSet;
+    bool m_newApplicationNameHasBeenSet = false;
   };
 
 } // namespace Model

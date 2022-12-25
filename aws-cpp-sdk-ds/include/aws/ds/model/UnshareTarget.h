@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API UnshareTarget
+  class UnshareTarget
   {
   public:
-    UnshareTarget();
-    UnshareTarget(Aws::Utils::Json::JsonView jsonValue);
-    UnshareTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API UnshareTarget();
+    AWS_DIRECTORYSERVICE_API UnshareTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API UnshareTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     TargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

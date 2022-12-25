@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeliveryOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DeliveryOptions
+  class DeliveryOptions
   {
   public:
-    DeliveryOptions();
-    DeliveryOptions(Aws::Utils::Json::JsonView jsonValue);
-    DeliveryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DeliveryOptions();
+    AWS_PINPOINTEMAIL_API DeliveryOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DeliveryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
 
     Aws::String m_sendingPoolName;
-    bool m_sendingPoolNameHasBeenSet;
+    bool m_sendingPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

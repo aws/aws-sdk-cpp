@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/AlgorithmImage">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API AlgorithmImage
+  class AlgorithmImage
   {
   public:
-    AlgorithmImage();
-    AlgorithmImage(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API AlgorithmImage();
+    AWS_PERSONALIZE_API AlgorithmImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API AlgorithmImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_dockerURI;
-    bool m_dockerURIHasBeenSet;
+    bool m_dockerURIHasBeenSet = false;
   };
 
 } // namespace Model

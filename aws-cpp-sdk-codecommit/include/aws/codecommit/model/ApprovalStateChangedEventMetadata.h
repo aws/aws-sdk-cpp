@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ApprovalStateChangedEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ApprovalStateChangedEventMetadata
+  class ApprovalStateChangedEventMetadata
   {
   public:
-    ApprovalStateChangedEventMetadata();
-    ApprovalStateChangedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalStateChangedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ApprovalStateChangedEventMetadata();
+    AWS_CODECOMMIT_API ApprovalStateChangedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ApprovalStateChangedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     ApprovalState m_approvalStatus;
-    bool m_approvalStatusHasBeenSet;
+    bool m_approvalStatusHasBeenSet = false;
   };
 
 } // namespace Model

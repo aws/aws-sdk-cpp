@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AssertionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AssertionAttributes
+  class AssertionAttributes
   {
   public:
-    AssertionAttributes();
-    AssertionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AssertionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AssertionAttributes();
+    AWS_MANAGEDGRAFANA_API AssertionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AssertionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_login;
-    bool m_loginHasBeenSet;
+    bool m_loginHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_org;
-    bool m_orgHasBeenSet;
+    bool m_orgHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

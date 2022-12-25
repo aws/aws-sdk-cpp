@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileQueueConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfileQueueConfig
+  class RoutingProfileQueueConfig
   {
   public:
-    RoutingProfileQueueConfig();
-    RoutingProfileQueueConfig(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfileQueueConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfileQueueConfig();
+    AWS_CONNECT_API RoutingProfileQueueConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfileQueueConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     RoutingProfileQueueReference m_queueReference;
-    bool m_queueReferenceHasBeenSet;
+    bool m_queueReferenceHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     int m_delay;
-    bool m_delayHasBeenSet;
+    bool m_delayHasBeenSet = false;
   };
 
 } // namespace Model

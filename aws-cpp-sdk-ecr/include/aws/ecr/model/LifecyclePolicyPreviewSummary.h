@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyPreviewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API LifecyclePolicyPreviewSummary
+  class LifecyclePolicyPreviewSummary
   {
   public:
-    LifecyclePolicyPreviewSummary();
-    LifecyclePolicyPreviewSummary(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicyPreviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API LifecyclePolicyPreviewSummary();
+    AWS_ECR_API LifecyclePolicyPreviewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API LifecyclePolicyPreviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_expiringImageTotalCount;
-    bool m_expiringImageTotalCountHasBeenSet;
+    bool m_expiringImageTotalCountHasBeenSet = false;
   };
 
 } // namespace Model

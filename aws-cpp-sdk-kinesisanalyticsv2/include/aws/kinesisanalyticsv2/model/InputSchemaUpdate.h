@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputSchemaUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API InputSchemaUpdate
+  class InputSchemaUpdate
   {
   public:
-    InputSchemaUpdate();
-    InputSchemaUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputSchemaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API InputSchemaUpdate();
+    AWS_KINESISANALYTICSV2_API InputSchemaUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API InputSchemaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     RecordFormat m_recordFormatUpdate;
-    bool m_recordFormatUpdateHasBeenSet;
+    bool m_recordFormatUpdateHasBeenSet = false;
 
     Aws::String m_recordEncodingUpdate;
-    bool m_recordEncodingUpdateHasBeenSet;
+    bool m_recordEncodingUpdateHasBeenSet = false;
 
     Aws::Vector<RecordColumn> m_recordColumnUpdates;
-    bool m_recordColumnUpdatesHasBeenSet;
+    bool m_recordColumnUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API DeleteGroupRequest : public XRayRequest
+  class DeleteGroupRequest : public XRayRequest
   {
   public:
-    DeleteGroupRequest();
+    AWS_XRAY_API DeleteGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupARN;
-    bool m_groupARNHasBeenSet;
+    bool m_groupARNHasBeenSet = false;
   };
 
 } // namespace Model

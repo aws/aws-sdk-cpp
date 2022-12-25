@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TestRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API TestRecommendation
+  class TestRecommendation
   {
   public:
-    TestRecommendation();
-    TestRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    TestRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API TestRecommendation();
+    AWS_RESILIENCEHUB_API TestRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API TestRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -488,37 +488,37 @@ namespace Model
   private:
 
     Aws::String m_appComponentName;
-    bool m_appComponentNameHasBeenSet;
+    bool m_appComponentNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dependsOnAlarms;
-    bool m_dependsOnAlarmsHasBeenSet;
+    bool m_dependsOnAlarmsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_intent;
-    bool m_intentHasBeenSet;
+    bool m_intentHasBeenSet = false;
 
     Aws::Vector<RecommendationItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_prerequisite;
-    bool m_prerequisiteHasBeenSet;
+    bool m_prerequisiteHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     TestRisk m_risk;
-    bool m_riskHasBeenSet;
+    bool m_riskHasBeenSet = false;
 
     TestType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

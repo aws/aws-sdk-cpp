@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API InsightTimeRange
+  class InsightTimeRange
   {
   public:
-    InsightTimeRange();
-    InsightTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    InsightTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API InsightTimeRange();
+    AWS_DEVOPSGURU_API InsightTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API InsightTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

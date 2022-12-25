@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClassifierProperties
+  class DocumentClassifierProperties
   {
   public:
-    DocumentClassifierProperties();
-    DocumentClassifierProperties(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClassifierProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClassifierProperties();
+    AWS_COMPREHEND_API DocumentClassifierProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClassifierProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -924,58 +924,58 @@ namespace Model
   private:
 
     Aws::String m_documentClassifierArn;
-    bool m_documentClassifierArnHasBeenSet;
+    bool m_documentClassifierArnHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingStartTime;
-    bool m_trainingStartTimeHasBeenSet;
+    bool m_trainingStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTime;
-    bool m_trainingEndTimeHasBeenSet;
+    bool m_trainingEndTimeHasBeenSet = false;
 
     DocumentClassifierInputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     DocumentClassifierOutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ClassifierMetadata m_classifierMetadata;
-    bool m_classifierMetadataHasBeenSet;
+    bool m_classifierMetadataHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     DocumentClassifierMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_modelKmsKeyId;
-    bool m_modelKmsKeyIdHasBeenSet;
+    bool m_modelKmsKeyIdHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_sourceModelArn;
-    bool m_sourceModelArnHasBeenSet;
+    bool m_sourceModelArnHasBeenSet = false;
   };
 
 } // namespace Model

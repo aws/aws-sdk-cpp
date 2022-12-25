@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/Item">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTOREDATA_API Item
+  class Item
   {
   public:
-    Item();
-    Item(Aws::Utils::Json::JsonView jsonValue);
-    Item& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTOREDATA_API Item();
+    AWS_MEDIASTOREDATA_API Item(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTOREDATA_API Item& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTOREDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,22 +247,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ItemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     long long m_contentLength;
-    bool m_contentLengthHasBeenSet;
+    bool m_contentLengthHasBeenSet = false;
   };
 
 } // namespace Model

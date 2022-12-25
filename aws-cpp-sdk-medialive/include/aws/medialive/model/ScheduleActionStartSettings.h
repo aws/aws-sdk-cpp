@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ScheduleActionStartSettings
+  class ScheduleActionStartSettings
   {
   public:
-    ScheduleActionStartSettings();
-    ScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ScheduleActionStartSettings();
+    AWS_MEDIALIVE_API ScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     FixedModeScheduleActionStartSettings m_fixedModeScheduleActionStartSettings;
-    bool m_fixedModeScheduleActionStartSettingsHasBeenSet;
+    bool m_fixedModeScheduleActionStartSettingsHasBeenSet = false;
 
     FollowModeScheduleActionStartSettings m_followModeScheduleActionStartSettings;
-    bool m_followModeScheduleActionStartSettingsHasBeenSet;
+    bool m_followModeScheduleActionStartSettingsHasBeenSet = false;
 
     ImmediateModeScheduleActionStartSettings m_immediateModeScheduleActionStartSettings;
-    bool m_immediateModeScheduleActionStartSettingsHasBeenSet;
+    bool m_immediateModeScheduleActionStartSettingsHasBeenSet = false;
   };
 
 } // namespace Model

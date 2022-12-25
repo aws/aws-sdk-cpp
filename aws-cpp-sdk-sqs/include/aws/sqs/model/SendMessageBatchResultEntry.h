@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API SendMessageBatchResultEntry
+  class SendMessageBatchResultEntry
   {
   public:
-    SendMessageBatchResultEntry();
-    SendMessageBatchResultEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SendMessageBatchResultEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API SendMessageBatchResultEntry();
+    AWS_SQS_API SendMessageBatchResultEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API SendMessageBatchResultEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -400,22 +400,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_mD5OfMessageBody;
-    bool m_mD5OfMessageBodyHasBeenSet;
+    bool m_mD5OfMessageBodyHasBeenSet = false;
 
     Aws::String m_mD5OfMessageAttributes;
-    bool m_mD5OfMessageAttributesHasBeenSet;
+    bool m_mD5OfMessageAttributesHasBeenSet = false;
 
     Aws::String m_mD5OfMessageSystemAttributes;
-    bool m_mD5OfMessageSystemAttributesHasBeenSet;
+    bool m_mD5OfMessageSystemAttributesHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

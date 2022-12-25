@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/Resource">AWS API
    * Reference</a></p>
    */
-  class AWS_MOBILE_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API Resource();
+    AWS_MOBILE_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -181,19 +181,19 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_feature;
-    bool m_featureHasBeenSet;
+    bool m_featureHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

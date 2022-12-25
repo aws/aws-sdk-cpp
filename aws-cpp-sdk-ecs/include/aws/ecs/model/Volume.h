@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Volume
+  class Volume
   {
   public:
-    Volume();
-    Volume(Aws::Utils::Json::JsonView jsonValue);
-    Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Volume();
+    AWS_ECS_API Volume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,19 +331,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     HostVolumeProperties m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     DockerVolumeConfiguration m_dockerVolumeConfiguration;
-    bool m_dockerVolumeConfigurationHasBeenSet;
+    bool m_dockerVolumeConfigurationHasBeenSet = false;
 
     EFSVolumeConfiguration m_efsVolumeConfiguration;
-    bool m_efsVolumeConfigurationHasBeenSet;
+    bool m_efsVolumeConfigurationHasBeenSet = false;
 
     FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
-    bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet;
+    bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

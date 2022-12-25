@@ -35,10 +35,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroupInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API UpdateDeploymentGroupRequest : public CodeDeployRequest
+  class UpdateDeploymentGroupRequest : public CodeDeployRequest
   {
   public:
-    UpdateDeploymentGroupRequest();
+    AWS_CODEDEPLOY_API UpdateDeploymentGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,9 +46,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDeploymentGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -339,73 +339,127 @@ namespace Model
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateDeploymentGroupRequest& WithAutoScalingGroups(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroups(value); return *this;}
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateDeploymentGroupRequest& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(const Aws::String& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
-     * group, if you want to change them. To keep the Auto Scaling groups, enter their
-     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
-     * names.</p>
+     * group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling
+     * groups, enter their names or do not specify this parameter. </p> </li> <li>
+     * <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling
+     * group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon
+     * EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the
+     * error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li>
+     * </ul>
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
@@ -455,7 +509,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
@@ -464,7 +518,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
@@ -473,7 +527,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
@@ -482,7 +536,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = std::move(value); }
@@ -491,7 +545,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
@@ -500,7 +554,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(std::move(value)); return *this;}
@@ -509,7 +563,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
@@ -518,7 +572,7 @@ namespace Model
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
-     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User
      * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }
@@ -599,68 +653,74 @@ namespace Model
 
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline const OutdatedInstancesStrategy& GetOutdatedInstancesStrategy() const{ return m_outdatedInstancesStrategy; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline bool OutdatedInstancesStrategyHasBeenSet() const { return m_outdatedInstancesStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline void SetOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = value; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline void SetOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = std::move(value); }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { SetOutdatedInstancesStrategy(value); return *this;}
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { SetOutdatedInstancesStrategy(std::move(value)); return *this;}
 
@@ -766,42 +826,42 @@ namespace Model
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group includes only EC2 instances identified by all the tag
+     * deployment group includes only Amazon EC2 instances identified by all the tag
      * groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
@@ -911,58 +971,58 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_currentDeploymentGroupName;
-    bool m_currentDeploymentGroupNameHasBeenSet;
+    bool m_currentDeploymentGroupNameHasBeenSet = false;
 
     Aws::String m_newDeploymentGroupName;
-    bool m_newDeploymentGroupNameHasBeenSet;
+    bool m_newDeploymentGroupNameHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::Vector<EC2TagFilter> m_ec2TagFilters;
-    bool m_ec2TagFiltersHasBeenSet;
+    bool m_ec2TagFiltersHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
-    bool m_onPremisesInstanceTagFiltersHasBeenSet;
+    bool m_onPremisesInstanceTagFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
-    bool m_triggerConfigurationsHasBeenSet;
+    bool m_triggerConfigurationsHasBeenSet = false;
 
     AlarmConfiguration m_alarmConfiguration;
-    bool m_alarmConfigurationHasBeenSet;
+    bool m_alarmConfigurationHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     OutdatedInstancesStrategy m_outdatedInstancesStrategy;
-    bool m_outdatedInstancesStrategyHasBeenSet;
+    bool m_outdatedInstancesStrategyHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
-    bool m_deploymentStyleHasBeenSet;
+    bool m_deploymentStyleHasBeenSet = false;
 
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
     LoadBalancerInfo m_loadBalancerInfo;
-    bool m_loadBalancerInfoHasBeenSet;
+    bool m_loadBalancerInfoHasBeenSet = false;
 
     EC2TagSet m_ec2TagSet;
-    bool m_ec2TagSetHasBeenSet;
+    bool m_ec2TagSetHasBeenSet = false;
 
     Aws::Vector<ECSService> m_ecsServices;
-    bool m_ecsServicesHasBeenSet;
+    bool m_ecsServicesHasBeenSet = false;
 
     OnPremisesTagSet m_onPremisesTagSet;
-    bool m_onPremisesTagSetHasBeenSet;
+    bool m_onPremisesTagSetHasBeenSet = false;
   };
 
 } // namespace Model

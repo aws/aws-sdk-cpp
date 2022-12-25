@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParametersFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ParametersFilter
+  class ParametersFilter
   {
   public:
-    ParametersFilter();
-    ParametersFilter(Aws::Utils::Json::JsonView jsonValue);
-    ParametersFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ParametersFilter();
+    AWS_SSM_API ParametersFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ParametersFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     ParametersFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/IdentityProviderConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API IdentityProviderConfig
+  class IdentityProviderConfig
   {
   public:
-    IdentityProviderConfig();
-    IdentityProviderConfig(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API IdentityProviderConfig();
+    AWS_EKS_API IdentityProviderConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API IdentityProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

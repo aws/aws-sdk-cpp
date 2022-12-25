@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRuleMatchAttributesSources">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources
+  class RuleGroupSourceStatelessRuleMatchAttributesSources
   {
   public:
-    RuleGroupSourceStatelessRuleMatchAttributesSources();
-    RuleGroupSourceStatelessRuleMatchAttributesSources(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRuleMatchAttributesSources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_addressDefinition;
-    bool m_addressDefinitionHasBeenSet;
+    bool m_addressDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

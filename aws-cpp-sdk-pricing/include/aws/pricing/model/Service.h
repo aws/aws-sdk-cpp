@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/Service">AWS API
    * Reference</a></p>
    */
-  class AWS_PRICING_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRICING_API Service();
+    AWS_PRICING_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
   };
 
 } // namespace Model

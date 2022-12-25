@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API UpdateReportPlanRequest : public BackupRequest
+  class UpdateReportPlanRequest : public BackupRequest
   {
   public:
-    UpdateReportPlanRequest();
+    AWS_BACKUP_API UpdateReportPlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateReportPlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -318,19 +318,19 @@ namespace Model
   private:
 
     Aws::String m_reportPlanName;
-    bool m_reportPlanNameHasBeenSet;
+    bool m_reportPlanNameHasBeenSet = false;
 
     Aws::String m_reportPlanDescription;
-    bool m_reportPlanDescriptionHasBeenSet;
+    bool m_reportPlanDescriptionHasBeenSet = false;
 
     ReportDeliveryChannel m_reportDeliveryChannel;
-    bool m_reportDeliveryChannelHasBeenSet;
+    bool m_reportDeliveryChannelHasBeenSet = false;
 
     ReportSetting m_reportSetting;
-    bool m_reportSettingHasBeenSet;
+    bool m_reportSettingHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

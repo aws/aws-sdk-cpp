@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SourceSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API SourceSchema
+  class SourceSchema
   {
   public:
-    SourceSchema();
-    SourceSchema(Aws::Utils::Json::JsonView jsonValue);
-    SourceSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API SourceSchema();
+    AWS_KINESISANALYTICSV2_API SourceSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API SourceSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     RecordFormat m_recordFormat;
-    bool m_recordFormatHasBeenSet;
+    bool m_recordFormatHasBeenSet = false;
 
     Aws::String m_recordEncoding;
-    bool m_recordEncodingHasBeenSet;
+    bool m_recordEncodingHasBeenSet = false;
 
     Aws::Vector<RecordColumn> m_recordColumns;
-    bool m_recordColumnsHasBeenSet;
+    bool m_recordColumnsHasBeenSet = false;
   };
 
 } // namespace Model

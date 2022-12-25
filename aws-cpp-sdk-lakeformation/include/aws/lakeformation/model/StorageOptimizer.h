@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StorageOptimizer">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API StorageOptimizer
+  class StorageOptimizer
   {
   public:
-    StorageOptimizer();
-    StorageOptimizer(Aws::Utils::Json::JsonView jsonValue);
-    StorageOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API StorageOptimizer();
+    AWS_LAKEFORMATION_API StorageOptimizer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API StorageOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -326,19 +326,19 @@ namespace Model
   private:
 
     OptimizerType m_storageOptimizerType;
-    bool m_storageOptimizerTypeHasBeenSet;
+    bool m_storageOptimizerTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
 
     Aws::String m_lastRunDetails;
-    bool m_lastRunDetailsHasBeenSet;
+    bool m_lastRunDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -43,13 +43,13 @@ You must disable key rotation for this endpoint by setting
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/EncryptionContractConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API EncryptionContractConfiguration
+  class EncryptionContractConfiguration
   {
   public:
-    EncryptionContractConfiguration();
-    EncryptionContractConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionContractConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API EncryptionContractConfiguration();
+    AWS_MEDIAPACKAGE_API EncryptionContractConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API EncryptionContractConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ You must disable key rotation for this endpoint by setting
   private:
 
     PresetSpeke20Audio m_presetSpeke20Audio;
-    bool m_presetSpeke20AudioHasBeenSet;
+    bool m_presetSpeke20AudioHasBeenSet = false;
 
     PresetSpeke20Video m_presetSpeke20Video;
-    bool m_presetSpeke20VideoHasBeenSet;
+    bool m_presetSpeke20VideoHasBeenSet = false;
   };
 
 } // namespace Model

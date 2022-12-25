@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplatePrivateDnsNameOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplatePrivateDnsNameOptionsRequest
+  class LaunchTemplatePrivateDnsNameOptionsRequest
   {
   public:
-    LaunchTemplatePrivateDnsNameOptionsRequest();
-    LaunchTemplatePrivateDnsNameOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplatePrivateDnsNameOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplatePrivateDnsNameOptionsRequest();
+    AWS_EC2_API LaunchTemplatePrivateDnsNameOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplatePrivateDnsNameOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     HostnameType m_hostnameType;
-    bool m_hostnameTypeHasBeenSet;
+    bool m_hostnameTypeHasBeenSet = false;
 
     bool m_enableResourceNameDnsARecord;
-    bool m_enableResourceNameDnsARecordHasBeenSet;
+    bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
     bool m_enableResourceNameDnsAAAARecord;
-    bool m_enableResourceNameDnsAAAARecordHasBeenSet;
+    bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
   };
 
 } // namespace Model

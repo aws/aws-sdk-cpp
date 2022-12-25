@@ -38,6 +38,8 @@ ExportTask::ExportTask() :
     m_totalExtractedDataInGBHasBeenSet(false),
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
+    m_sourceType(ExportSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -60,6 +62,8 @@ ExportTask::ExportTask(const XmlNode& xmlNode) :
     m_totalExtractedDataInGBHasBeenSet(false),
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
+    m_sourceType(ExportSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -98,19 +102,19 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
     XmlNode snapshotTimeNode = resultNode.FirstChild("SnapshotTime");
     if(!snapshotTimeNode.IsNull())
     {
-      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotTimeHasBeenSet = true;
     }
     XmlNode taskStartTimeNode = resultNode.FirstChild("TaskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
-      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskStartTimeHasBeenSet = true;
     }
     XmlNode taskEndTimeNode = resultNode.FirstChild("TaskEndTime");
     if(!taskEndTimeNode.IsNull())
     {
-      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskEndTimeHasBeenSet = true;
     }
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
@@ -167,6 +171,12 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
       m_warningMessageHasBeenSet = true;
     }
+    XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
+    if(!sourceTypeNode.IsNull())
+    {
+      m_sourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
+      m_sourceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -195,17 +205,17 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
 
   if(m_snapshotTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_taskEndTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_s3BucketHasBeenSet)
@@ -253,6 +263,11 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
   }
 
+  if(m_sourceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -282,15 +297,15 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   }
   if(m_snapshotTimeHasBeenSet)
   {
-      oStream << location << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".SnapshotTime=" << StringUtils::URLEncode(m_snapshotTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_taskEndTimeHasBeenSet)
   {
-      oStream << location << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TaskEndTime=" << StringUtils::URLEncode(m_taskEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_s3BucketHasBeenSet)
   {
@@ -327,6 +342,10 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_warningMessageHasBeenSet)
   {
       oStream << location << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
+  }
+  if(m_sourceTypeHasBeenSet)
+  {
+      oStream << location << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

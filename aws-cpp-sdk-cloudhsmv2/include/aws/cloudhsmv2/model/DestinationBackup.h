@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DestinationBackup">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API DestinationBackup
+  class DestinationBackup
   {
   public:
-    DestinationBackup();
-    DestinationBackup(Aws::Utils::Json::JsonView jsonValue);
-    DestinationBackup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API DestinationBackup();
+    AWS_CLOUDHSMV2_API DestinationBackup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API DestinationBackup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_sourceBackup;
-    bool m_sourceBackupHasBeenSet;
+    bool m_sourceBackupHasBeenSet = false;
 
     Aws::String m_sourceCluster;
-    bool m_sourceClusterHasBeenSet;
+    bool m_sourceClusterHasBeenSet = false;
   };
 
 } // namespace Model

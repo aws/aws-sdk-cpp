@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API JobDetails();
+    AWS_TRANSLATE_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,13 +105,13 @@ namespace Model
   private:
 
     int m_translatedDocumentsCount;
-    bool m_translatedDocumentsCountHasBeenSet;
+    bool m_translatedDocumentsCountHasBeenSet = false;
 
     int m_documentsWithErrorsCount;
-    bool m_documentsWithErrorsCountHasBeenSet;
+    bool m_documentsWithErrorsCountHasBeenSet = false;
 
     int m_inputDocumentsCount;
-    bool m_inputDocumentsCountHasBeenSet;
+    bool m_inputDocumentsCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/NetworkPathComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API NetworkPathComponent
+  class NetworkPathComponent
   {
   public:
-    NetworkPathComponent();
-    NetworkPathComponent(Aws::Utils::Json::JsonView jsonValue);
-    NetworkPathComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API NetworkPathComponent();
+    AWS_SECURITYHUB_API NetworkPathComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API NetworkPathComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     NetworkHeader m_egress;
-    bool m_egressHasBeenSet;
+    bool m_egressHasBeenSet = false;
 
     NetworkHeader m_ingress;
-    bool m_ingressHasBeenSet;
+    bool m_ingressHasBeenSet = false;
   };
 
 } // namespace Model

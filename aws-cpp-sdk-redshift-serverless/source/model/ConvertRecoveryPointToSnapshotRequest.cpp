@@ -16,7 +16,8 @@ ConvertRecoveryPointToSnapshotRequest::ConvertRecoveryPointToSnapshotRequest() :
     m_recoveryPointIdHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,13 +43,24 @@ Aws::String ConvertRecoveryPointToSnapshotRequest::SerializePayload() const
 
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
   return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ConvertRecoveryPointToSnapshotRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ConvertRecoveryPointToSnapshot"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ConvertRecoveryPointToSnapshot"));
   return headers;
 
 }

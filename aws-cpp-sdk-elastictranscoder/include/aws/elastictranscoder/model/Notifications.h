@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Notifications">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Notifications
+  class Notifications
   {
   public:
-    Notifications();
-    Notifications(Aws::Utils::Json::JsonView jsonValue);
-    Notifications& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Notifications();
+    AWS_ELASTICTRANSCODER_API Notifications(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Notifications& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_progressing;
-    bool m_progressingHasBeenSet;
+    bool m_progressingHasBeenSet = false;
 
     Aws::String m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
 
     Aws::String m_warning;
-    bool m_warningHasBeenSet;
+    bool m_warningHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DATASYNC_API CreateLocationFsxOpenZfsRequest : public DataSyncRequest
+  class CreateLocationFsxOpenZfsRequest : public DataSyncRequest
   {
   public:
-    CreateLocationFsxOpenZfsRequest();
+    AWS_DATASYNC_API CreateLocationFsxOpenZfsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLocationFsxOpenZfs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::String m_fsxFilesystemArn;
-    bool m_fsxFilesystemArnHasBeenSet;
+    bool m_fsxFilesystemArnHasBeenSet = false;
 
     FsxProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

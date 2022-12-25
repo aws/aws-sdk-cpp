@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ProjectMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ProjectMetadata
+  class ProjectMetadata
   {
   public:
-    ProjectMetadata();
-    ProjectMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ProjectMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ProjectMetadata();
+    AWS_LOOKOUTFORVISION_API ProjectMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ProjectMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

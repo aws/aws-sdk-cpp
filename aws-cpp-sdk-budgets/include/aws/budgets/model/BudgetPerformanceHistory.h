@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/BudgetPerformanceHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API BudgetPerformanceHistory
+  class BudgetPerformanceHistory
   {
   public:
-    BudgetPerformanceHistory();
-    BudgetPerformanceHistory(Aws::Utils::Json::JsonView jsonValue);
-    BudgetPerformanceHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API BudgetPerformanceHistory();
+    AWS_BUDGETS_API BudgetPerformanceHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API BudgetPerformanceHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     BudgetType m_budgetType;
-    bool m_budgetTypeHasBeenSet;
+    bool m_budgetTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
-    bool m_costFiltersHasBeenSet;
+    bool m_costFiltersHasBeenSet = false;
 
     CostTypes m_costTypes;
-    bool m_costTypesHasBeenSet;
+    bool m_costTypesHasBeenSet = false;
 
     TimeUnit m_timeUnit;
-    bool m_timeUnitHasBeenSet;
+    bool m_timeUnitHasBeenSet = false;
 
     Aws::Vector<BudgetedAndActualAmounts> m_budgetedAndActualAmountsList;
-    bool m_budgetedAndActualAmountsListHasBeenSet;
+    bool m_budgetedAndActualAmountsListHasBeenSet = false;
   };
 
 } // namespace Model

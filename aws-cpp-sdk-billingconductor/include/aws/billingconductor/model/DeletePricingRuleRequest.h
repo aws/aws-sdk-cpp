@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API DeletePricingRuleRequest : public BillingConductorRequest
+  class DeletePricingRuleRequest : public BillingConductorRequest
   {
   public:
-    DeletePricingRuleRequest();
+    AWS_BILLINGCONDUCTOR_API DeletePricingRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,53 +29,61 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeletePricingRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline DeletePricingRuleRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline DeletePricingRuleRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </p>
+     * <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting.
+     * </p>
      */
     inline DeletePricingRuleRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

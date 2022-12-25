@@ -42,7 +42,8 @@ Profile::Profile() :
     m_shippingAddressHasBeenSet(false),
     m_mailingAddressHasBeenSet(false),
     m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_foundByItemsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Profile::Profile(JsonView jsonValue) :
     m_shippingAddressHasBeenSet(false),
     m_mailingAddressHasBeenSet(false),
     m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_foundByItemsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -234,6 +236,16 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_attributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FoundByItems"))
+  {
+    Aws::Utils::Array<JsonView> foundByItemsJsonList = jsonValue.GetArray("FoundByItems");
+    for(unsigned foundByItemsIndex = 0; foundByItemsIndex < foundByItemsJsonList.GetLength(); ++foundByItemsIndex)
+    {
+      m_foundByItems.push_back(foundByItemsJsonList[foundByItemsIndex].AsObject());
+    }
+    m_foundByItemsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -373,6 +385,17 @@ JsonValue Profile::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_foundByItemsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> foundByItemsJsonList(m_foundByItems.size());
+   for(unsigned foundByItemsIndex = 0; foundByItemsIndex < foundByItemsJsonList.GetLength(); ++foundByItemsIndex)
+   {
+     foundByItemsJsonList[foundByItemsIndex].AsObject(m_foundByItems[foundByItemsIndex].Jsonize());
+   }
+   payload.WithArray("FoundByItems", std::move(foundByItemsJsonList));
 
   }
 

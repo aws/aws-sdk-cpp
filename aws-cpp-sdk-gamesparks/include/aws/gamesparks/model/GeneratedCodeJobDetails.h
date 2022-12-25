@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/GeneratedCodeJobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API GeneratedCodeJobDetails
+  class GeneratedCodeJobDetails
   {
   public:
-    GeneratedCodeJobDetails();
-    GeneratedCodeJobDetails(Aws::Utils::Json::JsonView jsonValue);
-    GeneratedCodeJobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API GeneratedCodeJobDetails();
+    AWS_GAMESPARKS_API GeneratedCodeJobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API GeneratedCodeJobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::String m_generatedCodeJobId;
-    bool m_generatedCodeJobIdHasBeenSet;
+    bool m_generatedCodeJobIdHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     GeneratedCodeJobState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

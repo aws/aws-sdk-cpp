@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CustomImage">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CustomImage
+  class CustomImage
   {
   public:
-    CustomImage();
-    CustomImage(Aws::Utils::Json::JsonView jsonValue);
-    CustomImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CustomImage();
+    AWS_SAGEMAKER_API CustomImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CustomImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     int m_imageVersionNumber;
-    bool m_imageVersionNumberHasBeenSet;
+    bool m_imageVersionNumberHasBeenSet = false;
 
     Aws::String m_appImageConfigName;
-    bool m_appImageConfigNameHasBeenSet;
+    bool m_appImageConfigNameHasBeenSet = false;
   };
 
 } // namespace Model

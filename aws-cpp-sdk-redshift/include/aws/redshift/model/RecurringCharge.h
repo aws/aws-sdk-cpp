@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RecurringCharge">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API RecurringCharge
+  class RecurringCharge
   {
   public:
-    RecurringCharge();
-    RecurringCharge(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RecurringCharge& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API RecurringCharge();
+    AWS_REDSHIFT_API RecurringCharge(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API RecurringCharge& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     double m_recurringChargeAmount;
-    bool m_recurringChargeAmountHasBeenSet;
+    bool m_recurringChargeAmountHasBeenSet = false;
 
     Aws::String m_recurringChargeFrequency;
-    bool m_recurringChargeFrequencyHasBeenSet;
+    bool m_recurringChargeFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/route53domains/model/ContactDetail.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/route53domains/model/Nameserver.h>
+#include <aws/route53domains/model/DnssecKey.h>
 #include <utility>
 
 namespace Aws
@@ -34,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API GetDomainDetailResult
+  class GetDomainDetailResult
   {
   public:
-    GetDomainDetailResult();
-    GetDomainDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult();
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -79,37 +80,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline void SetNameservers(const Aws::Vector<Nameserver>& value) { m_nameservers = value; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameservers = std::move(value); }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline GetDomainDetailResult& WithNameservers(const Aws::Vector<Nameserver>& value) { SetNameservers(value); return *this;}
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline GetDomainDetailResult& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline GetDomainDetailResult& AddNameservers(const Nameserver& value) { m_nameservers.push_back(value); return *this; }
 
     /**
-     * <p>The name of the domain.</p>
+     * <p>The name servers of the domain.</p>
      */
     inline GetDomainDetailResult& AddNameservers(Nameserver&& value) { m_nameservers.push_back(std::move(value)); return *this; }
 
@@ -868,6 +869,42 @@ namespace Model
      */
     inline GetDomainDetailResult& AddStatusList(const char* value) { m_statusList.push_back(value); return *this; }
 
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline const Aws::Vector<DnssecKey>& GetDnssecKeys() const{ return m_dnssecKeys; }
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline void SetDnssecKeys(const Aws::Vector<DnssecKey>& value) { m_dnssecKeys = value; }
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline void SetDnssecKeys(Aws::Vector<DnssecKey>&& value) { m_dnssecKeys = std::move(value); }
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline GetDomainDetailResult& WithDnssecKeys(const Aws::Vector<DnssecKey>& value) { SetDnssecKeys(value); return *this;}
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline GetDomainDetailResult& WithDnssecKeys(Aws::Vector<DnssecKey>&& value) { SetDnssecKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline GetDomainDetailResult& AddDnssecKeys(const DnssecKey& value) { m_dnssecKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A complex type that contains information about the DNSSEC configuration.</p>
+     */
+    inline GetDomainDetailResult& AddDnssecKeys(DnssecKey&& value) { m_dnssecKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainName;
@@ -911,6 +948,8 @@ namespace Model
     Aws::String m_dnsSec;
 
     Aws::Vector<Aws::String> m_statusList;
+
+    Aws::Vector<DnssecKey> m_dnssecKeys;
   };
 
 } // namespace Model

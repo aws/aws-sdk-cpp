@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/UploadMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API UploadMetadata
+  class UploadMetadata
   {
   public:
-    UploadMetadata();
-    UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
-    UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API UploadMetadata();
+    AWS_CONNECTPARTICIPANT_API UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_urlExpiry;
-    bool m_urlExpiryHasBeenSet;
+    bool m_urlExpiryHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_headersToInclude;
-    bool m_headersToIncludeHasBeenSet;
+    bool m_headersToIncludeHasBeenSet = false;
   };
 
 } // namespace Model

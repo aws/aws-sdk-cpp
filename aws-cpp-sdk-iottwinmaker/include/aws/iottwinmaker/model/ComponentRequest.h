@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iottwinmaker/model/PropertyRequest.h>
+#include <aws/iottwinmaker/model/ComponentPropertyGroupRequest.h>
 #include <utility>
 
 namespace Aws
@@ -31,54 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ComponentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ComponentRequest
+  class ComponentRequest
   {
   public:
-    ComponentRequest();
-    ComponentRequest(Aws::Utils::Json::JsonView jsonValue);
-    ComponentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline ComponentRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline ComponentRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the component type.</p>
-     */
-    inline ComponentRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    AWS_IOTTWINMAKER_API ComponentRequest();
+    AWS_IOTTWINMAKER_API ComponentRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ComponentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,6 +80,47 @@ namespace Model
      * <p>The description of the component request.</p>
      */
     inline ComponentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline ComponentRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline ComponentRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the component type.</p>
+     */
+    inline ComponentRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
 
 
     /**
@@ -194,16 +195,80 @@ namespace Model
      */
     inline ComponentRequest& AddProperties(const char* key, const PropertyRequest& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& GetPropertyGroups() const{ return m_propertyGroups; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline void SetPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline void SetPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& WithPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { SetPropertyGroups(value); return *this;}
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& WithPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { SetPropertyGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(const Aws::String& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(Aws::String&& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(const Aws::String& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(Aws::String&& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(const char* key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The property groups.</p>
+     */
+    inline ComponentRequest& AddPropertyGroups(const char* key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
+
   private:
 
-    Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
-
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_componentTypeId;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::Map<Aws::String, PropertyRequest> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, ComponentPropertyGroupRequest> m_propertyGroups;
+    bool m_propertyGroupsHasBeenSet = false;
   };
 
 } // namespace Model

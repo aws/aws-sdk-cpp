@@ -30,7 +30,7 @@ ListLogSubscriptionsResult& ListLogSubscriptionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LogSubscriptions"))
   {
-    Array<JsonView> logSubscriptionsJsonList = jsonValue.GetArray("LogSubscriptions");
+    Aws::Utils::Array<JsonView> logSubscriptionsJsonList = jsonValue.GetArray("LogSubscriptions");
     for(unsigned logSubscriptionsIndex = 0; logSubscriptionsIndex < logSubscriptionsJsonList.GetLength(); ++logSubscriptionsIndex)
     {
       m_logSubscriptions.push_back(logSubscriptionsJsonList[logSubscriptionsIndex].AsObject());

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMESPARKS_API GetGeneratedCodeJobRequest : public GameSparksRequest
+  class GetGeneratedCodeJobRequest : public GameSparksRequest
   {
   public:
-    GetGeneratedCodeJobRequest();
+    AWS_GAMESPARKS_API GetGeneratedCodeJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetGeneratedCodeJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMESPARKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
   };
 
 } // namespace Model

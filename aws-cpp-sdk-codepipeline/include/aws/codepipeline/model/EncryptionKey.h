@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EncryptionKey">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API EncryptionKey
+  class EncryptionKey
   {
   public:
-    EncryptionKey();
-    EncryptionKey(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API EncryptionKey();
+    AWS_CODEPIPELINE_API EncryptionKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API EncryptionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     EncryptionKeyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

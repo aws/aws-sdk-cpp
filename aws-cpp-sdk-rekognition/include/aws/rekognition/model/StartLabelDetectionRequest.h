@@ -9,6 +9,9 @@
 #include <aws/rekognition/model/Video.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/NotificationChannel.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/LabelDetectionSettings.h>
+#include <aws/rekognition/model/LabelDetectionFeatureName.h>
 #include <utility>
 
 namespace Aws
@@ -20,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API StartLabelDetectionRequest : public RekognitionRequest
+  class StartLabelDetectionRequest : public RekognitionRequest
   {
   public:
-    StartLabelDetectionRequest();
+    AWS_REKOGNITION_API StartLabelDetectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartLabelDetection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -144,8 +147,9 @@ namespace Model
      * Rekognition is that a label is correctly identified.0 is the lowest confidence.
      * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
      * labels with a confidence level lower than this specified value.</p> <p>If you
-     * don't specify <code>MinConfidence</code>, the operation returns labels with
-     * confidence values greater than or equal to 50 percent.</p>
+     * don't specify <code>MinConfidence</code>, the operation returns labels and
+     * bounding boxes (if detected) with confidence values greater than or equal to 50
+     * percent.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
@@ -155,8 +159,9 @@ namespace Model
      * Rekognition is that a label is correctly identified.0 is the lowest confidence.
      * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
      * labels with a confidence level lower than this specified value.</p> <p>If you
-     * don't specify <code>MinConfidence</code>, the operation returns labels with
-     * confidence values greater than or equal to 50 percent.</p>
+     * don't specify <code>MinConfidence</code>, the operation returns labels and
+     * bounding boxes (if detected) with confidence values greater than or equal to 50
+     * percent.</p>
      */
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
 
@@ -166,8 +171,9 @@ namespace Model
      * Rekognition is that a label is correctly identified.0 is the lowest confidence.
      * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
      * labels with a confidence level lower than this specified value.</p> <p>If you
-     * don't specify <code>MinConfidence</code>, the operation returns labels with
-     * confidence values greater than or equal to 50 percent.</p>
+     * don't specify <code>MinConfidence</code>, the operation returns labels and
+     * bounding boxes (if detected) with confidence values greater than or equal to 50
+     * percent.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
@@ -177,8 +183,9 @@ namespace Model
      * Rekognition is that a label is correctly identified.0 is the lowest confidence.
      * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
      * labels with a confidence level lower than this specified value.</p> <p>If you
-     * don't specify <code>MinConfidence</code>, the operation returns labels with
-     * confidence values greater than or equal to 50 percent.</p>
+     * don't specify <code>MinConfidence</code>, the operation returns labels and
+     * bounding boxes (if detected) with confidence values greater than or equal to 50
+     * percent.</p>
      */
     inline StartLabelDetectionRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
@@ -296,22 +303,120 @@ namespace Model
      */
     inline StartLabelDetectionRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline const Aws::Vector<LabelDetectionFeatureName>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline void SetFeatures(const Aws::Vector<LabelDetectionFeatureName>& value) { m_featuresHasBeenSet = true; m_features = value; }
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline void SetFeatures(Aws::Vector<LabelDetectionFeatureName>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline StartLabelDetectionRequest& WithFeatures(const Aws::Vector<LabelDetectionFeatureName>& value) { SetFeatures(value); return *this;}
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline StartLabelDetectionRequest& WithFeatures(Aws::Vector<LabelDetectionFeatureName>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline StartLabelDetectionRequest& AddFeatures(const LabelDetectionFeatureName& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>The features to return after video analysis. You can specify that
+     * GENERAL_LABELS are returned.</p>
+     */
+    inline StartLabelDetectionRequest& AddFeatures(LabelDetectionFeatureName&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline const LabelDetectionSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline void SetSettings(const LabelDetectionSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline void SetSettings(LabelDetectionSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline StartLabelDetectionRequest& WithSettings(const LabelDetectionSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>The settings for a StartLabelDetection request.Contains the specified
+     * parameters for the label detection request of an asynchronous label analysis
+     * operation. Settings can include filters for GENERAL_LABELS.</p>
+     */
+    inline StartLabelDetectionRequest& WithSettings(LabelDetectionSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Video m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     Aws::String m_jobTag;
-    bool m_jobTagHasBeenSet;
+    bool m_jobTagHasBeenSet = false;
+
+    Aws::Vector<LabelDetectionFeatureName> m_features;
+    bool m_featuresHasBeenSet = false;
+
+    LabelDetectionSettings m_settings;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

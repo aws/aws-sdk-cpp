@@ -61,7 +61,7 @@ CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::
   const auto& abortDateIter = headers.find("x-amz-abort-date");
   if(abortDateIter != headers.end())
   {
-    m_abortDate = DateTime(abortDateIter->second, DateFormat::RFC822);
+    m_abortDate = DateTime(abortDateIter->second, Aws::Utils::DateFormat::RFC822);
   }
 
   const auto& abortRuleIdIter = headers.find("x-amz-abort-rule-id");

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAggregatedAssociationOverview">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceAggregatedAssociationOverview
+  class InstanceAggregatedAssociationOverview
   {
   public:
-    InstanceAggregatedAssociationOverview();
-    InstanceAggregatedAssociationOverview(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAggregatedAssociationOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceAggregatedAssociationOverview();
+    AWS_SSM_API InstanceAggregatedAssociationOverview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceAggregatedAssociationOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_detailedStatus;
-    bool m_detailedStatusHasBeenSet;
+    bool m_detailedStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_instanceAssociationStatusAggregatedCount;
-    bool m_instanceAssociationStatusAggregatedCountHasBeenSet;
+    bool m_instanceAssociationStatusAggregatedCountHasBeenSet = false;
   };
 
 } // namespace Model

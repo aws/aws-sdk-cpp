@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/RemediationActionWithOrder">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API RemediationActionWithOrder
+  class RemediationActionWithOrder
   {
   public:
-    RemediationActionWithOrder();
-    RemediationActionWithOrder(Aws::Utils::Json::JsonView jsonValue);
-    RemediationActionWithOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API RemediationActionWithOrder();
+    AWS_FMS_API RemediationActionWithOrder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API RemediationActionWithOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     RemediationAction m_remediationAction;
-    bool m_remediationActionHasBeenSet;
+    bool m_remediationActionHasBeenSet = false;
 
     int m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

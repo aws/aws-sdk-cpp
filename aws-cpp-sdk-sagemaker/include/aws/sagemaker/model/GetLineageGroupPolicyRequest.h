@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API GetLineageGroupPolicyRequest : public SageMakerRequest
+  class GetLineageGroupPolicyRequest : public SageMakerRequest
   {
   public:
-    GetLineageGroupPolicyRequest();
+    AWS_SAGEMAKER_API GetLineageGroupPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLineageGroupPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_lineageGroupName;
-    bool m_lineageGroupNameHasBeenSet;
+    bool m_lineageGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/F4vSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API F4vSettings
+  class F4vSettings
   {
   public:
-    F4vSettings();
-    F4vSettings(Aws::Utils::Json::JsonView jsonValue);
-    F4vSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API F4vSettings();
+    AWS_MEDIACONVERT_API F4vSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API F4vSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     F4vMoovPlacement m_moovPlacement;
-    bool m_moovPlacementHasBeenSet;
+    bool m_moovPlacementHasBeenSet = false;
   };
 
 } // namespace Model

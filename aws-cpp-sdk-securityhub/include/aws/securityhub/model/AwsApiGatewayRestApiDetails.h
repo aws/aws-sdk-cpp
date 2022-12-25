@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayRestApiDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayRestApiDetails
+  class AwsApiGatewayRestApiDetails
   {
   public:
-    AwsApiGatewayRestApiDetails();
-    AwsApiGatewayRestApiDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayRestApiDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayRestApiDetails();
+    AWS_SECURITYHUB_API AwsApiGatewayRestApiDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayRestApiDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -458,31 +458,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_binaryMediaTypes;
-    bool m_binaryMediaTypesHasBeenSet;
+    bool m_binaryMediaTypesHasBeenSet = false;
 
     int m_minimumCompressionSize;
-    bool m_minimumCompressionSizeHasBeenSet;
+    bool m_minimumCompressionSizeHasBeenSet = false;
 
     Aws::String m_apiKeySource;
-    bool m_apiKeySourceHasBeenSet;
+    bool m_apiKeySourceHasBeenSet = false;
 
     AwsApiGatewayEndpointConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

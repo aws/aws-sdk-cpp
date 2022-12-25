@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JsonTokenTypeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API JsonTokenTypeConfiguration
+  class JsonTokenTypeConfiguration
   {
   public:
-    JsonTokenTypeConfiguration();
-    JsonTokenTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JsonTokenTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API JsonTokenTypeConfiguration();
+    AWS_KENDRA_API JsonTokenTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API JsonTokenTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_userNameAttributeField;
-    bool m_userNameAttributeFieldHasBeenSet;
+    bool m_userNameAttributeFieldHasBeenSet = false;
 
     Aws::String m_groupAttributeField;
-    bool m_groupAttributeFieldHasBeenSet;
+    bool m_groupAttributeFieldHasBeenSet = false;
   };
 
 } // namespace Model

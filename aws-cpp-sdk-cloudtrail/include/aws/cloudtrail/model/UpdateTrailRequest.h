@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrailRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API UpdateTrailRequest : public CloudTrailRequest
+  class UpdateTrailRequest : public CloudTrailRequest
   {
   public:
-    UpdateTrailRequest();
+    AWS_CLOUDTRAIL_API UpdateTrailRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTrail"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -746,37 +746,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_snsTopicName;
-    bool m_snsTopicNameHasBeenSet;
+    bool m_snsTopicNameHasBeenSet = false;
 
     bool m_includeGlobalServiceEvents;
-    bool m_includeGlobalServiceEventsHasBeenSet;
+    bool m_includeGlobalServiceEventsHasBeenSet = false;
 
     bool m_isMultiRegionTrail;
-    bool m_isMultiRegionTrailHasBeenSet;
+    bool m_isMultiRegionTrailHasBeenSet = false;
 
     bool m_enableLogFileValidation;
-    bool m_enableLogFileValidationHasBeenSet;
+    bool m_enableLogFileValidationHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_isOrganizationTrail;
-    bool m_isOrganizationTrailHasBeenSet;
+    bool m_isOrganizationTrailHasBeenSet = false;
   };
 
 } // namespace Model

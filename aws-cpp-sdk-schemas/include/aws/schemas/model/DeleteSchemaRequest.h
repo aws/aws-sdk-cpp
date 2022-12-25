@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SCHEMAS_API DeleteSchemaRequest : public SchemasRequest
+  class DeleteSchemaRequest : public SchemasRequest
   {
   public:
-    DeleteSchemaRequest();
+    AWS_SCHEMAS_API DeleteSchemaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSchema"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
   };
 
 } // namespace Model

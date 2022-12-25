@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBClusterMember">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API DBClusterMember
+  class DBClusterMember
   {
   public:
-    DBClusterMember();
-    DBClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBClusterMember();
+    AWS_NEPTUNE_API DBClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DBClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     bool m_isClusterWriter;
-    bool m_isClusterWriterHasBeenSet;
+    bool m_isClusterWriterHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupStatus;
-    bool m_dBClusterParameterGroupStatusHasBeenSet;
+    bool m_dBClusterParameterGroupStatusHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
   };
 
 } // namespace Model

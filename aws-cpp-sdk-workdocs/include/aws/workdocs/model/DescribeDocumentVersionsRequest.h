@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKDOCS_API DescribeDocumentVersionsRequest : public WorkDocsRequest
+  class DescribeDocumentVersionsRequest : public WorkDocsRequest
   {
   public:
-    DescribeDocumentVersionsRequest();
+    AWS_WORKDOCS_API DescribeDocumentVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,11 +33,11 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDocumentVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKDOCS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WORKDOCS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKDOCS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -300,22 +300,22 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Aws::String m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

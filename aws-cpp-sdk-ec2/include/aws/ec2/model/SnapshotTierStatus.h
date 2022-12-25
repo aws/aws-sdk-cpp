@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotTierStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SnapshotTierStatus
+  class SnapshotTierStatus
   {
   public:
-    SnapshotTierStatus();
-    SnapshotTierStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotTierStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotTierStatus();
+    AWS_EC2_API SnapshotTierStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotTierStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -490,40 +490,40 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     SnapshotState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     StorageTier m_storageTier;
-    bool m_storageTierHasBeenSet;
+    bool m_storageTierHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastTieringStartTime;
-    bool m_lastTieringStartTimeHasBeenSet;
+    bool m_lastTieringStartTimeHasBeenSet = false;
 
     int m_lastTieringProgress;
-    bool m_lastTieringProgressHasBeenSet;
+    bool m_lastTieringProgressHasBeenSet = false;
 
     TieringOperationStatus m_lastTieringOperationStatus;
-    bool m_lastTieringOperationStatusHasBeenSet;
+    bool m_lastTieringOperationStatusHasBeenSet = false;
 
     Aws::String m_lastTieringOperationStatusDetail;
-    bool m_lastTieringOperationStatusDetailHasBeenSet;
+    bool m_lastTieringOperationStatusDetailHasBeenSet = false;
 
     Aws::Utils::DateTime m_archivalCompleteTime;
-    bool m_archivalCompleteTimeHasBeenSet;
+    bool m_archivalCompleteTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreExpiryTime;
-    bool m_restoreExpiryTimeHasBeenSet;
+    bool m_restoreExpiryTimeHasBeenSet = false;
   };
 
 } // namespace Model

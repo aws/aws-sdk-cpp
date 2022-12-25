@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API ListDistributionsByRealtimeLogConfig2020_05_31Request : public CloudFrontRequest
+  class ListDistributionsByRealtimeLogConfig2020_05_31Request : public CloudFrontRequest
   {
   public:
-    ListDistributionsByRealtimeLogConfig2020_05_31Request();
+    AWS_CLOUDFRONT_API ListDistributionsByRealtimeLogConfig2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,70 +29,70 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDistributionsByRealtimeLogConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListDistributionsByRealtimeLogConfig2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListDistributionsByRealtimeLogConfig2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distributions. The response includes distributions in the list that
-     * occur after the marker. To get the next page of the list, set this field’s value
-     * to the value of <code>NextMarker</code> from the current page’s response.</p>
+     * occur after the marker. To get the next page of the list, set this field's value
+     * to the value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListDistributionsByRealtimeLogConfig2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigName;
-    bool m_realtimeLogConfigNameHasBeenSet;
+    bool m_realtimeLogConfigNameHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigArn;
-    bool m_realtimeLogConfigArnHasBeenSet;
+    bool m_realtimeLogConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

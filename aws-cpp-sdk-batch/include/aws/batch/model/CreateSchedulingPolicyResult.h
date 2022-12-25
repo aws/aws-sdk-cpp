@@ -24,12 +24,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API CreateSchedulingPolicyResult
+  class CreateSchedulingPolicyResult
   {
   public:
-    CreateSchedulingPolicyResult();
-    CreateSchedulingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSchedulingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CreateSchedulingPolicyResult();
+    AWS_BATCH_API CreateSchedulingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CreateSchedulingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -80,7 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
@@ -88,7 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
@@ -96,7 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
@@ -104,7 +104,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateSchedulingPolicyResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -112,7 +112,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateSchedulingPolicyResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline CreateSchedulingPolicyResult& WithArn(const char* value) { SetArn(value); return *this;}
 

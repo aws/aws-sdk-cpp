@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Distribution">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Distribution
+  class Distribution
   {
   public:
-    Distribution();
-    Distribution(Aws::Utils::Json::JsonView jsonValue);
-    Distribution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Distribution();
+    AWS_IMAGEBUILDER_API Distribution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Distribution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     AmiDistributionConfiguration m_amiDistributionConfiguration;
-    bool m_amiDistributionConfigurationHasBeenSet;
+    bool m_amiDistributionConfigurationHasBeenSet = false;
 
     ContainerDistributionConfiguration m_containerDistributionConfiguration;
-    bool m_containerDistributionConfigurationHasBeenSet;
+    bool m_containerDistributionConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_licenseConfigurationArns;
-    bool m_licenseConfigurationArnsHasBeenSet;
+    bool m_licenseConfigurationArnsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateConfiguration> m_launchTemplateConfigurations;
-    bool m_launchTemplateConfigurationsHasBeenSet;
+    bool m_launchTemplateConfigurationsHasBeenSet = false;
 
     S3ExportConfiguration m_s3ExportConfiguration;
-    bool m_s3ExportConfigurationHasBeenSet;
+    bool m_s3ExportConfigurationHasBeenSet = false;
 
     Aws::Vector<FastLaunchConfiguration> m_fastLaunchConfigurations;
-    bool m_fastLaunchConfigurationsHasBeenSet;
+    bool m_fastLaunchConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

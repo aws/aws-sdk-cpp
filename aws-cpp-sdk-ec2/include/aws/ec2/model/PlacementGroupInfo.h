@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PlacementGroupInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PlacementGroupInfo
+  class PlacementGroupInfo
   {
   public:
-    PlacementGroupInfo();
-    PlacementGroupInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PlacementGroupInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PlacementGroupInfo();
+    AWS_EC2_API PlacementGroupInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PlacementGroupInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<PlacementGroupStrategy> m_supportedStrategies;
-    bool m_supportedStrategiesHasBeenSet;
+    bool m_supportedStrategiesHasBeenSet = false;
   };
 
 } // namespace Model

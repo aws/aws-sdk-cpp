@@ -27,12 +27,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetMemberResult
+  class GetMemberResult
   {
   public:
-    GetMemberResult();
-    GetMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMemberResult();
+    AWS_MACIE2_API GetMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -297,74 +297,74 @@ namespace Model
 
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
-     * associated with the member account in Amazon Macie.</p>
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
+     * associated with the account in Amazon Macie.</p>
      */
     inline GetMemberResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

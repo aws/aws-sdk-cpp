@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ResourceLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ResourceLimitExceededException
+  class ResourceLimitExceededException
   {
   public:
-    ResourceLimitExceededException();
-    ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ResourceLimitExceededException();
+    AWS_EKS_API ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

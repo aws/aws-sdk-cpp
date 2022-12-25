@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DataSource();
+    AWS_PERSONALIZE_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_dataLocation;
-    bool m_dataLocationHasBeenSet;
+    bool m_dataLocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/WavSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API WavSettings
+  class WavSettings
   {
   public:
-    WavSettings();
-    WavSettings(Aws::Utils::Json::JsonView jsonValue);
-    WavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API WavSettings();
+    AWS_MEDIALIVE_API WavSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API WavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,13 +118,13 @@ namespace Model
   private:
 
     double m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     WavCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     double m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

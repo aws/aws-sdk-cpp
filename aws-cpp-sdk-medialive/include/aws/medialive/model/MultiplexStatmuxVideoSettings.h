@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexStatmuxVideoSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings
+  class MultiplexStatmuxVideoSettings
   {
   public:
-    MultiplexStatmuxVideoSettings();
-    MultiplexStatmuxVideoSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexStatmuxVideoSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings();
+    AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,13 +116,13 @@ namespace Model
   private:
 
     int m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     int m_minimumBitrate;
-    bool m_minimumBitrateHasBeenSet;
+    bool m_minimumBitrateHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

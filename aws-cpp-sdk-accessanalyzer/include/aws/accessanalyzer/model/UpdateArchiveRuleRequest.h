@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API UpdateArchiveRuleRequest : public AccessAnalyzerRequest
+  class UpdateArchiveRuleRequest : public AccessAnalyzerRequest
   {
   public:
-    UpdateArchiveRuleRequest();
+    AWS_ACCESSANALYZER_API UpdateArchiveRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateArchiveRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -80,44 +80,44 @@ namespace Model
 
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline UpdateArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline UpdateArchiveRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline UpdateArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline UpdateArchiveRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>A client token.</p>
+     * <p>The name of the rule to update.</p>
      */
-    inline UpdateArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline UpdateArchiveRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
 
     /**
@@ -194,58 +194,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline UpdateArchiveRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+    inline UpdateArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline UpdateArchiveRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
+    inline UpdateArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the rule to update.</p>
+     * <p>A client token.</p>
      */
-    inline UpdateArchiveRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    inline UpdateArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
-
-    Aws::Map<Aws::String, Criterion> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Criterion> m_filter;
+    bool m_filterHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

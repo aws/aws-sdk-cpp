@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Nodegroup">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Nodegroup
+  class Nodegroup
   {
   public:
-    Nodegroup();
-    Nodegroup(Aws::Utils::Json::JsonView jsonValue);
-    Nodegroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Nodegroup();
+    AWS_EKS_API Nodegroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Nodegroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1188,73 +1188,73 @@ namespace Model
   private:
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_nodegroupArn;
-    bool m_nodegroupArnHasBeenSet;
+    bool m_nodegroupArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
 
     NodegroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CapacityTypes m_capacityType;
-    bool m_capacityTypeHasBeenSet;
+    bool m_capacityTypeHasBeenSet = false;
 
     NodegroupScalingConfig m_scalingConfig;
-    bool m_scalingConfigHasBeenSet;
+    bool m_scalingConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTypes;
-    bool m_instanceTypesHasBeenSet;
+    bool m_instanceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     RemoteAccessConfig m_remoteAccess;
-    bool m_remoteAccessHasBeenSet;
+    bool m_remoteAccessHasBeenSet = false;
 
     AMITypes m_amiType;
-    bool m_amiTypeHasBeenSet;
+    bool m_amiTypeHasBeenSet = false;
 
     Aws::String m_nodeRole;
-    bool m_nodeRoleHasBeenSet;
+    bool m_nodeRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::Vector<Taint> m_taints;
-    bool m_taintsHasBeenSet;
+    bool m_taintsHasBeenSet = false;
 
     NodegroupResources m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     int m_diskSize;
-    bool m_diskSizeHasBeenSet;
+    bool m_diskSizeHasBeenSet = false;
 
     NodegroupHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     NodegroupUpdateConfig m_updateConfig;
-    bool m_updateConfigHasBeenSet;
+    bool m_updateConfigHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

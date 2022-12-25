@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AlarmModelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AlarmModelSummary
+  class AlarmModelSummary
   {
   public:
-    AlarmModelSummary();
-    AlarmModelSummary(Aws::Utils::Json::JsonView jsonValue);
-    AlarmModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AlarmModelSummary();
+    AWS_IOTEVENTS_API AlarmModelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AlarmModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_alarmModelDescription;
-    bool m_alarmModelDescriptionHasBeenSet;
+    bool m_alarmModelDescriptionHasBeenSet = false;
 
     Aws::String m_alarmModelName;
-    bool m_alarmModelNameHasBeenSet;
+    bool m_alarmModelNameHasBeenSet = false;
   };
 
 } // namespace Model

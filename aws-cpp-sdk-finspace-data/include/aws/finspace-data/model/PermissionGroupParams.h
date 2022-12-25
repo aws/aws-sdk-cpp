@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/PermissionGroupParams">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API PermissionGroupParams
+  class PermissionGroupParams
   {
   public:
-    PermissionGroupParams();
-    PermissionGroupParams(Aws::Utils::Json::JsonView jsonValue);
-    PermissionGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API PermissionGroupParams();
+    AWS_FINSPACEDATA_API PermissionGroupParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API PermissionGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_permissionGroupId;
-    bool m_permissionGroupIdHasBeenSet;
+    bool m_permissionGroupIdHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_datasetPermissions;
-    bool m_datasetPermissionsHasBeenSet;
+    bool m_datasetPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

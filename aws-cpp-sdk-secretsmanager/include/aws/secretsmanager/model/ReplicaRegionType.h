@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicaRegionType">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API ReplicaRegionType
+  class ReplicaRegionType
   {
   public:
-    ReplicaRegionType();
-    ReplicaRegionType(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaRegionType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API ReplicaRegionType();
+    AWS_SECRETSMANAGER_API ReplicaRegionType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API ReplicaRegionType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

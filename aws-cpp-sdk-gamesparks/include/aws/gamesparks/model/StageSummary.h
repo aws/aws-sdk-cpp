@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/StageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API StageSummary
+  class StageSummary
   {
   public:
-    StageSummary();
-    StageSummary(Aws::Utils::Json::JsonView jsonValue);
-    StageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API StageSummary();
+    AWS_GAMESPARKS_API StageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API StageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_gameKey;
-    bool m_gameKeyHasBeenSet;
+    bool m_gameKeyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

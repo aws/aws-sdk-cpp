@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ScheduleEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API ScheduleEntry
+  class ScheduleEntry
   {
   public:
-    ScheduleEntry();
-    ScheduleEntry(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API ScheduleEntry();
+    AWS_MEDIATAILOR_API ScheduleEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API ScheduleEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -299,32 +299,32 @@ namespace Model
 
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline const ScheduleEntryType& GetScheduleEntryType() const{ return m_scheduleEntryType; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline bool ScheduleEntryTypeHasBeenSet() const { return m_scheduleEntryTypeHasBeenSet; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline void SetScheduleEntryType(const ScheduleEntryType& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = value; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline void SetScheduleEntryType(ScheduleEntryType&& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = std::move(value); }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline ScheduleEntry& WithScheduleEntryType(const ScheduleEntryType& value) { SetScheduleEntryType(value); return *this;}
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline ScheduleEntry& WithScheduleEntryType(ScheduleEntryType&& value) { SetScheduleEntryType(std::move(value)); return *this;}
 
@@ -413,34 +413,34 @@ namespace Model
   private:
 
     long long m_approximateDurationSeconds;
-    bool m_approximateDurationSecondsHasBeenSet;
+    bool m_approximateDurationSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_approximateStartTime;
-    bool m_approximateStartTimeHasBeenSet;
+    bool m_approximateStartTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
 
     Aws::Vector<ScheduleAdBreak> m_scheduleAdBreaks;
-    bool m_scheduleAdBreaksHasBeenSet;
+    bool m_scheduleAdBreaksHasBeenSet = false;
 
     ScheduleEntryType m_scheduleEntryType;
-    bool m_scheduleEntryTypeHasBeenSet;
+    bool m_scheduleEntryTypeHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

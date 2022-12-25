@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ErrorRootCauseService">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ErrorRootCauseService
+  class ErrorRootCauseService
   {
   public:
-    ErrorRootCauseService();
-    ErrorRootCauseService(Aws::Utils::Json::JsonView jsonValue);
-    ErrorRootCauseService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ErrorRootCauseService();
+    AWS_XRAY_API ErrorRootCauseService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ErrorRootCauseService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -273,22 +273,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<ErrorRootCauseEntity> m_entityPath;
-    bool m_entityPathHasBeenSet;
+    bool m_entityPathHasBeenSet = false;
 
     bool m_inferred;
-    bool m_inferredHasBeenSet;
+    bool m_inferredHasBeenSet = false;
   };
 
 } // namespace Model

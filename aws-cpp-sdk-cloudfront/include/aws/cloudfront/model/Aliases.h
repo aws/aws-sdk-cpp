@@ -25,18 +25,18 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about CNAMEs (alternate domain
-   * names), if any, for this distribution. </p><p><h3>See Also:</h3>   <a
+   * names), if any, for this distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Aliases">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Aliases
+  class Aliases
   {
   public:
-    Aliases();
-    Aliases(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Aliases& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Aliases();
+    AWS_CLOUDFRONT_API Aliases(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Aliases& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

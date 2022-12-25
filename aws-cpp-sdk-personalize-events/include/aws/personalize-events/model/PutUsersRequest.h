@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_PERSONALIZEEVENTS_API PutUsersRequest : public PersonalizeEventsRequest
+  class PutUsersRequest : public PersonalizeEventsRequest
   {
   public:
-    PutUsersRequest();
+    AWS_PERSONALIZEEVENTS_API PutUsersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutUsers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PERSONALIZEEVENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::Vector<User> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

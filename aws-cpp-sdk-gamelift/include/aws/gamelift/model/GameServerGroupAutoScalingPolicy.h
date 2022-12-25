@@ -27,21 +27,20 @@ namespace Model
    * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p>Configuration settings for intelligent automatic scaling
    * that uses target tracking. These settings are used to add an Auto Scaling policy
-   * when creating the corresponding Auto Scaling group with
-   * <a>CreateGameServerGroup</a>. After the Auto Scaling group is created, all
-   * updates to Auto Scaling policies, including changing this policy and adding or
-   * removing other policies, is done directly on the Auto Scaling group.
-   * </p><p><h3>See Also:</h3>   <a
+   * when creating the corresponding Auto Scaling group. After the Auto Scaling group
+   * is created, all updates to Auto Scaling policies, including changing this policy
+   * and adding or removing other policies, is done directly on the Auto Scaling
+   * group. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroupAutoScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy
+  class GameServerGroupAutoScalingPolicy
   {
   public:
-    GameServerGroupAutoScalingPolicy();
-    GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy();
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,10 +133,10 @@ namespace Model
   private:
 
     int m_estimatedInstanceWarmup;
-    bool m_estimatedInstanceWarmupHasBeenSet;
+    bool m_estimatedInstanceWarmupHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
-    bool m_targetTrackingConfigurationHasBeenSet;
+    bool m_targetTrackingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPFLOW_API RegisterConnectorRequest : public AppflowRequest
+  class RegisterConnectorRequest : public AppflowRequest
   {
   public:
-    RegisterConnectorRequest();
+    AWS_APPFLOW_API RegisterConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ConnectorProvisioningType m_connectorProvisioningType;
-    bool m_connectorProvisioningTypeHasBeenSet;
+    bool m_connectorProvisioningTypeHasBeenSet = false;
 
     ConnectorProvisioningConfig m_connectorProvisioningConfig;
-    bool m_connectorProvisioningConfigHasBeenSet;
+    bool m_connectorProvisioningConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API PutStorageConfigurationRequest : public IoTSiteWiseRequest
+  class PutStorageConfigurationRequest : public IoTSiteWiseRequest
   {
   public:
-    PutStorageConfigurationRequest();
+    AWS_IOTSITEWISE_API PutStorageConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutStorageConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -251,16 +251,16 @@ namespace Model
   private:
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     MultiLayerStorage m_multiLayerStorage;
-    bool m_multiLayerStorageHasBeenSet;
+    bool m_multiLayerStorageHasBeenSet = false;
 
     DisassociatedDataStorageState m_disassociatedDataStorage;
-    bool m_disassociatedDataStorageHasBeenSet;
+    bool m_disassociatedDataStorageHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

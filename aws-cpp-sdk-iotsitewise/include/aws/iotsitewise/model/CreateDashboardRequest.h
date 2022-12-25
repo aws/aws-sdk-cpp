@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API CreateDashboardRequest : public IoTSiteWiseRequest
+  class CreateDashboardRequest : public IoTSiteWiseRequest
   {
   public:
-    CreateDashboardRequest();
+    AWS_IOTSITEWISE_API CreateDashboardRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDashboard"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -386,22 +386,22 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_dashboardName;
-    bool m_dashboardNameHasBeenSet;
+    bool m_dashboardNameHasBeenSet = false;
 
     Aws::String m_dashboardDescription;
-    bool m_dashboardDescriptionHasBeenSet;
+    bool m_dashboardDescriptionHasBeenSet = false;
 
     Aws::String m_dashboardDefinition;
-    bool m_dashboardDefinitionHasBeenSet;
+    bool m_dashboardDefinitionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsS3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsS3Settings
+  class HlsS3Settings
   {
   public:
-    HlsS3Settings();
-    HlsS3Settings(Aws::Utils::Json::JsonView jsonValue);
-    HlsS3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsS3Settings();
+    AWS_MEDIALIVE_API HlsS3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsS3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     S3CannedAcl m_cannedAcl;
-    bool m_cannedAclHasBeenSet;
+    bool m_cannedAclHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ConditionalSplitActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ConditionalSplitActivity
+  class ConditionalSplitActivity
   {
   public:
-    ConditionalSplitActivity();
-    ConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ConditionalSplitActivity();
+    AWS_PINPOINT_API ConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Condition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     WaitTime m_evaluationWaitTime;
-    bool m_evaluationWaitTimeHasBeenSet;
+    bool m_evaluationWaitTimeHasBeenSet = false;
 
     Aws::String m_falseActivity;
-    bool m_falseActivityHasBeenSet;
+    bool m_falseActivityHasBeenSet = false;
 
     Aws::String m_trueActivity;
-    bool m_trueActivityHasBeenSet;
+    bool m_trueActivityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CacheHitResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CacheHitResult
+  class CacheHitResult
   {
   public:
-    CacheHitResult();
-    CacheHitResult(Aws::Utils::Json::JsonView jsonValue);
-    CacheHitResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CacheHitResult();
+    AWS_SAGEMAKER_API CacheHitResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CacheHitResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_sourcePipelineExecutionArn;
-    bool m_sourcePipelineExecutionArnHasBeenSet;
+    bool m_sourcePipelineExecutionArnHasBeenSet = false;
   };
 
 } // namespace Model

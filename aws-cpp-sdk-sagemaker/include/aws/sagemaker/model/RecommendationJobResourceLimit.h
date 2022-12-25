@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobResourceLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobResourceLimit
+  class RecommendationJobResourceLimit
   {
   public:
-    RecommendationJobResourceLimit();
-    RecommendationJobResourceLimit(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobResourceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobResourceLimit();
+    AWS_SAGEMAKER_API RecommendationJobResourceLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobResourceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_maxNumberOfTests;
-    bool m_maxNumberOfTestsHasBeenSet;
+    bool m_maxNumberOfTestsHasBeenSet = false;
 
     int m_maxParallelOfTests;
-    bool m_maxParallelOfTestsHasBeenSet;
+    bool m_maxParallelOfTestsHasBeenSet = false;
   };
 
 } // namespace Model

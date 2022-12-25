@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UsageStatisticsSortBy
+  class UsageStatisticsSortBy
   {
   public:
-    UsageStatisticsSortBy();
-    UsageStatisticsSortBy(Aws::Utils::Json::JsonView jsonValue);
-    UsageStatisticsSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UsageStatisticsSortBy();
+    AWS_MACIE2_API UsageStatisticsSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UsageStatisticsSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     UsageStatisticsSortKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

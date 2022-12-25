@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventsResponse
+  class EventsResponse
   {
   public:
-    EventsResponse();
-    EventsResponse(Aws::Utils::Json::JsonView jsonValue);
-    EventsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventsResponse();
+    AWS_PINPOINT_API EventsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,7 +151,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ItemResponse> m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

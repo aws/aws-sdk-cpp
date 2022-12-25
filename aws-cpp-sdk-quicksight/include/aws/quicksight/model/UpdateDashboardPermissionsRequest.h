@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API UpdateDashboardPermissionsRequest : public QuickSightRequest
+  class UpdateDashboardPermissionsRequest : public QuickSightRequest
   {
   public:
-    UpdateDashboardPermissionsRequest();
+    AWS_QUICKSIGHT_API UpdateDashboardPermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDashboardPermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_grantPermissions;
-    bool m_grantPermissionsHasBeenSet;
+    bool m_grantPermissionsHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_revokePermissions;
-    bool m_revokePermissionsHasBeenSet;
+    bool m_revokePermissionsHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_grantLinkPermissions;
-    bool m_grantLinkPermissionsHasBeenSet;
+    bool m_grantLinkPermissionsHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_revokeLinkPermissions;
-    bool m_revokeLinkPermissionsHasBeenSet;
+    bool m_revokeLinkPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

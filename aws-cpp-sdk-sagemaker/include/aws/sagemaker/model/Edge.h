@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Edge">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Edge
+  class Edge
   {
   public:
-    Edge();
-    Edge(Aws::Utils::Json::JsonView jsonValue);
-    Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Edge();
+    AWS_SAGEMAKER_API Edge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     AssociationEdgeType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
   };
 
 } // namespace Model

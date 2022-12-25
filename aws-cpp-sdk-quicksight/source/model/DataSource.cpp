@@ -32,7 +32,8 @@ DataSource::DataSource() :
     m_alternateDataSourceParametersHasBeenSet(false),
     m_vpcConnectionPropertiesHasBeenSet(false),
     m_sslPropertiesHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_secretArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DataSource::DataSource(JsonView jsonValue) :
     m_alternateDataSourceParametersHasBeenSet(false),
     m_vpcConnectionPropertiesHasBeenSet(false),
     m_sslPropertiesHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
+    m_errorInfoHasBeenSet(false),
+    m_secretArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,7 +117,7 @@ DataSource& DataSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AlternateDataSourceParameters"))
   {
-    Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
+    Aws::Utils::Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
     for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
     {
       m_alternateDataSourceParameters.push_back(alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject());
@@ -142,6 +144,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_errorInfo = jsonValue.GetObject("ErrorInfo");
 
     m_errorInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretArn"))
+  {
+    m_secretArn = jsonValue.GetString("SecretArn");
+
+    m_secretArnHasBeenSet = true;
   }
 
   return *this;
@@ -197,7 +206,7 @@ JsonValue DataSource::Jsonize() const
 
   if(m_alternateDataSourceParametersHasBeenSet)
   {
-   Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
+   Aws::Utils::Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
    for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
    {
      alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject(m_alternateDataSourceParameters[alternateDataSourceParametersIndex].Jsonize());
@@ -221,6 +230,12 @@ JsonValue DataSource::Jsonize() const
   if(m_errorInfoHasBeenSet)
   {
    payload.WithObject("ErrorInfo", m_errorInfo.Jsonize());
+
+  }
+
+  if(m_secretArnHasBeenSet)
+  {
+   payload.WithString("SecretArn", m_secretArn);
 
   }
 

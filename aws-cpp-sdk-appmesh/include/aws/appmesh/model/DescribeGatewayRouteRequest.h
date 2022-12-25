@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPMESH_API DescribeGatewayRouteRequest : public AppMeshRequest
+  class DescribeGatewayRouteRequest : public AppMeshRequest
   {
   public:
-    DescribeGatewayRouteRequest();
+    AWS_APPMESH_API DescribeGatewayRouteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeGatewayRoute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPMESH_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPMESH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_gatewayRouteName;
-    bool m_gatewayRouteNameHasBeenSet;
+    bool m_gatewayRouteNameHasBeenSet = false;
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     Aws::String m_meshOwner;
-    bool m_meshOwnerHasBeenSet;
+    bool m_meshOwnerHasBeenSet = false;
 
     Aws::String m_virtualGatewayName;
-    bool m_virtualGatewayNameHasBeenSet;
+    bool m_virtualGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

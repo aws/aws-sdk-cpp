@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorizationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DeleteVPCAssociationAuthorizationRequest : public Route53Request
+  class DeleteVPCAssociationAuthorizationRequest : public Route53Request
   {
   public:
-    DeleteVPCAssociationAuthorizationRequest();
+    AWS_ROUTE53_API DeleteVPCAssociationAuthorizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteVPCAssociationAuthorization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     VPC m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopExecutionTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API StopExecutionTrigger
+  class StopExecutionTrigger
   {
   public:
-    StopExecutionTrigger();
-    StopExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
-    StopExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API StopExecutionTrigger();
+    AWS_CODEPIPELINE_API StopExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API StopExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,10 +16,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API UpdateAccountPasswordPolicyRequest : public IAMRequest
+  class UpdateAccountPasswordPolicyRequest : public IAMRequest
   {
   public:
-    UpdateAccountPasswordPolicyRequest();
+    AWS_IAM_API UpdateAccountPasswordPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -27,10 +27,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAccountPasswordPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -389,31 +389,31 @@ namespace Model
   private:
 
     int m_minimumPasswordLength;
-    bool m_minimumPasswordLengthHasBeenSet;
+    bool m_minimumPasswordLengthHasBeenSet = false;
 
     bool m_requireSymbols;
-    bool m_requireSymbolsHasBeenSet;
+    bool m_requireSymbolsHasBeenSet = false;
 
     bool m_requireNumbers;
-    bool m_requireNumbersHasBeenSet;
+    bool m_requireNumbersHasBeenSet = false;
 
     bool m_requireUppercaseCharacters;
-    bool m_requireUppercaseCharactersHasBeenSet;
+    bool m_requireUppercaseCharactersHasBeenSet = false;
 
     bool m_requireLowercaseCharacters;
-    bool m_requireLowercaseCharactersHasBeenSet;
+    bool m_requireLowercaseCharactersHasBeenSet = false;
 
     bool m_allowUsersToChangePassword;
-    bool m_allowUsersToChangePasswordHasBeenSet;
+    bool m_allowUsersToChangePasswordHasBeenSet = false;
 
     int m_maxPasswordAge;
-    bool m_maxPasswordAgeHasBeenSet;
+    bool m_maxPasswordAgeHasBeenSet = false;
 
     int m_passwordReusePrevention;
-    bool m_passwordReusePreventionHasBeenSet;
+    bool m_passwordReusePreventionHasBeenSet = false;
 
     bool m_hardExpiry;
-    bool m_hardExpiryHasBeenSet;
+    bool m_hardExpiryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -164,13 +164,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/Decision">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API Decision
+  class Decision
   {
   public:
-    Decision();
-    Decision(Aws::Utils::Json::JsonView jsonValue);
-    Decision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API Decision();
+    AWS_SWF_API Decision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Decision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -693,46 +693,46 @@ namespace Model
   private:
 
     DecisionType m_decisionType;
-    bool m_decisionTypeHasBeenSet;
+    bool m_decisionTypeHasBeenSet = false;
 
     ScheduleActivityTaskDecisionAttributes m_scheduleActivityTaskDecisionAttributes;
-    bool m_scheduleActivityTaskDecisionAttributesHasBeenSet;
+    bool m_scheduleActivityTaskDecisionAttributesHasBeenSet = false;
 
     RequestCancelActivityTaskDecisionAttributes m_requestCancelActivityTaskDecisionAttributes;
-    bool m_requestCancelActivityTaskDecisionAttributesHasBeenSet;
+    bool m_requestCancelActivityTaskDecisionAttributesHasBeenSet = false;
 
     CompleteWorkflowExecutionDecisionAttributes m_completeWorkflowExecutionDecisionAttributes;
-    bool m_completeWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_completeWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     FailWorkflowExecutionDecisionAttributes m_failWorkflowExecutionDecisionAttributes;
-    bool m_failWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_failWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     CancelWorkflowExecutionDecisionAttributes m_cancelWorkflowExecutionDecisionAttributes;
-    bool m_cancelWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     ContinueAsNewWorkflowExecutionDecisionAttributes m_continueAsNewWorkflowExecutionDecisionAttributes;
-    bool m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     RecordMarkerDecisionAttributes m_recordMarkerDecisionAttributes;
-    bool m_recordMarkerDecisionAttributesHasBeenSet;
+    bool m_recordMarkerDecisionAttributesHasBeenSet = false;
 
     StartTimerDecisionAttributes m_startTimerDecisionAttributes;
-    bool m_startTimerDecisionAttributesHasBeenSet;
+    bool m_startTimerDecisionAttributesHasBeenSet = false;
 
     CancelTimerDecisionAttributes m_cancelTimerDecisionAttributes;
-    bool m_cancelTimerDecisionAttributesHasBeenSet;
+    bool m_cancelTimerDecisionAttributesHasBeenSet = false;
 
     SignalExternalWorkflowExecutionDecisionAttributes m_signalExternalWorkflowExecutionDecisionAttributes;
-    bool m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     RequestCancelExternalWorkflowExecutionDecisionAttributes m_requestCancelExternalWorkflowExecutionDecisionAttributes;
-    bool m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     StartChildWorkflowExecutionDecisionAttributes m_startChildWorkflowExecutionDecisionAttributes;
-    bool m_startChildWorkflowExecutionDecisionAttributesHasBeenSet;
+    bool m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = false;
 
     ScheduleLambdaFunctionDecisionAttributes m_scheduleLambdaFunctionDecisionAttributes;
-    bool m_scheduleLambdaFunctionDecisionAttributesHasBeenSet;
+    bool m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/SoftwareInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation
+  class SoftwareInformation
   {
   public:
-    SoftwareInformation();
-    SoftwareInformation(Aws::Utils::Json::JsonView jsonValue);
-    SoftwareInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation();
+    AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API SoftwareInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_installState;
-    bool m_installStateHasBeenSet;
+    bool m_installStateHasBeenSet = false;
 
     Aws::String m_installedVersion;
-    bool m_installedVersionHasBeenSet;
+    bool m_installedVersionHasBeenSet = false;
 
     Aws::String m_installingVersion;
-    bool m_installingVersionHasBeenSet;
+    bool m_installingVersionHasBeenSet = false;
   };
 
 } // namespace Model

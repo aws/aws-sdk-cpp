@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ProjectSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API ProjectSummary
+  class ProjectSummary
   {
   public:
-    ProjectSummary();
-    ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API ProjectSummary();
+    AWS_MOBILE_API ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
   };
 
 } // namespace Model

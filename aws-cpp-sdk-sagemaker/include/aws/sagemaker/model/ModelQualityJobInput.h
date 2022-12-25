@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EndpointInput.h>
+#include <aws/sagemaker/model/BatchTransformInput.h>
 #include <aws/sagemaker/model/MonitoringGroundTruthS3Input.h>
 #include <utility>
 
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelQualityJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelQualityJobInput
+  class ModelQualityJobInput
   {
   public:
-    ModelQualityJobInput();
-    ModelQualityJobInput(Aws::Utils::Json::JsonView jsonValue);
-    ModelQualityJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelQualityJobInput();
+    AWS_SAGEMAKER_API ModelQualityJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelQualityJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -57,6 +58,37 @@ namespace Model
 
     
     inline ModelQualityJobInput& WithEndpointInput(EndpointInput&& value) { SetEndpointInput(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelQualityJobInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelQualityJobInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
 
 
     /**
@@ -92,10 +124,13 @@ namespace Model
   private:
 
     EndpointInput m_endpointInput;
-    bool m_endpointInputHasBeenSet;
+    bool m_endpointInputHasBeenSet = false;
+
+    BatchTransformInput m_batchTransformInput;
+    bool m_batchTransformInputHasBeenSet = false;
 
     MonitoringGroundTruthS3Input m_groundTruthS3Input;
-    bool m_groundTruthS3InputHasBeenSet;
+    bool m_groundTruthS3InputHasBeenSet = false;
   };
 
 } // namespace Model

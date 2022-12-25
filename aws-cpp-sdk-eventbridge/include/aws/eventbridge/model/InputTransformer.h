@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/InputTransformer">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API InputTransformer
+  class InputTransformer
   {
   public:
-    InputTransformer();
-    InputTransformer(Aws::Utils::Json::JsonView jsonValue);
-    InputTransformer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API InputTransformer();
+    AWS_EVENTBRIDGE_API InputTransformer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API InputTransformer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -406,10 +406,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_inputPathsMap;
-    bool m_inputPathsMapHasBeenSet;
+    bool m_inputPathsMapHasBeenSet = false;
 
     Aws::String m_inputTemplate;
-    bool m_inputTemplateHasBeenSet;
+    bool m_inputTemplateHasBeenSet = false;
   };
 
 } // namespace Model

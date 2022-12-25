@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSecurityGroup
+  class InputSecurityGroup
   {
   public:
-    InputSecurityGroup();
-    InputSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    InputSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSecurityGroup();
+    AWS_MEDIALIVE_API InputSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,22 +309,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     InputSecurityGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<InputWhitelistRule> m_whitelistRules;
-    bool m_whitelistRulesHasBeenSet;
+    bool m_whitelistRulesHasBeenSet = false;
   };
 
 } // namespace Model

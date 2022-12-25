@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SnsDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API SnsDestination
+  class SnsDestination
   {
   public:
-    SnsDestination();
-    SnsDestination(Aws::Utils::Json::JsonView jsonValue);
-    SnsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API SnsDestination();
+    AWS_PINPOINTSMSVOICE_API SnsDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API SnsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IdFormat">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API IdFormat
+  class IdFormat
   {
   public:
-    IdFormat();
-    IdFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IdFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IdFormat();
+    AWS_EC2_API IdFormat(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IdFormat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_deadline;
-    bool m_deadlineHasBeenSet;
+    bool m_deadlineHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     bool m_useLongIds;
-    bool m_useLongIdsHasBeenSet;
+    bool m_useLongIdsHasBeenSet = false;
   };
 
 } // namespace Model

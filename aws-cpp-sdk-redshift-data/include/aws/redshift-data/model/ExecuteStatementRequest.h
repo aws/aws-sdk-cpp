@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -20,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementRequest : public RedshiftDataAPIServiceRequest
+  class ExecuteStatementRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    ExecuteStatementRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +32,58 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExecuteStatement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline ExecuteStatementRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline ExecuteStatementRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline ExecuteStatementRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -395,31 +445,94 @@ namespace Model
      */
     inline ExecuteStatementRequest& WithWithEvent(bool value) { SetWithEvent(value); return *this;}
 
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ExecuteStatementRequest& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ExecuteStatementRequest& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The serverless workgroup name. This parameter is required when connecting to
+     * a serverless workgroup and authenticating using either Secrets Manager or
+     * temporary credentials.</p>
+     */
+    inline ExecuteStatementRequest& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+
   private:
 
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::Vector<SqlParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     bool m_withEvent;
-    bool m_withEventHasBeenSet;
+    bool m_withEventHasBeenSet = false;
+
+    Aws::String m_workgroupName;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

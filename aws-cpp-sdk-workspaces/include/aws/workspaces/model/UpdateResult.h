@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateResult">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API UpdateResult
+  class UpdateResult
   {
   public:
-    UpdateResult();
-    UpdateResult(Aws::Utils::Json::JsonView jsonValue);
-    UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API UpdateResult();
+    AWS_WORKSPACES_API UpdateResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API UpdateResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     bool m_updateAvailable;
-    bool m_updateAvailableHasBeenSet;
+    bool m_updateAvailableHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

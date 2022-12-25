@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DomainSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKLINK_API DomainSummary
+  class DomainSummary
   {
   public:
-    DomainSummary();
-    DomainSummary(Aws::Utils::Json::JsonView jsonValue);
-    DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKLINK_API DomainSummary();
+    AWS_WORKLINK_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     DomainStatus m_domainStatus;
-    bool m_domainStatusHasBeenSet;
+    bool m_domainStatusHasBeenSet = false;
   };
 
 } // namespace Model

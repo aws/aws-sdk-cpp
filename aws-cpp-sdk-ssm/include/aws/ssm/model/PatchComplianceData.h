@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchComplianceData">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchComplianceData
+  class PatchComplianceData
   {
   public:
-    PatchComplianceData();
-    PatchComplianceData(Aws::Utils::Json::JsonView jsonValue);
-    PatchComplianceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchComplianceData();
+    AWS_SSM_API PatchComplianceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchComplianceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -364,25 +364,25 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_kBId;
-    bool m_kBIdHasBeenSet;
+    bool m_kBIdHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     PatchComplianceDataState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_installedTime;
-    bool m_installedTimeHasBeenSet;
+    bool m_installedTimeHasBeenSet = false;
 
     Aws::String m_cVEIds;
-    bool m_cVEIdsHasBeenSet;
+    bool m_cVEIdsHasBeenSet = false;
   };
 
 } // namespace Model

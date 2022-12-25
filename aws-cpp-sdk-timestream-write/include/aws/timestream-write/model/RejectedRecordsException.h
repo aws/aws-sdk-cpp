@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RejectedRecordsException">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API RejectedRecordsException
+  class RejectedRecordsException
   {
   public:
-    RejectedRecordsException();
-    RejectedRecordsException(Aws::Utils::Json::JsonView jsonValue);
-    RejectedRecordsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API RejectedRecordsException();
+    AWS_TIMESTREAMWRITE_API RejectedRecordsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API RejectedRecordsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<RejectedRecord> m_rejectedRecords;
-    bool m_rejectedRecordsHasBeenSet;
+    bool m_rejectedRecordsHasBeenSet = false;
   };
 
 } // namespace Model

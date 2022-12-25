@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/Authorization">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API Authorization
+  class Authorization
   {
   public:
-    Authorization();
-    Authorization(Aws::Utils::Json::JsonView jsonValue);
-    Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API Authorization();
+    AWS_MEDIAPACKAGEVOD_API Authorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_cdnIdentifierSecret;
-    bool m_cdnIdentifierSecretHasBeenSet;
+    bool m_cdnIdentifierSecretHasBeenSet = false;
 
     Aws::String m_secretsRoleArn;
-    bool m_secretsRoleArnHasBeenSet;
+    bool m_secretsRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

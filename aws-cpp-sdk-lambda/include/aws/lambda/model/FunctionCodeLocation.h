@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API FunctionCodeLocation
+  class FunctionCodeLocation
   {
   public:
-    FunctionCodeLocation();
-    FunctionCodeLocation(Aws::Utils::Json::JsonView jsonValue);
-    FunctionCodeLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API FunctionCodeLocation();
+    AWS_LAMBDA_API FunctionCodeLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API FunctionCodeLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_repositoryType;
-    bool m_repositoryTypeHasBeenSet;
+    bool m_repositoryTypeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::String m_resolvedImageUri;
-    bool m_resolvedImageUriHasBeenSet;
+    bool m_resolvedImageUriHasBeenSet = false;
   };
 
 } // namespace Model

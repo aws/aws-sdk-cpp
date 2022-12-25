@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AllowedRenditionSize">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AllowedRenditionSize
+  class AllowedRenditionSize
   {
   public:
-    AllowedRenditionSize();
-    AllowedRenditionSize(Aws::Utils::Json::JsonView jsonValue);
-    AllowedRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AllowedRenditionSize();
+    AWS_MEDIACONVERT_API AllowedRenditionSize(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AllowedRenditionSize& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,13 +120,13 @@ namespace Model
   private:
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     RequiredFlag m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

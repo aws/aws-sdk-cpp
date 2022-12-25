@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TimerCanceledEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API TimerCanceledEventAttributes
+  class TimerCanceledEventAttributes
   {
   public:
-    TimerCanceledEventAttributes();
-    TimerCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    TimerCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API TimerCanceledEventAttributes();
+    AWS_SWF_API TimerCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API TimerCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_timerId;
-    bool m_timerIdHasBeenSet;
+    bool m_timerIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

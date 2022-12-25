@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CoipPool">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API CoipPool
+  class CoipPool
   {
   public:
-    CoipPool();
-    CoipPool(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CoipPool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CoipPool();
+    AWS_EC2_API CoipPool(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CoipPool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_poolCidrs;
-    bool m_poolCidrsHasBeenSet;
+    bool m_poolCidrsHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_poolArn;
-    bool m_poolArnHasBeenSet;
+    bool m_poolArnHasBeenSet = false;
   };
 
 } // namespace Model

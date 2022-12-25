@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TemplateSyncConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API TemplateSyncConfig
+  class TemplateSyncConfig
   {
   public:
-    TemplateSyncConfig();
-    TemplateSyncConfig(Aws::Utils::Json::JsonView jsonValue);
-    TemplateSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API TemplateSyncConfig();
+    AWS_PROTON_API TemplateSyncConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API TemplateSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline TemplateSyncConfig& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

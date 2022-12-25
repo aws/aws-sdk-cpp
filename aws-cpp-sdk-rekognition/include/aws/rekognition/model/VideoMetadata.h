@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/VideoMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API VideoMetadata
+  class VideoMetadata
   {
   public:
-    VideoMetadata();
-    VideoMetadata(Aws::Utils::Json::JsonView jsonValue);
-    VideoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API VideoMetadata();
+    AWS_REKOGNITION_API VideoMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API VideoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -245,25 +245,25 @@ namespace Model
   private:
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     double m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     long long m_frameHeight;
-    bool m_frameHeightHasBeenSet;
+    bool m_frameHeightHasBeenSet = false;
 
     long long m_frameWidth;
-    bool m_frameWidthHasBeenSet;
+    bool m_frameWidthHasBeenSet = false;
 
     VideoColorRange m_colorRange;
-    bool m_colorRangeHasBeenSet;
+    bool m_colorRangeHasBeenSet = false;
   };
 
 } // namespace Model

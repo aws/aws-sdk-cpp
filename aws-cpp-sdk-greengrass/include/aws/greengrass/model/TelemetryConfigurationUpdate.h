@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/TelemetryConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API TelemetryConfigurationUpdate
+  class TelemetryConfigurationUpdate
   {
   public:
-    TelemetryConfigurationUpdate();
-    TelemetryConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    TelemetryConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API TelemetryConfigurationUpdate();
+    AWS_GREENGRASS_API TelemetryConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API TelemetryConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Telemetry m_telemetry;
-    bool m_telemetryHasBeenSet;
+    bool m_telemetryHasBeenSet = false;
   };
 
 } // namespace Model

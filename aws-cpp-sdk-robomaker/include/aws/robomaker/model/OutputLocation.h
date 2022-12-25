@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/OutputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API OutputLocation
+  class OutputLocation
   {
   public:
-    OutputLocation();
-    OutputLocation(Aws::Utils::Json::JsonView jsonValue);
-    OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API OutputLocation();
+    AWS_ROBOMAKER_API OutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

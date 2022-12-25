@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestoreSuccessItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DisableFastSnapshotRestoreSuccessItem
+  class DisableFastSnapshotRestoreSuccessItem
   {
   public:
-    DisableFastSnapshotRestoreSuccessItem();
-    DisableFastSnapshotRestoreSuccessItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DisableFastSnapshotRestoreSuccessItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DisableFastSnapshotRestoreSuccessItem();
+    AWS_EC2_API DisableFastSnapshotRestoreSuccessItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DisableFastSnapshotRestoreSuccessItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -521,37 +521,37 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     FastSnapshotRestoreStateCode m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateTransitionReason;
-    bool m_stateTransitionReasonHasBeenSet;
+    bool m_stateTransitionReasonHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ownerAlias;
-    bool m_ownerAliasHasBeenSet;
+    bool m_ownerAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_enablingTime;
-    bool m_enablingTimeHasBeenSet;
+    bool m_enablingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_optimizingTime;
-    bool m_optimizingTimeHasBeenSet;
+    bool m_optimizingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_enabledTime;
-    bool m_enabledTimeHasBeenSet;
+    bool m_enabledTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_disablingTime;
-    bool m_disablingTimeHasBeenSet;
+    bool m_disablingTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_disabledTime;
-    bool m_disabledTimeHasBeenSet;
+    bool m_disabledTimeHasBeenSet = false;
   };
 
 } // namespace Model

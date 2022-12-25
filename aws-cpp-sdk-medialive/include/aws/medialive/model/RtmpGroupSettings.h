@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RtmpGroupSettings
+  class RtmpGroupSettings
   {
   public:
-    RtmpGroupSettings();
-    RtmpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    RtmpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API RtmpGroupSettings();
+    AWS_MEDIALIVE_API RtmpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API RtmpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,25 +361,25 @@ namespace Model
   private:
 
     Aws::Vector<RtmpAdMarkers> m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     AuthenticationScheme m_authenticationScheme;
-    bool m_authenticationSchemeHasBeenSet;
+    bool m_authenticationSchemeHasBeenSet = false;
 
     RtmpCacheFullBehavior m_cacheFullBehavior;
-    bool m_cacheFullBehaviorHasBeenSet;
+    bool m_cacheFullBehaviorHasBeenSet = false;
 
     int m_cacheLength;
-    bool m_cacheLengthHasBeenSet;
+    bool m_cacheLengthHasBeenSet = false;
 
     RtmpCaptionData m_captionData;
-    bool m_captionDataHasBeenSet;
+    bool m_captionDataHasBeenSet = false;
 
     InputLossActionForRtmpOut m_inputLossAction;
-    bool m_inputLossActionHasBeenSet;
+    bool m_inputLossActionHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
   };
 
 } // namespace Model

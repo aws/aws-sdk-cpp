@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSource">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RulesSource
+  class RulesSource
   {
   public:
-    RulesSource();
-    RulesSource(Aws::Utils::Json::JsonView jsonValue);
-    RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RulesSource();
+    AWS_NETWORKFIREWALL_API RulesSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,8 +161,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline const Aws::Vector<StatefulRule>& GetStatefulRules() const{ return m_statefulRules; }
 
@@ -171,8 +170,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }
 
@@ -181,8 +179,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline void SetStatefulRules(const Aws::Vector<StatefulRule>& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = value; }
 
@@ -191,8 +188,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline void SetStatefulRules(Aws::Vector<StatefulRule>&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::move(value); }
 
@@ -201,8 +197,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(const Aws::Vector<StatefulRule>& value) { SetStatefulRules(value); return *this;}
 
@@ -211,8 +206,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(Aws::Vector<StatefulRule>&& value) { SetStatefulRules(std::move(value)); return *this;}
 
@@ -221,8 +215,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(const StatefulRule& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(value); return *this; }
 
@@ -231,8 +224,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(StatefulRule&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(std::move(value)); return *this; }
 
@@ -270,16 +262,16 @@ namespace Model
   private:
 
     Aws::String m_rulesString;
-    bool m_rulesStringHasBeenSet;
+    bool m_rulesStringHasBeenSet = false;
 
     RulesSourceList m_rulesSourceList;
-    bool m_rulesSourceListHasBeenSet;
+    bool m_rulesSourceListHasBeenSet = false;
 
     Aws::Vector<StatefulRule> m_statefulRules;
-    bool m_statefulRulesHasBeenSet;
+    bool m_statefulRulesHasBeenSet = false;
 
     StatelessRulesAndCustomActions m_statelessRulesAndCustomActions;
-    bool m_statelessRulesAndCustomActionsHasBeenSet;
+    bool m_statelessRulesAndCustomActionsHasBeenSet = false;
   };
 
 } // namespace Model

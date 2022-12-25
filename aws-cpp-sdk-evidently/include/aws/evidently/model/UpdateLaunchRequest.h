@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchRequest : public CloudWatchEvidentlyRequest
+  class UpdateLaunchRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    UpdateLaunchRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunch"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -377,25 +377,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<LaunchGroupConfig> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_launch;
-    bool m_launchHasBeenSet;
+    bool m_launchHasBeenSet = false;
 
     Aws::Vector<MetricMonitorConfig> m_metricMonitors;
-    bool m_metricMonitorsHasBeenSet;
+    bool m_metricMonitorsHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     ScheduledSplitsLaunchConfig m_scheduledSplitsConfig;
-    bool m_scheduledSplitsConfigHasBeenSet;
+    bool m_scheduledSplitsConfigHasBeenSet = false;
   };
 
 } // namespace Model

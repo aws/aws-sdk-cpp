@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMarketOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateInstanceMarketOptionsRequest
+  class LaunchTemplateInstanceMarketOptionsRequest
   {
   public:
-    LaunchTemplateInstanceMarketOptionsRequest();
-    LaunchTemplateInstanceMarketOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateInstanceMarketOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMarketOptionsRequest();
+    AWS_EC2_API LaunchTemplateInstanceMarketOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMarketOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     MarketType m_marketType;
-    bool m_marketTypeHasBeenSet;
+    bool m_marketTypeHasBeenSet = false;
 
     LaunchTemplateSpotMarketOptionsRequest m_spotOptions;
-    bool m_spotOptionsHasBeenSet;
+    bool m_spotOptionsHasBeenSet = false;
   };
 
 } // namespace Model

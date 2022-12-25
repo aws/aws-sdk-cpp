@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails
+  class AwsRdsDbSnapshotDetails
   {
   public:
-    AwsRdsDbSnapshotDetails();
-    AwsRdsDbSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails();
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,42 +172,114 @@ namespace Model
 
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to use for this DB instance.</p>
+     * <p>The name of the database engine to use for this DB instance. Valid values are
+     * as follows:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
+     * <code>aurora-mysql</code> </p> </li> <li> <p> <code>aurora-postgresql</code>
+     * </p> </li> <li> <p> <code>c</code> </p> </li> <li> <p> <code>mariadb</code> </p>
+     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
+     * </p> </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -784,42 +856,58 @@ namespace Model
 
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>The storage type associated with the DB snapshot.</p>
+     * <p>The storage type associated with the DB snapshot. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>gp2</code> </p> </li> <li> <p> <code>io1</code>
+     * </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsRdsDbSnapshotDetails& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1097,85 +1185,85 @@ namespace Model
   private:
 
     Aws::String m_dbSnapshotIdentifier;
-    bool m_dbSnapshotIdentifierHasBeenSet;
+    bool m_dbSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::String m_snapshotType;
-    bool m_snapshotTypeHasBeenSet;
+    bool m_snapshotTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     int m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_sourceDbSnapshotIdentifier;
-    bool m_sourceDbSnapshotIdentifierHasBeenSet;
+    bool m_sourceDbSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     bool m_iamDatabaseAuthenticationEnabled;
-    bool m_iamDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

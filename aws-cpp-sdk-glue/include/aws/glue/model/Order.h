@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Order">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Order
+  class Order
   {
   public:
-    Order();
-    Order(Aws::Utils::Json::JsonView jsonValue);
-    Order& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Order();
+    AWS_GLUE_API Order(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Order& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     int m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

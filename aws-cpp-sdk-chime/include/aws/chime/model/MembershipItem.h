@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MembershipItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API MembershipItem
+  class MembershipItem
   {
   public:
-    MembershipItem();
-    MembershipItem(Aws::Utils::Json::JsonView jsonValue);
-    MembershipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API MembershipItem();
+    AWS_CHIME_API MembershipItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API MembershipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     RoomMembershipRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AccountSharingInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AccountSharingInfo
+  class AccountSharingInfo
   {
   public:
-    AccountSharingInfo();
-    AccountSharingInfo(Aws::Utils::Json::JsonView jsonValue);
-    AccountSharingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AccountSharingInfo();
+    AWS_SSM_API AccountSharingInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AccountSharingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_sharedDocumentVersion;
-    bool m_sharedDocumentVersionHasBeenSet;
+    bool m_sharedDocumentVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HealthCheck
+  class HealthCheck
   {
   public:
-    HealthCheck();
-    HealthCheck(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HealthCheck& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheck();
+    AWS_ROUTE53_API HealthCheck(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheck& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     LinkedService m_linkedService;
-    bool m_linkedServiceHasBeenSet;
+    bool m_linkedServiceHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
 
     long long m_healthCheckVersion;
-    bool m_healthCheckVersionHasBeenSet;
+    bool m_healthCheckVersionHasBeenSet = false;
 
     CloudWatchAlarmConfiguration m_cloudWatchAlarmConfiguration;
-    bool m_cloudWatchAlarmConfigurationHasBeenSet;
+    bool m_cloudWatchAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

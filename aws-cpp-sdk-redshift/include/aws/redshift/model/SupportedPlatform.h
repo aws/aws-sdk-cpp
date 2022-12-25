@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SupportedPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API SupportedPlatform
+  class SupportedPlatform
   {
   public:
-    SupportedPlatform();
-    SupportedPlatform(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SupportedPlatform& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SupportedPlatform();
+    AWS_REDSHIFT_API SupportedPlatform(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SupportedPlatform& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

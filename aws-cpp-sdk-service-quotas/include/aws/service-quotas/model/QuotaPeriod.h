@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/QuotaPeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API QuotaPeriod
+  class QuotaPeriod
   {
   public:
-    QuotaPeriod();
-    QuotaPeriod(Aws::Utils::Json::JsonView jsonValue);
-    QuotaPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API QuotaPeriod();
+    AWS_SERVICEQUOTAS_API QuotaPeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API QuotaPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_periodValue;
-    bool m_periodValueHasBeenSet;
+    bool m_periodValueHasBeenSet = false;
 
     PeriodUnit m_periodUnit;
-    bool m_periodUnitHasBeenSet;
+    bool m_periodUnitHasBeenSet = false;
   };
 
 } // namespace Model

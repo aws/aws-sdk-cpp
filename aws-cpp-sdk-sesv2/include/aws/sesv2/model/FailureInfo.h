@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/FailureInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API FailureInfo
+  class FailureInfo
   {
   public:
-    FailureInfo();
-    FailureInfo(Aws::Utils::Json::JsonView jsonValue);
-    FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API FailureInfo();
+    AWS_SESV2_API FailureInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_failedRecordsS3Url;
-    bool m_failedRecordsS3UrlHasBeenSet;
+    bool m_failedRecordsS3UrlHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

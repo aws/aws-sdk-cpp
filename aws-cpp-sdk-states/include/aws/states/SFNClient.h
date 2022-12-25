@@ -5,178 +5,21 @@
 
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
-#include <aws/states/SFNErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/states/model/CreateActivityResult.h>
-#include <aws/states/model/CreateStateMachineResult.h>
-#include <aws/states/model/DeleteActivityResult.h>
-#include <aws/states/model/DeleteStateMachineResult.h>
-#include <aws/states/model/DescribeActivityResult.h>
-#include <aws/states/model/DescribeExecutionResult.h>
-#include <aws/states/model/DescribeStateMachineResult.h>
-#include <aws/states/model/DescribeStateMachineForExecutionResult.h>
-#include <aws/states/model/GetActivityTaskResult.h>
-#include <aws/states/model/GetExecutionHistoryResult.h>
-#include <aws/states/model/ListActivitiesResult.h>
-#include <aws/states/model/ListExecutionsResult.h>
-#include <aws/states/model/ListStateMachinesResult.h>
-#include <aws/states/model/ListTagsForResourceResult.h>
-#include <aws/states/model/SendTaskFailureResult.h>
-#include <aws/states/model/SendTaskHeartbeatResult.h>
-#include <aws/states/model/SendTaskSuccessResult.h>
-#include <aws/states/model/StartExecutionResult.h>
-#include <aws/states/model/StartSyncExecutionResult.h>
-#include <aws/states/model/StopExecutionResult.h>
-#include <aws/states/model/TagResourceResult.h>
-#include <aws/states/model/UntagResourceResult.h>
-#include <aws/states/model/UpdateStateMachineResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/states/SFNServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SFN
 {
-
-namespace Model
-{
-        class CreateActivityRequest;
-        class CreateStateMachineRequest;
-        class DeleteActivityRequest;
-        class DeleteStateMachineRequest;
-        class DescribeActivityRequest;
-        class DescribeExecutionRequest;
-        class DescribeStateMachineRequest;
-        class DescribeStateMachineForExecutionRequest;
-        class GetActivityTaskRequest;
-        class GetExecutionHistoryRequest;
-        class ListActivitiesRequest;
-        class ListExecutionsRequest;
-        class ListStateMachinesRequest;
-        class ListTagsForResourceRequest;
-        class SendTaskFailureRequest;
-        class SendTaskHeartbeatRequest;
-        class SendTaskSuccessRequest;
-        class StartExecutionRequest;
-        class StartSyncExecutionRequest;
-        class StopExecutionRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateStateMachineRequest;
-
-        typedef Aws::Utils::Outcome<CreateActivityResult, SFNError> CreateActivityOutcome;
-        typedef Aws::Utils::Outcome<CreateStateMachineResult, SFNError> CreateStateMachineOutcome;
-        typedef Aws::Utils::Outcome<DeleteActivityResult, SFNError> DeleteActivityOutcome;
-        typedef Aws::Utils::Outcome<DeleteStateMachineResult, SFNError> DeleteStateMachineOutcome;
-        typedef Aws::Utils::Outcome<DescribeActivityResult, SFNError> DescribeActivityOutcome;
-        typedef Aws::Utils::Outcome<DescribeExecutionResult, SFNError> DescribeExecutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeStateMachineResult, SFNError> DescribeStateMachineOutcome;
-        typedef Aws::Utils::Outcome<DescribeStateMachineForExecutionResult, SFNError> DescribeStateMachineForExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetActivityTaskResult, SFNError> GetActivityTaskOutcome;
-        typedef Aws::Utils::Outcome<GetExecutionHistoryResult, SFNError> GetExecutionHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListActivitiesResult, SFNError> ListActivitiesOutcome;
-        typedef Aws::Utils::Outcome<ListExecutionsResult, SFNError> ListExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListStateMachinesResult, SFNError> ListStateMachinesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SFNError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<SendTaskFailureResult, SFNError> SendTaskFailureOutcome;
-        typedef Aws::Utils::Outcome<SendTaskHeartbeatResult, SFNError> SendTaskHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<SendTaskSuccessResult, SFNError> SendTaskSuccessOutcome;
-        typedef Aws::Utils::Outcome<StartExecutionResult, SFNError> StartExecutionOutcome;
-        typedef Aws::Utils::Outcome<StartSyncExecutionResult, SFNError> StartSyncExecutionOutcome;
-        typedef Aws::Utils::Outcome<StopExecutionResult, SFNError> StopExecutionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, SFNError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, SFNError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateStateMachineResult, SFNError> UpdateStateMachineOutcome;
-
-        typedef std::future<CreateActivityOutcome> CreateActivityOutcomeCallable;
-        typedef std::future<CreateStateMachineOutcome> CreateStateMachineOutcomeCallable;
-        typedef std::future<DeleteActivityOutcome> DeleteActivityOutcomeCallable;
-        typedef std::future<DeleteStateMachineOutcome> DeleteStateMachineOutcomeCallable;
-        typedef std::future<DescribeActivityOutcome> DescribeActivityOutcomeCallable;
-        typedef std::future<DescribeExecutionOutcome> DescribeExecutionOutcomeCallable;
-        typedef std::future<DescribeStateMachineOutcome> DescribeStateMachineOutcomeCallable;
-        typedef std::future<DescribeStateMachineForExecutionOutcome> DescribeStateMachineForExecutionOutcomeCallable;
-        typedef std::future<GetActivityTaskOutcome> GetActivityTaskOutcomeCallable;
-        typedef std::future<GetExecutionHistoryOutcome> GetExecutionHistoryOutcomeCallable;
-        typedef std::future<ListActivitiesOutcome> ListActivitiesOutcomeCallable;
-        typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
-        typedef std::future<ListStateMachinesOutcome> ListStateMachinesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<SendTaskFailureOutcome> SendTaskFailureOutcomeCallable;
-        typedef std::future<SendTaskHeartbeatOutcome> SendTaskHeartbeatOutcomeCallable;
-        typedef std::future<SendTaskSuccessOutcome> SendTaskSuccessOutcomeCallable;
-        typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
-        typedef std::future<StartSyncExecutionOutcome> StartSyncExecutionOutcomeCallable;
-        typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateStateMachineOutcome> UpdateStateMachineOutcomeCallable;
-} // namespace Model
-
-  class SFNClient;
-
-    typedef std::function<void(const SFNClient*, const Model::CreateActivityRequest&, const Model::CreateActivityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActivityResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::CreateStateMachineRequest&, const Model::CreateStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStateMachineResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DeleteActivityRequest&, const Model::DeleteActivityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteActivityResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DeleteStateMachineRequest&, const Model::DeleteStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStateMachineResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DescribeActivityRequest&, const Model::DescribeActivityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActivityResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DescribeExecutionRequest&, const Model::DescribeExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExecutionResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DescribeStateMachineRequest&, const Model::DescribeStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStateMachineResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::DescribeStateMachineForExecutionRequest&, const Model::DescribeStateMachineForExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStateMachineForExecutionResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::GetActivityTaskRequest&, const Model::GetActivityTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActivityTaskResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::GetExecutionHistoryRequest&, const Model::GetExecutionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExecutionHistoryResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::ListActivitiesRequest&, const Model::ListActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActivitiesResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::ListStateMachinesRequest&, const Model::ListStateMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStateMachinesResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::SendTaskFailureRequest&, const Model::SendTaskFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskFailureResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::SendTaskHeartbeatRequest&, const Model::SendTaskHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskHeartbeatResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::SendTaskSuccessRequest&, const Model::SendTaskSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskSuccessResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::StartExecutionRequest&, const Model::StartExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExecutionResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::StartSyncExecutionRequest&, const Model::StartSyncExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSyncExecutionResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::StopExecutionRequest&, const Model::StopExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExecutionResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SFNClient*, const Model::UpdateStateMachineRequest&, const Model::UpdateStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateMachineResponseReceivedHandler;
-
   /**
-   * <fullname>AWS Step Functions</fullname> <p>AWS Step Functions is a service that
-   * lets you coordinate the components of distributed applications and microservices
-   * using visual workflows.</p> <p>You can use Step Functions to build applications
-   * from individual components, each of which performs a discrete function, or
+   * <fullname>Step Functions</fullname> <p>Step Functions is a service that lets you
+   * coordinate the components of distributed applications and microservices using
+   * visual workflows.</p> <p>You can use Step Functions to build applications from
+   * individual components, each of which performs a discrete function, or
    * <i>task</i>, allowing you to scale and change applications quickly. Step
    * Functions provides a console that helps visualize the components of your
    * application as a series of steps. Step Functions automatically triggers and
@@ -184,47 +27,76 @@ namespace Model
    * executes predictably and in the right order every time. Step Functions logs the
    * state of each step, so you can quickly diagnose and debug any issues.</p>
    * <p>Step Functions manages operations and underlying infrastructure to ensure
-   * your application is available at any scale. You can run tasks on AWS, your own
-   * servers, or any system that has access to AWS. You can access and use Step
-   * Functions using the console, the AWS SDKs, or an HTTP API. For more information
-   * about Step Functions, see the <i> <a
-   * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS
-   * Step Functions Developer Guide</a> </i>.</p>
+   * your application is available at any scale. You can run tasks on Amazon Web
+   * Services, your own servers, or any system that has access to Amazon Web
+   * Services. You can access and use Step Functions using the console, the Amazon
+   * Web Services SDKs, or an HTTP API. For more information about Step Functions,
+   * see the <i> <a
+   * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step
+   * Functions Developer Guide</a> </i>.</p>
    */
-  class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient
+  class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SFNClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SFNClient(const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration(),
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SFNClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SFNClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SFNClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SFNClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SFNClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SFNClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SFNClient();
-
 
         /**
          * <p>Creates an activity. An activity is a task that you write in any programming
-         * language and host on any machine that has access to AWS Step Functions.
-         * Activities must poll Step Functions using the <code>GetActivityTask</code> API
-         * action and respond using <code>SendTask*</code> API actions. This function lets
-         * Step Functions know the existence of your activity and returns an identifier for
-         * use in a state machine and when polling from the activity.</p>  <p>This
+         * language and host on any machine that has access to Step Functions. Activities
+         * must poll Step Functions using the <code>GetActivityTask</code> API action and
+         * respond using <code>SendTask*</code> API actions. This function lets Step
+         * Functions know the existence of your activity and returns an identifier for use
+         * in a state machine and when polling from the activity.</p>  <p>This
          * operation is eventually consistent. The results are best effort and may not
          * reflect very recent updates and changes.</p>   <p>
          * <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t
@@ -256,7 +128,7 @@ namespace Model
          * (<code>Fail</code> states), and so on. State machines are specified using a
          * JSON-based, structured language. For more information, see <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-         * States Language</a> in the AWS Step Functions User Guide.</p>  <p>This
+         * States Language</a> in the Step Functions User Guide.</p>  <p>This
          * operation is eventually consistent. The results are best effort and may not
          * reflect very recent updates and changes.</p>   <p>
          * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
@@ -304,8 +176,15 @@ namespace Model
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
          * machine's status to <code>DELETING</code> and begins the deletion process. </p>
-         *  <p>For <code>EXPRESS</code>state machines, the deletion will happen
-         * eventually (usually less than a minute). Running executions may emit logs after
+         * <p>If the given state machine Amazon Resource Name (ARN) is a qualified state
+         * machine ARN, it will fail with ValidationException.</p> <p>A qualified state
+         * machine ARN refers to a <i>Distributed Map state</i> defined within a state
+         * machine. For example, the qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>For
+         * <code>EXPRESS</code> state machines, the deletion will happen eventually
+         * (usually less than a minute). Running executions may emit logs after
          * <code>DeleteStateMachine</code> API is called.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
@@ -343,10 +222,14 @@ namespace Model
         virtual void DescribeActivityAsync(const Model::DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an execution.</p>  <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p>  <p>This API action is not supported by
-         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides all information about a state machine execution, such as the state
+         * machine associated with the execution, the execution input and output, and
+         * relevant execution metadata. Use this API action to return the Map Run ARN if
+         * the execution was dispatched by a Map Run.</p>  <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p>  <p>This API action is not supported by
+         * <code>EXPRESS</code> state machine executions unless they were dispatched by a
+         * Map Run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
          * API Reference</a></p>
          */
@@ -363,9 +246,38 @@ namespace Model
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a state machine.</p>  <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides information about a Map Run's configuration, progress, and results.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+         * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMapRunOutcome DescribeMapRun(const Model::DescribeMapRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMapRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMapRunOutcomeCallable DescribeMapRunCallable(const Model::DescribeMapRunRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMapRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMapRunAsync(const Model::DescribeMapRunRequest& request, const DescribeMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides information about a state machine's definition, its IAM role Amazon
+         * Resource Name (ARN), and configuration. If the state machine ARN is a qualified
+         * state machine ARN, the response returned includes the <code>Map</code> state's
+         * label.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map
+         * state</i> defined within a state machine. For example, the qualified state
+         * machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">AWS
          * API Reference</a></p>
          */
@@ -382,11 +294,13 @@ namespace Model
         virtual void DescribeStateMachineAsync(const Model::DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the state machine associated with a specific execution.</p> 
-         * <p>This operation is eventually consistent. The results are best effort and may
-         * not reflect very recent updates and changes.</p>  <p>This API action is
-         * not supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides information about a state machine's definition, its execution role
+         * ARN, and configuration. If an execution was dispatched by a Map Run, the Map Run
+         * is returned in the response. Additionally, the state machine returned will be
+         * the state machine associated with the Map Run.</p>  <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p>  <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">AWS
          * API Reference</a></p>
          */
@@ -409,9 +323,10 @@ namespace Model
          * as a task becomes available (i.e. an execution of a task of this type is
          * needed.) The maximum time the service holds on to the request before responding
          * is 60 seconds. If no task is available within 60 seconds, the poll returns a
-         * <code>taskToken</code> with a null string.</p>  <p>Workers should set
-         * their client side socket timeout to at least 65 seconds (5 seconds higher than
-         * the maximum time the service may hold the poll request).</p> <p>Polling with
+         * <code>taskToken</code> with a null string.</p>  <p>This API action isn't
+         * logged in CloudTrail.</p>   <p>Workers should set their client
+         * side socket timeout to at least 65 seconds (5 seconds higher than the maximum
+         * time the service may hold the poll request).</p> <p>Polling with
          * <code>GetActivityTask</code> can cause latency in some implementations. See <a
          * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
          * Latency When Polling for Activity Tasks</a> in the Step Functions Developer
@@ -482,17 +397,19 @@ namespace Model
         virtual void ListActivitiesAsync(const Model::ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the executions of a state machine that meet the filtering criteria.
-         * Results are sorted by time, with the most recent execution first.</p> <p>If
-         * <code>nextToken</code> is returned, there are more results available. The value
-         * of <code>nextToken</code> is a unique pagination token for each page. Make the
-         * call again using the returned token to retrieve the next page. Keep all other
-         * arguments unchanged. Each pagination token expires after 24 hours. Using an
-         * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-         *  <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p>  <p>This API
-         * action is not supported by <code>EXPRESS</code> state machines.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all executions of a state machine or a Map Run. You can list all
+         * executions related to a state machine by specifying a state machine Amazon
+         * Resource Name (ARN), or those related to a Map Run by specifying a Map Run
+         * ARN.</p> <p>Results are sorted by time, with the most recent execution
+         * first.</p> <p>If <code>nextToken</code> is returned, there are more results
+         * available. The value of <code>nextToken</code> is a unique pagination token for
+         * each page. Make the call again using the returned token to retrieve the next
+         * page. Keep all other arguments unchanged. Each pagination token expires after 24
+         * hours. Using an expired pagination token will return an <i>HTTP 400
+         * InvalidToken</i> error.</p>  <p>This operation is eventually consistent.
+         * The results are best effort and may not reflect very recent updates and
+         * changes.</p>  <p>This API action is not supported by <code>EXPRESS</code>
+         * state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
          */
@@ -507,6 +424,26 @@ namespace Model
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all Map Runs that were started by a given state machine execution. Use
+         * this API action to obtain Map Run ARNs, and then call
+         * <code>DescribeMapRun</code> to obtain more information, if needed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMapRunsOutcome ListMapRuns(const Model::ListMapRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMapRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMapRunsOutcomeCallable ListMapRunsCallable(const Model::ListMapRunsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMapRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMapRunsAsync(const Model::ListMapRunsRequest& request, const ListMapRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is
@@ -626,12 +563,22 @@ namespace Model
         virtual void SendTaskSuccessAsync(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a state machine execution.</p>  <p> <code>StartExecution</code>
-         * is idempotent. If <code>StartExecution</code> is called with the same name and
-         * input as a running execution, the call will succeed and return the same response
-         * as the original request. If the execution is closed or if the input is
-         * different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names
-         * can be reused after 90 days. </p> <p><h3>See Also:</h3>   <a
+         * <p>Starts a state machine execution. If the given state machine Amazon Resource
+         * Name (ARN) is a qualified state machine ARN, it will fail with
+         * ValidationException.</p> <p>A qualified state machine ARN refers to a
+         * <i>Distributed Map state</i> defined within a state machine. For example, the
+         * qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>
+         * <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows.
+         * For a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called
+         * with the same name and input as a running execution, the call will succeed and
+         * return the same response as the original request. If the execution is closed or
+         * if the input is different, it will return a <code>400
+         * ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p> <p>
+         * <code>StartExecution</code> is not idempotent for <code>EXPRESS</code>
+         * workflows. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">AWS
          * API Reference</a></p>
          */
@@ -648,8 +595,15 @@ namespace Model
         virtual void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a Synchronous Express state machine execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts a Synchronous Express state machine execution.
+         * <code>StartSyncExecution</code> is not available for <code>STANDARD</code>
+         * workflows.</p>  <p> <code>StartSyncExecution</code> will return a
+         * <code>200 OK</code> response, even if your execution fails, because the status
+         * code in the API response doesn't reflect function errors. Error codes are
+         * reserved for errors that prevent your execution from running, such as
+         * permissions errors, limit errors, or issues with your state machine code and
+         * configuration. </p>   <p>This API action isn't logged in
+         * CloudTrail.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">AWS
          * API Reference</a></p>
          */
@@ -687,8 +641,8 @@ namespace Model
          * <p>Add a tag to a Step Functions resource.</p> <p>An array of key-value pairs.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-         * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>, and <a
+         * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+         * Management User Guide</i>, and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
          * Access Using IAM Tags</a>.</p> <p>Tags may only contain Unicode letters, digits,
          * white space, or these symbols: <code>_ . : / = + - @</code>.</p><p><h3>See
@@ -726,12 +680,38 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an in-progress Map Run's configuration to include changes to the
+         * settings that control maximum concurrency and Map Run failure.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMapRunOutcome UpdateMapRun(const Model::UpdateMapRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMapRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMapRunOutcomeCallable UpdateMapRunCallable(const Model::UpdateMapRunRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMapRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMapRunAsync(const Model::UpdateMapRunRequest& request, const UpdateMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>,
          * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
          * will continue to use the previous <code>definition</code> and
          * <code>roleArn</code>. You must include at least one of <code>definition</code>
          * or <code>roleArn</code> or you will receive a
-         * <code>MissingRequiredParameter</code> error.</p>  <p>All
+         * <code>MissingRequiredParameter</code> error.</p> <p>If the given state machine
+         * Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
+         * ValidationException.</p> <p>A qualified state machine ARN refers to a
+         * <i>Distributed Map state</i> defined within a state machine. For example, the
+         * qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>All
          * <code>StartExecution</code> calls within a few seconds will use the updated
          * <code>definition</code> and <code>roleArn</code>. Executions started immediately
          * after calling <code>UpdateStateMachine</code> may use the previous state machine
@@ -754,37 +734,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateActivityAsyncHelper(const Model::CreateActivityRequest& request, const CreateActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStateMachineAsyncHelper(const Model::CreateStateMachineRequest& request, const CreateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteActivityAsyncHelper(const Model::DeleteActivityRequest& request, const DeleteActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStateMachineAsyncHelper(const Model::DeleteStateMachineRequest& request, const DeleteStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeActivityAsyncHelper(const Model::DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeExecutionAsyncHelper(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStateMachineAsyncHelper(const Model::DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStateMachineForExecutionAsyncHelper(const Model::DescribeStateMachineForExecutionRequest& request, const DescribeStateMachineForExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetActivityTaskAsyncHelper(const Model::GetActivityTaskRequest& request, const GetActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExecutionHistoryAsyncHelper(const Model::GetExecutionHistoryRequest& request, const GetExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListActivitiesAsyncHelper(const Model::ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExecutionsAsyncHelper(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStateMachinesAsyncHelper(const Model::ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendTaskFailureAsyncHelper(const Model::SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendTaskHeartbeatAsyncHelper(const Model::SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendTaskSuccessAsyncHelper(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartExecutionAsyncHelper(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSyncExecutionAsyncHelper(const Model::StartSyncExecutionRequest& request, const StartSyncExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopExecutionAsyncHelper(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStateMachineAsyncHelper(const Model::UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;
+      void init(const SFNClientConfiguration& clientConfiguration);
 
-      Aws::String m_baseUri;
-      Aws::String m_scheme;
-      bool m_enableHostPrefixInjection;
-      Aws::String m_configScheme;
+      SFNClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SFN

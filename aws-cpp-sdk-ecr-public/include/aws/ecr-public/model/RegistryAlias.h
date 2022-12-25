@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/RegistryAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API RegistryAlias
+  class RegistryAlias
   {
   public:
-    RegistryAlias();
-    RegistryAlias(Aws::Utils::Json::JsonView jsonValue);
-    RegistryAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API RegistryAlias();
+    AWS_ECRPUBLIC_API RegistryAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API RegistryAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RegistryAliasStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_primaryRegistryAlias;
-    bool m_primaryRegistryAliasHasBeenSet;
+    bool m_primaryRegistryAliasHasBeenSet = false;
 
     bool m_defaultRegistryAlias;
-    bool m_defaultRegistryAliasHasBeenSet;
+    bool m_defaultRegistryAliasHasBeenSet = false;
   };
 
 } // namespace Model

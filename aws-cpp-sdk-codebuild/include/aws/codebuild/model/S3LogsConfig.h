@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/S3LogsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API S3LogsConfig
+  class S3LogsConfig
   {
   public:
-    S3LogsConfig();
-    S3LogsConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3LogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API S3LogsConfig();
+    AWS_CODEBUILD_API S3LogsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API S3LogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     LogsConfigStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
 
     BucketOwnerAccess m_bucketOwnerAccess;
-    bool m_bucketOwnerAccessHasBeenSet;
+    bool m_bucketOwnerAccessHasBeenSet = false;
   };
 
 } // namespace Model

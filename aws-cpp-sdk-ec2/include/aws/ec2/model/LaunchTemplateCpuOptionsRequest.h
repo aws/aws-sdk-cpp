@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateCpuOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateCpuOptionsRequest
+  class LaunchTemplateCpuOptionsRequest
   {
   public:
-    LaunchTemplateCpuOptionsRequest();
-    LaunchTemplateCpuOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateCpuOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateCpuOptionsRequest();
+    AWS_EC2_API LaunchTemplateCpuOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateCpuOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -61,35 +61,39 @@ namespace Model
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
 
     /**
      * <p>The number of threads per CPU core. To disable multithreading for the
-     * instance, specify a value of 1. Otherwise, specify the default value of 2.</p>
+     * instance, specify a value of <code>1</code>. Otherwise, specify the default
+     * value of <code>2</code>.</p>
      */
     inline LaunchTemplateCpuOptionsRequest& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 
   private:
 
     int m_coreCount;
-    bool m_coreCountHasBeenSet;
+    bool m_coreCountHasBeenSet = false;
 
     int m_threadsPerCore;
-    bool m_threadsPerCoreHasBeenSet;
+    bool m_threadsPerCoreHasBeenSet = false;
   };
 
 } // namespace Model

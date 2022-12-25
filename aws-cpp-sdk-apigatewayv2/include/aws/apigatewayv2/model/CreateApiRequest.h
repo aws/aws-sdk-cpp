@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateApiRequest : public ApiGatewayV2Request
+  class CreateApiRequest : public ApiGatewayV2Request
   {
   public:
-    CreateApiRequest();
+    AWS_APIGATEWAYV2_API CreateApiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApi"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -743,43 +743,43 @@ namespace Model
   private:
 
     Aws::String m_apiKeySelectionExpression;
-    bool m_apiKeySelectionExpressionHasBeenSet;
+    bool m_apiKeySelectionExpressionHasBeenSet = false;
 
     Cors m_corsConfiguration;
-    bool m_corsConfigurationHasBeenSet;
+    bool m_corsConfigurationHasBeenSet = false;
 
     Aws::String m_credentialsArn;
-    bool m_credentialsArnHasBeenSet;
+    bool m_credentialsArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_disableSchemaValidation;
-    bool m_disableSchemaValidationHasBeenSet;
+    bool m_disableSchemaValidationHasBeenSet = false;
 
     bool m_disableExecuteApiEndpoint;
-    bool m_disableExecuteApiEndpointHasBeenSet;
+    bool m_disableExecuteApiEndpointHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProtocolType m_protocolType;
-    bool m_protocolTypeHasBeenSet;
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_routeKey;
-    bool m_routeKeyHasBeenSet;
+    bool m_routeKeyHasBeenSet = false;
 
     Aws::String m_routeSelectionExpression;
-    bool m_routeSelectionExpressionHasBeenSet;
+    bool m_routeSelectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

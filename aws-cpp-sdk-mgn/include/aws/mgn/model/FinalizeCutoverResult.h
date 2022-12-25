@@ -30,12 +30,48 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API FinalizeCutoverResult
+  class FinalizeCutoverResult
   {
   public:
-    FinalizeCutoverResult();
-    FinalizeCutoverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    FinalizeCutoverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API FinalizeCutoverResult();
+    AWS_MGN_API FinalizeCutoverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API FinalizeCutoverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline FinalizeCutoverResult& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline FinalizeCutoverResult& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline FinalizeCutoverResult& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -353,6 +389,8 @@ namespace Model
     inline FinalizeCutoverResult& WithVcenterClientID(const char* value) { SetVcenterClientID(value); return *this;}
 
   private:
+
+    Aws::String m_applicationID;
 
     Aws::String m_arn;
 

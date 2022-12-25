@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbClusterOptionGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbClusterOptionGroupMembership
+  class AwsRdsDbClusterOptionGroupMembership
   {
   public:
-    AwsRdsDbClusterOptionGroupMembership();
-    AwsRdsDbClusterOptionGroupMembership(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbClusterOptionGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbClusterOptionGroupMembership();
+    AWS_SECURITYHUB_API AwsRdsDbClusterOptionGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbClusterOptionGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_dbClusterOptionGroupName;
-    bool m_dbClusterOptionGroupNameHasBeenSet;
+    bool m_dbClusterOptionGroupNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

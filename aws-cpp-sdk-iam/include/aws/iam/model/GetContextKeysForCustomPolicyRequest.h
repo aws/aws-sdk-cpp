@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API GetContextKeysForCustomPolicyRequest : public IAMRequest
+  class GetContextKeysForCustomPolicyRequest : public IAMRequest
   {
   public:
-    GetContextKeysForCustomPolicyRequest();
+    AWS_IAM_API GetContextKeysForCustomPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetContextKeysForCustomPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -175,7 +175,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_policyInputList;
-    bool m_policyInputListHasBeenSet;
+    bool m_policyInputListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsNetworkFirewallFirewallPolicyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsNetworkFirewallFirewallPolicyDetails
+  class AwsNetworkFirewallFirewallPolicyDetails
   {
   public:
-    AwsNetworkFirewallFirewallPolicyDetails();
-    AwsNetworkFirewallFirewallPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsNetworkFirewallFirewallPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallPolicyDetails();
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     FirewallPolicyDetails m_firewallPolicy;
-    bool m_firewallPolicyHasBeenSet;
+    bool m_firewallPolicyHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     Aws::String m_firewallPolicyId;
-    bool m_firewallPolicyIdHasBeenSet;
+    bool m_firewallPolicyIdHasBeenSet = false;
 
     Aws::String m_firewallPolicyName;
-    bool m_firewallPolicyNameHasBeenSet;
+    bool m_firewallPolicyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

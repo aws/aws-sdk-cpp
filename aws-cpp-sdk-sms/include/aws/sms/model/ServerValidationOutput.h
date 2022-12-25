@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerValidationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerValidationOutput
+  class ServerValidationOutput
   {
   public:
-    ServerValidationOutput();
-    ServerValidationOutput(Aws::Utils::Json::JsonView jsonValue);
-    ServerValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerValidationOutput();
+    AWS_SMS_API ServerValidationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
   };
 
 } // namespace Model

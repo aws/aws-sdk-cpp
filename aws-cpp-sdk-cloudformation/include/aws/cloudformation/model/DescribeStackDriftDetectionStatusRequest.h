@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusRequest : public CloudFormationRequest
+  class DescribeStackDriftDetectionStatusRequest : public CloudFormationRequest
   {
   public:
-    DescribeStackDriftDetectionStatusRequest();
+    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeStackDriftDetectionStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::String m_stackDriftDetectionId;
-    bool m_stackDriftDetectionIdHasBeenSet;
+    bool m_stackDriftDetectionIdHasBeenSet = false;
   };
 
 } // namespace Model

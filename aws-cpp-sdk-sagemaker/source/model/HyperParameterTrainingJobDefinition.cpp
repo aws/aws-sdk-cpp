@@ -37,7 +37,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_hyperParameterTuningResourceConfigHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_enableManagedSpotTraining(false),
     m_enableManagedSpotTrainingHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_hyperParameterTuningResourceConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,7 +116,7 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -185,6 +187,13 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_retryStrategyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HyperParameterTuningResourceConfig"))
+  {
+    m_hyperParameterTuningResourceConfig = jsonValue.GetObject("HyperParameterTuningResourceConfig");
+
+    m_hyperParameterTuningResourceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,7 +244,7 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());
@@ -295,6 +304,12 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_retryStrategyHasBeenSet)
   {
    payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
+
+  }
+
+  if(m_hyperParameterTuningResourceConfigHasBeenSet)
+  {
+   payload.WithObject("HyperParameterTuningResourceConfig", m_hyperParameterTuningResourceConfig.Jsonize());
 
   }
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryScheduleOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryScheduleOutput
+  class CanaryScheduleOutput
   {
   public:
-    CanaryScheduleOutput();
-    CanaryScheduleOutput(Aws::Utils::Json::JsonView jsonValue);
-    CanaryScheduleOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryScheduleOutput();
+    AWS_SYNTHETICS_API CanaryScheduleOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryScheduleOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,10 +207,10 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     long long m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

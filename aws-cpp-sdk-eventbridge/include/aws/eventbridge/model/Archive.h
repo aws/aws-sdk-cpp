@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Archive">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Archive
+  class Archive
   {
   public:
-    Archive();
-    Archive(Aws::Utils::Json::JsonView jsonValue);
-    Archive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Archive();
+    AWS_EVENTBRIDGE_API Archive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Archive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,28 +302,28 @@ namespace Model
   private:
 
     Aws::String m_archiveName;
-    bool m_archiveNameHasBeenSet;
+    bool m_archiveNameHasBeenSet = false;
 
     Aws::String m_eventSourceArn;
-    bool m_eventSourceArnHasBeenSet;
+    bool m_eventSourceArnHasBeenSet = false;
 
     ArchiveState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     int m_retentionDays;
-    bool m_retentionDaysHasBeenSet;
+    bool m_retentionDaysHasBeenSet = false;
 
     long long m_sizeBytes;
-    bool m_sizeBytesHasBeenSet;
+    bool m_sizeBytesHasBeenSet = false;
 
     long long m_eventCount;
-    bool m_eventCountHasBeenSet;
+    bool m_eventCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Landmark">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Landmark
+  class Landmark
   {
   public:
-    Landmark();
-    Landmark(Aws::Utils::Json::JsonView jsonValue);
-    Landmark& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Landmark();
+    AWS_REKOGNITION_API Landmark(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Landmark& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     LandmarkType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     double m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
   };
 
 } // namespace Model

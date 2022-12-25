@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/AppValidationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API AppValidationOutput
+  class AppValidationOutput
   {
   public:
-    AppValidationOutput();
-    AppValidationOutput(Aws::Utils::Json::JsonView jsonValue);
-    AppValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API AppValidationOutput();
+    AWS_SMS_API AppValidationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API AppValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SSMOutput m_ssmOutput;
-    bool m_ssmOutputHasBeenSet;
+    bool m_ssmOutputHasBeenSet = false;
   };
 
 } // namespace Model

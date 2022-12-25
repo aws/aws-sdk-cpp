@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMR_API StartNotebookExecutionRequest : public EMRRequest
+  class StartNotebookExecutionRequest : public EMRRequest
   {
   public:
-    StartNotebookExecutionRequest();
+    AWS_EMR_API StartNotebookExecutionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartNotebookExecution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -467,28 +467,28 @@ namespace Model
   private:
 
     Aws::String m_editorId;
-    bool m_editorIdHasBeenSet;
+    bool m_editorIdHasBeenSet = false;
 
     Aws::String m_relativePath;
-    bool m_relativePathHasBeenSet;
+    bool m_relativePathHasBeenSet = false;
 
     Aws::String m_notebookExecutionName;
-    bool m_notebookExecutionNameHasBeenSet;
+    bool m_notebookExecutionNameHasBeenSet = false;
 
     Aws::String m_notebookParams;
-    bool m_notebookParamsHasBeenSet;
+    bool m_notebookParamsHasBeenSet = false;
 
     ExecutionEngineConfig m_executionEngine;
-    bool m_executionEngineHasBeenSet;
+    bool m_executionEngineHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_notebookInstanceSecurityGroupId;
-    bool m_notebookInstanceSecurityGroupIdHasBeenSet;
+    bool m_notebookInstanceSecurityGroupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

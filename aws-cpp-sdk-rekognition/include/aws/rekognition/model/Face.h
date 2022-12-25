@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Face">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Face
+  class Face
   {
   public:
-    Face();
-    Face(Aws::Utils::Json::JsonView jsonValue);
-    Face& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Face();
+    AWS_REKOGNITION_API Face(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Face& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,22 +270,22 @@ namespace Model
   private:
 
     Aws::String m_faceId;
-    bool m_faceIdHasBeenSet;
+    bool m_faceIdHasBeenSet = false;
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_externalImageId;
-    bool m_externalImageIdHasBeenSet;
+    bool m_externalImageIdHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::String m_indexFacesModelVersion;
-    bool m_indexFacesModelVersionHasBeenSet;
+    bool m_indexFacesModelVersionHasBeenSet = false;
   };
 
 } // namespace Model

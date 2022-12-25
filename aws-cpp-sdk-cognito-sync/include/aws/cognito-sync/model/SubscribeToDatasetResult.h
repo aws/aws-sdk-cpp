@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/SubscribeToDatasetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API SubscribeToDatasetResult
+  class SubscribeToDatasetResult
   {
   public:
-    SubscribeToDatasetResult();
-    SubscribeToDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubscribeToDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API SubscribeToDatasetResult();
+    AWS_COGNITOSYNC_API SubscribeToDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API SubscribeToDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

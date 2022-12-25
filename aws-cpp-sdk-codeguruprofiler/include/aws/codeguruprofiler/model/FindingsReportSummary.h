@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/FindingsReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API FindingsReportSummary
+  class FindingsReportSummary
   {
   public:
-    FindingsReportSummary();
-    FindingsReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    FindingsReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API FindingsReportSummary();
+    AWS_CODEGURUPROFILER_API FindingsReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API FindingsReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,19 +248,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_profileEndTime;
-    bool m_profileEndTimeHasBeenSet;
+    bool m_profileEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_profileStartTime;
-    bool m_profileStartTimeHasBeenSet;
+    bool m_profileStartTimeHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     int m_totalNumberOfFindings;
-    bool m_totalNumberOfFindingsHasBeenSet;
+    bool m_totalNumberOfFindingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,9 @@ ListRulesRequest::ListRulesRequest() :
     m_nextTokenHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_lockState(LockState::NOT_SET),
+    m_lockStateHasBeenSet(false)
 {
 }
 
@@ -45,13 +47,18 @@ Aws::String ListRulesRequest::SerializePayload() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
    }
    payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
 
+  }
+
+  if(m_lockStateHasBeenSet)
+  {
+   payload.WithString("LockState", LockStateMapper::GetNameForLockState(m_lockState));
   }
 
   return payload.View().WriteReadable();

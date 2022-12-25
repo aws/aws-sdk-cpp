@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/IsBinaryFile">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API IsBinaryFile
+  class IsBinaryFile
   {
   public:
-    IsBinaryFile();
-    IsBinaryFile(Aws::Utils::Json::JsonView jsonValue);
-    IsBinaryFile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API IsBinaryFile();
+    AWS_CODECOMMIT_API IsBinaryFile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API IsBinaryFile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,13 +113,13 @@ namespace Model
   private:
 
     bool m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     bool m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     bool m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

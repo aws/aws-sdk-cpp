@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Parameter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API Parameter
+  class Parameter
   {
   public:
-    Parameter();
-    Parameter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Parameter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Parameter();
+    AWS_CLOUDFORMATION_API Parameter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Parameter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
 
     bool m_usePreviousValue;
-    bool m_usePreviousValueHasBeenSet;
+    bool m_usePreviousValueHasBeenSet = false;
 
     Aws::String m_resolvedValue;
-    bool m_resolvedValueHasBeenSet;
+    bool m_resolvedValueHasBeenSet = false;
   };
 
 } // namespace Model

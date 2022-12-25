@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Job">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Job();
+    AWS_MEDIACONVERT_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1139,79 +1139,79 @@ namespace Model
   private:
 
     AccelerationSettings m_accelerationSettings;
-    bool m_accelerationSettingsHasBeenSet;
+    bool m_accelerationSettingsHasBeenSet = false;
 
     AccelerationStatus m_accelerationStatus;
-    bool m_accelerationStatusHasBeenSet;
+    bool m_accelerationStatusHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     BillingTagsSource m_billingTagsSource;
-    bool m_billingTagsSourceHasBeenSet;
+    bool m_billingTagsSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     JobPhase m_currentPhase;
-    bool m_currentPhaseHasBeenSet;
+    bool m_currentPhaseHasBeenSet = false;
 
     int m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<HopDestination> m_hopDestinations;
-    bool m_hopDestinationsHasBeenSet;
+    bool m_hopDestinationsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_jobPercentComplete;
-    bool m_jobPercentCompleteHasBeenSet;
+    bool m_jobPercentCompleteHasBeenSet = false;
 
     Aws::String m_jobTemplate;
-    bool m_jobTemplateHasBeenSet;
+    bool m_jobTemplateHasBeenSet = false;
 
     JobMessages m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Aws::Vector<OutputGroupDetail> m_outputGroupDetails;
-    bool m_outputGroupDetailsHasBeenSet;
+    bool m_outputGroupDetailsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     Aws::Vector<QueueTransition> m_queueTransitions;
-    bool m_queueTransitionsHasBeenSet;
+    bool m_queueTransitionsHasBeenSet = false;
 
     int m_retryCount;
-    bool m_retryCountHasBeenSet;
+    bool m_retryCountHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     JobSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     SimulateReservedQueue m_simulateReservedQueue;
-    bool m_simulateReservedQueueHasBeenSet;
+    bool m_simulateReservedQueueHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     StatusUpdateInterval m_statusUpdateInterval;
-    bool m_statusUpdateIntervalHasBeenSet;
+    bool m_statusUpdateIntervalHasBeenSet = false;
 
     Timing m_timing;
-    bool m_timingHasBeenSet;
+    bool m_timingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
-    bool m_userMetadataHasBeenSet;
+    bool m_userMetadataHasBeenSet = false;
   };
 
 } // namespace Model

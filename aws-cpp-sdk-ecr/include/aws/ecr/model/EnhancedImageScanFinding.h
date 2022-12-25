@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/EnhancedImageScanFinding">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API EnhancedImageScanFinding
+  class EnhancedImageScanFinding
   {
   public:
-    EnhancedImageScanFinding();
-    EnhancedImageScanFinding(Aws::Utils::Json::JsonView jsonValue);
-    EnhancedImageScanFinding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API EnhancedImageScanFinding();
+    AWS_ECR_API EnhancedImageScanFinding(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API EnhancedImageScanFinding& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -581,49 +581,49 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-    bool m_packageVulnerabilityDetailsHasBeenSet;
+    bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
     Remediation m_remediation;
-    bool m_remediationHasBeenSet;
+    bool m_remediationHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     ScoreDetails m_scoreDetails;
-    bool m_scoreDetailsHasBeenSet;
+    bool m_scoreDetailsHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

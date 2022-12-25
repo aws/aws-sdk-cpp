@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListAttachedIndices">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListAttachedIndices
+  class BatchListAttachedIndices
   {
   public:
-    BatchListAttachedIndices();
-    BatchListAttachedIndices(Aws::Utils::Json::JsonView jsonValue);
-    BatchListAttachedIndices& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndices();
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndices(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndices& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     ObjectReference m_targetReference;
-    bool m_targetReferenceHasBeenSet;
+    bool m_targetReferenceHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

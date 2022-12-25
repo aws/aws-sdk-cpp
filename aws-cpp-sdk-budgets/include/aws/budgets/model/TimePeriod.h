@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/TimePeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API TimePeriod
+  class TimePeriod
   {
   public:
-    TimePeriod();
-    TimePeriod(Aws::Utils::Json::JsonView jsonValue);
-    TimePeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API TimePeriod();
+    AWS_BUDGETS_API TimePeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API TimePeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

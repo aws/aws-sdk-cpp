@@ -24,7 +24,8 @@ Settings::Settings() :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnablementHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Settings::Settings(JsonView jsonValue) :
     m_snsTopicHasBeenSet(false),
     m_defaultAssessmentReportsDestinationHasBeenSet(false),
     m_defaultProcessOwnersHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
+    m_kmsKeyHasBeenSet(false),
+    m_evidenceFinderEnablementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,7 +66,7 @@ Settings& Settings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("defaultProcessOwners"))
   {
-    Array<JsonView> defaultProcessOwnersJsonList = jsonValue.GetArray("defaultProcessOwners");
+    Aws::Utils::Array<JsonView> defaultProcessOwnersJsonList = jsonValue.GetArray("defaultProcessOwners");
     for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
     {
       m_defaultProcessOwners.push_back(defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject());
@@ -77,6 +79,13 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_kmsKey = jsonValue.GetString("kmsKey");
 
     m_kmsKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("evidenceFinderEnablement"))
+  {
+    m_evidenceFinderEnablement = jsonValue.GetObject("evidenceFinderEnablement");
+
+    m_evidenceFinderEnablementHasBeenSet = true;
   }
 
   return *this;
@@ -106,7 +115,7 @@ JsonValue Settings::Jsonize() const
 
   if(m_defaultProcessOwnersHasBeenSet)
   {
-   Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
+   Aws::Utils::Array<JsonValue> defaultProcessOwnersJsonList(m_defaultProcessOwners.size());
    for(unsigned defaultProcessOwnersIndex = 0; defaultProcessOwnersIndex < defaultProcessOwnersJsonList.GetLength(); ++defaultProcessOwnersIndex)
    {
      defaultProcessOwnersJsonList[defaultProcessOwnersIndex].AsObject(m_defaultProcessOwners[defaultProcessOwnersIndex].Jsonize());
@@ -118,6 +127,12 @@ JsonValue Settings::Jsonize() const
   if(m_kmsKeyHasBeenSet)
   {
    payload.WithString("kmsKey", m_kmsKey);
+
+  }
+
+  if(m_evidenceFinderEnablementHasBeenSet)
+  {
+   payload.WithObject("evidenceFinderEnablement", m_evidenceFinderEnablement.Jsonize());
 
   }
 

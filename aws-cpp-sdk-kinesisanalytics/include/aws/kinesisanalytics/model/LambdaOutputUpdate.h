@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/LambdaOutputUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API LambdaOutputUpdate
+  class LambdaOutputUpdate
   {
   public:
-    LambdaOutputUpdate();
-    LambdaOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
-    LambdaOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API LambdaOutputUpdate();
+    AWS_KINESISANALYTICS_API LambdaOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API LambdaOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARNUpdate;
-    bool m_resourceARNUpdateHasBeenSet;
+    bool m_resourceARNUpdateHasBeenSet = false;
 
     Aws::String m_roleARNUpdate;
-    bool m_roleARNUpdateHasBeenSet;
+    bool m_roleARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

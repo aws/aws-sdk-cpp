@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/RecommenderConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API RecommenderConfig
+  class RecommenderConfig
   {
   public:
-    RecommenderConfig();
-    RecommenderConfig(Aws::Utils::Json::JsonView jsonValue);
-    RecommenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API RecommenderConfig();
+    AWS_PERSONALIZE_API RecommenderConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API RecommenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,10 +196,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-    bool m_itemExplorationConfigHasBeenSet;
+    bool m_itemExplorationConfigHasBeenSet = false;
 
     int m_minRecommendationRequestsPerSecond;
-    bool m_minRecommendationRequestsPerSecondHasBeenSet;
+    bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,17 +20,17 @@ namespace Model
 
 PropertyRequest::PropertyRequest() : 
     m_definitionHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_updateType(PropertyUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_updateTypeHasBeenSet(false)
 {
 }
 
 PropertyRequest::PropertyRequest(JsonView jsonValue) : 
     m_definitionHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_updateType(PropertyUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_updateTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,18 +44,18 @@ PropertyRequest& PropertyRequest::operator =(JsonView jsonValue)
     m_definitionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updateType"))
-  {
-    m_updateType = PropertyUpdateTypeMapper::GetPropertyUpdateTypeForName(jsonValue.GetString("updateType"));
-
-    m_updateTypeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
 
     m_valueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateType"))
+  {
+    m_updateType = PropertyUpdateTypeMapper::GetPropertyUpdateTypeForName(jsonValue.GetString("updateType"));
+
+    m_updateTypeHasBeenSet = true;
   }
 
   return *this;
@@ -71,15 +71,15 @@ JsonValue PropertyRequest::Jsonize() const
 
   }
 
-  if(m_updateTypeHasBeenSet)
-  {
-   payload.WithString("updateType", PropertyUpdateTypeMapper::GetNameForPropertyUpdateType(m_updateType));
-  }
-
   if(m_valueHasBeenSet)
   {
    payload.WithObject("value", m_value.Jsonize());
 
+  }
+
+  if(m_updateTypeHasBeenSet)
+  {
+   payload.WithString("updateType", PropertyUpdateTypeMapper::GetNameForPropertyUpdateType(m_updateType));
   }
 
   return payload;

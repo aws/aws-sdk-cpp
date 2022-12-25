@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Taint">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Taint
+  class Taint
   {
   public:
-    Taint();
-    Taint(Aws::Utils::Json::JsonView jsonValue);
-    Taint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Taint();
+    AWS_EKS_API Taint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Taint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     TaintEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
   };
 
 } // namespace Model

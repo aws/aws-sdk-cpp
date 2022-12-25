@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/IntegrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API IntegrationConfig
+  class IntegrationConfig
   {
   public:
-    IntegrationConfig();
-    IntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    IntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API IntegrationConfig();
+    AWS_CUSTOMERPROFILES_API IntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API IntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AppflowIntegration m_appflowIntegration;
-    bool m_appflowIntegrationHasBeenSet;
+    bool m_appflowIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

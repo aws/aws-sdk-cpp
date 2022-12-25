@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabase">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabase
+  class RelationalDatabase
   {
   public:
-    RelationalDatabase();
-    RelationalDatabase(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabase();
+    AWS_LIGHTSAIL_API RelationalDatabase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1124,82 +1124,82 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_relationalDatabaseBlueprintId;
-    bool m_relationalDatabaseBlueprintIdHasBeenSet;
+    bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
 
     Aws::String m_relationalDatabaseBundleId;
-    bool m_relationalDatabaseBundleIdHasBeenSet;
+    bool m_relationalDatabaseBundleIdHasBeenSet = false;
 
     Aws::String m_masterDatabaseName;
-    bool m_masterDatabaseNameHasBeenSet;
+    bool m_masterDatabaseNameHasBeenSet = false;
 
     RelationalDatabaseHardware m_hardware;
-    bool m_hardwareHasBeenSet;
+    bool m_hardwareHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_secondaryAvailabilityZone;
-    bool m_secondaryAvailabilityZoneHasBeenSet;
+    bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
     bool m_backupRetentionEnabled;
-    bool m_backupRetentionEnabledHasBeenSet;
+    bool m_backupRetentionEnabledHasBeenSet = false;
 
     PendingModifiedRelationalDatabaseValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     RelationalDatabaseEndpoint m_masterEndpoint;
-    bool m_masterEndpointHasBeenSet;
+    bool m_masterEndpointHasBeenSet = false;
 
     Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActions;
-    bool m_pendingMaintenanceActionsHasBeenSet;
+    bool m_pendingMaintenanceActionsHasBeenSet = false;
 
     Aws::String m_caCertificateIdentifier;
-    bool m_caCertificateIdentifierHasBeenSet;
+    bool m_caCertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

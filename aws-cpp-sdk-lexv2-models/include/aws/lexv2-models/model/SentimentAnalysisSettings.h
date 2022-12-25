@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SentimentAnalysisSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SentimentAnalysisSettings
+  class SentimentAnalysisSettings
   {
   public:
-    SentimentAnalysisSettings();
-    SentimentAnalysisSettings(Aws::Utils::Json::JsonView jsonValue);
-    SentimentAnalysisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SentimentAnalysisSettings();
+    AWS_LEXMODELSV2_API SentimentAnalysisSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SentimentAnalysisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_detectSentiment;
-    bool m_detectSentimentHasBeenSet;
+    bool m_detectSentimentHasBeenSet = false;
   };
 
 } // namespace Model

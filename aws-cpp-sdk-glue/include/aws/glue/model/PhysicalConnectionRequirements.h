@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PhysicalConnectionRequirements">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PhysicalConnectionRequirements
+  class PhysicalConnectionRequirements
   {
   public:
-    PhysicalConnectionRequirements();
-    PhysicalConnectionRequirements(Aws::Utils::Json::JsonView jsonValue);
-    PhysicalConnectionRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PhysicalConnectionRequirements();
+    AWS_GLUE_API PhysicalConnectionRequirements(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PhysicalConnectionRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIdList;
-    bool m_securityGroupIdListHasBeenSet;
+    bool m_securityGroupIdListHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API FindingCriteria
+  class FindingCriteria
   {
   public:
-    FindingCriteria();
-    FindingCriteria(Aws::Utils::Json::JsonView jsonValue);
-    FindingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API FindingCriteria();
+    AWS_MACIE2_API FindingCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API FindingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, CriterionAdditionalProperties> m_criterion;
-    bool m_criterionHasBeenSet;
+    bool m_criterionHasBeenSet = false;
   };
 
 } // namespace Model

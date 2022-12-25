@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuthorizerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuthorizerConfig
+  class AuthorizerConfig
   {
   public:
-    AuthorizerConfig();
-    AuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
-    AuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuthorizerConfig();
+    AWS_IOT_API AuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_defaultAuthorizerName;
-    bool m_defaultAuthorizerNameHasBeenSet;
+    bool m_defaultAuthorizerNameHasBeenSet = false;
 
     bool m_allowAuthorizerOverride;
-    bool m_allowAuthorizerOverrideHasBeenSet;
+    bool m_allowAuthorizerOverrideHasBeenSet = false;
   };
 
 } // namespace Model

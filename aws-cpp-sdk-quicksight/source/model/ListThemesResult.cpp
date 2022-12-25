@@ -32,7 +32,7 @@ ListThemesResult& ListThemesResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ThemeSummaryList"))
   {
-    Array<JsonView> themeSummaryListJsonList = jsonValue.GetArray("ThemeSummaryList");
+    Aws::Utils::Array<JsonView> themeSummaryListJsonList = jsonValue.GetArray("ThemeSummaryList");
     for(unsigned themeSummaryListIndex = 0; themeSummaryListIndex < themeSummaryListJsonList.GetLength(); ++themeSummaryListIndex)
     {
       m_themeSummaryList.push_back(themeSummaryListJsonList[themeSummaryListIndex].AsObject());

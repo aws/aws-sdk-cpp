@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53DOMAINS_API ListPricesRequest : public Route53DomainsRequest
+  class ListPricesRequest : public Route53DomainsRequest
   {
   public:
-    ListPricesRequest();
+    AWS_ROUTE53DOMAINS_API ListPricesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPrices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53DOMAINS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -215,13 +215,13 @@ namespace Model
   private:
 
     Aws::String m_tld;
-    bool m_tldHasBeenSet;
+    bool m_tldHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

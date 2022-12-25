@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API RouteSpec
+  class RouteSpec
   {
   public:
-    RouteSpec();
-    RouteSpec(Aws::Utils::Json::JsonView jsonValue);
-    RouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API RouteSpec();
+    AWS_APPMESH_API RouteSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API RouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,19 +191,19 @@ namespace Model
   private:
 
     GrpcRoute m_grpcRoute;
-    bool m_grpcRouteHasBeenSet;
+    bool m_grpcRouteHasBeenSet = false;
 
     HttpRoute m_http2Route;
-    bool m_http2RouteHasBeenSet;
+    bool m_http2RouteHasBeenSet = false;
 
     HttpRoute m_httpRoute;
-    bool m_httpRouteHasBeenSet;
+    bool m_httpRouteHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     TcpRoute m_tcpRoute;
-    bool m_tcpRouteHasBeenSet;
+    bool m_tcpRouteHasBeenSet = false;
   };
 
 } // namespace Model

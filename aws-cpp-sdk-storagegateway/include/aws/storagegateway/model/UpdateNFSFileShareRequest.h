@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShareInput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateNFSFileShareRequest : public StorageGatewayRequest
+  class UpdateNFSFileShareRequest : public StorageGatewayRequest
   {
   public:
-    UpdateNFSFileShareRequest();
+    AWS_STORAGEGATEWAY_API UpdateNFSFileShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNFSFileShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -830,49 +830,49 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
-    bool m_nFSFileShareDefaultsHasBeenSet;
+    bool m_nFSFileShareDefaultsHasBeenSet = false;
 
     Aws::String m_defaultStorageClass;
-    bool m_defaultStorageClassHasBeenSet;
+    bool m_defaultStorageClassHasBeenSet = false;
 
     ObjectACL m_objectACL;
-    bool m_objectACLHasBeenSet;
+    bool m_objectACLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientList;
-    bool m_clientListHasBeenSet;
+    bool m_clientListHasBeenSet = false;
 
     Aws::String m_squash;
-    bool m_squashHasBeenSet;
+    bool m_squashHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     bool m_guessMIMETypeEnabled;
-    bool m_guessMIMETypeEnabledHasBeenSet;
+    bool m_guessMIMETypeEnabledHasBeenSet = false;
 
     bool m_requesterPays;
-    bool m_requesterPaysHasBeenSet;
+    bool m_requesterPaysHasBeenSet = false;
 
     Aws::String m_fileShareName;
-    bool m_fileShareNameHasBeenSet;
+    bool m_fileShareNameHasBeenSet = false;
 
     CacheAttributes m_cacheAttributes;
-    bool m_cacheAttributesHasBeenSet;
+    bool m_cacheAttributesHasBeenSet = false;
 
     Aws::String m_notificationPolicy;
-    bool m_notificationPolicyHasBeenSet;
+    bool m_notificationPolicyHasBeenSet = false;
 
     Aws::String m_auditDestinationARN;
-    bool m_auditDestinationARNHasBeenSet;
+    bool m_auditDestinationARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/SystemEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API SystemEvent
+  class SystemEvent
   {
   public:
-    SystemEvent();
-    SystemEvent(Aws::Utils::Json::JsonView jsonValue);
-    SystemEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API SystemEvent();
+    AWS_IOTEVENTSDATA_API SystemEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API SystemEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     StateChangeConfiguration m_stateChangeConfiguration;
-    bool m_stateChangeConfigurationHasBeenSet;
+    bool m_stateChangeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

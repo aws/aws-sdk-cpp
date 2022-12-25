@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API TargetTrackingConfiguration
+  class TargetTrackingConfiguration
   {
   public:
-    TargetTrackingConfiguration();
-    TargetTrackingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetTrackingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TargetTrackingConfiguration();
+    AWS_AUTOSCALING_API TargetTrackingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TargetTrackingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     PredefinedMetricSpecification m_predefinedMetricSpecification;
-    bool m_predefinedMetricSpecificationHasBeenSet;
+    bool m_predefinedMetricSpecificationHasBeenSet = false;
 
     CustomizedMetricSpecification m_customizedMetricSpecification;
-    bool m_customizedMetricSpecificationHasBeenSet;
+    bool m_customizedMetricSpecificationHasBeenSet = false;
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
   };
 
 } // namespace Model

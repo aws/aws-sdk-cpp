@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ColumnStatisticsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ColumnStatisticsConfiguration
+  class ColumnStatisticsConfiguration
   {
   public:
-    ColumnStatisticsConfiguration();
-    ColumnStatisticsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ColumnStatisticsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ColumnStatisticsConfiguration();
+    AWS_GLUEDATABREW_API ColumnStatisticsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ColumnStatisticsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<ColumnSelector> m_selectors;
-    bool m_selectorsHasBeenSet;
+    bool m_selectorsHasBeenSet = false;
 
     StatisticsConfiguration m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
   };
 
 } // namespace Model

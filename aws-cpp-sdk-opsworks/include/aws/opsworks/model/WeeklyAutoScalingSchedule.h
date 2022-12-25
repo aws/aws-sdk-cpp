@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/WeeklyAutoScalingSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API WeeklyAutoScalingSchedule
+  class WeeklyAutoScalingSchedule
   {
   public:
-    WeeklyAutoScalingSchedule();
-    WeeklyAutoScalingSchedule(Aws::Utils::Json::JsonView jsonValue);
-    WeeklyAutoScalingSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API WeeklyAutoScalingSchedule();
+    AWS_OPSWORKS_API WeeklyAutoScalingSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API WeeklyAutoScalingSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -513,25 +513,25 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_monday;
-    bool m_mondayHasBeenSet;
+    bool m_mondayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tuesday;
-    bool m_tuesdayHasBeenSet;
+    bool m_tuesdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_wednesday;
-    bool m_wednesdayHasBeenSet;
+    bool m_wednesdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_thursday;
-    bool m_thursdayHasBeenSet;
+    bool m_thursdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_friday;
-    bool m_fridayHasBeenSet;
+    bool m_fridayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_saturday;
-    bool m_saturdayHasBeenSet;
+    bool m_saturdayHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sunday;
-    bool m_sundayHasBeenSet;
+    bool m_sundayHasBeenSet = false;
   };
 
 } // namespace Model

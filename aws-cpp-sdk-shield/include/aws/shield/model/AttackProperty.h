@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackProperty
+  class AttackProperty
   {
   public:
-    AttackProperty();
-    AttackProperty(Aws::Utils::Json::JsonView jsonValue);
-    AttackProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackProperty();
+    AWS_SHIELD_API AttackProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,19 +275,19 @@ namespace Model
   private:
 
     AttackLayer m_attackLayer;
-    bool m_attackLayerHasBeenSet;
+    bool m_attackLayerHasBeenSet = false;
 
     AttackPropertyIdentifier m_attackPropertyIdentifier;
-    bool m_attackPropertyIdentifierHasBeenSet;
+    bool m_attackPropertyIdentifierHasBeenSet = false;
 
     Aws::Vector<Contributor> m_topContributors;
-    bool m_topContributorsHasBeenSet;
+    bool m_topContributorsHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchPermissionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API LaunchPermissionConfiguration
+  class LaunchPermissionConfiguration
   {
   public:
-    LaunchPermissionConfiguration();
-    LaunchPermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LaunchPermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API LaunchPermissionConfiguration();
+    AWS_IMAGEBUILDER_API LaunchPermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API LaunchPermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,16 +286,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet;
+    bool m_userGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationArns;
-    bool m_organizationArnsHasBeenSet;
+    bool m_organizationArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitArns;
-    bool m_organizationalUnitArnsHasBeenSet;
+    bool m_organizationalUnitArnsHasBeenSet = false;
   };
 
 } // namespace Model

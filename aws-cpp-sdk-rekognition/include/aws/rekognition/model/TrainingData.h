@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TrainingData">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TrainingData
+  class TrainingData
   {
   public:
-    TrainingData();
-    TrainingData(Aws::Utils::Json::JsonView jsonValue);
-    TrainingData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TrainingData();
+    AWS_REKOGNITION_API TrainingData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TrainingData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<Asset> m_assets;
-    bool m_assetsHasBeenSet;
+    bool m_assetsHasBeenSet = false;
   };
 
 } // namespace Model

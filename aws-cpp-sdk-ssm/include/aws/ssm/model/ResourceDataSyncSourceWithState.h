@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncSourceWithState">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncSourceWithState
+  class ResourceDataSyncSourceWithState
   {
   public:
-    ResourceDataSyncSourceWithState();
-    ResourceDataSyncSourceWithState(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncSourceWithState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncSourceWithState();
+    AWS_SSM_API ResourceDataSyncSourceWithState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncSourceWithState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,22 +369,22 @@ namespace Model
   private:
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     ResourceDataSyncAwsOrganizationsSource m_awsOrganizationsSource;
-    bool m_awsOrganizationsSourceHasBeenSet;
+    bool m_awsOrganizationsSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceRegions;
-    bool m_sourceRegionsHasBeenSet;
+    bool m_sourceRegionsHasBeenSet = false;
 
     bool m_includeFutureRegions;
-    bool m_includeFutureRegionsHasBeenSet;
+    bool m_includeFutureRegionsHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_enableAllOpsDataSources;
-    bool m_enableAllOpsDataSourcesHasBeenSet;
+    bool m_enableAllOpsDataSourcesHasBeenSet = false;
   };
 
 } // namespace Model

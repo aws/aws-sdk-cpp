@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CheckpointConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CheckpointConfig
+  class CheckpointConfig
   {
   public:
-    CheckpointConfig();
-    CheckpointConfig(Aws::Utils::Json::JsonView jsonValue);
-    CheckpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CheckpointConfig();
+    AWS_SAGEMAKER_API CheckpointConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CheckpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
   };
 
 } // namespace Model

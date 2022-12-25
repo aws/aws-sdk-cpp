@@ -7,6 +7,8 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfiguration.h>
 #include <aws/athena/model/EngineVersion.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -37,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API WorkGroupConfiguration
+  class WorkGroupConfiguration
   {
   public:
-    WorkGroupConfiguration();
-    WorkGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WorkGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API WorkGroupConfiguration();
+    AWS_ATHENA_API WorkGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API WorkGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -307,25 +309,161 @@ namespace Model
      */
     inline WorkGroupConfiguration& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline const Aws::String& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::String& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::String&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline void SetAdditionalConfiguration(const char* value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.assign(value); }
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline WorkGroupConfiguration& WithAdditionalConfiguration(const Aws::String& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline WorkGroupConfiguration& WithAdditionalConfiguration(Aws::String&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a user defined JSON string that is passed to the notebook
+     * engine.</p>
+     */
+    inline WorkGroupConfiguration& WithAdditionalConfiguration(const char* value) { SetAdditionalConfiguration(value); return *this;}
+
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline WorkGroupConfiguration& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline WorkGroupConfiguration& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
+
+    /**
+     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     */
+    inline WorkGroupConfiguration& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline const CustomerContentEncryptionConfiguration& GetCustomerContentEncryptionConfiguration() const{ return m_customerContentEncryptionConfiguration; }
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline bool CustomerContentEncryptionConfigurationHasBeenSet() const { return m_customerContentEncryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline void SetCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = value; }
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline void SetCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { SetCustomerContentEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the KMS key that is used to encrypt the user's data stores in
+     * Athena.</p>
+     */
+    inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     ResultConfiguration m_resultConfiguration;
-    bool m_resultConfigurationHasBeenSet;
+    bool m_resultConfigurationHasBeenSet = false;
 
     bool m_enforceWorkGroupConfiguration;
-    bool m_enforceWorkGroupConfigurationHasBeenSet;
+    bool m_enforceWorkGroupConfigurationHasBeenSet = false;
 
     bool m_publishCloudWatchMetricsEnabled;
-    bool m_publishCloudWatchMetricsEnabledHasBeenSet;
+    bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
 
     long long m_bytesScannedCutoffPerQuery;
-    bool m_bytesScannedCutoffPerQueryHasBeenSet;
+    bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
 
     bool m_requesterPaysEnabled;
-    bool m_requesterPaysEnabledHasBeenSet;
+    bool m_requesterPaysEnabledHasBeenSet = false;
 
     EngineVersion m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
+
+    Aws::String m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
+
+    Aws::String m_executionRole;
+    bool m_executionRoleHasBeenSet = false;
+
+    CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
+    bool m_customerContentEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

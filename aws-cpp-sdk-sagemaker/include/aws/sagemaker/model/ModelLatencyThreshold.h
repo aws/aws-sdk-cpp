@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelLatencyThreshold">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelLatencyThreshold
+  class ModelLatencyThreshold
   {
   public:
-    ModelLatencyThreshold();
-    ModelLatencyThreshold(Aws::Utils::Json::JsonView jsonValue);
-    ModelLatencyThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelLatencyThreshold();
+    AWS_SAGEMAKER_API ModelLatencyThreshold(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelLatencyThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_percentile;
-    bool m_percentileHasBeenSet;
+    bool m_percentileHasBeenSet = false;
 
     int m_valueInMilliseconds;
-    bool m_valueInMillisecondsHasBeenSet;
+    bool m_valueInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

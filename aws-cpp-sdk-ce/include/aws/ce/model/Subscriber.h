@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Subscriber">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Subscriber
+  class Subscriber
   {
   public:
-    Subscriber();
-    Subscriber(Aws::Utils::Json::JsonView jsonValue);
-    Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Subscriber();
+    AWS_COSTEXPLORER_API Subscriber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Subscriber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     SubscriberType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     SubscriberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

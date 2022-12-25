@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API UpdateBotAliasRequest : public LexModelsV2Request
+  class UpdateBotAliasRequest : public LexModelsV2Request
   {
   public:
-    UpdateBotAliasRequest();
+    AWS_LEXMODELSV2_API UpdateBotAliasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBotAlias"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -360,28 +360,28 @@ namespace Model
   private:
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botAliasName;
-    bool m_botAliasNameHasBeenSet;
+    bool m_botAliasNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, BotAliasLocaleSettings> m_botAliasLocaleSettings;
-    bool m_botAliasLocaleSettingsHasBeenSet;
+    bool m_botAliasLocaleSettingsHasBeenSet = false;
 
     ConversationLogSettings m_conversationLogSettings;
-    bool m_conversationLogSettingsHasBeenSet;
+    bool m_conversationLogSettingsHasBeenSet = false;
 
     SentimentAnalysisSettings m_sentimentAnalysisSettings;
-    bool m_sentimentAnalysisSettingsHasBeenSet;
+    bool m_sentimentAnalysisSettingsHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
   };
 
 } // namespace Model

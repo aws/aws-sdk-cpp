@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API SubmitFeedbackRequest : public KendraRequest
+  class SubmitFeedbackRequest : public KendraRequest
   {
   public:
-    SubmitFeedbackRequest();
+    AWS_KENDRA_API SubmitFeedbackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SubmitFeedback"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::Vector<ClickFeedback> m_clickFeedbackItems;
-    bool m_clickFeedbackItemsHasBeenSet;
+    bool m_clickFeedbackItemsHasBeenSet = false;
 
     Aws::Vector<RelevanceFeedback> m_relevanceFeedbackItems;
-    bool m_relevanceFeedbackItemsHasBeenSet;
+    bool m_relevanceFeedbackItemsHasBeenSet = false;
   };
 
 } // namespace Model

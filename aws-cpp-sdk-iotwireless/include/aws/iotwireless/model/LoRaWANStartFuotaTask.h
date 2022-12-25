@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANStartFuotaTask">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANStartFuotaTask
+  class LoRaWANStartFuotaTask
   {
   public:
-    LoRaWANStartFuotaTask();
-    LoRaWANStartFuotaTask(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANStartFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANStartFuotaTask();
+    AWS_IOTWIRELESS_API LoRaWANStartFuotaTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANStartFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

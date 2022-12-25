@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/S3DataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API S3DataConfig
+  class S3DataConfig
   {
   public:
-    S3DataConfig();
-    S3DataConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3DataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API S3DataConfig();
+    AWS_PERSONALIZE_API S3DataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API S3DataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

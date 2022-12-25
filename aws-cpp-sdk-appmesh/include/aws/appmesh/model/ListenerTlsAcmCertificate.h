@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTlsAcmCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListenerTlsAcmCertificate
+  class ListenerTlsAcmCertificate
   {
   public:
-    ListenerTlsAcmCertificate();
-    ListenerTlsAcmCertificate(Aws::Utils::Json::JsonView jsonValue);
-    ListenerTlsAcmCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ListenerTlsAcmCertificate();
+    AWS_APPMESH_API ListenerTlsAcmCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ListenerTlsAcmCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
   };
 
 } // namespace Model

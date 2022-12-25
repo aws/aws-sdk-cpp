@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONFIGSERVICE_API PutRemediationConfigurationsRequest : public ConfigServiceRequest
+  class PutRemediationConfigurationsRequest : public ConfigServiceRequest
   {
   public:
-    PutRemediationConfigurationsRequest();
+    AWS_CONFIGSERVICE_API PutRemediationConfigurationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutRemediationConfigurations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<RemediationConfiguration> m_remediationConfigurations;
-    bool m_remediationConfigurationsHasBeenSet;
+    bool m_remediationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

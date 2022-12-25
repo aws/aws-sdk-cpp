@@ -19,14 +19,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CreateGameSessionRequest : public GameLiftRequest
+  class CreateGameSessionRequest : public GameLiftRequest
   {
   public:
-    CreateGameSessionRequest();
+    AWS_GAMELIFT_API CreateGameSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGameSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -229,8 +226,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -238,8 +235,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -247,8 +244,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -256,8 +253,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -265,8 +262,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -274,8 +271,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -283,8 +280,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -292,8 +289,8 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -382,74 +379,66 @@ namespace Model
 
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline CreateGameSessionRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline CreateGameSessionRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p> <i>This parameter is no longer preferred. Please use
-     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
-     * identifies a request for a new game session. Maximum token length is 48
-     * characters. If provided, this string is included in the new game session's
-     * ID.</p>
+     * <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code>
+     * instead.</i> </p> <p>Custom string that uniquely identifies a request for a new
+     * game session. Maximum token length is 48 characters. If provided, this string is
+     * included in the new game session's ID.</p>
      */
     inline CreateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
@@ -569,8 +558,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -578,8 +567,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -587,8 +576,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -596,8 +585,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -605,8 +594,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -614,8 +603,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -623,8 +612,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -632,8 +621,8 @@ namespace Model
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
@@ -707,34 +696,34 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     Aws::String m_creatorId;
-    bool m_creatorIdHasBeenSet;
+    bool m_creatorIdHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

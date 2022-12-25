@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteReplicaAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API DeleteReplicaAction
+  class DeleteReplicaAction
   {
   public:
-    DeleteReplicaAction();
-    DeleteReplicaAction(Aws::Utils::Json::JsonView jsonValue);
-    DeleteReplicaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API DeleteReplicaAction();
+    AWS_DYNAMODB_API DeleteReplicaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API DeleteReplicaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/model/EffectiveDeploymentExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/greengrassv2/model/EffectiveDeploymentStatusDetails.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/EffectiveDeployment">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API EffectiveDeployment
+  class EffectiveDeployment
   {
   public:
-    EffectiveDeployment();
-    EffectiveDeployment(Aws::Utils::Json::JsonView jsonValue);
-    EffectiveDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API EffectiveDeployment();
+    AWS_GREENGRASSV2_API EffectiveDeployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API EffectiveDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,37 +464,77 @@ namespace Model
      */
     inline EffectiveDeployment& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline const EffectiveDeploymentStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline void SetStatusDetails(const EffectiveDeploymentStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline void SetStatusDetails(EffectiveDeploymentStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline EffectiveDeployment& WithStatusDetails(const EffectiveDeploymentStatusDetails& value) { SetStatusDetails(value); return *this;}
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline EffectiveDeployment& WithStatusDetails(EffectiveDeploymentStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::String m_iotJobId;
-    bool m_iotJobIdHasBeenSet;
+    bool m_iotJobIdHasBeenSet = false;
 
     Aws::String m_iotJobArn;
-    bool m_iotJobArnHasBeenSet;
+    bool m_iotJobArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     EffectiveDeploymentExecutionStatus m_coreDeviceExecutionStatus;
-    bool m_coreDeviceExecutionStatusHasBeenSet;
+    bool m_coreDeviceExecutionStatusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimestamp;
-    bool m_modifiedTimestampHasBeenSet;
+    bool m_modifiedTimestampHasBeenSet = false;
+
+    EffectiveDeploymentStatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NamespaceInfoV2">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NamespaceInfoV2
+  class NamespaceInfoV2
   {
   public:
-    NamespaceInfoV2();
-    NamespaceInfoV2(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceInfoV2& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NamespaceInfoV2();
+    AWS_QUICKSIGHT_API NamespaceInfoV2(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NamespaceInfoV2& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_capacityRegion;
-    bool m_capacityRegionHasBeenSet;
+    bool m_capacityRegionHasBeenSet = false;
 
     NamespaceStatus m_creationStatus;
-    bool m_creationStatusHasBeenSet;
+    bool m_creationStatusHasBeenSet = false;
 
     IdentityStore m_identityStore;
-    bool m_identityStoreHasBeenSet;
+    bool m_identityStoreHasBeenSet = false;
 
     NamespaceError m_namespaceError;
-    bool m_namespaceErrorHasBeenSet;
+    bool m_namespaceErrorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MulticastGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MulticastGroup
+  class MulticastGroup
   {
   public:
-    MulticastGroup();
-    MulticastGroup(Aws::Utils::Json::JsonView jsonValue);
-    MulticastGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MulticastGroup();
+    AWS_IOTWIRELESS_API MulticastGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MulticastGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -114,13 +114,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

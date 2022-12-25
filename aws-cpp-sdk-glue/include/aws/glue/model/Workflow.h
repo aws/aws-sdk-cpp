@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Workflow
+  class Workflow
   {
   public:
-    Workflow();
-    Workflow(Aws::Utils::Json::JsonView jsonValue);
-    Workflow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Workflow();
+    AWS_GLUE_API Workflow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Workflow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -420,31 +420,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultRunProperties;
-    bool m_defaultRunPropertiesHasBeenSet;
+    bool m_defaultRunPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     WorkflowRun m_lastRun;
-    bool m_lastRunHasBeenSet;
+    bool m_lastRunHasBeenSet = false;
 
     WorkflowGraph m_graph;
-    bool m_graphHasBeenSet;
+    bool m_graphHasBeenSet = false;
 
     int m_maxConcurrentRuns;
-    bool m_maxConcurrentRunsHasBeenSet;
+    bool m_maxConcurrentRunsHasBeenSet = false;
 
     BlueprintDetails m_blueprintDetails;
-    bool m_blueprintDetailsHasBeenSet;
+    bool m_blueprintDetailsHasBeenSet = false;
   };
 
 } // namespace Model

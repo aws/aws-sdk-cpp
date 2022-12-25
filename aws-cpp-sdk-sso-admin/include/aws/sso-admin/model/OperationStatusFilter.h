@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/OperationStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API OperationStatusFilter
+  class OperationStatusFilter
   {
   public:
-    OperationStatusFilter();
-    OperationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    OperationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API OperationStatusFilter();
+    AWS_SSOADMIN_API OperationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API OperationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     StatusValues m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

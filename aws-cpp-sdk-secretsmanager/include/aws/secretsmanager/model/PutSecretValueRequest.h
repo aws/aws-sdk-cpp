@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API PutSecretValueRequest : public SecretsManagerRequest
+  class PutSecretValueRequest : public SecretsManagerRequest
   {
   public:
-    PutSecretValueRequest();
+    AWS_SECRETSMANAGER_API PutSecretValueRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSecretValue"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -582,19 +582,19 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_secretBinary;
-    bool m_secretBinaryHasBeenSet;
+    bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;
-    bool m_secretStringHasBeenSet;
+    bool m_secretStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionStages;
-    bool m_versionStagesHasBeenSet;
+    bool m_versionStagesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LocalDeviceResourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API LocalDeviceResourceData
+  class LocalDeviceResourceData
   {
   public:
-    LocalDeviceResourceData();
-    LocalDeviceResourceData(Aws::Utils::Json::JsonView jsonValue);
-    LocalDeviceResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API LocalDeviceResourceData();
+    AWS_GREENGRASS_API LocalDeviceResourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API LocalDeviceResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     GroupOwnerSetting m_groupOwnerSetting;
-    bool m_groupOwnerSettingHasBeenSet;
+    bool m_groupOwnerSettingHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

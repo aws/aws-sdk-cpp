@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorProfileProperties
+  class ConnectorProfileProperties
   {
   public:
-    ConnectorProfileProperties();
-    ConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorProfileProperties();
+    AWS_APPFLOW_API ConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -603,58 +603,58 @@ namespace Model
   private:
 
     AmplitudeConnectorProfileProperties m_amplitude;
-    bool m_amplitudeHasBeenSet;
+    bool m_amplitudeHasBeenSet = false;
 
     DatadogConnectorProfileProperties m_datadog;
-    bool m_datadogHasBeenSet;
+    bool m_datadogHasBeenSet = false;
 
     DynatraceConnectorProfileProperties m_dynatrace;
-    bool m_dynatraceHasBeenSet;
+    bool m_dynatraceHasBeenSet = false;
 
     GoogleAnalyticsConnectorProfileProperties m_googleAnalytics;
-    bool m_googleAnalyticsHasBeenSet;
+    bool m_googleAnalyticsHasBeenSet = false;
 
     HoneycodeConnectorProfileProperties m_honeycode;
-    bool m_honeycodeHasBeenSet;
+    bool m_honeycodeHasBeenSet = false;
 
     InforNexusConnectorProfileProperties m_inforNexus;
-    bool m_inforNexusHasBeenSet;
+    bool m_inforNexusHasBeenSet = false;
 
     MarketoConnectorProfileProperties m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     RedshiftConnectorProfileProperties m_redshift;
-    bool m_redshiftHasBeenSet;
+    bool m_redshiftHasBeenSet = false;
 
     SalesforceConnectorProfileProperties m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowConnectorProfileProperties m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     SingularConnectorProfileProperties m_singular;
-    bool m_singularHasBeenSet;
+    bool m_singularHasBeenSet = false;
 
     SlackConnectorProfileProperties m_slack;
-    bool m_slackHasBeenSet;
+    bool m_slackHasBeenSet = false;
 
     SnowflakeConnectorProfileProperties m_snowflake;
-    bool m_snowflakeHasBeenSet;
+    bool m_snowflakeHasBeenSet = false;
 
     TrendmicroConnectorProfileProperties m_trendmicro;
-    bool m_trendmicroHasBeenSet;
+    bool m_trendmicroHasBeenSet = false;
 
     VeevaConnectorProfileProperties m_veeva;
-    bool m_veevaHasBeenSet;
+    bool m_veevaHasBeenSet = false;
 
     ZendeskConnectorProfileProperties m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     SAPODataConnectorProfileProperties m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
 
     CustomConnectorProfileProperties m_customConnector;
-    bool m_customConnectorHasBeenSet;
+    bool m_customConnectorHasBeenSet = false;
   };
 
 } // namespace Model

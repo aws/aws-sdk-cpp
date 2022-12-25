@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/OTAUpdateFile">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API OTAUpdateFile
+  class OTAUpdateFile
   {
   public:
-    OTAUpdateFile();
-    OTAUpdateFile(Aws::Utils::Json::JsonView jsonValue);
-    OTAUpdateFile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API OTAUpdateFile();
+    AWS_IOT_API OTAUpdateFile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API OTAUpdateFile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -278,22 +278,22 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     int m_fileType;
-    bool m_fileTypeHasBeenSet;
+    bool m_fileTypeHasBeenSet = false;
 
     Aws::String m_fileVersion;
-    bool m_fileVersionHasBeenSet;
+    bool m_fileVersionHasBeenSet = false;
 
     FileLocation m_fileLocation;
-    bool m_fileLocationHasBeenSet;
+    bool m_fileLocationHasBeenSet = false;
 
     CodeSigning m_codeSigning;
-    bool m_codeSigningHasBeenSet;
+    bool m_codeSigningHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

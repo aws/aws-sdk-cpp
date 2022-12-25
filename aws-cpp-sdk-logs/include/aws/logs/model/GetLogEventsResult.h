@@ -26,12 +26,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API GetLogEventsResult
+  class GetLogEventsResult
   {
   public:
-    GetLogEventsResult();
-    GetLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetLogEventsResult();
+    AWS_CLOUDWATCHLOGS_API GetLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -122,49 +122,49 @@ namespace Model
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline const Aws::String& GetNextBackwardToken() const{ return m_nextBackwardToken; }
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline void SetNextBackwardToken(const Aws::String& value) { m_nextBackwardToken = value; }
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline void SetNextBackwardToken(Aws::String&& value) { m_nextBackwardToken = std::move(value); }
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline void SetNextBackwardToken(const char* value) { m_nextBackwardToken.assign(value); }
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline GetLogEventsResult& WithNextBackwardToken(const Aws::String& value) { SetNextBackwardToken(value); return *this;}
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline GetLogEventsResult& WithNextBackwardToken(Aws::String&& value) { SetNextBackwardToken(std::move(value)); return *this;}
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
-     * expires after 24 hours. This token is never null. If you have reached the end of
+     * expires after 24 hours. This token is not null. If you have reached the end of
      * the stream, it returns the same token you passed in.</p>
      */
     inline GetLogEventsResult& WithNextBackwardToken(const char* value) { SetNextBackwardToken(value); return *this;}

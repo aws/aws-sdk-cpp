@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateBucketRequest : public LightsailRequest
+  class CreateBucketRequest : public LightsailRequest
   {
   public:
-    CreateBucketRequest();
+    AWS_LIGHTSAIL_API CreateBucketRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBucket"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -302,16 +302,16 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableObjectVersioning;
-    bool m_enableObjectVersioningHasBeenSet;
+    bool m_enableObjectVersioningHasBeenSet = false;
   };
 
 } // namespace Model

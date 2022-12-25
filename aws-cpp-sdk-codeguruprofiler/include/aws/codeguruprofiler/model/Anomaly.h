@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Anomaly">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Anomaly
+  class Anomaly
   {
   public:
-    Anomaly();
-    Anomaly(Aws::Utils::Json::JsonView jsonValue);
-    Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Anomaly();
+    AWS_CODEGURUPROFILER_API Anomaly(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<AnomalyInstance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

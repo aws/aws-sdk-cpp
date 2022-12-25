@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ResourceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API ResourceStatus
+  class ResourceStatus
   {
   public:
-    ResourceStatus();
-    ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
-    ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API ResourceStatus();
+    AWS_RESOURCEGROUPS_API ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     ResourceStatusValue m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

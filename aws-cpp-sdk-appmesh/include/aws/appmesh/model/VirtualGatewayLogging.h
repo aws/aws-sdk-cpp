@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayLogging">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayLogging
+  class VirtualGatewayLogging
   {
   public:
-    VirtualGatewayLogging();
-    VirtualGatewayLogging(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayLogging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayLogging();
+    AWS_APPMESH_API VirtualGatewayLogging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayLogging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     VirtualGatewayAccessLog m_accessLog;
-    bool m_accessLogHasBeenSet;
+    bool m_accessLogHasBeenSet = false;
   };
 
 } // namespace Model

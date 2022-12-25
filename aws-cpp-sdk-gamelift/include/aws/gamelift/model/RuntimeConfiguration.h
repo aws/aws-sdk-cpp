@@ -32,22 +32,20 @@ namespace Model
    * as needed. Each instance checks regularly for an updated runtime configuration.
    * </p> <p>A GameLift instance is limited to 50 processes running concurrently. To
    * calculate the total number of processes in a runtime configuration, add the
-   * values of the <code>ConcurrentExecutions</code> parameter for each
-   * <a>ServerProcess</a>. Learn more about <a
+   * values of the <code>ConcurrentExecutions</code> parameter for each server
+   * process. Learn more about <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
-   * Running Multiple Processes on a Fleet</a>.</p> <p> <b>Related actions</b> </p>
-   * <p> <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * Running Multiple Processes on a Fleet</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API RuntimeConfiguration
+  class RuntimeConfiguration
   {
   public:
-    RuntimeConfiguration();
-    RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API RuntimeConfiguration();
+    AWS_GAMELIFT_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<ServerProcess> m_serverProcesses;
-    bool m_serverProcessesHasBeenSet;
+    bool m_serverProcessesHasBeenSet = false;
 
     int m_maxConcurrentGameSessionActivations;
-    bool m_maxConcurrentGameSessionActivationsHasBeenSet;
+    bool m_maxConcurrentGameSessionActivationsHasBeenSet = false;
 
     int m_gameSessionActivationTimeoutSeconds;
-    bool m_gameSessionActivationTimeoutSecondsHasBeenSet;
+    bool m_gameSessionActivationTimeoutSecondsHasBeenSet = false;
   };
 
 } // namespace Model

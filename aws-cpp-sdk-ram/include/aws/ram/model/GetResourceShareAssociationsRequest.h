@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API GetResourceShareAssociationsRequest : public RAMRequest
+  class GetResourceShareAssociationsRequest : public RAMRequest
   {
   public:
-    GetResourceShareAssociationsRequest();
+    AWS_RAM_API GetResourceShareAssociationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResourceShareAssociations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -476,25 +476,25 @@ namespace Model
   private:
 
     ResourceShareAssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceShareArns;
-    bool m_resourceShareArnsHasBeenSet;
+    bool m_resourceShareArnsHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     ResourceShareAssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

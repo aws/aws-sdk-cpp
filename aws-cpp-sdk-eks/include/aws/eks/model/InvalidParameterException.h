@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/InvalidParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API InvalidParameterException
+  class InvalidParameterException
   {
   public:
-    InvalidParameterException();
-    InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API InvalidParameterException();
+    AWS_EKS_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_fargateProfileName;
-    bool m_fargateProfileNameHasBeenSet;
+    bool m_fargateProfileNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

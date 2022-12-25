@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ResultData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API ResultData
+  class ResultData
   {
   public:
-    ResultData();
-    ResultData(Aws::Utils::Json::JsonView jsonValue);
-    ResultData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API ResultData();
+    AWS_CONNECTWISDOMSERVICE_API ResultData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API ResultData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     double m_relevanceScore;
-    bool m_relevanceScoreHasBeenSet;
+    bool m_relevanceScoreHasBeenSet = false;
 
     Aws::String m_resultId;
-    bool m_resultIdHasBeenSet;
+    bool m_resultIdHasBeenSet = false;
   };
 
 } // namespace Model

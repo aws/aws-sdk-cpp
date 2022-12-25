@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminUpdateAuthEventFeedbackRequest : public CognitoIdentityProviderRequest
+  class AdminUpdateAuthEventFeedbackRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AdminUpdateAuthEventFeedbackRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminUpdateAuthEventFeedbackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AdminUpdateAuthEventFeedback"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     FeedbackValueType m_feedbackValue;
-    bool m_feedbackValueHasBeenSet;
+    bool m_feedbackValueHasBeenSet = false;
   };
 
 } // namespace Model

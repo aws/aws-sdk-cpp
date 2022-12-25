@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Stage">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Stage
+  class Stage
   {
   public:
-    Stage();
-    Stage(Aws::Utils::Json::JsonView jsonValue);
-    Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Stage();
+    AWS_APIGATEWAY_API Stage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -813,55 +813,55 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_cacheClusterEnabled;
-    bool m_cacheClusterEnabledHasBeenSet;
+    bool m_cacheClusterEnabledHasBeenSet = false;
 
     CacheClusterSize m_cacheClusterSize;
-    bool m_cacheClusterSizeHasBeenSet;
+    bool m_cacheClusterSizeHasBeenSet = false;
 
     CacheClusterStatus m_cacheClusterStatus;
-    bool m_cacheClusterStatusHasBeenSet;
+    bool m_cacheClusterStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, MethodSetting> m_methodSettings;
-    bool m_methodSettingsHasBeenSet;
+    bool m_methodSettingsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_documentationVersion;
-    bool m_documentationVersionHasBeenSet;
+    bool m_documentationVersionHasBeenSet = false;
 
     AccessLogSettings m_accessLogSettings;
-    bool m_accessLogSettingsHasBeenSet;
+    bool m_accessLogSettingsHasBeenSet = false;
 
     CanarySettings m_canarySettings;
-    bool m_canarySettingsHasBeenSet;
+    bool m_canarySettingsHasBeenSet = false;
 
     bool m_tracingEnabled;
-    bool m_tracingEnabledHasBeenSet;
+    bool m_tracingEnabledHasBeenSet = false;
 
     Aws::String m_webAclArn;
-    bool m_webAclArnHasBeenSet;
+    bool m_webAclArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
   };
 
 } // namespace Model

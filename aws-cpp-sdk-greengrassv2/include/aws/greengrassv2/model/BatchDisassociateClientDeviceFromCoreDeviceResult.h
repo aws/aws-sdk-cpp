@@ -25,12 +25,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API BatchDisassociateClientDeviceFromCoreDeviceResult
+  class BatchDisassociateClientDeviceFromCoreDeviceResult
   {
   public:
-    BatchDisassociateClientDeviceFromCoreDeviceResult();
-    BatchDisassociateClientDeviceFromCoreDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDisassociateClientDeviceFromCoreDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API BatchDisassociateClientDeviceFromCoreDeviceResult();
+    AWS_GREENGRASSV2_API BatchDisassociateClientDeviceFromCoreDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API BatchDisassociateClientDeviceFromCoreDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

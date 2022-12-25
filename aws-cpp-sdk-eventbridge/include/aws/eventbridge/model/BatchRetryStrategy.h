@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/BatchRetryStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API BatchRetryStrategy
+  class BatchRetryStrategy
   {
   public:
-    BatchRetryStrategy();
-    BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
-    BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API BatchRetryStrategy();
+    AWS_EVENTBRIDGE_API BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -64,7 +64,7 @@ namespace Model
   private:
 
     int m_attempts;
-    bool m_attemptsHasBeenSet;
+    bool m_attemptsHasBeenSet = false;
   };
 
 } // namespace Model

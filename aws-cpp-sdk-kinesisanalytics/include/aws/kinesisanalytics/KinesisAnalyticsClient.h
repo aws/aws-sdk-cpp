@@ -5,158 +5,16 @@
 
 #pragma once
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
-#include <aws/kinesisanalytics/KinesisAnalyticsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesisanalytics/model/AddApplicationCloudWatchLoggingOptionResult.h>
-#include <aws/kinesisanalytics/model/AddApplicationInputResult.h>
-#include <aws/kinesisanalytics/model/AddApplicationInputProcessingConfigurationResult.h>
-#include <aws/kinesisanalytics/model/AddApplicationOutputResult.h>
-#include <aws/kinesisanalytics/model/AddApplicationReferenceDataSourceResult.h>
-#include <aws/kinesisanalytics/model/CreateApplicationResult.h>
-#include <aws/kinesisanalytics/model/DeleteApplicationResult.h>
-#include <aws/kinesisanalytics/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
-#include <aws/kinesisanalytics/model/DeleteApplicationInputProcessingConfigurationResult.h>
-#include <aws/kinesisanalytics/model/DeleteApplicationOutputResult.h>
-#include <aws/kinesisanalytics/model/DeleteApplicationReferenceDataSourceResult.h>
-#include <aws/kinesisanalytics/model/DescribeApplicationResult.h>
-#include <aws/kinesisanalytics/model/DiscoverInputSchemaResult.h>
-#include <aws/kinesisanalytics/model/ListApplicationsResult.h>
-#include <aws/kinesisanalytics/model/ListTagsForResourceResult.h>
-#include <aws/kinesisanalytics/model/StartApplicationResult.h>
-#include <aws/kinesisanalytics/model/StopApplicationResult.h>
-#include <aws/kinesisanalytics/model/TagResourceResult.h>
-#include <aws/kinesisanalytics/model/UntagResourceResult.h>
-#include <aws/kinesisanalytics/model/UpdateApplicationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesisanalytics/KinesisAnalyticsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisAnalytics
 {
-
-namespace Model
-{
-        class AddApplicationCloudWatchLoggingOptionRequest;
-        class AddApplicationInputRequest;
-        class AddApplicationInputProcessingConfigurationRequest;
-        class AddApplicationOutputRequest;
-        class AddApplicationReferenceDataSourceRequest;
-        class CreateApplicationRequest;
-        class DeleteApplicationRequest;
-        class DeleteApplicationCloudWatchLoggingOptionRequest;
-        class DeleteApplicationInputProcessingConfigurationRequest;
-        class DeleteApplicationOutputRequest;
-        class DeleteApplicationReferenceDataSourceRequest;
-        class DescribeApplicationRequest;
-        class DiscoverInputSchemaRequest;
-        class ListApplicationsRequest;
-        class ListTagsForResourceRequest;
-        class StartApplicationRequest;
-        class StopApplicationRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-
-        typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsError> AddApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputResult, KinesisAnalyticsError> AddApplicationInputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, KinesisAnalyticsError> AddApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationOutputResult, KinesisAnalyticsError> AddApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, KinesisAnalyticsError> AddApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, KinesisAnalyticsError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, KinesisAnalyticsError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsError> DeleteApplicationCloudWatchLoggingOptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationInputProcessingConfigurationResult, KinesisAnalyticsError> DeleteApplicationInputProcessingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, KinesisAnalyticsError> DeleteApplicationOutputOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, KinesisAnalyticsError> DeleteApplicationReferenceDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsError> DescribeApplicationOutcome;
-        typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsError> DiscoverInputSchemaOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartApplicationResult, KinesisAnalyticsError> StartApplicationOutcome;
-        typedef Aws::Utils::Outcome<StopApplicationResult, KinesisAnalyticsError> StopApplicationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, KinesisAnalyticsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, KinesisAnalyticsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, KinesisAnalyticsError> UpdateApplicationOutcome;
-
-        typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
-        typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
-        typedef std::future<AddApplicationInputProcessingConfigurationOutcome> AddApplicationInputProcessingConfigurationOutcomeCallable;
-        typedef std::future<AddApplicationOutputOutcome> AddApplicationOutputOutcomeCallable;
-        typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
-        typedef std::future<DeleteApplicationInputProcessingConfigurationOutcome> DeleteApplicationInputProcessingConfigurationOutcomeCallable;
-        typedef std::future<DeleteApplicationOutputOutcome> DeleteApplicationOutputOutcomeCallable;
-        typedef std::future<DeleteApplicationReferenceDataSourceOutcome> DeleteApplicationReferenceDataSourceOutcomeCallable;
-        typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
-        typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
-        typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-} // namespace Model
-
-  class KinesisAnalyticsClient;
-
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationCloudWatchLoggingOptionRequest&, const Model::AddApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationCloudWatchLoggingOptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationInputRequest&, const Model::AddApplicationInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationInputProcessingConfigurationRequest&, const Model::AddApplicationInputProcessingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputProcessingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationOutputRequest&, const Model::AddApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationOutputResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationCloudWatchLoggingOptionRequest&, const Model::DeleteApplicationCloudWatchLoggingOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationInputProcessingConfigurationRequest&, const Model::DeleteApplicationInputProcessingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationInputProcessingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationOutputRequest&, const Model::DeleteApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationOutputResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DeleteApplicationReferenceDataSourceRequest&, const Model::DeleteApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationReferenceDataSourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::DiscoverInputSchemaRequest&, const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInputSchemaResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopApplicationResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const KinesisAnalyticsClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Kinesis Analytics</fullname> <p> <b>Overview</b> </p> 
    * <p>This documentation is for version 1 of the Amazon Kinesis Data Analytics API,
@@ -167,32 +25,60 @@ namespace Model
    * v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
    * additional information. </p>
    */
-  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisAnalyticsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisAnalyticsClient(const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration(),
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisAnalyticsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisAnalyticsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KinesisAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KinesisAnalyticsClient();
-
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -772,32 +658,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KinesisAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddApplicationCloudWatchLoggingOptionAsyncHelper(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddApplicationInputAsyncHelper(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddApplicationInputProcessingConfigurationAsyncHelper(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddApplicationOutputAsyncHelper(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationCloudWatchLoggingOptionAsyncHelper(const Model::DeleteApplicationCloudWatchLoggingOptionRequest& request, const DeleteApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationInputProcessingConfigurationAsyncHelper(const Model::DeleteApplicationInputProcessingConfigurationRequest& request, const DeleteApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationOutputAsyncHelper(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationReferenceDataSourceAsyncHelper(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DiscoverInputSchemaAsyncHelper(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartApplicationAsyncHelper(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopApplicationAsyncHelper(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>;
+      void init(const KinesisAnalyticsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KinesisAnalyticsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KinesisAnalyticsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisAnalytics

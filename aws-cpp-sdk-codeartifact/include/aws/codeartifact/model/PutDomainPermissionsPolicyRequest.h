@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEARTIFACT_API PutDomainPermissionsPolicyRequest : public CodeArtifactRequest
+  class PutDomainPermissionsPolicyRequest : public CodeArtifactRequest
   {
   public:
-    PutDomainPermissionsPolicyRequest();
+    AWS_CODEARTIFACT_API PutDomainPermissionsPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDomainPermissionsPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEARTIFACT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -230,16 +230,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     Aws::String m_policyRevision;
-    bool m_policyRevisionHasBeenSet;
+    bool m_policyRevisionHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
   };
 
 } // namespace Model

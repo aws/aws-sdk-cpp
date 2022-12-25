@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OIDC">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API OIDC
+  class OIDC
   {
   public:
-    OIDC();
-    OIDC(Aws::Utils::Json::JsonView jsonValue);
-    OIDC& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OIDC();
+    AWS_EKS_API OIDC(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OIDC& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
   };
 
 } // namespace Model

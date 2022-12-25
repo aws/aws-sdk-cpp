@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     TABLES,
     FORMS,
-    QUERIES
+    QUERIES,
+    SIGNATURES
   };
 
 namespace FeatureTypeMapper

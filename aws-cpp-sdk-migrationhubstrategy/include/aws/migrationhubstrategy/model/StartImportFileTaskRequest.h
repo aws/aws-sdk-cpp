@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartImportFileTaskRequest : public MigrationHubStrategyRecommendationsRequest
+  class StartImportFileTaskRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    StartImportFileTaskRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartImportFileTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartImportFileTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -317,22 +317,22 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     DataSourceType m_dataSourceType;
-    bool m_dataSourceTypeHasBeenSet;
+    bool m_dataSourceTypeHasBeenSet = false;
 
     Aws::Vector<Group> m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3bucketForReportData;
-    bool m_s3bucketForReportDataHasBeenSet;
+    bool m_s3bucketForReportDataHasBeenSet = false;
 
     Aws::String m_s3key;
-    bool m_s3keyHasBeenSet;
+    bool m_s3keyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ActiveDirectoryComputerAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ActiveDirectoryComputerAttribute
+  class ActiveDirectoryComputerAttribute
   {
   public:
-    ActiveDirectoryComputerAttribute();
-    ActiveDirectoryComputerAttribute(Aws::Utils::Json::JsonView jsonValue);
-    ActiveDirectoryComputerAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ActiveDirectoryComputerAttribute();
+    AWS_NIMBLESTUDIO_API ActiveDirectoryComputerAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ActiveDirectoryComputerAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

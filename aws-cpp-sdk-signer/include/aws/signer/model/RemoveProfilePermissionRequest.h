@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API RemoveProfilePermissionRequest : public SignerRequest
+  class RemoveProfilePermissionRequest : public SignerRequest
   {
   public:
-    RemoveProfilePermissionRequest();
+    AWS_SIGNER_API RemoveProfilePermissionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveProfilePermission"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SIGNER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
   };
 
 } // namespace Model

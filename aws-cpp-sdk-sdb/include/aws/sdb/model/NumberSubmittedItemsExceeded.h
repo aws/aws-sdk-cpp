@@ -26,15 +26,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/NumberSubmittedItemsExceeded">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMPLEDB_API NumberSubmittedItemsExceeded
+  class NumberSubmittedItemsExceeded
   {
   public:
-    NumberSubmittedItemsExceeded();
-    NumberSubmittedItemsExceeded(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NumberSubmittedItemsExceeded& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API NumberSubmittedItemsExceeded();
+    AWS_SIMPLEDB_API NumberSubmittedItemsExceeded(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API NumberSubmittedItemsExceeded& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -52,7 +52,7 @@ namespace Model
   private:
 
     double m_boxUsage;
-    bool m_boxUsageHasBeenSet;
+    bool m_boxUsageHasBeenSet = false;
   };
 
 } // namespace Model

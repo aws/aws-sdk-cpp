@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ProvisionPublicIpv4PoolCidrResponse
+  class ProvisionPublicIpv4PoolCidrResponse
   {
   public:
-    ProvisionPublicIpv4PoolCidrResponse();
-    ProvisionPublicIpv4PoolCidrResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ProvisionPublicIpv4PoolCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ProvisionPublicIpv4PoolCidrResponse();
+    AWS_EC2_API ProvisionPublicIpv4PoolCidrResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ProvisionPublicIpv4PoolCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -70,19 +70,29 @@ namespace Model
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline const PublicIpv4PoolRange& GetPoolAddressRange() const{ return m_poolAddressRange; }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline void SetPoolAddressRange(const PublicIpv4PoolRange& value) { m_poolAddressRange = value; }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline void SetPoolAddressRange(PublicIpv4PoolRange&& value) { m_poolAddressRange = std::move(value); }
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolAddressRange(const PublicIpv4PoolRange& value) { SetPoolAddressRange(value); return *this;}
 
-    
+    /**
+     * <p>Information about the address range of the public IPv4 pool.</p>
+     */
     inline ProvisionPublicIpv4PoolCidrResponse& WithPoolAddressRange(PublicIpv4PoolRange&& value) { SetPoolAddressRange(std::move(value)); return *this;}
 
 

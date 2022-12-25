@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/IotSiteWiseCustomerManagedDatastoreS3StorageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3StorageSummary
+  class IotSiteWiseCustomerManagedDatastoreS3StorageSummary
   {
   public:
-    IotSiteWiseCustomerManagedDatastoreS3StorageSummary();
-    IotSiteWiseCustomerManagedDatastoreS3StorageSummary(Aws::Utils::Json::JsonView jsonValue);
-    IotSiteWiseCustomerManagedDatastoreS3StorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3StorageSummary();
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3StorageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3StorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

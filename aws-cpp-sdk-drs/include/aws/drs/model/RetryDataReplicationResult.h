@@ -9,6 +9,8 @@
 #include <aws/drs/model/DataReplicationInfo.h>
 #include <aws/drs/model/LastLaunchResult.h>
 #include <aws/drs/model/LifeCycle.h>
+#include <aws/drs/model/ReplicationDirection.h>
+#include <aws/drs/model/SourceCloudProperties.h>
 #include <aws/drs/model/SourceProperties.h>
 #include <aws/drs/model/StagingArea.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -30,12 +32,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API RetryDataReplicationResult
+  class RetryDataReplicationResult
   {
   public:
-    RetryDataReplicationResult();
-    RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API RetryDataReplicationResult();
+    AWS_DRS_API RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -186,6 +188,108 @@ namespace Model
      * <p>The ID of the Recovery Instance associated with this Source Server.</p>
      */
     inline RetryDataReplicationResult& WithRecoveryInstanceId(const char* value) { SetRecoveryInstanceId(value); return *this;}
+
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline const ReplicationDirection& GetReplicationDirection() const{ return m_replicationDirection; }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline void SetReplicationDirection(const ReplicationDirection& value) { m_replicationDirection = value; }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline void SetReplicationDirection(ReplicationDirection&& value) { m_replicationDirection = std::move(value); }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline RetryDataReplicationResult& WithReplicationDirection(const ReplicationDirection& value) { SetReplicationDirection(value); return *this;}
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline RetryDataReplicationResult& WithReplicationDirection(ReplicationDirection&& value) { SetReplicationDirection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline const Aws::String& GetReversedDirectionSourceServerArn() const{ return m_reversedDirectionSourceServerArn; }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(const Aws::String& value) { m_reversedDirectionSourceServerArn = value; }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(Aws::String&& value) { m_reversedDirectionSourceServerArn = std::move(value); }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(const char* value) { m_reversedDirectionSourceServerArn.assign(value); }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline RetryDataReplicationResult& WithReversedDirectionSourceServerArn(const Aws::String& value) { SetReversedDirectionSourceServerArn(value); return *this;}
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline RetryDataReplicationResult& WithReversedDirectionSourceServerArn(Aws::String&& value) { SetReversedDirectionSourceServerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline RetryDataReplicationResult& WithReversedDirectionSourceServerArn(const char* value) { SetReversedDirectionSourceServerArn(value); return *this;}
+
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline const SourceCloudProperties& GetSourceCloudProperties() const{ return m_sourceCloudProperties; }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline void SetSourceCloudProperties(const SourceCloudProperties& value) { m_sourceCloudProperties = value; }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline void SetSourceCloudProperties(SourceCloudProperties&& value) { m_sourceCloudProperties = std::move(value); }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline RetryDataReplicationResult& WithSourceCloudProperties(const SourceCloudProperties& value) { SetSourceCloudProperties(value); return *this;}
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline RetryDataReplicationResult& WithSourceCloudProperties(SourceCloudProperties&& value) { SetSourceCloudProperties(std::move(value)); return *this;}
 
 
     /**
@@ -347,6 +451,12 @@ namespace Model
     LifeCycle m_lifeCycle;
 
     Aws::String m_recoveryInstanceId;
+
+    ReplicationDirection m_replicationDirection;
+
+    Aws::String m_reversedDirectionSourceServerArn;
+
+    SourceCloudProperties m_sourceCloudProperties;
 
     SourceProperties m_sourceProperties;
 

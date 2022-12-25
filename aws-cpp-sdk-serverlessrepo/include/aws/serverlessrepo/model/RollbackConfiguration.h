@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/RollbackConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API RollbackConfiguration
+  class RollbackConfiguration
   {
   public:
-    RollbackConfiguration();
-    RollbackConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RollbackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API RollbackConfiguration();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API RollbackConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API RollbackConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     int m_monitoringTimeInMinutes;
-    bool m_monitoringTimeInMinutesHasBeenSet;
+    bool m_monitoringTimeInMinutesHasBeenSet = false;
 
     Aws::Vector<RollbackTrigger> m_rollbackTriggers;
-    bool m_rollbackTriggersHasBeenSet;
+    bool m_rollbackTriggersHasBeenSet = false;
   };
 
 } // namespace Model

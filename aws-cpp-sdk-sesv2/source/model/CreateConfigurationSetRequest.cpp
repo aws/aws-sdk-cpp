@@ -19,7 +19,8 @@ CreateConfigurationSetRequest::CreateConfigurationSetRequest() :
     m_reputationOptionsHasBeenSet(false),
     m_sendingOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_suppressionOptionsHasBeenSet(false)
+    m_suppressionOptionsHasBeenSet(false),
+    m_vdmOptionsHasBeenSet(false)
 {
 }
 
@@ -59,7 +60,7 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -71,6 +72,12 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
   if(m_suppressionOptionsHasBeenSet)
   {
    payload.WithObject("SuppressionOptions", m_suppressionOptions.Jsonize());
+
+  }
+
+  if(m_vdmOptionsHasBeenSet)
+  {
+   payload.WithObject("VdmOptions", m_vdmOptions.Jsonize());
 
   }
 

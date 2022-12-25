@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDBLOCKCHAIN_API DeleteNodeRequest : public ManagedBlockchainRequest
+  class DeleteNodeRequest : public ManagedBlockchainRequest
   {
   public:
-    DeleteNodeRequest();
+    AWS_MANAGEDBLOCKCHAIN_API DeleteNodeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,15 +33,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteNode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MANAGEDBLOCKCHAIN_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -51,6 +52,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -60,6 +62,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -69,6 +72,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -78,6 +82,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -87,6 +92,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -96,6 +102,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -105,6 +112,7 @@ namespace Model
      * <p>The unique identifier of the network that the node is on.</p> <p>Ethereum
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
+     * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
      * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
      * <code>n-ethereum-ropsten</code> </p> </li> </ul>
      */
@@ -203,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
   };
 
 } // namespace Model

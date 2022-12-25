@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildPhase">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildPhase
+  class BuildPhase
   {
   public:
-    BuildPhase();
-    BuildPhase(Aws::Utils::Json::JsonView jsonValue);
-    BuildPhase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildPhase();
+    AWS_CODEBUILD_API BuildPhase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildPhase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,22 +349,22 @@ namespace Model
   private:
 
     BuildPhaseType m_phaseType;
-    bool m_phaseTypeHasBeenSet;
+    bool m_phaseTypeHasBeenSet = false;
 
     StatusType m_phaseStatus;
-    bool m_phaseStatusHasBeenSet;
+    bool m_phaseStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
 
     Aws::Vector<PhaseContext> m_contexts;
-    bool m_contextsHasBeenSet;
+    bool m_contextsHasBeenSet = false;
   };
 
 } // namespace Model

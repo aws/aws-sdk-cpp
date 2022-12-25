@@ -5,212 +5,16 @@
 
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
-#include <aws/glacier/GlacierErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/glacier/model/CompleteMultipartUploadResult.h>
-#include <aws/glacier/model/CreateVaultResult.h>
-#include <aws/glacier/model/DescribeJobResult.h>
-#include <aws/glacier/model/DescribeVaultResult.h>
-#include <aws/glacier/model/GetDataRetrievalPolicyResult.h>
-#include <aws/glacier/model/GetJobOutputResult.h>
-#include <aws/glacier/model/GetVaultAccessPolicyResult.h>
-#include <aws/glacier/model/GetVaultLockResult.h>
-#include <aws/glacier/model/GetVaultNotificationsResult.h>
-#include <aws/glacier/model/InitiateJobResult.h>
-#include <aws/glacier/model/InitiateMultipartUploadResult.h>
-#include <aws/glacier/model/InitiateVaultLockResult.h>
-#include <aws/glacier/model/ListJobsResult.h>
-#include <aws/glacier/model/ListMultipartUploadsResult.h>
-#include <aws/glacier/model/ListPartsResult.h>
-#include <aws/glacier/model/ListProvisionedCapacityResult.h>
-#include <aws/glacier/model/ListTagsForVaultResult.h>
-#include <aws/glacier/model/ListVaultsResult.h>
-#include <aws/glacier/model/PurchaseProvisionedCapacityResult.h>
-#include <aws/glacier/model/UploadArchiveResult.h>
-#include <aws/glacier/model/UploadMultipartPartResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/glacier/GlacierServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Glacier
 {
-
-namespace Model
-{
-        class AbortMultipartUploadRequest;
-        class AbortVaultLockRequest;
-        class AddTagsToVaultRequest;
-        class CompleteMultipartUploadRequest;
-        class CompleteVaultLockRequest;
-        class CreateVaultRequest;
-        class DeleteArchiveRequest;
-        class DeleteVaultRequest;
-        class DeleteVaultAccessPolicyRequest;
-        class DeleteVaultNotificationsRequest;
-        class DescribeJobRequest;
-        class DescribeVaultRequest;
-        class GetDataRetrievalPolicyRequest;
-        class GetJobOutputRequest;
-        class GetVaultAccessPolicyRequest;
-        class GetVaultLockRequest;
-        class GetVaultNotificationsRequest;
-        class InitiateJobRequest;
-        class InitiateMultipartUploadRequest;
-        class InitiateVaultLockRequest;
-        class ListJobsRequest;
-        class ListMultipartUploadsRequest;
-        class ListPartsRequest;
-        class ListProvisionedCapacityRequest;
-        class ListTagsForVaultRequest;
-        class ListVaultsRequest;
-        class PurchaseProvisionedCapacityRequest;
-        class RemoveTagsFromVaultRequest;
-        class SetDataRetrievalPolicyRequest;
-        class SetVaultAccessPolicyRequest;
-        class SetVaultNotificationsRequest;
-        class UploadArchiveRequest;
-        class UploadMultipartPartRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AbortMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AbortVaultLockOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> AddTagsToVaultOutcome;
-        typedef Aws::Utils::Outcome<CompleteMultipartUploadResult, GlacierError> CompleteMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> CompleteVaultLockOutcome;
-        typedef Aws::Utils::Outcome<CreateVaultResult, GlacierError> CreateVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteArchiveOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> DeleteVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobResult, GlacierError> DescribeJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeVaultResult, GlacierError> DescribeVaultOutcome;
-        typedef Aws::Utils::Outcome<GetDataRetrievalPolicyResult, GlacierError> GetDataRetrievalPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetJobOutputResult, GlacierError> GetJobOutputOutcome;
-        typedef Aws::Utils::Outcome<GetVaultAccessPolicyResult, GlacierError> GetVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetVaultLockResult, GlacierError> GetVaultLockOutcome;
-        typedef Aws::Utils::Outcome<GetVaultNotificationsResult, GlacierError> GetVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<InitiateJobResult, GlacierError> InitiateJobOutcome;
-        typedef Aws::Utils::Outcome<InitiateMultipartUploadResult, GlacierError> InitiateMultipartUploadOutcome;
-        typedef Aws::Utils::Outcome<InitiateVaultLockResult, GlacierError> InitiateVaultLockOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, GlacierError> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListMultipartUploadsResult, GlacierError> ListMultipartUploadsOutcome;
-        typedef Aws::Utils::Outcome<ListPartsResult, GlacierError> ListPartsOutcome;
-        typedef Aws::Utils::Outcome<ListProvisionedCapacityResult, GlacierError> ListProvisionedCapacityOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForVaultResult, GlacierError> ListTagsForVaultOutcome;
-        typedef Aws::Utils::Outcome<ListVaultsResult, GlacierError> ListVaultsOutcome;
-        typedef Aws::Utils::Outcome<PurchaseProvisionedCapacityResult, GlacierError> PurchaseProvisionedCapacityOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> RemoveTagsFromVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetDataRetrievalPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, GlacierError> SetVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<UploadArchiveResult, GlacierError> UploadArchiveOutcome;
-        typedef Aws::Utils::Outcome<UploadMultipartPartResult, GlacierError> UploadMultipartPartOutcome;
-
-        typedef std::future<AbortMultipartUploadOutcome> AbortMultipartUploadOutcomeCallable;
-        typedef std::future<AbortVaultLockOutcome> AbortVaultLockOutcomeCallable;
-        typedef std::future<AddTagsToVaultOutcome> AddTagsToVaultOutcomeCallable;
-        typedef std::future<CompleteMultipartUploadOutcome> CompleteMultipartUploadOutcomeCallable;
-        typedef std::future<CompleteVaultLockOutcome> CompleteVaultLockOutcomeCallable;
-        typedef std::future<CreateVaultOutcome> CreateVaultOutcomeCallable;
-        typedef std::future<DeleteArchiveOutcome> DeleteArchiveOutcomeCallable;
-        typedef std::future<DeleteVaultOutcome> DeleteVaultOutcomeCallable;
-        typedef std::future<DeleteVaultAccessPolicyOutcome> DeleteVaultAccessPolicyOutcomeCallable;
-        typedef std::future<DeleteVaultNotificationsOutcome> DeleteVaultNotificationsOutcomeCallable;
-        typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
-        typedef std::future<DescribeVaultOutcome> DescribeVaultOutcomeCallable;
-        typedef std::future<GetDataRetrievalPolicyOutcome> GetDataRetrievalPolicyOutcomeCallable;
-        typedef std::future<GetJobOutputOutcome> GetJobOutputOutcomeCallable;
-        typedef std::future<GetVaultAccessPolicyOutcome> GetVaultAccessPolicyOutcomeCallable;
-        typedef std::future<GetVaultLockOutcome> GetVaultLockOutcomeCallable;
-        typedef std::future<GetVaultNotificationsOutcome> GetVaultNotificationsOutcomeCallable;
-        typedef std::future<InitiateJobOutcome> InitiateJobOutcomeCallable;
-        typedef std::future<InitiateMultipartUploadOutcome> InitiateMultipartUploadOutcomeCallable;
-        typedef std::future<InitiateVaultLockOutcome> InitiateVaultLockOutcomeCallable;
-        typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
-        typedef std::future<ListMultipartUploadsOutcome> ListMultipartUploadsOutcomeCallable;
-        typedef std::future<ListPartsOutcome> ListPartsOutcomeCallable;
-        typedef std::future<ListProvisionedCapacityOutcome> ListProvisionedCapacityOutcomeCallable;
-        typedef std::future<ListTagsForVaultOutcome> ListTagsForVaultOutcomeCallable;
-        typedef std::future<ListVaultsOutcome> ListVaultsOutcomeCallable;
-        typedef std::future<PurchaseProvisionedCapacityOutcome> PurchaseProvisionedCapacityOutcomeCallable;
-        typedef std::future<RemoveTagsFromVaultOutcome> RemoveTagsFromVaultOutcomeCallable;
-        typedef std::future<SetDataRetrievalPolicyOutcome> SetDataRetrievalPolicyOutcomeCallable;
-        typedef std::future<SetVaultAccessPolicyOutcome> SetVaultAccessPolicyOutcomeCallable;
-        typedef std::future<SetVaultNotificationsOutcome> SetVaultNotificationsOutcomeCallable;
-        typedef std::future<UploadArchiveOutcome> UploadArchiveOutcomeCallable;
-        typedef std::future<UploadMultipartPartOutcome> UploadMultipartPartOutcomeCallable;
-} // namespace Model
-
-  class GlacierClient;
-
-    typedef std::function<void(const GlacierClient*, const Model::AbortMultipartUploadRequest&, const Model::AbortMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortMultipartUploadResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::AbortVaultLockRequest&, const Model::AbortVaultLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortVaultLockResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::AddTagsToVaultRequest&, const Model::AddTagsToVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteMultipartUploadResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::CompleteVaultLockRequest&, const Model::CompleteVaultLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteVaultLockResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::CreateVaultRequest&, const Model::CreateVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DeleteArchiveRequest&, const Model::DeleteArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DeleteVaultRequest&, const Model::DeleteVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DeleteVaultAccessPolicyRequest&, const Model::DeleteVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DeleteVaultNotificationsRequest&, const Model::DeleteVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::DescribeVaultRequest&, const Model::DescribeVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::GetDataRetrievalPolicyRequest&, const Model::GetDataRetrievalPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataRetrievalPolicyResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::GetJobOutputRequest&, Model::GetJobOutputOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobOutputResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::GetVaultAccessPolicyRequest&, const Model::GetVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::GetVaultLockRequest&, const Model::GetVaultLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVaultLockResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::GetVaultNotificationsRequest&, const Model::GetVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::InitiateJobRequest&, const Model::InitiateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateJobResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::InitiateMultipartUploadRequest&, const Model::InitiateMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateMultipartUploadResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::InitiateVaultLockRequest&, const Model::InitiateVaultLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateVaultLockResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListMultipartUploadsRequest&, const Model::ListMultipartUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartUploadsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListPartsRequest&, const Model::ListPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListProvisionedCapacityRequest&, const Model::ListProvisionedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProvisionedCapacityResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListTagsForVaultRequest&, const Model::ListTagsForVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::ListVaultsRequest&, const Model::ListVaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVaultsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::PurchaseProvisionedCapacityRequest&, const Model::PurchaseProvisionedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseProvisionedCapacityResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::RemoveTagsFromVaultRequest&, const Model::RemoveTagsFromVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromVaultResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::SetDataRetrievalPolicyRequest&, const Model::SetDataRetrievalPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDataRetrievalPolicyResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::SetVaultAccessPolicyRequest&, const Model::SetVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::SetVaultNotificationsRequest&, const Model::SetVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::UploadArchiveRequest&, const Model::UploadArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadArchiveResponseReceivedHandler;
-    typedef std::function<void(const GlacierClient*, const Model::UploadMultipartPartRequest&, const Model::UploadMultipartPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadMultipartPartResponseReceivedHandler;
-
   /**
    * <p> Amazon S3 Glacier (Glacier) is a storage solution for "cold data."</p>
    * <p>Glacier is an extremely low-cost storage service that provides secure,
@@ -239,32 +43,60 @@ namespace Model
    * download archives, retrieving the job output, and deleting archives.</p> </li>
    * </ul>
    */
-  class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient
+  class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GlacierClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GlacierClient(const Aws::Glacier::GlacierClientConfiguration& clientConfiguration = Aws::Glacier::GlacierClientConfiguration(),
+                      std::shared_ptr<GlacierEndpointProviderBase> endpointProvider = Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GlacierClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GlacierClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<GlacierEndpointProviderBase> endpointProvider = Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Glacier::GlacierClientConfiguration& clientConfiguration = Aws::Glacier::GlacierClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         GlacierClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<GlacierEndpointProviderBase> endpointProvider = Aws::MakeShared<GlacierEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Glacier::GlacierClientConfiguration& clientConfiguration = Aws::Glacier::GlacierClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GlacierClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GlacierClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        GlacierClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~GlacierClient();
-
 
         /**
          * <p>This operation aborts a multipart upload identified by the upload ID.</p>
@@ -1416,45 +1248,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<GlacierEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AbortVaultLockAsyncHelper(const Model::AbortVaultLockRequest& request, const AbortVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddTagsToVaultAsyncHelper(const Model::AddTagsToVaultRequest& request, const AddTagsToVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CompleteVaultLockAsyncHelper(const Model::CompleteVaultLockRequest& request, const CompleteVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVaultAsyncHelper(const Model::CreateVaultRequest& request, const CreateVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteArchiveAsyncHelper(const Model::DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVaultAsyncHelper(const Model::DeleteVaultRequest& request, const DeleteVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVaultAccessPolicyAsyncHelper(const Model::DeleteVaultAccessPolicyRequest& request, const DeleteVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVaultNotificationsAsyncHelper(const Model::DeleteVaultNotificationsRequest& request, const DeleteVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVaultAsyncHelper(const Model::DescribeVaultRequest& request, const DescribeVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataRetrievalPolicyAsyncHelper(const Model::GetDataRetrievalPolicyRequest& request, const GetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetJobOutputAsyncHelper(const Model::GetJobOutputRequest& request, const GetJobOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetVaultAccessPolicyAsyncHelper(const Model::GetVaultAccessPolicyRequest& request, const GetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetVaultLockAsyncHelper(const Model::GetVaultLockRequest& request, const GetVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetVaultNotificationsAsyncHelper(const Model::GetVaultNotificationsRequest& request, const GetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitiateJobAsyncHelper(const Model::InitiateJobRequest& request, const InitiateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitiateMultipartUploadAsyncHelper(const Model::InitiateMultipartUploadRequest& request, const InitiateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitiateVaultLockAsyncHelper(const Model::InitiateVaultLockRequest& request, const InitiateVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMultipartUploadsAsyncHelper(const Model::ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPartsAsyncHelper(const Model::ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProvisionedCapacityAsyncHelper(const Model::ListProvisionedCapacityRequest& request, const ListProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForVaultAsyncHelper(const Model::ListTagsForVaultRequest& request, const ListTagsForVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVaultsAsyncHelper(const Model::ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PurchaseProvisionedCapacityAsyncHelper(const Model::PurchaseProvisionedCapacityRequest& request, const PurchaseProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromVaultAsyncHelper(const Model::RemoveTagsFromVaultRequest& request, const RemoveTagsFromVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetDataRetrievalPolicyAsyncHelper(const Model::SetDataRetrievalPolicyRequest& request, const SetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetVaultAccessPolicyAsyncHelper(const Model::SetVaultAccessPolicyRequest& request, const SetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetVaultNotificationsAsyncHelper(const Model::SetVaultNotificationsRequest& request, const SetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UploadArchiveAsyncHelper(const Model::UploadArchiveRequest& request, const UploadArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UploadMultipartPartAsyncHelper(const Model::UploadMultipartPartRequest& request, const UploadMultipartPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;
+      void init(const GlacierClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      GlacierClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<GlacierEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Glacier

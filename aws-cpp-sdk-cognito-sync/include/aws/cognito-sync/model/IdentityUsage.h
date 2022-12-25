@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/IdentityUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API IdentityUsage
+  class IdentityUsage
   {
   public:
-    IdentityUsage();
-    IdentityUsage(Aws::Utils::Json::JsonView jsonValue);
-    IdentityUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API IdentityUsage();
+    AWS_COGNITOSYNC_API IdentityUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API IdentityUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,19 +211,19 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     int m_datasetCount;
-    bool m_datasetCountHasBeenSet;
+    bool m_datasetCountHasBeenSet = false;
 
     long long m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StreamNameCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API StreamNameCondition
+  class StreamNameCondition
   {
   public:
-    StreamNameCondition();
-    StreamNameCondition(Aws::Utils::Json::JsonView jsonValue);
-    StreamNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API StreamNameCondition();
+    AWS_KINESISVIDEO_API StreamNameCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API StreamNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_comparisonValue;
-    bool m_comparisonValueHasBeenSet;
+    bool m_comparisonValueHasBeenSet = false;
   };
 
 } // namespace Model

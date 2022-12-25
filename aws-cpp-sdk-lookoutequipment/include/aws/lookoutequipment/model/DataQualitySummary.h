@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DataQualitySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API DataQualitySummary
+  class DataQualitySummary
   {
   public:
-    DataQualitySummary();
-    DataQualitySummary(Aws::Utils::Json::JsonView jsonValue);
-    DataQualitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API DataQualitySummary();
+    AWS_LOOKOUTEQUIPMENT_API DataQualitySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API DataQualitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,19 +238,19 @@ namespace Model
   private:
 
     InsufficientSensorData m_insufficientSensorData;
-    bool m_insufficientSensorDataHasBeenSet;
+    bool m_insufficientSensorDataHasBeenSet = false;
 
     MissingSensorData m_missingSensorData;
-    bool m_missingSensorDataHasBeenSet;
+    bool m_missingSensorDataHasBeenSet = false;
 
     InvalidSensorData m_invalidSensorData;
-    bool m_invalidSensorDataHasBeenSet;
+    bool m_invalidSensorDataHasBeenSet = false;
 
     UnsupportedTimestamps m_unsupportedTimestamps;
-    bool m_unsupportedTimestampsHasBeenSet;
+    bool m_unsupportedTimestampsHasBeenSet = false;
 
     DuplicateTimestamps m_duplicateTimestamps;
-    bool m_duplicateTimestampsHasBeenSet;
+    bool m_duplicateTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,17 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Detail input data for a repository branch.</p><p><h3>See Also:</h3>   <a
+   * <p>Detail input data for a linked repository branch.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositoryBranchInput">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API RepositoryBranchInput
+  class RepositoryBranchInput
   {
   public:
-    RepositoryBranchInput();
-    RepositoryBranchInput(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryBranchInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API RepositoryBranchInput();
+    AWS_PROTON_API RepositoryBranchInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API RepositoryBranchInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

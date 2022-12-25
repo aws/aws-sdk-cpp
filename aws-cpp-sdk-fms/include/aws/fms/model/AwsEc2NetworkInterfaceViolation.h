@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AwsEc2NetworkInterfaceViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API AwsEc2NetworkInterfaceViolation
+  class AwsEc2NetworkInterfaceViolation
   {
   public:
-    AwsEc2NetworkInterfaceViolation();
-    AwsEc2NetworkInterfaceViolation(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkInterfaceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API AwsEc2NetworkInterfaceViolation();
+    AWS_FMS_API AwsEc2NetworkInterfaceViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API AwsEc2NetworkInterfaceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_violatingSecurityGroups;
-    bool m_violatingSecurityGroupsHasBeenSet;
+    bool m_violatingSecurityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetricResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API CurrentMetricResult
+  class CurrentMetricResult
   {
   public:
-    CurrentMetricResult();
-    CurrentMetricResult(Aws::Utils::Json::JsonView jsonValue);
-    CurrentMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API CurrentMetricResult();
+    AWS_CONNECT_API CurrentMetricResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API CurrentMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Dimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Vector<CurrentMetricData> m_collections;
-    bool m_collectionsHasBeenSet;
+    bool m_collectionsHasBeenSet = false;
   };
 
 } // namespace Model

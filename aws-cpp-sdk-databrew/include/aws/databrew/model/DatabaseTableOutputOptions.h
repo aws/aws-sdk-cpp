@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatabaseTableOutputOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatabaseTableOutputOptions
+  class DatabaseTableOutputOptions
   {
   public:
-    DatabaseTableOutputOptions();
-    DatabaseTableOutputOptions(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseTableOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatabaseTableOutputOptions();
+    AWS_GLUEDATABREW_API DatabaseTableOutputOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatabaseTableOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
   };
 
 } // namespace Model

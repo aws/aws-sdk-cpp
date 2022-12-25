@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/RoleCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_SSO_API RoleCredentials
+  class RoleCredentials
   {
   public:
-    RoleCredentials();
-    RoleCredentials(Aws::Utils::Json::JsonView jsonValue);
-    RoleCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSO_API RoleCredentials();
+    AWS_SSO_API RoleCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API RoleCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
 
     long long m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
   };
 
 } // namespace Model

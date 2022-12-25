@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeploymentApplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API DeploymentApplicationConfig
+  class DeploymentApplicationConfig
   {
   public:
-    DeploymentApplicationConfig();
-    DeploymentApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API DeploymentApplicationConfig();
+    AWS_ROBOMAKER_API DeploymentApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API DeploymentApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     DeploymentLaunchConfig m_launchConfig;
-    bool m_launchConfigHasBeenSet;
+    bool m_launchConfigHasBeenSet = false;
   };
 
 } // namespace Model

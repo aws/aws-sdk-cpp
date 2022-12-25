@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Hsm">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Hsm
+  class Hsm
   {
   public:
-    Hsm();
-    Hsm(Aws::Utils::Json::JsonView jsonValue);
-    Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Hsm();
+    AWS_CLOUDHSMV2_API Hsm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -359,28 +359,28 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_eniId;
-    bool m_eniIdHasBeenSet;
+    bool m_eniIdHasBeenSet = false;
 
     Aws::String m_eniIp;
-    bool m_eniIpHasBeenSet;
+    bool m_eniIpHasBeenSet = false;
 
     Aws::String m_hsmId;
-    bool m_hsmIdHasBeenSet;
+    bool m_hsmIdHasBeenSet = false;
 
     HsmState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
-    bool m_stateMessageHasBeenSet;
+    bool m_stateMessageHasBeenSet = false;
   };
 
 } // namespace Model

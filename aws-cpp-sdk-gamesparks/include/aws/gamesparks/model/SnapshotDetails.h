@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/SnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API SnapshotDetails
+  class SnapshotDetails
   {
   public:
-    SnapshotDetails();
-    SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API SnapshotDetails();
+    AWS_GAMESPARKS_API SnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API SnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Section> m_sections;
-    bool m_sectionsHasBeenSet;
+    bool m_sectionsHasBeenSet = false;
   };
 
 } // namespace Model

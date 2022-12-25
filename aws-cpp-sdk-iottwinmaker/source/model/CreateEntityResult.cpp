@@ -30,6 +30,12 @@ CreateEntityResult::CreateEntityResult(const Aws::AmazonWebServiceResult<JsonVal
 CreateEntityResult& CreateEntityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("entityId"))
+  {
+    m_entityId = jsonValue.GetString("entityId");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -39,12 +45,6 @@ CreateEntityResult& CreateEntityResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
-  }
-
-  if(jsonValue.ValueExists("entityId"))
-  {
-    m_entityId = jsonValue.GetString("entityId");
 
   }
 

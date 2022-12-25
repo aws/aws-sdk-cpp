@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
@@ -15,6 +16,7 @@
 #include <aws/sqs/model/CreateQueueRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/DeleteQueueRequest.h>
+#include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/ReceiveMessageRequest.h>
 #include <aws/sqs/model/DeleteMessageRequest.h>
@@ -60,6 +62,7 @@ static const char BASE_DEAD_LETTER_QUEUE_NAME[]                     = TEST_QUEUE
 static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[]              = TEST_QUEUE_PREFIX "DeadLetterSource";
 static const char BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME[] = TEST_QUEUE_PREFIX "ChangeMsgVisBatch";
 static const char BASE_TAG_QUEUE_NAME[]                             = TEST_QUEUE_PREFIX "SimpleForTagging";
+static const char BASE_NON_EXISTING_QUEUE_NAME[]                    = TEST_QUEUE_PREFIX "NonExisting";
 static const char ALLOCATION_TAG[]                                  = "QueueOperationTest";
 
 class QueueOperationTest : public ::testing::Test
@@ -112,7 +115,7 @@ protected:
         {
             deleteQueueRequest.SetQueueUrl(queueUrl);
             DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-            ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteQueueOutcome);
             std::this_thread::sleep_for(std::chrono::seconds(1)); // Cheap throttle avoidance
         }
         sqsClient = nullptr;
@@ -156,7 +159,7 @@ protected:
             DeleteQueueRequest deleteQueueRequest;
             deleteQueueRequest.WithQueueUrl(url);
             DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
-            ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteQueueOutcome);
         }
     }
 
@@ -269,7 +272,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     sendMessageRequest.SetQueueUrl(queueUrl);
 
     SendMessageOutcome sendMessageOutcome = sqsClient->SendMessage(sendMessageRequest);
-    ASSERT_TRUE(sendMessageOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(sendMessageOutcome);
     EXPECT_TRUE(sendMessageOutcome.GetResult().GetMessageId().length() > 0);
 
     ReceiveMessageRequest receiveMessageRequest;
@@ -278,7 +281,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     receiveMessageRequest.AddMessageAttributeNames("All");
 
     ReceiveMessageOutcome receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
-    ASSERT_TRUE(receiveMessageOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(receiveMessageOutcome);
     ReceiveMessageResult receiveMessageResult = receiveMessageOutcome.GetResult();
     ASSERT_EQ(1uL, receiveMessageResult.GetMessages().size());
     Aws::String receivedMessage = receiveMessageResult.GetMessages()[0].GetBody();
@@ -295,7 +298,7 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     deleteMessageRequest.SetReceiptHandle(receiveMessageResult.GetMessages()[0].GetReceiptHandle());
 
     DeleteMessageOutcome deleteMessageOutcome = sqsClient->DeleteMessage(deleteMessageRequest);
-    ASSERT_TRUE(deleteMessageOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(deleteMessageOutcome);
 
     receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
     EXPECT_EQ(0uL, receiveMessageOutcome.GetResult().GetMessages().size());
@@ -309,7 +312,7 @@ TEST_F(QueueOperationTest, TestQueueAttributes)
     createQueueRequest.AddAttributes(QueueAttributeName::DelaySeconds, "45");
 
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-    ASSERT_TRUE(createQueueOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createQueueOutcome);
     Aws::String queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
     m_allTestQueues.insert(queueUrl);
     ASSERT_TRUE(queueUrl.find(createQueueRequest.GetQueueName()) != Aws::String::npos);
@@ -317,17 +320,17 @@ TEST_F(QueueOperationTest, TestQueueAttributes)
     GetQueueAttributesRequest queueAttributesRequest;
     queueAttributesRequest.AddAttributeNames(QueueAttributeName::DelaySeconds).WithQueueUrl(queueUrl);
     GetQueueAttributesOutcome queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
-    ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(queueAttributesOutcome);
     EXPECT_EQ("45", queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::DelaySeconds)->second);
 
     SetQueueAttributesRequest setQueueAttributesRequest;
     setQueueAttributesRequest.AddAttributes(QueueAttributeName::VisibilityTimeout, "42").WithQueueUrl(queueUrl);
     SetQueueAttributesOutcome setQueueAttributesOutcome = sqsClient->SetQueueAttributes(setQueueAttributesRequest);
-    ASSERT_TRUE(setQueueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(setQueueAttributesOutcome);
 
     queueAttributesRequest.AddAttributeNames(QueueAttributeName::VisibilityTimeout).WithQueueUrl(queueUrl);
     queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
-    ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(queueAttributesOutcome);
     EXPECT_EQ("45", queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::DelaySeconds)->second);
     EXPECT_EQ("42", queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::VisibilityTimeout)->second);
 }
@@ -342,12 +345,12 @@ TEST_F(QueueOperationTest, TestPermissions)
     addPermissionRequest.AddAWSAccountIds(GetAwsAccountId()).AddActions("ReceiveMessage").WithLabel("Test").WithQueueUrl(
             queueUrl);
     AddPermissionOutcome permissionOutcome = sqsClient->AddPermission(addPermissionRequest);
-    ASSERT_TRUE(permissionOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(permissionOutcome);
 
     GetQueueAttributesRequest queueAttributesRequest;
     queueAttributesRequest.AddAttributeNames(QueueAttributeName::Policy).WithQueueUrl(queueUrl);
     GetQueueAttributesOutcome queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
-    ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(queueAttributesOutcome);
 
     Aws::String policyString = queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy)->second;
     EXPECT_TRUE(policyString.length() > 0);
@@ -362,10 +365,10 @@ TEST_F(QueueOperationTest, TestPermissions)
     RemovePermissionRequest removePermissionRequest;
     removePermissionRequest.WithLabel("Test").WithQueueUrl(queueUrl);
     RemovePermissionOutcome removePermissionOutcome = sqsClient->RemovePermission(removePermissionRequest);
-    ASSERT_TRUE(removePermissionOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(removePermissionOutcome);
 
     queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
-    ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(queueAttributesOutcome);
 
     EXPECT_TRUE(queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy) == queueAttributesOutcome.GetResult().GetAttributes().end());
 }
@@ -378,33 +381,33 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
     createQueueRequest.SetQueueName(sourceQueueName);
 
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-    ASSERT_TRUE(createQueueOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createQueueOutcome);
     Aws::String queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
     m_allTestQueues.insert(queueUrl);
 
     Aws::String queueName = BuildResourceName(BASE_DEAD_LETTER_QUEUE_NAME);
     createQueueRequest.SetQueueName(queueName);
     createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-    ASSERT_TRUE(createQueueOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(createQueueOutcome);
     Aws::String deadLetterQueueUrl = createQueueOutcome.GetResult().GetQueueUrl();
     m_allTestQueues.insert(deadLetterQueueUrl);
 
     GetQueueAttributesRequest queueAttributesRequest;
     queueAttributesRequest.AddAttributeNames(QueueAttributeName::QueueArn).WithQueueUrl(deadLetterQueueUrl);
     GetQueueAttributesOutcome queueAttributesOutcome = sqsClient->GetQueueAttributes(queueAttributesRequest);
-    ASSERT_TRUE(queueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(queueAttributesOutcome);
     Aws::String redrivePolicy = "{\"maxReceiveCount\":\"5\", \"deadLetterTargetArn\":\""
             + queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::QueueArn)->second + "\"}";
 
     SetQueueAttributesRequest setQueueAttributesRequest;
     setQueueAttributesRequest.AddAttributes(QueueAttributeName::RedrivePolicy, redrivePolicy).WithQueueUrl(queueUrl);
     SetQueueAttributesOutcome setQueueAttributesOutcome = sqsClient->SetQueueAttributes(setQueueAttributesRequest);
-    ASSERT_TRUE(setQueueAttributesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(setQueueAttributesOutcome);
 
     ListDeadLetterSourceQueuesRequest listDeadLetterQueuesRequest;
     listDeadLetterQueuesRequest.WithQueueUrl(deadLetterQueueUrl);
     ListDeadLetterSourceQueuesOutcome listDeadLetterQueuesOutcome = sqsClient->ListDeadLetterSourceQueues(listDeadLetterQueuesRequest);
-    ASSERT_TRUE(listDeadLetterQueuesOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(listDeadLetterQueuesOutcome);
 
     //deadletter queue stuff is eventually consistent, let's try for 100 seconds or so.
     unsigned count = 0;
@@ -430,7 +433,7 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
   CreateQueueRequest createQueueRequest;
   createQueueRequest.SetQueueName(BuildResourceName(BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME));
   auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-  ASSERT_TRUE(createQueueOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(createQueueOutcome);
   auto queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
   m_allTestQueues.insert(queueUrl);
 
@@ -445,7 +448,7 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
     .WithQueueUrl(queueUrl);
 
   auto sendMessageBatchOutcome = sqsClient->SendMessageBatch(sendMessageBatchRequest);
-  ASSERT_TRUE(sendMessageBatchOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(sendMessageBatchOutcome);
   ASSERT_EQ(3u, sendMessageBatchOutcome.GetResult().GetSuccessful().size());
 
   ReceiveMessageRequest receiveMessageRequest;
@@ -457,7 +460,7 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
   while (messages.size() < 3u)
   {
     auto receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
-    ASSERT_TRUE(receiveMessageOutcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(receiveMessageOutcome);
     for (auto& message : receiveMessageOutcome.GetResult().GetMessages())
     {
       messages.push_back(message);
@@ -488,7 +491,7 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
   }
   changeMessageVisibilityBatchRequest.WithQueueUrl(queueUrl);
   auto changeMessageVisibilityBatchOutcome = sqsClient->ChangeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
-  ASSERT_TRUE(changeMessageVisibilityBatchOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(changeMessageVisibilityBatchOutcome);
   EXPECT_EQ(2u, changeMessageVisibilityBatchOutcome.GetResult().GetFailed().size());
   EXPECT_EQ(1u, changeMessageVisibilityBatchOutcome.GetResult().GetSuccessful().size());
 
@@ -504,7 +507,7 @@ TEST_F(QueueOperationTest, TagQueueTest)
   CreateQueueRequest createQueueRequest;
   createQueueRequest.SetQueueName(BuildResourceName(BASE_TAG_QUEUE_NAME));
   auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-  ASSERT_TRUE(createQueueOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(createQueueOutcome);
   auto queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
   m_allTestQueues.insert(queueUrl);
 
@@ -515,12 +518,12 @@ TEST_F(QueueOperationTest, TagQueueTest)
 
   tagQueueRequest.SetTags(tagsToSet);
   TagQueueOutcome tagQueueOutcome = sqsClient->TagQueue(tagQueueRequest);
-  ASSERT_TRUE(tagQueueOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(tagQueueOutcome);
 
   ListQueueTagsRequest listQueuesTagsRequest;
   listQueuesTagsRequest.SetQueueUrl(queueUrl);
   const ListQueueTagsOutcome listQueueTagsOutcome = sqsClient->ListQueueTags(listQueuesTagsRequest);
-  ASSERT_TRUE(listQueueTagsOutcome.IsSuccess());
+  AWS_ASSERT_SUCCESS(listQueueTagsOutcome);
 
   const Aws::Map<Aws::String, Aws::String>& listQueueTags = listQueueTagsOutcome.GetResult().GetTags();
   for(const auto& expectedTag : tagsToSet)
@@ -535,10 +538,11 @@ TEST_F(QueueOperationTest, TagQueueTest)
   tagsToSet["MyAnotherCustomTag2"] = "MyCustomTag2Value";
   tagQueueRequest.SetTags(tagsToSet);
   TagQueueOutcome tagQueueOutcome2 = sqsClient->TagQueue(tagQueueRequest);
-  ASSERT_TRUE(tagQueueOutcome2.IsSuccess());
+
+  AWS_ASSERT_SUCCESS(tagQueueOutcome2);
 
   const ListQueueTagsOutcome listQueueTagsOutcome2 = sqsClient->ListQueueTags(listQueuesTagsRequest);
-  ASSERT_TRUE(listQueueTagsOutcome2.IsSuccess());
+  AWS_ASSERT_SUCCESS(listQueueTagsOutcome2);
 
   const Aws::Map<Aws::String, Aws::String>& listQueueTags2 = listQueueTagsOutcome2.GetResult().GetTags();
   for(const auto& expectedTag : tagsToSet)
@@ -547,4 +551,16 @@ TEST_F(QueueOperationTest, TagQueueTest)
     ASSERT_TRUE(foundExpectedTagIt != listQueueTags2.end());
     ASSERT_EQ(foundExpectedTagIt->second, expectedTag.second);
   }
+}
+
+TEST_F(QueueOperationTest, ErrorCode)
+{
+    GetQueueUrlRequest getQueueUrlRequest;
+    getQueueUrlRequest.SetQueueName(BASE_NON_EXISTING_QUEUE_NAME);
+
+    auto getQueueUrlOutcome = sqsClient->GetQueueUrl(getQueueUrlRequest);
+
+    ASSERT_FALSE(getQueueUrlOutcome.IsSuccess());
+    EXPECT_EQ(SQSErrors::QUEUE_DOES_NOT_EXIST, getQueueUrlOutcome.GetError().GetErrorType());
+    EXPECT_EQ("AWS.SimpleQueueService.NonExistentQueue", getQueueUrlOutcome.GetError().GetExceptionName());
 }

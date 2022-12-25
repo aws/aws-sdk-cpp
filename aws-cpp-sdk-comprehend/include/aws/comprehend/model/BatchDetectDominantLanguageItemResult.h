@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguageItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult
+  class BatchDetectDominantLanguageItemResult
   {
   public:
-    BatchDetectDominantLanguageItemResult();
-    BatchDetectDominantLanguageItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectDominantLanguageItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult();
+    AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectDominantLanguageItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<DominantLanguage> m_languages;
-    bool m_languagesHasBeenSet;
+    bool m_languagesHasBeenSet = false;
   };
 
 } // namespace Model

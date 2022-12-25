@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API RecommendationRelatedEvent
+  class RecommendationRelatedEvent
   {
   public:
-    RecommendationRelatedEvent();
-    RecommendationRelatedEvent(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationRelatedEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API RecommendationRelatedEvent();
+    AWS_DEVOPSGURU_API RecommendationRelatedEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API RecommendationRelatedEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<RecommendationRelatedEventResource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

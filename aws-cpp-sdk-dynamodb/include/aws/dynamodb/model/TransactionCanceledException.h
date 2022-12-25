@@ -50,10 +50,10 @@ namespace Model
    * format.</p> </li> </ul>  <p>If using Java, DynamoDB lists the cancellation
    * reasons on the <code>CancellationReasons</code> property. This property is not
    * set for other languages. Transaction cancellation reasons are ordered in the
-   * order of requested items, if an item has no error it will have <code>NONE</code>
+   * order of requested items, if an item has no error it will have <code>None</code>
    * code and <code>Null</code> message.</p>  <p>Cancellation reason codes and
    * possible error messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code:
-   * <code>NONE</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul>
+   * <code>None</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul>
    * </li> <li> <p>Conditional Check Failed:</p> <ul> <li> <p>Code:
    * <code>ConditionalCheckFailed</code> </p> </li> <li> <p>Message: The conditional
    * request failed. </p> </li> </ul> </li> <li> <p>Item Collection Size Limit
@@ -100,13 +100,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactionCanceledException">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TransactionCanceledException
+  class TransactionCanceledException
   {
   public:
-    TransactionCanceledException();
-    TransactionCanceledException(Aws::Utils::Json::JsonView jsonValue);
-    TransactionCanceledException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TransactionCanceledException();
+    AWS_DYNAMODB_API TransactionCanceledException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TransactionCanceledException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<CancellationReason> m_cancellationReasons;
-    bool m_cancellationReasonsHasBeenSet;
+    bool m_cancellationReasonsHasBeenSet = false;
   };
 
 } // namespace Model

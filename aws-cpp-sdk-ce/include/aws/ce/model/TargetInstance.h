@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TargetInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API TargetInstance
+  class TargetInstance
   {
   public:
-    TargetInstance();
-    TargetInstance(Aws::Utils::Json::JsonView jsonValue);
-    TargetInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API TargetInstance();
+    AWS_COSTEXPLORER_API TargetInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API TargetInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::String m_estimatedMonthlyCost;
-    bool m_estimatedMonthlyCostHasBeenSet;
+    bool m_estimatedMonthlyCostHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     bool m_defaultTargetInstance;
-    bool m_defaultTargetInstanceHasBeenSet;
+    bool m_defaultTargetInstanceHasBeenSet = false;
 
     ResourceDetails m_resourceDetails;
-    bool m_resourceDetailsHasBeenSet;
+    bool m_resourceDetailsHasBeenSet = false;
 
     ResourceUtilization m_expectedResourceUtilization;
-    bool m_expectedResourceUtilizationHasBeenSet;
+    bool m_expectedResourceUtilizationHasBeenSet = false;
 
     Aws::Vector<PlatformDifference> m_platformDifferences;
-    bool m_platformDifferencesHasBeenSet;
+    bool m_platformDifferencesHasBeenSet = false;
   };
 
 } // namespace Model

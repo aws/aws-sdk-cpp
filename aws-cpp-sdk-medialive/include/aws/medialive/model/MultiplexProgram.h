@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgram">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgram
+  class MultiplexProgram
   {
   public:
-    MultiplexProgram();
-    MultiplexProgram(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgram& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgram();
+    AWS_MEDIALIVE_API MultiplexProgram(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgram& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     MultiplexProgramSettings m_multiplexProgramSettings;
-    bool m_multiplexProgramSettingsHasBeenSet;
+    bool m_multiplexProgramSettingsHasBeenSet = false;
 
     MultiplexProgramPacketIdentifiersMap m_packetIdentifiersMap;
-    bool m_packetIdentifiersMapHasBeenSet;
+    bool m_packetIdentifiersMapHasBeenSet = false;
 
     Aws::Vector<MultiplexProgramPipelineDetail> m_pipelineDetails;
-    bool m_pipelineDetailsHasBeenSet;
+    bool m_pipelineDetailsHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
   };
 
 } // namespace Model

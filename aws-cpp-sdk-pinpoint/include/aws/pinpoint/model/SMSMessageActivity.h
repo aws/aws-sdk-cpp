@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSMessageActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SMSMessageActivity
+  class SMSMessageActivity
   {
   public:
-    SMSMessageActivity();
-    SMSMessageActivity(Aws::Utils::Json::JsonView jsonValue);
-    SMSMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SMSMessageActivity();
+    AWS_PINPOINT_API SMSMessageActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SMSMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,16 +289,16 @@ namespace Model
   private:
 
     JourneySMSMessage m_messageConfig;
-    bool m_messageConfigHasBeenSet;
+    bool m_messageConfigHasBeenSet = false;
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

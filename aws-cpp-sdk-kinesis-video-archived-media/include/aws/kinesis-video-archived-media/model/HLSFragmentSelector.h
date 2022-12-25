@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/HLSFragmentSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector
+  class HLSFragmentSelector
   {
   public:
-    HLSFragmentSelector();
-    HLSFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
-    HLSFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,10 +241,10 @@ namespace Model
   private:
 
     HLSFragmentSelectorType m_fragmentSelectorType;
-    bool m_fragmentSelectorTypeHasBeenSet;
+    bool m_fragmentSelectorTypeHasBeenSet = false;
 
     HLSTimestampRange m_timestampRange;
-    bool m_timestampRangeHasBeenSet;
+    bool m_timestampRangeHasBeenSet = false;
   };
 
 } // namespace Model

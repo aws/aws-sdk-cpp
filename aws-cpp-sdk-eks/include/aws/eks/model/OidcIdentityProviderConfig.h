@@ -26,18 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents the configuration for an OpenID Connect (OIDC)
+   * <p>An object representing the configuration for an OpenID Connect (OIDC)
    * identity provider. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OidcIdentityProviderConfig
+  class OidcIdentityProviderConfig
   {
   public:
-    OidcIdentityProviderConfig();
-    OidcIdentityProviderConfig(Aws::Utils::Json::JsonView jsonValue);
-    OidcIdentityProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OidcIdentityProviderConfig();
+    AWS_EKS_API OidcIdentityProviderConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OidcIdentityProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -682,40 +682,40 @@ namespace Model
   private:
 
     Aws::String m_identityProviderConfigName;
-    bool m_identityProviderConfigNameHasBeenSet;
+    bool m_identityProviderConfigNameHasBeenSet = false;
 
     Aws::String m_identityProviderConfigArn;
-    bool m_identityProviderConfigArnHasBeenSet;
+    bool m_identityProviderConfigArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_issuerUrl;
-    bool m_issuerUrlHasBeenSet;
+    bool m_issuerUrlHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_usernameClaim;
-    bool m_usernameClaimHasBeenSet;
+    bool m_usernameClaimHasBeenSet = false;
 
     Aws::String m_usernamePrefix;
-    bool m_usernamePrefixHasBeenSet;
+    bool m_usernamePrefixHasBeenSet = false;
 
     Aws::String m_groupsClaim;
-    bool m_groupsClaimHasBeenSet;
+    bool m_groupsClaimHasBeenSet = false;
 
     Aws::String m_groupsPrefix;
-    bool m_groupsPrefixHasBeenSet;
+    bool m_groupsPrefixHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requiredClaims;
-    bool m_requiredClaimsHasBeenSet;
+    bool m_requiredClaimsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ConfigStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,124 +5,73 @@
 
 #pragma once
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
-#include <aws/lexv2-runtime/LexRuntimeV2Errors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/lexv2-runtime/model/DeleteSessionResult.h>
-#include <aws/lexv2-runtime/model/GetSessionResult.h>
-#include <aws/lexv2-runtime/model/PutSessionResult.h>
-#include <aws/lexv2-runtime/model/RecognizeTextResult.h>
-#include <aws/lexv2-runtime/model/RecognizeUtteranceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/lexv2-runtime/LexRuntimeV2ServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Event
-{
-  class EventEncoderStream;
-}
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LexRuntimeV2
 {
-
-namespace Model
-{
-        class DeleteSessionRequest;
-        class GetSessionRequest;
-        class PutSessionRequest;
-        class RecognizeTextRequest;
-        class RecognizeUtteranceRequest;
-        class StartConversationRequest;
-        class StartConversationRequestEventStream;
-
-        typedef Aws::Utils::Outcome<DeleteSessionResult, LexRuntimeV2Error> DeleteSessionOutcome;
-        typedef Aws::Utils::Outcome<GetSessionResult, LexRuntimeV2Error> GetSessionOutcome;
-        typedef Aws::Utils::Outcome<PutSessionResult, LexRuntimeV2Error> PutSessionOutcome;
-        typedef Aws::Utils::Outcome<RecognizeTextResult, LexRuntimeV2Error> RecognizeTextOutcome;
-        typedef Aws::Utils::Outcome<RecognizeUtteranceResult, LexRuntimeV2Error> RecognizeUtteranceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, LexRuntimeV2Error> StartConversationOutcome;
-
-        typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
-        typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
-        typedef std::future<PutSessionOutcome> PutSessionOutcomeCallable;
-        typedef std::future<RecognizeTextOutcome> RecognizeTextOutcomeCallable;
-        typedef std::future<RecognizeUtteranceOutcome> RecognizeUtteranceOutcomeCallable;
-        typedef std::future<StartConversationOutcome> StartConversationOutcomeCallable;
-} // namespace Model
-
-  class LexRuntimeV2Client;
-
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::PutSessionRequest&, Model::PutSessionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::RecognizeTextRequest&, const Model::RecognizeTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeTextResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::RecognizeUtteranceRequest&, Model::RecognizeUtteranceOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeUtteranceResponseReceivedHandler;
-    typedef std::function<void(Model::StartConversationRequestEventStream&)> StartConversationStreamReadyHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::StartConversationRequest&, const Model::StartConversationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConversationResponseReceivedHandler;
-
   /**
    * <p/>
    */
-  class AWS_LEXRUNTIMEV2_API LexRuntimeV2Client : public Aws::Client::AWSJsonClient
+  class AWS_LEXRUNTIMEV2_API LexRuntimeV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeV2Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeV2Client(const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration(),
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeV2Client(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LexRuntimeV2Client();
-
 
         /**
          * <p>Removes session information for a specified bot, alias, and user ID. </p>
@@ -309,26 +258,23 @@ namespace Model
          *
          * Queues the request into a thread executor.
          * The streamReadyHandler is triggered when the stream is ready to be written to.
-         * The responseHandler is triggered when the request is finished.
+         * The handler is triggered when the request is finished.
          */
         virtual void StartConversationAsync(Model::StartConversationRequest& request,
                 const StartConversationStreamReadyHandler& streamReadyHandler,
-                const StartConversationResponseReceivedHandler& responseHandler,
+                const StartConversationResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LexRuntimeV2EndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteSessionAsyncHelper(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSessionAsyncHelper(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSessionAsyncHelper(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecognizeTextAsyncHelper(const Model::RecognizeTextRequest& request, const RecognizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecognizeUtteranceAsyncHelper(const Model::RecognizeUtteranceRequest& request, const RecognizeUtteranceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeV2Client>;
+      void init(const LexRuntimeV2ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LexRuntimeV2ClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LexRuntimeV2EndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexRuntimeV2

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardSummary
+  class DashboardSummary
   {
   public:
-    DashboardSummary();
-    DashboardSummary(Aws::Utils::Json::JsonView jsonValue);
-    DashboardSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardSummary();
+    AWS_QUICKSIGHT_API DashboardSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,25 +277,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dashboardId;
-    bool m_dashboardIdHasBeenSet;
+    bool m_dashboardIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     long long m_publishedVersionNumber;
-    bool m_publishedVersionNumberHasBeenSet;
+    bool m_publishedVersionNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastPublishedTime;
-    bool m_lastPublishedTimeHasBeenSet;
+    bool m_lastPublishedTimeHasBeenSet = false;
   };
 
 } // namespace Model

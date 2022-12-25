@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/Datum">AWS API
    * Reference</a></p>
    */
-  class AWS_ATHENA_API Datum
+  class Datum
   {
   public:
-    Datum();
-    Datum(Aws::Utils::Json::JsonView jsonValue);
-    Datum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API Datum();
+    AWS_ATHENA_API Datum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Datum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_varCharValue;
-    bool m_varCharValueHasBeenSet;
+    bool m_varCharValueHasBeenSet = false;
   };
 
 } // namespace Model

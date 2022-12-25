@@ -25,68 +25,62 @@ namespace Model
 {
 
   /**
-   * <p> A code review type that analyzes all code under a specified branch in an
+   * <p>A code review type that analyzes all code under a specified branch in an
    * associated repository. The associated repository is specified using its ARN when
    * you call <a
-   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-   * <code>CreateCodeReview</code> </a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RepositoryAnalysis
+  class RepositoryAnalysis
   {
   public:
-    RepositoryAnalysis();
-    RepositoryAnalysis(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis();
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RepositoryAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const{ return m_repositoryHead; }
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline bool RepositoryHeadHasBeenSet() const { return m_repositoryHeadHasBeenSet; }
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline void SetRepositoryHead(const RepositoryHeadSourceCodeType& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = value; }
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline void SetRepositoryHead(RepositoryHeadSourceCodeType&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::move(value); }
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline RepositoryAnalysis& WithRepositoryHead(const RepositoryHeadSourceCodeType& value) { SetRepositoryHead(value); return *this;}
 
     /**
-     * <p> A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-     * <code>SourceCodeType</code> </a> that specifies the tip of a branch in an
-     * associated repository. </p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+     * that specifies the tip of a branch in an associated repository.</p>
      */
     inline RepositoryAnalysis& WithRepositoryHead(RepositoryHeadSourceCodeType&& value) { SetRepositoryHead(std::move(value)); return *this;}
 
@@ -112,10 +106,10 @@ namespace Model
   private:
 
     RepositoryHeadSourceCodeType m_repositoryHead;
-    bool m_repositoryHeadHasBeenSet;
+    bool m_repositoryHeadHasBeenSet = false;
 
     SourceCodeType m_sourceCodeType;
-    bool m_sourceCodeTypeHasBeenSet;
+    bool m_sourceCodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

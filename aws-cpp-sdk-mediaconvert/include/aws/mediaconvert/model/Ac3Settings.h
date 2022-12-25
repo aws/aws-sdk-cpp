@@ -35,36 +35,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Ac3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Ac3Settings
+  class Ac3Settings
   {
   public:
-    Ac3Settings();
-    Ac3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Ac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Ac3Settings();
+    AWS_MEDIACONVERT_API Ac3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Ac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the
-     * coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify
+     * must be a multiple of 8000 within the allowed minimum and maximum values.  Leave
+     * blank to use the default bitrate for the coding mode you select according ETSI
+     * TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     * Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum:
+     * 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000.
+     * Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE:
+     * Default: 384000. Minimum: 384000. Maximum: 640000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the
-     * coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify
+     * must be a multiple of 8000 within the allowed minimum and maximum values.  Leave
+     * blank to use the default bitrate for the coding mode you select according ETSI
+     * TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     * Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum:
+     * 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000.
+     * Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE:
+     * Default: 384000. Minimum: 384000. Maximum: 640000.
      */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the
-     * coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify
+     * must be a multiple of 8000 within the allowed minimum and maximum values.  Leave
+     * blank to use the default bitrate for the coding mode you select according ETSI
+     * TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     * Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum:
+     * 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000.
+     * Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE:
+     * Default: 384000. Minimum: 384000. Maximum: 640000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the
-     * coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify
+     * must be a multiple of 8000 within the allowed minimum and maximum values.  Leave
+     * blank to use the default bitrate for the coding mode you select according ETSI
+     * TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     * Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum:
+     * 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000.
+     * Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE:
+     * Default: 384000. Minimum: 384000. Maximum: 640000.
      */
     inline Ac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -502,34 +526,34 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Ac3BitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Ac3CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     int m_dialnorm;
-    bool m_dialnormHasBeenSet;
+    bool m_dialnormHasBeenSet = false;
 
     Ac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine;
-    bool m_dynamicRangeCompressionLineHasBeenSet;
+    bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
     Ac3DynamicRangeCompressionProfile m_dynamicRangeCompressionProfile;
-    bool m_dynamicRangeCompressionProfileHasBeenSet;
+    bool m_dynamicRangeCompressionProfileHasBeenSet = false;
 
     Ac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf;
-    bool m_dynamicRangeCompressionRfHasBeenSet;
+    bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
     Ac3LfeFilter m_lfeFilter;
-    bool m_lfeFilterHasBeenSet;
+    bool m_lfeFilterHasBeenSet = false;
 
     Ac3MetadataControl m_metadataControl;
-    bool m_metadataControlHasBeenSet;
+    bool m_metadataControlHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Subnet();
+    AWS_EC2_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -769,67 +769,67 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     int m_availableIpAddressCount;
-    bool m_availableIpAddressCountHasBeenSet;
+    bool m_availableIpAddressCountHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     bool m_defaultForAz;
-    bool m_defaultForAzHasBeenSet;
+    bool m_defaultForAzHasBeenSet = false;
 
     int m_enableLniAtDeviceIndex;
-    bool m_enableLniAtDeviceIndexHasBeenSet;
+    bool m_enableLniAtDeviceIndexHasBeenSet = false;
 
     bool m_mapPublicIpOnLaunch;
-    bool m_mapPublicIpOnLaunchHasBeenSet;
+    bool m_mapPublicIpOnLaunchHasBeenSet = false;
 
     bool m_mapCustomerOwnedIpOnLaunch;
-    bool m_mapCustomerOwnedIpOnLaunchHasBeenSet;
+    bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
     SubnetState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     bool m_assignIpv6AddressOnCreation;
-    bool m_assignIpv6AddressOnCreationHasBeenSet;
+    bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
     Aws::Vector<SubnetIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     bool m_enableDns64;
-    bool m_enableDns64HasBeenSet;
+    bool m_enableDns64HasBeenSet = false;
 
     bool m_ipv6Native;
-    bool m_ipv6NativeHasBeenSet;
+    bool m_ipv6NativeHasBeenSet = false;
 
     PrivateDnsNameOptionsOnLaunch m_privateDnsNameOptionsOnLaunch;
-    bool m_privateDnsNameOptionsOnLaunchHasBeenSet;
+    bool m_privateDnsNameOptionsOnLaunchHasBeenSet = false;
   };
 
 } // namespace Model

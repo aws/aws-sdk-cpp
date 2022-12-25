@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TriggeringDataset">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API TriggeringDataset
+  class TriggeringDataset
   {
   public:
-    TriggeringDataset();
-    TriggeringDataset(Aws::Utils::Json::JsonView jsonValue);
-    TriggeringDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API TriggeringDataset();
+    AWS_IOTANALYTICS_API TriggeringDataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API TriggeringDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

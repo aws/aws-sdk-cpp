@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlComment">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlComment
+  class ControlComment
   {
   public:
-    ControlComment();
-    ControlComment(Aws::Utils::Json::JsonView jsonValue);
-    ControlComment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlComment();
+    AWS_AUDITMANAGER_API ControlComment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlComment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_authorName;
-    bool m_authorNameHasBeenSet;
+    bool m_authorNameHasBeenSet = false;
 
     Aws::String m_commentBody;
-    bool m_commentBodyHasBeenSet;
+    bool m_commentBodyHasBeenSet = false;
 
     Aws::Utils::DateTime m_postedDate;
-    bool m_postedDateHasBeenSet;
+    bool m_postedDateHasBeenSet = false;
   };
 
 } // namespace Model

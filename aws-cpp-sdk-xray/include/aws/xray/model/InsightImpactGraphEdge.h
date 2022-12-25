@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/InsightImpactGraphEdge">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API InsightImpactGraphEdge
+  class InsightImpactGraphEdge
   {
   public:
-    InsightImpactGraphEdge();
-    InsightImpactGraphEdge(Aws::Utils::Json::JsonView jsonValue);
-    InsightImpactGraphEdge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API InsightImpactGraphEdge();
+    AWS_XRAY_API InsightImpactGraphEdge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API InsightImpactGraphEdge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
   };
 
 } // namespace Model

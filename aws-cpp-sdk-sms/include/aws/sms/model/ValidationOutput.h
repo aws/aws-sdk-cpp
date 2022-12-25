@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ValidationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ValidationOutput
+  class ValidationOutput
   {
   public:
-    ValidationOutput();
-    ValidationOutput(Aws::Utils::Json::JsonView jsonValue);
-    ValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ValidationOutput();
+    AWS_SMS_API ValidationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ValidationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestValidationTime;
-    bool m_latestValidationTimeHasBeenSet;
+    bool m_latestValidationTimeHasBeenSet = false;
 
     AppValidationOutput m_appValidationOutput;
-    bool m_appValidationOutputHasBeenSet;
+    bool m_appValidationOutputHasBeenSet = false;
 
     ServerValidationOutput m_serverValidationOutput;
-    bool m_serverValidationOutputHasBeenSet;
+    bool m_serverValidationOutputHasBeenSet = false;
   };
 
 } // namespace Model

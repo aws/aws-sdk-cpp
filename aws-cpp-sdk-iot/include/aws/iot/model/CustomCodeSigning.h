@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CustomCodeSigning">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CustomCodeSigning
+  class CustomCodeSigning
   {
   public:
-    CustomCodeSigning();
-    CustomCodeSigning(Aws::Utils::Json::JsonView jsonValue);
-    CustomCodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CustomCodeSigning();
+    AWS_IOT_API CustomCodeSigning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CustomCodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,16 +250,16 @@ namespace Model
   private:
 
     CodeSigningSignature m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     CodeSigningCertificateChain m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
 
     Aws::String m_hashAlgorithm;
-    bool m_hashAlgorithmHasBeenSet;
+    bool m_hashAlgorithmHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

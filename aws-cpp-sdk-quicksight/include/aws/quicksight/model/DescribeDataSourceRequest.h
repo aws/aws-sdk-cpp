@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API DescribeDataSourceRequest : public QuickSightRequest
+  class DescribeDataSourceRequest : public QuickSightRequest
   {
   public:
-    DescribeDataSourceRequest();
+    AWS_QUICKSIGHT_API DescribeDataSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDataSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
   };
 
 } // namespace Model

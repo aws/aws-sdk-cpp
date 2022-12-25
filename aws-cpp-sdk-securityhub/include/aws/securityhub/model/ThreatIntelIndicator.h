@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ThreatIntelIndicator">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ThreatIntelIndicator
+  class ThreatIntelIndicator
   {
   public:
-    ThreatIntelIndicator();
-    ThreatIntelIndicator(Aws::Utils::Json::JsonView jsonValue);
-    ThreatIntelIndicator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ThreatIntelIndicator();
+    AWS_SECURITYHUB_API ThreatIntelIndicator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ThreatIntelIndicator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -308,22 +308,22 @@ namespace Model
   private:
 
     ThreatIntelIndicatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ThreatIntelIndicatorCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourceUrl;
-    bool m_sourceUrlHasBeenSet;
+    bool m_sourceUrlHasBeenSet = false;
   };
 
 } // namespace Model

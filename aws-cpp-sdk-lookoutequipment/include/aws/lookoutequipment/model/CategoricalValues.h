@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CategoricalValues">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API CategoricalValues
+  class CategoricalValues
   {
   public:
-    CategoricalValues();
-    CategoricalValues(Aws::Utils::Json::JsonView jsonValue);
-    CategoricalValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API CategoricalValues();
+    AWS_LOOKOUTEQUIPMENT_API CategoricalValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API CategoricalValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     StatisticalIssueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_numberOfCategory;
-    bool m_numberOfCategoryHasBeenSet;
+    bool m_numberOfCategoryHasBeenSet = false;
   };
 
 } // namespace Model

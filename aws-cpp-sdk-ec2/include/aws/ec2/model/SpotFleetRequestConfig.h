@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SpotFleetRequestConfig
+  class SpotFleetRequestConfig
   {
   public:
-    SpotFleetRequestConfig();
-    SpotFleetRequestConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SpotFleetRequestConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotFleetRequestConfig();
+    AWS_EC2_API SpotFleetRequestConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotFleetRequestConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     ActivityStatus m_activityStatus;
-    bool m_activityStatusHasBeenSet;
+    bool m_activityStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
-    bool m_spotFleetRequestConfigHasBeenSet;
+    bool m_spotFleetRequestConfigHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     BatchState m_spotFleetRequestState;
-    bool m_spotFleetRequestStateHasBeenSet;
+    bool m_spotFleetRequestStateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

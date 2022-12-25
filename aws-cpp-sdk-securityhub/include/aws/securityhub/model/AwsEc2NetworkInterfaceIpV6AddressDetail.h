@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkInterfaceIpV6AddressDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail
+  class AwsEc2NetworkInterfaceIpV6AddressDetail
   {
   public:
-    AwsEc2NetworkInterfaceIpV6AddressDetail();
-    AwsEc2NetworkInterfaceIpV6AddressDetail(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkInterfaceIpV6AddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ipV6Address;
-    bool m_ipV6AddressHasBeenSet;
+    bool m_ipV6AddressHasBeenSet = false;
   };
 
 } // namespace Model

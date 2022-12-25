@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LocalGatewayRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LocalGatewayRoute
+  class LocalGatewayRoute
   {
   public:
-    LocalGatewayRoute();
-    LocalGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LocalGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRoute();
+    AWS_EC2_API LocalGatewayRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LocalGatewayRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -316,28 +316,160 @@ namespace Model
      */
     inline LocalGatewayRoute& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline LocalGatewayRoute& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline LocalGatewayRoute& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline LocalGatewayRoute& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline const Aws::String& GetCoipPoolId() const{ return m_coipPoolId; }
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline bool CoipPoolIdHasBeenSet() const { return m_coipPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline void SetCoipPoolId(const Aws::String& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = value; }
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline void SetCoipPoolId(Aws::String&& value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId = std::move(value); }
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline void SetCoipPoolId(const char* value) { m_coipPoolIdHasBeenSet = true; m_coipPoolId.assign(value); }
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline LocalGatewayRoute& WithCoipPoolId(const Aws::String& value) { SetCoipPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline LocalGatewayRoute& WithCoipPoolId(Aws::String&& value) { SetCoipPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the customer-owned address pool.</p>
+     */
+    inline LocalGatewayRoute& WithCoipPoolId(const char* value) { SetCoipPoolId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline LocalGatewayRoute& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline LocalGatewayRoute& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline LocalGatewayRoute& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_localGatewayVirtualInterfaceGroupId;
-    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet;
+    bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
     LocalGatewayRouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     LocalGatewayRouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableId;
-    bool m_localGatewayRouteTableIdHasBeenSet;
+    bool m_localGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_localGatewayRouteTableArn;
-    bool m_localGatewayRouteTableArnHasBeenSet;
+    bool m_localGatewayRouteTableArnHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
+
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet = false;
+
+    Aws::String m_coipPoolId;
+    bool m_coipPoolIdHasBeenSet = false;
+
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

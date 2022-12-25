@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/MixedMeasureMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API MixedMeasureMapping
+  class MixedMeasureMapping
   {
   public:
-    MixedMeasureMapping();
-    MixedMeasureMapping(Aws::Utils::Json::JsonView jsonValue);
-    MixedMeasureMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping();
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_measureName;
-    bool m_measureNameHasBeenSet;
+    bool m_measureNameHasBeenSet = false;
 
     Aws::String m_sourceColumn;
-    bool m_sourceColumnHasBeenSet;
+    bool m_sourceColumnHasBeenSet = false;
 
     Aws::String m_targetMeasureName;
-    bool m_targetMeasureNameHasBeenSet;
+    bool m_targetMeasureNameHasBeenSet = false;
 
     MeasureValueType m_measureValueType;
-    bool m_measureValueTypeHasBeenSet;
+    bool m_measureValueTypeHasBeenSet = false;
 
     Aws::Vector<MultiMeasureAttributeMapping> m_multiMeasureAttributeMappings;
-    bool m_multiMeasureAttributeMappingsHasBeenSet;
+    bool m_multiMeasureAttributeMappingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StatelessCustomPublishMetricAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StatelessCustomPublishMetricAction
+  class StatelessCustomPublishMetricAction
   {
   public:
-    StatelessCustomPublishMetricAction();
-    StatelessCustomPublishMetricAction(Aws::Utils::Json::JsonView jsonValue);
-    StatelessCustomPublishMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StatelessCustomPublishMetricAction();
+    AWS_SECURITYHUB_API StatelessCustomPublishMetricAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StatelessCustomPublishMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<StatelessCustomPublishMetricActionDimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

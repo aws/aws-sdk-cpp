@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetProperty
+  class AssetProperty
   {
   public:
-    AssetProperty();
-    AssetProperty(Aws::Utils::Json::JsonView jsonValue);
-    AssetProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetProperty();
+    AWS_IOTSITEWISE_API AssetProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -376,25 +376,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     PropertyNotification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     PropertyDataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_dataTypeSpec;
-    bool m_dataTypeSpecHasBeenSet;
+    bool m_dataTypeSpecHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

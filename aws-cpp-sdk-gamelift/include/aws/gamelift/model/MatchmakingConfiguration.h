@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API MatchmakingConfiguration
+  class MatchmakingConfiguration
   {
   public:
-    MatchmakingConfiguration();
-    MatchmakingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MatchmakingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API MatchmakingConfiguration();
+    AWS_GAMELIFT_API MatchmakingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API MatchmakingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -734,178 +734,194 @@ namespace Model
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
      * <p>A set of custom properties for a game session, formatted as key:value pairs.
-     * These properties are passed to a game server process in the <a>GameSession</a>
-     * object with a request to start a new game session (see <a
+     * These properties are passed to a game server process with a request to start a
+     * new game session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <a>GameSession</a> object
-     * with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>). This information is added to the new <a>GameSession</a>
-     * object that is created for a successful match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+     * a Game Session</a>). This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This
+     * parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline MatchmakingConfiguration& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
@@ -914,8 +930,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -926,8 +942,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -938,8 +954,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -950,8 +966,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -962,8 +978,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -974,8 +990,8 @@ namespace Model
      * <p>The method used to backfill game sessions created with this matchmaking
      * configuration. MANUAL indicates that the game makes backfill requests or does
      * not use the match backfill feature. AUTOMATIC indicates that GameLift creates
-     * <a>StartMatchBackfill</a> requests whenever a game session has one or more open
-     * slots. Learn more about manual and automatic backfill in <a
+     * backfill requests whenever a game session has one or more open slots. Learn more
+     * about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill
      * existing games with FlexMatch</a>. Automatic backfill is not available when
      * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
@@ -1058,55 +1074,55 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_configurationArn;
-    bool m_configurationArnHasBeenSet;
+    bool m_configurationArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gameSessionQueueArns;
-    bool m_gameSessionQueueArnsHasBeenSet;
+    bool m_gameSessionQueueArnsHasBeenSet = false;
 
     int m_requestTimeoutSeconds;
-    bool m_requestTimeoutSecondsHasBeenSet;
+    bool m_requestTimeoutSecondsHasBeenSet = false;
 
     int m_acceptanceTimeoutSeconds;
-    bool m_acceptanceTimeoutSecondsHasBeenSet;
+    bool m_acceptanceTimeoutSecondsHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_ruleSetArn;
-    bool m_ruleSetArnHasBeenSet;
+    bool m_ruleSetArnHasBeenSet = false;
 
     Aws::String m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
 
     int m_additionalPlayerCount;
-    bool m_additionalPlayerCountHasBeenSet;
+    bool m_additionalPlayerCountHasBeenSet = false;
 
     Aws::String m_customEventData;
-    bool m_customEventDataHasBeenSet;
+    bool m_customEventDataHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     BackfillMode m_backfillMode;
-    bool m_backfillModeHasBeenSet;
+    bool m_backfillModeHasBeenSet = false;
 
     FlexMatchMode m_flexMatchMode;
-    bool m_flexMatchModeHasBeenSet;
+    bool m_flexMatchModeHasBeenSet = false;
   };
 
 } // namespace Model

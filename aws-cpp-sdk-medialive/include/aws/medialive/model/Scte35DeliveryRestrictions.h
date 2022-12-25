@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35DeliveryRestrictions">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35DeliveryRestrictions
+  class Scte35DeliveryRestrictions
   {
   public:
-    Scte35DeliveryRestrictions();
-    Scte35DeliveryRestrictions(Aws::Utils::Json::JsonView jsonValue);
-    Scte35DeliveryRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35DeliveryRestrictions();
+    AWS_MEDIALIVE_API Scte35DeliveryRestrictions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35DeliveryRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,16 +169,16 @@ namespace Model
   private:
 
     Scte35ArchiveAllowedFlag m_archiveAllowedFlag;
-    bool m_archiveAllowedFlagHasBeenSet;
+    bool m_archiveAllowedFlagHasBeenSet = false;
 
     Scte35DeviceRestrictions m_deviceRestrictions;
-    bool m_deviceRestrictionsHasBeenSet;
+    bool m_deviceRestrictionsHasBeenSet = false;
 
     Scte35NoRegionalBlackoutFlag m_noRegionalBlackoutFlag;
-    bool m_noRegionalBlackoutFlagHasBeenSet;
+    bool m_noRegionalBlackoutFlagHasBeenSet = false;
 
     Scte35WebDeliveryAllowedFlag m_webDeliveryAllowedFlag;
-    bool m_webDeliveryAllowedFlagHasBeenSet;
+    bool m_webDeliveryAllowedFlagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API GetCampaignDateRangeKpiRequest : public PinpointRequest
+  class GetCampaignDateRangeKpiRequest : public PinpointRequest
   {
   public:
-    GetCampaignDateRangeKpiRequest();
+    AWS_PINPOINT_API GetCampaignDateRangeKpiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCampaignDateRangeKpi"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PINPOINT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -438,25 +438,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_kpiName;
-    bool m_kpiNameHasBeenSet;
+    bool m_kpiNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

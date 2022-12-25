@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPUTEOPTIMIZER_API ExportLambdaFunctionRecommendationsRequest : public ComputeOptimizerRequest
+  class ExportLambdaFunctionRecommendationsRequest : public ComputeOptimizerRequest
   {
   public:
-    ExportLambdaFunctionRecommendationsRequest();
+    AWS_COMPUTEOPTIMIZER_API ExportLambdaFunctionRecommendationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportLambdaFunctionRecommendations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPUTEOPTIMIZER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPUTEOPTIMIZER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -389,22 +389,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionRecommendationFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<ExportableLambdaFunctionField> m_fieldsToExport;
-    bool m_fieldsToExportHasBeenSet;
+    bool m_fieldsToExportHasBeenSet = false;
 
     S3DestinationConfig m_s3DestinationConfig;
-    bool m_s3DestinationConfigHasBeenSet;
+    bool m_s3DestinationConfigHasBeenSet = false;
 
     FileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     bool m_includeMemberAccounts;
-    bool m_includeMemberAccountsHasBeenSet;
+    bool m_includeMemberAccountsHasBeenSet = false;
   };
 
 } // namespace Model

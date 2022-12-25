@@ -34,76 +34,76 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API RedshiftDestinationDescription
+  class RedshiftDestinationDescription
   {
   public:
-    RedshiftDestinationDescription();
-    RedshiftDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API RedshiftDestinationDescription();
+    AWS_FIREHOSE_API RedshiftDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API RedshiftDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -415,34 +415,34 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_clusterJDBCURL;
-    bool m_clusterJDBCURLHasBeenSet;
+    bool m_clusterJDBCURLHasBeenSet = false;
 
     CopyCommand m_copyCommand;
-    bool m_copyCommandHasBeenSet;
+    bool m_copyCommandHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     RedshiftRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     S3DestinationDescription m_s3DestinationDescription;
-    bool m_s3DestinationDescriptionHasBeenSet;
+    bool m_s3DestinationDescriptionHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     RedshiftS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationDescription m_s3BackupDescription;
-    bool m_s3BackupDescriptionHasBeenSet;
+    bool m_s3BackupDescriptionHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUB_API NotifyMigrationTaskStateRequest : public MigrationHubRequest
+  class NotifyMigrationTaskStateRequest : public MigrationHubRequest
   {
   public:
-    NotifyMigrationTaskStateRequest();
+    AWS_MIGRATIONHUB_API NotifyMigrationTaskStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "NotifyMigrationTaskState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MIGRATIONHUB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -244,22 +244,22 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStream;
-    bool m_progressUpdateStreamHasBeenSet;
+    bool m_progressUpdateStreamHasBeenSet = false;
 
     Aws::String m_migrationTaskName;
-    bool m_migrationTaskNameHasBeenSet;
+    bool m_migrationTaskNameHasBeenSet = false;
 
     Task m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
 
     int m_nextUpdateSeconds;
-    bool m_nextUpdateSecondsHasBeenSet;
+    bool m_nextUpdateSecondsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

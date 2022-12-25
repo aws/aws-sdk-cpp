@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/FirehoseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API FirehoseAction
+  class FirehoseAction
   {
   public:
-    FirehoseAction();
-    FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
-    FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API FirehoseAction();
+    AWS_IOTEVENTS_API FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_separator;
-    bool m_separatorHasBeenSet;
+    bool m_separatorHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

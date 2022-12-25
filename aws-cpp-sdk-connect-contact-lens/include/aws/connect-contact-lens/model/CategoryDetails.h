@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/CategoryDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API CategoryDetails
+  class CategoryDetails
   {
   public:
-    CategoryDetails();
-    CategoryDetails(Aws::Utils::Json::JsonView jsonValue);
-    CategoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API CategoryDetails();
+    AWS_CONNECTCONTACTLENS_API CategoryDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API CategoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PointOfInterest> m_pointsOfInterest;
-    bool m_pointsOfInterestHasBeenSet;
+    bool m_pointsOfInterestHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CognitoUserPoolConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API CognitoUserPoolConfig
+  class CognitoUserPoolConfig
   {
   public:
-    CognitoUserPoolConfig();
-    CognitoUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
-    CognitoUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API CognitoUserPoolConfig();
+    AWS_APPSYNC_API CognitoUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API CognitoUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,62 +122,62 @@ namespace Model
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline const Aws::String& GetAppIdClientRegex() const{ return m_appIdClientRegex; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline bool AppIdClientRegexHasBeenSet() const { return m_appIdClientRegexHasBeenSet; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(const Aws::String& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = value; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(Aws::String&& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = std::move(value); }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline void SetAppIdClientRegex(const char* value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex.assign(value); }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline CognitoUserPoolConfig& WithAppIdClientRegex(const Aws::String& value) { SetAppIdClientRegex(value); return *this;}
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline CognitoUserPoolConfig& WithAppIdClientRegex(Aws::String&& value) { SetAppIdClientRegex(std::move(value)); return *this;}
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app
-     * client ID.</p>
+     * client ID. If this value isn't set, no filtering is applied.</p>
      */
     inline CognitoUserPoolConfig& WithAppIdClientRegex(const char* value) { SetAppIdClientRegex(value); return *this;}
 
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_appIdClientRegex;
-    bool m_appIdClientRegexHasBeenSet;
+    bool m_appIdClientRegexHasBeenSet = false;
   };
 
 } // namespace Model

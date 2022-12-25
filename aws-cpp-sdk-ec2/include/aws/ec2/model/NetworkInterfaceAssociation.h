@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfaceAssociation
+  class NetworkInterfaceAssociation
   {
   public:
-    NetworkInterfaceAssociation();
-    NetworkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAssociation();
+    AWS_EC2_API NetworkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_ipOwnerId;
-    bool m_ipOwnerIdHasBeenSet;
+    bool m_ipOwnerIdHasBeenSet = false;
 
     Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
+    bool m_publicDnsNameHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_customerOwnedIp;
-    bool m_customerOwnedIpHasBeenSet;
+    bool m_customerOwnedIpHasBeenSet = false;
 
     Aws::String m_carrierIp;
-    bool m_carrierIpHasBeenSet;
+    bool m_carrierIpHasBeenSet = false;
   };
 
 } // namespace Model

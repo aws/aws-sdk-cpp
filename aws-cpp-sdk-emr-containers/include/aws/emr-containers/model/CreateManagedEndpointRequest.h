@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMRCONTAINERS_API CreateManagedEndpointRequest : public EMRContainersRequest
+  class CreateManagedEndpointRequest : public EMRContainersRequest
   {
   public:
-    CreateManagedEndpointRequest();
+    AWS_EMRCONTAINERS_API CreateManagedEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateManagedEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMRCONTAINERS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -386,28 +386,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     ConfigurationOverrides m_configurationOverrides;
-    bool m_configurationOverridesHasBeenSet;
+    bool m_configurationOverridesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

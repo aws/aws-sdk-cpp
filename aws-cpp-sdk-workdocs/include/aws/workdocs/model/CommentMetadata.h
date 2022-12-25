@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CommentMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API CommentMetadata
+  class CommentMetadata
   {
   public:
-    CommentMetadata();
-    CommentMetadata(Aws::Utils::Json::JsonView jsonValue);
-    CommentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API CommentMetadata();
+    AWS_WORKDOCS_API CommentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API CommentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     User m_contributor;
-    bool m_contributorHasBeenSet;
+    bool m_contributorHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     CommentStatusType m_commentStatus;
-    bool m_commentStatusHasBeenSet;
+    bool m_commentStatusHasBeenSet = false;
 
     Aws::String m_recipientId;
-    bool m_recipientIdHasBeenSet;
+    bool m_recipientIdHasBeenSet = false;
   };
 
 } // namespace Model

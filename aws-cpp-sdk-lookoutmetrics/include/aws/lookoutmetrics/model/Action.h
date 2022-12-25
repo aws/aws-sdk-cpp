@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API Action();
+    AWS_LOOKOUTMETRICS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SNSConfiguration m_sNSConfiguration;
-    bool m_sNSConfigurationHasBeenSet;
+    bool m_sNSConfigurationHasBeenSet = false;
 
     LambdaConfiguration m_lambdaConfiguration;
-    bool m_lambdaConfigurationHasBeenSet;
+    bool m_lambdaConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

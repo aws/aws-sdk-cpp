@@ -24,12 +24,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API GetViolationDetailsResult
+  class GetViolationDetailsResult
   {
   public:
-    GetViolationDetailsResult();
-    GetViolationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetViolationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetViolationDetailsResult();
+    AWS_FMS_API GetViolationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetViolationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

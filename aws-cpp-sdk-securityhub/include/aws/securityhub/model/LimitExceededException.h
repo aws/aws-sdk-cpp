@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API LimitExceededException();
+    AWS_SECURITYHUB_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

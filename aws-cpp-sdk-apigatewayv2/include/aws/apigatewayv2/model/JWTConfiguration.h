@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/JWTConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API JWTConfiguration
+  class JWTConfiguration
   {
   public:
-    JWTConfiguration();
-    JWTConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JWTConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API JWTConfiguration();
+    AWS_APIGATEWAYV2_API JWTConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API JWTConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audience;
-    bool m_audienceHasBeenSet;
+    bool m_audienceHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
   };
 
 } // namespace Model

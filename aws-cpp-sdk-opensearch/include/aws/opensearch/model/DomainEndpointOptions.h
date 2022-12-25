@@ -25,92 +25,92 @@ namespace Model
 {
 
   /**
-   * <p>Options to configure the endpoint for the domain.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Options to configure a custom endpoint for an OpenSearch Service
+   * domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainEndpointOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainEndpointOptions
+  class DomainEndpointOptions
   {
   public:
-    DomainEndpointOptions();
-    DomainEndpointOptions(Aws::Utils::Json::JsonView jsonValue);
-    DomainEndpointOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainEndpointOptions();
+    AWS_OPENSEARCHSERVICE_API DomainEndpointOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainEndpointOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+     * <p>True to require that all traffic to the domain arrive over HTTPS.</p>
      */
     inline bool GetEnforceHTTPS() const{ return m_enforceHTTPS; }
 
     /**
-     * <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+     * <p>True to require that all traffic to the domain arrive over HTTPS.</p>
      */
     inline bool EnforceHTTPSHasBeenSet() const { return m_enforceHTTPSHasBeenSet; }
 
     /**
-     * <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+     * <p>True to require that all traffic to the domain arrive over HTTPS.</p>
      */
     inline void SetEnforceHTTPS(bool value) { m_enforceHTTPSHasBeenSet = true; m_enforceHTTPS = value; }
 
     /**
-     * <p>Whether only HTTPS endpoint should be enabled for the domain.</p>
+     * <p>True to require that all traffic to the domain arrive over HTTPS.</p>
      */
     inline DomainEndpointOptions& WithEnforceHTTPS(bool value) { SetEnforceHTTPS(value); return *this;}
 
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline const TLSSecurityPolicy& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline void SetTLSSecurityPolicy(const TLSSecurityPolicy& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline void SetTLSSecurityPolicy(TLSSecurityPolicy&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(const TLSSecurityPolicy& value) { SetTLSSecurityPolicy(value); return *this;}
 
     /**
-     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the domain.
-     * <br/> Can be one of the following values: <ul> <li>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLSv1.0
-     * and higher. </li> <li> <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy
-     * which supports only TLSv1.2 </li> </ul> </p>
+     * <p>Specify the TLS security policy to apply to the HTTPS endpoint of the
+     * domain.</p> <p> Can be one of the following values:</p> <ul> <li> <p>
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS
+     * version 1.0 and higher.</p> </li> <li> <p> <b>Policy-Min-TLS-1-2-2019-07:</b>
+     * TLS security policy which supports only TLS version 1.2 </p> </li> </ul>
      */
     inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
 
@@ -137,102 +137,110 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline const Aws::String& GetCustomEndpoint() const{ return m_customEndpoint; }
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline bool CustomEndpointHasBeenSet() const { return m_customEndpointHasBeenSet; }
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline void SetCustomEndpoint(const Aws::String& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = value; }
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline void SetCustomEndpoint(Aws::String&& value) { m_customEndpointHasBeenSet = true; m_customEndpoint = std::move(value); }
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline void SetCustomEndpoint(const char* value) { m_customEndpointHasBeenSet = true; m_customEndpoint.assign(value); }
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline DomainEndpointOptions& WithCustomEndpoint(const Aws::String& value) { SetCustomEndpoint(value); return *this;}
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline DomainEndpointOptions& WithCustomEndpoint(Aws::String&& value) { SetCustomEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified domain for your custom endpoint.</p>
+     * <p>The fully qualified URL for the custom endpoint.</p>
      */
     inline DomainEndpointOptions& WithCustomEndpoint(const char* value) { SetCustomEndpoint(value); return *this;}
 
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline const Aws::String& GetCustomEndpointCertificateArn() const{ return m_customEndpointCertificateArn; }
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline bool CustomEndpointCertificateArnHasBeenSet() const { return m_customEndpointCertificateArnHasBeenSet; }
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline void SetCustomEndpointCertificateArn(const Aws::String& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = value; }
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline void SetCustomEndpointCertificateArn(Aws::String&& value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn = std::move(value); }
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline void SetCustomEndpointCertificateArn(const char* value) { m_customEndpointCertificateArnHasBeenSet = true; m_customEndpointCertificateArn.assign(value); }
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const Aws::String& value) { SetCustomEndpointCertificateArn(value); return *this;}
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline DomainEndpointOptions& WithCustomEndpointCertificateArn(Aws::String&& value) { SetCustomEndpointCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ACM certificate ARN for your custom endpoint.</p>
+     * <p>The ARN for your security certificate, managed in Amazon Web Services
+     * Certificate Manager (ACM).</p>
      */
     inline DomainEndpointOptions& WithCustomEndpointCertificateArn(const char* value) { SetCustomEndpointCertificateArn(value); return *this;}
 
   private:
 
     bool m_enforceHTTPS;
-    bool m_enforceHTTPSHasBeenSet;
+    bool m_enforceHTTPSHasBeenSet = false;
 
     TLSSecurityPolicy m_tLSSecurityPolicy;
-    bool m_tLSSecurityPolicyHasBeenSet;
+    bool m_tLSSecurityPolicyHasBeenSet = false;
 
     bool m_customEndpointEnabled;
-    bool m_customEndpointEnabledHasBeenSet;
+    bool m_customEndpointEnabledHasBeenSet = false;
 
     Aws::String m_customEndpoint;
-    bool m_customEndpointHasBeenSet;
+    bool m_customEndpointHasBeenSet = false;
 
     Aws::String m_customEndpointCertificateArn;
-    bool m_customEndpointCertificateArnHasBeenSet;
+    bool m_customEndpointCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

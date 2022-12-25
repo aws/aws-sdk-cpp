@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DiskInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API DiskInfo
+  class DiskInfo
   {
   public:
-    DiskInfo();
-    DiskInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DiskInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskInfo();
+    AWS_EC2_API DiskInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,13 +114,13 @@ namespace Model
   private:
 
     long long m_sizeInGB;
-    bool m_sizeInGBHasBeenSet;
+    bool m_sizeInGBHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     DiskType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthUserPoolConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthUserPoolConfig
+  class UpdateBackendAuthUserPoolConfig
   {
   public:
-    UpdateBackendAuthUserPoolConfig();
-    UpdateBackendAuthUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthUserPoolConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthUserPoolConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthUserPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
   private:
 
     UpdateBackendAuthForgotPasswordConfig m_forgotPassword;
-    bool m_forgotPasswordHasBeenSet;
+    bool m_forgotPasswordHasBeenSet = false;
 
     UpdateBackendAuthMFAConfig m_mfa;
-    bool m_mfaHasBeenSet;
+    bool m_mfaHasBeenSet = false;
 
     UpdateBackendAuthOAuthConfig m_oAuth;
-    bool m_oAuthHasBeenSet;
+    bool m_oAuthHasBeenSet = false;
 
     UpdateBackendAuthPasswordPolicyConfig m_passwordPolicy;
-    bool m_passwordPolicyHasBeenSet;
+    bool m_passwordPolicyHasBeenSet = false;
 
     UpdateBackendAuthVerificationMessageConfig m_verificationMessage;
-    bool m_verificationMessageHasBeenSet;
+    bool m_verificationMessageHasBeenSet = false;
   };
 
 } // namespace Model

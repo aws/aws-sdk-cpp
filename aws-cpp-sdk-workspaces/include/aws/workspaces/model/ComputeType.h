@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ComputeType">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ComputeType
+  class ComputeType
   {
   public:
-    ComputeType();
-    ComputeType(Aws::Utils::Json::JsonView jsonValue);
-    ComputeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ComputeType();
+    AWS_WORKSPACES_API ComputeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ComputeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Compute m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

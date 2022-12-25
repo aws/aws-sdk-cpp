@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContainerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ContainerDefinition
+  class ContainerDefinition
   {
   public:
-    ContainerDefinition();
-    ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ContainerDefinition();
+    AWS_SAGEMAKER_API ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -770,31 +770,31 @@ namespace Model
   private:
 
     Aws::String m_containerHostname;
-    bool m_containerHostnameHasBeenSet;
+    bool m_containerHostnameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     ImageConfig m_imageConfig;
-    bool m_imageConfigHasBeenSet;
+    bool m_imageConfigHasBeenSet = false;
 
     ContainerMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_modelDataUrl;
-    bool m_modelDataUrlHasBeenSet;
+    bool m_modelDataUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
 
     Aws::String m_inferenceSpecificationName;
-    bool m_inferenceSpecificationNameHasBeenSet;
+    bool m_inferenceSpecificationNameHasBeenSet = false;
 
     MultiModelConfig m_multiModelConfig;
-    bool m_multiModelConfigHasBeenSet;
+    bool m_multiModelConfigHasBeenSet = false;
   };
 
 } // namespace Model

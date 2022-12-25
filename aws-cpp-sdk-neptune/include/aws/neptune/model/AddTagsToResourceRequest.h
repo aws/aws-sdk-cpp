@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_NEPTUNE_API AddTagsToResourceRequest : public NeptuneRequest
+  class AddTagsToResourceRequest : public NeptuneRequest
   {
   public:
-    AddTagsToResourceRequest();
+    AWS_NEPTUNE_API AddTagsToResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddTagsToResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

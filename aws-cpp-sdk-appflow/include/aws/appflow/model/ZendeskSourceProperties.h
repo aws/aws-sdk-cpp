@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ZendeskSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ZendeskSourceProperties
+  class ZendeskSourceProperties
   {
   public:
-    ZendeskSourceProperties();
-    ZendeskSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    ZendeskSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ZendeskSourceProperties();
+    AWS_APPFLOW_API ZendeskSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ZendeskSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

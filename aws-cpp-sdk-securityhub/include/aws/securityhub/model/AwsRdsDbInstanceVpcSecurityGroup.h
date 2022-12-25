@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbInstanceVpcSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbInstanceVpcSecurityGroup
+  class AwsRdsDbInstanceVpcSecurityGroup
   {
   public:
-    AwsRdsDbInstanceVpcSecurityGroup();
-    AwsRdsDbInstanceVpcSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbInstanceVpcSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbInstanceVpcSecurityGroup();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceVpcSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbInstanceVpcSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_vpcSecurityGroupId;
-    bool m_vpcSecurityGroupIdHasBeenSet;
+    bool m_vpcSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

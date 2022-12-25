@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceCount
+  class InstanceCount
   {
   public:
-    InstanceCount();
-    InstanceCount(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceCount& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCount();
+    AWS_EC2_API InstanceCount(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCount& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -97,10 +97,10 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     ListingState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

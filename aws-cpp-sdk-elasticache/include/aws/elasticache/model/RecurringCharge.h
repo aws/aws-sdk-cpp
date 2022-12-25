@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RecurringCharge">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API RecurringCharge
+  class RecurringCharge
   {
   public:
-    RecurringCharge();
-    RecurringCharge(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RecurringCharge& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API RecurringCharge();
+    AWS_ELASTICACHE_API RecurringCharge(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API RecurringCharge& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     double m_recurringChargeAmount;
-    bool m_recurringChargeAmountHasBeenSet;
+    bool m_recurringChargeAmountHasBeenSet = false;
 
     Aws::String m_recurringChargeFrequency;
-    bool m_recurringChargeFrequencyHasBeenSet;
+    bool m_recurringChargeFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

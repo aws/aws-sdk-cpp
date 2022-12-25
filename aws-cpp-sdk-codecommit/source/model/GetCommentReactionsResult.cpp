@@ -30,7 +30,7 @@ GetCommentReactionsResult& GetCommentReactionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("reactionsForComment"))
   {
-    Array<JsonView> reactionsForCommentJsonList = jsonValue.GetArray("reactionsForComment");
+    Aws::Utils::Array<JsonView> reactionsForCommentJsonList = jsonValue.GetArray("reactionsForComment");
     for(unsigned reactionsForCommentIndex = 0; reactionsForCommentIndex < reactionsForCommentJsonList.GetLength(); ++reactionsForCommentIndex)
     {
       m_reactionsForComment.push_back(reactionsForCommentJsonList[reactionsForCommentIndex].AsObject());

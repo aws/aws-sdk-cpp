@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewBGPPeer">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API NewBGPPeer
+  class NewBGPPeer
   {
   public:
-    NewBGPPeer();
-    NewBGPPeer(Aws::Utils::Json::JsonView jsonValue);
-    NewBGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API NewBGPPeer();
+    AWS_DIRECTCONNECT_API NewBGPPeer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API NewBGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
   };
 
 } // namespace Model

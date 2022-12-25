@@ -15,21 +15,19 @@ namespace TranscribeStreamingService
 namespace Model
 {
   /**
-   * <p>Provides a wrapper for the audio chunks that you are sending.</p> <p>For
-   * information on audio encoding in Amazon Transcribe, see <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/input.html">Speech
-   * input</a>. For information on audio encoding formats in Amazon Transcribe
-   * Medical, see <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/input-med.html">Speech
-   * input</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>A wrapper for your audio chunks. Your audio stream consists of one or more
+   * audio events, which consist of one or more audio chunks.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event
+   * stream encoding</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/AudioEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent
+  class AudioEvent
   {
   public:
-    AudioEvent() = default;
-    AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent() = default;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
 
     /**
      * <p>An audio blob that contains the next part of the audio that you want to
@@ -70,7 +68,7 @@ namespace Model
   private:
 
     Aws::Vector<unsigned char> m_audioChunk;
-    bool m_audioChunkHasBeenSet;
+    bool m_audioChunkHasBeenSet = false;
   };
 
 } // namespace Model

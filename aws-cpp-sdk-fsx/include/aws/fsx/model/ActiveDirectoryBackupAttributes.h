@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ActiveDirectoryBackupAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API ActiveDirectoryBackupAttributes
+  class ActiveDirectoryBackupAttributes
   {
   public:
-    ActiveDirectoryBackupAttributes();
-    ActiveDirectoryBackupAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ActiveDirectoryBackupAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API ActiveDirectoryBackupAttributes();
+    AWS_FSX_API ActiveDirectoryBackupAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API ActiveDirectoryBackupAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet;
+    bool m_activeDirectoryIdHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

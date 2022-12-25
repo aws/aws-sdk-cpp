@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/QueueReference.h>
 #include <aws/connect/model/Channel.h>
+#include <aws/connect/model/RoutingProfileReference.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Dimensions">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API Dimensions
+  class Dimensions
   {
   public:
-    Dimensions();
-    Dimensions(Aws::Utils::Json::JsonView jsonValue);
-    Dimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Dimensions();
+    AWS_CONNECT_API Dimensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Dimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,13 +101,35 @@ namespace Model
      */
     inline Dimensions& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
 
+
+    
+    inline const RoutingProfileReference& GetRoutingProfile() const{ return m_routingProfile; }
+
+    
+    inline bool RoutingProfileHasBeenSet() const { return m_routingProfileHasBeenSet; }
+
+    
+    inline void SetRoutingProfile(const RoutingProfileReference& value) { m_routingProfileHasBeenSet = true; m_routingProfile = value; }
+
+    
+    inline void SetRoutingProfile(RoutingProfileReference&& value) { m_routingProfileHasBeenSet = true; m_routingProfile = std::move(value); }
+
+    
+    inline Dimensions& WithRoutingProfile(const RoutingProfileReference& value) { SetRoutingProfile(value); return *this;}
+
+    
+    inline Dimensions& WithRoutingProfile(RoutingProfileReference&& value) { SetRoutingProfile(std::move(value)); return *this;}
+
   private:
 
     QueueReference m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
+
+    RoutingProfileReference m_routingProfile;
+    bool m_routingProfileHasBeenSet = false;
   };
 
 } // namespace Model

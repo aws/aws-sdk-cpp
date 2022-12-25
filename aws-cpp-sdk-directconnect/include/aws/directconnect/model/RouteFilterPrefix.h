@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouteFilterPrefix">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API RouteFilterPrefix
+  class RouteFilterPrefix
   {
   public:
-    RouteFilterPrefix();
-    RouteFilterPrefix(Aws::Utils::Json::JsonView jsonValue);
-    RouteFilterPrefix& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API RouteFilterPrefix();
+    AWS_DIRECTCONNECT_API RouteFilterPrefix(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API RouteFilterPrefix& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

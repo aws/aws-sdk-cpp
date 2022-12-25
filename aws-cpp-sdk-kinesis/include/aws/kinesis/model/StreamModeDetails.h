@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StreamModeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API StreamModeDetails
+  class StreamModeDetails
   {
   public:
-    StreamModeDetails();
-    StreamModeDetails(Aws::Utils::Json::JsonView jsonValue);
-    StreamModeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API StreamModeDetails();
+    AWS_KINESIS_API StreamModeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API StreamModeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     StreamMode m_streamMode;
-    bool m_streamModeHasBeenSet;
+    bool m_streamModeHasBeenSet = false;
   };
 
 } // namespace Model

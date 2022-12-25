@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ConnectionStatusResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration
+  class ConnectionStatusResourceTypeEventConfiguration
   {
   public:
-    ConnectionStatusResourceTypeEventConfiguration();
-    ConnectionStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ConnectionStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LoRaWANConnectionStatusResourceTypeEventConfiguration m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

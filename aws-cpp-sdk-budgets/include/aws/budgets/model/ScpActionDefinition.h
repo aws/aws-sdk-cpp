@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ScpActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API ScpActionDefinition
+  class ScpActionDefinition
   {
   public:
-    ScpActionDefinition();
-    ScpActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ScpActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API ScpActionDefinition();
+    AWS_BUDGETS_API ScpActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API ScpActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetIds;
-    bool m_targetIdsHasBeenSet;
+    bool m_targetIdsHasBeenSet = false;
   };
 
 } // namespace Model

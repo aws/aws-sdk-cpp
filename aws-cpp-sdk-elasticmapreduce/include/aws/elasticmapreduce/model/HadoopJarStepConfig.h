@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/HadoopJarStepConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API HadoopJarStepConfig
+  class HadoopJarStepConfig
   {
   public:
-    HadoopJarStepConfig();
-    HadoopJarStepConfig(Aws::Utils::Json::JsonView jsonValue);
-    HadoopJarStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API HadoopJarStepConfig();
+    AWS_EMR_API HadoopJarStepConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API HadoopJarStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,16 +237,16 @@ namespace Model
   private:
 
     Aws::Vector<KeyValue> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_jar;
-    bool m_jarHasBeenSet;
+    bool m_jarHasBeenSet = false;
 
     Aws::String m_mainClass;
-    bool m_mainClassHasBeenSet;
+    bool m_mainClassHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

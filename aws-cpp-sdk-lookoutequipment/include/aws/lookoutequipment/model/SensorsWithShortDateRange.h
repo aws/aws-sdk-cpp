@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/SensorsWithShortDateRange">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange
+  class SensorsWithShortDateRange
   {
   public:
-    SensorsWithShortDateRange();
-    SensorsWithShortDateRange(Aws::Utils::Json::JsonView jsonValue);
-    SensorsWithShortDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange();
+    AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_affectedSensorCount;
-    bool m_affectedSensorCountHasBeenSet;
+    bool m_affectedSensorCountHasBeenSet = false;
   };
 
 } // namespace Model

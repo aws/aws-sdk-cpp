@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SipAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SipAddress
+  class SipAddress
   {
   public:
-    SipAddress();
-    SipAddress(Aws::Utils::Json::JsonView jsonValue);
-    SipAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SipAddress();
+    AWS_ALEXAFORBUSINESS_API SipAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SipAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     SipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedAttributeValueRange">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedAttributeValueRange
+  class TypedAttributeValueRange
   {
   public:
-    TypedAttributeValueRange();
-    TypedAttributeValueRange(Aws::Utils::Json::JsonView jsonValue);
-    TypedAttributeValueRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedAttributeValueRange();
+    AWS_CLOUDDIRECTORY_API TypedAttributeValueRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedAttributeValueRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     RangeMode m_startMode;
-    bool m_startModeHasBeenSet;
+    bool m_startModeHasBeenSet = false;
 
     TypedAttributeValue m_startValue;
-    bool m_startValueHasBeenSet;
+    bool m_startValueHasBeenSet = false;
 
     RangeMode m_endMode;
-    bool m_endModeHasBeenSet;
+    bool m_endModeHasBeenSet = false;
 
     TypedAttributeValue m_endValue;
-    bool m_endValueHasBeenSet;
+    bool m_endValueHasBeenSet = false;
   };
 
 } // namespace Model

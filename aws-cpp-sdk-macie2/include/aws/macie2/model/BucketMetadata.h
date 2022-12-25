@@ -38,22 +38,22 @@ namespace Model
   /**
    * <p>Provides statistical data and other information about an S3 bucket that
    * Amazon Macie monitors and analyzes for your account. If an error occurs when
-   * Macie attempts to retrieve and process information about the bucket or the
-   * bucket's objects, the value for the versioning property is false and the value
-   * for most other properties is null. Exceptions are accountId, bucketArn,
-   * bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of
-   * the error, refer to the errorCode and errorMessage values.</p><p><h3>See
-   * Also:</h3>   <a
+   * Macie attempts to retrieve and process metadata from Amazon S3 for the bucket
+   * and the bucket's objects, the value for the versioning property is false and the
+   * value for most other properties is null. Key exceptions are accountId,
+   * bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the
+   * cause of the error, refer to the errorCode and errorMessage
+   * values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketMetadata
+  class BucketMetadata
   {
   public:
-    BucketMetadata();
-    BucketMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BucketMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketMetadata();
+    AWS_MACIE2_API BucketMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,15 +109,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline const AllowsUnencryptedObjectUploads& GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
 
@@ -125,15 +125,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
 
@@ -141,15 +141,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline void SetAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
 
@@ -157,15 +157,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = std::move(value); }
 
@@ -173,15 +173,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline BucketMetadata& WithAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
 
@@ -189,15 +189,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
      * determine whether the bucket policy requires server-side encryption of new
-     * objects.</p></li></ul>
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline BucketMetadata& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { SetAllowsUnencryptedObjectUploads(std::move(value)); return *this;}
 
@@ -245,37 +245,43 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline const Aws::Utils::DateTime& GetBucketCreatedAt() const{ return m_bucketCreatedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline bool BucketCreatedAtHasBeenSet() const { return m_bucketCreatedAtHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline void SetBucketCreatedAt(const Aws::Utils::DateTime& value) { m_bucketCreatedAtHasBeenSet = true; m_bucketCreatedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline void SetBucketCreatedAt(Aws::Utils::DateTime&& value) { m_bucketCreatedAtHasBeenSet = true; m_bucketCreatedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline BucketMetadata& WithBucketCreatedAt(const Aws::Utils::DateTime& value) { SetBucketCreatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was
-     * created.</p>
+     * created, or changes such as edits to the bucket's policy were most recently made
+     * to the bucket.</p>
      */
     inline BucketMetadata& WithBucketCreatedAt(Aws::Utils::DateTime&& value) { SetBucketCreatedAt(std::move(value)); return *this;}
 
@@ -566,6 +572,55 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline void SetLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = value; }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline void SetLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { m_lastAutomatedDiscoveryTimeHasBeenSet = true; m_lastAutomatedDiscoveryTime = std::move(value); }
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline BucketMetadata& WithLastAutomatedDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastAutomatedDiscoveryTime(value); return *this;}
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * most recently performed automated sensitive data discovery for the bucket. This
+     * value is null if automated sensitive data discovery is currently disabled for
+     * your account.</p>
+     */
+    inline BucketMetadata& WithLastAutomatedDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastAutomatedDiscoveryTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
      * most recently retrieved both bucket and object metadata from Amazon S3 for the
      * bucket.</p>
      */
@@ -796,6 +851,35 @@ namespace Model
      * accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(ReplicationDetails&& value) { SetReplicationDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
+     */
+    inline int GetSensitivityScore() const{ return m_sensitivityScore; }
+
+    /**
+     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
+     */
+    inline bool SensitivityScoreHasBeenSet() const { return m_sensitivityScoreHasBeenSet; }
+
+    /**
+     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
+     */
+    inline void SetSensitivityScore(int value) { m_sensitivityScoreHasBeenSet = true; m_sensitivityScore = value; }
+
+    /**
+     * <p>The sensitivity score for the bucket, ranging from -1 (no analysis due to an
+     * error) to 100 (sensitive). This value is null if automated sensitive data
+     * discovery is currently disabled for your account.</p>
+     */
+    inline BucketMetadata& WithSensitivityScore(int value) { SetSensitivityScore(value); return *this;}
 
 
     /**
@@ -1136,76 +1220,82 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_bucketCreatedAt;
-    bool m_bucketCreatedAtHasBeenSet;
+    bool m_bucketCreatedAtHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     long long m_classifiableObjectCount;
-    bool m_classifiableObjectCountHasBeenSet;
+    bool m_classifiableObjectCountHasBeenSet = false;
 
     long long m_classifiableSizeInBytes;
-    bool m_classifiableSizeInBytesHasBeenSet;
+    bool m_classifiableSizeInBytesHasBeenSet = false;
 
     BucketMetadataErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     JobDetails m_jobDetails;
-    bool m_jobDetailsHasBeenSet;
+    bool m_jobDetailsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastAutomatedDiscoveryTime;
+    bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     ObjectCountByEncryptionType m_objectCountByEncryptionType;
-    bool m_objectCountByEncryptionTypeHasBeenSet;
+    bool m_objectCountByEncryptionTypeHasBeenSet = false;
 
     BucketPublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ReplicationDetails m_replicationDetails;
-    bool m_replicationDetailsHasBeenSet;
+    bool m_replicationDetailsHasBeenSet = false;
+
+    int m_sensitivityScore;
+    bool m_sensitivityScoreHasBeenSet = false;
 
     BucketServerSideEncryption m_serverSideEncryption;
-    bool m_serverSideEncryptionHasBeenSet;
+    bool m_serverSideEncryptionHasBeenSet = false;
 
     SharedAccess m_sharedAccess;
-    bool m_sharedAccessHasBeenSet;
+    bool m_sharedAccessHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
 
     long long m_sizeInBytesCompressed;
-    bool m_sizeInBytesCompressedHasBeenSet;
+    bool m_sizeInBytesCompressedHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectCount;
-    bool m_unclassifiableObjectCountHasBeenSet;
+    bool m_unclassifiableObjectCountHasBeenSet = false;
 
     ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-    bool m_unclassifiableObjectSizeInBytesHasBeenSet;
+    bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
 
     bool m_versioning;
-    bool m_versioningHasBeenSet;
+    bool m_versioningHasBeenSet = false;
   };
 
 } // namespace Model

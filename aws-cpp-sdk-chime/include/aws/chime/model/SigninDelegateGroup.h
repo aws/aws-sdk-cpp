@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SigninDelegateGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SigninDelegateGroup
+  class SigninDelegateGroup
   {
   public:
-    SigninDelegateGroup();
-    SigninDelegateGroup(Aws::Utils::Json::JsonView jsonValue);
-    SigninDelegateGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SigninDelegateGroup();
+    AWS_CHIME_API SigninDelegateGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SigninDelegateGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
   };
 
 } // namespace Model

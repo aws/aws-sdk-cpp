@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API SecurityGroup
+  class SecurityGroup
   {
   public:
-    SecurityGroup();
-    SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API SecurityGroup();
+    AWS_INSPECTOR_API SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DynamodbDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API DynamodbDataSourceConfig
+  class DynamodbDataSourceConfig
   {
   public:
-    DynamodbDataSourceConfig();
-    DynamodbDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    DynamodbDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API DynamodbDataSourceConfig();
+    AWS_APPSYNC_API DynamodbDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API DynamodbDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,19 +200,19 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     bool m_useCallerCredentials;
-    bool m_useCallerCredentialsHasBeenSet;
+    bool m_useCallerCredentialsHasBeenSet = false;
 
     DeltaSyncConfig m_deltaSyncConfig;
-    bool m_deltaSyncConfigHasBeenSet;
+    bool m_deltaSyncConfigHasBeenSet = false;
 
     bool m_versioned;
-    bool m_versionedHasBeenSet;
+    bool m_versionedHasBeenSet = false;
   };
 
 } // namespace Model

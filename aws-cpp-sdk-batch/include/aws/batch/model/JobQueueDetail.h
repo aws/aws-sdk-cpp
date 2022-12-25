@@ -29,57 +29,57 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of an Batch job queue.</p><p><h3>See
+   * <p>An object that represents the details for an Batch job queue.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API JobQueueDetail
+  class JobQueueDetail
   {
   public:
-    JobQueueDetail();
-    JobQueueDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobQueueDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobQueueDetail();
+    AWS_BATCH_API JobQueueDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobQueueDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline const Aws::String& GetJobQueueName() const{ return m_jobQueueName; }
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline bool JobQueueNameHasBeenSet() const { return m_jobQueueNameHasBeenSet; }
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline void SetJobQueueName(const Aws::String& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline void SetJobQueueName(Aws::String&& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = std::move(value); }
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline void SetJobQueueName(const char* value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName.assign(value); }
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline JobQueueDetail& WithJobQueueName(const Aws::String& value) { SetJobQueueName(value); return *this;}
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline JobQueueDetail& WithJobQueueName(Aws::String&& value) { SetJobQueueName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job queue.</p>
+     * <p>The job queue name.</p>
      */
     inline JobQueueDetail& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
 
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -135,7 +135,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -151,7 +151,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>Describes the ability of the queue to accept new jobs. If the job queue state
-     * is <code>ENABLED</code>, it's able to accept jobs. If the job queue state is
+     * is <code>ENABLED</code>, it can accept jobs. If the job queue state is
      * <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
      * the queue can finish.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
 
@@ -194,7 +194,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
 
@@ -202,7 +202,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
 
@@ -210,7 +210,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
 
@@ -218,7 +218,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline JobQueueDetail& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
 
@@ -226,7 +226,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline JobQueueDetail& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
 
@@ -234,7 +234,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
      * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
      * </code>. For example,
-     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     * <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
      */
     inline JobQueueDetail& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}
 
@@ -277,50 +277,50 @@ namespace Model
 
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline JobQueueDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline JobQueueDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job queue.</p>
+     * <p>A short, human-readable string to provide additional details for the current
+     * status of the job queue.</p>
      */
     inline JobQueueDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -329,11 +329,11 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -342,11 +342,11 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -355,11 +355,11 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -368,11 +368,11 @@ namespace Model
      * <p>The priority of the job queue. Job queues with a higher priority (or a higher
      * integer value for the <code>priority</code> parameter) are evaluated first when
      * associated with the same compute environment. Priority is determined in
-     * descending order, for example, a job queue with a priority value of
+     * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
@@ -436,91 +436,91 @@ namespace Model
 
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job queue. For more information, see <a
+     * <p>The tags that are applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
      * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
@@ -529,31 +529,31 @@ namespace Model
   private:
 
     Aws::String m_jobQueueName;
-    bool m_jobQueueNameHasBeenSet;
+    bool m_jobQueueNameHasBeenSet = false;
 
     Aws::String m_jobQueueArn;
-    bool m_jobQueueArnHasBeenSet;
+    bool m_jobQueueArnHasBeenSet = false;
 
     JQState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_schedulingPolicyArn;
-    bool m_schedulingPolicyArnHasBeenSet;
+    bool m_schedulingPolicyArnHasBeenSet = false;
 
     JQStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
-    bool m_computeEnvironmentOrderHasBeenSet;
+    bool m_computeEnvironmentOrderHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API ListEndpointAccessRequest : public RedshiftServerlessRequest
+  class ListEndpointAccessRequest : public RedshiftServerlessRequest
   {
   public:
-    ListEndpointAccessRequest();
+    AWS_REDSHIFTSERVERLESS_API ListEndpointAccessRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,32 +29,32 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListEndpointAccess"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline ListEndpointAccessRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline ListEndpointAccessRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline ListEndpointAccessRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListEndpointAccess</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListEndpointAccess</code> operations, which returns results in
+     * following <code>ListEndpointAccess</code> operations, which returns results in
      * the next page.</p>
      */
     inline ListEndpointAccessRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -216,16 +216,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnalysisSourceTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AnalysisSourceTemplate
+  class AnalysisSourceTemplate
   {
   public:
-    AnalysisSourceTemplate();
-    AnalysisSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
-    AnalysisSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AnalysisSourceTemplate();
+    AWS_QUICKSIGHT_API AnalysisSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AnalysisSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<DataSetReference> m_dataSetReferences;
-    bool m_dataSetReferencesHasBeenSet;
+    bool m_dataSetReferencesHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

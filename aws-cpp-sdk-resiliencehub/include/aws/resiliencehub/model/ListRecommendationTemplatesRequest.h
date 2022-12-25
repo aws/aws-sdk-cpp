@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API ListRecommendationTemplatesRequest : public ResilienceHubRequest
+  class ListRecommendationTemplatesRequest : public ResilienceHubRequest
   {
   public:
-    ListRecommendationTemplatesRequest();
+    AWS_RESILIENCEHUB_API ListRecommendationTemplatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRecommendationTemplates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_RESILIENCEHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -333,25 +333,25 @@ namespace Model
   private:
 
     Aws::String m_assessmentArn;
-    bool m_assessmentArnHasBeenSet;
+    bool m_assessmentArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_recommendationTemplateArn;
-    bool m_recommendationTemplateArnHasBeenSet;
+    bool m_recommendationTemplateArnHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
 
     Aws::Vector<RecommendationTemplateStatus> m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCING_API DescribeAccountLimitsRequest : public ElasticLoadBalancingRequest
+  class DescribeAccountLimitsRequest : public ElasticLoadBalancingRequest
   {
   public:
-    DescribeAccountLimitsRequest();
+    AWS_ELASTICLOADBALANCING_API DescribeAccountLimitsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAccountLimits"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

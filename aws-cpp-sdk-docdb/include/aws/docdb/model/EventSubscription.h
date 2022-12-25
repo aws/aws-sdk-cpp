@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/EventSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API EventSubscription
+  class EventSubscription
   {
   public:
-    EventSubscription();
-    EventSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EventSubscription();
+    AWS_DOCDB_API EventSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EventSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -537,34 +537,34 @@ namespace Model
   private:
 
     Aws::String m_customerAwsId;
-    bool m_customerAwsIdHasBeenSet;
+    bool m_customerAwsIdHasBeenSet = false;
 
     Aws::String m_custSubscriptionId;
-    bool m_custSubscriptionIdHasBeenSet;
+    bool m_custSubscriptionIdHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subscriptionCreationTime;
-    bool m_subscriptionCreationTimeHasBeenSet;
+    bool m_subscriptionCreationTimeHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceIdsList;
-    bool m_sourceIdsListHasBeenSet;
+    bool m_sourceIdsListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategoriesList;
-    bool m_eventCategoriesListHasBeenSet;
+    bool m_eventCategoriesListHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_eventSubscriptionArn;
-    bool m_eventSubscriptionArnHasBeenSet;
+    bool m_eventSubscriptionArnHasBeenSet = false;
   };
 
 } // namespace Model

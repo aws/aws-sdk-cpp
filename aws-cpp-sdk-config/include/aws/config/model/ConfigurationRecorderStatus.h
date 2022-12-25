@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorderStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigurationRecorderStatus
+  class ConfigurationRecorderStatus
   {
   public:
-    ConfigurationRecorderStatus();
-    ConfigurationRecorderStatus(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationRecorderStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigurationRecorderStatus();
+    AWS_CONFIGSERVICE_API ConfigurationRecorderStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigurationRecorderStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -310,28 +310,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStartTime;
-    bool m_lastStartTimeHasBeenSet;
+    bool m_lastStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStopTime;
-    bool m_lastStopTimeHasBeenSet;
+    bool m_lastStopTimeHasBeenSet = false;
 
     bool m_recording;
-    bool m_recordingHasBeenSet;
+    bool m_recordingHasBeenSet = false;
 
     RecorderStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusChangeTime;
-    bool m_lastStatusChangeTimeHasBeenSet;
+    bool m_lastStatusChangeTimeHasBeenSet = false;
   };
 
 } // namespace Model

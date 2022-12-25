@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACCESSANALYZER_API CreateAccessPreviewRequest : public AccessAnalyzerRequest
+  class CreateAccessPreviewRequest : public AccessAnalyzerRequest
   {
   public:
-    CreateAccessPreviewRequest();
+    AWS_ACCESSANALYZER_API CreateAccessPreviewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAccessPreview"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -106,47 +106,6 @@ namespace Model
      * <code>Active</code> status.</p>
      */
     inline CreateAccessPreviewRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
-
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAccessPreviewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAccessPreviewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAccessPreviewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -245,16 +204,57 @@ namespace Model
      */
     inline CreateAccessPreviewRequest& AddConfigurations(const char* key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline CreateAccessPreviewRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline CreateAccessPreviewRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline CreateAccessPreviewRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

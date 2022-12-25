@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedEventSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API AdvancedEventSelector
+  class AdvancedEventSelector
   {
   public:
-    AdvancedEventSelector();
-    AdvancedEventSelector(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedEventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API AdvancedEventSelector();
+    AWS_CLOUDTRAIL_API AdvancedEventSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API AdvancedEventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AdvancedFieldSelector> m_fieldSelectors;
-    bool m_fieldSelectorsHasBeenSet;
+    bool m_fieldSelectorsHasBeenSet = false;
   };
 
 } // namespace Model

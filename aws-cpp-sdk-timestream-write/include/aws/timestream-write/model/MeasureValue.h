@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/MeasureValue">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API MeasureValue
+  class MeasureValue
   {
   public:
-    MeasureValue();
-    MeasureValue(Aws::Utils::Json::JsonView jsonValue);
-    MeasureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API MeasureValue();
+    AWS_TIMESTREAMWRITE_API MeasureValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API MeasureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     MeasureValueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

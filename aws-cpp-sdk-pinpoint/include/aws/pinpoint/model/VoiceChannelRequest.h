@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API VoiceChannelRequest
+  class VoiceChannelRequest
   {
   public:
-    VoiceChannelRequest();
-    VoiceChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    VoiceChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API VoiceChannelRequest();
+    AWS_PINPOINT_API VoiceChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API VoiceChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ImportFileTaskInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ImportFileTaskInformation
+  class ImportFileTaskInformation
   {
   public:
-    ImportFileTaskInformation();
-    ImportFileTaskInformation(Aws::Utils::Json::JsonView jsonValue);
-    ImportFileTaskInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ImportFileTaskInformation();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ImportFileTaskInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ImportFileTaskInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -431,37 +431,37 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_importName;
-    bool m_importNameHasBeenSet;
+    bool m_importNameHasBeenSet = false;
 
     Aws::String m_inputS3Bucket;
-    bool m_inputS3BucketHasBeenSet;
+    bool m_inputS3BucketHasBeenSet = false;
 
     Aws::String m_inputS3Key;
-    bool m_inputS3KeyHasBeenSet;
+    bool m_inputS3KeyHasBeenSet = false;
 
     int m_numberOfRecordsFailed;
-    bool m_numberOfRecordsFailedHasBeenSet;
+    bool m_numberOfRecordsFailedHasBeenSet = false;
 
     int m_numberOfRecordsSuccess;
-    bool m_numberOfRecordsSuccessHasBeenSet;
+    bool m_numberOfRecordsSuccessHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     ImportFileTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReportS3Bucket;
-    bool m_statusReportS3BucketHasBeenSet;
+    bool m_statusReportS3BucketHasBeenSet = false;
 
     Aws::String m_statusReportS3Key;
-    bool m_statusReportS3KeyHasBeenSet;
+    bool m_statusReportS3KeyHasBeenSet = false;
   };
 
 } // namespace Model

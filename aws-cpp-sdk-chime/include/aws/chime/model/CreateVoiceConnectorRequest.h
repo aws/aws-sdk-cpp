@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API CreateVoiceConnectorRequest : public ChimeRequest
+  class CreateVoiceConnectorRequest : public ChimeRequest
   {
   public:
-    CreateVoiceConnectorRequest();
+    AWS_CHIME_API CreateVoiceConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVoiceConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     VoiceConnectorAwsRegion m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     bool m_requireEncryption;
-    bool m_requireEncryptionHasBeenSet;
+    bool m_requireEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

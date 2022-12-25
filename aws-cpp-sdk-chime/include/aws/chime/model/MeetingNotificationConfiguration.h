@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MeetingNotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API MeetingNotificationConfiguration
+  class MeetingNotificationConfiguration
   {
   public:
-    MeetingNotificationConfiguration();
-    MeetingNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MeetingNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API MeetingNotificationConfiguration();
+    AWS_CHIME_API MeetingNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API MeetingNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_sqsQueueArn;
-    bool m_sqsQueueArnHasBeenSet;
+    bool m_sqsQueueArnHasBeenSet = false;
   };
 
 } // namespace Model

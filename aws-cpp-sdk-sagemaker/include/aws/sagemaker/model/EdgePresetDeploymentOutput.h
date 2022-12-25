@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgePresetDeploymentOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgePresetDeploymentOutput
+  class EdgePresetDeploymentOutput
   {
   public:
-    EdgePresetDeploymentOutput();
-    EdgePresetDeploymentOutput(Aws::Utils::Json::JsonView jsonValue);
-    EdgePresetDeploymentOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgePresetDeploymentOutput();
+    AWS_SAGEMAKER_API EdgePresetDeploymentOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgePresetDeploymentOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     EdgePresetDeploymentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_artifact;
-    bool m_artifactHasBeenSet;
+    bool m_artifactHasBeenSet = false;
 
     EdgePresetDeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

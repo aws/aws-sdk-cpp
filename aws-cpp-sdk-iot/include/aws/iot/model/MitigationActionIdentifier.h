@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MitigationActionIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MitigationActionIdentifier
+  class MitigationActionIdentifier
   {
   public:
-    MitigationActionIdentifier();
-    MitigationActionIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    MitigationActionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MitigationActionIdentifier();
+    AWS_IOT_API MitigationActionIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MitigationActionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_actionArn;
-    bool m_actionArnHasBeenSet;
+    bool m_actionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

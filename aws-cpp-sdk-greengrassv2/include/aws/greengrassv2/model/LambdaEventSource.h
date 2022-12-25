@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaEventSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaEventSource
+  class LambdaEventSource
   {
   public:
-    LambdaEventSource();
-    LambdaEventSource(Aws::Utils::Json::JsonView jsonValue);
-    LambdaEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaEventSource();
+    AWS_GREENGRASSV2_API LambdaEventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     LambdaEventSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SenderIdAndCountry">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry
+  class SenderIdAndCountry
   {
   public:
-    SenderIdAndCountry();
-    SenderIdAndCountry(Aws::Utils::Json::JsonView jsonValue);
-    SenderIdAndCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry();
+    AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API SenderIdAndCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
   };
 
 } // namespace Model

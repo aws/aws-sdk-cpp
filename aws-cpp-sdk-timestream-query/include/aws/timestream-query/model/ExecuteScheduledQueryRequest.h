@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_TIMESTREAMQUERY_API ExecuteScheduledQueryRequest : public TimestreamQueryRequest
+  class ExecuteScheduledQueryRequest : public TimestreamQueryRequest
   {
   public:
-    ExecuteScheduledQueryRequest();
+    AWS_TIMESTREAMQUERY_API ExecuteScheduledQueryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExecuteScheduledQuery"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TIMESTREAMQUERY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_scheduledQueryArn;
-    bool m_scheduledQueryArnHasBeenSet;
+    bool m_scheduledQueryArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/KnowledgeBaseAssociationData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseAssociationData
+  class KnowledgeBaseAssociationData
   {
   public:
-    KnowledgeBaseAssociationData();
-    KnowledgeBaseAssociationData(Aws::Utils::Json::JsonView jsonValue);
-    KnowledgeBaseAssociationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseAssociationData();
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseAssociationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseAssociationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_knowledgeBaseArn;
-    bool m_knowledgeBaseArnHasBeenSet;
+    bool m_knowledgeBaseArnHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

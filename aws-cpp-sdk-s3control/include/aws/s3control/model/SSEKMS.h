@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SSEKMS">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API SSEKMS
+  class SSEKMS
   {
   public:
-    SSEKMS();
-    SSEKMS(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SSEKMS& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API SSEKMS();
+    AWS_S3CONTROL_API SSEKMS(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API SSEKMS& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
   };
 
 } // namespace Model

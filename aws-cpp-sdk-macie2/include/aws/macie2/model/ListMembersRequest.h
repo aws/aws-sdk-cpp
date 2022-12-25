@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API ListMembersRequest : public Macie2Request
+  class ListMembersRequest : public Macie2Request
   {
   public:
-    ListMembersRequest();
+    AWS_MACIE2_API ListMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MACIE2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_onlyAssociated;
-    bool m_onlyAssociatedHasBeenSet;
+    bool m_onlyAssociatedHasBeenSet = false;
   };
 
 } // namespace Model

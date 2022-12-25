@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API DescribeAlarmsRequest : public CloudWatchRequest
+  class DescribeAlarmsRequest : public CloudWatchRequest
   {
   public:
-    DescribeAlarmsRequest();
+    AWS_CLOUDWATCH_API DescribeAlarmsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAlarms"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -647,31 +647,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_alarmNames;
-    bool m_alarmNamesHasBeenSet;
+    bool m_alarmNamesHasBeenSet = false;
 
     Aws::String m_alarmNamePrefix;
-    bool m_alarmNamePrefixHasBeenSet;
+    bool m_alarmNamePrefixHasBeenSet = false;
 
     Aws::Vector<AlarmType> m_alarmTypes;
-    bool m_alarmTypesHasBeenSet;
+    bool m_alarmTypesHasBeenSet = false;
 
     Aws::String m_childrenOfAlarmName;
-    bool m_childrenOfAlarmNameHasBeenSet;
+    bool m_childrenOfAlarmNameHasBeenSet = false;
 
     Aws::String m_parentsOfAlarmName;
-    bool m_parentsOfAlarmNameHasBeenSet;
+    bool m_parentsOfAlarmNameHasBeenSet = false;
 
     StateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     Aws::String m_actionPrefix;
-    bool m_actionPrefixHasBeenSet;
+    bool m_actionPrefixHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

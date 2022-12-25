@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayMulticastDeregisteredGroupMembers">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers
+  class TransitGatewayMulticastDeregisteredGroupMembers
   {
   public:
-    TransitGatewayMulticastDeregisteredGroupMembers();
-    TransitGatewayMulticastDeregisteredGroupMembers(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayMulticastDeregisteredGroupMembers& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers();
+    AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastDeregisteredGroupMembers& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;
-    bool m_transitGatewayMulticastDomainIdHasBeenSet;
+    bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deregisteredNetworkInterfaceIds;
-    bool m_deregisteredNetworkInterfaceIdsHasBeenSet;
+    bool m_deregisteredNetworkInterfaceIdsHasBeenSet = false;
 
     Aws::String m_groupIpAddress;
-    bool m_groupIpAddressHasBeenSet;
+    bool m_groupIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

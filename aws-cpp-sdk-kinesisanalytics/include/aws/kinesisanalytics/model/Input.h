@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Input">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API Input
+  class Input
   {
   public:
-    Input();
-    Input(Aws::Utils::Json::JsonView jsonValue);
-    Input& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API Input();
+    AWS_KINESISANALYTICS_API Input(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -390,22 +390,22 @@ namespace Model
   private:
 
     Aws::String m_namePrefix;
-    bool m_namePrefixHasBeenSet;
+    bool m_namePrefixHasBeenSet = false;
 
     InputProcessingConfiguration m_inputProcessingConfiguration;
-    bool m_inputProcessingConfigurationHasBeenSet;
+    bool m_inputProcessingConfigurationHasBeenSet = false;
 
     KinesisStreamsInput m_kinesisStreamsInput;
-    bool m_kinesisStreamsInputHasBeenSet;
+    bool m_kinesisStreamsInputHasBeenSet = false;
 
     KinesisFirehoseInput m_kinesisFirehoseInput;
-    bool m_kinesisFirehoseInputHasBeenSet;
+    bool m_kinesisFirehoseInputHasBeenSet = false;
 
     InputParallelism m_inputParallelism;
-    bool m_inputParallelismHasBeenSet;
+    bool m_inputParallelismHasBeenSet = false;
 
     SourceSchema m_inputSchema;
-    bool m_inputSchemaHasBeenSet;
+    bool m_inputSchemaHasBeenSet = false;
   };
 
 } // namespace Model

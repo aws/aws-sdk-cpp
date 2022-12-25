@@ -12,6 +12,7 @@
 #include <aws/eks/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/OutpostConfigRequest.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -25,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API CreateClusterRequest : public EKSRequest
+  class CreateClusterRequest : public EKSRequest
   {
   public:
-    CreateClusterRequest();
+    AWS_EKS_API CreateClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -82,49 +83,57 @@ namespace Model
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline CreateClusterRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline CreateClusterRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you don't specify a value
-     * here, the latest version available in Amazon EKS is used.</p>
+     * here, the default version available in Amazon EKS is used.</p>  <p>The
+     * default version might not be the latest version available.</p> 
      */
     inline CreateClusterRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -578,34 +587,104 @@ namespace Model
      */
     inline CreateClusterRequest& AddEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline const OutpostConfigRequest& GetOutpostConfig() const{ return m_outpostConfig; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline bool OutpostConfigHasBeenSet() const { return m_outpostConfigHasBeenSet; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline void SetOutpostConfig(const OutpostConfigRequest& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = value; }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline void SetOutpostConfig(OutpostConfigRequest&& value) { m_outpostConfigHasBeenSet = true; m_outpostConfig = std::move(value); }
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline CreateClusterRequest& WithOutpostConfig(const OutpostConfigRequest& value) { SetOutpostConfig(value); return *this;}
+
+    /**
+     * <p>An object representing the configuration of your local Amazon EKS cluster on
+     * an Amazon Web Services Outpost. Before creating a local cluster on an Outpost,
+     * review <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     * clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS
+     * User Guide</i>. This object isn't available for creating Amazon EKS clusters on
+     * the Amazon Web Services cloud.</p>
+     */
+    inline CreateClusterRequest& WithOutpostConfig(OutpostConfigRequest&& value) { SetOutpostConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     VpcConfigRequest m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     KubernetesNetworkConfigRequest m_kubernetesNetworkConfig;
-    bool m_kubernetesNetworkConfigHasBeenSet;
+    bool m_kubernetesNetworkConfigHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<EncryptionConfig> m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
+
+    OutpostConfigRequest m_outpostConfig;
+    bool m_outpostConfigHasBeenSet = false;
   };
 
 } // namespace Model

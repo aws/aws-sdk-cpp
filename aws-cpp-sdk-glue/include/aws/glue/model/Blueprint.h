@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Blueprint">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Blueprint
+  class Blueprint
   {
   public:
-    Blueprint();
-    Blueprint(Aws::Utils::Json::JsonView jsonValue);
-    Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Blueprint();
+    AWS_GLUE_API Blueprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -472,34 +472,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     Aws::String m_parameterSpec;
-    bool m_parameterSpecHasBeenSet;
+    bool m_parameterSpecHasBeenSet = false;
 
     Aws::String m_blueprintLocation;
-    bool m_blueprintLocationHasBeenSet;
+    bool m_blueprintLocationHasBeenSet = false;
 
     Aws::String m_blueprintServiceLocation;
-    bool m_blueprintServiceLocationHasBeenSet;
+    bool m_blueprintServiceLocationHasBeenSet = false;
 
     BlueprintStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     LastActiveDefinition m_lastActiveDefinition;
-    bool m_lastActiveDefinitionHasBeenSet;
+    bool m_lastActiveDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

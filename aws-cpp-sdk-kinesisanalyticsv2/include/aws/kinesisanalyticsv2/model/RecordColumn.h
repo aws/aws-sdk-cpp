@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RecordColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API RecordColumn
+  class RecordColumn
   {
   public:
-    RecordColumn();
-    RecordColumn(Aws::Utils::Json::JsonView jsonValue);
-    RecordColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API RecordColumn();
+    AWS_KINESISANALYTICSV2_API RecordColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API RecordColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     Aws::String m_sqlType;
-    bool m_sqlTypeHasBeenSet;
+    bool m_sqlTypeHasBeenSet = false;
   };
 
 } // namespace Model

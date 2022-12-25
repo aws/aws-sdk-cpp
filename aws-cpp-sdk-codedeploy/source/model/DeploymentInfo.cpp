@@ -54,7 +54,8 @@ DeploymentInfo::DeploymentInfo() :
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false)
+    m_relatedDeploymentsHasBeenSet(false),
+    m_overrideAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ DeploymentInfo::DeploymentInfo(JsonView jsonValue) :
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false)
+    m_relatedDeploymentsHasBeenSet(false),
+    m_overrideAlarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -278,7 +280,7 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deploymentStatusMessages"))
   {
-    Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
+    Aws::Utils::Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
     for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
     {
       m_deploymentStatusMessages.push_back(deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString());
@@ -305,6 +307,13 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     m_relatedDeployments = jsonValue.GetObject("relatedDeployments");
 
     m_relatedDeploymentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("overrideAlarmConfiguration"))
+  {
+    m_overrideAlarmConfiguration = jsonValue.GetObject("overrideAlarmConfiguration");
+
+    m_overrideAlarmConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -460,7 +469,7 @@ JsonValue DeploymentInfo::Jsonize() const
 
   if(m_deploymentStatusMessagesHasBeenSet)
   {
-   Array<JsonValue> deploymentStatusMessagesJsonList(m_deploymentStatusMessages.size());
+   Aws::Utils::Array<JsonValue> deploymentStatusMessagesJsonList(m_deploymentStatusMessages.size());
    for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
    {
      deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString(m_deploymentStatusMessages[deploymentStatusMessagesIndex]);
@@ -483,6 +492,12 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_relatedDeploymentsHasBeenSet)
   {
    payload.WithObject("relatedDeployments", m_relatedDeployments.Jsonize());
+
+  }
+
+  if(m_overrideAlarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
 
   }
 

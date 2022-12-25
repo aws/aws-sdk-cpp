@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/UserGroupPendingChanges">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API UserGroupPendingChanges
+  class UserGroupPendingChanges
   {
   public:
-    UserGroupPendingChanges();
-    UserGroupPendingChanges(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserGroupPendingChanges& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UserGroupPendingChanges();
+    AWS_ELASTICACHE_API UserGroupPendingChanges(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UserGroupPendingChanges& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userIdsToRemove;
-    bool m_userIdsToRemoveHasBeenSet;
+    bool m_userIdsToRemoveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdsToAdd;
-    bool m_userIdsToAddHasBeenSet;
+    bool m_userIdsToAddHasBeenSet = false;
   };
 
 } // namespace Model

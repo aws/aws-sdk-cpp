@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricStat">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MetricStat
+  class MetricStat
   {
   public:
-    MetricStat();
-    MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricStat();
+    AWS_AUTOSCALING_API MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -254,13 +254,13 @@ namespace Model
   private:
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_stat;
-    bool m_statHasBeenSet;
+    bool m_statHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

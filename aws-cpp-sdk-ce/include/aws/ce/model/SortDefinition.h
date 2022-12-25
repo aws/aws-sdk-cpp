@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SortDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SortDefinition
+  class SortDefinition
   {
   public:
-    SortDefinition();
-    SortDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SortDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SortDefinition();
+    AWS_COSTEXPLORER_API SortDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SortDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

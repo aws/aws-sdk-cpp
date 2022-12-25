@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ResourceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ResourceUnavailableException
+  class ResourceUnavailableException
   {
   public:
-    ResourceUnavailableException();
-    ResourceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ResourceUnavailableException();
+    AWS_WORKSPACES_API ResourceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ResourceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisFirehoseInput">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API KinesisFirehoseInput
+  class KinesisFirehoseInput
   {
   public:
-    KinesisFirehoseInput();
-    KinesisFirehoseInput(Aws::Utils::Json::JsonView jsonValue);
-    KinesisFirehoseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseInput();
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

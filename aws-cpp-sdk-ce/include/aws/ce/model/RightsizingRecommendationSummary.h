@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RightsizingRecommendationSummary
+  class RightsizingRecommendationSummary
   {
   public:
-    RightsizingRecommendationSummary();
-    RightsizingRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RightsizingRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary();
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_totalRecommendationCount;
-    bool m_totalRecommendationCountHasBeenSet;
+    bool m_totalRecommendationCountHasBeenSet = false;
 
     Aws::String m_estimatedTotalMonthlySavingsAmount;
-    bool m_estimatedTotalMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedTotalMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_savingsCurrencyCode;
-    bool m_savingsCurrencyCodeHasBeenSet;
+    bool m_savingsCurrencyCodeHasBeenSet = false;
 
     Aws::String m_savingsPercentage;
-    bool m_savingsPercentageHasBeenSet;
+    bool m_savingsPercentageHasBeenSet = false;
   };
 
 } // namespace Model

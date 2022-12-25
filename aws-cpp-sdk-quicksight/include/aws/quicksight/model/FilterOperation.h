@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterOperation
+  class FilterOperation
   {
   public:
-    FilterOperation();
-    FilterOperation(Aws::Utils::Json::JsonView jsonValue);
-    FilterOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterOperation();
+    AWS_QUICKSIGHT_API FilterOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
   };
 
 } // namespace Model

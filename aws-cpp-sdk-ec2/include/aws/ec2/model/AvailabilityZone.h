@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailabilityZone">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AvailabilityZone
+  class AvailabilityZone
   {
   public:
-    AvailabilityZone();
-    AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AvailabilityZone();
+    AWS_EC2_API AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -549,37 +549,37 @@ namespace Model
   private:
 
     AvailabilityZoneState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     AvailabilityZoneOptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
 
     Aws::Vector<AvailabilityZoneMessage> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
+    bool m_zoneNameHasBeenSet = false;
 
     Aws::String m_zoneId;
-    bool m_zoneIdHasBeenSet;
+    bool m_zoneIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::String m_zoneType;
-    bool m_zoneTypeHasBeenSet;
+    bool m_zoneTypeHasBeenSet = false;
 
     Aws::String m_parentZoneName;
-    bool m_parentZoneNameHasBeenSet;
+    bool m_parentZoneNameHasBeenSet = false;
 
     Aws::String m_parentZoneId;
-    bool m_parentZoneIdHasBeenSet;
+    bool m_parentZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

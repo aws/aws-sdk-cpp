@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ObservabilityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ObservabilityConfiguration
+  class ObservabilityConfiguration
   {
   public:
-    ObservabilityConfiguration();
-    ObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ObservabilityConfiguration();
+    AWS_APPRUNNER_API ObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,28 +361,28 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationArn;
-    bool m_observabilityConfigurationArnHasBeenSet;
+    bool m_observabilityConfigurationArnHasBeenSet = false;
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     TraceConfiguration m_traceConfiguration;
-    bool m_traceConfigurationHasBeenSet;
+    bool m_traceConfigurationHasBeenSet = false;
 
     int m_observabilityConfigurationRevision;
-    bool m_observabilityConfigurationRevisionHasBeenSet;
+    bool m_observabilityConfigurationRevisionHasBeenSet = false;
 
     bool m_latest;
-    bool m_latestHasBeenSet;
+    bool m_latestHasBeenSet = false;
 
     ObservabilityConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletedAt;
-    bool m_deletedAtHasBeenSet;
+    bool m_deletedAtHasBeenSet = false;
   };
 
 } // namespace Model

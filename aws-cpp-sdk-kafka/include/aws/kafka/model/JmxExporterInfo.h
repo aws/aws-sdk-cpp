@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/JmxExporterInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API JmxExporterInfo
+  class JmxExporterInfo
   {
   public:
-    JmxExporterInfo();
-    JmxExporterInfo(Aws::Utils::Json::JsonView jsonValue);
-    JmxExporterInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API JmxExporterInfo();
+    AWS_KAFKA_API JmxExporterInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API JmxExporterInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     bool m_enabledInBroker;
-    bool m_enabledInBrokerHasBeenSet;
+    bool m_enabledInBrokerHasBeenSet = false;
   };
 
 } // namespace Model

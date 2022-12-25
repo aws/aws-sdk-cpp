@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/OptionStatus">AWS API
    * Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API OptionStatus
+  class OptionStatus
   {
   public:
-    OptionStatus();
-    OptionStatus(Aws::Utils::Json::JsonView jsonValue);
-    OptionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API OptionStatus();
+    AWS_ELASTICSEARCHSERVICE_API OptionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API OptionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,19 +175,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
 
     int m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
 
     OptionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_pendingDeletion;
-    bool m_pendingDeletionHasBeenSet;
+    bool m_pendingDeletionHasBeenSet = false;
   };
 
 } // namespace Model

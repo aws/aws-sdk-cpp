@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotCopyGrant">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API SnapshotCopyGrant
+  class SnapshotCopyGrant
   {
   public:
-    SnapshotCopyGrant();
-    SnapshotCopyGrant(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotCopyGrant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotCopyGrant();
+    AWS_REDSHIFT_API SnapshotCopyGrant(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotCopyGrant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_snapshotCopyGrantName;
-    bool m_snapshotCopyGrantNameHasBeenSet;
+    bool m_snapshotCopyGrantNameHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Permission">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API Permission
+  class Permission
   {
   public:
-    Permission();
-    Permission(Aws::Utils::Json::JsonView jsonValue);
-    Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Permission();
+    AWS_OPSWORKS_API Permission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     bool m_allowSsh;
-    bool m_allowSshHasBeenSet;
+    bool m_allowSshHasBeenSet = false;
 
     bool m_allowSudo;
-    bool m_allowSudoHasBeenSet;
+    bool m_allowSudoHasBeenSet = false;
 
     Aws::String m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/FulfillmentStartResponseSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification
+  class FulfillmentStartResponseSpecification
   {
   public:
-    FulfillmentStartResponseSpecification();
-    FulfillmentStartResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
-    FulfillmentStartResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification();
+    AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     int m_delayInSeconds;
-    bool m_delayInSecondsHasBeenSet;
+    bool m_delayInSecondsHasBeenSet = false;
 
     Aws::Vector<MessageGroup> m_messageGroups;
-    bool m_messageGroupsHasBeenSet;
+    bool m_messageGroupsHasBeenSet = false;
 
     bool m_allowInterrupt;
-    bool m_allowInterruptHasBeenSet;
+    bool m_allowInterruptHasBeenSet = false;
   };
 
 } // namespace Model

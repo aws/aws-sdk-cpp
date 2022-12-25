@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API RemoveThingFromBillingGroupRequest : public IoTRequest
+  class RemoveThingFromBillingGroupRequest : public IoTRequest
   {
   public:
-    RemoveThingFromBillingGroupRequest();
+    AWS_IOT_API RemoveThingFromBillingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveThingFromBillingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
 
     Aws::String m_billingGroupArn;
-    bool m_billingGroupArnHasBeenSet;
+    bool m_billingGroupArnHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
   };
 
 } // namespace Model

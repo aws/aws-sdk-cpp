@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchSource">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API PatchSource
+  class PatchSource
   {
   public:
-    PatchSource();
-    PatchSource(Aws::Utils::Json::JsonView jsonValue);
-    PatchSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchSource();
+    AWS_SSM_API PatchSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,13 +236,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_products;
-    bool m_productsHasBeenSet;
+    bool m_productsHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

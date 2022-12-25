@@ -23,13 +23,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API Firehose
+  class Firehose
   {
   public:
-    Firehose();
-    Firehose(Aws::Utils::Json::JsonView jsonValue);
-    Firehose& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Firehose();
+    AWS_KAFKA_API Firehose(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Firehose& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -72,10 +72,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStream;
-    bool m_deliveryStreamHasBeenSet;
+    bool m_deliveryStreamHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

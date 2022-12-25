@@ -7,6 +7,7 @@
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/JobType.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeviceJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API DeviceJob
+  class DeviceJob
   {
   public:
-    DeviceJob();
-    DeviceJob(Aws::Utils::Json::JsonView jsonValue);
-    DeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API DeviceJob();
+    AWS_PANORAMA_API DeviceJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API DeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,19 +192,53 @@ namespace Model
      */
     inline DeviceJob& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DeviceJob& WithJobType(const JobType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DeviceJob& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
+
+    JobType m_jobType;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

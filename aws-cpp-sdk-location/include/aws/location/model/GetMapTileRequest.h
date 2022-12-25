@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API GetMapTileRequest : public LocationServiceRequest
+  class GetMapTileRequest : public LocationServiceRequest
   {
   public:
-    GetMapTileRequest();
+    AWS_LOCATIONSERVICE_API GetMapTileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMapTile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     Aws::String m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
 
     Aws::String m_z;
-    bool m_zHasBeenSet;
+    bool m_zHasBeenSet = false;
   };
 
 } // namespace Model

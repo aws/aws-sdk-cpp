@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricDimensionGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API MetricDimensionGroups
+  class MetricDimensionGroups
   {
   public:
-    MetricDimensionGroups();
-    MetricDimensionGroups(Aws::Utils::Json::JsonView jsonValue);
-    MetricDimensionGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API MetricDimensionGroups();
+    AWS_PI_API MetricDimensionGroups(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API MetricDimensionGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::Vector<DimensionGroupDetail> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

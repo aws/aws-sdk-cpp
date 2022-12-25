@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ActionThreshold">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API ActionThreshold
+  class ActionThreshold
   {
   public:
-    ActionThreshold();
-    ActionThreshold(Aws::Utils::Json::JsonView jsonValue);
-    ActionThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API ActionThreshold();
+    AWS_BUDGETS_API ActionThreshold(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API ActionThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -71,10 +71,10 @@ namespace Model
   private:
 
     double m_actionThresholdValue;
-    bool m_actionThresholdValueHasBeenSet;
+    bool m_actionThresholdValueHasBeenSet = false;
 
     ThresholdType m_actionThresholdType;
-    bool m_actionThresholdTypeHasBeenSet;
+    bool m_actionThresholdTypeHasBeenSet = false;
   };
 
 } // namespace Model

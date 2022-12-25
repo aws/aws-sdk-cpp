@@ -27,168 +27,169 @@ namespace Model
 {
 
   /**
-   * <p>A list of possible transcriptions for the audio.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A list of possible alternative transcriptions for the input audio. Each
+   * alternative may contain one or more of <code>Items</code>,
+   * <code>Entities</code>, or <code>Transcript</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/MedicalAlternative">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalAlternative
+  class MedicalAlternative
   {
   public:
-    MedicalAlternative();
-    MedicalAlternative(Aws::Utils::Json::JsonView jsonValue);
-    MedicalAlternative& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalAlternative();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalAlternative(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalAlternative& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline const Aws::String& GetTranscript() const{ return m_transcript; }
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline void SetTranscript(const Aws::String& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline void SetTranscript(Aws::String&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline void SetTranscript(const char* value) { m_transcriptHasBeenSet = true; m_transcript.assign(value); }
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline MedicalAlternative& WithTranscript(const Aws::String& value) { SetTranscript(value); return *this;}
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline MedicalAlternative& WithTranscript(Aws::String&& value) { SetTranscript(std::move(value)); return *this;}
 
     /**
-     * <p>The text that was transcribed from the audio.</p>
+     * <p>Contains transcribed text.</p>
      */
     inline MedicalAlternative& WithTranscript(const char* value) { SetTranscript(value); return *this;}
 
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline const Aws::Vector<MedicalItem>& GetItems() const{ return m_items; }
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline void SetItems(const Aws::Vector<MedicalItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline void SetItems(Aws::Vector<MedicalItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline MedicalAlternative& WithItems(const Aws::Vector<MedicalItem>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline MedicalAlternative& WithItems(Aws::Vector<MedicalItem>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline MedicalAlternative& AddItems(const MedicalItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects that contains words and punctuation marks that represents
-     * one or more interpretations of the input audio.</p>
+     * <p>Contains words, phrases, or punctuation marks in your transcription
+     * output.</p>
      */
     inline MedicalAlternative& AddItems(MedicalItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline const Aws::Vector<MedicalEntity>& GetEntities() const{ return m_entities; }
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline void SetEntities(const Aws::Vector<MedicalEntity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline void SetEntities(Aws::Vector<MedicalEntity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline MedicalAlternative& WithEntities(const Aws::Vector<MedicalEntity>& value) { SetEntities(value); return *this;}
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline MedicalAlternative& WithEntities(Aws::Vector<MedicalEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline MedicalAlternative& AddEntities(const MedicalEntity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
 
     /**
-     * <p>Contains the medical entities identified as personal health information in
-     * the transcription output.</p>
+     * <p>Contains entities identified as personal health information (PHI) in your
+     * transcription output.</p>
      */
     inline MedicalAlternative& AddEntities(MedicalEntity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Vector<MedicalItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     Aws::Vector<MedicalEntity> m_entities;
-    bool m_entitiesHasBeenSet;
+    bool m_entitiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API UpdatePipelineRequest : public ElasticTranscoderRequest
+  class UpdatePipelineRequest : public ElasticTranscoderRequest
   {
   public:
-    UpdatePipelineRequest();
+    AWS_ELASTICTRANSCODER_API UpdatePipelineRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePipeline"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICTRANSCODER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -1048,28 +1048,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_inputBucket;
-    bool m_inputBucketHasBeenSet;
+    bool m_inputBucketHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_awsKmsKeyArn;
-    bool m_awsKmsKeyArnHasBeenSet;
+    bool m_awsKmsKeyArnHasBeenSet = false;
 
     Notifications m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     PipelineOutputConfig m_contentConfig;
-    bool m_contentConfigHasBeenSet;
+    bool m_contentConfigHasBeenSet = false;
 
     PipelineOutputConfig m_thumbnailConfig;
-    bool m_thumbnailConfigHasBeenSet;
+    bool m_thumbnailConfigHasBeenSet = false;
   };
 
 } // namespace Model

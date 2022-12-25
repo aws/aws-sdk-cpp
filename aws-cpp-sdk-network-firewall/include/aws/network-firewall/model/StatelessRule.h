@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatelessRule">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatelessRule
+  class StatelessRule
   {
   public:
-    StatelessRule();
-    StatelessRule(Aws::Utils::Json::JsonView jsonValue);
-    StatelessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatelessRule();
+    AWS_NETWORKFIREWALL_API StatelessRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatelessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     RuleDefinition m_ruleDefinition;
-    bool m_ruleDefinitionHasBeenSet;
+    bool m_ruleDefinitionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

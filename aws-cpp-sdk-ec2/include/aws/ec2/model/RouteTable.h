@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteTable">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API RouteTable
+  class RouteTable
   {
   public:
-    RouteTable();
-    RouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RouteTable();
+    AWS_EC2_API RouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -341,25 +341,25 @@ namespace Model
   private:
 
     Aws::Vector<RouteTableAssociation> m_associations;
-    bool m_associationsHasBeenSet;
+    bool m_associationsHasBeenSet = false;
 
     Aws::Vector<PropagatingVgw> m_propagatingVgws;
-    bool m_propagatingVgwsHasBeenSet;
+    bool m_propagatingVgwsHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::Vector<Route> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

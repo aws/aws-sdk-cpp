@@ -25,13 +25,13 @@ namespace Glue
 namespace Model
 {
 
-  class AWS_GLUE_API UnfilteredPartition
+  class UnfilteredPartition
   {
   public:
-    UnfilteredPartition();
-    UnfilteredPartition(Aws::Utils::Json::JsonView jsonValue);
-    UnfilteredPartition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UnfilteredPartition();
+    AWS_GLUE_API UnfilteredPartition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UnfilteredPartition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -96,13 +96,13 @@ namespace Model
   private:
 
     Partition m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedColumns;
-    bool m_authorizedColumnsHasBeenSet;
+    bool m_authorizedColumnsHasBeenSet = false;
 
     bool m_isRegisteredWithLakeFormation;
-    bool m_isRegisteredWithLakeFormationHasBeenSet;
+    bool m_isRegisteredWithLakeFormationHasBeenSet = false;
   };
 
 } // namespace Model

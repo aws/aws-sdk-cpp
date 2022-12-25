@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketNotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration
+  class AwsS3BucketNotificationConfiguration
   {
   public:
-    AwsS3BucketNotificationConfiguration();
-    AwsS3BucketNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsS3BucketNotificationConfigurationDetail> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
   };
 
 } // namespace Model

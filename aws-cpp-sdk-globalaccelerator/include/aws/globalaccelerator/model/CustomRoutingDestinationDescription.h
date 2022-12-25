@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingDestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription
+  class CustomRoutingDestinationDescription
   {
   public:
-    CustomRoutingDestinationDescription();
-    CustomRoutingDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    CustomRoutingDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription();
+    AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,13 +141,13 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

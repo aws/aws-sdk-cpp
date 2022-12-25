@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSystemConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FileSystemConfig
+  class FileSystemConfig
   {
   public:
-    FileSystemConfig();
-    FileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FileSystemConfig();
+    AWS_SAGEMAKER_API FileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_mountPath;
-    bool m_mountPathHasBeenSet;
+    bool m_mountPathHasBeenSet = false;
 
     int m_defaultUid;
-    bool m_defaultUidHasBeenSet;
+    bool m_defaultUidHasBeenSet = false;
 
     int m_defaultGid;
-    bool m_defaultGidHasBeenSet;
+    bool m_defaultGidHasBeenSet = false;
   };
 
 } // namespace Model

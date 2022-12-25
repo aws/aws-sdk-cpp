@@ -5,433 +5,16 @@
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
-#include <aws/codecommit/CodeCommitErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codecommit/model/BatchAssociateApprovalRuleTemplateWithRepositoriesResult.h>
-#include <aws/codecommit/model/BatchDescribeMergeConflictsResult.h>
-#include <aws/codecommit/model/BatchDisassociateApprovalRuleTemplateFromRepositoriesResult.h>
-#include <aws/codecommit/model/BatchGetCommitsResult.h>
-#include <aws/codecommit/model/BatchGetRepositoriesResult.h>
-#include <aws/codecommit/model/CreateApprovalRuleTemplateResult.h>
-#include <aws/codecommit/model/CreateCommitResult.h>
-#include <aws/codecommit/model/CreatePullRequestResult.h>
-#include <aws/codecommit/model/CreatePullRequestApprovalRuleResult.h>
-#include <aws/codecommit/model/CreateRepositoryResult.h>
-#include <aws/codecommit/model/CreateUnreferencedMergeCommitResult.h>
-#include <aws/codecommit/model/DeleteApprovalRuleTemplateResult.h>
-#include <aws/codecommit/model/DeleteBranchResult.h>
-#include <aws/codecommit/model/DeleteCommentContentResult.h>
-#include <aws/codecommit/model/DeleteFileResult.h>
-#include <aws/codecommit/model/DeletePullRequestApprovalRuleResult.h>
-#include <aws/codecommit/model/DeleteRepositoryResult.h>
-#include <aws/codecommit/model/DescribeMergeConflictsResult.h>
-#include <aws/codecommit/model/DescribePullRequestEventsResult.h>
-#include <aws/codecommit/model/EvaluatePullRequestApprovalRulesResult.h>
-#include <aws/codecommit/model/GetApprovalRuleTemplateResult.h>
-#include <aws/codecommit/model/GetBlobResult.h>
-#include <aws/codecommit/model/GetBranchResult.h>
-#include <aws/codecommit/model/GetCommentResult.h>
-#include <aws/codecommit/model/GetCommentReactionsResult.h>
-#include <aws/codecommit/model/GetCommentsForComparedCommitResult.h>
-#include <aws/codecommit/model/GetCommentsForPullRequestResult.h>
-#include <aws/codecommit/model/GetCommitResult.h>
-#include <aws/codecommit/model/GetDifferencesResult.h>
-#include <aws/codecommit/model/GetFileResult.h>
-#include <aws/codecommit/model/GetFolderResult.h>
-#include <aws/codecommit/model/GetMergeCommitResult.h>
-#include <aws/codecommit/model/GetMergeConflictsResult.h>
-#include <aws/codecommit/model/GetMergeOptionsResult.h>
-#include <aws/codecommit/model/GetPullRequestResult.h>
-#include <aws/codecommit/model/GetPullRequestApprovalStatesResult.h>
-#include <aws/codecommit/model/GetPullRequestOverrideStateResult.h>
-#include <aws/codecommit/model/GetRepositoryResult.h>
-#include <aws/codecommit/model/GetRepositoryTriggersResult.h>
-#include <aws/codecommit/model/ListApprovalRuleTemplatesResult.h>
-#include <aws/codecommit/model/ListAssociatedApprovalRuleTemplatesForRepositoryResult.h>
-#include <aws/codecommit/model/ListBranchesResult.h>
-#include <aws/codecommit/model/ListPullRequestsResult.h>
-#include <aws/codecommit/model/ListRepositoriesResult.h>
-#include <aws/codecommit/model/ListRepositoriesForApprovalRuleTemplateResult.h>
-#include <aws/codecommit/model/ListTagsForResourceResult.h>
-#include <aws/codecommit/model/MergeBranchesByFastForwardResult.h>
-#include <aws/codecommit/model/MergeBranchesBySquashResult.h>
-#include <aws/codecommit/model/MergeBranchesByThreeWayResult.h>
-#include <aws/codecommit/model/MergePullRequestByFastForwardResult.h>
-#include <aws/codecommit/model/MergePullRequestBySquashResult.h>
-#include <aws/codecommit/model/MergePullRequestByThreeWayResult.h>
-#include <aws/codecommit/model/PostCommentForComparedCommitResult.h>
-#include <aws/codecommit/model/PostCommentForPullRequestResult.h>
-#include <aws/codecommit/model/PostCommentReplyResult.h>
-#include <aws/codecommit/model/PutFileResult.h>
-#include <aws/codecommit/model/PutRepositoryTriggersResult.h>
-#include <aws/codecommit/model/TestRepositoryTriggersResult.h>
-#include <aws/codecommit/model/UpdateApprovalRuleTemplateContentResult.h>
-#include <aws/codecommit/model/UpdateApprovalRuleTemplateDescriptionResult.h>
-#include <aws/codecommit/model/UpdateApprovalRuleTemplateNameResult.h>
-#include <aws/codecommit/model/UpdateCommentResult.h>
-#include <aws/codecommit/model/UpdatePullRequestApprovalRuleContentResult.h>
-#include <aws/codecommit/model/UpdatePullRequestDescriptionResult.h>
-#include <aws/codecommit/model/UpdatePullRequestStatusResult.h>
-#include <aws/codecommit/model/UpdatePullRequestTitleResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codecommit/CodeCommitServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeCommit
 {
-
-namespace Model
-{
-        class AssociateApprovalRuleTemplateWithRepositoryRequest;
-        class BatchAssociateApprovalRuleTemplateWithRepositoriesRequest;
-        class BatchDescribeMergeConflictsRequest;
-        class BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest;
-        class BatchGetCommitsRequest;
-        class BatchGetRepositoriesRequest;
-        class CreateApprovalRuleTemplateRequest;
-        class CreateBranchRequest;
-        class CreateCommitRequest;
-        class CreatePullRequestRequest;
-        class CreatePullRequestApprovalRuleRequest;
-        class CreateRepositoryRequest;
-        class CreateUnreferencedMergeCommitRequest;
-        class DeleteApprovalRuleTemplateRequest;
-        class DeleteBranchRequest;
-        class DeleteCommentContentRequest;
-        class DeleteFileRequest;
-        class DeletePullRequestApprovalRuleRequest;
-        class DeleteRepositoryRequest;
-        class DescribeMergeConflictsRequest;
-        class DescribePullRequestEventsRequest;
-        class DisassociateApprovalRuleTemplateFromRepositoryRequest;
-        class EvaluatePullRequestApprovalRulesRequest;
-        class GetApprovalRuleTemplateRequest;
-        class GetBlobRequest;
-        class GetBranchRequest;
-        class GetCommentRequest;
-        class GetCommentReactionsRequest;
-        class GetCommentsForComparedCommitRequest;
-        class GetCommentsForPullRequestRequest;
-        class GetCommitRequest;
-        class GetDifferencesRequest;
-        class GetFileRequest;
-        class GetFolderRequest;
-        class GetMergeCommitRequest;
-        class GetMergeConflictsRequest;
-        class GetMergeOptionsRequest;
-        class GetPullRequestRequest;
-        class GetPullRequestApprovalStatesRequest;
-        class GetPullRequestOverrideStateRequest;
-        class GetRepositoryRequest;
-        class GetRepositoryTriggersRequest;
-        class ListApprovalRuleTemplatesRequest;
-        class ListAssociatedApprovalRuleTemplatesForRepositoryRequest;
-        class ListBranchesRequest;
-        class ListPullRequestsRequest;
-        class ListRepositoriesRequest;
-        class ListRepositoriesForApprovalRuleTemplateRequest;
-        class ListTagsForResourceRequest;
-        class MergeBranchesByFastForwardRequest;
-        class MergeBranchesBySquashRequest;
-        class MergeBranchesByThreeWayRequest;
-        class MergePullRequestByFastForwardRequest;
-        class MergePullRequestBySquashRequest;
-        class MergePullRequestByThreeWayRequest;
-        class OverridePullRequestApprovalRulesRequest;
-        class PostCommentForComparedCommitRequest;
-        class PostCommentForPullRequestRequest;
-        class PostCommentReplyRequest;
-        class PutCommentReactionRequest;
-        class PutFileRequest;
-        class PutRepositoryTriggersRequest;
-        class TagResourceRequest;
-        class TestRepositoryTriggersRequest;
-        class UntagResourceRequest;
-        class UpdateApprovalRuleTemplateContentRequest;
-        class UpdateApprovalRuleTemplateDescriptionRequest;
-        class UpdateApprovalRuleTemplateNameRequest;
-        class UpdateCommentRequest;
-        class UpdateDefaultBranchRequest;
-        class UpdatePullRequestApprovalRuleContentRequest;
-        class UpdatePullRequestApprovalStateRequest;
-        class UpdatePullRequestDescriptionRequest;
-        class UpdatePullRequestStatusRequest;
-        class UpdatePullRequestTitleRequest;
-        class UpdateRepositoryDescriptionRequest;
-        class UpdateRepositoryNameRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> AssociateApprovalRuleTemplateWithRepositoryOutcome;
-        typedef Aws::Utils::Outcome<BatchAssociateApprovalRuleTemplateWithRepositoriesResult, CodeCommitError> BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<BatchDescribeMergeConflictsResult, CodeCommitError> BatchDescribeMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<BatchDisassociateApprovalRuleTemplateFromRepositoriesResult, CodeCommitError> BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<BatchGetCommitsResult, CodeCommitError> BatchGetCommitsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, CodeCommitError> BatchGetRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<CreateApprovalRuleTemplateResult, CodeCommitError> CreateApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> CreateBranchOutcome;
-        typedef Aws::Utils::Outcome<CreateCommitResult, CodeCommitError> CreateCommitOutcome;
-        typedef Aws::Utils::Outcome<CreatePullRequestResult, CodeCommitError> CreatePullRequestOutcome;
-        typedef Aws::Utils::Outcome<CreatePullRequestApprovalRuleResult, CodeCommitError> CreatePullRequestApprovalRuleOutcome;
-        typedef Aws::Utils::Outcome<CreateRepositoryResult, CodeCommitError> CreateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<CreateUnreferencedMergeCommitResult, CodeCommitError> CreateUnreferencedMergeCommitOutcome;
-        typedef Aws::Utils::Outcome<DeleteApprovalRuleTemplateResult, CodeCommitError> DeleteApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteBranchResult, CodeCommitError> DeleteBranchOutcome;
-        typedef Aws::Utils::Outcome<DeleteCommentContentResult, CodeCommitError> DeleteCommentContentOutcome;
-        typedef Aws::Utils::Outcome<DeleteFileResult, CodeCommitError> DeleteFileOutcome;
-        typedef Aws::Utils::Outcome<DeletePullRequestApprovalRuleResult, CodeCommitError> DeletePullRequestApprovalRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteRepositoryResult, CodeCommitError> DeleteRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeMergeConflictsResult, CodeCommitError> DescribeMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<DescribePullRequestEventsResult, CodeCommitError> DescribePullRequestEventsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> DisassociateApprovalRuleTemplateFromRepositoryOutcome;
-        typedef Aws::Utils::Outcome<EvaluatePullRequestApprovalRulesResult, CodeCommitError> EvaluatePullRequestApprovalRulesOutcome;
-        typedef Aws::Utils::Outcome<GetApprovalRuleTemplateResult, CodeCommitError> GetApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetBlobResult, CodeCommitError> GetBlobOutcome;
-        typedef Aws::Utils::Outcome<GetBranchResult, CodeCommitError> GetBranchOutcome;
-        typedef Aws::Utils::Outcome<GetCommentResult, CodeCommitError> GetCommentOutcome;
-        typedef Aws::Utils::Outcome<GetCommentReactionsResult, CodeCommitError> GetCommentReactionsOutcome;
-        typedef Aws::Utils::Outcome<GetCommentsForComparedCommitResult, CodeCommitError> GetCommentsForComparedCommitOutcome;
-        typedef Aws::Utils::Outcome<GetCommentsForPullRequestResult, CodeCommitError> GetCommentsForPullRequestOutcome;
-        typedef Aws::Utils::Outcome<GetCommitResult, CodeCommitError> GetCommitOutcome;
-        typedef Aws::Utils::Outcome<GetDifferencesResult, CodeCommitError> GetDifferencesOutcome;
-        typedef Aws::Utils::Outcome<GetFileResult, CodeCommitError> GetFileOutcome;
-        typedef Aws::Utils::Outcome<GetFolderResult, CodeCommitError> GetFolderOutcome;
-        typedef Aws::Utils::Outcome<GetMergeCommitResult, CodeCommitError> GetMergeCommitOutcome;
-        typedef Aws::Utils::Outcome<GetMergeConflictsResult, CodeCommitError> GetMergeConflictsOutcome;
-        typedef Aws::Utils::Outcome<GetMergeOptionsResult, CodeCommitError> GetMergeOptionsOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestResult, CodeCommitError> GetPullRequestOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestApprovalStatesResult, CodeCommitError> GetPullRequestApprovalStatesOutcome;
-        typedef Aws::Utils::Outcome<GetPullRequestOverrideStateResult, CodeCommitError> GetPullRequestOverrideStateOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryResult, CodeCommitError> GetRepositoryOutcome;
-        typedef Aws::Utils::Outcome<GetRepositoryTriggersResult, CodeCommitError> GetRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<ListApprovalRuleTemplatesResult, CodeCommitError> ListApprovalRuleTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListAssociatedApprovalRuleTemplatesForRepositoryResult, CodeCommitError> ListAssociatedApprovalRuleTemplatesForRepositoryOutcome;
-        typedef Aws::Utils::Outcome<ListBranchesResult, CodeCommitError> ListBranchesOutcome;
-        typedef Aws::Utils::Outcome<ListPullRequestsResult, CodeCommitError> ListPullRequestsOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeCommitError> ListRepositoriesOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoriesForApprovalRuleTemplateResult, CodeCommitError> ListRepositoriesForApprovalRuleTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeCommitError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesByFastForwardResult, CodeCommitError> MergeBranchesByFastForwardOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesBySquashResult, CodeCommitError> MergeBranchesBySquashOutcome;
-        typedef Aws::Utils::Outcome<MergeBranchesByThreeWayResult, CodeCommitError> MergeBranchesByThreeWayOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestByFastForwardResult, CodeCommitError> MergePullRequestByFastForwardOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestBySquashResult, CodeCommitError> MergePullRequestBySquashOutcome;
-        typedef Aws::Utils::Outcome<MergePullRequestByThreeWayResult, CodeCommitError> MergePullRequestByThreeWayOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> OverridePullRequestApprovalRulesOutcome;
-        typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, CodeCommitError> PostCommentForComparedCommitOutcome;
-        typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, CodeCommitError> PostCommentForPullRequestOutcome;
-        typedef Aws::Utils::Outcome<PostCommentReplyResult, CodeCommitError> PostCommentReplyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> PutCommentReactionOutcome;
-        typedef Aws::Utils::Outcome<PutFileResult, CodeCommitError> PutFileOutcome;
-        typedef Aws::Utils::Outcome<PutRepositoryTriggersResult, CodeCommitError> PutRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestRepositoryTriggersResult, CodeCommitError> TestRepositoryTriggersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateContentResult, CodeCommitError> UpdateApprovalRuleTemplateContentOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateDescriptionResult, CodeCommitError> UpdateApprovalRuleTemplateDescriptionOutcome;
-        typedef Aws::Utils::Outcome<UpdateApprovalRuleTemplateNameResult, CodeCommitError> UpdateApprovalRuleTemplateNameOutcome;
-        typedef Aws::Utils::Outcome<UpdateCommentResult, CodeCommitError> UpdateCommentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateDefaultBranchOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestApprovalRuleContentResult, CodeCommitError> UpdatePullRequestApprovalRuleContentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdatePullRequestApprovalStateOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestDescriptionResult, CodeCommitError> UpdatePullRequestDescriptionOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestStatusResult, CodeCommitError> UpdatePullRequestStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdatePullRequestTitleResult, CodeCommitError> UpdatePullRequestTitleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryDescriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryNameOutcome;
-
-        typedef std::future<AssociateApprovalRuleTemplateWithRepositoryOutcome> AssociateApprovalRuleTemplateWithRepositoryOutcomeCallable;
-        typedef std::future<BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome> BatchAssociateApprovalRuleTemplateWithRepositoriesOutcomeCallable;
-        typedef std::future<BatchDescribeMergeConflictsOutcome> BatchDescribeMergeConflictsOutcomeCallable;
-        typedef std::future<BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome> BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcomeCallable;
-        typedef std::future<BatchGetCommitsOutcome> BatchGetCommitsOutcomeCallable;
-        typedef std::future<BatchGetRepositoriesOutcome> BatchGetRepositoriesOutcomeCallable;
-        typedef std::future<CreateApprovalRuleTemplateOutcome> CreateApprovalRuleTemplateOutcomeCallable;
-        typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
-        typedef std::future<CreateCommitOutcome> CreateCommitOutcomeCallable;
-        typedef std::future<CreatePullRequestOutcome> CreatePullRequestOutcomeCallable;
-        typedef std::future<CreatePullRequestApprovalRuleOutcome> CreatePullRequestApprovalRuleOutcomeCallable;
-        typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
-        typedef std::future<CreateUnreferencedMergeCommitOutcome> CreateUnreferencedMergeCommitOutcomeCallable;
-        typedef std::future<DeleteApprovalRuleTemplateOutcome> DeleteApprovalRuleTemplateOutcomeCallable;
-        typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
-        typedef std::future<DeleteCommentContentOutcome> DeleteCommentContentOutcomeCallable;
-        typedef std::future<DeleteFileOutcome> DeleteFileOutcomeCallable;
-        typedef std::future<DeletePullRequestApprovalRuleOutcome> DeletePullRequestApprovalRuleOutcomeCallable;
-        typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
-        typedef std::future<DescribeMergeConflictsOutcome> DescribeMergeConflictsOutcomeCallable;
-        typedef std::future<DescribePullRequestEventsOutcome> DescribePullRequestEventsOutcomeCallable;
-        typedef std::future<DisassociateApprovalRuleTemplateFromRepositoryOutcome> DisassociateApprovalRuleTemplateFromRepositoryOutcomeCallable;
-        typedef std::future<EvaluatePullRequestApprovalRulesOutcome> EvaluatePullRequestApprovalRulesOutcomeCallable;
-        typedef std::future<GetApprovalRuleTemplateOutcome> GetApprovalRuleTemplateOutcomeCallable;
-        typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
-        typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
-        typedef std::future<GetCommentOutcome> GetCommentOutcomeCallable;
-        typedef std::future<GetCommentReactionsOutcome> GetCommentReactionsOutcomeCallable;
-        typedef std::future<GetCommentsForComparedCommitOutcome> GetCommentsForComparedCommitOutcomeCallable;
-        typedef std::future<GetCommentsForPullRequestOutcome> GetCommentsForPullRequestOutcomeCallable;
-        typedef std::future<GetCommitOutcome> GetCommitOutcomeCallable;
-        typedef std::future<GetDifferencesOutcome> GetDifferencesOutcomeCallable;
-        typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
-        typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
-        typedef std::future<GetMergeCommitOutcome> GetMergeCommitOutcomeCallable;
-        typedef std::future<GetMergeConflictsOutcome> GetMergeConflictsOutcomeCallable;
-        typedef std::future<GetMergeOptionsOutcome> GetMergeOptionsOutcomeCallable;
-        typedef std::future<GetPullRequestOutcome> GetPullRequestOutcomeCallable;
-        typedef std::future<GetPullRequestApprovalStatesOutcome> GetPullRequestApprovalStatesOutcomeCallable;
-        typedef std::future<GetPullRequestOverrideStateOutcome> GetPullRequestOverrideStateOutcomeCallable;
-        typedef std::future<GetRepositoryOutcome> GetRepositoryOutcomeCallable;
-        typedef std::future<GetRepositoryTriggersOutcome> GetRepositoryTriggersOutcomeCallable;
-        typedef std::future<ListApprovalRuleTemplatesOutcome> ListApprovalRuleTemplatesOutcomeCallable;
-        typedef std::future<ListAssociatedApprovalRuleTemplatesForRepositoryOutcome> ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable;
-        typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
-        typedef std::future<ListPullRequestsOutcome> ListPullRequestsOutcomeCallable;
-        typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
-        typedef std::future<ListRepositoriesForApprovalRuleTemplateOutcome> ListRepositoriesForApprovalRuleTemplateOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<MergeBranchesByFastForwardOutcome> MergeBranchesByFastForwardOutcomeCallable;
-        typedef std::future<MergeBranchesBySquashOutcome> MergeBranchesBySquashOutcomeCallable;
-        typedef std::future<MergeBranchesByThreeWayOutcome> MergeBranchesByThreeWayOutcomeCallable;
-        typedef std::future<MergePullRequestByFastForwardOutcome> MergePullRequestByFastForwardOutcomeCallable;
-        typedef std::future<MergePullRequestBySquashOutcome> MergePullRequestBySquashOutcomeCallable;
-        typedef std::future<MergePullRequestByThreeWayOutcome> MergePullRequestByThreeWayOutcomeCallable;
-        typedef std::future<OverridePullRequestApprovalRulesOutcome> OverridePullRequestApprovalRulesOutcomeCallable;
-        typedef std::future<PostCommentForComparedCommitOutcome> PostCommentForComparedCommitOutcomeCallable;
-        typedef std::future<PostCommentForPullRequestOutcome> PostCommentForPullRequestOutcomeCallable;
-        typedef std::future<PostCommentReplyOutcome> PostCommentReplyOutcomeCallable;
-        typedef std::future<PutCommentReactionOutcome> PutCommentReactionOutcomeCallable;
-        typedef std::future<PutFileOutcome> PutFileOutcomeCallable;
-        typedef std::future<PutRepositoryTriggersOutcome> PutRepositoryTriggersOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TestRepositoryTriggersOutcome> TestRepositoryTriggersOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApprovalRuleTemplateContentOutcome> UpdateApprovalRuleTemplateContentOutcomeCallable;
-        typedef std::future<UpdateApprovalRuleTemplateDescriptionOutcome> UpdateApprovalRuleTemplateDescriptionOutcomeCallable;
-        typedef std::future<UpdateApprovalRuleTemplateNameOutcome> UpdateApprovalRuleTemplateNameOutcomeCallable;
-        typedef std::future<UpdateCommentOutcome> UpdateCommentOutcomeCallable;
-        typedef std::future<UpdateDefaultBranchOutcome> UpdateDefaultBranchOutcomeCallable;
-        typedef std::future<UpdatePullRequestApprovalRuleContentOutcome> UpdatePullRequestApprovalRuleContentOutcomeCallable;
-        typedef std::future<UpdatePullRequestApprovalStateOutcome> UpdatePullRequestApprovalStateOutcomeCallable;
-        typedef std::future<UpdatePullRequestDescriptionOutcome> UpdatePullRequestDescriptionOutcomeCallable;
-        typedef std::future<UpdatePullRequestStatusOutcome> UpdatePullRequestStatusOutcomeCallable;
-        typedef std::future<UpdatePullRequestTitleOutcome> UpdatePullRequestTitleOutcomeCallable;
-        typedef std::future<UpdateRepositoryDescriptionOutcome> UpdateRepositoryDescriptionOutcomeCallable;
-        typedef std::future<UpdateRepositoryNameOutcome> UpdateRepositoryNameOutcomeCallable;
-} // namespace Model
-
-  class CodeCommitClient;
-
-    typedef std::function<void(const CodeCommitClient*, const Model::AssociateApprovalRuleTemplateWithRepositoryRequest&, const Model::AssociateApprovalRuleTemplateWithRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesRequest&, const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::BatchDescribeMergeConflictsRequest&, const Model::BatchDescribeMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeMergeConflictsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest&, const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::BatchGetCommitsRequest&, const Model::BatchGetCommitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCommitsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::BatchGetRepositoriesRequest&, const Model::BatchGetRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreateApprovalRuleTemplateRequest&, const Model::CreateApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApprovalRuleTemplateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreateCommitRequest&, const Model::CreateCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreatePullRequestRequest&, const Model::CreatePullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePullRequestResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreatePullRequestApprovalRuleRequest&, const Model::CreatePullRequestApprovalRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePullRequestApprovalRuleResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::CreateUnreferencedMergeCommitRequest&, const Model::CreateUnreferencedMergeCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUnreferencedMergeCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeleteApprovalRuleTemplateRequest&, const Model::DeleteApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApprovalRuleTemplateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeleteCommentContentRequest&, const Model::DeleteCommentContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCommentContentResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeleteFileRequest&, const Model::DeleteFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeletePullRequestApprovalRuleRequest&, const Model::DeletePullRequestApprovalRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePullRequestApprovalRuleResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DescribeMergeConflictsRequest&, const Model::DescribeMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMergeConflictsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DescribePullRequestEventsRequest&, const Model::DescribePullRequestEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePullRequestEventsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::DisassociateApprovalRuleTemplateFromRepositoryRequest&, const Model::DisassociateApprovalRuleTemplateFromRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::EvaluatePullRequestApprovalRulesRequest&, const Model::EvaluatePullRequestApprovalRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvaluatePullRequestApprovalRulesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetApprovalRuleTemplateRequest&, const Model::GetApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApprovalRuleTemplateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlobResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetCommentRequest&, const Model::GetCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetCommentReactionsRequest&, const Model::GetCommentReactionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentReactionsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetCommentsForComparedCommitRequest&, const Model::GetCommentsForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentsForComparedCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetCommentsForPullRequestRequest&, const Model::GetCommentsForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentsForPullRequestResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetCommitRequest&, const Model::GetCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetDifferencesRequest&, const Model::GetDifferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDifferencesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetFileRequest&, const Model::GetFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFileResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetFolderRequest&, const Model::GetFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFolderResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetMergeCommitRequest&, const Model::GetMergeCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetMergeConflictsRequest&, const Model::GetMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeConflictsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetMergeOptionsRequest&, const Model::GetMergeOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeOptionsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetPullRequestRequest&, const Model::GetPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPullRequestResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetPullRequestApprovalStatesRequest&, const Model::GetPullRequestApprovalStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPullRequestApprovalStatesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetPullRequestOverrideStateRequest&, const Model::GetPullRequestOverrideStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPullRequestOverrideStateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetRepositoryRequest&, const Model::GetRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::GetRepositoryTriggersRequest&, const Model::GetRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryTriggersResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListApprovalRuleTemplatesRequest&, const Model::ListApprovalRuleTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovalRuleTemplatesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest&, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListPullRequestsRequest&, const Model::ListPullRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPullRequestsResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesForApprovalRuleTemplateRequest&, const Model::ListRepositoriesForApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesByFastForwardRequest&, const Model::MergeBranchesByFastForwardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesByFastForwardResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesBySquashRequest&, const Model::MergeBranchesBySquashOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesBySquashResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergeBranchesByThreeWayRequest&, const Model::MergeBranchesByThreeWayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeBranchesByThreeWayResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestByFastForwardRequest&, const Model::MergePullRequestByFastForwardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestByFastForwardResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestBySquashRequest&, const Model::MergePullRequestBySquashOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestBySquashResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::MergePullRequestByThreeWayRequest&, const Model::MergePullRequestByThreeWayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergePullRequestByThreeWayResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::OverridePullRequestApprovalRulesRequest&, const Model::OverridePullRequestApprovalRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OverridePullRequestApprovalRulesResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForComparedCommitRequest&, const Model::PostCommentForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForComparedCommitResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForPullRequestRequest&, const Model::PostCommentForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForPullRequestResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PostCommentReplyRequest&, const Model::PostCommentReplyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentReplyResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PutCommentReactionRequest&, const Model::PutCommentReactionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCommentReactionResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PutFileRequest&, const Model::PutFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::PutRepositoryTriggersRequest&, const Model::PutRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryTriggersResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::TestRepositoryTriggersRequest&, const Model::TestRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestRepositoryTriggersResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateApprovalRuleTemplateContentRequest&, const Model::UpdateApprovalRuleTemplateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApprovalRuleTemplateContentResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateApprovalRuleTemplateDescriptionRequest&, const Model::UpdateApprovalRuleTemplateDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateApprovalRuleTemplateNameRequest&, const Model::UpdateApprovalRuleTemplateNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApprovalRuleTemplateNameResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateCommentRequest&, const Model::UpdateCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCommentResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateDefaultBranchRequest&, const Model::UpdateDefaultBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDefaultBranchResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestApprovalRuleContentRequest&, const Model::UpdatePullRequestApprovalRuleContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestApprovalRuleContentResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestApprovalStateRequest&, const Model::UpdatePullRequestApprovalStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestApprovalStateResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestDescriptionRequest&, const Model::UpdatePullRequestDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestDescriptionResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestStatusRequest&, const Model::UpdatePullRequestStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestStatusResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestTitleRequest&, const Model::UpdatePullRequestTitleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestTitleResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryDescriptionRequest&, const Model::UpdateRepositoryDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryDescriptionResponseReceivedHandler;
-    typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryNameRequest&, const Model::UpdateRepositoryNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryNameResponseReceivedHandler;
-
   /**
    * <fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API
    * Reference</i>. This reference provides descriptions of the operations and data
@@ -592,32 +175,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
    * CodeCommit User Guide</a>.</p>
    */
-  class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient
+  class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeCommitClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeCommitClient(const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration(),
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeCommitClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeCommitClient(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeCommitClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeCommitClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeCommitClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeCommitClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeCommitClient();
-
 
         /**
          * <p>Creates an association between an approval rule template and a specified
@@ -2094,89 +1705,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeCommitEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateApprovalRuleTemplateWithRepositoryAsyncHelper(const Model::AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchAssociateApprovalRuleTemplateWithRepositoriesAsyncHelper(const Model::BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDescribeMergeConflictsAsyncHelper(const Model::BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDisassociateApprovalRuleTemplateFromRepositoriesAsyncHelper(const Model::BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetCommitsAsyncHelper(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetRepositoriesAsyncHelper(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApprovalRuleTemplateAsyncHelper(const Model::CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCommitAsyncHelper(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePullRequestAsyncHelper(const Model::CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePullRequestApprovalRuleAsyncHelper(const Model::CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUnreferencedMergeCommitAsyncHelper(const Model::CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApprovalRuleTemplateAsyncHelper(const Model::DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCommentContentAsyncHelper(const Model::DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFileAsyncHelper(const Model::DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePullRequestApprovalRuleAsyncHelper(const Model::DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMergeConflictsAsyncHelper(const Model::DescribeMergeConflictsRequest& request, const DescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePullRequestEventsAsyncHelper(const Model::DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateApprovalRuleTemplateFromRepositoryAsyncHelper(const Model::DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EvaluatePullRequestApprovalRulesAsyncHelper(const Model::EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApprovalRuleTemplateAsyncHelper(const Model::GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBlobAsyncHelper(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCommentAsyncHelper(const Model::GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCommentReactionsAsyncHelper(const Model::GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCommentsForComparedCommitAsyncHelper(const Model::GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCommentsForPullRequestAsyncHelper(const Model::GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCommitAsyncHelper(const Model::GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDifferencesAsyncHelper(const Model::GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFileAsyncHelper(const Model::GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFolderAsyncHelper(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMergeCommitAsyncHelper(const Model::GetMergeCommitRequest& request, const GetMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMergeConflictsAsyncHelper(const Model::GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMergeOptionsAsyncHelper(const Model::GetMergeOptionsRequest& request, const GetMergeOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPullRequestAsyncHelper(const Model::GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPullRequestApprovalStatesAsyncHelper(const Model::GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPullRequestOverrideStateAsyncHelper(const Model::GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryAsyncHelper(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRepositoryTriggersAsyncHelper(const Model::GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApprovalRuleTemplatesAsyncHelper(const Model::ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssociatedApprovalRuleTemplatesForRepositoryAsyncHelper(const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBranchesAsyncHelper(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPullRequestsAsyncHelper(const Model::ListPullRequestsRequest& request, const ListPullRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRepositoriesAsyncHelper(const Model::ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRepositoriesForApprovalRuleTemplateAsyncHelper(const Model::ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeBranchesByFastForwardAsyncHelper(const Model::MergeBranchesByFastForwardRequest& request, const MergeBranchesByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeBranchesBySquashAsyncHelper(const Model::MergeBranchesBySquashRequest& request, const MergeBranchesBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeBranchesByThreeWayAsyncHelper(const Model::MergeBranchesByThreeWayRequest& request, const MergeBranchesByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergePullRequestByFastForwardAsyncHelper(const Model::MergePullRequestByFastForwardRequest& request, const MergePullRequestByFastForwardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergePullRequestBySquashAsyncHelper(const Model::MergePullRequestBySquashRequest& request, const MergePullRequestBySquashResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergePullRequestByThreeWayAsyncHelper(const Model::MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void OverridePullRequestApprovalRulesAsyncHelper(const Model::OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostCommentForComparedCommitAsyncHelper(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostCommentForPullRequestAsyncHelper(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostCommentReplyAsyncHelper(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutCommentReactionAsyncHelper(const Model::PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutFileAsyncHelper(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRepositoryTriggersAsyncHelper(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestRepositoryTriggersAsyncHelper(const Model::TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApprovalRuleTemplateContentAsyncHelper(const Model::UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApprovalRuleTemplateDescriptionAsyncHelper(const Model::UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApprovalRuleTemplateNameAsyncHelper(const Model::UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCommentAsyncHelper(const Model::UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDefaultBranchAsyncHelper(const Model::UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePullRequestApprovalRuleContentAsyncHelper(const Model::UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePullRequestApprovalStateAsyncHelper(const Model::UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePullRequestDescriptionAsyncHelper(const Model::UpdatePullRequestDescriptionRequest& request, const UpdatePullRequestDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePullRequestStatusAsyncHelper(const Model::UpdatePullRequestStatusRequest& request, const UpdatePullRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePullRequestTitleAsyncHelper(const Model::UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRepositoryDescriptionAsyncHelper(const Model::UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRepositoryNameAsyncHelper(const Model::UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>;
+      void init(const CodeCommitClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeCommitClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeCommitEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeCommit

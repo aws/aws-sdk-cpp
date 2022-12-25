@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/TestCaseFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API TestCaseFilter
+  class TestCaseFilter
   {
   public:
-    TestCaseFilter();
-    TestCaseFilter(Aws::Utils::Json::JsonView jsonValue);
-    TestCaseFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API TestCaseFilter();
+    AWS_CODEBUILD_API TestCaseFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API TestCaseFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,10 +179,10 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
   };
 
 } // namespace Model

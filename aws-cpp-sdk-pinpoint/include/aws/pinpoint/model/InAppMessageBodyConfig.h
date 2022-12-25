@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageBodyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageBodyConfig
+  class InAppMessageBodyConfig
   {
   public:
-    InAppMessageBodyConfig();
-    InAppMessageBodyConfig(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageBodyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageBodyConfig();
+    AWS_PINPOINT_API InAppMessageBodyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageBodyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Alignment m_alignment;
-    bool m_alignmentHasBeenSet;
+    bool m_alignmentHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_textColor;
-    bool m_textColorHasBeenSet;
+    bool m_textColorHasBeenSet = false;
   };
 
 } // namespace Model

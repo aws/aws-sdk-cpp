@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EvaluationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API EvaluationResult
+  class EvaluationResult
   {
   public:
-    EvaluationResult();
-    EvaluationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EvaluationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API EvaluationResult();
+    AWS_IAM_API EvaluationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API EvaluationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -703,31 +703,31 @@ namespace Model
   private:
 
     Aws::String m_evalActionName;
-    bool m_evalActionNameHasBeenSet;
+    bool m_evalActionNameHasBeenSet = false;
 
     Aws::String m_evalResourceName;
-    bool m_evalResourceNameHasBeenSet;
+    bool m_evalResourceNameHasBeenSet = false;
 
     PolicyEvaluationDecisionType m_evalDecision;
-    bool m_evalDecisionHasBeenSet;
+    bool m_evalDecisionHasBeenSet = false;
 
     Aws::Vector<Statement> m_matchedStatements;
-    bool m_matchedStatementsHasBeenSet;
+    bool m_matchedStatementsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;
-    bool m_missingContextValuesHasBeenSet;
+    bool m_missingContextValuesHasBeenSet = false;
 
     OrganizationsDecisionDetail m_organizationsDecisionDetail;
-    bool m_organizationsDecisionDetailHasBeenSet;
+    bool m_organizationsDecisionDetailHasBeenSet = false;
 
     PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
-    bool m_permissionsBoundaryDecisionDetailHasBeenSet;
+    bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
 
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
-    bool m_evalDecisionDetailsHasBeenSet;
+    bool m_evalDecisionDetailsHasBeenSet = false;
 
     Aws::Vector<ResourceSpecificResult> m_resourceSpecificResults;
-    bool m_resourceSpecificResultsHasBeenSet;
+    bool m_resourceSpecificResultsHasBeenSet = false;
   };
 
 } // namespace Model

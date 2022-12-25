@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/AntennaDownlinkConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API AntennaDownlinkConfig
+  class AntennaDownlinkConfig
   {
   public:
-    AntennaDownlinkConfig();
-    AntennaDownlinkConfig(Aws::Utils::Json::JsonView jsonValue);
-    AntennaDownlinkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API AntennaDownlinkConfig();
+    AWS_GROUNDSTATION_API AntennaDownlinkConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API AntennaDownlinkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SpectrumConfig m_spectrumConfig;
-    bool m_spectrumConfigHasBeenSet;
+    bool m_spectrumConfigHasBeenSet = false;
   };
 
 } // namespace Model

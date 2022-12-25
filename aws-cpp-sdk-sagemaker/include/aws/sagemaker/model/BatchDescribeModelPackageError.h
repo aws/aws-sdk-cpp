@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackageError">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API BatchDescribeModelPackageError
+  class BatchDescribeModelPackageError
   {
   public:
-    BatchDescribeModelPackageError();
-    BatchDescribeModelPackageError(Aws::Utils::Json::JsonView jsonValue);
-    BatchDescribeModelPackageError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API BatchDescribeModelPackageError();
+    AWS_SAGEMAKER_API BatchDescribeModelPackageError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API BatchDescribeModelPackageError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorResponse;
-    bool m_errorResponseHasBeenSet;
+    bool m_errorResponseHasBeenSet = false;
   };
 
 } // namespace Model

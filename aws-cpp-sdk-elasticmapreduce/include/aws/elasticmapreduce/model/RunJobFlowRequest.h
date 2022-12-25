@@ -35,10 +35,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlowInput">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API RunJobFlowRequest : public EMRRequest
+  class RunJobFlowRequest : public EMRRequest
   {
   public:
-    RunJobFlowRequest();
+    AWS_EMR_API RunJobFlowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,9 +46,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RunJobFlow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1807,91 +1807,91 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_logEncryptionKmsKeyId;
-    bool m_logEncryptionKmsKeyIdHasBeenSet;
+    bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::String m_amiVersion;
-    bool m_amiVersionHasBeenSet;
+    bool m_amiVersionHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     JobFlowInstancesConfig m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Vector<StepConfig> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
 
     Aws::Vector<BootstrapActionConfig> m_bootstrapActions;
-    bool m_bootstrapActionsHasBeenSet;
+    bool m_bootstrapActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedProducts;
-    bool m_supportedProductsHasBeenSet;
+    bool m_supportedProductsHasBeenSet = false;
 
     Aws::Vector<SupportedProductConfig> m_newSupportedProducts;
-    bool m_newSupportedProductsHasBeenSet;
+    bool m_newSupportedProductsHasBeenSet = false;
 
     Aws::Vector<Application> m_applications;
-    bool m_applicationsHasBeenSet;
+    bool m_applicationsHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     bool m_visibleToAllUsers;
-    bool m_visibleToAllUsersHasBeenSet;
+    bool m_visibleToAllUsersHasBeenSet = false;
 
     Aws::String m_jobFlowRole;
-    bool m_jobFlowRoleHasBeenSet;
+    bool m_jobFlowRoleHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_autoScalingRole;
-    bool m_autoScalingRoleHasBeenSet;
+    bool m_autoScalingRoleHasBeenSet = false;
 
     ScaleDownBehavior m_scaleDownBehavior;
-    bool m_scaleDownBehaviorHasBeenSet;
+    bool m_scaleDownBehaviorHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
 
     int m_ebsRootVolumeSize;
-    bool m_ebsRootVolumeSizeHasBeenSet;
+    bool m_ebsRootVolumeSizeHasBeenSet = false;
 
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
-    bool m_repoUpgradeOnBootHasBeenSet;
+    bool m_repoUpgradeOnBootHasBeenSet = false;
 
     KerberosAttributes m_kerberosAttributes;
-    bool m_kerberosAttributesHasBeenSet;
+    bool m_kerberosAttributesHasBeenSet = false;
 
     int m_stepConcurrencyLevel;
-    bool m_stepConcurrencyLevelHasBeenSet;
+    bool m_stepConcurrencyLevelHasBeenSet = false;
 
     ManagedScalingPolicy m_managedScalingPolicy;
-    bool m_managedScalingPolicyHasBeenSet;
+    bool m_managedScalingPolicyHasBeenSet = false;
 
     Aws::Vector<PlacementGroupConfig> m_placementGroupConfigs;
-    bool m_placementGroupConfigsHasBeenSet;
+    bool m_placementGroupConfigsHasBeenSet = false;
 
     AutoTerminationPolicy m_autoTerminationPolicy;
-    bool m_autoTerminationPolicyHasBeenSet;
+    bool m_autoTerminationPolicyHasBeenSet = false;
 
     Aws::String m_oSReleaseLabel;
-    bool m_oSReleaseLabelHasBeenSet;
+    bool m_oSReleaseLabelHasBeenSet = false;
   };
 
 } // namespace Model

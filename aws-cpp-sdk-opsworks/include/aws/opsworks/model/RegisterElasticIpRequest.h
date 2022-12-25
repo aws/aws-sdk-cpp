@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API RegisterElasticIpRequest : public OpsWorksRequest
+  class RegisterElasticIpRequest : public OpsWorksRequest
   {
   public:
-    RegisterElasticIpRequest();
+    AWS_OPSWORKS_API RegisterElasticIpRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterElasticIp"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

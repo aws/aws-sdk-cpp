@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentityInput">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API GetCredentialsForIdentityRequest : public CognitoIdentityRequest
+  class GetCredentialsForIdentityRequest : public CognitoIdentityRequest
   {
   public:
-    GetCredentialsForIdentityRequest();
+    AWS_COGNITOIDENTITY_API GetCredentialsForIdentityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCredentialsForIdentity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -317,13 +317,13 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_logins;
-    bool m_loginsHasBeenSet;
+    bool m_loginsHasBeenSet = false;
 
     Aws::String m_customRoleArn;
-    bool m_customRoleArnHasBeenSet;
+    bool m_customRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

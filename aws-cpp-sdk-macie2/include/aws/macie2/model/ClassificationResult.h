@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ClassificationResult
+  class ClassificationResult
   {
   public:
-    ClassificationResult();
-    ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ClassificationResult();
+    AWS_MACIE2_API ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,22 +281,22 @@ namespace Model
   private:
 
     bool m_additionalOccurrences;
-    bool m_additionalOccurrencesHasBeenSet;
+    bool m_additionalOccurrencesHasBeenSet = false;
 
     CustomDataIdentifiers m_customDataIdentifiers;
-    bool m_customDataIdentifiersHasBeenSet;
+    bool m_customDataIdentifiersHasBeenSet = false;
 
     Aws::String m_mimeType;
-    bool m_mimeTypeHasBeenSet;
+    bool m_mimeTypeHasBeenSet = false;
 
     Aws::Vector<SensitiveDataItem> m_sensitiveData;
-    bool m_sensitiveDataHasBeenSet;
+    bool m_sensitiveDataHasBeenSet = false;
 
     long long m_sizeClassified;
-    bool m_sizeClassifiedHasBeenSet;
+    bool m_sizeClassifiedHasBeenSet = false;
 
     ClassificationResultStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

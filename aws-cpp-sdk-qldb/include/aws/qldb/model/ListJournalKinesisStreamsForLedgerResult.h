@@ -26,12 +26,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult
+  class ListJournalKinesisStreamsForLedgerResult
   {
   public:
-    ListJournalKinesisStreamsForLedgerResult();
-    ListJournalKinesisStreamsForLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJournalKinesisStreamsForLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult();
+    AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API ListJournalKinesisStreamsForLedgerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API EventFilter
+  class EventFilter
   {
   public:
-    EventFilter();
-    EventFilter(Aws::Utils::Json::JsonView jsonValue);
-    EventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API EventFilter();
+    AWS_APPINTEGRATIONSSERVICE_API EventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API EventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StagingArea">AWS API
    * Reference</a></p>
    */
-  class AWS_DRS_API StagingArea
+  class StagingArea
   {
   public:
-    StagingArea();
-    StagingArea(Aws::Utils::Json::JsonView jsonValue);
-    StagingArea& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API StagingArea();
+    AWS_DRS_API StagingArea(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API StagingArea& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,16 +254,16 @@ namespace Model
   private:
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_stagingAccountID;
-    bool m_stagingAccountIDHasBeenSet;
+    bool m_stagingAccountIDHasBeenSet = false;
 
     Aws::String m_stagingSourceServerArn;
-    bool m_stagingSourceServerArnHasBeenSet;
+    bool m_stagingSourceServerArnHasBeenSet = false;
 
     ExtensionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

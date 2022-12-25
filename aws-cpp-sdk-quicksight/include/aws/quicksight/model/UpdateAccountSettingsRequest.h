@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API UpdateAccountSettingsRequest : public QuickSightRequest
+  class UpdateAccountSettingsRequest : public QuickSightRequest
   {
   public:
-    UpdateAccountSettingsRequest();
+    AWS_QUICKSIGHT_API UpdateAccountSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAccountSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -84,64 +84,64 @@ namespace Model
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline const Aws::String& GetDefaultNamespace() const{ return m_defaultNamespace; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline bool DefaultNamespaceHasBeenSet() const { return m_defaultNamespaceHasBeenSet; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(const Aws::String& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = value; }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(Aws::String&& value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace = std::move(value); }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline void SetDefaultNamespace(const char* value) { m_defaultNamespaceHasBeenSet = true; m_defaultNamespace.assign(value); }
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(const Aws::String& value) { SetDefaultNamespace(value); return *this;}
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(Aws::String&& value) { SetDefaultNamespace(std::move(value)); return *this;}
 
     /**
      * <p>The default namespace for this Amazon Web Services account. Currently, the
      * default is <code>default</code>. Identity and Access Management (IAM) users that
-     * register for the first time with Amazon QuickSight provide an email that becomes
-     * associated with the default namespace.</p>
+     * register for the first time with Amazon QuickSight provide an email address that
+     * becomes associated with the default namespace. </p>
      */
     inline UpdateAccountSettingsRequest& WithDefaultNamespace(const char* value) { SetDefaultNamespace(value); return *this;}
 
@@ -202,16 +202,56 @@ namespace Model
      */
     inline UpdateAccountSettingsRequest& WithNotificationEmail(const char* value) { SetNotificationEmail(value); return *this;}
 
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
+     * allow the account to be deleted.</p>
+     */
+    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
+     * allow the account to be deleted.</p>
+     */
+    inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
+     * allow the account to be deleted.</p>
+     */
+    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will
+     * allow the account to be deleted.</p>
+     */
+    inline UpdateAccountSettingsRequest& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
+
+    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,18 +36,18 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CustomResponse
+  class CustomResponse
   {
   public:
-    CustomResponse();
-    CustomResponse(Aws::Utils::Json::JsonView jsonValue);
-    CustomResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CustomResponse();
+    AWS_WAFV2_API CustomResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CustomResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
-     * codes that you can use in your custom reqponses, see <a
+     * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
      * status codes for custom response</a> in the <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -266,13 +266,13 @@ namespace Model
   private:
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::String m_customResponseBodyKey;
-    bool m_customResponseBodyKeyHasBeenSet;
+    bool m_customResponseBodyKeyHasBeenSet = false;
 
     Aws::Vector<CustomHTTPHeader> m_responseHeaders;
-    bool m_responseHeadersHasBeenSet;
+    bool m_responseHeadersHasBeenSet = false;
   };
 
 } // namespace Model

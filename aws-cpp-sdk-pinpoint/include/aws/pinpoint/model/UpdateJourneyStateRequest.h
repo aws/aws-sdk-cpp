@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API UpdateJourneyStateRequest : public PinpointRequest
+  class UpdateJourneyStateRequest : public PinpointRequest
   {
   public:
-    UpdateJourneyStateRequest();
+    AWS_PINPOINT_API UpdateJourneyStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateJourneyState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_journeyId;
-    bool m_journeyIdHasBeenSet;
+    bool m_journeyIdHasBeenSet = false;
 
     JourneyStateRequest m_journeyStateRequest;
-    bool m_journeyStateRequestHasBeenSet;
+    bool m_journeyStateRequestHasBeenSet = false;
   };
 
 } // namespace Model

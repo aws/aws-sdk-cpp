@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ProfilingStatus
+  class ProfilingStatus
   {
   public:
-    ProfilingStatus();
-    ProfilingStatus(Aws::Utils::Json::JsonView jsonValue);
-    ProfilingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API ProfilingStatus();
+    AWS_CODEGURUPROFILER_API ProfilingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API ProfilingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_latestAgentOrchestratedAt;
-    bool m_latestAgentOrchestratedAtHasBeenSet;
+    bool m_latestAgentOrchestratedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestAgentProfileReportedAt;
-    bool m_latestAgentProfileReportedAtHasBeenSet;
+    bool m_latestAgentProfileReportedAtHasBeenSet = false;
 
     AggregatedProfileTime m_latestAggregatedProfile;
-    bool m_latestAggregatedProfileHasBeenSet;
+    bool m_latestAggregatedProfileHasBeenSet = false;
   };
 
 } // namespace Model

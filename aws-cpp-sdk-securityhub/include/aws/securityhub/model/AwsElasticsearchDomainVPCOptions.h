@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainVPCOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions
+  class AwsElasticsearchDomainVPCOptions
   {
   public:
-    AwsElasticsearchDomainVPCOptions();
-    AwsElasticsearchDomainVPCOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainVPCOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
   };
 
 } // namespace Model

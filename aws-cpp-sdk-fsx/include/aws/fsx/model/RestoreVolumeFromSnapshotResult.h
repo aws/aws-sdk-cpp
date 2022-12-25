@@ -7,6 +7,8 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/VolumeLifecycle.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws
@@ -25,12 +27,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API RestoreVolumeFromSnapshotResult
+  class RestoreVolumeFromSnapshotResult
   {
   public:
-    RestoreVolumeFromSnapshotResult();
-    RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreVolumeFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API RestoreVolumeFromSnapshotResult();
+    AWS_FSX_API RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API RestoreVolumeFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -94,11 +96,63 @@ namespace Model
      */
     inline RestoreVolumeFromSnapshotResult& WithLifecycle(VolumeLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const{ return m_administrativeActions; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline void SetAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { m_administrativeActions = value; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline void SetAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { m_administrativeActions = std::move(value); }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline RestoreVolumeFromSnapshotResult& WithAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { SetAdministrativeActions(value); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline RestoreVolumeFromSnapshotResult& WithAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { SetAdministrativeActions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline RestoreVolumeFromSnapshotResult& AddAdministrativeActions(const AdministrativeAction& value) { m_administrativeActions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Amazon
+     * FSx system.</p>
+     */
+    inline RestoreVolumeFromSnapshotResult& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_volumeId;
 
     VolumeLifecycle m_lifecycle;
+
+    Aws::Vector<AdministrativeAction> m_administrativeActions;
   };
 
 } // namespace Model

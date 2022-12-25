@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Document">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Document
+  class Document
   {
   public:
-    Document();
-    Document(Aws::Utils::Json::JsonView jsonValue);
-    Document& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Document();
+    AWS_TEXTRACT_API Document(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_bytes;
-    bool m_bytesHasBeenSet;
+    bool m_bytesHasBeenSet = false;
 
     S3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet;
+    bool m_s3ObjectHasBeenSet = false;
   };
 
 } // namespace Model

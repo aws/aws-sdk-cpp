@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/LimitsExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API LimitsExceededException
+  class LimitsExceededException
   {
   public:
-    LimitsExceededException();
-    LimitsExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitsExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API LimitsExceededException();
+    AWS_SHIELD_API LimitsExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API LimitsExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -127,13 +127,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

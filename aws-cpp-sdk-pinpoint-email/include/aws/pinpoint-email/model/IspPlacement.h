@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/IspPlacement">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API IspPlacement
+  class IspPlacement
   {
   public:
-    IspPlacement();
-    IspPlacement(Aws::Utils::Json::JsonView jsonValue);
-    IspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API IspPlacement();
+    AWS_PINPOINTEMAIL_API IspPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API IspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_ispName;
-    bool m_ispNameHasBeenSet;
+    bool m_ispNameHasBeenSet = false;
 
     PlacementStatistics m_placementStatistics;
-    bool m_placementStatisticsHasBeenSet;
+    bool m_placementStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

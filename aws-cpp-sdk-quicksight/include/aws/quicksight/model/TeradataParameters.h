@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TeradataParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TeradataParameters
+  class TeradataParameters
   {
   public:
-    TeradataParameters();
-    TeradataParameters(Aws::Utils::Json::JsonView jsonValue);
-    TeradataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TeradataParameters();
+    AWS_QUICKSIGHT_API TeradataParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TeradataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

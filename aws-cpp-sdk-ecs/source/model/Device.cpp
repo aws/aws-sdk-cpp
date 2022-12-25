@@ -51,7 +51,7 @@ Device& Device::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("permissions"))
   {
-    Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(DeviceCgroupPermissionMapper::GetDeviceCgroupPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
@@ -80,7 +80,7 @@ JsonValue Device::Jsonize() const
 
   if(m_permissionsHasBeenSet)
   {
-   Array<JsonValue> permissionsJsonList(m_permissions.size());
+   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
    {
      permissionsJsonList[permissionsIndex].AsString(DeviceCgroupPermissionMapper::GetNameForDeviceCgroupPermission(m_permissions[permissionsIndex]));

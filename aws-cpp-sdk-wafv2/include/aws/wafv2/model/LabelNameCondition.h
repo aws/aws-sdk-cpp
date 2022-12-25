@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LabelNameCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API LabelNameCondition
+  class LabelNameCondition
   {
   public:
-    LabelNameCondition();
-    LabelNameCondition(Aws::Utils::Json::JsonView jsonValue);
-    LabelNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API LabelNameCondition();
+    AWS_WAFV2_API LabelNameCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API LabelNameCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_labelName;
-    bool m_labelNameHasBeenSet;
+    bool m_labelNameHasBeenSet = false;
   };
 
 } // namespace Model

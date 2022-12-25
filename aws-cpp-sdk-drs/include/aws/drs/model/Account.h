@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/Account">AWS API
    * Reference</a></p>
    */
-  class AWS_DRS_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API Account();
+    AWS_DRS_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_accountID;
-    bool m_accountIDHasBeenSet;
+    bool m_accountIDHasBeenSet = false;
   };
 
 } // namespace Model

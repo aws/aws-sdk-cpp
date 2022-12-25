@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVpnTunnelCertificateResponse
+  class ModifyVpnTunnelCertificateResponse
   {
   public:
-    ModifyVpnTunnelCertificateResponse();
-    ModifyVpnTunnelCertificateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpnTunnelCertificateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnTunnelCertificateResponse();
+    AWS_EC2_API ModifyVpnTunnelCertificateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnTunnelCertificateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline const VpnConnection& GetVpnConnection() const{ return m_vpnConnection; }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(const VpnConnection& value) { m_vpnConnection = value; }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(VpnConnection&& value) { m_vpnConnection = std::move(value); }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline ModifyVpnTunnelCertificateResponse& WithVpnConnection(const VpnConnection& value) { SetVpnConnection(value); return *this;}
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline ModifyVpnTunnelCertificateResponse& WithVpnConnection(VpnConnection&& value) { SetVpnConnection(std::move(value)); return *this;}
 
 

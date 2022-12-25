@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/CustomerAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API CustomerAction
+  class CustomerAction
   {
   public:
-    CustomerAction();
-    CustomerAction(Aws::Utils::Json::JsonView jsonValue);
-    CustomerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API CustomerAction();
+    AWS_IOTEVENTSDATA_API CustomerAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API CustomerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     CustomerActionName m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     SnoozeActionConfiguration m_snoozeActionConfiguration;
-    bool m_snoozeActionConfigurationHasBeenSet;
+    bool m_snoozeActionConfigurationHasBeenSet = false;
 
     EnableActionConfiguration m_enableActionConfiguration;
-    bool m_enableActionConfigurationHasBeenSet;
+    bool m_enableActionConfigurationHasBeenSet = false;
 
     DisableActionConfiguration m_disableActionConfiguration;
-    bool m_disableActionConfigurationHasBeenSet;
+    bool m_disableActionConfigurationHasBeenSet = false;
 
     AcknowledgeActionConfiguration m_acknowledgeActionConfiguration;
-    bool m_acknowledgeActionConfigurationHasBeenSet;
+    bool m_acknowledgeActionConfigurationHasBeenSet = false;
 
     ResetActionConfiguration m_resetActionConfiguration;
-    bool m_resetActionConfigurationHasBeenSet;
+    bool m_resetActionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

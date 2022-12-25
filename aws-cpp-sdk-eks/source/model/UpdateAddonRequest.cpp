@@ -20,7 +20,8 @@ UpdateAddonRequest::UpdateAddonRequest() :
     m_resolveConflicts(ResolveConflicts::NOT_SET),
     m_resolveConflictsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_configurationValuesHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateAddonRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_configurationValuesHasBeenSet)
+  {
+   payload.WithString("configurationValues", m_configurationValues);
 
   }
 

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionConfiguration
+  class OptionConfiguration
   {
   public:
-    OptionConfiguration();
-    OptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionConfiguration();
+    AWS_RDS_API OptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_optionName;
-    bool m_optionNameHasBeenSet;
+    bool m_optionNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_optionVersion;
-    bool m_optionVersionHasBeenSet;
+    bool m_optionVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;
-    bool m_dBSecurityGroupMembershipsHasBeenSet;
+    bool m_dBSecurityGroupMembershipsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupMemberships;
-    bool m_vpcSecurityGroupMembershipsHasBeenSet;
+    bool m_vpcSecurityGroupMembershipsHasBeenSet = false;
 
     Aws::Vector<OptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GatewayRouteHostnameRewrite">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GatewayRouteHostnameRewrite
+  class GatewayRouteHostnameRewrite
   {
   public:
-    GatewayRouteHostnameRewrite();
-    GatewayRouteHostnameRewrite(Aws::Utils::Json::JsonView jsonValue);
-    GatewayRouteHostnameRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GatewayRouteHostnameRewrite();
+    AWS_APPMESH_API GatewayRouteHostnameRewrite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GatewayRouteHostnameRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DefaultGatewayRouteRewrite m_defaultTargetHostname;
-    bool m_defaultTargetHostnameHasBeenSet;
+    bool m_defaultTargetHostnameHasBeenSet = false;
   };
 
 } // namespace Model

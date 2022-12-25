@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FindingTypeAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FindingTypeAggregation
+  class FindingTypeAggregation
   {
   public:
-    FindingTypeAggregation();
-    FindingTypeAggregation(Aws::Utils::Json::JsonView jsonValue);
-    FindingTypeAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FindingTypeAggregation();
+    AWS_INSPECTOR2_API FindingTypeAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FindingTypeAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,16 +167,16 @@ namespace Model
   private:
 
     AggregationFindingType m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     AggregationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     FindingTypeSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

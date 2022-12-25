@@ -26,53 +26,53 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API ListMobileDeviceAccessOverridesResult
+  class ListMobileDeviceAccessOverridesResult
   {
   public:
-    ListMobileDeviceAccessOverridesResult();
-    ListMobileDeviceAccessOverridesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMobileDeviceAccessOverridesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListMobileDeviceAccessOverridesResult();
+    AWS_WORKMAIL_API ListMobileDeviceAccessOverridesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListMobileDeviceAccessOverridesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline const Aws::Vector<MobileDeviceAccessOverride>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline void SetOverrides(const Aws::Vector<MobileDeviceAccessOverride>& value) { m_overrides = value; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline void SetOverrides(Aws::Vector<MobileDeviceAccessOverride>&& value) { m_overrides = std::move(value); }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& WithOverrides(const Aws::Vector<MobileDeviceAccessOverride>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& WithOverrides(Aws::Vector<MobileDeviceAccessOverride>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& AddOverrides(const MobileDeviceAccessOverride& value) { m_overrides.push_back(value); return *this; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& AddOverrides(MobileDeviceAccessOverride&& value) { m_overrides.push_back(std::move(value)); return *this; }
 

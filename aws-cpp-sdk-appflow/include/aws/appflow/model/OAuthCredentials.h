@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuthCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuthCredentials
+  class OAuthCredentials
   {
   public:
-    OAuthCredentials();
-    OAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
-    OAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuthCredentials();
+    AWS_APPFLOW_API OAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
 
     ConnectorOAuthRequest m_oAuthRequest;
-    bool m_oAuthRequestHasBeenSet;
+    bool m_oAuthRequestHasBeenSet = false;
   };
 
 } // namespace Model

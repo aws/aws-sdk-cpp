@@ -24,12 +24,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API UpdateShardCountResult
+  class UpdateShardCountResult
   {
   public:
-    UpdateShardCountResult();
-    UpdateShardCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateShardCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API UpdateShardCountResult();
+    AWS_KINESIS_API UpdateShardCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API UpdateShardCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -99,6 +99,42 @@ namespace Model
      */
     inline UpdateShardCountResult& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline UpdateShardCountResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline UpdateShardCountResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline UpdateShardCountResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -106,6 +142,8 @@ namespace Model
     int m_currentShardCount;
 
     int m_targetShardCount;
+
+    Aws::String m_streamARN;
   };
 
 } // namespace Model

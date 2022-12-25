@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstancesMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesRequest : public DatabaseMigrationServiceRequest
+  class DescribeOrderableReplicationInstancesRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    DescribeOrderableReplicationInstancesRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeOrderableReplicationInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeOrderableReplicationInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryptionList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FieldLevelEncryptionList
+  class FieldLevelEncryptionList
   {
   public:
-    FieldLevelEncryptionList();
-    FieldLevelEncryptionList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FieldLevelEncryptionList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionList();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -97,22 +97,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline FieldLevelEncryptionList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
@@ -181,16 +181,16 @@ namespace Model
   private:
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<FieldLevelEncryptionSummary> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

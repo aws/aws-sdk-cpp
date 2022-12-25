@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HyperParameterRanges">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API HyperParameterRanges
+  class HyperParameterRanges
   {
   public:
-    HyperParameterRanges();
-    HyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API HyperParameterRanges();
+    AWS_PERSONALIZE_API HyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API HyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<IntegerHyperParameterRange> m_integerHyperParameterRanges;
-    bool m_integerHyperParameterRangesHasBeenSet;
+    bool m_integerHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<ContinuousHyperParameterRange> m_continuousHyperParameterRanges;
-    bool m_continuousHyperParameterRangesHasBeenSet;
+    bool m_continuousHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<CategoricalHyperParameterRange> m_categoricalHyperParameterRanges;
-    bool m_categoricalHyperParameterRangesHasBeenSet;
+    bool m_categoricalHyperParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

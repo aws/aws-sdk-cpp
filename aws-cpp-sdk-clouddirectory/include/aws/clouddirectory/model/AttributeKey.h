@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttributeKey">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API AttributeKey
+  class AttributeKey
   {
   public:
-    AttributeKey();
-    AttributeKey(Aws::Utils::Json::JsonView jsonValue);
-    AttributeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API AttributeKey();
+    AWS_CLOUDDIRECTORY_API AttributeKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API AttributeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_facetName;
-    bool m_facetNameHasBeenSet;
+    bool m_facetNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

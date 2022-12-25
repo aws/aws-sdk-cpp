@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/AcceleratorType">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API AcceleratorType
+  class AcceleratorType
   {
   public:
-    AcceleratorType();
-    AcceleratorType(Aws::Utils::Json::JsonView jsonValue);
-    AcceleratorType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API AcceleratorType();
+    AWS_ELASTICINFERENCE_API AcceleratorType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API AcceleratorType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_acceleratorTypeName;
-    bool m_acceleratorTypeNameHasBeenSet;
+    bool m_acceleratorTypeNameHasBeenSet = false;
 
     MemoryInfo m_memoryInfo;
-    bool m_memoryInfoHasBeenSet;
+    bool m_memoryInfoHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_throughputInfo;
-    bool m_throughputInfoHasBeenSet;
+    bool m_throughputInfoHasBeenSet = false;
   };
 
 } // namespace Model

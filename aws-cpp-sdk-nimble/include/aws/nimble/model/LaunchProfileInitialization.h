@@ -28,49 +28,49 @@ namespace Model
 {
 
   /**
-   * <p>A Launch Profile Initialization contains information required for a
+   * <p>A launch profile initialization contains information required for a
    * workstation or server to connect to a launch profile.</p> <p>This includes
    * scripts, endpoints, security groups, subnets, and other
    * configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitialization">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfileInitialization
+  class LaunchProfileInitialization
   {
   public:
-    LaunchProfileInitialization();
-    LaunchProfileInitialization(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfileInitialization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization();
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline const LaunchProfileInitializationActiveDirectory& GetActiveDirectory() const{ return m_activeDirectory; }
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline void SetActiveDirectory(const LaunchProfileInitializationActiveDirectory& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline void SetActiveDirectory(LaunchProfileInitializationActiveDirectory&& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = std::move(value); }
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline LaunchProfileInitialization& WithActiveDirectory(const LaunchProfileInitializationActiveDirectory& value) { SetActiveDirectory(value); return *this;}
 
     /**
-     * <p>A LaunchProfileInitializationActiveDirectory resource.</p>
+     * <p>A <code>LaunchProfileInitializationActiveDirectory</code> resource.</p>
      */
     inline LaunchProfileInitialization& WithActiveDirectory(LaunchProfileInitializationActiveDirectory&& value) { SetActiveDirectory(std::move(value)); return *this;}
 
@@ -122,42 +122,50 @@ namespace Model
 
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfileInitialization& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfileInitialization& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfileInitialization& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -294,32 +302,32 @@ namespace Model
 
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline const LaunchProfilePlatform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline void SetPlatform(const LaunchProfilePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline void SetPlatform(LaunchProfilePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline LaunchProfileInitialization& WithPlatform(const LaunchProfilePlatform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the launch platform, either WINDOWS or LINUX.</p>
+     * <p>The platform of the launch platform, either Windows or Linux.</p>
      */
     inline LaunchProfileInitialization& WithPlatform(LaunchProfilePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
@@ -408,31 +416,31 @@ namespace Model
   private:
 
     LaunchProfileInitializationActiveDirectory m_activeDirectory;
-    bool m_activeDirectoryHasBeenSet;
+    bool m_activeDirectoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SecurityGroupIds;
-    bool m_ec2SecurityGroupIdsHasBeenSet;
+    bool m_ec2SecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::String m_launchProfileProtocolVersion;
-    bool m_launchProfileProtocolVersionHasBeenSet;
+    bool m_launchProfileProtocolVersionHasBeenSet = false;
 
     Aws::String m_launchPurpose;
-    bool m_launchPurposeHasBeenSet;
+    bool m_launchPurposeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LaunchProfilePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<LaunchProfileInitializationScript> m_systemInitializationScripts;
-    bool m_systemInitializationScriptsHasBeenSet;
+    bool m_systemInitializationScriptsHasBeenSet = false;
 
     Aws::Vector<LaunchProfileInitializationScript> m_userInitializationScripts;
-    bool m_userInitializationScriptsHasBeenSet;
+    bool m_userInitializationScriptsHasBeenSet = false;
   };
 
 } // namespace Model

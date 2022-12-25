@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DataflowDetail
+  class DataflowDetail
   {
   public:
-    DataflowDetail();
-    DataflowDetail(Aws::Utils::Json::JsonView jsonValue);
-    DataflowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DataflowDetail();
+    AWS_GROUNDSTATION_API DataflowDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DataflowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -121,13 +121,13 @@ namespace Model
   private:
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

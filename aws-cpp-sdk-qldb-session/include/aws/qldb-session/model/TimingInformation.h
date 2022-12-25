@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/TimingInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API TimingInformation
+  class TimingInformation
   {
   public:
-    TimingInformation();
-    TimingInformation(Aws::Utils::Json::JsonView jsonValue);
-    TimingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API TimingInformation();
+    AWS_QLDBSESSION_API TimingInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API TimingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -64,7 +64,7 @@ namespace Model
   private:
 
     long long m_processingTimeMilliseconds;
-    bool m_processingTimeMillisecondsHasBeenSet;
+    bool m_processingTimeMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

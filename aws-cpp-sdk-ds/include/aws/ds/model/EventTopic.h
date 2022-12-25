@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EventTopic">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API EventTopic
+  class EventTopic
   {
   public:
-    EventTopic();
-    EventTopic(Aws::Utils::Json::JsonView jsonValue);
-    EventTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API EventTopic();
+    AWS_DIRECTORYSERVICE_API EventTopic(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API EventTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDateTime;
-    bool m_createdDateTimeHasBeenSet;
+    bool m_createdDateTimeHasBeenSet = false;
 
     TopicStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API SetAlarmStateRequest : public CloudWatchRequest
+  class SetAlarmStateRequest : public CloudWatchRequest
   {
   public:
-    SetAlarmStateRequest();
+    AWS_CLOUDWATCH_API SetAlarmStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetAlarmState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     StateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::String m_stateReasonData;
-    bool m_stateReasonDataHasBeenSet;
+    bool m_stateReasonDataHasBeenSet = false;
   };
 
 } // namespace Model

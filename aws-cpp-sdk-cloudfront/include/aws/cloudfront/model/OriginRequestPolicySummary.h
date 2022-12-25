@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginRequestPolicySummary
+  class OriginRequestPolicySummary
   {
   public:
-    OriginRequestPolicySummary();
-    OriginRequestPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginRequestPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicySummary();
+    AWS_CLOUDFRONT_API OriginRequestPolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     OriginRequestPolicyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     OriginRequestPolicy m_originRequestPolicy;
-    bool m_originRequestPolicyHasBeenSet;
+    bool m_originRequestPolicyHasBeenSet = false;
   };
 
 } // namespace Model

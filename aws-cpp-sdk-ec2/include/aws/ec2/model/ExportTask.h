@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTask">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API ExportTask
+  class ExportTask
   {
   public:
-    ExportTask();
-    ExportTask(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExportTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportTask();
+    AWS_EC2_API ExportTask(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -303,25 +303,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_exportTaskId;
-    bool m_exportTaskIdHasBeenSet;
+    bool m_exportTaskIdHasBeenSet = false;
 
     ExportToS3Task m_exportToS3Task;
-    bool m_exportToS3TaskHasBeenSet;
+    bool m_exportToS3TaskHasBeenSet = false;
 
     InstanceExportDetails m_instanceExportDetails;
-    bool m_instanceExportDetailsHasBeenSet;
+    bool m_instanceExportDetailsHasBeenSet = false;
 
     ExportTaskState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

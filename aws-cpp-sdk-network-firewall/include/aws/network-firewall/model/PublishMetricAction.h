@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PublishMetricAction">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API PublishMetricAction
+  class PublishMetricAction
   {
   public:
-    PublishMetricAction();
-    PublishMetricAction(Aws::Utils::Json::JsonView jsonValue);
-    PublishMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API PublishMetricAction();
+    AWS_NETWORKFIREWALL_API PublishMetricAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API PublishMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

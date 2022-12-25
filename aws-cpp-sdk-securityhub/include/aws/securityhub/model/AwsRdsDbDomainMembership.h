@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbDomainMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbDomainMembership
+  class AwsRdsDbDomainMembership
   {
   public:
-    AwsRdsDbDomainMembership();
-    AwsRdsDbDomainMembership(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbDomainMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbDomainMembership();
+    AWS_SECURITYHUB_API AwsRdsDbDomainMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbDomainMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fqdn;
-    bool m_fqdnHasBeenSet;
+    bool m_fqdnHasBeenSet = false;
 
     Aws::String m_iamRoleName;
-    bool m_iamRoleNameHasBeenSet;
+    bool m_iamRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

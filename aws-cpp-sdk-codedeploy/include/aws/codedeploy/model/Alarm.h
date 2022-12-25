@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/Alarm">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API Alarm
+  class Alarm
   {
   public:
-    Alarm();
-    Alarm(Aws::Utils::Json::JsonView jsonValue);
-    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API Alarm();
+    AWS_CODEDEPLOY_API Alarm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PartitionIndex
+  class PartitionIndex
   {
   public:
-    PartitionIndex();
-    PartitionIndex(Aws::Utils::Json::JsonView jsonValue);
-    PartitionIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PartitionIndex();
+    AWS_GLUE_API PartitionIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PartitionIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
   };
 
 } // namespace Model

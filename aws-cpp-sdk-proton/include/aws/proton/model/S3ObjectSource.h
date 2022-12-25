@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/S3ObjectSource">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API S3ObjectSource
+  class S3ObjectSource
   {
   public:
-    S3ObjectSource();
-    S3ObjectSource(Aws::Utils::Json::JsonView jsonValue);
-    S3ObjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API S3ObjectSource();
+    AWS_PROTON_API S3ObjectSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API S3ObjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

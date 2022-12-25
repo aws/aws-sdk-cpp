@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ActiveTrustedKeyGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ActiveTrustedKeyGroups
+  class ActiveTrustedKeyGroups
   {
   public:
-    ActiveTrustedKeyGroups();
-    ActiveTrustedKeyGroups(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ActiveTrustedKeyGroups& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ActiveTrustedKeyGroups();
+    AWS_CLOUDFRONT_API ActiveTrustedKeyGroups(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ActiveTrustedKeyGroups& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<KGKeyPairIds> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

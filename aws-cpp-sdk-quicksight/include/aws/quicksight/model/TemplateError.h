@@ -7,6 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/TemplateErrorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/Entity.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TemplateError">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TemplateError
+  class TemplateError
   {
   public:
-    TemplateError();
-    TemplateError(Aws::Utils::Json::JsonView jsonValue);
-    TemplateError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TemplateError();
+    AWS_QUICKSIGHT_API TemplateError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TemplateError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,13 +112,57 @@ namespace Model
      */
     inline TemplateError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
+
+    /**
+     * <p/>
+     */
+    inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline TemplateError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline TemplateError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline TemplateError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline TemplateError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
+
   private:
 
     TemplateErrorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
+
+    Aws::Vector<Entity> m_violatedEntities;
+    bool m_violatedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StatusReason">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API StatusReason
+  class StatusReason
   {
   public:
-    StatusReason();
-    StatusReason(Aws::Utils::Json::JsonView jsonValue);
-    StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API StatusReason();
+    AWS_ACCESSANALYZER_API StatusReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,7 +74,7 @@ namespace Model
   private:
 
     ReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

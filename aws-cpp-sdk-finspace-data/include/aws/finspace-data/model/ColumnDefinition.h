@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ColumnDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ColumnDefinition
+  class ColumnDefinition
   {
   public:
-    ColumnDefinition();
-    ColumnDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ColumnDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API ColumnDefinition();
+    AWS_FINSPACEDATA_API ColumnDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API ColumnDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,13 +202,13 @@ namespace Model
   private:
 
     ColumnDataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnDescription;
-    bool m_columnDescriptionHasBeenSet;
+    bool m_columnDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

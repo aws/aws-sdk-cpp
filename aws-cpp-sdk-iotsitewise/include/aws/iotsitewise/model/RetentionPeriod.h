@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/RetentionPeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API RetentionPeriod
+  class RetentionPeriod
   {
   public:
-    RetentionPeriod();
-    RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
-    RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API RetentionPeriod();
+    AWS_IOTSITEWISE_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     int m_numberOfDays;
-    bool m_numberOfDaysHasBeenSet;
+    bool m_numberOfDaysHasBeenSet = false;
 
     bool m_unlimited;
-    bool m_unlimitedHasBeenSet;
+    bool m_unlimitedHasBeenSet = false;
   };
 
 } // namespace Model

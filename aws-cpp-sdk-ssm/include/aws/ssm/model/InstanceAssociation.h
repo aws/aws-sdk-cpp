@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceAssociation
+  class InstanceAssociation
   {
   public:
-    InstanceAssociation();
-    InstanceAssociation(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceAssociation();
+    AWS_SSM_API InstanceAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_associationVersion;
-    bool m_associationVersionHasBeenSet;
+    bool m_associationVersionHasBeenSet = false;
   };
 
 } // namespace Model

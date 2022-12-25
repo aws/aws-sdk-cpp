@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AnalysisComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AnalysisComponent
+  class AnalysisComponent
   {
   public:
-    AnalysisComponent();
-    AnalysisComponent(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisComponent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisComponent();
+    AWS_EC2_API AnalysisComponent(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisComponent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

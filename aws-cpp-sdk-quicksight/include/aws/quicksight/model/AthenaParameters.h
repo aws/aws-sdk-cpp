@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AthenaParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AthenaParameters
+  class AthenaParameters
   {
   public:
-    AthenaParameters();
-    AthenaParameters(Aws::Utils::Json::JsonView jsonValue);
-    AthenaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AthenaParameters();
+    AWS_QUICKSIGHT_API AthenaParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AthenaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,10 +77,94 @@ namespace Model
      */
     inline AthenaParameters& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline AthenaParameters& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline AthenaParameters& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Use the <code>RoleArn</code> structure to override an account-wide role for a
+     * specific Athena data source. For example, say an account administrator has
+     * turned off all Athena access with an account-wide role. The administrator can
+     * then use <code>RoleArn</code> to bypass the account-wide role and allow Athena
+     * access for the single Athena data source that is specified in the structure,
+     * even if the account-wide role forbidding Athena access is still active.</p>
+     */
+    inline AthenaParameters& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

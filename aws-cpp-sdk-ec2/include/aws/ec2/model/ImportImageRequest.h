@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ImportImageRequest : public EC2Request
+  class ImportImageRequest : public EC2Request
   {
   public:
-    ImportImageRequest();
+    AWS_EC2_API ImportImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -591,13 +591,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -605,13 +607,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -619,13 +623,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -633,13 +639,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -647,13 +655,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -661,13 +671,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -675,13 +687,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -689,13 +703,15 @@ namespace Model
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
-     * importing.</p> <p>By default, we detect the source-system operating system (OS)
-     * and apply the appropriate license. Specify <code>AWS</code> to replace the
-     * source-system license with an Amazon Web Services license, if appropriate.
-     * Specify <code>BYOL</code> to retain the source-system license, if
-     * appropriate.</p> <p>To use <code>BYOL</code>, you must have existing licenses
-     * with rights to use these licenses in a third party cloud, such as Amazon Web
-     * Services. For more information, see <a
+     * importing.</p> <p>Specify <code>AWS</code> to replace the source-system license
+     * with an Amazon Web Services license or <code>BYOL</code> to retain the
+     * source-system license. Leaving this parameter undefined is the same as choosing
+     * <code>AWS</code> when importing a Windows Server operating system, and the same
+     * as choosing <code>BYOL</code> when importing a Windows client operating system
+     * (such as Windows 10) or a Linux operating system.</p> <p>To use
+     * <code>BYOL</code>, you must have existing licenses with rights to use these
+     * licenses in a third party cloud, such as Amazon Web Services. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a>
      * in the VM Import/Export User Guide.</p>
      */
@@ -964,52 +980,52 @@ namespace Model
   private:
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     ClientData m_clientData;
-    bool m_clientDataHasBeenSet;
+    bool m_clientDataHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ImageDiskContainer> m_diskContainers;
-    bool m_diskContainersHasBeenSet;
+    bool m_diskContainersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_hypervisor;
-    bool m_hypervisorHasBeenSet;
+    bool m_hypervisorHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<ImportImageLicenseConfigurationRequest> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_usageOperation;
-    bool m_usageOperationHasBeenSet;
+    bool m_usageOperationHasBeenSet = false;
 
     BootModeValues m_bootMode;
-    bool m_bootModeHasBeenSet;
+    bool m_bootModeHasBeenSet = false;
   };
 
 } // namespace Model

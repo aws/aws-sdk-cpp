@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SystemsManagerAgent">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API SystemsManagerAgent
+  class SystemsManagerAgent
   {
   public:
-    SystemsManagerAgent();
-    SystemsManagerAgent(Aws::Utils::Json::JsonView jsonValue);
-    SystemsManagerAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API SystemsManagerAgent();
+    AWS_IMAGEBUILDER_API SystemsManagerAgent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API SystemsManagerAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_uninstallAfterBuild;
-    bool m_uninstallAfterBuildHasBeenSet;
+    bool m_uninstallAfterBuildHasBeenSet = false;
   };
 
 } // namespace Model

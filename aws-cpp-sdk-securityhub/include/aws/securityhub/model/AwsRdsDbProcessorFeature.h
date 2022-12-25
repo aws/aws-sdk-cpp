@@ -28,52 +28,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbProcessorFeature">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbProcessorFeature
+  class AwsRdsDbProcessorFeature
   {
   public:
-    AwsRdsDbProcessorFeature();
-    AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature();
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline AwsRdsDbProcessorFeature& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline AwsRdsDbProcessorFeature& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the processor feature.</p>
+     * <p>The name of the processor feature. Valid values are <code>coreCount</code> or
+     * <code>threadsPerCore</code>.</p>
      */
     inline AwsRdsDbProcessorFeature& WithName(const char* value) { SetName(value); return *this;}
 
@@ -121,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

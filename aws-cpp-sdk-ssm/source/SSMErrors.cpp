@@ -7,8 +7,10 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
 #include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
+#include <aws/ssm/model/ResourcePolicyLimitExceededException.h>
 #include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
 #include <aws/ssm/model/OpsItemAlreadyExistsException.h>
+#include <aws/ssm/model/ResourcePolicyInvalidParameterException.h>
 #include <aws/ssm/model/ItemSizeLimitExceededException.h>
 #include <aws/ssm/model/UnsupportedInventoryItemContextException.h>
 #include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
@@ -32,6 +34,12 @@ template<> AWS_SSM_API OpsItemRelatedItemAlreadyExistsException SSMError::GetMod
   return OpsItemRelatedItemAlreadyExistsException(this->GetJsonPayload().View());
 }
 
+template<> AWS_SSM_API ResourcePolicyLimitExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_POLICY_LIMIT_EXCEEDED);
+  return ResourcePolicyLimitExceededException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SSM_API ResourceDataSyncNotFoundException SSMError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND);
@@ -42,6 +50,12 @@ template<> AWS_SSM_API OpsItemAlreadyExistsException SSMError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMErrors::OPS_ITEM_ALREADY_EXISTS);
   return OpsItemAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ResourcePolicyInvalidParameterException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_POLICY_INVALID_PARAMETER);
+  return ResourcePolicyInvalidParameterException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSM_API ItemSizeLimitExceededException SSMError::GetModeledError()
@@ -111,6 +125,8 @@ static const int INVALID_ASSOCIATION_VERSION_HASH = HashingUtils::HashString("In
 static const int OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemRelatedItemAlreadyExistsException");
 static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterNotFound");
 static const int INVALID_DOCUMENT_TYPE_HASH = HashingUtils::HashString("InvalidDocumentType");
+static const int RESOURCE_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourcePolicyLimitExceededException");
+static const int RESOURCE_POLICY_CONFLICT_HASH = HashingUtils::HashString("ResourcePolicyConflictException");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
 static const int HIERARCHY_LEVEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HierarchyLevelLimitExceededException");
 static const int DOCUMENT_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentVersionLimitExceeded");
@@ -123,6 +139,7 @@ static const int FEATURE_NOT_AVAILABLE_HASH = HashingUtils::HashString("FeatureN
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int INVALID_AUTOMATION_SIGNAL_HASH = HashingUtils::HashString("InvalidAutomationSignalException");
+static const int RESOURCE_POLICY_INVALID_PARAMETER_HASH = HashingUtils::HashString("ResourcePolicyInvalidParameterException");
 static const int AUTOMATION_DEFINITION_NOT_APPROVED_HASH = HashingUtils::HashString("AutomationDefinitionNotApprovedException");
 static const int AUTOMATION_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationExecutionNotFoundException");
 static const int INVALID_INVENTORY_ITEM_CONTEXT_HASH = HashingUtils::HashString("InvalidInventoryItemContextException");
@@ -153,6 +170,7 @@ static const int INVALID_POLICY_ATTRIBUTE_HASH = HashingUtils::HashString("Inval
 static const int AUTOMATION_DEFINITION_VERSION_NOT_FOUND_HASH = HashingUtils::HashString("AutomationDefinitionVersionNotFoundException");
 static const int COMPLIANCE_TYPE_COUNT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ComplianceTypeCountLimitExceededException");
 static const int PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterMaxVersionLimitExceeded");
+static const int OPS_ITEM_ACCESS_DENIED_HASH = HashingUtils::HashString("OpsItemAccessDeniedException");
 static const int AUTOMATION_STEP_NOT_FOUND_HASH = HashingUtils::HashString("AutomationStepNotFoundException");
 static const int RESOURCE_DATA_SYNC_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceDataSyncAlreadyExistsException");
 static const int INVALID_RESULT_ATTRIBUTE_HASH = HashingUtils::HashString("InvalidResultAttributeException");
@@ -196,6 +214,7 @@ static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("Docume
 static const int UNSUPPORTED_CALENDAR_HASH = HashingUtils::HashString("UnsupportedCalendarException");
 static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("InvalidDocumentVersion");
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
+static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTag");
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int RESOURCE_DATA_SYNC_CONFLICT_HASH = HashingUtils::HashString("ResourceDataSyncConflictException");
@@ -331,6 +350,16 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_TYPE), false);
     return true;
   }
+  else if (hashCode == RESOURCE_POLICY_LIMIT_EXCEEDED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_LIMIT_EXCEEDED), false);
+    return true;
+  }
+  else if (hashCode == RESOURCE_POLICY_CONFLICT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_CONFLICT), false);
+    return true;
+  }
   else if (hashCode == PARAMETER_ALREADY_EXISTS_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_ALREADY_EXISTS), false);
@@ -389,6 +418,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_AUTOMATION_SIGNAL_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_AUTOMATION_SIGNAL), false);
+    return true;
+  }
+  else if (hashCode == RESOURCE_POLICY_INVALID_PARAMETER_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::RESOURCE_POLICY_INVALID_PARAMETER), false);
     return true;
   }
   else if (hashCode == AUTOMATION_DEFINITION_NOT_APPROVED_HASH)
@@ -539,6 +573,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == PARAMETER_MAX_VERSION_LIMIT_EXCEEDED_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_MAX_VERSION_LIMIT_EXCEEDED), false);
+    return true;
+  }
+  else if (hashCode == OPS_ITEM_ACCESS_DENIED_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_ACCESS_DENIED), false);
     return true;
   }
   else if (hashCode == AUTOMATION_STEP_NOT_FOUND_HASH)
@@ -756,6 +795,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), false);
     return true;
   }
+  else if (hashCode == INVALID_TAG_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_TAG), false);
+    return true;
+  }
   else if (hashCode == INVALID_SCHEDULE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_SCHEDULE), false);
@@ -806,7 +850,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
     return true;
   }
-  else if (hashCode == INVALID_FILTER_KEY_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == INVALID_FILTER_KEY_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER_KEY), false);
     return true;
@@ -839,6 +888,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   int hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
   if (GetErrorForNameHelper0(hashCode, error))
+  {
+    return error;
+  }
+  else if (GetErrorForNameHelper1(hashCode, error))
   {
     return error;
   }

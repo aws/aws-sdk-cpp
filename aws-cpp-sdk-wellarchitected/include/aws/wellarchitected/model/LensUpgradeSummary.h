@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/LensUpgradeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API LensUpgradeSummary
+  class LensUpgradeSummary
   {
   public:
-    LensUpgradeSummary();
-    LensUpgradeSummary(Aws::Utils::Json::JsonView jsonValue);
-    LensUpgradeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API LensUpgradeSummary();
+    AWS_WELLARCHITECTED_API LensUpgradeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API LensUpgradeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_currentLensVersion;
-    bool m_currentLensVersionHasBeenSet;
+    bool m_currentLensVersionHasBeenSet = false;
 
     Aws::String m_latestLensVersion;
-    bool m_latestLensVersionHasBeenSet;
+    bool m_latestLensVersionHasBeenSet = false;
   };
 
 } // namespace Model

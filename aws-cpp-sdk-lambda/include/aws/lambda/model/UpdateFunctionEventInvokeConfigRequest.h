@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API UpdateFunctionEventInvokeConfigRequest : public LambdaRequest
+  class UpdateFunctionEventInvokeConfigRequest : public LambdaRequest
   {
   public:
-    UpdateFunctionEventInvokeConfigRequest();
+    AWS_LAMBDA_API UpdateFunctionEventInvokeConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFunctionEventInvokeConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_maximumEventAgeInSeconds;
-    bool m_maximumEventAgeInSecondsHasBeenSet;
+    bool m_maximumEventAgeInSecondsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

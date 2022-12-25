@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GeoLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API GeoLocation
+  class GeoLocation
   {
   public:
-    GeoLocation();
-    GeoLocation(Aws::Utils::Json::JsonView jsonValue);
-    GeoLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API GeoLocation();
+    AWS_GUARDDUTY_API GeoLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API GeoLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     double m_lat;
-    bool m_latHasBeenSet;
+    bool m_latHasBeenSet = false;
 
     double m_lon;
-    bool m_lonHasBeenSet;
+    bool m_lonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMINCIDENTS_API GetTimelineEventRequest : public SSMIncidentsRequest
+  class GetTimelineEventRequest : public SSMIncidentsRequest
   {
   public:
-    GetTimelineEventRequest();
+    AWS_SSMINCIDENTS_API GetTimelineEventRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTimelineEvent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SSMINCIDENTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
   };
 
 } // namespace Model

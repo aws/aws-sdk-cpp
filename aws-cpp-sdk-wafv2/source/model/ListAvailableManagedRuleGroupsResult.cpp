@@ -36,7 +36,7 @@ ListAvailableManagedRuleGroupsResult& ListAvailableManagedRuleGroupsResult::oper
 
   if(jsonValue.ValueExists("ManagedRuleGroups"))
   {
-    Array<JsonView> managedRuleGroupsJsonList = jsonValue.GetArray("ManagedRuleGroups");
+    Aws::Utils::Array<JsonView> managedRuleGroupsJsonList = jsonValue.GetArray("ManagedRuleGroups");
     for(unsigned managedRuleGroupsIndex = 0; managedRuleGroupsIndex < managedRuleGroupsJsonList.GetLength(); ++managedRuleGroupsIndex)
     {
       m_managedRuleGroups.push_back(managedRuleGroupsJsonList[managedRuleGroupsIndex].AsObject());

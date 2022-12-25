@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticache/model/AvailabilityZone.h>
 #include <aws/elasticache/model/SubnetOutpost.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -32,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Subnet">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API Subnet();
+    AWS_ELASTICACHE_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -145,16 +147,84 @@ namespace Model
      */
     inline Subnet& WithSubnetOutpost(SubnetOutpost&& value) { SetSubnetOutpost(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline void SetSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline void SetSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline Subnet& WithSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { SetSupportedNetworkTypes(value); return *this;}
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline Subnet& WithSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline Subnet& AddSupportedNetworkTypes(const NetworkType& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
+
+    /**
+     * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached
+     * engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     */
+    inline Subnet& AddSupportedNetworkTypes(NetworkType&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     AvailabilityZone m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     SubnetOutpost m_subnetOutpost;
-    bool m_subnetOutpostHasBeenSet;
+    bool m_subnetOutpostHasBeenSet = false;
+
+    Aws::Vector<NetworkType> m_supportedNetworkTypes;
+    bool m_supportedNetworkTypesHasBeenSet = false;
   };
 
 } // namespace Model

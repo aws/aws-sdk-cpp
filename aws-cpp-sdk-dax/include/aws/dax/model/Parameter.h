@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Parameter">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Parameter
+  class Parameter
   {
   public:
-    Parameter();
-    Parameter(Aws::Utils::Json::JsonView jsonValue);
-    Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Parameter();
+    AWS_DAX_API Parameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -451,34 +451,34 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     ParameterType m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
 
     Aws::Vector<NodeTypeSpecificValue> m_nodeTypeSpecificValues;
-    bool m_nodeTypeSpecificValuesHasBeenSet;
+    bool m_nodeTypeSpecificValuesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     IsModifiable m_isModifiable;
-    bool m_isModifiableHasBeenSet;
+    bool m_isModifiableHasBeenSet = false;
 
     ChangeType m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
   };
 
 } // namespace Model

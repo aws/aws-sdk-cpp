@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendAPIResourceConfig
+  class BackendAPIResourceConfig
   {
   public:
-    BackendAPIResourceConfig();
-    BackendAPIResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    BackendAPIResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendAPIResourceConfig();
+    AWS_AMPLIFYBACKEND_API BackendAPIResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendAPIResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::Vector<BackendAPIAuthType> m_additionalAuthTypes;
-    bool m_additionalAuthTypesHasBeenSet;
+    bool m_additionalAuthTypesHasBeenSet = false;
 
     Aws::String m_apiName;
-    bool m_apiNameHasBeenSet;
+    bool m_apiNameHasBeenSet = false;
 
     BackendAPIConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
 
     BackendAPIAuthType m_defaultAuthType;
-    bool m_defaultAuthTypeHasBeenSet;
+    bool m_defaultAuthTypeHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_transformSchema;
-    bool m_transformSchemaHasBeenSet;
+    bool m_transformSchemaHasBeenSet = false;
   };
 
 } // namespace Model

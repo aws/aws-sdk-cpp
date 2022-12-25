@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR_API DescribeExclusionsRequest : public InspectorRequest
+  class DescribeExclusionsRequest : public InspectorRequest
   {
   public:
-    DescribeExclusionsRequest();
+    AWS_INSPECTOR_API DescribeExclusionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeExclusions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_exclusionArns;
-    bool m_exclusionArnsHasBeenSet;
+    bool m_exclusionArnsHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

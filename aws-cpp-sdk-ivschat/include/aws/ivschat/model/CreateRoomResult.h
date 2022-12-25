@@ -7,6 +7,7 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivschat/model/MessageReviewHandler.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -27,12 +28,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API CreateRoomResult
+  class CreateRoomResult
   {
   public:
-    CreateRoomResult();
-    CreateRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateRoomResult();
+    AWS_IVSCHAT_API CreateRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -146,36 +147,88 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of characters in a single message, from the request.</p>
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLoggingConfigurationIdentifiers() const{ return m_loggingConfigurationIdentifiers; }
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { m_loggingConfigurationIdentifiers = value; }
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline void SetLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { m_loggingConfigurationIdentifiers = std::move(value); }
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline CreateRoomResult& WithLoggingConfigurationIdentifiers(const Aws::Vector<Aws::String>& value) { SetLoggingConfigurationIdentifiers(value); return *this;}
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline CreateRoomResult& WithLoggingConfigurationIdentifiers(Aws::Vector<Aws::String>&& value) { SetLoggingConfigurationIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline CreateRoomResult& AddLoggingConfigurationIdentifiers(const Aws::String& value) { m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline CreateRoomResult& AddLoggingConfigurationIdentifiers(Aws::String&& value) { m_loggingConfigurationIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of logging configurations attached to the room, from the request (if
+     * specified).</p>
+     */
+    inline CreateRoomResult& AddLoggingConfigurationIdentifiers(const char* value) { m_loggingConfigurationIdentifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>Maximum number of characters in a single message, from the request (if
+     * specified).</p>
      */
     inline int GetMaximumMessageLength() const{ return m_maximumMessageLength; }
 
     /**
-     * <p>Maximum number of characters in a single message, from the request.</p>
+     * <p>Maximum number of characters in a single message, from the request (if
+     * specified).</p>
      */
     inline void SetMaximumMessageLength(int value) { m_maximumMessageLength = value; }
 
     /**
-     * <p>Maximum number of characters in a single message, from the request.</p>
+     * <p>Maximum number of characters in a single message, from the request (if
+     * specified).</p>
      */
     inline CreateRoomResult& WithMaximumMessageLength(int value) { SetMaximumMessageLength(value); return *this;}
 
 
     /**
      * <p>Maximum number of messages per second that can be sent to the room (by all
-     * clients), from the request.</p>
+     * clients), from the request (if specified).</p>
      */
     inline int GetMaximumMessageRatePerSecond() const{ return m_maximumMessageRatePerSecond; }
 
     /**
      * <p>Maximum number of messages per second that can be sent to the room (by all
-     * clients), from the request.</p>
+     * clients), from the request (if specified).</p>
      */
     inline void SetMaximumMessageRatePerSecond(int value) { m_maximumMessageRatePerSecond = value; }
 
     /**
      * <p>Maximum number of messages per second that can be sent to the room (by all
-     * clients), from the request.</p>
+     * clients), from the request (if specified).</p>
      */
     inline CreateRoomResult& WithMaximumMessageRatePerSecond(int value) { SetMaximumMessageRatePerSecond(value); return *this;}
 
@@ -243,62 +296,62 @@ namespace Model
 
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags attached to the resource, from the request.</p>
+     * <p>Tags attached to the resource, from the request (if specified).</p>
      */
     inline CreateRoomResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
@@ -340,6 +393,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_id;
+
+    Aws::Vector<Aws::String> m_loggingConfigurationIdentifiers;
 
     int m_maximumMessageLength;
 

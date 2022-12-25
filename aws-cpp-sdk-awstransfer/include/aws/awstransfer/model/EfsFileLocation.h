@@ -28,52 +28,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EfsFileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API EfsFileLocation
+  class EfsFileLocation
   {
   public:
-    EfsFileLocation();
-    EfsFileLocation(Aws::Utils::Json::JsonView jsonValue);
-    EfsFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API EfsFileLocation();
+    AWS_TRANSFER_API EfsFileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API EfsFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline EfsFileLocation& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline EfsFileLocation& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The identifier of the file system, assigned by Amazon EFS.</p>
      */
     inline EfsFileLocation& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/IdentityProviderDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API IdentityProviderDetails
+  class IdentityProviderDetails
   {
   public:
-    IdentityProviderDetails();
-    IdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API IdentityProviderDetails();
+    AWS_TRANSFER_API IdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API IdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,50 +130,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services Directory Service directory that
-     * you want to stop sharing.</p>
+     * <p>The identifier of the Directory Service directory that you want to stop
+     * sharing.</p>
      */
     inline IdentityProviderDetails& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_invocationRole;
-    bool m_invocationRoleHasBeenSet;
+    bool m_invocationRoleHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_function;
-    bool m_functionHasBeenSet;
+    bool m_functionHasBeenSet = false;
   };
 
 } // namespace Model

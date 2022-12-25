@@ -29,7 +29,10 @@ ConfluenceConfiguration::ConfluenceConfiguration() :
     m_attachmentConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false)
+    m_exclusionPatternsHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false),
+    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ ConfluenceConfiguration::ConfluenceConfiguration(JsonView jsonValue) :
     m_attachmentConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false)
+    m_exclusionPatternsHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false),
+    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,7 +115,7 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -119,12 +125,26 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
     }
     m_exclusionPatternsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = ConfluenceAuthenticationTypeMapper::GetConfluenceAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
   }
 
   return *this;
@@ -183,7 +203,7 @@ JsonValue ConfluenceConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -194,13 +214,24 @@ JsonValue ConfluenceConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);
    }
    payload.WithArray("ExclusionPatterns", std::move(exclusionPatternsJsonList));
 
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProxyConfiguration", m_proxyConfiguration.Jsonize());
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", ConfluenceAuthenticationTypeMapper::GetNameForConfluenceAuthenticationType(m_authenticationType));
   }
 
   return payload;

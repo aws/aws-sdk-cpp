@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FailedQueuedPurchaseDeletion">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FailedQueuedPurchaseDeletion
+  class FailedQueuedPurchaseDeletion
   {
   public:
-    FailedQueuedPurchaseDeletion();
-    FailedQueuedPurchaseDeletion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FailedQueuedPurchaseDeletion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FailedQueuedPurchaseDeletion();
+    AWS_EC2_API FailedQueuedPurchaseDeletion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FailedQueuedPurchaseDeletion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DeleteQueuedReservedInstancesError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
   };
 
 } // namespace Model

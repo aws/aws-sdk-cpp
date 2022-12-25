@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImageRecycleBinInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ImageRecycleBinInfo
+  class ImageRecycleBinInfo
   {
   public:
-    ImageRecycleBinInfo();
-    ImageRecycleBinInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ImageRecycleBinInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImageRecycleBinInfo();
+    AWS_EC2_API ImageRecycleBinInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImageRecycleBinInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -234,19 +234,19 @@ namespace Model
   private:
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinEnterTime;
-    bool m_recycleBinEnterTimeHasBeenSet;
+    bool m_recycleBinEnterTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_recycleBinExitTime;
-    bool m_recycleBinExitTimeHasBeenSet;
+    bool m_recycleBinExitTimeHasBeenSet = false;
   };
 
 } // namespace Model

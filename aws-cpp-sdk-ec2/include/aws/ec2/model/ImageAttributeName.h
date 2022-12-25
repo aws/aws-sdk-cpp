@@ -26,7 +26,8 @@ namespace Model
     bootMode,
     tpmSupport,
     uefiData,
-    lastLaunchedTime
+    lastLaunchedTime,
+    imdsSupport
   };
 
 namespace ImageAttributeNameMapper

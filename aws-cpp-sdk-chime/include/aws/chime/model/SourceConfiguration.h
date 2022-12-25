@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SourceConfiguration
+  class SourceConfiguration
   {
   public:
-    SourceConfiguration();
-    SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SourceConfiguration();
+    AWS_CHIME_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SelectedVideoStreams m_selectedVideoStreams;
-    bool m_selectedVideoStreamsHasBeenSet;
+    bool m_selectedVideoStreamsHasBeenSet = false;
   };
 
 } // namespace Model

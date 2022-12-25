@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TimeZone">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API TimeZone
+  class TimeZone
   {
   public:
-    TimeZone();
-    TimeZone(Aws::Utils::Json::JsonView jsonValue);
-    TimeZone& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API TimeZone();
+    AWS_LOCATIONSERVICE_API TimeZone(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API TimeZone& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
   };
 
 } // namespace Model

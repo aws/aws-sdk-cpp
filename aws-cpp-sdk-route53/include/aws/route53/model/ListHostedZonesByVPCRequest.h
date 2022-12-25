@@ -28,10 +28,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPCRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListHostedZonesByVPCRequest : public Route53Request
+  class ListHostedZonesByVPCRequest : public Route53Request
   {
   public:
-    ListHostedZonesByVPCRequest();
+    AWS_ROUTE53_API ListHostedZonesByVPCRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,9 +39,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListHostedZonesByVPC"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -286,16 +286,16 @@ namespace Model
   private:
 
     Aws::String m_vPCId;
-    bool m_vPCIdHasBeenSet;
+    bool m_vPCIdHasBeenSet = false;
 
     VPCRegion m_vPCRegion;
-    bool m_vPCRegionHasBeenSet;
+    bool m_vPCRegionHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

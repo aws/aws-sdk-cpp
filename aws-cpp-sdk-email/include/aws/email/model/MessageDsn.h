@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/MessageDsn">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API MessageDsn
+  class MessageDsn
   {
   public:
-    MessageDsn();
-    MessageDsn(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MessageDsn& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API MessageDsn();
+    AWS_SES_API MessageDsn(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API MessageDsn& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_reportingMta;
-    bool m_reportingMtaHasBeenSet;
+    bool m_reportingMtaHasBeenSet = false;
 
     Aws::Utils::DateTime m_arrivalDate;
-    bool m_arrivalDateHasBeenSet;
+    bool m_arrivalDateHasBeenSet = false;
 
     Aws::Vector<ExtensionField> m_extensionFields;
-    bool m_extensionFieldsHasBeenSet;
+    bool m_extensionFieldsHasBeenSet = false;
   };
 
 } // namespace Model

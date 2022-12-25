@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/PolicyDescriptorType">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API PolicyDescriptorType
+  class PolicyDescriptorType
   {
   public:
-    PolicyDescriptorType();
-    PolicyDescriptorType(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyDescriptorType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API PolicyDescriptorType();
+    AWS_STS_API PolicyDescriptorType(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API PolicyDescriptorType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

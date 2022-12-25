@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Pose">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Pose
+  class Pose
   {
   public:
-    Pose();
-    Pose(Aws::Utils::Json::JsonView jsonValue);
-    Pose& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Pose();
+    AWS_REKOGNITION_API Pose(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Pose& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     double m_roll;
-    bool m_rollHasBeenSet;
+    bool m_rollHasBeenSet = false;
 
     double m_yaw;
-    bool m_yawHasBeenSet;
+    bool m_yawHasBeenSet = false;
 
     double m_pitch;
-    bool m_pitchHasBeenSet;
+    bool m_pitchHasBeenSet = false;
   };
 
 } // namespace Model

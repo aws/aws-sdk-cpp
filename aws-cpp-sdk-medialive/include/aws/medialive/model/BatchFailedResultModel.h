@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchFailedResultModel">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchFailedResultModel
+  class BatchFailedResultModel
   {
   public:
-    BatchFailedResultModel();
-    BatchFailedResultModel(Aws::Utils::Json::JsonView jsonValue);
-    BatchFailedResultModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BatchFailedResultModel();
+    AWS_MEDIALIVE_API BatchFailedResultModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BatchFailedResultModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

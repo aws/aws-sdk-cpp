@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MetadataKeyValuePair">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MetadataKeyValuePair
+  class MetadataKeyValuePair
   {
   public:
-    MetadataKeyValuePair();
-    MetadataKeyValuePair(Aws::Utils::Json::JsonView jsonValue);
-    MetadataKeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MetadataKeyValuePair();
+    AWS_GLUE_API MetadataKeyValuePair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MetadataKeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_metadataKey;
-    bool m_metadataKeyHasBeenSet;
+    bool m_metadataKeyHasBeenSet = false;
 
     Aws::String m_metadataValue;
-    bool m_metadataValueHasBeenSet;
+    bool m_metadataValueHasBeenSet = false;
   };
 
 } // namespace Model

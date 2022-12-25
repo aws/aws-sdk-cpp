@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails
+  class AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails
   {
   public:
-    AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails();
-    AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
 
     bool m_rollback;
-    bool m_rollbackHasBeenSet;
+    bool m_rollbackHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType
+  class SmsConfigurationType
   {
   public:
-    SmsConfigurationType();
-    SmsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    SmsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -343,13 +343,13 @@ namespace Model
   private:
 
     Aws::String m_snsCallerArn;
-    bool m_snsCallerArnHasBeenSet;
+    bool m_snsCallerArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_snsRegion;
-    bool m_snsRegionHasBeenSet;
+    bool m_snsRegionHasBeenSet = false;
   };
 
 } // namespace Model

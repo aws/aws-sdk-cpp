@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicySummary
+  class CachePolicySummary
   {
   public:
-    CachePolicySummary();
-    CachePolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicySummary();
+    AWS_CLOUDFRONT_API CachePolicySummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicySummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     CachePolicyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CachePolicy m_cachePolicy;
-    bool m_cachePolicyHasBeenSet;
+    bool m_cachePolicyHasBeenSet = false;
   };
 
 } // namespace Model

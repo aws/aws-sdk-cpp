@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/PendingLogs">AWS API
    * Reference</a></p>
    */
-  class AWS_MQ_API PendingLogs
+  class PendingLogs
   {
   public:
-    PendingLogs();
-    PendingLogs(Aws::Utils::Json::JsonView jsonValue);
-    PendingLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API PendingLogs();
+    AWS_MQ_API PendingLogs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API PendingLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_audit;
-    bool m_auditHasBeenSet;
+    bool m_auditHasBeenSet = false;
 
     bool m_general;
-    bool m_generalHasBeenSet;
+    bool m_generalHasBeenSet = false;
   };
 
 } // namespace Model

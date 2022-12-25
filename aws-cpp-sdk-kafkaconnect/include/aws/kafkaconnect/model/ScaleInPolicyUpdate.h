@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ScaleInPolicyUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API ScaleInPolicyUpdate
+  class ScaleInPolicyUpdate
   {
   public:
-    ScaleInPolicyUpdate();
-    ScaleInPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ScaleInPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API ScaleInPolicyUpdate();
+    AWS_KAFKACONNECT_API ScaleInPolicyUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API ScaleInPolicyUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_cpuUtilizationPercentage;
-    bool m_cpuUtilizationPercentageHasBeenSet;
+    bool m_cpuUtilizationPercentageHasBeenSet = false;
   };
 
 } // namespace Model

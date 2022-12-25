@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationResultSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSetOperationResultSummary
+  class StackSetOperationResultSummary
   {
   public:
-    StackSetOperationResultSummary();
-    StackSetOperationResultSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSetOperationResultSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetOperationResultSummary();
+    AWS_CLOUDFORMATION_API StackSetOperationResultSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetOperationResultSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -372,22 +372,22 @@ namespace Model
   private:
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     StackSetOperationResultStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     AccountGateResult m_accountGateResult;
-    bool m_accountGateResultHasBeenSet;
+    bool m_accountGateResultHasBeenSet = false;
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

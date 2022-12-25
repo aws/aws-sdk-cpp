@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogInputDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DataCatalogInputDefinition
+  class DataCatalogInputDefinition
   {
   public:
-    DataCatalogInputDefinition();
-    DataCatalogInputDefinition(Aws::Utils::Json::JsonView jsonValue);
-    DataCatalogInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DataCatalogInputDefinition();
+    AWS_GLUEDATABREW_API DataCatalogInputDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DataCatalogInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

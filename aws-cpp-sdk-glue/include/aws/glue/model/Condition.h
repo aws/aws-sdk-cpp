@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Condition();
+    AWS_GLUE_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,19 +243,19 @@ namespace Model
   private:
 
     LogicalOperator m_logicalOperator;
-    bool m_logicalOperatorHasBeenSet;
+    bool m_logicalOperatorHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
 
     CrawlState m_crawlState;
-    bool m_crawlStateHasBeenSet;
+    bool m_crawlStateHasBeenSet = false;
   };
 
 } // namespace Model

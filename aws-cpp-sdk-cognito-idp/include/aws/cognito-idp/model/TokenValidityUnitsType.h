@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TokenValidityUnitsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType
+  class TokenValidityUnitsType
   {
   public:
-    TokenValidityUnitsType();
-    TokenValidityUnitsType(Aws::Utils::Json::JsonView jsonValue);
-    TokenValidityUnitsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType();
+    AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API TokenValidityUnitsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     TimeUnitsType m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     TimeUnitsType m_idToken;
-    bool m_idTokenHasBeenSet;
+    bool m_idTokenHasBeenSet = false;
 
     TimeUnitsType m_refreshToken;
-    bool m_refreshTokenHasBeenSet;
+    bool m_refreshTokenHasBeenSet = false;
   };
 
 } // namespace Model

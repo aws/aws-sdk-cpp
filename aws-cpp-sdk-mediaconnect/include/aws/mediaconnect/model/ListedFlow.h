@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedFlow">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API ListedFlow
+  class ListedFlow
   {
   public:
-    ListedFlow();
-    ListedFlow(Aws::Utils::Json::JsonView jsonValue);
-    ListedFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API ListedFlow();
+    AWS_MEDIACONNECT_API ListedFlow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API ListedFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -300,25 +300,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Maintenance m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
   };
 
 } // namespace Model

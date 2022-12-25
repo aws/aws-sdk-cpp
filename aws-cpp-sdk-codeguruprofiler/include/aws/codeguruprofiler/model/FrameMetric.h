@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/FrameMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API FrameMetric
+  class FrameMetric
   {
   public:
-    FrameMetric();
-    FrameMetric(Aws::Utils::Json::JsonView jsonValue);
-    FrameMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API FrameMetric();
+    AWS_CODEGURUPROFILER_API FrameMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API FrameMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_frameName;
-    bool m_frameNameHasBeenSet;
+    bool m_frameNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_threadStates;
-    bool m_threadStatesHasBeenSet;
+    bool m_threadStatesHasBeenSet = false;
 
     MetricType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

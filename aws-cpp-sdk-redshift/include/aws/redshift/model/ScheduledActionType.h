@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ScheduledActionType">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ScheduledActionType
+  class ScheduledActionType
   {
   public:
-    ScheduledActionType();
-    ScheduledActionType(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledActionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ScheduledActionType();
+    AWS_REDSHIFT_API ScheduledActionType(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ScheduledActionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     ResizeClusterMessage m_resizeCluster;
-    bool m_resizeClusterHasBeenSet;
+    bool m_resizeClusterHasBeenSet = false;
 
     PauseClusterMessage m_pauseCluster;
-    bool m_pauseClusterHasBeenSet;
+    bool m_pauseClusterHasBeenSet = false;
 
     ResumeClusterMessage m_resumeCluster;
-    bool m_resumeClusterHasBeenSet;
+    bool m_resumeClusterHasBeenSet = false;
   };
 
 } // namespace Model

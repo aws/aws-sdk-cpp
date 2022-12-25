@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ConversionProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API ConversionProperties
+  class ConversionProperties
   {
   public:
-    ConversionProperties();
-    ConversionProperties(Aws::Utils::Json::JsonView jsonValue);
-    ConversionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API ConversionProperties();
+    AWS_DRS_API ConversionProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API ConversionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_dataTimestamp;
-    bool m_dataTimestampHasBeenSet;
+    bool m_dataTimestampHasBeenSet = false;
 
     bool m_forceUefi;
-    bool m_forceUefiHasBeenSet;
+    bool m_forceUefiHasBeenSet = false;
 
     Aws::String m_rootVolumeName;
-    bool m_rootVolumeNameHasBeenSet;
+    bool m_rootVolumeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_volumeToConversionMap;
-    bool m_volumeToConversionMapHasBeenSet;
+    bool m_volumeToConversionMapHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_volumeToVolumeSize;
-    bool m_volumeToVolumeSizeHasBeenSet;
+    bool m_volumeToVolumeSizeHasBeenSet = false;
   };
 
 } // namespace Model

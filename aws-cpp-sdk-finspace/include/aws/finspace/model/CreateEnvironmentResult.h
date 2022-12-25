@@ -24,12 +24,12 @@ namespace finspace
 {
 namespace Model
 {
-  class AWS_FINSPACE_API CreateEnvironmentResult
+  class CreateEnvironmentResult
   {
   public:
-    CreateEnvironmentResult();
-    CreateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACE_API CreateEnvironmentResult();
+    AWS_FINSPACE_API CreateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACE_API CreateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

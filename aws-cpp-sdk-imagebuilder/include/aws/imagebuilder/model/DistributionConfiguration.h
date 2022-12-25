@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DistributionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API DistributionConfiguration
+  class DistributionConfiguration
   {
   public:
-    DistributionConfiguration();
-    DistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API DistributionConfiguration();
+    AWS_IMAGEBUILDER_API DistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API DistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -383,28 +383,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Distribution> m_distributions;
-    bool m_distributionsHasBeenSet;
+    bool m_distributionsHasBeenSet = false;
 
     int m_timeoutMinutes;
-    bool m_timeoutMinutesHasBeenSet;
+    bool m_timeoutMinutesHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::String m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

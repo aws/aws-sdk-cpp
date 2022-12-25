@@ -33,7 +33,7 @@ Aws::String DeleteEndpointAccessRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteEndpointAccessRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.DeleteEndpointAccess"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.DeleteEndpointAccess"));
   return headers;
 
 }

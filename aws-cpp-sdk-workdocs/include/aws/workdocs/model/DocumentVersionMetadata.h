@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DocumentVersionMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API DocumentVersionMetadata
+  class DocumentVersionMetadata
   {
   public:
-    DocumentVersionMetadata();
-    DocumentVersionMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DocumentVersionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API DocumentVersionMetadata();
+    AWS_WORKDOCS_API DocumentVersionMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API DocumentVersionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -547,43 +547,43 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     DocumentStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimestamp;
-    bool m_modifiedTimestampHasBeenSet;
+    bool m_modifiedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_contentCreatedTimestamp;
-    bool m_contentCreatedTimestampHasBeenSet;
+    bool m_contentCreatedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_contentModifiedTimestamp;
-    bool m_contentModifiedTimestampHasBeenSet;
+    bool m_contentModifiedTimestampHasBeenSet = false;
 
     Aws::String m_creatorId;
-    bool m_creatorIdHasBeenSet;
+    bool m_creatorIdHasBeenSet = false;
 
     Aws::Map<DocumentThumbnailType, Aws::String> m_thumbnail;
-    bool m_thumbnailHasBeenSet;
+    bool m_thumbnailHasBeenSet = false;
 
     Aws::Map<DocumentSourceType, Aws::String> m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

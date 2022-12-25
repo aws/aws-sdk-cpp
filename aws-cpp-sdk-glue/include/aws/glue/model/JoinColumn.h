@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JoinColumn">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API JoinColumn
+  class JoinColumn
   {
   public:
-    JoinColumn();
-    JoinColumn(Aws::Utils::Json::JsonView jsonValue);
-    JoinColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JoinColumn();
+    AWS_GLUE_API JoinColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JoinColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
   };
 
 } // namespace Model

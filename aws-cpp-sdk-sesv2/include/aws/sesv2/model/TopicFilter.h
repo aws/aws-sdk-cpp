@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TopicFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API TopicFilter
+  class TopicFilter
   {
   public:
-    TopicFilter();
-    TopicFilter(Aws::Utils::Json::JsonView jsonValue);
-    TopicFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API TopicFilter();
+    AWS_SESV2_API TopicFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API TopicFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     bool m_useDefaultIfPreferenceUnavailable;
-    bool m_useDefaultIfPreferenceUnavailableHasBeenSet;
+    bool m_useDefaultIfPreferenceUnavailableHasBeenSet = false;
   };
 
 } // namespace Model

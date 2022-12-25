@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/OtherName">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API OtherName
+  class OtherName
   {
   public:
-    OtherName();
-    OtherName(Aws::Utils::Json::JsonView jsonValue);
-    OtherName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API OtherName();
+    AWS_ACMPCA_API OtherName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API OtherName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_typeId;
-    bool m_typeIdHasBeenSet;
+    bool m_typeIdHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

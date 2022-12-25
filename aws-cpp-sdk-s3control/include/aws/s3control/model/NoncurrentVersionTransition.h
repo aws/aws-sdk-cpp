@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/NoncurrentVersionTransition">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API NoncurrentVersionTransition
+  class NoncurrentVersionTransition
   {
   public:
-    NoncurrentVersionTransition();
-    NoncurrentVersionTransition(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NoncurrentVersionTransition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API NoncurrentVersionTransition();
+    AWS_S3CONTROL_API NoncurrentVersionTransition(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API NoncurrentVersionTransition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_noncurrentDays;
-    bool m_noncurrentDaysHasBeenSet;
+    bool m_noncurrentDaysHasBeenSet = false;
 
     TransitionStorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

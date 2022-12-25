@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbAppCookieStickinessPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbAppCookieStickinessPolicy
+  class AwsElbAppCookieStickinessPolicy
   {
   public:
-    AwsElbAppCookieStickinessPolicy();
-    AwsElbAppCookieStickinessPolicy(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbAppCookieStickinessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbAppCookieStickinessPolicy();
+    AWS_SECURITYHUB_API AwsElbAppCookieStickinessPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbAppCookieStickinessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_cookieName;
-    bool m_cookieNameHasBeenSet;
+    bool m_cookieNameHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
   };
 
 } // namespace Model

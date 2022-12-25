@@ -17,7 +17,11 @@ ListCertificatesRequest::ListCertificatesRequest() :
     m_includesHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
+    m_maxItemsHasBeenSet(false),
+    m_sortBy(SortBy::NOT_SET),
+    m_sortByHasBeenSet(false),
+    m_sortOrder(SortOrder::NOT_SET),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -27,7 +31,7 @@ Aws::String ListCertificatesRequest::SerializePayload() const
 
   if(m_certificateStatusesHasBeenSet)
   {
-   Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
+   Aws::Utils::Array<JsonValue> certificateStatusesJsonList(m_certificateStatuses.size());
    for(unsigned certificateStatusesIndex = 0; certificateStatusesIndex < certificateStatusesJsonList.GetLength(); ++certificateStatusesIndex)
    {
      certificateStatusesJsonList[certificateStatusesIndex].AsString(CertificateStatusMapper::GetNameForCertificateStatus(m_certificateStatuses[certificateStatusesIndex]));
@@ -52,6 +56,16 @@ Aws::String ListCertificatesRequest::SerializePayload() const
   {
    payload.WithInteger("MaxItems", m_maxItems);
 
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("SortBy", SortByMapper::GetNameForSortBy(m_sortBy));
+  }
+
+  if(m_sortOrderHasBeenSet)
+  {
+   payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload.View().WriteReadable();

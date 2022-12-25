@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionIndexDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PartitionIndexDescriptor
+  class PartitionIndexDescriptor
   {
   public:
-    PartitionIndexDescriptor();
-    PartitionIndexDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    PartitionIndexDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PartitionIndexDescriptor();
+    AWS_GLUE_API PartitionIndexDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PartitionIndexDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,16 +243,16 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<KeySchemaElement> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     PartitionIndexStatus m_indexStatus;
-    bool m_indexStatusHasBeenSet;
+    bool m_indexStatusHasBeenSet = false;
 
     Aws::Vector<BackfillError> m_backfillErrors;
-    bool m_backfillErrorsHasBeenSet;
+    bool m_backfillErrorsHasBeenSet = false;
   };
 
 } // namespace Model

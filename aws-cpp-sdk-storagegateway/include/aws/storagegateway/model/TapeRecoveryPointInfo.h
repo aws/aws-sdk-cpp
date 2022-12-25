@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeRecoveryPointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API TapeRecoveryPointInfo
+  class TapeRecoveryPointInfo
   {
   public:
-    TapeRecoveryPointInfo();
-    TapeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
-    TapeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API TapeRecoveryPointInfo();
+    AWS_STORAGEGATEWAY_API TapeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API TapeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_tapeARN;
-    bool m_tapeARNHasBeenSet;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::Utils::DateTime m_tapeRecoveryPointTime;
-    bool m_tapeRecoveryPointTimeHasBeenSet;
+    bool m_tapeRecoveryPointTimeHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_tapeStatus;
-    bool m_tapeStatusHasBeenSet;
+    bool m_tapeStatusHasBeenSet = false;
   };
 
 } // namespace Model

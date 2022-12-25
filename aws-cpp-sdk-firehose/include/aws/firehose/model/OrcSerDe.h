@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OrcSerDe">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API OrcSerDe
+  class OrcSerDe
   {
   public:
-    OrcSerDe();
-    OrcSerDe(Aws::Utils::Json::JsonView jsonValue);
-    OrcSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API OrcSerDe();
+    AWS_FIREHOSE_API OrcSerDe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API OrcSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -405,34 +405,34 @@ namespace Model
   private:
 
     int m_stripeSizeBytes;
-    bool m_stripeSizeBytesHasBeenSet;
+    bool m_stripeSizeBytesHasBeenSet = false;
 
     int m_blockSizeBytes;
-    bool m_blockSizeBytesHasBeenSet;
+    bool m_blockSizeBytesHasBeenSet = false;
 
     int m_rowIndexStride;
-    bool m_rowIndexStrideHasBeenSet;
+    bool m_rowIndexStrideHasBeenSet = false;
 
     bool m_enablePadding;
-    bool m_enablePaddingHasBeenSet;
+    bool m_enablePaddingHasBeenSet = false;
 
     double m_paddingTolerance;
-    bool m_paddingToleranceHasBeenSet;
+    bool m_paddingToleranceHasBeenSet = false;
 
     OrcCompression m_compression;
-    bool m_compressionHasBeenSet;
+    bool m_compressionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bloomFilterColumns;
-    bool m_bloomFilterColumnsHasBeenSet;
+    bool m_bloomFilterColumnsHasBeenSet = false;
 
     double m_bloomFilterFalsePositiveProbability;
-    bool m_bloomFilterFalsePositiveProbabilityHasBeenSet;
+    bool m_bloomFilterFalsePositiveProbabilityHasBeenSet = false;
 
     double m_dictionaryKeyThreshold;
-    bool m_dictionaryKeyThresholdHasBeenSet;
+    bool m_dictionaryKeyThresholdHasBeenSet = false;
 
     OrcFormatVersion m_formatVersion;
-    bool m_formatVersionHasBeenSet;
+    bool m_formatVersionHasBeenSet = false;
   };
 
 } // namespace Model

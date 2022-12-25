@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueRegexFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValueRegexFilter
+  class SlotValueRegexFilter
   {
   public:
-    SlotValueRegexFilter();
-    SlotValueRegexFilter(Aws::Utils::Json::JsonView jsonValue);
-    SlotValueRegexFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValueRegexFilter();
+    AWS_LEXMODELSV2_API SlotValueRegexFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValueRegexFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
   };
 
 } // namespace Model

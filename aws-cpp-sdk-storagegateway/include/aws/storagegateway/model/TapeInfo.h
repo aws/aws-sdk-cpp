@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API TapeInfo
+  class TapeInfo
   {
   public:
-    TapeInfo();
-    TapeInfo(Aws::Utils::Json::JsonView jsonValue);
-    TapeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API TapeInfo();
+    AWS_STORAGEGATEWAY_API TapeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API TapeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -382,28 +382,28 @@ namespace Model
   private:
 
     Aws::String m_tapeARN;
-    bool m_tapeARNHasBeenSet;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::String m_tapeBarcode;
-    bool m_tapeBarcodeHasBeenSet;
+    bool m_tapeBarcodeHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_tapeStatus;
-    bool m_tapeStatusHasBeenSet;
+    bool m_tapeStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_retentionStartDate;
-    bool m_retentionStartDateHasBeenSet;
+    bool m_retentionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_poolEntryDate;
-    bool m_poolEntryDateHasBeenSet;
+    bool m_poolEntryDateHasBeenSet = false;
   };
 
 } // namespace Model

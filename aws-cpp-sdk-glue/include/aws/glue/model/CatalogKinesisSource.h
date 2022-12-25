@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogKinesisSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogKinesisSource
+  class CatalogKinesisSource
   {
   public:
-    CatalogKinesisSource();
-    CatalogKinesisSource(Aws::Utils::Json::JsonView jsonValue);
-    CatalogKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogKinesisSource();
+    AWS_GLUE_API CatalogKinesisSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,25 +269,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_windowSize;
-    bool m_windowSizeHasBeenSet;
+    bool m_windowSizeHasBeenSet = false;
 
     bool m_detectSchema;
-    bool m_detectSchemaHasBeenSet;
+    bool m_detectSchemaHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     KinesisStreamingSourceOptions m_streamingOptions;
-    bool m_streamingOptionsHasBeenSet;
+    bool m_streamingOptionsHasBeenSet = false;
 
     StreamingDataPreviewOptions m_dataPreviewOptions;
-    bool m_dataPreviewOptionsHasBeenSet;
+    bool m_dataPreviewOptionsHasBeenSet = false;
   };
 
 } // namespace Model

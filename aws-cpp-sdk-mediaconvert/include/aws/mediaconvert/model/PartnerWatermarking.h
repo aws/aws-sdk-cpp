@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PartnerWatermarking">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API PartnerWatermarking
+  class PartnerWatermarking
   {
   public:
-    PartnerWatermarking();
-    PartnerWatermarking(Aws::Utils::Json::JsonView jsonValue);
-    PartnerWatermarking& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API PartnerWatermarking();
+    AWS_MEDIACONVERT_API PartnerWatermarking(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API PartnerWatermarking& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     NexGuardFileMarkerSettings m_nexguardFileMarkerSettings;
-    bool m_nexguardFileMarkerSettingsHasBeenSet;
+    bool m_nexguardFileMarkerSettingsHasBeenSet = false;
   };
 
 } // namespace Model

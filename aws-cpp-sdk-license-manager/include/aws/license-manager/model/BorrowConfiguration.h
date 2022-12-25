@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/BorrowConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API BorrowConfiguration
+  class BorrowConfiguration
   {
   public:
-    BorrowConfiguration();
-    BorrowConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BorrowConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API BorrowConfiguration();
+    AWS_LICENSEMANAGER_API BorrowConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API BorrowConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     bool m_allowEarlyCheckIn;
-    bool m_allowEarlyCheckInHasBeenSet;
+    bool m_allowEarlyCheckInHasBeenSet = false;
 
     int m_maxTimeToLiveInMinutes;
-    bool m_maxTimeToLiveInMinutesHasBeenSet;
+    bool m_maxTimeToLiveInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

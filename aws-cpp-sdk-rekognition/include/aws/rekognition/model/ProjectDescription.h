@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ProjectDescription
+  class ProjectDescription
   {
   public:
-    ProjectDescription();
-    ProjectDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProjectDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ProjectDescription();
+    AWS_REKOGNITION_API ProjectDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ProjectDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     ProjectStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<DatasetMetadata> m_datasets;
-    bool m_datasetsHasBeenSet;
+    bool m_datasetsHasBeenSet = false;
   };
 
 } // namespace Model

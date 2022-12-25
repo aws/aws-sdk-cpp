@@ -5,153 +5,16 @@
 
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
-#include <aws/opsworkscm/OpsWorksCMErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/opsworkscm/model/AssociateNodeResult.h>
-#include <aws/opsworkscm/model/CreateBackupResult.h>
-#include <aws/opsworkscm/model/CreateServerResult.h>
-#include <aws/opsworkscm/model/DeleteBackupResult.h>
-#include <aws/opsworkscm/model/DeleteServerResult.h>
-#include <aws/opsworkscm/model/DescribeAccountAttributesResult.h>
-#include <aws/opsworkscm/model/DescribeBackupsResult.h>
-#include <aws/opsworkscm/model/DescribeEventsResult.h>
-#include <aws/opsworkscm/model/DescribeNodeAssociationStatusResult.h>
-#include <aws/opsworkscm/model/DescribeServersResult.h>
-#include <aws/opsworkscm/model/DisassociateNodeResult.h>
-#include <aws/opsworkscm/model/ExportServerEngineAttributeResult.h>
-#include <aws/opsworkscm/model/ListTagsForResourceResult.h>
-#include <aws/opsworkscm/model/RestoreServerResult.h>
-#include <aws/opsworkscm/model/StartMaintenanceResult.h>
-#include <aws/opsworkscm/model/TagResourceResult.h>
-#include <aws/opsworkscm/model/UntagResourceResult.h>
-#include <aws/opsworkscm/model/UpdateServerResult.h>
-#include <aws/opsworkscm/model/UpdateServerEngineAttributesResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/opsworkscm/OpsWorksCMServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace OpsWorksCM
 {
-
-namespace Model
-{
-        class AssociateNodeRequest;
-        class CreateBackupRequest;
-        class CreateServerRequest;
-        class DeleteBackupRequest;
-        class DeleteServerRequest;
-        class DescribeAccountAttributesRequest;
-        class DescribeBackupsRequest;
-        class DescribeEventsRequest;
-        class DescribeNodeAssociationStatusRequest;
-        class DescribeServersRequest;
-        class DisassociateNodeRequest;
-        class ExportServerEngineAttributeRequest;
-        class ListTagsForResourceRequest;
-        class RestoreServerRequest;
-        class StartMaintenanceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateServerRequest;
-        class UpdateServerEngineAttributesRequest;
-
-        typedef Aws::Utils::Outcome<AssociateNodeResult, OpsWorksCMError> AssociateNodeOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupResult, OpsWorksCMError> CreateBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateServerResult, OpsWorksCMError> CreateServerOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, OpsWorksCMError> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteServerResult, OpsWorksCMError> DeleteServerOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, OpsWorksCMError> DescribeAccountAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, OpsWorksCMError> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, OpsWorksCMError> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeNodeAssociationStatusResult, OpsWorksCMError> DescribeNodeAssociationStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeServersResult, OpsWorksCMError> DescribeServersOutcome;
-        typedef Aws::Utils::Outcome<DisassociateNodeResult, OpsWorksCMError> DisassociateNodeOutcome;
-        typedef Aws::Utils::Outcome<ExportServerEngineAttributeResult, OpsWorksCMError> ExportServerEngineAttributeOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, OpsWorksCMError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RestoreServerResult, OpsWorksCMError> RestoreServerOutcome;
-        typedef Aws::Utils::Outcome<StartMaintenanceResult, OpsWorksCMError> StartMaintenanceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, OpsWorksCMError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, OpsWorksCMError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerResult, OpsWorksCMError> UpdateServerOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerEngineAttributesResult, OpsWorksCMError> UpdateServerEngineAttributesOutcome;
-
-        typedef std::future<AssociateNodeOutcome> AssociateNodeOutcomeCallable;
-        typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
-        typedef std::future<CreateServerOutcome> CreateServerOutcomeCallable;
-        typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
-        typedef std::future<DeleteServerOutcome> DeleteServerOutcomeCallable;
-        typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
-        typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
-        typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
-        typedef std::future<DescribeNodeAssociationStatusOutcome> DescribeNodeAssociationStatusOutcomeCallable;
-        typedef std::future<DescribeServersOutcome> DescribeServersOutcomeCallable;
-        typedef std::future<DisassociateNodeOutcome> DisassociateNodeOutcomeCallable;
-        typedef std::future<ExportServerEngineAttributeOutcome> ExportServerEngineAttributeOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RestoreServerOutcome> RestoreServerOutcomeCallable;
-        typedef std::future<StartMaintenanceOutcome> StartMaintenanceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateServerOutcome> UpdateServerOutcomeCallable;
-        typedef std::future<UpdateServerEngineAttributesOutcome> UpdateServerEngineAttributesOutcomeCallable;
-} // namespace Model
-
-  class OpsWorksCMClient;
-
-    typedef std::function<void(const OpsWorksCMClient*, const Model::AssociateNodeRequest&, const Model::AssociateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateNodeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::CreateServerRequest&, const Model::CreateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DeleteServerRequest&, const Model::DeleteServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeNodeAssociationStatusRequest&, const Model::DescribeNodeAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodeAssociationStatusResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeServersRequest&, const Model::DescribeServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServersResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::DisassociateNodeRequest&, const Model::DisassociateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNodeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::ExportServerEngineAttributeRequest&, const Model::ExportServerEngineAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportServerEngineAttributeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::RestoreServerRequest&, const Model::RestoreServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreServerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::StartMaintenanceRequest&, const Model::StartMaintenanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMaintenanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::UpdateServerRequest&, const Model::UpdateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksCMClient*, const Model::UpdateServerEngineAttributesRequest&, const Model::UpdateServerEngineAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerEngineAttributesResponseReceivedHandler;
-
   /**
    * <fullname>AWS OpsWorks CM</fullname> <p>AWS OpsWorks for configuration
    * management (CM) is a service that runs and manages configuration management
@@ -196,32 +59,60 @@ namespace Model
    * <b>Throttling limits</b> </p> <p>All API operations allow for five requests per
    * second with a burst of 10 requests per second.</p>
    */
-  class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient
+  class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksCMClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpsWorksCMClient(const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration(),
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksCMClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpsWorksCMClient(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         OpsWorksCMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration = Aws::OpsWorksCM::OpsWorksCMClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpsWorksCMClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpsWorksCMClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        OpsWorksCMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~OpsWorksCMClient();
-
 
         /**
          * <p> Associates a new node with the server. For more information about how to
@@ -685,31 +576,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<OpsWorksCMEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateNodeAsyncHelper(const Model::AssociateNodeRequest& request, const AssociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateServerAsyncHelper(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServerAsyncHelper(const Model::DeleteServerRequest& request, const DeleteServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeNodeAssociationStatusAsyncHelper(const Model::DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServersAsyncHelper(const Model::DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateNodeAsyncHelper(const Model::DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExportServerEngineAttributeAsyncHelper(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreServerAsyncHelper(const Model::RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartMaintenanceAsyncHelper(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServerAsyncHelper(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServerEngineAttributesAsyncHelper(const Model::UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>;
+      void init(const OpsWorksCMClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      OpsWorksCMClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<OpsWorksCMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpsWorksCM

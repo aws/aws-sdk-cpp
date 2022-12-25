@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/Alarm">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API Alarm
+  class Alarm
   {
   public:
-    Alarm();
-    Alarm(Aws::Utils::Json::JsonView jsonValue);
-    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API Alarm();
+    AWS_APPLICATIONAUTOSCALING_API Alarm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     Aws::String m_alarmARN;
-    bool m_alarmARNHasBeenSet;
+    bool m_alarmARNHasBeenSet = false;
   };
 
 } // namespace Model

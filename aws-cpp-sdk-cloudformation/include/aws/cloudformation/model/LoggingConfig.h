@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/LoggingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API LoggingConfig
+  class LoggingConfig
   {
   public:
-    LoggingConfig();
-    LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API LoggingConfig();
+    AWS_CLOUDFORMATION_API LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_logRoleArn;
-    bool m_logRoleArnHasBeenSet;
+    bool m_logRoleArnHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

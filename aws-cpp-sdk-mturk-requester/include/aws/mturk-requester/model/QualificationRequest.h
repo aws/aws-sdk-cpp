@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/QualificationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API QualificationRequest
+  class QualificationRequest
   {
   public:
-    QualificationRequest();
-    QualificationRequest(Aws::Utils::Json::JsonView jsonValue);
-    QualificationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API QualificationRequest();
+    AWS_MTURK_API QualificationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API QualificationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -359,22 +359,22 @@ namespace Model
   private:
 
     Aws::String m_qualificationRequestId;
-    bool m_qualificationRequestIdHasBeenSet;
+    bool m_qualificationRequestIdHasBeenSet = false;
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     Aws::String m_answer;
-    bool m_answerHasBeenSet;
+    bool m_answerHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTime;
-    bool m_submitTimeHasBeenSet;
+    bool m_submitTimeHasBeenSet = false;
   };
 
 } // namespace Model

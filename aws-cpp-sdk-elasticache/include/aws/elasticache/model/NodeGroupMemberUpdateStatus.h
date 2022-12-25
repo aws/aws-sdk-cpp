@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupMemberUpdateStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NodeGroupMemberUpdateStatus
+  class NodeGroupMemberUpdateStatus
   {
   public:
-    NodeGroupMemberUpdateStatus();
-    NodeGroupMemberUpdateStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeGroupMemberUpdateStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupMemberUpdateStatus();
+    AWS_ELASTICACHE_API NodeGroupMemberUpdateStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupMemberUpdateStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -350,31 +350,31 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_cacheNodeId;
-    bool m_cacheNodeIdHasBeenSet;
+    bool m_cacheNodeIdHasBeenSet = false;
 
     NodeUpdateStatus m_nodeUpdateStatus;
-    bool m_nodeUpdateStatusHasBeenSet;
+    bool m_nodeUpdateStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeDeletionDate;
-    bool m_nodeDeletionDateHasBeenSet;
+    bool m_nodeDeletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateStartDate;
-    bool m_nodeUpdateStartDateHasBeenSet;
+    bool m_nodeUpdateStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateEndDate;
-    bool m_nodeUpdateEndDateHasBeenSet;
+    bool m_nodeUpdateEndDateHasBeenSet = false;
 
     NodeUpdateInitiatedBy m_nodeUpdateInitiatedBy;
-    bool m_nodeUpdateInitiatedByHasBeenSet;
+    bool m_nodeUpdateInitiatedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateInitiatedDate;
-    bool m_nodeUpdateInitiatedDateHasBeenSet;
+    bool m_nodeUpdateInitiatedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_nodeUpdateStatusModifiedDate;
-    bool m_nodeUpdateStatusModifiedDateHasBeenSet;
+    bool m_nodeUpdateStatusModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

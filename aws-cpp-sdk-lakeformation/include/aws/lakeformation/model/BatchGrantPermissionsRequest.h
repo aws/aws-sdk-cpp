@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API BatchGrantPermissionsRequest : public LakeFormationRequest
+  class BatchGrantPermissionsRequest : public LakeFormationRequest
   {
   public:
-    BatchGrantPermissionsRequest();
+    AWS_LAKEFORMATION_API BatchGrantPermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchGrantPermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::Vector<BatchPermissionsRequestEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeiSCSIAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VolumeiSCSIAttributes
+  class VolumeiSCSIAttributes
   {
   public:
-    VolumeiSCSIAttributes();
-    VolumeiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
-    VolumeiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VolumeiSCSIAttributes();
+    AWS_STORAGEGATEWAY_API VolumeiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VolumeiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,19 +184,19 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     int m_networkInterfacePort;
-    bool m_networkInterfacePortHasBeenSet;
+    bool m_networkInterfacePortHasBeenSet = false;
 
     int m_lunNumber;
-    bool m_lunNumberHasBeenSet;
+    bool m_lunNumberHasBeenSet = false;
 
     bool m_chapEnabled;
-    bool m_chapEnabledHasBeenSet;
+    bool m_chapEnabledHasBeenSet = false;
   };
 
 } // namespace Model

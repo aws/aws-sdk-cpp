@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateProjectRequest : public IoTSiteWiseRequest
+  class UpdateProjectRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateProjectRequest();
+    AWS_IOTSITEWISE_API UpdateProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_projectDescription;
-    bool m_projectDescriptionHasBeenSet;
+    bool m_projectDescriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

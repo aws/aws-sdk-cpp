@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MetricDatum">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MetricDatum
+  class MetricDatum
   {
   public:
-    MetricDatum();
-    MetricDatum(Aws::Utils::Json::JsonView jsonValue);
-    MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MetricDatum();
+    AWS_SAGEMAKER_API MetricDatum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     AutoMLMetricEnum m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     MetricSetSource m_set;
-    bool m_setHasBeenSet;
+    bool m_setHasBeenSet = false;
 
     AutoMLMetricExtendedEnum m_standardMetricName;
-    bool m_standardMetricNameHasBeenSet;
+    bool m_standardMetricNameHasBeenSet = false;
   };
 
 } // namespace Model

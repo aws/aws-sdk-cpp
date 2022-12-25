@@ -22,12 +22,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API DeletePlaybackKeyPairResult
+  class DeletePlaybackKeyPairResult
   {
   public:
-    DeletePlaybackKeyPairResult();
-    DeletePlaybackKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API DeletePlaybackKeyPairResult();
+    AWS_IVS_API DeletePlaybackKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API DeletePlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

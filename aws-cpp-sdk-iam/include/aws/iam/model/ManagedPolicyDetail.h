@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ManagedPolicyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ManagedPolicyDetail
+  class ManagedPolicyDetail
   {
   public:
-    ManagedPolicyDetail();
-    ManagedPolicyDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ManagedPolicyDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ManagedPolicyDetail();
+    AWS_IAM_API ManagedPolicyDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ManagedPolicyDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -565,40 +565,40 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     int m_attachmentCount;
-    bool m_attachmentCountHasBeenSet;
+    bool m_attachmentCountHasBeenSet = false;
 
     int m_permissionsBoundaryUsageCount;
-    bool m_permissionsBoundaryUsageCountHasBeenSet;
+    bool m_permissionsBoundaryUsageCountHasBeenSet = false;
 
     bool m_isAttachable;
-    bool m_isAttachableHasBeenSet;
+    bool m_isAttachableHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
 
     Aws::Vector<PolicyVersion> m_policyVersionList;
-    bool m_policyVersionListHasBeenSet;
+    bool m_policyVersionListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingDocument
+  class ThingDocument
   {
   public:
-    ThingDocument();
-    ThingDocument(Aws::Utils::Json::JsonView jsonValue);
-    ThingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingDocument();
+    AWS_IOT_API ThingDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -444,28 +444,28 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_thingId;
-    bool m_thingIdHasBeenSet;
+    bool m_thingIdHasBeenSet = false;
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thingGroupNames;
-    bool m_thingGroupNamesHasBeenSet;
+    bool m_thingGroupNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_shadow;
-    bool m_shadowHasBeenSet;
+    bool m_shadowHasBeenSet = false;
 
     Aws::String m_deviceDefender;
-    bool m_deviceDefenderHasBeenSet;
+    bool m_deviceDefenderHasBeenSet = false;
 
     ThingConnectivity m_connectivity;
-    bool m_connectivityHasBeenSet;
+    bool m_connectivityHasBeenSet = false;
   };
 
 } // namespace Model

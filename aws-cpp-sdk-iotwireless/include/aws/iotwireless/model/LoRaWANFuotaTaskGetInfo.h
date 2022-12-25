@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANFuotaTaskGetInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANFuotaTaskGetInfo
+  class LoRaWANFuotaTaskGetInfo
   {
   public:
-    LoRaWANFuotaTaskGetInfo();
-    LoRaWANFuotaTaskGetInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANFuotaTaskGetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANFuotaTaskGetInfo();
+    AWS_IOTWIRELESS_API LoRaWANFuotaTaskGetInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANFuotaTaskGetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -85,10 +85,10 @@ namespace Model
   private:
 
     Aws::String m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

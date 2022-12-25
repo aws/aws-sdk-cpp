@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCurrentMetricDataResult::GetCurrentMetricDataResult()
+GetCurrentMetricDataResult::GetCurrentMetricDataResult() : 
+    m_approximateTotalCount(0)
 {
 }
 
-GetCurrentMetricDataResult::GetCurrentMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetCurrentMetricDataResult::GetCurrentMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_approximateTotalCount(0)
 {
   *this = result;
 }
@@ -36,7 +38,7 @@ GetCurrentMetricDataResult& GetCurrentMetricDataResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("MetricResults"))
   {
-    Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
+    Aws::Utils::Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
     for(unsigned metricResultsIndex = 0; metricResultsIndex < metricResultsJsonList.GetLength(); ++metricResultsIndex)
     {
       m_metricResults.push_back(metricResultsJsonList[metricResultsIndex].AsObject());
@@ -46,6 +48,12 @@ GetCurrentMetricDataResult& GetCurrentMetricDataResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("DataSnapshotTime"))
   {
     m_dataSnapshotTime = jsonValue.GetDouble("DataSnapshotTime");
+
+  }
+
+  if(jsonValue.ValueExists("ApproximateTotalCount"))
+  {
+    m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
 
   }
 

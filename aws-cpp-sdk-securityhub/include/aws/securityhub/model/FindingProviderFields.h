@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderFields">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FindingProviderFields
+  class FindingProviderFields
   {
   public:
-    FindingProviderFields();
-    FindingProviderFields(Aws::Utils::Json::JsonView jsonValue);
-    FindingProviderFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FindingProviderFields();
+    AWS_SECURITYHUB_API FindingProviderFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FindingProviderFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     int m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     int m_criticality;
-    bool m_criticalityHasBeenSet;
+    bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<RelatedFinding> m_relatedFindings;
-    bool m_relatedFindingsHasBeenSet;
+    bool m_relatedFindingsHasBeenSet = false;
 
     FindingProviderSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
   };
 
 } // namespace Model

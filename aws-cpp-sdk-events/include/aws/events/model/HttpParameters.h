@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/HttpParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API HttpParameters
+  class HttpParameters
   {
   public:
-    HttpParameters();
-    HttpParameters(Aws::Utils::Json::JsonView jsonValue);
-    HttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API HttpParameters();
+    AWS_CLOUDWATCHEVENTS_API HttpParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API HttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,13 +257,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_pathParameterValues;
-    bool m_pathParameterValuesHasBeenSet;
+    bool m_pathParameterValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_headerParameters;
-    bool m_headerParametersHasBeenSet;
+    bool m_headerParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
   };
 
 } // namespace Model

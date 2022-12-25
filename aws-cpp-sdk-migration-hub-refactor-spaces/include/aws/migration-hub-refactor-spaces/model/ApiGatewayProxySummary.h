@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ApiGatewayProxySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary
+  class ApiGatewayProxySummary
   {
   public:
-    ApiGatewayProxySummary();
-    ApiGatewayProxySummary(Aws::Utils::Json::JsonView jsonValue);
-    ApiGatewayProxySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -342,25 +342,25 @@ namespace Model
   private:
 
     Aws::String m_apiGatewayId;
-    bool m_apiGatewayIdHasBeenSet;
+    bool m_apiGatewayIdHasBeenSet = false;
 
     ApiGatewayEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_nlbArn;
-    bool m_nlbArnHasBeenSet;
+    bool m_nlbArnHasBeenSet = false;
 
     Aws::String m_nlbName;
-    bool m_nlbNameHasBeenSet;
+    bool m_nlbNameHasBeenSet = false;
 
     Aws::String m_proxyUrl;
-    bool m_proxyUrlHasBeenSet;
+    bool m_proxyUrlHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
   };
 
 } // namespace Model

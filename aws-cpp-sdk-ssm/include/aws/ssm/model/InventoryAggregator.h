@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryAggregator">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryAggregator
+  class InventoryAggregator
   {
   public:
-    InventoryAggregator();
-    InventoryAggregator(Aws::Utils::Json::JsonView jsonValue);
-    InventoryAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryAggregator();
+    AWS_SSM_API InventoryAggregator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Vector<InventoryAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
 
     Aws::Vector<InventoryGroup> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

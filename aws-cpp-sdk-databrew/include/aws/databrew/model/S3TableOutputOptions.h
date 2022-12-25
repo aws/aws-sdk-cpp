@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/S3TableOutputOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API S3TableOutputOptions
+  class S3TableOutputOptions
   {
   public:
-    S3TableOutputOptions();
-    S3TableOutputOptions(Aws::Utils::Json::JsonView jsonValue);
-    S3TableOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API S3TableOutputOptions();
+    AWS_GLUEDATABREW_API S3TableOutputOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API S3TableOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

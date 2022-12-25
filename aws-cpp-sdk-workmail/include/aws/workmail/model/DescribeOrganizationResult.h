@@ -25,12 +25,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DescribeOrganizationResult
+  class DescribeOrganizationResult
   {
   public:
-    DescribeOrganizationResult();
-    DescribeOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeOrganizationResult();
+    AWS_WORKMAIL_API DescribeOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -142,43 +142,43 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the directory associated with an Amazon WorkMail
+     * <p>The identifier for the directory associated with an WorkMail
      * organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}

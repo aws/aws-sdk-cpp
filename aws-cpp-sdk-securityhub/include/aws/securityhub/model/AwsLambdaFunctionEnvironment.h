@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsLambdaFunctionEnvironment
+  class AwsLambdaFunctionEnvironment
   {
   public:
-    AwsLambdaFunctionEnvironment();
-    AwsLambdaFunctionEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironment();
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     AwsLambdaFunctionEnvironmentError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

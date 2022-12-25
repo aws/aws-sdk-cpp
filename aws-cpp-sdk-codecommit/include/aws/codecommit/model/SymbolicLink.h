@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/SymbolicLink">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API SymbolicLink
+  class SymbolicLink
   {
   public:
-    SymbolicLink();
-    SymbolicLink(Aws::Utils::Json::JsonView jsonValue);
-    SymbolicLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API SymbolicLink();
+    AWS_CODECOMMIT_API SymbolicLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API SymbolicLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_blobId;
-    bool m_blobIdHasBeenSet;
+    bool m_blobIdHasBeenSet = false;
 
     Aws::String m_absolutePath;
-    bool m_absolutePathHasBeenSet;
+    bool m_absolutePathHasBeenSet = false;
 
     Aws::String m_relativePath;
-    bool m_relativePathHasBeenSet;
+    bool m_relativePathHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
   };
 
 } // namespace Model

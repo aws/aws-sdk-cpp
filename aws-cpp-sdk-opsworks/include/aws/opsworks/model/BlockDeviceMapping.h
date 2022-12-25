@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/BlockDeviceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API BlockDeviceMapping
+  class BlockDeviceMapping
   {
   public:
-    BlockDeviceMapping();
-    BlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
-    BlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API BlockDeviceMapping();
+    AWS_OPSWORKS_API BlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API BlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,16 +243,16 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_noDevice;
-    bool m_noDeviceHasBeenSet;
+    bool m_noDeviceHasBeenSet = false;
 
     Aws::String m_virtualName;
-    bool m_virtualNameHasBeenSet;
+    bool m_virtualNameHasBeenSet = false;
 
     EbsBlockDevice m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
   };
 
 } // namespace Model

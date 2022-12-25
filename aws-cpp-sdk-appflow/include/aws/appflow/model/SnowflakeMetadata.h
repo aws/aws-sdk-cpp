@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SnowflakeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SnowflakeMetadata
+  class SnowflakeMetadata
   {
   public:
-    SnowflakeMetadata();
-    SnowflakeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SnowflakeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SnowflakeMetadata();
+    AWS_APPFLOW_API SnowflakeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SnowflakeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_supportedRegions;
-    bool m_supportedRegionsHasBeenSet;
+    bool m_supportedRegionsHasBeenSet = false;
   };
 
 } // namespace Model

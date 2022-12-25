@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/QuestionDifference">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API QuestionDifference
+  class QuestionDifference
   {
   public:
-    QuestionDifference();
-    QuestionDifference(Aws::Utils::Json::JsonView jsonValue);
-    QuestionDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API QuestionDifference();
+    AWS_WELLARCHITECTED_API QuestionDifference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API QuestionDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -121,13 +121,13 @@ namespace Model
   private:
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_questionTitle;
-    bool m_questionTitleHasBeenSet;
+    bool m_questionTitleHasBeenSet = false;
 
     DifferenceStatus m_differenceStatus;
-    bool m_differenceStatusHasBeenSet;
+    bool m_differenceStatusHasBeenSet = false;
   };
 
 } // namespace Model

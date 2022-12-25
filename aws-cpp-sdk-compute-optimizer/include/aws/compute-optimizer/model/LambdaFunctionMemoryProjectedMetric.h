@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionMemoryProjectedMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryProjectedMetric
+  class LambdaFunctionMemoryProjectedMetric
   {
   public:
-    LambdaFunctionMemoryProjectedMetric();
-    LambdaFunctionMemoryProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionMemoryProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryProjectedMetric();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,13 +124,13 @@ namespace Model
   private:
 
     LambdaFunctionMemoryMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LambdaFunctionMemoryMetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

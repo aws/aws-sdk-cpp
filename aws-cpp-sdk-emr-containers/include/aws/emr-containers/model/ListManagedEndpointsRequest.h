@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMRCONTAINERS_API ListManagedEndpointsRequest : public EMRContainersRequest
+  class ListManagedEndpointsRequest : public EMRContainersRequest
   {
   public:
-    ListManagedEndpointsRequest();
+    AWS_EMRCONTAINERS_API ListManagedEndpointsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListManagedEndpoints"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMRCONTAINERS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_EMRCONTAINERS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -295,25 +295,25 @@ namespace Model
   private:
 
     Aws::String m_virtualClusterId;
-    bool m_virtualClusterIdHasBeenSet;
+    bool m_virtualClusterIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Vector<EndpointState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

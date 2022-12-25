@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceDeploymentConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails
+  class AwsEcsServiceDeploymentConfigurationDetails
   {
   public:
-    AwsEcsServiceDeploymentConfigurationDetails();
-    AwsEcsServiceDeploymentConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceDeploymentConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails m_deploymentCircuitBreaker;
-    bool m_deploymentCircuitBreakerHasBeenSet;
+    bool m_deploymentCircuitBreakerHasBeenSet = false;
 
     int m_maximumPercent;
-    bool m_maximumPercentHasBeenSet;
+    bool m_maximumPercentHasBeenSet = false;
 
     int m_minimumHealthyPercent;
-    bool m_minimumHealthyPercentHasBeenSet;
+    bool m_minimumHealthyPercentHasBeenSet = false;
   };
 
 } // namespace Model

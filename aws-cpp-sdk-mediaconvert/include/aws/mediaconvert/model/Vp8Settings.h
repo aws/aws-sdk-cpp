@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp8Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Vp8Settings
+  class Vp8Settings
   {
   public:
-    Vp8Settings();
-    Vp8Settings(Aws::Utils::Json::JsonView jsonValue);
-    Vp8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Vp8Settings();
+    AWS_MEDIACONVERT_API Vp8Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Vp8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -635,43 +635,43 @@ namespace Model
   private:
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Vp8FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     Vp8FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     int m_hrdBufferSize;
-    bool m_hrdBufferSizeHasBeenSet;
+    bool m_hrdBufferSizeHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     Vp8ParControl m_parControl;
-    bool m_parControlHasBeenSet;
+    bool m_parControlHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     Vp8QualityTuningLevel m_qualityTuningLevel;
-    bool m_qualityTuningLevelHasBeenSet;
+    bool m_qualityTuningLevelHasBeenSet = false;
 
     Vp8RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
   };
 
 } // namespace Model

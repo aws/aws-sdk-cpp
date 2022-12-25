@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/OutboundCrossClusterSearchConnectionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus
+  class OutboundCrossClusterSearchConnectionStatus
   {
   public:
-    OutboundCrossClusterSearchConnectionStatus();
-    OutboundCrossClusterSearchConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
-    OutboundCrossClusterSearchConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus();
+    AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API OutboundCrossClusterSearchConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     OutboundCrossClusterSearchConnectionStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

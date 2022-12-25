@@ -22,12 +22,12 @@ namespace WorkMailMessageFlow
 {
 namespace Model
 {
-  class AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentResult
+  class PutRawMessageContentResult
   {
   public:
-    PutRawMessageContentResult();
-    PutRawMessageContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRawMessageContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentResult();
+    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

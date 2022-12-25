@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiCallAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiCallAction
+  class AwsApiCallAction
   {
   public:
-    AwsApiCallAction();
-    AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiCallAction();
+    AWS_SECURITYHUB_API AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -420,28 +420,28 @@ namespace Model
   private:
 
     Aws::String m_api;
-    bool m_apiHasBeenSet;
+    bool m_apiHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_callerType;
-    bool m_callerTypeHasBeenSet;
+    bool m_callerTypeHasBeenSet = false;
 
     ActionRemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     AwsApiCallActionDomainDetails m_domainDetails;
-    bool m_domainDetailsHasBeenSet;
+    bool m_domainDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_affectedResources;
-    bool m_affectedResourcesHasBeenSet;
+    bool m_affectedResourcesHasBeenSet = false;
 
     Aws::String m_firstSeen;
-    bool m_firstSeenHasBeenSet;
+    bool m_firstSeenHasBeenSet = false;
 
     Aws::String m_lastSeen;
-    bool m_lastSeenHasBeenSet;
+    bool m_lastSeenHasBeenSet = false;
   };
 
 } // namespace Model

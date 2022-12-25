@@ -95,7 +95,7 @@ EndpointAccess& EndpointAccess::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -112,7 +112,7 @@ EndpointAccess& EndpointAccess::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("vpcSecurityGroups"))
   {
-    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("vpcSecurityGroups");
+    Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("vpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -148,7 +148,7 @@ JsonValue EndpointAccess::Jsonize() const
 
   if(m_endpointCreateTimeHasBeenSet)
   {
-   payload.WithString("endpointCreateTime", m_endpointCreateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("endpointCreateTime", m_endpointCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endpointNameHasBeenSet)
@@ -171,7 +171,7 @@ JsonValue EndpointAccess::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -188,7 +188,7 @@ JsonValue EndpointAccess::Jsonize() const
 
   if(m_vpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
    {
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());

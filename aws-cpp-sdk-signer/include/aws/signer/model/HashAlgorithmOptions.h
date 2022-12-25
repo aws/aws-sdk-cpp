@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/HashAlgorithmOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API HashAlgorithmOptions
+  class HashAlgorithmOptions
   {
   public:
-    HashAlgorithmOptions();
-    HashAlgorithmOptions(Aws::Utils::Json::JsonView jsonValue);
-    HashAlgorithmOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API HashAlgorithmOptions();
+    AWS_SIGNER_API HashAlgorithmOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API HashAlgorithmOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::Vector<HashAlgorithm> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     HashAlgorithm m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

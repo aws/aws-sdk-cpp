@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API CreateDomainRequest : public CustomerProfilesRequest
+  class CreateDomainRequest : public CustomerProfilesRequest
   {
   public:
-    CreateDomainRequest();
+    AWS_CUSTOMERPROFILES_API CreateDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -371,22 +371,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     int m_defaultExpirationDays;
-    bool m_defaultExpirationDaysHasBeenSet;
+    bool m_defaultExpirationDaysHasBeenSet = false;
 
     Aws::String m_defaultEncryptionKey;
-    bool m_defaultEncryptionKeyHasBeenSet;
+    bool m_defaultEncryptionKeyHasBeenSet = false;
 
     Aws::String m_deadLetterQueueUrl;
-    bool m_deadLetterQueueUrlHasBeenSet;
+    bool m_deadLetterQueueUrlHasBeenSet = false;
 
     MatchingRequest m_matching;
-    bool m_matchingHasBeenSet;
+    bool m_matchingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

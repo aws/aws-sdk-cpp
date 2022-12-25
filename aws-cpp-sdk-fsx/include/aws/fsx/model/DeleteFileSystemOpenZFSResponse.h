@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystemOpenZFSResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DeleteFileSystemOpenZFSResponse
+  class DeleteFileSystemOpenZFSResponse
   {
   public:
-    DeleteFileSystemOpenZFSResponse();
-    DeleteFileSystemOpenZFSResponse(Aws::Utils::Json::JsonView jsonValue);
-    DeleteFileSystemOpenZFSResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DeleteFileSystemOpenZFSResponse();
+    AWS_FSX_API DeleteFileSystemOpenZFSResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DeleteFileSystemOpenZFSResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -93,10 +93,10 @@ namespace Model
   private:
 
     Aws::String m_finalBackupId;
-    bool m_finalBackupIdHasBeenSet;
+    bool m_finalBackupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,7 +98,7 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hopDestinations"))
   {
-    Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
+    Aws::Utils::Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
     for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
     {
       m_hopDestinations.push_back(hopDestinationsJsonList[hopDestinationsIndex].AsObject());
@@ -193,7 +193,7 @@ JsonValue JobTemplate::Jsonize() const
 
   if(m_hopDestinationsHasBeenSet)
   {
-   Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+   Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
    for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
    {
      hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());

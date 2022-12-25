@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/PendingDeploymentSummary.h>
+#include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
 #include <utility>
 
@@ -32,12 +33,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeEndpointResult
+  class DescribeEndpointResult
   {
   public:
-    DescribeEndpointResult();
-    DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeEndpointResult();
+    AWS_SAGEMAKER_API DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -149,44 +150,44 @@ namespace Model
 
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline const Aws::Vector<ProductionVariantSummary>& GetProductionVariants() const{ return m_productionVariants; }
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline void SetProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_productionVariants = value; }
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline void SetProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_productionVariants = std::move(value); }
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& WithProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetProductionVariants(value); return *this;}
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& WithProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& AddProductionVariants(const ProductionVariantSummary& value) { m_productionVariants.push_back(value); return *this; }
 
     /**
-     * <p> An array of <a>ProductionVariantSummary</a> objects, one for each model
-     * hosted behind this endpoint. </p>
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model
+     * hosted behind this endpoint.</p>
      */
     inline DescribeEndpointResult& AddProductionVariants(ProductionVariantSummary&& value) { m_productionVariants.push_back(std::move(value)); return *this; }
 
@@ -530,6 +531,82 @@ namespace Model
      */
     inline DescribeEndpointResult& WithPendingDeploymentSummary(PendingDeploymentSummary&& value) { SetPendingDeploymentSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline const ExplainerConfig& GetExplainerConfig() const{ return m_explainerConfig; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(const ExplainerConfig& value) { m_explainerConfig = value; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(ExplainerConfig&& value) { m_explainerConfig = std::move(value); }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointResult& WithExplainerConfig(const ExplainerConfig& value) { SetExplainerConfig(value); return *this;}
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointResult& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline const Aws::Vector<ProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { m_shadowProductionVariants = value; }
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline void SetShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { m_shadowProductionVariants = std::move(value); }
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointResult& WithShadowProductionVariants(const Aws::Vector<ProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointResult& WithShadowProductionVariants(Aws::Vector<ProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointResult& AddShadowProductionVariants(const ProductionVariantSummary& value) { m_shadowProductionVariants.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <a>ProductionVariantSummary</a> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointResult& AddShadowProductionVariants(ProductionVariantSummary&& value) { m_shadowProductionVariants.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -555,6 +632,10 @@ namespace Model
     AsyncInferenceConfig m_asyncInferenceConfig;
 
     PendingDeploymentSummary m_pendingDeploymentSummary;
+
+    ExplainerConfig m_explainerConfig;
+
+    Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
   };
 
 } // namespace Model

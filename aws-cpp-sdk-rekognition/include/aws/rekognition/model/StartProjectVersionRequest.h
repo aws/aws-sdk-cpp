@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API StartProjectVersionRequest : public RekognitionRequest
+  class StartProjectVersionRequest : public RekognitionRequest
   {
   public:
-    StartProjectVersionRequest();
+    AWS_REKOGNITION_API StartProjectVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartProjectVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,43 +85,87 @@ namespace Model
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing and can support up to 5 Transaction Pers Second
-     * (TPS). Use a higher number to increase the TPS throughput of your model. You are
-     * charged for the number of inference units that you use. </p>
+     * represents 1 hour of processing. </p> <p>For information about the number of
+     * transactions per second (TPS) that an inference unit can support, see <i>Running
+     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
+     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
+     * of your model. You are charged for the number of inference units that you use.
+     * </p>
      */
     inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing and can support up to 5 Transaction Pers Second
-     * (TPS). Use a higher number to increase the TPS throughput of your model. You are
-     * charged for the number of inference units that you use. </p>
+     * represents 1 hour of processing. </p> <p>For information about the number of
+     * transactions per second (TPS) that an inference unit can support, see <i>Running
+     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
+     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
+     * of your model. You are charged for the number of inference units that you use.
+     * </p>
      */
     inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing and can support up to 5 Transaction Pers Second
-     * (TPS). Use a higher number to increase the TPS throughput of your model. You are
-     * charged for the number of inference units that you use. </p>
+     * represents 1 hour of processing. </p> <p>For information about the number of
+     * transactions per second (TPS) that an inference unit can support, see <i>Running
+     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
+     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
+     * of your model. You are charged for the number of inference units that you use.
+     * </p>
      */
     inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
 
     /**
      * <p>The minimum number of inference units to use. A single inference unit
-     * represents 1 hour of processing and can support up to 5 Transaction Pers Second
-     * (TPS). Use a higher number to increase the TPS throughput of your model. You are
-     * charged for the number of inference units that you use. </p>
+     * represents 1 hour of processing. </p> <p>For information about the number of
+     * transactions per second (TPS) that an inference unit can support, see <i>Running
+     * a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition
+     * Custom Labels Guide. </p> <p>Use a higher number to increase the TPS throughput
+     * of your model. You are charged for the number of inference units that you use.
+     * </p>
      */
     inline StartProjectVersionRequest& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale
+     * the model.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale
+     * the model.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale
+     * the model.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale
+     * the model.</p>
+     */
+    inline StartProjectVersionRequest& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
 
   private:
 
     Aws::String m_projectVersionArn;
-    bool m_projectVersionArnHasBeenSet;
+    bool m_projectVersionArnHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet = false;
   };
 
 } // namespace Model

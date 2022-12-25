@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceShadowEnrichActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DeviceShadowEnrichActivity
+  class DeviceShadowEnrichActivity
   {
   public:
-    DeviceShadowEnrichActivity();
-    DeviceShadowEnrichActivity(Aws::Utils::Json::JsonView jsonValue);
-    DeviceShadowEnrichActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity();
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_next;
-    bool m_nextHasBeenSet;
+    bool m_nextHasBeenSet = false;
   };
 
 } // namespace Model

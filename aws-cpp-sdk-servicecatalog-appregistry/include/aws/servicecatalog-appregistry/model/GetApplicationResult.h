@@ -27,12 +27,12 @@ namespace AppRegistry
 {
 namespace Model
 {
-  class AWS_APPREGISTRY_API GetApplicationResult
+  class GetApplicationResult
   {
   public:
-    GetApplicationResult();
-    GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API GetApplicationResult();
+    AWS_APPREGISTRY_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -336,32 +336,32 @@ namespace Model
 
 
     /**
-     * <p>The information about the integration of the application with other services,
-     * such as Resource Groups.</p>
+     * <p> The information about the integration of the application with other
+     * services, such as Resource Groups. </p>
      */
     inline const Integrations& GetIntegrations() const{ return m_integrations; }
 
     /**
-     * <p>The information about the integration of the application with other services,
-     * such as Resource Groups.</p>
+     * <p> The information about the integration of the application with other
+     * services, such as Resource Groups. </p>
      */
     inline void SetIntegrations(const Integrations& value) { m_integrations = value; }
 
     /**
-     * <p>The information about the integration of the application with other services,
-     * such as Resource Groups.</p>
+     * <p> The information about the integration of the application with other
+     * services, such as Resource Groups. </p>
      */
     inline void SetIntegrations(Integrations&& value) { m_integrations = std::move(value); }
 
     /**
-     * <p>The information about the integration of the application with other services,
-     * such as Resource Groups.</p>
+     * <p> The information about the integration of the application with other
+     * services, such as Resource Groups. </p>
      */
     inline GetApplicationResult& WithIntegrations(const Integrations& value) { SetIntegrations(value); return *this;}
 
     /**
-     * <p>The information about the integration of the application with other services,
-     * such as Resource Groups.</p>
+     * <p> The information about the integration of the application with other
+     * services, such as Resource Groups. </p>
      */
     inline GetApplicationResult& WithIntegrations(Integrations&& value) { SetIntegrations(std::move(value)); return *this;}
 

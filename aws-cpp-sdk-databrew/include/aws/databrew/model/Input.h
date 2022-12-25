@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Input
+  class Input
   {
   public:
-    Input();
-    Input(Aws::Utils::Json::JsonView jsonValue);
-    Input& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Input();
+    AWS_GLUEDATABREW_API Input(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Input& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,16 +167,16 @@ namespace Model
   private:
 
     S3Location m_s3InputDefinition;
-    bool m_s3InputDefinitionHasBeenSet;
+    bool m_s3InputDefinitionHasBeenSet = false;
 
     DataCatalogInputDefinition m_dataCatalogInputDefinition;
-    bool m_dataCatalogInputDefinitionHasBeenSet;
+    bool m_dataCatalogInputDefinitionHasBeenSet = false;
 
     DatabaseInputDefinition m_databaseInputDefinition;
-    bool m_databaseInputDefinitionHasBeenSet;
+    bool m_databaseInputDefinitionHasBeenSet = false;
 
     Metadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

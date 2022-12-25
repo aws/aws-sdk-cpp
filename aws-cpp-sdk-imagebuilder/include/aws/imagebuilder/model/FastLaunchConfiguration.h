@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API FastLaunchConfiguration
+  class FastLaunchConfiguration
   {
   public:
-    FastLaunchConfiguration();
-    FastLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FastLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration();
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     FastLaunchSnapshotConfiguration m_snapshotConfiguration;
-    bool m_snapshotConfigurationHasBeenSet;
+    bool m_snapshotConfigurationHasBeenSet = false;
 
     int m_maxParallelLaunches;
-    bool m_maxParallelLaunchesHasBeenSet;
+    bool m_maxParallelLaunchesHasBeenSet = false;
 
     FastLaunchLaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

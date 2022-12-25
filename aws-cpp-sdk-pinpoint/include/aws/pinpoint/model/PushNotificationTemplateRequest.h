@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PushNotificationTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API PushNotificationTemplateRequest
+  class PushNotificationTemplateRequest
   {
   public:
-    PushNotificationTemplateRequest();
-    PushNotificationTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
-    PushNotificationTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API PushNotificationTemplateRequest();
+    AWS_PINPOINT_API PushNotificationTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API PushNotificationTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -541,31 +541,31 @@ namespace Model
   private:
 
     AndroidPushNotificationTemplate m_aDM;
-    bool m_aDMHasBeenSet;
+    bool m_aDMHasBeenSet = false;
 
     APNSPushNotificationTemplate m_aPNS;
-    bool m_aPNSHasBeenSet;
+    bool m_aPNSHasBeenSet = false;
 
     AndroidPushNotificationTemplate m_baidu;
-    bool m_baiduHasBeenSet;
+    bool m_baiduHasBeenSet = false;
 
     DefaultPushNotificationTemplate m_default;
-    bool m_defaultHasBeenSet;
+    bool m_defaultHasBeenSet = false;
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     AndroidPushNotificationTemplate m_gCM;
-    bool m_gCMHasBeenSet;
+    bool m_gCMHasBeenSet = false;
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

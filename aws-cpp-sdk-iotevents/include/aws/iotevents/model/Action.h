@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API Action();
+    AWS_IOTEVENTS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -575,43 +575,43 @@ namespace Model
   private:
 
     SetVariableAction m_setVariable;
-    bool m_setVariableHasBeenSet;
+    bool m_setVariableHasBeenSet = false;
 
     SNSTopicPublishAction m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
 
     IotTopicPublishAction m_iotTopicPublish;
-    bool m_iotTopicPublishHasBeenSet;
+    bool m_iotTopicPublishHasBeenSet = false;
 
     SetTimerAction m_setTimer;
-    bool m_setTimerHasBeenSet;
+    bool m_setTimerHasBeenSet = false;
 
     ClearTimerAction m_clearTimer;
-    bool m_clearTimerHasBeenSet;
+    bool m_clearTimerHasBeenSet = false;
 
     ResetTimerAction m_resetTimer;
-    bool m_resetTimerHasBeenSet;
+    bool m_resetTimerHasBeenSet = false;
 
     LambdaAction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
 
     IotEventsAction m_iotEvents;
-    bool m_iotEventsHasBeenSet;
+    bool m_iotEventsHasBeenSet = false;
 
     SqsAction m_sqs;
-    bool m_sqsHasBeenSet;
+    bool m_sqsHasBeenSet = false;
 
     FirehoseAction m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     DynamoDBAction m_dynamoDB;
-    bool m_dynamoDBHasBeenSet;
+    bool m_dynamoDBHasBeenSet = false;
 
     DynamoDBv2Action m_dynamoDBv2;
-    bool m_dynamoDBv2HasBeenSet;
+    bool m_dynamoDBv2HasBeenSet = false;
 
     IotSiteWiseAction m_iotSiteWise;
-    bool m_iotSiteWiseHasBeenSet;
+    bool m_iotSiteWiseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ Aws::String GetAutoScalingGroupRecommendationsRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -40,7 +40,7 @@ Aws::String GetAutoScalingGroupRecommendationsRequest::SerializePayload() const
 
   if(m_autoScalingGroupArnsHasBeenSet)
   {
-   Array<JsonValue> autoScalingGroupArnsJsonList(m_autoScalingGroupArns.size());
+   Aws::Utils::Array<JsonValue> autoScalingGroupArnsJsonList(m_autoScalingGroupArns.size());
    for(unsigned autoScalingGroupArnsIndex = 0; autoScalingGroupArnsIndex < autoScalingGroupArnsJsonList.GetLength(); ++autoScalingGroupArnsIndex)
    {
      autoScalingGroupArnsJsonList[autoScalingGroupArnsIndex].AsString(m_autoScalingGroupArns[autoScalingGroupArnsIndex]);
@@ -63,7 +63,7 @@ Aws::String GetAutoScalingGroupRecommendationsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

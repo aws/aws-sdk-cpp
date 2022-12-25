@@ -30,10 +30,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItemInput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API UpdateItemRequest : public DynamoDBRequest
+  class UpdateItemRequest : public DynamoDBRequest
   {
   public:
-    UpdateItemRequest();
+    AWS_DYNAMODB_API UpdateItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1797,40 +1797,40 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValueUpdate> m_attributeUpdates;
-    bool m_attributeUpdatesHasBeenSet;
+    bool m_attributeUpdatesHasBeenSet = false;
 
     Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
-    bool m_expectedHasBeenSet;
+    bool m_expectedHasBeenSet = false;
 
     ConditionalOperator m_conditionalOperator;
-    bool m_conditionalOperatorHasBeenSet;
+    bool m_conditionalOperatorHasBeenSet = false;
 
     ReturnValue m_returnValues;
-    bool m_returnValuesHasBeenSet;
+    bool m_returnValuesHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
 
     ReturnItemCollectionMetrics m_returnItemCollectionMetrics;
-    bool m_returnItemCollectionMetricsHasBeenSet;
+    bool m_returnItemCollectionMetricsHasBeenSet = false;
 
     Aws::String m_updateExpression;
-    bool m_updateExpressionHasBeenSet;
+    bool m_updateExpressionHasBeenSet = false;
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

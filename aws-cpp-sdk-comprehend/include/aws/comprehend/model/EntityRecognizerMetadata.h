@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerMetadata
+  class EntityRecognizerMetadata
   {
   public:
-    EntityRecognizerMetadata();
-    EntityRecognizerMetadata(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerMetadata();
+    AWS_COMPREHEND_API EntityRecognizerMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     int m_numberOfTrainedDocuments;
-    bool m_numberOfTrainedDocumentsHasBeenSet;
+    bool m_numberOfTrainedDocumentsHasBeenSet = false;
 
     int m_numberOfTestDocuments;
-    bool m_numberOfTestDocumentsHasBeenSet;
+    bool m_numberOfTestDocumentsHasBeenSet = false;
 
     EntityRecognizerEvaluationMetrics m_evaluationMetrics;
-    bool m_evaluationMetricsHasBeenSet;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     Aws::Vector<EntityRecognizerMetadataEntityTypesListItem> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
   };
 
 } // namespace Model

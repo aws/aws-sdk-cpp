@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptRuleSetMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptRuleSetMetadata
+  class ReceiptRuleSetMetadata
   {
   public:
-    ReceiptRuleSetMetadata();
-    ReceiptRuleSetMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptRuleSetMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptRuleSetMetadata();
+    AWS_SES_API ReceiptRuleSetMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptRuleSetMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

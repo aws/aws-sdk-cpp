@@ -22,7 +22,7 @@ namespace Model
 
   /**
    * <p>Determines whether CloudFront includes the
-   * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+   * <code>Strict-Transport-Security</code> HTTP response header and the header's
    * value.</p> <p>For more information about the
    * <code>Strict-Transport-Security</code> HTTP response header, see <a
    * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyStrictTransportSecurity">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity
+  class ResponseHeadersPolicyStrictTransportSecurity
   {
   public:
-    ResponseHeadersPolicyStrictTransportSecurity();
-    ResponseHeadersPolicyStrictTransportSecurity(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyStrictTransportSecurity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyStrictTransportSecurity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -158,16 +158,16 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     bool m_includeSubdomains;
-    bool m_includeSubdomainsHasBeenSet;
+    bool m_includeSubdomainsHasBeenSet = false;
 
     bool m_preload;
-    bool m_preloadHasBeenSet;
+    bool m_preloadHasBeenSet = false;
 
     int m_accessControlMaxAgeSec;
-    bool m_accessControlMaxAgeSecHasBeenSet;
+    bool m_accessControlMaxAgeSecHasBeenSet = false;
   };
 
 } // namespace Model

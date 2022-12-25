@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DimensionGroupDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API DimensionGroupDetail
+  class DimensionGroupDetail
   {
   public:
-    DimensionGroupDetail();
-    DimensionGroupDetail(Aws::Utils::Json::JsonView jsonValue);
-    DimensionGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API DimensionGroupDetail();
+    AWS_PI_API DimensionGroupDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API DimensionGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::Vector<DimensionDetail> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

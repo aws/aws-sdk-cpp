@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsXrayEncryptionConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails
+  class AwsXrayEncryptionConfigDetails
   {
   public:
-    AwsXrayEncryptionConfigDetails();
-    AwsXrayEncryptionConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsXrayEncryptionConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails();
+    AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,112 +88,128 @@ namespace Model
 
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the encryption configuration. When <code>Status</code>
-     * is <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
+     * <p>The current status of the encryption configuration. Valid values are
+     * <code>ACTIVE</code> or <code>UPDATING</code>.</p> <p>When <code>Status</code> is
+     * equal to <code>UPDATING</code>, X-Ray might use both the old and new
+     * encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
-     * KMS keys. <code>NONE</code> indicates to use the default encryption.</p>
+     * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
     inline AwsXrayEncryptionConfigDetails& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

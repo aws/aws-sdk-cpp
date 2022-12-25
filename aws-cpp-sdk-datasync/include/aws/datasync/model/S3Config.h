@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/S3Config">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API S3Config
+  class S3Config
   {
   public:
-    S3Config();
-    S3Config(Aws::Utils::Json::JsonView jsonValue);
-    S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API S3Config();
+    AWS_DATASYNC_API S3Config(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_bucketAccessRoleArn;
-    bool m_bucketAccessRoleArnHasBeenSet;
+    bool m_bucketAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

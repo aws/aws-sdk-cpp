@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/Service">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API Service();
+    AWS_APPRUNNER_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -689,49 +689,49 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_serviceUrl;
-    bool m_serviceUrlHasBeenSet;
+    bool m_serviceUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletedAt;
-    bool m_deletedAtHasBeenSet;
+    bool m_deletedAtHasBeenSet = false;
 
     ServiceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     InstanceConfiguration m_instanceConfiguration;
-    bool m_instanceConfigurationHasBeenSet;
+    bool m_instanceConfigurationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     HealthCheckConfiguration m_healthCheckConfiguration;
-    bool m_healthCheckConfigurationHasBeenSet;
+    bool m_healthCheckConfigurationHasBeenSet = false;
 
     AutoScalingConfigurationSummary m_autoScalingConfigurationSummary;
-    bool m_autoScalingConfigurationSummaryHasBeenSet;
+    bool m_autoScalingConfigurationSummaryHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     ServiceObservabilityConfiguration m_observabilityConfiguration;
-    bool m_observabilityConfigurationHasBeenSet;
+    bool m_observabilityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

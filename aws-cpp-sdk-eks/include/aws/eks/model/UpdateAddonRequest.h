@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API UpdateAddonRequest : public EKSRequest
+  class UpdateAddonRequest : public EKSRequest
   {
   public:
-    UpdateAddonRequest();
+    AWS_EKS_API UpdateAddonRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAddon"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -319,38 +319,80 @@ namespace Model
 
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline const ResolveConflicts& GetResolveConflicts() const{ return m_resolveConflicts; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline bool ResolveConflictsHasBeenSet() const { return m_resolveConflictsHasBeenSet; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline void SetResolveConflicts(const ResolveConflicts& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = value; }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline void SetResolveConflicts(ResolveConflicts&& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = std::move(value); }
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline UpdateAddonRequest& WithResolveConflicts(const ResolveConflicts& value) { SetResolveConflicts(value); return *this;}
 
     /**
-     * <p>How to resolve parameter value conflicts when applying the new version of the
-     * add-on to the cluster.</p>
+     * <p>How to resolve field value conflicts for an Amazon EKS add-on if you've
+     * changed a value from the Amazon EKS default value. Conflicts are handled based
+     * on the option you choose:</p> <ul> <li> <p> <b>None</b> – Amazon EKS doesn't
+     * change the value. The update might fail.</p> </li> <li> <p> <b>Overwrite</b> –
+     * Amazon EKS overwrites the changed value back to the Amazon EKS default
+     * value.</p> </li> <li> <p> <b>Preserve</b> – Amazon EKS preserves the value. If
+     * you choose this option, we recommend that you test any field and value changes
+     * on a non-production cluster before updating the add-on on your production
+     * cluster.</p> </li> </ul>
      */
     inline UpdateAddonRequest& WithResolveConflicts(ResolveConflicts&& value) { SetResolveConflicts(std::move(value)); return *this;}
 
@@ -403,25 +445,85 @@ namespace Model
      */
     inline UpdateAddonRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline UpdateAddonRequest& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline UpdateAddonRequest& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">DescribeAddonConfiguration</a>.</p>
+     */
+    inline UpdateAddonRequest& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
+
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_addonVersion;
-    bool m_addonVersionHasBeenSet;
+    bool m_addonVersionHasBeenSet = false;
 
     Aws::String m_serviceAccountRoleArn;
-    bool m_serviceAccountRoleArnHasBeenSet;
+    bool m_serviceAccountRoleArnHasBeenSet = false;
 
     ResolveConflicts m_resolveConflicts;
-    bool m_resolveConflictsHasBeenSet;
+    bool m_resolveConflictsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
+
+    Aws::String m_configurationValues;
+    bool m_configurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

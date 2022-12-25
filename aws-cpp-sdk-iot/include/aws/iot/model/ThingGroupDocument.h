@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingGroupDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingGroupDocument
+  class ThingGroupDocument
   {
   public:
-    ThingGroupDocument();
-    ThingGroupDocument(Aws::Utils::Json::JsonView jsonValue);
-    ThingGroupDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingGroupDocument();
+    AWS_IOT_API ThingGroupDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingGroupDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::String m_thingGroupName;
-    bool m_thingGroupNameHasBeenSet;
+    bool m_thingGroupNameHasBeenSet = false;
 
     Aws::String m_thingGroupId;
-    bool m_thingGroupIdHasBeenSet;
+    bool m_thingGroupIdHasBeenSet = false;
 
     Aws::String m_thingGroupDescription;
-    bool m_thingGroupDescriptionHasBeenSet;
+    bool m_thingGroupDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parentGroupNames;
-    bool m_parentGroupNamesHasBeenSet;
+    bool m_parentGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

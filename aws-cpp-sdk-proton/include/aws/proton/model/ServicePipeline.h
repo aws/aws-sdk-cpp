@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServicePipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ServicePipeline
+  class ServicePipeline
   {
   public:
-    ServicePipeline();
-    ServicePipeline(Aws::Utils::Json::JsonView jsonValue);
-    ServicePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ServicePipeline();
+    AWS_PROTON_API ServicePipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ServicePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -436,34 +436,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::String m_deploymentStatusMessage;
-    bool m_deploymentStatusMessageHasBeenSet;
+    bool m_deploymentStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentAttemptedAt;
-    bool m_lastDeploymentAttemptedAtHasBeenSet;
+    bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentSucceededAt;
-    bool m_lastDeploymentSucceededAtHasBeenSet;
+    bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

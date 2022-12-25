@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ParameterDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ParameterDeclaration
+  class ParameterDeclaration
   {
   public:
-    ParameterDeclaration();
-    ParameterDeclaration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ParameterDeclaration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ParameterDeclaration();
+    AWS_CLOUDFORMATION_API ParameterDeclaration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ParameterDeclaration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
 
     bool m_noEcho;
-    bool m_noEchoHasBeenSet;
+    bool m_noEchoHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParameterConstraints m_parameterConstraints;
-    bool m_parameterConstraintsHasBeenSet;
+    bool m_parameterConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

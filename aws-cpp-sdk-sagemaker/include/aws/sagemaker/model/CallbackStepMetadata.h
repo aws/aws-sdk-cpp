@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CallbackStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CallbackStepMetadata
+  class CallbackStepMetadata
   {
   public:
-    CallbackStepMetadata();
-    CallbackStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    CallbackStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CallbackStepMetadata();
+    AWS_SAGEMAKER_API CallbackStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CallbackStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_callbackToken;
-    bool m_callbackTokenHasBeenSet;
+    bool m_callbackTokenHasBeenSet = false;
 
     Aws::String m_sqsQueueUrl;
-    bool m_sqsQueueUrlHasBeenSet;
+    bool m_sqsQueueUrlHasBeenSet = false;
 
     Aws::Vector<OutputParameter> m_outputParameters;
-    bool m_outputParametersHasBeenSet;
+    bool m_outputParametersHasBeenSet = false;
   };
 
 } // namespace Model

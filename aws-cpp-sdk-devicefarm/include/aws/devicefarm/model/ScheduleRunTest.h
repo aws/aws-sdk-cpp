@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunTest
+  class ScheduleRunTest
   {
   public:
-    ScheduleRunTest();
-    ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ScheduleRunTest();
+    AWS_DEVICEFARM_API ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -849,19 +849,19 @@ namespace Model
   private:
 
     TestType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_testPackageArn;
-    bool m_testPackageArnHasBeenSet;
+    bool m_testPackageArnHasBeenSet = false;
 
     Aws::String m_testSpecArn;
-    bool m_testSpecArnHasBeenSet;
+    bool m_testSpecArnHasBeenSet = false;
 
     Aws::String m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

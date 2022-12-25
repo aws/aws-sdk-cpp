@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/KeyValuePair">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API KeyValuePair
+  class KeyValuePair
   {
   public:
-    KeyValuePair();
-    KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
-    KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API KeyValuePair();
+    AWS_MACIE2_API KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

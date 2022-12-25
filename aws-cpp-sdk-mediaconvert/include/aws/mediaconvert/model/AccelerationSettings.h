@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AccelerationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AccelerationSettings
+  class AccelerationSettings
   {
   public:
-    AccelerationSettings();
-    AccelerationSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccelerationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AccelerationSettings();
+    AWS_MEDIACONVERT_API AccelerationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AccelerationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AccelerationMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

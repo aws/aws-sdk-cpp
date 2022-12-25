@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/EngineDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API EngineDefaults
+  class EngineDefaults
   {
   public:
-    EngineDefaults();
-    EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API EngineDefaults();
+    AWS_ELASTICACHE_API EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
-    bool m_cacheNodeTypeSpecificParametersHasBeenSet;
+    bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RelatedItemsUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RelatedItemsUpdate
+  class RelatedItemsUpdate
   {
   public:
-    RelatedItemsUpdate();
-    RelatedItemsUpdate(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItemsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RelatedItemsUpdate();
+    AWS_SSMINCIDENTS_API RelatedItemsUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RelatedItemsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     RelatedItem m_itemToAdd;
-    bool m_itemToAddHasBeenSet;
+    bool m_itemToAddHasBeenSet = false;
 
     ItemIdentifier m_itemToRemove;
-    bool m_itemToRemoveHasBeenSet;
+    bool m_itemToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

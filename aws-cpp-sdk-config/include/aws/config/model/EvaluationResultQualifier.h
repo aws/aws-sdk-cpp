@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/config/model/EvaluationMode.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResultQualifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API EvaluationResultQualifier
+  class EvaluationResultQualifier
   {
   public:
-    EvaluationResultQualifier();
-    EvaluationResultQualifier(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationResultQualifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API EvaluationResultQualifier();
+    AWS_CONFIGSERVICE_API EvaluationResultQualifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API EvaluationResultQualifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,16 +162,50 @@ namespace Model
      */
     inline EvaluationResultQualifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline const EvaluationMode& GetEvaluationMode() const{ return m_evaluationMode; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline bool EvaluationModeHasBeenSet() const { return m_evaluationModeHasBeenSet; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline void SetEvaluationMode(const EvaluationMode& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = value; }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline void SetEvaluationMode(EvaluationMode&& value) { m_evaluationModeHasBeenSet = true; m_evaluationMode = std::move(value); }
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline EvaluationResultQualifier& WithEvaluationMode(const EvaluationMode& value) { SetEvaluationMode(value); return *this;}
+
+    /**
+     * <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+     */
+    inline EvaluationResultQualifier& WithEvaluationMode(EvaluationMode&& value) { SetEvaluationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
+
+    EvaluationMode m_evaluationMode;
+    bool m_evaluationModeHasBeenSet = false;
   };
 
 } // namespace Model

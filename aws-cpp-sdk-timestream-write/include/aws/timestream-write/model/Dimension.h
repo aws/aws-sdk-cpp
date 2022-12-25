@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Dimension">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Dimension
+  class Dimension
   {
   public:
-    Dimension();
-    Dimension(Aws::Utils::Json::JsonView jsonValue);
-    Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Dimension();
+    AWS_TIMESTREAMWRITE_API Dimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     DimensionValueType m_dimensionValueType;
-    bool m_dimensionValueTypeHasBeenSet;
+    bool m_dimensionValueTypeHasBeenSet = false;
   };
 
 } // namespace Model

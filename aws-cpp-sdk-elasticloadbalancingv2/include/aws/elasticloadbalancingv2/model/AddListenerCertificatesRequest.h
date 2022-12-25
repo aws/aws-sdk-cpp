@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICLOADBALANCINGV2_API AddListenerCertificatesRequest : public ElasticLoadBalancingv2Request
+  class AddListenerCertificatesRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AddListenerCertificatesRequest();
+    AWS_ELASTICLOADBALANCINGV2_API AddListenerCertificatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddListenerCertificates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCINGV2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCINGV2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::Vector<Certificate> m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
   };
 
 } // namespace Model

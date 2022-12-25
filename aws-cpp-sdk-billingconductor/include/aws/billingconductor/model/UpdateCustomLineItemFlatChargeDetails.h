@@ -22,18 +22,18 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the new charge details associated with a flat custom
-   * line item. </p><p><h3>See Also:</h3>   <a
+   * <p> A representation of the new charge details that are associated with a flat
+   * custom line item. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItemFlatChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails
+  class UpdateCustomLineItemFlatChargeDetails
   {
   public:
-    UpdateCustomLineItemFlatChargeDetails();
-    UpdateCustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails();
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemFlatChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_chargeValue;
-    bool m_chargeValueHasBeenSet;
+    bool m_chargeValueHasBeenSet = false;
   };
 
 } // namespace Model

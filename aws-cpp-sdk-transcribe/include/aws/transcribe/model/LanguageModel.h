@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/LanguageModel">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API LanguageModel
+  class LanguageModel
   {
   public:
-    LanguageModel();
-    LanguageModel(Aws::Utils::Json::JsonView jsonValue);
-    LanguageModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API LanguageModel();
+    AWS_TRANSCRIBESERVICE_API LanguageModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API LanguageModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,7 +153,7 @@ namespace Model
 
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -161,7 +161,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -169,7 +169,7 @@ namespace Model
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -177,7 +177,7 @@ namespace Model
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -185,7 +185,7 @@ namespace Model
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -193,7 +193,7 @@ namespace Model
     inline LanguageModel& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time the specified language model was last modified.</p>
+     * <p>The date and time the specified custom language model was last modified.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -202,11 +202,11 @@ namespace Model
 
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -214,11 +214,11 @@ namespace Model
     inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -226,11 +226,11 @@ namespace Model
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -238,11 +238,11 @@ namespace Model
     inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -250,11 +250,11 @@ namespace Model
     inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -262,11 +262,11 @@ namespace Model
     inline LanguageModel& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code used to create your custom language model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code used to create your custom language model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
@@ -350,8 +350,8 @@ namespace Model
 
     /**
      * <p>Shows if a more current base model is available for use with the specified
-     * custom language model.</p> <p>If <code>false</code>, your language model is
-     * using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
+     * custom language model.</p> <p>If <code>false</code>, your custom language model
+     * is using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
      * newer base model available than the one your language model is using.</p>
      * <p>Note that to update a base model, you must recreate the custom language model
      * using the new base model. Base model upgrades for existing custom language
@@ -361,8 +361,8 @@ namespace Model
 
     /**
      * <p>Shows if a more current base model is available for use with the specified
-     * custom language model.</p> <p>If <code>false</code>, your language model is
-     * using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
+     * custom language model.</p> <p>If <code>false</code>, your custom language model
+     * is using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
      * newer base model available than the one your language model is using.</p>
      * <p>Note that to update a base model, you must recreate the custom language model
      * using the new base model. Base model upgrades for existing custom language
@@ -372,8 +372,8 @@ namespace Model
 
     /**
      * <p>Shows if a more current base model is available for use with the specified
-     * custom language model.</p> <p>If <code>false</code>, your language model is
-     * using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
+     * custom language model.</p> <p>If <code>false</code>, your custom language model
+     * is using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
      * newer base model available than the one your language model is using.</p>
      * <p>Note that to update a base model, you must recreate the custom language model
      * using the new base model. Base model upgrades for existing custom language
@@ -383,8 +383,8 @@ namespace Model
 
     /**
      * <p>Shows if a more current base model is available for use with the specified
-     * custom language model.</p> <p>If <code>false</code>, your language model is
-     * using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
+     * custom language model.</p> <p>If <code>false</code>, your custom language model
+     * is using the most up-to-date base model.</p> <p>If <code>true</code>, there is a
      * newer base model available than the one your language model is using.</p>
      * <p>Note that to update a base model, you must recreate the custom language model
      * using the new base model. Base model upgrades for existing custom language
@@ -511,31 +511,31 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     CLMLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     BaseModelName m_baseModelName;
-    bool m_baseModelNameHasBeenSet;
+    bool m_baseModelNameHasBeenSet = false;
 
     ModelStatus m_modelStatus;
-    bool m_modelStatusHasBeenSet;
+    bool m_modelStatusHasBeenSet = false;
 
     bool m_upgradeAvailability;
-    bool m_upgradeAvailabilityHasBeenSet;
+    bool m_upgradeAvailabilityHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

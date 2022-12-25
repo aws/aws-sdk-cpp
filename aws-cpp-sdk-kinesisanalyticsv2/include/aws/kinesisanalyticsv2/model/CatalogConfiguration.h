@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CatalogConfiguration
+  class CatalogConfiguration
   {
   public:
-    CatalogConfiguration();
-    CatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CatalogConfiguration();
+    AWS_KINESISANALYTICSV2_API CatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     GlueDataCatalogConfiguration m_glueDataCatalogConfiguration;
-    bool m_glueDataCatalogConfigurationHasBeenSet;
+    bool m_glueDataCatalogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

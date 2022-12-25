@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TrainingDataResult">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TrainingDataResult
+  class TrainingDataResult
   {
   public:
-    TrainingDataResult();
-    TrainingDataResult(Aws::Utils::Json::JsonView jsonValue);
-    TrainingDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TrainingDataResult();
+    AWS_REKOGNITION_API TrainingDataResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TrainingDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     TrainingData m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     TrainingData m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     ValidationData m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

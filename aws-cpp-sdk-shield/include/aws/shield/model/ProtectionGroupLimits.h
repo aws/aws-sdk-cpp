@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionGroupLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ProtectionGroupLimits
+  class ProtectionGroupLimits
   {
   public:
-    ProtectionGroupLimits();
-    ProtectionGroupLimits(Aws::Utils::Json::JsonView jsonValue);
-    ProtectionGroupLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ProtectionGroupLimits();
+    AWS_SHIELD_API ProtectionGroupLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ProtectionGroupLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     long long m_maxProtectionGroups;
-    bool m_maxProtectionGroupsHasBeenSet;
+    bool m_maxProtectionGroupsHasBeenSet = false;
 
     ProtectionGroupPatternTypeLimits m_patternTypeLimits;
-    bool m_patternTypeLimitsHasBeenSet;
+    bool m_patternTypeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRunMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunRequest : public DatabaseMigrationServiceRequest
+  class StartReplicationTaskAssessmentRunRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    StartReplicationTaskAssessmentRunRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartReplicationTaskAssessmentRun"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -668,31 +668,31 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_resultLocationBucket;
-    bool m_resultLocationBucketHasBeenSet;
+    bool m_resultLocationBucketHasBeenSet = false;
 
     Aws::String m_resultLocationFolder;
-    bool m_resultLocationFolderHasBeenSet;
+    bool m_resultLocationFolderHasBeenSet = false;
 
     Aws::String m_resultEncryptionMode;
-    bool m_resultEncryptionModeHasBeenSet;
+    bool m_resultEncryptionModeHasBeenSet = false;
 
     Aws::String m_resultKmsKeyArn;
-    bool m_resultKmsKeyArnHasBeenSet;
+    bool m_resultKmsKeyArnHasBeenSet = false;
 
     Aws::String m_assessmentRunName;
-    bool m_assessmentRunNameHasBeenSet;
+    bool m_assessmentRunNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeOnly;
-    bool m_includeOnlyHasBeenSet;
+    bool m_includeOnlyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstanceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API UpdateTrafficPolicyInstanceRequest : public Route53Request
+  class UpdateTrafficPolicyInstanceRequest : public Route53Request
   {
   public:
-    UpdateTrafficPolicyInstanceRequest();
+    AWS_ROUTE53_API UpdateTrafficPolicyInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTrafficPolicyInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -179,16 +179,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
 
     Aws::String m_trafficPolicyId;
-    bool m_trafficPolicyIdHasBeenSet;
+    bool m_trafficPolicyIdHasBeenSet = false;
 
     int m_trafficPolicyVersion;
-    bool m_trafficPolicyVersionHasBeenSet;
+    bool m_trafficPolicyVersionHasBeenSet = false;
   };
 
 } // namespace Model

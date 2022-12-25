@@ -32,6 +32,7 @@ Experiment::Experiment() :
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_status(ExperimentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -56,6 +57,7 @@ Experiment::Experiment(JsonView jsonValue) :
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_status(ExperimentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -106,7 +108,7 @@ Experiment& Experiment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("metricGoals"))
   {
-    Array<JsonView> metricGoalsJsonList = jsonValue.GetArray("metricGoals");
+    Aws::Utils::Array<JsonView> metricGoalsJsonList = jsonValue.GetArray("metricGoals");
     for(unsigned metricGoalsIndex = 0; metricGoalsIndex < metricGoalsJsonList.GetLength(); ++metricGoalsIndex)
     {
       m_metricGoals.push_back(metricGoalsJsonList[metricGoalsIndex].AsObject());
@@ -156,6 +158,13 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     m_scheduleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("segment"))
+  {
+    m_segment = jsonValue.GetString("segment");
+
+    m_segmentHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExperimentStatusMapper::GetExperimentStatusForName(jsonValue.GetString("status"));
@@ -182,7 +191,7 @@ Experiment& Experiment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("treatments"))
   {
-    Array<JsonView> treatmentsJsonList = jsonValue.GetArray("treatments");
+    Aws::Utils::Array<JsonView> treatmentsJsonList = jsonValue.GetArray("treatments");
     for(unsigned treatmentsIndex = 0; treatmentsIndex < treatmentsJsonList.GetLength(); ++treatmentsIndex)
     {
       m_treatments.push_back(treatmentsJsonList[treatmentsIndex].AsObject());
@@ -234,7 +243,7 @@ JsonValue Experiment::Jsonize() const
 
   if(m_metricGoalsHasBeenSet)
   {
-   Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
+   Aws::Utils::Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
    for(unsigned metricGoalsIndex = 0; metricGoalsIndex < metricGoalsJsonList.GetLength(); ++metricGoalsIndex)
    {
      metricGoalsJsonList[metricGoalsIndex].AsObject(m_metricGoals[metricGoalsIndex].Jsonize());
@@ -279,6 +288,12 @@ JsonValue Experiment::Jsonize() const
 
   }
 
+  if(m_segmentHasBeenSet)
+  {
+   payload.WithString("segment", m_segment);
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ExperimentStatusMapper::GetNameForExperimentStatus(m_status));
@@ -303,7 +318,7 @@ JsonValue Experiment::Jsonize() const
 
   if(m_treatmentsHasBeenSet)
   {
-   Array<JsonValue> treatmentsJsonList(m_treatments.size());
+   Aws::Utils::Array<JsonValue> treatmentsJsonList(m_treatments.size());
    for(unsigned treatmentsIndex = 0; treatmentsIndex < treatmentsJsonList.GetLength(); ++treatmentsIndex)
    {
      treatmentsJsonList[treatmentsIndex].AsObject(m_treatments[treatmentsIndex].Jsonize());

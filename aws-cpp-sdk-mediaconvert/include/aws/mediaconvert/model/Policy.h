@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Policy">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Policy
+  class Policy
   {
   public:
-    Policy();
-    Policy(Aws::Utils::Json::JsonView jsonValue);
-    Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Policy();
+    AWS_MEDIACONVERT_API Policy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Policy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     InputPolicy m_httpInputs;
-    bool m_httpInputsHasBeenSet;
+    bool m_httpInputsHasBeenSet = false;
 
     InputPolicy m_httpsInputs;
-    bool m_httpsInputsHasBeenSet;
+    bool m_httpsInputsHasBeenSet = false;
 
     InputPolicy m_s3Inputs;
-    bool m_s3InputsHasBeenSet;
+    bool m_s3InputsHasBeenSet = false;
   };
 
 } // namespace Model

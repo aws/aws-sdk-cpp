@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteCampaignRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteCampaignRequest
+  class WriteCampaignRequest
   {
   public:
-    WriteCampaignRequest();
-    WriteCampaignRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteCampaignRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteCampaignRequest();
+    AWS_PINPOINT_API WriteCampaignRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteCampaignRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -721,55 +721,55 @@ namespace Model
   private:
 
     Aws::Vector<WriteTreatmentResource> m_additionalTreatments;
-    bool m_additionalTreatmentsHasBeenSet;
+    bool m_additionalTreatmentsHasBeenSet = false;
 
     CustomDeliveryConfiguration m_customDeliveryConfiguration;
-    bool m_customDeliveryConfigurationHasBeenSet;
+    bool m_customDeliveryConfigurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_holdoutPercent;
-    bool m_holdoutPercentHasBeenSet;
+    bool m_holdoutPercentHasBeenSet = false;
 
     CampaignHook m_hook;
-    bool m_hookHasBeenSet;
+    bool m_hookHasBeenSet = false;
 
     bool m_isPaused;
-    bool m_isPausedHasBeenSet;
+    bool m_isPausedHasBeenSet = false;
 
     CampaignLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     MessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     int m_segmentVersion;
-    bool m_segmentVersionHasBeenSet;
+    bool m_segmentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_treatmentDescription;
-    bool m_treatmentDescriptionHasBeenSet;
+    bool m_treatmentDescriptionHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

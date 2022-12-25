@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ScanningRepositoryFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ScanningRepositoryFilter
+  class ScanningRepositoryFilter
   {
   public:
-    ScanningRepositoryFilter();
-    ScanningRepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
-    ScanningRepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ScanningRepositoryFilter();
+    AWS_ECR_API ScanningRepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ScanningRepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     ScanningRepositoryFilterType m_filterType;
-    bool m_filterTypeHasBeenSet;
+    bool m_filterTypeHasBeenSet = false;
   };
 
 } // namespace Model

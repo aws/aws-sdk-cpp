@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TextLogSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API TextLogSetting
+  class TextLogSetting
   {
   public:
-    TextLogSetting();
-    TextLogSetting(Aws::Utils::Json::JsonView jsonValue);
-    TextLogSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API TextLogSetting();
+    AWS_LEXMODELSV2_API TextLogSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API TextLogSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     TextLogDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

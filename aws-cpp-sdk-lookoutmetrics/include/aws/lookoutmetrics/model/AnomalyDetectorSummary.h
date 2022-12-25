@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AnomalyDetectorSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AnomalyDetectorSummary
+  class AnomalyDetectorSummary
   {
   public:
-    AnomalyDetectorSummary();
-    AnomalyDetectorSummary(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyDetectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorSummary();
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -338,25 +338,25 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorName;
-    bool m_anomalyDetectorNameHasBeenSet;
+    bool m_anomalyDetectorNameHasBeenSet = false;
 
     Aws::String m_anomalyDetectorDescription;
-    bool m_anomalyDetectorDescriptionHasBeenSet;
+    bool m_anomalyDetectorDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
 
     AnomalyDetectorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

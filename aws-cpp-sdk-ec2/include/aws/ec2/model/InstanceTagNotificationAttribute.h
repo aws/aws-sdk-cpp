@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceTagNotificationAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceTagNotificationAttribute
+  class InstanceTagNotificationAttribute
   {
   public:
-    InstanceTagNotificationAttribute();
-    InstanceTagNotificationAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceTagNotificationAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceTagNotificationAttribute();
+    AWS_EC2_API InstanceTagNotificationAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceTagNotificationAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceTagKeys;
-    bool m_instanceTagKeysHasBeenSet;
+    bool m_instanceTagKeysHasBeenSet = false;
 
     bool m_includeAllTagsOfInstance;
-    bool m_includeAllTagsOfInstanceHasBeenSet;
+    bool m_includeAllTagsOfInstanceHasBeenSet = false;
   };
 
 } // namespace Model

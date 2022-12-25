@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectAttachment
+  class ConnectAttachment
   {
   public:
-    ConnectAttachment();
-    ConnectAttachment(Aws::Utils::Json::JsonView jsonValue);
-    ConnectAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectAttachment();
+    AWS_NETWORKMANAGER_API ConnectAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Attachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_transportAttachmentId;
-    bool m_transportAttachmentIdHasBeenSet;
+    bool m_transportAttachmentIdHasBeenSet = false;
 
     ConnectAttachmentOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

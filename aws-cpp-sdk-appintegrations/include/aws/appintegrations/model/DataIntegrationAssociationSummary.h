@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DataIntegrationAssociationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary
+  class DataIntegrationAssociationSummary
   {
   public:
-    DataIntegrationAssociationSummary();
-    DataIntegrationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataIntegrationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary();
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_dataIntegrationAssociationArn;
-    bool m_dataIntegrationAssociationArnHasBeenSet;
+    bool m_dataIntegrationAssociationArnHasBeenSet = false;
 
     Aws::String m_dataIntegrationArn;
-    bool m_dataIntegrationArnHasBeenSet;
+    bool m_dataIntegrationArnHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AudioArtifactsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AudioArtifactsConfiguration
+  class AudioArtifactsConfiguration
   {
   public:
-    AudioArtifactsConfiguration();
-    AudioArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AudioArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AudioArtifactsConfiguration();
+    AWS_CHIME_API AudioArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AudioArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AudioMuxType m_muxType;
-    bool m_muxTypeHasBeenSet;
+    bool m_muxTypeHasBeenSet = false;
   };
 
 } // namespace Model

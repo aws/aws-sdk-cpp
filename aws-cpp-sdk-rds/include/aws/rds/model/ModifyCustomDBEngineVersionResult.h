@@ -37,12 +37,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBEngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ModifyCustomDBEngineVersionResult
+  class ModifyCustomDBEngineVersionResult
   {
   public:
-    ModifyCustomDBEngineVersionResult();
-    ModifyCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyCustomDBEngineVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyCustomDBEngineVersionResult();
+    AWS_RDS_API ModifyCustomDBEngineVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyCustomDBEngineVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -1034,6 +1034,84 @@ namespace Model
     inline ModifyCustomDBEngineVersionResult& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
 
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline const Aws::String& GetCustomDBEngineVersionManifest() const{ return m_customDBEngineVersionManifest; }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(const Aws::String& value) { m_customDBEngineVersionManifest = value; }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(Aws::String&& value) { m_customDBEngineVersionManifest = std::move(value); }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(const char* value) { m_customDBEngineVersionManifest.assign(value); }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline ModifyCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(const Aws::String& value) { SetCustomDBEngineVersionManifest(value); return *this;}
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline ModifyCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(Aws::String&& value) { SetCustomDBEngineVersionManifest(std::move(value)); return *this;}
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline ModifyCustomDBEngineVersionResult& WithCustomDBEngineVersionManifest(const char* value) { SetCustomDBEngineVersionManifest(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1102,6 +1180,8 @@ namespace Model
     Aws::Vector<Tag> m_tagList;
 
     bool m_supportsBabelfish;
+
+    Aws::String m_customDBEngineVersionManifest;
 
     ResponseMetadata m_responseMetadata;
   };

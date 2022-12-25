@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedExecution
+  class DescribedExecution
   {
   public:
-    DescribedExecution();
-    DescribedExecution(Aws::Utils::Json::JsonView jsonValue);
-    DescribedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedExecution();
+    AWS_TRANSFER_API DescribedExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,32 +128,38 @@ namespace Model
 
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline const ServiceMetadata& GetServiceMetadata() const{ return m_serviceMetadata; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline bool ServiceMetadataHasBeenSet() const { return m_serviceMetadataHasBeenSet; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(const ServiceMetadata& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = value; }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline void SetServiceMetadata(ServiceMetadata&& value) { m_serviceMetadataHasBeenSet = true; m_serviceMetadata = std::move(value); }
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline DescribedExecution& WithServiceMetadata(const ServiceMetadata& value) { SetServiceMetadata(value); return *this;}
 
     /**
-     * <p>A container object for the session details associated with a workflow.</p>
+     * <p>A container object for the session details that are associated with a
+     * workflow.</p>
      */
     inline DescribedExecution& WithServiceMetadata(ServiceMetadata&& value) { SetServiceMetadata(std::move(value)); return *this;}
 
@@ -331,28 +337,28 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     FileLocation m_initialFileLocation;
-    bool m_initialFileLocationHasBeenSet;
+    bool m_initialFileLocationHasBeenSet = false;
 
     ServiceMetadata m_serviceMetadata;
-    bool m_serviceMetadataHasBeenSet;
+    bool m_serviceMetadataHasBeenSet = false;
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     PosixProfile m_posixProfile;
-    bool m_posixProfileHasBeenSet;
+    bool m_posixProfileHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExecutionResults m_results;
-    bool m_resultsHasBeenSet;
+    bool m_resultsHasBeenSet = false;
   };
 
 } // namespace Model

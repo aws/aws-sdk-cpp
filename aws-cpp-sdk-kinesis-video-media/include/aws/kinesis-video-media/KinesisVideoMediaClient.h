@@ -5,92 +5,73 @@
 
 #pragma once
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
-#include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis-video-media/model/GetMediaResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis-video-media/KinesisVideoMediaServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideoMedia
 {
-
-namespace Model
-{
-        class GetMediaRequest;
-
-        typedef Aws::Utils::Outcome<GetMediaResult, KinesisVideoMediaError> GetMediaOutcome;
-
-        typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoMediaClient;
-
-    typedef std::function<void(const KinesisVideoMediaClient*, const Model::GetMediaRequest&, Model::GetMediaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
-
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEOMEDIA_API KinesisVideoMediaClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEOMEDIA_API KinesisVideoMediaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoMediaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoMediaClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoMediaClient(const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration(),
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials,
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisVideoMediaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration = Aws::KinesisVideoMedia::KinesisVideoMediaClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoMediaClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KinesisVideoMediaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoMediaClient();
-
 
         /**
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the
@@ -142,13 +123,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KinesisVideoMediaEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetMediaAsyncHelper(const Model::GetMediaRequest& request, const GetMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoMediaClient>;
+      void init(const KinesisVideoMediaClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KinesisVideoMediaClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KinesisVideoMediaEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KinesisVideoMedia

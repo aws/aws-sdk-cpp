@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PinpointDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PinpointDestination
+  class PinpointDestination
   {
   public:
-    PinpointDestination();
-    PinpointDestination(Aws::Utils::Json::JsonView jsonValue);
-    PinpointDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API PinpointDestination();
+    AWS_PINPOINTEMAIL_API PinpointDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API PinpointDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/PlatformSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API PlatformSummary
+  class PlatformSummary
   {
   public:
-    PlatformSummary();
-    PlatformSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PlatformSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API PlatformSummary();
+    AWS_ELASTICBEANSTALK_API PlatformSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API PlatformSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -573,40 +573,40 @@ namespace Model
   private:
 
     Aws::String m_platformArn;
-    bool m_platformArnHasBeenSet;
+    bool m_platformArnHasBeenSet = false;
 
     Aws::String m_platformOwner;
-    bool m_platformOwnerHasBeenSet;
+    bool m_platformOwnerHasBeenSet = false;
 
     PlatformStatus m_platformStatus;
-    bool m_platformStatusHasBeenSet;
+    bool m_platformStatusHasBeenSet = false;
 
     Aws::String m_platformCategory;
-    bool m_platformCategoryHasBeenSet;
+    bool m_platformCategoryHasBeenSet = false;
 
     Aws::String m_operatingSystemName;
-    bool m_operatingSystemNameHasBeenSet;
+    bool m_operatingSystemNameHasBeenSet = false;
 
     Aws::String m_operatingSystemVersion;
-    bool m_operatingSystemVersionHasBeenSet;
+    bool m_operatingSystemVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedTierList;
-    bool m_supportedTierListHasBeenSet;
+    bool m_supportedTierListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedAddonList;
-    bool m_supportedAddonListHasBeenSet;
+    bool m_supportedAddonListHasBeenSet = false;
 
     Aws::String m_platformLifecycleState;
-    bool m_platformLifecycleStateHasBeenSet;
+    bool m_platformLifecycleStateHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformBranchName;
-    bool m_platformBranchNameHasBeenSet;
+    bool m_platformBranchNameHasBeenSet = false;
 
     Aws::String m_platformBranchLifecycleState;
-    bool m_platformBranchLifecycleStateHasBeenSet;
+    bool m_platformBranchLifecycleStateHasBeenSet = false;
   };
 
 } // namespace Model

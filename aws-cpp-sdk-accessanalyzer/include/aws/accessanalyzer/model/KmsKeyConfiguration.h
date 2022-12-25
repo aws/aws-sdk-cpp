@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/accessanalyzer/model/KmsGrantConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/accessanalyzer/model/KmsGrantConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -42,78 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/KmsKeyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API KmsKeyConfiguration
+  class KmsKeyConfiguration
   {
   public:
-    KmsKeyConfiguration();
-    KmsKeyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KmsKeyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline const Aws::Vector<KmsGrantConfiguration>& GetGrants() const{ return m_grants; }
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline void SetGrants(const Aws::Vector<KmsGrantConfiguration>& value) { m_grantsHasBeenSet = true; m_grants = value; }
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline void SetGrants(Aws::Vector<KmsGrantConfiguration>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline KmsKeyConfiguration& WithGrants(const Aws::Vector<KmsGrantConfiguration>& value) { SetGrants(value); return *this;}
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline KmsKeyConfiguration& WithGrants(Aws::Vector<KmsGrantConfiguration>&& value) { SetGrants(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline KmsKeyConfiguration& AddGrants(const KmsGrantConfiguration& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
-
-    /**
-     * <p>A list of proposed grant configurations for the KMS key. If the proposed
-     * grant configuration is for an existing key, the access preview uses the proposed
-     * list of grant configurations in place of the existing grants. Otherwise, the
-     * access preview uses the existing grants for the key.</p>
-     */
-    inline KmsKeyConfiguration& AddGrants(KmsGrantConfiguration&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration();
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,13 +155,78 @@ namespace Model
      */
     inline KmsKeyConfiguration& AddKeyPolicies(const char* key, const char* value) { m_keyPoliciesHasBeenSet = true; m_keyPolicies.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline const Aws::Vector<KmsGrantConfiguration>& GetGrants() const{ return m_grants; }
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline void SetGrants(const Aws::Vector<KmsGrantConfiguration>& value) { m_grantsHasBeenSet = true; m_grants = value; }
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline void SetGrants(Aws::Vector<KmsGrantConfiguration>&& value) { m_grantsHasBeenSet = true; m_grants = std::move(value); }
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline KmsKeyConfiguration& WithGrants(const Aws::Vector<KmsGrantConfiguration>& value) { SetGrants(value); return *this;}
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline KmsKeyConfiguration& WithGrants(Aws::Vector<KmsGrantConfiguration>&& value) { SetGrants(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline KmsKeyConfiguration& AddGrants(const KmsGrantConfiguration& value) { m_grantsHasBeenSet = true; m_grants.push_back(value); return *this; }
+
+    /**
+     * <p>A list of proposed grant configurations for the KMS key. If the proposed
+     * grant configuration is for an existing key, the access preview uses the proposed
+     * list of grant configurations in place of the existing grants. Otherwise, the
+     * access preview uses the existing grants for the key.</p>
+     */
+    inline KmsKeyConfiguration& AddGrants(KmsGrantConfiguration&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<KmsGrantConfiguration> m_grants;
-    bool m_grantsHasBeenSet;
-
     Aws::Map<Aws::String, Aws::String> m_keyPolicies;
-    bool m_keyPoliciesHasBeenSet;
+    bool m_keyPoliciesHasBeenSet = false;
+
+    Aws::Vector<KmsGrantConfiguration> m_grants;
+    bool m_grantsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ EnvironmentParameterRanges& EnvironmentParameterRanges::operator =(JsonView json
 {
   if(jsonValue.ValueExists("CategoricalParameterRanges"))
   {
-    Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
+    Aws::Utils::Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
     for(unsigned categoricalParameterRangesIndex = 0; categoricalParameterRangesIndex < categoricalParameterRangesJsonList.GetLength(); ++categoricalParameterRangesIndex)
     {
       m_categoricalParameterRanges.push_back(categoricalParameterRangesJsonList[categoricalParameterRangesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue EnvironmentParameterRanges::Jsonize() const
 
   if(m_categoricalParameterRangesHasBeenSet)
   {
-   Array<JsonValue> categoricalParameterRangesJsonList(m_categoricalParameterRanges.size());
+   Aws::Utils::Array<JsonValue> categoricalParameterRangesJsonList(m_categoricalParameterRanges.size());
    for(unsigned categoricalParameterRangesIndex = 0; categoricalParameterRangesIndex < categoricalParameterRangesJsonList.GetLength(); ++categoricalParameterRangesIndex)
    {
      categoricalParameterRangesJsonList[categoricalParameterRangesIndex].AsObject(m_categoricalParameterRanges[categoricalParameterRangesIndex].Jsonize());

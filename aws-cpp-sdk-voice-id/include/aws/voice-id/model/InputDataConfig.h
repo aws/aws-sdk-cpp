@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API InputDataConfig();
+    AWS_VOICEID_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

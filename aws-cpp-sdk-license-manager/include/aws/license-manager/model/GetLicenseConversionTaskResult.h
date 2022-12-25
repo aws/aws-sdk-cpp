@@ -27,12 +27,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API GetLicenseConversionTaskResult
+  class GetLicenseConversionTaskResult
   {
   public:
-    GetLicenseConversionTaskResult();
-    GetLicenseConversionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLicenseConversionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API GetLicenseConversionTaskResult();
+    AWS_LICENSEMANAGER_API GetLicenseConversionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API GetLicenseConversionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

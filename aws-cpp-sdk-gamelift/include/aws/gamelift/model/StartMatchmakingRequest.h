@@ -19,14 +19,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmakingInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API StartMatchmakingRequest : public GameLiftRequest
+  class StartMatchmakingRequest : public GameLiftRequest
   {
   public:
-    StartMatchmakingRequest();
+    AWS_GAMELIFT_API StartMatchmakingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartMatchmaking"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -165,7 +162,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
 
@@ -173,7 +171,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
 
@@ -181,7 +180,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline void SetPlayers(const Aws::Vector<Player>& value) { m_playersHasBeenSet = true; m_players = value; }
 
@@ -189,7 +189,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline void SetPlayers(Aws::Vector<Player>&& value) { m_playersHasBeenSet = true; m_players = std::move(value); }
 
@@ -197,7 +198,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline StartMatchmakingRequest& WithPlayers(const Aws::Vector<Player>& value) { SetPlayers(value); return *this;}
 
@@ -205,7 +207,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline StartMatchmakingRequest& WithPlayers(Aws::Vector<Player>&& value) { SetPlayers(std::move(value)); return *this;}
 
@@ -213,7 +216,8 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline StartMatchmakingRequest& AddPlayers(const Player& value) { m_playersHasBeenSet = true; m_players.push_back(value); return *this; }
 
@@ -221,20 +225,21 @@ namespace Model
      * <p>Information on each player to be matched. This information must include a
      * player ID, and may contain player attributes and latency data to be used in the
      * matchmaking process. After a successful match, <code>Player</code> objects
-     * contain the name of the team the player is assigned to.</p>
+     * contain the name of the team the player is assigned to.</p> <p>You can include
+     * up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.</p>
      */
     inline StartMatchmakingRequest& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_ticketId;
-    bool m_ticketIdHasBeenSet;
+    bool m_ticketIdHasBeenSet = false;
 
     Aws::String m_configurationName;
-    bool m_configurationNameHasBeenSet;
+    bool m_configurationNameHasBeenSet = false;
 
     Aws::Vector<Player> m_players;
-    bool m_playersHasBeenSet;
+    bool m_playersHasBeenSet = false;
   };
 
 } // namespace Model

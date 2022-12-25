@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProvisionedThroughput">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput
+  class AwsDynamoDbTableProvisionedThroughput
   {
   public:
-    AwsDynamoDbTableProvisionedThroughput();
-    AwsDynamoDbTableProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput();
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_lastDecreaseDateTime;
-    bool m_lastDecreaseDateTimeHasBeenSet;
+    bool m_lastDecreaseDateTimeHasBeenSet = false;
 
     Aws::String m_lastIncreaseDateTime;
-    bool m_lastIncreaseDateTimeHasBeenSet;
+    bool m_lastIncreaseDateTimeHasBeenSet = false;
 
     int m_numberOfDecreasesToday;
-    bool m_numberOfDecreasesTodayHasBeenSet;
+    bool m_numberOfDecreasesTodayHasBeenSet = false;
 
     int m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     int m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

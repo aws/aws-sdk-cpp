@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API GetProfileObjectTypeRequest : public CustomerProfilesRequest
+  class GetProfileObjectTypeRequest : public CustomerProfilesRequest
   {
   public:
-    GetProfileObjectTypeRequest();
+    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetProfileObjectType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

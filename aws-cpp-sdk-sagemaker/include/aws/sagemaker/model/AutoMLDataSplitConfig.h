@@ -22,19 +22,20 @@ namespace Model
 {
 
   /**
-   * <p>This structure specifies how to split the data into train and test datasets.
-   * The validation and training datasets must contain the same headers. The
-   * validation dataset must be less than 2 GB in size.</p><p><h3>See Also:</h3>   <a
+   * <p>This structure specifies how to split the data into train and validation
+   * datasets. The validation and training datasets must contain the same headers.
+   * The validation dataset must be less than 2 GB in size.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSplitConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLDataSplitConfig
+  class AutoMLDataSplitConfig
   {
   public:
-    AutoMLDataSplitConfig();
-    AutoMLDataSplitConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLDataSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig();
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +73,7 @@ namespace Model
   private:
 
     double m_validationFraction;
-    bool m_validationFractionHasBeenSet;
+    bool m_validationFractionHasBeenSet = false;
   };
 
 } // namespace Model

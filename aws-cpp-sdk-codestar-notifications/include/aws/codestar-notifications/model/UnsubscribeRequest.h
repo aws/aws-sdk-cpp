@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODESTARNOTIFICATIONS_API UnsubscribeRequest : public CodeStarNotificationsRequest
+  class UnsubscribeRequest : public CodeStarNotificationsRequest
   {
   public:
-    UnsubscribeRequest();
+    AWS_CODESTARNOTIFICATIONS_API UnsubscribeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Unsubscribe"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -74,52 +74,52 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+     * <p>The ARN of the Chatbot topic to unsubscribe from the notification rule.</p>
      */
     inline UnsubscribeRequest& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_targetAddress;
-    bool m_targetAddressHasBeenSet;
+    bool m_targetAddressHasBeenSet = false;
   };
 
 } // namespace Model

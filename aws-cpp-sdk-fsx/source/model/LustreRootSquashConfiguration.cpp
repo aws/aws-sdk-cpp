@@ -42,7 +42,7 @@ LustreRootSquashConfiguration& LustreRootSquashConfiguration::operator =(JsonVie
 
   if(jsonValue.ValueExists("NoSquashNids"))
   {
-    Array<JsonView> noSquashNidsJsonList = jsonValue.GetArray("NoSquashNids");
+    Aws::Utils::Array<JsonView> noSquashNidsJsonList = jsonValue.GetArray("NoSquashNids");
     for(unsigned noSquashNidsIndex = 0; noSquashNidsIndex < noSquashNidsJsonList.GetLength(); ++noSquashNidsIndex)
     {
       m_noSquashNids.push_back(noSquashNidsJsonList[noSquashNidsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue LustreRootSquashConfiguration::Jsonize() const
 
   if(m_noSquashNidsHasBeenSet)
   {
-   Array<JsonValue> noSquashNidsJsonList(m_noSquashNids.size());
+   Aws::Utils::Array<JsonValue> noSquashNidsJsonList(m_noSquashNids.size());
    for(unsigned noSquashNidsIndex = 0; noSquashNidsIndex < noSquashNidsJsonList.GetLength(); ++noSquashNidsIndex)
    {
      noSquashNidsJsonList[noSquashNidsIndex].AsString(m_noSquashNids[noSquashNidsIndex]);

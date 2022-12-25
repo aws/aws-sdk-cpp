@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Compliance
+  class Compliance
   {
   public:
-    Compliance();
-    Compliance(Aws::Utils::Json::JsonView jsonValue);
-    Compliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Compliance();
+    AWS_SECURITYHUB_API Compliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Compliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -271,13 +271,13 @@ namespace Model
   private:
 
     ComplianceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedRequirements;
-    bool m_relatedRequirementsHasBeenSet;
+    bool m_relatedRequirementsHasBeenSet = false;
 
     Aws::Vector<StatusReason> m_statusReasons;
-    bool m_statusReasonsHasBeenSet;
+    bool m_statusReasonsHasBeenSet = false;
   };
 
 } // namespace Model

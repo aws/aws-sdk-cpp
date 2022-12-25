@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ActiveDirectoryError">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API ActiveDirectoryError
+  class ActiveDirectoryError
   {
   public:
-    ActiveDirectoryError();
-    ActiveDirectoryError(Aws::Utils::Json::JsonView jsonValue);
-    ActiveDirectoryError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API ActiveDirectoryError();
+    AWS_FSX_API ActiveDirectoryError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API ActiveDirectoryError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet;
+    bool m_activeDirectoryIdHasBeenSet = false;
 
     ActiveDirectoryErrorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

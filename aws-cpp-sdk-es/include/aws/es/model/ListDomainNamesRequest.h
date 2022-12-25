@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNamesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ListDomainNamesRequest : public ElasticsearchServiceRequest
+  class ListDomainNamesRequest : public ElasticsearchServiceRequest
   {
   public:
-    ListDomainNamesRequest();
+    AWS_ELASTICSEARCHSERVICE_API ListDomainNamesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDomainNames"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
   };
 
 } // namespace Model

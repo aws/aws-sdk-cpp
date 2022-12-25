@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ParquetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ParquetConfiguration
+  class ParquetConfiguration
   {
   public:
-    ParquetConfiguration();
-    ParquetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ParquetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ParquetConfiguration();
+    AWS_IOTANALYTICS_API ParquetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ParquetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SchemaDefinition m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

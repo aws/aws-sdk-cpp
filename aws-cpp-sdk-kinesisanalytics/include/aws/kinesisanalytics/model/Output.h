@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API Output();
+    AWS_KINESISANALYTICS_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     KinesisStreamsOutput m_kinesisStreamsOutput;
-    bool m_kinesisStreamsOutputHasBeenSet;
+    bool m_kinesisStreamsOutputHasBeenSet = false;
 
     KinesisFirehoseOutput m_kinesisFirehoseOutput;
-    bool m_kinesisFirehoseOutputHasBeenSet;
+    bool m_kinesisFirehoseOutputHasBeenSet = false;
 
     LambdaOutput m_lambdaOutput;
-    bool m_lambdaOutputHasBeenSet;
+    bool m_lambdaOutputHasBeenSet = false;
 
     DestinationSchema m_destinationSchema;
-    bool m_destinationSchemaHasBeenSet;
+    bool m_destinationSchemaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CreateConfigurationSetRequest : public PinpointEmailRequest
+  class CreateConfigurationSetRequest : public PinpointEmailRequest
   {
   public:
-    CreateConfigurationSetRequest();
+    AWS_PINPOINTEMAIL_API CreateConfigurationSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfigurationSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     TrackingOptions m_trackingOptions;
-    bool m_trackingOptionsHasBeenSet;
+    bool m_trackingOptionsHasBeenSet = false;
 
     DeliveryOptions m_deliveryOptions;
-    bool m_deliveryOptionsHasBeenSet;
+    bool m_deliveryOptionsHasBeenSet = false;
 
     ReputationOptions m_reputationOptions;
-    bool m_reputationOptionsHasBeenSet;
+    bool m_reputationOptionsHasBeenSet = false;
 
     SendingOptions m_sendingOptions;
-    bool m_sendingOptionsHasBeenSet;
+    bool m_sendingOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

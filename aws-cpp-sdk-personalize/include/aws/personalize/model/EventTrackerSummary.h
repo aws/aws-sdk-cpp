@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/EventTrackerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API EventTrackerSummary
+  class EventTrackerSummary
   {
   public:
-    EventTrackerSummary();
-    EventTrackerSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventTrackerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API EventTrackerSummary();
+    AWS_PERSONALIZE_API EventTrackerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API EventTrackerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_eventTrackerArn;
-    bool m_eventTrackerArnHasBeenSet;
+    bool m_eventTrackerArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

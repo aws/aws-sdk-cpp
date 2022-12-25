@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateContactRequest : public ConnectRequest
+  class UpdateContactRequest : public ConnectRequest
   {
   public:
-    UpdateContactRequest();
+    AWS_CONNECT_API UpdateContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Reference> m_references;
-    bool m_referencesHasBeenSet;
+    bool m_referencesHasBeenSet = false;
   };
 
 } // namespace Model

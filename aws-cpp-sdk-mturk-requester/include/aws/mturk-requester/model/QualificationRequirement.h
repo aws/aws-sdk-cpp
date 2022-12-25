@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/QualificationRequirement">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API QualificationRequirement
+  class QualificationRequirement
   {
   public:
-    QualificationRequirement();
-    QualificationRequirement(Aws::Utils::Json::JsonView jsonValue);
-    QualificationRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API QualificationRequirement();
+    AWS_MTURK_API QualificationRequirement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API QualificationRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -455,19 +455,19 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Comparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<int> m_integerValues;
-    bool m_integerValuesHasBeenSet;
+    bool m_integerValuesHasBeenSet = false;
 
     Aws::Vector<Locale> m_localeValues;
-    bool m_localeValuesHasBeenSet;
+    bool m_localeValuesHasBeenSet = false;
 
     HITAccessActions m_actionsGuarded;
-    bool m_actionsGuardedHasBeenSet;
+    bool m_actionsGuardedHasBeenSet = false;
   };
 
 } // namespace Model

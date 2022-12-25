@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AnomalyInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API AnomalyInstance
+  class AnomalyInstance
   {
   public:
-    AnomalyInstance();
-    AnomalyInstance(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API AnomalyInstance();
+    AWS_CODEGURUPROFILER_API AnomalyInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API AnomalyInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     UserFeedback m_userFeedback;
-    bool m_userFeedbackHasBeenSet;
+    bool m_userFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

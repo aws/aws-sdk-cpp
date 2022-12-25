@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API ExportDestination
+  class ExportDestination
   {
   public:
-    ExportDestination();
-    ExportDestination(Aws::Utils::Json::JsonView jsonValue);
-    ExportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API ExportDestination();
+    AWS_COMPUTEOPTIMIZER_API ExportDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API ExportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     S3Destination m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

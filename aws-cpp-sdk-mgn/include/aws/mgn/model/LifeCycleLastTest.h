@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycleLastTest">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API LifeCycleLastTest
+  class LifeCycleLastTest
   {
   public:
-    LifeCycleLastTest();
-    LifeCycleLastTest(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycleLastTest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LifeCycleLastTest();
+    AWS_MGN_API LifeCycleLastTest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LifeCycleLastTest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     LifeCycleLastTestFinalized m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     LifeCycleLastTestInitiated m_initiated;
-    bool m_initiatedHasBeenSet;
+    bool m_initiatedHasBeenSet = false;
 
     LifeCycleLastTestReverted m_reverted;
-    bool m_revertedHasBeenSet;
+    bool m_revertedHasBeenSet = false;
   };
 
 } // namespace Model

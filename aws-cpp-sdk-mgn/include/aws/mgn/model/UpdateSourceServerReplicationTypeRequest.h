@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API UpdateSourceServerReplicationTypeRequest : public MgnRequest
+  class UpdateSourceServerReplicationTypeRequest : public MgnRequest
   {
   public:
-    UpdateSourceServerReplicationTypeRequest();
+    AWS_MGN_API UpdateSourceServerReplicationTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSourceServerReplicationType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     ReplicationType m_replicationType;
-    bool m_replicationTypeHasBeenSet;
+    bool m_replicationTypeHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

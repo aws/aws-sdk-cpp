@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest
+  class InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest
   {
   public:
-    InvokeEndpointRequest();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeEndpoint"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKERRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -535,29 +535,105 @@ namespace Model
      */
     inline InvokeEndpointRequest& WithInferenceId(const char* value) { SetInferenceId(value); return *this;}
 
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline const Aws::String& GetEnableExplanations() const{ return m_enableExplanations; }
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline bool EnableExplanationsHasBeenSet() const { return m_enableExplanationsHasBeenSet; }
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline void SetEnableExplanations(const Aws::String& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = value; }
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline void SetEnableExplanations(Aws::String&& value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations = std::move(value); }
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline void SetEnableExplanations(const char* value) { m_enableExplanationsHasBeenSet = true; m_enableExplanations.assign(value); }
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline InvokeEndpointRequest& WithEnableExplanations(const Aws::String& value) { SetEnableExplanations(value); return *this;}
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline InvokeEndpointRequest& WithEnableExplanations(Aws::String&& value) { SetEnableExplanations(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional JMESPath expression used to override the
+     * <code>EnableExplanations</code> parameter of the
+     * <code>ClarifyExplainerConfig</code> API. See the <a
+     * href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+     * section in the developer guide for more information. </p>
+     */
+    inline InvokeEndpointRequest& WithEnableExplanations(const char* value) { SetEnableExplanations(value); return *this;}
+
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     Aws::String m_customAttributes;
-    bool m_customAttributesHasBeenSet;
+    bool m_customAttributesHasBeenSet = false;
 
     Aws::String m_targetModel;
-    bool m_targetModelHasBeenSet;
+    bool m_targetModelHasBeenSet = false;
 
     Aws::String m_targetVariant;
-    bool m_targetVariantHasBeenSet;
+    bool m_targetVariantHasBeenSet = false;
 
     Aws::String m_targetContainerHostname;
-    bool m_targetContainerHostnameHasBeenSet;
+    bool m_targetContainerHostnameHasBeenSet = false;
 
     Aws::String m_inferenceId;
-    bool m_inferenceIdHasBeenSet;
+    bool m_inferenceIdHasBeenSet = false;
+
+    Aws::String m_enableExplanations;
+    bool m_enableExplanationsHasBeenSet = false;
   };
 
 } // namespace Model

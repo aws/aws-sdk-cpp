@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a user-defined schema when a schema cannot be determined by AWS
+   * <p>Specifies a user-defined schema when a schema cannot be determined by
    * Glue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GlueSchema">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API GlueSchema
+  class GlueSchema
   {
   public:
-    GlueSchema();
-    GlueSchema(Aws::Utils::Json::JsonView jsonValue);
-    GlueSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GlueSchema();
+    AWS_GLUE_API GlueSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GlueSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<GlueStudioSchemaColumn> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

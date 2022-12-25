@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SCHEMAS_API CreateSchemaRequest : public SchemasRequest
+  class CreateSchemaRequest : public SchemasRequest
   {
   public:
-    CreateSchemaRequest();
+    AWS_SCHEMAS_API CreateSchemaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSchema"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

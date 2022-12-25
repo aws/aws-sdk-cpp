@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/NotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API NotFoundException
+  class NotFoundException
   {
   public:
-    NotFoundException();
-    NotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API NotFoundException();
+    AWS_APIGATEWAYV2_API NotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

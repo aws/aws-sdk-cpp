@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/model/ErrorDetails.h>
 #include <aws/iottwinmaker/model/State.h>
+#include <aws/iottwinmaker/model/ErrorDetails.h>
 #include <utility>
 
 namespace Aws
@@ -30,44 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/Status">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API Status
+  class Status
   {
   public:
-    Status();
-    Status(Aws::Utils::Json::JsonView jsonValue);
-    Status& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline const ErrorDetails& GetError() const{ return m_error; }
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline Status& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
-    inline Status& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    AWS_IOTTWINMAKER_API Status();
+    AWS_IOTTWINMAKER_API Status(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Status& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,13 +69,44 @@ namespace Model
      */
     inline Status& WithState(State&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline const ErrorDetails& GetError() const{ return m_error; }
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline Status& WithError(const ErrorDetails& value) { SetError(value); return *this;}
+
+    /**
+     * <p>The error message.</p>
+     */
+    inline Status& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+
   private:
 
-    ErrorDetails m_error;
-    bool m_errorHasBeenSet;
-
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
+
+    ErrorDetails m_error;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

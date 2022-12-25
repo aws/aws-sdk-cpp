@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaReference">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SchemaReference
+  class SchemaReference
   {
   public:
-    SchemaReference();
-    SchemaReference(Aws::Utils::Json::JsonView jsonValue);
-    SchemaReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SchemaReference();
+    AWS_GLUE_API SchemaReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SchemaReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
-    bool m_schemaVersionIdHasBeenSet;
+    bool m_schemaVersionIdHasBeenSet = false;
 
     long long m_schemaVersionNumber;
-    bool m_schemaVersionNumberHasBeenSet;
+    bool m_schemaVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

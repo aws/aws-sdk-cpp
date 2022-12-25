@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/DeleteBucketLifecycleConfigurationRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -38,19 +37,20 @@ Aws::Http::HeaderValueCollection DeleteBucketLifecycleConfigurationRequest::GetR
     ss.str("");
   }
 
-  Aws::S3Control::S3ControlARN arn(m_bucket);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
-  }
-
   return headers;
+}
+
+DeleteBucketLifecycleConfigurationRequest::EndpointParameters DeleteBucketLifecycleConfigurationRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (AccountIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
 }

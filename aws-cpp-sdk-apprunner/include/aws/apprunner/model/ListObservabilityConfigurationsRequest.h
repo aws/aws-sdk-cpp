@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API ListObservabilityConfigurationsRequest : public AppRunnerRequest
+  class ListObservabilityConfigurationsRequest : public AppRunnerRequest
   {
   public:
-    ListObservabilityConfigurationsRequest();
+    AWS_APPRUNNER_API ListObservabilityConfigurationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListObservabilityConfigurations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_observabilityConfigurationName;
-    bool m_observabilityConfigurationNameHasBeenSet;
+    bool m_observabilityConfigurationNameHasBeenSet = false;
 
     bool m_latestOnly;
-    bool m_latestOnlyHasBeenSet;
+    bool m_latestOnlyHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

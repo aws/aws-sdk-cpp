@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API ListSigningJobsRequest : public SignerRequest
+  class ListSigningJobsRequest : public SignerRequest
   {
   public:
-    ListSigningJobsRequest();
+    AWS_SIGNER_API ListSigningJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListSigningJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SIGNER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -409,31 +409,31 @@ namespace Model
   private:
 
     SigningStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::String m_requestedBy;
-    bool m_requestedByHasBeenSet;
+    bool m_requestedByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_isRevoked;
-    bool m_isRevokedHasBeenSet;
+    bool m_isRevokedHasBeenSet = false;
 
     Aws::Utils::DateTime m_signatureExpiresBefore;
-    bool m_signatureExpiresBeforeHasBeenSet;
+    bool m_signatureExpiresBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_signatureExpiresAfter;
-    bool m_signatureExpiresAfterHasBeenSet;
+    bool m_signatureExpiresAfterHasBeenSet = false;
 
     Aws::String m_jobInvoker;
-    bool m_jobInvokerHasBeenSet;
+    bool m_jobInvokerHasBeenSet = false;
   };
 
 } // namespace Model

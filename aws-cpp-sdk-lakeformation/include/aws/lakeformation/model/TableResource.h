@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/TableResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API TableResource
+  class TableResource
   {
   public:
-    TableResource();
-    TableResource(Aws::Utils::Json::JsonView jsonValue);
-    TableResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API TableResource();
+    AWS_LAKEFORMATION_API TableResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API TableResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TableWildcard m_tableWildcard;
-    bool m_tableWildcardHasBeenSet;
+    bool m_tableWildcardHasBeenSet = false;
   };
 
 } // namespace Model

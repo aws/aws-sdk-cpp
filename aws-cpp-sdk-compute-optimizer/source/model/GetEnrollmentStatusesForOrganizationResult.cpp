@@ -30,7 +30,7 @@ GetEnrollmentStatusesForOrganizationResult& GetEnrollmentStatusesForOrganization
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accountEnrollmentStatuses"))
   {
-    Array<JsonView> accountEnrollmentStatusesJsonList = jsonValue.GetArray("accountEnrollmentStatuses");
+    Aws::Utils::Array<JsonView> accountEnrollmentStatusesJsonList = jsonValue.GetArray("accountEnrollmentStatuses");
     for(unsigned accountEnrollmentStatusesIndex = 0; accountEnrollmentStatusesIndex < accountEnrollmentStatusesJsonList.GetLength(); ++accountEnrollmentStatusesIndex)
     {
       m_accountEnrollmentStatuses.push_back(accountEnrollmentStatusesJsonList[accountEnrollmentStatusesIndex].AsObject());

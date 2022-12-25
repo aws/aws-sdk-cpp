@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/HlsEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API HlsEncryption
+  class HlsEncryption
   {
   public:
-    HlsEncryption();
-    HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
-    HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API HlsEncryption();
+    AWS_MEDIAPACKAGEVOD_API HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ When not specified
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     EncryptionMethod m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

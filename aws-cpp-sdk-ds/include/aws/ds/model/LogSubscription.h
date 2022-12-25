@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/LogSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API LogSubscription
+  class LogSubscription
   {
   public:
-    LogSubscription();
-    LogSubscription(Aws::Utils::Json::JsonView jsonValue);
-    LogSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API LogSubscription();
+    AWS_DIRECTORYSERVICE_API LogSubscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API LogSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_subscriptionCreatedDateTime;
-    bool m_subscriptionCreatedDateTimeHasBeenSet;
+    bool m_subscriptionCreatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

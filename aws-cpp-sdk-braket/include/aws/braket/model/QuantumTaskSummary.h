@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/QuantumTaskSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API QuantumTaskSummary
+  class QuantumTaskSummary
   {
   public:
-    QuantumTaskSummary();
-    QuantumTaskSummary(Aws::Utils::Json::JsonView jsonValue);
-    QuantumTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API QuantumTaskSummary();
+    AWS_BRAKET_API QuantumTaskSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API QuantumTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -386,31 +386,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet;
+    bool m_endedAtHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
-    bool m_outputS3BucketHasBeenSet;
+    bool m_outputS3BucketHasBeenSet = false;
 
     Aws::String m_outputS3Directory;
-    bool m_outputS3DirectoryHasBeenSet;
+    bool m_outputS3DirectoryHasBeenSet = false;
 
     Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet;
+    bool m_quantumTaskArnHasBeenSet = false;
 
     long long m_shots;
-    bool m_shotsHasBeenSet;
+    bool m_shotsHasBeenSet = false;
 
     QuantumTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DetectorDebugOption">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DetectorDebugOption
+  class DetectorDebugOption
   {
   public:
-    DetectorDebugOption();
-    DetectorDebugOption(Aws::Utils::Json::JsonView jsonValue);
-    DetectorDebugOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DetectorDebugOption();
+    AWS_IOTEVENTS_API DetectorDebugOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DetectorDebugOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
   };
 
 } // namespace Model

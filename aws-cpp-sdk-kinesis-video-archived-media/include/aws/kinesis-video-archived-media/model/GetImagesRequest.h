@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesRequest : public KinesisVideoArchivedMediaRequest
+  class GetImagesRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    GetImagesRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetImages"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -649,40 +649,40 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     ImageSelectorType m_imageSelectorType;
-    bool m_imageSelectorTypeHasBeenSet;
+    bool m_imageSelectorTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimestamp;
-    bool m_endTimestampHasBeenSet;
+    bool m_endTimestampHasBeenSet = false;
 
     int m_samplingInterval;
-    bool m_samplingIntervalHasBeenSet;
+    bool m_samplingIntervalHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
-    bool m_formatConfigHasBeenSet;
+    bool m_formatConfigHasBeenSet = false;
 
     int m_widthPixels;
-    bool m_widthPixelsHasBeenSet;
+    bool m_widthPixelsHasBeenSet = false;
 
     int m_heightPixels;
-    bool m_heightPixelsHasBeenSet;
+    bool m_heightPixelsHasBeenSet = false;
 
     long long m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

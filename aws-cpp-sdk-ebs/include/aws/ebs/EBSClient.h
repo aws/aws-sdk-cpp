@@ -5,88 +5,16 @@
 
 #pragma once
 #include <aws/ebs/EBS_EXPORTS.h>
-#include <aws/ebs/EBSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ebs/model/CompleteSnapshotResult.h>
-#include <aws/ebs/model/GetSnapshotBlockResult.h>
-#include <aws/ebs/model/ListChangedBlocksResult.h>
-#include <aws/ebs/model/ListSnapshotBlocksResult.h>
-#include <aws/ebs/model/PutSnapshotBlockResult.h>
-#include <aws/ebs/model/StartSnapshotResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ebs/EBSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace EBS
 {
-
-namespace Model
-{
-        class CompleteSnapshotRequest;
-        class GetSnapshotBlockRequest;
-        class ListChangedBlocksRequest;
-        class ListSnapshotBlocksRequest;
-        class PutSnapshotBlockRequest;
-        class StartSnapshotRequest;
-
-        typedef Aws::Utils::Outcome<CompleteSnapshotResult, EBSError> CompleteSnapshotOutcome;
-        typedef Aws::Utils::Outcome<GetSnapshotBlockResult, EBSError> GetSnapshotBlockOutcome;
-        typedef Aws::Utils::Outcome<ListChangedBlocksResult, EBSError> ListChangedBlocksOutcome;
-        typedef Aws::Utils::Outcome<ListSnapshotBlocksResult, EBSError> ListSnapshotBlocksOutcome;
-        typedef Aws::Utils::Outcome<PutSnapshotBlockResult, EBSError> PutSnapshotBlockOutcome;
-        typedef Aws::Utils::Outcome<StartSnapshotResult, EBSError> StartSnapshotOutcome;
-
-        typedef std::future<CompleteSnapshotOutcome> CompleteSnapshotOutcomeCallable;
-        typedef std::future<GetSnapshotBlockOutcome> GetSnapshotBlockOutcomeCallable;
-        typedef std::future<ListChangedBlocksOutcome> ListChangedBlocksOutcomeCallable;
-        typedef std::future<ListSnapshotBlocksOutcome> ListSnapshotBlocksOutcomeCallable;
-        typedef std::future<PutSnapshotBlockOutcome> PutSnapshotBlockOutcomeCallable;
-        typedef std::future<StartSnapshotOutcome> StartSnapshotOutcomeCallable;
-} // namespace Model
-
-  class EBSClient;
-
-    typedef std::function<void(const EBSClient*, const Model::CompleteSnapshotRequest&, const Model::CompleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteSnapshotResponseReceivedHandler;
-    typedef std::function<void(const EBSClient*, const Model::GetSnapshotBlockRequest&, Model::GetSnapshotBlockOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotBlockResponseReceivedHandler;
-    typedef std::function<void(const EBSClient*, const Model::ListChangedBlocksRequest&, const Model::ListChangedBlocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChangedBlocksResponseReceivedHandler;
-    typedef std::function<void(const EBSClient*, const Model::ListSnapshotBlocksRequest&, const Model::ListSnapshotBlocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSnapshotBlocksResponseReceivedHandler;
-    typedef std::function<void(const EBSClient*, const Model::PutSnapshotBlockRequest&, const Model::PutSnapshotBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSnapshotBlockResponseReceivedHandler;
-    typedef std::function<void(const EBSClient*, const Model::StartSnapshotRequest&, const Model::StartSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSnapshotResponseReceivedHandler;
-
   /**
    * <p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create
    * Amazon EBS snapshots, write data directly to your snapshots, read data on your
@@ -114,32 +42,60 @@ namespace Model
    * Elastic Block Store Endpoints and Quotas</a> in the <i>Amazon Web Services
    * General Reference</i>.</p>
    */
-  class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient
+  class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EBSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EBSClient(const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration(),
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EBSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EBSClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         EBSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EBSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EBSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        EBSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~EBSClient();
-
 
         /**
          * <p>Seals and completes the snapshot after all of the required blocks of data
@@ -260,18 +216,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<EBSEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CompleteSnapshotAsyncHelper(const Model::CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSnapshotBlockAsyncHelper(const Model::GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListChangedBlocksAsyncHelper(const Model::ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSnapshotBlocksAsyncHelper(const Model::ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSnapshotBlockAsyncHelper(const Model::PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSnapshotAsyncHelper(const Model::StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>;
+      void init(const EBSClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      EBSClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<EBSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EBS

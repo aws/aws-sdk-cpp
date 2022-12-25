@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API InputDataConfig();
+    AWS_HEALTHLAKE_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

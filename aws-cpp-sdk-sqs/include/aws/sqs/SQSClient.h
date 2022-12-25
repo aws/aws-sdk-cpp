@@ -5,157 +5,17 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
-#include <aws/sqs/SQSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/sqs/model/ChangeMessageVisibilityBatchResult.h>
-#include <aws/sqs/model/CreateQueueResult.h>
-#include <aws/sqs/model/DeleteMessageBatchResult.h>
-#include <aws/sqs/model/GetQueueAttributesResult.h>
-#include <aws/sqs/model/GetQueueUrlResult.h>
-#include <aws/sqs/model/ListDeadLetterSourceQueuesResult.h>
-#include <aws/sqs/model/ListQueueTagsResult.h>
-#include <aws/sqs/model/ListQueuesResult.h>
-#include <aws/sqs/model/ReceiveMessageResult.h>
-#include <aws/sqs/model/SendMessageResult.h>
-#include <aws/sqs/model/SendMessageBatchResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sqs/SQSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SQS
 {
-
-namespace Model
-{
-        class AddPermissionRequest;
-        class ChangeMessageVisibilityRequest;
-        class ChangeMessageVisibilityBatchRequest;
-        class CreateQueueRequest;
-        class DeleteMessageRequest;
-        class DeleteMessageBatchRequest;
-        class DeleteQueueRequest;
-        class GetQueueAttributesRequest;
-        class GetQueueUrlRequest;
-        class ListDeadLetterSourceQueuesRequest;
-        class ListQueueTagsRequest;
-        class ListQueuesRequest;
-        class PurgeQueueRequest;
-        class ReceiveMessageRequest;
-        class RemovePermissionRequest;
-        class SendMessageRequest;
-        class SendMessageBatchRequest;
-        class SetQueueAttributesRequest;
-        class TagQueueRequest;
-        class UntagQueueRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> AddPermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> ChangeMessageVisibilityOutcome;
-        typedef Aws::Utils::Outcome<ChangeMessageVisibilityBatchResult, SQSError> ChangeMessageVisibilityBatchOutcome;
-        typedef Aws::Utils::Outcome<CreateQueueResult, SQSError> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> DeleteMessageOutcome;
-        typedef Aws::Utils::Outcome<DeleteMessageBatchResult, SQSError> DeleteMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> DeleteQueueOutcome;
-        typedef Aws::Utils::Outcome<GetQueueAttributesResult, SQSError> GetQueueAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetQueueUrlResult, SQSError> GetQueueUrlOutcome;
-        typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, SQSError> ListDeadLetterSourceQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListQueueTagsResult, SQSError> ListQueueTagsOutcome;
-        typedef Aws::Utils::Outcome<ListQueuesResult, SQSError> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> PurgeQueueOutcome;
-        typedef Aws::Utils::Outcome<ReceiveMessageResult, SQSError> ReceiveMessageOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<SendMessageResult, SQSError> SendMessageOutcome;
-        typedef Aws::Utils::Outcome<SendMessageBatchResult, SQSError> SendMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> SetQueueAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> TagQueueOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> UntagQueueOutcome;
-
-        typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
-        typedef std::future<ChangeMessageVisibilityOutcome> ChangeMessageVisibilityOutcomeCallable;
-        typedef std::future<ChangeMessageVisibilityBatchOutcome> ChangeMessageVisibilityBatchOutcomeCallable;
-        typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
-        typedef std::future<DeleteMessageOutcome> DeleteMessageOutcomeCallable;
-        typedef std::future<DeleteMessageBatchOutcome> DeleteMessageBatchOutcomeCallable;
-        typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
-        typedef std::future<GetQueueAttributesOutcome> GetQueueAttributesOutcomeCallable;
-        typedef std::future<GetQueueUrlOutcome> GetQueueUrlOutcomeCallable;
-        typedef std::future<ListDeadLetterSourceQueuesOutcome> ListDeadLetterSourceQueuesOutcomeCallable;
-        typedef std::future<ListQueueTagsOutcome> ListQueueTagsOutcomeCallable;
-        typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
-        typedef std::future<PurgeQueueOutcome> PurgeQueueOutcomeCallable;
-        typedef std::future<ReceiveMessageOutcome> ReceiveMessageOutcomeCallable;
-        typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
-        typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
-        typedef std::future<SendMessageBatchOutcome> SendMessageBatchOutcomeCallable;
-        typedef std::future<SetQueueAttributesOutcome> SetQueueAttributesOutcomeCallable;
-        typedef std::future<TagQueueOutcome> TagQueueOutcomeCallable;
-        typedef std::future<UntagQueueOutcome> UntagQueueOutcomeCallable;
-} // namespace Model
-
-  class SQSClient;
-
-    typedef std::function<void(const SQSClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPermissionResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ChangeMessageVisibilityRequest&, const Model::ChangeMessageVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeMessageVisibilityResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ChangeMessageVisibilityBatchRequest&, const Model::ChangeMessageVisibilityBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeMessageVisibilityBatchResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::DeleteMessageRequest&, const Model::DeleteMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessageResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::DeleteMessageBatchRequest&, const Model::DeleteMessageBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessageBatchResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::GetQueueAttributesRequest&, const Model::GetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueAttributesResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::GetQueueUrlRequest&, const Model::GetQueueUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueUrlResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ListDeadLetterSourceQueuesRequest&, const Model::ListDeadLetterSourceQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeadLetterSourceQueuesResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ListQueueTagsRequest&, const Model::ListQueueTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueueTagsResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::PurgeQueueRequest&, const Model::PurgeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurgeQueueResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::ReceiveMessageRequest&, const Model::ReceiveMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReceiveMessageResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::SendMessageBatchRequest&, const Model::SendMessageBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageBatchResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::SetQueueAttributesRequest&, const Model::SetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetQueueAttributesResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::TagQueueRequest&, const Model::TagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagQueueResponseReceivedHandler;
-    typedef std::function<void(const SQSClient*, const Model::UntagQueueRequest&, const Model::UntagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagQueueResponseReceivedHandler;
-
   /**
    * <p>Welcome to the <i>Amazon SQS API Reference</i>.</p> <p>Amazon SQS is a
    * reliable, highly-scalable hosted queue for storing messages as they travel
@@ -183,30 +43,59 @@ namespace Model
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
    */
-  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient
+  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SQSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SQSClient(const Aws::SQS::SQSClientConfiguration& clientConfiguration = Aws::SQS::SQSClientConfiguration(),
+                  std::shared_ptr<SQSEndpointProviderBase> endpointProvider = Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SQSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SQSClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<SQSEndpointProviderBase> endpointProvider = Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SQS::SQSClientConfiguration& clientConfiguration = Aws::SQS::SQSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SQSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SQSEndpointProviderBase> endpointProvider = Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SQS::SQSClientConfiguration& clientConfiguration = Aws::SQS::SQSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SQSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SQSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SQSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SQSClient();
 
 
@@ -873,32 +762,14 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ChangeMessageVisibilityAsyncHelper(const Model::ChangeMessageVisibilityRequest& request, const ChangeMessageVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ChangeMessageVisibilityBatchAsyncHelper(const Model::ChangeMessageVisibilityBatchRequest& request, const ChangeMessageVisibilityBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMessageAsyncHelper(const Model::DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMessageBatchAsyncHelper(const Model::DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteQueueAsyncHelper(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueueAttributesAsyncHelper(const Model::GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueueUrlAsyncHelper(const Model::GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeadLetterSourceQueuesAsyncHelper(const Model::ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueueTagsAsyncHelper(const Model::ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PurgeQueueAsyncHelper(const Model::PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReceiveMessageAsyncHelper(const Model::ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendMessageAsyncHelper(const Model::SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendMessageBatchAsyncHelper(const Model::SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetQueueAttributesAsyncHelper(const Model::SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagQueueAsyncHelper(const Model::TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagQueueAsyncHelper(const Model::UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
+        void init(const SQSClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        SQSClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SQS

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TopicRuleDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TopicRuleDestination
+  class TopicRuleDestination
   {
   public:
-    TopicRuleDestination();
-    TopicRuleDestination(Aws::Utils::Json::JsonView jsonValue);
-    TopicRuleDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TopicRuleDestination();
+    AWS_IOT_API TopicRuleDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TopicRuleDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -390,25 +390,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     TopicRuleDestinationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     HttpUrlDestinationProperties m_httpUrlProperties;
-    bool m_httpUrlPropertiesHasBeenSet;
+    bool m_httpUrlPropertiesHasBeenSet = false;
 
     VpcDestinationProperties m_vpcProperties;
-    bool m_vpcPropertiesHasBeenSet;
+    bool m_vpcPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

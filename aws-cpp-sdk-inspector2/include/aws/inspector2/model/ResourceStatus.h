@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResourceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ResourceStatus
+  class ResourceStatus
   {
   public:
-    ResourceStatus();
-    ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
-    ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ResourceStatus();
+    AWS_INSPECTOR2_API ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,13 +99,53 @@ namespace Model
      */
     inline ResourceStatus& WithEcr(Status&& value) { SetEcr(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline const Status& GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline void SetLambda(const Status& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline void SetLambda(Status&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline ResourceStatus& WithLambda(const Status& value) { SetLambda(value); return *this;}
+
+    /**
+     * <p>The status of Amazon Inspector scanning for AWS Lambda function
+     * resources.</p>
+     */
+    inline ResourceStatus& WithLambda(Status&& value) { SetLambda(std::move(value)); return *this;}
+
   private:
 
     Status m_ec2;
-    bool m_ec2HasBeenSet;
+    bool m_ec2HasBeenSet = false;
 
     Status m_ecr;
-    bool m_ecrHasBeenSet;
+    bool m_ecrHasBeenSet = false;
+
+    Status m_lambda;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

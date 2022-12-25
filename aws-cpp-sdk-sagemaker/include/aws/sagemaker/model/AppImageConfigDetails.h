@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppImageConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AppImageConfigDetails
+  class AppImageConfigDetails
   {
   public:
-    AppImageConfigDetails();
-    AppImageConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AppImageConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AppImageConfigDetails();
+    AWS_SAGEMAKER_API AppImageConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AppImageConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_appImageConfigArn;
-    bool m_appImageConfigArnHasBeenSet;
+    bool m_appImageConfigArnHasBeenSet = false;
 
     Aws::String m_appImageConfigName;
-    bool m_appImageConfigNameHasBeenSet;
+    bool m_appImageConfigNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
-    bool m_kernelGatewayImageConfigHasBeenSet;
+    bool m_kernelGatewayImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputWhitelistRuleCidr">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputWhitelistRuleCidr
+  class InputWhitelistRuleCidr
   {
   public:
-    InputWhitelistRuleCidr();
-    InputWhitelistRuleCidr(Aws::Utils::Json::JsonView jsonValue);
-    InputWhitelistRuleCidr& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputWhitelistRuleCidr();
+    AWS_MEDIALIVE_API InputWhitelistRuleCidr(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputWhitelistRuleCidr& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

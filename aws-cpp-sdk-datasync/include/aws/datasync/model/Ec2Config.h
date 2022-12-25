@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Ec2Config">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API Ec2Config
+  class Ec2Config
   {
   public:
-    Ec2Config();
-    Ec2Config(Aws::Utils::Json::JsonView jsonValue);
-    Ec2Config& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API Ec2Config();
+    AWS_DATASYNC_API Ec2Config(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Ec2Config& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,10 +193,10 @@ namespace Model
   private:
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

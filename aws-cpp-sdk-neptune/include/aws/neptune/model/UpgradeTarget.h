@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/UpgradeTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API UpgradeTarget
+  class UpgradeTarget
   {
   public:
-    UpgradeTarget();
-    UpgradeTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UpgradeTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API UpgradeTarget();
+    AWS_NEPTUNE_API UpgradeTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API UpgradeTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -240,22 +240,22 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_autoUpgrade;
-    bool m_autoUpgradeHasBeenSet;
+    bool m_autoUpgradeHasBeenSet = false;
 
     bool m_isMajorVersionUpgrade;
-    bool m_isMajorVersionUpgradeHasBeenSet;
+    bool m_isMajorVersionUpgradeHasBeenSet = false;
 
     bool m_supportsGlobalDatabases;
-    bool m_supportsGlobalDatabasesHasBeenSet;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API DescribeReplicationConfigurationTemplatesRequest : public MgnRequest
+  class DescribeReplicationConfigurationTemplatesRequest : public MgnRequest
   {
   public:
-    DescribeReplicationConfigurationTemplatesRequest();
+    AWS_MGN_API DescribeReplicationConfigurationTemplatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeReplicationConfigurationTemplates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationConfigurationTemplateIDs;
-    bool m_replicationConfigurationTemplateIDsHasBeenSet;
+    bool m_replicationConfigurationTemplateIDsHasBeenSet = false;
   };
 
 } // namespace Model

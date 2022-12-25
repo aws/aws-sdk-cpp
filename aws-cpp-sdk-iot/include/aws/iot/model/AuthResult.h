@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuthResult">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API AuthResult
+  class AuthResult
   {
   public:
-    AuthResult();
-    AuthResult(Aws::Utils::Json::JsonView jsonValue);
-    AuthResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuthResult();
+    AWS_IOT_API AuthResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuthResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,19 +226,19 @@ namespace Model
   private:
 
     AuthInfo m_authInfo;
-    bool m_authInfoHasBeenSet;
+    bool m_authInfoHasBeenSet = false;
 
     Allowed m_allowed;
-    bool m_allowedHasBeenSet;
+    bool m_allowedHasBeenSet = false;
 
     Denied m_denied;
-    bool m_deniedHasBeenSet;
+    bool m_deniedHasBeenSet = false;
 
     AuthDecision m_authDecision;
-    bool m_authDecisionHasBeenSet;
+    bool m_authDecisionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;
-    bool m_missingContextValuesHasBeenSet;
+    bool m_missingContextValuesHasBeenSet = false;
   };
 
 } // namespace Model

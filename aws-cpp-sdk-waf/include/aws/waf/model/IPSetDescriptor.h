@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API IPSetDescriptor
+  class IPSetDescriptor
   {
   public:
-    IPSetDescriptor();
-    IPSetDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    IPSetDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API IPSetDescriptor();
+    AWS_WAF_API IPSetDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API IPSetDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,10 +249,10 @@ namespace Model
   private:
 
     IPSetDescriptorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

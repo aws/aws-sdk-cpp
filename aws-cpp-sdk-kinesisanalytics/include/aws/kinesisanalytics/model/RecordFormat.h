@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/RecordFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API RecordFormat
+  class RecordFormat
   {
   public:
-    RecordFormat();
-    RecordFormat(Aws::Utils::Json::JsonView jsonValue);
-    RecordFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API RecordFormat();
+    AWS_KINESISANALYTICS_API RecordFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API RecordFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     RecordFormatType m_recordFormatType;
-    bool m_recordFormatTypeHasBeenSet;
+    bool m_recordFormatTypeHasBeenSet = false;
 
     MappingParameters m_mappingParameters;
-    bool m_mappingParametersHasBeenSet;
+    bool m_mappingParametersHasBeenSet = false;
   };
 
 } // namespace Model

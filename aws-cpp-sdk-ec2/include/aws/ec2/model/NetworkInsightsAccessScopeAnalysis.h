@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInsightsAccessScopeAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInsightsAccessScopeAnalysis
+  class NetworkInsightsAccessScopeAnalysis
   {
   public:
-    NetworkInsightsAccessScopeAnalysis();
-    NetworkInsightsAccessScopeAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInsightsAccessScopeAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis();
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -437,37 +437,37 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;
-    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeAnalysisArn;
-    bool m_networkInsightsAccessScopeAnalysisArnHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisArnHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeId;
-    bool m_networkInsightsAccessScopeIdHasBeenSet;
+    bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
     AnalysisStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_warningMessage;
-    bool m_warningMessageHasBeenSet;
+    bool m_warningMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     FindingsFound m_findingsFound;
-    bool m_findingsFoundHasBeenSet;
+    bool m_findingsFoundHasBeenSet = false;
 
     int m_analyzedEniCount;
-    bool m_analyzedEniCountHasBeenSet;
+    bool m_analyzedEniCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TotalLocalStorageGB">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TotalLocalStorageGB
+  class TotalLocalStorageGB
   {
   public:
-    TotalLocalStorageGB();
-    TotalLocalStorageGB(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TotalLocalStorageGB& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TotalLocalStorageGB();
+    AWS_EC2_API TotalLocalStorageGB(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TotalLocalStorageGB& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     double m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

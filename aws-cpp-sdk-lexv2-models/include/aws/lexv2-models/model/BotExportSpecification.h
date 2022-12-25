@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotExportSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotExportSpecification
+  class BotExportSpecification
   {
   public:
-    BotExportSpecification();
-    BotExportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    BotExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotExportSpecification();
+    AWS_LEXMODELSV2_API BotExportSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
   };
 
 } // namespace Model

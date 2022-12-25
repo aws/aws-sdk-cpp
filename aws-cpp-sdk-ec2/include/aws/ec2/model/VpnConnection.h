@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpnConnection
+  class VpnConnection
   {
   public:
-    VpnConnection();
-    VpnConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpnConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpnConnection();
+    AWS_EC2_API VpnConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpnConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -680,49 +680,49 @@ namespace Model
   private:
 
     Aws::String m_customerGatewayConfiguration;
-    bool m_customerGatewayConfigurationHasBeenSet;
+    bool m_customerGatewayConfigurationHasBeenSet = false;
 
     Aws::String m_customerGatewayId;
-    bool m_customerGatewayIdHasBeenSet;
+    bool m_customerGatewayIdHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     VpnState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     GatewayType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vpnConnectionId;
-    bool m_vpnConnectionIdHasBeenSet;
+    bool m_vpnConnectionIdHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
 
     Aws::String m_coreNetworkAttachmentArn;
-    bool m_coreNetworkAttachmentArnHasBeenSet;
+    bool m_coreNetworkAttachmentArnHasBeenSet = false;
 
     GatewayAssociationState m_gatewayAssociationState;
-    bool m_gatewayAssociationStateHasBeenSet;
+    bool m_gatewayAssociationStateHasBeenSet = false;
 
     VpnConnectionOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<VpnStaticRoute> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<VgwTelemetry> m_vgwTelemetry;
-    bool m_vgwTelemetryHasBeenSet;
+    bool m_vgwTelemetryHasBeenSet = false;
   };
 
 } // namespace Model

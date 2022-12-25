@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/SlotTypeRegexConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API SlotTypeRegexConfiguration
+  class SlotTypeRegexConfiguration
   {
   public:
-    SlotTypeRegexConfiguration();
-    SlotTypeRegexConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SlotTypeRegexConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeRegexConfiguration();
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeRegexConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeRegexConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACMPCA_API UpdateCertificateAuthorityRequest : public ACMPCARequest
+  class UpdateCertificateAuthorityRequest : public ACMPCARequest
   {
   public:
-    UpdateCertificateAuthorityRequest();
+    AWS_ACMPCA_API UpdateCertificateAuthorityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateCertificateAuthority"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACMPCA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ACMPCA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     RevocationConfiguration m_revocationConfiguration;
-    bool m_revocationConfigurationHasBeenSet;
+    bool m_revocationConfigurationHasBeenSet = false;
 
     CertificateAuthorityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

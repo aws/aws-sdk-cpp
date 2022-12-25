@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails
+  class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails
   {
   public:
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails();
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,64 +212,88 @@ namespace Model
 
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
-     * <p>The volume type.</p>
+     * <p>The volume type. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>gp2</code> </p> </li> <li> <p> <code>gp3</code> </p> </li> <li> <p>
+     * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
+     * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
   private:
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
   };
 
 } // namespace Model

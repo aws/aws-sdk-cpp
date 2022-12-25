@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTJOBSDATAPLANE_API DescribeJobExecutionRequest : public IoTJobsDataPlaneRequest
+  class DescribeJobExecutionRequest : public IoTJobsDataPlaneRequest
   {
   public:
-    DescribeJobExecutionRequest();
+    AWS_IOTJOBSDATAPLANE_API DescribeJobExecutionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeJobExecution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTJOBSDATAPLANE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTJOBSDATAPLANE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     bool m_includeJobDocument;
-    bool m_includeJobDocumentHasBeenSet;
+    bool m_includeJobDocumentHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
   };
 
 } // namespace Model

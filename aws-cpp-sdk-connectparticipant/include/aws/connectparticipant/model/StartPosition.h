@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartPosition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API StartPosition
+  class StartPosition
   {
   public:
-    StartPosition();
-    StartPosition(Aws::Utils::Json::JsonView jsonValue);
-    StartPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API StartPosition();
+    AWS_CONNECTPARTICIPANT_API StartPosition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API StartPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_absoluteTime;
-    bool m_absoluteTimeHasBeenSet;
+    bool m_absoluteTimeHasBeenSet = false;
 
     int m_mostRecent;
-    bool m_mostRecentHasBeenSet;
+    bool m_mostRecentHasBeenSet = false;
   };
 
 } // namespace Model

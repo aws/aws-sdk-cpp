@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShareInput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API CreateNFSFileShareRequest : public StorageGatewayRequest
+  class CreateNFSFileShareRequest : public StorageGatewayRequest
   {
   public:
-    CreateNFSFileShareRequest();
+    AWS_STORAGEGATEWAY_API CreateNFSFileShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNFSFileShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1277,67 +1277,67 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
-    bool m_nFSFileShareDefaultsHasBeenSet;
+    bool m_nFSFileShareDefaultsHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_locationARN;
-    bool m_locationARNHasBeenSet;
+    bool m_locationARNHasBeenSet = false;
 
     Aws::String m_defaultStorageClass;
-    bool m_defaultStorageClassHasBeenSet;
+    bool m_defaultStorageClassHasBeenSet = false;
 
     ObjectACL m_objectACL;
-    bool m_objectACLHasBeenSet;
+    bool m_objectACLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientList;
-    bool m_clientListHasBeenSet;
+    bool m_clientListHasBeenSet = false;
 
     Aws::String m_squash;
-    bool m_squashHasBeenSet;
+    bool m_squashHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
 
     bool m_guessMIMETypeEnabled;
-    bool m_guessMIMETypeEnabledHasBeenSet;
+    bool m_guessMIMETypeEnabledHasBeenSet = false;
 
     bool m_requesterPays;
-    bool m_requesterPaysHasBeenSet;
+    bool m_requesterPaysHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_fileShareName;
-    bool m_fileShareNameHasBeenSet;
+    bool m_fileShareNameHasBeenSet = false;
 
     CacheAttributes m_cacheAttributes;
-    bool m_cacheAttributesHasBeenSet;
+    bool m_cacheAttributesHasBeenSet = false;
 
     Aws::String m_notificationPolicy;
-    bool m_notificationPolicyHasBeenSet;
+    bool m_notificationPolicyHasBeenSet = false;
 
     Aws::String m_vPCEndpointDNSName;
-    bool m_vPCEndpointDNSNameHasBeenSet;
+    bool m_vPCEndpointDNSNameHasBeenSet = false;
 
     Aws::String m_bucketRegion;
-    bool m_bucketRegionHasBeenSet;
+    bool m_bucketRegionHasBeenSet = false;
 
     Aws::String m_auditDestinationARN;
-    bool m_auditDestinationARNHasBeenSet;
+    bool m_auditDestinationARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RuleVariables">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RuleVariables
+  class RuleVariables
   {
   public:
-    RuleVariables();
-    RuleVariables(Aws::Utils::Json::JsonView jsonValue);
-    RuleVariables& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RuleVariables();
+    AWS_NETWORKFIREWALL_API RuleVariables(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RuleVariables& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,10 +165,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, IPSet> m_iPSets;
-    bool m_iPSetsHasBeenSet;
+    bool m_iPSetsHasBeenSet = false;
 
     Aws::Map<Aws::String, PortSet> m_portSets;
-    bool m_portSetsHasBeenSet;
+    bool m_portSetsHasBeenSet = false;
   };
 
 } // namespace Model

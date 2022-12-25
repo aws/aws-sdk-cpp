@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceStatus
+  class InstanceStatus
   {
   public:
-    InstanceStatus();
-    InstanceStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatus();
+    AWS_EC2_API InstanceStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<InstanceStatusEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     InstanceState m_instanceState;
-    bool m_instanceStateHasBeenSet;
+    bool m_instanceStateHasBeenSet = false;
 
     InstanceStatusSummary m_instanceStatus;
-    bool m_instanceStatusHasBeenSet;
+    bool m_instanceStatusHasBeenSet = false;
 
     InstanceStatusSummary m_systemStatus;
-    bool m_systemStatusHasBeenSet;
+    bool m_systemStatusHasBeenSet = false;
   };
 
 } // namespace Model

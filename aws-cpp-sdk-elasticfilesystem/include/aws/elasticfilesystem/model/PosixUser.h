@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PosixUser">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API PosixUser
+  class PosixUser
   {
   public:
-    PosixUser();
-    PosixUser(Aws::Utils::Json::JsonView jsonValue);
-    PosixUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API PosixUser();
+    AWS_EFS_API PosixUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API PosixUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     long long m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
 
     long long m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     Aws::Vector<long long> m_secondaryGids;
-    bool m_secondaryGidsHasBeenSet;
+    bool m_secondaryGidsHasBeenSet = false;
   };
 
 } // namespace Model

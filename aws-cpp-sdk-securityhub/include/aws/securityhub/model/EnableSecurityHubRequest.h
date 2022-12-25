@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API EnableSecurityHubRequest : public SecurityHubRequest
+  class EnableSecurityHubRequest : public SecurityHubRequest
   {
   public:
-    EnableSecurityHubRequest();
+    AWS_SECURITYHUB_API EnableSecurityHubRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "EnableSecurityHub"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableDefaultStandards;
-    bool m_enableDefaultStandardsHasBeenSet;
+    bool m_enableDefaultStandardsHasBeenSet = false;
   };
 
 } // namespace Model

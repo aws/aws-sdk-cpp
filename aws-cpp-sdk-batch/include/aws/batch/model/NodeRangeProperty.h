@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the properties of the node range for a multi-node
+   * <p>An object that represents the properties of the node range for a multi-node
    * parallel job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeRangeProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodeRangeProperty
+  class NodeRangeProperty
   {
   public:
-    NodeRangeProperty();
-    NodeRangeProperty(Aws::Utils::Json::JsonView jsonValue);
-    NodeRangeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodeRangeProperty();
+    AWS_BATCH_API NodeRangeProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodeRangeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -46,7 +46,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline const Aws::String& GetTargetNodes() const{ return m_targetNodes; }
@@ -58,7 +58,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline bool TargetNodesHasBeenSet() const { return m_targetNodesHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline void SetTargetNodes(const Aws::String& value) { m_targetNodesHasBeenSet = true; m_targetNodes = value; }
@@ -82,7 +82,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline void SetTargetNodes(Aws::String&& value) { m_targetNodesHasBeenSet = true; m_targetNodes = std::move(value); }
@@ -94,7 +94,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline void SetTargetNodes(const char* value) { m_targetNodesHasBeenSet = true; m_targetNodes.assign(value); }
@@ -106,7 +106,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(const Aws::String& value) { SetTargetNodes(value); return *this;}
@@ -118,7 +118,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(Aws::String&& value) { SetTargetNodes(std::move(value)); return *this;}
@@ -130,7 +130,7 @@ namespace Model
      * used to start the range. If the ending range value is omitted (<code>n:</code>),
      * then the highest possible node index is used to end the range. Your accumulative
      * node ranges must account for all nodes (<code>0:n</code>). You can nest node
-     * ranges, for example <code>0:10</code> and <code>4:5</code>, in which case the
+     * ranges (for example, <code>0:10</code> and <code>4:5</code>). In this case, the
      * <code>4:5</code> range properties override the <code>0:10</code> properties.</p>
      */
     inline NodeRangeProperty& WithTargetNodes(const char* value) { SetTargetNodes(value); return *this;}
@@ -169,10 +169,10 @@ namespace Model
   private:
 
     Aws::String m_targetNodes;
-    bool m_targetNodesHasBeenSet;
+    bool m_targetNodesHasBeenSet = false;
 
     ContainerProperties m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
   };
 
 } // namespace Model

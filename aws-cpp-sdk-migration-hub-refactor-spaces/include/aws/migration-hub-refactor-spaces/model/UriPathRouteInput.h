@@ -31,48 +31,48 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UriPathRouteInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput
+  class UriPathRouteInput
   {
   public:
-    UriPathRouteInput();
-    UriPathRouteInput(Aws::Utils::Json::JsonView jsonValue);
-    UriPathRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline const RouteActivationState& GetActivationState() const{ return m_activationState; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline void SetActivationState(const RouteActivationState& value) { m_activationStateHasBeenSet = true; m_activationState = value; }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline void SetActivationState(RouteActivationState&& value) { m_activationStateHasBeenSet = true; m_activationState = std::move(value); }
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline UriPathRouteInput& WithActivationState(const RouteActivationState& value) { SetActivationState(value); return *this;}
 
     /**
-     * <p>Indicates whether traffic is forwarded to this route’s service after the
-     * route is created. </p>
+     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+     * after the route is created. </p>
      */
     inline UriPathRouteInput& WithActivationState(RouteActivationState&& value) { SetActivationState(std::move(value)); return *this;}
 
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     RouteActivationState m_activationState;
-    bool m_activationStateHasBeenSet;
+    bool m_activationStateHasBeenSet = false;
 
     bool m_includeChildPaths;
-    bool m_includeChildPathsHasBeenSet;
+    bool m_includeChildPathsHasBeenSet = false;
 
     Aws::Vector<HttpMethod> m_methods;
-    bool m_methodsHasBeenSet;
+    bool m_methodsHasBeenSet = false;
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

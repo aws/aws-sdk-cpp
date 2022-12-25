@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/FailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API FailureDetails
+  class FailureDetails
   {
   public:
-    FailureDetails();
-    FailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    FailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API FailureDetails();
+    AWS_CODEPIPELINE_API FailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API FailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     FailureType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

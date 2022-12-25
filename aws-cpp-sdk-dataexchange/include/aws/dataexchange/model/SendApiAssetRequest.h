@@ -22,14 +22,11 @@ namespace Model
 {
 
   /**
-   * <p>The request body for SendApiAsset.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendApiAssetRequest">AWS
-   * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API SendApiAssetRequest : public StreamingDataExchangeRequest
+  class SendApiAssetRequest : public StreamingDataExchangeRequest
   {
   public:
-    SendApiAssetRequest();
+    AWS_DATAEXCHANGE_API SendApiAssetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendApiAsset"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATAEXCHANGE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -359,49 +356,49 @@ namespace Model
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline SendApiAssetRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline SendApiAssetRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>URI path value for the API request. Alternatively, you can set the URI path
-     * directly by invoking /v1/{pathValue}</p>
+     * directly by invoking /v1/{pathValue}.</p>
      */
     inline SendApiAssetRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -450,25 +447,25 @@ namespace Model
 
 
     Aws::Map<Aws::String, Aws::String> m_queryStringParameters;
-    bool m_queryStringParametersHasBeenSet;
+    bool m_queryStringParametersHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-    bool m_requestHeadersHasBeenSet;
+    bool m_requestHeadersHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

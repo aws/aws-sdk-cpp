@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceSpecification
+  class InferenceSpecification
   {
   public:
-    InferenceSpecification();
-    InferenceSpecification(Aws::Utils::Json::JsonView jsonValue);
-    InferenceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceSpecification();
+    AWS_SAGEMAKER_API InferenceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -299,19 +299,19 @@ namespace Model
   private:
 
     Aws::Vector<ModelPackageContainerDefinition> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::Vector<TransformInstanceType> m_supportedTransformInstanceTypes;
-    bool m_supportedTransformInstanceTypesHasBeenSet;
+    bool m_supportedTransformInstanceTypesHasBeenSet = false;
 
     Aws::Vector<ProductionVariantInstanceType> m_supportedRealtimeInferenceInstanceTypes;
-    bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet;
+    bool m_supportedRealtimeInferenceInstanceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedContentTypes;
-    bool m_supportedContentTypesHasBeenSet;
+    bool m_supportedContentTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
-    bool m_supportedResponseMIMETypesHasBeenSet;
+    bool m_supportedResponseMIMETypesHasBeenSet = false;
   };
 
 } // namespace Model

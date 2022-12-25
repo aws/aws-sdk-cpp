@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PullThroughCacheRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API PullThroughCacheRule
+  class PullThroughCacheRule
   {
   public:
-    PullThroughCacheRule();
-    PullThroughCacheRule(Aws::Utils::Json::JsonView jsonValue);
-    PullThroughCacheRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API PullThroughCacheRule();
+    AWS_ECR_API PullThroughCacheRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API PullThroughCacheRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,16 +210,16 @@ namespace Model
   private:
 
     Aws::String m_ecrRepositoryPrefix;
-    bool m_ecrRepositoryPrefixHasBeenSet;
+    bool m_ecrRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_upstreamRegistryUrl;
-    bool m_upstreamRegistryUrlHasBeenSet;
+    bool m_upstreamRegistryUrlHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

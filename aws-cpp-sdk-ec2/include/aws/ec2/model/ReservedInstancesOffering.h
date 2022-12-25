@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstancesOffering
+  class ReservedInstancesOffering
   {
   public:
-    ReservedInstancesOffering();
-    ReservedInstancesOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstancesOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesOffering();
+    AWS_EC2_API ReservedInstancesOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -570,49 +570,49 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet;
+    bool m_productDescriptionHasBeenSet = false;
 
     Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet;
+    bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Tenancy m_instanceTenancy;
-    bool m_instanceTenancyHasBeenSet;
+    bool m_instanceTenancyHasBeenSet = false;
 
     bool m_marketplace;
-    bool m_marketplaceHasBeenSet;
+    bool m_marketplaceHasBeenSet = false;
 
     OfferingClassType m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
 
     OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::Vector<PricingDetail> m_pricingDetails;
-    bool m_pricingDetailsHasBeenSet;
+    bool m_pricingDetailsHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

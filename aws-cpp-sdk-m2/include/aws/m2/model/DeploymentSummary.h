@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeploymentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DeploymentSummary
+  class DeploymentSummary
   {
   public:
-    DeploymentSummary();
-    DeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DeploymentSummary();
+    AWS_MAINFRAMEMODERNIZATION_API DeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,42 +175,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline DeploymentSummary& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline DeploymentSummary& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the environment.</p>
+     * <p>The unique identifier of the runtime environment.</p>
      */
     inline DeploymentSummary& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
@@ -289,25 +289,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     DeploymentLifecycle m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API SearchTransitGatewayMulticastGroupsResponse
+  class SearchTransitGatewayMulticastGroupsResponse
   {
   public:
-    SearchTransitGatewayMulticastGroupsResponse();
-    SearchTransitGatewayMulticastGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SearchTransitGatewayMulticastGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API SearchTransitGatewayMulticastGroupsResponse();
+    AWS_EC2_API SearchTransitGatewayMulticastGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API SearchTransitGatewayMulticastGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

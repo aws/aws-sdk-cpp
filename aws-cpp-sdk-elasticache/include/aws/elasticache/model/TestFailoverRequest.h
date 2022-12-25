@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API TestFailoverRequest : public ElastiCacheRequest
+  class TestFailoverRequest : public ElastiCacheRequest
   {
   public:
-    TestFailoverRequest();
+    AWS_ELASTICACHE_API TestFailoverRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestFailover"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceResizePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceResizePolicy
+  class InstanceResizePolicy
   {
   public:
-    InstanceResizePolicy();
-    InstanceResizePolicy(Aws::Utils::Json::JsonView jsonValue);
-    InstanceResizePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceResizePolicy();
+    AWS_EMR_API InstanceResizePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceResizePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instancesToTerminate;
-    bool m_instancesToTerminateHasBeenSet;
+    bool m_instancesToTerminateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instancesToProtect;
-    bool m_instancesToProtectHasBeenSet;
+    bool m_instancesToProtectHasBeenSet = false;
 
     int m_instanceTerminationTimeout;
-    bool m_instanceTerminationTimeoutHasBeenSet;
+    bool m_instanceTerminationTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

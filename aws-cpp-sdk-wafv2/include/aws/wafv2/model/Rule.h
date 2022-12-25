@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
+#include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/Label.h>
 #include <utility>
 
@@ -39,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Rule">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Rule();
+    AWS_WAFV2_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,8 +268,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
@@ -281,8 +282,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
@@ -295,8 +296,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
@@ -309,8 +310,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
@@ -323,8 +324,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline Rule& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
 
@@ -337,8 +338,8 @@ namespace Model
      * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
      * set to none. It does not affect how the rules in the rule group are evaluated.
      * If you want the rules in the rule group to only count matches, do not use this
-     * and instead exclude those rules in your rule group reference statement settings.
-     * </p> 
+     * and instead use the rule action override option, with <code>Count</code> action,
+     * in your rule group reference statement settings. </p> 
      */
     inline Rule& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 
@@ -575,31 +576,77 @@ namespace Model
      */
     inline Rule& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline const ChallengeConfig& GetChallengeConfig() const{ return m_challengeConfig; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline bool ChallengeConfigHasBeenSet() const { return m_challengeConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline void SetChallengeConfig(const ChallengeConfig& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = value; }
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline void SetChallengeConfig(ChallengeConfig&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline Rule& WithChallengeConfig(const ChallengeConfig& value) { SetChallengeConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you
+     * don't specify this, WAF uses the challenge configuration that's defined for the
+     * web ACL. </p>
+     */
+    inline Rule& WithChallengeConfig(ChallengeConfig&& value) { SetChallengeConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Statement m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     RuleAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     OverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     Aws::Vector<Label> m_ruleLabels;
-    bool m_ruleLabelsHasBeenSet;
+    bool m_ruleLabelsHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     CaptchaConfig m_captchaConfig;
-    bool m_captchaConfigHasBeenSet;
+    bool m_captchaConfigHasBeenSet = false;
+
+    ChallengeConfig m_challengeConfig;
+    bool m_challengeConfigHasBeenSet = false;
   };
 
 } // namespace Model

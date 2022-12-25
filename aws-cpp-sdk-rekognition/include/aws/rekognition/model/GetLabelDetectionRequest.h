@@ -8,6 +8,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/LabelDetectionSortBy.h>
+#include <aws/rekognition/model/LabelDetectionAggregateBy.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API GetLabelDetectionRequest : public RekognitionRequest
+  class GetLabelDetectionRequest : public RekognitionRequest
   {
   public:
-    GetLabelDetectionRequest();
+    AWS_REKOGNITION_API GetLabelDetectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLabelDetection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -232,19 +233,59 @@ namespace Model
      */
     inline GetLabelDetectionRequest& WithSortBy(LabelDetectionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline const LabelDetectionAggregateBy& GetAggregateBy() const{ return m_aggregateBy; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline bool AggregateByHasBeenSet() const { return m_aggregateByHasBeenSet; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline void SetAggregateBy(const LabelDetectionAggregateBy& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline void SetAggregateBy(LabelDetectionAggregateBy&& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = std::move(value); }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline GetLabelDetectionRequest& WithAggregateBy(const LabelDetectionAggregateBy& value) { SetAggregateBy(value); return *this;}
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline GetLabelDetectionRequest& WithAggregateBy(LabelDetectionAggregateBy&& value) { SetAggregateBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     LabelDetectionSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
+
+    LabelDetectionAggregateBy m_aggregateBy;
+    bool m_aggregateByHasBeenSet = false;
   };
 
 } // namespace Model

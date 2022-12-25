@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateRecoveryGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API UpdateRecoveryGroupRequest : public Route53RecoveryReadinessRequest
+  class UpdateRecoveryGroupRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    UpdateRecoveryGroupRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API UpdateRecoveryGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRecoveryGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_recoveryGroupName;
-    bool m_recoveryGroupNameHasBeenSet;
+    bool m_recoveryGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

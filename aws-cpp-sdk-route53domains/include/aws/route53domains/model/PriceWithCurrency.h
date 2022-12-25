@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PriceWithCurrency">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API PriceWithCurrency
+  class PriceWithCurrency
   {
   public:
-    PriceWithCurrency();
-    PriceWithCurrency(Aws::Utils::Json::JsonView jsonValue);
-    PriceWithCurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API PriceWithCurrency();
+    AWS_ROUTE53DOMAINS_API PriceWithCurrency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API PriceWithCurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     Aws::String m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
   };
 
 } // namespace Model

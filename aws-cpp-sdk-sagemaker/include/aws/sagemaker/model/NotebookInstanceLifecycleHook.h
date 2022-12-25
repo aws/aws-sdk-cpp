@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceLifecycleHook">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API NotebookInstanceLifecycleHook
+  class NotebookInstanceLifecycleHook
   {
   public:
-    NotebookInstanceLifecycleHook();
-    NotebookInstanceLifecycleHook(Aws::Utils::Json::JsonView jsonValue);
-    NotebookInstanceLifecycleHook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleHook();
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleHook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleHook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

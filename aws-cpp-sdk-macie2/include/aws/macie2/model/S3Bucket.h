@@ -36,28 +36,28 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Bucket">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API S3Bucket
+  class S3Bucket
   {
   public:
-    S3Bucket();
-    S3Bucket(Aws::Utils::Json::JsonView jsonValue);
-    S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3Bucket();
+    AWS_MACIE2_API S3Bucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline const AllowsUnencryptedObjectUploads& GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
 
@@ -65,15 +65,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
 
@@ -81,15 +81,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline void SetAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
 
@@ -97,15 +97,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = std::move(value); }
 
@@ -113,15 +113,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline S3Bucket& WithAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
 
@@ -129,15 +129,15 @@ namespace Model
      * <p>Specifies whether the bucket policy for the bucket requires server-side
      * encryption of objects when objects are uploaded to the bucket. Possible values
      * are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of
-     * new objects. PutObject requests must include the x-amz-server-side-encryption
-     * header and the value for that header must be AES256 or aws:kms.</p></li>
-     * <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy
-     * that doesn't require server-side encryption of new objects. If a bucket policy
-     * exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't
-     * determine whether the bucket policy requires server-side encryption of
-     * objects.</p></li></ul>
+     * new objects. PutObject requests must include a valid server-side encryption
+     * header.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has
+     * a bucket policy that doesn't require server-side encryption of new objects. If a
+     * bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.</p></li> <li><p>UNKNOWN - Amazon Macie can't
+     * determine whether the bucket policy requires server-side encryption of new
+     * objects.</p></li></ul> <p>Valid server-side encryption headers are:
+     * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
     inline S3Bucket& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { SetAllowsUnencryptedObjectUploads(std::move(value)); return *this;}
 
@@ -415,28 +415,28 @@ namespace Model
   private:
 
     AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ServerSideEncryption m_defaultServerSideEncryption;
-    bool m_defaultServerSideEncryptionHasBeenSet;
+    bool m_defaultServerSideEncryptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     S3BucketOwner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     BucketPublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

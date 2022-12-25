@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSessionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API InstallToRemoteAccessSessionRequest : public DeviceFarmRequest
+  class InstallToRemoteAccessSessionRequest : public DeviceFarmRequest
   {
   public:
-    InstallToRemoteAccessSessionRequest();
+    AWS_DEVICEFARM_API InstallToRemoteAccessSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InstallToRemoteAccessSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_remoteAccessSessionArn;
-    bool m_remoteAccessSessionArnHasBeenSet;
+    bool m_remoteAccessSessionArnHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
   };
 
 } // namespace Model

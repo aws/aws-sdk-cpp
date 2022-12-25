@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Intent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Intent
+  class Intent
   {
   public:
-    Intent();
-    Intent(Aws::Utils::Json::JsonView jsonValue);
-    Intent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Intent();
+    AWS_LEXRUNTIMEV2_API Intent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Intent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Slot> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     IntentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ConfirmationState m_confirmationState;
-    bool m_confirmationStateHasBeenSet;
+    bool m_confirmationStateHasBeenSet = false;
   };
 
 } // namespace Model

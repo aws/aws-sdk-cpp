@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistributionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DeleteStreamingDistribution2020_05_31Request : public CloudFrontRequest
+  class DeleteStreamingDistribution2020_05_31Request : public CloudFrontRequest
   {
   public:
-    DeleteStreamingDistribution2020_05_31Request();
+    AWS_CLOUDFRONT_API DeleteStreamingDistribution2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,48 +32,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteStreamingDistribution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

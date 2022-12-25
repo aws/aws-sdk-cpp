@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Sheet">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Sheet
+  class Sheet
   {
   public:
-    Sheet();
-    Sheet(Aws::Utils::Json::JsonView jsonValue);
-    Sheet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Sheet();
+    AWS_QUICKSIGHT_API Sheet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Sheet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_sheetId;
-    bool m_sheetIdHasBeenSet;
+    bool m_sheetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

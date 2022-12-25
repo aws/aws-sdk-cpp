@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ConfigurationRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ConfigurationRevision
+  class ConfigurationRevision
   {
   public:
-    ConfigurationRevision();
-    ConfigurationRevision(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ConfigurationRevision();
+    AWS_KAFKA_API ConfigurationRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ConfigurationRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

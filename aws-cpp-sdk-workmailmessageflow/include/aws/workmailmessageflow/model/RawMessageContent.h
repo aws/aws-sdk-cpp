@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/RawMessageContent">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAILMESSAGEFLOW_API RawMessageContent
+  class RawMessageContent
   {
   public:
-    RawMessageContent();
-    RawMessageContent(Aws::Utils::Json::JsonView jsonValue);
-    RawMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAILMESSAGEFLOW_API RawMessageContent();
+    AWS_WORKMAILMESSAGEFLOW_API RawMessageContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAILMESSAGEFLOW_API RawMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAILMESSAGEFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     S3Reference m_s3Reference;
-    bool m_s3ReferenceHasBeenSet;
+    bool m_s3ReferenceHasBeenSet = false;
   };
 
 } // namespace Model

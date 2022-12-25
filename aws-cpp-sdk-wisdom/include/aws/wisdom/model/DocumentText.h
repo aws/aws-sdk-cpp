@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DocumentText">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API DocumentText
+  class DocumentText
   {
   public:
-    DocumentText();
-    DocumentText(Aws::Utils::Json::JsonView jsonValue);
-    DocumentText& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API DocumentText();
+    AWS_CONNECTWISDOMSERVICE_API DocumentText(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API DocumentText& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<Highlight> m_highlights;
-    bool m_highlightsHasBeenSet;
+    bool m_highlightsHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

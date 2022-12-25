@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogGroupField">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API LogGroupField
+  class LogGroupField
   {
   public:
-    LogGroupField();
-    LogGroupField(Aws::Utils::Json::JsonView jsonValue);
-    LogGroupField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API LogGroupField();
+    AWS_CLOUDWATCHLOGS_API LogGroupField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API LogGroupField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_percent;
-    bool m_percentHasBeenSet;
+    bool m_percentHasBeenSet = false;
   };
 
 } // namespace Model

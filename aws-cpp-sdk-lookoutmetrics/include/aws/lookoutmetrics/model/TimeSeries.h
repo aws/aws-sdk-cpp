@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TimeSeries">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API TimeSeries
+  class TimeSeries
   {
   public:
-    TimeSeries();
-    TimeSeries(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeries& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API TimeSeries();
+    AWS_LOOKOUTMETRICS_API TimeSeries(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API TimeSeries& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_timeSeriesId;
-    bool m_timeSeriesIdHasBeenSet;
+    bool m_timeSeriesIdHasBeenSet = false;
 
     Aws::Vector<DimensionNameValue> m_dimensionList;
-    bool m_dimensionListHasBeenSet;
+    bool m_dimensionListHasBeenSet = false;
 
     Aws::Vector<double> m_metricValueList;
-    bool m_metricValueListHasBeenSet;
+    bool m_metricValueListHasBeenSet = false;
   };
 
 } // namespace Model

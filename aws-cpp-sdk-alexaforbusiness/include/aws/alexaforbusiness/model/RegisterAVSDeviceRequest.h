@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API RegisterAVSDeviceRequest : public AlexaForBusinessRequest
+  class RegisterAVSDeviceRequest : public AlexaForBusinessRequest
   {
   public:
-    RegisterAVSDeviceRequest();
+    AWS_ALEXAFORBUSINESS_API RegisterAVSDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterAVSDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -381,25 +381,25 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_userCode;
-    bool m_userCodeHasBeenSet;
+    bool m_userCodeHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

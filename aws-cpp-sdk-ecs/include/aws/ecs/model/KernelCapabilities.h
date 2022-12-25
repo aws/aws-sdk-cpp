@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/KernelCapabilities">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API KernelCapabilities
+  class KernelCapabilities
   {
   public:
-    KernelCapabilities();
-    KernelCapabilities(Aws::Utils::Json::JsonView jsonValue);
-    KernelCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API KernelCapabilities();
+    AWS_ECS_API KernelCapabilities(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API KernelCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -427,10 +427,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_add;
-    bool m_addHasBeenSet;
+    bool m_addHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_drop;
-    bool m_dropHasBeenSet;
+    bool m_dropHasBeenSet = false;
   };
 
 } // namespace Model

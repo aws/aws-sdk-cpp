@@ -19,7 +19,8 @@ namespace Model
     CREATED,
     RUNNING,
     COMPLETED,
-    FAILED
+    FAILED,
+    PARTIAL
   };
 
 namespace CopyJobStateMapper

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineContext
+  class PipelineContext
   {
   public:
-    PipelineContext();
-    PipelineContext(Aws::Utils::Json::JsonView jsonValue);
-    PipelineContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API PipelineContext();
+    AWS_CODEPIPELINE_API PipelineContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API PipelineContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,19 +238,19 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     StageContext m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     ActionContext m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet;
+    bool m_pipelineArnHasBeenSet = false;
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
   };
 
 } // namespace Model

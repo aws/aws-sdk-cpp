@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Processor">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API Processor
+  class Processor
   {
   public:
-    Processor();
-    Processor(Aws::Utils::Json::JsonView jsonValue);
-    Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API Processor();
+    AWS_FIREHOSE_API Processor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ProcessorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<ProcessorParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

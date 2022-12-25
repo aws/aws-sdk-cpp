@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SqlAlias">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API SqlAlias
+  class SqlAlias
   {
   public:
-    SqlAlias();
-    SqlAlias(Aws::Utils::Json::JsonView jsonValue);
-    SqlAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SqlAlias();
+    AWS_GLUE_API SqlAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SqlAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

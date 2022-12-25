@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API MoveByoipCidrToIpamResponse
+  class MoveByoipCidrToIpamResponse
   {
   public:
-    MoveByoipCidrToIpamResponse();
-    MoveByoipCidrToIpamResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    MoveByoipCidrToIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API MoveByoipCidrToIpamResponse();
+    AWS_EC2_API MoveByoipCidrToIpamResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API MoveByoipCidrToIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>The BYOIP CIDR.</p>
+     */
     inline const ByoipCidr& GetByoipCidr() const{ return m_byoipCidr; }
 
-    
+    /**
+     * <p>The BYOIP CIDR.</p>
+     */
     inline void SetByoipCidr(const ByoipCidr& value) { m_byoipCidr = value; }
 
-    
+    /**
+     * <p>The BYOIP CIDR.</p>
+     */
     inline void SetByoipCidr(ByoipCidr&& value) { m_byoipCidr = std::move(value); }
 
-    
+    /**
+     * <p>The BYOIP CIDR.</p>
+     */
     inline MoveByoipCidrToIpamResponse& WithByoipCidr(const ByoipCidr& value) { SetByoipCidr(value); return *this;}
 
-    
+    /**
+     * <p>The BYOIP CIDR.</p>
+     */
     inline MoveByoipCidrToIpamResponse& WithByoipCidr(ByoipCidr&& value) { SetByoipCidr(std::move(value)); return *this;}
 
 

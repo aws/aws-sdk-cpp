@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API DataSource();
+    AWS_MACHINELEARNING_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -663,58 +663,58 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_dataLocationS3;
-    bool m_dataLocationS3HasBeenSet;
+    bool m_dataLocationS3HasBeenSet = false;
 
     Aws::String m_dataRearrangement;
-    bool m_dataRearrangementHasBeenSet;
+    bool m_dataRearrangementHasBeenSet = false;
 
     Aws::String m_createdByIamUser;
-    bool m_createdByIamUserHasBeenSet;
+    bool m_createdByIamUserHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     long long m_dataSizeInBytes;
-    bool m_dataSizeInBytesHasBeenSet;
+    bool m_dataSizeInBytesHasBeenSet = false;
 
     long long m_numberOfFiles;
-    bool m_numberOfFilesHasBeenSet;
+    bool m_numberOfFilesHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EntityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     RedshiftMetadata m_redshiftMetadata;
-    bool m_redshiftMetadataHasBeenSet;
+    bool m_redshiftMetadataHasBeenSet = false;
 
     RDSMetadata m_rDSMetadata;
-    bool m_rDSMetadataHasBeenSet;
+    bool m_rDSMetadataHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     bool m_computeStatistics;
-    bool m_computeStatisticsHasBeenSet;
+    bool m_computeStatisticsHasBeenSet = false;
 
     long long m_computeTime;
-    bool m_computeTimeHasBeenSet;
+    bool m_computeTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedAt;
-    bool m_finishedAtHasBeenSet;
+    bool m_finishedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
   };
 
 } // namespace Model

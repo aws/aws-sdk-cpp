@@ -30,7 +30,7 @@ ListS3ResourcesResult& ListS3ResourcesResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("s3Resources"))
   {
-    Array<JsonView> s3ResourcesJsonList = jsonValue.GetArray("s3Resources");
+    Aws::Utils::Array<JsonView> s3ResourcesJsonList = jsonValue.GetArray("s3Resources");
     for(unsigned s3ResourcesIndex = 0; s3ResourcesIndex < s3ResourcesJsonList.GetLength(); ++s3ResourcesIndex)
     {
       m_s3Resources.push_back(s3ResourcesJsonList[s3ResourcesIndex].AsObject());

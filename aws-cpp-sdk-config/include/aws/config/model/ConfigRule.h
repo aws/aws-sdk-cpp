@@ -10,6 +10,8 @@
 #include <aws/config/model/Source.h>
 #include <aws/config/model/MaximumExecutionFrequency.h>
 #include <aws/config/model/ConfigRuleState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/EvaluationModeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -28,30 +30,39 @@ namespace Model
 {
 
   /**
-   * <p>An Config rule represents an Lambda function that you create for a custom
-   * rule or a predefined function for an Config managed rule. The function evaluates
-   * configuration items to assess whether your Amazon Web Services resources comply
-   * with your desired configurations. This function can run when Config detects a
-   * configuration change to an Amazon Web Services resource and at a periodic
-   * frequency that you choose (for example, every 24 hours).</p>  <p>You can
-   * use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to
-   * create a rule that triggers evaluations for your resources when Config delivers
-   * the configuration snapshot. For more information, see
-   * <a>ConfigSnapshotDeliveryProperties</a>.</p>  <p>For more information
-   * about developing and using Config rules, see <a
+   * <p>Config rules evaluate the configuration settings of your Amazon Web Services
+   * resources. A rule can run when Config detects a configuration change to an
+   * Amazon Web Services resource or at a periodic frequency that you choose (for
+   * example, every 24 hours). There are two types of rules: Config Managed Rules and
+   * Config Custom Rules. Managed rules are predefined, customizable rules created by
+   * Config. For a list of managed rules, see <a
+   * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+   * of Config Managed Rules</a>.</p> <p>Custom rules are rules that you can create
+   * using either Guard or Lambda functions. Guard (<a
+   * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
+   * Repository</a>) is a policy-as-code language that allows you to write policies
+   * that are enforced by Config Custom Policy rules. Lambda uses custom code that
+   * you upload to evaluate a custom rule. It is invoked by events that are published
+   * to it by an event source, which Config invokes when the custom rule is
+   * initiated.</p> <p>For more information about developing and using Config rules,
+   * see <a
    * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * Amazon Web Services resource Configurations with Config</a> in the <i>Config
-   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Developer Guide</i>.</p>  <p>You can use the Amazon Web Services CLI and
+   * Amazon Web Services SDKs if you want to create a rule that triggers evaluations
+   * for your resources when Config delivers the configuration snapshot. For more
+   * information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigRule
+  class ConfigRule
   {
   public:
-    ConfigRule();
-    ConfigRule(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigRule();
+    AWS_CONFIGSERVICE_API ConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,44 +299,56 @@ namespace Model
 
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline ConfigRule& WithSource(const Source& value) { SetSource(value); return *this;}
 
     /**
-     * <p>Provides the rule owner (Amazon Web Services or customer), the rule
-     * identifier, and the notifications that cause the function to evaluate your
-     * Amazon Web Services resources.</p>
+     * <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules,
+     * <code>CUSTOM_POLICY</code> for Custom Policy rules, and
+     * <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and
+     * the notifications that cause the function to evaluate your Amazon Web Services
+     * resources.</p>
      */
     inline ConfigRule& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
 
@@ -382,7 +405,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -395,7 +418,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -408,7 +431,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -421,7 +444,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -434,7 +457,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -447,7 +470,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -551,91 +574,143 @@ namespace Model
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
      * <p>Service principal name of the service that created the rule.</p> 
-     * <p>The field is populated only if the service linked rule is created by a
+     * <p>The field is populated only if the service-linked rule is created by a
      * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline const Aws::Vector<EvaluationModeConfiguration>& GetEvaluationModes() const{ return m_evaluationModes; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline bool EvaluationModesHasBeenSet() const { return m_evaluationModesHasBeenSet; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = value; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline void SetEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes = std::move(value); }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(const Aws::Vector<EvaluationModeConfiguration>& value) { SetEvaluationModes(value); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& WithEvaluationModes(Aws::Vector<EvaluationModeConfiguration>&& value) { SetEvaluationModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(const EvaluationModeConfiguration& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(value); return *this; }
+
+    /**
+     * <p>The modes the Config rule can be evaluated in. The valid values are distinct
+     * objects. By default, the value is Detective evaluation mode only.</p>
+     */
+    inline ConfigRule& AddEvaluationModes(EvaluationModeConfiguration&& value) { m_evaluationModesHasBeenSet = true; m_evaluationModes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_configRuleArn;
-    bool m_configRuleArnHasBeenSet;
+    bool m_configRuleArnHasBeenSet = false;
 
     Aws::String m_configRuleId;
-    bool m_configRuleIdHasBeenSet;
+    bool m_configRuleIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     ConfigRuleState m_configRuleState;
-    bool m_configRuleStateHasBeenSet;
+    bool m_configRuleStateHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
+
+    Aws::Vector<EvaluationModeConfiguration> m_evaluationModes;
+    bool m_evaluationModesHasBeenSet = false;
   };
 
 } // namespace Model

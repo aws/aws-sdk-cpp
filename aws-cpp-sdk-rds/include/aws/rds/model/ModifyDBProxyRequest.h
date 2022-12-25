@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API ModifyDBProxyRequest : public RDSRequest
+  class ModifyDBProxyRequest : public RDSRequest
   {
   public:
-    ModifyDBProxyRequest();
+    AWS_RDS_API ModifyDBProxyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyDBProxy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -377,28 +377,28 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_newDBProxyName;
-    bool m_newDBProxyNameHasBeenSet;
+    bool m_newDBProxyNameHasBeenSet = false;
 
     Aws::Vector<UserAuthConfig> m_auth;
-    bool m_authHasBeenSet;
+    bool m_authHasBeenSet = false;
 
     bool m_requireTLS;
-    bool m_requireTLSHasBeenSet;
+    bool m_requireTLSHasBeenSet = false;
 
     int m_idleClientTimeout;
-    bool m_idleClientTimeoutHasBeenSet;
+    bool m_idleClientTimeoutHasBeenSet = false;
 
     bool m_debugLogging;
-    bool m_debugLoggingHasBeenSet;
+    bool m_debugLoggingHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate();
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -422,34 +422,34 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_certificateCreationDate;
-    bool m_certificateCreationDateHasBeenSet;
+    bool m_certificateCreationDateHasBeenSet = false;
 
     Aws::String m_certificatePem;
-    bool m_certificatePemHasBeenSet;
+    bool m_certificatePemHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_certificateWallet;
-    bool m_certificateWalletHasBeenSet;
+    bool m_certificateWalletHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateOwner;
-    bool m_certificateOwnerHasBeenSet;
+    bool m_certificateOwnerHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFromDate;
-    bool m_validFromDateHasBeenSet;
+    bool m_validFromDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_validToDate;
-    bool m_validToDateHasBeenSet;
+    bool m_validToDateHasBeenSet = false;
 
     Aws::String m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     int m_keyLength;
-    bool m_keyLengthHasBeenSet;
+    bool m_keyLengthHasBeenSet = false;
   };
 
 } // namespace Model

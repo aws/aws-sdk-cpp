@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/EyeOpen">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API EyeOpen
+  class EyeOpen
   {
   public:
-    EyeOpen();
-    EyeOpen(Aws::Utils::Json::JsonView jsonValue);
-    EyeOpen& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API EyeOpen();
+    AWS_REKOGNITION_API EyeOpen(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API EyeOpen& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

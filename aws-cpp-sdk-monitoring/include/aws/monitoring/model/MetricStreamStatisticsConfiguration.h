@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricStreamStatisticsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration
+  class MetricStreamStatisticsConfiguration
   {
   public:
-    MetricStreamStatisticsConfiguration();
-    MetricStreamStatisticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricStreamStatisticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration();
+    AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -258,10 +258,10 @@ namespace Model
   private:
 
     Aws::Vector<MetricStreamStatisticsMetric> m_includeMetrics;
-    bool m_includeMetricsHasBeenSet;
+    bool m_includeMetricsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalStatistics;
-    bool m_additionalStatisticsHasBeenSet;
+    bool m_additionalStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

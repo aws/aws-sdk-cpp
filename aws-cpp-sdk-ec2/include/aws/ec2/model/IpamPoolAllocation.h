@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamPoolAllocation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API IpamPoolAllocation
+  class IpamPoolAllocation
   {
   public:
-    IpamPoolAllocation();
-    IpamPoolAllocation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IpamPoolAllocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamPoolAllocation();
+    AWS_EC2_API IpamPoolAllocation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamPoolAllocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     Aws::String m_ipamPoolAllocationId;
-    bool m_ipamPoolAllocationIdHasBeenSet;
+    bool m_ipamPoolAllocationIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     IpamPoolAllocationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     Aws::String m_resourceOwner;
-    bool m_resourceOwnerHasBeenSet;
+    bool m_resourceOwnerHasBeenSet = false;
   };
 
 } // namespace Model

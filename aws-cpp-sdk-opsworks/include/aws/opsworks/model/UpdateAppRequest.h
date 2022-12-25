@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API UpdateAppRequest : public OpsWorksRequest
+  class UpdateAppRequest : public OpsWorksRequest
   {
   public:
-    UpdateAppRequest();
+    AWS_OPSWORKS_API UpdateAppRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApp"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -579,37 +579,37 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DataSource> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     AppType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Source m_appSource;
-    bool m_appSourceHasBeenSet;
+    bool m_appSourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
 
     bool m_enableSsl;
-    bool m_enableSslHasBeenSet;
+    bool m_enableSslHasBeenSet = false;
 
     SslConfiguration m_sslConfiguration;
-    bool m_sslConfigurationHasBeenSet;
+    bool m_sslConfigurationHasBeenSet = false;
 
     Aws::Map<AppAttributesKeys, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<EnvironmentVariable> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

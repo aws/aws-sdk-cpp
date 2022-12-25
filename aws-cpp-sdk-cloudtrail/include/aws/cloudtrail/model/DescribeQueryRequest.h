@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDTRAIL_API DescribeQueryRequest : public CloudTrailRequest
+  class DescribeQueryRequest : public CloudTrailRequest
   {
   public:
-    DescribeQueryRequest();
+    AWS_CLOUDTRAIL_API DescribeQueryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,58 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeQuery"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline DescribeQueryRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline DescribeQueryRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN (or the ID suffix of the ARN) of an event data store on which the
-     * specified query was run.</p>
-     */
-    inline DescribeQueryRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -125,11 +76,8 @@ namespace Model
 
   private:
 
-    Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
-
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
   };
 
 } // namespace Model

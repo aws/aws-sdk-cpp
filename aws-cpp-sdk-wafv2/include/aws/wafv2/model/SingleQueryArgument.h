@@ -26,20 +26,20 @@ namespace Model
   /**
    * <p>Inspect one query argument in the web request, identified by name, for
    * example <i>UserName</i> or <i>SalesRegion</i>. The name isn't case sensitive.
-   * </p> <p>This is used to indicate the web request component for WAF to inspect,
-   * in the <a>FieldToMatch</a> specification. </p> <p>Example JSON:
+   * </p> <p>This is used to indicate the web request component to inspect, in the
+   * <a>FieldToMatch</a> specification. </p> <p>Example JSON:
    * <code>"SingleQueryArgument": { "Name": "myArgument" }</code> </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleQueryArgument">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SingleQueryArgument
+  class SingleQueryArgument
   {
   public:
-    SingleQueryArgument();
-    SingleQueryArgument(Aws::Utils::Json::JsonView jsonValue);
-    SingleQueryArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SingleQueryArgument();
+    AWS_WAFV2_API SingleQueryArgument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SingleQueryArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

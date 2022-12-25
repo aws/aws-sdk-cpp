@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BillingGroupListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API BillingGroupListElement
+  class BillingGroupListElement
   {
   public:
-    BillingGroupListElement();
-    BillingGroupListElement(Aws::Utils::Json::JsonView jsonValue);
-    BillingGroupListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API BillingGroupListElement();
+    AWS_BILLINGCONDUCTOR_API BillingGroupListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API BillingGroupListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline BillingGroupListElement& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline BillingGroupListElement& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The billing group's name. </p>
+     * <p>The name of the billing group. </p>
      */
     inline BillingGroupListElement& WithName(const char* value) { SetName(value); return *this;}
 
@@ -130,42 +130,42 @@ namespace Model
 
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline BillingGroupListElement& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline BillingGroupListElement& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The billing group description. </p>
+     * <p>The description of the billing group. </p>
      */
     inline BillingGroupListElement& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -252,43 +252,43 @@ namespace Model
 
 
     /**
-     * <p> The time the billing group was created. </p>
+     * <p> The time when the billing group was created. </p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p> The time the billing group was created. </p>
+     * <p> The time when the billing group was created. </p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p> The time the billing group was created. </p>
+     * <p> The time when the billing group was created. </p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p> The time the billing group was created. </p>
+     * <p> The time when the billing group was created. </p>
      */
     inline BillingGroupListElement& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline BillingGroupListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
@@ -367,34 +367,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_primaryAccountId;
-    bool m_primaryAccountIdHasBeenSet;
+    bool m_primaryAccountIdHasBeenSet = false;
 
     ComputationPreference m_computationPreference;
-    bool m_computationPreferenceHasBeenSet;
+    bool m_computationPreferenceHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     BillingGroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

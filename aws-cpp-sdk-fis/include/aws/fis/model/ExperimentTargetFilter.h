@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTargetFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentTargetFilter
+  class ExperimentTargetFilter
   {
   public:
-    ExperimentTargetFilter();
-    ExperimentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentTargetFilter();
+    AWS_FIS_API ExperimentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

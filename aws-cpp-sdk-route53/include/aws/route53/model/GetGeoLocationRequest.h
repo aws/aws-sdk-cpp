@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetGeoLocationRequest : public Route53Request
+  class GetGeoLocationRequest : public Route53Request
   {
   public:
-    GetGeoLocationRequest();
+    AWS_ROUTE53_API GetGeoLocationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetGeoLocation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -272,13 +272,13 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_subdivisionCode;
-    bool m_subdivisionCodeHasBeenSet;
+    bool m_subdivisionCodeHasBeenSet = false;
   };
 
 } // namespace Model

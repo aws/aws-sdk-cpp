@@ -24,53 +24,53 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenResult
+  class AssociateSoftwareTokenResult
   {
   public:
-    AssociateSoftwareTokenResult();
-    AssociateSoftwareTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateSoftwareTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AssociateSoftwareTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline const Aws::String& GetSecretCode() const{ return m_secretCode; }
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline void SetSecretCode(const Aws::String& value) { m_secretCode = value; }
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline void SetSecretCode(Aws::String&& value) { m_secretCode = std::move(value); }
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline void SetSecretCode(const char* value) { m_secretCode.assign(value); }
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(const Aws::String& value) { SetSecretCode(value); return *this;}
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(Aws::String&& value) { SetSecretCode(std::move(value)); return *this;}
 
     /**
-     * <p>A unique generated shared secret code that is used in the time-based one-time
-     * password (TOTP) algorithm to generate a one-time code.</p>
+     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
+     * generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(const char* value) { SetSecretCode(value); return *this;}
 

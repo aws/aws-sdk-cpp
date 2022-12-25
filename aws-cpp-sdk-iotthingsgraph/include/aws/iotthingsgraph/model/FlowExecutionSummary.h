@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/FlowExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API FlowExecutionSummary
+  class FlowExecutionSummary
   {
   public:
-    FlowExecutionSummary();
-    FlowExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    FlowExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API FlowExecutionSummary();
+    AWS_IOTTHINGSGRAPH_API FlowExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API FlowExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_flowExecutionId;
-    bool m_flowExecutionIdHasBeenSet;
+    bool m_flowExecutionIdHasBeenSet = false;
 
     FlowExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_systemInstanceId;
-    bool m_systemInstanceIdHasBeenSet;
+    bool m_systemInstanceIdHasBeenSet = false;
 
     Aws::String m_flowTemplateId;
-    bool m_flowTemplateIdHasBeenSet;
+    bool m_flowTemplateIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

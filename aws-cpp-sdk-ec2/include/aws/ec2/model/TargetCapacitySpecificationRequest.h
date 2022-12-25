@@ -45,15 +45,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecificationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TargetCapacitySpecificationRequest
+  class TargetCapacitySpecificationRequest
   {
   public:
-    TargetCapacitySpecificationRequest();
-    TargetCapacitySpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetCapacitySpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetCapacitySpecificationRequest();
+    AWS_EC2_API TargetCapacitySpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetCapacitySpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -199,19 +199,19 @@ namespace Model
   private:
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
 
     int m_spotTargetCapacity;
-    bool m_spotTargetCapacityHasBeenSet;
+    bool m_spotTargetCapacityHasBeenSet = false;
 
     DefaultTargetCapacityType m_defaultTargetCapacityType;
-    bool m_defaultTargetCapacityTypeHasBeenSet;
+    bool m_defaultTargetCapacityTypeHasBeenSet = false;
 
     TargetCapacityUnitType m_targetCapacityUnitType;
-    bool m_targetCapacityUnitTypeHasBeenSet;
+    bool m_targetCapacityUnitTypeHasBeenSet = false;
   };
 
 } // namespace Model

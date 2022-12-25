@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/KafkaAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API KafkaAction
+  class KafkaAction
   {
   public:
-    KafkaAction();
-    KafkaAction(Aws::Utils::Json::JsonView jsonValue);
-    KafkaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API KafkaAction();
+    AWS_IOT_API KafkaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API KafkaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientProperties;
-    bool m_clientPropertiesHasBeenSet;
+    bool m_clientPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

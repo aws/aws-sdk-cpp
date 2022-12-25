@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/TrustStoreSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API TrustStoreSummary
+  class TrustStoreSummary
   {
   public:
-    TrustStoreSummary();
-    TrustStoreSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrustStoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API TrustStoreSummary();
+    AWS_WORKSPACESWEB_API TrustStoreSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API TrustStoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet;
+    bool m_trustStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

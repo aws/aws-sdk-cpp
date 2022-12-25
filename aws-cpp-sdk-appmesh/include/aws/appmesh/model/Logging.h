@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Logging">AWS API
    * Reference</a></p>
    */
-  class AWS_APPMESH_API Logging
+  class Logging
   {
   public:
-    Logging();
-    Logging(Aws::Utils::Json::JsonView jsonValue);
-    Logging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API Logging();
+    AWS_APPMESH_API Logging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Logging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AccessLog m_accessLog;
-    bool m_accessLogHasBeenSet;
+    bool m_accessLogHasBeenSet = false;
   };
 
 } // namespace Model

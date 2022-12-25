@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API ListPricingRulesAssociatedToPricingPlanRequest : public BillingConductorRequest
+  class ListPricingRulesAssociatedToPricingPlanRequest : public BillingConductorRequest
   {
   public:
-    ListPricingRulesAssociatedToPricingPlanRequest();
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesAssociatedToPricingPlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPricingRulesAssociatedToPricingPlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_billingPeriod;
-    bool m_billingPeriodHasBeenSet;
+    bool m_billingPeriodHasBeenSet = false;
 
     Aws::String m_pricingPlanArn;
-    bool m_pricingPlanArnHasBeenSet;
+    bool m_pricingPlanArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RedshiftDataParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API RedshiftDataParameters
+  class RedshiftDataParameters
   {
   public:
-    RedshiftDataParameters();
-    RedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API RedshiftDataParameters();
+    AWS_CLOUDWATCHEVENTS_API RedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API RedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -303,22 +303,22 @@ namespace Model
   private:
 
     Aws::String m_secretManagerArn;
-    bool m_secretManagerArnHasBeenSet;
+    bool m_secretManagerArnHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_sql;
-    bool m_sqlHasBeenSet;
+    bool m_sqlHasBeenSet = false;
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     bool m_withEvent;
-    bool m_withEventHasBeenSet;
+    bool m_withEventHasBeenSet = false;
   };
 
 } // namespace Model

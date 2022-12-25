@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ActiveInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ActiveInstance
+  class ActiveInstance
   {
   public:
-    ActiveInstance();
-    ActiveInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ActiveInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ActiveInstance();
+    AWS_EC2_API ActiveInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ActiveInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_spotInstanceRequestId;
-    bool m_spotInstanceRequestIdHasBeenSet;
+    bool m_spotInstanceRequestIdHasBeenSet = false;
 
     InstanceHealthStatus m_instanceHealth;
-    bool m_instanceHealthHasBeenSet;
+    bool m_instanceHealthHasBeenSet = false;
   };
 
 } // namespace Model

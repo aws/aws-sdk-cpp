@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/IamRoleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API IamRoleConfiguration
+  class IamRoleConfiguration
   {
   public:
-    IamRoleConfiguration();
-    IamRoleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    IamRoleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API IamRoleConfiguration();
+    AWS_ACCESSANALYZER_API IamRoleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API IamRoleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_trustPolicy;
-    bool m_trustPolicyHasBeenSet;
+    bool m_trustPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreatePresignedDomainUrlRequest : public SageMakerRequest
+  class CreatePresignedDomainUrlRequest : public SageMakerRequest
   {
   public:
-    CreatePresignedDomainUrlRequest();
+    AWS_SAGEMAKER_API CreatePresignedDomainUrlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePresignedDomainUrl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -161,19 +161,63 @@ namespace Model
      */
     inline CreatePresignedDomainUrlRequest& WithExpiresInSeconds(int value) { SetExpiresInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline CreatePresignedDomainUrlRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     int m_sessionExpirationDurationInSeconds;
-    bool m_sessionExpirationDurationInSecondsHasBeenSet;
+    bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 
     int m_expiresInSeconds;
-    bool m_expiresInSecondsHasBeenSet;
+    bool m_expiresInSecondsHasBeenSet = false;
+
+    Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
   };
 
 } // namespace Model

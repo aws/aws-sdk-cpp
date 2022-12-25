@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API DeleteDBClusterEndpointRequest : public RDSRequest
+  class DeleteDBClusterEndpointRequest : public RDSRequest
   {
   public:
-    DeleteDBClusterEndpointRequest();
+    AWS_RDS_API DeleteDBClusterEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDBClusterEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

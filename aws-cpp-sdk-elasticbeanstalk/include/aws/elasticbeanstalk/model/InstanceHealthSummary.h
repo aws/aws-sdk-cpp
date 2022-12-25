@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/InstanceHealthSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API InstanceHealthSummary
+  class InstanceHealthSummary
   {
   public:
-    InstanceHealthSummary();
-    InstanceHealthSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceHealthSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API InstanceHealthSummary();
+    AWS_ELASTICBEANSTALK_API InstanceHealthSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API InstanceHealthSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -238,28 +238,28 @@ namespace Model
   private:
 
     int m_noData;
-    bool m_noDataHasBeenSet;
+    bool m_noDataHasBeenSet = false;
 
     int m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
 
     int m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     int m_ok;
-    bool m_okHasBeenSet;
+    bool m_okHasBeenSet = false;
 
     int m_info;
-    bool m_infoHasBeenSet;
+    bool m_infoHasBeenSet = false;
 
     int m_warning;
-    bool m_warningHasBeenSet;
+    bool m_warningHasBeenSet = false;
 
     int m_degraded;
-    bool m_degradedHasBeenSet;
+    bool m_degradedHasBeenSet = false;
 
     int m_severe;
-    bool m_severeHasBeenSet;
+    bool m_severeHasBeenSet = false;
   };
 
 } // namespace Model

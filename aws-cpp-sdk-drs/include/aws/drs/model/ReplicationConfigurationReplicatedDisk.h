@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReplicationConfigurationReplicatedDisk">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API ReplicationConfigurationReplicatedDisk
+  class ReplicationConfigurationReplicatedDisk
   {
   public:
-    ReplicationConfigurationReplicatedDisk();
-    ReplicationConfigurationReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API ReplicationConfigurationReplicatedDisk();
+    AWS_DRS_API ReplicationConfigurationReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API ReplicationConfigurationReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,6 +123,49 @@ namespace Model
 
 
     /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetOptimizedStagingDiskType() const{ return m_optimizedStagingDiskType; }
+
+    /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline bool OptimizedStagingDiskTypeHasBeenSet() const { return m_optimizedStagingDiskTypeHasBeenSet; }
+
+    /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline void SetOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = value; }
+
+    /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline void SetOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = std::move(value); }
+
+    /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { SetOptimizedStagingDiskType(value); return *this;}
+
+    /**
+     * <p>When <code>stagingDiskType</code> is set to Auto, this field shows the
+     * current staging disk EBS volume type as it is constantly updated by the service.
+     * This is a read-only field.</p>
+     */
+    inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { SetOptimizedStagingDiskType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Staging Disk EBS volume type to be used during replication.</p>
      */
     inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetStagingDiskType() const{ return m_stagingDiskType; }
@@ -180,19 +223,22 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     long long m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_isBootDisk;
-    bool m_isBootDiskHasBeenSet;
+    bool m_isBootDiskHasBeenSet = false;
+
+    ReplicationConfigurationReplicatedDiskStagingDiskType m_optimizedStagingDiskType;
+    bool m_optimizedStagingDiskTypeHasBeenSet = false;
 
     ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType;
-    bool m_stagingDiskTypeHasBeenSet;
+    bool m_stagingDiskTypeHasBeenSet = false;
 
     long long m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayMulticastDomainOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayMulticastDomainOptions
+  class TransitGatewayMulticastDomainOptions
   {
   public:
-    TransitGatewayMulticastDomainOptions();
-    TransitGatewayMulticastDomainOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayMulticastDomainOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastDomainOptions();
+    AWS_EC2_API TransitGatewayMulticastDomainOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastDomainOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Igmpv2SupportValue m_igmpv2Support;
-    bool m_igmpv2SupportHasBeenSet;
+    bool m_igmpv2SupportHasBeenSet = false;
 
     StaticSourcesSupportValue m_staticSourcesSupport;
-    bool m_staticSourcesSupportHasBeenSet;
+    bool m_staticSourcesSupportHasBeenSet = false;
 
     AutoAcceptSharedAssociationsValue m_autoAcceptSharedAssociations;
-    bool m_autoAcceptSharedAssociationsHasBeenSet;
+    bool m_autoAcceptSharedAssociationsHasBeenSet = false;
   };
 
 } // namespace Model

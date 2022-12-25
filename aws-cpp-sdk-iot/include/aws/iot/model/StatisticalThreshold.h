@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StatisticalThreshold">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API StatisticalThreshold
+  class StatisticalThreshold
   {
   public:
-    StatisticalThreshold();
-    StatisticalThreshold(Aws::Utils::Json::JsonView jsonValue);
-    StatisticalThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StatisticalThreshold();
+    AWS_IOT_API StatisticalThreshold(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StatisticalThreshold& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,7 +138,7 @@ namespace Model
   private:
 
     Aws::String m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
   };
 
 } // namespace Model

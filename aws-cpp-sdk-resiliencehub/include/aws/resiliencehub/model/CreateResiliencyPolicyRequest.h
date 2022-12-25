@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API CreateResiliencyPolicyRequest : public ResilienceHubRequest
+  class CreateResiliencyPolicyRequest : public ResilienceHubRequest
   {
   public:
-    CreateResiliencyPolicyRequest();
+    AWS_RESILIENCEHUB_API CreateResiliencyPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResiliencyPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -393,25 +393,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     DataLocationConstraint m_dataLocationConstraint;
-    bool m_dataLocationConstraintHasBeenSet;
+    bool m_dataLocationConstraintHasBeenSet = false;
 
     Aws::Map<DisruptionType, FailurePolicy> m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_policyDescription;
-    bool m_policyDescriptionHasBeenSet;
+    bool m_policyDescriptionHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResiliencyPolicyTier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

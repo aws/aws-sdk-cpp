@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SupportedProductConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SupportedProductConfig
+  class SupportedProductConfig
   {
   public:
-    SupportedProductConfig();
-    SupportedProductConfig(Aws::Utils::Json::JsonView jsonValue);
-    SupportedProductConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API SupportedProductConfig();
+    AWS_EMR_API SupportedProductConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API SupportedProductConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

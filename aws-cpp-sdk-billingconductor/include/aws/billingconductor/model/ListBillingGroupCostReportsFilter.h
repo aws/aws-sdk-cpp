@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListBillingGroupCostReportsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter
+  class ListBillingGroupCostReportsFilter
   {
   public:
-    ListBillingGroupCostReportsFilter();
-    ListBillingGroupCostReportsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListBillingGroupCostReportsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupCostReportsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_billingGroupArns;
-    bool m_billingGroupArnsHasBeenSet;
+    bool m_billingGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

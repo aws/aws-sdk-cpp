@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidSnsTopicException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API InvalidSnsTopicException
+  class InvalidSnsTopicException
   {
   public:
-    InvalidSnsTopicException();
-    InvalidSnsTopicException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidSnsTopicException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidSnsTopicException();
+    AWS_SES_API InvalidSnsTopicException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidSnsTopicException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
   };
 
 } // namespace Model

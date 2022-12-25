@@ -24,19 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Lambda was not able to set up VPC access for the Lambda function because one
-   * or more configured subnets has no available IP addresses.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Lambda couldn't set up VPC access for the Lambda function because one or more
+   * configured subnets has no available IP addresses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SubnetIPAddressLimitReachedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SubnetIPAddressLimitReachedException
+  class SubnetIPAddressLimitReachedException
   {
   public:
-    SubnetIPAddressLimitReachedException();
-    SubnetIPAddressLimitReachedException(Aws::Utils::Json::JsonView jsonValue);
-    SubnetIPAddressLimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException();
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

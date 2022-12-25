@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LifecycleEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API LifecycleEvent
+  class LifecycleEvent
   {
   public:
-    LifecycleEvent();
-    LifecycleEvent(Aws::Utils::Json::JsonView jsonValue);
-    LifecycleEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API LifecycleEvent();
+    AWS_CODEDEPLOY_API LifecycleEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API LifecycleEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_lifecycleEventName;
-    bool m_lifecycleEventNameHasBeenSet;
+    bool m_lifecycleEventNameHasBeenSet = false;
 
     Diagnostics m_diagnostics;
-    bool m_diagnosticsHasBeenSet;
+    bool m_diagnosticsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     LifecycleEventStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

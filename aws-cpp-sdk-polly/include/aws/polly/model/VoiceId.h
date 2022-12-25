@@ -82,7 +82,19 @@ namespace Model
     Aria,
     Ayanda,
     Arlet,
-    Hannah
+    Hannah,
+    Arthur,
+    Daniel,
+    Liam,
+    Pedro,
+    Kajal,
+    Hiujin,
+    Laura,
+    Elin,
+    Ida,
+    Suvi,
+    Ola,
+    Hala
   };
 
 namespace VoiceIdMapper

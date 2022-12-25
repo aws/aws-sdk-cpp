@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ObjectiveStatusCounters">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ObjectiveStatusCounters
+  class ObjectiveStatusCounters
   {
   public:
-    ObjectiveStatusCounters();
-    ObjectiveStatusCounters(Aws::Utils::Json::JsonView jsonValue);
-    ObjectiveStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ObjectiveStatusCounters();
+    AWS_SAGEMAKER_API ObjectiveStatusCounters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ObjectiveStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,13 +120,13 @@ namespace Model
   private:
 
     int m_succeeded;
-    bool m_succeededHasBeenSet;
+    bool m_succeededHasBeenSet = false;
 
     int m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     int m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
   };
 
 } // namespace Model

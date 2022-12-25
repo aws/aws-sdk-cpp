@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DurationRange">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API DurationRange
+  class DurationRange
   {
   public:
-    DurationRange();
-    DurationRange(Aws::Utils::Json::JsonView jsonValue);
-    DurationRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API DurationRange();
+    AWS_INSPECTOR_API DurationRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API DurationRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_minSeconds;
-    bool m_minSecondsHasBeenSet;
+    bool m_minSecondsHasBeenSet = false;
 
     int m_maxSeconds;
-    bool m_maxSecondsHasBeenSet;
+    bool m_maxSecondsHasBeenSet = false;
   };
 
 } // namespace Model

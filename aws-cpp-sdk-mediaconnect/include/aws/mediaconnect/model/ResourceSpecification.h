@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ResourceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API ResourceSpecification
+  class ResourceSpecification
   {
   public:
-    ResourceSpecification();
-    ResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API ResourceSpecification();
+    AWS_MEDIACONNECT_API ResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API ResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_reservedBitrate;
-    bool m_reservedBitrateHasBeenSet;
+    bool m_reservedBitrateHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

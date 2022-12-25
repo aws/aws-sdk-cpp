@@ -34,14 +34,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Destination();
+    AWS_S3CRT_API Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -437,25 +437,25 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     AccessControlTranslation m_accessControlTranslation;
-    bool m_accessControlTranslationHasBeenSet;
+    bool m_accessControlTranslationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     ReplicationTime m_replicationTime;
-    bool m_replicationTimeHasBeenSet;
+    bool m_replicationTimeHasBeenSet = false;
 
     Metrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

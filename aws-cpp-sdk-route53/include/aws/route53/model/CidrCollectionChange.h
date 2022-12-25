@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CidrCollectionChange">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CidrCollectionChange
+  class CidrCollectionChange
   {
   public:
-    CidrCollectionChange();
-    CidrCollectionChange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CidrCollectionChange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrCollectionChange();
+    AWS_ROUTE53_API CidrCollectionChange(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrCollectionChange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_locationName;
-    bool m_locationNameHasBeenSet;
+    bool m_locationNameHasBeenSet = false;
 
     CidrCollectionChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrList;
-    bool m_cidrListHasBeenSet;
+    bool m_cidrListHasBeenSet = false;
   };
 
 } // namespace Model

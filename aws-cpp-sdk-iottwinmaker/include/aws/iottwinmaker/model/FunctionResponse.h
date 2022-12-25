@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/model/DataConnector.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/model/Scope.h>
+#include <aws/iottwinmaker/model/DataConnector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -31,65 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/FunctionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API FunctionResponse
+  class FunctionResponse
   {
   public:
-    FunctionResponse();
-    FunctionResponse(Aws::Utils::Json::JsonView jsonValue);
-    FunctionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline const DataConnector& GetImplementedBy() const{ return m_implementedBy; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline bool ImplementedByHasBeenSet() const { return m_implementedByHasBeenSet; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline void SetImplementedBy(const DataConnector& value) { m_implementedByHasBeenSet = true; m_implementedBy = value; }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline void SetImplementedBy(DataConnector&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::move(value); }
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline FunctionResponse& WithImplementedBy(const DataConnector& value) { SetImplementedBy(value); return *this;}
-
-    /**
-     * <p>The data connector.</p>
-     */
-    inline FunctionResponse& WithImplementedBy(DataConnector&& value) { SetImplementedBy(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Indicates whether this function is inherited.</p>
-     */
-    inline bool GetIsInherited() const{ return m_isInherited; }
-
-    /**
-     * <p>Indicates whether this function is inherited.</p>
-     */
-    inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether this function is inherited.</p>
-     */
-    inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
-
-    /**
-     * <p>Indicates whether this function is inherited.</p>
-     */
-    inline FunctionResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
+    AWS_IOTTWINMAKER_API FunctionResponse();
+    AWS_IOTTWINMAKER_API FunctionResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API FunctionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,19 +116,71 @@ namespace Model
      */
     inline FunctionResponse& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline const DataConnector& GetImplementedBy() const{ return m_implementedBy; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline bool ImplementedByHasBeenSet() const { return m_implementedByHasBeenSet; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline void SetImplementedBy(const DataConnector& value) { m_implementedByHasBeenSet = true; m_implementedBy = value; }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline void SetImplementedBy(DataConnector&& value) { m_implementedByHasBeenSet = true; m_implementedBy = std::move(value); }
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline FunctionResponse& WithImplementedBy(const DataConnector& value) { SetImplementedBy(value); return *this;}
+
+    /**
+     * <p>The data connector.</p>
+     */
+    inline FunctionResponse& WithImplementedBy(DataConnector&& value) { SetImplementedBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether this function is inherited.</p>
+     */
+    inline bool GetIsInherited() const{ return m_isInherited; }
+
+    /**
+     * <p>Indicates whether this function is inherited.</p>
+     */
+    inline bool IsInheritedHasBeenSet() const { return m_isInheritedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this function is inherited.</p>
+     */
+    inline void SetIsInherited(bool value) { m_isInheritedHasBeenSet = true; m_isInherited = value; }
+
+    /**
+     * <p>Indicates whether this function is inherited.</p>
+     */
+    inline FunctionResponse& WithIsInherited(bool value) { SetIsInherited(value); return *this;}
+
   private:
 
-    DataConnector m_implementedBy;
-    bool m_implementedByHasBeenSet;
-
-    bool m_isInherited;
-    bool m_isInheritedHasBeenSet;
-
     Aws::Vector<Aws::String> m_requiredProperties;
-    bool m_requiredPropertiesHasBeenSet;
+    bool m_requiredPropertiesHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
+
+    DataConnector m_implementedBy;
+    bool m_implementedByHasBeenSet = false;
+
+    bool m_isInherited;
+    bool m_isInheritedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ Aws::String CreateOrderRequest::SerializePayload() const
 
   if(m_lineItemsHasBeenSet)
   {
-   Array<JsonValue> lineItemsJsonList(m_lineItems.size());
+   Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
    for(unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex)
    {
      lineItemsJsonList[lineItemsIndex].AsObject(m_lineItems[lineItemsIndex].Jsonize());

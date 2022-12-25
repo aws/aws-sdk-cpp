@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayConnectPeerConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayConnectPeerConfiguration
+  class TransitGatewayConnectPeerConfiguration
   {
   public:
-    TransitGatewayConnectPeerConfiguration();
-    TransitGatewayConnectPeerConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayConnectPeerConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration();
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayAddress;
-    bool m_transitGatewayAddressHasBeenSet;
+    bool m_transitGatewayAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;
-    bool m_insideCidrBlocksHasBeenSet;
+    bool m_insideCidrBlocksHasBeenSet = false;
 
     ProtocolValue m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<TransitGatewayAttachmentBgpConfiguration> m_bgpConfigurations;
-    bool m_bgpConfigurationsHasBeenSet;
+    bool m_bgpConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

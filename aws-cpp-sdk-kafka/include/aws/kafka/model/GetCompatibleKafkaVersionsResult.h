@@ -25,12 +25,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API GetCompatibleKafkaVersionsResult
+  class GetCompatibleKafkaVersionsResult
   {
   public:
-    GetCompatibleKafkaVersionsResult();
-    GetCompatibleKafkaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCompatibleKafkaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API GetCompatibleKafkaVersionsResult();
+    AWS_KAFKA_API GetCompatibleKafkaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API GetCompatibleKafkaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

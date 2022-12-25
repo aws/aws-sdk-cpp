@@ -10,6 +10,7 @@
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/AnywhereConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -20,14 +21,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributesInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API UpdateFleetAttributesRequest : public GameLiftRequest
+  class UpdateFleetAttributesRequest : public GameLiftRequest
   {
   public:
-    UpdateFleetAttributesRequest();
+    AWS_GAMELIFT_API UpdateFleetAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFleetAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -182,66 +180,72 @@ namespace Model
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
 
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
      * <p>The game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
-     * protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
-     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.</p> </li> </ul>
+     * protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated
+     * during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the
+     * game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.</p> </li> </ul>
      */
     inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
@@ -355,25 +359,59 @@ namespace Model
      */
     inline UpdateFleetAttributesRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline UpdateFleetAttributesRequest& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline UpdateFleetAttributesRequest& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProtectionPolicy m_newGameSessionProtectionPolicy;
-    bool m_newGameSessionProtectionPolicyHasBeenSet;
+    bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-    bool m_resourceCreationLimitPolicyHasBeenSet;
+    bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metricGroups;
-    bool m_metricGroupsHasBeenSet;
+    bool m_metricGroupsHasBeenSet = false;
+
+    AnywhereConfiguration m_anywhereConfiguration;
+    bool m_anywhereConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

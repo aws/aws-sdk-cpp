@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3ObjectMetadata
+  class S3ObjectMetadata
   {
   public:
-    S3ObjectMetadata();
-    S3ObjectMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3ObjectMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ObjectMetadata();
+    AWS_S3CONTROL_API S3ObjectMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ObjectMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -458,37 +458,37 @@ namespace Model
   private:
 
     Aws::String m_cacheControl;
-    bool m_cacheControlHasBeenSet;
+    bool m_cacheControlHasBeenSet = false;
 
     Aws::String m_contentDisposition;
-    bool m_contentDispositionHasBeenSet;
+    bool m_contentDispositionHasBeenSet = false;
 
     Aws::String m_contentEncoding;
-    bool m_contentEncodingHasBeenSet;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::String m_contentLanguage;
-    bool m_contentLanguageHasBeenSet;
+    bool m_contentLanguageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
-    bool m_userMetadataHasBeenSet;
+    bool m_userMetadataHasBeenSet = false;
 
     long long m_contentLength;
-    bool m_contentLengthHasBeenSet;
+    bool m_contentLengthHasBeenSet = false;
 
     Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
+    bool m_contentMD5HasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_httpExpiresDate;
-    bool m_httpExpiresDateHasBeenSet;
+    bool m_httpExpiresDateHasBeenSet = false;
 
     bool m_requesterCharged;
-    bool m_requesterChargedHasBeenSet;
+    bool m_requesterChargedHasBeenSet = false;
 
     S3SSEAlgorithm m_sSEAlgorithm;
-    bool m_sSEAlgorithmHasBeenSet;
+    bool m_sSEAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

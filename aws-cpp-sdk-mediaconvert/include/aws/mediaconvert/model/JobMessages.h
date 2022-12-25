@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/JobMessages">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API JobMessages
+  class JobMessages
   {
   public:
-    JobMessages();
-    JobMessages(Aws::Utils::Json::JsonView jsonValue);
-    JobMessages& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API JobMessages();
+    AWS_MEDIACONVERT_API JobMessages(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API JobMessages& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_info;
-    bool m_infoHasBeenSet;
+    bool m_infoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_warning;
-    bool m_warningHasBeenSet;
+    bool m_warningHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/S3BucketLogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API S3BucketLogDestination
+  class S3BucketLogDestination
   {
   public:
-    S3BucketLogDestination();
-    S3BucketLogDestination(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API S3BucketLogDestination();
+    AWS_LEXMODELSV2_API S3BucketLogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API S3BucketLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_s3BucketArn;
-    bool m_s3BucketArnHasBeenSet;
+    bool m_s3BucketArnHasBeenSet = false;
 
     Aws::String m_logPrefix;
-    bool m_logPrefixHasBeenSet;
+    bool m_logPrefixHasBeenSet = false;
   };
 
 } // namespace Model

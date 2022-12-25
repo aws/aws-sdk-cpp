@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/PosixProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API PosixProfile
+  class PosixProfile
   {
   public:
-    PosixProfile();
-    PosixProfile(Aws::Utils::Json::JsonView jsonValue);
-    PosixProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API PosixProfile();
+    AWS_TRANSFER_API PosixProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API PosixProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     long long m_uid;
-    bool m_uidHasBeenSet;
+    bool m_uidHasBeenSet = false;
 
     long long m_gid;
-    bool m_gidHasBeenSet;
+    bool m_gidHasBeenSet = false;
 
     Aws::Vector<long long> m_secondaryGids;
-    bool m_secondaryGidsHasBeenSet;
+    bool m_secondaryGidsHasBeenSet = false;
   };
 
 } // namespace Model

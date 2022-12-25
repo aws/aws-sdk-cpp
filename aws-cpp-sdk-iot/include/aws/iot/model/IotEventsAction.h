@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotEventsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API IotEventsAction
+  class IotEventsAction
   {
   public:
-    IotEventsAction();
-    IotEventsAction(Aws::Utils::Json::JsonView jsonValue);
-    IotEventsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API IotEventsAction();
+    AWS_IOT_API IotEventsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API IotEventsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     bool m_batchMode;
-    bool m_batchModeHasBeenSet;
+    bool m_batchModeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

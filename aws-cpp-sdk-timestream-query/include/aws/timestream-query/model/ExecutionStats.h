@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ExecutionStats">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ExecutionStats
+  class ExecutionStats
   {
   public:
-    ExecutionStats();
-    ExecutionStats(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ExecutionStats();
+    AWS_TIMESTREAMQUERY_API ExecutionStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ExecutionStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,19 +150,19 @@ namespace Model
   private:
 
     long long m_executionTimeInMillis;
-    bool m_executionTimeInMillisHasBeenSet;
+    bool m_executionTimeInMillisHasBeenSet = false;
 
     long long m_dataWrites;
-    bool m_dataWritesHasBeenSet;
+    bool m_dataWritesHasBeenSet = false;
 
     long long m_bytesMetered;
-    bool m_bytesMeteredHasBeenSet;
+    bool m_bytesMeteredHasBeenSet = false;
 
     long long m_recordsIngested;
-    bool m_recordsIngestedHasBeenSet;
+    bool m_recordsIngestedHasBeenSet = false;
 
     long long m_queryResultRows;
-    bool m_queryResultRowsHasBeenSet;
+    bool m_queryResultRowsHasBeenSet = false;
   };
 
 } // namespace Model

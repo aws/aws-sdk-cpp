@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API StartRestoreJobRequest : public BackupRequest
+  class StartRestoreJobRequest : public BackupRequest
   {
   public:
-    StartRestoreJobRequest();
+    AWS_BACKUP_API StartRestoreJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartRestoreJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -488,56 +488,56 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the
-     * target recovery point; for example,
+     * target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartRestoreJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
@@ -739,19 +739,19 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

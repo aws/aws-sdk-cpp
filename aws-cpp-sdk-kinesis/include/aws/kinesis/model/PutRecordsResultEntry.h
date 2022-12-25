@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API PutRecordsResultEntry
+  class PutRecordsResultEntry
   {
   public:
-    PutRecordsResultEntry();
-    PutRecordsResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutRecordsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API PutRecordsResultEntry();
+    AWS_KINESIS_API PutRecordsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API PutRecordsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

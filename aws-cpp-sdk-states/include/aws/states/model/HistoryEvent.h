@@ -36,6 +36,8 @@
 #include <aws/states/model/LambdaFunctionTimedOutEventDetails.h>
 #include <aws/states/model/StateEnteredEventDetails.h>
 #include <aws/states/model/StateExitedEventDetails.h>
+#include <aws/states/model/MapRunStartedEventDetails.h>
+#include <aws/states/model/MapRunFailedEventDetails.h>
 #include <utility>
 
 namespace Aws
@@ -59,13 +61,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API HistoryEvent
+  class HistoryEvent
   {
   public:
-    HistoryEvent();
-    HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API HistoryEvent();
+    AWS_SFN_API HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -897,37 +899,37 @@ namespace Model
 
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline const LambdaFunctionSucceededEventDetails& GetLambdaFunctionSucceededEventDetails() const{ return m_lambdaFunctionSucceededEventDetails; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline bool LambdaFunctionSucceededEventDetailsHasBeenSet() const { return m_lambdaFunctionSucceededEventDetailsHasBeenSet; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = value; }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline void SetLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = std::move(value); }
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { SetLambdaFunctionSucceededEventDetails(value); return *this;}
 
     /**
-     * <p>Contains details about a lambda function that terminated successfully during
+     * <p>Contains details about a Lambda function that terminated successfully during
      * an execution.</p>
      */
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { SetLambdaFunctionSucceededEventDetails(std::move(value)); return *this;}
@@ -989,115 +991,195 @@ namespace Model
     
     inline HistoryEvent& WithStateExitedEventDetails(StateExitedEventDetails&& value) { SetStateExitedEventDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline const MapRunStartedEventDetails& GetMapRunStartedEventDetails() const{ return m_mapRunStartedEventDetails; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline bool MapRunStartedEventDetailsHasBeenSet() const { return m_mapRunStartedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline void SetMapRunStartedEventDetails(const MapRunStartedEventDetails& value) { m_mapRunStartedEventDetailsHasBeenSet = true; m_mapRunStartedEventDetails = value; }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline void SetMapRunStartedEventDetails(MapRunStartedEventDetails&& value) { m_mapRunStartedEventDetailsHasBeenSet = true; m_mapRunStartedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline HistoryEvent& WithMapRunStartedEventDetails(const MapRunStartedEventDetails& value) { SetMapRunStartedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details, such as <code>mapRunArn</code>, and the start date and time
+     * of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the
+     * Map Run that was started.</p>
+     */
+    inline HistoryEvent& WithMapRunStartedEventDetails(MapRunStartedEventDetails&& value) { SetMapRunStartedEventDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline const MapRunFailedEventDetails& GetMapRunFailedEventDetails() const{ return m_mapRunFailedEventDetails; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline bool MapRunFailedEventDetailsHasBeenSet() const { return m_mapRunFailedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline void SetMapRunFailedEventDetails(const MapRunFailedEventDetails& value) { m_mapRunFailedEventDetailsHasBeenSet = true; m_mapRunFailedEventDetails = value; }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline void SetMapRunFailedEventDetails(MapRunFailedEventDetails&& value) { m_mapRunFailedEventDetailsHasBeenSet = true; m_mapRunFailedEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline HistoryEvent& WithMapRunFailedEventDetails(const MapRunFailedEventDetails& value) { SetMapRunFailedEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains error and cause details about a Map Run that failed.</p>
+     */
+    inline HistoryEvent& WithMapRunFailedEventDetails(MapRunFailedEventDetails&& value) { SetMapRunFailedEventDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     HistoryEventType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_previousEventId;
-    bool m_previousEventIdHasBeenSet;
+    bool m_previousEventIdHasBeenSet = false;
 
     ActivityFailedEventDetails m_activityFailedEventDetails;
-    bool m_activityFailedEventDetailsHasBeenSet;
+    bool m_activityFailedEventDetailsHasBeenSet = false;
 
     ActivityScheduleFailedEventDetails m_activityScheduleFailedEventDetails;
-    bool m_activityScheduleFailedEventDetailsHasBeenSet;
+    bool m_activityScheduleFailedEventDetailsHasBeenSet = false;
 
     ActivityScheduledEventDetails m_activityScheduledEventDetails;
-    bool m_activityScheduledEventDetailsHasBeenSet;
+    bool m_activityScheduledEventDetailsHasBeenSet = false;
 
     ActivityStartedEventDetails m_activityStartedEventDetails;
-    bool m_activityStartedEventDetailsHasBeenSet;
+    bool m_activityStartedEventDetailsHasBeenSet = false;
 
     ActivitySucceededEventDetails m_activitySucceededEventDetails;
-    bool m_activitySucceededEventDetailsHasBeenSet;
+    bool m_activitySucceededEventDetailsHasBeenSet = false;
 
     ActivityTimedOutEventDetails m_activityTimedOutEventDetails;
-    bool m_activityTimedOutEventDetailsHasBeenSet;
+    bool m_activityTimedOutEventDetailsHasBeenSet = false;
 
     TaskFailedEventDetails m_taskFailedEventDetails;
-    bool m_taskFailedEventDetailsHasBeenSet;
+    bool m_taskFailedEventDetailsHasBeenSet = false;
 
     TaskScheduledEventDetails m_taskScheduledEventDetails;
-    bool m_taskScheduledEventDetailsHasBeenSet;
+    bool m_taskScheduledEventDetailsHasBeenSet = false;
 
     TaskStartFailedEventDetails m_taskStartFailedEventDetails;
-    bool m_taskStartFailedEventDetailsHasBeenSet;
+    bool m_taskStartFailedEventDetailsHasBeenSet = false;
 
     TaskStartedEventDetails m_taskStartedEventDetails;
-    bool m_taskStartedEventDetailsHasBeenSet;
+    bool m_taskStartedEventDetailsHasBeenSet = false;
 
     TaskSubmitFailedEventDetails m_taskSubmitFailedEventDetails;
-    bool m_taskSubmitFailedEventDetailsHasBeenSet;
+    bool m_taskSubmitFailedEventDetailsHasBeenSet = false;
 
     TaskSubmittedEventDetails m_taskSubmittedEventDetails;
-    bool m_taskSubmittedEventDetailsHasBeenSet;
+    bool m_taskSubmittedEventDetailsHasBeenSet = false;
 
     TaskSucceededEventDetails m_taskSucceededEventDetails;
-    bool m_taskSucceededEventDetailsHasBeenSet;
+    bool m_taskSucceededEventDetailsHasBeenSet = false;
 
     TaskTimedOutEventDetails m_taskTimedOutEventDetails;
-    bool m_taskTimedOutEventDetailsHasBeenSet;
+    bool m_taskTimedOutEventDetailsHasBeenSet = false;
 
     ExecutionFailedEventDetails m_executionFailedEventDetails;
-    bool m_executionFailedEventDetailsHasBeenSet;
+    bool m_executionFailedEventDetailsHasBeenSet = false;
 
     ExecutionStartedEventDetails m_executionStartedEventDetails;
-    bool m_executionStartedEventDetailsHasBeenSet;
+    bool m_executionStartedEventDetailsHasBeenSet = false;
 
     ExecutionSucceededEventDetails m_executionSucceededEventDetails;
-    bool m_executionSucceededEventDetailsHasBeenSet;
+    bool m_executionSucceededEventDetailsHasBeenSet = false;
 
     ExecutionAbortedEventDetails m_executionAbortedEventDetails;
-    bool m_executionAbortedEventDetailsHasBeenSet;
+    bool m_executionAbortedEventDetailsHasBeenSet = false;
 
     ExecutionTimedOutEventDetails m_executionTimedOutEventDetails;
-    bool m_executionTimedOutEventDetailsHasBeenSet;
+    bool m_executionTimedOutEventDetailsHasBeenSet = false;
 
     MapStateStartedEventDetails m_mapStateStartedEventDetails;
-    bool m_mapStateStartedEventDetailsHasBeenSet;
+    bool m_mapStateStartedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationStartedEventDetails;
-    bool m_mapIterationStartedEventDetailsHasBeenSet;
+    bool m_mapIterationStartedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationSucceededEventDetails;
-    bool m_mapIterationSucceededEventDetailsHasBeenSet;
+    bool m_mapIterationSucceededEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationFailedEventDetails;
-    bool m_mapIterationFailedEventDetailsHasBeenSet;
+    bool m_mapIterationFailedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationAbortedEventDetails;
-    bool m_mapIterationAbortedEventDetailsHasBeenSet;
+    bool m_mapIterationAbortedEventDetailsHasBeenSet = false;
 
     LambdaFunctionFailedEventDetails m_lambdaFunctionFailedEventDetails;
-    bool m_lambdaFunctionFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionScheduleFailedEventDetails m_lambdaFunctionScheduleFailedEventDetails;
-    bool m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionScheduledEventDetails m_lambdaFunctionScheduledEventDetails;
-    bool m_lambdaFunctionScheduledEventDetailsHasBeenSet;
+    bool m_lambdaFunctionScheduledEventDetailsHasBeenSet = false;
 
     LambdaFunctionStartFailedEventDetails m_lambdaFunctionStartFailedEventDetails;
-    bool m_lambdaFunctionStartFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionStartFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionSucceededEventDetails m_lambdaFunctionSucceededEventDetails;
-    bool m_lambdaFunctionSucceededEventDetailsHasBeenSet;
+    bool m_lambdaFunctionSucceededEventDetailsHasBeenSet = false;
 
     LambdaFunctionTimedOutEventDetails m_lambdaFunctionTimedOutEventDetails;
-    bool m_lambdaFunctionTimedOutEventDetailsHasBeenSet;
+    bool m_lambdaFunctionTimedOutEventDetailsHasBeenSet = false;
 
     StateEnteredEventDetails m_stateEnteredEventDetails;
-    bool m_stateEnteredEventDetailsHasBeenSet;
+    bool m_stateEnteredEventDetailsHasBeenSet = false;
 
     StateExitedEventDetails m_stateExitedEventDetails;
-    bool m_stateExitedEventDetailsHasBeenSet;
+    bool m_stateExitedEventDetailsHasBeenSet = false;
+
+    MapRunStartedEventDetails m_mapRunStartedEventDetails;
+    bool m_mapRunStartedEventDetailsHasBeenSet = false;
+
+    MapRunFailedEventDetails m_mapRunFailedEventDetails;
+    bool m_mapRunFailedEventDetailsHasBeenSet = false;
   };
 
 } // namespace Model

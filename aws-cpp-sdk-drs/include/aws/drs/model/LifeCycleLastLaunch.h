@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/LifeCycleLastLaunch">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API LifeCycleLastLaunch
+  class LifeCycleLastLaunch
   {
   public:
-    LifeCycleLastLaunch();
-    LifeCycleLastLaunch(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycleLastLaunch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API LifeCycleLastLaunch();
+    AWS_DRS_API LifeCycleLastLaunch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API LifeCycleLastLaunch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LifeCycleLastLaunchInitiated m_initiated;
-    bool m_initiatedHasBeenSet;
+    bool m_initiatedHasBeenSet = false;
   };
 
 } // namespace Model

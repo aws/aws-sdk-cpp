@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UnprocessedScramSecret">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API UnprocessedScramSecret
+  class UnprocessedScramSecret
   {
   public:
-    UnprocessedScramSecret();
-    UnprocessedScramSecret(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedScramSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API UnprocessedScramSecret();
+    AWS_KAFKA_API UnprocessedScramSecret(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API UnprocessedScramSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

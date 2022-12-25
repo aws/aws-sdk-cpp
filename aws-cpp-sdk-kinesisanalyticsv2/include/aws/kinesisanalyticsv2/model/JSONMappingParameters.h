@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/JSONMappingParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API JSONMappingParameters
+  class JSONMappingParameters
   {
   public:
-    JSONMappingParameters();
-    JSONMappingParameters(Aws::Utils::Json::JsonView jsonValue);
-    JSONMappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API JSONMappingParameters();
+    AWS_KINESISANALYTICSV2_API JSONMappingParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API JSONMappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_recordRowPath;
-    bool m_recordRowPathHasBeenSet;
+    bool m_recordRowPathHasBeenSet = false;
   };
 
 } // namespace Model

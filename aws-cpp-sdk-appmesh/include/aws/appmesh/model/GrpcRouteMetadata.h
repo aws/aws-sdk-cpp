@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRouteMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRouteMetadata
+  class GrpcRouteMetadata
   {
   public:
-    GrpcRouteMetadata();
-    GrpcRouteMetadata(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRouteMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRouteMetadata();
+    AWS_APPMESH_API GrpcRouteMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRouteMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     bool m_invert;
-    bool m_invertHasBeenSet;
+    bool m_invertHasBeenSet = false;
 
     GrpcRouteMetadataMatchMethod m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

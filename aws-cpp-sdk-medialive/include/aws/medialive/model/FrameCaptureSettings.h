@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/FrameCaptureIntervalUnit.h>
+#include <aws/medialive/model/TimecodeBurninSettings.h>
 #include <utility>
 
 namespace Aws
@@ -28,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FrameCaptureSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FrameCaptureSettings
+  class FrameCaptureSettings
   {
   public:
-    FrameCaptureSettings();
-    FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FrameCaptureSettings();
+    AWS_MEDIALIVE_API FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,13 +97,47 @@ namespace Model
      */
     inline FrameCaptureSettings& WithCaptureIntervalUnits(FrameCaptureIntervalUnit&& value) { SetCaptureIntervalUnits(std::move(value)); return *this;}
 
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline FrameCaptureSettings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline FrameCaptureSettings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+
   private:
 
     int m_captureInterval;
-    bool m_captureIntervalHasBeenSet;
+    bool m_captureIntervalHasBeenSet = false;
 
     FrameCaptureIntervalUnit m_captureIntervalUnits;
-    bool m_captureIntervalUnitsHasBeenSet;
+    bool m_captureIntervalUnitsHasBeenSet = false;
+
+    TimecodeBurninSettings m_timecodeBurninSettings;
+    bool m_timecodeBurninSettingsHasBeenSet = false;
   };
 
 } // namespace Model

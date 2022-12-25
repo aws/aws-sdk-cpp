@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTFORVISION_API ListDatasetEntriesRequest : public LookoutforVisionRequest
+  class ListDatasetEntriesRequest : public LookoutforVisionRequest
   {
   public:
-    ListDatasetEntriesRequest();
+    AWS_LOOKOUTFORVISION_API ListDatasetEntriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDatasetEntries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTFORVISION_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LOOKOUTFORVISION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -450,31 +450,31 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     bool m_labeled;
-    bool m_labeledHasBeenSet;
+    bool m_labeledHasBeenSet = false;
 
     Aws::String m_anomalyClass;
-    bool m_anomalyClassHasBeenSet;
+    bool m_anomalyClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_beforeCreationDate;
-    bool m_beforeCreationDateHasBeenSet;
+    bool m_beforeCreationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_afterCreationDate;
-    bool m_afterCreationDateHasBeenSet;
+    bool m_afterCreationDateHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_sourceRefContains;
-    bool m_sourceRefContainsHasBeenSet;
+    bool m_sourceRefContainsHasBeenSet = false;
   };
 
 } // namespace Model

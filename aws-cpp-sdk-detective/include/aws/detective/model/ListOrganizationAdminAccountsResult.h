@@ -26,46 +26,46 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API ListOrganizationAdminAccountsResult
+  class ListOrganizationAdminAccountsResult
   {
   public:
-    ListOrganizationAdminAccountsResult();
-    ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult();
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline const Aws::Vector<Administrator>& GetAdministrators() const{ return m_administrators; }
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline void SetAdministrators(const Aws::Vector<Administrator>& value) { m_administrators = value; }
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline void SetAdministrators(Aws::Vector<Administrator>&& value) { m_administrators = std::move(value); }
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdministrators(const Aws::Vector<Administrator>& value) { SetAdministrators(value); return *this;}
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline ListOrganizationAdminAccountsResult& WithAdministrators(Aws::Vector<Administrator>&& value) { SetAdministrators(std::move(value)); return *this;}
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdministrators(const Administrator& value) { m_administrators.push_back(value); return *this; }
 
     /**
-     * <p>The list of delegated administrator accounts.</p>
+     * <p>The list of Detective administrator accounts.</p>
      */
     inline ListOrganizationAdminAccountsResult& AddAdministrators(Administrator&& value) { m_administrators.push_back(std::move(value)); return *this; }
 

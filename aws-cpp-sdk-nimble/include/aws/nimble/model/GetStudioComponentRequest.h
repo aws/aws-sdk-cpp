@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API GetStudioComponentRequest : public NimbleStudioRequest
+  class GetStudioComponentRequest : public NimbleStudioRequest
   {
   public:
-    GetStudioComponentRequest();
+    AWS_NIMBLESTUDIO_API GetStudioComponentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetStudioComponent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

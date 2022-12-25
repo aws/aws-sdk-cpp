@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Configuration of storage locations for the Debugger TensorBoard output
-   * data.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration of storage locations for the Amazon SageMaker Debugger
+   * TensorBoard output data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TensorBoardOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TensorBoardOutputConfig
+  class TensorBoardOutputConfig
   {
   public:
-    TensorBoardOutputConfig();
-    TensorBoardOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    TensorBoardOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TensorBoardOutputConfig();
+    AWS_SAGEMAKER_API TensorBoardOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TensorBoardOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
   };
 
 } // namespace Model

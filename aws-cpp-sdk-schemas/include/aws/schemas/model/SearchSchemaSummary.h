@@ -25,13 +25,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API SearchSchemaSummary
+  class SearchSchemaSummary
   {
   public:
-    SearchSchemaSummary();
-    SearchSchemaSummary(Aws::Utils::Json::JsonView jsonValue);
-    SearchSchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SearchSchemaSummary();
+    AWS_SCHEMAS_API SearchSchemaSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SearchSchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::Vector<SearchSchemaVersionSummary> m_schemaVersions;
-    bool m_schemaVersionsHasBeenSet;
+    bool m_schemaVersionsHasBeenSet = false;
   };
 
 } // namespace Model

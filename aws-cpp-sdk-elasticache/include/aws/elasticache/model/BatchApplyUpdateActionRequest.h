@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API BatchApplyUpdateActionRequest : public ElastiCacheRequest
+  class BatchApplyUpdateActionRequest : public ElastiCacheRequest
   {
   public:
-    BatchApplyUpdateActionRequest();
+    AWS_ELASTICACHE_API BatchApplyUpdateActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchApplyUpdateAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_replicationGroupIds;
-    bool m_replicationGroupIdsHasBeenSet;
+    bool m_replicationGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheClusterIds;
-    bool m_cacheClusterIdsHasBeenSet;
+    bool m_cacheClusterIdsHasBeenSet = false;
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
   };
 
 } // namespace Model

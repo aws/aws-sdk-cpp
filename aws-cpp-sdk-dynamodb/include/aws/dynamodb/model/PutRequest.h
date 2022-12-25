@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API PutRequest
+  class PutRequest
   {
   public:
-    PutRequest();
-    PutRequest(Aws::Utils::Json::JsonView jsonValue);
-    PutRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API PutRequest();
+    AWS_DYNAMODB_API PutRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API PutRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,7 +163,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

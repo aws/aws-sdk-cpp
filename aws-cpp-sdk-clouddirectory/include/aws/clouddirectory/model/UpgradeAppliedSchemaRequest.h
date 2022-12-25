@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDDIRECTORY_API UpgradeAppliedSchemaRequest : public CloudDirectoryRequest
+  class UpgradeAppliedSchemaRequest : public CloudDirectoryRequest
   {
   public:
-    UpgradeAppliedSchemaRequest();
+    AWS_CLOUDDIRECTORY_API UpgradeAppliedSchemaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpgradeAppliedSchema"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDDIRECTORY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_publishedSchemaArn;
-    bool m_publishedSchemaArnHasBeenSet;
+    bool m_publishedSchemaArnHasBeenSet = false;
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

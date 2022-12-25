@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopInput">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput
+  class HumanLoopInput
   {
   public:
-    HumanLoopInput();
-    HumanLoopInput(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput();
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_inputContent;
-    bool m_inputContentHasBeenSet;
+    bool m_inputContentHasBeenSet = false;
   };
 
 } // namespace Model

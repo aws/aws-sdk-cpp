@@ -27,12 +27,12 @@ namespace EBS
 {
 namespace Model
 {
-  class AWS_EBS_API ListChangedBlocksResult
+  class ListChangedBlocksResult
   {
   public:
-    ListChangedBlocksResult();
-    ListChangedBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChangedBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API ListChangedBlocksResult();
+    AWS_EBS_API ListChangedBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API ListChangedBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

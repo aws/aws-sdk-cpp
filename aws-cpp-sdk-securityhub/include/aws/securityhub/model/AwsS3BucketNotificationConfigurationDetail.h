@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketNotificationConfigurationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail
+  class AwsS3BucketNotificationConfigurationDetail
   {
   public:
-    AwsS3BucketNotificationConfigurationDetail();
-    AwsS3BucketNotificationConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketNotificationConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,65 +168,89 @@ namespace Model
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>Indicates the type of notification. Notifications can be generated using
-     * Lambda functions, Amazon SQS queues or Amazon SNS topics.</p>
+     * Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding
+     * valid values as follows:</p> <ul> <li> <p> <code>LambdaConfiguration</code> </p>
+     * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
+     * <code>TopicConfiguration</code> </p> </li> </ul>
      */
     inline AwsS3BucketNotificationConfigurationDetail& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::Vector<Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     AwsS3BucketNotificationConfigurationFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

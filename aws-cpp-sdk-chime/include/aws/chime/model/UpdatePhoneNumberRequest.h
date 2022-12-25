@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API UpdatePhoneNumberRequest : public ChimeRequest
+  class UpdatePhoneNumberRequest : public ChimeRequest
   {
   public:
-    UpdatePhoneNumberRequest();
+    AWS_CHIME_API UpdatePhoneNumberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePhoneNumber"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     PhoneNumberProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::String m_callingName;
-    bool m_callingNameHasBeenSet;
+    bool m_callingNameHasBeenSet = false;
   };
 
 } // namespace Model

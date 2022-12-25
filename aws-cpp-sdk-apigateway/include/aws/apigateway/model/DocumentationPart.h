@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPart">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DocumentationPart
+  class DocumentationPart
   {
   public:
-    DocumentationPart();
-    DocumentationPart(Aws::Utils::Json::JsonView jsonValue);
-    DocumentationPart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DocumentationPart();
+    AWS_APIGATEWAY_API DocumentationPart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DocumentationPart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DocumentationPartLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

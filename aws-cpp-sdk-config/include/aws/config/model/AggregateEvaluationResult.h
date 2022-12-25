@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateEvaluationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateEvaluationResult
+  class AggregateEvaluationResult
   {
   public:
-    AggregateEvaluationResult();
-    AggregateEvaluationResult(Aws::Utils::Json::JsonView jsonValue);
-    AggregateEvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateEvaluationResult();
+    AWS_CONFIGSERVICE_API AggregateEvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateEvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,25 +318,25 @@ namespace Model
   private:
 
     EvaluationResultIdentifier m_evaluationResultIdentifier;
-    bool m_evaluationResultIdentifierHasBeenSet;
+    bool m_evaluationResultIdentifierHasBeenSet = false;
 
     ComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_resultRecordedTime;
-    bool m_resultRecordedTimeHasBeenSet;
+    bool m_resultRecordedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_configRuleInvokedTime;
-    bool m_configRuleInvokedTimeHasBeenSet;
+    bool m_configRuleInvokedTimeHasBeenSet = false;
 
     Aws::String m_annotation;
-    bool m_annotationHasBeenSet;
+    bool m_annotationHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
   };
 
 } // namespace Model

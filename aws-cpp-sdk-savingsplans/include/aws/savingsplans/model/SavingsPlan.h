@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/SavingsPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlan
+  class SavingsPlan
   {
   public:
-    SavingsPlan();
-    SavingsPlan(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAVINGSPLANS_API SavingsPlan();
+    AWS_SAVINGSPLANS_API SavingsPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API SavingsPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -749,58 +749,58 @@ namespace Model
   private:
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     Aws::String m_savingsPlanId;
-    bool m_savingsPlanIdHasBeenSet;
+    bool m_savingsPlanIdHasBeenSet = false;
 
     Aws::String m_savingsPlanArn;
-    bool m_savingsPlanArnHasBeenSet;
+    bool m_savingsPlanArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     SavingsPlanState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_ec2InstanceFamily;
-    bool m_ec2InstanceFamilyHasBeenSet;
+    bool m_ec2InstanceFamilyHasBeenSet = false;
 
     SavingsPlanType m_savingsPlanType;
-    bool m_savingsPlanTypeHasBeenSet;
+    bool m_savingsPlanTypeHasBeenSet = false;
 
     SavingsPlanPaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Vector<SavingsPlanProductType> m_productTypes;
-    bool m_productTypesHasBeenSet;
+    bool m_productTypesHasBeenSet = false;
 
     CurrencyCode m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     Aws::String m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     Aws::String m_upfrontPaymentAmount;
-    bool m_upfrontPaymentAmountHasBeenSet;
+    bool m_upfrontPaymentAmountHasBeenSet = false;
 
     Aws::String m_recurringPaymentAmount;
-    bool m_recurringPaymentAmountHasBeenSet;
+    bool m_recurringPaymentAmountHasBeenSet = false;
 
     long long m_termDurationInSeconds;
-    bool m_termDurationInSecondsHasBeenSet;
+    bool m_termDurationInSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

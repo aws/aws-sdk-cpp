@@ -5,340 +5,76 @@
 
 #pragma once
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
-#include <aws/imagebuilder/ImagebuilderErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/imagebuilder/model/CancelImageCreationResult.h>
-#include <aws/imagebuilder/model/CreateComponentResult.h>
-#include <aws/imagebuilder/model/CreateContainerRecipeResult.h>
-#include <aws/imagebuilder/model/CreateDistributionConfigurationResult.h>
-#include <aws/imagebuilder/model/CreateImageResult.h>
-#include <aws/imagebuilder/model/CreateImagePipelineResult.h>
-#include <aws/imagebuilder/model/CreateImageRecipeResult.h>
-#include <aws/imagebuilder/model/CreateInfrastructureConfigurationResult.h>
-#include <aws/imagebuilder/model/DeleteComponentResult.h>
-#include <aws/imagebuilder/model/DeleteContainerRecipeResult.h>
-#include <aws/imagebuilder/model/DeleteDistributionConfigurationResult.h>
-#include <aws/imagebuilder/model/DeleteImageResult.h>
-#include <aws/imagebuilder/model/DeleteImagePipelineResult.h>
-#include <aws/imagebuilder/model/DeleteImageRecipeResult.h>
-#include <aws/imagebuilder/model/DeleteInfrastructureConfigurationResult.h>
-#include <aws/imagebuilder/model/GetComponentResult.h>
-#include <aws/imagebuilder/model/GetComponentPolicyResult.h>
-#include <aws/imagebuilder/model/GetContainerRecipeResult.h>
-#include <aws/imagebuilder/model/GetContainerRecipePolicyResult.h>
-#include <aws/imagebuilder/model/GetDistributionConfigurationResult.h>
-#include <aws/imagebuilder/model/GetImageResult.h>
-#include <aws/imagebuilder/model/GetImagePipelineResult.h>
-#include <aws/imagebuilder/model/GetImagePolicyResult.h>
-#include <aws/imagebuilder/model/GetImageRecipeResult.h>
-#include <aws/imagebuilder/model/GetImageRecipePolicyResult.h>
-#include <aws/imagebuilder/model/GetInfrastructureConfigurationResult.h>
-#include <aws/imagebuilder/model/ImportComponentResult.h>
-#include <aws/imagebuilder/model/ImportVmImageResult.h>
-#include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
-#include <aws/imagebuilder/model/ListComponentsResult.h>
-#include <aws/imagebuilder/model/ListContainerRecipesResult.h>
-#include <aws/imagebuilder/model/ListDistributionConfigurationsResult.h>
-#include <aws/imagebuilder/model/ListImageBuildVersionsResult.h>
-#include <aws/imagebuilder/model/ListImagePackagesResult.h>
-#include <aws/imagebuilder/model/ListImagePipelineImagesResult.h>
-#include <aws/imagebuilder/model/ListImagePipelinesResult.h>
-#include <aws/imagebuilder/model/ListImageRecipesResult.h>
-#include <aws/imagebuilder/model/ListImagesResult.h>
-#include <aws/imagebuilder/model/ListInfrastructureConfigurationsResult.h>
-#include <aws/imagebuilder/model/ListTagsForResourceResult.h>
-#include <aws/imagebuilder/model/PutComponentPolicyResult.h>
-#include <aws/imagebuilder/model/PutContainerRecipePolicyResult.h>
-#include <aws/imagebuilder/model/PutImagePolicyResult.h>
-#include <aws/imagebuilder/model/PutImageRecipePolicyResult.h>
-#include <aws/imagebuilder/model/StartImagePipelineExecutionResult.h>
-#include <aws/imagebuilder/model/TagResourceResult.h>
-#include <aws/imagebuilder/model/UntagResourceResult.h>
-#include <aws/imagebuilder/model/UpdateDistributionConfigurationResult.h>
-#include <aws/imagebuilder/model/UpdateImagePipelineResult.h>
-#include <aws/imagebuilder/model/UpdateInfrastructureConfigurationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace imagebuilder
 {
-
-namespace Model
-{
-        class CancelImageCreationRequest;
-        class CreateComponentRequest;
-        class CreateContainerRecipeRequest;
-        class CreateDistributionConfigurationRequest;
-        class CreateImageRequest;
-        class CreateImagePipelineRequest;
-        class CreateImageRecipeRequest;
-        class CreateInfrastructureConfigurationRequest;
-        class DeleteComponentRequest;
-        class DeleteContainerRecipeRequest;
-        class DeleteDistributionConfigurationRequest;
-        class DeleteImageRequest;
-        class DeleteImagePipelineRequest;
-        class DeleteImageRecipeRequest;
-        class DeleteInfrastructureConfigurationRequest;
-        class GetComponentRequest;
-        class GetComponentPolicyRequest;
-        class GetContainerRecipeRequest;
-        class GetContainerRecipePolicyRequest;
-        class GetDistributionConfigurationRequest;
-        class GetImageRequest;
-        class GetImagePipelineRequest;
-        class GetImagePolicyRequest;
-        class GetImageRecipeRequest;
-        class GetImageRecipePolicyRequest;
-        class GetInfrastructureConfigurationRequest;
-        class ImportComponentRequest;
-        class ImportVmImageRequest;
-        class ListComponentBuildVersionsRequest;
-        class ListComponentsRequest;
-        class ListContainerRecipesRequest;
-        class ListDistributionConfigurationsRequest;
-        class ListImageBuildVersionsRequest;
-        class ListImagePackagesRequest;
-        class ListImagePipelineImagesRequest;
-        class ListImagePipelinesRequest;
-        class ListImageRecipesRequest;
-        class ListImagesRequest;
-        class ListInfrastructureConfigurationsRequest;
-        class ListTagsForResourceRequest;
-        class PutComponentPolicyRequest;
-        class PutContainerRecipePolicyRequest;
-        class PutImagePolicyRequest;
-        class PutImageRecipePolicyRequest;
-        class StartImagePipelineExecutionRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDistributionConfigurationRequest;
-        class UpdateImagePipelineRequest;
-        class UpdateInfrastructureConfigurationRequest;
-
-        typedef Aws::Utils::Outcome<CancelImageCreationResult, ImagebuilderError> CancelImageCreationOutcome;
-        typedef Aws::Utils::Outcome<CreateComponentResult, ImagebuilderError> CreateComponentOutcome;
-        typedef Aws::Utils::Outcome<CreateContainerRecipeResult, ImagebuilderError> CreateContainerRecipeOutcome;
-        typedef Aws::Utils::Outcome<CreateDistributionConfigurationResult, ImagebuilderError> CreateDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateImageResult, ImagebuilderError> CreateImageOutcome;
-        typedef Aws::Utils::Outcome<CreateImagePipelineResult, ImagebuilderError> CreateImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<CreateImageRecipeResult, ImagebuilderError> CreateImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<CreateInfrastructureConfigurationResult, ImagebuilderError> CreateInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteComponentResult, ImagebuilderError> DeleteComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteContainerRecipeResult, ImagebuilderError> DeleteContainerRecipeOutcome;
-        typedef Aws::Utils::Outcome<DeleteDistributionConfigurationResult, ImagebuilderError> DeleteDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteImageResult, ImagebuilderError> DeleteImageOutcome;
-        typedef Aws::Utils::Outcome<DeleteImagePipelineResult, ImagebuilderError> DeleteImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeleteImageRecipeResult, ImagebuilderError> DeleteImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<DeleteInfrastructureConfigurationResult, ImagebuilderError> DeleteInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetComponentResult, ImagebuilderError> GetComponentOutcome;
-        typedef Aws::Utils::Outcome<GetComponentPolicyResult, ImagebuilderError> GetComponentPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetContainerRecipeResult, ImagebuilderError> GetContainerRecipeOutcome;
-        typedef Aws::Utils::Outcome<GetContainerRecipePolicyResult, ImagebuilderError> GetContainerRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetDistributionConfigurationResult, ImagebuilderError> GetDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetImageResult, ImagebuilderError> GetImageOutcome;
-        typedef Aws::Utils::Outcome<GetImagePipelineResult, ImagebuilderError> GetImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<GetImagePolicyResult, ImagebuilderError> GetImagePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetImageRecipeResult, ImagebuilderError> GetImageRecipeOutcome;
-        typedef Aws::Utils::Outcome<GetImageRecipePolicyResult, ImagebuilderError> GetImageRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, ImagebuilderError> GetInfrastructureConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ImportComponentResult, ImagebuilderError> ImportComponentOutcome;
-        typedef Aws::Utils::Outcome<ImportVmImageResult, ImagebuilderError> ImportVmImageOutcome;
-        typedef Aws::Utils::Outcome<ListComponentBuildVersionsResult, ImagebuilderError> ListComponentBuildVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListComponentsResult, ImagebuilderError> ListComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListContainerRecipesResult, ImagebuilderError> ListContainerRecipesOutcome;
-        typedef Aws::Utils::Outcome<ListDistributionConfigurationsResult, ImagebuilderError> ListDistributionConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListImageBuildVersionsResult, ImagebuilderError> ListImageBuildVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListImagePackagesResult, ImagebuilderError> ListImagePackagesOutcome;
-        typedef Aws::Utils::Outcome<ListImagePipelineImagesResult, ImagebuilderError> ListImagePipelineImagesOutcome;
-        typedef Aws::Utils::Outcome<ListImagePipelinesResult, ImagebuilderError> ListImagePipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListImageRecipesResult, ImagebuilderError> ListImageRecipesOutcome;
-        typedef Aws::Utils::Outcome<ListImagesResult, ImagebuilderError> ListImagesOutcome;
-        typedef Aws::Utils::Outcome<ListInfrastructureConfigurationsResult, ImagebuilderError> ListInfrastructureConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ImagebuilderError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutComponentPolicyResult, ImagebuilderError> PutComponentPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutContainerRecipePolicyResult, ImagebuilderError> PutContainerRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<PutImagePolicyResult, ImagebuilderError> PutImagePolicyOutcome;
-        typedef Aws::Utils::Outcome<PutImageRecipePolicyResult, ImagebuilderError> PutImageRecipePolicyOutcome;
-        typedef Aws::Utils::Outcome<StartImagePipelineExecutionResult, ImagebuilderError> StartImagePipelineExecutionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ImagebuilderError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ImagebuilderError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDistributionConfigurationResult, ImagebuilderError> UpdateDistributionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateImagePipelineResult, ImagebuilderError> UpdateImagePipelineOutcome;
-        typedef Aws::Utils::Outcome<UpdateInfrastructureConfigurationResult, ImagebuilderError> UpdateInfrastructureConfigurationOutcome;
-
-        typedef std::future<CancelImageCreationOutcome> CancelImageCreationOutcomeCallable;
-        typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
-        typedef std::future<CreateContainerRecipeOutcome> CreateContainerRecipeOutcomeCallable;
-        typedef std::future<CreateDistributionConfigurationOutcome> CreateDistributionConfigurationOutcomeCallable;
-        typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
-        typedef std::future<CreateImagePipelineOutcome> CreateImagePipelineOutcomeCallable;
-        typedef std::future<CreateImageRecipeOutcome> CreateImageRecipeOutcomeCallable;
-        typedef std::future<CreateInfrastructureConfigurationOutcome> CreateInfrastructureConfigurationOutcomeCallable;
-        typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
-        typedef std::future<DeleteContainerRecipeOutcome> DeleteContainerRecipeOutcomeCallable;
-        typedef std::future<DeleteDistributionConfigurationOutcome> DeleteDistributionConfigurationOutcomeCallable;
-        typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
-        typedef std::future<DeleteImagePipelineOutcome> DeleteImagePipelineOutcomeCallable;
-        typedef std::future<DeleteImageRecipeOutcome> DeleteImageRecipeOutcomeCallable;
-        typedef std::future<DeleteInfrastructureConfigurationOutcome> DeleteInfrastructureConfigurationOutcomeCallable;
-        typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
-        typedef std::future<GetComponentPolicyOutcome> GetComponentPolicyOutcomeCallable;
-        typedef std::future<GetContainerRecipeOutcome> GetContainerRecipeOutcomeCallable;
-        typedef std::future<GetContainerRecipePolicyOutcome> GetContainerRecipePolicyOutcomeCallable;
-        typedef std::future<GetDistributionConfigurationOutcome> GetDistributionConfigurationOutcomeCallable;
-        typedef std::future<GetImageOutcome> GetImageOutcomeCallable;
-        typedef std::future<GetImagePipelineOutcome> GetImagePipelineOutcomeCallable;
-        typedef std::future<GetImagePolicyOutcome> GetImagePolicyOutcomeCallable;
-        typedef std::future<GetImageRecipeOutcome> GetImageRecipeOutcomeCallable;
-        typedef std::future<GetImageRecipePolicyOutcome> GetImageRecipePolicyOutcomeCallable;
-        typedef std::future<GetInfrastructureConfigurationOutcome> GetInfrastructureConfigurationOutcomeCallable;
-        typedef std::future<ImportComponentOutcome> ImportComponentOutcomeCallable;
-        typedef std::future<ImportVmImageOutcome> ImportVmImageOutcomeCallable;
-        typedef std::future<ListComponentBuildVersionsOutcome> ListComponentBuildVersionsOutcomeCallable;
-        typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
-        typedef std::future<ListContainerRecipesOutcome> ListContainerRecipesOutcomeCallable;
-        typedef std::future<ListDistributionConfigurationsOutcome> ListDistributionConfigurationsOutcomeCallable;
-        typedef std::future<ListImageBuildVersionsOutcome> ListImageBuildVersionsOutcomeCallable;
-        typedef std::future<ListImagePackagesOutcome> ListImagePackagesOutcomeCallable;
-        typedef std::future<ListImagePipelineImagesOutcome> ListImagePipelineImagesOutcomeCallable;
-        typedef std::future<ListImagePipelinesOutcome> ListImagePipelinesOutcomeCallable;
-        typedef std::future<ListImageRecipesOutcome> ListImageRecipesOutcomeCallable;
-        typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
-        typedef std::future<ListInfrastructureConfigurationsOutcome> ListInfrastructureConfigurationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutComponentPolicyOutcome> PutComponentPolicyOutcomeCallable;
-        typedef std::future<PutContainerRecipePolicyOutcome> PutContainerRecipePolicyOutcomeCallable;
-        typedef std::future<PutImagePolicyOutcome> PutImagePolicyOutcomeCallable;
-        typedef std::future<PutImageRecipePolicyOutcome> PutImageRecipePolicyOutcomeCallable;
-        typedef std::future<StartImagePipelineExecutionOutcome> StartImagePipelineExecutionOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDistributionConfigurationOutcome> UpdateDistributionConfigurationOutcomeCallable;
-        typedef std::future<UpdateImagePipelineOutcome> UpdateImagePipelineOutcomeCallable;
-        typedef std::future<UpdateInfrastructureConfigurationOutcome> UpdateInfrastructureConfigurationOutcomeCallable;
-} // namespace Model
-
-  class ImagebuilderClient;
-
-    typedef std::function<void(const ImagebuilderClient*, const Model::CancelImageCreationRequest&, const Model::CancelImageCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImageCreationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateComponentRequest&, const Model::CreateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateContainerRecipeRequest&, const Model::CreateContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateDistributionConfigurationRequest&, const Model::CreateDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateImagePipelineRequest&, const Model::CreateImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImagePipelineResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateImageRecipeRequest&, const Model::CreateImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::CreateInfrastructureConfigurationRequest&, const Model::CreateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInfrastructureConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteContainerRecipeRequest&, const Model::DeleteContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteDistributionConfigurationRequest&, const Model::DeleteDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistributionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImageRequest&, const Model::DeleteImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImagePipelineRequest&, const Model::DeleteImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImagePipelineResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteImageRecipeRequest&, const Model::DeleteImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImageRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::DeleteInfrastructureConfigurationRequest&, const Model::DeleteInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInfrastructureConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetComponentPolicyRequest&, const Model::GetComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentPolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetContainerRecipeRequest&, const Model::GetContainerRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetContainerRecipePolicyRequest&, const Model::GetContainerRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerRecipePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetDistributionConfigurationRequest&, const Model::GetDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetImageRequest&, const Model::GetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetImagePipelineRequest&, const Model::GetImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImagePipelineResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetImagePolicyRequest&, const Model::GetImagePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImagePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetImageRecipeRequest&, const Model::GetImageRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageRecipeResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetImageRecipePolicyRequest&, const Model::GetImageRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageRecipePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::GetInfrastructureConfigurationRequest&, const Model::GetInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInfrastructureConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ImportComponentRequest&, const Model::ImportComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportComponentResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ImportVmImageRequest&, const Model::ImportVmImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVmImageResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentBuildVersionsRequest&, const Model::ListComponentBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentBuildVersionsResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListContainerRecipesRequest&, const Model::ListContainerRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerRecipesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListDistributionConfigurationsRequest&, const Model::ListDistributionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImageBuildVersionsRequest&, const Model::ListImageBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageBuildVersionsResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePackagesRequest&, const Model::ListImagePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePackagesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePipelineImagesRequest&, const Model::ListImagePipelineImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePipelineImagesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImagePipelinesRequest&, const Model::ListImagePipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagePipelinesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImageRecipesRequest&, const Model::ListImageRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageRecipesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListInfrastructureConfigurationsRequest&, const Model::ListInfrastructureConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInfrastructureConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::PutComponentPolicyRequest&, const Model::PutComponentPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutComponentPolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::PutContainerRecipePolicyRequest&, const Model::PutContainerRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerRecipePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::PutImagePolicyRequest&, const Model::PutImagePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImagePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::PutImageRecipePolicyRequest&, const Model::PutImageRecipePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageRecipePolicyResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::StartImagePipelineExecutionRequest&, const Model::StartImagePipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImagePipelineExecutionResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::UpdateDistributionConfigurationRequest&, const Model::UpdateDistributionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::UpdateImagePipelineRequest&, const Model::UpdateImagePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImagePipelineResponseReceivedHandler;
-    typedef std::function<void(const ImagebuilderClient*, const Model::UpdateInfrastructureConfigurationRequest&, const Model::UpdateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInfrastructureConfigurationResponseReceivedHandler;
-
   /**
    * <p>EC2 Image Builder is a fully managed Amazon Web Services service that makes
    * it easier to automate the creation, management, and deployment of customized,
    * secure, and up-to-date "golden" server images that are pre-installed and
    * pre-configured with software and settings to meet specific IT standards.</p>
    */
-  class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient
+  class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ImagebuilderClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ImagebuilderClient(const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration(),
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ImagebuilderClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ImagebuilderClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ImagebuilderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider = Aws::MakeShared<ImagebuilderEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::imagebuilder::ImagebuilderClientConfiguration& clientConfiguration = Aws::imagebuilder::ImagebuilderClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImagebuilderClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImagebuilderClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ImagebuilderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ImagebuilderClient();
-
 
         /**
          * <p>CancelImageCreation cancels the creation of Image. This operation can only be
@@ -1288,62 +1024,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ImagebuilderEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelImageCreationAsyncHelper(const Model::CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateComponentAsyncHelper(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateContainerRecipeAsyncHelper(const Model::CreateContainerRecipeRequest& request, const CreateContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDistributionConfigurationAsyncHelper(const Model::CreateDistributionConfigurationRequest& request, const CreateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateImageAsyncHelper(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateImagePipelineAsyncHelper(const Model::CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateImageRecipeAsyncHelper(const Model::CreateImageRecipeRequest& request, const CreateImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInfrastructureConfigurationAsyncHelper(const Model::CreateInfrastructureConfigurationRequest& request, const CreateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteContainerRecipeAsyncHelper(const Model::DeleteContainerRecipeRequest& request, const DeleteContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDistributionConfigurationAsyncHelper(const Model::DeleteDistributionConfigurationRequest& request, const DeleteDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteImageAsyncHelper(const Model::DeleteImageRequest& request, const DeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteImagePipelineAsyncHelper(const Model::DeleteImagePipelineRequest& request, const DeleteImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteImageRecipeAsyncHelper(const Model::DeleteImageRecipeRequest& request, const DeleteImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInfrastructureConfigurationAsyncHelper(const Model::DeleteInfrastructureConfigurationRequest& request, const DeleteInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComponentAsyncHelper(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComponentPolicyAsyncHelper(const Model::GetComponentPolicyRequest& request, const GetComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetContainerRecipeAsyncHelper(const Model::GetContainerRecipeRequest& request, const GetContainerRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetContainerRecipePolicyAsyncHelper(const Model::GetContainerRecipePolicyRequest& request, const GetContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDistributionConfigurationAsyncHelper(const Model::GetDistributionConfigurationRequest& request, const GetDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImageAsyncHelper(const Model::GetImageRequest& request, const GetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImagePipelineAsyncHelper(const Model::GetImagePipelineRequest& request, const GetImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImagePolicyAsyncHelper(const Model::GetImagePolicyRequest& request, const GetImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImageRecipeAsyncHelper(const Model::GetImageRecipeRequest& request, const GetImageRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImageRecipePolicyAsyncHelper(const Model::GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInfrastructureConfigurationAsyncHelper(const Model::GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportComponentAsyncHelper(const Model::ImportComponentRequest& request, const ImportComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportVmImageAsyncHelper(const Model::ImportVmImageRequest& request, const ImportVmImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListComponentBuildVersionsAsyncHelper(const Model::ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListContainerRecipesAsyncHelper(const Model::ListContainerRecipesRequest& request, const ListContainerRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDistributionConfigurationsAsyncHelper(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImageBuildVersionsAsyncHelper(const Model::ListImageBuildVersionsRequest& request, const ListImageBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImagePackagesAsyncHelper(const Model::ListImagePackagesRequest& request, const ListImagePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImagePipelineImagesAsyncHelper(const Model::ListImagePipelineImagesRequest& request, const ListImagePipelineImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImagePipelinesAsyncHelper(const Model::ListImagePipelinesRequest& request, const ListImagePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImageRecipesAsyncHelper(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImagesAsyncHelper(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInfrastructureConfigurationsAsyncHelper(const Model::ListInfrastructureConfigurationsRequest& request, const ListInfrastructureConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutComponentPolicyAsyncHelper(const Model::PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutContainerRecipePolicyAsyncHelper(const Model::PutContainerRecipePolicyRequest& request, const PutContainerRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutImagePolicyAsyncHelper(const Model::PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutImageRecipePolicyAsyncHelper(const Model::PutImageRecipePolicyRequest& request, const PutImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartImagePipelineExecutionAsyncHelper(const Model::StartImagePipelineExecutionRequest& request, const StartImagePipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDistributionConfigurationAsyncHelper(const Model::UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateImagePipelineAsyncHelper(const Model::UpdateImagePipelineRequest& request, const UpdateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInfrastructureConfigurationAsyncHelper(const Model::UpdateInfrastructureConfigurationRequest& request, const UpdateInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>;
+      void init(const ImagebuilderClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ImagebuilderClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ImagebuilderEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace imagebuilder

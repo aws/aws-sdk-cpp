@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API GetInsightSummariesRequest : public XRayRequest
+  class GetInsightSummariesRequest : public XRayRequest
   {
   public:
-    GetInsightSummariesRequest();
+    AWS_XRAY_API GetInsightSummariesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetInsightSummaries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -304,25 +304,25 @@ namespace Model
   private:
 
     Aws::Vector<InsightState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::String m_groupARN;
-    bool m_groupARNHasBeenSet;
+    bool m_groupARNHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

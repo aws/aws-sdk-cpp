@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuthRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API ImportBackendAuthRequest : public AmplifyBackendRequest
+  class ImportBackendAuthRequest : public AmplifyBackendRequest
   {
   public:
-    ImportBackendAuthRequest();
+    AWS_AMPLIFYBACKEND_API ImportBackendAuthRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportBackendAuth"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_backendEnvironmentName;
-    bool m_backendEnvironmentNameHasBeenSet;
+    bool m_backendEnvironmentNameHasBeenSet = false;
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_nativeClientId;
-    bool m_nativeClientIdHasBeenSet;
+    bool m_nativeClientIdHasBeenSet = false;
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_webClientId;
-    bool m_webClientIdHasBeenSet;
+    bool m_webClientIdHasBeenSet = false;
   };
 
 } // namespace Model

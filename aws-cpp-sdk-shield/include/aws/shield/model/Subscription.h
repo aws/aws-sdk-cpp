@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API Subscription
+  class Subscription
   {
   public:
-    Subscription();
-    Subscription(Aws::Utils::Json::JsonView jsonValue);
-    Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API Subscription();
+    AWS_SHIELD_API Subscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -380,28 +380,28 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     long long m_timeCommitmentInSeconds;
-    bool m_timeCommitmentInSecondsHasBeenSet;
+    bool m_timeCommitmentInSecondsHasBeenSet = false;
 
     AutoRenew m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     Aws::Vector<Limit> m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     ProactiveEngagementStatus m_proactiveEngagementStatus;
-    bool m_proactiveEngagementStatusHasBeenSet;
+    bool m_proactiveEngagementStatusHasBeenSet = false;
 
     SubscriptionLimits m_subscriptionLimits;
-    bool m_subscriptionLimitsHasBeenSet;
+    bool m_subscriptionLimitsHasBeenSet = false;
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
   };
 
 } // namespace Model

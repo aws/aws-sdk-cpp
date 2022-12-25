@@ -51,7 +51,7 @@ Aws::String CreateInstanceRequest::SerializePayload() const
 
   if(m_layerIdsHasBeenSet)
   {
-   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   Aws::Utils::Array<JsonValue> layerIdsJsonList(m_layerIds.size());
    for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
    {
      layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);
@@ -125,7 +125,7 @@ Aws::String CreateInstanceRequest::SerializePayload() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());

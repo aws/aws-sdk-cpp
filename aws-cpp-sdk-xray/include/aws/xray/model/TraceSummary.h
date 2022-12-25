@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TraceSummary
+  class TraceSummary
   {
   public:
-    TraceSummary();
-    TraceSummary(Aws::Utils::Json::JsonView jsonValue);
-    TraceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TraceSummary();
+    AWS_XRAY_API TraceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TraceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -795,64 +795,64 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     double m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_responseTime;
-    bool m_responseTimeHasBeenSet;
+    bool m_responseTimeHasBeenSet = false;
 
     bool m_hasFault;
-    bool m_hasFaultHasBeenSet;
+    bool m_hasFaultHasBeenSet = false;
 
     bool m_hasError;
-    bool m_hasErrorHasBeenSet;
+    bool m_hasErrorHasBeenSet = false;
 
     bool m_hasThrottle;
-    bool m_hasThrottleHasBeenSet;
+    bool m_hasThrottleHasBeenSet = false;
 
     bool m_isPartial;
-    bool m_isPartialHasBeenSet;
+    bool m_isPartialHasBeenSet = false;
 
     Http m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>> m_annotations;
-    bool m_annotationsHasBeenSet;
+    bool m_annotationsHasBeenSet = false;
 
     Aws::Vector<TraceUser> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
 
     Aws::Vector<ServiceId> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
 
     Aws::Vector<ResourceARNDetail> m_resourceARNs;
-    bool m_resourceARNsHasBeenSet;
+    bool m_resourceARNsHasBeenSet = false;
 
     Aws::Vector<InstanceIdDetail> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     Aws::Vector<AvailabilityZoneDetail> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     ServiceId m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<FaultRootCause> m_faultRootCauses;
-    bool m_faultRootCausesHasBeenSet;
+    bool m_faultRootCausesHasBeenSet = false;
 
     Aws::Vector<ErrorRootCause> m_errorRootCauses;
-    bool m_errorRootCausesHasBeenSet;
+    bool m_errorRootCausesHasBeenSet = false;
 
     Aws::Vector<ResponseTimeRootCause> m_responseTimeRootCauses;
-    bool m_responseTimeRootCausesHasBeenSet;
+    bool m_responseTimeRootCausesHasBeenSet = false;
 
     int m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::Utils::DateTime m_matchedEventTime;
-    bool m_matchedEventTimeHasBeenSet;
+    bool m_matchedEventTimeHasBeenSet = false;
   };
 
 } // namespace Model

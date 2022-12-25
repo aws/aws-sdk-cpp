@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotAliasHistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotAliasHistoryEvent
+  class BotAliasHistoryEvent
   {
   public:
-    BotAliasHistoryEvent();
-    BotAliasHistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    BotAliasHistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotAliasHistoryEvent();
+    AWS_LEXMODELSV2_API BotAliasHistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotAliasHistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
   };
 
 } // namespace Model

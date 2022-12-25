@@ -75,7 +75,7 @@ ContainerStateChange& ContainerStateChange::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkBindings"))
   {
-    Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
+    Aws::Utils::Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
     for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
     {
       m_networkBindings.push_back(networkBindingsJsonList[networkBindingsIndex].AsObject());
@@ -130,7 +130,7 @@ JsonValue ContainerStateChange::Jsonize() const
 
   if(m_networkBindingsHasBeenSet)
   {
-   Array<JsonValue> networkBindingsJsonList(m_networkBindings.size());
+   Aws::Utils::Array<JsonValue> networkBindingsJsonList(m_networkBindings.size());
    for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
    {
      networkBindingsJsonList[networkBindingsIndex].AsObject(m_networkBindings[networkBindingsIndex].Jsonize());

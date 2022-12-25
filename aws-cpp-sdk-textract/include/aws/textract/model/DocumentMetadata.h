@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DocumentMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API DocumentMetadata
+  class DocumentMetadata
   {
   public:
-    DocumentMetadata();
-    DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API DocumentMetadata();
+    AWS_TEXTRACT_API DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_pages;
-    bool m_pagesHasBeenSet;
+    bool m_pagesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateDimensionRequest : public IoTRequest
+  class UpdateDimensionRequest : public IoTRequest
   {
   public:
-    UpdateDimensionRequest();
+    AWS_IOT_API UpdateDimensionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDimension"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValues;
-    bool m_stringValuesHasBeenSet;
+    bool m_stringValuesHasBeenSet = false;
   };
 
 } // namespace Model

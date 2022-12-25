@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainServiceSoftwareOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainServiceSoftwareOptions
+  class AwsElasticsearchDomainServiceSoftwareOptions
   {
   public:
-    AwsElasticsearchDomainServiceSoftwareOptions();
-    AwsElasticsearchDomainServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainServiceSoftwareOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,67 +269,99 @@ namespace Model
 
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetUpdateStatus() const{ return m_updateStatus; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(const Aws::String& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(Aws::String&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdateStatus(const char* value) { m_updateStatusHasBeenSet = true; m_updateStatus.assign(value); }
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithUpdateStatus(const Aws::String& value) { SetUpdateStatus(value); return *this;}
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithUpdateStatus(Aws::String&& value) { SetUpdateStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the service software update.</p>
+     * <p>The status of the service software update. Valid values are as follows:</p>
+     * <ul> <li> <p> <code>COMPLETED</code> </p> </li> <li> <p> <code>ELIGIBLE</code>
+     * </p> </li> <li> <p> <code>IN_PROGRESS</code> </p> </li> <li> <p>
+     * <code>NOT_ELIGIBLE</code> </p> </li> <li> <p> <code>PENDING_UPDATE</code> </p>
+     * </li> </ul>
      */
     inline AwsElasticsearchDomainServiceSoftwareOptions& WithUpdateStatus(const char* value) { SetUpdateStatus(value); return *this;}
 
   private:
 
     Aws::String m_automatedUpdateDate;
-    bool m_automatedUpdateDateHasBeenSet;
+    bool m_automatedUpdateDateHasBeenSet = false;
 
     bool m_cancellable;
-    bool m_cancellableHasBeenSet;
+    bool m_cancellableHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_newVersion;
-    bool m_newVersionHasBeenSet;
+    bool m_newVersionHasBeenSet = false;
 
     bool m_updateAvailable;
-    bool m_updateAvailableHasBeenSet;
+    bool m_updateAvailableHasBeenSet = false;
 
     Aws::String m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

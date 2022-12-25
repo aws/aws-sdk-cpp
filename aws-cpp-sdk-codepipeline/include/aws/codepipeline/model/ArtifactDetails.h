@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactDetails
+  class ArtifactDetails
   {
   public:
-    ArtifactDetails();
-    ArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactDetails();
+    AWS_CODEPIPELINE_API ArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_minimumCount;
-    bool m_minimumCountHasBeenSet;
+    bool m_minimumCountHasBeenSet = false;
 
     int m_maximumCount;
-    bool m_maximumCountHasBeenSet;
+    bool m_maximumCountHasBeenSet = false;
   };
 
 } // namespace Model

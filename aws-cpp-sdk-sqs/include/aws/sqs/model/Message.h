@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/Message">AWS API
    * Reference</a></p>
    */
-  class AWS_SQS_API Message
+  class Message
   {
   public:
-    Message();
-    Message(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API Message();
+    AWS_SQS_API Message(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -595,25 +595,25 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
 
     Aws::String m_mD5OfBody;
-    bool m_mD5OfBodyHasBeenSet;
+    bool m_mD5OfBodyHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<MessageSystemAttributeName, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_mD5OfMessageAttributes;
-    bool m_mD5OfMessageAttributesHasBeenSet;
+    bool m_mD5OfMessageAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
   };
 
 } // namespace Model

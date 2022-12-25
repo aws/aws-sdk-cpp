@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ColumnMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata
+  class ColumnMetadata
   {
   public:
-    ColumnMetadata();
-    ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata();
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,43 +432,43 @@ namespace Model
   private:
 
     Aws::String m_columnDefault;
-    bool m_columnDefaultHasBeenSet;
+    bool m_columnDefaultHasBeenSet = false;
 
     bool m_isCaseSensitive;
-    bool m_isCaseSensitiveHasBeenSet;
+    bool m_isCaseSensitiveHasBeenSet = false;
 
     bool m_isCurrency;
-    bool m_isCurrencyHasBeenSet;
+    bool m_isCurrencyHasBeenSet = false;
 
     bool m_isSigned;
-    bool m_isSignedHasBeenSet;
+    bool m_isSignedHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     int m_length;
-    bool m_lengthHasBeenSet;
+    bool m_lengthHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_nullable;
-    bool m_nullableHasBeenSet;
+    bool m_nullableHasBeenSet = false;
 
     int m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
   };
 
 } // namespace Model

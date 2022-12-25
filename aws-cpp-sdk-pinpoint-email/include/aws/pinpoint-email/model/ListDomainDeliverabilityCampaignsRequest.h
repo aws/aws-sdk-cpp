@@ -30,10 +30,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaignsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsRequest : public PinpointEmailRequest
+  class ListDomainDeliverabilityCampaignsRequest : public PinpointEmailRequest
   {
   public:
-    ListDomainDeliverabilityCampaignsRequest();
+    AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDomainDeliverabilityCampaigns"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PINPOINTEMAIL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_subscribedDomain;
-    bool m_subscribedDomainHasBeenSet;
+    bool m_subscribedDomainHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverRiskConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverRiskConfigurationType
+  class AccountTakeoverRiskConfigurationType
   {
   public:
-    AccountTakeoverRiskConfigurationType();
-    AccountTakeoverRiskConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    AccountTakeoverRiskConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverRiskConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverRiskConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverRiskConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     NotifyConfigurationType m_notifyConfiguration;
-    bool m_notifyConfigurationHasBeenSet;
+    bool m_notifyConfigurationHasBeenSet = false;
 
     AccountTakeoverActionsType m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MetricDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API MetricDimension
+  class MetricDimension
   {
   public:
-    MetricDimension();
-    MetricDimension(Aws::Utils::Json::JsonView jsonValue);
-    MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API MetricDimension();
+    AWS_EMR_API MetricDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeSettings
+  class ActionTypeSettings
   {
   public:
-    ActionTypeSettings();
-    ActionTypeSettings(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeSettings();
+    AWS_CODEPIPELINE_API ActionTypeSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,16 +276,16 @@ namespace Model
   private:
 
     Aws::String m_thirdPartyConfigurationUrl;
-    bool m_thirdPartyConfigurationUrlHasBeenSet;
+    bool m_thirdPartyConfigurationUrlHasBeenSet = false;
 
     Aws::String m_entityUrlTemplate;
-    bool m_entityUrlTemplateHasBeenSet;
+    bool m_entityUrlTemplateHasBeenSet = false;
 
     Aws::String m_executionUrlTemplate;
-    bool m_executionUrlTemplateHasBeenSet;
+    bool m_executionUrlTemplateHasBeenSet = false;
 
     Aws::String m_revisionUrlTemplate;
-    bool m_revisionUrlTemplateHasBeenSet;
+    bool m_revisionUrlTemplateHasBeenSet = false;
   };
 
 } // namespace Model

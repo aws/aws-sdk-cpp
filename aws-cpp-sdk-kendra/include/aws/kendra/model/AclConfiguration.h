@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AclConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AclConfiguration
+  class AclConfiguration
   {
   public:
-    AclConfiguration();
-    AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AclConfiguration();
+    AWS_KENDRA_API AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_allowedGroupsColumnName;
-    bool m_allowedGroupsColumnNameHasBeenSet;
+    bool m_allowedGroupsColumnNameHasBeenSet = false;
   };
 
 } // namespace Model

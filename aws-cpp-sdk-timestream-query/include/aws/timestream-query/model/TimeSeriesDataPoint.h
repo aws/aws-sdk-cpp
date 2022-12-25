@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/TimeSeriesDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint
+  class TimeSeriesDataPoint
   {
   public:
-    TimeSeriesDataPoint();
-    TimeSeriesDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint();
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,40 +87,40 @@ namespace Model
     /**
      * <p>The measure value for the data point.</p>
      */
-    const Datum& GetValue() const;
+    AWS_TIMESTREAMQUERY_API const Datum& GetValue() const;
 
     /**
      * <p>The measure value for the data point.</p>
      */
-    bool ValueHasBeenSet() const;
+    AWS_TIMESTREAMQUERY_API bool ValueHasBeenSet() const;
 
     /**
      * <p>The measure value for the data point.</p>
      */
-    void SetValue(const Datum& value);
+    AWS_TIMESTREAMQUERY_API void SetValue(const Datum& value);
 
     /**
      * <p>The measure value for the data point.</p>
      */
-    void SetValue(Datum&& value);
+    AWS_TIMESTREAMQUERY_API void SetValue(Datum&& value);
 
     /**
      * <p>The measure value for the data point.</p>
      */
-    TimeSeriesDataPoint& WithValue(const Datum& value);
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(const Datum& value);
 
     /**
      * <p>The measure value for the data point.</p>
      */
-    TimeSeriesDataPoint& WithValue(Datum&& value);
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(Datum&& value);
 
   private:
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     std::shared_ptr<Datum> m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/MonetaryAmount">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API MonetaryAmount
+  class MonetaryAmount
   {
   public:
-    MonetaryAmount();
-    MonetaryAmount(Aws::Utils::Json::JsonView jsonValue);
-    MonetaryAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API MonetaryAmount();
+    AWS_DEVICEFARM_API MonetaryAmount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API MonetaryAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     double m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     CurrencyCode m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

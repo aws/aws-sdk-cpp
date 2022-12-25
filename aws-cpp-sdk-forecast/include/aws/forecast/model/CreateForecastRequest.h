@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_FORECASTSERVICE_API CreateForecastRequest : public ForecastServiceRequest
+  class CreateForecastRequest : public ForecastServiceRequest
   {
   public:
-    CreateForecastRequest();
+    AWS_FORECASTSERVICE_API CreateForecastRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateForecast"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FORECASTSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -478,19 +478,19 @@ namespace Model
   private:
 
     Aws::String m_forecastName;
-    bool m_forecastNameHasBeenSet;
+    bool m_forecastNameHasBeenSet = false;
 
     Aws::String m_predictorArn;
-    bool m_predictorArnHasBeenSet;
+    bool m_predictorArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
-    bool m_forecastTypesHasBeenSet;
+    bool m_forecastTypesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TimeSeriesSelector m_timeSeriesSelector;
-    bool m_timeSeriesSelectorHasBeenSet;
+    bool m_timeSeriesSelectorHasBeenSet = false;
   };
 
 } // namespace Model

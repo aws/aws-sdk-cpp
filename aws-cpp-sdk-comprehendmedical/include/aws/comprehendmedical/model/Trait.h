@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/Trait">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API Trait
+  class Trait
   {
   public:
-    Trait();
-    Trait(Aws::Utils::Json::JsonView jsonValue);
-    Trait& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API Trait();
+    AWS_COMPREHENDMEDICAL_API Trait(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Trait& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     AttributeName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

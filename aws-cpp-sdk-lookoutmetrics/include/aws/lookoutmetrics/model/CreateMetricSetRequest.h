@@ -13,6 +13,7 @@
 #include <aws/lookoutmetrics/model/MetricSource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lookoutmetrics/model/Metric.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <utility>
 
 namespace Aws
@@ -24,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API CreateMetricSetRequest : public LookoutMetricsRequest
+  class CreateMetricSetRequest : public LookoutMetricsRequest
   {
   public:
-    CreateMetricSetRequest();
+    AWS_LOOKOUTMETRICS_API CreateMetricSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMetricSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -204,25 +205,29 @@ namespace Model
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
      * <p>After an interval ends, the amount of seconds that the detector waits before
-     * importing data. Offset is only supported for S3 and Redshift datasources.</p>
+     * importing data. Offset is only supported for S3, Redshift, Athena and
+     * datasources.</p>
      */
     inline CreateMetricSetRequest& WithOffset(int value) { SetOffset(value); return *this;}
 
@@ -504,40 +509,84 @@ namespace Model
      */
     inline CreateMetricSetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline const Aws::Vector<MetricSetDimensionFilter>& GetDimensionFilterList() const{ return m_dimensionFilterList; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline bool DimensionFilterListHasBeenSet() const { return m_dimensionFilterListHasBeenSet; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline void SetDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = value; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline void SetDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList = std::move(value); }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& WithDimensionFilterList(const Aws::Vector<MetricSetDimensionFilter>& value) { SetDimensionFilterList(value); return *this;}
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& WithDimensionFilterList(Aws::Vector<MetricSetDimensionFilter>&& value) { SetDimensionFilterList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& AddDimensionFilterList(const MetricSetDimensionFilter& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of filters that specify which data is kept for anomaly detection.</p>
+     */
+    inline CreateMetricSetRequest& AddDimensionFilterList(MetricSetDimensionFilter&& value) { m_dimensionFilterListHasBeenSet = true; m_dimensionFilterList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_metricSetName;
-    bool m_metricSetNameHasBeenSet;
+    bool m_metricSetNameHasBeenSet = false;
 
     Aws::String m_metricSetDescription;
-    bool m_metricSetDescriptionHasBeenSet;
+    bool m_metricSetDescriptionHasBeenSet = false;
 
     Aws::Vector<Metric> m_metricList;
-    bool m_metricListHasBeenSet;
+    bool m_metricListHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     TimestampColumn m_timestampColumn;
-    bool m_timestampColumnHasBeenSet;
+    bool m_timestampColumnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dimensionList;
-    bool m_dimensionListHasBeenSet;
+    bool m_dimensionListHasBeenSet = false;
 
     Frequency m_metricSetFrequency;
-    bool m_metricSetFrequencyHasBeenSet;
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     MetricSource m_metricSource;
-    bool m_metricSourceHasBeenSet;
+    bool m_metricSourceHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<MetricSetDimensionFilter> m_dimensionFilterList;
+    bool m_dimensionFilterListHasBeenSet = false;
   };
 
 } // namespace Model

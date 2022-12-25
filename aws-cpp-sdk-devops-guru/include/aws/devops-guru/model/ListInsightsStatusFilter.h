@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListInsightsStatusFilter
+  class ListInsightsStatusFilter
   {
   public:
-    ListInsightsStatusFilter();
-    ListInsightsStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListInsightsStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ListInsightsOngoingStatusFilter m_ongoing;
-    bool m_ongoingHasBeenSet;
+    bool m_ongoingHasBeenSet = false;
 
     ListInsightsClosedStatusFilter m_closed;
-    bool m_closedHasBeenSet;
+    bool m_closedHasBeenSet = false;
 
     ListInsightsAnyStatusFilter m_any;
-    bool m_anyHasBeenSet;
+    bool m_anyHasBeenSet = false;
   };
 
 } // namespace Model

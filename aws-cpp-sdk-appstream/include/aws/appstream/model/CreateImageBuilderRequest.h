@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API CreateImageBuilderRequest : public AppStreamRequest
+  class CreateImageBuilderRequest : public AppStreamRequest
   {
   public:
-    CreateImageBuilderRequest();
+    AWS_APPSTREAM_API CreateImageBuilderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateImageBuilder"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -958,43 +958,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_imageName;
-    bool m_imageNameHasBeenSet;
+    bool m_imageNameHasBeenSet = false;
 
     Aws::String m_imageArn;
-    bool m_imageArnHasBeenSet;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     bool m_enableDefaultInternetAccess;
-    bool m_enableDefaultInternetAccessHasBeenSet;
+    bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     DomainJoinInfo m_domainJoinInfo;
-    bool m_domainJoinInfoHasBeenSet;
+    bool m_domainJoinInfoHasBeenSet = false;
 
     Aws::String m_appstreamAgentVersion;
-    bool m_appstreamAgentVersionHasBeenSet;
+    bool m_appstreamAgentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AccessEndpoint> m_accessEndpoints;
-    bool m_accessEndpointsHasBeenSet;
+    bool m_accessEndpointsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ApplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ApplicationInfo
+  class ApplicationInfo
   {
   public:
-    ApplicationInfo();
-    ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ApplicationInfo();
+    AWS_CODEDEPLOY_API ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     bool m_linkedToGitHub;
-    bool m_linkedToGitHubHasBeenSet;
+    bool m_linkedToGitHubHasBeenSet = false;
 
     Aws::String m_gitHubAccountName;
-    bool m_gitHubAccountNameHasBeenSet;
+    bool m_gitHubAccountNameHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
   };
 
 } // namespace Model

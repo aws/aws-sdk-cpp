@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironment
+  class AwsCodeBuildProjectEnvironment
   {
   public:
-    AwsCodeBuildProjectEnvironment();
-    AwsCodeBuildProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironment();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -455,22 +455,22 @@ namespace Model
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     bool m_privilegedMode;
-    bool m_privilegedModeHasBeenSet;
+    bool m_privilegedModeHasBeenSet = false;
 
     Aws::String m_imagePullCredentialsType;
-    bool m_imagePullCredentialsTypeHasBeenSet;
+    bool m_imagePullCredentialsTypeHasBeenSet = false;
 
     AwsCodeBuildProjectEnvironmentRegistryCredential m_registryCredential;
-    bool m_registryCredentialHasBeenSet;
+    bool m_registryCredentialHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

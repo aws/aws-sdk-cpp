@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuiltInIntentSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BuiltInIntentSortBy
+  class BuiltInIntentSortBy
   {
   public:
-    BuiltInIntentSortBy();
-    BuiltInIntentSortBy(Aws::Utils::Json::JsonView jsonValue);
-    BuiltInIntentSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BuiltInIntentSortBy();
+    AWS_LEXMODELSV2_API BuiltInIntentSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BuiltInIntentSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     BuiltInIntentSortAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortOrder m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateTrialComponentRequest : public SageMakerRequest
+  class UpdateTrialComponentRequest : public SageMakerRequest
   {
   public:
-    UpdateTrialComponentRequest();
+    AWS_SAGEMAKER_API UpdateTrialComponentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTrialComponent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -590,37 +590,37 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     TrialComponentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentParameterValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parametersToRemove;
-    bool m_parametersToRemoveHasBeenSet;
+    bool m_parametersToRemoveHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentArtifact> m_inputArtifacts;
-    bool m_inputArtifactsHasBeenSet;
+    bool m_inputArtifactsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputArtifactsToRemove;
-    bool m_inputArtifactsToRemoveHasBeenSet;
+    bool m_inputArtifactsToRemoveHasBeenSet = false;
 
     Aws::Map<Aws::String, TrialComponentArtifact> m_outputArtifacts;
-    bool m_outputArtifactsHasBeenSet;
+    bool m_outputArtifactsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outputArtifactsToRemove;
-    bool m_outputArtifactsToRemoveHasBeenSet;
+    bool m_outputArtifactsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

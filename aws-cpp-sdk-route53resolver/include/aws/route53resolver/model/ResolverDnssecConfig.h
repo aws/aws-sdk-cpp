@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverDnssecConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverDnssecConfig
+  class ResolverDnssecConfig
   {
   public:
-    ResolverDnssecConfig();
-    ResolverDnssecConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResolverDnssecConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverDnssecConfig();
+    AWS_ROUTE53RESOLVER_API ResolverDnssecConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverDnssecConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResolverDNSSECValidationStatus m_validationStatus;
-    bool m_validationStatusHasBeenSet;
+    bool m_validationStatusHasBeenSet = false;
   };
 
 } // namespace Model

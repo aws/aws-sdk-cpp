@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ServerSideEncryptionConfiguration
+  class ServerSideEncryptionConfiguration
   {
   public:
-    ServerSideEncryptionConfiguration();
-    ServerSideEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerSideEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ServerSideEncryptionConfiguration();
+    AWS_KENDRA_API ServerSideEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ServerSideEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

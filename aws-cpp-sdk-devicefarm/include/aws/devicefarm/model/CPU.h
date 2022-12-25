@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CPU">AWS API
    * Reference</a></p>
    */
-  class AWS_DEVICEFARM_API CPU
+  class CPU
   {
   public:
-    CPU();
-    CPU(Aws::Utils::Json::JsonView jsonValue);
-    CPU& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API CPU();
+    AWS_DEVICEFARM_API CPU(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API CPU& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     double m_clock;
-    bool m_clockHasBeenSet;
+    bool m_clockHasBeenSet = false;
   };
 
 } // namespace Model

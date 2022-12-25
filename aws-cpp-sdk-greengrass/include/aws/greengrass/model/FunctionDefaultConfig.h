@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefaultConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionDefaultConfig
+  class FunctionDefaultConfig
   {
   public:
-    FunctionDefaultConfig();
-    FunctionDefaultConfig(Aws::Utils::Json::JsonView jsonValue);
-    FunctionDefaultConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionDefaultConfig();
+    AWS_GREENGRASS_API FunctionDefaultConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionDefaultConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -60,7 +60,7 @@ namespace Model
   private:
 
     FunctionDefaultExecutionConfig m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
   };
 
 } // namespace Model

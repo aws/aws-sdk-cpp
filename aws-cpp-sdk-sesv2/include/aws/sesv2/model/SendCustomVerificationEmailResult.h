@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SendCustomVerificationEmailResult
+  class SendCustomVerificationEmailResult
   {
   public:
-    SendCustomVerificationEmailResult();
-    SendCustomVerificationEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendCustomVerificationEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API SendCustomVerificationEmailResult();
+    AWS_SESV2_API SendCustomVerificationEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API SendCustomVerificationEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RStudioServerProDomainSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RStudioServerProDomainSettings
+  class RStudioServerProDomainSettings
   {
   public:
-    RStudioServerProDomainSettings();
-    RStudioServerProDomainSettings(Aws::Utils::Json::JsonView jsonValue);
-    RStudioServerProDomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RStudioServerProDomainSettings();
+    AWS_SAGEMAKER_API RStudioServerProDomainSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RStudioServerProDomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_domainExecutionRoleArn;
-    bool m_domainExecutionRoleArnHasBeenSet;
+    bool m_domainExecutionRoleArnHasBeenSet = false;
 
     Aws::String m_rStudioConnectUrl;
-    bool m_rStudioConnectUrlHasBeenSet;
+    bool m_rStudioConnectUrlHasBeenSet = false;
 
     Aws::String m_rStudioPackageManagerUrl;
-    bool m_rStudioPackageManagerUrlHasBeenSet;
+    bool m_rStudioPackageManagerUrlHasBeenSet = false;
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
   };
 
 } // namespace Model

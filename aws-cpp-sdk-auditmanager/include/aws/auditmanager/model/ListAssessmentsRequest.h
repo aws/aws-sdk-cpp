@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API ListAssessmentsRequest : public AuditManagerRequest
+  class ListAssessmentsRequest : public AuditManagerRequest
   {
   public:
-    ListAssessmentsRequest();
+    AWS_AUDITMANAGER_API ListAssessmentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAssessments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_AUDITMANAGER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     AssessmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

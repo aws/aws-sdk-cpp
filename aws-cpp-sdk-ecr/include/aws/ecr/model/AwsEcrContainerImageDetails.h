@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/AwsEcrContainerImageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API AwsEcrContainerImageDetails
+  class AwsEcrContainerImageDetails
   {
   public:
-    AwsEcrContainerImageDetails();
-    AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API AwsEcrContainerImageDetails();
+    AWS_ECR_API AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,28 +365,28 @@ namespace Model
   private:
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::String m_imageHash;
-    bool m_imageHashHasBeenSet;
+    bool m_imageHashHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Utils::DateTime m_pushedAt;
-    bool m_pushedAtHasBeenSet;
+    bool m_pushedAtHasBeenSet = false;
 
     Aws::String m_registry;
-    bool m_registryHasBeenSet;
+    bool m_registryHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

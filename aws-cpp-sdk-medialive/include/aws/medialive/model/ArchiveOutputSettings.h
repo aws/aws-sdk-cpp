@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ArchiveOutputSettings
+  class ArchiveOutputSettings
   {
   public:
-    ArchiveOutputSettings();
-    ArchiveOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ArchiveOutputSettings();
+    AWS_MEDIALIVE_API ArchiveOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ArchiveOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     ArchiveContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     Aws::String m_extension;
-    bool m_extensionHasBeenSet;
+    bool m_extensionHasBeenSet = false;
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
   };
 
 } // namespace Model

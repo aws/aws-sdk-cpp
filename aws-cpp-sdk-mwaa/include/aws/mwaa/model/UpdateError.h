@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateError">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API UpdateError
+  class UpdateError
   {
   public:
-    UpdateError();
-    UpdateError(Aws::Utils::Json::JsonView jsonValue);
-    UpdateError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API UpdateError();
+    AWS_MWAA_API UpdateError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API UpdateError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

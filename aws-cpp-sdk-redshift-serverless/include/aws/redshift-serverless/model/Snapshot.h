@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Snapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(Aws::Utils::Json::JsonView jsonValue);
-    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Snapshot();
+    AWS_REDSHIFTSERVERLESS_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -712,64 +712,64 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountsWithProvisionedRestoreAccess;
-    bool m_accountsWithProvisionedRestoreAccessHasBeenSet;
+    bool m_accountsWithProvisionedRestoreAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountsWithRestoreAccess;
-    bool m_accountsWithRestoreAccessHasBeenSet;
+    bool m_accountsWithRestoreAccessHasBeenSet = false;
 
     double m_actualIncrementalBackupSizeInMegaBytes;
-    bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet;
+    bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
 
     Aws::String m_adminUsername;
-    bool m_adminUsernameHasBeenSet;
+    bool m_adminUsernameHasBeenSet = false;
 
     double m_backupProgressInMegaBytes;
-    bool m_backupProgressInMegaBytesHasBeenSet;
+    bool m_backupProgressInMegaBytesHasBeenSet = false;
 
     double m_currentBackupRateInMegaBytesPerSecond;
-    bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
 
     long long m_estimatedSecondsToCompletion;
-    bool m_estimatedSecondsToCompletionHasBeenSet;
+    bool m_estimatedSecondsToCompletionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_namespaceArn;
-    bool m_namespaceArnHasBeenSet;
+    bool m_namespaceArnHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_snapshotArn;
-    bool m_snapshotArnHasBeenSet;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
 
     int m_snapshotRemainingDays;
-    bool m_snapshotRemainingDaysHasBeenSet;
+    bool m_snapshotRemainingDaysHasBeenSet = false;
 
     int m_snapshotRetentionPeriod;
-    bool m_snapshotRetentionPeriodHasBeenSet;
+    bool m_snapshotRetentionPeriodHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotRetentionStartTime;
-    bool m_snapshotRetentionStartTimeHasBeenSet;
+    bool m_snapshotRetentionStartTimeHasBeenSet = false;
 
     SnapshotStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     double m_totalBackupSizeInMegaBytes;
-    bool m_totalBackupSizeInMegaBytesHasBeenSet;
+    bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
   };
 
 } // namespace Model

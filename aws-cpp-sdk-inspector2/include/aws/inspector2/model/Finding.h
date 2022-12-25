@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/ExploitAvailable.h>
+#include <aws/inspector2/model/ExploitabilityDetails.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/inspector2/model/FixAvailable.h>
 #include <aws/inspector2/model/InspectorScoreDetails.h>
 #include <aws/inspector2/model/NetworkReachabilityDetails.h>
 #include <aws/inspector2/model/PackageVulnerabilityDetails.h>
@@ -38,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Finding">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Finding
+  class Finding
   {
   public:
-    Finding();
-    Finding(Aws::Utils::Json::JsonView jsonValue);
-    Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Finding();
+    AWS_INSPECTOR2_API Finding(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,6 +133,74 @@ namespace Model
 
 
     /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline const ExploitAvailable& GetExploitAvailable() const{ return m_exploitAvailable; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline bool ExploitAvailableHasBeenSet() const { return m_exploitAvailableHasBeenSet; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline void SetExploitAvailable(const ExploitAvailable& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = value; }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline void SetExploitAvailable(ExploitAvailable&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = std::move(value); }
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline Finding& WithExploitAvailable(const ExploitAvailable& value) { SetExploitAvailable(value); return *this;}
+
+    /**
+     * <p>If a finding discovered in your environment has an exploit available.</p>
+     */
+    inline Finding& WithExploitAvailable(ExploitAvailable&& value) { SetExploitAvailable(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline const ExploitabilityDetails& GetExploitabilityDetails() const{ return m_exploitabilityDetails; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline bool ExploitabilityDetailsHasBeenSet() const { return m_exploitabilityDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline void SetExploitabilityDetails(const ExploitabilityDetails& value) { m_exploitabilityDetailsHasBeenSet = true; m_exploitabilityDetails = value; }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline void SetExploitabilityDetails(ExploitabilityDetails&& value) { m_exploitabilityDetailsHasBeenSet = true; m_exploitabilityDetails = std::move(value); }
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline Finding& WithExploitabilityDetails(const ExploitabilityDetails& value) { SetExploitabilityDetails(value); return *this;}
+
+    /**
+     * <p>The details of an exploit available for a finding discovered in your
+     * environment.</p>
+     */
+    inline Finding& WithExploitabilityDetails(ExploitabilityDetails&& value) { SetExploitabilityDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Number (ARN) of the finding.</p>
      */
     inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
@@ -199,6 +270,55 @@ namespace Model
      * <p>The date and time that the finding was first observed.</p>
      */
     inline Finding& WithFirstObservedAt(Aws::Utils::DateTime&& value) { SetFirstObservedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const FixAvailable& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const FixAvailable& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(FixAvailable&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(const FixAvailable& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline Finding& WithFixAvailable(FixAvailable&& value) { SetFixAvailable(std::move(value)); return *this;}
 
 
     /**
@@ -585,52 +705,61 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
+
+    ExploitAvailable m_exploitAvailable;
+    bool m_exploitAvailableHasBeenSet = false;
+
+    ExploitabilityDetails m_exploitabilityDetails;
+    bool m_exploitabilityDetailsHasBeenSet = false;
 
     Aws::String m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
+
+    FixAvailable m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     double m_inspectorScore;
-    bool m_inspectorScoreHasBeenSet;
+    bool m_inspectorScoreHasBeenSet = false;
 
     InspectorScoreDetails m_inspectorScoreDetails;
-    bool m_inspectorScoreDetailsHasBeenSet;
+    bool m_inspectorScoreDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     NetworkReachabilityDetails m_networkReachabilityDetails;
-    bool m_networkReachabilityDetailsHasBeenSet;
+    bool m_networkReachabilityDetailsHasBeenSet = false;
 
     PackageVulnerabilityDetails m_packageVulnerabilityDetails;
-    bool m_packageVulnerabilityDetailsHasBeenSet;
+    bool m_packageVulnerabilityDetailsHasBeenSet = false;
 
     Remediation m_remediation;
-    bool m_remediationHasBeenSet;
+    bool m_remediationHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     FindingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     FindingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CloseStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API CloseStatusFilter
+  class CloseStatusFilter
   {
   public:
-    CloseStatusFilter();
-    CloseStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    CloseStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API CloseStatusFilter();
+    AWS_SWF_API CloseStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API CloseStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CloseStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

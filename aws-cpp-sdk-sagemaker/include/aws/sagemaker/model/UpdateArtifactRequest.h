@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateArtifactRequest : public SageMakerRequest
+  class UpdateArtifactRequest : public SageMakerRequest
   {
   public:
-    UpdateArtifactRequest();
+    AWS_SAGEMAKER_API UpdateArtifactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateArtifact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_artifactArn;
-    bool m_artifactArnHasBeenSet;
+    bool m_artifactArnHasBeenSet = false;
 
     Aws::String m_artifactName;
-    bool m_artifactNameHasBeenSet;
+    bool m_artifactNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_propertiesToRemove;
-    bool m_propertiesToRemoveHasBeenSet;
+    bool m_propertiesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

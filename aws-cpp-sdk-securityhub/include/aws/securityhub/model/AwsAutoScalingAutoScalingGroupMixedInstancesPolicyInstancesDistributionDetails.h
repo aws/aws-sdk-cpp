@@ -28,52 +28,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails
+  class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails
   {
   public:
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails();
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline const Aws::String& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline void SetOnDemandAllocationStrategy(const Aws::String& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline void SetOnDemandAllocationStrategy(Aws::String&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::move(value); }
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline void SetOnDemandAllocationStrategy(const char* value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy.assign(value); }
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithOnDemandAllocationStrategy(const Aws::String& value) { SetOnDemandAllocationStrategy(value); return *this;}
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithOnDemandAllocationStrategy(Aws::String&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>How to allocate instance types to fulfill On-Demand capacity.</p>
+     * <p>How to allocate instance types to fulfill On-Demand capacity. The valid value
+     * is <code>prioritized</code>.</p>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithOnDemandAllocationStrategy(const char* value) { SetOnDemandAllocationStrategy(value); return *this;}
 
@@ -129,42 +137,66 @@ namespace Model
 
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>How to allocate instances across Spot Instance pools.</p>
+     * <p>How to allocate instances across Spot Instance pools. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>lowest-price</code> </p> </li> <li> <p>
+     * <code>capacity-optimized</code> </p> </li> <li> <p>
+     * <code>capacity-optimized-prioritized</code> </p> </li> </ul>
      */
     inline AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}
 
@@ -245,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_onDemandAllocationStrategy;
-    bool m_onDemandAllocationStrategyHasBeenSet;
+    bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     int m_onDemandBaseCapacity;
-    bool m_onDemandBaseCapacityHasBeenSet;
+    bool m_onDemandBaseCapacityHasBeenSet = false;
 
     int m_onDemandPercentageAboveBaseCapacity;
-    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet;
+    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
 
     Aws::String m_spotAllocationStrategy;
-    bool m_spotAllocationStrategyHasBeenSet;
+    bool m_spotAllocationStrategyHasBeenSet = false;
 
     int m_spotInstancePools;
-    bool m_spotInstancePoolsHasBeenSet;
+    bool m_spotInstancePoolsHasBeenSet = false;
 
     Aws::String m_spotMaxPrice;
-    bool m_spotMaxPriceHasBeenSet;
+    bool m_spotMaxPriceHasBeenSet = false;
   };
 
 } // namespace Model

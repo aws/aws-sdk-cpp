@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API UpdateProfileRequest : public CustomerProfilesRequest
+  class UpdateProfileRequest : public CustomerProfilesRequest
   {
   public:
-    UpdateProfileRequest();
+    AWS_CUSTOMERPROFILES_API UpdateProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -965,76 +965,172 @@ namespace Model
      */
     inline UpdateProfileRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline const Aws::String& GetPartyTypeString() const{ return m_partyTypeString; }
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline bool PartyTypeStringHasBeenSet() const { return m_partyTypeStringHasBeenSet; }
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline void SetPartyTypeString(const Aws::String& value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString = value; }
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline void SetPartyTypeString(Aws::String&& value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString = std::move(value); }
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline void SetPartyTypeString(const char* value) { m_partyTypeStringHasBeenSet = true; m_partyTypeString.assign(value); }
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline UpdateProfileRequest& WithPartyTypeString(const Aws::String& value) { SetPartyTypeString(value); return *this;}
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline UpdateProfileRequest& WithPartyTypeString(Aws::String&& value) { SetPartyTypeString(std::move(value)); return *this;}
+
+    /**
+     * <p>An alternative to <code>PartyType</code> which accepts any string as
+     * input.</p>
+     */
+    inline UpdateProfileRequest& WithPartyTypeString(const char* value) { SetPartyTypeString(value); return *this;}
+
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline const Aws::String& GetGenderString() const{ return m_genderString; }
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline bool GenderStringHasBeenSet() const { return m_genderStringHasBeenSet; }
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline void SetGenderString(const Aws::String& value) { m_genderStringHasBeenSet = true; m_genderString = value; }
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline void SetGenderString(Aws::String&& value) { m_genderStringHasBeenSet = true; m_genderString = std::move(value); }
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline void SetGenderString(const char* value) { m_genderStringHasBeenSet = true; m_genderString.assign(value); }
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline UpdateProfileRequest& WithGenderString(const Aws::String& value) { SetGenderString(value); return *this;}
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline UpdateProfileRequest& WithGenderString(Aws::String&& value) { SetGenderString(std::move(value)); return *this;}
+
+    /**
+     * <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
+     */
+    inline UpdateProfileRequest& WithGenderString(const char* value) { SetGenderString(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_additionalInformation;
-    bool m_additionalInformationHasBeenSet;
+    bool m_additionalInformationHasBeenSet = false;
 
     Aws::String m_accountNumber;
-    bool m_accountNumberHasBeenSet;
+    bool m_accountNumberHasBeenSet = false;
 
     PartyType m_partyType;
-    bool m_partyTypeHasBeenSet;
+    bool m_partyTypeHasBeenSet = false;
 
     Aws::String m_businessName;
-    bool m_businessNameHasBeenSet;
+    bool m_businessNameHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_middleName;
-    bool m_middleNameHasBeenSet;
+    bool m_middleNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_birthDate;
-    bool m_birthDateHasBeenSet;
+    bool m_birthDateHasBeenSet = false;
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_mobilePhoneNumber;
-    bool m_mobilePhoneNumberHasBeenSet;
+    bool m_mobilePhoneNumberHasBeenSet = false;
 
     Aws::String m_homePhoneNumber;
-    bool m_homePhoneNumberHasBeenSet;
+    bool m_homePhoneNumberHasBeenSet = false;
 
     Aws::String m_businessPhoneNumber;
-    bool m_businessPhoneNumberHasBeenSet;
+    bool m_businessPhoneNumberHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_personalEmailAddress;
-    bool m_personalEmailAddressHasBeenSet;
+    bool m_personalEmailAddressHasBeenSet = false;
 
     Aws::String m_businessEmailAddress;
-    bool m_businessEmailAddressHasBeenSet;
+    bool m_businessEmailAddressHasBeenSet = false;
 
     UpdateAddress m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     UpdateAddress m_shippingAddress;
-    bool m_shippingAddressHasBeenSet;
+    bool m_shippingAddressHasBeenSet = false;
 
     UpdateAddress m_mailingAddress;
-    bool m_mailingAddressHasBeenSet;
+    bool m_mailingAddressHasBeenSet = false;
 
     UpdateAddress m_billingAddress;
-    bool m_billingAddressHasBeenSet;
+    bool m_billingAddressHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
+
+    Aws::String m_partyTypeString;
+    bool m_partyTypeStringHasBeenSet = false;
+
+    Aws::String m_genderString;
+    bool m_genderStringHasBeenSet = false;
   };
 
 } // namespace Model

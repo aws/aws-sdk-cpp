@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPGATEWAY_API UpdateHypervisorRequest : public BackupGatewayRequest
+  class UpdateHypervisorRequest : public BackupGatewayRequest
   {
   public:
-    UpdateHypervisorRequest();
+    AWS_BACKUPGATEWAY_API UpdateHypervisorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateHypervisor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUPGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BACKUPGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -122,6 +122,55 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
      */
     inline UpdateHypervisorRequest& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline UpdateHypervisorRequest& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline UpdateHypervisorRequest& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the group of gateways within the requested
+     * log.</p>
+     */
+    inline UpdateHypervisorRequest& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
 
 
     /**
@@ -249,19 +298,22 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_hypervisorArn;
-    bool m_hypervisorArnHasBeenSet;
+    bool m_hypervisorArnHasBeenSet = false;
+
+    Aws::String m_logGroupArn;
+    bool m_logGroupArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

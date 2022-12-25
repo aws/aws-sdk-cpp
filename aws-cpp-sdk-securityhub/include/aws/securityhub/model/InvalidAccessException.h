@@ -24,19 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>There is an issue with the account used to make the request. Either Security
-   * Hub is not enabled for the account, or the account does not have permission to
-   * perform this action.</p><p><h3>See Also:</h3>   <a
+   * <p>The account doesn't have permission to perform this action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InvalidAccessException">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API InvalidAccessException
+  class InvalidAccessException
   {
   public:
-    InvalidAccessException();
-    InvalidAccessException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidAccessException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API InvalidAccessException();
+    AWS_SECURITYHUB_API InvalidAccessException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API InvalidAccessException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

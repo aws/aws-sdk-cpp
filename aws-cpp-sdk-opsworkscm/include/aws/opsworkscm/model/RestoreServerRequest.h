@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKSCM_API RestoreServerRequest : public OpsWorksCMRequest
+  class RestoreServerRequest : public OpsWorksCMRequest
   {
   public:
-    RestoreServerRequest();
+    AWS_OPSWORKSCM_API RestoreServerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreServer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKSCM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKSCM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyPair;
-    bool m_keyPairHasBeenSet;
+    bool m_keyPairHasBeenSet = false;
   };
 
 } // namespace Model

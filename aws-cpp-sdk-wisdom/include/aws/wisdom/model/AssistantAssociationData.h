@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/AssistantAssociationData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API AssistantAssociationData
+  class AssistantAssociationData
   {
   public:
-    AssistantAssociationData();
-    AssistantAssociationData(Aws::Utils::Json::JsonView jsonValue);
-    AssistantAssociationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationData();
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_assistantArn;
-    bool m_assistantArnHasBeenSet;
+    bool m_assistantArnHasBeenSet = false;
 
     Aws::String m_assistantAssociationArn;
-    bool m_assistantAssociationArnHasBeenSet;
+    bool m_assistantAssociationArnHasBeenSet = false;
 
     Aws::String m_assistantAssociationId;
-    bool m_assistantAssociationIdHasBeenSet;
+    bool m_assistantAssociationIdHasBeenSet = false;
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     AssistantAssociationOutputData m_associationData;
-    bool m_associationDataHasBeenSet;
+    bool m_associationDataHasBeenSet = false;
 
     AssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

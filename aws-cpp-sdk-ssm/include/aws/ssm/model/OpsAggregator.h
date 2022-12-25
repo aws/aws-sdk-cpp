@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsAggregator">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsAggregator
+  class OpsAggregator
   {
   public:
-    OpsAggregator();
-    OpsAggregator(Aws::Utils::Json::JsonView jsonValue);
-    OpsAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsAggregator();
+    AWS_SSM_API OpsAggregator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -324,22 +324,22 @@ namespace Model
   private:
 
     Aws::String m_aggregatorType;
-    bool m_aggregatorTypeHasBeenSet;
+    bool m_aggregatorTypeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<OpsFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<OpsAggregator> m_aggregators;
-    bool m_aggregatorsHasBeenSet;
+    bool m_aggregatorsHasBeenSet = false;
   };
 
 } // namespace Model

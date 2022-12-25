@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InputSerialization">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API InputSerialization
+  class InputSerialization
   {
   public:
-    InputSerialization();
-    InputSerialization(Aws::Utils::Json::JsonView jsonValue);
-    InputSerialization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API InputSerialization();
+    AWS_GLACIER_API InputSerialization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API InputSerialization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CSVInput m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

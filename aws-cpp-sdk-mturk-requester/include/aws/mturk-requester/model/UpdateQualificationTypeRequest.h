@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API UpdateQualificationTypeRequest : public MTurkRequest
+  class UpdateQualificationTypeRequest : public MTurkRequest
   {
   public:
-    UpdateQualificationTypeRequest();
+    AWS_MTURK_API UpdateQualificationTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateQualificationType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -416,31 +416,31 @@ namespace Model
   private:
 
     Aws::String m_qualificationTypeId;
-    bool m_qualificationTypeIdHasBeenSet;
+    bool m_qualificationTypeIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     QualificationTypeStatus m_qualificationTypeStatus;
-    bool m_qualificationTypeStatusHasBeenSet;
+    bool m_qualificationTypeStatusHasBeenSet = false;
 
     Aws::String m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     Aws::String m_answerKey;
-    bool m_answerKeyHasBeenSet;
+    bool m_answerKeyHasBeenSet = false;
 
     long long m_testDurationInSeconds;
-    bool m_testDurationInSecondsHasBeenSet;
+    bool m_testDurationInSecondsHasBeenSet = false;
 
     long long m_retryDelayInSeconds;
-    bool m_retryDelayInSecondsHasBeenSet;
+    bool m_retryDelayInSecondsHasBeenSet = false;
 
     bool m_autoGranted;
-    bool m_autoGrantedHasBeenSet;
+    bool m_autoGrantedHasBeenSet = false;
 
     int m_autoGrantedValue;
-    bool m_autoGrantedValueHasBeenSet;
+    bool m_autoGrantedValueHasBeenSet = false;
   };
 
 } // namespace Model

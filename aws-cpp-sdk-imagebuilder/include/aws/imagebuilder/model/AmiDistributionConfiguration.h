@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AmiDistributionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API AmiDistributionConfiguration
+  class AmiDistributionConfiguration
   {
   public:
-    AmiDistributionConfiguration();
-    AmiDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AmiDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration();
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,22 +323,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetAccountIds;
-    bool m_targetAccountIdsHasBeenSet;
+    bool m_targetAccountIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_amiTags;
-    bool m_amiTagsHasBeenSet;
+    bool m_amiTagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     LaunchPermissionConfiguration m_launchPermission;
-    bool m_launchPermissionHasBeenSet;
+    bool m_launchPermissionHasBeenSet = false;
   };
 
 } // namespace Model

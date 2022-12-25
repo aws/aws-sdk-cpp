@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCreditSpecificationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceCreditSpecificationRequest
+  class InstanceCreditSpecificationRequest
   {
   public:
-    InstanceCreditSpecificationRequest();
-    InstanceCreditSpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceCreditSpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCreditSpecificationRequest();
+    AWS_EC2_API InstanceCreditSpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCreditSpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,64 +82,64 @@ namespace Model
 
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
     inline InstanceCreditSpecificationRequest& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p> <p>T3 instances with
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p> <p>T3 instances with
      * <code>host</code> tenancy do not support the <code>unlimited</code> CPU credit
      * option.</p>
      */
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_cpuCredits;
-    bool m_cpuCreditsHasBeenSet;
+    bool m_cpuCreditsHasBeenSet = false;
   };
 
 } // namespace Model

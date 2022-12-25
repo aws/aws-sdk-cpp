@@ -30,7 +30,7 @@ ListPartnerEventSourcesResult& ListPartnerEventSourcesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PartnerEventSources"))
   {
-    Array<JsonView> partnerEventSourcesJsonList = jsonValue.GetArray("PartnerEventSources");
+    Aws::Utils::Array<JsonView> partnerEventSourcesJsonList = jsonValue.GetArray("PartnerEventSources");
     for(unsigned partnerEventSourcesIndex = 0; partnerEventSourcesIndex < partnerEventSourcesJsonList.GetLength(); ++partnerEventSourcesIndex)
     {
       m_partnerEventSources.push_back(partnerEventSourcesJsonList[partnerEventSourcesIndex].AsObject());

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingCustomizedLoadMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric
+  class PredictiveScalingCustomizedLoadMetric
   {
   public:
-    PredictiveScalingCustomizedLoadMetric();
-    PredictiveScalingCustomizedLoadMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredictiveScalingCustomizedLoadMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric();
+    AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingCustomizedLoadMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
-    bool m_metricDataQueriesHasBeenSet;
+    bool m_metricDataQueriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HttpEndpointRequestConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API HttpEndpointRequestConfiguration
+  class HttpEndpointRequestConfiguration
   {
   public:
-    HttpEndpointRequestConfiguration();
-    HttpEndpointRequestConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HttpEndpointRequestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API HttpEndpointRequestConfiguration();
+    AWS_FIREHOSE_API HttpEndpointRequestConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API HttpEndpointRequestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     ContentEncoding m_contentEncoding;
-    bool m_contentEncodingHasBeenSet;
+    bool m_contentEncodingHasBeenSet = false;
 
     Aws::Vector<HttpEndpointCommonAttribute> m_commonAttributes;
-    bool m_commonAttributesHasBeenSet;
+    bool m_commonAttributesHasBeenSet = false;
   };
 
 } // namespace Model

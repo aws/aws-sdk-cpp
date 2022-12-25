@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnGroup
+  class ColumnGroup
   {
   public:
-    ColumnGroup();
-    ColumnGroup(Aws::Utils::Json::JsonView jsonValue);
-    ColumnGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnGroup();
+    AWS_QUICKSIGHT_API ColumnGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     GeoSpatialColumnGroup m_geoSpatialColumnGroup;
-    bool m_geoSpatialColumnGroupHasBeenSet;
+    bool m_geoSpatialColumnGroupHasBeenSet = false;
   };
 
 } // namespace Model

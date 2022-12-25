@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API DestinationConfiguration
+  class DestinationConfiguration
   {
   public:
-    DestinationConfiguration();
-    DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API DestinationConfiguration();
+    AWS_IVS_API DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     S3DestinationConfiguration m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

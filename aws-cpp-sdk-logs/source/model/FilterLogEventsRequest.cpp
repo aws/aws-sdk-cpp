@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 FilterLogEventsRequest::FilterLogEventsRequest() : 
     m_logGroupNameHasBeenSet(false),
+    m_logGroupIdentifierHasBeenSet(false),
     m_logStreamNamesHasBeenSet(false),
     m_logStreamNamePrefixHasBeenSet(false),
     m_startTime(0),
@@ -23,7 +24,9 @@ FilterLogEventsRequest::FilterLogEventsRequest() :
     m_filterPatternHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_unmask(false),
+    m_unmaskHasBeenSet(false)
 {
 }
 
@@ -37,9 +40,15 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
 
   }
 
+  if(m_logGroupIdentifierHasBeenSet)
+  {
+   payload.WithString("logGroupIdentifier", m_logGroupIdentifier);
+
+  }
+
   if(m_logStreamNamesHasBeenSet)
   {
-   Array<JsonValue> logStreamNamesJsonList(m_logStreamNames.size());
+   Aws::Utils::Array<JsonValue> logStreamNamesJsonList(m_logStreamNames.size());
    for(unsigned logStreamNamesIndex = 0; logStreamNamesIndex < logStreamNamesJsonList.GetLength(); ++logStreamNamesIndex)
    {
      logStreamNamesJsonList[logStreamNamesIndex].AsString(m_logStreamNames[logStreamNamesIndex]);
@@ -81,6 +90,12 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
   if(m_limitHasBeenSet)
   {
    payload.WithInteger("limit", m_limit);
+
+  }
+
+  if(m_unmaskHasBeenSet)
+  {
+   payload.WithBool("unmask", m_unmask);
 
   }
 

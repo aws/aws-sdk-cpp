@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKeyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateApiKeyRequest : public APIGatewayRequest
+  class UpdateApiKeyRequest : public APIGatewayRequest
   {
   public:
-    UpdateApiKeyRequest();
+    AWS_APIGATEWAY_API UpdateApiKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApiKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API GetRecoveryPointRestoreMetadataRequest : public BackupRequest
+  class GetRecoveryPointRestoreMetadataRequest : public BackupRequest
   {
   public:
-    GetRecoveryPointRestoreMetadataRequest();
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRecoveryPointRestoreMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
   };
 
 } // namespace Model

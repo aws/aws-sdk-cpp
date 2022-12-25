@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/JobError">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API JobError
+  class JobError
   {
   public:
-    JobError();
-    JobError(Aws::Utils::Json::JsonView jsonValue);
-    JobError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API JobError();
+    AWS_ACCESSANALYZER_API JobError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API JobError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     JobErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

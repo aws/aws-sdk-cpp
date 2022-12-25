@@ -7,6 +7,7 @@
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutequipment/model/InferenceSchedulerStatus.h>
 #include <utility>
 
 namespace Aws
@@ -18,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API ListInferenceSchedulersRequest : public LookoutEquipmentRequest
+  class ListInferenceSchedulersRequest : public LookoutEquipmentRequest
   {
   public:
-    ListInferenceSchedulersRequest();
+    AWS_LOOKOUTEQUIPMENT_API ListInferenceSchedulersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListInferenceSchedulers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -185,19 +186,53 @@ namespace Model
      */
     inline ListInferenceSchedulersRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline const InferenceSchedulerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline void SetStatus(const InferenceSchedulerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline void SetStatus(InferenceSchedulerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline ListInferenceSchedulersRequest& WithStatus(const InferenceSchedulerStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline ListInferenceSchedulersRequest& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerNameBeginsWith;
-    bool m_inferenceSchedulerNameBeginsWithHasBeenSet;
+    bool m_inferenceSchedulerNameBeginsWithHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
+
+    InferenceSchedulerStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

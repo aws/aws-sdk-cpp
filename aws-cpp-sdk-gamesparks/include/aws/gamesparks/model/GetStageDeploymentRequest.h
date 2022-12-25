@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMESPARKS_API GetStageDeploymentRequest : public GameSparksRequest
+  class GetStageDeploymentRequest : public GameSparksRequest
   {
   public:
-    GetStageDeploymentRequest();
+    AWS_GAMESPARKS_API GetStageDeploymentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetStageDeployment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMESPARKS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GAMESPARKS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

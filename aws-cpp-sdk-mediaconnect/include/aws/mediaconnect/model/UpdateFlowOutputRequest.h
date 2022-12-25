@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutputRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API UpdateFlowOutputRequest : public MediaConnectRequest
+  class UpdateFlowOutputRequest : public MediaConnectRequest
   {
   public:
-    UpdateFlowOutputRequest();
+    AWS_MEDIACONNECT_API UpdateFlowOutputRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFlowOutput"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -694,55 +694,55 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
-    bool m_cidrAllowListHasBeenSet;
+    bool m_cidrAllowListHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     UpdateEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     int m_maxLatency;
-    bool m_maxLatencyHasBeenSet;
+    bool m_maxLatencyHasBeenSet = false;
 
     Aws::Vector<MediaStreamOutputConfigurationRequest> m_mediaStreamOutputConfigurations;
-    bool m_mediaStreamOutputConfigurationsHasBeenSet;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet = false;
 
     int m_minLatency;
-    bool m_minLatencyHasBeenSet;
+    bool m_minLatencyHasBeenSet = false;
 
     Aws::String m_outputArn;
-    bool m_outputArnHasBeenSet;
+    bool m_outputArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_remoteId;
-    bool m_remoteIdHasBeenSet;
+    bool m_remoteIdHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     Aws::String m_senderIpAddress;
-    bool m_senderIpAddressHasBeenSet;
+    bool m_senderIpAddressHasBeenSet = false;
 
     int m_smoothingLatency;
-    bool m_smoothingLatencyHasBeenSet;
+    bool m_smoothingLatencyHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     VpcInterfaceAttachment m_vpcInterfaceAttachment;
-    bool m_vpcInterfaceAttachmentHasBeenSet;
+    bool m_vpcInterfaceAttachmentHasBeenSet = false;
   };
 
 } // namespace Model

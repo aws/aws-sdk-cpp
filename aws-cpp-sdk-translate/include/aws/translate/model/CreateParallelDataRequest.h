@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/translate/model/ParallelDataConfig.h>
 #include <aws/translate/model/EncryptionKey.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/translate/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -21,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSLATE_API CreateParallelDataRequest : public TranslateRequest
+  class CreateParallelDataRequest : public TranslateRequest
   {
   public:
-    CreateParallelDataRequest();
+    AWS_TRANSLATE_API CreateParallelDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateParallelData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSLATE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSLATE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -225,22 +227,98 @@ namespace Model
      */
     inline CreateParallelDataRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline CreateParallelDataRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline CreateParallelDataRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline CreateParallelDataRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags to be associated with this resource. A tag is a key-value pair that adds
+     * metadata to a resource. Each tag key for the resource must be unique. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+     * your resources</a>.</p>
+     */
+    inline CreateParallelDataRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParallelDataConfig m_parallelDataConfig;
-    bool m_parallelDataConfigHasBeenSet;
+    bool m_parallelDataConfigHasBeenSet = false;
 
     EncryptionKey m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

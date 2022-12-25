@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScheduleFrequency">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobScheduleFrequency
+  class JobScheduleFrequency
   {
   public:
-    JobScheduleFrequency();
-    JobScheduleFrequency(Aws::Utils::Json::JsonView jsonValue);
-    JobScheduleFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobScheduleFrequency();
+    AWS_MACIE2_API JobScheduleFrequency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobScheduleFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     DailySchedule m_dailySchedule;
-    bool m_dailyScheduleHasBeenSet;
+    bool m_dailyScheduleHasBeenSet = false;
 
     MonthlySchedule m_monthlySchedule;
-    bool m_monthlyScheduleHasBeenSet;
+    bool m_monthlyScheduleHasBeenSet = false;
 
     WeeklySchedule m_weeklySchedule;
-    bool m_weeklyScheduleHasBeenSet;
+    bool m_weeklyScheduleHasBeenSet = false;
   };
 
 } // namespace Model

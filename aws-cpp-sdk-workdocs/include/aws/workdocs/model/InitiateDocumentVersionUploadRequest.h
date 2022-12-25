@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKDOCS_API InitiateDocumentVersionUploadRequest : public WorkDocsRequest
+  class InitiateDocumentVersionUploadRequest : public WorkDocsRequest
   {
   public:
-    InitiateDocumentVersionUploadRequest();
+    AWS_WORKDOCS_API InitiateDocumentVersionUploadRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InitiateDocumentVersionUpload"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKDOCS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKDOCS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_contentCreatedTimestamp;
-    bool m_contentCreatedTimestampHasBeenSet;
+    bool m_contentCreatedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_contentModifiedTimestamp;
-    bool m_contentModifiedTimestampHasBeenSet;
+    bool m_contentModifiedTimestampHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     long long m_documentSizeInBytes;
-    bool m_documentSizeInBytesHasBeenSet;
+    bool m_documentSizeInBytesHasBeenSet = false;
 
     Aws::String m_parentFolderId;
-    bool m_parentFolderIdHasBeenSet;
+    bool m_parentFolderIdHasBeenSet = false;
   };
 
 } // namespace Model

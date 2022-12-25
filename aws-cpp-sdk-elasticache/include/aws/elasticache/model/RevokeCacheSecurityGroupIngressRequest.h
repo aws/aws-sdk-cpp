@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngressMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressRequest : public ElastiCacheRequest
+  class RevokeCacheSecurityGroupIngressRequest : public ElastiCacheRequest
   {
   public:
-    RevokeCacheSecurityGroupIngressRequest();
+    AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeCacheSecurityGroupIngress"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_cacheSecurityGroupName;
-    bool m_cacheSecurityGroupNameHasBeenSet;
+    bool m_cacheSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupName;
-    bool m_eC2SecurityGroupNameHasBeenSet;
+    bool m_eC2SecurityGroupNameHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupOwnerId;
-    bool m_eC2SecurityGroupOwnerIdHasBeenSet;
+    bool m_eC2SecurityGroupOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

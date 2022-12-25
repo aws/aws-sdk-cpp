@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FrameCaptureOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FrameCaptureOutputSettings
+  class FrameCaptureOutputSettings
   {
   public:
-    FrameCaptureOutputSettings();
-    FrameCaptureOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FrameCaptureOutputSettings();
+    AWS_MEDIALIVE_API FrameCaptureOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FrameCaptureOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
   };
 
 } // namespace Model

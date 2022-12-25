@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API CreateServiceRequest : public ProtonRequest
+  class CreateServiceRequest : public ProtonRequest
   {
   public:
-    CreateServiceRequest();
+    AWS_PROTON_API CreateServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -178,11 +178,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline const Aws::String& GetRepositoryConnectionArn() const{ return m_repositoryConnectionArn; }
@@ -190,11 +188,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline bool RepositoryConnectionArnHasBeenSet() const { return m_repositoryConnectionArnHasBeenSet; }
@@ -202,11 +198,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const Aws::String& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = value; }
@@ -214,11 +208,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(Aws::String&& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = std::move(value); }
@@ -226,11 +218,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline void SetRepositoryConnectionArn(const char* value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn.assign(value); }
@@ -238,11 +228,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const Aws::String& value) { SetRepositoryConnectionArn(value); return *this;}
@@ -250,11 +238,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(Aws::String&& value) { SetRepositoryConnectionArn(std::move(value)); return *this;}
@@ -262,11 +248,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this
-     * parameter if your service template <i>doesn't</i> include a service
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>. <i>Don't</i>
+     * include this parameter if your service template <i>doesn't</i> include a service
      * pipeline.</p>
      */
     inline CreateServiceRequest& WithRepositoryConnectionArn(const char* value) { SetRepositoryConnectionArn(value); return *this;}
@@ -326,9 +310,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetSpec() const{ return m_spec; }
@@ -338,9 +320,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
@@ -350,9 +330,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const Aws::String& value) { m_specHasBeenSet = true; m_spec = value; }
@@ -362,9 +340,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(Aws::String&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
@@ -374,9 +350,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetSpec(const char* value) { m_specHasBeenSet = true; m_spec.assign(value); }
@@ -386,9 +360,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(const Aws::String& value) { SetSpec(value); return *this;}
@@ -398,9 +370,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(Aws::String&& value) { SetSpec(std::move(value)); return *this;}
@@ -410,9 +380,7 @@ namespace Model
      * bundle schema file. The spec file is in YAML format. <i>Don’t</i> include
      * pipeline inputs in the spec if your service template <i>doesn’t</i> include a
      * service pipeline. For more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create
-     * a service</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-create-svc.html">Create
      * a service</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithSpec(const char* value) { SetSpec(value); return *this;}
@@ -420,89 +388,65 @@ namespace Model
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>An optional list of metadata items that you can associate with the Proton
-     * service. A tag is a key-value pair.</p> <p>For more information, see <i>Proton
-     * resources and tagging</i> in the <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * Administrator Guide</a> or <a
+     * service. A tag is a key-value pair.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-     * User Guide</a>.</p>
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -648,34 +592,34 @@ namespace Model
   private:
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_repositoryConnectionArn;
-    bool m_repositoryConnectionArnHasBeenSet;
+    bool m_repositoryConnectionArnHasBeenSet = false;
 
     Aws::String m_repositoryId;
-    bool m_repositoryIdHasBeenSet;
+    bool m_repositoryIdHasBeenSet = false;
 
     Aws::String m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateMajorVersion;
-    bool m_templateMajorVersionHasBeenSet;
+    bool m_templateMajorVersionHasBeenSet = false;
 
     Aws::String m_templateMinorVersion;
-    bool m_templateMinorVersionHasBeenSet;
+    bool m_templateMinorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

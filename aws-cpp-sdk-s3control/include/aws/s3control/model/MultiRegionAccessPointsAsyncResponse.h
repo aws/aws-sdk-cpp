@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MultiRegionAccessPointsAsyncResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse
+  class MultiRegionAccessPointsAsyncResponse
   {
   public:
-    MultiRegionAccessPointsAsyncResponse();
-    MultiRegionAccessPointsAsyncResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MultiRegionAccessPointsAsyncResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse();
+    AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointsAsyncResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<MultiRegionAccessPointRegionalResponse> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

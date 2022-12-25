@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API ListPlaybackKeyPairsRequest : public IVSRequest
+  class ListPlaybackKeyPairsRequest : public IVSRequest
   {
   public:
-    ListPlaybackKeyPairsRequest();
+    AWS_IVS_API ListPlaybackKeyPairsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,81 +29,89 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPlaybackKeyPairs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field. Default: 50.</p>
+     * <p>Maximum number of key pairs to return. Default: your service quota or 100,
+     * whichever is smaller.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field. Default: 50.</p>
+     * <p>Maximum number of key pairs to return. Default: your service quota or 100,
+     * whichever is smaller.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field. Default: 50.</p>
+     * <p>Maximum number of key pairs to return. Default: your service quota or 100,
+     * whichever is smaller.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field. Default: 50.</p>
+     * <p>Maximum number of key pairs to return. Default: your service quota or 100,
+     * whichever is smaller.</p>
      */
     inline ListPlaybackKeyPairsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline ListPlaybackKeyPairsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline ListPlaybackKeyPairsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Maximum number of key pairs to return.</p>
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field.</p>
      */
     inline ListPlaybackKeyPairsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

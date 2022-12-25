@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequestSourceReferenceUpdatedEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequestSourceReferenceUpdatedEventMetadata
+  class PullRequestSourceReferenceUpdatedEventMetadata
   {
   public:
-    PullRequestSourceReferenceUpdatedEventMetadata();
-    PullRequestSourceReferenceUpdatedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PullRequestSourceReferenceUpdatedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequestSourceReferenceUpdatedEventMetadata();
+    AWS_CODECOMMIT_API PullRequestSourceReferenceUpdatedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequestSourceReferenceUpdatedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitId;
-    bool m_beforeCommitIdHasBeenSet;
+    bool m_beforeCommitIdHasBeenSet = false;
 
     Aws::String m_afterCommitId;
-    bool m_afterCommitIdHasBeenSet;
+    bool m_afterCommitIdHasBeenSet = false;
 
     Aws::String m_mergeBase;
-    bool m_mergeBaseHasBeenSet;
+    bool m_mergeBaseHasBeenSet = false;
   };
 
 } // namespace Model

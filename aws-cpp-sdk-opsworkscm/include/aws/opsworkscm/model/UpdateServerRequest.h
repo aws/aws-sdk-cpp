@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKSCM_API UpdateServerRequest : public OpsWorksCMRequest
+  class UpdateServerRequest : public OpsWorksCMRequest
   {
   public:
-    UpdateServerRequest();
+    AWS_OPSWORKSCM_API UpdateServerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateServer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKSCM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKSCM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -173,19 +173,19 @@ namespace Model
   private:
 
     bool m_disableAutomatedBackup;
-    bool m_disableAutomatedBackupHasBeenSet;
+    bool m_disableAutomatedBackupHasBeenSet = false;
 
     int m_backupRetentionCount;
-    bool m_backupRetentionCountHasBeenSet;
+    bool m_backupRetentionCountHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
   };
 
 } // namespace Model

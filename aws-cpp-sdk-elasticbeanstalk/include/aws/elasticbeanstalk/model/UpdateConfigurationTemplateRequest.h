@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplateMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API UpdateConfigurationTemplateRequest : public ElasticBeanstalkRequest
+  class UpdateConfigurationTemplateRequest : public ElasticBeanstalkRequest
   {
   public:
-    UpdateConfigurationTemplateRequest();
+    AWS_ELASTICBEANSTALK_API UpdateConfigurationTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConfigurationTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICBEANSTALK_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICBEANSTALK_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -314,19 +314,19 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-    bool m_optionSettingsHasBeenSet;
+    bool m_optionSettingsHasBeenSet = false;
 
     Aws::Vector<OptionSpecification> m_optionsToRemove;
-    bool m_optionsToRemoveHasBeenSet;
+    bool m_optionsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

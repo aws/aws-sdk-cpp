@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridSessionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridSessionAction
+  class TestGridSessionAction
   {
   public:
-    TestGridSessionAction();
-    TestGridSessionAction(Aws::Utils::Json::JsonView jsonValue);
-    TestGridSessionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridSessionAction();
+    AWS_DEVICEFARM_API TestGridSessionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridSessionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_requestMethod;
-    bool m_requestMethodHasBeenSet;
+    bool m_requestMethodHasBeenSet = false;
   };
 
 } // namespace Model

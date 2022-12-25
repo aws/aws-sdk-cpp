@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingOutput
+  class ProcessingOutput
   {
   public:
-    ProcessingOutput();
-    ProcessingOutput(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingOutput();
+    AWS_SAGEMAKER_API ProcessingOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_outputName;
-    bool m_outputNameHasBeenSet;
+    bool m_outputNameHasBeenSet = false;
 
     ProcessingS3Output m_s3Output;
-    bool m_s3OutputHasBeenSet;
+    bool m_s3OutputHasBeenSet = false;
 
     ProcessingFeatureStoreOutput m_featureStoreOutput;
-    bool m_featureStoreOutputHasBeenSet;
+    bool m_featureStoreOutputHasBeenSet = false;
 
     bool m_appManaged;
-    bool m_appManagedHasBeenSet;
+    bool m_appManagedHasBeenSet = false;
   };
 
 } // namespace Model

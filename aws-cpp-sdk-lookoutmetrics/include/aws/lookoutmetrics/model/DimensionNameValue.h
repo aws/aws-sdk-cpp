@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DimensionNameValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DimensionNameValue
+  class DimensionNameValue
   {
   public:
-    DimensionNameValue();
-    DimensionNameValue(Aws::Utils::Json::JsonView jsonValue);
-    DimensionNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DimensionNameValue();
+    AWS_LOOKOUTMETRICS_API DimensionNameValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DimensionNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     Aws::String m_dimensionValue;
-    bool m_dimensionValueHasBeenSet;
+    bool m_dimensionValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/SageMakerPipelineParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API SageMakerPipelineParameters
+  class SageMakerPipelineParameters
   {
   public:
-    SageMakerPipelineParameters();
-    SageMakerPipelineParameters(Aws::Utils::Json::JsonView jsonValue);
-    SageMakerPipelineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API SageMakerPipelineParameters();
+    AWS_EVENTBRIDGE_API SageMakerPipelineParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API SageMakerPipelineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<SageMakerPipelineParameter> m_pipelineParameterList;
-    bool m_pipelineParameterListHasBeenSet;
+    bool m_pipelineParameterListHasBeenSet = false;
   };
 
 } // namespace Model

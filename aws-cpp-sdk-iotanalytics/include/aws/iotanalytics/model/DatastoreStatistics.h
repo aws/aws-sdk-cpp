@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatastoreStatistics
+  class DatastoreStatistics
   {
   public:
-    DatastoreStatistics();
-    DatastoreStatistics(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatastoreStatistics();
+    AWS_IOTANALYTICS_API DatastoreStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatastoreStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EstimatedResourceSize m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetSpotMaintenanceStrategiesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FleetSpotMaintenanceStrategiesRequest
+  class FleetSpotMaintenanceStrategiesRequest
   {
   public:
-    FleetSpotMaintenanceStrategiesRequest();
-    FleetSpotMaintenanceStrategiesRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FleetSpotMaintenanceStrategiesRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetSpotMaintenanceStrategiesRequest();
+    AWS_EC2_API FleetSpotMaintenanceStrategiesRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetSpotMaintenanceStrategiesRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     FleetSpotCapacityRebalanceRequest m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
   };
 
 } // namespace Model

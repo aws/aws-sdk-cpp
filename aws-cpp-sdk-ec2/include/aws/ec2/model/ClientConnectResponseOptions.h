@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientConnectResponseOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClientConnectResponseOptions
+  class ClientConnectResponseOptions
   {
   public:
-    ClientConnectResponseOptions();
-    ClientConnectResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientConnectResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientConnectResponseOptions();
+    AWS_EC2_API ClientConnectResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientConnectResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
 
     ClientVpnEndpointAttributeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

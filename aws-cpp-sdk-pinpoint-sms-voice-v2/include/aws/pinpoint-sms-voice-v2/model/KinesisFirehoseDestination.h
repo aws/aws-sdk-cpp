@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/KinesisFirehoseDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API KinesisFirehoseDestination
+  class KinesisFirehoseDestination
   {
   public:
-    KinesisFirehoseDestination();
-    KinesisFirehoseDestination(Aws::Utils::Json::JsonView jsonValue);
-    KinesisFirehoseDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API KinesisFirehoseDestination();
+    AWS_PINPOINTSMSVOICEV2_API KinesisFirehoseDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API KinesisFirehoseDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_deliveryStreamArn;
-    bool m_deliveryStreamArnHasBeenSet;
+    bool m_deliveryStreamArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResourceErrorsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ResourceErrorsDetails
+  class ResourceErrorsDetails
   {
   public:
-    ResourceErrorsDetails();
-    ResourceErrorsDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceErrorsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ResourceErrorsDetails();
+    AWS_RESILIENCEHUB_API ResourceErrorsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ResourceErrorsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_hasMoreErrors;
-    bool m_hasMoreErrorsHasBeenSet;
+    bool m_hasMoreErrorsHasBeenSet = false;
 
     Aws::Vector<ResourceError> m_resourceErrors;
-    bool m_resourceErrorsHasBeenSet;
+    bool m_resourceErrorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API GetRandomPasswordRequest : public SecretsManagerRequest
+  class GetRandomPasswordRequest : public SecretsManagerRequest
   {
   public:
-    GetRandomPasswordRequest();
+    AWS_SECRETSMANAGER_API GetRandomPasswordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRandomPassword"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -264,28 +264,28 @@ namespace Model
   private:
 
     long long m_passwordLength;
-    bool m_passwordLengthHasBeenSet;
+    bool m_passwordLengthHasBeenSet = false;
 
     Aws::String m_excludeCharacters;
-    bool m_excludeCharactersHasBeenSet;
+    bool m_excludeCharactersHasBeenSet = false;
 
     bool m_excludeNumbers;
-    bool m_excludeNumbersHasBeenSet;
+    bool m_excludeNumbersHasBeenSet = false;
 
     bool m_excludePunctuation;
-    bool m_excludePunctuationHasBeenSet;
+    bool m_excludePunctuationHasBeenSet = false;
 
     bool m_excludeUppercase;
-    bool m_excludeUppercaseHasBeenSet;
+    bool m_excludeUppercaseHasBeenSet = false;
 
     bool m_excludeLowercase;
-    bool m_excludeLowercaseHasBeenSet;
+    bool m_excludeLowercaseHasBeenSet = false;
 
     bool m_includeSpace;
-    bool m_includeSpaceHasBeenSet;
+    bool m_includeSpaceHasBeenSet = false;
 
     bool m_requireEachIncludedType;
-    bool m_requireEachIncludedTypeHasBeenSet;
+    bool m_requireEachIncludedTypeHasBeenSet = false;
   };
 
 } // namespace Model

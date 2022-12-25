@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API CreateRoomRequest : public AlexaForBusinessRequest
+  class CreateRoomRequest : public AlexaForBusinessRequest
   {
   public:
-    CreateRoomRequest();
+    AWS_ALEXAFORBUSINESS_API CreateRoomRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoom"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_roomName;
-    bool m_roomNameHasBeenSet;
+    bool m_roomNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_providerCalendarId;
-    bool m_providerCalendarIdHasBeenSet;
+    bool m_providerCalendarIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

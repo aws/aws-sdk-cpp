@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ColumnStatisticsData
+  class ColumnStatisticsData
   {
   public:
-    ColumnStatisticsData();
-    ColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    ColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ColumnStatisticsData();
+    AWS_GLUE_API ColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,28 +296,28 @@ namespace Model
   private:
 
     ColumnStatisticsType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     BooleanColumnStatisticsData m_booleanColumnStatisticsData;
-    bool m_booleanColumnStatisticsDataHasBeenSet;
+    bool m_booleanColumnStatisticsDataHasBeenSet = false;
 
     DateColumnStatisticsData m_dateColumnStatisticsData;
-    bool m_dateColumnStatisticsDataHasBeenSet;
+    bool m_dateColumnStatisticsDataHasBeenSet = false;
 
     DecimalColumnStatisticsData m_decimalColumnStatisticsData;
-    bool m_decimalColumnStatisticsDataHasBeenSet;
+    bool m_decimalColumnStatisticsDataHasBeenSet = false;
 
     DoubleColumnStatisticsData m_doubleColumnStatisticsData;
-    bool m_doubleColumnStatisticsDataHasBeenSet;
+    bool m_doubleColumnStatisticsDataHasBeenSet = false;
 
     LongColumnStatisticsData m_longColumnStatisticsData;
-    bool m_longColumnStatisticsDataHasBeenSet;
+    bool m_longColumnStatisticsDataHasBeenSet = false;
 
     StringColumnStatisticsData m_stringColumnStatisticsData;
-    bool m_stringColumnStatisticsDataHasBeenSet;
+    bool m_stringColumnStatisticsDataHasBeenSet = false;
 
     BinaryColumnStatisticsData m_binaryColumnStatisticsData;
-    bool m_binaryColumnStatisticsDataHasBeenSet;
+    bool m_binaryColumnStatisticsDataHasBeenSet = false;
   };
 
 } // namespace Model

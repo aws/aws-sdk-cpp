@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/SSESpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API SSESpecification
+  class SSESpecification
   {
   public:
-    SSESpecification();
-    SSESpecification(Aws::Utils::Json::JsonView jsonValue);
-    SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API SSESpecification();
+    AWS_DAX_API SSESpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

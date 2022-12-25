@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompromisedCredentialsActionsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType
+  class CompromisedCredentialsActionsType
   {
   public:
-    CompromisedCredentialsActionsType();
-    CompromisedCredentialsActionsType(Aws::Utils::Json::JsonView jsonValue);
-    CompromisedCredentialsActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType();
+    AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API CompromisedCredentialsActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CompromisedCredentialsEventActionType m_eventAction;
-    bool m_eventActionHasBeenSet;
+    bool m_eventActionHasBeenSet = false;
   };
 
 } // namespace Model

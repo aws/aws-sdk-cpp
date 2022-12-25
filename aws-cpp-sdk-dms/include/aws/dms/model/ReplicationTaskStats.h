@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskStats">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskStats
+  class ReplicationTaskStats
   {
   public:
-    ReplicationTaskStats();
-    ReplicationTaskStats(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationTaskStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskStats();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -340,37 +340,37 @@ namespace Model
   private:
 
     int m_fullLoadProgressPercent;
-    bool m_fullLoadProgressPercentHasBeenSet;
+    bool m_fullLoadProgressPercentHasBeenSet = false;
 
     long long m_elapsedTimeMillis;
-    bool m_elapsedTimeMillisHasBeenSet;
+    bool m_elapsedTimeMillisHasBeenSet = false;
 
     int m_tablesLoaded;
-    bool m_tablesLoadedHasBeenSet;
+    bool m_tablesLoadedHasBeenSet = false;
 
     int m_tablesLoading;
-    bool m_tablesLoadingHasBeenSet;
+    bool m_tablesLoadingHasBeenSet = false;
 
     int m_tablesQueued;
-    bool m_tablesQueuedHasBeenSet;
+    bool m_tablesQueuedHasBeenSet = false;
 
     int m_tablesErrored;
-    bool m_tablesErroredHasBeenSet;
+    bool m_tablesErroredHasBeenSet = false;
 
     Aws::Utils::DateTime m_freshStartDate;
-    bool m_freshStartDateHasBeenSet;
+    bool m_freshStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopDate;
-    bool m_stopDateHasBeenSet;
+    bool m_stopDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadStartDate;
-    bool m_fullLoadStartDateHasBeenSet;
+    bool m_fullLoadStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadFinishDate;
-    bool m_fullLoadFinishDateHasBeenSet;
+    bool m_fullLoadFinishDateHasBeenSet = false;
   };
 
 } // namespace Model

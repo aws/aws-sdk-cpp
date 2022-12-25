@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SchemaExtensionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SchemaExtensionInfo
+  class SchemaExtensionInfo
   {
   public:
-    SchemaExtensionInfo();
-    SchemaExtensionInfo(Aws::Utils::Json::JsonView jsonValue);
-    SchemaExtensionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo();
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,25 +304,25 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_schemaExtensionId;
-    bool m_schemaExtensionIdHasBeenSet;
+    bool m_schemaExtensionIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SchemaExtensionStatus m_schemaExtensionStatus;
-    bool m_schemaExtensionStatusHasBeenSet;
+    bool m_schemaExtensionStatusHasBeenSet = false;
 
     Aws::String m_schemaExtensionStatusReason;
-    bool m_schemaExtensionStatusReasonHasBeenSet;
+    bool m_schemaExtensionStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

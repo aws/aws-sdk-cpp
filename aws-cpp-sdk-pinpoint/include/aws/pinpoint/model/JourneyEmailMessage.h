@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyEmailMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyEmailMessage
+  class JourneyEmailMessage
   {
   public:
-    JourneyEmailMessage();
-    JourneyEmailMessage(Aws::Utils::Json::JsonView jsonValue);
-    JourneyEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyEmailMessage();
+    AWS_PINPOINT_API JourneyEmailMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/TimeoutConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSECURETUNNELING_API TimeoutConfig
+  class TimeoutConfig
   {
   public:
-    TimeoutConfig();
-    TimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
-    TimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSECURETUNNELING_API TimeoutConfig();
+    AWS_IOTSECURETUNNELING_API TimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API TimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_maxLifetimeTimeoutMinutes;
-    bool m_maxLifetimeTimeoutMinutesHasBeenSet;
+    bool m_maxLifetimeTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

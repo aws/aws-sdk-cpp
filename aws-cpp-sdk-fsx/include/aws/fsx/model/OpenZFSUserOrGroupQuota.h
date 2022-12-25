@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSUserOrGroupQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSUserOrGroupQuota
+  class OpenZFSUserOrGroupQuota
   {
   public:
-    OpenZFSUserOrGroupQuota();
-    OpenZFSUserOrGroupQuota(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSUserOrGroupQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSUserOrGroupQuota();
+    AWS_FSX_API OpenZFSUserOrGroupQuota(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSUserOrGroupQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,13 +113,13 @@ namespace Model
   private:
 
     OpenZFSQuotaType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_storageCapacityQuotaGiB;
-    bool m_storageCapacityQuotaGiBHasBeenSet;
+    bool m_storageCapacityQuotaGiBHasBeenSet = false;
   };
 
 } // namespace Model

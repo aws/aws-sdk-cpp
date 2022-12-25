@@ -7,6 +7,8 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/RunningMode.h>
 #include <aws/workspaces/model/Compute.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -29,54 +31,78 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceProperties
+  class WorkspaceProperties
   {
   public:
-    WorkspaceProperties();
-    WorkspaceProperties(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceProperties();
+    AWS_WORKSPACES_API WorkspaceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
 
     /**
      * <p>The running mode. For more information, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
-     * the WorkSpace Running Mode</a>.</p>
+     * the WorkSpace Running Mode</a>.</p>  <p>The <code>MANUAL</code> value is
+     * only supported by Amazon WorkSpaces Core. Contact your account team to be
+     * allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
 
@@ -214,22 +240,122 @@ namespace Model
      */
     inline WorkspaceProperties& WithComputeTypeName(Compute&& value) { SetComputeTypeName(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
+
+    /**
+     * <p>The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
+     * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
+     * <code>Protocols</code> property is case sensitive. Ensure you use
+     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
+     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
+     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     */
+    inline WorkspaceProperties& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+
   private:
 
     RunningMode m_runningMode;
-    bool m_runningModeHasBeenSet;
+    bool m_runningModeHasBeenSet = false;
 
     int m_runningModeAutoStopTimeoutInMinutes;
-    bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet;
+    bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
 
     int m_rootVolumeSizeGib;
-    bool m_rootVolumeSizeGibHasBeenSet;
+    bool m_rootVolumeSizeGibHasBeenSet = false;
 
     int m_userVolumeSizeGib;
-    bool m_userVolumeSizeGibHasBeenSet;
+    bool m_userVolumeSizeGibHasBeenSet = false;
 
     Compute m_computeTypeName;
-    bool m_computeTypeNameHasBeenSet;
+    bool m_computeTypeNameHasBeenSet = false;
+
+    Aws::Vector<Protocol> m_protocols;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

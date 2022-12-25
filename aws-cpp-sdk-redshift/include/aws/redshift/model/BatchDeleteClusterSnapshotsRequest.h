@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API BatchDeleteClusterSnapshotsRequest : public RedshiftRequest
+  class BatchDeleteClusterSnapshotsRequest : public RedshiftRequest
   {
   public:
-    BatchDeleteClusterSnapshotsRequest();
+    AWS_REDSHIFT_API BatchDeleteClusterSnapshotsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchDeleteClusterSnapshots"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::Vector<DeleteClusterSnapshotMessage> m_identifiers;
-    bool m_identifiersHasBeenSet;
+    bool m_identifiersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,8 @@ namespace Model
     InvalidTypeConfiguration,
     HandlerInternalFailure,
     NonCompliant,
-    Unknown
+    Unknown,
+    UnsupportedTarget
   };
 
 namespace HandlerErrorCodeMapper

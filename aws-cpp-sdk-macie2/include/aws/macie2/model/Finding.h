@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Finding">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API Finding
+  class Finding
   {
   public:
-    Finding();
-    Finding(Aws::Utils::Json::JsonView jsonValue);
-    Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Finding();
+    AWS_MACIE2_API Finding(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,66 +190,62 @@ namespace Model
 
     /**
      * <p>The total number of occurrences of the finding. For sensitive data findings,
-     * this value is always 1. All sensitive data findings are considered new (unique)
-     * because they derive from individual classification jobs.</p>
+     * this value is always 1. All sensitive data findings are considered unique.</p>
      */
     inline long long GetCount() const{ return m_count; }
 
     /**
      * <p>The total number of occurrences of the finding. For sensitive data findings,
-     * this value is always 1. All sensitive data findings are considered new (unique)
-     * because they derive from individual classification jobs.</p>
+     * this value is always 1. All sensitive data findings are considered unique.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The total number of occurrences of the finding. For sensitive data findings,
-     * this value is always 1. All sensitive data findings are considered new (unique)
-     * because they derive from individual classification jobs.</p>
+     * this value is always 1. All sensitive data findings are considered unique.</p>
      */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
      * <p>The total number of occurrences of the finding. For sensitive data findings,
-     * this value is always 1. All sensitive data findings are considered new (unique)
-     * because they derive from individual classification jobs.</p>
+     * this value is always 1. All sensitive data findings are considered unique.</p>
      */
     inline Finding& WithCount(long long value) { SetCount(value); return *this;}
 
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline Finding& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * created.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * created the finding.</p>
      */
     inline Finding& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -684,108 +680,108 @@ namespace Model
 
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline Finding& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The date and time, in UTC and extended ISO 8601 format, when the finding was
-     * last updated. For sensitive data findings, this value is the same as the value
-     * for the createdAt property. All sensitive data findings are considered new
-     * (unique) because they derive from individual classification jobs.</p>
+     * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
+     * last updated the finding. For sensitive data findings, this value is the same as
+     * the value for the createdAt property. All sensitive data findings are considered
+     * new.</p>
      */
     inline Finding& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_archived;
-    bool m_archivedHasBeenSet;
+    bool m_archivedHasBeenSet = false;
 
     FindingCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     ClassificationDetails m_classificationDetails;
-    bool m_classificationDetailsHasBeenSet;
+    bool m_classificationDetailsHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     PolicyDetails m_policyDetails;
-    bool m_policyDetailsHasBeenSet;
+    bool m_policyDetailsHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     ResourcesAffected m_resourcesAffected;
-    bool m_resourcesAffectedHasBeenSet;
+    bool m_resourcesAffectedHasBeenSet = false;
 
     bool m_sample;
-    bool m_sampleHasBeenSet;
+    bool m_sampleHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Severity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     FindingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

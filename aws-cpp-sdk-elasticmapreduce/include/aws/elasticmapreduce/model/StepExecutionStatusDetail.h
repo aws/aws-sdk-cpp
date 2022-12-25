@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepExecutionStatusDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API StepExecutionStatusDetail
+  class StepExecutionStatusDetail
   {
   public:
-    StepExecutionStatusDetail();
-    StepExecutionStatusDetail(Aws::Utils::Json::JsonView jsonValue);
-    StepExecutionStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API StepExecutionStatusDetail();
+    AWS_EMR_API StepExecutionStatusDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API StepExecutionStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,19 +206,19 @@ namespace Model
   private:
 
     StepExecutionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDateTime;
-    bool m_endDateTimeHasBeenSet;
+    bool m_endDateTimeHasBeenSet = false;
 
     Aws::String m_lastStateChangeReason;
-    bool m_lastStateChangeReasonHasBeenSet;
+    bool m_lastStateChangeReasonHasBeenSet = false;
   };
 
 } // namespace Model

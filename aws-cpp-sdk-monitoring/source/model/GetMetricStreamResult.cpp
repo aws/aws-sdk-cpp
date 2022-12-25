@@ -90,12 +90,12 @@ GetMetricStreamResult& GetMetricStreamResult::operator =(const Aws::AmazonWebSer
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode lastUpdateDateNode = resultNode.FirstChild("LastUpdateDate");
     if(!lastUpdateDateNode.IsNull())
     {
-      m_lastUpdateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastUpdateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode outputFormatNode = resultNode.FirstChild("OutputFormat");
     if(!outputFormatNode.IsNull())

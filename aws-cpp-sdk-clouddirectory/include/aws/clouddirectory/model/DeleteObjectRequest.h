@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDDIRECTORY_API DeleteObjectRequest : public CloudDirectoryRequest
+  class DeleteObjectRequest : public CloudDirectoryRequest
   {
   public:
-    DeleteObjectRequest();
+    AWS_CLOUDDIRECTORY_API DeleteObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteObject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDDIRECTORY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

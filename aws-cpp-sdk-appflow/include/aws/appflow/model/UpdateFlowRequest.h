@@ -10,6 +10,7 @@
 #include <aws/appflow/model/TriggerConfig.h>
 #include <aws/appflow/model/SourceFlowConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appflow/model/MetadataCatalogConfig.h>
 #include <aws/appflow/model/DestinationFlowConfig.h>
 #include <aws/appflow/model/Task.h>
 #include <utility>
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPFLOW_API UpdateFlowRequest : public AppflowRequest
+  class UpdateFlowRequest : public AppflowRequest
   {
   public:
-    UpdateFlowRequest();
+    AWS_APPFLOW_API UpdateFlowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFlow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -274,25 +275,71 @@ namespace Model
      */
     inline UpdateFlowRequest& AddTasks(Task&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const{ return m_metadataCatalogConfig; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline bool MetadataCatalogConfigHasBeenSet() const { return m_metadataCatalogConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(const MetadataCatalogConfig& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = value; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(MetadataCatalogConfig&& value) { m_metadataCatalogConfigHasBeenSet = true; m_metadataCatalogConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline UpdateFlowRequest& WithMetadataCatalogConfig(const MetadataCatalogConfig& value) { SetMetadataCatalogConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline UpdateFlowRequest& WithMetadataCatalogConfig(MetadataCatalogConfig&& value) { SetMetadataCatalogConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     TriggerConfig m_triggerConfig;
-    bool m_triggerConfigHasBeenSet;
+    bool m_triggerConfigHasBeenSet = false;
 
     SourceFlowConfig m_sourceFlowConfig;
-    bool m_sourceFlowConfigHasBeenSet;
+    bool m_sourceFlowConfigHasBeenSet = false;
 
     Aws::Vector<DestinationFlowConfig> m_destinationFlowConfigList;
-    bool m_destinationFlowConfigListHasBeenSet;
+    bool m_destinationFlowConfigListHasBeenSet = false;
 
     Aws::Vector<Task> m_tasks;
-    bool m_tasksHasBeenSet;
+    bool m_tasksHasBeenSet = false;
+
+    MetadataCatalogConfig m_metadataCatalogConfig;
+    bool m_metadataCatalogConfigHasBeenSet = false;
   };
 
 } // namespace Model

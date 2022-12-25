@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneOwner">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HostedZoneOwner
+  class HostedZoneOwner
   {
   public:
-    HostedZoneOwner();
-    HostedZoneOwner(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostedZoneOwner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneOwner();
+    AWS_ROUTE53_API HostedZoneOwner(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneOwner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -196,10 +196,10 @@ namespace Model
   private:
 
     Aws::String m_owningAccount;
-    bool m_owningAccountHasBeenSet;
+    bool m_owningAccountHasBeenSet = false;
 
     Aws::String m_owningService;
-    bool m_owningServiceHasBeenSet;
+    bool m_owningServiceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API CreateReadinessCheckRequest : public Route53RecoveryReadinessRequest
+  class CreateReadinessCheckRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    CreateReadinessCheckRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API CreateReadinessCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReadinessCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

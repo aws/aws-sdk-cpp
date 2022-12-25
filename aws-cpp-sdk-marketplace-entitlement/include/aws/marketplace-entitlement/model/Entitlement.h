@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -299,19 +299,19 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     Aws::String m_customerIdentifier;
-    bool m_customerIdentifierHasBeenSet;
+    bool m_customerIdentifierHasBeenSet = false;
 
     EntitlementValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
   };
 
 } // namespace Model

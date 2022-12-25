@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EncryptionAtRest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API EncryptionAtRest
+  class EncryptionAtRest
   {
   public:
-    EncryptionAtRest();
-    EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API EncryptionAtRest();
+    AWS_GLUE_API EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     CatalogEncryptionMode m_catalogEncryptionMode;
-    bool m_catalogEncryptionModeHasBeenSet;
+    bool m_catalogEncryptionModeHasBeenSet = false;
 
     Aws::String m_sseAwsKmsKeyId;
-    bool m_sseAwsKmsKeyIdHasBeenSet;
+    bool m_sseAwsKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

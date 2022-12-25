@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/MetricPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTORE_API MetricPolicy
+  class MetricPolicy
   {
   public:
-    MetricPolicy();
-    MetricPolicy(Aws::Utils::Json::JsonView jsonValue);
-    MetricPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTORE_API MetricPolicy();
+    AWS_MEDIASTORE_API MetricPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API MetricPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     ContainerLevelMetrics m_containerLevelMetrics;
-    bool m_containerLevelMetricsHasBeenSet;
+    bool m_containerLevelMetricsHasBeenSet = false;
 
     Aws::Vector<MetricPolicyRule> m_metricPolicyRules;
-    bool m_metricPolicyRulesHasBeenSet;
+    bool m_metricPolicyRulesHasBeenSet = false;
   };
 
 } // namespace Model

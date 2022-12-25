@@ -30,7 +30,7 @@ DescribeClientAuthenticationSettingsResult& DescribeClientAuthenticationSettings
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClientAuthenticationSettingsInfo"))
   {
-    Array<JsonView> clientAuthenticationSettingsInfoJsonList = jsonValue.GetArray("ClientAuthenticationSettingsInfo");
+    Aws::Utils::Array<JsonView> clientAuthenticationSettingsInfoJsonList = jsonValue.GetArray("ClientAuthenticationSettingsInfo");
     for(unsigned clientAuthenticationSettingsInfoIndex = 0; clientAuthenticationSettingsInfoIndex < clientAuthenticationSettingsInfoJsonList.GetLength(); ++clientAuthenticationSettingsInfoIndex)
     {
       m_clientAuthenticationSettingsInfo.push_back(clientAuthenticationSettingsInfoJsonList[clientAuthenticationSettingsInfoIndex].AsObject());

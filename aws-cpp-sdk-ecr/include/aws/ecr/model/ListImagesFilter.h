@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImagesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ListImagesFilter
+  class ListImagesFilter
   {
   public:
-    ListImagesFilter();
-    ListImagesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ListImagesFilter();
+    AWS_ECR_API ListImagesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ListImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     TagStatus m_tagStatus;
-    bool m_tagStatusHasBeenSet;
+    bool m_tagStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/IngressAccessLogs">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API IngressAccessLogs
+  class IngressAccessLogs
   {
   public:
-    IngressAccessLogs();
-    IngressAccessLogs(Aws::Utils::Json::JsonView jsonValue);
-    IngressAccessLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API IngressAccessLogs();
+    AWS_MEDIAPACKAGE_API IngressAccessLogs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API IngressAccessLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatabaseInputDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatabaseInputDefinition
+  class DatabaseInputDefinition
   {
   public:
-    DatabaseInputDefinition();
-    DatabaseInputDefinition(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatabaseInputDefinition();
+    AWS_GLUEDATABREW_API DatabaseInputDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatabaseInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_glueConnectionName;
-    bool m_glueConnectionNameHasBeenSet;
+    bool m_glueConnectionNameHasBeenSet = false;
 
     Aws::String m_databaseTableName;
-    bool m_databaseTableNameHasBeenSet;
+    bool m_databaseTableNameHasBeenSet = false;
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

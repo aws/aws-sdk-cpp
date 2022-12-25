@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Filters">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECT_API Filters
+  class Filters
   {
   public:
-    Filters();
-    Filters(Aws::Utils::Json::JsonView jsonValue);
-    Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Filters();
+    AWS_CONNECT_API Filters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,62 @@ namespace Model
      */
     inline Filters& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRoutingProfiles() const{ return m_routingProfiles; }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline bool RoutingProfilesHasBeenSet() const { return m_routingProfilesHasBeenSet; }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline void SetRoutingProfiles(const Aws::Vector<Aws::String>& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = value; }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline void SetRoutingProfiles(Aws::Vector<Aws::String>&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles = std::move(value); }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline Filters& WithRoutingProfiles(const Aws::Vector<Aws::String>& value) { SetRoutingProfiles(value); return *this;}
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline Filters& WithRoutingProfiles(Aws::Vector<Aws::String>&& value) { SetRoutingProfiles(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline Filters& AddRoutingProfiles(const Aws::String& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline Filters& AddRoutingProfiles(Aws::String&& value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of up to 100 routing profile IDs or ARNs.</p>
+     */
+    inline Filters& AddRoutingProfiles(const char* value) { m_routingProfilesHasBeenSet = true; m_routingProfiles.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_queues;
-    bool m_queuesHasBeenSet;
+    bool m_queuesHasBeenSet = false;
 
     Aws::Vector<Channel> m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_routingProfiles;
+    bool m_routingProfilesHasBeenSet = false;
   };
 
 } // namespace Model

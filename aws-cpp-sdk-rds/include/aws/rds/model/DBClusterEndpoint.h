@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterEndpoint
+  class DBClusterEndpoint
   {
   public:
-    DBClusterEndpoint();
-    DBClusterEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterEndpoint();
+    AWS_RDS_API DBClusterEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -588,37 +588,37 @@ namespace Model
   private:
 
     Aws::String m_dBClusterEndpointIdentifier;
-    bool m_dBClusterEndpointIdentifierHasBeenSet;
+    bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterEndpointResourceIdentifier;
-    bool m_dBClusterEndpointResourceIdentifierHasBeenSet;
+    bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_customEndpointType;
-    bool m_customEndpointTypeHasBeenSet;
+    bool m_customEndpointTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_staticMembers;
-    bool m_staticMembersHasBeenSet;
+    bool m_staticMembersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedMembers;
-    bool m_excludedMembersHasBeenSet;
+    bool m_excludedMembersHasBeenSet = false;
 
     Aws::String m_dBClusterEndpointArn;
-    bool m_dBClusterEndpointArnHasBeenSet;
+    bool m_dBClusterEndpointArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

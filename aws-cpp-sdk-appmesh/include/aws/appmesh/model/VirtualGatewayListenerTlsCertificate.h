@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayListenerTlsCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayListenerTlsCertificate
+  class VirtualGatewayListenerTlsCertificate
   {
   public:
-    VirtualGatewayListenerTlsCertificate();
-    VirtualGatewayListenerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayListenerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayListenerTlsCertificate();
+    AWS_APPMESH_API VirtualGatewayListenerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayListenerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     VirtualGatewayListenerTlsAcmCertificate m_acm;
-    bool m_acmHasBeenSet;
+    bool m_acmHasBeenSet = false;
 
     VirtualGatewayListenerTlsFileCertificate m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     VirtualGatewayListenerTlsSdsCertificate m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

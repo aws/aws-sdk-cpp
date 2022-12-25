@@ -26,18 +26,18 @@ namespace Model
 
   /**
    * <p>The object representing the URL of the bot definition, the URL of the
-   * associated transcript and a statistical summary of the bot recommendation
+   * associated transcript, and a statistical summary of the bot recommendation
    * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationResults">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotRecommendationResults
+  class BotRecommendationResults
   {
   public:
-    BotRecommendationResults();
-    BotRecommendationResults(Aws::Utils::Json::JsonView jsonValue);
-    BotRecommendationResults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotRecommendationResults();
+    AWS_LEXMODELSV2_API BotRecommendationResults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotRecommendationResults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_botLocaleExportUrl;
-    bool m_botLocaleExportUrlHasBeenSet;
+    bool m_botLocaleExportUrlHasBeenSet = false;
 
     Aws::String m_associatedTranscriptsUrl;
-    bool m_associatedTranscriptsUrlHasBeenSet;
+    bool m_associatedTranscriptsUrlHasBeenSet = false;
 
     BotRecommendationResultStatistics m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
   };
 
 } // namespace Model

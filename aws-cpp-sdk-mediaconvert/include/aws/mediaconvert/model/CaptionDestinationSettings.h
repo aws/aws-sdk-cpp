@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CaptionDestinationSettings
+  class CaptionDestinationSettings
   {
   public:
-    CaptionDestinationSettings();
-    CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CaptionDestinationSettings();
+    AWS_MEDIACONVERT_API CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -694,34 +694,34 @@ namespace Model
   private:
 
     BurninDestinationSettings m_burninDestinationSettings;
-    bool m_burninDestinationSettingsHasBeenSet;
+    bool m_burninDestinationSettingsHasBeenSet = false;
 
     CaptionDestinationType m_destinationType;
-    bool m_destinationTypeHasBeenSet;
+    bool m_destinationTypeHasBeenSet = false;
 
     DvbSubDestinationSettings m_dvbSubDestinationSettings;
-    bool m_dvbSubDestinationSettingsHasBeenSet;
+    bool m_dvbSubDestinationSettingsHasBeenSet = false;
 
     EmbeddedDestinationSettings m_embeddedDestinationSettings;
-    bool m_embeddedDestinationSettingsHasBeenSet;
+    bool m_embeddedDestinationSettingsHasBeenSet = false;
 
     ImscDestinationSettings m_imscDestinationSettings;
-    bool m_imscDestinationSettingsHasBeenSet;
+    bool m_imscDestinationSettingsHasBeenSet = false;
 
     SccDestinationSettings m_sccDestinationSettings;
-    bool m_sccDestinationSettingsHasBeenSet;
+    bool m_sccDestinationSettingsHasBeenSet = false;
 
     SrtDestinationSettings m_srtDestinationSettings;
-    bool m_srtDestinationSettingsHasBeenSet;
+    bool m_srtDestinationSettingsHasBeenSet = false;
 
     TeletextDestinationSettings m_teletextDestinationSettings;
-    bool m_teletextDestinationSettingsHasBeenSet;
+    bool m_teletextDestinationSettingsHasBeenSet = false;
 
     TtmlDestinationSettings m_ttmlDestinationSettings;
-    bool m_ttmlDestinationSettingsHasBeenSet;
+    bool m_ttmlDestinationSettingsHasBeenSet = false;
 
     WebvttDestinationSettings m_webvttDestinationSettings;
-    bool m_webvttDestinationSettingsHasBeenSet;
+    bool m_webvttDestinationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

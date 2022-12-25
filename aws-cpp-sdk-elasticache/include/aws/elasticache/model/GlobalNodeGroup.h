@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalNodeGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API GlobalNodeGroup
+  class GlobalNodeGroup
   {
   public:
-    GlobalNodeGroup();
-    GlobalNodeGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GlobalNodeGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalNodeGroup();
+    AWS_ELASTICACHE_API GlobalNodeGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalNodeGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_globalNodeGroupId;
-    bool m_globalNodeGroupIdHasBeenSet;
+    bool m_globalNodeGroupIdHasBeenSet = false;
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
   };
 
 } // namespace Model

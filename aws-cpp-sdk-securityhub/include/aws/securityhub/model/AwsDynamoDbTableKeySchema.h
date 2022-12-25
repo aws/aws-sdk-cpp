@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableKeySchema">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema
+  class AwsDynamoDbTableKeySchema
   {
   public:
-    AwsDynamoDbTableKeySchema();
-    AwsDynamoDbTableKeySchema(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableKeySchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema();
+    AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableKeySchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,52 +80,60 @@ namespace Model
 
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline const Aws::String& GetKeyType() const{ return m_keyType; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(const Aws::String& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(Aws::String&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline void SetKeyType(const char* value) { m_keyTypeHasBeenSet = true; m_keyType.assign(value); }
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(const Aws::String& value) { SetKeyType(value); return *this;}
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(Aws::String&& value) { SetKeyType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of key used for the key schema attribute.</p>
+     * <p>The type of key used for the key schema attribute. Valid values are
+     * <code>HASH</code> or <code>RANGE</code>.</p>
      */
     inline AwsDynamoDbTableKeySchema& WithKeyType(const char* value) { SetKeyType(value); return *this;}
 
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

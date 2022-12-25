@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SessionKeysAbpV1_1">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SessionKeysAbpV1_1
+  class SessionKeysAbpV1_1
   {
   public:
-    SessionKeysAbpV1_1();
-    SessionKeysAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
-    SessionKeysAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1();
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_fNwkSIntKey;
-    bool m_fNwkSIntKeyHasBeenSet;
+    bool m_fNwkSIntKeyHasBeenSet = false;
 
     Aws::String m_sNwkSIntKey;
-    bool m_sNwkSIntKeyHasBeenSet;
+    bool m_sNwkSIntKeyHasBeenSet = false;
 
     Aws::String m_nwkSEncKey;
-    bool m_nwkSEncKeyHasBeenSet;
+    bool m_nwkSEncKeyHasBeenSet = false;
 
     Aws::String m_appSKey;
-    bool m_appSKeyHasBeenSet;
+    bool m_appSKeyHasBeenSet = false;
   };
 
 } // namespace Model

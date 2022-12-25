@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Captions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Captions
+  class Captions
   {
   public:
-    Captions();
-    Captions(Aws::Utils::Json::JsonView jsonValue);
-    Captions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Captions();
+    AWS_ELASTICTRANSCODER_API Captions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Captions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<CaptionFormat> m_captionFormats;
-    bool m_captionFormatsHasBeenSet;
+    bool m_captionFormatsHasBeenSet = false;
   };
 
 } // namespace Model

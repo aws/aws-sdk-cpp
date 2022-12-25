@@ -27,6 +27,7 @@ ApplicationComponentDetail::ApplicationComponentDetail() :
     m_antipatternReportStatusMessageHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
+    m_appUnitErrorHasBeenSet(false),
     m_associatedServerIdHasBeenSet(false),
     m_databaseConfigDetailHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -42,6 +43,9 @@ ApplicationComponentDetail::ApplicationComponentDetail() :
     m_recommendationSetHasBeenSet(false),
     m_resourceSubType(ResourceSubType::NOT_SET),
     m_resourceSubTypeHasBeenSet(false),
+    m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
+    m_runtimeStatusHasBeenSet(false),
+    m_runtimeStatusMessageHasBeenSet(false),
     m_sourceCodeRepositoriesHasBeenSet(false),
     m_statusMessageHasBeenSet(false)
 {
@@ -56,6 +60,7 @@ ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue) :
     m_antipatternReportStatusMessageHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
+    m_appUnitErrorHasBeenSet(false),
     m_associatedServerIdHasBeenSet(false),
     m_databaseConfigDetailHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -71,6 +76,9 @@ ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue) :
     m_recommendationSetHasBeenSet(false),
     m_resourceSubType(ResourceSubType::NOT_SET),
     m_resourceSubTypeHasBeenSet(false),
+    m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
+    m_runtimeStatusHasBeenSet(false),
+    m_runtimeStatusMessageHasBeenSet(false),
     m_sourceCodeRepositoriesHasBeenSet(false),
     m_statusMessageHasBeenSet(false)
 {
@@ -114,6 +122,13 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     m_appTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("appUnitError"))
+  {
+    m_appUnitError = jsonValue.GetObject("appUnitError");
+
+    m_appUnitErrorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("associatedServerId"))
   {
     m_associatedServerId = jsonValue.GetString("associatedServerId");
@@ -151,7 +166,7 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
 
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
-    Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
+    Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
     for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
     {
       m_listAntipatternSeveritySummary.push_back(listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject());
@@ -201,9 +216,23 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     m_resourceSubTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeStatus"))
+  {
+    m_runtimeStatus = RuntimeAnalysisStatusMapper::GetRuntimeAnalysisStatusForName(jsonValue.GetString("runtimeStatus"));
+
+    m_runtimeStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runtimeStatusMessage"))
+  {
+    m_runtimeStatusMessage = jsonValue.GetString("runtimeStatusMessage");
+
+    m_runtimeStatusMessageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceCodeRepositories"))
   {
-    Array<JsonView> sourceCodeRepositoriesJsonList = jsonValue.GetArray("sourceCodeRepositories");
+    Aws::Utils::Array<JsonView> sourceCodeRepositoriesJsonList = jsonValue.GetArray("sourceCodeRepositories");
     for(unsigned sourceCodeRepositoriesIndex = 0; sourceCodeRepositoriesIndex < sourceCodeRepositoriesJsonList.GetLength(); ++sourceCodeRepositoriesIndex)
     {
       m_sourceCodeRepositories.push_back(sourceCodeRepositoriesJsonList[sourceCodeRepositoriesIndex].AsObject());
@@ -252,6 +281,12 @@ JsonValue ApplicationComponentDetail::Jsonize() const
    payload.WithString("appType", AppTypeMapper::GetNameForAppType(m_appType));
   }
 
+  if(m_appUnitErrorHasBeenSet)
+  {
+   payload.WithObject("appUnitError", m_appUnitError.Jsonize());
+
+  }
+
   if(m_associatedServerIdHasBeenSet)
   {
    payload.WithString("associatedServerId", m_associatedServerId);
@@ -282,7 +317,7 @@ JsonValue ApplicationComponentDetail::Jsonize() const
 
   if(m_listAntipatternSeveritySummaryHasBeenSet)
   {
-   Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
+   Aws::Utils::Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
    for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
    {
      listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject(m_listAntipatternSeveritySummary[listAntipatternSeveritySummaryIndex].Jsonize());
@@ -326,9 +361,20 @@ JsonValue ApplicationComponentDetail::Jsonize() const
    payload.WithString("resourceSubType", ResourceSubTypeMapper::GetNameForResourceSubType(m_resourceSubType));
   }
 
+  if(m_runtimeStatusHasBeenSet)
+  {
+   payload.WithString("runtimeStatus", RuntimeAnalysisStatusMapper::GetNameForRuntimeAnalysisStatus(m_runtimeStatus));
+  }
+
+  if(m_runtimeStatusMessageHasBeenSet)
+  {
+   payload.WithString("runtimeStatusMessage", m_runtimeStatusMessage);
+
+  }
+
   if(m_sourceCodeRepositoriesHasBeenSet)
   {
-   Array<JsonValue> sourceCodeRepositoriesJsonList(m_sourceCodeRepositories.size());
+   Aws::Utils::Array<JsonValue> sourceCodeRepositoriesJsonList(m_sourceCodeRepositories.size());
    for(unsigned sourceCodeRepositoriesIndex = 0; sourceCodeRepositoriesIndex < sourceCodeRepositoriesJsonList.GetLength(); ++sourceCodeRepositoriesIndex)
    {
      sourceCodeRepositoriesJsonList[sourceCodeRepositoriesIndex].AsObject(m_sourceCodeRepositories[sourceCodeRepositoriesIndex].Jsonize());

@@ -28,19 +28,19 @@ namespace Model
 {
 
   /**
-   * <p> A summary of the information for a CloudFront streaming
+   * <p>A summary of the information for a CloudFront streaming
    * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingDistributionSummary
+  class StreamingDistributionSummary
   {
   public:
-    StreamingDistributionSummary();
-    StreamingDistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingDistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionSummary();
+    AWS_CLOUDFRONT_API StreamingDistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -93,56 +93,56 @@ namespace Model
 
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistributionSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistributionSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <p>The ARN (Amazon Resource Name) for the streaming distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
      * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
@@ -150,56 +150,56 @@ namespace Model
 
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline StreamingDistributionSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
     inline StreamingDistributionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p> Indicates the current status of the distribution. When the status is
+     * <p>Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
@@ -376,7 +376,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
@@ -396,7 +396,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
@@ -416,7 +416,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
@@ -436,7 +436,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
@@ -456,7 +456,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
@@ -476,7 +476,7 @@ namespace Model
      * distribution.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
@@ -524,37 +524,37 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline StreamingDistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
@@ -586,37 +586,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     S3Origin m_s3Origin;
-    bool m_s3OriginHasBeenSet;
+    bool m_s3OriginHasBeenSet = false;
 
     Aliases m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     TrustedSigners m_trustedSigners;
-    bool m_trustedSignersHasBeenSet;
+    bool m_trustedSignersHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     PriceClass m_priceClass;
-    bool m_priceClassHasBeenSet;
+    bool m_priceClassHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

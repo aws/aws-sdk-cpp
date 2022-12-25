@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ApplicationComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationComponent
+  class ApplicationComponent
   {
   public:
-    ApplicationComponent();
-    ApplicationComponent(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent();
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -316,25 +316,25 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentRemarks;
-    bool m_componentRemarksHasBeenSet;
+    bool m_componentRemarksHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     OsType m_osType;
-    bool m_osTypeHasBeenSet;
+    bool m_osTypeHasBeenSet = false;
 
     Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     bool m_monitor;
-    bool m_monitorHasBeenSet;
+    bool m_monitorHasBeenSet = false;
 
     Aws::Map<Tier, Aws::Map<Aws::String, Aws::String>> m_detectedWorkload;
-    bool m_detectedWorkloadHasBeenSet;
+    bool m_detectedWorkloadHasBeenSet = false;
   };
 
 } // namespace Model

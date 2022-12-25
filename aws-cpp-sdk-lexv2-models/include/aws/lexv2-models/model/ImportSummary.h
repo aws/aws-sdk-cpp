@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ImportSummary
+  class ImportSummary
   {
   public:
-    ImportSummary();
-    ImportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ImportSummary();
+    AWS_LEXMODELSV2_API ImportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,28 +334,28 @@ namespace Model
   private:
 
     Aws::String m_importId;
-    bool m_importIdHasBeenSet;
+    bool m_importIdHasBeenSet = false;
 
     Aws::String m_importedResourceId;
-    bool m_importedResourceIdHasBeenSet;
+    bool m_importedResourceIdHasBeenSet = false;
 
     Aws::String m_importedResourceName;
-    bool m_importedResourceNameHasBeenSet;
+    bool m_importedResourceNameHasBeenSet = false;
 
     ImportStatus m_importStatus;
-    bool m_importStatusHasBeenSet;
+    bool m_importStatusHasBeenSet = false;
 
     MergeStrategy m_mergeStrategy;
-    bool m_mergeStrategyHasBeenSet;
+    bool m_mergeStrategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     ImportResourceType m_importedResourceType;
-    bool m_importedResourceTypeHasBeenSet;
+    bool m_importedResourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

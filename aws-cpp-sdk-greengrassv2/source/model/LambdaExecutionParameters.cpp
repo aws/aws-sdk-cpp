@@ -67,7 +67,7 @@ LambdaExecutionParameters& LambdaExecutionParameters::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("eventSources"))
   {
-    Array<JsonView> eventSourcesJsonList = jsonValue.GetArray("eventSources");
+    Aws::Utils::Array<JsonView> eventSourcesJsonList = jsonValue.GetArray("eventSources");
     for(unsigned eventSourcesIndex = 0; eventSourcesIndex < eventSourcesJsonList.GetLength(); ++eventSourcesIndex)
     {
       m_eventSources.push_back(eventSourcesJsonList[eventSourcesIndex].AsObject());
@@ -126,7 +126,7 @@ LambdaExecutionParameters& LambdaExecutionParameters::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("execArgs"))
   {
-    Array<JsonView> execArgsJsonList = jsonValue.GetArray("execArgs");
+    Aws::Utils::Array<JsonView> execArgsJsonList = jsonValue.GetArray("execArgs");
     for(unsigned execArgsIndex = 0; execArgsIndex < execArgsJsonList.GetLength(); ++execArgsIndex)
     {
       m_execArgs.push_back(execArgsJsonList[execArgsIndex].AsString());
@@ -160,7 +160,7 @@ JsonValue LambdaExecutionParameters::Jsonize() const
 
   if(m_eventSourcesHasBeenSet)
   {
-   Array<JsonValue> eventSourcesJsonList(m_eventSources.size());
+   Aws::Utils::Array<JsonValue> eventSourcesJsonList(m_eventSources.size());
    for(unsigned eventSourcesIndex = 0; eventSourcesIndex < eventSourcesJsonList.GetLength(); ++eventSourcesIndex)
    {
      eventSourcesJsonList[eventSourcesIndex].AsObject(m_eventSources[eventSourcesIndex].Jsonize());
@@ -212,7 +212,7 @@ JsonValue LambdaExecutionParameters::Jsonize() const
 
   if(m_execArgsHasBeenSet)
   {
-   Array<JsonValue> execArgsJsonList(m_execArgs.size());
+   Aws::Utils::Array<JsonValue> execArgsJsonList(m_execArgs.size());
    for(unsigned execArgsIndex = 0; execArgsIndex < execArgsJsonList.GetLength(); ++execArgsIndex)
    {
      execArgsJsonList[execArgsIndex].AsString(m_execArgs[execArgsIndex]);

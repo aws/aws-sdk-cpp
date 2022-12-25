@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveContainerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ArchiveContainerSettings
+  class ArchiveContainerSettings
   {
   public:
-    ArchiveContainerSettings();
-    ArchiveContainerSettings(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ArchiveContainerSettings();
+    AWS_MEDIALIVE_API ArchiveContainerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ArchiveContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -78,10 +78,10 @@ namespace Model
   private:
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
 
     RawSettings m_rawSettings;
-    bool m_rawSettingsHasBeenSet;
+    bool m_rawSettingsHasBeenSet = false;
   };
 
 } // namespace Model

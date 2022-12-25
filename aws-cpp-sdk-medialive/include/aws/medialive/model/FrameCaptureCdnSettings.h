@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FrameCaptureCdnSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FrameCaptureCdnSettings
+  class FrameCaptureCdnSettings
   {
   public:
-    FrameCaptureCdnSettings();
-    FrameCaptureCdnSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FrameCaptureCdnSettings();
+    AWS_MEDIALIVE_API FrameCaptureCdnSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FrameCaptureCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     FrameCaptureS3Settings m_frameCaptureS3Settings;
-    bool m_frameCaptureS3SettingsHasBeenSet;
+    bool m_frameCaptureS3SettingsHasBeenSet = false;
   };
 
 } // namespace Model

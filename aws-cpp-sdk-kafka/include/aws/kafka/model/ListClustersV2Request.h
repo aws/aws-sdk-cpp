@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API ListClustersV2Request : public KafkaRequest
+  class ListClustersV2Request : public KafkaRequest
   {
   public:
-    ListClustersV2Request();
+    AWS_KAFKA_API ListClustersV2Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListClustersV2"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_KAFKA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -288,16 +288,16 @@ namespace Model
   private:
 
     Aws::String m_clusterNameFilter;
-    bool m_clusterNameFilterHasBeenSet;
+    bool m_clusterNameFilterHasBeenSet = false;
 
     Aws::String m_clusterTypeFilter;
-    bool m_clusterTypeFilterHasBeenSet;
+    bool m_clusterTypeFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

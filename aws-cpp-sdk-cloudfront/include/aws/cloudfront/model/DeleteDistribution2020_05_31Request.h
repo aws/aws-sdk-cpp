@@ -20,7 +20,7 @@ namespace Model
    * <p>This action deletes a web distribution. To delete a web distribution using
    * the CloudFront API, perform the following steps.</p> <p> <b>To delete a web
    * distribution using the CloudFront API:</b> </p> <ol> <li> <p>Disable the web
-   * distribution </p> </li> <li> <p>Submit a <code>GET Distribution Config</code>
+   * distribution</p> </li> <li> <p>Submit a <code>GET Distribution Config</code>
    * request to get the current configuration and the <code>Etag</code> header for
    * the distribution.</p> </li> <li> <p>Update the XML document that was returned in
    * the response to your <code>GET Distribution Config</code> request to change the
@@ -48,10 +48,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistributionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DeleteDistribution2020_05_31Request : public CloudFrontRequest
+  class DeleteDistribution2020_05_31Request : public CloudFrontRequest
   {
   public:
-    DeleteDistribution2020_05_31Request();
+    AWS_CLOUDFRONT_API DeleteDistribution2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,107 +59,107 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDistribution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
-     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
+     * the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline DeleteDistribution2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

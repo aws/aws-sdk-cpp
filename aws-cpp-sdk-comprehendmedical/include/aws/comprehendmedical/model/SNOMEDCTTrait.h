@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTTrait">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API SNOMEDCTTrait
+  class SNOMEDCTTrait
   {
   public:
-    SNOMEDCTTrait();
-    SNOMEDCTTrait(Aws::Utils::Json::JsonView jsonValue);
-    SNOMEDCTTrait& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTTrait();
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTTrait(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTTrait& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     SNOMEDCTTraitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

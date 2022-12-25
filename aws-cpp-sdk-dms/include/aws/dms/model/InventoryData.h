@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/InventoryData">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API InventoryData
+  class InventoryData
   {
   public:
-    InventoryData();
-    InventoryData(Aws::Utils::Json::JsonView jsonValue);
-    InventoryData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API InventoryData();
+    AWS_DATABASEMIGRATIONSERVICE_API InventoryData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API InventoryData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_numberOfDatabases;
-    bool m_numberOfDatabasesHasBeenSet;
+    bool m_numberOfDatabasesHasBeenSet = false;
 
     int m_numberOfSchemas;
-    bool m_numberOfSchemasHasBeenSet;
+    bool m_numberOfSchemasHasBeenSet = false;
   };
 
 } // namespace Model

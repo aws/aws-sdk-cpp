@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AgentInfo
+  class AgentInfo
   {
   public:
-    AgentInfo();
-    AgentInfo(Aws::Utils::Json::JsonView jsonValue);
-    AgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AgentInfo();
+    AWS_CONNECT_API AgentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectedToAgentTimestamp;
-    bool m_connectedToAgentTimestampHasBeenSet;
+    bool m_connectedToAgentTimestampHasBeenSet = false;
   };
 
 } // namespace Model

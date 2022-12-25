@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/RouteSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API RouteSettings
+  class RouteSettings
   {
   public:
-    RouteSettings();
-    RouteSettings(Aws::Utils::Json::JsonView jsonValue);
-    RouteSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API RouteSettings();
+    AWS_APIGATEWAYV2_API RouteSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API RouteSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,19 +174,19 @@ namespace Model
   private:
 
     bool m_dataTraceEnabled;
-    bool m_dataTraceEnabledHasBeenSet;
+    bool m_dataTraceEnabledHasBeenSet = false;
 
     bool m_detailedMetricsEnabled;
-    bool m_detailedMetricsEnabledHasBeenSet;
+    bool m_detailedMetricsEnabledHasBeenSet = false;
 
     LoggingLevel m_loggingLevel;
-    bool m_loggingLevelHasBeenSet;
+    bool m_loggingLevelHasBeenSet = false;
 
     int m_throttlingBurstLimit;
-    bool m_throttlingBurstLimitHasBeenSet;
+    bool m_throttlingBurstLimitHasBeenSet = false;
 
     double m_throttlingRateLimit;
-    bool m_throttlingRateLimitHasBeenSet;
+    bool m_throttlingRateLimitHasBeenSet = false;
   };
 
 } // namespace Model

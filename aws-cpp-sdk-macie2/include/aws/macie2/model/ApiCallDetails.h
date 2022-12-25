@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ApiCallDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ApiCallDetails
+  class ApiCallDetails
   {
   public:
-    ApiCallDetails();
-    ApiCallDetails(Aws::Utils::Json::JsonView jsonValue);
-    ApiCallDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ApiCallDetails();
+    AWS_MACIE2_API ApiCallDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ApiCallDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_api;
-    bool m_apiHasBeenSet;
+    bool m_apiHasBeenSet = false;
 
     Aws::String m_apiServiceName;
-    bool m_apiServiceNameHasBeenSet;
+    bool m_apiServiceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSeen;
-    bool m_firstSeenHasBeenSet;
+    bool m_firstSeenHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeen;
-    bool m_lastSeenHasBeenSet;
+    bool m_lastSeenHasBeenSet = false;
   };
 
 } // namespace Model

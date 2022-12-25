@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API CreateMobileDeviceAccessRuleRequest : public WorkMailRequest
+  class CreateMobileDeviceAccessRuleRequest : public WorkMailRequest
   {
   public:
-    CreateMobileDeviceAccessRuleRequest();
+    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,48 +32,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMobileDeviceAccessRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline CreateMobileDeviceAccessRuleRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline CreateMobileDeviceAccessRuleRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which the rule will be created.</p>
+     * <p>The WorkMail organization under which the rule will be created.</p>
      */
     inline CreateMobileDeviceAccessRuleRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
@@ -644,43 +644,43 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     MobileDeviceAccessRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceTypes;
-    bool m_deviceTypesHasBeenSet;
+    bool m_deviceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceTypes;
-    bool m_notDeviceTypesHasBeenSet;
+    bool m_notDeviceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceModels;
-    bool m_deviceModelsHasBeenSet;
+    bool m_deviceModelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceModels;
-    bool m_notDeviceModelsHasBeenSet;
+    bool m_notDeviceModelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceOperatingSystems;
-    bool m_deviceOperatingSystemsHasBeenSet;
+    bool m_deviceOperatingSystemsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceOperatingSystems;
-    bool m_notDeviceOperatingSystemsHasBeenSet;
+    bool m_notDeviceOperatingSystemsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceUserAgents;
-    bool m_deviceUserAgentsHasBeenSet;
+    bool m_deviceUserAgentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceUserAgents;
-    bool m_notDeviceUserAgentsHasBeenSet;
+    bool m_notDeviceUserAgentsHasBeenSet = false;
   };
 
 } // namespace Model

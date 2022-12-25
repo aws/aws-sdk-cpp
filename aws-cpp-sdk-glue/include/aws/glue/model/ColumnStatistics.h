@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ColumnStatistics
+  class ColumnStatistics
   {
   public:
-    ColumnStatistics();
-    ColumnStatistics(Aws::Utils::Json::JsonView jsonValue);
-    ColumnStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ColumnStatistics();
+    AWS_GLUE_API ColumnStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ColumnStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnType;
-    bool m_columnTypeHasBeenSet;
+    bool m_columnTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_analyzedTime;
-    bool m_analyzedTimeHasBeenSet;
+    bool m_analyzedTimeHasBeenSet = false;
 
     ColumnStatisticsData m_statisticsData;
-    bool m_statisticsDataHasBeenSet;
+    bool m_statisticsDataHasBeenSet = false;
   };
 
 } // namespace Model

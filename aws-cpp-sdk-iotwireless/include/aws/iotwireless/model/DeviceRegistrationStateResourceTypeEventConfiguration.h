@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeviceRegistrationStateResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration
+  class DeviceRegistrationStateResourceTypeEventConfiguration
   {
   public:
-    DeviceRegistrationStateResourceTypeEventConfiguration();
-    DeviceRegistrationStateResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeviceRegistrationStateResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API DeviceRegistrationStateResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SidewalkResourceTypeEventConfiguration m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

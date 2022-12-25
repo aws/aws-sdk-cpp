@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API CreateScriptRequest : public GlueRequest
+  class CreateScriptRequest : public GlueRequest
   {
   public:
-    CreateScriptRequest();
+    AWS_GLUE_API CreateScriptRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateScript"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::Vector<CodeGenNode> m_dagNodes;
-    bool m_dagNodesHasBeenSet;
+    bool m_dagNodesHasBeenSet = false;
 
     Aws::Vector<CodeGenEdge> m_dagEdges;
-    bool m_dagEdgesHasBeenSet;
+    bool m_dagEdgesHasBeenSet = false;
 
     Language m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API LaunchDetails
+  class LaunchDetails
   {
   public:
-    LaunchDetails();
-    LaunchDetails(Aws::Utils::Json::JsonView jsonValue);
-    LaunchDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API LaunchDetails();
+    AWS_SMS_API LaunchDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API LaunchDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_latestLaunchTime;
-    bool m_latestLaunchTimeHasBeenSet;
+    bool m_latestLaunchTimeHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

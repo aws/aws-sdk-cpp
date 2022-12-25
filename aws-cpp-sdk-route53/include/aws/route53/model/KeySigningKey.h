@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/KeySigningKey">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API KeySigningKey
+  class KeySigningKey
   {
   public:
-    KeySigningKey();
-    KeySigningKey(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KeySigningKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API KeySigningKey();
+    AWS_ROUTE53_API KeySigningKey(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API KeySigningKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -948,52 +948,52 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_kmsArn;
-    bool m_kmsArnHasBeenSet;
+    bool m_kmsArnHasBeenSet = false;
 
     int m_flag;
-    bool m_flagHasBeenSet;
+    bool m_flagHasBeenSet = false;
 
     Aws::String m_signingAlgorithmMnemonic;
-    bool m_signingAlgorithmMnemonicHasBeenSet;
+    bool m_signingAlgorithmMnemonicHasBeenSet = false;
 
     int m_signingAlgorithmType;
-    bool m_signingAlgorithmTypeHasBeenSet;
+    bool m_signingAlgorithmTypeHasBeenSet = false;
 
     Aws::String m_digestAlgorithmMnemonic;
-    bool m_digestAlgorithmMnemonicHasBeenSet;
+    bool m_digestAlgorithmMnemonicHasBeenSet = false;
 
     int m_digestAlgorithmType;
-    bool m_digestAlgorithmTypeHasBeenSet;
+    bool m_digestAlgorithmTypeHasBeenSet = false;
 
     int m_keyTag;
-    bool m_keyTagHasBeenSet;
+    bool m_keyTagHasBeenSet = false;
 
     Aws::String m_digestValue;
-    bool m_digestValueHasBeenSet;
+    bool m_digestValueHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::String m_dSRecord;
-    bool m_dSRecordHasBeenSet;
+    bool m_dSRecordHasBeenSet = false;
 
     Aws::String m_dNSKEYRecord;
-    bool m_dNSKEYRecordHasBeenSet;
+    bool m_dNSKEYRecordHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

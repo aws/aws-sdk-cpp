@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/R53ResourceRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord
+  class R53ResourceRecord
   {
   public:
-    R53ResourceRecord();
-    R53ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
-    R53ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord();
+    AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_recordSetId;
-    bool m_recordSetIdHasBeenSet;
+    bool m_recordSetIdHasBeenSet = false;
   };
 
 } // namespace Model

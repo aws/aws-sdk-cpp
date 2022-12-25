@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResourceInput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API UntagResourceRequest : public AppMeshRequest
+  class UntagResourceRequest : public AppMeshRequest
   {
   public:
-    UntagResourceRequest();
+    AWS_APPMESH_API UntagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPMESH_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPMESH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

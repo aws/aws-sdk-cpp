@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscription">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API Subscription
+  class Subscription
   {
   public:
-    Subscription();
-    Subscription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API Subscription();
+    AWS_SNS_API Subscription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API Subscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_subscriptionArn;
-    bool m_subscriptionArnHasBeenSet;
+    bool m_subscriptionArnHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

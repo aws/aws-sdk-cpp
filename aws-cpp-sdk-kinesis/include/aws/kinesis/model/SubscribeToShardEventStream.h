@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShardEventStream">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API SubscribeToShardEventStream
+  class SubscribeToShardEventStream
   {
   public:
-    SubscribeToShardEventStream();
-    SubscribeToShardEventStream(Aws::Utils::Json::JsonView jsonValue);
-    SubscribeToShardEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API SubscribeToShardEventStream();
+    AWS_KINESIS_API SubscribeToShardEventStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API SubscribeToShardEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,34 +288,34 @@ namespace Model
   private:
 
     SubscribeToShardEvent m_subscribeToShardEvent;
-    bool m_subscribeToShardEventHasBeenSet;
+    bool m_subscribeToShardEventHasBeenSet = false;
 
     ResourceNotFoundException m_resourceNotFoundException;
-    bool m_resourceNotFoundExceptionHasBeenSet;
+    bool m_resourceNotFoundExceptionHasBeenSet = false;
 
     ResourceInUseException m_resourceInUseException;
-    bool m_resourceInUseExceptionHasBeenSet;
+    bool m_resourceInUseExceptionHasBeenSet = false;
 
     KMSDisabledException m_kMSDisabledException;
-    bool m_kMSDisabledExceptionHasBeenSet;
+    bool m_kMSDisabledExceptionHasBeenSet = false;
 
     KMSInvalidStateException m_kMSInvalidStateException;
-    bool m_kMSInvalidStateExceptionHasBeenSet;
+    bool m_kMSInvalidStateExceptionHasBeenSet = false;
 
     KMSAccessDeniedException m_kMSAccessDeniedException;
-    bool m_kMSAccessDeniedExceptionHasBeenSet;
+    bool m_kMSAccessDeniedExceptionHasBeenSet = false;
 
     KMSNotFoundException m_kMSNotFoundException;
-    bool m_kMSNotFoundExceptionHasBeenSet;
+    bool m_kMSNotFoundExceptionHasBeenSet = false;
 
     KMSOptInRequired m_kMSOptInRequired;
-    bool m_kMSOptInRequiredHasBeenSet;
+    bool m_kMSOptInRequiredHasBeenSet = false;
 
     KMSThrottlingException m_kMSThrottlingException;
-    bool m_kMSThrottlingExceptionHasBeenSet;
+    bool m_kMSThrottlingExceptionHasBeenSet = false;
 
     InternalFailureException m_internalFailureException;
-    bool m_internalFailureExceptionHasBeenSet;
+    bool m_internalFailureExceptionHasBeenSet = false;
   };
 
 } // namespace Model

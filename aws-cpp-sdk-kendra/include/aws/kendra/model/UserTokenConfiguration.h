@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserTokenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API UserTokenConfiguration
+  class UserTokenConfiguration
   {
   public:
-    UserTokenConfiguration();
-    UserTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UserTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API UserTokenConfiguration();
+    AWS_KENDRA_API UserTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API UserTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     JwtTokenTypeConfiguration m_jwtTokenTypeConfiguration;
-    bool m_jwtTokenTypeConfigurationHasBeenSet;
+    bool m_jwtTokenTypeConfigurationHasBeenSet = false;
 
     JsonTokenTypeConfiguration m_jsonTokenTypeConfiguration;
-    bool m_jsonTokenTypeConfigurationHasBeenSet;
+    bool m_jsonTokenTypeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

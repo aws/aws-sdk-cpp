@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDBLOCKCHAIN_API GetMemberRequest : public ManagedBlockchainRequest
+  class GetMemberRequest : public ManagedBlockchainRequest
   {
   public:
-    GetMemberRequest();
+    AWS_MANAGEDBLOCKCHAIN_API GetMemberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMember"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
   };
 
 } // namespace Model

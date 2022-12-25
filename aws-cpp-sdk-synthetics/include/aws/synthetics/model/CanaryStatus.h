@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryStatus
+  class CanaryStatus
   {
   public:
-    CanaryStatus();
-    CanaryStatus(Aws::Utils::Json::JsonView jsonValue);
-    CanaryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryStatus();
+    AWS_SYNTHETICS_API CanaryStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     CanaryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     CanaryStateReasonCode m_stateReasonCode;
-    bool m_stateReasonCodeHasBeenSet;
+    bool m_stateReasonCodeHasBeenSet = false;
   };
 
 } // namespace Model

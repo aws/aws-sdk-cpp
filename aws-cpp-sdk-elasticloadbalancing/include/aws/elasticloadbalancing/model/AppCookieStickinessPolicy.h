@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AppCookieStickinessPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy
+  class AppCookieStickinessPolicy
   {
   public:
-    AppCookieStickinessPolicy();
-    AppCookieStickinessPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AppCookieStickinessPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy();
+    AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API AppCookieStickinessPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_cookieName;
-    bool m_cookieNameHasBeenSet;
+    bool m_cookieNameHasBeenSet = false;
   };
 
 } // namespace Model

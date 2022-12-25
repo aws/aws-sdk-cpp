@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BootstrapActionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API BootstrapActionDetail
+  class BootstrapActionDetail
   {
   public:
-    BootstrapActionDetail();
-    BootstrapActionDetail(Aws::Utils::Json::JsonView jsonValue);
-    BootstrapActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API BootstrapActionDetail();
+    AWS_EMR_API BootstrapActionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API BootstrapActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     BootstrapActionConfig m_bootstrapActionConfig;
-    bool m_bootstrapActionConfigHasBeenSet;
+    bool m_bootstrapActionConfigHasBeenSet = false;
   };
 
 } // namespace Model

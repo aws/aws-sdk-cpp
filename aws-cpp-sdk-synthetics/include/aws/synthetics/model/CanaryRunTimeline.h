@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunTimeline">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRunTimeline
+  class CanaryRunTimeline
   {
   public:
-    CanaryRunTimeline();
-    CanaryRunTimeline(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRunTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRunTimeline();
+    AWS_SYNTHETICS_API CanaryRunTimeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRunTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     Aws::Utils::DateTime m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
   };
 
 } // namespace Model

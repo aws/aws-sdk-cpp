@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKACONNECT_API DeleteCustomPluginRequest : public KafkaConnectRequest
+  class DeleteCustomPluginRequest : public KafkaConnectRequest
   {
   public:
-    DeleteCustomPluginRequest();
+    AWS_KAFKACONNECT_API DeleteCustomPluginRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCustomPlugin"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
   };
 
 } // namespace Model

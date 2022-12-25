@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerDocuments">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerDocuments
+  class EntityRecognizerDocuments
   {
   public:
-    EntityRecognizerDocuments();
-    EntityRecognizerDocuments(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerDocuments();
+    AWS_COMPREHEND_API EntityRecognizerDocuments(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,13 +216,13 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_testS3Uri;
-    bool m_testS3UriHasBeenSet;
+    bool m_testS3UriHasBeenSet = false;
 
     InputFormat m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
   };
 
 } // namespace Model

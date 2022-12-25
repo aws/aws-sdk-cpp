@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AutomatedAbrSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AutomatedAbrSettings
+  class AutomatedAbrSettings
   {
   public:
-    AutomatedAbrSettings();
-    AutomatedAbrSettings(Aws::Utils::Json::JsonView jsonValue);
-    AutomatedAbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AutomatedAbrSettings();
+    AWS_MEDIACONVERT_API AutomatedAbrSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AutomatedAbrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     int m_maxAbrBitrate;
-    bool m_maxAbrBitrateHasBeenSet;
+    bool m_maxAbrBitrateHasBeenSet = false;
 
     int m_maxRenditions;
-    bool m_maxRenditionsHasBeenSet;
+    bool m_maxRenditionsHasBeenSet = false;
 
     int m_minAbrBitrate;
-    bool m_minAbrBitrateHasBeenSet;
+    bool m_minAbrBitrateHasBeenSet = false;
 
     Aws::Vector<AutomatedAbrRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

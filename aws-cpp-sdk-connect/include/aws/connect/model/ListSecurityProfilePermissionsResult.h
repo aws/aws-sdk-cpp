@@ -25,51 +25,75 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListSecurityProfilePermissionsResult
+  class ListSecurityProfilePermissionsResult
   {
   public:
-    ListSecurityProfilePermissionsResult();
-    ListSecurityProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult();
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline void SetPermissions(const Aws::Vector<Aws::String>& value) { m_permissions = value; }
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline void SetPermissions(Aws::Vector<Aws::String>&& value) { m_permissions = std::move(value); }
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline ListSecurityProfilePermissionsResult& WithPermissions(const Aws::Vector<Aws::String>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline ListSecurityProfilePermissionsResult& WithPermissions(Aws::Vector<Aws::String>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline ListSecurityProfilePermissionsResult& AddPermissions(const Aws::String& value) { m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline ListSecurityProfilePermissionsResult& AddPermissions(Aws::String&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The permissions granted to the security profile.</p>
+     * <p>The permissions granted to the security profile. For a complete list of valid
+     * permissions, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+     * of security profile permissions</a>.</p>
      */
     inline ListSecurityProfilePermissionsResult& AddPermissions(const char* value) { m_permissions.push_back(value); return *this; }
 

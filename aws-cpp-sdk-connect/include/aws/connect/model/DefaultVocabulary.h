@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DefaultVocabulary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API DefaultVocabulary
+  class DefaultVocabulary
   {
   public:
-    DefaultVocabulary();
-    DefaultVocabulary(Aws::Utils::Json::JsonView jsonValue);
-    DefaultVocabulary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API DefaultVocabulary();
+    AWS_CONNECT_API DefaultVocabulary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API DefaultVocabulary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     VocabularyLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_vocabularyId;
-    bool m_vocabularyIdHasBeenSet;
+    bool m_vocabularyIdHasBeenSet = false;
 
     Aws::String m_vocabularyName;
-    bool m_vocabularyNameHasBeenSet;
+    bool m_vocabularyNameHasBeenSet = false;
   };
 
 } // namespace Model

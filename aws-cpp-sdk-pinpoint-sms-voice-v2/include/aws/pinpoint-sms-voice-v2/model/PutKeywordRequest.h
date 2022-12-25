@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API PutKeywordRequest : public PinpointSMSVoiceV2Request
+  class PutKeywordRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    PutKeywordRequest();
+    AWS_PINPOINTSMSVOICEV2_API PutKeywordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutKeyword"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
 
     Aws::String m_keywordMessage;
-    bool m_keywordMessageHasBeenSet;
+    bool m_keywordMessageHasBeenSet = false;
 
     KeywordAction m_keywordAction;
-    bool m_keywordActionHasBeenSet;
+    bool m_keywordActionHasBeenSet = false;
   };
 
 } // namespace Model

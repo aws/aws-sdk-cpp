@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ResourceARNDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ResourceARNDetail
+  class ResourceARNDetail
   {
   public:
-    ResourceARNDetail();
-    ResourceARNDetail(Aws::Utils::Json::JsonView jsonValue);
-    ResourceARNDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ResourceARNDetail();
+    AWS_XRAY_API ResourceARNDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ResourceARNDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

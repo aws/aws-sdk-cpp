@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API AssociateConnectionWithLagRequest : public DirectConnectRequest
+  class AssociateConnectionWithLagRequest : public DirectConnectRequest
   {
   public:
-    AssociateConnectionWithLagRequest();
+    AWS_DIRECTCONNECT_API AssociateConnectionWithLagRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateConnectionWithLag"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
   };
 
 } // namespace Model

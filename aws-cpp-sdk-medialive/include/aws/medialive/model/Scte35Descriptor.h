@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35Descriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35Descriptor
+  class Scte35Descriptor
   {
   public:
-    Scte35Descriptor();
-    Scte35Descriptor(Aws::Utils::Json::JsonView jsonValue);
-    Scte35Descriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35Descriptor();
+    AWS_MEDIALIVE_API Scte35Descriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35Descriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Scte35DescriptorSettings m_scte35DescriptorSettings;
-    bool m_scte35DescriptorSettingsHasBeenSet;
+    bool m_scte35DescriptorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

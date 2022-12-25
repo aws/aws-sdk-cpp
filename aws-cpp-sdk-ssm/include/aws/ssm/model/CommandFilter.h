@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CommandFilter
+  class CommandFilter
   {
   public:
-    CommandFilter();
-    CommandFilter(Aws::Utils::Json::JsonView jsonValue);
-    CommandFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CommandFilter();
+    AWS_SSM_API CommandFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CommandFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,10 +414,10 @@ namespace Model
   private:
 
     CommandFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

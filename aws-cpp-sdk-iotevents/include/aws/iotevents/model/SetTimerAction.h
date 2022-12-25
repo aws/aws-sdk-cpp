@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SetTimerAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API SetTimerAction
+  class SetTimerAction
   {
   public:
-    SetTimerAction();
-    SetTimerAction(Aws::Utils::Json::JsonView jsonValue);
-    SetTimerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API SetTimerAction();
+    AWS_IOTEVENTS_API SetTimerAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API SetTimerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_timerName;
-    bool m_timerNameHasBeenSet;
+    bool m_timerNameHasBeenSet = false;
 
     Aws::String m_durationExpression;
-    bool m_durationExpressionHasBeenSet;
+    bool m_durationExpressionHasBeenSet = false;
   };
 
 } // namespace Model

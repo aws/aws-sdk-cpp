@@ -10,6 +10,7 @@
 #include <aws/eks/model/AddonHealth.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/eks/model/MarketplaceInformation.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Addon">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Addon
+  class Addon
   {
   public:
-    Addon();
-    Addon(Aws::Utils::Json::JsonView jsonValue);
-    Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Addon();
+    AWS_EKS_API Addon(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -332,50 +333,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline const Aws::String& GetServiceAccountRoleArn() const{ return m_serviceAccountRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline bool ServiceAccountRoleArnHasBeenSet() const { return m_serviceAccountRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const Aws::String& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(Aws::String&& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const char* value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const Aws::String& value) { SetServiceAccountRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(Aws::String&& value) { SetServiceAccountRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const char* value) { SetServiceAccountRoleArn(value); return *this;}
 
@@ -484,37 +485,209 @@ namespace Model
      */
     inline Addon& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline const Aws::String& GetPublisher() const{ return m_publisher; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline bool PublisherHasBeenSet() const { return m_publisherHasBeenSet; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(const Aws::String& value) { m_publisherHasBeenSet = true; m_publisher = value; }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(Aws::String&& value) { m_publisherHasBeenSet = true; m_publisher = std::move(value); }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline void SetPublisher(const char* value) { m_publisherHasBeenSet = true; m_publisher.assign(value); }
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline Addon& WithPublisher(const Aws::String& value) { SetPublisher(value); return *this;}
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline Addon& WithPublisher(Aws::String&& value) { SetPublisher(std::move(value)); return *this;}
+
+    /**
+     * <p>The publisher of the add-on.</p>
+     */
+    inline Addon& WithPublisher(const char* value) { SetPublisher(value); return *this;}
+
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline Addon& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline Addon& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner of the add-on.</p>
+     */
+    inline Addon& WithOwner(const char* value) { SetOwner(value); return *this;}
+
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline const MarketplaceInformation& GetMarketplaceInformation() const{ return m_marketplaceInformation; }
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline bool MarketplaceInformationHasBeenSet() const { return m_marketplaceInformationHasBeenSet; }
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline void SetMarketplaceInformation(const MarketplaceInformation& value) { m_marketplaceInformationHasBeenSet = true; m_marketplaceInformation = value; }
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline void SetMarketplaceInformation(MarketplaceInformation&& value) { m_marketplaceInformationHasBeenSet = true; m_marketplaceInformation = std::move(value); }
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline Addon& WithMarketplaceInformation(const MarketplaceInformation& value) { SetMarketplaceInformation(value); return *this;}
+
+    /**
+     * <p>Information about an Amazon EKS add-on from the Amazon Web Services
+     * Marketplace.</p>
+     */
+    inline Addon& WithMarketplaceInformation(MarketplaceInformation&& value) { SetMarketplaceInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline Addon& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline Addon& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration values that you provided.</p>
+     */
+    inline Addon& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
+
   private:
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     AddonStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_addonVersion;
-    bool m_addonVersionHasBeenSet;
+    bool m_addonVersionHasBeenSet = false;
 
     AddonHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
 
     Aws::String m_addonArn;
-    bool m_addonArnHasBeenSet;
+    bool m_addonArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_serviceAccountRoleArn;
-    bool m_serviceAccountRoleArnHasBeenSet;
+    bool m_serviceAccountRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_publisher;
+    bool m_publisherHasBeenSet = false;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
+
+    MarketplaceInformation m_marketplaceInformation;
+    bool m_marketplaceInformationHasBeenSet = false;
+
+    Aws::String m_configurationValues;
+    bool m_configurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

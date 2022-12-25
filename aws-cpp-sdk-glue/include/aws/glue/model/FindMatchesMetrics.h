@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FindMatchesMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FindMatchesMetrics
+  class FindMatchesMetrics
   {
   public:
-    FindMatchesMetrics();
-    FindMatchesMetrics(Aws::Utils::Json::JsonView jsonValue);
-    FindMatchesMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FindMatchesMetrics();
+    AWS_GLUE_API FindMatchesMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FindMatchesMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     double m_areaUnderPRCurve;
-    bool m_areaUnderPRCurveHasBeenSet;
+    bool m_areaUnderPRCurveHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1;
-    bool m_f1HasBeenSet;
+    bool m_f1HasBeenSet = false;
 
     ConfusionMatrix m_confusionMatrix;
-    bool m_confusionMatrixHasBeenSet;
+    bool m_confusionMatrixHasBeenSet = false;
 
     Aws::Vector<ColumnImportance> m_columnImportances;
-    bool m_columnImportancesHasBeenSet;
+    bool m_columnImportancesHasBeenSet = false;
   };
 
 } // namespace Model

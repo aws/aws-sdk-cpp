@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RepositoryScanningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API RepositoryScanningConfiguration
+  class RepositoryScanningConfiguration
   {
   public:
-    RepositoryScanningConfiguration();
-    RepositoryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API RepositoryScanningConfiguration();
+    AWS_ECR_API RepositoryScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API RepositoryScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,19 +218,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryArn;
-    bool m_repositoryArnHasBeenSet;
+    bool m_repositoryArnHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     bool m_scanOnPush;
-    bool m_scanOnPushHasBeenSet;
+    bool m_scanOnPushHasBeenSet = false;
 
     ScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_appliedScanFilters;
-    bool m_appliedScanFiltersHasBeenSet;
+    bool m_appliedScanFiltersHasBeenSet = false;
   };
 
 } // namespace Model

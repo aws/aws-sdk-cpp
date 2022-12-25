@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DestinationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API DestinationOptions
+  class DestinationOptions
   {
   public:
-    DestinationOptions();
-    DestinationOptions(Aws::Utils::Json::JsonView jsonValue);
-    DestinationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API DestinationOptions();
+    AWS_HONEYCODE_API DestinationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API DestinationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, SourceDataColumnProperties> m_columnMap;
-    bool m_columnMapHasBeenSet;
+    bool m_columnMapHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalS3ExportDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API JournalS3ExportDescription
+  class JournalS3ExportDescription
   {
   public:
-    JournalS3ExportDescription();
-    JournalS3ExportDescription(Aws::Utils::Json::JsonView jsonValue);
-    JournalS3ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API JournalS3ExportDescription();
+    AWS_QLDB_API JournalS3ExportDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API JournalS3ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -398,31 +398,31 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_exportCreationTime;
-    bool m_exportCreationTimeHasBeenSet;
+    bool m_exportCreationTimeHasBeenSet = false;
 
     ExportStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_inclusiveStartTime;
-    bool m_inclusiveStartTimeHasBeenSet;
+    bool m_inclusiveStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_exclusiveEndTime;
-    bool m_exclusiveEndTimeHasBeenSet;
+    bool m_exclusiveEndTimeHasBeenSet = false;
 
     S3ExportConfiguration m_s3ExportConfiguration;
-    bool m_s3ExportConfigurationHasBeenSet;
+    bool m_s3ExportConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
   };
 
 } // namespace Model

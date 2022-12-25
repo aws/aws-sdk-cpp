@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API InternalServerException();
+    AWS_IVS_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_exceptionMessage;
-    bool m_exceptionMessageHasBeenSet;
+    bool m_exceptionMessageHasBeenSet = false;
   };
 
 } // namespace Model

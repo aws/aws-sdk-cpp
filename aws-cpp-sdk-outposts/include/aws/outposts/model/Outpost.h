@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Outpost">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Outpost
+  class Outpost
   {
   public:
-    Outpost();
-    Outpost(Aws::Utils::Json::JsonView jsonValue);
-    Outpost& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Outpost();
+    AWS_OUTPOSTS_API Outpost(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Outpost& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -404,40 +404,40 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_lifeCycleStatus;
-    bool m_lifeCycleStatusHasBeenSet;
+    bool m_lifeCycleStatusHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_siteArn;
-    bool m_siteArnHasBeenSet;
+    bool m_siteArnHasBeenSet = false;
 
     SupportedHardwareType m_supportedHardwareType;
-    bool m_supportedHardwareTypeHasBeenSet;
+    bool m_supportedHardwareTypeHasBeenSet = false;
   };
 
 } // namespace Model

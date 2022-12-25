@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DebugSession">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API DebugSession
+  class DebugSession
   {
   public:
-    DebugSession();
-    DebugSession(Aws::Utils::Json::JsonView jsonValue);
-    DebugSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API DebugSession();
+    AWS_CODEBUILD_API DebugSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API DebugSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     bool m_sessionEnabled;
-    bool m_sessionEnabledHasBeenSet;
+    bool m_sessionEnabledHasBeenSet = false;
 
     Aws::String m_sessionTarget;
-    bool m_sessionTargetHasBeenSet;
+    bool m_sessionTargetHasBeenSet = false;
   };
 
 } // namespace Model

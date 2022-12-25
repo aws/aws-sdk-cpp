@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WindowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API WindowSummary
+  class WindowSummary
   {
   public:
-    WindowSummary();
-    WindowSummary(Aws::Utils::Json::JsonView jsonValue);
-    WindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API WindowSummary();
+    AWS_FORECASTSERVICE_API WindowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API WindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,19 +202,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_testWindowStart;
-    bool m_testWindowStartHasBeenSet;
+    bool m_testWindowStartHasBeenSet = false;
 
     Aws::Utils::DateTime m_testWindowEnd;
-    bool m_testWindowEndHasBeenSet;
+    bool m_testWindowEndHasBeenSet = false;
 
     int m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
 
     EvaluationType m_evaluationType;
-    bool m_evaluationTypeHasBeenSet;
+    bool m_evaluationTypeHasBeenSet = false;
 
     Metrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

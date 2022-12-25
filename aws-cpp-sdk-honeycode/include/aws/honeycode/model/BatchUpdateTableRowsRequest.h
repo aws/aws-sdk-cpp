@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_HONEYCODE_API BatchUpdateTableRowsRequest : public HoneycodeRequest
+  class BatchUpdateTableRowsRequest : public HoneycodeRequest
   {
   public:
-    BatchUpdateTableRowsRequest();
+    AWS_HONEYCODE_API BatchUpdateTableRowsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchUpdateTableRows"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HONEYCODE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -328,16 +328,16 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::Vector<UpdateRowData> m_rowsToUpdate;
-    bool m_rowsToUpdateHasBeenSet;
+    bool m_rowsToUpdateHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

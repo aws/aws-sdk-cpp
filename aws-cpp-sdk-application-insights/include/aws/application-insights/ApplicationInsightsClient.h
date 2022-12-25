@@ -5,193 +5,16 @@
 
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
-#include <aws/application-insights/ApplicationInsightsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/application-insights/model/CreateApplicationResult.h>
-#include <aws/application-insights/model/CreateComponentResult.h>
-#include <aws/application-insights/model/CreateLogPatternResult.h>
-#include <aws/application-insights/model/DeleteApplicationResult.h>
-#include <aws/application-insights/model/DeleteComponentResult.h>
-#include <aws/application-insights/model/DeleteLogPatternResult.h>
-#include <aws/application-insights/model/DescribeApplicationResult.h>
-#include <aws/application-insights/model/DescribeComponentResult.h>
-#include <aws/application-insights/model/DescribeComponentConfigurationResult.h>
-#include <aws/application-insights/model/DescribeComponentConfigurationRecommendationResult.h>
-#include <aws/application-insights/model/DescribeLogPatternResult.h>
-#include <aws/application-insights/model/DescribeObservationResult.h>
-#include <aws/application-insights/model/DescribeProblemResult.h>
-#include <aws/application-insights/model/DescribeProblemObservationsResult.h>
-#include <aws/application-insights/model/ListApplicationsResult.h>
-#include <aws/application-insights/model/ListComponentsResult.h>
-#include <aws/application-insights/model/ListConfigurationHistoryResult.h>
-#include <aws/application-insights/model/ListLogPatternSetsResult.h>
-#include <aws/application-insights/model/ListLogPatternsResult.h>
-#include <aws/application-insights/model/ListProblemsResult.h>
-#include <aws/application-insights/model/ListTagsForResourceResult.h>
-#include <aws/application-insights/model/TagResourceResult.h>
-#include <aws/application-insights/model/UntagResourceResult.h>
-#include <aws/application-insights/model/UpdateApplicationResult.h>
-#include <aws/application-insights/model/UpdateComponentResult.h>
-#include <aws/application-insights/model/UpdateComponentConfigurationResult.h>
-#include <aws/application-insights/model/UpdateLogPatternResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ApplicationInsights
 {
-
-namespace Model
-{
-        class CreateApplicationRequest;
-        class CreateComponentRequest;
-        class CreateLogPatternRequest;
-        class DeleteApplicationRequest;
-        class DeleteComponentRequest;
-        class DeleteLogPatternRequest;
-        class DescribeApplicationRequest;
-        class DescribeComponentRequest;
-        class DescribeComponentConfigurationRequest;
-        class DescribeComponentConfigurationRecommendationRequest;
-        class DescribeLogPatternRequest;
-        class DescribeObservationRequest;
-        class DescribeProblemRequest;
-        class DescribeProblemObservationsRequest;
-        class ListApplicationsRequest;
-        class ListComponentsRequest;
-        class ListConfigurationHistoryRequest;
-        class ListLogPatternSetsRequest;
-        class ListLogPatternsRequest;
-        class ListProblemsRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-        class UpdateComponentRequest;
-        class UpdateComponentConfigurationRequest;
-        class UpdateLogPatternRequest;
-
-        typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationInsightsError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateComponentResult, ApplicationInsightsError> CreateComponentOutcome;
-        typedef Aws::Utils::Outcome<CreateLogPatternResult, ApplicationInsightsError> CreateLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, ApplicationInsightsError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteComponentResult, ApplicationInsightsError> DeleteComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteLogPatternResult, ApplicationInsightsError> DeleteLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DescribeApplicationResult, ApplicationInsightsError> DescribeApplicationOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentResult, ApplicationInsightsError> DescribeComponentOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentConfigurationResult, ApplicationInsightsError> DescribeComponentConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeComponentConfigurationRecommendationResult, ApplicationInsightsError> DescribeComponentConfigurationRecommendationOutcome;
-        typedef Aws::Utils::Outcome<DescribeLogPatternResult, ApplicationInsightsError> DescribeLogPatternOutcome;
-        typedef Aws::Utils::Outcome<DescribeObservationResult, ApplicationInsightsError> DescribeObservationOutcome;
-        typedef Aws::Utils::Outcome<DescribeProblemResult, ApplicationInsightsError> DescribeProblemOutcome;
-        typedef Aws::Utils::Outcome<DescribeProblemObservationsResult, ApplicationInsightsError> DescribeProblemObservationsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, ApplicationInsightsError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListComponentsResult, ApplicationInsightsError> ListComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationHistoryResult, ApplicationInsightsError> ListConfigurationHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListLogPatternSetsResult, ApplicationInsightsError> ListLogPatternSetsOutcome;
-        typedef Aws::Utils::Outcome<ListLogPatternsResult, ApplicationInsightsError> ListLogPatternsOutcome;
-        typedef Aws::Utils::Outcome<ListProblemsResult, ApplicationInsightsError> ListProblemsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationInsightsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ApplicationInsightsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ApplicationInsightsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, ApplicationInsightsError> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateComponentResult, ApplicationInsightsError> UpdateComponentOutcome;
-        typedef Aws::Utils::Outcome<UpdateComponentConfigurationResult, ApplicationInsightsError> UpdateComponentConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLogPatternResult, ApplicationInsightsError> UpdateLogPatternOutcome;
-
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
-        typedef std::future<CreateLogPatternOutcome> CreateLogPatternOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
-        typedef std::future<DeleteLogPatternOutcome> DeleteLogPatternOutcomeCallable;
-        typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
-        typedef std::future<DescribeComponentOutcome> DescribeComponentOutcomeCallable;
-        typedef std::future<DescribeComponentConfigurationOutcome> DescribeComponentConfigurationOutcomeCallable;
-        typedef std::future<DescribeComponentConfigurationRecommendationOutcome> DescribeComponentConfigurationRecommendationOutcomeCallable;
-        typedef std::future<DescribeLogPatternOutcome> DescribeLogPatternOutcomeCallable;
-        typedef std::future<DescribeObservationOutcome> DescribeObservationOutcomeCallable;
-        typedef std::future<DescribeProblemOutcome> DescribeProblemOutcomeCallable;
-        typedef std::future<DescribeProblemObservationsOutcome> DescribeProblemObservationsOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
-        typedef std::future<ListConfigurationHistoryOutcome> ListConfigurationHistoryOutcomeCallable;
-        typedef std::future<ListLogPatternSetsOutcome> ListLogPatternSetsOutcomeCallable;
-        typedef std::future<ListLogPatternsOutcome> ListLogPatternsOutcomeCallable;
-        typedef std::future<ListProblemsOutcome> ListProblemsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-        typedef std::future<UpdateComponentOutcome> UpdateComponentOutcomeCallable;
-        typedef std::future<UpdateComponentConfigurationOutcome> UpdateComponentConfigurationOutcomeCallable;
-        typedef std::future<UpdateLogPatternOutcome> UpdateLogPatternOutcomeCallable;
-} // namespace Model
-
-  class ApplicationInsightsClient;
-
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateComponentRequest&, const Model::CreateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::CreateLogPatternRequest&, const Model::CreateLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogPatternResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DeleteLogPatternRequest&, const Model::DeleteLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogPatternResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeComponentRequest&, const Model::DescribeComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComponentResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeComponentConfigurationRequest&, const Model::DescribeComponentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComponentConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeComponentConfigurationRecommendationRequest&, const Model::DescribeComponentConfigurationRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComponentConfigurationRecommendationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeLogPatternRequest&, const Model::DescribeLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogPatternResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeObservationRequest&, const Model::DescribeObservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObservationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeProblemRequest&, const Model::DescribeProblemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProblemResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeProblemObservationsRequest&, const Model::DescribeProblemObservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProblemObservationsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListConfigurationHistoryRequest&, const Model::ListConfigurationHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationHistoryResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListLogPatternSetsRequest&, const Model::ListLogPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogPatternSetsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListLogPatternsRequest&, const Model::ListLogPatternsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogPatternsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListProblemsRequest&, const Model::ListProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProblemsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentRequest&, const Model::UpdateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateComponentConfigurationRequest&, const Model::UpdateComponentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationInsightsClient*, const Model::UpdateLogPatternRequest&, const Model::UpdateLogPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogPatternResponseReceivedHandler;
-
   /**
    * <fullname>Amazon CloudWatch Application Insights</fullname> <p> Amazon
    * CloudWatch Application Insights is a service that helps you detect common
@@ -207,32 +30,60 @@ namespace Model
    * SQL Server database is occurring. It bases this analysis on impactful metrics
    * and log errors. </p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationInsightsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationInsightsClient(const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration(),
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationInsightsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationInsightsClient(const Aws::Auth::AWSCredentials& credentials,
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ApplicationInsightsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationInsightsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationInsightsClient(const Aws::Auth::AWSCredentials& credentials,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ApplicationInsightsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ApplicationInsightsClient();
-
 
         /**
          * <p>Adds an application that is created from a resource group.</p><p><h3>See
@@ -736,39 +587,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateComponentAsyncHelper(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLogPatternAsyncHelper(const Model::CreateLogPatternRequest& request, const CreateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLogPatternAsyncHelper(const Model::DeleteLogPatternRequest& request, const DeleteLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComponentAsyncHelper(const Model::DescribeComponentRequest& request, const DescribeComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComponentConfigurationAsyncHelper(const Model::DescribeComponentConfigurationRequest& request, const DescribeComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComponentConfigurationRecommendationAsyncHelper(const Model::DescribeComponentConfigurationRecommendationRequest& request, const DescribeComponentConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLogPatternAsyncHelper(const Model::DescribeLogPatternRequest& request, const DescribeLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeObservationAsyncHelper(const Model::DescribeObservationRequest& request, const DescribeObservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProblemAsyncHelper(const Model::DescribeProblemRequest& request, const DescribeProblemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProblemObservationsAsyncHelper(const Model::DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConfigurationHistoryAsyncHelper(const Model::ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLogPatternSetsAsyncHelper(const Model::ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLogPatternsAsyncHelper(const Model::ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProblemsAsyncHelper(const Model::ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateComponentAsyncHelper(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateComponentConfigurationAsyncHelper(const Model::UpdateComponentConfigurationRequest& request, const UpdateComponentConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLogPatternAsyncHelper(const Model::UpdateLogPatternRequest& request, const UpdateLogPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;
+      void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ApplicationInsightsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ApplicationInsightsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationInsights

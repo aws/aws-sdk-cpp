@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TargetConfigurationRequest
+  class TargetConfigurationRequest
   {
   public:
-    TargetConfigurationRequest();
-    TargetConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetConfigurationRequest();
+    AWS_EC2_API TargetConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
   };
 
 } // namespace Model

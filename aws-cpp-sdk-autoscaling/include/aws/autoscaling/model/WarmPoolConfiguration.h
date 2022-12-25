@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/WarmPoolConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API WarmPoolConfiguration
+  class WarmPoolConfiguration
   {
   public:
-    WarmPoolConfiguration();
-    WarmPoolConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    WarmPoolConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API WarmPoolConfiguration();
+    AWS_AUTOSCALING_API WarmPoolConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API WarmPoolConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -188,19 +188,19 @@ namespace Model
   private:
 
     int m_maxGroupPreparedCapacity;
-    bool m_maxGroupPreparedCapacityHasBeenSet;
+    bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     WarmPoolState m_poolState;
-    bool m_poolStateHasBeenSet;
+    bool m_poolStateHasBeenSet = false;
 
     WarmPoolStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InstanceReusePolicy m_instanceReusePolicy;
-    bool m_instanceReusePolicyHasBeenSet;
+    bool m_instanceReusePolicyHasBeenSet = false;
   };
 
 } // namespace Model

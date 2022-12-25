@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SampleValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SampleValue
+  class SampleValue
   {
   public:
-    SampleValue();
-    SampleValue(Aws::Utils::Json::JsonView jsonValue);
-    SampleValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SampleValue();
+    AWS_LEXMODELSV2_API SampleValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SampleValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

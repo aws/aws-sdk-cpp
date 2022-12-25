@@ -28,7 +28,8 @@ CreateOpsItemRequest::CreateOpsItemRequest() :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -61,7 +62,7 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
 
   if(m_notificationsHasBeenSet)
   {
-   Array<JsonValue> notificationsJsonList(m_notifications.size());
+   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
    {
      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
@@ -78,7 +79,7 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
 
   if(m_relatedOpsItemsHasBeenSet)
   {
-   Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
+   Aws::Utils::Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
    for(unsigned relatedOpsItemsIndex = 0; relatedOpsItemsIndex < relatedOpsItemsJsonList.GetLength(); ++relatedOpsItemsIndex)
    {
      relatedOpsItemsJsonList[relatedOpsItemsIndex].AsObject(m_relatedOpsItems[relatedOpsItemsIndex].Jsonize());
@@ -101,7 +102,7 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -140,6 +141,12 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
   if(m_plannedEndTimeHasBeenSet)
   {
    payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
   }
 
   return payload.View().WriteReadable();

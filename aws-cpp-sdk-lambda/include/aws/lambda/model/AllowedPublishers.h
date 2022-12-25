@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AllowedPublishers">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API AllowedPublishers
+  class AllowedPublishers
   {
   public:
-    AllowedPublishers();
-    AllowedPublishers(Aws::Utils::Json::JsonView jsonValue);
-    AllowedPublishers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API AllowedPublishers();
+    AWS_LAMBDA_API AllowedPublishers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API AllowedPublishers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_signingProfileVersionArns;
-    bool m_signingProfileVersionArnsHasBeenSet;
+    bool m_signingProfileVersionArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/IpFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API IpFilter
+  class IpFilter
   {
   public:
-    IpFilter();
-    IpFilter(Aws::Utils::Json::JsonView jsonValue);
-    IpFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API IpFilter();
+    AWS_SECURITYHUB_API IpFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API IpFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

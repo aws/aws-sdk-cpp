@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInserter">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MotionImageInserter
+  class MotionImageInserter
   {
   public:
-    MotionImageInserter();
-    MotionImageInserter(Aws::Utils::Json::JsonView jsonValue);
-    MotionImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MotionImageInserter();
+    AWS_MEDIACONVERT_API MotionImageInserter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MotionImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,22 +477,22 @@ namespace Model
   private:
 
     MotionImageInsertionFramerate m_framerate;
-    bool m_framerateHasBeenSet;
+    bool m_framerateHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     MotionImageInsertionMode m_insertionMode;
-    bool m_insertionModeHasBeenSet;
+    bool m_insertionModeHasBeenSet = false;
 
     MotionImageInsertionOffset m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     MotionImagePlayback m_playback;
-    bool m_playbackHasBeenSet;
+    bool m_playbackHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,41 +25,41 @@ namespace Model
 
   /**
    * <p>Complex data type for field-level encryption profiles that includes all of
-   * the encryption entities. </p><p><h3>See Also:</h3>   <a
+   * the encryption entities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/EncryptionEntities">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API EncryptionEntities
+  class EncryptionEntities
   {
   public:
-    EncryptionEntities();
-    EncryptionEntities(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EncryptionEntities& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EncryptionEntities();
+    AWS_CLOUDFRONT_API EncryptionEntities(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EncryptionEntities& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline EncryptionEntities& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<EncryptionEntity> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

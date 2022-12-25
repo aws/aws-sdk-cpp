@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FollowModeScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FollowModeScheduleActionStartSettings
+  class FollowModeScheduleActionStartSettings
   {
   public:
-    FollowModeScheduleActionStartSettings();
-    FollowModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
-    FollowModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FollowModeScheduleActionStartSettings();
+    AWS_MEDIALIVE_API FollowModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FollowModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     FollowPoint m_followPoint;
-    bool m_followPointHasBeenSet;
+    bool m_followPointHasBeenSet = false;
 
     Aws::String m_referenceActionName;
-    bool m_referenceActionNameHasBeenSet;
+    bool m_referenceActionNameHasBeenSet = false;
   };
 
 } // namespace Model

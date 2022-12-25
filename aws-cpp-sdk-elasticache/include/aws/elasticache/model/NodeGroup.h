@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NodeGroup
+  class NodeGroup
   {
   public:
-    NodeGroup();
-    NodeGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroup();
+    AWS_ELASTICACHE_API NodeGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_nodeGroupId;
-    bool m_nodeGroupIdHasBeenSet;
+    bool m_nodeGroupIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Endpoint m_primaryEndpoint;
-    bool m_primaryEndpointHasBeenSet;
+    bool m_primaryEndpointHasBeenSet = false;
 
     Endpoint m_readerEndpoint;
-    bool m_readerEndpointHasBeenSet;
+    bool m_readerEndpointHasBeenSet = false;
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::Vector<NodeGroupMember> m_nodeGroupMembers;
-    bool m_nodeGroupMembersHasBeenSet;
+    bool m_nodeGroupMembersHasBeenSet = false;
   };
 
 } // namespace Model

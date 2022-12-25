@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClustersMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheClustersRequest : public ElastiCacheRequest
+  class DescribeCacheClustersRequest : public ElastiCacheRequest
   {
   public:
-    DescribeCacheClustersRequest();
+    AWS_ELASTICACHE_API DescribeCacheClustersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeCacheClusters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_showCacheNodeInfo;
-    bool m_showCacheNodeInfoHasBeenSet;
+    bool m_showCacheNodeInfoHasBeenSet = false;
 
     bool m_showCacheClustersNotInReplicationGroups;
-    bool m_showCacheClustersNotInReplicationGroupsHasBeenSet;
+    bool m_showCacheClustersNotInReplicationGroupsHasBeenSet = false;
   };
 
 } // namespace Model

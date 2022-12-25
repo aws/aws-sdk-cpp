@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UsageAccountResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API UsageAccountResult
+  class UsageAccountResult
   {
   public:
-    UsageAccountResult();
-    UsageAccountResult(Aws::Utils::Json::JsonView jsonValue);
-    UsageAccountResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API UsageAccountResult();
+    AWS_GUARDDUTY_API UsageAccountResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API UsageAccountResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Total m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
   };
 
 } // namespace Model

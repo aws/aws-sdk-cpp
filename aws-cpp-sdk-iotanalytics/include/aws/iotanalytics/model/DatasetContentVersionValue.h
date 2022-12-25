@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentVersionValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetContentVersionValue
+  class DatasetContentVersionValue
   {
   public:
-    DatasetContentVersionValue();
-    DatasetContentVersionValue(Aws::Utils::Json::JsonView jsonValue);
-    DatasetContentVersionValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetContentVersionValue();
+    AWS_IOTANALYTICS_API DatasetContentVersionValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetContentVersionValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
   };
 
 } // namespace Model

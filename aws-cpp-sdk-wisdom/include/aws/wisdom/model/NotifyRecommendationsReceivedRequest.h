@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedRequest : public ConnectWisdomServiceRequest
+  class NotifyRecommendationsReceivedRequest : public ConnectWisdomServiceRequest
   {
   public:
-    NotifyRecommendationsReceivedRequest();
+    AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "NotifyRecommendationsReceived"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ExportFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ExportFilter
+  class ExportFilter
   {
   public:
-    ExportFilter();
-    ExportFilter(Aws::Utils::Json::JsonView jsonValue);
-    ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ExportFilter();
+    AWS_LEXMODELSV2_API ExportFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     ExportFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     ExportFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

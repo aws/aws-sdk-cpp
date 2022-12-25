@@ -30,7 +30,7 @@ GetInsightSummariesResult& GetInsightSummariesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InsightSummaries"))
   {
-    Array<JsonView> insightSummariesJsonList = jsonValue.GetArray("InsightSummaries");
+    Aws::Utils::Array<JsonView> insightSummariesJsonList = jsonValue.GetArray("InsightSummaries");
     for(unsigned insightSummariesIndex = 0; insightSummariesIndex < insightSummariesJsonList.GetLength(); ++insightSummariesIndex)
     {
       m_insightSummaries.push_back(insightSummariesJsonList[insightSummariesIndex].AsObject());

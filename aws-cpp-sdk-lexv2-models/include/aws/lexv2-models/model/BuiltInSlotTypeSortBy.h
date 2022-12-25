@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuiltInSlotTypeSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BuiltInSlotTypeSortBy
+  class BuiltInSlotTypeSortBy
   {
   public:
-    BuiltInSlotTypeSortBy();
-    BuiltInSlotTypeSortBy(Aws::Utils::Json::JsonView jsonValue);
-    BuiltInSlotTypeSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSortBy();
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BuiltInSlotTypeSortAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortOrder m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

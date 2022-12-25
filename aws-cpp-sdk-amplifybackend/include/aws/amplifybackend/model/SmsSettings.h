@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/SmsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API SmsSettings
+  class SmsSettings
   {
   public:
-    SmsSettings();
-    SmsSettings(Aws::Utils::Json::JsonView jsonValue);
-    SmsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API SmsSettings();
+    AWS_AMPLIFYBACKEND_API SmsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API SmsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_smsMessage;
-    bool m_smsMessageHasBeenSet;
+    bool m_smsMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IntegerParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API IntegerParameter
+  class IntegerParameter
   {
   public:
-    IntegerParameter();
-    IntegerParameter(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API IntegerParameter();
+    AWS_QUICKSIGHT_API IntegerParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API IntegerParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<long long> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

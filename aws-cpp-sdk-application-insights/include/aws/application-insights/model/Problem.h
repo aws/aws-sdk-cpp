@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Problem">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API Problem
+  class Problem
   {
   public:
-    Problem();
-    Problem(Aws::Utils::Json::JsonView jsonValue);
-    Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API Problem();
+    AWS_APPLICATIONINSIGHTS_API Problem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -482,40 +482,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_insights;
-    bool m_insightsHasBeenSet;
+    bool m_insightsHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_affectedResource;
-    bool m_affectedResourceHasBeenSet;
+    bool m_affectedResourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     SeverityLevel m_severityLevel;
-    bool m_severityLevelHasBeenSet;
+    bool m_severityLevelHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::Map<FeedbackKey, FeedbackValue> m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
 
     long long m_recurringCount;
-    bool m_recurringCountHasBeenSet;
+    bool m_recurringCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRecurrenceTime;
-    bool m_lastRecurrenceTimeHasBeenSet;
+    bool m_lastRecurrenceTimeHasBeenSet = false;
   };
 
 } // namespace Model

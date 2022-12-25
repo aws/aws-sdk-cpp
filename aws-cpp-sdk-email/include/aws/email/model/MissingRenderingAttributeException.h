@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/MissingRenderingAttributeException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API MissingRenderingAttributeException
+  class MissingRenderingAttributeException
   {
   public:
-    MissingRenderingAttributeException();
-    MissingRenderingAttributeException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MissingRenderingAttributeException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API MissingRenderingAttributeException();
+    AWS_SES_API MissingRenderingAttributeException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API MissingRenderingAttributeException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -69,7 +69,7 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

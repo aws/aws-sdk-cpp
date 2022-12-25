@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunConfigOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRunConfigOutput
+  class CanaryRunConfigOutput
   {
   public:
-    CanaryRunConfigOutput();
-    CanaryRunConfigOutput(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRunConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRunConfigOutput();
+    AWS_SYNTHETICS_API CanaryRunConfigOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRunConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,13 +105,13 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_memoryInMB;
-    bool m_memoryInMBHasBeenSet;
+    bool m_memoryInMBHasBeenSet = false;
 
     bool m_activeTracing;
-    bool m_activeTracingHasBeenSet;
+    bool m_activeTracingHasBeenSet = false;
   };
 
 } // namespace Model

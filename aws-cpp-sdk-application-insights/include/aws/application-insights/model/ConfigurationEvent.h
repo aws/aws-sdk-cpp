@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ConfigurationEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ConfigurationEvent
+  class ConfigurationEvent
   {
   public:
-    ConfigurationEvent();
-    ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent();
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,22 +270,22 @@ namespace Model
   private:
 
     Aws::String m_monitoredResourceARN;
-    bool m_monitoredResourceARNHasBeenSet;
+    bool m_monitoredResourceARNHasBeenSet = false;
 
     ConfigurationEventStatus m_eventStatus;
-    bool m_eventStatusHasBeenSet;
+    bool m_eventStatusHasBeenSet = false;
 
     ConfigurationEventResourceType m_eventResourceType;
-    bool m_eventResourceTypeHasBeenSet;
+    bool m_eventResourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_eventDetail;
-    bool m_eventDetailHasBeenSet;
+    bool m_eventDetailHasBeenSet = false;
 
     Aws::String m_eventResourceName;
-    bool m_eventResourceNameHasBeenSet;
+    bool m_eventResourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,20 +26,19 @@ namespace Model
 
   /**
    * <p>The routing configuration for a fleet alias.</p> <p> <b>Related actions</b>
-   * </p> <p> <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> |
-   * <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a
+   * </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RoutingStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API RoutingStrategy
+  class RoutingStrategy
   {
   public:
-    RoutingStrategy();
-    RoutingStrategy(Aws::Utils::Json::JsonView jsonValue);
-    RoutingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API RoutingStrategy();
+    AWS_GAMELIFT_API RoutingStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API RoutingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -48,8 +47,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline const RoutingStrategyType& GetType() const{ return m_type; }
 
@@ -59,8 +57,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -70,8 +67,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline void SetType(const RoutingStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -81,8 +77,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline void SetType(RoutingStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -92,8 +87,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline RoutingStrategy& WithType(const RoutingStrategyType& value) { SetType(value); return *this;}
 
@@ -103,8 +97,7 @@ namespace Model
      * one specific fleet. Use this type when routing to active fleets.</p> </li> <li>
      * <p> <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be
      * used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</p> </li> </ul>
+     * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
     inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(std::move(value)); return *this;}
 
@@ -201,13 +194,13 @@ namespace Model
   private:
 
     RoutingStrategyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

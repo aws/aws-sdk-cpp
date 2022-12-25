@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AssociatedTranscriptFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AssociatedTranscriptFilter
+  class AssociatedTranscriptFilter
   {
   public:
-    AssociatedTranscriptFilter();
-    AssociatedTranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssociatedTranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AssociatedTranscriptFilter();
+    AWS_LEXMODELSV2_API AssociatedTranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AssociatedTranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     AssociatedTranscriptFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

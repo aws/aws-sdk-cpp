@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(Aws::Utils::Json::JsonView jsonValue);
-    Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API Subnet();
+    AWS_DATABASEMIGRATIONSERVICE_API Subnet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     AvailabilityZone m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_subnetStatus;
-    bool m_subnetStatusHasBeenSet;
+    bool m_subnetStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,443 +5,16 @@
 
 #pragma once
 #include <aws/waf/WAF_EXPORTS.h>
-#include <aws/waf/WAFErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/waf/model/CreateByteMatchSetResult.h>
-#include <aws/waf/model/CreateGeoMatchSetResult.h>
-#include <aws/waf/model/CreateIPSetResult.h>
-#include <aws/waf/model/CreateRateBasedRuleResult.h>
-#include <aws/waf/model/CreateRegexMatchSetResult.h>
-#include <aws/waf/model/CreateRegexPatternSetResult.h>
-#include <aws/waf/model/CreateRuleResult.h>
-#include <aws/waf/model/CreateRuleGroupResult.h>
-#include <aws/waf/model/CreateSizeConstraintSetResult.h>
-#include <aws/waf/model/CreateSqlInjectionMatchSetResult.h>
-#include <aws/waf/model/CreateWebACLResult.h>
-#include <aws/waf/model/CreateWebACLMigrationStackResult.h>
-#include <aws/waf/model/CreateXssMatchSetResult.h>
-#include <aws/waf/model/DeleteByteMatchSetResult.h>
-#include <aws/waf/model/DeleteGeoMatchSetResult.h>
-#include <aws/waf/model/DeleteIPSetResult.h>
-#include <aws/waf/model/DeleteLoggingConfigurationResult.h>
-#include <aws/waf/model/DeletePermissionPolicyResult.h>
-#include <aws/waf/model/DeleteRateBasedRuleResult.h>
-#include <aws/waf/model/DeleteRegexMatchSetResult.h>
-#include <aws/waf/model/DeleteRegexPatternSetResult.h>
-#include <aws/waf/model/DeleteRuleResult.h>
-#include <aws/waf/model/DeleteRuleGroupResult.h>
-#include <aws/waf/model/DeleteSizeConstraintSetResult.h>
-#include <aws/waf/model/DeleteSqlInjectionMatchSetResult.h>
-#include <aws/waf/model/DeleteWebACLResult.h>
-#include <aws/waf/model/DeleteXssMatchSetResult.h>
-#include <aws/waf/model/GetByteMatchSetResult.h>
-#include <aws/waf/model/GetChangeTokenResult.h>
-#include <aws/waf/model/GetChangeTokenStatusResult.h>
-#include <aws/waf/model/GetGeoMatchSetResult.h>
-#include <aws/waf/model/GetIPSetResult.h>
-#include <aws/waf/model/GetLoggingConfigurationResult.h>
-#include <aws/waf/model/GetPermissionPolicyResult.h>
-#include <aws/waf/model/GetRateBasedRuleResult.h>
-#include <aws/waf/model/GetRateBasedRuleManagedKeysResult.h>
-#include <aws/waf/model/GetRegexMatchSetResult.h>
-#include <aws/waf/model/GetRegexPatternSetResult.h>
-#include <aws/waf/model/GetRuleResult.h>
-#include <aws/waf/model/GetRuleGroupResult.h>
-#include <aws/waf/model/GetSampledRequestsResult.h>
-#include <aws/waf/model/GetSizeConstraintSetResult.h>
-#include <aws/waf/model/GetSqlInjectionMatchSetResult.h>
-#include <aws/waf/model/GetWebACLResult.h>
-#include <aws/waf/model/GetXssMatchSetResult.h>
-#include <aws/waf/model/ListActivatedRulesInRuleGroupResult.h>
-#include <aws/waf/model/ListByteMatchSetsResult.h>
-#include <aws/waf/model/ListGeoMatchSetsResult.h>
-#include <aws/waf/model/ListIPSetsResult.h>
-#include <aws/waf/model/ListLoggingConfigurationsResult.h>
-#include <aws/waf/model/ListRateBasedRulesResult.h>
-#include <aws/waf/model/ListRegexMatchSetsResult.h>
-#include <aws/waf/model/ListRegexPatternSetsResult.h>
-#include <aws/waf/model/ListRuleGroupsResult.h>
-#include <aws/waf/model/ListRulesResult.h>
-#include <aws/waf/model/ListSizeConstraintSetsResult.h>
-#include <aws/waf/model/ListSqlInjectionMatchSetsResult.h>
-#include <aws/waf/model/ListSubscribedRuleGroupsResult.h>
-#include <aws/waf/model/ListTagsForResourceResult.h>
-#include <aws/waf/model/ListWebACLsResult.h>
-#include <aws/waf/model/ListXssMatchSetsResult.h>
-#include <aws/waf/model/PutLoggingConfigurationResult.h>
-#include <aws/waf/model/PutPermissionPolicyResult.h>
-#include <aws/waf/model/TagResourceResult.h>
-#include <aws/waf/model/UntagResourceResult.h>
-#include <aws/waf/model/UpdateByteMatchSetResult.h>
-#include <aws/waf/model/UpdateGeoMatchSetResult.h>
-#include <aws/waf/model/UpdateIPSetResult.h>
-#include <aws/waf/model/UpdateRateBasedRuleResult.h>
-#include <aws/waf/model/UpdateRegexMatchSetResult.h>
-#include <aws/waf/model/UpdateRegexPatternSetResult.h>
-#include <aws/waf/model/UpdateRuleResult.h>
-#include <aws/waf/model/UpdateRuleGroupResult.h>
-#include <aws/waf/model/UpdateSizeConstraintSetResult.h>
-#include <aws/waf/model/UpdateSqlInjectionMatchSetResult.h>
-#include <aws/waf/model/UpdateWebACLResult.h>
-#include <aws/waf/model/UpdateXssMatchSetResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/waf/WAFServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace WAF
 {
-
-namespace Model
-{
-        class CreateByteMatchSetRequest;
-        class CreateGeoMatchSetRequest;
-        class CreateIPSetRequest;
-        class CreateRateBasedRuleRequest;
-        class CreateRegexMatchSetRequest;
-        class CreateRegexPatternSetRequest;
-        class CreateRuleRequest;
-        class CreateRuleGroupRequest;
-        class CreateSizeConstraintSetRequest;
-        class CreateSqlInjectionMatchSetRequest;
-        class CreateWebACLRequest;
-        class CreateWebACLMigrationStackRequest;
-        class CreateXssMatchSetRequest;
-        class DeleteByteMatchSetRequest;
-        class DeleteGeoMatchSetRequest;
-        class DeleteIPSetRequest;
-        class DeleteLoggingConfigurationRequest;
-        class DeletePermissionPolicyRequest;
-        class DeleteRateBasedRuleRequest;
-        class DeleteRegexMatchSetRequest;
-        class DeleteRegexPatternSetRequest;
-        class DeleteRuleRequest;
-        class DeleteRuleGroupRequest;
-        class DeleteSizeConstraintSetRequest;
-        class DeleteSqlInjectionMatchSetRequest;
-        class DeleteWebACLRequest;
-        class DeleteXssMatchSetRequest;
-        class GetByteMatchSetRequest;
-        class GetChangeTokenRequest;
-        class GetChangeTokenStatusRequest;
-        class GetGeoMatchSetRequest;
-        class GetIPSetRequest;
-        class GetLoggingConfigurationRequest;
-        class GetPermissionPolicyRequest;
-        class GetRateBasedRuleRequest;
-        class GetRateBasedRuleManagedKeysRequest;
-        class GetRegexMatchSetRequest;
-        class GetRegexPatternSetRequest;
-        class GetRuleRequest;
-        class GetRuleGroupRequest;
-        class GetSampledRequestsRequest;
-        class GetSizeConstraintSetRequest;
-        class GetSqlInjectionMatchSetRequest;
-        class GetWebACLRequest;
-        class GetXssMatchSetRequest;
-        class ListActivatedRulesInRuleGroupRequest;
-        class ListByteMatchSetsRequest;
-        class ListGeoMatchSetsRequest;
-        class ListIPSetsRequest;
-        class ListLoggingConfigurationsRequest;
-        class ListRateBasedRulesRequest;
-        class ListRegexMatchSetsRequest;
-        class ListRegexPatternSetsRequest;
-        class ListRuleGroupsRequest;
-        class ListRulesRequest;
-        class ListSizeConstraintSetsRequest;
-        class ListSqlInjectionMatchSetsRequest;
-        class ListSubscribedRuleGroupsRequest;
-        class ListTagsForResourceRequest;
-        class ListWebACLsRequest;
-        class ListXssMatchSetsRequest;
-        class PutLoggingConfigurationRequest;
-        class PutPermissionPolicyRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateByteMatchSetRequest;
-        class UpdateGeoMatchSetRequest;
-        class UpdateIPSetRequest;
-        class UpdateRateBasedRuleRequest;
-        class UpdateRegexMatchSetRequest;
-        class UpdateRegexPatternSetRequest;
-        class UpdateRuleRequest;
-        class UpdateRuleGroupRequest;
-        class UpdateSizeConstraintSetRequest;
-        class UpdateSqlInjectionMatchSetRequest;
-        class UpdateWebACLRequest;
-        class UpdateXssMatchSetRequest;
-
-        typedef Aws::Utils::Outcome<CreateByteMatchSetResult, WAFError> CreateByteMatchSetOutcome;
-        typedef Aws::Utils::Outcome<CreateGeoMatchSetResult, WAFError> CreateGeoMatchSetOutcome;
-        typedef Aws::Utils::Outcome<CreateIPSetResult, WAFError> CreateIPSetOutcome;
-        typedef Aws::Utils::Outcome<CreateRateBasedRuleResult, WAFError> CreateRateBasedRuleOutcome;
-        typedef Aws::Utils::Outcome<CreateRegexMatchSetResult, WAFError> CreateRegexMatchSetOutcome;
-        typedef Aws::Utils::Outcome<CreateRegexPatternSetResult, WAFError> CreateRegexPatternSetOutcome;
-        typedef Aws::Utils::Outcome<CreateRuleResult, WAFError> CreateRuleOutcome;
-        typedef Aws::Utils::Outcome<CreateRuleGroupResult, WAFError> CreateRuleGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateSizeConstraintSetResult, WAFError> CreateSizeConstraintSetOutcome;
-        typedef Aws::Utils::Outcome<CreateSqlInjectionMatchSetResult, WAFError> CreateSqlInjectionMatchSetOutcome;
-        typedef Aws::Utils::Outcome<CreateWebACLResult, WAFError> CreateWebACLOutcome;
-        typedef Aws::Utils::Outcome<CreateWebACLMigrationStackResult, WAFError> CreateWebACLMigrationStackOutcome;
-        typedef Aws::Utils::Outcome<CreateXssMatchSetResult, WAFError> CreateXssMatchSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, WAFError> DeleteByteMatchSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteGeoMatchSetResult, WAFError> DeleteGeoMatchSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteIPSetResult, WAFError> DeleteIPSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoggingConfigurationResult, WAFError> DeleteLoggingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeletePermissionPolicyResult, WAFError> DeletePermissionPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteRateBasedRuleResult, WAFError> DeleteRateBasedRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteRegexMatchSetResult, WAFError> DeleteRegexMatchSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, WAFError> DeleteRegexPatternSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteRuleResult, WAFError> DeleteRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteRuleGroupResult, WAFError> DeleteRuleGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteSizeConstraintSetResult, WAFError> DeleteSizeConstraintSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteSqlInjectionMatchSetResult, WAFError> DeleteSqlInjectionMatchSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteWebACLResult, WAFError> DeleteWebACLOutcome;
-        typedef Aws::Utils::Outcome<DeleteXssMatchSetResult, WAFError> DeleteXssMatchSetOutcome;
-        typedef Aws::Utils::Outcome<GetByteMatchSetResult, WAFError> GetByteMatchSetOutcome;
-        typedef Aws::Utils::Outcome<GetChangeTokenResult, WAFError> GetChangeTokenOutcome;
-        typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, WAFError> GetChangeTokenStatusOutcome;
-        typedef Aws::Utils::Outcome<GetGeoMatchSetResult, WAFError> GetGeoMatchSetOutcome;
-        typedef Aws::Utils::Outcome<GetIPSetResult, WAFError> GetIPSetOutcome;
-        typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, WAFError> GetLoggingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetPermissionPolicyResult, WAFError> GetPermissionPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetRateBasedRuleResult, WAFError> GetRateBasedRuleOutcome;
-        typedef Aws::Utils::Outcome<GetRateBasedRuleManagedKeysResult, WAFError> GetRateBasedRuleManagedKeysOutcome;
-        typedef Aws::Utils::Outcome<GetRegexMatchSetResult, WAFError> GetRegexMatchSetOutcome;
-        typedef Aws::Utils::Outcome<GetRegexPatternSetResult, WAFError> GetRegexPatternSetOutcome;
-        typedef Aws::Utils::Outcome<GetRuleResult, WAFError> GetRuleOutcome;
-        typedef Aws::Utils::Outcome<GetRuleGroupResult, WAFError> GetRuleGroupOutcome;
-        typedef Aws::Utils::Outcome<GetSampledRequestsResult, WAFError> GetSampledRequestsOutcome;
-        typedef Aws::Utils::Outcome<GetSizeConstraintSetResult, WAFError> GetSizeConstraintSetOutcome;
-        typedef Aws::Utils::Outcome<GetSqlInjectionMatchSetResult, WAFError> GetSqlInjectionMatchSetOutcome;
-        typedef Aws::Utils::Outcome<GetWebACLResult, WAFError> GetWebACLOutcome;
-        typedef Aws::Utils::Outcome<GetXssMatchSetResult, WAFError> GetXssMatchSetOutcome;
-        typedef Aws::Utils::Outcome<ListActivatedRulesInRuleGroupResult, WAFError> ListActivatedRulesInRuleGroupOutcome;
-        typedef Aws::Utils::Outcome<ListByteMatchSetsResult, WAFError> ListByteMatchSetsOutcome;
-        typedef Aws::Utils::Outcome<ListGeoMatchSetsResult, WAFError> ListGeoMatchSetsOutcome;
-        typedef Aws::Utils::Outcome<ListIPSetsResult, WAFError> ListIPSetsOutcome;
-        typedef Aws::Utils::Outcome<ListLoggingConfigurationsResult, WAFError> ListLoggingConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListRateBasedRulesResult, WAFError> ListRateBasedRulesOutcome;
-        typedef Aws::Utils::Outcome<ListRegexMatchSetsResult, WAFError> ListRegexMatchSetsOutcome;
-        typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, WAFError> ListRegexPatternSetsOutcome;
-        typedef Aws::Utils::Outcome<ListRuleGroupsResult, WAFError> ListRuleGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListRulesResult, WAFError> ListRulesOutcome;
-        typedef Aws::Utils::Outcome<ListSizeConstraintSetsResult, WAFError> ListSizeConstraintSetsOutcome;
-        typedef Aws::Utils::Outcome<ListSqlInjectionMatchSetsResult, WAFError> ListSqlInjectionMatchSetsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscribedRuleGroupsResult, WAFError> ListSubscribedRuleGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, WAFError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWebACLsResult, WAFError> ListWebACLsOutcome;
-        typedef Aws::Utils::Outcome<ListXssMatchSetsResult, WAFError> ListXssMatchSetsOutcome;
-        typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, WAFError> PutLoggingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutPermissionPolicyResult, WAFError> PutPermissionPolicyOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, WAFError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, WAFError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, WAFError> UpdateByteMatchSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateGeoMatchSetResult, WAFError> UpdateGeoMatchSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateIPSetResult, WAFError> UpdateIPSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRateBasedRuleResult, WAFError> UpdateRateBasedRuleOutcome;
-        typedef Aws::Utils::Outcome<UpdateRegexMatchSetResult, WAFError> UpdateRegexMatchSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRegexPatternSetResult, WAFError> UpdateRegexPatternSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateRuleResult, WAFError> UpdateRuleOutcome;
-        typedef Aws::Utils::Outcome<UpdateRuleGroupResult, WAFError> UpdateRuleGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateSizeConstraintSetResult, WAFError> UpdateSizeConstraintSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateSqlInjectionMatchSetResult, WAFError> UpdateSqlInjectionMatchSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateWebACLResult, WAFError> UpdateWebACLOutcome;
-        typedef Aws::Utils::Outcome<UpdateXssMatchSetResult, WAFError> UpdateXssMatchSetOutcome;
-
-        typedef std::future<CreateByteMatchSetOutcome> CreateByteMatchSetOutcomeCallable;
-        typedef std::future<CreateGeoMatchSetOutcome> CreateGeoMatchSetOutcomeCallable;
-        typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
-        typedef std::future<CreateRateBasedRuleOutcome> CreateRateBasedRuleOutcomeCallable;
-        typedef std::future<CreateRegexMatchSetOutcome> CreateRegexMatchSetOutcomeCallable;
-        typedef std::future<CreateRegexPatternSetOutcome> CreateRegexPatternSetOutcomeCallable;
-        typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
-        typedef std::future<CreateRuleGroupOutcome> CreateRuleGroupOutcomeCallable;
-        typedef std::future<CreateSizeConstraintSetOutcome> CreateSizeConstraintSetOutcomeCallable;
-        typedef std::future<CreateSqlInjectionMatchSetOutcome> CreateSqlInjectionMatchSetOutcomeCallable;
-        typedef std::future<CreateWebACLOutcome> CreateWebACLOutcomeCallable;
-        typedef std::future<CreateWebACLMigrationStackOutcome> CreateWebACLMigrationStackOutcomeCallable;
-        typedef std::future<CreateXssMatchSetOutcome> CreateXssMatchSetOutcomeCallable;
-        typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
-        typedef std::future<DeleteGeoMatchSetOutcome> DeleteGeoMatchSetOutcomeCallable;
-        typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
-        typedef std::future<DeleteLoggingConfigurationOutcome> DeleteLoggingConfigurationOutcomeCallable;
-        typedef std::future<DeletePermissionPolicyOutcome> DeletePermissionPolicyOutcomeCallable;
-        typedef std::future<DeleteRateBasedRuleOutcome> DeleteRateBasedRuleOutcomeCallable;
-        typedef std::future<DeleteRegexMatchSetOutcome> DeleteRegexMatchSetOutcomeCallable;
-        typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
-        typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
-        typedef std::future<DeleteRuleGroupOutcome> DeleteRuleGroupOutcomeCallable;
-        typedef std::future<DeleteSizeConstraintSetOutcome> DeleteSizeConstraintSetOutcomeCallable;
-        typedef std::future<DeleteSqlInjectionMatchSetOutcome> DeleteSqlInjectionMatchSetOutcomeCallable;
-        typedef std::future<DeleteWebACLOutcome> DeleteWebACLOutcomeCallable;
-        typedef std::future<DeleteXssMatchSetOutcome> DeleteXssMatchSetOutcomeCallable;
-        typedef std::future<GetByteMatchSetOutcome> GetByteMatchSetOutcomeCallable;
-        typedef std::future<GetChangeTokenOutcome> GetChangeTokenOutcomeCallable;
-        typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
-        typedef std::future<GetGeoMatchSetOutcome> GetGeoMatchSetOutcomeCallable;
-        typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
-        typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
-        typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
-        typedef std::future<GetRateBasedRuleOutcome> GetRateBasedRuleOutcomeCallable;
-        typedef std::future<GetRateBasedRuleManagedKeysOutcome> GetRateBasedRuleManagedKeysOutcomeCallable;
-        typedef std::future<GetRegexMatchSetOutcome> GetRegexMatchSetOutcomeCallable;
-        typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
-        typedef std::future<GetRuleOutcome> GetRuleOutcomeCallable;
-        typedef std::future<GetRuleGroupOutcome> GetRuleGroupOutcomeCallable;
-        typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
-        typedef std::future<GetSizeConstraintSetOutcome> GetSizeConstraintSetOutcomeCallable;
-        typedef std::future<GetSqlInjectionMatchSetOutcome> GetSqlInjectionMatchSetOutcomeCallable;
-        typedef std::future<GetWebACLOutcome> GetWebACLOutcomeCallable;
-        typedef std::future<GetXssMatchSetOutcome> GetXssMatchSetOutcomeCallable;
-        typedef std::future<ListActivatedRulesInRuleGroupOutcome> ListActivatedRulesInRuleGroupOutcomeCallable;
-        typedef std::future<ListByteMatchSetsOutcome> ListByteMatchSetsOutcomeCallable;
-        typedef std::future<ListGeoMatchSetsOutcome> ListGeoMatchSetsOutcomeCallable;
-        typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
-        typedef std::future<ListLoggingConfigurationsOutcome> ListLoggingConfigurationsOutcomeCallable;
-        typedef std::future<ListRateBasedRulesOutcome> ListRateBasedRulesOutcomeCallable;
-        typedef std::future<ListRegexMatchSetsOutcome> ListRegexMatchSetsOutcomeCallable;
-        typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
-        typedef std::future<ListRuleGroupsOutcome> ListRuleGroupsOutcomeCallable;
-        typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
-        typedef std::future<ListSizeConstraintSetsOutcome> ListSizeConstraintSetsOutcomeCallable;
-        typedef std::future<ListSqlInjectionMatchSetsOutcome> ListSqlInjectionMatchSetsOutcomeCallable;
-        typedef std::future<ListSubscribedRuleGroupsOutcome> ListSubscribedRuleGroupsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
-        typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
-        typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
-        typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
-        typedef std::future<UpdateGeoMatchSetOutcome> UpdateGeoMatchSetOutcomeCallable;
-        typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
-        typedef std::future<UpdateRateBasedRuleOutcome> UpdateRateBasedRuleOutcomeCallable;
-        typedef std::future<UpdateRegexMatchSetOutcome> UpdateRegexMatchSetOutcomeCallable;
-        typedef std::future<UpdateRegexPatternSetOutcome> UpdateRegexPatternSetOutcomeCallable;
-        typedef std::future<UpdateRuleOutcome> UpdateRuleOutcomeCallable;
-        typedef std::future<UpdateRuleGroupOutcome> UpdateRuleGroupOutcomeCallable;
-        typedef std::future<UpdateSizeConstraintSetOutcome> UpdateSizeConstraintSetOutcomeCallable;
-        typedef std::future<UpdateSqlInjectionMatchSetOutcome> UpdateSqlInjectionMatchSetOutcomeCallable;
-        typedef std::future<UpdateWebACLOutcome> UpdateWebACLOutcomeCallable;
-        typedef std::future<UpdateXssMatchSetOutcome> UpdateXssMatchSetOutcomeCallable;
-} // namespace Model
-
-  class WAFClient;
-
-    typedef std::function<void(const WAFClient*, const Model::CreateByteMatchSetRequest&, const Model::CreateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateByteMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateGeoMatchSetRequest&, const Model::CreateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGeoMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateIPSetRequest&, const Model::CreateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIPSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateRateBasedRuleRequest&, const Model::CreateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRateBasedRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateRegexMatchSetRequest&, const Model::CreateRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegexMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateRegexPatternSetRequest&, const Model::CreateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegexPatternSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateRuleGroupRequest&, const Model::CreateRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleGroupResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateSizeConstraintSetRequest&, const Model::CreateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSizeConstraintSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateSqlInjectionMatchSetRequest&, const Model::CreateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSqlInjectionMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateWebACLRequest&, const Model::CreateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebACLResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateWebACLMigrationStackRequest&, const Model::CreateWebACLMigrationStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebACLMigrationStackResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::CreateXssMatchSetRequest&, const Model::CreateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateXssMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteGeoMatchSetRequest&, const Model::DeleteGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGeoMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteLoggingConfigurationRequest&, const Model::DeleteLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoggingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeletePermissionPolicyRequest&, const Model::DeletePermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionPolicyResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteRateBasedRuleRequest&, const Model::DeleteRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRateBasedRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteRegexMatchSetRequest&, const Model::DeleteRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteRuleGroupRequest&, const Model::DeleteRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleGroupResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteSizeConstraintSetRequest&, const Model::DeleteSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSizeConstraintSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteSqlInjectionMatchSetRequest&, const Model::DeleteSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSqlInjectionMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteWebACLRequest&, const Model::DeleteWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebACLResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::DeleteXssMatchSetRequest&, const Model::DeleteXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteXssMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetByteMatchSetRequest&, const Model::GetByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetByteMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetChangeTokenRequest&, const Model::GetChangeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetGeoMatchSetRequest&, const Model::GetGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetLoggingConfigurationRequest&, const Model::GetLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleRequest&, const Model::GetRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleManagedKeysRequest&, const Model::GetRateBasedRuleManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleManagedKeysResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRegexMatchSetRequest&, const Model::GetRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexPatternSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRuleRequest&, const Model::GetRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetRuleGroupRequest&, const Model::GetRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleGroupResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetSampledRequestsRequest&, const Model::GetSampledRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampledRequestsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetSizeConstraintSetRequest&, const Model::GetSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSizeConstraintSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetSqlInjectionMatchSetRequest&, const Model::GetSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSqlInjectionMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetWebACLRequest&, const Model::GetWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebACLResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::GetXssMatchSetRequest&, const Model::GetXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetXssMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListActivatedRulesInRuleGroupRequest&, const Model::ListActivatedRulesInRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActivatedRulesInRuleGroupResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListByteMatchSetsRequest&, const Model::ListByteMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByteMatchSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListGeoMatchSetsRequest&, const Model::ListGeoMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeoMatchSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListLoggingConfigurationsRequest&, const Model::ListLoggingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggingConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListRateBasedRulesRequest&, const Model::ListRateBasedRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRateBasedRulesResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListRegexMatchSetsRequest&, const Model::ListRegexMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexMatchSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListRegexPatternSetsRequest&, const Model::ListRegexPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexPatternSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListRuleGroupsRequest&, const Model::ListRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleGroupsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListSizeConstraintSetsRequest&, const Model::ListSizeConstraintSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSizeConstraintSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListSqlInjectionMatchSetsRequest&, const Model::ListSqlInjectionMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSqlInjectionMatchSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListSubscribedRuleGroupsRequest&, const Model::ListSubscribedRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedRuleGroupsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::PutLoggingConfigurationRequest&, const Model::PutLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateGeoMatchSetRequest&, const Model::UpdateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeoMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateRateBasedRuleRequest&, const Model::UpdateRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRateBasedRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateRegexMatchSetRequest&, const Model::UpdateRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegexMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateRegexPatternSetRequest&, const Model::UpdateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegexPatternSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateRuleRequest&, const Model::UpdateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateRuleGroupRequest&, const Model::UpdateRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRuleGroupResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateSizeConstraintSetRequest&, const Model::UpdateSizeConstraintSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSizeConstraintSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateSqlInjectionMatchSetRequest&, const Model::UpdateSqlInjectionMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSqlInjectionMatchSetResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateWebACLRequest&, const Model::UpdateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebACLResponseReceivedHandler;
-    typedef std::function<void(const WAFClient*, const Model::UpdateXssMatchSetRequest&, const Model::UpdateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateXssMatchSetResponseReceivedHandler;
-
   /**
    *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
    * see <a
@@ -461,32 +34,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
    * WAF Classic</a> in the developer guide.</p>
    */
-  class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient
+  class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WAFClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WAFClient(const Aws::WAF::WAFClientConfiguration& clientConfiguration = Aws::WAF::WAFClientConfiguration(),
+                  std::shared_ptr<WAFEndpointProviderBase> endpointProvider = Aws::MakeShared<WAFEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WAFClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WAFClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<WAFEndpointProviderBase> endpointProvider = Aws::MakeShared<WAFEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::WAF::WAFClientConfiguration& clientConfiguration = Aws::WAF::WAFClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WAFClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<WAFEndpointProviderBase> endpointProvider = Aws::MakeShared<WAFEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::WAF::WAFClientConfiguration& clientConfiguration = Aws::WAF::WAFClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WAFClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WAFClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WAFClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WAFClient();
-
 
         /**
          *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
@@ -3191,89 +2792,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WAFEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateByteMatchSetAsyncHelper(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGeoMatchSetAsyncHelper(const Model::CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateIPSetAsyncHelper(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRateBasedRuleAsyncHelper(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRegexMatchSetAsyncHelper(const Model::CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRegexPatternSetAsyncHelper(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRuleAsyncHelper(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRuleGroupAsyncHelper(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSizeConstraintSetAsyncHelper(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSqlInjectionMatchSetAsyncHelper(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWebACLAsyncHelper(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWebACLMigrationStackAsyncHelper(const Model::CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateXssMatchSetAsyncHelper(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteGeoMatchSetAsyncHelper(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLoggingConfigurationAsyncHelper(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePermissionPolicyAsyncHelper(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRateBasedRuleAsyncHelper(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRegexMatchSetAsyncHelper(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRegexPatternSetAsyncHelper(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRuleAsyncHelper(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRuleGroupAsyncHelper(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSizeConstraintSetAsyncHelper(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSqlInjectionMatchSetAsyncHelper(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWebACLAsyncHelper(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteXssMatchSetAsyncHelper(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetByteMatchSetAsyncHelper(const Model::GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChangeTokenAsyncHelper(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGeoMatchSetAsyncHelper(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLoggingConfigurationAsyncHelper(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRateBasedRuleAsyncHelper(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRateBasedRuleManagedKeysAsyncHelper(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRegexMatchSetAsyncHelper(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRegexPatternSetAsyncHelper(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRuleAsyncHelper(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRuleGroupAsyncHelper(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSampledRequestsAsyncHelper(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSizeConstraintSetAsyncHelper(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSqlInjectionMatchSetAsyncHelper(const Model::GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWebACLAsyncHelper(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetXssMatchSetAsyncHelper(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListActivatedRulesInRuleGroupAsyncHelper(const Model::ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListByteMatchSetsAsyncHelper(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGeoMatchSetsAsyncHelper(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLoggingConfigurationsAsyncHelper(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRateBasedRulesAsyncHelper(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRegexMatchSetsAsyncHelper(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRegexPatternSetsAsyncHelper(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRuleGroupsAsyncHelper(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSizeConstraintSetsAsyncHelper(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSqlInjectionMatchSetsAsyncHelper(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSubscribedRuleGroupsAsyncHelper(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLoggingConfigurationAsyncHelper(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateGeoMatchSetAsyncHelper(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRateBasedRuleAsyncHelper(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRegexMatchSetAsyncHelper(const Model::UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRegexPatternSetAsyncHelper(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRuleAsyncHelper(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRuleGroupAsyncHelper(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSizeConstraintSetAsyncHelper(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSqlInjectionMatchSetAsyncHelper(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWebACLAsyncHelper(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateXssMatchSetAsyncHelper(const Model::UpdateXssMatchSetRequest& request, const UpdateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>;
+      void init(const WAFClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WAFClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WAFEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WAF

@@ -30,7 +30,7 @@ GetSamplingRulesResult& GetSamplingRulesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SamplingRuleRecords"))
   {
-    Array<JsonView> samplingRuleRecordsJsonList = jsonValue.GetArray("SamplingRuleRecords");
+    Aws::Utils::Array<JsonView> samplingRuleRecordsJsonList = jsonValue.GetArray("SamplingRuleRecords");
     for(unsigned samplingRuleRecordsIndex = 0; samplingRuleRecordsIndex < samplingRuleRecordsJsonList.GetLength(); ++samplingRuleRecordsIndex)
     {
       m_samplingRuleRecords.push_back(samplingRuleRecordsJsonList[samplingRuleRecordsIndex].AsObject());

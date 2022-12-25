@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ApprovalRuleOverriddenEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata
+  class ApprovalRuleOverriddenEventMetadata
   {
   public:
-    ApprovalRuleOverriddenEventMetadata();
-    ApprovalRuleOverriddenEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalRuleOverriddenEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata();
+    AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ApprovalRuleOverriddenEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     OverrideStatus m_overrideStatus;
-    bool m_overrideStatusHasBeenSet;
+    bool m_overrideStatusHasBeenSet = false;
   };
 
 } // namespace Model

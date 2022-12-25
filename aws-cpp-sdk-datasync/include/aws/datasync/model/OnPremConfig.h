@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/OnPremConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API OnPremConfig
+  class OnPremConfig
   {
   public:
-    OnPremConfig();
-    OnPremConfig(Aws::Utils::Json::JsonView jsonValue);
-    OnPremConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API OnPremConfig();
+    AWS_DATASYNC_API OnPremConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API OnPremConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_agentArns;
-    bool m_agentArnsHasBeenSet;
+    bool m_agentArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationConfigurationDescription
+  class ApplicationConfigurationDescription
   {
   public:
-    ApplicationConfigurationDescription();
-    ApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -350,28 +350,28 @@ namespace Model
   private:
 
     SqlApplicationConfigurationDescription m_sqlApplicationConfigurationDescription;
-    bool m_sqlApplicationConfigurationDescriptionHasBeenSet;
+    bool m_sqlApplicationConfigurationDescriptionHasBeenSet = false;
 
     ApplicationCodeConfigurationDescription m_applicationCodeConfigurationDescription;
-    bool m_applicationCodeConfigurationDescriptionHasBeenSet;
+    bool m_applicationCodeConfigurationDescriptionHasBeenSet = false;
 
     RunConfigurationDescription m_runConfigurationDescription;
-    bool m_runConfigurationDescriptionHasBeenSet;
+    bool m_runConfigurationDescriptionHasBeenSet = false;
 
     FlinkApplicationConfigurationDescription m_flinkApplicationConfigurationDescription;
-    bool m_flinkApplicationConfigurationDescriptionHasBeenSet;
+    bool m_flinkApplicationConfigurationDescriptionHasBeenSet = false;
 
     EnvironmentPropertyDescriptions m_environmentPropertyDescriptions;
-    bool m_environmentPropertyDescriptionsHasBeenSet;
+    bool m_environmentPropertyDescriptionsHasBeenSet = false;
 
     ApplicationSnapshotConfigurationDescription m_applicationSnapshotConfigurationDescription;
-    bool m_applicationSnapshotConfigurationDescriptionHasBeenSet;
+    bool m_applicationSnapshotConfigurationDescriptionHasBeenSet = false;
 
     Aws::Vector<VpcConfigurationDescription> m_vpcConfigurationDescriptions;
-    bool m_vpcConfigurationDescriptionsHasBeenSet;
+    bool m_vpcConfigurationDescriptionsHasBeenSet = false;
 
     ZeppelinApplicationConfigurationDescription m_zeppelinApplicationConfigurationDescription;
-    bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet;
+    bool m_zeppelinApplicationConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

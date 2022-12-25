@@ -39,11 +39,13 @@ ReplicationInstance::ReplicationInstance() :
     m_replicationInstanceArnHasBeenSet(false),
     m_replicationInstancePublicIpAddressesHasBeenSet(false),
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
+    m_replicationInstanceIpv6AddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_freeUntilHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false)
+    m_dnsNameServersHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -68,11 +70,13 @@ ReplicationInstance::ReplicationInstance(JsonView jsonValue) :
     m_replicationInstanceArnHasBeenSet(false),
     m_replicationInstancePublicIpAddressesHasBeenSet(false),
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
+    m_replicationInstanceIpv6AddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_freeUntilHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false)
+    m_dnsNameServersHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,7 +120,7 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
-    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -189,7 +193,7 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePublicIpAddresses"))
   {
-    Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
+    Aws::Utils::Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
     for(unsigned replicationInstancePublicIpAddressesIndex = 0; replicationInstancePublicIpAddressesIndex < replicationInstancePublicIpAddressesJsonList.GetLength(); ++replicationInstancePublicIpAddressesIndex)
     {
       m_replicationInstancePublicIpAddresses.push_back(replicationInstancePublicIpAddressesJsonList[replicationInstancePublicIpAddressesIndex].AsString());
@@ -199,12 +203,22 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePrivateIpAddresses"))
   {
-    Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
+    Aws::Utils::Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
     for(unsigned replicationInstancePrivateIpAddressesIndex = 0; replicationInstancePrivateIpAddressesIndex < replicationInstancePrivateIpAddressesJsonList.GetLength(); ++replicationInstancePrivateIpAddressesIndex)
     {
       m_replicationInstancePrivateIpAddresses.push_back(replicationInstancePrivateIpAddressesJsonList[replicationInstancePrivateIpAddressesIndex].AsString());
     }
     m_replicationInstancePrivateIpAddressesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicationInstanceIpv6Addresses"))
+  {
+    Aws::Utils::Array<JsonView> replicationInstanceIpv6AddressesJsonList = jsonValue.GetArray("ReplicationInstanceIpv6Addresses");
+    for(unsigned replicationInstanceIpv6AddressesIndex = 0; replicationInstanceIpv6AddressesIndex < replicationInstanceIpv6AddressesJsonList.GetLength(); ++replicationInstanceIpv6AddressesIndex)
+    {
+      m_replicationInstanceIpv6Addresses.push_back(replicationInstanceIpv6AddressesJsonList[replicationInstanceIpv6AddressesIndex].AsString());
+    }
+    m_replicationInstanceIpv6AddressesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PubliclyAccessible"))
@@ -233,6 +247,13 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     m_dnsNameServers = jsonValue.GetString("DnsNameServers");
 
     m_dnsNameServersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = jsonValue.GetString("NetworkType");
+
+    m_networkTypeHasBeenSet = true;
   }
 
   return *this;
@@ -273,7 +294,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_vpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
    {
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
@@ -338,7 +359,7 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_replicationInstancePublicIpAddressesHasBeenSet)
   {
-   Array<JsonValue> replicationInstancePublicIpAddressesJsonList(m_replicationInstancePublicIpAddresses.size());
+   Aws::Utils::Array<JsonValue> replicationInstancePublicIpAddressesJsonList(m_replicationInstancePublicIpAddresses.size());
    for(unsigned replicationInstancePublicIpAddressesIndex = 0; replicationInstancePublicIpAddressesIndex < replicationInstancePublicIpAddressesJsonList.GetLength(); ++replicationInstancePublicIpAddressesIndex)
    {
      replicationInstancePublicIpAddressesJsonList[replicationInstancePublicIpAddressesIndex].AsString(m_replicationInstancePublicIpAddresses[replicationInstancePublicIpAddressesIndex]);
@@ -349,12 +370,23 @@ JsonValue ReplicationInstance::Jsonize() const
 
   if(m_replicationInstancePrivateIpAddressesHasBeenSet)
   {
-   Array<JsonValue> replicationInstancePrivateIpAddressesJsonList(m_replicationInstancePrivateIpAddresses.size());
+   Aws::Utils::Array<JsonValue> replicationInstancePrivateIpAddressesJsonList(m_replicationInstancePrivateIpAddresses.size());
    for(unsigned replicationInstancePrivateIpAddressesIndex = 0; replicationInstancePrivateIpAddressesIndex < replicationInstancePrivateIpAddressesJsonList.GetLength(); ++replicationInstancePrivateIpAddressesIndex)
    {
      replicationInstancePrivateIpAddressesJsonList[replicationInstancePrivateIpAddressesIndex].AsString(m_replicationInstancePrivateIpAddresses[replicationInstancePrivateIpAddressesIndex]);
    }
    payload.WithArray("ReplicationInstancePrivateIpAddresses", std::move(replicationInstancePrivateIpAddressesJsonList));
+
+  }
+
+  if(m_replicationInstanceIpv6AddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> replicationInstanceIpv6AddressesJsonList(m_replicationInstanceIpv6Addresses.size());
+   for(unsigned replicationInstanceIpv6AddressesIndex = 0; replicationInstanceIpv6AddressesIndex < replicationInstanceIpv6AddressesJsonList.GetLength(); ++replicationInstanceIpv6AddressesIndex)
+   {
+     replicationInstanceIpv6AddressesJsonList[replicationInstanceIpv6AddressesIndex].AsString(m_replicationInstanceIpv6Addresses[replicationInstanceIpv6AddressesIndex]);
+   }
+   payload.WithArray("ReplicationInstanceIpv6Addresses", std::move(replicationInstanceIpv6AddressesJsonList));
 
   }
 
@@ -378,6 +410,12 @@ JsonValue ReplicationInstance::Jsonize() const
   if(m_dnsNameServersHasBeenSet)
   {
    payload.WithString("DnsNameServers", m_dnsNameServers);
+
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", m_networkType);
 
   }
 

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate
+  class ApplicationConfigurationUpdate
   {
   public:
-    ApplicationConfigurationUpdate();
-    ApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,25 +306,25 @@ namespace Model
   private:
 
     SqlApplicationConfigurationUpdate m_sqlApplicationConfigurationUpdate;
-    bool m_sqlApplicationConfigurationUpdateHasBeenSet;
+    bool m_sqlApplicationConfigurationUpdateHasBeenSet = false;
 
     ApplicationCodeConfigurationUpdate m_applicationCodeConfigurationUpdate;
-    bool m_applicationCodeConfigurationUpdateHasBeenSet;
+    bool m_applicationCodeConfigurationUpdateHasBeenSet = false;
 
     FlinkApplicationConfigurationUpdate m_flinkApplicationConfigurationUpdate;
-    bool m_flinkApplicationConfigurationUpdateHasBeenSet;
+    bool m_flinkApplicationConfigurationUpdateHasBeenSet = false;
 
     EnvironmentPropertyUpdates m_environmentPropertyUpdates;
-    bool m_environmentPropertyUpdatesHasBeenSet;
+    bool m_environmentPropertyUpdatesHasBeenSet = false;
 
     ApplicationSnapshotConfigurationUpdate m_applicationSnapshotConfigurationUpdate;
-    bool m_applicationSnapshotConfigurationUpdateHasBeenSet;
+    bool m_applicationSnapshotConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<VpcConfigurationUpdate> m_vpcConfigurationUpdates;
-    bool m_vpcConfigurationUpdatesHasBeenSet;
+    bool m_vpcConfigurationUpdatesHasBeenSet = false;
 
     ZeppelinApplicationConfigurationUpdate m_zeppelinApplicationConfigurationUpdate;
-    bool m_zeppelinApplicationConfigurationUpdateHasBeenSet;
+    bool m_zeppelinApplicationConfigurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

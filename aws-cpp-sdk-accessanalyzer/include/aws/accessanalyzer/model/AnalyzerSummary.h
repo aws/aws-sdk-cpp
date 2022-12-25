@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/accessanalyzer/model/Type.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/accessanalyzer/model/AnalyzerStatus.h>
 #include <aws/accessanalyzer/model/StatusReason.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/accessanalyzer/model/Type.h>
 #include <utility>
 
 namespace Aws
@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AnalyzerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AnalyzerSummary
+  class AnalyzerSummary
   {
   public:
-    AnalyzerSummary();
-    AnalyzerSummary(Aws::Utils::Json::JsonView jsonValue);
-    AnalyzerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AnalyzerSummary();
+    AWS_ACCESSANALYZER_API AnalyzerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AnalyzerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,6 +81,84 @@ namespace Model
      * <p>The ARN of the analyzer.</p>
      */
     inline AnalyzerSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline AnalyzerSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline AnalyzerSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the analyzer.</p>
+     */
+    inline AnalyzerSummary& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline AnalyzerSummary& WithType(const Type& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
+     * analyzer.</p>
+     */
+    inline AnalyzerSummary& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -187,44 +265,69 @@ namespace Model
 
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline AnalyzerSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline AnalyzerSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline AnalyzerSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline AnalyzerSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline AnalyzerSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The name of the analyzer.</p>
+     * <p>The tags added to the analyzer.</p>
      */
-    inline AnalyzerSummary& WithName(const char* value) { SetName(value); return *this;}
+    inline AnalyzerSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags added to the analyzer.</p>
+     */
+    inline AnalyzerSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags added to the analyzer.</p>
+     */
+    inline AnalyzerSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags added to the analyzer.</p>
+     */
+    inline AnalyzerSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags added to the analyzer.</p>
+     */
+    inline AnalyzerSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags added to the analyzer.</p>
+     */
+    inline AnalyzerSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
@@ -348,137 +451,34 @@ namespace Model
      */
     inline AnalyzerSummary& WithStatusReason(StatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags added to the analyzer.</p>
-     */
-    inline AnalyzerSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline const Type& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline AnalyzerSummary& WithType(const Type& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-     * analyzer.</p>
-     */
-    inline AnalyzerSummary& WithType(Type&& value) { SetType(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
-
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
-
-    Aws::String m_lastResourceAnalyzed;
-    bool m_lastResourceAnalyzedHasBeenSet;
-
-    Aws::Utils::DateTime m_lastResourceAnalyzedAt;
-    bool m_lastResourceAnalyzedAtHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
-
-    AnalyzerStatus m_status;
-    bool m_statusHasBeenSet;
-
-    StatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::String m_lastResourceAnalyzed;
+    bool m_lastResourceAnalyzedHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastResourceAnalyzedAt;
+    bool m_lastResourceAnalyzedAtHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    AnalyzerStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    StatusReason m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

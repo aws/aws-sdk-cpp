@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/BonusPayment">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API BonusPayment
+  class BonusPayment
   {
   public:
-    BonusPayment();
-    BonusPayment(Aws::Utils::Json::JsonView jsonValue);
-    BonusPayment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API BonusPayment();
+    AWS_MTURK_API BonusPayment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API BonusPayment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_bonusAmount;
-    bool m_bonusAmountHasBeenSet;
+    bool m_bonusAmountHasBeenSet = false;
 
     Aws::String m_assignmentId;
-    bool m_assignmentIdHasBeenSet;
+    bool m_assignmentIdHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_grantTime;
-    bool m_grantTimeHasBeenSet;
+    bool m_grantTimeHasBeenSet = false;
   };
 
 } // namespace Model

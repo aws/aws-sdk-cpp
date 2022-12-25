@@ -80,7 +80,7 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
 
   if(jsonValue.ValueExists("eventVariables"))
   {
-    Array<JsonView> eventVariablesJsonList = jsonValue.GetArray("eventVariables");
+    Aws::Utils::Array<JsonView> eventVariablesJsonList = jsonValue.GetArray("eventVariables");
     for(unsigned eventVariablesIndex = 0; eventVariablesIndex < eventVariablesJsonList.GetLength(); ++eventVariablesIndex)
     {
       m_eventVariables.push_back(eventVariablesJsonList[eventVariablesIndex].AsObject());
@@ -89,7 +89,7 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
 
   if(jsonValue.ValueExists("rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -104,7 +104,7 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
 
   if(jsonValue.ValueExists("outcomes"))
   {
-    Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
+    Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
     for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
     {
       m_outcomes.push_back(outcomesJsonList[outcomesIndex].AsString());
@@ -113,7 +113,7 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
 
   if(jsonValue.ValueExists("evaluatedModelVersions"))
   {
-    Array<JsonView> evaluatedModelVersionsJsonList = jsonValue.GetArray("evaluatedModelVersions");
+    Aws::Utils::Array<JsonView> evaluatedModelVersionsJsonList = jsonValue.GetArray("evaluatedModelVersions");
     for(unsigned evaluatedModelVersionsIndex = 0; evaluatedModelVersionsIndex < evaluatedModelVersionsJsonList.GetLength(); ++evaluatedModelVersionsIndex)
     {
       m_evaluatedModelVersions.push_back(evaluatedModelVersionsJsonList[evaluatedModelVersionsIndex].AsObject());
@@ -122,7 +122,7 @@ GetEventPredictionMetadataResult& GetEventPredictionMetadataResult::operator =(c
 
   if(jsonValue.ValueExists("evaluatedExternalModels"))
   {
-    Array<JsonView> evaluatedExternalModelsJsonList = jsonValue.GetArray("evaluatedExternalModels");
+    Aws::Utils::Array<JsonView> evaluatedExternalModelsJsonList = jsonValue.GetArray("evaluatedExternalModels");
     for(unsigned evaluatedExternalModelsIndex = 0; evaluatedExternalModelsIndex < evaluatedExternalModelsJsonList.GetLength(); ++evaluatedExternalModelsIndex)
     {
       m_evaluatedExternalModels.push_back(evaluatedExternalModelsJsonList[evaluatedExternalModelsIndex].AsObject());

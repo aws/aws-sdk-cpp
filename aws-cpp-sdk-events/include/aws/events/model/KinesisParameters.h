@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/KinesisParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API KinesisParameters
+  class KinesisParameters
   {
   public:
-    KinesisParameters();
-    KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
-    KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API KinesisParameters();
+    AWS_CLOUDWATCHEVENTS_API KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,7 +116,7 @@ namespace Model
   private:
 
     Aws::String m_partitionKeyPath;
-    bool m_partitionKeyPathHasBeenSet;
+    bool m_partitionKeyPathHasBeenSet = false;
   };
 
 } // namespace Model

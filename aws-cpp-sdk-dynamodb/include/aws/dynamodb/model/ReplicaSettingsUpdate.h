@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaSettingsUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaSettingsUpdate
+  class ReplicaSettingsUpdate
   {
   public:
-    ReplicaSettingsUpdate();
-    ReplicaSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaSettingsUpdate();
+    AWS_DYNAMODB_API ReplicaSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     long long m_replicaProvisionedReadCapacityUnits;
-    bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;
+    bool m_replicaProvisionedReadCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
-    bool m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet;
+    bool m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexSettingsUpdate> m_replicaGlobalSecondaryIndexSettingsUpdate;
-    bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet;
+    bool m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
 
     TableClass m_replicaTableClass;
-    bool m_replicaTableClassHasBeenSet;
+    bool m_replicaTableClassHasBeenSet = false;
   };
 
 } // namespace Model

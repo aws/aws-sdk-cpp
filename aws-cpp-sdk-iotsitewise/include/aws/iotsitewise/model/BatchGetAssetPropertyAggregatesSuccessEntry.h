@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregatesSuccessEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry
+  class BatchGetAssetPropertyAggregatesSuccessEntry
   {
   public:
-    BatchGetAssetPropertyAggregatesSuccessEntry();
-    BatchGetAssetPropertyAggregatesSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyAggregatesSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::Vector<AggregatedValue> m_aggregatedValues;
-    bool m_aggregatedValuesHasBeenSet;
+    bool m_aggregatedValuesHasBeenSet = false;
   };
 
 } // namespace Model

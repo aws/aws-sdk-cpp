@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorageResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API GetBackendStorageResourceConfig
+  class GetBackendStorageResourceConfig
   {
   public:
-    GetBackendStorageResourceConfig();
-    GetBackendStorageResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    GetBackendStorageResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API GetBackendStorageResourceConfig();
+    AWS_AMPLIFYBACKEND_API GetBackendStorageResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API GetBackendStorageResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,16 +165,16 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     bool m_imported;
-    bool m_importedHasBeenSet;
+    bool m_importedHasBeenSet = false;
 
     BackendStoragePermissions m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     ServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

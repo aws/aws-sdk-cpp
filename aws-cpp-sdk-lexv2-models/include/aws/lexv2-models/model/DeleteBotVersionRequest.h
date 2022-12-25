@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API DeleteBotVersionRequest : public LexModelsV2Request
+  class DeleteBotVersionRequest : public LexModelsV2Request
   {
   public:
-    DeleteBotVersionRequest();
+    AWS_LEXMODELSV2_API DeleteBotVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteBotVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     bool m_skipResourceInUseCheck;
-    bool m_skipResourceInUseCheckHasBeenSet;
+    bool m_skipResourceInUseCheckHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/Licensing">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API Licensing
+  class Licensing
   {
   public:
-    Licensing();
-    Licensing(Aws::Utils::Json::JsonView jsonValue);
-    Licensing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API Licensing();
+    AWS_MGN_API Licensing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Licensing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_osByol;
-    bool m_osByolHasBeenSet;
+    bool m_osByolHasBeenSet = false;
   };
 
 } // namespace Model

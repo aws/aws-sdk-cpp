@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API Destination();
+    AWS_EFS_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,16 +242,16 @@ namespace Model
   private:
 
     ReplicationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastReplicatedTimestamp;
-    bool m_lastReplicatedTimestampHasBeenSet;
+    bool m_lastReplicatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

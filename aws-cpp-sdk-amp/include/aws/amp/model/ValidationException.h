@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API ValidationException();
+    AWS_PROMETHEUSSERVICE_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::Vector<ValidationExceptionField> m_fieldList;
-    bool m_fieldListHasBeenSet;
+    bool m_fieldListHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

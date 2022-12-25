@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRolesMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ModifyClusterIamRolesRequest : public RedshiftRequest
+  class ModifyClusterIamRolesRequest : public RedshiftRequest
   {
   public:
-    ModifyClusterIamRolesRequest();
+    AWS_REDSHIFT_API ModifyClusterIamRolesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyClusterIamRoles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addIamRoles;
-    bool m_addIamRolesHasBeenSet;
+    bool m_addIamRolesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeIamRoles;
-    bool m_removeIamRolesHasBeenSet;
+    bool m_removeIamRolesHasBeenSet = false;
 
     Aws::String m_defaultIamRoleArn;
-    bool m_defaultIamRoleArnHasBeenSet;
+    bool m_defaultIamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

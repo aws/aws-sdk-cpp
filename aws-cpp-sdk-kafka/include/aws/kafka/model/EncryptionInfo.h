@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EncryptionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API EncryptionInfo
+  class EncryptionInfo
   {
   public:
-    EncryptionInfo();
-    EncryptionInfo(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API EncryptionInfo();
+    AWS_KAFKA_API EncryptionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API EncryptionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     EncryptionAtRest m_encryptionAtRest;
-    bool m_encryptionAtRestHasBeenSet;
+    bool m_encryptionAtRestHasBeenSet = false;
 
     EncryptionInTransit m_encryptionInTransit;
-    bool m_encryptionInTransitHasBeenSet;
+    bool m_encryptionInTransitHasBeenSet = false;
   };
 
 } // namespace Model

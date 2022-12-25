@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegistrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RegistrationConfig
+  class RegistrationConfig
   {
   public:
-    RegistrationConfig();
-    RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API RegistrationConfig();
+    AWS_IOT_API RegistrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API RegistrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,13 +118,57 @@ namespace Model
      */
     inline RegistrationConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline RegistrationConfig& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline RegistrationConfig& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline RegistrationConfig& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
   private:
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
+
+    Aws::String m_templateName;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

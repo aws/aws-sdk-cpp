@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResourcePermission">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ResourcePermission
+  class ResourcePermission
   {
   public:
-    ResourcePermission();
-    ResourcePermission(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API ResourcePermission();
+    AWS_FINSPACEDATA_API ResourcePermission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API ResourcePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

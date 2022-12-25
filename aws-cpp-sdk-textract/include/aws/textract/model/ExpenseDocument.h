@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/model/ExpenseField.h>
 #include <aws/textract/model/LineItemGroup.h>
+#include <aws/textract/model/Block.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseDocument
+  class ExpenseDocument
   {
   public:
-    ExpenseDocument();
-    ExpenseDocument(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseDocument();
+    AWS_TEXTRACT_API ExpenseDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,16 +155,68 @@ namespace Model
      */
     inline ExpenseDocument& AddLineItemGroups(LineItemGroup&& value) { m_lineItemGroupsHasBeenSet = true; m_lineItemGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline const Aws::Vector<Block>& GetBlocks() const{ return m_blocks; }
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline bool BlocksHasBeenSet() const { return m_blocksHasBeenSet; }
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline void SetBlocks(const Aws::Vector<Block>& value) { m_blocksHasBeenSet = true; m_blocks = value; }
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline void SetBlocks(Aws::Vector<Block>&& value) { m_blocksHasBeenSet = true; m_blocks = std::move(value); }
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline ExpenseDocument& WithBlocks(const Aws::Vector<Block>& value) { SetBlocks(value); return *this;}
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline ExpenseDocument& WithBlocks(Aws::Vector<Block>&& value) { SetBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline ExpenseDocument& AddBlocks(const Block& value) { m_blocksHasBeenSet = true; m_blocks.push_back(value); return *this; }
+
+    /**
+     * <p>This is a block object, the same as reported when DetectDocumentText is run
+     * on a document. It provides word level recognition of text.</p>
+     */
+    inline ExpenseDocument& AddBlocks(Block&& value) { m_blocksHasBeenSet = true; m_blocks.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_expenseIndex;
-    bool m_expenseIndexHasBeenSet;
+    bool m_expenseIndexHasBeenSet = false;
 
     Aws::Vector<ExpenseField> m_summaryFields;
-    bool m_summaryFieldsHasBeenSet;
+    bool m_summaryFieldsHasBeenSet = false;
 
     Aws::Vector<LineItemGroup> m_lineItemGroups;
-    bool m_lineItemGroupsHasBeenSet;
+    bool m_lineItemGroupsHasBeenSet = false;
+
+    Aws::Vector<Block> m_blocks;
+    bool m_blocksHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteSegmentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteSegmentRequest
+  class WriteSegmentRequest
   {
   public:
-    WriteSegmentRequest();
-    WriteSegmentRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteSegmentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteSegmentRequest();
+    AWS_PINPOINT_API WriteSegmentRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteSegmentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,16 +251,16 @@ namespace Model
   private:
 
     SegmentDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SegmentGroupList m_segmentGroups;
-    bool m_segmentGroupsHasBeenSet;
+    bool m_segmentGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

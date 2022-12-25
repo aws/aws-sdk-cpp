@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API UpdateWorkspaceImagePermissionResult
+  class UpdateWorkspaceImagePermissionResult
   {
   public:
-    UpdateWorkspaceImagePermissionResult();
-    UpdateWorkspaceImagePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateWorkspaceImagePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateWorkspaceImagePermissionResult();
+    AWS_WORKSPACES_API UpdateWorkspaceImagePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateWorkspaceImagePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

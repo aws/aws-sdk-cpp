@@ -25,17 +25,17 @@ namespace Model
 
   /**
    * <p>A complex type that controls whether access logs are written for the
-   * distribution.</p><p><h3>See Also:</h3>   <a
+   * CloudFront distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionLogging">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionLogging
+  class AwsCloudFrontDistributionLogging
   {
   public:
-    AwsCloudFrontDistributionLogging();
-    AwsCloudFrontDistributionLogging(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionLogging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionLogging();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionLogging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionLogging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_includeCookies;
-    bool m_includeCookiesHasBeenSet;
+    bool m_includeCookiesHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

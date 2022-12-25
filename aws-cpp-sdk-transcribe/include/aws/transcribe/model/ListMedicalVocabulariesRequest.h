@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API ListMedicalVocabulariesRequest : public TranscribeServiceRequest
+  class ListMedicalVocabulariesRequest : public TranscribeServiceRequest
   {
   public:
-    ListMedicalVocabulariesRequest();
+    AWS_TRANSCRIBESERVICE_API ListMedicalVocabulariesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMedicalVocabularies"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,76 +110,80 @@ namespace Model
 
     /**
      * <p>The maximum number of custom medical vocabularies to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of custom medical vocabularies to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom medical vocabularies to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of custom medical vocabularies to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline ListMedicalVocabulariesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
     inline const VocabularyState& GetStateEquals() const{ return m_stateEquals; }
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
     inline bool StateEqualsHasBeenSet() const { return m_stateEqualsHasBeenSet; }
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
     inline void SetStateEquals(const VocabularyState& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = value; }
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
     inline void SetStateEquals(VocabularyState&& value) { m_stateEqualsHasBeenSet = true; m_stateEquals = std::move(value); }
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
     inline ListMedicalVocabulariesRequest& WithStateEquals(const VocabularyState& value) { SetStateEquals(value); return *this;}
 
     /**
-     * <p>Returns only custom medical vocabularies with the specified state.
-     * Vocabularies are ordered by creation date, with the newest vocabulary first. If
+     * <p>Returns only custom medical vocabularies with the specified state. Custom
+     * vocabularies are ordered by creation date, with the newest vocabulary first. If
      * you don't include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.</p>
      */
@@ -237,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     VocabularyState m_stateEquals;
-    bool m_stateEqualsHasBeenSet;
+    bool m_stateEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
   };
 
 } // namespace Model

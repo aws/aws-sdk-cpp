@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TlsConfigInput">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API TlsConfigInput
+  class TlsConfigInput
   {
   public:
-    TlsConfigInput();
-    TlsConfigInput(Aws::Utils::Json::JsonView jsonValue);
-    TlsConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API TlsConfigInput();
+    AWS_APIGATEWAYV2_API TlsConfigInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API TlsConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_serverNameToVerify;
-    bool m_serverNameToVerifyHasBeenSet;
+    bool m_serverNameToVerifyHasBeenSet = false;
   };
 
 } // namespace Model

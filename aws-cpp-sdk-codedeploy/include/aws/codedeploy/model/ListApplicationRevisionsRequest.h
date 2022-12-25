@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ListApplicationRevisionsRequest : public CodeDeployRequest
+  class ListApplicationRevisionsRequest : public CodeDeployRequest
   {
   public:
-    ListApplicationRevisionsRequest();
+    AWS_CODEDEPLOY_API ListApplicationRevisionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,56 +36,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListApplicationRevisions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
-     * AWS account. </p>
+     * <p> The name of an CodeDeploy application associated with the IAM user or Amazon
+     * Web Services account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -93,8 +93,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -104,8 +104,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -115,8 +115,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -126,8 +126,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -137,8 +137,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -148,8 +148,8 @@ namespace Model
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li> <p>
      * <code>registerTime</code>: Sort by the time the revisions were registered with
-     * AWS CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time
-     * the revisions were first used in a deployment.</p> </li> <li> <p>
+     * CodeDeploy.</p> </li> <li> <p> <code>firstUsedTime</code>: Sort by the time the
+     * revisions were first used in a deployment.</p> </li> <li> <p>
      * <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
      * deployment.</p> </li> </ul> <p> If not specified or set to null, the results are
      * returned in an arbitrary order. </p>
@@ -430,25 +430,25 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     ApplicationRevisionSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     ListStateFilterAction m_deployed;
-    bool m_deployedHasBeenSet;
+    bool m_deployedHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

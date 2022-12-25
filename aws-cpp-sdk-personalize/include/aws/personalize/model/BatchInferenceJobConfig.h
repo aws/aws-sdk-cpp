@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchInferenceJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchInferenceJobConfig
+  class BatchInferenceJobConfig
   {
   public:
-    BatchInferenceJobConfig();
-    BatchInferenceJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    BatchInferenceJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchInferenceJobConfig();
+    AWS_PERSONALIZE_API BatchInferenceJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchInferenceJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,7 +159,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-    bool m_itemExplorationConfigHasBeenSet;
+    bool m_itemExplorationConfigHasBeenSet = false;
   };
 
 } // namespace Model

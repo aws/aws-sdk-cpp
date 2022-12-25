@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AvailabilityZone">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API AvailabilityZone
+  class AvailabilityZone
   {
   public:
-    AvailabilityZone();
-    AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AvailabilityZone();
+    AWS_REDSHIFT_API AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<SupportedPlatform> m_supportedPlatforms;
-    bool m_supportedPlatformsHasBeenSet;
+    bool m_supportedPlatformsHasBeenSet = false;
   };
 
 } // namespace Model

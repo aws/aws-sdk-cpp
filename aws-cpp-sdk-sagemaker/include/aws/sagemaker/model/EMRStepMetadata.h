@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EMRStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EMRStepMetadata
+  class EMRStepMetadata
   {
   public:
-    EMRStepMetadata();
-    EMRStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    EMRStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EMRStepMetadata();
+    AWS_SAGEMAKER_API EMRStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EMRStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_stepId;
-    bool m_stepIdHasBeenSet;
+    bool m_stepIdHasBeenSet = false;
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_logFilePath;
-    bool m_logFilePathHasBeenSet;
+    bool m_logFilePathHasBeenSet = false;
   };
 
 } // namespace Model

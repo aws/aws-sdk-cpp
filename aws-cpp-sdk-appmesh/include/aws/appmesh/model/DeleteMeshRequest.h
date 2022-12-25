@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMeshInput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API DeleteMeshRequest : public AppMeshRequest
+  class DeleteMeshRequest : public AppMeshRequest
   {
   public:
-    DeleteMeshRequest();
+    AWS_APPMESH_API DeleteMeshRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteMesh"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPMESH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
   };
 
 } // namespace Model

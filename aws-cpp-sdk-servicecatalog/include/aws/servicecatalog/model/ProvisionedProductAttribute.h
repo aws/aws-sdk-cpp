@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisionedProductAttribute
+  class ProvisionedProductAttribute
   {
   public:
-    ProvisionedProductAttribute();
-    ProvisionedProductAttribute(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedProductAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisionedProductAttribute();
+    AWS_SERVICECATALOG_API ProvisionedProductAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisionedProductAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1010,61 +1010,61 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ProvisionedProductStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::String m_lastRecordId;
-    bool m_lastRecordIdHasBeenSet;
+    bool m_lastRecordIdHasBeenSet = false;
 
     Aws::String m_lastProvisioningRecordId;
-    bool m_lastProvisioningRecordIdHasBeenSet;
+    bool m_lastProvisioningRecordIdHasBeenSet = false;
 
     Aws::String m_lastSuccessfulProvisioningRecordId;
-    bool m_lastSuccessfulProvisioningRecordIdHasBeenSet;
+    bool m_lastSuccessfulProvisioningRecordIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_physicalId;
-    bool m_physicalIdHasBeenSet;
+    bool m_physicalIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactName;
-    bool m_provisioningArtifactNameHasBeenSet;
+    bool m_provisioningArtifactNameHasBeenSet = false;
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_userArnSession;
-    bool m_userArnSessionHasBeenSet;
+    bool m_userArnSessionHasBeenSet = false;
   };
 
 } // namespace Model

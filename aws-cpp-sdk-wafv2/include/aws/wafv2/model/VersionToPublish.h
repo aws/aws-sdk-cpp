@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/VersionToPublish">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API VersionToPublish
+  class VersionToPublish
   {
   public:
-    VersionToPublish();
-    VersionToPublish(Aws::Utils::Json::JsonView jsonValue);
-    VersionToPublish& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API VersionToPublish();
+    AWS_WAFV2_API VersionToPublish(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API VersionToPublish& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_associatedRuleGroupArn;
-    bool m_associatedRuleGroupArnHasBeenSet;
+    bool m_associatedRuleGroupArnHasBeenSet = false;
 
     int m_forecastedLifetime;
-    bool m_forecastedLifetimeHasBeenSet;
+    bool m_forecastedLifetimeHasBeenSet = false;
   };
 
 } // namespace Model

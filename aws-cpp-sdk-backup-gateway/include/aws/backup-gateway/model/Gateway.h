@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/Gateway">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API Gateway
+  class Gateway
   {
   public:
-    Gateway();
-    Gateway(Aws::Utils::Json::JsonView jsonValue);
-    Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API Gateway();
+    AWS_BACKUPGATEWAY_API Gateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_gatewayDisplayName;
-    bool m_gatewayDisplayNameHasBeenSet;
+    bool m_gatewayDisplayNameHasBeenSet = false;
 
     GatewayType m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenTime;
-    bool m_lastSeenTimeHasBeenSet;
+    bool m_lastSeenTimeHasBeenSet = false;
   };
 
 } // namespace Model

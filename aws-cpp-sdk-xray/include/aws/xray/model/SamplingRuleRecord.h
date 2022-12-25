@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingRuleRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingRuleRecord
+  class SamplingRuleRecord
   {
   public:
-    SamplingRuleRecord();
-    SamplingRuleRecord(Aws::Utils::Json::JsonView jsonValue);
-    SamplingRuleRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingRuleRecord();
+    AWS_XRAY_API SamplingRuleRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingRuleRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     SamplingRule m_samplingRule;
-    bool m_samplingRuleHasBeenSet;
+    bool m_samplingRuleHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet;
+    bool m_modifiedAtHasBeenSet = false;
   };
 
 } // namespace Model

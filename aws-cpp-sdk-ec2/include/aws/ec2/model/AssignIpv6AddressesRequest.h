@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API AssignIpv6AddressesRequest : public EC2Request
+  class AssignIpv6AddressesRequest : public EC2Request
   {
   public:
-    AssignIpv6AddressesRequest();
+    AWS_EC2_API AssignIpv6AddressesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssignIpv6Addresses"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -75,56 +75,56 @@ namespace Model
 
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more specific IPv6 addresses to be assigned to the network interface.
-     * You can't use this option if you're specifying a number of IPv6 addresses.</p>
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
@@ -256,19 +256,19 @@ namespace Model
   private:
 
     int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
+    bool m_ipv6AddressCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     int m_ipv6PrefixCount;
-    bool m_ipv6PrefixCountHasBeenSet;
+    bool m_ipv6PrefixCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Prefixes;
-    bool m_ipv6PrefixesHasBeenSet;
+    bool m_ipv6PrefixesHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

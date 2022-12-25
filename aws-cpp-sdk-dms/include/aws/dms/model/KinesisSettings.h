@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/KinesisSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings
+  class KinesisSettings
   {
   public:
-    KinesisSettings();
-    KinesisSettings(Aws::Utils::Json::JsonView jsonValue);
-    KinesisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -427,34 +427,34 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     MessageFormatValue m_messageFormat;
-    bool m_messageFormatHasBeenSet;
+    bool m_messageFormatHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     bool m_includeTransactionDetails;
-    bool m_includeTransactionDetailsHasBeenSet;
+    bool m_includeTransactionDetailsHasBeenSet = false;
 
     bool m_includePartitionValue;
-    bool m_includePartitionValueHasBeenSet;
+    bool m_includePartitionValueHasBeenSet = false;
 
     bool m_partitionIncludeSchemaTable;
-    bool m_partitionIncludeSchemaTableHasBeenSet;
+    bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
     bool m_includeTableAlterOperations;
-    bool m_includeTableAlterOperationsHasBeenSet;
+    bool m_includeTableAlterOperationsHasBeenSet = false;
 
     bool m_includeControlDetails;
-    bool m_includeControlDetailsHasBeenSet;
+    bool m_includeControlDetailsHasBeenSet = false;
 
     bool m_includeNullAndEmpty;
-    bool m_includeNullAndEmptyHasBeenSet;
+    bool m_includeNullAndEmptyHasBeenSet = false;
 
     bool m_noHexPrefix;
-    bool m_noHexPrefixHasBeenSet;
+    bool m_noHexPrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DestinationToCreate">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API DestinationToCreate
+  class DestinationToCreate
   {
   public:
-    DestinationToCreate();
-    DestinationToCreate(Aws::Utils::Json::JsonView jsonValue);
-    DestinationToCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API DestinationToCreate();
+    AWS_EFS_API DestinationToCreate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API DestinationToCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,13 +275,13 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_availabilityZoneName;
-    bool m_availabilityZoneNameHasBeenSet;
+    bool m_availabilityZoneNameHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

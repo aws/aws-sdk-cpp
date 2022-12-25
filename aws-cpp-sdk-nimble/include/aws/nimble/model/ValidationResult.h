@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ValidationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ValidationResult
+  class ValidationResult
   {
   public:
-    ValidationResult();
-    ValidationResult(Aws::Utils::Json::JsonView jsonValue);
-    ValidationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ValidationResult();
+    AWS_NIMBLESTUDIO_API ValidationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ValidationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     LaunchProfileValidationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     LaunchProfileValidationStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     LaunchProfileValidationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

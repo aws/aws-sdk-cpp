@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildGroup
+  class BuildGroup
   {
   public:
-    BuildGroup();
-    BuildGroup(Aws::Utils::Json::JsonView jsonValue);
-    BuildGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildGroup();
+    AWS_CODEBUILD_API BuildGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     bool m_ignoreFailure;
-    bool m_ignoreFailureHasBeenSet;
+    bool m_ignoreFailureHasBeenSet = false;
 
     BuildSummary m_currentBuildSummary;
-    bool m_currentBuildSummaryHasBeenSet;
+    bool m_currentBuildSummaryHasBeenSet = false;
 
     Aws::Vector<BuildSummary> m_priorBuildSummaryList;
-    bool m_priorBuildSummaryListHasBeenSet;
+    bool m_priorBuildSummaryListHasBeenSet = false;
   };
 
 } // namespace Model

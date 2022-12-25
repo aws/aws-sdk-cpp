@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Loa">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API Loa
+  class Loa
   {
   public:
-    Loa();
-    Loa(Aws::Utils::Json::JsonView jsonValue);
-    Loa& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API Loa();
+    AWS_DIRECTCONNECT_API Loa(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Loa& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_loaContent;
-    bool m_loaContentHasBeenSet;
+    bool m_loaContentHasBeenSet = false;
 
     LoaContentType m_loaContentType;
-    bool m_loaContentTypeHasBeenSet;
+    bool m_loaContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

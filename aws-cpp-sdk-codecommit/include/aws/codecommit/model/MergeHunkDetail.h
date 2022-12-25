@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeHunkDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API MergeHunkDetail
+  class MergeHunkDetail
   {
   public:
-    MergeHunkDetail();
-    MergeHunkDetail(Aws::Utils::Json::JsonView jsonValue);
-    MergeHunkDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API MergeHunkDetail();
+    AWS_CODECOMMIT_API MergeHunkDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API MergeHunkDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,13 +131,13 @@ namespace Model
   private:
 
     int m_startLine;
-    bool m_startLineHasBeenSet;
+    bool m_startLineHasBeenSet = false;
 
     int m_endLine;
-    bool m_endLineHasBeenSet;
+    bool m_endLineHasBeenSet = false;
 
     Aws::String m_hunkContent;
-    bool m_hunkContentHasBeenSet;
+    bool m_hunkContentHasBeenSet = false;
   };
 
 } // namespace Model

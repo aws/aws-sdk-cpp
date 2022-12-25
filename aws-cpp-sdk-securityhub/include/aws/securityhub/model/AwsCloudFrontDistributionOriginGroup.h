@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Information about an origin group for the distribution.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about an origin group for the CloudFront
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup
+  class AwsCloudFrontDistributionOriginGroup
   {
   public:
-    AwsCloudFrontDistributionOriginGroup();
-    AwsCloudFrontDistributionOriginGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsCloudFrontDistributionOriginGroupFailover m_failoverCriteria;
-    bool m_failoverCriteriaHasBeenSet;
+    bool m_failoverCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

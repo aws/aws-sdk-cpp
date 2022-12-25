@@ -19,7 +19,10 @@ namespace Model
     NEGATION,
     DIAGNOSIS,
     SIGN,
-    SYMPTOM
+    SYMPTOM,
+    PERTAINS_TO_FAMILY,
+    HYPOTHETICAL,
+    LOW_CONFIDENCE
   };
 
 namespace ICD10CMTraitNameMapper

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CvssScoreAdjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CvssScoreAdjustment
+  class CvssScoreAdjustment
   {
   public:
-    CvssScoreAdjustment();
-    CvssScoreAdjustment(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CvssScoreAdjustment();
+    AWS_INSPECTOR2_API CvssScoreAdjustment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CvssScoreAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

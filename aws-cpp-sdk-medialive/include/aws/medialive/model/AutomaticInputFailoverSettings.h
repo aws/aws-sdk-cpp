@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AutomaticInputFailoverSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AutomaticInputFailoverSettings
+  class AutomaticInputFailoverSettings
   {
   public:
-    AutomaticInputFailoverSettings();
-    AutomaticInputFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
-    AutomaticInputFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AutomaticInputFailoverSettings();
+    AWS_MEDIALIVE_API AutomaticInputFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AutomaticInputFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     int m_errorClearTimeMsec;
-    bool m_errorClearTimeMsecHasBeenSet;
+    bool m_errorClearTimeMsecHasBeenSet = false;
 
     Aws::Vector<FailoverCondition> m_failoverConditions;
-    bool m_failoverConditionsHasBeenSet;
+    bool m_failoverConditionsHasBeenSet = false;
 
     InputPreference m_inputPreference;
-    bool m_inputPreferenceHasBeenSet;
+    bool m_inputPreferenceHasBeenSet = false;
 
     Aws::String m_secondaryInputId;
-    bool m_secondaryInputIdHasBeenSet;
+    bool m_secondaryInputIdHasBeenSet = false;
   };
 
 } // namespace Model

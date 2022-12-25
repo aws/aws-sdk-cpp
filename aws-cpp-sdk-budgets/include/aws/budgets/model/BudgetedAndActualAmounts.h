@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/BudgetedAndActualAmounts">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API BudgetedAndActualAmounts
+  class BudgetedAndActualAmounts
   {
   public:
-    BudgetedAndActualAmounts();
-    BudgetedAndActualAmounts(Aws::Utils::Json::JsonView jsonValue);
-    BudgetedAndActualAmounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API BudgetedAndActualAmounts();
+    AWS_BUDGETS_API BudgetedAndActualAmounts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API BudgetedAndActualAmounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Spend m_budgetedAmount;
-    bool m_budgetedAmountHasBeenSet;
+    bool m_budgetedAmountHasBeenSet = false;
 
     Spend m_actualAmount;
-    bool m_actualAmountHasBeenSet;
+    bool m_actualAmountHasBeenSet = false;
 
     TimePeriod m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
   };
 
 } // namespace Model

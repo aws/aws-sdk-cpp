@@ -29,10 +29,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API UpdateProjectRequest : public CodeBuildRequest
+  class UpdateProjectRequest : public CodeBuildRequest
   {
   public:
-    UpdateProjectRequest();
+    AWS_CODEBUILD_API UpdateProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1080,67 +1080,67 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProjectSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<ProjectSource> m_secondarySources;
-    bool m_secondarySourcesHasBeenSet;
+    bool m_secondarySourcesHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-    bool m_secondarySourceVersionsHasBeenSet;
+    bool m_secondarySourceVersionsHasBeenSet = false;
 
     ProjectArtifacts m_artifacts;
-    bool m_artifactsHasBeenSet;
+    bool m_artifactsHasBeenSet = false;
 
     Aws::Vector<ProjectArtifacts> m_secondaryArtifacts;
-    bool m_secondaryArtifactsHasBeenSet;
+    bool m_secondaryArtifactsHasBeenSet = false;
 
     ProjectCache m_cache;
-    bool m_cacheHasBeenSet;
+    bool m_cacheHasBeenSet = false;
 
     ProjectEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
 
     int m_queuedTimeoutInMinutes;
-    bool m_queuedTimeoutInMinutesHasBeenSet;
+    bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     bool m_badgeEnabled;
-    bool m_badgeEnabledHasBeenSet;
+    bool m_badgeEnabledHasBeenSet = false;
 
     LogsConfig m_logsConfig;
-    bool m_logsConfigHasBeenSet;
+    bool m_logsConfigHasBeenSet = false;
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-    bool m_fileSystemLocationsHasBeenSet;
+    bool m_fileSystemLocationsHasBeenSet = false;
 
     ProjectBuildBatchConfig m_buildBatchConfig;
-    bool m_buildBatchConfigHasBeenSet;
+    bool m_buildBatchConfigHasBeenSet = false;
 
     int m_concurrentBuildLimit;
-    bool m_concurrentBuildLimitHasBeenSet;
+    bool m_concurrentBuildLimitHasBeenSet = false;
   };
 
 } // namespace Model

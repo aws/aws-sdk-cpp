@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OnDemandOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API OnDemandOptions
+  class OnDemandOptions
   {
   public:
-    OnDemandOptions();
-    OnDemandOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OnDemandOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API OnDemandOptions();
+    AWS_EC2_API OnDemandOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API OnDemandOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -286,22 +286,22 @@ namespace Model
   private:
 
     FleetOnDemandAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     CapacityReservationOptions m_capacityReservationOptions;
-    bool m_capacityReservationOptionsHasBeenSet;
+    bool m_capacityReservationOptionsHasBeenSet = false;
 
     bool m_singleInstanceType;
-    bool m_singleInstanceTypeHasBeenSet;
+    bool m_singleInstanceTypeHasBeenSet = false;
 
     bool m_singleAvailabilityZone;
-    bool m_singleAvailabilityZoneHasBeenSet;
+    bool m_singleAvailabilityZoneHasBeenSet = false;
 
     int m_minTargetCapacity;
-    bool m_minTargetCapacityHasBeenSet;
+    bool m_minTargetCapacityHasBeenSet = false;
 
     Aws::String m_maxTotalPrice;
-    bool m_maxTotalPriceHasBeenSet;
+    bool m_maxTotalPriceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateNotebookInstanceLifecycleConfigRequest : public SageMakerRequest
+  class CreateNotebookInstanceLifecycleConfigRequest : public SageMakerRequest
   {
   public:
-    CreateNotebookInstanceLifecycleConfigRequest();
+    AWS_SAGEMAKER_API CreateNotebookInstanceLifecycleConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNotebookInstanceLifecycleConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onCreate;
-    bool m_onCreateHasBeenSet;
+    bool m_onCreateHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
-    bool m_onStartHasBeenSet;
+    bool m_onStartHasBeenSet = false;
   };
 
 } // namespace Model

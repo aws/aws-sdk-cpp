@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SplunkDestinationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API SplunkDestinationUpdate
+  class SplunkDestinationUpdate
   {
   public:
-    SplunkDestinationUpdate();
-    SplunkDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    SplunkDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API SplunkDestinationUpdate();
+    AWS_FIREHOSE_API SplunkDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API SplunkDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -411,31 +411,31 @@ namespace Model
   private:
 
     Aws::String m_hECEndpoint;
-    bool m_hECEndpointHasBeenSet;
+    bool m_hECEndpointHasBeenSet = false;
 
     HECEndpointType m_hECEndpointType;
-    bool m_hECEndpointTypeHasBeenSet;
+    bool m_hECEndpointTypeHasBeenSet = false;
 
     Aws::String m_hECToken;
-    bool m_hECTokenHasBeenSet;
+    bool m_hECTokenHasBeenSet = false;
 
     int m_hECAcknowledgmentTimeoutInSeconds;
-    bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet;
+    bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = false;
 
     SplunkRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     SplunkS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationUpdate m_s3Update;
-    bool m_s3UpdateHasBeenSet;
+    bool m_s3UpdateHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

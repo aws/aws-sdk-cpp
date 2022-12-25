@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API DeleteBGPPeerRequest : public DirectConnectRequest
+  class DeleteBGPPeerRequest : public DirectConnectRequest
   {
   public:
-    DeleteBGPPeerRequest();
+    AWS_DIRECTCONNECT_API DeleteBGPPeerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteBGPPeer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     Aws::String m_bgpPeerId;
-    bool m_bgpPeerIdHasBeenSet;
+    bool m_bgpPeerIdHasBeenSet = false;
   };
 
 } // namespace Model

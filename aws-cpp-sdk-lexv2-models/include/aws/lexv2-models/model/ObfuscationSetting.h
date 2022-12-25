@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ObfuscationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ObfuscationSetting
+  class ObfuscationSetting
   {
   public:
-    ObfuscationSetting();
-    ObfuscationSetting(Aws::Utils::Json::JsonView jsonValue);
-    ObfuscationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ObfuscationSetting();
+    AWS_LEXMODELSV2_API ObfuscationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ObfuscationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ObfuscationSettingType m_obfuscationSettingType;
-    bool m_obfuscationSettingTypeHasBeenSet;
+    bool m_obfuscationSettingTypeHasBeenSet = false;
   };
 
 } // namespace Model

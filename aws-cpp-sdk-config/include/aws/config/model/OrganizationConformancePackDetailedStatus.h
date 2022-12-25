@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConformancePackDetailedStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationConformancePackDetailedStatus
+  class OrganizationConformancePackDetailedStatus
   {
   public:
-    OrganizationConformancePackDetailedStatus();
-    OrganizationConformancePackDetailedStatus(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConformancePackDetailedStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationConformancePackDetailedStatus();
+    AWS_CONFIGSERVICE_API OrganizationConformancePackDetailedStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationConformancePackDetailedStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,11 +126,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -153,11 +153,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -180,11 +180,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -207,11 +207,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -234,11 +234,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -261,11 +261,11 @@ namespace Model
 
     /**
      * <p>Indicates deployment status for conformance pack in a member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * first time, conformance pack status is created in the member account. When
-     * master account calls <code>PutOrganizationConformancePack</code> action for the
-     * second time, conformance pack status is updated in the member account.
-     * Conformance pack status is deleted when the master account deletes
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the first time, conformance pack status is created in the member account. When
+     * management account calls <code>PutOrganizationConformancePack</code> action for
+     * the second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the management account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
      * state of the conformance pack to:</p> <ul> <li> <p>
@@ -418,22 +418,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     OrganizationResourceDetailedStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

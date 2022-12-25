@@ -30,7 +30,7 @@ ListLaunchPathsResult& ListLaunchPathsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LaunchPathSummaries"))
   {
-    Array<JsonView> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");
+    Aws::Utils::Array<JsonView> launchPathSummariesJsonList = jsonValue.GetArray("LaunchPathSummaries");
     for(unsigned launchPathSummariesIndex = 0; launchPathSummariesIndex < launchPathSummariesJsonList.GetLength(); ++launchPathSummariesIndex)
     {
       m_launchPathSummaries.push_back(launchPathSummariesJsonList[launchPathSummariesIndex].AsObject());

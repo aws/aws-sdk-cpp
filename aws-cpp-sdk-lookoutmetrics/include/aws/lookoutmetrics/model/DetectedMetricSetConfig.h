@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectedMetricSetConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DetectedMetricSetConfig
+  class DetectedMetricSetConfig
   {
   public:
-    DetectedMetricSetConfig();
-    DetectedMetricSetConfig(Aws::Utils::Json::JsonView jsonValue);
-    DetectedMetricSetConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DetectedMetricSetConfig();
+    AWS_LOOKOUTMETRICS_API DetectedMetricSetConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DetectedMetricSetConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     DetectedField m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     DetectedField m_metricSetFrequency;
-    bool m_metricSetFrequencyHasBeenSet;
+    bool m_metricSetFrequencyHasBeenSet = false;
 
     DetectedMetricSource m_metricSource;
-    bool m_metricSourceHasBeenSet;
+    bool m_metricSourceHasBeenSet = false;
   };
 
 } // namespace Model

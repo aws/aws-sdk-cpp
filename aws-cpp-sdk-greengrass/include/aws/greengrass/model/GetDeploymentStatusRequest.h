@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASS_API GetDeploymentStatusRequest : public GreengrassRequest
+  class GetDeploymentStatusRequest : public GreengrassRequest
   {
   public:
-    GetDeploymentStatusRequest();
+    AWS_GREENGRASS_API GetDeploymentStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDeploymentStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API MediaStreamAttributes
+  class MediaStreamAttributes
   {
   public:
-    MediaStreamAttributes();
-    MediaStreamAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MediaStreamAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API MediaStreamAttributes();
+    AWS_MEDIACONNECT_API MediaStreamAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API MediaStreamAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Fmtp m_fmtp;
-    bool m_fmtpHasBeenSet;
+    bool m_fmtpHasBeenSet = false;
 
     Aws::String m_lang;
-    bool m_langHasBeenSet;
+    bool m_langHasBeenSet = false;
   };
 
 } // namespace Model

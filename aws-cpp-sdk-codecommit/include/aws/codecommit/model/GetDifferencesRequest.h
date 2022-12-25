@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API GetDifferencesRequest : public CodeCommitRequest
+  class GetDifferencesRequest : public CodeCommitRequest
   {
   public:
-    GetDifferencesRequest();
+    AWS_CODECOMMIT_API GetDifferencesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDifferences"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -395,25 +395,25 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitSpecifier;
-    bool m_beforeCommitSpecifierHasBeenSet;
+    bool m_beforeCommitSpecifierHasBeenSet = false;
 
     Aws::String m_afterCommitSpecifier;
-    bool m_afterCommitSpecifierHasBeenSet;
+    bool m_afterCommitSpecifierHasBeenSet = false;
 
     Aws::String m_beforePath;
-    bool m_beforePathHasBeenSet;
+    bool m_beforePathHasBeenSet = false;
 
     Aws::String m_afterPath;
-    bool m_afterPathHasBeenSet;
+    bool m_afterPathHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

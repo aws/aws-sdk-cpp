@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ReleaseSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ReleaseSummary
+  class ReleaseSummary
   {
   public:
-    ReleaseSummary();
-    ReleaseSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReleaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ReleaseSummary();
+    AWS_WAFV2_API ReleaseSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ReleaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

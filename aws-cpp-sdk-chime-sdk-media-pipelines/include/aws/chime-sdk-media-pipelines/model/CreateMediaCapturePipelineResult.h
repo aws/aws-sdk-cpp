@@ -24,41 +24,41 @@ namespace ChimeSDKMediaPipelines
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult
+  class CreateMediaCapturePipelineResult
   {
   public:
-    CreateMediaCapturePipelineResult();
-    CreateMediaCapturePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMediaCapturePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A media capture pipeline object, the ID, source type, source ARN, sink type,
-     * and sink ARN of a media capture pipeline object.</p>
+     * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
+     * ARN of a media pipeline object.</p>
      */
     inline const MediaCapturePipeline& GetMediaCapturePipeline() const{ return m_mediaCapturePipeline; }
 
     /**
-     * <p>A media capture pipeline object, the ID, source type, source ARN, sink type,
-     * and sink ARN of a media capture pipeline object.</p>
+     * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
+     * ARN of a media pipeline object.</p>
      */
     inline void SetMediaCapturePipeline(const MediaCapturePipeline& value) { m_mediaCapturePipeline = value; }
 
     /**
-     * <p>A media capture pipeline object, the ID, source type, source ARN, sink type,
-     * and sink ARN of a media capture pipeline object.</p>
+     * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
+     * ARN of a media pipeline object.</p>
      */
     inline void SetMediaCapturePipeline(MediaCapturePipeline&& value) { m_mediaCapturePipeline = std::move(value); }
 
     /**
-     * <p>A media capture pipeline object, the ID, source type, source ARN, sink type,
-     * and sink ARN of a media capture pipeline object.</p>
+     * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
+     * ARN of a media pipeline object.</p>
      */
     inline CreateMediaCapturePipelineResult& WithMediaCapturePipeline(const MediaCapturePipeline& value) { SetMediaCapturePipeline(value); return *this;}
 
     /**
-     * <p>A media capture pipeline object, the ID, source type, source ARN, sink type,
-     * and sink ARN of a media capture pipeline object.</p>
+     * <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink
+     * ARN of a media pipeline object.</p>
      */
     inline CreateMediaCapturePipelineResult& WithMediaCapturePipeline(MediaCapturePipeline&& value) { SetMediaCapturePipeline(std::move(value)); return *this;}
 

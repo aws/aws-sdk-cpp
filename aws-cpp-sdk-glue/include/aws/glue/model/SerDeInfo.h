@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SerDeInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API SerDeInfo
+  class SerDeInfo
   {
   public:
-    SerDeInfo();
-    SerDeInfo(Aws::Utils::Json::JsonView jsonValue);
-    SerDeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SerDeInfo();
+    AWS_GLUE_API SerDeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SerDeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_serializationLibrary;
-    bool m_serializationLibraryHasBeenSet;
+    bool m_serializationLibraryHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

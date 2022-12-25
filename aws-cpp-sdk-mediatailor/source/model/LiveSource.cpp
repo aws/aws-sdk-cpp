@@ -59,7 +59,7 @@ LiveSource& LiveSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HttpPackageConfigurations"))
   {
-    Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
+    Aws::Utils::Array<JsonView> httpPackageConfigurationsJsonList = jsonValue.GetArray("HttpPackageConfigurations");
     for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
     {
       m_httpPackageConfigurations.push_back(httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject());
@@ -118,7 +118,7 @@ JsonValue LiveSource::Jsonize() const
 
   if(m_httpPackageConfigurationsHasBeenSet)
   {
-   Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
+   Aws::Utils::Array<JsonValue> httpPackageConfigurationsJsonList(m_httpPackageConfigurations.size());
    for(unsigned httpPackageConfigurationsIndex = 0; httpPackageConfigurationsIndex < httpPackageConfigurationsJsonList.GetLength(); ++httpPackageConfigurationsIndex)
    {
      httpPackageConfigurationsJsonList[httpPackageConfigurationsIndex].AsObject(m_httpPackageConfigurations[httpPackageConfigurationsIndex].Jsonize());

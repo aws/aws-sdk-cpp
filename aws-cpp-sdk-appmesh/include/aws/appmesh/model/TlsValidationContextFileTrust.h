@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TlsValidationContextFileTrust">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TlsValidationContextFileTrust
+  class TlsValidationContextFileTrust
   {
   public:
-    TlsValidationContextFileTrust();
-    TlsValidationContextFileTrust(Aws::Utils::Json::JsonView jsonValue);
-    TlsValidationContextFileTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TlsValidationContextFileTrust();
+    AWS_APPMESH_API TlsValidationContextFileTrust(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TlsValidationContextFileTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_certificateChain;
-    bool m_certificateChainHasBeenSet;
+    bool m_certificateChainHasBeenSet = false;
   };
 
 } // namespace Model

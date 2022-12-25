@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ChangeProgressStatusDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ChangeProgressStatusDetails
+  class ChangeProgressStatusDetails
   {
   public:
-    ChangeProgressStatusDetails();
-    ChangeProgressStatusDetails(Aws::Utils::Json::JsonView jsonValue);
-    ChangeProgressStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStatusDetails();
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStatusDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Aws::String m_changeId;
-    bool m_changeIdHasBeenSet;
+    bool m_changeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     OverallChangeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pendingProperties;
-    bool m_pendingPropertiesHasBeenSet;
+    bool m_pendingPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_completedProperties;
-    bool m_completedPropertiesHasBeenSet;
+    bool m_completedPropertiesHasBeenSet = false;
 
     int m_totalNumberOfStages;
-    bool m_totalNumberOfStagesHasBeenSet;
+    bool m_totalNumberOfStagesHasBeenSet = false;
 
     Aws::Vector<ChangeProgressStage> m_changeProgressStages;
-    bool m_changeProgressStagesHasBeenSet;
+    bool m_changeProgressStagesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/HierarchicalPrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API HierarchicalPrincipal
+  class HierarchicalPrincipal
   {
   public:
-    HierarchicalPrincipal();
-    HierarchicalPrincipal(Aws::Utils::Json::JsonView jsonValue);
-    HierarchicalPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API HierarchicalPrincipal();
+    AWS_KENDRA_API HierarchicalPrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API HierarchicalPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Vector<Principal> m_principalList;
-    bool m_principalListHasBeenSet;
+    bool m_principalListHasBeenSet = false;
   };
 
 } // namespace Model

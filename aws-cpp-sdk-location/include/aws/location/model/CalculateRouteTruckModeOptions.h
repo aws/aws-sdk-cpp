@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteTruckModeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API CalculateRouteTruckModeOptions
+  class CalculateRouteTruckModeOptions
   {
   public:
-    CalculateRouteTruckModeOptions();
-    CalculateRouteTruckModeOptions(Aws::Utils::Json::JsonView jsonValue);
-    CalculateRouteTruckModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API CalculateRouteTruckModeOptions();
+    AWS_LOCATIONSERVICE_API CalculateRouteTruckModeOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API CalculateRouteTruckModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,16 +179,16 @@ namespace Model
   private:
 
     bool m_avoidFerries;
-    bool m_avoidFerriesHasBeenSet;
+    bool m_avoidFerriesHasBeenSet = false;
 
     bool m_avoidTolls;
-    bool m_avoidTollsHasBeenSet;
+    bool m_avoidTollsHasBeenSet = false;
 
     TruckDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     TruckWeight m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

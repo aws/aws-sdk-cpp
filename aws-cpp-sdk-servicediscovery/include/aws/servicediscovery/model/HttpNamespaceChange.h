@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HttpNamespaceChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API HttpNamespaceChange
+  class HttpNamespaceChange
   {
   public:
-    HttpNamespaceChange();
-    HttpNamespaceChange(Aws::Utils::Json::JsonView jsonValue);
-    HttpNamespaceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API HttpNamespaceChange();
+    AWS_SERVICEDISCOVERY_API HttpNamespaceChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API HttpNamespaceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

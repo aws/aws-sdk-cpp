@@ -30,7 +30,7 @@ ListThingPrincipalsResult& ListThingPrincipalsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("principals"))
   {
-    Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
+    Aws::Utils::Array<JsonView> principalsJsonList = jsonValue.GetArray("principals");
     for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
     {
       m_principals.push_back(principalsJsonList[principalsIndex].AsString());

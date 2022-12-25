@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API ImportStacksToStackSetRequest : public CloudFormationRequest
+  class ImportStacksToStackSetRequest : public CloudFormationRequest
   {
   public:
-    ImportStacksToStackSetRequest();
+    AWS_CLOUDFORMATION_API ImportStacksToStackSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportStacksToStackSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -368,25 +368,25 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stackIds;
-    bool m_stackIdsHasBeenSet;
+    bool m_stackIdsHasBeenSet = false;
 
     Aws::String m_stackIdsUrl;
-    bool m_stackIdsUrlHasBeenSet;
+    bool m_stackIdsUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

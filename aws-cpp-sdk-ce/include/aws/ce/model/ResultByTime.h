@@ -33,13 +33,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ResultByTime">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ResultByTime
+  class ResultByTime
   {
   public:
-    ResultByTime();
-    ResultByTime(Aws::Utils::Json::JsonView jsonValue);
-    ResultByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ResultByTime();
+    AWS_COSTEXPLORER_API ResultByTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ResultByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::Map<Aws::String, MetricValue> m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::Vector<Group> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     bool m_estimated;
-    bool m_estimatedHasBeenSet;
+    bool m_estimatedHasBeenSet = false;
   };
 
 } // namespace Model

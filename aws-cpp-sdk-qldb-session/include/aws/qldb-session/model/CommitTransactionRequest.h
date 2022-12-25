@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/CommitTransactionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API CommitTransactionRequest
+  class CommitTransactionRequest
   {
   public:
-    CommitTransactionRequest();
-    CommitTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
-    CommitTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API CommitTransactionRequest();
+    AWS_QLDBSESSION_API CommitTransactionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API CommitTransactionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_commitDigest;
-    bool m_commitDigestHasBeenSet;
+    bool m_commitDigestHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CreateTokenRequest : public LicenseManagerRequest
+  class CreateTokenRequest : public LicenseManagerRequest
   {
   public:
-    CreateTokenRequest();
+    AWS_LICENSEMANAGER_API CreateTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roleArns;
-    bool m_roleArnsHasBeenSet;
+    bool m_roleArnsHasBeenSet = false;
 
     int m_expirationInDays;
-    bool m_expirationInDaysHasBeenSet;
+    bool m_expirationInDaysHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokenProperties;
-    bool m_tokenPropertiesHasBeenSet;
+    bool m_tokenPropertiesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

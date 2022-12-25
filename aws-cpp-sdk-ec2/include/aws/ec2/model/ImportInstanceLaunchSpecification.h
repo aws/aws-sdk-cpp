@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstanceLaunchSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ImportInstanceLaunchSpecification
+  class ImportInstanceLaunchSpecification
   {
   public:
-    ImportInstanceLaunchSpecification();
-    ImportInstanceLaunchSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ImportInstanceLaunchSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImportInstanceLaunchSpecification();
+    AWS_EC2_API ImportInstanceLaunchSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ImportInstanceLaunchSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -471,37 +471,37 @@ namespace Model
   private:
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     ArchitectureValues m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
+    bool m_groupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
+    bool m_groupNamesHasBeenSet = false;
 
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     bool m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     Placement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     UserData m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
   };
 
 } // namespace Model

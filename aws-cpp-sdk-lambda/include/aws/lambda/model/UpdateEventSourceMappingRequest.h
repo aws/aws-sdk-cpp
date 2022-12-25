@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API UpdateEventSourceMappingRequest : public LambdaRequest
+  class UpdateEventSourceMappingRequest : public LambdaRequest
   {
   public:
-    UpdateEventSourceMappingRequest();
+    AWS_LAMBDA_API UpdateEventSourceMappingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEventSourceMapping"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -225,7 +225,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -240,7 +240,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -255,7 +255,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -270,7 +270,7 @@ namespace Model
      * 100. Max 10,000.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> - Default
      * 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100.
-     * Max 10,000.</p> </li> <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100.
+     * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> - Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> -
      * Default 100. Max 10,000.</p> </li> </ul>
      */
@@ -278,48 +278,48 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-     * determine whether Lambda should process an event. For more information, see <a
+     * <p>An object that defines the filter criteria that determine whether Lambda
+     * should process an event. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
@@ -327,38 +327,70 @@ namespace Model
 
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in
-     * seconds, that Lambda spends gathering records before invoking the function.</p>
-     * <p>Default: 0</p> <p>Related setting: When you set <code>BatchSize</code> to a
-     * value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code>
-     * to at least 1.</p>
+     * <p>The maximum amount of time, in seconds, that Lambda spends gathering records
+     * before invoking the function. You can configure
+     * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
+     * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
+     * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
+     * ms. Note that because you can only change
+     * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
+     * revert back to the 500 ms default batching window after you have changed it. To
+     * restore the default batching window, you must create a new event source
+     * mapping.</p> <p>Related setting: For streams and Amazon SQS event sources, when
+     * you set <code>BatchSize</code> to a value greater than 10, you must set
+     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 
@@ -452,29 +484,29 @@ namespace Model
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
      * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records will
-     * be retried until the record expires.</p>
+     * default value is infinite (-1). When set to infinite (-1), failed records are
+     * retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
@@ -555,25 +587,25 @@ namespace Model
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
 
     /**
      * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second up to 900 seconds.</p>
+     * between 1 second and 900 seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
@@ -629,46 +661,46 @@ namespace Model
   private:
 
     Aws::String m_uUID;
-    bool m_uUIDHasBeenSet;
+    bool m_uUIDHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     int m_maximumBatchingWindowInSeconds;
-    bool m_maximumBatchingWindowInSecondsHasBeenSet;
+    bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     int m_maximumRecordAgeInSeconds;
-    bool m_maximumRecordAgeInSecondsHasBeenSet;
+    bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
     bool m_bisectBatchOnFunctionError;
-    bool m_bisectBatchOnFunctionErrorHasBeenSet;
+    bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_parallelizationFactor;
-    bool m_parallelizationFactorHasBeenSet;
+    bool m_parallelizationFactorHasBeenSet = false;
 
     Aws::Vector<SourceAccessConfiguration> m_sourceAccessConfigurations;
-    bool m_sourceAccessConfigurationsHasBeenSet;
+    bool m_sourceAccessConfigurationsHasBeenSet = false;
 
     int m_tumblingWindowInSeconds;
-    bool m_tumblingWindowInSecondsHasBeenSet;
+    bool m_tumblingWindowInSecondsHasBeenSet = false;
 
     Aws::Vector<FunctionResponseType> m_functionResponseTypes;
-    bool m_functionResponseTypesHasBeenSet;
+    bool m_functionResponseTypesHasBeenSet = false;
   };
 
 } // namespace Model

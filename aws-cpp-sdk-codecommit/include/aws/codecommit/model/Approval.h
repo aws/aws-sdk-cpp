@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Approval">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Approval
+  class Approval
   {
   public:
-    Approval();
-    Approval(Aws::Utils::Json::JsonView jsonValue);
-    Approval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Approval();
+    AWS_CODECOMMIT_API Approval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Approval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     ApprovalState m_approvalState;
-    bool m_approvalStateHasBeenSet;
+    bool m_approvalStateHasBeenSet = false;
   };
 
 } // namespace Model

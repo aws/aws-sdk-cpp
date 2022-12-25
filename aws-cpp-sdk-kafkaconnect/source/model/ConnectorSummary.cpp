@@ -147,7 +147,7 @@ ConnectorSummary& ConnectorSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("plugins"))
   {
-    Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
+    Aws::Utils::Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
     for(unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex)
     {
       m_plugins.push_back(pluginsJsonList[pluginsIndex].AsObject());
@@ -207,7 +207,7 @@ JsonValue ConnectorSummary::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_currentVersionHasBeenSet)
@@ -248,7 +248,7 @@ JsonValue ConnectorSummary::Jsonize() const
 
   if(m_pluginsHasBeenSet)
   {
-   Array<JsonValue> pluginsJsonList(m_plugins.size());
+   Aws::Utils::Array<JsonValue> pluginsJsonList(m_plugins.size());
    for(unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex)
    {
      pluginsJsonList[pluginsIndex].AsObject(m_plugins[pluginsIndex].Jsonize());

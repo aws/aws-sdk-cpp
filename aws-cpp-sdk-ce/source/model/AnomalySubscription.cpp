@@ -23,11 +23,10 @@ AnomalySubscription::AnomalySubscription() :
     m_accountIdHasBeenSet(false),
     m_monitorArnListHasBeenSet(false),
     m_subscribersHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
     m_frequency(AnomalySubscriptionFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_thresholdExpressionHasBeenSet(false)
 {
 }
 
@@ -36,11 +35,10 @@ AnomalySubscription::AnomalySubscription(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_monitorArnListHasBeenSet(false),
     m_subscribersHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
     m_frequency(AnomalySubscriptionFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_thresholdExpressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,7 +61,7 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MonitorArnList"))
   {
-    Array<JsonView> monitorArnListJsonList = jsonValue.GetArray("MonitorArnList");
+    Aws::Utils::Array<JsonView> monitorArnListJsonList = jsonValue.GetArray("MonitorArnList");
     for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
     {
       m_monitorArnList.push_back(monitorArnListJsonList[monitorArnListIndex].AsString());
@@ -73,19 +71,12 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Subscribers"))
   {
-    Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
+    Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());
     }
     m_subscribersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Threshold"))
-  {
-    m_threshold = jsonValue.GetDouble("Threshold");
-
-    m_thresholdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Frequency"))
@@ -100,6 +91,13 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
     m_subscriptionName = jsonValue.GetString("SubscriptionName");
 
     m_subscriptionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThresholdExpression"))
+  {
+    m_thresholdExpression = jsonValue.GetObject("ThresholdExpression");
+
+    m_thresholdExpressionHasBeenSet = true;
   }
 
   return *this;
@@ -123,7 +121,7 @@ JsonValue AnomalySubscription::Jsonize() const
 
   if(m_monitorArnListHasBeenSet)
   {
-   Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
+   Aws::Utils::Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
    for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
    {
      monitorArnListJsonList[monitorArnListIndex].AsString(m_monitorArnList[monitorArnListIndex]);
@@ -134,18 +132,12 @@ JsonValue AnomalySubscription::Jsonize() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
    }
    payload.WithArray("Subscribers", std::move(subscribersJsonList));
-
-  }
-
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithDouble("Threshold", m_threshold);
 
   }
 
@@ -157,6 +149,12 @@ JsonValue AnomalySubscription::Jsonize() const
   if(m_subscriptionNameHasBeenSet)
   {
    payload.WithString("SubscriptionName", m_subscriptionName);
+
+  }
+
+  if(m_thresholdExpressionHasBeenSet)
+  {
+   payload.WithObject("ThresholdExpression", m_thresholdExpression.Jsonize());
 
   }
 

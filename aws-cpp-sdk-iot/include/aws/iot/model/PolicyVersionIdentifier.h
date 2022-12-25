@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PolicyVersionIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API PolicyVersionIdentifier
+  class PolicyVersionIdentifier
   {
   public:
-    PolicyVersionIdentifier();
-    PolicyVersionIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    PolicyVersionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API PolicyVersionIdentifier();
+    AWS_IOT_API PolicyVersionIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API PolicyVersionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyVersionId;
-    bool m_policyVersionIdHasBeenSet;
+    bool m_policyVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

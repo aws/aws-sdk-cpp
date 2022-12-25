@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API FilterCriteria
+  class FilterCriteria
   {
   public:
-    FilterCriteria();
-    FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API FilterCriteria();
+    AWS_LAMBDA_API FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

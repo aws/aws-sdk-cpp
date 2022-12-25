@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API GenerateOrganizationsAccessReportRequest : public IAMRequest
+  class GenerateOrganizationsAccessReportRequest : public IAMRequest
   {
   public:
-    GenerateOrganizationsAccessReportRequest();
+    AWS_IAM_API GenerateOrganizationsAccessReportRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateOrganizationsAccessReport"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_entityPath;
-    bool m_entityPathHasBeenSet;
+    bool m_entityPathHasBeenSet = false;
 
     Aws::String m_organizationsPolicyId;
-    bool m_organizationsPolicyIdHasBeenSet;
+    bool m_organizationsPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

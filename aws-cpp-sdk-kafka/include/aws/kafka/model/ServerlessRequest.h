@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ServerlessRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ServerlessRequest
+  class ServerlessRequest
   {
   public:
-    ServerlessRequest();
-    ServerlessRequest(Aws::Utils::Json::JsonView jsonValue);
-    ServerlessRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ServerlessRequest();
+    AWS_KAFKA_API ServerlessRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ServerlessRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::Vector<VpcConfig> m_vpcConfigs;
-    bool m_vpcConfigsHasBeenSet;
+    bool m_vpcConfigsHasBeenSet = false;
 
     ServerlessClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

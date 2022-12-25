@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsOptimizedInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API EbsOptimizedInfo
+  class EbsOptimizedInfo
   {
   public:
-    EbsOptimizedInfo();
-    EbsOptimizedInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EbsOptimizedInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsOptimizedInfo();
+    AWS_EC2_API EbsOptimizedInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsOptimizedInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -190,22 +190,22 @@ namespace Model
   private:
 
     int m_baselineBandwidthInMbps;
-    bool m_baselineBandwidthInMbpsHasBeenSet;
+    bool m_baselineBandwidthInMbpsHasBeenSet = false;
 
     double m_baselineThroughputInMBps;
-    bool m_baselineThroughputInMBpsHasBeenSet;
+    bool m_baselineThroughputInMBpsHasBeenSet = false;
 
     int m_baselineIops;
-    bool m_baselineIopsHasBeenSet;
+    bool m_baselineIopsHasBeenSet = false;
 
     int m_maximumBandwidthInMbps;
-    bool m_maximumBandwidthInMbpsHasBeenSet;
+    bool m_maximumBandwidthInMbpsHasBeenSet = false;
 
     double m_maximumThroughputInMBps;
-    bool m_maximumThroughputInMBpsHasBeenSet;
+    bool m_maximumThroughputInMBpsHasBeenSet = false;
 
     int m_maximumIops;
-    bool m_maximumIopsHasBeenSet;
+    bool m_maximumIopsHasBeenSet = false;
   };
 
 } // namespace Model

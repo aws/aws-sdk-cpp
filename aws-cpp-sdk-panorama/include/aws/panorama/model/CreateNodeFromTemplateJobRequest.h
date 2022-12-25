@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API CreateNodeFromTemplateJobRequest : public PanoramaRequest
+  class CreateNodeFromTemplateJobRequest : public PanoramaRequest
   {
   public:
-    CreateNodeFromTemplateJobRequest();
+    AWS_PANORAMA_API CreateNodeFromTemplateJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNodeFromTemplateJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -340,25 +340,25 @@ namespace Model
   private:
 
     Aws::Vector<JobResourceTags> m_jobTags;
-    bool m_jobTagsHasBeenSet;
+    bool m_jobTagsHasBeenSet = false;
 
     Aws::String m_nodeDescription;
-    bool m_nodeDescriptionHasBeenSet;
+    bool m_nodeDescriptionHasBeenSet = false;
 
     Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
+    bool m_nodeNameHasBeenSet = false;
 
     Aws::String m_outputPackageName;
-    bool m_outputPackageNameHasBeenSet;
+    bool m_outputPackageNameHasBeenSet = false;
 
     Aws::String m_outputPackageVersion;
-    bool m_outputPackageVersionHasBeenSet;
+    bool m_outputPackageVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_templateParameters;
-    bool m_templateParametersHasBeenSet;
+    bool m_templateParametersHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

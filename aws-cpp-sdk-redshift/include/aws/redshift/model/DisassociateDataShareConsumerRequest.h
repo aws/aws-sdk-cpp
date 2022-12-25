@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API DisassociateDataShareConsumerRequest : public RedshiftRequest
+  class DisassociateDataShareConsumerRequest : public RedshiftRequest
   {
   public:
-    DisassociateDataShareConsumerRequest();
+    AWS_REDSHIFT_API DisassociateDataShareConsumerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateDataShareConsumer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -218,16 +218,16 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
 
     bool m_disassociateEntireAccount;
-    bool m_disassociateEntireAccountHasBeenSet;
+    bool m_disassociateEntireAccountHasBeenSet = false;
 
     Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet;
+    bool m_consumerArnHasBeenSet = false;
 
     Aws::String m_consumerRegion;
-    bool m_consumerRegionHasBeenSet;
+    bool m_consumerRegionHasBeenSet = false;
   };
 
 } // namespace Model

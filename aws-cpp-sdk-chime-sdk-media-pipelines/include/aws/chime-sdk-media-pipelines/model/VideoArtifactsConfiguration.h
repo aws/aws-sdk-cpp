@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/VideoArtifactsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration
+  class VideoArtifactsConfiguration
   {
   public:
-    VideoArtifactsConfiguration();
-    VideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ArtifactsState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     VideoMuxType m_muxType;
-    bool m_muxTypeHasBeenSet;
+    bool m_muxTypeHasBeenSet = false;
   };
 
 } // namespace Model

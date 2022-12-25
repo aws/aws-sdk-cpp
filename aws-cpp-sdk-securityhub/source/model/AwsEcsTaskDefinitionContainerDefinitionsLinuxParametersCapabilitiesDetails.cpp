@@ -35,7 +35,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& AwsE
 {
   if(jsonValue.ValueExists("Add"))
   {
-    Array<JsonView> addJsonList = jsonValue.GetArray("Add");
+    Aws::Utils::Array<JsonView> addJsonList = jsonValue.GetArray("Add");
     for(unsigned addIndex = 0; addIndex < addJsonList.GetLength(); ++addIndex)
     {
       m_add.push_back(addJsonList[addIndex].AsString());
@@ -45,7 +45,7 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails& AwsE
 
   if(jsonValue.ValueExists("Drop"))
   {
-    Array<JsonView> dropJsonList = jsonValue.GetArray("Drop");
+    Aws::Utils::Array<JsonView> dropJsonList = jsonValue.GetArray("Drop");
     for(unsigned dropIndex = 0; dropIndex < dropJsonList.GetLength(); ++dropIndex)
     {
       m_drop.push_back(dropJsonList[dropIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDet
 
   if(m_addHasBeenSet)
   {
-   Array<JsonValue> addJsonList(m_add.size());
+   Aws::Utils::Array<JsonValue> addJsonList(m_add.size());
    for(unsigned addIndex = 0; addIndex < addJsonList.GetLength(); ++addIndex)
    {
      addJsonList[addIndex].AsString(m_add[addIndex]);
@@ -73,7 +73,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDet
 
   if(m_dropHasBeenSet)
   {
-   Array<JsonValue> dropJsonList(m_drop.size());
+   Aws::Utils::Array<JsonValue> dropJsonList(m_drop.size());
    for(unsigned dropIndex = 0; dropIndex < dropJsonList.GetLength(); ++dropIndex)
    {
      dropJsonList[dropIndex].AsString(m_drop[dropIndex]);

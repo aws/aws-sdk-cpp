@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentImportResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentImportResource
+  class SegmentImportResource
   {
   public:
-    SegmentImportResource();
-    SegmentImportResource(Aws::Utils::Json::JsonView jsonValue);
-    SegmentImportResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentImportResource();
+    AWS_PINPOINT_API SegmentImportResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentImportResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -345,22 +345,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, int> m_channelCounts;
-    bool m_channelCountsHasBeenSet;
+    bool m_channelCountsHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointInputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointInputConfiguration
+  class EndpointInputConfiguration
   {
   public:
-    EndpointInputConfiguration();
-    EndpointInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointInputConfiguration();
+    AWS_SAGEMAKER_API EndpointInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_inferenceSpecificationName;
-    bool m_inferenceSpecificationNameHasBeenSet;
+    bool m_inferenceSpecificationNameHasBeenSet = false;
 
     EnvironmentParameterRanges m_environmentParameterRanges;
-    bool m_environmentParameterRangesHasBeenSet;
+    bool m_environmentParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

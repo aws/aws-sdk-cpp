@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API DeleteRuleRequest : public FraudDetectorRequest
+  class DeleteRuleRequest : public FraudDetectorRequest
   {
   public:
-    DeleteRuleRequest();
+    AWS_FRAUDDETECTOR_API DeleteRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -55,7 +55,7 @@ namespace Model
   private:
 
     Rule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
   };
 
 } // namespace Model

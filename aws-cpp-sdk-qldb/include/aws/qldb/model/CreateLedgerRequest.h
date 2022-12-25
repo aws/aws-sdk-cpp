@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_QLDB_API CreateLedgerRequest : public QLDBRequest
+  class CreateLedgerRequest : public QLDBRequest
   {
   public:
-    CreateLedgerRequest();
+    AWS_QLDB_API CreateLedgerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLedger"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QLDB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -605,19 +605,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PermissionsMode m_permissionsMode;
-    bool m_permissionsModeHasBeenSet;
+    bool m_permissionsModeHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
   };
 
 } // namespace Model

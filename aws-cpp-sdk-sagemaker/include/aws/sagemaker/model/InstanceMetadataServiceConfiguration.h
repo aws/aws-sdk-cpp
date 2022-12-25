@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InstanceMetadataServiceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration
+  class InstanceMetadataServiceConfiguration
   {
   public:
-    InstanceMetadataServiceConfiguration();
-    InstanceMetadataServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InstanceMetadataServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration();
+    AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InstanceMetadataServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_minimumInstanceMetadataServiceVersion;
-    bool m_minimumInstanceMetadataServiceVersionHasBeenSet;
+    bool m_minimumInstanceMetadataServiceVersionHasBeenSet = false;
   };
 
 } // namespace Model

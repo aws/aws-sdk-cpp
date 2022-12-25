@@ -30,17 +30,17 @@ namespace Model
 {
 
   /**
-   * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>A CloudFront distribution configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionDetails
+  class AwsCloudFrontDistributionDetails
   {
   public:
-    AwsCloudFrontDistributionDetails();
-    AwsCloudFrontDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDetails();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -559,40 +559,40 @@ namespace Model
   private:
 
     AwsCloudFrontDistributionCacheBehaviors m_cacheBehaviors;
-    bool m_cacheBehaviorsHasBeenSet;
+    bool m_cacheBehaviorsHasBeenSet = false;
 
     AwsCloudFrontDistributionDefaultCacheBehavior m_defaultCacheBehavior;
-    bool m_defaultCacheBehaviorHasBeenSet;
+    bool m_defaultCacheBehaviorHasBeenSet = false;
 
     Aws::String m_defaultRootObject;
-    bool m_defaultRootObjectHasBeenSet;
+    bool m_defaultRootObjectHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     AwsCloudFrontDistributionLogging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     AwsCloudFrontDistributionOrigins m_origins;
-    bool m_originsHasBeenSet;
+    bool m_originsHasBeenSet = false;
 
     AwsCloudFrontDistributionOriginGroups m_originGroups;
-    bool m_originGroupsHasBeenSet;
+    bool m_originGroupsHasBeenSet = false;
 
     AwsCloudFrontDistributionViewerCertificate m_viewerCertificate;
-    bool m_viewerCertificateHasBeenSet;
+    bool m_viewerCertificateHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_webAclId;
-    bool m_webAclIdHasBeenSet;
+    bool m_webAclIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/discovery/model/CustomerAgentInfo.h>
 #include <aws/discovery/model/CustomerConnectorInfo.h>
 #include <aws/discovery/model/CustomerMeCollectorInfo.h>
+#include <aws/discovery/model/CustomerAgentlessCollectorInfo.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +27,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult
+  class GetDiscoverySummaryResult
   {
   public:
-    GetDiscoverySummaryResult();
-    GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDiscoverySummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API GetDiscoverySummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -185,6 +186,22 @@ namespace Model
      */
     inline GetDiscoverySummaryResult& WithMeCollectorSummary(CustomerMeCollectorInfo&& value) { SetMeCollectorSummary(std::move(value)); return *this;}
 
+
+    
+    inline const CustomerAgentlessCollectorInfo& GetAgentlessCollectorSummary() const{ return m_agentlessCollectorSummary; }
+
+    
+    inline void SetAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { m_agentlessCollectorSummary = value; }
+
+    
+    inline void SetAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { m_agentlessCollectorSummary = std::move(value); }
+
+    
+    inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { SetAgentlessCollectorSummary(value); return *this;}
+
+    
+    inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { SetAgentlessCollectorSummary(std::move(value)); return *this;}
+
   private:
 
     long long m_servers;
@@ -200,6 +217,8 @@ namespace Model
     CustomerConnectorInfo m_connectorSummary;
 
     CustomerMeCollectorInfo m_meCollectorSummary;
+
+    CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
   };
 
 } // namespace Model

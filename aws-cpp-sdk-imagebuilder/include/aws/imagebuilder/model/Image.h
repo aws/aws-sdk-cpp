@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Image">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Image();
+    AWS_IMAGEBUILDER_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -963,61 +963,61 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ImageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     bool m_enhancedImageMetadataEnabled;
-    bool m_enhancedImageMetadataEnabledHasBeenSet;
+    bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
     Aws::String m_osVersion;
-    bool m_osVersionHasBeenSet;
+    bool m_osVersionHasBeenSet = false;
 
     ImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ImageRecipe m_imageRecipe;
-    bool m_imageRecipeHasBeenSet;
+    bool m_imageRecipeHasBeenSet = false;
 
     ContainerRecipe m_containerRecipe;
-    bool m_containerRecipeHasBeenSet;
+    bool m_containerRecipeHasBeenSet = false;
 
     Aws::String m_sourcePipelineName;
-    bool m_sourcePipelineNameHasBeenSet;
+    bool m_sourcePipelineNameHasBeenSet = false;
 
     Aws::String m_sourcePipelineArn;
-    bool m_sourcePipelineArnHasBeenSet;
+    bool m_sourcePipelineArnHasBeenSet = false;
 
     InfrastructureConfiguration m_infrastructureConfiguration;
-    bool m_infrastructureConfigurationHasBeenSet;
+    bool m_infrastructureConfigurationHasBeenSet = false;
 
     DistributionConfiguration m_distributionConfiguration;
-    bool m_distributionConfigurationHasBeenSet;
+    bool m_distributionConfigurationHasBeenSet = false;
 
     ImageTestsConfiguration m_imageTestsConfiguration;
-    bool m_imageTestsConfigurationHasBeenSet;
+    bool m_imageTestsConfigurationHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     OutputResources m_outputResources;
-    bool m_outputResourcesHasBeenSet;
+    bool m_outputResourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     BuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
   };
 
 } // namespace Model

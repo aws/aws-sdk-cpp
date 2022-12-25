@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/JiraParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API JiraParameters
+  class JiraParameters
   {
   public:
-    JiraParameters();
-    JiraParameters(Aws::Utils::Json::JsonView jsonValue);
-    JiraParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API JiraParameters();
+    AWS_QUICKSIGHT_API JiraParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API JiraParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_siteBaseUrl;
-    bool m_siteBaseUrlHasBeenSet;
+    bool m_siteBaseUrlHasBeenSet = false;
   };
 
 } // namespace Model

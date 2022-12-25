@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LabelingSetGenerationTaskRunProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LabelingSetGenerationTaskRunProperties
+  class LabelingSetGenerationTaskRunProperties
   {
   public:
-    LabelingSetGenerationTaskRunProperties();
-    LabelingSetGenerationTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
-    LabelingSetGenerationTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LabelingSetGenerationTaskRunProperties();
+    AWS_GLUE_API LabelingSetGenerationTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LabelingSetGenerationTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_outputS3Path;
-    bool m_outputS3PathHasBeenSet;
+    bool m_outputS3PathHasBeenSet = false;
   };
 
 } // namespace Model

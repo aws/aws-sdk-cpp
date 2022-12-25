@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionStartedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionStartedEventDetails
+  class ExecutionStartedEventDetails
   {
   public:
-    ExecutionStartedEventDetails();
-    ExecutionStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionStartedEventDetails();
+    AWS_SFN_API ExecutionStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,49 +120,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline ExecutionStartedEventDetails& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline ExecutionStartedEventDetails& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
+     * <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda
      * tasks.</p>
      */
     inline ExecutionStartedEventDetails& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_inputDetails;
-    bool m_inputDetailsHasBeenSet;
+    bool m_inputDetailsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

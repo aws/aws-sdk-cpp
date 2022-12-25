@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESIS_API SubscribeToShardRequest : public KinesisRequest
+  class SubscribeToShardRequest : public KinesisRequest
   {
   public:
-    SubscribeToShardRequest();
+    AWS_KINESIS_API SubscribeToShardRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SubscribeToShard"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESIS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -56,6 +56,10 @@ namespace Model
      */
     inline SubscribeToShardRequest& WithEventStreamHandler(const SubscribeToShardHandler& value) { SetEventStreamHandler(value); return *this; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>For this parameter, use the value you obtained when you called
@@ -188,15 +192,15 @@ namespace Model
   private:
 
     Aws::String m_consumerARN;
-    bool m_consumerARNHasBeenSet;
+    bool m_consumerARNHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     StartingPosition m_startingPosition;
-    bool m_startingPositionHasBeenSet;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    bool m_startingPositionHasBeenSet = false;
     SubscribeToShardHandler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder;
 
   };
 

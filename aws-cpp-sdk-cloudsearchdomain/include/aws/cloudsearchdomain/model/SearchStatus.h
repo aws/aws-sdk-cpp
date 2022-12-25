@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SearchStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API SearchStatus
+  class SearchStatus
   {
   public:
-    SearchStatus();
-    SearchStatus(Aws::Utils::Json::JsonView jsonValue);
-    SearchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API SearchStatus();
+    AWS_CLOUDSEARCHDOMAIN_API SearchStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API SearchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     long long m_timems;
-    bool m_timemsHasBeenSet;
+    bool m_timemsHasBeenSet = false;
 
     Aws::String m_rid;
-    bool m_ridHasBeenSet;
+    bool m_ridHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UserSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API UserSetting
+  class UserSetting
   {
   public:
-    UserSetting();
-    UserSetting(Aws::Utils::Json::JsonView jsonValue);
-    UserSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API UserSetting();
+    AWS_APPSTREAM_API UserSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API UserSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

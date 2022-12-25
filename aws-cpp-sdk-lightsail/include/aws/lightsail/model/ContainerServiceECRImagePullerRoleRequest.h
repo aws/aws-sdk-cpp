@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceECRImagePullerRoleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest
+  class ContainerServiceECRImagePullerRoleRequest
   {
   public:
-    ContainerServiceECRImagePullerRoleRequest();
-    ContainerServiceECRImagePullerRoleRequest(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceECRImagePullerRoleRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest();
+    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRoleRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

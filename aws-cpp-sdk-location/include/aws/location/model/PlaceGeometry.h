@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PlaceGeometry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API PlaceGeometry
+  class PlaceGeometry
   {
   public:
-    PlaceGeometry();
-    PlaceGeometry(Aws::Utils::Json::JsonView jsonValue);
-    PlaceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API PlaceGeometry();
+    AWS_LOCATIONSERVICE_API PlaceGeometry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API PlaceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::Vector<double> m_point;
-    bool m_pointHasBeenSet;
+    bool m_pointHasBeenSet = false;
   };
 
 } // namespace Model

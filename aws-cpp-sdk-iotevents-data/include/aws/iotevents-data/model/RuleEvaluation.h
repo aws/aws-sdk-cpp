@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/RuleEvaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API RuleEvaluation
+  class RuleEvaluation
   {
   public:
-    RuleEvaluation();
-    RuleEvaluation(Aws::Utils::Json::JsonView jsonValue);
-    RuleEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API RuleEvaluation();
+    AWS_IOTEVENTSDATA_API RuleEvaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API RuleEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SimpleRuleEvaluation m_simpleRuleEvaluation;
-    bool m_simpleRuleEvaluationHasBeenSet;
+    bool m_simpleRuleEvaluationHasBeenSet = false;
   };
 
 } // namespace Model

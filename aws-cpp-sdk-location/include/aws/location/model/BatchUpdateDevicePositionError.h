@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePositionError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError
+  class BatchUpdateDevicePositionError
   {
   public:
-    BatchUpdateDevicePositionError();
-    BatchUpdateDevicePositionError(Aws::Utils::Json::JsonView jsonValue);
-    BatchUpdateDevicePositionError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError();
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     BatchItemError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampleTime;
-    bool m_sampleTimeHasBeenSet;
+    bool m_sampleTimeHasBeenSet = false;
   };
 
 } // namespace Model

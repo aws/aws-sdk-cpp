@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SkillsStoreSkill">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SkillsStoreSkill
+  class SkillsStoreSkill
   {
   public:
-    SkillsStoreSkill();
-    SkillsStoreSkill(Aws::Utils::Json::JsonView jsonValue);
-    SkillsStoreSkill& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SkillsStoreSkill();
+    AWS_ALEXAFORBUSINESS_API SkillsStoreSkill(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SkillsStoreSkill& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -303,25 +303,25 @@ namespace Model
   private:
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
 
     Aws::String m_skillName;
-    bool m_skillNameHasBeenSet;
+    bool m_skillNameHasBeenSet = false;
 
     Aws::String m_shortDescription;
-    bool m_shortDescriptionHasBeenSet;
+    bool m_shortDescriptionHasBeenSet = false;
 
     Aws::String m_iconUrl;
-    bool m_iconUrlHasBeenSet;
+    bool m_iconUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     SkillDetails m_skillDetails;
-    bool m_skillDetailsHasBeenSet;
+    bool m_skillDetailsHasBeenSet = false;
 
     bool m_supportsLinking;
-    bool m_supportsLinkingHasBeenSet;
+    bool m_supportsLinkingHasBeenSet = false;
   };
 
 } // namespace Model

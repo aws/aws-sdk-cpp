@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/AppliedTerminology">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API AppliedTerminology
+  class AppliedTerminology
   {
   public:
-    AppliedTerminology();
-    AppliedTerminology(Aws::Utils::Json::JsonView jsonValue);
-    AppliedTerminology& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API AppliedTerminology();
+    AWS_TRANSLATE_API AppliedTerminology(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API AppliedTerminology& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,10 +159,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Term> m_terms;
-    bool m_termsHasBeenSet;
+    bool m_termsHasBeenSet = false;
   };
 
 } // namespace Model

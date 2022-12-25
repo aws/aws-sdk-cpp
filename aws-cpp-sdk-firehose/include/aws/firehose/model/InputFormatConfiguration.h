@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/InputFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API InputFormatConfiguration
+  class InputFormatConfiguration
   {
   public:
-    InputFormatConfiguration();
-    InputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API InputFormatConfiguration();
+    AWS_FIREHOSE_API InputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API InputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Deserializer m_deserializer;
-    bool m_deserializerHasBeenSet;
+    bool m_deserializerHasBeenSet = false;
   };
 
 } // namespace Model

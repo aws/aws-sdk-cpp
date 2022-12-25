@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDeviceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API TransferInputDeviceRequest : public MediaLiveRequest
+  class TransferInputDeviceRequest : public MediaLiveRequest
   {
   public:
-    TransferInputDeviceRequest();
+    AWS_MEDIALIVE_API TransferInputDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TransferInputDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     Aws::String m_targetCustomerId;
-    bool m_targetCustomerIdHasBeenSet;
+    bool m_targetCustomerIdHasBeenSet = false;
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
 
     Aws::String m_transferMessage;
-    bool m_transferMessageHasBeenSet;
+    bool m_transferMessageHasBeenSet = false;
   };
 
 } // namespace Model

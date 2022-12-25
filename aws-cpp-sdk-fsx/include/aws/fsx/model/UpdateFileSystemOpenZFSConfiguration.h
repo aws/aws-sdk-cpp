@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemOpenZFSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemOpenZFSConfiguration
+  class UpdateFileSystemOpenZFSConfiguration
   {
   public:
-    UpdateFileSystemOpenZFSConfiguration();
-    UpdateFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemOpenZFSConfiguration();
+    AWS_FSX_API UpdateFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -172,26 +172,42 @@ namespace Model
 
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * <p>The throughput of an Amazon FSx for OpenZFS file system, measured in
+     * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
+     * you choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li>
+     * <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560,
+     * 3840, 5120, 7680, or 10240 MB/s.</p> </li> </ul>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * <p>The throughput of an Amazon FSx for OpenZFS file system, measured in
+     * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
+     * you choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li>
+     * <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560,
+     * 3840, 5120, 7680, or 10240 MB/s.</p> </li> </ul>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * <p>The throughput of an Amazon FSx for OpenZFS file system, measured in
+     * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
+     * you choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li>
+     * <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560,
+     * 3840, 5120, 7680, or 10240 MB/s.</p> </li> </ul>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per second
-     * (MBps). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p>
+     * <p>The throughput of an Amazon FSx for OpenZFS file system, measured in
+     * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
+     * you choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li>
+     * <p>For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560,
+     * 3840, 5120, 7680, or 10240 MB/s.</p> </li> </ul>
      */
     inline UpdateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -242,25 +258,25 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     bool m_copyTagsToVolumes;
-    bool m_copyTagsToVolumesHasBeenSet;
+    bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

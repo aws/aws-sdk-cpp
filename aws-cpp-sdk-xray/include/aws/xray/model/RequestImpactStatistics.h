@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/RequestImpactStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API RequestImpactStatistics
+  class RequestImpactStatistics
   {
   public:
-    RequestImpactStatistics();
-    RequestImpactStatistics(Aws::Utils::Json::JsonView jsonValue);
-    RequestImpactStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API RequestImpactStatistics();
+    AWS_XRAY_API RequestImpactStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API RequestImpactStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_faultCount;
-    bool m_faultCountHasBeenSet;
+    bool m_faultCountHasBeenSet = false;
 
     long long m_okCount;
-    bool m_okCountHasBeenSet;
+    bool m_okCountHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

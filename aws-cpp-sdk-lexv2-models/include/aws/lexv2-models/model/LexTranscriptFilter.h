@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/LexTranscriptFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API LexTranscriptFilter
+  class LexTranscriptFilter
   {
   public:
-    LexTranscriptFilter();
-    LexTranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
-    LexTranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API LexTranscriptFilter();
+    AWS_LEXMODELSV2_API LexTranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API LexTranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     DateRangeFilter m_dateRangeFilter;
-    bool m_dateRangeFilterHasBeenSet;
+    bool m_dateRangeFilterHasBeenSet = false;
   };
 
 } // namespace Model

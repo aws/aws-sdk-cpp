@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ContactDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API ContactDetail
+  class ContactDetail
   {
   public:
-    ContactDetail();
-    ContactDetail(Aws::Utils::Json::JsonView jsonValue);
-    ContactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API ContactDetail();
+    AWS_ROUTE53DOMAINS_API ContactDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API ContactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -713,46 +713,46 @@ namespace Model
   private:
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     ContactType m_contactType;
-    bool m_contactTypeHasBeenSet;
+    bool m_contactTypeHasBeenSet = false;
 
     Aws::String m_organizationName;
-    bool m_organizationNameHasBeenSet;
+    bool m_organizationNameHasBeenSet = false;
 
     Aws::String m_addressLine1;
-    bool m_addressLine1HasBeenSet;
+    bool m_addressLine1HasBeenSet = false;
 
     Aws::String m_addressLine2;
-    bool m_addressLine2HasBeenSet;
+    bool m_addressLine2HasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     CountryCode m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_zipCode;
-    bool m_zipCodeHasBeenSet;
+    bool m_zipCodeHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_fax;
-    bool m_faxHasBeenSet;
+    bool m_faxHasBeenSet = false;
 
     Aws::Vector<ExtraParam> m_extraParams;
-    bool m_extraParamsHasBeenSet;
+    bool m_extraParamsHasBeenSet = false;
   };
 
 } // namespace Model

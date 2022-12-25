@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Statement">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Statement
+  class Statement
   {
   public:
-    Statement();
-    Statement(Aws::Utils::Json::JsonView jsonValue);
-    Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Statement();
+    AWS_GLUE_API Statement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,25 +229,25 @@ namespace Model
   private:
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     StatementState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StatementOutput m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     double m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     long long m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     long long m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
   };
 
 } // namespace Model

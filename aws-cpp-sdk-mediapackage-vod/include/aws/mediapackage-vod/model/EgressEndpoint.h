@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/EgressEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API EgressEndpoint
+  class EgressEndpoint
   {
   public:
-    EgressEndpoint();
-    EgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    EgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API EgressEndpoint();
+    AWS_MEDIAPACKAGEVOD_API EgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API EgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_packagingConfigurationId;
-    bool m_packagingConfigurationIdHasBeenSet;
+    bool m_packagingConfigurationIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

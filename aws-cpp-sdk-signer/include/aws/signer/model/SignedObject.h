@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignedObject">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SignedObject
+  class SignedObject
   {
   public:
-    SignedObject();
-    SignedObject(Aws::Utils::Json::JsonView jsonValue);
-    SignedObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SignedObject();
+    AWS_SIGNER_API SignedObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SignedObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3SignedObject m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

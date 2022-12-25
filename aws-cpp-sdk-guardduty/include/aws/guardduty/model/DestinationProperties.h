@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DestinationProperties
+  class DestinationProperties
   {
   public:
-    DestinationProperties();
-    DestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    DestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DestinationProperties();
+    AWS_GUARDDUTY_API DestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ GetSavingsPlansUtilizationDetailsResult& GetSavingsPlansUtilizationDetailsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SavingsPlansUtilizationDetails"))
   {
-    Array<JsonView> savingsPlansUtilizationDetailsJsonList = jsonValue.GetArray("SavingsPlansUtilizationDetails");
+    Aws::Utils::Array<JsonView> savingsPlansUtilizationDetailsJsonList = jsonValue.GetArray("SavingsPlansUtilizationDetails");
     for(unsigned savingsPlansUtilizationDetailsIndex = 0; savingsPlansUtilizationDetailsIndex < savingsPlansUtilizationDetailsJsonList.GetLength(); ++savingsPlansUtilizationDetailsIndex)
     {
       m_savingsPlansUtilizationDetails.push_back(savingsPlansUtilizationDetailsJsonList[savingsPlansUtilizationDetailsIndex].AsObject());

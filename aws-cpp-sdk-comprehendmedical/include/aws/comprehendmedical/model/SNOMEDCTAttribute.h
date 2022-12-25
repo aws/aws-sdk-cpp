@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute
+  class SNOMEDCTAttribute
   {
   public:
-    SNOMEDCTAttribute();
-    SNOMEDCTAttribute(Aws::Utils::Json::JsonView jsonValue);
-    SNOMEDCTAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute();
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,37 +432,37 @@ namespace Model
   private:
 
     SNOMEDCTEntityCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     SNOMEDCTAttributeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     double m_relationshipScore;
-    bool m_relationshipScoreHasBeenSet;
+    bool m_relationshipScoreHasBeenSet = false;
 
     SNOMEDCTRelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<SNOMEDCTTrait> m_traits;
-    bool m_traitsHasBeenSet;
+    bool m_traitsHasBeenSet = false;
 
     Aws::Vector<SNOMEDCTConcept> m_sNOMEDCTConcepts;
-    bool m_sNOMEDCTConceptsHasBeenSet;
+    bool m_sNOMEDCTConceptsHasBeenSet = false;
   };
 
 } // namespace Model

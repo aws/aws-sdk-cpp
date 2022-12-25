@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeploymentInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API StopDeploymentRequest : public CodeDeployRequest
+  class StopDeploymentRequest : public CodeDeployRequest
   {
   public:
-    StopDeploymentRequest();
+    AWS_CODEDEPLOY_API StopDeploymentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopDeployment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     bool m_autoRollbackEnabled;
-    bool m_autoRollbackEnabledHasBeenSet;
+    bool m_autoRollbackEnabledHasBeenSet = false;
   };
 
 } // namespace Model

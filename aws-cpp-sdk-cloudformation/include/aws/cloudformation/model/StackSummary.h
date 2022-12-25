@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSummary
+  class StackSummary
   {
   public:
-    StackSummary();
-    StackSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSummary();
+    AWS_CLOUDFORMATION_API StackSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -545,37 +545,37 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionTime;
-    bool m_deletionTimeHasBeenSet;
+    bool m_deletionTimeHasBeenSet = false;
 
     StackStatus m_stackStatus;
-    bool m_stackStatusHasBeenSet;
+    bool m_stackStatusHasBeenSet = false;
 
     Aws::String m_stackStatusReason;
-    bool m_stackStatusReasonHasBeenSet;
+    bool m_stackStatusReasonHasBeenSet = false;
 
     Aws::String m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     Aws::String m_rootId;
-    bool m_rootIdHasBeenSet;
+    bool m_rootIdHasBeenSet = false;
 
     StackDriftInformationSummary m_driftInformation;
-    bool m_driftInformationHasBeenSet;
+    bool m_driftInformationHasBeenSet = false;
   };
 
 } // namespace Model

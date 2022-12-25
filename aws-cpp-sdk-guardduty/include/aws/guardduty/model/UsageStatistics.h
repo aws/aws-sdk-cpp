@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UsageStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API UsageStatistics
+  class UsageStatistics
   {
   public:
-    UsageStatistics();
-    UsageStatistics(Aws::Utils::Json::JsonView jsonValue);
-    UsageStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API UsageStatistics();
+    AWS_GUARDDUTY_API UsageStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API UsageStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::Vector<UsageAccountResult> m_sumByAccount;
-    bool m_sumByAccountHasBeenSet;
+    bool m_sumByAccountHasBeenSet = false;
 
     Aws::Vector<UsageDataSourceResult> m_sumByDataSource;
-    bool m_sumByDataSourceHasBeenSet;
+    bool m_sumByDataSourceHasBeenSet = false;
 
     Aws::Vector<UsageResourceResult> m_sumByResource;
-    bool m_sumByResourceHasBeenSet;
+    bool m_sumByResourceHasBeenSet = false;
 
     Aws::Vector<UsageResourceResult> m_topResources;
-    bool m_topResourcesHasBeenSet;
+    bool m_topResourcesHasBeenSet = false;
   };
 
 } // namespace Model

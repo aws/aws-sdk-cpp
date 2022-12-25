@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationRequest : public PinpointSMSVoiceV2Request
+  class UpdateEventDestinationRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    UpdateEventDestinationRequest();
+    AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEventDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -304,25 +304,25 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_eventDestinationName;
-    bool m_eventDestinationNameHasBeenSet;
+    bool m_eventDestinationNameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<EventType> m_matchingEventTypes;
-    bool m_matchingEventTypesHasBeenSet;
+    bool m_matchingEventTypesHasBeenSet = false;
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
-    bool m_cloudWatchLogsDestinationHasBeenSet;
+    bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
     KinesisFirehoseDestination m_kinesisFirehoseDestination;
-    bool m_kinesisFirehoseDestinationHasBeenSet;
+    bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
     SnsDestination m_snsDestination;
-    bool m_snsDestinationHasBeenSet;
+    bool m_snsDestinationHasBeenSet = false;
   };
 
 } // namespace Model

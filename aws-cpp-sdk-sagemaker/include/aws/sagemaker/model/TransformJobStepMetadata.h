@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformJobStepMetadata
+  class TransformJobStepMetadata
   {
   public:
-    TransformJobStepMetadata();
-    TransformJobStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    TransformJobStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformJobStepMetadata();
+    AWS_SAGEMAKER_API TransformJobStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformJobStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

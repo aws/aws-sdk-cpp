@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMESERVICE_API PutSessionRequest : public LexRuntimeServiceRequest
+  class PutSessionRequest : public LexRuntimeServiceRequest
   {
   public:
-    PutSessionRequest();
+    AWS_LEXRUNTIMESERVICE_API PutSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -656,28 +656,28 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
 
     DialogAction m_dialogAction;
-    bool m_dialogActionHasBeenSet;
+    bool m_dialogActionHasBeenSet = false;
 
     Aws::Vector<IntentSummary> m_recentIntentSummaryView;
-    bool m_recentIntentSummaryViewHasBeenSet;
+    bool m_recentIntentSummaryViewHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     Aws::Vector<ActiveContext> m_activeContexts;
-    bool m_activeContextsHasBeenSet;
+    bool m_activeContextsHasBeenSet = false;
   };
 
 } // namespace Model

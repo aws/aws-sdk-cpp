@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DataCatalogSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API DataCatalogSummary
+  class DataCatalogSummary
   {
   public:
-    DataCatalogSummary();
-    DataCatalogSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataCatalogSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API DataCatalogSummary();
+    AWS_ATHENA_API DataCatalogSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API DataCatalogSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_catalogName;
-    bool m_catalogNameHasBeenSet;
+    bool m_catalogNameHasBeenSet = false;
 
     DataCatalogType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

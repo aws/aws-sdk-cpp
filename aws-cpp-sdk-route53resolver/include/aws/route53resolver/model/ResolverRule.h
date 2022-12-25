@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverRule
+  class ResolverRule
   {
   public:
-    ResolverRule();
-    ResolverRule(Aws::Utils::Json::JsonView jsonValue);
-    ResolverRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverRule();
+    AWS_ROUTE53RESOLVER_API ResolverRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -762,46 +762,46 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ResolverRuleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     RuleTypeOption m_ruleType;
-    bool m_ruleTypeHasBeenSet;
+    bool m_ruleTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<TargetAddress> m_targetIps;
-    bool m_targetIpsHasBeenSet;
+    bool m_targetIpsHasBeenSet = false;
 
     Aws::String m_resolverEndpointId;
-    bool m_resolverEndpointIdHasBeenSet;
+    bool m_resolverEndpointIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     ShareStatus m_shareStatus;
-    bool m_shareStatusHasBeenSet;
+    bool m_shareStatusHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_modificationTime;
-    bool m_modificationTimeHasBeenSet;
+    bool m_modificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

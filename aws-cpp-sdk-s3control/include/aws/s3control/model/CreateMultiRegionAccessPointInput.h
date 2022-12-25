@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API CreateMultiRegionAccessPointInput
+  class CreateMultiRegionAccessPointInput
   {
   public:
-    CreateMultiRegionAccessPointInput();
-    CreateMultiRegionAccessPointInput(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateMultiRegionAccessPointInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CreateMultiRegionAccessPointInput();
+    AWS_S3CONTROL_API CreateMultiRegionAccessPointInput(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CreateMultiRegionAccessPointInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PublicAccessBlockConfiguration m_publicAccessBlock;
-    bool m_publicAccessBlockHasBeenSet;
+    bool m_publicAccessBlockHasBeenSet = false;
 
     Aws::Vector<Region> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

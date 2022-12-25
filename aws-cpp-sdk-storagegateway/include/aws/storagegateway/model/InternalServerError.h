@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/InternalServerError">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API InternalServerError
+  class InternalServerError
   {
   public:
-    InternalServerError();
-    InternalServerError(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API InternalServerError();
+    AWS_STORAGEGATEWAY_API InternalServerError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API InternalServerError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     StorageGatewayError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

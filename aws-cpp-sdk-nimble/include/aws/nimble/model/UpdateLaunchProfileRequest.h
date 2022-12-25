@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API UpdateLaunchProfileRequest : public NimbleStudioRequest
+  class UpdateLaunchProfileRequest : public NimbleStudioRequest
   {
   public:
-    UpdateLaunchProfileRequest();
+    AWS_NIMBLESTUDIO_API UpdateLaunchProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,64 +32,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunchProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateLaunchProfileRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateLaunchProfileRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateLaunchProfileRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -136,42 +144,50 @@ namespace Model
 
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline UpdateLaunchProfileRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline UpdateLaunchProfileRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline UpdateLaunchProfileRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -401,28 +417,28 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchProfileProtocolVersions;
-    bool m_launchProfileProtocolVersionsHasBeenSet;
+    bool m_launchProfileProtocolVersionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamConfigurationCreate m_streamConfiguration;
-    bool m_streamConfigurationHasBeenSet;
+    bool m_streamConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_studioComponentIds;
-    bool m_studioComponentIdsHasBeenSet;
+    bool m_studioComponentIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

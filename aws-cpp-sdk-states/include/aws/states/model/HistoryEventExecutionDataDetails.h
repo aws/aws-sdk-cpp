@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEventExecutionDataDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API HistoryEventExecutionDataDetails
+  class HistoryEventExecutionDataDetails
   {
   public:
-    HistoryEventExecutionDataDetails();
-    HistoryEventExecutionDataDetails(Aws::Utils::Json::JsonView jsonValue);
-    HistoryEventExecutionDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API HistoryEventExecutionDataDetails();
+    AWS_SFN_API HistoryEventExecutionDataDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API HistoryEventExecutionDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_truncated;
-    bool m_truncatedHasBeenSet;
+    bool m_truncatedHasBeenSet = false;
   };
 
 } // namespace Model

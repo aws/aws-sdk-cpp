@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API RenderUiTemplateRequest : public SageMakerRequest
+  class RenderUiTemplateRequest : public SageMakerRequest
   {
   public:
-    RenderUiTemplateRequest();
+    AWS_SAGEMAKER_API RenderUiTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RenderUiTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -226,16 +226,16 @@ namespace Model
   private:
 
     UiTemplate m_uiTemplate;
-    bool m_uiTemplateHasBeenSet;
+    bool m_uiTemplateHasBeenSet = false;
 
     RenderableTask m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_humanTaskUiArn;
-    bool m_humanTaskUiArnHasBeenSet;
+    bool m_humanTaskUiArnHasBeenSet = false;
   };
 
 } // namespace Model

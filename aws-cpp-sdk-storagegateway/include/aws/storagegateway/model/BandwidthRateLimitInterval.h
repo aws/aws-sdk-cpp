@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/BandwidthRateLimitInterval">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval
+  class BandwidthRateLimitInterval
   {
   public:
-    BandwidthRateLimitInterval();
-    BandwidthRateLimitInterval(Aws::Utils::Json::JsonView jsonValue);
-    BandwidthRateLimitInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval();
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,25 +255,25 @@ namespace Model
   private:
 
     int m_startHourOfDay;
-    bool m_startHourOfDayHasBeenSet;
+    bool m_startHourOfDayHasBeenSet = false;
 
     int m_startMinuteOfHour;
-    bool m_startMinuteOfHourHasBeenSet;
+    bool m_startMinuteOfHourHasBeenSet = false;
 
     int m_endHourOfDay;
-    bool m_endHourOfDayHasBeenSet;
+    bool m_endHourOfDayHasBeenSet = false;
 
     int m_endMinuteOfHour;
-    bool m_endMinuteOfHourHasBeenSet;
+    bool m_endMinuteOfHourHasBeenSet = false;
 
     Aws::Vector<int> m_daysOfWeek;
-    bool m_daysOfWeekHasBeenSet;
+    bool m_daysOfWeekHasBeenSet = false;
 
     long long m_averageUploadRateLimitInBitsPerSec;
-    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
     long long m_averageDownloadRateLimitInBitsPerSec;
-    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet;
+    bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
   };
 
 } // namespace Model

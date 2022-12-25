@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceLoadBalancersDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceLoadBalancersDetails
+  class AwsEcsServiceLoadBalancersDetails
   {
   public:
-    AwsEcsServiceLoadBalancersDetails();
-    AwsEcsServiceLoadBalancersDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceLoadBalancersDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceLoadBalancersDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceLoadBalancersDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceLoadBalancersDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,16 +248,16 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     int m_containerPort;
-    bool m_containerPortHasBeenSet;
+    bool m_containerPortHasBeenSet = false;
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

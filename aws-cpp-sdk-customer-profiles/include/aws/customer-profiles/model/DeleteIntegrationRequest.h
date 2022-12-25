@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API DeleteIntegrationRequest : public CustomerProfilesRequest
+  class DeleteIntegrationRequest : public CustomerProfilesRequest
   {
   public:
-    DeleteIntegrationRequest();
+    AWS_CUSTOMERPROFILES_API DeleteIntegrationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteIntegration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
   };
 
 } // namespace Model

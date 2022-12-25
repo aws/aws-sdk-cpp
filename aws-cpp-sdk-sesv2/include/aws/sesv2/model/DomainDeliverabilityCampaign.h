@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DomainDeliverabilityCampaign">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DomainDeliverabilityCampaign
+  class DomainDeliverabilityCampaign
   {
   public:
-    DomainDeliverabilityCampaign();
-    DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DomainDeliverabilityCampaign();
+    AWS_SESV2_API DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,87 +270,87 @@ namespace Model
 
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstSeenDateTime() const{ return m_firstSeenDateTime; }
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline bool FirstSeenDateTimeHasBeenSet() const { return m_firstSeenDateTimeHasBeenSet; }
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline void SetFirstSeenDateTime(const Aws::Utils::DateTime& value) { m_firstSeenDateTimeHasBeenSet = true; m_firstSeenDateTime = value; }
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline void SetFirstSeenDateTime(Aws::Utils::DateTime&& value) { m_firstSeenDateTimeHasBeenSet = true; m_firstSeenDateTime = std::move(value); }
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline DomainDeliverabilityCampaign& WithFirstSeenDateTime(const Aws::Utils::DateTime& value) { SetFirstSeenDateTime(value); return *this;}
 
     /**
-     * <p>The first time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The first time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline DomainDeliverabilityCampaign& WithFirstSeenDateTime(Aws::Utils::DateTime&& value) { SetFirstSeenDateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSeenDateTime() const{ return m_lastSeenDateTime; }
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline bool LastSeenDateTimeHasBeenSet() const { return m_lastSeenDateTimeHasBeenSet; }
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline void SetLastSeenDateTime(const Aws::Utils::DateTime& value) { m_lastSeenDateTimeHasBeenSet = true; m_lastSeenDateTime = value; }
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline void SetLastSeenDateTime(Aws::Utils::DateTime&& value) { m_lastSeenDateTimeHasBeenSet = true; m_lastSeenDateTime = std::move(value); }
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline DomainDeliverabilityCampaign& WithLastSeenDateTime(const Aws::Utils::DateTime& value) { SetLastSeenDateTime(value); return *this;}
 
     /**
-     * <p>The last time, in Unix time format, when the email message was delivered to
-     * any recipient's inbox. This value can help you determine how long it took for a
-     * campaign to deliver an email message.</p>
+     * <p>The last time when the email message was delivered to any recipient's inbox.
+     * This value can help you determine how long it took for a campaign to deliver an
+     * email message.</p>
      */
     inline DomainDeliverabilityCampaign& WithLastSeenDateTime(Aws::Utils::DateTime&& value) { SetLastSeenDateTime(std::move(value)); return *this;}
 
@@ -561,46 +561,46 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sendingIps;
-    bool m_sendingIpsHasBeenSet;
+    bool m_sendingIpsHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstSeenDateTime;
-    bool m_firstSeenDateTimeHasBeenSet;
+    bool m_firstSeenDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenDateTime;
-    bool m_lastSeenDateTimeHasBeenSet;
+    bool m_lastSeenDateTimeHasBeenSet = false;
 
     long long m_inboxCount;
-    bool m_inboxCountHasBeenSet;
+    bool m_inboxCountHasBeenSet = false;
 
     long long m_spamCount;
-    bool m_spamCountHasBeenSet;
+    bool m_spamCountHasBeenSet = false;
 
     double m_readRate;
-    bool m_readRateHasBeenSet;
+    bool m_readRateHasBeenSet = false;
 
     double m_deleteRate;
-    bool m_deleteRateHasBeenSet;
+    bool m_deleteRateHasBeenSet = false;
 
     double m_readDeleteRate;
-    bool m_readDeleteRateHasBeenSet;
+    bool m_readDeleteRateHasBeenSet = false;
 
     long long m_projectedVolume;
-    bool m_projectedVolumeHasBeenSet;
+    bool m_projectedVolumeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_esps;
-    bool m_espsHasBeenSet;
+    bool m_espsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/model/InferenceSchedulerStatus.h>
 #include <aws/lookoutequipment/model/DataUploadFrequency.h>
+#include <aws/lookoutequipment/model/LatestInferenceResult.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceSchedulerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary
+  class InferenceSchedulerSummary
   {
   public:
-    InferenceSchedulerSummary();
-    InferenceSchedulerSummary(Aws::Utils::Json::JsonView jsonValue);
-    InferenceSchedulerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceSchedulerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -353,28 +354,68 @@ namespace Model
      */
     inline InferenceSchedulerSummary& WithDataUploadFrequency(DataUploadFrequency&& value) { SetDataUploadFrequency(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline const LatestInferenceResult& GetLatestInferenceResult() const{ return m_latestInferenceResult; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline bool LatestInferenceResultHasBeenSet() const { return m_latestInferenceResultHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(const LatestInferenceResult& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = value; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(LatestInferenceResult&& value) { m_latestInferenceResultHasBeenSet = true; m_latestInferenceResult = std::move(value); }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline InferenceSchedulerSummary& WithLatestInferenceResult(const LatestInferenceResult& value) { SetLatestInferenceResult(value); return *this;}
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline InferenceSchedulerSummary& WithLatestInferenceResult(LatestInferenceResult&& value) { SetLatestInferenceResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelArn;
-    bool m_modelArnHasBeenSet;
+    bool m_modelArnHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerArn;
-    bool m_inferenceSchedulerArnHasBeenSet;
+    bool m_inferenceSchedulerArnHasBeenSet = false;
 
     InferenceSchedulerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_dataDelayOffsetInMinutes;
-    bool m_dataDelayOffsetInMinutesHasBeenSet;
+    bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
     DataUploadFrequency m_dataUploadFrequency;
-    bool m_dataUploadFrequencyHasBeenSet;
+    bool m_dataUploadFrequencyHasBeenSet = false;
+
+    LatestInferenceResult m_latestInferenceResult;
+    bool m_latestInferenceResultHasBeenSet = false;
   };
 
 } // namespace Model

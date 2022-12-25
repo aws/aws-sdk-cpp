@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TrainingMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API TrainingMetrics
+  class TrainingMetrics
   {
   public:
-    TrainingMetrics();
-    TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
-    TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API TrainingMetrics();
+    AWS_FRAUDDETECTOR_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     double m_auc;
-    bool m_aucHasBeenSet;
+    bool m_aucHasBeenSet = false;
 
     Aws::Vector<MetricDataPoint> m_metricDataPoints;
-    bool m_metricDataPointsHasBeenSet;
+    bool m_metricDataPointsHasBeenSet = false;
   };
 
 } // namespace Model

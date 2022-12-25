@@ -24,46 +24,53 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API GetChannelPolicyResult
+  class GetChannelPolicyResult
   {
   public:
-    GetChannelPolicyResult();
-    GetChannelPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChannelPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetChannelPolicyResult();
+    AWS_MEDIATAILOR_API GetChannelPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetChannelPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline GetChannelPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline GetChannelPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM policy for the channel.</p>
+     * <p>The IAM policy for the channel. IAM policies are used to control access to
+     * your channel.</p>
      */
     inline GetChannelPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

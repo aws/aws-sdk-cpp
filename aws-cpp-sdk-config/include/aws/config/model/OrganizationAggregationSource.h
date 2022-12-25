@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationAggregationSource">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationAggregationSource
+  class OrganizationAggregationSource
   {
   public:
-    OrganizationAggregationSource();
-    OrganizationAggregationSource(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationAggregationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationAggregationSource();
+    AWS_CONFIGSERVICE_API OrganizationAggregationSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationAggregationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_awsRegions;
-    bool m_awsRegionsHasBeenSet;
+    bool m_awsRegionsHasBeenSet = false;
 
     bool m_allAwsRegions;
-    bool m_allAwsRegionsHasBeenSet;
+    bool m_allAwsRegionsHasBeenSet = false;
   };
 
 } // namespace Model

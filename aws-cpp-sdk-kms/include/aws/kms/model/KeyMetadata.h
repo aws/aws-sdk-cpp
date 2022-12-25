@@ -15,6 +15,7 @@
 #include <aws/kms/model/KeySpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/model/MultiRegionConfiguration.h>
+#include <aws/kms/model/XksKeyConfigurationType.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/SigningAlgorithmSpec.h>
 #include <aws/kms/model/MacAlgorithmSpec.h>
@@ -37,18 +38,18 @@ namespace Model
 
   /**
    * <p>Contains metadata about a KMS key.</p> <p>This data type is used as a
-   * response element for the <a>CreateKey</a> and <a>DescribeKey</a>
-   * operations.</p><p><h3>See Also:</h3>   <a
+   * response element for the <a>CreateKey</a>, <a>DescribeKey</a>, and
+   * <a>ReplicateKey</a> operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyMetadata">AWS API
    * Reference</a></p>
    */
-  class AWS_KMS_API KeyMetadata
+  class KeyMetadata
   {
   public:
-    KeyMetadata();
-    KeyMetadata(Aws::Utils::Json::JsonView jsonValue);
-    KeyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API KeyMetadata();
+    AWS_KMS_API KeyMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API KeyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -575,7 +576,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
@@ -583,7 +584,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
@@ -591,7 +592,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
@@ -599,7 +600,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
@@ -607,7 +608,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
@@ -615,7 +616,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline KeyMetadata& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
@@ -623,7 +624,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline KeyMetadata& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
@@ -631,7 +632,7 @@ namespace Model
     /**
      * <p>A unique identifier for the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that contains the KMS key. This value is present only when the KMS
+     * key store</a> that contains the KMS key. This field is present only when the KMS
      * key is created in a custom key store.</p>
      */
     inline KeyMetadata& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
@@ -639,81 +640,81 @@ namespace Model
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline KeyMetadata& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline KeyMetadata& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The cluster ID of the CloudHSM cluster that contains the key material for the
-     * KMS key. When you create a KMS key in a <a
+     * KMS key. When you create a KMS key in an CloudHSM <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a>, KMS creates the key material for the KMS key in the associated
-     * CloudHSM cluster. This value is present only when the KMS key is created in a
-     * custom key store.</p>
+     * CloudHSM cluster. This field is present only when the KMS key is created in an
+     * CloudHSM key store.</p>
      */
     inline KeyMetadata& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
 
@@ -1224,73 +1225,125 @@ namespace Model
      */
     inline KeyMetadata& AddMacAlgorithms(MacAlgorithmSpec&& value) { m_macAlgorithmsHasBeenSet = true; m_macAlgorithms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline const XksKeyConfigurationType& GetXksKeyConfiguration() const{ return m_xksKeyConfiguration; }
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool XksKeyConfigurationHasBeenSet() const { return m_xksKeyConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetXksKeyConfiguration(const XksKeyConfigurationType& value) { m_xksKeyConfigurationHasBeenSet = true; m_xksKeyConfiguration = value; }
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetXksKeyConfiguration(XksKeyConfigurationType&& value) { m_xksKeyConfigurationHasBeenSet = true; m_xksKeyConfiguration = std::move(value); }
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline KeyMetadata& WithXksKeyConfiguration(const XksKeyConfigurationType& value) { SetXksKeyConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the external key that is associated with a KMS key in an
+     * external key store.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External
+     * key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline KeyMetadata& WithXksKeyConfiguration(XksKeyConfigurationType&& value) { SetXksKeyConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     KeyUsageType m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     KeyState m_keyState;
-    bool m_keyStateHasBeenSet;
+    bool m_keyStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionDate;
-    bool m_deletionDateHasBeenSet;
+    bool m_deletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTo;
-    bool m_validToHasBeenSet;
+    bool m_validToHasBeenSet = false;
 
     OriginType m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_cloudHsmClusterId;
-    bool m_cloudHsmClusterIdHasBeenSet;
+    bool m_cloudHsmClusterIdHasBeenSet = false;
 
     ExpirationModelType m_expirationModel;
-    bool m_expirationModelHasBeenSet;
+    bool m_expirationModelHasBeenSet = false;
 
     KeyManagerType m_keyManager;
-    bool m_keyManagerHasBeenSet;
+    bool m_keyManagerHasBeenSet = false;
 
     KeySpec m_keySpec;
-    bool m_keySpecHasBeenSet;
+    bool m_keySpecHasBeenSet = false;
 
     Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
-    bool m_encryptionAlgorithmsHasBeenSet;
+    bool m_encryptionAlgorithmsHasBeenSet = false;
 
     Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
-    bool m_signingAlgorithmsHasBeenSet;
+    bool m_signingAlgorithmsHasBeenSet = false;
 
     bool m_multiRegion;
-    bool m_multiRegionHasBeenSet;
+    bool m_multiRegionHasBeenSet = false;
 
     MultiRegionConfiguration m_multiRegionConfiguration;
-    bool m_multiRegionConfigurationHasBeenSet;
+    bool m_multiRegionConfigurationHasBeenSet = false;
 
     int m_pendingDeletionWindowInDays;
-    bool m_pendingDeletionWindowInDaysHasBeenSet;
+    bool m_pendingDeletionWindowInDaysHasBeenSet = false;
 
     Aws::Vector<MacAlgorithmSpec> m_macAlgorithms;
-    bool m_macAlgorithmsHasBeenSet;
+    bool m_macAlgorithmsHasBeenSet = false;
+
+    XksKeyConfigurationType m_xksKeyConfiguration;
+    bool m_xksKeyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

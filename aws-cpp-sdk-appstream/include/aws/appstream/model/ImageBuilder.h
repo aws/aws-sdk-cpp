@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageBuilder">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ImageBuilder
+  class ImageBuilder
   {
   public:
-    ImageBuilder();
-    ImageBuilder(Aws::Utils::Json::JsonView jsonValue);
-    ImageBuilder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ImageBuilder();
+    AWS_APPSTREAM_API ImageBuilder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ImageBuilder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -988,58 +988,58 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_imageArn;
-    bool m_imageArnHasBeenSet;
+    bool m_imageArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     ImageBuilderState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ImageBuilderStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     bool m_enableDefaultInternetAccess;
-    bool m_enableDefaultInternetAccessHasBeenSet;
+    bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     DomainJoinInfo m_domainJoinInfo;
-    bool m_domainJoinInfoHasBeenSet;
+    bool m_domainJoinInfoHasBeenSet = false;
 
     NetworkAccessConfiguration m_networkAccessConfiguration;
-    bool m_networkAccessConfigurationHasBeenSet;
+    bool m_networkAccessConfigurationHasBeenSet = false;
 
     Aws::Vector<ResourceError> m_imageBuilderErrors;
-    bool m_imageBuilderErrorsHasBeenSet;
+    bool m_imageBuilderErrorsHasBeenSet = false;
 
     Aws::String m_appstreamAgentVersion;
-    bool m_appstreamAgentVersionHasBeenSet;
+    bool m_appstreamAgentVersionHasBeenSet = false;
 
     Aws::Vector<AccessEndpoint> m_accessEndpoints;
-    bool m_accessEndpointsHasBeenSet;
+    bool m_accessEndpointsHasBeenSet = false;
   };
 
 } // namespace Model

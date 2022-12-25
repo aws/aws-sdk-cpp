@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaGlobalSecondaryIndexDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexDescription
+  class ReplicaGlobalSecondaryIndexDescription
   {
   public:
-    ReplicaGlobalSecondaryIndexDescription();
-    ReplicaGlobalSecondaryIndexDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaGlobalSecondaryIndexDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexDescription();
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
   };
 
 } // namespace Model

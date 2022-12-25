@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionVolumesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDetails
+  class AwsEcsTaskDefinitionVolumesDetails
   {
   public:
-    AwsEcsTaskDefinitionVolumesDetails();
-    AwsEcsTaskDefinitionVolumesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionVolumesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails m_dockerVolumeConfiguration;
-    bool m_dockerVolumeConfigurationHasBeenSet;
+    bool m_dockerVolumeConfigurationHasBeenSet = false;
 
     AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails m_efsVolumeConfiguration;
-    bool m_efsVolumeConfigurationHasBeenSet;
+    bool m_efsVolumeConfigurationHasBeenSet = false;
 
     AwsEcsTaskDefinitionVolumesHostDetails m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

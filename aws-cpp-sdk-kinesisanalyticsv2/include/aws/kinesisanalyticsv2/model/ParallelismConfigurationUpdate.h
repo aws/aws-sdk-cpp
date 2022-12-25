@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate
+  class ParallelismConfigurationUpdate
   {
   public:
-    ParallelismConfigurationUpdate();
-    ParallelismConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ParallelismConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ParallelismConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     ConfigurationType m_configurationTypeUpdate;
-    bool m_configurationTypeUpdateHasBeenSet;
+    bool m_configurationTypeUpdateHasBeenSet = false;
 
     int m_parallelismUpdate;
-    bool m_parallelismUpdateHasBeenSet;
+    bool m_parallelismUpdateHasBeenSet = false;
 
     int m_parallelismPerKPUUpdate;
-    bool m_parallelismPerKPUUpdateHasBeenSet;
+    bool m_parallelismPerKPUUpdateHasBeenSet = false;
 
     bool m_autoScalingEnabledUpdate;
-    bool m_autoScalingEnabledUpdateHasBeenSet;
+    bool m_autoScalingEnabledUpdateHasBeenSet = false;
   };
 
 } // namespace Model

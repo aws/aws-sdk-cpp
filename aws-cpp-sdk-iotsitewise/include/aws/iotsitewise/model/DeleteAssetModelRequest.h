@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API DeleteAssetModelRequest : public IoTSiteWiseRequest
+  class DeleteAssetModelRequest : public IoTSiteWiseRequest
   {
   public:
-    DeleteAssetModelRequest();
+    AWS_IOTSITEWISE_API DeleteAssetModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAssetModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

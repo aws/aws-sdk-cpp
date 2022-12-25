@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API DeregisterPackageVersionRequest : public PanoramaRequest
+  class DeregisterPackageVersionRequest : public PanoramaRequest
   {
   public:
-    DeregisterPackageVersionRequest();
+    AWS_PANORAMA_API DeregisterPackageVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeregisterPackageVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PANORAMA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_patchVersion;
-    bool m_patchVersionHasBeenSet;
+    bool m_patchVersionHasBeenSet = false;
 
     Aws::String m_updatedLatestPatchVersion;
-    bool m_updatedLatestPatchVersionHasBeenSet;
+    bool m_updatedLatestPatchVersionHasBeenSet = false;
   };
 
 } // namespace Model

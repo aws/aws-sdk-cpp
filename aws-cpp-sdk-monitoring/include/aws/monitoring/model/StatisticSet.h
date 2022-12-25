@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StatisticSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API StatisticSet
+  class StatisticSet
   {
   public:
-    StatisticSet();
-    StatisticSet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StatisticSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API StatisticSet();
+    AWS_CLOUDWATCH_API StatisticSet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API StatisticSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,16 +124,16 @@ namespace Model
   private:
 
     double m_sampleCount;
-    bool m_sampleCountHasBeenSet;
+    bool m_sampleCountHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
   };
 
 } // namespace Model

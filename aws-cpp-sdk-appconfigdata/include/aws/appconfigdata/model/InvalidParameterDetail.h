@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/InvalidParameterDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIGDATA_API InvalidParameterDetail
+  class InvalidParameterDetail
   {
   public:
-    InvalidParameterDetail();
-    InvalidParameterDetail(Aws::Utils::Json::JsonView jsonValue);
-    InvalidParameterDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIGDATA_API InvalidParameterDetail();
+    AWS_APPCONFIGDATA_API InvalidParameterDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API InvalidParameterDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     InvalidParameterProblem m_problem;
-    bool m_problemHasBeenSet;
+    bool m_problemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartShotDetectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StartShotDetectionFilter
+  class StartShotDetectionFilter
   {
   public:
-    StartShotDetectionFilter();
-    StartShotDetectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    StartShotDetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StartShotDetectionFilter();
+    AWS_REKOGNITION_API StartShotDetectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StartShotDetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     double m_minSegmentConfidence;
-    bool m_minSegmentConfidenceHasBeenSet;
+    bool m_minSegmentConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

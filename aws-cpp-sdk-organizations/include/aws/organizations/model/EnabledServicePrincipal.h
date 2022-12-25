@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnabledServicePrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API EnabledServicePrincipal
+  class EnabledServicePrincipal
   {
   public:
-    EnabledServicePrincipal();
-    EnabledServicePrincipal(Aws::Utils::Json::JsonView jsonValue);
-    EnabledServicePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API EnabledServicePrincipal();
+    AWS_ORGANIZATIONS_API EnabledServicePrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API EnabledServicePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_servicePrincipal;
-    bool m_servicePrincipalHasBeenSet;
+    bool m_servicePrincipalHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateEnabled;
-    bool m_dateEnabledHasBeenSet;
+    bool m_dateEnabledHasBeenSet = false;
   };
 
 } // namespace Model

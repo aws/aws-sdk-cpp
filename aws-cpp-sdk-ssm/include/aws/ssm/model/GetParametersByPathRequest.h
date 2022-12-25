@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API GetParametersByPathRequest : public SSMRequest
+  class GetParametersByPathRequest : public SSMRequest
   {
   public:
-    GetParametersByPathRequest();
+    AWS_SSM_API GetParametersByPathRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetParametersByPath"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -344,22 +344,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     bool m_recursive;
-    bool m_recursiveHasBeenSet;
+    bool m_recursiveHasBeenSet = false;
 
     Aws::Vector<ParameterStringFilter> m_parameterFilters;
-    bool m_parameterFiltersHasBeenSet;
+    bool m_parameterFiltersHasBeenSet = false;
 
     bool m_withDecryption;
-    bool m_withDecryptionHasBeenSet;
+    bool m_withDecryptionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSource();
+    AWS_QUICKSIGHT_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -578,43 +578,95 @@ namespace Model
      */
     inline DataSource& WithErrorInfo(DataSourceErrorInfo&& value) { SetErrorInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSource& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSource& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret associated with the data source
+     * in Amazon Secrets Manager.</p>
+     */
+    inline DataSource& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     DataSourceParameters m_dataSourceParameters;
-    bool m_dataSourceParametersHasBeenSet;
+    bool m_dataSourceParametersHasBeenSet = false;
 
     Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
-    bool m_alternateDataSourceParametersHasBeenSet;
+    bool m_alternateDataSourceParametersHasBeenSet = false;
 
     VpcConnectionProperties m_vpcConnectionProperties;
-    bool m_vpcConnectionPropertiesHasBeenSet;
+    bool m_vpcConnectionPropertiesHasBeenSet = false;
 
     SslProperties m_sslProperties;
-    bool m_sslPropertiesHasBeenSet;
+    bool m_sslPropertiesHasBeenSet = false;
 
     DataSourceErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
+
+    Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

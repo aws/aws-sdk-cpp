@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvailBlanking">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AvailBlanking
+  class AvailBlanking
   {
   public:
-    AvailBlanking();
-    AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
-    AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AvailBlanking();
+    AWS_MEDIACONVERT_API AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_availBlankingImage;
-    bool m_availBlankingImageHasBeenSet;
+    bool m_availBlankingImageHasBeenSet = false;
   };
 
 } // namespace Model

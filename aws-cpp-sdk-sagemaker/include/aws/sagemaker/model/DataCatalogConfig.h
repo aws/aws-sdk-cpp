@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCatalogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DataCatalogConfig
+  class DataCatalogConfig
   {
   public:
-    DataCatalogConfig();
-    DataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DataCatalogConfig();
+    AWS_SAGEMAKER_API DataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

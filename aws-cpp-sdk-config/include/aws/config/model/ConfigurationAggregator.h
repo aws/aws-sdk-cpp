@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationAggregator">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigurationAggregator
+  class ConfigurationAggregator
   {
   public:
-    ConfigurationAggregator();
-    ConfigurationAggregator(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigurationAggregator();
+    AWS_CONFIGSERVICE_API ConfigurationAggregator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigurationAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,25 +302,25 @@ namespace Model
   private:
 
     Aws::String m_configurationAggregatorName;
-    bool m_configurationAggregatorNameHasBeenSet;
+    bool m_configurationAggregatorNameHasBeenSet = false;
 
     Aws::String m_configurationAggregatorArn;
-    bool m_configurationAggregatorArnHasBeenSet;
+    bool m_configurationAggregatorArnHasBeenSet = false;
 
     Aws::Vector<AccountAggregationSource> m_accountAggregationSources;
-    bool m_accountAggregationSourcesHasBeenSet;
+    bool m_accountAggregationSourcesHasBeenSet = false;
 
     OrganizationAggregationSource m_organizationAggregationSource;
-    bool m_organizationAggregationSourceHasBeenSet;
+    bool m_organizationAggregationSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

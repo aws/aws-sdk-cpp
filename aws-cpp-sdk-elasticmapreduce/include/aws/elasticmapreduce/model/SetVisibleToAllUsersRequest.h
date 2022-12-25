@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsersInput">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SetVisibleToAllUsersRequest : public EMRRequest
+  class SetVisibleToAllUsersRequest : public EMRRequest
   {
   public:
-    SetVisibleToAllUsersRequest();
+    AWS_EMR_API SetVisibleToAllUsersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetVisibleToAllUsers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobFlowIds;
-    bool m_jobFlowIdsHasBeenSet;
+    bool m_jobFlowIdsHasBeenSet = false;
 
     bool m_visibleToAllUsers;
-    bool m_visibleToAllUsersHasBeenSet;
+    bool m_visibleToAllUsersHasBeenSet = false;
   };
 
 } // namespace Model

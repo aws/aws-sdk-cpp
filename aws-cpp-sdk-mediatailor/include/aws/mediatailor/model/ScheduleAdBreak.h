@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ScheduleAdBreak">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API ScheduleAdBreak
+  class ScheduleAdBreak
   {
   public:
-    ScheduleAdBreak();
-    ScheduleAdBreak(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleAdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API ScheduleAdBreak();
+    AWS_MEDIATAILOR_API ScheduleAdBreak(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API ScheduleAdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     long long m_approximateDurationSeconds;
-    bool m_approximateDurationSecondsHasBeenSet;
+    bool m_approximateDurationSecondsHasBeenSet = false;
 
     Aws::Utils::DateTime m_approximateStartTime;
-    bool m_approximateStartTimeHasBeenSet;
+    bool m_approximateStartTimeHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

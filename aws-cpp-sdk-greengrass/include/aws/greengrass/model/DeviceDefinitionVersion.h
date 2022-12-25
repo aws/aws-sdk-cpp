@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeviceDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API DeviceDefinitionVersion
+  class DeviceDefinitionVersion
   {
   public:
-    DeviceDefinitionVersion();
-    DeviceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    DeviceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API DeviceDefinitionVersion();
+    AWS_GREENGRASS_API DeviceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API DeviceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Device> m_devices;
-    bool m_devicesHasBeenSet;
+    bool m_devicesHasBeenSet = false;
   };
 
 } // namespace Model

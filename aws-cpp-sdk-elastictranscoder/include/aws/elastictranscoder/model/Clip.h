@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Clip">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Clip
+  class Clip
   {
   public:
-    Clip();
-    Clip(Aws::Utils::Json::JsonView jsonValue);
-    Clip& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Clip();
+    AWS_ELASTICTRANSCODER_API Clip(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Clip& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TimeSpan m_timeSpan;
-    bool m_timeSpanHasBeenSet;
+    bool m_timeSpanHasBeenSet = false;
   };
 
 } // namespace Model

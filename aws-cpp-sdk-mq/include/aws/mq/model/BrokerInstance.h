@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerInstance
+  class BrokerInstance
   {
   public:
-    BrokerInstance();
-    BrokerInstance(Aws::Utils::Json::JsonView jsonValue);
-    BrokerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerInstance();
+    AWS_MQ_API BrokerInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_consoleURL;
-    bool m_consoleURLHasBeenSet;
+    bool m_consoleURLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Integration">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Integration
+  class Integration
   {
   public:
-    Integration();
-    Integration(Aws::Utils::Json::JsonView jsonValue);
-    Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Integration();
+    AWS_APIGATEWAYV2_API Integration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1802,64 +1802,64 @@ namespace Model
   private:
 
     bool m_apiGatewayManaged;
-    bool m_apiGatewayManagedHasBeenSet;
+    bool m_apiGatewayManagedHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     ContentHandlingStrategy m_contentHandlingStrategy;
-    bool m_contentHandlingStrategyHasBeenSet;
+    bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_credentialsArn;
-    bool m_credentialsArnHasBeenSet;
+    bool m_credentialsArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_integrationId;
-    bool m_integrationIdHasBeenSet;
+    bool m_integrationIdHasBeenSet = false;
 
     Aws::String m_integrationMethod;
-    bool m_integrationMethodHasBeenSet;
+    bool m_integrationMethodHasBeenSet = false;
 
     Aws::String m_integrationResponseSelectionExpression;
-    bool m_integrationResponseSelectionExpressionHasBeenSet;
+    bool m_integrationResponseSelectionExpressionHasBeenSet = false;
 
     Aws::String m_integrationSubtype;
-    bool m_integrationSubtypeHasBeenSet;
+    bool m_integrationSubtypeHasBeenSet = false;
 
     IntegrationType m_integrationType;
-    bool m_integrationTypeHasBeenSet;
+    bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_integrationUri;
-    bool m_integrationUriHasBeenSet;
+    bool m_integrationUriHasBeenSet = false;
 
     PassthroughBehavior m_passthroughBehavior;
-    bool m_passthroughBehaviorHasBeenSet;
+    bool m_passthroughBehaviorHasBeenSet = false;
 
     Aws::String m_payloadFormatVersion;
-    bool m_payloadFormatVersionHasBeenSet;
+    bool m_payloadFormatVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestTemplates;
-    bool m_requestTemplatesHasBeenSet;
+    bool m_requestTemplatesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::String m_templateSelectionExpression;
-    bool m_templateSelectionExpressionHasBeenSet;
+    bool m_templateSelectionExpressionHasBeenSet = false;
 
     int m_timeoutInMillis;
-    bool m_timeoutInMillisHasBeenSet;
+    bool m_timeoutInMillisHasBeenSet = false;
 
     TlsConfig m_tlsConfig;
-    bool m_tlsConfigHasBeenSet;
+    bool m_tlsConfigHasBeenSet = false;
   };
 
 } // namespace Model

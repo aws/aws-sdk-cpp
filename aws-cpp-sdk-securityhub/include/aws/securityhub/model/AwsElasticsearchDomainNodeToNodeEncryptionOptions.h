@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainNodeToNodeEncryptionOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions
+  class AwsElasticsearchDomainNodeToNodeEncryptionOptions
   {
   public:
-    AwsElasticsearchDomainNodeToNodeEncryptionOptions();
-    AwsElasticsearchDomainNodeToNodeEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainNodeToNodeEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

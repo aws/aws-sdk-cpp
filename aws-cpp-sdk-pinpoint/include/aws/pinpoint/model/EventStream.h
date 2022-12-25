@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventStream">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventStream
+  class EventStream
   {
   public:
-    EventStream();
-    EventStream(Aws::Utils::Json::JsonView jsonValue);
-    EventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventStream();
+    AWS_PINPOINT_API EventStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -391,22 +391,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_destinationStreamArn;
-    bool m_destinationStreamArnHasBeenSet;
+    bool m_destinationStreamArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastUpdatedBy;
-    bool m_lastUpdatedByHasBeenSet;
+    bool m_lastUpdatedByHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

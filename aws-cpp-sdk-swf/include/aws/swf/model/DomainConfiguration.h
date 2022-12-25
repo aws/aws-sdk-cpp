@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DomainConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DomainConfiguration
+  class DomainConfiguration
   {
   public:
-    DomainConfiguration();
-    DomainConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DomainConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API DomainConfiguration();
+    AWS_SWF_API DomainConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API DomainConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_workflowExecutionRetentionPeriodInDays;
-    bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet;
+    bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/BlockPublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API BlockPublicAccess
+  class BlockPublicAccess
   {
   public:
-    BlockPublicAccess();
-    BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API BlockPublicAccess();
+    AWS_GUARDDUTY_API BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,16 +140,16 @@ namespace Model
   private:
 
     bool m_ignorePublicAcls;
-    bool m_ignorePublicAclsHasBeenSet;
+    bool m_ignorePublicAclsHasBeenSet = false;
 
     bool m_restrictPublicBuckets;
-    bool m_restrictPublicBucketsHasBeenSet;
+    bool m_restrictPublicBucketsHasBeenSet = false;
 
     bool m_blockPublicAcls;
-    bool m_blockPublicAclsHasBeenSet;
+    bool m_blockPublicAclsHasBeenSet = false;
 
     bool m_blockPublicPolicy;
-    bool m_blockPublicPolicyHasBeenSet;
+    bool m_blockPublicPolicyHasBeenSet = false;
   };
 
 } // namespace Model

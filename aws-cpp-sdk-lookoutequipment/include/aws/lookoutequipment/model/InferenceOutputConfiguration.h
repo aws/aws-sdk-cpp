@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceOutputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceOutputConfiguration
+  class InferenceOutputConfiguration
   {
   public:
-    InferenceOutputConfiguration();
-    InferenceOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InferenceOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceOutputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API InferenceOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     InferenceS3OutputConfiguration m_s3OutputConfiguration;
-    bool m_s3OutputConfigurationHasBeenSet;
+    bool m_s3OutputConfigurationHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

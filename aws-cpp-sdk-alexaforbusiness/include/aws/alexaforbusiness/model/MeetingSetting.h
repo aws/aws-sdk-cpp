@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/MeetingSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API MeetingSetting
+  class MeetingSetting
   {
   public:
-    MeetingSetting();
-    MeetingSetting(Aws::Utils::Json::JsonView jsonValue);
-    MeetingSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API MeetingSetting();
+    AWS_ALEXAFORBUSINESS_API MeetingSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API MeetingSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     RequirePin m_requirePin;
-    bool m_requirePinHasBeenSet;
+    bool m_requirePinHasBeenSet = false;
   };
 
 } // namespace Model

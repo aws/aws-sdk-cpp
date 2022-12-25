@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3GeneratedManifestDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3GeneratedManifestDescriptor
+  class S3GeneratedManifestDescriptor
   {
   public:
-    S3GeneratedManifestDescriptor();
-    S3GeneratedManifestDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3GeneratedManifestDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3GeneratedManifestDescriptor();
+    AWS_S3CONTROL_API S3GeneratedManifestDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3GeneratedManifestDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     GeneratedManifestFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     JobManifestLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

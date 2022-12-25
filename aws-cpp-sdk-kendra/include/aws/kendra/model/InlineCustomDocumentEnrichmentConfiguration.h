@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/InlineCustomDocumentEnrichmentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API InlineCustomDocumentEnrichmentConfiguration
+  class InlineCustomDocumentEnrichmentConfiguration
   {
   public:
-    InlineCustomDocumentEnrichmentConfiguration();
-    InlineCustomDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InlineCustomDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API InlineCustomDocumentEnrichmentConfiguration();
+    AWS_KENDRA_API InlineCustomDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API InlineCustomDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     DocumentAttributeCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     DocumentAttributeTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     bool m_documentContentDeletion;
-    bool m_documentContentDeletionHasBeenSet;
+    bool m_documentContentDeletionHasBeenSet = false;
   };
 
 } // namespace Model

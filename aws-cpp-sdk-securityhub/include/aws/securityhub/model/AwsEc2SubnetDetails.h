@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SubnetDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2SubnetDetails
+  class AwsEc2SubnetDetails
   {
   public:
-    AwsEc2SubnetDetails();
-    AwsEc2SubnetDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2SubnetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails();
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2SubnetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,42 +297,50 @@ namespace Model
 
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of the subnet.</p>
+     * <p>The current state of the subnet. Valid values are <code>available</code> or
+     * <code>pending</code>.</p>
      */
     inline AwsEc2SubnetDetails& WithState(const char* value) { SetState(value); return *this;}
 
@@ -503,43 +511,43 @@ namespace Model
   private:
 
     bool m_assignIpv6AddressOnCreation;
-    bool m_assignIpv6AddressOnCreationHasBeenSet;
+    bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     int m_availableIpAddressCount;
-    bool m_availableIpAddressCountHasBeenSet;
+    bool m_availableIpAddressCountHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     bool m_defaultForAz;
-    bool m_defaultForAzHasBeenSet;
+    bool m_defaultForAzHasBeenSet = false;
 
     bool m_mapPublicIpOnLaunch;
-    bool m_mapPublicIpOnLaunchHasBeenSet;
+    bool m_mapPublicIpOnLaunchHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Ipv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
-    bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+    bool m_ipv6CidrBlockAssociationSetHasBeenSet = false;
   };
 
 } // namespace Model

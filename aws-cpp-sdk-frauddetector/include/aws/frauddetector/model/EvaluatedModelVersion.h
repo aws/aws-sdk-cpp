@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EvaluatedModelVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EvaluatedModelVersion
+  class EvaluatedModelVersion
   {
   public:
-    EvaluatedModelVersion();
-    EvaluatedModelVersion(Aws::Utils::Json::JsonView jsonValue);
-    EvaluatedModelVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EvaluatedModelVersion();
+    AWS_FRAUDDETECTOR_API EvaluatedModelVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EvaluatedModelVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::Vector<ModelVersionEvaluation> m_evaluations;
-    bool m_evaluationsHasBeenSet;
+    bool m_evaluationsHasBeenSet = false;
   };
 
 } // namespace Model

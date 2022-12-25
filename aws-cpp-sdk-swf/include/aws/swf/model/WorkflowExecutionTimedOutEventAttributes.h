@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionTimedOutEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionTimedOutEventAttributes
+  class WorkflowExecutionTimedOutEventAttributes
   {
   public:
-    WorkflowExecutionTimedOutEventAttributes();
-    WorkflowExecutionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionTimedOutEventAttributes();
+    AWS_SWF_API WorkflowExecutionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     WorkflowExecutionTimeoutType m_timeoutType;
-    bool m_timeoutTypeHasBeenSet;
+    bool m_timeoutTypeHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
   };
 
 } // namespace Model

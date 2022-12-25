@@ -24,6 +24,7 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int ACCELERATOR_NOT_FOUND_HASH = HashingUtils::HashString("AcceleratorNotFoundException");
 static const int INCORRECT_CIDR_STATE_HASH = HashingUtils::HashString("IncorrectCidrStateException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int TRANSACTION_IN_PROGRESS_HASH = HashingUtils::HashString("TransactionInProgressException");
 static const int BYOIP_CIDR_NOT_FOUND_HASH = HashingUtils::HashString("ByoipCidrNotFoundException");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFoundException");
 static const int ASSOCIATED_LISTENER_FOUND_HASH = HashingUtils::HashString("AssociatedListenerFoundException");
@@ -64,6 +65,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == TRANSACTION_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::TRANSACTION_IN_PROGRESS), true);
   }
   else if (hashCode == BYOIP_CIDR_NOT_FOUND_HASH)
   {

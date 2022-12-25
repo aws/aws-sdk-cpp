@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API DeleteSamplingRuleRequest : public XRayRequest
+  class DeleteSamplingRuleRequest : public XRayRequest
   {
   public:
-    DeleteSamplingRuleRequest();
+    AWS_XRAY_API DeleteSamplingRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSamplingRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_ruleARN;
-    bool m_ruleARNHasBeenSet;
+    bool m_ruleARNHasBeenSet = false;
   };
 
 } // namespace Model

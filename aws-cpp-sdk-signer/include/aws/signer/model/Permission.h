@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/Permission">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API Permission
+  class Permission
   {
   public:
-    Permission();
-    Permission(Aws::Utils::Json::JsonView jsonValue);
-    Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API Permission();
+    AWS_SIGNER_API Permission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Aws::String m_profileVersion;
-    bool m_profileVersionHasBeenSet;
+    bool m_profileVersionHasBeenSet = false;
   };
 
 } // namespace Model

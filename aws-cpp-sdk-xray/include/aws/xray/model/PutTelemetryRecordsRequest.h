@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API PutTelemetryRecordsRequest : public XRayRequest
+  class PutTelemetryRecordsRequest : public XRayRequest
   {
   public:
-    PutTelemetryRecordsRequest();
+    AWS_XRAY_API PutTelemetryRecordsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutTelemetryRecords"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::Vector<TelemetryRecord> m_telemetryRecords;
-    bool m_telemetryRecordsHasBeenSet;
+    bool m_telemetryRecordsHasBeenSet = false;
 
     Aws::String m_eC2InstanceId;
-    bool m_eC2InstanceIdHasBeenSet;
+    bool m_eC2InstanceIdHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

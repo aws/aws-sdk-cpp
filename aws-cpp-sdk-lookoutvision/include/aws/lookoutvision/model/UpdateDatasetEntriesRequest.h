@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesRequest : public LookoutforVisionRequest
+  class UpdateDatasetEntriesRequest : public LookoutforVisionRequest
   {
   public:
-    UpdateDatasetEntriesRequest();
+    AWS_LOOKOUTFORVISION_API UpdateDatasetEntriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDatasetEntries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTFORVISION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTFORVISION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -312,16 +312,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_changes;
-    bool m_changesHasBeenSet;
+    bool m_changesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

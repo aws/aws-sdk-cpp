@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackSummary
+  class AttackSummary
   {
   public:
-    AttackSummary();
-    AttackSummary(Aws::Utils::Json::JsonView jsonValue);
-    AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackSummary();
+    AWS_SHIELD_API AttackSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_attackId;
-    bool m_attackIdHasBeenSet;
+    bool m_attackIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<AttackVectorDescription> m_attackVectors;
-    bool m_attackVectorsHasBeenSet;
+    bool m_attackVectorsHasBeenSet = false;
   };
 
 } // namespace Model

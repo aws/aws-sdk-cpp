@@ -35,19 +35,19 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicySecurityHeadersConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig
+  class ResponseHeadersPolicySecurityHeadersConfig
   {
   public:
-    ResponseHeadersPolicySecurityHeadersConfig();
-    ResponseHeadersPolicySecurityHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicySecurityHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-XSS-Protection</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
      * in the MDN Web Docs.</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>X-Frame-Options</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -157,7 +157,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -166,7 +166,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -175,7 +175,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -193,7 +193,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-     * response header and the header’s value.</p> <p>For more information about the
+     * response header and the header's value.</p> <p>For more information about the
      * <code>Referrer-Policy</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
      * in the MDN Web Docs.</p>
@@ -334,7 +334,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -344,7 +344,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -354,7 +354,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -364,7 +364,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -374,7 +374,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -384,7 +384,7 @@ namespace Model
 
     /**
      * <p>Determines whether CloudFront includes the
-     * <code>Strict-Transport-Security</code> HTTP response header and the header’s
+     * <code>Strict-Transport-Security</code> HTTP response header and the header's
      * value.</p> <p>For more information about the
      * <code>Strict-Transport-Security</code> HTTP response header, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
@@ -395,22 +395,22 @@ namespace Model
   private:
 
     ResponseHeadersPolicyXSSProtection m_xSSProtection;
-    bool m_xSSProtectionHasBeenSet;
+    bool m_xSSProtectionHasBeenSet = false;
 
     ResponseHeadersPolicyFrameOptions m_frameOptions;
-    bool m_frameOptionsHasBeenSet;
+    bool m_frameOptionsHasBeenSet = false;
 
     ResponseHeadersPolicyReferrerPolicy m_referrerPolicy;
-    bool m_referrerPolicyHasBeenSet;
+    bool m_referrerPolicyHasBeenSet = false;
 
     ResponseHeadersPolicyContentSecurityPolicy m_contentSecurityPolicy;
-    bool m_contentSecurityPolicyHasBeenSet;
+    bool m_contentSecurityPolicyHasBeenSet = false;
 
     ResponseHeadersPolicyContentTypeOptions m_contentTypeOptions;
-    bool m_contentTypeOptionsHasBeenSet;
+    bool m_contentTypeOptionsHasBeenSet = false;
 
     ResponseHeadersPolicyStrictTransportSecurity m_strictTransportSecurity;
-    bool m_strictTransportSecurityHasBeenSet;
+    bool m_strictTransportSecurityHasBeenSet = false;
   };
 
 } // namespace Model

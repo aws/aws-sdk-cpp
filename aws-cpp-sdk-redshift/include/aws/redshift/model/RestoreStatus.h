@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API RestoreStatus
+  class RestoreStatus
   {
   public:
-    RestoreStatus();
-    RestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API RestoreStatus();
+    AWS_REDSHIFT_API RestoreStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API RestoreStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -228,22 +228,22 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     double m_currentRestoreRateInMegaBytesPerSecond;
-    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_snapshotSizeInMegaBytes;
-    bool m_snapshotSizeInMegaBytesHasBeenSet;
+    bool m_snapshotSizeInMegaBytesHasBeenSet = false;
 
     long long m_progressInMegaBytes;
-    bool m_progressInMegaBytesHasBeenSet;
+    bool m_progressInMegaBytesHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
 
     long long m_estimatedTimeToCompletionInSeconds;
-    bool m_estimatedTimeToCompletionInSecondsHasBeenSet;
+    bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

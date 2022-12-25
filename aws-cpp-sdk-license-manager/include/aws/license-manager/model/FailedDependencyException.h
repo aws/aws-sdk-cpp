@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/FailedDependencyException">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API FailedDependencyException
+  class FailedDependencyException
   {
   public:
-    FailedDependencyException();
-    FailedDependencyException(Aws::Utils::Json::JsonView jsonValue);
-    FailedDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API FailedDependencyException();
+    AWS_LICENSEMANAGER_API FailedDependencyException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API FailedDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

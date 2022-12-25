@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TypeVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API TypeVersionSummary
+  class TypeVersionSummary
   {
   public:
-    TypeVersionSummary();
-    TypeVersionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TypeVersionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeVersionSummary();
+    AWS_CLOUDFORMATION_API TypeVersionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeVersionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -432,28 +432,28 @@ namespace Model
   private:
 
     RegistryType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeCreated;
-    bool m_timeCreatedHasBeenSet;
+    bool m_timeCreatedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_publicVersionNumber;
-    bool m_publicVersionNumberHasBeenSet;
+    bool m_publicVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

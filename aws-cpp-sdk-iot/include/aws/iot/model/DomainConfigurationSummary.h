@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DomainConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DomainConfigurationSummary
+  class DomainConfigurationSummary
   {
   public:
-    DomainConfigurationSummary();
-    DomainConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    DomainConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DomainConfigurationSummary();
+    AWS_IOT_API DomainConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DomainConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_domainConfigurationName;
-    bool m_domainConfigurationNameHasBeenSet;
+    bool m_domainConfigurationNameHasBeenSet = false;
 
     Aws::String m_domainConfigurationArn;
-    bool m_domainConfigurationArnHasBeenSet;
+    bool m_domainConfigurationArnHasBeenSet = false;
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

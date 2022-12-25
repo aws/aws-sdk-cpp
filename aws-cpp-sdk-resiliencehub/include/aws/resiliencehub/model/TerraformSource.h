@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TerraformSource">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API TerraformSource
+  class TerraformSource
   {
   public:
-    TerraformSource();
-    TerraformSource(Aws::Utils::Json::JsonView jsonValue);
-    TerraformSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API TerraformSource();
+    AWS_RESILIENCEHUB_API TerraformSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API TerraformSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_s3StateFileUrl;
-    bool m_s3StateFileUrlHasBeenSet;
+    bool m_s3StateFileUrlHasBeenSet = false;
   };
 
 } // namespace Model

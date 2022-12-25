@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaLinuxProcessParams">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaLinuxProcessParams
+  class LambdaLinuxProcessParams
   {
   public:
-    LambdaLinuxProcessParams();
-    LambdaLinuxProcessParams(Aws::Utils::Json::JsonView jsonValue);
-    LambdaLinuxProcessParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaLinuxProcessParams();
+    AWS_GREENGRASSV2_API LambdaLinuxProcessParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaLinuxProcessParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     LambdaIsolationMode m_isolationMode;
-    bool m_isolationModeHasBeenSet;
+    bool m_isolationModeHasBeenSet = false;
 
     LambdaContainerParams m_containerParams;
-    bool m_containerParamsHasBeenSet;
+    bool m_containerParamsHasBeenSet = false;
   };
 
 } // namespace Model

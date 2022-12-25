@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InsightResults">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API InsightResults
+  class InsightResults
   {
   public:
-    InsightResults();
-    InsightResults(Aws::Utils::Json::JsonView jsonValue);
-    InsightResults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API InsightResults();
+    AWS_SECURITYHUB_API InsightResults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API InsightResults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_insightArn;
-    bool m_insightArnHasBeenSet;
+    bool m_insightArnHasBeenSet = false;
 
     Aws::String m_groupByAttribute;
-    bool m_groupByAttributeHasBeenSet;
+    bool m_groupByAttributeHasBeenSet = false;
 
     Aws::Vector<InsightResultValue> m_resultValues;
-    bool m_resultValuesHasBeenSet;
+    bool m_resultValuesHasBeenSet = false;
   };
 
 } // namespace Model

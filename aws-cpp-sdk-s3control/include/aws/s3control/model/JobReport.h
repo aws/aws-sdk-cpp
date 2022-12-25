@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobReport">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobReport
+  class JobReport
   {
   public:
-    JobReport();
-    JobReport(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobReport();
+    AWS_S3CONTROL_API JobReport(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     JobReportFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     JobReportScope m_reportScope;
-    bool m_reportScopeHasBeenSet;
+    bool m_reportScopeHasBeenSet = false;
   };
 
 } // namespace Model

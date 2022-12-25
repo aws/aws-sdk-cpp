@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ConnectionBasicAuthResponseParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API ConnectionBasicAuthResponseParameters
+  class ConnectionBasicAuthResponseParameters
   {
   public:
-    ConnectionBasicAuthResponseParameters();
-    ConnectionBasicAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionBasicAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API ConnectionBasicAuthResponseParameters();
+    AWS_CLOUDWATCHEVENTS_API ConnectionBasicAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API ConnectionBasicAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

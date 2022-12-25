@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Database">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Database
+  class Database
   {
   public:
-    Database();
-    Database(Aws::Utils::Json::JsonView jsonValue);
-    Database& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Database();
+    AWS_GLUE_API Database(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Database& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -392,28 +392,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_locationUri;
-    bool m_locationUriHasBeenSet;
+    bool m_locationUriHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-    bool m_createTableDefaultPermissionsHasBeenSet;
+    bool m_createTableDefaultPermissionsHasBeenSet = false;
 
     DatabaseIdentifier m_targetDatabase;
-    bool m_targetDatabaseHasBeenSet;
+    bool m_targetDatabaseHasBeenSet = false;
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
   };
 
 } // namespace Model

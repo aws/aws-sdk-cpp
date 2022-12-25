@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLCandidate
+  class AutoMLCandidate
   {
   public:
-    AutoMLCandidate();
-    AutoMLCandidate(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLCandidate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLCandidate();
+    AWS_SAGEMAKER_API AutoMLCandidate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLCandidate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -417,37 +417,37 @@ namespace Model
   private:
 
     Aws::String m_candidateName;
-    bool m_candidateNameHasBeenSet;
+    bool m_candidateNameHasBeenSet = false;
 
     FinalAutoMLJobObjectiveMetric m_finalAutoMLJobObjectiveMetric;
-    bool m_finalAutoMLJobObjectiveMetricHasBeenSet;
+    bool m_finalAutoMLJobObjectiveMetricHasBeenSet = false;
 
     ObjectiveStatus m_objectiveStatus;
-    bool m_objectiveStatusHasBeenSet;
+    bool m_objectiveStatusHasBeenSet = false;
 
     Aws::Vector<AutoMLCandidateStep> m_candidateSteps;
-    bool m_candidateStepsHasBeenSet;
+    bool m_candidateStepsHasBeenSet = false;
 
     CandidateStatus m_candidateStatus;
-    bool m_candidateStatusHasBeenSet;
+    bool m_candidateStatusHasBeenSet = false;
 
     Aws::Vector<AutoMLContainerDefinition> m_inferenceContainers;
-    bool m_inferenceContainersHasBeenSet;
+    bool m_inferenceContainersHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     CandidateProperties m_candidateProperties;
-    bool m_candidatePropertiesHasBeenSet;
+    bool m_candidatePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

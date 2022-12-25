@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LinkSharingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LinkSharingConfiguration
+  class LinkSharingConfiguration
   {
   public:
-    LinkSharingConfiguration();
-    LinkSharingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LinkSharingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LinkSharingConfiguration();
+    AWS_QUICKSIGHT_API LinkSharingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LinkSharingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ResourcePermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

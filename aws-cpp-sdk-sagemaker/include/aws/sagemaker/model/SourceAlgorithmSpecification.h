@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SourceAlgorithmSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SourceAlgorithmSpecification
+  class SourceAlgorithmSpecification
   {
   public:
-    SourceAlgorithmSpecification();
-    SourceAlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
-    SourceAlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SourceAlgorithmSpecification();
+    AWS_SAGEMAKER_API SourceAlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SourceAlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<SourceAlgorithm> m_sourceAlgorithms;
-    bool m_sourceAlgorithmsHasBeenSet;
+    bool m_sourceAlgorithmsHasBeenSet = false;
   };
 
 } // namespace Model

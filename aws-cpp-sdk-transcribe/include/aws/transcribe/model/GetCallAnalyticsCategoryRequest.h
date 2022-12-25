@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API GetCallAnalyticsCategoryRequest : public TranscribeServiceRequest
+  class GetCallAnalyticsCategoryRequest : public TranscribeServiceRequest
   {
   public:
-    GetCallAnalyticsCategoryRequest();
+    AWS_TRANSCRIBESERVICE_API GetCallAnalyticsCategoryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCallAnalyticsCategory"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
   };
 
 } // namespace Model

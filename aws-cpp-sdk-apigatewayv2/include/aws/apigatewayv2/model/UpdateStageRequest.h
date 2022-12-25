@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API UpdateStageRequest : public ApiGatewayV2Request
+  class UpdateStageRequest : public ApiGatewayV2Request
   {
   public:
-    UpdateStageRequest();
+    AWS_APIGATEWAYV2_API UpdateStageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -501,34 +501,34 @@ namespace Model
   private:
 
     AccessLogSettings m_accessLogSettings;
-    bool m_accessLogSettingsHasBeenSet;
+    bool m_accessLogSettingsHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     bool m_autoDeploy;
-    bool m_autoDeployHasBeenSet;
+    bool m_autoDeployHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     RouteSettings m_defaultRouteSettings;
-    bool m_defaultRouteSettingsHasBeenSet;
+    bool m_defaultRouteSettingsHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, RouteSettings> m_routeSettings;
-    bool m_routeSettingsHasBeenSet;
+    bool m_routeSettingsHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
   };
 
 } // namespace Model

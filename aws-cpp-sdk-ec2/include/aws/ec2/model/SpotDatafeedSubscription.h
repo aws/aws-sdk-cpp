@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotDatafeedSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SpotDatafeedSubscription
+  class SpotDatafeedSubscription
   {
   public:
-    SpotDatafeedSubscription();
-    SpotDatafeedSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SpotDatafeedSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotDatafeedSubscription();
+    AWS_EC2_API SpotDatafeedSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotDatafeedSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     SpotInstanceStateFault m_fault;
-    bool m_faultHasBeenSet;
+    bool m_faultHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     DatafeedSubscriptionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RobotApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API RobotApplicationSummary
+  class RobotApplicationSummary
   {
   public:
-    RobotApplicationSummary();
-    RobotApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RobotApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API RobotApplicationSummary();
+    AWS_ROBOMAKER_API RobotApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API RobotApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     RobotSoftwareSuite m_robotSoftwareSuite;
-    bool m_robotSoftwareSuiteHasBeenSet;
+    bool m_robotSoftwareSuiteHasBeenSet = false;
   };
 
 } // namespace Model

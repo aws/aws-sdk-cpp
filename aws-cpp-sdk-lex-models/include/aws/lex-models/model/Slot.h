@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/Slot">AWS API
    * Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API Slot
+  class Slot
   {
   public:
-    Slot();
-    Slot(Aws::Utils::Json::JsonView jsonValue);
-    Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API Slot();
+    AWS_LEXMODELBUILDINGSERVICE_API Slot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -549,37 +549,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SlotConstraint m_slotConstraint;
-    bool m_slotConstraintHasBeenSet;
+    bool m_slotConstraintHasBeenSet = false;
 
     Aws::String m_slotType;
-    bool m_slotTypeHasBeenSet;
+    bool m_slotTypeHasBeenSet = false;
 
     Aws::String m_slotTypeVersion;
-    bool m_slotTypeVersionHasBeenSet;
+    bool m_slotTypeVersionHasBeenSet = false;
 
     Prompt m_valueElicitationPrompt;
-    bool m_valueElicitationPromptHasBeenSet;
+    bool m_valueElicitationPromptHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     Aws::String m_responseCard;
-    bool m_responseCardHasBeenSet;
+    bool m_responseCardHasBeenSet = false;
 
     ObfuscationSetting m_obfuscationSetting;
-    bool m_obfuscationSettingHasBeenSet;
+    bool m_obfuscationSettingHasBeenSet = false;
 
     SlotDefaultValueSpec m_defaultValueSpec;
-    bool m_defaultValueSpecHasBeenSet;
+    bool m_defaultValueSpecHasBeenSet = false;
   };
 
 } // namespace Model

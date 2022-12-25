@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API UpdateLFTagRequest : public LakeFormationRequest
+  class UpdateLFTagRequest : public LakeFormationRequest
   {
   public:
-    UpdateLFTagRequest();
+    AWS_LAKEFORMATION_API UpdateLFTagRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLFTag"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValuesToDelete;
-    bool m_tagValuesToDeleteHasBeenSet;
+    bool m_tagValuesToDeleteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValuesToAdd;
-    bool m_tagValuesToAddHasBeenSet;
+    bool m_tagValuesToAddHasBeenSet = false;
   };
 
 } // namespace Model

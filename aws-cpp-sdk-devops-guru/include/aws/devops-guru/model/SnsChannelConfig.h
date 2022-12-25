@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SnsChannelConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API SnsChannelConfig
+  class SnsChannelConfig
   {
   public:
-    SnsChannelConfig();
-    SnsChannelConfig(Aws::Utils::Json::JsonView jsonValue);
-    SnsChannelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API SnsChannelConfig();
+    AWS_DEVOPSGURU_API SnsChannelConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API SnsChannelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

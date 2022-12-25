@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Attribute">AWS API
    * Reference</a></p>
    */
-  class AWS_SIMPLEDB_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Attribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API Attribute();
+    AWS_SIMPLEDB_API Attribute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API Attribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_alternateNameEncoding;
-    bool m_alternateNameEncodingHasBeenSet;
+    bool m_alternateNameEncodingHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_alternateValueEncoding;
-    bool m_alternateValueEncodingHasBeenSet;
+    bool m_alternateValueEncodingHasBeenSet = false;
   };
 
 } // namespace Model

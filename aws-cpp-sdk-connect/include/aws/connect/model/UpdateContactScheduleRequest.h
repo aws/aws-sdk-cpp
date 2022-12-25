@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateContactScheduleRequest : public ConnectRequest
+  class UpdateContactScheduleRequest : public ConnectRequest
   {
   public:
-    UpdateContactScheduleRequest();
+    AWS_CONNECT_API UpdateContactScheduleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateContactSchedule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -125,56 +125,56 @@ namespace Model
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline UpdateContactScheduleRequest& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
 
     /**
      * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
-     * inbound contact flow. The scheduled time cannot be in the past. It must be
-     * within up to 6 days in future. </p>
+     * inbound flow. The scheduled time cannot be in the past. It must be within up to
+     * 6 days in future. </p>
      */
     inline UpdateContactScheduleRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
   };
 
 } // namespace Model

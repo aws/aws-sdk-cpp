@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringS3Output">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringS3Output
+  class MonitoringS3Output
   {
   public:
-    MonitoringS3Output();
-    MonitoringS3Output(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringS3Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringS3Output();
+    AWS_SAGEMAKER_API MonitoringS3Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringS3Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     ProcessingS3UploadMode m_s3UploadMode;
-    bool m_s3UploadModeHasBeenSet;
+    bool m_s3UploadModeHasBeenSet = false;
   };
 
 } // namespace Model

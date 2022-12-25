@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RoutingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API RoutingConfig
+  class RoutingConfig
   {
   public:
-    RoutingConfig();
-    RoutingConfig(Aws::Utils::Json::JsonView jsonValue);
-    RoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API RoutingConfig();
+    AWS_EVENTBRIDGE_API RoutingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API RoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     FailoverConfig m_failoverConfig;
-    bool m_failoverConfigHasBeenSet;
+    bool m_failoverConfigHasBeenSet = false;
   };
 
 } // namespace Model

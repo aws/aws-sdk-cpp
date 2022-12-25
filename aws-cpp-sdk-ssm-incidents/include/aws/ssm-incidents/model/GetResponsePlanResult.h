@@ -10,6 +10,7 @@
 #include <aws/ssm-incidents/model/ChatChannel.h>
 #include <aws/ssm-incidents/model/IncidentTemplate.h>
 #include <aws/ssm-incidents/model/Action.h>
+#include <aws/ssm-incidents/model/Integration.h>
 #include <utility>
 
 namespace Aws
@@ -28,12 +29,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API GetResponsePlanResult
+  class GetResponsePlanResult
   {
   public:
-    GetResponsePlanResult();
-    GetResponsePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResponsePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API GetResponsePlanResult();
+    AWS_SSMINCIDENTS_API GetResponsePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API GetResponsePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -178,50 +179,50 @@ namespace Model
 
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagements = value; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagements = std::move(value); }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(const Aws::String& value) { m_engagements.push_back(value); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(Aws::String&& value) { m_engagements.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(const char* value) { m_engagements.push_back(value); return *this; }
 
@@ -250,6 +251,49 @@ namespace Model
      * <p>Details used to create the incident when using this response plan.</p>
      */
     inline GetResponsePlanResult& WithIncidentTemplate(IncidentTemplate&& value) { SetIncidentTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrations = value; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrations = std::move(value); }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& AddIntegrations(const Integration& value) { m_integrations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about third-party services integrated into the Incident Manager
+     * response plan.</p>
+     */
+    inline GetResponsePlanResult& AddIntegrations(Integration&& value) { m_integrations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -307,6 +351,8 @@ namespace Model
     Aws::Vector<Aws::String> m_engagements;
 
     IncidentTemplate m_incidentTemplate;
+
+    Aws::Vector<Integration> m_integrations;
 
     Aws::String m_name;
   };

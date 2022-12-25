@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AwsJobRateIncreaseCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AwsJobRateIncreaseCriteria
+  class AwsJobRateIncreaseCriteria
   {
   public:
-    AwsJobRateIncreaseCriteria();
-    AwsJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
-    AwsJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AwsJobRateIncreaseCriteria();
+    AWS_IOT_API AwsJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AwsJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_numberOfNotifiedThings;
-    bool m_numberOfNotifiedThingsHasBeenSet;
+    bool m_numberOfNotifiedThingsHasBeenSet = false;
 
     int m_numberOfSucceededThings;
-    bool m_numberOfSucceededThingsHasBeenSet;
+    bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 
 } // namespace Model

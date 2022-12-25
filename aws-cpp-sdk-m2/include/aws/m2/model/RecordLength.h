@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/RecordLength">AWS API
    * Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API RecordLength
+  class RecordLength
   {
   public:
-    RecordLength();
-    RecordLength(Aws::Utils::Json::JsonView jsonValue);
-    RecordLength& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API RecordLength();
+    AWS_MAINFRAMEMODERNIZATION_API RecordLength(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API RecordLength& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     int m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
   };
 
 } // namespace Model

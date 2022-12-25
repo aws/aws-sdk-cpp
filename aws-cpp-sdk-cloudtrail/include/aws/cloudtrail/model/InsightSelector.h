@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/InsightSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API InsightSelector
+  class InsightSelector
   {
   public:
-    InsightSelector();
-    InsightSelector(Aws::Utils::Json::JsonView jsonValue);
-    InsightSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API InsightSelector();
+    AWS_CLOUDTRAIL_API InsightSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API InsightSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     InsightType m_insightType;
-    bool m_insightTypeHasBeenSet;
+    bool m_insightTypeHasBeenSet = false;
   };
 
 } // namespace Model

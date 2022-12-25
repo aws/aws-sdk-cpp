@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DateColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DateColumnStatisticsData
+  class DateColumnStatisticsData
   {
   public:
-    DateColumnStatisticsData();
-    DateColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    DateColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DateColumnStatisticsData();
+    AWS_GLUE_API DateColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DateColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,16 +144,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_minimumValue;
-    bool m_minimumValueHasBeenSet;
+    bool m_minimumValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_maximumValue;
-    bool m_maximumValueHasBeenSet;
+    bool m_maximumValueHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
 
     long long m_numberOfDistinctValues;
-    bool m_numberOfDistinctValuesHasBeenSet;
+    bool m_numberOfDistinctValuesHasBeenSet = false;
   };
 
 } // namespace Model

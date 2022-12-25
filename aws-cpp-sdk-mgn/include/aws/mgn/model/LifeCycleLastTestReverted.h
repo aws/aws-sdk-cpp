@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycleLastTestReverted">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API LifeCycleLastTestReverted
+  class LifeCycleLastTestReverted
   {
   public:
-    LifeCycleLastTestReverted();
-    LifeCycleLastTestReverted(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycleLastTestReverted& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LifeCycleLastTestReverted();
+    AWS_MGN_API LifeCycleLastTestReverted(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LifeCycleLastTestReverted& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_apiCallDateTime;
-    bool m_apiCallDateTimeHasBeenSet;
+    bool m_apiCallDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

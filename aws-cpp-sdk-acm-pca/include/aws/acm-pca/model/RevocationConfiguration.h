@@ -37,18 +37,18 @@ namespace Model
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
    * and <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting
-   * up a certificate revocation method</a> in the <i>Certificate Manager Private
-   * Certificate Authority (PCA) User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * up a certificate revocation method</a> in the <i>Private Certificate Authority
+   * (PCA) User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevocationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API RevocationConfiguration
+  class RevocationConfiguration
   {
   public:
-    RevocationConfiguration();
-    RevocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RevocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API RevocationConfiguration();
+    AWS_ACMPCA_API RevocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API RevocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     CrlConfiguration m_crlConfiguration;
-    bool m_crlConfigurationHasBeenSet;
+    bool m_crlConfigurationHasBeenSet = false;
 
     OcspConfiguration m_ocspConfiguration;
-    bool m_ocspConfigurationHasBeenSet;
+    bool m_ocspConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

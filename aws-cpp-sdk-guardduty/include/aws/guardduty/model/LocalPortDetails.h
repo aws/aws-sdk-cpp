@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/LocalPortDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API LocalPortDetails
+  class LocalPortDetails
   {
   public:
-    LocalPortDetails();
-    LocalPortDetails(Aws::Utils::Json::JsonView jsonValue);
-    LocalPortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API LocalPortDetails();
+    AWS_GUARDDUTY_API LocalPortDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API LocalPortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_portName;
-    bool m_portNameHasBeenSet;
+    bool m_portNameHasBeenSet = false;
   };
 
 } // namespace Model

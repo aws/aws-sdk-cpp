@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEMORYDB_API UpdateACLRequest : public MemoryDBRequest
+  class UpdateACLRequest : public MemoryDBRequest
   {
   public:
-    UpdateACLRequest();
+    AWS_MEMORYDB_API UpdateACLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateACL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEMORYDB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MEMORYDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_aCLName;
-    bool m_aCLNameHasBeenSet;
+    bool m_aCLNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNamesToAdd;
-    bool m_userNamesToAddHasBeenSet;
+    bool m_userNamesToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNamesToRemove;
-    bool m_userNamesToRemoveHasBeenSet;
+    bool m_userNamesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

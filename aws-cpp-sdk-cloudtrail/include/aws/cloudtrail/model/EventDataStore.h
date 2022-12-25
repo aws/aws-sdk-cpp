@@ -26,20 +26,20 @@ namespace Model
   /**
    * <p>A storage lake of event data against which you can run complex SQL-based
    * queries. An event data store can include events that you have logged on your
-   * account from the last 90 to 2555 days (about three months to up to seven years).
+   * account from the last 90 to 2557 days (about three months to up to seven years).
    * To select events for an event data store, use <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">advanced
    * event selectors</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventDataStore">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API EventDataStore
+  class EventDataStore
   {
   public:
-    EventDataStore();
-    EventDataStore(Aws::Utils::Json::JsonView jsonValue);
-    EventDataStore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API EventDataStore();
+    AWS_CLOUDTRAIL_API EventDataStore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API EventDataStore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_eventDataStoreArn;
-    bool m_eventDataStoreArnHasBeenSet;
+    bool m_eventDataStoreArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

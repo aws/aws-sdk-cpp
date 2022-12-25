@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesIpGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspacesIpGroup
+  class WorkspacesIpGroup
   {
   public:
-    WorkspacesIpGroup();
-    WorkspacesIpGroup(Aws::Utils::Json::JsonView jsonValue);
-    WorkspacesIpGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspacesIpGroup();
+    AWS_WORKSPACES_API WorkspacesIpGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspacesIpGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupDesc;
-    bool m_groupDescHasBeenSet;
+    bool m_groupDescHasBeenSet = false;
 
     Aws::Vector<IpRuleItem> m_userRules;
-    bool m_userRulesHasBeenSet;
+    bool m_userRulesHasBeenSet = false;
   };
 
 } // namespace Model

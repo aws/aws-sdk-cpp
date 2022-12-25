@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJsonClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UpdateJsonClassifierRequest
+  class UpdateJsonClassifierRequest
   {
   public:
-    UpdateJsonClassifierRequest();
-    UpdateJsonClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    UpdateJsonClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UpdateJsonClassifierRequest();
+    AWS_GLUE_API UpdateJsonClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UpdateJsonClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API PutVoiceConnectorProxyRequest : public ChimeRequest
+  class PutVoiceConnectorProxyRequest : public ChimeRequest
   {
   public:
-    PutVoiceConnectorProxyRequest();
+    AWS_CHIME_API PutVoiceConnectorProxyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutVoiceConnectorProxy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     int m_defaultSessionExpiryMinutes;
-    bool m_defaultSessionExpiryMinutesHasBeenSet;
+    bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phoneNumberPoolCountries;
-    bool m_phoneNumberPoolCountriesHasBeenSet;
+    bool m_phoneNumberPoolCountriesHasBeenSet = false;
 
     Aws::String m_fallBackPhoneNumber;
-    bool m_fallBackPhoneNumberHasBeenSet;
+    bool m_fallBackPhoneNumberHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

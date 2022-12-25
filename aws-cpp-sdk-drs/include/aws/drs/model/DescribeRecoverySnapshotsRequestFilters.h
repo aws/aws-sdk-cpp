@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoverySnapshotsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DescribeRecoverySnapshotsRequestFilters
+  class DescribeRecoverySnapshotsRequestFilters
   {
   public:
-    DescribeRecoverySnapshotsRequestFilters();
-    DescribeRecoverySnapshotsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeRecoverySnapshotsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters();
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_fromDateTime;
-    bool m_fromDateTimeHasBeenSet;
+    bool m_fromDateTimeHasBeenSet = false;
 
     Aws::String m_toDateTime;
-    bool m_toDateTimeHasBeenSet;
+    bool m_toDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

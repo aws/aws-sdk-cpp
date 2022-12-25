@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/NetworkInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NetworkInfo
+  class NetworkInfo
   {
   public:
-    NetworkInfo();
-    NetworkInfo(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NetworkInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NetworkInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NetworkInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_interfaceName;
-    bool m_interfaceNameHasBeenSet;
+    bool m_interfaceNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_netMask;
-    bool m_netMaskHasBeenSet;
+    bool m_netMaskHasBeenSet = false;
   };
 
 } // namespace Model

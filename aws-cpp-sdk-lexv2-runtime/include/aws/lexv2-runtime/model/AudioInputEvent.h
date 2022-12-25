@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/AudioInputEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API AudioInputEvent
+  class AudioInputEvent
   {
   public:
-    AudioInputEvent();
-    AudioInputEvent(Aws::Utils::Json::JsonView jsonValue);
-    AudioInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API AudioInputEvent();
+    AWS_LEXRUNTIMEV2_API AudioInputEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API AudioInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_audioChunk;
-    bool m_audioChunkHasBeenSet;
+    bool m_audioChunkHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectPoliciesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse
+  class BatchListObjectPoliciesResponse
   {
   public:
-    BatchListObjectPoliciesResponse();
-    BatchListObjectPoliciesResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchListObjectPoliciesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListObjectPoliciesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_attachedPolicyIds;
-    bool m_attachedPolicyIdsHasBeenSet;
+    bool m_attachedPolicyIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

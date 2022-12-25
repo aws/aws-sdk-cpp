@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GitSubmodulesConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API GitSubmodulesConfig
+  class GitSubmodulesConfig
   {
   public:
-    GitSubmodulesConfig();
-    GitSubmodulesConfig(Aws::Utils::Json::JsonView jsonValue);
-    GitSubmodulesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API GitSubmodulesConfig();
+    AWS_CODEBUILD_API GitSubmodulesConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API GitSubmodulesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_fetchSubmodules;
-    bool m_fetchSubmodulesHasBeenSet;
+    bool m_fetchSubmodulesHasBeenSet = false;
   };
 
 } // namespace Model

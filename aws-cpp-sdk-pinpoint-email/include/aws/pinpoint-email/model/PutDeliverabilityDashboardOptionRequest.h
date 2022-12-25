@@ -31,10 +31,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOptionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionRequest : public PinpointEmailRequest
+  class PutDeliverabilityDashboardOptionRequest : public PinpointEmailRequest
   {
   public:
-    PutDeliverabilityDashboardOptionRequest();
+    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDeliverabilityDashboardOption"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     bool m_dashboardEnabled;
-    bool m_dashboardEnabledHasBeenSet;
+    bool m_dashboardEnabledHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;
-    bool m_subscribedDomainsHasBeenSet;
+    bool m_subscribedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

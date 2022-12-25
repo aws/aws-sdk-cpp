@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/PreloadDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API PreloadDataConfig
+  class PreloadDataConfig
   {
   public:
-    PreloadDataConfig();
-    PreloadDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    PreloadDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API PreloadDataConfig();
+    AWS_HEALTHLAKE_API PreloadDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API PreloadDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PreloadDataType m_preloadDataType;
-    bool m_preloadDataTypeHasBeenSet;
+    bool m_preloadDataTypeHasBeenSet = false;
   };
 
 } // namespace Model

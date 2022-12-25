@@ -5,93 +5,16 @@
 
 #pragma once
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
-#include <aws/iot-data/IoTDataPlaneErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iot-data/model/DeleteThingShadowResult.h>
-#include <aws/iot-data/model/GetRetainedMessageResult.h>
-#include <aws/iot-data/model/GetThingShadowResult.h>
-#include <aws/iot-data/model/ListNamedShadowsForThingResult.h>
-#include <aws/iot-data/model/ListRetainedMessagesResult.h>
-#include <aws/iot-data/model/UpdateThingShadowResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTDataPlane
 {
-
-namespace Model
-{
-        class DeleteThingShadowRequest;
-        class GetRetainedMessageRequest;
-        class GetThingShadowRequest;
-        class ListNamedShadowsForThingRequest;
-        class ListRetainedMessagesRequest;
-        class PublishRequest;
-        class UpdateThingShadowRequest;
-
-        typedef Aws::Utils::Outcome<DeleteThingShadowResult, IoTDataPlaneError> DeleteThingShadowOutcome;
-        typedef Aws::Utils::Outcome<GetRetainedMessageResult, IoTDataPlaneError> GetRetainedMessageOutcome;
-        typedef Aws::Utils::Outcome<GetThingShadowResult, IoTDataPlaneError> GetThingShadowOutcome;
-        typedef Aws::Utils::Outcome<ListNamedShadowsForThingResult, IoTDataPlaneError> ListNamedShadowsForThingOutcome;
-        typedef Aws::Utils::Outcome<ListRetainedMessagesResult, IoTDataPlaneError> ListRetainedMessagesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IoTDataPlaneError> PublishOutcome;
-        typedef Aws::Utils::Outcome<UpdateThingShadowResult, IoTDataPlaneError> UpdateThingShadowOutcome;
-
-        typedef std::future<DeleteThingShadowOutcome> DeleteThingShadowOutcomeCallable;
-        typedef std::future<GetRetainedMessageOutcome> GetRetainedMessageOutcomeCallable;
-        typedef std::future<GetThingShadowOutcome> GetThingShadowOutcomeCallable;
-        typedef std::future<ListNamedShadowsForThingOutcome> ListNamedShadowsForThingOutcomeCallable;
-        typedef std::future<ListRetainedMessagesOutcome> ListRetainedMessagesOutcomeCallable;
-        typedef std::future<PublishOutcome> PublishOutcomeCallable;
-        typedef std::future<UpdateThingShadowOutcome> UpdateThingShadowOutcomeCallable;
-} // namespace Model
-
-  class IoTDataPlaneClient;
-
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::DeleteThingShadowRequest&, Model::DeleteThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThingShadowResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetRetainedMessageRequest&, const Model::GetRetainedMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRetainedMessageResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::GetThingShadowRequest&, Model::GetThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingShadowResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::ListNamedShadowsForThingRequest&, const Model::ListNamedShadowsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamedShadowsForThingResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::ListRetainedMessagesRequest&, const Model::ListRetainedMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetainedMessagesResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
-    typedef std::function<void(const IoTDataPlaneClient*, const Model::UpdateThingShadowRequest&, Model::UpdateThingShadowOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingShadowResponseReceivedHandler;
-
   /**
    * <fullname>IoT data</fullname> <p>IoT data enables secure, bi-directional
    * communication between Internet-connected things (such as sensors, actuators,
@@ -106,32 +29,60 @@ namespace Model
    * Web ServicesSignature Version 4</a> to sign requests is:
    * <i>iotdevicegateway</i>.</p>
    */
-  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTDataPlaneClient(const Aws::IoTDataPlane::IoTDataPlaneClientConfiguration& clientConfiguration = Aws::IoTDataPlane::IoTDataPlaneClientConfiguration(),
+                           std::shared_ptr<IoTDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDataPlaneEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDataPlaneClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<IoTDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDataPlaneEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::IoTDataPlane::IoTDataPlaneClientConfiguration& clientConfiguration = Aws::IoTDataPlane::IoTDataPlaneClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<IoTDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDataPlaneEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::IoTDataPlane::IoTDataPlaneClientConfiguration& clientConfiguration = Aws::IoTDataPlane::IoTDataPlaneClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoTDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoTDataPlaneClient();
-
 
         /**
          * <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to
@@ -299,19 +250,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoTDataPlaneEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteThingShadowAsyncHelper(const Model::DeleteThingShadowRequest& request, const DeleteThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRetainedMessageAsyncHelper(const Model::GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetThingShadowAsyncHelper(const Model::GetThingShadowRequest& request, const GetThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListNamedShadowsForThingAsyncHelper(const Model::ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRetainedMessagesAsyncHelper(const Model::ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PublishAsyncHelper(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateThingShadowAsyncHelper(const Model::UpdateThingShadowRequest& request, const UpdateThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;
+      void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      IoTDataPlaneClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTDataPlane

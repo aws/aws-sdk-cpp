@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/IAMUserIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API IAMUserIdentity
+  class IAMUserIdentity
   {
   public:
-    IAMUserIdentity();
-    IAMUserIdentity(Aws::Utils::Json::JsonView jsonValue);
-    IAMUserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API IAMUserIdentity();
+    AWS_IOTSITEWISE_API IAMUserIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API IAMUserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

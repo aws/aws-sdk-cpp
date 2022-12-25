@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualServiceStatus
+  class VirtualServiceStatus
   {
   public:
-    VirtualServiceStatus();
-    VirtualServiceStatus(Aws::Utils::Json::JsonView jsonValue);
-    VirtualServiceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualServiceStatus();
+    AWS_APPMESH_API VirtualServiceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualServiceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     VirtualServiceStatusCode m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

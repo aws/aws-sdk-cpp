@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncDestinationDataSharing">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncDestinationDataSharing
+  class ResourceDataSyncDestinationDataSharing
   {
   public:
-    ResourceDataSyncDestinationDataSharing();
-    ResourceDataSyncDestinationDataSharing(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncDestinationDataSharing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncDestinationDataSharing();
+    AWS_SSM_API ResourceDataSyncDestinationDataSharing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncDestinationDataSharing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::String m_destinationDataSharingType;
-    bool m_destinationDataSharingTypeHasBeenSet;
+    bool m_destinationDataSharingTypeHasBeenSet = false;
   };
 
 } // namespace Model

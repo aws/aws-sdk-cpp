@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DirectoryServiceAuthenticationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DirectoryServiceAuthenticationRequest
+  class DirectoryServiceAuthenticationRequest
   {
   public:
-    DirectoryServiceAuthenticationRequest();
-    DirectoryServiceAuthenticationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DirectoryServiceAuthenticationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DirectoryServiceAuthenticationRequest();
+    AWS_EC2_API DirectoryServiceAuthenticationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DirectoryServiceAuthenticationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
   };
 
 } // namespace Model

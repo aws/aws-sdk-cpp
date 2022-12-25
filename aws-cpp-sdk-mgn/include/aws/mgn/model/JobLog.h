@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/JobLog">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API JobLog
+  class JobLog
   {
   public:
-    JobLog();
-    JobLog(Aws::Utils::Json::JsonView jsonValue);
-    JobLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API JobLog();
+    AWS_MGN_API JobLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API JobLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     JobLogEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     JobLogEventData m_eventData;
-    bool m_eventDataHasBeenSet;
+    bool m_eventDataHasBeenSet = false;
 
     Aws::String m_logDateTime;
-    bool m_logDateTimeHasBeenSet;
+    bool m_logDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

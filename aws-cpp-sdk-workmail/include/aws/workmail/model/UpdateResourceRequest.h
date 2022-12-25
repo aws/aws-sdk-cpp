@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API UpdateResourceRequest : public WorkMailRequest
+  class UpdateResourceRequest : public WorkMailRequest
   {
   public:
-    UpdateResourceRequest();
+    AWS_WORKMAIL_API UpdateResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     BookingOptions m_bookingOptions;
-    bool m_bookingOptionsHasBeenSet;
+    bool m_bookingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

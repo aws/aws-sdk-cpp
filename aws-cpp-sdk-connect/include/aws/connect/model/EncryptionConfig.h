@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API EncryptionConfig
+  class EncryptionConfig
   {
   public:
-    EncryptionConfig();
-    EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API EncryptionConfig();
+    AWS_CONNECT_API EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
   };
 
 } // namespace Model

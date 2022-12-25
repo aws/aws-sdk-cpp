@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API SetDesiredCapacityRequest : public AutoScalingRequest
+  class SetDesiredCapacityRequest : public AutoScalingRequest
   {
   public:
-    SetDesiredCapacityRequest();
+    AWS_AUTOSCALING_API SetDesiredCapacityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetDesiredCapacity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     bool m_honorCooldown;
-    bool m_honorCooldownHasBeenSet;
+    bool m_honorCooldownHasBeenSet = false;
   };
 
 } // namespace Model

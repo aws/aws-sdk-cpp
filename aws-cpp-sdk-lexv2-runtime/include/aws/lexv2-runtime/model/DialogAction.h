@@ -8,6 +8,7 @@
 #include <aws/lexv2-runtime/model/DialogActionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-runtime/model/StyleType.h>
+#include <aws/lexv2-runtime/model/ElicitSubSlot.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DialogAction">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API DialogAction
+  class DialogAction
   {
   public:
-    DialogAction();
-    DialogAction(Aws::Utils::Json::JsonView jsonValue);
-    DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API DialogAction();
+    AWS_LEXRUNTIMEV2_API DialogAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -47,8 +48,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline const DialogActionType& GetType() const{ return m_type; }
 
@@ -60,8 +62,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -73,8 +76,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline void SetType(const DialogActionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -86,8 +90,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline void SetType(DialogActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -99,8 +104,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline DialogAction& WithType(const DialogActionType& value) { SetType(value); return *this;}
 
@@ -112,8 +118,9 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
-     * is to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitIntent</code> - The next action
+     * is to elicit an intent from the user.</p> </li> <li> <p> <code>ElicitSlot</code>
+     * - The next action is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline DialogAction& WithType(DialogActionType&& value) { SetType(std::move(value)); return *this;}
 
@@ -225,16 +232,56 @@ namespace Model
      */
     inline DialogAction& WithSlotElicitationStyle(StyleType&& value) { SetSlotElicitationStyle(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline const ElicitSubSlot& GetSubSlotToElicit() const{ return m_subSlotToElicit; }
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline bool SubSlotToElicitHasBeenSet() const { return m_subSlotToElicitHasBeenSet; }
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline void SetSubSlotToElicit(const ElicitSubSlot& value) { m_subSlotToElicitHasBeenSet = true; m_subSlotToElicit = value; }
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline void SetSubSlotToElicit(ElicitSubSlot&& value) { m_subSlotToElicitHasBeenSet = true; m_subSlotToElicit = std::move(value); }
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline DialogAction& WithSubSlotToElicit(const ElicitSubSlot& value) { SetSubSlotToElicit(value); return *this;}
+
+    /**
+     * <p>The name of the constituent sub slot of the composite slot specified in
+     * slotToElicit that should be elicited from the user.</p>
+     */
+    inline DialogAction& WithSubSlotToElicit(ElicitSubSlot&& value) { SetSubSlotToElicit(std::move(value)); return *this;}
+
   private:
 
     DialogActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_slotToElicit;
-    bool m_slotToElicitHasBeenSet;
+    bool m_slotToElicitHasBeenSet = false;
 
     StyleType m_slotElicitationStyle;
-    bool m_slotElicitationStyleHasBeenSet;
+    bool m_slotElicitationStyleHasBeenSet = false;
+
+    ElicitSubSlot m_subSlotToElicit;
+    bool m_subSlotToElicitHasBeenSet = false;
   };
 
 } // namespace Model

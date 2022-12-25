@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BlueprintRun">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BlueprintRun
+  class BlueprintRun
   {
   public:
-    BlueprintRun();
-    BlueprintRun(Aws::Utils::Json::JsonView jsonValue);
-    BlueprintRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BlueprintRun();
+    AWS_GLUE_API BlueprintRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BlueprintRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -501,34 +501,34 @@ namespace Model
   private:
 
     Aws::String m_blueprintName;
-    bool m_blueprintNameHasBeenSet;
+    bool m_blueprintNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_workflowName;
-    bool m_workflowNameHasBeenSet;
+    bool m_workflowNameHasBeenSet = false;
 
     BlueprintRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_rollbackErrorMessage;
-    bool m_rollbackErrorMessageHasBeenSet;
+    bool m_rollbackErrorMessageHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

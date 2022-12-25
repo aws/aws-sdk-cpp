@@ -7,6 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DashboardErrorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/Entity.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardError">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardError
+  class DashboardError
   {
   public:
-    DashboardError();
-    DashboardError(Aws::Utils::Json::JsonView jsonValue);
-    DashboardError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardError();
+    AWS_QUICKSIGHT_API DashboardError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,13 +111,57 @@ namespace Model
      */
     inline DashboardError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
+
+    /**
+     * <p/>
+     */
+    inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline DashboardError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DashboardError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DashboardError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline DashboardError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
+
   private:
 
     DashboardErrorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
+
+    Aws::Vector<Entity> m_violatedEntities;
+    bool m_violatedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

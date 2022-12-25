@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AwsIamConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API AwsIamConfig
+  class AwsIamConfig
   {
   public:
-    AwsIamConfig();
-    AwsIamConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API AwsIamConfig();
+    AWS_APPSYNC_API AwsIamConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API AwsIamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_signingRegion;
-    bool m_signingRegionHasBeenSet;
+    bool m_signingRegionHasBeenSet = false;
 
     Aws::String m_signingServiceName;
-    bool m_signingServiceNameHasBeenSet;
+    bool m_signingServiceNameHasBeenSet = false;
   };
 
 } // namespace Model

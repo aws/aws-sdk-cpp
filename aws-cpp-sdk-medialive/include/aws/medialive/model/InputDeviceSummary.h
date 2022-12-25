@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceSummary
+  class InputDeviceSummary
   {
   public:
-    InputDeviceSummary();
-    InputDeviceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceSummary();
+    AWS_MEDIALIVE_API InputDeviceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,40 +492,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     InputDeviceConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     DeviceSettingsSyncState m_deviceSettingsSyncState;
-    bool m_deviceSettingsSyncStateHasBeenSet;
+    bool m_deviceSettingsSyncStateHasBeenSet = false;
 
     DeviceUpdateStatus m_deviceUpdateStatus;
-    bool m_deviceUpdateStatusHasBeenSet;
+    bool m_deviceUpdateStatusHasBeenSet = false;
 
     InputDeviceHdSettings m_hdDeviceSettings;
-    bool m_hdDeviceSettingsHasBeenSet;
+    bool m_hdDeviceSettingsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputDeviceNetworkSettings m_networkSettings;
-    bool m_networkSettingsHasBeenSet;
+    bool m_networkSettingsHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     InputDeviceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     InputDeviceUhdSettings m_uhdDeviceSettings;
-    bool m_uhdDeviceSettingsHasBeenSet;
+    bool m_uhdDeviceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

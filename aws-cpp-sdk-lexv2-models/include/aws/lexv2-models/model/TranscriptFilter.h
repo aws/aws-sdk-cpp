@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TranscriptFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API TranscriptFilter
+  class TranscriptFilter
   {
   public:
-    TranscriptFilter();
-    TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API TranscriptFilter();
+    AWS_LEXMODELSV2_API TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LexTranscriptFilter m_lexTranscriptFilter;
-    bool m_lexTranscriptFilterHasBeenSet;
+    bool m_lexTranscriptFilterHasBeenSet = false;
   };
 
 } // namespace Model

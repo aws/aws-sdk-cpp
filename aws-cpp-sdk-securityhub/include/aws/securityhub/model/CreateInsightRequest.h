@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API CreateInsightRequest : public SecurityHubRequest
+  class CreateInsightRequest : public SecurityHubRequest
   {
   public:
-    CreateInsightRequest();
+    AWS_SECURITYHUB_API CreateInsightRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInsight"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsSecurityFindingFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_groupByAttribute;
-    bool m_groupByAttributeHasBeenSet;
+    bool m_groupByAttributeHasBeenSet = false;
   };
 
 } // namespace Model

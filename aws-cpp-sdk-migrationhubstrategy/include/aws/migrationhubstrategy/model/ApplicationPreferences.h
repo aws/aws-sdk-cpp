@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ApplicationPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationPreferences
+  class ApplicationPreferences
   {
   public:
-    ApplicationPreferences();
-    ApplicationPreferences(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationPreferences();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ManagementPreference m_managementPreference;
-    bool m_managementPreferenceHasBeenSet;
+    bool m_managementPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

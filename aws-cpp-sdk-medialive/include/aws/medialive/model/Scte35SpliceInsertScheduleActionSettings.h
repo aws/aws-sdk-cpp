@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SpliceInsertScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35SpliceInsertScheduleActionSettings
+  class Scte35SpliceInsertScheduleActionSettings
   {
   public:
-    Scte35SpliceInsertScheduleActionSettings();
-    Scte35SpliceInsertScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte35SpliceInsertScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35SpliceInsertScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35SpliceInsertScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35SpliceInsertScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,10 +99,10 @@ namespace Model
   private:
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     long long m_spliceEventId;
-    bool m_spliceEventIdHasBeenSet;
+    bool m_spliceEventIdHasBeenSet = false;
   };
 
 } // namespace Model

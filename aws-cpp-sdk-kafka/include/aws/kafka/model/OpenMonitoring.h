@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/OpenMonitoring">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API OpenMonitoring
+  class OpenMonitoring
   {
   public:
-    OpenMonitoring();
-    OpenMonitoring(Aws::Utils::Json::JsonView jsonValue);
-    OpenMonitoring& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API OpenMonitoring();
+    AWS_KAFKA_API OpenMonitoring(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API OpenMonitoring& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Prometheus m_prometheus;
-    bool m_prometheusHasBeenSet;
+    bool m_prometheusHasBeenSet = false;
   };
 
 } // namespace Model

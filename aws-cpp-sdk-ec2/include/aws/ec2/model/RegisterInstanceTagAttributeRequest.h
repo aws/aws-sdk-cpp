@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceTagAttributeRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API RegisterInstanceTagAttributeRequest
+  class RegisterInstanceTagAttributeRequest
   {
   public:
-    RegisterInstanceTagAttributeRequest();
-    RegisterInstanceTagAttributeRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RegisterInstanceTagAttributeRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RegisterInstanceTagAttributeRequest();
+    AWS_EC2_API RegisterInstanceTagAttributeRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RegisterInstanceTagAttributeRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     bool m_includeAllTagsOfInstance;
-    bool m_includeAllTagsOfInstanceHasBeenSet;
+    bool m_includeAllTagsOfInstanceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceTagKeys;
-    bool m_instanceTagKeysHasBeenSet;
+    bool m_instanceTagKeysHasBeenSet = false;
   };
 
 } // namespace Model

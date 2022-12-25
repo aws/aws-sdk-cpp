@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Usage">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Usage
+  class Usage
   {
   public:
-    Usage();
-    Usage(Aws::Utils::Json::JsonView jsonValue);
-    Usage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Usage();
+    AWS_INSPECTOR2_API Usage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Usage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,16 +145,16 @@ namespace Model
   private:
 
     Currency m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     double m_estimatedMonthlyCost;
-    bool m_estimatedMonthlyCostHasBeenSet;
+    bool m_estimatedMonthlyCostHasBeenSet = false;
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     UsageType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

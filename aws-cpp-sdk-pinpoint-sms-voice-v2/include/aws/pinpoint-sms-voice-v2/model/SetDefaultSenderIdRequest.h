@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API SetDefaultSenderIdRequest : public PinpointSMSVoiceV2Request
+  class SetDefaultSenderIdRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    SetDefaultSenderIdRequest();
+    AWS_PINPOINTSMSVOICEV2_API SetDefaultSenderIdRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetDefaultSenderId"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
   };
 
 } // namespace Model

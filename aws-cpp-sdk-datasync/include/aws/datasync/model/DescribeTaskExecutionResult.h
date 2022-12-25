@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecutionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API DescribeTaskExecutionResult
+  class DescribeTaskExecutionResult
   {
   public:
-    DescribeTaskExecutionResult();
-    DescribeTaskExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTaskExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeTaskExecutionResult();
+    AWS_DATASYNC_API DescribeTaskExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeTaskExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -181,115 +181,115 @@ namespace Model
 
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& AddExcludes(const FilterRule& value) { m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example:
-     * <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that exclude specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& AddExcludes(FilterRule&& value) { m_excludes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& AddIncludes(const FilterRule& value) { m_includes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The list should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code> </p> <p> </p>
+     * <p>A list of filter rules that include specific data during your transfer. For
+     * more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline DescribeTaskExecutionResult& AddIncludes(FilterRule&& value) { m_includes.push_back(std::move(value)); return *this; }
 
@@ -322,28 +322,31 @@ namespace Model
 
     /**
      * <p>The expected number of files that is to be transferred over the network. This
-     * value is calculated during the PREPARING phase, before the TRANSFERRING phase.
-     * This value is the expected number of files to be transferred. It's calculated
-     * based on comparing the content of the source and destination locations and
-     * finding the delta that needs to be transferred. </p>
+     * value is calculated during the <code>PREPARING</code> phase before the
+     * <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing
+     * the content of the source and destination locations and finding the delta that
+     * needs to be transferred. </p>
      */
     inline long long GetEstimatedFilesToTransfer() const{ return m_estimatedFilesToTransfer; }
 
     /**
      * <p>The expected number of files that is to be transferred over the network. This
-     * value is calculated during the PREPARING phase, before the TRANSFERRING phase.
-     * This value is the expected number of files to be transferred. It's calculated
-     * based on comparing the content of the source and destination locations and
-     * finding the delta that needs to be transferred. </p>
+     * value is calculated during the <code>PREPARING</code> phase before the
+     * <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing
+     * the content of the source and destination locations and finding the delta that
+     * needs to be transferred. </p>
      */
     inline void SetEstimatedFilesToTransfer(long long value) { m_estimatedFilesToTransfer = value; }
 
     /**
      * <p>The expected number of files that is to be transferred over the network. This
-     * value is calculated during the PREPARING phase, before the TRANSFERRING phase.
-     * This value is the expected number of files to be transferred. It's calculated
-     * based on comparing the content of the source and destination locations and
-     * finding the delta that needs to be transferred. </p>
+     * value is calculated during the <code>PREPARING</code> phase before the
+     * <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing
+     * the content of the source and destination locations and finding the delta that
+     * needs to be transferred. </p>
      */
     inline DescribeTaskExecutionResult& WithEstimatedFilesToTransfer(long long value) { SetEstimatedFilesToTransfer(value); return *this;}
 
@@ -369,11 +372,12 @@ namespace Model
 
     /**
      * <p>The actual number of files that was transferred over the network. This value
-     * is calculated and updated on an ongoing basis during the TRANSFERRING phase.
-     * It's updated periodically when each file is read from the source and sent over
-     * the network. </p> <p>If failures occur during a transfer, this value can be less
-     * than <code>EstimatedFilesToTransfer</code>. This value can also be greater than
-     * <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * is calculated and updated on an ongoing basis during the
+     * <code>TRANSFERRING</code> phase of the task execution. It's updated periodically
+     * when each file is read from the source and sent over the network. </p> <p>If
+     * failures occur during a transfer, this value can be less than
+     * <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be
+     * greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator
      * for a correct file number or to monitor your task execution.</p>
      */
@@ -381,11 +385,12 @@ namespace Model
 
     /**
      * <p>The actual number of files that was transferred over the network. This value
-     * is calculated and updated on an ongoing basis during the TRANSFERRING phase.
-     * It's updated periodically when each file is read from the source and sent over
-     * the network. </p> <p>If failures occur during a transfer, this value can be less
-     * than <code>EstimatedFilesToTransfer</code>. This value can also be greater than
-     * <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * is calculated and updated on an ongoing basis during the
+     * <code>TRANSFERRING</code> phase of the task execution. It's updated periodically
+     * when each file is read from the source and sent over the network. </p> <p>If
+     * failures occur during a transfer, this value can be less than
+     * <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be
+     * greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator
      * for a correct file number or to monitor your task execution.</p>
      */
@@ -393,11 +398,12 @@ namespace Model
 
     /**
      * <p>The actual number of files that was transferred over the network. This value
-     * is calculated and updated on an ongoing basis during the TRANSFERRING phase.
-     * It's updated periodically when each file is read from the source and sent over
-     * the network. </p> <p>If failures occur during a transfer, this value can be less
-     * than <code>EstimatedFilesToTransfer</code>. This value can also be greater than
-     * <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * is calculated and updated on an ongoing basis during the
+     * <code>TRANSFERRING</code> phase of the task execution. It's updated periodically
+     * when each file is read from the source and sent over the network. </p> <p>If
+     * failures occur during a transfer, this value can be less than
+     * <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be
+     * greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator
      * for a correct file number or to monitor your task execution.</p>
      */
@@ -424,17 +430,20 @@ namespace Model
 
 
     /**
-     * <p>The physical number of bytes transferred over the network.</p>
+     * <p>The total number of bytes that are involved in the transfer. For the number
+     * of bytes sent over the network, see <code>BytesCompressed</code>. </p>
      */
     inline long long GetBytesTransferred() const{ return m_bytesTransferred; }
 
     /**
-     * <p>The physical number of bytes transferred over the network.</p>
+     * <p>The total number of bytes that are involved in the transfer. For the number
+     * of bytes sent over the network, see <code>BytesCompressed</code>. </p>
      */
     inline void SetBytesTransferred(long long value) { m_bytesTransferred = value; }
 
     /**
-     * <p>The physical number of bytes transferred over the network.</p>
+     * <p>The total number of bytes that are involved in the transfer. For the number
+     * of bytes sent over the network, see <code>BytesCompressed</code>. </p>
      */
     inline DescribeTaskExecutionResult& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
 
@@ -464,6 +473,28 @@ namespace Model
      */
     inline DescribeTaskExecutionResult& WithResult(TaskExecutionResultDetail&& value) { SetResult(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline long long GetBytesCompressed() const{ return m_bytesCompressed; }
+
+    /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline void SetBytesCompressed(long long value) { m_bytesCompressed = value; }
+
+    /**
+     * <p>The physical number of bytes transferred over the network after compression
+     * was applied. In most cases, this number is less than
+     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     */
+    inline DescribeTaskExecutionResult& WithBytesCompressed(long long value) { SetBytesCompressed(value); return *this;}
+
   private:
 
     Aws::String m_taskExecutionArn;
@@ -489,6 +520,8 @@ namespace Model
     long long m_bytesTransferred;
 
     TaskExecutionResultDetail m_result;
+
+    long long m_bytesCompressed;
   };
 
 } // namespace Model

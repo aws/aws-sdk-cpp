@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UserMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API UserMetadata
+  class UserMetadata
   {
   public:
-    UserMetadata();
-    UserMetadata(Aws::Utils::Json::JsonView jsonValue);
-    UserMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API UserMetadata();
+    AWS_WORKDOCS_API UserMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API UserMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_givenName;
-    bool m_givenNameHasBeenSet;
+    bool m_givenNameHasBeenSet = false;
 
     Aws::String m_surname;
-    bool m_surnameHasBeenSet;
+    bool m_surnameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

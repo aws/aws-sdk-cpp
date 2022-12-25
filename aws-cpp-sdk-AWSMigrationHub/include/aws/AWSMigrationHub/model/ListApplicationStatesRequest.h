@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUB_API ListApplicationStatesRequest : public MigrationHubRequest
+  class ListApplicationStatesRequest : public MigrationHubRequest
   {
   public:
-    ListApplicationStatesRequest();
+    AWS_MIGRATIONHUB_API ListApplicationStatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListApplicationStates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MIGRATIONHUB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_applicationIds;
-    bool m_applicationIdsHasBeenSet;
+    bool m_applicationIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

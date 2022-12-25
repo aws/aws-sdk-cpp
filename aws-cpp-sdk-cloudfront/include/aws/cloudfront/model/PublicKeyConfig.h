@@ -31,60 +31,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API PublicKeyConfig
+  class PublicKeyConfig
   {
   public:
-    PublicKeyConfig();
-    PublicKeyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicKeyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API PublicKeyConfig();
+    AWS_CLOUDFRONT_API PublicKeyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API PublicKeyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_encodedKey;
-    bool m_encodedKeyHasBeenSet;
+    bool m_encodedKeyHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

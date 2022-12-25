@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API SendEventRequest : public FraudDetectorRequest
+  class SendEventRequest : public FraudDetectorRequest
   {
   public:
-    SendEventRequest();
+    AWS_FRAUDDETECTOR_API SendEventRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendEvent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -401,25 +401,25 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_eventTimestamp;
-    bool m_eventTimestampHasBeenSet;
+    bool m_eventTimestampHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_eventVariables;
-    bool m_eventVariablesHasBeenSet;
+    bool m_eventVariablesHasBeenSet = false;
 
     Aws::String m_assignedLabel;
-    bool m_assignedLabelHasBeenSet;
+    bool m_assignedLabelHasBeenSet = false;
 
     Aws::String m_labelTimestamp;
-    bool m_labelTimestampHasBeenSet;
+    bool m_labelTimestampHasBeenSet = false;
 
     Aws::Vector<Entity> m_entities;
-    bool m_entitiesHasBeenSet;
+    bool m_entitiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,18 +33,20 @@ namespace Model
    * <code>UpdateTable</code> action in the destination Region.</p> </li> <li> <p>An
    * existing replica to be deleted. The request invokes the
    * <code>DeleteTableReplica</code> action in the destination Region, deleting the
-   * replica and all if its items in the destination Region.</p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * replica and all if its items in the destination Region.</p> </li> </ul> 
+   * <p>When you manually remove a table or global table replica, you do not
+   * automatically remove any associated scalable targets, scaling policies, or
+   * CloudWatch alarms.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicationGroupUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicationGroupUpdate
+  class ReplicationGroupUpdate
   {
   public:
-    ReplicationGroupUpdate();
-    ReplicationGroupUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationGroupUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicationGroupUpdate();
+    AWS_DYNAMODB_API ReplicationGroupUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicationGroupUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +144,13 @@ namespace Model
   private:
 
     CreateReplicationGroupMemberAction m_create;
-    bool m_createHasBeenSet;
+    bool m_createHasBeenSet = false;
 
     UpdateReplicationGroupMemberAction m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
 
     DeleteReplicationGroupMemberAction m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

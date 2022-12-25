@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ApplicationVersionDescription
+  class ApplicationVersionDescription
   {
   public:
-    ApplicationVersionDescription();
-    ApplicationVersionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ApplicationVersionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription();
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -502,34 +502,34 @@ namespace Model
   private:
 
     Aws::String m_applicationVersionArn;
-    bool m_applicationVersionArnHasBeenSet;
+    bool m_applicationVersionArnHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_versionLabel;
-    bool m_versionLabelHasBeenSet;
+    bool m_versionLabelHasBeenSet = false;
 
     SourceBuildInformation m_sourceBuildInformation;
-    bool m_sourceBuildInformationHasBeenSet;
+    bool m_sourceBuildInformationHasBeenSet = false;
 
     Aws::String m_buildArn;
-    bool m_buildArnHasBeenSet;
+    bool m_buildArnHasBeenSet = false;
 
     S3Location m_sourceBundle;
-    bool m_sourceBundleHasBeenSet;
+    bool m_sourceBundleHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateUpdated;
-    bool m_dateUpdatedHasBeenSet;
+    bool m_dateUpdatedHasBeenSet = false;
 
     ApplicationVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

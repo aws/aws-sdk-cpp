@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API StartAppAssessmentRequest : public ResilienceHubRequest
+  class StartAppAssessmentRequest : public ResilienceHubRequest
   {
   public:
-    StartAppAssessmentRequest();
+    AWS_RESILIENCEHUB_API StartAppAssessmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartAppAssessment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -335,19 +335,19 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

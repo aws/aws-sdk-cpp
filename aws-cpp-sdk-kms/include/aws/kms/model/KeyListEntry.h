@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/KeyListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API KeyListEntry
+  class KeyListEntry
   {
   public:
-    KeyListEntry();
-    KeyListEntry(Aws::Utils::Json::JsonView jsonValue);
-    KeyListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API KeyListEntry();
+    AWS_KMS_API KeyListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API KeyListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_keyArn;
-    bool m_keyArnHasBeenSet;
+    bool m_keyArnHasBeenSet = false;
   };
 
 } // namespace Model

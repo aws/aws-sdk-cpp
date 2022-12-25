@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCACertificatesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListCACertificatesRequest : public IoTRequest
+  class ListCACertificatesRequest : public IoTRequest
   {
   public:
-    ListCACertificatesRequest();
+    AWS_IOT_API ListCACertificatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListCACertificates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -123,16 +123,60 @@ namespace Model
      */
     inline ListCACertificatesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline ListCACertificatesRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline ListCACertificatesRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the provisioning template.</p>
+     */
+    inline ListCACertificatesRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
   private:
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_ascendingOrder;
-    bool m_ascendingOrderHasBeenSet;
+    bool m_ascendingOrderHasBeenSet = false;
+
+    Aws::String m_templateName;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

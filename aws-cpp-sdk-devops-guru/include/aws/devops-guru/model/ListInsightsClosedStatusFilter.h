@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsClosedStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListInsightsClosedStatusFilter
+  class ListInsightsClosedStatusFilter
   {
   public:
-    ListInsightsClosedStatusFilter();
-    ListInsightsClosedStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListInsightsClosedStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListInsightsClosedStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsClosedStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListInsightsClosedStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     InsightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EndTimeRange m_endTimeRange;
-    bool m_endTimeRangeHasBeenSet;
+    bool m_endTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

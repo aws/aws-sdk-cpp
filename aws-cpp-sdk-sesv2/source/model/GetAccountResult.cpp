@@ -76,6 +76,12 @@ GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("VdmAttributes"))
+  {
+    m_vdmAttributes = jsonValue.GetObject("VdmAttributes");
+
+  }
+
 
 
   return *this;

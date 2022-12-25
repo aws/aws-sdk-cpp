@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/IPSet">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API IPSet
+  class IPSet
   {
   public:
-    IPSet();
-    IPSet(Aws::Utils::Json::JsonView jsonValue);
-    IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API IPSet();
+    AWS_NETWORKFIREWALL_API IPSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API AssociateAlias2020_05_31Request : public CloudFrontRequest
+  class AssociateAlias2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AssociateAlias2020_05_31Request();
+    AWS_CLOUDFRONT_API AssociateAlias2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,48 +33,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateAlias"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline const Aws::String& GetTargetDistributionId() const{ return m_targetDistributionId; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline bool TargetDistributionIdHasBeenSet() const { return m_targetDistributionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(const Aws::String& value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId = value; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(Aws::String&& value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId = std::move(value); }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(const char* value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId.assign(value); }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(const Aws::String& value) { SetTargetDistributionId(value); return *this;}
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(Aws::String&& value) { SetTargetDistributionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(const char* value) { SetTargetDistributionId(value); return *this;}
 
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_targetDistributionId;
-    bool m_targetDistributionIdHasBeenSet;
+    bool m_targetDistributionIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

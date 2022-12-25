@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/NumberFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API NumberFilter
+  class NumberFilter
   {
   public:
-    NumberFilter();
-    NumberFilter(Aws::Utils::Json::JsonView jsonValue);
-    NumberFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API NumberFilter();
+    AWS_INSPECTOR2_API NumberFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API NumberFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     double m_lowerInclusive;
-    bool m_lowerInclusiveHasBeenSet;
+    bool m_lowerInclusiveHasBeenSet = false;
 
     double m_upperInclusive;
-    bool m_upperInclusiveHasBeenSet;
+    bool m_upperInclusiveHasBeenSet = false;
   };
 
 } // namespace Model

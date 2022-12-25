@@ -8,6 +8,7 @@
 #include <aws/iottwinmaker/IoTTwinMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iottwinmaker/model/TabularConditions.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTTWINMAKER_API GetPropertyValueRequest : public IoTTwinMakerRequest
+  class GetPropertyValueRequest : public IoTTwinMakerRequest
   {
   public:
-    GetPropertyValueRequest();
+    AWS_IOTTWINMAKER_API GetPropertyValueRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetPropertyValue"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTTWINMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -242,22 +243,172 @@ namespace Model
      */
     inline GetPropertyValueRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     * <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+     */
+    inline GetPropertyValueRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline const Aws::String& GetPropertyGroupName() const{ return m_propertyGroupName; }
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline bool PropertyGroupNameHasBeenSet() const { return m_propertyGroupNameHasBeenSet; }
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline void SetPropertyGroupName(const Aws::String& value) { m_propertyGroupNameHasBeenSet = true; m_propertyGroupName = value; }
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline void SetPropertyGroupName(Aws::String&& value) { m_propertyGroupNameHasBeenSet = true; m_propertyGroupName = std::move(value); }
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline void SetPropertyGroupName(const char* value) { m_propertyGroupNameHasBeenSet = true; m_propertyGroupName.assign(value); }
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline GetPropertyValueRequest& WithPropertyGroupName(const Aws::String& value) { SetPropertyGroupName(value); return *this;}
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline GetPropertyValueRequest& WithPropertyGroupName(Aws::String&& value) { SetPropertyGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The property group name.</p>
+     */
+    inline GetPropertyValueRequest& WithPropertyGroupName(const char* value) { SetPropertyGroupName(value); return *this;}
+
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline const TabularConditions& GetTabularConditions() const{ return m_tabularConditions; }
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline bool TabularConditionsHasBeenSet() const { return m_tabularConditionsHasBeenSet; }
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline void SetTabularConditions(const TabularConditions& value) { m_tabularConditionsHasBeenSet = true; m_tabularConditions = value; }
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline void SetTabularConditions(TabularConditions&& value) { m_tabularConditionsHasBeenSet = true; m_tabularConditions = std::move(value); }
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline GetPropertyValueRequest& WithTabularConditions(const TabularConditions& value) { SetTabularConditions(value); return *this;}
+
+    /**
+     * <p>The tabular conditions.</p>
+     */
+    inline GetPropertyValueRequest& WithTabularConditions(TabularConditions&& value) { SetTabularConditions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedProperties;
-    bool m_selectedPropertiesHasBeenSet;
+    bool m_selectedPropertiesHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_propertyGroupName;
+    bool m_propertyGroupNameHasBeenSet = false;
+
+    TabularConditions m_tabularConditions;
+    bool m_tabularConditionsHasBeenSet = false;
   };
 
 } // namespace Model

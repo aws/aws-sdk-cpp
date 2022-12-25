@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateEnteredEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API StateEnteredEventDetails
+  class StateEnteredEventDetails
   {
   public:
-    StateEnteredEventDetails();
-    StateEnteredEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    StateEnteredEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API StateEnteredEventDetails();
+    AWS_SFN_API StateEnteredEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API StateEnteredEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_inputDetails;
-    bool m_inputDetailsHasBeenSet;
+    bool m_inputDetailsHasBeenSet = false;
   };
 
 } // namespace Model

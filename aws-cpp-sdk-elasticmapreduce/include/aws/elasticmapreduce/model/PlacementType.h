@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PlacementType">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API PlacementType
+  class PlacementType
   {
   public:
-    PlacementType();
-    PlacementType(Aws::Utils::Json::JsonView jsonValue);
-    PlacementType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API PlacementType();
+    AWS_EMR_API PlacementType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API PlacementType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,10 +189,10 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

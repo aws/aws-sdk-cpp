@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API DeleteAssessmentFrameworkShareRequest : public AuditManagerRequest
+  class DeleteAssessmentFrameworkShareRequest : public AuditManagerRequest
   {
   public:
-    DeleteAssessmentFrameworkShareRequest();
+    AWS_AUDITMANAGER_API DeleteAssessmentFrameworkShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAssessmentFrameworkShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_AUDITMANAGER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     ShareRequestType m_requestType;
-    bool m_requestTypeHasBeenSet;
+    bool m_requestTypeHasBeenSet = false;
   };
 
 } // namespace Model

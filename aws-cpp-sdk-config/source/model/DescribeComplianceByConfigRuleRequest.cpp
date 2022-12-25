@@ -25,7 +25,7 @@ Aws::String DescribeComplianceByConfigRuleRequest::SerializePayload() const
 
   if(m_configRuleNamesHasBeenSet)
   {
-   Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
    for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
    {
      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
@@ -36,7 +36,7 @@ Aws::String DescribeComplianceByConfigRuleRequest::SerializePayload() const
 
   if(m_complianceTypesHasBeenSet)
   {
-   Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
+   Aws::Utils::Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
    for(unsigned complianceTypesIndex = 0; complianceTypesIndex < complianceTypesJsonList.GetLength(); ++complianceTypesIndex)
    {
      complianceTypesJsonList[complianceTypesIndex].AsString(ComplianceTypeMapper::GetNameForComplianceType(m_complianceTypes[complianceTypesIndex]));

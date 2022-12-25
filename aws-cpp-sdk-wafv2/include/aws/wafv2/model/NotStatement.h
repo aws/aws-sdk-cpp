@@ -31,49 +31,49 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/NotStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API NotStatement
+  class NotStatement
   {
   public:
-    NotStatement();
-    NotStatement(Aws::Utils::Json::JsonView jsonValue);
-    NotStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API NotStatement();
+    AWS_WAFV2_API NotStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API NotStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    const Statement& GetStatement() const;
+    AWS_WAFV2_API const Statement& GetStatement() const;
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    bool StatementHasBeenSet() const;
+    AWS_WAFV2_API bool StatementHasBeenSet() const;
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    void SetStatement(const Statement& value);
+    AWS_WAFV2_API void SetStatement(const Statement& value);
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    void SetStatement(Statement&& value);
+    AWS_WAFV2_API void SetStatement(Statement&& value);
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    NotStatement& WithStatement(const Statement& value);
+    AWS_WAFV2_API NotStatement& WithStatement(const Statement& value);
 
     /**
      * <p>The statement to negate. You can use any statement that can be nested.</p>
      */
-    NotStatement& WithStatement(Statement&& value);
+    AWS_WAFV2_API NotStatement& WithStatement(Statement&& value);
 
   private:
 
     std::shared_ptr<Statement> m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
   };
 
 } // namespace Model

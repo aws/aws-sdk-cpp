@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API CreatePackageRequest : public ElasticsearchServiceRequest
+  class CreatePackageRequest : public ElasticsearchServiceRequest
   {
   public:
-    CreatePackageRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreatePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
   };
 
 } // namespace Model

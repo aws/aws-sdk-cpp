@@ -27,17 +27,19 @@ namespace Model
    * <p>Identifies the part of speech represented by the token and gives the
    * confidence that Amazon Comprehend has that the part of speech was correctly
    * identified. For more information about the parts of speech that Amazon
-   * Comprehend can identify, see <a>how-syntax</a>.</p><p><h3>See Also:</h3>   <a
+   * Comprehend can identify, see <a
+   * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+   * in the Comprehend Developer Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PartOfSpeechTag">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API PartOfSpeechTag
+  class PartOfSpeechTag
   {
   public:
-    PartOfSpeechTag();
-    PartOfSpeechTag(Aws::Utils::Json::JsonView jsonValue);
-    PartOfSpeechTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API PartOfSpeechTag();
+    AWS_COMPREHEND_API PartOfSpeechTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API PartOfSpeechTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +100,10 @@ namespace Model
   private:
 
     PartOfSpeechTagType m_tag;
-    bool m_tagHasBeenSet;
+    bool m_tagHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

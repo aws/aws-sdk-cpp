@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyPrivateDnsNameOptionsRequest : public EC2Request
+  class ModifyPrivateDnsNameOptionsRequest : public EC2Request
   {
   public:
-    ModifyPrivateDnsNameOptionsRequest();
+    AWS_EC2_API ModifyPrivateDnsNameOptionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyPrivateDnsNameOptions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -218,19 +218,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HostnameType m_privateDnsHostnameType;
-    bool m_privateDnsHostnameTypeHasBeenSet;
+    bool m_privateDnsHostnameTypeHasBeenSet = false;
 
     bool m_enableResourceNameDnsARecord;
-    bool m_enableResourceNameDnsARecordHasBeenSet;
+    bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
     bool m_enableResourceNameDnsAAAARecord;
-    bool m_enableResourceNameDnsAAAARecordHasBeenSet;
+    bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
   };
 
 } // namespace Model

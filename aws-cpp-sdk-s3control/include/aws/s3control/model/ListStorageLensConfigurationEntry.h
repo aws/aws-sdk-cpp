@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurationEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API ListStorageLensConfigurationEntry
+  class ListStorageLensConfigurationEntry
   {
   public:
-    ListStorageLensConfigurationEntry();
-    ListStorageLensConfigurationEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ListStorageLensConfigurationEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ListStorageLensConfigurationEntry();
+    AWS_S3CONTROL_API ListStorageLensConfigurationEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ListStorageLensConfigurationEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_storageLensArn;
-    bool m_storageLensArnHasBeenSet;
+    bool m_storageLensArnHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API ListContactFlowsRequest : public ConnectRequest
+  class ListContactFlowsRequest : public ConnectRequest
   {
   public:
-    ListContactFlowsRequest();
+    AWS_CONNECT_API ListContactFlowsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListContactFlows"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline const Aws::Vector<ContactFlowType>& GetContactFlowTypes() const{ return m_contactFlowTypes; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline bool ContactFlowTypesHasBeenSet() const { return m_contactFlowTypesHasBeenSet; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline void SetContactFlowTypes(const Aws::Vector<ContactFlowType>& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes = value; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline void SetContactFlowTypes(Aws::Vector<ContactFlowType>&& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes = std::move(value); }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& WithContactFlowTypes(const Aws::Vector<ContactFlowType>& value) { SetContactFlowTypes(value); return *this;}
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& WithContactFlowTypes(Aws::Vector<ContactFlowType>&& value) { SetContactFlowTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& AddContactFlowTypes(const ContactFlowType& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of contact flow.</p>
+     * <p>The type of flow.</p>
      */
     inline ListContactFlowsRequest& AddContactFlowTypes(ContactFlowType&& value) { m_contactFlowTypesHasBeenSet = true; m_contactFlowTypes.push_back(std::move(value)); return *this; }
 
@@ -180,38 +180,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page. The default MaxResult size
+     * is 100.</p>
      */
     inline ListContactFlowsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<ContactFlowType> m_contactFlowTypes;
-    bool m_contactFlowTypesHasBeenSet;
+    bool m_contactFlowTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

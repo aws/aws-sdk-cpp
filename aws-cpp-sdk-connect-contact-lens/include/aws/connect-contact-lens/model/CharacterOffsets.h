@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/CharacterOffsets">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API CharacterOffsets
+  class CharacterOffsets
   {
   public:
-    CharacterOffsets();
-    CharacterOffsets(Aws::Utils::Json::JsonView jsonValue);
-    CharacterOffsets& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API CharacterOffsets();
+    AWS_CONNECTCONTACTLENS_API CharacterOffsets(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API CharacterOffsets& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_beginOffsetChar;
-    bool m_beginOffsetCharHasBeenSet;
+    bool m_beginOffsetCharHasBeenSet = false;
 
     int m_endOffsetChar;
-    bool m_endOffsetCharHasBeenSet;
+    bool m_endOffsetCharHasBeenSet = false;
   };
 
 } // namespace Model

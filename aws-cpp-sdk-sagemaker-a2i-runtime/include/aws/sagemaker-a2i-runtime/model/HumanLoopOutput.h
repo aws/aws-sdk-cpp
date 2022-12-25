@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutput
+  class HumanLoopOutput
   {
   public:
-    HumanLoopOutput();
-    HumanLoopOutput(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutput();
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_outputS3Uri;
-    bool m_outputS3UriHasBeenSet;
+    bool m_outputS3UriHasBeenSet = false;
   };
 
 } // namespace Model

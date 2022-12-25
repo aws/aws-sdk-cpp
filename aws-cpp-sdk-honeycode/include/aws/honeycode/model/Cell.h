@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/Cell">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API Cell
+  class Cell
   {
   public:
-    Cell();
-    Cell(Aws::Utils::Json::JsonView jsonValue);
-    Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API Cell();
+    AWS_HONEYCODE_API Cell(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -682,19 +682,19 @@ namespace Model
   private:
 
     Aws::String m_formula;
-    bool m_formulaHasBeenSet;
+    bool m_formulaHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
 
     Aws::String m_formattedValue;
-    bool m_formattedValueHasBeenSet;
+    bool m_formattedValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_formattedValues;
-    bool m_formattedValuesHasBeenSet;
+    bool m_formattedValuesHasBeenSet = false;
   };
 
 } // namespace Model

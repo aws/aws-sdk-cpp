@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BudgetDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API BudgetDetail
+  class BudgetDetail
   {
   public:
-    BudgetDetail();
-    BudgetDetail(Aws::Utils::Json::JsonView jsonValue);
-    BudgetDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API BudgetDetail();
+    AWS_SERVICECATALOG_API BudgetDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API BudgetDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
   };
 
 } // namespace Model

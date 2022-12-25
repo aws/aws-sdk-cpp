@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ExternalEventsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ExternalEventsDetail
+  class ExternalEventsDetail
   {
   public:
-    ExternalEventsDetail();
-    ExternalEventsDetail(Aws::Utils::Json::JsonView jsonValue);
-    ExternalEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail();
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_dataLocation;
-    bool m_dataLocationHasBeenSet;
+    bool m_dataLocationHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

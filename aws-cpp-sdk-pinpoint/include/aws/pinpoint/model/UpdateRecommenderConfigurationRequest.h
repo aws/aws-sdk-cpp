@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API UpdateRecommenderConfigurationRequest : public PinpointRequest
+  class UpdateRecommenderConfigurationRequest : public PinpointRequest
   {
   public:
-    UpdateRecommenderConfigurationRequest();
+    AWS_PINPOINT_API UpdateRecommenderConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRecommenderConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     UpdateRecommenderConfiguration m_updateRecommenderConfiguration;
-    bool m_updateRecommenderConfigurationHasBeenSet;
+    bool m_updateRecommenderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

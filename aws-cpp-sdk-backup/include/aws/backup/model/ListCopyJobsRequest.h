@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API ListCopyJobsRequest : public BackupRequest
+  class ListCopyJobsRequest : public BackupRequest
   {
   public:
-    ListCopyJobsRequest();
+    AWS_BACKUP_API ListCopyJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListCopyJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -576,40 +576,84 @@ namespace Model
      */
     inline ListCopyJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline const Aws::String& GetByParentJobId() const{ return m_byParentJobId; }
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline bool ByParentJobIdHasBeenSet() const { return m_byParentJobIdHasBeenSet; }
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline void SetByParentJobId(const Aws::String& value) { m_byParentJobIdHasBeenSet = true; m_byParentJobId = value; }
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline void SetByParentJobId(Aws::String&& value) { m_byParentJobIdHasBeenSet = true; m_byParentJobId = std::move(value); }
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline void SetByParentJobId(const char* value) { m_byParentJobIdHasBeenSet = true; m_byParentJobId.assign(value); }
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline ListCopyJobsRequest& WithByParentJobId(const Aws::String& value) { SetByParentJobId(value); return *this;}
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline ListCopyJobsRequest& WithByParentJobId(Aws::String&& value) { SetByParentJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+     */
+    inline ListCopyJobsRequest& WithByParentJobId(const char* value) { SetByParentJobId(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_byResourceArn;
-    bool m_byResourceArnHasBeenSet;
+    bool m_byResourceArnHasBeenSet = false;
 
     CopyJobState m_byState;
-    bool m_byStateHasBeenSet;
+    bool m_byStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
-    bool m_byCreatedBeforeHasBeenSet;
+    bool m_byCreatedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedAfter;
-    bool m_byCreatedAfterHasBeenSet;
+    bool m_byCreatedAfterHasBeenSet = false;
 
     Aws::String m_byResourceType;
-    bool m_byResourceTypeHasBeenSet;
+    bool m_byResourceTypeHasBeenSet = false;
 
     Aws::String m_byDestinationVaultArn;
-    bool m_byDestinationVaultArnHasBeenSet;
+    bool m_byDestinationVaultArnHasBeenSet = false;
 
     Aws::String m_byAccountId;
-    bool m_byAccountIdHasBeenSet;
+    bool m_byAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteBefore;
-    bool m_byCompleteBeforeHasBeenSet;
+    bool m_byCompleteBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteAfter;
-    bool m_byCompleteAfterHasBeenSet;
+    bool m_byCompleteAfterHasBeenSet = false;
+
+    Aws::String m_byParentJobId;
+    bool m_byParentJobIdHasBeenSet = false;
   };
 
 } // namespace Model

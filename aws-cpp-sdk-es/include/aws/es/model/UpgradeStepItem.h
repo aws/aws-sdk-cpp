@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeStepItem">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem
+  class UpgradeStepItem
   {
   public:
-    UpgradeStepItem();
-    UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
-    UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     UpgradeStep m_upgradeStep;
-    bool m_upgradeStepHasBeenSet;
+    bool m_upgradeStepHasBeenSet = false;
 
     UpgradeStatus m_upgradeStepStatus;
-    bool m_upgradeStepStatusHasBeenSet;
+    bool m_upgradeStepStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
 
     double m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

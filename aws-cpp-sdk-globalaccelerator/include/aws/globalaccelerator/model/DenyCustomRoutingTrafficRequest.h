@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API DenyCustomRoutingTrafficRequest : public GlobalAcceleratorRequest
+  class DenyCustomRoutingTrafficRequest : public GlobalAcceleratorRequest
   {
   public:
-    DenyCustomRoutingTrafficRequest();
+    AWS_GLOBALACCELERATOR_API DenyCustomRoutingTrafficRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DenyCustomRoutingTraffic"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -300,19 +300,19 @@ namespace Model
   private:
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationAddresses;
-    bool m_destinationAddressesHasBeenSet;
+    bool m_destinationAddressesHasBeenSet = false;
 
     Aws::Vector<int> m_destinationPorts;
-    bool m_destinationPortsHasBeenSet;
+    bool m_destinationPortsHasBeenSet = false;
 
     bool m_denyAllTrafficToEndpoint;
-    bool m_denyAllTrafficToEndpointHasBeenSet;
+    bool m_denyAllTrafficToEndpointHasBeenSet = false;
   };
 
 } // namespace Model

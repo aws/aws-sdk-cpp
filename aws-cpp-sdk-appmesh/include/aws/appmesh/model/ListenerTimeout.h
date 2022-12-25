@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTimeout">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListenerTimeout
+  class ListenerTimeout
   {
   public:
-    ListenerTimeout();
-    ListenerTimeout(Aws::Utils::Json::JsonView jsonValue);
-    ListenerTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ListenerTimeout();
+    AWS_APPMESH_API ListenerTimeout(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ListenerTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     GrpcTimeout m_grpc;
-    bool m_grpcHasBeenSet;
+    bool m_grpcHasBeenSet = false;
 
     HttpTimeout m_http;
-    bool m_httpHasBeenSet;
+    bool m_httpHasBeenSet = false;
 
     HttpTimeout m_http2;
-    bool m_http2HasBeenSet;
+    bool m_http2HasBeenSet = false;
 
     TcpTimeout m_tcp;
-    bool m_tcpHasBeenSet;
+    bool m_tcpHasBeenSet = false;
   };
 
 } // namespace Model

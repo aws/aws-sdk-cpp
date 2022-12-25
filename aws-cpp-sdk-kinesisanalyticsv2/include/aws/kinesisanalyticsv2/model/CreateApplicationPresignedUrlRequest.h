@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlRequest : public KinesisAnalyticsV2Request
+  class CreateApplicationPresignedUrlRequest : public KinesisAnalyticsV2Request
   {
   public:
-    CreateApplicationPresignedUrlRequest();
+    AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplicationPresignedUrl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -136,13 +136,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     UrlType m_urlType;
-    bool m_urlTypeHasBeenSet;
+    bool m_urlTypeHasBeenSet = false;
 
     long long m_sessionExpirationDurationInSeconds;
-    bool m_sessionExpirationDurationInSecondsHasBeenSet;
+    bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisioningArtifactParameter
+  class ProvisioningArtifactParameter
   {
   public:
-    ProvisioningArtifactParameter();
-    ProvisioningArtifactParameter(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningArtifactParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisioningArtifactParameter();
+    AWS_SERVICECATALOG_API ProvisioningArtifactParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisioningArtifactParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_parameterKey;
-    bool m_parameterKeyHasBeenSet;
+    bool m_parameterKeyHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_parameterType;
-    bool m_parameterTypeHasBeenSet;
+    bool m_parameterTypeHasBeenSet = false;
 
     bool m_isNoEcho;
-    bool m_isNoEchoHasBeenSet;
+    bool m_isNoEchoHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParameterConstraints m_parameterConstraints;
-    bool m_parameterConstraintsHasBeenSet;
+    bool m_parameterConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

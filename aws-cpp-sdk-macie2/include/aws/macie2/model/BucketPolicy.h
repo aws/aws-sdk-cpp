@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketPolicy
+  class BucketPolicy
   {
   public:
-    BucketPolicy();
-    BucketPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BucketPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketPolicy();
+    AWS_MACIE2_API BucketPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_allowsPublicReadAccess;
-    bool m_allowsPublicReadAccessHasBeenSet;
+    bool m_allowsPublicReadAccessHasBeenSet = false;
 
     bool m_allowsPublicWriteAccess;
-    bool m_allowsPublicWriteAccessHasBeenSet;
+    bool m_allowsPublicWriteAccessHasBeenSet = false;
   };
 
 } // namespace Model

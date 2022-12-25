@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NotifyEmailType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType
+  class NotifyEmailType
   {
   public:
-    NotifyEmailType();
-    NotifyEmailType(Aws::Utils::Json::JsonView jsonValue);
-    NotifyEmailType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType();
+    AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API NotifyEmailType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_htmlBody;
-    bool m_htmlBodyHasBeenSet;
+    bool m_htmlBodyHasBeenSet = false;
 
     Aws::String m_textBody;
-    bool m_textBodyHasBeenSet;
+    bool m_textBodyHasBeenSet = false;
   };
 
 } // namespace Model

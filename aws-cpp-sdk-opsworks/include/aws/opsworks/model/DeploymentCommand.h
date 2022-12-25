@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeploymentCommand">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DeploymentCommand
+  class DeploymentCommand
   {
   public:
-    DeploymentCommand();
-    DeploymentCommand(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API DeploymentCommand();
+    AWS_OPSWORKS_API DeploymentCommand(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API DeploymentCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -434,10 +434,10 @@ namespace Model
   private:
 
     DeploymentCommandName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

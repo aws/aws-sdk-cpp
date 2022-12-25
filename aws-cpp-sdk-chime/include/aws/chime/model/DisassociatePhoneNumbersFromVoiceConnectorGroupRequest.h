@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API DisassociatePhoneNumbersFromVoiceConnectorGroupRequest : public ChimeRequest
+  class DisassociatePhoneNumbersFromVoiceConnectorGroupRequest : public ChimeRequest
   {
   public:
-    DisassociatePhoneNumbersFromVoiceConnectorGroupRequest();
+    AWS_CHIME_API DisassociatePhoneNumbersFromVoiceConnectorGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociatePhoneNumbersFromVoiceConnectorGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorGroupId;
-    bool m_voiceConnectorGroupIdHasBeenSet;
+    bool m_voiceConnectorGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;
-    bool m_e164PhoneNumbersHasBeenSet;
+    bool m_e164PhoneNumbersHasBeenSet = false;
   };
 
 } // namespace Model

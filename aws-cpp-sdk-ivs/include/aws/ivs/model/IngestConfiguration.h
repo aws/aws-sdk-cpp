@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/IngestConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API IngestConfiguration
+  class IngestConfiguration
   {
   public:
-    IngestConfiguration();
-    IngestConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    IngestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API IngestConfiguration();
+    AWS_IVS_API IngestConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API IngestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AudioConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BinaryColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BinaryColumnStatisticsData
+  class BinaryColumnStatisticsData
   {
   public:
-    BinaryColumnStatisticsData();
-    BinaryColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    BinaryColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BinaryColumnStatisticsData();
+    AWS_GLUE_API BinaryColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BinaryColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_maximumLength;
-    bool m_maximumLengthHasBeenSet;
+    bool m_maximumLengthHasBeenSet = false;
 
     double m_averageLength;
-    bool m_averageLengthHasBeenSet;
+    bool m_averageLengthHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
   };
 
 } // namespace Model

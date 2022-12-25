@@ -24,22 +24,21 @@ namespace Model
 {
 
   /**
-   * <p>Represents status information for a VPC peering connection. Status is
-   * associated with a <a>VpcPeeringConnection</a> object. Status codes and messages
-   * are provided from EC2 (see <a
+   * <p>Represents status information for a VPC peering connection. Status codes and
+   * messages are provided from EC2 (see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>).
    * Connection status information is also communicated as a fleet
-   * <a>Event</a>.</p><p><h3>See Also:</h3>   <a
+   * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnectionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API VpcPeeringConnectionStatus
+  class VpcPeeringConnectionStatus
   {
   public:
-    VpcPeeringConnectionStatus();
-    VpcPeeringConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
-    VpcPeeringConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API VpcPeeringConnectionStatus();
+    AWS_GAMELIFT_API VpcPeeringConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API VpcPeeringConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

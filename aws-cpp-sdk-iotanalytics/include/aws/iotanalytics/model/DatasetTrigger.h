@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetTrigger
+  class DatasetTrigger
   {
   public:
-    DatasetTrigger();
-    DatasetTrigger(Aws::Utils::Json::JsonView jsonValue);
-    DatasetTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetTrigger();
+    AWS_IOTANALYTICS_API DatasetTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     TriggeringDataset m_dataset;
-    bool m_datasetHasBeenSet;
+    bool m_datasetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpQueryParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpQueryParameter
+  class HttpQueryParameter
   {
   public:
-    HttpQueryParameter();
-    HttpQueryParameter(Aws::Utils::Json::JsonView jsonValue);
-    HttpQueryParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpQueryParameter();
+    AWS_APPMESH_API HttpQueryParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpQueryParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     QueryParameterMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

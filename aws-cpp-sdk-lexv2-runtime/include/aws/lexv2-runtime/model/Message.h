@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Message">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Message
+  class Message
   {
   public:
-    Message();
-    Message(Aws::Utils::Json::JsonView jsonValue);
-    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Message();
+    AWS_LEXRUNTIMEV2_API Message(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     MessageContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     ImageResponseCard m_imageResponseCard;
-    bool m_imageResponseCardHasBeenSet;
+    bool m_imageResponseCardHasBeenSet = false;
   };
 
 } // namespace Model

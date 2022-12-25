@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API DescribeEffectivePolicyRequest : public OrganizationsRequest
+  class DescribeEffectivePolicyRequest : public OrganizationsRequest
   {
   public:
-    DescribeEffectivePolicyRequest();
+    AWS_ORGANIZATIONS_API DescribeEffectivePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEffectivePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ORGANIZATIONS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     EffectivePolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
   };
 
 } // namespace Model

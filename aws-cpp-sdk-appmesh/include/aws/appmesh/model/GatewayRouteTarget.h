@@ -29,13 +29,34 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GatewayRouteTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GatewayRouteTarget
+  class GatewayRouteTarget
   {
   public:
-    GatewayRouteTarget();
-    GatewayRouteTarget(Aws::Utils::Json::JsonView jsonValue);
-    GatewayRouteTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GatewayRouteTarget();
+    AWS_APPMESH_API GatewayRouteTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GatewayRouteTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number of the gateway route target.</p>
+     */
+    inline GatewayRouteTarget& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -70,8 +91,11 @@ namespace Model
 
   private:
 
+    int m_port;
+    bool m_portHasBeenSet = false;
+
     GatewayRouteVirtualService m_virtualService;
-    bool m_virtualServiceHasBeenSet;
+    bool m_virtualServiceHasBeenSet = false;
   };
 
 } // namespace Model

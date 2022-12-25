@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API GetConfigRequest : public GroundStationRequest
+  class GetConfigRequest : public GroundStationRequest
   {
   public:
-    GetConfigRequest();
+    AWS_GROUNDSTATION_API GetConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
   };
 
 } // namespace Model

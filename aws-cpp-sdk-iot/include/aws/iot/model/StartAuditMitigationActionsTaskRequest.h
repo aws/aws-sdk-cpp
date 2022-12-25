@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API StartAuditMitigationActionsTaskRequest : public IoTRequest
+  class StartAuditMitigationActionsTaskRequest : public IoTRequest
   {
   public:
-    StartAuditMitigationActionsTaskRequest();
+    AWS_IOT_API StartAuditMitigationActionsTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartAuditMitigationActionsTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     AuditMitigationActionsTaskTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToActionsMapping;
-    bool m_auditCheckToActionsMappingHasBeenSet;
+    bool m_auditCheckToActionsMappingHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

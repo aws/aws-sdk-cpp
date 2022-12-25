@@ -38,7 +38,9 @@ AwsLambdaFunctionDetails::AwsLambdaFunctionDetails() :
     m_timeoutHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_architecturesHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ AwsLambdaFunctionDetails::AwsLambdaFunctionDetails(JsonView jsonValue) :
     m_timeoutHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_architecturesHasBeenSet(false),
+    m_packageTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,7 +131,7 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("Layers"))
   {
-    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());
@@ -198,6 +202,23 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Architectures"))
+  {
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(architecturesJsonList[architecturesIndex].AsString());
+    }
+    m_architecturesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageType"))
+  {
+    m_packageType = jsonValue.GetString("PackageType");
+
+    m_packageTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,7 +276,7 @@ JsonValue AwsLambdaFunctionDetails::Jsonize() const
 
   if(m_layersHasBeenSet)
   {
-   Array<JsonValue> layersJsonList(m_layers.size());
+   Aws::Utils::Array<JsonValue> layersJsonList(m_layers.size());
    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
    {
      layersJsonList[layersIndex].AsObject(m_layers[layersIndex].Jsonize());
@@ -315,6 +336,23 @@ JsonValue AwsLambdaFunctionDetails::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
+
+  }
+
+  if(m_architecturesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
+   for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+   {
+     architecturesJsonList[architecturesIndex].AsString(m_architectures[architecturesIndex]);
+   }
+   payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_packageTypeHasBeenSet)
+  {
+   payload.WithString("PackageType", m_packageType);
 
   }
 

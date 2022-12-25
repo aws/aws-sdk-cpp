@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AutomatedAbrRule">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AutomatedAbrRule
+  class AutomatedAbrRule
   {
   public:
-    AutomatedAbrRule();
-    AutomatedAbrRule(Aws::Utils::Json::JsonView jsonValue);
-    AutomatedAbrRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AutomatedAbrRule();
+    AWS_MEDIACONVERT_API AutomatedAbrRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AutomatedAbrRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -494,19 +494,19 @@ namespace Model
   private:
 
     Aws::Vector<AllowedRenditionSize> m_allowedRenditions;
-    bool m_allowedRenditionsHasBeenSet;
+    bool m_allowedRenditionsHasBeenSet = false;
 
     Aws::Vector<ForceIncludeRenditionSize> m_forceIncludeRenditions;
-    bool m_forceIncludeRenditionsHasBeenSet;
+    bool m_forceIncludeRenditionsHasBeenSet = false;
 
     MinBottomRenditionSize m_minBottomRenditionSize;
-    bool m_minBottomRenditionSizeHasBeenSet;
+    bool m_minBottomRenditionSizeHasBeenSet = false;
 
     MinTopRenditionSize m_minTopRenditionSize;
-    bool m_minTopRenditionSizeHasBeenSet;
+    bool m_minTopRenditionSizeHasBeenSet = false;
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

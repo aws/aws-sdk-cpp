@@ -29,19 +29,18 @@ namespace Model
    * utilization. GameLift allows Amazon Web Services accounts a maximum number of
    * instances, per instance type, per Amazon Web Services Region or location, for
    * use with GameLift. You can request an limit increase for your account by using
-   * the <b>Service limits</b> page in the GameLift console.</p> <p> <b>Related
-   * actions</b> </p> <p> <a>DescribeEC2InstanceLimits</a> </p><p><h3>See Also:</h3> 
+   * the <b>Service limits</b> page in the GameLift console.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API EC2InstanceLimit
+  class EC2InstanceLimit
   {
   public:
-    EC2InstanceLimit();
-    EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
-    EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API EC2InstanceLimit();
+    AWS_GAMELIFT_API EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,16 +179,16 @@ namespace Model
   private:
 
     EC2InstanceType m_eC2InstanceType;
-    bool m_eC2InstanceTypeHasBeenSet;
+    bool m_eC2InstanceTypeHasBeenSet = false;
 
     int m_currentInstances;
-    bool m_currentInstancesHasBeenSet;
+    bool m_currentInstancesHasBeenSet = false;
 
     int m_instanceLimit;
-    bool m_instanceLimitHasBeenSet;
+    bool m_instanceLimitHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

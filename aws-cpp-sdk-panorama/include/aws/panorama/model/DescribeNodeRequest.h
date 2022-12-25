@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API DescribeNodeRequest : public PanoramaRequest
+  class DescribeNodeRequest : public PanoramaRequest
   {
   public:
-    DescribeNodeRequest();
+    AWS_PANORAMA_API DescribeNodeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeNode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PANORAMA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
   };
 
 } // namespace Model

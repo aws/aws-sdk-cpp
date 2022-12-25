@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/SuccessfulPackageVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API SuccessfulPackageVersionInfo
+  class SuccessfulPackageVersionInfo
   {
   public:
-    SuccessfulPackageVersionInfo();
-    SuccessfulPackageVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    SuccessfulPackageVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API SuccessfulPackageVersionInfo();
+    AWS_CODEARTIFACT_API SuccessfulPackageVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API SuccessfulPackageVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

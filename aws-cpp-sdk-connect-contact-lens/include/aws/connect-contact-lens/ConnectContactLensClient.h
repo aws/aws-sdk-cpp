@@ -5,63 +5,16 @@
 
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
-#include <aws/connect-contact-lens/ConnectContactLensErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/connect-contact-lens/ConnectContactLensServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ConnectContactLens
 {
-
-namespace Model
-{
-        class ListRealtimeContactAnalysisSegmentsRequest;
-
-        typedef Aws::Utils::Outcome<ListRealtimeContactAnalysisSegmentsResult, ConnectContactLensError> ListRealtimeContactAnalysisSegmentsOutcome;
-
-        typedef std::future<ListRealtimeContactAnalysisSegmentsOutcome> ListRealtimeContactAnalysisSegmentsOutcomeCallable;
-} // namespace Model
-
-  class ConnectContactLensClient;
-
-    typedef std::function<void(const ConnectContactLensClient*, const Model::ListRealtimeContactAnalysisSegmentsRequest&, const Model::ListRealtimeContactAnalysisSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRealtimeContactAnalysisSegmentsResponseReceivedHandler;
-
   /**
    * <p>Contact Lens for Amazon Connect enables you to analyze conversations between
    * customer and agents, by using speech transcription, natural language processing,
@@ -73,32 +26,60 @@ namespace Model
    * conversations using Contact Lens</a> in the <i>Amazon Connect Administrator
    * Guide</i>. </p>
    */
-  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectContactLensClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectContactLensClient(const Aws::ConnectContactLens::ConnectContactLensClientConfiguration& clientConfiguration = Aws::ConnectContactLens::ConnectContactLensClientConfiguration(),
+                                 std::shared_ptr<ConnectContactLensEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectContactLensClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectContactLensClient(const Aws::Auth::AWSCredentials& credentials,
+                                 std::shared_ptr<ConnectContactLensEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::ConnectContactLens::ConnectContactLensClientConfiguration& clientConfiguration = Aws::ConnectContactLens::ConnectContactLensClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConnectContactLensClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<ConnectContactLensEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectContactLensEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::ConnectContactLens::ConnectContactLensClientConfiguration& clientConfiguration = Aws::ConnectContactLens::ConnectContactLensClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectContactLensClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectContactLensClient(const Aws::Auth::AWSCredentials& credentials,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ConnectContactLensClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ConnectContactLensClient();
-
 
         /**
          * <p>Provides a list of analysis segments for a real-time analysis
@@ -120,13 +101,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ConnectContactLensEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ListRealtimeContactAnalysisSegmentsAsyncHelper(const Model::ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>;
+      void init(const ConnectContactLensClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ConnectContactLensClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ConnectContactLensEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectContactLens

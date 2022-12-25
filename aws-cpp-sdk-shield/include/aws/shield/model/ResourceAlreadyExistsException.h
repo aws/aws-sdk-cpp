@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ResourceAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ResourceAlreadyExistsException
+  class ResourceAlreadyExistsException
   {
   public:
-    ResourceAlreadyExistsException();
-    ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ResourceAlreadyExistsException();
+    AWS_SHIELD_API ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

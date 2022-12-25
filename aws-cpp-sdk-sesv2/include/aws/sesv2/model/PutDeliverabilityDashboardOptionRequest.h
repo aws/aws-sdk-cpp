@@ -31,10 +31,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOptionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutDeliverabilityDashboardOptionRequest : public SESV2Request
+  class PutDeliverabilityDashboardOptionRequest : public SESV2Request
   {
   public:
-    PutDeliverabilityDashboardOptionRequest();
+    AWS_SESV2_API PutDeliverabilityDashboardOptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDeliverabilityDashboardOption"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     bool m_dashboardEnabled;
-    bool m_dashboardEnabledHasBeenSet;
+    bool m_dashboardEnabledHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;
-    bool m_subscribedDomainsHasBeenSet;
+    bool m_subscribedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

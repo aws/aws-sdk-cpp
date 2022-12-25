@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveCdnSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ArchiveCdnSettings
+  class ArchiveCdnSettings
   {
   public:
-    ArchiveCdnSettings();
-    ArchiveCdnSettings(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ArchiveCdnSettings();
+    AWS_MEDIALIVE_API ArchiveCdnSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ArchiveCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     ArchiveS3Settings m_archiveS3Settings;
-    bool m_archiveS3SettingsHasBeenSet;
+    bool m_archiveS3SettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/S3SourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API S3SourceProperties
+  class S3SourceProperties
   {
   public:
-    S3SourceProperties();
-    S3SourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    S3SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API S3SourceProperties();
+    AWS_APPFLOW_API S3SourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API S3SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     S3InputFormatConfig m_s3InputFormatConfig;
-    bool m_s3InputFormatConfigHasBeenSet;
+    bool m_s3InputFormatConfigHasBeenSet = false;
   };
 
 } // namespace Model

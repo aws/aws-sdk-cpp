@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize-events/model/MetricAttribution.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Event">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZEEVENTS_API Event
+  class Event
   {
   public:
-    Event();
-    Event(Aws::Utils::Json::JsonView jsonValue);
-    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZEEVENTS_API Event();
+    AWS_PERSONALIZEEVENTS_API Event(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZEEVENTS_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,125 +382,293 @@ namespace Model
 
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline Event& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline Event& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the recommendation.</p>
+     * <p>The ID of the list of recommendations that contains the item the user
+     * interacted with. Provide a <code>recommendationId</code> to have Amazon
+     * Personalize implicitly record the recommendations you show your user as
+     * impressions data. Or provide a <code>recommendationId</code> if you use a metric
+     * attribution to measure the impact of recommendations. </p> <p> For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. For more information on creating a metric attribution see
+     * <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>. </p>
      */
     inline Event& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
 
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetImpression() const{ return m_impression; }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline bool ImpressionHasBeenSet() const { return m_impressionHasBeenSet; }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline void SetImpression(const Aws::Vector<Aws::String>& value) { m_impressionHasBeenSet = true; m_impression = value; }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline void SetImpression(Aws::Vector<Aws::String>&& value) { m_impressionHasBeenSet = true; m_impression = std::move(value); }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline Event& WithImpression(const Aws::Vector<Aws::String>& value) { SetImpression(value); return *this;}
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline Event& WithImpression(Aws::Vector<Aws::String>&& value) { SetImpression(std::move(value)); return *this;}
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline Event& AddImpression(const Aws::String& value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline Event& AddImpression(Aws::String&& value) { m_impressionHasBeenSet = true; m_impression.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of item IDs that represents the sequence of items you have shown the
-     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>.</p>
+     * user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a
+     * list of items to manually record impressions data for an event. For more
+     * information on recording impressions data, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+     * impressions data</a>. </p>
      */
     inline Event& AddImpression(const char* value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
+
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline const MetricAttribution& GetMetricAttribution() const{ return m_metricAttribution; }
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline bool MetricAttributionHasBeenSet() const { return m_metricAttributionHasBeenSet; }
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline void SetMetricAttribution(const MetricAttribution& value) { m_metricAttributionHasBeenSet = true; m_metricAttribution = value; }
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline void SetMetricAttribution(MetricAttribution&& value) { m_metricAttributionHasBeenSet = true; m_metricAttribution = std::move(value); }
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline Event& WithMetricAttribution(const MetricAttribution& value) { SetMetricAttribution(value); return *this;}
+
+    /**
+     * <p>Contains information about the metric attribution associated with an event.
+     * For more information about metric attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     * impact of recommendations</a>.</p>
+     */
+    inline Event& WithMetricAttribution(MetricAttribution&& value) { SetMetricAttribution(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     double m_eventValue;
-    bool m_eventValueHasBeenSet;
+    bool m_eventValueHasBeenSet = false;
 
     Aws::String m_itemId;
-    bool m_itemIdHasBeenSet;
+    bool m_itemIdHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_sentAt;
-    bool m_sentAtHasBeenSet;
+    bool m_sentAtHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_impression;
-    bool m_impressionHasBeenSet;
+    bool m_impressionHasBeenSet = false;
+
+    MetricAttribution m_metricAttribution;
+    bool m_metricAttributionHasBeenSet = false;
   };
 
 } // namespace Model

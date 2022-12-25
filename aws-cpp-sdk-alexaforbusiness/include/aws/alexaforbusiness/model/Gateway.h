@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Gateway">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Gateway
+  class Gateway
   {
   public:
-    Gateway();
-    Gateway(Aws::Utils::Json::JsonView jsonValue);
-    Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Gateway();
+    AWS_ALEXAFORBUSINESS_API Gateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Gateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_gatewayGroupArn;
-    bool m_gatewayGroupArnHasBeenSet;
+    bool m_gatewayGroupArnHasBeenSet = false;
 
     Aws::String m_softwareVersion;
-    bool m_softwareVersionHasBeenSet;
+    bool m_softwareVersionHasBeenSet = false;
   };
 
 } // namespace Model

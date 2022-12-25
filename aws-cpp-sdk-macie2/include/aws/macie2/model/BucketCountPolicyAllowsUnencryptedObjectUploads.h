@@ -28,81 +28,97 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountPolicyAllowsUnencryptedObjectUploads">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads
+  class BucketCountPolicyAllowsUnencryptedObjectUploads
   {
   public:
-    BucketCountPolicyAllowsUnencryptedObjectUploads();
-    BucketCountPolicyAllowsUnencryptedObjectUploads(Aws::Utils::Json::JsonView jsonValue);
-    BucketCountPolicyAllowsUnencryptedObjectUploads& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads();
+    AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketCountPolicyAllowsUnencryptedObjectUploads& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The total number of buckets that don't have a bucket policy or have a bucket
      * policy that doesn't require server-side encryption of new objects. If a bucket
-     * policy exists, the policy doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p>
+     * policy exists, the policy doesn't require PutObject requests to include a valid
+     * server-side encryption header: the x-amz-server-side-encryption header with a
+     * value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline long long GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
 
     /**
      * <p>The total number of buckets that don't have a bucket policy or have a bucket
      * policy that doesn't require server-side encryption of new objects. If a bucket
-     * policy exists, the policy doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p>
+     * policy exists, the policy doesn't require PutObject requests to include a valid
+     * server-side encryption header: the x-amz-server-side-encryption header with a
+     * value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
 
     /**
      * <p>The total number of buckets that don't have a bucket policy or have a bucket
      * policy that doesn't require server-side encryption of new objects. If a bucket
-     * policy exists, the policy doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p>
+     * policy exists, the policy doesn't require PutObject requests to include a valid
+     * server-side encryption header: the x-amz-server-side-encryption header with a
+     * value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline void SetAllowsUnencryptedObjectUploads(long long value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
 
     /**
      * <p>The total number of buckets that don't have a bucket policy or have a bucket
      * policy that doesn't require server-side encryption of new objects. If a bucket
-     * policy exists, the policy doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that
-     * header to be AES256 or aws:kms.</p>
+     * policy exists, the policy doesn't require PutObject requests to include a valid
+     * server-side encryption header: the x-amz-server-side-encryption header with a
+     * value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline BucketCountPolicyAllowsUnencryptedObjectUploads& WithAllowsUnencryptedObjectUploads(long long value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
 
 
     /**
      * <p>The total number of buckets whose bucket policies require server-side
-     * encryption of new objects. PutObject requests for these buckets must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256
-     * or aws:kms.</p>
+     * encryption of new objects. PutObject requests for these buckets must include a
+     * valid server-side encryption header: the x-amz-server-side-encryption header
+     * with a value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline long long GetDeniesUnencryptedObjectUploads() const{ return m_deniesUnencryptedObjectUploads; }
 
     /**
      * <p>The total number of buckets whose bucket policies require server-side
-     * encryption of new objects. PutObject requests for these buckets must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256
-     * or aws:kms.</p>
+     * encryption of new objects. PutObject requests for these buckets must include a
+     * valid server-side encryption header: the x-amz-server-side-encryption header
+     * with a value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline bool DeniesUnencryptedObjectUploadsHasBeenSet() const { return m_deniesUnencryptedObjectUploadsHasBeenSet; }
 
     /**
      * <p>The total number of buckets whose bucket policies require server-side
-     * encryption of new objects. PutObject requests for these buckets must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256
-     * or aws:kms.</p>
+     * encryption of new objects. PutObject requests for these buckets must include a
+     * valid server-side encryption header: the x-amz-server-side-encryption header
+     * with a value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline void SetDeniesUnencryptedObjectUploads(long long value) { m_deniesUnencryptedObjectUploadsHasBeenSet = true; m_deniesUnencryptedObjectUploads = value; }
 
     /**
      * <p>The total number of buckets whose bucket policies require server-side
-     * encryption of new objects. PutObject requests for these buckets must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256
-     * or aws:kms.</p>
+     * encryption of new objects. PutObject requests for these buckets must include a
+     * valid server-side encryption header: the x-amz-server-side-encryption header
+     * with a value of AES256 or aws:kms, or the
+     * x-amz-server-side-encryption-customer-algorithm header with a value of
+     * AES256.</p>
      */
     inline BucketCountPolicyAllowsUnencryptedObjectUploads& WithDeniesUnencryptedObjectUploads(long long value) { SetDeniesUnencryptedObjectUploads(value); return *this;}
 
@@ -142,13 +158,13 @@ namespace Model
   private:
 
     long long m_allowsUnencryptedObjectUploads;
-    bool m_allowsUnencryptedObjectUploadsHasBeenSet;
+    bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     long long m_deniesUnencryptedObjectUploads;
-    bool m_deniesUnencryptedObjectUploadsHasBeenSet;
+    bool m_deniesUnencryptedObjectUploadsHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

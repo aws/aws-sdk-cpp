@@ -30,7 +30,7 @@ ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("policyVersions"))
   {
-    Array<JsonView> policyVersionsJsonList = jsonValue.GetArray("policyVersions");
+    Aws::Utils::Array<JsonView> policyVersionsJsonList = jsonValue.GetArray("policyVersions");
     for(unsigned policyVersionsIndex = 0; policyVersionsIndex < policyVersionsJsonList.GetLength(); ++policyVersionsIndex)
     {
       m_policyVersions.push_back(policyVersionsJsonList[policyVersionsIndex].AsObject());

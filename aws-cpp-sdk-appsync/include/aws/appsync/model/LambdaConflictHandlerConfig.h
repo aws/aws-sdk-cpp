@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaConflictHandlerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API LambdaConflictHandlerConfig
+  class LambdaConflictHandlerConfig
   {
   public:
-    LambdaConflictHandlerConfig();
-    LambdaConflictHandlerConfig(Aws::Utils::Json::JsonView jsonValue);
-    LambdaConflictHandlerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API LambdaConflictHandlerConfig();
+    AWS_APPSYNC_API LambdaConflictHandlerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API LambdaConflictHandlerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaConflictHandlerArn;
-    bool m_lambdaConflictHandlerArnHasBeenSet;
+    bool m_lambdaConflictHandlerArnHasBeenSet = false;
   };
 
 } // namespace Model

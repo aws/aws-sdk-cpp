@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ColumnInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ColumnInfo
+  class ColumnInfo
   {
   public:
-    ColumnInfo();
-    ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
-    ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ColumnInfo();
+    AWS_TIMESTREAMQUERY_API ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,50 +94,50 @@ namespace Model
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    const Type& GetType() const;
+    AWS_TIMESTREAMQUERY_API const Type& GetType() const;
 
     /**
      * <p>The data type of the result set column. The data type can be a scalar or
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    bool TypeHasBeenSet() const;
+    AWS_TIMESTREAMQUERY_API bool TypeHasBeenSet() const;
 
     /**
      * <p>The data type of the result set column. The data type can be a scalar or
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    void SetType(const Type& value);
+    AWS_TIMESTREAMQUERY_API void SetType(const Type& value);
 
     /**
      * <p>The data type of the result set column. The data type can be a scalar or
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    void SetType(Type&& value);
+    AWS_TIMESTREAMQUERY_API void SetType(Type&& value);
 
     /**
      * <p>The data type of the result set column. The data type can be a scalar or
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    ColumnInfo& WithType(const Type& value);
+    AWS_TIMESTREAMQUERY_API ColumnInfo& WithType(const Type& value);
 
     /**
      * <p>The data type of the result set column. The data type can be a scalar or
      * complex. Scalar data types are integers, strings, doubles, Booleans, and others.
      * Complex data types are types such as arrays, rows, and others. </p>
      */
-    ColumnInfo& WithType(Type&& value);
+    AWS_TIMESTREAMQUERY_API ColumnInfo& WithType(Type&& value);
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     std::shared_ptr<Type> m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

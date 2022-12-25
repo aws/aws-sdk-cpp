@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecretsManagerSecretDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSecretsManagerSecretDetails
+  class AwsSecretsManagerSecretDetails
   {
   public:
-    AwsSecretsManagerSecretDetails();
-    AwsSecretsManagerSecretDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsSecretsManagerSecretDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretDetails();
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -314,28 +314,28 @@ namespace Model
   private:
 
     AwsSecretsManagerSecretRotationRules m_rotationRules;
-    bool m_rotationRulesHasBeenSet;
+    bool m_rotationRulesHasBeenSet = false;
 
     bool m_rotationOccurredWithinFrequency;
-    bool m_rotationOccurredWithinFrequencyHasBeenSet;
+    bool m_rotationOccurredWithinFrequencyHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_rotationEnabled;
-    bool m_rotationEnabledHasBeenSet;
+    bool m_rotationEnabledHasBeenSet = false;
 
     Aws::String m_rotationLambdaArn;
-    bool m_rotationLambdaArnHasBeenSet;
+    bool m_rotationLambdaArnHasBeenSet = false;
 
     bool m_deleted;
-    bool m_deletedHasBeenSet;
+    bool m_deletedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

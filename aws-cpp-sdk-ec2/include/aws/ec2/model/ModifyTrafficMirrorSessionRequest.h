@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyTrafficMirrorSessionRequest : public EC2Request
+  class ModifyTrafficMirrorSessionRequest : public EC2Request
   {
   public:
-    ModifyTrafficMirrorSessionRequest();
+    AWS_EC2_API ModifyTrafficMirrorSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyTrafficMirrorSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -389,31 +389,31 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorSessionId;
-    bool m_trafficMirrorSessionIdHasBeenSet;
+    bool m_trafficMirrorSessionIdHasBeenSet = false;
 
     Aws::String m_trafficMirrorTargetId;
-    bool m_trafficMirrorTargetIdHasBeenSet;
+    bool m_trafficMirrorTargetIdHasBeenSet = false;
 
     Aws::String m_trafficMirrorFilterId;
-    bool m_trafficMirrorFilterIdHasBeenSet;
+    bool m_trafficMirrorFilterIdHasBeenSet = false;
 
     int m_packetLength;
-    bool m_packetLengthHasBeenSet;
+    bool m_packetLengthHasBeenSet = false;
 
     int m_sessionNumber;
-    bool m_sessionNumberHasBeenSet;
+    bool m_sessionNumberHasBeenSet = false;
 
     int m_virtualNetworkId;
-    bool m_virtualNetworkIdHasBeenSet;
+    bool m_virtualNetworkIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<TrafficMirrorSessionField> m_removeFields;
-    bool m_removeFieldsHasBeenSet;
+    bool m_removeFieldsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

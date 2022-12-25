@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FreeTrialInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FreeTrialInfo
+  class FreeTrialInfo
   {
   public:
-    FreeTrialInfo();
-    FreeTrialInfo(Aws::Utils::Json::JsonView jsonValue);
-    FreeTrialInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FreeTrialInfo();
+    AWS_INSPECTOR2_API FreeTrialInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FreeTrialInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     FreeTrialStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FreeTrialType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

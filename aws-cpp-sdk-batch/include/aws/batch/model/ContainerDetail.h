@@ -36,18 +36,18 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of a container that's part of a
+   * <p>An object that represents the details of a container that's part of a
    * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ContainerDetail
+  class ContainerDetail
   {
   public:
-    ContainerDetail();
-    ContainerDetail(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ContainerDetail();
+    AWS_BATCH_API ContainerDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,42 +252,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline const Aws::String& GetJobRoleArn() const{ return m_jobRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline void SetJobRoleArn(Aws::String&& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline void SetJobRoleArn(const char* value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline ContainerDetail& WithJobRoleArn(const Aws::String& value) { SetJobRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline ContainerDetail& WithJobRoleArn(Aws::String&& value) { SetJobRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) associated with the job upon execution.</p>
+     * <p>The Amazon Resource Name (ARN) that's associated with the job when run.</p>
      */
     inline ContainerDetail& WithJobRoleArn(const char* value) { SetJobRoleArn(value); return *this;}
 
@@ -358,99 +358,99 @@ namespace Model
 
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline ContainerDetail& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline ContainerDetail& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline ContainerDetail& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /**
-     * <p>A list of volumes associated with the job.</p>
+     * <p>A list of volumes that are associated with the job.</p>
      */
     inline ContainerDetail& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline ContainerDetail& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline ContainerDetail& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline ContainerDetail& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
     /**
      * <p>The environment variables to pass to a container.</p>  <p>Environment
-     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the Batch service.</p> 
+     * variables cannot start with "<code>AWS_BATCH</code>". This naming convention is
+     * reserved for variables that Batch sets.</p> 
      */
     inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
@@ -653,36 +653,36 @@ namespace Model
     /**
      * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). The default
-     * value is false.</p>  <p>This parameter isn't applicable to jobs that are
-     * running on Fargate resources and shouldn't be provided, or specified as
-     * false.</p> 
+     * value is <code>false</code>.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as <code>false</code>.</p> 
      */
     inline bool GetPrivileged() const{ return m_privileged; }
 
     /**
      * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). The default
-     * value is false.</p>  <p>This parameter isn't applicable to jobs that are
-     * running on Fargate resources and shouldn't be provided, or specified as
-     * false.</p> 
+     * value is <code>false</code>.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as <code>false</code>.</p> 
      */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
 
     /**
      * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). The default
-     * value is false.</p>  <p>This parameter isn't applicable to jobs that are
-     * running on Fargate resources and shouldn't be provided, or specified as
-     * false.</p> 
+     * value is <code>false</code>.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as <code>false</code>.</p> 
      */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
     /**
      * <p>When this parameter is true, the container is given elevated permissions on
      * the host container instance (similar to the <code>root</code> user). The default
-     * value is false.</p>  <p>This parameter isn't applicable to jobs that are
-     * running on Fargate resources and shouldn't be provided, or specified as
-     * false.</p> 
+     * value is <code>false</code>.</p>  <p>This parameter isn't applicable to
+     * jobs that are running on Fargate resources and shouldn't be provided, or
+     * specified as <code>false</code>.</p> 
      */
     inline ContainerDetail& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
@@ -799,49 +799,49 @@ namespace Model
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline ContainerDetail& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline ContainerDetail& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
-     * details about a running or stopped container.</p>
+     * details for a running or stopped container.</p>
      */
     inline ContainerDetail& WithReason(const char* value) { SetReason(value); return *this;}
 
@@ -953,58 +953,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline ContainerDetail& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline ContainerDetail& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the CloudWatch Logs log stream associated with the container. The
-     * log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-     * receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+     * <p>The name of the Amazon CloudWatch Logs log stream that's associated with the
+     * container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each
+     * container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.</p>
      */
     inline ContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
@@ -1067,42 +1075,42 @@ namespace Model
 
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline ContainerDetail& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline ContainerDetail& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline ContainerDetail& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The network interfaces associated with the job.</p>
+     * <p>The network interfaces that are associated with the job.</p>
      */
     inline ContainerDetail& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1223,7 +1231,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1258,7 +1266,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1293,7 +1301,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1328,7 +1336,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1363,7 +1371,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1398,7 +1406,7 @@ namespace Model
      * future releases of the Amazon ECS container agent.</p>  <p>This parameter
      * requires version 1.18 of the Docker Remote API or greater on your container
      * instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command: <code>sudo docker
+     * in to your container instance and run the following command: <code>sudo docker
      * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
      * container agent running on a container instance must register the logging
      * drivers available on that instance with the
@@ -1545,82 +1553,82 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_vcpus;
-    bool m_vcpusHasBeenSet;
+    bool m_vcpusHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::String m_jobRoleArn;
-    bool m_jobRoleArnHasBeenSet;
+    bool m_jobRoleArnHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Volume> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<MountPoint> m_mountPoints;
-    bool m_mountPointsHasBeenSet;
+    bool m_mountPointsHasBeenSet = false;
 
     bool m_readonlyRootFilesystem;
-    bool m_readonlyRootFilesystemHasBeenSet;
+    bool m_readonlyRootFilesystemHasBeenSet = false;
 
     Aws::Vector<Ulimit> m_ulimits;
-    bool m_ulimitsHasBeenSet;
+    bool m_ulimitsHasBeenSet = false;
 
     bool m_privileged;
-    bool m_privilegedHasBeenSet;
+    bool m_privilegedHasBeenSet = false;
 
     Aws::String m_user;
-    bool m_userHasBeenSet;
+    bool m_userHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
 
     LinuxParameters m_linuxParameters;
-    bool m_linuxParametersHasBeenSet;
+    bool m_linuxParametersHasBeenSet = false;
 
     LogConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::Vector<Secret> m_secrets;
-    bool m_secretsHasBeenSet;
+    bool m_secretsHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     FargatePlatformConfiguration m_fargatePlatformConfiguration;
-    bool m_fargatePlatformConfigurationHasBeenSet;
+    bool m_fargatePlatformConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

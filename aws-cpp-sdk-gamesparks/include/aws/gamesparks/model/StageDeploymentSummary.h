@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/StageDeploymentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API StageDeploymentSummary
+  class StageDeploymentSummary
   {
   public:
-    StageDeploymentSummary();
-    StageDeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
-    StageDeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API StageDeploymentSummary();
+    AWS_GAMESPARKS_API StageDeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API StageDeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,22 +250,22 @@ namespace Model
   private:
 
     DeploymentAction m_deploymentAction;
-    bool m_deploymentActionHasBeenSet;
+    bool m_deploymentActionHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     DeploymentResult m_deploymentResult;
-    bool m_deploymentResultHasBeenSet;
+    bool m_deploymentResultHasBeenSet = false;
 
     DeploymentState m_deploymentState;
-    bool m_deploymentStateHasBeenSet;
+    bool m_deploymentStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
   };
 
 } // namespace Model

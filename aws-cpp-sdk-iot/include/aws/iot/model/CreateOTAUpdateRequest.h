@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API CreateOTAUpdateRequest : public IoTRequest
+  class CreateOTAUpdateRequest : public IoTRequest
   {
   public:
-    CreateOTAUpdateRequest();
+    AWS_IOT_API CreateOTAUpdateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOTAUpdate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -643,43 +643,43 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
-    bool m_awsJobExecutionsRolloutConfigHasBeenSet;
+    bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
 
     AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
-    bool m_awsJobPresignedUrlConfigHasBeenSet;
+    bool m_awsJobPresignedUrlConfigHasBeenSet = false;
 
     AwsJobAbortConfig m_awsJobAbortConfig;
-    bool m_awsJobAbortConfigHasBeenSet;
+    bool m_awsJobAbortConfigHasBeenSet = false;
 
     AwsJobTimeoutConfig m_awsJobTimeoutConfig;
-    bool m_awsJobTimeoutConfigHasBeenSet;
+    bool m_awsJobTimeoutConfigHasBeenSet = false;
 
     Aws::Vector<OTAUpdateFile> m_files;
-    bool m_filesHasBeenSet;
+    bool m_filesHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalParameters;
-    bool m_additionalParametersHasBeenSet;
+    bool m_additionalParametersHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

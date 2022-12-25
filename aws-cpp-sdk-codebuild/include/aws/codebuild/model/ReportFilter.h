@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ReportFilter
+  class ReportFilter
   {
   public:
-    ReportFilter();
-    ReportFilter(Aws::Utils::Json::JsonView jsonValue);
-    ReportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ReportFilter();
+    AWS_CODEBUILD_API ReportFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ReportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ReportStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

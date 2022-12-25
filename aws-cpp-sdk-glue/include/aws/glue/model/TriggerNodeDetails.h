@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TriggerNodeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TriggerNodeDetails
+  class TriggerNodeDetails
   {
   public:
-    TriggerNodeDetails();
-    TriggerNodeDetails(Aws::Utils::Json::JsonView jsonValue);
-    TriggerNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TriggerNodeDetails();
+    AWS_GLUE_API TriggerNodeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TriggerNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Trigger m_trigger;
-    bool m_triggerHasBeenSet;
+    bool m_triggerHasBeenSet = false;
   };
 
 } // namespace Model

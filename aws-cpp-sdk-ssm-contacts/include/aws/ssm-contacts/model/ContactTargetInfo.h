@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ContactTargetInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ContactTargetInfo
+  class ContactTargetInfo
   {
   public:
-    ContactTargetInfo();
-    ContactTargetInfo(Aws::Utils::Json::JsonView jsonValue);
-    ContactTargetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ContactTargetInfo();
+    AWS_SSMCONTACTS_API ContactTargetInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ContactTargetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     bool m_isEssential;
-    bool m_isEssentialHasBeenSet;
+    bool m_isEssentialHasBeenSet = false;
   };
 
 } // namespace Model

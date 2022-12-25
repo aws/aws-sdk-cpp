@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/Summary">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API Summary
+  class Summary
   {
   public:
-    Summary();
-    Summary(Aws::Utils::Json::JsonView jsonValue);
-    Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Summary();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Summary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -280,22 +280,22 @@ namespace Model
   private:
 
     Aws::String m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetIdType m_targetIdType;
-    bool m_targetIdTypeHasBeenSet;
+    bool m_targetIdTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_nonCompliantResources;
-    bool m_nonCompliantResourcesHasBeenSet;
+    bool m_nonCompliantResourcesHasBeenSet = false;
   };
 
 } // namespace Model

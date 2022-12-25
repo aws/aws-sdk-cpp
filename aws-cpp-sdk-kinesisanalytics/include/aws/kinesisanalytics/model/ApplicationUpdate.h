@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ApplicationUpdate
+  class ApplicationUpdate
   {
   public:
-    ApplicationUpdate();
-    ApplicationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ApplicationUpdate();
+    AWS_KINESISANALYTICS_API ApplicationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ApplicationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::Vector<InputUpdate> m_inputUpdates;
-    bool m_inputUpdatesHasBeenSet;
+    bool m_inputUpdatesHasBeenSet = false;
 
     Aws::String m_applicationCodeUpdate;
-    bool m_applicationCodeUpdateHasBeenSet;
+    bool m_applicationCodeUpdateHasBeenSet = false;
 
     Aws::Vector<OutputUpdate> m_outputUpdates;
-    bool m_outputUpdatesHasBeenSet;
+    bool m_outputUpdatesHasBeenSet = false;
 
     Aws::Vector<ReferenceDataSourceUpdate> m_referenceDataSourceUpdates;
-    bool m_referenceDataSourceUpdatesHasBeenSet;
+    bool m_referenceDataSourceUpdatesHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
-    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
+    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

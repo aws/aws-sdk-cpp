@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ContextEntry
+  class ContextEntry
   {
   public:
-    ContextEntry();
-    ContextEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ContextEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ContextEntry();
+    AWS_IAM_API ContextEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ContextEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_contextKeyName;
-    bool m_contextKeyNameHasBeenSet;
+    bool m_contextKeyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contextKeyValues;
-    bool m_contextKeyValuesHasBeenSet;
+    bool m_contextKeyValuesHasBeenSet = false;
 
     ContextKeyTypeEnum m_contextKeyType;
-    bool m_contextKeyTypeHasBeenSet;
+    bool m_contextKeyTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,51 +25,51 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API ListPermissionSetsResult
+  class ListPermissionSetsResult
   {
   public:
-    ListPermissionSetsResult();
-    ListPermissionSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListPermissionSetsResult();
+    AWS_SSOADMIN_API ListPermissionSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListPermissionSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermissionSets() const{ return m_permissionSets; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline void SetPermissionSets(const Aws::Vector<Aws::String>& value) { m_permissionSets = value; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline void SetPermissionSets(Aws::Vector<Aws::String>&& value) { m_permissionSets = std::move(value); }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline ListPermissionSetsResult& WithPermissionSets(const Aws::Vector<Aws::String>& value) { SetPermissionSets(value); return *this;}
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline ListPermissionSetsResult& WithPermissionSets(Aws::Vector<Aws::String>&& value) { SetPermissionSets(std::move(value)); return *this;}
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline ListPermissionSetsResult& AddPermissionSets(const Aws::String& value) { m_permissionSets.push_back(value); return *this; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline ListPermissionSetsResult& AddPermissionSets(Aws::String&& value) { m_permissionSets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline ListPermissionSetsResult& AddPermissionSets(const char* value) { m_permissionSets.push_back(value); return *this; }
 

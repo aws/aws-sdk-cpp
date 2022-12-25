@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ATHENA_API CreateWorkGroupRequest : public AthenaRequest
+  class CreateWorkGroupRequest : public AthenaRequest
   {
   public:
-    CreateWorkGroupRequest();
+    AWS_ATHENA_API CreateWorkGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ATHENA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -79,73 +79,73 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(const WorkGroupConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(WorkGroupConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline CreateWorkGroupRequest& WithConfiguration(const WorkGroupConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored, the encryption configuration, if any, used for
-     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
-     * it is specified, and whether workgroup's settings (specified with
-     * <code>EnforceWorkGroupConfiguration</code>) in the
-     * <code>WorkGroupConfiguration</code> override client-side settings. See
+     * <p>Contains configuration information for creating an Athena SQL workgroup,
+     * which includes the location in Amazon S3 where query results are stored, the
+     * encryption configuration, if any, used for encrypting query results, whether the
+     * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
+     * amount of bytes scanned (cutoff) per query, if it is specified, and whether
+     * workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
+     * in the <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline CreateWorkGroupRequest& WithConfiguration(WorkGroupConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     WorkGroupConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

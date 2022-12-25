@@ -53,7 +53,7 @@ DevicePoolCompatibilityResult& DevicePoolCompatibilityResult::operator =(JsonVie
 
   if(jsonValue.ValueExists("incompatibilityMessages"))
   {
-    Array<JsonView> incompatibilityMessagesJsonList = jsonValue.GetArray("incompatibilityMessages");
+    Aws::Utils::Array<JsonView> incompatibilityMessagesJsonList = jsonValue.GetArray("incompatibilityMessages");
     for(unsigned incompatibilityMessagesIndex = 0; incompatibilityMessagesIndex < incompatibilityMessagesJsonList.GetLength(); ++incompatibilityMessagesIndex)
     {
       m_incompatibilityMessages.push_back(incompatibilityMessagesJsonList[incompatibilityMessagesIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue DevicePoolCompatibilityResult::Jsonize() const
 
   if(m_incompatibilityMessagesHasBeenSet)
   {
-   Array<JsonValue> incompatibilityMessagesJsonList(m_incompatibilityMessages.size());
+   Aws::Utils::Array<JsonValue> incompatibilityMessagesJsonList(m_incompatibilityMessages.size());
    for(unsigned incompatibilityMessagesIndex = 0; incompatibilityMessagesIndex < incompatibilityMessagesJsonList.GetLength(); ++incompatibilityMessagesIndex)
    {
      incompatibilityMessagesJsonList[incompatibilityMessagesIndex].AsObject(m_incompatibilityMessages[incompatibilityMessagesIndex].Jsonize());

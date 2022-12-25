@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Record">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Record();
+    AWS_TIMESTREAMWRITE_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -441,28 +441,28 @@ namespace Model
   private:
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_measureName;
-    bool m_measureNameHasBeenSet;
+    bool m_measureNameHasBeenSet = false;
 
     Aws::String m_measureValue;
-    bool m_measureValueHasBeenSet;
+    bool m_measureValueHasBeenSet = false;
 
     MeasureValueType m_measureValueType;
-    bool m_measureValueTypeHasBeenSet;
+    bool m_measureValueTypeHasBeenSet = false;
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     TimeUnit m_timeUnit;
-    bool m_timeUnitHasBeenSet;
+    bool m_timeUnitHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<MeasureValue> m_measureValues;
-    bool m_measureValuesHasBeenSet;
+    bool m_measureValuesHasBeenSet = false;
   };
 
 } // namespace Model

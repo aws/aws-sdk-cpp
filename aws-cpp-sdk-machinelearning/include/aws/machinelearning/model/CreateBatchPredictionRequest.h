@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACHINELEARNING_API CreateBatchPredictionRequest : public MachineLearningRequest
+  class CreateBatchPredictionRequest : public MachineLearningRequest
   {
   public:
-    CreateBatchPredictionRequest();
+    AWS_MACHINELEARNING_API CreateBatchPredictionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBatchPrediction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACHINELEARNING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -321,19 +321,19 @@ namespace Model
   private:
 
     Aws::String m_batchPredictionId;
-    bool m_batchPredictionIdHasBeenSet;
+    bool m_batchPredictionIdHasBeenSet = false;
 
     Aws::String m_batchPredictionName;
-    bool m_batchPredictionNameHasBeenSet;
+    bool m_batchPredictionNameHasBeenSet = false;
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_batchPredictionDataSourceId;
-    bool m_batchPredictionDataSourceIdHasBeenSet;
+    bool m_batchPredictionDataSourceIdHasBeenSet = false;
 
     Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet;
+    bool m_outputUriHasBeenSet = false;
   };
 
 } // namespace Model

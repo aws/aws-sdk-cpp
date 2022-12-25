@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelHierarchyDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetModelHierarchyDefinition
+  class AssetModelHierarchyDefinition
   {
   public:
-    AssetModelHierarchyDefinition();
-    AssetModelHierarchyDefinition(Aws::Utils::Json::JsonView jsonValue);
-    AssetModelHierarchyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetModelHierarchyDefinition();
+    AWS_IOTSITEWISE_API AssetModelHierarchyDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetModelHierarchyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_childAssetModelId;
-    bool m_childAssetModelIdHasBeenSet;
+    bool m_childAssetModelIdHasBeenSet = false;
   };
 
 } // namespace Model

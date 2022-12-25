@@ -4,7 +4,6 @@
  */
 
 #include <aws/s3control/model/CreateAccessPointRequest.h>
-#include <aws/s3control/S3ControlARN.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -20,7 +19,8 @@ CreateAccessPointRequest::CreateAccessPointRequest() :
     m_nameHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_publicAccessBlockConfigurationHasBeenSet(false)
+    m_publicAccessBlockConfigurationHasBeenSet(false),
+    m_bucketAccountIdHasBeenSet(false)
 {
 }
 
@@ -35,27 +35,7 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
   if(m_bucketHasBeenSet)
   {
    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-   S3ControlARN arn(m_bucket);
-   if (arn && arn.Validate().IsSuccess())
-   {
-     if (arn.GetResourceType() == ARNResourceType::BUCKET)
-     {
-       bucketNode.SetText(arn.GetResourceId());
-     }
-     else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
-     {
-       bucketNode.SetText(arn.GetSubResourceId());
-     }
-     else
-     {
-       // It's a valid ARN, but has incorrect resource type.
-       assert(false);
-     }
-   }
-   else
-   {
-     bucketNode.SetText(m_bucket);
-   }
+   bucketNode.SetText(m_bucket);
   }
 
   if(m_vpcConfigurationHasBeenSet)
@@ -68,6 +48,12 @@ Aws::String CreateAccessPointRequest::SerializePayload() const
   {
    XmlNode publicAccessBlockConfigurationNode = parentNode.CreateChildElement("PublicAccessBlockConfiguration");
    m_publicAccessBlockConfiguration.AddToNode(publicAccessBlockConfigurationNode);
+  }
+
+  if(m_bucketAccountIdHasBeenSet)
+  {
+   XmlNode bucketAccountIdNode = parentNode.CreateChildElement("BucketAccountId");
+   bucketAccountIdNode.SetText(m_bucketAccountId);
   }
 
   return payloadDoc.ConvertToString();
@@ -85,19 +71,20 @@ Aws::Http::HeaderValueCollection CreateAccessPointRequest::GetRequestSpecificHea
     ss.str("");
   }
 
-  Aws::S3Control::S3ControlARN arn(m_bucket);
-  if (arn && arn.Validate().IsSuccess())
-  {
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
-    if (arn.GetResourceType() == Aws::S3Control::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
-  }
-
   return headers;
+}
+
+CreateAccessPointRequest::EndpointParameters CreateAccessPointRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (AccountIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (BucketHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
 }

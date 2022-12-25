@@ -7,6 +7,8 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/model/ChoiceContent.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wellarchitected/model/AdditionalResources.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/Choice">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API Choice
+  class Choice
   {
   public:
-    Choice();
-    Choice(Aws::Utils::Json::JsonView jsonValue);
-    Choice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API Choice();
+    AWS_WELLARCHITECTED_API Choice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Choice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -174,22 +176,82 @@ namespace Model
      */
     inline Choice& WithImprovementPlan(ChoiceContent&& value) { SetImprovementPlan(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline const Aws::Vector<AdditionalResources>& GetAdditionalResources() const{ return m_additionalResources; }
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline bool AdditionalResourcesHasBeenSet() const { return m_additionalResourcesHasBeenSet; }
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline void SetAdditionalResources(const Aws::Vector<AdditionalResources>& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = value; }
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline void SetAdditionalResources(Aws::Vector<AdditionalResources>&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = std::move(value); }
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline Choice& WithAdditionalResources(const Aws::Vector<AdditionalResources>& value) { SetAdditionalResources(value); return *this;}
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline Choice& WithAdditionalResources(Aws::Vector<AdditionalResources>&& value) { SetAdditionalResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline Choice& AddAdditionalResources(const AdditionalResources& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(value); return *this; }
+
+    /**
+     * <p>The additional resources for a choice. A choice can have up to two additional
+     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     */
+    inline Choice& AddAdditionalResources(AdditionalResources&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ChoiceContent m_helpfulResource;
-    bool m_helpfulResourceHasBeenSet;
+    bool m_helpfulResourceHasBeenSet = false;
 
     ChoiceContent m_improvementPlan;
-    bool m_improvementPlanHasBeenSet;
+    bool m_improvementPlanHasBeenSet = false;
+
+    Aws::Vector<AdditionalResources> m_additionalResources;
+    bool m_additionalResourcesHasBeenSet = false;
   };
 
 } // namespace Model

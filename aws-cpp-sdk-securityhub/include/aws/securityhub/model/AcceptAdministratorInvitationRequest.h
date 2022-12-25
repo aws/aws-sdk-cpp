@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API AcceptAdministratorInvitationRequest : public SecurityHubRequest
+  class AcceptAdministratorInvitationRequest : public SecurityHubRequest
   {
   public:
-    AcceptAdministratorInvitationRequest();
+    AWS_SECURITYHUB_API AcceptAdministratorInvitationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptAdministratorInvitation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_administratorId;
-    bool m_administratorIdHasBeenSet;
+    bool m_administratorIdHasBeenSet = false;
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
   };
 
 } // namespace Model

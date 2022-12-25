@@ -22,43 +22,43 @@ namespace Model
 {
 
   /**
-   * <p>The S3 object that is the asset.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon S3 object that is the asset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/S3SnapshotAsset">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API S3SnapshotAsset
+  class S3SnapshotAsset
   {
   public:
-    S3SnapshotAsset();
-    S3SnapshotAsset(Aws::Utils::Json::JsonView jsonValue);
-    S3SnapshotAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API S3SnapshotAsset();
+    AWS_DATAEXCHANGE_API S3SnapshotAsset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API S3SnapshotAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The size of the S3 object that is the object.</p>
+     * <p>The size of the Amazon S3 object that is the object.</p>
      */
     inline double GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of the S3 object that is the object.</p>
+     * <p>The size of the Amazon S3 object that is the object.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>The size of the S3 object that is the object.</p>
+     * <p>The size of the Amazon S3 object that is the object.</p>
      */
     inline void SetSize(double value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of the S3 object that is the object.</p>
+     * <p>The size of the Amazon S3 object that is the object.</p>
      */
     inline S3SnapshotAsset& WithSize(double value) { SetSize(value); return *this;}
 
   private:
 
     double m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SageMakerMachineLearningModelResourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API SageMakerMachineLearningModelResourceData
+  class SageMakerMachineLearningModelResourceData
   {
   public:
-    SageMakerMachineLearningModelResourceData();
-    SageMakerMachineLearningModelResourceData(Aws::Utils::Json::JsonView jsonValue);
-    SageMakerMachineLearningModelResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API SageMakerMachineLearningModelResourceData();
+    AWS_GREENGRASS_API SageMakerMachineLearningModelResourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API SageMakerMachineLearningModelResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     ResourceDownloadOwnerSetting m_ownerSetting;
-    bool m_ownerSettingHasBeenSet;
+    bool m_ownerSettingHasBeenSet = false;
 
     Aws::String m_sageMakerJobArn;
-    bool m_sageMakerJobArnHasBeenSet;
+    bool m_sageMakerJobArnHasBeenSet = false;
   };
 
 } // namespace Model

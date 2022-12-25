@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SystemControl">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API SystemControl
+  class SystemControl
   {
   public:
-    SystemControl();
-    SystemControl(Aws::Utils::Json::JsonView jsonValue);
-    SystemControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API SystemControl();
+    AWS_ECS_API SystemControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API SystemControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

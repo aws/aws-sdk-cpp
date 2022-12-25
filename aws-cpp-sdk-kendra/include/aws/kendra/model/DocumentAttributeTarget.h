@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentAttributeTarget
+  class DocumentAttributeTarget
   {
   public:
-    DocumentAttributeTarget();
-    DocumentAttributeTarget(Aws::Utils::Json::JsonView jsonValue);
-    DocumentAttributeTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentAttributeTarget();
+    AWS_KENDRA_API DocumentAttributeTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentAttributeTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_targetDocumentAttributeKey;
-    bool m_targetDocumentAttributeKeyHasBeenSet;
+    bool m_targetDocumentAttributeKeyHasBeenSet = false;
 
     bool m_targetDocumentAttributeValueDeletion;
-    bool m_targetDocumentAttributeValueDeletionHasBeenSet;
+    bool m_targetDocumentAttributeValueDeletionHasBeenSet = false;
 
     DocumentAttributeValue m_targetDocumentAttributeValue;
-    bool m_targetDocumentAttributeValueHasBeenSet;
+    bool m_targetDocumentAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

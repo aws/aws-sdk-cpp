@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecordEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HistoryRecordEntry
+  class HistoryRecordEntry
   {
   public:
-    HistoryRecordEntry();
-    HistoryRecordEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HistoryRecordEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecordEntry();
+    AWS_EC2_API HistoryRecordEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecordEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     EventInformation m_eventInformation;
-    bool m_eventInformationHasBeenSet;
+    bool m_eventInformationHasBeenSet = false;
 
     FleetEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

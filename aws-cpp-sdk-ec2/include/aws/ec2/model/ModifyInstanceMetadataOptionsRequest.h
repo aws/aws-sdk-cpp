@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyInstanceMetadataOptionsRequest : public EC2Request
+  class ModifyInstanceMetadataOptionsRequest : public EC2Request
   {
   public:
-    ModifyInstanceMetadataOptionsRequest();
+    AWS_EC2_API ModifyInstanceMetadataOptionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceMetadataOptions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -85,14 +85,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline const HttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
 
@@ -100,14 +100,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
 
@@ -115,14 +115,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline void SetHttpTokens(const HttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
 
@@ -130,14 +130,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline void SetHttpTokens(HttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
 
@@ -145,14 +145,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpTokens(const HttpTokensState& value) { SetHttpTokens(value); return *this;}
 
@@ -160,14 +160,14 @@ namespace Model
      * <p>The state of token usage for your instance metadata requests. If the
      * parameter is not specified in the request, the default state is
      * <code>optional</code>.</p> <p>If the state is <code>optional</code>, you can
-     * choose to retrieve instance metadata with or without a signed token header on
-     * your request. If you retrieve the IAM role credentials without a token, the
-     * version 1.0 role credentials are returned. If you retrieve the IAM role
-     * credentials using a valid signed token, the version 2.0 role credentials are
-     * returned.</p> <p>If the state is <code>required</code>, you must send a signed
-     * token header with any instance metadata retrieval requests. In this state,
-     * retrieving the IAM role credential always returns the version 2.0 credentials;
-     * the version 1.0 credentials are not available.</p>
+     * choose to retrieve instance metadata with or without a session token on your
+     * request. If you retrieve the IAM role credentials without a token, the version
+     * 1.0 role credentials are returned. If you retrieve the IAM role credentials
+     * using a valid session token, the version 2.0 role credentials are returned.</p>
+     * <p>If the state is <code>required</code>, you must send a session token with any
+     * instance metadata retrieval requests. In this state, retrieving the IAM role
+     * credentials always returns the version 2.0 credentials; the version 1.0
+     * credentials are not available.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpTokens(HttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
 
@@ -387,25 +387,25 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HttpTokensState m_httpTokens;
-    bool m_httpTokensHasBeenSet;
+    bool m_httpTokensHasBeenSet = false;
 
     int m_httpPutResponseHopLimit;
-    bool m_httpPutResponseHopLimitHasBeenSet;
+    bool m_httpPutResponseHopLimitHasBeenSet = false;
 
     InstanceMetadataEndpointState m_httpEndpoint;
-    bool m_httpEndpointHasBeenSet;
+    bool m_httpEndpointHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     InstanceMetadataProtocolState m_httpProtocolIpv6;
-    bool m_httpProtocolIpv6HasBeenSet;
+    bool m_httpProtocolIpv6HasBeenSet = false;
 
     InstanceMetadataTagsState m_instanceMetadataTags;
-    bool m_instanceMetadataTagsHasBeenSet;
+    bool m_instanceMetadataTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API WriteRequest
+  class WriteRequest
   {
   public:
-    WriteRequest();
-    WriteRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API WriteRequest();
+    AWS_DYNAMODB_API WriteRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API WriteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     PutRequest m_putRequest;
-    bool m_putRequestHasBeenSet;
+    bool m_putRequestHasBeenSet = false;
 
     DeleteRequest m_deleteRequest;
-    bool m_deleteRequestHasBeenSet;
+    bool m_deleteRequestHasBeenSet = false;
   };
 
 } // namespace Model

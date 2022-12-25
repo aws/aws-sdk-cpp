@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnclaveOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API EnclaveOptions
+  class EnclaveOptions
   {
   public:
-    EnclaveOptions();
-    EnclaveOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EnclaveOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EnclaveOptions();
+    AWS_EC2_API EnclaveOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EnclaveOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -69,7 +69,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlSet">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlSet
+  class ControlSet
   {
   public:
-    ControlSet();
-    ControlSet(Aws::Utils::Json::JsonView jsonValue);
-    ControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlSet();
+    AWS_AUDITMANAGER_API ControlSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Control> m_controls;
-    bool m_controlsHasBeenSet;
+    bool m_controlsHasBeenSet = false;
   };
 
 } // namespace Model

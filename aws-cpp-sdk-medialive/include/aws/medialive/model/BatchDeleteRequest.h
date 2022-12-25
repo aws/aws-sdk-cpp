@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDeleteRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchDeleteRequest : public MediaLiveRequest
+  class BatchDeleteRequest : public MediaLiveRequest
   {
   public:
-    BatchDeleteRequest();
+    AWS_MEDIALIVE_API BatchDeleteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchDelete"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_channelIds;
-    bool m_channelIdsHasBeenSet;
+    bool m_channelIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputIds;
-    bool m_inputIdsHasBeenSet;
+    bool m_inputIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputSecurityGroupIds;
-    bool m_inputSecurityGroupIdsHasBeenSet;
+    bool m_inputSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_multiplexIds;
-    bool m_multiplexIdsHasBeenSet;
+    bool m_multiplexIdsHasBeenSet = false;
   };
 
 } // namespace Model

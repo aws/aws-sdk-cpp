@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepStateChangeReason">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API StepStateChangeReason
+  class StepStateChangeReason
   {
   public:
-    StepStateChangeReason();
-    StepStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
-    StepStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API StepStateChangeReason();
+    AWS_EMR_API StepStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API StepStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     StepStateChangeReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

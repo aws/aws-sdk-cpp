@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenRequest : public CognitoIdentityProviderRequest
+  class RevokeTokenRequest : public CognitoIdentityProviderRequest
   {
   public:
-    RevokeTokenRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API RevokeTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/PolicyParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API PolicyParameter
+  class PolicyParameter
   {
   public:
-    PolicyParameter();
-    PolicyParameter(Aws::Utils::Json::JsonView jsonValue);
-    PolicyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API PolicyParameter();
+    AWS_MTURK_API PolicyParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API PolicyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<ParameterMapEntry> m_mapEntries;
-    bool m_mapEntriesHasBeenSet;
+    bool m_mapEntriesHasBeenSet = false;
   };
 
 } // namespace Model

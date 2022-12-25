@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapIterationEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapIterationEventDetails
+  class MapIterationEventDetails
   {
   public:
-    MapIterationEventDetails();
-    MapIterationEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    MapIterationEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapIterationEventDetails();
+    AWS_SFN_API MapIterationEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapIterationEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

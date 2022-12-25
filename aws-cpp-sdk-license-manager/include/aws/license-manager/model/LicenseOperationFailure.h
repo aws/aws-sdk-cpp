@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseOperationFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseOperationFailure
+  class LicenseOperationFailure
   {
   public:
-    LicenseOperationFailure();
-    LicenseOperationFailure(Aws::Utils::Json::JsonView jsonValue);
-    LicenseOperationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseOperationFailure();
+    AWS_LICENSEMANAGER_API LicenseOperationFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseOperationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,28 +351,28 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_failureTime;
-    bool m_failureTimeHasBeenSet;
+    bool m_failureTimeHasBeenSet = false;
 
     Aws::String m_operationName;
-    bool m_operationNameHasBeenSet;
+    bool m_operationNameHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_operationRequestedBy;
-    bool m_operationRequestedByHasBeenSet;
+    bool m_operationRequestedByHasBeenSet = false;
 
     Aws::Vector<Metadata> m_metadataList;
-    bool m_metadataListHasBeenSet;
+    bool m_metadataListHasBeenSet = false;
   };
 
 } // namespace Model

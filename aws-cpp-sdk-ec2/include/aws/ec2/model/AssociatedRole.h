@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociatedRole">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AssociatedRole
+  class AssociatedRole
   {
   public:
-    AssociatedRole();
-    AssociatedRole(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AssociatedRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AssociatedRole();
+    AWS_EC2_API AssociatedRole(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AssociatedRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_associatedRoleArn;
-    bool m_associatedRoleArnHasBeenSet;
+    bool m_associatedRoleArnHasBeenSet = false;
 
     Aws::String m_certificateS3BucketName;
-    bool m_certificateS3BucketNameHasBeenSet;
+    bool m_certificateS3BucketNameHasBeenSet = false;
 
     Aws::String m_certificateS3ObjectKey;
-    bool m_certificateS3ObjectKeyHasBeenSet;
+    bool m_certificateS3ObjectKeyHasBeenSet = false;
 
     Aws::String m_encryptionKmsKeyId;
-    bool m_encryptionKmsKeyIdHasBeenSet;
+    bool m_encryptionKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

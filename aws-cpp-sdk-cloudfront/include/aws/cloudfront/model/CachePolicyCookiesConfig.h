@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyCookiesConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicyCookiesConfig
+  class CachePolicyCookiesConfig
   {
   public:
-    CachePolicyCookiesConfig();
-    CachePolicyCookiesConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicyCookiesConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyCookiesConfig();
+    AWS_CLOUDFRONT_API CachePolicyCookiesConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyCookiesConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -182,10 +182,10 @@ namespace Model
   private:
 
     CachePolicyCookieBehavior m_cookieBehavior;
-    bool m_cookieBehaviorHasBeenSet;
+    bool m_cookieBehaviorHasBeenSet = false;
 
     CookieNames m_cookies;
-    bool m_cookiesHasBeenSet;
+    bool m_cookiesHasBeenSet = false;
   };
 
 } // namespace Model

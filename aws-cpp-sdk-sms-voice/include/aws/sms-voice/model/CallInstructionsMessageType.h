@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CallInstructionsMessageType">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API CallInstructionsMessageType
+  class CallInstructionsMessageType
   {
   public:
-    CallInstructionsMessageType();
-    CallInstructionsMessageType(Aws::Utils::Json::JsonView jsonValue);
-    CallInstructionsMessageType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API CallInstructionsMessageType();
+    AWS_PINPOINTSMSVOICE_API CallInstructionsMessageType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API CallInstructionsMessageType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
   };
 
 } // namespace Model

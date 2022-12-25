@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupRequest : public ElastiCacheRequest
+  class IncreaseNodeGroupsInGlobalReplicationGroupRequest : public ElastiCacheRequest
   {
   public:
-    IncreaseNodeGroupsInGlobalReplicationGroupRequest();
+    AWS_ELASTICACHE_API IncreaseNodeGroupsInGlobalReplicationGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "IncreaseNodeGroupsInGlobalReplicationGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -176,16 +176,16 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     int m_nodeGroupCount;
-    bool m_nodeGroupCountHasBeenSet;
+    bool m_nodeGroupCountHasBeenSet = false;
 
     Aws::Vector<RegionalConfiguration> m_regionalConfigurations;
-    bool m_regionalConfigurationsHasBeenSet;
+    bool m_regionalConfigurationsHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

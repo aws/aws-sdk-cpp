@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/OtaaV1_0_x">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API OtaaV1_0_x
+  class OtaaV1_0_x
   {
   public:
-    OtaaV1_0_x();
-    OtaaV1_0_x(Aws::Utils::Json::JsonView jsonValue);
-    OtaaV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API OtaaV1_0_x();
+    AWS_IOTWIRELESS_API OtaaV1_0_x(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API OtaaV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_appKey;
-    bool m_appKeyHasBeenSet;
+    bool m_appKeyHasBeenSet = false;
 
     Aws::String m_appEui;
-    bool m_appEuiHasBeenSet;
+    bool m_appEuiHasBeenSet = false;
 
     Aws::String m_genAppKey;
-    bool m_genAppKeyHasBeenSet;
+    bool m_genAppKeyHasBeenSet = false;
   };
 
 } // namespace Model

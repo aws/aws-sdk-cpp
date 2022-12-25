@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Label">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Label
+  class Label
   {
   public:
-    Label();
-    Label(Aws::Utils::Json::JsonView jsonValue);
-    Label& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Label();
+    AWS_WAFV2_API Label(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Label& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

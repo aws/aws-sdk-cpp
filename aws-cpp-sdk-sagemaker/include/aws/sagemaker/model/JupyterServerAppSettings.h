@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/CodeRepository.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterServerAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API JupyterServerAppSettings
+  class JupyterServerAppSettings
   {
   public:
-    JupyterServerAppSettings();
-    JupyterServerAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    JupyterServerAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API JupyterServerAppSettings();
+    AWS_SAGEMAKER_API JupyterServerAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API JupyterServerAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +170,65 @@ namespace Model
      */
     inline JupyterServerAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const{ return m_codeRepositories; }
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline bool CodeRepositoriesHasBeenSet() const { return m_codeRepositoriesHasBeenSet; }
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline void SetCodeRepositories(const Aws::Vector<CodeRepository>& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = value; }
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline void SetCodeRepositories(Aws::Vector<CodeRepository>&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::move(value); }
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline JupyterServerAppSettings& WithCodeRepositories(const Aws::Vector<CodeRepository>& value) { SetCodeRepositories(value); return *this;}
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline JupyterServerAppSettings& WithCodeRepositories(Aws::Vector<CodeRepository>&& value) { SetCodeRepositories(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline JupyterServerAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
+
+    /**
+     * <p>A list of Git repositories that SageMaker automatically displays to users for
+     * cloning in the JupyterServer application.</p>
+     */
+    inline JupyterServerAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
+
   private:
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifecycleConfigArns;
-    bool m_lifecycleConfigArnsHasBeenSet;
+    bool m_lifecycleConfigArnsHasBeenSet = false;
+
+    Aws::Vector<CodeRepository> m_codeRepositories;
+    bool m_codeRepositoriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -60,7 +60,9 @@ Image::Image() :
     m_bootModeHasBeenSet(false),
     m_tpmSupport(TpmSupportValues::NOT_SET),
     m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false)
+    m_deprecationTimeHasBeenSet(false),
+    m_imdsSupport(ImdsSupportValues::NOT_SET),
+    m_imdsSupportHasBeenSet(false)
 {
 }
 
@@ -104,7 +106,9 @@ Image::Image(const XmlNode& xmlNode) :
     m_bootModeHasBeenSet(false),
     m_tpmSupport(TpmSupportValues::NOT_SET),
     m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false)
+    m_deprecationTimeHasBeenSet(false),
+    m_imdsSupport(ImdsSupportValues::NOT_SET),
+    m_imdsSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -307,6 +311,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_deprecationTime = Aws::Utils::Xml::DecodeEscapedXmlText(deprecationTimeNode.GetText());
       m_deprecationTimeHasBeenSet = true;
     }
+    XmlNode imdsSupportNode = resultNode.FirstChild("imdsSupport");
+    if(!imdsSupportNode.IsNull())
+    {
+      m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()).c_str());
+      m_imdsSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -479,6 +489,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
   }
 
+  if(m_imdsSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -618,6 +633,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_deprecationTimeHasBeenSet)
   {
       oStream << location << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
+  }
+  if(m_imdsSupportHasBeenSet)
+  {
+      oStream << location << ".ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
   }
 }
 

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AppBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API AppBlock
+  class AppBlock
   {
   public:
-    AppBlock();
-    AppBlock(Aws::Utils::Json::JsonView jsonValue);
-    AppBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API AppBlock();
+    AWS_APPSTREAM_API AppBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API AppBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,25 +305,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     S3Location m_sourceS3Location;
-    bool m_sourceS3LocationHasBeenSet;
+    bool m_sourceS3LocationHasBeenSet = false;
 
     ScriptDetails m_setupScriptDetails;
-    bool m_setupScriptDetailsHasBeenSet;
+    bool m_setupScriptDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

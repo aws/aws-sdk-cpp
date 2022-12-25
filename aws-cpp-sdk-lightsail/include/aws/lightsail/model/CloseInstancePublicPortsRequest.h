@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CloseInstancePublicPortsRequest : public LightsailRequest
+  class CloseInstancePublicPortsRequest : public LightsailRequest
   {
   public:
-    CloseInstancePublicPortsRequest();
+    AWS_LIGHTSAIL_API CloseInstancePublicPortsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CloseInstancePublicPorts"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     PortInfo m_portInfo;
-    bool m_portInfoHasBeenSet;
+    bool m_portInfoHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
   };
 
 } // namespace Model

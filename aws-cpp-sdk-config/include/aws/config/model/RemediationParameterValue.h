@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RemediationParameterValue">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RemediationParameterValue
+  class RemediationParameterValue
   {
   public:
-    RemediationParameterValue();
-    RemediationParameterValue(Aws::Utils::Json::JsonView jsonValue);
-    RemediationParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RemediationParameterValue();
+    AWS_CONFIGSERVICE_API RemediationParameterValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RemediationParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ResourceValue m_resourceValue;
-    bool m_resourceValueHasBeenSet;
+    bool m_resourceValueHasBeenSet = false;
 
     StaticValue m_staticValue;
-    bool m_staticValueHasBeenSet;
+    bool m_staticValueHasBeenSet = false;
   };
 
 } // namespace Model

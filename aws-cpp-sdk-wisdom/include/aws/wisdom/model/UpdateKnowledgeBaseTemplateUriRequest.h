@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriRequest : public ConnectWisdomServiceRequest
+  class UpdateKnowledgeBaseTemplateUriRequest : public ConnectWisdomServiceRequest
   {
   public:
-    UpdateKnowledgeBaseTemplateUriRequest();
+    AWS_CONNECTWISDOMSERVICE_API UpdateKnowledgeBaseTemplateUriRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateKnowledgeBaseTemplateUri"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
 
     Aws::String m_templateUri;
-    bool m_templateUriHasBeenSet;
+    bool m_templateUriHasBeenSet = false;
   };
 
 } // namespace Model

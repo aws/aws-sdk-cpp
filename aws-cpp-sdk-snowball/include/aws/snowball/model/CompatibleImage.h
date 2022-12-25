@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CompatibleImage">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API CompatibleImage
+  class CompatibleImage
   {
   public:
-    CompatibleImage();
-    CompatibleImage(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API CompatibleImage();
+    AWS_SNOWBALL_API CompatibleImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API CompatibleImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

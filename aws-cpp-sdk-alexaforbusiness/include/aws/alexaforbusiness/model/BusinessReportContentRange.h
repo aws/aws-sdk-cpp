@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/BusinessReportContentRange">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API BusinessReportContentRange
+  class BusinessReportContentRange
   {
   public:
-    BusinessReportContentRange();
-    BusinessReportContentRange(Aws::Utils::Json::JsonView jsonValue);
-    BusinessReportContentRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API BusinessReportContentRange();
+    AWS_ALEXAFORBUSINESS_API BusinessReportContentRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API BusinessReportContentRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     BusinessReportInterval m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
   };
 
 } // namespace Model

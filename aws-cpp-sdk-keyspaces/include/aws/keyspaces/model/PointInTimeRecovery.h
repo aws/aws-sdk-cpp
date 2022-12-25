@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/PointInTimeRecovery">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API PointInTimeRecovery
+  class PointInTimeRecovery
   {
   public:
-    PointInTimeRecovery();
-    PointInTimeRecovery(Aws::Utils::Json::JsonView jsonValue);
-    PointInTimeRecovery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API PointInTimeRecovery();
+    AWS_KEYSPACES_API PointInTimeRecovery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API PointInTimeRecovery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     PointInTimeRecoveryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

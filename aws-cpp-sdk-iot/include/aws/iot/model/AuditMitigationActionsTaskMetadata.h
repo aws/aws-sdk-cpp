@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditMitigationActionsTaskMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditMitigationActionsTaskMetadata
+  class AuditMitigationActionsTaskMetadata
   {
   public:
-    AuditMitigationActionsTaskMetadata();
-    AuditMitigationActionsTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AuditMitigationActionsTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditMitigationActionsTaskMetadata();
+    AWS_IOT_API AuditMitigationActionsTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditMitigationActionsTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     AuditMitigationActionsTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
   };
 
 } // namespace Model

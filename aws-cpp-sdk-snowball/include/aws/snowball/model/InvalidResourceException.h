@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/InvalidResourceException">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API InvalidResourceException
+  class InvalidResourceException
   {
   public:
-    InvalidResourceException();
-    InvalidResourceException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidResourceException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API InvalidResourceException();
+    AWS_SNOWBALL_API InvalidResourceException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API InvalidResourceException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

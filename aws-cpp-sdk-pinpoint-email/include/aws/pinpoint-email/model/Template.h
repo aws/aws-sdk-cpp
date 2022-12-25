@@ -23,13 +23,13 @@ namespace PinpointEmail
 namespace Model
 {
 
-  class AWS_PINPOINTEMAIL_API Template
+  class Template
   {
   public:
-    Template();
-    Template(Aws::Utils::Json::JsonView jsonValue);
-    Template& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API Template();
+    AWS_PINPOINTEMAIL_API Template(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Template& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateData;
-    bool m_templateDataHasBeenSet;
+    bool m_templateDataHasBeenSet = false;
   };
 
 } // namespace Model

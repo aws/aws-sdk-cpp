@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUB_API AssociateCreatedArtifactRequest : public MigrationHubRequest
+  class AssociateCreatedArtifactRequest : public MigrationHubRequest
   {
   public:
-    AssociateCreatedArtifactRequest();
+    AWS_MIGRATIONHUB_API AssociateCreatedArtifactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateCreatedArtifact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MIGRATIONHUB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStream;
-    bool m_progressUpdateStreamHasBeenSet;
+    bool m_progressUpdateStreamHasBeenSet = false;
 
     Aws::String m_migrationTaskName;
-    bool m_migrationTaskNameHasBeenSet;
+    bool m_migrationTaskNameHasBeenSet = false;
 
     CreatedArtifact m_createdArtifact;
-    bool m_createdArtifactHasBeenSet;
+    bool m_createdArtifactHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

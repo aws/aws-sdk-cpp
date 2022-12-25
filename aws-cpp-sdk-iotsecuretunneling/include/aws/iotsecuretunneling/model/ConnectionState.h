@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ConnectionState">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSECURETUNNELING_API ConnectionState
+  class ConnectionState
   {
   public:
-    ConnectionState();
-    ConnectionState(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSECURETUNNELING_API ConnectionState();
+    AWS_IOTSECURETUNNELING_API ConnectionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API ConnectionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

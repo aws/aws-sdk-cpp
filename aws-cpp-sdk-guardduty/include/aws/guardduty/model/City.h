@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/City">AWS API
    * Reference</a></p>
    */
-  class AWS_GUARDDUTY_API City
+  class City
   {
   public:
-    City();
-    City(Aws::Utils::Json::JsonView jsonValue);
-    City& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API City();
+    AWS_GUARDDUTY_API City(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API City& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_cityName;
-    bool m_cityNameHasBeenSet;
+    bool m_cityNameHasBeenSet = false;
   };
 
 } // namespace Model

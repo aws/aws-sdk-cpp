@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StaleSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API StaleSecurityGroup
+  class StaleSecurityGroup
   {
   public:
-    StaleSecurityGroup();
-    StaleSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StaleSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StaleSecurityGroup();
+    AWS_EC2_API StaleSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StaleSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<StaleIpPermission> m_staleIpPermissions;
-    bool m_staleIpPermissionsHasBeenSet;
+    bool m_staleIpPermissionsHasBeenSet = false;
 
     Aws::Vector<StaleIpPermission> m_staleIpPermissionsEgress;
-    bool m_staleIpPermissionsEgressHasBeenSet;
+    bool m_staleIpPermissionsEgressHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

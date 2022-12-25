@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceDetails
+  class AwsEcsServiceDetails
   {
   public:
-    AwsEcsServiceDetails();
-    AwsEcsServiceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1017,70 +1017,70 @@ namespace Model
   private:
 
     Aws::Vector<AwsEcsServiceCapacityProviderStrategyDetails> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     AwsEcsServiceDeploymentConfigurationDetails m_deploymentConfiguration;
-    bool m_deploymentConfigurationHasBeenSet;
+    bool m_deploymentConfigurationHasBeenSet = false;
 
     AwsEcsServiceDeploymentControllerDetails m_deploymentController;
-    bool m_deploymentControllerHasBeenSet;
+    bool m_deploymentControllerHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     bool m_enableEcsManagedTags;
-    bool m_enableEcsManagedTagsHasBeenSet;
+    bool m_enableEcsManagedTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
 
     int m_healthCheckGracePeriodSeconds;
-    bool m_healthCheckGracePeriodSecondsHasBeenSet;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
 
     Aws::String m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<AwsEcsServiceLoadBalancersDetails> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AwsEcsServiceNetworkConfigurationDetails m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::Vector<AwsEcsServicePlacementConstraintsDetails> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<AwsEcsServicePlacementStrategiesDetails> m_placementStrategies;
-    bool m_placementStrategiesHasBeenSet;
+    bool m_placementStrategiesHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet;
+    bool m_schedulingStrategyHasBeenSet = false;
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::Vector<AwsEcsServiceServiceRegistriesDetails> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACCOUNT_API PutAlternateContactRequest : public AccountRequest
+  class PutAlternateContactRequest : public AccountRequest
   {
   public:
-    PutAlternateContactRequest();
+    AWS_ACCOUNT_API PutAlternateContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAlternateContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCOUNT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -423,22 +423,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AlternateContactType m_alternateContactType;
-    bool m_alternateContactTypeHasBeenSet;
+    bool m_alternateContactTypeHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,9 @@ ListPackageVersionsRequest::ListPackageVersionsRequest() :
     m_sortByHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_originType(PackageVersionOriginType::NOT_SET),
+    m_originTypeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,13 @@ void ListPackageVersionsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("next-token", ss.str());
+      ss.str("");
+    }
+
+    if(m_originTypeHasBeenSet)
+    {
+      ss << PackageVersionOriginTypeMapper::GetNameForPackageVersionOriginType(m_originType);
+      uri.AddQueryStringParameter("originType", ss.str());
       ss.str("");
     }
 

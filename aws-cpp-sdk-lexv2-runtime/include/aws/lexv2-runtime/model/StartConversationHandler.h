@@ -34,7 +34,7 @@ namespace Model
         UNKNOWN
     };
 
-    class AWS_LEXRUNTIMEV2_API StartConversationHandler : public Aws::Utils::Event::EventStreamHandler
+    class StartConversationHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const PlaybackInterruptionEvent&)> PlaybackInterruptionEventCallback;
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
@@ -45,10 +45,10 @@ namespace Model
         typedef std::function<void(const Aws::Client::AWSError<LexRuntimeV2Errors>& error)> ErrorCallback;
 
     public:
-        StartConversationHandler();
-        StartConversationHandler& operator=(const StartConversationHandler&) = default;
+        AWS_LEXRUNTIMEV2_API StartConversationHandler();
+        AWS_LEXRUNTIMEV2_API StartConversationHandler& operator=(const StartConversationHandler&) = default;
 
-        virtual void OnEvent() override;
+        AWS_LEXRUNTIMEV2_API virtual void OnEvent() override;
 
         inline void SetPlaybackInterruptionEventCallback(const PlaybackInterruptionEventCallback& callback) { m_onPlaybackInterruptionEvent = callback; }
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
@@ -59,9 +59,9 @@ namespace Model
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
-        void HandleEventInMessage();
-        void HandleErrorInMessage();
-        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+        AWS_LEXRUNTIMEV2_API void HandleEventInMessage();
+        AWS_LEXRUNTIMEV2_API void HandleErrorInMessage();
+        AWS_LEXRUNTIMEV2_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         PlaybackInterruptionEventCallback m_onPlaybackInterruptionEvent;
         TranscriptEventCallback m_onTranscriptEvent;

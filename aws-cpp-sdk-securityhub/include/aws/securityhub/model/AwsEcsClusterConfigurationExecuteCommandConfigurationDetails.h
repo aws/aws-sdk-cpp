@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterConfigurationExecuteCommandConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationDetails
+  class AwsEcsClusterConfigurationExecuteCommandConfigurationDetails
   {
   public:
-    AwsEcsClusterConfigurationExecuteCommandConfigurationDetails();
-    AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     Aws::String m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
   };
 
 } // namespace Model

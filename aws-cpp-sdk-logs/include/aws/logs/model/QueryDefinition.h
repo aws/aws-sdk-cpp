@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/QueryDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API QueryDefinition
+  class QueryDefinition
   {
   public:
-    QueryDefinition();
-    QueryDefinition(Aws::Utils::Json::JsonView jsonValue);
-    QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API QueryDefinition();
+    AWS_CLOUDWATCHLOGS_API QueryDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::String m_queryDefinitionId;
-    bool m_queryDefinitionIdHasBeenSet;
+    bool m_queryDefinitionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     long long m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logGroupNames;
-    bool m_logGroupNamesHasBeenSet;
+    bool m_logGroupNamesHasBeenSet = false;
   };
 
 } // namespace Model

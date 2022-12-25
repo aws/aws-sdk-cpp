@@ -5,128 +5,16 @@
 
 #pragma once
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
-#include <aws/iotdeviceadvisor/IoTDeviceAdvisorErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iotdeviceadvisor/model/CreateSuiteDefinitionResult.h>
-#include <aws/iotdeviceadvisor/model/DeleteSuiteDefinitionResult.h>
-#include <aws/iotdeviceadvisor/model/GetEndpointResult.h>
-#include <aws/iotdeviceadvisor/model/GetSuiteDefinitionResult.h>
-#include <aws/iotdeviceadvisor/model/GetSuiteRunResult.h>
-#include <aws/iotdeviceadvisor/model/GetSuiteRunReportResult.h>
-#include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsResult.h>
-#include <aws/iotdeviceadvisor/model/ListSuiteRunsResult.h>
-#include <aws/iotdeviceadvisor/model/ListTagsForResourceResult.h>
-#include <aws/iotdeviceadvisor/model/StartSuiteRunResult.h>
-#include <aws/iotdeviceadvisor/model/StopSuiteRunResult.h>
-#include <aws/iotdeviceadvisor/model/TagResourceResult.h>
-#include <aws/iotdeviceadvisor/model/UntagResourceResult.h>
-#include <aws/iotdeviceadvisor/model/UpdateSuiteDefinitionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTDeviceAdvisor
 {
-
-namespace Model
-{
-        class CreateSuiteDefinitionRequest;
-        class DeleteSuiteDefinitionRequest;
-        class GetEndpointRequest;
-        class GetSuiteDefinitionRequest;
-        class GetSuiteRunRequest;
-        class GetSuiteRunReportRequest;
-        class ListSuiteDefinitionsRequest;
-        class ListSuiteRunsRequest;
-        class ListTagsForResourceRequest;
-        class StartSuiteRunRequest;
-        class StopSuiteRunRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateSuiteDefinitionRequest;
-
-        typedef Aws::Utils::Outcome<CreateSuiteDefinitionResult, IoTDeviceAdvisorError> CreateSuiteDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DeleteSuiteDefinitionResult, IoTDeviceAdvisorError> DeleteSuiteDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetEndpointResult, IoTDeviceAdvisorError> GetEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetSuiteDefinitionResult, IoTDeviceAdvisorError> GetSuiteDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetSuiteRunResult, IoTDeviceAdvisorError> GetSuiteRunOutcome;
-        typedef Aws::Utils::Outcome<GetSuiteRunReportResult, IoTDeviceAdvisorError> GetSuiteRunReportOutcome;
-        typedef Aws::Utils::Outcome<ListSuiteDefinitionsResult, IoTDeviceAdvisorError> ListSuiteDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListSuiteRunsResult, IoTDeviceAdvisorError> ListSuiteRunsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTDeviceAdvisorError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartSuiteRunResult, IoTDeviceAdvisorError> StartSuiteRunOutcome;
-        typedef Aws::Utils::Outcome<StopSuiteRunResult, IoTDeviceAdvisorError> StopSuiteRunOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IoTDeviceAdvisorError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IoTDeviceAdvisorError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateSuiteDefinitionResult, IoTDeviceAdvisorError> UpdateSuiteDefinitionOutcome;
-
-        typedef std::future<CreateSuiteDefinitionOutcome> CreateSuiteDefinitionOutcomeCallable;
-        typedef std::future<DeleteSuiteDefinitionOutcome> DeleteSuiteDefinitionOutcomeCallable;
-        typedef std::future<GetEndpointOutcome> GetEndpointOutcomeCallable;
-        typedef std::future<GetSuiteDefinitionOutcome> GetSuiteDefinitionOutcomeCallable;
-        typedef std::future<GetSuiteRunOutcome> GetSuiteRunOutcomeCallable;
-        typedef std::future<GetSuiteRunReportOutcome> GetSuiteRunReportOutcomeCallable;
-        typedef std::future<ListSuiteDefinitionsOutcome> ListSuiteDefinitionsOutcomeCallable;
-        typedef std::future<ListSuiteRunsOutcome> ListSuiteRunsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartSuiteRunOutcome> StartSuiteRunOutcomeCallable;
-        typedef std::future<StopSuiteRunOutcome> StopSuiteRunOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateSuiteDefinitionOutcome> UpdateSuiteDefinitionOutcomeCallable;
-} // namespace Model
-
-  class IoTDeviceAdvisorClient;
-
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::CreateSuiteDefinitionRequest&, const Model::CreateSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSuiteDefinitionResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::DeleteSuiteDefinitionRequest&, const Model::DeleteSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSuiteDefinitionResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetEndpointRequest&, const Model::GetEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteDefinitionRequest&, const Model::GetSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteDefinitionResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteRunRequest&, const Model::GetSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteRunResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::GetSuiteRunReportRequest&, const Model::GetSuiteRunReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteRunReportResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListSuiteDefinitionsRequest&, const Model::ListSuiteDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuiteDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListSuiteRunsRequest&, const Model::ListSuiteRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuiteRunsResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::StartSuiteRunRequest&, const Model::StartSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSuiteRunResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::StopSuiteRunRequest&, const Model::StopSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSuiteRunResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::UpdateSuiteDefinitionRequest&, const Model::UpdateSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSuiteDefinitionResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services IoT Core Device Advisor is a cloud-based, fully managed
    * test capability for validating IoT devices during device software development.
@@ -140,32 +28,60 @@ namespace Model
    * Web Services Partner Device Catalog without the need to send your device in and
    * wait for it to be tested.</p>
    */
-  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDeviceAdvisorClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTDeviceAdvisorClient(const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration(),
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDeviceAdvisorClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTDeviceAdvisorClient(const Aws::Auth::AWSCredentials& credentials,
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTDeviceAdvisorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTDeviceAdvisorClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTDeviceAdvisorClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoTDeviceAdvisorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoTDeviceAdvisorClient();
-
 
         /**
          * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
@@ -448,26 +364,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateSuiteDefinitionAsyncHelper(const Model::CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSuiteDefinitionAsyncHelper(const Model::DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEndpointAsyncHelper(const Model::GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSuiteDefinitionAsyncHelper(const Model::GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSuiteRunAsyncHelper(const Model::GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSuiteRunReportAsyncHelper(const Model::GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSuiteDefinitionsAsyncHelper(const Model::ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSuiteRunsAsyncHelper(const Model::ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSuiteRunAsyncHelper(const Model::StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopSuiteRunAsyncHelper(const Model::StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSuiteDefinitionAsyncHelper(const Model::UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>;
+      void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      IoTDeviceAdvisorClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTDeviceAdvisor

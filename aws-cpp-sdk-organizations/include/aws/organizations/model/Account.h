@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Account">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Account();
+    AWS_ORGANIZATIONS_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -388,25 +388,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccountStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AccountJoinedMethod m_joinedMethod;
-    bool m_joinedMethodHasBeenSet;
+    bool m_joinedMethodHasBeenSet = false;
 
     Aws::Utils::DateTime m_joinedTimestamp;
-    bool m_joinedTimestampHasBeenSet;
+    bool m_joinedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

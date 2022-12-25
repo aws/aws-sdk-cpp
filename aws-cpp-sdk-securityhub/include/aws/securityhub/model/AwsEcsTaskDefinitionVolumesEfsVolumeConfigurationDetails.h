@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails
+  class AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails
   {
   public:
-    AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails();
-    AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
 
     Aws::String m_filesystemId;
-    bool m_filesystemIdHasBeenSet;
+    bool m_filesystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     Aws::String m_transitEncryption;
-    bool m_transitEncryptionHasBeenSet;
+    bool m_transitEncryptionHasBeenSet = false;
 
     int m_transitEncryptionPort;
-    bool m_transitEncryptionPortHasBeenSet;
+    bool m_transitEncryptionPortHasBeenSet = false;
   };
 
 } // namespace Model

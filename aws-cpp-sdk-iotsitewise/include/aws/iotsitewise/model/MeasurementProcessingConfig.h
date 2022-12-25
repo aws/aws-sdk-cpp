@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/MeasurementProcessingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API MeasurementProcessingConfig
+  class MeasurementProcessingConfig
   {
   public:
-    MeasurementProcessingConfig();
-    MeasurementProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
-    MeasurementProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API MeasurementProcessingConfig();
+    AWS_IOTSITEWISE_API MeasurementProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API MeasurementProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     ForwardingConfig m_forwardingConfig;
-    bool m_forwardingConfigHasBeenSet;
+    bool m_forwardingConfigHasBeenSet = false;
   };
 
 } // namespace Model

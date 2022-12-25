@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/EthernetStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API EthernetStatus
+  class EthernetStatus
   {
   public:
-    EthernetStatus();
-    EthernetStatus(Aws::Utils::Json::JsonView jsonValue);
-    EthernetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API EthernetStatus();
+    AWS_PANORAMA_API EthernetStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API EthernetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     NetworkConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_hwAddress;
-    bool m_hwAddressHasBeenSet;
+    bool m_hwAddressHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
   };
 
 } // namespace Model

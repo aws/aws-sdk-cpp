@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Body">AWS API
    * Reference</a></p>
    */
-  class AWS_SES_API Body
+  class Body
   {
   public:
-    Body();
-    Body(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Body& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Body();
+    AWS_SES_API Body(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Body& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Content m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Content m_html;
-    bool m_htmlHasBeenSet;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

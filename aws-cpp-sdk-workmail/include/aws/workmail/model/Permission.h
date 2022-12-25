@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Permission">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API Permission
+  class Permission
   {
   public:
-    Permission();
-    Permission(Aws::Utils::Json::JsonView jsonValue);
-    Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API Permission();
+    AWS_WORKMAIL_API Permission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_granteeId;
-    bool m_granteeIdHasBeenSet;
+    bool m_granteeIdHasBeenSet = false;
 
     MemberType m_granteeType;
-    bool m_granteeTypeHasBeenSet;
+    bool m_granteeTypeHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_permissionValues;
-    bool m_permissionValuesHasBeenSet;
+    bool m_permissionValuesHasBeenSet = false;
   };
 
 } // namespace Model

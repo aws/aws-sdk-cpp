@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/RuntimeHintValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API RuntimeHintValue
+  class RuntimeHintValue
   {
   public:
-    RuntimeHintValue();
-    RuntimeHintValue(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeHintValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API RuntimeHintValue();
+    AWS_LEXRUNTIMEV2_API RuntimeHintValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API RuntimeHintValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_phrase;
-    bool m_phraseHasBeenSet;
+    bool m_phraseHasBeenSet = false;
   };
 
 } // namespace Model

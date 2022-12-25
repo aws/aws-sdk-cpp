@@ -26,7 +26,8 @@ AppDetails::AppDetails() :
     m_appNameHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_spaceNameHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ AppDetails::AppDetails(JsonView jsonValue) :
     m_appNameHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_spaceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ AppDetails& AppDetails::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SpaceName"))
+  {
+    m_spaceName = jsonValue.GetString("SpaceName");
+
+    m_spaceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue AppDetails::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
+
   }
 
   return payload;

@@ -45,7 +45,7 @@ Celebrity& Celebrity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Urls"))
   {
-    Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
+    Aws::Utils::Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
     for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());
@@ -97,7 +97,7 @@ JsonValue Celebrity::Jsonize() const
 
   if(m_urlsHasBeenSet)
   {
-   Array<JsonValue> urlsJsonList(m_urls.size());
+   Aws::Utils::Array<JsonValue> urlsJsonList(m_urls.size());
    for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
    {
      urlsJsonList[urlsIndex].AsString(m_urls[urlsIndex]);

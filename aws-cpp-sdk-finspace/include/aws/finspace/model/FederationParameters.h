@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/FederationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACE_API FederationParameters
+  class FederationParameters
   {
   public:
-    FederationParameters();
-    FederationParameters(Aws::Utils::Json::JsonView jsonValue);
-    FederationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACE_API FederationParameters();
+    AWS_FINSPACE_API FederationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API FederationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -401,22 +401,22 @@ namespace Model
   private:
 
     Aws::String m_samlMetadataDocument;
-    bool m_samlMetadataDocumentHasBeenSet;
+    bool m_samlMetadataDocumentHasBeenSet = false;
 
     Aws::String m_samlMetadataURL;
-    bool m_samlMetadataURLHasBeenSet;
+    bool m_samlMetadataURLHasBeenSet = false;
 
     Aws::String m_applicationCallBackURL;
-    bool m_applicationCallBackURLHasBeenSet;
+    bool m_applicationCallBackURLHasBeenSet = false;
 
     Aws::String m_federationURN;
-    bool m_federationURNHasBeenSet;
+    bool m_federationURNHasBeenSet = false;
 
     Aws::String m_federationProviderName;
-    bool m_federationProviderNameHasBeenSet;
+    bool m_federationProviderNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributeMap;
-    bool m_attributeMapHasBeenSet;
+    bool m_attributeMapHasBeenSet = false;
   };
 
 } // namespace Model

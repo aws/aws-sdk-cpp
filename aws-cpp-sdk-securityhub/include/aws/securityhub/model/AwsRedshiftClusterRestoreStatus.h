@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterRestoreStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterRestoreStatus
+  class AwsRedshiftClusterRestoreStatus
   {
   public:
-    AwsRedshiftClusterRestoreStatus();
-    AwsRedshiftClusterRestoreStatus(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterRestoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterRestoreStatus();
+    AWS_SECURITYHUB_API AwsRedshiftClusterRestoreStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterRestoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,22 +230,22 @@ namespace Model
   private:
 
     double m_currentRestoreRateInMegaBytesPerSecond;
-    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet;
+    bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = false;
 
     long long m_elapsedTimeInSeconds;
-    bool m_elapsedTimeInSecondsHasBeenSet;
+    bool m_elapsedTimeInSecondsHasBeenSet = false;
 
     long long m_estimatedTimeToCompletionInSeconds;
-    bool m_estimatedTimeToCompletionInSecondsHasBeenSet;
+    bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 
     long long m_progressInMegaBytes;
-    bool m_progressInMegaBytesHasBeenSet;
+    bool m_progressInMegaBytesHasBeenSet = false;
 
     long long m_snapshotSizeInMegaBytes;
-    bool m_snapshotSizeInMegaBytesHasBeenSet;
+    bool m_snapshotSizeInMegaBytesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AppflowIntegrationWorkflowAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowAttributes
+  class AppflowIntegrationWorkflowAttributes
   {
   public:
-    AppflowIntegrationWorkflowAttributes();
-    AppflowIntegrationWorkflowAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AppflowIntegrationWorkflowAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowAttributes();
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     SourceConnectorType m_sourceConnectorType;
-    bool m_sourceConnectorTypeHasBeenSet;
+    bool m_sourceConnectorTypeHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

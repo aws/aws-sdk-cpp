@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleSummary
+  class BotLocaleSummary
   {
   public:
-    BotLocaleSummary();
-    BotLocaleSummary(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleSummary();
+    AWS_LEXMODELSV2_API BotLocaleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_localeName;
-    bool m_localeNameHasBeenSet;
+    bool m_localeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     BotLocaleStatus m_botLocaleStatus;
-    bool m_botLocaleStatusHasBeenSet;
+    bool m_botLocaleStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastBuildSubmittedDateTime;
-    bool m_lastBuildSubmittedDateTimeHasBeenSet;
+    bool m_lastBuildSubmittedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

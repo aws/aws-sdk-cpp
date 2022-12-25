@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
+  class AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
   {
   public:
-    AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails();
-    AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_availabilityZoneCount;
-    bool m_availabilityZoneCountHasBeenSet;
+    bool m_availabilityZoneCountHasBeenSet = false;
   };
 
 } // namespace Model

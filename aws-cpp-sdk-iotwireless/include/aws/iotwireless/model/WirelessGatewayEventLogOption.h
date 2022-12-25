@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessGatewayEventLogOption">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessGatewayEventLogOption
+  class WirelessGatewayEventLogOption
   {
   public:
-    WirelessGatewayEventLogOption();
-    WirelessGatewayEventLogOption(Aws::Utils::Json::JsonView jsonValue);
-    WirelessGatewayEventLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessGatewayEventLogOption();
+    AWS_IOTWIRELESS_API WirelessGatewayEventLogOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessGatewayEventLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     WirelessGatewayEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

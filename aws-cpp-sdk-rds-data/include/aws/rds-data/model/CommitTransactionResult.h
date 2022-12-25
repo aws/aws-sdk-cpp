@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransactionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API CommitTransactionResult
+  class CommitTransactionResult
   {
   public:
-    CommitTransactionResult();
-    CommitTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CommitTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API CommitTransactionResult();
+    AWS_RDSDATASERVICE_API CommitTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API CommitTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

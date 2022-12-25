@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpRouteAction
+  class HttpRouteAction
   {
   public:
-    HttpRouteAction();
-    HttpRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    HttpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpRouteAction();
+    AWS_APPMESH_API HttpRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<WeightedTarget> m_weightedTargets;
-    bool m_weightedTargetsHasBeenSet;
+    bool m_weightedTargetsHasBeenSet = false;
   };
 
 } // namespace Model

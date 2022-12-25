@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FirewallPolicyStatelessRuleGroupReferencesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails
+  class FirewallPolicyStatelessRuleGroupReferencesDetails
   {
   public:
-    FirewallPolicyStatelessRuleGroupReferencesDetails();
-    FirewallPolicyStatelessRuleGroupReferencesDetails(Aws::Utils::Json::JsonView jsonValue);
-    FirewallPolicyStatelessRuleGroupReferencesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails();
+    AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FirewallPolicyStatelessRuleGroupReferencesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

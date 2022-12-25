@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointBatchRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointBatchRequest
+  class EndpointBatchRequest
   {
   public:
-    EndpointBatchRequest();
-    EndpointBatchRequest(Aws::Utils::Json::JsonView jsonValue);
-    EndpointBatchRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointBatchRequest();
+    AWS_PINPOINT_API EndpointBatchRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointBatchRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<EndpointBatchItem> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

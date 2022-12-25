@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachToIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchAttachToIndex
+  class BatchAttachToIndex
   {
   public:
-    BatchAttachToIndex();
-    BatchAttachToIndex(Aws::Utils::Json::JsonView jsonValue);
-    BatchAttachToIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchAttachToIndex();
+    AWS_CLOUDDIRECTORY_API BatchAttachToIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchAttachToIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ObjectReference m_indexReference;
-    bool m_indexReferenceHasBeenSet;
+    bool m_indexReferenceHasBeenSet = false;
 
     ObjectReference m_targetReference;
-    bool m_targetReferenceHasBeenSet;
+    bool m_targetReferenceHasBeenSet = false;
   };
 
 } // namespace Model

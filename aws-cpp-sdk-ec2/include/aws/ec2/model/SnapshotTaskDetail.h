@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotTaskDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SnapshotTaskDetail
+  class SnapshotTaskDetail
   {
   public:
-    SnapshotTaskDetail();
-    SnapshotTaskDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotTaskDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotTaskDetail();
+    AWS_EC2_API SnapshotTaskDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotTaskDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -451,37 +451,37 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     double m_diskImageSize;
-    bool m_diskImageSizeHasBeenSet;
+    bool m_diskImageSizeHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     UserBucketDetails m_userBucket;
-    bool m_userBucketHasBeenSet;
+    bool m_userBucketHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,91 +34,99 @@ namespace Model
    * <p>A launch profile controls your artist workforce’s access to studio
    * components, like compute farms, shared file systems, managed file systems, and
    * license server configurations, as well as instance types and Amazon Machine
-   * Images (AMIs). </p> <pre><code> &lt;p&gt;Studio administrators create launch
-   * profiles in the Nimble Studio console. Artists can use their launch profiles to
-   * launch an instance from the Nimble Studio portal. Each user’s launch profile
-   * defines how they can launch a streaming session. By default, studio admins can
-   * use all launch profiles.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
+   * Images (AMIs). </p> <p>Studio administrators create launch profiles in the
+   * Nimble Studio console. Artists can use their launch profiles to launch an
+   * instance from the Nimble Studio portal. Each user’s launch profile defines how
+   * they can launch a streaming session. By default, studio admins can use all
+   * launch profiles.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfile
+  class LaunchProfile
   {
   public:
-    LaunchProfile();
-    LaunchProfile(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfile();
+    AWS_NIMBLESTUDIO_API LaunchProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline LaunchProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline LaunchProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline LaunchProfile& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline LaunchProfile& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline LaunchProfile& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -252,42 +260,50 @@ namespace Model
 
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfile& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfile& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline LaunchProfile& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -578,111 +594,111 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline LaunchProfile& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline LaunchProfile& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline LaunchProfile& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -771,55 +787,55 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SubnetIds;
-    bool m_ec2SubnetIdsHasBeenSet;
+    bool m_ec2SubnetIdsHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_launchProfileProtocolVersions;
-    bool m_launchProfileProtocolVersionsHasBeenSet;
+    bool m_launchProfileProtocolVersionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LaunchProfileState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     LaunchProfileStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     StreamConfiguration m_streamConfiguration;
-    bool m_streamConfigurationHasBeenSet;
+    bool m_streamConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_studioComponentIds;
-    bool m_studioComponentIdsHasBeenSet;
+    bool m_studioComponentIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::Vector<ValidationResult> m_validationResults;
-    bool m_validationResultsHasBeenSet;
+    bool m_validationResultsHasBeenSet = false;
   };
 
 } // namespace Model

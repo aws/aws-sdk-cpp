@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API CreateAnomalyDetectorRequest : public LookoutMetricsRequest
+  class CreateAnomalyDetectorRequest : public LookoutMetricsRequest
   {
   public:
-    CreateAnomalyDetectorRequest();
+    AWS_LOOKOUTMETRICS_API CreateAnomalyDetectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAnomalyDetector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_anomalyDetectorName;
-    bool m_anomalyDetectorNameHasBeenSet;
+    bool m_anomalyDetectorNameHasBeenSet = false;
 
     Aws::String m_anomalyDetectorDescription;
-    bool m_anomalyDetectorDescriptionHasBeenSet;
+    bool m_anomalyDetectorDescriptionHasBeenSet = false;
 
     AnomalyDetectorConfig m_anomalyDetectorConfig;
-    bool m_anomalyDetectorConfigHasBeenSet;
+    bool m_anomalyDetectorConfigHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

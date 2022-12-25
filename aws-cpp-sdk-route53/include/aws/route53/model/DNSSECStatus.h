@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DNSSECStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DNSSECStatus
+  class DNSSECStatus
   {
   public:
-    DNSSECStatus();
-    DNSSECStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DNSSECStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DNSSECStatus();
+    AWS_ROUTE53_API DNSSECStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DNSSECStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -234,10 +234,10 @@ namespace Model
   private:
 
     Aws::String m_serveSignature;
-    bool m_serveSignatureHasBeenSet;
+    bool m_serveSignatureHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

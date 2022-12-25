@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API CreateGroupRequest : public XRayRequest
+  class CreateGroupRequest : public XRayRequest
   {
   public:
-    CreateGroupRequest();
+    AWS_XRAY_API CreateGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -139,7 +139,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -159,7 +159,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -169,7 +169,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -179,7 +179,7 @@ namespace Model
      * <p>The structure containing configurations related to insights.</p> <ul> <li>
      * <p>The InsightsEnabled boolean can be set to true to enable insights for the new
      * group or false to disable insights for the new group.</p> </li> <li> <p>The
-     * NotifcationsEnabled boolean can be set to true to enable insights notifications
+     * NotificationsEnabled boolean can be set to true to enable insights notifications
      * for the new group. Notifications may only be enabled on a group with
      * InsightsEnabled set to true.</p> </li> </ul>
      */
@@ -317,16 +317,16 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     InsightsConfiguration m_insightsConfiguration;
-    bool m_insightsConfigurationHasBeenSet;
+    bool m_insightsConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

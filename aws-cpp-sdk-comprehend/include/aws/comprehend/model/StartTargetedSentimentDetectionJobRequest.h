@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPREHEND_API StartTargetedSentimentDetectionJobRequest : public ComprehendRequest
+  class StartTargetedSentimentDetectionJobRequest : public ComprehendRequest
   {
   public:
-    StartTargetedSentimentDetectionJobRequest();
+    AWS_COMPREHEND_API StartTargetedSentimentDetectionJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartTargetedSentimentDetectionJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPREHEND_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -206,37 +206,37 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline StartTargetedSentimentDetectionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
+     * <p>The language of the input documents. Currently, English is the only supported
      * language.</p>
      */
     inline StartTargetedSentimentDetectionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
@@ -466,31 +466,31 @@ namespace Model
   private:
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

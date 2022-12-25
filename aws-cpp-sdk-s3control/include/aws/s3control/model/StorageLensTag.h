@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensTag">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API StorageLensTag
+  class StorageLensTag
   {
   public:
-    StorageLensTag();
-    StorageLensTag(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StorageLensTag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensTag();
+    AWS_S3CONTROL_API StorageLensTag(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensTag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

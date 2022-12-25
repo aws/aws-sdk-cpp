@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API UpdateOpsItemRequest : public SSMRequest
+  class UpdateOpsItemRequest : public SSMRequest
   {
   public:
-    UpdateOpsItemRequest();
+    AWS_SSM_API UpdateOpsItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateOpsItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -978,52 +978,96 @@ namespace Model
      */
     inline UpdateOpsItemRequest& WithPlannedEndTime(Aws::Utils::DateTime&& value) { SetPlannedEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetOpsItemArn() const{ return m_opsItemArn; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline bool OpsItemArnHasBeenSet() const { return m_opsItemArnHasBeenSet; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const Aws::String& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = value; }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(Aws::String&& value) { m_opsItemArnHasBeenSet = true; m_opsItemArn = std::move(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline void SetOpsItemArn(const char* value) { m_opsItemArnHasBeenSet = true; m_opsItemArn.assign(value); }
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(const Aws::String& value) { SetOpsItemArn(value); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(Aws::String&& value) { SetOpsItemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem Amazon Resource Name (ARN).</p>
+     */
+    inline UpdateOpsItemRequest& WithOpsItemArn(const char* value) { SetOpsItemArn(value); return *this;}
+
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-    bool m_operationalDataHasBeenSet;
+    bool m_operationalDataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_operationalDataToDelete;
-    bool m_operationalDataToDeleteHasBeenSet;
+    bool m_operationalDataToDeleteHasBeenSet = false;
 
     Aws::Vector<OpsItemNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-    bool m_relatedOpsItemsHasBeenSet;
+    bool m_relatedOpsItemsHasBeenSet = false;
 
     OpsItemStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualStartTime;
-    bool m_actualStartTimeHasBeenSet;
+    bool m_actualStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualEndTime;
-    bool m_actualEndTimeHasBeenSet;
+    bool m_actualEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedStartTime;
-    bool m_plannedStartTimeHasBeenSet;
+    bool m_plannedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedEndTime;
-    bool m_plannedEndTimeHasBeenSet;
+    bool m_plannedEndTimeHasBeenSet = false;
+
+    Aws::String m_opsItemArn;
+    bool m_opsItemArnHasBeenSet = false;
   };
 
 } // namespace Model

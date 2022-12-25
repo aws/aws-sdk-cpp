@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OutputFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API OutputFormatConfiguration
+  class OutputFormatConfiguration
   {
   public:
-    OutputFormatConfiguration();
-    OutputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OutputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API OutputFormatConfiguration();
+    AWS_FIREHOSE_API OutputFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API OutputFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Serializer m_serializer;
-    bool m_serializerHasBeenSet;
+    bool m_serializerHasBeenSet = false;
   };
 
 } // namespace Model

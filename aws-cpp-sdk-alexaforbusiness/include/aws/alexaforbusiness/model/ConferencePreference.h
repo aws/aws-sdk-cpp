@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ConferencePreference">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API ConferencePreference
+  class ConferencePreference
   {
   public:
-    ConferencePreference();
-    ConferencePreference(Aws::Utils::Json::JsonView jsonValue);
-    ConferencePreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API ConferencePreference();
+    AWS_ALEXAFORBUSINESS_API ConferencePreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API ConferencePreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_defaultConferenceProviderArn;
-    bool m_defaultConferenceProviderArnHasBeenSet;
+    bool m_defaultConferenceProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,18 +31,18 @@ namespace Model
    * this option to specify a simple Suricata rule with protocol, source and
    * destination, ports, direction, and rule options. For information about the
    * Suricata <code>Rules</code> format, see <a
-   * href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-   * Format</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulRule
+  class StatefulRule
   {
   public:
-    StatefulRule();
-    StatefulRule(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulRule();
+    AWS_NETWORKFIREWALL_API StatefulRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,13 +242,13 @@ namespace Model
   private:
 
     StatefulAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Header m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     Aws::Vector<RuleOption> m_ruleOptions;
-    bool m_ruleOptionsHasBeenSet;
+    bool m_ruleOptionsHasBeenSet = false;
   };
 
 } // namespace Model

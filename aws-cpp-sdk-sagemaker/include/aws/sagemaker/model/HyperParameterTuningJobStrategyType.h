@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     Bayesian,
-    Random
+    Random,
+    Hyperband,
+    Grid
   };
 
 namespace HyperParameterTuningJobStrategyTypeMapper

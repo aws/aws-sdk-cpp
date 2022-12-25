@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SessionLifetimeInMinutesInvalidException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException
+  class SessionLifetimeInMinutesInvalidException
   {
   public:
-    SessionLifetimeInMinutesInvalidException();
-    SessionLifetimeInMinutesInvalidException(Aws::Utils::Json::JsonView jsonValue);
-    SessionLifetimeInMinutesInvalidException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException();
+    AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

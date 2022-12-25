@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/LambdaConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API LambdaConfiguration
+  class LambdaConfiguration
   {
   public:
-    LambdaConfiguration();
-    LambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API LambdaConfiguration();
+    AWS_LOOKOUTMETRICS_API LambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API LambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

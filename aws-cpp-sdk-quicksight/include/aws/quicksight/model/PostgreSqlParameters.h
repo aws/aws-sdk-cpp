@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PostgreSqlParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PostgreSqlParameters
+  class PostgreSqlParameters
   {
   public:
-    PostgreSqlParameters();
-    PostgreSqlParameters(Aws::Utils::Json::JsonView jsonValue);
-    PostgreSqlParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PostgreSqlParameters();
+    AWS_QUICKSIGHT_API PostgreSqlParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PostgreSqlParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

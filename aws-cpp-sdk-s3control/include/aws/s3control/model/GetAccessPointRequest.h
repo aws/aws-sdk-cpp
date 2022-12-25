@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API GetAccessPointRequest : public S3ControlRequest
+  class GetAccessPointRequest : public S3ControlRequest
   {
   public:
-    GetAccessPointRequest();
+    AWS_S3CONTROL_API GetAccessPointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,48 +29,60 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAccessPoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
+
+    /**
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline GetAccessPointRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline GetAccessPointRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID for the account that owns the specified access point.</p>
+     * <p>The Amazon Web Services account ID for the account that owns the specified
+     * access point.</p>
      */
     inline GetAccessPointRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -198,10 +210,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

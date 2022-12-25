@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeConfigurationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ReservedNodeConfigurationOption
+  class ReservedNodeConfigurationOption
   {
   public:
-    ReservedNodeConfigurationOption();
-    ReservedNodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedNodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption();
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -103,13 +103,13 @@ namespace Model
   private:
 
     ReservedNode m_sourceReservedNode;
-    bool m_sourceReservedNodeHasBeenSet;
+    bool m_sourceReservedNodeHasBeenSet = false;
 
     int m_targetReservedNodeCount;
-    bool m_targetReservedNodeCountHasBeenSet;
+    bool m_targetReservedNodeCountHasBeenSet = false;
 
     ReservedNodeOffering m_targetReservedNodeOffering;
-    bool m_targetReservedNodeOfferingHasBeenSet;
+    bool m_targetReservedNodeOfferingHasBeenSet = false;
   };
 
 } // namespace Model

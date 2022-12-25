@@ -27,12 +27,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DescribeUserResult
+  class DescribeUserResult
   {
   public:
-    DescribeUserResult();
-    DescribeUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeUserResult();
+    AWS_WORKMAIL_API DescribeUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -180,31 +180,31 @@ namespace Model
 
 
     /**
-     * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of a user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of a user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(const EntityState& value) { m_state = value; }
 
     /**
-     * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of a user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of a user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeUserResult& WithState(const EntityState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
+     * <p>The state of a user: enabled (registered to WorkMail) or disabled
      * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeUserResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
@@ -212,7 +212,7 @@ namespace Model
 
     /**
      * <p>In certain cases, other entities are modeled as users. If interoperability is
-     * enabled, resources are imported into Amazon WorkMail as users. Because different
+     * enabled, resources are imported into WorkMail as users. Because different
      * WorkMail organizations rely on different directory types, administrators can
      * distinguish between an unregistered user (account is disabled and has a user
      * role) and the directory administrators. The values are USER, RESOURCE, and
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>In certain cases, other entities are modeled as users. If interoperability is
-     * enabled, resources are imported into Amazon WorkMail as users. Because different
+     * enabled, resources are imported into WorkMail as users. Because different
      * WorkMail organizations rely on different directory types, administrators can
      * distinguish between an unregistered user (account is disabled and has a user
      * role) and the directory administrators. The values are USER, RESOURCE, and
@@ -232,7 +232,7 @@ namespace Model
 
     /**
      * <p>In certain cases, other entities are modeled as users. If interoperability is
-     * enabled, resources are imported into Amazon WorkMail as users. Because different
+     * enabled, resources are imported into WorkMail as users. Because different
      * WorkMail organizations rely on different directory types, administrators can
      * distinguish between an unregistered user (account is disabled and has a user
      * role) and the directory administrators. The values are USER, RESOURCE, and
@@ -242,7 +242,7 @@ namespace Model
 
     /**
      * <p>In certain cases, other entities are modeled as users. If interoperability is
-     * enabled, resources are imported into Amazon WorkMail as users. Because different
+     * enabled, resources are imported into WorkMail as users. Because different
      * WorkMail organizations rely on different directory types, administrators can
      * distinguish between an unregistered user (account is disabled and has a user
      * role) and the directory administrators. The values are USER, RESOURCE, and
@@ -252,7 +252,7 @@ namespace Model
 
     /**
      * <p>In certain cases, other entities are modeled as users. If interoperability is
-     * enabled, resources are imported into Amazon WorkMail as users. Because different
+     * enabled, resources are imported into WorkMail as users. Because different
      * WorkMail organizations rely on different directory types, administrators can
      * distinguish between an unregistered user (account is disabled and has a user
      * role) and the directory administrators. The values are USER, RESOURCE, and
@@ -262,63 +262,63 @@ namespace Model
 
 
     /**
-     * <p>The date and time at which the user was enabled for Amazon WorkMail usage, in
-     * UNIX epoch time format.</p>
+     * <p>The date and time at which the user was enabled for WorkMailusage, in UNIX
+     * epoch time format.</p>
      */
     inline const Aws::Utils::DateTime& GetEnabledDate() const{ return m_enabledDate; }
 
     /**
-     * <p>The date and time at which the user was enabled for Amazon WorkMail usage, in
-     * UNIX epoch time format.</p>
+     * <p>The date and time at which the user was enabled for WorkMailusage, in UNIX
+     * epoch time format.</p>
      */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDate = value; }
 
     /**
-     * <p>The date and time at which the user was enabled for Amazon WorkMail usage, in
-     * UNIX epoch time format.</p>
+     * <p>The date and time at which the user was enabled for WorkMailusage, in UNIX
+     * epoch time format.</p>
      */
     inline void SetEnabledDate(Aws::Utils::DateTime&& value) { m_enabledDate = std::move(value); }
 
     /**
-     * <p>The date and time at which the user was enabled for Amazon WorkMail usage, in
-     * UNIX epoch time format.</p>
+     * <p>The date and time at which the user was enabled for WorkMailusage, in UNIX
+     * epoch time format.</p>
      */
     inline DescribeUserResult& WithEnabledDate(const Aws::Utils::DateTime& value) { SetEnabledDate(value); return *this;}
 
     /**
-     * <p>The date and time at which the user was enabled for Amazon WorkMail usage, in
-     * UNIX epoch time format.</p>
+     * <p>The date and time at which the user was enabled for WorkMailusage, in UNIX
+     * epoch time format.</p>
      */
     inline DescribeUserResult& WithEnabledDate(Aws::Utils::DateTime&& value) { SetEnabledDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time at which the user was disabled for Amazon WorkMail usage,
-     * in UNIX epoch time format.</p>
+     * <p>The date and time at which the user was disabled for WorkMail usage, in UNIX
+     * epoch time format.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
 
     /**
-     * <p>The date and time at which the user was disabled for Amazon WorkMail usage,
-     * in UNIX epoch time format.</p>
+     * <p>The date and time at which the user was disabled for WorkMail usage, in UNIX
+     * epoch time format.</p>
      */
     inline void SetDisabledDate(const Aws::Utils::DateTime& value) { m_disabledDate = value; }
 
     /**
-     * <p>The date and time at which the user was disabled for Amazon WorkMail usage,
-     * in UNIX epoch time format.</p>
+     * <p>The date and time at which the user was disabled for WorkMail usage, in UNIX
+     * epoch time format.</p>
      */
     inline void SetDisabledDate(Aws::Utils::DateTime&& value) { m_disabledDate = std::move(value); }
 
     /**
-     * <p>The date and time at which the user was disabled for Amazon WorkMail usage,
-     * in UNIX epoch time format.</p>
+     * <p>The date and time at which the user was disabled for WorkMail usage, in UNIX
+     * epoch time format.</p>
      */
     inline DescribeUserResult& WithDisabledDate(const Aws::Utils::DateTime& value) { SetDisabledDate(value); return *this;}
 
     /**
-     * <p>The date and time at which the user was disabled for Amazon WorkMail usage,
-     * in UNIX epoch time format.</p>
+     * <p>The date and time at which the user was disabled for WorkMail usage, in UNIX
+     * epoch time format.</p>
      */
     inline DescribeUserResult& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DataSetImportConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DataSetImportConfig
+  class DataSetImportConfig
   {
   public:
-    DataSetImportConfig();
-    DataSetImportConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataSetImportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportConfig();
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<DataSetImportItem> m_dataSets;
-    bool m_dataSetsHasBeenSet;
+    bool m_dataSetsHasBeenSet = false;
 
     Aws::String m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

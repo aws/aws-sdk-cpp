@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_QLDB_API UpdateLedgerPermissionsModeRequest : public QLDBRequest
+  class UpdateLedgerPermissionsModeRequest : public QLDBRequest
   {
   public:
-    UpdateLedgerPermissionsModeRequest();
+    AWS_QLDB_API UpdateLedgerPermissionsModeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLedgerPermissionsMode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QLDB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -215,10 +215,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PermissionsMode m_permissionsMode;
-    bool m_permissionsModeHasBeenSet;
+    bool m_permissionsModeHasBeenSet = false;
   };
 
 } // namespace Model

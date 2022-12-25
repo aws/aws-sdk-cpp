@@ -25,18 +25,18 @@ namespace Model
   /**
    * <p>Origin access identity configuration. Send a <code>GET</code> request to the
    * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code>
-   * resource. </p><p><h3>See Also:</h3>   <a
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CloudFrontOriginAccessIdentityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig
+  class CloudFrontOriginAccessIdentityConfig
   {
   public:
-    CloudFrontOriginAccessIdentityConfig();
-    CloudFrontOriginAccessIdentityConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudFrontOriginAccessIdentityConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig();
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -48,7 +48,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -65,7 +65,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -82,7 +82,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -99,7 +99,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -116,7 +116,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -133,7 +133,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -150,7 +150,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -167,7 +167,7 @@ namespace Model
      * already sent in a previous identity request, and the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
      * request (ignoring white space), the response includes the same information
-     * returned to the original request. </p> <p>If the <code>CallerReference</code> is
+     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
      * a value you already sent in a previous request to create an identity, but the
      * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
      * from the original request, CloudFront returns a
@@ -227,10 +227,10 @@ namespace Model
   private:
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

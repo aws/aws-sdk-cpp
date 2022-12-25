@@ -33,7 +33,7 @@ Aws::String DescribeConfigurationAggregatorSourcesStatusRequest::SerializePayloa
 
   if(m_updateStatusHasBeenSet)
   {
-   Array<JsonValue> updateStatusJsonList(m_updateStatus.size());
+   Aws::Utils::Array<JsonValue> updateStatusJsonList(m_updateStatus.size());
    for(unsigned updateStatusIndex = 0; updateStatusIndex < updateStatusJsonList.GetLength(); ++updateStatusIndex)
    {
      updateStatusJsonList[updateStatusIndex].AsString(AggregatedSourceStatusTypeMapper::GetNameForAggregatedSourceStatusType(m_updateStatus[updateStatusIndex]));

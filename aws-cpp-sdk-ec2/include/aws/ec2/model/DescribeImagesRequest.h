@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeImagesRequest : public EC2Request
+  class DescribeImagesRequest : public EC2Request
   {
   public:
-    DescribeImagesRequest();
+    AWS_EC2_API DescribeImagesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeImages"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -215,8 +215,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -284,8 +284,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -353,8 +353,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -422,8 +422,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -491,8 +491,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -560,8 +560,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -629,8 +629,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -698,8 +698,8 @@ namespace Model
      * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
-     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only list
-     * Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only
+     * supported value is <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>marketplace</code>).</p> </li> <li> <p> <code>ramdisk-id</code> - The RAM
@@ -856,41 +856,33 @@ namespace Model
 
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
 
     /**
-     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
-     * <code>false</code>, no deprecated AMIs are included in the response. If no value
-     * is specified, the default value is <code>false</code>.</p>  <p>If you are
-     * the AMI owner, all deprecated AMIs appear in the response regardless of the
-     * value (<code>true</code> or <code>false</code>) that you set for this
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
     inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
@@ -928,25 +920,101 @@ namespace Model
      */
     inline DescribeImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_executableUsers;
-    bool m_executableUsersHasBeenSet;
+    bool m_executableUsersHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageIds;
-    bool m_imageIdsHasBeenSet;
+    bool m_imageIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_owners;
-    bool m_ownersHasBeenSet;
+    bool m_ownersHasBeenSet = false;
 
     bool m_includeDeprecated;
-    bool m_includeDeprecatedHasBeenSet;
+    bool m_includeDeprecatedHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

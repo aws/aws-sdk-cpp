@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration
+  class CreateRemoteAccessSessionConfiguration
   {
   public:
-    CreateRemoteAccessSessionConfiguration();
-    CreateRemoteAccessSessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateRemoteAccessSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration();
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
-    bool m_vpceConfigurationArnsHasBeenSet;
+    bool m_vpceConfigurationArnsHasBeenSet = false;
   };
 
 } // namespace Model

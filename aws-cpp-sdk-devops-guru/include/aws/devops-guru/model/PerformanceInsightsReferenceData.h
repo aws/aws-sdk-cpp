@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PerformanceInsightsReferenceData">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PerformanceInsightsReferenceData
+  class PerformanceInsightsReferenceData
   {
   public:
-    PerformanceInsightsReferenceData();
-    PerformanceInsightsReferenceData(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceInsightsReferenceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceData();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PerformanceInsightsReferenceComparisonValues m_comparisonValues;
-    bool m_comparisonValuesHasBeenSet;
+    bool m_comparisonValuesHasBeenSet = false;
   };
 
 } // namespace Model

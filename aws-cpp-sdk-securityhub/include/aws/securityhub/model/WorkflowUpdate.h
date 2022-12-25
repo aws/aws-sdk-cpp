@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WorkflowUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API WorkflowUpdate
+  class WorkflowUpdate
   {
   public:
-    WorkflowUpdate();
-    WorkflowUpdate(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API WorkflowUpdate();
+    AWS_SECURITYHUB_API WorkflowUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API WorkflowUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,7 +179,7 @@ namespace Model
   private:
 
     WorkflowStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

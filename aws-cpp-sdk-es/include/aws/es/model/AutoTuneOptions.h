@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTuneOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTuneOptions
+  class AutoTuneOptions
   {
   public:
-    AutoTuneOptions();
-    AutoTuneOptions(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptions();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     AutoTuneDesiredState m_desiredState;
-    bool m_desiredStateHasBeenSet;
+    bool m_desiredStateHasBeenSet = false;
 
     RollbackOnDisable m_rollbackOnDisable;
-    bool m_rollbackOnDisableHasBeenSet;
+    bool m_rollbackOnDisableHasBeenSet = false;
 
     Aws::Vector<AutoTuneMaintenanceSchedule> m_maintenanceSchedules;
-    bool m_maintenanceSchedulesHasBeenSet;
+    bool m_maintenanceSchedulesHasBeenSet = false;
   };
 
 } // namespace Model

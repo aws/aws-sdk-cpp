@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NielsenConfiguration
+  class NielsenConfiguration
   {
   public:
-    NielsenConfiguration();
-    NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NielsenConfiguration();
+    AWS_MEDIACONVERT_API NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     int m_breakoutCode;
-    bool m_breakoutCodeHasBeenSet;
+    bool m_breakoutCodeHasBeenSet = false;
 
     Aws::String m_distributorId;
-    bool m_distributorIdHasBeenSet;
+    bool m_distributorIdHasBeenSet = false;
   };
 
 } // namespace Model

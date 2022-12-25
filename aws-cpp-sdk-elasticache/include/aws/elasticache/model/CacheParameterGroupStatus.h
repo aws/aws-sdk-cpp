@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CacheParameterGroupStatus
+  class CacheParameterGroupStatus
   {
   public:
-    CacheParameterGroupStatus();
-    CacheParameterGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheParameterGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheParameterGroupStatus();
+    AWS_ELASTICACHE_API CacheParameterGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheParameterGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
-    bool m_cacheNodeIdsToRebootHasBeenSet;
+    bool m_cacheNodeIdsToRebootHasBeenSet = false;
   };
 
 } // namespace Model

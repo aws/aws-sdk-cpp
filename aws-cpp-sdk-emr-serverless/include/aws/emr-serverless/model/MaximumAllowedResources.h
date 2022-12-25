@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/MaximumAllowedResources">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API MaximumAllowedResources
+  class MaximumAllowedResources
   {
   public:
-    MaximumAllowedResources();
-    MaximumAllowedResources(Aws::Utils::Json::JsonView jsonValue);
-    MaximumAllowedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API MaximumAllowedResources();
+    AWS_EMRSERVERLESS_API MaximumAllowedResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API MaximumAllowedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_disk;
-    bool m_diskHasBeenSet;
+    bool m_diskHasBeenSet = false;
   };
 
 } // namespace Model

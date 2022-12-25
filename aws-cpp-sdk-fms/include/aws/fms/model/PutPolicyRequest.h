@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_FMS_API PutPolicyRequest : public FMSRequest
+  class PutPolicyRequest : public FMSRequest
   {
   public:
-    PutPolicyRequest();
+    AWS_FMS_API PutPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Policy m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

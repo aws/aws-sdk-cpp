@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ExplicitDeny">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ExplicitDeny
+  class ExplicitDeny
   {
   public:
-    ExplicitDeny();
-    ExplicitDeny(Aws::Utils::Json::JsonView jsonValue);
-    ExplicitDeny& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ExplicitDeny();
+    AWS_IOT_API ExplicitDeny(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ExplicitDeny& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Policy> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

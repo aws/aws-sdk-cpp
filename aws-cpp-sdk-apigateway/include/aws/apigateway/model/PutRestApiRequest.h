@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApiRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API PutRestApiRequest : public StreamingAPIGatewayRequest
+  class PutRestApiRequest : public StreamingAPIGatewayRequest
   {
   public:
-    PutRestApiRequest();
+    AWS_APIGATEWAY_API PutRestApiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutRestApi"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -270,16 +270,16 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     PutMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     bool m_failOnWarnings;
-    bool m_failOnWarningsHasBeenSet;
+    bool m_failOnWarningsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
   };
 

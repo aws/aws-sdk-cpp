@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API ListModelsRequest : public LookoutEquipmentRequest
+  class ListModelsRequest : public LookoutEquipmentRequest
   {
   public:
-    ListModelsRequest();
+    AWS_LOOKOUTEQUIPMENT_API ListModelsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListModels"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ModelStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_modelNameBeginsWith;
-    bool m_modelNameBeginsWithHasBeenSet;
+    bool m_modelNameBeginsWithHasBeenSet = false;
 
     Aws::String m_datasetNameBeginsWith;
-    bool m_datasetNameBeginsWithHasBeenSet;
+    bool m_datasetNameBeginsWithHasBeenSet = false;
   };
 
 } // namespace Model

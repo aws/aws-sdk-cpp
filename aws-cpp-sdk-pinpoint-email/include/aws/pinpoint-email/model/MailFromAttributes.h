@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/MailFromAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API MailFromAttributes
+  class MailFromAttributes
   {
   public:
-    MailFromAttributes();
-    MailFromAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MailFromAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API MailFromAttributes();
+    AWS_PINPOINTEMAIL_API MailFromAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API MailFromAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,13 +243,13 @@ namespace Model
   private:
 
     Aws::String m_mailFromDomain;
-    bool m_mailFromDomainHasBeenSet;
+    bool m_mailFromDomainHasBeenSet = false;
 
     MailFromDomainStatus m_mailFromDomainStatus;
-    bool m_mailFromDomainStatusHasBeenSet;
+    bool m_mailFromDomainStatusHasBeenSet = false;
 
     BehaviorOnMxFailure m_behaviorOnMxFailure;
-    bool m_behaviorOnMxFailureHasBeenSet;
+    bool m_behaviorOnMxFailureHasBeenSet = false;
   };
 
 } // namespace Model

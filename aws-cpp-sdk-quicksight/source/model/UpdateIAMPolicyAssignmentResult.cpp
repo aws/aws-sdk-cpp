@@ -55,7 +55,7 @@ UpdateIAMPolicyAssignmentResult& UpdateIAMPolicyAssignmentResult::operator =(con
     Aws::Map<Aws::String, JsonView> identitiesJsonMap = jsonValue.GetObject("Identities").GetAllObjects();
     for(auto& identitiesItem : identitiesJsonMap)
     {
-      Array<JsonView> identityNameListJsonList = identitiesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> identityNameListJsonList = identitiesItem.second.AsArray();
       Aws::Vector<Aws::String> identityNameListList;
       identityNameListList.reserve((size_t)identityNameListJsonList.GetLength());
       for(unsigned identityNameListIndex = 0; identityNameListIndex < identityNameListJsonList.GetLength(); ++identityNameListIndex)

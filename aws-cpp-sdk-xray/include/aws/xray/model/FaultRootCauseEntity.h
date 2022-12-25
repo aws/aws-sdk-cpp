@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/FaultRootCauseEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API FaultRootCauseEntity
+  class FaultRootCauseEntity
   {
   public:
-    FaultRootCauseEntity();
-    FaultRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
-    FaultRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API FaultRootCauseEntity();
+    AWS_XRAY_API FaultRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API FaultRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<RootCauseException> m_exceptions;
-    bool m_exceptionsHasBeenSet;
+    bool m_exceptionsHasBeenSet = false;
 
     bool m_remote;
-    bool m_remoteHasBeenSet;
+    bool m_remoteHasBeenSet = false;
   };
 
 } // namespace Model

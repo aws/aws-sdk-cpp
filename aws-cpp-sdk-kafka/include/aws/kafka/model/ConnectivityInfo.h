@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ConnectivityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ConnectivityInfo
+  class ConnectivityInfo
   {
   public:
-    ConnectivityInfo();
-    ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ConnectivityInfo();
+    AWS_KAFKA_API ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     PublicAccess m_publicAccess;
-    bool m_publicAccessHasBeenSet;
+    bool m_publicAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API MediaStreamSourceConfiguration
+  class MediaStreamSourceConfiguration
   {
   public:
-    MediaStreamSourceConfiguration();
-    MediaStreamSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MediaStreamSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API MediaStreamSourceConfiguration();
+    AWS_MEDIACONNECT_API MediaStreamSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API MediaStreamSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     EncodingName m_encodingName;
-    bool m_encodingNameHasBeenSet;
+    bool m_encodingNameHasBeenSet = false;
 
     Aws::Vector<InputConfiguration> m_inputConfigurations;
-    bool m_inputConfigurationsHasBeenSet;
+    bool m_inputConfigurationsHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

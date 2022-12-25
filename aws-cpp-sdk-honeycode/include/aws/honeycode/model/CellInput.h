@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/CellInput">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API CellInput
+  class CellInput
   {
   public:
-    CellInput();
-    CellInput(Aws::Utils::Json::JsonView jsonValue);
-    CellInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API CellInput();
+    AWS_HONEYCODE_API CellInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API CellInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_fact;
-    bool m_factHasBeenSet;
+    bool m_factHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_facts;
-    bool m_factsHasBeenSet;
+    bool m_factsHasBeenSet = false;
   };
 
 } // namespace Model

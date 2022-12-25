@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API PutQueryDefinitionRequest : public CloudWatchLogsRequest
+  class PutQueryDefinitionRequest : public CloudWatchLogsRequest
   {
   public:
-    PutQueryDefinitionRequest();
+    AWS_CLOUDWATCHLOGS_API PutQueryDefinitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,78 +30,78 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutQueryDefinition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline PutQueryDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
     inline PutQueryDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the query definition. If you are saving a lot of query
-     * definitions, we recommend that you name them so that you can easily find the
-     * ones you want by using the first part of the name as a filter in the
+     * <p>A name for the query definition. If you are saving numerous query
+     * definitions, we recommend that you name them. This way, you can find the ones
+     * you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
      */
@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_queryDefinitionId;
-    bool m_queryDefinitionIdHasBeenSet;
+    bool m_queryDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logGroupNames;
-    bool m_logGroupNamesHasBeenSet;
+    bool m_logGroupNamesHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

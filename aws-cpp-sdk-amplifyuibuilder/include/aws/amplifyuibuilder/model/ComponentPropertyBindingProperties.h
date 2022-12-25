@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentPropertyBindingProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties
+  class ComponentPropertyBindingProperties
   {
   public:
-    ComponentPropertyBindingProperties();
-    ComponentPropertyBindingProperties(Aws::Utils::Json::JsonView jsonValue);
-    ComponentPropertyBindingProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties();
+    AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentPropertyBindingProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API ListBotVersionsRequest : public LexModelsV2Request
+  class ListBotVersionsRequest : public LexModelsV2Request
   {
   public:
-    ListBotVersionsRequest();
+    AWS_LEXMODELSV2_API ListBotVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListBotVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     BotVersionSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

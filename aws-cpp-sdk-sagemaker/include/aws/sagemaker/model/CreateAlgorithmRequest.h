@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateAlgorithmRequest : public SageMakerRequest
+  class CreateAlgorithmRequest : public SageMakerRequest
   {
   public:
-    CreateAlgorithmRequest();
+    AWS_SAGEMAKER_API CreateAlgorithmRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAlgorithm"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -416,25 +416,25 @@ namespace Model
   private:
 
     Aws::String m_algorithmName;
-    bool m_algorithmNameHasBeenSet;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::String m_algorithmDescription;
-    bool m_algorithmDescriptionHasBeenSet;
+    bool m_algorithmDescriptionHasBeenSet = false;
 
     TrainingSpecification m_trainingSpecification;
-    bool m_trainingSpecificationHasBeenSet;
+    bool m_trainingSpecificationHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     AlgorithmValidationSpecification m_validationSpecification;
-    bool m_validationSpecificationHasBeenSet;
+    bool m_validationSpecificationHasBeenSet = false;
 
     bool m_certifyForMarketplace;
-    bool m_certifyForMarketplaceHasBeenSet;
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

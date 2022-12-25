@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API CreateProfileRequest : public AlexaForBusinessRequest
+  class CreateProfileRequest : public AlexaForBusinessRequest
   {
   public:
-    CreateProfileRequest();
+    AWS_ALEXAFORBUSINESS_API CreateProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -505,46 +505,46 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     TemperatureUnit m_temperatureUnit;
-    bool m_temperatureUnitHasBeenSet;
+    bool m_temperatureUnitHasBeenSet = false;
 
     WakeWord m_wakeWord;
-    bool m_wakeWordHasBeenSet;
+    bool m_wakeWordHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_setupModeDisabled;
-    bool m_setupModeDisabledHasBeenSet;
+    bool m_setupModeDisabledHasBeenSet = false;
 
     int m_maxVolumeLimit;
-    bool m_maxVolumeLimitHasBeenSet;
+    bool m_maxVolumeLimitHasBeenSet = false;
 
     bool m_pSTNEnabled;
-    bool m_pSTNEnabledHasBeenSet;
+    bool m_pSTNEnabledHasBeenSet = false;
 
     bool m_dataRetentionOptIn;
-    bool m_dataRetentionOptInHasBeenSet;
+    bool m_dataRetentionOptInHasBeenSet = false;
 
     CreateMeetingRoomConfiguration m_meetingRoomConfiguration;
-    bool m_meetingRoomConfigurationHasBeenSet;
+    bool m_meetingRoomConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DatetimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API DatetimeRange
+  class DatetimeRange
   {
   public:
-    DatetimeRange();
-    DatetimeRange(Aws::Utils::Json::JsonView jsonValue);
-    DatetimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API DatetimeRange();
+    AWS_LICENSEMANAGER_API DatetimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API DatetimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_begin;
-    bool m_beginHasBeenSet;
+    bool m_beginHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

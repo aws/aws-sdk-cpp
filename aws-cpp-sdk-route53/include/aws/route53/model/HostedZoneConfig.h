@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HostedZoneConfig
+  class HostedZoneConfig
   {
   public:
-    HostedZoneConfig();
-    HostedZoneConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostedZoneConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneConfig();
+    AWS_ROUTE53_API HostedZoneConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZoneConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     bool m_privateZone;
-    bool m_privateZoneHasBeenSet;
+    bool m_privateZoneHasBeenSet = false;
   };
 
 } // namespace Model

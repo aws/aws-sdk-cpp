@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalSecondaryIndexAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction
+  class UpdateGlobalSecondaryIndexAction
   {
   public:
-    UpdateGlobalSecondaryIndexAction();
-    UpdateGlobalSecondaryIndexAction(Aws::Utils::Json::JsonView jsonValue);
-    UpdateGlobalSecondaryIndexAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction();
+    AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughput;
-    bool m_provisionedThroughputHasBeenSet;
+    bool m_provisionedThroughputHasBeenSet = false;
   };
 
 } // namespace Model

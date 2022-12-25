@@ -10,6 +10,9 @@
 #include <aws/rbin/model/RetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rbin/model/RuleStatus.h>
+#include <aws/rbin/model/LockConfiguration.h>
+#include <aws/rbin/model/LockState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/rbin/model/ResourceTag.h>
 #include <utility>
 
@@ -29,12 +32,12 @@ namespace RecycleBin
 {
 namespace Model
 {
-  class AWS_RECYCLEBIN_API GetRuleResult
+  class GetRuleResult
   {
   public:
-    GetRuleResult();
-    GetRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API GetRuleResult();
+    AWS_RECYCLEBIN_API GetRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API GetRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -239,6 +242,144 @@ namespace Model
      */
     inline GetRuleResult& WithStatus(RuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline const LockConfiguration& GetLockConfiguration() const{ return m_lockConfiguration; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(const LockConfiguration& value) { m_lockConfiguration = value; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(LockConfiguration&& value) { m_lockConfiguration = std::move(value); }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline GetRuleResult& WithLockConfiguration(const LockConfiguration& value) { SetLockConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline GetRuleResult& WithLockConfiguration(LockConfiguration&& value) { SetLockConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
+     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
+     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
+     * still within the unlock delay period. The retention rule can be modified or
+     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+     * deleted by any user with the required permissions.</p> </li> <li> <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention
+     * rule has been locked, it can transition between the <code>locked</code> and
+     * <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.</p> </li> </ul>
+     */
+    inline const LockState& GetLockState() const{ return m_lockState; }
+
+    /**
+     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
+     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
+     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
+     * still within the unlock delay period. The retention rule can be modified or
+     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+     * deleted by any user with the required permissions.</p> </li> <li> <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention
+     * rule has been locked, it can transition between the <code>locked</code> and
+     * <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.</p> </li> </ul>
+     */
+    inline void SetLockState(const LockState& value) { m_lockState = value; }
+
+    /**
+     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
+     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
+     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
+     * still within the unlock delay period. The retention rule can be modified or
+     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+     * deleted by any user with the required permissions.</p> </li> <li> <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention
+     * rule has been locked, it can transition between the <code>locked</code> and
+     * <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.</p> </li> </ul>
+     */
+    inline void SetLockState(LockState&& value) { m_lockState = std::move(value); }
+
+    /**
+     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
+     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
+     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
+     * still within the unlock delay period. The retention rule can be modified or
+     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+     * deleted by any user with the required permissions.</p> </li> <li> <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention
+     * rule has been locked, it can transition between the <code>locked</code> and
+     * <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.</p> </li> </ul>
+     */
+    inline GetRuleResult& WithLockState(const LockState& value) { SetLockState(value); return *this;}
+
+    /**
+     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
+     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
+     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
+     * still within the unlock delay period. The retention rule can be modified or
+     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+     * deleted by any user with the required permissions.</p> </li> <li> <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention
+     * rule has been locked, it can transition between the <code>locked</code> and
+     * <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.</p> </li> </ul>
+     */
+    inline GetRuleResult& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time at which the unlock delay is set to expire. Only returned
+     * for retention rules that have been unlocked and that are still within the unlock
+     * delay period.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLockEndTime() const{ return m_lockEndTime; }
+
+    /**
+     * <p>The date and time at which the unlock delay is set to expire. Only returned
+     * for retention rules that have been unlocked and that are still within the unlock
+     * delay period.</p>
+     */
+    inline void SetLockEndTime(const Aws::Utils::DateTime& value) { m_lockEndTime = value; }
+
+    /**
+     * <p>The date and time at which the unlock delay is set to expire. Only returned
+     * for retention rules that have been unlocked and that are still within the unlock
+     * delay period.</p>
+     */
+    inline void SetLockEndTime(Aws::Utils::DateTime&& value) { m_lockEndTime = std::move(value); }
+
+    /**
+     * <p>The date and time at which the unlock delay is set to expire. Only returned
+     * for retention rules that have been unlocked and that are still within the unlock
+     * delay period.</p>
+     */
+    inline GetRuleResult& WithLockEndTime(const Aws::Utils::DateTime& value) { SetLockEndTime(value); return *this;}
+
+    /**
+     * <p>The date and time at which the unlock delay is set to expire. Only returned
+     * for retention rules that have been unlocked and that are still within the unlock
+     * delay period.</p>
+     */
+    inline GetRuleResult& WithLockEndTime(Aws::Utils::DateTime&& value) { SetLockEndTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_identifier;
@@ -252,6 +393,12 @@ namespace Model
     Aws::Vector<ResourceTag> m_resourceTags;
 
     RuleStatus m_status;
+
+    LockConfiguration m_lockConfiguration;
+
+    LockState m_lockState;
+
+    Aws::Utils::DateTime m_lockEndTime;
   };
 
 } // namespace Model

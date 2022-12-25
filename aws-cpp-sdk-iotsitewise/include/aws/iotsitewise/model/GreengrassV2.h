@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GreengrassV2">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API GreengrassV2
+  class GreengrassV2
   {
   public:
-    GreengrassV2();
-    GreengrassV2(Aws::Utils::Json::JsonView jsonValue);
-    GreengrassV2& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API GreengrassV2();
+    AWS_IOTSITEWISE_API GreengrassV2(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API GreengrassV2& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_coreDeviceThingName;
-    bool m_coreDeviceThingNameHasBeenSet;
+    bool m_coreDeviceThingNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/S3Reference">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAILMESSAGEFLOW_API S3Reference
+  class S3Reference
   {
   public:
-    S3Reference();
-    S3Reference(Aws::Utils::Json::JsonView jsonValue);
-    S3Reference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAILMESSAGEFLOW_API S3Reference();
+    AWS_WORKMAILMESSAGEFLOW_API S3Reference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAILMESSAGEFLOW_API S3Reference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAILMESSAGEFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_objectVersion;
-    bool m_objectVersionHasBeenSet;
+    bool m_objectVersionHasBeenSet = false;
   };
 
 } // namespace Model

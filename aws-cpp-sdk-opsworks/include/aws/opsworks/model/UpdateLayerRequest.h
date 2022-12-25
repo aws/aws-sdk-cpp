@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API UpdateLayerRequest : public OpsWorksRequest
+  class UpdateLayerRequest : public OpsWorksRequest
   {
   public:
-    UpdateLayerRequest();
+    AWS_OPSWORKS_API UpdateLayerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLayer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -853,55 +853,55 @@ namespace Model
   private:
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_shortname;
-    bool m_shortnameHasBeenSet;
+    bool m_shortnameHasBeenSet = false;
 
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
-    bool m_cloudWatchLogsConfigurationHasBeenSet;
+    bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
     Aws::String m_customInstanceProfileArn;
-    bool m_customInstanceProfileArnHasBeenSet;
+    bool m_customInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_customJson;
-    bool m_customJsonHasBeenSet;
+    bool m_customJsonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
-    bool m_customSecurityGroupIdsHasBeenSet;
+    bool m_customSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_packages;
-    bool m_packagesHasBeenSet;
+    bool m_packagesHasBeenSet = false;
 
     Aws::Vector<VolumeConfiguration> m_volumeConfigurations;
-    bool m_volumeConfigurationsHasBeenSet;
+    bool m_volumeConfigurationsHasBeenSet = false;
 
     bool m_enableAutoHealing;
-    bool m_enableAutoHealingHasBeenSet;
+    bool m_enableAutoHealingHasBeenSet = false;
 
     bool m_autoAssignElasticIps;
-    bool m_autoAssignElasticIpsHasBeenSet;
+    bool m_autoAssignElasticIpsHasBeenSet = false;
 
     bool m_autoAssignPublicIps;
-    bool m_autoAssignPublicIpsHasBeenSet;
+    bool m_autoAssignPublicIpsHasBeenSet = false;
 
     Recipes m_customRecipes;
-    bool m_customRecipesHasBeenSet;
+    bool m_customRecipesHasBeenSet = false;
 
     bool m_installUpdatesOnBoot;
-    bool m_installUpdatesOnBootHasBeenSet;
+    bool m_installUpdatesOnBootHasBeenSet = false;
 
     bool m_useEbsOptimizedInstances;
-    bool m_useEbsOptimizedInstancesHasBeenSet;
+    bool m_useEbsOptimizedInstancesHasBeenSet = false;
 
     LifecycleEventConfiguration m_lifecycleEventConfiguration;
-    bool m_lifecycleEventConfigurationHasBeenSet;
+    bool m_lifecycleEventConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

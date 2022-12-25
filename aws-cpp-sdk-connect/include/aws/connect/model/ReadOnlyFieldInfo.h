@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReadOnlyFieldInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ReadOnlyFieldInfo
+  class ReadOnlyFieldInfo
   {
   public:
-    ReadOnlyFieldInfo();
-    ReadOnlyFieldInfo(Aws::Utils::Json::JsonView jsonValue);
-    ReadOnlyFieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ReadOnlyFieldInfo();
+    AWS_CONNECT_API ReadOnlyFieldInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ReadOnlyFieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TaskTemplateFieldIdentifier m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

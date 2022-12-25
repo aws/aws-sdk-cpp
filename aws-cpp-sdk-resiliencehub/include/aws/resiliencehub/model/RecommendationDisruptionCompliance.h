@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RecommendationDisruptionCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance
+  class RecommendationDisruptionCompliance
   {
   public:
-    RecommendationDisruptionCompliance();
-    RecommendationDisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationDisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance();
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API RecommendationDisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     ComplianceStatus m_expectedComplianceStatus;
-    bool m_expectedComplianceStatusHasBeenSet;
+    bool m_expectedComplianceStatusHasBeenSet = false;
 
     Aws::String m_expectedRpoDescription;
-    bool m_expectedRpoDescriptionHasBeenSet;
+    bool m_expectedRpoDescriptionHasBeenSet = false;
 
     int m_expectedRpoInSecs;
-    bool m_expectedRpoInSecsHasBeenSet;
+    bool m_expectedRpoInSecsHasBeenSet = false;
 
     Aws::String m_expectedRtoDescription;
-    bool m_expectedRtoDescriptionHasBeenSet;
+    bool m_expectedRtoDescriptionHasBeenSet = false;
 
     int m_expectedRtoInSecs;
-    bool m_expectedRtoInSecsHasBeenSet;
+    bool m_expectedRtoInSecsHasBeenSet = false;
   };
 
 } // namespace Model

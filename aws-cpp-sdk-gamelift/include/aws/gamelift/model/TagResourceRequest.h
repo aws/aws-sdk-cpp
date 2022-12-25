@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMELIFT_API TagResourceRequest : public GameLiftRequest
+  class TagResourceRequest : public GameLiftRequest
   {
   public:
-    TagResourceRequest();
+    AWS_GAMELIFT_API TagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,13 +31,13 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -47,7 +47,7 @@ namespace Model
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -57,7 +57,7 @@ namespace Model
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -67,7 +67,7 @@ namespace Model
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -77,7 +77,7 @@ namespace Model
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -87,7 +87,7 @@ namespace Model
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -97,7 +97,7 @@ namespace Model
     inline TagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -107,7 +107,7 @@ namespace Model
     inline TagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want
      * to assign tags to. GameLift resource ARNs are included in the data object for
@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

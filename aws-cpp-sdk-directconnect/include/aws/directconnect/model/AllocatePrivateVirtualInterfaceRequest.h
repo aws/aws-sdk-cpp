@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API AllocatePrivateVirtualInterfaceRequest : public DirectConnectRequest
+  class AllocatePrivateVirtualInterfaceRequest : public DirectConnectRequest
   {
   public:
-    AllocatePrivateVirtualInterfaceRequest();
+    AWS_DIRECTCONNECT_API AllocatePrivateVirtualInterfaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AllocatePrivateVirtualInterface"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     NewPrivateVirtualInterfaceAllocation m_newPrivateVirtualInterfaceAllocation;
-    bool m_newPrivateVirtualInterfaceAllocationHasBeenSet;
+    bool m_newPrivateVirtualInterfaceAllocationHasBeenSet = false;
   };
 
 } // namespace Model

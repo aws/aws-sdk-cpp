@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Phase">AWS API
    * Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Phase
+  class Phase
   {
   public:
-    Phase();
-    Phase(Aws::Utils::Json::JsonView jsonValue);
-    Phase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Phase();
+    AWS_SAGEMAKER_API Phase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Phase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_initialNumberOfUsers;
-    bool m_initialNumberOfUsersHasBeenSet;
+    bool m_initialNumberOfUsersHasBeenSet = false;
 
     int m_spawnRate;
-    bool m_spawnRateHasBeenSet;
+    bool m_spawnRateHasBeenSet = false;
 
     int m_durationInSeconds;
-    bool m_durationInSecondsHasBeenSet;
+    bool m_durationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

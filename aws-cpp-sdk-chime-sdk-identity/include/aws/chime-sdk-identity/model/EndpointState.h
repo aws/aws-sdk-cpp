@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/EndpointState">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API EndpointState
+  class EndpointState
   {
   public:
-    EndpointState();
-    EndpointState(Aws::Utils::Json::JsonView jsonValue);
-    EndpointState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API EndpointState();
+    AWS_CHIMESDKIDENTITY_API EndpointState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API EndpointState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     EndpointStatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

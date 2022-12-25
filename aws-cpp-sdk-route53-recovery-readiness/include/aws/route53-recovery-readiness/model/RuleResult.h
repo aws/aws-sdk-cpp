@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/RuleResult">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API RuleResult
+  class RuleResult
   {
   public:
-    RuleResult();
-    RuleResult(Aws::Utils::Json::JsonView jsonValue);
-    RuleResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API RuleResult();
+    AWS_ROUTE53RECOVERYREADINESS_API RuleResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API RuleResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastCheckedTimestamp;
-    bool m_lastCheckedTimestampHasBeenSet;
+    bool m_lastCheckedTimestampHasBeenSet = false;
 
     Aws::Vector<Message> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Readiness m_readiness;
-    bool m_readinessHasBeenSet;
+    bool m_readinessHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
   };
 
 } // namespace Model

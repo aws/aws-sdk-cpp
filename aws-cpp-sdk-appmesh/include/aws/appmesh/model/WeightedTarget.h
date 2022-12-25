@@ -32,13 +32,34 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/WeightedTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API WeightedTarget
+  class WeightedTarget
   {
   public:
-    WeightedTarget();
-    WeightedTarget(Aws::Utils::Json::JsonView jsonValue);
-    WeightedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API WeightedTarget();
+    AWS_APPMESH_API WeightedTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API WeightedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The targeted port of the weighted object.</p>
+     */
+    inline WeightedTarget& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -104,11 +125,14 @@ namespace Model
 
   private:
 
+    int m_port;
+    bool m_portHasBeenSet = false;
+
     Aws::String m_virtualNode;
-    bool m_virtualNodeHasBeenSet;
+    bool m_virtualNodeHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

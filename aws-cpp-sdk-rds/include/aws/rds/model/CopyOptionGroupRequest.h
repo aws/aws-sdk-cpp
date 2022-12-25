@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API CopyOptionGroupRequest : public RDSRequest
+  class CopyOptionGroupRequest : public RDSRequest
   {
   public:
-    CopyOptionGroupRequest();
+    AWS_RDS_API CopyOptionGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyOptionGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_sourceOptionGroupIdentifier;
-    bool m_sourceOptionGroupIdentifierHasBeenSet;
+    bool m_sourceOptionGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetOptionGroupIdentifier;
-    bool m_targetOptionGroupIdentifierHasBeenSet;
+    bool m_targetOptionGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetOptionGroupDescription;
-    bool m_targetOptionGroupDescriptionHasBeenSet;
+    bool m_targetOptionGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

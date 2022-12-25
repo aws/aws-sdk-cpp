@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironmentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API CreateBackendEnvironmentRequest : public AmplifyRequest
+  class CreateBackendEnvironmentRequest : public AmplifyRequest
   {
   public:
-    CreateBackendEnvironmentRequest();
+    AWS_AMPLIFY_API CreateBackendEnvironmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBackendEnvironment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_deploymentArtifacts;
-    bool m_deploymentArtifactsHasBeenSet;
+    bool m_deploymentArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

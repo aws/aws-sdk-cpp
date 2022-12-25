@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API DescribeDBEngineVersionsRequest : public RDSRequest
+  class DescribeDBEngineVersionsRequest : public RDSRequest
   {
   public:
-    DescribeDBEngineVersionsRequest();
+    AWS_RDS_API DescribeDBEngineVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDBEngineVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -690,34 +690,34 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_defaultOnly;
-    bool m_defaultOnlyHasBeenSet;
+    bool m_defaultOnlyHasBeenSet = false;
 
     bool m_listSupportedCharacterSets;
-    bool m_listSupportedCharacterSetsHasBeenSet;
+    bool m_listSupportedCharacterSetsHasBeenSet = false;
 
     bool m_listSupportedTimezones;
-    bool m_listSupportedTimezonesHasBeenSet;
+    bool m_listSupportedTimezonesHasBeenSet = false;
 
     bool m_includeAll;
-    bool m_includeAllHasBeenSet;
+    bool m_includeAllHasBeenSet = false;
   };
 
 } // namespace Model

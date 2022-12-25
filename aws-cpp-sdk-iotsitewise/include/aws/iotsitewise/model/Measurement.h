@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Measurement">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Measurement
+  class Measurement
   {
   public:
-    Measurement();
-    Measurement(Aws::Utils::Json::JsonView jsonValue);
-    Measurement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Measurement();
+    AWS_IOTSITEWISE_API Measurement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Measurement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     MeasurementProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet;
+    bool m_processingConfigHasBeenSet = false;
   };
 
 } // namespace Model

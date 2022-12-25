@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/LoadBasedAutoScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration
+  class LoadBasedAutoScalingConfiguration
   {
   public:
-    LoadBasedAutoScalingConfiguration();
-    LoadBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoadBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration();
+    AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API LoadBasedAutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
 
     AutoScalingThresholds m_upScaling;
-    bool m_upScalingHasBeenSet;
+    bool m_upScalingHasBeenSet = false;
 
     AutoScalingThresholds m_downScaling;
-    bool m_downScalingHasBeenSet;
+    bool m_downScalingHasBeenSet = false;
   };
 
 } // namespace Model

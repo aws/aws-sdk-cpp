@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RenderingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration
+  class RenderingConfiguration
   {
   public:
-    RenderingConfiguration();
-    RenderingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RenderingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,7 +168,7 @@ namespace Model
   private:
 
     Aws::String m_templateUri;
-    bool m_templateUriHasBeenSet;
+    bool m_templateUriHasBeenSet = false;
   };
 
 } // namespace Model

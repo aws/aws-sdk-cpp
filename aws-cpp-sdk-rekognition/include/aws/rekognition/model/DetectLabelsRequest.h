@@ -7,6 +7,9 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/DetectLabelsSettings.h>
+#include <aws/rekognition/model/DetectLabelsFeatureName.h>
 #include <utility>
 
 namespace Aws
@@ -18,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API DetectLabelsRequest : public RekognitionRequest
+  class DetectLabelsRequest : public RekognitionRequest
   {
   public:
-    DetectLabelsRequest();
+    AWS_REKOGNITION_API DetectLabelsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DetectLabels"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -152,16 +155,142 @@ namespace Model
      */
     inline DetectLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline const Aws::Vector<DetectLabelsFeatureName>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline void SetFeatures(const Aws::Vector<DetectLabelsFeatureName>& value) { m_featuresHasBeenSet = true; m_features = value; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline void SetFeatures(Aws::Vector<DetectLabelsFeatureName>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline DetectLabelsRequest& WithFeatures(const Aws::Vector<DetectLabelsFeatureName>& value) { SetFeatures(value); return *this;}
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline DetectLabelsRequest& WithFeatures(Aws::Vector<DetectLabelsFeatureName>&& value) { SetFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline DetectLabelsRequest& AddFeatures(const DetectLabelsFeatureName& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses
+     * the label detection feature, while specifying IMAGE_PROPERTIES returns
+     * information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.</p>
+     */
+    inline DetectLabelsRequest& AddFeatures(DetectLabelsFeatureName&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline const DetectLabelsSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline void SetSettings(const DetectLabelsSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline void SetSettings(DetectLabelsSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline DetectLabelsRequest& WithSettings(const DetectLabelsSettings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>A list of the filters to be applied to returned detected labels and image
+     * properties. Specified filters can be inclusive, exclusive, or a combination of
+     * both. Filters can be used for individual labels or label categories. The exact
+     * label names or label categories must be supplied. For a full list of labels and
+     * label categories, see LINK HERE.</p>
+     */
+    inline DetectLabelsRequest& WithSettings(DetectLabelsSettings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Image m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     int m_maxLabels;
-    bool m_maxLabelsHasBeenSet;
+    bool m_maxLabelsHasBeenSet = false;
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
+
+    Aws::Vector<DetectLabelsFeatureName> m_features;
+    bool m_featuresHasBeenSet = false;
+
+    DetectLabelsSettings m_settings;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

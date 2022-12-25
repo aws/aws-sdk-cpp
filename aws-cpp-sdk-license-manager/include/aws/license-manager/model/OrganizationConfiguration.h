@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/OrganizationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API OrganizationConfiguration
+  class OrganizationConfiguration
   {
   public:
-    OrganizationConfiguration();
-    OrganizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API OrganizationConfiguration();
+    AWS_LICENSEMANAGER_API OrganizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API OrganizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_enableIntegration;
-    bool m_enableIntegrationHasBeenSet;
+    bool m_enableIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@
 #include <aws/medialive/model/H265SceneChangeDetect.h>
 #include <aws/medialive/model/H265Tier.h>
 #include <aws/medialive/model/H265TimecodeInsertionBehavior.h>
+#include <aws/medialive/model/TimecodeBurninSettings.h>
 #include <utility>
 
 namespace Aws
@@ -44,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H265Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H265Settings
+  class H265Settings
   {
   public:
-    H265Settings();
-    H265Settings(Aws::Utils::Json::JsonView jsonValue);
-    H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H265Settings();
+    AWS_MEDIALIVE_API H265Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1123,94 +1124,128 @@ This field is optional; when
      */
     inline H265Settings& WithTimecodeInsertion(H265TimecodeInsertionBehavior&& value) { SetTimecodeInsertion(std::move(value)); return *this;}
 
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline H265Settings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline H265Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     AfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     H265AlternativeTransferFunction m_alternativeTransferFunction;
-    bool m_alternativeTransferFunctionHasBeenSet;
+    bool m_alternativeTransferFunctionHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     int m_bufSize;
-    bool m_bufSizeHasBeenSet;
+    bool m_bufSizeHasBeenSet = false;
 
     H265ColorMetadata m_colorMetadata;
-    bool m_colorMetadataHasBeenSet;
+    bool m_colorMetadataHasBeenSet = false;
 
     H265ColorSpaceSettings m_colorSpaceSettings;
-    bool m_colorSpaceSettingsHasBeenSet;
+    bool m_colorSpaceSettingsHasBeenSet = false;
 
     H265FilterSettings m_filterSettings;
-    bool m_filterSettingsHasBeenSet;
+    bool m_filterSettingsHasBeenSet = false;
 
     FixedAfd m_fixedAfd;
-    bool m_fixedAfdHasBeenSet;
+    bool m_fixedAfdHasBeenSet = false;
 
     H265FlickerAq m_flickerAq;
-    bool m_flickerAqHasBeenSet;
+    bool m_flickerAqHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     H265GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
 
     H265Level m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     H265LookAheadRateControl m_lookAheadRateControl;
-    bool m_lookAheadRateControlHasBeenSet;
+    bool m_lookAheadRateControlHasBeenSet = false;
 
     int m_maxBitrate;
-    bool m_maxBitrateHasBeenSet;
+    bool m_maxBitrateHasBeenSet = false;
 
     int m_minIInterval;
-    bool m_minIIntervalHasBeenSet;
+    bool m_minIIntervalHasBeenSet = false;
 
     int m_parDenominator;
-    bool m_parDenominatorHasBeenSet;
+    bool m_parDenominatorHasBeenSet = false;
 
     int m_parNumerator;
-    bool m_parNumeratorHasBeenSet;
+    bool m_parNumeratorHasBeenSet = false;
 
     H265Profile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     int m_qvbrQualityLevel;
-    bool m_qvbrQualityLevelHasBeenSet;
+    bool m_qvbrQualityLevelHasBeenSet = false;
 
     H265RateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     H265ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     H265SceneChangeDetect m_sceneChangeDetect;
-    bool m_sceneChangeDetectHasBeenSet;
+    bool m_sceneChangeDetectHasBeenSet = false;
 
     int m_slices;
-    bool m_slicesHasBeenSet;
+    bool m_slicesHasBeenSet = false;
 
     H265Tier m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     H265TimecodeInsertionBehavior m_timecodeInsertion;
-    bool m_timecodeInsertionHasBeenSet;
+    bool m_timecodeInsertionHasBeenSet = false;
+
+    TimecodeBurninSettings m_timecodeBurninSettings;
+    bool m_timecodeBurninSettingsHasBeenSet = false;
   };
 
 } // namespace Model

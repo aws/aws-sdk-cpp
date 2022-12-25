@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SAMLProviderListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API SAMLProviderListEntry
+  class SAMLProviderListEntry
   {
   public:
-    SAMLProviderListEntry();
-    SAMLProviderListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SAMLProviderListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API SAMLProviderListEntry();
+    AWS_IAM_API SAMLProviderListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API SAMLProviderListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

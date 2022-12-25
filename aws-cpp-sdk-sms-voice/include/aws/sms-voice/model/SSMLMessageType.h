@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SSMLMessageType">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API SSMLMessageType
+  class SSMLMessageType
   {
   public:
-    SSMLMessageType();
-    SSMLMessageType(Aws::Utils::Json::JsonView jsonValue);
-    SSMLMessageType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API SSMLMessageType();
+    AWS_PINPOINTSMSVOICE_API SSMLMessageType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API SSMLMessageType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
   };
 
 } // namespace Model

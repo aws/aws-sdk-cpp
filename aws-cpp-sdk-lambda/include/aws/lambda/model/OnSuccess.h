@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnSuccess">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API OnSuccess
+  class OnSuccess
   {
   public:
-    OnSuccess();
-    OnSuccess(Aws::Utils::Json::JsonView jsonValue);
-    OnSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API OnSuccess();
+    AWS_LAMBDA_API OnSuccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API OnSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

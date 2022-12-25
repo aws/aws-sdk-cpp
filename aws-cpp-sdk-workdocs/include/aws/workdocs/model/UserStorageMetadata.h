@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UserStorageMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API UserStorageMetadata
+  class UserStorageMetadata
   {
   public:
-    UserStorageMetadata();
-    UserStorageMetadata(Aws::Utils::Json::JsonView jsonValue);
-    UserStorageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API UserStorageMetadata();
+    AWS_WORKDOCS_API UserStorageMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API UserStorageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     long long m_storageUtilizedInBytes;
-    bool m_storageUtilizedInBytesHasBeenSet;
+    bool m_storageUtilizedInBytesHasBeenSet = false;
 
     StorageRuleType m_storageRule;
-    bool m_storageRuleHasBeenSet;
+    bool m_storageRuleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,13 +25,13 @@ namespace Lambda
 namespace Model
 {
 
-  class AWS_LAMBDA_API FunctionEventInvokeConfig
+  class FunctionEventInvokeConfig
   {
   public:
-    FunctionEventInvokeConfig();
-    FunctionEventInvokeConfig(Aws::Utils::Json::JsonView jsonValue);
-    FunctionEventInvokeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API FunctionEventInvokeConfig();
+    AWS_LAMBDA_API FunctionEventInvokeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API FunctionEventInvokeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     int m_maximumRetryAttempts;
-    bool m_maximumRetryAttemptsHasBeenSet;
+    bool m_maximumRetryAttemptsHasBeenSet = false;
 
     int m_maximumEventAgeInSeconds;
-    bool m_maximumEventAgeInSecondsHasBeenSet;
+    bool m_maximumEventAgeInSecondsHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

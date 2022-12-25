@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Repository">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API Repository
+  class Repository
   {
   public:
-    Repository();
-    Repository(Aws::Utils::Json::JsonView jsonValue);
-    Repository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API Repository();
+    AWS_ECRPUBLIC_API Repository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Repository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryArn;
-    bool m_repositoryArnHasBeenSet;
+    bool m_repositoryArnHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_repositoryUri;
-    bool m_repositoryUriHasBeenSet;
+    bool m_repositoryUriHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

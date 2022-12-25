@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkAclAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkAclAssociation
+  class AwsEc2NetworkAclAssociation
   {
   public:
-    AwsEc2NetworkAclAssociation();
-    AwsEc2NetworkAclAssociation(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkAclAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkAclAssociation();
+    AWS_SECURITYHUB_API AwsEc2NetworkAclAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkAclAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_networkAclAssociationId;
-    bool m_networkAclAssociationIdHasBeenSet;
+    bool m_networkAclAssociationIdHasBeenSet = false;
 
     Aws::String m_networkAclId;
-    bool m_networkAclIdHasBeenSet;
+    bool m_networkAclIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
   };
 
 } // namespace Model

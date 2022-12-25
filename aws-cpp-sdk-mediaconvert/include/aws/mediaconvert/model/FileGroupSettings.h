@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API FileGroupSettings
+  class FileGroupSettings
   {
   public:
-    FileGroupSettings();
-    FileGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    FileGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API FileGroupSettings();
+    AWS_MEDIACONVERT_API FileGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API FileGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

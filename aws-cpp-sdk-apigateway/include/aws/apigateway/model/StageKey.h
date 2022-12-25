@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/StageKey">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API StageKey
+  class StageKey
   {
   public:
-    StageKey();
-    StageKey(Aws::Utils::Json::JsonView jsonValue);
-    StageKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API StageKey();
+    AWS_APIGATEWAY_API StageKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API StageKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
   };
 
 } // namespace Model

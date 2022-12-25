@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/InforNexusSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API InforNexusSourceProperties
+  class InforNexusSourceProperties
   {
   public:
-    InforNexusSourceProperties();
-    InforNexusSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    InforNexusSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API InforNexusSourceProperties();
+    AWS_APPFLOW_API InforNexusSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API InforNexusSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

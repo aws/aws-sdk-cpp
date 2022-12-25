@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TargetGroupInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API TargetGroupInfo
+  class TargetGroupInfo
   {
   public:
-    TargetGroupInfo();
-    TargetGroupInfo(Aws::Utils::Json::JsonView jsonValue);
-    TargetGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API TargetGroupInfo();
+    AWS_CODEDEPLOY_API TargetGroupInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API TargetGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,7 +122,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a failed lambda function schedule event that occurred
+   * <p>Contains details about a failed Lambda function schedule event that occurred
    * during an execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduleFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LambdaFunctionScheduleFailedEventDetails
+  class LambdaFunctionScheduleFailedEventDetails
   {
   public:
-    LambdaFunctionScheduleFailedEventDetails();
-    LambdaFunctionScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails();
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

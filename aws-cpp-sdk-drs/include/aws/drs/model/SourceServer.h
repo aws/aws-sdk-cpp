@@ -9,6 +9,8 @@
 #include <aws/drs/model/DataReplicationInfo.h>
 #include <aws/drs/model/LastLaunchResult.h>
 #include <aws/drs/model/LifeCycle.h>
+#include <aws/drs/model/ReplicationDirection.h>
+#include <aws/drs/model/SourceCloudProperties.h>
 #include <aws/drs/model/SourceProperties.h>
 #include <aws/drs/model/StagingArea.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -29,13 +31,13 @@ namespace drs
 namespace Model
 {
 
-  class AWS_DRS_API SourceServer
+  class SourceServer
   {
   public:
-    SourceServer();
-    SourceServer(Aws::Utils::Json::JsonView jsonValue);
-    SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API SourceServer();
+    AWS_DRS_API SourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,6 +216,125 @@ namespace Model
 
 
     /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline const ReplicationDirection& GetReplicationDirection() const{ return m_replicationDirection; }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline bool ReplicationDirectionHasBeenSet() const { return m_replicationDirectionHasBeenSet; }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline void SetReplicationDirection(const ReplicationDirection& value) { m_replicationDirectionHasBeenSet = true; m_replicationDirection = value; }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline void SetReplicationDirection(ReplicationDirection&& value) { m_replicationDirectionHasBeenSet = true; m_replicationDirection = std::move(value); }
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline SourceServer& WithReplicationDirection(const ReplicationDirection& value) { SetReplicationDirection(value); return *this;}
+
+    /**
+     * <p>Replication direction of the Source Server.</p>
+     */
+    inline SourceServer& WithReplicationDirection(ReplicationDirection&& value) { SetReplicationDirection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline const Aws::String& GetReversedDirectionSourceServerArn() const{ return m_reversedDirectionSourceServerArn; }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline bool ReversedDirectionSourceServerArnHasBeenSet() const { return m_reversedDirectionSourceServerArnHasBeenSet; }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(const Aws::String& value) { m_reversedDirectionSourceServerArnHasBeenSet = true; m_reversedDirectionSourceServerArn = value; }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(Aws::String&& value) { m_reversedDirectionSourceServerArnHasBeenSet = true; m_reversedDirectionSourceServerArn = std::move(value); }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline void SetReversedDirectionSourceServerArn(const char* value) { m_reversedDirectionSourceServerArnHasBeenSet = true; m_reversedDirectionSourceServerArn.assign(value); }
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline SourceServer& WithReversedDirectionSourceServerArn(const Aws::String& value) { SetReversedDirectionSourceServerArn(value); return *this;}
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline SourceServer& WithReversedDirectionSourceServerArn(Aws::String&& value) { SetReversedDirectionSourceServerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>For EC2-originated Source Servers which have been failed over and then failed
+     * back, this value will mean the ARN of the Source Server on the opposite
+     * replication direction.</p>
+     */
+    inline SourceServer& WithReversedDirectionSourceServerArn(const char* value) { SetReversedDirectionSourceServerArn(value); return *this;}
+
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline const SourceCloudProperties& GetSourceCloudProperties() const{ return m_sourceCloudProperties; }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline bool SourceCloudPropertiesHasBeenSet() const { return m_sourceCloudPropertiesHasBeenSet; }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline void SetSourceCloudProperties(const SourceCloudProperties& value) { m_sourceCloudPropertiesHasBeenSet = true; m_sourceCloudProperties = value; }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline void SetSourceCloudProperties(SourceCloudProperties&& value) { m_sourceCloudPropertiesHasBeenSet = true; m_sourceCloudProperties = std::move(value); }
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline SourceServer& WithSourceCloudProperties(const SourceCloudProperties& value) { SetSourceCloudProperties(value); return *this;}
+
+    /**
+     * <p>Source cloud properties of the Source Server.</p>
+     */
+    inline SourceServer& WithSourceCloudProperties(SourceCloudProperties&& value) { SetSourceCloudProperties(std::move(value)); return *this;}
+
+
+    /**
      * <p>The source properties of the Source Server.</p>
      */
     inline const SourceProperties& GetSourceProperties() const{ return m_sourceProperties; }
@@ -384,31 +505,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     LastLaunchResult m_lastLaunchResult;
-    bool m_lastLaunchResultHasBeenSet;
+    bool m_lastLaunchResultHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_recoveryInstanceId;
-    bool m_recoveryInstanceIdHasBeenSet;
+    bool m_recoveryInstanceIdHasBeenSet = false;
+
+    ReplicationDirection m_replicationDirection;
+    bool m_replicationDirectionHasBeenSet = false;
+
+    Aws::String m_reversedDirectionSourceServerArn;
+    bool m_reversedDirectionSourceServerArnHasBeenSet = false;
+
+    SourceCloudProperties m_sourceCloudProperties;
+    bool m_sourceCloudPropertiesHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     StagingArea m_stagingArea;
-    bool m_stagingAreaHasBeenSet;
+    bool m_stagingAreaHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

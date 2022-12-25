@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/EncryptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API EncryptionSetting
+  class EncryptionSetting
   {
   public:
-    EncryptionSetting();
-    EncryptionSetting(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API EncryptionSetting();
+    AWS_LEXMODELSV2_API EncryptionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API EncryptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_botLocaleExportPassword;
-    bool m_botLocaleExportPasswordHasBeenSet;
+    bool m_botLocaleExportPasswordHasBeenSet = false;
 
     Aws::String m_associatedTranscriptsPassword;
-    bool m_associatedTranscriptsPasswordHasBeenSet;
+    bool m_associatedTranscriptsPasswordHasBeenSet = false;
   };
 
 } // namespace Model

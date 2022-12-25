@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ExtendedKeyUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API ExtendedKeyUsage
+  class ExtendedKeyUsage
   {
   public:
-    ExtendedKeyUsage();
-    ExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
-    ExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API ExtendedKeyUsage();
+    AWS_ACMPCA_API ExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API ExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     ExtendedKeyUsageType m_extendedKeyUsageType;
-    bool m_extendedKeyUsageTypeHasBeenSet;
+    bool m_extendedKeyUsageTypeHasBeenSet = false;
 
     Aws::String m_extendedKeyUsageObjectIdentifier;
-    bool m_extendedKeyUsageObjectIdentifierHasBeenSet;
+    bool m_extendedKeyUsageObjectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateInstancesFromSnapshotRequest : public LightsailRequest
+  class CreateInstancesFromSnapshotRequest : public LightsailRequest
   {
   public:
-    CreateInstancesFromSnapshotRequest();
+    AWS_LIGHTSAIL_API CreateInstancesFromSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInstancesFromSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -922,43 +922,43 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
-    bool m_instanceNamesHasBeenSet;
+    bool m_instanceNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<DiskMap>> m_attachedDiskMapping;
-    bool m_attachedDiskMappingHasBeenSet;
+    bool m_attachedDiskMappingHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_instanceSnapshotName;
-    bool m_instanceSnapshotNameHasBeenSet;
+    bool m_instanceSnapshotNameHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_keyPairName;
-    bool m_keyPairNameHasBeenSet;
+    bool m_keyPairNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AddOnRequest> m_addOns;
-    bool m_addOnsHasBeenSet;
+    bool m_addOnsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_sourceInstanceName;
-    bool m_sourceInstanceNameHasBeenSet;
+    bool m_sourceInstanceNameHasBeenSet = false;
 
     Aws::String m_restoreDate;
-    bool m_restoreDateHasBeenSet;
+    bool m_restoreDateHasBeenSet = false;
 
     bool m_useLatestRestorableAutoSnapshot;
-    bool m_useLatestRestorableAutoSnapshotHasBeenSet;
+    bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
   };
 
 } // namespace Model

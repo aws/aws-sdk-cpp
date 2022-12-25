@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SessionContext">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SessionContext
+  class SessionContext
   {
   public:
-    SessionContext();
-    SessionContext(Aws::Utils::Json::JsonView jsonValue);
-    SessionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SessionContext();
+    AWS_MACIE2_API SessionContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SessionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     SessionContextAttributes m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SessionIssuer m_sessionIssuer;
-    bool m_sessionIssuerHasBeenSet;
+    bool m_sessionIssuerHasBeenSet = false;
   };
 
 } // namespace Model

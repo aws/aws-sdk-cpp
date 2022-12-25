@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupModifyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceGroupModifyConfig
+  class InstanceGroupModifyConfig
   {
   public:
-    InstanceGroupModifyConfig();
-    InstanceGroupModifyConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroupModifyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceGroupModifyConfig();
+    AWS_EMR_API InstanceGroupModifyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceGroupModifyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
-    bool m_eC2InstanceIdsToTerminateHasBeenSet;
+    bool m_eC2InstanceIdsToTerminateHasBeenSet = false;
 
     ShrinkPolicy m_shrinkPolicy;
-    bool m_shrinkPolicyHasBeenSet;
+    bool m_shrinkPolicyHasBeenSet = false;
 
     ReconfigurationType m_reconfigurationType;
-    bool m_reconfigurationTypeHasBeenSet;
+    bool m_reconfigurationTypeHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
   };
 
 } // namespace Model

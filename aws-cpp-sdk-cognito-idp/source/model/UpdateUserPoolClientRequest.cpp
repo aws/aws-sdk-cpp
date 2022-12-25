@@ -40,7 +40,9 @@ UpdateUserPoolClientRequest::UpdateUserPoolClientRequest() :
     m_enableTokenRevocation(false),
     m_enableTokenRevocationHasBeenSet(false),
     m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false)
+    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
+    m_authSessionValidity(0),
+    m_authSessionValidityHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_readAttributesHasBeenSet)
   {
-   Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
+   Aws::Utils::Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
    for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
    {
      readAttributesJsonList[readAttributesIndex].AsString(m_readAttributes[readAttributesIndex]);
@@ -103,7 +105,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_writeAttributesHasBeenSet)
   {
-   Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
+   Aws::Utils::Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
    for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
    {
      writeAttributesJsonList[writeAttributesIndex].AsString(m_writeAttributes[writeAttributesIndex]);
@@ -114,7 +116,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_explicitAuthFlowsHasBeenSet)
   {
-   Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
+   Aws::Utils::Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
    for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
    {
      explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString(ExplicitAuthFlowsTypeMapper::GetNameForExplicitAuthFlowsType(m_explicitAuthFlows[explicitAuthFlowsIndex]));
@@ -125,7 +127,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_supportedIdentityProvidersHasBeenSet)
   {
-   Array<JsonValue> supportedIdentityProvidersJsonList(m_supportedIdentityProviders.size());
+   Aws::Utils::Array<JsonValue> supportedIdentityProvidersJsonList(m_supportedIdentityProviders.size());
    for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
    {
      supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString(m_supportedIdentityProviders[supportedIdentityProvidersIndex]);
@@ -136,7 +138,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_callbackURLsHasBeenSet)
   {
-   Array<JsonValue> callbackURLsJsonList(m_callbackURLs.size());
+   Aws::Utils::Array<JsonValue> callbackURLsJsonList(m_callbackURLs.size());
    for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
    {
      callbackURLsJsonList[callbackURLsIndex].AsString(m_callbackURLs[callbackURLsIndex]);
@@ -147,7 +149,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_logoutURLsHasBeenSet)
   {
-   Array<JsonValue> logoutURLsJsonList(m_logoutURLs.size());
+   Aws::Utils::Array<JsonValue> logoutURLsJsonList(m_logoutURLs.size());
    for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
    {
      logoutURLsJsonList[logoutURLsIndex].AsString(m_logoutURLs[logoutURLsIndex]);
@@ -164,7 +166,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_allowedOAuthFlowsHasBeenSet)
   {
-   Array<JsonValue> allowedOAuthFlowsJsonList(m_allowedOAuthFlows.size());
+   Aws::Utils::Array<JsonValue> allowedOAuthFlowsJsonList(m_allowedOAuthFlows.size());
    for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
    {
      allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString(OAuthFlowTypeMapper::GetNameForOAuthFlowType(m_allowedOAuthFlows[allowedOAuthFlowsIndex]));
@@ -175,7 +177,7 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
 
   if(m_allowedOAuthScopesHasBeenSet)
   {
-   Array<JsonValue> allowedOAuthScopesJsonList(m_allowedOAuthScopes.size());
+   Aws::Utils::Array<JsonValue> allowedOAuthScopesJsonList(m_allowedOAuthScopes.size());
    for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
    {
      allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString(m_allowedOAuthScopes[allowedOAuthScopesIndex]);
@@ -210,6 +212,12 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
   if(m_enablePropagateAdditionalUserContextDataHasBeenSet)
   {
    payload.WithBool("EnablePropagateAdditionalUserContextData", m_enablePropagateAdditionalUserContextData);
+
+  }
+
+  if(m_authSessionValidityHasBeenSet)
+  {
+   payload.WithInteger("AuthSessionValidity", m_authSessionValidity);
 
   }
 

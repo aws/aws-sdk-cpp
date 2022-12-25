@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Serializer">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API Serializer
+  class Serializer
   {
   public:
-    Serializer();
-    Serializer(Aws::Utils::Json::JsonView jsonValue);
-    Serializer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API Serializer();
+    AWS_FIREHOSE_API Serializer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Serializer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     ParquetSerDe m_parquetSerDe;
-    bool m_parquetSerDeHasBeenSet;
+    bool m_parquetSerDeHasBeenSet = false;
 
     OrcSerDe m_orcSerDe;
-    bool m_orcSerDeHasBeenSet;
+    bool m_orcSerDeHasBeenSet = false;
   };
 
 } // namespace Model

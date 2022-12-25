@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/EngineDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API EngineDefaults
+  class EngineDefaults
   {
   public:
-    EngineDefaults();
-    EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EngineDefaults();
+    AWS_DOCDB_API EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,12 +24,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API StopExecutionResult
+  class StopExecutionResult
   {
   public:
-    StopExecutionResult();
-    StopExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API StopExecutionResult();
+    AWS_SFN_API StopExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API StopExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

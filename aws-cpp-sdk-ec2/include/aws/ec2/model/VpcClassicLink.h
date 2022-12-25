@@ -26,20 +26,24 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether a VPC is enabled for ClassicLink.</p><p><h3>See Also:</h3> 
-   * <a
+   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
+   * EC2-Classic to a VPC. For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
+   * Guide</i>.</p>  <p>Describes whether a VPC is enabled for
+   * ClassicLink.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcClassicLink">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpcClassicLink
+  class VpcClassicLink
   {
   public:
-    VpcClassicLink();
-    VpcClassicLink(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcClassicLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcClassicLink();
+    AWS_EC2_API VpcClassicLink(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcClassicLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -147,13 +151,13 @@ namespace Model
   private:
 
     bool m_classicLinkEnabled;
-    bool m_classicLinkEnabledHasBeenSet;
+    bool m_classicLinkEnabledHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

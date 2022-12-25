@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API LimitExceededException();
+    AWS_INSPECTOR_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     LimitExceededErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

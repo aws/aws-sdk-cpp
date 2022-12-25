@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicyQueryStringsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig
+  class OriginRequestPolicyQueryStringsConfig
   {
   public:
-    OriginRequestPolicyQueryStringsConfig();
-    OriginRequestPolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginRequestPolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig();
+    AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     OriginRequestPolicyQueryStringBehavior m_queryStringBehavior;
-    bool m_queryStringBehaviorHasBeenSet;
+    bool m_queryStringBehaviorHasBeenSet = false;
 
     QueryStringNames m_queryStrings;
-    bool m_queryStringsHasBeenSet;
+    bool m_queryStringsHasBeenSet = false;
   };
 
 } // namespace Model

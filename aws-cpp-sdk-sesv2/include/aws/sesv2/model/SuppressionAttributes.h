@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SuppressionAttributes
+  class SuppressionAttributes
   {
   public:
-    SuppressionAttributes();
-    SuppressionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    SuppressionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SuppressionAttributes();
+    AWS_SESV2_API SuppressionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SuppressionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,7 +131,7 @@ namespace Model
   private:
 
     Aws::Vector<SuppressionListReason> m_suppressedReasons;
-    bool m_suppressedReasonsHasBeenSet;
+    bool m_suppressedReasonsHasBeenSet = false;
   };
 
 } // namespace Model

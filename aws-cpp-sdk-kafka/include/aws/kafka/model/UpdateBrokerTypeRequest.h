@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API UpdateBrokerTypeRequest : public KafkaRequest
+  class UpdateBrokerTypeRequest : public KafkaRequest
   {
   public:
-    UpdateBrokerTypeRequest();
+    AWS_KAFKA_API UpdateBrokerTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBrokerType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -237,13 +237,13 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_targetInstanceType;
-    bool m_targetInstanceTypeHasBeenSet;
+    bool m_targetInstanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

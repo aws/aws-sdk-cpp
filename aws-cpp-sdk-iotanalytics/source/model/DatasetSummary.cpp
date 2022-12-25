@@ -73,7 +73,7 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("triggers"))
   {
-    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
+    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
@@ -83,7 +83,7 @@ DatasetSummary& DatasetSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -121,7 +121,7 @@ JsonValue DatasetSummary::Jsonize() const
 
   if(m_triggersHasBeenSet)
   {
-   Array<JsonValue> triggersJsonList(m_triggers.size());
+   Aws::Utils::Array<JsonValue> triggersJsonList(m_triggers.size());
    for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
    {
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue DatasetSummary::Jsonize() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());

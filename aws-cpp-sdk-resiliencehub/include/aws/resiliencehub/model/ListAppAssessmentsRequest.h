@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API ListAppAssessmentsRequest : public ResilienceHubRequest
+  class ListAppAssessmentsRequest : public ResilienceHubRequest
   {
   public:
-    ListAppAssessmentsRequest();
+    AWS_RESILIENCEHUB_API ListAppAssessmentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAppAssessments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_RESILIENCEHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -370,28 +370,28 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::Vector<AssessmentStatus> m_assessmentStatus;
-    bool m_assessmentStatusHasBeenSet;
+    bool m_assessmentStatusHasBeenSet = false;
 
     ComplianceStatus m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     AssessmentInvoker m_invoker;
-    bool m_invokerHasBeenSet;
+    bool m_invokerHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
   };
 
 } // namespace Model

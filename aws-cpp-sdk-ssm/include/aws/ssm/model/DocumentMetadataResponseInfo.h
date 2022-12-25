@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentMetadataResponseInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentMetadataResponseInfo
+  class DocumentMetadataResponseInfo
   {
   public:
-    DocumentMetadataResponseInfo();
-    DocumentMetadataResponseInfo(Aws::Utils::Json::JsonView jsonValue);
-    DocumentMetadataResponseInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentMetadataResponseInfo();
+    AWS_SSM_API DocumentMetadataResponseInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentMetadataResponseInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<DocumentReviewerResponseSource> m_reviewerResponse;
-    bool m_reviewerResponseHasBeenSet;
+    bool m_reviewerResponseHasBeenSet = false;
   };
 
 } // namespace Model

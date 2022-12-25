@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MulticastGroupByFuotaTask">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MulticastGroupByFuotaTask
+  class MulticastGroupByFuotaTask
   {
   public:
-    MulticastGroupByFuotaTask();
-    MulticastGroupByFuotaTask(Aws::Utils::Json::JsonView jsonValue);
-    MulticastGroupByFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MulticastGroupByFuotaTask();
+    AWS_IOTWIRELESS_API MulticastGroupByFuotaTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MulticastGroupByFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

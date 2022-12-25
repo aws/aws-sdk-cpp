@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/Cost">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API Cost
+  class Cost
   {
   public:
-    Cost();
-    Cost(Aws::Utils::Json::JsonView jsonValue);
-    Cost& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API Cost();
+    AWS_RESILIENCEHUB_API Cost(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Cost& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     double m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     Aws::String m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     CostFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
   };
 
 } // namespace Model

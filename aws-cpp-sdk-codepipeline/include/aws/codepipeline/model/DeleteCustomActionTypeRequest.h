@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionTypeInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API DeleteCustomActionTypeRequest : public CodePipelineRequest
+  class DeleteCustomActionTypeRequest : public CodePipelineRequest
   {
   public:
-    DeleteCustomActionTypeRequest();
+    AWS_CODEPIPELINE_API DeleteCustomActionTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCustomActionType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     ActionCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

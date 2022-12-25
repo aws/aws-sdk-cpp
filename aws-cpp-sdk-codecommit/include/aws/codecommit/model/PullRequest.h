@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequest
+  class PullRequest
   {
   public:
-    PullRequest();
-    PullRequest(Aws::Utils::Json::JsonView jsonValue);
-    PullRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequest();
+    AWS_CODECOMMIT_API PullRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -531,37 +531,37 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastActivityDate;
-    bool m_lastActivityDateHasBeenSet;
+    bool m_lastActivityDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     PullRequestStatusEnum m_pullRequestStatus;
-    bool m_pullRequestStatusHasBeenSet;
+    bool m_pullRequestStatusHasBeenSet = false;
 
     Aws::String m_authorArn;
-    bool m_authorArnHasBeenSet;
+    bool m_authorArnHasBeenSet = false;
 
     Aws::Vector<PullRequestTarget> m_pullRequestTargets;
-    bool m_pullRequestTargetsHasBeenSet;
+    bool m_pullRequestTargetsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::Vector<ApprovalRule> m_approvalRules;
-    bool m_approvalRulesHasBeenSet;
+    bool m_approvalRulesHasBeenSet = false;
   };
 
 } // namespace Model

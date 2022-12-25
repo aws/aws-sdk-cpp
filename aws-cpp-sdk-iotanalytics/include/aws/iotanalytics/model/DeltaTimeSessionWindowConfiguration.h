@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeltaTimeSessionWindowConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration
+  class DeltaTimeSessionWindowConfiguration
   {
   public:
-    DeltaTimeSessionWindowConfiguration();
-    DeltaTimeSessionWindowConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeltaTimeSessionWindowConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration();
+    AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DeltaTimeSessionWindowConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

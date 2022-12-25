@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/VPCEConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API VPCEConfiguration
+  class VPCEConfiguration
   {
   public:
-    VPCEConfiguration();
-    VPCEConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VPCEConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API VPCEConfiguration();
+    AWS_DEVICEFARM_API VPCEConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API VPCEConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_vpceConfigurationName;
-    bool m_vpceConfigurationNameHasBeenSet;
+    bool m_vpceConfigurationNameHasBeenSet = false;
 
     Aws::String m_vpceServiceName;
-    bool m_vpceServiceNameHasBeenSet;
+    bool m_vpceServiceNameHasBeenSet = false;
 
     Aws::String m_serviceDnsName;
-    bool m_serviceDnsNameHasBeenSet;
+    bool m_serviceDnsNameHasBeenSet = false;
 
     Aws::String m_vpceConfigurationDescription;
-    bool m_vpceConfigurationDescriptionHasBeenSet;
+    bool m_vpceConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GraphqlApi">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API GraphqlApi
+  class GraphqlApi
   {
   public:
-    GraphqlApi();
-    GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
-    GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API GraphqlApi();
+    AWS_APPSYNC_API GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -580,43 +580,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     AuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
 
     LogConfig m_logConfig;
-    bool m_logConfigHasBeenSet;
+    bool m_logConfigHasBeenSet = false;
 
     UserPoolConfig m_userPoolConfig;
-    bool m_userPoolConfigHasBeenSet;
+    bool m_userPoolConfigHasBeenSet = false;
 
     OpenIDConnectConfig m_openIDConnectConfig;
-    bool m_openIDConnectConfigHasBeenSet;
+    bool m_openIDConnectConfigHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_uris;
-    bool m_urisHasBeenSet;
+    bool m_urisHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-    bool m_additionalAuthenticationProvidersHasBeenSet;
+    bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
     bool m_xrayEnabled;
-    bool m_xrayEnabledHasBeenSet;
+    bool m_xrayEnabledHasBeenSet = false;
 
     Aws::String m_wafWebAclArn;
-    bool m_wafWebAclArnHasBeenSet;
+    bool m_wafWebAclArnHasBeenSet = false;
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-    bool m_lambdaAuthorizerConfigHasBeenSet;
+    bool m_lambdaAuthorizerConfigHasBeenSet = false;
   };
 
 } // namespace Model

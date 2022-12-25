@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ResourceInUseException">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException
+  class ResourceInUseException
   {
   public:
-    ResourceInUseException();
-    ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException();
+    AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     ReferenceType m_referenceType;
-    bool m_referenceTypeHasBeenSet;
+    bool m_referenceTypeHasBeenSet = false;
 
     ResourceReference m_exampleReference;
-    bool m_exampleReferenceHasBeenSet;
+    bool m_exampleReferenceHasBeenSet = false;
   };
 
 } // namespace Model

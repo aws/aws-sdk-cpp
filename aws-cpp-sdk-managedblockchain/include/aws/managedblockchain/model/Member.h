@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Member">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API Member
+  class Member
   {
   public:
-    Member();
-    Member(Aws::Utils::Json::JsonView jsonValue);
-    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API Member();
+    AWS_MANAGEDBLOCKCHAIN_API Member(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Member& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,152 +276,158 @@ namespace Model
 
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline Member& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
-     * account is in the process of creating a member.</p> </li> <li> <p>
+     * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The Amazon
+     * Web Services account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
-     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The AWS account
-     * attempted to create a member and creation failed.</p> </li> <li> <p>
+     * network.</p> </li> <li> <p> <code>CREATE_FAILED</code> - The Amazon Web Services
+     * account attempted to create a member and creation failed.</p> </li> <li> <p>
      * <code>UPDATING</code> - The member is in the process of being updated.</p> </li>
      * <li> <p> <code>DELETING</code> - The member and all associated resources are in
-     * the process of being deleted. Either the AWS account that owns the member
-     * deleted it, or the member is being deleted as the result of an
+     * the process of being deleted. Either the Amazon Web Services account that owns
+     * the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
      * <p> <code>DELETED</code> - The member can no longer participate on the network
-     * and all associated resources are deleted. Either the AWS account that owns the
-     * member deleted it, or the member is being deleted as the result of an
-     * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li> <li>
-     * <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might
-     * not function as expected because it cannot access the specified customer managed
-     * key in AWS KMS for encryption at rest. Either the KMS key was disabled or
+     * and all associated resources are deleted. Either the Amazon Web Services account
+     * that owns the member deleted it, or the member is being deleted as the result of
+     * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.</p> </li>
+     * <li> <p> <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and
+     * might not function as expected because it cannot access the specified customer
+     * managed key in KMS for encryption at rest. Either the KMS key was disabled or
      * deleted, or the grants on the key were revoked.</p> <p>The effect of disabling
-     * or deleting a key, or revoking a grant is not immediate. The member resource
-     * might take some time to find that the key is inaccessible. When a resource is in
-     * this state, we recommend deleting and recreating the resource.</p> </li> </ul>
+     * or deleting a key or of revoking a grant isn't immediate. It might take some
+     * time for the member resource to discover that the key is inaccessible. When a
+     * resource is in this state, we recommend deleting and recreating the
+     * resource.</p> </li> </ul>
      */
     inline Member& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -579,7 +585,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -587,7 +594,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -595,7 +603,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -603,7 +612,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -611,7 +621,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -619,7 +630,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Member& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -627,7 +639,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Member& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -635,117 +648,142 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the member. For more information about ARNs
      * and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Member& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline Member& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline Member& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key in AWS Key
-     * Management Service (AWS KMS) that the member uses for encryption at rest. If the
-     * value of this parameter is <code>"AWS Owned KMS Key"</code>, the member uses an
-     * AWS owned KMS key for encryption. This parameter is inherited by the nodes that
-     * this member owns.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed key in Key Management
+     * Service (KMS) that the member uses for encryption at rest. If the value of this
+     * parameter is <code>"AWS Owned KMS Key"</code>, the member uses an Amazon Web
+     * Services owned KMS key for encryption. This parameter is inherited by the nodes
+     * that this member owns.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-encryption-at-rest.html">Encryption
+     * at Rest</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
      */
     inline Member& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     MemberFrameworkAttributes m_frameworkAttributes;
-    bool m_frameworkAttributesHasBeenSet;
+    bool m_frameworkAttributesHasBeenSet = false;
 
     MemberLogPublishingConfiguration m_logPublishingConfiguration;
-    bool m_logPublishingConfigurationHasBeenSet;
+    bool m_logPublishingConfigurationHasBeenSet = false;
 
     MemberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

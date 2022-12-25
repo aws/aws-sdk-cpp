@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentStatus
+  class TrialComponentStatus
   {
   public:
-    TrialComponentStatus();
-    TrialComponentStatus(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentStatus();
+    AWS_SAGEMAKER_API TrialComponentStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     TrialComponentPrimaryStatus m_primaryStatus;
-    bool m_primaryStatusHasBeenSet;
+    bool m_primaryStatusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

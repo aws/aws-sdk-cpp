@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACL">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API WebACL
+  class WebACL
   {
   public:
-    WebACL();
-    WebACL(Aws::Utils::Json::JsonView jsonValue);
-    WebACL& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API WebACL();
+    AWS_WAFREGIONAL_API WebACL(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API WebACL& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -395,22 +395,22 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     WafAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::Vector<ActivatedRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_webACLArn;
-    bool m_webACLArnHasBeenSet;
+    bool m_webACLArnHasBeenSet = false;
   };
 
 } // namespace Model

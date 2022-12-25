@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API CreateApplicationRequest : public KinesisAnalyticsV2Request
+  class CreateApplicationRequest : public KinesisAnalyticsV2Request
   {
   public:
-    CreateApplicationRequest();
+    AWS_KINESISANALYTICSV2_API CreateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -123,38 +123,32 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline CreateApplicationRequest& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
-     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
+     * <p>The runtime environment for the application.</p>
      */
     inline CreateApplicationRequest& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 
@@ -378,43 +372,43 @@ namespace Model
 
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline CreateApplicationRequest& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
 
     /**
-     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
-     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For
+     * Flink application. To create a Kinesis Data Analytics Studio notebook, use the
      * <code>INTERACTIVE</code> mode.</p>
      */
     inline CreateApplicationRequest& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
@@ -422,28 +416,28 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationDescription;
-    bool m_applicationDescriptionHasBeenSet;
+    bool m_applicationDescriptionHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
-    bool m_runtimeEnvironmentHasBeenSet;
+    bool m_runtimeEnvironmentHasBeenSet = false;
 
     Aws::String m_serviceExecutionRole;
-    bool m_serviceExecutionRoleHasBeenSet;
+    bool m_serviceExecutionRoleHasBeenSet = false;
 
     ApplicationConfiguration m_applicationConfiguration;
-    bool m_applicationConfigurationHasBeenSet;
+    bool m_applicationConfigurationHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ApplicationMode m_applicationMode;
-    bool m_applicationModeHasBeenSet;
+    bool m_applicationModeHasBeenSet = false;
   };
 
 } // namespace Model

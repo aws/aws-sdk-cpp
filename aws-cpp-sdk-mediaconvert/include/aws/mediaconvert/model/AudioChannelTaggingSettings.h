@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioChannelTaggingSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AudioChannelTaggingSettings
+  class AudioChannelTaggingSettings
   {
   public:
-    AudioChannelTaggingSettings();
-    AudioChannelTaggingSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioChannelTaggingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AudioChannelTaggingSettings();
+    AWS_MEDIACONVERT_API AudioChannelTaggingSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AudioChannelTaggingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     AudioChannelTag m_channelTag;
-    bool m_channelTagHasBeenSet;
+    bool m_channelTagHasBeenSet = false;
   };
 
 } // namespace Model

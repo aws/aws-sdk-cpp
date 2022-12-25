@@ -10,6 +10,7 @@
 #include <aws/lexv2-models/model/ObfuscationSetting.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/MultipleValuesSetting.h>
+#include <aws/lexv2-models/model/SubSlotSetting.h>
 #include <utility>
 
 namespace Aws
@@ -28,12 +29,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API CreateSlotResult
+  class CreateSlotResult
   {
   public:
-    CreateSlotResult();
-    CreateSlotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSlotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateSlotResult();
+    AWS_LEXMODELSV2_API CreateSlotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateSlotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -439,6 +440,37 @@ namespace Model
      */
     inline CreateSlotResult& WithMultipleValuesSetting(MultipleValuesSetting&& value) { SetMultipleValuesSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline const SubSlotSetting& GetSubSlotSetting() const{ return m_subSlotSetting; }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline void SetSubSlotSetting(const SubSlotSetting& value) { m_subSlotSetting = value; }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline void SetSubSlotSetting(SubSlotSetting&& value) { m_subSlotSetting = std::move(value); }
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline CreateSlotResult& WithSubSlotSetting(const SubSlotSetting& value) { SetSubSlotSetting(value); return *this;}
+
+    /**
+     * <p>Specifications for the constituent sub slots and the expression for the
+     * composite slot.</p>
+     */
+    inline CreateSlotResult& WithSubSlotSetting(SubSlotSetting&& value) { SetSubSlotSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotId;
@@ -464,6 +496,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     MultipleValuesSetting m_multipleValuesSetting;
+
+    SubSlotSetting m_subSlotSetting;
   };
 
 } // namespace Model

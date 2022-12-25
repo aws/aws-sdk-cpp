@@ -24,12 +24,12 @@ namespace MarketplaceCatalog
 {
 namespace Model
 {
-  class AWS_MARKETPLACECATALOG_API DescribeEntityResult
+  class DescribeEntityResult
   {
   public:
-    DescribeEntityResult();
-    DescribeEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult();
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -119,44 +119,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline const Aws::String& GetEntityArn() const{ return m_entityArn; }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(const Aws::String& value) { m_entityArn = value; }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(Aws::String&& value) { m_entityArn = std::move(value); }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline void SetEntityArn(const char* value) { m_entityArn.assign(value); }
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(const Aws::String& value) { SetEntityArn(value); return *this;}
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(Aws::String&& value) { SetEntityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN associated to the unique identifier for the change set referenced in
-     * this request.</p>
+     * <p>The ARN associated to the unique identifier for the entity referenced in this
+     * request.</p>
      */
     inline DescribeEntityResult& WithEntityArn(const char* value) { SetEntityArn(value); return *this;}
 

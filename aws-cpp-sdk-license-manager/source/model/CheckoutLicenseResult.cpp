@@ -44,7 +44,7 @@ CheckoutLicenseResult& CheckoutLicenseResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("EntitlementsAllowed"))
   {
-    Array<JsonView> entitlementsAllowedJsonList = jsonValue.GetArray("EntitlementsAllowed");
+    Aws::Utils::Array<JsonView> entitlementsAllowedJsonList = jsonValue.GetArray("EntitlementsAllowed");
     for(unsigned entitlementsAllowedIndex = 0; entitlementsAllowedIndex < entitlementsAllowedJsonList.GetLength(); ++entitlementsAllowedIndex)
     {
       m_entitlementsAllowed.push_back(entitlementsAllowedJsonList[entitlementsAllowedIndex].AsObject());

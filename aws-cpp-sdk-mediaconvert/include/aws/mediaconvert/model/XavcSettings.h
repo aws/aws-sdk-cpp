@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API XavcSettings
+  class XavcSettings
   {
   public:
-    XavcSettings();
-    XavcSettings(Aws::Utils::Json::JsonView jsonValue);
-    XavcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API XavcSettings();
+    AWS_MEDIACONVERT_API XavcSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API XavcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1086,52 +1086,52 @@ namespace Model
   private:
 
     XavcAdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     XavcEntropyEncoding m_entropyEncoding;
-    bool m_entropyEncodingHasBeenSet;
+    bool m_entropyEncodingHasBeenSet = false;
 
     XavcFramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     XavcFramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     XavcProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     XavcSlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     int m_softness;
-    bool m_softnessHasBeenSet;
+    bool m_softnessHasBeenSet = false;
 
     XavcSpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
-    bool m_spatialAdaptiveQuantizationHasBeenSet;
+    bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
     XavcTemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
-    bool m_temporalAdaptiveQuantizationHasBeenSet;
+    bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
     Xavc4kIntraCbgProfileSettings m_xavc4kIntraCbgProfileSettings;
-    bool m_xavc4kIntraCbgProfileSettingsHasBeenSet;
+    bool m_xavc4kIntraCbgProfileSettingsHasBeenSet = false;
 
     Xavc4kIntraVbrProfileSettings m_xavc4kIntraVbrProfileSettings;
-    bool m_xavc4kIntraVbrProfileSettingsHasBeenSet;
+    bool m_xavc4kIntraVbrProfileSettingsHasBeenSet = false;
 
     Xavc4kProfileSettings m_xavc4kProfileSettings;
-    bool m_xavc4kProfileSettingsHasBeenSet;
+    bool m_xavc4kProfileSettingsHasBeenSet = false;
 
     XavcHdIntraCbgProfileSettings m_xavcHdIntraCbgProfileSettings;
-    bool m_xavcHdIntraCbgProfileSettingsHasBeenSet;
+    bool m_xavcHdIntraCbgProfileSettingsHasBeenSet = false;
 
     XavcHdProfileSettings m_xavcHdProfileSettings;
-    bool m_xavcHdProfileSettingsHasBeenSet;
+    bool m_xavcHdProfileSettingsHasBeenSet = false;
   };
 
 } // namespace Model

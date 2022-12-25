@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OidcMemberDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OidcMemberDefinition
+  class OidcMemberDefinition
   {
   public:
-    OidcMemberDefinition();
-    OidcMemberDefinition(Aws::Utils::Json::JsonView jsonValue);
-    OidcMemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OidcMemberDefinition();
+    AWS_SAGEMAKER_API OidcMemberDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OidcMemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

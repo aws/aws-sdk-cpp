@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/S3DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API S3DataSource
+  class S3DataSource
   {
   public:
-    S3DataSource();
-    S3DataSource(Aws::Utils::Json::JsonView jsonValue);
-    S3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API S3DataSource();
+    AWS_BRAKET_API S3DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API S3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

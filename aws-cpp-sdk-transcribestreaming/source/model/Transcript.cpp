@@ -33,7 +33,7 @@ Transcript& Transcript::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Results"))
   {
-    Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
     for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Transcript::Jsonize() const
 
   if(m_resultsHasBeenSet)
   {
-   Array<JsonValue> resultsJsonList(m_results.size());
+   Aws::Utils::Array<JsonValue> resultsJsonList(m_results.size());
    for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
    {
      resultsJsonList[resultsIndex].AsObject(m_results[resultsIndex].Jsonize());

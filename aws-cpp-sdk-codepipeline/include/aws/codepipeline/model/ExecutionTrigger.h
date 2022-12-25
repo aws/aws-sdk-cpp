@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ExecutionTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ExecutionTrigger
+  class ExecutionTrigger
   {
   public:
-    ExecutionTrigger();
-    ExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ExecutionTrigger();
+    AWS_CODEPIPELINE_API ExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     TriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerDetail;
-    bool m_triggerDetailHasBeenSet;
+    bool m_triggerDetailHasBeenSet = false;
   };
 
 } // namespace Model

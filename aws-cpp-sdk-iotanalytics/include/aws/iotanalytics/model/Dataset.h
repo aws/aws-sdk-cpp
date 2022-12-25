@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API Dataset();
+    AWS_IOTANALYTICS_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -533,37 +533,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<DatasetAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Vector<DatasetTrigger> m_triggers;
-    bool m_triggersHasBeenSet;
+    bool m_triggersHasBeenSet = false;
 
     Aws::Vector<DatasetContentDeliveryRule> m_contentDeliveryRules;
-    bool m_contentDeliveryRulesHasBeenSet;
+    bool m_contentDeliveryRulesHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     VersioningConfiguration m_versioningConfiguration;
-    bool m_versioningConfigurationHasBeenSet;
+    bool m_versioningConfigurationHasBeenSet = false;
 
     Aws::Vector<LateDataRule> m_lateDataRules;
-    bool m_lateDataRulesHasBeenSet;
+    bool m_lateDataRulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TimestreamTimestamp">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TimestreamTimestamp
+  class TimestreamTimestamp
   {
   public:
-    TimestreamTimestamp();
-    TimestreamTimestamp(Aws::Utils::Json::JsonView jsonValue);
-    TimestreamTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TimestreamTimestamp();
+    AWS_IOT_API TimestreamTimestamp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TimestreamTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

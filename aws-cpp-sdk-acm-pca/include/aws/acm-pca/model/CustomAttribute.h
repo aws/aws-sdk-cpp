@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CustomAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CustomAttribute
+  class CustomAttribute
   {
   public:
-    CustomAttribute();
-    CustomAttribute(Aws::Utils::Json::JsonView jsonValue);
-    CustomAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CustomAttribute();
+    AWS_ACMPCA_API CustomAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CustomAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SearchRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API SearchRequest : public CloudSearchDomainRequest
+  class SearchRequest : public CloudSearchDomainRequest
   {
   public:
-    SearchRequest();
+    AWS_CLOUDSEARCHDOMAIN_API SearchRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Search"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDSEARCHDOMAIN_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDSEARCHDOMAIN_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -2475,46 +2475,46 @@ namespace Model
   private:
 
     Aws::String m_cursor;
-    bool m_cursorHasBeenSet;
+    bool m_cursorHasBeenSet = false;
 
     Aws::String m_expr;
-    bool m_exprHasBeenSet;
+    bool m_exprHasBeenSet = false;
 
     Aws::String m_facet;
-    bool m_facetHasBeenSet;
+    bool m_facetHasBeenSet = false;
 
     Aws::String m_filterQuery;
-    bool m_filterQueryHasBeenSet;
+    bool m_filterQueryHasBeenSet = false;
 
     Aws::String m_highlight;
-    bool m_highlightHasBeenSet;
+    bool m_highlightHasBeenSet = false;
 
     bool m_partial;
-    bool m_partialHasBeenSet;
+    bool m_partialHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_queryOptions;
-    bool m_queryOptionsHasBeenSet;
+    bool m_queryOptionsHasBeenSet = false;
 
     QueryParser m_queryParser;
-    bool m_queryParserHasBeenSet;
+    bool m_queryParserHasBeenSet = false;
 
     Aws::String m_return;
-    bool m_returnHasBeenSet;
+    bool m_returnHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_stats;
-    bool m_statsHasBeenSet;
+    bool m_statsHasBeenSet = false;
   };
 
 } // namespace Model

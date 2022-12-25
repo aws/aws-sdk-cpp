@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BackfillError">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BackfillError
+  class BackfillError
   {
   public:
-    BackfillError();
-    BackfillError(Aws::Utils::Json::JsonView jsonValue);
-    BackfillError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BackfillError();
+    AWS_GLUE_API BackfillError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BackfillError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     BackfillErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::Vector<PartitionValueList> m_partitions;
-    bool m_partitionsHasBeenSet;
+    bool m_partitionsHasBeenSet = false;
   };
 
 } // namespace Model

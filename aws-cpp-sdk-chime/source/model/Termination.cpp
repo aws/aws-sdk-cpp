@@ -59,7 +59,7 @@ Termination& Termination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CallingRegions"))
   {
-    Array<JsonView> callingRegionsJsonList = jsonValue.GetArray("CallingRegions");
+    Aws::Utils::Array<JsonView> callingRegionsJsonList = jsonValue.GetArray("CallingRegions");
     for(unsigned callingRegionsIndex = 0; callingRegionsIndex < callingRegionsJsonList.GetLength(); ++callingRegionsIndex)
     {
       m_callingRegions.push_back(callingRegionsJsonList[callingRegionsIndex].AsString());
@@ -69,7 +69,7 @@ Termination& Termination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CidrAllowedList"))
   {
-    Array<JsonView> cidrAllowedListJsonList = jsonValue.GetArray("CidrAllowedList");
+    Aws::Utils::Array<JsonView> cidrAllowedListJsonList = jsonValue.GetArray("CidrAllowedList");
     for(unsigned cidrAllowedListIndex = 0; cidrAllowedListIndex < cidrAllowedListJsonList.GetLength(); ++cidrAllowedListIndex)
     {
       m_cidrAllowedList.push_back(cidrAllowedListJsonList[cidrAllowedListIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue Termination::Jsonize() const
 
   if(m_callingRegionsHasBeenSet)
   {
-   Array<JsonValue> callingRegionsJsonList(m_callingRegions.size());
+   Aws::Utils::Array<JsonValue> callingRegionsJsonList(m_callingRegions.size());
    for(unsigned callingRegionsIndex = 0; callingRegionsIndex < callingRegionsJsonList.GetLength(); ++callingRegionsIndex)
    {
      callingRegionsJsonList[callingRegionsIndex].AsString(m_callingRegions[callingRegionsIndex]);
@@ -116,7 +116,7 @@ JsonValue Termination::Jsonize() const
 
   if(m_cidrAllowedListHasBeenSet)
   {
-   Array<JsonValue> cidrAllowedListJsonList(m_cidrAllowedList.size());
+   Aws::Utils::Array<JsonValue> cidrAllowedListJsonList(m_cidrAllowedList.size());
    for(unsigned cidrAllowedListIndex = 0; cidrAllowedListIndex < cidrAllowedListJsonList.GetLength(); ++cidrAllowedListIndex)
    {
      cidrAllowedListJsonList[cidrAllowedListIndex].AsString(m_cidrAllowedList[cidrAllowedListIndex]);

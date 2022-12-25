@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeviceiSCSIAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes
+  class DeviceiSCSIAttributes
   {
   public:
-    DeviceiSCSIAttributes();
-    DeviceiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DeviceiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes();
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_targetARN;
-    bool m_targetARNHasBeenSet;
+    bool m_targetARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     int m_networkInterfacePort;
-    bool m_networkInterfacePortHasBeenSet;
+    bool m_networkInterfacePortHasBeenSet = false;
 
     bool m_chapEnabled;
-    bool m_chapEnabledHasBeenSet;
+    bool m_chapEnabledHasBeenSet = false;
   };
 
 } // namespace Model

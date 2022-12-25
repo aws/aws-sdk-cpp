@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipRequest : public ChimeSDKMessagingRequest
+  class BatchCreateChannelMembershipRequest : public ChimeSDKMessagingRequest
   {
   public:
-    BatchCreateChannelMembershipRequest();
+    AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchCreateChannelMembership"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -233,19 +233,79 @@ namespace Model
      */
     inline BatchCreateChannelMembershipRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline BatchCreateChannelMembershipRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline BatchCreateChannelMembershipRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request. </p>  <p>Only required when
+     * creating membership in a SubChannel for a moderator in an elastic channel.</p>
+     * 
+     */
+    inline BatchCreateChannelMembershipRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_memberArns;
-    bool m_memberArnsHasBeenSet;
+    bool m_memberArnsHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

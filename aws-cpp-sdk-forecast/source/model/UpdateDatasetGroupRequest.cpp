@@ -30,7 +30,7 @@ Aws::String UpdateDatasetGroupRequest::SerializePayload() const
 
   if(m_datasetArnsHasBeenSet)
   {
-   Array<JsonValue> datasetArnsJsonList(m_datasetArns.size());
+   Aws::Utils::Array<JsonValue> datasetArnsJsonList(m_datasetArns.size());
    for(unsigned datasetArnsIndex = 0; datasetArnsIndex < datasetArnsJsonList.GetLength(); ++datasetArnsIndex)
    {
      datasetArnsJsonList[datasetArnsIndex].AsString(m_datasetArns[datasetArnsIndex]);

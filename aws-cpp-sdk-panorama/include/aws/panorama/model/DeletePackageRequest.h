@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API DeletePackageRequest : public PanoramaRequest
+  class DeletePackageRequest : public PanoramaRequest
   {
   public:
-    DeletePackageRequest();
+    AWS_PANORAMA_API DeletePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeletePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PANORAMA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
   };
 
 } // namespace Model

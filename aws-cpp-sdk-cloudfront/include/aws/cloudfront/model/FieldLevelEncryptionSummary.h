@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryptionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FieldLevelEncryptionSummary
+  class FieldLevelEncryptionSummary
   {
   public:
-    FieldLevelEncryptionSummary();
-    FieldLevelEncryptionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FieldLevelEncryptionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionSummary();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -168,82 +168,82 @@ namespace Model
 
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline const QueryArgProfileConfig& GetQueryArgProfileConfig() const{ return m_queryArgProfileConfig; }
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline bool QueryArgProfileConfigHasBeenSet() const { return m_queryArgProfileConfigHasBeenSet; }
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline void SetQueryArgProfileConfig(const QueryArgProfileConfig& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = value; }
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline void SetQueryArgProfileConfig(QueryArgProfileConfig&& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = std::move(value); }
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline FieldLevelEncryptionSummary& WithQueryArgProfileConfig(const QueryArgProfileConfig& value) { SetQueryArgProfileConfig(value); return *this;}
 
     /**
-     * <p> A summary of a query argument-profile mapping. </p>
+     * <p>A summary of a query argument-profile mapping.</p>
      */
     inline FieldLevelEncryptionSummary& WithQueryArgProfileConfig(QueryArgProfileConfig&& value) { SetQueryArgProfileConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline const ContentTypeProfileConfig& GetContentTypeProfileConfig() const{ return m_contentTypeProfileConfig; }
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline bool ContentTypeProfileConfigHasBeenSet() const { return m_contentTypeProfileConfigHasBeenSet; }
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline void SetContentTypeProfileConfig(const ContentTypeProfileConfig& value) { m_contentTypeProfileConfigHasBeenSet = true; m_contentTypeProfileConfig = value; }
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline void SetContentTypeProfileConfig(ContentTypeProfileConfig&& value) { m_contentTypeProfileConfigHasBeenSet = true; m_contentTypeProfileConfig = std::move(value); }
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline FieldLevelEncryptionSummary& WithContentTypeProfileConfig(const ContentTypeProfileConfig& value) { SetContentTypeProfileConfig(value); return *this;}
 
     /**
-     * <p> A summary of a content type-profile mapping. </p>
+     * <p>A summary of a content type-profile mapping.</p>
      */
     inline FieldLevelEncryptionSummary& WithContentTypeProfileConfig(ContentTypeProfileConfig&& value) { SetContentTypeProfileConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     QueryArgProfileConfig m_queryArgProfileConfig;
-    bool m_queryArgProfileConfigHasBeenSet;
+    bool m_queryArgProfileConfigHasBeenSet = false;
 
     ContentTypeProfileConfig m_contentTypeProfileConfig;
-    bool m_contentTypeProfileConfigHasBeenSet;
+    bool m_contentTypeProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

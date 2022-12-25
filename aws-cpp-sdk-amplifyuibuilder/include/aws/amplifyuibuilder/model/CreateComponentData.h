@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponentData">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API CreateComponentData
+  class CreateComponentData
   {
   public:
-    CreateComponentData();
-    CreateComponentData(Aws::Utils::Json::JsonView jsonValue);
-    CreateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData();
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -717,40 +717,40 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, ComponentBindingPropertiesValue> m_bindingProperties;
-    bool m_bindingPropertiesHasBeenSet;
+    bool m_bindingPropertiesHasBeenSet = false;
 
     Aws::Vector<ComponentChild> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentDataConfiguration> m_collectionProperties;
-    bool m_collectionPropertiesHasBeenSet;
+    bool m_collectionPropertiesHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<ComponentVariant> m_variants;
-    bool m_variantsHasBeenSet;
+    bool m_variantsHasBeenSet = false;
   };
 
 } // namespace Model

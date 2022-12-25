@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobManifestGeneratorFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobManifestGeneratorFilter
+  class JobManifestGeneratorFilter
   {
   public:
-    JobManifestGeneratorFilter();
-    JobManifestGeneratorFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobManifestGeneratorFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestGeneratorFilter();
+    AWS_S3CONTROL_API JobManifestGeneratorFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestGeneratorFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     bool m_eligibleForReplication;
-    bool m_eligibleForReplicationHasBeenSet;
+    bool m_eligibleForReplicationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Vector<ReplicationStatus> m_objectReplicationStatuses;
-    bool m_objectReplicationStatusesHasBeenSet;
+    bool m_objectReplicationStatusesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RandomSplitEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API RandomSplitEntry
+  class RandomSplitEntry
   {
   public:
-    RandomSplitEntry();
-    RandomSplitEntry(Aws::Utils::Json::JsonView jsonValue);
-    RandomSplitEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API RandomSplitEntry();
+    AWS_PINPOINT_API RandomSplitEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API RandomSplitEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     int m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeImageResult
+  class DescribeImageResult
   {
   public:
-    DescribeImageResult();
-    DescribeImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeImageResult();
+    AWS_SAGEMAKER_API DescribeImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -176,37 +176,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline const Aws::String& GetImageArn() const{ return m_imageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const Aws::String& value) { m_imageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(Aws::String&& value) { m_imageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const char* value) { m_imageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline DescribeImageResult& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline DescribeImageResult& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline DescribeImageResult& WithImageArn(const char* value) { SetImageArn(value); return *this;}
 
@@ -300,44 +300,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline DescribeImageResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline DescribeImageResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that enables Amazon SageMaker
-     * to perform tasks on your behalf.</p>
+     * <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on
+     * your behalf.</p>
      */
     inline DescribeImageResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Remediation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Remediation
+  class Remediation
   {
   public:
-    Remediation();
-    Remediation(Aws::Utils::Json::JsonView jsonValue);
-    Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Remediation();
+    AWS_INSPECTOR2_API Remediation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Remediation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Recommendation m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,83 +5,16 @@
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
-#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sagemaker-a2i-runtime/model/DeleteHumanLoopResult.h>
-#include <aws/sagemaker-a2i-runtime/model/DescribeHumanLoopResult.h>
-#include <aws/sagemaker-a2i-runtime/model/ListHumanLoopsResult.h>
-#include <aws/sagemaker-a2i-runtime/model/StartHumanLoopResult.h>
-#include <aws/sagemaker-a2i-runtime/model/StopHumanLoopResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AugmentedAIRuntime
 {
-
-namespace Model
-{
-        class DeleteHumanLoopRequest;
-        class DescribeHumanLoopRequest;
-        class ListHumanLoopsRequest;
-        class StartHumanLoopRequest;
-        class StopHumanLoopRequest;
-
-        typedef Aws::Utils::Outcome<DeleteHumanLoopResult, AugmentedAIRuntimeError> DeleteHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<DescribeHumanLoopResult, AugmentedAIRuntimeError> DescribeHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<ListHumanLoopsResult, AugmentedAIRuntimeError> ListHumanLoopsOutcome;
-        typedef Aws::Utils::Outcome<StartHumanLoopResult, AugmentedAIRuntimeError> StartHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<StopHumanLoopResult, AugmentedAIRuntimeError> StopHumanLoopOutcome;
-
-        typedef std::future<DeleteHumanLoopOutcome> DeleteHumanLoopOutcomeCallable;
-        typedef std::future<DescribeHumanLoopOutcome> DescribeHumanLoopOutcomeCallable;
-        typedef std::future<ListHumanLoopsOutcome> ListHumanLoopsOutcomeCallable;
-        typedef std::future<StartHumanLoopOutcome> StartHumanLoopOutcomeCallable;
-        typedef std::future<StopHumanLoopOutcome> StopHumanLoopOutcomeCallable;
-} // namespace Model
-
-  class AugmentedAIRuntimeClient;
-
-    typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::DeleteHumanLoopRequest&, const Model::DeleteHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHumanLoopResponseReceivedHandler;
-    typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::DescribeHumanLoopRequest&, const Model::DescribeHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHumanLoopResponseReceivedHandler;
-    typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::ListHumanLoopsRequest&, const Model::ListHumanLoopsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHumanLoopsResponseReceivedHandler;
-    typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::StartHumanLoopRequest&, const Model::StartHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartHumanLoopResponseReceivedHandler;
-    typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::StopHumanLoopRequest&, const Model::StopHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHumanLoopResponseReceivedHandler;
-
   /**
    * <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any
    * machine learning application. When an AI application can't evaluate data with a
@@ -113,32 +46,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html">Use
    * APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient
+  class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AugmentedAIRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AugmentedAIRuntimeClient(const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration(),
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AugmentedAIRuntimeClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AugmentedAIRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AugmentedAIRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AugmentedAIRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AugmentedAIRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AugmentedAIRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AugmentedAIRuntimeClient();
-
 
         /**
          * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
@@ -233,17 +194,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteHumanLoopAsyncHelper(const Model::DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeHumanLoopAsyncHelper(const Model::DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHumanLoopsAsyncHelper(const Model::ListHumanLoopsRequest& request, const ListHumanLoopsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartHumanLoopAsyncHelper(const Model::StartHumanLoopRequest& request, const StartHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopHumanLoopAsyncHelper(const Model::StopHumanLoopRequest& request, const StopHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>;
+      void init(const AugmentedAIRuntimeClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AugmentedAIRuntimeClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AugmentedAIRuntime

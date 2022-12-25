@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/MssPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API MssPackage
+  class MssPackage
   {
   public:
-    MssPackage();
-    MssPackage(Aws::Utils::Json::JsonView jsonValue);
-    MssPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API MssPackage();
+    AWS_MEDIAPACKAGE_API MssPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API MssPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -121,16 +121,16 @@ namespace Model
   private:
 
     MssEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

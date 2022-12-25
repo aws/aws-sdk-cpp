@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SAMLIdp">AWS API
    * Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API SAMLIdp
+  class SAMLIdp
   {
   public:
-    SAMLIdp();
-    SAMLIdp(Aws::Utils::Json::JsonView jsonValue);
-    SAMLIdp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API SAMLIdp();
+    AWS_ELASTICSEARCHSERVICE_API SAMLIdp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API SAMLIdp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_metadataContent;
-    bool m_metadataContentHasBeenSet;
+    bool m_metadataContentHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
   };
 
 } // namespace Model

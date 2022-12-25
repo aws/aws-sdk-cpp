@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedSourceImageFace">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ComparedSourceImageFace
+  class ComparedSourceImageFace
   {
   public:
-    ComparedSourceImageFace();
-    ComparedSourceImageFace(Aws::Utils::Json::JsonView jsonValue);
-    ComparedSourceImageFace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ComparedSourceImageFace();
+    AWS_REKOGNITION_API ComparedSourceImageFace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ComparedSourceImageFace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API BatchUpdatePhoneNumberRequest : public ChimeRequest
+  class BatchUpdatePhoneNumberRequest : public ChimeRequest
   {
   public:
-    BatchUpdatePhoneNumberRequest();
+    AWS_CHIME_API BatchUpdatePhoneNumberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchUpdatePhoneNumber"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<UpdatePhoneNumberRequestItem> m_updatePhoneNumberRequestItems;
-    bool m_updatePhoneNumberRequestItemsHasBeenSet;
+    bool m_updatePhoneNumberRequestItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioSelectorSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioSelectorSettings
+  class AudioSelectorSettings
   {
   public:
-    AudioSelectorSettings();
-    AudioSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioSelectorSettings();
+    AWS_MEDIALIVE_API AudioSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -118,16 +118,16 @@ namespace Model
   private:
 
     AudioHlsRenditionSelection m_audioHlsRenditionSelection;
-    bool m_audioHlsRenditionSelectionHasBeenSet;
+    bool m_audioHlsRenditionSelectionHasBeenSet = false;
 
     AudioLanguageSelection m_audioLanguageSelection;
-    bool m_audioLanguageSelectionHasBeenSet;
+    bool m_audioLanguageSelectionHasBeenSet = false;
 
     AudioPidSelection m_audioPidSelection;
-    bool m_audioPidSelectionHasBeenSet;
+    bool m_audioPidSelectionHasBeenSet = false;
 
     AudioTrackSelection m_audioTrackSelection;
-    bool m_audioTrackSelectionHasBeenSet;
+    bool m_audioTrackSelectionHasBeenSet = false;
   };
 
 } // namespace Model

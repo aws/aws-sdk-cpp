@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Table">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Table
+  class Table
   {
   public:
-    Table();
-    Table(Aws::Utils::Json::JsonView jsonValue);
-    Table& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Table();
+    AWS_TIMESTREAMWRITE_API Table(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Table& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,28 +341,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     TableStatus m_tableStatus;
-    bool m_tableStatusHasBeenSet;
+    bool m_tableStatusHasBeenSet = false;
 
     RetentionProperties m_retentionProperties;
-    bool m_retentionPropertiesHasBeenSet;
+    bool m_retentionPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     MagneticStoreWriteProperties m_magneticStoreWriteProperties;
-    bool m_magneticStoreWritePropertiesHasBeenSet;
+    bool m_magneticStoreWritePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

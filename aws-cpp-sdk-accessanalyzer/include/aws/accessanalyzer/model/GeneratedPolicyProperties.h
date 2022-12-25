@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/model/CloudTrailProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/accessanalyzer/model/CloudTrailProperties.h>
 #include <utility>
 
 namespace Aws
@@ -29,44 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GeneratedPolicyProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API GeneratedPolicyProperties
+  class GeneratedPolicyProperties
   {
   public:
-    GeneratedPolicyProperties();
-    GeneratedPolicyProperties(Aws::Utils::Json::JsonView jsonValue);
-    GeneratedPolicyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline const CloudTrailProperties& GetCloudTrailProperties() const{ return m_cloudTrailProperties; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline bool CloudTrailPropertiesHasBeenSet() const { return m_cloudTrailPropertiesHasBeenSet; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline void SetCloudTrailProperties(const CloudTrailProperties& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = value; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline void SetCloudTrailProperties(CloudTrailProperties&& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = std::move(value); }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline GeneratedPolicyProperties& WithCloudTrailProperties(const CloudTrailProperties& value) { SetCloudTrailProperties(value); return *this;}
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
-    inline GeneratedPolicyProperties& WithCloudTrailProperties(CloudTrailProperties&& value) { SetCloudTrailProperties(std::move(value)); return *this;}
+    AWS_ACCESSANALYZER_API GeneratedPolicyProperties();
+    AWS_ACCESSANALYZER_API GeneratedPolicyProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API GeneratedPolicyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,16 +115,47 @@ namespace Model
      */
     inline GeneratedPolicyProperties& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline const CloudTrailProperties& GetCloudTrailProperties() const{ return m_cloudTrailProperties; }
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline bool CloudTrailPropertiesHasBeenSet() const { return m_cloudTrailPropertiesHasBeenSet; }
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline void SetCloudTrailProperties(const CloudTrailProperties& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = value; }
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline void SetCloudTrailProperties(CloudTrailProperties&& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = std::move(value); }
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline GeneratedPolicyProperties& WithCloudTrailProperties(const CloudTrailProperties& value) { SetCloudTrailProperties(value); return *this;}
+
+    /**
+     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
+     */
+    inline GeneratedPolicyProperties& WithCloudTrailProperties(CloudTrailProperties&& value) { SetCloudTrailProperties(std::move(value)); return *this;}
+
   private:
 
-    CloudTrailProperties m_cloudTrailProperties;
-    bool m_cloudTrailPropertiesHasBeenSet;
-
     bool m_isComplete;
-    bool m_isCompleteHasBeenSet;
+    bool m_isCompleteHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
+
+    CloudTrailProperties m_cloudTrailProperties;
+    bool m_cloudTrailPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

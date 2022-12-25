@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Mapping">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Mapping
+  class Mapping
   {
   public:
-    Mapping();
-    Mapping(Aws::Utils::Json::JsonView jsonValue);
-    Mapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Mapping();
+    AWS_GLUE_API Mapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Mapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -367,22 +367,22 @@ namespace Model
   private:
 
     Aws::String m_toKey;
-    bool m_toKeyHasBeenSet;
+    bool m_toKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fromPath;
-    bool m_fromPathHasBeenSet;
+    bool m_fromPathHasBeenSet = false;
 
     Aws::String m_fromType;
-    bool m_fromTypeHasBeenSet;
+    bool m_fromTypeHasBeenSet = false;
 
     Aws::String m_toType;
-    bool m_toTypeHasBeenSet;
+    bool m_toTypeHasBeenSet = false;
 
     bool m_dropped;
-    bool m_droppedHasBeenSet;
+    bool m_droppedHasBeenSet = false;
 
     Aws::Vector<Mapping> m_children;
-    bool m_childrenHasBeenSet;
+    bool m_childrenHasBeenSet = false;
   };
 
 } // namespace Model

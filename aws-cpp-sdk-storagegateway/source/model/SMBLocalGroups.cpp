@@ -33,7 +33,7 @@ SMBLocalGroups& SMBLocalGroups::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GatewayAdmins"))
   {
-    Array<JsonView> gatewayAdminsJsonList = jsonValue.GetArray("GatewayAdmins");
+    Aws::Utils::Array<JsonView> gatewayAdminsJsonList = jsonValue.GetArray("GatewayAdmins");
     for(unsigned gatewayAdminsIndex = 0; gatewayAdminsIndex < gatewayAdminsJsonList.GetLength(); ++gatewayAdminsIndex)
     {
       m_gatewayAdmins.push_back(gatewayAdminsJsonList[gatewayAdminsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue SMBLocalGroups::Jsonize() const
 
   if(m_gatewayAdminsHasBeenSet)
   {
-   Array<JsonValue> gatewayAdminsJsonList(m_gatewayAdmins.size());
+   Aws::Utils::Array<JsonValue> gatewayAdminsJsonList(m_gatewayAdmins.size());
    for(unsigned gatewayAdminsIndex = 0; gatewayAdminsIndex < gatewayAdminsJsonList.GetLength(); ++gatewayAdminsIndex)
    {
      gatewayAdminsJsonList[gatewayAdminsIndex].AsString(m_gatewayAdmins[gatewayAdminsIndex]);

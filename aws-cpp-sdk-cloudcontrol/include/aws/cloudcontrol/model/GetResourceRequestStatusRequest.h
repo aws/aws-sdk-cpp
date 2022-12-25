@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusRequest : public CloudControlApiRequest
+  class GetResourceRequestStatusRequest : public CloudControlApiRequest
   {
   public:
-    GetResourceRequestStatusRequest();
+    AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResourceRequestStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDCONTROLAPI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDCONTROLAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_requestToken;
-    bool m_requestTokenHasBeenSet;
+    bool m_requestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API DeleteJobRequest : public MgnRequest
+  class DeleteJobRequest : public MgnRequest
   {
   public:
-    DeleteJobRequest();
+    AWS_MGN_API DeleteJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_jobID;
-    bool m_jobIDHasBeenSet;
+    bool m_jobIDHasBeenSet = false;
   };
 
 } // namespace Model

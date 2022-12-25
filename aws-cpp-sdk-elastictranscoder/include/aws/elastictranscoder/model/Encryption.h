@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Encryption">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Encryption
+  class Encryption
   {
   public:
-    Encryption();
-    Encryption(Aws::Utils::Json::JsonView jsonValue);
-    Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Encryption();
+    AWS_ELASTICTRANSCODER_API Encryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,16 +463,16 @@ namespace Model
   private:
 
     Aws::String m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_keyMd5;
-    bool m_keyMd5HasBeenSet;
+    bool m_keyMd5HasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
   };
 
 } // namespace Model

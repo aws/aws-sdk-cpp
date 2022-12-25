@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSecurityFindingFilters
+  class AwsSecurityFindingFilters
   {
   public:
-    AwsSecurityFindingFilters();
-    AwsSecurityFindingFilters(Aws::Utils::Json::JsonView jsonValue);
-    AwsSecurityFindingFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSecurityFindingFilters();
+    AWS_SECURITYHUB_API AwsSecurityFindingFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSecurityFindingFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -4380,277 +4380,277 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_productArn;
-    bool m_productArnHasBeenSet;
+    bool m_productArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_generatorId;
-    bool m_generatorIdHasBeenSet;
+    bool m_generatorIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_severityLabel;
-    bool m_severityLabelHasBeenSet;
+    bool m_severityLabelHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_criticality;
-    bool m_criticalityHasBeenSet;
+    bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_recommendationText;
-    bool m_recommendationTextHasBeenSet;
+    bool m_recommendationTextHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_sourceUrl;
-    bool m_sourceUrlHasBeenSet;
+    bool m_sourceUrlHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_productFields;
-    bool m_productFieldsHasBeenSet;
+    bool m_productFieldsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_companyName;
-    bool m_companyNameHasBeenSet;
+    bool m_companyNameHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_userDefinedFields;
-    bool m_userDefinedFieldsHasBeenSet;
+    bool m_userDefinedFieldsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_malwareName;
-    bool m_malwareNameHasBeenSet;
+    bool m_malwareNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_malwareType;
-    bool m_malwareTypeHasBeenSet;
+    bool m_malwareTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_malwarePath;
-    bool m_malwarePathHasBeenSet;
+    bool m_malwarePathHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_malwareState;
-    bool m_malwareStateHasBeenSet;
+    bool m_malwareStateHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkDirection;
-    bool m_networkDirectionHasBeenSet;
+    bool m_networkDirectionHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkProtocol;
-    bool m_networkProtocolHasBeenSet;
+    bool m_networkProtocolHasBeenSet = false;
 
     Aws::Vector<IpFilter> m_networkSourceIpV4;
-    bool m_networkSourceIpV4HasBeenSet;
+    bool m_networkSourceIpV4HasBeenSet = false;
 
     Aws::Vector<IpFilter> m_networkSourceIpV6;
-    bool m_networkSourceIpV6HasBeenSet;
+    bool m_networkSourceIpV6HasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_networkSourcePort;
-    bool m_networkSourcePortHasBeenSet;
+    bool m_networkSourcePortHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkSourceDomain;
-    bool m_networkSourceDomainHasBeenSet;
+    bool m_networkSourceDomainHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkSourceMac;
-    bool m_networkSourceMacHasBeenSet;
+    bool m_networkSourceMacHasBeenSet = false;
 
     Aws::Vector<IpFilter> m_networkDestinationIpV4;
-    bool m_networkDestinationIpV4HasBeenSet;
+    bool m_networkDestinationIpV4HasBeenSet = false;
 
     Aws::Vector<IpFilter> m_networkDestinationIpV6;
-    bool m_networkDestinationIpV6HasBeenSet;
+    bool m_networkDestinationIpV6HasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_networkDestinationPort;
-    bool m_networkDestinationPortHasBeenSet;
+    bool m_networkDestinationPortHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkDestinationDomain;
-    bool m_networkDestinationDomainHasBeenSet;
+    bool m_networkDestinationDomainHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_processName;
-    bool m_processNameHasBeenSet;
+    bool m_processNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_processPath;
-    bool m_processPathHasBeenSet;
+    bool m_processPathHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_processPid;
-    bool m_processPidHasBeenSet;
+    bool m_processPidHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_processParentPid;
-    bool m_processParentPidHasBeenSet;
+    bool m_processParentPidHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_processLaunchedAt;
-    bool m_processLaunchedAtHasBeenSet;
+    bool m_processLaunchedAtHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_processTerminatedAt;
-    bool m_processTerminatedAtHasBeenSet;
+    bool m_processTerminatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_threatIntelIndicatorType;
-    bool m_threatIntelIndicatorTypeHasBeenSet;
+    bool m_threatIntelIndicatorTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_threatIntelIndicatorValue;
-    bool m_threatIntelIndicatorValueHasBeenSet;
+    bool m_threatIntelIndicatorValueHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_threatIntelIndicatorCategory;
-    bool m_threatIntelIndicatorCategoryHasBeenSet;
+    bool m_threatIntelIndicatorCategoryHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_threatIntelIndicatorLastObservedAt;
-    bool m_threatIntelIndicatorLastObservedAtHasBeenSet;
+    bool m_threatIntelIndicatorLastObservedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_threatIntelIndicatorSource;
-    bool m_threatIntelIndicatorSourceHasBeenSet;
+    bool m_threatIntelIndicatorSourceHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_threatIntelIndicatorSourceUrl;
-    bool m_threatIntelIndicatorSourceUrlHasBeenSet;
+    bool m_threatIntelIndicatorSourceUrlHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourcePartition;
-    bool m_resourcePartitionHasBeenSet;
+    bool m_resourcePartitionHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceType;
-    bool m_resourceAwsEc2InstanceTypeHasBeenSet;
+    bool m_resourceAwsEc2InstanceTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceImageId;
-    bool m_resourceAwsEc2InstanceImageIdHasBeenSet;
+    bool m_resourceAwsEc2InstanceImageIdHasBeenSet = false;
 
     Aws::Vector<IpFilter> m_resourceAwsEc2InstanceIpV4Addresses;
-    bool m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet;
+    bool m_resourceAwsEc2InstanceIpV4AddressesHasBeenSet = false;
 
     Aws::Vector<IpFilter> m_resourceAwsEc2InstanceIpV6Addresses;
-    bool m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet;
+    bool m_resourceAwsEc2InstanceIpV6AddressesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceKeyName;
-    bool m_resourceAwsEc2InstanceKeyNameHasBeenSet;
+    bool m_resourceAwsEc2InstanceKeyNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceIamInstanceProfileArn;
-    bool m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet;
+    bool m_resourceAwsEc2InstanceIamInstanceProfileArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceVpcId;
-    bool m_resourceAwsEc2InstanceVpcIdHasBeenSet;
+    bool m_resourceAwsEc2InstanceVpcIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsEc2InstanceSubnetId;
-    bool m_resourceAwsEc2InstanceSubnetIdHasBeenSet;
+    bool m_resourceAwsEc2InstanceSubnetIdHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_resourceAwsEc2InstanceLaunchedAt;
-    bool m_resourceAwsEc2InstanceLaunchedAtHasBeenSet;
+    bool m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsS3BucketOwnerId;
-    bool m_resourceAwsS3BucketOwnerIdHasBeenSet;
+    bool m_resourceAwsS3BucketOwnerIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsS3BucketOwnerName;
-    bool m_resourceAwsS3BucketOwnerNameHasBeenSet;
+    bool m_resourceAwsS3BucketOwnerNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyPrincipalName;
-    bool m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet;
+    bool m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsIamAccessKeyStatus;
-    bool m_resourceAwsIamAccessKeyStatusHasBeenSet;
+    bool m_resourceAwsIamAccessKeyStatusHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_resourceAwsIamAccessKeyCreatedAt;
-    bool m_resourceAwsIamAccessKeyCreatedAtHasBeenSet;
+    bool m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceAwsIamUserUserName;
-    bool m_resourceAwsIamUserUserNameHasBeenSet;
+    bool m_resourceAwsIamUserUserNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceContainerName;
-    bool m_resourceContainerNameHasBeenSet;
+    bool m_resourceContainerNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceContainerImageId;
-    bool m_resourceContainerImageIdHasBeenSet;
+    bool m_resourceContainerImageIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceContainerImageName;
-    bool m_resourceContainerImageNameHasBeenSet;
+    bool m_resourceContainerImageNameHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_resourceContainerLaunchedAt;
-    bool m_resourceContainerLaunchedAtHasBeenSet;
+    bool m_resourceContainerLaunchedAtHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_resourceDetailsOther;
-    bool m_resourceDetailsOtherHasBeenSet;
+    bool m_resourceDetailsOtherHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_workflowState;
-    bool m_workflowStateHasBeenSet;
+    bool m_workflowStateHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_workflowStatus;
-    bool m_workflowStatusHasBeenSet;
+    bool m_workflowStatusHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_recordState;
-    bool m_recordStateHasBeenSet;
+    bool m_recordStateHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_relatedFindingsProductArn;
-    bool m_relatedFindingsProductArnHasBeenSet;
+    bool m_relatedFindingsProductArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_relatedFindingsId;
-    bool m_relatedFindingsIdHasBeenSet;
+    bool m_relatedFindingsIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_noteText;
-    bool m_noteTextHasBeenSet;
+    bool m_noteTextHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_noteUpdatedAt;
-    bool m_noteUpdatedAtHasBeenSet;
+    bool m_noteUpdatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_noteUpdatedBy;
-    bool m_noteUpdatedByHasBeenSet;
+    bool m_noteUpdatedByHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_findingProviderFieldsConfidence;
-    bool m_findingProviderFieldsConfidenceHasBeenSet;
+    bool m_findingProviderFieldsConfidenceHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_findingProviderFieldsCriticality;
-    bool m_findingProviderFieldsCriticalityHasBeenSet;
+    bool m_findingProviderFieldsCriticalityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsId;
-    bool m_findingProviderFieldsRelatedFindingsIdHasBeenSet;
+    bool m_findingProviderFieldsRelatedFindingsIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingProviderFieldsRelatedFindingsProductArn;
-    bool m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet;
+    bool m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingProviderFieldsSeverityLabel;
-    bool m_findingProviderFieldsSeverityLabelHasBeenSet;
+    bool m_findingProviderFieldsSeverityLabelHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingProviderFieldsSeverityOriginal;
-    bool m_findingProviderFieldsSeverityOriginalHasBeenSet;
+    bool m_findingProviderFieldsSeverityOriginalHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingProviderFieldsTypes;
-    bool m_findingProviderFieldsTypesHasBeenSet;
+    bool m_findingProviderFieldsTypesHasBeenSet = false;
 
     Aws::Vector<BooleanFilter> m_sample;
-    bool m_sampleHasBeenSet;
+    bool m_sampleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/FieldTypeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API FieldTypeDetails
+  class FieldTypeDetails
   {
   public:
-    FieldTypeDetails();
-    FieldTypeDetails(Aws::Utils::Json::JsonView jsonValue);
-    FieldTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API FieldTypeDetails();
+    AWS_APPFLOW_API FieldTypeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API FieldTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_fieldType;
-    bool m_fieldTypeHasBeenSet;
+    bool m_fieldTypeHasBeenSet = false;
 
     Aws::Vector<Operator> m_filterOperators;
-    bool m_filterOperatorsHasBeenSet;
+    bool m_filterOperatorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedValues;
-    bool m_supportedValuesHasBeenSet;
+    bool m_supportedValuesHasBeenSet = false;
 
     Aws::String m_valueRegexPattern;
-    bool m_valueRegexPatternHasBeenSet;
+    bool m_valueRegexPatternHasBeenSet = false;
 
     Aws::String m_supportedDateFormat;
-    bool m_supportedDateFormatHasBeenSet;
+    bool m_supportedDateFormatHasBeenSet = false;
 
     Range m_fieldValueRange;
-    bool m_fieldValueRangeHasBeenSet;
+    bool m_fieldValueRangeHasBeenSet = false;
 
     Range m_fieldLengthRange;
-    bool m_fieldLengthRangeHasBeenSet;
+    bool m_fieldLengthRangeHasBeenSet = false;
   };
 
 } // namespace Model

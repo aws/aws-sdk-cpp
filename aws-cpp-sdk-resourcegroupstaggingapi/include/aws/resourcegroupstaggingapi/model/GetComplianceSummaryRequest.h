@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API GetComplianceSummaryRequest : public ResourceGroupsTaggingAPIRequest
+  class GetComplianceSummaryRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    GetComplianceSummaryRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetComplianceSummaryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetComplianceSummary"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -599,25 +599,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targetIdFilters;
-    bool m_targetIdFiltersHasBeenSet;
+    bool m_targetIdFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionFilters;
-    bool m_regionFiltersHasBeenSet;
+    bool m_regionFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
-    bool m_resourceTypeFiltersHasBeenSet;
+    bool m_resourceTypeFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeyFilters;
-    bool m_tagKeyFiltersHasBeenSet;
+    bool m_tagKeyFiltersHasBeenSet = false;
 
     Aws::Vector<GroupByAttribute> m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
   };
 
 } // namespace Model

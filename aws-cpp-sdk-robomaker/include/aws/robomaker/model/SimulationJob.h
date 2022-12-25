@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationJob">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationJob
+  class SimulationJob
   {
   public:
-    SimulationJob();
-    SimulationJob(Aws::Utils::Json::JsonView jsonValue);
-    SimulationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationJob();
+    AWS_ROBOMAKER_API SimulationJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -862,67 +862,67 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SimulationJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStartedAt;
-    bool m_lastStartedAtHasBeenSet;
+    bool m_lastStartedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     FailureBehavior m_failureBehavior;
-    bool m_failureBehaviorHasBeenSet;
+    bool m_failureBehaviorHasBeenSet = false;
 
     SimulationJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
-    bool m_loggingConfigHasBeenSet;
+    bool m_loggingConfigHasBeenSet = false;
 
     long long m_maxJobDurationInSeconds;
-    bool m_maxJobDurationInSecondsHasBeenSet;
+    bool m_maxJobDurationInSecondsHasBeenSet = false;
 
     long long m_simulationTimeMillis;
-    bool m_simulationTimeMillisHasBeenSet;
+    bool m_simulationTimeMillisHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     Aws::Vector<RobotApplicationConfig> m_robotApplications;
-    bool m_robotApplicationsHasBeenSet;
+    bool m_robotApplicationsHasBeenSet = false;
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
-    bool m_simulationApplicationsHasBeenSet;
+    bool m_simulationApplicationsHasBeenSet = false;
 
     Aws::Vector<DataSource> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VPCConfigResponse m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     NetworkInterface m_networkInterface;
-    bool m_networkInterfaceHasBeenSet;
+    bool m_networkInterfaceHasBeenSet = false;
 
     ComputeResponse m_compute;
-    bool m_computeHasBeenSet;
+    bool m_computeHasBeenSet = false;
   };
 
 } // namespace Model

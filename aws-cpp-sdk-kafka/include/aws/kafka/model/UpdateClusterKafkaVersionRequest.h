@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API UpdateClusterKafkaVersionRequest : public KafkaRequest
+  class UpdateClusterKafkaVersionRequest : public KafkaRequest
   {
   public:
-    UpdateClusterKafkaVersionRequest();
+    AWS_KAFKA_API UpdateClusterKafkaVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateClusterKafkaVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -263,16 +263,16 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     ConfigurationInfo m_configurationInfo;
-    bool m_configurationInfoHasBeenSet;
+    bool m_configurationInfoHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_targetKafkaVersion;
-    bool m_targetKafkaVersionHasBeenSet;
+    bool m_targetKafkaVersionHasBeenSet = false;
   };
 
 } // namespace Model

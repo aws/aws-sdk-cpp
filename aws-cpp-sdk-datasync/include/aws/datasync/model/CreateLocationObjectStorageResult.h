@@ -29,53 +29,46 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API CreateLocationObjectStorageResult
+  class CreateLocationObjectStorageResult
   {
   public:
-    CreateLocationObjectStorageResult();
-    CreateLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateLocationObjectStorageResult();
+    AWS_DATASYNC_API CreateLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline CreateLocationObjectStorageResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline CreateLocationObjectStorageResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed
-     * object storage server location.</p>
+     * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline CreateLocationObjectStorageResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 

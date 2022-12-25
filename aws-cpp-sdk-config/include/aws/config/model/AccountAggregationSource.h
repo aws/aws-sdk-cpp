@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AccountAggregationSource">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AccountAggregationSource
+  class AccountAggregationSource
   {
   public:
-    AccountAggregationSource();
-    AccountAggregationSource(Aws::Utils::Json::JsonView jsonValue);
-    AccountAggregationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AccountAggregationSource();
+    AWS_CONFIGSERVICE_API AccountAggregationSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AccountAggregationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     bool m_allAwsRegions;
-    bool m_allAwsRegionsHasBeenSet;
+    bool m_allAwsRegionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_awsRegions;
-    bool m_awsRegionsHasBeenSet;
+    bool m_awsRegionsHasBeenSet = false;
   };
 
 } // namespace Model

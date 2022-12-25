@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API OrganizationEventDetails
+  class OrganizationEventDetails
   {
   public:
-    OrganizationEventDetails();
-    OrganizationEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API OrganizationEventDetails();
+    AWS_HEALTH_API OrganizationEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API OrganizationEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Event m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_eventDescription;
-    bool m_eventDescriptionHasBeenSet;
+    bool m_eventDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_eventMetadata;
-    bool m_eventMetadataHasBeenSet;
+    bool m_eventMetadataHasBeenSet = false;
   };
 
 } // namespace Model

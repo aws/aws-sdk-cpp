@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContextSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ContextSummary
+  class ContextSummary
   {
   public:
-    ContextSummary();
-    ContextSummary(Aws::Utils::Json::JsonView jsonValue);
-    ContextSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ContextSummary();
+    AWS_SAGEMAKER_API ContextSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ContextSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_contextArn;
-    bool m_contextArnHasBeenSet;
+    bool m_contextArnHasBeenSet = false;
 
     Aws::String m_contextName;
-    bool m_contextNameHasBeenSet;
+    bool m_contextNameHasBeenSet = false;
 
     ContextSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_contextType;
-    bool m_contextTypeHasBeenSet;
+    bool m_contextTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

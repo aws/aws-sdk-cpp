@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UserDataValidationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API UserDataValidationParameters
+  class UserDataValidationParameters
   {
   public:
-    UserDataValidationParameters();
-    UserDataValidationParameters(Aws::Utils::Json::JsonView jsonValue);
-    UserDataValidationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API UserDataValidationParameters();
+    AWS_SMS_API UserDataValidationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API UserDataValidationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ScriptType m_scriptType;
-    bool m_scriptTypeHasBeenSet;
+    bool m_scriptTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API TaskSchedule
+  class TaskSchedule
   {
   public:
-    TaskSchedule();
-    TaskSchedule(Aws::Utils::Json::JsonView jsonValue);
-    TaskSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API TaskSchedule();
+    AWS_DATASYNC_API TaskSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API TaskSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

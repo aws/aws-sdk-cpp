@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantCoreDumpConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig
+  class ProductionVariantCoreDumpConfig
   {
   public:
-    ProductionVariantCoreDumpConfig();
-    ProductionVariantCoreDumpConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProductionVariantCoreDumpConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig();
+    AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProductionVariantCoreDumpConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,10 +330,10 @@ namespace Model
   private:
 
     Aws::String m_destinationS3Uri;
-    bool m_destinationS3UriHasBeenSet;
+    bool m_destinationS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

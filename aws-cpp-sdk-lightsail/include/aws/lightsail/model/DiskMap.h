@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskMap">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DiskMap
+  class DiskMap
   {
   public:
-    DiskMap();
-    DiskMap(Aws::Utils::Json::JsonView jsonValue);
-    DiskMap& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DiskMap();
+    AWS_LIGHTSAIL_API DiskMap(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DiskMap& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_originalDiskPath;
-    bool m_originalDiskPathHasBeenSet;
+    bool m_originalDiskPathHasBeenSet = false;
 
     Aws::String m_newDiskName;
-    bool m_newDiskNameHasBeenSet;
+    bool m_newDiskNameHasBeenSet = false;
   };
 
 } // namespace Model

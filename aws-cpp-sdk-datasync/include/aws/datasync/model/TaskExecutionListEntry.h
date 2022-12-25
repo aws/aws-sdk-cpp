@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API TaskExecutionListEntry
+  class TaskExecutionListEntry
   {
   public:
-    TaskExecutionListEntry();
-    TaskExecutionListEntry(Aws::Utils::Json::JsonView jsonValue);
-    TaskExecutionListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API TaskExecutionListEntry();
+    AWS_DATASYNC_API TaskExecutionListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API TaskExecutionListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_taskExecutionArn;
-    bool m_taskExecutionArnHasBeenSet;
+    bool m_taskExecutionArnHasBeenSet = false;
 
     TaskExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

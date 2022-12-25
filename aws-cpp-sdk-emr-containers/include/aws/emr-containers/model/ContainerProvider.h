@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ContainerProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API ContainerProvider
+  class ContainerProvider
   {
   public:
-    ContainerProvider();
-    ContainerProvider(Aws::Utils::Json::JsonView jsonValue);
-    ContainerProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API ContainerProvider();
+    AWS_EMRCONTAINERS_API ContainerProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API ContainerProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     ContainerProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ContainerInfo m_info;
-    bool m_infoHasBeenSet;
+    bool m_infoHasBeenSet = false;
   };
 
 } // namespace Model

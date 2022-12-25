@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TreatmentResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TreatmentResource
+  class TreatmentResource
   {
   public:
-    TreatmentResource();
-    TreatmentResource(Aws::Utils::Json::JsonView jsonValue);
-    TreatmentResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TreatmentResource();
+    AWS_PINPOINT_API TreatmentResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TreatmentResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,31 +361,31 @@ namespace Model
   private:
 
     CustomDeliveryConfiguration m_customDeliveryConfiguration;
-    bool m_customDeliveryConfigurationHasBeenSet;
+    bool m_customDeliveryConfigurationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MessageConfiguration m_messageConfiguration;
-    bool m_messageConfigurationHasBeenSet;
+    bool m_messageConfigurationHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     int m_sizePercent;
-    bool m_sizePercentHasBeenSet;
+    bool m_sizePercentHasBeenSet = false;
 
     CampaignState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     TemplateConfiguration m_templateConfiguration;
-    bool m_templateConfigurationHasBeenSet;
+    bool m_templateConfigurationHasBeenSet = false;
 
     Aws::String m_treatmentDescription;
-    bool m_treatmentDescriptionHasBeenSet;
+    bool m_treatmentDescriptionHasBeenSet = false;
 
     Aws::String m_treatmentName;
-    bool m_treatmentNameHasBeenSet;
+    bool m_treatmentNameHasBeenSet = false;
   };
 
 } // namespace Model

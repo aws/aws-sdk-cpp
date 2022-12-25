@@ -24,6 +24,7 @@ namespace Aws
         static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
         static const int COUNT_HASH = HashingUtils::HashString("COUNT");
         static const int CAPTCHA_HASH = HashingUtils::HashString("CAPTCHA");
+        static const int CHALLENGE_HASH = HashingUtils::HashString("CHALLENGE");
         static const int EXCLUDED_AS_COUNT_HASH = HashingUtils::HashString("EXCLUDED_AS_COUNT");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == CAPTCHA_HASH)
           {
             return ActionValue::CAPTCHA;
+          }
+          else if (hashCode == CHALLENGE_HASH)
+          {
+            return ActionValue::CHALLENGE;
           }
           else if (hashCode == EXCLUDED_AS_COUNT_HASH)
           {
@@ -72,6 +77,8 @@ namespace Aws
             return "COUNT";
           case ActionValue::CAPTCHA:
             return "CAPTCHA";
+          case ActionValue::CHALLENGE:
+            return "CHALLENGE";
           case ActionValue::EXCLUDED_AS_COUNT:
             return "EXCLUDED_AS_COUNT";
           default:

@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GeoLocation
+  class GeoLocation
   {
   public:
-    GeoLocation();
-    GeoLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GeoLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API GeoLocation();
+    AWS_ROUTE53_API GeoLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API GeoLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_countryCode;
-    bool m_countryCodeHasBeenSet;
+    bool m_countryCodeHasBeenSet = false;
 
     Aws::String m_subdivisionCode;
-    bool m_subdivisionCodeHasBeenSet;
+    bool m_subdivisionCodeHasBeenSet = false;
   };
 
 } // namespace Model

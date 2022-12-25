@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/Filter">AWS API
    * Reference</a></p>
    */
-  class AWS_PRICING_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRICING_API Filter();
+    AWS_PRICING_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,13 +254,13 @@ namespace Model
   private:
 
     FilterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RegionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RegionInfo
+  class RegionInfo
   {
   public:
-    RegionInfo();
-    RegionInfo(Aws::Utils::Json::JsonView jsonValue);
-    RegionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RegionInfo();
+    AWS_SSMINCIDENTS_API RegionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RegionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_sseKmsKeyId;
-    bool m_sseKmsKeyIdHasBeenSet;
+    bool m_sseKmsKeyIdHasBeenSet = false;
 
     RegionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusUpdateDateTime;
-    bool m_statusUpdateDateTimeHasBeenSet;
+    bool m_statusUpdateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

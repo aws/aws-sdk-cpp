@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/StreamSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API StreamSelection
+  class StreamSelection
   {
   public:
-    StreamSelection();
-    StreamSelection(Aws::Utils::Json::JsonView jsonValue);
-    StreamSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API StreamSelection();
+    AWS_MEDIAPACKAGEVOD_API StreamSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API StreamSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,13 +112,13 @@ namespace Model
   private:
 
     int m_maxVideoBitsPerSecond;
-    bool m_maxVideoBitsPerSecondHasBeenSet;
+    bool m_maxVideoBitsPerSecondHasBeenSet = false;
 
     int m_minVideoBitsPerSecond;
-    bool m_minVideoBitsPerSecondHasBeenSet;
+    bool m_minVideoBitsPerSecondHasBeenSet = false;
 
     StreamOrder m_streamOrder;
-    bool m_streamOrderHasBeenSet;
+    bool m_streamOrderHasBeenSet = false;
   };
 
 } // namespace Model

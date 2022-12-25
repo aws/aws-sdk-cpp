@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HistoryRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HistoryRecord
+  class HistoryRecord
   {
   public:
-    HistoryRecord();
-    HistoryRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HistoryRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecord();
+    AWS_EC2_API HistoryRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HistoryRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     EventInformation m_eventInformation;
-    bool m_eventInformationHasBeenSet;
+    bool m_eventInformationHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

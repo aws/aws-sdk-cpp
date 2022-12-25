@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PortRange">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API PortRange
+  class PortRange
   {
   public:
-    PortRange();
-    PortRange(Aws::Utils::Json::JsonView jsonValue);
-    PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API PortRange();
+    AWS_EMR_API PortRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_minRange;
-    bool m_minRangeHasBeenSet;
+    bool m_minRangeHasBeenSet = false;
 
     int m_maxRange;
-    bool m_maxRangeHasBeenSet;
+    bool m_maxRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UtteranceData">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API UtteranceData
+  class UtteranceData
   {
   public:
-    UtteranceData();
-    UtteranceData(Aws::Utils::Json::JsonView jsonValue);
-    UtteranceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData();
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,19 +194,19 @@ namespace Model
   private:
 
     Aws::String m_utteranceString;
-    bool m_utteranceStringHasBeenSet;
+    bool m_utteranceStringHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     int m_distinctUsers;
-    bool m_distinctUsersHasBeenSet;
+    bool m_distinctUsersHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstUtteredDate;
-    bool m_firstUtteredDateHasBeenSet;
+    bool m_firstUtteredDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUtteredDate;
-    bool m_lastUtteredDateHasBeenSet;
+    bool m_lastUtteredDateHasBeenSet = false;
   };
 
 } // namespace Model

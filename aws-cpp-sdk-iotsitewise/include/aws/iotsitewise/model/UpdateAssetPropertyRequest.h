@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateAssetPropertyRequest : public IoTSiteWiseRequest
+  class UpdateAssetPropertyRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateAssetPropertyRequest();
+    AWS_IOTSITEWISE_API UpdateAssetPropertyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssetProperty"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -322,22 +322,82 @@ namespace Model
      */
     inline UpdateAssetPropertyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline const Aws::String& GetPropertyUnit() const{ return m_propertyUnit; }
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline bool PropertyUnitHasBeenSet() const { return m_propertyUnitHasBeenSet; }
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline void SetPropertyUnit(const Aws::String& value) { m_propertyUnitHasBeenSet = true; m_propertyUnit = value; }
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline void SetPropertyUnit(Aws::String&& value) { m_propertyUnitHasBeenSet = true; m_propertyUnit = std::move(value); }
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline void SetPropertyUnit(const char* value) { m_propertyUnitHasBeenSet = true; m_propertyUnit.assign(value); }
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline UpdateAssetPropertyRequest& WithPropertyUnit(const Aws::String& value) { SetPropertyUnit(value); return *this;}
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline UpdateAssetPropertyRequest& WithPropertyUnit(Aws::String&& value) { SetPropertyUnit(std::move(value)); return *this;}
+
+    /**
+     * <p>The unit of measure (such as Newtons or RPM) of the asset property. If you
+     * don't specify a value for this parameter, the service uses the value of the
+     * <code>assetModelProperty</code> in the asset model.</p>
+     */
+    inline UpdateAssetPropertyRequest& WithPropertyUnit(const char* value) { SetPropertyUnit(value); return *this;}
+
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     PropertyNotificationState m_propertyNotificationState;
-    bool m_propertyNotificationStateHasBeenSet;
+    bool m_propertyNotificationStateHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_propertyUnit;
+    bool m_propertyUnitHasBeenSet = false;
   };
 
 } // namespace Model

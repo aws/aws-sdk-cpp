@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API JobOutput
+  class JobOutput
   {
   public:
-    JobOutput();
-    JobOutput(Aws::Utils::Json::JsonView jsonValue);
-    JobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API JobOutput();
+    AWS_ELASTICTRANSCODER_API JobOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API JobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1580,64 +1580,64 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_thumbnailPattern;
-    bool m_thumbnailPatternHasBeenSet;
+    bool m_thumbnailPatternHasBeenSet = false;
 
     Encryption m_thumbnailEncryption;
-    bool m_thumbnailEncryptionHasBeenSet;
+    bool m_thumbnailEncryptionHasBeenSet = false;
 
     Aws::String m_rotate;
-    bool m_rotateHasBeenSet;
+    bool m_rotateHasBeenSet = false;
 
     Aws::String m_presetId;
-    bool m_presetIdHasBeenSet;
+    bool m_presetIdHasBeenSet = false;
 
     Aws::String m_segmentDuration;
-    bool m_segmentDurationHasBeenSet;
+    bool m_segmentDurationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     Aws::Vector<JobWatermark> m_watermarks;
-    bool m_watermarksHasBeenSet;
+    bool m_watermarksHasBeenSet = false;
 
     JobAlbumArt m_albumArt;
-    bool m_albumArtHasBeenSet;
+    bool m_albumArtHasBeenSet = false;
 
     Captions m_captions;
-    bool m_captionsHasBeenSet;
+    bool m_captionsHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_appliedColorSpaceConversion;
-    bool m_appliedColorSpaceConversionHasBeenSet;
+    bool m_appliedColorSpaceConversionHasBeenSet = false;
   };
 
 } // namespace Model

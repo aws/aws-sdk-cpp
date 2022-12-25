@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Predecessor">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API Predecessor
+  class Predecessor
   {
   public:
-    Predecessor();
-    Predecessor(Aws::Utils::Json::JsonView jsonValue);
-    Predecessor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Predecessor();
+    AWS_GLUE_API Predecessor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Predecessor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
   };
 
 } // namespace Model

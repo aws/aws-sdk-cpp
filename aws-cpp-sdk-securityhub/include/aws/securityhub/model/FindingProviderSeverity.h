@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderSeverity">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FindingProviderSeverity
+  class FindingProviderSeverity
   {
   public:
-    FindingProviderSeverity();
-    FindingProviderSeverity(Aws::Utils::Json::JsonView jsonValue);
-    FindingProviderSeverity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FindingProviderSeverity();
+    AWS_SECURITYHUB_API FindingProviderSeverity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FindingProviderSeverity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     SeverityLabel m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_original;
-    bool m_originalHasBeenSet;
+    bool m_originalHasBeenSet = false;
   };
 
 } // namespace Model

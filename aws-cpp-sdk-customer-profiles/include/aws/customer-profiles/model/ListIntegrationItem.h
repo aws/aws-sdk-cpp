@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ListIntegrationItem
+  class ListIntegrationItem
   {
   public:
-    ListIntegrationItem();
-    ListIntegrationItem(Aws::Utils::Json::JsonView jsonValue);
-    ListIntegrationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ListIntegrationItem();
+    AWS_CUSTOMERPROFILES_API ListIntegrationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ListIntegrationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -474,31 +474,63 @@ namespace Model
      */
     inline ListIntegrationItem& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline bool GetIsUnstructured() const{ return m_isUnstructured; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline bool IsUnstructuredHasBeenSet() const { return m_isUnstructuredHasBeenSet; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline void SetIsUnstructured(bool value) { m_isUnstructuredHasBeenSet = true; m_isUnstructured = value; }
+
+    /**
+     * <p>Boolean to indicate if the Flow associated with the Integration is created
+     * via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in
+     * flowDefinition</p>
+     */
+    inline ListIntegrationItem& WithIsUnstructured(bool value) { SetIsUnstructured(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
-    bool m_objectTypeNamesHasBeenSet;
+    bool m_objectTypeNamesHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
+
+    bool m_isUnstructured;
+    bool m_isUnstructuredHasBeenSet = false;
   };
 
 } // namespace Model

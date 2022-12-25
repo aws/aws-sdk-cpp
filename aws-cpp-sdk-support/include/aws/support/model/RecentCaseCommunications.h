@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RecentCaseCommunications">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API RecentCaseCommunications
+  class RecentCaseCommunications
   {
   public:
-    RecentCaseCommunications();
-    RecentCaseCommunications(Aws::Utils::Json::JsonView jsonValue);
-    RecentCaseCommunications& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API RecentCaseCommunications();
+    AWS_SUPPORT_API RecentCaseCommunications(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API RecentCaseCommunications& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<Communication> m_communications;
-    bool m_communicationsHasBeenSet;
+    bool m_communicationsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

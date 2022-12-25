@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ViolationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ViolationDetail
+  class ViolationDetail
   {
   public:
-    ViolationDetail();
-    ViolationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ViolationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ViolationDetail();
+    AWS_FMS_API ViolationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ViolationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_memberAccount;
-    bool m_memberAccountHasBeenSet;
+    bool m_memberAccountHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceViolation> m_resourceViolations;
-    bool m_resourceViolationsHasBeenSet;
+    bool m_resourceViolationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     Aws::String m_resourceDescription;
-    bool m_resourceDescriptionHasBeenSet;
+    bool m_resourceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

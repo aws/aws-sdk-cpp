@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/DeploymentResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API DeploymentResult
+  class DeploymentResult
   {
   public:
-    DeploymentResult();
-    DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API DeploymentResult();
+    AWS_GAMESPARKS_API DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ResultCode m_resultCode;
-    bool m_resultCodeHasBeenSet;
+    bool m_resultCodeHasBeenSet = false;
   };
 
 } // namespace Model

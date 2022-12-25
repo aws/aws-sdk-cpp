@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/WorkflowAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API WorkflowAttributes
+  class WorkflowAttributes
   {
   public:
-    WorkflowAttributes();
-    WorkflowAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API WorkflowAttributes();
+    AWS_CUSTOMERPROFILES_API WorkflowAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API WorkflowAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     AppflowIntegrationWorkflowAttributes m_appflowIntegration;
-    bool m_appflowIntegrationHasBeenSet;
+    bool m_appflowIntegrationHasBeenSet = false;
   };
 
 } // namespace Model

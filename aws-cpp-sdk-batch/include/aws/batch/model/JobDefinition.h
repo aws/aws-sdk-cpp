@@ -12,6 +12,8 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/NodeProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EksProperties.h>
+#include <aws/batch/model/OrchestrationType.h>
 #include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
@@ -31,17 +33,18 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Batch job definition.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an Batch job definition.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API JobDefinition
+  class JobDefinition
   {
   public:
-    JobDefinition();
-    JobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobDefinition();
+    AWS_BATCH_API JobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,7 +192,7 @@ namespace Model
 
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -199,7 +202,7 @@ namespace Model
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -209,7 +212,7 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -219,7 +222,7 @@ namespace Model
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -229,7 +232,7 @@ namespace Model
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -239,7 +242,7 @@ namespace Model
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -249,7 +252,7 @@ namespace Model
     inline JobDefinition& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -259,7 +262,7 @@ namespace Model
     inline JobDefinition& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of job definition, either <code>container</code> or
+     * <p>The type of job definition. It's either <code>container</code> or
      * <code>multinode</code>. If the job is run on Fargate resources, then
      * <code>multinode</code> isn't supported. For more information about multi-node
      * parallel jobs, see <a
@@ -480,190 +483,214 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline void SetContainerProperties(const ContainerProperties& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline JobDefinition& WithContainerProperties(const ContainerProperties& value) { SetContainerProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to container-based jobs.</p>
+     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
+     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
+     * <code>nodeProperties</code>. Only one can be specified.</p>
      */
     inline JobDefinition& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline JobDefinition& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
 
     /**
-     * <p>The timeout configuration for jobs that are submitted with this job
-     * definition. You can specify a timeout duration after which Batch terminates your
-     * jobs if they haven't finished.</p>
+     * <p>The timeout time for jobs that are submitted with this job definition. After
+     * the amount of time you specify passes, Batch terminates your jobs if they aren't
+     * finished.</p>
      */
     inline JobDefinition& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline JobDefinition& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
+     * <p>An object with various properties that are specific to multi-node parallel
+     * jobs. Valid values are <code>containerProperties</code>,
+     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
+     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
+     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
      * 
      */
     inline JobDefinition& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job definition.</p>
+     * <p>The tags that are applied to the job definition.</p>
      */
     inline JobDefinition& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -671,40 +698,40 @@ namespace Model
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline bool GetPropagateTags() const{ return m_propagateTags; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline JobDefinition& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
 
@@ -765,49 +792,135 @@ namespace Model
      */
     inline JobDefinition& AddPlatformCapabilities(PlatformCapability&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline const EksProperties& GetEksProperties() const{ return m_eksProperties; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline void SetEksProperties(const EksProperties& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline void SetEksProperties(EksProperties&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline JobDefinition& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
+     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     */
+    inline JobDefinition& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline const OrchestrationType& GetContainerOrchestrationType() const{ return m_containerOrchestrationType; }
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline bool ContainerOrchestrationTypeHasBeenSet() const { return m_containerOrchestrationTypeHasBeenSet; }
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline void SetContainerOrchestrationType(const OrchestrationType& value) { m_containerOrchestrationTypeHasBeenSet = true; m_containerOrchestrationType = value; }
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline void SetContainerOrchestrationType(OrchestrationType&& value) { m_containerOrchestrationTypeHasBeenSet = true; m_containerOrchestrationType = std::move(value); }
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline JobDefinition& WithContainerOrchestrationType(const OrchestrationType& value) { SetContainerOrchestrationType(value); return *this;}
+
+    /**
+     * <p>The orchestration type of the compute environment. The valid values are
+     * <code>ECS</code> (default) or <code>EKS</code>.</p>
+     */
+    inline JobDefinition& WithContainerOrchestrationType(OrchestrationType&& value) { SetContainerOrchestrationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     Aws::String m_jobDefinitionArn;
-    bool m_jobDefinitionArnHasBeenSet;
+    bool m_jobDefinitionArnHasBeenSet = false;
 
     int m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_schedulingPriority;
-    bool m_schedulingPriorityHasBeenSet;
+    bool m_schedulingPriorityHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     ContainerProperties m_containerProperties;
-    bool m_containerPropertiesHasBeenSet;
+    bool m_containerPropertiesHasBeenSet = false;
 
     JobTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     NodeProperties m_nodeProperties;
-    bool m_nodePropertiesHasBeenSet;
+    bool m_nodePropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     Aws::Vector<PlatformCapability> m_platformCapabilities;
-    bool m_platformCapabilitiesHasBeenSet;
+    bool m_platformCapabilitiesHasBeenSet = false;
+
+    EksProperties m_eksProperties;
+    bool m_eksPropertiesHasBeenSet = false;
+
+    OrchestrationType m_containerOrchestrationType;
+    bool m_containerOrchestrationTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ControlPlaneTagFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ControlPlaneTagFilter
+  class ControlPlaneTagFilter
   {
   public:
-    ControlPlaneTagFilter();
-    ControlPlaneTagFilter(Aws::Utils::Json::JsonView jsonValue);
-    ControlPlaneTagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ControlPlaneTagFilter();
+    AWS_CONNECT_API ControlPlaneTagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ControlPlaneTagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<TagCondition>> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<TagCondition> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     TagCondition m_tagCondition;
-    bool m_tagConditionHasBeenSet;
+    bool m_tagConditionHasBeenSet = false;
   };
 
 } // namespace Model

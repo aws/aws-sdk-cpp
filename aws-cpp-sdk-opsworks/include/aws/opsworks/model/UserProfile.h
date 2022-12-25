@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UserProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API UserProfile
+  class UserProfile
   {
   public:
-    UserProfile();
-    UserProfile(Aws::Utils::Json::JsonView jsonValue);
-    UserProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API UserProfile();
+    AWS_OPSWORKS_API UserProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API UserProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sshUsername;
-    bool m_sshUsernameHasBeenSet;
+    bool m_sshUsernameHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
 
     bool m_allowSelfManagement;
-    bool m_allowSelfManagementHasBeenSet;
+    bool m_allowSelfManagementHasBeenSet = false;
   };
 
 } // namespace Model

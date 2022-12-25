@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API HeadObjectRequest : public S3CrtRequest
+  class HeadObjectRequest : public S3CrtRequest
   {
   public:
-    HeadObjectRequest();
+    AWS_S3CRT_API HeadObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "HeadObject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CRT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The name of the bucket containing the object.</p> <p>When using this action
@@ -901,52 +905,52 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_ifModifiedSince;
-    bool m_ifModifiedSinceHasBeenSet;
+    bool m_ifModifiedSinceHasBeenSet = false;
 
     Aws::String m_ifNoneMatch;
-    bool m_ifNoneMatchHasBeenSet;
+    bool m_ifNoneMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_ifUnmodifiedSince;
-    bool m_ifUnmodifiedSinceHasBeenSet;
+    bool m_ifUnmodifiedSinceHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_range;
-    bool m_rangeHasBeenSet;
+    bool m_rangeHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     int m_partNumber;
-    bool m_partNumberHasBeenSet;
+    bool m_partNumberHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     ChecksumMode m_checksumMode;
-    bool m_checksumModeHasBeenSet;
+    bool m_checksumModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

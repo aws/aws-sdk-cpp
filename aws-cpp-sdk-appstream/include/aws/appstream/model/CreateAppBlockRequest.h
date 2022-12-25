@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API CreateAppBlockRequest : public AppStreamRequest
+  class CreateAppBlockRequest : public AppStreamRequest
   {
   public:
-    CreateAppBlockRequest();
+    AWS_APPSTREAM_API CreateAppBlockRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAppBlock"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     S3Location m_sourceS3Location;
-    bool m_sourceS3LocationHasBeenSet;
+    bool m_sourceS3LocationHasBeenSet = false;
 
     ScriptDetails m_setupScriptDetails;
-    bool m_setupScriptDetailsHasBeenSet;
+    bool m_setupScriptDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

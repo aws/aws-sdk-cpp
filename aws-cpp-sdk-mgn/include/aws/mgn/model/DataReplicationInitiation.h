@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DataReplicationInitiation">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API DataReplicationInitiation
+  class DataReplicationInitiation
   {
   public:
-    DataReplicationInitiation();
-    DataReplicationInitiation(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationInitiation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API DataReplicationInitiation();
+    AWS_MGN_API DataReplicationInitiation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API DataReplicationInitiation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_nextAttemptDateTime;
-    bool m_nextAttemptDateTimeHasBeenSet;
+    bool m_nextAttemptDateTimeHasBeenSet = false;
 
     Aws::String m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Vector<DataReplicationInitiationStep> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelConfiguration
+  class ModelConfiguration
   {
   public:
-    ModelConfiguration();
-    ModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelConfiguration();
+    AWS_SAGEMAKER_API ModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_inferenceSpecificationName;
-    bool m_inferenceSpecificationNameHasBeenSet;
+    bool m_inferenceSpecificationNameHasBeenSet = false;
 
     Aws::Vector<EnvironmentParameter> m_environmentParameters;
-    bool m_environmentParametersHasBeenSet;
+    bool m_environmentParametersHasBeenSet = false;
   };
 
 } // namespace Model

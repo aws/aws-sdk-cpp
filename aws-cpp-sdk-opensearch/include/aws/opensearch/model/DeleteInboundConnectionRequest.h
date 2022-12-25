@@ -17,15 +17,15 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>DeleteInboundConnection</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the parameters to the <code>DeleteInboundConnection</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnectionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionRequest : public OpenSearchServiceRequest
+  class DeleteInboundConnectionRequest : public OpenSearchServiceRequest
   {
   public:
-    DeleteInboundConnectionRequest();
+    AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteInboundConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
   };
 
 } // namespace Model

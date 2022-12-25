@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API UpdatePoolRequest : public PinpointSMSVoiceV2Request
+  class UpdatePoolRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    UpdatePoolRequest();
+    AWS_PINPOINTSMSVOICEV2_API UpdatePoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -283,25 +283,25 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     bool m_twoWayEnabled;
-    bool m_twoWayEnabledHasBeenSet;
+    bool m_twoWayEnabledHasBeenSet = false;
 
     Aws::String m_twoWayChannelArn;
-    bool m_twoWayChannelArnHasBeenSet;
+    bool m_twoWayChannelArnHasBeenSet = false;
 
     bool m_selfManagedOptOutsEnabled;
-    bool m_selfManagedOptOutsEnabledHasBeenSet;
+    bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     bool m_sharedRoutesEnabled;
-    bool m_sharedRoutesEnabledHasBeenSet;
+    bool m_sharedRoutesEnabledHasBeenSet = false;
 
     bool m_deletionProtectionEnabled;
-    bool m_deletionProtectionEnabledHasBeenSet;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

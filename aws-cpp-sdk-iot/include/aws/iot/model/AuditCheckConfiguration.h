@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditCheckConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditCheckConfiguration
+  class AuditCheckConfiguration
   {
   public:
-    AuditCheckConfiguration();
-    AuditCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AuditCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditCheckConfiguration();
+    AWS_IOT_API AuditCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/RegistryCatalogData">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API RegistryCatalogData
+  class RegistryCatalogData
   {
   public:
-    RegistryCatalogData();
-    RegistryCatalogData(Aws::Utils::Json::JsonView jsonValue);
-    RegistryCatalogData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API RegistryCatalogData();
+    AWS_ECRPUBLIC_API RegistryCatalogData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API RegistryCatalogData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

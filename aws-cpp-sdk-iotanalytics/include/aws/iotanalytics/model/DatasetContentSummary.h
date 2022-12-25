@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetContentSummary
+  class DatasetContentSummary
   {
   public:
-    DatasetContentSummary();
-    DatasetContentSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetContentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetContentSummary();
+    AWS_IOTANALYTICS_API DatasetContentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetContentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     DatasetContentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduleTime;
-    bool m_scheduleTimeHasBeenSet;
+    bool m_scheduleTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
   };
 
 } // namespace Model

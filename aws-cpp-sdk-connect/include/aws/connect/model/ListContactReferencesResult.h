@@ -26,46 +26,46 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListContactReferencesResult
+  class ListContactReferencesResult
   {
   public:
-    ListContactReferencesResult();
-    ListContactReferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContactReferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactReferencesResult();
+    AWS_CONNECT_API ListContactReferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactReferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline const Aws::Vector<ReferenceSummary>& GetReferenceSummaryList() const{ return m_referenceSummaryList; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline void SetReferenceSummaryList(const Aws::Vector<ReferenceSummary>& value) { m_referenceSummaryList = value; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline void SetReferenceSummaryList(Aws::Vector<ReferenceSummary>&& value) { m_referenceSummaryList = std::move(value); }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactReferencesResult& WithReferenceSummaryList(const Aws::Vector<ReferenceSummary>& value) { SetReferenceSummaryList(value); return *this;}
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactReferencesResult& WithReferenceSummaryList(Aws::Vector<ReferenceSummary>&& value) { SetReferenceSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactReferencesResult& AddReferenceSummaryList(const ReferenceSummary& value) { m_referenceSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactReferencesResult& AddReferenceSummaryList(ReferenceSummary&& value) { m_referenceSummaryList.push_back(std::move(value)); return *this; }
 

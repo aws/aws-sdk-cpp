@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LastCrawlInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LastCrawlInfo
+  class LastCrawlInfo
   {
   public:
-    LastCrawlInfo();
-    LastCrawlInfo(Aws::Utils::Json::JsonView jsonValue);
-    LastCrawlInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LastCrawlInfo();
+    AWS_GLUE_API LastCrawlInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LastCrawlInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     LastCrawlStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_logGroup;
-    bool m_logGroupHasBeenSet;
+    bool m_logGroupHasBeenSet = false;
 
     Aws::String m_logStream;
-    bool m_logStreamHasBeenSet;
+    bool m_logStreamHasBeenSet = false;
 
     Aws::String m_messagePrefix;
-    bool m_messagePrefixHasBeenSet;
+    bool m_messagePrefixHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

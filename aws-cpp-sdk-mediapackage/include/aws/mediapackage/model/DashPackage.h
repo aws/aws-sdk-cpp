@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/DashPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API DashPackage
+  class DashPackage
   {
   public:
-    DashPackage();
-    DashPackage(Aws::Utils::Json::JsonView jsonValue);
-    DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API DashPackage();
+    AWS_MEDIAPACKAGE_API DashPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -109,6 +109,27 @@ namespace Model
 
     
     inline DashPackage& WithEncryption(DashEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline DashPackage& WithIncludeIframeOnlyStream(bool value) { SetIncludeIframeOnlyStream(value); return *this;}
 
 
     /**
@@ -601,49 +622,52 @@ rounded to the
   private:
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     DashEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
+
+    bool m_includeIframeOnlyStream;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     ManifestLayout m_manifestLayout;
-    bool m_manifestLayoutHasBeenSet;
+    bool m_manifestLayoutHasBeenSet = false;
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
 
     int m_minBufferTimeSeconds;
-    bool m_minBufferTimeSecondsHasBeenSet;
+    bool m_minBufferTimeSecondsHasBeenSet = false;
 
     int m_minUpdatePeriodSeconds;
-    bool m_minUpdatePeriodSecondsHasBeenSet;
+    bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
     Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
-    bool m_periodTriggersHasBeenSet;
+    bool m_periodTriggersHasBeenSet = false;
 
     Profile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     SegmentTemplateFormat m_segmentTemplateFormat;
-    bool m_segmentTemplateFormatHasBeenSet;
+    bool m_segmentTemplateFormatHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
 
     int m_suggestedPresentationDelaySeconds;
-    bool m_suggestedPresentationDelaySecondsHasBeenSet;
+    bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 
     UtcTiming m_utcTiming;
-    bool m_utcTimingHasBeenSet;
+    bool m_utcTimingHasBeenSet = false;
 
     Aws::String m_utcTimingUri;
-    bool m_utcTimingUriHasBeenSet;
+    bool m_utcTimingUriHasBeenSet = false;
   };
 
 } // namespace Model

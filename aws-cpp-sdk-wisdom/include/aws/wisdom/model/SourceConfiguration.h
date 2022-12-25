@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API SourceConfiguration
+  class SourceConfiguration
   {
   public:
-    SourceConfiguration();
-    SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API SourceConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AppIntegrationsConfiguration m_appIntegrations;
-    bool m_appIntegrationsHasBeenSet;
+    bool m_appIntegrationsHasBeenSet = false;
   };
 
 } // namespace Model

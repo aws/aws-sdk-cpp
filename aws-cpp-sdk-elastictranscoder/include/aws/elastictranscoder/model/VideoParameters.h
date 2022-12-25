@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/VideoParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API VideoParameters
+  class VideoParameters
   {
   public:
-    VideoParameters();
-    VideoParameters(Aws::Utils::Json::JsonView jsonValue);
-    VideoParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API VideoParameters();
+    AWS_ELASTICTRANSCODER_API VideoParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API VideoParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2981,49 +2981,49 @@ namespace Model
   private:
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_codecOptions;
-    bool m_codecOptionsHasBeenSet;
+    bool m_codecOptionsHasBeenSet = false;
 
     Aws::String m_keyframesMaxDist;
-    bool m_keyframesMaxDistHasBeenSet;
+    bool m_keyframesMaxDistHasBeenSet = false;
 
     Aws::String m_fixedGOP;
-    bool m_fixedGOPHasBeenSet;
+    bool m_fixedGOPHasBeenSet = false;
 
     Aws::String m_bitRate;
-    bool m_bitRateHasBeenSet;
+    bool m_bitRateHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     Aws::String m_maxFrameRate;
-    bool m_maxFrameRateHasBeenSet;
+    bool m_maxFrameRateHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_aspectRatio;
-    bool m_aspectRatioHasBeenSet;
+    bool m_aspectRatioHasBeenSet = false;
 
     Aws::String m_maxWidth;
-    bool m_maxWidthHasBeenSet;
+    bool m_maxWidthHasBeenSet = false;
 
     Aws::String m_maxHeight;
-    bool m_maxHeightHasBeenSet;
+    bool m_maxHeightHasBeenSet = false;
 
     Aws::String m_displayAspectRatio;
-    bool m_displayAspectRatioHasBeenSet;
+    bool m_displayAspectRatioHasBeenSet = false;
 
     Aws::String m_sizingPolicy;
-    bool m_sizingPolicyHasBeenSet;
+    bool m_sizingPolicyHasBeenSet = false;
 
     Aws::String m_paddingPolicy;
-    bool m_paddingPolicyHasBeenSet;
+    bool m_paddingPolicyHasBeenSet = false;
 
     Aws::Vector<PresetWatermark> m_watermarks;
-    bool m_watermarksHasBeenSet;
+    bool m_watermarksHasBeenSet = false;
   };
 
 } // namespace Model

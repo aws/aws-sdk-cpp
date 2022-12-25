@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ResourceAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API ResourceAttribute
+  class ResourceAttribute
   {
   public:
-    ResourceAttribute();
-    ResourceAttribute(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API ResourceAttribute();
+    AWS_MIGRATIONHUB_API ResourceAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API ResourceAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     ResourceAttributeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

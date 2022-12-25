@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProductionVariantStatus
+  class ProductionVariantStatus
   {
   public:
-    ProductionVariantStatus();
-    ProductionVariantStatus(Aws::Utils::Json::JsonView jsonValue);
-    ProductionVariantStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProductionVariantStatus();
+    AWS_SAGEMAKER_API ProductionVariantStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProductionVariantStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,13 +192,13 @@ namespace Model
   private:
 
     VariantStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

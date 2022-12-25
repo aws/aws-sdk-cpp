@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTargetFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentTargetFilter
+  class AssessmentTargetFilter
   {
   public:
-    AssessmentTargetFilter();
-    AssessmentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentTargetFilter();
+    AWS_INSPECTOR_API AssessmentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_assessmentTargetNamePattern;
-    bool m_assessmentTargetNamePatternHasBeenSet;
+    bool m_assessmentTargetNamePatternHasBeenSet = false;
   };
 
 } // namespace Model

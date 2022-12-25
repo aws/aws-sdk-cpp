@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ConfidenceScore">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API ConfidenceScore
+  class ConfidenceScore
   {
   public:
-    ConfidenceScore();
-    ConfidenceScore(Aws::Utils::Json::JsonView jsonValue);
-    ConfidenceScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API ConfidenceScore();
+    AWS_LEXRUNTIMEV2_API ConfidenceScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API ConfidenceScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -68,7 +68,7 @@ namespace Model
   private:
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

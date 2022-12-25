@@ -7,6 +7,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TargetLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API TargetLocation
+  class TargetLocation
   {
   public:
-    TargetLocation();
-    TargetLocation(Aws::Utils::Json::JsonView jsonValue);
-    TargetLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API TargetLocation();
+    AWS_SSM_API TargetLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API TargetLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,22 +305,44 @@ namespace Model
      */
     inline TargetLocation& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
+
+    
+    inline const AlarmConfiguration& GetTargetLocationAlarmConfiguration() const{ return m_targetLocationAlarmConfiguration; }
+
+    
+    inline bool TargetLocationAlarmConfigurationHasBeenSet() const { return m_targetLocationAlarmConfigurationHasBeenSet; }
+
+    
+    inline void SetTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = value; }
+
+    
+    inline void SetTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { m_targetLocationAlarmConfigurationHasBeenSet = true; m_targetLocationAlarmConfiguration = std::move(value); }
+
+    
+    inline TargetLocation& WithTargetLocationAlarmConfiguration(const AlarmConfiguration& value) { SetTargetLocationAlarmConfiguration(value); return *this;}
+
+    
+    inline TargetLocation& WithTargetLocationAlarmConfiguration(AlarmConfiguration&& value) { SetTargetLocationAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     Aws::String m_targetLocationMaxConcurrency;
-    bool m_targetLocationMaxConcurrencyHasBeenSet;
+    bool m_targetLocationMaxConcurrencyHasBeenSet = false;
 
     Aws::String m_targetLocationMaxErrors;
-    bool m_targetLocationMaxErrorsHasBeenSet;
+    bool m_targetLocationMaxErrorsHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
+
+    AlarmConfiguration m_targetLocationAlarmConfiguration;
+    bool m_targetLocationAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

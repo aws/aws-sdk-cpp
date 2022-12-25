@@ -38,7 +38,8 @@ TrialComponent::TrialComponent() :
     m_sourceDetailHasBeenSet(false),
     m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ TrialComponent::TrialComponent(JsonView jsonValue) :
     m_sourceDetailHasBeenSet(false),
     m_lineageGroupArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false)
+    m_parentsHasBeenSet(false),
+    m_runNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,7 +180,7 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Metrics"))
   {
-    Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
+    Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
     for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
     {
       m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());
@@ -209,7 +211,7 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -219,12 +221,19 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Parents"))
   {
-    Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
+    Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
     for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
     {
       m_parents.push_back(parentsJsonList[parentsIndex].AsObject());
     }
     m_parentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RunName"))
+  {
+    m_runName = jsonValue.GetString("RunName");
+
+    m_runNameHasBeenSet = true;
   }
 
   return *this;
@@ -331,7 +340,7 @@ JsonValue TrialComponent::Jsonize() const
 
   if(m_metricsHasBeenSet)
   {
-   Array<JsonValue> metricsJsonList(m_metrics.size());
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
    {
      metricsJsonList[metricsIndex].AsObject(m_metrics[metricsIndex].Jsonize());
@@ -360,7 +369,7 @@ JsonValue TrialComponent::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -371,12 +380,18 @@ JsonValue TrialComponent::Jsonize() const
 
   if(m_parentsHasBeenSet)
   {
-   Array<JsonValue> parentsJsonList(m_parents.size());
+   Aws::Utils::Array<JsonValue> parentsJsonList(m_parents.size());
    for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
    {
      parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());
    }
    payload.WithArray("Parents", std::move(parentsJsonList));
+
+  }
+
+  if(m_runNameHasBeenSet)
+  {
+   payload.WithString("RunName", m_runName);
 
   }
 

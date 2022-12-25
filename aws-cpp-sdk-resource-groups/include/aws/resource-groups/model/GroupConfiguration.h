@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API GroupConfiguration
+  class GroupConfiguration
   {
   public:
-    GroupConfiguration();
-    GroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API GroupConfiguration();
+    AWS_RESOURCEGROUPS_API GroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API GroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::Vector<GroupConfigurationItem> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<GroupConfigurationItem> m_proposedConfiguration;
-    bool m_proposedConfigurationHasBeenSet;
+    bool m_proposedConfigurationHasBeenSet = false;
 
     GroupConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

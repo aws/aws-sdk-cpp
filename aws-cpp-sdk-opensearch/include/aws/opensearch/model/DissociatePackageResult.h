@@ -25,41 +25,41 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p> Container for the response returned by <code> <a>DissociatePackage</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the response returned by an <code>DissociatePackage</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DissociatePackageResult
+  class DissociatePackageResult
   {
   public:
-    DissociatePackageResult();
-    DissociatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DissociatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DissociatePackageResult();
+    AWS_OPENSEARCHSERVICE_API DissociatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DissociatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p> <code>DomainPackageDetails</code> </p>
+     * <p> Information about a package that has been dissociated from the domain.</p>
      */
     inline const DomainPackageDetails& GetDomainPackageDetails() const{ return m_domainPackageDetails; }
 
     /**
-     * <p> <code>DomainPackageDetails</code> </p>
+     * <p> Information about a package that has been dissociated from the domain.</p>
      */
     inline void SetDomainPackageDetails(const DomainPackageDetails& value) { m_domainPackageDetails = value; }
 
     /**
-     * <p> <code>DomainPackageDetails</code> </p>
+     * <p> Information about a package that has been dissociated from the domain.</p>
      */
     inline void SetDomainPackageDetails(DomainPackageDetails&& value) { m_domainPackageDetails = std::move(value); }
 
     /**
-     * <p> <code>DomainPackageDetails</code> </p>
+     * <p> Information about a package that has been dissociated from the domain.</p>
      */
     inline DissociatePackageResult& WithDomainPackageDetails(const DomainPackageDetails& value) { SetDomainPackageDetails(value); return *this;}
 
     /**
-     * <p> <code>DomainPackageDetails</code> </p>
+     * <p> Information about a package that has been dissociated from the domain.</p>
      */
     inline DissociatePackageResult& WithDomainPackageDetails(DomainPackageDetails&& value) { SetDomainPackageDetails(std::move(value)); return *this;}
 

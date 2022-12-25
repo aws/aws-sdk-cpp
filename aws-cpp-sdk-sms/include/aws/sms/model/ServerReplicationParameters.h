@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerReplicationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerReplicationParameters
+  class ServerReplicationParameters
   {
   public:
-    ServerReplicationParameters();
-    ServerReplicationParameters(Aws::Utils::Json::JsonView jsonValue);
-    ServerReplicationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerReplicationParameters();
+    AWS_SMS_API ServerReplicationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerReplicationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_seedTime;
-    bool m_seedTimeHasBeenSet;
+    bool m_seedTimeHasBeenSet = false;
 
     int m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     bool m_runOnce;
-    bool m_runOnceHasBeenSet;
+    bool m_runOnceHasBeenSet = false;
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     int m_numberOfRecentAmisToKeep;
-    bool m_numberOfRecentAmisToKeepHasBeenSet;
+    bool m_numberOfRecentAmisToKeepHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/S3KeyOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API S3KeyOutput
+  class S3KeyOutput
   {
   public:
-    S3KeyOutput();
-    S3KeyOutput(Aws::Utils::Json::JsonView jsonValue);
-    S3KeyOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API S3KeyOutput();
+    AWS_ROBOMAKER_API S3KeyOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API S3KeyOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_etag;
-    bool m_etagHasBeenSet;
+    bool m_etagHasBeenSet = false;
   };
 
 } // namespace Model

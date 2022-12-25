@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ScheduledTriggerProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ScheduledTriggerProperties
+  class ScheduledTriggerProperties
   {
   public:
-    ScheduledTriggerProperties();
-    ScheduledTriggerProperties(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledTriggerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ScheduledTriggerProperties();
+    AWS_CUSTOMERPROFILES_API ScheduledTriggerProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ScheduledTriggerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,25 +302,25 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     DataPullMode m_dataPullMode;
-    bool m_dataPullModeHasBeenSet;
+    bool m_dataPullModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduleStartTime;
-    bool m_scheduleStartTimeHasBeenSet;
+    bool m_scheduleStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduleEndTime;
-    bool m_scheduleEndTimeHasBeenSet;
+    bool m_scheduleEndTimeHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     long long m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstExecutionFrom;
-    bool m_firstExecutionFromHasBeenSet;
+    bool m_firstExecutionFromHasBeenSet = false;
   };
 
 } // namespace Model

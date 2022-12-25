@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ListServicesRequest : public MigrationHubRefactorSpacesRequest
+  class ListServicesRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    ListServicesRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ListServicesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListServices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

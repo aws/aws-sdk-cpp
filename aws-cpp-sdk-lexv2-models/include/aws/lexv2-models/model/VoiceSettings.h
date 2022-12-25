@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/VoiceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API VoiceSettings
+  class VoiceSettings
   {
   public:
-    VoiceSettings();
-    VoiceSettings(Aws::Utils::Json::JsonView jsonValue);
-    VoiceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API VoiceSettings();
+    AWS_LEXMODELSV2_API VoiceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API VoiceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
 
     VoiceEngine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

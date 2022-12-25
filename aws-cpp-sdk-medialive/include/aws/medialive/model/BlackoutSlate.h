@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BlackoutSlate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BlackoutSlate
+  class BlackoutSlate
   {
   public:
-    BlackoutSlate();
-    BlackoutSlate(Aws::Utils::Json::JsonView jsonValue);
-    BlackoutSlate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BlackoutSlate();
+    AWS_MEDIALIVE_API BlackoutSlate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BlackoutSlate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,19 +263,19 @@ namespace Model
   private:
 
     InputLocation m_blackoutSlateImage;
-    bool m_blackoutSlateImageHasBeenSet;
+    bool m_blackoutSlateImageHasBeenSet = false;
 
     BlackoutSlateNetworkEndBlackout m_networkEndBlackout;
-    bool m_networkEndBlackoutHasBeenSet;
+    bool m_networkEndBlackoutHasBeenSet = false;
 
     InputLocation m_networkEndBlackoutImage;
-    bool m_networkEndBlackoutImageHasBeenSet;
+    bool m_networkEndBlackoutImageHasBeenSet = false;
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     BlackoutSlateState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

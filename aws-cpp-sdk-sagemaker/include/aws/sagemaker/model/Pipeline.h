@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Pipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Pipeline
+  class Pipeline
   {
   public:
-    Pipeline();
-    Pipeline(Aws::Utils::Json::JsonView jsonValue);
-    Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Pipeline();
+    AWS_SAGEMAKER_API Pipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -484,43 +484,43 @@ namespace Model
   private:
 
     Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet;
+    bool m_pipelineArnHasBeenSet = false;
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineDisplayName;
-    bool m_pipelineDisplayNameHasBeenSet;
+    bool m_pipelineDisplayNameHasBeenSet = false;
 
     Aws::String m_pipelineDescription;
-    bool m_pipelineDescriptionHasBeenSet;
+    bool m_pipelineDescriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     PipelineStatus m_pipelineStatus;
-    bool m_pipelineStatusHasBeenSet;
+    bool m_pipelineStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRunTime;
-    bool m_lastRunTimeHasBeenSet;
+    bool m_lastRunTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

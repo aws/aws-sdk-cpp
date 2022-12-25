@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceShareAssociation
+  class ResourceShareAssociation
   {
   public:
-    ResourceShareAssociation();
-    ResourceShareAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceShareAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceShareAssociation();
+    AWS_RAM_API ResourceShareAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceShareAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -448,31 +448,31 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::String m_resourceShareName;
-    bool m_resourceShareNameHasBeenSet;
+    bool m_resourceShareNameHasBeenSet = false;
 
     Aws::String m_associatedEntity;
-    bool m_associatedEntityHasBeenSet;
+    bool m_associatedEntityHasBeenSet = false;
 
     ResourceShareAssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     ResourceShareAssociationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     bool m_external;
-    bool m_externalHasBeenSet;
+    bool m_externalHasBeenSet = false;
   };
 
 } // namespace Model

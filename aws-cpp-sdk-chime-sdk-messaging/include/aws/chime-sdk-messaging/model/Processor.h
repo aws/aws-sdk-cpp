@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/Processor">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API Processor
+  class Processor
   {
   public:
-    Processor();
-    Processor(Aws::Utils::Json::JsonView jsonValue);
-    Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API Processor();
+    AWS_CHIMESDKMESSAGING_API Processor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProcessorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     int m_executionOrder;
-    bool m_executionOrderHasBeenSet;
+    bool m_executionOrderHasBeenSet = false;
 
     FallbackAction m_fallbackAction;
-    bool m_fallbackActionHasBeenSet;
+    bool m_fallbackActionHasBeenSet = false;
   };
 
 } // namespace Model

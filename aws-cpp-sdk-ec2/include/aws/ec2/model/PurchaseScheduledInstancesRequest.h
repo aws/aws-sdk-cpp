@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstancesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PurchaseScheduledInstancesRequest : public EC2Request
+  class PurchaseScheduledInstancesRequest : public EC2Request
   {
   public:
-    PurchaseScheduledInstancesRequest();
+    AWS_EC2_API PurchaseScheduledInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PurchaseScheduledInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<PurchaseRequest> m_purchaseRequests;
-    bool m_purchaseRequestsHasBeenSet;
+    bool m_purchaseRequestsHasBeenSet = false;
   };
 
 } // namespace Model

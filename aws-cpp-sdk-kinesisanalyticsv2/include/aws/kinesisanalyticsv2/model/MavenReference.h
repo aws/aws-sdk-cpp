@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MavenReference">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API MavenReference
+  class MavenReference
   {
   public:
-    MavenReference();
-    MavenReference(Aws::Utils::Json::JsonView jsonValue);
-    MavenReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API MavenReference();
+    AWS_KINESISANALYTICSV2_API MavenReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API MavenReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_artifactId;
-    bool m_artifactIdHasBeenSet;
+    bool m_artifactIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,62 +30,62 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ForwardActionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig
+  class ForwardActionConfig
   {
   public:
-    ForwardActionConfig();
-    ForwardActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ForwardActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline const Aws::Vector<TargetGroupTuple>& GetTargetGroups() const{ return m_targetGroups; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline void SetTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline void SetTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& WithTargetGroups(const Aws::Vector<TargetGroupTuple>& value) { SetTargetGroups(value); return *this;}
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& WithTargetGroups(Aws::Vector<TargetGroupTuple>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& AddTargetGroups(const TargetGroupTuple& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more target groups. For Network Load Balancers, you can specify a
-     * single target group.</p>
+     * <p>The target groups. For Network Load Balancers, you can specify a single
+     * target group.</p>
      */
     inline ForwardActionConfig& AddTargetGroups(TargetGroupTuple&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
 
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<TargetGroupTuple> m_targetGroups;
-    bool m_targetGroupsHasBeenSet;
+    bool m_targetGroupsHasBeenSet = false;
 
     TargetGroupStickinessConfig m_targetGroupStickinessConfig;
-    bool m_targetGroupStickinessConfigHasBeenSet;
+    bool m_targetGroupStickinessConfigHasBeenSet = false;
   };
 
 } // namespace Model

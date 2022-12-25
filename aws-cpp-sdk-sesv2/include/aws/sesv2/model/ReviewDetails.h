@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReviewDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ReviewDetails
+  class ReviewDetails
   {
   public:
-    ReviewDetails();
-    ReviewDetails(Aws::Utils::Json::JsonView jsonValue);
-    ReviewDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ReviewDetails();
+    AWS_SESV2_API ReviewDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ReviewDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     ReviewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_KEYSPACES_API CreateTableRequest : public KeyspacesRequest
+  class CreateTableRequest : public KeyspacesRequest
   {
   public:
-    CreateTableRequest();
+    AWS_KEYSPACES_API CreateTableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KEYSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KEYSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -692,34 +692,34 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     SchemaDefinition m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
 
     Comment m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     CapacitySpecification m_capacitySpecification;
-    bool m_capacitySpecificationHasBeenSet;
+    bool m_capacitySpecificationHasBeenSet = false;
 
     EncryptionSpecification m_encryptionSpecification;
-    bool m_encryptionSpecificationHasBeenSet;
+    bool m_encryptionSpecificationHasBeenSet = false;
 
     PointInTimeRecovery m_pointInTimeRecovery;
-    bool m_pointInTimeRecoveryHasBeenSet;
+    bool m_pointInTimeRecoveryHasBeenSet = false;
 
     TimeToLive m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     int m_defaultTimeToLive;
-    bool m_defaultTimeToLiveHasBeenSet;
+    bool m_defaultTimeToLiveHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

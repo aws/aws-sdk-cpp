@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeRecoveryPointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo
+  class VolumeRecoveryPointInfo
   {
   public:
-    VolumeRecoveryPointInfo();
-    VolumeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
-    VolumeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo();
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VolumeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,16 +172,16 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     long long m_volumeUsageInBytes;
-    bool m_volumeUsageInBytesHasBeenSet;
+    bool m_volumeUsageInBytesHasBeenSet = false;
 
     Aws::String m_volumeRecoveryPointTime;
-    bool m_volumeRecoveryPointTimeHasBeenSet;
+    bool m_volumeRecoveryPointTimeHasBeenSet = false;
   };
 
 } // namespace Model

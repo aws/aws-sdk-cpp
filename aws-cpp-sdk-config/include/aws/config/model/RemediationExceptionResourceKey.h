@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RemediationExceptionResourceKey">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API RemediationExceptionResourceKey
+  class RemediationExceptionResourceKey
   {
   public:
-    RemediationExceptionResourceKey();
-    RemediationExceptionResourceKey(Aws::Utils::Json::JsonView jsonValue);
-    RemediationExceptionResourceKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API RemediationExceptionResourceKey();
+    AWS_CONFIGSERVICE_API RemediationExceptionResourceKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API RemediationExceptionResourceKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

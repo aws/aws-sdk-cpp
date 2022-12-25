@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Smile">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Smile
+  class Smile
   {
   public:
-    Smile();
-    Smile(Aws::Utils::Json::JsonView jsonValue);
-    Smile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Smile();
+    AWS_REKOGNITION_API Smile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Smile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

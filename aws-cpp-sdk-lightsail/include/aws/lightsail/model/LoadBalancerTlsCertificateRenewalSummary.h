@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateRenewalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary
+  class LoadBalancerTlsCertificateRenewalSummary
   {
   public:
-    LoadBalancerTlsCertificateRenewalSummary();
-    LoadBalancerTlsCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,10 +237,10 @@ namespace Model
   private:
 
     LoadBalancerTlsCertificateRenewalStatus m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

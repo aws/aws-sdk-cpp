@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/SubmitFeedbackRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API SubmitFeedbackRequest : public CodeGuruProfilerRequest
+  class SubmitFeedbackRequest : public CodeGuruProfilerRequest
   {
   public:
-    SubmitFeedbackRequest();
+    AWS_CODEGURUPROFILER_API SubmitFeedbackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SubmitFeedback"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_anomalyInstanceId;
-    bool m_anomalyInstanceIdHasBeenSet;
+    bool m_anomalyInstanceIdHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     FeedbackType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

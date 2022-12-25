@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EFSVolumeConfiguration
+  class EFSVolumeConfiguration
   {
   public:
-    EFSVolumeConfiguration();
-    EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EFSVolumeConfiguration();
+    AWS_BATCH_API EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -313,19 +313,19 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
 
     EFSTransitEncryption m_transitEncryption;
-    bool m_transitEncryptionHasBeenSet;
+    bool m_transitEncryptionHasBeenSet = false;
 
     int m_transitEncryptionPort;
-    bool m_transitEncryptionPortHasBeenSet;
+    bool m_transitEncryptionPortHasBeenSet = false;
 
     EFSAuthorizationConfig m_authorizationConfig;
-    bool m_authorizationConfigHasBeenSet;
+    bool m_authorizationConfigHasBeenSet = false;
   };
 
 } // namespace Model

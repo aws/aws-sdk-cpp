@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SimplifiedApplication">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SimplifiedApplication
+  class SimplifiedApplication
   {
   public:
-    SimplifiedApplication();
-    SimplifiedApplication(Aws::Utils::Json::JsonView jsonValue);
-    SimplifiedApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API SimplifiedApplication();
+    AWS_EMR_API SimplifiedApplication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API SimplifiedApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

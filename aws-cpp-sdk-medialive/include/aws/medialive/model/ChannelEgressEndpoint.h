@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ChannelEgressEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ChannelEgressEndpoint
+  class ChannelEgressEndpoint
   {
   public:
-    ChannelEgressEndpoint();
-    ChannelEgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    ChannelEgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ChannelEgressEndpoint();
+    AWS_MEDIALIVE_API ChannelEgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ChannelEgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_sourceIp;
-    bool m_sourceIpHasBeenSet;
+    bool m_sourceIpHasBeenSet = false;
   };
 
 } // namespace Model

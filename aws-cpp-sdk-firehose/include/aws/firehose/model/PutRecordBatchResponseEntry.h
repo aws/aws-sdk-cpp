@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatchResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API PutRecordBatchResponseEntry
+  class PutRecordBatchResponseEntry
   {
   public:
-    PutRecordBatchResponseEntry();
-    PutRecordBatchResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutRecordBatchResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry();
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_recordId;
-    bool m_recordIdHasBeenSet;
+    bool m_recordIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

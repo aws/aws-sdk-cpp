@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoSelectorProgramId">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VideoSelectorProgramId
+  class VideoSelectorProgramId
   {
   public:
-    VideoSelectorProgramId();
-    VideoSelectorProgramId(Aws::Utils::Json::JsonView jsonValue);
-    VideoSelectorProgramId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VideoSelectorProgramId();
+    AWS_MEDIALIVE_API VideoSelectorProgramId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VideoSelectorProgramId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_programId;
-    bool m_programIdHasBeenSet;
+    bool m_programIdHasBeenSet = false;
   };
 
 } // namespace Model

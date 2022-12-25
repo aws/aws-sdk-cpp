@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ClusterConfiguration.h>
+#include <aws/ecs/model/ClusterServiceConnectDefaultsRequest.h>
 #include <aws/ecs/model/Tag.h>
 #include <aws/ecs/model/ClusterSetting.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API CreateClusterRequest : public ECSRequest
+  class CreateClusterRequest : public ECSRequest
   {
   public:
-    CreateClusterRequest();
+    AWS_ECS_API CreateClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -604,25 +605,143 @@ namespace Model
      */
     inline CreateClusterRequest& AddDefaultCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline const ClusterServiceConnectDefaultsRequest& GetServiceConnectDefaults() const{ return m_serviceConnectDefaults; }
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline bool ServiceConnectDefaultsHasBeenSet() const { return m_serviceConnectDefaultsHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectDefaults(const ClusterServiceConnectDefaultsRequest& value) { m_serviceConnectDefaultsHasBeenSet = true; m_serviceConnectDefaults = value; }
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectDefaults(ClusterServiceConnectDefaultsRequest&& value) { m_serviceConnectDefaultsHasBeenSet = true; m_serviceConnectDefaults = std::move(value); }
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline CreateClusterRequest& WithServiceConnectDefaults(const ClusterServiceConnectDefaultsRequest& value) { SetServiceConnectDefaults(value); return *this;}
+
+    /**
+     * <p>Use this parameter to set a default Service Connect namespace. After you set
+     * a default Service Connect namespace, any new services with Service Connect
+     * turned on that are created in the cluster are added as client services in the
+     * namespace. This setting only applies to new services that set the
+     * <code>enabled</code> parameter to <code>true</code> in the
+     * <code>ServiceConnectConfiguration</code>. You can set the namespace of each
+     * service individually in the <code>ServiceConnectConfiguration</code> to override
+     * this default parameter.</p> <p>Tasks that run in a namespace can use short names
+     * to connect to services in the namespace. Tasks can connect to services across
+     * all of the clusters in the namespace. Tasks connect through a managed proxy
+     * container that collects logs and metrics for increased visibility. Only the
+     * tasks that Amazon ECS services create are supported with Service Connect. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline CreateClusterRequest& WithServiceConnectDefaults(ClusterServiceConnectDefaultsRequest&& value) { SetServiceConnectDefaults(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<ClusterSetting> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     ClusterConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
-    bool m_defaultCapacityProviderStrategyHasBeenSet;
+    bool m_defaultCapacityProviderStrategyHasBeenSet = false;
+
+    ClusterServiceConnectDefaultsRequest m_serviceConnectDefaults;
+    bool m_serviceConnectDefaultsHasBeenSet = false;
   };
 
 } // namespace Model

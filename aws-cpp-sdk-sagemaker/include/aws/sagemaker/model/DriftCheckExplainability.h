@@ -30,31 +30,43 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DriftCheckExplainability">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DriftCheckExplainability
+  class DriftCheckExplainability
   {
   public:
-    DriftCheckExplainability();
-    DriftCheckExplainability(Aws::Utils::Json::JsonView jsonValue);
-    DriftCheckExplainability& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DriftCheckExplainability();
+    AWS_SAGEMAKER_API DriftCheckExplainability(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DriftCheckExplainability& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline const MetricsSource& GetConstraints() const{ return m_constraints; }
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline void SetConstraints(const MetricsSource& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline void SetConstraints(MetricsSource&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline DriftCheckExplainability& WithConstraints(const MetricsSource& value) { SetConstraints(value); return *this;}
 
-    
+    /**
+     * <p>The drift check explainability constraints.</p>
+     */
     inline DriftCheckExplainability& WithConstraints(MetricsSource&& value) { SetConstraints(std::move(value)); return *this;}
 
 
@@ -91,10 +103,10 @@ namespace Model
   private:
 
     MetricsSource m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     FileSource m_configFile;
-    bool m_configFileHasBeenSet;
+    bool m_configFileHasBeenSet = false;
   };
 
 } // namespace Model

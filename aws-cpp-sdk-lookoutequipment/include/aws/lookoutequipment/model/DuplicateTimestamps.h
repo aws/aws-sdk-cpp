@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DuplicateTimestamps">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps
+  class DuplicateTimestamps
   {
   public:
-    DuplicateTimestamps();
-    DuplicateTimestamps(Aws::Utils::Json::JsonView jsonValue);
-    DuplicateTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps();
+    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_totalNumberOfDuplicateTimestamps;
-    bool m_totalNumberOfDuplicateTimestampsHasBeenSet;
+    bool m_totalNumberOfDuplicateTimestampsHasBeenSet = false;
   };
 
 } // namespace Model

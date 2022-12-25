@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/IBMDb2Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API IBMDb2Settings
+  class IBMDb2Settings
   {
   public:
-    IBMDb2Settings();
-    IBMDb2Settings(Aws::Utils::Json::JsonView jsonValue);
-    IBMDb2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API IBMDb2Settings();
+    AWS_DATABASEMIGRATIONSERVICE_API IBMDb2Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API IBMDb2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -542,34 +542,34 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     bool m_setDataCaptureChanges;
-    bool m_setDataCaptureChangesHasBeenSet;
+    bool m_setDataCaptureChangesHasBeenSet = false;
 
     Aws::String m_currentLsn;
-    bool m_currentLsnHasBeenSet;
+    bool m_currentLsnHasBeenSet = false;
 
     int m_maxKBytesPerRead;
-    bool m_maxKBytesPerReadHasBeenSet;
+    bool m_maxKBytesPerReadHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHRUM_API ListAppMonitorsRequest : public CloudWatchRUMRequest
+  class ListAppMonitorsRequest : public CloudWatchRUMRequest
   {
   public:
-    ListAppMonitorsRequest();
+    AWS_CLOUDWATCHRUM_API ListAppMonitorsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,28 +33,32 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAppMonitors"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHRUM_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDWATCHRUM_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The maximum number of results to return in one operation. </p>
+     * <p>The maximum number of results to return in one operation. The default is 50.
+     * The maximum that you can specify is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in one operation. </p>
+     * <p>The maximum number of results to return in one operation. The default is 50.
+     * The maximum that you can specify is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return in one operation. </p>
+     * <p>The maximum number of results to return in one operation. The default is 50.
+     * The maximum that you can specify is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in one operation. </p>
+     * <p>The maximum number of results to return in one operation. The default is 50.
+     * The maximum that you can specify is 100.</p>
      */
     inline ListAppMonitorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -110,10 +114,10 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

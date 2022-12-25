@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API InsightRule
+  class InsightRule
   {
   public:
-    InsightRule();
-    InsightRule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InsightRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API InsightRule();
+    AWS_CLOUDWATCH_API InsightRule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API InsightRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -262,19 +262,43 @@ namespace Model
      */
     inline InsightRule& WithDefinition(const char* value) { SetDefinition(value); return *this;}
 
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline bool GetManagedRule() const{ return m_managedRule; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline bool ManagedRuleHasBeenSet() const { return m_managedRuleHasBeenSet; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline void SetManagedRule(bool value) { m_managedRuleHasBeenSet = true; m_managedRule = value; }
+
+    /**
+     * <p> An optional built-in rule that Amazon Web Services manages. </p>
+     */
+    inline InsightRule& WithManagedRule(bool value) { SetManagedRule(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
+
+    bool m_managedRule;
+    bool m_managedRuleHasBeenSet = false;
   };
 
 } // namespace Model

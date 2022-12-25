@@ -8,6 +8,8 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/CallAs.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/OperationResultFilter.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API ListStackSetOperationResultsRequest : public CloudFormationRequest
+  class ListStackSetOperationResultsRequest : public CloudFormationRequest
   {
   public:
-    ListStackSetOperationResultsRequest();
+    AWS_CLOUDFORMATION_API ListStackSetOperationResultsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListStackSetOperationResults"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -337,22 +339,66 @@ namespace Model
      */
     inline ListStackSetOperationResultsRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline const Aws::Vector<OperationResultFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(const Aws::Vector<OperationResultFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline void SetFilters(Aws::Vector<OperationResultFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(const Aws::Vector<OperationResultFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& WithFilters(Aws::Vector<OperationResultFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(const OperationResultFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>The filter to apply to operation results.</p>
+     */
+    inline ListStackSetOperationResultsRequest& AddFilters(OperationResultFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
+
+    Aws::Vector<OperationResultFilter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

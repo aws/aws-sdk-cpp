@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/BulkEmailDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API BulkEmailDestination
+  class BulkEmailDestination
   {
   public:
-    BulkEmailDestination();
-    BulkEmailDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BulkEmailDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BulkEmailDestination();
+    AWS_SES_API BulkEmailDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API BulkEmailDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<MessageTag> m_replacementTags;
-    bool m_replacementTagsHasBeenSet;
+    bool m_replacementTagsHasBeenSet = false;
 
     Aws::String m_replacementTemplateData;
-    bool m_replacementTemplateDataHasBeenSet;
+    bool m_replacementTemplateDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/emr-serverless/model/ApplicationState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/emr-serverless/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API ApplicationSummary();
+    AWS_EMRSERVERLESS_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -378,34 +379,68 @@ namespace Model
      */
     inline ApplicationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline void SetArchitecture(Architecture&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline ApplicationSummary& WithArchitecture(const Architecture& value) { SetArchitecture(value); return *this;}
+
+    /**
+     * <p>The CPU architecture of an application.</p>
+     */
+    inline ApplicationSummary& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ApplicationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateDetails;
-    bool m_stateDetailsHasBeenSet;
+    bool m_stateDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
+
+    Architecture m_architecture;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

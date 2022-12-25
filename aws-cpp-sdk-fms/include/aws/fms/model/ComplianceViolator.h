@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ComplianceViolator">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ComplianceViolator
+  class ComplianceViolator
   {
   public:
-    ComplianceViolator();
-    ComplianceViolator(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceViolator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ComplianceViolator();
+    AWS_FMS_API ComplianceViolator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ComplianceViolator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,16 +261,16 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ViolationReason m_violationReason;
-    bool m_violationReasonHasBeenSet;
+    bool m_violationReasonHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

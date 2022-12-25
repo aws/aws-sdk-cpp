@@ -25,7 +25,9 @@ namespace Model
     PAUSED,
     RESCAN,
     STALLED,
-    DISCONNECTED
+    DISCONNECTED,
+    REPLICATION_STATE_NOT_AVAILABLE,
+    NOT_STARTED
   };
 
 namespace RecoveryInstanceDataReplicationStateMapper

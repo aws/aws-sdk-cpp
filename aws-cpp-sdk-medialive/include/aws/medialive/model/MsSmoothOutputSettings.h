@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MsSmoothOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MsSmoothOutputSettings
+  class MsSmoothOutputSettings
   {
   public:
-    MsSmoothOutputSettings();
-    MsSmoothOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    MsSmoothOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MsSmoothOutputSettings();
+    AWS_MEDIALIVE_API MsSmoothOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MsSmoothOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
   private:
 
     MsSmoothH265PackagingType m_h265PackagingType;
-    bool m_h265PackagingTypeHasBeenSet;
+    bool m_h265PackagingTypeHasBeenSet = false;
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
   };
 
 } // namespace Model

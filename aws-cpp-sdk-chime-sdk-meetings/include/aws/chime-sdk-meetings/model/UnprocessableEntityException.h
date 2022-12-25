@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UnprocessableEntityException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API UnprocessableEntityException
+  class UnprocessableEntityException
   {
   public:
-    UnprocessableEntityException();
-    UnprocessableEntityException(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessableEntityException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API UnprocessableEntityException();
+    AWS_CHIMESDKMEETINGS_API UnprocessableEntityException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API UnprocessableEntityException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

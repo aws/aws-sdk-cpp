@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentRequest : public WorkMailMessageFlowRequest
+  class PutRawMessageContentRequest : public WorkMailMessageFlowRequest
   {
   public:
-    PutRawMessageContentRequest();
+    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutRawMessageContent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAILMESSAGEFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     RawMessageContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

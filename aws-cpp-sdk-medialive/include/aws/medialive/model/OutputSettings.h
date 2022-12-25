@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputSettings
+  class OutputSettings
   {
   public:
-    OutputSettings();
-    OutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputSettings();
+    AWS_MEDIALIVE_API OutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -198,28 +198,28 @@ namespace Model
   private:
 
     ArchiveOutputSettings m_archiveOutputSettings;
-    bool m_archiveOutputSettingsHasBeenSet;
+    bool m_archiveOutputSettingsHasBeenSet = false;
 
     FrameCaptureOutputSettings m_frameCaptureOutputSettings;
-    bool m_frameCaptureOutputSettingsHasBeenSet;
+    bool m_frameCaptureOutputSettingsHasBeenSet = false;
 
     HlsOutputSettings m_hlsOutputSettings;
-    bool m_hlsOutputSettingsHasBeenSet;
+    bool m_hlsOutputSettingsHasBeenSet = false;
 
     MediaPackageOutputSettings m_mediaPackageOutputSettings;
-    bool m_mediaPackageOutputSettingsHasBeenSet;
+    bool m_mediaPackageOutputSettingsHasBeenSet = false;
 
     MsSmoothOutputSettings m_msSmoothOutputSettings;
-    bool m_msSmoothOutputSettingsHasBeenSet;
+    bool m_msSmoothOutputSettingsHasBeenSet = false;
 
     MultiplexOutputSettings m_multiplexOutputSettings;
-    bool m_multiplexOutputSettingsHasBeenSet;
+    bool m_multiplexOutputSettingsHasBeenSet = false;
 
     RtmpOutputSettings m_rtmpOutputSettings;
-    bool m_rtmpOutputSettingsHasBeenSet;
+    bool m_rtmpOutputSettingsHasBeenSet = false;
 
     UdpOutputSettings m_udpOutputSettings;
-    bool m_udpOutputSettingsHasBeenSet;
+    bool m_udpOutputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

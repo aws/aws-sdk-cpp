@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecutionStatus
+  class QueryExecutionStatus
   {
   public:
-    QueryExecutionStatus();
-    QueryExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecutionStatus();
+    AWS_ATHENA_API QueryExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     QueryExecutionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_submissionDateTime;
-    bool m_submissionDateTimeHasBeenSet;
+    bool m_submissionDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDateTime;
-    bool m_completionDateTimeHasBeenSet;
+    bool m_completionDateTimeHasBeenSet = false;
 
     AthenaError m_athenaError;
-    bool m_athenaErrorHasBeenSet;
+    bool m_athenaErrorHasBeenSet = false;
   };
 
 } // namespace Model

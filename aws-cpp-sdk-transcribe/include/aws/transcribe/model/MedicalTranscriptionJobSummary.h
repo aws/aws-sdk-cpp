@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJobSummary
+  class MedicalTranscriptionJobSummary
   {
   public:
-    MedicalTranscriptionJobSummary();
-    MedicalTranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    MedicalTranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJobSummary();
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -616,37 +616,37 @@ namespace Model
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     TranscriptionJobStatus m_transcriptionJobStatus;
-    bool m_transcriptionJobStatusHasBeenSet;
+    bool m_transcriptionJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     OutputLocationType m_outputLocationType;
-    bool m_outputLocationTypeHasBeenSet;
+    bool m_outputLocationTypeHasBeenSet = false;
 
     Specialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     MedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

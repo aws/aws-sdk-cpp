@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API DeleteApplicationCloudWatchLoggingOptionRequest : public KinesisAnalyticsV2Request
+  class DeleteApplicationCloudWatchLoggingOptionRequest : public KinesisAnalyticsV2Request
   {
   public:
-    DeleteApplicationCloudWatchLoggingOptionRequest();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationCloudWatchLoggingOptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteApplicationCloudWatchLoggingOption"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     Aws::String m_cloudWatchLoggingOptionId;
-    bool m_cloudWatchLoggingOptionIdHasBeenSet;
+    bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
   };
 
 } // namespace Model

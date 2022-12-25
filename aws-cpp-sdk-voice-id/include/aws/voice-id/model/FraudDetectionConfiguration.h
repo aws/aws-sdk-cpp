@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudDetectionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudDetectionConfiguration
+  class FraudDetectionConfiguration
   {
   public:
-    FraudDetectionConfiguration();
-    FraudDetectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FraudDetectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudDetectionConfiguration();
+    AWS_VOICEID_API FraudDetectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudDetectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_riskThreshold;
-    bool m_riskThresholdHasBeenSet;
+    bool m_riskThresholdHasBeenSet = false;
   };
 
 } // namespace Model

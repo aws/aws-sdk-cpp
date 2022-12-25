@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/S3InputFormatConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API S3InputFormatConfig
+  class S3InputFormatConfig
   {
   public:
-    S3InputFormatConfig();
-    S3InputFormatConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3InputFormatConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API S3InputFormatConfig();
+    AWS_APPFLOW_API S3InputFormatConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API S3InputFormatConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3InputFileType m_s3InputFileType;
-    bool m_s3InputFileTypeHasBeenSet;
+    bool m_s3InputFileTypeHasBeenSet = false;
   };
 
 } // namespace Model

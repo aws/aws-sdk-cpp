@@ -26,46 +26,95 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API ListInstalledComponentsResult
+  class ListInstalledComponentsResult
   {
   public:
-    ListInstalledComponentsResult();
-    ListInstalledComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInstalledComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListInstalledComponentsResult();
+    AWS_GREENGRASSV2_API ListInstalledComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListInstalledComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline const Aws::Vector<InstalledComponent>& GetInstalledComponents() const{ return m_installedComponents; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline void SetInstalledComponents(const Aws::Vector<InstalledComponent>& value) { m_installedComponents = value; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline void SetInstalledComponents(Aws::Vector<InstalledComponent>&& value) { m_installedComponents = std::move(value); }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline ListInstalledComponentsResult& WithInstalledComponents(const Aws::Vector<InstalledComponent>& value) { SetInstalledComponents(value); return *this;}
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline ListInstalledComponentsResult& WithInstalledComponents(Aws::Vector<InstalledComponent>&& value) { SetInstalledComponents(std::move(value)); return *this;}
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline ListInstalledComponentsResult& AddInstalledComponents(const InstalledComponent& value) { m_installedComponents.push_back(value); return *this; }
 
     /**
-     * <p>A list that summarizes each component on the core device.</p>
+     * <p>A list that summarizes each component on the core device.</p> 
+     * <p>Greengrass nucleus v2.7.0 or later is required to get an accurate
+     * <code>lastStatusChangeTimestamp</code> response. This response can be inaccurate
+     * in earlier Greengrass nucleus versions.</p>   <p>Greengrass nucleus
+     * v2.8.0 or later is required to get an accurate
+     * <code>lastInstallationSource</code> and <code>lastReportedTimestamp</code>
+     * response. This response can be inaccurate or null in earlier Greengrass nucleus
+     * versions.</p> 
      */
     inline ListInstalledComponentsResult& AddInstalledComponents(InstalledComponent&& value) { m_installedComponents.push_back(std::move(value)); return *this; }
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CloudTrailConfigurationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API CloudTrailConfigurationResult
+  class CloudTrailConfigurationResult
   {
   public:
-    CloudTrailConfigurationResult();
-    CloudTrailConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
-    CloudTrailConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API CloudTrailConfigurationResult();
+    AWS_GUARDDUTY_API CloudTrailConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API CloudTrailConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     DataSourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

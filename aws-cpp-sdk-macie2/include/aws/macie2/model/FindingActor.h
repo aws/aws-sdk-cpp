@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingActor">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API FindingActor
+  class FindingActor
   {
   public:
-    FindingActor();
-    FindingActor(Aws::Utils::Json::JsonView jsonValue);
-    FindingActor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API FindingActor();
+    AWS_MACIE2_API FindingActor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API FindingActor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     DomainDetails m_domainDetails;
-    bool m_domainDetailsHasBeenSet;
+    bool m_domainDetailsHasBeenSet = false;
 
     IpAddressDetails m_ipAddressDetails;
-    bool m_ipAddressDetailsHasBeenSet;
+    bool m_ipAddressDetailsHasBeenSet = false;
 
     UserIdentity m_userIdentity;
-    bool m_userIdentityHasBeenSet;
+    bool m_userIdentityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketCountByEffectivePermission
+  class BucketCountByEffectivePermission
   {
   public:
-    BucketCountByEffectivePermission();
-    BucketCountByEffectivePermission(Aws::Utils::Json::JsonView jsonValue);
-    BucketCountByEffectivePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketCountByEffectivePermission();
+    AWS_MACIE2_API BucketCountByEffectivePermission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketCountByEffectivePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,16 +143,16 @@ namespace Model
   private:
 
     long long m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     long long m_publiclyReadable;
-    bool m_publiclyReadableHasBeenSet;
+    bool m_publiclyReadableHasBeenSet = false;
 
     long long m_publiclyWritable;
-    bool m_publiclyWritableHasBeenSet;
+    bool m_publiclyWritableHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurationsError">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsError
+  class BatchDescribeTypeConfigurationsError
   {
   public:
-    BatchDescribeTypeConfigurationsError();
-    BatchDescribeTypeConfigurationsError(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BatchDescribeTypeConfigurationsError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsError();
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsError(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     TypeConfigurationIdentifier m_typeConfigurationIdentifier;
-    bool m_typeConfigurationIdentifierHasBeenSet;
+    bool m_typeConfigurationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

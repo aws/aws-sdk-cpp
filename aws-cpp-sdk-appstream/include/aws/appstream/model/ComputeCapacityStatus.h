@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacityStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ComputeCapacityStatus
+  class ComputeCapacityStatus
   {
   public:
-    ComputeCapacityStatus();
-    ComputeCapacityStatus(Aws::Utils::Json::JsonView jsonValue);
-    ComputeCapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ComputeCapacityStatus();
+    AWS_APPSTREAM_API ComputeCapacityStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ComputeCapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,16 +125,16 @@ namespace Model
   private:
 
     int m_desired;
-    bool m_desiredHasBeenSet;
+    bool m_desiredHasBeenSet = false;
 
     int m_running;
-    bool m_runningHasBeenSet;
+    bool m_runningHasBeenSet = false;
 
     int m_inUse;
-    bool m_inUseHasBeenSet;
+    bool m_inUseHasBeenSet = false;
 
     int m_available;
-    bool m_availableHasBeenSet;
+    bool m_availableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API DescribeUserRequest : public TransferRequest
+  class DescribeUserRequest : public TransferRequest
   {
   public:
-    DescribeUserRequest();
+    AWS_TRANSFER_API DescribeUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,67 +85,67 @@ namespace Model
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of
-     * the sign-in credentials to use the Amazon Web Services Transfer Family service
-     * and perform file transfer tasks.</p>
+     * the sign-in credentials to use the Transfer Family service and perform file
+     * transfer tasks.</p>
      */
     inline DescribeUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
   };
 
 } // namespace Model

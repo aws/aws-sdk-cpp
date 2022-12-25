@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ResourcePath">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API ResourcePath
+  class ResourcePath
   {
   public:
-    ResourcePath();
-    ResourcePath(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API ResourcePath();
+    AWS_WORKDOCS_API ResourcePath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API ResourcePath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<ResourcePathComponent> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
   };
 
 } // namespace Model

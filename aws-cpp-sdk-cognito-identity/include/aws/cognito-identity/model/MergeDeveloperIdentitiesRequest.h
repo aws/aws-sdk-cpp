@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentitiesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API MergeDeveloperIdentitiesRequest : public CognitoIdentityRequest
+  class MergeDeveloperIdentitiesRequest : public CognitoIdentityRequest
   {
   public:
-    MergeDeveloperIdentitiesRequest();
+    AWS_COGNITOIDENTITY_API MergeDeveloperIdentitiesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "MergeDeveloperIdentities"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_sourceUserIdentifier;
-    bool m_sourceUserIdentifierHasBeenSet;
+    bool m_sourceUserIdentifierHasBeenSet = false;
 
     Aws::String m_destinationUserIdentifier;
-    bool m_destinationUserIdentifierHasBeenSet;
+    bool m_destinationUserIdentifierHasBeenSet = false;
 
     Aws::String m_developerProviderName;
-    bool m_developerProviderNameHasBeenSet;
+    bool m_developerProviderNameHasBeenSet = false;
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
   };
 
 } // namespace Model

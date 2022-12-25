@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServerAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API VmServerAddress
+  class VmServerAddress
   {
   public:
-    VmServerAddress();
-    VmServerAddress(Aws::Utils::Json::JsonView jsonValue);
-    VmServerAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API VmServerAddress();
+    AWS_SMS_API VmServerAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API VmServerAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_vmManagerId;
-    bool m_vmManagerIdHasBeenSet;
+    bool m_vmManagerIdHasBeenSet = false;
 
     Aws::String m_vmId;
-    bool m_vmIdHasBeenSet;
+    bool m_vmIdHasBeenSet = false;
   };
 
 } // namespace Model

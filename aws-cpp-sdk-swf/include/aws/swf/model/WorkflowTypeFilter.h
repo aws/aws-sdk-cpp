@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowTypeFilter
+  class WorkflowTypeFilter
   {
   public:
-    WorkflowTypeFilter();
-    WorkflowTypeFilter(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowTypeFilter();
+    AWS_SWF_API WorkflowTypeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

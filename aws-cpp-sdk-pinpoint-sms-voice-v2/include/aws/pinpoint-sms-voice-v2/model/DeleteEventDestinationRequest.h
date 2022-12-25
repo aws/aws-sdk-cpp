@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API DeleteEventDestinationRequest : public PinpointSMSVoiceV2Request
+  class DeleteEventDestinationRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    DeleteEventDestinationRequest();
+    AWS_PINPOINTSMSVOICEV2_API DeleteEventDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteEventDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_eventDestinationName;
-    bool m_eventDestinationNameHasBeenSet;
+    bool m_eventDestinationNameHasBeenSet = false;
   };
 
 } // namespace Model

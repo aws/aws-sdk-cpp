@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerRequest : public LookoutEquipmentRequest
+  class CreateInferenceSchedulerRequest : public LookoutEquipmentRequest
   {
   public:
-    CreateInferenceSchedulerRequest();
+    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInferenceScheduler"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -131,111 +131,131 @@ namespace Model
 
 
     /**
-     * <p>A period of time (in minutes) by which inference on the data is delayed after
-     * the data starts. For instance, if you select an offset delay time of five
-     * minutes, inference will not begin on the data until the first data measurement
-     * after the five minute mark. For example, if five minutes is selected, the
-     * inference scheduler will wake up at the configured frequency with the additional
-     * five minute delay time to check the customer S3 bucket. The customer can upload
-     * data at the same frequency and they don't need to stop and restart the scheduler
-     * when uploading new data. </p>
+     * <p>The interval (in minutes) of planned delay at the start of each inference
+     * segment. For example, if inference is set to run every ten minutes, the delay is
+     * set to five minutes and the time is 09:08. The inference scheduler will wake up
+     * at the configured interval (which, without a delay configured, would be 09:10)
+     * plus the additional five minute delay time (so 09:15) to check your Amazon S3
+     * bucket. The delay provides a buffer for you to upload data at the same
+     * frequency, so that you don't have to stop and restart the scheduler when
+     * uploading new data.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline long long GetDataDelayOffsetInMinutes() const{ return m_dataDelayOffsetInMinutes; }
 
     /**
-     * <p>A period of time (in minutes) by which inference on the data is delayed after
-     * the data starts. For instance, if you select an offset delay time of five
-     * minutes, inference will not begin on the data until the first data measurement
-     * after the five minute mark. For example, if five minutes is selected, the
-     * inference scheduler will wake up at the configured frequency with the additional
-     * five minute delay time to check the customer S3 bucket. The customer can upload
-     * data at the same frequency and they don't need to stop and restart the scheduler
-     * when uploading new data. </p>
+     * <p>The interval (in minutes) of planned delay at the start of each inference
+     * segment. For example, if inference is set to run every ten minutes, the delay is
+     * set to five minutes and the time is 09:08. The inference scheduler will wake up
+     * at the configured interval (which, without a delay configured, would be 09:10)
+     * plus the additional five minute delay time (so 09:15) to check your Amazon S3
+     * bucket. The delay provides a buffer for you to upload data at the same
+     * frequency, so that you don't have to stop and restart the scheduler when
+     * uploading new data.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline bool DataDelayOffsetInMinutesHasBeenSet() const { return m_dataDelayOffsetInMinutesHasBeenSet; }
 
     /**
-     * <p>A period of time (in minutes) by which inference on the data is delayed after
-     * the data starts. For instance, if you select an offset delay time of five
-     * minutes, inference will not begin on the data until the first data measurement
-     * after the five minute mark. For example, if five minutes is selected, the
-     * inference scheduler will wake up at the configured frequency with the additional
-     * five minute delay time to check the customer S3 bucket. The customer can upload
-     * data at the same frequency and they don't need to stop and restart the scheduler
-     * when uploading new data. </p>
+     * <p>The interval (in minutes) of planned delay at the start of each inference
+     * segment. For example, if inference is set to run every ten minutes, the delay is
+     * set to five minutes and the time is 09:08. The inference scheduler will wake up
+     * at the configured interval (which, without a delay configured, would be 09:10)
+     * plus the additional five minute delay time (so 09:15) to check your Amazon S3
+     * bucket. The delay provides a buffer for you to upload data at the same
+     * frequency, so that you don't have to stop and restart the scheduler when
+     * uploading new data.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline void SetDataDelayOffsetInMinutes(long long value) { m_dataDelayOffsetInMinutesHasBeenSet = true; m_dataDelayOffsetInMinutes = value; }
 
     /**
-     * <p>A period of time (in minutes) by which inference on the data is delayed after
-     * the data starts. For instance, if you select an offset delay time of five
-     * minutes, inference will not begin on the data until the first data measurement
-     * after the five minute mark. For example, if five minutes is selected, the
-     * inference scheduler will wake up at the configured frequency with the additional
-     * five minute delay time to check the customer S3 bucket. The customer can upload
-     * data at the same frequency and they don't need to stop and restart the scheduler
-     * when uploading new data. </p>
+     * <p>The interval (in minutes) of planned delay at the start of each inference
+     * segment. For example, if inference is set to run every ten minutes, the delay is
+     * set to five minutes and the time is 09:08. The inference scheduler will wake up
+     * at the configured interval (which, without a delay configured, would be 09:10)
+     * plus the additional five minute delay time (so 09:15) to check your Amazon S3
+     * bucket. The delay provides a buffer for you to upload data at the same
+     * frequency, so that you don't have to stop and restart the scheduler when
+     * uploading new data.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline CreateInferenceSchedulerRequest& WithDataDelayOffsetInMinutes(long long value) { SetDataDelayOffsetInMinutes(value); return *this;}
 
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline const DataUploadFrequency& GetDataUploadFrequency() const{ return m_dataUploadFrequency; }
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline bool DataUploadFrequencyHasBeenSet() const { return m_dataUploadFrequencyHasBeenSet; }
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline void SetDataUploadFrequency(const DataUploadFrequency& value) { m_dataUploadFrequencyHasBeenSet = true; m_dataUploadFrequency = value; }
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline void SetDataUploadFrequency(DataUploadFrequency&& value) { m_dataUploadFrequencyHasBeenSet = true; m_dataUploadFrequency = std::move(value); }
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline CreateInferenceSchedulerRequest& WithDataUploadFrequency(const DataUploadFrequency& value) { SetDataUploadFrequency(value); return *this;}
 
     /**
-     * <p> How often data is uploaded to the source S3 bucket for the input data. The
-     * value chosen is the length of time between data uploads. For instance, if you
-     * select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to
-     * the source bucket once every 5 minutes. This frequency also determines how often
-     * Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-     * example, it starts once every 5 minutes. </p>
+     * <p> How often data is uploaded to the source Amazon S3 bucket for the input
+     * data. The value chosen is the length of time between data uploads. For instance,
+     * if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time
+     * data to the source bucket once every 5 minutes. This frequency also determines
+     * how often Amazon Lookout for Equipment runs inference on your data.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-inference-process.html">Understanding
+     * the inference process</a>.</p>
      */
     inline CreateInferenceSchedulerRequest& WithDataUploadFrequency(DataUploadFrequency&& value) { SetDataUploadFrequency(std::move(value)); return *this;}
 
@@ -504,34 +524,34 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     long long m_dataDelayOffsetInMinutes;
-    bool m_dataDelayOffsetInMinutesHasBeenSet;
+    bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
     DataUploadFrequency m_dataUploadFrequency;
-    bool m_dataUploadFrequencyHasBeenSet;
+    bool m_dataUploadFrequencyHasBeenSet = false;
 
     InferenceInputConfiguration m_dataInputConfiguration;
-    bool m_dataInputConfigurationHasBeenSet;
+    bool m_dataInputConfigurationHasBeenSet = false;
 
     InferenceOutputConfiguration m_dataOutputConfiguration;
-    bool m_dataOutputConfigurationHasBeenSet;
+    bool m_dataOutputConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_serverSideKmsKeyId;
-    bool m_serverSideKmsKeyIdHasBeenSet;
+    bool m_serverSideKmsKeyIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

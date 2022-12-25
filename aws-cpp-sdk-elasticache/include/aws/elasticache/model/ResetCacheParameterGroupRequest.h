@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ResetCacheParameterGroupRequest : public ElastiCacheRequest
+  class ResetCacheParameterGroupRequest : public ElastiCacheRequest
   {
   public:
-    ResetCacheParameterGroupRequest();
+    AWS_ELASTICACHE_API ResetCacheParameterGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ResetCacheParameterGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_cacheParameterGroupName;
-    bool m_cacheParameterGroupNameHasBeenSet;
+    bool m_cacheParameterGroupNameHasBeenSet = false;
 
     bool m_resetAllParameters;
-    bool m_resetAllParametersHasBeenSet;
+    bool m_resetAllParametersHasBeenSet = false;
 
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
-    bool m_parameterNameValuesHasBeenSet;
+    bool m_parameterNameValuesHasBeenSet = false;
   };
 
 } // namespace Model

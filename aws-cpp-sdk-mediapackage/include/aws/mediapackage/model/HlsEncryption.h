@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsEncryption
+  class HlsEncryption
   {
   public:
-    HlsEncryption();
-    HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
-    HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsEncryption();
+    AWS_MEDIAPACKAGE_API HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,19 +198,19 @@ When not specified
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     EncryptionMethod m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     int m_keyRotationIntervalSeconds;
-    bool m_keyRotationIntervalSecondsHasBeenSet;
+    bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
     bool m_repeatExtXKey;
-    bool m_repeatExtXKeyHasBeenSet;
+    bool m_repeatExtXKeyHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

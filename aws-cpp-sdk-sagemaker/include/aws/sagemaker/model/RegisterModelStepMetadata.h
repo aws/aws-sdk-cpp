@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterModelStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RegisterModelStepMetadata
+  class RegisterModelStepMetadata
   {
   public:
-    RegisterModelStepMetadata();
-    RegisterModelStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RegisterModelStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RegisterModelStepMetadata();
+    AWS_SAGEMAKER_API RegisterModelStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RegisterModelStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

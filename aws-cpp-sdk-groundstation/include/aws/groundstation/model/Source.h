@@ -30,48 +30,54 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Source">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API Source();
+    AWS_GROUNDSTATION_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline const ConfigDetails& GetConfigDetails() const{ return m_configDetails; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline bool ConfigDetailsHasBeenSet() const { return m_configDetailsHasBeenSet; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline void SetConfigDetails(const ConfigDetails& value) { m_configDetailsHasBeenSet = true; m_configDetails = value; }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline void SetConfigDetails(ConfigDetails&& value) { m_configDetailsHasBeenSet = true; m_configDetails = std::move(value); }
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline Source& WithConfigDetails(const ConfigDetails& value) { SetConfigDetails(value); return *this;}
 
     /**
-     * <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or
-     * antenna demod decode.</p>
+     * <p>Additional details for a <code>Config</code>, if type is
+     * <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code>
+     * </p>
      */
     inline Source& WithConfigDetails(ConfigDetails&& value) { SetConfigDetails(std::move(value)); return *this;}
 
@@ -191,16 +197,16 @@ namespace Model
   private:
 
     ConfigDetails m_configDetails;
-    bool m_configDetailsHasBeenSet;
+    bool m_configDetailsHasBeenSet = false;
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
 
     Aws::String m_dataflowSourceRegion;
-    bool m_dataflowSourceRegionHasBeenSet;
+    bool m_dataflowSourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateSceneRequest::CreateSceneRequest() : 
-    m_capabilitiesHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
+    m_sceneIdHasBeenSet(false),
     m_contentLocationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_sceneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -26,14 +26,9 @@ Aws::String CreateSceneRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_capabilitiesHasBeenSet)
+  if(m_sceneIdHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
-   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
-   {
-     capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
-   }
-   payload.WithArray("capabilities", std::move(capabilitiesJsonList));
+   payload.WithString("sceneId", m_sceneId);
 
   }
 
@@ -49,9 +44,14 @@ Aws::String CreateSceneRequest::SerializePayload() const
 
   }
 
-  if(m_sceneIdHasBeenSet)
+  if(m_capabilitiesHasBeenSet)
   {
-   payload.WithString("sceneId", m_sceneId);
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
+   {
+     capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
+   }
+   payload.WithArray("capabilities", std::move(capabilitiesJsonList));
 
   }
 

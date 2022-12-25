@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateCloudFormationCollectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API UpdateCloudFormationCollectionFilter
+  class UpdateCloudFormationCollectionFilter
   {
   public:
-    UpdateCloudFormationCollectionFilter();
-    UpdateCloudFormationCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCloudFormationCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API UpdateCloudFormationCollectionFilter();
+    AWS_DEVOPSGURU_API UpdateCloudFormationCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API UpdateCloudFormationCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackNames;
-    bool m_stackNamesHasBeenSet;
+    bool m_stackNamesHasBeenSet = false;
   };
 
 } // namespace Model

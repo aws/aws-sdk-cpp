@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API GetMappingRequest : public GlueRequest
+  class GetMappingRequest : public GlueRequest
   {
   public:
-    GetMappingRequest();
+    AWS_GLUE_API GetMappingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMapping"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -141,13 +141,13 @@ namespace Model
   private:
 
     CatalogEntry m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<CatalogEntry> m_sinks;
-    bool m_sinksHasBeenSet;
+    bool m_sinksHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

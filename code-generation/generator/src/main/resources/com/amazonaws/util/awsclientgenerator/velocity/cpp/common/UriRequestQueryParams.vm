@@ -1,3 +1,25 @@
+#if($serviceModel.endpointRules)
+#if(!$operation.hasEndpointDiscoveryTrait)
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+#else
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+#end
+#if(!$operation.request.shape.hasEventStreamMembers() && !$operation.s3CrtSpecific)
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#if($operation.hasEndpointTrait)## Note: EndpointDiscovery Trait is not Endpoint Trait
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing(${operation.endpoint.constructHostPrefixString("request")});
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ${operation.name}Outcome(addPrefixErr.value()));
+#end
+#else
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<CoreErrors>(
+        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+    return;
+  }
+#end
+#end
 #if($operation.http.requestUri.contains("?"))
   Aws::StringStream ss;
 #end
@@ -14,11 +36,19 @@
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
+#else
   uri.AddPathSegments("${pathAndQuery.get(0)}");
+#end
 #end
   ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
+#else
   uri.AddPathSegments("$uriPartString");
+#end
 #end## ---------------------------- if (request uri contains query) end ------
 #foreach($var in $uriVars)## for (parameter in request uri parameters) -------
 #set($varIndex = $partIndex - 1)
@@ -35,9 +65,17 @@
   ss << $parameter;
 #else
 #if($greedySyntax)
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments($parameter);
+#else
   uri.AddPathSegments($parameter);
+#end
+#else
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegment($parameter);
 #else
   uri.AddPathSegment($parameter);
+#end
 #end
 #end
 #if($uriParts.size() > $partIndex)
@@ -46,11 +84,19 @@
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
+#else
   uri.AddPathSegments("${pathAndQuery.get(0)}");
+#end
 #end
   ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
+#else
   uri.AddPathSegments("$uriPartString");
+#end
 #end
 #end
 #end## --------------------- if !skipFirst end ---
@@ -59,5 +105,9 @@
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+#else
   uri.SetQueryString(ss.str());
+#end
 #end

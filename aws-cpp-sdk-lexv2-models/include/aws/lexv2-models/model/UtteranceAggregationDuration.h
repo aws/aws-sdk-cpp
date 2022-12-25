@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UtteranceAggregationDuration">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API UtteranceAggregationDuration
+  class UtteranceAggregationDuration
   {
   public:
-    UtteranceAggregationDuration();
-    UtteranceAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
-    UtteranceAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API UtteranceAggregationDuration();
+    AWS_LEXMODELSV2_API UtteranceAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API UtteranceAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     RelativeAggregationDuration m_relativeAggregationDuration;
-    bool m_relativeAggregationDurationHasBeenSet;
+    bool m_relativeAggregationDurationHasBeenSet = false;
   };
 
 } // namespace Model

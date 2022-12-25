@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventRiskType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API EventRiskType
+  class EventRiskType
   {
   public:
-    EventRiskType();
-    EventRiskType(Aws::Utils::Json::JsonView jsonValue);
-    EventRiskType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API EventRiskType();
+    AWS_COGNITOIDENTITYPROVIDER_API EventRiskType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API EventRiskType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,13 +127,13 @@ namespace Model
   private:
 
     RiskDecisionType m_riskDecision;
-    bool m_riskDecisionHasBeenSet;
+    bool m_riskDecisionHasBeenSet = false;
 
     RiskLevelType m_riskLevel;
-    bool m_riskLevelHasBeenSet;
+    bool m_riskLevelHasBeenSet = false;
 
     bool m_compromisedCredentialsDetected;
-    bool m_compromisedCredentialsDetectedHasBeenSet;
+    bool m_compromisedCredentialsDetectedHasBeenSet = false;
   };
 
 } // namespace Model

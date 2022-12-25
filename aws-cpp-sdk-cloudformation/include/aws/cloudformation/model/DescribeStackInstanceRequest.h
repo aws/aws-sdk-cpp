@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API DescribeStackInstanceRequest : public CloudFormationRequest
+  class DescribeStackInstanceRequest : public CloudFormationRequest
   {
   public:
-    DescribeStackInstanceRequest();
+    AWS_CLOUDFORMATION_API DescribeStackInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeStackInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_stackInstanceAccount;
-    bool m_stackInstanceAccountHasBeenSet;
+    bool m_stackInstanceAccountHasBeenSet = false;
 
     Aws::String m_stackInstanceRegion;
-    bool m_stackInstanceRegionHasBeenSet;
+    bool m_stackInstanceRegionHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

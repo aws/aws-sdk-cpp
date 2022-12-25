@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfigurationUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConfigurationUsage
+  class LicenseConfigurationUsage
   {
   public:
-    LicenseConfigurationUsage();
-    LicenseConfigurationUsage(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConfigurationUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConfigurationUsage();
+    AWS_LICENSEMANAGER_API LicenseConfigurationUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConfigurationUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceStatus;
-    bool m_resourceStatusHasBeenSet;
+    bool m_resourceStatusHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_associationTime;
-    bool m_associationTimeHasBeenSet;
+    bool m_associationTimeHasBeenSet = false;
 
     long long m_consumedLicenses;
-    bool m_consumedLicensesHasBeenSet;
+    bool m_consumedLicensesHasBeenSet = false;
   };
 
 } // namespace Model

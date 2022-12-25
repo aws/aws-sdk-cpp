@@ -29,52 +29,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AutoExportRevisionDestinationEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry
+  class AutoExportRevisionDestinationEntry
   {
   public:
-    AutoExportRevisionDestinationEntry();
-    AutoExportRevisionDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
-    AutoExportRevisionDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry();
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline AutoExportRevisionDestinationEntry& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline AutoExportRevisionDestinationEntry& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket that is the destination for the event action.</p>
+     * <p>The Amazon S3 bucket that is the destination for the event action.</p>
      */
     inline AutoExportRevisionDestinationEntry& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_keyPattern;
-    bool m_keyPatternHasBeenSet;
+    bool m_keyPatternHasBeenSet = false;
   };
 
 } // namespace Model

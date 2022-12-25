@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MulticastWirelessMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MulticastWirelessMetadata
+  class MulticastWirelessMetadata
   {
   public:
-    MulticastWirelessMetadata();
-    MulticastWirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
-    MulticastWirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MulticastWirelessMetadata();
+    AWS_IOTWIRELESS_API MulticastWirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MulticastWirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     LoRaWANMulticastMetadata m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessingStopSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessingStopSelector
+  class StreamProcessingStopSelector
   {
   public:
-    StreamProcessingStopSelector();
-    StreamProcessingStopSelector(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessingStopSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessingStopSelector();
+    AWS_REKOGNITION_API StreamProcessingStopSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessingStopSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     long long m_maxDurationInSeconds;
-    bool m_maxDurationInSecondsHasBeenSet;
+    bool m_maxDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

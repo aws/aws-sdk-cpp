@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ExecutionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ExecutionDetails
+  class ExecutionDetails
   {
   public:
-    ExecutionDetails();
-    ExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ExecutionDetails();
+    AWS_CODEPIPELINE_API ExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
 
     int m_percentComplete;
-    bool m_percentCompleteHasBeenSet;
+    bool m_percentCompleteHasBeenSet = false;
   };
 
 } // namespace Model

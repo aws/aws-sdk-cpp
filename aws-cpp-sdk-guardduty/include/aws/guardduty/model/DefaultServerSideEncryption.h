@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DefaultServerSideEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DefaultServerSideEncryption
+  class DefaultServerSideEncryption
   {
   public:
-    DefaultServerSideEncryption();
-    DefaultServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
-    DefaultServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DefaultServerSideEncryption();
+    AWS_GUARDDUTY_API DefaultServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DefaultServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyArn;
-    bool m_kmsMasterKeyArnHasBeenSet;
+    bool m_kmsMasterKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

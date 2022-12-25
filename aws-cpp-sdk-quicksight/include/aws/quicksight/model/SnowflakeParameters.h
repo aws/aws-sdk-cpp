@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SnowflakeParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SnowflakeParameters
+  class SnowflakeParameters
   {
   public:
-    SnowflakeParameters();
-    SnowflakeParameters(Aws::Utils::Json::JsonView jsonValue);
-    SnowflakeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SnowflakeParameters();
+    AWS_QUICKSIGHT_API SnowflakeParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SnowflakeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_warehouse;
-    bool m_warehouseHasBeenSet;
+    bool m_warehouseHasBeenSet = false;
   };
 
 } // namespace Model

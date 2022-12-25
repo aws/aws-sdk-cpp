@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API ListInstanceAttributesRequest : public ConnectRequest
+  class ListInstanceAttributesRequest : public ConnectRequest
   {
   public:
-    ListInstanceAttributesRequest();
+    AWS_CONNECT_API ListInstanceAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListInstanceAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

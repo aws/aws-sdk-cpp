@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/VpcDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API VpcDescription
+  class VpcDescription
   {
   public:
-    VpcDescription();
-    VpcDescription(Aws::Utils::Json::JsonView jsonValue);
-    VpcDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API VpcDescription();
+    AWS_KAFKACONNECT_API VpcDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API VpcDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSsmPatchComplianceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSsmPatchComplianceDetails
+  class AwsSsmPatchComplianceDetails
   {
   public:
-    AwsSsmPatchComplianceDetails();
-    AwsSsmPatchComplianceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsSsmPatchComplianceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSsmPatchComplianceDetails();
+    AWS_SECURITYHUB_API AwsSsmPatchComplianceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSsmPatchComplianceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     AwsSsmPatch m_patch;
-    bool m_patchHasBeenSet;
+    bool m_patchHasBeenSet = false;
   };
 
 } // namespace Model

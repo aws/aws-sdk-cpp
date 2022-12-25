@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KinesisStreamConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API KinesisStreamConfig
+  class KinesisStreamConfig
   {
   public:
-    KinesisStreamConfig();
-    KinesisStreamConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KinesisStreamConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KinesisStreamConfig();
+    AWS_CLOUDFRONT_API KinesisStreamConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KinesisStreamConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
   };
 
 } // namespace Model

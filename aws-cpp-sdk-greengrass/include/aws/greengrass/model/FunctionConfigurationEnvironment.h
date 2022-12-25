@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionConfigurationEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionConfigurationEnvironment
+  class FunctionConfigurationEnvironment
   {
   public:
-    FunctionConfigurationEnvironment();
-    FunctionConfigurationEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    FunctionConfigurationEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionConfigurationEnvironment();
+    AWS_GREENGRASS_API FunctionConfigurationEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionConfigurationEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,16 +234,16 @@ namespace Model
   private:
 
     bool m_accessSysfs;
-    bool m_accessSysfsHasBeenSet;
+    bool m_accessSysfsHasBeenSet = false;
 
     FunctionExecutionConfig m_execution;
-    bool m_executionHasBeenSet;
+    bool m_executionHasBeenSet = false;
 
     Aws::Vector<ResourceAccessPolicy> m_resourceAccessPolicies;
-    bool m_resourceAccessPoliciesHasBeenSet;
+    bool m_resourceAccessPoliciesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

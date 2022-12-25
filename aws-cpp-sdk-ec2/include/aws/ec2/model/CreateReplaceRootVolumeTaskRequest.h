@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateReplaceRootVolumeTaskRequest : public EC2Request
+  class CreateReplaceRootVolumeTaskRequest : public EC2Request
   {
   public:
-    CreateReplaceRootVolumeTaskRequest();
+    AWS_EC2_API CreateReplaceRootVolumeTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateReplaceRootVolumeTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -81,58 +81,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the snapshot from which to restore the replacement root volume. If
-     * you want to restore the volume to the initial launch state, omit this
-     * parameter.</p>
+     * <p>The ID of the snapshot from which to restore the replacement root volume. The
+     * specified snapshot must be a snapshot that you previously created from the
+     * original root volume.</p> <p>If you want to restore the replacement root volume
+     * to the initial launch state, or if you want to restore the replacement root
+     * volume from an AMI, omit this parameter.</p>
      */
     inline CreateReplaceRootVolumeTaskRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
@@ -283,22 +299,138 @@ namespace Model
      */
     inline CreateReplaceRootVolumeTaskRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline CreateReplaceRootVolumeTaskRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline CreateReplaceRootVolumeTaskRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AMI to use to restore the root volume. The specified AMI must
+     * have the same product code, billing information, architecture type, and
+     * virtualization type as that of the instance.</p> <p>If you want to restore the
+     * replacement volume from a specific snapshot, or if you want to restore it to its
+     * launch state, omit this parameter.</p>
+     */
+    inline CreateReplaceRootVolumeTaskRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether to automatically delete the original root volume after the
+     * root volume replacement task completes. To delete the original root volume,
+     * specify <code>true</code>. If you choose to keep the original root volume after
+     * the replacement task completes, you must manually delete it when you no longer
+     * need it.</p>
+     */
+    inline bool GetDeleteReplacedRootVolume() const{ return m_deleteReplacedRootVolume; }
+
+    /**
+     * <p>Indicates whether to automatically delete the original root volume after the
+     * root volume replacement task completes. To delete the original root volume,
+     * specify <code>true</code>. If you choose to keep the original root volume after
+     * the replacement task completes, you must manually delete it when you no longer
+     * need it.</p>
+     */
+    inline bool DeleteReplacedRootVolumeHasBeenSet() const { return m_deleteReplacedRootVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to automatically delete the original root volume after the
+     * root volume replacement task completes. To delete the original root volume,
+     * specify <code>true</code>. If you choose to keep the original root volume after
+     * the replacement task completes, you must manually delete it when you no longer
+     * need it.</p>
+     */
+    inline void SetDeleteReplacedRootVolume(bool value) { m_deleteReplacedRootVolumeHasBeenSet = true; m_deleteReplacedRootVolume = value; }
+
+    /**
+     * <p>Indicates whether to automatically delete the original root volume after the
+     * root volume replacement task completes. To delete the original root volume,
+     * specify <code>true</code>. If you choose to keep the original root volume after
+     * the replacement task completes, you must manually delete it when you no longer
+     * need it.</p>
+     */
+    inline CreateReplaceRootVolumeTaskRequest& WithDeleteReplacedRootVolume(bool value) { SetDeleteReplacedRootVolume(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
+
+    bool m_deleteReplacedRootVolume;
+    bool m_deleteReplacedRootVolumeHasBeenSet = false;
   };
 
 } // namespace Model

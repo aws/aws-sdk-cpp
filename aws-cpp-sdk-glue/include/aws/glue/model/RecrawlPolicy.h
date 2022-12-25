@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RecrawlPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API RecrawlPolicy
+  class RecrawlPolicy
   {
   public:
-    RecrawlPolicy();
-    RecrawlPolicy(Aws::Utils::Json::JsonView jsonValue);
-    RecrawlPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RecrawlPolicy();
+    AWS_GLUE_API RecrawlPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RecrawlPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,7 +110,7 @@ namespace Model
   private:
 
     RecrawlBehavior m_recrawlBehavior;
-    bool m_recrawlBehaviorHasBeenSet;
+    bool m_recrawlBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesListing">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstancesListing
+  class ReservedInstancesListing
   {
   public:
-    ReservedInstancesListing();
-    ReservedInstancesListing(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstancesListing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesListing();
+    AWS_EC2_API ReservedInstancesListing(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesListing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -459,34 +459,34 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<InstanceCount> m_instanceCounts;
-    bool m_instanceCountsHasBeenSet;
+    bool m_instanceCountsHasBeenSet = false;
 
     Aws::Vector<PriceSchedule> m_priceSchedules;
-    bool m_priceSchedulesHasBeenSet;
+    bool m_priceSchedulesHasBeenSet = false;
 
     Aws::String m_reservedInstancesId;
-    bool m_reservedInstancesIdHasBeenSet;
+    bool m_reservedInstancesIdHasBeenSet = false;
 
     Aws::String m_reservedInstancesListingId;
-    bool m_reservedInstancesListingIdHasBeenSet;
+    bool m_reservedInstancesListingIdHasBeenSet = false;
 
     ListingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
   };
 
 } // namespace Model

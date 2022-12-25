@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyRuleAction">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API LifecyclePolicyRuleAction
+  class LifecyclePolicyRuleAction
   {
   public:
-    LifecyclePolicyRuleAction();
-    LifecyclePolicyRuleAction(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicyRuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API LifecyclePolicyRuleAction();
+    AWS_ECR_API LifecyclePolicyRuleAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API LifecyclePolicyRuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ImageActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

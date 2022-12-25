@@ -29,12 +29,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API CreateEventDataStoreResult
+  class CreateEventDataStoreResult
   {
   public:
-    CreateEventDataStoreResult();
-    CreateEventDataStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEventDataStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CreateEventDataStoreResult();
+    AWS_CLOUDTRAIL_API CreateEventDataStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API CreateEventDataStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -334,6 +334,63 @@ namespace Model
      */
     inline CreateEventDataStoreResult& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CreateEventDataStoreResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CreateEventDataStoreResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the events delivered by CloudTrail.
+     * The value is a fully specified ARN to a KMS key in the following format.</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CreateEventDataStoreResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_eventDataStoreArn;
@@ -357,6 +414,8 @@ namespace Model
     Aws::Utils::DateTime m_createdTimestamp;
 
     Aws::Utils::DateTime m_updatedTimestamp;
+
+    Aws::String m_kmsKeyId;
   };
 
 } // namespace Model

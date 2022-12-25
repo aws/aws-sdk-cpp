@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AacSettings.h>
 #include <aws/medialive/model/Ac3Settings.h>
+#include <aws/medialive/model/Eac3AtmosSettings.h>
 #include <aws/medialive/model/Eac3Settings.h>
 #include <aws/medialive/model/Mp2Settings.h>
 #include <aws/medialive/model/PassThroughSettings.h>
@@ -33,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioCodecSettings
+  class AudioCodecSettings
   {
   public:
-    AudioCodecSettings();
-    AudioCodecSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioCodecSettings();
+    AWS_MEDIALIVE_API AudioCodecSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -78,6 +79,25 @@ namespace Model
 
     
     inline AudioCodecSettings& WithAc3Settings(Ac3Settings&& value) { SetAc3Settings(std::move(value)); return *this;}
+
+
+    
+    inline const Eac3AtmosSettings& GetEac3AtmosSettings() const{ return m_eac3AtmosSettings; }
+
+    
+    inline bool Eac3AtmosSettingsHasBeenSet() const { return m_eac3AtmosSettingsHasBeenSet; }
+
+    
+    inline void SetEac3AtmosSettings(const Eac3AtmosSettings& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = value; }
+
+    
+    inline void SetEac3AtmosSettings(Eac3AtmosSettings&& value) { m_eac3AtmosSettingsHasBeenSet = true; m_eac3AtmosSettings = std::move(value); }
+
+    
+    inline AudioCodecSettings& WithEac3AtmosSettings(const Eac3AtmosSettings& value) { SetEac3AtmosSettings(value); return *this;}
+
+    
+    inline AudioCodecSettings& WithEac3AtmosSettings(Eac3AtmosSettings&& value) { SetEac3AtmosSettings(std::move(value)); return *this;}
 
 
     
@@ -158,22 +178,25 @@ namespace Model
   private:
 
     AacSettings m_aacSettings;
-    bool m_aacSettingsHasBeenSet;
+    bool m_aacSettingsHasBeenSet = false;
 
     Ac3Settings m_ac3Settings;
-    bool m_ac3SettingsHasBeenSet;
+    bool m_ac3SettingsHasBeenSet = false;
+
+    Eac3AtmosSettings m_eac3AtmosSettings;
+    bool m_eac3AtmosSettingsHasBeenSet = false;
 
     Eac3Settings m_eac3Settings;
-    bool m_eac3SettingsHasBeenSet;
+    bool m_eac3SettingsHasBeenSet = false;
 
     Mp2Settings m_mp2Settings;
-    bool m_mp2SettingsHasBeenSet;
+    bool m_mp2SettingsHasBeenSet = false;
 
     PassThroughSettings m_passThroughSettings;
-    bool m_passThroughSettingsHasBeenSet;
+    bool m_passThroughSettingsHasBeenSet = false;
 
     WavSettings m_wavSettings;
-    bool m_wavSettingsHasBeenSet;
+    bool m_wavSettingsHasBeenSet = false;
   };
 
 } // namespace Model

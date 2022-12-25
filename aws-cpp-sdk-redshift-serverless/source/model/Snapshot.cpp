@@ -89,7 +89,7 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountsWithProvisionedRestoreAccess"))
   {
-    Array<JsonView> accountsWithProvisionedRestoreAccessJsonList = jsonValue.GetArray("accountsWithProvisionedRestoreAccess");
+    Aws::Utils::Array<JsonView> accountsWithProvisionedRestoreAccessJsonList = jsonValue.GetArray("accountsWithProvisionedRestoreAccess");
     for(unsigned accountsWithProvisionedRestoreAccessIndex = 0; accountsWithProvisionedRestoreAccessIndex < accountsWithProvisionedRestoreAccessJsonList.GetLength(); ++accountsWithProvisionedRestoreAccessIndex)
     {
       m_accountsWithProvisionedRestoreAccess.push_back(accountsWithProvisionedRestoreAccessJsonList[accountsWithProvisionedRestoreAccessIndex].AsString());
@@ -99,7 +99,7 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("accountsWithRestoreAccess"))
   {
-    Array<JsonView> accountsWithRestoreAccessJsonList = jsonValue.GetArray("accountsWithRestoreAccess");
+    Aws::Utils::Array<JsonView> accountsWithRestoreAccessJsonList = jsonValue.GetArray("accountsWithRestoreAccess");
     for(unsigned accountsWithRestoreAccessIndex = 0; accountsWithRestoreAccessIndex < accountsWithRestoreAccessJsonList.GetLength(); ++accountsWithRestoreAccessIndex)
     {
       m_accountsWithRestoreAccess.push_back(accountsWithRestoreAccessJsonList[accountsWithRestoreAccessIndex].AsString());
@@ -242,7 +242,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_accountsWithProvisionedRestoreAccessHasBeenSet)
   {
-   Array<JsonValue> accountsWithProvisionedRestoreAccessJsonList(m_accountsWithProvisionedRestoreAccess.size());
+   Aws::Utils::Array<JsonValue> accountsWithProvisionedRestoreAccessJsonList(m_accountsWithProvisionedRestoreAccess.size());
    for(unsigned accountsWithProvisionedRestoreAccessIndex = 0; accountsWithProvisionedRestoreAccessIndex < accountsWithProvisionedRestoreAccessJsonList.GetLength(); ++accountsWithProvisionedRestoreAccessIndex)
    {
      accountsWithProvisionedRestoreAccessJsonList[accountsWithProvisionedRestoreAccessIndex].AsString(m_accountsWithProvisionedRestoreAccess[accountsWithProvisionedRestoreAccessIndex]);
@@ -253,7 +253,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_accountsWithRestoreAccessHasBeenSet)
   {
-   Array<JsonValue> accountsWithRestoreAccessJsonList(m_accountsWithRestoreAccess.size());
+   Aws::Utils::Array<JsonValue> accountsWithRestoreAccessJsonList(m_accountsWithRestoreAccess.size());
    for(unsigned accountsWithRestoreAccessIndex = 0; accountsWithRestoreAccessIndex < accountsWithRestoreAccessJsonList.GetLength(); ++accountsWithRestoreAccessIndex)
    {
      accountsWithRestoreAccessJsonList[accountsWithRestoreAccessIndex].AsString(m_accountsWithRestoreAccess[accountsWithRestoreAccessIndex]);
@@ -330,7 +330,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_snapshotCreateTimeHasBeenSet)
   {
-   payload.WithString("snapshotCreateTime", m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("snapshotCreateTime", m_snapshotCreateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_snapshotNameHasBeenSet)
@@ -353,7 +353,7 @@ JsonValue Snapshot::Jsonize() const
 
   if(m_snapshotRetentionStartTimeHasBeenSet)
   {
-   payload.WithString("snapshotRetentionStartTime", m_snapshotRetentionStartTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("snapshotRetentionStartTime", m_snapshotRetentionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_statusHasBeenSet)

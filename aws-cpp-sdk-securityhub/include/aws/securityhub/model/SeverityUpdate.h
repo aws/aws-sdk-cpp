@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SeverityUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SeverityUpdate
+  class SeverityUpdate
   {
   public:
-    SeverityUpdate();
-    SeverityUpdate(Aws::Utils::Json::JsonView jsonValue);
-    SeverityUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SeverityUpdate();
+    AWS_SECURITYHUB_API SeverityUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SeverityUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     int m_normalized;
-    bool m_normalizedHasBeenSet;
+    bool m_normalizedHasBeenSet = false;
 
     double m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     SeverityLabel m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

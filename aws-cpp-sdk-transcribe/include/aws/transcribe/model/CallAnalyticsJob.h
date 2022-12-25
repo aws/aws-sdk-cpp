@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CallAnalyticsJob">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API CallAnalyticsJob
+  class CallAnalyticsJob
   {
   public:
-    CallAnalyticsJob();
-    CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
-    CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,22 +240,22 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
     inline CallAnalyticsJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -291,22 +291,40 @@ namespace Model
     inline CallAnalyticsJob& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline const Media& GetMedia() const{ return m_media; }
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline CallAnalyticsJob& WithMedia(const Media& value) { SetMedia(value); return *this;}
 
-    
+    /**
+     * <p>Provides the Amazon S3 location of the media file you used in your Call
+     * Analytics request.</p>
+     */
     inline CallAnalyticsJob& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
 
 
@@ -489,7 +507,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -518,7 +536,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -547,7 +565,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -576,7 +594,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -605,7 +623,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -634,7 +652,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -663,7 +681,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -692,7 +710,7 @@ namespace Model
      * the specified value.</p> </li> <li> <p> <code>Invalid sample rate for audio
      * file</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 8,000 and 48,000 Hertz.</p> </li> <li> <p> <code>The sample rate provided does
+     * 8,000 and 48,000 hertz.</p> </li> <li> <p> <code>The sample rate provided does
      * not match the detected sample rate</code>.</p> <p>The sample rate specified in
      * <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your
      * input media file. Check the sample rate of your media file and correct the
@@ -710,106 +728,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline CallAnalyticsJob& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline CallAnalyticsJob& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
-     * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     * ARNs</a>.</p>
+     * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
     inline CallAnalyticsJob& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -848,166 +802,134 @@ namespace Model
 
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline const CallAnalyticsJobSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline void SetSettings(const CallAnalyticsJobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline void SetSettings(CallAnalyticsJobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline CallAnalyticsJob& WithSettings(const CallAnalyticsJobSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Allows additional optional settings in your request, including content
-     * redaction; allows you to apply custom language models, vocabulary filters, and
-     * custom vocabularies to your Call Analytics job.</p>
+     * <p>Provides information on any additional settings that were included in your
+     * request. Additional settings include content redaction and language
+     * identification settings.</p>
      */
     inline CallAnalyticsJob& WithSettings(CallAnalyticsJobSettings&& value) { SetSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline CallAnalyticsJob& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline CallAnalyticsJob& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline CallAnalyticsJob& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel in your Call
-     * Analytics job request. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to
-     * indicate that it's the agent speaking).</p>
+     * <p>Indicates which speaker is on which channel.</p>
      */
     inline CallAnalyticsJob& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
-    bool m_callAnalyticsJobStatusHasBeenSet;
+    bool m_callAnalyticsJobStatusHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Transcript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     double m_identifiedLanguageScore;
-    bool m_identifiedLanguageScoreHasBeenSet;
+    bool m_identifiedLanguageScoreHasBeenSet = false;
 
     CallAnalyticsJobSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;
-    bool m_channelDefinitionsHasBeenSet;
+    bool m_channelDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

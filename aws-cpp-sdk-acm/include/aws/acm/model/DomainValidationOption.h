@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API DomainValidationOption
+  class DomainValidationOption
   {
   public:
-    DomainValidationOption();
-    DomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
-    DomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API DomainValidationOption();
+    AWS_ACM_API DomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API DomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_validationDomain;
-    bool m_validationDomainHasBeenSet;
+    bool m_validationDomainHasBeenSet = false;
   };
 
 } // namespace Model

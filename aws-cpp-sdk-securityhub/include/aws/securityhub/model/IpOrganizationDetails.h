@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/IpOrganizationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API IpOrganizationDetails
+  class IpOrganizationDetails
   {
   public:
-    IpOrganizationDetails();
-    IpOrganizationDetails(Aws::Utils::Json::JsonView jsonValue);
-    IpOrganizationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API IpOrganizationDetails();
+    AWS_SECURITYHUB_API IpOrganizationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API IpOrganizationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     Aws::String m_asnOrg;
-    bool m_asnOrgHasBeenSet;
+    bool m_asnOrgHasBeenSet = false;
 
     Aws::String m_isp;
-    bool m_ispHasBeenSet;
+    bool m_ispHasBeenSet = false;
 
     Aws::String m_org;
-    bool m_orgHasBeenSet;
+    bool m_orgHasBeenSet = false;
   };
 
 } // namespace Model

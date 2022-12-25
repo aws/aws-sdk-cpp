@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRolesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API SetIdentityPoolRolesRequest : public CognitoIdentityRequest
+  class SetIdentityPoolRolesRequest : public CognitoIdentityRequest
   {
   public:
-    SetIdentityPoolRolesRequest();
+    AWS_COGNITOIDENTITY_API SetIdentityPoolRolesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetIdentityPoolRoles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -284,13 +284,13 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Map<Aws::String, RoleMapping> m_roleMappings;
-    bool m_roleMappingsHasBeenSet;
+    bool m_roleMappingsHasBeenSet = false;
   };
 
 } // namespace Model

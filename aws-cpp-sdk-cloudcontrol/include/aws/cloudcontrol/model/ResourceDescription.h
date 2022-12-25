@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ResourceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDCONTROLAPI_API ResourceDescription
+  class ResourceDescription
   {
   public:
-    ResourceDescription();
-    ResourceDescription(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDCONTROLAPI_API ResourceDescription();
+    AWS_CLOUDCONTROLAPI_API ResourceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API ResourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

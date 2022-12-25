@@ -30,7 +30,7 @@ GetChangeLogsResult& GetChangeLogsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("changeLogs"))
   {
-    Array<JsonView> changeLogsJsonList = jsonValue.GetArray("changeLogs");
+    Aws::Utils::Array<JsonView> changeLogsJsonList = jsonValue.GetArray("changeLogs");
     for(unsigned changeLogsIndex = 0; changeLogsIndex < changeLogsJsonList.GetLength(); ++changeLogsIndex)
     {
       m_changeLogs.push_back(changeLogsJsonList[changeLogsIndex].AsObject());

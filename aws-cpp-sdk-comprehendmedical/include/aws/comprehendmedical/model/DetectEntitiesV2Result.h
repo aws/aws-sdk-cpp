@@ -27,12 +27,12 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  class AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result
+  class DetectEntitiesV2Result
   {
   public:
-    DetectEntitiesV2Result();
-    DetectEntitiesV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectEntitiesV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result();
+    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

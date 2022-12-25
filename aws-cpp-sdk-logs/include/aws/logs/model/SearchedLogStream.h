@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/SearchedLogStream">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API SearchedLogStream
+  class SearchedLogStream
   {
   public:
-    SearchedLogStream();
-    SearchedLogStream(Aws::Utils::Json::JsonView jsonValue);
-    SearchedLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API SearchedLogStream();
+    AWS_CLOUDWATCHLOGS_API SearchedLogStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API SearchedLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     bool m_searchedCompletely;
-    bool m_searchedCompletelyHasBeenSet;
+    bool m_searchedCompletelyHasBeenSet = false;
   };
 
 } // namespace Model

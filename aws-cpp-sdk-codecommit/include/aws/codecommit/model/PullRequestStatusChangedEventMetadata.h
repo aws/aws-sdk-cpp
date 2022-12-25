@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequestStatusChangedEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequestStatusChangedEventMetadata
+  class PullRequestStatusChangedEventMetadata
   {
   public:
-    PullRequestStatusChangedEventMetadata();
-    PullRequestStatusChangedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PullRequestStatusChangedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequestStatusChangedEventMetadata();
+    AWS_CODECOMMIT_API PullRequestStatusChangedEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequestStatusChangedEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PullRequestStatusEnum m_pullRequestStatus;
-    bool m_pullRequestStatusHasBeenSet;
+    bool m_pullRequestStatusHasBeenSet = false;
   };
 
 } // namespace Model

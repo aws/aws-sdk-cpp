@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API SelfManagedActiveDirectoryAttributes
+  class SelfManagedActiveDirectoryAttributes
   {
   public:
-    SelfManagedActiveDirectoryAttributes();
-    SelfManagedActiveDirectoryAttributes(Aws::Utils::Json::JsonView jsonValue);
-    SelfManagedActiveDirectoryAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API SelfManagedActiveDirectoryAttributes();
+    AWS_FSX_API SelfManagedActiveDirectoryAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API SelfManagedActiveDirectoryAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,19 +293,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
     Aws::String m_fileSystemAdministratorsGroup;
-    bool m_fileSystemAdministratorsGroupHasBeenSet;
+    bool m_fileSystemAdministratorsGroupHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIps;
-    bool m_dnsIpsHasBeenSet;
+    bool m_dnsIpsHasBeenSet = false;
   };
 
 } // namespace Model

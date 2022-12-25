@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDHSMV2_API ModifyBackupAttributesRequest : public CloudHSMV2Request
+  class ModifyBackupAttributesRequest : public CloudHSMV2Request
   {
   public:
-    ModifyBackupAttributesRequest();
+    AWS_CLOUDHSMV2_API ModifyBackupAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyBackupAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSMV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     bool m_neverExpires;
-    bool m_neverExpiresHasBeenSet;
+    bool m_neverExpiresHasBeenSet = false;
   };
 
 } // namespace Model

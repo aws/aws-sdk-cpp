@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DelegationSet
+  class DelegationSet
   {
   public:
-    DelegationSet();
-    DelegationSet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DelegationSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DelegationSet();
+    AWS_ROUTE53_API DelegationSet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DelegationSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nameServers;
-    bool m_nameServersHasBeenSet;
+    bool m_nameServersHasBeenSet = false;
   };
 
 } // namespace Model

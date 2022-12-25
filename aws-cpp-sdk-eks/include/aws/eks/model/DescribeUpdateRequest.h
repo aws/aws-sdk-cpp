@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API DescribeUpdateRequest : public EKSRequest
+  class DescribeUpdateRequest : public EKSRequest
   {
   public:
-    DescribeUpdateRequest();
+    AWS_EKS_API DescribeUpdateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeUpdate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_EKS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_updateId;
-    bool m_updateIdHasBeenSet;
+    bool m_updateIdHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::String m_addonName;
-    bool m_addonNameHasBeenSet;
+    bool m_addonNameHasBeenSet = false;
   };
 
 } // namespace Model

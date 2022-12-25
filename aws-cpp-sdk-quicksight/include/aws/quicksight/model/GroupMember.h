@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GroupMember">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GroupMember
+  class GroupMember
   {
   public:
-    GroupMember();
-    GroupMember(Aws::Utils::Json::JsonView jsonValue);
-    GroupMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GroupMember();
+    AWS_QUICKSIGHT_API GroupMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GroupMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_memberName;
-    bool m_memberNameHasBeenSet;
+    bool m_memberNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/PlacementSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT1CLICKPROJECTS_API PlacementSummary
+  class PlacementSummary
   {
   public:
-    PlacementSummary();
-    PlacementSummary(Aws::Utils::Json::JsonView jsonValue);
-    PlacementSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKPROJECTS_API PlacementSummary();
+    AWS_IOT1CLICKPROJECTS_API PlacementSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API PlacementSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_placementName;
-    bool m_placementNameHasBeenSet;
+    bool m_placementNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
   };
 
 } // namespace Model

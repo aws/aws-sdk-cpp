@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Thumbnails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Thumbnails
+  class Thumbnails
   {
   public:
-    Thumbnails();
-    Thumbnails(Aws::Utils::Json::JsonView jsonValue);
-    Thumbnails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Thumbnails();
+    AWS_ELASTICTRANSCODER_API Thumbnails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Thumbnails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -775,28 +775,28 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::String m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     Aws::String m_aspectRatio;
-    bool m_aspectRatioHasBeenSet;
+    bool m_aspectRatioHasBeenSet = false;
 
     Aws::String m_maxWidth;
-    bool m_maxWidthHasBeenSet;
+    bool m_maxWidthHasBeenSet = false;
 
     Aws::String m_maxHeight;
-    bool m_maxHeightHasBeenSet;
+    bool m_maxHeightHasBeenSet = false;
 
     Aws::String m_sizingPolicy;
-    bool m_sizingPolicyHasBeenSet;
+    bool m_sizingPolicyHasBeenSet = false;
 
     Aws::String m_paddingPolicy;
-    bool m_paddingPolicyHasBeenSet;
+    bool m_paddingPolicyHasBeenSet = false;
   };
 
 } // namespace Model

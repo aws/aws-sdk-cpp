@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableRestoreSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableRestoreSummary
+  class AwsDynamoDbTableRestoreSummary
   {
   public:
-    AwsDynamoDbTableRestoreSummary();
-    AwsDynamoDbTableRestoreSummary(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableRestoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableRestoreSummary();
+    AWS_SECURITYHUB_API AwsDynamoDbTableRestoreSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableRestoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_sourceBackupArn;
-    bool m_sourceBackupArnHasBeenSet;
+    bool m_sourceBackupArnHasBeenSet = false;
 
     Aws::String m_sourceTableArn;
-    bool m_sourceTableArnHasBeenSet;
+    bool m_sourceTableArnHasBeenSet = false;
 
     Aws::String m_restoreDateTime;
-    bool m_restoreDateTimeHasBeenSet;
+    bool m_restoreDateTimeHasBeenSet = false;
 
     bool m_restoreInProgress;
-    bool m_restoreInProgressHasBeenSet;
+    bool m_restoreInProgressHasBeenSet = false;
   };
 
 } // namespace Model

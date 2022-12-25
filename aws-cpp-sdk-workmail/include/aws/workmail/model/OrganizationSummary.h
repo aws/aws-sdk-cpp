@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/OrganizationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API OrganizationSummary
+  class OrganizationSummary
   {
   public:
-    OrganizationSummary();
-    OrganizationSummary(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API OrganizationSummary();
+    AWS_WORKMAIL_API OrganizationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API OrganizationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_defaultMailDomain;
-    bool m_defaultMailDomainHasBeenSet;
+    bool m_defaultMailDomainHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

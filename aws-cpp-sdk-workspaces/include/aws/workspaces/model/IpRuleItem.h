@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/IpRuleItem">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API IpRuleItem
+  class IpRuleItem
   {
   public:
-    IpRuleItem();
-    IpRuleItem(Aws::Utils::Json::JsonView jsonValue);
-    IpRuleItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API IpRuleItem();
+    AWS_WORKSPACES_API IpRuleItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API IpRuleItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_ipRule;
-    bool m_ipRuleHasBeenSet;
+    bool m_ipRuleHasBeenSet = false;
 
     Aws::String m_ruleDesc;
-    bool m_ruleDescHasBeenSet;
+    bool m_ruleDescHasBeenSet = false;
   };
 
 } // namespace Model

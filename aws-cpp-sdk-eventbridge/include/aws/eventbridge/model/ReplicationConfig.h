@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ReplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ReplicationConfig
+  class ReplicationConfig
   {
   public:
-    ReplicationConfig();
-    ReplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ReplicationConfig();
+    AWS_EVENTBRIDGE_API ReplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ReplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ReplicationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

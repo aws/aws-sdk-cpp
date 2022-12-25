@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnectorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API VoiceConnectorItem
+  class VoiceConnectorItem
   {
   public:
-    VoiceConnectorItem();
-    VoiceConnectorItem(Aws::Utils::Json::JsonView jsonValue);
-    VoiceConnectorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API VoiceConnectorItem();
+    AWS_CHIME_API VoiceConnectorItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API VoiceConnectorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

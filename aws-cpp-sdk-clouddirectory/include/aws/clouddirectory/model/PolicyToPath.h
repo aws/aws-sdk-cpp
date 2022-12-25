@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PolicyToPath">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API PolicyToPath
+  class PolicyToPath
   {
   public:
-    PolicyToPath();
-    PolicyToPath(Aws::Utils::Json::JsonView jsonValue);
-    PolicyToPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API PolicyToPath();
+    AWS_CLOUDDIRECTORY_API PolicyToPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API PolicyToPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<PolicyAttachment> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

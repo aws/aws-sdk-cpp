@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DimensionKeyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API DimensionKeyDetail
+  class DimensionKeyDetail
   {
   public:
-    DimensionKeyDetail();
-    DimensionKeyDetail(Aws::Utils::Json::JsonView jsonValue);
-    DimensionKeyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API DimensionKeyDetail();
+    AWS_PI_API DimensionKeyDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API DimensionKeyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,13 +252,13 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     DetailStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

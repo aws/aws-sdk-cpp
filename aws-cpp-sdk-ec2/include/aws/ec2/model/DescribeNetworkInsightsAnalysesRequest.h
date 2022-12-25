@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeNetworkInsightsAnalysesRequest : public EC2Request
+  class DescribeNetworkInsightsAnalysesRequest : public EC2Request
   {
   public:
-    DescribeNetworkInsightsAnalysesRequest();
+    AWS_EC2_API DescribeNetworkInsightsAnalysesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeNetworkInsightsAnalyses"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -199,64 +199,64 @@ namespace Model
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline DescribeNetworkInsightsAnalysesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline DescribeNetworkInsightsAnalysesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline DescribeNetworkInsightsAnalysesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters. The following are the possible values:</p> <ul> <li>
-     * <p>PathFound - A Boolean value that indicates whether a feasible path is
-     * found.</p> </li> <li> <p>Status - The status of the analysis (running |
+     * <p>path-found - A Boolean value that indicates whether a feasible path is
+     * found.</p> </li> <li> <p>status - The status of the analysis (running |
      * succeeded | failed).</p> </li> </ul>
      */
     inline DescribeNetworkInsightsAnalysesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
@@ -367,28 +367,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_networkInsightsAnalysisIds;
-    bool m_networkInsightsAnalysisIdsHasBeenSet;
+    bool m_networkInsightsAnalysisIdsHasBeenSet = false;
 
     Aws::String m_networkInsightsPathId;
-    bool m_networkInsightsPathIdHasBeenSet;
+    bool m_networkInsightsPathIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_analysisStartTime;
-    bool m_analysisStartTimeHasBeenSet;
+    bool m_analysisStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_analysisEndTime;
-    bool m_analysisEndTimeHasBeenSet;
+    bool m_analysisEndTimeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

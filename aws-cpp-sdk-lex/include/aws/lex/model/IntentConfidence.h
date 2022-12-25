@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/IntentConfidence">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API IntentConfidence
+  class IntentConfidence
   {
   public:
-    IntentConfidence();
-    IntentConfidence(Aws::Utils::Json::JsonView jsonValue);
-    IntentConfidence& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API IntentConfidence();
+    AWS_LEXRUNTIMESERVICE_API IntentConfidence(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API IntentConfidence& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -68,7 +68,7 @@ namespace Model
   private:
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

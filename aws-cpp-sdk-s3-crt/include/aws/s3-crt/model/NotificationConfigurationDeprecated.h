@@ -24,14 +24,14 @@ namespace S3Crt
 namespace Model
 {
 
-  class AWS_S3CRT_API NotificationConfigurationDeprecated
+  class NotificationConfigurationDeprecated
   {
   public:
-    NotificationConfigurationDeprecated();
-    NotificationConfigurationDeprecated(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NotificationConfigurationDeprecated& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API NotificationConfigurationDeprecated();
+    AWS_S3CRT_API NotificationConfigurationDeprecated(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API NotificationConfigurationDeprecated& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     TopicConfigurationDeprecated m_topicConfiguration;
-    bool m_topicConfigurationHasBeenSet;
+    bool m_topicConfigurationHasBeenSet = false;
 
     QueueConfigurationDeprecated m_queueConfiguration;
-    bool m_queueConfigurationHasBeenSet;
+    bool m_queueConfigurationHasBeenSet = false;
 
     CloudFunctionConfiguration m_cloudFunctionConfiguration;
-    bool m_cloudFunctionConfigurationHasBeenSet;
+    bool m_cloudFunctionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

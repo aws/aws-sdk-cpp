@@ -29,13 +29,54 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API SourceServer
+  class SourceServer
   {
   public:
-    SourceServer();
-    SourceServer(Aws::Utils::Json::JsonView jsonValue);
-    SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceServer();
+    AWS_MGN_API SourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline bool ApplicationIDHasBeenSet() const { return m_applicationIDHasBeenSet; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const Aws::String& value) { m_applicationIDHasBeenSet = true; m_applicationID = value; }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(Aws::String&& value) { m_applicationIDHasBeenSet = true; m_applicationID = std::move(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline void SetApplicationID(const char* value) { m_applicationIDHasBeenSet = true; m_applicationID.assign(value); }
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(const Aws::String& value) { SetApplicationID(value); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(Aws::String&& value) { SetApplicationID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server application ID.</p>
+     */
+    inline SourceServer& WithApplicationID(const char* value) { SetApplicationID(value); return *this;}
 
 
     /**
@@ -404,35 +445,38 @@ namespace Model
 
   private:
 
+    Aws::String m_applicationID;
+    bool m_applicationIDHasBeenSet = false;
+
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     bool m_isArchived;
-    bool m_isArchivedHasBeenSet;
+    bool m_isArchivedHasBeenSet = false;
 
     LaunchedInstance m_launchedInstance;
-    bool m_launchedInstanceHasBeenSet;
+    bool m_launchedInstanceHasBeenSet = false;
 
     LifeCycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     ReplicationType m_replicationType;
-    bool m_replicationTypeHasBeenSet;
+    bool m_replicationTypeHasBeenSet = false;
 
     SourceProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
   };
 
 } // namespace Model

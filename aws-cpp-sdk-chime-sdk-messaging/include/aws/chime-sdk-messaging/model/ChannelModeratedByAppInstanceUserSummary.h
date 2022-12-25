@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelModeratedByAppInstanceUserSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary
+  class ChannelModeratedByAppInstanceUserSummary
   {
   public:
-    ChannelModeratedByAppInstanceUserSummary();
-    ChannelModeratedByAppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelModeratedByAppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ChannelSummary m_channelSummary;
-    bool m_channelSummaryHasBeenSet;
+    bool m_channelSummaryHasBeenSet = false;
   };
 
 } // namespace Model

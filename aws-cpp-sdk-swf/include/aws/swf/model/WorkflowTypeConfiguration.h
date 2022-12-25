@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowTypeConfiguration
+  class WorkflowTypeConfiguration
   {
   public:
-    WorkflowTypeConfiguration();
-    WorkflowTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowTypeConfiguration();
+    AWS_SWF_API WorkflowTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -579,22 +579,22 @@ namespace Model
   private:
 
     Aws::String m_defaultTaskStartToCloseTimeout;
-    bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
     Aws::String m_defaultExecutionStartToCloseTimeout;
-    bool m_defaultExecutionStartToCloseTimeoutHasBeenSet;
+    bool m_defaultExecutionStartToCloseTimeoutHasBeenSet = false;
 
     TaskList m_defaultTaskList;
-    bool m_defaultTaskListHasBeenSet;
+    bool m_defaultTaskListHasBeenSet = false;
 
     Aws::String m_defaultTaskPriority;
-    bool m_defaultTaskPriorityHasBeenSet;
+    bool m_defaultTaskPriorityHasBeenSet = false;
 
     ChildPolicy m_defaultChildPolicy;
-    bool m_defaultChildPolicyHasBeenSet;
+    bool m_defaultChildPolicyHasBeenSet = false;
 
     Aws::String m_defaultLambdaRole;
-    bool m_defaultLambdaRoleHasBeenSet;
+    bool m_defaultLambdaRoleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANMulticastSession">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANMulticastSession
+  class LoRaWANMulticastSession
   {
   public:
-    LoRaWANMulticastSession();
-    LoRaWANMulticastSession(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANMulticastSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANMulticastSession();
+    AWS_IOTWIRELESS_API LoRaWANMulticastSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANMulticastSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -98,16 +98,16 @@ namespace Model
   private:
 
     int m_dlDr;
-    bool m_dlDrHasBeenSet;
+    bool m_dlDrHasBeenSet = false;
 
     int m_dlFreq;
-    bool m_dlFreqHasBeenSet;
+    bool m_dlFreqHasBeenSet = false;
 
     Aws::Utils::DateTime m_sessionStartTime;
-    bool m_sessionStartTimeHasBeenSet;
+    bool m_sessionStartTimeHasBeenSet = false;
 
     int m_sessionTimeout;
-    bool m_sessionTimeoutHasBeenSet;
+    bool m_sessionTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

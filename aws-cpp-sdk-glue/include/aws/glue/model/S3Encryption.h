@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Encryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3Encryption
+  class S3Encryption
   {
   public:
-    S3Encryption();
-    S3Encryption(Aws::Utils::Json::JsonView jsonValue);
-    S3Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3Encryption();
+    AWS_GLUE_API S3Encryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     S3EncryptionMode m_s3EncryptionMode;
-    bool m_s3EncryptionModeHasBeenSet;
+    bool m_s3EncryptionModeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

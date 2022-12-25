@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShardEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API SubscribeToShardEvent
+  class SubscribeToShardEvent
   {
   public:
-    SubscribeToShardEvent();
-    SubscribeToShardEvent(Aws::Utils::Json::JsonView jsonValue);
-    SubscribeToShardEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API SubscribeToShardEvent();
+    AWS_KINESIS_API SubscribeToShardEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API SubscribeToShardEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::Vector<Record> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
 
     Aws::String m_continuationSequenceNumber;
-    bool m_continuationSequenceNumberHasBeenSet;
+    bool m_continuationSequenceNumberHasBeenSet = false;
 
     long long m_millisBehindLatest;
-    bool m_millisBehindLatestHasBeenSet;
+    bool m_millisBehindLatestHasBeenSet = false;
 
     Aws::Vector<ChildShard> m_childShards;
-    bool m_childShardsHasBeenSet;
+    bool m_childShardsHasBeenSet = false;
   };
 
 } // namespace Model

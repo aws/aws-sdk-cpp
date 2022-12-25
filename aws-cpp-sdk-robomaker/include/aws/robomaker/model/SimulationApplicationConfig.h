@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationApplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationApplicationConfig
+  class SimulationApplicationConfig
   {
   public:
-    SimulationApplicationConfig();
-    SimulationApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    SimulationApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationApplicationConfig();
+    AWS_ROBOMAKER_API SimulationApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,22 +281,22 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_applicationVersion;
-    bool m_applicationVersionHasBeenSet;
+    bool m_applicationVersionHasBeenSet = false;
 
     LaunchConfig m_launchConfig;
-    bool m_launchConfigHasBeenSet;
+    bool m_launchConfigHasBeenSet = false;
 
     Aws::Vector<UploadConfiguration> m_uploadConfigurations;
-    bool m_uploadConfigurationsHasBeenSet;
+    bool m_uploadConfigurationsHasBeenSet = false;
 
     Aws::Vector<WorldConfig> m_worldConfigs;
-    bool m_worldConfigsHasBeenSet;
+    bool m_worldConfigsHasBeenSet = false;
 
     Aws::Vector<Tool> m_tools;
-    bool m_toolsHasBeenSet;
+    bool m_toolsHasBeenSet = false;
   };
 
 } // namespace Model

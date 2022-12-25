@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ResponseResourceMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API ResponseResourceMetric
+  class ResponseResourceMetric
   {
   public:
-    ResponseResourceMetric();
-    ResponseResourceMetric(Aws::Utils::Json::JsonView jsonValue);
-    ResponseResourceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API ResponseResourceMetric();
+    AWS_PI_API ResponseResourceMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API ResponseResourceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

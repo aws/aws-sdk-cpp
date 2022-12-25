@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponseRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API PutGatewayResponseRequest : public APIGatewayRequest
+  class PutGatewayResponseRequest : public APIGatewayRequest
   {
   public:
-    PutGatewayResponseRequest();
+    AWS_APIGATEWAY_API PutGatewayResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutGatewayResponse"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     GatewayResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimedMetadataInsertion">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TimedMetadataInsertion
+  class TimedMetadataInsertion
   {
   public:
-    TimedMetadataInsertion();
-    TimedMetadataInsertion(Aws::Utils::Json::JsonView jsonValue);
-    TimedMetadataInsertion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TimedMetadataInsertion();
+    AWS_MEDIACONVERT_API TimedMetadataInsertion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TimedMetadataInsertion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Id3Insertion> m_id3Insertions;
-    bool m_id3InsertionsHasBeenSet;
+    bool m_id3InsertionsHasBeenSet = false;
   };
 
 } // namespace Model

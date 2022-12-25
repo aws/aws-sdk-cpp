@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API CreateCellRequest : public Route53RecoveryReadinessRequest
+  class CreateCellRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    CreateCellRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API CreateCellRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCell"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_cellName;
-    bool m_cellNameHasBeenSet;
+    bool m_cellNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

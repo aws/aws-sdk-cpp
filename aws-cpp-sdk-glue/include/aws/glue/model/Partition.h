@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Partition">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Partition
+  class Partition
   {
   public:
-    Partition();
-    Partition(Aws::Utils::Json::JsonView jsonValue);
-    Partition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Partition();
+    AWS_GLUE_API Partition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Partition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,31 +414,31 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     StorageDescriptor m_storageDescriptor;
-    bool m_storageDescriptorHasBeenSet;
+    bool m_storageDescriptorHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTime;
-    bool m_lastAnalyzedTimeHasBeenSet;
+    bool m_lastAnalyzedTimeHasBeenSet = false;
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
   };
 
 } // namespace Model

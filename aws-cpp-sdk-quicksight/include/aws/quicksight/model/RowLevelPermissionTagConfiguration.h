@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionTagConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RowLevelPermissionTagConfiguration
+  class RowLevelPermissionTagConfiguration
   {
   public:
-    RowLevelPermissionTagConfiguration();
-    RowLevelPermissionTagConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RowLevelPermissionTagConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RowLevelPermissionTagConfiguration();
+    AWS_QUICKSIGHT_API RowLevelPermissionTagConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RowLevelPermissionTagConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<RowLevelPermissionTagRule> m_tagRules;
-    bool m_tagRulesHasBeenSet;
+    bool m_tagRulesHasBeenSet = false;
   };
 
 } // namespace Model

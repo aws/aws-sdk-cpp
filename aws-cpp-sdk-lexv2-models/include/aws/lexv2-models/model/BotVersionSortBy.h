@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotVersionSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotVersionSortBy
+  class BotVersionSortBy
   {
   public:
-    BotVersionSortBy();
-    BotVersionSortBy(Aws::Utils::Json::JsonView jsonValue);
-    BotVersionSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotVersionSortBy();
+    AWS_LEXMODELSV2_API BotVersionSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotVersionSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     BotVersionSortAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortOrder m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

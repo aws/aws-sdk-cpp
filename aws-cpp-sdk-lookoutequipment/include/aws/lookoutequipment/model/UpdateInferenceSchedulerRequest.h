@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API UpdateInferenceSchedulerRequest : public LookoutEquipmentRequest
+  class UpdateInferenceSchedulerRequest : public LookoutEquipmentRequest
   {
   public:
-    UpdateInferenceSchedulerRequest();
+    AWS_LOOKOUTEQUIPMENT_API UpdateInferenceSchedulerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInferenceScheduler"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -313,22 +313,22 @@ namespace Model
   private:
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     long long m_dataDelayOffsetInMinutes;
-    bool m_dataDelayOffsetInMinutesHasBeenSet;
+    bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
     DataUploadFrequency m_dataUploadFrequency;
-    bool m_dataUploadFrequencyHasBeenSet;
+    bool m_dataUploadFrequencyHasBeenSet = false;
 
     InferenceInputConfiguration m_dataInputConfiguration;
-    bool m_dataInputConfigurationHasBeenSet;
+    bool m_dataInputConfigurationHasBeenSet = false;
 
     InferenceOutputConfiguration m_dataOutputConfiguration;
-    bool m_dataOutputConfigurationHasBeenSet;
+    bool m_dataOutputConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

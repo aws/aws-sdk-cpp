@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionMemoryRecommendationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryRecommendationOption
+  class LambdaFunctionMemoryRecommendationOption
   {
   public:
-    LambdaFunctionMemoryRecommendationOption();
-    LambdaFunctionMemoryRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionMemoryRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryRecommendationOption();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionMemoryRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,16 +180,16 @@ namespace Model
   private:
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionMemoryProjectedMetric> m_projectedUtilizationMetrics;
-    bool m_projectedUtilizationMetricsHasBeenSet;
+    bool m_projectedUtilizationMetricsHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
-    bool m_savingsOpportunityHasBeenSet;
+    bool m_savingsOpportunityHasBeenSet = false;
   };
 
 } // namespace Model

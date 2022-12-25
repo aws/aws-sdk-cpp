@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDataIdentifierSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API CustomDataIdentifierSummary
+  class CustomDataIdentifierSummary
   {
   public:
-    CustomDataIdentifierSummary();
-    CustomDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
-    CustomDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API CustomDataIdentifierSummary();
+    AWS_MACIE2_API CustomDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API CustomDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

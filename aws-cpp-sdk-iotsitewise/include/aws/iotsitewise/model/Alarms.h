@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Alarms">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Alarms
+  class Alarms
   {
   public:
-    Alarms();
-    Alarms(Aws::Utils::Json::JsonView jsonValue);
-    Alarms& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Alarms();
+    AWS_IOTSITEWISE_API Alarms(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Alarms& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,10 +191,10 @@ namespace Model
   private:
 
     Aws::String m_alarmRoleArn;
-    bool m_alarmRoleArnHasBeenSet;
+    bool m_alarmRoleArnHasBeenSet = false;
 
     Aws::String m_notificationLambdaArn;
-    bool m_notificationLambdaArnHasBeenSet;
+    bool m_notificationLambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

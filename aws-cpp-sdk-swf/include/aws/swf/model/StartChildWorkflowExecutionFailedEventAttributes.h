@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartChildWorkflowExecutionFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes
+  class StartChildWorkflowExecutionFailedEventAttributes
   {
   public:
-    StartChildWorkflowExecutionFailedEventAttributes();
-    StartChildWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    StartChildWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API StartChildWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -322,22 +322,22 @@ namespace Model
   private:
 
     WorkflowType m_workflowType;
-    bool m_workflowTypeHasBeenSet;
+    bool m_workflowTypeHasBeenSet = false;
 
     StartChildWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
   };
 
 } // namespace Model

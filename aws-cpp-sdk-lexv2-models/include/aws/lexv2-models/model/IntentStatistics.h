@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentStatistics
+  class IntentStatistics
   {
   public:
-    IntentStatistics();
-    IntentStatistics(Aws::Utils::Json::JsonView jsonValue);
-    IntentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentStatistics();
+    AWS_LEXMODELSV2_API IntentStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_discoveredIntentCount;
-    bool m_discoveredIntentCountHasBeenSet;
+    bool m_discoveredIntentCountHasBeenSet = false;
   };
 
 } // namespace Model

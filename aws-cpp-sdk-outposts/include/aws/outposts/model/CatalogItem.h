@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CatalogItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API CatalogItem
+  class CatalogItem
   {
   public:
-    CatalogItem();
-    CatalogItem(Aws::Utils::Json::JsonView jsonValue);
-    CatalogItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API CatalogItem();
+    AWS_OUTPOSTS_API CatalogItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API CatalogItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -282,25 +282,25 @@ namespace Model
   private:
 
     Aws::String m_catalogItemId;
-    bool m_catalogItemIdHasBeenSet;
+    bool m_catalogItemIdHasBeenSet = false;
 
     CatalogItemStatus m_itemStatus;
-    bool m_itemStatusHasBeenSet;
+    bool m_itemStatusHasBeenSet = false;
 
     Aws::Vector<EC2Capacity> m_eC2Capacities;
-    bool m_eC2CapacitiesHasBeenSet;
+    bool m_eC2CapacitiesHasBeenSet = false;
 
     double m_powerKva;
-    bool m_powerKvaHasBeenSet;
+    bool m_powerKvaHasBeenSet = false;
 
     int m_weightLbs;
-    bool m_weightLbsHasBeenSet;
+    bool m_weightLbsHasBeenSet = false;
 
     Aws::Vector<int> m_supportedUplinkGbps;
-    bool m_supportedUplinkGbpsHasBeenSet;
+    bool m_supportedUplinkGbpsHasBeenSet = false;
 
     Aws::Vector<SupportedStorageEnum> m_supportedStorage;
-    bool m_supportedStorageHasBeenSet;
+    bool m_supportedStorageHasBeenSet = false;
   };
 
 } // namespace Model

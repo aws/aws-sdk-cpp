@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GPSCoordinates">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API GPSCoordinates
+  class GPSCoordinates
   {
   public:
-    GPSCoordinates();
-    GPSCoordinates(Aws::Utils::Json::JsonView jsonValue);
-    GPSCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API GPSCoordinates();
+    AWS_PINPOINT_API GPSCoordinates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API GPSCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     double m_latitude;
-    bool m_latitudeHasBeenSet;
+    bool m_latitudeHasBeenSet = false;
 
     double m_longitude;
-    bool m_longitudeHasBeenSet;
+    bool m_longitudeHasBeenSet = false;
   };
 
 } // namespace Model

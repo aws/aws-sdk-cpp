@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVSCHAT_API DeleteMessageRequest : public IvschatRequest
+  class DeleteMessageRequest : public IvschatRequest
   {
   public:
-    DeleteMessageRequest();
+    AWS_IVSCHAT_API DeleteMessageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteMessage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVSCHAT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet;
+    bool m_roomIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

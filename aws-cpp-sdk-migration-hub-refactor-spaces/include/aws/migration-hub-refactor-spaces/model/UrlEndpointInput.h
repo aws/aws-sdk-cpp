@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UrlEndpointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointInput
+  class UrlEndpointInput
   {
   public:
-    UrlEndpointInput();
-    UrlEndpointInput(Aws::Utils::Json::JsonView jsonValue);
-    UrlEndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,10 +185,10 @@ namespace Model
   private:
 
     Aws::String m_healthUrl;
-    bool m_healthUrlHasBeenSet;
+    bool m_healthUrlHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

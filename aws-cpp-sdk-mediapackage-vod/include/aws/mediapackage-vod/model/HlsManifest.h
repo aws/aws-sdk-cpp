@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/HlsManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API HlsManifest
+  class HlsManifest
   {
   public:
-    HlsManifest();
-    HlsManifest(Aws::Utils::Json::JsonView jsonValue);
-    HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API HlsManifest();
+    AWS_MEDIAPACKAGEVOD_API HlsManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -325,22 +325,22 @@ it will
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     bool m_repeatExtXKey;
-    bool m_repeatExtXKeyHasBeenSet;
+    bool m_repeatExtXKeyHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

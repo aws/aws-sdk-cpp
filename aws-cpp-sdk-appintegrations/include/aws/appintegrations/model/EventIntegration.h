@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API EventIntegration
+  class EventIntegration
   {
   public:
-    EventIntegration();
-    EventIntegration(Aws::Utils::Json::JsonView jsonValue);
-    EventIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegration();
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,22 +302,22 @@ namespace Model
   private:
 
     Aws::String m_eventIntegrationArn;
-    bool m_eventIntegrationArnHasBeenSet;
+    bool m_eventIntegrationArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     Aws::String m_eventBridgeBus;
-    bool m_eventBridgeBusHasBeenSet;
+    bool m_eventBridgeBusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

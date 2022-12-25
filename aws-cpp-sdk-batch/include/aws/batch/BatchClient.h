@@ -5,228 +5,93 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
-#include <aws/batch/BatchErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/batch/model/CancelJobResult.h>
-#include <aws/batch/model/CreateComputeEnvironmentResult.h>
-#include <aws/batch/model/CreateJobQueueResult.h>
-#include <aws/batch/model/CreateSchedulingPolicyResult.h>
-#include <aws/batch/model/DeleteComputeEnvironmentResult.h>
-#include <aws/batch/model/DeleteJobQueueResult.h>
-#include <aws/batch/model/DeleteSchedulingPolicyResult.h>
-#include <aws/batch/model/DeregisterJobDefinitionResult.h>
-#include <aws/batch/model/DescribeComputeEnvironmentsResult.h>
-#include <aws/batch/model/DescribeJobDefinitionsResult.h>
-#include <aws/batch/model/DescribeJobQueuesResult.h>
-#include <aws/batch/model/DescribeJobsResult.h>
-#include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
-#include <aws/batch/model/ListJobsResult.h>
-#include <aws/batch/model/ListSchedulingPoliciesResult.h>
-#include <aws/batch/model/ListTagsForResourceResult.h>
-#include <aws/batch/model/RegisterJobDefinitionResult.h>
-#include <aws/batch/model/SubmitJobResult.h>
-#include <aws/batch/model/TagResourceResult.h>
-#include <aws/batch/model/TerminateJobResult.h>
-#include <aws/batch/model/UntagResourceResult.h>
-#include <aws/batch/model/UpdateComputeEnvironmentResult.h>
-#include <aws/batch/model/UpdateJobQueueResult.h>
-#include <aws/batch/model/UpdateSchedulingPolicyResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/batch/BatchServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Batch
 {
-
-namespace Model
-{
-        class CancelJobRequest;
-        class CreateComputeEnvironmentRequest;
-        class CreateJobQueueRequest;
-        class CreateSchedulingPolicyRequest;
-        class DeleteComputeEnvironmentRequest;
-        class DeleteJobQueueRequest;
-        class DeleteSchedulingPolicyRequest;
-        class DeregisterJobDefinitionRequest;
-        class DescribeComputeEnvironmentsRequest;
-        class DescribeJobDefinitionsRequest;
-        class DescribeJobQueuesRequest;
-        class DescribeJobsRequest;
-        class DescribeSchedulingPoliciesRequest;
-        class ListJobsRequest;
-        class ListSchedulingPoliciesRequest;
-        class ListTagsForResourceRequest;
-        class RegisterJobDefinitionRequest;
-        class SubmitJobRequest;
-        class TagResourceRequest;
-        class TerminateJobRequest;
-        class UntagResourceRequest;
-        class UpdateComputeEnvironmentRequest;
-        class UpdateJobQueueRequest;
-        class UpdateSchedulingPolicyRequest;
-
-        typedef Aws::Utils::Outcome<CancelJobResult, BatchError> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, BatchError> CreateComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<CreateJobQueueResult, BatchError> CreateJobQueueOutcome;
-        typedef Aws::Utils::Outcome<CreateSchedulingPolicyResult, BatchError> CreateSchedulingPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteComputeEnvironmentResult, BatchError> DeleteComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobQueueResult, BatchError> DeleteJobQueueOutcome;
-        typedef Aws::Utils::Outcome<DeleteSchedulingPolicyResult, BatchError> DeleteSchedulingPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeregisterJobDefinitionResult, BatchError> DeregisterJobDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeComputeEnvironmentsResult, BatchError> DescribeComputeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobDefinitionsResult, BatchError> DescribeJobDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
-        typedef Aws::Utils::Outcome<DescribeSchedulingPoliciesResult, BatchError> DescribeSchedulingPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSchedulingPoliciesResult, BatchError> ListSchedulingPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BatchError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RegisterJobDefinitionResult, BatchError> RegisterJobDefinitionOutcome;
-        typedef Aws::Utils::Outcome<SubmitJobResult, BatchError> SubmitJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, BatchError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TerminateJobResult, BatchError> TerminateJobOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, BatchError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobQueueResult, BatchError> UpdateJobQueueOutcome;
-        typedef Aws::Utils::Outcome<UpdateSchedulingPolicyResult, BatchError> UpdateSchedulingPolicyOutcome;
-
-        typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
-        typedef std::future<CreateComputeEnvironmentOutcome> CreateComputeEnvironmentOutcomeCallable;
-        typedef std::future<CreateJobQueueOutcome> CreateJobQueueOutcomeCallable;
-        typedef std::future<CreateSchedulingPolicyOutcome> CreateSchedulingPolicyOutcomeCallable;
-        typedef std::future<DeleteComputeEnvironmentOutcome> DeleteComputeEnvironmentOutcomeCallable;
-        typedef std::future<DeleteJobQueueOutcome> DeleteJobQueueOutcomeCallable;
-        typedef std::future<DeleteSchedulingPolicyOutcome> DeleteSchedulingPolicyOutcomeCallable;
-        typedef std::future<DeregisterJobDefinitionOutcome> DeregisterJobDefinitionOutcomeCallable;
-        typedef std::future<DescribeComputeEnvironmentsOutcome> DescribeComputeEnvironmentsOutcomeCallable;
-        typedef std::future<DescribeJobDefinitionsOutcome> DescribeJobDefinitionsOutcomeCallable;
-        typedef std::future<DescribeJobQueuesOutcome> DescribeJobQueuesOutcomeCallable;
-        typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
-        typedef std::future<DescribeSchedulingPoliciesOutcome> DescribeSchedulingPoliciesOutcomeCallable;
-        typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
-        typedef std::future<ListSchedulingPoliciesOutcome> ListSchedulingPoliciesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RegisterJobDefinitionOutcome> RegisterJobDefinitionOutcomeCallable;
-        typedef std::future<SubmitJobOutcome> SubmitJobOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TerminateJobOutcome> TerminateJobOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateComputeEnvironmentOutcome> UpdateComputeEnvironmentOutcomeCallable;
-        typedef std::future<UpdateJobQueueOutcome> UpdateJobQueueOutcomeCallable;
-        typedef std::future<UpdateSchedulingPolicyOutcome> UpdateSchedulingPolicyOutcomeCallable;
-} // namespace Model
-
-  class BatchClient;
-
-    typedef std::function<void(const BatchClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::CreateComputeEnvironmentRequest&, const Model::CreateComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComputeEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::CreateJobQueueRequest&, const Model::CreateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobQueueResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::CreateSchedulingPolicyRequest&, const Model::CreateSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchedulingPolicyResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DeleteComputeEnvironmentRequest&, const Model::DeleteComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComputeEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DeleteJobQueueRequest&, const Model::DeleteJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobQueueResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DeleteSchedulingPolicyRequest&, const Model::DeleteSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchedulingPolicyResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DeregisterJobDefinitionRequest&, const Model::DeregisterJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterJobDefinitionResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DescribeComputeEnvironmentsRequest&, const Model::DescribeComputeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComputeEnvironmentsResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DescribeJobDefinitionsRequest&, const Model::DescribeJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DescribeJobQueuesRequest&, const Model::DescribeJobQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobQueuesResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::DescribeSchedulingPoliciesRequest&, const Model::DescribeSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchedulingPoliciesResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::ListSchedulingPoliciesRequest&, const Model::ListSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchedulingPoliciesResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::RegisterJobDefinitionRequest&, const Model::RegisterJobDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterJobDefinitionResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::SubmitJobRequest&, const Model::SubmitJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitJobResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::TerminateJobRequest&, const Model::TerminateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateJobResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::UpdateComputeEnvironmentRequest&, const Model::UpdateComputeEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComputeEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::UpdateJobQueueRequest&, const Model::UpdateJobQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobQueueResponseReceivedHandler;
-    typedef std::function<void(const BatchClient*, const Model::UpdateSchedulingPolicyRequest&, const Model::UpdateSchedulingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchedulingPolicyResponseReceivedHandler;
-
   /**
    * <fullname>Batch</fullname> <p>Using Batch, you can run batch computing workloads
    * on the Amazon Web Services Cloud. Batch computing is a common means for
    * developers, scientists, and engineers to access large amounts of compute
-   * resources. Batch uses the advantages of this computing workload to remove the
+   * resources. Batch uses the advantages of the batch computing to remove the
    * undifferentiated heavy lifting of configuring and managing required
    * infrastructure. At the same time, it also adopts a familiar batch computing
-   * software approach. Given these advantages, Batch can help you to efficiently
-   * provision resources in response to jobs submitted, thus effectively helping you
-   * to eliminate capacity constraints, reduce compute costs, and deliver your
-   * results more quickly.</p> <p>As a fully managed service, Batch can run batch
-   * computing workloads of any scale. Batch automatically provisions compute
-   * resources and optimizes workload distribution based on the quantity and scale of
-   * your specific workloads. With Batch, there's no need to install or manage batch
-   * computing software. This means that you can focus your time and energy on
-   * analyzing results and solving your specific problems.</p>
+   * software approach. You can use Batch to efficiently provision resources d, and
+   * work toward eliminating capacity constraints, reducing your overall compute
+   * costs, and delivering results more quickly.</p> <p>As a fully managed service,
+   * Batch can run batch computing workloads of any scale. Batch automatically
+   * provisions compute resources and optimizes workload distribution based on the
+   * quantity and scale of your specific workloads. With Batch, there's no need to
+   * install or manage batch computing software. This means that you can focus on
+   * analyzing results and solving your specific problems instead.</p>
    */
-  class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient
+  class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BatchClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BatchClient(const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration(),
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BatchClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BatchClient(const Aws::Auth::AWSCredentials& credentials,
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BatchClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BatchClient(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        BatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~BatchClient();
-
 
         /**
          * <p>Cancels a job in an Batch job queue. Jobs that are in the
          * <code>SUBMITTED</code>, <code>PENDING</code>, or <code>RUNNABLE</code> state are
-         * canceled. Jobs that have progressed to <code>STARTING</code> or
-         * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even
-         * if no job is canceled. These jobs must be terminated with the
+         * canceled. Jobs that progressed to the <code>STARTING</code> or
+         * <code>RUNNING</code> state aren't canceled. However, the API operation still
+         * succeeds, even if no job is canceled. These jobs must be terminated with the
          * <a>TerminateJob</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">AWS API
          * Reference</a></p>
@@ -259,10 +124,10 @@ namespace Model
          * the Spot Instance price is less than a specified percentage of the On-Demand
          * price.</p>  <p>Multi-node parallel jobs aren't supported on Spot
          * Instances.</p>  <p>In an unmanaged compute environment, you can manage
-         * your own EC2 compute resources and have a lot of flexibility with how you
-         * configure your compute resources. For example, you can use custom AMIs. However,
-         * you must verify that each of your AMIs meet the Amazon ECS container instance
-         * AMI specification. For more information, see <a
+         * your own EC2 compute resources and have flexibility with how you configure your
+         * compute resources. For example, you can use custom AMIs. However, you must
+         * verify that each of your AMIs meet the Amazon ECS container instance AMI
+         * specification. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
          * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>. After you created your unmanaged compute environment, you can use the
@@ -271,51 +136,54 @@ namespace Model
          * Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p>  <p>Batch doesn't automatically upgrade the AMIs
-         * in a compute environment after it's created. For example, it also doesn't update
-         * the AMIs in your compute environment when a newer version of the Amazon ECS
-         * optimized AMI is available. You're responsible for the management of the guest
-         * operating system. This includes any updates and security patches. You're also
-         * responsible for any additional application software or utilities that you
-         * install on the compute resources. There are two ways to use a new AMI for your
-         * Batch jobs. The original method is to complete these steps:</p> <ol> <li>
-         * <p>Create a new compute environment with the new AMI.</p> </li> <li> <p>Add the
-         * compute environment to an existing job queue.</p> </li> <li> <p>Remove the
-         * earlier compute environment from your job queue.</p> </li> <li> <p>Delete the
-         * earlier compute environment.</p> </li> </ol> <p>In April 2022, Batch added
-         * enhanced support for updating compute environments. For more information, see <a
+         * Developer Guide</i>.</p>  <p>To create a compute environment that uses EKS
+         * resources, the caller must have permissions to call
+         * <code>eks:DescribeCluster</code>.</p>   <p>Batch doesn't
+         * automatically upgrade the AMIs in a compute environment after it's created. For
+         * example, it also doesn't update the AMIs in your compute environment when a
+         * newer version of the Amazon ECS optimized AMI is available. You're responsible
+         * for the management of the guest operating system. This includes any updates and
+         * security patches. You're also responsible for any additional application
+         * software or utilities that you install on the compute resources. There are two
+         * ways to use a new AMI for your Batch jobs. The original method is to complete
+         * these steps:</p> <ol> <li> <p>Create a new compute environment with the new
+         * AMI.</p> </li> <li> <p>Add the compute environment to an existing job queue.</p>
+         * </li> <li> <p>Remove the earlier compute environment from your job queue.</p>
+         * </li> <li> <p>Delete the earlier compute environment.</p> </li> </ol> <p>In
+         * April 2022, Batch added enhanced support for updating compute environments. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
          * compute environments</a>. To use the enhanced updating of compute environments
-         * to update AMIs, follow these rules:</p> <ul> <li> <p>Either do not set the
+         * to update AMIs, follow these rules:</p> <ul> <li> <p>Either don't set the
          * service role (<code>serviceRole</code>) parameter or set it to the
          * <b>AWSBatchServiceRole</b> service-linked role.</p> </li> <li> <p>Set the
          * allocation strategy (<code>allocationStrategy</code>) parameter to
          * <code>BEST_FIT_PROGRESSIVE</code> or <code>SPOT_CAPACITY_OPTIMIZED</code>.</p>
          * </li> <li> <p>Set the update to latest image version
          * (<code>updateToLatestImageVersion</code>) parameter to <code>true</code>.</p>
-         * </li> <li> <p>Do not specify an AMI ID in <code>imageId</code>,
+         * </li> <li> <p>Don't specify an AMI ID in <code>imageId</code>,
          * <code>imageIdOverride</code> (in <a
          * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
          * <code>ec2Configuration</code> </a>), or in the launch template
-         * (<code>launchTemplate</code>). In that case Batch will select the latest Amazon
-         * ECS optimized AMI supported by Batch at the time the infrastructure update is
-         * initiated. Alternatively you can specify the AMI ID in the <code>imageId</code>
+         * (<code>launchTemplate</code>). In that case, Batch selects the latest Amazon ECS
+         * optimized AMI that's supported by Batch at the time the infrastructure update is
+         * initiated. Alternatively, you can specify the AMI ID in the <code>imageId</code>
          * or <code>imageIdOverride</code> parameters, or the launch template identified by
          * the <code>LaunchTemplate</code> properties. Changing any of these properties
-         * will trigger an infrastructure update. If the AMI ID is specified in the launch
-         * template, it can not be replaced by specifying an AMI ID in either the
+         * starts an infrastructure update. If the AMI ID is specified in the launch
+         * template, it can't be replaced by specifying an AMI ID in either the
          * <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be
          * replaced by specifying a different launch template, or if the launch template
          * version is set to <code>$Default</code> or <code>$Latest</code>, by setting
-         * either a new default version for the launch template (if
-         * <code>$Default</code>)or by adding a new version to the launch template (if
-         * <code>$Latest</code>).</p> </li> </ul> <p>If these rules are followed, any
-         * update that triggers an infrastructure update will cause the AMI ID to be
-         * re-selected. If the <code>version</code> setting in the launch template
+         * either a new default version for the launch template (if <code>$Default</code>)
+         * or by adding a new version to the launch template (if <code>$Latest</code>).</p>
+         * </li> </ul> <p>If these rules are followed, any update that starts an
+         * infrastructure update causes the AMI ID to be re-selected. If the
+         * <code>version</code> setting in the launch template
          * (<code>launchTemplate</code>) is set to <code>$Latest</code> or
-         * <code>$Default</code>, the latest or default version of the launch template will
-         * be evaluated up at the time of the infrastructure update, even if the
-         * <code>launchTemplate</code> was not updated.</p> <p><h3>See Also:</h3>  
+         * <code>$Default</code>, the latest or default version of the launch template is
+         * evaluated up at the time of the infrastructure update, even if the
+         * <code>launchTemplate</code> wasn't updated.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
@@ -589,8 +457,8 @@ namespace Model
         /**
          * <p>Lists the tags for an Batch resource. Batch resources that support tags are
          * compute environments, jobs, job definitions, job queues, and scheduling
-         * policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are
-         * not supported.</p><p><h3>See Also:</h3>   <a
+         * policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs aren't
+         * supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -659,7 +527,7 @@ namespace Model
          * that are associated with that resource are deleted as well. Batch resources that
          * support tags are compute environments, jobs, job definitions, job queues, and
          * scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP)
-         * jobs are not supported.</p><p><h3>See Also:</h3>   <a
+         * jobs aren't supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">AWS
          * API Reference</a></p>
          */
@@ -765,36 +633,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateComputeEnvironmentAsyncHelper(const Model::CreateComputeEnvironmentRequest& request, const CreateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobQueueAsyncHelper(const Model::CreateJobQueueRequest& request, const CreateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSchedulingPolicyAsyncHelper(const Model::CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteComputeEnvironmentAsyncHelper(const Model::DeleteComputeEnvironmentRequest& request, const DeleteComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteJobQueueAsyncHelper(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSchedulingPolicyAsyncHelper(const Model::DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterJobDefinitionAsyncHelper(const Model::DeregisterJobDefinitionRequest& request, const DeregisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComputeEnvironmentsAsyncHelper(const Model::DescribeComputeEnvironmentsRequest& request, const DescribeComputeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobDefinitionsAsyncHelper(const Model::DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobQueuesAsyncHelper(const Model::DescribeJobQueuesRequest& request, const DescribeJobQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobsAsyncHelper(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSchedulingPoliciesAsyncHelper(const Model::DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSchedulingPoliciesAsyncHelper(const Model::ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterJobDefinitionAsyncHelper(const Model::RegisterJobDefinitionRequest& request, const RegisterJobDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubmitJobAsyncHelper(const Model::SubmitJobRequest& request, const SubmitJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TerminateJobAsyncHelper(const Model::TerminateJobRequest& request, const TerminateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateComputeEnvironmentAsyncHelper(const Model::UpdateComputeEnvironmentRequest& request, const UpdateComputeEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateJobQueueAsyncHelper(const Model::UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSchedulingPolicyAsyncHelper(const Model::UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;
+      void init(const BatchClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      BatchClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<BatchEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Batch

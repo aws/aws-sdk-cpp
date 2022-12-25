@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/SubnetNotFound">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API SubnetNotFound
+  class SubnetNotFound
   {
   public:
-    SubnetNotFound();
-    SubnetNotFound(Aws::Utils::Json::JsonView jsonValue);
-    SubnetNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API SubnetNotFound();
+    AWS_EFS_API SubnetNotFound(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API SubnetNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VotingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API VotingPolicy
+  class VotingPolicy
   {
   public:
-    VotingPolicy();
-    VotingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    VotingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API VotingPolicy();
+    AWS_MANAGEDBLOCKCHAIN_API VotingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API VotingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     ApprovalThresholdPolicy m_approvalThresholdPolicy;
-    bool m_approvalThresholdPolicyHasBeenSet;
+    bool m_approvalThresholdPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDGRAFANA_API ListPermissionsRequest : public ManagedGrafanaRequest
+  class ListPermissionsRequest : public ManagedGrafanaRequest
   {
   public:
-    ListPermissionsRequest();
+    AWS_MANAGEDGRAFANA_API ListPermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MANAGEDGRAFANA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -193,49 +193,43 @@ namespace Model
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline const UserType& GetUserType() const{ return m_userType; }
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline ListPermissionsRequest& WithUserType(const UserType& value) { SetUserType(value); return *this;}
 
     /**
      * <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of
-     * Amazon Web Services SSO users are returned. If you specify
-     * <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
-     * are returned.</p>
+     * IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>,
+     * only the permissions of IAM Identity Center groups are returned.</p>
      */
     inline ListPermissionsRequest& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
 
@@ -291,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

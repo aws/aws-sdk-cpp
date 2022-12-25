@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/RuleConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API RuleConfig
+  class RuleConfig
   {
   public:
-    RuleConfig();
-    RuleConfig(Aws::Utils::Json::JsonView jsonValue);
-    RuleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API RuleConfig();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API RuleConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API RuleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     bool m_inverted;
-    bool m_invertedHasBeenSet;
+    bool m_invertedHasBeenSet = false;
 
     int m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     RuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

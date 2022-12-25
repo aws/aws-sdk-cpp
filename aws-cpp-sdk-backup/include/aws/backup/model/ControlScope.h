@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ControlScope">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ControlScope
+  class ControlScope
   {
   public:
-    ControlScope();
-    ControlScope(Aws::Utils::Json::JsonView jsonValue);
-    ControlScope& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ControlScope();
+    AWS_BACKUP_API ControlScope(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ControlScope& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,13 +276,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_complianceResourceIds;
-    bool m_complianceResourceIdsHasBeenSet;
+    bool m_complianceResourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_complianceResourceTypes;
-    bool m_complianceResourceTypesHasBeenSet;
+    bool m_complianceResourceTypesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PathStatementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PathStatementRequest
+  class PathStatementRequest
   {
   public:
-    PathStatementRequest();
-    PathStatementRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PathStatementRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PathStatementRequest();
+    AWS_EC2_API PathStatementRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PathStatementRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     PacketHeaderStatementRequest m_packetHeaderStatement;
-    bool m_packetHeaderStatementHasBeenSet;
+    bool m_packetHeaderStatementHasBeenSet = false;
 
     ResourceStatementRequest m_resourceStatement;
-    bool m_resourceStatementHasBeenSet;
+    bool m_resourceStatementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmRequest : public IoTEventsDataRequest
+  class BatchAcknowledgeAlarmRequest : public IoTEventsDataRequest
   {
   public:
-    BatchAcknowledgeAlarmRequest();
+    AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchAcknowledgeAlarm"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTEVENTSDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Vector<AcknowledgeAlarmActionRequest> m_acknowledgeActionRequests;
-    bool m_acknowledgeActionRequestsHasBeenSet;
+    bool m_acknowledgeActionRequestsHasBeenSet = false;
   };
 
 } // namespace Model

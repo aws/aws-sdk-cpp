@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatefulRulesHeaderDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails
+  class RuleGroupSourceStatefulRulesHeaderDetails
   {
   public:
-    RuleGroupSourceStatefulRulesHeaderDetails();
-    RuleGroupSourceStatefulRulesHeaderDetails(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatefulRulesHeaderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -373,22 +373,22 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
 
     Aws::String m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourcePort;
-    bool m_sourcePortHasBeenSet;
+    bool m_sourcePortHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BoxConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BoxConfiguration
+  class BoxConfiguration
   {
   public:
-    BoxConfiguration();
-    BoxConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BoxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BoxConfiguration();
+    AWS_KENDRA_API BoxConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BoxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,8 +110,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -127,8 +127,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -144,8 +144,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -161,8 +161,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -178,8 +178,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -195,8 +195,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -212,8 +212,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -229,8 +229,8 @@ namespace Model
      * <li> <p>passphrase—A set of characters that act like a password.</p> </li> </ul>
      * <p>You create an application in Box to generate the keys or credentials required
      * for the secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     * for a Box data source</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a
+     * Box data source</a>.</p>
      */
     inline BoxConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -920,43 +920,43 @@ namespace Model
   private:
 
     Aws::String m_enterpriseId;
-    bool m_enterpriseIdHasBeenSet;
+    bool m_enterpriseIdHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     bool m_useChangeLog;
-    bool m_useChangeLogHasBeenSet;
+    bool m_useChangeLogHasBeenSet = false;
 
     bool m_crawlComments;
-    bool m_crawlCommentsHasBeenSet;
+    bool m_crawlCommentsHasBeenSet = false;
 
     bool m_crawlTasks;
-    bool m_crawlTasksHasBeenSet;
+    bool m_crawlTasksHasBeenSet = false;
 
     bool m_crawlWebLinks;
-    bool m_crawlWebLinksHasBeenSet;
+    bool m_crawlWebLinksHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fileFieldMappings;
-    bool m_fileFieldMappingsHasBeenSet;
+    bool m_fileFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_taskFieldMappings;
-    bool m_taskFieldMappingsHasBeenSet;
+    bool m_taskFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-    bool m_commentFieldMappingsHasBeenSet;
+    bool m_commentFieldMappingsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_webLinkFieldMappings;
-    bool m_webLinkFieldMappingsHasBeenSet;
+    bool m_webLinkFieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

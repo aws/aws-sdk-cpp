@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/LocationListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API LocationListEntry
+  class LocationListEntry
   {
   public:
-    LocationListEntry();
-    LocationListEntry(Aws::Utils::Json::JsonView jsonValue);
-    LocationListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API LocationListEntry();
+    AWS_DATASYNC_API LocationListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API LocationListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -245,10 +245,10 @@ namespace Model
   private:
 
     Aws::String m_locationArn;
-    bool m_locationArnHasBeenSet;
+    bool m_locationArnHasBeenSet = false;
 
     Aws::String m_locationUri;
-    bool m_locationUriHasBeenSet;
+    bool m_locationUriHasBeenSet = false;
   };
 
 } // namespace Model

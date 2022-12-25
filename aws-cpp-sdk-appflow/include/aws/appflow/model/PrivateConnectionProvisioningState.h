@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/PrivateConnectionProvisioningState">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API PrivateConnectionProvisioningState
+  class PrivateConnectionProvisioningState
   {
   public:
-    PrivateConnectionProvisioningState();
-    PrivateConnectionProvisioningState(Aws::Utils::Json::JsonView jsonValue);
-    PrivateConnectionProvisioningState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API PrivateConnectionProvisioningState();
+    AWS_APPFLOW_API PrivateConnectionProvisioningState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API PrivateConnectionProvisioningState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     PrivateConnectionProvisioningStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     PrivateConnectionProvisioningFailureCause m_failureCause;
-    bool m_failureCauseHasBeenSet;
+    bool m_failureCauseHasBeenSet = false;
   };
 
 } // namespace Model

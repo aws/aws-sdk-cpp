@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemoveNotificationChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API RemoveNotificationChannelRequest : public CodeGuruProfilerRequest
+  class RemoveNotificationChannelRequest : public CodeGuruProfilerRequest
   {
   public:
-    RemoveNotificationChannelRequest();
+    AWS_CODEGURUPROFILER_API RemoveNotificationChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveNotificationChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_channelId;
-    bool m_channelIdHasBeenSet;
+    bool m_channelIdHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

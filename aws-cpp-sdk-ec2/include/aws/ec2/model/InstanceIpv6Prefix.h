@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceIpv6Prefix">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceIpv6Prefix
+  class InstanceIpv6Prefix
   {
   public:
-    InstanceIpv6Prefix();
-    InstanceIpv6Prefix(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceIpv6Prefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceIpv6Prefix();
+    AWS_EC2_API InstanceIpv6Prefix(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceIpv6Prefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_ipv6Prefix;
-    bool m_ipv6PrefixHasBeenSet;
+    bool m_ipv6PrefixHasBeenSet = false;
   };
 
 } // namespace Model

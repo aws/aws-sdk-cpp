@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetReference">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetReference
+  class DataSetReference
   {
   public:
-    DataSetReference();
-    DataSetReference(Aws::Utils::Json::JsonView jsonValue);
-    DataSetReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetReference();
+    AWS_QUICKSIGHT_API DataSetReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_dataSetPlaceholder;
-    bool m_dataSetPlaceholderHasBeenSet;
+    bool m_dataSetPlaceholderHasBeenSet = false;
 
     Aws::String m_dataSetArn;
-    bool m_dataSetArnHasBeenSet;
+    bool m_dataSetArnHasBeenSet = false;
   };
 
 } // namespace Model

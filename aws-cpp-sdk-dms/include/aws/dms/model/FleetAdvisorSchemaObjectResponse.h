@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/FleetAdvisorSchemaObjectResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse
+  class FleetAdvisorSchemaObjectResponse
   {
   public:
-    FleetAdvisorSchemaObjectResponse();
-    FleetAdvisorSchemaObjectResponse(Aws::Utils::Json::JsonView jsonValue);
-    FleetAdvisorSchemaObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorSchemaObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_schemaId;
-    bool m_schemaIdHasBeenSet;
+    bool m_schemaIdHasBeenSet = false;
 
     Aws::String m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     long long m_numberOfObjects;
-    bool m_numberOfObjectsHasBeenSet;
+    bool m_numberOfObjectsHasBeenSet = false;
 
     long long m_codeLineCount;
-    bool m_codeLineCountHasBeenSet;
+    bool m_codeLineCountHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
   };
 
 } // namespace Model

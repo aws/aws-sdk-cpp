@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ServiceDiscovery">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ServiceDiscovery
+  class ServiceDiscovery
   {
   public:
-    ServiceDiscovery();
-    ServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
-    ServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ServiceDiscovery();
+    AWS_APPMESH_API ServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AwsCloudMapServiceDiscovery m_awsCloudMap;
-    bool m_awsCloudMapHasBeenSet;
+    bool m_awsCloudMapHasBeenSet = false;
 
     DnsServiceDiscovery m_dns;
-    bool m_dnsHasBeenSet;
+    bool m_dnsHasBeenSet = false;
   };
 
 } // namespace Model

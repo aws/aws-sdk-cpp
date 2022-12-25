@@ -24,36 +24,36 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API UpdateServicePrimaryTaskSetResult
+  class UpdateServicePrimaryTaskSetResult
   {
   public:
-    UpdateServicePrimaryTaskSetResult();
-    UpdateServicePrimaryTaskSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServicePrimaryTaskSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateServicePrimaryTaskSetResult();
+    AWS_ECS_API UpdateServicePrimaryTaskSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API UpdateServicePrimaryTaskSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>etails about the task set.</p>
+     * <p>The details about the task set.</p>
      */
     inline const TaskSet& GetTaskSet() const{ return m_taskSet; }
 
     /**
-     * <p>etails about the task set.</p>
+     * <p>The details about the task set.</p>
      */
     inline void SetTaskSet(const TaskSet& value) { m_taskSet = value; }
 
     /**
-     * <p>etails about the task set.</p>
+     * <p>The details about the task set.</p>
      */
     inline void SetTaskSet(TaskSet&& value) { m_taskSet = std::move(value); }
 
     /**
-     * <p>etails about the task set.</p>
+     * <p>The details about the task set.</p>
      */
     inline UpdateServicePrimaryTaskSetResult& WithTaskSet(const TaskSet& value) { SetTaskSet(value); return *this;}
 
     /**
-     * <p>etails about the task set.</p>
+     * <p>The details about the task set.</p>
      */
     inline UpdateServicePrimaryTaskSetResult& WithTaskSet(TaskSet&& value) { SetTaskSet(std::move(value)); return *this;}
 

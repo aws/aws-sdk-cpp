@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/NetworkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API NetworkSettings
+  class NetworkSettings
   {
   public:
-    NetworkSettings();
-    NetworkSettings(Aws::Utils::Json::JsonView jsonValue);
-    NetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API NetworkSettings();
+    AWS_WORKSPACESWEB_API NetworkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API NetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
-    bool m_associatedPortalArnsHasBeenSet;
+    bool m_associatedPortalArnsHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

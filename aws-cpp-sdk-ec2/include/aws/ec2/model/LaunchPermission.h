@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchPermission">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchPermission
+  class LaunchPermission
   {
   public:
-    LaunchPermission();
-    LaunchPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchPermission();
+    AWS_EC2_API LaunchPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     PermissionGroup m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_organizationArn;
-    bool m_organizationArnHasBeenSet;
+    bool m_organizationArnHasBeenSet = false;
 
     Aws::String m_organizationalUnitArn;
-    bool m_organizationalUnitArnHasBeenSet;
+    bool m_organizationalUnitArnHasBeenSet = false;
   };
 
 } // namespace Model

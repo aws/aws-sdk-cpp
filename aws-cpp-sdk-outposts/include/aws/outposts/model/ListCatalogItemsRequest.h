@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API ListCatalogItemsRequest : public OutpostsRequest
+  class ListCatalogItemsRequest : public OutpostsRequest
   {
   public:
-    ListCatalogItemsRequest();
+    AWS_OUTPOSTS_API ListCatalogItemsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListCatalogItems"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -80,223 +80,148 @@ namespace Model
 
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline const Aws::Vector<CatalogItemClass>& GetItemClassFilter() const{ return m_itemClassFilter; }
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline bool ItemClassFilterHasBeenSet() const { return m_itemClassFilterHasBeenSet; }
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline void SetItemClassFilter(const Aws::Vector<CatalogItemClass>& value) { m_itemClassFilterHasBeenSet = true; m_itemClassFilter = value; }
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline void SetItemClassFilter(Aws::Vector<CatalogItemClass>&& value) { m_itemClassFilterHasBeenSet = true; m_itemClassFilter = std::move(value); }
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline ListCatalogItemsRequest& WithItemClassFilter(const Aws::Vector<CatalogItemClass>& value) { SetItemClassFilter(value); return *this;}
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline ListCatalogItemsRequest& WithItemClassFilter(Aws::Vector<CatalogItemClass>&& value) { SetItemClassFilter(std::move(value)); return *this;}
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline ListCatalogItemsRequest& AddItemClassFilter(const CatalogItemClass& value) { m_itemClassFilterHasBeenSet = true; m_itemClassFilter.push_back(value); return *this; }
 
     /**
-     * <p> A filter for the class of items in the catalog. </p> <p>Filter values are
-     * case sensitive. If you specify multiple values for a filter, the values are
-     * joined with an <code>OR</code>, and the request returns all results that match
-     * any of the specified values.</p>
+     * <p>Filters the results by item class.</p>
      */
     inline ListCatalogItemsRequest& AddItemClassFilter(CatalogItemClass&& value) { m_itemClassFilterHasBeenSet = true; m_itemClassFilter.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline const Aws::Vector<SupportedStorageEnum>& GetSupportedStorageFilter() const{ return m_supportedStorageFilter; }
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline bool SupportedStorageFilterHasBeenSet() const { return m_supportedStorageFilterHasBeenSet; }
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline void SetSupportedStorageFilter(const Aws::Vector<SupportedStorageEnum>& value) { m_supportedStorageFilterHasBeenSet = true; m_supportedStorageFilter = value; }
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline void SetSupportedStorageFilter(Aws::Vector<SupportedStorageEnum>&& value) { m_supportedStorageFilterHasBeenSet = true; m_supportedStorageFilter = std::move(value); }
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline ListCatalogItemsRequest& WithSupportedStorageFilter(const Aws::Vector<SupportedStorageEnum>& value) { SetSupportedStorageFilter(value); return *this;}
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline ListCatalogItemsRequest& WithSupportedStorageFilter(Aws::Vector<SupportedStorageEnum>&& value) { SetSupportedStorageFilter(std::move(value)); return *this;}
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline ListCatalogItemsRequest& AddSupportedStorageFilter(const SupportedStorageEnum& value) { m_supportedStorageFilterHasBeenSet = true; m_supportedStorageFilter.push_back(value); return *this; }
 
     /**
-     * <p> A filter for the storage options of items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by storage option.</p>
      */
     inline ListCatalogItemsRequest& AddSupportedStorageFilter(SupportedStorageEnum&& value) { m_supportedStorageFilterHasBeenSet = true; m_supportedStorageFilter.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline const Aws::Vector<Aws::String>& GetEC2FamilyFilter() const{ return m_eC2FamilyFilter; }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline bool EC2FamilyFilterHasBeenSet() const { return m_eC2FamilyFilterHasBeenSet; }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline void SetEC2FamilyFilter(const Aws::Vector<Aws::String>& value) { m_eC2FamilyFilterHasBeenSet = true; m_eC2FamilyFilter = value; }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline void SetEC2FamilyFilter(Aws::Vector<Aws::String>&& value) { m_eC2FamilyFilterHasBeenSet = true; m_eC2FamilyFilter = std::move(value); }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline ListCatalogItemsRequest& WithEC2FamilyFilter(const Aws::Vector<Aws::String>& value) { SetEC2FamilyFilter(value); return *this;}
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline ListCatalogItemsRequest& WithEC2FamilyFilter(Aws::Vector<Aws::String>&& value) { SetEC2FamilyFilter(std::move(value)); return *this;}
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline ListCatalogItemsRequest& AddEC2FamilyFilter(const Aws::String& value) { m_eC2FamilyFilterHasBeenSet = true; m_eC2FamilyFilter.push_back(value); return *this; }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline ListCatalogItemsRequest& AddEC2FamilyFilter(Aws::String&& value) { m_eC2FamilyFilterHasBeenSet = true; m_eC2FamilyFilter.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A filter for EC2 family options for items in the catalog. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by EC2 family (for example, M5).</p>
      */
     inline ListCatalogItemsRequest& AddEC2FamilyFilter(const char* value) { m_eC2FamilyFilterHasBeenSet = true; m_eC2FamilyFilter.push_back(value); return *this; }
 
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<CatalogItemClass> m_itemClassFilter;
-    bool m_itemClassFilterHasBeenSet;
+    bool m_itemClassFilterHasBeenSet = false;
 
     Aws::Vector<SupportedStorageEnum> m_supportedStorageFilter;
-    bool m_supportedStorageFilterHasBeenSet;
+    bool m_supportedStorageFilterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eC2FamilyFilter;
-    bool m_eC2FamilyFilterHasBeenSet;
+    bool m_eC2FamilyFilterHasBeenSet = false;
   };
 
 } // namespace Model

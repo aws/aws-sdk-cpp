@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JsonOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API JsonOptions
+  class JsonOptions
   {
   public:
-    JsonOptions();
-    JsonOptions(Aws::Utils::Json::JsonView jsonValue);
-    JsonOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API JsonOptions();
+    AWS_GLUEDATABREW_API JsonOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API JsonOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_multiLine;
-    bool m_multiLineHasBeenSet;
+    bool m_multiLineHasBeenSet = false;
   };
 
 } // namespace Model

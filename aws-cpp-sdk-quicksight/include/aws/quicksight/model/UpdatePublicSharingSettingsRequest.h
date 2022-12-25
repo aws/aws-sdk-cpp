@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API UpdatePublicSharingSettingsRequest : public QuickSightRequest
+  class UpdatePublicSharingSettingsRequest : public QuickSightRequest
   {
   public:
-    UpdatePublicSharingSettingsRequest();
+    AWS_QUICKSIGHT_API UpdatePublicSharingSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePublicSharingSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -82,36 +82,36 @@ namespace Model
 
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on a Amazon
-     * QuickSight account.</p>
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account.</p>
      */
     inline bool GetPublicSharingEnabled() const{ return m_publicSharingEnabled; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on a Amazon
-     * QuickSight account.</p>
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account.</p>
      */
     inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on a Amazon
-     * QuickSight account.</p>
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account.</p>
      */
     inline void SetPublicSharingEnabled(bool value) { m_publicSharingEnabledHasBeenSet = true; m_publicSharingEnabled = value; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on a Amazon
-     * QuickSight account.</p>
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account.</p>
      */
     inline UpdatePublicSharingSettingsRequest& WithPublicSharingEnabled(bool value) { SetPublicSharingEnabled(value); return *this;}
 
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     bool m_publicSharingEnabled;
-    bool m_publicSharingEnabledHasBeenSet;
+    bool m_publicSharingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

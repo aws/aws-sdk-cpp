@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RequiredActivatedType">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API RequiredActivatedType
+  class RequiredActivatedType
   {
   public:
-    RequiredActivatedType();
-    RequiredActivatedType(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RequiredActivatedType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API RequiredActivatedType();
+    AWS_CLOUDFORMATION_API RequiredActivatedType(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API RequiredActivatedType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -293,16 +293,16 @@ namespace Model
   private:
 
     Aws::String m_typeNameAlias;
-    bool m_typeNameAliasHasBeenSet;
+    bool m_typeNameAliasHasBeenSet = false;
 
     Aws::String m_originalTypeName;
-    bool m_originalTypeNameHasBeenSet;
+    bool m_originalTypeNameHasBeenSet = false;
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
 
     Aws::Vector<int> m_supportedMajorVersions;
-    bool m_supportedMajorVersionsHasBeenSet;
+    bool m_supportedMajorVersionsHasBeenSet = false;
   };
 
 } // namespace Model

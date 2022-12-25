@@ -5,229 +5,85 @@
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
-#include <aws/kinesis/KinesisErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis/model/DescribeLimitsResult.h>
-#include <aws/kinesis/model/DescribeStreamResult.h>
-#include <aws/kinesis/model/DescribeStreamConsumerResult.h>
-#include <aws/kinesis/model/DescribeStreamSummaryResult.h>
-#include <aws/kinesis/model/DisableEnhancedMonitoringResult.h>
-#include <aws/kinesis/model/EnableEnhancedMonitoringResult.h>
-#include <aws/kinesis/model/GetRecordsResult.h>
-#include <aws/kinesis/model/GetShardIteratorResult.h>
-#include <aws/kinesis/model/ListShardsResult.h>
-#include <aws/kinesis/model/ListStreamConsumersResult.h>
-#include <aws/kinesis/model/ListStreamsResult.h>
-#include <aws/kinesis/model/ListTagsForStreamResult.h>
-#include <aws/kinesis/model/PutRecordResult.h>
-#include <aws/kinesis/model/PutRecordsResult.h>
-#include <aws/kinesis/model/RegisterStreamConsumerResult.h>
-#include <aws/kinesis/model/UpdateShardCountResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis/KinesisServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Kinesis
 {
-
-namespace Model
-{
-        class AddTagsToStreamRequest;
-        class CreateStreamRequest;
-        class DecreaseStreamRetentionPeriodRequest;
-        class DeleteStreamRequest;
-        class DeregisterStreamConsumerRequest;
-        class DescribeLimitsRequest;
-        class DescribeStreamRequest;
-        class DescribeStreamConsumerRequest;
-        class DescribeStreamSummaryRequest;
-        class DisableEnhancedMonitoringRequest;
-        class EnableEnhancedMonitoringRequest;
-        class GetRecordsRequest;
-        class GetShardIteratorRequest;
-        class IncreaseStreamRetentionPeriodRequest;
-        class ListShardsRequest;
-        class ListStreamConsumersRequest;
-        class ListStreamsRequest;
-        class ListTagsForStreamRequest;
-        class MergeShardsRequest;
-        class PutRecordRequest;
-        class PutRecordsRequest;
-        class RegisterStreamConsumerRequest;
-        class RemoveTagsFromStreamRequest;
-        class SplitShardRequest;
-        class StartStreamEncryptionRequest;
-        class StopStreamEncryptionRequest;
-        class SubscribeToShardRequest;
-        class UpdateShardCountRequest;
-        class UpdateStreamModeRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> AddTagsToStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DecreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeregisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeLimitsResult, KinesisError> DescribeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisError> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamConsumerResult, KinesisError> DescribeStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamSummaryResult, KinesisError> DescribeStreamSummaryOutcome;
-        typedef Aws::Utils::Outcome<DisableEnhancedMonitoringResult, KinesisError> DisableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<EnableEnhancedMonitoringResult, KinesisError> EnableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, KinesisError> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, KinesisError> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> IncreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<ListShardsResult, KinesisError> ListShardsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamConsumersResult, KinesisError> ListStreamConsumersOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisError> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisError> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> MergeShardsOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, KinesisError> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordsResult, KinesisError> PutRecordsOutcome;
-        typedef Aws::Utils::Outcome<RegisterStreamConsumerResult, KinesisError> RegisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> RemoveTagsFromStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SplitShardOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StartStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
-        typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
-
-        typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
-        typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
-        typedef std::future<DecreaseStreamRetentionPeriodOutcome> DecreaseStreamRetentionPeriodOutcomeCallable;
-        typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
-        typedef std::future<DeregisterStreamConsumerOutcome> DeregisterStreamConsumerOutcomeCallable;
-        typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
-        typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
-        typedef std::future<DescribeStreamConsumerOutcome> DescribeStreamConsumerOutcomeCallable;
-        typedef std::future<DescribeStreamSummaryOutcome> DescribeStreamSummaryOutcomeCallable;
-        typedef std::future<DisableEnhancedMonitoringOutcome> DisableEnhancedMonitoringOutcomeCallable;
-        typedef std::future<EnableEnhancedMonitoringOutcome> EnableEnhancedMonitoringOutcomeCallable;
-        typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;
-        typedef std::future<GetShardIteratorOutcome> GetShardIteratorOutcomeCallable;
-        typedef std::future<IncreaseStreamRetentionPeriodOutcome> IncreaseStreamRetentionPeriodOutcomeCallable;
-        typedef std::future<ListShardsOutcome> ListShardsOutcomeCallable;
-        typedef std::future<ListStreamConsumersOutcome> ListStreamConsumersOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-        typedef std::future<ListTagsForStreamOutcome> ListTagsForStreamOutcomeCallable;
-        typedef std::future<MergeShardsOutcome> MergeShardsOutcomeCallable;
-        typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
-        typedef std::future<PutRecordsOutcome> PutRecordsOutcomeCallable;
-        typedef std::future<RegisterStreamConsumerOutcome> RegisterStreamConsumerOutcomeCallable;
-        typedef std::future<RemoveTagsFromStreamOutcome> RemoveTagsFromStreamOutcomeCallable;
-        typedef std::future<SplitShardOutcome> SplitShardOutcomeCallable;
-        typedef std::future<StartStreamEncryptionOutcome> StartStreamEncryptionOutcomeCallable;
-        typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCallable;
-        typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
-        typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
-        typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
-} // namespace Model
-
-  class KinesisClient;
-
-    typedef std::function<void(const KinesisClient*, const Model::AddTagsToStreamRequest&, const Model::AddTagsToStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DecreaseStreamRetentionPeriodRequest&, const Model::DecreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecreaseStreamRetentionPeriodResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DeregisterStreamConsumerRequest&, const Model::DeregisterStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamConsumerRequest&, const Model::DescribeStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamSummaryRequest&, const Model::DescribeStreamSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamSummaryResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DisableEnhancedMonitoringRequest&, const Model::DisableEnhancedMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEnhancedMonitoringResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::EnableEnhancedMonitoringRequest&, const Model::EnableEnhancedMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEnhancedMonitoringResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::GetRecordsRequest&, const Model::GetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::GetShardIteratorRequest&, const Model::GetShardIteratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShardIteratorResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::IncreaseStreamRetentionPeriodRequest&, const Model::IncreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseStreamRetentionPeriodResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListShardsRequest&, const Model::ListShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListShardsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListStreamConsumersRequest&, const Model::ListStreamConsumersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamConsumersResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListTagsForStreamRequest&, const Model::ListTagsForStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::MergeShardsRequest&, const Model::MergeShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeShardsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::PutRecordsRequest&, const Model::PutRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::RegisterStreamConsumerRequest&, const Model::RegisterStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::RemoveTagsFromStreamRequest&, const Model::RemoveTagsFromStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::SplitShardRequest&, const Model::SplitShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SplitShardResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::StartStreamEncryptionRequest&, const Model::StartStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::StopStreamEncryptionRequest&, const Model::StopStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::SubscribeToShardRequest&, const Model::SubscribeToShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeToShardResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShardCountResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::UpdateStreamModeRequest&, const Model::UpdateStreamModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamModeResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Kinesis Data Streams Service API Reference</fullname> <p>Amazon
    * Kinesis Data Streams is a managed service that scales elastically for real-time
    * processing of streaming big data.</p>
    */
-  class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisClient(const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration(),
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<KinesisEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Kinesis::KinesisClientConfiguration& clientConfiguration = Aws::Kinesis::KinesisClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KinesisClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KinesisClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KinesisClient();
-
 
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. You can assign up
-         * to 50 tags to a data stream.</p> <p>If tags have already been assigned to the
-         * stream, <code>AddTagsToStream</code> overwrites any existing tags that
-         * correspond to the specified tag keys.</p> <p> <a>AddTagsToStream</a> has a limit
-         * of five transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * to 50 tags to a data stream.</p>  <p>When invoking this API, it is
+         * recommended you use the <code>StreamARN</code> input parameter rather than the
+         * <code>StreamName</code> input parameter.</p>  <p>If tags have already
+         * been assigned to the stream, <code>AddTagsToStream</code> overwrites any
+         * existing tags that correspond to the specified tag keys.</p> <p>
+         * <a>AddTagsToStream</a> has a limit of five transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">AWS
          * API Reference</a></p>
          */
@@ -247,8 +103,13 @@ namespace Model
          * <p>Creates a Kinesis data stream. A stream captures and transports data records
          * that are continuously emitted from different data sources or <i>producers</i>.
          * Scale-out within a stream is explicitly supported by means of shards, which are
-         * uniquely identified groups of data records in a stream.</p> <p>You specify and
-         * control the number of shards that a stream is composed of. Each shard can
+         * uniquely identified groups of data records in a stream.</p> <p>You can create
+         * your data stream using either on-demand or provisioned capacity mode. Data
+         * streams with an on-demand mode require no capacity planning and automatically
+         * scale to handle gigabytes of write and read throughput per minute. With the
+         * on-demand mode, Kinesis Data Streams automatically manages the shards in order
+         * to provide the necessary throughput. For the data streams with a provisioned
+         * mode, you must specify the number of shards for the data stream. Each shard can
          * support reads up to five transactions per second, up to a maximum data read
          * total of 2 MiB per second. Each shard can support writes up to 1,000 records per
          * second, up to a maximum data write total of 1 MiB per second. If the amount of
@@ -294,10 +155,12 @@ namespace Model
         /**
          * <p>Decreases the Kinesis data stream's retention period, which is the length of
          * time data records are accessible after they are added to the stream. The minimum
-         * value of a stream's retention period is 24 hours.</p> <p>This operation may
-         * result in lost data. For example, if the stream's retention period is 48 hours
-         * and is decreased to 24 hours, any data already in the stream that is older than
-         * 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
+         * value of a stream's retention period is 24 hours.</p>  <p>When invoking
+         * this API, it is recommended you use the <code>StreamARN</code> input parameter
+         * rather than the <code>StreamName</code> input parameter.</p>  <p>This
+         * operation may result in lost data. For example, if the stream's retention period
+         * is 48 hours and is decreased to 24 hours, any data already in the stream that is
+         * older than 24 hours is inaccessible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">AWS
          * API Reference</a></p>
          */
@@ -317,18 +180,21 @@ namespace Model
          * <p>Deletes a Kinesis data stream and all its shards and data. You must shut down
          * any applications that are operating on the stream before you delete the stream.
          * If an application attempts to operate on a deleted stream, it receives the
-         * exception <code>ResourceNotFoundException</code>.</p> <p>If the stream is in the
-         * <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
-         * request, the specified stream is in the <code>DELETING</code> state until
-         * Kinesis Data Streams completes the deletion.</p> <p> <b>Note:</b> Kinesis Data
-         * Streams might continue to accept data read and write operations, such as
-         * <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in the
-         * <code>DELETING</code> state until the stream deletion is complete.</p> <p>When
-         * you delete a stream, any shards in that stream are also deleted, and any tags
-         * are dissociated from the stream.</p> <p>You can use the
-         * <a>DescribeStreamSummary</a> operation to check the state of the stream, which
-         * is returned in <code>StreamStatus</code>.</p> <p> <a>DeleteStream</a> has a
-         * limit of five transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * exception <code>ResourceNotFoundException</code>.</p>  <p>When invoking
+         * this API, it is recommended you use the <code>StreamARN</code> input parameter
+         * rather than the <code>StreamName</code> input parameter.</p>  <p>If the
+         * stream is in the <code>ACTIVE</code> state, you can delete it. After a
+         * <code>DeleteStream</code> request, the specified stream is in the
+         * <code>DELETING</code> state until Kinesis Data Streams completes the
+         * deletion.</p> <p> <b>Note:</b> Kinesis Data Streams might continue to accept
+         * data read and write operations, such as <a>PutRecord</a>, <a>PutRecords</a>, and
+         * <a>GetRecords</a>, on a stream in the <code>DELETING</code> state until the
+         * stream deletion is complete.</p> <p>When you delete a stream, any shards in that
+         * stream are also deleted, and any tags are dissociated from the stream.</p>
+         * <p>You can use the <a>DescribeStreamSummary</a> operation to check the state of
+         * the stream, which is returned in <code>StreamStatus</code>.</p> <p>
+         * <a>DeleteStream</a> has a limit of five transactions per second per
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">AWS
          * API Reference</a></p>
          */
@@ -394,14 +260,17 @@ namespace Model
          * revised. It's highly recommended that you use the <a>DescribeStreamSummary</a>
          * API to get a summarized description of the specified Kinesis data stream and the
          * <a>ListShards</a> API to list the shards in a specified data stream and obtain
-         * information about each shard. </p>  <p>The information returned includes
-         * the stream name, Amazon Resource Name (ARN), creation time, enhanced metric
-         * configuration, and shard map. The shard map is an array of shard objects. For
-         * each shard object, there is the hash key and sequence number ranges that the
-         * shard spans, and the IDs of any earlier shards that played in a role in creating
-         * the shard. Every record ingested in the stream is identified by a sequence
-         * number, which is assigned when the record is put into the stream.</p> <p>You can
-         * limit the number of shards returned by each call. For more information, see <a
+         * information about each shard. </p>   <p>When invoking this API, it
+         * is recommended you use the <code>StreamARN</code> input parameter rather than
+         * the <code>StreamName</code> input parameter.</p>  <p>The information
+         * returned includes the stream name, Amazon Resource Name (ARN), creation time,
+         * enhanced metric configuration, and shard map. The shard map is an array of shard
+         * objects. For each shard object, there is the hash key and sequence number ranges
+         * that the shard spans, and the IDs of any earlier shards that played in a role in
+         * creating the shard. Every record ingested in the stream is identified by a
+         * sequence number, which is assigned when the record is put into the stream.</p>
+         * <p>You can limit the number of shards returned by each call. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-retrieve-shards.html">Retrieving
          * Shards from a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>There are no guarantees about the chronological order shards
@@ -450,11 +319,13 @@ namespace Model
 
         /**
          * <p>Provides a summarized description of the specified Kinesis data stream
-         * without the shard list.</p> <p>The information returned includes the stream
-         * name, Amazon Resource Name (ARN), status, record retention period, approximate
-         * creation time, monitoring, encryption details, and open shard count. </p> <p>
-         * <a>DescribeStreamSummary</a> has a limit of 20 transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * without the shard list.</p>  <p>When invoking this API, it is recommended
+         * you use the <code>StreamARN</code> input parameter rather than the
+         * <code>StreamName</code> input parameter.</p>  <p>The information returned
+         * includes the stream name, Amazon Resource Name (ARN), status, record retention
+         * period, approximate creation time, monitoring, encryption details, and open
+         * shard count. </p> <p> <a>DescribeStreamSummary</a> has a limit of 20
+         * transactions per second per account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary">AWS
          * API Reference</a></p>
          */
@@ -471,7 +342,9 @@ namespace Model
         virtual void DescribeStreamSummaryAsync(const Model::DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables enhanced monitoring.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables enhanced monitoring.</p>  <p>When invoking this API, it is
+         * recommended you use the <code>StreamARN</code> input parameter rather than the
+         * <code>StreamName</code> input parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">AWS
          * API Reference</a></p>
          */
@@ -488,8 +361,10 @@ namespace Model
         virtual void DisableEnhancedMonitoringAsync(const Model::DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables enhanced Kinesis data stream monitoring for shard-level
-         * metrics.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p>
+         *  <p>When invoking this API, it is recommended you use the
+         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
+         * input parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">AWS
          * API Reference</a></p>
          */
@@ -506,14 +381,16 @@ namespace Model
         virtual void EnableEnhancedMonitoringAsync(const Model::EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets data records from a Kinesis data stream's shard.</p> <p>Specify a shard
-         * iterator using the <code>ShardIterator</code> parameter. The shard iterator
-         * specifies the position in the shard from which you want to start reading data
-         * records sequentially. If there are no records available in the portion of the
-         * shard that the iterator points to, <a>GetRecords</a> returns an empty list. It
-         * might take multiple calls to get to a portion of the shard that contains
-         * records.</p> <p>You can scale by provisioning multiple shards per stream while
-         * considering service limits (for more information, see <a
+         * <p>Gets data records from a Kinesis data stream's shard.</p>  <p>When
+         * invoking this API, it is recommended you use the <code>StreamARN</code> input
+         * parameter in addition to the <code>ShardIterator</code> parameter.</p> 
+         * <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The
+         * shard iterator specifies the position in the shard from which you want to start
+         * reading data records sequentially. If there are no records available in the
+         * portion of the shard that the iterator points to, <a>GetRecords</a> returns an
+         * empty list. It might take multiple calls to get to a portion of the shard that
+         * contains records.</p> <p>You can scale by provisioning multiple shards per
+         * stream while considering service limits (for more information, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
          * Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>). Your application should have one thread per shard, each reading
@@ -578,18 +455,20 @@ namespace Model
 
         /**
          * <p>Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes
-         * after it is returned to the requester.</p> <p>A shard iterator specifies the
-         * shard position from which to start reading data records sequentially. The
-         * position is specified using the sequence number of a data record in a shard. A
-         * sequence number is the identifier associated with every record ingested in the
-         * stream, and is assigned when a record is put into the stream. Each stream has
-         * one or more shards.</p> <p>You must specify the shard iterator type. For
-         * example, you can set the <code>ShardIteratorType</code> parameter to read
-         * exactly from the position denoted by a specific sequence number by using the
-         * <code>AT_SEQUENCE_NUMBER</code> shard iterator type. Alternatively, the
-         * parameter can read right after the sequence number by using the
-         * <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type, using sequence numbers
-         * returned by earlier calls to <a>PutRecord</a>, <a>PutRecords</a>,
+         * after it is returned to the requester.</p>  <p>When invoking this API, it
+         * is recommended you use the <code>StreamARN</code> input parameter rather than
+         * the <code>StreamName</code> input parameter.</p>  <p>A shard iterator
+         * specifies the shard position from which to start reading data records
+         * sequentially. The position is specified using the sequence number of a data
+         * record in a shard. A sequence number is the identifier associated with every
+         * record ingested in the stream, and is assigned when a record is put into the
+         * stream. Each stream has one or more shards.</p> <p>You must specify the shard
+         * iterator type. For example, you can set the <code>ShardIteratorType</code>
+         * parameter to read exactly from the position denoted by a specific sequence
+         * number by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type.
+         * Alternatively, the parameter can read right after the sequence number by using
+         * the <code>AFTER_SEQUENCE_NUMBER</code> shard iterator type, using sequence
+         * numbers returned by earlier calls to <a>PutRecord</a>, <a>PutRecords</a>,
          * <a>GetRecords</a>, or <a>DescribeStream</a>. In the request, you can specify the
          * shard iterator type <code>AT_TIMESTAMP</code> to read records from an arbitrary
          * point in time, <code>TRIM_HORIZON</code> to cause <code>ShardIterator</code> to
@@ -630,14 +509,16 @@ namespace Model
         /**
          * <p>Increases the Kinesis data stream's retention period, which is the length of
          * time data records are accessible after they are added to the stream. The maximum
-         * value of a stream's retention period is 8760 hours (365 days).</p> <p>If you
-         * choose a longer stream retention period, this operation increases the time
-         * period during which records that have not yet expired are accessible. However,
-         * it does not make previous, expired data (older than the stream's previous
-         * retention period) accessible after the operation has been called. For example,
-         * if a stream's retention period is set to 24 hours and is increased to 168 hours,
-         * any data that is older than 24 hours remains inaccessible to consumer
-         * applications.</p><p><h3>See Also:</h3>   <a
+         * value of a stream's retention period is 8760 hours (365 days).</p> 
+         * <p>When invoking this API, it is recommended you use the <code>StreamARN</code>
+         * input parameter rather than the <code>StreamName</code> input parameter.</p>
+         *  <p>If you choose a longer stream retention period, this operation
+         * increases the time period during which records that have not yet expired are
+         * accessible. However, it does not make previous, expired data (older than the
+         * stream's previous retention period) accessible after the operation has been
+         * called. For example, if a stream's retention period is set to 24 hours and is
+         * increased to 168 hours, any data that is older than 24 hours remains
+         * inaccessible to consumer applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">AWS
          * API Reference</a></p>
          */
@@ -656,8 +537,10 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 1000 transactions per second per data stream.</p>
-         * <p>This action does not list expired shards. For information about expired
-         * shards, see <a
+         *  <p>When invoking this API, it is recommended you use the
+         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
+         * input parameter.</p>  <p>This action does not list expired shards. For
+         * information about expired shards, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing">Data
          * Routing, Data Persistence, and Shard State after a Reshard</a>. </p> 
          * <p>This API is a new operation that is used by the Amazon Kinesis Client Library
@@ -733,7 +616,10 @@ namespace Model
 
         /**
          * <p>Lists the tags for the specified Kinesis data stream. This operation has a
-         * limit of five transactions per second per account.</p><p><h3>See Also:</h3>   <a
+         * limit of five transactions per second per account.</p>  <p>When invoking
+         * this API, it is recommended you use the <code>StreamARN</code> input parameter
+         * rather than the <code>StreamName</code> input parameter.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">AWS
          * API Reference</a></p>
          */
@@ -751,17 +637,20 @@ namespace Model
 
         /**
          * <p>Merges two adjacent shards in a Kinesis data stream and combines them into a
-         * single shard to reduce the stream's capacity to ingest and transport data. Two
-         * shards are considered adjacent if the union of the hash key ranges for the two
-         * shards form a contiguous set with no gaps. For example, if you have two shards,
-         * one with a hash key range of 276...381 and the other with a hash key range of
-         * 382...454, then you could merge these two shards into a single shard that would
-         * have a hash key range of 276...454. After the merge, the single child shard
-         * receives data for all hash key values covered by the two parent shards.</p> <p>
-         * <code>MergeShards</code> is called when there is a need to reduce the overall
-         * capacity of a stream because of excess capacity that is not being used. You must
-         * specify the shard to be merged and the adjacent shard for a stream. For more
-         * information about merging shards, see <a
+         * single shard to reduce the stream's capacity to ingest and transport data. This
+         * API is only supported for the data streams with the provisioned capacity mode.
+         * Two shards are considered adjacent if the union of the hash key ranges for the
+         * two shards form a contiguous set with no gaps. For example, if you have two
+         * shards, one with a hash key range of 276...381 and the other with a hash key
+         * range of 382...454, then you could merge these two shards into a single shard
+         * that would have a hash key range of 276...454. After the merge, the single child
+         * shard receives data for all hash key values covered by the two parent
+         * shards.</p>  <p>When invoking this API, it is recommended you use the
+         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
+         * input parameter.</p>  <p> <code>MergeShards</code> is called when there
+         * is a need to reduce the overall capacity of a stream because of excess capacity
+         * that is not being used. You must specify the shard to be merged and the adjacent
+         * shard for a stream. For more information about merging shards, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
          * Two Shards</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>If the stream is in the <code>ACTIVE</code> state, you can call
@@ -804,20 +693,22 @@ namespace Model
          * <code>PutRecord</code> to send data into the stream for real-time ingestion and
          * subsequent processing, one record at a time. Each shard can support writes up to
          * 1,000 records per second, up to a maximum data write total of 1 MiB per
-         * second.</p> <p>You must specify the name of the stream that captures, stores,
-         * and transports the data; a partition key; and the data blob itself.</p> <p>The
-         * data blob can be any type of data; for example, a segment from a log file,
-         * geographic/location data, website clickstream data, and so on.</p> <p>The
-         * partition key is used by Kinesis Data Streams to distribute data across shards.
-         * Kinesis Data Streams segregates the data records that belong to a stream into
-         * multiple shards, using the partition key associated with each data record to
-         * determine the shard to which a given data record belongs.</p> <p>Partition keys
-         * are Unicode strings, with a maximum length limit of 256 characters for each key.
-         * An MD5 hash function is used to map partition keys to 128-bit integer values and
-         * to map associated data records to shards using the hash key ranges of the
-         * shards. You can override hashing the partition key to determine the shard by
-         * explicitly specifying a hash value using the <code>ExplicitHashKey</code>
-         * parameter. For more information, see <a
+         * second.</p>  <p>When invoking this API, it is recommended you use the
+         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
+         * input parameter.</p>  <p>You must specify the name of the stream that
+         * captures, stores, and transports the data; a partition key; and the data blob
+         * itself.</p> <p>The data blob can be any type of data; for example, a segment
+         * from a log file, geographic/location data, website clickstream data, and so
+         * on.</p> <p>The partition key is used by Kinesis Data Streams to distribute data
+         * across shards. Kinesis Data Streams segregates the data records that belong to a
+         * stream into multiple shards, using the partition key associated with each data
+         * record to determine the shard to which a given data record belongs.</p>
+         * <p>Partition keys are Unicode strings, with a maximum length limit of 256
+         * characters for each key. An MD5 hash function is used to map partition keys to
+         * 128-bit integer values and to map associated data records to shards using the
+         * hash key ranges of the shards. You can override hashing the partition key to
+         * determine the shard by explicitly specifying a hash value using the
+         * <code>ExplicitHashKey</code> parameter. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p> <code>PutRecord</code> returns the shard ID of where the data
@@ -856,23 +747,25 @@ namespace Model
         /**
          * <p>Writes multiple data records into a Kinesis data stream in a single call
          * (also referred to as a <code>PutRecords</code> request). Use this operation to
-         * send data into the stream for data ingestion and processing. </p> <p>Each
-         * <code>PutRecords</code> request can support up to 500 records. Each record in
-         * the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire
-         * request, including partition keys. Each shard can support writes up to 1,000
-         * records per second, up to a maximum data write total of 1 MiB per second.</p>
-         * <p>You must specify the name of the stream that captures, stores, and transports
-         * the data; and an array of request <code>Records</code>, with each record in the
-         * array requiring a partition key and data blob. The record size limit applies to
-         * the total size of the partition key and data blob.</p> <p>The data blob can be
-         * any type of data; for example, a segment from a log file, geographic/location
-         * data, website clickstream data, and so on.</p> <p>The partition key is used by
-         * Kinesis Data Streams as input to a hash function that maps the partition key and
-         * associated data to a specific shard. An MD5 hash function is used to map
-         * partition keys to 128-bit integer values and to map associated data records to
-         * shards. As a result of this hashing mechanism, all data records with the same
-         * partition key map to the same shard within the stream. For more information, see
-         * <a
+         * send data into the stream for data ingestion and processing. </p>  <p>When
+         * invoking this API, it is recommended you use the <code>StreamARN</code> input
+         * parameter rather than the <code>StreamName</code> input parameter.</p> 
+         * <p>Each <code>PutRecords</code> request can support up to 500 records. Each
+         * record in the request can be as large as 1 MiB, up to a limit of 5 MiB for the
+         * entire request, including partition keys. Each shard can support writes up to
+         * 1,000 records per second, up to a maximum data write total of 1 MiB per
+         * second.</p> <p>You must specify the name of the stream that captures, stores,
+         * and transports the data; and an array of request <code>Records</code>, with each
+         * record in the array requiring a partition key and data blob. The record size
+         * limit applies to the total size of the partition key and data blob.</p> <p>The
+         * data blob can be any type of data; for example, a segment from a log file,
+         * geographic/location data, website clickstream data, and so on.</p> <p>The
+         * partition key is used by Kinesis Data Streams as input to a hash function that
+         * maps the partition key and associated data to a specific shard. An MD5 hash
+         * function is used to map partition keys to 128-bit integer values and to map
+         * associated data records to shards. As a result of this hashing mechanism, all
+         * data records with the same partition key map to the same shard within the
+         * stream. For more information, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
          * Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer
          * Guide</i>.</p> <p>Each record in the <code>Records</code> array may include an
@@ -960,8 +853,10 @@ namespace Model
 
         /**
          * <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted
-         * and cannot be recovered after this operation successfully completes.</p> <p>If
-         * you specify a tag that does not exist, it is ignored.</p> <p>
+         * and cannot be recovered after this operation successfully completes.</p> 
+         * <p>When invoking this API, it is recommended you use the <code>StreamARN</code>
+         * input parameter rather than the <code>StreamName</code> input parameter.</p>
+         *  <p>If you specify a tag that does not exist, it is ignored.</p> <p>
          * <a>RemoveTagsFromStream</a> has a limit of five transactions per second per
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">AWS
@@ -983,17 +878,21 @@ namespace Model
          * <p>Splits a shard into two new shards in the Kinesis data stream, to increase
          * the stream's capacity to ingest and transport data. <code>SplitShard</code> is
          * called when there is a need to increase the overall capacity of a stream because
-         * of an expected increase in the volume of data records being ingested. </p>
-         * <p>You can also use <code>SplitShard</code> when a shard appears to be
-         * approaching its maximum utilization; for example, the producers sending data
-         * into the specific shard are suddenly sending more than previously anticipated.
-         * You can also call <code>SplitShard</code> to increase stream capacity, so that
-         * more Kinesis Data Streams applications can simultaneously read data from the
-         * stream for real-time processing. </p> <p>You must specify the shard to be split
-         * and the new hash key, which is the position in the shard where the shard gets
-         * split in two. In many cases, the new hash key might be the average of the
-         * beginning and ending hash key, but it can be any hash key value in the range
-         * being mapped into the shard. For more information, see <a
+         * of an expected increase in the volume of data records being ingested. This API
+         * is only supported for the data streams with the provisioned capacity mode.</p>
+         *  <p>When invoking this API, it is recommended you use the
+         * <code>StreamARN</code> input parameter rather than the <code>StreamName</code>
+         * input parameter.</p>  <p>You can also use <code>SplitShard</code> when a
+         * shard appears to be approaching its maximum utilization; for example, the
+         * producers sending data into the specific shard are suddenly sending more than
+         * previously anticipated. You can also call <code>SplitShard</code> to increase
+         * stream capacity, so that more Kinesis Data Streams applications can
+         * simultaneously read data from the stream for real-time processing. </p> <p>You
+         * must specify the shard to be split and the new hash key, which is the position
+         * in the shard where the shard gets split in two. In many cases, the new hash key
+         * might be the average of the beginning and ending hash key, but it can be any
+         * hash key value in the range being mapped into the shard. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-split.html">Split
          * a Shard</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
          * <p>You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to
@@ -1053,7 +952,9 @@ namespace Model
          * <code>ACTIVE</code> status before all records written to the stream are
          * encrypted. After you enable encryption, you can verify that encryption is
          * applied by inspecting the API response from <code>PutRecord</code> or
-         * <code>PutRecords</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>PutRecords</code>.</p>  <p>When invoking this API, it is recommended
+         * you use the <code>StreamARN</code> input parameter rather than the
+         * <code>StreamName</code> input parameter.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption">AWS
          * API Reference</a></p>
          */
@@ -1070,9 +971,11 @@ namespace Model
         virtual void StartStreamEncryptionAsync(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables server-side encryption for a specified stream. </p> <p>Stopping
-         * encryption is an asynchronous operation. Upon receiving the request, Kinesis
-         * Data Streams returns immediately and sets the status of the stream to
+         * <p>Disables server-side encryption for a specified stream. </p>  <p>When
+         * invoking this API, it is recommended you use the <code>StreamARN</code> input
+         * parameter rather than the <code>StreamName</code> input parameter.</p> 
+         * <p>Stopping encryption is an asynchronous operation. Upon receiving the request,
+         * Kinesis Data Streams returns immediately and sets the status of the stream to
          * <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets
          * the status of the stream back to <code>ACTIVE</code>. Stopping encryption
          * normally takes a few seconds to complete, but it can take minutes. You can
@@ -1143,29 +1046,32 @@ namespace Model
 
         /**
          * <p>Updates the shard count of the specified stream to the specified number of
-         * shards.</p> <p>Updating the shard count is an asynchronous operation. Upon
-         * receiving the request, Kinesis Data Streams returns immediately and sets the
-         * status of the stream to <code>UPDATING</code>. After the update is complete,
-         * Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>.
-         * Depending on the size of the stream, the scaling action could take a few minutes
-         * to complete. You can continue to read and write data to your stream while its
-         * status is <code>UPDATING</code>.</p> <p>To update the shard count, Kinesis Data
-         * Streams performs splits or merges on individual shards. This can cause
-         * short-lived shards to be created, in addition to the final shards. These
-         * short-lived shards count towards your total shard limit for your account in the
-         * Region.</p> <p>When using this operation, we recommend that you specify a target
-         * shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any
-         * target value within your shard limit. However, if you specify a target that
-         * isn't a multiple of 25%, the scaling action might take longer to complete. </p>
-         * <p>This operation has the following default limits. By default, you cannot do
-         * the following:</p> <ul> <li> <p>Scale more than ten times per rolling 24-hour
-         * period per stream</p> </li> <li> <p>Scale up to more than double your current
-         * shard count for a stream</p> </li> <li> <p>Scale down below half your current
-         * shard count for a stream</p> </li> <li> <p>Scale up to more than 10000 shards in
-         * a stream</p> </li> <li> <p>Scale a stream with more than 10000 shards down
-         * unless the result is less than 10000 shards</p> </li> <li> <p>Scale up to more
-         * than the shard limit for your account</p> </li> </ul> <p>For the default limits
-         * for an Amazon Web Services account, see <a
+         * shards. This API is only supported for the data streams with the provisioned
+         * capacity mode.</p>  <p>When invoking this API, it is recommended you use
+         * the <code>StreamARN</code> input parameter rather than the
+         * <code>StreamName</code> input parameter.</p>  <p>Updating the shard count
+         * is an asynchronous operation. Upon receiving the request, Kinesis Data Streams
+         * returns immediately and sets the status of the stream to <code>UPDATING</code>.
+         * After the update is complete, Kinesis Data Streams sets the status of the stream
+         * back to <code>ACTIVE</code>. Depending on the size of the stream, the scaling
+         * action could take a few minutes to complete. You can continue to read and write
+         * data to your stream while its status is <code>UPDATING</code>.</p> <p>To update
+         * the shard count, Kinesis Data Streams performs splits or merges on individual
+         * shards. This can cause short-lived shards to be created, in addition to the
+         * final shards. These short-lived shards count towards your total shard limit for
+         * your account in the Region.</p> <p>When using this operation, we recommend that
+         * you specify a target shard count that is a multiple of 25% (25%, 50%, 75%,
+         * 100%). You can specify any target value within your shard limit. However, if you
+         * specify a target that isn't a multiple of 25%, the scaling action might take
+         * longer to complete. </p> <p>This operation has the following default limits. By
+         * default, you cannot do the following:</p> <ul> <li> <p>Scale more than ten times
+         * per rolling 24-hour period per stream</p> </li> <li> <p>Scale up to more than
+         * double your current shard count for a stream</p> </li> <li> <p>Scale down below
+         * half your current shard count for a stream</p> </li> <li> <p>Scale up to more
+         * than 10000 shards in a stream</p> </li> <li> <p>Scale a stream with more than
+         * 10000 shards down unless the result is less than 10000 shards</p> </li> <li>
+         * <p>Scale up to more than the shard limit for your account</p> </li> </ul> <p>For
+         * the default limits for an Amazon Web Services account, see <a
          * href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
          * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request
          * an increase in the call rate limit, the shard limit for this API, or your
@@ -1209,41 +1115,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KinesisEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsToStreamAsyncHelper(const Model::AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamAsyncHelper(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DecreaseStreamRetentionPeriodAsyncHelper(const Model::DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamAsyncHelper(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterStreamConsumerAsyncHelper(const Model::DeregisterStreamConsumerRequest& request, const DeregisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamConsumerAsyncHelper(const Model::DescribeStreamConsumerRequest& request, const DescribeStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamSummaryAsyncHelper(const Model::DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableEnhancedMonitoringAsyncHelper(const Model::DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableEnhancedMonitoringAsyncHelper(const Model::EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecordsAsyncHelper(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetShardIteratorAsyncHelper(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void IncreaseStreamRetentionPeriodAsyncHelper(const Model::IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListShardsAsyncHelper(const Model::ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamConsumersAsyncHelper(const Model::ListStreamConsumersRequest& request, const ListStreamConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForStreamAsyncHelper(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeShardsAsyncHelper(const Model::MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordsAsyncHelper(const Model::PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterStreamConsumerAsyncHelper(const Model::RegisterStreamConsumerRequest& request, const RegisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromStreamAsyncHelper(const Model::RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SplitShardAsyncHelper(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStreamEncryptionAsyncHelper(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStreamEncryptionAsyncHelper(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubscribeToShardAsyncHelper(Model::SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateShardCountAsyncHelper(const Model::UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamModeAsyncHelper(const Model::UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>;
+      void init(const KinesisClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KinesisClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KinesisEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Kinesis

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplateItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ListProfileObjectTypeTemplateItem
+  class ListProfileObjectTypeTemplateItem
   {
   public:
-    ListProfileObjectTypeTemplateItem();
-    ListProfileObjectTypeTemplateItem(Aws::Utils::Json::JsonView jsonValue);
-    ListProfileObjectTypeTemplateItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ListProfileObjectTypeTemplateItem();
+    AWS_CUSTOMERPROFILES_API ListProfileObjectTypeTemplateItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ListProfileObjectTypeTemplateItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_sourceObject;
-    bool m_sourceObjectHasBeenSet;
+    bool m_sourceObjectHasBeenSet = false;
   };
 
 } // namespace Model

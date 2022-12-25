@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FunctionAssociation
+  class FunctionAssociation
   {
   public:
-    FunctionAssociation();
-    FunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionAssociation();
+    AWS_CLOUDFRONT_API FunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_functionARN;
-    bool m_functionARNHasBeenSet;
+    bool m_functionARNHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpTimeout">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TcpTimeout
+  class TcpTimeout
   {
   public:
-    TcpTimeout();
-    TcpTimeout(Aws::Utils::Json::JsonView jsonValue);
-    TcpTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TcpTimeout();
+    AWS_APPMESH_API TcpTimeout(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TcpTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Duration m_idle;
-    bool m_idleHasBeenSet;
+    bool m_idleHasBeenSet = false;
   };
 
 } // namespace Model

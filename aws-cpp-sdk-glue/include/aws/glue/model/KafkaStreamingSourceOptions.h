@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/KafkaStreamingSourceOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API KafkaStreamingSourceOptions
+  class KafkaStreamingSourceOptions
   {
   public:
-    KafkaStreamingSourceOptions();
-    KafkaStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
-    KafkaStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API KafkaStreamingSourceOptions();
+    AWS_GLUE_API KafkaStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API KafkaStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -702,49 +702,49 @@ namespace Model
   private:
 
     Aws::String m_bootstrapServers;
-    bool m_bootstrapServersHasBeenSet;
+    bool m_bootstrapServersHasBeenSet = false;
 
     Aws::String m_securityProtocol;
-    bool m_securityProtocolHasBeenSet;
+    bool m_securityProtocolHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     Aws::String m_assign;
-    bool m_assignHasBeenSet;
+    bool m_assignHasBeenSet = false;
 
     Aws::String m_subscribePattern;
-    bool m_subscribePatternHasBeenSet;
+    bool m_subscribePatternHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     Aws::String m_startingOffsets;
-    bool m_startingOffsetsHasBeenSet;
+    bool m_startingOffsetsHasBeenSet = false;
 
     Aws::String m_endingOffsets;
-    bool m_endingOffsetsHasBeenSet;
+    bool m_endingOffsetsHasBeenSet = false;
 
     long long m_pollTimeoutMs;
-    bool m_pollTimeoutMsHasBeenSet;
+    bool m_pollTimeoutMsHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     long long m_retryIntervalMs;
-    bool m_retryIntervalMsHasBeenSet;
+    bool m_retryIntervalMsHasBeenSet = false;
 
     long long m_maxOffsetsPerTrigger;
-    bool m_maxOffsetsPerTriggerHasBeenSet;
+    bool m_maxOffsetsPerTriggerHasBeenSet = false;
 
     int m_minPartitions;
-    bool m_minPartitionsHasBeenSet;
+    bool m_minPartitionsHasBeenSet = false;
   };
 
 } // namespace Model

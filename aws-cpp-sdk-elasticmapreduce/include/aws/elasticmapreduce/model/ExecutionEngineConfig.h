@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ExecutionEngineConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ExecutionEngineConfig
+  class ExecutionEngineConfig
   {
   public:
-    ExecutionEngineConfig();
-    ExecutionEngineConfig(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionEngineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ExecutionEngineConfig();
+    AWS_EMR_API ExecutionEngineConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ExecutionEngineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ExecutionEngineType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_masterInstanceSecurityGroupId;
-    bool m_masterInstanceSecurityGroupIdHasBeenSet;
+    bool m_masterInstanceSecurityGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

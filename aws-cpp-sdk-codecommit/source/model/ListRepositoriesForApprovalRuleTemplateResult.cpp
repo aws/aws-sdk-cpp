@@ -30,7 +30,7 @@ ListRepositoriesForApprovalRuleTemplateResult& ListRepositoriesForApprovalRuleTe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositoryNames"))
   {
-    Array<JsonView> repositoryNamesJsonList = jsonValue.GetArray("repositoryNames");
+    Aws::Utils::Array<JsonView> repositoryNamesJsonList = jsonValue.GetArray("repositoryNames");
     for(unsigned repositoryNamesIndex = 0; repositoryNamesIndex < repositoryNamesJsonList.GetLength(); ++repositoryNamesIndex)
     {
       m_repositoryNames.push_back(repositoryNamesJsonList[repositoryNamesIndex].AsString());

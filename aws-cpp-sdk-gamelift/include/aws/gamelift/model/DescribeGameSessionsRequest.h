@@ -17,14 +17,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionsInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API DescribeGameSessionsRequest : public GameLiftRequest
+  class DescribeGameSessionsRequest : public GameLiftRequest
   {
   public:
-    DescribeGameSessionsRequest();
+    AWS_GAMELIFT_API DescribeGameSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeGameSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -177,58 +174,58 @@ namespace Model
 
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline DescribeGameSessionsRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline DescribeGameSessionsRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>A fleet location to get game session details for. You can specify a fleet's
-     * home Region or a remote location. Use the Amazon Web Services Region code
-     * format, such as <code>us-west-2</code>. </p>
+     * <p>A fleet location to get game sessions for. You can specify a fleet's home
+     * Region or a remote location. Use the Amazon Web Services Region code format,
+     * such as <code>us-west-2</code>. </p>
      */
     inline DescribeGameSessionsRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
@@ -382,25 +379,25 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_statusFilter;
-    bool m_statusFilterHasBeenSet;
+    bool m_statusFilterHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

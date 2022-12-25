@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbInstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbInstanceDetails
+  class AwsRdsDbInstanceDetails
   {
   public:
-    AwsRdsDbInstanceDetails();
-    AwsRdsDbInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -2405,175 +2405,175 @@ namespace Model
   private:
 
     Aws::Vector<AwsRdsDbInstanceAssociatedRole> m_associatedRoles;
-    bool m_associatedRolesHasBeenSet;
+    bool m_associatedRolesHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     int m_dbInstancePort;
-    bool m_dbInstancePortHasBeenSet;
+    bool m_dbInstancePortHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     AwsRdsDbInstanceEndpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::String m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbInstanceVpcSecurityGroup> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     bool m_multiAz;
-    bool m_multiAzHasBeenSet;
+    bool m_multiAzHasBeenSet = false;
 
     Aws::String m_enhancedMonitoringResourceArn;
-    bool m_enhancedMonitoringResourceArnHasBeenSet;
+    bool m_enhancedMonitoringResourceArnHasBeenSet = false;
 
     Aws::String m_dbInstanceStatus;
-    bool m_dbInstanceStatusHasBeenSet;
+    bool m_dbInstanceStatusHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dbSecurityGroups;
-    bool m_dbSecurityGroupsHasBeenSet;
+    bool m_dbSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbParameterGroup> m_dbParameterGroups;
-    bool m_dbParameterGroupsHasBeenSet;
+    bool m_dbParameterGroupsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     AwsRdsDbSubnetGroup m_dbSubnetGroup;
-    bool m_dbSubnetGroupHasBeenSet;
+    bool m_dbSubnetGroupHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     AwsRdsDbPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::String m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_readReplicaSourceDBInstanceIdentifier;
-    bool m_readReplicaSourceDBInstanceIdentifierHasBeenSet;
+    bool m_readReplicaSourceDBInstanceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaDBInstanceIdentifiers;
-    bool m_readReplicaDBInstanceIdentifiersHasBeenSet;
+    bool m_readReplicaDBInstanceIdentifiersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaDBClusterIdentifiers;
-    bool m_readReplicaDBClusterIdentifiersHasBeenSet;
+    bool m_readReplicaDBClusterIdentifiersHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbOptionGroupMembership> m_optionGroupMemberships;
-    bool m_optionGroupMembershipsHasBeenSet;
+    bool m_optionGroupMembershipsHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_secondaryAvailabilityZone;
-    bool m_secondaryAvailabilityZoneHasBeenSet;
+    bool m_secondaryAvailabilityZoneHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbStatusInfo> m_statusInfos;
-    bool m_statusInfosHasBeenSet;
+    bool m_statusInfosHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbDomainMembership> m_domainMemberships;
-    bool m_domainMembershipsHasBeenSet;
+    bool m_domainMembershipsHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     bool m_performanceInsightsEnabled;
-    bool m_performanceInsightsEnabledHasBeenSet;
+    bool m_performanceInsightsEnabledHasBeenSet = false;
 
     Aws::String m_performanceInsightsKmsKeyId;
-    bool m_performanceInsightsKmsKeyIdHasBeenSet;
+    bool m_performanceInsightsKmsKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudWatchLogsExports;
-    bool m_enabledCloudWatchLogsExportsHasBeenSet;
+    bool m_enabledCloudWatchLogsExportsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     AwsRdsDbInstanceEndpoint m_listenerEndpoint;
-    bool m_listenerEndpointHasBeenSet;
+    bool m_listenerEndpointHasBeenSet = false;
 
     int m_maxAllocatedStorage;
-    bool m_maxAllocatedStorageHasBeenSet;
+    bool m_maxAllocatedStorageHasBeenSet = false;
   };
 
 } // namespace Model

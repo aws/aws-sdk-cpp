@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API GetRouteAnalysisRequest : public NetworkManagerRequest
+  class GetRouteAnalysisRequest : public NetworkManagerRequest
   {
   public:
-    GetRouteAnalysisRequest();
+    AWS_NETWORKMANAGER_API GetRouteAnalysisRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetRouteAnalysis"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_routeAnalysisId;
-    bool m_routeAnalysisIdHasBeenSet;
+    bool m_routeAnalysisIdHasBeenSet = false;
   };
 
 } // namespace Model

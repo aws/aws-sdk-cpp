@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ScriptBatchJobIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobIdentifier
+  class ScriptBatchJobIdentifier
   {
   public:
-    ScriptBatchJobIdentifier();
-    ScriptBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ScriptBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_scriptName;
-    bool m_scriptNameHasBeenSet;
+    bool m_scriptNameHasBeenSet = false;
   };
 
 } // namespace Model

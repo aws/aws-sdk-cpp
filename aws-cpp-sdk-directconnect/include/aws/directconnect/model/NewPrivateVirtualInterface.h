@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API NewPrivateVirtualInterface
+  class NewPrivateVirtualInterface
   {
   public:
-    NewPrivateVirtualInterface();
-    NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
-    NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface();
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -476,40 +476,40 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceName;
-    bool m_virtualInterfaceNameHasBeenSet;
+    bool m_virtualInterfaceNameHasBeenSet = false;
 
     int m_vlan;
-    bool m_vlanHasBeenSet;
+    bool m_vlanHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableSiteLink;
-    bool m_enableSiteLinkHasBeenSet;
+    bool m_enableSiteLinkHasBeenSet = false;
   };
 
 } // namespace Model

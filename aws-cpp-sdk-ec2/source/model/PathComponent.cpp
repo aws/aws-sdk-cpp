@@ -36,7 +36,9 @@ PathComponent::PathComponent() :
     m_vpcHasBeenSet(false),
     m_additionalDetailsHasBeenSet(false),
     m_transitGatewayHasBeenSet(false),
-    m_transitGatewayRouteTableRouteHasBeenSet(false)
+    m_transitGatewayRouteTableRouteHasBeenSet(false),
+    m_explanationsHasBeenSet(false),
+    m_elasticLoadBalancerListenerHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ PathComponent::PathComponent(const XmlNode& xmlNode) :
     m_vpcHasBeenSet(false),
     m_additionalDetailsHasBeenSet(false),
     m_transitGatewayHasBeenSet(false),
-    m_transitGatewayRouteTableRouteHasBeenSet(false)
+    m_transitGatewayRouteTableRouteHasBeenSet(false),
+    m_explanationsHasBeenSet(false),
+    m_elasticLoadBalancerListenerHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -162,6 +166,24 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
     {
       m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
       m_transitGatewayRouteTableRouteHasBeenSet = true;
+    }
+    XmlNode explanationsNode = resultNode.FirstChild("explanationSet");
+    if(!explanationsNode.IsNull())
+    {
+      XmlNode explanationsMember = explanationsNode.FirstChild("item");
+      while(!explanationsMember.IsNull())
+      {
+        m_explanations.push_back(explanationsMember);
+        explanationsMember = explanationsMember.NextNode("item");
+      }
+
+      m_explanationsHasBeenSet = true;
+    }
+    XmlNode elasticLoadBalancerListenerNode = resultNode.FirstChild("elasticLoadBalancerListener");
+    if(!elasticLoadBalancerListenerNode.IsNull())
+    {
+      m_elasticLoadBalancerListener = elasticLoadBalancerListenerNode;
+      m_elasticLoadBalancerListenerHasBeenSet = true;
     }
   }
 
@@ -277,6 +299,24 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
       m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMemberSs.str().c_str());
   }
 
+  if(m_explanationsHasBeenSet)
+  {
+      unsigned explanationsIdx = 1;
+      for(auto& item : m_explanations)
+      {
+        Aws::StringStream explanationsSs;
+        explanationsSs << location << index << locationValue << ".ExplanationSet." << explanationsIdx++;
+        item.OutputToStream(oStream, explanationsSs.str().c_str());
+      }
+  }
+
+  if(m_elasticLoadBalancerListenerHasBeenSet)
+  {
+      Aws::StringStream elasticLoadBalancerListenerLocationAndMemberSs;
+      elasticLoadBalancerListenerLocationAndMemberSs << location << index << locationValue << ".ElasticLoadBalancerListener";
+      m_elasticLoadBalancerListener.OutputToStream(oStream, elasticLoadBalancerListenerLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -372,6 +412,22 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String transitGatewayRouteTableRouteLocationAndMember(location);
       transitGatewayRouteTableRouteLocationAndMember += ".TransitGatewayRouteTableRoute";
       m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMember.c_str());
+  }
+  if(m_explanationsHasBeenSet)
+  {
+      unsigned explanationsIdx = 1;
+      for(auto& item : m_explanations)
+      {
+        Aws::StringStream explanationsSs;
+        explanationsSs << location <<  ".ExplanationSet." << explanationsIdx++;
+        item.OutputToStream(oStream, explanationsSs.str().c_str());
+      }
+  }
+  if(m_elasticLoadBalancerListenerHasBeenSet)
+  {
+      Aws::String elasticLoadBalancerListenerLocationAndMember(location);
+      elasticLoadBalancerListenerLocationAndMember += ".ElasticLoadBalancerListener";
+      m_elasticLoadBalancerListener.OutputToStream(oStream, elasticLoadBalancerListenerLocationAndMember.c_str());
   }
 }
 

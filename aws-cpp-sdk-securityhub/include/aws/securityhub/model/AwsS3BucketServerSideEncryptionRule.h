@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketServerSideEncryptionRule">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule
+  class AwsS3BucketServerSideEncryptionRule
   {
   public:
-    AwsS3BucketServerSideEncryptionRule();
-    AwsS3BucketServerSideEncryptionRule(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketServerSideEncryptionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule();
+    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketServerSideEncryptionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     AwsS3BucketServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
-    bool m_applyServerSideEncryptionByDefaultHasBeenSet;
+    bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
   };
 
 } // namespace Model

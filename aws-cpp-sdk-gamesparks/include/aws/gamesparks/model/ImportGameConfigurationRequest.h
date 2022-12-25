@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMESPARKS_API ImportGameConfigurationRequest : public GameSparksRequest
+  class ImportGameConfigurationRequest : public GameSparksRequest
   {
   public:
-    ImportGameConfigurationRequest();
+    AWS_GAMESPARKS_API ImportGameConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportGameConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMESPARKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
 
     ImportGameConfigurationSource m_importSource;
-    bool m_importSourceHasBeenSet;
+    bool m_importSourceHasBeenSet = false;
   };
 
 } // namespace Model

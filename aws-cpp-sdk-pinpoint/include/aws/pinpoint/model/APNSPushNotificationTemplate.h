@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSPushNotificationTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSPushNotificationTemplate
+  class APNSPushNotificationTemplate
   {
   public:
-    APNSPushNotificationTemplate();
-    APNSPushNotificationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    APNSPushNotificationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSPushNotificationTemplate();
+    AWS_PINPOINT_API APNSPushNotificationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSPushNotificationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -457,25 +457,25 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_mediaUrl;
-    bool m_mediaUrlHasBeenSet;
+    bool m_mediaUrlHasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     Aws::String m_sound;
-    bool m_soundHasBeenSet;
+    bool m_soundHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

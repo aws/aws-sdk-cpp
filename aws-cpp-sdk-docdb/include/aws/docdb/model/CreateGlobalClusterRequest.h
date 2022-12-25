@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API CreateGlobalClusterRequest : public DocDBRequest
+  class CreateGlobalClusterRequest : public DocDBRequest
   {
   public:
-    CreateGlobalClusterRequest();
+    AWS_DOCDB_API CreateGlobalClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGlobalCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DOCDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -317,25 +317,25 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_sourceDBClusterIdentifier;
-    bool m_sourceDBClusterIdentifierHasBeenSet;
+    bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
   };
 
 } // namespace Model

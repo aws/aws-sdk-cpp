@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeployedImage">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeployedImage
+  class DeployedImage
   {
   public:
-    DeployedImage();
-    DeployedImage(Aws::Utils::Json::JsonView jsonValue);
-    DeployedImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeployedImage();
+    AWS_SAGEMAKER_API DeployedImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeployedImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_specifiedImage;
-    bool m_specifiedImageHasBeenSet;
+    bool m_specifiedImageHasBeenSet = false;
 
     Aws::String m_resolvedImage;
-    bool m_resolvedImageHasBeenSet;
+    bool m_resolvedImageHasBeenSet = false;
 
     Aws::Utils::DateTime m_resolutionTime;
-    bool m_resolutionTimeHasBeenSet;
+    bool m_resolutionTimeHasBeenSet = false;
   };
 
 } // namespace Model

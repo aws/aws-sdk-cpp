@@ -49,7 +49,8 @@ KeyMetadata::KeyMetadata() :
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
     m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false)
+    m_macAlgorithmsHasBeenSet(false),
+    m_xksKeyConfigurationHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_multiRegionConfigurationHasBeenSet(false),
     m_pendingDeletionWindowInDays(0),
     m_pendingDeletionWindowInDaysHasBeenSet(false),
-    m_macAlgorithmsHasBeenSet(false)
+    m_macAlgorithmsHasBeenSet(false),
+    m_xksKeyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -205,7 +207,7 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EncryptionAlgorithms"))
   {
-    Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
+    Aws::Utils::Array<JsonView> encryptionAlgorithmsJsonList = jsonValue.GetArray("EncryptionAlgorithms");
     for(unsigned encryptionAlgorithmsIndex = 0; encryptionAlgorithmsIndex < encryptionAlgorithmsJsonList.GetLength(); ++encryptionAlgorithmsIndex)
     {
       m_encryptionAlgorithms.push_back(EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(encryptionAlgorithmsJsonList[encryptionAlgorithmsIndex].AsString()));
@@ -215,7 +217,7 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SigningAlgorithms"))
   {
-    Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
+    Aws::Utils::Array<JsonView> signingAlgorithmsJsonList = jsonValue.GetArray("SigningAlgorithms");
     for(unsigned signingAlgorithmsIndex = 0; signingAlgorithmsIndex < signingAlgorithmsJsonList.GetLength(); ++signingAlgorithmsIndex)
     {
       m_signingAlgorithms.push_back(SigningAlgorithmSpecMapper::GetSigningAlgorithmSpecForName(signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString()));
@@ -246,12 +248,19 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MacAlgorithms"))
   {
-    Array<JsonView> macAlgorithmsJsonList = jsonValue.GetArray("MacAlgorithms");
+    Aws::Utils::Array<JsonView> macAlgorithmsJsonList = jsonValue.GetArray("MacAlgorithms");
     for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
     {
       m_macAlgorithms.push_back(MacAlgorithmSpecMapper::GetMacAlgorithmSpecForName(macAlgorithmsJsonList[macAlgorithmsIndex].AsString()));
     }
     m_macAlgorithmsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("XksKeyConfiguration"))
+  {
+    m_xksKeyConfiguration = jsonValue.GetObject("XksKeyConfiguration");
+
+    m_xksKeyConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -350,7 +359,7 @@ JsonValue KeyMetadata::Jsonize() const
 
   if(m_encryptionAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> encryptionAlgorithmsJsonList(m_encryptionAlgorithms.size());
+   Aws::Utils::Array<JsonValue> encryptionAlgorithmsJsonList(m_encryptionAlgorithms.size());
    for(unsigned encryptionAlgorithmsIndex = 0; encryptionAlgorithmsIndex < encryptionAlgorithmsJsonList.GetLength(); ++encryptionAlgorithmsIndex)
    {
      encryptionAlgorithmsJsonList[encryptionAlgorithmsIndex].AsString(EncryptionAlgorithmSpecMapper::GetNameForEncryptionAlgorithmSpec(m_encryptionAlgorithms[encryptionAlgorithmsIndex]));
@@ -361,7 +370,7 @@ JsonValue KeyMetadata::Jsonize() const
 
   if(m_signingAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> signingAlgorithmsJsonList(m_signingAlgorithms.size());
+   Aws::Utils::Array<JsonValue> signingAlgorithmsJsonList(m_signingAlgorithms.size());
    for(unsigned signingAlgorithmsIndex = 0; signingAlgorithmsIndex < signingAlgorithmsJsonList.GetLength(); ++signingAlgorithmsIndex)
    {
      signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString(SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithms[signingAlgorithmsIndex]));
@@ -390,12 +399,18 @@ JsonValue KeyMetadata::Jsonize() const
 
   if(m_macAlgorithmsHasBeenSet)
   {
-   Array<JsonValue> macAlgorithmsJsonList(m_macAlgorithms.size());
+   Aws::Utils::Array<JsonValue> macAlgorithmsJsonList(m_macAlgorithms.size());
    for(unsigned macAlgorithmsIndex = 0; macAlgorithmsIndex < macAlgorithmsJsonList.GetLength(); ++macAlgorithmsIndex)
    {
      macAlgorithmsJsonList[macAlgorithmsIndex].AsString(MacAlgorithmSpecMapper::GetNameForMacAlgorithmSpec(m_macAlgorithms[macAlgorithmsIndex]));
    }
    payload.WithArray("MacAlgorithms", std::move(macAlgorithmsJsonList));
+
+  }
+
+  if(m_xksKeyConfigurationHasBeenSet)
+  {
+   payload.WithObject("XksKeyConfiguration", m_xksKeyConfiguration.Jsonize());
 
   }
 

@@ -20,6 +20,7 @@ CreateResponsePlanRequest::CreateResponsePlanRequest() :
     m_displayNameHasBeenSet(false),
     m_engagementsHasBeenSet(false),
     m_incidentTemplateHasBeenSet(false),
+    m_integrationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -31,7 +32,7 @@ Aws::String CreateResponsePlanRequest::SerializePayload() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
@@ -60,7 +61,7 @@ Aws::String CreateResponsePlanRequest::SerializePayload() const
 
   if(m_engagementsHasBeenSet)
   {
-   Array<JsonValue> engagementsJsonList(m_engagements.size());
+   Aws::Utils::Array<JsonValue> engagementsJsonList(m_engagements.size());
    for(unsigned engagementsIndex = 0; engagementsIndex < engagementsJsonList.GetLength(); ++engagementsIndex)
    {
      engagementsJsonList[engagementsIndex].AsString(m_engagements[engagementsIndex]);
@@ -72,6 +73,17 @@ Aws::String CreateResponsePlanRequest::SerializePayload() const
   if(m_incidentTemplateHasBeenSet)
   {
    payload.WithObject("incidentTemplate", m_incidentTemplate.Jsonize());
+
+  }
+
+  if(m_integrationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> integrationsJsonList(m_integrations.size());
+   for(unsigned integrationsIndex = 0; integrationsIndex < integrationsJsonList.GetLength(); ++integrationsIndex)
+   {
+     integrationsJsonList[integrationsIndex].AsObject(m_integrations[integrationsIndex].Jsonize());
+   }
+   payload.WithArray("integrations", std::move(integrationsJsonList));
 
   }
 

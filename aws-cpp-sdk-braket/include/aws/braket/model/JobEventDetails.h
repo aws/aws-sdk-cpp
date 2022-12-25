@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API JobEventDetails
+  class JobEventDetails
   {
   public:
-    JobEventDetails();
-    JobEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API JobEventDetails();
+    AWS_BRAKET_API JobEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API JobEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     JobEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeOfEvent;
-    bool m_timeOfEventHasBeenSet;
+    bool m_timeOfEventHasBeenSet = false;
   };
 
 } // namespace Model

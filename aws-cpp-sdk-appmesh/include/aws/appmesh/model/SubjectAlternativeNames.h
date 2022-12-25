@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/SubjectAlternativeNames">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API SubjectAlternativeNames
+  class SubjectAlternativeNames
   {
   public:
-    SubjectAlternativeNames();
-    SubjectAlternativeNames(Aws::Utils::Json::JsonView jsonValue);
-    SubjectAlternativeNames& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API SubjectAlternativeNames();
+    AWS_APPMESH_API SubjectAlternativeNames(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API SubjectAlternativeNames& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SubjectAlternativeNameMatchers m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

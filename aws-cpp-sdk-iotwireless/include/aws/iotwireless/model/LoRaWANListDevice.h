@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANListDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANListDevice
+  class LoRaWANListDevice
   {
   public:
-    LoRaWANListDevice();
-    LoRaWANListDevice(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANListDevice();
+    AWS_IOTWIRELESS_API LoRaWANListDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_devEui;
-    bool m_devEuiHasBeenSet;
+    bool m_devEuiHasBeenSet = false;
   };
 
 } // namespace Model

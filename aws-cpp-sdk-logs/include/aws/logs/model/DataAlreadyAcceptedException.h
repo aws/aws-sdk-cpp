@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DataAlreadyAcceptedException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException
+  class DataAlreadyAcceptedException
   {
   public:
-    DataAlreadyAcceptedException();
-    DataAlreadyAcceptedException(Aws::Utils::Json::JsonView jsonValue);
-    DataAlreadyAcceptedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException();
+    AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -64,7 +64,7 @@ namespace Model
   private:
 
     Aws::String m_expectedSequenceToken;
-    bool m_expectedSequenceTokenHasBeenSet;
+    bool m_expectedSequenceTokenHasBeenSet = false;
   };
 
 } // namespace Model

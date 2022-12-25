@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceErrorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSourceErrorInfo
+  class DataSourceErrorInfo
   {
   public:
-    DataSourceErrorInfo();
-    DataSourceErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSourceErrorInfo();
+    AWS_QUICKSIGHT_API DataSourceErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSourceErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     DataSourceErrorInfoType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

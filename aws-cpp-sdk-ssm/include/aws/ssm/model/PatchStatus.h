@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchStatus
+  class PatchStatus
   {
   public:
-    PatchStatus();
-    PatchStatus(Aws::Utils::Json::JsonView jsonValue);
-    PatchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchStatus();
+    AWS_SSM_API PatchStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,13 +140,13 @@ namespace Model
   private:
 
     PatchDeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     PatchComplianceLevel m_complianceLevel;
-    bool m_complianceLevelHasBeenSet;
+    bool m_complianceLevelHasBeenSet = false;
 
     Aws::Utils::DateTime m_approvalDate;
-    bool m_approvalDateHasBeenSet;
+    bool m_approvalDateHasBeenSet = false;
   };
 
 } // namespace Model

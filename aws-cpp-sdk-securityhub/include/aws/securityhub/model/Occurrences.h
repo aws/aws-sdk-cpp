@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Occurrences">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Occurrences
+  class Occurrences
   {
   public:
-    Occurrences();
-    Occurrences(Aws::Utils::Json::JsonView jsonValue);
-    Occurrences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Occurrences();
+    AWS_SECURITYHUB_API Occurrences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Occurrences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::Vector<Range> m_lineRanges;
-    bool m_lineRangesHasBeenSet;
+    bool m_lineRangesHasBeenSet = false;
 
     Aws::Vector<Range> m_offsetRanges;
-    bool m_offsetRangesHasBeenSet;
+    bool m_offsetRangesHasBeenSet = false;
 
     Aws::Vector<Page> m_pages;
-    bool m_pagesHasBeenSet;
+    bool m_pagesHasBeenSet = false;
 
     Aws::Vector<Record> m_records;
-    bool m_recordsHasBeenSet;
+    bool m_recordsHasBeenSet = false;
 
     Aws::Vector<Cell> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
   };
 
 } // namespace Model

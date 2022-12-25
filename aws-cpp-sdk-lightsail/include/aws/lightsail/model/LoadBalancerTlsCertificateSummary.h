@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificateSummary
+  class LoadBalancerTlsCertificateSummary
   {
   public:
-    LoadBalancerTlsCertificateSummary();
-    LoadBalancerTlsCertificateSummary(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateSummary();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_isAttached;
-    bool m_isAttachedHasBeenSet;
+    bool m_isAttachedHasBeenSet = false;
   };
 
 } // namespace Model

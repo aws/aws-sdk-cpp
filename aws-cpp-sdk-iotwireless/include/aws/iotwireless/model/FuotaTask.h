@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/FuotaTask">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API FuotaTask
+  class FuotaTask
   {
   public:
-    FuotaTask();
-    FuotaTask(Aws::Utils::Json::JsonView jsonValue);
-    FuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API FuotaTask();
+    AWS_IOTWIRELESS_API FuotaTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API FuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -114,13 +114,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

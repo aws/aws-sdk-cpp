@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerEngineType">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerEngineType
+  class BrokerEngineType
   {
   public:
-    BrokerEngineType();
-    BrokerEngineType(Aws::Utils::Json::JsonView jsonValue);
-    BrokerEngineType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerEngineType();
+    AWS_MQ_API BrokerEngineType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerEngineType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::Vector<EngineVersion> m_engineVersions;
-    bool m_engineVersionsHasBeenSet;
+    bool m_engineVersionsHasBeenSet = false;
   };
 
 } // namespace Model

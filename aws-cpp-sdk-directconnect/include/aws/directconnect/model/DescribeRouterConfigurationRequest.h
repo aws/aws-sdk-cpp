@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API DescribeRouterConfigurationRequest : public DirectConnectRequest
+  class DescribeRouterConfigurationRequest : public DirectConnectRequest
   {
   public:
-    DescribeRouterConfigurationRequest();
+    AWS_DIRECTCONNECT_API DescribeRouterConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeRouterConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::String m_routerTypeIdentifier;
-    bool m_routerTypeIdentifierHasBeenSet;
+    bool m_routerTypeIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

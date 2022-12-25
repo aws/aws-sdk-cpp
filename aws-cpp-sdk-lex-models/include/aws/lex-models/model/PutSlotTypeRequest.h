@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API PutSlotTypeRequest : public LexModelBuildingServiceRequest
+  class PutSlotTypeRequest : public LexModelBuildingServiceRequest
   {
   public:
-    PutSlotTypeRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutSlotTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSlotType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -604,28 +604,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EnumerationValue> m_enumerationValues;
-    bool m_enumerationValuesHasBeenSet;
+    bool m_enumerationValuesHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     SlotValueSelectionStrategy m_valueSelectionStrategy;
-    bool m_valueSelectionStrategyHasBeenSet;
+    bool m_valueSelectionStrategyHasBeenSet = false;
 
     bool m_createVersion;
-    bool m_createVersionHasBeenSet;
+    bool m_createVersionHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
-    bool m_slotTypeConfigurationsHasBeenSet;
+    bool m_slotTypeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

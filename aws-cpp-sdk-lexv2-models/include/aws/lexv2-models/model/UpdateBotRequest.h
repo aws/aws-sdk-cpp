@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API UpdateBotRequest : public LexModelsV2Request
+  class UpdateBotRequest : public LexModelsV2Request
   {
   public:
-    UpdateBotRequest();
+    AWS_LEXMODELSV2_API UpdateBotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -313,22 +313,22 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DataPrivacy m_dataPrivacy;
-    bool m_dataPrivacyHasBeenSet;
+    bool m_dataPrivacyHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
-    bool m_idleSessionTTLInSecondsHasBeenSet;
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

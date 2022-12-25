@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagScopeTerm">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API TagScopeTerm
+  class TagScopeTerm
   {
   public:
-    TagScopeTerm();
-    TagScopeTerm(Aws::Utils::Json::JsonView jsonValue);
-    TagScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API TagScopeTerm();
+    AWS_MACIE2_API TagScopeTerm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API TagScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,16 +210,16 @@ namespace Model
   private:
 
     JobComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<TagValuePair> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
 
     TagTarget m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

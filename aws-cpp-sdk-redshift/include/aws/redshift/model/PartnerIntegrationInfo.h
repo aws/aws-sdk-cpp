@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PartnerIntegrationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API PartnerIntegrationInfo
+  class PartnerIntegrationInfo
   {
   public:
-    PartnerIntegrationInfo();
-    PartnerIntegrationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PartnerIntegrationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API PartnerIntegrationInfo();
+    AWS_REDSHIFT_API PartnerIntegrationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API PartnerIntegrationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -265,22 +265,22 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_partnerName;
-    bool m_partnerNameHasBeenSet;
+    bool m_partnerNameHasBeenSet = false;
 
     PartnerIntegrationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType
+  class AdminCreateUserConfigType
   {
   public:
-    AdminCreateUserConfigType();
-    AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
-    AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     bool m_allowAdminCreateUserOnly;
-    bool m_allowAdminCreateUserOnlyHasBeenSet;
+    bool m_allowAdminCreateUserOnlyHasBeenSet = false;
 
     int m_unusedAccountValidityDays;
-    bool m_unusedAccountValidityDaysHasBeenSet;
+    bool m_unusedAccountValidityDaysHasBeenSet = false;
 
     MessageTemplateType m_inviteMessageTemplate;
-    bool m_inviteMessageTemplateHasBeenSet;
+    bool m_inviteMessageTemplateHasBeenSet = false;
   };
 
 } // namespace Model

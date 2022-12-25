@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API DisassociateQueueQuickConnectsRequest : public ConnectRequest
+  class DisassociateQueueQuickConnectsRequest : public ConnectRequest
   {
   public:
-    DisassociateQueueQuickConnectsRequest();
+    AWS_CONNECT_API DisassociateQueueQuickConnectsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateQueueQuickConnects"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_quickConnectIds;
-    bool m_quickConnectIdsHasBeenSet;
+    bool m_quickConnectIdsHasBeenSet = false;
   };
 
 } // namespace Model

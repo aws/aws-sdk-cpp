@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeHostReservationsRequest : public EC2Request
+  class DescribeHostReservationsRequest : public EC2Request
   {
   public:
-    DescribeHostReservationsRequest();
+    AWS_EC2_API DescribeHostReservationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeHostReservations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -309,16 +309,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostReservationIdSet;
-    bool m_hostReservationIdSetHasBeenSet;
+    bool m_hostReservationIdSetHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

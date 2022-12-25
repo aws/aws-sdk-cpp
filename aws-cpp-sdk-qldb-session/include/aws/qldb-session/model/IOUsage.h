@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/IOUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API IOUsage
+  class IOUsage
   {
   public:
-    IOUsage();
-    IOUsage(Aws::Utils::Json::JsonView jsonValue);
-    IOUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API IOUsage();
+    AWS_QLDBSESSION_API IOUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API IOUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     long long m_readIOs;
-    bool m_readIOsHasBeenSet;
+    bool m_readIOsHasBeenSet = false;
 
     long long m_writeIOs;
-    bool m_writeIOsHasBeenSet;
+    bool m_writeIOsHasBeenSet = false;
   };
 
 } // namespace Model

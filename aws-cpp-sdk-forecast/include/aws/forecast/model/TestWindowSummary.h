@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TestWindowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TestWindowSummary
+  class TestWindowSummary
   {
   public:
-    TestWindowSummary();
-    TestWindowSummary(Aws::Utils::Json::JsonView jsonValue);
-    TestWindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TestWindowSummary();
+    AWS_FORECASTSERVICE_API TestWindowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TestWindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_testWindowStart;
-    bool m_testWindowStartHasBeenSet;
+    bool m_testWindowStartHasBeenSet = false;
 
     Aws::Utils::DateTime m_testWindowEnd;
-    bool m_testWindowEndHasBeenSet;
+    bool m_testWindowEndHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CategoricalParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CategoricalParameter
+  class CategoricalParameter
   {
   public:
-    CategoricalParameter();
-    CategoricalParameter(Aws::Utils::Json::JsonView jsonValue);
-    CategoricalParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CategoricalParameter();
+    AWS_SAGEMAKER_API CategoricalParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CategoricalParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

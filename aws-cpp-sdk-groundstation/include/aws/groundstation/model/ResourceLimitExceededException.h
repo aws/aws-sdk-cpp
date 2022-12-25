@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ResourceLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ResourceLimitExceededException
+  class ResourceLimitExceededException
   {
   public:
-    ResourceLimitExceededException();
-    ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ResourceLimitExceededException();
+    AWS_GROUNDSTATION_API ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
   };
 
 } // namespace Model

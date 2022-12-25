@@ -27,20 +27,19 @@ namespace Model
 
   /**
    * <p>Properties describing a Realtime script.</p> <p> <b>Related actions</b> </p>
-   * <p> <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> |
-   * <a>UpdateScript</a> | <a>DeleteScript</a> | <a
+   * <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Script">AWS API
    * Reference</a></p>
    */
-  class AWS_GAMELIFT_API Script
+  class Script
   {
   public:
-    Script();
-    Script(Aws::Utils::Json::JsonView jsonValue);
-    Script& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Script();
+    AWS_GAMELIFT_API Script(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Script& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,50 +206,50 @@ namespace Model
 
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Script& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Script& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline Script& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -323,46 +322,100 @@ namespace Model
     inline Script& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline Script& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
-    
+    /**
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
+     */
     inline Script& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
 
     Aws::String m_scriptArn;
-    bool m_scriptArnHasBeenSet;
+    bool m_scriptArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     long long m_sizeOnDisk;
-    bool m_sizeOnDiskHasBeenSet;
+    bool m_sizeOnDiskHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     S3Location m_storageLocation;
-    bool m_storageLocationHasBeenSet;
+    bool m_storageLocationHasBeenSet = false;
   };
 
 } // namespace Model

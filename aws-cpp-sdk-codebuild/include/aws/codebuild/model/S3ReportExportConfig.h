@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/S3ReportExportConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API S3ReportExportConfig
+  class S3ReportExportConfig
   {
   public:
-    S3ReportExportConfig();
-    S3ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API S3ReportExportConfig();
+    AWS_CODEBUILD_API S3ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API S3ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_bucketOwner;
-    bool m_bucketOwnerHasBeenSet;
+    bool m_bucketOwnerHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     ReportPackagingType m_packaging;
-    bool m_packagingHasBeenSet;
+    bool m_packagingHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     bool m_encryptionDisabled;
-    bool m_encryptionDisabledHasBeenSet;
+    bool m_encryptionDisabledHasBeenSet = false;
   };
 
 } // namespace Model

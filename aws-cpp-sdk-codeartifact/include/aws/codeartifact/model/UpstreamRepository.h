@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpstreamRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API UpstreamRepository
+  class UpstreamRepository
   {
   public:
-    UpstreamRepository();
-    UpstreamRepository(Aws::Utils::Json::JsonView jsonValue);
-    UpstreamRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API UpstreamRepository();
+    AWS_CODEARTIFACT_API UpstreamRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API UpstreamRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

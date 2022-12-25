@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsPendingCloudWatchLogsExports">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsPendingCloudWatchLogsExports
+  class AwsRdsPendingCloudWatchLogsExports
   {
   public:
-    AwsRdsPendingCloudWatchLogsExports();
-    AwsRdsPendingCloudWatchLogsExports(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsPendingCloudWatchLogsExports& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsPendingCloudWatchLogsExports();
+    AWS_SECURITYHUB_API AwsRdsPendingCloudWatchLogsExports(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsPendingCloudWatchLogsExports& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_logTypesToEnable;
-    bool m_logTypesToEnableHasBeenSet;
+    bool m_logTypesToEnableHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logTypesToDisable;
-    bool m_logTypesToDisableHasBeenSet;
+    bool m_logTypesToDisableHasBeenSet = false;
   };
 
 } // namespace Model

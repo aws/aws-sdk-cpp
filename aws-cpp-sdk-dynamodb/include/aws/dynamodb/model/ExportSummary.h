@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ExportSummary
+  class ExportSummary
   {
   public:
-    ExportSummary();
-    ExportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ExportSummary();
+    AWS_DYNAMODB_API ExportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_exportArn;
-    bool m_exportArnHasBeenSet;
+    bool m_exportArnHasBeenSet = false;
 
     ExportStatus m_exportStatus;
-    bool m_exportStatusHasBeenSet;
+    bool m_exportStatusHasBeenSet = false;
   };
 
 } // namespace Model

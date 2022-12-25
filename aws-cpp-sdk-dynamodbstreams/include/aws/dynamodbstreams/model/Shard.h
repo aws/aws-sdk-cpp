@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Shard">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API Shard
+  class Shard
   {
   public:
-    Shard();
-    Shard(Aws::Utils::Json::JsonView jsonValue);
-    Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API Shard();
+    AWS_DYNAMODBSTREAMS_API Shard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     SequenceNumberRange m_sequenceNumberRange;
-    bool m_sequenceNumberRangeHasBeenSet;
+    bool m_sequenceNumberRangeHasBeenSet = false;
 
     Aws::String m_parentShardId;
-    bool m_parentShardIdHasBeenSet;
+    bool m_parentShardIdHasBeenSet = false;
   };
 
 } // namespace Model

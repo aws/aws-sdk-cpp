@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventFeedbackType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API EventFeedbackType
+  class EventFeedbackType
   {
   public:
-    EventFeedbackType();
-    EventFeedbackType(Aws::Utils::Json::JsonView jsonValue);
-    EventFeedbackType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API EventFeedbackType();
+    AWS_COGNITOIDENTITYPROVIDER_API EventFeedbackType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API EventFeedbackType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     FeedbackValueType m_feedbackValue;
-    bool m_feedbackValueHasBeenSet;
+    bool m_feedbackValueHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::Utils::DateTime m_feedbackDate;
-    bool m_feedbackDateHasBeenSet;
+    bool m_feedbackDateHasBeenSet = false;
   };
 
 } // namespace Model

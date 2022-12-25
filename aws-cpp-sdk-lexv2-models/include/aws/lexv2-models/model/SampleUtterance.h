@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SampleUtterance">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SampleUtterance
+  class SampleUtterance
   {
   public:
-    SampleUtterance();
-    SampleUtterance(Aws::Utils::Json::JsonView jsonValue);
-    SampleUtterance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SampleUtterance();
+    AWS_LEXMODELSV2_API SampleUtterance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SampleUtterance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_utterance;
-    bool m_utteranceHasBeenSet;
+    bool m_utteranceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/QuietTime">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API QuietTime
+  class QuietTime
   {
   public:
-    QuietTime();
-    QuietTime(Aws::Utils::Json::JsonView jsonValue);
-    QuietTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API QuietTime();
+    AWS_PINPOINT_API QuietTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API QuietTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

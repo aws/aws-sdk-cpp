@@ -23,7 +23,9 @@ SalesforceSourceProperties::SalesforceSourceProperties() :
     m_enableDynamicFieldUpdate(false),
     m_enableDynamicFieldUpdateHasBeenSet(false),
     m_includeDeletedRecords(false),
-    m_includeDeletedRecordsHasBeenSet(false)
+    m_includeDeletedRecordsHasBeenSet(false),
+    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
+    m_dataTransferApiHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ SalesforceSourceProperties::SalesforceSourceProperties(JsonView jsonValue) :
     m_enableDynamicFieldUpdate(false),
     m_enableDynamicFieldUpdateHasBeenSet(false),
     m_includeDeletedRecords(false),
-    m_includeDeletedRecordsHasBeenSet(false)
+    m_includeDeletedRecordsHasBeenSet(false),
+    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
+    m_dataTransferApiHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ SalesforceSourceProperties& SalesforceSourceProperties::operator =(JsonView json
     m_includeDeletedRecordsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataTransferApi"))
+  {
+    m_dataTransferApi = SalesforceDataTransferApiMapper::GetSalesforceDataTransferApiForName(jsonValue.GetString("dataTransferApi"));
+
+    m_dataTransferApiHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,6 +94,11 @@ JsonValue SalesforceSourceProperties::Jsonize() const
   {
    payload.WithBool("includeDeletedRecords", m_includeDeletedRecords);
 
+  }
+
+  if(m_dataTransferApiHasBeenSet)
+  {
+   payload.WithString("dataTransferApi", SalesforceDataTransferApiMapper::GetNameForSalesforceDataTransferApi(m_dataTransferApi));
   }
 
   return payload;

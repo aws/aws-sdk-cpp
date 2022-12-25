@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxy">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API DBProxy
+  class DBProxy
   {
   public:
-    DBProxy();
-    DBProxy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBProxy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxy();
+    AWS_RDS_API DBProxy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -187,50 +187,82 @@ namespace Model
 
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline const Aws::String& GetEngineFamily() const{ return m_engineFamily; }
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline void SetEngineFamily(const Aws::String& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline void SetEngineFamily(Aws::String&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline void SetEngineFamily(const char* value) { m_engineFamilyHasBeenSet = true; m_engineFamily.assign(value); }
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline DBProxy& WithEngineFamily(const Aws::String& value) { SetEngineFamily(value); return *this;}
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline DBProxy& WithEngineFamily(Aws::String&& value) { SetEngineFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
-     * Aurora.</p>
+     * <p>The kinds of databases that the proxy can connect to. This value determines
+     * which database network protocol the proxy recognizes when it interprets network
+     * traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS
+     * for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports
+     * Aurora PostgreSQL and RDS for PostgreSQL databases. <code>SQLSERVER</code>
+     * supports RDS for Microsoft SQL Server databases.</p>
      */
     inline DBProxy& WithEngineFamily(const char* value) { SetEngineFamily(value); return *this;}
 
@@ -686,49 +718,49 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_dBProxyArn;
-    bool m_dBProxyArnHasBeenSet;
+    bool m_dBProxyArnHasBeenSet = false;
 
     DBProxyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engineFamily;
-    bool m_engineFamilyHasBeenSet;
+    bool m_engineFamilyHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnetIds;
-    bool m_vpcSubnetIdsHasBeenSet;
+    bool m_vpcSubnetIdsHasBeenSet = false;
 
     Aws::Vector<UserAuthConfigInfo> m_auth;
-    bool m_authHasBeenSet;
+    bool m_authHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     bool m_requireTLS;
-    bool m_requireTLSHasBeenSet;
+    bool m_requireTLSHasBeenSet = false;
 
     int m_idleClientTimeout;
-    bool m_idleClientTimeoutHasBeenSet;
+    bool m_idleClientTimeoutHasBeenSet = false;
 
     bool m_debugLogging;
-    bool m_debugLoggingHasBeenSet;
+    bool m_debugLoggingHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
   };
 
 } // namespace Model

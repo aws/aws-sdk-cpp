@@ -57,7 +57,7 @@ RadiusSettings& RadiusSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RadiusServers"))
   {
-    Array<JsonView> radiusServersJsonList = jsonValue.GetArray("RadiusServers");
+    Aws::Utils::Array<JsonView> radiusServersJsonList = jsonValue.GetArray("RadiusServers");
     for(unsigned radiusServersIndex = 0; radiusServersIndex < radiusServersJsonList.GetLength(); ++radiusServersIndex)
     {
       m_radiusServers.push_back(radiusServersJsonList[radiusServersIndex].AsString());
@@ -123,7 +123,7 @@ JsonValue RadiusSettings::Jsonize() const
 
   if(m_radiusServersHasBeenSet)
   {
-   Array<JsonValue> radiusServersJsonList(m_radiusServers.size());
+   Aws::Utils::Array<JsonValue> radiusServersJsonList(m_radiusServers.size());
    for(unsigned radiusServersIndex = 0; radiusServersIndex < radiusServersJsonList.GetLength(); ++radiusServersIndex)
    {
      radiusServersJsonList[radiusServersIndex].AsString(m_radiusServers[radiusServersIndex]);

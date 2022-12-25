@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FaqStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API FaqStatistics
+  class FaqStatistics
   {
   public:
-    FaqStatistics();
-    FaqStatistics(Aws::Utils::Json::JsonView jsonValue);
-    FaqStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API FaqStatistics();
+    AWS_KENDRA_API FaqStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API FaqStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_indexedQuestionAnswersCount;
-    bool m_indexedQuestionAnswersCountHasBeenSet;
+    bool m_indexedQuestionAnswersCountHasBeenSet = false;
   };
 
 } // namespace Model

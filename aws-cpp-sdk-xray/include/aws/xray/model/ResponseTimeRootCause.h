@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ResponseTimeRootCause">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ResponseTimeRootCause
+  class ResponseTimeRootCause
   {
   public:
-    ResponseTimeRootCause();
-    ResponseTimeRootCause(Aws::Utils::Json::JsonView jsonValue);
-    ResponseTimeRootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ResponseTimeRootCause();
+    AWS_XRAY_API ResponseTimeRootCause(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ResponseTimeRootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::Vector<ResponseTimeRootCauseService> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     bool m_clientImpacting;
-    bool m_clientImpactingHasBeenSet;
+    bool m_clientImpactingHasBeenSet = false;
   };
 
 } // namespace Model

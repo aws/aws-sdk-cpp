@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Message">AWS API
    * Reference</a></p>
    */
-  class AWS_SES_API Message
+  class Message
   {
   public:
-    Message();
-    Message(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Message();
+    AWS_SES_API Message(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Content m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Body m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
   };
 
 } // namespace Model

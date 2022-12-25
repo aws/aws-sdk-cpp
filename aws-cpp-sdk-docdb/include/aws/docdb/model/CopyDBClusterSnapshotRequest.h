@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshotMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API CopyDBClusterSnapshotRequest : public DocDBRequest
+  class CopyDBClusterSnapshotRequest : public DocDBRequest
   {
   public:
-    CopyDBClusterSnapshotRequest();
+    AWS_DOCDB_API CopyDBClusterSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyDBClusterSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DOCDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -735,25 +735,25 @@ namespace Model
   private:
 
     Aws::String m_sourceDBClusterSnapshotIdentifier;
-    bool m_sourceDBClusterSnapshotIdentifierHasBeenSet;
+    bool m_sourceDBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterSnapshotIdentifier;
-    bool m_targetDBClusterSnapshotIdentifierHasBeenSet;
+    bool m_targetDBClusterSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

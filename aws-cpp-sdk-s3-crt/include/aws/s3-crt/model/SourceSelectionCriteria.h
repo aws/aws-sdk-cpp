@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SourceSelectionCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API SourceSelectionCriteria
+  class SourceSelectionCriteria
   {
   public:
-    SourceSelectionCriteria();
-    SourceSelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SourceSelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API SourceSelectionCriteria();
+    AWS_S3CRT_API SourceSelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API SourceSelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     SseKmsEncryptedObjects m_sseKmsEncryptedObjects;
-    bool m_sseKmsEncryptedObjectsHasBeenSet;
+    bool m_sseKmsEncryptedObjectsHasBeenSet = false;
 
     ReplicaModifications m_replicaModifications;
-    bool m_replicaModificationsHasBeenSet;
+    bool m_replicaModificationsHasBeenSet = false;
   };
 
 } // namespace Model

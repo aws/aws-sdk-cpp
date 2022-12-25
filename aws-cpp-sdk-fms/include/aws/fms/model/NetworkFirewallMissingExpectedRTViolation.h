@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallMissingExpectedRTViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallMissingExpectedRTViolation
+  class NetworkFirewallMissingExpectedRTViolation
   {
   public:
-    NetworkFirewallMissingExpectedRTViolation();
-    NetworkFirewallMissingExpectedRTViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallMissingExpectedRTViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation();
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_currentRouteTable;
-    bool m_currentRouteTableHasBeenSet;
+    bool m_currentRouteTableHasBeenSet = false;
 
     Aws::String m_expectedRouteTable;
-    bool m_expectedRouteTableHasBeenSet;
+    bool m_expectedRouteTableHasBeenSet = false;
   };
 
 } // namespace Model

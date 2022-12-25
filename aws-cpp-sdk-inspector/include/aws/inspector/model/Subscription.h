@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Subscription">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API Subscription
+  class Subscription
   {
   public:
-    Subscription();
-    Subscription(Aws::Utils::Json::JsonView jsonValue);
-    Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API Subscription();
+    AWS_INSPECTOR_API Subscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<EventSubscription> m_eventSubscriptions;
-    bool m_eventSubscriptionsHasBeenSet;
+    bool m_eventSubscriptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlan">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UsagePlan
+  class UsagePlan
   {
   public:
-    UsagePlan();
-    UsagePlan(Aws::Utils::Json::JsonView jsonValue);
-    UsagePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API UsagePlan();
+    AWS_APIGATEWAY_API UsagePlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API UsagePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -417,28 +417,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ApiStage> m_apiStages;
-    bool m_apiStagesHasBeenSet;
+    bool m_apiStagesHasBeenSet = false;
 
     ThrottleSettings m_throttle;
-    bool m_throttleHasBeenSet;
+    bool m_throttleHasBeenSet = false;
 
     QuotaSettings m_quota;
-    bool m_quotaHasBeenSet;
+    bool m_quotaHasBeenSet = false;
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace SSO
 {
 namespace Model
 {
-  class AWS_SSO_API ListAccountRolesResult
+  class ListAccountRolesResult
   {
   public:
-    ListAccountRolesResult();
-    ListAccountRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSO_API ListAccountRolesResult();
+    AWS_SSO_API ListAccountRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSO_API ListAccountRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

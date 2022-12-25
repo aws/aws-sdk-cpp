@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API FirewallConfig
+  class FirewallConfig
   {
   public:
-    FirewallConfig();
-    FirewallConfig(Aws::Utils::Json::JsonView jsonValue);
-    FirewallConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API FirewallConfig();
+    AWS_ROUTE53RESOLVER_API FirewallConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API FirewallConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,16 +252,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     FirewallFailOpenStatus m_firewallFailOpen;
-    bool m_firewallFailOpenHasBeenSet;
+    bool m_firewallFailOpenHasBeenSet = false;
   };
 
 } // namespace Model

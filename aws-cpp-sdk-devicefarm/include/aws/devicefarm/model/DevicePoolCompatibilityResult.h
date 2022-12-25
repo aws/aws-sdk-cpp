@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DevicePoolCompatibilityResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DevicePoolCompatibilityResult
+  class DevicePoolCompatibilityResult
   {
   public:
-    DevicePoolCompatibilityResult();
-    DevicePoolCompatibilityResult(Aws::Utils::Json::JsonView jsonValue);
-    DevicePoolCompatibilityResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DevicePoolCompatibilityResult();
+    AWS_DEVICEFARM_API DevicePoolCompatibilityResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DevicePoolCompatibilityResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     bool m_compatible;
-    bool m_compatibleHasBeenSet;
+    bool m_compatibleHasBeenSet = false;
 
     Aws::Vector<IncompatibilityMessage> m_incompatibilityMessages;
-    bool m_incompatibilityMessagesHasBeenSet;
+    bool m_incompatibilityMessagesHasBeenSet = false;
   };
 
 } // namespace Model

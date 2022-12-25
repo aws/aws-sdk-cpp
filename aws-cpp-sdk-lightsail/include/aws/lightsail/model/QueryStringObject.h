@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/QueryStringObject">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API QueryStringObject
+  class QueryStringObject
   {
   public:
-    QueryStringObject();
-    QueryStringObject(Aws::Utils::Json::JsonView jsonValue);
-    QueryStringObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API QueryStringObject();
+    AWS_LIGHTSAIL_API QueryStringObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API QueryStringObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     bool m_option;
-    bool m_optionHasBeenSet;
+    bool m_optionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_queryStringsAllowList;
-    bool m_queryStringsAllowListHasBeenSet;
+    bool m_queryStringsAllowListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringAppSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringAppSpecification
+  class MonitoringAppSpecification
   {
   public:
-    MonitoringAppSpecification();
-    MonitoringAppSpecification(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringAppSpecification();
+    AWS_SAGEMAKER_API MonitoringAppSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,19 +288,19 @@ namespace Model
   private:
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerEntrypoint;
-    bool m_containerEntrypointHasBeenSet;
+    bool m_containerEntrypointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerArguments;
-    bool m_containerArgumentsHasBeenSet;
+    bool m_containerArgumentsHasBeenSet = false;
 
     Aws::String m_recordPreprocessorSourceUri;
-    bool m_recordPreprocessorSourceUriHasBeenSet;
+    bool m_recordPreprocessorSourceUriHasBeenSet = false;
 
     Aws::String m_postAnalyticsProcessorSourceUri;
-    bool m_postAnalyticsProcessorSourceUriHasBeenSet;
+    bool m_postAnalyticsProcessorSourceUriHasBeenSet = false;
   };
 
 } // namespace Model

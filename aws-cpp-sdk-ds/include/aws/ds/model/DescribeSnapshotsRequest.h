@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshotsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DescribeSnapshotsRequest : public DirectoryServiceRequest
+  class DescribeSnapshotsRequest : public DirectoryServiceRequest
   {
   public:
-    DescribeSnapshotsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeSnapshotsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSnapshots"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_snapshotIds;
-    bool m_snapshotIdsHasBeenSet;
+    bool m_snapshotIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

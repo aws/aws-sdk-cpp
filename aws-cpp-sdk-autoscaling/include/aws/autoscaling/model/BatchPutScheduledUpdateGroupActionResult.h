@@ -26,12 +26,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult
+  class BatchPutScheduledUpdateGroupActionResult
   {
   public:
-    BatchPutScheduledUpdateGroupActionResult();
-    BatchPutScheduledUpdateGroupActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BatchPutScheduledUpdateGroupActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult();
+    AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ApplicationMetrics
+  class ApplicationMetrics
   {
   public:
-    ApplicationMetrics();
-    ApplicationMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ApplicationMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationMetrics();
+    AWS_ELASTICBEANSTALK_API ApplicationMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_requestCount;
-    bool m_requestCountHasBeenSet;
+    bool m_requestCountHasBeenSet = false;
 
     StatusCodes m_statusCodes;
-    bool m_statusCodesHasBeenSet;
+    bool m_statusCodesHasBeenSet = false;
 
     Latency m_latency;
-    bool m_latencyHasBeenSet;
+    bool m_latencyHasBeenSet = false;
   };
 
 } // namespace Model

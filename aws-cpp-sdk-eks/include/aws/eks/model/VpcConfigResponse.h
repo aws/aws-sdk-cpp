@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API VpcConfigResponse
+  class VpcConfigResponse
   {
   public:
-    VpcConfigResponse();
-    VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API VpcConfigResponse();
+    AWS_EKS_API VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -457,25 +457,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_clusterSecurityGroupId;
-    bool m_clusterSecurityGroupIdHasBeenSet;
+    bool m_clusterSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     bool m_endpointPublicAccess;
-    bool m_endpointPublicAccessHasBeenSet;
+    bool m_endpointPublicAccessHasBeenSet = false;
 
     bool m_endpointPrivateAccess;
-    bool m_endpointPrivateAccessHasBeenSet;
+    bool m_endpointPrivateAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicAccessCidrs;
-    bool m_publicAccessCidrsHasBeenSet;
+    bool m_publicAccessCidrsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecutionsRolloutConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecutionsRolloutConfig
+  class JobExecutionsRolloutConfig
   {
   public:
-    JobExecutionsRolloutConfig();
-    JobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecutionsRolloutConfig();
+    AWS_IOT_API JobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_maximumPerMinute;
-    bool m_maximumPerMinuteHasBeenSet;
+    bool m_maximumPerMinuteHasBeenSet = false;
 
     ExponentialRolloutRate m_exponentialRate;
-    bool m_exponentialRateHasBeenSet;
+    bool m_exponentialRateHasBeenSet = false;
   };
 
 } // namespace Model

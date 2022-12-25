@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API DescribeClusterV2Request : public KafkaRequest
+  class DescribeClusterV2Request : public KafkaRequest
   {
   public:
-    DescribeClusterV2Request();
+    AWS_KAFKA_API DescribeClusterV2Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeClusterV2"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
   };
 
 } // namespace Model

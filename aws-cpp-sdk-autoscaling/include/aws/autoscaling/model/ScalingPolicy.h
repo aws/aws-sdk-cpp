@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API ScalingPolicy
+  class ScalingPolicy
   {
   public:
-    ScalingPolicy();
-    ScalingPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScalingPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScalingPolicy();
+    AWS_AUTOSCALING_API ScalingPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScalingPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -682,52 +682,52 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyARN;
-    bool m_policyARNHasBeenSet;
+    bool m_policyARNHasBeenSet = false;
 
     Aws::String m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_adjustmentType;
-    bool m_adjustmentTypeHasBeenSet;
+    bool m_adjustmentTypeHasBeenSet = false;
 
     int m_minAdjustmentStep;
-    bool m_minAdjustmentStepHasBeenSet;
+    bool m_minAdjustmentStepHasBeenSet = false;
 
     int m_minAdjustmentMagnitude;
-    bool m_minAdjustmentMagnitudeHasBeenSet;
+    bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
 
     int m_cooldown;
-    bool m_cooldownHasBeenSet;
+    bool m_cooldownHasBeenSet = false;
 
     Aws::Vector<StepAdjustment> m_stepAdjustments;
-    bool m_stepAdjustmentsHasBeenSet;
+    bool m_stepAdjustmentsHasBeenSet = false;
 
     Aws::String m_metricAggregationType;
-    bool m_metricAggregationTypeHasBeenSet;
+    bool m_metricAggregationTypeHasBeenSet = false;
 
     int m_estimatedInstanceWarmup;
-    bool m_estimatedInstanceWarmupHasBeenSet;
+    bool m_estimatedInstanceWarmupHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
-    bool m_targetTrackingConfigurationHasBeenSet;
+    bool m_targetTrackingConfigurationHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     PredictiveScalingConfiguration m_predictiveScalingConfiguration;
-    bool m_predictiveScalingConfigurationHasBeenSet;
+    bool m_predictiveScalingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

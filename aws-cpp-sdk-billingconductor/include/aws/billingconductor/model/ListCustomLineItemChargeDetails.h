@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails
+  class ListCustomLineItemChargeDetails
   {
   public:
-    ListCustomLineItemChargeDetails();
-    ListCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    ListCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     ListCustomLineItemFlatChargeDetails m_flat;
-    bool m_flatHasBeenSet;
+    bool m_flatHasBeenSet = false;
 
     ListCustomLineItemPercentageChargeDetails m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
 
     CustomLineItemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

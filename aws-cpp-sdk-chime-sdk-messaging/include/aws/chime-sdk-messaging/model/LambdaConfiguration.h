@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/LambdaConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API LambdaConfiguration
+  class LambdaConfiguration
   {
   public:
-    LambdaConfiguration();
-    LambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API LambdaConfiguration();
+    AWS_CHIMESDKMESSAGING_API LambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API LambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     InvocationType m_invocationType;
-    bool m_invocationTypeHasBeenSet;
+    bool m_invocationTypeHasBeenSet = false;
   };
 
 } // namespace Model

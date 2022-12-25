@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CloudWatchLogsDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API CloudWatchLogsDestination
+  class CloudWatchLogsDestination
   {
   public:
-    CloudWatchLogsDestination();
-    CloudWatchLogsDestination(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API CloudWatchLogsDestination();
+    AWS_PINPOINTSMSVOICEV2_API CloudWatchLogsDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API CloudWatchLogsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

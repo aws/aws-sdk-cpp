@@ -19,15 +19,15 @@ namespace Model
 {
 
   /**
-   * <p> Container for request parameters to the <code> <a>CreatePackage</a> </code>
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for request parameters to the <code>CreatePackage</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API CreatePackageRequest : public OpenSearchServiceRequest
+  class CreatePackageRequest : public OpenSearchServiceRequest
   {
   public:
-    CreatePackageRequest();
+    AWS_OPENSEARCHSERVICE_API CreatePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,77 +35,77 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline CreatePackageRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline CreatePackageRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the package.</p>
+     * <p>Unique name for the package.</p>
      */
     inline CreatePackageRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
 
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline const PackageType& GetPackageType() const{ return m_packageType; }
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline CreatePackageRequest& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
 
     /**
-     * <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+     * <p>Type of package.</p>
      */
     inline CreatePackageRequest& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 
@@ -152,48 +152,48 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline const PackageSource& GetPackageSource() const{ return m_packageSource; }
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline bool PackageSourceHasBeenSet() const { return m_packageSourceHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline void SetPackageSource(const PackageSource& value) { m_packageSourceHasBeenSet = true; m_packageSource = value; }
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline void SetPackageSource(PackageSource&& value) { m_packageSourceHasBeenSet = true; m_packageSource = std::move(value); }
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline CreatePackageRequest& WithPackageSource(const PackageSource& value) { SetPackageSource(value); return *this;}
 
     /**
-     * <p>The Amazon S3 location from which to import the package. </p>
+     * <p>The Amazon S3 location from which to import the package.</p>
      */
     inline CreatePackageRequest& WithPackageSource(PackageSource&& value) { SetPackageSource(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
   };
 
 } // namespace Model

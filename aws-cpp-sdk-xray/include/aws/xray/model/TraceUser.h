@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceUser">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API TraceUser
+  class TraceUser
   {
   public:
-    TraceUser();
-    TraceUser(Aws::Utils::Json::JsonView jsonValue);
-    TraceUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TraceUser();
+    AWS_XRAY_API TraceUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TraceUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Vector<ServiceId> m_serviceIds;
-    bool m_serviceIdsHasBeenSet;
+    bool m_serviceIdsHasBeenSet = false;
   };
 
 } // namespace Model

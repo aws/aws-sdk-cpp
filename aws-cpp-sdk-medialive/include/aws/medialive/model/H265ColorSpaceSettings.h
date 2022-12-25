@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/ColorSpacePassthroughSettings.h>
+#include <aws/medialive/model/DolbyVision81Settings.h>
 #include <aws/medialive/model/Hdr10Settings.h>
 #include <aws/medialive/model/Rec601Settings.h>
 #include <aws/medialive/model/Rec709Settings.h>
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H265ColorSpaceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H265ColorSpaceSettings
+  class H265ColorSpaceSettings
   {
   public:
-    H265ColorSpaceSettings();
-    H265ColorSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
-    H265ColorSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H265ColorSpaceSettings();
+    AWS_MEDIALIVE_API H265ColorSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H265ColorSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -57,6 +58,25 @@ namespace Model
 
     
     inline H265ColorSpaceSettings& WithColorSpacePassthroughSettings(ColorSpacePassthroughSettings&& value) { SetColorSpacePassthroughSettings(std::move(value)); return *this;}
+
+
+    
+    inline const DolbyVision81Settings& GetDolbyVision81Settings() const{ return m_dolbyVision81Settings; }
+
+    
+    inline bool DolbyVision81SettingsHasBeenSet() const { return m_dolbyVision81SettingsHasBeenSet; }
+
+    
+    inline void SetDolbyVision81Settings(const DolbyVision81Settings& value) { m_dolbyVision81SettingsHasBeenSet = true; m_dolbyVision81Settings = value; }
+
+    
+    inline void SetDolbyVision81Settings(DolbyVision81Settings&& value) { m_dolbyVision81SettingsHasBeenSet = true; m_dolbyVision81Settings = std::move(value); }
+
+    
+    inline H265ColorSpaceSettings& WithDolbyVision81Settings(const DolbyVision81Settings& value) { SetDolbyVision81Settings(value); return *this;}
+
+    
+    inline H265ColorSpaceSettings& WithDolbyVision81Settings(DolbyVision81Settings&& value) { SetDolbyVision81Settings(std::move(value)); return *this;}
 
 
     
@@ -118,16 +138,19 @@ namespace Model
   private:
 
     ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
-    bool m_colorSpacePassthroughSettingsHasBeenSet;
+    bool m_colorSpacePassthroughSettingsHasBeenSet = false;
+
+    DolbyVision81Settings m_dolbyVision81Settings;
+    bool m_dolbyVision81SettingsHasBeenSet = false;
 
     Hdr10Settings m_hdr10Settings;
-    bool m_hdr10SettingsHasBeenSet;
+    bool m_hdr10SettingsHasBeenSet = false;
 
     Rec601Settings m_rec601Settings;
-    bool m_rec601SettingsHasBeenSet;
+    bool m_rec601SettingsHasBeenSet = false;
 
     Rec709Settings m_rec709Settings;
-    bool m_rec709SettingsHasBeenSet;
+    bool m_rec709SettingsHasBeenSet = false;
   };
 
 } // namespace Model

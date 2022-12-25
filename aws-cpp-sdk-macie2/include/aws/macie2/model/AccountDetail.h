@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccountDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AccountDetail
+  class AccountDetail
   {
   public:
-    AccountDetail();
-    AccountDetail(Aws::Utils::Json::JsonView jsonValue);
-    AccountDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AccountDetail();
+    AWS_MACIE2_API AccountDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AccountDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
   };
 
 } // namespace Model

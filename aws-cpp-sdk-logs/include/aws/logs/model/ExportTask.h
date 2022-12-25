@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ExportTask">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API ExportTask
+  class ExportTask
   {
   public:
-    ExportTask();
-    ExportTask(Aws::Utils::Json::JsonView jsonValue);
-    ExportTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API ExportTask();
+    AWS_CLOUDWATCHLOGS_API ExportTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API ExportTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,51 +163,59 @@ namespace Model
 
 
     /**
-     * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+     * <p>The start time, expressed as the number of milliseconds after <code>Jan 1,
+     * 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not
+     * exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
-     * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+     * <p>The start time, expressed as the number of milliseconds after <code>Jan 1,
+     * 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not
+     * exported.</p>
      */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
 
     /**
-     * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+     * <p>The start time, expressed as the number of milliseconds after <code>Jan 1,
+     * 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not
+     * exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+     * <p>The start time, expressed as the number of milliseconds after <code>Jan 1,
+     * 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not
+     * exported.</p>
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
 
     /**
-     * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
-     * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
-     * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
-     * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     * <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. Events with a timestamp later than this time are not
+     * exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
 
@@ -366,31 +374,31 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_taskName;
-    bool m_taskNameHasBeenSet;
+    bool m_taskNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     long long m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     long long m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPrefix;
-    bool m_destinationPrefixHasBeenSet;
+    bool m_destinationPrefixHasBeenSet = false;
 
     ExportTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ExportTaskExecutionInfo m_executionInfo;
-    bool m_executionInfoHasBeenSet;
+    bool m_executionInfoHasBeenSet = false;
   };
 
 } // namespace Model

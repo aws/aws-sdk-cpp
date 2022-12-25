@@ -27,12 +27,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeStateMachineForExecutionResult
+  class DescribeStateMachineForExecutionResult
   {
   public:
-    DescribeStateMachineForExecutionResult();
-    DescribeStateMachineForExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStateMachineForExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineForExecutionResult();
+    AWS_SFN_API DescribeStateMachineForExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineForExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -255,29 +255,129 @@ namespace Model
 
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfiguration = value; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfiguration = std::move(value); }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline DescribeStateMachineForExecutionResult& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline DescribeStateMachineForExecutionResult& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetMapRunArn(const char* value) { m_mapRunArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow
+     * execution. This field is returned only if the <code>executionArn</code> is a
+     * child workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetLabel(const Aws::String& value) { m_label = value; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetLabel(Aws::String&& value) { m_label = std::move(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline void SetLabel(const char* value) { m_label.assign(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This ﬁeld is returned only if the <code>executionArn</code> is a child
+     * workflow execution that was started by a Distributed Map state.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
 
@@ -294,6 +394,10 @@ namespace Model
     LoggingConfiguration m_loggingConfiguration;
 
     TracingConfiguration m_tracingConfiguration;
+
+    Aws::String m_mapRunArn;
+
+    Aws::String m_label;
   };
 
 } // namespace Model

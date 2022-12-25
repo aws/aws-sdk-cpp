@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/EmailTemplateContent">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API EmailTemplateContent
+  class EmailTemplateContent
   {
   public:
-    EmailTemplateContent();
-    EmailTemplateContent(Aws::Utils::Json::JsonView jsonValue);
-    EmailTemplateContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API EmailTemplateContent();
+    AWS_SESV2_API EmailTemplateContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API EmailTemplateContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_html;
-    bool m_htmlHasBeenSet;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

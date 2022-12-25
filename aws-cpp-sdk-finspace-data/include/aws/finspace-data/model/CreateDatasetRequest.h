@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDatasetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API CreateDatasetRequest : public FinSpaceDataRequest
+  class CreateDatasetRequest : public FinSpaceDataRequest
   {
   public:
-    CreateDatasetRequest();
+    AWS_FINSPACEDATA_API CreateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FINSPACEDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -348,28 +348,28 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_datasetTitle;
-    bool m_datasetTitleHasBeenSet;
+    bool m_datasetTitleHasBeenSet = false;
 
     DatasetKind m_kind;
-    bool m_kindHasBeenSet;
+    bool m_kindHasBeenSet = false;
 
     Aws::String m_datasetDescription;
-    bool m_datasetDescriptionHasBeenSet;
+    bool m_datasetDescriptionHasBeenSet = false;
 
     DatasetOwnerInfo m_ownerInfo;
-    bool m_ownerInfoHasBeenSet;
+    bool m_ownerInfoHasBeenSet = false;
 
     PermissionGroupParams m_permissionGroupParams;
-    bool m_permissionGroupParamsHasBeenSet;
+    bool m_permissionGroupParamsHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     SchemaUnion m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

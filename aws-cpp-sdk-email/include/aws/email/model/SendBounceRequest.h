@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API SendBounceRequest : public SESRequest
+  class SendBounceRequest : public SESRequest
   {
   public:
-    SendBounceRequest();
+    AWS_SES_API SendBounceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendBounce"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -367,22 +367,22 @@ namespace Model
   private:
 
     Aws::String m_originalMessageId;
-    bool m_originalMessageIdHasBeenSet;
+    bool m_originalMessageIdHasBeenSet = false;
 
     Aws::String m_bounceSender;
-    bool m_bounceSenderHasBeenSet;
+    bool m_bounceSenderHasBeenSet = false;
 
     Aws::String m_explanation;
-    bool m_explanationHasBeenSet;
+    bool m_explanationHasBeenSet = false;
 
     MessageDsn m_messageDsn;
-    bool m_messageDsnHasBeenSet;
+    bool m_messageDsnHasBeenSet = false;
 
     Aws::Vector<BouncedRecipientInfo> m_bouncedRecipientInfoList;
-    bool m_bouncedRecipientInfoListHasBeenSet;
+    bool m_bouncedRecipientInfoListHasBeenSet = false;
 
     Aws::String m_bounceSenderArn;
-    bool m_bounceSenderArnHasBeenSet;
+    bool m_bounceSenderArnHasBeenSet = false;
   };
 
 } // namespace Model

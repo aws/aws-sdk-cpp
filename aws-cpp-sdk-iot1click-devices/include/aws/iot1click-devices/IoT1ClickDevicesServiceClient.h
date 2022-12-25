@@ -5,122 +5,16 @@
 
 #pragma once
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
-#include <aws/iot1click-devices/IoT1ClickDevicesServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iot1click-devices/model/ClaimDevicesByClaimCodeResult.h>
-#include <aws/iot1click-devices/model/DescribeDeviceResult.h>
-#include <aws/iot1click-devices/model/FinalizeDeviceClaimResult.h>
-#include <aws/iot1click-devices/model/GetDeviceMethodsResult.h>
-#include <aws/iot1click-devices/model/InitiateDeviceClaimResult.h>
-#include <aws/iot1click-devices/model/InvokeDeviceMethodResult.h>
-#include <aws/iot1click-devices/model/ListDeviceEventsResult.h>
-#include <aws/iot1click-devices/model/ListDevicesResult.h>
-#include <aws/iot1click-devices/model/ListTagsForResourceResult.h>
-#include <aws/iot1click-devices/model/UnclaimDeviceResult.h>
-#include <aws/iot1click-devices/model/UpdateDeviceStateResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iot1click-devices/IoT1ClickDevicesServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoT1ClickDevicesService
 {
-
-namespace Model
-{
-        class ClaimDevicesByClaimCodeRequest;
-        class DescribeDeviceRequest;
-        class FinalizeDeviceClaimRequest;
-        class GetDeviceMethodsRequest;
-        class InitiateDeviceClaimRequest;
-        class InvokeDeviceMethodRequest;
-        class ListDeviceEventsRequest;
-        class ListDevicesRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UnclaimDeviceRequest;
-        class UntagResourceRequest;
-        class UpdateDeviceStateRequest;
-
-        typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, IoT1ClickDevicesServiceError> ClaimDevicesByClaimCodeOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceResult, IoT1ClickDevicesServiceError> DescribeDeviceOutcome;
-        typedef Aws::Utils::Outcome<FinalizeDeviceClaimResult, IoT1ClickDevicesServiceError> FinalizeDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceMethodsResult, IoT1ClickDevicesServiceError> GetDeviceMethodsOutcome;
-        typedef Aws::Utils::Outcome<InitiateDeviceClaimResult, IoT1ClickDevicesServiceError> InitiateDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, IoT1ClickDevicesServiceError> InvokeDeviceMethodOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceEventsResult, IoT1ClickDevicesServiceError> ListDeviceEventsOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, IoT1ClickDevicesServiceError> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoT1ClickDevicesServiceError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnclaimDeviceResult, IoT1ClickDevicesServiceError> UnclaimDeviceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceStateResult, IoT1ClickDevicesServiceError> UpdateDeviceStateOutcome;
-
-        typedef std::future<ClaimDevicesByClaimCodeOutcome> ClaimDevicesByClaimCodeOutcomeCallable;
-        typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
-        typedef std::future<FinalizeDeviceClaimOutcome> FinalizeDeviceClaimOutcomeCallable;
-        typedef std::future<GetDeviceMethodsOutcome> GetDeviceMethodsOutcomeCallable;
-        typedef std::future<InitiateDeviceClaimOutcome> InitiateDeviceClaimOutcomeCallable;
-        typedef std::future<InvokeDeviceMethodOutcome> InvokeDeviceMethodOutcomeCallable;
-        typedef std::future<ListDeviceEventsOutcome> ListDeviceEventsOutcomeCallable;
-        typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UnclaimDeviceOutcome> UnclaimDeviceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDeviceStateOutcome> UpdateDeviceStateOutcomeCallable;
-} // namespace Model
-
-  class IoT1ClickDevicesServiceClient;
-
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ClaimDevicesByClaimCodeRequest&, const Model::ClaimDevicesByClaimCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimDevicesByClaimCodeResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::DescribeDeviceRequest&, const Model::DescribeDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::FinalizeDeviceClaimRequest&, const Model::FinalizeDeviceClaimOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FinalizeDeviceClaimResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::GetDeviceMethodsRequest&, const Model::GetDeviceMethodsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceMethodsResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::InitiateDeviceClaimRequest&, const Model::InitiateDeviceClaimOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateDeviceClaimResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::InvokeDeviceMethodRequest&, const Model::InvokeDeviceMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeDeviceMethodResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListDeviceEventsRequest&, const Model::ListDeviceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceEventsResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UnclaimDeviceRequest&, const Model::UnclaimDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnclaimDeviceResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UpdateDeviceStateRequest&, const Model::UpdateDeviceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStateResponseReceivedHandler;
-
   /**
    * <p>Describes all of the AWS IoT 1-Click device-related API operations for the
    * service.
@@ -128,32 +22,60 @@ namespace Model
    * web services
  protocols.</p>
    */
-  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoT1ClickDevicesServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoT1ClickDevicesServiceClient(const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration(),
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoT1ClickDevicesServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoT1ClickDevicesServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG),
+                                      const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoT1ClickDevicesServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG),
+                                      const Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration = Aws::IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoT1ClickDevicesServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoT1ClickDevicesServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoT1ClickDevicesServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoT1ClickDevicesServiceClient();
-
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
@@ -415,25 +337,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ClaimDevicesByClaimCodeAsyncHelper(const Model::ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeviceAsyncHelper(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void FinalizeDeviceClaimAsyncHelper(const Model::FinalizeDeviceClaimRequest& request, const FinalizeDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeviceMethodsAsyncHelper(const Model::GetDeviceMethodsRequest& request, const GetDeviceMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitiateDeviceClaimAsyncHelper(const Model::InitiateDeviceClaimRequest& request, const InitiateDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InvokeDeviceMethodAsyncHelper(const Model::InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeviceEventsAsyncHelper(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnclaimDeviceAsyncHelper(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDeviceStateAsyncHelper(const Model::UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>;
+      void init(const IoT1ClickDevicesServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      IoT1ClickDevicesServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoT1ClickDevicesService

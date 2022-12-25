@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectLegalHoldOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3SetObjectLegalHoldOperation
+  class S3SetObjectLegalHoldOperation
   {
   public:
-    S3SetObjectLegalHoldOperation();
-    S3SetObjectLegalHoldOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3SetObjectLegalHoldOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectLegalHoldOperation();
+    AWS_S3CONTROL_API S3SetObjectLegalHoldOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectLegalHoldOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     S3ObjectLockLegalHold m_legalHold;
-    bool m_legalHoldHasBeenSet;
+    bool m_legalHoldHasBeenSet = false;
   };
 
 } // namespace Model

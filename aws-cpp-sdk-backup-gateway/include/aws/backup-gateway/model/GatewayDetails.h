@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup-gateway/model/GatewayType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/backup-gateway/model/MaintenanceStartTime.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GatewayDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API GatewayDetails
+  class GatewayDetails
   {
   public:
-    GatewayDetails();
-    GatewayDetails(Aws::Utils::Json::JsonView jsonValue);
-    GatewayDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API GatewayDetails();
+    AWS_BACKUPGATEWAY_API GatewayDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API GatewayDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,6 +248,49 @@ namespace Model
 
 
     /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline const MaintenanceStartTime& GetMaintenanceStartTime() const{ return m_maintenanceStartTime; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline bool MaintenanceStartTimeHasBeenSet() const { return m_maintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline void SetMaintenanceStartTime(const MaintenanceStartTime& value) { m_maintenanceStartTimeHasBeenSet = true; m_maintenanceStartTime = value; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline void SetMaintenanceStartTime(MaintenanceStartTime&& value) { m_maintenanceStartTimeHasBeenSet = true; m_maintenanceStartTime = std::move(value); }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline GatewayDetails& WithMaintenanceStartTime(const MaintenanceStartTime& value) { SetMaintenanceStartTime(value); return *this;}
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline GatewayDetails& WithMaintenanceStartTime(MaintenanceStartTime&& value) { SetMaintenanceStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details showing the next update availability time of the gateway.</p>
      */
     inline const Aws::Utils::DateTime& GetNextUpdateAvailabilityTime() const{ return m_nextUpdateAvailabilityTime; }
@@ -328,25 +372,28 @@ namespace Model
   private:
 
     Aws::String m_gatewayArn;
-    bool m_gatewayArnHasBeenSet;
+    bool m_gatewayArnHasBeenSet = false;
 
     Aws::String m_gatewayDisplayName;
-    bool m_gatewayDisplayNameHasBeenSet;
+    bool m_gatewayDisplayNameHasBeenSet = false;
 
     GatewayType m_gatewayType;
-    bool m_gatewayTypeHasBeenSet;
+    bool m_gatewayTypeHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSeenTime;
-    bool m_lastSeenTimeHasBeenSet;
+    bool m_lastSeenTimeHasBeenSet = false;
+
+    MaintenanceStartTime m_maintenanceStartTime;
+    bool m_maintenanceStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextUpdateAvailabilityTime;
-    bool m_nextUpdateAvailabilityTimeHasBeenSet;
+    bool m_nextUpdateAvailabilityTimeHasBeenSet = false;
 
     Aws::String m_vpcEndpoint;
-    bool m_vpcEndpointHasBeenSet;
+    bool m_vpcEndpointHasBeenSet = false;
   };
 
 } // namespace Model

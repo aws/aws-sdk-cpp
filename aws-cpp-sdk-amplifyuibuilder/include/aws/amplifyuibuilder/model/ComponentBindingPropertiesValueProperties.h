@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentBindingPropertiesValueProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties
+  class ComponentBindingPropertiesValueProperties
   {
   public:
-    ComponentBindingPropertiesValueProperties();
-    ComponentBindingPropertiesValueProperties(Aws::Utils::Json::JsonView jsonValue);
-    ComponentBindingPropertiesValueProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties();
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValueProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,6 +289,47 @@ namespace Model
 
 
     /**
+     * <p>The name of a component slot.</p>
+     */
+    inline const Aws::String& GetSlotName() const{ return m_slotName; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a component slot.</p>
+     */
+    inline ComponentBindingPropertiesValueProperties& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+
+
+    /**
      * <p>An authenticated user attribute.</p>
      */
     inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
@@ -331,25 +372,28 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::Vector<Predicate> m_predicates;
-    bool m_predicatesHasBeenSet;
+    bool m_predicatesHasBeenSet = false;
+
+    Aws::String m_slotName;
+    bool m_slotNameHasBeenSet = false;
 
     Aws::String m_userAttribute;
-    bool m_userAttributeHasBeenSet;
+    bool m_userAttributeHasBeenSet = false;
   };
 
 } // namespace Model

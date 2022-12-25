@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentVariant">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentVariant
+  class ComponentVariant
   {
   public:
-    ComponentVariant();
-    ComponentVariant(Aws::Utils::Json::JsonView jsonValue);
-    ComponentVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentVariant();
+    AWS_AMPLIFYUIBUILDER_API ComponentVariant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,10 +205,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variantValues;
-    bool m_variantValuesHasBeenSet;
+    bool m_variantValuesHasBeenSet = false;
   };
 
 } // namespace Model

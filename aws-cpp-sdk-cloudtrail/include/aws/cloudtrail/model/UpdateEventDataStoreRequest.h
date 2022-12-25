@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDTRAIL_API UpdateEventDataStoreRequest : public CloudTrailRequest
+  class UpdateEventDataStoreRequest : public CloudTrailRequest
   {
   public:
-    UpdateEventDataStoreRequest();
+    AWS_CLOUDTRAIL_API UpdateEventDataStoreRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEventDataStore"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -127,49 +127,57 @@ namespace Model
 
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
     /**
-     * <p>The advanced event selectors used to select events for the event data
+     * <p>The advanced event selectors used to select events for the event data store.
+     * You can configure up to five advanced event selectors for each event data
      * store.</p>
      */
     inline UpdateEventDataStoreRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
@@ -270,28 +278,216 @@ namespace Model
      */
     inline UpdateEventDataStoreRequest& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
 
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline UpdateEventDataStoreRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline UpdateEventDataStoreRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the KMS key ID to use to encrypt the events delivered by
+     * CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a
+     * fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.</p>  <p>Disabling or deleting the KMS key, or
+     * removing CloudTrail permissions on the key, prevents CloudTrail from logging
+     * events to the event data store, and prevents users from querying the data in the
+     * event data store that was encrypted with the key. After you associate an event
+     * data store with a KMS key, the KMS key cannot be removed or changed. Before you
+     * disable or delete a KMS key that you are using with an event data store, delete
+     * or back up your event data store.</p>  <p>CloudTrail also supports
+     * KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
+     */
+    inline UpdateEventDataStoreRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_eventDataStore;
-    bool m_eventDataStoreHasBeenSet;
+    bool m_eventDataStoreHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
-    bool m_advancedEventSelectorsHasBeenSet;
+    bool m_advancedEventSelectorsHasBeenSet = false;
 
     bool m_multiRegionEnabled;
-    bool m_multiRegionEnabledHasBeenSet;
+    bool m_multiRegionEnabledHasBeenSet = false;
 
     bool m_organizationEnabled;
-    bool m_organizationEnabledHasBeenSet;
+    bool m_organizationEnabledHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     bool m_terminationProtectionEnabled;
-    bool m_terminationProtectionEnabledHasBeenSet;
+    bool m_terminationProtectionEnabledHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

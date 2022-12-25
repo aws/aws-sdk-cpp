@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMELIFT_API CreateGameServerGroupRequest : public GameLiftRequest
+  class CreateGameServerGroupRequest : public GameLiftRequest
   {
   public:
-    CreateGameServerGroupRequest();
+    AWS_GAMELIFT_API CreateGameServerGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGameServerGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -822,10 +822,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -836,10 +833,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -850,10 +844,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -864,10 +855,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -878,10 +866,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameServerGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -892,10 +877,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameServerGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -906,10 +888,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameServerGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -920,47 +899,44 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags, respectively. The maximum tag limit may be lower than stated. See the
-     * Amazon Web Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateGameServerGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-    bool m_instanceDefinitionsHasBeenSet;
+    bool m_instanceDefinitionsHasBeenSet = false;
 
     GameServerGroupAutoScalingPolicy m_autoScalingPolicy;
-    bool m_autoScalingPolicyHasBeenSet;
+    bool m_autoScalingPolicyHasBeenSet = false;
 
     BalancingStrategy m_balancingStrategy;
-    bool m_balancingStrategyHasBeenSet;
+    bool m_balancingStrategyHasBeenSet = false;
 
     GameServerProtectionPolicy m_gameServerProtectionPolicy;
-    bool m_gameServerProtectionPolicyHasBeenSet;
+    bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSubnets;
-    bool m_vpcSubnetsHasBeenSet;
+    bool m_vpcSubnetsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

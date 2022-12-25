@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/OutgoingCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API OutgoingCertificate
+  class OutgoingCertificate
   {
   public:
-    OutgoingCertificate();
-    OutgoingCertificate(Aws::Utils::Json::JsonView jsonValue);
-    OutgoingCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API OutgoingCertificate();
+    AWS_IOT_API OutgoingCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API OutgoingCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     Aws::String m_transferredTo;
-    bool m_transferredToHasBeenSet;
+    bool m_transferredToHasBeenSet = false;
 
     Aws::Utils::DateTime m_transferDate;
-    bool m_transferDateHasBeenSet;
+    bool m_transferDateHasBeenSet = false;
 
     Aws::String m_transferMessage;
-    bool m_transferMessageHasBeenSet;
+    bool m_transferMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

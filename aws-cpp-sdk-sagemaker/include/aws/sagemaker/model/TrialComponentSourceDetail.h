@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentSourceDetail
+  class TrialComponentSourceDetail
   {
   public:
-    TrialComponentSourceDetail();
-    TrialComponentSourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentSourceDetail();
+    AWS_SAGEMAKER_API TrialComponentSourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     TrainingJob m_trainingJob;
-    bool m_trainingJobHasBeenSet;
+    bool m_trainingJobHasBeenSet = false;
 
     ProcessingJob m_processingJob;
-    bool m_processingJobHasBeenSet;
+    bool m_processingJobHasBeenSet = false;
 
     TransformJob m_transformJob;
-    bool m_transformJobHasBeenSet;
+    bool m_transformJobHasBeenSet = false;
   };
 
 } // namespace Model

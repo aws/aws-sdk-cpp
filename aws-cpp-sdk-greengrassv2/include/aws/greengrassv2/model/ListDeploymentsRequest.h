@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASSV2_API ListDeploymentsRequest : public GreengrassV2Request
+  class ListDeploymentsRequest : public GreengrassV2Request
   {
   public:
-    ListDeploymentsRequest();
+    AWS_GREENGRASSV2_API ListDeploymentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDeployments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GREENGRASSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -152,6 +152,63 @@ namespace Model
 
 
     /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline bool ParentTargetArnHasBeenSet() const { return m_parentTargetArnHasBeenSet; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = value; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::move(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const char* value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn.assign(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline ListDeploymentsRequest& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline ListDeploymentsRequest& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline ListDeploymentsRequest& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+
+
+    /**
      * <p>The maximum number of results to be returned per paginated request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -215,16 +272,19 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     DeploymentHistoryFilter m_historyFilter;
-    bool m_historyFilterHasBeenSet;
+    bool m_historyFilterHasBeenSet = false;
+
+    Aws::String m_parentTargetArn;
+    bool m_parentTargetArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

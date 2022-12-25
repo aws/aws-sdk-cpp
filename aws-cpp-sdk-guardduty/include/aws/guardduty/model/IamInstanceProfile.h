@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/IamInstanceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API IamInstanceProfile
+  class IamInstanceProfile
   {
   public:
-    IamInstanceProfile();
-    IamInstanceProfile(Aws::Utils::Json::JsonView jsonValue);
-    IamInstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API IamInstanceProfile();
+    AWS_GUARDDUTY_API IamInstanceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API IamInstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

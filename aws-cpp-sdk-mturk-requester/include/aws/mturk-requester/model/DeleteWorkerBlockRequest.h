@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API DeleteWorkerBlockRequest : public MTurkRequest
+  class DeleteWorkerBlockRequest : public MTurkRequest
   {
   public:
-    DeleteWorkerBlockRequest();
+    AWS_MTURK_API DeleteWorkerBlockRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteWorkerBlock"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_workerId;
-    bool m_workerIdHasBeenSet;
+    bool m_workerIdHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

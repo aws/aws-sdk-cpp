@@ -44,15 +44,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceTypeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceTypeInfo
+  class InstanceTypeInfo
   {
   public:
-    InstanceTypeInfo();
-    InstanceTypeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceTypeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceTypeInfo();
+    AWS_EC2_API InstanceTypeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceTypeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -793,76 +793,76 @@ namespace Model
   private:
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_freeTierEligible;
-    bool m_freeTierEligibleHasBeenSet;
+    bool m_freeTierEligibleHasBeenSet = false;
 
     Aws::Vector<UsageClassType> m_supportedUsageClasses;
-    bool m_supportedUsageClassesHasBeenSet;
+    bool m_supportedUsageClassesHasBeenSet = false;
 
     Aws::Vector<RootDeviceType> m_supportedRootDeviceTypes;
-    bool m_supportedRootDeviceTypesHasBeenSet;
+    bool m_supportedRootDeviceTypesHasBeenSet = false;
 
     Aws::Vector<VirtualizationType> m_supportedVirtualizationTypes;
-    bool m_supportedVirtualizationTypesHasBeenSet;
+    bool m_supportedVirtualizationTypesHasBeenSet = false;
 
     bool m_bareMetal;
-    bool m_bareMetalHasBeenSet;
+    bool m_bareMetalHasBeenSet = false;
 
     InstanceTypeHypervisor m_hypervisor;
-    bool m_hypervisorHasBeenSet;
+    bool m_hypervisorHasBeenSet = false;
 
     ProcessorInfo m_processorInfo;
-    bool m_processorInfoHasBeenSet;
+    bool m_processorInfoHasBeenSet = false;
 
     VCpuInfo m_vCpuInfo;
-    bool m_vCpuInfoHasBeenSet;
+    bool m_vCpuInfoHasBeenSet = false;
 
     MemoryInfo m_memoryInfo;
-    bool m_memoryInfoHasBeenSet;
+    bool m_memoryInfoHasBeenSet = false;
 
     bool m_instanceStorageSupported;
-    bool m_instanceStorageSupportedHasBeenSet;
+    bool m_instanceStorageSupportedHasBeenSet = false;
 
     InstanceStorageInfo m_instanceStorageInfo;
-    bool m_instanceStorageInfoHasBeenSet;
+    bool m_instanceStorageInfoHasBeenSet = false;
 
     EbsInfo m_ebsInfo;
-    bool m_ebsInfoHasBeenSet;
+    bool m_ebsInfoHasBeenSet = false;
 
     NetworkInfo m_networkInfo;
-    bool m_networkInfoHasBeenSet;
+    bool m_networkInfoHasBeenSet = false;
 
     GpuInfo m_gpuInfo;
-    bool m_gpuInfoHasBeenSet;
+    bool m_gpuInfoHasBeenSet = false;
 
     FpgaInfo m_fpgaInfo;
-    bool m_fpgaInfoHasBeenSet;
+    bool m_fpgaInfoHasBeenSet = false;
 
     PlacementGroupInfo m_placementGroupInfo;
-    bool m_placementGroupInfoHasBeenSet;
+    bool m_placementGroupInfoHasBeenSet = false;
 
     InferenceAcceleratorInfo m_inferenceAcceleratorInfo;
-    bool m_inferenceAcceleratorInfoHasBeenSet;
+    bool m_inferenceAcceleratorInfoHasBeenSet = false;
 
     bool m_hibernationSupported;
-    bool m_hibernationSupportedHasBeenSet;
+    bool m_hibernationSupportedHasBeenSet = false;
 
     bool m_burstablePerformanceSupported;
-    bool m_burstablePerformanceSupportedHasBeenSet;
+    bool m_burstablePerformanceSupportedHasBeenSet = false;
 
     bool m_dedicatedHostsSupported;
-    bool m_dedicatedHostsSupportedHasBeenSet;
+    bool m_dedicatedHostsSupportedHasBeenSet = false;
 
     bool m_autoRecoverySupported;
-    bool m_autoRecoverySupportedHasBeenSet;
+    bool m_autoRecoverySupportedHasBeenSet = false;
 
     Aws::Vector<BootModeType> m_supportedBootModes;
-    bool m_supportedBootModesHasBeenSet;
+    bool m_supportedBootModesHasBeenSet = false;
   };
 
 } // namespace Model

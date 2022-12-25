@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Origination">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API Origination
+  class Origination
   {
   public:
-    Origination();
-    Origination(Aws::Utils::Json::JsonView jsonValue);
-    Origination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Origination();
+    AWS_CHIME_API Origination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Origination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<OriginationRoute> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

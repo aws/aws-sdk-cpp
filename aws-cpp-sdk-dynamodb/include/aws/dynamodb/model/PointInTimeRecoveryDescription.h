@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PointInTimeRecoveryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API PointInTimeRecoveryDescription
+  class PointInTimeRecoveryDescription
   {
   public:
-    PointInTimeRecoveryDescription();
-    PointInTimeRecoveryDescription(Aws::Utils::Json::JsonView jsonValue);
-    PointInTimeRecoveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API PointInTimeRecoveryDescription();
+    AWS_DYNAMODB_API PointInTimeRecoveryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API PointInTimeRecoveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     PointInTimeRecoveryStatus m_pointInTimeRecoveryStatus;
-    bool m_pointInTimeRecoveryStatusHasBeenSet;
+    bool m_pointInTimeRecoveryStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestRestorableDateTime;
-    bool m_earliestRestorableDateTimeHasBeenSet;
+    bool m_earliestRestorableDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableDateTime;
-    bool m_latestRestorableDateTimeHasBeenSet;
+    bool m_latestRestorableDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

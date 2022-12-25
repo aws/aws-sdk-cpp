@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPluginFileDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CustomPluginFileDescription
+  class CustomPluginFileDescription
   {
   public:
-    CustomPluginFileDescription();
-    CustomPluginFileDescription(Aws::Utils::Json::JsonView jsonValue);
-    CustomPluginFileDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CustomPluginFileDescription();
+    AWS_KAFKACONNECT_API CustomPluginFileDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CustomPluginFileDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_fileMd5;
-    bool m_fileMd5HasBeenSet;
+    bool m_fileMd5HasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
   };
 
 } // namespace Model

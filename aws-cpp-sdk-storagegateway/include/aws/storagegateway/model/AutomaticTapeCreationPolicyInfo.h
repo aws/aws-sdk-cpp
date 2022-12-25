@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AutomaticTapeCreationPolicyInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API AutomaticTapeCreationPolicyInfo
+  class AutomaticTapeCreationPolicyInfo
   {
   public:
-    AutomaticTapeCreationPolicyInfo();
-    AutomaticTapeCreationPolicyInfo(Aws::Utils::Json::JsonView jsonValue);
-    AutomaticTapeCreationPolicyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationPolicyInfo();
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationPolicyInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationPolicyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::Vector<AutomaticTapeCreationRule> m_automaticTapeCreationRules;
-    bool m_automaticTapeCreationRulesHasBeenSet;
+    bool m_automaticTapeCreationRulesHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

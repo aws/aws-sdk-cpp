@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GroupDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API GroupDefinition
+  class GroupDefinition
   {
   public:
-    GroupDefinition();
-    GroupDefinition(Aws::Utils::Json::JsonView jsonValue);
-    GroupDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API GroupDefinition();
+    AWS_COSTEXPLORER_API GroupDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API GroupDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     GroupDefinitionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

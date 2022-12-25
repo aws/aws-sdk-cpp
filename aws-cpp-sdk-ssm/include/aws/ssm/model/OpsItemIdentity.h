@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemIdentity
+  class OpsItemIdentity
   {
   public:
-    OpsItemIdentity();
-    OpsItemIdentity(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemIdentity();
+    AWS_SSM_API OpsItemIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

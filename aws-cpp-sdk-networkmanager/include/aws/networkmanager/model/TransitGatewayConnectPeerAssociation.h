@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TransitGatewayConnectPeerAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation
+  class TransitGatewayConnectPeerAssociation
   {
   public:
-    TransitGatewayConnectPeerAssociation();
-    TransitGatewayConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
-    TransitGatewayConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation();
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayConnectPeerArn;
-    bool m_transitGatewayConnectPeerArnHasBeenSet;
+    bool m_transitGatewayConnectPeerArnHasBeenSet = false;
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_linkId;
-    bool m_linkIdHasBeenSet;
+    bool m_linkIdHasBeenSet = false;
 
     TransitGatewayConnectPeerAssociationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

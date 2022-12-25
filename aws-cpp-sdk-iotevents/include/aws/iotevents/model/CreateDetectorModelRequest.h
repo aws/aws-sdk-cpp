@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTEVENTS_API CreateDetectorModelRequest : public IoTEventsRequest
+  class CreateDetectorModelRequest : public IoTEventsRequest
   {
   public:
-    CreateDetectorModelRequest();
+    AWS_IOTEVENTS_API CreateDetectorModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDetectorModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -351,25 +351,25 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     DetectorModelDefinition m_detectorModelDefinition;
-    bool m_detectorModelDefinitionHasBeenSet;
+    bool m_detectorModelDefinitionHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EvaluationMethod m_evaluationMethod;
-    bool m_evaluationMethodHasBeenSet;
+    bool m_evaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

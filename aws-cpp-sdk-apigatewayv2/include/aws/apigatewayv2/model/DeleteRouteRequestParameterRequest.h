@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APIGATEWAYV2_API DeleteRouteRequestParameterRequest : public ApiGatewayV2Request
+  class DeleteRouteRequestParameterRequest : public ApiGatewayV2Request
   {
   public:
-    DeleteRouteRequestParameterRequest();
+    AWS_APIGATEWAYV2_API DeleteRouteRequestParameterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRouteRequestParameter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_requestParameterKey;
-    bool m_requestParameterKeyHasBeenSet;
+    bool m_requestParameterKeyHasBeenSet = false;
 
     Aws::String m_routeId;
-    bool m_routeIdHasBeenSet;
+    bool m_routeIdHasBeenSet = false;
   };
 
 } // namespace Model

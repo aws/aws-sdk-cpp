@@ -9,6 +9,7 @@
 #include <aws/resiliencehub/model/AppAssessmentScheduleType.h>
 #include <aws/resiliencehub/model/AppComplianceStatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/resiliencehub/model/AppStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AppSummary
+  class AppSummary
   {
   public:
-    AppSummary();
-    AppSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AppSummary();
+    AWS_RESILIENCEHUB_API AppSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -316,28 +317,62 @@ namespace Model
      */
     inline AppSummary& WithResiliencyScore(double value) { SetResiliencyScore(value); return *this;}
 
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline const AppStatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline void SetStatus(const AppStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline void SetStatus(AppStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline AppSummary& WithStatus(const AppStatusType& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the application.</p>
+     */
+    inline AppSummary& WithStatus(AppStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     AppAssessmentScheduleType m_assessmentSchedule;
-    bool m_assessmentScheduleHasBeenSet;
+    bool m_assessmentScheduleHasBeenSet = false;
 
     AppComplianceStatusType m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_resiliencyScore;
-    bool m_resiliencyScoreHasBeenSet;
+    bool m_resiliencyScoreHasBeenSet = false;
+
+    AppStatusType m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

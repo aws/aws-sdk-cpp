@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/FaultRootCause">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API FaultRootCause
+  class FaultRootCause
   {
   public:
-    FaultRootCause();
-    FaultRootCause(Aws::Utils::Json::JsonView jsonValue);
-    FaultRootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API FaultRootCause();
+    AWS_XRAY_API FaultRootCause(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API FaultRootCause& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::Vector<FaultRootCauseService> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     bool m_clientImpacting;
-    bool m_clientImpactingHasBeenSet;
+    bool m_clientImpactingHasBeenSet = false;
   };
 
 } // namespace Model

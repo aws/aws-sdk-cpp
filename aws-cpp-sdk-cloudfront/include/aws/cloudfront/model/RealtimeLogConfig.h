@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/RealtimeLogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API RealtimeLogConfig
+  class RealtimeLogConfig
   {
   public:
-    RealtimeLogConfig();
-    RealtimeLogConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RealtimeLogConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API RealtimeLogConfig();
+    AWS_CLOUDFRONT_API RealtimeLogConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API RealtimeLogConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -296,19 +296,19 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
 
     Aws::Vector<EndPoint> m_endPoints;
-    bool m_endPointsHasBeenSet;
+    bool m_endPointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

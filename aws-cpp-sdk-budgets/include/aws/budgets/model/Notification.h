@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Notification">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API Notification
+  class Notification
   {
   public:
-    Notification();
-    Notification(Aws::Utils::Json::JsonView jsonValue);
-    Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API Notification();
+    AWS_BUDGETS_API Notification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ThresholdType m_thresholdType;
-    bool m_thresholdTypeHasBeenSet;
+    bool m_thresholdTypeHasBeenSet = false;
 
     NotificationState m_notificationState;
-    bool m_notificationStateHasBeenSet;
+    bool m_notificationStateHasBeenSet = false;
   };
 
 } // namespace Model

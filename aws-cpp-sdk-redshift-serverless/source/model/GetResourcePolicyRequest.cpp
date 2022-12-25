@@ -33,7 +33,7 @@ Aws::String GetResourcePolicyRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection GetResourcePolicyRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.GetResourcePolicy"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.GetResourcePolicy"));
   return headers;
 
 }

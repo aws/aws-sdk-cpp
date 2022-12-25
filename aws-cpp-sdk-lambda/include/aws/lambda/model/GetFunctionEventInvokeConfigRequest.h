@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API GetFunctionEventInvokeConfigRequest : public LambdaRequest
+  class GetFunctionEventInvokeConfigRequest : public LambdaRequest
   {
   public:
-    GetFunctionEventInvokeConfigRequest();
+    AWS_LAMBDA_API GetFunctionEventInvokeConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetFunctionEventInvokeConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -194,10 +194,10 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

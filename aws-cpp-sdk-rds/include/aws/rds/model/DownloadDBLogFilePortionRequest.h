@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DownloadDBLogFilePortionRequest : public RDSRequest
+  class DownloadDBLogFilePortionRequest : public RDSRequest
   {
   public:
-    DownloadDBLogFilePortionRequest();
+    AWS_RDS_API DownloadDBLogFilePortionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DownloadDBLogFilePortion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -277,16 +277,16 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_logFileName;
-    bool m_logFileNameHasBeenSet;
+    bool m_logFileNameHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_numberOfLines;
-    bool m_numberOfLinesHasBeenSet;
+    bool m_numberOfLinesHasBeenSet = false;
   };
 
 } // namespace Model

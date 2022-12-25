@@ -19,48 +19,40 @@ namespace Model
 {
 
 PropertyDefinitionRequest::PropertyDefinitionRequest() : 
-    m_configurationHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isExternalId(false),
-    m_isExternalIdHasBeenSet(false),
     m_isRequiredInEntity(false),
     m_isRequiredInEntityHasBeenSet(false),
+    m_isExternalId(false),
+    m_isExternalIdHasBeenSet(false),
     m_isStoredExternally(false),
     m_isStoredExternallyHasBeenSet(false),
     m_isTimeSeries(false),
-    m_isTimeSeriesHasBeenSet(false)
+    m_isTimeSeriesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
 PropertyDefinitionRequest::PropertyDefinitionRequest(JsonView jsonValue) : 
-    m_configurationHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isExternalId(false),
-    m_isExternalIdHasBeenSet(false),
     m_isRequiredInEntity(false),
     m_isRequiredInEntityHasBeenSet(false),
+    m_isExternalId(false),
+    m_isExternalIdHasBeenSet(false),
     m_isStoredExternally(false),
     m_isStoredExternallyHasBeenSet(false),
     m_isTimeSeries(false),
-    m_isTimeSeriesHasBeenSet(false)
+    m_isTimeSeriesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PropertyDefinitionRequest& PropertyDefinitionRequest::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("configuration"))
-  {
-    Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
-    for(auto& configurationItem : configurationJsonMap)
-    {
-      m_configuration[configurationItem.first] = configurationItem.second.AsString();
-    }
-    m_configurationHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = jsonValue.GetObject("dataType");
@@ -68,11 +60,11 @@ PropertyDefinitionRequest& PropertyDefinitionRequest::operator =(JsonView jsonVa
     m_dataTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("defaultValue"))
+  if(jsonValue.ValueExists("isRequiredInEntity"))
   {
-    m_defaultValue = jsonValue.GetObject("defaultValue");
+    m_isRequiredInEntity = jsonValue.GetBool("isRequiredInEntity");
 
-    m_defaultValueHasBeenSet = true;
+    m_isRequiredInEntityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isExternalId"))
@@ -80,13 +72,6 @@ PropertyDefinitionRequest& PropertyDefinitionRequest::operator =(JsonView jsonVa
     m_isExternalId = jsonValue.GetBool("isExternalId");
 
     m_isExternalIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("isRequiredInEntity"))
-  {
-    m_isRequiredInEntity = jsonValue.GetBool("isRequiredInEntity");
-
-    m_isRequiredInEntityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isStoredExternally"))
@@ -103,6 +88,30 @@ PropertyDefinitionRequest& PropertyDefinitionRequest::operator =(JsonView jsonVa
     m_isTimeSeriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetObject("defaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
+    for(auto& configurationItem : configurationJsonMap)
+    {
+      m_configuration[configurationItem.first] = configurationItem.second.AsString();
+    }
+    m_configurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,38 +119,21 @@ JsonValue PropertyDefinitionRequest::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   JsonValue configurationJsonMap;
-   for(auto& configurationItem : m_configuration)
-   {
-     configurationJsonMap.WithString(configurationItem.first, configurationItem.second);
-   }
-   payload.WithObject("configuration", std::move(configurationJsonMap));
-
-  }
-
   if(m_dataTypeHasBeenSet)
   {
    payload.WithObject("dataType", m_dataType.Jsonize());
 
   }
 
-  if(m_defaultValueHasBeenSet)
+  if(m_isRequiredInEntityHasBeenSet)
   {
-   payload.WithObject("defaultValue", m_defaultValue.Jsonize());
+   payload.WithBool("isRequiredInEntity", m_isRequiredInEntity);
 
   }
 
   if(m_isExternalIdHasBeenSet)
   {
    payload.WithBool("isExternalId", m_isExternalId);
-
-  }
-
-  if(m_isRequiredInEntityHasBeenSet)
-  {
-   payload.WithBool("isRequiredInEntity", m_isRequiredInEntity);
 
   }
 
@@ -154,6 +146,29 @@ JsonValue PropertyDefinitionRequest::Jsonize() const
   if(m_isTimeSeriesHasBeenSet)
   {
    payload.WithBool("isTimeSeries", m_isTimeSeries);
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithObject("defaultValue", m_defaultValue.Jsonize());
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   JsonValue configurationJsonMap;
+   for(auto& configurationItem : m_configuration)
+   {
+     configurationJsonMap.WithString(configurationItem.first, configurationItem.second);
+   }
+   payload.WithObject("configuration", std::move(configurationJsonMap));
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 

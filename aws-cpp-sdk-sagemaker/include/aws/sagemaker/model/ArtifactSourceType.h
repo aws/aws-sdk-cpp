@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ArtifactSourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ArtifactSourceType
+  class ArtifactSourceType
   {
   public:
-    ArtifactSourceType();
-    ArtifactSourceType(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactSourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ArtifactSourceType();
+    AWS_SAGEMAKER_API ArtifactSourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ArtifactSourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     ArtifactSourceIdType m_sourceIdType;
-    bool m_sourceIdTypeHasBeenSet;
+    bool m_sourceIdTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinApplicationConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationUpdate
+  class ZeppelinApplicationConfigurationUpdate
   {
   public:
-    ZeppelinApplicationConfigurationUpdate();
-    ZeppelinApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ZeppelinApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     ZeppelinMonitoringConfigurationUpdate m_monitoringConfigurationUpdate;
-    bool m_monitoringConfigurationUpdateHasBeenSet;
+    bool m_monitoringConfigurationUpdateHasBeenSet = false;
 
     CatalogConfigurationUpdate m_catalogConfigurationUpdate;
-    bool m_catalogConfigurationUpdateHasBeenSet;
+    bool m_catalogConfigurationUpdateHasBeenSet = false;
 
     DeployAsApplicationConfigurationUpdate m_deployAsApplicationConfigurationUpdate;
-    bool m_deployAsApplicationConfigurationUpdateHasBeenSet;
+    bool m_deployAsApplicationConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<CustomArtifactConfiguration> m_customArtifactsConfigurationUpdate;
-    bool m_customArtifactsConfigurationUpdateHasBeenSet;
+    bool m_customArtifactsConfigurationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API CreateStreamKeyRequest : public IVSRequest
+  class CreateStreamKeyRequest : public IVSRequest
   {
   public:
-    CreateStreamKeyRequest();
+    AWS_IVS_API CreateStreamKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStreamKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,90 +75,142 @@ namespace Model
 
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Array of 1-50 maps, each of the form <code>string:string
-     * (key:value)</code>.</p>
+     * <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
+     * See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services Resources</a> for more information, including restrictions
+     * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+     * service-specific constraints beyond what is documented there.</p>
      */
     inline CreateStreamKeyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

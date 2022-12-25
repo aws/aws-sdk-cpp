@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ViolationEventOccurrenceRange">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ViolationEventOccurrenceRange
+  class ViolationEventOccurrenceRange
   {
   public:
-    ViolationEventOccurrenceRange();
-    ViolationEventOccurrenceRange(Aws::Utils::Json::JsonView jsonValue);
-    ViolationEventOccurrenceRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ViolationEventOccurrenceRange();
+    AWS_IOT_API ViolationEventOccurrenceRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ViolationEventOccurrenceRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,94 +27,101 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p> Container for the response parameters to the <code>
-   * <a>ListPackagesForDomain</a> </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the response parameters to the
+   * <code>ListPackagesForDomain</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomainResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ListPackagesForDomainResult
+  class ListPackagesForDomainResult
   {
   public:
-    ListPackagesForDomainResult();
-    ListPackagesForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPackagesForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListPackagesForDomainResult();
+    AWS_OPENSEARCHSERVICE_API ListPackagesForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListPackagesForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline const Aws::Vector<DomainPackageDetails>& GetDomainPackageDetailsList() const{ return m_domainPackageDetailsList; }
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline void SetDomainPackageDetailsList(const Aws::Vector<DomainPackageDetails>& value) { m_domainPackageDetailsList = value; }
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline void SetDomainPackageDetailsList(Aws::Vector<DomainPackageDetails>&& value) { m_domainPackageDetailsList = std::move(value); }
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline ListPackagesForDomainResult& WithDomainPackageDetailsList(const Aws::Vector<DomainPackageDetails>& value) { SetDomainPackageDetailsList(value); return *this;}
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline ListPackagesForDomainResult& WithDomainPackageDetailsList(Aws::Vector<DomainPackageDetails>&& value) { SetDomainPackageDetailsList(std::move(value)); return *this;}
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline ListPackagesForDomainResult& AddDomainPackageDetailsList(const DomainPackageDetails& value) { m_domainPackageDetailsList.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>DomainPackageDetails</code> objects. </p>
+     * <p>List of all packages associated with a domain.</p>
      */
     inline ListPackagesForDomainResult& AddDomainPackageDetailsList(DomainPackageDetails&& value) { m_domainPackageDetailsList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline ListPackagesForDomainResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline ListPackagesForDomainResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token to supply to the next call to get the next page of
-     * results.</p>
+     * <p>When <code>nextToken</code> is returned, there are more results available.
+     * The value of <code>nextToken</code> is a unique pagination token for each page.
+     * Make the call again using the returned token to retrieve the next page.</p>
      */
     inline ListPackagesForDomainResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

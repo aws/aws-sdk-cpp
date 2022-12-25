@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDHSM_API GetConfigRequest : public CloudHSMRequest
+  class GetConfigRequest : public CloudHSMRequest
   {
   public:
-    GetConfigRequest();
+    AWS_CLOUDHSM_API GetConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_clientArn;
-    bool m_clientArnHasBeenSet;
+    bool m_clientArnHasBeenSet = false;
 
     ClientVersion m_clientVersion;
-    bool m_clientVersionHasBeenSet;
+    bool m_clientVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hapgList;
-    bool m_hapgListHasBeenSet;
+    bool m_hapgListHasBeenSet = false;
   };
 
 } // namespace Model

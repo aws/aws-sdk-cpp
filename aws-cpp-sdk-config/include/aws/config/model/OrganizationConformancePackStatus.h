@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConformancePackStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationConformancePackStatus
+  class OrganizationConformancePackStatus
   {
   public:
-    OrganizationConformancePackStatus();
-    OrganizationConformancePackStatus(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConformancePackStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationConformancePackStatus();
+    AWS_CONFIGSERVICE_API OrganizationConformancePackStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationConformancePackStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,16 +82,16 @@ namespace Model
 
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -113,16 +113,16 @@ namespace Model
     inline const OrganizationResourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -144,16 +144,16 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -175,16 +175,16 @@ namespace Model
     inline void SetStatus(const OrganizationResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -206,16 +206,16 @@ namespace Model
     inline void SetStatus(OrganizationResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -237,16 +237,16 @@ namespace Model
     inline OrganizationConformancePackStatus& WithStatus(const OrganizationResourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Indicates deployment status of an organization conformance pack. When master
-     * account calls PutOrganizationConformancePack for the first time, conformance
-     * pack status is created in all the member accounts. When master account calls
-     * PutOrganizationConformancePack for the second time, conformance pack status is
-     * updated in all the member accounts. Additionally, conformance pack status is
-     * updated when one or more member accounts join or leave an organization.
-     * Conformance pack status is deleted when the master account deletes
-     * OrganizationConformancePack in all the member accounts and disables service
-     * access for <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config
-     * sets the state of the conformance pack to:</p> <ul> <li> <p>
+     * <p>Indicates deployment status of an organization conformance pack. When
+     * management account calls PutOrganizationConformancePack for the first time,
+     * conformance pack status is created in all the member accounts. When management
+     * account calls PutOrganizationConformancePack for the second time, conformance
+     * pack status is updated in all the member accounts. Additionally, conformance
+     * pack status is updated when one or more member accounts join or leave an
+     * organization. Conformance pack status is deleted when the management account
+     * deletes OrganizationConformancePack in all the member accounts and disables
+     * service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     * <p>Config sets the state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when an organization conformance pack has been
      * successfully created in all the member accounts. </p> </li> <li> <p>
      * <code>CREATE_IN_PROGRESS</code> when an organization conformance pack creation
@@ -399,19 +399,19 @@ namespace Model
   private:
 
     Aws::String m_organizationConformancePackName;
-    bool m_organizationConformancePackNameHasBeenSet;
+    bool m_organizationConformancePackNameHasBeenSet = false;
 
     OrganizationResourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

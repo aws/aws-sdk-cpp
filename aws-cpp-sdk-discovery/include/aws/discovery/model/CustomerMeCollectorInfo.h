@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CustomerMeCollectorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerMeCollectorInfo
+  class CustomerMeCollectorInfo
   {
   public:
-    CustomerMeCollectorInfo();
-    CustomerMeCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerMeCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerMeCollectorInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerMeCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerMeCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,25 +189,25 @@ namespace Model
   private:
 
     int m_activeMeCollectors;
-    bool m_activeMeCollectorsHasBeenSet;
+    bool m_activeMeCollectorsHasBeenSet = false;
 
     int m_healthyMeCollectors;
-    bool m_healthyMeCollectorsHasBeenSet;
+    bool m_healthyMeCollectorsHasBeenSet = false;
 
     int m_denyListedMeCollectors;
-    bool m_denyListedMeCollectorsHasBeenSet;
+    bool m_denyListedMeCollectorsHasBeenSet = false;
 
     int m_shutdownMeCollectors;
-    bool m_shutdownMeCollectorsHasBeenSet;
+    bool m_shutdownMeCollectorsHasBeenSet = false;
 
     int m_unhealthyMeCollectors;
-    bool m_unhealthyMeCollectorsHasBeenSet;
+    bool m_unhealthyMeCollectorsHasBeenSet = false;
 
     int m_totalMeCollectors;
-    bool m_totalMeCollectorsHasBeenSet;
+    bool m_totalMeCollectorsHasBeenSet = false;
 
     int m_unknownMeCollectors;
-    bool m_unknownMeCollectorsHasBeenSet;
+    bool m_unknownMeCollectorsHasBeenSet = false;
   };
 
 } // namespace Model

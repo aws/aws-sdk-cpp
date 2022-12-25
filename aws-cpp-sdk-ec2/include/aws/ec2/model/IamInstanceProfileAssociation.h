@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IamInstanceProfileAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API IamInstanceProfileAssociation
+  class IamInstanceProfileAssociation
   {
   public:
-    IamInstanceProfileAssociation();
-    IamInstanceProfileAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IamInstanceProfileAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IamInstanceProfileAssociation();
+    AWS_EC2_API IamInstanceProfileAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IamInstanceProfileAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     IamInstanceProfile m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     IamInstanceProfileAssociationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

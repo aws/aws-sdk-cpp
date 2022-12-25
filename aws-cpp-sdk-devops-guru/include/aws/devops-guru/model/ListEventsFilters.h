@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEventsFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListEventsFilters
+  class ListEventsFilters
   {
   public:
-    ListEventsFilters();
-    ListEventsFilters(Aws::Utils::Json::JsonView jsonValue);
-    ListEventsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListEventsFilters();
+    AWS_DEVOPSGURU_API ListEventsFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListEventsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -272,22 +272,22 @@ namespace Model
   private:
 
     Aws::String m_insightId;
-    bool m_insightIdHasBeenSet;
+    bool m_insightIdHasBeenSet = false;
 
     EventTimeRange m_eventTimeRange;
-    bool m_eventTimeRangeHasBeenSet;
+    bool m_eventTimeRangeHasBeenSet = false;
 
     EventClass m_eventClass;
-    bool m_eventClassHasBeenSet;
+    bool m_eventClassHasBeenSet = false;
 
     Aws::String m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     EventDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/config/model/DescribeConfigRulesFilters.h>
 #include <utility>
 
 namespace Aws
@@ -22,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRulesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeConfigRulesRequest : public ConfigServiceRequest
+  class DescribeConfigRulesRequest : public ConfigServiceRequest
   {
   public:
-    DescribeConfigRulesRequest();
+    AWS_CONFIGSERVICE_API DescribeConfigRulesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeConfigRules"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -141,13 +142,53 @@ namespace Model
      */
     inline DescribeConfigRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline const DescribeConfigRulesFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline void SetFilters(const DescribeConfigRulesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline void SetFilters(DescribeConfigRulesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline DescribeConfigRulesRequest& WithFilters(const DescribeConfigRulesFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Returns a list of Detecive or Proactive Config rules. By default, this API
+     * returns an unfiltered list.</p>
+     */
+    inline DescribeConfigRulesRequest& WithFilters(DescribeConfigRulesFilters&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
-    bool m_configRuleNamesHasBeenSet;
+    bool m_configRuleNamesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
+
+    DescribeConfigRulesFilters m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

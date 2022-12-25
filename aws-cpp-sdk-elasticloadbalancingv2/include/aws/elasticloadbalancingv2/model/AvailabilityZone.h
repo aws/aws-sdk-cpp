@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AvailabilityZone">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API AvailabilityZone
+  class AvailabilityZone
   {
   public:
-    AvailabilityZone();
-    AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API AvailabilityZone();
+    AWS_ELASTICLOADBALANCINGV2_API AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -231,16 +231,16 @@ namespace Model
   private:
 
     Aws::String m_zoneName;
-    bool m_zoneNameHasBeenSet;
+    bool m_zoneNameHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
-    bool m_loadBalancerAddressesHasBeenSet;
+    bool m_loadBalancerAddressesHasBeenSet = false;
   };
 
 } // namespace Model

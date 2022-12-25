@@ -5,147 +5,73 @@
 
 #pragma once
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
-#include <aws/kafkaconnect/KafkaConnectErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kafkaconnect/model/CreateConnectorResult.h>
-#include <aws/kafkaconnect/model/CreateCustomPluginResult.h>
-#include <aws/kafkaconnect/model/CreateWorkerConfigurationResult.h>
-#include <aws/kafkaconnect/model/DeleteConnectorResult.h>
-#include <aws/kafkaconnect/model/DeleteCustomPluginResult.h>
-#include <aws/kafkaconnect/model/DescribeConnectorResult.h>
-#include <aws/kafkaconnect/model/DescribeCustomPluginResult.h>
-#include <aws/kafkaconnect/model/DescribeWorkerConfigurationResult.h>
-#include <aws/kafkaconnect/model/ListConnectorsResult.h>
-#include <aws/kafkaconnect/model/ListCustomPluginsResult.h>
-#include <aws/kafkaconnect/model/ListWorkerConfigurationsResult.h>
-#include <aws/kafkaconnect/model/UpdateConnectorResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KafkaConnect
 {
-
-namespace Model
-{
-        class CreateConnectorRequest;
-        class CreateCustomPluginRequest;
-        class CreateWorkerConfigurationRequest;
-        class DeleteConnectorRequest;
-        class DeleteCustomPluginRequest;
-        class DescribeConnectorRequest;
-        class DescribeCustomPluginRequest;
-        class DescribeWorkerConfigurationRequest;
-        class ListConnectorsRequest;
-        class ListCustomPluginsRequest;
-        class ListWorkerConfigurationsRequest;
-        class UpdateConnectorRequest;
-
-        typedef Aws::Utils::Outcome<CreateConnectorResult, KafkaConnectError> CreateConnectorOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomPluginResult, KafkaConnectError> CreateCustomPluginOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkerConfigurationResult, KafkaConnectError> CreateWorkerConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectorResult, KafkaConnectError> DeleteConnectorOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomPluginResult, KafkaConnectError> DeleteCustomPluginOutcome;
-        typedef Aws::Utils::Outcome<DescribeConnectorResult, KafkaConnectError> DescribeConnectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomPluginResult, KafkaConnectError> DescribeCustomPluginOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkerConfigurationResult, KafkaConnectError> DescribeWorkerConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListConnectorsResult, KafkaConnectError> ListConnectorsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomPluginsResult, KafkaConnectError> ListCustomPluginsOutcome;
-        typedef Aws::Utils::Outcome<ListWorkerConfigurationsResult, KafkaConnectError> ListWorkerConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<UpdateConnectorResult, KafkaConnectError> UpdateConnectorOutcome;
-
-        typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
-        typedef std::future<CreateCustomPluginOutcome> CreateCustomPluginOutcomeCallable;
-        typedef std::future<CreateWorkerConfigurationOutcome> CreateWorkerConfigurationOutcomeCallable;
-        typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
-        typedef std::future<DeleteCustomPluginOutcome> DeleteCustomPluginOutcomeCallable;
-        typedef std::future<DescribeConnectorOutcome> DescribeConnectorOutcomeCallable;
-        typedef std::future<DescribeCustomPluginOutcome> DescribeCustomPluginOutcomeCallable;
-        typedef std::future<DescribeWorkerConfigurationOutcome> DescribeWorkerConfigurationOutcomeCallable;
-        typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
-        typedef std::future<ListCustomPluginsOutcome> ListCustomPluginsOutcomeCallable;
-        typedef std::future<ListWorkerConfigurationsOutcome> ListWorkerConfigurationsOutcomeCallable;
-        typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
-} // namespace Model
-
-  class KafkaConnectClient;
-
-    typedef std::function<void(const KafkaConnectClient*, const Model::CreateConnectorRequest&, const Model::CreateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectorResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::CreateCustomPluginRequest&, const Model::CreateCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomPluginResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::CreateWorkerConfigurationRequest&, const Model::CreateWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkerConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::DeleteConnectorRequest&, const Model::DeleteConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::DeleteCustomPluginRequest&, const Model::DeleteCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomPluginResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::DescribeConnectorRequest&, const Model::DescribeConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectorResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::DescribeCustomPluginRequest&, const Model::DescribeCustomPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomPluginResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::DescribeWorkerConfigurationRequest&, const Model::DescribeWorkerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkerConfigurationResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::ListCustomPluginsRequest&, const Model::ListCustomPluginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomPluginsResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::ListWorkerConfigurationsRequest&, const Model::ListWorkerConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkerConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const KafkaConnectClient*, const Model::UpdateConnectorRequest&, const Model::UpdateConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectorResponseReceivedHandler;
-
   /**
    * <p/>
    */
-  class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KafkaConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KafkaConnectClient(const Aws::KafkaConnect::KafkaConnectClientConfiguration& clientConfiguration = Aws::KafkaConnect::KafkaConnectClientConfiguration(),
+                           std::shared_ptr<KafkaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KafkaConnectClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KafkaConnectClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<KafkaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::KafkaConnect::KafkaConnectClientConfiguration& clientConfiguration = Aws::KafkaConnect::KafkaConnectClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KafkaConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<KafkaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<KafkaConnectEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::KafkaConnect::KafkaConnectClientConfiguration& clientConfiguration = Aws::KafkaConnect::KafkaConnectClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KafkaConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        KafkaConnectClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        KafkaConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~KafkaConnectClient();
-
 
         /**
          * <p>Creates a connector using the specified properties.</p><p><h3>See Also:</h3> 
@@ -363,24 +289,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<KafkaConnectEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateConnectorAsyncHelper(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomPluginAsyncHelper(const Model::CreateCustomPluginRequest& request, const CreateCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkerConfigurationAsyncHelper(const Model::CreateWorkerConfigurationRequest& request, const CreateWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConnectorAsyncHelper(const Model::DeleteConnectorRequest& request, const DeleteConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomPluginAsyncHelper(const Model::DeleteCustomPluginRequest& request, const DeleteCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConnectorAsyncHelper(const Model::DescribeConnectorRequest& request, const DescribeConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomPluginAsyncHelper(const Model::DescribeCustomPluginRequest& request, const DescribeCustomPluginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkerConfigurationAsyncHelper(const Model::DescribeWorkerConfigurationRequest& request, const DescribeWorkerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConnectorsAsyncHelper(const Model::ListConnectorsRequest& request, const ListConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomPluginsAsyncHelper(const Model::ListCustomPluginsRequest& request, const ListCustomPluginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkerConfigurationsAsyncHelper(const Model::ListWorkerConfigurationsRequest& request, const ListWorkerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateConnectorAsyncHelper(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>;
+      void init(const KafkaConnectClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      KafkaConnectClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<KafkaConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace KafkaConnect

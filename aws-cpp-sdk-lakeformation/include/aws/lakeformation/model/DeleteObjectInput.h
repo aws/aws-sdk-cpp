@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteObjectInput">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API DeleteObjectInput
+  class DeleteObjectInput
   {
   public:
-    DeleteObjectInput();
-    DeleteObjectInput(Aws::Utils::Json::JsonView jsonValue);
-    DeleteObjectInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API DeleteObjectInput();
+    AWS_LAKEFORMATION_API DeleteObjectInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API DeleteObjectInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionValues;
-    bool m_partitionValuesHasBeenSet;
+    bool m_partitionValuesHasBeenSet = false;
   };
 
 } // namespace Model

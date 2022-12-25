@@ -8,6 +8,8 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/customer-profiles/model/LogicalOperator.h>
+#include <aws/customer-profiles/model/AdditionalSearchKey.h>
 #include <utility>
 
 namespace Aws
@@ -23,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API SearchProfilesRequest : public CustomerProfilesRequest
+  class SearchProfilesRequest : public CustomerProfilesRequest
   {
   public:
-    SearchProfilesRequest();
+    AWS_CUSTOMERPROFILES_API SearchProfilesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SearchProfiles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CUSTOMERPROFILES_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -81,22 +83,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of objects returned per page.</p>
+     * <p>The maximum number of objects returned per page.</p> <p>The default is 20 if
+     * this parameter is not included in the request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of objects returned per page.</p>
+     * <p>The maximum number of objects returned per page.</p> <p>The default is 20 if
+     * this parameter is not included in the request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of objects returned per page.</p>
+     * <p>The maximum number of objects returned per page.</p> <p>The default is 20 if
+     * this parameter is not included in the request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of objects returned per page.</p>
+     * <p>The maximum number of objects returned per page.</p> <p>The default is 20 if
+     * this parameter is not included in the request.</p>
      */
     inline SearchProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -268,22 +274,202 @@ namespace Model
      */
     inline SearchProfilesRequest& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline const Aws::Vector<AdditionalSearchKey>& GetAdditionalSearchKeys() const{ return m_additionalSearchKeys; }
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline bool AdditionalSearchKeysHasBeenSet() const { return m_additionalSearchKeysHasBeenSet; }
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline void SetAdditionalSearchKeys(const Aws::Vector<AdditionalSearchKey>& value) { m_additionalSearchKeysHasBeenSet = true; m_additionalSearchKeys = value; }
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline void SetAdditionalSearchKeys(Aws::Vector<AdditionalSearchKey>&& value) { m_additionalSearchKeysHasBeenSet = true; m_additionalSearchKeys = std::move(value); }
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline SearchProfilesRequest& WithAdditionalSearchKeys(const Aws::Vector<AdditionalSearchKey>& value) { SetAdditionalSearchKeys(value); return *this;}
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline SearchProfilesRequest& WithAdditionalSearchKeys(Aws::Vector<AdditionalSearchKey>&& value) { SetAdditionalSearchKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline SearchProfilesRequest& AddAdditionalSearchKeys(const AdditionalSearchKey& value) { m_additionalSearchKeysHasBeenSet = true; m_additionalSearchKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>AdditionalSearchKey</code> objects that are each searchable
+     * identifiers of a profile. Each <code>AdditionalSearchKey</code> object contains
+     * a <code>KeyName</code> and a list of <code>Values</code> associated with that
+     * specific key (i.e., a key-value(s) pair). These additional search keys will be
+     * used in conjunction with the <code>LogicalOperator</code> and the required
+     * <code>KeyName</code> and <code>Values</code> parameters to search for profiles
+     * that satisfy the search criteria. </p>
+     */
+    inline SearchProfilesRequest& AddAdditionalSearchKeys(AdditionalSearchKey&& value) { m_additionalSearchKeysHasBeenSet = true; m_additionalSearchKeys.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline const LogicalOperator& GetLogicalOperator() const{ return m_logicalOperator; }
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline bool LogicalOperatorHasBeenSet() const { return m_logicalOperatorHasBeenSet; }
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline void SetLogicalOperator(const LogicalOperator& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline void SetLogicalOperator(LogicalOperator&& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = std::move(value); }
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline SearchProfilesRequest& WithLogicalOperator(const LogicalOperator& value) { SetLogicalOperator(value); return *this;}
+
+    /**
+     * <p>Relationship between all specified search keys that will be used to search
+     * for profiles. This includes the required <code>KeyName</code> and
+     * <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.</p> <p>This parameter influences
+     * which profiles will be returned in the response in the following manner:</p>
+     * <ul> <li> <p> <code>AND</code> - The response only includes profiles that match
+     * all of the search keys.</p> </li> <li> <p> <code>OR</code> - The response
+     * includes profiles that match at least one of the search keys.</p> </li> </ul>
+     * <p>The <code>OR</code> relationship is the default behavior if this parameter is
+     * not included in the request.</p>
+     */
+    inline SearchProfilesRequest& WithLogicalOperator(LogicalOperator&& value) { SetLogicalOperator(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<AdditionalSearchKey> m_additionalSearchKeys;
+    bool m_additionalSearchKeysHasBeenSet = false;
+
+    LogicalOperator m_logicalOperator;
+    bool m_logicalOperatorHasBeenSet = false;
   };
 
 } // namespace Model

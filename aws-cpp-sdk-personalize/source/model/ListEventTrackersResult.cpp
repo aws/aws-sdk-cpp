@@ -30,7 +30,7 @@ ListEventTrackersResult& ListEventTrackersResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("eventTrackers"))
   {
-    Array<JsonView> eventTrackersJsonList = jsonValue.GetArray("eventTrackers");
+    Aws::Utils::Array<JsonView> eventTrackersJsonList = jsonValue.GetArray("eventTrackers");
     for(unsigned eventTrackersIndex = 0; eventTrackersIndex < eventTrackersJsonList.GetLength(); ++eventTrackersIndex)
     {
       m_eventTrackers.push_back(eventTrackersJsonList[eventTrackersIndex].AsObject());

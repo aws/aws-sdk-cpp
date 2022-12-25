@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ExcelOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ExcelOptions
+  class ExcelOptions
   {
   public:
-    ExcelOptions();
-    ExcelOptions(Aws::Utils::Json::JsonView jsonValue);
-    ExcelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ExcelOptions();
+    AWS_GLUEDATABREW_API ExcelOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ExcelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_sheetNames;
-    bool m_sheetNamesHasBeenSet;
+    bool m_sheetNamesHasBeenSet = false;
 
     Aws::Vector<int> m_sheetIndexes;
-    bool m_sheetIndexesHasBeenSet;
+    bool m_sheetIndexesHasBeenSet = false;
 
     bool m_headerRow;
-    bool m_headerRowHasBeenSet;
+    bool m_headerRowHasBeenSet = false;
   };
 
 } // namespace Model

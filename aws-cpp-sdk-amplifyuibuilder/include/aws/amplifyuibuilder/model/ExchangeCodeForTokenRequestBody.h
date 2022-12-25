@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForTokenRequestBody">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody
+  class ExchangeCodeForTokenRequestBody
   {
   public:
-    ExchangeCodeForTokenRequestBody();
-    ExchangeCodeForTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
-    ExchangeCodeForTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody();
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_redirectUri;
-    bool m_redirectUriHasBeenSet;
+    bool m_redirectUriHasBeenSet = false;
   };
 
 } // namespace Model

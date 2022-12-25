@@ -9,6 +9,7 @@
 #include <aws/route53domains/model/OperationStatus.h>
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/route53domains/model/StatusFlag.h>
 #include <utility>
 
 namespace Aws
@@ -33,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API GetOperationDetailResult
+  class GetOperationDetailResult
   {
   public:
-    GetOperationDetailResult();
-    GetOperationDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult();
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -226,6 +227,113 @@ namespace Model
      */
     inline GetOperationDetailResult& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The date when the operation was last updated. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p> The date when the operation was last updated. </p>
+     */
+    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
+
+    /**
+     * <p> The date when the operation was last updated. </p>
+     */
+    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
+
+    /**
+     * <p> The date when the operation was last updated. </p>
+     */
+    inline GetOperationDetailResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
+
+    /**
+     * <p> The date when the operation was last updated. </p>
+     */
+    inline GetOperationDetailResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Lists any outstanding operations that require customer action. Valid values
+     * are:</p> <ul> <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting
+     * for acceptance from the account that is receiving the domain.</p> </li> <li> <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer
+     * action, for example, returning an email.</p> </li> <li> <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of
+     * authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p>
+     * </li> <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is
+     * waiting for the payment method to validate.</p> </li> <li> <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is
+     * waiting for its resolution.</p> </li> </ul>
+     */
+    inline const StatusFlag& GetStatusFlag() const{ return m_statusFlag; }
+
+    /**
+     * <p> Lists any outstanding operations that require customer action. Valid values
+     * are:</p> <ul> <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting
+     * for acceptance from the account that is receiving the domain.</p> </li> <li> <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer
+     * action, for example, returning an email.</p> </li> <li> <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of
+     * authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p>
+     * </li> <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is
+     * waiting for the payment method to validate.</p> </li> <li> <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is
+     * waiting for its resolution.</p> </li> </ul>
+     */
+    inline void SetStatusFlag(const StatusFlag& value) { m_statusFlag = value; }
+
+    /**
+     * <p> Lists any outstanding operations that require customer action. Valid values
+     * are:</p> <ul> <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting
+     * for acceptance from the account that is receiving the domain.</p> </li> <li> <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer
+     * action, for example, returning an email.</p> </li> <li> <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of
+     * authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p>
+     * </li> <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is
+     * waiting for the payment method to validate.</p> </li> <li> <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is
+     * waiting for its resolution.</p> </li> </ul>
+     */
+    inline void SetStatusFlag(StatusFlag&& value) { m_statusFlag = std::move(value); }
+
+    /**
+     * <p> Lists any outstanding operations that require customer action. Valid values
+     * are:</p> <ul> <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting
+     * for acceptance from the account that is receiving the domain.</p> </li> <li> <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer
+     * action, for example, returning an email.</p> </li> <li> <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of
+     * authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p>
+     * </li> <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is
+     * waiting for the payment method to validate.</p> </li> <li> <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is
+     * waiting for its resolution.</p> </li> </ul>
+     */
+    inline GetOperationDetailResult& WithStatusFlag(const StatusFlag& value) { SetStatusFlag(value); return *this;}
+
+    /**
+     * <p> Lists any outstanding operations that require customer action. Valid values
+     * are:</p> <ul> <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting
+     * for acceptance from the account that is receiving the domain.</p> </li> <li> <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer
+     * action, for example, returning an email.</p> </li> <li> <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of
+     * authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p>
+     * </li> <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is
+     * waiting for the payment method to validate.</p> </li> <li> <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is
+     * waiting for its resolution.</p> </li> </ul>
+     */
+    inline GetOperationDetailResult& WithStatusFlag(StatusFlag&& value) { SetStatusFlag(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_operationId;
@@ -239,6 +347,10 @@ namespace Model
     OperationType m_type;
 
     Aws::Utils::DateTime m_submittedDate;
+
+    Aws::Utils::DateTime m_lastUpdatedDate;
+
+    StatusFlag m_statusFlag;
   };
 
 } // namespace Model

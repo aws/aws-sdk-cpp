@@ -36,7 +36,7 @@ ListPagesByContactResult& ListPagesByContactResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Pages"))
   {
-    Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
+    Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
     for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
     {
       m_pages.push_back(pagesJsonList[pagesIndex].AsObject());

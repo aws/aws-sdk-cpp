@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateAbpV1_0_x">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API UpdateAbpV1_0_x
+  class UpdateAbpV1_0_x
   {
   public:
-    UpdateAbpV1_0_x();
-    UpdateAbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
-    UpdateAbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API UpdateAbpV1_0_x();
+    AWS_IOTWIRELESS_API UpdateAbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API UpdateAbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_fCntStart;
-    bool m_fCntStartHasBeenSet;
+    bool m_fCntStartHasBeenSet = false;
   };
 
 } // namespace Model

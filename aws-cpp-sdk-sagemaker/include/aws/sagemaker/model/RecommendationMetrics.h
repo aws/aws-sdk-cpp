@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationMetrics
+  class RecommendationMetrics
   {
   public:
-    RecommendationMetrics();
-    RecommendationMetrics(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationMetrics();
+    AWS_SAGEMAKER_API RecommendationMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,16 +125,16 @@ namespace Model
   private:
 
     double m_costPerHour;
-    bool m_costPerHourHasBeenSet;
+    bool m_costPerHourHasBeenSet = false;
 
     double m_costPerInference;
-    bool m_costPerInferenceHasBeenSet;
+    bool m_costPerInferenceHasBeenSet = false;
 
     int m_maxInvocations;
-    bool m_maxInvocationsHasBeenSet;
+    bool m_maxInvocationsHasBeenSet = false;
 
     int m_modelLatency;
-    bool m_modelLatencyHasBeenSet;
+    bool m_modelLatencyHasBeenSet = false;
   };
 
 } // namespace Model

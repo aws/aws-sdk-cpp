@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringJobDefinitionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringJobDefinitionSummary
+  class MonitoringJobDefinitionSummary
   {
   public:
-    MonitoringJobDefinitionSummary();
-    MonitoringJobDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringJobDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringJobDefinitionSummary();
+    AWS_SAGEMAKER_API MonitoringJobDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringJobDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionArn;
-    bool m_monitoringJobDefinitionArnHasBeenSet;
+    bool m_monitoringJobDefinitionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
   };
 
 } // namespace Model

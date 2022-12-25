@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServer">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API VmServer
+  class VmServer
   {
   public:
-    VmServer();
-    VmServer(Aws::Utils::Json::JsonView jsonValue);
-    VmServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API VmServer();
+    AWS_SMS_API VmServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API VmServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,19 +226,19 @@ namespace Model
   private:
 
     VmServerAddress m_vmServerAddress;
-    bool m_vmServerAddressHasBeenSet;
+    bool m_vmServerAddressHasBeenSet = false;
 
     Aws::String m_vmName;
-    bool m_vmNameHasBeenSet;
+    bool m_vmNameHasBeenSet = false;
 
     Aws::String m_vmManagerName;
-    bool m_vmManagerNameHasBeenSet;
+    bool m_vmManagerNameHasBeenSet = false;
 
     VmManagerType m_vmManagerType;
-    bool m_vmManagerTypeHasBeenSet;
+    bool m_vmManagerTypeHasBeenSet = false;
 
     Aws::String m_vmPath;
-    bool m_vmPathHasBeenSet;
+    bool m_vmPathHasBeenSet = false;
   };
 
 } // namespace Model

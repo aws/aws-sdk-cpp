@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/IntegerParameterRangeSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API IntegerParameterRangeSpecification
+  class IntegerParameterRangeSpecification
   {
   public:
-    IntegerParameterRangeSpecification();
-    IntegerParameterRangeSpecification(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameterRangeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API IntegerParameterRangeSpecification();
+    AWS_SAGEMAKER_API IntegerParameterRangeSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API IntegerParameterRangeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     Aws::String m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
   };
 
 } // namespace Model

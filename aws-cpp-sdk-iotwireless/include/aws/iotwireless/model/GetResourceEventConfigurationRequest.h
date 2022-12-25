@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API GetResourceEventConfigurationRequest : public IoTWirelessRequest
+  class GetResourceEventConfigurationRequest : public IoTWirelessRequest
   {
   public:
-    GetResourceEventConfigurationRequest();
+    AWS_IOTWIRELESS_API GetResourceEventConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResourceEventConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTWIRELESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -119,45 +119,51 @@ namespace Model
 
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline const EventNotificationPartnerType& GetPartnerType() const{ return m_partnerType; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline bool PartnerTypeHasBeenSet() const { return m_partnerTypeHasBeenSet; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline void SetPartnerType(const EventNotificationPartnerType& value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline void SetPartnerType(EventNotificationPartnerType&& value) { m_partnerTypeHasBeenSet = true; m_partnerType = std::move(value); }
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline GetResourceEventConfigurationRequest& WithPartnerType(const EventNotificationPartnerType& value) { SetPartnerType(value); return *this;}
 
     /**
-     * <p>Partner type of the resource if the identifier type is PartnerAccountId.</p>
+     * <p>Partner type of the resource if the identifier type is
+     * <code>PartnerAccountId</code>.</p>
      */
     inline GetResourceEventConfigurationRequest& WithPartnerType(EventNotificationPartnerType&& value) { SetPartnerType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     IdentifierType m_identifierType;
-    bool m_identifierTypeHasBeenSet;
+    bool m_identifierTypeHasBeenSet = false;
 
     EventNotificationPartnerType m_partnerType;
-    bool m_partnerTypeHasBeenSet;
+    bool m_partnerTypeHasBeenSet = false;
   };
 
 } // namespace Model

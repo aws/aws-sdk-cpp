@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/WebvttHlsSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API WebvttHlsSourceSettings
+  class WebvttHlsSourceSettings
   {
   public:
-    WebvttHlsSourceSettings();
-    WebvttHlsSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    WebvttHlsSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API WebvttHlsSourceSettings();
+    AWS_MEDIACONVERT_API WebvttHlsSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API WebvttHlsSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_renditionGroupId;
-    bool m_renditionGroupIdHasBeenSet;
+    bool m_renditionGroupIdHasBeenSet = false;
 
     LanguageCode m_renditionLanguageCode;
-    bool m_renditionLanguageCodeHasBeenSet;
+    bool m_renditionLanguageCodeHasBeenSet = false;
 
     Aws::String m_renditionName;
-    bool m_renditionNameHasBeenSet;
+    bool m_renditionNameHasBeenSet = false;
   };
 
 } // namespace Model

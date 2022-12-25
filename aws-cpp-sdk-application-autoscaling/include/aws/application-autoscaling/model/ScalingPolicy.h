@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScalingPolicy
+  class ScalingPolicy
   {
   public:
-    ScalingPolicy();
-    ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy();
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1060,34 +1060,34 @@ namespace Model
   private:
 
     Aws::String m_policyARN;
-    bool m_policyARNHasBeenSet;
+    bool m_policyARNHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
-    bool m_stepScalingPolicyConfigurationHasBeenSet;
+    bool m_stepScalingPolicyConfigurationHasBeenSet = false;
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
-    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
+    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

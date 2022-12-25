@@ -33,36 +33,40 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API PersonDetection
+  class PersonDetection
   {
   public:
-    PersonDetection();
-    PersonDetection(Aws::Utils::Json::JsonView jsonValue);
-    PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API PersonDetection();
+    AWS_REKOGNITION_API PersonDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked.</p>
+     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
+     * to the individual frame where the person's path first appears.</p>
      */
     inline PersonDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -100,10 +104,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     PersonDetail m_person;
-    bool m_personHasBeenSet;
+    bool m_personHasBeenSet = false;
   };
 
 } // namespace Model

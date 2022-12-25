@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API DeleteUseCaseRequest : public ConnectRequest
+  class DeleteUseCaseRequest : public ConnectRequest
   {
   public:
-    DeleteUseCaseRequest();
+    AWS_CONNECT_API DeleteUseCaseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteUseCase"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_integrationAssociationId;
-    bool m_integrationAssociationIdHasBeenSet;
+    bool m_integrationAssociationIdHasBeenSet = false;
 
     Aws::String m_useCaseId;
-    bool m_useCaseIdHasBeenSet;
+    bool m_useCaseIdHasBeenSet = false;
   };
 
 } // namespace Model

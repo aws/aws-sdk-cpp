@@ -23,6 +23,7 @@ namespace Aws
         static const int API_HASH = HashingUtils::HashString("API");
         static const int SAML_HASH = HashingUtils::HashString("SAML");
         static const int USERPOOL_HASH = HashingUtils::HashString("USERPOOL");
+        static const int AWS_AD_HASH = HashingUtils::HashString("AWS_AD");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == USERPOOL_HASH)
           {
             return AuthenticationType::USERPOOL;
+          }
+          else if (hashCode == AWS_AD_HASH)
+          {
+            return AuthenticationType::AWS_AD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SAML";
           case AuthenticationType::USERPOOL:
             return "USERPOOL";
+          case AuthenticationType::AWS_AD:
+            return "AWS_AD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

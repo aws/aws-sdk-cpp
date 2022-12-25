@@ -34,14 +34,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Retention">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3Retention
+  class S3Retention
   {
   public:
-    S3Retention();
-    S3Retention(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Retention& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Retention();
+    AWS_S3CONTROL_API S3Retention(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Retention& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_retainUntilDate;
-    bool m_retainUntilDateHasBeenSet;
+    bool m_retainUntilDateHasBeenSet = false;
 
     S3ObjectLockRetentionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
   };
 
 } // namespace Model

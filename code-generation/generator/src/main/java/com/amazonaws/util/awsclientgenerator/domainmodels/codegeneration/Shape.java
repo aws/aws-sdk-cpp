@@ -50,6 +50,7 @@ public class Shape {
     private boolean sensitive;
     private boolean hasPreSignedUrl;
     private boolean document;
+    private boolean hasEmbeddedErrors = false;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -70,7 +71,7 @@ public class Shape {
     }
 
     public boolean isTimeStamp() {
-        return "timestamp".equals(type.toLowerCase());
+        return "timestamp".equals(type.toLowerCase()) || "sensitive_timestamp".equals(type.toLowerCase());
     }
 
     public boolean isEnum() {
@@ -87,6 +88,14 @@ public class Shape {
 
     public boolean isDocument() {
         return "structure".equals(type.toLowerCase()) && document;
+    }
+
+    public boolean hasEmbeddedErrors() {
+        return this.hasEmbeddedErrors;
+    }
+
+    public void setEmbeddedErrors(boolean hasEmbeddedErrors) {
+        this.hasEmbeddedErrors = hasEmbeddedErrors;
     }
 
     public boolean isPrimitive() {
@@ -219,5 +228,27 @@ public class Shape {
                 .collect(Collectors.toSet());
 
         return thisMemberShapeNames.contains(otherShape.getName()) && otherMemberShapeNames.contains(this.getName());
+    }
+
+    public boolean hasContextParam() {
+        if(listMember != null && listMember.getContextParam() != null) {
+            return true;
+        }
+        if(mapKey != null && mapKey.getContextParam() != null) {
+            return true;
+        }
+        if(mapValue != null && mapValue.getContextParam() != null) {
+            return true;
+        }
+        if(customizedQuery != null && customizedQuery.getContextParam() != null) {
+            return true;
+        }
+        for(Map.Entry<String, ShapeMember> entry : members.entrySet()) {
+            if(entry.getValue().getContextParam() != null){
+                return true;
+            }
+        }
+
+        return false;
     }
 }

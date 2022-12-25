@@ -42,69 +42,77 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3CopyObjectOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3CopyObjectOperation
+  class S3CopyObjectOperation
   {
   public:
-    S3CopyObjectOperation();
-    S3CopyObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3CopyObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3CopyObjectOperation();
+    AWS_S3CONTROL_API S3CopyObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3CopyObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the destination bucket ARN for the batch copy operation. For
-     * example, to copy objects to a bucket named "destinationBucket", set the
-     * TargetResource to "arn:aws:s3:::destinationBucket".</p>
+     * example, to copy objects to a bucket named <code>destinationBucket</code>, set
+     * the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.</p>
      */
     inline S3CopyObjectOperation& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}
 
@@ -768,58 +776,58 @@ namespace Model
   private:
 
     Aws::String m_targetResource;
-    bool m_targetResourceHasBeenSet;
+    bool m_targetResourceHasBeenSet = false;
 
     S3CannedAccessControlList m_cannedAccessControlList;
-    bool m_cannedAccessControlListHasBeenSet;
+    bool m_cannedAccessControlListHasBeenSet = false;
 
     Aws::Vector<S3Grant> m_accessControlGrants;
-    bool m_accessControlGrantsHasBeenSet;
+    bool m_accessControlGrantsHasBeenSet = false;
 
     S3MetadataDirective m_metadataDirective;
-    bool m_metadataDirectiveHasBeenSet;
+    bool m_metadataDirectiveHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedSinceConstraint;
-    bool m_modifiedSinceConstraintHasBeenSet;
+    bool m_modifiedSinceConstraintHasBeenSet = false;
 
     S3ObjectMetadata m_newObjectMetadata;
-    bool m_newObjectMetadataHasBeenSet;
+    bool m_newObjectMetadataHasBeenSet = false;
 
     Aws::Vector<S3Tag> m_newObjectTagging;
-    bool m_newObjectTaggingHasBeenSet;
+    bool m_newObjectTaggingHasBeenSet = false;
 
     Aws::String m_redirectLocation;
-    bool m_redirectLocationHasBeenSet;
+    bool m_redirectLocationHasBeenSet = false;
 
     bool m_requesterPays;
-    bool m_requesterPaysHasBeenSet;
+    bool m_requesterPaysHasBeenSet = false;
 
     S3StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_unModifiedSinceConstraint;
-    bool m_unModifiedSinceConstraintHasBeenSet;
+    bool m_unModifiedSinceConstraintHasBeenSet = false;
 
     Aws::String m_sSEAwsKmsKeyId;
-    bool m_sSEAwsKmsKeyIdHasBeenSet;
+    bool m_sSEAwsKmsKeyIdHasBeenSet = false;
 
     Aws::String m_targetKeyPrefix;
-    bool m_targetKeyPrefixHasBeenSet;
+    bool m_targetKeyPrefixHasBeenSet = false;
 
     S3ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
-    bool m_objectLockLegalHoldStatusHasBeenSet;
+    bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
     S3ObjectLockMode m_objectLockMode;
-    bool m_objectLockModeHasBeenSet;
+    bool m_objectLockModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_objectLockRetainUntilDate;
-    bool m_objectLockRetainUntilDateHasBeenSet;
+    bool m_objectLockRetainUntilDateHasBeenSet = false;
 
     bool m_bucketKeyEnabled;
-    bool m_bucketKeyEnabledHasBeenSet;
+    bool m_bucketKeyEnabledHasBeenSet = false;
 
     S3ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

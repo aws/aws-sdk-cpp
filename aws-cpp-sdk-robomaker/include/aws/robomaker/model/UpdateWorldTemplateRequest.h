@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API UpdateWorldTemplateRequest : public RoboMakerRequest
+  class UpdateWorldTemplateRequest : public RoboMakerRequest
   {
   public:
-    UpdateWorldTemplateRequest();
+    AWS_ROBOMAKER_API UpdateWorldTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorldTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     TemplateLocation m_templateLocation;
-    bool m_templateLocationHasBeenSet;
+    bool m_templateLocationHasBeenSet = false;
   };
 
 } // namespace Model

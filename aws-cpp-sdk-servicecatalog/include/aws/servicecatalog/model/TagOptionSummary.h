@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/TagOptionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API TagOptionSummary
+  class TagOptionSummary
   {
   public:
-    TagOptionSummary();
-    TagOptionSummary(Aws::Utils::Json::JsonView jsonValue);
-    TagOptionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API TagOptionSummary();
+    AWS_SERVICECATALOG_API TagOptionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API TagOptionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

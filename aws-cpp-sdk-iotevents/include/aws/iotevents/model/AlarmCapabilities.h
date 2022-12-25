@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AlarmCapabilities">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AlarmCapabilities
+  class AlarmCapabilities
   {
   public:
-    AlarmCapabilities();
-    AlarmCapabilities(Aws::Utils::Json::JsonView jsonValue);
-    AlarmCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AlarmCapabilities();
+    AWS_IOTEVENTS_API AlarmCapabilities(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AlarmCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     InitializationConfiguration m_initializationConfiguration;
-    bool m_initializationConfigurationHasBeenSet;
+    bool m_initializationConfigurationHasBeenSet = false;
 
     AcknowledgeFlow m_acknowledgeFlow;
-    bool m_acknowledgeFlowHasBeenSet;
+    bool m_acknowledgeFlowHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeAssociationExecutionsResult& DescribeAssociationExecutionsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociationExecutions"))
   {
-    Array<JsonView> associationExecutionsJsonList = jsonValue.GetArray("AssociationExecutions");
+    Aws::Utils::Array<JsonView> associationExecutionsJsonList = jsonValue.GetArray("AssociationExecutions");
     for(unsigned associationExecutionsIndex = 0; associationExecutionsIndex < associationExecutionsJsonList.GetLength(); ++associationExecutionsIndex)
     {
       m_associationExecutions.push_back(associationExecutionsJsonList[associationExecutionsIndex].AsObject());

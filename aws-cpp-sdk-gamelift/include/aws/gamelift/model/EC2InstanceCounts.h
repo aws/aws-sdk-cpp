@@ -25,18 +25,17 @@ namespace Model
    * <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2
    * instances. Pending and terminating counts are non-zero when the fleet capacity
    * is adjusting to a scaling event or if access to resources is temporarily
-   * affected.</p> <p>EC2 instance counts are part of
-   * <a>FleetCapacity</a>.</p><p><h3>See Also:</h3>   <a
+   * affected.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API EC2InstanceCounts
+  class EC2InstanceCounts
   {
   public:
-    EC2InstanceCounts();
-    EC2InstanceCounts(Aws::Utils::Json::JsonView jsonValue);
-    EC2InstanceCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API EC2InstanceCounts();
+    AWS_GAMELIFT_API EC2InstanceCounts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API EC2InstanceCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,25 +199,25 @@ namespace Model
   private:
 
     int m_dESIRED;
-    bool m_dESIREDHasBeenSet;
+    bool m_dESIREDHasBeenSet = false;
 
     int m_mINIMUM;
-    bool m_mINIMUMHasBeenSet;
+    bool m_mINIMUMHasBeenSet = false;
 
     int m_mAXIMUM;
-    bool m_mAXIMUMHasBeenSet;
+    bool m_mAXIMUMHasBeenSet = false;
 
     int m_pENDING;
-    bool m_pENDINGHasBeenSet;
+    bool m_pENDINGHasBeenSet = false;
 
     int m_aCTIVE;
-    bool m_aCTIVEHasBeenSet;
+    bool m_aCTIVEHasBeenSet = false;
 
     int m_iDLE;
-    bool m_iDLEHasBeenSet;
+    bool m_iDLEHasBeenSet = false;
 
     int m_tERMINATING;
-    bool m_tERMINATINGHasBeenSet;
+    bool m_tERMINATINGHasBeenSet = false;
   };
 
 } // namespace Model

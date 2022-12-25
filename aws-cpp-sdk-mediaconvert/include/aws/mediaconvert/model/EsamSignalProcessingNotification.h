@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EsamSignalProcessingNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API EsamSignalProcessingNotification
+  class EsamSignalProcessingNotification
   {
   public:
-    EsamSignalProcessingNotification();
-    EsamSignalProcessingNotification(Aws::Utils::Json::JsonView jsonValue);
-    EsamSignalProcessingNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API EsamSignalProcessingNotification();
+    AWS_MEDIACONVERT_API EsamSignalProcessingNotification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API EsamSignalProcessingNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_sccXml;
-    bool m_sccXmlHasBeenSet;
+    bool m_sccXmlHasBeenSet = false;
   };
 
 } // namespace Model

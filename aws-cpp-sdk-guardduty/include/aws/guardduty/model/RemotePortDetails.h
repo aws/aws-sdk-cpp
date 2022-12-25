@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemotePortDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API RemotePortDetails
+  class RemotePortDetails
   {
   public:
-    RemotePortDetails();
-    RemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
-    RemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API RemotePortDetails();
+    AWS_GUARDDUTY_API RemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API RemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_portName;
-    bool m_portNameHasBeenSet;
+    bool m_portNameHasBeenSet = false;
   };
 
 } // namespace Model

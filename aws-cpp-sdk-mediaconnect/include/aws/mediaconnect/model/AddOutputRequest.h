@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddOutputRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API AddOutputRequest
+  class AddOutputRequest
   {
   public:
-    AddOutputRequest();
-    AddOutputRequest(Aws::Utils::Json::JsonView jsonValue);
-    AddOutputRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API AddOutputRequest();
+    AWS_MEDIACONNECT_API AddOutputRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API AddOutputRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -606,49 +606,49 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
-    bool m_cidrAllowListHasBeenSet;
+    bool m_cidrAllowListHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_maxLatency;
-    bool m_maxLatencyHasBeenSet;
+    bool m_maxLatencyHasBeenSet = false;
 
     Aws::Vector<MediaStreamOutputConfigurationRequest> m_mediaStreamOutputConfigurations;
-    bool m_mediaStreamOutputConfigurationsHasBeenSet;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet = false;
 
     int m_minLatency;
-    bool m_minLatencyHasBeenSet;
+    bool m_minLatencyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Protocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_remoteId;
-    bool m_remoteIdHasBeenSet;
+    bool m_remoteIdHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     int m_smoothingLatency;
-    bool m_smoothingLatencyHasBeenSet;
+    bool m_smoothingLatencyHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     VpcInterfaceAttachment m_vpcInterfaceAttachment;
-    bool m_vpcInterfaceAttachmentHasBeenSet;
+    bool m_vpcInterfaceAttachmentHasBeenSet = false;
   };
 
 } // namespace Model

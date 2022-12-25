@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ContainerRecipe">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ContainerRecipe
+  class ContainerRecipe
   {
   public:
-    ContainerRecipe();
-    ContainerRecipe(Aws::Utils::Json::JsonView jsonValue);
-    ContainerRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ContainerRecipe();
+    AWS_IMAGEBUILDER_API ContainerRecipe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ContainerRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -914,55 +914,55 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ContainerType m_containerType;
-    bool m_containerTypeHasBeenSet;
+    bool m_containerTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<ComponentConfiguration> m_components;
-    bool m_componentsHasBeenSet;
+    bool m_componentsHasBeenSet = false;
 
     InstanceConfiguration m_instanceConfiguration;
-    bool m_instanceConfigurationHasBeenSet;
+    bool m_instanceConfigurationHasBeenSet = false;
 
     Aws::String m_dockerfileTemplateData;
-    bool m_dockerfileTemplateDataHasBeenSet;
+    bool m_dockerfileTemplateDataHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_parentImage;
-    bool m_parentImageHasBeenSet;
+    bool m_parentImageHasBeenSet = false;
 
     Aws::String m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_workingDirectory;
-    bool m_workingDirectoryHasBeenSet;
+    bool m_workingDirectoryHasBeenSet = false;
 
     TargetContainerRepository m_targetRepository;
-    bool m_targetRepositoryHasBeenSet;
+    bool m_targetRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

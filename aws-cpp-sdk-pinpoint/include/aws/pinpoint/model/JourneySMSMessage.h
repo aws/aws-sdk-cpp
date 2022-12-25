@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneySMSMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneySMSMessage
+  class JourneySMSMessage
   {
   public:
-    JourneySMSMessage();
-    JourneySMSMessage(Aws::Utils::Json::JsonView jsonValue);
-    JourneySMSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneySMSMessage();
+    AWS_PINPOINT_API JourneySMSMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneySMSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,19 +334,19 @@ namespace Model
   private:
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_originationNumber;
-    bool m_originationNumberHasBeenSet;
+    bool m_originationNumberHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

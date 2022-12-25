@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTuneMaintenanceSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule
+  class AutoTuneMaintenanceSchedule
   {
   public:
-    AutoTuneMaintenanceSchedule();
-    AutoTuneMaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneMaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneMaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startAt;
-    bool m_startAtHasBeenSet;
+    bool m_startAtHasBeenSet = false;
 
     Duration m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_cronExpressionForRecurrence;
-    bool m_cronExpressionForRecurrenceHasBeenSet;
+    bool m_cronExpressionForRecurrenceHasBeenSet = false;
   };
 
 } // namespace Model

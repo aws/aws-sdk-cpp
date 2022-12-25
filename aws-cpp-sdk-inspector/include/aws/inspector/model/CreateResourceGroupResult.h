@@ -24,12 +24,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API CreateResourceGroupResult
+  class CreateResourceGroupResult
   {
   public:
-    CreateResourceGroupResult();
-    CreateResourceGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API CreateResourceGroupResult();
+    AWS_INSPECTOR_API CreateResourceGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API CreateResourceGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemLustreConfiguration
+  class UpdateFileSystemLustreConfiguration
   {
   public:
-    UpdateFileSystemLustreConfiguration();
-    UpdateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemLustreConfiguration();
+    AWS_FSX_API UpdateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -461,25 +461,25 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     DataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
-    bool m_rootSquashConfigurationHasBeenSet;
+    bool m_rootSquashConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

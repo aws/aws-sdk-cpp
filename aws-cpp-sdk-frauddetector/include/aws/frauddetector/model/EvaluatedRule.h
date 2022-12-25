@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EvaluatedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EvaluatedRule
+  class EvaluatedRule
   {
   public:
-    EvaluatedRule();
-    EvaluatedRule(Aws::Utils::Json::JsonView jsonValue);
-    EvaluatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EvaluatedRule();
+    AWS_FRAUDDETECTOR_API EvaluatedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EvaluatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,25 +293,25 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_expressionWithValues;
-    bool m_expressionWithValuesHasBeenSet;
+    bool m_expressionWithValuesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outcomes;
-    bool m_outcomesHasBeenSet;
+    bool m_outcomesHasBeenSet = false;
 
     bool m_evaluated;
-    bool m_evaluatedHasBeenSet;
+    bool m_evaluatedHasBeenSet = false;
 
     bool m_matched;
-    bool m_matchedHasBeenSet;
+    bool m_matchedHasBeenSet = false;
   };
 
 } // namespace Model

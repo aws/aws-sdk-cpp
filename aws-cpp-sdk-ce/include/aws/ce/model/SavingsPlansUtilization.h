@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansUtilization
+  class SavingsPlansUtilization
   {
   public:
-    SavingsPlansUtilization();
-    SavingsPlansUtilization(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansUtilization();
+    AWS_COSTEXPLORER_API SavingsPlansUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_totalCommitment;
-    bool m_totalCommitmentHasBeenSet;
+    bool m_totalCommitmentHasBeenSet = false;
 
     Aws::String m_usedCommitment;
-    bool m_usedCommitmentHasBeenSet;
+    bool m_usedCommitmentHasBeenSet = false;
 
     Aws::String m_unusedCommitment;
-    bool m_unusedCommitmentHasBeenSet;
+    bool m_unusedCommitmentHasBeenSet = false;
 
     Aws::String m_utilizationPercentage;
-    bool m_utilizationPercentageHasBeenSet;
+    bool m_utilizationPercentageHasBeenSet = false;
   };
 
 } // namespace Model

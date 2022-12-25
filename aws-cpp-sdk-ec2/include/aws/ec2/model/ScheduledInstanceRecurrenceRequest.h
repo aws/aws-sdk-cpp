@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstanceRecurrenceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ScheduledInstanceRecurrenceRequest
+  class ScheduledInstanceRecurrenceRequest
   {
   public:
-    ScheduledInstanceRecurrenceRequest();
-    ScheduledInstanceRecurrenceRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledInstanceRecurrenceRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstanceRecurrenceRequest();
+    AWS_EC2_API ScheduledInstanceRecurrenceRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstanceRecurrenceRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::Vector<int> m_occurrenceDays;
-    bool m_occurrenceDaysHasBeenSet;
+    bool m_occurrenceDaysHasBeenSet = false;
 
     bool m_occurrenceRelativeToEnd;
-    bool m_occurrenceRelativeToEndHasBeenSet;
+    bool m_occurrenceRelativeToEndHasBeenSet = false;
 
     Aws::String m_occurrenceUnit;
-    bool m_occurrenceUnitHasBeenSet;
+    bool m_occurrenceUnitHasBeenSet = false;
   };
 
 } // namespace Model

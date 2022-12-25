@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDBLOCKCHAIN_API GetProposalRequest : public ManagedBlockchainRequest
+  class GetProposalRequest : public ManagedBlockchainRequest
   {
   public:
-    GetProposalRequest();
+    AWS_MANAGEDBLOCKCHAIN_API GetProposalRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetProposal"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDBLOCKCHAIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_proposalId;
-    bool m_proposalIdHasBeenSet;
+    bool m_proposalIdHasBeenSet = false;
   };
 
 } // namespace Model

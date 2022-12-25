@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API GetMobileSdkReleaseRequest : public WAFV2Request
+  class GetMobileSdkReleaseRequest : public WAFV2Request
   {
   public:
-    GetMobileSdkReleaseRequest();
+    AWS_WAFV2_API GetMobileSdkReleaseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMobileSdkRelease"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_releaseVersion;
-    bool m_releaseVersionHasBeenSet;
+    bool m_releaseVersionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupMember">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NodeGroupMember
+  class NodeGroupMember
   {
   public:
-    NodeGroupMember();
-    NodeGroupMember(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeGroupMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupMember();
+    AWS_ELASTICACHE_API NodeGroupMember(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -315,22 +315,22 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Aws::String m_cacheNodeId;
-    bool m_cacheNodeIdHasBeenSet;
+    bool m_cacheNodeIdHasBeenSet = false;
 
     Endpoint m_readEndpoint;
-    bool m_readEndpointHasBeenSet;
+    bool m_readEndpointHasBeenSet = false;
 
     Aws::String m_preferredAvailabilityZone;
-    bool m_preferredAvailabilityZoneHasBeenSet;
+    bool m_preferredAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredOutpostArn;
-    bool m_preferredOutpostArnHasBeenSet;
+    bool m_preferredOutpostArnHasBeenSet = false;
 
     Aws::String m_currentRole;
-    bool m_currentRoleHasBeenSet;
+    bool m_currentRoleHasBeenSet = false;
   };
 
 } // namespace Model

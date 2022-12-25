@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CapacitySpecificationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API CapacitySpecificationSummary
+  class CapacitySpecificationSummary
   {
   public:
-    CapacitySpecificationSummary();
-    CapacitySpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
-    CapacitySpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API CapacitySpecificationSummary();
+    AWS_KEYSPACES_API CapacitySpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API CapacitySpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     ThroughputMode m_throughputMode;
-    bool m_throughputModeHasBeenSet;
+    bool m_throughputModeHasBeenSet = false;
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateToPayPerRequestTimestamp;
-    bool m_lastUpdateToPayPerRequestTimestampHasBeenSet;
+    bool m_lastUpdateToPayPerRequestTimestampHasBeenSet = false;
   };
 
 } // namespace Model

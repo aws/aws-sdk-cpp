@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingRequest : public IoTWirelessRequest
+  class AssociateWirelessDeviceWithThingRequest : public IoTWirelessRequest
   {
   public:
-    AssociateWirelessDeviceWithThingRequest();
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateWirelessDeviceWithThing"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
   };
 
 } // namespace Model

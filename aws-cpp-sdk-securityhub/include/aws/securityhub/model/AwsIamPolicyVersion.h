@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamPolicyVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamPolicyVersion
+  class AwsIamPolicyVersion
   {
   public:
-    AwsIamPolicyVersion();
-    AwsIamPolicyVersion(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamPolicyVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamPolicyVersion();
+    AWS_SECURITYHUB_API AwsIamPolicyVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamPolicyVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

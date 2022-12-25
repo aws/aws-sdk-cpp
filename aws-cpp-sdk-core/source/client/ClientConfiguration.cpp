@@ -41,6 +41,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
     clientConfig.useDualStack = false;
+    clientConfig.useFIPS = false;
     clientConfig.maxConnections = 25;
     clientConfig.httpRequestTimeoutMs = 0;
     clientConfig.requestTimeoutMs = 3000;
@@ -146,8 +147,7 @@ ClientConfiguration::ClientConfiguration(const char* profile) {
             region = tmpRegion;
         }
 
-        const Aws::String& profileDefaultsMode = Aws::Config::GetCachedConfigProfile(
-                this->profileName).GetDefaultsMode();
+        Aws::String profileDefaultsMode = Aws::Config::GetCachedConfigProfile(this->profileName).GetDefaultsMode();
         Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, profileDefaultsMode,
                                                                        hasEc2MetadataRegion, ec2MetadataRegion);
         return;
@@ -249,6 +249,37 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
     }
 
     return retryStrategy;
+}
+
+Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& envKey,
+                                                            const Aws::String& profile,
+                                                            const Aws::String& profileProperty,
+                                                            const Aws::Vector<Aws::String>& allowedValues,
+                                                            const Aws::String& defaultValue)
+{
+    Aws::String option = Aws::Environment::GetEnv(envKey.c_str());
+    if (option.empty()) {
+        option = Aws::Config::GetCachedConfigValue(profile, profileProperty);
+    }
+    option = Aws::Utils::StringUtils::ToLower(option.c_str());
+    if (option.empty()) {
+        return defaultValue;
+    }
+
+    if (!allowedValues.empty() && std::find(allowedValues.cbegin(), allowedValues.cend(), option) == allowedValues.cend()) {
+        Aws::OStringStream expectedStr;
+        expectedStr << "[";
+        for(const auto& allowed : allowedValues) {
+            expectedStr << allowed << ";";
+        }
+        expectedStr << "]";
+
+        AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Unrecognised value for " << envKey << ": " << option <<
+                                              ". Using default instead: " << defaultValue <<
+                                              ". Expected empty or one of: " << expectedStr.str());
+        option = defaultValue;
+    }
+    return option;
 }
 
 } // namespace Client

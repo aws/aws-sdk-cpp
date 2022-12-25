@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API PutBotRequest : public LexModelBuildingServiceRequest
+  class PutBotRequest : public LexModelBuildingServiceRequest
   {
   public:
-    PutBotRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutBotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutBot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -1217,52 +1217,52 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Intent> m_intents;
-    bool m_intentsHasBeenSet;
+    bool m_intentsHasBeenSet = false;
 
     bool m_enableModelImprovements;
-    bool m_enableModelImprovementsHasBeenSet;
+    bool m_enableModelImprovementsHasBeenSet = false;
 
     double m_nluIntentConfidenceThreshold;
-    bool m_nluIntentConfidenceThresholdHasBeenSet;
+    bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     Prompt m_clarificationPrompt;
-    bool m_clarificationPromptHasBeenSet;
+    bool m_clarificationPromptHasBeenSet = false;
 
     Statement m_abortStatement;
-    bool m_abortStatementHasBeenSet;
+    bool m_abortStatementHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
-    bool m_idleSessionTTLInSecondsHasBeenSet;
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ProcessBehavior m_processBehavior;
-    bool m_processBehaviorHasBeenSet;
+    bool m_processBehaviorHasBeenSet = false;
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     bool m_childDirected;
-    bool m_childDirectedHasBeenSet;
+    bool m_childDirectedHasBeenSet = false;
 
     bool m_detectSentiment;
-    bool m_detectSentimentHasBeenSet;
+    bool m_detectSentimentHasBeenSet = false;
 
     bool m_createVersion;
-    bool m_createVersionHasBeenSet;
+    bool m_createVersionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

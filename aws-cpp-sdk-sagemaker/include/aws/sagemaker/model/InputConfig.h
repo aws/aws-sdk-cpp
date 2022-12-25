@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InputConfig
+  class InputConfig
   {
   public:
-    InputConfig();
-    InputConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InputConfig();
+    AWS_SAGEMAKER_API InputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1025,8 +1025,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1036,8 +1037,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1047,8 +1049,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1058,8 +1061,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1069,8 +1073,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1080,8 +1085,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1091,8 +1097,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1102,8 +1109,9 @@ namespace Model
 
     /**
      * <p>Specifies the framework version to use. This API field is only supported for
-     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
-     * versions supported for cloud targets and edge devices, see <a
+     * the MXNet, PyTorch, TensorFlow and TensorFlow Lite frameworks.</p> <p>For
+     * information about framework versions supported for cloud targets and edge
+     * devices, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
      * Supported Instance Types and Frameworks</a> and <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
@@ -1114,16 +1122,16 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_dataInputConfig;
-    bool m_dataInputConfigHasBeenSet;
+    bool m_dataInputConfigHasBeenSet = false;
 
     Framework m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
-    bool m_frameworkVersionHasBeenSet;
+    bool m_frameworkVersionHasBeenSet = false;
   };
 
 } // namespace Model

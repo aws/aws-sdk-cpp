@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API ListTagsForResourceRequest : public TranscribeServiceRequest
+  class ListTagsForResourceRequest : public TranscribeServiceRequest
   {
   public:
-    ListTagsForResourceRequest();
+    AWS_TRANSCRIBESERVICE_API ListTagsForResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -39,7 +39,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -52,7 +52,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -65,7 +65,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -78,7 +78,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -91,7 +91,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -104,7 +104,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -117,7 +117,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -130,7 +130,7 @@ namespace Model
      * (ARN). ARNs have the format
      * <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      * <p>For example,
-     * <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.</p>
+     * <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>
      * <p>Valid values for <code>resource-type</code> are:
      * <code>transcription-job</code>, <code>medical-transcription-job</code>,
      * <code>vocabulary</code>, <code>medical-vocabulary</code>,
@@ -141,7 +141,7 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

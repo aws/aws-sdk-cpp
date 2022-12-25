@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ElasticsearchDestinationConfiguration
+  class ElasticsearchDestinationConfiguration
   {
   public:
-    ElasticsearchDestinationConfiguration();
-    ElasticsearchDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ElasticsearchDestinationConfiguration();
+    AWS_FIREHOSE_API ElasticsearchDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ElasticsearchDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -53,7 +53,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
@@ -64,7 +64,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
@@ -75,7 +75,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
@@ -86,7 +86,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
@@ -97,7 +97,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
@@ -108,7 +108,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
@@ -119,7 +119,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
@@ -130,104 +130,96 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
      * Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
-     * for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code>, and
-     * <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified
-     * in <b>RoleARN</b>. For more information, see <a
+     * for <code>DescribeDomain</code>, <code>DescribeDomains</code>, and
+     * <code>DescribeDomainConfig</code> after assuming the role specified in
+     * <b>RoleARN</b>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> <p>Specify either
-     * <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+     * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
@@ -526,11 +518,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -542,11 +534,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -558,11 +550,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -574,11 +566,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -590,11 +582,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -606,11 +598,11 @@ namespace Model
      * <p>Defines how documents should be delivered to Amazon S3. When it is set to
      * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents
      * that could not be indexed to the configured Amazon S3 destination, with
-     * <code>elasticsearch-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
-     * to Amazon S3, and also writes failed documents with
-     * <code>elasticsearch-failed/</code> appended to the prefix. For more information,
-     * see <a
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When
+     * set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming
+     * records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
@@ -745,43 +737,43 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_domainARN;
-    bool m_domainARNHasBeenSet;
+    bool m_domainARNHasBeenSet = false;
 
     Aws::String m_clusterEndpoint;
-    bool m_clusterEndpointHasBeenSet;
+    bool m_clusterEndpointHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     ElasticsearchIndexRotationPeriod m_indexRotationPeriod;
-    bool m_indexRotationPeriodHasBeenSet;
+    bool m_indexRotationPeriodHasBeenSet = false;
 
     ElasticsearchBufferingHints m_bufferingHints;
-    bool m_bufferingHintsHasBeenSet;
+    bool m_bufferingHintsHasBeenSet = false;
 
     ElasticsearchRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     ElasticsearchS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

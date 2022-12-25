@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_STORAGEGATEWAY_API DisassociateFileSystemRequest : public StorageGatewayRequest
+  class DisassociateFileSystemRequest : public StorageGatewayRequest
   {
   public:
-    DisassociateFileSystemRequest();
+    AWS_STORAGEGATEWAY_API DisassociateFileSystemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateFileSystem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemAssociationARN;
-    bool m_fileSystemAssociationARNHasBeenSet;
+    bool m_fileSystemAssociationARNHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

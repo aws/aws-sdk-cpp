@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRuleGroupOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulRuleGroupOverride
+  class StatefulRuleGroupOverride
   {
   public:
-    StatefulRuleGroupOverride();
-    StatefulRuleGroupOverride(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRuleGroupOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupOverride();
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OverrideAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

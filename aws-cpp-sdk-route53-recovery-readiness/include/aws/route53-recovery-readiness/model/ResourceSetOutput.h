@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ResourceSetOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API ResourceSetOutput
+  class ResourceSetOutput
   {
   public:
-    ResourceSetOutput();
-    ResourceSetOutput(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSetOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API ResourceSetOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API ResourceSetOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API ResourceSetOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,19 +318,19 @@ namespace Model
   private:
 
     Aws::String m_resourceSetArn;
-    bool m_resourceSetArnHasBeenSet;
+    bool m_resourceSetArnHasBeenSet = false;
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
 
     Aws::String m_resourceSetType;
-    bool m_resourceSetTypeHasBeenSet;
+    bool m_resourceSetTypeHasBeenSet = false;
 
     Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

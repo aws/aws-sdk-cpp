@@ -7,6 +7,7 @@
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migration-hub-refactor-spaces/model/DefaultRouteInput.h>
 #include <aws/migration-hub-refactor-spaces/model/RouteType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/migration-hub-refactor-spaces/model/UriPathRouteInput.h>
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteRequest : public MigrationHubRefactorSpacesRequest
+  class CreateRouteRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    CreateRouteRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,6 +125,37 @@ namespace Model
      * idempotency of the request.</p>
      */
     inline CreateRouteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline const DefaultRouteInput& GetDefaultRoute() const{ return m_defaultRoute; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline bool DefaultRouteHasBeenSet() const { return m_defaultRouteHasBeenSet; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline void SetDefaultRoute(const DefaultRouteInput& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = value; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline void SetDefaultRoute(DefaultRouteInput&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::move(value); }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline CreateRouteRequest& WithDefaultRoute(const DefaultRouteInput& value) { SetDefaultRoute(value); return *this;}
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline CreateRouteRequest& WithDefaultRoute(DefaultRouteInput&& value) { SetDefaultRoute(std::move(value)); return *this;}
 
 
     /**
@@ -377,25 +409,28 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
+
+    DefaultRouteInput m_defaultRoute;
+    bool m_defaultRouteHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     RouteType m_routeType;
-    bool m_routeTypeHasBeenSet;
+    bool m_routeTypeHasBeenSet = false;
 
     Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet;
+    bool m_serviceIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     UriPathRouteInput m_uriPathRoute;
-    bool m_uriPathRouteHasBeenSet;
+    bool m_uriPathRouteHasBeenSet = false;
   };
 
 } // namespace Model

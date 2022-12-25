@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategory">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategory
+  class CostCategory
   {
   public:
-    CostCategory();
-    CostCategory(Aws::Utils::Json::JsonView jsonValue);
-    CostCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategory();
+    AWS_COSTEXPLORER_API CostCategory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,83 +85,83 @@ namespace Model
 
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
 
     /**
-     * <p>The effective state data of your Cost Category.</p>
+     * <p>The effective start date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
 
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline const Aws::String& GetEffectiveEnd() const{ return m_effectiveEnd; }
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const Aws::String& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = value; }
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(Aws::String&& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = std::move(value); }
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const char* value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd.assign(value); }
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const Aws::String& value) { SetEffectiveEnd(value); return *this;}
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(Aws::String&& value) { SetEffectiveEnd(std::move(value)); return *this;}
 
     /**
-     * <p>The effective end data of your Cost Category.</p>
+     * <p>The effective end date of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const char* value) { SetEffectiveEnd(value); return *this;}
 
@@ -392,31 +392,31 @@ namespace Model
   private:
 
     Aws::String m_costCategoryArn;
-    bool m_costCategoryArnHasBeenSet;
+    bool m_costCategoryArnHasBeenSet = false;
 
     Aws::String m_effectiveStart;
-    bool m_effectiveStartHasBeenSet;
+    bool m_effectiveStartHasBeenSet = false;
 
     Aws::String m_effectiveEnd;
-    bool m_effectiveEndHasBeenSet;
+    bool m_effectiveEndHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CostCategoryRuleVersion m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-    bool m_splitChargeRulesHasBeenSet;
+    bool m_splitChargeRulesHasBeenSet = false;
 
     Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-    bool m_processingStatusHasBeenSet;
+    bool m_processingStatusHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FilterValue">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FilterValue
+  class FilterValue
   {
   public:
-    FilterValue();
-    FilterValue(Aws::Utils::Json::JsonView jsonValue);
-    FilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FilterValue();
+    AWS_GLUE_API FilterValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     FilterValueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

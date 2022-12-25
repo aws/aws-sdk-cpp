@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/FailWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API FailWorkflowExecutionDecisionAttributes
+  class FailWorkflowExecutionDecisionAttributes
   {
   public:
-    FailWorkflowExecutionDecisionAttributes();
-    FailWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    FailWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API FailWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API FailWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API FailWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CaptchaResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CaptchaResponse
+  class CaptchaResponse
   {
   public:
-    CaptchaResponse();
-    CaptchaResponse(Aws::Utils::Json::JsonView jsonValue);
-    CaptchaResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CaptchaResponse();
+    AWS_WAFV2_API CaptchaResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CaptchaResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -68,25 +68,25 @@ namespace Model
 
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline long long GetSolveTimestamp() const{ return m_solveTimestamp; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline bool SolveTimestampHasBeenSet() const { return m_solveTimestampHasBeenSet; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline void SetSolveTimestamp(long long value) { m_solveTimestampHasBeenSet = true; m_solveTimestamp = value; }
 
     /**
-     * <p>The time that the <code>CAPTCHA</code> puzzle was solved for the supplied
+     * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
     inline CaptchaResponse& WithSolveTimestamp(long long value) { SetSolveTimestamp(value); return *this;}
@@ -125,13 +125,13 @@ namespace Model
   private:
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     long long m_solveTimestamp;
-    bool m_solveTimestampHasBeenSet;
+    bool m_solveTimestampHasBeenSet = false;
 
     FailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

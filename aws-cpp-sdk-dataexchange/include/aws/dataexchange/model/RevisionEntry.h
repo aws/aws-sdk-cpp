@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevisionEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API RevisionEntry
+  class RevisionEntry
   {
   public:
-    RevisionEntry();
-    RevisionEntry(Aws::Utils::Json::JsonView jsonValue);
-    RevisionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API RevisionEntry();
+    AWS_DATAEXCHANGE_API RevisionEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API RevisionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,42 +153,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline RevisionEntry& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -197,10 +205,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline bool GetFinalized() const{ return m_finalized; }
 
@@ -208,10 +216,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
 
@@ -219,10 +227,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline void SetFinalized(bool value) { m_finalizedHasBeenSet = true; m_finalized = value; }
 
@@ -230,10 +238,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that your changes to
      * the assets in the revision are complete. After it's in this read-only state, you
-     * can publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * can publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline RevisionEntry& WithFinalized(bool value) { SetFinalized(value); return *this;}
 
@@ -470,37 +478,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     bool m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_revocationComment;
-    bool m_revocationCommentHasBeenSet;
+    bool m_revocationCommentHasBeenSet = false;
 
     bool m_revoked;
-    bool m_revokedHasBeenSet;
+    bool m_revokedHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
   };
 
 } // namespace Model

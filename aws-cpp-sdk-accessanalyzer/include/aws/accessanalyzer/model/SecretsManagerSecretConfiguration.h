@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SecretsManagerSecretConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration
+  class SecretsManagerSecretConfiguration
   {
   public:
-    SecretsManagerSecretConfiguration();
-    SecretsManagerSecretConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SecretsManagerSecretConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration();
+    AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API SecretsManagerSecretConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_secretPolicy;
-    bool m_secretPolicyHasBeenSet;
+    bool m_secretPolicyHasBeenSet = false;
   };
 
 } // namespace Model

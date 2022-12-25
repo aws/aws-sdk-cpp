@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PhoneNumberInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PhoneNumberInformation
+  class PhoneNumberInformation
   {
   public:
-    PhoneNumberInformation();
-    PhoneNumberInformation(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberInformation();
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -668,52 +668,52 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberArn;
-    bool m_phoneNumberArnHasBeenSet;
+    bool m_phoneNumberArnHasBeenSet = false;
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     NumberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::Vector<NumberCapability> m_numberCapabilities;
-    bool m_numberCapabilitiesHasBeenSet;
+    bool m_numberCapabilitiesHasBeenSet = false;
 
     NumberType m_numberType;
-    bool m_numberTypeHasBeenSet;
+    bool m_numberTypeHasBeenSet = false;
 
     Aws::String m_monthlyLeasingPrice;
-    bool m_monthlyLeasingPriceHasBeenSet;
+    bool m_monthlyLeasingPriceHasBeenSet = false;
 
     bool m_twoWayEnabled;
-    bool m_twoWayEnabledHasBeenSet;
+    bool m_twoWayEnabledHasBeenSet = false;
 
     Aws::String m_twoWayChannelArn;
-    bool m_twoWayChannelArnHasBeenSet;
+    bool m_twoWayChannelArnHasBeenSet = false;
 
     bool m_selfManagedOptOutsEnabled;
-    bool m_selfManagedOptOutsEnabledHasBeenSet;
+    bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
     Aws::String m_optOutListName;
-    bool m_optOutListNameHasBeenSet;
+    bool m_optOutListNameHasBeenSet = false;
 
     bool m_deletionProtectionEnabled;
-    bool m_deletionProtectionEnabledHasBeenSet;
+    bool m_deletionProtectionEnabledHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SecurityGroupPrefixListId">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId
+  class AwsEc2SecurityGroupPrefixListId
   {
   public:
-    AwsEc2SecurityGroupPrefixListId();
-    AwsEc2SecurityGroupPrefixListId(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2SecurityGroupPrefixListId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupPrefixListId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
   };
 
 } // namespace Model

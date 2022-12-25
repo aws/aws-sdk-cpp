@@ -25,20 +25,20 @@ namespace Model
 
   /**
    * <p>Determine whether your data volume persists on the host container instance
-   * and where it is stored. If this parameter is empty, then the Docker daemon
-   * assigns a host path for your data volume, but the data isn't guaranteed to
-   * persist after the containers associated with it stop running.</p><p><h3>See
-   * Also:</h3>   <a
+   * and where it's stored. If this parameter is empty, then the Docker daemon
+   * assigns a host path for your data volume. However, the data isn't guaranteed to
+   * persist after the containers that are associated with it stop
+   * running.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Host">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API Host
+  class Host
   {
   public:
-    Host();
-    Host(Aws::Utils::Json::JsonView jsonValue);
-    Host& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Host();
+    AWS_BATCH_API Host(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Host& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -49,8 +49,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
 
@@ -62,8 +62,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
 
@@ -75,8 +75,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
 
@@ -88,8 +88,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
 
@@ -101,8 +101,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
 
@@ -114,8 +114,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline Host& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
 
@@ -127,8 +127,8 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline Host& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
@@ -140,15 +140,15 @@ namespace Model
      * manually. If the source path location doesn't exist on the host container
      * instance, the Docker daemon creates it. If the location does exist, the contents
      * of the source path folder are exported.</p>  <p>This parameter isn't
-     * applicable to jobs that run on Fargate resources and shouldn't be provided.</p>
-     * 
+     * applicable to jobs that run on Fargate resources. Don't provide this for these
+     * jobs.</p> 
      */
     inline Host& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 
   private:
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

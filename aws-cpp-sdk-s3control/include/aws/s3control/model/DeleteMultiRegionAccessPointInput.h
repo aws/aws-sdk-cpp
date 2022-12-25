@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API DeleteMultiRegionAccessPointInput
+  class DeleteMultiRegionAccessPointInput
   {
   public:
-    DeleteMultiRegionAccessPointInput();
-    DeleteMultiRegionAccessPointInput(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeleteMultiRegionAccessPointInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API DeleteMultiRegionAccessPointInput();
+    AWS_S3CONTROL_API DeleteMultiRegionAccessPointInput(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API DeleteMultiRegionAccessPointInput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ScheduledWindowExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ScheduledWindowExecution
+  class ScheduledWindowExecution
   {
   public:
-    ScheduledWindowExecution();
-    ScheduledWindowExecution(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledWindowExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ScheduledWindowExecution();
+    AWS_SSM_API ScheduledWindowExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ScheduledWindowExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
   };
 
 } // namespace Model

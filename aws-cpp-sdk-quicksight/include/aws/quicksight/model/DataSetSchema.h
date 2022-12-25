@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetSchema
+  class DataSetSchema
   {
   public:
-    DataSetSchema();
-    DataSetSchema(Aws::Utils::Json::JsonView jsonValue);
-    DataSetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetSchema();
+    AWS_QUICKSIGHT_API DataSetSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<ColumnSchema> m_columnSchemaList;
-    bool m_columnSchemaListHasBeenSet;
+    bool m_columnSchemaListHasBeenSet = false;
   };
 
 } // namespace Model

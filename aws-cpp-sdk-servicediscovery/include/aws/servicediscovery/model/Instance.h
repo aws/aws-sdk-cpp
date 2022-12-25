@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/Instance">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API Instance
+  class Instance
   {
   public:
-    Instance();
-    Instance(Aws::Utils::Json::JsonView jsonValue);
-    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API Instance();
+    AWS_SERVICEDISCOVERY_API Instance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,13 +286,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -315,18 +317,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -334,10 +336,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
@@ -346,13 +348,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -375,18 +379,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -394,10 +398,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -406,13 +410,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -435,18 +441,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -454,10 +460,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
@@ -466,13 +472,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -495,18 +503,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -514,10 +522,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
@@ -526,13 +534,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -555,18 +565,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -574,10 +584,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
@@ -586,13 +596,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -615,18 +627,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -634,10 +646,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
@@ -646,13 +658,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -675,18 +689,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -694,10 +708,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -706,13 +720,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -735,18 +751,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -754,10 +770,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -766,13 +782,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -795,18 +813,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -814,10 +832,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -826,13 +844,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -855,18 +875,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -874,10 +894,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
@@ -886,13 +906,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -915,18 +937,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -934,10 +956,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -946,13 +968,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -975,18 +999,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -994,10 +1018,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -1006,13 +1030,15 @@ namespace Model
      * <p>A string map that contains the following information for the service that you
      * specify in <code>ServiceId</code>:</p> <ul> <li> <p>The attributes that apply to
      * the records that are defined in the service. </p> </li> <li> <p>For each
-     * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
-     * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want
-     * Cloud Map to create a Route 53 alias record that routes traffic to an Elastic
-     * Load Balancing load balancer, specify the DNS name that's associated with the
-     * load balancer. For information about how to get the DNS name, see <a
+     * attribute, the applicable value.</p> </li> </ul>  <p>Do not include
+     * sensitive information in the attributes if the namespace is discoverable by
+     * public DNS queries.</p>  <p>Supported attribute keys include the
+     * following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>If you want Cloud Map to
+     * create a Route 53 alias record that routes traffic to an Elastic Load Balancing
+     * load balancer, specify the DNS name that's associated with the load balancer.
+     * For information about how to get the DNS name, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName">AliasTarget-&gt;DNSName</a>
-     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
+     * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that's specified by <code>ServiceId</code>
      * must include settings for an <code>A</code> record, an <code>AAAA</code> record,
      * or both.</p> </li> <li> <p>In the service that's specified by
@@ -1035,18 +1061,18 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>If the
      * service configuration includes a <code>CNAME</code> record, the domain name that
-     * you want Route 53 to return in response to DNS queries (for example,
+     * you want Route 53 to return in response to DNS queries (for example,
      * <code>example.com</code>).</p> <p>This value is required if the service
      * specified by <code>ServiceId</code> includes settings for an <code>CNAME</code>
      * record.</p> </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>If the service
      * configuration includes an <code>A</code> record, the IPv4 address that you want
-     * Route 53 to return in response to DNS queries (for example,
+     * Route 53 to return in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> <p>This value is required if the service specified
      * by <code>ServiceId</code> includes settings for an <code>A</code> record. If the
      * service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or
      * both.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>If the service configuration
-     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> <p>This value is
      * required if the service specified by <code>ServiceId</code> includes settings
@@ -1054,10 +1080,10 @@ namespace Model
      * <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>
      * </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> <p>If the service includes an
-     * <code>SRV</code> record, the value that you want Route 53 to return for the
+     * <code>SRV</code> record, the value that you want Route 53 to return for the
      * port.</p> <p>If the service includes <code>HealthCheckConfig</code>, the port on
-     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
-     * required if you specified settings for an <code>SRV</code> record or a Route 53
+     * the endpoint that you want Route 53 to send requests to. </p> <p>This value is
+     * required if you specified settings for an <code>SRV</code> record or a Route 53
      * health check when you created the service.</p> </dd> </dl>
      */
     inline Instance& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -1065,13 +1091,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

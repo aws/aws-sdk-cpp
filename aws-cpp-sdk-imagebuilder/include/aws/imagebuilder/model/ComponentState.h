@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentState">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ComponentState
+  class ComponentState
   {
   public:
-    ComponentState();
-    ComponentState(Aws::Utils::Json::JsonView jsonValue);
-    ComponentState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ComponentState();
+    AWS_IMAGEBUILDER_API ComponentState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ComponentState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ComponentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

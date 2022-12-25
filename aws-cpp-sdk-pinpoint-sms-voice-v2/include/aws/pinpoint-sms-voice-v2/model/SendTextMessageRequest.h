@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API SendTextMessageRequest : public PinpointSMSVoiceV2Request
+  class SendTextMessageRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    SendTextMessageRequest();
+    AWS_PINPOINTSMSVOICEV2_API SendTextMessageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendTextMessage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -594,37 +594,37 @@ namespace Model
   private:
 
     Aws::String m_destinationPhoneNumber;
-    bool m_destinationPhoneNumberHasBeenSet;
+    bool m_destinationPhoneNumberHasBeenSet = false;
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_messageBody;
-    bool m_messageBodyHasBeenSet;
+    bool m_messageBodyHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_keyword;
-    bool m_keywordHasBeenSet;
+    bool m_keywordHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_maxPrice;
-    bool m_maxPriceHasBeenSet;
+    bool m_maxPriceHasBeenSet = false;
 
     int m_timeToLive;
-    bool m_timeToLiveHasBeenSet;
+    bool m_timeToLiveHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::Map<DestinationCountryParameterKey, Aws::String> m_destinationCountryParameters;
-    bool m_destinationCountryParametersHasBeenSet;
+    bool m_destinationCountryParametersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

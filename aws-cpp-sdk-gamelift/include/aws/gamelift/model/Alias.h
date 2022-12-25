@@ -27,20 +27,19 @@ namespace Model
 
   /**
    * <p>Properties that describe an alias resource.</p> <p> <b>Related actions</b>
-   * </p> <p> <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> |
-   * <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a
+   * </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API
    * Reference</a></p>
    */
-  class AWS_GAMELIFT_API Alias
+  class Alias
   {
   public:
-    Alias();
-    Alias(Aws::Utils::Json::JsonView jsonValue);
-    Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Alias();
+    AWS_GAMELIFT_API Alias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -380,25 +379,25 @@ namespace Model
   private:
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_aliasArn;
-    bool m_aliasArnHasBeenSet;
+    bool m_aliasArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RoutingStrategy m_routingStrategy;
-    bool m_routingStrategyHasBeenSet;
+    bool m_routingStrategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DataReplicationInitiationStep">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API DataReplicationInitiationStep
+  class DataReplicationInitiationStep
   {
   public:
-    DataReplicationInitiationStep();
-    DataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API DataReplicationInitiationStep();
+    AWS_MGN_API DataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API DataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     DataReplicationInitiationStepName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DataReplicationInitiationStepStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

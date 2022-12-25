@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSwitchScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSwitchScheduleActionSettings
+  class InputSwitchScheduleActionSettings
   {
   public:
-    InputSwitchScheduleActionSettings();
-    InputSwitchScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputSwitchScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSwitchScheduleActionSettings();
+    AWS_MEDIALIVE_API InputSwitchScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSwitchScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_inputAttachmentNameReference;
-    bool m_inputAttachmentNameReferenceHasBeenSet;
+    bool m_inputAttachmentNameReferenceHasBeenSet = false;
 
     InputClippingSettings m_inputClippingSettings;
-    bool m_inputClippingSettingsHasBeenSet;
+    bool m_inputClippingSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_urlPath;
-    bool m_urlPathHasBeenSet;
+    bool m_urlPathHasBeenSet = false;
   };
 
 } // namespace Model

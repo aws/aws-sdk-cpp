@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/SubtitlesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API SubtitlesOutput
+  class SubtitlesOutput
   {
   public:
-    SubtitlesOutput();
-    SubtitlesOutput(Aws::Utils::Json::JsonView jsonValue);
-    SubtitlesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API SubtitlesOutput();
+    AWS_TRANSCRIBESERVICE_API SubtitlesOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API SubtitlesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::Vector<SubtitleFormat> m_formats;
-    bool m_formatsHasBeenSet;
+    bool m_formatsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subtitleFileUris;
-    bool m_subtitleFileUrisHasBeenSet;
+    bool m_subtitleFileUrisHasBeenSet = false;
 
     int m_outputStartIndex;
-    bool m_outputStartIndexHasBeenSet;
+    bool m_outputStartIndexHasBeenSet = false;
   };
 
 } // namespace Model

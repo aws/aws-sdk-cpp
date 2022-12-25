@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ReleaseLabelFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ReleaseLabelFilter
+  class ReleaseLabelFilter
   {
   public:
-    ReleaseLabelFilter();
-    ReleaseLabelFilter(Aws::Utils::Json::JsonView jsonValue);
-    ReleaseLabelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ReleaseLabelFilter();
+    AWS_EMR_API ReleaseLabelFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ReleaseLabelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
   };
 
 } // namespace Model

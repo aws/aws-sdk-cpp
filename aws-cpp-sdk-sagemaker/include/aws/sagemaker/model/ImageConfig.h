@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ImageConfig
+  class ImageConfig
   {
   public:
-    ImageConfig();
-    ImageConfig(Aws::Utils::Json::JsonView jsonValue);
-    ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ImageConfig();
+    AWS_SAGEMAKER_API ImageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     RepositoryAccessMode m_repositoryAccessMode;
-    bool m_repositoryAccessModeHasBeenSet;
+    bool m_repositoryAccessModeHasBeenSet = false;
 
     RepositoryAuthConfig m_repositoryAuthConfig;
-    bool m_repositoryAuthConfigHasBeenSet;
+    bool m_repositoryAuthConfigHasBeenSet = false;
   };
 
 } // namespace Model

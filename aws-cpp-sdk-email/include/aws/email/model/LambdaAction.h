@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/LambdaAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API LambdaAction
+  class LambdaAction
   {
   public:
-    LambdaAction();
-    LambdaAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LambdaAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API LambdaAction();
+    AWS_SES_API LambdaAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API LambdaAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -305,13 +305,13 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     InvocationType m_invocationType;
-    bool m_invocationTypeHasBeenSet;
+    bool m_invocationTypeHasBeenSet = false;
   };
 
 } // namespace Model

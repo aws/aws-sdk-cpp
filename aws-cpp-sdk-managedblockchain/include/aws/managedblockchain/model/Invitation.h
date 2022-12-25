@@ -27,18 +27,19 @@ namespace Model
 {
 
   /**
-   * <p>An invitation to an AWS account to create a member and join the network.</p>
-   * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
+   * <p>An invitation to an Amazon Web Services account to create a member and join
+   * the network.</p> <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Invitation">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API Invitation
+  class Invitation
   {
   public:
-    Invitation();
-    Invitation(Aws::Utils::Json::JsonView jsonValue);
-    Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API Invitation();
+    AWS_MANAGEDBLOCKCHAIN_API Invitation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,9 +171,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -183,9 +184,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -196,9 +197,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -209,9 +210,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -222,9 +223,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -235,9 +236,9 @@ namespace Model
 
     /**
      * <p>The status of the invitation:</p> <ul> <li> <p> <code>PENDING</code> - The
-     * invitee has not created a member to join the network, and the invitation has not
+     * invitee hasn't created a member to join the network, and the invitation hasn't
      * yet expired.</p> </li> <li> <p> <code>ACCEPTING</code> - The invitee has begun
-     * creating a member, and creation has not yet completed.</p> </li> <li> <p>
+     * creating a member, and creation hasn't yet completed.</p> </li> <li> <p>
      * <code>ACCEPTED</code> - The invitee created a member and joined the network
      * using the <code>InvitationID</code>.</p> </li> <li> <p> <code>REJECTED</code> -
      * The invitee rejected the invitation.</p> </li> <li> <p> <code>EXPIRED</code> -
@@ -270,7 +271,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -278,7 +280,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -286,7 +289,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -294,7 +298,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -302,7 +307,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -310,7 +316,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Invitation& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -318,7 +325,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Invitation& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -326,29 +334,30 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the invitation. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Invitation& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     InvitationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     NetworkSummary m_networkSummary;
-    bool m_networkSummaryHasBeenSet;
+    bool m_networkSummaryHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

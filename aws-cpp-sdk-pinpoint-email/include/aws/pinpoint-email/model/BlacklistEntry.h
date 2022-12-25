@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/BlacklistEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API BlacklistEntry
+  class BlacklistEntry
   {
   public:
-    BlacklistEntry();
-    BlacklistEntry(Aws::Utils::Json::JsonView jsonValue);
-    BlacklistEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API BlacklistEntry();
+    AWS_PINPOINTEMAIL_API BlacklistEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API BlacklistEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_rblName;
-    bool m_rblNameHasBeenSet;
+    bool m_rblNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_listingTime;
-    bool m_listingTimeHasBeenSet;
+    bool m_listingTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

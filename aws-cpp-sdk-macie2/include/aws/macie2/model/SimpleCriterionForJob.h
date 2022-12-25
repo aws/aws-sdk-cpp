@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SimpleCriterionForJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SimpleCriterionForJob
+  class SimpleCriterionForJob
   {
   public:
-    SimpleCriterionForJob();
-    SimpleCriterionForJob(Aws::Utils::Json::JsonView jsonValue);
-    SimpleCriterionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SimpleCriterionForJob();
+    AWS_MACIE2_API SimpleCriterionForJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SimpleCriterionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -274,13 +274,13 @@ namespace Model
   private:
 
     JobComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     SimpleCriterionKeyForJob m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

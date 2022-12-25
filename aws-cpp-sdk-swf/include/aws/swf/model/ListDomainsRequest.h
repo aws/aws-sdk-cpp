@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SWF_API ListDomainsRequest : public SWFRequest
+  class ListDomainsRequest : public SWFRequest
   {
   public:
-    ListDomainsRequest();
+    AWS_SWF_API ListDomainsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDomains"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_nextPageToken;
-    bool m_nextPageTokenHasBeenSet;
+    bool m_nextPageTokenHasBeenSet = false;
 
     RegistrationStatus m_registrationStatus;
-    bool m_registrationStatusHasBeenSet;
+    bool m_registrationStatusHasBeenSet = false;
 
     int m_maximumPageSize;
-    bool m_maximumPageSizeHasBeenSet;
+    bool m_maximumPageSizeHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
   };
 
 } // namespace Model

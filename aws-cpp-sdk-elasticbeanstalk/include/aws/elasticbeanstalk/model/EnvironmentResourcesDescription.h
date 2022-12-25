@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentResourcesDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription
+  class EnvironmentResourcesDescription
   {
   public:
-    EnvironmentResourcesDescription();
-    EnvironmentResourcesDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EnvironmentResourcesDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription();
+    AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API EnvironmentResourcesDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     LoadBalancerDescription m_loadBalancer;
-    bool m_loadBalancerHasBeenSet;
+    bool m_loadBalancerHasBeenSet = false;
   };
 
 } // namespace Model

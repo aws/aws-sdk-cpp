@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsManifestCreateOrUpdateParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters
+  class HlsManifestCreateOrUpdateParameters
   {
   public:
-    HlsManifestCreateOrUpdateParameters();
-    HlsManifestCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
-    HlsManifestCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters();
+    AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -507,31 +507,31 @@ it will
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     PlaylistType m_playlistType;
-    bool m_playlistTypeHasBeenSet;
+    bool m_playlistTypeHasBeenSet = false;
 
     int m_playlistWindowSeconds;
-    bool m_playlistWindowSecondsHasBeenSet;
+    bool m_playlistWindowSecondsHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
   };
 
 } // namespace Model

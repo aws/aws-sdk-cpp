@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/RootCauseException">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API RootCauseException
+  class RootCauseException
   {
   public:
-    RootCauseException();
-    RootCauseException(Aws::Utils::Json::JsonView jsonValue);
-    RootCauseException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API RootCauseException();
+    AWS_XRAY_API RootCauseException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API RootCauseException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

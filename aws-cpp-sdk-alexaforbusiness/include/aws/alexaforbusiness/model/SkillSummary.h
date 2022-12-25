@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SkillSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SkillSummary
+  class SkillSummary
   {
   public:
-    SkillSummary();
-    SkillSummary(Aws::Utils::Json::JsonView jsonValue);
-    SkillSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SkillSummary();
+    AWS_ALEXAFORBUSINESS_API SkillSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SkillSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,19 +212,19 @@ namespace Model
   private:
 
     Aws::String m_skillId;
-    bool m_skillIdHasBeenSet;
+    bool m_skillIdHasBeenSet = false;
 
     Aws::String m_skillName;
-    bool m_skillNameHasBeenSet;
+    bool m_skillNameHasBeenSet = false;
 
     bool m_supportsLinking;
-    bool m_supportsLinkingHasBeenSet;
+    bool m_supportsLinkingHasBeenSet = false;
 
     EnablementType m_enablementType;
-    bool m_enablementTypeHasBeenSet;
+    bool m_enablementTypeHasBeenSet = false;
 
     SkillType m_skillType;
-    bool m_skillTypeHasBeenSet;
+    bool m_skillTypeHasBeenSet = false;
   };
 
 } // namespace Model

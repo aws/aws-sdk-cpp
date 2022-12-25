@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ResponseTimeRootCauseEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ResponseTimeRootCauseEntity
+  class ResponseTimeRootCauseEntity
   {
   public:
-    ResponseTimeRootCauseEntity();
-    ResponseTimeRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
-    ResponseTimeRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ResponseTimeRootCauseEntity();
+    AWS_XRAY_API ResponseTimeRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ResponseTimeRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_coverage;
-    bool m_coverageHasBeenSet;
+    bool m_coverageHasBeenSet = false;
 
     bool m_remote;
-    bool m_remoteHasBeenSet;
+    bool m_remoteHasBeenSet = false;
   };
 
 } // namespace Model

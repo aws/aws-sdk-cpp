@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/OrderedPhoneNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API OrderedPhoneNumber
+  class OrderedPhoneNumber
   {
   public:
-    OrderedPhoneNumber();
-    OrderedPhoneNumber(Aws::Utils::Json::JsonView jsonValue);
-    OrderedPhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API OrderedPhoneNumber();
+    AWS_CHIME_API OrderedPhoneNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API OrderedPhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_e164PhoneNumber;
-    bool m_e164PhoneNumberHasBeenSet;
+    bool m_e164PhoneNumberHasBeenSet = false;
 
     OrderedPhoneNumberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

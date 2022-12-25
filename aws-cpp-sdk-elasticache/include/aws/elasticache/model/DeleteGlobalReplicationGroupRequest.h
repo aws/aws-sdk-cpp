@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API DeleteGlobalReplicationGroupRequest : public ElastiCacheRequest
+  class DeleteGlobalReplicationGroupRequest : public ElastiCacheRequest
   {
   public:
-    DeleteGlobalReplicationGroupRequest();
+    AWS_ELASTICACHE_API DeleteGlobalReplicationGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteGlobalReplicationGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     bool m_retainPrimaryReplicationGroup;
-    bool m_retainPrimaryReplicationGroupHasBeenSet;
+    bool m_retainPrimaryReplicationGroupHasBeenSet = false;
   };
 
 } // namespace Model

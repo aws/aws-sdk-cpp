@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API ListOpenIDConnectProviderTagsRequest : public IAMRequest
+  class ListOpenIDConnectProviderTagsRequest : public IAMRequest
   {
   public:
-    ListOpenIDConnectProviderTagsRequest();
+    AWS_IAM_API ListOpenIDConnectProviderTagsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListOpenIDConnectProviderTags"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -225,13 +225,13 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
-    bool m_openIDConnectProviderArnHasBeenSet;
+    bool m_openIDConnectProviderArnHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DataTransfer">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API DataTransfer
+  class DataTransfer
   {
   public:
-    DataTransfer();
-    DataTransfer(Aws::Utils::Json::JsonView jsonValue);
-    DataTransfer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API DataTransfer();
+    AWS_SNOWBALL_API DataTransfer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API DataTransfer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,16 +140,16 @@ namespace Model
   private:
 
     long long m_bytesTransferred;
-    bool m_bytesTransferredHasBeenSet;
+    bool m_bytesTransferredHasBeenSet = false;
 
     long long m_objectsTransferred;
-    bool m_objectsTransferredHasBeenSet;
+    bool m_objectsTransferredHasBeenSet = false;
 
     long long m_totalBytes;
-    bool m_totalBytesHasBeenSet;
+    bool m_totalBytesHasBeenSet = false;
 
     long long m_totalObjects;
-    bool m_totalObjectsHasBeenSet;
+    bool m_totalObjectsHasBeenSet = false;
   };
 
 } // namespace Model

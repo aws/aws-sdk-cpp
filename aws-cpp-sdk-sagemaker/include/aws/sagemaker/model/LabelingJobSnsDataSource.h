@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobSnsDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobSnsDataSource
+  class LabelingJobSnsDataSource
   {
   public:
-    LabelingJobSnsDataSource();
-    LabelingJobSnsDataSource(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobSnsDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobSnsDataSource();
+    AWS_SAGEMAKER_API LabelingJobSnsDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobSnsDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ServiceHealth
+  class ServiceHealth
   {
   public:
-    ServiceHealth();
-    ServiceHealth(Aws::Utils::Json::JsonView jsonValue);
-    ServiceHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ServiceHealth();
+    AWS_DEVOPSGURU_API ServiceHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ServiceHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,13 +112,41 @@ namespace Model
      */
     inline ServiceHealth& WithInsight(ServiceInsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline ServiceHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
+
   private:
 
     ServiceName m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ServiceInsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
+
+    long long m_analyzedResourceCount;
+    bool m_analyzedResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

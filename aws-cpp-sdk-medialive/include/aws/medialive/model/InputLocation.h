@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputLocation
+  class InputLocation
   {
   public:
-    InputLocation();
-    InputLocation(Aws::Utils::Json::JsonView jsonValue);
-    InputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputLocation();
+    AWS_MEDIALIVE_API InputLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_passwordParam;
-    bool m_passwordParamHasBeenSet;
+    bool m_passwordParamHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

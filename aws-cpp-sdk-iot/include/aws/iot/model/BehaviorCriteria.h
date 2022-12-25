@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BehaviorCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BehaviorCriteria
+  class BehaviorCriteria
   {
   public:
-    BehaviorCriteria();
-    BehaviorCriteria(Aws::Utils::Json::JsonView jsonValue);
-    BehaviorCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BehaviorCriteria();
+    AWS_IOT_API BehaviorCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BehaviorCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -324,25 +324,25 @@ namespace Model
   private:
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     MetricValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     int m_consecutiveDatapointsToAlarm;
-    bool m_consecutiveDatapointsToAlarmHasBeenSet;
+    bool m_consecutiveDatapointsToAlarmHasBeenSet = false;
 
     int m_consecutiveDatapointsToClear;
-    bool m_consecutiveDatapointsToClearHasBeenSet;
+    bool m_consecutiveDatapointsToClearHasBeenSet = false;
 
     StatisticalThreshold m_statisticalThreshold;
-    bool m_statisticalThresholdHasBeenSet;
+    bool m_statisticalThresholdHasBeenSet = false;
 
     MachineLearningDetectionConfig m_mlDetectionConfig;
-    bool m_mlDetectionConfigHasBeenSet;
+    bool m_mlDetectionConfigHasBeenSet = false;
   };
 
 } // namespace Model

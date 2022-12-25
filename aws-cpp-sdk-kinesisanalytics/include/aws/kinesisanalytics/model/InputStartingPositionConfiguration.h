@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputStartingPositionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputStartingPositionConfiguration
+  class InputStartingPositionConfiguration
   {
   public:
-    InputStartingPositionConfiguration();
-    InputStartingPositionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputStartingPositionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputStartingPositionConfiguration();
+    AWS_KINESISANALYTICS_API InputStartingPositionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputStartingPositionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     InputStartingPosition m_inputStartingPosition;
-    bool m_inputStartingPositionHasBeenSet;
+    bool m_inputStartingPositionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEARTIFACT_API GetAuthorizationTokenRequest : public CodeArtifactRequest
+  class GetAuthorizationTokenRequest : public CodeArtifactRequest
   {
   public:
-    GetAuthorizationTokenRequest();
+    AWS_CODEARTIFACT_API GetAuthorizationTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAuthorizationToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEARTIFACT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CODEARTIFACT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainOwner;
-    bool m_domainOwnerHasBeenSet;
+    bool m_domainOwnerHasBeenSet = false;
 
     long long m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
   };
 
 } // namespace Model

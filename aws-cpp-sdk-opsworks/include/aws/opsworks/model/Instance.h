@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Instance">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API Instance
+  class Instance
   {
   public:
-    Instance();
-    Instance(Aws::Utils::Json::JsonView jsonValue);
-    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Instance();
+    AWS_OPSWORKS_API Instance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1901,127 +1901,127 @@ namespace Model
   private:
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Architecture m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AutoScalingType m_autoScalingType;
-    bool m_autoScalingTypeHasBeenSet;
+    bool m_autoScalingTypeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_ec2InstanceId;
-    bool m_ec2InstanceIdHasBeenSet;
+    bool m_ec2InstanceIdHasBeenSet = false;
 
     Aws::String m_ecsClusterArn;
-    bool m_ecsClusterArnHasBeenSet;
+    bool m_ecsClusterArnHasBeenSet = false;
 
     Aws::String m_ecsContainerInstanceArn;
-    bool m_ecsContainerInstanceArnHasBeenSet;
+    bool m_ecsContainerInstanceArnHasBeenSet = false;
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_infrastructureClass;
-    bool m_infrastructureClassHasBeenSet;
+    bool m_infrastructureClassHasBeenSet = false;
 
     bool m_installUpdatesOnBoot;
-    bool m_installUpdatesOnBootHasBeenSet;
+    bool m_installUpdatesOnBootHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceProfileArn;
-    bool m_instanceProfileArnHasBeenSet;
+    bool m_instanceProfileArnHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_lastServiceErrorId;
-    bool m_lastServiceErrorIdHasBeenSet;
+    bool m_lastServiceErrorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_layerIds;
-    bool m_layerIdsHasBeenSet;
+    bool m_layerIdsHasBeenSet = false;
 
     Aws::String m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_privateDns;
-    bool m_privateDnsHasBeenSet;
+    bool m_privateDnsHasBeenSet = false;
 
     Aws::String m_privateIp;
-    bool m_privateIpHasBeenSet;
+    bool m_privateIpHasBeenSet = false;
 
     Aws::String m_publicDns;
-    bool m_publicDnsHasBeenSet;
+    bool m_publicDnsHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_registeredBy;
-    bool m_registeredByHasBeenSet;
+    bool m_registeredByHasBeenSet = false;
 
     Aws::String m_reportedAgentVersion;
-    bool m_reportedAgentVersionHasBeenSet;
+    bool m_reportedAgentVersionHasBeenSet = false;
 
     ReportedOs m_reportedOs;
-    bool m_reportedOsHasBeenSet;
+    bool m_reportedOsHasBeenSet = false;
 
     RootDeviceType m_rootDeviceType;
-    bool m_rootDeviceTypeHasBeenSet;
+    bool m_rootDeviceTypeHasBeenSet = false;
 
     Aws::String m_rootDeviceVolumeId;
-    bool m_rootDeviceVolumeIdHasBeenSet;
+    bool m_rootDeviceVolumeIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_sshHostDsaKeyFingerprint;
-    bool m_sshHostDsaKeyFingerprintHasBeenSet;
+    bool m_sshHostDsaKeyFingerprintHasBeenSet = false;
 
     Aws::String m_sshHostRsaKeyFingerprint;
-    bool m_sshHostRsaKeyFingerprintHasBeenSet;
+    bool m_sshHostRsaKeyFingerprintHasBeenSet = false;
 
     Aws::String m_sshKeyName;
-    bool m_sshKeyNameHasBeenSet;
+    bool m_sshKeyNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     VirtualizationType m_virtualizationType;
-    bool m_virtualizationTypeHasBeenSet;
+    bool m_virtualizationTypeHasBeenSet = false;
   };
 
 } // namespace Model

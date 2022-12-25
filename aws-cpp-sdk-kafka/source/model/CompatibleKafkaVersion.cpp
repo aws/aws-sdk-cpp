@@ -42,7 +42,7 @@ CompatibleKafkaVersion& CompatibleKafkaVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targetVersions"))
   {
-    Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("targetVersions");
+    Aws::Utils::Array<JsonView> targetVersionsJsonList = jsonValue.GetArray("targetVersions");
     for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
     {
       m_targetVersions.push_back(targetVersionsJsonList[targetVersionsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CompatibleKafkaVersion::Jsonize() const
 
   if(m_targetVersionsHasBeenSet)
   {
-   Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
+   Aws::Utils::Array<JsonValue> targetVersionsJsonList(m_targetVersions.size());
    for(unsigned targetVersionsIndex = 0; targetVersionsIndex < targetVersionsJsonList.GetLength(); ++targetVersionsIndex)
    {
      targetVersionsJsonList[targetVersionsIndex].AsString(m_targetVersions[targetVersionsIndex]);

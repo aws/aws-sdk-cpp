@@ -24,26 +24,27 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to control how your transcription job is processed. Currently, the
-   * only <code>JobExecutionSettings</code> modification you can choose is enabling
-   * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-   * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-   * also include the sub-parameters: <code>AllowDeferredExecution</code> and
+   * <p>Makes it possible to control how your transcription job is processed.
+   * Currently, the only <code>JobExecutionSettings</code> modification you can
+   * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+   * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+   * request, you must also include the sub-parameters:
+   * <code>AllowDeferredExecution</code> and
    * <code>DataAccessRoleArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/JobExecutionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API JobExecutionSettings
+  class JobExecutionSettings
   {
   public:
-    JobExecutionSettings();
-    JobExecutionSettings(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API JobExecutionSettings();
+    AWS_TRANSCRIBESERVICE_API JobExecutionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API JobExecutionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Allows you to enable job queuing when your concurrent request limit is
+     * <p>Makes it possible to enable job queuing when your concurrent request limit is
      * exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>,
      * transcription job requests are placed in a queue until the number of jobs falls
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
@@ -56,7 +57,7 @@ namespace Model
     inline bool GetAllowDeferredExecution() const{ return m_allowDeferredExecution; }
 
     /**
-     * <p>Allows you to enable job queuing when your concurrent request limit is
+     * <p>Makes it possible to enable job queuing when your concurrent request limit is
      * exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>,
      * transcription job requests are placed in a queue until the number of jobs falls
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
@@ -69,7 +70,7 @@ namespace Model
     inline bool AllowDeferredExecutionHasBeenSet() const { return m_allowDeferredExecutionHasBeenSet; }
 
     /**
-     * <p>Allows you to enable job queuing when your concurrent request limit is
+     * <p>Makes it possible to enable job queuing when your concurrent request limit is
      * exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>,
      * transcription job requests are placed in a queue until the number of jobs falls
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
@@ -82,7 +83,7 @@ namespace Model
     inline void SetAllowDeferredExecution(bool value) { m_allowDeferredExecutionHasBeenSet = true; m_allowDeferredExecution = value; }
 
     /**
-     * <p>Allows you to enable job queuing when your concurrent request limit is
+     * <p>Makes it possible to enable job queuing when your concurrent request limit is
      * exceeded. When <code>AllowDeferredExecution</code> is set to <code>true</code>,
      * transcription job requests are placed in a queue until the number of jobs falls
      * below the concurrent request limit. If <code>AllowDeferredExecution</code> is
@@ -97,9 +98,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -110,9 +111,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -123,9 +124,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -136,9 +137,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -149,9 +150,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -162,9 +163,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -175,9 +176,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -188,9 +189,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
@@ -202,10 +203,10 @@ namespace Model
   private:
 
     bool m_allowDeferredExecution;
-    bool m_allowDeferredExecutionHasBeenSet;
+    bool m_allowDeferredExecutionHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

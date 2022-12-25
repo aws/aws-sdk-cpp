@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TtmlDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TtmlDestinationSettings
+  class TtmlDestinationSettings
   {
   public:
-    TtmlDestinationSettings();
-    TtmlDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    TtmlDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TtmlDestinationSettings();
+    AWS_MEDIACONVERT_API TtmlDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TtmlDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     TtmlStylePassthrough m_stylePassthrough;
-    bool m_stylePassthroughHasBeenSet;
+    bool m_stylePassthroughHasBeenSet = false;
   };
 
 } // namespace Model

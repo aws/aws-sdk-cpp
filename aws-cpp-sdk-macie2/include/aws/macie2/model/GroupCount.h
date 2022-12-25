@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GroupCount">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API GroupCount
+  class GroupCount
   {
   public:
-    GroupCount();
-    GroupCount(Aws::Utils::Json::JsonView jsonValue);
-    GroupCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API GroupCount();
+    AWS_MACIE2_API GroupCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API GroupCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_groupKey;
-    bool m_groupKeyHasBeenSet;
+    bool m_groupKeyHasBeenSet = false;
   };
 
 } // namespace Model

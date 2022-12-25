@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ResolvedArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ResolvedArtifact
+  class ResolvedArtifact
   {
   public:
-    ResolvedArtifact();
-    ResolvedArtifact(Aws::Utils::Json::JsonView jsonValue);
-    ResolvedArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ResolvedArtifact();
+    AWS_CODEBUILD_API ResolvedArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ResolvedArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     ArtifactsType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
   };
 
 } // namespace Model

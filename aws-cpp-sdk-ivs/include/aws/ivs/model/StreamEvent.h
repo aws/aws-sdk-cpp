@@ -31,42 +31,48 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamEvent">AWS API
    * Reference</a></p>
    */
-  class AWS_IVS_API StreamEvent
+  class StreamEvent
   {
   public:
-    StreamEvent();
-    StreamEvent(Aws::Utils::Json::JsonView jsonValue);
-    StreamEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamEvent();
+    AWS_IVS_API StreamEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
-     * <p>UTC ISO-8601 formatted timestamp of when the event occurred.</p>
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
      */
     inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
 
@@ -155,13 +161,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

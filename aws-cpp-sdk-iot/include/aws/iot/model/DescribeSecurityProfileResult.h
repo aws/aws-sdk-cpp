@@ -31,12 +31,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeSecurityProfileResult
+  class DescribeSecurityProfileResult
   {
   public:
-    DescribeSecurityProfileResult();
-    DescribeSecurityProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSecurityProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeSecurityProfileResult();
+    AWS_IOT_API DescribeSecurityProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeSecurityProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

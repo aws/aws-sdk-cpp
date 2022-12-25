@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API PolicyDetail
+  class PolicyDetail
   {
   public:
-    PolicyDetail();
-    PolicyDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyDetail();
+    AWS_IAM_API PolicyDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
   };
 
 } // namespace Model

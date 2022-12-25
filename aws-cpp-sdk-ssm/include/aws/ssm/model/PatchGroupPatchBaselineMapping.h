@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchGroupPatchBaselineMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchGroupPatchBaselineMapping
+  class PatchGroupPatchBaselineMapping
   {
   public:
-    PatchGroupPatchBaselineMapping();
-    PatchGroupPatchBaselineMapping(Aws::Utils::Json::JsonView jsonValue);
-    PatchGroupPatchBaselineMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchGroupPatchBaselineMapping();
+    AWS_SSM_API PatchGroupPatchBaselineMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchGroupPatchBaselineMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
 
     PatchBaselineIdentity m_baselineIdentity;
-    bool m_baselineIdentityHasBeenSet;
+    bool m_baselineIdentityHasBeenSet = false;
   };
 
 } // namespace Model

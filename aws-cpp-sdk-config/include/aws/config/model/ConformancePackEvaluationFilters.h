@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackEvaluationFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters
+  class ConformancePackEvaluationFilters
   {
   public:
-    ConformancePackEvaluationFilters();
-    ConformancePackEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters();
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
-    bool m_configRuleNamesHasBeenSet;
+    bool m_configRuleNamesHasBeenSet = false;
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
   };
 
 } // namespace Model

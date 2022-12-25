@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchBaselineIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchBaselineIdentity
+  class PatchBaselineIdentity
   {
   public:
-    PatchBaselineIdentity();
-    PatchBaselineIdentity(Aws::Utils::Json::JsonView jsonValue);
-    PatchBaselineIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchBaselineIdentity();
+    AWS_SSM_API PatchBaselineIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchBaselineIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
   private:
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_baselineName;
-    bool m_baselineNameHasBeenSet;
+    bool m_baselineNameHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::String m_baselineDescription;
-    bool m_baselineDescriptionHasBeenSet;
+    bool m_baselineDescriptionHasBeenSet = false;
 
     bool m_defaultBaseline;
-    bool m_defaultBaselineHasBeenSet;
+    bool m_defaultBaselineHasBeenSet = false;
   };
 
 } // namespace Model

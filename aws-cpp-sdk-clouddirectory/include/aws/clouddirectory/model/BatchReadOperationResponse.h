@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadOperationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchReadOperationResponse
+  class BatchReadOperationResponse
   {
   public:
-    BatchReadOperationResponse();
-    BatchReadOperationResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchReadOperationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchReadOperationResponse();
+    AWS_CLOUDDIRECTORY_API BatchReadOperationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchReadOperationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BatchReadSuccessfulResponse m_successfulResponse;
-    bool m_successfulResponseHasBeenSet;
+    bool m_successfulResponseHasBeenSet = false;
 
     BatchReadException m_exceptionResponse;
-    bool m_exceptionResponseHasBeenSet;
+    bool m_exceptionResponseHasBeenSet = false;
   };
 
 } // namespace Model

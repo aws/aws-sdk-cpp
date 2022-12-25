@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ImageInserter
+  class ImageInserter
   {
   public:
-    ImageInserter();
-    ImageInserter(Aws::Utils::Json::JsonView jsonValue);
-    ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ImageInserter();
+    AWS_MEDIACONVERT_API ImageInserter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,10 +90,50 @@ namespace Model
      */
     inline ImageInserter& AddInsertableImages(InsertableImage&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter
+     * images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit
+     * peak brightness displays, we recommend that you set SDR reference white level to
+     * 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100,
+     * or specify an integer from 100 to 1000.
+     */
+    inline int GetSdrReferenceWhiteLevel() const{ return m_sdrReferenceWhiteLevel; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter
+     * images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit
+     * peak brightness displays, we recommend that you set SDR reference white level to
+     * 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100,
+     * or specify an integer from 100 to 1000.
+     */
+    inline bool SdrReferenceWhiteLevelHasBeenSet() const { return m_sdrReferenceWhiteLevelHasBeenSet; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter
+     * images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit
+     * peak brightness displays, we recommend that you set SDR reference white level to
+     * 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100,
+     * or specify an integer from 100 to 1000.
+     */
+    inline void SetSdrReferenceWhiteLevel(int value) { m_sdrReferenceWhiteLevelHasBeenSet = true; m_sdrReferenceWhiteLevel = value; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter
+     * images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit
+     * peak brightness displays, we recommend that you set SDR reference white level to
+     * 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100,
+     * or specify an integer from 100 to 1000.
+     */
+    inline ImageInserter& WithSdrReferenceWhiteLevel(int value) { SetSdrReferenceWhiteLevel(value); return *this;}
+
   private:
 
     Aws::Vector<InsertableImage> m_insertableImages;
-    bool m_insertableImagesHasBeenSet;
+    bool m_insertableImagesHasBeenSet = false;
+
+    int m_sdrReferenceWhiteLevel;
+    bool m_sdrReferenceWhiteLevelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ServiceObservabilityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ServiceObservabilityConfiguration
+  class ServiceObservabilityConfiguration
   {
   public:
-    ServiceObservabilityConfiguration();
-    ServiceObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServiceObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ServiceObservabilityConfiguration();
+    AWS_APPRUNNER_API ServiceObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ServiceObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,10 +168,10 @@ namespace Model
   private:
 
     bool m_observabilityEnabled;
-    bool m_observabilityEnabledHasBeenSet;
+    bool m_observabilityEnabledHasBeenSet = false;
 
     Aws::String m_observabilityConfigurationArn;
-    bool m_observabilityConfigurationArnHasBeenSet;
+    bool m_observabilityConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

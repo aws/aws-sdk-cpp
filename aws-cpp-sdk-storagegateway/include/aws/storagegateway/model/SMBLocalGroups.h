@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBLocalGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API SMBLocalGroups
+  class SMBLocalGroups
   {
   public:
-    SMBLocalGroups();
-    SMBLocalGroups(Aws::Utils::Json::JsonView jsonValue);
-    SMBLocalGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API SMBLocalGroups();
+    AWS_STORAGEGATEWAY_API SMBLocalGroups(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API SMBLocalGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,7 +123,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_gatewayAdmins;
-    bool m_gatewayAdminsHasBeenSet;
+    bool m_gatewayAdminsHasBeenSet = false;
   };
 
 } // namespace Model

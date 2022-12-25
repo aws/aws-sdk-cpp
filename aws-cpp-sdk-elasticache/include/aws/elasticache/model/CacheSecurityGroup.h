@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CacheSecurityGroup
+  class CacheSecurityGroup
   {
   public:
-    CacheSecurityGroup();
-    CacheSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheSecurityGroup();
+    AWS_ELASTICACHE_API CacheSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_cacheSecurityGroupName;
-    bool m_cacheSecurityGroupNameHasBeenSet;
+    bool m_cacheSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-    bool m_eC2SecurityGroupsHasBeenSet;
+    bool m_eC2SecurityGroupsHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

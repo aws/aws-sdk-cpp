@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Output();
+    AWS_MEDIACONVERT_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -486,28 +486,28 @@ namespace Model
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
-    bool m_audioDescriptionsHasBeenSet;
+    bool m_audioDescriptionsHasBeenSet = false;
 
     Aws::Vector<CaptionDescription> m_captionDescriptions;
-    bool m_captionDescriptionsHasBeenSet;
+    bool m_captionDescriptionsHasBeenSet = false;
 
     ContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     Aws::String m_extension;
-    bool m_extensionHasBeenSet;
+    bool m_extensionHasBeenSet = false;
 
     Aws::String m_nameModifier;
-    bool m_nameModifierHasBeenSet;
+    bool m_nameModifierHasBeenSet = false;
 
     OutputSettings m_outputSettings;
-    bool m_outputSettingsHasBeenSet;
+    bool m_outputSettingsHasBeenSet = false;
 
     Aws::String m_preset;
-    bool m_presetHasBeenSet;
+    bool m_presetHasBeenSet = false;
 
     VideoDescription m_videoDescription;
-    bool m_videoDescriptionHasBeenSet;
+    bool m_videoDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

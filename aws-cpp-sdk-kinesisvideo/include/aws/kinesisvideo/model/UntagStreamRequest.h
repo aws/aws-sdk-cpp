@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API UntagStreamRequest : public KinesisVideoRequest
+  class UntagStreamRequest : public KinesisVideoRequest
   {
   public:
-    UntagStreamRequest();
+    AWS_KINESISVIDEO_API UntagStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeyList;
-    bool m_tagKeyListHasBeenSet;
+    bool m_tagKeyListHasBeenSet = false;
   };
 
 } // namespace Model

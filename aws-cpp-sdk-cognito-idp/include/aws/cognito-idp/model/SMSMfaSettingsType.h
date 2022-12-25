@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SMSMfaSettingsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SMSMfaSettingsType
+  class SMSMfaSettingsType
   {
   public:
-    SMSMfaSettingsType();
-    SMSMfaSettingsType(Aws::Utils::Json::JsonView jsonValue);
-    SMSMfaSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API SMSMfaSettingsType();
+    AWS_COGNITOIDENTITYPROVIDER_API SMSMfaSettingsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API SMSMfaSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,10 +97,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     bool m_preferredMfa;
-    bool m_preferredMfaHasBeenSet;
+    bool m_preferredMfaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AnomalyDetectorConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig
+  class AnomalyDetectorConfig
   {
   public:
-    AnomalyDetectorConfig();
-    AnomalyDetectorConfig(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyDetectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig();
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AnomalyDetectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Frequency m_anomalyDetectorFrequency;
-    bool m_anomalyDetectorFrequencyHasBeenSet;
+    bool m_anomalyDetectorFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

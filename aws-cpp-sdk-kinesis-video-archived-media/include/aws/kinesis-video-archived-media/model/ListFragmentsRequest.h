@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsRequest : public KinesisVideoArchivedMediaRequest
+  class ListFragmentsRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    ListFragmentsRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListFragments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     long long m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     FragmentSelector m_fragmentSelector;
-    bool m_fragmentSelectorHasBeenSet;
+    bool m_fragmentSelectorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API Connection
+  class Connection
   {
   public:
-    Connection();
-    Connection(Aws::Utils::Json::JsonView jsonValue);
-    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API Connection();
+    AWS_GAMESPARKS_API Connection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

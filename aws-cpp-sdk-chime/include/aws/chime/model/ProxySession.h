@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ProxySession">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ProxySession
+  class ProxySession
   {
   public:
-    ProxySession();
-    ProxySession(Aws::Utils::Json::JsonView jsonValue);
-    ProxySession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ProxySession();
+    AWS_CHIME_API ProxySession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ProxySession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -503,43 +503,43 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::String m_proxySessionId;
-    bool m_proxySessionIdHasBeenSet;
+    bool m_proxySessionIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProxySessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_expiryMinutes;
-    bool m_expiryMinutesHasBeenSet;
+    bool m_expiryMinutesHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedTimestamp;
-    bool m_endedTimestampHasBeenSet;
+    bool m_endedTimestampHasBeenSet = false;
 
     Aws::Vector<Participant> m_participants;
-    bool m_participantsHasBeenSet;
+    bool m_participantsHasBeenSet = false;
 
     NumberSelectionBehavior m_numberSelectionBehavior;
-    bool m_numberSelectionBehaviorHasBeenSet;
+    bool m_numberSelectionBehaviorHasBeenSet = false;
 
     GeoMatchLevel m_geoMatchLevel;
-    bool m_geoMatchLevelHasBeenSet;
+    bool m_geoMatchLevelHasBeenSet = false;
 
     GeoMatchParams m_geoMatchParams;
-    bool m_geoMatchParamsHasBeenSet;
+    bool m_geoMatchParamsHasBeenSet = false;
   };
 
 } // namespace Model

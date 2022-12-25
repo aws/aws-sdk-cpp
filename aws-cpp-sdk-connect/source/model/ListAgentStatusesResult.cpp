@@ -36,7 +36,7 @@ ListAgentStatusesResult& ListAgentStatusesResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("AgentStatusSummaryList"))
   {
-    Array<JsonView> agentStatusSummaryListJsonList = jsonValue.GetArray("AgentStatusSummaryList");
+    Aws::Utils::Array<JsonView> agentStatusSummaryListJsonList = jsonValue.GetArray("AgentStatusSummaryList");
     for(unsigned agentStatusSummaryListIndex = 0; agentStatusSummaryListIndex < agentStatusSummaryListJsonList.GetLength(); ++agentStatusSummaryListIndex)
     {
       m_agentStatusSummaryList.push_back(agentStatusSummaryListJsonList[agentStatusSummaryListIndex].AsObject());

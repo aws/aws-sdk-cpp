@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/VirtualMachine">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API VirtualMachine
+  class VirtualMachine
   {
   public:
-    VirtualMachine();
-    VirtualMachine(Aws::Utils::Json::JsonView jsonValue);
-    VirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API VirtualMachine();
+    AWS_BACKUPGATEWAY_API VirtualMachine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API VirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_hostName;
-    bool m_hostNameHasBeenSet;
+    bool m_hostNameHasBeenSet = false;
 
     Aws::String m_hypervisorId;
-    bool m_hypervisorIdHasBeenSet;
+    bool m_hypervisorIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastBackupDate;
-    bool m_lastBackupDateHasBeenSet;
+    bool m_lastBackupDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

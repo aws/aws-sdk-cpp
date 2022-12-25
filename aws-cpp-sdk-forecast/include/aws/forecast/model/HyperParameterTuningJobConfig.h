@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/HyperParameterTuningJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API HyperParameterTuningJobConfig
+  class HyperParameterTuningJobConfig
   {
   public:
-    HyperParameterTuningJobConfig();
-    HyperParameterTuningJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API HyperParameterTuningJobConfig();
+    AWS_FORECASTSERVICE_API HyperParameterTuningJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API HyperParameterTuningJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     ParameterRanges m_parameterRanges;
-    bool m_parameterRangesHasBeenSet;
+    bool m_parameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

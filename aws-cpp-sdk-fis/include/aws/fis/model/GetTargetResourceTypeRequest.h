@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIS_API GetTargetResourceTypeRequest : public FISRequest
+  class GetTargetResourceTypeRequest : public FISRequest
   {
   public:
-    GetTargetResourceTypeRequest();
+    AWS_FIS_API GetTargetResourceTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTargetResourceType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

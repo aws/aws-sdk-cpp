@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/model/LifeCycleState.h>
 #include <aws/mgn/model/ReplicationType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +31,59 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeSourceServersRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API DescribeSourceServersRequestFilters
+  class DescribeSourceServersRequestFilters
   {
   public:
-    DescribeSourceServersRequestFilters();
-    DescribeSourceServersRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeSourceServersRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API DescribeSourceServersRequestFilters();
+    AWS_MGN_API DescribeSourceServersRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API DescribeSourceServersRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetApplicationIDs() const{ return m_applicationIDs; }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline bool ApplicationIDsHasBeenSet() const { return m_applicationIDsHasBeenSet; }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline void SetApplicationIDs(const Aws::Vector<Aws::String>& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = value; }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline void SetApplicationIDs(Aws::Vector<Aws::String>&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = std::move(value); }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithApplicationIDs(const Aws::Vector<Aws::String>& value) { SetApplicationIDs(value); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline DescribeSourceServersRequestFilters& WithApplicationIDs(Aws::Vector<Aws::String>&& value) { SetApplicationIDs(std::move(value)); return *this;}
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddApplicationIDs(const Aws::String& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddApplicationIDs(Aws::String&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Request to filter Source Servers list by application IDs.</p>
+     */
+    inline DescribeSourceServersRequestFilters& AddApplicationIDs(const char* value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
 
 
     /**
@@ -190,17 +236,20 @@ namespace Model
 
   private:
 
+    Aws::Vector<Aws::String> m_applicationIDs;
+    bool m_applicationIDsHasBeenSet = false;
+
     bool m_isArchived;
-    bool m_isArchivedHasBeenSet;
+    bool m_isArchivedHasBeenSet = false;
 
     Aws::Vector<LifeCycleState> m_lifeCycleStates;
-    bool m_lifeCycleStatesHasBeenSet;
+    bool m_lifeCycleStatesHasBeenSet = false;
 
     Aws::Vector<ReplicationType> m_replicationTypes;
-    bool m_replicationTypesHasBeenSet;
+    bool m_replicationTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
   };
 
 } // namespace Model

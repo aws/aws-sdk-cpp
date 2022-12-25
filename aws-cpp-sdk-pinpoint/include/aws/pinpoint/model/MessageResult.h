@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageResult">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API MessageResult
+  class MessageResult
   {
   public:
-    MessageResult();
-    MessageResult(Aws::Utils::Json::JsonView jsonValue);
-    MessageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API MessageResult();
+    AWS_PINPOINT_API MessageResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API MessageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -316,19 +316,19 @@ namespace Model
   private:
 
     DeliveryStatus m_deliveryStatus;
-    bool m_deliveryStatusHasBeenSet;
+    bool m_deliveryStatusHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     int m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_updatedToken;
-    bool m_updatedTokenHasBeenSet;
+    bool m_updatedTokenHasBeenSet = false;
   };
 
 } // namespace Model

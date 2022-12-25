@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesPrivateIpAddressConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ScheduledInstancesPrivateIpAddressConfig
+  class ScheduledInstancesPrivateIpAddressConfig
   {
   public:
-    ScheduledInstancesPrivateIpAddressConfig();
-    ScheduledInstancesPrivateIpAddressConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledInstancesPrivateIpAddressConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstancesPrivateIpAddressConfig();
+    AWS_EC2_API ScheduledInstancesPrivateIpAddressConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstancesPrivateIpAddressConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     bool m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

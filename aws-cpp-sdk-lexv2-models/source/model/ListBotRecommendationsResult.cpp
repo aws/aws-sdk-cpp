@@ -48,7 +48,7 @@ ListBotRecommendationsResult& ListBotRecommendationsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("botRecommendationSummaries"))
   {
-    Array<JsonView> botRecommendationSummariesJsonList = jsonValue.GetArray("botRecommendationSummaries");
+    Aws::Utils::Array<JsonView> botRecommendationSummariesJsonList = jsonValue.GetArray("botRecommendationSummaries");
     for(unsigned botRecommendationSummariesIndex = 0; botRecommendationSummariesIndex < botRecommendationSummariesJsonList.GetLength(); ++botRecommendationSummariesIndex)
     {
       m_botRecommendationSummaries.push_back(botRecommendationSummariesJsonList[botRecommendationSummariesIndex].AsObject());

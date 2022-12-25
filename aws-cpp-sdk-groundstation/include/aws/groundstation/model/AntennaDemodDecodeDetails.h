@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/AntennaDemodDecodeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API AntennaDemodDecodeDetails
+  class AntennaDemodDecodeDetails
   {
   public:
-    AntennaDemodDecodeDetails();
-    AntennaDemodDecodeDetails(Aws::Utils::Json::JsonView jsonValue);
-    AntennaDemodDecodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API AntennaDemodDecodeDetails();
+    AWS_GROUNDSTATION_API AntennaDemodDecodeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API AntennaDemodDecodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_outputNode;
-    bool m_outputNodeHasBeenSet;
+    bool m_outputNodeHasBeenSet = false;
   };
 
 } // namespace Model

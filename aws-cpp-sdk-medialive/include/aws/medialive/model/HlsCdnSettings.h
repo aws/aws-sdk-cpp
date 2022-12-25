@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsCdnSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsCdnSettings
+  class HlsCdnSettings
   {
   public:
-    HlsCdnSettings();
-    HlsCdnSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsCdnSettings();
+    AWS_MEDIALIVE_API HlsCdnSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -138,19 +138,19 @@ namespace Model
   private:
 
     HlsAkamaiSettings m_hlsAkamaiSettings;
-    bool m_hlsAkamaiSettingsHasBeenSet;
+    bool m_hlsAkamaiSettingsHasBeenSet = false;
 
     HlsBasicPutSettings m_hlsBasicPutSettings;
-    bool m_hlsBasicPutSettingsHasBeenSet;
+    bool m_hlsBasicPutSettingsHasBeenSet = false;
 
     HlsMediaStoreSettings m_hlsMediaStoreSettings;
-    bool m_hlsMediaStoreSettingsHasBeenSet;
+    bool m_hlsMediaStoreSettingsHasBeenSet = false;
 
     HlsS3Settings m_hlsS3Settings;
-    bool m_hlsS3SettingsHasBeenSet;
+    bool m_hlsS3SettingsHasBeenSet = false;
 
     HlsWebdavSettings m_hlsWebdavSettings;
-    bool m_hlsWebdavSettingsHasBeenSet;
+    bool m_hlsWebdavSettingsHasBeenSet = false;
   };
 
 } // namespace Model

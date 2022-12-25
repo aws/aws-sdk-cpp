@@ -56,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigSnapshotDeliveryProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties
+  class ConfigSnapshotDeliveryProperties
   {
   public:
-    ConfigSnapshotDeliveryProperties();
-    ConfigSnapshotDeliveryProperties(Aws::Utils::Json::JsonView jsonValue);
-    ConfigSnapshotDeliveryProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties();
+    AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     MaximumExecutionFrequency m_deliveryFrequency;
-    bool m_deliveryFrequencyHasBeenSet;
+    bool m_deliveryFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

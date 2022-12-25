@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/HlsContentProtection">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API HlsContentProtection
+  class HlsContentProtection
   {
   public:
-    HlsContentProtection();
-    HlsContentProtection(Aws::Utils::Json::JsonView jsonValue);
-    HlsContentProtection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API HlsContentProtection();
+    AWS_ELASTICTRANSCODER_API HlsContentProtection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API HlsContentProtection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -446,22 +446,22 @@ namespace Model
   private:
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_keyMd5;
-    bool m_keyMd5HasBeenSet;
+    bool m_keyMd5HasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
 
     Aws::String m_licenseAcquisitionUrl;
-    bool m_licenseAcquisitionUrlHasBeenSet;
+    bool m_licenseAcquisitionUrlHasBeenSet = false;
 
     Aws::String m_keyStoragePolicy;
-    bool m_keyStoragePolicyHasBeenSet;
+    bool m_keyStoragePolicyHasBeenSet = false;
   };
 
 } // namespace Model

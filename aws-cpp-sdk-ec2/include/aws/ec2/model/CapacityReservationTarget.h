@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CapacityReservationTarget
+  class CapacityReservationTarget
   {
   public:
-    CapacityReservationTarget();
-    CapacityReservationTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CapacityReservationTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationTarget();
+    AWS_EC2_API CapacityReservationTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationId;
-    bool m_capacityReservationIdHasBeenSet;
+    bool m_capacityReservationIdHasBeenSet = false;
 
     Aws::String m_capacityReservationResourceGroupArn;
-    bool m_capacityReservationResourceGroupArnHasBeenSet;
+    bool m_capacityReservationResourceGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

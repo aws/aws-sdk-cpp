@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceStandardObjectConfiguration
+  class SalesforceStandardObjectConfiguration
   {
   public:
-    SalesforceStandardObjectConfiguration();
-    SalesforceStandardObjectConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceStandardObjectConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration();
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,16 +253,16 @@ namespace Model
   private:
 
     SalesforceStandardObjectName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

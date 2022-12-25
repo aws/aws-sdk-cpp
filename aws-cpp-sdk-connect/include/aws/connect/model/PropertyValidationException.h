@@ -26,17 +26,17 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The property is not valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PropertyValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API PropertyValidationException
+  class PropertyValidationException
   {
   public:
-    PropertyValidationException();
-    PropertyValidationException(Aws::Utils::Json::JsonView jsonValue);
-    PropertyValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API PropertyValidationException();
+    AWS_CONNECT_API PropertyValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API PropertyValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<PropertyValidationExceptionProperty> m_propertyList;
-    bool m_propertyListHasBeenSet;
+    bool m_propertyListHasBeenSet = false;
   };
 
 } // namespace Model

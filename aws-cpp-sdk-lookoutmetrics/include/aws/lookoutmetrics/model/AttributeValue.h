@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AttributeValue
+  class AttributeValue
   {
   public:
-    AttributeValue();
-    AttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AttributeValue();
+    AWS_LOOKOUTMETRICS_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_s;
-    bool m_sHasBeenSet;
+    bool m_sHasBeenSet = false;
 
     Aws::String m_n;
-    bool m_nHasBeenSet;
+    bool m_nHasBeenSet = false;
 
     Aws::String m_b;
-    bool m_bHasBeenSet;
+    bool m_bHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sS;
-    bool m_sSHasBeenSet;
+    bool m_sSHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nS;
-    bool m_nSHasBeenSet;
+    bool m_nSHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bS;
-    bool m_bSHasBeenSet;
+    bool m_bSHasBeenSet = false;
   };
 
 } // namespace Model

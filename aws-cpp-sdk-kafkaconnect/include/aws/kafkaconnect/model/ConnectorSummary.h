@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ConnectorSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API ConnectorSummary
+  class ConnectorSummary
   {
   public:
-    ConnectorSummary();
-    ConnectorSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API ConnectorSummary();
+    AWS_KAFKACONNECT_API ConnectorSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API ConnectorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -612,49 +612,49 @@ namespace Model
   private:
 
     CapacityDescription m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::String m_connectorDescription;
-    bool m_connectorDescriptionHasBeenSet;
+    bool m_connectorDescriptionHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     ConnectorState m_connectorState;
-    bool m_connectorStateHasBeenSet;
+    bool m_connectorStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     KafkaClusterDescription m_kafkaCluster;
-    bool m_kafkaClusterHasBeenSet;
+    bool m_kafkaClusterHasBeenSet = false;
 
     KafkaClusterClientAuthenticationDescription m_kafkaClusterClientAuthentication;
-    bool m_kafkaClusterClientAuthenticationHasBeenSet;
+    bool m_kafkaClusterClientAuthenticationHasBeenSet = false;
 
     KafkaClusterEncryptionInTransitDescription m_kafkaClusterEncryptionInTransit;
-    bool m_kafkaClusterEncryptionInTransitHasBeenSet;
+    bool m_kafkaClusterEncryptionInTransitHasBeenSet = false;
 
     Aws::String m_kafkaConnectVersion;
-    bool m_kafkaConnectVersionHasBeenSet;
+    bool m_kafkaConnectVersionHasBeenSet = false;
 
     LogDeliveryDescription m_logDelivery;
-    bool m_logDeliveryHasBeenSet;
+    bool m_logDeliveryHasBeenSet = false;
 
     Aws::Vector<PluginDescription> m_plugins;
-    bool m_pluginsHasBeenSet;
+    bool m_pluginsHasBeenSet = false;
 
     Aws::String m_serviceExecutionRoleArn;
-    bool m_serviceExecutionRoleArnHasBeenSet;
+    bool m_serviceExecutionRoleArnHasBeenSet = false;
 
     WorkerConfigurationDescription m_workerConfiguration;
-    bool m_workerConfigurationHasBeenSet;
+    bool m_workerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

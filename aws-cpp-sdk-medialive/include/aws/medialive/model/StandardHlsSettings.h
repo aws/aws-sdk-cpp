@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StandardHlsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StandardHlsSettings
+  class StandardHlsSettings
   {
   public:
-    StandardHlsSettings();
-    StandardHlsSettings(Aws::Utils::Json::JsonView jsonValue);
-    StandardHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API StandardHlsSettings();
+    AWS_MEDIALIVE_API StandardHlsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API StandardHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     M3u8Settings m_m3u8Settings;
-    bool m_m3u8SettingsHasBeenSet;
+    bool m_m3u8SettingsHasBeenSet = false;
   };
 
 } // namespace Model

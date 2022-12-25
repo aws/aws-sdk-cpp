@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/FragmentSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API FragmentSelector
+  class FragmentSelector
   {
   public:
-    FragmentSelector();
-    FragmentSelector(Aws::Utils::Json::JsonView jsonValue);
-    FragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API FragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API FragmentSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API FragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     FragmentSelectorType m_fragmentSelectorType;
-    bool m_fragmentSelectorTypeHasBeenSet;
+    bool m_fragmentSelectorTypeHasBeenSet = false;
 
     TimestampRange m_timestampRange;
-    bool m_timestampRangeHasBeenSet;
+    bool m_timestampRangeHasBeenSet = false;
   };
 
 } // namespace Model

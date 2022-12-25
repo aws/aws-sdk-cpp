@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PerformanceInsightsMetricsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail
+  class PerformanceInsightsMetricsDetail
   {
   public:
-    PerformanceInsightsMetricsDetail();
-    PerformanceInsightsMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceInsightsMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail();
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_metricDisplayName;
-    bool m_metricDisplayNameHasBeenSet;
+    bool m_metricDisplayNameHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     PerformanceInsightsMetricQuery m_metricQuery;
-    bool m_metricQueryHasBeenSet;
+    bool m_metricQueryHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsReferenceData> m_referenceData;
-    bool m_referenceDataHasBeenSet;
+    bool m_referenceDataHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsStat> m_statsAtAnomaly;
-    bool m_statsAtAnomalyHasBeenSet;
+    bool m_statsAtAnomalyHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsStat> m_statsAtBaseline;
-    bool m_statsAtBaselineHasBeenSet;
+    bool m_statsAtBaselineHasBeenSet = false;
   };
 
 } // namespace Model

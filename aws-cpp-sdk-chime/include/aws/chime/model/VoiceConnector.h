@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnector">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API VoiceConnector
+  class VoiceConnector
   {
   public:
-    VoiceConnector();
-    VoiceConnector(Aws::Utils::Json::JsonView jsonValue);
-    VoiceConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API VoiceConnector();
+    AWS_CHIME_API VoiceConnector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API VoiceConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,28 +330,28 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     VoiceConnectorAwsRegion m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_outboundHostName;
-    bool m_outboundHostNameHasBeenSet;
+    bool m_outboundHostNameHasBeenSet = false;
 
     bool m_requireEncryption;
-    bool m_requireEncryptionHasBeenSet;
+    bool m_requireEncryptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_voiceConnectorArn;
-    bool m_voiceConnectorArnHasBeenSet;
+    bool m_voiceConnectorArnHasBeenSet = false;
   };
 
 } // namespace Model

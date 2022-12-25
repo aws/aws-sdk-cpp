@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobStoppingConditions">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobStoppingConditions
+  class LabelingJobStoppingConditions
   {
   public:
-    LabelingJobStoppingConditions();
-    LabelingJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobStoppingConditions();
+    AWS_SAGEMAKER_API LabelingJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,10 +82,10 @@ namespace Model
   private:
 
     int m_maxHumanLabeledObjectCount;
-    bool m_maxHumanLabeledObjectCountHasBeenSet;
+    bool m_maxHumanLabeledObjectCountHasBeenSet = false;
 
     int m_maxPercentageOfInputDatasetLabeled;
-    bool m_maxPercentageOfInputDatasetLabeledHasBeenSet;
+    bool m_maxPercentageOfInputDatasetLabeledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API CreateWorldGenerationJobRequest : public RoboMakerRequest
+  class CreateWorldGenerationJobRequest : public RoboMakerRequest
   {
   public:
-    CreateWorldGenerationJobRequest();
+    AWS_ROBOMAKER_API CreateWorldGenerationJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorldGenerationJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -324,19 +324,19 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
 
     WorldCount m_worldCount;
-    bool m_worldCountHasBeenSet;
+    bool m_worldCountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_worldTags;
-    bool m_worldTagsHasBeenSet;
+    bool m_worldTagsHasBeenSet = false;
   };
 
 } // namespace Model

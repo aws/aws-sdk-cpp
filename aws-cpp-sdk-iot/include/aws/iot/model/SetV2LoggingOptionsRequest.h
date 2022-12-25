@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API SetV2LoggingOptionsRequest : public IoTRequest
+  class SetV2LoggingOptionsRequest : public IoTRequest
   {
   public:
-    SetV2LoggingOptionsRequest();
+    AWS_IOT_API SetV2LoggingOptionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetV2LoggingOptions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -128,13 +128,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LogLevel m_defaultLogLevel;
-    bool m_defaultLogLevelHasBeenSet;
+    bool m_defaultLogLevelHasBeenSet = false;
 
     bool m_disableAllLogs;
-    bool m_disableAllLogsHasBeenSet;
+    bool m_disableAllLogsHasBeenSet = false;
   };
 
 } // namespace Model

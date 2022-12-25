@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShardsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API MergeShardsRequest : public KinesisRequest
+  class MergeShardsRequest : public KinesisRequest
   {
   public:
-    MergeShardsRequest();
+    AWS_KINESIS_API MergeShardsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "MergeShards"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESIS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The name of the stream for the merge.</p>
@@ -168,16 +172,60 @@ namespace Model
      */
     inline MergeShardsRequest& WithAdjacentShardToMerge(const char* value) { SetAdjacentShardToMerge(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline MergeShardsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline MergeShardsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline MergeShardsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_shardToMerge;
-    bool m_shardToMergeHasBeenSet;
+    bool m_shardToMergeHasBeenSet = false;
 
     Aws::String m_adjacentShardToMerge;
-    bool m_adjacentShardToMergeHasBeenSet;
+    bool m_adjacentShardToMergeHasBeenSet = false;
+
+    Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
   };
 
 } // namespace Model

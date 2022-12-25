@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomConnectorDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomConnectorDestinationProperties
+  class CustomConnectorDestinationProperties
   {
   public:
-    CustomConnectorDestinationProperties();
-    CustomConnectorDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    CustomConnectorDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomConnectorDestinationProperties();
+    AWS_APPFLOW_API CustomConnectorDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomConnectorDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
 
     WriteOperationType m_writeOperationType;
-    bool m_writeOperationTypeHasBeenSet;
+    bool m_writeOperationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;
-    bool m_idFieldNamesHasBeenSet;
+    bool m_idFieldNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
-    bool m_customPropertiesHasBeenSet;
+    bool m_customPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

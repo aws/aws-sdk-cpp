@@ -31,18 +31,18 @@ namespace Model
    * <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li> </ul> <p>If you
    * pick the second choice for your Amazon S3 Origin, you may need to forward
    * Access-Control-Request-Method, Access-Control-Request-Headers, and Origin
-   * headers for the responses to be cached correctly. </p><p><h3>See Also:</h3>   <a
+   * headers for the responses to be cached correctly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachedMethods">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachedMethods
+  class CachedMethods
   {
   public:
-    CachedMethods();
-    CachedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachedMethods();
+    AWS_CLOUDFRONT_API CachedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Method> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,12 +22,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API DeleteOutpostResult
+  class DeleteOutpostResult
   {
   public:
-    DeleteOutpostResult();
-    DeleteOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API DeleteOutpostResult();
+    AWS_OUTPOSTS_API DeleteOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API DeleteOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

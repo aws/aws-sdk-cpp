@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ServiceNameAndResourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ServiceNameAndResourceType
+  class ServiceNameAndResourceType
   {
   public:
-    ServiceNameAndResourceType();
-    ServiceNameAndResourceType(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNameAndResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ServiceNameAndResourceType();
+    AWS_RAM_API ServiceNameAndResourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ServiceNameAndResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     ResourceRegionScope m_resourceRegionScope;
-    bool m_resourceRegionScopeHasBeenSet;
+    bool m_resourceRegionScopeHasBeenSet = false;
   };
 
 } // namespace Model

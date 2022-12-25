@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchPermissionsRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API BatchPermissionsRequestEntry
+  class BatchPermissionsRequestEntry
   {
   public:
-    BatchPermissionsRequestEntry();
-    BatchPermissionsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPermissionsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry();
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DataLakePrincipal m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissionsWithGrantOption;
-    bool m_permissionsWithGrantOptionHasBeenSet;
+    bool m_permissionsWithGrantOptionHasBeenSet = false;
   };
 
 } // namespace Model

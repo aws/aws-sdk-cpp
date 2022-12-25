@@ -30,47 +30,47 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceProperties
+  class NamespaceProperties
   {
   public:
-    NamespaceProperties();
-    NamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceProperties();
+    AWS_SERVICEDISCOVERY_API NamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline const DnsProperties& GetDnsProperties() const{ return m_dnsProperties; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline void SetDnsProperties(const DnsProperties& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline void SetDnsProperties(DnsProperties&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(const DnsProperties& value) { SetDnsProperties(value); return *this;}
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(DnsProperties&& value) { SetDnsProperties(std::move(value)); return *this;}
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DnsProperties m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet;
+    bool m_dnsPropertiesHasBeenSet = false;
 
     HttpProperties m_httpProperties;
-    bool m_httpPropertiesHasBeenSet;
+    bool m_httpPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRunNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentRunNotification
+  class AssessmentRunNotification
   {
   public:
-    AssessmentRunNotification();
-    AssessmentRunNotification(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentRunNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentRunNotification();
+    AWS_INSPECTOR_API AssessmentRunNotification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentRunNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,22 +243,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     InspectorEvent m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     bool m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     AssessmentRunNotificationSnsStatusCode m_snsPublishStatusCode;
-    bool m_snsPublishStatusCodeHasBeenSet;
+    bool m_snsPublishStatusCodeHasBeenSet = false;
   };
 
 } // namespace Model

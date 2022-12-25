@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Contact">AWS API
    * Reference</a></p>
    */
-  class AWS_SESV2_API Contact
+  class Contact
   {
   public:
-    Contact();
-    Contact(Aws::Utils::Json::JsonView jsonValue);
-    Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API Contact();
+    AWS_SESV2_API Contact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicPreferences;
-    bool m_topicPreferencesHasBeenSet;
+    bool m_topicPreferencesHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicDefaultPreferences;
-    bool m_topicDefaultPreferencesHasBeenSet;
+    bool m_topicDefaultPreferencesHasBeenSet = false;
 
     bool m_unsubscribeAll;
-    bool m_unsubscribeAllHasBeenSet;
+    bool m_unsubscribeAllHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

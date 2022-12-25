@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API StartSessionResult
+  class StartSessionResult
   {
   public:
-    StartSessionResult();
-    StartSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartSessionResult();
+    AWS_SSM_API StartSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -69,44 +69,58 @@ namespace Model
 
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline const Aws::String& GetTokenValue() const{ return m_tokenValue; }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline void SetTokenValue(const Aws::String& value) { m_tokenValue = value; }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline void SetTokenValue(Aws::String&& value) { m_tokenValue = std::move(value); }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline void SetTokenValue(const char* value) { m_tokenValue.assign(value); }
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline StartSessionResult& WithTokenValue(const Aws::String& value) { SetTokenValue(value); return *this;}
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline StartSessionResult& WithTokenValue(Aws::String&& value) { SetTokenValue(std::move(value)); return *this;}
 
     /**
-     * <p>An encrypted token value containing session and caller information. Used to
-     * authenticate the connection to the managed node.</p>
+     * <p>An encrypted token value containing session and caller information. This
+     * token is used to authenticate the connection to the managed node, and is valid
+     * only long enough to ensure the connection is successful. Never share your
+     * session's token.</p>
      */
     inline StartSessionResult& WithTokenValue(const char* value) { SetTokenValue(value); return *this;}
 

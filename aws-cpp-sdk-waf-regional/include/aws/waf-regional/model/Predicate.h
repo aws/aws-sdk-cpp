@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API Predicate
+  class Predicate
   {
   public:
-    Predicate();
-    Predicate(Aws::Utils::Json::JsonView jsonValue);
-    Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API Predicate();
+    AWS_WAFREGIONAL_API Predicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,13 +216,13 @@ namespace Model
   private:
 
     bool m_negated;
-    bool m_negatedHasBeenSet;
+    bool m_negatedHasBeenSet = false;
 
     PredicateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_dataId;
-    bool m_dataIdHasBeenSet;
+    bool m_dataIdHasBeenSet = false;
   };
 
 } // namespace Model

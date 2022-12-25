@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataProcessing">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DataProcessing
+  class DataProcessing
   {
   public:
-    DataProcessing();
-    DataProcessing(Aws::Utils::Json::JsonView jsonValue);
-    DataProcessing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DataProcessing();
+    AWS_SAGEMAKER_API DataProcessing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DataProcessing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -373,13 +373,13 @@ namespace Model
   private:
 
     Aws::String m_inputFilter;
-    bool m_inputFilterHasBeenSet;
+    bool m_inputFilterHasBeenSet = false;
 
     Aws::String m_outputFilter;
-    bool m_outputFilterHasBeenSet;
+    bool m_outputFilterHasBeenSet = false;
 
     JoinSource m_joinSource;
-    bool m_joinSourceHasBeenSet;
+    bool m_joinSourceHasBeenSet = false;
   };
 
 } // namespace Model

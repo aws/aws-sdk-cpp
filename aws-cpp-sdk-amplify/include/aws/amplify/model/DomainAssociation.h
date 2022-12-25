@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DomainAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API DomainAssociation
+  class DomainAssociation
   {
   public:
-    DomainAssociation();
-    DomainAssociation(Aws::Utils::Json::JsonView jsonValue);
-    DomainAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API DomainAssociation();
+    AWS_AMPLIFY_API DomainAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API DomainAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -395,31 +395,31 @@ namespace Model
   private:
 
     Aws::String m_domainAssociationArn;
-    bool m_domainAssociationArnHasBeenSet;
+    bool m_domainAssociationArnHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_enableAutoSubDomain;
-    bool m_enableAutoSubDomainHasBeenSet;
+    bool m_enableAutoSubDomainHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoSubDomainCreationPatterns;
-    bool m_autoSubDomainCreationPatternsHasBeenSet;
+    bool m_autoSubDomainCreationPatternsHasBeenSet = false;
 
     Aws::String m_autoSubDomainIAMRole;
-    bool m_autoSubDomainIAMRoleHasBeenSet;
+    bool m_autoSubDomainIAMRoleHasBeenSet = false;
 
     DomainStatus m_domainStatus;
-    bool m_domainStatusHasBeenSet;
+    bool m_domainStatusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_certificateVerificationDNSRecord;
-    bool m_certificateVerificationDNSRecordHasBeenSet;
+    bool m_certificateVerificationDNSRecordHasBeenSet = false;
 
     Aws::Vector<SubDomain> m_subDomains;
-    bool m_subDomainsHasBeenSet;
+    bool m_subDomainsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANDevice.h>
 #include <aws/iotwireless/model/SidewalkDevice.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <utility>
 
 namespace Aws
@@ -27,12 +28,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetWirelessDeviceResult
+  class GetWirelessDeviceResult
   {
   public:
-    GetWirelessDeviceResult();
-    GetWirelessDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWirelessDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetWirelessDeviceResult();
+    AWS_IOTWIRELESS_API GetWirelessDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetWirelessDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -371,6 +372,37 @@ namespace Model
      */
     inline GetWirelessDeviceResult& WithSidewalk(SidewalkDevice&& value) { SetSidewalk(std::move(value)); return *this;}
 
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline const PositioningConfigStatus& GetPositioning() const{ return m_positioning; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(const PositioningConfigStatus& value) { m_positioning = value; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(PositioningConfigStatus&& value) { m_positioning = std::move(value); }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline GetWirelessDeviceResult& WithPositioning(const PositioningConfigStatus& value) { SetPositioning(value); return *this;}
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline GetWirelessDeviceResult& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
+
   private:
 
     WirelessDeviceType m_type;
@@ -392,6 +424,8 @@ namespace Model
     LoRaWANDevice m_loRaWAN;
 
     SidewalkDevice m_sidewalk;
+
+    PositioningConfigStatus m_positioning;
   };
 
 } // namespace Model

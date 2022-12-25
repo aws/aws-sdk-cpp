@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepAdjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API StepAdjustment
+  class StepAdjustment
   {
   public:
-    StepAdjustment();
-    StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
-    StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment();
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     double m_metricIntervalLowerBound;
-    bool m_metricIntervalLowerBoundHasBeenSet;
+    bool m_metricIntervalLowerBoundHasBeenSet = false;
 
     double m_metricIntervalUpperBound;
-    bool m_metricIntervalUpperBoundHasBeenSet;
+    bool m_metricIntervalUpperBoundHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
   };
 
 } // namespace Model

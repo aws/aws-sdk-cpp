@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityTypesListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityTypesListItem
+  class EntityTypesListItem
   {
   public:
-    EntityTypesListItem();
-    EntityTypesListItem(Aws::Utils::Json::JsonView jsonValue);
-    EntityTypesListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityTypesListItem();
+    AWS_COMPREHEND_API EntityTypesListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityTypesListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

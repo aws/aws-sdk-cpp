@@ -20,7 +20,9 @@ ListLensSharesRequest::ListLensSharesRequest() :
     m_sharedWithPrefixHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_status(ShareStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,13 @@ void ListLensSharesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_statusHasBeenSet)
+    {
+      ss << ShareStatusMapper::GetNameForShareStatus(m_status);
+      uri.AddQueryStringParameter("Status", ss.str());
       ss.str("");
     }
 

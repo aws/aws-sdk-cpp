@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AccessPolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AccessPolicySummary
+  class AccessPolicySummary
   {
   public:
-    AccessPolicySummary();
-    AccessPolicySummary(Aws::Utils::Json::JsonView jsonValue);
-    AccessPolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AccessPolicySummary();
+    AWS_IOTSITEWISE_API AccessPolicySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AccessPolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,38 +84,38 @@ namespace Model
 
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline const Identity& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline void SetIdentity(const Identity& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline void SetIdentity(Identity&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(const Identity& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(Identity&& value) { SetIdentity(std::move(value)); return *this;}
 
@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Identity m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateDate;
-    bool m_lastUpdateDateHasBeenSet;
+    bool m_lastUpdateDateHasBeenSet = false;
   };
 
 } // namespace Model

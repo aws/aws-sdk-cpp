@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/SortCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API SortCondition
+  class SortCondition
   {
   public:
-    SortCondition();
-    SortCondition(Aws::Utils::Json::JsonView jsonValue);
-    SortCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API SortCondition();
+    AWS_ROUTE53DOMAINS_API SortCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API SortCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     ListDomainsAttributeName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

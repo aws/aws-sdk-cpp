@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptIpFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptIpFilter
+  class ReceiptIpFilter
   {
   public:
-    ReceiptIpFilter();
-    ReceiptIpFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptIpFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptIpFilter();
+    AWS_SES_API ReceiptIpFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptIpFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     ReceiptFilterPolicy m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
   };
 
 } // namespace Model

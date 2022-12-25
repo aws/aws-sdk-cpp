@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WAFInvalidParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API WAFInvalidParameterException
+  class WAFInvalidParameterException
   {
   public:
-    WAFInvalidParameterException();
-    WAFInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
-    WAFInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API WAFInvalidParameterException();
+    AWS_WAFREGIONAL_API WAFInvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API WAFInvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     ParameterExceptionField m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_parameter;
-    bool m_parameterHasBeenSet;
+    bool m_parameterHasBeenSet = false;
 
     ParameterExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CapacityForecast">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API CapacityForecast
+  class CapacityForecast
   {
   public:
-    CapacityForecast();
-    CapacityForecast(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CapacityForecast& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API CapacityForecast();
+    AWS_AUTOSCALING_API CapacityForecast(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API CapacityForecast& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

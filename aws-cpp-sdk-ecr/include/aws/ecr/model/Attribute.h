@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Attribute">AWS API
    * Reference</a></p>
    */
-  class AWS_ECR_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(Aws::Utils::Json::JsonView jsonValue);
-    Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API Attribute();
+    AWS_ECR_API Attribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

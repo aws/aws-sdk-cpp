@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/KeyUsage">AWS API
    * Reference</a></p>
    */
-  class AWS_ACM_API KeyUsage
+  class KeyUsage
   {
   public:
-    KeyUsage();
-    KeyUsage(Aws::Utils::Json::JsonView jsonValue);
-    KeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API KeyUsage();
+    AWS_ACM_API KeyUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API KeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     KeyUsageName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

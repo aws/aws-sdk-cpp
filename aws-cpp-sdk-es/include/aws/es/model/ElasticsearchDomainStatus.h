@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchDomainStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus
+  class ElasticsearchDomainStatus
   {
   public:
-    ElasticsearchDomainStatus();
-    ElasticsearchDomainStatus(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1095,79 +1095,79 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     bool m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     bool m_deleted;
-    bool m_deletedHasBeenSet;
+    bool m_deletedHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     bool m_processing;
-    bool m_processingHasBeenSet;
+    bool m_processingHasBeenSet = false;
 
     bool m_upgradeProcessing;
-    bool m_upgradeProcessingHasBeenSet;
+    bool m_upgradeProcessingHasBeenSet = false;
 
     Aws::String m_elasticsearchVersion;
-    bool m_elasticsearchVersionHasBeenSet;
+    bool m_elasticsearchVersionHasBeenSet = false;
 
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
-    bool m_elasticsearchClusterConfigHasBeenSet;
+    bool m_elasticsearchClusterConfigHasBeenSet = false;
 
     EBSOptions m_eBSOptions;
-    bool m_eBSOptionsHasBeenSet;
+    bool m_eBSOptionsHasBeenSet = false;
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
-    bool m_snapshotOptionsHasBeenSet;
+    bool m_snapshotOptionsHasBeenSet = false;
 
     VPCDerivedInfo m_vPCOptions;
-    bool m_vPCOptionsHasBeenSet;
+    bool m_vPCOptionsHasBeenSet = false;
 
     CognitoOptions m_cognitoOptions;
-    bool m_cognitoOptionsHasBeenSet;
+    bool m_cognitoOptionsHasBeenSet = false;
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-    bool m_advancedOptionsHasBeenSet;
+    bool m_advancedOptionsHasBeenSet = false;
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     ServiceSoftwareOptions m_serviceSoftwareOptions;
-    bool m_serviceSoftwareOptionsHasBeenSet;
+    bool m_serviceSoftwareOptionsHasBeenSet = false;
 
     DomainEndpointOptions m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     AdvancedSecurityOptions m_advancedSecurityOptions;
-    bool m_advancedSecurityOptionsHasBeenSet;
+    bool m_advancedSecurityOptionsHasBeenSet = false;
 
     AutoTuneOptionsOutput m_autoTuneOptions;
-    bool m_autoTuneOptionsHasBeenSet;
+    bool m_autoTuneOptionsHasBeenSet = false;
 
     ChangeProgressDetails m_changeProgressDetails;
-    bool m_changeProgressDetailsHasBeenSet;
+    bool m_changeProgressDetailsHasBeenSet = false;
   };
 
 } // namespace Model

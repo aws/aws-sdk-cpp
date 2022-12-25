@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Ec2InstanceAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API Ec2InstanceAttributes
+  class Ec2InstanceAttributes
   {
   public:
-    Ec2InstanceAttributes();
-    Ec2InstanceAttributes(Aws::Utils::Json::JsonView jsonValue);
-    Ec2InstanceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API Ec2InstanceAttributes();
+    AWS_EMR_API Ec2InstanceAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Ec2InstanceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -732,37 +732,37 @@ namespace Model
   private:
 
     Aws::String m_ec2KeyName;
-    bool m_ec2KeyNameHasBeenSet;
+    bool m_ec2KeyNameHasBeenSet = false;
 
     Aws::String m_ec2SubnetId;
-    bool m_ec2SubnetIdHasBeenSet;
+    bool m_ec2SubnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedEc2SubnetIds;
-    bool m_requestedEc2SubnetIdsHasBeenSet;
+    bool m_requestedEc2SubnetIdsHasBeenSet = false;
 
     Aws::String m_ec2AvailabilityZone;
-    bool m_ec2AvailabilityZoneHasBeenSet;
+    bool m_ec2AvailabilityZoneHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedEc2AvailabilityZones;
-    bool m_requestedEc2AvailabilityZonesHasBeenSet;
+    bool m_requestedEc2AvailabilityZonesHasBeenSet = false;
 
     Aws::String m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::String m_emrManagedMasterSecurityGroup;
-    bool m_emrManagedMasterSecurityGroupHasBeenSet;
+    bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
 
     Aws::String m_emrManagedSlaveSecurityGroup;
-    bool m_emrManagedSlaveSecurityGroupHasBeenSet;
+    bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
 
     Aws::String m_serviceAccessSecurityGroup;
-    bool m_serviceAccessSecurityGroupHasBeenSet;
+    bool m_serviceAccessSecurityGroupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
-    bool m_additionalMasterSecurityGroupsHasBeenSet;
+    bool m_additionalMasterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
-    bool m_additionalSlaveSecurityGroupsHasBeenSet;
+    bool m_additionalSlaveSecurityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

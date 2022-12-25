@@ -30,10 +30,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateModelPackageRequest : public SageMakerRequest
+  class CreateModelPackageRequest : public SageMakerRequest
   {
   public:
-    CreateModelPackageRequest();
+    AWS_SAGEMAKER_API CreateModelPackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateModelPackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -977,58 +977,58 @@ namespace Model
   private:
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageDescription;
-    bool m_modelPackageDescriptionHasBeenSet;
+    bool m_modelPackageDescriptionHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     ModelPackageValidationSpecification m_validationSpecification;
-    bool m_validationSpecificationHasBeenSet;
+    bool m_validationSpecificationHasBeenSet = false;
 
     SourceAlgorithmSpecification m_sourceAlgorithmSpecification;
-    bool m_sourceAlgorithmSpecificationHasBeenSet;
+    bool m_sourceAlgorithmSpecificationHasBeenSet = false;
 
     bool m_certifyForMarketplace;
-    bool m_certifyForMarketplaceHasBeenSet;
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
-    bool m_metadataPropertiesHasBeenSet;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     ModelMetrics m_modelMetrics;
-    bool m_modelMetricsHasBeenSet;
+    bool m_modelMetricsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
 
     DriftCheckBaselines m_driftCheckBaselines;
-    bool m_driftCheckBaselinesHasBeenSet;
+    bool m_driftCheckBaselinesHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::String m_samplePayloadUrl;
-    bool m_samplePayloadUrlHasBeenSet;
+    bool m_samplePayloadUrlHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
-    bool m_additionalInferenceSpecificationsHasBeenSet;
+    bool m_additionalInferenceSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

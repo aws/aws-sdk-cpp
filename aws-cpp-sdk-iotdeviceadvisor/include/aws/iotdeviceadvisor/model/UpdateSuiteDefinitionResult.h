@@ -25,12 +25,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult
+  class UpdateSuiteDefinitionResult
   {
   public:
-    UpdateSuiteDefinitionResult();
-    UpdateSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult();
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -106,37 +106,37 @@ namespace Model
 
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline const Aws::String& GetSuiteDefinitionName() const{ return m_suiteDefinitionName; }
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(const Aws::String& value) { m_suiteDefinitionName = value; }
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(Aws::String&& value) { m_suiteDefinitionName = std::move(value); }
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline void SetSuiteDefinitionName(const char* value) { m_suiteDefinitionName.assign(value); }
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionName(const Aws::String& value) { SetSuiteDefinitionName(value); return *this;}
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionName(Aws::String&& value) { SetSuiteDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>Suite definition name of the updated test suite.</p>
+     * <p>Updates the suite definition name. This is a required parameter.</p>
      */
     inline UpdateSuiteDefinitionResult& WithSuiteDefinitionName(const char* value) { SetSuiteDefinitionName(value); return *this;}
 

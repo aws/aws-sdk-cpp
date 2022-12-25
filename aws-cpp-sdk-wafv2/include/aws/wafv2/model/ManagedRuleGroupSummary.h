@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ManagedRuleGroupSummary
+  class ManagedRuleGroupSummary
   {
   public:
-    ManagedRuleGroupSummary();
-    ManagedRuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    ManagedRuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ManagedRuleGroupSummary();
+    AWS_WAFV2_API ManagedRuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ManagedRuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_versioningSupported;
-    bool m_versioningSupportedHasBeenSet;
+    bool m_versioningSupportedHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Root">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Root
+  class Root
   {
   public:
-    Root();
-    Root(Aws::Utils::Json::JsonView jsonValue);
-    Root& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Root();
+    AWS_ORGANIZATIONS_API Root(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Root& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<PolicyTypeSummary> m_policyTypes;
-    bool m_policyTypesHasBeenSet;
+    bool m_policyTypesHasBeenSet = false;
   };
 
 } // namespace Model

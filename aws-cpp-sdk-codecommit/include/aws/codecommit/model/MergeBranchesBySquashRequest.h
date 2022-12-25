@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API MergeBranchesBySquashRequest : public CodeCommitRequest
+  class MergeBranchesBySquashRequest : public CodeCommitRequest
   {
   public:
-    MergeBranchesBySquashRequest();
+    AWS_CODECOMMIT_API MergeBranchesBySquashRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "MergeBranchesBySquash"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -528,37 +528,37 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     Aws::String m_targetBranch;
-    bool m_targetBranchHasBeenSet;
+    bool m_targetBranchHasBeenSet = false;
 
     ConflictDetailLevelTypeEnum m_conflictDetailLevel;
-    bool m_conflictDetailLevelHasBeenSet;
+    bool m_conflictDetailLevelHasBeenSet = false;
 
     ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
-    bool m_conflictResolutionStrategyHasBeenSet;
+    bool m_conflictResolutionStrategyHasBeenSet = false;
 
     Aws::String m_authorName;
-    bool m_authorNameHasBeenSet;
+    bool m_authorNameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     bool m_keepEmptyFolders;
-    bool m_keepEmptyFoldersHasBeenSet;
+    bool m_keepEmptyFoldersHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
   };
 
 } // namespace Model

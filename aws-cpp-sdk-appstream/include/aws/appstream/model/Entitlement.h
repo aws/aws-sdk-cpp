@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Entitlement();
+    AWS_APPSTREAM_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,25 +306,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AppVisibility m_appVisibility;
-    bool m_appVisibilityHasBeenSet;
+    bool m_appVisibilityHasBeenSet = false;
 
     Aws::Vector<EntitlementAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

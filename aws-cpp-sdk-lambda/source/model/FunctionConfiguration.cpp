@@ -60,7 +60,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
 }
 
@@ -106,7 +107,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_signingProfileVersionArnHasBeenSet(false),
     m_signingJobArnHasBeenSet(false),
     m_architecturesHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_snapStartHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,7 +250,7 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Layers"))
   {
-    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());
@@ -300,7 +302,7 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FileSystemConfigs"))
   {
-    Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
+    Aws::Utils::Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
     for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
     {
       m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
@@ -338,7 +340,7 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Architectures"))
   {
-    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
     for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
     {
       m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
@@ -351,6 +353,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
 
     m_ephemeralStorageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
+
+    m_snapStartHasBeenSet = true;
   }
 
   return *this;
@@ -475,7 +484,7 @@ JsonValue FunctionConfiguration::Jsonize() const
 
   if(m_layersHasBeenSet)
   {
-   Array<JsonValue> layersJsonList(m_layers.size());
+   Aws::Utils::Array<JsonValue> layersJsonList(m_layers.size());
    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
    {
      layersJsonList[layersIndex].AsObject(m_layers[layersIndex].Jsonize());
@@ -518,7 +527,7 @@ JsonValue FunctionConfiguration::Jsonize() const
 
   if(m_fileSystemConfigsHasBeenSet)
   {
-   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   Aws::Utils::Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
    for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
    {
      fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
@@ -552,7 +561,7 @@ JsonValue FunctionConfiguration::Jsonize() const
 
   if(m_architecturesHasBeenSet)
   {
-   Array<JsonValue> architecturesJsonList(m_architectures.size());
+   Aws::Utils::Array<JsonValue> architecturesJsonList(m_architectures.size());
    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
    {
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
@@ -564,6 +573,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_snapStartHasBeenSet)
+  {
+   payload.WithObject("SnapStart", m_snapStart.Jsonize());
 
   }
 

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyError">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchPutAssetPropertyError
+  class BatchPutAssetPropertyError
   {
   public:
-    BatchPutAssetPropertyError();
-    BatchPutAssetPropertyError(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutAssetPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyError();
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     BatchPutAssetPropertyValueErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Vector<TimeInNanos> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RegionDescription
+  class RegionDescription
   {
   public:
-    RegionDescription();
-    RegionDescription(Aws::Utils::Json::JsonView jsonValue);
-    RegionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API RegionDescription();
+    AWS_DIRECTORYSERVICE_API RegionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API RegionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,31 +331,31 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     RegionType m_regionType;
-    bool m_regionTypeHasBeenSet;
+    bool m_regionTypeHasBeenSet = false;
 
     DirectoryStage m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     DirectoryVpcSettings m_vpcSettings;
-    bool m_vpcSettingsHasBeenSet;
+    bool m_vpcSettingsHasBeenSet = false;
 
     int m_desiredNumberOfDomainControllers;
-    bool m_desiredNumberOfDomainControllersHasBeenSet;
+    bool m_desiredNumberOfDomainControllersHasBeenSet = false;
 
     Aws::Utils::DateTime m_launchTime;
-    bool m_launchTimeHasBeenSet;
+    bool m_launchTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_statusLastUpdatedDateTime;
-    bool m_statusLastUpdatedDateTimeHasBeenSet;
+    bool m_statusLastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

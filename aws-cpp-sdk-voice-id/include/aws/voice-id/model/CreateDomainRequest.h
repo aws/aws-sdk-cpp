@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_VOICEID_API CreateDomainRequest : public VoiceIDRequest
+  class CreateDomainRequest : public VoiceIDRequest
   {
   public:
-    CreateDomainRequest();
+    AWS_VOICEID_API CreateDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_VOICEID_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief description of this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline CreateDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -267,19 +267,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

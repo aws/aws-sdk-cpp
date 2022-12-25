@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ProvisioningHook">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ProvisioningHook
+  class ProvisioningHook
   {
   public:
-    ProvisioningHook();
-    ProvisioningHook(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningHook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ProvisioningHook();
+    AWS_IOT_API ProvisioningHook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ProvisioningHook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_payloadVersion;
-    bool m_payloadVersionHasBeenSet;
+    bool m_payloadVersionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
   };
 
 } // namespace Model

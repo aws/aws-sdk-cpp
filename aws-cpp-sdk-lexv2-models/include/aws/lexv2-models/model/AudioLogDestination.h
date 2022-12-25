@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AudioLogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AudioLogDestination
+  class AudioLogDestination
   {
   public:
-    AudioLogDestination();
-    AudioLogDestination(Aws::Utils::Json::JsonView jsonValue);
-    AudioLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AudioLogDestination();
+    AWS_LEXMODELSV2_API AudioLogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AudioLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     S3BucketLogDestination m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
   };
 
 } // namespace Model

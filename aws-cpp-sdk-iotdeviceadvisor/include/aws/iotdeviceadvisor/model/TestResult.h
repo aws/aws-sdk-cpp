@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TestResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API TestResult
+  class TestResult
   {
   public:
-    TestResult();
-    TestResult(Aws::Utils::Json::JsonView jsonValue);
-    TestResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API TestResult();
+    AWS_IOTDEVICEADVISOR_API TestResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API TestResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<GroupResult> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
   };
 
 } // namespace Model

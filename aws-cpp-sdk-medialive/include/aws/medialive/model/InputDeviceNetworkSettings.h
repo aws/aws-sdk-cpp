@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceNetworkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceNetworkSettings
+  class InputDeviceNetworkSettings
   {
   public:
-    InputDeviceNetworkSettings();
-    InputDeviceNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceNetworkSettings();
+    AWS_MEDIALIVE_API InputDeviceNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_dnsAddresses;
-    bool m_dnsAddressesHasBeenSet;
+    bool m_dnsAddressesHasBeenSet = false;
 
     Aws::String m_gateway;
-    bool m_gatewayHasBeenSet;
+    bool m_gatewayHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     InputDeviceIpScheme m_ipScheme;
-    bool m_ipSchemeHasBeenSet;
+    bool m_ipSchemeHasBeenSet = false;
 
     Aws::String m_subnetMask;
-    bool m_subnetMaskHasBeenSet;
+    bool m_subnetMaskHasBeenSet = false;
   };
 
 } // namespace Model

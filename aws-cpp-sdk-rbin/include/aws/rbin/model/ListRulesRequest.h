@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rbin/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rbin/model/LockState.h>
 #include <aws/rbin/model/ResourceTag.h>
 #include <utility>
 
@@ -21,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_RECYCLEBIN_API ListRulesRequest : public RecycleBinRequest
+  class ListRulesRequest : public RecycleBinRequest
   {
   public:
-    ListRulesRequest();
+    AWS_RECYCLEBIN_API ListRulesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRules"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RECYCLEBIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -208,19 +209,59 @@ namespace Model
      */
     inline ListRulesRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline const LockState& GetLockState() const{ return m_lockState; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline bool LockStateHasBeenSet() const { return m_lockStateHasBeenSet; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline void SetLockState(const LockState& value) { m_lockStateHasBeenSet = true; m_lockState = value; }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline void SetLockState(LockState&& value) { m_lockStateHasBeenSet = true; m_lockState = std::move(value); }
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline ListRulesRequest& WithLockState(const LockState& value) { SetLockState(value); return *this;}
+
+    /**
+     * <p>The lock state of the retention rules to list. Only retention rules with the
+     * specified lock state are returned.</p>
+     */
+    inline ListRulesRequest& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
+
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
+
+    LockState m_lockState;
+    bool m_lockStateHasBeenSet = false;
   };
 
 } // namespace Model

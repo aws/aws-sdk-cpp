@@ -29,6 +29,9 @@ namespace Aws
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int COPYING_IN_PROGRESS_HASH = HashingUtils::HashString("COPYING_IN_PROGRESS");
+        static const int COPYING_COMPLETED_HASH = HashingUtils::HashString("COPYING_COMPLETED");
+        static const int COPYING_FAILED_HASH = HashingUtils::HashString("COPYING_FAILED");
 
 
         ProjectVersionStatus GetProjectVersionStatusForName(const Aws::String& name)
@@ -70,6 +73,18 @@ namespace Aws
           {
             return ProjectVersionStatus::DELETING;
           }
+          else if (hashCode == COPYING_IN_PROGRESS_HASH)
+          {
+            return ProjectVersionStatus::COPYING_IN_PROGRESS;
+          }
+          else if (hashCode == COPYING_COMPLETED_HASH)
+          {
+            return ProjectVersionStatus::COPYING_COMPLETED;
+          }
+          else if (hashCode == COPYING_FAILED_HASH)
+          {
+            return ProjectVersionStatus::COPYING_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +117,12 @@ namespace Aws
             return "STOPPED";
           case ProjectVersionStatus::DELETING:
             return "DELETING";
+          case ProjectVersionStatus::COPYING_IN_PROGRESS:
+            return "COPYING_IN_PROGRESS";
+          case ProjectVersionStatus::COPYING_COMPLETED:
+            return "COPYING_COMPLETED";
+          case ProjectVersionStatus::COPYING_FAILED:
+            return "COPYING_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

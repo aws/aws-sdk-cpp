@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationRestoreConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration
+  class ApplicationRestoreConfiguration
   {
   public:
-    ApplicationRestoreConfiguration();
-    ApplicationRestoreConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationRestoreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration();
+    AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationRestoreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     ApplicationRestoreType m_applicationRestoreType;
-    bool m_applicationRestoreTypeHasBeenSet;
+    bool m_applicationRestoreTypeHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

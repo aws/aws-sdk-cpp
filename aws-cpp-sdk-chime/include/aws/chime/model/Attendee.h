@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Attendee">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Attendee
+  class Attendee
   {
   public:
-    Attendee();
-    Attendee(Aws::Utils::Json::JsonView jsonValue);
-    Attendee& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Attendee();
+    AWS_CHIME_API Attendee(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Attendee& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_externalUserId;
-    bool m_externalUserIdHasBeenSet;
+    bool m_externalUserIdHasBeenSet = false;
 
     Aws::String m_attendeeId;
-    bool m_attendeeIdHasBeenSet;
+    bool m_attendeeIdHasBeenSet = false;
 
     Aws::String m_joinToken;
-    bool m_joinTokenHasBeenSet;
+    bool m_joinTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SetUICustomizationRequest : public CognitoIdentityProviderRequest
+  class SetUICustomizationRequest : public CognitoIdentityProviderRequest
   {
   public:
-    SetUICustomizationRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUICustomizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetUICustomization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_cSS;
-    bool m_cSSHasBeenSet;
+    bool m_cSSHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_imageFile;
-    bool m_imageFileHasBeenSet;
+    bool m_imageFileHasBeenSet = false;
   };
 
 } // namespace Model

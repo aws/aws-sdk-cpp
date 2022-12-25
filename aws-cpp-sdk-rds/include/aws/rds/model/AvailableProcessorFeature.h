@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailableProcessorFeature">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API AvailableProcessorFeature
+  class AvailableProcessorFeature
   {
   public:
-    AvailableProcessorFeature();
-    AvailableProcessorFeature(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AvailableProcessorFeature& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API AvailableProcessorFeature();
+    AWS_RDS_API AvailableProcessorFeature(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API AvailableProcessorFeature& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
   };
 
 } // namespace Model

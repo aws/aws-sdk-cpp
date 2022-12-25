@@ -25,8 +25,10 @@ AssessmentSummary::AssessmentSummary() :
     m_antipatternReportStatusMessageHasBeenSet(false),
     m_lastAnalyzedTimestampHasBeenSet(false),
     m_listAntipatternSeveritySummaryHasBeenSet(false),
+    m_listApplicationComponentStatusSummaryHasBeenSet(false),
     m_listApplicationComponentStrategySummaryHasBeenSet(false),
     m_listApplicationComponentSummaryHasBeenSet(false),
+    m_listServerStatusSummaryHasBeenSet(false),
     m_listServerStrategySummaryHasBeenSet(false),
     m_listServerSummaryHasBeenSet(false)
 {
@@ -39,8 +41,10 @@ AssessmentSummary::AssessmentSummary(JsonView jsonValue) :
     m_antipatternReportStatusMessageHasBeenSet(false),
     m_lastAnalyzedTimestampHasBeenSet(false),
     m_listAntipatternSeveritySummaryHasBeenSet(false),
+    m_listApplicationComponentStatusSummaryHasBeenSet(false),
     m_listApplicationComponentStrategySummaryHasBeenSet(false),
     m_listApplicationComponentSummaryHasBeenSet(false),
+    m_listServerStatusSummaryHasBeenSet(false),
     m_listServerStrategySummaryHasBeenSet(false),
     m_listServerSummaryHasBeenSet(false)
 {
@@ -79,7 +83,7 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
-    Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
+    Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
     for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
     {
       m_listAntipatternSeveritySummary.push_back(listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject());
@@ -87,9 +91,19 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     m_listAntipatternSeveritySummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("listApplicationComponentStatusSummary"))
+  {
+    Aws::Utils::Array<JsonView> listApplicationComponentStatusSummaryJsonList = jsonValue.GetArray("listApplicationComponentStatusSummary");
+    for(unsigned listApplicationComponentStatusSummaryIndex = 0; listApplicationComponentStatusSummaryIndex < listApplicationComponentStatusSummaryJsonList.GetLength(); ++listApplicationComponentStatusSummaryIndex)
+    {
+      m_listApplicationComponentStatusSummary.push_back(listApplicationComponentStatusSummaryJsonList[listApplicationComponentStatusSummaryIndex].AsObject());
+    }
+    m_listApplicationComponentStatusSummaryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("listApplicationComponentStrategySummary"))
   {
-    Array<JsonView> listApplicationComponentStrategySummaryJsonList = jsonValue.GetArray("listApplicationComponentStrategySummary");
+    Aws::Utils::Array<JsonView> listApplicationComponentStrategySummaryJsonList = jsonValue.GetArray("listApplicationComponentStrategySummary");
     for(unsigned listApplicationComponentStrategySummaryIndex = 0; listApplicationComponentStrategySummaryIndex < listApplicationComponentStrategySummaryJsonList.GetLength(); ++listApplicationComponentStrategySummaryIndex)
     {
       m_listApplicationComponentStrategySummary.push_back(listApplicationComponentStrategySummaryJsonList[listApplicationComponentStrategySummaryIndex].AsObject());
@@ -99,7 +113,7 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listApplicationComponentSummary"))
   {
-    Array<JsonView> listApplicationComponentSummaryJsonList = jsonValue.GetArray("listApplicationComponentSummary");
+    Aws::Utils::Array<JsonView> listApplicationComponentSummaryJsonList = jsonValue.GetArray("listApplicationComponentSummary");
     for(unsigned listApplicationComponentSummaryIndex = 0; listApplicationComponentSummaryIndex < listApplicationComponentSummaryJsonList.GetLength(); ++listApplicationComponentSummaryIndex)
     {
       m_listApplicationComponentSummary.push_back(listApplicationComponentSummaryJsonList[listApplicationComponentSummaryIndex].AsObject());
@@ -107,9 +121,19 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     m_listApplicationComponentSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("listServerStatusSummary"))
+  {
+    Aws::Utils::Array<JsonView> listServerStatusSummaryJsonList = jsonValue.GetArray("listServerStatusSummary");
+    for(unsigned listServerStatusSummaryIndex = 0; listServerStatusSummaryIndex < listServerStatusSummaryJsonList.GetLength(); ++listServerStatusSummaryIndex)
+    {
+      m_listServerStatusSummary.push_back(listServerStatusSummaryJsonList[listServerStatusSummaryIndex].AsObject());
+    }
+    m_listServerStatusSummaryHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("listServerStrategySummary"))
   {
-    Array<JsonView> listServerStrategySummaryJsonList = jsonValue.GetArray("listServerStrategySummary");
+    Aws::Utils::Array<JsonView> listServerStrategySummaryJsonList = jsonValue.GetArray("listServerStrategySummary");
     for(unsigned listServerStrategySummaryIndex = 0; listServerStrategySummaryIndex < listServerStrategySummaryJsonList.GetLength(); ++listServerStrategySummaryIndex)
     {
       m_listServerStrategySummary.push_back(listServerStrategySummaryJsonList[listServerStrategySummaryIndex].AsObject());
@@ -119,7 +143,7 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listServerSummary"))
   {
-    Array<JsonView> listServerSummaryJsonList = jsonValue.GetArray("listServerSummary");
+    Aws::Utils::Array<JsonView> listServerSummaryJsonList = jsonValue.GetArray("listServerSummary");
     for(unsigned listServerSummaryIndex = 0; listServerSummaryIndex < listServerSummaryJsonList.GetLength(); ++listServerSummaryIndex)
     {
       m_listServerSummary.push_back(listServerSummaryJsonList[listServerSummaryIndex].AsObject());
@@ -158,7 +182,7 @@ JsonValue AssessmentSummary::Jsonize() const
 
   if(m_listAntipatternSeveritySummaryHasBeenSet)
   {
-   Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
+   Aws::Utils::Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
    for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
    {
      listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject(m_listAntipatternSeveritySummary[listAntipatternSeveritySummaryIndex].Jsonize());
@@ -167,9 +191,20 @@ JsonValue AssessmentSummary::Jsonize() const
 
   }
 
+  if(m_listApplicationComponentStatusSummaryHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> listApplicationComponentStatusSummaryJsonList(m_listApplicationComponentStatusSummary.size());
+   for(unsigned listApplicationComponentStatusSummaryIndex = 0; listApplicationComponentStatusSummaryIndex < listApplicationComponentStatusSummaryJsonList.GetLength(); ++listApplicationComponentStatusSummaryIndex)
+   {
+     listApplicationComponentStatusSummaryJsonList[listApplicationComponentStatusSummaryIndex].AsObject(m_listApplicationComponentStatusSummary[listApplicationComponentStatusSummaryIndex].Jsonize());
+   }
+   payload.WithArray("listApplicationComponentStatusSummary", std::move(listApplicationComponentStatusSummaryJsonList));
+
+  }
+
   if(m_listApplicationComponentStrategySummaryHasBeenSet)
   {
-   Array<JsonValue> listApplicationComponentStrategySummaryJsonList(m_listApplicationComponentStrategySummary.size());
+   Aws::Utils::Array<JsonValue> listApplicationComponentStrategySummaryJsonList(m_listApplicationComponentStrategySummary.size());
    for(unsigned listApplicationComponentStrategySummaryIndex = 0; listApplicationComponentStrategySummaryIndex < listApplicationComponentStrategySummaryJsonList.GetLength(); ++listApplicationComponentStrategySummaryIndex)
    {
      listApplicationComponentStrategySummaryJsonList[listApplicationComponentStrategySummaryIndex].AsObject(m_listApplicationComponentStrategySummary[listApplicationComponentStrategySummaryIndex].Jsonize());
@@ -180,7 +215,7 @@ JsonValue AssessmentSummary::Jsonize() const
 
   if(m_listApplicationComponentSummaryHasBeenSet)
   {
-   Array<JsonValue> listApplicationComponentSummaryJsonList(m_listApplicationComponentSummary.size());
+   Aws::Utils::Array<JsonValue> listApplicationComponentSummaryJsonList(m_listApplicationComponentSummary.size());
    for(unsigned listApplicationComponentSummaryIndex = 0; listApplicationComponentSummaryIndex < listApplicationComponentSummaryJsonList.GetLength(); ++listApplicationComponentSummaryIndex)
    {
      listApplicationComponentSummaryJsonList[listApplicationComponentSummaryIndex].AsObject(m_listApplicationComponentSummary[listApplicationComponentSummaryIndex].Jsonize());
@@ -189,9 +224,20 @@ JsonValue AssessmentSummary::Jsonize() const
 
   }
 
+  if(m_listServerStatusSummaryHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> listServerStatusSummaryJsonList(m_listServerStatusSummary.size());
+   for(unsigned listServerStatusSummaryIndex = 0; listServerStatusSummaryIndex < listServerStatusSummaryJsonList.GetLength(); ++listServerStatusSummaryIndex)
+   {
+     listServerStatusSummaryJsonList[listServerStatusSummaryIndex].AsObject(m_listServerStatusSummary[listServerStatusSummaryIndex].Jsonize());
+   }
+   payload.WithArray("listServerStatusSummary", std::move(listServerStatusSummaryJsonList));
+
+  }
+
   if(m_listServerStrategySummaryHasBeenSet)
   {
-   Array<JsonValue> listServerStrategySummaryJsonList(m_listServerStrategySummary.size());
+   Aws::Utils::Array<JsonValue> listServerStrategySummaryJsonList(m_listServerStrategySummary.size());
    for(unsigned listServerStrategySummaryIndex = 0; listServerStrategySummaryIndex < listServerStrategySummaryJsonList.GetLength(); ++listServerStrategySummaryIndex)
    {
      listServerStrategySummaryJsonList[listServerStrategySummaryIndex].AsObject(m_listServerStrategySummary[listServerStrategySummaryIndex].Jsonize());
@@ -202,7 +248,7 @@ JsonValue AssessmentSummary::Jsonize() const
 
   if(m_listServerSummaryHasBeenSet)
   {
-   Array<JsonValue> listServerSummaryJsonList(m_listServerSummary.size());
+   Aws::Utils::Array<JsonValue> listServerSummaryJsonList(m_listServerSummary.size());
    for(unsigned listServerSummaryIndex = 0; listServerSummaryIndex < listServerSummaryJsonList.GetLength(); ++listServerSummaryIndex)
    {
      listServerSummaryJsonList[listServerSummaryIndex].AsObject(m_listServerSummary[listServerSummaryIndex].Jsonize());

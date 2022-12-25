@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFrameworkControl">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API CreateAssessmentFrameworkControl
+  class CreateAssessmentFrameworkControl
   {
   public:
-    CreateAssessmentFrameworkControl();
-    CreateAssessmentFrameworkControl(Aws::Utils::Json::JsonView jsonValue);
-    CreateAssessmentFrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControl();
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

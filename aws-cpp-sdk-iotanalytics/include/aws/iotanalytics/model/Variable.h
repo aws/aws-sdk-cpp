@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Variable">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API Variable
+  class Variable
   {
   public:
-    Variable();
-    Variable(Aws::Utils::Json::JsonView jsonValue);
-    Variable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API Variable();
+    AWS_IOTANALYTICS_API Variable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Variable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     DatasetContentVersionValue m_datasetContentVersionValue;
-    bool m_datasetContentVersionValueHasBeenSet;
+    bool m_datasetContentVersionValueHasBeenSet = false;
 
     OutputFileUriValue m_outputFileUriValue;
-    bool m_outputFileUriValueHasBeenSet;
+    bool m_outputFileUriValueHasBeenSet = false;
   };
 
 } // namespace Model

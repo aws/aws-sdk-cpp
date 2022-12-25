@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainClusterConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails
+  class AwsOpenSearchServiceDomainClusterConfigDetails
   {
   public:
-    AwsOpenSearchServiceDomainClusterConfigDetails();
-    AwsOpenSearchServiceDomainClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,42 +198,74 @@ namespace Model
 
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type for your data nodes. </p>
+     * <p>The instance type for your data nodes.</p> <p>For a list of valid values, see
+     * <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsOpenSearchServiceDomainClusterConfigDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -371,34 +403,34 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     bool m_warmEnabled;
-    bool m_warmEnabledHasBeenSet;
+    bool m_warmEnabledHasBeenSet = false;
 
     int m_warmCount;
-    bool m_warmCountHasBeenSet;
+    bool m_warmCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_warmType;
-    bool m_warmTypeHasBeenSet;
+    bool m_warmTypeHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
   };
 
 } // namespace Model

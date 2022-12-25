@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,13 +23,20 @@ public class Http {
     private String responseCode;
 
     public List<String> getRequestUriParts() {
-        return Arrays.asList(requestUri.split("\\{[\\w\\d-]+\\+?\\}"));
+        if (requestUri != null) {
+            return Arrays.asList(requestUri.split("\\{[\\w\\d-]+\\+?\\}"));
+        } else {
+            return new ArrayList<String>();
+        }
     }
 
     public List<String> getRequestParameters() {
-        String[] parts = requestUri.split("/|\\?|&");
         List<String> paramList = new LinkedList<>();
+        if (requestUri == null) {
+            return paramList;
+        }
 
+        String[] parts = requestUri.split("/|\\?|&");
         for (String part : parts) {
             Matcher matcher = URI_PARAM_PATTERN.matcher(part);
 

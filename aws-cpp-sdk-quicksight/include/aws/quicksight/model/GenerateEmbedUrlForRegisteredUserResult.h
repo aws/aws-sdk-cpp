@@ -24,46 +24,53 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult
+  class GenerateEmbedUrlForRegisteredUserResult
   {
   public:
-    GenerateEmbedUrlForRegisteredUserResult();
-    GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateEmbedUrlForRegisteredUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForRegisteredUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline const Aws::String& GetEmbedUrl() const{ return m_embedUrl; }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline void SetEmbedUrl(const Aws::String& value) { m_embedUrl = value; }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline void SetEmbedUrl(Aws::String&& value) { m_embedUrl = std::move(value); }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline void SetEmbedUrl(const char* value) { m_embedUrl.assign(value); }
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const Aws::String& value) { SetEmbedUrl(value); return *this;}
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(Aws::String&& value) { SetEmbedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
+     * <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or
+     * console.</p>
      */
     inline GenerateEmbedUrlForRegisteredUserResult& WithEmbedUrl(const char* value) { SetEmbedUrl(value); return *this;}
 

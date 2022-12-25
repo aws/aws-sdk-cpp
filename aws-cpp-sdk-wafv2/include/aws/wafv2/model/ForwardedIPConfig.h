@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ForwardedIPConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ForwardedIPConfig
+  class ForwardedIPConfig
   {
   public:
-    ForwardedIPConfig();
-    ForwardedIPConfig(Aws::Utils::Json::JsonView jsonValue);
-    ForwardedIPConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ForwardedIPConfig();
+    AWS_WAFV2_API ForwardedIPConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ForwardedIPConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     FallbackBehavior m_fallbackBehavior;
-    bool m_fallbackBehaviorHasBeenSet;
+    bool m_fallbackBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

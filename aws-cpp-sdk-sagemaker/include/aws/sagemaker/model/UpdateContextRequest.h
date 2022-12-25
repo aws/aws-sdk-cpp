@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateContextRequest : public SageMakerRequest
+  class UpdateContextRequest : public SageMakerRequest
   {
   public:
-    UpdateContextRequest();
+    AWS_SAGEMAKER_API UpdateContextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateContext"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_contextName;
-    bool m_contextNameHasBeenSet;
+    bool m_contextNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_propertiesToRemove;
-    bool m_propertiesToRemoveHasBeenSet;
+    bool m_propertiesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

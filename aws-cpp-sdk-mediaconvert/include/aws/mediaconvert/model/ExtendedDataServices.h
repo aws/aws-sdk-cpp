@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ExtendedDataServices">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ExtendedDataServices
+  class ExtendedDataServices
   {
   public:
-    ExtendedDataServices();
-    ExtendedDataServices(Aws::Utils::Json::JsonView jsonValue);
-    ExtendedDataServices& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ExtendedDataServices();
+    AWS_MEDIACONVERT_API ExtendedDataServices(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ExtendedDataServices& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     CopyProtectionAction m_copyProtectionAction;
-    bool m_copyProtectionActionHasBeenSet;
+    bool m_copyProtectionActionHasBeenSet = false;
 
     VchipAction m_vchipAction;
-    bool m_vchipActionHasBeenSet;
+    bool m_vchipActionHasBeenSet = false;
   };
 
 } // namespace Model

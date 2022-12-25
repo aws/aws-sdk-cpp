@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API DescribeRdsDbInstancesRequest : public OpsWorksRequest
+  class DescribeRdsDbInstancesRequest : public OpsWorksRequest
   {
   public:
-    DescribeRdsDbInstancesRequest();
+    AWS_OPSWORKS_API DescribeRdsDbInstancesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeRdsDbInstances"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rdsDbInstanceArns;
-    bool m_rdsDbInstanceArnsHasBeenSet;
+    bool m_rdsDbInstanceArnsHasBeenSet = false;
   };
 
 } // namespace Model

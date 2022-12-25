@@ -50,7 +50,7 @@ PublicKey& PublicKey::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode publicKeyConfigNode = resultNode.FirstChild("PublicKeyConfig");
@@ -76,7 +76,7 @@ void PublicKey::AddToNode(XmlNode& parentNode) const
   if(m_createdTimeHasBeenSet)
   {
    XmlNode createdTimeNode = parentNode.CreateChildElement("CreatedTime");
-   createdTimeNode.SetText(m_createdTime.ToGmtString(DateFormat::ISO_8601));
+   createdTimeNode.SetText(m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_publicKeyConfigHasBeenSet)

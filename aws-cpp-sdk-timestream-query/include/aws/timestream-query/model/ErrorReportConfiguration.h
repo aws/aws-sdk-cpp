@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ErrorReportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ErrorReportConfiguration
+  class ErrorReportConfiguration
   {
   public:
-    ErrorReportConfiguration();
-    ErrorReportConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ErrorReportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ErrorReportConfiguration();
+    AWS_TIMESTREAMQUERY_API ErrorReportConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ErrorReportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     S3Configuration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

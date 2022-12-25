@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RuleGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RuleGroupSummary
+  class RuleGroupSummary
   {
   public:
-    RuleGroupSummary();
-    RuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RuleGroupSummary();
+    AWS_WAF_API RuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,10 +194,10 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

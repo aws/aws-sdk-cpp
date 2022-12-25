@@ -32,7 +32,7 @@ ListConfigurationsResult& ListConfigurationsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

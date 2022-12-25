@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingResource">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API MatchingResource
+  class MatchingResource
   {
   public:
-    MatchingResource();
-    MatchingResource(Aws::Utils::Json::JsonView jsonValue);
-    MatchingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API MatchingResource();
+    AWS_MACIE2_API MatchingResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API MatchingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     MatchingBucket m_matchingBucket;
-    bool m_matchingBucketHasBeenSet;
+    bool m_matchingBucketHasBeenSet = false;
   };
 
 } // namespace Model

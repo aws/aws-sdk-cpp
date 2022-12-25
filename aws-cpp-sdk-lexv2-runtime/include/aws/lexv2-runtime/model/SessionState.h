@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/SessionState">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API SessionState
+  class SessionState
   {
   public:
-    SessionState();
-    SessionState(Aws::Utils::Json::JsonView jsonValue);
-    SessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API SessionState();
+    AWS_LEXRUNTIMEV2_API SessionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API SessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,22 +341,22 @@ namespace Model
   private:
 
     DialogAction m_dialogAction;
-    bool m_dialogActionHasBeenSet;
+    bool m_dialogActionHasBeenSet = false;
 
     Intent m_intent;
-    bool m_intentHasBeenSet;
+    bool m_intentHasBeenSet = false;
 
     Aws::Vector<ActiveContext> m_activeContexts;
-    bool m_activeContextsHasBeenSet;
+    bool m_activeContextsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::String m_originatingRequestId;
-    bool m_originatingRequestIdHasBeenSet;
+    bool m_originatingRequestIdHasBeenSet = false;
 
     RuntimeHints m_runtimeHints;
-    bool m_runtimeHintsHasBeenSet;
+    bool m_runtimeHintsHasBeenSet = false;
   };
 
 } // namespace Model

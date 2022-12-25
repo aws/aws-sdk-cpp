@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/EntitlementValue">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue
+  class EntitlementValue
   {
   public:
-    EntitlementValue();
-    EntitlementValue(Aws::Utils::Json::JsonView jsonValue);
-    EntitlementValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API EntitlementValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     int m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

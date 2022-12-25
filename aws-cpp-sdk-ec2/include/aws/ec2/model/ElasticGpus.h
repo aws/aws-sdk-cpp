@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpus">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API ElasticGpus
+  class ElasticGpus
   {
   public:
-    ElasticGpus();
-    ElasticGpus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ElasticGpus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpus();
+    AWS_EC2_API ElasticGpus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_elasticGpuId;
-    bool m_elasticGpuIdHasBeenSet;
+    bool m_elasticGpuIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_elasticGpuType;
-    bool m_elasticGpuTypeHasBeenSet;
+    bool m_elasticGpuTypeHasBeenSet = false;
 
     ElasticGpuHealth m_elasticGpuHealth;
-    bool m_elasticGpuHealthHasBeenSet;
+    bool m_elasticGpuHealthHasBeenSet = false;
 
     ElasticGpuState m_elasticGpuState;
-    bool m_elasticGpuStateHasBeenSet;
+    bool m_elasticGpuStateHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

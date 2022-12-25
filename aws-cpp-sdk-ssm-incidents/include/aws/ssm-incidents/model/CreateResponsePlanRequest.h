@@ -12,6 +12,7 @@
 #include <aws/ssm-incidents/model/IncidentTemplate.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-incidents/model/Action.h>
+#include <aws/ssm-incidents/model/Integration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -24,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMINCIDENTS_API CreateResponsePlanRequest : public SSMIncidentsRequest
+  class CreateResponsePlanRequest : public SSMIncidentsRequest
   {
   public:
-    CreateResponsePlanRequest();
+    AWS_SSMINCIDENTS_API CreateResponsePlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResponsePlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -209,56 +210,56 @@ namespace Model
 
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline bool EngagementsHasBeenSet() const { return m_engagementsHasBeenSet; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagementsHasBeenSet = true; m_engagements = value; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagementsHasBeenSet = true; m_engagements = std::move(value); }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(const Aws::String& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(Aws::String&& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline CreateResponsePlanRequest& AddEngagements(const char* value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
@@ -292,6 +293,47 @@ namespace Model
      * <p>Details used to create an incident when using this response plan.</p>
      */
     inline CreateResponsePlanRequest& WithIncidentTemplate(IncidentTemplate&& value) { SetIncidentTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline const Aws::Vector<Integration>& GetIntegrations() const{ return m_integrations; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline bool IntegrationsHasBeenSet() const { return m_integrationsHasBeenSet; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(const Aws::Vector<Integration>& value) { m_integrationsHasBeenSet = true; m_integrations = value; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline void SetIntegrations(Aws::Vector<Integration>&& value) { m_integrationsHasBeenSet = true; m_integrations = std::move(value); }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& WithIntegrations(const Aws::Vector<Integration>& value) { SetIntegrations(value); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& WithIntegrations(Aws::Vector<Integration>&& value) { SetIntegrations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& AddIntegrations(const Integration& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about third-party services integrated into the response plan.</p>
+     */
+    inline CreateResponsePlanRequest& AddIntegrations(Integration&& value) { m_integrationsHasBeenSet = true; m_integrations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -403,28 +445,31 @@ namespace Model
   private:
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_engagements;
-    bool m_engagementsHasBeenSet;
+    bool m_engagementsHasBeenSet = false;
 
     IncidentTemplate m_incidentTemplate;
-    bool m_incidentTemplateHasBeenSet;
+    bool m_incidentTemplateHasBeenSet = false;
+
+    Aws::Vector<Integration> m_integrations;
+    bool m_integrationsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

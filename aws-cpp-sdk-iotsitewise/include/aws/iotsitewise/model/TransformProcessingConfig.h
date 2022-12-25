@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TransformProcessingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API TransformProcessingConfig
+  class TransformProcessingConfig
   {
   public:
-    TransformProcessingConfig();
-    TransformProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
-    TransformProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API TransformProcessingConfig();
+    AWS_IOTSITEWISE_API TransformProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API TransformProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,10 +93,10 @@ namespace Model
   private:
 
     ComputeLocation m_computeLocation;
-    bool m_computeLocationHasBeenSet;
+    bool m_computeLocationHasBeenSet = false;
 
     ForwardingConfig m_forwardingConfig;
-    bool m_forwardingConfigHasBeenSet;
+    bool m_forwardingConfigHasBeenSet = false;
   };
 
 } // namespace Model

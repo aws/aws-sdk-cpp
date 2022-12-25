@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationConfiguration
+  class ApplicationConfiguration
   {
   public:
-    ApplicationConfiguration();
-    ApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API ApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,25 +318,25 @@ namespace Model
   private:
 
     SqlApplicationConfiguration m_sqlApplicationConfiguration;
-    bool m_sqlApplicationConfigurationHasBeenSet;
+    bool m_sqlApplicationConfigurationHasBeenSet = false;
 
     FlinkApplicationConfiguration m_flinkApplicationConfiguration;
-    bool m_flinkApplicationConfigurationHasBeenSet;
+    bool m_flinkApplicationConfigurationHasBeenSet = false;
 
     EnvironmentProperties m_environmentProperties;
-    bool m_environmentPropertiesHasBeenSet;
+    bool m_environmentPropertiesHasBeenSet = false;
 
     ApplicationCodeConfiguration m_applicationCodeConfiguration;
-    bool m_applicationCodeConfigurationHasBeenSet;
+    bool m_applicationCodeConfigurationHasBeenSet = false;
 
     ApplicationSnapshotConfiguration m_applicationSnapshotConfiguration;
-    bool m_applicationSnapshotConfigurationHasBeenSet;
+    bool m_applicationSnapshotConfigurationHasBeenSet = false;
 
     Aws::Vector<VpcConfiguration> m_vpcConfigurations;
-    bool m_vpcConfigurationsHasBeenSet;
+    bool m_vpcConfigurationsHasBeenSet = false;
 
     ZeppelinApplicationConfiguration m_zeppelinApplicationConfiguration;
-    bool m_zeppelinApplicationConfigurationHasBeenSet;
+    bool m_zeppelinApplicationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

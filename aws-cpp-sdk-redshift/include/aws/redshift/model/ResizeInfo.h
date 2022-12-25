@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ResizeInfo
+  class ResizeInfo
   {
   public:
-    ResizeInfo();
-    ResizeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResizeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResizeInfo();
+    AWS_REDSHIFT_API ResizeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResizeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_resizeType;
-    bool m_resizeTypeHasBeenSet;
+    bool m_resizeTypeHasBeenSet = false;
 
     bool m_allowCancelResize;
-    bool m_allowCancelResizeHasBeenSet;
+    bool m_allowCancelResizeHasBeenSet = false;
   };
 
 } // namespace Model

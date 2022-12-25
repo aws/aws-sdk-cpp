@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UserInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API UserInfo
+  class UserInfo
   {
   public:
-    UserInfo();
-    UserInfo(Aws::Utils::Json::JsonView jsonValue);
-    UserInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API UserInfo();
+    AWS_CODECOMMIT_API UserInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API UserInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
   };
 
 } // namespace Model

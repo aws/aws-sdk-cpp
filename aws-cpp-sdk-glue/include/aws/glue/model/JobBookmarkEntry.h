@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobBookmarkEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API JobBookmarkEntry
+  class JobBookmarkEntry
   {
   public:
-    JobBookmarkEntry();
-    JobBookmarkEntry(Aws::Utils::Json::JsonView jsonValue);
-    JobBookmarkEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JobBookmarkEntry();
+    AWS_GLUE_API JobBookmarkEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JobBookmarkEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,25 +267,25 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     int m_run;
-    bool m_runHasBeenSet;
+    bool m_runHasBeenSet = false;
 
     int m_attempt;
-    bool m_attemptHasBeenSet;
+    bool m_attemptHasBeenSet = false;
 
     Aws::String m_previousRunId;
-    bool m_previousRunIdHasBeenSet;
+    bool m_previousRunIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_jobBookmark;
-    bool m_jobBookmarkHasBeenSet;
+    bool m_jobBookmarkHasBeenSet = false;
   };
 
 } // namespace Model

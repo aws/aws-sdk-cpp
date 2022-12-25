@@ -18,14 +18,11 @@ namespace Model
 {
 
   /**
-   * <p>The request body for CreateRevision.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateRevisionRequest">AWS
-   * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API CreateRevisionRequest : public DataExchangeRequest
+  class CreateRevisionRequest : public DataExchangeRequest
   {
   public:
-    CreateRevisionRequest();
+    AWS_DATAEXCHANGE_API CreateRevisionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRevision"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -225,13 +222,13 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

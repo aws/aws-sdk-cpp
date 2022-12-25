@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Webhook">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API Webhook
+  class Webhook
   {
   public:
-    Webhook();
-    Webhook(Aws::Utils::Json::JsonView jsonValue);
-    Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Webhook();
+    AWS_CODEBUILD_API Webhook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -397,25 +397,25 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_payloadUrl;
-    bool m_payloadUrlHasBeenSet;
+    bool m_payloadUrlHasBeenSet = false;
 
     Aws::String m_secret;
-    bool m_secretHasBeenSet;
+    bool m_secretHasBeenSet = false;
 
     Aws::String m_branchFilter;
-    bool m_branchFilterHasBeenSet;
+    bool m_branchFilterHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-    bool m_filterGroupsHasBeenSet;
+    bool m_filterGroupsHasBeenSet = false;
 
     WebhookBuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedSecret;
-    bool m_lastModifiedSecretHasBeenSet;
+    bool m_lastModifiedSecretHasBeenSet = false;
   };
 
 } // namespace Model

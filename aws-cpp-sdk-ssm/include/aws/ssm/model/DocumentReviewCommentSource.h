@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentReviewCommentSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentReviewCommentSource
+  class DocumentReviewCommentSource
   {
   public:
-    DocumentReviewCommentSource();
-    DocumentReviewCommentSource(Aws::Utils::Json::JsonView jsonValue);
-    DocumentReviewCommentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentReviewCommentSource();
+    AWS_SSM_API DocumentReviewCommentSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentReviewCommentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     DocumentReviewCommentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

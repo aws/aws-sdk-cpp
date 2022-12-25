@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipMediaApplicationEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SipMediaApplicationEndpoint
+  class SipMediaApplicationEndpoint
   {
   public:
-    SipMediaApplicationEndpoint();
-    SipMediaApplicationEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    SipMediaApplicationEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SipMediaApplicationEndpoint();
+    AWS_CHIME_API SipMediaApplicationEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SipMediaApplicationEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

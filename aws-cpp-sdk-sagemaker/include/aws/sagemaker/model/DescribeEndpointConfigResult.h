@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
+#include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
 
@@ -29,12 +30,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeEndpointConfigResult
+  class DescribeEndpointConfigResult
   {
   public:
-    DescribeEndpointConfigResult();
-    DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeEndpointConfigResult();
+    AWS_SAGEMAKER_API DescribeEndpointConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeEndpointConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -272,6 +273,82 @@ namespace Model
      */
     inline DescribeEndpointConfigResult& WithAsyncInferenceConfig(AsyncInferenceConfig&& value) { SetAsyncInferenceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline const ExplainerConfig& GetExplainerConfig() const{ return m_explainerConfig; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(const ExplainerConfig& value) { m_explainerConfig = value; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(ExplainerConfig&& value) { m_explainerConfig = std::move(value); }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExplainerConfig(const ExplainerConfig& value) { SetExplainerConfig(value); return *this;}
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline const Aws::Vector<ProductionVariant>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline void SetShadowProductionVariants(const Aws::Vector<ProductionVariant>& value) { m_shadowProductionVariants = value; }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline void SetShadowProductionVariants(Aws::Vector<ProductionVariant>&& value) { m_shadowProductionVariants = std::move(value); }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointConfigResult& WithShadowProductionVariants(const Aws::Vector<ProductionVariant>& value) { SetShadowProductionVariants(value); return *this;}
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointConfigResult& WithShadowProductionVariants(Aws::Vector<ProductionVariant>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointConfigResult& AddShadowProductionVariants(const ProductionVariant& value) { m_shadowProductionVariants.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code>.</p>
+     */
+    inline DescribeEndpointConfigResult& AddShadowProductionVariants(ProductionVariant&& value) { m_shadowProductionVariants.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -287,6 +364,10 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     AsyncInferenceConfig m_asyncInferenceConfig;
+
+    ExplainerConfig m_explainerConfig;
+
+    Aws::Vector<ProductionVariant> m_shadowProductionVariants;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
+  class GetDASHStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    GetDASHStreamingSessionURLRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDASHStreamingSessionURL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -786,28 +786,28 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     DASHPlaybackMode m_playbackMode;
-    bool m_playbackModeHasBeenSet;
+    bool m_playbackModeHasBeenSet = false;
 
     DASHDisplayFragmentTimestamp m_displayFragmentTimestamp;
-    bool m_displayFragmentTimestampHasBeenSet;
+    bool m_displayFragmentTimestampHasBeenSet = false;
 
     DASHDisplayFragmentNumber m_displayFragmentNumber;
-    bool m_displayFragmentNumberHasBeenSet;
+    bool m_displayFragmentNumberHasBeenSet = false;
 
     DASHFragmentSelector m_dASHFragmentSelector;
-    bool m_dASHFragmentSelectorHasBeenSet;
+    bool m_dASHFragmentSelectorHasBeenSet = false;
 
     int m_expires;
-    bool m_expiresHasBeenSet;
+    bool m_expiresHasBeenSet = false;
 
     long long m_maxManifestFragmentResults;
-    bool m_maxManifestFragmentResultsHasBeenSet;
+    bool m_maxManifestFragmentResultsHasBeenSet = false;
   };
 
 } // namespace Model

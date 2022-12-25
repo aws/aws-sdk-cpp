@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Secondary">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Secondary
+  class Secondary
   {
   public:
-    Secondary();
-    Secondary(Aws::Utils::Json::JsonView jsonValue);
-    Secondary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Secondary();
+    AWS_EVENTBRIDGE_API Secondary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Secondary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_route;
-    bool m_routeHasBeenSet;
+    bool m_routeHasBeenSet = false;
   };
 
 } // namespace Model

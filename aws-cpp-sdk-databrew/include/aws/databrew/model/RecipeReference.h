@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeReference">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API RecipeReference
+  class RecipeReference
   {
   public:
-    RecipeReference();
-    RecipeReference(Aws::Utils::Json::JsonView jsonValue);
-    RecipeReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API RecipeReference();
+    AWS_GLUEDATABREW_API RecipeReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API RecipeReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recipeVersion;
-    bool m_recipeVersionHasBeenSet;
+    bool m_recipeVersionHasBeenSet = false;
   };
 
 } // namespace Model

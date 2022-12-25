@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignEventFilter
+  class CampaignEventFilter
   {
   public:
-    CampaignEventFilter();
-    CampaignEventFilter(Aws::Utils::Json::JsonView jsonValue);
-    CampaignEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignEventFilter();
+    AWS_PINPOINT_API CampaignEventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     EventDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     FilterType m_filterType;
-    bool m_filterTypeHasBeenSet;
+    bool m_filterTypeHasBeenSet = false;
   };
 
 } // namespace Model

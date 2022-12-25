@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API UpdateRelationalDatabaseRequest : public LightsailRequest
+  class UpdateRelationalDatabaseRequest : public LightsailRequest
   {
   public:
-    UpdateRelationalDatabaseRequest();
+    AWS_LIGHTSAIL_API UpdateRelationalDatabaseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRelationalDatabase"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -253,8 +253,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -265,8 +265,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -277,8 +277,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -289,8 +289,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -301,8 +301,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -313,8 +313,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -325,8 +325,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -337,8 +337,8 @@ namespace Model
     /**
      * <p>The weekly time range during which system maintenance can occur on your
      * database.</p> <p>The default is a 30-minute window selected at random from an
-     * 8-hour block of time for each AWS Region, occurring on a random day of the
-     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * 8-hour block of time for each Amazon Web Services Region, occurring on a random
+     * day of the week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
      * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
@@ -526,34 +526,34 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     bool m_rotateMasterUserPassword;
-    bool m_rotateMasterUserPasswordHasBeenSet;
+    bool m_rotateMasterUserPasswordHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_enableBackupRetention;
-    bool m_enableBackupRetentionHasBeenSet;
+    bool m_enableBackupRetentionHasBeenSet = false;
 
     bool m_disableBackupRetention;
-    bool m_disableBackupRetentionHasBeenSet;
+    bool m_disableBackupRetentionHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_caCertificateIdentifier;
-    bool m_caCertificateIdentifierHasBeenSet;
+    bool m_caCertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

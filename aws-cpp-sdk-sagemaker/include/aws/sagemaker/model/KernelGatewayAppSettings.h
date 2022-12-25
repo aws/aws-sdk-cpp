@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API KernelGatewayAppSettings
+  class KernelGatewayAppSettings
   {
   public:
-    KernelGatewayAppSettings();
-    KernelGatewayAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    KernelGatewayAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API KernelGatewayAppSettings();
+    AWS_SAGEMAKER_API KernelGatewayAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API KernelGatewayAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,13 +216,13 @@ namespace Model
   private:
 
     ResourceSpec m_defaultResourceSpec;
-    bool m_defaultResourceSpecHasBeenSet;
+    bool m_defaultResourceSpecHasBeenSet = false;
 
     Aws::Vector<CustomImage> m_customImages;
-    bool m_customImagesHasBeenSet;
+    bool m_customImagesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifecycleConfigArns;
-    bool m_lifecycleConfigArnsHasBeenSet;
+    bool m_lifecycleConfigArnsHasBeenSet = false;
   };
 
 } // namespace Model

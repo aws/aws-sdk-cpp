@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API VerifyEmailIdentityResult
+  class VerifyEmailIdentityResult
   {
   public:
-    VerifyEmailIdentityResult();
-    VerifyEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    VerifyEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API VerifyEmailIdentityResult();
+    AWS_SES_API VerifyEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API VerifyEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

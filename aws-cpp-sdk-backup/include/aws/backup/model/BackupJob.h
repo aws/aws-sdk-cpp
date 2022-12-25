@@ -32,13 +32,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupJob">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupJob
+  class BackupJob
   {
   public:
-    BackupJob();
-    BackupJob(Aws::Utils::Json::JsonView jsonValue);
-    BackupJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupJob();
+    AWS_BACKUP_API BackupJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1109,67 +1109,147 @@ namespace Model
      */
     inline BackupJob& WithBackupType(const char* value) { SetBackupType(value); return *this;}
 
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline const Aws::String& GetParentJobId() const{ return m_parentJobId; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline bool ParentJobIdHasBeenSet() const { return m_parentJobIdHasBeenSet; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const Aws::String& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = value; }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(Aws::String&& value) { m_parentJobIdHasBeenSet = true; m_parentJobId = std::move(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline void SetParentJobId(const char* value) { m_parentJobIdHasBeenSet = true; m_parentJobId.assign(value); }
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(const Aws::String& value) { SetParentJobId(value); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(Aws::String&& value) { SetParentJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>This uniquely identifies a request to Backup to back up a resource. The
+     * return will be the parent (composite) job ID.</p>
+     */
+    inline BackupJob& WithParentJobId(const char* value) { SetParentJobId(value); return *this;}
+
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline bool GetIsParent() const{ return m_isParent; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline bool IsParentHasBeenSet() const { return m_isParentHasBeenSet; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline void SetIsParent(bool value) { m_isParentHasBeenSet = true; m_isParent = value; }
+
+    /**
+     * <p>This is a boolean value indicating this is a parent (composite) backup
+     * job.</p>
+     */
+    inline BackupJob& WithIsParent(bool value) { SetIsParent(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_backupJobId;
-    bool m_backupJobIdHasBeenSet;
+    bool m_backupJobIdHasBeenSet = false;
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     BackupJobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_percentDone;
-    bool m_percentDoneHasBeenSet;
+    bool m_percentDoneHasBeenSet = false;
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     RecoveryPointCreator m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_expectedCompletionDate;
-    bool m_expectedCompletionDateHasBeenSet;
+    bool m_expectedCompletionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startBy;
-    bool m_startByHasBeenSet;
+    bool m_startByHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_bytesTransferred;
-    bool m_bytesTransferredHasBeenSet;
+    bool m_bytesTransferredHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
-    bool m_backupOptionsHasBeenSet;
+    bool m_backupOptionsHasBeenSet = false;
 
     Aws::String m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
+
+    Aws::String m_parentJobId;
+    bool m_parentJobIdHasBeenSet = false;
+
+    bool m_isParent;
+    bool m_isParentHasBeenSet = false;
   };
 
 } // namespace Model

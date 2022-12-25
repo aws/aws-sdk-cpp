@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TimestreamDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TimestreamDimension
+  class TimestreamDimension
   {
   public:
-    TimestreamDimension();
-    TimestreamDimension(Aws::Utils::Json::JsonView jsonValue);
-    TimestreamDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TimestreamDimension();
+    AWS_IOT_API TimestreamDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TimestreamDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

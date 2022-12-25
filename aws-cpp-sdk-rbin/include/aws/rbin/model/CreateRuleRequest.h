@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rbin/model/ResourceType.h>
+#include <aws/rbin/model/LockConfiguration.h>
 #include <aws/rbin/model/Tag.h>
 #include <aws/rbin/model/ResourceTag.h>
 #include <utility>
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_RECYCLEBIN_API CreateRuleRequest : public RecycleBinRequest
+  class CreateRuleRequest : public RecycleBinRequest
   {
   public:
-    CreateRuleRequest();
+    AWS_RECYCLEBIN_API CreateRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RECYCLEBIN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -325,22 +326,56 @@ namespace Model
      */
     inline CreateRuleRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline const LockConfiguration& GetLockConfiguration() const{ return m_lockConfiguration; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline bool LockConfigurationHasBeenSet() const { return m_lockConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(const LockConfiguration& value) { m_lockConfigurationHasBeenSet = true; m_lockConfiguration = value; }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline void SetLockConfiguration(LockConfiguration&& value) { m_lockConfigurationHasBeenSet = true; m_lockConfiguration = std::move(value); }
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline CreateRuleRequest& WithLockConfiguration(const LockConfiguration& value) { SetLockConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the retention rule lock configuration.</p>
+     */
+    inline CreateRuleRequest& WithLockConfiguration(LockConfiguration&& value) { SetLockConfiguration(std::move(value)); return *this;}
+
   private:
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
+
+    LockConfiguration m_lockConfiguration;
+    bool m_lockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

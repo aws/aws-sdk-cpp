@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation
+  class AutoScalingGroupRecommendation
   {
   public:
-    AutoScalingGroupRecommendation();
-    AutoScalingGroupRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingGroupRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation();
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -670,40 +670,40 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_autoScalingGroupArn;
-    bool m_autoScalingGroupArnHasBeenSet;
+    bool m_autoScalingGroupArnHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Finding m_finding;
-    bool m_findingHasBeenSet;
+    bool m_findingHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_utilizationMetrics;
-    bool m_utilizationMetricsHasBeenSet;
+    bool m_utilizationMetricsHasBeenSet = false;
 
     double m_lookBackPeriodInDays;
-    bool m_lookBackPeriodInDaysHasBeenSet;
+    bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     AutoScalingGroupConfiguration m_currentConfiguration;
-    bool m_currentConfigurationHasBeenSet;
+    bool m_currentConfigurationHasBeenSet = false;
 
     Aws::Vector<AutoScalingGroupRecommendationOption> m_recommendationOptions;
-    bool m_recommendationOptionsHasBeenSet;
+    bool m_recommendationOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
-    bool m_lastRefreshTimestampHasBeenSet;
+    bool m_lastRefreshTimestampHasBeenSet = false;
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
-    bool m_currentPerformanceRiskHasBeenSet;
+    bool m_currentPerformanceRiskHasBeenSet = false;
 
     EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-    bool m_effectiveRecommendationPreferencesHasBeenSet;
+    bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
-    bool m_inferredWorkloadTypesHasBeenSet;
+    bool m_inferredWorkloadTypesHasBeenSet = false;
   };
 
 } // namespace Model

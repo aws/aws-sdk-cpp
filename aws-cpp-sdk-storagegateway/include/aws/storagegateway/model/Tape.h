@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Tape">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API Tape
+  class Tape
   {
   public:
-    Tape();
-    Tape(Aws::Utils::Json::JsonView jsonValue);
-    Tape& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API Tape();
+    AWS_STORAGEGATEWAY_API Tape(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Tape& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -509,43 +509,43 @@ namespace Model
   private:
 
     Aws::String m_tapeARN;
-    bool m_tapeARNHasBeenSet;
+    bool m_tapeARNHasBeenSet = false;
 
     Aws::String m_tapeBarcode;
-    bool m_tapeBarcodeHasBeenSet;
+    bool m_tapeBarcodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_tapeCreatedDate;
-    bool m_tapeCreatedDateHasBeenSet;
+    bool m_tapeCreatedDateHasBeenSet = false;
 
     long long m_tapeSizeInBytes;
-    bool m_tapeSizeInBytesHasBeenSet;
+    bool m_tapeSizeInBytesHasBeenSet = false;
 
     Aws::String m_tapeStatus;
-    bool m_tapeStatusHasBeenSet;
+    bool m_tapeStatusHasBeenSet = false;
 
     Aws::String m_vTLDevice;
-    bool m_vTLDeviceHasBeenSet;
+    bool m_vTLDeviceHasBeenSet = false;
 
     double m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     long long m_tapeUsedInBytes;
-    bool m_tapeUsedInBytesHasBeenSet;
+    bool m_tapeUsedInBytesHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     bool m_worm;
-    bool m_wormHasBeenSet;
+    bool m_wormHasBeenSet = false;
 
     Aws::Utils::DateTime m_retentionStartDate;
-    bool m_retentionStartDateHasBeenSet;
+    bool m_retentionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_poolEntryDate;
-    bool m_poolEntryDateHasBeenSet;
+    bool m_poolEntryDateHasBeenSet = false;
   };
 
 } // namespace Model

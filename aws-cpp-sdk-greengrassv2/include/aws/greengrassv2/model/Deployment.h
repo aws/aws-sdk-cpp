@@ -30,68 +30,76 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/Deployment">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API Deployment
+  class Deployment
   {
   public:
-    Deployment();
-    Deployment(Aws::Utils::Json::JsonView jsonValue);
-    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API Deployment();
+    AWS_GREENGRASSV2_API Deployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline Deployment& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline Deployment& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target IoT thing or thing group.</p>
+     * of the target IoT thing or thing group. When creating a subdeployment, the
+     * targetARN can only be a thing group.</p>
      */
     inline Deployment& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
@@ -307,28 +315,88 @@ namespace Model
      */
     inline Deployment& WithIsLatestForTarget(bool value) { SetIsLatestForTarget(value); return *this;}
 
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline const Aws::String& GetParentTargetArn() const{ return m_parentTargetArn; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline bool ParentTargetArnHasBeenSet() const { return m_parentTargetArnHasBeenSet; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const Aws::String& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = value; }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(Aws::String&& value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn = std::move(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline void SetParentTargetArn(const char* value) { m_parentTargetArnHasBeenSet = true; m_parentTargetArn.assign(value); }
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline Deployment& WithParentTargetArn(const Aws::String& value) { SetParentTargetArn(value); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline Deployment& WithParentTargetArn(Aws::String&& value) { SetParentTargetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+     * within a subdeployment.</p>
+     */
+    inline Deployment& WithParentTargetArn(const char* value) { SetParentTargetArn(value); return *this;}
+
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentName;
-    bool m_deploymentNameHasBeenSet;
+    bool m_deploymentNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     DeploymentStatus m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     bool m_isLatestForTarget;
-    bool m_isLatestForTargetHasBeenSet;
+    bool m_isLatestForTargetHasBeenSet = false;
+
+    Aws::String m_parentTargetArn;
+    bool m_parentTargetArnHasBeenSet = false;
   };
 
 } // namespace Model

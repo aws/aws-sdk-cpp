@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetentionPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RetentionPolicy
+  class RetentionPolicy
   {
   public:
-    RetentionPolicy();
-    RetentionPolicy(Aws::Utils::Json::JsonView jsonValue);
-    RetentionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RetentionPolicy();
+    AWS_SAGEMAKER_API RetentionPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RetentionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     RetentionType m_homeEfsFileSystem;
-    bool m_homeEfsFileSystemHasBeenSet;
+    bool m_homeEfsFileSystemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Segment
+  class Segment
   {
   public:
-    Segment();
-    Segment(Aws::Utils::Json::JsonView jsonValue);
-    Segment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Segment();
+    AWS_XRAY_API Segment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Segment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

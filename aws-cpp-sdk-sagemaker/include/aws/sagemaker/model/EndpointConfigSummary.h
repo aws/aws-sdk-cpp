@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointConfigSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointConfigSummary
+  class EndpointConfigSummary
   {
   public:
-    EndpointConfigSummary();
-    EndpointConfigSummary(Aws::Utils::Json::JsonView jsonValue);
-    EndpointConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointConfigSummary();
+    AWS_SAGEMAKER_API EndpointConfigSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     Aws::String m_endpointConfigArn;
-    bool m_endpointConfigArnHasBeenSet;
+    bool m_endpointConfigArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

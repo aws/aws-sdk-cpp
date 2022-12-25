@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlementsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsRequest : public MarketplaceEntitlementServiceRequest
+  class GetEntitlementsRequest : public MarketplaceEntitlementServiceRequest
   {
   public:
-    GetEntitlementsRequest();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetEntitlements"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -259,16 +259,16 @@ namespace Model
   private:
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
 
     Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

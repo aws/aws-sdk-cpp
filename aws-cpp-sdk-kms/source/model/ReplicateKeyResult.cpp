@@ -42,7 +42,7 @@ ReplicateKeyResult& ReplicateKeyResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ReplicaTags"))
   {
-    Array<JsonView> replicaTagsJsonList = jsonValue.GetArray("ReplicaTags");
+    Aws::Utils::Array<JsonView> replicaTagsJsonList = jsonValue.GetArray("ReplicaTags");
     for(unsigned replicaTagsIndex = 0; replicaTagsIndex < replicaTagsJsonList.GetLength(); ++replicaTagsIndex)
     {
       m_replicaTags.push_back(replicaTagsJsonList[replicaTagsIndex].AsObject());

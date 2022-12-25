@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/TransformationTool">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API TransformationTool
+  class TransformationTool
   {
   public:
-    TransformationTool();
-    TransformationTool(Aws::Utils::Json::JsonView jsonValue);
-    TransformationTool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API TransformationTool();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API TransformationTool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API TransformationTool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     TransformationToolName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_tranformationToolInstallationLink;
-    bool m_tranformationToolInstallationLinkHasBeenSet;
+    bool m_tranformationToolInstallationLinkHasBeenSet = false;
   };
 
 } // namespace Model

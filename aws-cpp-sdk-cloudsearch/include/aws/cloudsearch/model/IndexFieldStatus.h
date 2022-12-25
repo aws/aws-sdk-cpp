@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexFieldStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API IndexFieldStatus
+  class IndexFieldStatus
   {
   public:
-    IndexFieldStatus();
-    IndexFieldStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IndexFieldStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IndexFieldStatus();
+    AWS_CLOUDSEARCH_API IndexFieldStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IndexFieldStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     IndexField m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

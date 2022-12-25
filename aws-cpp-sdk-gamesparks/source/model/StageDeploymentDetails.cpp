@@ -105,7 +105,7 @@ JsonValue StageDeploymentDetails::Jsonize() const
 
   if(m_createdHasBeenSet)
   {
-   payload.WithString("Created", m_created.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("Created", m_created.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_deploymentActionHasBeenSet)
@@ -132,7 +132,7 @@ JsonValue StageDeploymentDetails::Jsonize() const
 
   if(m_lastUpdatedHasBeenSet)
   {
-   payload.WithString("LastUpdated", m_lastUpdated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("LastUpdated", m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_snapshotIdHasBeenSet)

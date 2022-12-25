@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserReference
+  class UserReference
   {
   public:
-    UserReference();
-    UserReference(Aws::Utils::Json::JsonView jsonValue);
-    UserReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserReference();
+    AWS_CONNECT_API UserReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

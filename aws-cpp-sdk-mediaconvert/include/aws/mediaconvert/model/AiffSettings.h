@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AiffSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AiffSettings
+  class AiffSettings
   {
   public:
-    AiffSettings();
-    AiffSettings(Aws::Utils::Json::JsonView jsonValue);
-    AiffSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AiffSettings();
+    AWS_MEDIACONVERT_API AiffSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AiffSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,13 +109,13 @@ namespace Model
   private:
 
     int m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     int m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     int m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

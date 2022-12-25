@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3Parameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API S3Parameters
+  class S3Parameters
   {
   public:
-    S3Parameters();
-    S3Parameters(Aws::Utils::Json::JsonView jsonValue);
-    S3Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API S3Parameters();
+    AWS_QUICKSIGHT_API S3Parameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API S3Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ManifestFileLocation m_manifestFileLocation;
-    bool m_manifestFileLocationHasBeenSet;
+    bool m_manifestFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

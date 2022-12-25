@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnonymousUserDashboardEmbeddingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AnonymousUserDashboardEmbeddingConfiguration
+  class AnonymousUserDashboardEmbeddingConfiguration
   {
   public:
-    AnonymousUserDashboardEmbeddingConfiguration();
-    AnonymousUserDashboardEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AnonymousUserDashboardEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AnonymousUserDashboardEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API AnonymousUserDashboardEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AnonymousUserDashboardEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_initialDashboardId;
-    bool m_initialDashboardIdHasBeenSet;
+    bool m_initialDashboardIdHasBeenSet = false;
   };
 
 } // namespace Model

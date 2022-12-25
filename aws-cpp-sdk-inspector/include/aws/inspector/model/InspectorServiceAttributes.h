@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/InspectorServiceAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API InspectorServiceAttributes
+  class InspectorServiceAttributes
   {
   public:
-    InspectorServiceAttributes();
-    InspectorServiceAttributes(Aws::Utils::Json::JsonView jsonValue);
-    InspectorServiceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API InspectorServiceAttributes();
+    AWS_INSPECTOR_API InspectorServiceAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API InspectorServiceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     Aws::String m_rulesPackageArn;
-    bool m_rulesPackageArnHasBeenSet;
+    bool m_rulesPackageArnHasBeenSet = false;
   };
 
 } // namespace Model

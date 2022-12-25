@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfigInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API CreateDeploymentConfigRequest : public CodeDeployRequest
+  class CreateDeploymentConfigRequest : public CodeDeployRequest
   {
   public:
-    CreateDeploymentConfigRequest();
+    AWS_CODEDEPLOY_API CreateDeploymentConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDeploymentConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEDEPLOY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -106,7 +106,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -122,7 +122,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -138,7 +138,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -154,7 +154,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -170,7 +170,7 @@ namespace Model
      * instances as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The value
      * parameter represents the minimum number of healthy instances as a percentage of
      * the total number of instances in the deployment. If you specify FLEET_PERCENT,
-     * at the start of the deployment, AWS CodeDeploy converts the percentage to the
+     * at the start of the deployment, CodeDeploy converts the percentage to the
      * equivalent number of instances and rounds up fractional instances.</p> </li>
      * </ul> <p>The value parameter takes an integer.</p> <p>For example, to set a
      * minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of
@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     MinimumHealthyHosts m_minimumHealthyHosts;
-    bool m_minimumHealthyHostsHasBeenSet;
+    bool m_minimumHealthyHostsHasBeenSet = false;
 
     TrafficRoutingConfig m_trafficRoutingConfig;
-    bool m_trafficRoutingConfigHasBeenSet;
+    bool m_trafficRoutingConfigHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
   };
 
 } // namespace Model

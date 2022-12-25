@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/JoinInstruction">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API JoinInstruction
+  class JoinInstruction
   {
   public:
-    JoinInstruction();
-    JoinInstruction(Aws::Utils::Json::JsonView jsonValue);
-    JoinInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API JoinInstruction();
+    AWS_QUICKSIGHT_API JoinInstruction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API JoinInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_leftOperand;
-    bool m_leftOperandHasBeenSet;
+    bool m_leftOperandHasBeenSet = false;
 
     Aws::String m_rightOperand;
-    bool m_rightOperandHasBeenSet;
+    bool m_rightOperandHasBeenSet = false;
 
     JoinKeyProperties m_leftJoinKeyProperties;
-    bool m_leftJoinKeyPropertiesHasBeenSet;
+    bool m_leftJoinKeyPropertiesHasBeenSet = false;
 
     JoinKeyProperties m_rightJoinKeyProperties;
-    bool m_rightJoinKeyPropertiesHasBeenSet;
+    bool m_rightJoinKeyPropertiesHasBeenSet = false;
 
     JoinType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_onClause;
-    bool m_onClauseHasBeenSet;
+    bool m_onClauseHasBeenSet = false;
   };
 
 } // namespace Model

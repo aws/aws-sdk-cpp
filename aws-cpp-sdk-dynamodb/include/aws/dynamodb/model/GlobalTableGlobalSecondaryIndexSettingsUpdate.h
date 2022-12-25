@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalTableGlobalSecondaryIndexSettingsUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate
+  class GlobalTableGlobalSecondaryIndexSettingsUpdate
   {
   public:
-    GlobalTableGlobalSecondaryIndexSettingsUpdate();
-    GlobalTableGlobalSecondaryIndexSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
-    GlobalTableGlobalSecondaryIndexSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate();
+    AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     long long m_provisionedWriteCapacityUnits;
-    bool m_provisionedWriteCapacityUnitsHasBeenSet;
+    bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingSettingsUpdate;
-    bool m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet;
+    bool m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

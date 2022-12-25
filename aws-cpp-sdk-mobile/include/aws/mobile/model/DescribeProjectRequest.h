@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeProjectRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API DescribeProjectRequest : public MobileRequest
+  class DescribeProjectRequest : public MobileRequest
   {
   public:
-    DescribeProjectRequest();
+    AWS_MOBILE_API DescribeProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MOBILE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MOBILE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     bool m_syncFromResources;
-    bool m_syncFromResourcesHasBeenSet;
+    bool m_syncFromResourcesHasBeenSet = false;
   };
 
 } // namespace Model

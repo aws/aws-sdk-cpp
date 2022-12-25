@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LogicalTableSource">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LogicalTableSource
+  class LogicalTableSource
   {
   public:
-    LogicalTableSource();
-    LogicalTableSource(Aws::Utils::Json::JsonView jsonValue);
-    LogicalTableSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LogicalTableSource();
+    AWS_QUICKSIGHT_API LogicalTableSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LogicalTableSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     JoinInstruction m_joinInstruction;
-    bool m_joinInstructionHasBeenSet;
+    bool m_joinInstructionHasBeenSet = false;
 
     Aws::String m_physicalTableId;
-    bool m_physicalTableIdHasBeenSet;
+    bool m_physicalTableIdHasBeenSet = false;
 
     Aws::String m_dataSetArn;
-    bool m_dataSetArnHasBeenSet;
+    bool m_dataSetArnHasBeenSet = false;
   };
 
 } // namespace Model

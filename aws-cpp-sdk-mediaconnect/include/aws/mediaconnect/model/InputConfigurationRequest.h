@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/InputConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API InputConfigurationRequest
+  class InputConfigurationRequest
   {
   public:
-    InputConfigurationRequest();
-    InputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    InputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API InputConfigurationRequest();
+    AWS_MEDIACONNECT_API InputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API InputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_inputPort;
-    bool m_inputPortHasBeenSet;
+    bool m_inputPortHasBeenSet = false;
 
     InterfaceRequest m_interface;
-    bool m_interfaceHasBeenSet;
+    bool m_interfaceHasBeenSet = false;
   };
 
 } // namespace Model

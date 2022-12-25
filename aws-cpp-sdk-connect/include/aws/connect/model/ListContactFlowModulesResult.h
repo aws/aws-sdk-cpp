@@ -26,46 +26,46 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListContactFlowModulesResult
+  class ListContactFlowModulesResult
   {
   public:
-    ListContactFlowModulesResult();
-    ListContactFlowModulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContactFlowModulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactFlowModulesResult();
+    AWS_CONNECT_API ListContactFlowModulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactFlowModulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline const Aws::Vector<ContactFlowModuleSummary>& GetContactFlowModulesSummaryList() const{ return m_contactFlowModulesSummaryList; }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline void SetContactFlowModulesSummaryList(const Aws::Vector<ContactFlowModuleSummary>& value) { m_contactFlowModulesSummaryList = value; }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline void SetContactFlowModulesSummaryList(Aws::Vector<ContactFlowModuleSummary>&& value) { m_contactFlowModulesSummaryList = std::move(value); }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline ListContactFlowModulesResult& WithContactFlowModulesSummaryList(const Aws::Vector<ContactFlowModuleSummary>& value) { SetContactFlowModulesSummaryList(value); return *this;}
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline ListContactFlowModulesResult& WithContactFlowModulesSummaryList(Aws::Vector<ContactFlowModuleSummary>&& value) { SetContactFlowModulesSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline ListContactFlowModulesResult& AddContactFlowModulesSummaryList(const ContactFlowModuleSummary& value) { m_contactFlowModulesSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>Information about the contact flow module.</p>
+     * <p>Information about the flow module.</p>
      */
     inline ListContactFlowModulesResult& AddContactFlowModulesSummaryList(ContactFlowModuleSummary&& value) { m_contactFlowModulesSummaryList.push_back(std::move(value)); return *this; }
 

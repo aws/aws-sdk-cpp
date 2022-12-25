@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSLATE_API UpdateParallelDataRequest : public TranslateRequest
+  class UpdateParallelDataRequest : public TranslateRequest
   {
   public:
-    UpdateParallelDataRequest();
+    AWS_TRANSLATE_API UpdateParallelDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateParallelData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSLATE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSLATE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ParallelDataConfig m_parallelDataConfig;
-    bool m_parallelDataConfigHasBeenSet;
+    bool m_parallelDataConfigHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

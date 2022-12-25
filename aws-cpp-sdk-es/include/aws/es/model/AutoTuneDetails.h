@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTuneDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTuneDetails
+  class AutoTuneDetails
   {
   public:
-    AutoTuneDetails();
-    AutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneDetails();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -61,7 +61,7 @@ namespace Model
   private:
 
     ScheduledAutoTuneDetails m_scheduledAutoTuneDetails;
-    bool m_scheduledAutoTuneDetailsHasBeenSet;
+    bool m_scheduledAutoTuneDetailsHasBeenSet = false;
   };
 
 } // namespace Model

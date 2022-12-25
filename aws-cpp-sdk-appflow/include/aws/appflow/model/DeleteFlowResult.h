@@ -22,12 +22,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API DeleteFlowResult
+  class DeleteFlowResult
   {
   public:
-    DeleteFlowResult();
-    DeleteFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DeleteFlowResult();
+    AWS_APPFLOW_API DeleteFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DeleteFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryConnectSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryConnectSettingsDescription
+  class DirectoryConnectSettingsDescription
   {
   public:
-    DirectoryConnectSettingsDescription();
-    DirectoryConnectSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryConnectSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettingsDescription();
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryConnectSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,22 +302,22 @@ namespace Model
   private:
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_customerUserName;
-    bool m_customerUserNameHasBeenSet;
+    bool m_customerUserNameHasBeenSet = false;
 
     Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet;
+    bool m_securityGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectIps;
-    bool m_connectIpsHasBeenSet;
+    bool m_connectIpsHasBeenSet = false;
   };
 
 } // namespace Model

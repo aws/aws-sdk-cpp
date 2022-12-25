@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRemoveFacetFromObject">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObject
+  class BatchRemoveFacetFromObject
   {
   public:
-    BatchRemoveFacetFromObject();
-    BatchRemoveFacetFromObject(Aws::Utils::Json::JsonView jsonValue);
-    BatchRemoveFacetFromObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObject();
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SchemaFacet m_schemaFacet;
-    bool m_schemaFacetHasBeenSet;
+    bool m_schemaFacetHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

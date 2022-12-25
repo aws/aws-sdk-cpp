@@ -29,13 +29,54 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListEntitiesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ListEntitiesFilter
+  class ListEntitiesFilter
   {
   public:
-    ListEntitiesFilter();
-    ListEntitiesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListEntitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ListEntitiesFilter();
+    AWS_IOTTWINMAKER_API ListEntitiesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ListEntitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline const Aws::String& GetParentEntityId() const{ return m_parentEntityId; }
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline bool ParentEntityIdHasBeenSet() const { return m_parentEntityIdHasBeenSet; }
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline void SetParentEntityId(const Aws::String& value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId = value; }
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline void SetParentEntityId(Aws::String&& value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId = std::move(value); }
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline void SetParentEntityId(const char* value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId.assign(value); }
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline ListEntitiesFilter& WithParentEntityId(const Aws::String& value) { SetParentEntityId(value); return *this;}
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline ListEntitiesFilter& WithParentEntityId(Aws::String&& value) { SetParentEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent of the entities in the list.</p>
+     */
+    inline ListEntitiesFilter& WithParentEntityId(const char* value) { SetParentEntityId(value); return *this;}
 
 
     /**
@@ -127,57 +168,16 @@ namespace Model
      */
     inline ListEntitiesFilter& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline const Aws::String& GetParentEntityId() const{ return m_parentEntityId; }
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline bool ParentEntityIdHasBeenSet() const { return m_parentEntityIdHasBeenSet; }
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline void SetParentEntityId(const Aws::String& value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId = value; }
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline void SetParentEntityId(Aws::String&& value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId = std::move(value); }
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline void SetParentEntityId(const char* value) { m_parentEntityIdHasBeenSet = true; m_parentEntityId.assign(value); }
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline ListEntitiesFilter& WithParentEntityId(const Aws::String& value) { SetParentEntityId(value); return *this;}
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline ListEntitiesFilter& WithParentEntityId(Aws::String&& value) { SetParentEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The parent of the entities in the list.</p>
-     */
-    inline ListEntitiesFilter& WithParentEntityId(const char* value) { SetParentEntityId(value); return *this;}
-
   private:
 
+    Aws::String m_parentEntityId;
+    bool m_parentEntityIdHasBeenSet = false;
+
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
-
-    Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

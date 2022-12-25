@@ -5,227 +5,73 @@
 
 #pragma once
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
-#include <aws/machinelearning/MachineLearningErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/machinelearning/model/AddTagsResult.h>
-#include <aws/machinelearning/model/CreateBatchPredictionResult.h>
-#include <aws/machinelearning/model/CreateDataSourceFromRDSResult.h>
-#include <aws/machinelearning/model/CreateDataSourceFromRedshiftResult.h>
-#include <aws/machinelearning/model/CreateDataSourceFromS3Result.h>
-#include <aws/machinelearning/model/CreateEvaluationResult.h>
-#include <aws/machinelearning/model/CreateMLModelResult.h>
-#include <aws/machinelearning/model/CreateRealtimeEndpointResult.h>
-#include <aws/machinelearning/model/DeleteBatchPredictionResult.h>
-#include <aws/machinelearning/model/DeleteDataSourceResult.h>
-#include <aws/machinelearning/model/DeleteEvaluationResult.h>
-#include <aws/machinelearning/model/DeleteMLModelResult.h>
-#include <aws/machinelearning/model/DeleteRealtimeEndpointResult.h>
-#include <aws/machinelearning/model/DeleteTagsResult.h>
-#include <aws/machinelearning/model/DescribeBatchPredictionsResult.h>
-#include <aws/machinelearning/model/DescribeDataSourcesResult.h>
-#include <aws/machinelearning/model/DescribeEvaluationsResult.h>
-#include <aws/machinelearning/model/DescribeMLModelsResult.h>
-#include <aws/machinelearning/model/DescribeTagsResult.h>
-#include <aws/machinelearning/model/GetBatchPredictionResult.h>
-#include <aws/machinelearning/model/GetDataSourceResult.h>
-#include <aws/machinelearning/model/GetEvaluationResult.h>
-#include <aws/machinelearning/model/GetMLModelResult.h>
-#include <aws/machinelearning/model/PredictResult.h>
-#include <aws/machinelearning/model/UpdateBatchPredictionResult.h>
-#include <aws/machinelearning/model/UpdateDataSourceResult.h>
-#include <aws/machinelearning/model/UpdateEvaluationResult.h>
-#include <aws/machinelearning/model/UpdateMLModelResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/machinelearning/MachineLearningServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MachineLearning
 {
-
-namespace Model
-{
-        class AddTagsRequest;
-        class CreateBatchPredictionRequest;
-        class CreateDataSourceFromRDSRequest;
-        class CreateDataSourceFromRedshiftRequest;
-        class CreateDataSourceFromS3Request;
-        class CreateEvaluationRequest;
-        class CreateMLModelRequest;
-        class CreateRealtimeEndpointRequest;
-        class DeleteBatchPredictionRequest;
-        class DeleteDataSourceRequest;
-        class DeleteEvaluationRequest;
-        class DeleteMLModelRequest;
-        class DeleteRealtimeEndpointRequest;
-        class DeleteTagsRequest;
-        class DescribeBatchPredictionsRequest;
-        class DescribeDataSourcesRequest;
-        class DescribeEvaluationsRequest;
-        class DescribeMLModelsRequest;
-        class DescribeTagsRequest;
-        class GetBatchPredictionRequest;
-        class GetDataSourceRequest;
-        class GetEvaluationRequest;
-        class GetMLModelRequest;
-        class PredictRequest;
-        class UpdateBatchPredictionRequest;
-        class UpdateDataSourceRequest;
-        class UpdateEvaluationRequest;
-        class UpdateMLModelRequest;
-
-        typedef Aws::Utils::Outcome<AddTagsResult, MachineLearningError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateBatchPredictionResult, MachineLearningError> CreateBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromRDSResult, MachineLearningError> CreateDataSourceFromRDSOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromRedshiftResult, MachineLearningError> CreateDataSourceFromRedshiftOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSourceFromS3Result, MachineLearningError> CreateDataSourceFromS3Outcome;
-        typedef Aws::Utils::Outcome<CreateEvaluationResult, MachineLearningError> CreateEvaluationOutcome;
-        typedef Aws::Utils::Outcome<CreateMLModelResult, MachineLearningError> CreateMLModelOutcome;
-        typedef Aws::Utils::Outcome<CreateRealtimeEndpointResult, MachineLearningError> CreateRealtimeEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteBatchPredictionResult, MachineLearningError> DeleteBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDataSourceResult, MachineLearningError> DeleteDataSourceOutcome;
-        typedef Aws::Utils::Outcome<DeleteEvaluationResult, MachineLearningError> DeleteEvaluationOutcome;
-        typedef Aws::Utils::Outcome<DeleteMLModelResult, MachineLearningError> DeleteMLModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteRealtimeEndpointResult, MachineLearningError> DeleteRealtimeEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteTagsResult, MachineLearningError> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeBatchPredictionsResult, MachineLearningError> DescribeBatchPredictionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDataSourcesResult, MachineLearningError> DescribeDataSourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEvaluationsResult, MachineLearningError> DescribeEvaluationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeMLModelsResult, MachineLearningError> DescribeMLModelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, MachineLearningError> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<GetBatchPredictionResult, MachineLearningError> GetBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<GetDataSourceResult, MachineLearningError> GetDataSourceOutcome;
-        typedef Aws::Utils::Outcome<GetEvaluationResult, MachineLearningError> GetEvaluationOutcome;
-        typedef Aws::Utils::Outcome<GetMLModelResult, MachineLearningError> GetMLModelOutcome;
-        typedef Aws::Utils::Outcome<PredictResult, MachineLearningError> PredictOutcome;
-        typedef Aws::Utils::Outcome<UpdateBatchPredictionResult, MachineLearningError> UpdateBatchPredictionOutcome;
-        typedef Aws::Utils::Outcome<UpdateDataSourceResult, MachineLearningError> UpdateDataSourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEvaluationResult, MachineLearningError> UpdateEvaluationOutcome;
-        typedef Aws::Utils::Outcome<UpdateMLModelResult, MachineLearningError> UpdateMLModelOutcome;
-
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<CreateBatchPredictionOutcome> CreateBatchPredictionOutcomeCallable;
-        typedef std::future<CreateDataSourceFromRDSOutcome> CreateDataSourceFromRDSOutcomeCallable;
-        typedef std::future<CreateDataSourceFromRedshiftOutcome> CreateDataSourceFromRedshiftOutcomeCallable;
-        typedef std::future<CreateDataSourceFromS3Outcome> CreateDataSourceFromS3OutcomeCallable;
-        typedef std::future<CreateEvaluationOutcome> CreateEvaluationOutcomeCallable;
-        typedef std::future<CreateMLModelOutcome> CreateMLModelOutcomeCallable;
-        typedef std::future<CreateRealtimeEndpointOutcome> CreateRealtimeEndpointOutcomeCallable;
-        typedef std::future<DeleteBatchPredictionOutcome> DeleteBatchPredictionOutcomeCallable;
-        typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
-        typedef std::future<DeleteEvaluationOutcome> DeleteEvaluationOutcomeCallable;
-        typedef std::future<DeleteMLModelOutcome> DeleteMLModelOutcomeCallable;
-        typedef std::future<DeleteRealtimeEndpointOutcome> DeleteRealtimeEndpointOutcomeCallable;
-        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
-        typedef std::future<DescribeBatchPredictionsOutcome> DescribeBatchPredictionsOutcomeCallable;
-        typedef std::future<DescribeDataSourcesOutcome> DescribeDataSourcesOutcomeCallable;
-        typedef std::future<DescribeEvaluationsOutcome> DescribeEvaluationsOutcomeCallable;
-        typedef std::future<DescribeMLModelsOutcome> DescribeMLModelsOutcomeCallable;
-        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
-        typedef std::future<GetBatchPredictionOutcome> GetBatchPredictionOutcomeCallable;
-        typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
-        typedef std::future<GetEvaluationOutcome> GetEvaluationOutcomeCallable;
-        typedef std::future<GetMLModelOutcome> GetMLModelOutcomeCallable;
-        typedef std::future<PredictOutcome> PredictOutcomeCallable;
-        typedef std::future<UpdateBatchPredictionOutcome> UpdateBatchPredictionOutcomeCallable;
-        typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
-        typedef std::future<UpdateEvaluationOutcome> UpdateEvaluationOutcomeCallable;
-        typedef std::future<UpdateMLModelOutcome> UpdateMLModelOutcomeCallable;
-} // namespace Model
-
-  class MachineLearningClient;
-
-    typedef std::function<void(const MachineLearningClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateBatchPredictionRequest&, const Model::CreateBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchPredictionResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateDataSourceFromRDSRequest&, const Model::CreateDataSourceFromRDSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceFromRDSResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateDataSourceFromRedshiftRequest&, const Model::CreateDataSourceFromRedshiftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceFromRedshiftResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateDataSourceFromS3Request&, const Model::CreateDataSourceFromS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceFromS3ResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateEvaluationRequest&, const Model::CreateEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEvaluationResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateMLModelRequest&, const Model::CreateMLModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMLModelResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::CreateRealtimeEndpointRequest&, const Model::CreateRealtimeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRealtimeEndpointResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteBatchPredictionRequest&, const Model::DeleteBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBatchPredictionResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteEvaluationRequest&, const Model::DeleteEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteMLModelRequest&, const Model::DeleteMLModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMLModelResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteRealtimeEndpointRequest&, const Model::DeleteRealtimeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRealtimeEndpointResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DescribeBatchPredictionsRequest&, const Model::DescribeBatchPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchPredictionsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DescribeDataSourcesRequest&, const Model::DescribeDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourcesResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DescribeEvaluationsRequest&, const Model::DescribeEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEvaluationsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DescribeMLModelsRequest&, const Model::DescribeMLModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMLModelsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::GetBatchPredictionRequest&, const Model::GetBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBatchPredictionResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::GetEvaluationRequest&, const Model::GetEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvaluationResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::GetMLModelRequest&, const Model::GetMLModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMLModelResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::PredictRequest&, const Model::PredictOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PredictResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::UpdateBatchPredictionRequest&, const Model::UpdateBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBatchPredictionResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::UpdateEvaluationRequest&, const Model::UpdateEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEvaluationResponseReceivedHandler;
-    typedef std::function<void(const MachineLearningClient*, const Model::UpdateMLModelRequest&, const Model::UpdateMLModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMLModelResponseReceivedHandler;
-
   /**
    * Definition of the public APIs exposed by Amazon Machine Learning
    */
-  class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient
+  class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MachineLearningClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MachineLearningClient(const Aws::MachineLearning::MachineLearningClientConfiguration& clientConfiguration = Aws::MachineLearning::MachineLearningClientConfiguration(),
+                              std::shared_ptr<MachineLearningEndpointProviderBase> endpointProvider = Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MachineLearningClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MachineLearningClient(const Aws::Auth::AWSCredentials& credentials,
+                              std::shared_ptr<MachineLearningEndpointProviderBase> endpointProvider = Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::MachineLearning::MachineLearningClientConfiguration& clientConfiguration = Aws::MachineLearning::MachineLearningClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MachineLearningClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<MachineLearningEndpointProviderBase> endpointProvider = Aws::MakeShared<MachineLearningEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::MachineLearning::MachineLearningClientConfiguration& clientConfiguration = Aws::MachineLearning::MachineLearningClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MachineLearningClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MachineLearningClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MachineLearningClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MachineLearningClient();
-
 
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
@@ -885,40 +731,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MachineLearningEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBatchPredictionAsyncHelper(const Model::CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataSourceFromRDSAsyncHelper(const Model::CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataSourceFromRedshiftAsyncHelper(const Model::CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataSourceFromS3AsyncHelper(const Model::CreateDataSourceFromS3Request& request, const CreateDataSourceFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEvaluationAsyncHelper(const Model::CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMLModelAsyncHelper(const Model::CreateMLModelRequest& request, const CreateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRealtimeEndpointAsyncHelper(const Model::CreateRealtimeEndpointRequest& request, const CreateRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBatchPredictionAsyncHelper(const Model::DeleteBatchPredictionRequest& request, const DeleteBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEvaluationAsyncHelper(const Model::DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMLModelAsyncHelper(const Model::DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRealtimeEndpointAsyncHelper(const Model::DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBatchPredictionsAsyncHelper(const Model::DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDataSourcesAsyncHelper(const Model::DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEvaluationsAsyncHelper(const Model::DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMLModelsAsyncHelper(const Model::DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBatchPredictionAsyncHelper(const Model::GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataSourceAsyncHelper(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvaluationAsyncHelper(const Model::GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMLModelAsyncHelper(const Model::GetMLModelRequest& request, const GetMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PredictAsyncHelper(const Model::PredictRequest& request, const PredictResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateBatchPredictionAsyncHelper(const Model::UpdateBatchPredictionRequest& request, const UpdateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEvaluationAsyncHelper(const Model::UpdateEvaluationRequest& request, const UpdateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMLModelAsyncHelper(const Model::UpdateMLModelRequest& request, const UpdateMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>;
+      void init(const MachineLearningClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MachineLearningClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MachineLearningEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MachineLearning

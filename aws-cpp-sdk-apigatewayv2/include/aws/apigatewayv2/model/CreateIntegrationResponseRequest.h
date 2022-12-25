@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponseRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateIntegrationResponseRequest : public ApiGatewayV2Request
+  class CreateIntegrationResponseRequest : public ApiGatewayV2Request
   {
   public:
-    CreateIntegrationResponseRequest();
+    AWS_APIGATEWAYV2_API CreateIntegrationResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIntegrationResponse"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -573,25 +573,25 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     ContentHandlingStrategy m_contentHandlingStrategy;
-    bool m_contentHandlingStrategyHasBeenSet;
+    bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_integrationId;
-    bool m_integrationIdHasBeenSet;
+    bool m_integrationIdHasBeenSet = false;
 
     Aws::String m_integrationResponseKey;
-    bool m_integrationResponseKeyHasBeenSet;
+    bool m_integrationResponseKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
 
     Aws::String m_templateSelectionExpression;
-    bool m_templateSelectionExpressionHasBeenSet;
+    bool m_templateSelectionExpressionHasBeenSet = false;
   };
 
 } // namespace Model

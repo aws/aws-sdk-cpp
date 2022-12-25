@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyInstanceAttributeRequest : public EC2Request
+  class ModifyInstanceAttributeRequest : public EC2Request
   {
   public:
-    ModifyInstanceAttributeRequest();
+    AWS_EC2_API ModifyInstanceAttributeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceAttribute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -104,32 +104,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline ModifyInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The name of the attribute.</p>
+     * <p>The name of the attribute to modify.</p>  <p>You can modify the
+     * following attributes only: <code>disableApiTermination</code> |
+     * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
+     * <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code>
+     * | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> |
+     * <code>ebsOptimized</code> | <code>sriovNetSupport</code> |
+     * <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+     * | <code>enclaveOptions</code> </p> 
      */
     inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
@@ -917,55 +959,55 @@ namespace Model
   private:
 
     AttributeBooleanValue m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
 
     InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMappingSpecification> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     AttributeBooleanValue m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     AttributeBooleanValue m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     AttributeBooleanValue m_enaSupport;
-    bool m_enaSupportHasBeenSet;
+    bool m_enaSupportHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     AttributeValue m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     AttributeValue m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     AttributeValue m_kernel;
-    bool m_kernelHasBeenSet;
+    bool m_kernelHasBeenSet = false;
 
     AttributeValue m_ramdisk;
-    bool m_ramdiskHasBeenSet;
+    bool m_ramdiskHasBeenSet = false;
 
     AttributeValue m_sriovNetSupport;
-    bool m_sriovNetSupportHasBeenSet;
+    bool m_sriovNetSupportHasBeenSet = false;
 
     BlobAttributeValue m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AttributeBooleanValue m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

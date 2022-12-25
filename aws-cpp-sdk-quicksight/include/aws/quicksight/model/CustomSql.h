@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomSql">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomSql
+  class CustomSql
   {
   public:
-    CustomSql();
-    CustomSql(Aws::Utils::Json::JsonView jsonValue);
-    CustomSql& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomSql();
+    AWS_QUICKSIGHT_API CustomSql(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomSql& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_dataSourceArn;
-    bool m_dataSourceArnHasBeenSet;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sqlQuery;
-    bool m_sqlQueryHasBeenSet;
+    bool m_sqlQueryHasBeenSet = false;
 
     Aws::Vector<InputColumn> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

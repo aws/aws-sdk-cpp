@@ -8,6 +8,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/AuthenticationMode.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API ModifyUserRequest : public ElastiCacheRequest
+  class ModifyUserRequest : public ElastiCacheRequest
   {
   public:
-    ModifyUserRequest();
+    AWS_ELASTICACHE_API ModifyUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -226,22 +227,56 @@ namespace Model
      */
     inline ModifyUserRequest& WithNoPasswordRequired(bool value) { SetNoPasswordRequired(value); return *this;}
 
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline ModifyUserRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
+
+    /**
+     * <p>Specifies how to authenticate the user.</p>
+     */
+    inline ModifyUserRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_accessString;
-    bool m_accessStringHasBeenSet;
+    bool m_accessStringHasBeenSet = false;
 
     Aws::String m_appendAccessString;
-    bool m_appendAccessStringHasBeenSet;
+    bool m_appendAccessStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;
-    bool m_passwordsHasBeenSet;
+    bool m_passwordsHasBeenSet = false;
 
     bool m_noPasswordRequired;
-    bool m_noPasswordRequiredHasBeenSet;
+    bool m_noPasswordRequiredHasBeenSet = false;
+
+    AuthenticationMode m_authenticationMode;
+    bool m_authenticationModeHasBeenSet = false;
   };
 
 } // namespace Model

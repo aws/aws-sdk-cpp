@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UdpContainerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UdpContainerSettings
+  class UdpContainerSettings
   {
   public:
-    UdpContainerSettings();
-    UdpContainerSettings(Aws::Utils::Json::JsonView jsonValue);
-    UdpContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API UdpContainerSettings();
+    AWS_MEDIALIVE_API UdpContainerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API UdpContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

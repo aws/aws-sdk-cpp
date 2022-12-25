@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetWirelessDeviceResult::GetWirelessDeviceResult() : 
-    m_type(WirelessDeviceType::NOT_SET)
+    m_type(WirelessDeviceType::NOT_SET),
+    m_positioning(PositioningConfigStatus::NOT_SET)
 {
 }
 
 GetWirelessDeviceResult::GetWirelessDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_type(WirelessDeviceType::NOT_SET)
+    m_type(WirelessDeviceType::NOT_SET),
+    m_positioning(PositioningConfigStatus::NOT_SET)
 {
   *this = result;
 }
@@ -87,6 +89,12 @@ GetWirelessDeviceResult& GetWirelessDeviceResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
+
+  }
+
+  if(jsonValue.ValueExists("Positioning"))
+  {
+    m_positioning = PositioningConfigStatusMapper::GetPositioningConfigStatusForName(jsonValue.GetString("Positioning"));
 
   }
 

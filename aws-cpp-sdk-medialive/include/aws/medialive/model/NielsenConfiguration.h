@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NielsenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NielsenConfiguration
+  class NielsenConfiguration
   {
   public:
-    NielsenConfiguration();
-    NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NielsenConfiguration();
+    AWS_MEDIALIVE_API NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_distributorId;
-    bool m_distributorIdHasBeenSet;
+    bool m_distributorIdHasBeenSet = false;
 
     NielsenPcmToId3TaggingState m_nielsenPcmToId3Tagging;
-    bool m_nielsenPcmToId3TaggingHasBeenSet;
+    bool m_nielsenPcmToId3TaggingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EndpointEventBus">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API EndpointEventBus
+  class EndpointEventBus
   {
   public:
-    EndpointEventBus();
-    EndpointEventBus(Aws::Utils::Json::JsonView jsonValue);
-    EndpointEventBus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API EndpointEventBus();
+    AWS_EVENTBRIDGE_API EndpointEventBus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API EndpointEventBus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_eventBusArn;
-    bool m_eventBusArnHasBeenSet;
+    bool m_eventBusArnHasBeenSet = false;
   };
 
 } // namespace Model

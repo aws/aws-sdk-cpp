@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformResources">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformResources
+  class TransformResources
   {
   public:
-    TransformResources();
-    TransformResources(Aws::Utils::Json::JsonView jsonValue);
-    TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformResources();
+    AWS_SAGEMAKER_API TransformResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,30 +83,30 @@ namespace Model
 
 
     /**
-     * <p>The number of ML compute instances to use in the transform job. For
-     * distributed transform jobs, specify a value greater than 1. The default value is
-     * <code>1</code>.</p>
+     * <p>The number of ML compute instances to use in the transform job. The default
+     * value is <code>1</code>, and the maximum is <code>100</code>. For distributed
+     * transform jobs, specify a value greater than <code>1</code>.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of ML compute instances to use in the transform job. For
-     * distributed transform jobs, specify a value greater than 1. The default value is
-     * <code>1</code>.</p>
+     * <p>The number of ML compute instances to use in the transform job. The default
+     * value is <code>1</code>, and the maximum is <code>100</code>. For distributed
+     * transform jobs, specify a value greater than <code>1</code>.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of ML compute instances to use in the transform job. For
-     * distributed transform jobs, specify a value greater than 1. The default value is
-     * <code>1</code>.</p>
+     * <p>The number of ML compute instances to use in the transform job. The default
+     * value is <code>1</code>, and the maximum is <code>100</code>. For distributed
+     * transform jobs, specify a value greater than <code>1</code>.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of ML compute instances to use in the transform job. For
-     * distributed transform jobs, specify a value greater than 1. The default value is
-     * <code>1</code>.</p>
+     * <p>The number of ML compute instances to use in the transform job. The default
+     * value is <code>1</code>, and the maximum is <code>100</code>. For distributed
+     * transform jobs, specify a value greater than <code>1</code>.</p>
      */
     inline TransformResources& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -306,13 +306,13 @@ namespace Model
   private:
 
     TransformInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

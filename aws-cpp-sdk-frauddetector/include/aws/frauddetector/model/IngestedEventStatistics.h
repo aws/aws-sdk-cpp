@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/IngestedEventStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API IngestedEventStatistics
+  class IngestedEventStatistics
   {
   public:
-    IngestedEventStatistics();
-    IngestedEventStatistics(Aws::Utils::Json::JsonView jsonValue);
-    IngestedEventStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API IngestedEventStatistics();
+    AWS_FRAUDDETECTOR_API IngestedEventStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API IngestedEventStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,19 +204,19 @@ namespace Model
   private:
 
     long long m_numberOfEvents;
-    bool m_numberOfEventsHasBeenSet;
+    bool m_numberOfEventsHasBeenSet = false;
 
     long long m_eventDataSizeInBytes;
-    bool m_eventDataSizeInBytesHasBeenSet;
+    bool m_eventDataSizeInBytesHasBeenSet = false;
 
     Aws::String m_leastRecentEvent;
-    bool m_leastRecentEventHasBeenSet;
+    bool m_leastRecentEventHasBeenSet = false;
 
     Aws::String m_mostRecentEvent;
-    bool m_mostRecentEventHasBeenSet;
+    bool m_mostRecentEventHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

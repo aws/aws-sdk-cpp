@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ClassificationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ClassificationResult
+  class ClassificationResult
   {
   public:
-    ClassificationResult();
-    ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ClassificationResult();
+    AWS_SECURITYHUB_API ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_mimeType;
-    bool m_mimeTypeHasBeenSet;
+    bool m_mimeTypeHasBeenSet = false;
 
     long long m_sizeClassified;
-    bool m_sizeClassifiedHasBeenSet;
+    bool m_sizeClassifiedHasBeenSet = false;
 
     bool m_additionalOccurrences;
-    bool m_additionalOccurrencesHasBeenSet;
+    bool m_additionalOccurrencesHasBeenSet = false;
 
     ClassificationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<SensitiveDataResult> m_sensitiveData;
-    bool m_sensitiveDataHasBeenSet;
+    bool m_sensitiveDataHasBeenSet = false;
 
     CustomDataIdentifiersResult m_customDataIdentifiers;
-    bool m_customDataIdentifiersHasBeenSet;
+    bool m_customDataIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

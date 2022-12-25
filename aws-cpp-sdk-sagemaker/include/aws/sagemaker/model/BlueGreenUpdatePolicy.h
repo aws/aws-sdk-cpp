@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BlueGreenUpdatePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API BlueGreenUpdatePolicy
+  class BlueGreenUpdatePolicy
   {
   public:
-    BlueGreenUpdatePolicy();
-    BlueGreenUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
-    BlueGreenUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API BlueGreenUpdatePolicy();
+    AWS_SAGEMAKER_API BlueGreenUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API BlueGreenUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,13 +140,13 @@ namespace Model
   private:
 
     TrafficRoutingConfig m_trafficRoutingConfiguration;
-    bool m_trafficRoutingConfigurationHasBeenSet;
+    bool m_trafficRoutingConfigurationHasBeenSet = false;
 
     int m_terminationWaitInSeconds;
-    bool m_terminationWaitInSecondsHasBeenSet;
+    bool m_terminationWaitInSecondsHasBeenSet = false;
 
     int m_maximumExecutionTimeoutInSeconds;
-    bool m_maximumExecutionTimeoutInSecondsHasBeenSet;
+    bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

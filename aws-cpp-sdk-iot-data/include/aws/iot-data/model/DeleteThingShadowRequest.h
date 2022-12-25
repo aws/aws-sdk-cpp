@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadowRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API DeleteThingShadowRequest : public IoTDataPlaneRequest
+  class DeleteThingShadowRequest : public IoTDataPlaneRequest
   {
   public:
-    DeleteThingShadowRequest();
+    AWS_IOTDATAPLANE_API DeleteThingShadowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteThingShadow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTDATAPLANE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTDATAPLANE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_shadowName;
-    bool m_shadowNameHasBeenSet;
+    bool m_shadowNameHasBeenSet = false;
   };
 
 } // namespace Model

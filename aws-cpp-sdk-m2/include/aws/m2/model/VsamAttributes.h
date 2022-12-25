@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/VsamAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API VsamAttributes
+  class VsamAttributes
   {
   public:
-    VsamAttributes();
-    VsamAttributes(Aws::Utils::Json::JsonView jsonValue);
-    VsamAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API VsamAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API VsamAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API VsamAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::Vector<AlternateKey> m_alternateKeys;
-    bool m_alternateKeysHasBeenSet;
+    bool m_alternateKeysHasBeenSet = false;
 
     bool m_compressed;
-    bool m_compressedHasBeenSet;
+    bool m_compressedHasBeenSet = false;
 
     Aws::String m_encoding;
-    bool m_encodingHasBeenSet;
+    bool m_encodingHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     PrimaryKey m_primaryKey;
-    bool m_primaryKeyHasBeenSet;
+    bool m_primaryKeyHasBeenSet = false;
   };
 
 } // namespace Model

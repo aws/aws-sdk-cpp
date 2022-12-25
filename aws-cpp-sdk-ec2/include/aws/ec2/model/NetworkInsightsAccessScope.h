@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInsightsAccessScope">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInsightsAccessScope
+  class NetworkInsightsAccessScope
   {
   public:
-    NetworkInsightsAccessScope();
-    NetworkInsightsAccessScope(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInsightsAccessScope& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScope();
+    AWS_EC2_API NetworkInsightsAccessScope(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScope& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAccessScopeId;
-    bool m_networkInsightsAccessScopeIdHasBeenSet;
+    bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeArn;
-    bool m_networkInsightsAccessScopeArnHasBeenSet;
+    bool m_networkInsightsAccessScopeArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobRun">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API JobRun
+  class JobRun
   {
   public:
-    JobRun();
-    JobRun(Aws::Utils::Json::JsonView jsonValue);
-    JobRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API JobRun();
+    AWS_GLUEDATABREW_API JobRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API JobRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -749,58 +749,58 @@ namespace Model
   private:
 
     int m_attempt;
-    bool m_attemptHasBeenSet;
+    bool m_attemptHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     int m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     JobRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     LogSubscription m_logSubscription;
-    bool m_logSubscriptionHasBeenSet;
+    bool m_logSubscriptionHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
-    bool m_dataCatalogOutputsHasBeenSet;
+    bool m_dataCatalogOutputsHasBeenSet = false;
 
     Aws::Vector<DatabaseOutput> m_databaseOutputs;
-    bool m_databaseOutputsHasBeenSet;
+    bool m_databaseOutputsHasBeenSet = false;
 
     RecipeReference m_recipeReference;
-    bool m_recipeReferenceHasBeenSet;
+    bool m_recipeReferenceHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     JobSample m_jobSample;
-    bool m_jobSampleHasBeenSet;
+    bool m_jobSampleHasBeenSet = false;
 
     Aws::Vector<ValidationConfiguration> m_validationConfigurations;
-    bool m_validationConfigurationsHasBeenSet;
+    bool m_validationConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

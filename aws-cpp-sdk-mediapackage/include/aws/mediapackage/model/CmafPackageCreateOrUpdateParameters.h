@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CmafPackageCreateOrUpdateParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API CmafPackageCreateOrUpdateParameters
+  class CmafPackageCreateOrUpdateParameters
   {
   public:
-    CmafPackageCreateOrUpdateParameters();
-    CmafPackageCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
-    CmafPackageCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API CmafPackageCreateOrUpdateParameters();
+    AWS_MEDIAPACKAGE_API CmafPackageCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API CmafPackageCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -205,19 +205,19 @@ rounded to the
   private:
 
     CmafEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::Vector<HlsManifestCreateOrUpdateParameters> m_hlsManifests;
-    bool m_hlsManifestsHasBeenSet;
+    bool m_hlsManifestsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     Aws::String m_segmentPrefix;
-    bool m_segmentPrefixHasBeenSet;
+    bool m_segmentPrefixHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

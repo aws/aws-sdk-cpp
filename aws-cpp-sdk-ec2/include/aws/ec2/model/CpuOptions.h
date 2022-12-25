@@ -26,15 +26,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CpuOptions">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API CpuOptions
+  class CpuOptions
   {
   public:
-    CpuOptions();
-    CpuOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CpuOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CpuOptions();
+    AWS_EC2_API CpuOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CpuOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     int m_coreCount;
-    bool m_coreCountHasBeenSet;
+    bool m_coreCountHasBeenSet = false;
 
     int m_threadsPerCore;
-    bool m_threadsPerCoreHasBeenSet;
+    bool m_threadsPerCoreHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API CreateIntegrationAssociationRequest : public ConnectRequest
+  class CreateIntegrationAssociationRequest : public ConnectRequest
   {
   public:
-    CreateIntegrationAssociationRequest();
+    AWS_CONNECT_API CreateIntegrationAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIntegrationAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,42 +116,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline const Aws::String& GetIntegrationArn() const{ return m_integrationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline void SetIntegrationArn(const Aws::String& value) { m_integrationArnHasBeenSet = true; m_integrationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline void SetIntegrationArn(Aws::String&& value) { m_integrationArnHasBeenSet = true; m_integrationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline void SetIntegrationArn(const char* value) { m_integrationArnHasBeenSet = true; m_integrationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline CreateIntegrationAssociationRequest& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline CreateIntegrationAssociationRequest& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the integration.</p>
+     * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
+     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
+     * instances must be in the same account.</p> 
      */
     inline CreateIntegrationAssociationRequest& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
 
@@ -292,92 +308,105 @@ namespace Model
 
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateIntegrationAssociationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     IntegrationType m_integrationType;
-    bool m_integrationTypeHasBeenSet;
+    bool m_integrationTypeHasBeenSet = false;
 
     Aws::String m_integrationArn;
-    bool m_integrationArnHasBeenSet;
+    bool m_integrationArnHasBeenSet = false;
 
     Aws::String m_sourceApplicationUrl;
-    bool m_sourceApplicationUrlHasBeenSet;
+    bool m_sourceApplicationUrlHasBeenSet = false;
 
     Aws::String m_sourceApplicationName;
-    bool m_sourceApplicationNameHasBeenSet;
+    bool m_sourceApplicationNameHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,27 +26,37 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DescribeAttackStatisticsResult
+  class DescribeAttackStatisticsResult
   {
   public:
-    DescribeAttackStatisticsResult();
-    DescribeAttackStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttackStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackStatisticsResult();
+    AWS_SHIELD_API DescribeAttackStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The time range of the attack.</p>
+     */
     inline const TimeRange& GetTimeRange() const{ return m_timeRange; }
 
-    
+    /**
+     * <p>The time range of the attack.</p>
+     */
     inline void SetTimeRange(const TimeRange& value) { m_timeRange = value; }
 
-    
+    /**
+     * <p>The time range of the attack.</p>
+     */
     inline void SetTimeRange(TimeRange&& value) { m_timeRange = std::move(value); }
 
-    
+    /**
+     * <p>The time range of the attack.</p>
+     */
     inline DescribeAttackStatisticsResult& WithTimeRange(const TimeRange& value) { SetTimeRange(value); return *this;}
 
-    
+    /**
+     * <p>The time range of the attack.</p>
+     */
     inline DescribeAttackStatisticsResult& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
 
 

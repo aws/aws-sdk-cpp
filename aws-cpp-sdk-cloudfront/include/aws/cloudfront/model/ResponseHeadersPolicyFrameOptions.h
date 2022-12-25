@@ -24,21 +24,21 @@ namespace Model
 
   /**
    * <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP
-   * response header and the header’s value.</p> <p>For more information about the
+   * response header and the header's value.</p> <p>For more information about the
    * <code>X-Frame-Options</code> HTTP response header, see <a
    * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
    * in the MDN Web Docs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyFrameOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions
+  class ResponseHeadersPolicyFrameOptions
   {
   public:
-    ResponseHeadersPolicyFrameOptions();
-    ResponseHeadersPolicyFrameOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyFrameOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -99,7 +99,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid
-     * values are <code>DENY</code> and <code>SAMEORIGIN</code>. </p> <p>For more
+     * values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p> <p>For more
      * information about these values, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     FrameOptionsList m_frameOption;
-    bool m_frameOptionHasBeenSet;
+    bool m_frameOptionHasBeenSet = false;
   };
 
 } // namespace Model

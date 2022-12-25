@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API DescribeAlarmsForMetricRequest : public CloudWatchRequest
+  class DescribeAlarmsForMetricRequest : public CloudWatchRequest
   {
   public:
-    DescribeAlarmsForMetricRequest();
+    AWS_CLOUDWATCH_API DescribeAlarmsForMetricRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAlarmsForMetric"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -311,25 +311,25 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Statistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::String m_extendedStatistic;
-    bool m_extendedStatisticHasBeenSet;
+    bool m_extendedStatisticHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

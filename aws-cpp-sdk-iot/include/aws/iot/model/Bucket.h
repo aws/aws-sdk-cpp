@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Bucket">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Bucket
+  class Bucket
   {
   public:
-    Bucket();
-    Bucket(Aws::Utils::Json::JsonView jsonValue);
-    Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Bucket();
+    AWS_IOT_API Bucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_keyValue;
-    bool m_keyValueHasBeenSet;
+    bool m_keyValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

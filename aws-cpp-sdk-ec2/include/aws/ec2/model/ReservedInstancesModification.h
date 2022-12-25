@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstancesModification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstancesModification
+  class ReservedInstancesModification
   {
   public:
-    ReservedInstancesModification();
-    ReservedInstancesModification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstancesModification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesModification();
+    AWS_EC2_API ReservedInstancesModification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstancesModification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -416,31 +416,31 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_effectiveDate;
-    bool m_effectiveDateHasBeenSet;
+    bool m_effectiveDateHasBeenSet = false;
 
     Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
-    bool m_modificationResultsHasBeenSet;
+    bool m_modificationResultsHasBeenSet = false;
 
     Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
-    bool m_reservedInstancesIdsHasBeenSet;
+    bool m_reservedInstancesIdsHasBeenSet = false;
 
     Aws::String m_reservedInstancesModificationId;
-    bool m_reservedInstancesModificationIdHasBeenSet;
+    bool m_reservedInstancesModificationIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
   };
 
 } // namespace Model

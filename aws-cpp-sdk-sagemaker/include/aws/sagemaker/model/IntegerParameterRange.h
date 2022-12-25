@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/IntegerParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API IntegerParameterRange
+  class IntegerParameterRange
   {
   public:
-    IntegerParameterRange();
-    IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API IntegerParameterRange();
+    AWS_SAGEMAKER_API IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,16 +249,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     Aws::String m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     HyperParameterScalingType m_scalingType;
-    bool m_scalingTypeHasBeenSet;
+    bool m_scalingTypeHasBeenSet = false;
   };
 
 } // namespace Model

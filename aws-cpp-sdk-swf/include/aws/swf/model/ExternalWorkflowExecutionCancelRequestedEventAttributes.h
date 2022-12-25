@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ExternalWorkflowExecutionCancelRequestedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ExternalWorkflowExecutionCancelRequestedEventAttributes
+  class ExternalWorkflowExecutionCancelRequestedEventAttributes
   {
   public:
-    ExternalWorkflowExecutionCancelRequestedEventAttributes();
-    ExternalWorkflowExecutionCancelRequestedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ExternalWorkflowExecutionCancelRequestedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ExternalWorkflowExecutionCancelRequestedEventAttributes();
+    AWS_SWF_API ExternalWorkflowExecutionCancelRequestedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ExternalWorkflowExecutionCancelRequestedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     WorkflowExecution m_workflowExecution;
-    bool m_workflowExecutionHasBeenSet;
+    bool m_workflowExecutionHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

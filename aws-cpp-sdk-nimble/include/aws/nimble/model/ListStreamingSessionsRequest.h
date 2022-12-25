@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API ListStreamingSessionsRequest : public NimbleStudioRequest
+  class ListStreamingSessionsRequest : public NimbleStudioRequest
   {
   public:
-    ListStreamingSessionsRequest();
+    AWS_NIMBLESTUDIO_API ListStreamingSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListStreamingSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_NIMBLESTUDIO_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -80,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStreamingSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStreamingSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStreamingSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -245,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_sessionIds;
-    bool m_sessionIdsHasBeenSet;
+    bool m_sessionIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

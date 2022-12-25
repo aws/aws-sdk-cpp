@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UiTemplateInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UiTemplateInfo
+  class UiTemplateInfo
   {
   public:
-    UiTemplateInfo();
-    UiTemplateInfo(Aws::Utils::Json::JsonView jsonValue);
-    UiTemplateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UiTemplateInfo();
+    AWS_SAGEMAKER_API UiTemplateInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UiTemplateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_contentSha256;
-    bool m_contentSha256HasBeenSet;
+    bool m_contentSha256HasBeenSet = false;
   };
 
 } // namespace Model

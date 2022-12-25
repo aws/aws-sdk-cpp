@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API ListReportJobsRequest : public BackupRequest
+  class ListReportJobsRequest : public BackupRequest
   {
   public:
-    ListReportJobsRequest();
+    AWS_BACKUP_API ListReportJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListReportJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -291,22 +291,22 @@ namespace Model
   private:
 
     Aws::String m_byReportPlanName;
-    bool m_byReportPlanNameHasBeenSet;
+    bool m_byReportPlanNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreationBefore;
-    bool m_byCreationBeforeHasBeenSet;
+    bool m_byCreationBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreationAfter;
-    bool m_byCreationAfterHasBeenSet;
+    bool m_byCreationAfterHasBeenSet = false;
 
     Aws::String m_byStatus;
-    bool m_byStatusHasBeenSet;
+    bool m_byStatusHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

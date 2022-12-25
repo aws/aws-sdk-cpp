@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MediaConnectFlow">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MediaConnectFlow
+  class MediaConnectFlow
   {
   public:
-    MediaConnectFlow();
-    MediaConnectFlow(Aws::Utils::Json::JsonView jsonValue);
-    MediaConnectFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MediaConnectFlow();
+    AWS_MEDIALIVE_API MediaConnectFlow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MediaConnectFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
   };
 
 } // namespace Model

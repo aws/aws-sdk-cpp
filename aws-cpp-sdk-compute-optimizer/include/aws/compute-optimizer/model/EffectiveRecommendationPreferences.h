@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
+#include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
 #include <aws/compute-optimizer/model/CpuVendorArchitecture.h>
 #include <utility>
 
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EffectiveRecommendationPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences
+  class EffectiveRecommendationPreferences
   {
   public:
-    EffectiveRecommendationPreferences();
-    EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
-    EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,16 +286,74 @@ namespace Model
      */
     inline EffectiveRecommendationPreferences& WithInferredWorkloadTypes(InferredWorkloadTypesPreference&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline const ExternalMetricsPreference& GetExternalMetricsPreference() const{ return m_externalMetricsPreference; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline bool ExternalMetricsPreferenceHasBeenSet() const { return m_externalMetricsPreferenceHasBeenSet; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline void SetExternalMetricsPreference(const ExternalMetricsPreference& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = value; }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline void SetExternalMetricsPreference(ExternalMetricsPreference&& value) { m_externalMetricsPreferenceHasBeenSet = true; m_externalMetricsPreference = std::move(value); }
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(const ExternalMetricsPreference& value) { SetExternalMetricsPreference(value); return *this;}
+
+    /**
+     * <p> An object that describes the external metrics recommendation preference.
+     * </p> <p> If the preference is applied in the latest recommendation refresh, an
+     * object with a valid <code>source</code> value appears in the response. If the
+     * preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response. </p>
+     */
+    inline EffectiveRecommendationPreferences& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
-    bool m_cpuVendorArchitecturesHasBeenSet;
+    bool m_cpuVendorArchitecturesHasBeenSet = false;
 
     EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
-    bool m_enhancedInfrastructureMetricsHasBeenSet;
+    bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
     InferredWorkloadTypesPreference m_inferredWorkloadTypes;
-    bool m_inferredWorkloadTypesHasBeenSet;
+    bool m_inferredWorkloadTypesHasBeenSet = false;
+
+    ExternalMetricsPreference m_externalMetricsPreference;
+    bool m_externalMetricsPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

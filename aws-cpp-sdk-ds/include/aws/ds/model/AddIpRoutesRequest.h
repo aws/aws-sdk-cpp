@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTORYSERVICE_API AddIpRoutesRequest : public DirectoryServiceRequest
+  class AddIpRoutesRequest : public DirectoryServiceRequest
   {
   public:
-    AddIpRoutesRequest();
+    AWS_DIRECTORYSERVICE_API AddIpRoutesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddIpRoutes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -245,13 +245,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<IpRoute> m_ipRoutes;
-    bool m_ipRoutesHasBeenSet;
+    bool m_ipRoutesHasBeenSet = false;
 
     bool m_updateSecurityGroupForDirectoryControllers;
-    bool m_updateSecurityGroupForDirectoryControllersHasBeenSet;
+    bool m_updateSecurityGroupForDirectoryControllersHasBeenSet = false;
   };
 
 } // namespace Model

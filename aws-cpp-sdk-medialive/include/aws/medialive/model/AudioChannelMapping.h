@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioChannelMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioChannelMapping
+  class AudioChannelMapping
   {
   public:
-    AudioChannelMapping();
-    AudioChannelMapping(Aws::Utils::Json::JsonView jsonValue);
-    AudioChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioChannelMapping();
+    AWS_MEDIALIVE_API AudioChannelMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::Vector<InputChannelLevel> m_inputChannelLevels;
-    bool m_inputChannelLevelsHasBeenSet;
+    bool m_inputChannelLevelsHasBeenSet = false;
 
     int m_outputChannel;
-    bool m_outputChannelHasBeenSet;
+    bool m_outputChannelHasBeenSet = false;
   };
 
 } // namespace Model

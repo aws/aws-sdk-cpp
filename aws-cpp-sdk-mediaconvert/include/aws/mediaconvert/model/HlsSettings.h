@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsSettings
+  class HlsSettings
   {
   public:
-    HlsSettings();
-    HlsSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsSettings();
+    AWS_MEDIACONVERT_API HlsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -478,25 +478,25 @@ namespace Model
   private:
 
     Aws::String m_audioGroupId;
-    bool m_audioGroupIdHasBeenSet;
+    bool m_audioGroupIdHasBeenSet = false;
 
     HlsAudioOnlyContainer m_audioOnlyContainer;
-    bool m_audioOnlyContainerHasBeenSet;
+    bool m_audioOnlyContainerHasBeenSet = false;
 
     Aws::String m_audioRenditionSets;
-    bool m_audioRenditionSetsHasBeenSet;
+    bool m_audioRenditionSetsHasBeenSet = false;
 
     HlsAudioTrackType m_audioTrackType;
-    bool m_audioTrackTypeHasBeenSet;
+    bool m_audioTrackTypeHasBeenSet = false;
 
     HlsDescriptiveVideoServiceFlag m_descriptiveVideoServiceFlag;
-    bool m_descriptiveVideoServiceFlagHasBeenSet;
+    bool m_descriptiveVideoServiceFlagHasBeenSet = false;
 
     HlsIFrameOnlyManifest m_iFrameOnlyManifest;
-    bool m_iFrameOnlyManifestHasBeenSet;
+    bool m_iFrameOnlyManifestHasBeenSet = false;
 
     Aws::String m_segmentModifier;
-    bool m_segmentModifierHasBeenSet;
+    bool m_segmentModifierHasBeenSet = false;
   };
 
 } // namespace Model

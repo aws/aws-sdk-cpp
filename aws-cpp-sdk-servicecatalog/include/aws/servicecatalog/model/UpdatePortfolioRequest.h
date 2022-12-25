@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API UpdatePortfolioRequest : public ServiceCatalogRequest
+  class UpdatePortfolioRequest : public ServiceCatalogRequest
   {
   public:
-    UpdatePortfolioRequest();
+    AWS_SERVICECATALOG_API UpdatePortfolioRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePortfolio"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_addTags;
-    bool m_addTagsHasBeenSet;
+    bool m_addTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeTags;
-    bool m_removeTagsHasBeenSet;
+    bool m_removeTagsHasBeenSet = false;
   };
 
 } // namespace Model

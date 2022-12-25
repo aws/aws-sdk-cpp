@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/RoleMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API RoleMapping
+  class RoleMapping
   {
   public:
-    RoleMapping();
-    RoleMapping(Aws::Utils::Json::JsonView jsonValue);
-    RoleMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API RoleMapping();
+    AWS_COGNITOIDENTITY_API RoleMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API RoleMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     RoleMappingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     AmbiguousRoleResolutionType m_ambiguousRoleResolution;
-    bool m_ambiguousRoleResolutionHasBeenSet;
+    bool m_ambiguousRoleResolutionHasBeenSet = false;
 
     RulesConfigurationType m_rulesConfiguration;
-    bool m_rulesConfigurationHasBeenSet;
+    bool m_rulesConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

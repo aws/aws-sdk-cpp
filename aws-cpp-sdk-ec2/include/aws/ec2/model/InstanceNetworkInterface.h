@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceNetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceNetworkInterface
+  class InstanceNetworkInterface
   {
   public:
-    InstanceNetworkInterface();
-    InstanceNetworkInterface(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceNetworkInterface& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceNetworkInterface();
+    AWS_EC2_API InstanceNetworkInterface(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceNetworkInterface& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -158,83 +158,83 @@ namespace Model
 
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline InstanceNetworkInterface& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline InstanceNetworkInterface& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline InstanceNetworkInterface& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups.</p>
+     * <p>The security groups.</p>
      */
     inline InstanceNetworkInterface& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
@@ -453,42 +453,42 @@ namespace Model
 
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<InstancePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline void SetPrivateIpAddresses(const Aws::Vector<InstancePrivateIpAddress>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline void SetPrivateIpAddresses(Aws::Vector<InstancePrivateIpAddress>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& WithPrivateIpAddresses(const Aws::Vector<InstancePrivateIpAddress>& value) { SetPrivateIpAddresses(value); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& WithPrivateIpAddresses(Aws::Vector<InstancePrivateIpAddress>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& AddPrivateIpAddresses(const InstancePrivateIpAddress& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline InstanceNetworkInterface& AddPrivateIpAddresses(InstancePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
@@ -760,58 +760,58 @@ namespace Model
   private:
 
     InstanceNetworkInterfaceAssociation m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     InstanceNetworkInterfaceAttachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<InstancePrivateIpAddress> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     bool m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
 
     NetworkInterfaceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_interfaceType;
-    bool m_interfaceTypeHasBeenSet;
+    bool m_interfaceTypeHasBeenSet = false;
 
     Aws::Vector<InstanceIpv4Prefix> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet;
+    bool m_ipv4PrefixesHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Prefix> m_ipv6Prefixes;
-    bool m_ipv6PrefixesHasBeenSet;
+    bool m_ipv6PrefixesHasBeenSet = false;
   };
 
 } // namespace Model

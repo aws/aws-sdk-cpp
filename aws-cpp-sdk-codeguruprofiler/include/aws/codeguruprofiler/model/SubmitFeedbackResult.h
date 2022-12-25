@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/SubmitFeedbackResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API SubmitFeedbackResult
+  class SubmitFeedbackResult
   {
   public:
-    SubmitFeedbackResult();
-    SubmitFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API SubmitFeedbackResult();
+    AWS_CODEGURUPROFILER_API SubmitFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API SubmitFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

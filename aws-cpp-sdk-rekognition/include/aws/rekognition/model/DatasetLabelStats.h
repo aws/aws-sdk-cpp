@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DatasetLabelStats">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DatasetLabelStats
+  class DatasetLabelStats
   {
   public:
-    DatasetLabelStats();
-    DatasetLabelStats(Aws::Utils::Json::JsonView jsonValue);
-    DatasetLabelStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DatasetLabelStats();
+    AWS_REKOGNITION_API DatasetLabelStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DatasetLabelStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_entryCount;
-    bool m_entryCountHasBeenSet;
+    bool m_entryCountHasBeenSet = false;
 
     int m_boundingBoxCount;
-    bool m_boundingBoxCountHasBeenSet;
+    bool m_boundingBoxCountHasBeenSet = false;
   };
 
 } // namespace Model

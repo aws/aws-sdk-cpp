@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SparkParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SparkParameters
+  class SparkParameters
   {
   public:
-    SparkParameters();
-    SparkParameters(Aws::Utils::Json::JsonView jsonValue);
-    SparkParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SparkParameters();
+    AWS_QUICKSIGHT_API SparkParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SparkParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

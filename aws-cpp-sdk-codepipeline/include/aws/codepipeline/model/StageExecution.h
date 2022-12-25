@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API StageExecution
+  class StageExecution
   {
   public:
-    StageExecution();
-    StageExecution(Aws::Utils::Json::JsonView jsonValue);
-    StageExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API StageExecution();
+    AWS_CODEPIPELINE_API StageExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API StageExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     StageExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

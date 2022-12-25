@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_FINSPACEDATA_API CreateUserRequest : public FinSpaceDataRequest
+  class CreateUserRequest : public FinSpaceDataRequest
   {
   public:
-    CreateUserRequest();
+    AWS_FINSPACEDATA_API CreateUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FINSPACEDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -398,25 +398,25 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     ApiAccess m_apiAccess;
-    bool m_apiAccessHasBeenSet;
+    bool m_apiAccessHasBeenSet = false;
 
     Aws::String m_apiAccessPrincipalArn;
-    bool m_apiAccessPrincipalArnHasBeenSet;
+    bool m_apiAccessPrincipalArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

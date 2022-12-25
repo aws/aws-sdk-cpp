@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API InstanceInfo
+  class InstanceInfo
   {
   public:
-    InstanceInfo();
-    InstanceInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API InstanceInfo();
+    AWS_CODEDEPLOY_API InstanceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API InstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,25 +315,25 @@ namespace Model
   private:
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_iamSessionArn;
-    bool m_iamSessionArnHasBeenSet;
+    bool m_iamSessionArnHasBeenSet = false;
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_registerTime;
-    bool m_registerTimeHasBeenSet;
+    bool m_registerTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deregisterTime;
-    bool m_deregisterTimeHasBeenSet;
+    bool m_deregisterTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

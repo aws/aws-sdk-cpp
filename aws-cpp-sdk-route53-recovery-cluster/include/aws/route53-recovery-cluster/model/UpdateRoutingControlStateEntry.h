@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/UpdateRoutingControlStateEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStateEntry
+  class UpdateRoutingControlStateEntry
   {
   public:
-    UpdateRoutingControlStateEntry();
-    UpdateRoutingControlStateEntry(Aws::Utils::Json::JsonView jsonValue);
-    UpdateRoutingControlStateEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStateEntry();
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStateEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API UpdateRoutingControlStateEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     RoutingControlState m_routingControlState;
-    bool m_routingControlStateHasBeenSet;
+    bool m_routingControlStateHasBeenSet = false;
   };
 
 } // namespace Model

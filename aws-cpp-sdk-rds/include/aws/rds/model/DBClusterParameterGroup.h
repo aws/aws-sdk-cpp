@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterParameterGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterParameterGroup
+  class DBClusterParameterGroup
   {
   public:
-    DBClusterParameterGroup();
-    DBClusterParameterGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterParameterGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterParameterGroup();
+    AWS_RDS_API DBClusterParameterGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterParameterGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupArn;
-    bool m_dBClusterParameterGroupArnHasBeenSet;
+    bool m_dBClusterParameterGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

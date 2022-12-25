@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API NotifyWhenUploadedResult
+  class NotifyWhenUploadedResult
   {
   public:
-    NotifyWhenUploadedResult();
-    NotifyWhenUploadedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyWhenUploadedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API NotifyWhenUploadedResult();
+    AWS_STORAGEGATEWAY_API NotifyWhenUploadedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API NotifyWhenUploadedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

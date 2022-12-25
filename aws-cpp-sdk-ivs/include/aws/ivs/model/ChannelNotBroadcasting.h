@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ChannelNotBroadcasting">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API ChannelNotBroadcasting
+  class ChannelNotBroadcasting
   {
   public:
-    ChannelNotBroadcasting();
-    ChannelNotBroadcasting(Aws::Utils::Json::JsonView jsonValue);
-    ChannelNotBroadcasting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API ChannelNotBroadcasting();
+    AWS_IVS_API ChannelNotBroadcasting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API ChannelNotBroadcasting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_exceptionMessage;
-    bool m_exceptionMessageHasBeenSet;
+    bool m_exceptionMessageHasBeenSet = false;
   };
 
 } // namespace Model

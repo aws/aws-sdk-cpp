@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySyncEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API RepositorySyncEvent
+  class RepositorySyncEvent
   {
   public:
-    RepositorySyncEvent();
-    RepositorySyncEvent(Aws::Utils::Json::JsonView jsonValue);
-    RepositorySyncEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API RepositorySyncEvent();
+    AWS_PROTON_API RepositorySyncEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API RepositorySyncEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

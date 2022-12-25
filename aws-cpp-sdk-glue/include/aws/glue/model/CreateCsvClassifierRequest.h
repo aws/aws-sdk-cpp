@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCsvClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CreateCsvClassifierRequest
+  class CreateCsvClassifierRequest
   {
   public:
-    CreateCsvClassifierRequest();
-    CreateCsvClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    CreateCsvClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CreateCsvClassifierRequest();
+    AWS_GLUE_API CreateCsvClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CreateCsvClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,28 +293,101 @@ namespace Model
      */
     inline CreateCsvClassifierRequest& WithAllowSingleColumn(bool value) { SetAllowSingleColumn(value); return *this;}
 
+
+    /**
+     * <p>Enables the configuration of custom datatypes.</p>
+     */
+    inline bool GetCustomDatatypeConfigured() const{ return m_customDatatypeConfigured; }
+
+    /**
+     * <p>Enables the configuration of custom datatypes.</p>
+     */
+    inline bool CustomDatatypeConfiguredHasBeenSet() const { return m_customDatatypeConfiguredHasBeenSet; }
+
+    /**
+     * <p>Enables the configuration of custom datatypes.</p>
+     */
+    inline void SetCustomDatatypeConfigured(bool value) { m_customDatatypeConfiguredHasBeenSet = true; m_customDatatypeConfigured = value; }
+
+    /**
+     * <p>Enables the configuration of custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& WithCustomDatatypeConfigured(bool value) { SetCustomDatatypeConfigured(value); return *this;}
+
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomDatatypes() const{ return m_customDatatypes; }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline bool CustomDatatypesHasBeenSet() const { return m_customDatatypesHasBeenSet; }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline void SetCustomDatatypes(const Aws::Vector<Aws::String>& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = value; }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline void SetCustomDatatypes(Aws::Vector<Aws::String>&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = std::move(value); }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& WithCustomDatatypes(const Aws::Vector<Aws::String>& value) { SetCustomDatatypes(value); return *this;}
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& WithCustomDatatypes(Aws::Vector<Aws::String>&& value) { SetCustomDatatypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& AddCustomDatatypes(const Aws::String& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& AddCustomDatatypes(Aws::String&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Creates a list of supported custom datatypes.</p>
+     */
+    inline CreateCsvClassifierRequest& AddCustomDatatypes(const char* value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     Aws::String m_quoteSymbol;
-    bool m_quoteSymbolHasBeenSet;
+    bool m_quoteSymbolHasBeenSet = false;
 
     CsvHeaderOption m_containsHeader;
-    bool m_containsHeaderHasBeenSet;
+    bool m_containsHeaderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     bool m_disableValueTrimming;
-    bool m_disableValueTrimmingHasBeenSet;
+    bool m_disableValueTrimmingHasBeenSet = false;
 
     bool m_allowSingleColumn;
-    bool m_allowSingleColumnHasBeenSet;
+    bool m_allowSingleColumnHasBeenSet = false;
+
+    bool m_customDatatypeConfigured;
+    bool m_customDatatypeConfiguredHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_customDatatypes;
+    bool m_customDatatypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerGroupLaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerGroupLaunchConfiguration
+  class ServerGroupLaunchConfiguration
   {
   public:
-    ServerGroupLaunchConfiguration();
-    ServerGroupLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerGroupLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerGroupLaunchConfiguration();
+    AWS_SMS_API ServerGroupLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerGroupLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_serverGroupId;
-    bool m_serverGroupIdHasBeenSet;
+    bool m_serverGroupIdHasBeenSet = false;
 
     int m_launchOrder;
-    bool m_launchOrderHasBeenSet;
+    bool m_launchOrderHasBeenSet = false;
 
     Aws::Vector<ServerLaunchConfiguration> m_serverLaunchConfigurations;
-    bool m_serverLaunchConfigurationsHasBeenSet;
+    bool m_serverLaunchConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

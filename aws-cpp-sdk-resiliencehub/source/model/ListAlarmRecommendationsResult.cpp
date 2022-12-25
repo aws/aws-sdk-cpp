@@ -30,7 +30,7 @@ ListAlarmRecommendationsResult& ListAlarmRecommendationsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("alarmRecommendations"))
   {
-    Array<JsonView> alarmRecommendationsJsonList = jsonValue.GetArray("alarmRecommendations");
+    Aws::Utils::Array<JsonView> alarmRecommendationsJsonList = jsonValue.GetArray("alarmRecommendations");
     for(unsigned alarmRecommendationsIndex = 0; alarmRecommendationsIndex < alarmRecommendationsJsonList.GetLength(); ++alarmRecommendationsIndex)
     {
       m_alarmRecommendations.push_back(alarmRecommendationsJsonList[alarmRecommendationsIndex].AsObject());

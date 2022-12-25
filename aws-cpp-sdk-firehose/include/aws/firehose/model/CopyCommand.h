@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CopyCommand">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API CopyCommand
+  class CopyCommand
   {
   public:
-    CopyCommand();
-    CopyCommand(Aws::Utils::Json::JsonView jsonValue);
-    CopyCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API CopyCommand();
+    AWS_FIREHOSE_API CopyCommand(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API CopyCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,13 +291,13 @@ namespace Model
   private:
 
     Aws::String m_dataTableName;
-    bool m_dataTableNameHasBeenSet;
+    bool m_dataTableNameHasBeenSet = false;
 
     Aws::String m_dataTableColumns;
-    bool m_dataTableColumnsHasBeenSet;
+    bool m_dataTableColumnsHasBeenSet = false;
 
     Aws::String m_copyOptions;
-    bool m_copyOptionsHasBeenSet;
+    bool m_copyOptionsHasBeenSet = false;
   };
 
 } // namespace Model

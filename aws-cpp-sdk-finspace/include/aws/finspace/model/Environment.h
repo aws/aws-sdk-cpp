@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACE_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACE_API Environment();
+    AWS_FINSPACE_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -520,40 +520,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     EnvironmentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_environmentUrl;
-    bool m_environmentUrlHasBeenSet;
+    bool m_environmentUrlHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentArn;
-    bool m_environmentArnHasBeenSet;
+    bool m_environmentArnHasBeenSet = false;
 
     Aws::String m_sageMakerStudioDomainUrl;
-    bool m_sageMakerStudioDomainUrlHasBeenSet;
+    bool m_sageMakerStudioDomainUrlHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dedicatedServiceAccountId;
-    bool m_dedicatedServiceAccountIdHasBeenSet;
+    bool m_dedicatedServiceAccountIdHasBeenSet = false;
 
     FederationMode m_federationMode;
-    bool m_federationModeHasBeenSet;
+    bool m_federationModeHasBeenSet = false;
 
     FederationParameters m_federationParameters;
-    bool m_federationParametersHasBeenSet;
+    bool m_federationParametersHasBeenSet = false;
   };
 
 } // namespace Model

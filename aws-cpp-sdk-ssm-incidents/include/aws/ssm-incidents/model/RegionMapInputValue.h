@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RegionMapInputValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RegionMapInputValue
+  class RegionMapInputValue
   {
   public:
-    RegionMapInputValue();
-    RegionMapInputValue(Aws::Utils::Json::JsonView jsonValue);
-    RegionMapInputValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RegionMapInputValue();
+    AWS_SSMINCIDENTS_API RegionMapInputValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RegionMapInputValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_sseKmsKeyId;
-    bool m_sseKmsKeyIdHasBeenSet;
+    bool m_sseKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

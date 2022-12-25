@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Computer">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Computer
+  class Computer
   {
   public:
-    Computer();
-    Computer(Aws::Utils::Json::JsonView jsonValue);
-    Computer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Computer();
+    AWS_DIRECTORYSERVICE_API Computer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Computer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_computerId;
-    bool m_computerIdHasBeenSet;
+    bool m_computerIdHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::Vector<Attribute> m_computerAttributes;
-    bool m_computerAttributesHasBeenSet;
+    bool m_computerAttributesHasBeenSet = false;
   };
 
 } // namespace Model

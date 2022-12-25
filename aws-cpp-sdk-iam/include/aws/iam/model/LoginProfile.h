@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/LoginProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API LoginProfile
+  class LoginProfile
   {
   public:
-    LoginProfile();
-    LoginProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoginProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API LoginProfile();
+    AWS_IAM_API LoginProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API LoginProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     bool m_passwordResetRequired;
-    bool m_passwordResetRequiredHasBeenSet;
+    bool m_passwordResetRequiredHasBeenSet = false;
   };
 
 } // namespace Model

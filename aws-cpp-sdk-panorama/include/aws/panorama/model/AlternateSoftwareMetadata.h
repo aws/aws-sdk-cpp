@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/AlternateSoftwareMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API AlternateSoftwareMetadata
+  class AlternateSoftwareMetadata
   {
   public:
-    AlternateSoftwareMetadata();
-    AlternateSoftwareMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AlternateSoftwareMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API AlternateSoftwareMetadata();
+    AWS_PANORAMA_API AlternateSoftwareMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API AlternateSoftwareMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

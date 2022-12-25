@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningPlatform
+  class SigningPlatform
   {
   public:
-    SigningPlatform();
-    SigningPlatform(Aws::Utils::Json::JsonView jsonValue);
-    SigningPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningPlatform();
+    AWS_SIGNER_API SigningPlatform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -340,31 +340,31 @@ namespace Model
   private:
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_partner;
-    bool m_partnerHasBeenSet;
+    bool m_partnerHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Category m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     SigningConfiguration m_signingConfiguration;
-    bool m_signingConfigurationHasBeenSet;
+    bool m_signingConfigurationHasBeenSet = false;
 
     SigningImageFormat m_signingImageFormat;
-    bool m_signingImageFormatHasBeenSet;
+    bool m_signingImageFormatHasBeenSet = false;
 
     int m_maxSizeInMB;
-    bool m_maxSizeInMBHasBeenSet;
+    bool m_maxSizeInMBHasBeenSet = false;
 
     bool m_revocationSupported;
-    bool m_revocationSupportedHasBeenSet;
+    bool m_revocationSupportedHasBeenSet = false;
   };
 
 } // namespace Model

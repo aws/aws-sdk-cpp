@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECR_API PutRegistryPolicyRequest : public ECRRequest
+  class PutRegistryPolicyRequest : public ECRRequest
   {
   public:
-    PutRegistryPolicyRequest();
+    AWS_ECR_API PutRegistryPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutRegistryPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_policyText;
-    bool m_policyTextHasBeenSet;
+    bool m_policyTextHasBeenSet = false;
   };
 
 } // namespace Model

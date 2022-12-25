@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API DescribeIdentityPoolUsageRequest : public CognitoSyncRequest
+  class DescribeIdentityPoolUsageRequest : public CognitoSyncRequest
   {
   public:
-    DescribeIdentityPoolUsageRequest();
+    AWS_COGNITOSYNC_API DescribeIdentityPoolUsageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeIdentityPoolUsage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOSYNC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
   };
 
 } // namespace Model

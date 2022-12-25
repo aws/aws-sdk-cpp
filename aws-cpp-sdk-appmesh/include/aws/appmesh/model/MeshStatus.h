@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API MeshStatus
+  class MeshStatus
   {
   public:
-    MeshStatus();
-    MeshStatus(Aws::Utils::Json::JsonView jsonValue);
-    MeshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API MeshStatus();
+    AWS_APPMESH_API MeshStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API MeshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     MeshStatusCode m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

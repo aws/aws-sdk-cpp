@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceEntry
+  class InstanceEntry
   {
   public:
-    InstanceEntry();
-    InstanceEntry(Aws::Utils::Json::JsonView jsonValue);
-    InstanceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceEntry();
+    AWS_LIGHTSAIL_API InstanceEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -437,19 +437,19 @@ namespace Model
   private:
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     PortInfoSourceType m_portInfoSource;
-    bool m_portInfoSourceHasBeenSet;
+    bool m_portInfoSourceHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchSuccessfulResultModel">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchSuccessfulResultModel
+  class BatchSuccessfulResultModel
   {
   public:
-    BatchSuccessfulResultModel();
-    BatchSuccessfulResultModel(Aws::Utils::Json::JsonView jsonValue);
-    BatchSuccessfulResultModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BatchSuccessfulResultModel();
+    AWS_MEDIALIVE_API BatchSuccessfulResultModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BatchSuccessfulResultModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

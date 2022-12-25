@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedSecurityPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedSecurityPolicy
+  class DescribedSecurityPolicy
   {
   public:
-    DescribedSecurityPolicy();
-    DescribedSecurityPolicy(Aws::Utils::Json::JsonView jsonValue);
-    DescribedSecurityPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedSecurityPolicy();
+    AWS_TRANSFER_API DescribedSecurityPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedSecurityPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -329,22 +329,22 @@ namespace Model
   private:
 
     bool m_fips;
-    bool m_fipsHasBeenSet;
+    bool m_fipsHasBeenSet = false;
 
     Aws::String m_securityPolicyName;
-    bool m_securityPolicyNameHasBeenSet;
+    bool m_securityPolicyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sshCiphers;
-    bool m_sshCiphersHasBeenSet;
+    bool m_sshCiphersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sshKexs;
-    bool m_sshKexsHasBeenSet;
+    bool m_sshKexsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sshMacs;
-    bool m_sshMacsHasBeenSet;
+    bool m_sshMacsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tlsCiphers;
-    bool m_tlsCiphersHasBeenSet;
+    bool m_tlsCiphersHasBeenSet = false;
   };
 
 } // namespace Model

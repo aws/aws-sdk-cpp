@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAccountFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EventAccountFilter
+  class EventAccountFilter
   {
   public:
-    EventAccountFilter();
-    EventAccountFilter(Aws::Utils::Json::JsonView jsonValue);
-    EventAccountFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EventAccountFilter();
+    AWS_HEALTH_API EventAccountFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EventAccountFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,10 +173,10 @@ namespace Model
   private:
 
     Aws::String m_eventArn;
-    bool m_eventArnHasBeenSet;
+    bool m_eventArnHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

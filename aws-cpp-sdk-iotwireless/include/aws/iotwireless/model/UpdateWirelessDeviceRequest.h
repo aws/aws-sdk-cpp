@@ -8,6 +8,7 @@
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANUpdateDevice.h>
+#include <aws/iotwireless/model/PositioningConfigStatus.h>
 #include <utility>
 
 namespace Aws
@@ -19,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API UpdateWirelessDeviceRequest : public IoTWirelessRequest
+  class UpdateWirelessDeviceRequest : public IoTWirelessRequest
   {
   public:
-    UpdateWirelessDeviceRequest();
+    AWS_IOTWIRELESS_API UpdateWirelessDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWirelessDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -227,22 +228,62 @@ namespace Model
      */
     inline UpdateWirelessDeviceRequest& WithLoRaWAN(LoRaWANUpdateDevice&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline const PositioningConfigStatus& GetPositioning() const{ return m_positioning; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(const PositioningConfigStatus& value) { m_positioningHasBeenSet = true; m_positioning = value; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(PositioningConfigStatus&& value) { m_positioningHasBeenSet = true; m_positioning = std::move(value); }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline UpdateWirelessDeviceRequest& WithPositioning(const PositioningConfigStatus& value) { SetPositioning(value); return *this;}
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline UpdateWirelessDeviceRequest& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     LoRaWANUpdateDevice m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
+
+    PositioningConfigStatus m_positioning;
+    bool m_positioningHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API PutAnomalyDetectorRequest : public CloudWatchRequest
+  class PutAnomalyDetectorRequest : public CloudWatchRequest
   {
   public:
-    PutAnomalyDetectorRequest();
+    AWS_CLOUDWATCH_API PutAnomalyDetectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAnomalyDetector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -247,13 +247,13 @@ namespace Model
   private:
 
     AnomalyDetectorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-    bool m_singleMetricAnomalyDetectorHasBeenSet;
+    bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
     MetricMathAnomalyDetector m_metricMathAnomalyDetector;
-    bool m_metricMathAnomalyDetectorHasBeenSet;
+    bool m_metricMathAnomalyDetectorHasBeenSet = false;
   };
 
 } // namespace Model

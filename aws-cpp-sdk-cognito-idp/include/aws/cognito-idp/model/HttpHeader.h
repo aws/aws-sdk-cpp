@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/HttpHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API HttpHeader
+  class HttpHeader
   {
   public:
-    HttpHeader();
-    HttpHeader(Aws::Utils::Json::JsonView jsonValue);
-    HttpHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API HttpHeader();
+    AWS_COGNITOIDENTITYPROVIDER_API HttpHeader(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API HttpHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     Aws::String m_headerValue;
-    bool m_headerValueHasBeenSet;
+    bool m_headerValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContent">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CodeContent
+  class CodeContent
   {
   public:
-    CodeContent();
-    CodeContent(Aws::Utils::Json::JsonView jsonValue);
-    CodeContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CodeContent();
+    AWS_KINESISANALYTICSV2_API CodeContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CodeContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_textContent;
-    bool m_textContentHasBeenSet;
+    bool m_textContentHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_zipFileContent;
-    bool m_zipFileContentHasBeenSet;
+    bool m_zipFileContentHasBeenSet = false;
 
     S3ContentLocation m_s3ContentLocation;
-    bool m_s3ContentLocationHasBeenSet;
+    bool m_s3ContentLocationHasBeenSet = false;
   };
 
 } // namespace Model

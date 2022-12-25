@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3BucketDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3BucketDestination
+  class S3BucketDestination
   {
   public:
-    S3BucketDestination();
-    S3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3BucketDestination();
+    AWS_S3CONTROL_API S3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     OutputSchemaVersion m_outputSchemaVersion;
-    bool m_outputSchemaVersionHasBeenSet;
+    bool m_outputSchemaVersionHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     StorageLensDataExportEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

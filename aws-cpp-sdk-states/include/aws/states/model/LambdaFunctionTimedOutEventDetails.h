@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a lambda function timeout that occurred during an
+   * <p>Contains details about a Lambda function timeout that occurred during an
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionTimedOutEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LambdaFunctionTimedOutEventDetails
+  class LambdaFunctionTimedOutEventDetails
   {
   public:
-    LambdaFunctionTimedOutEventDetails();
-    LambdaFunctionTimedOutEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionTimedOutEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LambdaFunctionTimedOutEventDetails();
+    AWS_SFN_API LambdaFunctionTimedOutEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LambdaFunctionTimedOutEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

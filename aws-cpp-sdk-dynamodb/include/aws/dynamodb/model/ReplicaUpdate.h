@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaUpdate
+  class ReplicaUpdate
   {
   public:
-    ReplicaUpdate();
-    ReplicaUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaUpdate();
+    AWS_DYNAMODB_API ReplicaUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     CreateReplicaAction m_create;
-    bool m_createHasBeenSet;
+    bool m_createHasBeenSet = false;
 
     DeleteReplicaAction m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/MessageTag">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API MessageTag
+  class MessageTag
   {
   public:
-    MessageTag();
-    MessageTag(Aws::Utils::Json::JsonView jsonValue);
-    MessageTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API MessageTag();
+    AWS_PINPOINTEMAIL_API MessageTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API MessageTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,10 +171,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

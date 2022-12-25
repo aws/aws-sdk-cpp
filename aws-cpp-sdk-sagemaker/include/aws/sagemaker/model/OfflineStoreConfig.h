@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/S3StorageConfig.h>
 #include <aws/sagemaker/model/DataCatalogConfig.h>
+#include <aws/sagemaker/model/TableFormat.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OfflineStoreConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OfflineStoreConfig
+  class OfflineStoreConfig
   {
   public:
-    OfflineStoreConfig();
-    OfflineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
-    OfflineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OfflineStoreConfig();
+    AWS_SAGEMAKER_API OfflineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OfflineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,16 +142,56 @@ namespace Model
      */
     inline OfflineStoreConfig& WithDataCatalogConfig(DataCatalogConfig&& value) { SetDataCatalogConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline const TableFormat& GetTableFormat() const{ return m_tableFormat; }
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline bool TableFormatHasBeenSet() const { return m_tableFormatHasBeenSet; }
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline void SetTableFormat(const TableFormat& value) { m_tableFormatHasBeenSet = true; m_tableFormat = value; }
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline void SetTableFormat(TableFormat&& value) { m_tableFormatHasBeenSet = true; m_tableFormat = std::move(value); }
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline OfflineStoreConfig& WithTableFormat(const TableFormat& value) { SetTableFormat(value); return *this;}
+
+    /**
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
+     */
+    inline OfflineStoreConfig& WithTableFormat(TableFormat&& value) { SetTableFormat(std::move(value)); return *this;}
+
   private:
 
     S3StorageConfig m_s3StorageConfig;
-    bool m_s3StorageConfigHasBeenSet;
+    bool m_s3StorageConfigHasBeenSet = false;
 
     bool m_disableGlueTableCreation;
-    bool m_disableGlueTableCreationHasBeenSet;
+    bool m_disableGlueTableCreationHasBeenSet = false;
 
     DataCatalogConfig m_dataCatalogConfig;
-    bool m_dataCatalogConfigHasBeenSet;
+    bool m_dataCatalogConfigHasBeenSet = false;
+
+    TableFormat m_tableFormat;
+    bool m_tableFormatHasBeenSet = false;
   };
 
 } // namespace Model

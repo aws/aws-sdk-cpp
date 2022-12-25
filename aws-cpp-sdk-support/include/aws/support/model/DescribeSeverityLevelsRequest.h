@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SUPPORT_API DescribeSeverityLevelsRequest : public SupportRequest
+  class DescribeSeverityLevelsRequest : public SupportRequest
   {
   public:
-    DescribeSeverityLevelsRequest();
+    AWS_SUPPORT_API DescribeSeverityLevelsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,79 +29,79 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSeverityLevels"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SUPPORT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline DescribeSeverityLevelsRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline DescribeSeverityLevelsRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline DescribeSeverityLevelsRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

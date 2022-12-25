@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/SourceRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API SourceRevision
+  class SourceRevision
   {
   public:
-    SourceRevision();
-    SourceRevision(Aws::Utils::Json::JsonView jsonValue);
-    SourceRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API SourceRevision();
+    AWS_CODEPIPELINE_API SourceRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API SourceRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revisionSummary;
-    bool m_revisionSummaryHasBeenSet;
+    bool m_revisionSummaryHasBeenSet = false;
 
     Aws::String m_revisionUrl;
-    bool m_revisionUrlHasBeenSet;
+    bool m_revisionUrlHasBeenSet = false;
   };
 
 } // namespace Model

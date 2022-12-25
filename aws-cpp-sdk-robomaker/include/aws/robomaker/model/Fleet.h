@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Fleet">AWS API
    * Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Fleet
+  class Fleet
   {
   public:
-    Fleet();
-    Fleet(Aws::Utils::Json::JsonView jsonValue);
-    Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Fleet();
+    AWS_ROBOMAKER_API Fleet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     DeploymentStatus m_lastDeploymentStatus;
-    bool m_lastDeploymentStatusHasBeenSet;
+    bool m_lastDeploymentStatusHasBeenSet = false;
 
     Aws::String m_lastDeploymentJob;
-    bool m_lastDeploymentJobHasBeenSet;
+    bool m_lastDeploymentJobHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentTime;
-    bool m_lastDeploymentTimeHasBeenSet;
+    bool m_lastDeploymentTimeHasBeenSet = false;
   };
 
 } // namespace Model

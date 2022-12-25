@@ -53,7 +53,7 @@ SystemInfo& SystemInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkInfoList"))
   {
-    Array<JsonView> networkInfoListJsonList = jsonValue.GetArray("networkInfoList");
+    Aws::Utils::Array<JsonView> networkInfoListJsonList = jsonValue.GetArray("networkInfoList");
     for(unsigned networkInfoListIndex = 0; networkInfoListIndex < networkInfoListJsonList.GetLength(); ++networkInfoListIndex)
     {
       m_networkInfoList.push_back(networkInfoListJsonList[networkInfoListIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue SystemInfo::Jsonize() const
 
   if(m_networkInfoListHasBeenSet)
   {
-   Array<JsonValue> networkInfoListJsonList(m_networkInfoList.size());
+   Aws::Utils::Array<JsonValue> networkInfoListJsonList(m_networkInfoList.size());
    for(unsigned networkInfoListIndex = 0; networkInfoListIndex < networkInfoListJsonList.GetLength(); ++networkInfoListIndex)
    {
      networkInfoListJsonList[networkInfoListIndex].AsObject(m_networkInfoList[networkInfoListIndex].Jsonize());

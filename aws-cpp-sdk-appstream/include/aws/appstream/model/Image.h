@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Image">AWS API
    * Reference</a></p>
    */
-  class AWS_APPSTREAM_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Image();
+    AWS_APPSTREAM_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -695,55 +695,55 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_baseImageArn;
-    bool m_baseImageArnHasBeenSet;
+    bool m_baseImageArnHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     ImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     VisibilityType m_visibility;
-    bool m_visibilityHasBeenSet;
+    bool m_visibilityHasBeenSet = false;
 
     bool m_imageBuilderSupported;
-    bool m_imageBuilderSupportedHasBeenSet;
+    bool m_imageBuilderSupportedHasBeenSet = false;
 
     Aws::String m_imageBuilderName;
-    bool m_imageBuilderNameHasBeenSet;
+    bool m_imageBuilderNameHasBeenSet = false;
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ImageStateChangeReason m_stateChangeReason;
-    bool m_stateChangeReasonHasBeenSet;
+    bool m_stateChangeReasonHasBeenSet = false;
 
     Aws::Vector<Application> m_applications;
-    bool m_applicationsHasBeenSet;
+    bool m_applicationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_publicBaseImageReleasedDate;
-    bool m_publicBaseImageReleasedDateHasBeenSet;
+    bool m_publicBaseImageReleasedDateHasBeenSet = false;
 
     Aws::String m_appstreamAgentVersion;
-    bool m_appstreamAgentVersionHasBeenSet;
+    bool m_appstreamAgentVersionHasBeenSet = false;
 
     ImagePermissions m_imagePermissions;
-    bool m_imagePermissionsHasBeenSet;
+    bool m_imagePermissionsHasBeenSet = false;
 
     Aws::Vector<ResourceError> m_imageErrors;
-    bool m_imageErrorsHasBeenSet;
+    bool m_imageErrorsHasBeenSet = false;
   };
 
 } // namespace Model

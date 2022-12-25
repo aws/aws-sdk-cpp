@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ShardDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ShardDetail
+  class ShardDetail
   {
   public:
-    ShardDetail();
-    ShardDetail(Aws::Utils::Json::JsonView jsonValue);
-    ShardDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ShardDetail();
+    AWS_MEMORYDB_API ShardDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ShardDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ShardConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreationTime;
-    bool m_snapshotCreationTimeHasBeenSet;
+    bool m_snapshotCreationTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Report">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API Report
+  class Report
   {
   public:
-    Report();
-    Report(Aws::Utils::Json::JsonView jsonValue);
-    Report& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Report();
+    AWS_CODEBUILD_API Report(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Report& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -491,40 +491,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ReportType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_reportGroupArn;
-    bool m_reportGroupArnHasBeenSet;
+    bool m_reportGroupArnHasBeenSet = false;
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     ReportStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_expired;
-    bool m_expiredHasBeenSet;
+    bool m_expiredHasBeenSet = false;
 
     ReportExportConfig m_exportConfig;
-    bool m_exportConfigHasBeenSet;
+    bool m_exportConfigHasBeenSet = false;
 
     bool m_truncated;
-    bool m_truncatedHasBeenSet;
+    bool m_truncatedHasBeenSet = false;
 
     TestReportSummary m_testSummary;
-    bool m_testSummaryHasBeenSet;
+    bool m_testSummaryHasBeenSet = false;
 
     CodeCoverageReportSummary m_codeCoverageSummary;
-    bool m_codeCoverageSummaryHasBeenSet;
+    bool m_codeCoverageSummaryHasBeenSet = false;
   };
 
 } // namespace Model

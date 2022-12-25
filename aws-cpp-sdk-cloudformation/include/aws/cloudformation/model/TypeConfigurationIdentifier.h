@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TypeConfigurationIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API TypeConfigurationIdentifier
+  class TypeConfigurationIdentifier
   {
   public:
-    TypeConfigurationIdentifier();
-    TypeConfigurationIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TypeConfigurationIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeConfigurationIdentifier();
+    AWS_CLOUDFORMATION_API TypeConfigurationIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API TypeConfigurationIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -302,19 +302,19 @@ namespace Model
   private:
 
     Aws::String m_typeArn;
-    bool m_typeArnHasBeenSet;
+    bool m_typeArnHasBeenSet = false;
 
     Aws::String m_typeConfigurationAlias;
-    bool m_typeConfigurationAliasHasBeenSet;
+    bool m_typeConfigurationAliasHasBeenSet = false;
 
     Aws::String m_typeConfigurationArn;
-    bool m_typeConfigurationArnHasBeenSet;
+    bool m_typeConfigurationArnHasBeenSet = false;
 
     ThirdPartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
   };
 
 } // namespace Model

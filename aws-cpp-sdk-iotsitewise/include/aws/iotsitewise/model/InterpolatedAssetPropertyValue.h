@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InterpolatedAssetPropertyValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue
+  class InterpolatedAssetPropertyValue
   {
   public:
-    InterpolatedAssetPropertyValue();
-    InterpolatedAssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
-    InterpolatedAssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue();
+    AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     TimeInNanos m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Variant m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

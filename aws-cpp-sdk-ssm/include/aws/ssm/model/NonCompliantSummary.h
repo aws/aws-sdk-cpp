@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/NonCompliantSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API NonCompliantSummary
+  class NonCompliantSummary
   {
   public:
-    NonCompliantSummary();
-    NonCompliantSummary(Aws::Utils::Json::JsonView jsonValue);
-    NonCompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API NonCompliantSummary();
+    AWS_SSM_API NonCompliantSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API NonCompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_nonCompliantCount;
-    bool m_nonCompliantCountHasBeenSet;
+    bool m_nonCompliantCountHasBeenSet = false;
 
     SeveritySummary m_severitySummary;
-    bool m_severitySummaryHasBeenSet;
+    bool m_severitySummaryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuthInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API AuthInfo
+  class AuthInfo
   {
   public:
-    AuthInfo();
-    AuthInfo(Aws::Utils::Json::JsonView jsonValue);
-    AuthInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuthInfo();
+    AWS_IOT_API AuthInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuthInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

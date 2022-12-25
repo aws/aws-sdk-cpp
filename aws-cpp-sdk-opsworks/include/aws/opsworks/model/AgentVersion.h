@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AgentVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API AgentVersion
+  class AgentVersion
   {
   public:
-    AgentVersion();
-    AgentVersion(Aws::Utils::Json::JsonView jsonValue);
-    AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API AgentVersion();
+    AWS_OPSWORKS_API AgentVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     StackConfigurationManager m_configurationManager;
-    bool m_configurationManagerHasBeenSet;
+    bool m_configurationManagerHasBeenSet = false;
   };
 
 } // namespace Model

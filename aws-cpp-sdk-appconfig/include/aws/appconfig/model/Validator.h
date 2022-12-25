@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Validator">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API Validator
+  class Validator
   {
   public:
-    Validator();
-    Validator(Aws::Utils::Json::JsonView jsonValue);
-    Validator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API Validator();
+    AWS_APPCONFIG_API Validator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Validator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     ValidatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

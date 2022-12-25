@@ -4,7 +4,8 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -25,11 +26,13 @@
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/PutBucketTaggingRequest.h>
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/CreateBucketRequest.h>
 #include <aws/s3control/model/GetBucketRequest.h>
 #include <aws/s3control/model/DeleteBucketRequest.h>
+#include <aws/s3control/model/DescribeMultiRegionAccessPointOperationRequest.h>
 #include <aws/s3control/model/CreateAccessPointRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
@@ -61,7 +64,7 @@ namespace
     static const char PRESIGNED_URLS_BUCKET_NAME[] = "presignedaccesspointbucket";
     static const char PRESIGNED_URLS_ACCESS_POINT[] = "presignedaccesspoint";
     static const char TEST_OBJECT_KEY[] = "TestObjectKey";
-    static const char CUSTOM_ENDPOINT_OVERRIDE[] = "beta.example.com";
+    static const char TEST_BUCKET_TAG[] = "IntegrationTestResource";
     static const int TIMEOUT_MAX = 20;
 
     class S3ControlTest : public ::testing::Test
@@ -136,9 +139,25 @@ namespace
                                                     creds.GetSecretAccessKey(),
                                                     creds.GetSessionToken(),
                                                     creds.GetExpiration());
-                return {awsCredentials, configuration};
+                return {awsCredentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), configuration};
             }
             return {configuration};
+        }
+
+        static void TagTestBucket(const Aws::String& bucketName, const S3::S3Client& client) {
+            ASSERT_TRUE(!bucketName.empty());
+
+            Aws::S3::Model::PutBucketTaggingRequest taggingRequest;
+            taggingRequest.SetBucket(bucketName);
+            Aws::S3::Model::Tag tag;
+            tag.SetKey(TEST_BUCKET_TAG);
+            tag.SetValue(TEST_BUCKET_TAG);
+            Aws::S3::Model::Tagging tagging;
+            tagging.AddTagSet(tag);
+            taggingRequest.SetTagging(tagging);
+
+            auto taggingOutcome = CallOperationWithUnconditionalRetry(&client, &Aws::S3::S3Client::PutBucketTagging, taggingRequest);
+            AWS_ASSERT_SUCCESS(taggingOutcome);
         }
 
         static bool WaitForBucketToPropagate(const Aws::String& bucketName, const S3::S3Client& client)
@@ -180,6 +199,59 @@ namespace
             return false;
         }
 
+        /**
+         * Wait for S3-MRAP server-side asynchronous Operation completion
+         *
+         * @param requestToken
+         * @param accountId
+         * @param client
+         * @return
+         */
+        static bool WaitForMultiRegionAccessPointOperationCompletion(const Aws::String& requestToken,
+                                                                     const Aws::String& accountId,
+                                                                     const S3Control::S3ControlClient& client)
+        {
+            /*
+             * These (CreateMultiRegionAccessPoint,DeleteMultiRegionAccessPoint, etc.) requests are asynchronous,
+             * meaning that you might receive a response before the command has completed.
+             */
+            unsigned timeoutCount = 0;
+            while (timeoutCount++ < TIMEOUT_MAX)
+            {
+                S3Control::Model::DescribeMultiRegionAccessPointOperationRequest request;
+                request.SetRequestTokenARN(requestToken);
+                request.SetAccountId(accountId);
+                auto outcome =
+                        CallOperationWithUnconditionalRetry(&client, &Aws::S3Control::S3ControlClient::DescribeMultiRegionAccessPointOperation, request);
+                AWS_EXPECT_SUCCESS(outcome);
+                if(!outcome.IsSuccess())
+                {
+                    return false;
+                }
+
+                const Aws::String& operation = S3Control::Model::AsyncOperationNameMapper::GetNameForAsyncOperationName(
+                        outcome.GetResult().GetAsyncOperation().GetOperation());
+                const auto& status = outcome.GetResult().GetAsyncOperation().GetRequestStatus();
+                std::cout << "S3Control::DescribeMultiRegionAccessPointOperation request status for " << operation << " is " <<
+                             status << " after poll #" << timeoutCount << "\n";
+                EXPECT_NE(status, "FAILED") << outcome.GetResult().GetAsyncOperation().GetResponseDetails().GetErrorDetails().GetMessage();
+                if(status == "FAILED")
+                {
+                    for(const auto& item : outcome.GetResult().GetAsyncOperation().GetResponseDetails().GetMultiRegionAccessPointDetails().GetRegions()) {
+                        std::cout << "MRAP Detail: " << item.GetName() << " " << item.GetRequestStatus() << "\n";
+                    }
+                    return false;
+                }
+                if(status == "SUCCEEDED")
+                {
+                    return true;
+                }
+                std::this_thread::sleep_for(std::chrono::seconds(20));
+            }
+
+            return false;
+        }
+
         void PrepareAccessPointTest(const Aws::String& bucketName, const Aws::String& accessPointName)
         {
             m_environments.emplace_back("AWS_S3_USE_ARN_REGION", Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION"));
@@ -191,15 +263,16 @@ namespace
             createBucketRequest.SetBucket(bucketName);
             createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
             auto createBucketOutcome = m_s3Client.CreateBucket(createBucketRequest);
-            ASSERT_TRUE(createBucketOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(createBucketOutcome);
             ASSERT_TRUE(WaitForBucketToPropagate(bucketName, m_s3Client));
+            TagTestBucket(bucketName, m_s3Client);
 
             CreateAccessPointRequest createAccessPointRequest;
             createAccessPointRequest.SetName(accessPointName);
             createAccessPointRequest.SetAccountId(m_accountId);
             createAccessPointRequest.SetBucket(bucketName);
             auto createAccessPointOutcome = m_client.CreateAccessPoint(createAccessPointRequest);
-            ASSERT_TRUE(createAccessPointOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(createAccessPointOutcome);
         }
 
         void CleanUpAccessPointTest(const Aws::String& bucketName, const Aws::String& accessPointName)
@@ -208,12 +281,12 @@ namespace
             deleteAccessPointRequest.SetName(accessPointName);
             deleteAccessPointRequest.SetAccountId(m_accountId);
             auto deleteAccessPointOutcome = m_client.DeleteAccessPoint(deleteAccessPointRequest);
-            ASSERT_TRUE(deleteAccessPointOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteAccessPointOutcome);
 
             S3::Model::DeleteBucketRequest deleteBucketRequest;
             deleteBucketRequest.SetBucket(bucketName);
             auto deleteBucketOutcome = m_s3Client.DeleteBucket(deleteBucketRequest);
-            ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteBucketOutcome);
 
             for(const auto& iter : m_environments)
             {
@@ -247,8 +320,9 @@ namespace
                 createBucketRequest.SetBucket(regionalBucketName);
                 createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
                 auto createBucketOutcome = s3Client.CreateBucket(createBucketRequest);
-                ASSERT_TRUE(createBucketOutcome.IsSuccess());
+                AWS_ASSERT_SUCCESS(createBucketOutcome);
                 ASSERT_TRUE(WaitForBucketToPropagate(regionalBucketName, s3Client));
+                TagTestBucket(regionalBucketName, s3Client);
 
                 S3Control::Model::Region regionalBucket;
                 regionalBucket.SetBucket(regionalBucketName);
@@ -263,22 +337,15 @@ namespace
             createMRAPRequest.SetDetails(createMRAPInput);
 
             auto createMRAPOutcome = m_client.CreateMultiRegionAccessPoint(createMRAPRequest);
-            ASSERT_TRUE(createMRAPOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(createMRAPOutcome);
+            ASSERT_TRUE(WaitForMultiRegionAccessPointOperationCompletion(createMRAPOutcome.GetResult().GetRequestTokenARN(), m_accountId, m_client));
 
-
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX * 2)
-            {
-                GetMultiRegionAccessPointRequest getMRAPRequest;
-                getMRAPRequest.SetAccountId(m_accountId);
-                getMRAPRequest.SetName(accessPointName);
-                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
-                if (getMRAPOutcome.IsSuccess() && getMRAPOutcome.GetResult().GetAccessPoint().GetStatus() == MultiRegionAccessPointStatus::READY)
-                {
-                    return;
-                }
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
+            GetMultiRegionAccessPointRequest getMRAPRequest;
+            getMRAPRequest.SetAccountId(m_accountId);
+            getMRAPRequest.SetName(accessPointName);
+            auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+            AWS_ASSERT_SUCCESS(createMRAPOutcome);
+            ASSERT_EQ(getMRAPOutcome.GetResult().GetAccessPoint().GetStatus(), MultiRegionAccessPointStatus::READY);
         }
 
         void CleanUpMRAPTest(const Aws::String& bucketName, const Aws::Vector<Aws::String>& multiRegions, const Aws::String& accessPointName)
@@ -290,21 +357,14 @@ namespace
             deleteMRAPRequest.SetDetails(deleteMRAPInput);
             deleteMRAPRequest.SetAccountId(m_accountId);
             auto deleteMRAPOutcome = m_client.DeleteMultiRegionAccessPoint(deleteMRAPRequest);
-            ASSERT_TRUE(deleteMRAPOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteMRAPOutcome);
+            ASSERT_TRUE(WaitForMultiRegionAccessPointOperationCompletion(deleteMRAPOutcome.GetResult().GetRequestTokenARN(), m_accountId, m_client));
 
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX * 2)
-            {
-                GetMultiRegionAccessPointRequest getMRAPRequest;
-                getMRAPRequest.SetAccountId(m_accountId);
-                getMRAPRequest.SetName(accessPointName);
-                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
-                if (!getMRAPOutcome.IsSuccess())
-                {
-                    break;
-                }
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
+            GetMultiRegionAccessPointRequest getMRAPRequest;
+            getMRAPRequest.SetAccountId(m_accountId);
+            getMRAPRequest.SetName(accessPointName);
+            auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+            ASSERT_FALSE(getMRAPOutcome.IsSuccess());
 
             for (const Aws::String& region : multiRegions)
             {
@@ -316,7 +376,7 @@ namespace
                 S3::Model::DeleteBucketRequest deleteBucketRequest;
                 deleteBucketRequest.SetBucket(regionalBucket);
                 auto deleteBucketOutcome = s3Client.DeleteBucket(deleteBucketRequest);
-                ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+                AWS_ASSERT_SUCCESS(deleteBucketOutcome);
             }
         }
 
@@ -387,13 +447,13 @@ namespace
         Aws::String accessPointArn = ss.str();
         headBucketRequest.SetBucket(accessPointArn);
         auto headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
-        ASSERT_TRUE(headBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(headBucketOutcome);
 
         GetAccessPointRequest getAccessPointRequest;
         getAccessPointRequest.SetAccountId(m_accountId);
         getAccessPointRequest.SetName(accessPointName);
         auto getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_TRUE(getAccessPointOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getAccessPointOutcome);
         ASSERT_EQ(accessPointName, getAccessPointOutcome.GetResult().GetName());
 
         // Invalid service name
@@ -402,7 +462,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        ASSERT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Invalid resource type
         ss.str("");
@@ -410,7 +470,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        ASSERT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Empty account ID
         ss.str("");
@@ -418,7 +478,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Invalid account ID
         ss.str("");
@@ -426,7 +486,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Missing Access Point name
         ss.str("");
@@ -434,7 +494,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Missing Access Point name
         ss.str("");
@@ -442,7 +502,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Invalid Access Point Name
         ss.str("");
@@ -450,7 +510,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Invalid Access Point Name
         ss.str("");
@@ -458,7 +518,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Invalid Access Point Name, containing sub resources
         ss.str("");
@@ -466,7 +526,7 @@ namespace
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Using dualstack
         ClientConfiguration config;
@@ -476,10 +536,10 @@ namespace
         S3ControlClient clientInUsWest2UsingDualStack(config);
         headBucketRequest.SetBucket(accessPointArn);
         headBucketOutcome = s3ClientInUsWest2UsingDualStack.HeadBucket(headBucketRequest);
-        ASSERT_TRUE(headBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(headBucketOutcome);
 
         getAccessPointOutcome = clientInUsWest2UsingDualStack.GetAccessPoint(getAccessPointRequest);
-        ASSERT_TRUE(getAccessPointOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getAccessPointOutcome);
         ASSERT_EQ(accessPointName, getAccessPointOutcome.GetResult().GetName());
 
         config.region = Aws::Region::US_EAST_1;
@@ -487,7 +547,7 @@ namespace
         S3::S3Client s3ClientInUsEast1(config);
         headBucketOutcome = s3ClientInUsEast1.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // The following tests are using region in ARN when making requests.
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
@@ -495,21 +555,21 @@ namespace
         config.region = Aws::Region::US_EAST_1;
         S3::S3Client s3ClientInUsEast1usingArnRegion(config);
         headBucketOutcome = s3ClientInUsEast1usingArnRegion.HeadBucket(headBucketRequest);
-        ASSERT_TRUE(headBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(headBucketOutcome);
 
         // Using custom endpoint
         config.region = Aws::Region::US_WEST_2;
         config.endpointOverride = "s3-accesspoint.us-west-2.amazonaws.com";
         S3::S3Client s3ClientInUsWest2UsingCustomEndpoint(config);
         headBucketOutcome = s3ClientInUsWest2UsingCustomEndpoint.HeadBucket(headBucketRequest);
-        ASSERT_TRUE(headBucketOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(headBucketOutcome);
 
         // Using path style addressing
         config.endpointOverride = "";
         S3::S3Client s3ClientInUsWest2UsingPathStyleAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, false /*useVirtualAddressing*/);
         headBucketOutcome = s3ClientInUsWest2UsingPathStyleAddressing.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         CleanUpAccessPointTest(bucketName, accessPointName);
     }
@@ -521,37 +581,15 @@ namespace
         Aws::String accessPointName = BuildResourceName(BASE_ACCESS_POINT);
 
         Aws::StringStream ss;
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId << ":bucket:" << bucketName;
-        Aws::String outpostBucketArn = ss.str();
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId << ":accesspoint:" << accessPointName;
-        Aws::String outpostAccessPointArn = ss.str();
-
-        ListAccessPointsRequest listAccessPointsRequest;
-        listAccessPointsRequest.SetBucket(outpostBucketArn);
-        ASSERT_LT(0u, listAccessPointsRequest.GetRequestSpecificHeaders().count("x-amz-account-id"));
-        ASSERT_LT(0u, listAccessPointsRequest.GetRequestSpecificHeaders().count("x-amz-outpost-id"));
-
         GetAccessPointRequest getAccessPointRequest;
-        getAccessPointRequest.SetName(outpostAccessPointArn);
-        ASSERT_LT(0u, getAccessPointRequest.GetRequestSpecificHeaders().count("x-amz-account-id"));
-        ASSERT_LT(0u, getAccessPointRequest.GetRequestSpecificHeaders().count("x-amz-outpost-id"));
-
+        getAccessPointRequest.SetAccountId(m_accountId);
         // Invalid service name
         ss.str("");
         ss << "arn:aws:sqs:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId << ":accesspoint:" << accessPointName;
         getAccessPointRequest.SetName(ss.str());
         auto getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Invalid resource type
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost-id:" << outpostId << ":accesspoint:" << accessPointName;
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getAccessPointOutcome.GetError().GetErrorType());
 
         // Empty region
         ss.str("");
@@ -559,7 +597,7 @@ namespace
         getAccessPointRequest.SetName(ss.str());
         getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getAccessPointOutcome.GetError().GetErrorType());
 
         // Empty account ID
         ss.str("");
@@ -567,7 +605,7 @@ namespace
         getAccessPointRequest.SetName(ss.str());
         getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getAccessPointOutcome.GetError().GetErrorType());
 
         // Invalid account ID
         ss.str("");
@@ -575,7 +613,7 @@ namespace
         getAccessPointRequest.SetName(ss.str());
         getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getAccessPointOutcome.GetError().GetErrorType());
 
         // Account ID mismatch
         ss.str("");
@@ -584,81 +622,14 @@ namespace
         getAccessPointRequest.SetAccountId("123456789012");
         getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getAccessPointOutcome.GetError().GetErrorType());
 
         // Missing account ID
         getAccessPointRequest.SetName(accessPointName);
         getAccessPointRequest.SetAccountId("");
         getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
         ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::MISSING_PARAMETER, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Missing outpost ID
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << "" << ":accesspoint:" << accessPointName;
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Invalid outpost ID
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << "*" << ":accesspoint:" << m_accountId;
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Missing Access Point
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId << ":accesspoint:" << "";
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Missing Access Point
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId;
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Invalid Access Point
-        ss.str("");
-        ss << "arn:aws:s3-outposts:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":outpost:" << outpostId << ":accesspoint:" << "*";
-        getAccessPointRequest.SetName(ss.str());
-        getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Dualstack is not campitable with Outpost ARN
-        ClientConfiguration config;
-        config.region = Aws::Region::US_WEST_2;
-        config.useDualStack = true;
-        S3ControlClient clientInUsWest2UsingDualStack(config);
-        getAccessPointRequest.SetName(outpostAccessPointArn);
-        getAccessPointOutcome = clientInUsWest2UsingDualStack.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Custom endpoint is not campitable with Outpost ARN
-        config.region = Aws::Region::US_WEST_2;
-        config.endpointOverride = "s3.amazonaws.com";
-        S3ControlClient clientInUsWest2UsingCustomEndpoint(config);
-        getAccessPointOutcome = clientInUsWest2UsingCustomEndpoint.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Cross region Outpost ARN
-        config.region = Aws::Region::US_EAST_1;
-        config.useDualStack = false;
-        config.endpointOverride = "";
-        S3ControlClient clientInUsEast1(config);
-        getAccessPointOutcome = clientInUsEast1.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
+        EXPECT_EQ(S3ControlErrors::INVALID_PARAMETER_VALUE, getAccessPointOutcome.GetError().GetErrorType());
     }
 
     TEST_F(S3ControlTest, TestS3AccessPointWithPresignedUrls)
@@ -696,7 +667,7 @@ namespace
     TEST_F(S3ControlTest, TestMultiRegionAccessPoint)
     {
         Aws::String bucketName = BuildResourceName(BASE_MRAP_BUCKET_NAME);
-        Aws::String accessPointName = BuildResourceName(BASE_MRAP);
+        Aws::String accessPointName = BuildResourceName(BASE_MRAP) + "integrationtest";
 
         Aws::Vector<Aws::String> multiRegions;
         multiRegions.push_back(Aws::Region::US_EAST_2);
@@ -707,7 +678,7 @@ namespace
         getMRAPRequest.SetAccountId(m_accountId);
         getMRAPRequest.SetName(accessPointName);
         auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
-        ASSERT_TRUE(getMRAPOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getMRAPOutcome);
         Aws::Vector<S3Control::Model::RegionReport> returnedRegions = getMRAPOutcome.GetResult().GetAccessPoint().GetRegions();
         ASSERT_EQ(2u, returnedRegions.size());
 
@@ -729,19 +700,19 @@ namespace
             *objectStream << "Test Multi Region Access Point";
             putObjectRequest.SetBody(objectStream);
             auto putObjectOutcome = s3Client.PutObject(putObjectRequest);
-            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(putObjectOutcome);
 
             S3::Model::HeadObjectRequest headObjectRequest;
             headObjectRequest.SetBucket(arn.str());
             headObjectRequest.SetKey(objectKey);
             auto headObjectOutcome = s3Client.HeadObject(headObjectRequest);
-            ASSERT_TRUE(headObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(headObjectOutcome);
 
             S3::Model::GetObjectRequest getObjectRequest;
             getObjectRequest.SetBucket(arn.str());
             getObjectRequest.SetKey(objectKey);
             auto getObjectOutcome = s3Client.GetObject(getObjectRequest);
-            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(getObjectOutcome);
             Aws::StringStream ss;
             ss << getObjectOutcome.GetResult().GetBody().rdbuf();
             ASSERT_STREQ("Test Multi Region Access Point", ss.str().c_str());
@@ -749,184 +720,9 @@ namespace
             deleteObjectRequest.SetBucket(arn.str());
             deleteObjectRequest.SetKey(objectKey);
             auto deleteObjectOutcome = s3Client.DeleteObject(deleteObjectRequest);
-            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+            AWS_ASSERT_SUCCESS(deleteObjectOutcome);
         }
 
         CleanUpMRAPTest(bucketName, multiRegions, accessPointName);
-    }
-
-    TEST_F(S3ControlTest, TestCustomEndpointOverride)
-    {
-        // Outpost Access Point ARN without dualstack
-        ASSERT_STREQ("beta.example.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
-                "", false, "beta.example.com").c_str());
-        // Outpost Bucket ARN without dualstack
-        ASSERT_STREQ("beta.example.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
-                "", false, "beta.example.com").c_str());
-
-        Aws::String bucketName = BuildResourceName(BASE_BUCKET_NAME);
-        Aws::String outpostId = BuildResourceName(BASE_OUTPOST_ID);
-        Aws::String accessPointName = BuildResourceName(BASE_ACCESS_POINT);
-        Aws::StringStream ss;
-
-        ClientConfiguration config;
-        config.region = Aws::Region::US_WEST_2;
-        config.endpointOverride = CUSTOM_ENDPOINT_OVERRIDE;
-        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
-        S3ControlClient s3ControlClient(config);
-        config.useDualStack = true;
-        S3ControlClient s3ControlClientWithDualStack(config);
-
-        // Traditional Access Point name
-        GetAccessPointRequest getAccessPointRequest;
-        getAccessPointRequest.SetAccountId(m_accountId);
-        getAccessPointRequest.SetName(accessPointName);
-        auto getAccessPointOutcome = s3ControlClient.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
-        ss << "https://" << m_accountId << "." << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/accesspoint/" << accessPointName;
-        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-        ASSERT_STREQ("s3", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
-
-        getAccessPointOutcome = s3ControlClientWithDualStack.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Outposts Access Point Arn
-        getAccessPointRequest.SetAccountId("");
-        getAccessPointRequest.SetName("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
-        getAccessPointOutcome = s3ControlClient.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
-        ss.str("");
-        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/accesspoint/myaccesspoint";
-        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
-
-        getAccessPointOutcome = s3ControlClientWithDualStack.GetAccessPoint(getAccessPointRequest);
-        ASSERT_FALSE(getAccessPointOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getAccessPointOutcome.GetError().GetResponseCode());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getAccessPointOutcome.GetError().GetErrorType());
-
-        // Traditional bucket name with Outposts
-        CreateBucketRequest createBucketRequest;
-        createBucketRequest.SetBucket(bucketName);
-        createBucketRequest.SetOutpostId(outpostId);
-        auto createBucketOutcome = s3ControlClient.CreateBucket(createBucketRequest);
-        ASSERT_FALSE(createBucketOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, createBucketOutcome.GetError().GetResponseCode());
-        ss.str("");
-        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/bucket/" << bucketName;
-        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
-
-        createBucketOutcome = s3ControlClientWithDualStack.CreateBucket(createBucketRequest);
-        ASSERT_FALSE(createBucketOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, createBucketOutcome.GetError().GetResponseCode());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, createBucketOutcome.GetError().GetErrorType());
-
-        // Outposts Bucket Arn
-        GetBucketRequest getBucketRequest;
-        getBucketRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket");
-        auto getBucketOutcome = s3ControlClient.GetBucket(getBucketRequest);
-        ASSERT_FALSE(getBucketOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getBucketOutcome.GetError().GetResponseCode());
-        ss.str("");
-        ss << "https://" << CUSTOM_ENDPOINT_OVERRIDE << "/v20180820/bucket/mybucket";
-        ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-        ASSERT_STREQ("s3-outposts", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
-
-        getBucketOutcome = s3ControlClientWithDualStack.GetBucket(getBucketRequest);
-        ASSERT_FALSE(getBucketOutcome.IsSuccess());
-        ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, getBucketOutcome.GetError().GetResponseCode());
-        ASSERT_EQ(S3ControlErrors::VALIDATION, getBucketOutcome.GetError().GetErrorType());
-    }
-
-    TEST_F(S3ControlTest, TestS3ControlARNValidation)
-    {
-        // 1. The followings are examples for valid S3 ARN:
-        // 1.1 S3 Outposts ARN:
-        // 1.1.1 S3 Outposts ARN with Access Point:
-        ASSERT_TRUE(S3ControlARN("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        ASSERT_TRUE(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/my-accesspoint").Validate().IsSuccess());
-
-        // 1.1.2 S3 Outposts ARN with Bucket:
-        ASSERT_TRUE(S3ControlARN("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:my-bucket").Validate().IsSuccess());
-        ASSERT_TRUE(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/bucket/my-bucket").Validate().IsSuccess());
-
-        // 2. The followings are examples for invalid S3 Control ARN:
-        // 2.1 Common errors for all types of ARNs:
-        // 2.1.1 S3ControlARN partition
-        // Invalid partition: cn-aws
-        ASSERT_FALSE(S3ControlARN("arn:cn-aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        // Empty partition name
-        ASSERT_FALSE(S3ControlARN("arn::s3:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-
-        // 2.1.2 S3ControlARN service
-        // Invalid service: s3-control
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3-control:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        // Empty service name
-        ASSERT_FALSE(S3ControlARN("arn:aws::us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        // Invalid service name with upper case
-        ASSERT_FALSE(S3ControlARN("arn:aws:S3:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-
-        // 2.1.3 S3ControlARN region
-        // Cross region ARN when useArnRegion = false
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-west-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate("us-east-1").IsSuccess());
-        // Empty region name
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3::123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-
-        // S3ControlARN account id
-        // Invalid account ID with non RFC 3986 Host label
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:12345.678912:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        // Empty account ID
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1::outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-
-        // 2.1.4 S3ControlARN resource type
-        // Invalid resource type: accesspoint, bucket
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:accesspoint:my-accesspoint").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-west-2:123456789012:bucket:my-bucket").Validate().IsSuccess());
-
-        // 2.2 S3 Outposts ARN:
-        // Fips regions are not supported.
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:fips-us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:bucket:my-bucket").Validate("us-east-1-fips").IsSuccess());
-        // Empty resource ID
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:").Validate().IsSuccess());
-        // Empty sub resource
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:bucket").Validate().IsSuccess());
-        // Invalid sub resource
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:accesspoint").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:bucket").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:bucket").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456:object:my-object").Validate().IsSuccess());
-        ASSERT_FALSE(S3ControlARN("arn:aws:s3:us-east-1:123456789012:outpost:op-01234567890123456::my-object").Validate().IsSuccess());
-    }
-
-    TEST_F(S3ControlTest, TestS3ControlEndpointForOutpostsARN)
-    {
-        // With Access Point
-        ASSERT_STREQ("s3-outposts.us-west-2.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint"), "us-west-2").c_str());
-        ASSERT_STREQ("s3-outposts.us-east-1.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint"), "").c_str());
-        ASSERT_STREQ("s3-outposts.us-gov-east-1.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:my-accesspoint"), "").c_str());
-
-        // With Bucket
-        ASSERT_STREQ("s3-outposts.us-west-2.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:my-bucket"), "us-west-2").c_str());
-        ASSERT_STREQ("s3-outposts.us-east-1.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:my-bucket"), "").c_str());
-        ASSERT_STREQ("s3-outposts.us-gov-east-1.amazonaws.com",
-            S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:my-bucket"), "").c_str());
     }
 }

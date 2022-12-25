@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterfaceTestHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory
+  class VirtualInterfaceTestHistory
   {
   public:
-    VirtualInterfaceTestHistory();
-    VirtualInterfaceTestHistory(Aws::Utils::Json::JsonView jsonValue);
-    VirtualInterfaceTestHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory();
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_testId;
-    bool m_testIdHasBeenSet;
+    bool m_testIdHasBeenSet = false;
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bgpPeers;
-    bool m_bgpPeersHasBeenSet;
+    bool m_bgpPeersHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     int m_testDurationInMinutes;
-    bool m_testDurationInMinutesHasBeenSet;
+    bool m_testDurationInMinutesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

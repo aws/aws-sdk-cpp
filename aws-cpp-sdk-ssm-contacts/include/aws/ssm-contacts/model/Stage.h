@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Stage">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Stage
+  class Stage
   {
   public:
-    Stage();
-    Stage(Aws::Utils::Json::JsonView jsonValue);
-    Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Stage();
+    AWS_SSMCONTACTS_API Stage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Stage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     int m_durationInMinutes;
-    bool m_durationInMinutesHasBeenSet;
+    bool m_durationInMinutesHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
   };
 
 } // namespace Model

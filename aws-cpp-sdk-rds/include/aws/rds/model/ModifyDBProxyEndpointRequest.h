@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API ModifyDBProxyEndpointRequest : public RDSRequest
+  class ModifyDBProxyEndpointRequest : public RDSRequest
   {
   public:
-    ModifyDBProxyEndpointRequest();
+    AWS_RDS_API ModifyDBProxyEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyDBProxyEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -209,13 +209,13 @@ namespace Model
   private:
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::String m_newDBProxyEndpointName;
-    bool m_newDBProxyEndpointNameHasBeenSet;
+    bool m_newDBProxyEndpointNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

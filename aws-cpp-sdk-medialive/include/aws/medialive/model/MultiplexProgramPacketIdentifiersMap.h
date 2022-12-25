@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramPacketIdentifiersMap">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap
+  class MultiplexProgramPacketIdentifiersMap
   {
   public:
-    MultiplexProgramPacketIdentifiersMap();
-    MultiplexProgramPacketIdentifiersMap(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramPacketIdentifiersMap& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap();
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -244,43 +244,43 @@ namespace Model
   private:
 
     Aws::Vector<int> m_audioPids;
-    bool m_audioPidsHasBeenSet;
+    bool m_audioPidsHasBeenSet = false;
 
     Aws::Vector<int> m_dvbSubPids;
-    bool m_dvbSubPidsHasBeenSet;
+    bool m_dvbSubPidsHasBeenSet = false;
 
     int m_dvbTeletextPid;
-    bool m_dvbTeletextPidHasBeenSet;
+    bool m_dvbTeletextPidHasBeenSet = false;
 
     int m_etvPlatformPid;
-    bool m_etvPlatformPidHasBeenSet;
+    bool m_etvPlatformPidHasBeenSet = false;
 
     int m_etvSignalPid;
-    bool m_etvSignalPidHasBeenSet;
+    bool m_etvSignalPidHasBeenSet = false;
 
     Aws::Vector<int> m_klvDataPids;
-    bool m_klvDataPidsHasBeenSet;
+    bool m_klvDataPidsHasBeenSet = false;
 
     int m_pcrPid;
-    bool m_pcrPidHasBeenSet;
+    bool m_pcrPidHasBeenSet = false;
 
     int m_pmtPid;
-    bool m_pmtPidHasBeenSet;
+    bool m_pmtPidHasBeenSet = false;
 
     int m_privateMetadataPid;
-    bool m_privateMetadataPidHasBeenSet;
+    bool m_privateMetadataPidHasBeenSet = false;
 
     Aws::Vector<int> m_scte27Pids;
-    bool m_scte27PidsHasBeenSet;
+    bool m_scte27PidsHasBeenSet = false;
 
     int m_scte35Pid;
-    bool m_scte35PidHasBeenSet;
+    bool m_scte35PidHasBeenSet = false;
 
     int m_timedMetadataPid;
-    bool m_timedMetadataPidHasBeenSet;
+    bool m_timedMetadataPidHasBeenSet = false;
 
     int m_videoPid;
-    bool m_videoPidHasBeenSet;
+    bool m_videoPidHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPREHEND_API ImportModelRequest : public ComprehendRequest
+  class ImportModelRequest : public ComprehendRequest
   {
   public:
-    ImportModelRequest();
+    AWS_COMPREHEND_API ImportModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPREHEND_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -404,22 +404,22 @@ namespace Model
   private:
 
     Aws::String m_sourceModelArn;
-    bool m_sourceModelArnHasBeenSet;
+    bool m_sourceModelArnHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_modelKmsKeyId;
-    bool m_modelKmsKeyIdHasBeenSet;
+    bool m_modelKmsKeyIdHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

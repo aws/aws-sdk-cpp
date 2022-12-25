@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchClusterConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig
+  class ElasticsearchClusterConfig
   {
   public:
-    ElasticsearchClusterConfig();
-    ElasticsearchClusterConfig(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -366,37 +366,37 @@ namespace Model
   private:
 
     ESPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
 
     ZoneAwarenessConfig m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     ESPartitionInstanceType m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     bool m_warmEnabled;
-    bool m_warmEnabledHasBeenSet;
+    bool m_warmEnabledHasBeenSet = false;
 
     ESWarmPartitionInstanceType m_warmType;
-    bool m_warmTypeHasBeenSet;
+    bool m_warmTypeHasBeenSet = false;
 
     int m_warmCount;
-    bool m_warmCountHasBeenSet;
+    bool m_warmCountHasBeenSet = false;
 
     ColdStorageOptions m_coldStorageOptions;
-    bool m_coldStorageOptionsHasBeenSet;
+    bool m_coldStorageOptionsHasBeenSet = false;
   };
 
 } // namespace Model

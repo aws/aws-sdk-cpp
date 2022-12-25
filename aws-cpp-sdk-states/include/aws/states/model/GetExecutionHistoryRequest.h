@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SFN_API GetExecutionHistoryRequest : public SFNRequest
+  class GetExecutionHistoryRequest : public SFNRequest
   {
   public:
-    GetExecutionHistoryRequest();
+    AWS_SFN_API GetExecutionHistoryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetExecutionHistory"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SFN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet;
+    bool m_executionArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_reverseOrder;
-    bool m_reverseOrderHasBeenSet;
+    bool m_reverseOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_includeExecutionData;
-    bool m_includeExecutionDataHasBeenSet;
+    bool m_includeExecutionDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupResources">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API NodegroupResources
+  class NodegroupResources
   {
   public:
-    NodegroupResources();
-    NodegroupResources(Aws::Utils::Json::JsonView jsonValue);
-    NodegroupResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API NodegroupResources();
+    AWS_EKS_API NodegroupResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API NodegroupResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_remoteAccessSecurityGroup;
-    bool m_remoteAccessSecurityGroupHasBeenSet;
+    bool m_remoteAccessSecurityGroupHasBeenSet = false;
   };
 
 } // namespace Model

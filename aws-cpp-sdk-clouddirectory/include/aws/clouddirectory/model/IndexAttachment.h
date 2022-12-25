@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/IndexAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API IndexAttachment
+  class IndexAttachment
   {
   public:
-    IndexAttachment();
-    IndexAttachment(Aws::Utils::Json::JsonView jsonValue);
-    IndexAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API IndexAttachment();
+    AWS_CLOUDDIRECTORY_API IndexAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API IndexAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::Vector<AttributeKeyAndValue> m_indexedAttributes;
-    bool m_indexedAttributesHasBeenSet;
+    bool m_indexedAttributesHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

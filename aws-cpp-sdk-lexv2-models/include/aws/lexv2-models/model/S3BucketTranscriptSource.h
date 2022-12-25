@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/S3BucketTranscriptSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API S3BucketTranscriptSource
+  class S3BucketTranscriptSource
   {
   public:
-    S3BucketTranscriptSource();
-    S3BucketTranscriptSource(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketTranscriptSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource();
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -278,19 +278,19 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     PathFormat m_pathFormat;
-    bool m_pathFormatHasBeenSet;
+    bool m_pathFormatHasBeenSet = false;
 
     TranscriptFormat m_transcriptFormat;
-    bool m_transcriptFormatHasBeenSet;
+    bool m_transcriptFormatHasBeenSet = false;
 
     TranscriptFilter m_transcriptFilter;
-    bool m_transcriptFilterHasBeenSet;
+    bool m_transcriptFilterHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TIMESTREAMWRITE_API UpdateDatabaseRequest : public TimestreamWriteRequest
+  class UpdateDatabaseRequest : public TimestreamWriteRequest
   {
   public:
-    UpdateDatabaseRequest();
+    AWS_TIMESTREAMWRITE_API UpdateDatabaseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDatabase"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TIMESTREAMWRITE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TIMESTREAMWRITE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

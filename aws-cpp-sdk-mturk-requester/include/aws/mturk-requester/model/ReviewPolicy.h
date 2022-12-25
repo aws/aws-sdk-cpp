@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ReviewPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ReviewPolicy
+  class ReviewPolicy
   {
   public:
-    ReviewPolicy();
-    ReviewPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ReviewPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ReviewPolicy();
+    AWS_MTURK_API ReviewPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ReviewPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::Vector<PolicyParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

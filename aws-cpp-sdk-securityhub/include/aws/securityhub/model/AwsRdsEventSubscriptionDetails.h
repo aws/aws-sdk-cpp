@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsEventSubscriptionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails
+  class AwsRdsEventSubscriptionDetails
   {
   public:
-    AwsRdsEventSubscriptionDetails();
-    AwsRdsEventSubscriptionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsEventSubscriptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails();
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsEventSubscriptionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -505,34 +505,34 @@ namespace Model
   private:
 
     Aws::String m_custSubscriptionId;
-    bool m_custSubscriptionIdHasBeenSet;
+    bool m_custSubscriptionIdHasBeenSet = false;
 
     Aws::String m_customerAwsId;
-    bool m_customerAwsIdHasBeenSet;
+    bool m_customerAwsIdHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategoriesList;
-    bool m_eventCategoriesListHasBeenSet;
+    bool m_eventCategoriesListHasBeenSet = false;
 
     Aws::String m_eventSubscriptionArn;
-    bool m_eventSubscriptionArnHasBeenSet;
+    bool m_eventSubscriptionArnHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceIdsList;
-    bool m_sourceIdsListHasBeenSet;
+    bool m_sourceIdsListHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subscriptionCreationTime;
-    bool m_subscriptionCreationTimeHasBeenSet;
+    bool m_subscriptionCreationTimeHasBeenSet = false;
   };
 
 } // namespace Model

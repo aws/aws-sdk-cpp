@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API FieldToMatch
+  class FieldToMatch
   {
   public:
-    FieldToMatch();
-    FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
-    FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API FieldToMatch();
+    AWS_WAFV2_API FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -583,34 +583,34 @@ namespace Model
   private:
 
     SingleHeader m_singleHeader;
-    bool m_singleHeaderHasBeenSet;
+    bool m_singleHeaderHasBeenSet = false;
 
     SingleQueryArgument m_singleQueryArgument;
-    bool m_singleQueryArgumentHasBeenSet;
+    bool m_singleQueryArgumentHasBeenSet = false;
 
     AllQueryArguments m_allQueryArguments;
-    bool m_allQueryArgumentsHasBeenSet;
+    bool m_allQueryArgumentsHasBeenSet = false;
 
     UriPath m_uriPath;
-    bool m_uriPathHasBeenSet;
+    bool m_uriPathHasBeenSet = false;
 
     QueryString m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Body m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Method m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     JsonBody m_jsonBody;
-    bool m_jsonBodyHasBeenSet;
+    bool m_jsonBodyHasBeenSet = false;
 
     Headers m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     Cookies m_cookies;
-    bool m_cookiesHasBeenSet;
+    bool m_cookiesHasBeenSet = false;
   };
 
 } // namespace Model

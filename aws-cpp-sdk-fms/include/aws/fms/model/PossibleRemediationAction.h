@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PossibleRemediationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PossibleRemediationAction
+  class PossibleRemediationAction
   {
   public:
-    PossibleRemediationAction();
-    PossibleRemediationAction(Aws::Utils::Json::JsonView jsonValue);
-    PossibleRemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PossibleRemediationAction();
+    AWS_FMS_API PossibleRemediationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PossibleRemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<RemediationActionWithOrder> m_orderedRemediationActions;
-    bool m_orderedRemediationActionsHasBeenSet;
+    bool m_orderedRemediationActionsHasBeenSet = false;
 
     bool m_isDefaultAction;
-    bool m_isDefaultActionHasBeenSet;
+    bool m_isDefaultActionHasBeenSet = false;
   };
 
 } // namespace Model

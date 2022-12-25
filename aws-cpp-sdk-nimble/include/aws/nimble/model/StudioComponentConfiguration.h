@@ -32,48 +32,48 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioComponentConfiguration
+  class StudioComponentConfiguration
   {
   public:
-    StudioComponentConfiguration();
-    StudioComponentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StudioComponentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioComponentConfiguration();
+    AWS_NIMBLESTUDIO_API StudioComponentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioComponentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline const ActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline void SetActiveDirectoryConfiguration(const ActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline void SetActiveDirectoryConfiguration(ActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline StudioComponentConfiguration& WithActiveDirectoryConfiguration(const ActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline StudioComponentConfiguration& WithActiveDirectoryConfiguration(ActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
 
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     ActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-    bool m_activeDirectoryConfigurationHasBeenSet;
+    bool m_activeDirectoryConfigurationHasBeenSet = false;
 
     ComputeFarmConfiguration m_computeFarmConfiguration;
-    bool m_computeFarmConfigurationHasBeenSet;
+    bool m_computeFarmConfigurationHasBeenSet = false;
 
     LicenseServiceConfiguration m_licenseServiceConfiguration;
-    bool m_licenseServiceConfigurationHasBeenSet;
+    bool m_licenseServiceConfigurationHasBeenSet = false;
 
     SharedFileSystemConfiguration m_sharedFileSystemConfiguration;
-    bool m_sharedFileSystemConfigurationHasBeenSet;
+    bool m_sharedFileSystemConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

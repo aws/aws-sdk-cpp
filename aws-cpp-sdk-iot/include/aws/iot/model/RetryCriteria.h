@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RetryCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RetryCriteria
+  class RetryCriteria
   {
   public:
-    RetryCriteria();
-    RetryCriteria(Aws::Utils::Json::JsonView jsonValue);
-    RetryCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API RetryCriteria();
+    AWS_IOT_API RetryCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API RetryCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     RetryableFailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     int m_numberOfRetries;
-    bool m_numberOfRetriesHasBeenSet;
+    bool m_numberOfRetriesHasBeenSet = false;
   };
 
 } // namespace Model

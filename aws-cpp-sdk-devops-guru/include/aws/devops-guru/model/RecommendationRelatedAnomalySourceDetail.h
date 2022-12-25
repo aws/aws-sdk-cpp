@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedAnomalySourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail
+  class RecommendationRelatedAnomalySourceDetail
   {
   public:
-    RecommendationRelatedAnomalySourceDetail();
-    RecommendationRelatedAnomalySourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationRelatedAnomalySourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail();
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalySourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail> m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
   };
 
 } // namespace Model

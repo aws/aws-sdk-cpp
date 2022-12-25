@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceDataReplicationInitiation">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceDataReplicationInitiation
+  class RecoveryInstanceDataReplicationInitiation
   {
   public:
-    RecoveryInstanceDataReplicationInitiation();
-    RecoveryInstanceDataReplicationInitiation(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceDataReplicationInitiation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiation();
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_startDateTime;
-    bool m_startDateTimeHasBeenSet;
+    bool m_startDateTimeHasBeenSet = false;
 
     Aws::Vector<RecoveryInstanceDataReplicationInitiationStep> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomResponseBody">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CustomResponseBody
+  class CustomResponseBody
   {
   public:
-    CustomResponseBody();
-    CustomResponseBody(Aws::Utils::Json::JsonView jsonValue);
-    CustomResponseBody& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CustomResponseBody();
+    AWS_WAFV2_API CustomResponseBody(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CustomResponseBody& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,10 +176,10 @@ namespace Model
   private:
 
     ResponseContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

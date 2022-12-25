@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GroupedResourceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API GroupedResourceCount
+  class GroupedResourceCount
   {
   public:
-    GroupedResourceCount();
-    GroupedResourceCount(Aws::Utils::Json::JsonView jsonValue);
-    GroupedResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API GroupedResourceCount();
+    AWS_CONFIGSERVICE_API GroupedResourceCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API GroupedResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     long long m_resourceCount;
-    bool m_resourceCountHasBeenSet;
+    bool m_resourceCountHasBeenSet = false;
   };
 
 } // namespace Model

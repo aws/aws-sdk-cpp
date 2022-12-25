@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_FORECASTSERVICE_API CreateDatasetRequest : public ForecastServiceRequest
+  class CreateDatasetRequest : public ForecastServiceRequest
   {
   public:
-    CreateDatasetRequest();
+    AWS_FORECASTSERVICE_API CreateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FORECASTSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -579,25 +579,25 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     DatasetType m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::String m_dataFrequency;
-    bool m_dataFrequencyHasBeenSet;
+    bool m_dataFrequencyHasBeenSet = false;
 
     Schema m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

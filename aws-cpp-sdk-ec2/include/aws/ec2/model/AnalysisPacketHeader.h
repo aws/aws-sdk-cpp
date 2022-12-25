@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AnalysisPacketHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AnalysisPacketHeader
+  class AnalysisPacketHeader
   {
   public:
-    AnalysisPacketHeader();
-    AnalysisPacketHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisPacketHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisPacketHeader();
+    AWS_EC2_API AnalysisPacketHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AnalysisPacketHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_destinationAddresses;
-    bool m_destinationAddressesHasBeenSet;
+    bool m_destinationAddressesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_destinationPortRanges;
-    bool m_destinationPortRangesHasBeenSet;
+    bool m_destinationPortRangesHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceAddresses;
-    bool m_sourceAddressesHasBeenSet;
+    bool m_sourceAddressesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_sourcePortRanges;
-    bool m_sourcePortRangesHasBeenSet;
+    bool m_sourcePortRangesHasBeenSet = false;
   };
 
 } // namespace Model

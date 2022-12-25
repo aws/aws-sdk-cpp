@@ -5,110 +5,17 @@
 
 #pragma once
 #include <aws/sdb/SimpleDB_EXPORTS.h>
-#include <aws/sdb/SimpleDBErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/sdb/model/DomainMetadataResult.h>
-#include <aws/sdb/model/GetAttributesResult.h>
-#include <aws/sdb/model/ListDomainsResult.h>
-#include <aws/sdb/model/SelectResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sdb/SimpleDBServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SimpleDB
 {
-
-namespace Model
-{
-        class BatchDeleteAttributesRequest;
-        class BatchPutAttributesRequest;
-        class CreateDomainRequest;
-        class DeleteAttributesRequest;
-        class DeleteDomainRequest;
-        class DomainMetadataRequest;
-        class GetAttributesRequest;
-        class ListDomainsRequest;
-        class PutAttributesRequest;
-        class SelectRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchDeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchPutAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DomainMetadataResult, SimpleDBError> DomainMetadataOutcome;
-        typedef Aws::Utils::Outcome<GetAttributesResult, SimpleDBError> GetAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, SimpleDBError> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> PutAttributesOutcome;
-        typedef Aws::Utils::Outcome<SelectResult, SimpleDBError> SelectOutcome;
-
-        typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
-        typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DomainMetadataOutcome> DomainMetadataOutcomeCallable;
-        typedef std::future<GetAttributesOutcome> GetAttributesOutcomeCallable;
-        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-        typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
-        typedef std::future<SelectOutcome> SelectOutcomeCallable;
-} // namespace Model
-
-  class SimpleDBClient;
-
-    typedef std::function<void(const SimpleDBClient*, const Model::BatchDeleteAttributesRequest&, const Model::BatchDeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteAttributesResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::BatchPutAttributesRequest&, const Model::BatchPutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutAttributesResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributesResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::DomainMetadataRequest&, const Model::DomainMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DomainMetadataResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::GetAttributesRequest&, const Model::GetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributesResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributesResponseReceivedHandler;
-    typedef std::function<void(const SimpleDBClient*, const Model::SelectRequest&, const Model::SelectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResponseReceivedHandler;
-
   /**
    * Amazon SimpleDB is a web service providing the core database functions of data
    * indexing and querying in the cloud. By offloading the time and effort associated
@@ -125,30 +32,59 @@ namespace Model
    * href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for
    * more information. </p>
    */
-  class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient
+  class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SimpleDBClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SimpleDBClient(const Aws::SimpleDB::SimpleDBClientConfiguration& clientConfiguration = Aws::SimpleDB::SimpleDBClientConfiguration(),
+                       std::shared_ptr<SimpleDBEndpointProviderBase> endpointProvider = Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SimpleDBClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SimpleDBClient(const Aws::Auth::AWSCredentials& credentials,
+                       std::shared_ptr<SimpleDBEndpointProviderBase> endpointProvider = Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::SimpleDB::SimpleDBClientConfiguration& clientConfiguration = Aws::SimpleDB::SimpleDBClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SimpleDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<SimpleDBEndpointProviderBase> endpointProvider = Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::SimpleDB::SimpleDBClientConfiguration& clientConfiguration = Aws::SimpleDB::SimpleDBClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SimpleDBClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SimpleDBClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SimpleDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SimpleDBClient();
 
 
@@ -441,22 +377,14 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchDeleteAttributesAsyncHelper(const Model::BatchDeleteAttributesRequest& request, const BatchDeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchPutAttributesAsyncHelper(const Model::BatchPutAttributesRequest& request, const BatchPutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DomainMetadataAsyncHelper(const Model::DomainMetadataRequest& request, const DomainMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAttributesAsyncHelper(const Model::GetAttributesRequest& request, const GetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SelectAsyncHelper(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>;
+        void init(const SimpleDBClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        SimpleDBClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<SimpleDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SimpleDB

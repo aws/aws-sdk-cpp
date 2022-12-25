@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetTrafficPolicyInstanceRequest : public Route53Request
+  class GetTrafficPolicyInstanceRequest : public Route53Request
   {
   public:
-    GetTrafficPolicyInstanceRequest();
+    AWS_ROUTE53_API GetTrafficPolicyInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTrafficPolicyInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

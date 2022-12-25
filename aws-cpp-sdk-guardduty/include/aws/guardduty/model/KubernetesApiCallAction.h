@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/KubernetesApiCallAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API KubernetesApiCallAction
+  class KubernetesApiCallAction
   {
   public:
-    KubernetesApiCallAction();
-    KubernetesApiCallAction(Aws::Utils::Json::JsonView jsonValue);
-    KubernetesApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API KubernetesApiCallAction();
+    AWS_GUARDDUTY_API KubernetesApiCallAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API KubernetesApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,25 +301,25 @@ namespace Model
   private:
 
     Aws::String m_requestUri;
-    bool m_requestUriHasBeenSet;
+    bool m_requestUriHasBeenSet = false;
 
     Aws::String m_verb;
-    bool m_verbHasBeenSet;
+    bool m_verbHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceIps;
-    bool m_sourceIpsHasBeenSet;
+    bool m_sourceIpsHasBeenSet = false;
 
     Aws::String m_userAgent;
-    bool m_userAgentHasBeenSet;
+    bool m_userAgentHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
 
     int m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

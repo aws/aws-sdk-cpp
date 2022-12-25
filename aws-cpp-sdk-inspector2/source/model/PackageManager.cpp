@@ -32,6 +32,10 @@ namespace Aws
         static const int GOMOD_HASH = HashingUtils::HashString("GOMOD");
         static const int JAR_HASH = HashingUtils::HashString("JAR");
         static const int OS_HASH = HashingUtils::HashString("OS");
+        static const int PIP_HASH = HashingUtils::HashString("PIP");
+        static const int PYTHONPKG_HASH = HashingUtils::HashString("PYTHONPKG");
+        static const int NODEPKG_HASH = HashingUtils::HashString("NODEPKG");
+        static const int POM_HASH = HashingUtils::HashString("POM");
 
 
         PackageManager GetPackageManagerForName(const Aws::String& name)
@@ -85,6 +89,22 @@ namespace Aws
           {
             return PackageManager::OS;
           }
+          else if (hashCode == PIP_HASH)
+          {
+            return PackageManager::PIP;
+          }
+          else if (hashCode == PYTHONPKG_HASH)
+          {
+            return PackageManager::PYTHONPKG;
+          }
+          else if (hashCode == NODEPKG_HASH)
+          {
+            return PackageManager::NODEPKG;
+          }
+          else if (hashCode == POM_HASH)
+          {
+            return PackageManager::POM;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +143,14 @@ namespace Aws
             return "JAR";
           case PackageManager::OS:
             return "OS";
+          case PackageManager::PIP:
+            return "PIP";
+          case PackageManager::PYTHONPKG:
+            return "PYTHONPKG";
+          case PackageManager::NODEPKG:
+            return "NODEPKG";
+          case PackageManager::POM:
+            return "POM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

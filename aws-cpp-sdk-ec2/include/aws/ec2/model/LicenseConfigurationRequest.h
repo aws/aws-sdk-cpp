@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LicenseConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LicenseConfigurationRequest
+  class LicenseConfigurationRequest
   {
   public:
-    LicenseConfigurationRequest();
-    LicenseConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LicenseConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LicenseConfigurationRequest();
+    AWS_EC2_API LicenseConfigurationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LicenseConfigurationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_licenseConfigurationArn;
-    bool m_licenseConfigurationArnHasBeenSet;
+    bool m_licenseConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

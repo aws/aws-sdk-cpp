@@ -30,7 +30,7 @@ ListBatchJobExecutionsResult& ListBatchJobExecutionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchJobExecutions"))
   {
-    Array<JsonView> batchJobExecutionsJsonList = jsonValue.GetArray("batchJobExecutions");
+    Aws::Utils::Array<JsonView> batchJobExecutionsJsonList = jsonValue.GetArray("batchJobExecutions");
     for(unsigned batchJobExecutionsIndex = 0; batchJobExecutionsIndex < batchJobExecutionsJsonList.GetLength(); ++batchJobExecutionsIndex)
     {
       m_batchJobExecutions.push_back(batchJobExecutionsJsonList[batchJobExecutionsIndex].AsObject());

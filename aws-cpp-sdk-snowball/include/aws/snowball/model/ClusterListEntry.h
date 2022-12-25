@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ClusterListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API ClusterListEntry
+  class ClusterListEntry
   {
   public:
-    ClusterListEntry();
-    ClusterListEntry(Aws::Utils::Json::JsonView jsonValue);
-    ClusterListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API ClusterListEntry();
+    AWS_SNOWBALL_API ClusterListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API ClusterListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     ClusterState m_clusterState;
-    bool m_clusterStateHasBeenSet;
+    bool m_clusterStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

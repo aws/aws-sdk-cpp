@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MultiRegionAccessPointPolicyDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API MultiRegionAccessPointPolicyDocument
+  class MultiRegionAccessPointPolicyDocument
   {
   public:
-    MultiRegionAccessPointPolicyDocument();
-    MultiRegionAccessPointPolicyDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MultiRegionAccessPointPolicyDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointPolicyDocument();
+    AWS_S3CONTROL_API MultiRegionAccessPointPolicyDocument(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointPolicyDocument& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     EstablishedMultiRegionAccessPointPolicy m_established;
-    bool m_establishedHasBeenSet;
+    bool m_establishedHasBeenSet = false;
 
     ProposedMultiRegionAccessPointPolicy m_proposed;
-    bool m_proposedHasBeenSet;
+    bool m_proposedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API DescribeHubRequest : public SecurityHubRequest
+  class DescribeHubRequest : public SecurityHubRequest
   {
   public:
-    DescribeHubRequest();
+    AWS_SECURITYHUB_API DescribeHubRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeHub"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SECURITYHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_hubArn;
-    bool m_hubArnHasBeenSet;
+    bool m_hubArnHasBeenSet = false;
   };
 
 } // namespace Model

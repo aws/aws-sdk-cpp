@@ -30,7 +30,7 @@ DescribeQueryDefinitionsResult& DescribeQueryDefinitionsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("queryDefinitions"))
   {
-    Array<JsonView> queryDefinitionsJsonList = jsonValue.GetArray("queryDefinitions");
+    Aws::Utils::Array<JsonView> queryDefinitionsJsonList = jsonValue.GetArray("queryDefinitions");
     for(unsigned queryDefinitionsIndex = 0; queryDefinitionsIndex < queryDefinitionsJsonList.GetLength(); ++queryDefinitionsIndex)
     {
       m_queryDefinitions.push_back(queryDefinitionsJsonList[queryDefinitionsIndex].AsObject());

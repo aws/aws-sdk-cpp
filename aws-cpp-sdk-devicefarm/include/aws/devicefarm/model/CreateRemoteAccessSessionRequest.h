@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API CreateRemoteAccessSessionRequest : public DeviceFarmRequest
+  class CreateRemoteAccessSessionRequest : public DeviceFarmRequest
   {
   public:
-    CreateRemoteAccessSessionRequest();
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRemoteAccessSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -619,7 +619,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
@@ -628,7 +628,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
@@ -637,7 +637,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
@@ -646,7 +646,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
@@ -654,40 +654,40 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
 
     bool m_remoteDebugEnabled;
-    bool m_remoteDebugEnabledHasBeenSet;
+    bool m_remoteDebugEnabledHasBeenSet = false;
 
     bool m_remoteRecordEnabled;
-    bool m_remoteRecordEnabledHasBeenSet;
+    bool m_remoteRecordEnabledHasBeenSet = false;
 
     Aws::String m_remoteRecordAppArn;
-    bool m_remoteRecordAppArnHasBeenSet;
+    bool m_remoteRecordAppArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     CreateRemoteAccessSessionConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     InteractionMode m_interactionMode;
-    bool m_interactionModeHasBeenSet;
+    bool m_interactionModeHasBeenSet = false;
 
     bool m_skipAppResign;
-    bool m_skipAppResignHasBeenSet;
+    bool m_skipAppResignHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CurrentRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API CurrentRevision
+  class CurrentRevision
   {
   public:
-    CurrentRevision();
-    CurrentRevision(Aws::Utils::Json::JsonView jsonValue);
-    CurrentRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API CurrentRevision();
+    AWS_CODEPIPELINE_API CurrentRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API CurrentRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_changeIdentifier;
-    bool m_changeIdentifierHasBeenSet;
+    bool m_changeIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_revisionSummary;
-    bool m_revisionSummaryHasBeenSet;
+    bool m_revisionSummaryHasBeenSet = false;
   };
 
 } // namespace Model

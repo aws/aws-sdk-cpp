@@ -26,18 +26,19 @@ namespace Model
   /**
    * <p>Temporary access credentials used for uploading game build files to Amazon
    * GameLift. They are valid for a limited time. If they expire before you upload
-   * your game build, get a new set by calling
-   * <a>RequestUploadCredentials</a>.</p><p><h3>See Also:</h3>   <a
+   * your game build, get a new set by calling <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API AwsCredentials
+  class AwsCredentials
   {
   public:
-    AwsCredentials();
-    AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
-    AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API AwsCredentials();
+    AWS_GAMELIFT_API AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
   };
 
 } // namespace Model

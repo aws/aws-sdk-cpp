@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TrackSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TrackSourceSettings
+  class TrackSourceSettings
   {
   public:
-    TrackSourceSettings();
-    TrackSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    TrackSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TrackSourceSettings();
+    AWS_MEDIACONVERT_API TrackSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TrackSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     int m_trackNumber;
-    bool m_trackNumberHasBeenSet;
+    bool m_trackNumberHasBeenSet = false;
   };
 
 } // namespace Model

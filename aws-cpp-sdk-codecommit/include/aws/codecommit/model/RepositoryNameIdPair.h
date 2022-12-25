@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryNameIdPair">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API RepositoryNameIdPair
+  class RepositoryNameIdPair
   {
   public:
-    RepositoryNameIdPair();
-    RepositoryNameIdPair(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryNameIdPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API RepositoryNameIdPair();
+    AWS_CODECOMMIT_API RepositoryNameIdPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API RepositoryNameIdPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_repositoryId;
-    bool m_repositoryIdHasBeenSet;
+    bool m_repositoryIdHasBeenSet = false;
   };
 
 } // namespace Model

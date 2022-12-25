@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayImageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API KernelGatewayImageConfig
+  class KernelGatewayImageConfig
   {
   public:
-    KernelGatewayImageConfig();
-    KernelGatewayImageConfig(Aws::Utils::Json::JsonView jsonValue);
-    KernelGatewayImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API KernelGatewayImageConfig();
+    AWS_SAGEMAKER_API KernelGatewayImageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API KernelGatewayImageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Vector<KernelSpec> m_kernelSpecs;
-    bool m_kernelSpecsHasBeenSet;
+    bool m_kernelSpecsHasBeenSet = false;
 
     FileSystemConfig m_fileSystemConfig;
-    bool m_fileSystemConfigHasBeenSet;
+    bool m_fileSystemConfigHasBeenSet = false;
   };
 
 } // namespace Model

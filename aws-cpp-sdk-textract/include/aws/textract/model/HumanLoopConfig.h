@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/HumanLoopConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API HumanLoopConfig
+  class HumanLoopConfig
   {
   public:
-    HumanLoopConfig();
-    HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API HumanLoopConfig();
+    AWS_TEXTRACT_API HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_humanLoopName;
-    bool m_humanLoopNameHasBeenSet;
+    bool m_humanLoopNameHasBeenSet = false;
 
     Aws::String m_flowDefinitionArn;
-    bool m_flowDefinitionArnHasBeenSet;
+    bool m_flowDefinitionArnHasBeenSet = false;
 
     HumanLoopDataAttributes m_dataAttributes;
-    bool m_dataAttributesHasBeenSet;
+    bool m_dataAttributesHasBeenSet = false;
   };
 
 } // namespace Model

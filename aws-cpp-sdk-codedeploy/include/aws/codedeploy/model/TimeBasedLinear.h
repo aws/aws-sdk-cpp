@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeBasedLinear">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API TimeBasedLinear
+  class TimeBasedLinear
   {
   public:
-    TimeBasedLinear();
-    TimeBasedLinear(Aws::Utils::Json::JsonView jsonValue);
-    TimeBasedLinear& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API TimeBasedLinear();
+    AWS_CODEDEPLOY_API TimeBasedLinear(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API TimeBasedLinear& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_linearPercentage;
-    bool m_linearPercentageHasBeenSet;
+    bool m_linearPercentageHasBeenSet = false;
 
     int m_linearInterval;
-    bool m_linearIntervalHasBeenSet;
+    bool m_linearIntervalHasBeenSet = false;
   };
 
 } // namespace Model

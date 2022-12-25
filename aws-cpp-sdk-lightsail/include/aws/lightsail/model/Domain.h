@@ -10,6 +10,7 @@
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/RegisteredDomainDelegationInfo.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/DomainEntry.h>
 #include <utility>
@@ -34,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Domain">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Domain
+  class Domain
   {
   public:
-    Domain();
-    Domain(Aws::Utils::Json::JsonView jsonValue);
-    Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Domain();
+    AWS_LIGHTSAIL_API Domain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -402,31 +403,71 @@ namespace Model
      */
     inline Domain& AddDomainEntries(DomainEntry&& value) { m_domainEntriesHasBeenSet = true; m_domainEntries.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline const RegisteredDomainDelegationInfo& GetRegisteredDomainDelegationInfo() const{ return m_registeredDomainDelegationInfo; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline bool RegisteredDomainDelegationInfoHasBeenSet() const { return m_registeredDomainDelegationInfoHasBeenSet; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline void SetRegisteredDomainDelegationInfo(const RegisteredDomainDelegationInfo& value) { m_registeredDomainDelegationInfoHasBeenSet = true; m_registeredDomainDelegationInfo = value; }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline void SetRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo&& value) { m_registeredDomainDelegationInfoHasBeenSet = true; m_registeredDomainDelegationInfo = std::move(value); }
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline Domain& WithRegisteredDomainDelegationInfo(const RegisteredDomainDelegationInfo& value) { SetRegisteredDomainDelegationInfo(value); return *this;}
+
+    /**
+     * <p>An object that describes the state of the Route 53 domain delegation to a
+     * Lightsail DNS zone.</p>
+     */
+    inline Domain& WithRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo&& value) { SetRegisteredDomainDelegationInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<DomainEntry> m_domainEntries;
-    bool m_domainEntriesHasBeenSet;
+    bool m_domainEntriesHasBeenSet = false;
+
+    RegisteredDomainDelegationInfo m_registeredDomainDelegationInfo;
+    bool m_registeredDomainDelegationInfoHasBeenSet = false;
   };
 
 } // namespace Model

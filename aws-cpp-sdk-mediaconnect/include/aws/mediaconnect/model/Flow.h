@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Flow">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Flow
+  class Flow
   {
   public:
-    Flow();
-    Flow(Aws::Utils::Json::JsonView jsonValue);
-    Flow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Flow();
+    AWS_MEDIACONNECT_API Flow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Flow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -563,46 +563,46 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_egressIp;
-    bool m_egressIpHasBeenSet;
+    bool m_egressIpHasBeenSet = false;
 
     Aws::Vector<Entitlement> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::Vector<MediaStream> m_mediaStreams;
-    bool m_mediaStreamsHasBeenSet;
+    bool m_mediaStreamsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     FailoverConfig m_sourceFailoverConfig;
-    bool m_sourceFailoverConfigHasBeenSet;
+    bool m_sourceFailoverConfigHasBeenSet = false;
 
     Aws::Vector<Source> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<VpcInterface> m_vpcInterfaces;
-    bool m_vpcInterfacesHasBeenSet;
+    bool m_vpcInterfacesHasBeenSet = false;
 
     Maintenance m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
   };
 
 } // namespace Model

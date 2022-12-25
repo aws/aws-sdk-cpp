@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateOntapVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateOntapVolumeConfiguration
+  class UpdateOntapVolumeConfiguration
   {
   public:
-    UpdateOntapVolumeConfiguration();
-    UpdateOntapVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateOntapVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateOntapVolumeConfiguration();
+    AWS_FSX_API UpdateOntapVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateOntapVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,22 +210,218 @@ namespace Model
      */
     inline UpdateOntapVolumeConfiguration& WithTieringPolicy(TieringPolicy&& value) { SetTieringPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline const Aws::String& GetSnapshotPolicy() const{ return m_snapshotPolicy; }
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline bool SnapshotPolicyHasBeenSet() const { return m_snapshotPolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline void SetSnapshotPolicy(const Aws::String& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = value; }
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline void SetSnapshotPolicy(Aws::String&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::move(value); }
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline void SetSnapshotPolicy(const char* value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy.assign(value); }
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(const Aws::String& value) { SetSnapshotPolicy(value); return *this;}
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(Aws::String&& value) { SetSnapshotPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the snapshot policy for the volume. There are three built-in
+     * snapshot policies:</p> <ul> <li> <p> <code>default</code>: This is the default
+     * policy. A maximum of six hourly snapshots taken five minutes past the hour. A
+     * maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     * midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes
+     * after midnight.</p> </li> <li> <p> <code>default-1weekly</code>: This policy is
+     * the same as the <code>default</code> policy except that it only retains one
+     * snapshot from the weekly schedule.</p> </li> <li> <p> <code>none</code>: This
+     * policy does not take any snapshots. This policy can be assigned to volumes to
+     * prevent automatic snapshots from being taken.</p> </li> </ul> <p>You can also
+     * provide the name of a custom policy that you created with the ONTAP CLI or REST
+     * API.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(const char* value) { SetSnapshotPolicy(value); return *this;}
+
+
+    /**
+     * <p>A boolean flag indicating whether tags for the volume should be copied to
+     * backups. This value defaults to false. If it's set to true, all tags for the
+     * volume are copied to all automatic and user-initiated backups where the user
+     * doesn't specify tags. If this value is true, and you specify one or more tags,
+     * only the specified tags are copied to backups. If you specify one or more tags
+     * when creating a user-initiated backup, no tags are copied from the volume,
+     * regardless of this value.</p>
+     */
+    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the volume should be copied to
+     * backups. This value defaults to false. If it's set to true, all tags for the
+     * volume are copied to all automatic and user-initiated backups where the user
+     * doesn't specify tags. If this value is true, and you specify one or more tags,
+     * only the specified tags are copied to backups. If you specify one or more tags
+     * when creating a user-initiated backup, no tags are copied from the volume,
+     * regardless of this value.</p>
+     */
+    inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the volume should be copied to
+     * backups. This value defaults to false. If it's set to true, all tags for the
+     * volume are copied to all automatic and user-initiated backups where the user
+     * doesn't specify tags. If this value is true, and you specify one or more tags,
+     * only the specified tags are copied to backups. If you specify one or more tags
+     * when creating a user-initiated backup, no tags are copied from the volume,
+     * regardless of this value.</p>
+     */
+    inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the volume should be copied to
+     * backups. This value defaults to false. If it's set to true, all tags for the
+     * volume are copied to all automatic and user-initiated backups where the user
+     * doesn't specify tags. If this value is true, and you specify one or more tags,
+     * only the specified tags are copied to backups. If you specify one or more tags
+     * when creating a user-initiated backup, no tags are copied from the volume,
+     * regardless of this value.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
+
   private:
 
     Aws::String m_junctionPath;
-    bool m_junctionPathHasBeenSet;
+    bool m_junctionPathHasBeenSet = false;
 
     SecurityStyle m_securityStyle;
-    bool m_securityStyleHasBeenSet;
+    bool m_securityStyleHasBeenSet = false;
 
     int m_sizeInMegabytes;
-    bool m_sizeInMegabytesHasBeenSet;
+    bool m_sizeInMegabytesHasBeenSet = false;
 
     bool m_storageEfficiencyEnabled;
-    bool m_storageEfficiencyEnabledHasBeenSet;
+    bool m_storageEfficiencyEnabledHasBeenSet = false;
 
     TieringPolicy m_tieringPolicy;
-    bool m_tieringPolicyHasBeenSet;
+    bool m_tieringPolicyHasBeenSet = false;
+
+    Aws::String m_snapshotPolicy;
+    bool m_snapshotPolicyHasBeenSet = false;
+
+    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackupsHasBeenSet = false;
   };
 
 } // namespace Model

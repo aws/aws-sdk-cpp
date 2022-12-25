@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityStartedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ActivityStartedEventDetails
+  class ActivityStartedEventDetails
   {
   public:
-    ActivityStartedEventDetails();
-    ActivityStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActivityStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ActivityStartedEventDetails();
+    AWS_SFN_API ActivityStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ActivityStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_workerName;
-    bool m_workerNameHasBeenSet;
+    bool m_workerNameHasBeenSet = false;
   };
 
 } // namespace Model

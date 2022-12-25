@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoveredResource">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoveredResource
+  class CoveredResource
   {
   public:
-    CoveredResource();
-    CoveredResource(Aws::Utils::Json::JsonView jsonValue);
-    CoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoveredResource();
+    AWS_INSPECTOR2_API CoveredResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResourceScanMetadata m_resourceMetadata;
-    bool m_resourceMetadataHasBeenSet;
+    bool m_resourceMetadataHasBeenSet = false;
 
     CoverageResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ScanStatus m_scanStatus;
-    bool m_scanStatusHasBeenSet;
+    bool m_scanStatusHasBeenSet = false;
 
     ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

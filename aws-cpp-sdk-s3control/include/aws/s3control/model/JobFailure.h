@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobFailure
+  class JobFailure
   {
   public:
-    JobFailure();
-    JobFailure(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobFailure& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobFailure();
+    AWS_S3CONTROL_API JobFailure(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobFailure& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

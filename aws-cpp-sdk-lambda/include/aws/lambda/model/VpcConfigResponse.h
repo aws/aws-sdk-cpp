@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API VpcConfigResponse
+  class VpcConfigResponse
   {
   public:
-    VpcConfigResponse();
-    VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API VpcConfigResponse();
+    AWS_LAMBDA_API VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,47 +86,47 @@ namespace Model
 
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of VPC security groups IDs.</p>
+     * <p>A list of VPC security group IDs.</p>
      */
     inline VpcConfigResponse& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

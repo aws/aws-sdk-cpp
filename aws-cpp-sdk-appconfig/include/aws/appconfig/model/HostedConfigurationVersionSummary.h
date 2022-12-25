@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/HostedConfigurationVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API HostedConfigurationVersionSummary
+  class HostedConfigurationVersionSummary
   {
   public:
-    HostedConfigurationVersionSummary();
-    HostedConfigurationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    HostedConfigurationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary();
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,19 +240,19 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     int m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

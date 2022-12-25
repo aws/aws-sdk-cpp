@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/LambdaAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API LambdaAction
+  class LambdaAction
   {
   public:
-    LambdaAction();
-    LambdaAction(Aws::Utils::Json::JsonView jsonValue);
-    LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API LambdaAction();
+    AWS_IOTEVENTS_API LambdaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

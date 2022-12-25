@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingStrategy
+  class SamplingStrategy
   {
   public:
-    SamplingStrategy();
-    SamplingStrategy(Aws::Utils::Json::JsonView jsonValue);
-    SamplingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingStrategy();
+    AWS_XRAY_API SamplingStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     SamplingStrategyName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

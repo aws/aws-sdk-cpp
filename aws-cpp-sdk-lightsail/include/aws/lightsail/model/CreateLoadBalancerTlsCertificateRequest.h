@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateLoadBalancerTlsCertificateRequest : public LightsailRequest
+  class CreateLoadBalancerTlsCertificateRequest : public LightsailRequest
   {
   public:
-    CreateLoadBalancerTlsCertificateRequest();
+    AWS_LIGHTSAIL_API CreateLoadBalancerTlsCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLoadBalancerTlsCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -339,19 +339,19 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_certificateDomainName;
-    bool m_certificateDomainNameHasBeenSet;
+    bool m_certificateDomainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_certificateAlternativeNames;
-    bool m_certificateAlternativeNamesHasBeenSet;
+    bool m_certificateAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

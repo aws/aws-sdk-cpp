@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecutionSummaryForJob">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecutionSummaryForJob
+  class JobExecutionSummaryForJob
   {
   public:
-    JobExecutionSummaryForJob();
-    JobExecutionSummaryForJob(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionSummaryForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecutionSummaryForJob();
+    AWS_IOT_API JobExecutionSummaryForJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecutionSummaryForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
 
     JobExecutionSummary m_jobExecutionSummary;
-    bool m_jobExecutionSummaryHasBeenSet;
+    bool m_jobExecutionSummaryHasBeenSet = false;
   };
 
 } // namespace Model

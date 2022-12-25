@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateNotebookInstanceRequest : public SageMakerRequest
+  class UpdateNotebookInstanceRequest : public SageMakerRequest
   {
   public:
-    UpdateNotebookInstanceRequest();
+    AWS_SAGEMAKER_API UpdateNotebookInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNotebookInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -806,46 +806,46 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceName;
-    bool m_notebookInstanceNameHasBeenSet;
+    bool m_notebookInstanceNameHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_lifecycleConfigName;
-    bool m_lifecycleConfigNameHasBeenSet;
+    bool m_lifecycleConfigNameHasBeenSet = false;
 
     bool m_disassociateLifecycleConfig;
-    bool m_disassociateLifecycleConfigHasBeenSet;
+    bool m_disassociateLifecycleConfigHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::String m_defaultCodeRepository;
-    bool m_defaultCodeRepositoryHasBeenSet;
+    bool m_defaultCodeRepositoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
-    bool m_additionalCodeRepositoriesHasBeenSet;
+    bool m_additionalCodeRepositoriesHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     bool m_disassociateAcceleratorTypes;
-    bool m_disassociateAcceleratorTypesHasBeenSet;
+    bool m_disassociateAcceleratorTypesHasBeenSet = false;
 
     bool m_disassociateDefaultCodeRepository;
-    bool m_disassociateDefaultCodeRepositoryHasBeenSet;
+    bool m_disassociateDefaultCodeRepositoryHasBeenSet = false;
 
     bool m_disassociateAdditionalCodeRepositories;
-    bool m_disassociateAdditionalCodeRepositoriesHasBeenSet;
+    bool m_disassociateAdditionalCodeRepositoriesHasBeenSet = false;
 
     RootAccess m_rootAccess;
-    bool m_rootAccessHasBeenSet;
+    bool m_rootAccessHasBeenSet = false;
 
     InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
-    bool m_instanceMetadataServiceConfigurationHasBeenSet;
+    bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

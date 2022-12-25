@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DiscoveredResource">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API DiscoveredResource
+  class DiscoveredResource
   {
   public:
-    DiscoveredResource();
-    DiscoveredResource(Aws::Utils::Json::JsonView jsonValue);
-    DiscoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API DiscoveredResource();
+    AWS_MIGRATIONHUB_API DiscoveredResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API DiscoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_configurationId;
-    bool m_configurationIdHasBeenSet;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

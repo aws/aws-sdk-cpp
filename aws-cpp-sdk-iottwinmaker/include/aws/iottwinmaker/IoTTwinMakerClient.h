@@ -5,188 +5,16 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/iottwinmaker/IoTTwinMakerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iottwinmaker/model/BatchPutPropertyValuesResult.h>
-#include <aws/iottwinmaker/model/CreateComponentTypeResult.h>
-#include <aws/iottwinmaker/model/CreateEntityResult.h>
-#include <aws/iottwinmaker/model/CreateSceneResult.h>
-#include <aws/iottwinmaker/model/CreateWorkspaceResult.h>
-#include <aws/iottwinmaker/model/DeleteComponentTypeResult.h>
-#include <aws/iottwinmaker/model/DeleteEntityResult.h>
-#include <aws/iottwinmaker/model/DeleteSceneResult.h>
-#include <aws/iottwinmaker/model/DeleteWorkspaceResult.h>
-#include <aws/iottwinmaker/model/GetComponentTypeResult.h>
-#include <aws/iottwinmaker/model/GetEntityResult.h>
-#include <aws/iottwinmaker/model/GetPropertyValueResult.h>
-#include <aws/iottwinmaker/model/GetPropertyValueHistoryResult.h>
-#include <aws/iottwinmaker/model/GetSceneResult.h>
-#include <aws/iottwinmaker/model/GetWorkspaceResult.h>
-#include <aws/iottwinmaker/model/ListComponentTypesResult.h>
-#include <aws/iottwinmaker/model/ListEntitiesResult.h>
-#include <aws/iottwinmaker/model/ListScenesResult.h>
-#include <aws/iottwinmaker/model/ListTagsForResourceResult.h>
-#include <aws/iottwinmaker/model/ListWorkspacesResult.h>
-#include <aws/iottwinmaker/model/TagResourceResult.h>
-#include <aws/iottwinmaker/model/UntagResourceResult.h>
-#include <aws/iottwinmaker/model/UpdateComponentTypeResult.h>
-#include <aws/iottwinmaker/model/UpdateEntityResult.h>
-#include <aws/iottwinmaker/model/UpdateSceneResult.h>
-#include <aws/iottwinmaker/model/UpdateWorkspaceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iottwinmaker/IoTTwinMakerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTTwinMaker
 {
-
-namespace Model
-{
-        class BatchPutPropertyValuesRequest;
-        class CreateComponentTypeRequest;
-        class CreateEntityRequest;
-        class CreateSceneRequest;
-        class CreateWorkspaceRequest;
-        class DeleteComponentTypeRequest;
-        class DeleteEntityRequest;
-        class DeleteSceneRequest;
-        class DeleteWorkspaceRequest;
-        class GetComponentTypeRequest;
-        class GetEntityRequest;
-        class GetPropertyValueRequest;
-        class GetPropertyValueHistoryRequest;
-        class GetSceneRequest;
-        class GetWorkspaceRequest;
-        class ListComponentTypesRequest;
-        class ListEntitiesRequest;
-        class ListScenesRequest;
-        class ListTagsForResourceRequest;
-        class ListWorkspacesRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateComponentTypeRequest;
-        class UpdateEntityRequest;
-        class UpdateSceneRequest;
-        class UpdateWorkspaceRequest;
-
-        typedef Aws::Utils::Outcome<BatchPutPropertyValuesResult, IoTTwinMakerError> BatchPutPropertyValuesOutcome;
-        typedef Aws::Utils::Outcome<CreateComponentTypeResult, IoTTwinMakerError> CreateComponentTypeOutcome;
-        typedef Aws::Utils::Outcome<CreateEntityResult, IoTTwinMakerError> CreateEntityOutcome;
-        typedef Aws::Utils::Outcome<CreateSceneResult, IoTTwinMakerError> CreateSceneOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkspaceResult, IoTTwinMakerError> CreateWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<DeleteComponentTypeResult, IoTTwinMakerError> DeleteComponentTypeOutcome;
-        typedef Aws::Utils::Outcome<DeleteEntityResult, IoTTwinMakerError> DeleteEntityOutcome;
-        typedef Aws::Utils::Outcome<DeleteSceneResult, IoTTwinMakerError> DeleteSceneOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorkspaceResult, IoTTwinMakerError> DeleteWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<GetComponentTypeResult, IoTTwinMakerError> GetComponentTypeOutcome;
-        typedef Aws::Utils::Outcome<GetEntityResult, IoTTwinMakerError> GetEntityOutcome;
-        typedef Aws::Utils::Outcome<GetPropertyValueResult, IoTTwinMakerError> GetPropertyValueOutcome;
-        typedef Aws::Utils::Outcome<GetPropertyValueHistoryResult, IoTTwinMakerError> GetPropertyValueHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetSceneResult, IoTTwinMakerError> GetSceneOutcome;
-        typedef Aws::Utils::Outcome<GetWorkspaceResult, IoTTwinMakerError> GetWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<ListComponentTypesResult, IoTTwinMakerError> ListComponentTypesOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesResult, IoTTwinMakerError> ListEntitiesOutcome;
-        typedef Aws::Utils::Outcome<ListScenesResult, IoTTwinMakerError> ListScenesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTTwinMakerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorkspacesResult, IoTTwinMakerError> ListWorkspacesOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IoTTwinMakerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IoTTwinMakerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateComponentTypeResult, IoTTwinMakerError> UpdateComponentTypeOutcome;
-        typedef Aws::Utils::Outcome<UpdateEntityResult, IoTTwinMakerError> UpdateEntityOutcome;
-        typedef Aws::Utils::Outcome<UpdateSceneResult, IoTTwinMakerError> UpdateSceneOutcome;
-        typedef Aws::Utils::Outcome<UpdateWorkspaceResult, IoTTwinMakerError> UpdateWorkspaceOutcome;
-
-        typedef std::future<BatchPutPropertyValuesOutcome> BatchPutPropertyValuesOutcomeCallable;
-        typedef std::future<CreateComponentTypeOutcome> CreateComponentTypeOutcomeCallable;
-        typedef std::future<CreateEntityOutcome> CreateEntityOutcomeCallable;
-        typedef std::future<CreateSceneOutcome> CreateSceneOutcomeCallable;
-        typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
-        typedef std::future<DeleteComponentTypeOutcome> DeleteComponentTypeOutcomeCallable;
-        typedef std::future<DeleteEntityOutcome> DeleteEntityOutcomeCallable;
-        typedef std::future<DeleteSceneOutcome> DeleteSceneOutcomeCallable;
-        typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
-        typedef std::future<GetComponentTypeOutcome> GetComponentTypeOutcomeCallable;
-        typedef std::future<GetEntityOutcome> GetEntityOutcomeCallable;
-        typedef std::future<GetPropertyValueOutcome> GetPropertyValueOutcomeCallable;
-        typedef std::future<GetPropertyValueHistoryOutcome> GetPropertyValueHistoryOutcomeCallable;
-        typedef std::future<GetSceneOutcome> GetSceneOutcomeCallable;
-        typedef std::future<GetWorkspaceOutcome> GetWorkspaceOutcomeCallable;
-        typedef std::future<ListComponentTypesOutcome> ListComponentTypesOutcomeCallable;
-        typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
-        typedef std::future<ListScenesOutcome> ListScenesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateComponentTypeOutcome> UpdateComponentTypeOutcomeCallable;
-        typedef std::future<UpdateEntityOutcome> UpdateEntityOutcomeCallable;
-        typedef std::future<UpdateSceneOutcome> UpdateSceneOutcomeCallable;
-        typedef std::future<UpdateWorkspaceOutcome> UpdateWorkspaceOutcomeCallable;
-} // namespace Model
-
-  class IoTTwinMakerClient;
-
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::BatchPutPropertyValuesRequest&, const Model::BatchPutPropertyValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutPropertyValuesResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateComponentTypeRequest&, const Model::CreateComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentTypeResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateEntityRequest&, const Model::CreateEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEntityResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateSceneRequest&, const Model::CreateSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSceneResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteComponentTypeRequest&, const Model::DeleteComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentTypeResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteEntityRequest&, const Model::DeleteEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEntityResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteSceneRequest&, const Model::DeleteSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSceneResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetComponentTypeRequest&, const Model::GetComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentTypeResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetEntityRequest&, const Model::GetEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEntityResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueRequest&, const Model::GetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetPropertyValueHistoryRequest&, const Model::GetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPropertyValueHistoryResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetSceneRequest&, const Model::GetSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSceneResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::GetWorkspaceRequest&, const Model::GetWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListComponentTypesRequest&, const Model::ListComponentTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentTypesResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListEntitiesRequest&, const Model::ListEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListScenesRequest&, const Model::ListScenesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScenesResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateComponentTypeRequest&, const Model::UpdateComponentTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentTypeResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateEntityRequest&, const Model::UpdateEntityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEntityResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateSceneRequest&, const Model::UpdateSceneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSceneResponseReceivedHandler;
-    typedef std::function<void(const IoTTwinMakerClient*, const Model::UpdateWorkspaceRequest&, const Model::UpdateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceResponseReceivedHandler;
-
   /**
    * <p>IoT TwinMaker is a service that enables you to build operational digital
    * twins of physical systems. IoT TwinMaker overlays measurements and analysis from
@@ -195,32 +23,60 @@ namespace Model
    * You can use this real-world data to monitor operations and diagnose and repair
    * errors.</p>
    */
-  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTTwinMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTTwinMakerClient(const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration(),
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTTwinMakerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTTwinMakerClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTTwinMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<IoTTwinMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTTwinMakerEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration& clientConfiguration = Aws::IoTTwinMaker::IoTTwinMakerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTTwinMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTTwinMakerClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoTTwinMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoTTwinMakerClient();
-
 
         /**
          * <p>Sets values for multiple time series properties.</p><p><h3>See Also:</h3>  
@@ -292,6 +148,23 @@ namespace Model
         virtual void CreateSceneAsync(const Model::CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action creates a SyncJob.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSyncJobOutcome CreateSyncJob(const Model::CreateSyncJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSyncJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSyncJobOutcomeCallable CreateSyncJobCallable(const Model::CreateSyncJobRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateSyncJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSyncJobAsync(const Model::CreateSyncJobRequest& request, const CreateSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a workplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateWorkspace">AWS
          * API Reference</a></p>
@@ -360,6 +233,23 @@ namespace Model
         virtual void DeleteSceneAsync(const Model::DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete the SyncJob.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSyncJobOutcome DeleteSyncJob(const Model::DeleteSyncJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSyncJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSyncJobOutcomeCallable DeleteSyncJobCallable(const Model::DeleteSyncJobRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteSyncJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSyncJobAsync(const Model::DeleteSyncJobRequest& request, const DeleteSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a workspace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteWorkspace">AWS
          * API Reference</a></p>
@@ -375,6 +265,24 @@ namespace Model
          * An Async wrapper for DeleteWorkspace that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Run queries to access information from your knowledge graph of entities
+         * within individual workspaces.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteQueryOutcome ExecuteQuery(const Model::ExecuteQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExecuteQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteQueryOutcomeCallable ExecuteQueryCallable(const Model::ExecuteQueryRequest& request) const;
+
+        /**
+         * An Async wrapper for ExecuteQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteQueryAsync(const Model::ExecuteQueryRequest& request, const ExecuteQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a component type.</p><p><h3>See Also:</h3>   <a
@@ -409,6 +317,23 @@ namespace Model
          * An Async wrapper for GetEntity that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEntityAsync(const Model::GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the pricing plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPricingPlanOutcome GetPricingPlan(const Model::GetPricingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPricingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPricingPlanOutcomeCallable GetPricingPlanCallable(const Model::GetPricingPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPricingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPricingPlanAsync(const Model::GetPricingPlanRequest& request, const GetPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the property values for a component, component type, entity, or
@@ -467,6 +392,23 @@ namespace Model
          * An Async wrapper for GetScene that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSceneAsync(const Model::GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the SyncJob.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSyncJobOutcome GetSyncJob(const Model::GetSyncJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSyncJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSyncJobOutcomeCallable GetSyncJobCallable(const Model::GetSyncJobRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSyncJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSyncJobAsync(const Model::GetSyncJobRequest& request, const GetSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a workspace.</p><p><h3>See Also:</h3>   <a
@@ -535,6 +477,40 @@ namespace Model
          * An Async wrapper for ListScenes that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListScenesAsync(const Model::ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all SyncJobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSyncJobsOutcome ListSyncJobs(const Model::ListSyncJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSyncJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSyncJobsOutcomeCallable ListSyncJobsCallable(const Model::ListSyncJobsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSyncJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSyncJobsAsync(const Model::ListSyncJobsRequest& request, const ListSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the sync resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSyncResourcesOutcome ListSyncResources(const Model::ListSyncResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSyncResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSyncResourcesOutcomeCallable ListSyncResourcesCallable(const Model::ListSyncResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSyncResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSyncResourcesAsync(const Model::ListSyncResourcesRequest& request, const ListSyncResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags associated with a resource.</p><p><h3>See Also:</h3>   <a
@@ -640,6 +616,23 @@ namespace Model
         virtual void UpdateEntityAsync(const Model::UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update the pricing plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePricingPlanOutcome UpdatePricingPlan(const Model::UpdatePricingPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePricingPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePricingPlanOutcomeCallable UpdatePricingPlanCallable(const Model::UpdatePricingPlanRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdatePricingPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePricingPlanAsync(const Model::UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a scene.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateScene">AWS
          * API Reference</a></p>
@@ -675,40 +668,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchPutPropertyValuesAsyncHelper(const Model::BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateComponentTypeAsyncHelper(const Model::CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEntityAsyncHelper(const Model::CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSceneAsyncHelper(const Model::CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkspaceAsyncHelper(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteComponentTypeAsyncHelper(const Model::DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEntityAsyncHelper(const Model::DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSceneAsyncHelper(const Model::DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkspaceAsyncHelper(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComponentTypeAsyncHelper(const Model::GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEntityAsyncHelper(const Model::GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPropertyValueAsyncHelper(const Model::GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPropertyValueHistoryAsyncHelper(const Model::GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSceneAsyncHelper(const Model::GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWorkspaceAsyncHelper(const Model::GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListComponentTypesAsyncHelper(const Model::ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEntitiesAsyncHelper(const Model::ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListScenesAsyncHelper(const Model::ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkspacesAsyncHelper(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateComponentTypeAsyncHelper(const Model::UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEntityAsyncHelper(const Model::UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSceneAsyncHelper(const Model::UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWorkspaceAsyncHelper(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>;
+      void init(const IoTTwinMakerClientConfiguration& clientConfiguration);
 
-      Aws::String m_baseUri;
-      Aws::String m_scheme;
-      bool m_enableHostPrefixInjection;
-      Aws::String m_configScheme;
+      IoTTwinMakerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoTTwinMakerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTTwinMaker

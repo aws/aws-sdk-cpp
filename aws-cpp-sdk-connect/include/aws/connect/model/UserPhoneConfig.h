@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserPhoneConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserPhoneConfig
+  class UserPhoneConfig
   {
   public:
-    UserPhoneConfig();
-    UserPhoneConfig(Aws::Utils::Json::JsonView jsonValue);
-    UserPhoneConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserPhoneConfig();
+    AWS_CONNECT_API UserPhoneConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserPhoneConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,22 +92,30 @@ namespace Model
 
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline int GetAfterContactWorkTimeLimit() const{ return m_afterContactWorkTimeLimit; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline UserPhoneConfig& WithAfterContactWorkTimeLimit(int value) { SetAfterContactWorkTimeLimit(value); return *this;}
 
@@ -155,16 +163,16 @@ namespace Model
   private:
 
     PhoneType m_phoneType;
-    bool m_phoneTypeHasBeenSet;
+    bool m_phoneTypeHasBeenSet = false;
 
     bool m_autoAccept;
-    bool m_autoAcceptHasBeenSet;
+    bool m_autoAcceptHasBeenSet = false;
 
     int m_afterContactWorkTimeLimit;
-    bool m_afterContactWorkTimeLimitHasBeenSet;
+    bool m_afterContactWorkTimeLimitHasBeenSet = false;
 
     Aws::String m_deskPhoneNumber;
-    bool m_deskPhoneNumberHasBeenSet;
+    bool m_deskPhoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

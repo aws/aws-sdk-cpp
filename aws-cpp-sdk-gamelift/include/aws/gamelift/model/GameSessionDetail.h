@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameSessionDetail
+  class GameSessionDetail
   {
   public:
-    GameSessionDetail();
-    GameSessionDetail(Aws::Utils::Json::JsonView jsonValue);
-    GameSessionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameSessionDetail();
+    AWS_GAMELIFT_API GameSessionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameSessionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     GameSession m_gameSession;
-    bool m_gameSessionHasBeenSet;
+    bool m_gameSessionHasBeenSet = false;
 
     ProtectionPolicy m_protectionPolicy;
-    bool m_protectionPolicyHasBeenSet;
+    bool m_protectionPolicyHasBeenSet = false;
   };
 
 } // namespace Model

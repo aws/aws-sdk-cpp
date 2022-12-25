@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API ListRestoreJobsRequest : public BackupRequest
+  class ListRestoreJobsRequest : public BackupRequest
   {
   public:
-    ListRestoreJobsRequest();
+    AWS_BACKUP_API ListRestoreJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRestoreJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_byAccountId;
-    bool m_byAccountIdHasBeenSet;
+    bool m_byAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
-    bool m_byCreatedBeforeHasBeenSet;
+    bool m_byCreatedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedAfter;
-    bool m_byCreatedAfterHasBeenSet;
+    bool m_byCreatedAfterHasBeenSet = false;
 
     RestoreJobStatus m_byStatus;
-    bool m_byStatusHasBeenSet;
+    bool m_byStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteBefore;
-    bool m_byCompleteBeforeHasBeenSet;
+    bool m_byCompleteBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteAfter;
-    bool m_byCompleteAfterHasBeenSet;
+    bool m_byCompleteAfterHasBeenSet = false;
   };
 
 } // namespace Model

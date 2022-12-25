@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorSettings
+  class StreamProcessorSettings
   {
   public:
-    StreamProcessorSettings();
-    StreamProcessorSettings(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorSettings();
+    AWS_REKOGNITION_API StreamProcessorSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,10 +93,10 @@ namespace Model
   private:
 
     FaceSearchSettings m_faceSearch;
-    bool m_faceSearchHasBeenSet;
+    bool m_faceSearchHasBeenSet = false;
 
     ConnectedHomeSettings m_connectedHome;
-    bool m_connectedHomeHasBeenSet;
+    bool m_connectedHomeHasBeenSet = false;
   };
 
 } // namespace Model

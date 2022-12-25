@@ -1,0 +1,137 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($epProviderClassName = "${metadata.classNamePrefix}EndpointProvider")
+#set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
+#set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
+#set($exportMacro = "${CppViewHelper.computeExportValue($metadata.classNamePrefix)}")
+#pragma once
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#else
+\#include <aws/core/client/GenericClientConfiguration.h>
+#end
+\#include <aws/core/endpoint/DefaultEndpointProvider.h>
+\#include <aws/core/endpoint/EndpointParameter.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointRules.h>
+#end
+
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Endpoint
+{
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::${serviceNamespace}::${metadata.classNamePrefix}ClientConfiguration;
+#end
+using EndpointParameters = Aws::Endpoint::EndpointParameters;
+using Aws::Endpoint::EndpointProviderBase;
+using Aws::Endpoint::DefaultEndpointProvider;
+
+#if ($serviceModel.endpointRules)
+#if ($serviceModel.clientContextParams)
+class ${exportMacro} ${epContextClassName} : public Aws::Endpoint::ClientContextParameters
+{
+public:
+    virtual ~${epContextClassName}(){};
+
+#foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
+    /**
+    * ${memberEntry.value.documentation}
+    */
+#if(${memberEntry.value.type} == "boolean")
+#set($paramType = "bool")
+#else
+#set($paramType = "Aws::String")
+#end
+    void Set${memberEntry.key}(${paramType} value);
+    const ClientContextParameters::EndpointParameter& Get${memberEntry.key}() const;
+#if( $foreach.hasNext )
+
+#end
+#end
+};
+#else##-#if ($serviceModel.clientContextParams)
+using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
+#end
+
+#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
+#if(!$metadata.hasEndpointDiscoveryTrait)
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+#else
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+#end
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+class ${exportMacro} ${epBuiltInClassName} : public Aws::Endpoint::BuiltInParameters
+{
+public:
+    virtual ~${epBuiltInClassName}(){};
+    using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+    virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config);
+};
+#else
+using ${epBuiltInClassName} = Aws::Endpoint::BuiltInParameters;
+#end
+
+/**
+ * The type for the ${serviceNamespace} Client Endpoint Provider.
+ * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
+ * The SDK must use service-specific type for each service per specification.
+ */
+using ${metadata.classNamePrefix}EndpointProviderBase =
+    EndpointProviderBase<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
+
+using ${metadata.classNamePrefix}DefaultEpProviderBase =
+    DefaultEndpointProvider<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
+
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control" || $serviceModel.clientContextParams)
+} // namespace Endpoint
+} // namespace ${serviceNamespace}
+
+namespace Endpoint
+{
+/**
+ * Export endpoint provider symbols from DLL
+ */
+template class ${exportMacro}
+    Aws::Endpoint::EndpointProviderBase<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
+
+template class ${exportMacro}
+    Aws::Endpoint::DefaultEndpointProvider<${serviceNamespace}::Endpoint::${metadata.classNamePrefix}ClientConfiguration, ${serviceNamespace}::Endpoint::${epBuiltInClassName}, ${serviceNamespace}::Endpoint::${epContextClassName}>;
+} // namespace Endpoint
+
+namespace ${serviceNamespace}
+{
+namespace Endpoint
+{
+#end
+/**
+ * Default endpoint provider used for this service
+ */
+class ${exportMacro} ${epProviderClassName} : public ${metadata.classNamePrefix}DefaultEpProviderBase
+{
+public:
+    using ${metadata.classNamePrefix}ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+    ${epProviderClassName}()
+      : ${metadata.classNamePrefix}DefaultEpProviderBase(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules)
+    {}
+
+    ~${metadata.classNamePrefix}EndpointProvider()
+    {
+    }
+};
+#end
+} // namespace Endpoint
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

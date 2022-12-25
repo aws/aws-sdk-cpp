@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TaskStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TaskStatistics
+  class TaskStatistics
   {
   public:
-    TaskStatistics();
-    TaskStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TaskStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TaskStatistics();
+    AWS_IOT_API TaskStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TaskStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,25 +185,25 @@ namespace Model
   private:
 
     int m_totalChecks;
-    bool m_totalChecksHasBeenSet;
+    bool m_totalChecksHasBeenSet = false;
 
     int m_inProgressChecks;
-    bool m_inProgressChecksHasBeenSet;
+    bool m_inProgressChecksHasBeenSet = false;
 
     int m_waitingForDataCollectionChecks;
-    bool m_waitingForDataCollectionChecksHasBeenSet;
+    bool m_waitingForDataCollectionChecksHasBeenSet = false;
 
     int m_compliantChecks;
-    bool m_compliantChecksHasBeenSet;
+    bool m_compliantChecksHasBeenSet = false;
 
     int m_nonCompliantChecks;
-    bool m_nonCompliantChecksHasBeenSet;
+    bool m_nonCompliantChecksHasBeenSet = false;
 
     int m_failedChecks;
-    bool m_failedChecksHasBeenSet;
+    bool m_failedChecksHasBeenSet = false;
 
     int m_canceledChecks;
-    bool m_canceledChecksHasBeenSet;
+    bool m_canceledChecksHasBeenSet = false;
   };
 
 } // namespace Model

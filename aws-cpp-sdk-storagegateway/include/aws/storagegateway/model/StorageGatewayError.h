@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StorageGatewayError">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API StorageGatewayError
+  class StorageGatewayError
   {
   public:
-    StorageGatewayError();
-    StorageGatewayError(Aws::Utils::Json::JsonView jsonValue);
-    StorageGatewayError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API StorageGatewayError();
+    AWS_STORAGEGATEWAY_API StorageGatewayError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API StorageGatewayError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

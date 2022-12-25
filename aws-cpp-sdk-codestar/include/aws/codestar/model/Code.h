@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/Code">AWS API
    * Reference</a></p>
    */
-  class AWS_CODESTAR_API Code
+  class Code
   {
   public:
-    Code();
-    Code(Aws::Utils::Json::JsonView jsonValue);
-    Code& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API Code();
+    AWS_CODESTAR_API Code(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Code& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     CodeSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     CodeDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

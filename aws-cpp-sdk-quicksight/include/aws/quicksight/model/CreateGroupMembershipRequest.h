@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API CreateGroupMembershipRequest : public QuickSightRequest
+  class CreateGroupMembershipRequest : public QuickSightRequest
   {
   public:
-    CreateGroupMembershipRequest();
+    AWS_QUICKSIGHT_API CreateGroupMembershipRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGroupMembership"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_memberName;
-    bool m_memberNameHasBeenSet;
+    bool m_memberNameHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
   };
 
 } // namespace Model

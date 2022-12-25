@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DetailedError">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API DetailedError
+  class DetailedError
   {
   public:
-    DetailedError();
-    DetailedError(Aws::Utils::Json::JsonView jsonValue);
-    DetailedError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API DetailedError();
+    AWS_IOTSITEWISE_API DetailedError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API DetailedError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     DetailedErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ ConfluencePageConfiguration& ConfluencePageConfiguration::operator =(JsonView js
 {
   if(jsonValue.ValueExists("PageFieldMappings"))
   {
-    Array<JsonView> pageFieldMappingsJsonList = jsonValue.GetArray("PageFieldMappings");
+    Aws::Utils::Array<JsonView> pageFieldMappingsJsonList = jsonValue.GetArray("PageFieldMappings");
     for(unsigned pageFieldMappingsIndex = 0; pageFieldMappingsIndex < pageFieldMappingsJsonList.GetLength(); ++pageFieldMappingsIndex)
     {
       m_pageFieldMappings.push_back(pageFieldMappingsJsonList[pageFieldMappingsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ConfluencePageConfiguration::Jsonize() const
 
   if(m_pageFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> pageFieldMappingsJsonList(m_pageFieldMappings.size());
+   Aws::Utils::Array<JsonValue> pageFieldMappingsJsonList(m_pageFieldMappings.size());
    for(unsigned pageFieldMappingsIndex = 0; pageFieldMappingsIndex < pageFieldMappingsJsonList.GetLength(); ++pageFieldMappingsIndex)
    {
      pageFieldMappingsJsonList[pageFieldMappingsIndex].AsObject(m_pageFieldMappings[pageFieldMappingsIndex].Jsonize());

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/model/ParentEntityUpdateType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +29,44 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ParentEntityUpdateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ParentEntityUpdateRequest
+  class ParentEntityUpdateRequest
   {
   public:
-    ParentEntityUpdateRequest();
-    ParentEntityUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
-    ParentEntityUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest();
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline const ParentEntityUpdateType& GetUpdateType() const{ return m_updateType; }
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline void SetUpdateType(const ParentEntityUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline void SetUpdateType(ParentEntityUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline ParentEntityUpdateRequest& WithUpdateType(const ParentEntityUpdateType& value) { SetUpdateType(value); return *this;}
+
+    /**
+     * <p>The type of the update.</p>
+     */
+    inline ParentEntityUpdateRequest& WithUpdateType(ParentEntityUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
 
 
     /**
@@ -78,44 +109,13 @@ namespace Model
      */
     inline ParentEntityUpdateRequest& WithParentEntityId(const char* value) { SetParentEntityId(value); return *this;}
 
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline const ParentEntityUpdateType& GetUpdateType() const{ return m_updateType; }
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline void SetUpdateType(const ParentEntityUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline void SetUpdateType(ParentEntityUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline ParentEntityUpdateRequest& WithUpdateType(const ParentEntityUpdateType& value) { SetUpdateType(value); return *this;}
-
-    /**
-     * <p>The type of the update.</p>
-     */
-    inline ParentEntityUpdateRequest& WithUpdateType(ParentEntityUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
-
   private:
 
-    Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
-
     ParentEntityUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet;
+    bool m_updateTypeHasBeenSet = false;
+
+    Aws::String m_parentEntityId;
+    bool m_parentEntityIdHasBeenSet = false;
   };
 
 } // namespace Model

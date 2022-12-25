@@ -8,6 +8,7 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/ContactDetail.h>
+#include <aws/route53domains/model/Consent.h>
 #include <utility>
 
 namespace Aws
@@ -23,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API UpdateDomainContactRequest : public Route53DomainsRequest
+  class UpdateDomainContactRequest : public Route53DomainsRequest
   {
   public:
-    UpdateDomainContactRequest();
+    AWS_ROUTE53DOMAINS_API UpdateDomainContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDomainContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53DOMAINS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -172,19 +173,53 @@ namespace Model
      */
     inline UpdateDomainContactRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline const Consent& GetConsent() const{ return m_consent; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline void SetConsent(const Consent& value) { m_consentHasBeenSet = true; m_consent = value; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline void SetConsent(Consent&& value) { m_consentHasBeenSet = true; m_consent = std::move(value); }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline UpdateDomainContactRequest& WithConsent(const Consent& value) { SetConsent(value); return *this;}
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline UpdateDomainContactRequest& WithConsent(Consent&& value) { SetConsent(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ContactDetail m_adminContact;
-    bool m_adminContactHasBeenSet;
+    bool m_adminContactHasBeenSet = false;
 
     ContactDetail m_registrantContact;
-    bool m_registrantContactHasBeenSet;
+    bool m_registrantContactHasBeenSet = false;
 
     ContactDetail m_techContact;
-    bool m_techContactHasBeenSet;
+    bool m_techContactHasBeenSet = false;
+
+    Consent m_consent;
+    bool m_consentHasBeenSet = false;
   };
 
 } // namespace Model

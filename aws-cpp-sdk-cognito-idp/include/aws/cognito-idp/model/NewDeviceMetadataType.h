@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NewDeviceMetadataType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType
+  class NewDeviceMetadataType
   {
   public:
-    NewDeviceMetadataType();
-    NewDeviceMetadataType(Aws::Utils::Json::JsonView jsonValue);
-    NewDeviceMetadataType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType();
+    AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_deviceKey;
-    bool m_deviceKeyHasBeenSet;
+    bool m_deviceKeyHasBeenSet = false;
 
     Aws::String m_deviceGroupKey;
-    bool m_deviceGroupKeyHasBeenSet;
+    bool m_deviceGroupKeyHasBeenSet = false;
   };
 
 } // namespace Model

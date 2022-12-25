@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeploymentConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeploymentConfig
+  class DeploymentConfig
   {
   public:
-    DeploymentConfig();
-    DeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeploymentConfig();
+    AWS_SAGEMAKER_API DeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
-    bool m_blueGreenUpdatePolicyHasBeenSet;
+    bool m_blueGreenUpdatePolicyHasBeenSet = false;
 
     AutoRollbackConfig m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

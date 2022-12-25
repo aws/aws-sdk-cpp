@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PolicyTargetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API PolicyTargetSummary
+  class PolicyTargetSummary
   {
   public:
-    PolicyTargetSummary();
-    PolicyTargetSummary(Aws::Utils::Json::JsonView jsonValue);
-    PolicyTargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API PolicyTargetSummary();
+    AWS_ORGANIZATIONS_API PolicyTargetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API PolicyTargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,16 +315,16 @@ namespace Model
   private:
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TargetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

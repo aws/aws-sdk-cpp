@@ -25,47 +25,41 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of a <code> <a>DeleteInboundConnection</a> </code> operation.
-   * Contains details about the deleted inbound connection. </p><p><h3>See Also:</h3>
-   * <a
+   * <p>The results of a <code>DeleteInboundConnection</code> operation. Contains
+   * details about the deleted inbound connection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnectionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionResult
+  class DeleteInboundConnectionResult
   {
   public:
-    DeleteInboundConnectionResult();
-    DeleteInboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionResult();
+    AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the deleted inbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline const InboundConnection& GetConnection() const{ return m_connection; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the deleted inbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline void SetConnection(const InboundConnection& value) { m_connection = value; }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the deleted inbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline void SetConnection(InboundConnection&& value) { m_connection = std::move(value); }
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the deleted inbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline DeleteInboundConnectionResult& WithConnection(const InboundConnection& value) { SetConnection(value); return *this;}
 
     /**
-     * <p>The <code> <a>InboundConnection</a> </code> of the deleted inbound
-     * connection. </p>
+     * <p>The deleted inbound connection.</p>
      */
     inline DeleteInboundConnectionResult& WithConnection(InboundConnection&& value) { SetConnection(std::move(value)); return *this;}
 

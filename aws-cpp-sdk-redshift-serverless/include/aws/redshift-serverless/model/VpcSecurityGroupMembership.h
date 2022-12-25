@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership
+  class VpcSecurityGroupMembership
   {
   public:
-    VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
-    VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership();
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_vpcSecurityGroupId;
-    bool m_vpcSecurityGroupIdHasBeenSet;
+    bool m_vpcSecurityGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

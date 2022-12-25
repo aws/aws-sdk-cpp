@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ExportImageRequest : public EC2Request
+  class ExportImageRequest : public EC2Request
   {
   public:
-    ExportImageRequest();
+    AWS_EC2_API ExportImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -237,44 +237,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline const ExportTaskS3LocationRequest& GetS3ExportLocation() const{ return m_s3ExportLocation; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline bool S3ExportLocationHasBeenSet() const { return m_s3ExportLocationHasBeenSet; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline void SetS3ExportLocation(const ExportTaskS3LocationRequest& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = value; }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline void SetS3ExportLocation(ExportTaskS3LocationRequest&& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = std::move(value); }
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(const ExportTaskS3LocationRequest& value) { SetS3ExportLocation(value); return *this;}
 
     /**
-     * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
-     * vm-import-export@amazon.com.</p>
+     * <p>The Amazon S3 bucket for the destination image. The destination bucket must
+     * exist.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(ExportTaskS3LocationRequest&& value) { SetS3ExportLocation(std::move(value)); return *this;}
 
@@ -379,28 +373,28 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DiskImageFormat m_diskImageFormat;
-    bool m_diskImageFormatHasBeenSet;
+    bool m_diskImageFormatHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     ExportTaskS3LocationRequest m_s3ExportLocation;
-    bool m_s3ExportLocationHasBeenSet;
+    bool m_s3ExportLocationHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

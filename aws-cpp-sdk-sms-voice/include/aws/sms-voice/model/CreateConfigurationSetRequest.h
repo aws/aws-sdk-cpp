@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API CreateConfigurationSetRequest : public PinpointSMSVoiceRequest
+  class CreateConfigurationSetRequest : public PinpointSMSVoiceRequest
   {
   public:
-    CreateConfigurationSetRequest();
+    AWS_PINPOINTSMSVOICE_API CreateConfigurationSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfigurationSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

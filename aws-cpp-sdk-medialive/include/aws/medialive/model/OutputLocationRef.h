@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputLocationRef">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputLocationRef
+  class OutputLocationRef
   {
   public:
-    OutputLocationRef();
-    OutputLocationRef(Aws::Utils::Json::JsonView jsonValue);
-    OutputLocationRef& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputLocationRef();
+    AWS_MEDIALIVE_API OutputLocationRef(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputLocationRef& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_destinationRefId;
-    bool m_destinationRefIdHasBeenSet;
+    bool m_destinationRefIdHasBeenSet = false;
   };
 
 } // namespace Model

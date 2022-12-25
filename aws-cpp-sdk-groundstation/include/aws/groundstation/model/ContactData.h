@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ContactData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ContactData
+  class ContactData
   {
   public:
-    ContactData();
-    ContactData(Aws::Utils::Json::JsonView jsonValue);
-    ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ContactData();
+    AWS_GROUNDSTATION_API ContactData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,32 +114,32 @@ namespace Model
 
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline ContactData& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>End time of a contact.</p>
+     * <p>End time of a contact in UTC.</p>
      */
     inline ContactData& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -455,32 +455,32 @@ namespace Model
 
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline ContactData& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Start time of a contact.</p>
+     * <p>Start time of a contact in UTC.</p>
      */
     inline ContactData& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -553,43 +553,43 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     ContactStatus m_contactStatus;
-    bool m_contactStatusHasBeenSet;
+    bool m_contactStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_groundStation;
-    bool m_groundStationHasBeenSet;
+    bool m_groundStationHasBeenSet = false;
 
     Elevation m_maximumElevation;
-    bool m_maximumElevationHasBeenSet;
+    bool m_maximumElevationHasBeenSet = false;
 
     Aws::String m_missionProfileArn;
-    bool m_missionProfileArnHasBeenSet;
+    bool m_missionProfileArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_postPassEndTime;
-    bool m_postPassEndTimeHasBeenSet;
+    bool m_postPassEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_prePassStartTime;
-    bool m_prePassStartTimeHasBeenSet;
+    bool m_prePassStartTimeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_satelliteArn;
-    bool m_satelliteArnHasBeenSet;
+    bool m_satelliteArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

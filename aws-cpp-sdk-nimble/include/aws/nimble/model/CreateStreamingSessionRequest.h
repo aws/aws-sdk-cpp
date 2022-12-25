@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API CreateStreamingSessionRequest : public NimbleStudioRequest
+  class CreateStreamingSessionRequest : public NimbleStudioRequest
   {
   public:
-    CreateStreamingSessionRequest();
+    AWS_NIMBLESTUDIO_API CreateStreamingSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,64 +32,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStreamingSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingSessionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingSessionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingSessionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -126,42 +134,50 @@ namespace Model
 
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline CreateStreamingSessionRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline CreateStreamingSessionRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The launch profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline CreateStreamingSessionRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -306,79 +322,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingSessionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -386,25 +402,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     StreamingInstanceType m_ec2InstanceType;
-    bool m_ec2InstanceTypeHasBeenSet;
+    bool m_ec2InstanceTypeHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_streamingImageId;
-    bool m_streamingImageIdHasBeenSet;
+    bool m_streamingImageIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

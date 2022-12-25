@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ProvisionedCapacityDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API ProvisionedCapacityDescription
+  class ProvisionedCapacityDescription
   {
   public:
-    ProvisionedCapacityDescription();
-    ProvisionedCapacityDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedCapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API ProvisionedCapacityDescription();
+    AWS_GLACIER_API ProvisionedCapacityDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API ProvisionedCapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_capacityId;
-    bool m_capacityIdHasBeenSet;
+    bool m_capacityIdHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RightsizingRecommendationMetadata
+  class RightsizingRecommendationMetadata
   {
   public:
-    RightsizingRecommendationMetadata();
-    RightsizingRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RightsizingRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RightsizingRecommendationMetadata();
+    AWS_COSTEXPLORER_API RightsizingRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RightsizingRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_generationTimestamp;
-    bool m_generationTimestampHasBeenSet;
+    bool m_generationTimestampHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Aws::String m_additionalMetadata;
-    bool m_additionalMetadataHasBeenSet;
+    bool m_additionalMetadataHasBeenSet = false;
   };
 
 } // namespace Model

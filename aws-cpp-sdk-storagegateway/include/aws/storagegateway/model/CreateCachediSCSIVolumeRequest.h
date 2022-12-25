@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeRequest : public StorageGatewayRequest
+  class CreateCachediSCSIVolumeRequest : public StorageGatewayRequest
   {
   public:
-    CreateCachediSCSIVolumeRequest();
+    AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCachediSCSIVolume"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -608,34 +608,34 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
 
     Aws::String m_sourceVolumeARN;
-    bool m_sourceVolumeARNHasBeenSet;
+    bool m_sourceVolumeARNHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_kMSEncrypted;
-    bool m_kMSEncryptedHasBeenSet;
+    bool m_kMSEncryptedHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

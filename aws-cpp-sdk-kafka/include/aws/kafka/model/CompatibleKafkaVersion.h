@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CompatibleKafkaVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API CompatibleKafkaVersion
+  class CompatibleKafkaVersion
   {
   public:
-    CompatibleKafkaVersion();
-    CompatibleKafkaVersion(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleKafkaVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API CompatibleKafkaVersion();
+    AWS_KAFKA_API CompatibleKafkaVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API CompatibleKafkaVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetVersions;
-    bool m_targetVersionsHasBeenSet;
+    bool m_targetVersionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API EncryptionConfiguration();
+    AWS_APPRUNNER_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
   };
 
 } // namespace Model

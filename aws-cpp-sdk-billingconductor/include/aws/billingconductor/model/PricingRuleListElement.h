@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
+#include <aws/billingconductor/model/Tiering.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/PricingRuleListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API PricingRuleListElement
+  class PricingRuleListElement
   {
   public:
-    PricingRuleListElement();
-    PricingRuleListElement(Aws::Utils::Json::JsonView jsonValue);
-    PricingRuleListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API PricingRuleListElement();
+    AWS_BILLINGCONDUCTOR_API PricingRuleListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API PricingRuleListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,77 +331,163 @@ namespace Model
 
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p> The time the pricing rule was created. </p>
+     * <p> The time when the pricing rule was created. </p>
      */
     inline PricingRuleListElement& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the pricing rule was modified. </p>
+     * <p> The most recent time when the pricing rule was modified. </p>
      */
     inline PricingRuleListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
+
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntityHasBeenSet = true; m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntityHasBeenSet = true; m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntityHasBeenSet = true; m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline PricingRuleListElement& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const Tiering& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const Tiering& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(Tiering&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline PricingRuleListElement& WithTiering(const Tiering& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline PricingRuleListElement& WithTiering(Tiering&& value) { SetTiering(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PricingRuleScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     PricingRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_modifierPercentage;
-    bool m_modifierPercentageHasBeenSet;
+    bool m_modifierPercentageHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     long long m_associatedPricingPlanCount;
-    bool m_associatedPricingPlanCountHasBeenSet;
+    bool m_associatedPricingPlanCountHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_billingEntity;
+    bool m_billingEntityHasBeenSet = false;
+
+    Tiering m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ReportDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONCOSTPROFILER_API ReportDefinition
+  class ReportDefinition
   {
   public:
-    ReportDefinition();
-    ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition();
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,25 +287,25 @@ namespace Model
   private:
 
     Aws::String m_reportId;
-    bool m_reportIdHasBeenSet;
+    bool m_reportIdHasBeenSet = false;
 
     Aws::String m_reportDescription;
-    bool m_reportDescriptionHasBeenSet;
+    bool m_reportDescriptionHasBeenSet = false;
 
     ReportFrequency m_reportFrequency;
-    bool m_reportFrequencyHasBeenSet;
+    bool m_reportFrequencyHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     S3Location m_destinationS3Location;
-    bool m_destinationS3LocationHasBeenSet;
+    bool m_destinationS3LocationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
   };
 
 } // namespace Model

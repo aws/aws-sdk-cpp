@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscovererRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEMAS_API CreateDiscovererRequest : public SchemasRequest
+  class CreateDiscovererRequest : public SchemasRequest
   {
   public:
-    CreateDiscovererRequest();
+    AWS_SCHEMAS_API CreateDiscovererRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDiscoverer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     bool m_crossAccount;
-    bool m_crossAccountHasBeenSet;
+    bool m_crossAccountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

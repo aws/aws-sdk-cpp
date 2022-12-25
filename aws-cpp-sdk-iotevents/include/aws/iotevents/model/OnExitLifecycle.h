@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/OnExitLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API OnExitLifecycle
+  class OnExitLifecycle
   {
   public:
-    OnExitLifecycle();
-    OnExitLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    OnExitLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API OnExitLifecycle();
+    AWS_IOTEVENTS_API OnExitLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API OnExitLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Event> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

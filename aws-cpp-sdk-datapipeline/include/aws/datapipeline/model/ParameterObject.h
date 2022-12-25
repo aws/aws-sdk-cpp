@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ParameterObject">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ParameterObject
+  class ParameterObject
   {
   public:
-    ParameterObject();
-    ParameterObject(Aws::Utils::Json::JsonView jsonValue);
-    ParameterObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API ParameterObject();
+    AWS_DATAPIPELINE_API ParameterObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API ParameterObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<ParameterAttribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

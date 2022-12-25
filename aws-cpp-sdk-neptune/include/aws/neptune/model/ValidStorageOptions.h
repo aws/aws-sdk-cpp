@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ValidStorageOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API ValidStorageOptions
+  class ValidStorageOptions
   {
   public:
-    ValidStorageOptions();
-    ValidStorageOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ValidStorageOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ValidStorageOptions();
+    AWS_NEPTUNE_API ValidStorageOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ValidStorageOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<Range> m_storageSize;
-    bool m_storageSizeHasBeenSet;
+    bool m_storageSizeHasBeenSet = false;
 
     Aws::Vector<Range> m_provisionedIops;
-    bool m_provisionedIopsHasBeenSet;
+    bool m_provisionedIopsHasBeenSet = false;
 
     Aws::Vector<DoubleRange> m_iopsToStorageRatio;
-    bool m_iopsToStorageRatioHasBeenSet;
+    bool m_iopsToStorageRatioHasBeenSet = false;
   };
 
 } // namespace Model

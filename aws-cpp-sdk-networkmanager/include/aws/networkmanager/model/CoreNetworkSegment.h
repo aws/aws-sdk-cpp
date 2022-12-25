@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkSegment">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkSegment
+  class CoreNetworkSegment
   {
   public:
-    CoreNetworkSegment();
-    CoreNetworkSegment(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkSegment();
+    AWS_NETWORKMANAGER_API CoreNetworkSegment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_edgeLocations;
-    bool m_edgeLocationsHasBeenSet;
+    bool m_edgeLocationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sharedSegments;
-    bool m_sharedSegmentsHasBeenSet;
+    bool m_sharedSegmentsHasBeenSet = false;
   };
 
 } // namespace Model

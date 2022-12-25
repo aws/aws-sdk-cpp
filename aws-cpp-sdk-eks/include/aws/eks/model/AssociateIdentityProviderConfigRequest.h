@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API AssociateIdentityProviderConfigRequest : public EKSRequest
+  class AssociateIdentityProviderConfigRequest : public EKSRequest
   {
   public:
-    AssociateIdentityProviderConfigRequest();
+    AWS_EKS_API AssociateIdentityProviderConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateIdentityProviderConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline const OidcIdentityProviderConfigRequest& GetOidc() const{ return m_oidc; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline bool OidcHasBeenSet() const { return m_oidcHasBeenSet; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline void SetOidc(const OidcIdentityProviderConfigRequest& value) { m_oidcHasBeenSet = true; m_oidc = value; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline void SetOidc(OidcIdentityProviderConfigRequest&& value) { m_oidcHasBeenSet = true; m_oidc = std::move(value); }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline AssociateIdentityProviderConfigRequest& WithOidc(const OidcIdentityProviderConfigRequest& value) { SetOidc(value); return *this;}
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline AssociateIdentityProviderConfigRequest& WithOidc(OidcIdentityProviderConfigRequest&& value) { SetOidc(std::move(value)); return *this;}
@@ -256,16 +256,16 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     OidcIdentityProviderConfigRequest m_oidc;
-    bool m_oidcHasBeenSet;
+    bool m_oidcHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

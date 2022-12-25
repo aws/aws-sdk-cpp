@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RStudioServerProAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RStudioServerProAppSettings
+  class RStudioServerProAppSettings
   {
   public:
-    RStudioServerProAppSettings();
-    RStudioServerProAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    RStudioServerProAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RStudioServerProAppSettings();
+    AWS_SAGEMAKER_API RStudioServerProAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RStudioServerProAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     RStudioServerProAccessStatus m_accessStatus;
-    bool m_accessStatusHasBeenSet;
+    bool m_accessStatusHasBeenSet = false;
 
     RStudioServerProUserGroup m_userGroup;
-    bool m_userGroupHasBeenSet;
+    bool m_userGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,10 +30,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/BatchGetFrameMetricDataRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataRequest : public CodeGuruProfilerRequest
+  class BatchGetFrameMetricDataRequest : public CodeGuruProfilerRequest
   {
   public:
-    BatchGetFrameMetricDataRequest();
+    AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchGetFrameMetricData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CODEGURUPROFILER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -378,22 +378,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<FrameMetric> m_frameMetrics;
-    bool m_frameMetricsHasBeenSet;
+    bool m_frameMetricsHasBeenSet = false;
 
     Aws::String m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     AggregationPeriod m_targetResolution;
-    bool m_targetResolutionHasBeenSet;
+    bool m_targetResolutionHasBeenSet = false;
   };
 
 } // namespace Model

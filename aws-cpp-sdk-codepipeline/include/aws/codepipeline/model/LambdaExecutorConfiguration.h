@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/LambdaExecutorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API LambdaExecutorConfiguration
+  class LambdaExecutorConfiguration
   {
   public:
-    LambdaExecutorConfiguration();
-    LambdaExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LambdaExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API LambdaExecutorConfiguration();
+    AWS_CODEPIPELINE_API LambdaExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API LambdaExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
   };
 
 } // namespace Model

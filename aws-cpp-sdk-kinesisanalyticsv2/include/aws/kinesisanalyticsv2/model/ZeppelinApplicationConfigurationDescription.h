@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription
+  class ZeppelinApplicationConfigurationDescription
   {
   public:
-    ZeppelinApplicationConfigurationDescription();
-    ZeppelinApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ZeppelinApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     ZeppelinMonitoringConfigurationDescription m_monitoringConfigurationDescription;
-    bool m_monitoringConfigurationDescriptionHasBeenSet;
+    bool m_monitoringConfigurationDescriptionHasBeenSet = false;
 
     CatalogConfigurationDescription m_catalogConfigurationDescription;
-    bool m_catalogConfigurationDescriptionHasBeenSet;
+    bool m_catalogConfigurationDescriptionHasBeenSet = false;
 
     DeployAsApplicationConfigurationDescription m_deployAsApplicationConfigurationDescription;
-    bool m_deployAsApplicationConfigurationDescriptionHasBeenSet;
+    bool m_deployAsApplicationConfigurationDescriptionHasBeenSet = false;
 
     Aws::Vector<CustomArtifactConfigurationDescription> m_customArtifactsConfigurationDescription;
-    bool m_customArtifactsConfigurationDescriptionHasBeenSet;
+    bool m_customArtifactsConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

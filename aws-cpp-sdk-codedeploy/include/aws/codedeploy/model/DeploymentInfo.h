@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
 #include <aws/codedeploy/model/RelatedDeployments.h>
+#include <aws/codedeploy/model/AlarmConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -44,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentInfo
+  class DeploymentInfo
   {
   public:
-    DeploymentInfo();
-    DeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentInfo();
+    AWS_CODEDEPLOY_API DeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -542,8 +543,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
@@ -553,8 +554,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline bool CreatorHasBeenSet() const { return m_creatorHasBeenSet; }
 
@@ -564,8 +565,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
@@ -575,8 +576,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
 
@@ -586,8 +587,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
@@ -597,8 +598,8 @@ namespace Model
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
      * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
-     * process created the deployment when it detected outdated EC2 instances.</p>
-     * </li> </ul>
+     * process created the deployment when it detected outdated Amazon EC2
+     * instances.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(std::move(value)); return *this;}
 
@@ -616,16 +617,16 @@ namespace Model
      * If deployment to that instance is part of an overall deployment and the number
      * of healthy hosts is not less than the minimum number of healthy hosts, then a
      * deployment to the next instance is attempted. </p> <p> During a deployment, the
-     * AWS CodeDeploy agent runs the scripts specified for
+     * CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the
+     * AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts
+     * contains an error and does not run successfully, the deployment can fail. </p>
+     * <p> If the cause of the failure is a script from the last successful deployment
+     * that will never run successfully, create a new deployment and use
+     * <code>ignoreApplicationStopFailures</code> to specify that the
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-     * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-     * deployment. (All other scripts are run from the AppSpec file in the current
-     * deployment.) If one of these scripts contains an error and does not run
-     * successfully, the deployment can fail. </p> <p> If the cause of the failure is a
-     * script from the last successful deployment that will never run successfully,
-     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to
-     * specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
-     * and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+     * <code>AfterBlockTraffic</code> failures should be ignored. </p>
      */
     inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
 
@@ -642,16 +643,16 @@ namespace Model
      * If deployment to that instance is part of an overall deployment and the number
      * of healthy hosts is not less than the minimum number of healthy hosts, then a
      * deployment to the next instance is attempted. </p> <p> During a deployment, the
-     * AWS CodeDeploy agent runs the scripts specified for
+     * CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the
+     * AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts
+     * contains an error and does not run successfully, the deployment can fail. </p>
+     * <p> If the cause of the failure is a script from the last successful deployment
+     * that will never run successfully, create a new deployment and use
+     * <code>ignoreApplicationStopFailures</code> to specify that the
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-     * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-     * deployment. (All other scripts are run from the AppSpec file in the current
-     * deployment.) If one of these scripts contains an error and does not run
-     * successfully, the deployment can fail. </p> <p> If the cause of the failure is a
-     * script from the last successful deployment that will never run successfully,
-     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to
-     * specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
-     * and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+     * <code>AfterBlockTraffic</code> failures should be ignored. </p>
      */
     inline bool IgnoreApplicationStopFailuresHasBeenSet() const { return m_ignoreApplicationStopFailuresHasBeenSet; }
 
@@ -668,16 +669,16 @@ namespace Model
      * If deployment to that instance is part of an overall deployment and the number
      * of healthy hosts is not less than the minimum number of healthy hosts, then a
      * deployment to the next instance is attempted. </p> <p> During a deployment, the
-     * AWS CodeDeploy agent runs the scripts specified for
+     * CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the
+     * AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts
+     * contains an error and does not run successfully, the deployment can fail. </p>
+     * <p> If the cause of the failure is a script from the last successful deployment
+     * that will never run successfully, create a new deployment and use
+     * <code>ignoreApplicationStopFailures</code> to specify that the
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-     * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-     * deployment. (All other scripts are run from the AppSpec file in the current
-     * deployment.) If one of these scripts contains an error and does not run
-     * successfully, the deployment can fail. </p> <p> If the cause of the failure is a
-     * script from the last successful deployment that will never run successfully,
-     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to
-     * specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
-     * and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+     * <code>AfterBlockTraffic</code> failures should be ignored. </p>
      */
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
 
@@ -694,16 +695,16 @@ namespace Model
      * If deployment to that instance is part of an overall deployment and the number
      * of healthy hosts is not less than the minimum number of healthy hosts, then a
      * deployment to the next instance is attempted. </p> <p> During a deployment, the
-     * AWS CodeDeploy agent runs the scripts specified for
+     * CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>,
+     * <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the
+     * AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts
+     * contains an error and does not run successfully, the deployment can fail. </p>
+     * <p> If the cause of the failure is a script from the last successful deployment
+     * that will never run successfully, create a new deployment and use
+     * <code>ignoreApplicationStopFailures</code> to specify that the
      * <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-     * <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-     * deployment. (All other scripts are run from the AppSpec file in the current
-     * deployment.) If one of these scripts contains an error and does not run
-     * successfully, the deployment can fail. </p> <p> If the cause of the failure is a
-     * script from the last successful deployment that will never run successfully,
-     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to
-     * specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>,
-     * and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+     * <code>AfterBlockTraffic</code> failures should be ignored. </p>
      */
     inline DeploymentInfo& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
@@ -1024,7 +1025,7 @@ namespace Model
 
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1036,7 +1037,7 @@ namespace Model
     inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1048,7 +1049,7 @@ namespace Model
     inline bool FileExistsBehaviorHasBeenSet() const { return m_fileExistsBehaviorHasBeenSet; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1060,7 +1061,7 @@ namespace Model
     inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1072,7 +1073,7 @@ namespace Model
     inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1084,7 +1085,7 @@ namespace Model
     inline DeploymentInfo& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
 
     /**
-     * <p>Information about how AWS CodeDeploy handles files that already exist in a
+     * <p>Information about how CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
      * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
      * is also the default behavior if no option is specified.</p> </li> <li> <p>
@@ -1246,94 +1247,116 @@ namespace Model
     
     inline DeploymentInfo& WithRelatedDeployments(RelatedDeployments&& value) { SetRelatedDeployments(std::move(value)); return *this;}
 
+
+    
+    inline const AlarmConfiguration& GetOverrideAlarmConfiguration() const{ return m_overrideAlarmConfiguration; }
+
+    
+    inline bool OverrideAlarmConfigurationHasBeenSet() const { return m_overrideAlarmConfigurationHasBeenSet; }
+
+    
+    inline void SetOverrideAlarmConfiguration(const AlarmConfiguration& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = value; }
+
+    
+    inline void SetOverrideAlarmConfiguration(AlarmConfiguration&& value) { m_overrideAlarmConfigurationHasBeenSet = true; m_overrideAlarmConfiguration = std::move(value); }
+
+    
+    inline DeploymentInfo& WithOverrideAlarmConfiguration(const AlarmConfiguration& value) { SetOverrideAlarmConfiguration(value); return *this;}
+
+    
+    inline DeploymentInfo& WithOverrideAlarmConfiguration(AlarmConfiguration&& value) { SetOverrideAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     RevisionLocation m_previousRevision;
-    bool m_previousRevisionHasBeenSet;
+    bool m_previousRevisionHasBeenSet = false;
 
     RevisionLocation m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ErrorInformation m_errorInformation;
-    bool m_errorInformationHasBeenSet;
+    bool m_errorInformationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     DeploymentOverview m_deploymentOverview;
-    bool m_deploymentOverviewHasBeenSet;
+    bool m_deploymentOverviewHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DeploymentCreator m_creator;
-    bool m_creatorHasBeenSet;
+    bool m_creatorHasBeenSet = false;
 
     bool m_ignoreApplicationStopFailures;
-    bool m_ignoreApplicationStopFailuresHasBeenSet;
+    bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     bool m_updateOutdatedInstancesOnly;
-    bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
     RollbackInfo m_rollbackInfo;
-    bool m_rollbackInfoHasBeenSet;
+    bool m_rollbackInfoHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
-    bool m_deploymentStyleHasBeenSet;
+    bool m_deploymentStyleHasBeenSet = false;
 
     TargetInstances m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
 
     bool m_instanceTerminationWaitTimeStarted;
-    bool m_instanceTerminationWaitTimeStartedHasBeenSet;
+    bool m_instanceTerminationWaitTimeStartedHasBeenSet = false;
 
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
     LoadBalancerInfo m_loadBalancerInfo;
-    bool m_loadBalancerInfoHasBeenSet;
+    bool m_loadBalancerInfoHasBeenSet = false;
 
     Aws::String m_additionalDeploymentStatusInfo;
-    bool m_additionalDeploymentStatusInfoHasBeenSet;
+    bool m_additionalDeploymentStatusInfoHasBeenSet = false;
 
     FileExistsBehavior m_fileExistsBehavior;
-    bool m_fileExistsBehaviorHasBeenSet;
+    bool m_fileExistsBehaviorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentStatusMessages;
-    bool m_deploymentStatusMessagesHasBeenSet;
+    bool m_deploymentStatusMessagesHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     RelatedDeployments m_relatedDeployments;
-    bool m_relatedDeploymentsHasBeenSet;
+    bool m_relatedDeploymentsHasBeenSet = false;
+
+    AlarmConfiguration m_overrideAlarmConfiguration;
+    bool m_overrideAlarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

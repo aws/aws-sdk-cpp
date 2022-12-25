@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadForecast">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LoadForecast
+  class LoadForecast
   {
   public:
-    LoadForecast();
-    LoadForecast(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoadForecast& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LoadForecast();
+    AWS_AUTOSCALING_API LoadForecast(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LoadForecast& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-    bool m_timestampsHasBeenSet;
+    bool m_timestampsHasBeenSet = false;
 
     Aws::Vector<double> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     PredictiveScalingMetricSpecification m_metricSpecification;
-    bool m_metricSpecificationHasBeenSet;
+    bool m_metricSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

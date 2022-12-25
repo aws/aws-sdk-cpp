@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PerObjectStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API PerObjectStatus
+  class PerObjectStatus
   {
   public:
-    PerObjectStatus();
-    PerObjectStatus(Aws::Utils::Json::JsonView jsonValue);
-    PerObjectStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API PerObjectStatus();
+    AWS_NETWORKFIREWALL_API PerObjectStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API PerObjectStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     PerObjectSyncStatus m_syncStatus;
-    bool m_syncStatusHasBeenSet;
+    bool m_syncStatusHasBeenSet = false;
 
     Aws::String m_updateToken;
-    bool m_updateTokenHasBeenSet;
+    bool m_updateTokenHasBeenSet = false;
   };
 
 } // namespace Model

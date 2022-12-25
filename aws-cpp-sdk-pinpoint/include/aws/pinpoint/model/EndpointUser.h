@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointUser">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointUser
+  class EndpointUser
   {
   public:
-    EndpointUser();
-    EndpointUser(Aws::Utils::Json::JsonView jsonValue);
-    EndpointUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointUser();
+    AWS_PINPOINT_API EndpointUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,10 +252,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

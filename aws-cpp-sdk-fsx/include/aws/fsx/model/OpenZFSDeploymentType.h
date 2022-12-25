@@ -16,7 +16,8 @@ namespace Model
   enum class OpenZFSDeploymentType
   {
     NOT_SET,
-    SINGLE_AZ_1
+    SINGLE_AZ_1,
+    SINGLE_AZ_2
   };
 
 namespace OpenZFSDeploymentTypeMapper

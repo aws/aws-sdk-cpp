@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API HPOResourceConfig
+  class HPOResourceConfig
   {
   public:
-    HPOResourceConfig();
-    HPOResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    HPOResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API HPOResourceConfig();
+    AWS_PERSONALIZE_API HPOResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API HPOResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_maxNumberOfTrainingJobs;
-    bool m_maxNumberOfTrainingJobsHasBeenSet;
+    bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
     Aws::String m_maxParallelTrainingJobs;
-    bool m_maxParallelTrainingJobsHasBeenSet;
+    bool m_maxParallelTrainingJobsHasBeenSet = false;
   };
 
 } // namespace Model

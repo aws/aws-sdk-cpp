@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CrawlerMetrics
+  class CrawlerMetrics
   {
   public:
-    CrawlerMetrics();
-    CrawlerMetrics(Aws::Utils::Json::JsonView jsonValue);
-    CrawlerMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CrawlerMetrics();
+    AWS_GLUE_API CrawlerMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CrawlerMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -231,28 +231,28 @@ namespace Model
   private:
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
 
     double m_timeLeftSeconds;
-    bool m_timeLeftSecondsHasBeenSet;
+    bool m_timeLeftSecondsHasBeenSet = false;
 
     bool m_stillEstimating;
-    bool m_stillEstimatingHasBeenSet;
+    bool m_stillEstimatingHasBeenSet = false;
 
     double m_lastRuntimeSeconds;
-    bool m_lastRuntimeSecondsHasBeenSet;
+    bool m_lastRuntimeSecondsHasBeenSet = false;
 
     double m_medianRuntimeSeconds;
-    bool m_medianRuntimeSecondsHasBeenSet;
+    bool m_medianRuntimeSecondsHasBeenSet = false;
 
     int m_tablesCreated;
-    bool m_tablesCreatedHasBeenSet;
+    bool m_tablesCreatedHasBeenSet = false;
 
     int m_tablesUpdated;
-    bool m_tablesUpdatedHasBeenSet;
+    bool m_tablesUpdatedHasBeenSet = false;
 
     int m_tablesDeleted;
-    bool m_tablesDeletedHasBeenSet;
+    bool m_tablesDeletedHasBeenSet = false;
   };
 
 } // namespace Model

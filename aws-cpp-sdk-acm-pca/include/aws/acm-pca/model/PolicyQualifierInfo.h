@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PolicyQualifierInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API PolicyQualifierInfo
+  class PolicyQualifierInfo
   {
   public:
-    PolicyQualifierInfo();
-    PolicyQualifierInfo(Aws::Utils::Json::JsonView jsonValue);
-    PolicyQualifierInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API PolicyQualifierInfo();
+    AWS_ACMPCA_API PolicyQualifierInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API PolicyQualifierInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     PolicyQualifierId m_policyQualifierId;
-    bool m_policyQualifierIdHasBeenSet;
+    bool m_policyQualifierIdHasBeenSet = false;
 
     Qualifier m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

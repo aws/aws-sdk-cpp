@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PendingProductionVariantSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PendingProductionVariantSummary
+  class PendingProductionVariantSummary
   {
   public:
-    PendingProductionVariantSummary();
-    PendingProductionVariantSummary(Aws::Utils::Json::JsonView jsonValue);
-    PendingProductionVariantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PendingProductionVariantSummary();
+    AWS_SAGEMAKER_API PendingProductionVariantSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PendingProductionVariantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -450,37 +450,37 @@ namespace Model
   private:
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     Aws::Vector<DeployedImage> m_deployedImages;
-    bool m_deployedImagesHasBeenSet;
+    bool m_deployedImagesHasBeenSet = false;
 
     double m_currentWeight;
-    bool m_currentWeightHasBeenSet;
+    bool m_currentWeightHasBeenSet = false;
 
     double m_desiredWeight;
-    bool m_desiredWeightHasBeenSet;
+    bool m_desiredWeightHasBeenSet = false;
 
     int m_currentInstanceCount;
-    bool m_currentInstanceCountHasBeenSet;
+    bool m_currentInstanceCountHasBeenSet = false;
 
     int m_desiredInstanceCount;
-    bool m_desiredInstanceCountHasBeenSet;
+    bool m_desiredInstanceCountHasBeenSet = false;
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     ProductionVariantAcceleratorType m_acceleratorType;
-    bool m_acceleratorTypeHasBeenSet;
+    bool m_acceleratorTypeHasBeenSet = false;
 
     Aws::Vector<ProductionVariantStatus> m_variantStatus;
-    bool m_variantStatusHasBeenSet;
+    bool m_variantStatusHasBeenSet = false;
 
     ProductionVariantServerlessConfig m_currentServerlessConfig;
-    bool m_currentServerlessConfigHasBeenSet;
+    bool m_currentServerlessConfigHasBeenSet = false;
 
     ProductionVariantServerlessConfig m_desiredServerlessConfig;
-    bool m_desiredServerlessConfigHasBeenSet;
+    bool m_desiredServerlessConfigHasBeenSet = false;
   };
 
 } // namespace Model

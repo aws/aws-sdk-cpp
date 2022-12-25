@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/FrequencyBandwidth">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API FrequencyBandwidth
+  class FrequencyBandwidth
   {
   public:
-    FrequencyBandwidth();
-    FrequencyBandwidth(Aws::Utils::Json::JsonView jsonValue);
-    FrequencyBandwidth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API FrequencyBandwidth();
+    AWS_GROUNDSTATION_API FrequencyBandwidth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API FrequencyBandwidth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     BandwidthUnits m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

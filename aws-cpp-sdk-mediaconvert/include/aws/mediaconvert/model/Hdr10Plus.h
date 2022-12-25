@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Plus">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Hdr10Plus
+  class Hdr10Plus
   {
   public:
-    Hdr10Plus();
-    Hdr10Plus(Aws::Utils::Json::JsonView jsonValue);
-    Hdr10Plus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Hdr10Plus();
+    AWS_MEDIACONVERT_API Hdr10Plus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Hdr10Plus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_masteringMonitorNits;
-    bool m_masteringMonitorNitsHasBeenSet;
+    bool m_masteringMonitorNitsHasBeenSet = false;
 
     int m_targetMonitorNits;
-    bool m_targetMonitorNitsHasBeenSet;
+    bool m_targetMonitorNitsHasBeenSet = false;
   };
 
 } // namespace Model

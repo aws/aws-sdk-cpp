@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/FlowTemplateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API FlowTemplateSummary
+  class FlowTemplateSummary
   {
   public:
-    FlowTemplateSummary();
-    FlowTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
-    FlowTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API FlowTemplateSummary();
+    AWS_IOTTHINGSGRAPH_API FlowTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API FlowTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_revisionNumber;
-    bool m_revisionNumberHasBeenSet;
+    bool m_revisionNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

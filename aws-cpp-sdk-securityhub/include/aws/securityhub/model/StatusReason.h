@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StatusReason">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StatusReason
+  class StatusReason
   {
   public:
-    StatusReason();
-    StatusReason(Aws::Utils::Json::JsonView jsonValue);
-    StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StatusReason();
+    AWS_SECURITYHUB_API StatusReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_reasonCode;
-    bool m_reasonCodeHasBeenSet;
+    bool m_reasonCodeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

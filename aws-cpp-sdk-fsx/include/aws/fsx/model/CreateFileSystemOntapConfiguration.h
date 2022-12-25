@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOntapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemOntapConfiguration
+  class CreateFileSystemOntapConfiguration
   {
   public:
-    CreateFileSystemOntapConfiguration();
-    CreateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemOntapConfiguration();
+    AWS_FSX_API CreateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -160,73 +160,89 @@ namespace Model
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
     /**
      * <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to
-     * access your file system will be created. By default, Amazon FSx selects an
-     * unused IP address range for you from the 198.19.* range.</p>  <p>The
-     * Endpoint IP address range you select for your file system must exist outside the
-     * VPC's CIDR range and must be at least /30 or larger.</p> 
+     * access your file system will be created. By default in the Amazon FSx API,
+     * Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
+     * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
+     * range for the file system. You can have overlapping endpoint IP addresses for
+     * file systems deployed in the same VPC/route tables.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 
@@ -451,25 +467,25 @@ namespace Model
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Sets the throughput capacity for the file system that you're creating. Valid
-     * values are 128, 256, 512, 1024, and 2048 MBps.</p>
+     * values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -501,34 +517,34 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OntapDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_endpointIpAddressRange;
-    bool m_endpointIpAddressRangeHasBeenSet;
+    bool m_endpointIpAddressRangeHasBeenSet = false;
 
     Aws::String m_fsxAdminPassword;
-    bool m_fsxAdminPasswordHasBeenSet;
+    bool m_fsxAdminPasswordHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     Aws::String m_preferredSubnetId;
-    bool m_preferredSubnetIdHasBeenSet;
+    bool m_preferredSubnetIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_routeTableIds;
-    bool m_routeTableIdsHasBeenSet;
+    bool m_routeTableIdsHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

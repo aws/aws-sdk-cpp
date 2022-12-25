@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMR_API RemoveAutoScalingPolicyRequest : public EMRRequest
+  class RemoveAutoScalingPolicyRequest : public EMRRequest
   {
   public:
-    RemoveAutoScalingPolicyRequest();
+    AWS_EMR_API RemoveAutoScalingPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveAutoScalingPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

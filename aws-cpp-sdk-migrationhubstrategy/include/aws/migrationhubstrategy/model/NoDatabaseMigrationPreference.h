@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/NoDatabaseMigrationPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference
+  class NoDatabaseMigrationPreference
   {
   public:
-    NoDatabaseMigrationPreference();
-    NoDatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
-    NoDatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API NoDatabaseMigrationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<TargetDatabaseEngine> m_targetDatabaseEngine;
-    bool m_targetDatabaseEngineHasBeenSet;
+    bool m_targetDatabaseEngineHasBeenSet = false;
   };
 
 } // namespace Model

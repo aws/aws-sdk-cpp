@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StorediSCSIVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API StorediSCSIVolume
+  class StorediSCSIVolume
   {
   public:
-    StorediSCSIVolume();
-    StorediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
-    StorediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume();
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -708,49 +708,49 @@ namespace Model
   private:
 
     Aws::String m_volumeARN;
-    bool m_volumeARNHasBeenSet;
+    bool m_volumeARNHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
 
     Aws::String m_volumeStatus;
-    bool m_volumeStatusHasBeenSet;
+    bool m_volumeStatusHasBeenSet = false;
 
     Aws::String m_volumeAttachmentStatus;
-    bool m_volumeAttachmentStatusHasBeenSet;
+    bool m_volumeAttachmentStatusHasBeenSet = false;
 
     long long m_volumeSizeInBytes;
-    bool m_volumeSizeInBytesHasBeenSet;
+    bool m_volumeSizeInBytesHasBeenSet = false;
 
     double m_volumeProgress;
-    bool m_volumeProgressHasBeenSet;
+    bool m_volumeProgressHasBeenSet = false;
 
     Aws::String m_volumeDiskId;
-    bool m_volumeDiskIdHasBeenSet;
+    bool m_volumeDiskIdHasBeenSet = false;
 
     Aws::String m_sourceSnapshotId;
-    bool m_sourceSnapshotIdHasBeenSet;
+    bool m_sourceSnapshotIdHasBeenSet = false;
 
     bool m_preservedExistingData;
-    bool m_preservedExistingDataHasBeenSet;
+    bool m_preservedExistingDataHasBeenSet = false;
 
     VolumeiSCSIAttributes m_volumeiSCSIAttributes;
-    bool m_volumeiSCSIAttributesHasBeenSet;
+    bool m_volumeiSCSIAttributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     long long m_volumeUsedInBytes;
-    bool m_volumeUsedInBytesHasBeenSet;
+    bool m_volumeUsedInBytesHasBeenSet = false;
 
     Aws::String m_kMSKey;
-    bool m_kMSKeyHasBeenSet;
+    bool m_kMSKeyHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
   };
 
 } // namespace Model

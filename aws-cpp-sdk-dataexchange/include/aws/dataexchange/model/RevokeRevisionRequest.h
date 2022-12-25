@@ -17,14 +17,11 @@ namespace Model
 {
 
   /**
-   * <p>The request body for RevokeRevision.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RevokeRevisionRequest">AWS
-   * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API RevokeRevisionRequest : public DataExchangeRequest
+  class RevokeRevisionRequest : public DataExchangeRequest
   {
   public:
-    RevokeRevisionRequest();
+    AWS_DATAEXCHANGE_API RevokeRevisionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeRevision"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -168,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revocationComment;
-    bool m_revocationCommentHasBeenSet;
+    bool m_revocationCommentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ReplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ReplicationConfiguration
+  class ReplicationConfiguration
   {
   public:
-    ReplicationConfiguration();
-    ReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ReplicationConfiguration();
+    AWS_ECR_API ReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<ReplicationRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

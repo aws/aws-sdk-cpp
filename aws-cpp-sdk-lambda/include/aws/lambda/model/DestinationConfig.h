@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DestinationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API DestinationConfig
+  class DestinationConfig
   {
   public:
-    DestinationConfig();
-    DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API DestinationConfig();
+    AWS_LAMBDA_API DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     OnSuccess m_onSuccess;
-    bool m_onSuccessHasBeenSet;
+    bool m_onSuccessHasBeenSet = false;
 
     OnFailure m_onFailure;
-    bool m_onFailureHasBeenSet;
+    bool m_onFailureHasBeenSet = false;
   };
 
 } // namespace Model

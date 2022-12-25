@@ -43,7 +43,7 @@ GlobalTableDescription& GlobalTableDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationGroup"))
   {
-    Array<JsonView> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
+    Aws::Utils::Array<JsonView> replicationGroupJsonList = jsonValue.GetArray("ReplicationGroup");
     for(unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex)
     {
       m_replicationGroup.push_back(replicationGroupJsonList[replicationGroupIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue GlobalTableDescription::Jsonize() const
 
   if(m_replicationGroupHasBeenSet)
   {
-   Array<JsonValue> replicationGroupJsonList(m_replicationGroup.size());
+   Aws::Utils::Array<JsonValue> replicationGroupJsonList(m_replicationGroup.size());
    for(unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex)
    {
      replicationGroupJsonList[replicationGroupIndex].AsObject(m_replicationGroup[replicationGroupIndex].Jsonize());

@@ -78,7 +78,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attachedChannels"))
   {
-    Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
+    Aws::Utils::Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
     for(unsigned attachedChannelsIndex = 0; attachedChannelsIndex < attachedChannelsJsonList.GetLength(); ++attachedChannelsIndex)
     {
       m_attachedChannels.push_back(attachedChannelsJsonList[attachedChannelsIndex].AsString());
@@ -88,7 +88,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -112,7 +112,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputDevices"))
   {
-    Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
+    Aws::Utils::Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
     for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
     {
       m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
@@ -122,7 +122,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputPartnerIds"))
   {
-    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    Aws::Utils::Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
     for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
     {
       m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
@@ -139,7 +139,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaConnectFlows"))
   {
-    Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
+    Aws::Utils::Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
     for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
     {
       m_mediaConnectFlows.push_back(mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject());
@@ -163,7 +163,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -173,7 +173,7 @@ Input& Input::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -220,7 +220,7 @@ JsonValue Input::Jsonize() const
 
   if(m_attachedChannelsHasBeenSet)
   {
-   Array<JsonValue> attachedChannelsJsonList(m_attachedChannels.size());
+   Aws::Utils::Array<JsonValue> attachedChannelsJsonList(m_attachedChannels.size());
    for(unsigned attachedChannelsIndex = 0; attachedChannelsIndex < attachedChannelsJsonList.GetLength(); ++attachedChannelsIndex)
    {
      attachedChannelsJsonList[attachedChannelsIndex].AsString(m_attachedChannels[attachedChannelsIndex]);
@@ -231,7 +231,7 @@ JsonValue Input::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -253,7 +253,7 @@ JsonValue Input::Jsonize() const
 
   if(m_inputDevicesHasBeenSet)
   {
-   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   Aws::Utils::Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
    for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
    {
      inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
@@ -264,7 +264,7 @@ JsonValue Input::Jsonize() const
 
   if(m_inputPartnerIdsHasBeenSet)
   {
-   Array<JsonValue> inputPartnerIdsJsonList(m_inputPartnerIds.size());
+   Aws::Utils::Array<JsonValue> inputPartnerIdsJsonList(m_inputPartnerIds.size());
    for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
    {
      inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString(m_inputPartnerIds[inputPartnerIdsIndex]);
@@ -280,7 +280,7 @@ JsonValue Input::Jsonize() const
 
   if(m_mediaConnectFlowsHasBeenSet)
   {
-   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   Aws::Utils::Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
    for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
    {
      mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
@@ -303,7 +303,7 @@ JsonValue Input::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -314,7 +314,7 @@ JsonValue Input::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());

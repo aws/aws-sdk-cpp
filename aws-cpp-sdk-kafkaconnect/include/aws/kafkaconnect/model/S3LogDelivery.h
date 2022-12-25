@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/S3LogDelivery">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API S3LogDelivery
+  class S3LogDelivery
   {
   public:
-    S3LogDelivery();
-    S3LogDelivery(Aws::Utils::Json::JsonView jsonValue);
-    S3LogDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API S3LogDelivery();
+    AWS_KAFKACONNECT_API S3LogDelivery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API S3LogDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

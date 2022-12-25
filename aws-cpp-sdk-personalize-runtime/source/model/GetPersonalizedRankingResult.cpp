@@ -30,7 +30,7 @@ GetPersonalizedRankingResult& GetPersonalizedRankingResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("personalizedRanking"))
   {
-    Array<JsonView> personalizedRankingJsonList = jsonValue.GetArray("personalizedRanking");
+    Aws::Utils::Array<JsonView> personalizedRankingJsonList = jsonValue.GetArray("personalizedRanking");
     for(unsigned personalizedRankingIndex = 0; personalizedRankingIndex < personalizedRankingJsonList.GetLength(); ++personalizedRankingIndex)
     {
       m_personalizedRanking.push_back(personalizedRankingJsonList[personalizedRankingIndex].AsObject());

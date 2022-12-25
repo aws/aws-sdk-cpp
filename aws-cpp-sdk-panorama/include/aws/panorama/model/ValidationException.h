@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ValidationException();
+    AWS_PANORAMA_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -223,19 +223,19 @@ namespace Model
   private:
 
     Aws::Vector<ValidationExceptionErrorArgument> m_errorArguments;
-    bool m_errorArgumentsHasBeenSet;
+    bool m_errorArgumentsHasBeenSet = false;
 
     Aws::String m_errorId;
-    bool m_errorIdHasBeenSet;
+    bool m_errorIdHasBeenSet = false;
 
     Aws::Vector<ValidationExceptionField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierOutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClassifierOutputDataConfig
+  class DocumentClassifierOutputDataConfig
   {
   public:
-    DocumentClassifierOutputDataConfig();
-    DocumentClassifierOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClassifierOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClassifierOutputDataConfig();
+    AWS_COMPREHEND_API DocumentClassifierOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClassifierOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,10 +258,10 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

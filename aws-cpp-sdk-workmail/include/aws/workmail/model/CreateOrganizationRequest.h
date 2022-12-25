@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API CreateOrganizationRequest : public WorkMailRequest
+  class CreateOrganizationRequest : public WorkMailRequest
   {
   public:
-    CreateOrganizationRequest();
+    AWS_WORKMAIL_API CreateOrganizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOrganization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -202,101 +202,93 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline CreateOrganizationRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline CreateOrganizationRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-     * KMS.</p>
+     * <p>The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.</p>
      */
     inline CreateOrganizationRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
 
     /**
-     * <p>When <code>true</code>, allows organization interoperability between Amazon
-     * WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD
-     * Connector directory ID is included in the request.</p>
+     * <p>When <code>true</code>, allows organization interoperability between WorkMail
+     * and Microsoft Exchange. If <code>true</code>, you must include a AD Connector
+     * directory ID in the request.</p>
      */
     inline bool GetEnableInteroperability() const{ return m_enableInteroperability; }
 
     /**
-     * <p>When <code>true</code>, allows organization interoperability between Amazon
-     * WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD
-     * Connector directory ID is included in the request.</p>
+     * <p>When <code>true</code>, allows organization interoperability between WorkMail
+     * and Microsoft Exchange. If <code>true</code>, you must include a AD Connector
+     * directory ID in the request.</p>
      */
     inline bool EnableInteroperabilityHasBeenSet() const { return m_enableInteroperabilityHasBeenSet; }
 
     /**
-     * <p>When <code>true</code>, allows organization interoperability between Amazon
-     * WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD
-     * Connector directory ID is included in the request.</p>
+     * <p>When <code>true</code>, allows organization interoperability between WorkMail
+     * and Microsoft Exchange. If <code>true</code>, you must include a AD Connector
+     * directory ID in the request.</p>
      */
     inline void SetEnableInteroperability(bool value) { m_enableInteroperabilityHasBeenSet = true; m_enableInteroperability = value; }
 
     /**
-     * <p>When <code>true</code>, allows organization interoperability between Amazon
-     * WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD
-     * Connector directory ID is included in the request.</p>
+     * <p>When <code>true</code>, allows organization interoperability between WorkMail
+     * and Microsoft Exchange. If <code>true</code>, you must include a AD Connector
+     * directory ID in the request.</p>
      */
     inline CreateOrganizationRequest& WithEnableInteroperability(bool value) { SetEnableInteroperability(value); return *this;}
 
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Domain> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     bool m_enableInteroperability;
-    bool m_enableInteroperabilityHasBeenSet;
+    bool m_enableInteroperabilityHasBeenSet = false;
   };
 
 } // namespace Model

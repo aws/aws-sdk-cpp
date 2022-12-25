@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A cache policy.</p> <p>When it’s attached to a cache behavior, the cache
+   * <p>A cache policy.</p> <p>When it's attached to a cache behavior, the cache
    * policy determines the following:</p> <ul> <li> <p>The values that CloudFront
    * includes in the cache key. These values can include HTTP headers, cookies, and
    * URL query strings. CloudFront uses the cache key to find an object in its cache
@@ -33,21 +33,21 @@ namespace Model
    * maximum time to live (TTL) values that you want objects to stay in the
    * CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query strings
    * that are included in the cache key are automatically included in requests that
-   * CloudFront sends to the origin. CloudFront sends a request when it can’t find a
-   * valid object in its cache that matches the request’s cache key. If you want to
+   * CloudFront sends to the origin. CloudFront sends a request when it can't find a
+   * valid object in its cache that matches the request's cache key. If you want to
    * send values to the origin but <i>not</i> include them in the cache key, use
    * <code>OriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicy
+  class CachePolicy
   {
   public:
-    CachePolicy();
-    CachePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicy();
+    AWS_CLOUDFRONT_API CachePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     CachePolicyConfig m_cachePolicyConfig;
-    bool m_cachePolicyConfigHasBeenSet;
+    bool m_cachePolicyConfigHasBeenSet = false;
   };
 
 } // namespace Model

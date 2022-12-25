@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FilesLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API FilesLimit
+  class FilesLimit
   {
   public:
-    FilesLimit();
-    FilesLimit(Aws::Utils::Json::JsonView jsonValue);
-    FilesLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API FilesLimit();
+    AWS_GLUEDATABREW_API FilesLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API FilesLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     int m_maxFiles;
-    bool m_maxFilesHasBeenSet;
+    bool m_maxFilesHasBeenSet = false;
 
     OrderedBy m_orderedBy;
-    bool m_orderedByHasBeenSet;
+    bool m_orderedByHasBeenSet = false;
 
     Order m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

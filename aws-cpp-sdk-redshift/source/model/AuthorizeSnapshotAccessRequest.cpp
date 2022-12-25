@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 AuthorizeSnapshotAccessRequest::AuthorizeSnapshotAccessRequest() : 
     m_snapshotIdentifierHasBeenSet(false),
+    m_snapshotArnHasBeenSet(false),
     m_snapshotClusterIdentifierHasBeenSet(false),
     m_accountWithRestoreAccessHasBeenSet(false)
 {
@@ -24,6 +25,11 @@ Aws::String AuthorizeSnapshotAccessRequest::SerializePayload() const
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_snapshotArnHasBeenSet)
+  {
+    ss << "SnapshotArn=" << StringUtils::URLEncode(m_snapshotArn.c_str()) << "&";
   }
 
   if(m_snapshotClusterIdentifierHasBeenSet)

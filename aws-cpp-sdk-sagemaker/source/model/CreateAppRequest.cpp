@@ -19,7 +19,8 @@ CreateAppRequest::CreateAppRequest() :
     m_appTypeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_resourceSpecHasBeenSet(false)
+    m_resourceSpecHasBeenSet(false),
+    m_spaceNameHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,7 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -64,6 +65,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_resourceSpecHasBeenSet)
   {
    payload.WithObject("ResourceSpec", m_resourceSpec.Jsonize());
+
+  }
+
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
 
   }
 

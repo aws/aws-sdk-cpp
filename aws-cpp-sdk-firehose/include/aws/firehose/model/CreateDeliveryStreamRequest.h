@@ -17,6 +17,7 @@
 #include <aws/firehose/model/SplunkDestinationConfiguration.h>
 #include <aws/firehose/model/HttpEndpointDestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/firehose/model/AmazonOpenSearchServerlessDestinationConfiguration.h>
 #include <aws/firehose/model/Tag.h>
 #include <utility>
 
@@ -29,10 +30,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIREHOSE_API CreateDeliveryStreamRequest : public FirehoseRequest
+  class CreateDeliveryStreamRequest : public FirehoseRequest
   {
   public:
-    CreateDeliveryStreamRequest();
+    AWS_FIREHOSE_API CreateDeliveryStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,72 +41,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDeliveryStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIREHOSE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FIREHOSE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same AWS Region. If the delivery streams are in different accounts or
-     * different Regions, you can have multiple delivery streams with the same
-     * name.</p>
+     * <p>The name of the delivery stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the delivery streams
+     * are in different accounts or different Regions, you can have multiple delivery
+     * streams with the same name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
@@ -338,22 +339,40 @@ namespace Model
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline const AmazonopensearchserviceDestinationConfiguration& GetAmazonopensearchserviceDestinationConfiguration() const{ return m_amazonopensearchserviceDestinationConfiguration; }
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline bool AmazonopensearchserviceDestinationConfigurationHasBeenSet() const { return m_amazonopensearchserviceDestinationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline void SetAmazonopensearchserviceDestinationConfiguration(const AmazonopensearchserviceDestinationConfiguration& value) { m_amazonopensearchserviceDestinationConfigurationHasBeenSet = true; m_amazonopensearchserviceDestinationConfiguration = value; }
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline void SetAmazonopensearchserviceDestinationConfiguration(AmazonopensearchserviceDestinationConfiguration&& value) { m_amazonopensearchserviceDestinationConfigurationHasBeenSet = true; m_amazonopensearchserviceDestinationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline CreateDeliveryStreamRequest& WithAmazonopensearchserviceDestinationConfiguration(const AmazonopensearchserviceDestinationConfiguration& value) { SetAmazonopensearchserviceDestinationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The destination in Amazon OpenSearch Service. You can specify only one
+     * destination.</p>
+     */
     inline CreateDeliveryStreamRequest& WithAmazonopensearchserviceDestinationConfiguration(AmazonopensearchserviceDestinationConfiguration&& value) { SetAmazonopensearchserviceDestinationConfiguration(std::move(value)); return *this;}
 
 
@@ -427,134 +446,182 @@ namespace Model
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline CreateDeliveryStreamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline CreateDeliveryStreamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline CreateDeliveryStreamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
-     * that you can define and assign to AWS resources. Tags are metadata. For example,
-     * you can add friendly names and descriptions or other types of information that
-     * can help you distinguish the delivery stream. For more information about tags,
-     * see <a
+     * that you can define and assign to Amazon Web Services resources. Tags are
+     * metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more
+     * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
-     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * stream.</p>
      */
     inline CreateDeliveryStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline const AmazonOpenSearchServerlessDestinationConfiguration& GetAmazonOpenSearchServerlessDestinationConfiguration() const{ return m_amazonOpenSearchServerlessDestinationConfiguration; }
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline bool AmazonOpenSearchServerlessDestinationConfigurationHasBeenSet() const { return m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline void SetAmazonOpenSearchServerlessDestinationConfiguration(const AmazonOpenSearchServerlessDestinationConfiguration& value) { m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = true; m_amazonOpenSearchServerlessDestinationConfiguration = value; }
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline void SetAmazonOpenSearchServerlessDestinationConfiguration(AmazonOpenSearchServerlessDestinationConfiguration&& value) { m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = true; m_amazonOpenSearchServerlessDestinationConfiguration = std::move(value); }
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithAmazonOpenSearchServerlessDestinationConfiguration(const AmazonOpenSearchServerlessDestinationConfiguration& value) { SetAmazonOpenSearchServerlessDestinationConfiguration(value); return *this;}
+
+    /**
+     * <p>The destination in the Serverless offering for Amazon OpenSearch Service. You
+     * can specify only one destination.</p>
+     */
+    inline CreateDeliveryStreamRequest& WithAmazonOpenSearchServerlessDestinationConfiguration(AmazonOpenSearchServerlessDestinationConfiguration&& value) { SetAmazonOpenSearchServerlessDestinationConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     DeliveryStreamType m_deliveryStreamType;
-    bool m_deliveryStreamTypeHasBeenSet;
+    bool m_deliveryStreamTypeHasBeenSet = false;
 
     KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
-    bool m_kinesisStreamSourceConfigurationHasBeenSet;
+    bool m_kinesisStreamSourceConfigurationHasBeenSet = false;
 
     DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
-    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet;
+    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
 
     ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
-    bool m_extendedS3DestinationConfigurationHasBeenSet;
+    bool m_extendedS3DestinationConfigurationHasBeenSet = false;
 
     RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;
-    bool m_redshiftDestinationConfigurationHasBeenSet;
+    bool m_redshiftDestinationConfigurationHasBeenSet = false;
 
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
-    bool m_elasticsearchDestinationConfigurationHasBeenSet;
+    bool m_elasticsearchDestinationConfigurationHasBeenSet = false;
 
     AmazonopensearchserviceDestinationConfiguration m_amazonopensearchserviceDestinationConfiguration;
-    bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet;
+    bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet = false;
 
     SplunkDestinationConfiguration m_splunkDestinationConfiguration;
-    bool m_splunkDestinationConfigurationHasBeenSet;
+    bool m_splunkDestinationConfigurationHasBeenSet = false;
 
     HttpEndpointDestinationConfiguration m_httpEndpointDestinationConfiguration;
-    bool m_httpEndpointDestinationConfigurationHasBeenSet;
+    bool m_httpEndpointDestinationConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    AmazonOpenSearchServerlessDestinationConfiguration m_amazonOpenSearchServerlessDestinationConfiguration;
+    bool m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociationOverview">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AssociationOverview
+  class AssociationOverview
   {
   public:
-    AssociationOverview();
-    AssociationOverview(Aws::Utils::Json::JsonView jsonValue);
-    AssociationOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AssociationOverview();
+    AWS_SSM_API AssociationOverview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AssociationOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_detailedStatus;
-    bool m_detailedStatusHasBeenSet;
+    bool m_detailedStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_associationStatusAggregatedCount;
-    bool m_associationStatusAggregatedCountHasBeenSet;
+    bool m_associationStatusAggregatedCountHasBeenSet = false;
   };
 
 } // namespace Model

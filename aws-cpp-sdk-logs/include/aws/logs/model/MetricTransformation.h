@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API MetricTransformation
+  class MetricTransformation
   {
   public:
-    MetricTransformation();
-    MetricTransformation(Aws::Utils::Json::JsonView jsonValue);
-    MetricTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API MetricTransformation();
+    AWS_CLOUDWATCHLOGS_API MetricTransformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API MetricTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,10 +219,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -237,10 +237,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -255,10 +255,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -273,10 +273,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -291,10 +291,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -309,10 +309,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -327,10 +327,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -345,10 +345,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -363,10 +363,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -381,10 +381,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -399,10 +399,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -417,10 +417,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -435,10 +435,10 @@ namespace Model
      * specify high-cardinality fields such as <code>IPAddress</code> or
      * <code>requestID</code> as dimensions. Each different value found for a dimension
      * is treated as a separate metric and accrues charges as a separate custom metric.
-     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
-     * if it generates 1000 different name/value pairs for the dimensions that you have
-     * specified within a certain amount of time.</p> <p>You can also set up a billing
-     * alarm to alert you if your charges are higher than expected. For more
+     * </p> <p>CloudWatch Logs disables a metric filter if it generates 1000 different
+     * name/value pairs for your specified dimensions within a certain amount of time.
+     * This helps to prevent accidental high charges.</p> <p>You can also set up a
+     * billing alarm to alert you if your charges are higher than expected. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
      * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
@@ -486,22 +486,22 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricNamespace;
-    bool m_metricNamespaceHasBeenSet;
+    bool m_metricNamespaceHasBeenSet = false;
 
     Aws::String m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     double m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     StandardUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

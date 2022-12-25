@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MailDomainSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MailDomainSummary
+  class MailDomainSummary
   {
   public:
-    MailDomainSummary();
-    MailDomainSummary(Aws::Utils::Json::JsonView jsonValue);
-    MailDomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MailDomainSummary();
+    AWS_WORKMAIL_API MailDomainSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MailDomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_defaultDomain;
-    bool m_defaultDomainHasBeenSet;
+    bool m_defaultDomainHasBeenSet = false;
   };
 
 } // namespace Model

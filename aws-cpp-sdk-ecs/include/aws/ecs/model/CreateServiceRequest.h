@@ -14,6 +14,7 @@
 #include <aws/ecs/model/SchedulingStrategy.h>
 #include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/PropagateTags.h>
+#include <aws/ecs/model/ServiceConnectConfiguration.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
@@ -31,10 +32,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API CreateServiceRequest : public ECSRequest
+  class CreateServiceRequest : public ECSRequest
   {
   public:
-    CreateServiceRequest();
+    AWS_ECS_API CreateServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,9 +43,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -254,7 +255,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -300,7 +301,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -346,7 +347,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -392,7 +393,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -438,7 +439,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -484,7 +485,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -530,7 +531,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -576,7 +577,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -1496,9 +1497,9 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
-     * use the <code>startPeriod</code> in the task definition healtch check
-     * parameters. For more information, see <a
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recommend that you
+     * use the <code>startPeriod</code> in the task definition health check parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
      * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
@@ -1515,9 +1516,9 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
-     * use the <code>startPeriod</code> in the task definition healtch check
-     * parameters. For more information, see <a
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recommend that you
+     * use the <code>startPeriod</code> in the task definition health check parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
      * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
@@ -1534,9 +1535,9 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
-     * use the <code>startPeriod</code> in the task definition healtch check
-     * parameters. For more information, see <a
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recommend that you
+     * use the <code>startPeriod</code> in the task definition health check parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
      * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
@@ -1553,9 +1554,9 @@ namespace Model
      * started. This is only used when your service is configured to use a load
      * balancer. If your service has a load balancer defined and you don't specify a
      * health check grace period value, the default value of <code>0</code> is
-     * used.</p> <p>If you do not use an Elastic Load Balancing, we recomend that you
-     * use the <code>startPeriod</code> in the task definition healtch check
-     * parameters. For more information, see <a
+     * used.</p> <p>If you do not use an Elastic Load Balancing, we recommend that you
+     * use the <code>startPeriod</code> in the task definition health check parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
      * check</a>.</p> <p>If your service's tasks take a while to start and respond to
      * Elastic Load Balancing health checks, you can specify a health check grace
@@ -1916,7 +1917,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
@@ -1925,7 +1926,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
@@ -1934,7 +1935,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
@@ -1943,7 +1944,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
@@ -2026,73 +2027,155 @@ namespace Model
      */
     inline CreateServiceRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
 
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline const ServiceConnectConfiguration& GetServiceConnectConfiguration() const{ return m_serviceConnectConfiguration; }
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline bool ServiceConnectConfigurationHasBeenSet() const { return m_serviceConnectConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectConfiguration(const ServiceConnectConfiguration& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = value; }
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectConfiguration(ServiceConnectConfiguration&& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline CreateServiceRequest& WithServiceConnectConfiguration(const ServiceConnectConfiguration& value) { SetServiceConnectConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for this service to discover and connect to services, and
+     * be discovered by, and connected from, other services within a namespace.</p>
+     * <p>Tasks that run in a namespace can use short names to connect to services in
+     * the namespace. Tasks can connect to services across all of the clusters in the
+     * namespace. Tasks connect through a managed proxy container that collects logs
+     * and metrics for increased visibility. Only the tasks that Amazon ECS services
+     * create are supported with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline CreateServiceRequest& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     DeploymentConfiguration m_deploymentConfiguration;
-    bool m_deploymentConfigurationHasBeenSet;
+    bool m_deploymentConfigurationHasBeenSet = false;
 
     Aws::Vector<PlacementConstraint> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     Aws::Vector<PlacementStrategy> m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     int m_healthCheckGracePeriodSeconds;
-    bool m_healthCheckGracePeriodSecondsHasBeenSet;
+    bool m_healthCheckGracePeriodSecondsHasBeenSet = false;
 
     SchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet;
+    bool m_schedulingStrategyHasBeenSet = false;
 
     DeploymentController m_deploymentController;
-    bool m_deploymentControllerHasBeenSet;
+    bool m_deploymentControllerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    bool m_enableECSManagedTagsHasBeenSet = false;
 
     PropagateTags m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
+
+    ServiceConnectConfiguration m_serviceConnectConfiguration;
+    bool m_serviceConnectConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

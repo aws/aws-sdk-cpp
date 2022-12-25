@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PhysicalTable">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PhysicalTable
+  class PhysicalTable
   {
   public:
-    PhysicalTable();
-    PhysicalTable(Aws::Utils::Json::JsonView jsonValue);
-    PhysicalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PhysicalTable();
+    AWS_QUICKSIGHT_API PhysicalTable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PhysicalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     RelationalTable m_relationalTable;
-    bool m_relationalTableHasBeenSet;
+    bool m_relationalTableHasBeenSet = false;
 
     CustomSql m_customSql;
-    bool m_customSqlHasBeenSet;
+    bool m_customSqlHasBeenSet = false;
 
     S3Source m_s3Source;
-    bool m_s3SourceHasBeenSet;
+    bool m_s3SourceHasBeenSet = false;
   };
 
 } // namespace Model

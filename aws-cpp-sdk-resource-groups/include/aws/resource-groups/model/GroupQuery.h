@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API GroupQuery
+  class GroupQuery
   {
   public:
-    GroupQuery();
-    GroupQuery(Aws::Utils::Json::JsonView jsonValue);
-    GroupQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API GroupQuery();
+    AWS_RESOURCEGROUPS_API GroupQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API GroupQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     ResourceQuery m_resourceQuery;
-    bool m_resourceQueryHasBeenSet;
+    bool m_resourceQueryHasBeenSet = false;
   };
 
 } // namespace Model

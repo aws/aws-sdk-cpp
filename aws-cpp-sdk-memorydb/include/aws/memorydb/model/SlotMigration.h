@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/SlotMigration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API SlotMigration
+  class SlotMigration
   {
   public:
-    SlotMigration();
-    SlotMigration(Aws::Utils::Json::JsonView jsonValue);
-    SlotMigration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API SlotMigration();
+    AWS_MEMORYDB_API SlotMigration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API SlotMigration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     double m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
   };
 
 } // namespace Model

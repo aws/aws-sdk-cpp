@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpGatewayRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpGatewayRoute
+  class HttpGatewayRoute
   {
   public:
-    HttpGatewayRoute();
-    HttpGatewayRoute(Aws::Utils::Json::JsonView jsonValue);
-    HttpGatewayRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpGatewayRoute();
+    AWS_APPMESH_API HttpGatewayRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpGatewayRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     HttpGatewayRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     HttpGatewayRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterRequest : public TranscribeServiceRequest
+  class UpdateVocabularyFilterRequest : public TranscribeServiceRequest
   {
   public:
-    UpdateVocabularyFilterRequest();
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,199 +30,199 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateVocabularyFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the custom vocabulary filter you want to update. Vocabulary
-     * filter names are case sensitive.</p>
+     * <p>The name of the custom vocabulary filter you want to update. Custom
+     * vocabulary filter names are case sensitive.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWords() const{ return m_words; }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline bool WordsHasBeenSet() const { return m_wordsHasBeenSet; }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline void SetWords(const Aws::Vector<Aws::String>& value) { m_wordsHasBeenSet = true; m_words = value; }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline void SetWords(Aws::Vector<Aws::String>&& value) { m_wordsHasBeenSet = true; m_words = std::move(value); }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyFilterRequest& WithWords(const Aws::Vector<Aws::String>& value) { SetWords(value); return *this;}
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyFilterRequest& WithWords(Aws::Vector<Aws::String>&& value) { SetWords(std::move(value)); return *this;}
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyFilterRequest& AddWords(const Aws::String& value) { m_wordsHasBeenSet = true; m_words.push_back(value); return *this; }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
     inline UpdateVocabularyFilterRequest& AddWords(Aws::String&& value) { m_wordsHasBeenSet = true; m_words.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Use this parameter if you want to update your vocabulary filter by including
-     * all desired terms, as comma-separated values, within your request. The other
-     * option for updating your vocabulary filter is to save your entries in a text
-     * file and upload them to an Amazon S3 bucket, then specify the location of your
-     * file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note that
-     * if you include <code>Words</code> in your request, you cannot use
+     * <p>Use this parameter if you want to update your custom vocabulary filter by
+     * including all desired terms, as comma-separated values, within your request. The
+     * other option for updating your vocabulary filter is to save your entries in a
+     * text file and upload them to an Amazon S3 bucket, then specify the location of
+     * your file using the <code>VocabularyFilterFileUri</code> parameter.</p> <p>Note
+     * that if you include <code>Words</code> in your request, you cannot use
      * <code>VocabularyFilterFileUri</code>; you must choose one or the other.</p>
      * <p>Each language has a character set that contains all allowed characters for
-     * that specific language. If you use unsupported characters, your vocabulary
-     * filter request fails. Refer to <a
+     * that specific language. If you use unsupported characters, your custom
+     * vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character
      * Sets for Custom Vocabularies</a> to get the character set for your language.</p>
      */
@@ -312,13 +312,13 @@ namespace Model
   private:
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_words;
-    bool m_wordsHasBeenSet;
+    bool m_wordsHasBeenSet = false;
 
     Aws::String m_vocabularyFilterFileUri;
-    bool m_vocabularyFilterFileUriHasBeenSet;
+    bool m_vocabularyFilterFileUriHasBeenSet = false;
   };
 
 } // namespace Model

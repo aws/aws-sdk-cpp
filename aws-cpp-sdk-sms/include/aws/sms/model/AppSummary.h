@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/AppSummary">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API AppSummary
+  class AppSummary
   {
   public:
-    AppSummary();
-    AppSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API AppSummary();
+    AWS_SMS_API AppSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -703,61 +703,61 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_importedAppId;
-    bool m_importedAppIdHasBeenSet;
+    bool m_importedAppIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AppStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     AppReplicationConfigurationStatus m_replicationConfigurationStatus;
-    bool m_replicationConfigurationStatusHasBeenSet;
+    bool m_replicationConfigurationStatusHasBeenSet = false;
 
     AppReplicationStatus m_replicationStatus;
-    bool m_replicationStatusHasBeenSet;
+    bool m_replicationStatusHasBeenSet = false;
 
     Aws::String m_replicationStatusMessage;
-    bool m_replicationStatusMessageHasBeenSet;
+    bool m_replicationStatusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestReplicationTime;
-    bool m_latestReplicationTimeHasBeenSet;
+    bool m_latestReplicationTimeHasBeenSet = false;
 
     AppLaunchConfigurationStatus m_launchConfigurationStatus;
-    bool m_launchConfigurationStatusHasBeenSet;
+    bool m_launchConfigurationStatusHasBeenSet = false;
 
     AppLaunchStatus m_launchStatus;
-    bool m_launchStatusHasBeenSet;
+    bool m_launchStatusHasBeenSet = false;
 
     Aws::String m_launchStatusMessage;
-    bool m_launchStatusMessageHasBeenSet;
+    bool m_launchStatusMessageHasBeenSet = false;
 
     LaunchDetails m_launchDetails;
-    bool m_launchDetailsHasBeenSet;
+    bool m_launchDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     int m_totalServerGroups;
-    bool m_totalServerGroupsHasBeenSet;
+    bool m_totalServerGroupsHasBeenSet = false;
 
     int m_totalServers;
-    bool m_totalServersHasBeenSet;
+    bool m_totalServersHasBeenSet = false;
   };
 
 } // namespace Model

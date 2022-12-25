@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TransformParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TransformParameters
+  class TransformParameters
   {
   public:
-    TransformParameters();
-    TransformParameters(Aws::Utils::Json::JsonView jsonValue);
-    TransformParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TransformParameters();
+    AWS_GLUE_API TransformParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TransformParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     FindMatchesParameters m_findMatchesParameters;
-    bool m_findMatchesParametersHasBeenSet;
+    bool m_findMatchesParametersHasBeenSet = false;
   };
 
 } // namespace Model

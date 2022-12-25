@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PrefixLevelStorageMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API PrefixLevelStorageMetrics
+  class PrefixLevelStorageMetrics
   {
   public:
-    PrefixLevelStorageMetrics();
-    PrefixLevelStorageMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrefixLevelStorageMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PrefixLevelStorageMetrics();
+    AWS_S3CONTROL_API PrefixLevelStorageMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PrefixLevelStorageMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
 
     SelectionCriteria m_selectionCriteria;
-    bool m_selectionCriteriaHasBeenSet;
+    bool m_selectionCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

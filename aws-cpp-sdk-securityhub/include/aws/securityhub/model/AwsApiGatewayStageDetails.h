@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayStageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayStageDetails
+  class AwsApiGatewayStageDetails
   {
   public:
-    AwsApiGatewayStageDetails();
-    AwsApiGatewayStageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails();
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -782,52 +782,52 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_cacheClusterEnabled;
-    bool m_cacheClusterEnabledHasBeenSet;
+    bool m_cacheClusterEnabledHasBeenSet = false;
 
     Aws::String m_cacheClusterSize;
-    bool m_cacheClusterSizeHasBeenSet;
+    bool m_cacheClusterSizeHasBeenSet = false;
 
     Aws::String m_cacheClusterStatus;
-    bool m_cacheClusterStatusHasBeenSet;
+    bool m_cacheClusterStatusHasBeenSet = false;
 
     Aws::Vector<AwsApiGatewayMethodSettings> m_methodSettings;
-    bool m_methodSettingsHasBeenSet;
+    bool m_methodSettingsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     Aws::String m_documentationVersion;
-    bool m_documentationVersionHasBeenSet;
+    bool m_documentationVersionHasBeenSet = false;
 
     AwsApiGatewayAccessLogSettings m_accessLogSettings;
-    bool m_accessLogSettingsHasBeenSet;
+    bool m_accessLogSettingsHasBeenSet = false;
 
     AwsApiGatewayCanarySettings m_canarySettings;
-    bool m_canarySettingsHasBeenSet;
+    bool m_canarySettingsHasBeenSet = false;
 
     bool m_tracingEnabled;
-    bool m_tracingEnabledHasBeenSet;
+    bool m_tracingEnabledHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_webAclArn;
-    bool m_webAclArnHasBeenSet;
+    bool m_webAclArnHasBeenSet = false;
   };
 
 } // namespace Model

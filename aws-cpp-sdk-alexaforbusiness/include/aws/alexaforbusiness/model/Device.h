@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Device">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Device();
+    AWS_ALEXAFORBUSINESS_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -428,34 +428,34 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_softwareVersion;
-    bool m_softwareVersionHasBeenSet;
+    bool m_softwareVersionHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     DeviceStatus m_deviceStatus;
-    bool m_deviceStatusHasBeenSet;
+    bool m_deviceStatusHasBeenSet = false;
 
     DeviceStatusInfo m_deviceStatusInfo;
-    bool m_deviceStatusInfoHasBeenSet;
+    bool m_deviceStatusInfoHasBeenSet = false;
 
     DeviceNetworkProfileInfo m_networkProfileInfo;
-    bool m_networkProfileInfoHasBeenSet;
+    bool m_networkProfileInfoHasBeenSet = false;
   };
 
 } // namespace Model

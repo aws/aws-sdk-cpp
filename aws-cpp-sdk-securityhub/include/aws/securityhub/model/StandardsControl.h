@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsControl">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StandardsControl
+  class StandardsControl
   {
   public:
-    StandardsControl();
-    StandardsControl(Aws::Utils::Json::JsonView jsonValue);
-    StandardsControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StandardsControl();
+    AWS_SECURITYHUB_API StandardsControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StandardsControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -475,34 +475,34 @@ namespace Model
   private:
 
     Aws::String m_standardsControlArn;
-    bool m_standardsControlArnHasBeenSet;
+    bool m_standardsControlArnHasBeenSet = false;
 
     ControlStatus m_controlStatus;
-    bool m_controlStatusHasBeenSet;
+    bool m_controlStatusHasBeenSet = false;
 
     Aws::String m_disabledReason;
-    bool m_disabledReasonHasBeenSet;
+    bool m_disabledReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_controlStatusUpdatedAt;
-    bool m_controlStatusUpdatedAtHasBeenSet;
+    bool m_controlStatusUpdatedAtHasBeenSet = false;
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_remediationUrl;
-    bool m_remediationUrlHasBeenSet;
+    bool m_remediationUrlHasBeenSet = false;
 
     SeverityRating m_severityRating;
-    bool m_severityRatingHasBeenSet;
+    bool m_severityRatingHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedRequirements;
-    bool m_relatedRequirementsHasBeenSet;
+    bool m_relatedRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

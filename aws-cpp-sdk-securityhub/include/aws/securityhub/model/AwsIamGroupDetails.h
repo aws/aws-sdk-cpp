@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamGroupDetails
+  class AwsIamGroupDetails
   {
   public:
-    AwsIamGroupDetails();
-    AwsIamGroupDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamGroupDetails();
+    AWS_SECURITYHUB_API AwsIamGroupDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::Vector<AwsIamGroupPolicy> m_groupPolicyList;
-    bool m_groupPolicyListHasBeenSet;
+    bool m_groupPolicyListHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

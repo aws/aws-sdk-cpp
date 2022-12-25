@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ShardConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ShardConfigurationRequest
+  class ShardConfigurationRequest
   {
   public:
-    ShardConfigurationRequest();
-    ShardConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    ShardConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ShardConfigurationRequest();
+    AWS_MEMORYDB_API ShardConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ShardConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_shardCount;
-    bool m_shardCountHasBeenSet;
+    bool m_shardCountHasBeenSet = false;
   };
 
 } // namespace Model

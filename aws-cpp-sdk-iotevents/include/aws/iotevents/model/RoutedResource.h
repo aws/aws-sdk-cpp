@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/RoutedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API RoutedResource
+  class RoutedResource
   {
   public:
-    RoutedResource();
-    RoutedResource(Aws::Utils::Json::JsonView jsonValue);
-    RoutedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API RoutedResource();
+    AWS_IOTEVENTS_API RoutedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API RoutedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

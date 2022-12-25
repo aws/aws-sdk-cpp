@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API IPSetSummary
+  class IPSetSummary
   {
   public:
-    IPSetSummary();
-    IPSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    IPSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API IPSetSummary();
+    AWS_WAFREGIONAL_API IPSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API IPSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_iPSetId;
-    bool m_iPSetIdHasBeenSet;
+    bool m_iPSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API CreatePackageImportJobRequest : public PanoramaRequest
+  class CreatePackageImportJobRequest : public PanoramaRequest
   {
   public:
-    CreatePackageImportJobRequest();
+    AWS_PANORAMA_API CreatePackageImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackageImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -214,19 +214,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     PackageImportJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     Aws::Vector<JobResourceTags> m_jobTags;
-    bool m_jobTagsHasBeenSet;
+    bool m_jobTagsHasBeenSet = false;
 
     PackageImportJobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     PackageImportJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
   };
 
 } // namespace Model

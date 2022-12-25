@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/AssistantAssociationOutputData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API AssistantAssociationOutputData
+  class AssistantAssociationOutputData
   {
   public:
-    AssistantAssociationOutputData();
-    AssistantAssociationOutputData(Aws::Utils::Json::JsonView jsonValue);
-    AssistantAssociationOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationOutputData();
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationOutputData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     KnowledgeBaseAssociationData m_knowledgeBaseAssociation;
-    bool m_knowledgeBaseAssociationHasBeenSet;
+    bool m_knowledgeBaseAssociationHasBeenSet = false;
   };
 
 } // namespace Model

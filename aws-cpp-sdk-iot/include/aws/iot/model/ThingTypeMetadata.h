@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingTypeMetadata
+  class ThingTypeMetadata
   {
   public:
-    ThingTypeMetadata();
-    ThingTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ThingTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingTypeMetadata();
+    AWS_IOT_API ThingTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     bool m_deprecated;
-    bool m_deprecatedHasBeenSet;
+    bool m_deprecatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

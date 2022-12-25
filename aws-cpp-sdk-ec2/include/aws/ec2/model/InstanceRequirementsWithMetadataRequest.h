@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceRequirementsWithMetadataRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceRequirementsWithMetadataRequest
+  class InstanceRequirementsWithMetadataRequest
   {
   public:
-    InstanceRequirementsWithMetadataRequest();
-    InstanceRequirementsWithMetadataRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceRequirementsWithMetadataRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceRequirementsWithMetadataRequest();
+    AWS_EC2_API InstanceRequirementsWithMetadataRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceRequirementsWithMetadataRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::Vector<ArchitectureType> m_architectureTypes;
-    bool m_architectureTypesHasBeenSet;
+    bool m_architectureTypesHasBeenSet = false;
 
     Aws::Vector<VirtualizationType> m_virtualizationTypes;
-    bool m_virtualizationTypesHasBeenSet;
+    bool m_virtualizationTypesHasBeenSet = false;
 
     InstanceRequirementsRequest m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleethub-2020-11-03/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETHUB_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETHUB_API ApplicationSummary();
+    AWS_IOTFLEETHUB_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETHUB_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -279,25 +279,25 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationDescription;
-    bool m_applicationDescriptionHasBeenSet;
+    bool m_applicationDescriptionHasBeenSet = false;
 
     Aws::String m_applicationUrl;
-    bool m_applicationUrlHasBeenSet;
+    bool m_applicationUrlHasBeenSet = false;
 
     long long m_applicationCreationDate;
-    bool m_applicationCreationDateHasBeenSet;
+    bool m_applicationCreationDateHasBeenSet = false;
 
     long long m_applicationLastUpdateDate;
-    bool m_applicationLastUpdateDateHasBeenSet;
+    bool m_applicationLastUpdateDateHasBeenSet = false;
 
     ApplicationState m_applicationState;
-    bool m_applicationStateHasBeenSet;
+    bool m_applicationStateHasBeenSet = false;
   };
 
 } // namespace Model

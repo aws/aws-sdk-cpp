@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Method">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Method
+  class Method
   {
   public:
-    Method();
-    Method(Aws::Utils::Json::JsonView jsonValue);
-    Method& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Method();
+    AWS_APIGATEWAY_API Method(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Method& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -753,37 +753,37 @@ namespace Model
   private:
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet;
+    bool m_authorizerIdHasBeenSet = false;
 
     bool m_apiKeyRequired;
-    bool m_apiKeyRequiredHasBeenSet;
+    bool m_apiKeyRequiredHasBeenSet = false;
 
     Aws::String m_requestValidatorId;
-    bool m_requestValidatorIdHasBeenSet;
+    bool m_requestValidatorIdHasBeenSet = false;
 
     Aws::String m_operationName;
-    bool m_operationNameHasBeenSet;
+    bool m_operationNameHasBeenSet = false;
 
     Aws::Map<Aws::String, bool> m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestModels;
-    bool m_requestModelsHasBeenSet;
+    bool m_requestModelsHasBeenSet = false;
 
     Aws::Map<Aws::String, MethodResponse> m_methodResponses;
-    bool m_methodResponsesHasBeenSet;
+    bool m_methodResponsesHasBeenSet = false;
 
     Integration m_methodIntegration;
-    bool m_methodIntegrationHasBeenSet;
+    bool m_methodIntegrationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizationScopes;
-    bool m_authorizationScopesHasBeenSet;
+    bool m_authorizationScopesHasBeenSet = false;
   };
 
 } // namespace Model

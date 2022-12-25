@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseType">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseType
+  class ExpenseType
   {
   public:
-    ExpenseType();
-    ExpenseType(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseType();
+    AWS_TEXTRACT_API ExpenseType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

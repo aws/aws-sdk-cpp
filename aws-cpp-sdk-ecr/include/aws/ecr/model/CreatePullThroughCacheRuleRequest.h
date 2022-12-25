@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECR_API CreatePullThroughCacheRuleRequest : public ECRRequest
+  class CreatePullThroughCacheRuleRequest : public ECRRequest
   {
   public:
-    CreatePullThroughCacheRuleRequest();
+    AWS_ECR_API CreatePullThroughCacheRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePullThroughCacheRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_ecrRepositoryPrefix;
-    bool m_ecrRepositoryPrefixHasBeenSet;
+    bool m_ecrRepositoryPrefixHasBeenSet = false;
 
     Aws::String m_upstreamRegistryUrl;
-    bool m_upstreamRegistryUrlHasBeenSet;
+    bool m_upstreamRegistryUrlHasBeenSet = false;
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
   };
 
 } // namespace Model

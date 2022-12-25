@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimecodeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TimecodeConfig
+  class TimecodeConfig
   {
   public:
-    TimecodeConfig();
-    TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
-    TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TimecodeConfig();
+    AWS_MEDIACONVERT_API TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -401,16 +401,16 @@ namespace Model
   private:
 
     Aws::String m_anchor;
-    bool m_anchorHasBeenSet;
+    bool m_anchorHasBeenSet = false;
 
     TimecodeSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_timestampOffset;
-    bool m_timestampOffsetHasBeenSet;
+    bool m_timestampOffsetHasBeenSet = false;
   };
 
 } // namespace Model

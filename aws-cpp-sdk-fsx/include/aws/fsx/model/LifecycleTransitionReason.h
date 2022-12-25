@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LifecycleTransitionReason">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LifecycleTransitionReason
+  class LifecycleTransitionReason
   {
   public:
-    LifecycleTransitionReason();
-    LifecycleTransitionReason(Aws::Utils::Json::JsonView jsonValue);
-    LifecycleTransitionReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LifecycleTransitionReason();
+    AWS_FSX_API LifecycleTransitionReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LifecycleTransitionReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

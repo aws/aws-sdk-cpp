@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AudioLogSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AudioLogSetting
+  class AudioLogSetting
   {
   public:
-    AudioLogSetting();
-    AudioLogSetting(Aws::Utils::Json::JsonView jsonValue);
-    AudioLogSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AudioLogSetting();
+    AWS_LEXMODELSV2_API AudioLogSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AudioLogSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     AudioLogDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountWithRestoreAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API AccountWithRestoreAccess
+  class AccountWithRestoreAccess
   {
   public:
-    AccountWithRestoreAccess();
-    AccountWithRestoreAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccountWithRestoreAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AccountWithRestoreAccess();
+    AWS_REDSHIFT_API AccountWithRestoreAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AccountWithRestoreAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_accountAlias;
-    bool m_accountAliasHasBeenSet;
+    bool m_accountAliasHasBeenSet = false;
   };
 
 } // namespace Model

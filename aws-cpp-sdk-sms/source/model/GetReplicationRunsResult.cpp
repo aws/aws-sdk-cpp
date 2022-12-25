@@ -36,7 +36,7 @@ GetReplicationRunsResult& GetReplicationRunsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("replicationRunList"))
   {
-    Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
+    Aws::Utils::Array<JsonView> replicationRunListJsonList = jsonValue.GetArray("replicationRunList");
     for(unsigned replicationRunListIndex = 0; replicationRunListIndex < replicationRunListJsonList.GetLength(); ++replicationRunListIndex)
     {
       m_replicationRunList.push_back(replicationRunListJsonList[replicationRunListIndex].AsObject());

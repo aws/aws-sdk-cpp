@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/EmergencyCallingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API EmergencyCallingConfiguration
+  class EmergencyCallingConfiguration
   {
   public:
-    EmergencyCallingConfiguration();
-    EmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API EmergencyCallingConfiguration();
+    AWS_CHIME_API EmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API EmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<DNISEmergencyCallingConfiguration> m_dNIS;
-    bool m_dNISHasBeenSet;
+    bool m_dNISHasBeenSet = false;
   };
 
 } // namespace Model

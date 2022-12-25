@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OfferingDurationUnits.h>
 #include <aws/medialive/model/OfferingType.h>
+#include <aws/medialive/model/RenewalSettings.h>
 #include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/medialive/model/ReservationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -35,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DeleteReservationResult
+  class DeleteReservationResult
   {
   public:
-    DeleteReservationResult();
-    DeleteReservationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteReservationResult();
+    AWS_MEDIALIVE_API DeleteReservationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteReservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -410,6 +411,32 @@ namespace Model
 
 
     /**
+     * Renewal settings for the reservation
+     */
+    inline const RenewalSettings& GetRenewalSettings() const{ return m_renewalSettings; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(const RenewalSettings& value) { m_renewalSettings = value; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(RenewalSettings&& value) { m_renewalSettings = std::move(value); }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline DeleteReservationResult& WithRenewalSettings(const RenewalSettings& value) { SetRenewalSettings(value); return *this;}
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline DeleteReservationResult& WithRenewalSettings(RenewalSettings&& value) { SetRenewalSettings(std::move(value)); return *this;}
+
+
+    /**
      * Unique reservation ID, e.g. '1234567'
      */
     inline const Aws::String& GetReservationId() const{ return m_reservationId; }
@@ -641,6 +668,8 @@ namespace Model
     OfferingType m_offeringType;
 
     Aws::String m_region;
+
+    RenewalSettings m_renewalSettings;
 
     Aws::String m_reservationId;
 

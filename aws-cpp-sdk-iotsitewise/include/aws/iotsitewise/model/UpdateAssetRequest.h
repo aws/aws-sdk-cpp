@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateAssetRequest : public IoTSiteWiseRequest
+  class UpdateAssetRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateAssetRequest();
+    AWS_IOTSITEWISE_API UpdateAssetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAsset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,42 +75,42 @@ namespace Model
 
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline UpdateAssetRequest& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline UpdateAssetRequest& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique, friendly name for the asset.</p>
+     * <p>A friendly name for the asset.</p>
      */
     inline UpdateAssetRequest& WithAssetName(const char* value) { SetAssetName(value); return *this;}
 
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_assetName;
-    bool m_assetNameHasBeenSet;
+    bool m_assetNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_assetDescription;
-    bool m_assetDescriptionHasBeenSet;
+    bool m_assetDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

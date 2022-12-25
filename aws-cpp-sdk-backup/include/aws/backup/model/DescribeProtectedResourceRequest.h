@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API DescribeProtectedResourceRequest : public BackupRequest
+  class DescribeProtectedResourceRequest : public BackupRequest
   {
   public:
-    DescribeProtectedResourceRequest();
+    AWS_BACKUP_API DescribeProtectedResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProtectedResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

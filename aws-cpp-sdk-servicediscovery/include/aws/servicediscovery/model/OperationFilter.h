@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/OperationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API OperationFilter
+  class OperationFilter
   {
   public:
-    OperationFilter();
-    OperationFilter(Aws::Utils::Json::JsonView jsonValue);
-    OperationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API OperationFilter();
+    AWS_SERVICEDISCOVERY_API OperationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API OperationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,13 +361,13 @@ namespace Model
   private:
 
     OperationFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     FilterCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DomainMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API DomainMembership
+  class DomainMembership
   {
   public:
-    DomainMembership();
-    DomainMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DomainMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DomainMembership();
+    AWS_NEPTUNE_API DomainMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API DomainMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_fQDN;
-    bool m_fQDNHasBeenSet;
+    bool m_fQDNHasBeenSet = false;
 
     Aws::String m_iAMRoleName;
-    bool m_iAMRoleNameHasBeenSet;
+    bool m_iAMRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

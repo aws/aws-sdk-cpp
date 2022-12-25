@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTemplateS3LogConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentTemplateS3LogConfigurationInput
+  class ExperimentTemplateS3LogConfigurationInput
   {
   public:
-    ExperimentTemplateS3LogConfigurationInput();
-    ExperimentTemplateS3LogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentTemplateS3LogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentTemplateS3LogConfigurationInput();
+    AWS_FIS_API ExperimentTemplateS3LogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentTemplateS3LogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

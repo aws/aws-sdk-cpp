@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/PrivateLinkConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API PrivateLinkConfig
+  class PrivateLinkConfig
   {
   public:
-    PrivateLinkConfig();
-    PrivateLinkConfig(Aws::Utils::Json::JsonView jsonValue);
-    PrivateLinkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API PrivateLinkConfig();
+    AWS_DATASYNC_API PrivateLinkConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API PrivateLinkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,16 +290,16 @@ namespace Model
   private:
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_privateLinkEndpoint;
-    bool m_privateLinkEndpointHasBeenSet;
+    bool m_privateLinkEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetArns;
-    bool m_subnetArnsHasBeenSet;
+    bool m_subnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupArns;
-    bool m_securityGroupArnsHasBeenSet;
+    bool m_securityGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

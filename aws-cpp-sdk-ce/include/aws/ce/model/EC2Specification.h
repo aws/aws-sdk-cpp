@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2Specification">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EC2Specification
+  class EC2Specification
   {
   public:
-    EC2Specification();
-    EC2Specification(Aws::Utils::Json::JsonView jsonValue);
-    EC2Specification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EC2Specification();
+    AWS_COSTEXPLORER_API EC2Specification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EC2Specification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OfferingClass m_offeringClass;
-    bool m_offeringClassHasBeenSet;
+    bool m_offeringClassHasBeenSet = false;
   };
 
 } // namespace Model

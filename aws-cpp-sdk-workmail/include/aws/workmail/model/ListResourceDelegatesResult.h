@@ -26,12 +26,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API ListResourceDelegatesResult
+  class ListResourceDelegatesResult
   {
   public:
-    ListResourceDelegatesResult();
-    ListResourceDelegatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceDelegatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListResourceDelegatesResult();
+    AWS_WORKMAIL_API ListResourceDelegatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListResourceDelegatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -73,49 +73,49 @@ namespace Model
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline ListResourceDelegatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline ListResourceDelegatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The token used to paginate through the delegates associated with a resource.
      * While results are still available, it has an associated value. When the last
-     * page is reached, the token is empty. </p>
+     * page is reached, the token is empty.</p>
      */
     inline ListResourceDelegatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

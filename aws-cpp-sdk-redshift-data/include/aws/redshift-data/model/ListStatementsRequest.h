@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ListStatementsRequest : public RedshiftDataAPIServiceRequest
+  class ListStatementsRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    ListStatementsRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API ListStatementsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListStatements"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -334,19 +334,19 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     bool m_roleLevel;
-    bool m_roleLevelHasBeenSet;
+    bool m_roleLevelHasBeenSet = false;
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     StatusString m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

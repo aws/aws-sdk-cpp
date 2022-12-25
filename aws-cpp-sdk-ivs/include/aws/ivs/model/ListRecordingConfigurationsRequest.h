@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API ListRecordingConfigurationsRequest : public IVSRequest
+  class ListRecordingConfigurationsRequest : public IVSRequest
   {
   public:
-    ListRecordingConfigurationsRequest();
+    AWS_IVS_API ListRecordingConfigurationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,26 +29,30 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRecordingConfigurations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of recording configurations to return. Default: 50. </p>
+     * <p>Maximum number of recording configurations to return. Default: your service
+     * quota or 100, whichever is smaller. </p>
      */
     inline ListRecordingConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -104,10 +108,10 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

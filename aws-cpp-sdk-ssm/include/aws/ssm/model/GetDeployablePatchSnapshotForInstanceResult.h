@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API GetDeployablePatchSnapshotForInstanceResult
+  class GetDeployablePatchSnapshotForInstanceResult
   {
   public:
-    GetDeployablePatchSnapshotForInstanceResult();
-    GetDeployablePatchSnapshotForInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeployablePatchSnapshotForInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetDeployablePatchSnapshotForInstanceResult();
+    AWS_SSM_API GetDeployablePatchSnapshotForInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetDeployablePatchSnapshotForInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/model/AclGrantee.h>
 #include <aws/accessanalyzer/model/AclPermission.h>
+#include <aws/accessanalyzer/model/AclGrantee.h>
 #include <utility>
 
 namespace Aws
@@ -32,44 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3BucketAclGrantConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration
+  class S3BucketAclGrantConfiguration
   {
   public:
-    S3BucketAclGrantConfiguration();
-    S3BucketAclGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketAclGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline const AclGrantee& GetGrantee() const{ return m_grantee; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline void SetGrantee(const AclGrantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline void SetGrantee(AclGrantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline S3BucketAclGrantConfiguration& WithGrantee(const AclGrantee& value) { SetGrantee(value); return *this;}
-
-    /**
-     * <p>The grantee to whom you’re assigning access rights.</p>
-     */
-    inline S3BucketAclGrantConfiguration& WithGrantee(AclGrantee&& value) { SetGrantee(std::move(value)); return *this;}
+    AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration();
+    AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API S3BucketAclGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,13 +71,44 @@ namespace Model
      */
     inline S3BucketAclGrantConfiguration& WithPermission(AclPermission&& value) { SetPermission(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline const AclGrantee& GetGrantee() const{ return m_grantee; }
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline void SetGrantee(const AclGrantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline void SetGrantee(AclGrantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline S3BucketAclGrantConfiguration& WithGrantee(const AclGrantee& value) { SetGrantee(value); return *this;}
+
+    /**
+     * <p>The grantee to whom you’re assigning access rights.</p>
+     */
+    inline S3BucketAclGrantConfiguration& WithGrantee(AclGrantee&& value) { SetGrantee(std::move(value)); return *this;}
+
   private:
 
-    AclGrantee m_grantee;
-    bool m_granteeHasBeenSet;
-
     AclPermission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
+
+    AclGrantee m_grantee;
+    bool m_granteeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ConnectionQueryStringParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API ConnectionQueryStringParameter
+  class ConnectionQueryStringParameter
   {
   public:
-    ConnectionQueryStringParameter();
-    ConnectionQueryStringParameter(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionQueryStringParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API ConnectionQueryStringParameter();
+    AWS_CLOUDWATCHEVENTS_API ConnectionQueryStringParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API ConnectionQueryStringParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_isValueSecret;
-    bool m_isValueSecretHasBeenSet;
+    bool m_isValueSecretHasBeenSet = false;
   };
 
 } // namespace Model

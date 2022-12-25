@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsPackage
+  class HlsPackage
   {
   public:
-    HlsPackage();
-    HlsPackage(Aws::Utils::Json::JsonView jsonValue);
-    HlsPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsPackage();
+    AWS_MEDIAPACKAGE_API HlsPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -527,40 +527,40 @@ rounded to the
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
-    bool m_adTriggersHasBeenSet;
+    bool m_adTriggersHasBeenSet = false;
 
     AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
-    bool m_adsOnDeliveryRestrictionsHasBeenSet;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     HlsEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     bool m_includeDvbSubtitles;
-    bool m_includeDvbSubtitlesHasBeenSet;
+    bool m_includeDvbSubtitlesHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     PlaylistType m_playlistType;
-    bool m_playlistTypeHasBeenSet;
+    bool m_playlistTypeHasBeenSet = false;
 
     int m_playlistWindowSeconds;
-    bool m_playlistWindowSecondsHasBeenSet;
+    bool m_playlistWindowSecondsHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     int m_segmentDurationSeconds;
-    bool m_segmentDurationSecondsHasBeenSet;
+    bool m_segmentDurationSecondsHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
 
     bool m_useAudioRenditionGroup;
-    bool m_useAudioRenditionGroupHasBeenSet;
+    bool m_useAudioRenditionGroupHasBeenSet = false;
   };
 
 } // namespace Model

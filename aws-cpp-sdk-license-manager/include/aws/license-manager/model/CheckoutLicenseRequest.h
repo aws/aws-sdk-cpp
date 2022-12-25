@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CheckoutLicenseRequest : public LicenseManagerRequest
+  class CheckoutLicenseRequest : public LicenseManagerRequest
   {
   public:
-    CheckoutLicenseRequest();
+    AWS_LICENSEMANAGER_API CheckoutLicenseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CheckoutLicense"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_productSKU;
-    bool m_productSKUHasBeenSet;
+    bool m_productSKUHasBeenSet = false;
 
     CheckoutType m_checkoutType;
-    bool m_checkoutTypeHasBeenSet;
+    bool m_checkoutTypeHasBeenSet = false;
 
     Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet;
+    bool m_keyFingerprintHasBeenSet = false;
 
     Aws::Vector<EntitlementData> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_beneficiary;
-    bool m_beneficiaryHasBeenSet;
+    bool m_beneficiaryHasBeenSet = false;
 
     Aws::String m_nodeId;
-    bool m_nodeIdHasBeenSet;
+    bool m_nodeIdHasBeenSet = false;
   };
 
 } // namespace Model

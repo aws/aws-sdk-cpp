@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribeAvailabilityZonesRequest : public EC2Request
+  class DescribeAvailabilityZonesRequest : public EC2Request
   {
   public:
-    DescribeAvailabilityZonesRequest();
+    AWS_EC2_API DescribeAvailabilityZonesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAvailabilityZones"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -439,19 +439,19 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_zoneNames;
-    bool m_zoneNamesHasBeenSet;
+    bool m_zoneNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_zoneIds;
-    bool m_zoneIdsHasBeenSet;
+    bool m_zoneIdsHasBeenSet = false;
 
     bool m_allAvailabilityZones;
-    bool m_allAvailabilityZonesHasBeenSet;
+    bool m_allAvailabilityZonesHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

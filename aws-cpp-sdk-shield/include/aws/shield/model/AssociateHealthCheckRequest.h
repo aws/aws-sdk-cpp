@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API AssociateHealthCheckRequest : public ShieldRequest
+  class AssociateHealthCheckRequest : public ShieldRequest
   {
   public:
-    AssociateHealthCheckRequest();
+    AWS_SHIELD_API AssociateHealthCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateHealthCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_protectionId;
-    bool m_protectionIdHasBeenSet;
+    bool m_protectionIdHasBeenSet = false;
 
     Aws::String m_healthCheckArn;
-    bool m_healthCheckArnHasBeenSet;
+    bool m_healthCheckArnHasBeenSet = false;
   };
 
 } // namespace Model

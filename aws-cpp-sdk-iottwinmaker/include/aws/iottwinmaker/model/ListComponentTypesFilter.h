@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ListComponentTypesFilter
+  class ListComponentTypesFilter
   {
   public:
-    ListComponentTypesFilter();
-    ListComponentTypesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListComponentTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter();
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,31 +80,6 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether the component types in the list are
-     * abstract.</p>
-     */
-    inline bool GetIsAbstract() const{ return m_isAbstract; }
-
-    /**
-     * <p>A Boolean value that specifies whether the component types in the list are
-     * abstract.</p>
-     */
-    inline bool IsAbstractHasBeenSet() const { return m_isAbstractHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that specifies whether the component types in the list are
-     * abstract.</p>
-     */
-    inline void SetIsAbstract(bool value) { m_isAbstractHasBeenSet = true; m_isAbstract = value; }
-
-    /**
-     * <p>A Boolean value that specifies whether the component types in the list are
-     * abstract.</p>
-     */
-    inline ListComponentTypesFilter& WithIsAbstract(bool value) { SetIsAbstract(value); return *this;}
-
-
-    /**
      * <p>The namespace to which the component types in the list belong.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
@@ -144,16 +119,41 @@ namespace Model
      */
     inline ListComponentTypesFilter& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
+    /**
+     * <p>A Boolean value that specifies whether the component types in the list are
+     * abstract.</p>
+     */
+    inline bool GetIsAbstract() const{ return m_isAbstract; }
+
+    /**
+     * <p>A Boolean value that specifies whether the component types in the list are
+     * abstract.</p>
+     */
+    inline bool IsAbstractHasBeenSet() const { return m_isAbstractHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether the component types in the list are
+     * abstract.</p>
+     */
+    inline void SetIsAbstract(bool value) { m_isAbstractHasBeenSet = true; m_isAbstract = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether the component types in the list are
+     * abstract.</p>
+     */
+    inline ListComponentTypesFilter& WithIsAbstract(bool value) { SetIsAbstract(value); return *this;}
+
   private:
 
     Aws::String m_extendsFrom;
-    bool m_extendsFromHasBeenSet;
-
-    bool m_isAbstract;
-    bool m_isAbstractHasBeenSet;
+    bool m_extendsFromHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
+
+    bool m_isAbstract;
+    bool m_isAbstractHasBeenSet = false;
   };
 
 } // namespace Model

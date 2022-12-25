@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Service();
+    AWS_XRAY_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -586,43 +586,43 @@ namespace Model
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_names;
-    bool m_namesHasBeenSet;
+    bool m_namesHasBeenSet = false;
 
     bool m_root;
-    bool m_rootHasBeenSet;
+    bool m_rootHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<Edge> m_edges;
-    bool m_edgesHasBeenSet;
+    bool m_edgesHasBeenSet = false;
 
     ServiceStatistics m_summaryStatistics;
-    bool m_summaryStatisticsHasBeenSet;
+    bool m_summaryStatisticsHasBeenSet = false;
 
     Aws::Vector<HistogramEntry> m_durationHistogram;
-    bool m_durationHistogramHasBeenSet;
+    bool m_durationHistogramHasBeenSet = false;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
-    bool m_responseTimeHistogramHasBeenSet;
+    bool m_responseTimeHistogramHasBeenSet = false;
   };
 
 } // namespace Model

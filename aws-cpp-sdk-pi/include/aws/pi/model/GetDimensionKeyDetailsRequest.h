@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_PI_API GetDimensionKeyDetailsRequest : public PIRequest
+  class GetDimensionKeyDetailsRequest : public PIRequest
   {
   public:
-    GetDimensionKeyDetailsRequest();
+    AWS_PI_API GetDimensionKeyDetailsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDimensionKeyDetails"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -404,19 +404,19 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::String m_groupIdentifier;
-    bool m_groupIdentifierHasBeenSet;
+    bool m_groupIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedDimensions;
-    bool m_requestedDimensionsHasBeenSet;
+    bool m_requestedDimensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/IoTJobRateIncreaseCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria
+  class IoTJobRateIncreaseCriteria
   {
   public:
-    IoTJobRateIncreaseCriteria();
-    IoTJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
-    IoTJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria();
+    AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API IoTJobRateIncreaseCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     int m_numberOfNotifiedThings;
-    bool m_numberOfNotifiedThingsHasBeenSet;
+    bool m_numberOfNotifiedThingsHasBeenSet = false;
 
     int m_numberOfSucceededThings;
-    bool m_numberOfSucceededThingsHasBeenSet;
+    bool m_numberOfSucceededThingsHasBeenSet = false;
   };
 
 } // namespace Model

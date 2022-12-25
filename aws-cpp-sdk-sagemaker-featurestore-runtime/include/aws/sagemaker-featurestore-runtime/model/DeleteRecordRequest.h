@@ -7,6 +7,8 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker-featurestore-runtime/model/TargetStore.h>
 #include <utility>
 
 namespace Aws
@@ -22,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API DeleteRecordRequest : public SageMakerFeatureStoreRuntimeRequest
+  class DeleteRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    DeleteRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API DeleteRecordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRecord"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -176,16 +178,76 @@ namespace Model
      */
     inline DeleteRecordRequest& WithEventTime(const char* value) { SetEventTime(value); return *this;}
 
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline const Aws::Vector<TargetStore>& GetTargetStores() const{ return m_targetStores; }
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline bool TargetStoresHasBeenSet() const { return m_targetStoresHasBeenSet; }
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline void SetTargetStores(const Aws::Vector<TargetStore>& value) { m_targetStoresHasBeenSet = true; m_targetStores = value; }
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline void SetTargetStores(Aws::Vector<TargetStore>&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::move(value); }
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline DeleteRecordRequest& WithTargetStores(const Aws::Vector<TargetStore>& value) { SetTargetStores(value); return *this;}
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline DeleteRecordRequest& WithTargetStores(Aws::Vector<TargetStore>&& value) { SetTargetStores(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline DeleteRecordRequest& AddTargetStores(const TargetStore& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
+
+    /**
+     * <p>A list of stores from which you're deleting the record. By default, Feature
+     * Store deletes the record from all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline DeleteRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierValueAsString;
-    bool m_recordIdentifierValueAsStringHasBeenSet;
+    bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
     Aws::String m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
+
+    Aws::Vector<TargetStore> m_targetStores;
+    bool m_targetStoresHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTagError">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API LFTagError
+  class LFTagError
   {
   public:
-    LFTagError();
-    LFTagError(Aws::Utils::Json::JsonView jsonValue);
-    LFTagError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API LFTagError();
+    AWS_LAKEFORMATION_API LFTagError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API LFTagError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     LFTagPair m_lFTag;
-    bool m_lFTagHasBeenSet;
+    bool m_lFTagHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

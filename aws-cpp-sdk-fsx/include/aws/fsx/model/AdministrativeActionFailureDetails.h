@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeActionFailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API AdministrativeActionFailureDetails
+  class AdministrativeActionFailureDetails
   {
   public:
-    AdministrativeActionFailureDetails();
-    AdministrativeActionFailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    AdministrativeActionFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API AdministrativeActionFailureDetails();
+    AWS_FSX_API AdministrativeActionFailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API AdministrativeActionFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

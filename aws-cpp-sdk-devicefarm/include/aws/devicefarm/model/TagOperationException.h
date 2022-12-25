@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagOperationException">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TagOperationException
+  class TagOperationException
   {
   public:
-    TagOperationException();
-    TagOperationException(Aws::Utils::Json::JsonView jsonValue);
-    TagOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TagOperationException();
+    AWS_DEVICEFARM_API TagOperationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TagOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Record">AWS API
    * Reference</a></p>
    */
-  class AWS_FIREHOSE_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API Record();
+    AWS_FIREHOSE_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

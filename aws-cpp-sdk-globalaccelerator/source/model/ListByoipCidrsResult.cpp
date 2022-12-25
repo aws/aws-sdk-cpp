@@ -30,7 +30,7 @@ ListByoipCidrsResult& ListByoipCidrsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ByoipCidrs"))
   {
-    Array<JsonView> byoipCidrsJsonList = jsonValue.GetArray("ByoipCidrs");
+    Aws::Utils::Array<JsonView> byoipCidrsJsonList = jsonValue.GetArray("ByoipCidrs");
     for(unsigned byoipCidrsIndex = 0; byoipCidrsIndex < byoipCidrsJsonList.GetLength(); ++byoipCidrsIndex)
     {
       m_byoipCidrs.push_back(byoipCidrsJsonList[byoipCidrsIndex].AsObject());

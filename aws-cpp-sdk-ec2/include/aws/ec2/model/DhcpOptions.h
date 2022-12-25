@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DhcpOptions">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API DhcpOptions
+  class DhcpOptions
   {
   public:
-    DhcpOptions();
-    DhcpOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DhcpOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DhcpOptions();
+    AWS_EC2_API DhcpOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DhcpOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<DhcpConfiguration> m_dhcpConfigurations;
-    bool m_dhcpConfigurationsHasBeenSet;
+    bool m_dhcpConfigurationsHasBeenSet = false;
 
     Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet;
+    bool m_dhcpOptionsIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

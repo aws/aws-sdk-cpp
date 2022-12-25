@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UnprocessedQueryExecutionId">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API UnprocessedQueryExecutionId
+  class UnprocessedQueryExecutionId
   {
   public:
-    UnprocessedQueryExecutionId();
-    UnprocessedQueryExecutionId(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedQueryExecutionId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API UnprocessedQueryExecutionId();
+    AWS_ATHENA_API UnprocessedQueryExecutionId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API UnprocessedQueryExecutionId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_queryExecutionId;
-    bool m_queryExecutionIdHasBeenSet;
+    bool m_queryExecutionIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

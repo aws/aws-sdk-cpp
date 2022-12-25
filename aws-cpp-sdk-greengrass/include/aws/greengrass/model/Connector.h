@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Connector">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Connector
+  class Connector
   {
   public:
-    Connector();
-    Connector(Aws::Utils::Json::JsonView jsonValue);
-    Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Connector();
+    AWS_GREENGRASS_API Connector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_connectorArn;
-    bool m_connectorArnHasBeenSet;
+    bool m_connectorArnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

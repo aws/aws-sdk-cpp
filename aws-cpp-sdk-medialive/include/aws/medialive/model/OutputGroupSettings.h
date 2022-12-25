@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputGroupSettings
+  class OutputGroupSettings
   {
   public:
-    OutputGroupSettings();
-    OutputGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    OutputGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputGroupSettings();
+    AWS_MEDIALIVE_API OutputGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -198,28 +198,28 @@ namespace Model
   private:
 
     ArchiveGroupSettings m_archiveGroupSettings;
-    bool m_archiveGroupSettingsHasBeenSet;
+    bool m_archiveGroupSettingsHasBeenSet = false;
 
     FrameCaptureGroupSettings m_frameCaptureGroupSettings;
-    bool m_frameCaptureGroupSettingsHasBeenSet;
+    bool m_frameCaptureGroupSettingsHasBeenSet = false;
 
     HlsGroupSettings m_hlsGroupSettings;
-    bool m_hlsGroupSettingsHasBeenSet;
+    bool m_hlsGroupSettingsHasBeenSet = false;
 
     MediaPackageGroupSettings m_mediaPackageGroupSettings;
-    bool m_mediaPackageGroupSettingsHasBeenSet;
+    bool m_mediaPackageGroupSettingsHasBeenSet = false;
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
-    bool m_msSmoothGroupSettingsHasBeenSet;
+    bool m_msSmoothGroupSettingsHasBeenSet = false;
 
     MultiplexGroupSettings m_multiplexGroupSettings;
-    bool m_multiplexGroupSettingsHasBeenSet;
+    bool m_multiplexGroupSettingsHasBeenSet = false;
 
     RtmpGroupSettings m_rtmpGroupSettings;
-    bool m_rtmpGroupSettingsHasBeenSet;
+    bool m_rtmpGroupSettingsHasBeenSet = false;
 
     UdpGroupSettings m_udpGroupSettings;
-    bool m_udpGroupSettingsHasBeenSet;
+    bool m_udpGroupSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ManagedRuleGroupVersion
+  class ManagedRuleGroupVersion
   {
   public:
-    ManagedRuleGroupVersion();
-    ManagedRuleGroupVersion(Aws::Utils::Json::JsonView jsonValue);
-    ManagedRuleGroupVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ManagedRuleGroupVersion();
+    AWS_WAFV2_API ManagedRuleGroupVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ManagedRuleGroupVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
   };
 
 } // namespace Model

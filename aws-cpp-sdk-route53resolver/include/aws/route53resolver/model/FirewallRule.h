@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API FirewallRule
+  class FirewallRule
   {
   public:
-    FirewallRule();
-    FirewallRule(Aws::Utils::Json::JsonView jsonValue);
-    FirewallRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API FirewallRule();
+    AWS_ROUTE53RESOLVER_API FirewallRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API FirewallRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -628,40 +628,40 @@ namespace Model
   private:
 
     Aws::String m_firewallRuleGroupId;
-    bool m_firewallRuleGroupIdHasBeenSet;
+    bool m_firewallRuleGroupIdHasBeenSet = false;
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     BlockResponse m_blockResponse;
-    bool m_blockResponseHasBeenSet;
+    bool m_blockResponseHasBeenSet = false;
 
     Aws::String m_blockOverrideDomain;
-    bool m_blockOverrideDomainHasBeenSet;
+    bool m_blockOverrideDomainHasBeenSet = false;
 
     BlockOverrideDnsType m_blockOverrideDnsType;
-    bool m_blockOverrideDnsTypeHasBeenSet;
+    bool m_blockOverrideDnsTypeHasBeenSet = false;
 
     int m_blockOverrideTtl;
-    bool m_blockOverrideTtlHasBeenSet;
+    bool m_blockOverrideTtlHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_modificationTime;
-    bool m_modificationTimeHasBeenSet;
+    bool m_modificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

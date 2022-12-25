@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MultiConditionalSplitActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API MultiConditionalSplitActivity
+  class MultiConditionalSplitActivity
   {
   public:
-    MultiConditionalSplitActivity();
-    MultiConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
-    MultiConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API MultiConditionalSplitActivity();
+    AWS_PINPOINT_API MultiConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API MultiConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::Vector<MultiConditionalBranch> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
 
     Aws::String m_defaultActivity;
-    bool m_defaultActivityHasBeenSet;
+    bool m_defaultActivityHasBeenSet = false;
 
     WaitTime m_evaluationWaitTime;
-    bool m_evaluationWaitTimeHasBeenSet;
+    bool m_evaluationWaitTimeHasBeenSet = false;
   };
 
 } // namespace Model

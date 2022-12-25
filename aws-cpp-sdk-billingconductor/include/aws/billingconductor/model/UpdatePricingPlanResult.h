@@ -24,12 +24,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API UpdatePricingPlanResult
+  class UpdatePricingPlanResult
   {
   public:
-    UpdatePricingPlanResult();
-    UpdatePricingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePricingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdatePricingPlanResult();
+    AWS_BILLINGCONDUCTOR_API UpdatePricingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdatePricingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -148,36 +148,36 @@ namespace Model
 
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list.
-     * </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list. </p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list.
-     * </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list. </p>
      */
     inline void SetSize(long long value) { m_size = value; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list.
-     * </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list. </p>
      */
     inline UpdatePricingPlanResult& WithSize(long long value) { SetSize(value); return *this;}
 
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline UpdatePricingPlanResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

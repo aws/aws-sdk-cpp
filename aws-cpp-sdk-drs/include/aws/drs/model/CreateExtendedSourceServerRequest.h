@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DRS_API CreateExtendedSourceServerRequest : public DrsRequest
+  class CreateExtendedSourceServerRequest : public DrsRequest
   {
   public:
-    CreateExtendedSourceServerRequest();
+    AWS_DRS_API CreateExtendedSourceServerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateExtendedSourceServer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DRS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_sourceServerArn;
-    bool m_sourceServerArnHasBeenSet;
+    bool m_sourceServerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

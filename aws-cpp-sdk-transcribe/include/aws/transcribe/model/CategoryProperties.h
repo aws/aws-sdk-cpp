@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/transcribe/model/InputType.h>
 #include <aws/transcribe/model/Rule.h>
 #include <utility>
 
@@ -33,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CategoryProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API CategoryProperties
+  class CategoryProperties
   {
   public:
-    CategoryProperties();
-    CategoryProperties(Aws::Utils::Json::JsonView jsonValue);
-    CategoryProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API CategoryProperties();
+    AWS_TRANSCRIBESERVICE_API CategoryProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API CategoryProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,19 +238,71 @@ namespace Model
      */
     inline CategoryProperties& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline const InputType& GetInputType() const{ return m_inputType; }
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline CategoryProperties& WithInputType(const InputType& value) { SetInputType(value); return *this;}
+
+    /**
+     * <p>The input type associated with the specified category. <code>POST_CALL</code>
+     * refers to a category that is applied to batch transcriptions;
+     * <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.</p>
+     */
+    inline CategoryProperties& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
+
+    InputType m_inputType;
+    bool m_inputTypeHasBeenSet = false;
   };
 
 } // namespace Model

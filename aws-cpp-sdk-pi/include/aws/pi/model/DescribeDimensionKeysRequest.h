@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_PI_API DescribeDimensionKeysRequest : public PIRequest
+  class DescribeDimensionKeysRequest : public PIRequest
   {
   public:
-    DescribeDimensionKeysRequest();
+    AWS_PI_API DescribeDimensionKeysRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDimensionKeys"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -812,40 +812,40 @@ namespace Model
   private:
 
     ServiceType m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     int m_periodInSeconds;
-    bool m_periodInSecondsHasBeenSet;
+    bool m_periodInSecondsHasBeenSet = false;
 
     DimensionGroup m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalMetrics;
-    bool m_additionalMetricsHasBeenSet;
+    bool m_additionalMetricsHasBeenSet = false;
 
     DimensionGroup m_partitionBy;
-    bool m_partitionByHasBeenSet;
+    bool m_partitionByHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

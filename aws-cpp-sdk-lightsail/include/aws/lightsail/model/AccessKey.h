@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccessKey">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AccessKey
+  class AccessKey
   {
   public:
-    AccessKey();
-    AccessKey(Aws::Utils::Json::JsonView jsonValue);
-    AccessKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AccessKey();
+    AWS_LIGHTSAIL_API AccessKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AccessKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,19 +281,19 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AccessKeyLastUsed m_lastUsed;
-    bool m_lastUsedHasBeenSet;
+    bool m_lastUsedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,173 +5,16 @@
 
 #pragma once
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
-#include <aws/discovery/ApplicationDiscoveryServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/discovery/model/AssociateConfigurationItemsToApplicationResult.h>
-#include <aws/discovery/model/BatchDeleteImportDataResult.h>
-#include <aws/discovery/model/CreateApplicationResult.h>
-#include <aws/discovery/model/CreateTagsResult.h>
-#include <aws/discovery/model/DeleteApplicationsResult.h>
-#include <aws/discovery/model/DeleteTagsResult.h>
-#include <aws/discovery/model/DescribeAgentsResult.h>
-#include <aws/discovery/model/DescribeConfigurationsResult.h>
-#include <aws/discovery/model/DescribeContinuousExportsResult.h>
-#include <aws/discovery/model/DescribeExportTasksResult.h>
-#include <aws/discovery/model/DescribeImportTasksResult.h>
-#include <aws/discovery/model/DescribeTagsResult.h>
-#include <aws/discovery/model/DisassociateConfigurationItemsFromApplicationResult.h>
-#include <aws/discovery/model/GetDiscoverySummaryResult.h>
-#include <aws/discovery/model/ListConfigurationsResult.h>
-#include <aws/discovery/model/ListServerNeighborsResult.h>
-#include <aws/discovery/model/StartContinuousExportResult.h>
-#include <aws/discovery/model/StartDataCollectionByAgentIdsResult.h>
-#include <aws/discovery/model/StartExportTaskResult.h>
-#include <aws/discovery/model/StartImportTaskResult.h>
-#include <aws/discovery/model/StopContinuousExportResult.h>
-#include <aws/discovery/model/StopDataCollectionByAgentIdsResult.h>
-#include <aws/discovery/model/UpdateApplicationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ApplicationDiscoveryService
 {
-
-namespace Model
-{
-        class AssociateConfigurationItemsToApplicationRequest;
-        class BatchDeleteImportDataRequest;
-        class CreateApplicationRequest;
-        class CreateTagsRequest;
-        class DeleteApplicationsRequest;
-        class DeleteTagsRequest;
-        class DescribeAgentsRequest;
-        class DescribeConfigurationsRequest;
-        class DescribeContinuousExportsRequest;
-        class DescribeExportTasksRequest;
-        class DescribeImportTasksRequest;
-        class DescribeTagsRequest;
-        class DisassociateConfigurationItemsFromApplicationRequest;
-        class GetDiscoverySummaryRequest;
-        class ListConfigurationsRequest;
-        class ListServerNeighborsRequest;
-        class StartContinuousExportRequest;
-        class StartDataCollectionByAgentIdsRequest;
-        class StartExportTaskRequest;
-        class StartImportTaskRequest;
-        class StopContinuousExportRequest;
-        class StopDataCollectionByAgentIdsRequest;
-        class UpdateApplicationRequest;
-
-        typedef Aws::Utils::Outcome<AssociateConfigurationItemsToApplicationResult, ApplicationDiscoveryServiceError> AssociateConfigurationItemsToApplicationOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteImportDataResult, ApplicationDiscoveryServiceError> BatchDeleteImportDataOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, ApplicationDiscoveryServiceError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateTagsResult, ApplicationDiscoveryServiceError> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationsResult, ApplicationDiscoveryServiceError> DeleteApplicationsOutcome;
-        typedef Aws::Utils::Outcome<DeleteTagsResult, ApplicationDiscoveryServiceError> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentsResult, ApplicationDiscoveryServiceError> DescribeAgentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationsResult, ApplicationDiscoveryServiceError> DescribeConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, ApplicationDiscoveryServiceError> DescribeContinuousExportsOutcome;
-        typedef Aws::Utils::Outcome<DescribeExportTasksResult, ApplicationDiscoveryServiceError> DescribeExportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeImportTasksResult, ApplicationDiscoveryServiceError> DescribeImportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, ApplicationDiscoveryServiceError> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DisassociateConfigurationItemsFromApplicationResult, ApplicationDiscoveryServiceError> DisassociateConfigurationItemsFromApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, ApplicationDiscoveryServiceError> GetDiscoverySummaryOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationsResult, ApplicationDiscoveryServiceError> ListConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListServerNeighborsResult, ApplicationDiscoveryServiceError> ListServerNeighborsOutcome;
-        typedef Aws::Utils::Outcome<StartContinuousExportResult, ApplicationDiscoveryServiceError> StartContinuousExportOutcome;
-        typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, ApplicationDiscoveryServiceError> StartDataCollectionByAgentIdsOutcome;
-        typedef Aws::Utils::Outcome<StartExportTaskResult, ApplicationDiscoveryServiceError> StartExportTaskOutcome;
-        typedef Aws::Utils::Outcome<StartImportTaskResult, ApplicationDiscoveryServiceError> StartImportTaskOutcome;
-        typedef Aws::Utils::Outcome<StopContinuousExportResult, ApplicationDiscoveryServiceError> StopContinuousExportOutcome;
-        typedef Aws::Utils::Outcome<StopDataCollectionByAgentIdsResult, ApplicationDiscoveryServiceError> StopDataCollectionByAgentIdsOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, ApplicationDiscoveryServiceError> UpdateApplicationOutcome;
-
-        typedef std::future<AssociateConfigurationItemsToApplicationOutcome> AssociateConfigurationItemsToApplicationOutcomeCallable;
-        typedef std::future<BatchDeleteImportDataOutcome> BatchDeleteImportDataOutcomeCallable;
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
-        typedef std::future<DeleteApplicationsOutcome> DeleteApplicationsOutcomeCallable;
-        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
-        typedef std::future<DescribeAgentsOutcome> DescribeAgentsOutcomeCallable;
-        typedef std::future<DescribeConfigurationsOutcome> DescribeConfigurationsOutcomeCallable;
-        typedef std::future<DescribeContinuousExportsOutcome> DescribeContinuousExportsOutcomeCallable;
-        typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
-        typedef std::future<DescribeImportTasksOutcome> DescribeImportTasksOutcomeCallable;
-        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
-        typedef std::future<DisassociateConfigurationItemsFromApplicationOutcome> DisassociateConfigurationItemsFromApplicationOutcomeCallable;
-        typedef std::future<GetDiscoverySummaryOutcome> GetDiscoverySummaryOutcomeCallable;
-        typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
-        typedef std::future<ListServerNeighborsOutcome> ListServerNeighborsOutcomeCallable;
-        typedef std::future<StartContinuousExportOutcome> StartContinuousExportOutcomeCallable;
-        typedef std::future<StartDataCollectionByAgentIdsOutcome> StartDataCollectionByAgentIdsOutcomeCallable;
-        typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
-        typedef std::future<StartImportTaskOutcome> StartImportTaskOutcomeCallable;
-        typedef std::future<StopContinuousExportOutcome> StopContinuousExportOutcomeCallable;
-        typedef std::future<StopDataCollectionByAgentIdsOutcome> StopDataCollectionByAgentIdsOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-} // namespace Model
-
-  class ApplicationDiscoveryServiceClient;
-
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::AssociateConfigurationItemsToApplicationRequest&, const Model::AssociateConfigurationItemsToApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateConfigurationItemsToApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::BatchDeleteImportDataRequest&, const Model::BatchDeleteImportDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteImportDataResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteApplicationsRequest&, const Model::DeleteApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeAgentsRequest&, const Model::DescribeAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeConfigurationsRequest&, const Model::DescribeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeContinuousExportsRequest&, const Model::DescribeContinuousExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousExportsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeImportTasksRequest&, const Model::DescribeImportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportTasksResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DisassociateConfigurationItemsFromApplicationRequest&, const Model::DisassociateConfigurationItemsFromApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConfigurationItemsFromApplicationResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::GetDiscoverySummaryRequest&, const Model::GetDiscoverySummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoverySummaryResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListServerNeighborsRequest&, const Model::ListServerNeighborsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServerNeighborsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartContinuousExportRequest&, const Model::StartContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContinuousExportResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartDataCollectionByAgentIdsRequest&, const Model::StartDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataCollectionByAgentIdsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartImportTaskRequest&, const Model::StartImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportTaskResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopContinuousExportRequest&, const Model::StopContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContinuousExportResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopDataCollectionByAgentIdsRequest&, const Model::StopDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataCollectionByAgentIdsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Web Services Application Discovery Service</fullname> <p>Amazon
    * Web Services Application Discovery Service helps you plan application migration
@@ -234,32 +77,60 @@ namespace Model
    * You can operate Application Discovery Service offline to inspect collected data
    * before it is shared with the service.</p> 
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationDiscoveryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationDiscoveryServiceClient(const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration(),
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ApplicationDiscoveryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationDiscoveryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ApplicationDiscoveryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ApplicationDiscoveryServiceClient();
-
 
         /**
          * <p>Associates one or more configuration items with an application.</p><p><h3>See
@@ -738,35 +609,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateConfigurationItemsToApplicationAsyncHelper(const Model::AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteImportDataAsyncHelper(const Model::BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationsAsyncHelper(const Model::DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAgentsAsyncHelper(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigurationsAsyncHelper(const Model::DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeContinuousExportsAsyncHelper(const Model::DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeImportTasksAsyncHelper(const Model::DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateConfigurationItemsFromApplicationAsyncHelper(const Model::DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDiscoverySummaryAsyncHelper(const Model::GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConfigurationsAsyncHelper(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServerNeighborsAsyncHelper(const Model::ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartContinuousExportAsyncHelper(const Model::StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDataCollectionByAgentIdsAsyncHelper(const Model::StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartExportTaskAsyncHelper(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartImportTaskAsyncHelper(const Model::StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopContinuousExportAsyncHelper(const Model::StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopDataCollectionByAgentIdsAsyncHelper(const Model::StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>;
+      void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationDiscoveryService

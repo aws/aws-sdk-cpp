@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ComplianceExecutionSummary
+  class ComplianceExecutionSummary
   {
   public:
-    ComplianceExecutionSummary();
-    ComplianceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ComplianceExecutionSummary();
+    AWS_SSM_API ComplianceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ComplianceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_executionTime;
-    bool m_executionTimeHasBeenSet;
+    bool m_executionTimeHasBeenSet = false;
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     Aws::String m_executionType;
-    bool m_executionTypeHasBeenSet;
+    bool m_executionTypeHasBeenSet = false;
   };
 
 } // namespace Model

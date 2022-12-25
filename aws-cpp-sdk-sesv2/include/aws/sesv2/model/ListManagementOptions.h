@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListManagementOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListManagementOptions
+  class ListManagementOptions
   {
   public:
-    ListManagementOptions();
-    ListManagementOptions(Aws::Utils::Json::JsonView jsonValue);
-    ListManagementOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ListManagementOptions();
+    AWS_SESV2_API ListManagementOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ListManagementOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
   };
 
 } // namespace Model

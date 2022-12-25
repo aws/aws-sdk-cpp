@@ -30,7 +30,7 @@ ListControlInsightsByControlDomainResult& ListControlInsightsByControlDomainResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("controlInsightsMetadata"))
   {
-    Array<JsonView> controlInsightsMetadataJsonList = jsonValue.GetArray("controlInsightsMetadata");
+    Aws::Utils::Array<JsonView> controlInsightsMetadataJsonList = jsonValue.GetArray("controlInsightsMetadata");
     for(unsigned controlInsightsMetadataIndex = 0; controlInsightsMetadataIndex < controlInsightsMetadataJsonList.GetLength(); ++controlInsightsMetadataIndex)
     {
       m_controlInsightsMetadata.push_back(controlInsightsMetadataJsonList[controlInsightsMetadataIndex].AsObject());

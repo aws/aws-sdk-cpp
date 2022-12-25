@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryDeletionStatusItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryDeletionStatusItem
+  class InventoryDeletionStatusItem
   {
   public:
-    InventoryDeletionStatusItem();
-    InventoryDeletionStatusItem(Aws::Utils::Json::JsonView jsonValue);
-    InventoryDeletionStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryDeletionStatusItem();
+    AWS_SSM_API InventoryDeletionStatusItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryDeletionStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::String m_deletionId;
-    bool m_deletionIdHasBeenSet;
+    bool m_deletionIdHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletionStartTime;
-    bool m_deletionStartTimeHasBeenSet;
+    bool m_deletionStartTimeHasBeenSet = false;
 
     InventoryDeletionStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastStatusMessage;
-    bool m_lastStatusMessageHasBeenSet;
+    bool m_lastStatusMessageHasBeenSet = false;
 
     InventoryDeletionSummary m_deletionSummary;
-    bool m_deletionSummaryHasBeenSet;
+    bool m_deletionSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusUpdateTime;
-    bool m_lastStatusUpdateTimeHasBeenSet;
+    bool m_lastStatusUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

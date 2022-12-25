@@ -7,7 +7,9 @@
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/model/PropertyLatestValue.h>
+#include <aws/iottwinmaker/model/DataValue.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +28,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API GetPropertyValueResult
+  class GetPropertyValueResult
   {
   public:
-    GetPropertyValueResult();
-    GetPropertyValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPropertyValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API GetPropertyValueResult();
+    AWS_IOTTWINMAKER_API GetPropertyValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API GetPropertyValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -100,9 +102,85 @@ namespace Model
      */
     inline GetPropertyValueResult& AddPropertyValues(const char* key, const PropertyLatestValue& value) { m_propertyValues.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline GetPropertyValueResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& GetTabularPropertyValues() const{ return m_tabularPropertyValues; }
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline void SetTabularPropertyValues(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& value) { m_tabularPropertyValues = value; }
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline void SetTabularPropertyValues(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>&& value) { m_tabularPropertyValues = std::move(value); }
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline GetPropertyValueResult& WithTabularPropertyValues(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& value) { SetTabularPropertyValues(value); return *this;}
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline GetPropertyValueResult& WithTabularPropertyValues(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>&& value) { SetTabularPropertyValues(std::move(value)); return *this;}
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline GetPropertyValueResult& AddTabularPropertyValues(const Aws::Vector<Aws::Map<Aws::String, DataValue>>& value) { m_tabularPropertyValues.push_back(value); return *this; }
+
+    /**
+     * <p>A table of property values.</p>
+     */
+    inline GetPropertyValueResult& AddTabularPropertyValues(Aws::Vector<Aws::Map<Aws::String, DataValue>>&& value) { m_tabularPropertyValues.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Map<Aws::String, PropertyLatestValue> m_propertyValues;
+
+    Aws::String m_nextToken;
+
+    Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>> m_tabularPropertyValues;
   };
 
 } // namespace Model

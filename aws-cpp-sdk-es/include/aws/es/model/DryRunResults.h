@@ -23,13 +23,13 @@ namespace ElasticsearchService
 namespace Model
 {
 
-  class AWS_ELASTICSEARCHSERVICE_API DryRunResults
+  class DryRunResults
   {
   public:
-    DryRunResults();
-    DryRunResults(Aws::Utils::Json::JsonView jsonValue);
-    DryRunResults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults();
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

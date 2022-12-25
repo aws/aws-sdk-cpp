@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/Container">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTORE_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTORE_API Container();
+    AWS_MEDIASTORE_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -340,22 +340,22 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ContainerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_accessLoggingEnabled;
-    bool m_accessLoggingEnabledHasBeenSet;
+    bool m_accessLoggingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVaultOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API DescribeVaultOutput
+  class DescribeVaultOutput
   {
   public:
-    DescribeVaultOutput();
-    DescribeVaultOutput(Aws::Utils::Json::JsonView jsonValue);
-    DescribeVaultOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API DescribeVaultOutput();
+    AWS_GLACIER_API DescribeVaultOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API DescribeVaultOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_vaultARN;
-    bool m_vaultARNHasBeenSet;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastInventoryDate;
-    bool m_lastInventoryDateHasBeenSet;
+    bool m_lastInventoryDateHasBeenSet = false;
 
     long long m_numberOfArchives;
-    bool m_numberOfArchivesHasBeenSet;
+    bool m_numberOfArchivesHasBeenSet = false;
 
     long long m_sizeInBytes;
-    bool m_sizeInBytesHasBeenSet;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

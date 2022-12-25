@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationJobRequest
+  class SimulationJobRequest
   {
   public:
-    SimulationJobRequest();
-    SimulationJobRequest(Aws::Utils::Json::JsonView jsonValue);
-    SimulationJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationJobRequest();
+    AWS_ROBOMAKER_API SimulationJobRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -527,40 +527,40 @@ namespace Model
   private:
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
-    bool m_loggingConfigHasBeenSet;
+    bool m_loggingConfigHasBeenSet = false;
 
     long long m_maxJobDurationInSeconds;
-    bool m_maxJobDurationInSecondsHasBeenSet;
+    bool m_maxJobDurationInSecondsHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     FailureBehavior m_failureBehavior;
-    bool m_failureBehaviorHasBeenSet;
+    bool m_failureBehaviorHasBeenSet = false;
 
     bool m_useDefaultApplications;
-    bool m_useDefaultApplicationsHasBeenSet;
+    bool m_useDefaultApplicationsHasBeenSet = false;
 
     Aws::Vector<RobotApplicationConfig> m_robotApplications;
-    bool m_robotApplicationsHasBeenSet;
+    bool m_robotApplicationsHasBeenSet = false;
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
-    bool m_simulationApplicationsHasBeenSet;
+    bool m_simulationApplicationsHasBeenSet = false;
 
     Aws::Vector<DataSourceConfig> m_dataSources;
-    bool m_dataSourcesHasBeenSet;
+    bool m_dataSourcesHasBeenSet = false;
 
     VPCConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Compute m_compute;
-    bool m_computeHasBeenSet;
+    bool m_computeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/AutoScaling">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API AutoScaling
+  class AutoScaling
   {
   public:
-    AutoScaling();
-    AutoScaling(Aws::Utils::Json::JsonView jsonValue);
-    AutoScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API AutoScaling();
+    AWS_KAFKACONNECT_API AutoScaling(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API AutoScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,19 +169,19 @@ namespace Model
   private:
 
     int m_maxWorkerCount;
-    bool m_maxWorkerCountHasBeenSet;
+    bool m_maxWorkerCountHasBeenSet = false;
 
     int m_mcuCount;
-    bool m_mcuCountHasBeenSet;
+    bool m_mcuCountHasBeenSet = false;
 
     int m_minWorkerCount;
-    bool m_minWorkerCountHasBeenSet;
+    bool m_minWorkerCountHasBeenSet = false;
 
     ScaleInPolicy m_scaleInPolicy;
-    bool m_scaleInPolicyHasBeenSet;
+    bool m_scaleInPolicyHasBeenSet = false;
 
     ScaleOutPolicy m_scaleOutPolicy;
-    bool m_scaleOutPolicyHasBeenSet;
+    bool m_scaleOutPolicyHasBeenSet = false;
   };
 
 } // namespace Model

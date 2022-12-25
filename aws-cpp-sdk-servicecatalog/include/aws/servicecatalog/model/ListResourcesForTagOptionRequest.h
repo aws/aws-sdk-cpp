@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API ListResourcesForTagOptionRequest : public ServiceCatalogRequest
+  class ListResourcesForTagOptionRequest : public ServiceCatalogRequest
   {
   public:
-    ListResourcesForTagOptionRequest();
+    AWS_SERVICECATALOG_API ListResourcesForTagOptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListResourcesForTagOption"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_tagOptionId;
-    bool m_tagOptionIdHasBeenSet;
+    bool m_tagOptionIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_pageToken;
-    bool m_pageTokenHasBeenSet;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

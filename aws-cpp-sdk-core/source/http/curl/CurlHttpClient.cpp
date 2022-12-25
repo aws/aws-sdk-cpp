@@ -187,7 +187,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
         }
 
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
-        if (context->m_request->IsEventStreamRequest())
+        if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
         }
@@ -224,8 +224,7 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
     return 0;
 }
 
-
-static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
+static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, bool isStreaming)
 {
     CurlReadCallbackContext* context = reinterpret_cast<CurlReadCallbackContext*>(userdata);
     if(context == nullptr)
@@ -255,7 +254,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
 
     if (ioStream != nullptr && amountToRead > 0)
     {
-        if (request->IsEventStreamRequest())
+        if (isStreaming)
         {
             if (ioStream->readsome(ptr, amountToRead) == 0 && !ioStream->eof())
             {
@@ -284,7 +283,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
                 memmove(ptr + hex.size(), "\r\n", 2);
                 amountRead += hex.size() + 4;
             }
-            else if (amountRead == 0 && !context->m_chunkEnd)
+            else if (!context->m_chunkEnd)
             {
                 Aws::StringStream chunkedTrailer;
                 chunkedTrailer << "0\r\n";
@@ -315,6 +314,14 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata)
     }
 
     return 0;
+}
+
+static size_t ReadBodyStreaming(char* ptr, size_t size, size_t nmemb, void* userdata) {
+    return ReadBody(ptr, size, nmemb, userdata, true);
+}
+
+static size_t ReadBodyFunc(char* ptr, size_t size, size_t nmemb, void* userdata) {
+    return ReadBody(ptr, size, nmemb, userdata, false);
 }
 
 static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
@@ -709,12 +716,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 
         if (request->GetContentBody())
         {
-            curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, ReadBody);
+            curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, ReadBodyFunc);
             curl_easy_setopt(connectionHandle, CURLOPT_READDATA, &readContext);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
-            if (request->IsEventStreamRequest())
+            if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
             {
+                curl_easy_setopt(connectionHandle, CURLOPT_READFUNCTION, ReadBodyStreaming);
                 curl_easy_setopt(connectionHandle, CURLOPT_NOPROGRESS, 0L);
 #if LIBCURL_VERSION_NUM >= 0x072000 // 7.32.0
                 curl_easy_setopt(connectionHandle, CURLOPT_XFERINFOFUNCTION, CurlProgressCallback);

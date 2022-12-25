@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EmailTemplateRequest
+  class EmailTemplateRequest
   {
   public:
-    EmailTemplateRequest();
-    EmailTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
-    EmailTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EmailTemplateRequest();
+    AWS_PINPOINT_API EmailTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EmailTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -507,25 +507,25 @@ namespace Model
   private:
 
     Aws::String m_defaultSubstitutions;
-    bool m_defaultSubstitutionsHasBeenSet;
+    bool m_defaultSubstitutionsHasBeenSet = false;
 
     Aws::String m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
 
     Aws::String m_recommenderId;
-    bool m_recommenderIdHasBeenSet;
+    bool m_recommenderIdHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
 
     Aws::String m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
   };
 
 } // namespace Model

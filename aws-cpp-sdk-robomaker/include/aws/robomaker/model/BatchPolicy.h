@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/BatchPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API BatchPolicy
+  class BatchPolicy
   {
   public:
-    BatchPolicy();
-    BatchPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BatchPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API BatchPolicy();
+    AWS_ROBOMAKER_API BatchPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API BatchPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     long long m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
   };
 
 } // namespace Model

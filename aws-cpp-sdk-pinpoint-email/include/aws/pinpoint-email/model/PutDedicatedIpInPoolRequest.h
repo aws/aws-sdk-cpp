@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPoolRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutDedicatedIpInPoolRequest : public PinpointEmailRequest
+  class PutDedicatedIpInPoolRequest : public PinpointEmailRequest
   {
   public:
-    PutDedicatedIpInPoolRequest();
+    AWS_PINPOINTEMAIL_API PutDedicatedIpInPoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDedicatedIpInPool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     Aws::String m_destinationPoolName;
-    bool m_destinationPoolNameHasBeenSet;
+    bool m_destinationPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

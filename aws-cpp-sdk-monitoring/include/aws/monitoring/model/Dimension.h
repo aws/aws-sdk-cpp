@@ -29,20 +29,20 @@ namespace Model
    * add a unique name/value pair to one of your metrics, you are creating a new
    * variation of that metric. For example, many Amazon EC2 metrics publish
    * <code>InstanceId</code> as a dimension name, and the actual instance ID as the
-   * value for that dimension.</p> <p>You can assign up to 10 dimensions to a
+   * value for that dimension.</p> <p>You can assign up to 30 dimensions to a
    * metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Dimension">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API Dimension
+  class Dimension
   {
   public:
-    Dimension();
-    Dimension(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Dimension& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API Dimension();
+    AWS_CLOUDWATCH_API Dimension(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API Dimension& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

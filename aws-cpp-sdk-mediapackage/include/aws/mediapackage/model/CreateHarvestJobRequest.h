@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateHarvestJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API CreateHarvestJobRequest : public MediaPackageRequest
+  class CreateHarvestJobRequest : public MediaPackageRequest
   {
   public:
-    CreateHarvestJobRequest();
+    AWS_MEDIAPACKAGE_API CreateHarvestJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateHarvestJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -286,19 +286,19 @@ This cannot
   private:
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_originEndpointId;
-    bool m_originEndpointIdHasBeenSet;
+    bool m_originEndpointIdHasBeenSet = false;
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

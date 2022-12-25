@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODESTAR_API DeleteProjectRequest : public CodeStarRequest
+  class DeleteProjectRequest : public CodeStarRequest
   {
   public:
-    DeleteProjectRequest();
+    AWS_CODESTAR_API DeleteProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODESTAR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODESTAR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_deleteStack;
-    bool m_deleteStackHasBeenSet;
+    bool m_deleteStackHasBeenSet = false;
   };
 
 } // namespace Model

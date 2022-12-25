@@ -29,52 +29,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentSource
+  class TrialComponentSource
   {
   public:
-    TrialComponentSource();
-    TrialComponentSource(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentSource();
+    AWS_SAGEMAKER_API TrialComponentSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The source ARN.</p>
+     * <p>The source Amazon Resource Name (ARN).</p>
      */
     inline TrialComponentSource& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeployAsApplicationConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate
+  class DeployAsApplicationConfigurationUpdate
   {
   public:
-    DeployAsApplicationConfigurationUpdate();
-    DeployAsApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    DeployAsApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3ContentBaseLocationUpdate m_s3ContentLocationUpdate;
-    bool m_s3ContentLocationUpdateHasBeenSet;
+    bool m_s3ContentLocationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

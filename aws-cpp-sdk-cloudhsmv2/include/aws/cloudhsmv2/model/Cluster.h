@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Cluster">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Cluster();
+    AWS_CLOUDHSMV2_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -668,49 +668,49 @@ namespace Model
   private:
 
     BackupPolicy m_backupPolicy;
-    bool m_backupPolicyHasBeenSet;
+    bool m_backupPolicyHasBeenSet = false;
 
     BackupRetentionPolicy m_backupRetentionPolicy;
-    bool m_backupRetentionPolicyHasBeenSet;
+    bool m_backupRetentionPolicyHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Vector<Hsm> m_hsms;
-    bool m_hsmsHasBeenSet;
+    bool m_hsmsHasBeenSet = false;
 
     Aws::String m_hsmType;
-    bool m_hsmTypeHasBeenSet;
+    bool m_hsmTypeHasBeenSet = false;
 
     Aws::String m_preCoPassword;
-    bool m_preCoPasswordHasBeenSet;
+    bool m_preCoPasswordHasBeenSet = false;
 
     Aws::String m_securityGroup;
-    bool m_securityGroupHasBeenSet;
+    bool m_securityGroupHasBeenSet = false;
 
     Aws::String m_sourceBackupId;
-    bool m_sourceBackupIdHasBeenSet;
+    bool m_sourceBackupIdHasBeenSet = false;
 
     ClusterState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
-    bool m_stateMessageHasBeenSet;
+    bool m_stateMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_subnetMapping;
-    bool m_subnetMappingHasBeenSet;
+    bool m_subnetMappingHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Certificates m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

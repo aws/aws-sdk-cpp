@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GeoMatchSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API GeoMatchSetUpdate
+  class GeoMatchSetUpdate
   {
   public:
-    GeoMatchSetUpdate();
-    GeoMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API GeoMatchSetUpdate();
+    AWS_WAFREGIONAL_API GeoMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API GeoMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     GeoMatchConstraint m_geoMatchConstraint;
-    bool m_geoMatchConstraintHasBeenSet;
+    bool m_geoMatchConstraintHasBeenSet = false;
   };
 
 } // namespace Model

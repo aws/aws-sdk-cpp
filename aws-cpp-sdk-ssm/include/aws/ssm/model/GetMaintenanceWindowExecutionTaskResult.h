@@ -10,7 +10,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/MaintenanceWindowExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/AlarmStateInformation.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
 
@@ -30,12 +32,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API GetMaintenanceWindowExecutionTaskResult
+  class GetMaintenanceWindowExecutionTaskResult
   {
   public:
-    GetMaintenanceWindowExecutionTaskResult();
-    GetMaintenanceWindowExecutionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMaintenanceWindowExecutionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetMaintenanceWindowExecutionTaskResult();
+    AWS_SSM_API GetMaintenanceWindowExecutionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetMaintenanceWindowExecutionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -522,6 +524,73 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarms = value; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarms = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarms.push_back(value); return *this; }
+
+    /**
+     * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+     */
+    inline GetMaintenanceWindowExecutionTaskResult& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarms.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_windowExecutionId;
@@ -549,6 +618,10 @@ namespace Model
     Aws::Utils::DateTime m_startTime;
 
     Aws::Utils::DateTime m_endTime;
+
+    AlarmConfiguration m_alarmConfiguration;
+
+    Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
   };
 
 } // namespace Model

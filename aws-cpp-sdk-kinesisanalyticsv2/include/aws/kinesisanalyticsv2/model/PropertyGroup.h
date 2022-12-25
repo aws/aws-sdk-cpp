@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/PropertyGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API PropertyGroup
+  class PropertyGroup
   {
   public:
-    PropertyGroup();
-    PropertyGroup(Aws::Utils::Json::JsonView jsonValue);
-    PropertyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API PropertyGroup();
+    AWS_KINESISANALYTICSV2_API PropertyGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API PropertyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_propertyGroupId;
-    bool m_propertyGroupIdHasBeenSet;
+    bool m_propertyGroupIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_propertyMap;
-    bool m_propertyMapHasBeenSet;
+    bool m_propertyMapHasBeenSet = false;
   };
 
 } // namespace Model

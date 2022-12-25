@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ModuleLoggingConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API ModuleLoggingConfigurationInput
+  class ModuleLoggingConfigurationInput
   {
   public:
-    ModuleLoggingConfigurationInput();
-    ModuleLoggingConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    ModuleLoggingConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API ModuleLoggingConfigurationInput();
+    AWS_MWAA_API ModuleLoggingConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API ModuleLoggingConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     LoggingLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

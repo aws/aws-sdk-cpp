@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppAssessment">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AppAssessment
+  class AppAssessment
   {
   public:
-    AppAssessment();
-    AppAssessment(Aws::Utils::Json::JsonView jsonValue);
-    AppAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AppAssessment();
+    AWS_RESILIENCEHUB_API AppAssessment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AppAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -742,52 +742,52 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_assessmentArn;
-    bool m_assessmentArnHasBeenSet;
+    bool m_assessmentArnHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     AssessmentStatus m_assessmentStatus;
-    bool m_assessmentStatusHasBeenSet;
+    bool m_assessmentStatusHasBeenSet = false;
 
     Aws::Map<DisruptionType, DisruptionCompliance> m_compliance;
-    bool m_complianceHasBeenSet;
+    bool m_complianceHasBeenSet = false;
 
     ComplianceStatus m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     Cost m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     AssessmentInvoker m_invoker;
-    bool m_invokerHasBeenSet;
+    bool m_invokerHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ResiliencyPolicy m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     ResiliencyScore m_resiliencyScore;
-    bool m_resiliencyScoreHasBeenSet;
+    bool m_resiliencyScoreHasBeenSet = false;
 
     ResourceErrorsDetails m_resourceErrorsDetails;
-    bool m_resourceErrorsDetailsHasBeenSet;
+    bool m_resourceErrorsDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

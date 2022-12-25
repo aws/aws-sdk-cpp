@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/auditmanager/model/AssessmentReportsDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/auditmanager/model/EvidenceFinderEnablement.h>
 #include <aws/auditmanager/model/Role.h>
 #include <utility>
 
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Settings
+  class Settings
   {
   public:
-    Settings();
-    Settings(Aws::Utils::Json::JsonView jsonValue);
-    Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Settings();
+    AWS_AUDITMANAGER_API Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,22 +216,56 @@ namespace Model
      */
     inline Settings& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline const EvidenceFinderEnablement& GetEvidenceFinderEnablement() const{ return m_evidenceFinderEnablement; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline bool EvidenceFinderEnablementHasBeenSet() const { return m_evidenceFinderEnablementHasBeenSet; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline void SetEvidenceFinderEnablement(const EvidenceFinderEnablement& value) { m_evidenceFinderEnablementHasBeenSet = true; m_evidenceFinderEnablement = value; }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline void SetEvidenceFinderEnablement(EvidenceFinderEnablement&& value) { m_evidenceFinderEnablementHasBeenSet = true; m_evidenceFinderEnablement = std::move(value); }
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline Settings& WithEvidenceFinderEnablement(const EvidenceFinderEnablement& value) { SetEvidenceFinderEnablement(value); return *this;}
+
+    /**
+     * <p>The current evidence finder status and event data store details.</p>
+     */
+    inline Settings& WithEvidenceFinderEnablement(EvidenceFinderEnablement&& value) { SetEvidenceFinderEnablement(std::move(value)); return *this;}
+
   private:
 
     bool m_isAwsOrgEnabled;
-    bool m_isAwsOrgEnabledHasBeenSet;
+    bool m_isAwsOrgEnabledHasBeenSet = false;
 
     Aws::String m_snsTopic;
-    bool m_snsTopicHasBeenSet;
+    bool m_snsTopicHasBeenSet = false;
 
     AssessmentReportsDestination m_defaultAssessmentReportsDestination;
-    bool m_defaultAssessmentReportsDestinationHasBeenSet;
+    bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
 
     Aws::Vector<Role> m_defaultProcessOwners;
-    bool m_defaultProcessOwnersHasBeenSet;
+    bool m_defaultProcessOwnersHasBeenSet = false;
 
     Aws::String m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
+
+    EvidenceFinderEnablement m_evidenceFinderEnablement;
+    bool m_evidenceFinderEnablementHasBeenSet = false;
   };
 
 } // namespace Model

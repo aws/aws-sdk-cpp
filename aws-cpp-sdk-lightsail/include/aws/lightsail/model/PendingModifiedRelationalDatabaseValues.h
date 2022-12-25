@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PendingModifiedRelationalDatabaseValues">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API PendingModifiedRelationalDatabaseValues
+  class PendingModifiedRelationalDatabaseValues
   {
   public:
-    PendingModifiedRelationalDatabaseValues();
-    PendingModifiedRelationalDatabaseValues(Aws::Utils::Json::JsonView jsonValue);
-    PendingModifiedRelationalDatabaseValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API PendingModifiedRelationalDatabaseValues();
+    AWS_LIGHTSAIL_API PendingModifiedRelationalDatabaseValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API PendingModifiedRelationalDatabaseValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_backupRetentionEnabled;
-    bool m_backupRetentionEnabledHasBeenSet;
+    bool m_backupRetentionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

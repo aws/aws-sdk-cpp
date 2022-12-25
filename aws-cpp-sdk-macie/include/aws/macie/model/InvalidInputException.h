@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/InvalidInputException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API InvalidInputException
+  class InvalidInputException
   {
   public:
-    InvalidInputException();
-    InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API InvalidInputException();
+    AWS_MACIE_API InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
   };
 
 } // namespace Model

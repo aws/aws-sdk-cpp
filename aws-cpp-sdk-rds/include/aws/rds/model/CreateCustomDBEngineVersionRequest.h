@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API CreateCustomDBEngineVersionRequest : public RDSRequest
+  class CreateCustomDBEngineVersionRequest : public RDSRequest
   {
   public:
-    CreateCustomDBEngineVersionRequest();
+    AWS_RDS_API CreateCustomDBEngineVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCustomDBEngineVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -88,73 +88,73 @@ namespace Model
 
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
-     * </code>. For example, a valid name is <code>19.my_cev1</code>. This setting is
-     * required for RDS Custom for Oracle, but optional for Amazon RDS. The combination
-     * of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
+     * <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For
+     * example, a valid CEV name is <code>19.my_cev1</code>. This setting is required
+     * for RDS Custom for Oracle, but optional for Amazon RDS. The combination of
+     * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -276,105 +276,121 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric
-     * KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you
-     * have an existing symmetric KMS key in your account, you can use it with RDS
-     * Custom. No further action is necessary. If you don't already have a symmetric
-     * KMS key in your account, follow the instructions in <a
+     * encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
+     * <p>If you have an existing symmetric encryption KMS key in your account, you can
+     * use it with RDS Custom. No further action is necessary. If you don't already
+     * have a symmetric encryption KMS key in your account, follow the instructions in
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk">
-     * Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p> <p>You can choose the same symmetric key when
-     * you create a CEV and a DB instance, or choose different keys.</p>
+     * Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key
+     * Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric
+     * encryption key when you create a CEV and a DB instance, or choose different
+     * keys.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
@@ -600,28 +616,28 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3BucketName;
-    bool m_databaseInstallationFilesS3BucketNameHasBeenSet;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3Prefix;
-    bool m_databaseInstallationFilesS3PrefixHasBeenSet;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_manifest;
-    bool m_manifestHasBeenSet;
+    bool m_manifestHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SAMLOptionsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput
+  class SAMLOptionsOutput
   {
   public:
-    SAMLOptionsOutput();
-    SAMLOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
-    SAMLOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput();
+    AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,19 +196,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     SAMLIdp m_idp;
-    bool m_idpHasBeenSet;
+    bool m_idpHasBeenSet = false;
 
     Aws::String m_subjectKey;
-    bool m_subjectKeyHasBeenSet;
+    bool m_subjectKeyHasBeenSet = false;
 
     Aws::String m_rolesKey;
-    bool m_rolesKeyHasBeenSet;
+    bool m_rolesKeyHasBeenSet = false;
 
     int m_sessionTimeoutMinutes;
-    bool m_sessionTimeoutMinutesHasBeenSet;
+    bool m_sessionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

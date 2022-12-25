@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/RecoveryGroupOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API RecoveryGroupOutput
+  class RecoveryGroupOutput
   {
   public:
-    RecoveryGroupOutput();
-    RecoveryGroupOutput(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryGroupOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API RecoveryGroupOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API RecoveryGroupOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API RecoveryGroupOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_recoveryGroupArn;
-    bool m_recoveryGroupArnHasBeenSet;
+    bool m_recoveryGroupArnHasBeenSet = false;
 
     Aws::String m_recoveryGroupName;
-    bool m_recoveryGroupNameHasBeenSet;
+    bool m_recoveryGroupNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSyncJobMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceSyncJobMetrics
+  class DataSourceSyncJobMetrics
   {
   public:
-    DataSourceSyncJobMetrics();
-    DataSourceSyncJobMetrics(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceSyncJobMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceSyncJobMetrics();
+    AWS_KENDRA_API DataSourceSyncJobMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceSyncJobMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,19 +286,19 @@ namespace Model
   private:
 
     Aws::String m_documentsAdded;
-    bool m_documentsAddedHasBeenSet;
+    bool m_documentsAddedHasBeenSet = false;
 
     Aws::String m_documentsModified;
-    bool m_documentsModifiedHasBeenSet;
+    bool m_documentsModifiedHasBeenSet = false;
 
     Aws::String m_documentsDeleted;
-    bool m_documentsDeletedHasBeenSet;
+    bool m_documentsDeletedHasBeenSet = false;
 
     Aws::String m_documentsFailed;
-    bool m_documentsFailedHasBeenSet;
+    bool m_documentsFailedHasBeenSet = false;
 
     Aws::String m_documentsScanned;
-    bool m_documentsScannedHasBeenSet;
+    bool m_documentsScannedHasBeenSet = false;
   };
 
 } // namespace Model

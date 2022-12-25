@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEksClusterLoggingDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEksClusterLoggingDetails
+  class AwsEksClusterLoggingDetails
   {
   public:
-    AwsEksClusterLoggingDetails();
-    AwsEksClusterLoggingDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEksClusterLoggingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEksClusterLoggingDetails();
+    AWS_SECURITYHUB_API AwsEksClusterLoggingDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEksClusterLoggingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsEksClusterLoggingClusterLoggingDetails> m_clusterLogging;
-    bool m_clusterLoggingHasBeenSet;
+    bool m_clusterLoggingHasBeenSet = false;
   };
 
 } // namespace Model

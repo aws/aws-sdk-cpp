@@ -27,19 +27,19 @@ namespace Model
 
   /**
    * <p>The configuration that specifies how traffic is shifted from one version of a
-   * Lambda function to another version during an AWS Lambda deployment, or from one
+   * Lambda function to another version during an Lambda deployment, or from one
    * Amazon ECS task set to another during an Amazon ECS deployment.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TrafficRoutingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API TrafficRoutingConfig
+  class TrafficRoutingConfig
   {
   public:
-    TrafficRoutingConfig();
-    TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
-    TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API TrafficRoutingConfig();
+    AWS_CODEDEPLOY_API TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,62 +130,62 @@ namespace Model
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline const TimeBasedLinear& GetTimeBasedLinear() const{ return m_timeBasedLinear; }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline bool TimeBasedLinearHasBeenSet() const { return m_timeBasedLinearHasBeenSet; }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline void SetTimeBasedLinear(const TimeBasedLinear& value) { m_timeBasedLinearHasBeenSet = true; m_timeBasedLinear = value; }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline void SetTimeBasedLinear(TimeBasedLinear&& value) { m_timeBasedLinearHasBeenSet = true; m_timeBasedLinear = std::move(value); }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline TrafficRoutingConfig& WithTimeBasedLinear(const TimeBasedLinear& value) { SetTimeBasedLinear(value); return *this;}
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function or
-     * ECS task set to another in equal increments, with an equal number of minutes
-     * between each increment. The original and target Lambda function versions or ECS
-     * task sets are specified in the deployment's AppSpec file.</p>
+     * Amazon ECS task set to another in equal increments, with an equal number of
+     * minutes between each increment. The original and target Lambda function versions
+     * or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
      */
     inline TrafficRoutingConfig& WithTimeBasedLinear(TimeBasedLinear&& value) { SetTimeBasedLinear(std::move(value)); return *this;}
 
   private:
 
     TrafficRoutingType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TimeBasedCanary m_timeBasedCanary;
-    bool m_timeBasedCanaryHasBeenSet;
+    bool m_timeBasedCanaryHasBeenSet = false;
 
     TimeBasedLinear m_timeBasedLinear;
-    bool m_timeBasedLinearHasBeenSet;
+    bool m_timeBasedLinearHasBeenSet = false;
   };
 
 } // namespace Model

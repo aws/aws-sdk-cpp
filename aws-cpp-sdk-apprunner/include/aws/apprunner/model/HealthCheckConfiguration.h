@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/HealthCheckConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API HealthCheckConfiguration
+  class HealthCheckConfiguration
   {
   public:
-    HealthCheckConfiguration();
-    HealthCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API HealthCheckConfiguration();
+    AWS_APPRUNNER_API HealthCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API HealthCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,22 +247,22 @@ namespace Model
   private:
 
     HealthCheckProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
   };
 
 } // namespace Model

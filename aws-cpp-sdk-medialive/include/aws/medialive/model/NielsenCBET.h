@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NielsenCBET">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NielsenCBET
+  class NielsenCBET
   {
   public:
-    NielsenCBET();
-    NielsenCBET(Aws::Utils::Json::JsonView jsonValue);
-    NielsenCBET& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NielsenCBET();
+    AWS_MEDIALIVE_API NielsenCBET(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NielsenCBET& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_cbetCheckDigitString;
-    bool m_cbetCheckDigitStringHasBeenSet;
+    bool m_cbetCheckDigitStringHasBeenSet = false;
 
     NielsenWatermarksCbetStepaside m_cbetStepaside;
-    bool m_cbetStepasideHasBeenSet;
+    bool m_cbetStepasideHasBeenSet = false;
 
     Aws::String m_csid;
-    bool m_csidHasBeenSet;
+    bool m_csidHasBeenSet = false;
   };
 
 } // namespace Model

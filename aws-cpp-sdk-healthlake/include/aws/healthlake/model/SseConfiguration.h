@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/SseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API SseConfiguration
+  class SseConfiguration
   {
   public:
-    SseConfiguration();
-    SseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API SseConfiguration();
+    AWS_HEALTHLAKE_API SseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API SseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     KmsEncryptionConfig m_kmsEncryptionConfig;
-    bool m_kmsEncryptionConfigHasBeenSet;
+    bool m_kmsEncryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

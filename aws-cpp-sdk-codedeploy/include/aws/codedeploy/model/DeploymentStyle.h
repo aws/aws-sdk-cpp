@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentStyle
+  class DeploymentStyle
   {
   public:
-    DeploymentStyle();
-    DeploymentStyle(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentStyle();
+    AWS_CODEDEPLOY_API DeploymentStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     DeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     DeploymentOption m_deploymentOption;
-    bool m_deploymentOptionHasBeenSet;
+    bool m_deploymentOptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingLoggingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingLoggingConfig
+  class StreamingLoggingConfig
   {
   public:
-    StreamingLoggingConfig();
-    StreamingLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingLoggingConfig();
+    AWS_CLOUDFRONT_API StreamingLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -46,7 +46,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
@@ -82,7 +82,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline StreamingLoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileShareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API FileShareInfo
+  class FileShareInfo
   {
   public:
-    FileShareInfo();
-    FileShareInfo(Aws::Utils::Json::JsonView jsonValue);
-    FileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API FileShareInfo();
+    AWS_STORAGEGATEWAY_API FileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API FileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -160,19 +160,19 @@ namespace Model
   private:
 
     FileShareType m_fileShareType;
-    bool m_fileShareTypeHasBeenSet;
+    bool m_fileShareTypeHasBeenSet = false;
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::String m_fileShareId;
-    bool m_fileShareIdHasBeenSet;
+    bool m_fileShareIdHasBeenSet = false;
 
     Aws::String m_fileShareStatus;
-    bool m_fileShareStatusHasBeenSet;
+    bool m_fileShareStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

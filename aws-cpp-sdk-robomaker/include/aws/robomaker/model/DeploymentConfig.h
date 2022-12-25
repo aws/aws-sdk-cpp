@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeploymentConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API DeploymentConfig
+  class DeploymentConfig
   {
   public:
-    DeploymentConfig();
-    DeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API DeploymentConfig();
+    AWS_ROBOMAKER_API DeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API DeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,16 +141,16 @@ namespace Model
   private:
 
     int m_concurrentDeploymentPercentage;
-    bool m_concurrentDeploymentPercentageHasBeenSet;
+    bool m_concurrentDeploymentPercentageHasBeenSet = false;
 
     int m_failureThresholdPercentage;
-    bool m_failureThresholdPercentageHasBeenSet;
+    bool m_failureThresholdPercentageHasBeenSet = false;
 
     long long m_robotDeploymentTimeoutInSeconds;
-    bool m_robotDeploymentTimeoutInSecondsHasBeenSet;
+    bool m_robotDeploymentTimeoutInSecondsHasBeenSet = false;
 
     S3Object m_downloadConditionFile;
-    bool m_downloadConditionFileHasBeenSet;
+    bool m_downloadConditionFileHasBeenSet = false;
   };
 
 } // namespace Model

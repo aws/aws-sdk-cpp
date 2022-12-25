@@ -30,7 +30,7 @@ ListResourceDelegatesResult& ListResourceDelegatesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Delegates"))
   {
-    Array<JsonView> delegatesJsonList = jsonValue.GetArray("Delegates");
+    Aws::Utils::Array<JsonView> delegatesJsonList = jsonValue.GetArray("Delegates");
     for(unsigned delegatesIndex = 0; delegatesIndex < delegatesJsonList.GetLength(); ++delegatesIndex)
     {
       m_delegates.push_back(delegatesJsonList[delegatesIndex].AsObject());

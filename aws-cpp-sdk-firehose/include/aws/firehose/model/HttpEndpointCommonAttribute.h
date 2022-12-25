@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HttpEndpointCommonAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API HttpEndpointCommonAttribute
+  class HttpEndpointCommonAttribute
   {
   public:
-    HttpEndpointCommonAttribute();
-    HttpEndpointCommonAttribute(Aws::Utils::Json::JsonView jsonValue);
-    HttpEndpointCommonAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API HttpEndpointCommonAttribute();
+    AWS_FIREHOSE_API HttpEndpointCommonAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API HttpEndpointCommonAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;
-    bool m_attributeValueHasBeenSet;
+    bool m_attributeValueHasBeenSet = false;
   };
 
 } // namespace Model

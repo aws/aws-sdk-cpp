@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccountAssignmentOperationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API AccountAssignmentOperationStatus
+  class AccountAssignmentOperationStatus
   {
   public:
-    AccountAssignmentOperationStatus();
-    AccountAssignmentOperationStatus(Aws::Utils::Json::JsonView jsonValue);
-    AccountAssignmentOperationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus();
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,50 +172,50 @@ namespace Model
 
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline AccountAssignmentOperationStatus& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline AccountAssignmentOperationStatus& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>TargetID is an Amazon Web Services account identifier, typically a 10-12
-     * digit string (For example, 123456789012).</p>
+     * <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For
+     * example, 123456789012).</p>
      */
     inline AccountAssignmentOperationStatus& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
@@ -254,64 +254,56 @@ namespace Model
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the permission set. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
 
@@ -348,82 +340,74 @@ namespace Model
 
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier for an object in Amazon Web Services SSO, such as a user or
-     * group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds
-     * in Amazon Web Services SSO, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web
-     * Services SSO Identity Store API Reference</a>.</p>
+     * <p>An identifier for an object in IAM Identity Center, such as a user or group.
+     * PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For
+     * more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity
+     * Center Identity Store API Reference</a>.</p>
      */
     inline AccountAssignmentOperationStatus& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
@@ -461,31 +445,31 @@ namespace Model
   private:
 
     StatusValues m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     PrincipalType m_principalType;
-    bool m_principalTypeHasBeenSet;
+    bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

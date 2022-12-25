@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGatewayMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGatewayMetadata
+  class LoRaWANGatewayMetadata
   {
   public:
-    LoRaWANGatewayMetadata();
-    LoRaWANGatewayMetadata(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGatewayMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGatewayMetadata();
+    AWS_IOTWIRELESS_API LoRaWANGatewayMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGatewayMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayEui;
-    bool m_gatewayEuiHasBeenSet;
+    bool m_gatewayEuiHasBeenSet = false;
 
     double m_snr;
-    bool m_snrHasBeenSet;
+    bool m_snrHasBeenSet = false;
 
     double m_rssi;
-    bool m_rssiHasBeenSet;
+    bool m_rssiHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserQSearchBarEmbeddingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration
+  class RegisteredUserQSearchBarEmbeddingConfiguration
   {
   public:
-    RegisteredUserQSearchBarEmbeddingConfiguration();
-    RegisteredUserQSearchBarEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredUserQSearchBarEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_initialTopicId;
-    bool m_initialTopicIdHasBeenSet;
+    bool m_initialTopicIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectDataDeliveryRequest : public CloudWatchEvidentlyRequest
+  class UpdateProjectDataDeliveryRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    UpdateProjectDataDeliveryRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectDataDeliveryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProjectDataDelivery"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     CloudWatchLogsDestinationConfig m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     S3DestinationConfig m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

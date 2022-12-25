@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/LastRunErrorStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API LastRunErrorStatus
+  class LastRunErrorStatus
   {
   public:
-    LastRunErrorStatus();
-    LastRunErrorStatus(Aws::Utils::Json::JsonView jsonValue);
-    LastRunErrorStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API LastRunErrorStatus();
+    AWS_MACIE2_API LastRunErrorStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API LastRunErrorStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     LastRunErrorStatusCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

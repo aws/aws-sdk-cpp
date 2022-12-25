@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateResourceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateResourceIdentifier
+  class AggregateResourceIdentifier
   {
   public:
-    AggregateResourceIdentifier();
-    AggregateResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    AggregateResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier();
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,19 +237,19 @@ namespace Model
   private:
 
     Aws::String m_sourceAccountId;
-    bool m_sourceAccountIdHasBeenSet;
+    bool m_sourceAccountIdHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

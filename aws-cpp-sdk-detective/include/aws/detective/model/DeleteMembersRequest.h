@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DETECTIVE_API DeleteMembersRequest : public DetectiveRequest
+  class DeleteMembersRequest : public DetectiveRequest
   {
   public:
-    DeleteMembersRequest();
+    AWS_DETECTIVE_API DeleteMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DETECTIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_graphArn;
-    bool m_graphArnHasBeenSet;
+    bool m_graphArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

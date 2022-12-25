@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/RetentionPeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API RetentionPeriod
+  class RetentionPeriod
   {
   public:
-    RetentionPeriod();
-    RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
-    RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API RetentionPeriod();
+    AWS_IOTANALYTICS_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     bool m_unlimited;
-    bool m_unlimitedHasBeenSet;
+    bool m_unlimitedHasBeenSet = false;
 
     int m_numberOfDays;
-    bool m_numberOfDaysHasBeenSet;
+    bool m_numberOfDaysHasBeenSet = false;
   };
 
 } // namespace Model

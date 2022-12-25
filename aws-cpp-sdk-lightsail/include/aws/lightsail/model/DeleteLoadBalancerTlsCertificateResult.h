@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API DeleteLoadBalancerTlsCertificateResult
+  class DeleteLoadBalancerTlsCertificateResult
   {
   public:
-    DeleteLoadBalancerTlsCertificateResult();
-    DeleteLoadBalancerTlsCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLoadBalancerTlsCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DeleteLoadBalancerTlsCertificateResult();
+    AWS_LIGHTSAIL_API DeleteLoadBalancerTlsCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DeleteLoadBalancerTlsCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

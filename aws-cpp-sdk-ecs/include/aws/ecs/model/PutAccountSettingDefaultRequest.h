@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API PutAccountSettingDefaultRequest : public ECSRequest
+  class PutAccountSettingDefaultRequest : public ECSRequest
   {
   public:
-    PutAccountSettingDefaultRequest();
+    AWS_ECS_API PutAccountSettingDefaultRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountSettingDefault"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -45,7 +45,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
@@ -59,7 +64,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -73,7 +83,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -87,7 +102,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -101,7 +121,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline PutAccountSettingDefaultRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
@@ -115,7 +140,12 @@ namespace Model
      * <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS
      * container instances is affected. If <code>containerInsights</code> is specified,
      * the default setting for CloudWatch Container Insights for your clusters is
-     * affected.</p>
+     * affected.</p> <p>Fargate is transitioning from task count-based quotas to
+     * vCPU-based quotas. You can set the name to <code>fargateVCPULimit</code> to opt
+     * in or opt out of the vCPU-based quotas. For information about the opt in
+     * timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+     * vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline PutAccountSettingDefaultRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 
@@ -171,10 +201,10 @@ namespace Model
   private:
 
     SettingName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

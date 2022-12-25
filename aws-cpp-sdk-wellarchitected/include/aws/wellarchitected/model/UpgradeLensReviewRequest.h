@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_WELLARCHITECTED_API UpgradeLensReviewRequest : public WellArchitectedRequest
+  class UpgradeLensReviewRequest : public WellArchitectedRequest
   {
   public:
-    UpgradeLensReviewRequest();
+    AWS_WELLARCHITECTED_API UpgradeLensReviewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpgradeLensReview"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
     
@@ -134,16 +134,16 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_milestoneName;
-    bool m_milestoneNameHasBeenSet;
+    bool m_milestoneNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReservedInstanceLimitPrice">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ReservedInstanceLimitPrice
+  class ReservedInstanceLimitPrice
   {
   public:
-    ReservedInstanceLimitPrice();
-    ReservedInstanceLimitPrice(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedInstanceLimitPrice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstanceLimitPrice();
+    AWS_EC2_API ReservedInstanceLimitPrice(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ReservedInstanceLimitPrice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     double m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

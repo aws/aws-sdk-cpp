@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API CreateFargateProfileRequest : public EKSRequest
+  class CreateFargateProfileRequest : public EKSRequest
   {
   public:
-    CreateFargateProfileRequest();
+    AWS_EKS_API CreateFargateProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFargateProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -476,25 +476,25 @@ namespace Model
   private:
 
     Aws::String m_fargateProfileName;
-    bool m_fargateProfileNameHasBeenSet;
+    bool m_fargateProfileNameHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_podExecutionRoleArn;
-    bool m_podExecutionRoleArnHasBeenSet;
+    bool m_podExecutionRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<FargateProfileSelector> m_selectors;
-    bool m_selectorsHasBeenSet;
+    bool m_selectorsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Order">AWS API
    * Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Order
+  class Order
   {
   public:
-    Order();
-    Order(Aws::Utils::Json::JsonView jsonValue);
-    Order& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Order();
+    AWS_OUTPOSTS_API Order(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Order& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,11 +127,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -140,11 +140,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -153,11 +153,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -166,11 +166,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -179,11 +179,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -192,11 +192,11 @@ namespace Model
     /**
      * <p>The status of the order.</p> <ul> <li> <p> <code>PREPARING</code> - Order is
      * received and being prepared.</p> </li> <li> <p> <code>IN_PROGRESS</code> - Order
-     * is either being built, shipped, or installed. To get more details, see the
-     * <code>LineItem</code> status.</p> </li> <li> <p> <code>COMPLETED</code> - Order
-     * is complete.</p> </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p>
-     * </li> <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-     * </ul>  <p>The following status are deprecated: <code>RECEIVED</code>,
+     * is either being built, shipped, or installed. To get more details, see the line
+     * item status.</p> </li> <li> <p> <code>COMPLETED</code> - Order is complete.</p>
+     * </li> <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> <li> <p>
+     * <code>ERROR</code> - Customer should contact support.</p> </li> </ul> 
+     * <p>The following status are deprecated: <code>RECEIVED</code>,
      * <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and
      * <code>FULFILLED</code>. </p> 
      */
@@ -339,25 +339,25 @@ namespace Model
   private:
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_orderId;
-    bool m_orderIdHasBeenSet;
+    bool m_orderIdHasBeenSet = false;
 
     OrderStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<LineItem> m_lineItems;
-    bool m_lineItemsHasBeenSet;
+    bool m_lineItemsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderSubmissionDate;
-    bool m_orderSubmissionDateHasBeenSet;
+    bool m_orderSubmissionDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderFulfilledDate;
-    bool m_orderFulfilledDateHasBeenSet;
+    bool m_orderFulfilledDateHasBeenSet = false;
   };
 
 } // namespace Model

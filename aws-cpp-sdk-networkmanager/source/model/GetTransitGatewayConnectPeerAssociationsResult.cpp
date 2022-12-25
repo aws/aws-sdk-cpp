@@ -30,7 +30,7 @@ GetTransitGatewayConnectPeerAssociationsResult& GetTransitGatewayConnectPeerAsso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TransitGatewayConnectPeerAssociations"))
   {
-    Array<JsonView> transitGatewayConnectPeerAssociationsJsonList = jsonValue.GetArray("TransitGatewayConnectPeerAssociations");
+    Aws::Utils::Array<JsonView> transitGatewayConnectPeerAssociationsJsonList = jsonValue.GetArray("TransitGatewayConnectPeerAssociations");
     for(unsigned transitGatewayConnectPeerAssociationsIndex = 0; transitGatewayConnectPeerAssociationsIndex < transitGatewayConnectPeerAssociationsJsonList.GetLength(); ++transitGatewayConnectPeerAssociationsIndex)
     {
       m_transitGatewayConnectPeerAssociations.push_back(transitGatewayConnectPeerAssociationsJsonList[transitGatewayConnectPeerAssociationsIndex].AsObject());

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FormatOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API FormatOptions
+  class FormatOptions
   {
   public:
-    FormatOptions();
-    FormatOptions(Aws::Utils::Json::JsonView jsonValue);
-    FormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API FormatOptions();
+    AWS_GLUEDATABREW_API FormatOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API FormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     JsonOptions m_json;
-    bool m_jsonHasBeenSet;
+    bool m_jsonHasBeenSet = false;
 
     ExcelOptions m_excel;
-    bool m_excelHasBeenSet;
+    bool m_excelHasBeenSet = false;
 
     CsvOptions m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

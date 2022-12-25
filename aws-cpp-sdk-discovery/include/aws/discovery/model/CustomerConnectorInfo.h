@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CustomerConnectorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo
+  class CustomerConnectorInfo
   {
   public:
-    CustomerConnectorInfo();
-    CustomerConnectorInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerConnectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,25 +185,25 @@ namespace Model
   private:
 
     int m_activeConnectors;
-    bool m_activeConnectorsHasBeenSet;
+    bool m_activeConnectorsHasBeenSet = false;
 
     int m_healthyConnectors;
-    bool m_healthyConnectorsHasBeenSet;
+    bool m_healthyConnectorsHasBeenSet = false;
 
     int m_blackListedConnectors;
-    bool m_blackListedConnectorsHasBeenSet;
+    bool m_blackListedConnectorsHasBeenSet = false;
 
     int m_shutdownConnectors;
-    bool m_shutdownConnectorsHasBeenSet;
+    bool m_shutdownConnectorsHasBeenSet = false;
 
     int m_unhealthyConnectors;
-    bool m_unhealthyConnectorsHasBeenSet;
+    bool m_unhealthyConnectorsHasBeenSet = false;
 
     int m_totalConnectors;
-    bool m_totalConnectorsHasBeenSet;
+    bool m_totalConnectorsHasBeenSet = false;
 
     int m_unknownConnectors;
-    bool m_unknownConnectorsHasBeenSet;
+    bool m_unknownConnectorsHasBeenSet = false;
   };
 
 } // namespace Model

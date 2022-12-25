@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsRequest : public CognitoIdentityProviderRequest
+  class AdminListUserAuthEventsRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AdminListUserAuthEventsRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminListUserAuthEventsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AdminListUserAuthEvents"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -117,22 +117,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline AdminListUserAuthEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -180,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Scale">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Scale
+  class Scale
   {
   public:
-    Scale();
-    Scale(Aws::Utils::Json::JsonView jsonValue);
-    Scale& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Scale();
+    AWS_ECS_API Scale(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Scale& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,10 +100,10 @@ namespace Model
   private:
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ScaleUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DiskResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API DiskResourceUtilization
+  class DiskResourceUtilization
   {
   public:
-    DiskResourceUtilization();
-    DiskResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    DiskResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API DiskResourceUtilization();
+    AWS_COSTEXPLORER_API DiskResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API DiskResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_diskReadOpsPerSecond;
-    bool m_diskReadOpsPerSecondHasBeenSet;
+    bool m_diskReadOpsPerSecondHasBeenSet = false;
 
     Aws::String m_diskWriteOpsPerSecond;
-    bool m_diskWriteOpsPerSecondHasBeenSet;
+    bool m_diskWriteOpsPerSecondHasBeenSet = false;
 
     Aws::String m_diskReadBytesPerSecond;
-    bool m_diskReadBytesPerSecondHasBeenSet;
+    bool m_diskReadBytesPerSecondHasBeenSet = false;
 
     Aws::String m_diskWriteBytesPerSecond;
-    bool m_diskWriteBytesPerSecondHasBeenSet;
+    bool m_diskWriteBytesPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

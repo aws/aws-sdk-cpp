@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargetsResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API RemoveTargetsResultEntry
+  class RemoveTargetsResultEntry
   {
   public:
-    RemoveTargetsResultEntry();
-    RemoveTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    RemoveTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry();
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

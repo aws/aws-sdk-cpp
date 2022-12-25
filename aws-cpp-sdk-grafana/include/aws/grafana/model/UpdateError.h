@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateError">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API UpdateError
+  class UpdateError
   {
   public:
-    UpdateError();
-    UpdateError(Aws::Utils::Json::JsonView jsonValue);
-    UpdateError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API UpdateError();
+    AWS_MANAGEDGRAFANA_API UpdateError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API UpdateError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,13 +136,13 @@ namespace Model
   private:
 
     UpdateInstruction m_causedBy;
-    bool m_causedByHasBeenSet;
+    bool m_causedByHasBeenSet = false;
 
     int m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

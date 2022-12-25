@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomerRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API ResolveCustomerRequest : public MarketplaceMeteringRequest
+  class ResolveCustomerRequest : public MarketplaceMeteringRequest
   {
   public:
-    ResolveCustomerRequest();
+    AWS_MARKETPLACEMETERING_API ResolveCustomerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ResolveCustomer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACEMETERING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACEMETERING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_registrationToken;
-    bool m_registrationTokenHasBeenSet;
+    bool m_registrationTokenHasBeenSet = false;
   };
 
 } // namespace Model

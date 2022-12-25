@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventTypeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EventTypeFilter
+  class EventTypeFilter
   {
   public:
-    EventTypeFilter();
-    EventTypeFilter(Aws::Utils::Json::JsonView jsonValue);
-    EventTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EventTypeFilter();
+    AWS_HEALTH_API EventTypeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EventTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eventTypeCodes;
-    bool m_eventTypeCodesHasBeenSet;
+    bool m_eventTypeCodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_services;
-    bool m_servicesHasBeenSet;
+    bool m_servicesHasBeenSet = false;
 
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-    bool m_eventTypeCategoriesHasBeenSet;
+    bool m_eventTypeCategoriesHasBeenSet = false;
   };
 
 } // namespace Model

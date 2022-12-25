@@ -76,7 +76,7 @@ Aws::String DescribeDimensionKeysRequest::SerializePayload() const
 
   if(m_additionalMetricsHasBeenSet)
   {
-   Array<JsonValue> additionalMetricsJsonList(m_additionalMetrics.size());
+   Aws::Utils::Array<JsonValue> additionalMetricsJsonList(m_additionalMetrics.size());
    for(unsigned additionalMetricsIndex = 0; additionalMetricsIndex < additionalMetricsJsonList.GetLength(); ++additionalMetricsIndex)
    {
      additionalMetricsJsonList[additionalMetricsIndex].AsString(m_additionalMetrics[additionalMetricsIndex]);

@@ -24,36 +24,36 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DescribeAttackResult
+  class DescribeAttackResult
   {
   public:
-    DescribeAttackResult();
-    DescribeAttackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackResult();
+    AWS_SHIELD_API DescribeAttackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The attack that is described.</p>
+     * <p>The attack that you requested. </p>
      */
     inline const AttackDetail& GetAttack() const{ return m_attack; }
 
     /**
-     * <p>The attack that is described.</p>
+     * <p>The attack that you requested. </p>
      */
     inline void SetAttack(const AttackDetail& value) { m_attack = value; }
 
     /**
-     * <p>The attack that is described.</p>
+     * <p>The attack that you requested. </p>
      */
     inline void SetAttack(AttackDetail&& value) { m_attack = std::move(value); }
 
     /**
-     * <p>The attack that is described.</p>
+     * <p>The attack that you requested. </p>
      */
     inline DescribeAttackResult& WithAttack(const AttackDetail& value) { SetAttack(value); return *this;}
 
     /**
-     * <p>The attack that is described.</p>
+     * <p>The attack that you requested. </p>
      */
     inline DescribeAttackResult& WithAttack(AttackDetail&& value) { SetAttack(std::move(value)); return *this;}
 

@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeResult
+  class UpdateLoadBalancerAttributeResult
   {
   public:
-    UpdateLoadBalancerAttributeResult();
-    UpdateLoadBalancerAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLoadBalancerAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeResult();
+    AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

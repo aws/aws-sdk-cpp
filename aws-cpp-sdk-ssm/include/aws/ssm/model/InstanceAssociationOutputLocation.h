@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceAssociationOutputLocation
+  class InstanceAssociationOutputLocation
   {
   public:
-    InstanceAssociationOutputLocation();
-    InstanceAssociationOutputLocation(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAssociationOutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceAssociationOutputLocation();
+    AWS_SSM_API InstanceAssociationOutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceAssociationOutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     S3OutputLocation m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

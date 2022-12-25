@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SessionManagerOutputUrl">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API SessionManagerOutputUrl
+  class SessionManagerOutputUrl
   {
   public:
-    SessionManagerOutputUrl();
-    SessionManagerOutputUrl(Aws::Utils::Json::JsonView jsonValue);
-    SessionManagerOutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API SessionManagerOutputUrl();
+    AWS_SSM_API SessionManagerOutputUrl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API SessionManagerOutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3OutputUrl;
-    bool m_s3OutputUrlHasBeenSet;
+    bool m_s3OutputUrlHasBeenSet = false;
 
     Aws::String m_cloudWatchOutputUrl;
-    bool m_cloudWatchOutputUrlHasBeenSet;
+    bool m_cloudWatchOutputUrlHasBeenSet = false;
   };
 
 } // namespace Model

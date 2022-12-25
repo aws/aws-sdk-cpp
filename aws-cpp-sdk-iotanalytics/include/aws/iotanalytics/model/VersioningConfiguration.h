@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/VersioningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API VersioningConfiguration
+  class VersioningConfiguration
   {
   public:
-    VersioningConfiguration();
-    VersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API VersioningConfiguration();
+    AWS_IOTANALYTICS_API VersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API VersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_unlimited;
-    bool m_unlimitedHasBeenSet;
+    bool m_unlimitedHasBeenSet = false;
 
     int m_maxVersions;
-    bool m_maxVersionsHasBeenSet;
+    bool m_maxVersionsHasBeenSet = false;
   };
 
 } // namespace Model

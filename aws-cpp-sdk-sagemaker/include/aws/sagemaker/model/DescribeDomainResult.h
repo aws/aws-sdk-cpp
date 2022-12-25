@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DomainSettings.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -32,12 +33,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeDomainResult
+  class DescribeDomainResult
   {
   public:
-    DescribeDomainResult();
-    DescribeDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeDomainResult();
+    AWS_SAGEMAKER_API DescribeDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -185,37 +186,37 @@ namespace Model
 
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline const Aws::String& GetSingleSignOnManagedApplicationInstanceId() const{ return m_singleSignOnManagedApplicationInstanceId; }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(const Aws::String& value) { m_singleSignOnManagedApplicationInstanceId = value; }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(Aws::String&& value) { m_singleSignOnManagedApplicationInstanceId = std::move(value); }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline void SetSingleSignOnManagedApplicationInstanceId(const char* value) { m_singleSignOnManagedApplicationInstanceId.assign(value); }
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(const Aws::String& value) { SetSingleSignOnManagedApplicationInstanceId(value); return *this;}
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(Aws::String&& value) { SetSingleSignOnManagedApplicationInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The SSO managed application instance ID.</p>
+     * <p>The IAM Identity Center managed application instance ID.</p>
      */
     inline DescribeDomainResult& WithSingleSignOnManagedApplicationInstanceId(const char* value) { SetSingleSignOnManagedApplicationInstanceId(value); return *this;}
 
@@ -719,6 +720,32 @@ namespace Model
      */
     inline DescribeDomainResult& WithSecurityGroupIdForDomainBoundary(const char* value) { SetSecurityGroupIdForDomainBoundary(value); return *this;}
 
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettings = value; }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline void SetDefaultSpaceSettings(DefaultSpaceSettings&& value) { m_defaultSpaceSettings = std::move(value); }
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline DescribeDomainResult& WithDefaultSpaceSettings(const DefaultSpaceSettings& value) { SetDefaultSpaceSettings(value); return *this;}
+
+    /**
+     * <p>The default settings used to create a space.</p>
+     */
+    inline DescribeDomainResult& WithDefaultSpaceSettings(DefaultSpaceSettings&& value) { SetDefaultSpaceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainArn;
@@ -758,6 +785,8 @@ namespace Model
     AppSecurityGroupManagement m_appSecurityGroupManagement;
 
     Aws::String m_securityGroupIdForDomainBoundary;
+
+    DefaultSpaceSettings m_defaultSpaceSettings;
   };
 
 } // namespace Model

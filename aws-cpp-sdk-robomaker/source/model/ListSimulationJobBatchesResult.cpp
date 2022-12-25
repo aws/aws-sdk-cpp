@@ -30,7 +30,7 @@ ListSimulationJobBatchesResult& ListSimulationJobBatchesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("simulationJobBatchSummaries"))
   {
-    Array<JsonView> simulationJobBatchSummariesJsonList = jsonValue.GetArray("simulationJobBatchSummaries");
+    Aws::Utils::Array<JsonView> simulationJobBatchSummariesJsonList = jsonValue.GetArray("simulationJobBatchSummaries");
     for(unsigned simulationJobBatchSummariesIndex = 0; simulationJobBatchSummariesIndex < simulationJobBatchSummariesJsonList.GetLength(); ++simulationJobBatchSummariesIndex)
     {
       m_simulationJobBatchSummaries.push_back(simulationJobBatchSummariesJsonList[simulationJobBatchSummariesIndex].AsObject());

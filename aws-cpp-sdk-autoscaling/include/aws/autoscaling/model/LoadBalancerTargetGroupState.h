@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerTargetGroupState">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API LoadBalancerTargetGroupState
+  class LoadBalancerTargetGroupState
   {
   public:
-    LoadBalancerTargetGroupState();
-    LoadBalancerTargetGroupState(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoadBalancerTargetGroupState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LoadBalancerTargetGroupState();
+    AWS_AUTOSCALING_API LoadBalancerTargetGroupState(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API LoadBalancerTargetGroupState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerTargetGroupARN;
-    bool m_loadBalancerTargetGroupARNHasBeenSet;
+    bool m_loadBalancerTargetGroupARNHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

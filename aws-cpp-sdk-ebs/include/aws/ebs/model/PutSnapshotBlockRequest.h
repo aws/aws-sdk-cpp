@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EBS_API PutSnapshotBlockRequest : public StreamingEBSRequest
+  class PutSnapshotBlockRequest : public StreamingEBSRequest
   {
   public:
-    PutSnapshotBlockRequest();
+    AWS_EBS_API PutSnapshotBlockRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSnapshotBlock"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EBS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_EBS_API bool SignBody() const override { return false; }
 
 
     /**
@@ -292,23 +292,23 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
 
     int m_dataLength;
-    bool m_dataLengthHasBeenSet;
+    bool m_dataLengthHasBeenSet = false;
 
     int m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

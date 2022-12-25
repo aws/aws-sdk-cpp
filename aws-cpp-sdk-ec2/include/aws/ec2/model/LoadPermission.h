@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LoadPermission">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LoadPermission
+  class LoadPermission
   {
   public:
-    LoadPermission();
-    LoadPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoadPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LoadPermission();
+    AWS_EC2_API LoadPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LoadPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     PermissionGroup m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

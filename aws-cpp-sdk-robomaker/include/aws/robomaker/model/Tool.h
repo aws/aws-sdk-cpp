@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Tool">AWS API
    * Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Tool
+  class Tool
   {
   public:
-    Tool();
-    Tool(Aws::Utils::Json::JsonView jsonValue);
-    Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Tool();
+    AWS_ROBOMAKER_API Tool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     bool m_streamUI;
-    bool m_streamUIHasBeenSet;
+    bool m_streamUIHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     bool m_streamOutputToCloudWatch;
-    bool m_streamOutputToCloudWatchHasBeenSet;
+    bool m_streamOutputToCloudWatchHasBeenSet = false;
 
     ExitBehavior m_exitBehavior;
-    bool m_exitBehaviorHasBeenSet;
+    bool m_exitBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,23 +26,21 @@ namespace Model
    * <p> <i>Alias resource record sets only:</i> Information about the Amazon Web
    * Services resource, such as a CloudFront distribution or an Amazon S3 bucket,
    * that you want to route traffic to.</p> <p>When creating resource record sets for
-   * a private hosted zone, note the following:</p> <ul> <li> <p>Creating geolocation
-   * alias resource record sets or latency alias resource record sets in a private
-   * hosted zone is unsupported.</p> </li> <li> <p>For information about creating
-   * failover resource record sets in a private hosted zone, see <a
+   * a private hosted zone, note the following:</p> <ul> <li> <p>For information
+   * about creating failover resource record sets in a private hosted zone, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
    * Failover in a Private Hosted Zone</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API AliasTarget
+  class AliasTarget
   {
   public:
-    AliasTarget();
-    AliasTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AliasTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AliasTarget();
+    AWS_ROUTE53_API AliasTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AliasTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -1666,13 +1664,13 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     bool m_evaluateTargetHealth;
-    bool m_evaluateTargetHealthHasBeenSet;
+    bool m_evaluateTargetHealthHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/SourceS3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONCOSTPROFILER_API SourceS3Location
+  class SourceS3Location
   {
   public:
-    SourceS3Location();
-    SourceS3Location(Aws::Utils::Json::JsonView jsonValue);
-    SourceS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONCOSTPROFILER_API SourceS3Location();
+    AWS_APPLICATIONCOSTPROFILER_API SourceS3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API SourceS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     S3BucketRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

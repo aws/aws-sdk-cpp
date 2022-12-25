@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLPartialFailureReason">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLPartialFailureReason
+  class AutoMLPartialFailureReason
   {
   public:
-    AutoMLPartialFailureReason();
-    AutoMLPartialFailureReason(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLPartialFailureReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLPartialFailureReason();
+    AWS_SAGEMAKER_API AutoMLPartialFailureReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLPartialFailureReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_partialFailureMessage;
-    bool m_partialFailureMessageHasBeenSet;
+    bool m_partialFailureMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartTimecode">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StartTimecode
+  class StartTimecode
   {
   public:
-    StartTimecode();
-    StartTimecode(Aws::Utils::Json::JsonView jsonValue);
-    StartTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API StartTimecode();
+    AWS_MEDIALIVE_API StartTimecode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API StartTimecode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_timecode;
-    bool m_timecodeHasBeenSet;
+    bool m_timecodeHasBeenSet = false;
   };
 
 } // namespace Model

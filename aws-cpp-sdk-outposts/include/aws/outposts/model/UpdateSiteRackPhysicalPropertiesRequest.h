@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesRequest : public OutpostsRequest
+  class UpdateSiteRackPhysicalPropertiesRequest : public OutpostsRequest
   {
   public:
-    UpdateSiteRackPhysicalPropertiesRequest();
+    AWS_OUTPOSTS_API UpdateSiteRackPhysicalPropertiesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,164 +38,124 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSiteRackPhysicalProperties"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline const Aws::String& GetSiteId() const{ return m_siteId; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
 
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline const PowerDrawKva& GetPowerDrawKva() const{ return m_powerDrawKva; }
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline bool PowerDrawKvaHasBeenSet() const { return m_powerDrawKvaHasBeenSet; }
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline void SetPowerDrawKva(const PowerDrawKva& value) { m_powerDrawKvaHasBeenSet = true; m_powerDrawKva = value; }
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline void SetPowerDrawKva(PowerDrawKva&& value) { m_powerDrawKvaHasBeenSet = true; m_powerDrawKva = std::move(value); }
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerDrawKva(const PowerDrawKva& value) { SetPowerDrawKva(value); return *this;}
 
     /**
-     * <p>Specify in kVA the power draw available at the hardware placement position
-     * for the rack.</p>
+     * <p>The power draw, in kVA, available at the hardware placement position for the
+     * rack.</p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerDrawKva(PowerDrawKva&& value) { SetPowerDrawKva(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
     inline const PowerPhase& GetPowerPhase() const{ return m_powerPhase; }
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
     inline bool PowerPhaseHasBeenSet() const { return m_powerPhaseHasBeenSet; }
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
     inline void SetPowerPhase(const PowerPhase& value) { m_powerPhaseHasBeenSet = true; m_powerPhase = value; }
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
     inline void SetPowerPhase(PowerPhase&& value) { m_powerPhaseHasBeenSet = true; m_powerPhase = std::move(value); }
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerPhase(const PowerPhase& value) { SetPowerPhase(value); return *this;}
 
     /**
-     * <p> Specify the power option that you can provide for hardware. </p> <ul> <li>
+     * <p>The power option that you can provide for hardware. </p> <ul> <li>
      * <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li> <li>
      * <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li> </ul>
      */
@@ -203,8 +163,8 @@ namespace Model
 
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -216,8 +176,8 @@ namespace Model
     inline const PowerConnector& GetPowerConnector() const{ return m_powerConnector; }
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -229,8 +189,8 @@ namespace Model
     inline bool PowerConnectorHasBeenSet() const { return m_powerConnectorHasBeenSet; }
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -242,8 +202,8 @@ namespace Model
     inline void SetPowerConnector(const PowerConnector& value) { m_powerConnectorHasBeenSet = true; m_powerConnector = value; }
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -255,8 +215,8 @@ namespace Model
     inline void SetPowerConnector(PowerConnector&& value) { m_powerConnectorHasBeenSet = true; m_powerConnector = std::move(value); }
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -268,8 +228,8 @@ namespace Model
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerConnector(const PowerConnector& value) { SetPowerConnector(value); return *this;}
 
     /**
-     * <p> Specify the power connector that Amazon Web Services should plan to provide
-     * for connections to the hardware. Note the correlation between
+     * <p>The power connector that Amazon Web Services should plan to provide for
+     * connections to the hardware. Note the correlation between
      * <code>PowerPhase</code> and <code>PowerConnector</code>. </p> <ul> <li>
      * <p>Single-phase AC feed</p> <ul> <li> <p> <b>L6-30P</b> – (common in US); 30A;
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
@@ -282,69 +242,69 @@ namespace Model
 
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline const PowerFeedDrop& GetPowerFeedDrop() const{ return m_powerFeedDrop; }
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline bool PowerFeedDropHasBeenSet() const { return m_powerFeedDropHasBeenSet; }
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline void SetPowerFeedDrop(const PowerFeedDrop& value) { m_powerFeedDropHasBeenSet = true; m_powerFeedDrop = value; }
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline void SetPowerFeedDrop(PowerFeedDrop&& value) { m_powerFeedDropHasBeenSet = true; m_powerFeedDrop = std::move(value); }
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerFeedDrop(const PowerFeedDrop& value) { SetPowerFeedDrop(value); return *this;}
 
     /**
-     * <p> Specify whether the power feed comes above or below the rack. </p>
+     * <p>Indicates whether the power feed comes above or below the rack. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithPowerFeedDrop(PowerFeedDrop&& value) { SetPowerFeedDrop(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline const UplinkGbps& GetUplinkGbps() const{ return m_uplinkGbps; }
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline bool UplinkGbpsHasBeenSet() const { return m_uplinkGbpsHasBeenSet; }
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline void SetUplinkGbps(const UplinkGbps& value) { m_uplinkGbpsHasBeenSet = true; m_uplinkGbps = value; }
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline void SetUplinkGbps(UplinkGbps&& value) { m_uplinkGbpsHasBeenSet = true; m_uplinkGbps = std::move(value); }
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithUplinkGbps(const UplinkGbps& value) { SetUplinkGbps(value); return *this;}
 
     /**
-     * <p> Specify the uplink speed the rack should support for the connection to the
-     * Region. </p>
+     * <p>The uplink speed the rack should support for the connection to the Region.
+     * </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithUplinkGbps(UplinkGbps&& value) { SetUplinkGbps(std::move(value)); return *this;}
 
@@ -423,47 +383,47 @@ namespace Model
 
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline const FiberOpticCableType& GetFiberOpticCableType() const{ return m_fiberOpticCableType; }
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline bool FiberOpticCableTypeHasBeenSet() const { return m_fiberOpticCableTypeHasBeenSet; }
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline void SetFiberOpticCableType(const FiberOpticCableType& value) { m_fiberOpticCableTypeHasBeenSet = true; m_fiberOpticCableType = value; }
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline void SetFiberOpticCableType(FiberOpticCableType&& value) { m_fiberOpticCableTypeHasBeenSet = true; m_fiberOpticCableType = std::move(value); }
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithFiberOpticCableType(const FiberOpticCableType& value) { SetFiberOpticCableType(value); return *this;}
 
     /**
-     * <p> Specify the type of fiber that you will use to attach the Outpost to your
-     * network. </p>
+     * <p>The type of fiber that you will use to attach the Outpost to your network.
+     * </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithFiberOpticCableType(FiberOpticCableType&& value) { SetFiberOpticCableType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -483,10 +443,10 @@ namespace Model
     inline const OpticalStandard& GetOpticalStandard() const{ return m_opticalStandard; }
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -506,10 +466,10 @@ namespace Model
     inline bool OpticalStandardHasBeenSet() const { return m_opticalStandardHasBeenSet; }
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -529,10 +489,10 @@ namespace Model
     inline void SetOpticalStandard(const OpticalStandard& value) { m_opticalStandardHasBeenSet = true; m_opticalStandard = value; }
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -552,10 +512,10 @@ namespace Model
     inline void SetOpticalStandard(OpticalStandard&& value) { m_opticalStandardHasBeenSet = true; m_opticalStandard = std::move(value); }
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -575,10 +535,10 @@ namespace Model
     inline UpdateSiteRackPhysicalPropertiesRequest& WithOpticalStandard(const OpticalStandard& value) { SetOpticalStandard(value); return *this;}
 
     /**
-     * <p>Specify the type of optical standard that you will use to attach the Outpost
-     * to your network. This field is dependent on uplink speed, fiber type, and
-     * distance to the upstream device. For more information about networking
-     * requirements for racks, see <a
+     * <p>The type of optical standard that you will use to attach the Outpost to your
+     * network. This field is dependent on uplink speed, fiber type, and distance to
+     * the upstream device. For more information about networking requirements for
+     * racks, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
      * in the Amazon Web Services Outposts User Guide. </p> <ul> <li> <p>
      * <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li> <li> <p>
@@ -599,72 +559,72 @@ namespace Model
 
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline const MaximumSupportedWeightLbs& GetMaximumSupportedWeightLbs() const{ return m_maximumSupportedWeightLbs; }
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline bool MaximumSupportedWeightLbsHasBeenSet() const { return m_maximumSupportedWeightLbsHasBeenSet; }
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline void SetMaximumSupportedWeightLbs(const MaximumSupportedWeightLbs& value) { m_maximumSupportedWeightLbsHasBeenSet = true; m_maximumSupportedWeightLbs = value; }
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline void SetMaximumSupportedWeightLbs(MaximumSupportedWeightLbs&& value) { m_maximumSupportedWeightLbsHasBeenSet = true; m_maximumSupportedWeightLbs = std::move(value); }
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithMaximumSupportedWeightLbs(const MaximumSupportedWeightLbs& value) { SetMaximumSupportedWeightLbs(value); return *this;}
 
     /**
-     * <p> Specify the maximum rack weight that this site can support.
-     * <code>NO_LIMIT</code> is over 2000lbs. </p>
+     * <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is
+     * over 2000lbs. </p>
      */
     inline UpdateSiteRackPhysicalPropertiesRequest& WithMaximumSupportedWeightLbs(MaximumSupportedWeightLbs&& value) { SetMaximumSupportedWeightLbs(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     PowerDrawKva m_powerDrawKva;
-    bool m_powerDrawKvaHasBeenSet;
+    bool m_powerDrawKvaHasBeenSet = false;
 
     PowerPhase m_powerPhase;
-    bool m_powerPhaseHasBeenSet;
+    bool m_powerPhaseHasBeenSet = false;
 
     PowerConnector m_powerConnector;
-    bool m_powerConnectorHasBeenSet;
+    bool m_powerConnectorHasBeenSet = false;
 
     PowerFeedDrop m_powerFeedDrop;
-    bool m_powerFeedDropHasBeenSet;
+    bool m_powerFeedDropHasBeenSet = false;
 
     UplinkGbps m_uplinkGbps;
-    bool m_uplinkGbpsHasBeenSet;
+    bool m_uplinkGbpsHasBeenSet = false;
 
     UplinkCount m_uplinkCount;
-    bool m_uplinkCountHasBeenSet;
+    bool m_uplinkCountHasBeenSet = false;
 
     FiberOpticCableType m_fiberOpticCableType;
-    bool m_fiberOpticCableTypeHasBeenSet;
+    bool m_fiberOpticCableTypeHasBeenSet = false;
 
     OpticalStandard m_opticalStandard;
-    bool m_opticalStandardHasBeenSet;
+    bool m_opticalStandardHasBeenSet = false;
 
     MaximumSupportedWeightLbs m_maximumSupportedWeightLbs;
-    bool m_maximumSupportedWeightLbsHasBeenSet;
+    bool m_maximumSupportedWeightLbsHasBeenSet = false;
   };
 
 } // namespace Model

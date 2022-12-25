@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/S3DestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API S3DestinationConfiguration
+  class S3DestinationConfiguration
   {
   public:
-    S3DestinationConfiguration();
-    S3DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API S3DestinationConfiguration();
+    AWS_IOTANALYTICS_API S3DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API S3DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -321,16 +321,16 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     GlueConfiguration m_glueConfiguration;
-    bool m_glueConfigurationHasBeenSet;
+    bool m_glueConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

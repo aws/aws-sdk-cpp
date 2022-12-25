@@ -25,12 +25,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API CreateChannelMembershipResult
+  class CreateChannelMembershipResult
   {
   public:
-    CreateChannelMembershipResult();
-    CreateChannelMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateChannelMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API CreateChannelMembershipResult();
+    AWS_CHIMESDKMESSAGING_API CreateChannelMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API CreateChannelMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -94,11 +94,49 @@ namespace Model
      */
     inline CreateChannelMembershipResult& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline CreateChannelMembershipResult& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline CreateChannelMembershipResult& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the response.</p>
+     */
+    inline CreateChannelMembershipResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
 
     Identity m_member;
+
+    Aws::String m_subChannelId;
   };
 
 } // namespace Model

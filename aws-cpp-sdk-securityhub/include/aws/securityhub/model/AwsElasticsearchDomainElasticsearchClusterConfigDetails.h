@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainElasticsearchClusterConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails
+  class AwsElasticsearchDomainElasticsearchClusterConfigDetails
   {
   public:
-    AwsElasticsearchDomainElasticsearchClusterConfigDetails();
-    AwsElasticsearchDomainElasticsearchClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainElasticsearchClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainElasticsearchClusterConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,65 +99,89 @@ namespace Model
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDedicatedMasterType() const{ return m_dedicatedMasterType; }
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline bool DedicatedMasterTypeHasBeenSet() const { return m_dedicatedMasterTypeHasBeenSet; }
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetDedicatedMasterType(const Aws::String& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = value; }
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetDedicatedMasterType(Aws::String&& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = std::move(value); }
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetDedicatedMasterType(const char* value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType.assign(value); }
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(const Aws::String& value) { SetDedicatedMasterType(value); return *this;}
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(Aws::String&& value) { SetDedicatedMasterType(std::move(value)); return *this;}
 
     /**
      * <p>The hardware configuration of the computer that hosts the dedicated master
-     * node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is
-     * specified, then <code>DedicatedMasterEnabled</code> must be
-     * <code>true</code>.</p>
+     * node. A sample value is <code>m3.medium.elasticsearch</code>. If this attribute
+     * is specified, then <code>DedicatedMasterEnabled</code> must be
+     * <code>true</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithDedicatedMasterType(const char* value) { SetDedicatedMasterType(value); return *this;}
 
@@ -185,49 +209,73 @@ namespace Model
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
      * <p>The instance type for your data nodes. For example,
-     * <code>m3.medium.elasticsearch</code>.</p>
+     * <code>m3.medium.elasticsearch</code>.</p> <p>For a list of valid values, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/supported-instance-types.html">Supported
+     * instance types in Amazon OpenSearch Service</a> in the <i>Amazon OpenSearch
+     * Service Developer Guide</i>.</p>
      */
     inline AwsElasticsearchDomainElasticsearchClusterConfigDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -304,25 +352,25 @@ namespace Model
   private:
 
     int m_dedicatedMasterCount;
-    bool m_dedicatedMasterCountHasBeenSet;
+    bool m_dedicatedMasterCountHasBeenSet = false;
 
     bool m_dedicatedMasterEnabled;
-    bool m_dedicatedMasterEnabledHasBeenSet;
+    bool m_dedicatedMasterEnabledHasBeenSet = false;
 
     Aws::String m_dedicatedMasterType;
-    bool m_dedicatedMasterTypeHasBeenSet;
+    bool m_dedicatedMasterTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails m_zoneAwarenessConfig;
-    bool m_zoneAwarenessConfigHasBeenSet;
+    bool m_zoneAwarenessConfigHasBeenSet = false;
 
     bool m_zoneAwarenessEnabled;
-    bool m_zoneAwarenessEnabledHasBeenSet;
+    bool m_zoneAwarenessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

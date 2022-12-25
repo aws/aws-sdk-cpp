@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AwsLambdaTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API AwsLambdaTransformation
+  class AwsLambdaTransformation
   {
   public:
-    AwsLambdaTransformation();
-    AwsLambdaTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AwsLambdaTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AwsLambdaTransformation();
+    AWS_S3CONTROL_API AwsLambdaTransformation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AwsLambdaTransformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_functionArn;
-    bool m_functionArnHasBeenSet;
+    bool m_functionArnHasBeenSet = false;
 
     Aws::String m_functionPayload;
-    bool m_functionPayloadHasBeenSet;
+    bool m_functionPayloadHasBeenSet = false;
   };
 
 } // namespace Model

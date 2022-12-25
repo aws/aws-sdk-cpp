@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apprunner/model/CustomDomain.h>
+#include <aws/apprunner/model/VpcDNSTarget.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +27,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API DescribeCustomDomainsResult
+  class DescribeCustomDomainsResult
   {
   public:
-    DescribeCustomDomainsResult();
-    DescribeCustomDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DescribeCustomDomainsResult();
+    AWS_APPRUNNER_API DescribeCustomDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DescribeCustomDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -171,6 +172,42 @@ namespace Model
 
 
     /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline const Aws::Vector<VpcDNSTarget>& GetVpcDNSTargets() const{ return m_vpcDNSTargets; }
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline void SetVpcDNSTargets(const Aws::Vector<VpcDNSTarget>& value) { m_vpcDNSTargets = value; }
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline void SetVpcDNSTargets(Aws::Vector<VpcDNSTarget>&& value) { m_vpcDNSTargets = std::move(value); }
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline DescribeCustomDomainsResult& WithVpcDNSTargets(const Aws::Vector<VpcDNSTarget>& value) { SetVpcDNSTargets(value); return *this;}
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline DescribeCustomDomainsResult& WithVpcDNSTargets(Aws::Vector<VpcDNSTarget>&& value) { SetVpcDNSTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline DescribeCustomDomainsResult& AddVpcDNSTargets(const VpcDNSTarget& value) { m_vpcDNSTargets.push_back(value); return *this; }
+
+    /**
+     * <p>DNS Target records for the custom domains of this Amazon VPC. </p>
+     */
+    inline DescribeCustomDomainsResult& AddVpcDNSTargets(VpcDNSTarget&& value) { m_vpcDNSTargets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The token that you can pass in a subsequent request to get the next result
      * page. It's returned in a paginated request.</p>
      */
@@ -219,6 +256,8 @@ namespace Model
     Aws::String m_serviceArn;
 
     Aws::Vector<CustomDomain> m_customDomains;
+
+    Aws::Vector<VpcDNSTarget> m_vpcDNSTargets;
 
     Aws::String m_nextToken;
   };

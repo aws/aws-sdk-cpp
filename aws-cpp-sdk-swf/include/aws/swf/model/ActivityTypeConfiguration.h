@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ActivityTypeConfiguration
+  class ActivityTypeConfiguration
   {
   public:
-    ActivityTypeConfiguration();
-    ActivityTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ActivityTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ActivityTypeConfiguration();
+    AWS_SWF_API ActivityTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ActivityTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -549,22 +549,22 @@ namespace Model
   private:
 
     Aws::String m_defaultTaskStartToCloseTimeout;
-    bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskStartToCloseTimeoutHasBeenSet = false;
 
     Aws::String m_defaultTaskHeartbeatTimeout;
-    bool m_defaultTaskHeartbeatTimeoutHasBeenSet;
+    bool m_defaultTaskHeartbeatTimeoutHasBeenSet = false;
 
     TaskList m_defaultTaskList;
-    bool m_defaultTaskListHasBeenSet;
+    bool m_defaultTaskListHasBeenSet = false;
 
     Aws::String m_defaultTaskPriority;
-    bool m_defaultTaskPriorityHasBeenSet;
+    bool m_defaultTaskPriorityHasBeenSet = false;
 
     Aws::String m_defaultTaskScheduleToStartTimeout;
-    bool m_defaultTaskScheduleToStartTimeoutHasBeenSet;
+    bool m_defaultTaskScheduleToStartTimeoutHasBeenSet = false;
 
     Aws::String m_defaultTaskScheduleToCloseTimeout;
-    bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet;
+    bool m_defaultTaskScheduleToCloseTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

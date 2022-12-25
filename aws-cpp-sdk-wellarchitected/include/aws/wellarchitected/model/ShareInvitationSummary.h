@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ShareInvitationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ShareInvitationSummary
+  class ShareInvitationSummary
   {
   public:
-    ShareInvitationSummary();
-    ShareInvitationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ShareInvitationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API ShareInvitationSummary();
+    AWS_WELLARCHITECTED_API ShareInvitationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API ShareInvitationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -298,31 +298,31 @@ namespace Model
   private:
 
     Aws::String m_shareInvitationId;
-    bool m_shareInvitationIdHasBeenSet;
+    bool m_shareInvitationIdHasBeenSet = false;
 
     Aws::String m_sharedBy;
-    bool m_sharedByHasBeenSet;
+    bool m_sharedByHasBeenSet = false;
 
     Aws::String m_sharedWith;
-    bool m_sharedWithHasBeenSet;
+    bool m_sharedWithHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     ShareResourceType m_shareResourceType;
-    bool m_shareResourceTypeHasBeenSet;
+    bool m_shareResourceTypeHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_lensName;
-    bool m_lensNameHasBeenSet;
+    bool m_lensNameHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
   };
 
 } // namespace Model

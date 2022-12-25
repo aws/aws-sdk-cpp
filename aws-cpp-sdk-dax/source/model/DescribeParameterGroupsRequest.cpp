@@ -26,7 +26,7 @@ Aws::String DescribeParameterGroupsRequest::SerializePayload() const
 
   if(m_parameterGroupNamesHasBeenSet)
   {
-   Array<JsonValue> parameterGroupNamesJsonList(m_parameterGroupNames.size());
+   Aws::Utils::Array<JsonValue> parameterGroupNamesJsonList(m_parameterGroupNames.size());
    for(unsigned parameterGroupNamesIndex = 0; parameterGroupNamesIndex < parameterGroupNamesJsonList.GetLength(); ++parameterGroupNamesIndex)
    {
      parameterGroupNamesJsonList[parameterGroupNamesIndex].AsString(m_parameterGroupNames[parameterGroupNamesIndex]);

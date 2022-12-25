@@ -28,7 +28,18 @@ namespace Model
     InvalidSecurityGroup,
     ImageDeleted,
     ImageAccessDenied,
-    InvalidImage
+    InvalidImage,
+    KMSKeyAccessDenied,
+    KMSKeyNotFound,
+    InvalidStateKMSKey,
+    DisabledKMSKey,
+    EFSIOError,
+    EFSMountConnectivityError,
+    EFSMountFailure,
+    EFSMountTimeout,
+    InvalidRuntime,
+    InvalidZipFileException,
+    FunctionError
   };
 
 namespace StateReasonCodeMapper

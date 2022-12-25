@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SearchResourcesCriteria
+  class SearchResourcesCriteria
   {
   public:
-    SearchResourcesCriteria();
-    SearchResourcesCriteria(Aws::Utils::Json::JsonView jsonValue);
-    SearchResourcesCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SearchResourcesCriteria();
+    AWS_MACIE2_API SearchResourcesCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SearchResourcesCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     SearchResourcesSimpleCriterion m_simpleCriterion;
-    bool m_simpleCriterionHasBeenSet;
+    bool m_simpleCriterionHasBeenSet = false;
 
     SearchResourcesTagCriterion m_tagCriterion;
-    bool m_tagCriterionHasBeenSet;
+    bool m_tagCriterionHasBeenSet = false;
   };
 
 } // namespace Model

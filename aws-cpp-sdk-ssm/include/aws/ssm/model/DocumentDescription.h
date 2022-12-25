@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentDescription
+  class DocumentDescription
   {
   public:
-    DocumentDescription();
-    DocumentDescription(Aws::Utils::Json::JsonView jsonValue);
-    DocumentDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentDescription();
+    AWS_SSM_API DocumentDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1376,94 +1376,94 @@ namespace Model
   private:
 
     Aws::String m_sha1;
-    bool m_sha1HasBeenSet;
+    bool m_sha1HasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
 
     DocumentHashType m_hashType;
-    bool m_hashTypeHasBeenSet;
+    bool m_hashTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     DocumentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusInformation;
-    bool m_statusInformationHasBeenSet;
+    bool m_statusInformationHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<DocumentParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<PlatformType> m_platformTypes;
-    bool m_platformTypesHasBeenSet;
+    bool m_platformTypesHasBeenSet = false;
 
     DocumentType m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_latestVersion;
-    bool m_latestVersionHasBeenSet;
+    bool m_latestVersionHasBeenSet = false;
 
     Aws::String m_defaultVersion;
-    bool m_defaultVersionHasBeenSet;
+    bool m_defaultVersionHasBeenSet = false;
 
     DocumentFormat m_documentFormat;
-    bool m_documentFormatHasBeenSet;
+    bool m_documentFormatHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AttachmentInformation> m_attachmentsInformation;
-    bool m_attachmentsInformationHasBeenSet;
+    bool m_attachmentsInformationHasBeenSet = false;
 
     Aws::Vector<DocumentRequires> m_requires;
-    bool m_requiresHasBeenSet;
+    bool m_requiresHasBeenSet = false;
 
     Aws::String m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     Aws::Vector<ReviewInformation> m_reviewInformation;
-    bool m_reviewInformationHasBeenSet;
+    bool m_reviewInformationHasBeenSet = false;
 
     Aws::String m_approvedVersion;
-    bool m_approvedVersionHasBeenSet;
+    bool m_approvedVersionHasBeenSet = false;
 
     Aws::String m_pendingReviewVersion;
-    bool m_pendingReviewVersionHasBeenSet;
+    bool m_pendingReviewVersionHasBeenSet = false;
 
     ReviewStatus m_reviewStatus;
-    bool m_reviewStatusHasBeenSet;
+    bool m_reviewStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_categoryEnum;
-    bool m_categoryEnumHasBeenSet;
+    bool m_categoryEnumHasBeenSet = false;
   };
 
 } // namespace Model

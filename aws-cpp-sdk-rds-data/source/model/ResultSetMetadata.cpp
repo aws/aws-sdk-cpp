@@ -44,7 +44,7 @@ ResultSetMetadata& ResultSetMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("columnMetadata"))
   {
-    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
+    Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("columnMetadata");
     for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
     {
       m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue ResultSetMetadata::Jsonize() const
 
   if(m_columnMetadataHasBeenSet)
   {
-   Array<JsonValue> columnMetadataJsonList(m_columnMetadata.size());
+   Aws::Utils::Array<JsonValue> columnMetadataJsonList(m_columnMetadata.size());
    for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
    {
      columnMetadataJsonList[columnMetadataIndex].AsObject(m_columnMetadata[columnMetadataIndex].Jsonize());

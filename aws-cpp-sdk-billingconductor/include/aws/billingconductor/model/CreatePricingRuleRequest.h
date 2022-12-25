@@ -10,6 +10,7 @@
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/billingconductor/model/CreateTieringInput.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API CreatePricingRuleRequest : public BillingConductorRequest
+  class CreatePricingRuleRequest : public BillingConductorRequest
   {
   public:
-    CreatePricingRuleRequest();
+    AWS_BILLINGCONDUCTOR_API CreatePricingRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,55 +34,55 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePricingRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p> The token that is needed to support idempotency. Idempotency isn't currently
+     * <p> The token that's needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
     inline CreatePricingRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -170,38 +171,38 @@ namespace Model
 
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline const PricingRuleScope& GetScope() const{ return m_scope; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(const PricingRuleScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline void SetScope(PricingRuleScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline CreatePricingRuleRequest& WithScope(const PricingRuleScope& value) { SetScope(value); return *this;}
 
     /**
-     * <p> The scope of pricing rule that indicates if it is globally applicable, or is
-     * service-specific. </p>
+     * <p> The scope of pricing rule that indicates if it's globally applicable, or
+     * it's service-specific. </p>
      */
     inline CreatePricingRuleRequest& WithScope(PricingRuleScope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -238,22 +239,22 @@ namespace Model
 
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline double GetModifierPercentage() const{ return m_modifierPercentage; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline bool ModifierPercentageHasBeenSet() const { return m_modifierPercentageHasBeenSet; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline void SetModifierPercentage(double value) { m_modifierPercentageHasBeenSet = true; m_modifierPercentage = value; }
 
     /**
-     * <p> A percentage modifier applied on the public pricing rates. </p>
+     * <p> A percentage modifier that's applied on the public pricing rates. </p>
      */
     inline CreatePricingRuleRequest& WithModifierPercentage(double value) { SetModifierPercentage(value); return *this;}
 
@@ -393,31 +394,117 @@ namespace Model
      */
     inline CreatePricingRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline const Aws::String& GetBillingEntity() const{ return m_billingEntity; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const Aws::String& value) { m_billingEntityHasBeenSet = true; m_billingEntity = value; }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(Aws::String&& value) { m_billingEntityHasBeenSet = true; m_billingEntity = std::move(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline void SetBillingEntity(const char* value) { m_billingEntityHasBeenSet = true; m_billingEntity.assign(value); }
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const Aws::String& value) { SetBillingEntity(value); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(Aws::String&& value) { SetBillingEntity(std::move(value)); return *this;}
+
+    /**
+     * <p> The seller of services provided by Amazon Web Services, their affiliates, or
+     * third-party providers selling services via Amazon Web Services Marketplace. </p>
+     */
+    inline CreatePricingRuleRequest& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
+
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const CreateTieringInput& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const CreateTieringInput& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(CreateTieringInput&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(const CreateTieringInput& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(CreateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PricingRuleScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     PricingRuleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_modifierPercentage;
-    bool m_modifierPercentageHasBeenSet;
+    bool m_modifierPercentageHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_billingEntity;
+    bool m_billingEntityHasBeenSet = false;
+
+    CreateTieringInput m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

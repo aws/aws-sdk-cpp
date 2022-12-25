@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DnsDuplicateRuleGroupViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API DnsDuplicateRuleGroupViolation
+  class DnsDuplicateRuleGroupViolation
   {
   public:
-    DnsDuplicateRuleGroupViolation();
-    DnsDuplicateRuleGroupViolation(Aws::Utils::Json::JsonView jsonValue);
-    DnsDuplicateRuleGroupViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API DnsDuplicateRuleGroupViolation();
+    AWS_FMS_API DnsDuplicateRuleGroupViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API DnsDuplicateRuleGroupViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_violationTargetDescription;
-    bool m_violationTargetDescriptionHasBeenSet;
+    bool m_violationTargetDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

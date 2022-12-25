@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ItemResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ItemResponse
+  class ItemResponse
   {
   public:
-    ItemResponse();
-    ItemResponse(Aws::Utils::Json::JsonView jsonValue);
-    ItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ItemResponse();
+    AWS_DYNAMODB_API ItemResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,7 +102,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,46 +27,46 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult
+  class DescribeMetricCollectionTypesResult
   {
   public:
-    DescribeMetricCollectionTypesResult();
-    DescribeMetricCollectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeMetricCollectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult();
+    AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeMetricCollectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline const Aws::Vector<MetricCollectionType>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline void SetMetrics(const Aws::Vector<MetricCollectionType>& value) { m_metrics = value; }
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline void SetMetrics(Aws::Vector<MetricCollectionType>&& value) { m_metrics = std::move(value); }
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline DescribeMetricCollectionTypesResult& WithMetrics(const Aws::Vector<MetricCollectionType>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline DescribeMetricCollectionTypesResult& WithMetrics(Aws::Vector<MetricCollectionType>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline DescribeMetricCollectionTypesResult& AddMetrics(const MetricCollectionType& value) { m_metrics.push_back(value); return *this; }
 
     /**
-     * <p>One or more metrics.</p>
+     * <p>The metrics.</p>
      */
     inline DescribeMetricCollectionTypesResult& AddMetrics(MetricCollectionType&& value) { m_metrics.push_back(std::move(value)); return *this; }
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MatchRange">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API MatchRange
+  class MatchRange
   {
   public:
-    MatchRange();
-    MatchRange(Aws::Utils::Json::JsonView jsonValue);
-    MatchRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API MatchRange();
+    AWS_APPMESH_API MatchRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API MatchRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,10 +82,10 @@ namespace Model
   private:
 
     long long m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

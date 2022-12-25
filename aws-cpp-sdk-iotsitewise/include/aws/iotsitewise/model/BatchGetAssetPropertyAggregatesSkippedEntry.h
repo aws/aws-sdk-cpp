@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregatesSkippedEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSkippedEntry
+  class BatchGetAssetPropertyAggregatesSkippedEntry
   {
   public:
-    BatchGetAssetPropertyAggregatesSkippedEntry();
-    BatchGetAssetPropertyAggregatesSkippedEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyAggregatesSkippedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSkippedEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSkippedEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesSkippedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     BatchEntryCompletionStatus m_completionStatus;
-    bool m_completionStatusHasBeenSet;
+    bool m_completionStatusHasBeenSet = false;
 
     BatchGetAssetPropertyAggregatesErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
   };
 
 } // namespace Model

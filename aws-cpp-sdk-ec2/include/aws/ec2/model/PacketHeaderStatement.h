@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PacketHeaderStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PacketHeaderStatement
+  class PacketHeaderStatement
   {
   public:
-    PacketHeaderStatement();
-    PacketHeaderStatement(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PacketHeaderStatement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PacketHeaderStatement();
+    AWS_EC2_API PacketHeaderStatement(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PacketHeaderStatement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -360,25 +360,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_sourceAddresses;
-    bool m_sourceAddressesHasBeenSet;
+    bool m_sourceAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationAddresses;
-    bool m_destinationAddressesHasBeenSet;
+    bool m_destinationAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourcePorts;
-    bool m_sourcePortsHasBeenSet;
+    bool m_sourcePortsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationPorts;
-    bool m_destinationPortsHasBeenSet;
+    bool m_destinationPortsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourcePrefixLists;
-    bool m_sourcePrefixListsHasBeenSet;
+    bool m_sourcePrefixListsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinationPrefixLists;
-    bool m_destinationPrefixListsHasBeenSet;
+    bool m_destinationPrefixListsHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
   };
 
 } // namespace Model

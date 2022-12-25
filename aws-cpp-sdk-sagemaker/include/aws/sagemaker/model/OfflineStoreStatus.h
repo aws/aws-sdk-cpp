@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OfflineStoreStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OfflineStoreStatus
+  class OfflineStoreStatus
   {
   public:
-    OfflineStoreStatus();
-    OfflineStoreStatus(Aws::Utils::Json::JsonView jsonValue);
-    OfflineStoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OfflineStoreStatus();
+    AWS_SAGEMAKER_API OfflineStoreStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OfflineStoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     OfflineStoreStatusValue m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_blockedReason;
-    bool m_blockedReasonHasBeenSet;
+    bool m_blockedReasonHasBeenSet = false;
   };
 
 } // namespace Model

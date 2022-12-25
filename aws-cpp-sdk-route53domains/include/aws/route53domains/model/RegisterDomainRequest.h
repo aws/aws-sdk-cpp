@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomainRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API RegisterDomainRequest : public Route53DomainsRequest
+  class RegisterDomainRequest : public Route53DomainsRequest
   {
   public:
-    RegisterDomainRequest();
+    AWS_ROUTE53DOMAINS_API RegisterDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53DOMAINS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -292,28 +292,28 @@ namespace Model
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoRenew() const{ return m_autoRenew; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
@@ -597,34 +597,34 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_idnLangCode;
-    bool m_idnLangCodeHasBeenSet;
+    bool m_idnLangCodeHasBeenSet = false;
 
     int m_durationInYears;
-    bool m_durationInYearsHasBeenSet;
+    bool m_durationInYearsHasBeenSet = false;
 
     bool m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     ContactDetail m_adminContact;
-    bool m_adminContactHasBeenSet;
+    bool m_adminContactHasBeenSet = false;
 
     ContactDetail m_registrantContact;
-    bool m_registrantContactHasBeenSet;
+    bool m_registrantContactHasBeenSet = false;
 
     ContactDetail m_techContact;
-    bool m_techContactHasBeenSet;
+    bool m_techContactHasBeenSet = false;
 
     bool m_privacyProtectAdminContact;
-    bool m_privacyProtectAdminContactHasBeenSet;
+    bool m_privacyProtectAdminContactHasBeenSet = false;
 
     bool m_privacyProtectRegistrantContact;
-    bool m_privacyProtectRegistrantContactHasBeenSet;
+    bool m_privacyProtectRegistrantContactHasBeenSet = false;
 
     bool m_privacyProtectTechContact;
-    bool m_privacyProtectTechContactHasBeenSet;
+    bool m_privacyProtectTechContactHasBeenSet = false;
   };
 
 } // namespace Model

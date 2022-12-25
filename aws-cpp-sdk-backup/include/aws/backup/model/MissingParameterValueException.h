@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/MissingParameterValueException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API MissingParameterValueException
+  class MissingParameterValueException
   {
   public:
-    MissingParameterValueException();
-    MissingParameterValueException(Aws::Utils::Json::JsonView jsonValue);
-    MissingParameterValueException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API MissingParameterValueException();
+    AWS_BACKUP_API MissingParameterValueException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API MissingParameterValueException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CloudHsmServiceException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API CloudHsmServiceException
+  class CloudHsmServiceException
   {
   public:
-    CloudHsmServiceException();
-    CloudHsmServiceException(Aws::Utils::Json::JsonView jsonValue);
-    CloudHsmServiceException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSM_API CloudHsmServiceException();
+    AWS_CLOUDHSM_API CloudHsmServiceException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSM_API CloudHsmServiceException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     bool m_retryable;
-    bool m_retryableHasBeenSet;
+    bool m_retryableHasBeenSet = false;
   };
 
 } // namespace Model

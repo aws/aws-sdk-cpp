@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CidrBlockAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API CidrBlockAssociation
+  class CidrBlockAssociation
   {
   public:
-    CidrBlockAssociation();
-    CidrBlockAssociation(Aws::Utils::Json::JsonView jsonValue);
-    CidrBlockAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API CidrBlockAssociation();
+    AWS_SECURITYHUB_API CidrBlockAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API CidrBlockAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::String m_cidrBlockState;
-    bool m_cidrBlockStateHasBeenSet;
+    bool m_cidrBlockStateHasBeenSet = false;
   };
 
 } // namespace Model

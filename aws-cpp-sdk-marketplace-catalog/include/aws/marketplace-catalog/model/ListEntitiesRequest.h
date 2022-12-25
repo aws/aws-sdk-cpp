@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MARKETPLACECATALOG_API ListEntitiesRequest : public MarketplaceCatalogRequest
+  class ListEntitiesRequest : public MarketplaceCatalogRequest
   {
   public:
-    ListEntitiesRequest();
+    AWS_MARKETPLACECATALOG_API ListEntitiesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListEntities"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACECATALOG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -287,22 +287,22 @@ namespace Model
   private:
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::Vector<Filter> m_filterList;
-    bool m_filterListHasBeenSet;
+    bool m_filterListHasBeenSet = false;
 
     Sort m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

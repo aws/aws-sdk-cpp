@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RandomSplitActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API RandomSplitActivity
+  class RandomSplitActivity
   {
   public:
-    RandomSplitActivity();
-    RandomSplitActivity(Aws::Utils::Json::JsonView jsonValue);
-    RandomSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API RandomSplitActivity();
+    AWS_PINPOINT_API RandomSplitActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API RandomSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<RandomSplitEntry> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
   };
 
 } // namespace Model

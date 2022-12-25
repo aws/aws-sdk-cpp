@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetDataflowEndpointGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API GetDataflowEndpointGroupRequest : public GroundStationRequest
+  class GetDataflowEndpointGroupRequest : public GroundStationRequest
   {
   public:
-    GetDataflowEndpointGroupRequest();
+    AWS_GROUNDSTATION_API GetDataflowEndpointGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDataflowEndpointGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_dataflowEndpointGroupId;
-    bool m_dataflowEndpointGroupIdHasBeenSet;
+    bool m_dataflowEndpointGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

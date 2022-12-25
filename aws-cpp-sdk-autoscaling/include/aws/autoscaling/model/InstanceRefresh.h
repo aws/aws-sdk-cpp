@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefresh">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API InstanceRefresh
+  class InstanceRefresh
   {
   public:
-    InstanceRefresh();
-    InstanceRefresh(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceRefresh& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefresh();
+    AWS_AUTOSCALING_API InstanceRefresh(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceRefresh& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -472,37 +472,37 @@ namespace Model
   private:
 
     Aws::String m_instanceRefreshId;
-    bool m_instanceRefreshIdHasBeenSet;
+    bool m_instanceRefreshIdHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     InstanceRefreshStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     int m_percentageComplete;
-    bool m_percentageCompleteHasBeenSet;
+    bool m_percentageCompleteHasBeenSet = false;
 
     int m_instancesToUpdate;
-    bool m_instancesToUpdateHasBeenSet;
+    bool m_instancesToUpdateHasBeenSet = false;
 
     InstanceRefreshProgressDetails m_progressDetails;
-    bool m_progressDetailsHasBeenSet;
+    bool m_progressDetailsHasBeenSet = false;
 
     RefreshPreferences m_preferences;
-    bool m_preferencesHasBeenSet;
+    bool m_preferencesHasBeenSet = false;
 
     DesiredConfiguration m_desiredConfiguration;
-    bool m_desiredConfigurationHasBeenSet;
+    bool m_desiredConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

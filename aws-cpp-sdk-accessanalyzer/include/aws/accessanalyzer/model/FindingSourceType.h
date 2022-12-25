@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     POLICY,
     BUCKET_ACL,
-    S3_ACCESS_POINT
+    S3_ACCESS_POINT,
+    S3_ACCESS_POINT_ACCOUNT
   };
 
 namespace FindingSourceTypeMapper

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AllowAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API AllowAction
+  class AllowAction
   {
   public:
-    AllowAction();
-    AllowAction(Aws::Utils::Json::JsonView jsonValue);
-    AllowAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API AllowAction();
+    AWS_WAFV2_API AllowAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API AllowAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     CustomRequestHandling m_customRequestHandling;
-    bool m_customRequestHandlingHasBeenSet;
+    bool m_customRequestHandlingHasBeenSet = false;
   };
 
 } // namespace Model

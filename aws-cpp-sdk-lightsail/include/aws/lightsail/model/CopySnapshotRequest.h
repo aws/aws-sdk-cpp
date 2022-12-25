@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CopySnapshotRequest : public LightsailRequest
+  class CopySnapshotRequest : public LightsailRequest
   {
   public:
-    CopySnapshotRequest();
+    AWS_LIGHTSAIL_API CopySnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopySnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -427,22 +427,22 @@ namespace Model
   private:
 
     Aws::String m_sourceSnapshotName;
-    bool m_sourceSnapshotNameHasBeenSet;
+    bool m_sourceSnapshotNameHasBeenSet = false;
 
     Aws::String m_sourceResourceName;
-    bool m_sourceResourceNameHasBeenSet;
+    bool m_sourceResourceNameHasBeenSet = false;
 
     Aws::String m_restoreDate;
-    bool m_restoreDateHasBeenSet;
+    bool m_restoreDateHasBeenSet = false;
 
     bool m_useLatestRestorableAutoSnapshot;
-    bool m_useLatestRestorableAutoSnapshotHasBeenSet;
+    bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 
     Aws::String m_targetSnapshotName;
-    bool m_targetSnapshotNameHasBeenSet;
+    bool m_targetSnapshotNameHasBeenSet = false;
 
     RegionName m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

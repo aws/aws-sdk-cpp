@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerService">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerService
+  class ContainerService
   {
   public:
-    ContainerService();
-    ContainerService(Aws::Utils::Json::JsonView jsonValue);
-    ContainerService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerService();
+    AWS_LIGHTSAIL_API ContainerService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1112,61 +1112,61 @@ namespace Model
   private:
 
     Aws::String m_containerServiceName;
-    bool m_containerServiceNameHasBeenSet;
+    bool m_containerServiceNameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ContainerServicePowerName m_power;
-    bool m_powerHasBeenSet;
+    bool m_powerHasBeenSet = false;
 
     Aws::String m_powerId;
-    bool m_powerIdHasBeenSet;
+    bool m_powerIdHasBeenSet = false;
 
     ContainerServiceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ContainerServiceStateDetail m_stateDetail;
-    bool m_stateDetailHasBeenSet;
+    bool m_stateDetailHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     ContainerServiceDeployment m_currentDeployment;
-    bool m_currentDeploymentHasBeenSet;
+    bool m_currentDeploymentHasBeenSet = false;
 
     ContainerServiceDeployment m_nextDeployment;
-    bool m_nextDeploymentHasBeenSet;
+    bool m_nextDeploymentHasBeenSet = false;
 
     bool m_isDisabled;
-    bool m_isDisabledHasBeenSet;
+    bool m_isDisabledHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     Aws::String m_privateDomainName;
-    bool m_privateDomainNameHasBeenSet;
+    bool m_privateDomainNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-    bool m_publicDomainNamesHasBeenSet;
+    bool m_publicDomainNamesHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     PrivateRegistryAccess m_privateRegistryAccess;
-    bool m_privateRegistryAccessHasBeenSet;
+    bool m_privateRegistryAccessHasBeenSet = false;
   };
 
 } // namespace Model

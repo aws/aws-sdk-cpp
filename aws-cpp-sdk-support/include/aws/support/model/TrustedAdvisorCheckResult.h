@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorCheckResult
+  class TrustedAdvisorCheckResult
   {
   public:
-    TrustedAdvisorCheckResult();
-    TrustedAdvisorCheckResult(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorCheckResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorCheckResult();
+    AWS_SUPPORT_API TrustedAdvisorCheckResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorCheckResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -272,22 +272,22 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     TrustedAdvisorResourcesSummary m_resourcesSummary;
-    bool m_resourcesSummaryHasBeenSet;
+    bool m_resourcesSummaryHasBeenSet = false;
 
     TrustedAdvisorCategorySpecificSummary m_categorySpecificSummary;
-    bool m_categorySpecificSummaryHasBeenSet;
+    bool m_categorySpecificSummaryHasBeenSet = false;
 
     Aws::Vector<TrustedAdvisorResourceDetail> m_flaggedResources;
-    bool m_flaggedResourcesHasBeenSet;
+    bool m_flaggedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,21 +25,21 @@ namespace Model
 
   /**
    * <p>Provides authorization for Amazon to bring a specific IP address range to a
-   * specific AWS account using bring your own IP addresses (BYOIP). </p> <p>For more
-   * information, see <a
+   * specific Amazon Web Services account using bring your own IP addresses (BYOIP).
+   * </p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-   * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+   * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CidrAuthorizationContext
+  class CidrAuthorizationContext
   {
   public:
-    CidrAuthorizationContext();
-    CidrAuthorizationContext(Aws::Utils::Json::JsonView jsonValue);
-    CidrAuthorizationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext();
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
   };
 
 } // namespace Model

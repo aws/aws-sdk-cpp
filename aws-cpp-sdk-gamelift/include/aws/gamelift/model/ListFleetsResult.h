@@ -25,81 +25,51 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetsOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API ListFleetsResult
+  class ListFleetsResult
   {
   public:
-    ListFleetsResult();
-    ListFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ListFleetsResult();
+    AWS_GAMELIFT_API ListFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API ListFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIds = value; }
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIds = std::move(value); }
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline ListFleetsResult& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline ListFleetsResult& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline ListFleetsResult& AddFleetIds(const Aws::String& value) { m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline ListFleetsResult& AddFleetIds(Aws::String&& value) { m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A set of fleet IDs that match the list request. You can retrieve additional
-     * information about all returned fleets by passing this result set to a
-     * <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.</p>
+     * <p>A set of fleet IDs that match the list request.</p>
      */
     inline ListFleetsResult& AddFleetIds(const char* value) { m_fleetIds.push_back(value); return *this; }
 

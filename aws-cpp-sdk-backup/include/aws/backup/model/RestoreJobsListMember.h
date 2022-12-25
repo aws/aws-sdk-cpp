@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RestoreJobsListMember">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API RestoreJobsListMember
+  class RestoreJobsListMember
   {
   public:
-    RestoreJobsListMember();
-    RestoreJobsListMember(Aws::Utils::Json::JsonView jsonValue);
-    RestoreJobsListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API RestoreJobsListMember();
+    AWS_BACKUP_API RestoreJobsListMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API RestoreJobsListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -614,43 +614,43 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_restoreJobId;
-    bool m_restoreJobIdHasBeenSet;
+    bool m_restoreJobIdHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     RestoreJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_percentDone;
-    bool m_percentDoneHasBeenSet;
+    bool m_percentDoneHasBeenSet = false;
 
     long long m_backupSizeInBytes;
-    bool m_backupSizeInBytesHasBeenSet;
+    bool m_backupSizeInBytesHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     long long m_expectedCompletionTimeMinutes;
-    bool m_expectedCompletionTimeMinutesHasBeenSet;
+    bool m_expectedCompletionTimeMinutesHasBeenSet = false;
 
     Aws::String m_createdResourceArn;
-    bool m_createdResourceArnHasBeenSet;
+    bool m_createdResourceArnHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MetricDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MetricDimension
+  class MetricDimension
   {
   public:
-    MetricDimension();
-    MetricDimension(Aws::Utils::Json::JsonView jsonValue);
-    MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MetricDimension();
+    AWS_IOT_API MetricDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionName;
-    bool m_dimensionNameHasBeenSet;
+    bool m_dimensionNameHasBeenSet = false;
 
     DimensionValueOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

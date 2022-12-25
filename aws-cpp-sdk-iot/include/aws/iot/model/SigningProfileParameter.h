@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SigningProfileParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API SigningProfileParameter
+  class SigningProfileParameter
   {
   public:
-    SigningProfileParameter();
-    SigningProfileParameter(Aws::Utils::Json::JsonView jsonValue);
-    SigningProfileParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SigningProfileParameter();
+    AWS_IOT_API SigningProfileParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SigningProfileParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_certificatePathOnDevice;
-    bool m_certificatePathOnDeviceHasBeenSet;
+    bool m_certificatePathOnDeviceHasBeenSet = false;
   };
 
 } // namespace Model

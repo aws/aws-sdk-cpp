@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HttpEndpointBufferingHints">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API HttpEndpointBufferingHints
+  class HttpEndpointBufferingHints
   {
   public:
-    HttpEndpointBufferingHints();
-    HttpEndpointBufferingHints(Aws::Utils::Json::JsonView jsonValue);
-    HttpEndpointBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API HttpEndpointBufferingHints();
+    AWS_FIREHOSE_API HttpEndpointBufferingHints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API HttpEndpointBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     int m_sizeInMBs;
-    bool m_sizeInMBsHasBeenSet;
+    bool m_sizeInMBsHasBeenSet = false;
 
     int m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

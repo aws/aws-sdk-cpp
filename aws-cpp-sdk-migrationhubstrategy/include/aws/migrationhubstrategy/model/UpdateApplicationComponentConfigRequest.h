@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
+#include <aws/migrationhubstrategy/model/AppType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/migrationhubstrategy/model/InclusionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateApplicationComponentConfigRequest : public MigrationHubStrategyRecommendationsRequest
+  class UpdateApplicationComponentConfigRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    UpdateApplicationComponentConfigRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateApplicationComponentConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +34,38 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplicationComponentConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline const AppType& GetAppType() const{ return m_appType; }
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline bool AppTypeHasBeenSet() const { return m_appTypeHasBeenSet; }
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline void SetAppType(const AppType& value) { m_appTypeHasBeenSet = true; m_appType = value; }
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline void SetAppType(AppType&& value) { m_appTypeHasBeenSet = true; m_appType = std::move(value); }
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline UpdateApplicationComponentConfigRequest& WithAppType(const AppType& value) { SetAppType(value); return *this;}
+
+    /**
+     * <p>The type of known component.</p>
+     */
+    inline UpdateApplicationComponentConfigRequest& WithAppType(AppType&& value) { SetAppType(std::move(value)); return *this;}
 
 
     /**
@@ -83,6 +115,39 @@ namespace Model
      * </p>
      */
     inline UpdateApplicationComponentConfigRequest& WithApplicationComponentId(const char* value) { SetApplicationComponentId(value); return *this;}
+
+
+    /**
+     * <p>Update the configuration request of an application component. If it is set to
+     * true, the source code and/or database credentials are updated. If it is set to
+     * false, the source code and/or database credentials are updated and an analysis
+     * is initiated.</p>
+     */
+    inline bool GetConfigureOnly() const{ return m_configureOnly; }
+
+    /**
+     * <p>Update the configuration request of an application component. If it is set to
+     * true, the source code and/or database credentials are updated. If it is set to
+     * false, the source code and/or database credentials are updated and an analysis
+     * is initiated.</p>
+     */
+    inline bool ConfigureOnlyHasBeenSet() const { return m_configureOnlyHasBeenSet; }
+
+    /**
+     * <p>Update the configuration request of an application component. If it is set to
+     * true, the source code and/or database credentials are updated. If it is set to
+     * false, the source code and/or database credentials are updated and an analysis
+     * is initiated.</p>
+     */
+    inline void SetConfigureOnly(bool value) { m_configureOnlyHasBeenSet = true; m_configureOnly = value; }
+
+    /**
+     * <p>Update the configuration request of an application component. If it is set to
+     * true, the source code and/or database credentials are updated. If it is set to
+     * false, the source code and/or database credentials are updated and an analysis
+     * is initiated.</p>
+     */
+    inline UpdateApplicationComponentConfigRequest& WithConfigureOnly(bool value) { SetConfigureOnly(value); return *this;}
 
 
     /**
@@ -250,20 +315,26 @@ namespace Model
 
   private:
 
+    AppType m_appType;
+    bool m_appTypeHasBeenSet = false;
+
     Aws::String m_applicationComponentId;
-    bool m_applicationComponentIdHasBeenSet;
+    bool m_applicationComponentIdHasBeenSet = false;
+
+    bool m_configureOnly;
+    bool m_configureOnlyHasBeenSet = false;
 
     InclusionStatus m_inclusionStatus;
-    bool m_inclusionStatusHasBeenSet;
+    bool m_inclusionStatusHasBeenSet = false;
 
     Aws::String m_secretsManagerKey;
-    bool m_secretsManagerKeyHasBeenSet;
+    bool m_secretsManagerKeyHasBeenSet = false;
 
     Aws::Vector<SourceCode> m_sourceCodeList;
-    bool m_sourceCodeListHasBeenSet;
+    bool m_sourceCodeListHasBeenSet = false;
 
     StrategyOption m_strategyOption;
-    bool m_strategyOptionHasBeenSet;
+    bool m_strategyOptionHasBeenSet = false;
   };
 
 } // namespace Model

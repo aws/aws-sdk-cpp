@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ServiceEvent
+  class ServiceEvent
   {
   public:
-    ServiceEvent();
-    ServiceEvent(Aws::Utils::Json::JsonView jsonValue);
-    ServiceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ServiceEvent();
+    AWS_ECS_API ServiceEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ServiceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

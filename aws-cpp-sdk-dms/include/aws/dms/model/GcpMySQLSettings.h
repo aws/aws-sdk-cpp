@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GcpMySQLSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings
+  class GcpMySQLSettings
   {
   public:
-    GcpMySQLSettings();
-    GcpMySQLSettings(Aws::Utils::Json::JsonView jsonValue);
-    GcpMySQLSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -789,46 +789,46 @@ namespace Model
   private:
 
     Aws::String m_afterConnectScript;
-    bool m_afterConnectScriptHasBeenSet;
+    bool m_afterConnectScriptHasBeenSet = false;
 
     bool m_cleanSourceMetadataOnMismatch;
-    bool m_cleanSourceMetadataOnMismatchHasBeenSet;
+    bool m_cleanSourceMetadataOnMismatchHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     int m_eventsPollInterval;
-    bool m_eventsPollIntervalHasBeenSet;
+    bool m_eventsPollIntervalHasBeenSet = false;
 
     TargetDbType m_targetDbType;
-    bool m_targetDbTypeHasBeenSet;
+    bool m_targetDbTypeHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     int m_parallelLoadThreads;
-    bool m_parallelLoadThreadsHasBeenSet;
+    bool m_parallelLoadThreadsHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_serverTimezone;
-    bool m_serverTimezoneHasBeenSet;
+    bool m_serverTimezoneHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

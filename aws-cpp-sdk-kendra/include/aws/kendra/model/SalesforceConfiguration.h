@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceConfiguration
+  class SalesforceConfiguration
   {
   public:
-    SalesforceConfiguration();
-    SalesforceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceConfiguration();
+    AWS_KENDRA_API SalesforceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -588,31 +588,31 @@ namespace Model
   private:
 
     Aws::String m_serverUrl;
-    bool m_serverUrlHasBeenSet;
+    bool m_serverUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::Vector<SalesforceStandardObjectConfiguration> m_standardObjectConfigurations;
-    bool m_standardObjectConfigurationsHasBeenSet;
+    bool m_standardObjectConfigurationsHasBeenSet = false;
 
     SalesforceKnowledgeArticleConfiguration m_knowledgeArticleConfiguration;
-    bool m_knowledgeArticleConfigurationHasBeenSet;
+    bool m_knowledgeArticleConfigurationHasBeenSet = false;
 
     SalesforceChatterFeedConfiguration m_chatterFeedConfiguration;
-    bool m_chatterFeedConfigurationHasBeenSet;
+    bool m_chatterFeedConfigurationHasBeenSet = false;
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     SalesforceStandardObjectAttachmentConfiguration m_standardObjectAttachmentConfiguration;
-    bool m_standardObjectAttachmentConfigurationHasBeenSet;
+    bool m_standardObjectAttachmentConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-    bool m_includeAttachmentFilePatternsHasBeenSet;
+    bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
-    bool m_excludeAttachmentFilePatternsHasBeenSet;
+    bool m_excludeAttachmentFilePatternsHasBeenSet = false;
   };
 
 } // namespace Model

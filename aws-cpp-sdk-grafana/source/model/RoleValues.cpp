@@ -35,7 +35,7 @@ RoleValues& RoleValues::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("admin"))
   {
-    Array<JsonView> adminJsonList = jsonValue.GetArray("admin");
+    Aws::Utils::Array<JsonView> adminJsonList = jsonValue.GetArray("admin");
     for(unsigned adminIndex = 0; adminIndex < adminJsonList.GetLength(); ++adminIndex)
     {
       m_admin.push_back(adminJsonList[adminIndex].AsString());
@@ -45,7 +45,7 @@ RoleValues& RoleValues::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("editor"))
   {
-    Array<JsonView> editorJsonList = jsonValue.GetArray("editor");
+    Aws::Utils::Array<JsonView> editorJsonList = jsonValue.GetArray("editor");
     for(unsigned editorIndex = 0; editorIndex < editorJsonList.GetLength(); ++editorIndex)
     {
       m_editor.push_back(editorJsonList[editorIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue RoleValues::Jsonize() const
 
   if(m_adminHasBeenSet)
   {
-   Array<JsonValue> adminJsonList(m_admin.size());
+   Aws::Utils::Array<JsonValue> adminJsonList(m_admin.size());
    for(unsigned adminIndex = 0; adminIndex < adminJsonList.GetLength(); ++adminIndex)
    {
      adminJsonList[adminIndex].AsString(m_admin[adminIndex]);
@@ -73,7 +73,7 @@ JsonValue RoleValues::Jsonize() const
 
   if(m_editorHasBeenSet)
   {
-   Array<JsonValue> editorJsonList(m_editor.size());
+   Aws::Utils::Array<JsonValue> editorJsonList(m_editor.size());
    for(unsigned editorIndex = 0; editorIndex < editorJsonList.GetLength(); ++editorIndex)
    {
      editorJsonList[editorIndex].AsString(m_editor[editorIndex]);

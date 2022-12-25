@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/JoinKeyProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API JoinKeyProperties
+  class JoinKeyProperties
   {
   public:
-    JoinKeyProperties();
-    JoinKeyProperties(Aws::Utils::Json::JsonView jsonValue);
-    JoinKeyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API JoinKeyProperties();
+    AWS_QUICKSIGHT_API JoinKeyProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API JoinKeyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     bool m_uniqueKey;
-    bool m_uniqueKeyHasBeenSet;
+    bool m_uniqueKeyHasBeenSet = false;
   };
 
 } // namespace Model

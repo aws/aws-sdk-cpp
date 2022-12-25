@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomerProfilesDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomerProfilesDestinationProperties
+  class CustomerProfilesDestinationProperties
   {
   public:
-    CustomerProfilesDestinationProperties();
-    CustomerProfilesDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    CustomerProfilesDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomerProfilesDestinationProperties();
+    AWS_APPFLOW_API CustomerProfilesDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomerProfilesDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

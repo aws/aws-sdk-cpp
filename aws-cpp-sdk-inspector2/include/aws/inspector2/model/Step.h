@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Step">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Step
+  class Step
   {
   public:
-    Step();
-    Step(Aws::Utils::Json::JsonView jsonValue);
-    Step& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Step();
+    AWS_INSPECTOR2_API Step(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
   };
 
 } // namespace Model

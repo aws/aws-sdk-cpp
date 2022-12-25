@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API UpdateDeviceMetadataRequest : public PanoramaRequest
+  class UpdateDeviceMetadataRequest : public PanoramaRequest
   {
   public:
-    UpdateDeviceMetadataRequest();
+    AWS_PANORAMA_API UpdateDeviceMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDeviceMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
   };
 
 } // namespace Model

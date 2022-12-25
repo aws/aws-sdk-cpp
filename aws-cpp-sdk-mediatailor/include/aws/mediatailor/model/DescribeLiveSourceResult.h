@@ -28,12 +28,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API DescribeLiveSourceResult
+  class DescribeLiveSourceResult
   {
   public:
-    DescribeLiveSourceResult();
-    DescribeLiveSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLiveSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API DescribeLiveSourceResult();
+    AWS_MEDIATAILOR_API DescribeLiveSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API DescribeLiveSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -197,98 +197,146 @@ namespace Model
 
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationName = value; }
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationName = std::move(value); }
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationName.assign(value); }
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline DescribeLiveSourceResult& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline DescribeLiveSourceResult& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the source location associated with the VOD source.</p>
+     * <p>The name of the source location associated with the live source.</p>
      */
     inline DescribeLiveSourceResult& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
 
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the live source.</p>
+     * <p>The tags assigned to the live source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline DescribeLiveSourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

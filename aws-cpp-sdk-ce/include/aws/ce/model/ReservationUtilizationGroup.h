@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationUtilizationGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationUtilizationGroup
+  class ReservationUtilizationGroup
   {
   public:
-    ReservationUtilizationGroup();
-    ReservationUtilizationGroup(Aws::Utils::Json::JsonView jsonValue);
-    ReservationUtilizationGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationUtilizationGroup();
+    AWS_COSTEXPLORER_API ReservationUtilizationGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationUtilizationGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     ReservationAggregates m_utilization;
-    bool m_utilizationHasBeenSet;
+    bool m_utilizationHasBeenSet = false;
   };
 
 } // namespace Model

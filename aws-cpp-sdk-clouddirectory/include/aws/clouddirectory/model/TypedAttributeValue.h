@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedAttributeValue
+  class TypedAttributeValue
   {
   public:
-    TypedAttributeValue();
-    TypedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    TypedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedAttributeValue();
+    AWS_CLOUDDIRECTORY_API TypedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,19 +208,19 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_binaryValue;
-    bool m_binaryValueHasBeenSet;
+    bool m_binaryValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     Aws::String m_numberValue;
-    bool m_numberValueHasBeenSet;
+    bool m_numberValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_datetimeValue;
-    bool m_datetimeValueHasBeenSet;
+    bool m_datetimeValueHasBeenSet = false;
   };
 
 } // namespace Model

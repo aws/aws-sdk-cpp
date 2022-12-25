@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CloudWatchLogsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API CloudWatchLogsConfig
+  class CloudWatchLogsConfig
   {
   public:
-    CloudWatchLogsConfig();
-    CloudWatchLogsConfig(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API CloudWatchLogsConfig();
+    AWS_CODEBUILD_API CloudWatchLogsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API CloudWatchLogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,13 +212,13 @@ namespace Model
   private:
 
     LogsConfigStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API CreateCustomEntityTypeRequest : public GlueRequest
+  class CreateCustomEntityTypeRequest : public GlueRequest
   {
   public:
-    CreateCustomEntityTypeRequest();
+    AWS_GLUE_API CreateCustomEntityTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCustomEntityType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contextWords;
-    bool m_contextWordsHasBeenSet;
+    bool m_contextWordsHasBeenSet = false;
   };
 
 } // namespace Model

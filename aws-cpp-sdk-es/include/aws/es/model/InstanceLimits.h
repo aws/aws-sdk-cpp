@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/InstanceLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API InstanceLimits
+  class InstanceLimits
   {
   public:
-    InstanceLimits();
-    InstanceLimits(Aws::Utils::Json::JsonView jsonValue);
-    InstanceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API InstanceLimits();
+    AWS_ELASTICSEARCHSERVICE_API InstanceLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API InstanceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     InstanceCountLimits m_instanceCountLimits;
-    bool m_instanceCountLimitsHasBeenSet;
+    bool m_instanceCountLimitsHasBeenSet = false;
   };
 
 } // namespace Model

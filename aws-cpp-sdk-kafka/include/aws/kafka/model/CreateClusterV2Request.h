@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API CreateClusterV2Request : public KafkaRequest
+  class CreateClusterV2Request : public KafkaRequest
   {
   public:
-    CreateClusterV2Request();
+    AWS_KAFKA_API CreateClusterV2Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateClusterV2"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -272,16 +272,16 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ProvisionedRequest m_provisioned;
-    bool m_provisionedHasBeenSet;
+    bool m_provisionedHasBeenSet = false;
 
     ServerlessRequest m_serverless;
-    bool m_serverlessHasBeenSet;
+    bool m_serverlessHasBeenSet = false;
   };
 
 } // namespace Model

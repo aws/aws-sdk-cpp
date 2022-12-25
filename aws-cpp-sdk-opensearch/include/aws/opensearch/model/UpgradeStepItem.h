@@ -27,96 +27,102 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single step of the upgrade or upgrade eligibility check
+   * <p>Represents a single step of an upgrade or upgrade eligibility check
    * workflow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeStepItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API UpgradeStepItem
+  class UpgradeStepItem
   {
   public:
-    UpgradeStepItem();
-    UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
-    UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API UpgradeStepItem();
+    AWS_OPENSEARCHSERVICE_API UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline const UpgradeStep& GetUpgradeStep() const{ return m_upgradeStep; }
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline bool UpgradeStepHasBeenSet() const { return m_upgradeStepHasBeenSet; }
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline void SetUpgradeStep(const UpgradeStep& value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = value; }
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline void SetUpgradeStep(UpgradeStep&& value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = std::move(value); }
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline UpgradeStepItem& WithUpgradeStep(const UpgradeStep& value) { SetUpgradeStep(value); return *this;}
 
     /**
-     * <p> One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul> </p>
+     * <p> One of three steps that an upgrade or upgrade eligibility check goes
+     * through: </p> <ul> <li> <p>PreUpgradeCheck</p> </li> <li> <p>Snapshot</p> </li>
+     * <li> <p>Upgrade</p> </li> </ul>
      */
     inline UpgradeStepItem& WithUpgradeStep(UpgradeStep&& value) { SetUpgradeStep(std::move(value)); return *this;}
 
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline const UpgradeStatus& GetUpgradeStepStatus() const{ return m_upgradeStepStatus; }
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline bool UpgradeStepStatusHasBeenSet() const { return m_upgradeStepStatusHasBeenSet; }
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline void SetUpgradeStepStatus(const UpgradeStatus& value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = value; }
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline void SetUpgradeStepStatus(UpgradeStatus&& value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = std::move(value); }
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline UpgradeStepItem& WithUpgradeStepStatus(const UpgradeStatus& value) { SetUpgradeStepStatus(value); return *this;}
 
     /**
      * <p> The current status of the upgrade. The status can take one of the following
-     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
-     * Issues</li> <li>Failed</li> </ul> </p>
+     * values: </p> <ul> <li> <p>In Progress</p> </li> <li> <p>Succeeded</p> </li> <li>
+     * <p>Succeeded with Issues</p> </li> <li> <p>Failed</p> </li> </ul>
      */
     inline UpgradeStepItem& WithUpgradeStepStatus(UpgradeStatus&& value) { SetUpgradeStepStatus(std::move(value)); return *this;}
 
@@ -203,16 +209,16 @@ namespace Model
   private:
 
     UpgradeStep m_upgradeStep;
-    bool m_upgradeStepHasBeenSet;
+    bool m_upgradeStepHasBeenSet = false;
 
     UpgradeStatus m_upgradeStepStatus;
-    bool m_upgradeStepStatusHasBeenSet;
+    bool m_upgradeStepStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
 
     double m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
   };
 
 } // namespace Model

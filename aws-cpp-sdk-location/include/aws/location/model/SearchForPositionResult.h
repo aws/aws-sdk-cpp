@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/model/Place.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchForPositionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API SearchForPositionResult
+  class SearchForPositionResult
   {
   public:
-    SearchForPositionResult();
-    SearchForPositionResult(Aws::Utils::Json::JsonView jsonValue);
-    SearchForPositionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API SearchForPositionResult();
+    AWS_LOCATIONSERVICE_API SearchForPositionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API SearchForPositionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +102,81 @@ namespace Model
      */
     inline SearchForPositionResult& WithPlace(Place&& value) { SetPlace(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForPositionResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForPositionResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the place. You can use this with the
+     * <code>GetPlace</code> operation to find the place again later.</p>  <p>For
+     * <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is
+     * returned only by place indexes that use HERE as a data provider.</p> 
+     */
+    inline SearchForPositionResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+
   private:
 
     double m_distance;
-    bool m_distanceHasBeenSet;
+    bool m_distanceHasBeenSet = false;
 
     Place m_place;
-    bool m_placeHasBeenSet;
+    bool m_placeHasBeenSet = false;
+
+    Aws::String m_placeId;
+    bool m_placeIdHasBeenSet = false;
   };
 
 } // namespace Model

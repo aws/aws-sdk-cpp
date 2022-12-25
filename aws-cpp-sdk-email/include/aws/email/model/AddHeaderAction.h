@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/AddHeaderAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API AddHeaderAction
+  class AddHeaderAction
   {
   public:
-    AddHeaderAction();
-    AddHeaderAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AddHeaderAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API AddHeaderAction();
+    AWS_SES_API AddHeaderAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API AddHeaderAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     Aws::String m_headerValue;
-    bool m_headerValueHasBeenSet;
+    bool m_headerValueHasBeenSet = false;
   };
 
 } // namespace Model

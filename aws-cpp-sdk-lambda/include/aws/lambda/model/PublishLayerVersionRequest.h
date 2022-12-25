@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API PublishLayerVersionRequest : public LambdaRequest
+  class PublishLayerVersionRequest : public LambdaRequest
   {
   public:
-    PublishLayerVersionRequest();
+    AWS_LAMBDA_API PublishLayerVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PublishLayerVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -346,22 +346,22 @@ namespace Model
   private:
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     LayerVersionContentInput m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<Runtime> m_compatibleRuntimes;
-    bool m_compatibleRuntimesHasBeenSet;
+    bool m_compatibleRuntimesHasBeenSet = false;
 
     Aws::String m_licenseInfo;
-    bool m_licenseInfoHasBeenSet;
+    bool m_licenseInfoHasBeenSet = false;
 
     Aws::Vector<Architecture> m_compatibleArchitectures;
-    bool m_compatibleArchitecturesHasBeenSet;
+    bool m_compatibleArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

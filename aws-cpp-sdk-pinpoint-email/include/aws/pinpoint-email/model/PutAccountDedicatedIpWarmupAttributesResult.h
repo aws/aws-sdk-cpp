@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutAccountDedicatedIpWarmupAttributesResult
+  class PutAccountDedicatedIpWarmupAttributesResult
   {
   public:
-    PutAccountDedicatedIpWarmupAttributesResult();
-    PutAccountDedicatedIpWarmupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountDedicatedIpWarmupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutAccountDedicatedIpWarmupAttributesResult();
+    AWS_PINPOINTEMAIL_API PutAccountDedicatedIpWarmupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutAccountDedicatedIpWarmupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

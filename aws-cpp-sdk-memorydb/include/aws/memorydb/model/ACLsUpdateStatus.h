@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ACLsUpdateStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ACLsUpdateStatus
+  class ACLsUpdateStatus
   {
   public:
-    ACLsUpdateStatus();
-    ACLsUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
-    ACLsUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ACLsUpdateStatus();
+    AWS_MEMORYDB_API ACLsUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ACLsUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_aCLToApply;
-    bool m_aCLToApplyHasBeenSet;
+    bool m_aCLToApplyHasBeenSet = false;
   };
 
 } // namespace Model

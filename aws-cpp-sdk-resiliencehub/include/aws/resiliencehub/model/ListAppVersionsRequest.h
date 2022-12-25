@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API ListAppVersionsRequest : public ResilienceHubRequest
+  class ListAppVersionsRequest : public ResilienceHubRequest
   {
   public:
-    ListAppVersionsRequest();
+    AWS_RESILIENCEHUB_API ListAppVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAppVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

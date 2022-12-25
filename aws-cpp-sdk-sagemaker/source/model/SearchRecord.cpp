@@ -29,7 +29,11 @@ SearchRecord::SearchRecord() :
     m_pipelineHasBeenSet(false),
     m_pipelineExecutionHasBeenSet(false),
     m_featureGroupHasBeenSet(false),
-    m_projectHasBeenSet(false)
+    m_projectHasBeenSet(false),
+    m_featureMetadataHasBeenSet(false),
+    m_hyperParameterTuningJobHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_modelCardHasBeenSet(false)
 {
 }
 
@@ -44,7 +48,11 @@ SearchRecord::SearchRecord(JsonView jsonValue) :
     m_pipelineHasBeenSet(false),
     m_pipelineExecutionHasBeenSet(false),
     m_featureGroupHasBeenSet(false),
-    m_projectHasBeenSet(false)
+    m_projectHasBeenSet(false),
+    m_featureMetadataHasBeenSet(false),
+    m_hyperParameterTuningJobHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_modelCardHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +136,34 @@ SearchRecord& SearchRecord::operator =(JsonView jsonValue)
     m_projectHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FeatureMetadata"))
+  {
+    m_featureMetadata = jsonValue.GetObject("FeatureMetadata");
+
+    m_featureMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HyperParameterTuningJob"))
+  {
+    m_hyperParameterTuningJob = jsonValue.GetObject("HyperParameterTuningJob");
+
+    m_hyperParameterTuningJobHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Model"))
+  {
+    m_model = jsonValue.GetObject("Model");
+
+    m_modelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelCard"))
+  {
+    m_modelCard = jsonValue.GetObject("ModelCard");
+
+    m_modelCardHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +234,30 @@ JsonValue SearchRecord::Jsonize() const
   if(m_projectHasBeenSet)
   {
    payload.WithObject("Project", m_project.Jsonize());
+
+  }
+
+  if(m_featureMetadataHasBeenSet)
+  {
+   payload.WithObject("FeatureMetadata", m_featureMetadata.Jsonize());
+
+  }
+
+  if(m_hyperParameterTuningJobHasBeenSet)
+  {
+   payload.WithObject("HyperParameterTuningJob", m_hyperParameterTuningJob.Jsonize());
+
+  }
+
+  if(m_modelHasBeenSet)
+  {
+   payload.WithObject("Model", m_model.Jsonize());
+
+  }
+
+  if(m_modelCardHasBeenSet)
+  {
+   payload.WithObject("ModelCard", m_modelCard.Jsonize());
 
   }
 

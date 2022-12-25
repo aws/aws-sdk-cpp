@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemAlreadyExistsException
+  class OpsItemAlreadyExistsException
   {
   public:
-    OpsItemAlreadyExistsException();
-    OpsItemAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemAlreadyExistsException();
+    AWS_SSM_API OpsItemAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
   };
 
 } // namespace Model

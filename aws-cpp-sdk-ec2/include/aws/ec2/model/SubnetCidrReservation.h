@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetCidrReservation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SubnetCidrReservation
+  class SubnetCidrReservation
   {
   public:
-    SubnetCidrReservation();
-    SubnetCidrReservation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SubnetCidrReservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetCidrReservation();
+    AWS_EC2_API SubnetCidrReservation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetCidrReservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_subnetCidrReservationId;
-    bool m_subnetCidrReservationIdHasBeenSet;
+    bool m_subnetCidrReservationIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     SubnetCidrReservationType m_reservationType;
-    bool m_reservationTypeHasBeenSet;
+    bool m_reservationTypeHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

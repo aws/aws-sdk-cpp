@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FMS_API PutNotificationChannelRequest : public FMSRequest
+  class PutNotificationChannelRequest : public FMSRequest
   {
   public:
-    PutNotificationChannelRequest();
+    AWS_FMS_API PutNotificationChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutNotificationChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_snsRoleName;
-    bool m_snsRoleNameHasBeenSet;
+    bool m_snsRoleNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelScores">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelScores
+  class ModelScores
   {
   public:
-    ModelScores();
-    ModelScores(Aws::Utils::Json::JsonView jsonValue);
-    ModelScores& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelScores();
+    AWS_FRAUDDETECTOR_API ModelScores(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelScores& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     ModelVersion m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_scores;
-    bool m_scoresHasBeenSet;
+    bool m_scoresHasBeenSet = false;
   };
 
 } // namespace Model

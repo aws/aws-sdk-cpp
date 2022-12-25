@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_BRAKET_API GetQuantumTaskRequest : public BraketRequest
+  class GetQuantumTaskRequest : public BraketRequest
   {
   public:
-    GetQuantumTaskRequest();
+    AWS_BRAKET_API GetQuantumTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetQuantumTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BRAKET_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet;
+    bool m_quantumTaskArnHasBeenSet = false;
   };
 
 } // namespace Model

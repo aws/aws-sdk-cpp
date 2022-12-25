@@ -30,7 +30,7 @@ ListAnalyzedResourcesResult& ListAnalyzedResourcesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("analyzedResources"))
   {
-    Array<JsonView> analyzedResourcesJsonList = jsonValue.GetArray("analyzedResources");
+    Aws::Utils::Array<JsonView> analyzedResourcesJsonList = jsonValue.GetArray("analyzedResources");
     for(unsigned analyzedResourcesIndex = 0; analyzedResourcesIndex < analyzedResourcesJsonList.GetLength(); ++analyzedResourcesIndex)
     {
       m_analyzedResources.push_back(analyzedResourcesJsonList[analyzedResourcesIndex].AsObject());

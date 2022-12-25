@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTaskFailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryTaskFailureDetails
+  class DataRepositoryTaskFailureDetails
   {
   public:
-    DataRepositoryTaskFailureDetails();
-    DataRepositoryTaskFailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryTaskFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryTaskFailureDetails();
+    AWS_FSX_API DataRepositoryTaskFailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryTaskFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

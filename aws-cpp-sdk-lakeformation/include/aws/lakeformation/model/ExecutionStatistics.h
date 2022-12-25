@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ExecutionStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API ExecutionStatistics
+  class ExecutionStatistics
   {
   public:
-    ExecutionStatistics();
-    ExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API ExecutionStatistics();
+    AWS_LAKEFORMATION_API ExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API ExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_averageExecutionTimeMillis;
-    bool m_averageExecutionTimeMillisHasBeenSet;
+    bool m_averageExecutionTimeMillisHasBeenSet = false;
 
     long long m_dataScannedBytes;
-    bool m_dataScannedBytesHasBeenSet;
+    bool m_dataScannedBytesHasBeenSet = false;
 
     long long m_workUnitsExecutedCount;
-    bool m_workUnitsExecutedCountHasBeenSet;
+    bool m_workUnitsExecutedCountHasBeenSet = false;
   };
 
 } // namespace Model

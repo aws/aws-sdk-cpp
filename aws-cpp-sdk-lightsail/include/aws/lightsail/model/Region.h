@@ -27,17 +27,17 @@ namespace Model
 {
 
   /**
-   * <p>Describes the AWS Region.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Region">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Region
+  class Region
   {
   public:
-    Region();
-    Region(Aws::Utils::Json::JsonView jsonValue);
-    Region& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Region();
+    AWS_LIGHTSAIL_API Region(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Region& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,50 +82,58 @@ namespace Model
 
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline Region& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline Region& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
-     * serve users in the eastern United States and eastern Canada</code>).</p>
+     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * recommended to serve users in the eastern United States and eastern
+     * Canada</code>).</p>
      */
     inline Region& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -302,22 +310,22 @@ namespace Model
   private:
 
     Aws::String m_continentCode;
-    bool m_continentCodeHasBeenSet;
+    bool m_continentCodeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     RegionName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::Vector<AvailabilityZone> m_relationalDatabaseAvailabilityZones;
-    bool m_relationalDatabaseAvailabilityZonesHasBeenSet;
+    bool m_relationalDatabaseAvailabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMESERVICE_API PostContentRequest : public StreamingLexRuntimeServiceRequest
+  class PostContentRequest : public StreamingLexRuntimeServiceRequest
   {
   public:
-    PostContentRequest();
+    AWS_LEXRUNTIMESERVICE_API PostContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PostContent"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_LEXRUNTIMESERVICE_API bool SignBody() const override { return false; }
 
 
     /**
@@ -716,26 +716,26 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_botAlias;
-    bool m_botAliasHasBeenSet;
+    bool m_botAliasHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_sessionAttributes;
-    bool m_sessionAttributesHasBeenSet;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::String m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
 
     Aws::String m_activeContexts;
-    bool m_activeContextsHasBeenSet;
+    bool m_activeContextsHasBeenSet = false;
   };
 
 } // namespace Model

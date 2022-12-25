@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Hdr10Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Hdr10Settings
+  class Hdr10Settings
   {
   public:
-    Hdr10Settings();
-    Hdr10Settings(Aws::Utils::Json::JsonView jsonValue);
-    Hdr10Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Hdr10Settings();
+    AWS_MEDIALIVE_API Hdr10Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Hdr10Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ for any single frame within an encoded HDR video
   private:
 
     int m_maxCll;
-    bool m_maxCllHasBeenSet;
+    bool m_maxCllHasBeenSet = false;
 
     int m_maxFall;
-    bool m_maxFallHasBeenSet;
+    bool m_maxFallHasBeenSet = false;
   };
 
 } // namespace Model

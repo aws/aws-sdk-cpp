@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StatisticOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API StatisticOverride
+  class StatisticOverride
   {
   public:
-    StatisticOverride();
-    StatisticOverride(Aws::Utils::Json::JsonView jsonValue);
-    StatisticOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API StatisticOverride();
+    AWS_GLUEDATABREW_API StatisticOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API StatisticOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

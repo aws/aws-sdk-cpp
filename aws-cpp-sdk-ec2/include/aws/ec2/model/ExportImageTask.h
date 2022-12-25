@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImageTask">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ExportImageTask
+  class ExportImageTask
   {
   public:
-    ExportImageTask();
-    ExportImageTask(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExportImageTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportImageTask();
+    AWS_EC2_API ExportImageTask(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportImageTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -378,28 +378,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_exportImageTaskId;
-    bool m_exportImageTaskIdHasBeenSet;
+    bool m_exportImageTaskIdHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::String m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     ExportTaskS3Location m_s3ExportLocation;
-    bool m_s3ExportLocationHasBeenSet;
+    bool m_s3ExportLocationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

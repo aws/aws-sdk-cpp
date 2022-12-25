@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TransitGatewayRegistrationStateReason">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API TransitGatewayRegistrationStateReason
+  class TransitGatewayRegistrationStateReason
   {
   public:
-    TransitGatewayRegistrationStateReason();
-    TransitGatewayRegistrationStateReason(Aws::Utils::Json::JsonView jsonValue);
-    TransitGatewayRegistrationStateReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API TransitGatewayRegistrationStateReason();
+    AWS_NETWORKMANAGER_API TransitGatewayRegistrationStateReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API TransitGatewayRegistrationStateReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     TransitGatewayRegistrationState m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

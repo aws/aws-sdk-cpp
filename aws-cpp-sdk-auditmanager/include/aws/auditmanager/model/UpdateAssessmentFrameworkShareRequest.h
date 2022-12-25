@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API UpdateAssessmentFrameworkShareRequest : public AuditManagerRequest
+  class UpdateAssessmentFrameworkShareRequest : public AuditManagerRequest
   {
   public:
-    UpdateAssessmentFrameworkShareRequest();
+    AWS_AUDITMANAGER_API UpdateAssessmentFrameworkShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssessmentFrameworkShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     ShareRequestType m_requestType;
-    bool m_requestTypeHasBeenSet;
+    bool m_requestTypeHasBeenSet = false;
 
     ShareRequestAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

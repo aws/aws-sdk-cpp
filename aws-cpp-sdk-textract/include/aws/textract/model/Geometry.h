@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Geometry">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Geometry
+  class Geometry
   {
   public:
-    Geometry();
-    Geometry(Aws::Utils::Json::JsonView jsonValue);
-    Geometry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Geometry();
+    AWS_TEXTRACT_API Geometry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Geometry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     Aws::Vector<Point> m_polygon;
-    bool m_polygonHasBeenSet;
+    bool m_polygonHasBeenSet = false;
   };
 
 } // namespace Model

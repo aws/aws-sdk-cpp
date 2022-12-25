@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcIpv6CidrBlockAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpcIpv6CidrBlockAssociation
+  class VpcIpv6CidrBlockAssociation
   {
   public:
-    VpcIpv6CidrBlockAssociation();
-    VpcIpv6CidrBlockAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcIpv6CidrBlockAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcIpv6CidrBlockAssociation();
+    AWS_EC2_API VpcIpv6CidrBlockAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcIpv6CidrBlockAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     VpcCidrBlockState m_ipv6CidrBlockState;
-    bool m_ipv6CidrBlockStateHasBeenSet;
+    bool m_ipv6CidrBlockStateHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::String m_ipv6Pool;
-    bool m_ipv6PoolHasBeenSet;
+    bool m_ipv6PoolHasBeenSet = false;
   };
 
 } // namespace Model

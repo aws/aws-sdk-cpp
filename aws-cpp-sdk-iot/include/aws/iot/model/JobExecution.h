@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecution
+  class JobExecution
   {
   public:
-    JobExecution();
-    JobExecution(Aws::Utils::Json::JsonView jsonValue);
-    JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecution();
+    AWS_IOT_API JobExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,37 +414,37 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_forceCanceled;
-    bool m_forceCanceledHasBeenSet;
+    bool m_forceCanceledHasBeenSet = false;
 
     JobExecutionStatusDetails m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_queuedAt;
-    bool m_queuedAtHasBeenSet;
+    bool m_queuedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     long long m_approximateSecondsBeforeTimedOut;
-    bool m_approximateSecondsBeforeTimedOutHasBeenSet;
+    bool m_approximateSecondsBeforeTimedOutHasBeenSet = false;
   };
 
 } // namespace Model

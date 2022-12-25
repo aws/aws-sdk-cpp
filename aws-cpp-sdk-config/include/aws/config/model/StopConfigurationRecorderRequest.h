@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorderRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API StopConfigurationRecorderRequest : public ConfigServiceRequest
+  class StopConfigurationRecorderRequest : public ConfigServiceRequest
   {
   public:
-    StopConfigurationRecorderRequest();
+    AWS_CONFIGSERVICE_API StopConfigurationRecorderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopConfigurationRecorder"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_configurationRecorderName;
-    bool m_configurationRecorderNameHasBeenSet;
+    bool m_configurationRecorderNameHasBeenSet = false;
   };
 
 } // namespace Model

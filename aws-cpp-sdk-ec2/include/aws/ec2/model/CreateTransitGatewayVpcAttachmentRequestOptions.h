@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachmentRequestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateTransitGatewayVpcAttachmentRequestOptions
+  class CreateTransitGatewayVpcAttachmentRequestOptions
   {
   public:
-    CreateTransitGatewayVpcAttachmentRequestOptions();
-    CreateTransitGatewayVpcAttachmentRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateTransitGatewayVpcAttachmentRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateTransitGatewayVpcAttachmentRequestOptions();
+    AWS_EC2_API CreateTransitGatewayVpcAttachmentRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateTransitGatewayVpcAttachmentRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     DnsSupportValue m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     Ipv6SupportValue m_ipv6Support;
-    bool m_ipv6SupportHasBeenSet;
+    bool m_ipv6SupportHasBeenSet = false;
 
     ApplianceModeSupportValue m_applianceModeSupport;
-    bool m_applianceModeSupportHasBeenSet;
+    bool m_applianceModeSupportHasBeenSet = false;
   };
 
 } // namespace Model

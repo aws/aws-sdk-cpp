@@ -34,7 +34,7 @@ GetDimensionValuesResult& GetDimensionValuesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DimensionValues"))
   {
-    Array<JsonView> dimensionValuesJsonList = jsonValue.GetArray("DimensionValues");
+    Aws::Utils::Array<JsonView> dimensionValuesJsonList = jsonValue.GetArray("DimensionValues");
     for(unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex)
     {
       m_dimensionValues.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsObject());

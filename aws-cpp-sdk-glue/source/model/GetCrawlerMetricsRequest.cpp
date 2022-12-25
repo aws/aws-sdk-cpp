@@ -26,7 +26,7 @@ Aws::String GetCrawlerMetricsRequest::SerializePayload() const
 
   if(m_crawlerNameListHasBeenSet)
   {
-   Array<JsonValue> crawlerNameListJsonList(m_crawlerNameList.size());
+   Aws::Utils::Array<JsonValue> crawlerNameListJsonList(m_crawlerNameList.size());
    for(unsigned crawlerNameListIndex = 0; crawlerNameListIndex < crawlerNameListJsonList.GetLength(); ++crawlerNameListIndex)
    {
      crawlerNameListJsonList[crawlerNameListIndex].AsString(m_crawlerNameList[crawlerNameListIndex]);

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_TEXTRACT_API StartExpenseAnalysisRequest : public TextractRequest
+  class StartExpenseAnalysisRequest : public TextractRequest
   {
   public:
-    StartExpenseAnalysisRequest();
+    AWS_TEXTRACT_API StartExpenseAnalysisRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartExpenseAnalysis"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TEXTRACT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TEXTRACT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -377,22 +377,22 @@ namespace Model
   private:
 
     DocumentLocation m_documentLocation;
-    bool m_documentLocationHasBeenSet;
+    bool m_documentLocationHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_jobTag;
-    bool m_jobTagHasBeenSet;
+    bool m_jobTagHasBeenSet = false;
 
     NotificationChannel m_notificationChannel;
-    bool m_notificationChannelHasBeenSet;
+    bool m_notificationChannelHasBeenSet = false;
 
     OutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

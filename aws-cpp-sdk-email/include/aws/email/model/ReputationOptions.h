@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReputationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReputationOptions
+  class ReputationOptions
   {
   public:
-    ReputationOptions();
-    ReputationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReputationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReputationOptions();
+    AWS_SES_API ReputationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReputationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -193,13 +193,13 @@ namespace Model
   private:
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
 
     bool m_reputationMetricsEnabled;
-    bool m_reputationMetricsEnabledHasBeenSet;
+    bool m_reputationMetricsEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastFreshStart;
-    bool m_lastFreshStartHasBeenSet;
+    bool m_lastFreshStartHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API IpAddressResponse
+  class IpAddressResponse
   {
   public:
-    IpAddressResponse();
-    IpAddressResponse(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API IpAddressResponse();
+    AWS_ROUTE53RESOLVER_API IpAddressResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API IpAddressResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_ipId;
-    bool m_ipIdHasBeenSet;
+    bool m_ipIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     IpAddressStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_modificationTime;
-    bool m_modificationTimeHasBeenSet;
+    bool m_modificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

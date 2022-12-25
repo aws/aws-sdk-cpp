@@ -21,14 +21,18 @@ namespace Model
 AddonVersionInfo::AddonVersionInfo() : 
     m_addonVersionHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false)
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresConfiguration(false),
+    m_requiresConfigurationHasBeenSet(false)
 {
 }
 
 AddonVersionInfo::AddonVersionInfo(JsonView jsonValue) : 
     m_addonVersionHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_compatibilitiesHasBeenSet(false)
+    m_compatibilitiesHasBeenSet(false),
+    m_requiresConfiguration(false),
+    m_requiresConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,7 +48,7 @@ AddonVersionInfo& AddonVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("architecture"))
   {
-    Array<JsonView> architectureJsonList = jsonValue.GetArray("architecture");
+    Aws::Utils::Array<JsonView> architectureJsonList = jsonValue.GetArray("architecture");
     for(unsigned architectureIndex = 0; architectureIndex < architectureJsonList.GetLength(); ++architectureIndex)
     {
       m_architecture.push_back(architectureJsonList[architectureIndex].AsString());
@@ -54,12 +58,19 @@ AddonVersionInfo& AddonVersionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("compatibilities"))
   {
-    Array<JsonView> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
+    Aws::Utils::Array<JsonView> compatibilitiesJsonList = jsonValue.GetArray("compatibilities");
     for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
     {
       m_compatibilities.push_back(compatibilitiesJsonList[compatibilitiesIndex].AsObject());
     }
     m_compatibilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("requiresConfiguration"))
+  {
+    m_requiresConfiguration = jsonValue.GetBool("requiresConfiguration");
+
+    m_requiresConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -77,7 +88,7 @@ JsonValue AddonVersionInfo::Jsonize() const
 
   if(m_architectureHasBeenSet)
   {
-   Array<JsonValue> architectureJsonList(m_architecture.size());
+   Aws::Utils::Array<JsonValue> architectureJsonList(m_architecture.size());
    for(unsigned architectureIndex = 0; architectureIndex < architectureJsonList.GetLength(); ++architectureIndex)
    {
      architectureJsonList[architectureIndex].AsString(m_architecture[architectureIndex]);
@@ -88,12 +99,18 @@ JsonValue AddonVersionInfo::Jsonize() const
 
   if(m_compatibilitiesHasBeenSet)
   {
-   Array<JsonValue> compatibilitiesJsonList(m_compatibilities.size());
+   Aws::Utils::Array<JsonValue> compatibilitiesJsonList(m_compatibilities.size());
    for(unsigned compatibilitiesIndex = 0; compatibilitiesIndex < compatibilitiesJsonList.GetLength(); ++compatibilitiesIndex)
    {
      compatibilitiesJsonList[compatibilitiesIndex].AsObject(m_compatibilities[compatibilitiesIndex].Jsonize());
    }
    payload.WithArray("compatibilities", std::move(compatibilitiesJsonList));
+
+  }
+
+  if(m_requiresConfigurationHasBeenSet)
+  {
+   payload.WithBool("requiresConfiguration", m_requiresConfiguration);
 
   }
 

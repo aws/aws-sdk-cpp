@@ -32,12 +32,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API GetEnvironmentResult
+  class GetEnvironmentResult
   {
   public:
-    GetEnvironmentResult();
-    GetEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetEnvironmentResult();
+    AWS_MAINFRAMEMODERNIZATION_API GetEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -326,6 +326,42 @@ namespace Model
 
 
     /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetEnvironmentResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetEnvironmentResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline GetEnvironmentResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime
      * environment.</p>
      */
@@ -369,37 +405,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline GetEnvironmentResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline GetEnvironmentResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the runtime environment. </p>
+     * <p>The name of the runtime environment. Must be unique within the account.</p>
      */
     inline GetEnvironmentResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -431,44 +467,51 @@ namespace Model
 
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p>Configures a desired maintenance window for the environment. If you do not
-     * provide a value, a random system-generated value will be assigned.</p>
+     * <p>Configures the maintenance window you want for the runtime environment. If
+     * you do not provide a value, a random system-generated value will be
+     * assigned.</p>
      */
     inline GetEnvironmentResult& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -803,6 +846,8 @@ namespace Model
     HighAvailabilityConfig m_highAvailabilityConfig;
 
     Aws::String m_instanceType;
+
+    Aws::String m_kmsKeyId;
 
     Aws::String m_loadBalancerArn;
 

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API AcceptResourceShareInvitationRequest : public RAMRequest
+  class AcceptResourceShareInvitationRequest : public RAMRequest
   {
   public:
-    AcceptResourceShareInvitationRequest();
+    AWS_RAM_API AcceptResourceShareInvitationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptResourceShareInvitation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -188,10 +188,10 @@ namespace Model
   private:
 
     Aws::String m_resourceShareInvitationArn;
-    bool m_resourceShareInvitationArnHasBeenSet;
+    bool m_resourceShareInvitationArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

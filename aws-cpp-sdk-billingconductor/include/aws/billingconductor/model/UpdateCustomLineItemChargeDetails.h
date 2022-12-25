@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateCustomLineItemChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemChargeDetails
+  class UpdateCustomLineItemChargeDetails
   {
   public:
-    UpdateCustomLineItemChargeDetails();
-    UpdateCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemChargeDetails();
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API UpdateCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     UpdateCustomLineItemFlatChargeDetails m_flat;
-    bool m_flatHasBeenSet;
+    bool m_flatHasBeenSet = false;
 
     UpdateCustomLineItemPercentageChargeDetails m_percentage;
-    bool m_percentageHasBeenSet;
+    bool m_percentageHasBeenSet = false;
   };
 
 } // namespace Model

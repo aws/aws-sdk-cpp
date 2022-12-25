@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RoomData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API RoomData
+  class RoomData
   {
   public:
-    RoomData();
-    RoomData(Aws::Utils::Json::JsonView jsonValue);
-    RoomData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API RoomData();
+    AWS_ALEXAFORBUSINESS_API RoomData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API RoomData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::String m_roomName;
-    bool m_roomNameHasBeenSet;
+    bool m_roomNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_providerCalendarId;
-    bool m_providerCalendarIdHasBeenSet;
+    bool m_providerCalendarIdHasBeenSet = false;
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
   };
 
 } // namespace Model

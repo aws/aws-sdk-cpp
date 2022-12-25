@@ -66,7 +66,7 @@ Aws::String CreateTokenRequest::SerializePayload() const
 
   if(m_scopeHasBeenSet)
   {
-   Array<JsonValue> scopeJsonList(m_scope.size());
+   Aws::Utils::Array<JsonValue> scopeJsonList(m_scope.size());
    for(unsigned scopeIndex = 0; scopeIndex < scopeJsonList.GetLength(); ++scopeIndex)
    {
      scopeJsonList[scopeIndex].AsString(m_scope[scopeIndex]);

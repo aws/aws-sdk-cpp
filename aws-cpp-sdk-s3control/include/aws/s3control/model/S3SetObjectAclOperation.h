@@ -24,21 +24,21 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for a Set Object ACL operation. S3
-   * Batch Operations passes every object to the underlying PUT Object acl API. For
-   * more information about the parameters for this operation, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
-   * Object acl</a>.</p><p><h3>See Also:</h3>   <a
+   * Batch Operations passes every object to the underlying <code>PutObjectAcl</code>
+   * API. For more information about the parameters for this operation, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">
+   * <code>PutObjectAcl</code> </a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectAclOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3SetObjectAclOperation
+  class S3SetObjectAclOperation
   {
   public:
-    S3SetObjectAclOperation();
-    S3SetObjectAclOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3SetObjectAclOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectAclOperation();
+    AWS_S3CONTROL_API S3SetObjectAclOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectAclOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -74,7 +74,7 @@ namespace Model
   private:
 
     S3AccessControlPolicy m_accessControlPolicy;
-    bool m_accessControlPolicyHasBeenSet;
+    bool m_accessControlPolicyHasBeenSet = false;
   };
 
 } // namespace Model

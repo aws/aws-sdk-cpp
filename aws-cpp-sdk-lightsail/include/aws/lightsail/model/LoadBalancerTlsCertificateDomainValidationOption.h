@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateDomainValidationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationOption
+  class LoadBalancerTlsCertificateDomainValidationOption
   {
   public:
-    LoadBalancerTlsCertificateDomainValidationOption();
-    LoadBalancerTlsCertificateDomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificateDomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationOption();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     LoadBalancerTlsCertificateDomainStatus m_validationStatus;
-    bool m_validationStatusHasBeenSet;
+    bool m_validationStatusHasBeenSet = false;
   };
 
 } // namespace Model

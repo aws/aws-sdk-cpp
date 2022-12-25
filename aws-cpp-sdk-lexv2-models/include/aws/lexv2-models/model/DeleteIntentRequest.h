@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API DeleteIntentRequest : public LexModelsV2Request
+  class DeleteIntentRequest : public LexModelsV2Request
   {
   public:
-    DeleteIntentRequest();
+    AWS_LEXMODELSV2_API DeleteIntentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteIntent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
   };
 
 } // namespace Model

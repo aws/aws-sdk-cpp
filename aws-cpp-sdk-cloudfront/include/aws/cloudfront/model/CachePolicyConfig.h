@@ -32,21 +32,21 @@ namespace Model
    * (TTL) values that you want objects to stay in the CloudFront cache.</p> </li>
    * </ul> <p>The headers, cookies, and query strings that are included in the cache
    * key are automatically included in requests that CloudFront sends to the origin.
-   * CloudFront sends a request when it can’t find a valid object in its cache that
-   * matches the request’s cache key. If you want to send values to the origin but
+   * CloudFront sends a request when it can't find a valid object in its cache that
+   * matches the request's cache key. If you want to send values to the origin but
    * <i>not</i> include them in the cache key, use
    * <code>OriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicyConfig
+  class CachePolicyConfig
   {
   public:
-    CachePolicyConfig();
-    CachePolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyConfig();
+    AWS_CLOUDFRONT_API CachePolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The default amount of time, in seconds, that you want objects to stay in the
      * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value as the object’s time to
+     * the object has been updated. CloudFront uses this value as the object's time to
      * live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code>
      * or <code>Expires</code> headers with the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>The default amount of time, in seconds, that you want objects to stay in the
      * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value as the object’s time to
+     * the object has been updated. CloudFront uses this value as the object's time to
      * live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code>
      * or <code>Expires</code> headers with the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The default amount of time, in seconds, that you want objects to stay in the
      * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value as the object’s time to
+     * the object has been updated. CloudFront uses this value as the object's time to
      * live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code>
      * or <code>Expires</code> headers with the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
@@ -187,7 +187,7 @@ namespace Model
     /**
      * <p>The default amount of time, in seconds, that you want objects to stay in the
      * CloudFront cache before CloudFront sends another request to the origin to see if
-     * the object has been updated. CloudFront uses this value as the object’s time to
+     * the object has been updated. CloudFront uses this value as the object's time to
      * live (TTL) only when the origin does <i>not</i> send <code>Cache-Control</code>
      * or <code>Expires</code> headers with the object. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
@@ -347,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_defaultTTL;
-    bool m_defaultTTLHasBeenSet;
+    bool m_defaultTTLHasBeenSet = false;
 
     long long m_maxTTL;
-    bool m_maxTTLHasBeenSet;
+    bool m_maxTTLHasBeenSet = false;
 
     long long m_minTTL;
-    bool m_minTTLHasBeenSet;
+    bool m_minTTLHasBeenSet = false;
 
     ParametersInCacheKeyAndForwardedToOrigin m_parametersInCacheKeyAndForwardedToOrigin;
-    bool m_parametersInCacheKeyAndForwardedToOriginHasBeenSet;
+    bool m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = false;
   };
 
 } // namespace Model

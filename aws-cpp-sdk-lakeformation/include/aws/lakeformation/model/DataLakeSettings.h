@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/PrincipalPermissions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataLakeSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API DataLakeSettings
+  class DataLakeSettings
   {
   public:
-    DataLakeSettings();
-    DataLakeSettings(Aws::Utils::Json::JsonView jsonValue);
-    DataLakeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API DataLakeSettings();
+    AWS_LAKEFORMATION_API DataLakeSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API DataLakeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,10 +95,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -110,10 +110,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -126,10 +125,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -142,10 +140,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -158,10 +155,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -174,10 +170,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -190,10 +185,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -206,10 +200,9 @@ namespace Model
 
     /**
      * <p>Specifies whether access control on newly created database is managed by Lake
-     * Formation permissions or exclusively by IAM permissions. You can override this
-     * default setting when you create a database.</p> <p>A null value indicates access
-     * control by Lake Formation permissions. A value that assigns ALL to
-     * IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
+     * Formation permissions or exclusively by IAM permissions.</p> <p>A null value
+     * indicates access control by Lake Formation permissions. A value that assigns ALL
+     * to IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is
      * referred to as the setting "Use only IAM access control," and is for backward
      * compatibility with the Glue permission model implemented by IAM permissions.</p>
      * <p>The only permitted values are an empty array or an array that contains a
@@ -340,6 +333,98 @@ namespace Model
      * the Default Security Settings for Your Data Lake</a>.</p>
      */
     inline DataLakeSettings& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that provides an additional configuration on your data lake.
+     * CrossAccountVersion is the key you can configure in the Parameters field.
+     * Accepted values for the CrossAccountVersion key are 1, 2, and 3.</p>
+     */
+    inline DataLakeSettings& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
 
     /**
@@ -611,25 +696,28 @@ namespace Model
   private:
 
     Aws::Vector<DataLakePrincipal> m_dataLakeAdmins;
-    bool m_dataLakeAdminsHasBeenSet;
+    bool m_dataLakeAdminsHasBeenSet = false;
 
     Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
-    bool m_createDatabaseDefaultPermissionsHasBeenSet;
+    bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
-    bool m_createTableDefaultPermissionsHasBeenSet;
+    bool m_createTableDefaultPermissionsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trustedResourceOwners;
-    bool m_trustedResourceOwnersHasBeenSet;
+    bool m_trustedResourceOwnersHasBeenSet = false;
 
     bool m_allowExternalDataFiltering;
-    bool m_allowExternalDataFilteringHasBeenSet;
+    bool m_allowExternalDataFilteringHasBeenSet = false;
 
     Aws::Vector<DataLakePrincipal> m_externalDataFilteringAllowList;
-    bool m_externalDataFilteringAllowListHasBeenSet;
+    bool m_externalDataFilteringAllowListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedSessionTagValueList;
-    bool m_authorizedSessionTagValueListHasBeenSet;
+    bool m_authorizedSessionTagValueListHasBeenSet = false;
   };
 
 } // namespace Model

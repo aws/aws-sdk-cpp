@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopeTerm">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobScopeTerm
+  class JobScopeTerm
   {
   public:
-    JobScopeTerm();
-    JobScopeTerm(Aws::Utils::Json::JsonView jsonValue);
-    JobScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobScopeTerm();
+    AWS_MACIE2_API JobScopeTerm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobScopeTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     SimpleScopeTerm m_simpleScopeTerm;
-    bool m_simpleScopeTermHasBeenSet;
+    bool m_simpleScopeTermHasBeenSet = false;
 
     TagScopeTerm m_tagScopeTerm;
-    bool m_tagScopeTermHasBeenSet;
+    bool m_tagScopeTermHasBeenSet = false;
   };
 
 } // namespace Model

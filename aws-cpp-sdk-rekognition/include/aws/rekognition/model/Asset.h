@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Asset">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Asset
+  class Asset
   {
   public:
-    Asset();
-    Asset(Aws::Utils::Json::JsonView jsonValue);
-    Asset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Asset();
+    AWS_REKOGNITION_API Asset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Asset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -60,7 +60,7 @@ namespace Model
   private:
 
     GroundTruthManifest m_groundTruthManifest;
-    bool m_groundTruthManifestHasBeenSet;
+    bool m_groundTruthManifestHasBeenSet = false;
   };
 
 } // namespace Model

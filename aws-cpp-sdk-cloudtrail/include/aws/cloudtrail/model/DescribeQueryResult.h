@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudtrail/model/QueryStatus.h>
 #include <aws/cloudtrail/model/QueryStatisticsForDescribeQuery.h>
+#include <aws/cloudtrail/model/DeliveryStatus.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +27,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API DescribeQueryResult
+  class DescribeQueryResult
   {
   public:
-    DescribeQueryResult();
-    DescribeQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DescribeQueryResult();
+    AWS_CLOUDTRAIL_API DescribeQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DescribeQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -213,6 +214,75 @@ namespace Model
      */
     inline DescribeQueryResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline const Aws::String& GetDeliveryS3Uri() const{ return m_deliveryS3Uri; }
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline void SetDeliveryS3Uri(const Aws::String& value) { m_deliveryS3Uri = value; }
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline void SetDeliveryS3Uri(Aws::String&& value) { m_deliveryS3Uri = std::move(value); }
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline void SetDeliveryS3Uri(const char* value) { m_deliveryS3Uri.assign(value); }
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline DescribeQueryResult& WithDeliveryS3Uri(const Aws::String& value) { SetDeliveryS3Uri(value); return *this;}
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline DescribeQueryResult& WithDeliveryS3Uri(Aws::String&& value) { SetDeliveryS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI for the S3 bucket where CloudTrail delivered query results, if
+     * applicable.</p>
+     */
+    inline DescribeQueryResult& WithDeliveryS3Uri(const char* value) { SetDeliveryS3Uri(value); return *this;}
+
+
+    /**
+     * <p>The delivery status.</p>
+     */
+    inline const DeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
+
+    /**
+     * <p>The delivery status.</p>
+     */
+    inline void SetDeliveryStatus(const DeliveryStatus& value) { m_deliveryStatus = value; }
+
+    /**
+     * <p>The delivery status.</p>
+     */
+    inline void SetDeliveryStatus(DeliveryStatus&& value) { m_deliveryStatus = std::move(value); }
+
+    /**
+     * <p>The delivery status.</p>
+     */
+    inline DescribeQueryResult& WithDeliveryStatus(const DeliveryStatus& value) { SetDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>The delivery status.</p>
+     */
+    inline DescribeQueryResult& WithDeliveryStatus(DeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_queryId;
@@ -224,6 +294,10 @@ namespace Model
     QueryStatisticsForDescribeQuery m_queryStatistics;
 
     Aws::String m_errorMessage;
+
+    Aws::String m_deliveryS3Uri;
+
+    DeliveryStatus m_deliveryStatus;
   };
 
 } // namespace Model

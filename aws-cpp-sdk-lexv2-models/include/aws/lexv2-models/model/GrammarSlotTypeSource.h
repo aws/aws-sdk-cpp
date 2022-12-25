@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GrammarSlotTypeSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API GrammarSlotTypeSource
+  class GrammarSlotTypeSource
   {
   public:
-    GrammarSlotTypeSource();
-    GrammarSlotTypeSource(Aws::Utils::Json::JsonView jsonValue);
-    GrammarSlotTypeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API GrammarSlotTypeSource();
+    AWS_LEXMODELSV2_API GrammarSlotTypeSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API GrammarSlotTypeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3ObjectKey;
-    bool m_s3ObjectKeyHasBeenSet;
+    bool m_s3ObjectKeyHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

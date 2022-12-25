@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/Diagnostics">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API Diagnostics
+  class Diagnostics
   {
   public:
-    Diagnostics();
-    Diagnostics(Aws::Utils::Json::JsonView jsonValue);
-    Diagnostics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API Diagnostics();
+    AWS_CODEDEPLOY_API Diagnostics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Diagnostics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,49 +195,49 @@ namespace Model
 
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline const Aws::String& GetLogTail() const{ return m_logTail; }
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline bool LogTailHasBeenSet() const { return m_logTailHasBeenSet; }
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline void SetLogTail(const Aws::String& value) { m_logTailHasBeenSet = true; m_logTail = value; }
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline void SetLogTail(Aws::String&& value) { m_logTailHasBeenSet = true; m_logTail = std::move(value); }
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline void SetLogTail(const char* value) { m_logTailHasBeenSet = true; m_logTail.assign(value); }
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(const Aws::String& value) { SetLogTail(value); return *this;}
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(Aws::String&& value) { SetLogTail(std::move(value)); return *this;}
 
     /**
-     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline Diagnostics& WithLogTail(const char* value) { SetLogTail(value); return *this;}
@@ -245,16 +245,16 @@ namespace Model
   private:
 
     LifecycleErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_scriptName;
-    bool m_scriptNameHasBeenSet;
+    bool m_scriptNameHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_logTail;
-    bool m_logTailHasBeenSet;
+    bool m_logTailHasBeenSet = false;
   };
 
 } // namespace Model

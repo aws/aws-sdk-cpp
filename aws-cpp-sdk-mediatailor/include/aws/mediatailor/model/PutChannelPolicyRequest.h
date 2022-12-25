@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API PutChannelPolicyRequest : public MediaTailorRequest
+  class PutChannelPolicyRequest : public MediaTailorRequest
   {
   public:
-    PutChannelPolicyRequest();
+    AWS_MEDIATAILOR_API PutChannelPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,46 +29,46 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutChannelPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

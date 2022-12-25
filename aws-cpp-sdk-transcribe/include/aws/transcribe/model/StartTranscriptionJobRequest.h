@@ -30,10 +30,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API StartTranscriptionJobRequest : public TranscribeServiceRequest
+  class StartTranscriptionJobRequest : public TranscribeServiceRequest
   {
   public:
-    StartTranscriptionJobRequest();
+    AWS_TRANSCRIBESERVICE_API StartTranscriptionJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,13 +41,13 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartTranscriptionJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -58,7 +58,7 @@ namespace Model
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -69,7 +69,7 @@ namespace Model
     inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -80,7 +80,7 @@ namespace Model
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -91,7 +91,7 @@ namespace Model
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -102,7 +102,7 @@ namespace Model
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -113,7 +113,7 @@ namespace Model
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -124,7 +124,7 @@ namespace Model
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique name, chosen by you, for your transcription job. The name you
+     * <p>A unique name, chosen by you, for your transcription job. The name that you
      * specify is also used as the default name of your transcription output file. If
      * you want to specify a different name for your transcription output, use the
      * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
@@ -239,44 +239,44 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
-     * Amazon Transcribe; if there's a mismatch between the value you specify and the
-     * value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * Amazon Transcribe. If there's a mismatch between the value that you specify and
+     * the value detected, your job fails. In most cases, you can omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample
      * rate.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
-     * Amazon Transcribe; if there's a mismatch between the value you specify and the
-     * value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * Amazon Transcribe. If there's a mismatch between the value that you specify and
+     * the value detected, your job fails. In most cases, you can omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample
      * rate.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
-     * Amazon Transcribe; if there's a mismatch between the value you specify and the
-     * value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * Amazon Transcribe. If there's a mismatch between the value that you specify and
+     * the value detected, your job fails. In most cases, you can omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample
      * rate.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe determines it
      * for you. If you specify the sample rate, it must match the rate detected by
-     * Amazon Transcribe; if there's a mismatch between the value you specify and the
-     * value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * Amazon Transcribe. If there's a mismatch between the value that you specify and
+     * the value detected, your job fails. In most cases, you can omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample
      * rate.</p>
      */
@@ -1108,10 +1108,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1124,10 +1124,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1140,10 +1140,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1156,10 +1156,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1172,10 +1172,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1188,10 +1188,10 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, speaker labeling; allows you to
-     * apply custom vocabularies and vocabulary filters.</p> <p>If you want to include
-     * a custom vocabulary or a custom vocabulary filter (or both) with your request
-     * but <b>do not</b> want to use automatic language identification, use
+     * identification, alternative transcriptions, speaker partitioning. You can use
+     * that to apply custom vocabularies and vocabulary filters.</p> <p>If you want to
+     * include a custom vocabulary or a custom vocabulary filter (or both) with your
+     * request but <b>do not</b> want to use automatic language identification, use
      * <code>Settings</code> with the <code>VocabularyName</code> or
      * <code>VocabularyFilterName</code> (or both) sub-parameter.</p> <p>If you're
      * using automatic language identification with your request and want to include a
@@ -1265,125 +1265,130 @@ namespace Model
 
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline const JobExecutionSettings& GetJobExecutionSettings() const{ return m_jobExecutionSettings; }
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline bool JobExecutionSettingsHasBeenSet() const { return m_jobExecutionSettingsHasBeenSet; }
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline void SetJobExecutionSettings(const JobExecutionSettings& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = value; }
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline void SetJobExecutionSettings(JobExecutionSettings&& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = std::move(value); }
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline StartTranscriptionJobRequest& WithJobExecutionSettings(const JobExecutionSettings& value) { SetJobExecutionSettings(value); return *this;}
 
     /**
-     * <p>Allows you to control how your transcription job is processed. Currently, the
-     * only <code>JobExecutionSettings</code> modification you can choose is enabling
-     * job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
-     * <p>If you include <code>JobExecutionSettings</code> in your request, you must
-     * also include the sub-parameters: <code>AllowDeferredExecution</code> and
-     * <code>DataAccessRoleArn</code>.</p>
+     * <p>Makes it possible to control how your transcription job is processed.
+     * Currently, the only <code>JobExecutionSettings</code> modification you can
+     * choose is enabling job queueing using the <code>AllowDeferredExecution</code>
+     * sub-parameter.</p> <p>If you include <code>JobExecutionSettings</code> in your
+     * request, you must also include the sub-parameters:
+     * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
      */
     inline StartTranscriptionJobRequest& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
 
     /**
-     * <p>Allows you to redact or flag specified personally identifiable information
-     * (PII) in your transcript. If you use <code>ContentRedaction</code>, you must
-     * also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * <p>Makes it possible to redact or flag specified personally identifiable
+     * information (PII) in your transcript. If you use <code>ContentRedaction</code>,
+     * you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
      */
     inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
 
 
     /**
-     * <p>Enables automatic language identification in your transcription job
-     * request.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
+     * <p>Enables automatic language identification in your transcription job request.
+     * Use this parameter if your media file contains only one language. If your media
+     * contains multiple languages, use <code>IdentifyMultipleLanguages</code>
+     * instead.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
      * include a list of language codes, using <code>LanguageOptions</code>, that you
-     * think may be present in your media file. Including language options can improve
-     * transcription accuracy.</p> <p>If you want to apply a custom language model, a
-     * custom vocabulary, or a custom vocabulary filter to your automatic language
-     * identification request, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     * think may be present in your media file. Including <code>LanguageOptions</code>
+     * restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom language model, a custom vocabulary, or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). If you include
+     * <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
      * <p>Note that you must include one of <code>LanguageCode</code>,
      * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
      * request. If you include more than one of these parameters, your transcription
@@ -1392,15 +1397,20 @@ namespace Model
     inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
 
     /**
-     * <p>Enables automatic language identification in your transcription job
-     * request.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
+     * <p>Enables automatic language identification in your transcription job request.
+     * Use this parameter if your media file contains only one language. If your media
+     * contains multiple languages, use <code>IdentifyMultipleLanguages</code>
+     * instead.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
      * include a list of language codes, using <code>LanguageOptions</code>, that you
-     * think may be present in your media file. Including language options can improve
-     * transcription accuracy.</p> <p>If you want to apply a custom language model, a
-     * custom vocabulary, or a custom vocabulary filter to your automatic language
-     * identification request, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     * think may be present in your media file. Including <code>LanguageOptions</code>
+     * restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom language model, a custom vocabulary, or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). If you include
+     * <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
      * <p>Note that you must include one of <code>LanguageCode</code>,
      * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
      * request. If you include more than one of these parameters, your transcription
@@ -1409,15 +1419,20 @@ namespace Model
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
 
     /**
-     * <p>Enables automatic language identification in your transcription job
-     * request.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
+     * <p>Enables automatic language identification in your transcription job request.
+     * Use this parameter if your media file contains only one language. If your media
+     * contains multiple languages, use <code>IdentifyMultipleLanguages</code>
+     * instead.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
      * include a list of language codes, using <code>LanguageOptions</code>, that you
-     * think may be present in your media file. Including language options can improve
-     * transcription accuracy.</p> <p>If you want to apply a custom language model, a
-     * custom vocabulary, or a custom vocabulary filter to your automatic language
-     * identification request, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     * think may be present in your media file. Including <code>LanguageOptions</code>
+     * restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom language model, a custom vocabulary, or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). If you include
+     * <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
      * <p>Note that you must include one of <code>LanguageCode</code>,
      * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
      * request. If you include more than one of these parameters, your transcription
@@ -1426,15 +1441,20 @@ namespace Model
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
 
     /**
-     * <p>Enables automatic language identification in your transcription job
-     * request.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
+     * <p>Enables automatic language identification in your transcription job request.
+     * Use this parameter if your media file contains only one language. If your media
+     * contains multiple languages, use <code>IdentifyMultipleLanguages</code>
+     * instead.</p> <p>If you include <code>IdentifyLanguage</code>, you can optionally
      * include a list of language codes, using <code>LanguageOptions</code>, that you
-     * think may be present in your media file. Including language options can improve
-     * transcription accuracy.</p> <p>If you want to apply a custom language model, a
-     * custom vocabulary, or a custom vocabulary filter to your automatic language
-     * identification request, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     * think may be present in your media file. Including <code>LanguageOptions</code>
+     * restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
+     * custom language model, a custom vocabulary, or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). If you include
+     * <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.</p>
      * <p>Note that you must include one of <code>LanguageCode</code>,
      * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
      * request. If you include more than one of these parameters, your transcription
@@ -1445,76 +1465,92 @@ namespace Model
 
     /**
      * <p>Enables automatic multi-language identification in your transcription job
-     * request. Use this parameter if your media file contains more than one
-     * language.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
+     * request. Use this parameter if your media file contains more than one language.
+     * If your media contains only one language, use <code>IdentifyLanguage</code>
+     * instead.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
      * optionally include a list of language codes, using <code>LanguageOptions</code>,
-     * that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.</p> <p>If you want to apply a custom vocabulary
-     * or a custom vocabulary filter to your automatic language identification request,
-     * include <code>LanguageIdSettings</code> with the relevant sub-parameters
-     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).</p> <p>Note
-     * that you must include one of <code>LanguageCode</code>,
-     * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
-     * request. If you include more than one of these parameters, your transcription
-     * job fails.</p>
+     * that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the
+     * language options that you specify, which can improve transcription accuracy.</p>
+     * <p>If you want to apply a custom vocabulary or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you
+     * include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
      */
     inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
 
     /**
      * <p>Enables automatic multi-language identification in your transcription job
-     * request. Use this parameter if your media file contains more than one
-     * language.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
+     * request. Use this parameter if your media file contains more than one language.
+     * If your media contains only one language, use <code>IdentifyLanguage</code>
+     * instead.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
      * optionally include a list of language codes, using <code>LanguageOptions</code>,
-     * that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.</p> <p>If you want to apply a custom vocabulary
-     * or a custom vocabulary filter to your automatic language identification request,
-     * include <code>LanguageIdSettings</code> with the relevant sub-parameters
-     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).</p> <p>Note
-     * that you must include one of <code>LanguageCode</code>,
-     * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
-     * request. If you include more than one of these parameters, your transcription
-     * job fails.</p>
+     * that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the
+     * language options that you specify, which can improve transcription accuracy.</p>
+     * <p>If you want to apply a custom vocabulary or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you
+     * include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
      */
     inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
 
     /**
      * <p>Enables automatic multi-language identification in your transcription job
-     * request. Use this parameter if your media file contains more than one
-     * language.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
+     * request. Use this parameter if your media file contains more than one language.
+     * If your media contains only one language, use <code>IdentifyLanguage</code>
+     * instead.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
      * optionally include a list of language codes, using <code>LanguageOptions</code>,
-     * that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.</p> <p>If you want to apply a custom vocabulary
-     * or a custom vocabulary filter to your automatic language identification request,
-     * include <code>LanguageIdSettings</code> with the relevant sub-parameters
-     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).</p> <p>Note
-     * that you must include one of <code>LanguageCode</code>,
-     * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
-     * request. If you include more than one of these parameters, your transcription
-     * job fails.</p>
+     * that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the
+     * language options that you specify, which can improve transcription accuracy.</p>
+     * <p>If you want to apply a custom vocabulary or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you
+     * include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
      */
     inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
 
     /**
      * <p>Enables automatic multi-language identification in your transcription job
-     * request. Use this parameter if your media file contains more than one
-     * language.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
+     * request. Use this parameter if your media file contains more than one language.
+     * If your media contains only one language, use <code>IdentifyLanguage</code>
+     * instead.</p> <p>If you include <code>IdentifyMultipleLanguages</code>, you can
      * optionally include a list of language codes, using <code>LanguageOptions</code>,
-     * that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.</p> <p>If you want to apply a custom vocabulary
-     * or a custom vocabulary filter to your automatic language identification request,
-     * include <code>LanguageIdSettings</code> with the relevant sub-parameters
-     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>).</p> <p>Note
-     * that you must include one of <code>LanguageCode</code>,
-     * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your
-     * request. If you include more than one of these parameters, your transcription
-     * job fails.</p>
+     * that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the
+     * language options that you specify, which can improve transcription accuracy.</p>
+     * <p>If you want to apply a custom vocabulary or a custom vocabulary filter to
+     * your automatic language identification request, include
+     * <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you
+     * include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.</p> <p>Note that you must include one of
+     * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
+     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
+     * one of these parameters, your transcription job fails.</p>
      */
     inline StartTranscriptionJobRequest& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
 
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1527,7 +1563,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1540,7 +1576,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1553,7 +1589,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1566,7 +1602,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1579,7 +1615,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1592,7 +1628,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1605,7 +1641,7 @@ namespace Model
 
     /**
      * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
+     * think may be present in your media. Including more than five is not recommended.
      * If you're unsure what languages are present, do not include this parameter.</p>
      * <p>If you include <code>LanguageOptions</code> in your request, you must also
      * include <code>IdentifyLanguage</code>.</p> <p>For more information, refer to <a
@@ -1728,333 +1764,363 @@ namespace Model
 
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>If using automatic language identification (<code>IdentifyLanguage</code>) in
-     * your request and you want to apply a custom language model, a custom vocabulary,
-     * or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
-     * relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     * <p>You can specify two or more language codes that represent the languages you
-     * think may be present in your media; including more than five is not recommended.
-     * Each language code you include can have an associated custom language model,
-     * custom vocabulary, and custom vocabulary filter. The languages you specify must
-     * match the languages of the specified custom language models, custom
-     * vocabularies, and custom vocabulary filters.</p> <p>To include language options
-     * using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     * model, a custom vocabulary, or a custom vocabulary filter, use
-     * <code>LanguageOptions</code> instead of <code>LanguageIdSettings</code>.
-     * Including language options can improve the accuracy of automatic language
-     * identification.</p> <p>If you want to include a custom language model with your
-     * request but <b>do not</b> want to use automatic language identification, use
-     * instead the <code/> parameter with the <code>LanguageModelName</code>
-     * sub-parameter.</p> <p>If you want to include a custom vocabulary or a custom
-     * vocabulary filter (or both) with your request but <b>do not</b> want to use
-     * automatic language identification, use instead the <code/> parameter with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.</p>
+     * <p>If using automatic language identification in your request and you want to
+     * apply a custom language model, a custom vocabulary, or a custom vocabulary
+     * filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters
+     * (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification
+     * (<code>IdentifyMultipleLanguages</code>) doesn't support custom language
+     * models.</p> <p> <code>LanguageIdSettings</code> supports two to five language
+     * codes. Each language code you include can have an associated custom language
+     * model, custom vocabulary, and custom vocabulary filter. The language codes that
+     * you specify must match the languages of the associated custom language models,
+     * custom vocabularies, and custom vocabulary filters.</p> <p>It's recommended that
+     * you include <code>LanguageOptions</code> when using
+     * <code>LanguageIdSettings</code> to ensure that the correct language dialect is
+     * identified. For example, if you specify a custom vocabulary that is in
+     * <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     * your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied
+     * to your transcription. If you include <code>LanguageOptions</code> and include
+     * <code>en-US</code> as the only English language dialect, your custom vocabulary
+     * <i>is</i> applied to your transcription.</p> <p>If you want to include a custom
+     * language model with your request but <b>do not</b> want to use automatic
+     * language identification, use instead the <code/> parameter with the
+     * <code>LanguageModelName</code> sub-parameter. If you want to include a custom
+     * vocabulary or a custom vocabulary filter (or both) with your request but <b>do
+     * not</b> want to use automatic language identification, use instead the <code/>
+     * parameter with the <code>VocabularyName</code> or
+     * <code>VocabularyFilterName</code> (or both) sub-parameter.</p>
      */
     inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
 
   private:
 
     Aws::String m_transcriptionJobName;
-    bool m_transcriptionJobNameHasBeenSet;
+    bool m_transcriptionJobNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Aws::String m_outputBucketName;
-    bool m_outputBucketNameHasBeenSet;
+    bool m_outputBucketNameHasBeenSet = false;
 
     Aws::String m_outputKey;
-    bool m_outputKeyHasBeenSet;
+    bool m_outputKeyHasBeenSet = false;
 
     Aws::String m_outputEncryptionKMSKeyId;
-    bool m_outputEncryptionKMSKeyIdHasBeenSet;
+    bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
-    bool m_kMSEncryptionContextHasBeenSet;
+    bool m_kMSEncryptionContextHasBeenSet = false;
 
     Settings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     ModelSettings m_modelSettings;
-    bool m_modelSettingsHasBeenSet;
+    bool m_modelSettingsHasBeenSet = false;
 
     JobExecutionSettings m_jobExecutionSettings;
-    bool m_jobExecutionSettingsHasBeenSet;
+    bool m_jobExecutionSettingsHasBeenSet = false;
 
     ContentRedaction m_contentRedaction;
-    bool m_contentRedactionHasBeenSet;
+    bool m_contentRedactionHasBeenSet = false;
 
     bool m_identifyLanguage;
-    bool m_identifyLanguageHasBeenSet;
+    bool m_identifyLanguageHasBeenSet = false;
 
     bool m_identifyMultipleLanguages;
-    bool m_identifyMultipleLanguagesHasBeenSet;
+    bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::Vector<LanguageCode> m_languageOptions;
-    bool m_languageOptionsHasBeenSet;
+    bool m_languageOptionsHasBeenSet = false;
 
     Subtitles m_subtitles;
-    bool m_subtitlesHasBeenSet;
+    bool m_subtitlesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
-    bool m_languageIdSettingsHasBeenSet;
+    bool m_languageIdSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/MarketoSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API MarketoSourceProperties
+  class MarketoSourceProperties
   {
   public:
-    MarketoSourceProperties();
-    MarketoSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    MarketoSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API MarketoSourceProperties();
+    AWS_APPFLOW_API MarketoSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API MarketoSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

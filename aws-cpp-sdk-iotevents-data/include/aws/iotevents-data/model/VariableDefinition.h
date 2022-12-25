@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/VariableDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API VariableDefinition
+  class VariableDefinition
   {
   public:
-    VariableDefinition();
-    VariableDefinition(Aws::Utils::Json::JsonView jsonValue);
-    VariableDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API VariableDefinition();
+    AWS_IOTEVENTSDATA_API VariableDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API VariableDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

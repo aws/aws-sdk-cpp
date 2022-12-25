@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TextDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TextDetection
+  class TextDetection
   {
   public:
-    TextDetection();
-    TextDetection(Aws::Utils::Json::JsonView jsonValue);
-    TextDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TextDetection();
+    AWS_REKOGNITION_API TextDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TextDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -242,22 +242,22 @@ namespace Model
   private:
 
     Aws::String m_detectedText;
-    bool m_detectedTextHasBeenSet;
+    bool m_detectedTextHasBeenSet = false;
 
     TextTypes m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_parentId;
-    bool m_parentIdHasBeenSet;
+    bool m_parentIdHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

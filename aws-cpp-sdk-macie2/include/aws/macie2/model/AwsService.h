@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AwsService">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AwsService
+  class AwsService
   {
   public:
-    AwsService();
-    AwsService(Aws::Utils::Json::JsonView jsonValue);
-    AwsService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AwsService();
+    AWS_MACIE2_API AwsService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AwsService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_invokedBy;
-    bool m_invokedByHasBeenSet;
+    bool m_invokedByHasBeenSet = false;
   };
 
 } // namespace Model

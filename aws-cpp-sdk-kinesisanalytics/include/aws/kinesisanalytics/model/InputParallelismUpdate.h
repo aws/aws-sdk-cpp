@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputParallelismUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputParallelismUpdate
+  class InputParallelismUpdate
   {
   public:
-    InputParallelismUpdate();
-    InputParallelismUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputParallelismUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputParallelismUpdate();
+    AWS_KINESISANALYTICS_API InputParallelismUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputParallelismUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -62,7 +62,7 @@ namespace Model
   private:
 
     int m_countUpdate;
-    bool m_countUpdateHasBeenSet;
+    bool m_countUpdateHasBeenSet = false;
   };
 
 } // namespace Model

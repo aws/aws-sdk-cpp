@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/RelativeAggregationDuration">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API RelativeAggregationDuration
+  class RelativeAggregationDuration
   {
   public:
-    RelativeAggregationDuration();
-    RelativeAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
-    RelativeAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API RelativeAggregationDuration();
+    AWS_LEXMODELSV2_API RelativeAggregationDuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API RelativeAggregationDuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     TimeDimension m_timeDimension;
-    bool m_timeDimensionHasBeenSet;
+    bool m_timeDimensionHasBeenSet = false;
 
     int m_timeValue;
-    bool m_timeValueHasBeenSet;
+    bool m_timeValueHasBeenSet = false;
   };
 
 } // namespace Model

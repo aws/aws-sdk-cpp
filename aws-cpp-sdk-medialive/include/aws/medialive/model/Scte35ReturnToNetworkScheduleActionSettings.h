@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35ReturnToNetworkScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings
+  class Scte35ReturnToNetworkScheduleActionSettings
   {
   public:
-    Scte35ReturnToNetworkScheduleActionSettings();
-    Scte35ReturnToNetworkScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte35ReturnToNetworkScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35ReturnToNetworkScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     long long m_spliceEventId;
-    bool m_spliceEventIdHasBeenSet;
+    bool m_spliceEventIdHasBeenSet = false;
   };
 
 } // namespace Model

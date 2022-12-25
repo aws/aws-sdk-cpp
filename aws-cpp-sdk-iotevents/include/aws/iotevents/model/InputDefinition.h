@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/InputDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API InputDefinition
+  class InputDefinition
   {
   public:
-    InputDefinition();
-    InputDefinition(Aws::Utils::Json::JsonView jsonValue);
-    InputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API InputDefinition();
+    AWS_IOTEVENTS_API InputDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API InputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

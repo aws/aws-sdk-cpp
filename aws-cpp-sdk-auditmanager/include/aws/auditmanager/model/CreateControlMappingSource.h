@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControlMappingSource">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API CreateControlMappingSource
+  class CreateControlMappingSource
   {
   public:
-    CreateControlMappingSource();
-    CreateControlMappingSource(Aws::Utils::Json::JsonView jsonValue);
-    CreateControlMappingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API CreateControlMappingSource();
+    AWS_AUDITMANAGER_API CreateControlMappingSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API CreateControlMappingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -300,25 +300,25 @@ namespace Model
   private:
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
 
     Aws::String m_sourceDescription;
-    bool m_sourceDescriptionHasBeenSet;
+    bool m_sourceDescriptionHasBeenSet = false;
 
     SourceSetUpOption m_sourceSetUpOption;
-    bool m_sourceSetUpOptionHasBeenSet;
+    bool m_sourceSetUpOptionHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     SourceKeyword m_sourceKeyword;
-    bool m_sourceKeywordHasBeenSet;
+    bool m_sourceKeywordHasBeenSet = false;
 
     SourceFrequency m_sourceFrequency;
-    bool m_sourceFrequencyHasBeenSet;
+    bool m_sourceFrequencyHasBeenSet = false;
 
     Aws::String m_troubleshootingText;
-    bool m_troubleshootingTextHasBeenSet;
+    bool m_troubleshootingTextHasBeenSet = false;
   };
 
 } // namespace Model

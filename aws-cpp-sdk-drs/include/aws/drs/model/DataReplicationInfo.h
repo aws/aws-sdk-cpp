@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DataReplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DataReplicationInfo
+  class DataReplicationInfo
   {
   public:
-    DataReplicationInfo();
-    DataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DataReplicationInfo();
+    AWS_DRS_API DataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,22 +260,22 @@ namespace Model
   private:
 
     DataReplicationError m_dataReplicationError;
-    bool m_dataReplicationErrorHasBeenSet;
+    bool m_dataReplicationErrorHasBeenSet = false;
 
     DataReplicationInitiation m_dataReplicationInitiation;
-    bool m_dataReplicationInitiationHasBeenSet;
+    bool m_dataReplicationInitiationHasBeenSet = false;
 
     DataReplicationState m_dataReplicationState;
-    bool m_dataReplicationStateHasBeenSet;
+    bool m_dataReplicationStateHasBeenSet = false;
 
     Aws::String m_etaDateTime;
-    bool m_etaDateTimeHasBeenSet;
+    bool m_etaDateTimeHasBeenSet = false;
 
     Aws::String m_lagDuration;
-    bool m_lagDurationHasBeenSet;
+    bool m_lagDurationHasBeenSet = false;
 
     Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
-    bool m_replicatedDisksHasBeenSet;
+    bool m_replicatedDisksHasBeenSet = false;
   };
 
 } // namespace Model

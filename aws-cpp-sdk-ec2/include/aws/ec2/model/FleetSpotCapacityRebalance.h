@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetSpotCapacityRebalance">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FleetSpotCapacityRebalance
+  class FleetSpotCapacityRebalance
   {
   public:
-    FleetSpotCapacityRebalance();
-    FleetSpotCapacityRebalance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FleetSpotCapacityRebalance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetSpotCapacityRebalance();
+    AWS_EC2_API FleetSpotCapacityRebalance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetSpotCapacityRebalance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     FleetReplacementStrategy m_replacementStrategy;
-    bool m_replacementStrategyHasBeenSet;
+    bool m_replacementStrategyHasBeenSet = false;
 
     int m_terminationDelay;
-    bool m_terminationDelayHasBeenSet;
+    bool m_terminationDelayHasBeenSet = false;
   };
 
 } // namespace Model

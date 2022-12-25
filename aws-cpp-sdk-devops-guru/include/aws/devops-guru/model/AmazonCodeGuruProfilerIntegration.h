@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AmazonCodeGuruProfilerIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AmazonCodeGuruProfilerIntegration
+  class AmazonCodeGuruProfilerIntegration
   {
   public:
-    AmazonCodeGuruProfilerIntegration();
-    AmazonCodeGuruProfilerIntegration(Aws::Utils::Json::JsonView jsonValue);
-    AmazonCodeGuruProfilerIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AmazonCodeGuruProfilerIntegration();
+    AWS_DEVOPSGURU_API AmazonCodeGuruProfilerIntegration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AmazonCodeGuruProfilerIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     EventSourceOptInStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

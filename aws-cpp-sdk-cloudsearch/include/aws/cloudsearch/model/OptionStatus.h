@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/OptionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API OptionStatus
+  class OptionStatus
   {
   public:
-    OptionStatus();
-    OptionStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API OptionStatus();
+    AWS_CLOUDSEARCH_API OptionStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API OptionStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
 
     int m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
 
     OptionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_pendingDeletion;
-    bool m_pendingDeletionHasBeenSet;
+    bool m_pendingDeletionHasBeenSet = false;
   };
 
 } // namespace Model

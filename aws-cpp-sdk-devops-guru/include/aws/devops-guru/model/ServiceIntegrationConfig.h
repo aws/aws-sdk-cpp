@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/OpsCenterIntegration.h>
+#include <aws/devops-guru/model/LogsAnomalyDetectionIntegration.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ServiceIntegrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ServiceIntegrationConfig
+  class ServiceIntegrationConfig
   {
   public:
-    ServiceIntegrationConfig();
-    ServiceIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    ServiceIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ServiceIntegrationConfig();
+    AWS_DEVOPSGURU_API ServiceIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ServiceIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,10 +76,50 @@ namespace Model
      */
     inline ServiceIntegrationConfig& WithOpsCenter(OpsCenterIntegration&& value) { SetOpsCenter(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline const LogsAnomalyDetectionIntegration& GetLogsAnomalyDetection() const{ return m_logsAnomalyDetection; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline bool LogsAnomalyDetectionHasBeenSet() const { return m_logsAnomalyDetectionHasBeenSet; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline void SetLogsAnomalyDetection(const LogsAnomalyDetectionIntegration& value) { m_logsAnomalyDetectionHasBeenSet = true; m_logsAnomalyDetection = value; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline void SetLogsAnomalyDetection(LogsAnomalyDetectionIntegration&& value) { m_logsAnomalyDetectionHasBeenSet = true; m_logsAnomalyDetection = std::move(value); }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline ServiceIntegrationConfig& WithLogsAnomalyDetection(const LogsAnomalyDetectionIntegration& value) { SetLogsAnomalyDetection(value); return *this;}
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to perform log anomaly
+     * detection on Amazon CloudWatch log groups. </p>
+     */
+    inline ServiceIntegrationConfig& WithLogsAnomalyDetection(LogsAnomalyDetectionIntegration&& value) { SetLogsAnomalyDetection(std::move(value)); return *this;}
+
   private:
 
     OpsCenterIntegration m_opsCenter;
-    bool m_opsCenterHasBeenSet;
+    bool m_opsCenterHasBeenSet = false;
+
+    LogsAnomalyDetectionIntegration m_logsAnomalyDetection;
+    bool m_logsAnomalyDetectionHasBeenSet = false;
   };
 
 } // namespace Model

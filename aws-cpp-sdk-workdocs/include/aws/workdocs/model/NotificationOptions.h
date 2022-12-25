@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/NotificationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API NotificationOptions
+  class NotificationOptions
   {
   public:
-    NotificationOptions();
-    NotificationOptions(Aws::Utils::Json::JsonView jsonValue);
-    NotificationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API NotificationOptions();
+    AWS_WORKDOCS_API NotificationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API NotificationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_sendEmail;
-    bool m_sendEmailHasBeenSet;
+    bool m_sendEmailHasBeenSet = false;
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
   };
 
 } // namespace Model

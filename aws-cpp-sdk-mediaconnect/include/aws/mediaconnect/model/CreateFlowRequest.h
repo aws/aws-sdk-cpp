@@ -31,10 +31,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlowRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API CreateFlowRequest : public MediaConnectRequest
+  class CreateFlowRequest : public MediaConnectRequest
   {
   public:
-    CreateFlowRequest();
+    AWS_MEDIACONNECT_API CreateFlowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFlow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -391,34 +391,34 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Vector<GrantEntitlementRequest> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::Vector<AddMediaStreamRequest> m_mediaStreams;
-    bool m_mediaStreamsHasBeenSet;
+    bool m_mediaStreamsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<AddOutputRequest> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     SetSourceRequest m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     FailoverConfig m_sourceFailoverConfig;
-    bool m_sourceFailoverConfigHasBeenSet;
+    bool m_sourceFailoverConfigHasBeenSet = false;
 
     Aws::Vector<SetSourceRequest> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     Aws::Vector<VpcInterfaceRequest> m_vpcInterfaces;
-    bool m_vpcInterfacesHasBeenSet;
+    bool m_vpcInterfacesHasBeenSet = false;
 
     AddMaintenance m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
   };
 
 } // namespace Model

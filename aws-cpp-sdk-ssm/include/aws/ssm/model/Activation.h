@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Activation
+  class Activation
   {
   public:
-    Activation();
-    Activation(Aws::Utils::Json::JsonView jsonValue);
-    Activation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Activation();
+    AWS_SSM_API Activation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Activation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -393,34 +393,34 @@ namespace Model
   private:
 
     Aws::String m_activationId;
-    bool m_activationIdHasBeenSet;
+    bool m_activationIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_defaultInstanceName;
-    bool m_defaultInstanceNameHasBeenSet;
+    bool m_defaultInstanceNameHasBeenSet = false;
 
     Aws::String m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     int m_registrationLimit;
-    bool m_registrationLimitHasBeenSet;
+    bool m_registrationLimitHasBeenSet = false;
 
     int m_registrationsCount;
-    bool m_registrationsCountHasBeenSet;
+    bool m_registrationsCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationDate;
-    bool m_expirationDateHasBeenSet;
+    bool m_expirationDateHasBeenSet = false;
 
     bool m_expired;
-    bool m_expiredHasBeenSet;
+    bool m_expiredHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

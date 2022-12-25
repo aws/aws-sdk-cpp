@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChallengeResponseType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ChallengeResponseType
+  class ChallengeResponseType
   {
   public:
-    ChallengeResponseType();
-    ChallengeResponseType(Aws::Utils::Json::JsonView jsonValue);
-    ChallengeResponseType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API ChallengeResponseType();
+    AWS_COGNITOIDENTITYPROVIDER_API ChallengeResponseType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API ChallengeResponseType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ChallengeName m_challengeName;
-    bool m_challengeNameHasBeenSet;
+    bool m_challengeNameHasBeenSet = false;
 
     ChallengeResponse m_challengeResponse;
-    bool m_challengeResponseHasBeenSet;
+    bool m_challengeResponseHasBeenSet = false;
   };
 
 } // namespace Model

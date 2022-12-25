@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API CreateWorkspaceBundleRequest : public WorkSpacesRequest
+  class CreateWorkspaceBundleRequest : public WorkSpacesRequest
   {
   public:
-    CreateWorkspaceBundleRequest();
+    AWS_WORKSPACES_API CreateWorkspaceBundleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkspaceBundle"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -286,25 +286,25 @@ namespace Model
   private:
 
     Aws::String m_bundleName;
-    bool m_bundleNameHasBeenSet;
+    bool m_bundleNameHasBeenSet = false;
 
     Aws::String m_bundleDescription;
-    bool m_bundleDescriptionHasBeenSet;
+    bool m_bundleDescriptionHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
 
     UserStorage m_userStorage;
-    bool m_userStorageHasBeenSet;
+    bool m_userStorageHasBeenSet = false;
 
     RootStorage m_rootStorage;
-    bool m_rootStorageHasBeenSet;
+    bool m_rootStorageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

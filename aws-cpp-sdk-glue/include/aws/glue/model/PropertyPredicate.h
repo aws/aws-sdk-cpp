@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PropertyPredicate">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PropertyPredicate
+  class PropertyPredicate
   {
   public:
-    PropertyPredicate();
-    PropertyPredicate(Aws::Utils::Json::JsonView jsonValue);
-    PropertyPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PropertyPredicate();
+    AWS_GLUE_API PropertyPredicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PropertyPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Comparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
   };
 
 } // namespace Model

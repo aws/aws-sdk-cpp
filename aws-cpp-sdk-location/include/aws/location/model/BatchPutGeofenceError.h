@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofenceError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchPutGeofenceError
+  class BatchPutGeofenceError
   {
   public:
-    BatchPutGeofenceError();
-    BatchPutGeofenceError(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutGeofenceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceError();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     BatchItemError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
   };
 
 } // namespace Model

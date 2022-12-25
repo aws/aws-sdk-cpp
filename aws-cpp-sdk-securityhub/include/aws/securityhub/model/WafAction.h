@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WafAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API WafAction
+  class WafAction
   {
   public:
-    WafAction();
-    WafAction(Aws::Utils::Json::JsonView jsonValue);
-    WafAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API WafAction();
+    AWS_SECURITYHUB_API WafAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API WafAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -45,8 +45,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -57,8 +57,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -69,8 +69,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -81,8 +81,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -93,8 +93,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -105,8 +105,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline WafAction& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -117,8 +117,8 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline WafAction& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -129,15 +129,15 @@ namespace Model
      * WAF blocks requests</p> </li> <li> <p> <code>COUNT</code> - WAF increments a
      * counter of the requests that match all of the conditions in the rule. WAF then
      * continues to inspect the web request based on the remaining rules in the web
-     * ACL. You can't specify <code>COUNT</code> for the default action for a
-     * WebACL.</p> </li> </ul>
+     * ACL. You can't specify <code>COUNT</code> for the default action for a web
+     * ACL.</p> </li> </ul>
      */
     inline WafAction& WithType(const char* value) { SetType(value); return *this;}
 
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

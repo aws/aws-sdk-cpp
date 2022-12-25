@@ -27,18 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about an EC2 network access control list
+   * <p>Contains details about an Amazon EC2 network access control list
    * (ACL).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkAclDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkAclDetails
+  class AwsEc2NetworkAclDetails
   {
   public:
-    AwsEc2NetworkAclDetails();
-    AwsEc2NetworkAclDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkAclDetails();
+    AWS_SECURITYHUB_API AwsEc2NetworkAclDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,22 +277,22 @@ namespace Model
   private:
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_networkAclId;
-    bool m_networkAclIdHasBeenSet;
+    bool m_networkAclIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkAclAssociation> m_associations;
-    bool m_associationsHasBeenSet;
+    bool m_associationsHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkAclEntry> m_entries;
-    bool m_entriesHasBeenSet;
+    bool m_entriesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,7 +15,7 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
 #elseif($memberEntry.value.shape.timeStamp)
-    ${spaces}ss << ${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($memberEntry.value.shape));
+    ${spaces}ss << ${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($memberEntry.value.shape));
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
 #elseif($memberEntry.value.shape.map)
@@ -37,7 +37,7 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
     ${spaces}  ss.str("");
     ${spaces}}
 #else
-#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("querystring") && $operation.arnEndpointMemberName.equals($$memberEntry.key))
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("querystring") && $operation.arnEndpointMemberName.equals($$memberEntry.key) && !$serviceModel.endpointRules))
     ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
     ${spaces}if (arn && arn.Validate().IsSuccess())
     ${spaces}{

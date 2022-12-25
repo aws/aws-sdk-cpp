@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DetectedProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API DetectedProperties
+  class DetectedProperties
   {
   public:
-    DetectedProperties();
-    DetectedProperties(Aws::Utils::Json::JsonView jsonValue);
-    DetectedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API DetectedProperties();
+    AWS_ELASTICTRANSCODER_API DetectedProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API DetectedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,19 +165,19 @@ namespace Model
   private:
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Aws::String m_frameRate;
-    bool m_frameRateHasBeenSet;
+    bool m_frameRateHasBeenSet = false;
 
     long long m_fileSize;
-    bool m_fileSizeHasBeenSet;
+    bool m_fileSizeHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
   };
 
 } // namespace Model

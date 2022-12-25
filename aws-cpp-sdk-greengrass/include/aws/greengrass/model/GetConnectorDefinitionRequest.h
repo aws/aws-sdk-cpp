@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASS_API GetConnectorDefinitionRequest : public GreengrassRequest
+  class GetConnectorDefinitionRequest : public GreengrassRequest
   {
   public:
-    GetConnectorDefinitionRequest();
+    AWS_GREENGRASS_API GetConnectorDefinitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetConnectorDefinition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_connectorDefinitionId;
-    bool m_connectorDefinitionIdHasBeenSet;
+    bool m_connectorDefinitionIdHasBeenSet = false;
   };
 
 } // namespace Model

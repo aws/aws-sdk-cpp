@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAddFacetToObject">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchAddFacetToObject
+  class BatchAddFacetToObject
   {
   public:
-    BatchAddFacetToObject();
-    BatchAddFacetToObject(Aws::Utils::Json::JsonView jsonValue);
-    BatchAddFacetToObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchAddFacetToObject();
+    AWS_CLOUDDIRECTORY_API BatchAddFacetToObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchAddFacetToObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     SchemaFacet m_schemaFacet;
-    bool m_schemaFacetHasBeenSet;
+    bool m_schemaFacetHasBeenSet = false;
 
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
-    bool m_objectAttributeListHasBeenSet;
+    bool m_objectAttributeListHasBeenSet = false;
 
     ObjectReference m_objectReference;
-    bool m_objectReferenceHasBeenSet;
+    bool m_objectReferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RuleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API RuleSummary
+  class RuleSummary
   {
   public:
-    RuleSummary();
-    RuleSummary(Aws::Utils::Json::JsonView jsonValue);
-    RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API RuleSummary();
+    AWS_WAFREGIONAL_API RuleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

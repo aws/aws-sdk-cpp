@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotRecommendationSummary
+  class BotRecommendationSummary
   {
   public:
-    BotRecommendationSummary();
-    BotRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    BotRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotRecommendationSummary();
+    AWS_LEXMODELSV2_API BotRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     BotRecommendationStatus m_botRecommendationStatus;
-    bool m_botRecommendationStatusHasBeenSet;
+    bool m_botRecommendationStatusHasBeenSet = false;
 
     Aws::String m_botRecommendationId;
-    bool m_botRecommendationIdHasBeenSet;
+    bool m_botRecommendationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

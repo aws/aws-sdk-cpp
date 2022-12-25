@@ -33,10 +33,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CreateChannelRequest : public MediaLiveRequest
+  class CreateChannelRequest : public MediaLiveRequest
   {
   public:
-    CreateChannelRequest();
+    AWS_MEDIALIVE_API CreateChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -547,43 +547,43 @@ creating multiple resources.
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
-    bool m_cdiInputSpecificationHasBeenSet;
+    bool m_cdiInputSpecificationHasBeenSet = false;
 
     ChannelClass m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::Vector<OutputDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     EncoderSettings m_encoderSettings;
-    bool m_encoderSettingsHasBeenSet;
+    bool m_encoderSettingsHasBeenSet = false;
 
     Aws::Vector<InputAttachment> m_inputAttachments;
-    bool m_inputAttachmentsHasBeenSet;
+    bool m_inputAttachmentsHasBeenSet = false;
 
     InputSpecification m_inputSpecification;
-    bool m_inputSpecificationHasBeenSet;
+    bool m_inputSpecificationHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
 
     MaintenanceCreateSettings m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VpcOutputSettings m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

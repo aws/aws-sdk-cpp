@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContactMethod">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContactMethod
+  class ContactMethod
   {
   public:
-    ContactMethod();
-    ContactMethod(Aws::Utils::Json::JsonView jsonValue);
-    ContactMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContactMethod();
+    AWS_LIGHTSAIL_API ContactMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContactMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_contactEndpoint;
-    bool m_contactEndpointHasBeenSet;
+    bool m_contactEndpointHasBeenSet = false;
 
     ContactMethodStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ContactProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
   };
 
 } // namespace Model

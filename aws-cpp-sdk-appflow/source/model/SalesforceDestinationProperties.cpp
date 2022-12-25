@@ -23,7 +23,9 @@ SalesforceDestinationProperties::SalesforceDestinationProperties() :
     m_idFieldNamesHasBeenSet(false),
     m_errorHandlingConfigHasBeenSet(false),
     m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
+    m_writeOperationTypeHasBeenSet(false),
+    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
+    m_dataTransferApiHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ SalesforceDestinationProperties::SalesforceDestinationProperties(JsonView jsonVa
     m_idFieldNamesHasBeenSet(false),
     m_errorHandlingConfigHasBeenSet(false),
     m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
+    m_writeOperationTypeHasBeenSet(false),
+    m_dataTransferApi(SalesforceDataTransferApi::NOT_SET),
+    m_dataTransferApiHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,7 +52,7 @@ SalesforceDestinationProperties& SalesforceDestinationProperties::operator =(Jso
 
   if(jsonValue.ValueExists("idFieldNames"))
   {
-    Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
+    Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
     for(unsigned idFieldNamesIndex = 0; idFieldNamesIndex < idFieldNamesJsonList.GetLength(); ++idFieldNamesIndex)
     {
       m_idFieldNames.push_back(idFieldNamesJsonList[idFieldNamesIndex].AsString());
@@ -70,6 +74,13 @@ SalesforceDestinationProperties& SalesforceDestinationProperties::operator =(Jso
     m_writeOperationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataTransferApi"))
+  {
+    m_dataTransferApi = SalesforceDataTransferApiMapper::GetSalesforceDataTransferApiForName(jsonValue.GetString("dataTransferApi"));
+
+    m_dataTransferApiHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -85,7 +96,7 @@ JsonValue SalesforceDestinationProperties::Jsonize() const
 
   if(m_idFieldNamesHasBeenSet)
   {
-   Array<JsonValue> idFieldNamesJsonList(m_idFieldNames.size());
+   Aws::Utils::Array<JsonValue> idFieldNamesJsonList(m_idFieldNames.size());
    for(unsigned idFieldNamesIndex = 0; idFieldNamesIndex < idFieldNamesJsonList.GetLength(); ++idFieldNamesIndex)
    {
      idFieldNamesJsonList[idFieldNamesIndex].AsString(m_idFieldNames[idFieldNamesIndex]);
@@ -103,6 +114,11 @@ JsonValue SalesforceDestinationProperties::Jsonize() const
   if(m_writeOperationTypeHasBeenSet)
   {
    payload.WithString("writeOperationType", WriteOperationTypeMapper::GetNameForWriteOperationType(m_writeOperationType));
+  }
+
+  if(m_dataTransferApiHasBeenSet)
+  {
+   payload.WithString("dataTransferApi", SalesforceDataTransferApiMapper::GetNameForSalesforceDataTransferApi(m_dataTransferApi));
   }
 
   return payload;

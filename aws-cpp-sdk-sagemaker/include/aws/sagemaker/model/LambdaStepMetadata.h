@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LambdaStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LambdaStepMetadata
+  class LambdaStepMetadata
   {
   public:
-    LambdaStepMetadata();
-    LambdaStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    LambdaStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LambdaStepMetadata();
+    AWS_SAGEMAKER_API LambdaStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LambdaStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<OutputParameter> m_outputParameters;
-    bool m_outputParametersHasBeenSet;
+    bool m_outputParametersHasBeenSet = false;
   };
 
 } // namespace Model

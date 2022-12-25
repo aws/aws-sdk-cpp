@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ChangeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECATALOG_API ChangeSummary
+  class ChangeSummary
   {
   public:
-    ChangeSummary();
-    ChangeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChangeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACECATALOG_API ChangeSummary();
+    AWS_MARKETPLACECATALOG_API ChangeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API ChangeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
 
     Entity m_entity;
-    bool m_entityHasBeenSet;
+    bool m_entityHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetailList;
-    bool m_errorDetailListHasBeenSet;
+    bool m_errorDetailListHasBeenSet = false;
 
     Aws::String m_changeName;
-    bool m_changeNameHasBeenSet;
+    bool m_changeNameHasBeenSet = false;
   };
 
 } // namespace Model

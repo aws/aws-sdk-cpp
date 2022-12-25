@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StorageType">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API StorageType
+  class StorageType
   {
   public:
-    StorageType();
-    StorageType(Aws::Utils::Json::JsonView jsonValue);
-    StorageType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API StorageType();
+    AWS_ELASTICSEARCHSERVICE_API StorageType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API StorageType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_storageTypeName;
-    bool m_storageTypeNameHasBeenSet;
+    bool m_storageTypeNameHasBeenSet = false;
 
     Aws::String m_storageSubTypeName;
-    bool m_storageSubTypeNameHasBeenSet;
+    bool m_storageSubTypeNameHasBeenSet = false;
 
     Aws::Vector<StorageTypeLimit> m_storageTypeLimits;
-    bool m_storageTypeLimitsHasBeenSet;
+    bool m_storageTypeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

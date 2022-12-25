@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API CreateTableRequest : public GlueRequest
+  class CreateTableRequest : public GlueRequest
   {
   public:
-    CreateTableRequest();
+    AWS_GLUE_API CreateTableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     TableInput m_tableInput;
-    bool m_tableInputHasBeenSet;
+    bool m_tableInputHasBeenSet = false;
 
     Aws::Vector<PartitionIndex> m_partitionIndexes;
-    bool m_partitionIndexesHasBeenSet;
+    bool m_partitionIndexesHasBeenSet = false;
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
   };
 
 } // namespace Model

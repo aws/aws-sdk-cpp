@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest
+  class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest
   {
   public:
-    UpdateVirtualInterfaceAttributesRequest();
+    AWS_DIRECTCONNECT_API UpdateVirtualInterfaceAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateVirtualInterfaceAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     bool m_enableSiteLink;
-    bool m_enableSiteLinkHasBeenSet;
+    bool m_enableSiteLinkHasBeenSet = false;
 
     Aws::String m_virtualInterfaceName;
-    bool m_virtualInterfaceNameHasBeenSet;
+    bool m_virtualInterfaceNameHasBeenSet = false;
   };
 
 } // namespace Model

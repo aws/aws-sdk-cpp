@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableBillingModeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary
+  class AwsDynamoDbTableBillingModeSummary
   {
   public:
-    AwsDynamoDbTableBillingModeSummary();
-    AwsDynamoDbTableBillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableBillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary();
+    AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableBillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_billingMode;
-    bool m_billingModeHasBeenSet;
+    bool m_billingModeHasBeenSet = false;
 
     Aws::String m_lastUpdateToPayPerRequestDateTime;
-    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet;
+    bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

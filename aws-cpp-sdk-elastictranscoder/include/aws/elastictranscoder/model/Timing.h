@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Timing">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Timing
+  class Timing
   {
   public:
-    Timing();
-    Timing(Aws::Utils::Json::JsonView jsonValue);
-    Timing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Timing();
+    AWS_ELASTICTRANSCODER_API Timing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Timing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,13 +104,13 @@ namespace Model
   private:
 
     long long m_submitTimeMillis;
-    bool m_submitTimeMillisHasBeenSet;
+    bool m_submitTimeMillisHasBeenSet = false;
 
     long long m_startTimeMillis;
-    bool m_startTimeMillisHasBeenSet;
+    bool m_startTimeMillisHasBeenSet = false;
 
     long long m_finishTimeMillis;
-    bool m_finishTimeMillisHasBeenSet;
+    bool m_finishTimeMillisHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/FieldStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API FieldStats
+  class FieldStats
   {
   public:
-    FieldStats();
-    FieldStats(Aws::Utils::Json::JsonView jsonValue);
-    FieldStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats();
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,28 +452,28 @@ namespace Model
   private:
 
     Aws::String m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     Aws::String m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     long long m_missing;
-    bool m_missingHasBeenSet;
+    bool m_missingHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
 
     double m_sumOfSquares;
-    bool m_sumOfSquaresHasBeenSet;
+    bool m_sumOfSquaresHasBeenSet = false;
 
     Aws::String m_mean;
-    bool m_meanHasBeenSet;
+    bool m_meanHasBeenSet = false;
 
     double m_stddev;
-    bool m_stddevHasBeenSet;
+    bool m_stddevHasBeenSet = false;
   };
 
 } // namespace Model

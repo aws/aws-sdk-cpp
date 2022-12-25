@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorMetadata
+  class ConnectorMetadata
   {
   public:
-    ConnectorMetadata();
-    ConnectorMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorMetadata();
+    AWS_APPFLOW_API ConnectorMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -700,67 +700,67 @@ namespace Model
   private:
 
     AmplitudeMetadata m_amplitude;
-    bool m_amplitudeHasBeenSet;
+    bool m_amplitudeHasBeenSet = false;
 
     DatadogMetadata m_datadog;
-    bool m_datadogHasBeenSet;
+    bool m_datadogHasBeenSet = false;
 
     DynatraceMetadata m_dynatrace;
-    bool m_dynatraceHasBeenSet;
+    bool m_dynatraceHasBeenSet = false;
 
     GoogleAnalyticsMetadata m_googleAnalytics;
-    bool m_googleAnalyticsHasBeenSet;
+    bool m_googleAnalyticsHasBeenSet = false;
 
     InforNexusMetadata m_inforNexus;
-    bool m_inforNexusHasBeenSet;
+    bool m_inforNexusHasBeenSet = false;
 
     MarketoMetadata m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     RedshiftMetadata m_redshift;
-    bool m_redshiftHasBeenSet;
+    bool m_redshiftHasBeenSet = false;
 
     S3Metadata m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceMetadata m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowMetadata m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     SingularMetadata m_singular;
-    bool m_singularHasBeenSet;
+    bool m_singularHasBeenSet = false;
 
     SlackMetadata m_slack;
-    bool m_slackHasBeenSet;
+    bool m_slackHasBeenSet = false;
 
     SnowflakeMetadata m_snowflake;
-    bool m_snowflakeHasBeenSet;
+    bool m_snowflakeHasBeenSet = false;
 
     TrendmicroMetadata m_trendmicro;
-    bool m_trendmicroHasBeenSet;
+    bool m_trendmicroHasBeenSet = false;
 
     VeevaMetadata m_veeva;
-    bool m_veevaHasBeenSet;
+    bool m_veevaHasBeenSet = false;
 
     ZendeskMetadata m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     EventBridgeMetadata m_eventBridge;
-    bool m_eventBridgeHasBeenSet;
+    bool m_eventBridgeHasBeenSet = false;
 
     UpsolverMetadata m_upsolver;
-    bool m_upsolverHasBeenSet;
+    bool m_upsolverHasBeenSet = false;
 
     CustomerProfilesMetadata m_customerProfiles;
-    bool m_customerProfilesHasBeenSet;
+    bool m_customerProfilesHasBeenSet = false;
 
     HoneycodeMetadata m_honeycode;
-    bool m_honeycodeHasBeenSet;
+    bool m_honeycodeHasBeenSet = false;
 
     SAPODataMetadata m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
   };
 
 } // namespace Model

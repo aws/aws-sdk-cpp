@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentOrchestrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API AgentOrchestrationConfig
+  class AgentOrchestrationConfig
   {
   public:
-    AgentOrchestrationConfig();
-    AgentOrchestrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AgentOrchestrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API AgentOrchestrationConfig();
+    AWS_CODEGURUPROFILER_API AgentOrchestrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API AgentOrchestrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     bool m_profilingEnabled;
-    bool m_profilingEnabledHasBeenSet;
+    bool m_profilingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

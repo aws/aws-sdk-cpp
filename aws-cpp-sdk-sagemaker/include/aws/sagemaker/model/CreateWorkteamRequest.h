@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateWorkteamRequest : public SageMakerRequest
+  class CreateWorkteamRequest : public SageMakerRequest
   {
   public:
-    CreateWorkteamRequest();
+    AWS_SAGEMAKER_API CreateWorkteamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkteam"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -466,22 +466,22 @@ namespace Model
   private:
 
     Aws::String m_workteamName;
-    bool m_workteamNameHasBeenSet;
+    bool m_workteamNameHasBeenSet = false;
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
-    bool m_memberDefinitionsHasBeenSet;
+    bool m_memberDefinitionsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

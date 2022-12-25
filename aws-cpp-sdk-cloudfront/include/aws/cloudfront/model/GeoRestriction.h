@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GeoRestriction">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API GeoRestriction
+  class GeoRestriction
   {
   public:
-    GeoRestriction();
-    GeoRestriction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GeoRestriction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API GeoRestriction();
+    AWS_CLOUDFRONT_API GeoRestriction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API GeoRestriction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -148,8 +148,8 @@ namespace Model
 
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -164,8 +164,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -180,8 +180,8 @@ namespace Model
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -196,8 +196,8 @@ namespace Model
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -212,8 +212,8 @@ namespace Model
     inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -228,8 +228,8 @@ namespace Model
     inline GeoRestriction& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -244,8 +244,8 @@ namespace Model
     inline GeoRestriction& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -260,8 +260,8 @@ namespace Model
     inline GeoRestriction& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -276,8 +276,8 @@ namespace Model
     inline GeoRestriction& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A complex type that contains a <code>Location</code> element for each
-     * country in which you want CloudFront either to distribute your content
+     * <p>A complex type that contains a <code>Location</code> element for each country
+     * in which you want CloudFront either to distribute your content
      * (<code>whitelist</code>) or not distribute your content
      * (<code>blacklist</code>).</p> <p>The <code>Location</code> element is a
      * two-letter, uppercase country code for a country that you want to include in
@@ -294,13 +294,13 @@ namespace Model
   private:
 
     GeoRestrictionType m_restrictionType;
-    bool m_restrictionTypeHasBeenSet;
+    bool m_restrictionTypeHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

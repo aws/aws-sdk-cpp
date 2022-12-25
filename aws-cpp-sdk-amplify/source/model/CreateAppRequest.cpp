@@ -122,7 +122,7 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   if(m_customRulesHasBeenSet)
   {
-   Array<JsonValue> customRulesJsonList(m_customRules.size());
+   Aws::Utils::Array<JsonValue> customRulesJsonList(m_customRules.size());
    for(unsigned customRulesIndex = 0; customRulesIndex < customRulesJsonList.GetLength(); ++customRulesIndex)
    {
      customRulesJsonList[customRulesIndex].AsObject(m_customRules[customRulesIndex].Jsonize());
@@ -162,7 +162,7 @@ Aws::String CreateAppRequest::SerializePayload() const
 
   if(m_autoBranchCreationPatternsHasBeenSet)
   {
-   Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
+   Aws::Utils::Array<JsonValue> autoBranchCreationPatternsJsonList(m_autoBranchCreationPatterns.size());
    for(unsigned autoBranchCreationPatternsIndex = 0; autoBranchCreationPatternsIndex < autoBranchCreationPatternsJsonList.GetLength(); ++autoBranchCreationPatternsIndex)
    {
      autoBranchCreationPatternsJsonList[autoBranchCreationPatternsIndex].AsString(m_autoBranchCreationPatterns[autoBranchCreationPatternsIndex]);

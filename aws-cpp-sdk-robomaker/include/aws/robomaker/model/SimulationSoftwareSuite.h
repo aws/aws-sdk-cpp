@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationSoftwareSuite">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationSoftwareSuite
+  class SimulationSoftwareSuite
   {
   public:
-    SimulationSoftwareSuite();
-    SimulationSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
-    SimulationSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationSoftwareSuite();
+    AWS_ROBOMAKER_API SimulationSoftwareSuite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationSoftwareSuite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     SimulationSoftwareSuiteType m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

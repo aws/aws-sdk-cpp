@@ -21,13 +21,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API Unauthenticated
+  class Unauthenticated
   {
   public:
-    Unauthenticated();
-    Unauthenticated(Aws::Utils::Json::JsonView jsonValue);
-    Unauthenticated& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Unauthenticated();
+    AWS_KAFKA_API Unauthenticated(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Unauthenticated& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

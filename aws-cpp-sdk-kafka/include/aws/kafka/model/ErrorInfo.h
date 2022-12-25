@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ErrorInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_KAFKA_API ErrorInfo
+  class ErrorInfo
   {
   public:
-    ErrorInfo();
-    ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
-    ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ErrorInfo();
+    AWS_KAFKA_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorString;
-    bool m_errorStringHasBeenSet;
+    bool m_errorStringHasBeenSet = false;
   };
 
 } // namespace Model

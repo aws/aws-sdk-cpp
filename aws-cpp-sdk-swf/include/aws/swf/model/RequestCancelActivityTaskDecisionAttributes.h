@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelActivityTaskDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API RequestCancelActivityTaskDecisionAttributes
+  class RequestCancelActivityTaskDecisionAttributes
   {
   public:
-    RequestCancelActivityTaskDecisionAttributes();
-    RequestCancelActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    RequestCancelActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API RequestCancelActivityTaskDecisionAttributes();
+    AWS_SWF_API RequestCancelActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API RequestCancelActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
   };
 
 } // namespace Model

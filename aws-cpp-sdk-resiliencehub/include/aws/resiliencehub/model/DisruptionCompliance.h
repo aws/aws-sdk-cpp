@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DisruptionCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API DisruptionCompliance
+  class DisruptionCompliance
   {
   public:
-    DisruptionCompliance();
-    DisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
-    DisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API DisruptionCompliance();
+    AWS_RESILIENCEHUB_API DisruptionCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API DisruptionCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -361,34 +361,34 @@ namespace Model
   private:
 
     int m_achievableRpoInSecs;
-    bool m_achievableRpoInSecsHasBeenSet;
+    bool m_achievableRpoInSecsHasBeenSet = false;
 
     int m_achievableRtoInSecs;
-    bool m_achievableRtoInSecsHasBeenSet;
+    bool m_achievableRtoInSecsHasBeenSet = false;
 
     ComplianceStatus m_complianceStatus;
-    bool m_complianceStatusHasBeenSet;
+    bool m_complianceStatusHasBeenSet = false;
 
     int m_currentRpoInSecs;
-    bool m_currentRpoInSecsHasBeenSet;
+    bool m_currentRpoInSecsHasBeenSet = false;
 
     int m_currentRtoInSecs;
-    bool m_currentRtoInSecsHasBeenSet;
+    bool m_currentRtoInSecsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_rpoDescription;
-    bool m_rpoDescriptionHasBeenSet;
+    bool m_rpoDescriptionHasBeenSet = false;
 
     Aws::String m_rpoReferenceId;
-    bool m_rpoReferenceIdHasBeenSet;
+    bool m_rpoReferenceIdHasBeenSet = false;
 
     Aws::String m_rtoDescription;
-    bool m_rtoDescriptionHasBeenSet;
+    bool m_rtoDescriptionHasBeenSet = false;
 
     Aws::String m_rtoReferenceId;
-    bool m_rtoReferenceIdHasBeenSet;
+    bool m_rtoReferenceIdHasBeenSet = false;
   };
 
 } // namespace Model

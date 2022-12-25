@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowRun">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API WorkflowRun
+  class WorkflowRun
   {
   public:
-    WorkflowRun();
-    WorkflowRun(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API WorkflowRun();
+    AWS_GLUE_API WorkflowRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API WorkflowRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -484,37 +484,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_workflowRunId;
-    bool m_workflowRunIdHasBeenSet;
+    bool m_workflowRunIdHasBeenSet = false;
 
     Aws::String m_previousRunId;
-    bool m_previousRunIdHasBeenSet;
+    bool m_previousRunIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_workflowRunProperties;
-    bool m_workflowRunPropertiesHasBeenSet;
+    bool m_workflowRunPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_startedOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
+    bool m_completedOnHasBeenSet = false;
 
     WorkflowRunStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     WorkflowRunStatistics m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     WorkflowGraph m_graph;
-    bool m_graphHasBeenSet;
+    bool m_graphHasBeenSet = false;
 
     StartingEventBatchCondition m_startingEventBatchCondition;
-    bool m_startingEventBatchConditionHasBeenSet;
+    bool m_startingEventBatchConditionHasBeenSet = false;
   };
 
 } // namespace Model

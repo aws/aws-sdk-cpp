@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API DescribeProvisioningArtifactRequest : public ServiceCatalogRequest
+  class DescribeProvisioningArtifactRequest : public ServiceCatalogRequest
   {
   public:
-    DescribeProvisioningArtifactRequest();
+    AWS_SERVICECATALOG_API DescribeProvisioningArtifactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProvisioningArtifact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -278,22 +278,22 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactName;
-    bool m_provisioningArtifactNameHasBeenSet;
+    bool m_provisioningArtifactNameHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     bool m_verbose;
-    bool m_verboseHasBeenSet;
+    bool m_verboseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StandardsSubscription
+  class StandardsSubscription
   {
   public:
-    StandardsSubscription();
-    StandardsSubscription(Aws::Utils::Json::JsonView jsonValue);
-    StandardsSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StandardsSubscription();
+    AWS_SECURITYHUB_API StandardsSubscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StandardsSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,19 +297,19 @@ namespace Model
   private:
 
     Aws::String m_standardsSubscriptionArn;
-    bool m_standardsSubscriptionArnHasBeenSet;
+    bool m_standardsSubscriptionArnHasBeenSet = false;
 
     Aws::String m_standardsArn;
-    bool m_standardsArnHasBeenSet;
+    bool m_standardsArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_standardsInput;
-    bool m_standardsInputHasBeenSet;
+    bool m_standardsInputHasBeenSet = false;
 
     StandardsStatus m_standardsStatus;
-    bool m_standardsStatusHasBeenSet;
+    bool m_standardsStatusHasBeenSet = false;
 
     StandardsStatusReason m_standardsStatusReason;
-    bool m_standardsStatusReasonHasBeenSet;
+    bool m_standardsStatusReasonHasBeenSet = false;
   };
 
 } // namespace Model

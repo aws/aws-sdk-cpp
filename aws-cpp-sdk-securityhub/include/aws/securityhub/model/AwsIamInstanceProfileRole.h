@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamInstanceProfileRole">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamInstanceProfileRole
+  class AwsIamInstanceProfileRole
   {
   public:
-    AwsIamInstanceProfileRole();
-    AwsIamInstanceProfileRole(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamInstanceProfileRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamInstanceProfileRole();
+    AWS_SECURITYHUB_API AwsIamInstanceProfileRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamInstanceProfileRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_assumeRolePolicyDocument;
-    bool m_assumeRolePolicyDocumentHasBeenSet;
+    bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
     Aws::String m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_roleId;
-    bool m_roleIdHasBeenSet;
+    bool m_roleIdHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
   };
 
 } // namespace Model

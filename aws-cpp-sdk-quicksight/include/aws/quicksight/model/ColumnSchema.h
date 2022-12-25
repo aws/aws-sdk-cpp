@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnSchema
+  class ColumnSchema
   {
   public:
-    ColumnSchema();
-    ColumnSchema(Aws::Utils::Json::JsonView jsonValue);
-    ColumnSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnSchema();
+    AWS_QUICKSIGHT_API ColumnSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_geographicRole;
-    bool m_geographicRoleHasBeenSet;
+    bool m_geographicRoleHasBeenSet = false;
   };
 
 } // namespace Model

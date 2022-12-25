@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UpsertRowsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API UpsertRowsResult
+  class UpsertRowsResult
   {
   public:
-    UpsertRowsResult();
-    UpsertRowsResult(Aws::Utils::Json::JsonView jsonValue);
-    UpsertRowsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API UpsertRowsResult();
+    AWS_HONEYCODE_API UpsertRowsResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API UpsertRowsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_rowIds;
-    bool m_rowIdsHasBeenSet;
+    bool m_rowIdsHasBeenSet = false;
 
     UpsertAction m_upsertAction;
-    bool m_upsertActionHasBeenSet;
+    bool m_upsertActionHasBeenSet = false;
   };
 
 } // namespace Model

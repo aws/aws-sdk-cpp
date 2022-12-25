@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/Term">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API Term
+  class Term
   {
   public:
-    Term();
-    Term(Aws::Utils::Json::JsonView jsonValue);
-    Term& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API Term();
+    AWS_TRANSLATE_API Term(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Term& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_sourceText;
-    bool m_sourceTextHasBeenSet;
+    bool m_sourceTextHasBeenSet = false;
 
     Aws::String m_targetText;
-    bool m_targetTextHasBeenSet;
+    bool m_targetTextHasBeenSet = false;
   };
 
 } // namespace Model

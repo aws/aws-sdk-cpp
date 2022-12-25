@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ClusterOperationStepInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ClusterOperationStepInfo
+  class ClusterOperationStepInfo
   {
   public:
-    ClusterOperationStepInfo();
-    ClusterOperationStepInfo(Aws::Utils::Json::JsonView jsonValue);
-    ClusterOperationStepInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ClusterOperationStepInfo();
+    AWS_KAFKA_API ClusterOperationStepInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ClusterOperationStepInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_stepStatus;
-    bool m_stepStatusHasBeenSet;
+    bool m_stepStatusHasBeenSet = false;
   };
 
 } // namespace Model

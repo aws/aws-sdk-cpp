@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API CreateUserProfileRequest : public OpsWorksRequest
+  class CreateUserProfileRequest : public OpsWorksRequest
   {
   public:
-    CreateUserProfileRequest();
+    AWS_OPSWORKS_API CreateUserProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateUserProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_iamUserArn;
-    bool m_iamUserArnHasBeenSet;
+    bool m_iamUserArnHasBeenSet = false;
 
     Aws::String m_sshUsername;
-    bool m_sshUsernameHasBeenSet;
+    bool m_sshUsernameHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
 
     bool m_allowSelfManagement;
-    bool m_allowSelfManagementHasBeenSet;
+    bool m_allowSelfManagementHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketLoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketLoggingConfiguration
+  class AwsS3BucketLoggingConfiguration
   {
   public:
-    AwsS3BucketLoggingConfiguration();
-    AwsS3BucketLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketLoggingConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_destinationBucketName;
-    bool m_destinationBucketNameHasBeenSet;
+    bool m_destinationBucketNameHasBeenSet = false;
 
     Aws::String m_logFilePrefix;
-    bool m_logFilePrefixHasBeenSet;
+    bool m_logFilePrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateRequest : public ServerlessApplicationRepositoryRequest
+  class GetCloudFormationTemplateRequest : public ServerlessApplicationRepositoryRequest
   {
   public:
-    GetCloudFormationTemplateRequest();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCloudFormationTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

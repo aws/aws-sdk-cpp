@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CertificateList">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API CertificateList
+  class CertificateList
   {
   public:
-    CertificateList();
-    CertificateList(Aws::Utils::Json::JsonView jsonValue);
-    CertificateList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API CertificateList();
+    AWS_IOTWIRELESS_API CertificateList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API CertificateList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     SigningAlg m_signingAlg;
-    bool m_signingAlgHasBeenSet;
+    bool m_signingAlgHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

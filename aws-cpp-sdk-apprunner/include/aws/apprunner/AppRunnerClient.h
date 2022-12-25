@@ -5,208 +5,16 @@
 
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
-#include <aws/apprunner/AppRunnerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/apprunner/model/AssociateCustomDomainResult.h>
-#include <aws/apprunner/model/CreateAutoScalingConfigurationResult.h>
-#include <aws/apprunner/model/CreateConnectionResult.h>
-#include <aws/apprunner/model/CreateObservabilityConfigurationResult.h>
-#include <aws/apprunner/model/CreateServiceResult.h>
-#include <aws/apprunner/model/CreateVpcConnectorResult.h>
-#include <aws/apprunner/model/DeleteAutoScalingConfigurationResult.h>
-#include <aws/apprunner/model/DeleteConnectionResult.h>
-#include <aws/apprunner/model/DeleteObservabilityConfigurationResult.h>
-#include <aws/apprunner/model/DeleteServiceResult.h>
-#include <aws/apprunner/model/DeleteVpcConnectorResult.h>
-#include <aws/apprunner/model/DescribeAutoScalingConfigurationResult.h>
-#include <aws/apprunner/model/DescribeCustomDomainsResult.h>
-#include <aws/apprunner/model/DescribeObservabilityConfigurationResult.h>
-#include <aws/apprunner/model/DescribeServiceResult.h>
-#include <aws/apprunner/model/DescribeVpcConnectorResult.h>
-#include <aws/apprunner/model/DisassociateCustomDomainResult.h>
-#include <aws/apprunner/model/ListAutoScalingConfigurationsResult.h>
-#include <aws/apprunner/model/ListConnectionsResult.h>
-#include <aws/apprunner/model/ListObservabilityConfigurationsResult.h>
-#include <aws/apprunner/model/ListOperationsResult.h>
-#include <aws/apprunner/model/ListServicesResult.h>
-#include <aws/apprunner/model/ListTagsForResourceResult.h>
-#include <aws/apprunner/model/ListVpcConnectorsResult.h>
-#include <aws/apprunner/model/PauseServiceResult.h>
-#include <aws/apprunner/model/ResumeServiceResult.h>
-#include <aws/apprunner/model/StartDeploymentResult.h>
-#include <aws/apprunner/model/TagResourceResult.h>
-#include <aws/apprunner/model/UntagResourceResult.h>
-#include <aws/apprunner/model/UpdateServiceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/apprunner/AppRunnerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppRunner
 {
-
-namespace Model
-{
-        class AssociateCustomDomainRequest;
-        class CreateAutoScalingConfigurationRequest;
-        class CreateConnectionRequest;
-        class CreateObservabilityConfigurationRequest;
-        class CreateServiceRequest;
-        class CreateVpcConnectorRequest;
-        class DeleteAutoScalingConfigurationRequest;
-        class DeleteConnectionRequest;
-        class DeleteObservabilityConfigurationRequest;
-        class DeleteServiceRequest;
-        class DeleteVpcConnectorRequest;
-        class DescribeAutoScalingConfigurationRequest;
-        class DescribeCustomDomainsRequest;
-        class DescribeObservabilityConfigurationRequest;
-        class DescribeServiceRequest;
-        class DescribeVpcConnectorRequest;
-        class DisassociateCustomDomainRequest;
-        class ListAutoScalingConfigurationsRequest;
-        class ListConnectionsRequest;
-        class ListObservabilityConfigurationsRequest;
-        class ListOperationsRequest;
-        class ListServicesRequest;
-        class ListTagsForResourceRequest;
-        class ListVpcConnectorsRequest;
-        class PauseServiceRequest;
-        class ResumeServiceRequest;
-        class StartDeploymentRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateServiceRequest;
-
-        typedef Aws::Utils::Outcome<AssociateCustomDomainResult, AppRunnerError> AssociateCustomDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateAutoScalingConfigurationResult, AppRunnerError> CreateAutoScalingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateConnectionResult, AppRunnerError> CreateConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreateObservabilityConfigurationResult, AppRunnerError> CreateObservabilityConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateServiceResult, AppRunnerError> CreateServiceOutcome;
-        typedef Aws::Utils::Outcome<CreateVpcConnectorResult, AppRunnerError> CreateVpcConnectorOutcome;
-        typedef Aws::Utils::Outcome<DeleteAutoScalingConfigurationResult, AppRunnerError> DeleteAutoScalingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectionResult, AppRunnerError> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteObservabilityConfigurationResult, AppRunnerError> DeleteObservabilityConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceResult, AppRunnerError> DeleteServiceOutcome;
-        typedef Aws::Utils::Outcome<DeleteVpcConnectorResult, AppRunnerError> DeleteVpcConnectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeAutoScalingConfigurationResult, AppRunnerError> DescribeAutoScalingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomDomainsResult, AppRunnerError> DescribeCustomDomainsOutcome;
-        typedef Aws::Utils::Outcome<DescribeObservabilityConfigurationResult, AppRunnerError> DescribeObservabilityConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceResult, AppRunnerError> DescribeServiceOutcome;
-        typedef Aws::Utils::Outcome<DescribeVpcConnectorResult, AppRunnerError> DescribeVpcConnectorOutcome;
-        typedef Aws::Utils::Outcome<DisassociateCustomDomainResult, AppRunnerError> DisassociateCustomDomainOutcome;
-        typedef Aws::Utils::Outcome<ListAutoScalingConfigurationsResult, AppRunnerError> ListAutoScalingConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListConnectionsResult, AppRunnerError> ListConnectionsOutcome;
-        typedef Aws::Utils::Outcome<ListObservabilityConfigurationsResult, AppRunnerError> ListObservabilityConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListOperationsResult, AppRunnerError> ListOperationsOutcome;
-        typedef Aws::Utils::Outcome<ListServicesResult, AppRunnerError> ListServicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRunnerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListVpcConnectorsResult, AppRunnerError> ListVpcConnectorsOutcome;
-        typedef Aws::Utils::Outcome<PauseServiceResult, AppRunnerError> PauseServiceOutcome;
-        typedef Aws::Utils::Outcome<ResumeServiceResult, AppRunnerError> ResumeServiceOutcome;
-        typedef Aws::Utils::Outcome<StartDeploymentResult, AppRunnerError> StartDeploymentOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, AppRunnerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, AppRunnerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateServiceResult, AppRunnerError> UpdateServiceOutcome;
-
-        typedef std::future<AssociateCustomDomainOutcome> AssociateCustomDomainOutcomeCallable;
-        typedef std::future<CreateAutoScalingConfigurationOutcome> CreateAutoScalingConfigurationOutcomeCallable;
-        typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
-        typedef std::future<CreateObservabilityConfigurationOutcome> CreateObservabilityConfigurationOutcomeCallable;
-        typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
-        typedef std::future<CreateVpcConnectorOutcome> CreateVpcConnectorOutcomeCallable;
-        typedef std::future<DeleteAutoScalingConfigurationOutcome> DeleteAutoScalingConfigurationOutcomeCallable;
-        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
-        typedef std::future<DeleteObservabilityConfigurationOutcome> DeleteObservabilityConfigurationOutcomeCallable;
-        typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
-        typedef std::future<DeleteVpcConnectorOutcome> DeleteVpcConnectorOutcomeCallable;
-        typedef std::future<DescribeAutoScalingConfigurationOutcome> DescribeAutoScalingConfigurationOutcomeCallable;
-        typedef std::future<DescribeCustomDomainsOutcome> DescribeCustomDomainsOutcomeCallable;
-        typedef std::future<DescribeObservabilityConfigurationOutcome> DescribeObservabilityConfigurationOutcomeCallable;
-        typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
-        typedef std::future<DescribeVpcConnectorOutcome> DescribeVpcConnectorOutcomeCallable;
-        typedef std::future<DisassociateCustomDomainOutcome> DisassociateCustomDomainOutcomeCallable;
-        typedef std::future<ListAutoScalingConfigurationsOutcome> ListAutoScalingConfigurationsOutcomeCallable;
-        typedef std::future<ListConnectionsOutcome> ListConnectionsOutcomeCallable;
-        typedef std::future<ListObservabilityConfigurationsOutcome> ListObservabilityConfigurationsOutcomeCallable;
-        typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
-        typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListVpcConnectorsOutcome> ListVpcConnectorsOutcomeCallable;
-        typedef std::future<PauseServiceOutcome> PauseServiceOutcomeCallable;
-        typedef std::future<ResumeServiceOutcome> ResumeServiceOutcomeCallable;
-        typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
-} // namespace Model
-
-  class AppRunnerClient;
-
-    typedef std::function<void(const AppRunnerClient*, const Model::AssociateCustomDomainRequest&, const Model::AssociateCustomDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateCustomDomainResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::CreateAutoScalingConfigurationRequest&, const Model::CreateAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoScalingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::CreateObservabilityConfigurationRequest&, const Model::CreateObservabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateObservabilityConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::CreateVpcConnectorRequest&, const Model::CreateVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcConnectorResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DeleteAutoScalingConfigurationRequest&, const Model::DeleteAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutoScalingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DeleteObservabilityConfigurationRequest&, const Model::DeleteObservabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObservabilityConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DeleteVpcConnectorRequest&, const Model::DeleteVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcConnectorResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DescribeAutoScalingConfigurationRequest&, const Model::DescribeAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DescribeCustomDomainsRequest&, const Model::DescribeCustomDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomDomainsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DescribeObservabilityConfigurationRequest&, const Model::DescribeObservabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObservabilityConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DescribeServiceRequest&, const Model::DescribeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DescribeVpcConnectorRequest&, const Model::DescribeVpcConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcConnectorResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::DisassociateCustomDomainRequest&, const Model::DisassociateCustomDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCustomDomainResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListAutoScalingConfigurationsRequest&, const Model::ListAutoScalingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoScalingConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListConnectionsRequest&, const Model::ListConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectionsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListObservabilityConfigurationsRequest&, const Model::ListObservabilityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObservabilityConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ListVpcConnectorsRequest&, const Model::ListVpcConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVpcConnectorsResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::PauseServiceRequest&, const Model::PauseServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PauseServiceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::ResumeServiceRequest&, const Model::ResumeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeServiceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeploymentResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRunnerClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
-
   /**
    * <fullname>App Runner</fullname> <p>App Runner is an application service that
    * provides a fast, simple, and cost-effective way to go directly from an existing
@@ -229,32 +37,60 @@ namespace Model
    * endpoints and quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
-  class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient
+  class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppRunnerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppRunnerClient(const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration(),
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppRunnerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppRunnerClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppRunnerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppRunnerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppRunnerClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AppRunnerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AppRunnerClient();
-
 
         /**
          * <p>Associate your own domain name with the App Runner subdomain URL of your App
@@ -407,6 +243,25 @@ namespace Model
         virtual void CreateVpcConnectorAsync(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create an App Runner VPC Ingress Connection resource. App Runner requires
+         * this resource when you want to associate your App Runner service with an Amazon
+         * VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcIngressConnectionOutcome CreateVpcIngressConnection(const Model::CreateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcIngressConnectionOutcomeCallable CreateVpcIngressConnectionCallable(const Model::CreateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcIngressConnectionAsync(const Model::CreateVpcIngressConnectionRequest& request, const CreateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete an App Runner automatic scaling configuration resource. You can delete
          * a specific revision or the latest active revision. You can't delete a
          * configuration that's used by one or more App Runner services.</p><p><h3>See
@@ -468,8 +323,9 @@ namespace Model
         /**
          * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
          * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
+         * <a>ListOperations</a> call to track the operation's progress.</p>  <p>Make
+         * sure that you don't have any active VPCIngressConnections associated with the
+         * service you want to delete. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -502,6 +358,28 @@ namespace Model
          * An Async wrapper for DeleteVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVpcConnectorAsync(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete an App Runner VPC Ingress Connection resource that's associated with
+         * an App Runner service. The VPC Ingress Connection must be in one of the
+         * following states to be deleted: </p> <ul> <li> <p> <code>AVAILABLE</code> </p>
+         * </li> <li> <p> <code>FAILED_CREATION</code> </p> </li> <li> <p>
+         * <code>FAILED_UPDATE</code> </p> </li> <li> <p> <code>FAILED_DELETION</code> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcIngressConnectionOutcome DeleteVpcIngressConnection(const Model::DeleteVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcIngressConnectionOutcomeCallable DeleteVpcIngressConnectionCallable(const Model::DeleteVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcIngressConnectionAsync(const Model::DeleteVpcIngressConnectionRequest& request, const DeleteVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner automatic scaling configuration
@@ -592,6 +470,24 @@ namespace Model
          * An Async wrapper for DescribeVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeVpcConnectorAsync(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Return a full description of an App Runner VPC Ingress Connection
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcIngressConnectionOutcome DescribeVpcIngressConnection(const Model::DescribeVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcIngressConnectionOutcomeCallable DescribeVpcIngressConnectionCallable(const Model::DescribeVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcIngressConnectionAsync(const Model::DescribeVpcIngressConnectionRequest& request, const DescribeVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate a custom domain name from an App Runner service.</p>
@@ -754,6 +650,24 @@ namespace Model
         virtual void ListVpcConnectorsAsync(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcIngressConnectionsOutcome ListVpcIngressConnections(const Model::ListVpcIngressConnectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcIngressConnections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcIngressConnectionsOutcomeCallable ListVpcIngressConnectionsCallable(const Model::ListVpcIngressConnectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListVpcIngressConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcIngressConnectionsAsync(const Model::ListVpcIngressConnectionsRequest& request, const ListVpcIngressConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Pause an active App Runner service. App Runner reduces compute capacity for
          * the service to zero and loses state (for example, ephemeral storage is
          * removed).</p> <p>This is an asynchronous operation. On a successful call, you
@@ -880,44 +794,36 @@ namespace Model
          */
         virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Update an existing App Runner VPC Ingress Connection resource. The VPC
+         * Ingress Connection must be in one of the following states to be updated:</p>
+         * <ul> <li> <p> AVAILABLE </p> </li> <li> <p> FAILED_CREATION </p> </li> <li> <p>
+         * FAILED_UPDATE </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVpcIngressConnectionOutcome UpdateVpcIngressConnection(const Model::UpdateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVpcIngressConnectionOutcomeCallable UpdateVpcIngressConnectionCallable(const Model::UpdateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVpcIngressConnectionAsync(const Model::UpdateVpcIngressConnectionRequest& request, const UpdateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateCustomDomainAsyncHelper(const Model::AssociateCustomDomainRequest& request, const AssociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAutoScalingConfigurationAsyncHelper(const Model::CreateAutoScalingConfigurationRequest& request, const CreateAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateConnectionAsyncHelper(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateObservabilityConfigurationAsyncHelper(const Model::CreateObservabilityConfigurationRequest& request, const CreateObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVpcConnectorAsyncHelper(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAutoScalingConfigurationAsyncHelper(const Model::DeleteAutoScalingConfigurationRequest& request, const DeleteAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteObservabilityConfigurationAsyncHelper(const Model::DeleteObservabilityConfigurationRequest& request, const DeleteObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVpcConnectorAsyncHelper(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAutoScalingConfigurationAsyncHelper(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomDomainsAsyncHelper(const Model::DescribeCustomDomainsRequest& request, const DescribeCustomDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeObservabilityConfigurationAsyncHelper(const Model::DescribeObservabilityConfigurationRequest& request, const DescribeObservabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServiceAsyncHelper(const Model::DescribeServiceRequest& request, const DescribeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVpcConnectorAsyncHelper(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateCustomDomainAsyncHelper(const Model::DisassociateCustomDomainRequest& request, const DisassociateCustomDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAutoScalingConfigurationsAsyncHelper(const Model::ListAutoScalingConfigurationsRequest& request, const ListAutoScalingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConnectionsAsyncHelper(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListObservabilityConfigurationsAsyncHelper(const Model::ListObservabilityConfigurationsRequest& request, const ListObservabilityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOperationsAsyncHelper(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVpcConnectorsAsyncHelper(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PauseServiceAsyncHelper(const Model::PauseServiceRequest& request, const PauseServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResumeServiceAsyncHelper(const Model::ResumeServiceRequest& request, const ResumeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDeploymentAsyncHelper(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
+      void init(const AppRunnerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AppRunnerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AppRunnerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppRunner

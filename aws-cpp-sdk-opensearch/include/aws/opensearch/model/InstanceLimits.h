@@ -24,42 +24,60 @@ namespace Model
 {
 
   /**
-   * <p>InstanceLimits represents the list of instance-related attributes that are
-   * available for a given InstanceType. </p><p><h3>See Also:</h3>   <a
+   * <p>Instance-related attributes that are available for a given instance
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InstanceLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API InstanceLimits
+  class InstanceLimits
   {
   public:
-    InstanceLimits();
-    InstanceLimits(Aws::Utils::Json::JsonView jsonValue);
-    InstanceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API InstanceLimits();
+    AWS_OPENSEARCHSERVICE_API InstanceLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API InstanceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline const InstanceCountLimits& GetInstanceCountLimits() const{ return m_instanceCountLimits; }
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline bool InstanceCountLimitsHasBeenSet() const { return m_instanceCountLimitsHasBeenSet; }
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline void SetInstanceCountLimits(const InstanceCountLimits& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = value; }
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline void SetInstanceCountLimits(InstanceCountLimits&& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = std::move(value); }
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline InstanceLimits& WithInstanceCountLimits(const InstanceCountLimits& value) { SetInstanceCountLimits(value); return *this;}
 
-    
+    /**
+     * <p>Limits on the number of instances that can be created for a given instance
+     * type.</p>
+     */
     inline InstanceLimits& WithInstanceCountLimits(InstanceCountLimits&& value) { SetInstanceCountLimits(std::move(value)); return *this;}
 
   private:
 
     InstanceCountLimits m_instanceCountLimits;
-    bool m_instanceCountLimitsHasBeenSet;
+    bool m_instanceCountLimitsHasBeenSet = false;
   };
 
 } // namespace Model

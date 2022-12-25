@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53_API ChangeCidrCollectionRequest : public Route53Request
+  class ChangeCidrCollectionRequest : public Route53Request
   {
   public:
-    ChangeCidrCollectionRequest();
+    AWS_ROUTE53_API ChangeCidrCollectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChangeCidrCollection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_collectionVersion;
-    bool m_collectionVersionHasBeenSet;
+    bool m_collectionVersionHasBeenSet = false;
 
     Aws::Vector<CidrCollectionChange> m_changes;
-    bool m_changesHasBeenSet;
+    bool m_changesHasBeenSet = false;
   };
 
 } // namespace Model

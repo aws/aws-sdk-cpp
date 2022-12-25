@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerReplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerReplicationConfiguration
+  class ServerReplicationConfiguration
   {
   public:
-    ServerReplicationConfiguration();
-    ServerReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerReplicationConfiguration();
+    AWS_SMS_API ServerReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     ServerReplicationParameters m_serverReplicationParameters;
-    bool m_serverReplicationParametersHasBeenSet;
+    bool m_serverReplicationParametersHasBeenSet = false;
   };
 
 } // namespace Model

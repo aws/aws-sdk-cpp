@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/IssueDetected">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API IssueDetected
+  class IssueDetected
   {
   public:
-    IssueDetected();
-    IssueDetected(Aws::Utils::Json::JsonView jsonValue);
-    IssueDetected& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API IssueDetected();
+    AWS_CONNECTCONTACTLENS_API IssueDetected(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API IssueDetected& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CharacterOffsets m_characterOffsets;
-    bool m_characterOffsetsHasBeenSet;
+    bool m_characterOffsetsHasBeenSet = false;
   };
 
 } // namespace Model

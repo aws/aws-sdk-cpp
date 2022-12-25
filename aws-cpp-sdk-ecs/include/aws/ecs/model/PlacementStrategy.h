@@ -28,18 +28,18 @@ namespace Model
    * <p>The task placement strategy for a task or service. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task
-   * Placement Strategies</a> in the <i>Amazon Elastic Container Service Developer
+   * placement strategies</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API PlacementStrategy
+  class PlacementStrategy
   {
   public:
-    PlacementStrategy();
-    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PlacementStrategy();
+    AWS_ECS_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,10 +206,10 @@ namespace Model
   private:
 
     PlacementStrategyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

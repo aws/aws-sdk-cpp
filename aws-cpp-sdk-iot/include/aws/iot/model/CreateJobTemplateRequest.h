@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API CreateJobTemplateRequest : public IoTRequest
+  class CreateJobTemplateRequest : public IoTRequest
   {
   public:
-    CreateJobTemplateRequest();
+    AWS_IOT_API CreateJobTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateJobTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -458,37 +458,37 @@ namespace Model
   private:
 
     Aws::String m_jobTemplateId;
-    bool m_jobTemplateIdHasBeenSet;
+    bool m_jobTemplateIdHasBeenSet = false;
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_documentSource;
-    bool m_documentSourceHasBeenSet;
+    bool m_documentSourceHasBeenSet = false;
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PresignedUrlConfig m_presignedUrlConfig;
-    bool m_presignedUrlConfigHasBeenSet;
+    bool m_presignedUrlConfigHasBeenSet = false;
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     AbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-    bool m_jobExecutionsRetryConfigHasBeenSet;
+    bool m_jobExecutionsRetryConfigHasBeenSet = false;
   };
 
 } // namespace Model

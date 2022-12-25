@@ -24,12 +24,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API GetComplianceDetailResult
+  class GetComplianceDetailResult
   {
   public:
-    GetComplianceDetailResult();
-    GetComplianceDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComplianceDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetComplianceDetailResult();
+    AWS_FMS_API GetComplianceDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetComplianceDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

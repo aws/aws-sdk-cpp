@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Button">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API Button
+  class Button
   {
   public:
-    Button();
-    Button(Aws::Utils::Json::JsonView jsonValue);
-    Button& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API Button();
+    AWS_LEXMODELSV2_API Button(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Button& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

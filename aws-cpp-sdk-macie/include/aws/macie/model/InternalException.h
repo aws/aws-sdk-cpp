@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/InternalException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API InternalException
+  class InternalException
   {
   public:
-    InternalException();
-    InternalException(Aws::Utils::Json::JsonView jsonValue);
-    InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API InternalException();
+    AWS_MACIE_API InternalException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

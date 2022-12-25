@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/KinesisAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API KinesisAction
+  class KinesisAction
   {
   public:
-    KinesisAction();
-    KinesisAction(Aws::Utils::Json::JsonView jsonValue);
-    KinesisAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API KinesisAction();
+    AWS_IOT_API KinesisAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API KinesisAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_partitionKey;
-    bool m_partitionKeyHasBeenSet;
+    bool m_partitionKeyHasBeenSet = false;
   };
 
 } // namespace Model

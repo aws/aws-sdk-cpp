@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GenericRevisionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API GenericRevisionInfo
+  class GenericRevisionInfo
   {
   public:
-    GenericRevisionInfo();
-    GenericRevisionInfo(Aws::Utils::Json::JsonView jsonValue);
-    GenericRevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API GenericRevisionInfo();
+    AWS_CODEDEPLOY_API GenericRevisionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API GenericRevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,113 +127,113 @@ namespace Model
 
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstUsedTime() const{ return m_firstUsedTime; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline bool FirstUsedTimeHasBeenSet() const { return m_firstUsedTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline void SetFirstUsedTime(const Aws::Utils::DateTime& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = value; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline void SetFirstUsedTime(Aws::Utils::DateTime&& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = std::move(value); }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithFirstUsedTime(const Aws::Utils::DateTime& value) { SetFirstUsedTime(value); return *this;}
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithFirstUsedTime(Aws::Utils::DateTime&& value) { SetFirstUsedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUsedTime() const{ return m_lastUsedTime; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline bool LastUsedTimeHasBeenSet() const { return m_lastUsedTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline void SetLastUsedTime(const Aws::Utils::DateTime& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = value; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline void SetLastUsedTime(Aws::Utils::DateTime&& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = std::move(value); }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithLastUsedTime(const Aws::Utils::DateTime& value) { SetLastUsedTime(value); return *this;}
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithLastUsedTime(Aws::Utils::DateTime&& value) { SetLastUsedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisterTime() const{ return m_registerTime; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline bool RegisterTimeHasBeenSet() const { return m_registerTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = std::move(value); }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithRegisterTime(const Aws::Utils::DateTime& value) { SetRegisterTime(value); return *this;}
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentGroups;
-    bool m_deploymentGroupsHasBeenSet;
+    bool m_deploymentGroupsHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstUsedTime;
-    bool m_firstUsedTimeHasBeenSet;
+    bool m_firstUsedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUsedTime;
-    bool m_lastUsedTimeHasBeenSet;
+    bool m_lastUsedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_registerTime;
-    bool m_registerTimeHasBeenSet;
+    bool m_registerTimeHasBeenSet = false;
   };
 
 } // namespace Model

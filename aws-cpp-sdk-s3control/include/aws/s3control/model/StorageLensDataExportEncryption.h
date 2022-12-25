@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensDataExportEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API StorageLensDataExportEncryption
+  class StorageLensDataExportEncryption
   {
   public:
-    StorageLensDataExportEncryption();
-    StorageLensDataExportEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StorageLensDataExportEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensDataExportEncryption();
+    AWS_S3CONTROL_API StorageLensDataExportEncryption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensDataExportEncryption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SSES3 m_sSES3;
-    bool m_sSES3HasBeenSet;
+    bool m_sSES3HasBeenSet = false;
 
     SSEKMS m_sSEKMS;
-    bool m_sSEKMSHasBeenSet;
+    bool m_sSEKMSHasBeenSet = false;
   };
 
 } // namespace Model

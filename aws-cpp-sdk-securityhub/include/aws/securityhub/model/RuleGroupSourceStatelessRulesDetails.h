@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRulesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails
+  class RuleGroupSourceStatelessRulesDetails
   {
   public:
-    RuleGroupSourceStatelessRulesDetails();
-    RuleGroupSourceStatelessRulesDetails(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     RuleGroupSourceStatelessRuleDefinition m_ruleDefinition;
-    bool m_ruleDefinitionHasBeenSet;
+    bool m_ruleDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Participant">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API Participant
+  class Participant
   {
   public:
-    Participant();
-    Participant(Aws::Utils::Json::JsonView jsonValue);
-    Participant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Participant();
+    AWS_CHIME_API Participant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Participant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_proxyPhoneNumber;
-    bool m_proxyPhoneNumberHasBeenSet;
+    bool m_proxyPhoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DynatraceConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DynatraceConnectorProfileProperties
+  class DynatraceConnectorProfileProperties
   {
   public:
-    DynatraceConnectorProfileProperties();
-    DynatraceConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    DynatraceConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DynatraceConnectorProfileProperties();
+    AWS_APPFLOW_API DynatraceConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DynatraceConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_instanceUrl;
-    bool m_instanceUrlHasBeenSet;
+    bool m_instanceUrlHasBeenSet = false;
   };
 
 } // namespace Model

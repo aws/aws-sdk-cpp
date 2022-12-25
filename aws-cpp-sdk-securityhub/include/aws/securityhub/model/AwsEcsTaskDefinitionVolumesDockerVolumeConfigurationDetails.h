@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails
+  class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails
   {
   public:
-    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails();
-    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,7 +240,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
 
@@ -248,7 +248,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
@@ -256,7 +256,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
@@ -272,7 +272,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
 
@@ -280,7 +280,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const Aws::String& value) { SetScope(value); return *this;}
 
@@ -288,7 +288,7 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
 
@@ -296,26 +296,26 @@ namespace Model
      * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
      * that are scoped to a task are provisioned automatically when the task starts and
      * destroyed when the task stops. Docker volumes that are shared persist after the
-     * task stops.</p>
+     * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const char* value) { SetScope(value); return *this;}
 
   private:
 
     bool m_autoprovision;
-    bool m_autoprovisionHasBeenSet;
+    bool m_autoprovisionHasBeenSet = false;
 
     Aws::String m_driver;
-    bool m_driverHasBeenSet;
+    bool m_driverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_driverOpts;
-    bool m_driverOptsHasBeenSet;
+    bool m_driverOptsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ BatchDetectSentimentResult& BatchDetectSentimentResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResultList"))
   {
-    Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");
+    Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");
     for(unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex)
     {
       m_resultList.push_back(resultListJsonList[resultListIndex].AsObject());
@@ -39,7 +39,7 @@ BatchDetectSentimentResult& BatchDetectSentimentResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("ErrorList"))
   {
-    Array<JsonView> errorListJsonList = jsonValue.GetArray("ErrorList");
+    Aws::Utils::Array<JsonView> errorListJsonList = jsonValue.GetArray("ErrorList");
     for(unsigned errorListIndex = 0; errorListIndex < errorListJsonList.GetLength(); ++errorListIndex)
     {
       m_errorList.push_back(errorListJsonList[errorListIndex].AsObject());

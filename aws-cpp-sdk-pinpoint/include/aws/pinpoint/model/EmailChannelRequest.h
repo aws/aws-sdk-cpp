@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EmailChannelRequest
+  class EmailChannelRequest
   {
   public:
-    EmailChannelRequest();
-    EmailChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    EmailChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EmailChannelRequest();
+    AWS_PINPOINT_API EmailChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EmailChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::String m_configurationSet;
-    bool m_configurationSetHasBeenSet;
+    bool m_configurationSetHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

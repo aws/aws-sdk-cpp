@@ -33,58 +33,66 @@ namespace Model
    * studio users to select which operating system and software they want to use in a
    * Nimble Studio streaming session.</p> <p>Amazon provides a number of streaming
    * images that include popular 3rd-party software.</p> <p>You can create your own
-   * streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine
-   * image that you create for this purpose. You can also include software that your
-   * users require.</p><p><h3>See Also:</h3>   <a
+   * streaming images using an Amazon EC2 machine image that you create for this
+   * purpose. You can also include software that your users require.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingImage">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamingImage
+  class StreamingImage
   {
   public:
-    StreamingImage();
-    StreamingImage(Aws::Utils::Json::JsonView jsonValue);
-    StreamingImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamingImage();
+    AWS_NIMBLESTUDIO_API StreamingImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamingImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingImage& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingImage& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingImage& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -299,99 +307,99 @@ namespace Model
 
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline StreamingImage& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline StreamingImage& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the streaming image, either the studioId that contains the
-     * streaming image, or 'amazon' for images that are provided by Amazon Nimble
-     * Studio.</p>
+     * <p>The owner of the streaming image, either the <code>studioId</code> that
+     * contains the streaming image, or <code>amazon</code> for images that are
+     * provided by Amazon Nimble Studio.</p>
      */
     inline StreamingImage& WithOwner(const char* value) { SetOwner(value); return *this;}
 
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline StreamingImage& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline StreamingImage& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The platform of the streaming image, either WINDOWS or LINUX.</p>
+     * <p>The platform of the streaming image, either Windows or Linux.</p>
      */
     inline StreamingImage& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
@@ -541,79 +549,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingImage& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -621,43 +629,43 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ec2ImageId;
-    bool m_ec2ImageIdHasBeenSet;
+    bool m_ec2ImageIdHasBeenSet = false;
 
     StreamingImageEncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eulaIds;
-    bool m_eulaIdsHasBeenSet;
+    bool m_eulaIdsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     StreamingImageState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StreamingImageStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_streamingImageId;
-    bool m_streamingImageIdHasBeenSet;
+    bool m_streamingImageIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

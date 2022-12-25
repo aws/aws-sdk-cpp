@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LoggerDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API LoggerDefinitionVersion
+  class LoggerDefinitionVersion
   {
   public:
-    LoggerDefinitionVersion();
-    LoggerDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    LoggerDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API LoggerDefinitionVersion();
+    AWS_GREENGRASS_API LoggerDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API LoggerDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Logger> m_loggers;
-    bool m_loggersHasBeenSet;
+    bool m_loggersHasBeenSet = false;
   };
 
 } // namespace Model

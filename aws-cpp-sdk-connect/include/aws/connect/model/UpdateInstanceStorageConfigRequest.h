@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateInstanceStorageConfigRequest : public ConnectRequest
+  class UpdateInstanceStorageConfigRequest : public ConnectRequest
   {
   public:
-    UpdateInstanceStorageConfigRequest();
+    AWS_CONNECT_API UpdateInstanceStorageConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInstanceStorageConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     InstanceStorageResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     InstanceStorageConfig m_storageConfig;
-    bool m_storageConfigHasBeenSet;
+    bool m_storageConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ApprovalThresholdPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy
+  class ApprovalThresholdPolicy
   {
   public:
-    ApprovalThresholdPolicy();
-    ApprovalThresholdPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalThresholdPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy();
+    AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
      * members cast neither the required number of <code>YES</code> votes to approve
      * the proposal nor the number of <code>NO</code> votes required to reject it
      * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> are not carried out.</p>
+     * <code>ProposalActions</code> aren't carried out.</p>
      */
     inline int GetProposalDurationInHours() const{ return m_proposalDurationInHours; }
 
@@ -105,7 +105,7 @@ namespace Model
      * members cast neither the required number of <code>YES</code> votes to approve
      * the proposal nor the number of <code>NO</code> votes required to reject it
      * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> are not carried out.</p>
+     * <code>ProposalActions</code> aren't carried out.</p>
      */
     inline bool ProposalDurationInHoursHasBeenSet() const { return m_proposalDurationInHoursHasBeenSet; }
 
@@ -114,7 +114,7 @@ namespace Model
      * members cast neither the required number of <code>YES</code> votes to approve
      * the proposal nor the number of <code>NO</code> votes required to reject it
      * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> are not carried out.</p>
+     * <code>ProposalActions</code> aren't carried out.</p>
      */
     inline void SetProposalDurationInHours(int value) { m_proposalDurationInHoursHasBeenSet = true; m_proposalDurationInHours = value; }
 
@@ -123,7 +123,7 @@ namespace Model
      * members cast neither the required number of <code>YES</code> votes to approve
      * the proposal nor the number of <code>NO</code> votes required to reject it
      * before the duration expires, the proposal is <code>EXPIRED</code> and
-     * <code>ProposalActions</code> are not carried out.</p>
+     * <code>ProposalActions</code> aren't carried out.</p>
      */
     inline ApprovalThresholdPolicy& WithProposalDurationInHours(int value) { SetProposalDurationInHours(value); return *this;}
 
@@ -173,13 +173,13 @@ namespace Model
   private:
 
     int m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet;
+    bool m_thresholdPercentageHasBeenSet = false;
 
     int m_proposalDurationInHours;
-    bool m_proposalDurationInHoursHasBeenSet;
+    bool m_proposalDurationInHoursHasBeenSet = false;
 
     ThresholdComparator m_thresholdComparator;
-    bool m_thresholdComparatorHasBeenSet;
+    bool m_thresholdComparatorHasBeenSet = false;
   };
 
 } // namespace Model

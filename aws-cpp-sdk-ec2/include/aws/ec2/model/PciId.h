@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PciId">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API PciId
+  class PciId
   {
   public:
-    PciId();
-    PciId(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PciId& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PciId();
+    AWS_EC2_API PciId(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PciId& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::String m_vendorId;
-    bool m_vendorIdHasBeenSet;
+    bool m_vendorIdHasBeenSet = false;
 
     Aws::String m_subsystemId;
-    bool m_subsystemIdHasBeenSet;
+    bool m_subsystemIdHasBeenSet = false;
 
     Aws::String m_subsystemVendorId;
-    bool m_subsystemVendorIdHasBeenSet;
+    bool m_subsystemVendorIdHasBeenSet = false;
   };
 
 } // namespace Model

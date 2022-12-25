@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API LoggingConfiguration();
+    AWS_NETWORKFIREWALL_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<LogDestinationConfig> m_logDestinationConfigs;
-    bool m_logDestinationConfigsHasBeenSet;
+    bool m_logDestinationConfigsHasBeenSet = false;
   };
 
 } // namespace Model

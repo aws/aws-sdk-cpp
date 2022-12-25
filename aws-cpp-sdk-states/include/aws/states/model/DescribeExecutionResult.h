@@ -27,12 +27,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeExecutionResult
+  class DescribeExecutionResult
   {
   public:
-    DescribeExecutionResult();
-    DescribeExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeExecutionResult();
+    AWS_SFN_API DescribeExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -403,39 +403,154 @@ namespace Model
 
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const Aws::String& value) { m_traceHeader = value; }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(Aws::String&& value) { m_traceHeader = std::move(value); }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline void SetTraceHeader(const char* value) { m_traceHeader.assign(value); }
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS X-Ray trace header that was passed to the execution.</p>
+     * <p>The X-Ray trace header that was passed to the execution.</p>
      */
     inline DescribeExecutionResult& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline void SetMapRunArn(const char* value) { m_mapRunArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline DescribeExecutionResult& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline DescribeExecutionResult& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched
+     * this execution.</p>
+     */
+    inline DescribeExecutionResult& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline const Aws::String& GetError() const{ return m_error; }
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline void SetError(const Aws::String& value) { m_error = value; }
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline void SetError(const char* value) { m_error.assign(value); }
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithError(const Aws::String& value) { SetError(value); return *this;}
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
+
+    /**
+     * <p>The error string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithError(const char* value) { SetError(value); return *this;}
+
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline const Aws::String& GetCause() const{ return m_cause; }
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline void SetCause(const Aws::String& value) { m_cause = value; }
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline void SetCause(Aws::String&& value) { m_cause = std::move(value); }
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline void SetCause(const char* value) { m_cause.assign(value); }
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithCause(const Aws::String& value) { SetCause(value); return *this;}
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithCause(Aws::String&& value) { SetCause(std::move(value)); return *this;}
+
+    /**
+     * <p>The cause string if the state machine execution failed.</p>
+     */
+    inline DescribeExecutionResult& WithCause(const char* value) { SetCause(value); return *this;}
 
   private:
 
@@ -460,6 +575,12 @@ namespace Model
     CloudWatchEventsExecutionDataDetails m_outputDetails;
 
     Aws::String m_traceHeader;
+
+    Aws::String m_mapRunArn;
+
+    Aws::String m_error;
+
+    Aws::String m_cause;
   };
 
 } // namespace Model

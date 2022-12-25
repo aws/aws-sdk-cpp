@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatchRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API DeleteMessageBatchRequestEntry
+  class DeleteMessageBatchRequestEntry
   {
   public:
-    DeleteMessageBatchRequestEntry();
-    DeleteMessageBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeleteMessageBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API DeleteMessageBatchRequestEntry();
+    AWS_SQS_API DeleteMessageBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API DeleteMessageBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_receiptHandle;
-    bool m_receiptHandleHasBeenSet;
+    bool m_receiptHandleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API CreateLocationNfsRequest : public DataSyncRequest
+  class CreateLocationNfsRequest : public DataSyncRequest
   {
   public:
-    CreateLocationNfsRequest();
+    AWS_DATASYNC_API CreateLocationNfsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLocationNfs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -460,19 +460,19 @@ namespace Model
   private:
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_serverHostname;
-    bool m_serverHostnameHasBeenSet;
+    bool m_serverHostnameHasBeenSet = false;
 
     OnPremConfig m_onPremConfig;
-    bool m_onPremConfigHasBeenSet;
+    bool m_onPremConfigHasBeenSet = false;
 
     NfsMountOptions m_mountOptions;
-    bool m_mountOptionsHasBeenSet;
+    bool m_mountOptionsHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

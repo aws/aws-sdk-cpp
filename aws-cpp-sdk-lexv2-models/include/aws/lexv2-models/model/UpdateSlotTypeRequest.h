@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
 #include <aws/lexv2-models/model/ExternalSourceSetting.h>
+#include <aws/lexv2-models/model/CompositeSlotTypeSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
 #include <utility>
 
@@ -22,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API UpdateSlotTypeRequest : public LexModelsV2Request
+  class UpdateSlotTypeRequest : public LexModelsV2Request
   {
   public:
-    UpdateSlotTypeRequest();
+    AWS_LEXMODELSV2_API UpdateSlotTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSlotType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -467,37 +468,71 @@ namespace Model
     
     inline UpdateSlotTypeRequest& WithExternalSourceSetting(ExternalSourceSetting&& value) { SetExternalSourceSetting(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline const CompositeSlotTypeSetting& GetCompositeSlotTypeSetting() const{ return m_compositeSlotTypeSetting; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline bool CompositeSlotTypeSettingHasBeenSet() const { return m_compositeSlotTypeSettingHasBeenSet; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { m_compositeSlotTypeSettingHasBeenSet = true; m_compositeSlotTypeSetting = value; }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline void SetCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { m_compositeSlotTypeSettingHasBeenSet = true; m_compositeSlotTypeSetting = std::move(value); }
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline UpdateSlotTypeRequest& WithCompositeSlotTypeSetting(const CompositeSlotTypeSetting& value) { SetCompositeSlotTypeSetting(value); return *this;}
+
+    /**
+     * <p>Specifications for a composite slot type.</p>
+     */
+    inline UpdateSlotTypeRequest& WithCompositeSlotTypeSetting(CompositeSlotTypeSetting&& value) { SetCompositeSlotTypeSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     Aws::String m_slotTypeName;
-    bool m_slotTypeNameHasBeenSet;
+    bool m_slotTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<SlotTypeValue> m_slotTypeValues;
-    bool m_slotTypeValuesHasBeenSet;
+    bool m_slotTypeValuesHasBeenSet = false;
 
     SlotValueSelectionSetting m_valueSelectionSetting;
-    bool m_valueSelectionSettingHasBeenSet;
+    bool m_valueSelectionSettingHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     ExternalSourceSetting m_externalSourceSetting;
-    bool m_externalSourceSettingHasBeenSet;
+    bool m_externalSourceSettingHasBeenSet = false;
+
+    CompositeSlotTypeSetting m_compositeSlotTypeSetting;
+    bool m_compositeSlotTypeSettingHasBeenSet = false;
   };
 
 } // namespace Model

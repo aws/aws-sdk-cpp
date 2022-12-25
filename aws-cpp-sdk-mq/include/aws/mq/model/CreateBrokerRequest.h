@@ -35,10 +35,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBrokerRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API CreateBrokerRequest : public MQRequest
+  class CreateBrokerRequest : public MQRequest
   {
   public:
-    CreateBrokerRequest();
+    AWS_MQ_API CreateBrokerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBroker"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MQ_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -1023,61 +1023,61 @@ namespace Model
   private:
 
     AuthenticationStrategy m_authenticationStrategy;
-    bool m_authenticationStrategyHasBeenSet;
+    bool m_authenticationStrategyHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_brokerName;
-    bool m_brokerNameHasBeenSet;
+    bool m_brokerNameHasBeenSet = false;
 
     ConfigurationId m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     DeploymentMode m_deploymentMode;
-    bool m_deploymentModeHasBeenSet;
+    bool m_deploymentModeHasBeenSet = false;
 
     EncryptionOptions m_encryptionOptions;
-    bool m_encryptionOptionsHasBeenSet;
+    bool m_encryptionOptionsHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_hostInstanceType;
-    bool m_hostInstanceTypeHasBeenSet;
+    bool m_hostInstanceTypeHasBeenSet = false;
 
     LdapServerMetadataInput m_ldapServerMetadata;
-    bool m_ldapServerMetadataHasBeenSet;
+    bool m_ldapServerMetadataHasBeenSet = false;
 
     Logs m_logs;
-    bool m_logsHasBeenSet;
+    bool m_logsHasBeenSet = false;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
-    bool m_maintenanceWindowStartTimeHasBeenSet;
+    bool m_maintenanceWindowStartTimeHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     BrokerStorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<User> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

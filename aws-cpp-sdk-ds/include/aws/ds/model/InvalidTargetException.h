@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/InvalidTargetException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API InvalidTargetException
+  class InvalidTargetException
   {
   public:
-    InvalidTargetException();
-    InvalidTargetException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidTargetException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API InvalidTargetException();
+    AWS_DIRECTORYSERVICE_API InvalidTargetException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API InvalidTargetException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStartRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchStartRequest : public MediaLiveRequest
+  class BatchStartRequest : public MediaLiveRequest
   {
   public:
-    BatchStartRequest();
+    AWS_MEDIALIVE_API BatchStartRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchStart"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_channelIds;
-    bool m_channelIdsHasBeenSet;
+    bool m_channelIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_multiplexIds;
-    bool m_multiplexIdsHasBeenSet;
+    bool m_multiplexIdsHasBeenSet = false;
   };
 
 } // namespace Model

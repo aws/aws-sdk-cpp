@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayV2ApiDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayV2ApiDetails
+  class AwsApiGatewayV2ApiDetails
   {
   public:
-    AwsApiGatewayV2ApiDetails();
-    AwsApiGatewayV2ApiDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayV2ApiDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayV2ApiDetails();
+    AWS_SECURITYHUB_API AwsApiGatewayV2ApiDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayV2ApiDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -527,34 +527,34 @@ namespace Model
   private:
 
     Aws::String m_apiEndpoint;
-    bool m_apiEndpointHasBeenSet;
+    bool m_apiEndpointHasBeenSet = false;
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiKeySelectionExpression;
-    bool m_apiKeySelectionExpressionHasBeenSet;
+    bool m_apiKeySelectionExpressionHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_protocolType;
-    bool m_protocolTypeHasBeenSet;
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_routeSelectionExpression;
-    bool m_routeSelectionExpressionHasBeenSet;
+    bool m_routeSelectionExpressionHasBeenSet = false;
 
     AwsCorsConfiguration m_corsConfiguration;
-    bool m_corsConfigurationHasBeenSet;
+    bool m_corsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

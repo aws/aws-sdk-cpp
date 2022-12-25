@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DnsOptionsSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DnsOptionsSpecification
+  class DnsOptionsSpecification
   {
   public:
-    DnsOptionsSpecification();
-    DnsOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DnsOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DnsOptionsSpecification();
+    AWS_EC2_API DnsOptionsSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DnsOptionsSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     DnsRecordIpType m_dnsRecordIpType;
-    bool m_dnsRecordIpTypeHasBeenSet;
+    bool m_dnsRecordIpTypeHasBeenSet = false;
   };
 
 } // namespace Model

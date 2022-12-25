@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyPushMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyPushMessage
+  class JourneyPushMessage
   {
   public:
-    JourneyPushMessage();
-    JourneyPushMessage(Aws::Utils::Json::JsonView jsonValue);
-    JourneyPushMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyPushMessage();
+    AWS_PINPOINT_API JourneyPushMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyPushMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_timeToLive;
-    bool m_timeToLiveHasBeenSet;
+    bool m_timeToLiveHasBeenSet = false;
   };
 
 } // namespace Model

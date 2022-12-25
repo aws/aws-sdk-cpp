@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/PresetSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API PresetSettings
+  class PresetSettings
   {
   public:
-    PresetSettings();
-    PresetSettings(Aws::Utils::Json::JsonView jsonValue);
-    PresetSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API PresetSettings();
+    AWS_MEDIACONVERT_API PresetSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API PresetSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
-    bool m_audioDescriptionsHasBeenSet;
+    bool m_audioDescriptionsHasBeenSet = false;
 
     Aws::Vector<CaptionDescriptionPreset> m_captionDescriptions;
-    bool m_captionDescriptionsHasBeenSet;
+    bool m_captionDescriptionsHasBeenSet = false;
 
     ContainerSettings m_containerSettings;
-    bool m_containerSettingsHasBeenSet;
+    bool m_containerSettingsHasBeenSet = false;
 
     VideoDescription m_videoDescription;
-    bool m_videoDescriptionHasBeenSet;
+    bool m_videoDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

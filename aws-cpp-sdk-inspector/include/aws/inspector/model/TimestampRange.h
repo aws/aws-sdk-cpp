@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/TimestampRange">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API TimestampRange
+  class TimestampRange
   {
   public:
-    TimestampRange();
-    TimestampRange(Aws::Utils::Json::JsonView jsonValue);
-    TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API TimestampRange();
+    AWS_INSPECTOR_API TimestampRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API TimestampRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_beginDate;
-    bool m_beginDateHasBeenSet;
+    bool m_beginDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
   };
 
 } // namespace Model

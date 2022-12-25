@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GlobalNetwork">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API GlobalNetwork
+  class GlobalNetwork
   {
   public:
-    GlobalNetwork();
-    GlobalNetwork(Aws::Utils::Json::JsonView jsonValue);
-    GlobalNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API GlobalNetwork();
+    AWS_NETWORKMANAGER_API GlobalNetwork(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API GlobalNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_globalNetworkArn;
-    bool m_globalNetworkArnHasBeenSet;
+    bool m_globalNetworkArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     GlobalNetworkState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/model/KmsGrantConstraints.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/accessanalyzer/model/KmsGrantConstraints.h>
 #include <aws/accessanalyzer/model/KmsGrantOperation.h>
 #include <utility>
 
@@ -33,13 +33,160 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/KmsGrantConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API KmsGrantConfiguration
+  class KmsGrantConfiguration
   {
   public:
-    KmsGrantConfiguration();
-    KmsGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KmsGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration();
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline const Aws::Vector<KmsGrantOperation>& GetOperations() const{ return m_operations; }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline void SetOperations(const Aws::Vector<KmsGrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline void SetOperations(Aws::Vector<KmsGrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline KmsGrantConfiguration& WithOperations(const Aws::Vector<KmsGrantOperation>& value) { SetOperations(value); return *this;}
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline KmsGrantConfiguration& WithOperations(Aws::Vector<KmsGrantOperation>&& value) { SetOperations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline KmsGrantConfiguration& AddOperations(const KmsGrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
+    inline KmsGrantConfiguration& AddOperations(KmsGrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline KmsGrantConfiguration& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline KmsGrantConfiguration& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p>
+     */
+    inline KmsGrantConfiguration& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
+
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline KmsGrantConfiguration& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline KmsGrantConfiguration& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
+     * operation.</p>
+     */
+    inline KmsGrantConfiguration& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
 
     /**
@@ -104,55 +251,6 @@ namespace Model
 
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline KmsGrantConfiguration& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline KmsGrantConfiguration& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p>
-     */
-    inline KmsGrantConfiguration& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
-
-
-    /**
      * <p> The Amazon Web Services account under which the grant was issued. The
      * account is used to propose KMS grants issued by accounts other than the owner of
      * the key.</p>
@@ -208,120 +306,22 @@ namespace Model
      */
     inline KmsGrantConfiguration& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
 
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline const Aws::Vector<KmsGrantOperation>& GetOperations() const{ return m_operations; }
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline void SetOperations(const Aws::Vector<KmsGrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline void SetOperations(Aws::Vector<KmsGrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline KmsGrantConfiguration& WithOperations(const Aws::Vector<KmsGrantOperation>& value) { SetOperations(value); return *this;}
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline KmsGrantConfiguration& WithOperations(Aws::Vector<KmsGrantOperation>&& value) { SetOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline KmsGrantConfiguration& AddOperations(const KmsGrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of operations that the grant permits.</p>
-     */
-    inline KmsGrantConfiguration& AddOperations(KmsGrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline KmsGrantConfiguration& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline KmsGrantConfiguration& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal that is given permission to retire the grant by using <a
-     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a>
-     * operation.</p>
-     */
-    inline KmsGrantConfiguration& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
-
   private:
 
-    KmsGrantConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    Aws::Vector<KmsGrantOperation> m_operations;
+    bool m_operationsHasBeenSet = false;
 
     Aws::String m_granteePrincipal;
-    bool m_granteePrincipalHasBeenSet;
-
-    Aws::String m_issuingAccount;
-    bool m_issuingAccountHasBeenSet;
-
-    Aws::Vector<KmsGrantOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_granteePrincipalHasBeenSet = false;
 
     Aws::String m_retiringPrincipal;
-    bool m_retiringPrincipalHasBeenSet;
+    bool m_retiringPrincipalHasBeenSet = false;
+
+    KmsGrantConstraints m_constraints;
+    bool m_constraintsHasBeenSet = false;
+
+    Aws::String m_issuingAccount;
+    bool m_issuingAccountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API PutMetricDataRequest : public CloudWatchRequest
+  class PutMetricDataRequest : public CloudWatchRequest
   {
   public:
-    PutMetricDataRequest();
+    AWS_CLOUDWATCH_API PutMetricDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutMetricData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -96,49 +96,49 @@ namespace Model
 
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline void SetMetricData(const Aws::Vector<MetricDatum>& value) { m_metricDataHasBeenSet = true; m_metricData = value; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline void SetMetricData(Aws::Vector<MetricDatum>&& value) { m_metricDataHasBeenSet = true; m_metricData = std::move(value); }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& WithMetricData(const Aws::Vector<MetricDatum>& value) { SetMetricData(value); return *this;}
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& WithMetricData(Aws::Vector<MetricDatum>&& value) { SetMetricData(std::move(value)); return *this;}
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
 
     /**
-     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * <p>The data for the metric. The array can include no more than 1000 metrics per
      * call.</p>
      */
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<MetricDatum> m_metricData;
-    bool m_metricDataHasBeenSet;
+    bool m_metricDataHasBeenSet = false;
   };
 
 } // namespace Model

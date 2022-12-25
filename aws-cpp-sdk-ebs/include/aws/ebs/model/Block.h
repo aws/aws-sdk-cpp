@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/Block">AWS API
    * Reference</a></p>
    */
-  class AWS_EBS_API Block
+  class Block
   {
   public:
-    Block();
-    Block(Aws::Utils::Json::JsonView jsonValue);
-    Block& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API Block();
+    AWS_EBS_API Block(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_blockIndex;
-    bool m_blockIndexHasBeenSet;
+    bool m_blockIndexHasBeenSet = false;
 
     Aws::String m_blockToken;
-    bool m_blockTokenHasBeenSet;
+    bool m_blockTokenHasBeenSet = false;
   };
 
 } // namespace Model

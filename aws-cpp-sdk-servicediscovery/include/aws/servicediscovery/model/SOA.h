@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/SOA">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API SOA
+  class SOA
   {
   public:
-    SOA();
-    SOA(Aws::Utils::Json::JsonView jsonValue);
-    SOA& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API SOA();
+    AWS_SERVICEDISCOVERY_API SOA(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API SOA& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
   };
 
 } // namespace Model

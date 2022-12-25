@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactLocation
+  class ArtifactLocation
   {
   public:
-    ArtifactLocation();
-    ArtifactLocation(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactLocation();
+    AWS_CODEPIPELINE_API ArtifactLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ArtifactLocationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     S3ArtifactLocation m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

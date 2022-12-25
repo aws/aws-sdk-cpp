@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TemplateSourceEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TemplateSourceEntity
+  class TemplateSourceEntity
   {
   public:
-    TemplateSourceEntity();
-    TemplateSourceEntity(Aws::Utils::Json::JsonView jsonValue);
-    TemplateSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TemplateSourceEntity();
+    AWS_QUICKSIGHT_API TemplateSourceEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TemplateSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     TemplateSourceAnalysis m_sourceAnalysis;
-    bool m_sourceAnalysisHasBeenSet;
+    bool m_sourceAnalysisHasBeenSet = false;
 
     TemplateSourceTemplate m_sourceTemplate;
-    bool m_sourceTemplateHasBeenSet;
+    bool m_sourceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

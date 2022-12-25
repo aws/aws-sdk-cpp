@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/SchemaDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API SchemaDefinition
+  class SchemaDefinition
   {
   public:
-    SchemaDefinition();
-    SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API SchemaDefinition();
+    AWS_KEYSPACES_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::Vector<ColumnDefinition> m_allColumns;
-    bool m_allColumnsHasBeenSet;
+    bool m_allColumnsHasBeenSet = false;
 
     Aws::Vector<PartitionKey> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::Vector<ClusteringKey> m_clusteringKeys;
-    bool m_clusteringKeysHasBeenSet;
+    bool m_clusteringKeysHasBeenSet = false;
 
     Aws::Vector<StaticColumn> m_staticColumns;
-    bool m_staticColumnsHasBeenSet;
+    bool m_staticColumnsHasBeenSet = false;
   };
 
 } // namespace Model

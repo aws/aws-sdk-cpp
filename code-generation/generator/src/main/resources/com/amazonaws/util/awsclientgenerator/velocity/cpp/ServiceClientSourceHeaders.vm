@@ -12,10 +12,19 @@
 #end
 
 \#include <aws/${metadata.projectName}/${className}.h>
+#if(!$serviceModel.endpointRules)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
+#end
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#else
 #if($arnEndpointSupported)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+#end
+#end
+#if($serviceModel.hasBearerAuth())
+\#include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
 #end
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)

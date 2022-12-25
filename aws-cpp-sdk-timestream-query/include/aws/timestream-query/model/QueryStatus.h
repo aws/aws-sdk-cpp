@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/QueryStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API QueryStatus
+  class QueryStatus
   {
   public:
-    QueryStatus();
-    QueryStatus(Aws::Utils::Json::JsonView jsonValue);
-    QueryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API QueryStatus();
+    AWS_TIMESTREAMQUERY_API QueryStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API QueryStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,13 +125,13 @@ namespace Model
   private:
 
     double m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
 
     long long m_cumulativeBytesScanned;
-    bool m_cumulativeBytesScannedHasBeenSet;
+    bool m_cumulativeBytesScannedHasBeenSet = false;
 
     long long m_cumulativeBytesMetered;
-    bool m_cumulativeBytesMeteredHasBeenSet;
+    bool m_cumulativeBytesMeteredHasBeenSet = false;
   };
 
 } // namespace Model

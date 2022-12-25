@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Primary">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Primary
+  class Primary
   {
   public:
-    Primary();
-    Primary(Aws::Utils::Json::JsonView jsonValue);
-    Primary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Primary();
+    AWS_EVENTBRIDGE_API Primary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Primary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
   };
 
 } // namespace Model

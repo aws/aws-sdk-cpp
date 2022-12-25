@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CodeDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API CodeDestination
+  class CodeDestination
   {
   public:
-    CodeDestination();
-    CodeDestination(Aws::Utils::Json::JsonView jsonValue);
-    CodeDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API CodeDestination();
+    AWS_CODESTAR_API CodeDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API CodeDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     CodeCommitCodeDestination m_codeCommit;
-    bool m_codeCommitHasBeenSet;
+    bool m_codeCommitHasBeenSet = false;
 
     GitHubCodeDestination m_gitHub;
-    bool m_gitHubHasBeenSet;
+    bool m_gitHubHasBeenSet = false;
   };
 
 } // namespace Model

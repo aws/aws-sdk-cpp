@@ -36,7 +36,7 @@ GetQuerySuggestionsResult& GetQuerySuggestionsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Suggestions"))
   {
-    Array<JsonView> suggestionsJsonList = jsonValue.GetArray("Suggestions");
+    Aws::Utils::Array<JsonView> suggestionsJsonList = jsonValue.GetArray("Suggestions");
     for(unsigned suggestionsIndex = 0; suggestionsIndex < suggestionsJsonList.GetLength(); ++suggestionsIndex)
     {
       m_suggestions.push_back(suggestionsJsonList[suggestionsIndex].AsObject());

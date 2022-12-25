@@ -33,10 +33,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API StartBuildRequest : public CodeBuildRequest
+  class StartBuildRequest : public CodeBuildRequest
   {
   public:
-    StartBuildRequest();
+    AWS_CODEBUILD_API StartBuildRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,9 +44,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartBuild"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1630,97 +1630,97 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::Vector<ProjectSource> m_secondarySourcesOverride;
-    bool m_secondarySourcesOverrideHasBeenSet;
+    bool m_secondarySourcesOverrideHasBeenSet = false;
 
     Aws::Vector<ProjectSourceVersion> m_secondarySourcesVersionOverride;
-    bool m_secondarySourcesVersionOverrideHasBeenSet;
+    bool m_secondarySourcesVersionOverrideHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     ProjectArtifacts m_artifactsOverride;
-    bool m_artifactsOverrideHasBeenSet;
+    bool m_artifactsOverrideHasBeenSet = false;
 
     Aws::Vector<ProjectArtifacts> m_secondaryArtifactsOverride;
-    bool m_secondaryArtifactsOverrideHasBeenSet;
+    bool m_secondaryArtifactsOverrideHasBeenSet = false;
 
     Aws::Vector<EnvironmentVariable> m_environmentVariablesOverride;
-    bool m_environmentVariablesOverrideHasBeenSet;
+    bool m_environmentVariablesOverrideHasBeenSet = false;
 
     SourceType m_sourceTypeOverride;
-    bool m_sourceTypeOverrideHasBeenSet;
+    bool m_sourceTypeOverrideHasBeenSet = false;
 
     Aws::String m_sourceLocationOverride;
-    bool m_sourceLocationOverrideHasBeenSet;
+    bool m_sourceLocationOverrideHasBeenSet = false;
 
     SourceAuth m_sourceAuthOverride;
-    bool m_sourceAuthOverrideHasBeenSet;
+    bool m_sourceAuthOverrideHasBeenSet = false;
 
     int m_gitCloneDepthOverride;
-    bool m_gitCloneDepthOverrideHasBeenSet;
+    bool m_gitCloneDepthOverrideHasBeenSet = false;
 
     GitSubmodulesConfig m_gitSubmodulesConfigOverride;
-    bool m_gitSubmodulesConfigOverrideHasBeenSet;
+    bool m_gitSubmodulesConfigOverrideHasBeenSet = false;
 
     Aws::String m_buildspecOverride;
-    bool m_buildspecOverrideHasBeenSet;
+    bool m_buildspecOverrideHasBeenSet = false;
 
     bool m_insecureSslOverride;
-    bool m_insecureSslOverrideHasBeenSet;
+    bool m_insecureSslOverrideHasBeenSet = false;
 
     bool m_reportBuildStatusOverride;
-    bool m_reportBuildStatusOverrideHasBeenSet;
+    bool m_reportBuildStatusOverrideHasBeenSet = false;
 
     BuildStatusConfig m_buildStatusConfigOverride;
-    bool m_buildStatusConfigOverrideHasBeenSet;
+    bool m_buildStatusConfigOverrideHasBeenSet = false;
 
     EnvironmentType m_environmentTypeOverride;
-    bool m_environmentTypeOverrideHasBeenSet;
+    bool m_environmentTypeOverrideHasBeenSet = false;
 
     Aws::String m_imageOverride;
-    bool m_imageOverrideHasBeenSet;
+    bool m_imageOverrideHasBeenSet = false;
 
     ComputeType m_computeTypeOverride;
-    bool m_computeTypeOverrideHasBeenSet;
+    bool m_computeTypeOverrideHasBeenSet = false;
 
     Aws::String m_certificateOverride;
-    bool m_certificateOverrideHasBeenSet;
+    bool m_certificateOverrideHasBeenSet = false;
 
     ProjectCache m_cacheOverride;
-    bool m_cacheOverrideHasBeenSet;
+    bool m_cacheOverrideHasBeenSet = false;
 
     Aws::String m_serviceRoleOverride;
-    bool m_serviceRoleOverrideHasBeenSet;
+    bool m_serviceRoleOverrideHasBeenSet = false;
 
     bool m_privilegedModeOverride;
-    bool m_privilegedModeOverrideHasBeenSet;
+    bool m_privilegedModeOverrideHasBeenSet = false;
 
     int m_timeoutInMinutesOverride;
-    bool m_timeoutInMinutesOverrideHasBeenSet;
+    bool m_timeoutInMinutesOverrideHasBeenSet = false;
 
     int m_queuedTimeoutInMinutesOverride;
-    bool m_queuedTimeoutInMinutesOverrideHasBeenSet;
+    bool m_queuedTimeoutInMinutesOverrideHasBeenSet = false;
 
     Aws::String m_encryptionKeyOverride;
-    bool m_encryptionKeyOverrideHasBeenSet;
+    bool m_encryptionKeyOverrideHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     LogsConfig m_logsConfigOverride;
-    bool m_logsConfigOverrideHasBeenSet;
+    bool m_logsConfigOverrideHasBeenSet = false;
 
     RegistryCredential m_registryCredentialOverride;
-    bool m_registryCredentialOverrideHasBeenSet;
+    bool m_registryCredentialOverrideHasBeenSet = false;
 
     ImagePullCredentialsType m_imagePullCredentialsTypeOverride;
-    bool m_imagePullCredentialsTypeOverrideHasBeenSet;
+    bool m_imagePullCredentialsTypeOverrideHasBeenSet = false;
 
     bool m_debugSessionEnabled;
-    bool m_debugSessionEnabledHasBeenSet;
+    bool m_debugSessionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API InputDataConfig();
+    AWS_FORECASTSERVICE_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::Vector<SupplementaryFeature> m_supplementaryFeatures;
-    bool m_supplementaryFeaturesHasBeenSet;
+    bool m_supplementaryFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Alias">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API Alias
+  class Alias
   {
   public:
-    Alias();
-    Alias(Aws::Utils::Json::JsonView jsonValue);
-    Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API Alias();
+    AWS_FSX_API Alias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,10 +224,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AliasLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
   };
 
 } // namespace Model

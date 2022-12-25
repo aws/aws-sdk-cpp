@@ -27,12 +27,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API FilterLogEventsResult
+  class FilterLogEventsResult
   {
   public:
-    FilterLogEventsResult();
-    FilterLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    FilterLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API FilterLogEventsResult();
+    AWS_CLOUDWATCHLOGS_API FilterLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API FilterLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -72,58 +72,51 @@ namespace Model
 
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline const Aws::Vector<SearchedLogStream>& GetSearchedLogStreams() const{ return m_searchedLogStreams; }
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline void SetSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { m_searchedLogStreams = value; }
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline void SetSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { m_searchedLogStreams = std::move(value); }
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline FilterLogEventsResult& WithSearchedLogStreams(const Aws::Vector<SearchedLogStream>& value) { SetSearchedLogStreams(value); return *this;}
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline FilterLogEventsResult& WithSearchedLogStreams(Aws::Vector<SearchedLogStream>&& value) { SetSearchedLogStreams(std::move(value)); return *this;}
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline FilterLogEventsResult& AddSearchedLogStreams(const SearchedLogStream& value) { m_searchedLogStreams.push_back(value); return *this; }
 
     /**
-     * <p> <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be
-     * deprecated. This parameter will be an empty list after the deprecation
-     * occurs.</p> <p>Indicates which log streams have been searched and whether each
-     * has been searched completely.</p>
+     * <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported.
+     * This parameter returns an empty list.</p> <p>Indicates which log streams have
+     * been searched and whether each has been searched completely.</p>
      */
     inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(std::move(value)); return *this; }
 

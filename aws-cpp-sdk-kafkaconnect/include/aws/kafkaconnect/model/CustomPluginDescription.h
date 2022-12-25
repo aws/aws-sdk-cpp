@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPluginDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CustomPluginDescription
+  class CustomPluginDescription
   {
   public:
-    CustomPluginDescription();
-    CustomPluginDescription(Aws::Utils::Json::JsonView jsonValue);
-    CustomPluginDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CustomPluginDescription();
+    AWS_KAFKACONNECT_API CustomPluginDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CustomPluginDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
 
     long long m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

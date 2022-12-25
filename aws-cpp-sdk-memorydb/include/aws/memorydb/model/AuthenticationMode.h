@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/AuthenticationMode">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API AuthenticationMode
+  class AuthenticationMode
   {
   public:
-    AuthenticationMode();
-    AuthenticationMode(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API AuthenticationMode();
+    AWS_MEMORYDB_API AuthenticationMode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API AuthenticationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     InputAuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_passwords;
-    bool m_passwordsHasBeenSet;
+    bool m_passwordsHasBeenSet = false;
   };
 
 } // namespace Model

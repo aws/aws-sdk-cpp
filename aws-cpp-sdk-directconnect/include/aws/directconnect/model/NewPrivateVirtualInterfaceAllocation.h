@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterfaceAllocation">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API NewPrivateVirtualInterfaceAllocation
+  class NewPrivateVirtualInterfaceAllocation
   {
   public:
-    NewPrivateVirtualInterfaceAllocation();
-    NewPrivateVirtualInterfaceAllocation(Aws::Utils::Json::JsonView jsonValue);
-    NewPrivateVirtualInterfaceAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterfaceAllocation();
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterfaceAllocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterfaceAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -374,31 +374,31 @@ namespace Model
   private:
 
     Aws::String m_virtualInterfaceName;
-    bool m_virtualInterfaceNameHasBeenSet;
+    bool m_virtualInterfaceNameHasBeenSet = false;
 
     int m_vlan;
-    bool m_vlanHasBeenSet;
+    bool m_vlanHasBeenSet = false;
 
     int m_asn;
-    bool m_asnHasBeenSet;
+    bool m_asnHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     Aws::String m_authKey;
-    bool m_authKeyHasBeenSet;
+    bool m_authKeyHasBeenSet = false;
 
     Aws::String m_amazonAddress;
-    bool m_amazonAddressHasBeenSet;
+    bool m_amazonAddressHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_customerAddress;
-    bool m_customerAddressHasBeenSet;
+    bool m_customerAddressHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

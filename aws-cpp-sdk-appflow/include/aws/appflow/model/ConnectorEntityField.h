@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorEntityField">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorEntityField
+  class ConnectorEntityField
   {
   public:
-    ConnectorEntityField();
-    ConnectorEntityField(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorEntityField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorEntityField();
+    AWS_APPFLOW_API ConnectorEntityField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorEntityField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -479,37 +479,37 @@ namespace Model
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_parentIdentifier;
-    bool m_parentIdentifierHasBeenSet;
+    bool m_parentIdentifierHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     bool m_isPrimaryKey;
-    bool m_isPrimaryKeyHasBeenSet;
+    bool m_isPrimaryKeyHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     bool m_isDeprecated;
-    bool m_isDeprecatedHasBeenSet;
+    bool m_isDeprecatedHasBeenSet = false;
 
     SupportedFieldTypeDetails m_supportedFieldTypeDetails;
-    bool m_supportedFieldTypeDetailsHasBeenSet;
+    bool m_supportedFieldTypeDetailsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SourceFieldProperties m_sourceProperties;
-    bool m_sourcePropertiesHasBeenSet;
+    bool m_sourcePropertiesHasBeenSet = false;
 
     DestinationFieldProperties m_destinationProperties;
-    bool m_destinationPropertiesHasBeenSet;
+    bool m_destinationPropertiesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
-    bool m_customPropertiesHasBeenSet;
+    bool m_customPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

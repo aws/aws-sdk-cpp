@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListIncomingTypedLinksResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinksResponse
+  class BatchListIncomingTypedLinksResponse
   {
   public:
-    BatchListIncomingTypedLinksResponse();
-    BatchListIncomingTypedLinksResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchListIncomingTypedLinksResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinksResponse();
+    AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinksResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinksResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<TypedLinkSpecifier> m_linkSpecifiers;
-    bool m_linkSpecifiersHasBeenSet;
+    bool m_linkSpecifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

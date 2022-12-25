@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/QuotaSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API QuotaSettings
+  class QuotaSettings
   {
   public:
-    QuotaSettings();
-    QuotaSettings(Aws::Utils::Json::JsonView jsonValue);
-    QuotaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API QuotaSettings();
+    AWS_APIGATEWAY_API QuotaSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API QuotaSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,13 +126,13 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     QuotaPeriodType m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
   };
 
 } // namespace Model

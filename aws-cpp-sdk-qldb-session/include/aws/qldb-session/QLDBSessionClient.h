@@ -5,63 +5,16 @@
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
-#include <aws/qldb-session/QLDBSessionErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/qldb-session/model/SendCommandResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/qldb-session/QLDBSessionServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace QLDBSession
 {
-
-namespace Model
-{
-        class SendCommandRequest;
-
-        typedef Aws::Utils::Outcome<SendCommandResult, QLDBSessionError> SendCommandOutcome;
-
-        typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
-} // namespace Model
-
-  class QLDBSessionClient;
-
-    typedef std::function<void(const QLDBSessionClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
-
   /**
    * <p>The transactional data APIs for Amazon QLDB</p>  <p>Instead of
    * interacting directly with this API, we recommend using the QLDB driver or the
@@ -78,32 +31,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
    * Amazon QLDB using the QLDB shell</a>.</p> </li> </ul> 
    */
-  class AWS_QLDBSESSION_API QLDBSessionClient : public Aws::Client::AWSJsonClient
+  class AWS_QLDBSESSION_API QLDBSessionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QLDBSessionClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        QLDBSessionClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        QLDBSessionClient(const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration(),
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        QLDBSessionClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        QLDBSessionClient(const Aws::Auth::AWSCredentials& credentials,
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         QLDBSessionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          std::shared_ptr<QLDBSessionEndpointProviderBase> endpointProvider = Aws::MakeShared<QLDBSessionEndpointProvider>(ALLOCATION_TAG),
+                          const Aws::QLDBSession::QLDBSessionClientConfiguration& clientConfiguration = Aws::QLDBSession::QLDBSessionClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        QLDBSessionClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        QLDBSessionClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        QLDBSessionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~QLDBSessionClient();
-
 
         /**
          * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of
@@ -138,13 +119,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<QLDBSessionEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void SendCommandAsyncHelper(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<QLDBSessionClient>;
+      void init(const QLDBSessionClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      QLDBSessionClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<QLDBSessionEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace QLDBSession

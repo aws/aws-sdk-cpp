@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemRelatedItemsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemRelatedItemsFilter
+  class OpsItemRelatedItemsFilter
   {
   public:
-    OpsItemRelatedItemsFilter();
-    OpsItemRelatedItemsFilter(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemRelatedItemsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemRelatedItemsFilter();
+    AWS_SSM_API OpsItemRelatedItemsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemRelatedItemsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     OpsItemRelatedItemsFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     OpsItemRelatedItemsFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

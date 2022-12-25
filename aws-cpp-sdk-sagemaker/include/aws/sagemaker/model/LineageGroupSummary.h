@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LineageGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LineageGroupSummary
+  class LineageGroupSummary
   {
   public:
-    LineageGroupSummary();
-    LineageGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    LineageGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LineageGroupSummary();
+    AWS_SAGEMAKER_API LineageGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LineageGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_lineageGroupArn;
-    bool m_lineageGroupArnHasBeenSet;
+    bool m_lineageGroupArnHasBeenSet = false;
 
     Aws::String m_lineageGroupName;
-    bool m_lineageGroupNameHasBeenSet;
+    bool m_lineageGroupNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

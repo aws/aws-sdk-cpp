@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogSchemaChangePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogSchemaChangePolicy
+  class CatalogSchemaChangePolicy
   {
   public:
-    CatalogSchemaChangePolicy();
-    CatalogSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
-    CatalogSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogSchemaChangePolicy();
+    AWS_GLUE_API CatalogSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     bool m_enableUpdateCatalog;
-    bool m_enableUpdateCatalogHasBeenSet;
+    bool m_enableUpdateCatalogHasBeenSet = false;
 
     UpdateCatalogBehavior m_updateBehavior;
-    bool m_updateBehaviorHasBeenSet;
+    bool m_updateBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DominantLanguage">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DominantLanguage
+  class DominantLanguage
   {
   public:
-    DominantLanguage();
-    DominantLanguage(Aws::Utils::Json::JsonView jsonValue);
-    DominantLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DominantLanguage();
+    AWS_COMPREHEND_API DominantLanguage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DominantLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

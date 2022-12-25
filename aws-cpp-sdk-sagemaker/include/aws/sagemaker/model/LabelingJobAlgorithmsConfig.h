@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobAlgorithmsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobAlgorithmsConfig
+  class LabelingJobAlgorithmsConfig
   {
   public:
-    LabelingJobAlgorithmsConfig();
-    LabelingJobAlgorithmsConfig(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobAlgorithmsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobAlgorithmsConfig();
+    AWS_SAGEMAKER_API LabelingJobAlgorithmsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobAlgorithmsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,13 +259,13 @@ namespace Model
   private:
 
     Aws::String m_labelingJobAlgorithmSpecificationArn;
-    bool m_labelingJobAlgorithmSpecificationArnHasBeenSet;
+    bool m_labelingJobAlgorithmSpecificationArnHasBeenSet = false;
 
     Aws::String m_initialActiveLearningModelArn;
-    bool m_initialActiveLearningModelArnHasBeenSet;
+    bool m_initialActiveLearningModelArnHasBeenSet = false;
 
     LabelingJobResourceConfig m_labelingJobResourceConfig;
-    bool m_labelingJobResourceConfigHasBeenSet;
+    bool m_labelingJobResourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

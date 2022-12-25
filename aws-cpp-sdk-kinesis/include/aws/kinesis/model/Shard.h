@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Shard">AWS API
    * Reference</a></p>
    */
-  class AWS_KINESIS_API Shard
+  class Shard
   {
   public:
-    Shard();
-    Shard(Aws::Utils::Json::JsonView jsonValue);
-    Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API Shard();
+    AWS_KINESIS_API Shard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     Aws::String m_parentShardId;
-    bool m_parentShardIdHasBeenSet;
+    bool m_parentShardIdHasBeenSet = false;
 
     Aws::String m_adjacentParentShardId;
-    bool m_adjacentParentShardIdHasBeenSet;
+    bool m_adjacentParentShardIdHasBeenSet = false;
 
     HashKeyRange m_hashKeyRange;
-    bool m_hashKeyRangeHasBeenSet;
+    bool m_hashKeyRangeHasBeenSet = false;
 
     SequenceNumberRange m_sequenceNumberRange;
-    bool m_sequenceNumberRangeHasBeenSet;
+    bool m_sequenceNumberRangeHasBeenSet = false;
   };
 
 } // namespace Model

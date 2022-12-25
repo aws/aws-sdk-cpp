@@ -25,12 +25,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API StartSuiteRunResult
+  class StartSuiteRunResult
   {
   public:
-    StartSuiteRunResult();
-    StartSuiteRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSuiteRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API StartSuiteRunResult();
+    AWS_IOTDEVICEADVISOR_API StartSuiteRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API StartSuiteRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -130,6 +130,42 @@ namespace Model
      */
     inline StartSuiteRunResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline StartSuiteRunResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline StartSuiteRunResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The response of an Device Advisor test endpoint.</p>
+     */
+    inline StartSuiteRunResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_suiteRunId;
@@ -137,6 +173,8 @@ namespace Model
     Aws::String m_suiteRunArn;
 
     Aws::Utils::DateTime m_createdAt;
+
+    Aws::String m_endpoint;
   };
 
 } // namespace Model

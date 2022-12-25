@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API NotificationConfiguration();
+    AWS_CODEGURUPROFILER_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<Channel> m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
   };
 
 } // namespace Model

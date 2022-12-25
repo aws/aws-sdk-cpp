@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOfferingMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API PurchaseReservedDBInstancesOfferingRequest : public RDSRequest
+  class PurchaseReservedDBInstancesOfferingRequest : public RDSRequest
   {
   public:
-    PurchaseReservedDBInstancesOfferingRequest();
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PurchaseReservedDBInstancesOffering"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_reservedDBInstancesOfferingId;
-    bool m_reservedDBInstancesOfferingIdHasBeenSet;
+    bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
 
     Aws::String m_reservedDBInstanceId;
-    bool m_reservedDBInstanceIdHasBeenSet;
+    bool m_reservedDBInstanceIdHasBeenSet = false;
 
     int m_dBInstanceCount;
-    bool m_dBInstanceCountHasBeenSet;
+    bool m_dBInstanceCountHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

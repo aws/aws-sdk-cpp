@@ -27,26 +27,27 @@ namespace Model
 {
 
   /**
-   * <p>A rule is a set of criteria you can specify to flag an attribute in your Call
-   * Analytics output. Rules define a Call Analytics category.</p> <p>Rules can
-   * include these parameters: , , , and . To learn more about these parameters,
-   * refer to <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules">Rule
-   * criteria</a>.</p> <p>To learn more about Call Analytics categories, see <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-   * categories</a>.</p> <p>To learn more about Call Analytics, see <a
+   * <p>A rule is a set of criteria that you can specify to flag an attribute in your
+   * Call Analytics output. Rules define a Call Analytics category.</p> <p>Rules can
+   * include these parameters: , , , and .</p> <p>To learn more about Call Analytics
+   * rules and categories, see <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating
+   * categories for batch transcriptions</a> and <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+   * categories for streaming transcriptions</a>.</p> <p>To learn more about Call
+   * Analytics, see <a
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
    * call center audio with Call Analytics</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Rule">AWS API
    * Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API Rule();
+    AWS_TRANSCRIBESERVICE_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,16 +200,16 @@ namespace Model
   private:
 
     NonTalkTimeFilter m_nonTalkTimeFilter;
-    bool m_nonTalkTimeFilterHasBeenSet;
+    bool m_nonTalkTimeFilterHasBeenSet = false;
 
     InterruptionFilter m_interruptionFilter;
-    bool m_interruptionFilterHasBeenSet;
+    bool m_interruptionFilterHasBeenSet = false;
 
     TranscriptFilter m_transcriptFilter;
-    bool m_transcriptFilterHasBeenSet;
+    bool m_transcriptFilterHasBeenSet = false;
 
     SentimentFilter m_sentimentFilter;
-    bool m_sentimentFilterHasBeenSet;
+    bool m_sentimentFilterHasBeenSet = false;
   };
 
 } // namespace Model

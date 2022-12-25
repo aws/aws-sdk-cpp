@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API CreatePackagingConfigurationRequest : public MediaPackageVodRequest
+  class CreatePackagingConfigurationRequest : public MediaPackageVodRequest
   {
   public:
-    CreatePackagingConfigurationRequest();
+    AWS_MEDIAPACKAGEVOD_API CreatePackagingConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackagingConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
     
@@ -241,25 +241,25 @@ namespace Model
   private:
 
     CmafPackage m_cmafPackage;
-    bool m_cmafPackageHasBeenSet;
+    bool m_cmafPackageHasBeenSet = false;
 
     DashPackage m_dashPackage;
-    bool m_dashPackageHasBeenSet;
+    bool m_dashPackageHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
-    bool m_hlsPackageHasBeenSet;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MssPackage m_mssPackage;
-    bool m_mssPackageHasBeenSet;
+    bool m_mssPackageHasBeenSet = false;
 
     Aws::String m_packagingGroupId;
-    bool m_packagingGroupIdHasBeenSet;
+    bool m_packagingGroupIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

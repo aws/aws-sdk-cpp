@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatementManagedKeysIPSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RateBasedStatementManagedKeysIPSet
+  class RateBasedStatementManagedKeysIPSet
   {
   public:
-    RateBasedStatementManagedKeysIPSet();
-    RateBasedStatementManagedKeysIPSet(Aws::Utils::Json::JsonView jsonValue);
-    RateBasedStatementManagedKeysIPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RateBasedStatementManagedKeysIPSet();
+    AWS_WAFV2_API RateBasedStatementManagedKeysIPSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RateBasedStatementManagedKeysIPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     IPAddressVersion m_iPAddressVersion;
-    bool m_iPAddressVersionHasBeenSet;
+    bool m_iPAddressVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addresses;
-    bool m_addressesHasBeenSet;
+    bool m_addressesHasBeenSet = false;
   };
 
 } // namespace Model

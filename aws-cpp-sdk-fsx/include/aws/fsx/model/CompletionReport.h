@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CompletionReport">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CompletionReport
+  class CompletionReport
   {
   public:
-    CompletionReport();
-    CompletionReport(Aws::Utils::Json::JsonView jsonValue);
-    CompletionReport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CompletionReport();
+    AWS_FSX_API CompletionReport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CompletionReport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -300,16 +300,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     ReportFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     ReportScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

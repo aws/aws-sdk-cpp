@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/AccessMethod">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API AccessMethod
+  class AccessMethod
   {
   public:
-    AccessMethod();
-    AccessMethod(Aws::Utils::Json::JsonView jsonValue);
-    AccessMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API AccessMethod();
+    AWS_ACMPCA_API AccessMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API AccessMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_customObjectIdentifier;
-    bool m_customObjectIdentifierHasBeenSet;
+    bool m_customObjectIdentifierHasBeenSet = false;
 
     AccessMethodType m_accessMethodType;
-    bool m_accessMethodTypeHasBeenSet;
+    bool m_accessMethodTypeHasBeenSet = false;
   };
 
 } // namespace Model

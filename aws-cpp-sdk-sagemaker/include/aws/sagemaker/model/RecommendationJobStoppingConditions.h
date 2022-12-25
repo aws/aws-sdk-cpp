@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobStoppingConditions">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobStoppingConditions
+  class RecommendationJobStoppingConditions
   {
   public:
-    RecommendationJobStoppingConditions();
-    RecommendationJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions();
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     int m_maxInvocations;
-    bool m_maxInvocationsHasBeenSet;
+    bool m_maxInvocationsHasBeenSet = false;
 
     Aws::Vector<ModelLatencyThreshold> m_modelLatencyThresholds;
-    bool m_modelLatencyThresholdsHasBeenSet;
+    bool m_modelLatencyThresholdsHasBeenSet = false;
   };
 
 } // namespace Model

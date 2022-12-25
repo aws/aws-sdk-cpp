@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DownlinkQueueMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API DownlinkQueueMessage
+  class DownlinkQueueMessage
   {
   public:
-    DownlinkQueueMessage();
-    DownlinkQueueMessage(Aws::Utils::Json::JsonView jsonValue);
-    DownlinkQueueMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API DownlinkQueueMessage();
+    AWS_IOTWIRELESS_API DownlinkQueueMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API DownlinkQueueMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     int m_transmitMode;
-    bool m_transmitModeHasBeenSet;
+    bool m_transmitModeHasBeenSet = false;
 
     Aws::String m_receivedAt;
-    bool m_receivedAtHasBeenSet;
+    bool m_receivedAtHasBeenSet = false;
 
     LoRaWANSendDataToDevice m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

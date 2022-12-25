@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TrackingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API TrackingOptions
+  class TrackingOptions
   {
   public:
-    TrackingOptions();
-    TrackingOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrackingOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API TrackingOptions();
+    AWS_SES_API TrackingOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API TrackingOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::String m_customRedirectDomain;
-    bool m_customRedirectDomainHasBeenSet;
+    bool m_customRedirectDomainHasBeenSet = false;
   };
 
 } // namespace Model

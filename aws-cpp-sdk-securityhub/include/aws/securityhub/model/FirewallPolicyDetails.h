@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FirewallPolicyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FirewallPolicyDetails
+  class FirewallPolicyDetails
   {
   public:
-    FirewallPolicyDetails();
-    FirewallPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
-    FirewallPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FirewallPolicyDetails();
+    AWS_SECURITYHUB_API FirewallPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FirewallPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -338,19 +338,19 @@ namespace Model
   private:
 
     Aws::Vector<FirewallPolicyStatefulRuleGroupReferencesDetails> m_statefulRuleGroupReferences;
-    bool m_statefulRuleGroupReferencesHasBeenSet;
+    bool m_statefulRuleGroupReferencesHasBeenSet = false;
 
     Aws::Vector<FirewallPolicyStatelessCustomActionsDetails> m_statelessCustomActions;
-    bool m_statelessCustomActionsHasBeenSet;
+    bool m_statelessCustomActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statelessDefaultActions;
-    bool m_statelessDefaultActionsHasBeenSet;
+    bool m_statelessDefaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_statelessFragmentDefaultActions;
-    bool m_statelessFragmentDefaultActionsHasBeenSet;
+    bool m_statelessFragmentDefaultActionsHasBeenSet = false;
 
     Aws::Vector<FirewallPolicyStatelessRuleGroupReferencesDetails> m_statelessRuleGroupReferences;
-    bool m_statelessRuleGroupReferencesHasBeenSet;
+    bool m_statelessRuleGroupReferencesHasBeenSet = false;
   };
 
 } // namespace Model

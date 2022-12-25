@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponseRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateRouteResponseRequest : public ApiGatewayV2Request
+  class CreateRouteResponseRequest : public ApiGatewayV2Request
   {
   public:
-    CreateRouteResponseRequest();
+    AWS_APIGATEWAYV2_API CreateRouteResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRouteResponse"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -339,22 +339,22 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_modelSelectionExpression;
-    bool m_modelSelectionExpressionHasBeenSet;
+    bool m_modelSelectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseModels;
-    bool m_responseModelsHasBeenSet;
+    bool m_responseModelsHasBeenSet = false;
 
     Aws::Map<Aws::String, ParameterConstraints> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::String m_routeId;
-    bool m_routeIdHasBeenSet;
+    bool m_routeIdHasBeenSet = false;
 
     Aws::String m_routeResponseKey;
-    bool m_routeResponseKeyHasBeenSet;
+    bool m_routeResponseKeyHasBeenSet = false;
   };
 
 } // namespace Model

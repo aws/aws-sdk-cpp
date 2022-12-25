@@ -17,14 +17,11 @@ namespace Model
 {
 
   /**
-   * <p>The request body for UpdateAsset.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateAssetRequest">AWS
-   * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API UpdateAssetRequest : public DataExchangeRequest
+  class UpdateAssetRequest : public DataExchangeRequest
   {
   public:
-    UpdateAssetRequest();
+    AWS_DATAEXCHANGE_API UpdateAssetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAsset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -118,74 +115,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the asset. When importing from Amazon S3, the S3 object key is
-     * used as the asset name. When exporting to Amazon S3, the asset name is used as
-     * default target S3 object key. When importing from Amazon API Gateway API, the
-     * API name is used as the asset name. When importing from Amazon Redshift, the
-     * datashare name is used as the asset name.</p>
+     * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
+     * key is used as the asset name. When exporting to Amazon S3, the asset name is
+     * used as default target Amazon S3 object key. When importing from Amazon API
+     * Gateway API, the API name is used as the asset name. When importing from Amazon
+     * Redshift, the datashare name is used as the asset name. When importing from AWS
+     * Lake Formation, the static values of "Database(s) included in the LF-tag policy"
+     * or "Table(s) included in LF-tag policy" are used as the name.</p>
      */
     inline UpdateAssetRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -233,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

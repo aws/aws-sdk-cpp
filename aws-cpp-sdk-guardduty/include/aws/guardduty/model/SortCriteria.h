@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API SortCriteria
+  class SortCriteria
   {
   public:
-    SortCriteria();
-    SortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API SortCriteria();
+    AWS_GUARDDUTY_API SortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/EventSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API EventSubscription
+  class EventSubscription
   {
   public:
-    EventSubscription();
-    EventSubscription(Aws::Utils::Json::JsonView jsonValue);
-    EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API EventSubscription();
+    AWS_DATABASEMIGRATIONSERVICE_API EventSubscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -464,31 +464,31 @@ namespace Model
   private:
 
     Aws::String m_customerAwsId;
-    bool m_customerAwsIdHasBeenSet;
+    bool m_customerAwsIdHasBeenSet = false;
 
     Aws::String m_custSubscriptionId;
-    bool m_custSubscriptionIdHasBeenSet;
+    bool m_custSubscriptionIdHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subscriptionCreationTime;
-    bool m_subscriptionCreationTimeHasBeenSet;
+    bool m_subscriptionCreationTimeHasBeenSet = false;
 
     Aws::String m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceIdsList;
-    bool m_sourceIdsListHasBeenSet;
+    bool m_sourceIdsListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventCategoriesList;
-    bool m_eventCategoriesListHasBeenSet;
+    bool m_eventCategoriesListHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

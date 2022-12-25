@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DataflowEndpoint
+  class DataflowEndpoint
   {
   public:
-    DataflowEndpoint();
-    DataflowEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    DataflowEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DataflowEndpoint();
+    AWS_GROUNDSTATION_API DataflowEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DataflowEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,16 +165,16 @@ namespace Model
   private:
 
     SocketAddress m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_mtu;
-    bool m_mtuHasBeenSet;
+    bool m_mtuHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

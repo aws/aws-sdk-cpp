@@ -68,7 +68,7 @@ MultipartUpload& MultipartUpload::operator =(const XmlNode& xmlNode)
     XmlNode initiatedNode = resultNode.FirstChild("Initiated");
     if(!initiatedNode.IsNull())
     {
-      m_initiated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(initiatedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_initiated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(initiatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_initiatedHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
@@ -118,7 +118,7 @@ void MultipartUpload::AddToNode(XmlNode& parentNode) const
   if(m_initiatedHasBeenSet)
   {
    XmlNode initiatedNode = parentNode.CreateChildElement("Initiated");
-   initiatedNode.SetText(m_initiated.ToGmtString(DateFormat::ISO_8601));
+   initiatedNode.SetText(m_initiated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_storageClassHasBeenSet)

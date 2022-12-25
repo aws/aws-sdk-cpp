@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSpecification
+  class InputSpecification
   {
   public:
-    InputSpecification();
-    InputSpecification(Aws::Utils::Json::JsonView jsonValue);
-    InputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSpecification();
+    AWS_MEDIALIVE_API InputSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     InputCodec m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     InputMaximumBitrate m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     InputResolution m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
   };
 
 } // namespace Model

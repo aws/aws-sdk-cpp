@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobInputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobInputConfig
+  class LabelingJobInputConfig
   {
   public:
-    LabelingJobInputConfig();
-    LabelingJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobInputConfig();
+    AWS_SAGEMAKER_API LabelingJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     LabelingJobDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     LabelingJobDataAttributes m_dataAttributes;
-    bool m_dataAttributesHasBeenSet;
+    bool m_dataAttributesHasBeenSet = false;
   };
 
 } // namespace Model

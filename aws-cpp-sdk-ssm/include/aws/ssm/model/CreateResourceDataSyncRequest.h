@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API CreateResourceDataSyncRequest : public SSMRequest
+  class CreateResourceDataSyncRequest : public SSMRequest
   {
   public:
-    CreateResourceDataSyncRequest();
+    AWS_SSM_API CreateResourceDataSyncRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResourceDataSync"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -258,16 +258,16 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
 
     ResourceDataSyncS3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
 
     Aws::String m_syncType;
-    bool m_syncTypeHasBeenSet;
+    bool m_syncTypeHasBeenSet = false;
 
     ResourceDataSyncSource m_syncSource;
-    bool m_syncSourceHasBeenSet;
+    bool m_syncSourceHasBeenSet = false;
   };
 
 } // namespace Model

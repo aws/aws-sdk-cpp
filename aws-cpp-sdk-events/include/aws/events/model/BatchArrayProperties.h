@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/BatchArrayProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API BatchArrayProperties
+  class BatchArrayProperties
   {
   public:
-    BatchArrayProperties();
-    BatchArrayProperties(Aws::Utils::Json::JsonView jsonValue);
-    BatchArrayProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API BatchArrayProperties();
+    AWS_CLOUDWATCHEVENTS_API BatchArrayProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API BatchArrayProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

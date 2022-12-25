@@ -27,19 +27,17 @@ namespace Model
    * <p>The configuration of the dynamic partitioning mechanism that creates smaller
    * data sets from the streaming data by partitioning it based on partition keys.
    * Currently, dynamic partitioning is only supported for Amazon S3 destinations.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html">https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DynamicPartitioningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API DynamicPartitioningConfiguration
+  class DynamicPartitioningConfiguration
   {
   public:
-    DynamicPartitioningConfiguration();
-    DynamicPartitioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DynamicPartitioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration();
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +104,10 @@ namespace Model
   private:
 
     RetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

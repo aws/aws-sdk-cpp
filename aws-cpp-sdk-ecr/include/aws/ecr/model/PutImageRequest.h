@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECR_API PutImageRequest : public ECRRequest
+  class PutImageRequest : public ECRRequest
   {
   public:
-    PutImageRequest();
+    AWS_ECR_API PutImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_imageManifest;
-    bool m_imageManifestHasBeenSet;
+    bool m_imageManifestHasBeenSet = false;
 
     Aws::String m_imageManifestMediaType;
-    bool m_imageManifestMediaTypeHasBeenSet;
+    bool m_imageManifestMediaTypeHasBeenSet = false;
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
   };
 
 } // namespace Model

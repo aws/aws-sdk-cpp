@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/InferenceInputConfiguration.h>
 #include <aws/lookoutequipment/model/InferenceOutputConfiguration.h>
+#include <aws/lookoutequipment/model/LatestInferenceResult.h>
 #include <utility>
 
 namespace Aws
@@ -29,12 +30,12 @@ namespace LookoutEquipment
 {
 namespace Model
 {
-  class AWS_LOOKOUTEQUIPMENT_API DescribeInferenceSchedulerResult
+  class DescribeInferenceSchedulerResult
   {
   public:
-    DescribeInferenceSchedulerResult();
-    DescribeInferenceSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInferenceSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API DescribeInferenceSchedulerResult();
+    AWS_LOOKOUTEQUIPMENT_API DescribeInferenceSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API DescribeInferenceSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -513,6 +514,37 @@ namespace Model
      */
     inline DescribeInferenceSchedulerResult& WithServerSideKmsKeyId(const char* value) { SetServerSideKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline const LatestInferenceResult& GetLatestInferenceResult() const{ return m_latestInferenceResult; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(const LatestInferenceResult& value) { m_latestInferenceResult = value; }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline void SetLatestInferenceResult(LatestInferenceResult&& value) { m_latestInferenceResult = std::move(value); }
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline DescribeInferenceSchedulerResult& WithLatestInferenceResult(const LatestInferenceResult& value) { SetLatestInferenceResult(value); return *this;}
+
+    /**
+     * <p>Indicates whether the latest execution for the inference scheduler was
+     * Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+     */
+    inline DescribeInferenceSchedulerResult& WithLatestInferenceResult(LatestInferenceResult&& value) { SetLatestInferenceResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelArn;
@@ -540,6 +572,8 @@ namespace Model
     Aws::String m_roleArn;
 
     Aws::String m_serverSideKmsKeyId;
+
+    LatestInferenceResult m_latestInferenceResult;
   };
 
 } // namespace Model

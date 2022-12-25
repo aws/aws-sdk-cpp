@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunConfiguration
+  class ScheduleRunConfiguration
   {
   public:
-    ScheduleRunConfiguration();
-    ScheduleRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ScheduleRunConfiguration();
+    AWS_DEVICEFARM_API ScheduleRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ScheduleRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -430,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_extraDataPackageArn;
-    bool m_extraDataPackageArnHasBeenSet;
+    bool m_extraDataPackageArnHasBeenSet = false;
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;
-    bool m_vpceConfigurationArnsHasBeenSet;
+    bool m_vpceConfigurationArnsHasBeenSet = false;
 
     CustomerArtifactPaths m_customerArtifactPaths;
-    bool m_customerArtifactPathsHasBeenSet;
+    bool m_customerArtifactPathsHasBeenSet = false;
 
     Radios m_radios;
-    bool m_radiosHasBeenSet;
+    bool m_radiosHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_auxiliaryApps;
-    bool m_auxiliaryAppsHasBeenSet;
+    bool m_auxiliaryAppsHasBeenSet = false;
 
     BillingMethod m_billingMethod;
-    bool m_billingMethodHasBeenSet;
+    bool m_billingMethodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Total">AWS API
    * Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Total
+  class Total
   {
   public:
-    Total();
-    Total(Aws::Utils::Json::JsonView jsonValue);
-    Total& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Total();
+    AWS_GUARDDUTY_API Total(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Total& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

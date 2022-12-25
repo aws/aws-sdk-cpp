@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DelegatedAdministrator">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API DelegatedAdministrator
+  class DelegatedAdministrator
   {
   public:
-    DelegatedAdministrator();
-    DelegatedAdministrator(Aws::Utils::Json::JsonView jsonValue);
-    DelegatedAdministrator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API DelegatedAdministrator();
+    AWS_ORGANIZATIONS_API DelegatedAdministrator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API DelegatedAdministrator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,28 +351,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccountStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AccountJoinedMethod m_joinedMethod;
-    bool m_joinedMethodHasBeenSet;
+    bool m_joinedMethodHasBeenSet = false;
 
     Aws::Utils::DateTime m_joinedTimestamp;
-    bool m_joinedTimestampHasBeenSet;
+    bool m_joinedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_delegationEnabledDate;
-    bool m_delegationEnabledDateHasBeenSet;
+    bool m_delegationEnabledDateHasBeenSet = false;
   };
 
 } // namespace Model

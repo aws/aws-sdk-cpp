@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/LateDataRule">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API LateDataRule
+  class LateDataRule
   {
   public:
-    LateDataRule();
-    LateDataRule(Aws::Utils::Json::JsonView jsonValue);
-    LateDataRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API LateDataRule();
+    AWS_IOTANALYTICS_API LateDataRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API LateDataRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     LateDataRuleConfiguration m_ruleConfiguration;
-    bool m_ruleConfigurationHasBeenSet;
+    bool m_ruleConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

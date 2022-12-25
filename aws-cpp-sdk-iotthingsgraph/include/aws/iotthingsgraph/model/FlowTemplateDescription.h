@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/FlowTemplateDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API FlowTemplateDescription
+  class FlowTemplateDescription
   {
   public:
-    FlowTemplateDescription();
-    FlowTemplateDescription(Aws::Utils::Json::JsonView jsonValue);
-    FlowTemplateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API FlowTemplateDescription();
+    AWS_IOTTHINGSGRAPH_API FlowTemplateDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API FlowTemplateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,13 +128,13 @@ namespace Model
   private:
 
     FlowTemplateSummary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     DefinitionDocument m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     long long m_validatedNamespaceVersion;
-    bool m_validatedNamespaceVersionHasBeenSet;
+    bool m_validatedNamespaceVersionHasBeenSet = false;
   };
 
 } // namespace Model

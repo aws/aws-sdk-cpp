@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferringInputDeviceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API TransferringInputDeviceSummary
+  class TransferringInputDeviceSummary
   {
   public:
-    TransferringInputDeviceSummary();
-    TransferringInputDeviceSummary(Aws::Utils::Json::JsonView jsonValue);
-    TransferringInputDeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API TransferringInputDeviceSummary();
+    AWS_MEDIALIVE_API TransferringInputDeviceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API TransferringInputDeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_targetCustomerId;
-    bool m_targetCustomerIdHasBeenSet;
+    bool m_targetCustomerIdHasBeenSet = false;
 
     InputDeviceTransferType m_transferType;
-    bool m_transferTypeHasBeenSet;
+    bool m_transferTypeHasBeenSet = false;
   };
 
 } // namespace Model

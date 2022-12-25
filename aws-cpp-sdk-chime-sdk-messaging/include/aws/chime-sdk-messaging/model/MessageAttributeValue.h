@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/MessageAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API MessageAttributeValue
+  class MessageAttributeValue
   {
   public:
-    MessageAttributeValue();
-    MessageAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    MessageAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API MessageAttributeValue();
+    AWS_CHIMESDKMESSAGING_API MessageAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API MessageAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stringValues;
-    bool m_stringValuesHasBeenSet;
+    bool m_stringValuesHasBeenSet = false;
   };
 
 } // namespace Model

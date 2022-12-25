@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ManagedPersistenceMonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration
+  class ManagedPersistenceMonitoringConfiguration
   {
   public:
-    ManagedPersistenceMonitoringConfiguration();
-    ManagedPersistenceMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ManagedPersistenceMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration();
+    AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API ManagedPersistenceMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

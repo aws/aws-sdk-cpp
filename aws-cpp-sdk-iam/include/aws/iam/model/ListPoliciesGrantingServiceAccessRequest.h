@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API ListPoliciesGrantingServiceAccessRequest : public IAMRequest
+  class ListPoliciesGrantingServiceAccessRequest : public IAMRequest
   {
   public:
-    ListPoliciesGrantingServiceAccessRequest();
+    AWS_IAM_API ListPoliciesGrantingServiceAccessRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPoliciesGrantingServiceAccess"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -280,13 +280,13 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_serviceNamespaces;
-    bool m_serviceNamespacesHasBeenSet;
+    bool m_serviceNamespacesHasBeenSet = false;
   };
 
 } // namespace Model

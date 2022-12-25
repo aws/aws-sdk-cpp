@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobManifestGenerator">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobManifestGenerator
+  class JobManifestGenerator
   {
   public:
-    JobManifestGenerator();
-    JobManifestGenerator(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobManifestGenerator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestGenerator();
+    AWS_S3CONTROL_API JobManifestGenerator(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestGenerator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3JobManifestGenerator m_s3JobManifestGenerator;
-    bool m_s3JobManifestGeneratorHasBeenSet;
+    bool m_s3JobManifestGeneratorHasBeenSet = false;
   };
 
 } // namespace Model

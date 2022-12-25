@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembershipForAppInstanceUserSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelMembershipForAppInstanceUserSummary
+  class ChannelMembershipForAppInstanceUserSummary
   {
   public:
-    ChannelMembershipForAppInstanceUserSummary();
-    ChannelMembershipForAppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMembershipForAppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelMembershipForAppInstanceUserSummary();
+    AWS_CHIME_API ChannelMembershipForAppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelMembershipForAppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     ChannelSummary m_channelSummary;
-    bool m_channelSummaryHasBeenSet;
+    bool m_channelSummaryHasBeenSet = false;
 
     AppInstanceUserMembershipSummary m_appInstanceUserMembershipSummary;
-    bool m_appInstanceUserMembershipSummaryHasBeenSet;
+    bool m_appInstanceUserMembershipSummaryHasBeenSet = false;
   };
 
 } // namespace Model

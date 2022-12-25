@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/BundleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API BundleDetails
+  class BundleDetails
   {
   public:
-    BundleDetails();
-    BundleDetails(Aws::Utils::Json::JsonView jsonValue);
-    BundleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API BundleDetails();
+    AWS_MOBILE_API BundleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API BundleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -191,22 +191,22 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_iconUrl;
-    bool m_iconUrlHasBeenSet;
+    bool m_iconUrlHasBeenSet = false;
 
     Aws::Vector<Platform> m_availablePlatforms;
-    bool m_availablePlatformsHasBeenSet;
+    bool m_availablePlatformsHasBeenSet = false;
   };
 
 } // namespace Model

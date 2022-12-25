@@ -27,6 +27,7 @@
 #include <aws/quicksight/model/TwitterParameters.h>
 #include <aws/quicksight/model/AmazonOpenSearchParameters.h>
 #include <aws/quicksight/model/ExasolParameters.h>
+#include <aws/quicksight/model/DatabricksParameters.h>
 #include <utility>
 
 namespace Aws
@@ -51,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSourceParameters
+  class DataSourceParameters
   {
   public:
-    DataSourceParameters();
-    DataSourceParameters(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSourceParameters();
+    AWS_QUICKSIGHT_API DataSourceParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -741,73 +742,113 @@ namespace Model
      */
     inline DataSourceParameters& WithExasolParameters(ExasolParameters&& value) { SetExasolParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline const DatabricksParameters& GetDatabricksParameters() const{ return m_databricksParameters; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline bool DatabricksParametersHasBeenSet() const { return m_databricksParametersHasBeenSet; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline void SetDatabricksParameters(const DatabricksParameters& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = value; }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline void SetDatabricksParameters(DatabricksParameters&& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = std::move(value); }
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithDatabricksParameters(const DatabricksParameters& value) { SetDatabricksParameters(value); return *this;}
+
+    /**
+     * <p>The required parameters that are needed to connect to a Databricks data
+     * source.</p>
+     */
+    inline DataSourceParameters& WithDatabricksParameters(DatabricksParameters&& value) { SetDatabricksParameters(std::move(value)); return *this;}
+
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;
-    bool m_amazonElasticsearchParametersHasBeenSet;
+    bool m_amazonElasticsearchParametersHasBeenSet = false;
 
     AthenaParameters m_athenaParameters;
-    bool m_athenaParametersHasBeenSet;
+    bool m_athenaParametersHasBeenSet = false;
 
     AuroraParameters m_auroraParameters;
-    bool m_auroraParametersHasBeenSet;
+    bool m_auroraParametersHasBeenSet = false;
 
     AuroraPostgreSqlParameters m_auroraPostgreSqlParameters;
-    bool m_auroraPostgreSqlParametersHasBeenSet;
+    bool m_auroraPostgreSqlParametersHasBeenSet = false;
 
     AwsIotAnalyticsParameters m_awsIotAnalyticsParameters;
-    bool m_awsIotAnalyticsParametersHasBeenSet;
+    bool m_awsIotAnalyticsParametersHasBeenSet = false;
 
     JiraParameters m_jiraParameters;
-    bool m_jiraParametersHasBeenSet;
+    bool m_jiraParametersHasBeenSet = false;
 
     MariaDbParameters m_mariaDbParameters;
-    bool m_mariaDbParametersHasBeenSet;
+    bool m_mariaDbParametersHasBeenSet = false;
 
     MySqlParameters m_mySqlParameters;
-    bool m_mySqlParametersHasBeenSet;
+    bool m_mySqlParametersHasBeenSet = false;
 
     OracleParameters m_oracleParameters;
-    bool m_oracleParametersHasBeenSet;
+    bool m_oracleParametersHasBeenSet = false;
 
     PostgreSqlParameters m_postgreSqlParameters;
-    bool m_postgreSqlParametersHasBeenSet;
+    bool m_postgreSqlParametersHasBeenSet = false;
 
     PrestoParameters m_prestoParameters;
-    bool m_prestoParametersHasBeenSet;
+    bool m_prestoParametersHasBeenSet = false;
 
     RdsParameters m_rdsParameters;
-    bool m_rdsParametersHasBeenSet;
+    bool m_rdsParametersHasBeenSet = false;
 
     RedshiftParameters m_redshiftParameters;
-    bool m_redshiftParametersHasBeenSet;
+    bool m_redshiftParametersHasBeenSet = false;
 
     S3Parameters m_s3Parameters;
-    bool m_s3ParametersHasBeenSet;
+    bool m_s3ParametersHasBeenSet = false;
 
     ServiceNowParameters m_serviceNowParameters;
-    bool m_serviceNowParametersHasBeenSet;
+    bool m_serviceNowParametersHasBeenSet = false;
 
     SnowflakeParameters m_snowflakeParameters;
-    bool m_snowflakeParametersHasBeenSet;
+    bool m_snowflakeParametersHasBeenSet = false;
 
     SparkParameters m_sparkParameters;
-    bool m_sparkParametersHasBeenSet;
+    bool m_sparkParametersHasBeenSet = false;
 
     SqlServerParameters m_sqlServerParameters;
-    bool m_sqlServerParametersHasBeenSet;
+    bool m_sqlServerParametersHasBeenSet = false;
 
     TeradataParameters m_teradataParameters;
-    bool m_teradataParametersHasBeenSet;
+    bool m_teradataParametersHasBeenSet = false;
 
     TwitterParameters m_twitterParameters;
-    bool m_twitterParametersHasBeenSet;
+    bool m_twitterParametersHasBeenSet = false;
 
     AmazonOpenSearchParameters m_amazonOpenSearchParameters;
-    bool m_amazonOpenSearchParametersHasBeenSet;
+    bool m_amazonOpenSearchParametersHasBeenSet = false;
 
     ExasolParameters m_exasolParameters;
-    bool m_exasolParametersHasBeenSet;
+    bool m_exasolParametersHasBeenSet = false;
+
+    DatabricksParameters m_databricksParameters;
+    bool m_databricksParametersHasBeenSet = false;
   };
 
 } // namespace Model

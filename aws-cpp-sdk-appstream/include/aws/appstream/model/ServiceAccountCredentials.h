@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ServiceAccountCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ServiceAccountCredentials
+  class ServiceAccountCredentials
   {
   public:
-    ServiceAccountCredentials();
-    ServiceAccountCredentials(Aws::Utils::Json::JsonView jsonValue);
-    ServiceAccountCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ServiceAccountCredentials();
+    AWS_APPSTREAM_API ServiceAccountCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ServiceAccountCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_accountPassword;
-    bool m_accountPasswordHasBeenSet;
+    bool m_accountPasswordHasBeenSet = false;
   };
 
 } // namespace Model

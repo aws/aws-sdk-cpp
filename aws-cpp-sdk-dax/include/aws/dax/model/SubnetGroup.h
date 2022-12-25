@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/SubnetGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API SubnetGroup
+  class SubnetGroup
   {
   public:
-    SubnetGroup();
-    SubnetGroup(Aws::Utils::Json::JsonView jsonValue);
-    SubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API SubnetGroup();
+    AWS_DAX_API SubnetGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API SubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

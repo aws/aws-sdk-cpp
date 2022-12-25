@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupAction">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API ScheduledUpdateGroupAction
+  class ScheduledUpdateGroupAction
   {
   public:
-    ScheduledUpdateGroupAction();
-    ScheduledUpdateGroupAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledUpdateGroupAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScheduledUpdateGroupAction();
+    AWS_AUTOSCALING_API ScheduledUpdateGroupAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScheduledUpdateGroupAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -164,32 +164,32 @@ namespace Model
 
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline ScheduledUpdateGroupAction& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline ScheduledUpdateGroupAction& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
@@ -443,37 +443,37 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
 
     Aws::String m_scheduledActionARN;
-    bool m_scheduledActionARNHasBeenSet;
+    bool m_scheduledActionARNHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
   };
 
 } // namespace Model

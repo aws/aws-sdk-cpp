@@ -57,13 +57,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedLoadMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification
+  class CustomizedLoadMetricSpecification
   {
   public:
-    CustomizedLoadMetricSpecification();
-    CustomizedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
-    CustomizedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -279,19 +279,19 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<MetricDimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     MetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

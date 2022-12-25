@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/RxNormConcept">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API RxNormConcept
+  class RxNormConcept
   {
   public:
-    RxNormConcept();
-    RxNormConcept(Aws::Utils::Json::JsonView jsonValue);
-    RxNormConcept& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API RxNormConcept();
+    AWS_COMPREHENDMEDICAL_API RxNormConcept(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API RxNormConcept& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

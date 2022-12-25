@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AccessLog">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API AccessLog
+  class AccessLog
   {
   public:
-    AccessLog();
-    AccessLog(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessLog& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API AccessLog();
+    AWS_ELASTICLOADBALANCING_API AccessLog(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API AccessLog& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     int m_emitInterval;
-    bool m_emitIntervalHasBeenSet;
+    bool m_emitIntervalHasBeenSet = false;
 
     Aws::String m_s3BucketPrefix;
-    bool m_s3BucketPrefixHasBeenSet;
+    bool m_s3BucketPrefixHasBeenSet = false;
   };
 
 } // namespace Model

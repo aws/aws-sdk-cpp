@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageTagDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API ImageTagDetail
+  class ImageTagDetail
   {
   public:
-    ImageTagDetail();
-    ImageTagDetail(Aws::Utils::Json::JsonView jsonValue);
-    ImageTagDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API ImageTagDetail();
+    AWS_ECRPUBLIC_API ImageTagDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API ImageTagDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ReferencedImageDetail m_imageDetail;
-    bool m_imageDetailHasBeenSet;
+    bool m_imageDetailHasBeenSet = false;
   };
 
 } // namespace Model

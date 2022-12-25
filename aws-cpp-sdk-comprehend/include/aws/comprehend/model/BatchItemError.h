@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchItemError">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchItemError
+  class BatchItemError
   {
   public:
-    BatchItemError();
-    BatchItemError(Aws::Utils::Json::JsonView jsonValue);
-    BatchItemError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchItemError();
+    AWS_COMPREHEND_API BatchItemError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchItemError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

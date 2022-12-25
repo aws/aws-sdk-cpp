@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MotionGraphicsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MotionGraphicsConfiguration
+  class MotionGraphicsConfiguration
   {
   public:
-    MotionGraphicsConfiguration();
-    MotionGraphicsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MotionGraphicsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MotionGraphicsConfiguration();
+    AWS_MEDIALIVE_API MotionGraphicsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MotionGraphicsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     MotionGraphicsInsertion m_motionGraphicsInsertion;
-    bool m_motionGraphicsInsertionHasBeenSet;
+    bool m_motionGraphicsInsertionHasBeenSet = false;
 
     MotionGraphicsSettings m_motionGraphicsSettings;
-    bool m_motionGraphicsSettingsHasBeenSet;
+    bool m_motionGraphicsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

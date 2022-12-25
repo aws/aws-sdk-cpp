@@ -27,19 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>Represents a location in a multi-location fleet.</p> <p> <b>Related
-   * actions</b> </p> <p> <a>DescribeFleetLocationAttributes</a> </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details about a location in a multi-location fleet.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LocationAttributes
+  class LocationAttributes
   {
   public:
-    LocationAttributes();
-    LocationAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LocationAttributes();
+    AWS_GAMELIFT_API LocationAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,62 +115,62 @@ namespace Model
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline const LocationUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline void SetUpdateStatus(const LocationUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline void SetUpdateStatus(LocationUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline LocationAttributes& WithUpdateStatus(const LocationUpdateStatus& value) { SetUpdateStatus(value); return *this;}
 
     /**
      * <p>The status of fleet activity updates to the location. The status
-     * <code>PENDING_UPDATE</code> indicates that <a>StopFleetActions</a> or
-     * <a>StartFleetActions</a> has been requested but the update has not yet been
-     * completed for the location.</p>
+     * <code>PENDING_UPDATE</code> indicates that <code>StopFleetActions</code> or
+     * <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.</p>
      */
     inline LocationAttributes& WithUpdateStatus(LocationUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
 
   private:
 
     LocationState m_locationState;
-    bool m_locationStateHasBeenSet;
+    bool m_locationStateHasBeenSet = false;
 
     Aws::Vector<FleetAction> m_stoppedActions;
-    bool m_stoppedActionsHasBeenSet;
+    bool m_stoppedActionsHasBeenSet = false;
 
     LocationUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

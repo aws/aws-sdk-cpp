@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDeviceCertificateParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API UpdateDeviceCertificateParams
+  class UpdateDeviceCertificateParams
   {
   public:
-    UpdateDeviceCertificateParams();
-    UpdateDeviceCertificateParams(Aws::Utils::Json::JsonView jsonValue);
-    UpdateDeviceCertificateParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API UpdateDeviceCertificateParams();
+    AWS_IOT_API UpdateDeviceCertificateParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API UpdateDeviceCertificateParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     DeviceCertificateUpdateAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteApplicationSettingsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteApplicationSettingsRequest
+  class WriteApplicationSettingsRequest
   {
   public:
-    WriteApplicationSettingsRequest();
-    WriteApplicationSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteApplicationSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteApplicationSettingsRequest();
+    AWS_PINPOINT_API WriteApplicationSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteApplicationSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -329,19 +329,19 @@ namespace Model
   private:
 
     CampaignHook m_campaignHook;
-    bool m_campaignHookHasBeenSet;
+    bool m_campaignHookHasBeenSet = false;
 
     bool m_cloudWatchMetricsEnabled;
-    bool m_cloudWatchMetricsEnabledHasBeenSet;
+    bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     bool m_eventTaggingEnabled;
-    bool m_eventTaggingEnabledHasBeenSet;
+    bool m_eventTaggingEnabledHasBeenSet = false;
 
     CampaignLimits m_limits;
-    bool m_limitsHasBeenSet;
+    bool m_limitsHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
   };
 
 } // namespace Model

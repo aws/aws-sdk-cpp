@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Transcript">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API Transcript
+  class Transcript
   {
   public:
-    Transcript();
-    Transcript(Aws::Utils::Json::JsonView jsonValue);
-    Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API Transcript();
+    AWS_TRANSCRIBESERVICE_API Transcript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -306,10 +306,10 @@ namespace Model
   private:
 
     Aws::String m_transcriptFileUri;
-    bool m_transcriptFileUriHasBeenSet;
+    bool m_transcriptFileUriHasBeenSet = false;
 
     Aws::String m_redactedTranscriptFileUri;
-    bool m_redactedTranscriptFileUriHasBeenSet;
+    bool m_redactedTranscriptFileUriHasBeenSet = false;
   };
 
 } // namespace Model

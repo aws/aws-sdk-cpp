@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API ListMembersRequest : public GuardDutyRequest
+  class ListMembersRequest : public GuardDutyRequest
   {
   public:
-    ListMembersRequest();
+    AWS_GUARDDUTY_API ListMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GUARDDUTY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -171,65 +171,97 @@ namespace Model
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline const Aws::String& GetOnlyAssociated() const{ return m_onlyAssociated; }
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline void SetOnlyAssociated(const Aws::String& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline void SetOnlyAssociated(Aws::String&& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = std::move(value); }
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline void SetOnlyAssociated(const char* value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated.assign(value); }
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const Aws::String& value) { SetOnlyAssociated(value); return *this;}
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(Aws::String&& value) { SetOnlyAssociated(std::move(value)); return *this;}
 
     /**
      * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).</p>
+     * (including members who haven't been invited yet or have been disassociated).
+     * Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const char* value) { SetOnlyAssociated(value); return *this;}
 
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_onlyAssociated;
-    bool m_onlyAssociatedHasBeenSet;
+    bool m_onlyAssociatedHasBeenSet = false;
   };
 
 } // namespace Model

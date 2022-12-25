@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringNetworkConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringNetworkConfig
+  class MonitoringNetworkConfig
   {
   public:
-    MonitoringNetworkConfig();
-    MonitoringNetworkConfig(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringNetworkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringNetworkConfig();
+    AWS_SAGEMAKER_API MonitoringNetworkConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringNetworkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,13 +117,13 @@ namespace Model
   private:
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API NFSFileShareDefaults
+  class NFSFileShareDefaults
   {
   public:
-    NFSFileShareDefaults();
-    NFSFileShareDefaults(Aws::Utils::Json::JsonView jsonValue);
-    NFSFileShareDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API NFSFileShareDefaults();
+    AWS_STORAGEGATEWAY_API NFSFileShareDefaults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API NFSFileShareDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
 
     Aws::String m_directoryMode;
-    bool m_directoryModeHasBeenSet;
+    bool m_directoryModeHasBeenSet = false;
 
     long long m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     long long m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
   };
 
 } // namespace Model

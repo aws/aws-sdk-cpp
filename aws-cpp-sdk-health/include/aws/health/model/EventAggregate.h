@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAggregate">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EventAggregate
+  class EventAggregate
   {
   public:
-    EventAggregate();
-    EventAggregate(Aws::Utils::Json::JsonView jsonValue);
-    EventAggregate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EventAggregate();
+    AWS_HEALTH_API EventAggregate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EventAggregate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_aggregateValue;
-    bool m_aggregateValueHasBeenSet;
+    bool m_aggregateValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKDOCS_API GetFolderRequest : public WorkDocsRequest
+  class GetFolderRequest : public WorkDocsRequest
   {
   public:
-    GetFolderRequest();
+    AWS_WORKDOCS_API GetFolderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,11 +33,11 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetFolder"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKDOCS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WORKDOCS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKDOCS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_folderId;
-    bool m_folderIdHasBeenSet;
+    bool m_folderIdHasBeenSet = false;
 
     bool m_includeCustomMetadata;
-    bool m_includeCustomMetadataHasBeenSet;
+    bool m_includeCustomMetadataHasBeenSet = false;
   };
 
 } // namespace Model

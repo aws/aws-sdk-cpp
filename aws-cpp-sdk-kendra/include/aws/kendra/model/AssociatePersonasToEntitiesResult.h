@@ -25,53 +25,53 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API AssociatePersonasToEntitiesResult
+  class AssociatePersonasToEntitiesResult
   {
   public:
-    AssociatePersonasToEntitiesResult();
-    AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociatePersonasToEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult();
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline const Aws::Vector<FailedEntity>& GetFailedEntityList() const{ return m_failedEntityList; }
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline void SetFailedEntityList(const Aws::Vector<FailedEntity>& value) { m_failedEntityList = value; }
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline void SetFailedEntityList(Aws::Vector<FailedEntity>&& value) { m_failedEntityList = std::move(value); }
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline AssociatePersonasToEntitiesResult& WithFailedEntityList(const Aws::Vector<FailedEntity>& value) { SetFailedEntityList(value); return *this;}
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline AssociatePersonasToEntitiesResult& WithFailedEntityList(Aws::Vector<FailedEntity>&& value) { SetFailedEntityList(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline AssociatePersonasToEntitiesResult& AddFailedEntityList(const FailedEntity& value) { m_failedEntityList.push_back(value); return *this; }
 
     /**
-     * <p>Lists the users or groups in your Amazon Web Services SSO identity source
-     * that failed to properly configure with your Amazon Kendra experience.</p>
+     * <p>Lists the users or groups in your IAM Identity Center identity source that
+     * failed to properly configure with your Amazon Kendra experience.</p>
      */
     inline AssociatePersonasToEntitiesResult& AddFailedEntityList(FailedEntity&& value) { m_failedEntityList.push_back(std::move(value)); return *this; }
 

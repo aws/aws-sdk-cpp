@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails
+  class AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails
   {
   public:
-    AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails();
-    AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

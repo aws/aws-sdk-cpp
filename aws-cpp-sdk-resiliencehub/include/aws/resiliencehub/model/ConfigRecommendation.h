@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ConfigRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ConfigRecommendation
+  class ConfigRecommendation
   {
   public:
-    ConfigRecommendation();
-    ConfigRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ConfigRecommendation();
+    AWS_RESILIENCEHUB_API ConfigRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ConfigRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -472,34 +472,34 @@ namespace Model
   private:
 
     Aws::String m_appComponentName;
-    bool m_appComponentNameHasBeenSet;
+    bool m_appComponentNameHasBeenSet = false;
 
     Aws::Map<DisruptionType, DisruptionCompliance> m_compliance;
-    bool m_complianceHasBeenSet;
+    bool m_complianceHasBeenSet = false;
 
     Cost m_cost;
-    bool m_costHasBeenSet;
+    bool m_costHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     HaArchitecture m_haArchitecture;
-    bool m_haArchitectureHasBeenSet;
+    bool m_haArchitectureHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConfigRecommendationOptimizationType m_optimizationType;
-    bool m_optimizationTypeHasBeenSet;
+    bool m_optimizationTypeHasBeenSet = false;
 
     Aws::Map<DisruptionType, RecommendationDisruptionCompliance> m_recommendationCompliance;
-    bool m_recommendationComplianceHasBeenSet;
+    bool m_recommendationComplianceHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_suggestedChanges;
-    bool m_suggestedChangesHasBeenSet;
+    bool m_suggestedChangesHasBeenSet = false;
   };
 
 } // namespace Model

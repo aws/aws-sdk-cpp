@@ -33,7 +33,7 @@ PatchFilterGroup& PatchFilterGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchFilters"))
   {
-    Array<JsonView> patchFiltersJsonList = jsonValue.GetArray("PatchFilters");
+    Aws::Utils::Array<JsonView> patchFiltersJsonList = jsonValue.GetArray("PatchFilters");
     for(unsigned patchFiltersIndex = 0; patchFiltersIndex < patchFiltersJsonList.GetLength(); ++patchFiltersIndex)
     {
       m_patchFilters.push_back(patchFiltersJsonList[patchFiltersIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue PatchFilterGroup::Jsonize() const
 
   if(m_patchFiltersHasBeenSet)
   {
-   Array<JsonValue> patchFiltersJsonList(m_patchFilters.size());
+   Aws::Utils::Array<JsonValue> patchFiltersJsonList(m_patchFilters.size());
    for(unsigned patchFiltersIndex = 0; patchFiltersIndex < patchFiltersJsonList.GetLength(); ++patchFiltersIndex)
    {
      patchFiltersJsonList[patchFiltersIndex].AsObject(m_patchFilters[patchFiltersIndex].Jsonize());

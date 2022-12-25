@@ -29,18 +29,18 @@ namespace Model
    * <p>The filter to use to identify the subset of cookies to inspect in a web
    * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
    * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-   * JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1",
+   * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
    * "KeyToInclude2", "KeyToInclude3"} }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CookieMatchPattern">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CookieMatchPattern
+  class CookieMatchPattern
   {
   public:
-    CookieMatchPattern();
-    CookieMatchPattern(Aws::Utils::Json::JsonView jsonValue);
-    CookieMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CookieMatchPattern();
+    AWS_WAFV2_API CookieMatchPattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CookieMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedCookies;
-    bool m_includedCookiesHasBeenSet;
+    bool m_includedCookiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedCookies;
-    bool m_excludedCookiesHasBeenSet;
+    bool m_excludedCookiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpsolverDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API UpsolverDestinationProperties
+  class UpsolverDestinationProperties
   {
   public:
-    UpsolverDestinationProperties();
-    UpsolverDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    UpsolverDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API UpsolverDestinationProperties();
+    AWS_APPFLOW_API UpsolverDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API UpsolverDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     UpsolverS3OutputFormatConfig m_s3OutputFormatConfig;
-    bool m_s3OutputFormatConfigHasBeenSet;
+    bool m_s3OutputFormatConfigHasBeenSet = false;
   };
 
 } // namespace Model

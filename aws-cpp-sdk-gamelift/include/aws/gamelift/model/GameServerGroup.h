@@ -38,23 +38,18 @@ namespace Model
    * call to <code>CreateGameServerGroup</code> and deleted by calling
    * <code>DeleteGameServerGroup</code>. Game server group activity can be
    * temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
-   * and <code>ResumeGameServerGroup</code>, respectively. </p> <p> <b>Related
-   * actions</b> </p> <p> <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a>
-   * | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> |
-   * <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
-   * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * and <code>ResumeGameServerGroup</code>, respectively. </p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameServerGroup
+  class GameServerGroup
   {
   public:
-    GameServerGroup();
-    GameServerGroup(Aws::Utils::Json::JsonView jsonValue);
-    GameServerGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameServerGroup();
+    AWS_GAMELIFT_API GameServerGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameServerGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -803,40 +798,40 @@ namespace Model
   private:
 
     Aws::String m_gameServerGroupName;
-    bool m_gameServerGroupNameHasBeenSet;
+    bool m_gameServerGroupNameHasBeenSet = false;
 
     Aws::String m_gameServerGroupArn;
-    bool m_gameServerGroupArnHasBeenSet;
+    bool m_gameServerGroupArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<InstanceDefinition> m_instanceDefinitions;
-    bool m_instanceDefinitionsHasBeenSet;
+    bool m_instanceDefinitionsHasBeenSet = false;
 
     BalancingStrategy m_balancingStrategy;
-    bool m_balancingStrategyHasBeenSet;
+    bool m_balancingStrategyHasBeenSet = false;
 
     GameServerProtectionPolicy m_gameServerProtectionPolicy;
-    bool m_gameServerProtectionPolicyHasBeenSet;
+    bool m_gameServerProtectionPolicyHasBeenSet = false;
 
     Aws::String m_autoScalingGroupArn;
-    bool m_autoScalingGroupArnHasBeenSet;
+    bool m_autoScalingGroupArnHasBeenSet = false;
 
     GameServerGroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Vector<GameServerGroupAction> m_suspendedActions;
-    bool m_suspendedActionsHasBeenSet;
+    bool m_suspendedActionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

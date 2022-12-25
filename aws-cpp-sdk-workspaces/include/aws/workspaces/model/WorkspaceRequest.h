@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceRequest
+  class WorkspaceRequest
   {
   public:
-    WorkspaceRequest();
-    WorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceRequest();
+    AWS_WORKSPACES_API WorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -353,28 +353,28 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_volumeEncryptionKey;
-    bool m_volumeEncryptionKeyHasBeenSet;
+    bool m_volumeEncryptionKeyHasBeenSet = false;
 
     bool m_userVolumeEncryptionEnabled;
-    bool m_userVolumeEncryptionEnabledHasBeenSet;
+    bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
     bool m_rootVolumeEncryptionEnabled;
-    bool m_rootVolumeEncryptionEnabledHasBeenSet;
+    bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
-    bool m_workspacePropertiesHasBeenSet;
+    bool m_workspacePropertiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

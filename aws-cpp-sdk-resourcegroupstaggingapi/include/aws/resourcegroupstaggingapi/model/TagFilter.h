@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API TagFilter
+  class TagFilter
   {
   public:
-    TagFilter();
-    TagFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API TagFilter();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

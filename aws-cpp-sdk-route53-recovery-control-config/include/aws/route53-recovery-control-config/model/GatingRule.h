@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GatingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRule
+  class GatingRule
   {
   public:
-    GatingRule();
-    GatingRule(Aws::Utils::Json::JsonView jsonValue);
-    GatingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRule();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API GatingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -454,28 +454,28 @@ namespace Model
   private:
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatingControls;
-    bool m_gatingControlsHasBeenSet;
+    bool m_gatingControlsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RuleConfig m_ruleConfig;
-    bool m_ruleConfigHasBeenSet;
+    bool m_ruleConfigHasBeenSet = false;
 
     Aws::String m_safetyRuleArn;
-    bool m_safetyRuleArnHasBeenSet;
+    bool m_safetyRuleArnHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetControls;
-    bool m_targetControlsHasBeenSet;
+    bool m_targetControlsHasBeenSet = false;
 
     int m_waitPeriodMs;
-    bool m_waitPeriodMsHasBeenSet;
+    bool m_waitPeriodMsHasBeenSet = false;
   };
 
 } // namespace Model

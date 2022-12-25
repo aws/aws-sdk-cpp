@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TechnicalCueSegment">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TechnicalCueSegment
+  class TechnicalCueSegment
   {
   public:
-    TechnicalCueSegment();
-    TechnicalCueSegment(Aws::Utils::Json::JsonView jsonValue);
-    TechnicalCueSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TechnicalCueSegment();
+    AWS_REKOGNITION_API TechnicalCueSegment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TechnicalCueSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     TechnicalCueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

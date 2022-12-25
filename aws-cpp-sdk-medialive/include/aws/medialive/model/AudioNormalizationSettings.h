@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioNormalizationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioNormalizationSettings
+  class AudioNormalizationSettings
   {
   public:
-    AudioNormalizationSettings();
-    AudioNormalizationSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioNormalizationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioNormalizationSettings();
+    AWS_MEDIALIVE_API AudioNormalizationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioNormalizationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AudioNormalizationAlgorithm m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     AudioNormalizationAlgorithmControl m_algorithmControl;
-    bool m_algorithmControlHasBeenSet;
+    bool m_algorithmControlHasBeenSet = false;
 
     double m_targetLkfs;
-    bool m_targetLkfsHasBeenSet;
+    bool m_targetLkfsHasBeenSet = false;
   };
 
 } // namespace Model

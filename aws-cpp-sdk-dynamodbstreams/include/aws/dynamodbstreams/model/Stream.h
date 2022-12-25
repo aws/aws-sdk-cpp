@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Stream">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API Stream
+  class Stream
   {
   public:
-    Stream();
-    Stream(Aws::Utils::Json::JsonView jsonValue);
-    Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API Stream();
+    AWS_DYNAMODBSTREAMS_API Stream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_streamLabel;
-    bool m_streamLabelHasBeenSet;
+    bool m_streamLabelHasBeenSet = false;
   };
 
 } // namespace Model

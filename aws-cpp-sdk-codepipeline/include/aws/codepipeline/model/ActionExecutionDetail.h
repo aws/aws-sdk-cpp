@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecutionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionExecutionDetail
+  class ActionExecutionDetail
   {
   public:
-    ActionExecutionDetail();
-    ActionExecutionDetail(Aws::Utils::Json::JsonView jsonValue);
-    ActionExecutionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionExecutionDetail();
+    AWS_CODEPIPELINE_API ActionExecutionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionExecutionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -403,34 +403,34 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionId;
-    bool m_pipelineExecutionIdHasBeenSet;
+    bool m_pipelineExecutionIdHasBeenSet = false;
 
     Aws::String m_actionExecutionId;
-    bool m_actionExecutionIdHasBeenSet;
+    bool m_actionExecutionIdHasBeenSet = false;
 
     int m_pipelineVersion;
-    bool m_pipelineVersionHasBeenSet;
+    bool m_pipelineVersionHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     ActionExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ActionExecutionInput m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     ActionExecutionOutput m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
   };
 
 } // namespace Model

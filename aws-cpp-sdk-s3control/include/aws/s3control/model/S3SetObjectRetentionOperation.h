@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectRetentionOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3SetObjectRetentionOperation
+  class S3SetObjectRetentionOperation
   {
   public:
-    S3SetObjectRetentionOperation();
-    S3SetObjectRetentionOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3SetObjectRetentionOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectRetentionOperation();
+    AWS_S3CONTROL_API S3SetObjectRetentionOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectRetentionOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     bool m_bypassGovernanceRetention;
-    bool m_bypassGovernanceRetentionHasBeenSet;
+    bool m_bypassGovernanceRetentionHasBeenSet = false;
 
     S3Retention m_retention;
-    bool m_retentionHasBeenSet;
+    bool m_retentionHasBeenSet = false;
   };
 
 } // namespace Model

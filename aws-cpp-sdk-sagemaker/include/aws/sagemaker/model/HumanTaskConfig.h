@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanTaskConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HumanTaskConfig
+  class HumanTaskConfig
   {
   public:
-    HumanTaskConfig();
-    HumanTaskConfig(Aws::Utils::Json::JsonView jsonValue);
-    HumanTaskConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HumanTaskConfig();
+    AWS_SAGEMAKER_API HumanTaskConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HumanTaskConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -5228,28 +5228,32 @@ namespace Model
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline int GetMaxConcurrentTaskCount() const{ return m_maxConcurrentTaskCount; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline bool MaxConcurrentTaskCountHasBeenSet() const { return m_maxConcurrentTaskCountHasBeenSet; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline void SetMaxConcurrentTaskCount(int value) { m_maxConcurrentTaskCountHasBeenSet = true; m_maxConcurrentTaskCount = value; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time. The default value is 1000 objects.</p>
+     * more than one worker at one time. The default value is 1000 objects. To increase
+     * the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
      */
     inline HumanTaskConfig& WithMaxConcurrentTaskCount(int value) { SetMaxConcurrentTaskCount(value); return *this;}
 
@@ -5324,40 +5328,40 @@ namespace Model
   private:
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     UiConfig m_uiConfig;
-    bool m_uiConfigHasBeenSet;
+    bool m_uiConfigHasBeenSet = false;
 
     Aws::String m_preHumanTaskLambdaArn;
-    bool m_preHumanTaskLambdaArnHasBeenSet;
+    bool m_preHumanTaskLambdaArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_taskKeywords;
-    bool m_taskKeywordsHasBeenSet;
+    bool m_taskKeywordsHasBeenSet = false;
 
     Aws::String m_taskTitle;
-    bool m_taskTitleHasBeenSet;
+    bool m_taskTitleHasBeenSet = false;
 
     Aws::String m_taskDescription;
-    bool m_taskDescriptionHasBeenSet;
+    bool m_taskDescriptionHasBeenSet = false;
 
     int m_numberOfHumanWorkersPerDataObject;
-    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet;
+    bool m_numberOfHumanWorkersPerDataObjectHasBeenSet = false;
 
     int m_taskTimeLimitInSeconds;
-    bool m_taskTimeLimitInSecondsHasBeenSet;
+    bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
     int m_taskAvailabilityLifetimeInSeconds;
-    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet;
+    bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
     int m_maxConcurrentTaskCount;
-    bool m_maxConcurrentTaskCountHasBeenSet;
+    bool m_maxConcurrentTaskCountHasBeenSet = false;
 
     AnnotationConsolidationConfig m_annotationConsolidationConfig;
-    bool m_annotationConsolidationConfigHasBeenSet;
+    bool m_annotationConsolidationConfigHasBeenSet = false;
 
     PublicWorkforceTaskPrice m_publicWorkforceTaskPrice;
-    bool m_publicWorkforceTaskPriceHasBeenSet;
+    bool m_publicWorkforceTaskPriceHasBeenSet = false;
   };
 
 } // namespace Model

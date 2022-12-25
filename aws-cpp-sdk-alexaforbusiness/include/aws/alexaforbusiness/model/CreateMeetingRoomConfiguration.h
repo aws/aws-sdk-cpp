@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateMeetingRoomConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API CreateMeetingRoomConfiguration
+  class CreateMeetingRoomConfiguration
   {
   public:
-    CreateMeetingRoomConfiguration();
-    CreateMeetingRoomConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateMeetingRoomConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API CreateMeetingRoomConfiguration();
+    AWS_ALEXAFORBUSINESS_API CreateMeetingRoomConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API CreateMeetingRoomConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     bool m_roomUtilizationMetricsEnabled;
-    bool m_roomUtilizationMetricsEnabledHasBeenSet;
+    bool m_roomUtilizationMetricsEnabledHasBeenSet = false;
 
     CreateEndOfMeetingReminder m_endOfMeetingReminder;
-    bool m_endOfMeetingReminderHasBeenSet;
+    bool m_endOfMeetingReminderHasBeenSet = false;
 
     CreateInstantBooking m_instantBooking;
-    bool m_instantBookingHasBeenSet;
+    bool m_instantBookingHasBeenSet = false;
 
     CreateRequireCheckIn m_requireCheckIn;
-    bool m_requireCheckInHasBeenSet;
+    bool m_requireCheckInHasBeenSet = false;
   };
 
 } // namespace Model

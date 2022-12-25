@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VolumeStatusDetails
+  class VolumeStatusDetails
   {
   public:
-    VolumeStatusDetails();
-    VolumeStatusDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VolumeStatusDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusDetails();
+    AWS_EC2_API VolumeStatusDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     VolumeStatusName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

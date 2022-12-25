@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyExecutionActivityMetricsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse
+  class JourneyExecutionActivityMetricsResponse
   {
   public:
-    JourneyExecutionActivityMetricsResponse();
-    JourneyExecutionActivityMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
-    JourneyExecutionActivityMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse();
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyExecutionActivityMetricsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,22 +477,22 @@ namespace Model
   private:
 
     Aws::String m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_journeyActivityId;
-    bool m_journeyActivityIdHasBeenSet;
+    bool m_journeyActivityIdHasBeenSet = false;
 
     Aws::String m_journeyId;
-    bool m_journeyIdHasBeenSet;
+    bool m_journeyIdHasBeenSet = false;
 
     Aws::String m_lastEvaluatedTime;
-    bool m_lastEvaluatedTimeHasBeenSet;
+    bool m_lastEvaluatedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

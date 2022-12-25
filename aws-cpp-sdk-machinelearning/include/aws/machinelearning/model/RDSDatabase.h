@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSDatabase">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSDatabase
+  class RDSDatabase
   {
   public:
-    RDSDatabase();
-    RDSDatabase(Aws::Utils::Json::JsonView jsonValue);
-    RDSDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSDatabase();
+    AWS_MACHINELEARNING_API RDSDatabase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSDatabase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_instanceIdentifier;
-    bool m_instanceIdentifierHasBeenSet;
+    bool m_instanceIdentifierHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
   };
 
 } // namespace Model

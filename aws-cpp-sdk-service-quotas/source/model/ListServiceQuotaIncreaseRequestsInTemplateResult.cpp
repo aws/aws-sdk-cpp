@@ -30,7 +30,7 @@ ListServiceQuotaIncreaseRequestsInTemplateResult& ListServiceQuotaIncreaseReques
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ServiceQuotaIncreaseRequestInTemplateList"))
   {
-    Array<JsonView> serviceQuotaIncreaseRequestInTemplateListJsonList = jsonValue.GetArray("ServiceQuotaIncreaseRequestInTemplateList");
+    Aws::Utils::Array<JsonView> serviceQuotaIncreaseRequestInTemplateListJsonList = jsonValue.GetArray("ServiceQuotaIncreaseRequestInTemplateList");
     for(unsigned serviceQuotaIncreaseRequestInTemplateListIndex = 0; serviceQuotaIncreaseRequestInTemplateListIndex < serviceQuotaIncreaseRequestInTemplateListJsonList.GetLength(); ++serviceQuotaIncreaseRequestInTemplateListIndex)
     {
       m_serviceQuotaIncreaseRequestInTemplateList.push_back(serviceQuotaIncreaseRequestInTemplateListJsonList[serviceQuotaIncreaseRequestInTemplateListIndex].AsObject());

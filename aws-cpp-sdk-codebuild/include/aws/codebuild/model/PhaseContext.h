@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API PhaseContext
+  class PhaseContext
   {
   public:
-    PhaseContext();
-    PhaseContext(Aws::Utils::Json::JsonView jsonValue);
-    PhaseContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API PhaseContext();
+    AWS_CODEBUILD_API PhaseContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API PhaseContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

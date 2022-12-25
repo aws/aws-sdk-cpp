@@ -28,12 +28,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeFaqResult
+  class DescribeFaqResult
   {
   public:
-    DescribeFaqResult();
-    DescribeFaqResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFaqResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeFaqResult();
+    AWS_KENDRA_API DescribeFaqResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeFaqResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -73,37 +73,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline void SetIndexId(const char* value) { m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index that contains the FAQ.</p>
+     * <p>The identifier of the index for the FAQ.</p>
      */
     inline DescribeFaqResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagColumnOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TagColumnOperation
+  class TagColumnOperation
   {
   public:
-    TagColumnOperation();
-    TagColumnOperation(Aws::Utils::Json::JsonView jsonValue);
-    TagColumnOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TagColumnOperation();
+    AWS_QUICKSIGHT_API TagColumnOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TagColumnOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::Vector<ColumnTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

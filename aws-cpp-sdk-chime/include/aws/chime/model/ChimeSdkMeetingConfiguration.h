@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChimeSdkMeetingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChimeSdkMeetingConfiguration
+  class ChimeSdkMeetingConfiguration
   {
   public:
-    ChimeSdkMeetingConfiguration();
-    ChimeSdkMeetingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChimeSdkMeetingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChimeSdkMeetingConfiguration();
+    AWS_CHIME_API ChimeSdkMeetingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChimeSdkMeetingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     ArtifactsConfiguration m_artifactsConfiguration;
-    bool m_artifactsConfigurationHasBeenSet;
+    bool m_artifactsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

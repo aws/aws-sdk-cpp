@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RegexMatchSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API RegexMatchSetSummary
+  class RegexMatchSetSummary
   {
   public:
-    RegexMatchSetSummary();
-    RegexMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    RegexMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API RegexMatchSetSummary();
+    AWS_WAFREGIONAL_API RegexMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API RegexMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,10 +179,10 @@ namespace Model
   private:
 
     Aws::String m_regexMatchSetId;
-    bool m_regexMatchSetIdHasBeenSet;
+    bool m_regexMatchSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

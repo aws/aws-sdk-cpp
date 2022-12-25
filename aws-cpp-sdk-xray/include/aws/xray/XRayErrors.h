@@ -47,7 +47,12 @@ enum class XRayErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_POLICY_REVISION_ID= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_REQUEST,
+  LOCKOUT_PREVENTION,
+  MALFORMED_POLICY_DOCUMENT,
+  POLICY_COUNT_LIMIT_EXCEEDED,
+  POLICY_SIZE_LIMIT_EXCEEDED,
   RULE_LIMIT_EXCEEDED,
   TOO_MANY_TAGS
 };

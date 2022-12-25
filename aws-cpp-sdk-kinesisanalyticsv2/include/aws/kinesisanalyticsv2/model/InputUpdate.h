@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API InputUpdate
+  class InputUpdate
   {
   public:
-    InputUpdate();
-    InputUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API InputUpdate();
+    AWS_KINESISANALYTICSV2_API InputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API InputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     Aws::String m_namePrefixUpdate;
-    bool m_namePrefixUpdateHasBeenSet;
+    bool m_namePrefixUpdateHasBeenSet = false;
 
     InputProcessingConfigurationUpdate m_inputProcessingConfigurationUpdate;
-    bool m_inputProcessingConfigurationUpdateHasBeenSet;
+    bool m_inputProcessingConfigurationUpdateHasBeenSet = false;
 
     KinesisStreamsInputUpdate m_kinesisStreamsInputUpdate;
-    bool m_kinesisStreamsInputUpdateHasBeenSet;
+    bool m_kinesisStreamsInputUpdateHasBeenSet = false;
 
     KinesisFirehoseInputUpdate m_kinesisFirehoseInputUpdate;
-    bool m_kinesisFirehoseInputUpdateHasBeenSet;
+    bool m_kinesisFirehoseInputUpdateHasBeenSet = false;
 
     InputSchemaUpdate m_inputSchemaUpdate;
-    bool m_inputSchemaUpdateHasBeenSet;
+    bool m_inputSchemaUpdateHasBeenSet = false;
 
     InputParallelismUpdate m_inputParallelismUpdate;
-    bool m_inputParallelismUpdateHasBeenSet;
+    bool m_inputParallelismUpdateHasBeenSet = false;
   };
 
 } // namespace Model

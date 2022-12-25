@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateModelRequest : public SageMakerRequest
+  class CreateModelRequest : public SageMakerRequest
   {
   public:
-    CreateModelRequest();
+    AWS_SAGEMAKER_API CreateModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -463,28 +463,28 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     ContainerDefinition m_primaryContainer;
-    bool m_primaryContainerHasBeenSet;
+    bool m_primaryContainerHasBeenSet = false;
 
     Aws::Vector<ContainerDefinition> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     InferenceExecutionConfig m_inferenceExecutionConfig;
-    bool m_inferenceExecutionConfigHasBeenSet;
+    bool m_inferenceExecutionConfigHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
   };
 
 } // namespace Model

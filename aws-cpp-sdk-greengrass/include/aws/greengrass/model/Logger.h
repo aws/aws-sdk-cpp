@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Logger">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Logger
+  class Logger
   {
   public:
-    Logger();
-    Logger(Aws::Utils::Json::JsonView jsonValue);
-    Logger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Logger();
+    AWS_GREENGRASS_API Logger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Logger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     LoggerComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     LoggerLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     int m_space;
-    bool m_spaceHasBeenSet;
+    bool m_spaceHasBeenSet = false;
 
     LoggerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

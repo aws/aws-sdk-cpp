@@ -29,47 +29,47 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANJoinResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANJoinResourceTypeEventConfiguration
+  class LoRaWANJoinResourceTypeEventConfiguration
   {
   public:
-    LoRaWANJoinResourceTypeEventConfiguration();
-    LoRaWANJoinResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANJoinResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANJoinResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API LoRaWANJoinResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANJoinResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessDeviceEventTopic() const{ return m_wirelessDeviceEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline bool WirelessDeviceEventTopicHasBeenSet() const { return m_wirelessDeviceEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline void SetWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline void SetWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { m_wirelessDeviceEventTopicHasBeenSet = true; m_wirelessDeviceEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline LoRaWANJoinResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(const EventNotificationTopicStatus& value) { SetWirelessDeviceEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless device join event topic is enabled or
+     * <p>Denotes whether the wireless device join event topic is enabled or
      * disabled.</p>
      */
     inline LoRaWANJoinResourceTypeEventConfiguration& WithWirelessDeviceEventTopic(EventNotificationTopicStatus&& value) { SetWirelessDeviceEventTopic(std::move(value)); return *this;}
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     EventNotificationTopicStatus m_wirelessDeviceEventTopic;
-    bool m_wirelessDeviceEventTopicHasBeenSet;
+    bool m_wirelessDeviceEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateActionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API CreateExperimentTemplateActionInput
+  class CreateExperimentTemplateActionInput
   {
   public:
-    CreateExperimentTemplateActionInput();
-    CreateExperimentTemplateActionInput(Aws::Utils::Json::JsonView jsonValue);
-    CreateExperimentTemplateActionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API CreateExperimentTemplateActionInput();
+    AWS_FIS_API CreateExperimentTemplateActionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API CreateExperimentTemplateActionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,19 +331,19 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_startAfter;
-    bool m_startAfterHasBeenSet;
+    bool m_startAfterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult() :
     m_bootMode(BootMode::NOT_SET),
     m_copyPrivateIp(false),
     m_copyTags(false),
+    m_enableMapAutoTagging(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
 {
@@ -29,6 +30,7 @@ UpdateLaunchConfigurationResult::UpdateLaunchConfigurationResult(const Aws::Amaz
     m_bootMode(BootMode::NOT_SET),
     m_copyPrivateIp(false),
     m_copyTags(false),
+    m_enableMapAutoTagging(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET)
 {
@@ -62,6 +64,12 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("enableMapAutoTagging"))
+  {
+    m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
+
+  }
+
   if(jsonValue.ValueExists("launchDisposition"))
   {
     m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
@@ -74,9 +82,21 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("mapAutoTaggingMpeID"))
+  {
+    m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("postLaunchActions"))
+  {
+    m_postLaunchActions = jsonValue.GetObject("postLaunchActions");
 
   }
 

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API UpdateLogLevelsByResourceTypesRequest : public IoTWirelessRequest
+  class UpdateLogLevelsByResourceTypesRequest : public IoTWirelessRequest
   {
   public:
-    UpdateLogLevelsByResourceTypesRequest();
+    AWS_IOTWIRELESS_API UpdateLogLevelsByResourceTypesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLogLevelsByResourceTypes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
     
@@ -106,13 +106,13 @@ namespace Model
   private:
 
     LogLevel m_defaultLogLevel;
-    bool m_defaultLogLevelHasBeenSet;
+    bool m_defaultLogLevelHasBeenSet = false;
 
     Aws::Vector<WirelessDeviceLogOption> m_wirelessDeviceLogOptions;
-    bool m_wirelessDeviceLogOptionsHasBeenSet;
+    bool m_wirelessDeviceLogOptionsHasBeenSet = false;
 
     Aws::Vector<WirelessGatewayLogOption> m_wirelessGatewayLogOptions;
-    bool m_wirelessGatewayLogOptionsHasBeenSet;
+    bool m_wirelessGatewayLogOptionsHasBeenSet = false;
   };
 
 } // namespace Model

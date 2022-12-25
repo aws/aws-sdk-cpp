@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ReportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ReportJob
+  class ReportJob
   {
   public:
-    ReportJob();
-    ReportJob(Aws::Utils::Json::JsonView jsonValue);
-    ReportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ReportJob();
+    AWS_BACKUP_API ReportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ReportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,28 +463,28 @@ namespace Model
   private:
 
     Aws::String m_reportJobId;
-    bool m_reportJobIdHasBeenSet;
+    bool m_reportJobIdHasBeenSet = false;
 
     Aws::String m_reportPlanArn;
-    bool m_reportPlanArnHasBeenSet;
+    bool m_reportPlanArnHasBeenSet = false;
 
     Aws::String m_reportTemplate;
-    bool m_reportTemplateHasBeenSet;
+    bool m_reportTemplateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     ReportDestination m_reportDestination;
-    bool m_reportDestinationHasBeenSet;
+    bool m_reportDestinationHasBeenSet = false;
   };
 
 } // namespace Model

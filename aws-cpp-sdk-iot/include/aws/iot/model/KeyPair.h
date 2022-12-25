@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/KeyPair">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API KeyPair
+  class KeyPair
   {
   public:
-    KeyPair();
-    KeyPair(Aws::Utils::Json::JsonView jsonValue);
-    KeyPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API KeyPair();
+    AWS_IOT_API KeyPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API KeyPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
   };
 
 } // namespace Model

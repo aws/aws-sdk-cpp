@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/TargetHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API TargetHealth
+  class TargetHealth
   {
   public:
-    TargetHealth();
-    TargetHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API TargetHealth();
+    AWS_RDS_API TargetHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API TargetHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     TargetState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     TargetHealthReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

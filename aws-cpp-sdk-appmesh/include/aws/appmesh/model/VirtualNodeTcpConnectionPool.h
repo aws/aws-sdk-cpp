@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeTcpConnectionPool">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeTcpConnectionPool
+  class VirtualNodeTcpConnectionPool
   {
   public:
-    VirtualNodeTcpConnectionPool();
-    VirtualNodeTcpConnectionPool(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeTcpConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeTcpConnectionPool();
+    AWS_APPMESH_API VirtualNodeTcpConnectionPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeTcpConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_maxConnections;
-    bool m_maxConnectionsHasBeenSet;
+    bool m_maxConnectionsHasBeenSet = false;
   };
 
 } // namespace Model

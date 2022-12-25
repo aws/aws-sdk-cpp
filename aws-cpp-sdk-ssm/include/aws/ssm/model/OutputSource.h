@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OutputSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OutputSource
+  class OutputSource
   {
   public:
-    OutputSource();
-    OutputSource(Aws::Utils::Json::JsonView jsonValue);
-    OutputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OutputSource();
+    AWS_SSM_API OutputSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OutputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_outputSourceId;
-    bool m_outputSourceIdHasBeenSet;
+    bool m_outputSourceIdHasBeenSet = false;
 
     Aws::String m_outputSourceType;
-    bool m_outputSourceTypeHasBeenSet;
+    bool m_outputSourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

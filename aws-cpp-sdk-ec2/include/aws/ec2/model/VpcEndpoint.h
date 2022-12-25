@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcEndpoint">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API VpcEndpoint
+  class VpcEndpoint
   {
   public:
-    VpcEndpoint();
-    VpcEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcEndpoint();
+    AWS_EC2_API VpcEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -757,61 +757,61 @@ namespace Model
   private:
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     VpcEndpointType m_vpcEndpointType;
-    bool m_vpcEndpointTypeHasBeenSet;
+    bool m_vpcEndpointTypeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_routeTableIds;
-    bool m_routeTableIdsHasBeenSet;
+    bool m_routeTableIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<SecurityGroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     DnsOptions m_dnsOptions;
-    bool m_dnsOptionsHasBeenSet;
+    bool m_dnsOptionsHasBeenSet = false;
 
     bool m_privateDnsEnabled;
-    bool m_privateDnsEnabledHasBeenSet;
+    bool m_privateDnsEnabledHasBeenSet = false;
 
     bool m_requesterManaged;
-    bool m_requesterManagedHasBeenSet;
+    bool m_requesterManagedHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
-    bool m_networkInterfaceIdsHasBeenSet;
+    bool m_networkInterfaceIdsHasBeenSet = false;
 
     Aws::Vector<DnsEntry> m_dnsEntries;
-    bool m_dnsEntriesHasBeenSet;
+    bool m_dnsEntriesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     LastError m_lastError;
-    bool m_lastErrorHasBeenSet;
+    bool m_lastErrorHasBeenSet = false;
   };
 
 } // namespace Model

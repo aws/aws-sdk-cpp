@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API CreateWebhookRequest : public CodeBuildRequest
+  class CreateWebhookRequest : public CodeBuildRequest
   {
   public:
-    CreateWebhookRequest();
+    AWS_CODEBUILD_API CreateWebhookRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWebhook"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_branchFilter;
-    bool m_branchFilterHasBeenSet;
+    bool m_branchFilterHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-    bool m_filterGroupsHasBeenSet;
+    bool m_filterGroupsHasBeenSet = false;
 
     WebhookBuildType m_buildType;
-    bool m_buildTypeHasBeenSet;
+    bool m_buildTypeHasBeenSet = false;
   };
 
 } // namespace Model

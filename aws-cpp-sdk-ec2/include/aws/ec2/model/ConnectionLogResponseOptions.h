@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConnectionLogResponseOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ConnectionLogResponseOptions
+  class ConnectionLogResponseOptions
   {
   public:
-    ConnectionLogResponseOptions();
-    ConnectionLogResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConnectionLogResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConnectionLogResponseOptions();
+    AWS_EC2_API ConnectionLogResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConnectionLogResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_cloudwatchLogGroup;
-    bool m_cloudwatchLogGroupHasBeenSet;
+    bool m_cloudwatchLogGroupHasBeenSet = false;
 
     Aws::String m_cloudwatchLogStream;
-    bool m_cloudwatchLogStreamHasBeenSet;
+    bool m_cloudwatchLogStreamHasBeenSet = false;
   };
 
 } // namespace Model

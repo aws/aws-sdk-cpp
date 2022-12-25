@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineIdName">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API PipelineIdName
+  class PipelineIdName
   {
   public:
-    PipelineIdName();
-    PipelineIdName(Aws::Utils::Json::JsonView jsonValue);
-    PipelineIdName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API PipelineIdName();
+    AWS_DATAPIPELINE_API PipelineIdName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API PipelineIdName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

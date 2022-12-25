@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Dimension">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API Dimension
+  class Dimension
   {
   public:
-    Dimension();
-    Dimension(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Dimension& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Dimension();
+    AWS_ROUTE53_API Dimension(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Dimension& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

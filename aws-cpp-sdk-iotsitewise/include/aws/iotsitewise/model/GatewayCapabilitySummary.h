@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GatewayCapabilitySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API GatewayCapabilitySummary
+  class GatewayCapabilitySummary
   {
   public:
-    GatewayCapabilitySummary();
-    GatewayCapabilitySummary(Aws::Utils::Json::JsonView jsonValue);
-    GatewayCapabilitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API GatewayCapabilitySummary();
+    AWS_IOTSITEWISE_API GatewayCapabilitySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API GatewayCapabilitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_capabilityNamespace;
-    bool m_capabilityNamespaceHasBeenSet;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
     CapabilitySyncStatus m_capabilitySyncStatus;
-    bool m_capabilitySyncStatusHasBeenSet;
+    bool m_capabilitySyncStatusHasBeenSet = false;
   };
 
 } // namespace Model

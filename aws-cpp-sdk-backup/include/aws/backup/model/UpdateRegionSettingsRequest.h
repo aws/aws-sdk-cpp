@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API UpdateRegionSettingsRequest : public BackupRequest
+  class UpdateRegionSettingsRequest : public BackupRequest
   {
   public:
-    UpdateRegionSettingsRequest();
+    AWS_BACKUP_API UpdateRegionSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRegionSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, bool> m_resourceTypeOptInPreference;
-    bool m_resourceTypeOptInPreferenceHasBeenSet;
+    bool m_resourceTypeOptInPreferenceHasBeenSet = false;
 
     Aws::Map<Aws::String, bool> m_resourceTypeManagementPreference;
-    bool m_resourceTypeManagementPreferenceHasBeenSet;
+    bool m_resourceTypeManagementPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

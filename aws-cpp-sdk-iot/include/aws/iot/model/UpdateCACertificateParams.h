@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCACertificateParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API UpdateCACertificateParams
+  class UpdateCACertificateParams
   {
   public:
-    UpdateCACertificateParams();
-    UpdateCACertificateParams(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCACertificateParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API UpdateCACertificateParams();
+    AWS_IOT_API UpdateCACertificateParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API UpdateCACertificateParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CACertificateUpdateAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

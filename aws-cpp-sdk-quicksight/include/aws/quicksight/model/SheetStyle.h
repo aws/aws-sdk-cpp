@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SheetStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SheetStyle
+  class SheetStyle
   {
   public:
-    SheetStyle();
-    SheetStyle(Aws::Utils::Json::JsonView jsonValue);
-    SheetStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SheetStyle();
+    AWS_QUICKSIGHT_API SheetStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SheetStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     TileStyle m_tile;
-    bool m_tileHasBeenSet;
+    bool m_tileHasBeenSet = false;
 
     TileLayoutStyle m_tileLayout;
-    bool m_tileLayoutHasBeenSet;
+    bool m_tileLayoutHasBeenSet = false;
   };
 
 } // namespace Model

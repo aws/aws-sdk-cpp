@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/Rule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Rule();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     AssertionRule m_aSSERTION;
-    bool m_aSSERTIONHasBeenSet;
+    bool m_aSSERTIONHasBeenSet = false;
 
     GatingRule m_gATING;
-    bool m_gATINGHasBeenSet;
+    bool m_gATINGHasBeenSet = false;
   };
 
 } // namespace Model

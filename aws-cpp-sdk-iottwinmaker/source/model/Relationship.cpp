@@ -19,32 +19,32 @@ namespace Model
 {
 
 Relationship::Relationship() : 
-    m_relationshipTypeHasBeenSet(false),
-    m_targetComponentTypeIdHasBeenSet(false)
+    m_targetComponentTypeIdHasBeenSet(false),
+    m_relationshipTypeHasBeenSet(false)
 {
 }
 
 Relationship::Relationship(JsonView jsonValue) : 
-    m_relationshipTypeHasBeenSet(false),
-    m_targetComponentTypeIdHasBeenSet(false)
+    m_targetComponentTypeIdHasBeenSet(false),
+    m_relationshipTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Relationship& Relationship::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("relationshipType"))
-  {
-    m_relationshipType = jsonValue.GetString("relationshipType");
-
-    m_relationshipTypeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("targetComponentTypeId"))
   {
     m_targetComponentTypeId = jsonValue.GetString("targetComponentTypeId");
 
     m_targetComponentTypeIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("relationshipType"))
+  {
+    m_relationshipType = jsonValue.GetString("relationshipType");
+
+    m_relationshipTypeHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue Relationship::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_relationshipTypeHasBeenSet)
-  {
-   payload.WithString("relationshipType", m_relationshipType);
-
-  }
-
   if(m_targetComponentTypeIdHasBeenSet)
   {
    payload.WithString("targetComponentTypeId", m_targetComponentTypeId);
+
+  }
+
+  if(m_relationshipTypeHasBeenSet)
+  {
+   payload.WithString("relationshipType", m_relationshipType);
 
   }
 

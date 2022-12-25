@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API UpdateStudioComponentRequest : public NimbleStudioRequest
+  class UpdateStudioComponentRequest : public NimbleStudioRequest
   {
   public:
-    UpdateStudioComponentRequest();
+    AWS_NIMBLESTUDIO_API UpdateStudioComponentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,64 +36,72 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStudioComponent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateStudioComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateStudioComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline UpdateStudioComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -299,6 +307,63 @@ namespace Model
 
 
     /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline const Aws::String& GetRuntimeRoleArn() const{ return m_runtimeRoleArn; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline bool RuntimeRoleArnHasBeenSet() const { return m_runtimeRoleArnHasBeenSet; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline void SetRuntimeRoleArn(const Aws::String& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = value; }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline void SetRuntimeRoleArn(Aws::String&& value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn = std::move(value); }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline void SetRuntimeRoleArn(const char* value) { m_runtimeRoleArnHasBeenSet = true; m_runtimeRoleArn.assign(value); }
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline UpdateStudioComponentRequest& WithRuntimeRoleArn(const Aws::String& value) { SetRuntimeRoleArn(value); return *this;}
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline UpdateStudioComponentRequest& WithRuntimeRoleArn(Aws::String&& value) { SetRuntimeRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An IAM role attached to a Studio Component that gives the studio component
+     * access to Amazon Web Services resources at anytime while the instance is
+     * running. </p>
+     */
+    inline UpdateStudioComponentRequest& WithRuntimeRoleArn(const char* value) { SetRuntimeRoleArn(value); return *this;}
+
+
+    /**
      * <p>Parameters for the studio component scripts.</p>
      */
     inline const Aws::Vector<ScriptParameterKeyValue>& GetScriptParameters() const{ return m_scriptParameters; }
@@ -337,6 +402,63 @@ namespace Model
      * <p>Parameters for the studio component scripts.</p>
      */
     inline UpdateStudioComponentRequest& AddScriptParameters(ScriptParameterKeyValue&& value) { m_scriptParametersHasBeenSet = true; m_scriptParameters.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline const Aws::String& GetSecureInitializationRoleArn() const{ return m_secureInitializationRoleArn; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline bool SecureInitializationRoleArnHasBeenSet() const { return m_secureInitializationRoleArnHasBeenSet; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(const Aws::String& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = value; }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(Aws::String&& value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn = std::move(value); }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline void SetSecureInitializationRoleArn(const char* value) { m_secureInitializationRoleArnHasBeenSet = true; m_secureInitializationRoleArn.assign(value); }
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline UpdateStudioComponentRequest& WithSecureInitializationRoleArn(const Aws::String& value) { SetSecureInitializationRoleArn(value); return *this;}
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline UpdateStudioComponentRequest& WithSecureInitializationRoleArn(Aws::String&& value) { SetSecureInitializationRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>An IAM role attached to Studio Component when the system initialization
+     * script runs which give the studio component access to Amazon Web Services
+     * resources when the system initialization script runs.</p>
+     */
+    inline UpdateStudioComponentRequest& WithSecureInitializationRoleArn(const char* value) { SetSecureInitializationRoleArn(value); return *this;}
 
 
     /**
@@ -485,37 +607,43 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     StudioComponentConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SecurityGroupIds;
-    bool m_ec2SecurityGroupIdsHasBeenSet;
+    bool m_ec2SecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<StudioComponentInitializationScript> m_initializationScripts;
-    bool m_initializationScriptsHasBeenSet;
+    bool m_initializationScriptsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_runtimeRoleArn;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
     Aws::Vector<ScriptParameterKeyValue> m_scriptParameters;
-    bool m_scriptParametersHasBeenSet;
+    bool m_scriptParametersHasBeenSet = false;
+
+    Aws::String m_secureInitializationRoleArn;
+    bool m_secureInitializationRoleArnHasBeenSet = false;
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     StudioComponentSubtype m_subtype;
-    bool m_subtypeHasBeenSet;
+    bool m_subtypeHasBeenSet = false;
 
     StudioComponentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

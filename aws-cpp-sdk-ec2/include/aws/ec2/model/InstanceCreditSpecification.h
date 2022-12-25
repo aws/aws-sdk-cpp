@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCreditSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceCreditSpecification
+  class InstanceCreditSpecification
   {
   public:
-    InstanceCreditSpecification();
-    InstanceCreditSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceCreditSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCreditSpecification();
+    AWS_EC2_API InstanceCreditSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceCreditSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,60 +82,60 @@ namespace Model
 
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline InstanceCreditSpecification& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline InstanceCreditSpecification& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>.</p>
+     * <p>The credit option for CPU usage of the instance.</p> <p>Valid values:
+     * <code>standard</code> | <code>unlimited</code> </p>
      */
     inline InstanceCreditSpecification& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_cpuCredits;
-    bool m_cpuCreditsHasBeenSet;
+    bool m_cpuCreditsHasBeenSet = false;
   };
 
 } // namespace Model

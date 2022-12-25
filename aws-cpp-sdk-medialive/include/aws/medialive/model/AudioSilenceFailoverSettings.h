@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioSilenceFailoverSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioSilenceFailoverSettings
+  class AudioSilenceFailoverSettings
   {
   public:
-    AudioSilenceFailoverSettings();
-    AudioSilenceFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioSilenceFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioSilenceFailoverSettings();
+    AWS_MEDIALIVE_API AudioSilenceFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioSilenceFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_audioSelectorName;
-    bool m_audioSelectorNameHasBeenSet;
+    bool m_audioSelectorNameHasBeenSet = false;
 
     int m_audioSilenceThresholdMsec;
-    bool m_audioSilenceThresholdMsecHasBeenSet;
+    bool m_audioSilenceThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

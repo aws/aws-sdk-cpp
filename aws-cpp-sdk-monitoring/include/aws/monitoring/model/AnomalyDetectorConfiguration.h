@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AnomalyDetectorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API AnomalyDetectorConfiguration
+  class AnomalyDetectorConfiguration
   {
   public:
-    AnomalyDetectorConfiguration();
-    AnomalyDetectorConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnomalyDetectorConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AnomalyDetectorConfiguration();
+    AWS_CLOUDWATCH_API AnomalyDetectorConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AnomalyDetectorConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -183,10 +183,10 @@ namespace Model
   private:
 
     Aws::Vector<Range> m_excludedTimeRanges;
-    bool m_excludedTimeRangesHasBeenSet;
+    bool m_excludedTimeRangesHasBeenSet = false;
 
     Aws::String m_metricTimezone;
-    bool m_metricTimezoneHasBeenSet;
+    bool m_metricTimezoneHasBeenSet = false;
   };
 
 } // namespace Model

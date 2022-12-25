@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotAnalyticsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API IotAnalyticsAction
+  class IotAnalyticsAction
   {
   public:
-    IotAnalyticsAction();
-    IotAnalyticsAction(Aws::Utils::Json::JsonView jsonValue);
-    IotAnalyticsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API IotAnalyticsAction();
+    AWS_IOT_API IotAnalyticsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API IotAnalyticsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     bool m_batchMode;
-    bool m_batchModeHasBeenSet;
+    bool m_batchModeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

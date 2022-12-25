@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/HomeRegionControl">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBCONFIG_API HomeRegionControl
+  class HomeRegionControl
   {
   public:
-    HomeRegionControl();
-    HomeRegionControl(Aws::Utils::Json::JsonView jsonValue);
-    HomeRegionControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl();
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Target m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedTime;
-    bool m_requestedTimeHasBeenSet;
+    bool m_requestedTimeHasBeenSet = false;
   };
 
 } // namespace Model

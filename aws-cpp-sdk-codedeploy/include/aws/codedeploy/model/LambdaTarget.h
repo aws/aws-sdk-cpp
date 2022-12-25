@@ -29,18 +29,18 @@ namespace Model
 {
 
   /**
-   * <p> Information about the target AWS Lambda function during an AWS Lambda
-   * deployment. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about the target Lambda function during an Lambda deployment.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LambdaTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API LambdaTarget
+  class LambdaTarget
   {
   public:
-    LambdaTarget();
-    LambdaTarget(Aws::Utils::Json::JsonView jsonValue);
-    LambdaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API LambdaTarget();
+    AWS_CODEDEPLOY_API LambdaTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API LambdaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,32 +175,32 @@ namespace Model
 
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline const TargetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline void SetStatus(TargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline LambdaTarget& WithStatus(const TargetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline LambdaTarget& WithStatus(TargetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -322,25 +322,25 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     TargetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-    bool m_lifecycleEventsHasBeenSet;
+    bool m_lifecycleEventsHasBeenSet = false;
 
     LambdaFunctionInfo m_lambdaFunctionInfo;
-    bool m_lambdaFunctionInfoHasBeenSet;
+    bool m_lambdaFunctionInfoHasBeenSet = false;
   };
 
 } // namespace Model

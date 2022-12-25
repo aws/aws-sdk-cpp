@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API SolutionConfig
+  class SolutionConfig
   {
   public:
-    SolutionConfig();
-    SolutionConfig(Aws::Utils::Json::JsonView jsonValue);
-    SolutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API SolutionConfig();
+    AWS_PERSONALIZE_API SolutionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API SolutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -348,22 +348,22 @@ namespace Model
   private:
 
     Aws::String m_eventValueThreshold;
-    bool m_eventValueThresholdHasBeenSet;
+    bool m_eventValueThresholdHasBeenSet = false;
 
     HPOConfig m_hpoConfig;
-    bool m_hpoConfigHasBeenSet;
+    bool m_hpoConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_algorithmHyperParameters;
-    bool m_algorithmHyperParametersHasBeenSet;
+    bool m_algorithmHyperParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_featureTransformationParameters;
-    bool m_featureTransformationParametersHasBeenSet;
+    bool m_featureTransformationParametersHasBeenSet = false;
 
     AutoMLConfig m_autoMLConfig;
-    bool m_autoMLConfigHasBeenSet;
+    bool m_autoMLConfigHasBeenSet = false;
 
     OptimizationObjective m_optimizationObjective;
-    bool m_optimizationObjectiveHasBeenSet;
+    bool m_optimizationObjectiveHasBeenSet = false;
   };
 
 } // namespace Model

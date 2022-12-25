@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/KeySchemaElement">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API KeySchemaElement
+  class KeySchemaElement
   {
   public:
-    KeySchemaElement();
-    KeySchemaElement(Aws::Utils::Json::JsonView jsonValue);
-    KeySchemaElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API KeySchemaElement();
+    AWS_DYNAMODBSTREAMS_API KeySchemaElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API KeySchemaElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,10 +169,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
   };
 
 } // namespace Model

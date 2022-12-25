@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelSummary
+  class ChannelSummary
   {
   public:
-    ChannelSummary();
-    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelSummary();
+    AWS_CHIME_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,22 +259,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     ChannelMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ChannelPrivacy m_privacy;
-    bool m_privacyHasBeenSet;
+    bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageTimestamp;
-    bool m_lastMessageTimestampHasBeenSet;
+    bool m_lastMessageTimestampHasBeenSet = false;
   };
 
 } // namespace Model

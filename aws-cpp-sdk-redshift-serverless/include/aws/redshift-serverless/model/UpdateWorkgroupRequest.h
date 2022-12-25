@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupRequest : public RedshiftServerlessRequest
+  class UpdateWorkgroupRequest : public RedshiftServerlessRequest
   {
   public:
-    UpdateWorkgroupRequest();
+    AWS_REDSHIFTSERVERLESS_API UpdateWorkgroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorkgroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -149,6 +149,31 @@ namespace Model
      * your VPC.</p>
      */
     inline UpdateWorkgroupRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
+
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
+     * 5431-5455 and 8191-8215. The default is 5439.</p>
+     */
+    inline UpdateWorkgroupRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -311,25 +336,28 @@ namespace Model
   private:
 
     int m_baseCapacity;
-    bool m_baseCapacityHasBeenSet;
+    bool m_baseCapacityHasBeenSet = false;
 
     Aws::Vector<ConfigParameter> m_configParameters;
-    bool m_configParametersHasBeenSet;
+    bool m_configParametersHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

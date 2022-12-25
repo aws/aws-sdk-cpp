@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/ExportSourceType.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <utility>
 
@@ -34,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ExportTask">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API StartExportTaskResult
+  class StartExportTaskResult
   {
   public:
-    StartExportTaskResult();
-    StartExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartExportTaskResult();
+    AWS_RDS_API StartExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -631,6 +632,32 @@ namespace Model
     inline StartExportTaskResult& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
 
 
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline const ExportSourceType& GetSourceType() const{ return m_sourceType; }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline void SetSourceType(const ExportSourceType& value) { m_sourceType = value; }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline void SetSourceType(ExportSourceType&& value) { m_sourceType = std::move(value); }
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline StartExportTaskResult& WithSourceType(const ExportSourceType& value) { SetSourceType(value); return *this;}
+
+    /**
+     * <p>The type of source for the export.</p>
+     */
+    inline StartExportTaskResult& WithSourceType(ExportSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -677,6 +704,8 @@ namespace Model
     Aws::String m_failureCause;
 
     Aws::String m_warningMessage;
+
+    ExportSourceType m_sourceType;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKDOCS_API CreateNotificationSubscriptionRequest : public WorkDocsRequest
+  class CreateNotificationSubscriptionRequest : public WorkDocsRequest
   {
   public:
-    CreateNotificationSubscriptionRequest();
+    AWS_WORKDOCS_API CreateNotificationSubscriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNotificationSubscription"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKDOCS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     SubscriptionProtocolType m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     SubscriptionType m_subscriptionType;
-    bool m_subscriptionTypeHasBeenSet;
+    bool m_subscriptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

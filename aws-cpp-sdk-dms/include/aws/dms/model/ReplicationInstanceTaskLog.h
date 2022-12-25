@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationInstanceTaskLog">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstanceTaskLog
+  class ReplicationInstanceTaskLog
   {
   public:
-    ReplicationInstanceTaskLog();
-    ReplicationInstanceTaskLog(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationInstanceTaskLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstanceTaskLog();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstanceTaskLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstanceTaskLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskName;
-    bool m_replicationTaskNameHasBeenSet;
+    bool m_replicationTaskNameHasBeenSet = false;
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     long long m_replicationInstanceTaskLogSize;
-    bool m_replicationInstanceTaskLogSizeHasBeenSet;
+    bool m_replicationInstanceTaskLogSizeHasBeenSet = false;
   };
 
 } // namespace Model

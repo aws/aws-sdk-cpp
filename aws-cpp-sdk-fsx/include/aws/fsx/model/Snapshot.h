@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Snapshot">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(Aws::Utils::Json::JsonView jsonValue);
-    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API Snapshot();
+    AWS_FSX_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -369,31 +369,31 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SnapshotLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     LifecycleTransitionReason m_lifecycleTransitionReason;
-    bool m_lifecycleTransitionReasonHasBeenSet;
+    bool m_lifecycleTransitionReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
-    bool m_administrativeActionsHasBeenSet;
+    bool m_administrativeActionsHasBeenSet = false;
   };
 
 } // namespace Model

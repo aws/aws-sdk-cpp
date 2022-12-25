@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API RepositoryTrigger
+  class RepositoryTrigger
   {
   public:
-    RepositoryTrigger();
-    RepositoryTrigger(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API RepositoryTrigger();
+    AWS_CODECOMMIT_API RepositoryTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API RepositoryTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_customData;
-    bool m_customDataHasBeenSet;
+    bool m_customDataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
 
     Aws::Vector<RepositoryTriggerEventEnum> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

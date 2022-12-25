@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingInstruction">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API ScalingInstruction
+  class ScalingInstruction
   {
   public:
-    ScalingInstruction();
-    ScalingInstruction(Aws::Utils::Json::JsonView jsonValue);
-    ScalingInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction();
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -958,46 +958,46 @@ namespace Model
   private:
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     Aws::Vector<TargetTrackingConfiguration> m_targetTrackingConfigurations;
-    bool m_targetTrackingConfigurationsHasBeenSet;
+    bool m_targetTrackingConfigurationsHasBeenSet = false;
 
     PredefinedLoadMetricSpecification m_predefinedLoadMetricSpecification;
-    bool m_predefinedLoadMetricSpecificationHasBeenSet;
+    bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
 
     CustomizedLoadMetricSpecification m_customizedLoadMetricSpecification;
-    bool m_customizedLoadMetricSpecificationHasBeenSet;
+    bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
     int m_scheduledActionBufferTime;
-    bool m_scheduledActionBufferTimeHasBeenSet;
+    bool m_scheduledActionBufferTimeHasBeenSet = false;
 
     PredictiveScalingMaxCapacityBehavior m_predictiveScalingMaxCapacityBehavior;
-    bool m_predictiveScalingMaxCapacityBehaviorHasBeenSet;
+    bool m_predictiveScalingMaxCapacityBehaviorHasBeenSet = false;
 
     int m_predictiveScalingMaxCapacityBuffer;
-    bool m_predictiveScalingMaxCapacityBufferHasBeenSet;
+    bool m_predictiveScalingMaxCapacityBufferHasBeenSet = false;
 
     PredictiveScalingMode m_predictiveScalingMode;
-    bool m_predictiveScalingModeHasBeenSet;
+    bool m_predictiveScalingModeHasBeenSet = false;
 
     ScalingPolicyUpdateBehavior m_scalingPolicyUpdateBehavior;
-    bool m_scalingPolicyUpdateBehaviorHasBeenSet;
+    bool m_scalingPolicyUpdateBehaviorHasBeenSet = false;
 
     bool m_disableDynamicScaling;
-    bool m_disableDynamicScalingHasBeenSet;
+    bool m_disableDynamicScalingHasBeenSet = false;
   };
 
 } // namespace Model

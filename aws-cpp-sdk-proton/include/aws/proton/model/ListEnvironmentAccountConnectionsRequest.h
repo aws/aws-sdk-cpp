@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API ListEnvironmentAccountConnectionsRequest : public ProtonRequest
+  class ListEnvironmentAccountConnectionsRequest : public ProtonRequest
   {
   public:
-    ListEnvironmentAccountConnectionsRequest();
+    AWS_PROTON_API ListEnvironmentAccountConnectionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListEnvironmentAccountConnections"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet;
+    bool m_environmentNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     EnvironmentAccountConnectionRequesterAccountType m_requestedBy;
-    bool m_requestedByHasBeenSet;
+    bool m_requestedByHasBeenSet = false;
 
     Aws::Vector<EnvironmentAccountConnectionStatus> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

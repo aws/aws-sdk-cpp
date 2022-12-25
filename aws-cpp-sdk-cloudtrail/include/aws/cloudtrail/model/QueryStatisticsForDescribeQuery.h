@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/QueryStatisticsForDescribeQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery
+  class QueryStatisticsForDescribeQuery
   {
   public:
-    QueryStatisticsForDescribeQuery();
-    QueryStatisticsForDescribeQuery(Aws::Utils::Json::JsonView jsonValue);
-    QueryStatisticsForDescribeQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery();
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,19 +164,19 @@ namespace Model
   private:
 
     long long m_eventsMatched;
-    bool m_eventsMatchedHasBeenSet;
+    bool m_eventsMatchedHasBeenSet = false;
 
     long long m_eventsScanned;
-    bool m_eventsScannedHasBeenSet;
+    bool m_eventsScannedHasBeenSet = false;
 
     long long m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
 
     int m_executionTimeInMillis;
-    bool m_executionTimeInMillisHasBeenSet;
+    bool m_executionTimeInMillisHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

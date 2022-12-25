@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DeleteClusterRequest : public RedshiftRequest
+  class DeleteClusterRequest : public RedshiftRequest
   {
   public:
-    DeleteClusterRequest();
+    AWS_REDSHIFT_API DeleteClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -265,16 +265,16 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     bool m_skipFinalClusterSnapshot;
-    bool m_skipFinalClusterSnapshotHasBeenSet;
+    bool m_skipFinalClusterSnapshotHasBeenSet = false;
 
     Aws::String m_finalClusterSnapshotIdentifier;
-    bool m_finalClusterSnapshotIdentifierHasBeenSet;
+    bool m_finalClusterSnapshotIdentifierHasBeenSet = false;
 
     int m_finalClusterSnapshotRetentionPeriod;
-    bool m_finalClusterSnapshotRetentionPeriodHasBeenSet;
+    bool m_finalClusterSnapshotRetentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

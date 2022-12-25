@@ -30,7 +30,7 @@ Aws::String BatchStopJobRunRequest::SerializePayload() const
 
   if(m_jobRunIdsHasBeenSet)
   {
-   Array<JsonValue> jobRunIdsJsonList(m_jobRunIds.size());
+   Aws::Utils::Array<JsonValue> jobRunIdsJsonList(m_jobRunIds.size());
    for(unsigned jobRunIdsIndex = 0; jobRunIdsIndex < jobRunIdsJsonList.GetLength(); ++jobRunIdsIndex)
    {
      jobRunIdsJsonList[jobRunIdsIndex].AsString(m_jobRunIds[jobRunIdsIndex]);

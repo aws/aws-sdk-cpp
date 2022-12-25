@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ApplicationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ApplicationSettings
+  class ApplicationSettings
   {
   public:
-    ApplicationSettings();
-    ApplicationSettings(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ApplicationSettings();
+    AWS_APPSTREAM_API ApplicationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ApplicationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_settingsGroup;
-    bool m_settingsGroupHasBeenSet;
+    bool m_settingsGroupHasBeenSet = false;
   };
 
 } // namespace Model

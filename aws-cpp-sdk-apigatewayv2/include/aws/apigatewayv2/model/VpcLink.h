@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/VpcLink">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API VpcLink
+  class VpcLink
   {
   public:
-    VpcLink();
-    VpcLink(Aws::Utils::Json::JsonView jsonValue);
-    VpcLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API VpcLink();
+    AWS_APIGATEWAYV2_API VpcLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API VpcLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -418,31 +418,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcLinkId;
-    bool m_vpcLinkIdHasBeenSet;
+    bool m_vpcLinkIdHasBeenSet = false;
 
     VpcLinkStatus m_vpcLinkStatus;
-    bool m_vpcLinkStatusHasBeenSet;
+    bool m_vpcLinkStatusHasBeenSet = false;
 
     Aws::String m_vpcLinkStatusMessage;
-    bool m_vpcLinkStatusMessageHasBeenSet;
+    bool m_vpcLinkStatusMessageHasBeenSet = false;
 
     VpcLinkVersion m_vpcLinkVersion;
-    bool m_vpcLinkVersionHasBeenSet;
+    bool m_vpcLinkVersionHasBeenSet = false;
   };
 
 } // namespace Model

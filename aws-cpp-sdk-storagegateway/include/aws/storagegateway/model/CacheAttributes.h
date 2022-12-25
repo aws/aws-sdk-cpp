@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CacheAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API CacheAttributes
+  class CacheAttributes
   {
   public:
-    CacheAttributes();
-    CacheAttributes(Aws::Utils::Json::JsonView jsonValue);
-    CacheAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API CacheAttributes();
+    AWS_STORAGEGATEWAY_API CacheAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API CacheAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_cacheStaleTimeoutInSeconds;
-    bool m_cacheStaleTimeoutInSecondsHasBeenSet;
+    bool m_cacheStaleTimeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

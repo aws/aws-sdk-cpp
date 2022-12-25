@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API EnvironmentPlatform
+  class EnvironmentPlatform
   {
   public:
-    EnvironmentPlatform();
-    EnvironmentPlatform(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API EnvironmentPlatform();
+    AWS_CODEBUILD_API EnvironmentPlatform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API EnvironmentPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     PlatformType m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<EnvironmentLanguage> m_languages;
-    bool m_languagesHasBeenSet;
+    bool m_languagesHasBeenSet = false;
   };
 
 } // namespace Model

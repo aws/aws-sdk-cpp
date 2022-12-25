@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API SortCriteria
+  class SortCriteria
   {
   public:
-    SortCriteria();
-    SortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API SortCriteria();
+    AWS_INSPECTOR2_API SortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API SortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     SortField m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

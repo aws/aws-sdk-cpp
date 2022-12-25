@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SplunkDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API SplunkDestinationConfiguration
+  class SplunkDestinationConfiguration
   {
   public:
-    SplunkDestinationConfiguration();
-    SplunkDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SplunkDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API SplunkDestinationConfiguration();
+    AWS_FIREHOSE_API SplunkDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API SplunkDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -411,31 +411,31 @@ namespace Model
   private:
 
     Aws::String m_hECEndpoint;
-    bool m_hECEndpointHasBeenSet;
+    bool m_hECEndpointHasBeenSet = false;
 
     HECEndpointType m_hECEndpointType;
-    bool m_hECEndpointTypeHasBeenSet;
+    bool m_hECEndpointTypeHasBeenSet = false;
 
     Aws::String m_hECToken;
-    bool m_hECTokenHasBeenSet;
+    bool m_hECTokenHasBeenSet = false;
 
     int m_hECAcknowledgmentTimeoutInSeconds;
-    bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet;
+    bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = false;
 
     SplunkRetryOptions m_retryOptions;
-    bool m_retryOptionsHasBeenSet;
+    bool m_retryOptionsHasBeenSet = false;
 
     SplunkS3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

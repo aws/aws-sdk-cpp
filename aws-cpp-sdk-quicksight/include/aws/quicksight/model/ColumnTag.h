@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnTag">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnTag
+  class ColumnTag
   {
   public:
-    ColumnTag();
-    ColumnTag(Aws::Utils::Json::JsonView jsonValue);
-    ColumnTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnTag();
+    AWS_QUICKSIGHT_API ColumnTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     GeoSpatialDataRole m_columnGeographicRole;
-    bool m_columnGeographicRoleHasBeenSet;
+    bool m_columnGeographicRoleHasBeenSet = false;
 
     ColumnDescription m_columnDescription;
-    bool m_columnDescriptionHasBeenSet;
+    bool m_columnDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

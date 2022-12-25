@@ -26,12 +26,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API TransactGetItemsResult
+  class TransactGetItemsResult
   {
   public:
-    TransactGetItemsResult();
-    TransactGetItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransactGetItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactGetItemsResult();
+    AWS_DYNAMODB_API TransactGetItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactGetItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -99,86 +99,86 @@ namespace Model
 
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline const Aws::Vector<ItemResponse>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline void SetResponses(const Aws::Vector<ItemResponse>& value) { m_responses = value; }
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline void SetResponses(Aws::Vector<ItemResponse>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline TransactGetItemsResult& WithResponses(const Aws::Vector<ItemResponse>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline TransactGetItemsResult& WithResponses(Aws::Vector<ItemResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline TransactGetItemsResult& AddResponses(const ItemResponse& value) { m_responses.push_back(value); return *this; }
 
     /**
-     * <p>An ordered array of up to 25 <code>ItemResponse</code> objects, each of which
-     * corresponds to the <code>TransactGetItem</code> object in the same position in
-     * the <i>TransactItems</i> array. Each <code>ItemResponse</code> object contains a
-     * Map of the name-value pairs that are the projected attributes of the requested
-     * item.</p> <p>If a requested item could not be retrieved, the corresponding
-     * <code>ItemResponse</code> object is Null, or if the requested item has no
-     * projected attributes, the corresponding <code>ItemResponse</code> object is an
-     * empty Map. </p>
+     * <p>An ordered array of up to 100 <code>ItemResponse</code> objects, each of
+     * which corresponds to the <code>TransactGetItem</code> object in the same
+     * position in the <i>TransactItems</i> array. Each <code>ItemResponse</code>
+     * object contains a Map of the name-value pairs that are the projected attributes
+     * of the requested item.</p> <p>If a requested item could not be retrieved, the
+     * corresponding <code>ItemResponse</code> object is Null, or if the requested item
+     * has no projected attributes, the corresponding <code>ItemResponse</code> object
+     * is an empty Map. </p>
      */
     inline TransactGetItemsResult& AddResponses(ItemResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 

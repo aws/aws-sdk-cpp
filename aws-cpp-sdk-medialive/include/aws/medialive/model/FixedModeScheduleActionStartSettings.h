@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FixedModeScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings
+  class FixedModeScheduleActionStartSettings
   {
   public:
-    FixedModeScheduleActionStartSettings();
-    FixedModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
-    FixedModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings();
+    AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

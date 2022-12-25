@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsAkamaiSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsAkamaiSettings
+  class HlsAkamaiSettings
   {
   public:
-    HlsAkamaiSettings();
-    HlsAkamaiSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsAkamaiSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsAkamaiSettings();
+    AWS_MEDIALIVE_API HlsAkamaiSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsAkamaiSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,25 +255,25 @@ namespace Model
   private:
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     int m_filecacheDuration;
-    bool m_filecacheDurationHasBeenSet;
+    bool m_filecacheDurationHasBeenSet = false;
 
     HlsAkamaiHttpTransferMode m_httpTransferMode;
-    bool m_httpTransferModeHasBeenSet;
+    bool m_httpTransferModeHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
 
     Aws::String m_salt;
-    bool m_saltHasBeenSet;
+    bool m_saltHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

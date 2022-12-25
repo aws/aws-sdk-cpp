@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLJobSummary
+  class AutoMLJobSummary
   {
   public:
-    AutoMLJobSummary();
-    AutoMLJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLJobSummary();
+    AWS_SAGEMAKER_API AutoMLJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -363,31 +363,31 @@ namespace Model
   private:
 
     Aws::String m_autoMLJobName;
-    bool m_autoMLJobNameHasBeenSet;
+    bool m_autoMLJobNameHasBeenSet = false;
 
     Aws::String m_autoMLJobArn;
-    bool m_autoMLJobArnHasBeenSet;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     AutoMLJobStatus m_autoMLJobStatus;
-    bool m_autoMLJobStatusHasBeenSet;
+    bool m_autoMLJobStatusHasBeenSet = false;
 
     AutoMLJobSecondaryStatus m_autoMLJobSecondaryStatus;
-    bool m_autoMLJobSecondaryStatusHasBeenSet;
+    bool m_autoMLJobSecondaryStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Vector<AutoMLPartialFailureReason> m_partialFailureReasons;
-    bool m_partialFailureReasonsHasBeenSet;
+    bool m_partialFailureReasonsHasBeenSet = false;
   };
 
 } // namespace Model

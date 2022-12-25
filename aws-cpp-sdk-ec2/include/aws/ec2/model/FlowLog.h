@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FlowLog">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API FlowLog
+  class FlowLog
   {
   public:
-    FlowLog();
-    FlowLog(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FlowLog& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FlowLog();
+    AWS_EC2_API FlowLog(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FlowLog& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -158,44 +158,101 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline FlowLog& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline FlowLog& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
+     * Logs.</p>
      */
     inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline const Aws::String& GetDeliverCrossAccountRole() const{ return m_deliverCrossAccountRole; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline bool DeliverCrossAccountRoleHasBeenSet() const { return m_deliverCrossAccountRoleHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline void SetDeliverCrossAccountRole(const Aws::String& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = value; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline void SetDeliverCrossAccountRole(Aws::String&& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline void SetDeliverCrossAccountRole(const char* value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline FlowLog& WithDeliverCrossAccountRole(const Aws::String& value) { SetDeliverCrossAccountRole(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline FlowLog& WithDeliverCrossAccountRole(Aws::String&& value) { SetDeliverCrossAccountRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM role that allows the service to publish flow logs across
+     * accounts.</p>
+     */
+    inline FlowLog& WithDeliverCrossAccountRole(const char* value) { SetDeliverCrossAccountRole(value); return *this;}
 
 
     /**
@@ -248,42 +305,42 @@ namespace Model
 
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline const Aws::String& GetFlowLogId() const{ return m_flowLogId; }
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline bool FlowLogIdHasBeenSet() const { return m_flowLogIdHasBeenSet; }
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::move(value); }
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline void SetFlowLogId(const char* value) { m_flowLogIdHasBeenSet = true; m_flowLogId.assign(value); }
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline FlowLog& WithFlowLogId(const Aws::String& value) { SetFlowLogId(value); return *this;}
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(std::move(value)); return *this;}
 
     /**
-     * <p>The flow log ID.</p>
+     * <p>The ID of the flow log.</p>
      */
     inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
 
@@ -371,42 +428,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline FlowLog& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource on which the flow log was created.</p>
+     * <p>The ID of the resource being monitored.</p>
      */
     inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -443,119 +500,73 @@ namespace Model
 
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline FlowLog& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
 
     /**
-     * <p>The type of destination to which the flow log data is published. Flow log
-     * data can be published to CloudWatch Logs or Amazon S3.</p>
+     * <p>The type of destination for the flow log data.</p>
      */
     inline FlowLog& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline FlowLog& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline FlowLog& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
 
     /**
-     * <p>The destination to which the flow log data is published. Flow log data can be
-     * published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow
-     * log publishes to CloudWatch Logs, this element indicates the Amazon Resource
-     * Name (ARN) of the CloudWatch Logs log group to which the data is published. If
-     * the flow log publishes to Amazon S3, this element indicates the ARN of the
-     * Amazon S3 bucket to which the data is published.</p>
+     * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
     inline FlowLog& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
 
@@ -720,49 +731,52 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deliverLogsErrorMessage;
-    bool m_deliverLogsErrorMessageHasBeenSet;
+    bool m_deliverLogsErrorMessageHasBeenSet = false;
 
     Aws::String m_deliverLogsPermissionArn;
-    bool m_deliverLogsPermissionArnHasBeenSet;
+    bool m_deliverLogsPermissionArnHasBeenSet = false;
+
+    Aws::String m_deliverCrossAccountRole;
+    bool m_deliverCrossAccountRoleHasBeenSet = false;
 
     Aws::String m_deliverLogsStatus;
-    bool m_deliverLogsStatusHasBeenSet;
+    bool m_deliverLogsStatusHasBeenSet = false;
 
     Aws::String m_flowLogId;
-    bool m_flowLogIdHasBeenSet;
+    bool m_flowLogIdHasBeenSet = false;
 
     Aws::String m_flowLogStatus;
-    bool m_flowLogStatusHasBeenSet;
+    bool m_flowLogStatusHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
+    bool m_trafficTypeHasBeenSet = false;
 
     LogDestinationType m_logDestinationType;
-    bool m_logDestinationTypeHasBeenSet;
+    bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::String m_logDestination;
-    bool m_logDestinationHasBeenSet;
+    bool m_logDestinationHasBeenSet = false;
 
     Aws::String m_logFormat;
-    bool m_logFormatHasBeenSet;
+    bool m_logFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_maxAggregationInterval;
-    bool m_maxAggregationIntervalHasBeenSet;
+    bool m_maxAggregationIntervalHasBeenSet = false;
 
     DestinationOptionsResponse m_destinationOptions;
-    bool m_destinationOptionsHasBeenSet;
+    bool m_destinationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Reservation">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Reservation
+  class Reservation
   {
   public:
-    Reservation();
-    Reservation(Aws::Utils::Json::JsonView jsonValue);
-    Reservation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Reservation();
+    AWS_MEDIACONNECT_API Reservation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Reservation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -596,43 +596,43 @@ namespace Model
   private:
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     DurationUnits m_durationUnits;
-    bool m_durationUnitsHasBeenSet;
+    bool m_durationUnitsHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::String m_offeringArn;
-    bool m_offeringArnHasBeenSet;
+    bool m_offeringArnHasBeenSet = false;
 
     Aws::String m_offeringDescription;
-    bool m_offeringDescriptionHasBeenSet;
+    bool m_offeringDescriptionHasBeenSet = false;
 
     Aws::String m_pricePerUnit;
-    bool m_pricePerUnitHasBeenSet;
+    bool m_pricePerUnitHasBeenSet = false;
 
     PriceUnits m_priceUnits;
-    bool m_priceUnitsHasBeenSet;
+    bool m_priceUnitsHasBeenSet = false;
 
     Aws::String m_reservationArn;
-    bool m_reservationArnHasBeenSet;
+    bool m_reservationArnHasBeenSet = false;
 
     Aws::String m_reservationName;
-    bool m_reservationNameHasBeenSet;
+    bool m_reservationNameHasBeenSet = false;
 
     ReservationState m_reservationState;
-    bool m_reservationStateHasBeenSet;
+    bool m_reservationStateHasBeenSet = false;
 
     ResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_DYNAMODB_API RestoreTableFromBackupRequest : public DynamoDBRequest
+  class RestoreTableFromBackupRequest : public DynamoDBRequest
   {
   public:
-    RestoreTableFromBackupRequest();
+    AWS_DYNAMODB_API RestoreTableFromBackupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreTableFromBackup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -331,25 +331,25 @@ namespace Model
   private:
 
     Aws::String m_targetTableName;
-    bool m_targetTableNameHasBeenSet;
+    bool m_targetTableNameHasBeenSet = false;
 
     Aws::String m_backupArn;
-    bool m_backupArnHasBeenSet;
+    bool m_backupArnHasBeenSet = false;
 
     BillingMode m_billingModeOverride;
-    bool m_billingModeOverrideHasBeenSet;
+    bool m_billingModeOverrideHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexOverride;
-    bool m_globalSecondaryIndexOverrideHasBeenSet;
+    bool m_globalSecondaryIndexOverrideHasBeenSet = false;
 
     Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexOverride;
-    bool m_localSecondaryIndexOverrideHasBeenSet;
+    bool m_localSecondaryIndexOverrideHasBeenSet = false;
 
     ProvisionedThroughput m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     SSESpecification m_sSESpecificationOverride;
-    bool m_sSESpecificationOverrideHasBeenSet;
+    bool m_sSESpecificationOverrideHasBeenSet = false;
   };
 
 } // namespace Model

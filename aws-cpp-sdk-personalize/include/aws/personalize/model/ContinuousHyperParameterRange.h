@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ContinuousHyperParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API ContinuousHyperParameterRange
+  class ContinuousHyperParameterRange
   {
   public:
-    ContinuousHyperParameterRange();
-    ContinuousHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    ContinuousHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API ContinuousHyperParameterRange();
+    AWS_PERSONALIZE_API ContinuousHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API ContinuousHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     double m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
   };
 
 } // namespace Model

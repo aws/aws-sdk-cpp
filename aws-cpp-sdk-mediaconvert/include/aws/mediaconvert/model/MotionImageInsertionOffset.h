@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInsertionOffset">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MotionImageInsertionOffset
+  class MotionImageInsertionOffset
   {
   public:
-    MotionImageInsertionOffset();
-    MotionImageInsertionOffset(Aws::Utils::Json::JsonView jsonValue);
-    MotionImageInsertionOffset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MotionImageInsertionOffset();
+    AWS_MEDIACONVERT_API MotionImageInsertionOffset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MotionImageInsertionOffset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_imageX;
-    bool m_imageXHasBeenSet;
+    bool m_imageXHasBeenSet = false;
 
     int m_imageY;
-    bool m_imageYHasBeenSet;
+    bool m_imageYHasBeenSet = false;
   };
 
 } // namespace Model

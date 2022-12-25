@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DataStorage">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API DataStorage
+  class DataStorage
   {
   public:
-    DataStorage();
-    DataStorage(Aws::Utils::Json::JsonView jsonValue);
-    DataStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API DataStorage();
+    AWS_CLOUDWATCHRUM_API DataStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API DataStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     CwLog m_cwLog;
-    bool m_cwLogHasBeenSet;
+    bool m_cwLogHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessageRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SendOTPMessageRequestParameters
+  class SendOTPMessageRequestParameters
   {
   public:
-    SendOTPMessageRequestParameters();
-    SendOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    SendOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SendOTPMessageRequestParameters();
+    AWS_PINPOINT_API SendOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SendOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -462,37 +462,37 @@ namespace Model
   private:
 
     int m_allowedAttempts;
-    bool m_allowedAttemptsHasBeenSet;
+    bool m_allowedAttemptsHasBeenSet = false;
 
     Aws::String m_brandName;
-    bool m_brandNameHasBeenSet;
+    bool m_brandNameHasBeenSet = false;
 
     Aws::String m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     int m_codeLength;
-    bool m_codeLengthHasBeenSet;
+    bool m_codeLengthHasBeenSet = false;
 
     Aws::String m_destinationIdentity;
-    bool m_destinationIdentityHasBeenSet;
+    bool m_destinationIdentityHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
 
     int m_validityPeriod;
-    bool m_validityPeriodHasBeenSet;
+    bool m_validityPeriodHasBeenSet = false;
   };
 
 } // namespace Model

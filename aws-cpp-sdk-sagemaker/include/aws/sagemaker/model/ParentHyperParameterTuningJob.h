@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParentHyperParameterTuningJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ParentHyperParameterTuningJob
+  class ParentHyperParameterTuningJob
   {
   public:
-    ParentHyperParameterTuningJob();
-    ParentHyperParameterTuningJob(Aws::Utils::Json::JsonView jsonValue);
-    ParentHyperParameterTuningJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ParentHyperParameterTuningJob();
+    AWS_SAGEMAKER_API ParentHyperParameterTuningJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ParentHyperParameterTuningJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
   };
 
 } // namespace Model

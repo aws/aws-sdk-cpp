@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ServiceCatalogProvisionedProductDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails
+  class ServiceCatalogProvisionedProductDetails
   {
   public:
-    ServiceCatalogProvisionedProductDetails();
-    ServiceCatalogProvisionedProductDetails(Aws::Utils::Json::JsonView jsonValue);
-    ServiceCatalogProvisionedProductDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails();
+    AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ServiceCatalogProvisionedProductDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,10 +244,10 @@ namespace Model
   private:
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::String m_provisionedProductStatusMessage;
-    bool m_provisionedProductStatusMessageHasBeenSet;
+    bool m_provisionedProductStatusMessageHasBeenSet = false;
   };
 
 } // namespace Model

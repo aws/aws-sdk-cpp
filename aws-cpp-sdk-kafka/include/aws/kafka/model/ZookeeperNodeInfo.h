@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ZookeeperNodeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ZookeeperNodeInfo
+  class ZookeeperNodeInfo
   {
   public:
-    ZookeeperNodeInfo();
-    ZookeeperNodeInfo(Aws::Utils::Json::JsonView jsonValue);
-    ZookeeperNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ZookeeperNodeInfo();
+    AWS_KAFKA_API ZookeeperNodeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ZookeeperNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,19 +323,19 @@ namespace Model
   private:
 
     Aws::String m_attachedENIId;
-    bool m_attachedENIIdHasBeenSet;
+    bool m_attachedENIIdHasBeenSet = false;
 
     Aws::String m_clientVpcIpAddress;
-    bool m_clientVpcIpAddressHasBeenSet;
+    bool m_clientVpcIpAddressHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     double m_zookeeperId;
-    bool m_zookeeperIdHasBeenSet;
+    bool m_zookeeperIdHasBeenSet = false;
 
     Aws::String m_zookeeperVersion;
-    bool m_zookeeperVersionHasBeenSet;
+    bool m_zookeeperVersionHasBeenSet = false;
   };
 
 } // namespace Model

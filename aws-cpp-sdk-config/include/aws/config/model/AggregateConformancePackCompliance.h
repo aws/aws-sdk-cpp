@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateConformancePackCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateConformancePackCompliance
+  class AggregateConformancePackCompliance
   {
   public:
-    AggregateConformancePackCompliance();
-    AggregateConformancePackCompliance(Aws::Utils::Json::JsonView jsonValue);
-    AggregateConformancePackCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateConformancePackCompliance();
+    AWS_CONFIGSERVICE_API AggregateConformancePackCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateConformancePackCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,16 +151,16 @@ namespace Model
   private:
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     int m_compliantRuleCount;
-    bool m_compliantRuleCountHasBeenSet;
+    bool m_compliantRuleCountHasBeenSet = false;
 
     int m_nonCompliantRuleCount;
-    bool m_nonCompliantRuleCountHasBeenSet;
+    bool m_nonCompliantRuleCountHasBeenSet = false;
 
     int m_totalRuleCount;
-    bool m_totalRuleCountHasBeenSet;
+    bool m_totalRuleCountHasBeenSet = false;
   };
 
 } // namespace Model

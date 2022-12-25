@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/PolicyDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API PolicyDescription
+  class PolicyDescription
   {
   public:
-    PolicyDescription();
-    PolicyDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API PolicyDescription();
+    AWS_ELASTICLOADBALANCING_API PolicyDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API PolicyDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyTypeName;
-    bool m_policyTypeNameHasBeenSet;
+    bool m_policyTypeNameHasBeenSet = false;
 
     Aws::Vector<PolicyAttributeDescription> m_policyAttributeDescriptions;
-    bool m_policyAttributeDescriptionsHasBeenSet;
+    bool m_policyAttributeDescriptionsHasBeenSet = false;
   };
 
 } // namespace Model

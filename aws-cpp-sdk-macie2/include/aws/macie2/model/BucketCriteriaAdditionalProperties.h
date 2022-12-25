@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCriteriaAdditionalProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketCriteriaAdditionalProperties
+  class BucketCriteriaAdditionalProperties
   {
   public:
-    BucketCriteriaAdditionalProperties();
-    BucketCriteriaAdditionalProperties(Aws::Utils::Json::JsonView jsonValue);
-    BucketCriteriaAdditionalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketCriteriaAdditionalProperties();
+    AWS_MACIE2_API BucketCriteriaAdditionalProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketCriteriaAdditionalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_eq;
-    bool m_eqHasBeenSet;
+    bool m_eqHasBeenSet = false;
 
     long long m_gt;
-    bool m_gtHasBeenSet;
+    bool m_gtHasBeenSet = false;
 
     long long m_gte;
-    bool m_gteHasBeenSet;
+    bool m_gteHasBeenSet = false;
 
     long long m_lt;
-    bool m_ltHasBeenSet;
+    bool m_ltHasBeenSet = false;
 
     long long m_lte;
-    bool m_lteHasBeenSet;
+    bool m_lteHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_neq;
-    bool m_neqHasBeenSet;
+    bool m_neqHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

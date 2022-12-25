@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FunctionConfig
+  class FunctionConfig
   {
   public:
-    FunctionConfig();
-    FunctionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FunctionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionConfig();
+    AWS_CLOUDFRONT_API FunctionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline const FunctionRuntime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline void SetRuntime(const FunctionRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline void SetRuntime(FunctionRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline FunctionConfig& WithRuntime(const FunctionRuntime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The function’s runtime environment. The only valid value is
+     * <p>The function's runtime environment. The only valid value is
      * <code>cloudfront-js-1.0</code>.</p>
      */
     inline FunctionConfig& WithRuntime(FunctionRuntime&& value) { SetRuntime(std::move(value)); return *this;}
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     FunctionRuntime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
   };
 
 } // namespace Model

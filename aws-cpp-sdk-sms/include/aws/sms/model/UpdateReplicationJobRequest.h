@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SMS_API UpdateReplicationJobRequest : public SMSRequest
+  class UpdateReplicationJobRequest : public SMSRequest
   {
   public:
-    UpdateReplicationJobRequest();
+    AWS_SMS_API UpdateReplicationJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateReplicationJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -381,31 +381,31 @@ namespace Model
   private:
 
     Aws::String m_replicationJobId;
-    bool m_replicationJobIdHasBeenSet;
+    bool m_replicationJobIdHasBeenSet = false;
 
     int m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextReplicationRunStartTime;
-    bool m_nextReplicationRunStartTimeHasBeenSet;
+    bool m_nextReplicationRunStartTimeHasBeenSet = false;
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_numberOfRecentAmisToKeep;
-    bool m_numberOfRecentAmisToKeepHasBeenSet;
+    bool m_numberOfRecentAmisToKeepHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

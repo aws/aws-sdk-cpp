@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/S3MachineLearningModelResourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API S3MachineLearningModelResourceData
+  class S3MachineLearningModelResourceData
   {
   public:
-    S3MachineLearningModelResourceData();
-    S3MachineLearningModelResourceData(Aws::Utils::Json::JsonView jsonValue);
-    S3MachineLearningModelResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API S3MachineLearningModelResourceData();
+    AWS_GREENGRASS_API S3MachineLearningModelResourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API S3MachineLearningModelResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_destinationPath;
-    bool m_destinationPathHasBeenSet;
+    bool m_destinationPathHasBeenSet = false;
 
     ResourceDownloadOwnerSetting m_ownerSetting;
-    bool m_ownerSettingHasBeenSet;
+    bool m_ownerSettingHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

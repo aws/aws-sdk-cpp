@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API CreateAssessmentRequest : public AuditManagerRequest
+  class CreateAssessmentRequest : public AuditManagerRequest
   {
   public:
-    CreateAssessmentRequest();
+    AWS_AUDITMANAGER_API CreateAssessmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAssessment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -333,25 +333,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AssessmentReportsDestination m_assessmentReportsDestination;
-    bool m_assessmentReportsDestinationHasBeenSet;
+    bool m_assessmentReportsDestinationHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<Role> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::String m_frameworkId;
-    bool m_frameworkIdHasBeenSet;
+    bool m_frameworkIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

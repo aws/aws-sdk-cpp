@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DefaultIntegerHyperParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DefaultIntegerHyperParameterRange
+  class DefaultIntegerHyperParameterRange
   {
   public:
-    DefaultIntegerHyperParameterRange();
-    DefaultIntegerHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    DefaultIntegerHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DefaultIntegerHyperParameterRange();
+    AWS_PERSONALIZE_API DefaultIntegerHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DefaultIntegerHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,16 +146,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     int m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     bool m_isTunable;
-    bool m_isTunableHasBeenSet;
+    bool m_isTunableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API StartMedicalTranscriptionJobRequest : public TranscribeServiceRequest
+  class StartMedicalTranscriptionJobRequest : public TranscribeServiceRequest
   {
   public:
-    StartMedicalTranscriptionJobRequest();
+    AWS_TRANSCRIBESERVICE_API StartMedicalTranscriptionJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,16 +39,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartMedicalTranscriptionJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -57,9 +57,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -68,9 +68,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -79,9 +79,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -90,9 +90,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -101,9 +101,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -112,9 +112,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -123,9 +123,9 @@ namespace Model
 
     /**
      * <p>A unique name, chosen by you, for your medical transcription job. The name
-     * you specify is also used as the default name of your transcription output file.
-     * If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
+     * that you specify is also used as the default name of your transcription output
+     * file. If you want to specify a different name for your transcription output, use
+     * the <code>OutputKey</code> parameter.</p> <p>This name is case sensitive, cannot
      * contain spaces, and must be unique within an Amazon Web Services account. If you
      * try to create a new job with the same name as an existing job, you get a
      * <code>ConflictException</code> error.</p>
@@ -183,46 +183,46 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
-     * you specify and the value detected, your job fails. Therefore, in most cases,
-     * it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * that you specify and the value detected, your job fails. Therefore, in most
+     * cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon
+     * Transcribe Medical determine the sample rate.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
-     * you specify and the value detected, your job fails. Therefore, in most cases,
-     * it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * that you specify and the value detected, your job fails. Therefore, in most
+     * cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon
+     * Transcribe Medical determine the sample rate.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
-     * you specify and the value detected, your job fails. Therefore, in most cases,
-     * it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * that you specify and the value detected, your job fails. Therefore, in most
+     * cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon
+     * Transcribe Medical determine the sample rate.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      * <p>If you don't specify the media sample rate, Amazon Transcribe Medical
      * determines it for you. If you specify the sample rate, it must match the rate
      * detected by Amazon Transcribe Medical; if there's a mismatch between the value
-     * you specify and the value detected, your job fails. Therefore, in most cases,
-     * it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe
-     * Medical determine the sample rate.</p>
+     * that you specify and the value detected, your job fails. Therefore, in most
+     * cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon
+     * Transcribe Medical determine the sample rate.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -294,9 +294,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
 
@@ -317,9 +315,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
 
@@ -340,9 +336,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
 
@@ -363,9 +357,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
 
@@ -386,9 +378,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
 
@@ -409,9 +399,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
 
@@ -432,9 +420,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
 
@@ -455,9 +441,7 @@ namespace Model
      * href="https://console.aws.amazon.com/s3">Amazon Web Services Management
      * Console</a>. See also <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't specify
-     * <code>OutputBucketName</code>, your transcript is placed in a service-managed
-     * Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+     * Required for IAM User Roles</a>.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
 
@@ -1042,43 +1026,43 @@ namespace Model
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline const MedicalTranscriptionSetting& GetSettings() const{ return m_settings; }
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline void SetSettings(const MedicalTranscriptionSetting& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline void SetSettings(MedicalTranscriptionSetting&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithSettings(const MedicalTranscriptionSetting& value) { SetSettings(value); return *this;}
 
     /**
      * <p>Specify additional optional settings in your request, including channel
-     * identification, alternative transcriptions, and speaker labeling; allows you to
-     * apply custom vocabularies to your transcription job.</p>
+     * identification, alternative transcriptions, and speaker partitioning. You can
+     * use that to apply custom vocabularies to your transcription job.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithSettings(MedicalTranscriptionSetting&& value) { SetSettings(std::move(value)); return *this;}
 
@@ -1311,46 +1295,46 @@ namespace Model
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     int m_mediaSampleRateHertz;
-    bool m_mediaSampleRateHertzHasBeenSet;
+    bool m_mediaSampleRateHertzHasBeenSet = false;
 
     MediaFormat m_mediaFormat;
-    bool m_mediaFormatHasBeenSet;
+    bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Aws::String m_outputBucketName;
-    bool m_outputBucketNameHasBeenSet;
+    bool m_outputBucketNameHasBeenSet = false;
 
     Aws::String m_outputKey;
-    bool m_outputKeyHasBeenSet;
+    bool m_outputKeyHasBeenSet = false;
 
     Aws::String m_outputEncryptionKMSKeyId;
-    bool m_outputEncryptionKMSKeyIdHasBeenSet;
+    bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
-    bool m_kMSEncryptionContextHasBeenSet;
+    bool m_kMSEncryptionContextHasBeenSet = false;
 
     MedicalTranscriptionSetting m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     MedicalContentIdentificationType m_contentIdentificationType;
-    bool m_contentIdentificationTypeHasBeenSet;
+    bool m_contentIdentificationTypeHasBeenSet = false;
 
     Specialty m_specialty;
-    bool m_specialtyHasBeenSet;
+    bool m_specialtyHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

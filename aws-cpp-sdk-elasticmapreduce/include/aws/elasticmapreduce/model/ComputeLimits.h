@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ComputeLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ComputeLimits
+  class ComputeLimits
   {
   public:
-    ComputeLimits();
-    ComputeLimits(Aws::Utils::Json::JsonView jsonValue);
-    ComputeLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ComputeLimits();
+    AWS_EMR_API ComputeLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ComputeLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     ComputeLimitsUnitType m_unitType;
-    bool m_unitTypeHasBeenSet;
+    bool m_unitTypeHasBeenSet = false;
 
     int m_minimumCapacityUnits;
-    bool m_minimumCapacityUnitsHasBeenSet;
+    bool m_minimumCapacityUnitsHasBeenSet = false;
 
     int m_maximumCapacityUnits;
-    bool m_maximumCapacityUnitsHasBeenSet;
+    bool m_maximumCapacityUnitsHasBeenSet = false;
 
     int m_maximumOnDemandCapacityUnits;
-    bool m_maximumOnDemandCapacityUnitsHasBeenSet;
+    bool m_maximumOnDemandCapacityUnitsHasBeenSet = false;
 
     int m_maximumCoreCapacityUnits;
-    bool m_maximumCoreCapacityUnitsHasBeenSet;
+    bool m_maximumCoreCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

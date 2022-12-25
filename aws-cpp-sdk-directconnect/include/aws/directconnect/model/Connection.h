@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API Connection
+  class Connection
   {
   public:
-    Connection();
-    Connection(Aws::Utils::Json::JsonView jsonValue);
-    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API Connection();
+    AWS_DIRECTCONNECT_API Connection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1015,70 +1015,70 @@ namespace Model
   private:
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     ConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     int m_vlan;
-    bool m_vlanHasBeenSet;
+    bool m_vlanHasBeenSet = false;
 
     Aws::String m_partnerName;
-    bool m_partnerNameHasBeenSet;
+    bool m_partnerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_loaIssueTime;
-    bool m_loaIssueTimeHasBeenSet;
+    bool m_loaIssueTimeHasBeenSet = false;
 
     Aws::String m_lagId;
-    bool m_lagIdHasBeenSet;
+    bool m_lagIdHasBeenSet = false;
 
     Aws::String m_awsDevice;
-    bool m_awsDeviceHasBeenSet;
+    bool m_awsDeviceHasBeenSet = false;
 
     bool m_jumboFrameCapable;
-    bool m_jumboFrameCapableHasBeenSet;
+    bool m_jumboFrameCapableHasBeenSet = false;
 
     Aws::String m_awsDeviceV2;
-    bool m_awsDeviceV2HasBeenSet;
+    bool m_awsDeviceV2HasBeenSet = false;
 
     Aws::String m_awsLogicalDeviceId;
-    bool m_awsLogicalDeviceIdHasBeenSet;
+    bool m_awsLogicalDeviceIdHasBeenSet = false;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
-    bool m_hasLogicalRedundancyHasBeenSet;
+    bool m_hasLogicalRedundancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     bool m_macSecCapable;
-    bool m_macSecCapableHasBeenSet;
+    bool m_macSecCapableHasBeenSet = false;
 
     Aws::String m_portEncryptionStatus;
-    bool m_portEncryptionStatusHasBeenSet;
+    bool m_portEncryptionStatusHasBeenSet = false;
 
     Aws::String m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::Vector<MacSecKey> m_macSecKeys;
-    bool m_macSecKeysHasBeenSet;
+    bool m_macSecKeysHasBeenSet = false;
   };
 
 } // namespace Model

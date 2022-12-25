@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Conflict">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Conflict
+  class Conflict
   {
   public:
-    Conflict();
-    Conflict(Aws::Utils::Json::JsonView jsonValue);
-    Conflict& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Conflict();
+    AWS_CODECOMMIT_API Conflict(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Conflict& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ConflictMetadata m_conflictMetadata;
-    bool m_conflictMetadataHasBeenSet;
+    bool m_conflictMetadataHasBeenSet = false;
 
     Aws::Vector<MergeHunk> m_mergeHunks;
-    bool m_mergeHunksHasBeenSet;
+    bool m_mergeHunksHasBeenSet = false;
   };
 
 } // namespace Model

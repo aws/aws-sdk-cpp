@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Device">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Device();
+    AWS_ECS_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_hostPath;
-    bool m_hostPathHasBeenSet;
+    bool m_hostPathHasBeenSet = false;
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
 
     Aws::Vector<DeviceCgroupPermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PublishFindingToSnsParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API PublishFindingToSnsParams
+  class PublishFindingToSnsParams
   {
   public:
-    PublishFindingToSnsParams();
-    PublishFindingToSnsParams(Aws::Utils::Json::JsonView jsonValue);
-    PublishFindingToSnsParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API PublishFindingToSnsParams();
+    AWS_IOT_API PublishFindingToSnsParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API PublishFindingToSnsParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/FileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API FileLocation
+  class FileLocation
   {
   public:
-    FileLocation();
-    FileLocation(Aws::Utils::Json::JsonView jsonValue);
-    FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API FileLocation();
+    AWS_IOT_API FileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Stream m_stream;
-    bool m_streamHasBeenSet;
+    bool m_streamHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

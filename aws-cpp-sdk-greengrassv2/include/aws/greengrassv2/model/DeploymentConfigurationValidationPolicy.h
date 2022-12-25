@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentConfigurationValidationPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy
+  class DeploymentConfigurationValidationPolicy
   {
   public:
-    DeploymentConfigurationValidationPolicy();
-    DeploymentConfigurationValidationPolicy(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentConfigurationValidationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy();
+    AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API DeploymentConfigurationValidationPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyPathReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HierarchyPathReference
+  class HierarchyPathReference
   {
   public:
-    HierarchyPathReference();
-    HierarchyPathReference(Aws::Utils::Json::JsonView jsonValue);
-    HierarchyPathReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HierarchyPathReference();
+    AWS_CONNECT_API HierarchyPathReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HierarchyPathReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,19 +195,19 @@ namespace Model
   private:
 
     HierarchyGroupSummaryReference m_levelOne;
-    bool m_levelOneHasBeenSet;
+    bool m_levelOneHasBeenSet = false;
 
     HierarchyGroupSummaryReference m_levelTwo;
-    bool m_levelTwoHasBeenSet;
+    bool m_levelTwoHasBeenSet = false;
 
     HierarchyGroupSummaryReference m_levelThree;
-    bool m_levelThreeHasBeenSet;
+    bool m_levelThreeHasBeenSet = false;
 
     HierarchyGroupSummaryReference m_levelFour;
-    bool m_levelFourHasBeenSet;
+    bool m_levelFourHasBeenSet = false;
 
     HierarchyGroupSummaryReference m_levelFive;
-    bool m_levelFiveHasBeenSet;
+    bool m_levelFiveHasBeenSet = false;
   };
 
 } // namespace Model

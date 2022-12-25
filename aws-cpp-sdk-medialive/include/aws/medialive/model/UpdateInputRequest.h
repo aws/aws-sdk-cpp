@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UpdateInputRequest : public MediaLiveRequest
+  class UpdateInputRequest : public MediaLiveRequest
   {
   public:
-    UpdateInputRequest();
+    AWS_MEDIALIVE_API UpdateInputRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInput"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -479,28 +479,28 @@ Only specify sources for PULL type Inputs. Leave
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<InputDeviceRequest> m_inputDevices;
-    bool m_inputDevicesHasBeenSet;
+    bool m_inputDevicesHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputSecurityGroups;
-    bool m_inputSecurityGroupsHasBeenSet;
+    bool m_inputSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<MediaConnectFlowRequest> m_mediaConnectFlows;
-    bool m_mediaConnectFlowsHasBeenSet;
+    bool m_mediaConnectFlowsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<InputSourceRequest> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

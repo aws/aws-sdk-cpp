@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelActivityTaskFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API RequestCancelActivityTaskFailedEventAttributes
+  class RequestCancelActivityTaskFailedEventAttributes
   {
   public:
-    RequestCancelActivityTaskFailedEventAttributes();
-    RequestCancelActivityTaskFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    RequestCancelActivityTaskFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API RequestCancelActivityTaskFailedEventAttributes();
+    AWS_SWF_API RequestCancelActivityTaskFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API RequestCancelActivityTaskFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
 
     RequestCancelActivityTaskFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -62,13 +62,13 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode effectiveDateNode = resultNode.FirstChild("effectiveDate");
     if(!effectiveDateNode.IsNull())
     {
-      m_effectiveDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(effectiveDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_effectiveDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(effectiveDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_effectiveDateHasBeenSet = true;
     }
     XmlNode modificationResultsNode = resultNode.FirstChild("modificationResultSet");
@@ -116,7 +116,7 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
     XmlNode updateDateNode = resultNode.FirstChild("updateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
   }
@@ -133,12 +133,12 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_modificationResultsHasBeenSet)
@@ -180,7 +180,7 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
 
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -193,11 +193,11 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_effectiveDateHasBeenSet)
   {
-      oStream << location << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EffectiveDate=" << StringUtils::URLEncode(m_effectiveDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_modificationResultsHasBeenSet)
   {
@@ -233,7 +233,7 @@ void ReservedInstancesModification::OutputToStream(Aws::OStream& oStream, const 
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

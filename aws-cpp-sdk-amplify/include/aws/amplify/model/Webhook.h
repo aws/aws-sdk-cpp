@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Webhook">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Webhook
+  class Webhook
   {
   public:
-    Webhook();
-    Webhook(Aws::Utils::Json::JsonView jsonValue);
-    Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Webhook();
+    AWS_AMPLIFY_API Webhook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_webhookArn;
-    bool m_webhookArnHasBeenSet;
+    bool m_webhookArnHasBeenSet = false;
 
     Aws::String m_webhookId;
-    bool m_webhookIdHasBeenSet;
+    bool m_webhookIdHasBeenSet = false;
 
     Aws::String m_webhookUrl;
-    bool m_webhookUrlHasBeenSet;
+    bool m_webhookUrlHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/drs/model/RecoveryInstanceDataReplicationInfo.h>
 #include <aws/drs/model/EC2InstanceState.h>
 #include <aws/drs/model/RecoveryInstanceFailback.h>
+#include <aws/drs/model/OriginEnvironment.h>
 #include <aws/drs/model/RecoveryInstanceProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstance
+  class RecoveryInstance
   {
   public:
-    RecoveryInstance();
-    RecoveryInstance(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstance();
+    AWS_DRS_API RecoveryInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -291,6 +292,43 @@ namespace Model
 
 
     /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline const OriginEnvironment& GetOriginEnvironment() const{ return m_originEnvironment; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline bool OriginEnvironmentHasBeenSet() const { return m_originEnvironmentHasBeenSet; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline void SetOriginEnvironment(const OriginEnvironment& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = value; }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline void SetOriginEnvironment(OriginEnvironment&& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = std::move(value); }
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline RecoveryInstance& WithOriginEnvironment(const OriginEnvironment& value) { SetOriginEnvironment(value); return *this;}
+
+    /**
+     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
+     * originated from. </p>
+     */
+    inline RecoveryInstance& WithOriginEnvironment(OriginEnvironment&& value) { SetOriginEnvironment(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
      * Instance was launched from.</p>
      */
@@ -520,40 +558,43 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     RecoveryInstanceDataReplicationInfo m_dataReplicationInfo;
-    bool m_dataReplicationInfoHasBeenSet;
+    bool m_dataReplicationInfoHasBeenSet = false;
 
     Aws::String m_ec2InstanceID;
-    bool m_ec2InstanceIDHasBeenSet;
+    bool m_ec2InstanceIDHasBeenSet = false;
 
     EC2InstanceState m_ec2InstanceState;
-    bool m_ec2InstanceStateHasBeenSet;
+    bool m_ec2InstanceStateHasBeenSet = false;
 
     RecoveryInstanceFailback m_failback;
-    bool m_failbackHasBeenSet;
+    bool m_failbackHasBeenSet = false;
 
     bool m_isDrill;
-    bool m_isDrillHasBeenSet;
+    bool m_isDrillHasBeenSet = false;
 
     Aws::String m_jobID;
-    bool m_jobIDHasBeenSet;
+    bool m_jobIDHasBeenSet = false;
+
+    OriginEnvironment m_originEnvironment;
+    bool m_originEnvironmentHasBeenSet = false;
 
     Aws::String m_pointInTimeSnapshotDateTime;
-    bool m_pointInTimeSnapshotDateTimeHasBeenSet;
+    bool m_pointInTimeSnapshotDateTimeHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
 
     RecoveryInstanceProperties m_recoveryInstanceProperties;
-    bool m_recoveryInstancePropertiesHasBeenSet;
+    bool m_recoveryInstancePropertiesHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

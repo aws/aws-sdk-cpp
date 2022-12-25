@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API JobFlowInstancesDetail
+  class JobFlowInstancesDetail
   {
   public:
-    JobFlowInstancesDetail();
-    JobFlowInstancesDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobFlowInstancesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API JobFlowInstancesDetail();
+    AWS_EMR_API JobFlowInstancesDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API JobFlowInstancesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -554,43 +554,43 @@ namespace Model
   private:
 
     Aws::String m_masterInstanceType;
-    bool m_masterInstanceTypeHasBeenSet;
+    bool m_masterInstanceTypeHasBeenSet = false;
 
     Aws::String m_masterPublicDnsName;
-    bool m_masterPublicDnsNameHasBeenSet;
+    bool m_masterPublicDnsNameHasBeenSet = false;
 
     Aws::String m_masterInstanceId;
-    bool m_masterInstanceIdHasBeenSet;
+    bool m_masterInstanceIdHasBeenSet = false;
 
     Aws::String m_slaveInstanceType;
-    bool m_slaveInstanceTypeHasBeenSet;
+    bool m_slaveInstanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<InstanceGroupDetail> m_instanceGroups;
-    bool m_instanceGroupsHasBeenSet;
+    bool m_instanceGroupsHasBeenSet = false;
 
     int m_normalizedInstanceHours;
-    bool m_normalizedInstanceHoursHasBeenSet;
+    bool m_normalizedInstanceHoursHasBeenSet = false;
 
     Aws::String m_ec2KeyName;
-    bool m_ec2KeyNameHasBeenSet;
+    bool m_ec2KeyNameHasBeenSet = false;
 
     Aws::String m_ec2SubnetId;
-    bool m_ec2SubnetIdHasBeenSet;
+    bool m_ec2SubnetIdHasBeenSet = false;
 
     PlacementType m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     bool m_keepJobFlowAliveWhenNoSteps;
-    bool m_keepJobFlowAliveWhenNoStepsHasBeenSet;
+    bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 
     bool m_terminationProtected;
-    bool m_terminationProtectedHasBeenSet;
+    bool m_terminationProtectedHasBeenSet = false;
 
     Aws::String m_hadoopVersion;
-    bool m_hadoopVersionHasBeenSet;
+    bool m_hadoopVersionHasBeenSet = false;
   };
 
 } // namespace Model

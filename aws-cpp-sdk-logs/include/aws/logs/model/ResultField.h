@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ResultField">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API ResultField
+  class ResultField
   {
   public:
-    ResultField();
-    ResultField(Aws::Utils::Json::JsonView jsonValue);
-    ResultField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API ResultField();
+    AWS_CLOUDWATCHLOGS_API ResultField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API ResultField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

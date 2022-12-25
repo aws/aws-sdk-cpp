@@ -41,7 +41,7 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
 
   if(m_instanceIdsHasBeenSet)
   {
-   Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
+   Aws::Utils::Array<JsonValue> instanceIdsJsonList(m_instanceIds.size());
    for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
    {
      instanceIdsJsonList[instanceIdsIndex].AsString(m_instanceIds[instanceIdsIndex]);
@@ -52,7 +52,7 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
 
   if(m_layerIdsHasBeenSet)
   {
-   Array<JsonValue> layerIdsJsonList(m_layerIds.size());
+   Aws::Utils::Array<JsonValue> layerIdsJsonList(m_layerIds.size());
    for(unsigned layerIdsIndex = 0; layerIdsIndex < layerIdsJsonList.GetLength(); ++layerIdsIndex)
    {
      layerIdsJsonList[layerIdsIndex].AsString(m_layerIds[layerIdsIndex]);

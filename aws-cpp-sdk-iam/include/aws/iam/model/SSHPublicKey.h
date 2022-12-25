@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKey">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API SSHPublicKey
+  class SSHPublicKey
   {
   public:
-    SSHPublicKey();
-    SSHPublicKey(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SSHPublicKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API SSHPublicKey();
+    AWS_IAM_API SSHPublicKey(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API SSHPublicKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -289,22 +289,22 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_sSHPublicKeyId;
-    bool m_sSHPublicKeyIdHasBeenSet;
+    bool m_sSHPublicKeyIdHasBeenSet = false;
 
     Aws::String m_fingerprint;
-    bool m_fingerprintHasBeenSet;
+    bool m_fingerprintHasBeenSet = false;
 
     Aws::String m_sSHPublicKeyBody;
-    bool m_sSHPublicKeyBodyHasBeenSet;
+    bool m_sSHPublicKeyBodyHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadDate;
-    bool m_uploadDateHasBeenSet;
+    bool m_uploadDateHasBeenSet = false;
   };
 
 } // namespace Model

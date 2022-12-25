@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRuleStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus
+  class OrganizationConfigRuleStatus
   {
   public:
-    OrganizationConfigRuleStatus();
-    OrganizationConfigRuleStatus(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConfigRuleStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus();
+    AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationConfigRuleStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,14 +82,14 @@ namespace Model
 
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -112,14 +112,14 @@ namespace Model
     inline const OrganizationRuleStatus& GetOrganizationRuleStatus() const{ return m_organizationRuleStatus; }
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -142,14 +142,14 @@ namespace Model
     inline bool OrganizationRuleStatusHasBeenSet() const { return m_organizationRuleStatusHasBeenSet; }
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -172,14 +172,14 @@ namespace Model
     inline void SetOrganizationRuleStatus(const OrganizationRuleStatus& value) { m_organizationRuleStatusHasBeenSet = true; m_organizationRuleStatus = value; }
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -202,14 +202,14 @@ namespace Model
     inline void SetOrganizationRuleStatus(OrganizationRuleStatus&& value) { m_organizationRuleStatusHasBeenSet = true; m_organizationRuleStatus = std::move(value); }
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -232,14 +232,14 @@ namespace Model
     inline OrganizationConfigRuleStatus& WithOrganizationRuleStatus(const OrganizationRuleStatus& value) { SetOrganizationRuleStatus(value); return *this;}
 
     /**
-     * <p>Indicates deployment status of an organization Config rule. When master
+     * <p>Indicates deployment status of an organization Config rule. When management
      * account calls PutOrganizationConfigRule action for the first time, Config rule
-     * status is created in all the member accounts. When master account calls
+     * status is created in all the member accounts. When management account calls
      * PutOrganizationConfigRule action for the second time, Config rule status is
      * updated in all the member accounts. Additionally, Config rule status is updated
      * when one or more member accounts join or leave an organization. Config rule
-     * status is deleted when the master account deletes OrganizationConfigRule in all
-     * the member accounts and disables service access for
+     * status is deleted when the management account deletes OrganizationConfigRule in
+     * all the member accounts and disables service access for
      * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>Config sets the
      * state of the rule to:</p> <ul> <li> <p> <code>CREATE_SUCCESSFUL</code> when an
      * organization Config rule has been successfully created in all the member
@@ -393,19 +393,19 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
 
     OrganizationRuleStatus m_organizationRuleStatus;
-    bool m_organizationRuleStatusHasBeenSet;
+    bool m_organizationRuleStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

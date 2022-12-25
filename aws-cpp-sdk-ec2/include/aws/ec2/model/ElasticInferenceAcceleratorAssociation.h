@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticInferenceAcceleratorAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ElasticInferenceAcceleratorAssociation
+  class ElasticInferenceAcceleratorAssociation
   {
   public:
-    ElasticInferenceAcceleratorAssociation();
-    ElasticInferenceAcceleratorAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ElasticInferenceAcceleratorAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticInferenceAcceleratorAssociation();
+    AWS_EC2_API ElasticInferenceAcceleratorAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticInferenceAcceleratorAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_elasticInferenceAcceleratorArn;
-    bool m_elasticInferenceAcceleratorArnHasBeenSet;
+    bool m_elasticInferenceAcceleratorArnHasBeenSet = false;
 
     Aws::String m_elasticInferenceAcceleratorAssociationId;
-    bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet = false;
 
     Aws::String m_elasticInferenceAcceleratorAssociationState;
-    bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_elasticInferenceAcceleratorAssociationTime;
-    bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet;
+    bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = false;
   };
 
 } // namespace Model

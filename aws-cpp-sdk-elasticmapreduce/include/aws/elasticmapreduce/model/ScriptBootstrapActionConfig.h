@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScriptBootstrapActionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ScriptBootstrapActionConfig
+  class ScriptBootstrapActionConfig
   {
   public:
-    ScriptBootstrapActionConfig();
-    ScriptBootstrapActionConfig(Aws::Utils::Json::JsonView jsonValue);
-    ScriptBootstrapActionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ScriptBootstrapActionConfig();
+    AWS_EMR_API ScriptBootstrapActionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ScriptBootstrapActionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

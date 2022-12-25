@@ -7,6 +7,7 @@
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/memorydb/model/ClusterConfiguration.h>
+#include <aws/memorydb/model/DataTieringStatus.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Snapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(Aws::Utils::Json::JsonView jsonValue);
-    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Snapshot();
+    AWS_MEMORYDB_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,25 +291,83 @@ namespace Model
      */
     inline Snapshot& WithClusterConfiguration(ClusterConfiguration&& value) { SetClusterConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline Snapshot& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for clusters using the
+     * r6gd node type. This parameter must be set when using r6gd nodes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline Snapshot& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     ClusterConfiguration m_clusterConfiguration;
-    bool m_clusterConfigurationHasBeenSet;
+    bool m_clusterConfigurationHasBeenSet = false;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet = false;
   };
 
 } // namespace Model

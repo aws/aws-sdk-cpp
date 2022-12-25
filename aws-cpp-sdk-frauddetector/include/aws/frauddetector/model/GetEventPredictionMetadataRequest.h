@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API GetEventPredictionMetadataRequest : public FraudDetectorRequest
+  class GetEventPredictionMetadataRequest : public FraudDetectorRequest
   {
   public:
-    GetEventPredictionMetadataRequest();
+    AWS_FRAUDDETECTOR_API GetEventPredictionMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetEventPredictionMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -207,61 +207,93 @@ namespace Model
 
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline const Aws::String& GetPredictionTimestamp() const{ return m_predictionTimestamp; }
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline bool PredictionTimestampHasBeenSet() const { return m_predictionTimestampHasBeenSet; }
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline void SetPredictionTimestamp(const Aws::String& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = value; }
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline void SetPredictionTimestamp(Aws::String&& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = std::move(value); }
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline void SetPredictionTimestamp(const char* value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp.assign(value); }
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(const Aws::String& value) { SetPredictionTimestamp(value); return *this;}
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(Aws::String&& value) { SetPredictionTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p> The timestamp that defines when the prediction was generated. </p>
+     * <p> The timestamp that defines when the prediction was generated. The timestamp
+     * must be specified using ISO 8601 standard in UTC.</p> <p>We recommend calling <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+     * first, and using the <code>predictionTimestamp</code> value in the response to
+     * provide an accurate prediction timestamp value.</p>
      */
     inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(const char* value) { SetPredictionTimestamp(value); return *this;}
 
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_detectorVersionId;
-    bool m_detectorVersionIdHasBeenSet;
+    bool m_detectorVersionIdHasBeenSet = false;
 
     Aws::String m_predictionTimestamp;
-    bool m_predictionTimestampHasBeenSet;
+    bool m_predictionTimestampHasBeenSet = false;
   };
 
 } // namespace Model

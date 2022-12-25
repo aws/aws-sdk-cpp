@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchState">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstancePatchState
+  class InstancePatchState
   {
   public:
-    InstancePatchState();
-    InstancePatchState(Aws::Utils::Json::JsonView jsonValue);
-    InstancePatchState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstancePatchState();
+    AWS_SSM_API InstancePatchState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstancePatchState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -853,107 +853,107 @@ namespace Model
 
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Critical</code> for compliance reporting in the patch baseline aren't
-     * installed. These patches might be missing, have failed installation, were
-     * rejected, or were installed but awaiting a required managed node reboot. The
-     * status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of patches per node that are specified as <code>Critical</code>
+     * for compliance reporting in the patch baseline aren't installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetCriticalNonCompliantCount() const{ return m_criticalNonCompliantCount; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Critical</code> for compliance reporting in the patch baseline aren't
-     * installed. These patches might be missing, have failed installation, were
-     * rejected, or were installed but awaiting a required managed node reboot. The
-     * status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of patches per node that are specified as <code>Critical</code>
+     * for compliance reporting in the patch baseline aren't installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline bool CriticalNonCompliantCountHasBeenSet() const { return m_criticalNonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Critical</code> for compliance reporting in the patch baseline aren't
-     * installed. These patches might be missing, have failed installation, were
-     * rejected, or were installed but awaiting a required managed node reboot. The
-     * status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of patches per node that are specified as <code>Critical</code>
+     * for compliance reporting in the patch baseline aren't installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetCriticalNonCompliantCount(int value) { m_criticalNonCompliantCountHasBeenSet = true; m_criticalNonCompliantCount = value; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Critical</code> for compliance reporting in the patch baseline aren't
-     * installed. These patches might be missing, have failed installation, were
-     * rejected, or were installed but awaiting a required managed node reboot. The
-     * status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+     * <p>The number of patches per node that are specified as <code>Critical</code>
+     * for compliance reporting in the patch baseline aren't installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithCriticalNonCompliantCount(int value) { SetCriticalNonCompliantCount(value); return *this;}
 
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Security</code> in a patch advisory aren't installed. These patches might
-     * be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as <code>Security</code> in
+     * a patch advisory aren't installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required managed
+     * node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetSecurityNonCompliantCount() const{ return m_securityNonCompliantCount; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Security</code> in a patch advisory aren't installed. These patches might
-     * be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as <code>Security</code> in
+     * a patch advisory aren't installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required managed
+     * node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline bool SecurityNonCompliantCountHasBeenSet() const { return m_securityNonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Security</code> in a patch advisory aren't installed. These patches might
-     * be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as <code>Security</code> in
+     * a patch advisory aren't installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required managed
+     * node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetSecurityNonCompliantCount(int value) { m_securityNonCompliantCountHasBeenSet = true; m_securityNonCompliantCount = value; }
 
     /**
-     * <p>The number of managed nodes where patches that are specified as
-     * <code>Security</code> in a patch advisory aren't installed. These patches might
-     * be missing, have failed installation, were rejected, or were installed but
-     * awaiting a required managed node reboot. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as <code>Security</code> in
+     * a patch advisory aren't installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required managed
+     * node reboot. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithSecurityNonCompliantCount(int value) { SetSecurityNonCompliantCount(value); return *this;}
 
 
     /**
-     * <p>The number of managed nodes with patches installed that are specified as
-     * other than <code>Critical</code> or <code>Security</code> but aren't compliant
-     * with the patch baseline. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as other than
+     * <code>Critical</code> or <code>Security</code> but aren't compliant with the
+     * patch baseline. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline int GetOtherNonCompliantCount() const{ return m_otherNonCompliantCount; }
 
     /**
-     * <p>The number of managed nodes with patches installed that are specified as
-     * other than <code>Critical</code> or <code>Security</code> but aren't compliant
-     * with the patch baseline. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as other than
+     * <code>Critical</code> or <code>Security</code> but aren't compliant with the
+     * patch baseline. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline bool OtherNonCompliantCountHasBeenSet() const { return m_otherNonCompliantCountHasBeenSet; }
 
     /**
-     * <p>The number of managed nodes with patches installed that are specified as
-     * other than <code>Critical</code> or <code>Security</code> but aren't compliant
-     * with the patch baseline. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as other than
+     * <code>Critical</code> or <code>Security</code> but aren't compliant with the
+     * patch baseline. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetOtherNonCompliantCount(int value) { m_otherNonCompliantCountHasBeenSet = true; m_otherNonCompliantCount = value; }
 
     /**
-     * <p>The number of managed nodes with patches installed that are specified as
-     * other than <code>Critical</code> or <code>Security</code> but aren't compliant
-     * with the patch baseline. The status of these managed nodes is
+     * <p>The number of patches per node that are specified as other than
+     * <code>Critical</code> or <code>Security</code> but aren't compliant with the
+     * patch baseline. The status of these managed nodes is
      * <code>NON_COMPLIANT</code>.</p>
      */
     inline InstancePatchState& WithOtherNonCompliantCount(int value) { SetOtherNonCompliantCount(value); return *this;}
@@ -961,70 +961,70 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_patchGroup;
-    bool m_patchGroupHasBeenSet;
+    bool m_patchGroupHasBeenSet = false;
 
     Aws::String m_baselineId;
-    bool m_baselineIdHasBeenSet;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_installOverrideList;
-    bool m_installOverrideListHasBeenSet;
+    bool m_installOverrideListHasBeenSet = false;
 
     Aws::String m_ownerInformation;
-    bool m_ownerInformationHasBeenSet;
+    bool m_ownerInformationHasBeenSet = false;
 
     int m_installedCount;
-    bool m_installedCountHasBeenSet;
+    bool m_installedCountHasBeenSet = false;
 
     int m_installedOtherCount;
-    bool m_installedOtherCountHasBeenSet;
+    bool m_installedOtherCountHasBeenSet = false;
 
     int m_installedPendingRebootCount;
-    bool m_installedPendingRebootCountHasBeenSet;
+    bool m_installedPendingRebootCountHasBeenSet = false;
 
     int m_installedRejectedCount;
-    bool m_installedRejectedCountHasBeenSet;
+    bool m_installedRejectedCountHasBeenSet = false;
 
     int m_missingCount;
-    bool m_missingCountHasBeenSet;
+    bool m_missingCountHasBeenSet = false;
 
     int m_failedCount;
-    bool m_failedCountHasBeenSet;
+    bool m_failedCountHasBeenSet = false;
 
     int m_unreportedNotApplicableCount;
-    bool m_unreportedNotApplicableCountHasBeenSet;
+    bool m_unreportedNotApplicableCountHasBeenSet = false;
 
     int m_notApplicableCount;
-    bool m_notApplicableCountHasBeenSet;
+    bool m_notApplicableCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_operationStartTime;
-    bool m_operationStartTimeHasBeenSet;
+    bool m_operationStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_operationEndTime;
-    bool m_operationEndTimeHasBeenSet;
+    bool m_operationEndTimeHasBeenSet = false;
 
     PatchOperationType m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastNoRebootInstallOperationTime;
-    bool m_lastNoRebootInstallOperationTimeHasBeenSet;
+    bool m_lastNoRebootInstallOperationTimeHasBeenSet = false;
 
     RebootOption m_rebootOption;
-    bool m_rebootOptionHasBeenSet;
+    bool m_rebootOptionHasBeenSet = false;
 
     int m_criticalNonCompliantCount;
-    bool m_criticalNonCompliantCountHasBeenSet;
+    bool m_criticalNonCompliantCountHasBeenSet = false;
 
     int m_securityNonCompliantCount;
-    bool m_securityNonCompliantCountHasBeenSet;
+    bool m_securityNonCompliantCountHasBeenSet = false;
 
     int m_otherNonCompliantCount;
-    bool m_otherNonCompliantCountHasBeenSet;
+    bool m_otherNonCompliantCountHasBeenSet = false;
   };
 
 } // namespace Model

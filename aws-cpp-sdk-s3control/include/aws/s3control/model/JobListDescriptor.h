@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobListDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobListDescriptor
+  class JobListDescriptor
   {
   public:
-    JobListDescriptor();
-    JobListDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobListDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobListDescriptor();
+    AWS_S3CONTROL_API JobListDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobListDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -328,28 +328,28 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     OperationName m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationDate;
-    bool m_terminationDateHasBeenSet;
+    bool m_terminationDateHasBeenSet = false;
 
     JobProgressSummary m_progressSummary;
-    bool m_progressSummaryHasBeenSet;
+    bool m_progressSummaryHasBeenSet = false;
   };
 
 } // namespace Model

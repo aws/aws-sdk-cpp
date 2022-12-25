@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantEntitlementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API GrantEntitlementRequest
+  class GrantEntitlementRequest
   {
   public:
-    GrantEntitlementRequest();
-    GrantEntitlementRequest(Aws::Utils::Json::JsonView jsonValue);
-    GrantEntitlementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API GrantEntitlementRequest();
+    AWS_MEDIACONNECT_API GrantEntitlementRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API GrantEntitlementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,22 +305,22 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     EntitlementStatus m_entitlementStatus;
-    bool m_entitlementStatusHasBeenSet;
+    bool m_entitlementStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

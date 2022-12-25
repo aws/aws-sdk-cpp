@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/lex/LexRuntimeServiceClient.h>
-#include <aws/lex/LexRuntimeServiceEndpoint.h>
 #include <aws/lex/LexRuntimeServiceErrorMarshaller.h>
+#include <aws/lex/LexRuntimeServiceEndpointProvider.h>
 #include <aws/lex/model/DeleteSessionRequest.h>
 #include <aws/lex/model/GetSessionRequest.h>
 #include <aws/lex/model/PostContentRequest.h>
@@ -33,74 +34,129 @@ using namespace Aws::LexRuntimeService;
 using namespace Aws::LexRuntimeService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-static const char* SERVICE_NAME = "lex";
-static const char* ALLOCATION_TAG = "LexRuntimeServiceClient";
+const char* LexRuntimeServiceClient::SERVICE_NAME = "lex";
+const char* LexRuntimeServiceClient::ALLOCATION_TAG = "LexRuntimeServiceClient";
 
-
-LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+LexRuntimeServiceClient::LexRuntimeServiceClient(const LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration,
+                                                 std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
-LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials,
+                                                 std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider,
+                                                 const LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                 std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider,
+                                                 const LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* Legacy constructors due deprecation */
+  LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials,
+                                                 const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                 const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
+}
+
+    /* End of legacy constructors due deprecation */
 LexRuntimeServiceClient::~LexRuntimeServiceClient()
 {
 }
 
-void LexRuntimeServiceClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& LexRuntimeServiceClient::accessEndpointProvider()
 {
-  SetServiceClientName("Lex Runtime Service");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + LexRuntimeServiceEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  return m_endpointProvider;
+}
+
+void LexRuntimeServiceClient::init(const LexRuntimeService::LexRuntimeServiceClientConfiguration& config)
+{
+  AWSClient::SetServiceClientName("Lex Runtime Service");
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: BotName, is not set");
@@ -116,15 +172,16 @@ DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionR
     AWS_LOGSTREAM_ERROR("DeleteSession", "Required field: UserId, is not set");
     return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/bot/");
-  uri.AddPathSegment(request.GetBotName());
-  uri.AddPathSegments("/alias/");
-  uri.AddPathSegment(request.GetBotAlias());
-  uri.AddPathSegments("/user/");
-  uri.AddPathSegment(request.GetUserId());
-  uri.AddPathSegments("/session");
-  return DeleteSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bot/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/session");
+  return DeleteSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSessionOutcomeCallable LexRuntimeServiceClient::DeleteSessionCallable(const DeleteSessionRequest& request) const
@@ -137,16 +194,15 @@ DeleteSessionOutcomeCallable LexRuntimeServiceClient::DeleteSessionCallable(cons
 
 void LexRuntimeServiceClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSession(request), context);
+    } );
 }
 
 GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSession", "Required field: BotName, is not set");
@@ -162,15 +218,16 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
     AWS_LOGSTREAM_ERROR("GetSession", "Required field: UserId, is not set");
     return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/bot/");
-  uri.AddPathSegment(request.GetBotName());
-  uri.AddPathSegments("/alias/");
-  uri.AddPathSegment(request.GetBotAlias());
-  uri.AddPathSegments("/user/");
-  uri.AddPathSegment(request.GetUserId());
-  uri.AddPathSegments("/session/");
-  return GetSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bot/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/session/");
+  return GetSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSessionOutcomeCallable LexRuntimeServiceClient::GetSessionCallable(const GetSessionRequest& request) const
@@ -183,16 +240,15 @@ GetSessionOutcomeCallable LexRuntimeServiceClient::GetSessionCallable(const GetS
 
 void LexRuntimeServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSession(request), context);
+    } );
 }
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PostContent", "Required field: BotName, is not set");
@@ -208,15 +264,16 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
     AWS_LOGSTREAM_ERROR("PostContent", "Required field: UserId, is not set");
     return PostContentOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/bot/");
-  uri.AddPathSegment(request.GetBotName());
-  uri.AddPathSegments("/alias/");
-  uri.AddPathSegment(request.GetBotAlias());
-  uri.AddPathSegments("/user/");
-  uri.AddPathSegment(request.GetUserId());
-  uri.AddPathSegments("/content");
-  return PostContentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PostContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bot/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/content");
+  return PostContentOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 PostContentOutcomeCallable LexRuntimeServiceClient::PostContentCallable(const PostContentRequest& request) const
@@ -229,16 +286,15 @@ PostContentOutcomeCallable LexRuntimeServiceClient::PostContentCallable(const Po
 
 void LexRuntimeServiceClient::PostContentAsync(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostContentAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostContent(request), context);
+    } );
 }
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PostText", "Required field: BotName, is not set");
@@ -254,15 +310,16 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
     AWS_LOGSTREAM_ERROR("PostText", "Required field: UserId, is not set");
     return PostTextOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/bot/");
-  uri.AddPathSegment(request.GetBotName());
-  uri.AddPathSegments("/alias/");
-  uri.AddPathSegment(request.GetBotAlias());
-  uri.AddPathSegments("/user/");
-  uri.AddPathSegment(request.GetUserId());
-  uri.AddPathSegments("/text");
-  return PostTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PostText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bot/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/text");
+  return PostTextOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PostTextOutcomeCallable LexRuntimeServiceClient::PostTextCallable(const PostTextRequest& request) const
@@ -275,16 +332,15 @@ PostTextOutcomeCallable LexRuntimeServiceClient::PostTextCallable(const PostText
 
 void LexRuntimeServiceClient::PostTextAsync(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostTextAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PostTextAsyncHelper(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostText(request), context);
+    } );
 }
 
 PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutSession", "Required field: BotName, is not set");
@@ -300,15 +356,16 @@ PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& r
     AWS_LOGSTREAM_ERROR("PutSession", "Required field: UserId, is not set");
     return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/bot/");
-  uri.AddPathSegment(request.GetBotName());
-  uri.AddPathSegments("/alias/");
-  uri.AddPathSegment(request.GetBotAlias());
-  uri.AddPathSegments("/user/");
-  uri.AddPathSegment(request.GetUserId());
-  uri.AddPathSegments("/session");
-  return PutSessionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bot/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/alias/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAlias());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/session");
+  return PutSessionOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 PutSessionOutcomeCallable LexRuntimeServiceClient::PutSessionCallable(const PutSessionRequest& request) const
@@ -321,11 +378,9 @@ PutSessionOutcomeCallable LexRuntimeServiceClient::PutSessionCallable(const PutS
 
 void LexRuntimeServiceClient::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PutSessionAsyncHelper(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutSession(request), context);
+    } );
 }
 

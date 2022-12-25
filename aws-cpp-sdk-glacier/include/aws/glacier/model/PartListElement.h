@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PartListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API PartListElement
+  class PartListElement
   {
   public:
-    PartListElement();
-    PartListElement(Aws::Utils::Json::JsonView jsonValue);
-    PartListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API PartListElement();
+    AWS_GLACIER_API PartListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API PartListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_rangeInBytes;
-    bool m_rangeInBytesHasBeenSet;
+    bool m_rangeInBytesHasBeenSet = false;
 
     Aws::String m_sHA256TreeHash;
-    bool m_sHA256TreeHashHasBeenSet;
+    bool m_sHA256TreeHashHasBeenSet = false;
   };
 
 } // namespace Model

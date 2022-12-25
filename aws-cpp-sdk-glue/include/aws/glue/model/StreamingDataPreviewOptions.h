@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StreamingDataPreviewOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StreamingDataPreviewOptions
+  class StreamingDataPreviewOptions
   {
   public:
-    StreamingDataPreviewOptions();
-    StreamingDataPreviewOptions(Aws::Utils::Json::JsonView jsonValue);
-    StreamingDataPreviewOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StreamingDataPreviewOptions();
+    AWS_GLUE_API StreamingDataPreviewOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StreamingDataPreviewOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     long long m_pollingTime;
-    bool m_pollingTimeHasBeenSet;
+    bool m_pollingTimeHasBeenSet = false;
 
     long long m_recordPollingLimit;
-    bool m_recordPollingLimitHasBeenSet;
+    bool m_recordPollingLimitHasBeenSet = false;
   };
 
 } // namespace Model

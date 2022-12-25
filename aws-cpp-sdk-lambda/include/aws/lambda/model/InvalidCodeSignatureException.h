@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>The code signature failed the integrity check. Lambda always blocks
-   * deployment if the integrity check fails, even if code signing policy is set to
+   * <p>The code signature failed the integrity check. If the integrity check fails,
+   * then Lambda blocks deployment, even if the code signing policy is set to
    * WARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidCodeSignatureException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API InvalidCodeSignatureException
+  class InvalidCodeSignatureException
   {
   public:
-    InvalidCodeSignatureException();
-    InvalidCodeSignatureException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidCodeSignatureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API InvalidCodeSignatureException();
+    AWS_LAMBDA_API InvalidCodeSignatureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API InvalidCodeSignatureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

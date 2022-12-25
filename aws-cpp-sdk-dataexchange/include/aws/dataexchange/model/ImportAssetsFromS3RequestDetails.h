@@ -31,52 +31,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetsFromS3RequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetsFromS3RequestDetails
+  class ImportAssetsFromS3RequestDetails
   {
   public:
-    ImportAssetsFromS3RequestDetails();
-    ImportAssetsFromS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetsFromS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetsFromS3RequestDetails();
+    AWS_DATAEXCHANGE_API ImportAssetsFromS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetsFromS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline const Aws::Vector<AssetSourceEntry>& GetAssetSources() const{ return m_assetSources; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline bool AssetSourcesHasBeenSet() const { return m_assetSourcesHasBeenSet; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline void SetAssetSources(const Aws::Vector<AssetSourceEntry>& value) { m_assetSourcesHasBeenSet = true; m_assetSources = value; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline void SetAssetSources(Aws::Vector<AssetSourceEntry>&& value) { m_assetSourcesHasBeenSet = true; m_assetSources = std::move(value); }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& WithAssetSources(const Aws::Vector<AssetSourceEntry>& value) { SetAssetSources(value); return *this;}
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& WithAssetSources(Aws::Vector<AssetSourceEntry>&& value) { SetAssetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& AddAssetSources(const AssetSourceEntry& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(value); return *this; }
 
     /**
-     * <p>Is a list of S3 bucket and object key pairs.</p>
+     * <p>Is a list of Amazon S3 bucket and object key pairs.</p>
      */
     inline ImportAssetsFromS3RequestDetails& AddAssetSources(AssetSourceEntry&& value) { m_assetSourcesHasBeenSet = true; m_assetSources.push_back(std::move(value)); return *this; }
 
@@ -173,13 +173,13 @@ namespace Model
   private:
 
     Aws::Vector<AssetSourceEntry> m_assetSources;
-    bool m_assetSourcesHasBeenSet;
+    bool m_assetSourcesHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

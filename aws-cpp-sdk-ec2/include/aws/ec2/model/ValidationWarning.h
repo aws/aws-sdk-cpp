@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidationWarning">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ValidationWarning
+  class ValidationWarning
   {
   public:
-    ValidationWarning();
-    ValidationWarning(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ValidationWarning& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ValidationWarning();
+    AWS_EC2_API ValidationWarning(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ValidationWarning& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<ValidationError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

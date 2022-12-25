@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingResources">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingResources
+  class ProcessingResources
   {
   public:
-    ProcessingResources();
-    ProcessingResources(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingResources();
+    AWS_SAGEMAKER_API ProcessingResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     ProcessingClusterConfig m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
   };
 
 } // namespace Model

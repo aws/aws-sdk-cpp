@@ -24,13 +24,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API RegistrySummary
+  class RegistrySummary
   {
   public:
-    RegistrySummary();
-    RegistrySummary(Aws::Utils::Json::JsonView jsonValue);
-    RegistrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API RegistrySummary();
+    AWS_SCHEMAS_API RegistrySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API RegistrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_registryArn;
-    bool m_registryArnHasBeenSet;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_registryName;
-    bool m_registryNameHasBeenSet;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

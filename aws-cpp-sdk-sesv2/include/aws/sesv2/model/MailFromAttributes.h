@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/MailFromAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API MailFromAttributes
+  class MailFromAttributes
   {
   public:
-    MailFromAttributes();
-    MailFromAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MailFromAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API MailFromAttributes();
+    AWS_SESV2_API MailFromAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API MailFromAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,9 +164,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -176,9 +176,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -188,9 +188,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -200,9 +200,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -212,9 +212,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -224,9 +224,9 @@ namespace Model
 
     /**
      * <p>The action to take if the required MX record can't be found when you send an
-     * email. When you set this value to <code>UseDefaultValue</code>, the mail is sent
-     * using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to
-     * <code>RejectMessage</code>, the Amazon SES API v2 returns a
+     * email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is
+     * sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+     * to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a
      * <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the
      * email.</p> <p>These behaviors are taken when the custom MAIL FROM domain
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
@@ -237,13 +237,13 @@ namespace Model
   private:
 
     Aws::String m_mailFromDomain;
-    bool m_mailFromDomainHasBeenSet;
+    bool m_mailFromDomainHasBeenSet = false;
 
     MailFromDomainStatus m_mailFromDomainStatus;
-    bool m_mailFromDomainStatusHasBeenSet;
+    bool m_mailFromDomainStatusHasBeenSet = false;
 
     BehaviorOnMxFailure m_behaviorOnMxFailure;
-    bool m_behaviorOnMxFailureHasBeenSet;
+    bool m_behaviorOnMxFailureHasBeenSet = false;
   };
 
 } // namespace Model

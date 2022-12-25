@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Algorithm">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API Algorithm
+  class Algorithm
   {
   public:
-    Algorithm();
-    Algorithm(Aws::Utils::Json::JsonView jsonValue);
-    Algorithm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API Algorithm();
+    AWS_PERSONALIZE_API Algorithm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Algorithm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -488,34 +488,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
 
     AlgorithmImage m_algorithmImage;
-    bool m_algorithmImageHasBeenSet;
+    bool m_algorithmImageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultHyperParameters;
-    bool m_defaultHyperParametersHasBeenSet;
+    bool m_defaultHyperParametersHasBeenSet = false;
 
     DefaultHyperParameterRanges m_defaultHyperParameterRanges;
-    bool m_defaultHyperParameterRangesHasBeenSet;
+    bool m_defaultHyperParameterRangesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultResourceConfig;
-    bool m_defaultResourceConfigHasBeenSet;
+    bool m_defaultResourceConfigHasBeenSet = false;
 
     Aws::String m_trainingInputMode;
-    bool m_trainingInputModeHasBeenSet;
+    bool m_trainingInputModeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

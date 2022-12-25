@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidatorRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API CreateRequestValidatorRequest : public APIGatewayRequest
+  class CreateRequestValidatorRequest : public APIGatewayRequest
   {
   public:
-    CreateRequestValidatorRequest();
+    AWS_APIGATEWAY_API CreateRequestValidatorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRequestValidator"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_validateRequestBody;
-    bool m_validateRequestBodyHasBeenSet;
+    bool m_validateRequestBodyHasBeenSet = false;
 
     bool m_validateRequestParameters;
-    bool m_validateRequestParametersHasBeenSet;
+    bool m_validateRequestParametersHasBeenSet = false;
   };
 
 } // namespace Model

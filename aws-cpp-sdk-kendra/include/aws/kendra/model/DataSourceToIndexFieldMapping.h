@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceToIndexFieldMapping
+  class DataSourceToIndexFieldMapping
   {
   public:
-    DataSourceToIndexFieldMapping();
-    DataSourceToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceToIndexFieldMapping();
+    AWS_KENDRA_API DataSourceToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_dataSourceFieldName;
-    bool m_dataSourceFieldNameHasBeenSet;
+    bool m_dataSourceFieldNameHasBeenSet = false;
 
     Aws::String m_dateFieldFormat;
-    bool m_dateFieldFormatHasBeenSet;
+    bool m_dateFieldFormatHasBeenSet = false;
 
     Aws::String m_indexFieldName;
-    bool m_indexFieldNameHasBeenSet;
+    bool m_indexFieldNameHasBeenSet = false;
   };
 
 } // namespace Model

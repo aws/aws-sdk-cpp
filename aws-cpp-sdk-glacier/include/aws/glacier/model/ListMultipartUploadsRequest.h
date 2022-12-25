@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploadsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API ListMultipartUploadsRequest : public GlacierRequest
+  class ListMultipartUploadsRequest : public GlacierRequest
   {
   public:
-    ListMultipartUploadsRequest();
+    AWS_GLACIER_API ListMultipartUploadsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMultipartUploads"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLACIER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GLACIER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointOutputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointOutputConfiguration
+  class EndpointOutputConfiguration
   {
   public:
-    EndpointOutputConfiguration();
-    EndpointOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointOutputConfiguration();
+    AWS_SAGEMAKER_API EndpointOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_variantName;
-    bool m_variantNameHasBeenSet;
+    bool m_variantNameHasBeenSet = false;
 
     ProductionVariantInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_initialInstanceCount;
-    bool m_initialInstanceCountHasBeenSet;
+    bool m_initialInstanceCountHasBeenSet = false;
   };
 
 } // namespace Model

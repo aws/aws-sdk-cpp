@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExportToCSVOption">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ExportToCSVOption
+  class ExportToCSVOption
   {
   public:
-    ExportToCSVOption();
-    ExportToCSVOption(Aws::Utils::Json::JsonView jsonValue);
-    ExportToCSVOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ExportToCSVOption();
+    AWS_QUICKSIGHT_API ExportToCSVOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ExportToCSVOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     DashboardBehavior m_availabilityStatus;
-    bool m_availabilityStatusHasBeenSet;
+    bool m_availabilityStatusHasBeenSet = false;
   };
 
 } // namespace Model

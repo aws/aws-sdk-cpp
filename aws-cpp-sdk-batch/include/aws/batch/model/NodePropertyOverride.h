@@ -25,18 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Object representing any node overrides to a job definition that's used in a
-   * <a>SubmitJob</a> API operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The object that represents any node overrides to a job definition that's used
+   * in a <a>SubmitJob</a> API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodePropertyOverride
+  class NodePropertyOverride
   {
   public:
-    NodePropertyOverride();
-    NodePropertyOverride(Aws::Utils::Json::JsonView jsonValue);
-    NodePropertyOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodePropertyOverride();
+    AWS_BATCH_API NodePropertyOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodePropertyOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline NodePropertyOverride& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
-     * <p>The overrides that should be sent to a node range.</p>
+     * <p>The overrides that are sent to a node range.</p>
      */
     inline NodePropertyOverride& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_targetNodes;
-    bool m_targetNodesHasBeenSet;
+    bool m_targetNodesHasBeenSet = false;
 
     ContainerOverrides m_containerOverrides;
-    bool m_containerOverridesHasBeenSet;
+    bool m_containerOverridesHasBeenSet = false;
   };
 
 } // namespace Model

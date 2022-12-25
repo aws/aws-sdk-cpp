@@ -22,12 +22,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DeleteJobResult
+  class DeleteJobResult
   {
   public:
-    DeleteJobResult();
-    DeleteJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteJobResult();
+    AWS_DRS_API DeleteJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

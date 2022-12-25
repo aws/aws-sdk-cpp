@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/MetricDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition
+  class MetricDefinition
   {
   public:
-    MetricDefinition();
-    MetricDefinition(Aws::Utils::Json::JsonView jsonValue);
-    MetricDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition();
+    AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_entityIdKey;
-    bool m_entityIdKeyHasBeenSet;
+    bool m_entityIdKeyHasBeenSet = false;
 
     Aws::String m_eventPattern;
-    bool m_eventPatternHasBeenSet;
+    bool m_eventPatternHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_unitLabel;
-    bool m_unitLabelHasBeenSet;
+    bool m_unitLabelHasBeenSet = false;
 
     Aws::String m_valueKey;
-    bool m_valueKeyHasBeenSet;
+    bool m_valueKeyHasBeenSet = false;
   };
 
 } // namespace Model

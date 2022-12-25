@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ArtifactsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ArtifactsConfiguration
+  class ArtifactsConfiguration
   {
   public:
-    ArtifactsConfiguration();
-    ArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ArtifactsConfiguration();
+    AWS_CHIME_API ArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     AudioArtifactsConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoArtifactsConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     ContentArtifactsConfiguration m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

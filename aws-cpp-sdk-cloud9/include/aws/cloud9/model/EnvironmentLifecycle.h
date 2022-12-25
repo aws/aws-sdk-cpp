@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUD9_API EnvironmentLifecycle
+  class EnvironmentLifecycle
   {
   public:
-    EnvironmentLifecycle();
-    EnvironmentLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUD9_API EnvironmentLifecycle();
+    AWS_CLOUD9_API EnvironmentLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API EnvironmentLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     EnvironmentLifecycleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_failureResource;
-    bool m_failureResourceHasBeenSet;
+    bool m_failureResourceHasBeenSet = false;
   };
 
 } // namespace Model

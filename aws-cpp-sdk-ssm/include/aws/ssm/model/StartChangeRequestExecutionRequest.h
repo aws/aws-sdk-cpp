@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API StartChangeRequestExecutionRequest : public SSMRequest
+  class StartChangeRequestExecutionRequest : public SSMRequest
   {
   public:
-    StartChangeRequestExecutionRequest();
+    AWS_SSM_API StartChangeRequestExecutionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartChangeRequestExecution"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -666,37 +666,37 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_changeRequestName;
-    bool m_changeRequestNameHasBeenSet;
+    bool m_changeRequestNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_autoApprove;
-    bool m_autoApproveHasBeenSet;
+    bool m_autoApproveHasBeenSet = false;
 
     Aws::Vector<Runbook> m_runbooks;
-    bool m_runbooksHasBeenSet;
+    bool m_runbooksHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledEndTime;
-    bool m_scheduledEndTimeHasBeenSet;
+    bool m_scheduledEndTimeHasBeenSet = false;
 
     Aws::String m_changeDetails;
-    bool m_changeDetailsHasBeenSet;
+    bool m_changeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

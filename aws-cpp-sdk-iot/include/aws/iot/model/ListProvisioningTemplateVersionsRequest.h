@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API ListProvisioningTemplateVersionsRequest : public IoTRequest
+  class ListProvisioningTemplateVersionsRequest : public IoTRequest
   {
   public:
-    ListProvisioningTemplateVersionsRequest();
+    AWS_IOT_API ListProvisioningTemplateVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,48 +33,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListProvisioningTemplateVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline ListProvisioningTemplateVersionsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

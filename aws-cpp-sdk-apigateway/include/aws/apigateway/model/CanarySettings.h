@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CanarySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API CanarySettings
+  class CanarySettings
   {
   public:
-    CanarySettings();
-    CanarySettings(Aws::Utils::Json::JsonView jsonValue);
-    CanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API CanarySettings();
+    AWS_APIGATEWAY_API CanarySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API CanarySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,16 +219,16 @@ namespace Model
   private:
 
     double m_percentTraffic;
-    bool m_percentTrafficHasBeenSet;
+    bool m_percentTrafficHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariableOverrides;
-    bool m_stageVariableOverridesHasBeenSet;
+    bool m_stageVariableOverridesHasBeenSet = false;
 
     bool m_useStageCache;
-    bool m_useStageCacheHasBeenSet;
+    bool m_useStageCacheHasBeenSet = false;
   };
 
 } // namespace Model

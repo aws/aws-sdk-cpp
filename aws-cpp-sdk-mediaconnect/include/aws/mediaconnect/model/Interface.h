@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Interface">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Interface
+  class Interface
   {
   public:
-    Interface();
-    Interface(Aws::Utils::Json::JsonView jsonValue);
-    Interface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Interface();
+    AWS_MEDIACONNECT_API Interface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Interface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

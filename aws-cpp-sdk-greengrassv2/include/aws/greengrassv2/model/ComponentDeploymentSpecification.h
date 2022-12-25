@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentDeploymentSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentDeploymentSpecification
+  class ComponentDeploymentSpecification
   {
   public:
-    ComponentDeploymentSpecification();
-    ComponentDeploymentSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ComponentDeploymentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification();
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentDeploymentSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     ComponentConfigurationUpdate m_configurationUpdate;
-    bool m_configurationUpdateHasBeenSet;
+    bool m_configurationUpdateHasBeenSet = false;
 
     ComponentRunWith m_runWith;
-    bool m_runWithHasBeenSet;
+    bool m_runWithHasBeenSet = false;
   };
 
 } // namespace Model

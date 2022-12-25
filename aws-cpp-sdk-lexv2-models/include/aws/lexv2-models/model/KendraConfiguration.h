@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/KendraConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API KendraConfiguration
+  class KendraConfiguration
   {
   public:
-    KendraConfiguration();
-    KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API KendraConfiguration();
+    AWS_LEXMODELSV2_API KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_kendraIndex;
-    bool m_kendraIndexHasBeenSet;
+    bool m_kendraIndexHasBeenSet = false;
 
     bool m_queryFilterStringEnabled;
-    bool m_queryFilterStringEnabledHasBeenSet;
+    bool m_queryFilterStringEnabledHasBeenSet = false;
 
     Aws::String m_queryFilterString;
-    bool m_queryFilterStringHasBeenSet;
+    bool m_queryFilterStringHasBeenSet = false;
   };
 
 } // namespace Model

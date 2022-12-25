@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsRequest : public LakeFormationRequest
+  class GetTemporaryGlueTableCredentialsRequest : public LakeFormationRequest
   {
   public:
-    GetTemporaryGlueTableCredentialsRequest();
+    AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTemporaryGlueTableCredentials"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     AuditContext m_auditContext;
-    bool m_auditContextHasBeenSet;
+    bool m_auditContextHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_supportedPermissionTypes;
-    bool m_supportedPermissionTypesHasBeenSet;
+    bool m_supportedPermissionTypesHasBeenSet = false;
   };
 
 } // namespace Model

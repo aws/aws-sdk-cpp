@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Reservation">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Reservation
+  class Reservation
   {
   public:
-    Reservation();
-    Reservation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Reservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Reservation();
+    AWS_EC2_API Reservation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Reservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::Vector<GroupIdentifier> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_requesterId;
-    bool m_requesterIdHasBeenSet;
+    bool m_requesterIdHasBeenSet = false;
 
     Aws::String m_reservationId;
-    bool m_reservationIdHasBeenSet;
+    bool m_reservationIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

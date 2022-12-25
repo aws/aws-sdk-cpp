@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceLifecycleConfigSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API NotebookInstanceLifecycleConfigSummary
+  class NotebookInstanceLifecycleConfigSummary
   {
   public:
-    NotebookInstanceLifecycleConfigSummary();
-    NotebookInstanceLifecycleConfigSummary(Aws::Utils::Json::JsonView jsonValue);
-    NotebookInstanceLifecycleConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleConfigSummary();
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleConfigSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API NotebookInstanceLifecycleConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigName;
-    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigArn;
-    bool m_notebookInstanceLifecycleConfigArnHasBeenSet;
+    bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

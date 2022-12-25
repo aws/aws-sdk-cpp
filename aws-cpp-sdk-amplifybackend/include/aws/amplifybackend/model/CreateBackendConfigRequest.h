@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API CreateBackendConfigRequest : public AmplifyBackendRequest
+  class CreateBackendConfigRequest : public AmplifyBackendRequest
   {
   public:
-    CreateBackendConfigRequest();
+    AWS_AMPLIFYBACKEND_API CreateBackendConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBackendConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_backendManagerAppId;
-    bool m_backendManagerAppIdHasBeenSet;
+    bool m_backendManagerAppIdHasBeenSet = false;
   };
 
 } // namespace Model

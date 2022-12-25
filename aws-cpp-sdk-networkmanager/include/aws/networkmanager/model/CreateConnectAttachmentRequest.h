@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API CreateConnectAttachmentRequest : public NetworkManagerRequest
+  class CreateConnectAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    CreateConnectAttachmentRequest();
+    AWS_NETWORKMANAGER_API CreateConnectAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConnectAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -274,22 +274,22 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_edgeLocation;
-    bool m_edgeLocationHasBeenSet;
+    bool m_edgeLocationHasBeenSet = false;
 
     Aws::String m_transportAttachmentId;
-    bool m_transportAttachmentIdHasBeenSet;
+    bool m_transportAttachmentIdHasBeenSet = false;
 
     ConnectAttachmentOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

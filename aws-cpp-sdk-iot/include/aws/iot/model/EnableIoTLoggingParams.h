@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableIoTLoggingParams">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API EnableIoTLoggingParams
+  class EnableIoTLoggingParams
   {
   public:
-    EnableIoTLoggingParams();
-    EnableIoTLoggingParams(Aws::Utils::Json::JsonView jsonValue);
-    EnableIoTLoggingParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API EnableIoTLoggingParams();
+    AWS_IOT_API EnableIoTLoggingParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API EnableIoTLoggingParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_roleArnForLogging;
-    bool m_roleArnForLoggingHasBeenSet;
+    bool m_roleArnForLoggingHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

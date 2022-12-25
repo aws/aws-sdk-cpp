@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/FeaturizationMethod">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API FeaturizationMethod
+  class FeaturizationMethod
   {
   public:
-    FeaturizationMethod();
-    FeaturizationMethod(Aws::Utils::Json::JsonView jsonValue);
-    FeaturizationMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API FeaturizationMethod();
+    AWS_FORECASTSERVICE_API FeaturizationMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API FeaturizationMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -476,10 +476,10 @@ namespace Model
   private:
 
     FeaturizationMethodName m_featurizationMethodName;
-    bool m_featurizationMethodNameHasBeenSet;
+    bool m_featurizationMethodNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_featurizationMethodParameters;
-    bool m_featurizationMethodParametersHasBeenSet;
+    bool m_featurizationMethodParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/FindingFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API FindingFilter
+  class FindingFilter
   {
   public:
-    FindingFilter();
-    FindingFilter(Aws::Utils::Json::JsonView jsonValue);
-    FindingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API FindingFilter();
+    AWS_INSPECTOR_API FindingFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API FindingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -502,28 +502,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_agentIds;
-    bool m_agentIdsHasBeenSet;
+    bool m_agentIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ruleNames;
-    bool m_ruleNamesHasBeenSet;
+    bool m_ruleNamesHasBeenSet = false;
 
     Aws::Vector<Severity> m_severities;
-    bool m_severitiesHasBeenSet;
+    bool m_severitiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
-    bool m_rulesPackageArnsHasBeenSet;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<Attribute> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     TimestampRange m_creationTimeRange;
-    bool m_creationTimeRangeHasBeenSet;
+    bool m_creationTimeRangeHasBeenSet = false;
   };
 
 } // namespace Model

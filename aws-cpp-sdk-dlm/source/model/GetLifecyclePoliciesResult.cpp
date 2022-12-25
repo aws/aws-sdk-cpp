@@ -30,7 +30,7 @@ GetLifecyclePoliciesResult& GetLifecyclePoliciesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Policies"))
   {
-    Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
+    Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());

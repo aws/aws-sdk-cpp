@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DateRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API DateRange
+  class DateRange
   {
   public:
-    DateRange();
-    DateRange(Aws::Utils::Json::JsonView jsonValue);
-    DateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API DateRange();
+    AWS_SECURITYHUB_API DateRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API DateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     DateRangeUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceInputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration
+  class InferenceInputConfiguration
   {
   public:
-    InferenceInputConfiguration();
-    InferenceInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InferenceInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     InferenceS3InputConfiguration m_s3InputConfiguration;
-    bool m_s3InputConfigurationHasBeenSet;
+    bool m_s3InputConfigurationHasBeenSet = false;
 
     Aws::String m_inputTimeZoneOffset;
-    bool m_inputTimeZoneOffsetHasBeenSet;
+    bool m_inputTimeZoneOffsetHasBeenSet = false;
 
     InferenceInputNameConfiguration m_inferenceInputNameConfiguration;
-    bool m_inferenceInputNameConfigurationHasBeenSet;
+    bool m_inferenceInputNameConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

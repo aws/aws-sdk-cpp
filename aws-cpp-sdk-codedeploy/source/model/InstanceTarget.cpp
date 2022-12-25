@@ -84,7 +84,7 @@ InstanceTarget& InstanceTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
-    Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
+    Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
     for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
     {
       m_lifecycleEvents.push_back(lifecycleEventsJsonList[lifecycleEventsIndex].AsObject());
@@ -136,7 +136,7 @@ JsonValue InstanceTarget::Jsonize() const
 
   if(m_lifecycleEventsHasBeenSet)
   {
-   Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
+   Aws::Utils::Array<JsonValue> lifecycleEventsJsonList(m_lifecycleEvents.size());
    for(unsigned lifecycleEventsIndex = 0; lifecycleEventsIndex < lifecycleEventsJsonList.GetLength(); ++lifecycleEventsIndex)
    {
      lifecycleEventsJsonList[lifecycleEventsIndex].AsObject(m_lifecycleEvents[lifecycleEventsIndex].Jsonize());

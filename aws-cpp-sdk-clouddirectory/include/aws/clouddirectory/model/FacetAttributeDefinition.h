@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API FacetAttributeDefinition
+  class FacetAttributeDefinition
   {
   public:
-    FacetAttributeDefinition();
-    FacetAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
-    FacetAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API FacetAttributeDefinition();
+    AWS_CLOUDDIRECTORY_API FacetAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API FacetAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     FacetAttributeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TypedAttributeValue m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     bool m_isImmutable;
-    bool m_isImmutableHasBeenSet;
+    bool m_isImmutableHasBeenSet = false;
 
     Aws::Map<Aws::String, Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

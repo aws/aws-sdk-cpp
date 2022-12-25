@@ -8,6 +8,7 @@
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/model/AssetState.h>
 #include <utility>
 
 namespace Aws
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API ListAssetsRequest : public OutpostsRequest
+  class ListAssetsRequest : public OutpostsRequest
   {
   public:
-    ListAssetsRequest();
+    AWS_OUTPOSTS_API ListAssetsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAssets"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_OUTPOSTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -81,74 +82,47 @@ namespace Model
 
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdFilter() const{ return m_hostIdFilter; }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline bool HostIdFilterHasBeenSet() const { return m_hostIdFilterHasBeenSet; }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline void SetHostIdFilter(const Aws::Vector<Aws::String>& value) { m_hostIdFilterHasBeenSet = true; m_hostIdFilter = value; }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline void SetHostIdFilter(Aws::Vector<Aws::String>&& value) { m_hostIdFilterHasBeenSet = true; m_hostIdFilter = std::move(value); }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline ListAssetsRequest& WithHostIdFilter(const Aws::Vector<Aws::String>& value) { SetHostIdFilter(value); return *this;}
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline ListAssetsRequest& WithHostIdFilter(Aws::Vector<Aws::String>&& value) { SetHostIdFilter(std::move(value)); return *this;}
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline ListAssetsRequest& AddHostIdFilter(const Aws::String& value) { m_hostIdFilterHasBeenSet = true; m_hostIdFilter.push_back(value); return *this; }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline ListAssetsRequest& AddHostIdFilter(Aws::String&& value) { m_hostIdFilterHasBeenSet = true; m_hostIdFilter.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> A filter for the host ID of Dedicated Hosts on the Outpost. </p> <p>Filter
-     * values are case sensitive. If you specify multiple values for a filter, the
-     * values are joined with an <code>OR</code>, and the request returns all results
-     * that match any of the specified values.</p>
+     * <p>Filters the results by the host ID of a Dedicated Host.</p>
      */
     inline ListAssetsRequest& AddHostIdFilter(const char* value) { m_hostIdFilterHasBeenSet = true; m_hostIdFilter.push_back(value); return *this; }
 
@@ -190,19 +164,63 @@ namespace Model
     
     inline ListAssetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline const Aws::Vector<AssetState>& GetStatusFilter() const{ return m_statusFilter; }
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline void SetStatusFilter(const Aws::Vector<AssetState>& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline void SetStatusFilter(Aws::Vector<AssetState>&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline ListAssetsRequest& WithStatusFilter(const Aws::Vector<AssetState>& value) { SetStatusFilter(value); return *this;}
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline ListAssetsRequest& WithStatusFilter(Aws::Vector<AssetState>&& value) { SetStatusFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline ListAssetsRequest& AddStatusFilter(const AssetState& value) { m_statusFilterHasBeenSet = true; m_statusFilter.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the results by state.</p>
+     */
+    inline ListAssetsRequest& AddStatusFilter(AssetState&& value) { m_statusFilterHasBeenSet = true; m_statusFilter.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_outpostIdentifier;
-    bool m_outpostIdentifierHasBeenSet;
+    bool m_outpostIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIdFilter;
-    bool m_hostIdFilterHasBeenSet;
+    bool m_hostIdFilterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<AssetState> m_statusFilter;
+    bool m_statusFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/SnapshotSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API SnapshotSummary
+  class SnapshotSummary
   {
   public:
-    SnapshotSummary();
-    SnapshotSummary(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API SnapshotSummary();
+    AWS_GAMESPARKS_API SnapshotSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API SnapshotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
   };
 
 } // namespace Model

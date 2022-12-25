@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/Locale">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API Locale
+  class Locale
   {
   public:
-    Locale();
-    Locale(Aws::Utils::Json::JsonView jsonValue);
-    Locale& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API Locale();
+    AWS_MTURK_API Locale(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Locale& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_subdivision;
-    bool m_subdivisionHasBeenSet;
+    bool m_subdivisionHasBeenSet = false;
   };
 
 } // namespace Model

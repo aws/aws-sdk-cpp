@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TooManyRequestsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API TooManyRequestsException
+  class TooManyRequestsException
   {
   public:
-    TooManyRequestsException();
-    TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
-    TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API TooManyRequestsException();
+    AWS_SIGNER_API TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

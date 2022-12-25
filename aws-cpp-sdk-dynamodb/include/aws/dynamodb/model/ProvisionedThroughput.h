@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ProvisionedThroughput
+  class ProvisionedThroughput
   {
   public:
-    ProvisionedThroughput();
-    ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ProvisionedThroughput();
+    AWS_DYNAMODB_API ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

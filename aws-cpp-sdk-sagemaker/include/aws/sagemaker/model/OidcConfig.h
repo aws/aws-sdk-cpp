@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OidcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OidcConfig
+  class OidcConfig
   {
   public:
-    OidcConfig();
-    OidcConfig(Aws::Utils::Json::JsonView jsonValue);
-    OidcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OidcConfig();
+    AWS_SAGEMAKER_API OidcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OidcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -392,28 +392,28 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_authorizationEndpoint;
-    bool m_authorizationEndpointHasBeenSet;
+    bool m_authorizationEndpointHasBeenSet = false;
 
     Aws::String m_tokenEndpoint;
-    bool m_tokenEndpointHasBeenSet;
+    bool m_tokenEndpointHasBeenSet = false;
 
     Aws::String m_userInfoEndpoint;
-    bool m_userInfoEndpointHasBeenSet;
+    bool m_userInfoEndpointHasBeenSet = false;
 
     Aws::String m_logoutEndpoint;
-    bool m_logoutEndpointHasBeenSet;
+    bool m_logoutEndpointHasBeenSet = false;
 
     Aws::String m_jwksUri;
-    bool m_jwksUriHasBeenSet;
+    bool m_jwksUriHasBeenSet = false;
   };
 
 } // namespace Model

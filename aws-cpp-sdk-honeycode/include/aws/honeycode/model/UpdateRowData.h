@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/UpdateRowData">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API UpdateRowData
+  class UpdateRowData
   {
   public:
-    UpdateRowData();
-    UpdateRowData(Aws::Utils::Json::JsonView jsonValue);
-    UpdateRowData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API UpdateRowData();
+    AWS_HONEYCODE_API UpdateRowData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API UpdateRowData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,10 +168,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Map<Aws::String, CellInput> m_cellsToUpdate;
-    bool m_cellsToUpdateHasBeenSet;
+    bool m_cellsToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

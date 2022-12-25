@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUserRequestItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API UpdateUserRequestItem
+  class UpdateUserRequestItem
   {
   public:
-    UpdateUserRequestItem();
-    UpdateUserRequestItem(Aws::Utils::Json::JsonView jsonValue);
-    UpdateUserRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API UpdateUserRequestItem();
+    AWS_CHIME_API UpdateUserRequestItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API UpdateUserRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     License m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
 
     AlexaForBusinessMetadata m_alexaForBusinessMetadata;
-    bool m_alexaForBusinessMetadataHasBeenSet;
+    bool m_alexaForBusinessMetadataHasBeenSet = false;
   };
 
 } // namespace Model

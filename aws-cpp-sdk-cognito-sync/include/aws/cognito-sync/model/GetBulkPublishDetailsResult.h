@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/GetBulkPublishDetailsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API GetBulkPublishDetailsResult
+  class GetBulkPublishDetailsResult
   {
   public:
-    GetBulkPublishDetailsResult();
-    GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBulkPublishDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API GetBulkPublishDetailsResult();
+    AWS_COGNITOSYNC_API GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API GetBulkPublishDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

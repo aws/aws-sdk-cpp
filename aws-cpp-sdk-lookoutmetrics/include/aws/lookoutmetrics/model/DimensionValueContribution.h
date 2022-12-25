@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DimensionValueContribution">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DimensionValueContribution
+  class DimensionValueContribution
   {
   public:
-    DimensionValueContribution();
-    DimensionValueContribution(Aws::Utils::Json::JsonView jsonValue);
-    DimensionValueContribution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DimensionValueContribution();
+    AWS_LOOKOUTMETRICS_API DimensionValueContribution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DimensionValueContribution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_dimensionValue;
-    bool m_dimensionValueHasBeenSet;
+    bool m_dimensionValueHasBeenSet = false;
 
     double m_contributionScore;
-    bool m_contributionScoreHasBeenSet;
+    bool m_contributionScoreHasBeenSet = false;
   };
 
 } // namespace Model

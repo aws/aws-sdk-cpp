@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
+#include <aws/wafv2/model/RuleActionOverride.h>
 #include <utility>
 
 namespace Aws
@@ -36,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleGroupReferenceStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RuleGroupReferenceStatement
+  class RuleGroupReferenceStatement
   {
   public:
-    RuleGroupReferenceStatement();
-    RuleGroupReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RuleGroupReferenceStatement();
+    AWS_WAFV2_API RuleGroupReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RuleGroupReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,84 +88,168 @@ namespace Model
 
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const{ return m_ruleActionOverrides; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline bool RuleActionOverridesHasBeenSet() const { return m_ruleActionOverridesHasBeenSet; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline void SetRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = value; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline void SetRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::move(value); }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline RuleGroupReferenceStatement& WithRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { SetRuleActionOverrides(value); return *this;}
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline RuleGroupReferenceStatement& WithRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { SetRuleActionOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline RuleGroupReferenceStatement& AddRuleActionOverrides(const RuleActionOverride& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline RuleGroupReferenceStatement& AddRuleActionOverrides(RuleActionOverride&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
+
+    Aws::Vector<RuleActionOverride> m_ruleActionOverrides;
+    bool m_ruleActionOverridesHasBeenSet = false;
   };
 
 } // namespace Model

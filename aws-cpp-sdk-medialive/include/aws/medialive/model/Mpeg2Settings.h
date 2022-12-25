@@ -16,6 +16,7 @@
 #include <aws/medialive/model/Mpeg2ScanType.h>
 #include <aws/medialive/model/Mpeg2SubGopLength.h>
 #include <aws/medialive/model/Mpeg2TimecodeInsertionBehavior.h>
+#include <aws/medialive/model/TimecodeBurninSettings.h>
 #include <utility>
 
 namespace Aws
@@ -38,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mpeg2Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Mpeg2Settings
+  class Mpeg2Settings
   {
   public:
-    Mpeg2Settings();
-    Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Mpeg2Settings();
+    AWS_MEDIALIVE_API Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -796,55 +797,89 @@ GOP_TIMECODE: Include timecode
      */
     inline Mpeg2Settings& WithTimecodeInsertion(Mpeg2TimecodeInsertionBehavior&& value) { SetTimecodeInsertion(std::move(value)); return *this;}
 
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline Mpeg2Settings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline Mpeg2Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+
   private:
 
     Mpeg2AdaptiveQuantization m_adaptiveQuantization;
-    bool m_adaptiveQuantizationHasBeenSet;
+    bool m_adaptiveQuantizationHasBeenSet = false;
 
     AfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     Mpeg2ColorMetadata m_colorMetadata;
-    bool m_colorMetadataHasBeenSet;
+    bool m_colorMetadataHasBeenSet = false;
 
     Mpeg2ColorSpace m_colorSpace;
-    bool m_colorSpaceHasBeenSet;
+    bool m_colorSpaceHasBeenSet = false;
 
     Mpeg2DisplayRatio m_displayAspectRatio;
-    bool m_displayAspectRatioHasBeenSet;
+    bool m_displayAspectRatioHasBeenSet = false;
 
     Mpeg2FilterSettings m_filterSettings;
-    bool m_filterSettingsHasBeenSet;
+    bool m_filterSettingsHasBeenSet = false;
 
     FixedAfd m_fixedAfd;
-    bool m_fixedAfdHasBeenSet;
+    bool m_fixedAfdHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_gopClosedCadence;
-    bool m_gopClosedCadenceHasBeenSet;
+    bool m_gopClosedCadenceHasBeenSet = false;
 
     int m_gopNumBFrames;
-    bool m_gopNumBFramesHasBeenSet;
+    bool m_gopNumBFramesHasBeenSet = false;
 
     double m_gopSize;
-    bool m_gopSizeHasBeenSet;
+    bool m_gopSizeHasBeenSet = false;
 
     Mpeg2GopSizeUnits m_gopSizeUnits;
-    bool m_gopSizeUnitsHasBeenSet;
+    bool m_gopSizeUnitsHasBeenSet = false;
 
     Mpeg2ScanType m_scanType;
-    bool m_scanTypeHasBeenSet;
+    bool m_scanTypeHasBeenSet = false;
 
     Mpeg2SubGopLength m_subgopLength;
-    bool m_subgopLengthHasBeenSet;
+    bool m_subgopLengthHasBeenSet = false;
 
     Mpeg2TimecodeInsertionBehavior m_timecodeInsertion;
-    bool m_timecodeInsertionHasBeenSet;
+    bool m_timecodeInsertionHasBeenSet = false;
+
+    TimecodeBurninSettings m_timecodeBurninSettings;
+    bool m_timecodeBurninSettingsHasBeenSet = false;
   };
 
 } // namespace Model

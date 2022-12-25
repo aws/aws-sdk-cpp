@@ -25,26 +25,26 @@ namespace Model
 {
 
   /**
-   * <p>Launch profile membership enables your studio admins to delegate launch
-   * profile access to other studio users in the Nimble Studio portal without needing
-   * to write or maintain complex IAM policies. A launch profile member is a user
-   * association from your studio identity source who is granted permissions to a
-   * launch profile.</p> <p>A launch profile member (type USER) provides the
-   * following permissions to that launch profile:</p> <ul> <li>
-   * <p>GetLaunchProfile</p> </li> <li> <p>GetLaunchProfileInitialization</p> </li>
-   * <li> <p>GetLaunchProfileMembers</p> </li> <li> <p>GetLaunchProfileMember</p>
-   * </li> <li> <p>CreateStreamingSession</p> </li> <li>
-   * <p>GetLaunchProfileDetails</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>Studio admins can use launch profile membership to delegate launch profile
+   * access to studio users in the Nimble Studio portal without writing or
+   * maintaining complex IAM policies. A launch profile member is a user association
+   * from your studio identity source who is granted permissions to a launch
+   * profile.</p> <p>A launch profile member (type USER) provides the following
+   * permissions to that launch profile:</p> <ul> <li> <p>GetLaunchProfile</p> </li>
+   * <li> <p>GetLaunchProfileInitialization</p> </li> <li>
+   * <p>GetLaunchProfileMembers</p> </li> <li> <p>GetLaunchProfileMember</p> </li>
+   * <li> <p>CreateStreamingSession</p> </li> <li> <p>GetLaunchProfileDetails</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfileMembership
+  class LaunchProfileMembership
   {
   public:
-    LaunchProfileMembership();
-    LaunchProfileMembership(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfileMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfileMembership();
+    AWS_NIMBLESTUDIO_API LaunchProfileMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfileMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     LaunchProfilePersona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_sid;
-    bool m_sidHasBeenSet;
+    bool m_sidHasBeenSet = false;
   };
 
 } // namespace Model

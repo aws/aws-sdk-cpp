@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UploadConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API UploadConfiguration
+  class UploadConfiguration
   {
   public:
-    UploadConfiguration();
-    UploadConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UploadConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API UploadConfiguration();
+    AWS_ROBOMAKER_API UploadConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API UploadConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -274,13 +274,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     UploadBehavior m_uploadBehavior;
-    bool m_uploadBehaviorHasBeenSet;
+    bool m_uploadBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

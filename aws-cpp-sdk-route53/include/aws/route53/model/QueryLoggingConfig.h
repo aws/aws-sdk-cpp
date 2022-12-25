@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/QueryLoggingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API QueryLoggingConfig
+  class QueryLoggingConfig
   {
   public:
-    QueryLoggingConfig();
-    QueryLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    QueryLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API QueryLoggingConfig();
+    AWS_ROUTE53_API QueryLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API QueryLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

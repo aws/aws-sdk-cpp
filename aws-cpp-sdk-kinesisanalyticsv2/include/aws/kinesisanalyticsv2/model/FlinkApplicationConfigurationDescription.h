@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription
+  class FlinkApplicationConfigurationDescription
   {
   public:
-    FlinkApplicationConfigurationDescription();
-    FlinkApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    FlinkApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,16 +251,16 @@ namespace Model
   private:
 
     CheckpointConfigurationDescription m_checkpointConfigurationDescription;
-    bool m_checkpointConfigurationDescriptionHasBeenSet;
+    bool m_checkpointConfigurationDescriptionHasBeenSet = false;
 
     MonitoringConfigurationDescription m_monitoringConfigurationDescription;
-    bool m_monitoringConfigurationDescriptionHasBeenSet;
+    bool m_monitoringConfigurationDescriptionHasBeenSet = false;
 
     ParallelismConfigurationDescription m_parallelismConfigurationDescription;
-    bool m_parallelismConfigurationDescriptionHasBeenSet;
+    bool m_parallelismConfigurationDescriptionHasBeenSet = false;
 
     Aws::String m_jobPlanDescription;
-    bool m_jobPlanDescriptionHasBeenSet;
+    bool m_jobPlanDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

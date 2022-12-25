@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/InstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API InstanceSummary
+  class InstanceSummary
   {
   public:
-    InstanceSummary();
-    InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API InstanceSummary();
+    AWS_CONNECT_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,31 +341,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     DirectoryType m_identityManagementType;
-    bool m_identityManagementTypeHasBeenSet;
+    bool m_identityManagementTypeHasBeenSet = false;
 
     Aws::String m_instanceAlias;
-    bool m_instanceAliasHasBeenSet;
+    bool m_instanceAliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     InstanceStatus m_instanceStatus;
-    bool m_instanceStatusHasBeenSet;
+    bool m_instanceStatusHasBeenSet = false;
 
     bool m_inboundCallsEnabled;
-    bool m_inboundCallsEnabledHasBeenSet;
+    bool m_inboundCallsEnabledHasBeenSet = false;
 
     bool m_outboundCallsEnabled;
-    bool m_outboundCallsEnabledHasBeenSet;
+    bool m_outboundCallsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

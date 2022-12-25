@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAF_API ListActivatedRulesInRuleGroupRequest : public WAFRequest
+  class ListActivatedRulesInRuleGroupRequest : public WAFRequest
   {
   public:
-    ListActivatedRulesInRuleGroupRequest();
+    AWS_WAF_API ListActivatedRulesInRuleGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListActivatedRulesInRuleGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

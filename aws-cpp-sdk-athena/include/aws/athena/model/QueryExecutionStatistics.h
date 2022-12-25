@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/athena/model/ResultReuseInformation.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecutionStatistics
+  class QueryExecutionStatistics
   {
   public:
-    QueryExecutionStatistics();
-    QueryExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecutionStatistics();
+    AWS_ATHENA_API QueryExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -293,28 +294,68 @@ namespace Model
      */
     inline QueryExecutionStatistics& WithServiceProcessingTimeInMillis(long long value) { SetServiceProcessingTimeInMillis(value); return *this;}
 
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline const ResultReuseInformation& GetResultReuseInformation() const{ return m_resultReuseInformation; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline bool ResultReuseInformationHasBeenSet() const { return m_resultReuseInformationHasBeenSet; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline void SetResultReuseInformation(const ResultReuseInformation& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = value; }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline void SetResultReuseInformation(ResultReuseInformation&& value) { m_resultReuseInformationHasBeenSet = true; m_resultReuseInformation = std::move(value); }
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline QueryExecutionStatistics& WithResultReuseInformation(const ResultReuseInformation& value) { SetResultReuseInformation(value); return *this;}
+
+    /**
+     * <p>Contains information about whether previous query results were reused for the
+     * query.</p>
+     */
+    inline QueryExecutionStatistics& WithResultReuseInformation(ResultReuseInformation&& value) { SetResultReuseInformation(std::move(value)); return *this;}
+
   private:
 
     long long m_engineExecutionTimeInMillis;
-    bool m_engineExecutionTimeInMillisHasBeenSet;
+    bool m_engineExecutionTimeInMillisHasBeenSet = false;
 
     long long m_dataScannedInBytes;
-    bool m_dataScannedInBytesHasBeenSet;
+    bool m_dataScannedInBytesHasBeenSet = false;
 
     Aws::String m_dataManifestLocation;
-    bool m_dataManifestLocationHasBeenSet;
+    bool m_dataManifestLocationHasBeenSet = false;
 
     long long m_totalExecutionTimeInMillis;
-    bool m_totalExecutionTimeInMillisHasBeenSet;
+    bool m_totalExecutionTimeInMillisHasBeenSet = false;
 
     long long m_queryQueueTimeInMillis;
-    bool m_queryQueueTimeInMillisHasBeenSet;
+    bool m_queryQueueTimeInMillisHasBeenSet = false;
 
     long long m_queryPlanningTimeInMillis;
-    bool m_queryPlanningTimeInMillisHasBeenSet;
+    bool m_queryPlanningTimeInMillisHasBeenSet = false;
 
     long long m_serviceProcessingTimeInMillis;
-    bool m_serviceProcessingTimeInMillisHasBeenSet;
+    bool m_serviceProcessingTimeInMillisHasBeenSet = false;
+
+    ResultReuseInformation m_resultReuseInformation;
+    bool m_resultReuseInformationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StateReason">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API StateReason
+  class StateReason
   {
   public:
-    StateReason();
-    StateReason(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StateReason& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StateReason();
+    AWS_EC2_API StateReason(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StateReason& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -315,10 +315,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

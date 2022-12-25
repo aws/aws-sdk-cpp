@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecution
+  class WorkflowExecution
   {
   public:
-    WorkflowExecution();
-    WorkflowExecution(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecution();
+    AWS_SWF_API WorkflowExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagsModel">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TagsModel
+  class TagsModel
   {
   public:
-    TagsModel();
-    TagsModel(Aws::Utils::Json::JsonView jsonValue);
-    TagsModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TagsModel();
+    AWS_PINPOINT_API TagsModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TagsModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,7 +159,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

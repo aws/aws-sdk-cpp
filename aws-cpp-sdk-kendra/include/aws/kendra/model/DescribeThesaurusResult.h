@@ -27,12 +27,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeThesaurusResult
+  class DescribeThesaurusResult
   {
   public:
-    DescribeThesaurusResult();
-    DescribeThesaurusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeThesaurusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeThesaurusResult();
+    AWS_KENDRA_API DescribeThesaurusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeThesaurusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexId = value; }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexId = std::move(value); }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline void SetIndexId(const char* value) { m_indexId.assign(value); }
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline DescribeThesaurusResult& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline DescribeThesaurusResult& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index associated with the thesaurus to describe.</p>
+     * <p>The identifier of the index for the thesaurus.</p>
      */
     inline DescribeThesaurusResult& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/SparkSubmit">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API SparkSubmit
+  class SparkSubmit
   {
   public:
-    SparkSubmit();
-    SparkSubmit(Aws::Utils::Json::JsonView jsonValue);
-    SparkSubmit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API SparkSubmit();
+    AWS_EMRSERVERLESS_API SparkSubmit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API SparkSubmit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_entryPoint;
-    bool m_entryPointHasBeenSet;
+    bool m_entryPointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entryPointArguments;
-    bool m_entryPointArgumentsHasBeenSet;
+    bool m_entryPointArgumentsHasBeenSet = false;
 
     Aws::String m_sparkSubmitParameters;
-    bool m_sparkSubmitParametersHasBeenSet;
+    bool m_sparkSubmitParametersHasBeenSet = false;
   };
 
 } // namespace Model

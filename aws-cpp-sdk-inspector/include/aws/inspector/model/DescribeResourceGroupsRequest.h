@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR_API DescribeResourceGroupsRequest : public InspectorRequest
+  class DescribeResourceGroupsRequest : public InspectorRequest
   {
   public:
-    DescribeResourceGroupsRequest();
+    AWS_INSPECTOR_API DescribeResourceGroupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeResourceGroups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceGroupArns;
-    bool m_resourceGroupArnsHasBeenSet;
+    bool m_resourceGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

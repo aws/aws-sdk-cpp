@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TextDocumentStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API TextDocumentStatistics
+  class TextDocumentStatistics
   {
   public:
-    TextDocumentStatistics();
-    TextDocumentStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TextDocumentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TextDocumentStatistics();
+    AWS_KENDRA_API TextDocumentStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TextDocumentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_indexedTextDocumentsCount;
-    bool m_indexedTextDocumentsCountHasBeenSet;
+    bool m_indexedTextDocumentsCountHasBeenSet = false;
 
     long long m_indexedTextBytes;
-    bool m_indexedTextBytesHasBeenSet;
+    bool m_indexedTextBytesHasBeenSet = false;
   };
 
 } // namespace Model

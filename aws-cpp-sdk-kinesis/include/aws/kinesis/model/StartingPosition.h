@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartingPosition">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API StartingPosition
+  class StartingPosition
   {
   public:
-    StartingPosition();
-    StartingPosition(Aws::Utils::Json::JsonView jsonValue);
-    StartingPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API StartingPosition();
+    AWS_KINESIS_API StartingPosition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API StartingPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,13 +263,13 @@ namespace Model
   private:
 
     ShardIteratorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

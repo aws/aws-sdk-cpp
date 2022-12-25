@@ -8,6 +8,8 @@
 #include <aws/lexv2-runtime/model/Value.h>
 #include <aws/lexv2-runtime/model/Shape.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Slot">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Slot
+  class Slot
   {
   public:
-    Slot();
-    Slot(Aws::Utils::Json::JsonView jsonValue);
-    Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Slot();
+    AWS_LEXRUNTIMEV2_API Slot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,16 +178,80 @@ namespace Model
      */
     inline Slot& AddValues(Slot&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline const Aws::Map<Aws::String, Slot>& GetSubSlots() const{ return m_subSlots; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline bool SubSlotsHasBeenSet() const { return m_subSlotsHasBeenSet; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline void SetSubSlots(const Aws::Map<Aws::String, Slot>& value) { m_subSlotsHasBeenSet = true; m_subSlots = value; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline void SetSubSlots(Aws::Map<Aws::String, Slot>&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::move(value); }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& WithSubSlots(const Aws::Map<Aws::String, Slot>& value) { SetSubSlots(value); return *this;}
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& WithSubSlots(Aws::Map<Aws::String, Slot>&& value) { SetSubSlots(std::move(value)); return *this;}
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(const Aws::String& key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(Aws::String&& key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(const Aws::String& key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(Aws::String&& key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(const char* key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The constituent sub slots of a composite slot.</p>
+     */
+    inline Slot& AddSubSlots(const char* key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
+
   private:
 
     Value m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Shape m_shape;
-    bool m_shapeHasBeenSet;
+    bool m_shapeHasBeenSet = false;
 
     Aws::Vector<Slot> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Slot> m_subSlots;
+    bool m_subSlotsHasBeenSet = false;
   };
 
 } // namespace Model

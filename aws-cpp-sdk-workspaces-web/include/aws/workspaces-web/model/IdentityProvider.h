@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/IdentityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API IdentityProvider
+  class IdentityProvider
   {
   public:
-    IdentityProvider();
-    IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API IdentityProvider();
+    AWS_WORKSPACESWEB_API IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -519,16 +519,16 @@ namespace Model
   private:
 
     Aws::String m_identityProviderArn;
-    bool m_identityProviderArnHasBeenSet;
+    bool m_identityProviderArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_identityProviderDetails;
-    bool m_identityProviderDetailsHasBeenSet;
+    bool m_identityProviderDetailsHasBeenSet = false;
 
     Aws::String m_identityProviderName;
-    bool m_identityProviderNameHasBeenSet;
+    bool m_identityProviderNameHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -48,6 +48,7 @@ enum class ConfigServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFORMANCE_PACK_TEMPLATE_VALIDATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IDEMPOTENT_PARAMETER_MISMATCH,
   INSUFFICIENT_DELIVERY_POLICY,
   INSUFFICIENT_PERMISSIONS,
   INVALID_CONFIGURATION_RECORDER_NAME,

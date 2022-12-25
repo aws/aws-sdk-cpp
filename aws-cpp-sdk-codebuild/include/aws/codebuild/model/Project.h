@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Project">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API Project
+  class Project
   {
   public:
-    Project();
-    Project(Aws::Utils::Json::JsonView jsonValue);
-    Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Project();
+    AWS_CODEBUILD_API Project(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1338,88 +1338,88 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ProjectSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<ProjectSource> m_secondarySources;
-    bool m_secondarySourcesHasBeenSet;
+    bool m_secondarySourcesHasBeenSet = false;
 
     Aws::String m_sourceVersion;
-    bool m_sourceVersionHasBeenSet;
+    bool m_sourceVersionHasBeenSet = false;
 
     Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-    bool m_secondarySourceVersionsHasBeenSet;
+    bool m_secondarySourceVersionsHasBeenSet = false;
 
     ProjectArtifacts m_artifacts;
-    bool m_artifactsHasBeenSet;
+    bool m_artifactsHasBeenSet = false;
 
     Aws::Vector<ProjectArtifacts> m_secondaryArtifacts;
-    bool m_secondaryArtifactsHasBeenSet;
+    bool m_secondaryArtifactsHasBeenSet = false;
 
     ProjectCache m_cache;
-    bool m_cacheHasBeenSet;
+    bool m_cacheHasBeenSet = false;
 
     ProjectEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     int m_timeoutInMinutes;
-    bool m_timeoutInMinutesHasBeenSet;
+    bool m_timeoutInMinutesHasBeenSet = false;
 
     int m_queuedTimeoutInMinutes;
-    bool m_queuedTimeoutInMinutesHasBeenSet;
+    bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Webhook m_webhook;
-    bool m_webhookHasBeenSet;
+    bool m_webhookHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     ProjectBadge m_badge;
-    bool m_badgeHasBeenSet;
+    bool m_badgeHasBeenSet = false;
 
     LogsConfig m_logsConfig;
-    bool m_logsConfigHasBeenSet;
+    bool m_logsConfigHasBeenSet = false;
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-    bool m_fileSystemLocationsHasBeenSet;
+    bool m_fileSystemLocationsHasBeenSet = false;
 
     ProjectBuildBatchConfig m_buildBatchConfig;
-    bool m_buildBatchConfigHasBeenSet;
+    bool m_buildBatchConfigHasBeenSet = false;
 
     int m_concurrentBuildLimit;
-    bool m_concurrentBuildLimitHasBeenSet;
+    bool m_concurrentBuildLimitHasBeenSet = false;
 
     ProjectVisibilityType m_projectVisibility;
-    bool m_projectVisibilityHasBeenSet;
+    bool m_projectVisibilityHasBeenSet = false;
 
     Aws::String m_publicProjectAlias;
-    bool m_publicProjectAliasHasBeenSet;
+    bool m_publicProjectAliasHasBeenSet = false;
 
     Aws::String m_resourceAccessRole;
-    bool m_resourceAccessRoleHasBeenSet;
+    bool m_resourceAccessRoleHasBeenSet = false;
   };
 
 } // namespace Model

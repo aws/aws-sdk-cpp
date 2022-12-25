@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESIS_API ListStreamConsumersRequest : public KinesisRequest
+  class ListStreamConsumersRequest : public KinesisRequest
   {
   public:
-    ListStreamConsumersRequest();
+    AWS_KINESIS_API ListStreamConsumersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListStreamConsumers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESIS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The ARN of the Kinesis data stream for which you want to list the registered
@@ -387,16 +391,16 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
-    bool m_streamCreationTimestampHasBeenSet;
+    bool m_streamCreationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

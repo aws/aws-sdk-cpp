@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/CertificateOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API CertificateOptions
+  class CertificateOptions
   {
   public:
-    CertificateOptions();
-    CertificateOptions(Aws::Utils::Json::JsonView jsonValue);
-    CertificateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API CertificateOptions();
+    AWS_ACM_API CertificateOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API CertificateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference;
-    bool m_certificateTransparencyLoggingPreferenceHasBeenSet;
+    bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

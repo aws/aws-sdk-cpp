@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Hive">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API Hive
+  class Hive
   {
   public:
-    Hive();
-    Hive(Aws::Utils::Json::JsonView jsonValue);
-    Hive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API Hive();
+    AWS_EMRSERVERLESS_API Hive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Hive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_initQueryFile;
-    bool m_initQueryFileHasBeenSet;
+    bool m_initQueryFileHasBeenSet = false;
 
     Aws::String m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

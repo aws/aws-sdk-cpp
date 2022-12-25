@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotPriority">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotPriority
+  class SlotPriority
   {
   public:
-    SlotPriority();
-    SlotPriority(Aws::Utils::Json::JsonView jsonValue);
-    SlotPriority& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotPriority();
+    AWS_LEXMODELSV2_API SlotPriority(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotPriority& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_slotId;
-    bool m_slotIdHasBeenSet;
+    bool m_slotIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -78,7 +78,7 @@ SelfManagedActiveDirectoryConfiguration& SelfManagedActiveDirectoryConfiguration
 
   if(jsonValue.ValueExists("DnsIps"))
   {
-    Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
+    Aws::Utils::Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
     for(unsigned dnsIpsIndex = 0; dnsIpsIndex < dnsIpsJsonList.GetLength(); ++dnsIpsIndex)
     {
       m_dnsIps.push_back(dnsIpsJsonList[dnsIpsIndex].AsString());
@@ -125,7 +125,7 @@ JsonValue SelfManagedActiveDirectoryConfiguration::Jsonize() const
 
   if(m_dnsIpsHasBeenSet)
   {
-   Array<JsonValue> dnsIpsJsonList(m_dnsIps.size());
+   Aws::Utils::Array<JsonValue> dnsIpsJsonList(m_dnsIps.size());
    for(unsigned dnsIpsIndex = 0; dnsIpsIndex < dnsIpsJsonList.GetLength(); ++dnsIpsIndex)
    {
      dnsIpsJsonList[dnsIpsIndex].AsString(m_dnsIps[dnsIpsIndex]);

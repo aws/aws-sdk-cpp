@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ConditionParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ConditionParameter
+  class ConditionParameter
   {
   public:
-    ConditionParameter();
-    ConditionParameter(Aws::Utils::Json::JsonView jsonValue);
-    ConditionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ConditionParameter();
+    AWS_BACKUP_API ConditionParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ConditionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_conditionKey;
-    bool m_conditionKeyHasBeenSet;
+    bool m_conditionKeyHasBeenSet = false;
 
     Aws::String m_conditionValue;
-    bool m_conditionValueHasBeenSet;
+    bool m_conditionValueHasBeenSet = false;
   };
 
 } // namespace Model

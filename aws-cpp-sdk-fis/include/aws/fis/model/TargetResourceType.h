@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/TargetResourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API TargetResourceType
+  class TargetResourceType
   {
   public:
-    TargetResourceType();
-    TargetResourceType(Aws::Utils::Json::JsonView jsonValue);
-    TargetResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API TargetResourceType();
+    AWS_FIS_API TargetResourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API TargetResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,13 +184,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, TargetResourceTypeParameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

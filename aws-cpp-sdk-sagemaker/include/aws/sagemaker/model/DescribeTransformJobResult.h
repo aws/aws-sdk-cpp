@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/TransformInput.h>
 #include <aws/sagemaker/model/TransformOutput.h>
+#include <aws/sagemaker/model/BatchDataCaptureConfig.h>
 #include <aws/sagemaker/model/TransformResources.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DataProcessing.h>
@@ -34,12 +35,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeTransformJobResult
+  class DescribeTransformJobResult
   {
   public:
-    DescribeTransformJobResult();
-    DescribeTransformJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTransformJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeTransformJobResult();
+    AWS_SAGEMAKER_API DescribeTransformJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeTransformJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -493,6 +494,32 @@ namespace Model
 
 
     /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline void SetDataCaptureConfig(const BatchDataCaptureConfig& value) { m_dataCaptureConfig = value; }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline void SetDataCaptureConfig(BatchDataCaptureConfig&& value) { m_dataCaptureConfig = std::move(value); }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline DescribeTransformJobResult& WithDataCaptureConfig(const BatchDataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline DescribeTransformJobResult& WithDataCaptureConfig(BatchDataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Describes the resources, including ML instance types and ML instance count,
      * to use for the transform job.</p>
      */
@@ -756,6 +783,8 @@ namespace Model
     TransformInput m_transformInput;
 
     TransformOutput m_transformOutput;
+
+    BatchDataCaptureConfig m_dataCaptureConfig;
 
     TransformResources m_transformResources;
 

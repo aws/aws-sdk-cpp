@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSimpleCriterion">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SearchResourcesSimpleCriterion
+  class SearchResourcesSimpleCriterion
   {
   public:
-    SearchResourcesSimpleCriterion();
-    SearchResourcesSimpleCriterion(Aws::Utils::Json::JsonView jsonValue);
-    SearchResourcesSimpleCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SearchResourcesSimpleCriterion();
+    AWS_MACIE2_API SearchResourcesSimpleCriterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SearchResourcesSimpleCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,13 +275,13 @@ namespace Model
   private:
 
     SearchResourcesComparator m_comparator;
-    bool m_comparatorHasBeenSet;
+    bool m_comparatorHasBeenSet = false;
 
     SearchResourcesSimpleCriterionKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

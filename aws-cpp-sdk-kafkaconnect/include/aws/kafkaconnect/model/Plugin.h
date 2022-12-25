@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/Plugin">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API Plugin
+  class Plugin
   {
   public:
-    Plugin();
-    Plugin(Aws::Utils::Json::JsonView jsonValue);
-    Plugin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API Plugin();
+    AWS_KAFKACONNECT_API Plugin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Plugin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CustomPlugin m_customPlugin;
-    bool m_customPluginHasBeenSet;
+    bool m_customPluginHasBeenSet = false;
   };
 
 } // namespace Model

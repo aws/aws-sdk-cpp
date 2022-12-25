@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/AppInstanceAdminSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API AppInstanceAdminSummary
+  class AppInstanceAdminSummary
   {
   public:
-    AppInstanceAdminSummary();
-    AppInstanceAdminSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceAdminSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdminSummary();
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdminSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API AppInstanceAdminSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Identity m_admin;
-    bool m_adminHasBeenSet;
+    bool m_adminHasBeenSet = false;
   };
 
 } // namespace Model

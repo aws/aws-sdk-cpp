@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Http">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Http
+  class Http
   {
   public:
-    Http();
-    Http(Aws::Utils::Json::JsonView jsonValue);
-    Http& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Http();
+    AWS_XRAY_API Http(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Http& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,19 +224,19 @@ namespace Model
   private:
 
     Aws::String m_httpURL;
-    bool m_httpURLHasBeenSet;
+    bool m_httpURLHasBeenSet = false;
 
     int m_httpStatus;
-    bool m_httpStatusHasBeenSet;
+    bool m_httpStatusHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_userAgent;
-    bool m_userAgentHasBeenSet;
+    bool m_userAgentHasBeenSet = false;
 
     Aws::String m_clientIp;
-    bool m_clientIpHasBeenSet;
+    bool m_clientIpHasBeenSet = false;
   };
 
 } // namespace Model

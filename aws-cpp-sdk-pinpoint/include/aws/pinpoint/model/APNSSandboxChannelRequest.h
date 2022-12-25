@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSSandboxChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSSandboxChannelRequest
+  class APNSSandboxChannelRequest
   {
   public:
-    APNSSandboxChannelRequest();
-    APNSSandboxChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    APNSSandboxChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSSandboxChannelRequest();
+    AWS_PINPOINT_API APNSSandboxChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSSandboxChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -412,28 +412,28 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Aws::String m_defaultAuthenticationMethod;
-    bool m_defaultAuthenticationMethodHasBeenSet;
+    bool m_defaultAuthenticationMethodHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     Aws::String m_teamId;
-    bool m_teamIdHasBeenSet;
+    bool m_teamIdHasBeenSet = false;
 
     Aws::String m_tokenKey;
-    bool m_tokenKeyHasBeenSet;
+    bool m_tokenKeyHasBeenSet = false;
 
     Aws::String m_tokenKeyId;
-    bool m_tokenKeyIdHasBeenSet;
+    bool m_tokenKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

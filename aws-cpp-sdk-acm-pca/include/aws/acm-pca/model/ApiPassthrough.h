@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ApiPassthrough">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API ApiPassthrough
+  class ApiPassthrough
   {
   public:
-    ApiPassthrough();
-    ApiPassthrough(Aws::Utils::Json::JsonView jsonValue);
-    ApiPassthrough& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API ApiPassthrough();
+    AWS_ACMPCA_API ApiPassthrough(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API ApiPassthrough& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,10 +97,10 @@ namespace Model
   private:
 
     Extensions m_extensions;
-    bool m_extensionsHasBeenSet;
+    bool m_extensionsHasBeenSet = false;
 
     ASN1Subject m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
   };
 
 } // namespace Model

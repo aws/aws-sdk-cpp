@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API CreateHITTypeRequest : public MTurkRequest
+  class CreateHITTypeRequest : public MTurkRequest
   {
   public:
-    CreateHITTypeRequest();
+    AWS_MTURK_API CreateHITTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateHITType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -405,25 +405,25 @@ namespace Model
   private:
 
     long long m_autoApprovalDelayInSeconds;
-    bool m_autoApprovalDelayInSecondsHasBeenSet;
+    bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
     long long m_assignmentDurationInSeconds;
-    bool m_assignmentDurationInSecondsHasBeenSet;
+    bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_reward;
-    bool m_rewardHasBeenSet;
+    bool m_rewardHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_keywords;
-    bool m_keywordsHasBeenSet;
+    bool m_keywordsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
-    bool m_qualificationRequirementsHasBeenSet;
+    bool m_qualificationRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

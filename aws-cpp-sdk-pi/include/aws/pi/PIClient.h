@@ -5,88 +5,16 @@
 
 #pragma once
 #include <aws/pi/PI_EXPORTS.h>
-#include <aws/pi/PIErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/pi/model/DescribeDimensionKeysResult.h>
-#include <aws/pi/model/GetDimensionKeyDetailsResult.h>
-#include <aws/pi/model/GetResourceMetadataResult.h>
-#include <aws/pi/model/GetResourceMetricsResult.h>
-#include <aws/pi/model/ListAvailableResourceDimensionsResult.h>
-#include <aws/pi/model/ListAvailableResourceMetricsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/pi/PIServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace PI
 {
-
-namespace Model
-{
-        class DescribeDimensionKeysRequest;
-        class GetDimensionKeyDetailsRequest;
-        class GetResourceMetadataRequest;
-        class GetResourceMetricsRequest;
-        class ListAvailableResourceDimensionsRequest;
-        class ListAvailableResourceMetricsRequest;
-
-        typedef Aws::Utils::Outcome<DescribeDimensionKeysResult, PIError> DescribeDimensionKeysOutcome;
-        typedef Aws::Utils::Outcome<GetDimensionKeyDetailsResult, PIError> GetDimensionKeyDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetResourceMetadataResult, PIError> GetResourceMetadataOutcome;
-        typedef Aws::Utils::Outcome<GetResourceMetricsResult, PIError> GetResourceMetricsOutcome;
-        typedef Aws::Utils::Outcome<ListAvailableResourceDimensionsResult, PIError> ListAvailableResourceDimensionsOutcome;
-        typedef Aws::Utils::Outcome<ListAvailableResourceMetricsResult, PIError> ListAvailableResourceMetricsOutcome;
-
-        typedef std::future<DescribeDimensionKeysOutcome> DescribeDimensionKeysOutcomeCallable;
-        typedef std::future<GetDimensionKeyDetailsOutcome> GetDimensionKeyDetailsOutcomeCallable;
-        typedef std::future<GetResourceMetadataOutcome> GetResourceMetadataOutcomeCallable;
-        typedef std::future<GetResourceMetricsOutcome> GetResourceMetricsOutcomeCallable;
-        typedef std::future<ListAvailableResourceDimensionsOutcome> ListAvailableResourceDimensionsOutcomeCallable;
-        typedef std::future<ListAvailableResourceMetricsOutcome> ListAvailableResourceMetricsOutcomeCallable;
-} // namespace Model
-
-  class PIClient;
-
-    typedef std::function<void(const PIClient*, const Model::DescribeDimensionKeysRequest&, const Model::DescribeDimensionKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDimensionKeysResponseReceivedHandler;
-    typedef std::function<void(const PIClient*, const Model::GetDimensionKeyDetailsRequest&, const Model::GetDimensionKeyDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionKeyDetailsResponseReceivedHandler;
-    typedef std::function<void(const PIClient*, const Model::GetResourceMetadataRequest&, const Model::GetResourceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceMetadataResponseReceivedHandler;
-    typedef std::function<void(const PIClient*, const Model::GetResourceMetricsRequest&, const Model::GetResourceMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceMetricsResponseReceivedHandler;
-    typedef std::function<void(const PIClient*, const Model::ListAvailableResourceDimensionsRequest&, const Model::ListAvailableResourceDimensionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableResourceDimensionsResponseReceivedHandler;
-    typedef std::function<void(const PIClient*, const Model::ListAvailableResourceMetricsRequest&, const Model::ListAvailableResourceMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableResourceMetricsResponseReceivedHandler;
-
   /**
    * <fullname>Amazon RDS Performance Insights</fullname> <p>Amazon RDS Performance
    * Insights enables you to monitor and explore different dimensions of database
@@ -112,32 +40,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">
    * Amazon DocumentDB Developer Guide</a> </i>.</p> </li> </ul>
    */
-  class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient
+  class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PIClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PIClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PIClient(const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration(),
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PIClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PIClient(const Aws::Auth::AWSCredentials& credentials,
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG),
+                 const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PIClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                 std::shared_ptr<PIEndpointProviderBase> endpointProvider = Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG),
+                 const Aws::PI::PIClientConfiguration& clientConfiguration = Aws::PI::PIClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PIClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PIClient(const Aws::Auth::AWSCredentials& credentials,
+                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        PIClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~PIClient();
-
 
         /**
          * <p>For a specific time period, retrieve the top <code>N</code> dimension keys
@@ -261,18 +217,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<PIEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DescribeDimensionKeysAsyncHelper(const Model::DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDimensionKeyDetailsAsyncHelper(const Model::GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourceMetadataAsyncHelper(const Model::GetResourceMetadataRequest& request, const GetResourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourceMetricsAsyncHelper(const Model::GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAvailableResourceDimensionsAsyncHelper(const Model::ListAvailableResourceDimensionsRequest& request, const ListAvailableResourceDimensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAvailableResourceMetricsAsyncHelper(const Model::ListAvailableResourceMetricsRequest& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PIClient>;
+      void init(const PIClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      PIClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<PIEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PI

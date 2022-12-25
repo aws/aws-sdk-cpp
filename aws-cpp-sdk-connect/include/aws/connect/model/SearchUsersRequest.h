@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API SearchUsersRequest : public ConnectRequest
+  class SearchUsersRequest : public ConnectRequest
   {
   public:
-    SearchUsersRequest();
+    AWS_CONNECT_API SearchUsersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SearchUsers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -205,19 +205,19 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     UserSearchFilter m_searchFilter;
-    bool m_searchFilterHasBeenSet;
+    bool m_searchFilterHasBeenSet = false;
 
     UserSearchCriteria m_searchCriteria;
-    bool m_searchCriteriaHasBeenSet;
+    bool m_searchCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

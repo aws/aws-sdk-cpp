@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatchRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API SendMessageBatchRequestEntry
+  class SendMessageBatchRequestEntry
   {
   public:
-    SendMessageBatchRequestEntry();
-    SendMessageBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SendMessageBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API SendMessageBatchRequestEntry();
+    AWS_SQS_API SendMessageBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API SendMessageBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -983,25 +983,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_messageBody;
-    bool m_messageBodyHasBeenSet;
+    bool m_messageBodyHasBeenSet = false;
 
     int m_delaySeconds;
-    bool m_delaySecondsHasBeenSet;
+    bool m_delaySecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-    bool m_messageAttributesHasBeenSet;
+    bool m_messageAttributesHasBeenSet = false;
 
     Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue> m_messageSystemAttributes;
-    bool m_messageSystemAttributesHasBeenSet;
+    bool m_messageSystemAttributesHasBeenSet = false;
 
     Aws::String m_messageDeduplicationId;
-    bool m_messageDeduplicationIdHasBeenSet;
+    bool m_messageDeduplicationIdHasBeenSet = false;
 
     Aws::String m_messageGroupId;
-    bool m_messageGroupIdHasBeenSet;
+    bool m_messageGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

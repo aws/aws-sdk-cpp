@@ -26,17 +26,17 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p>The result of an <code>UpdateDomain</code> request. Contains the status of
-   * the domain being updated. </p><p><h3>See Also:</h3>   <a
+   * <p>The results of an <code>UpdateDomain</code> request. Contains the status of
+   * the domain being updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API UpdateDomainConfigResult
+  class UpdateDomainConfigResult
   {
   public:
-    UpdateDomainConfigResult();
-    UpdateDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API UpdateDomainConfigResult();
+    AWS_OPENSEARCHSERVICE_API UpdateDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API UpdateDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -66,27 +66,27 @@ namespace Model
 
 
     /**
-     * <p>Contains result of DryRun. </p>
+     * <p>Results of a dry run performed in an update domain request.</p>
      */
     inline const DryRunResults& GetDryRunResults() const{ return m_dryRunResults; }
 
     /**
-     * <p>Contains result of DryRun. </p>
+     * <p>Results of a dry run performed in an update domain request.</p>
      */
     inline void SetDryRunResults(const DryRunResults& value) { m_dryRunResults = value; }
 
     /**
-     * <p>Contains result of DryRun. </p>
+     * <p>Results of a dry run performed in an update domain request.</p>
      */
     inline void SetDryRunResults(DryRunResults&& value) { m_dryRunResults = std::move(value); }
 
     /**
-     * <p>Contains result of DryRun. </p>
+     * <p>Results of a dry run performed in an update domain request.</p>
      */
     inline UpdateDomainConfigResult& WithDryRunResults(const DryRunResults& value) { SetDryRunResults(value); return *this;}
 
     /**
-     * <p>Contains result of DryRun. </p>
+     * <p>Results of a dry run performed in an update domain request.</p>
      */
     inline UpdateDomainConfigResult& WithDryRunResults(DryRunResults&& value) { SetDryRunResults(std::move(value)); return *this;}
 

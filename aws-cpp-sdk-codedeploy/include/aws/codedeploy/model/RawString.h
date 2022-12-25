@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>A revision for an AWS Lambda deployment that is a YAML-formatted or
-   * JSON-formatted string. For AWS Lambda deployments, the revision is the same as
-   * the AppSpec file.</p><p><h3>See Also:</h3>   <a
+   * <p>A revision for an Lambda deployment that is a YAML-formatted or
+   * JSON-formatted string. For Lambda deployments, the revision is the same as the
+   * AppSpec file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RawString">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API RawString
+  class RawString
   {
   public:
-    RawString();
-    RawString(Aws::Utils::Json::JsonView jsonValue);
-    RawString& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API RawString();
+    AWS_CODEDEPLOY_API RawString(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API RawString& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_sha256;
-    bool m_sha256HasBeenSet;
+    bool m_sha256HasBeenSet = false;
   };
 
 } // namespace Model

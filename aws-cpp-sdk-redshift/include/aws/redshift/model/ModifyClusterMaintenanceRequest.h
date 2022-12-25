@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API ModifyClusterMaintenanceRequest : public RedshiftRequest
+  class ModifyClusterMaintenanceRequest : public RedshiftRequest
   {
   public:
-    ModifyClusterMaintenanceRequest();
+    AWS_REDSHIFT_API ModifyClusterMaintenanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyClusterMaintenance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -245,22 +245,22 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     bool m_deferMaintenance;
-    bool m_deferMaintenanceHasBeenSet;
+    bool m_deferMaintenanceHasBeenSet = false;
 
     Aws::String m_deferMaintenanceIdentifier;
-    bool m_deferMaintenanceIdentifierHasBeenSet;
+    bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceStartTime;
-    bool m_deferMaintenanceStartTimeHasBeenSet;
+    bool m_deferMaintenanceStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceEndTime;
-    bool m_deferMaintenanceEndTimeHasBeenSet;
+    bool m_deferMaintenanceEndTimeHasBeenSet = false;
 
     int m_deferMaintenanceDuration;
-    bool m_deferMaintenanceDurationHasBeenSet;
+    bool m_deferMaintenanceDurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRulesAndCustomActionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails
+  class RuleGroupSourceStatelessRulesAndCustomActionsDetails
   {
   public:
-    RuleGroupSourceStatelessRulesAndCustomActionsDetails();
-    RuleGroupSourceStatelessRulesAndCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRulesAndCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRulesAndCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<RuleGroupSourceCustomActionsDetails> m_customActions;
-    bool m_customActionsHasBeenSet;
+    bool m_customActionsHasBeenSet = false;
 
     Aws::Vector<RuleGroupSourceStatelessRulesDetails> m_statelessRules;
-    bool m_statelessRulesHasBeenSet;
+    bool m_statelessRulesHasBeenSet = false;
   };
 
 } // namespace Model

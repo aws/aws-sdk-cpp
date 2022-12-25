@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateDataQualityJobDefinitionRequest : public SageMakerRequest
+  class CreateDataQualityJobDefinitionRequest : public SageMakerRequest
   {
   public:
-    CreateDataQualityJobDefinitionRequest();
+    AWS_SAGEMAKER_API CreateDataQualityJobDefinitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataQualityJobDefinition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -387,34 +387,34 @@ namespace Model
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     DataQualityBaselineConfig m_dataQualityBaselineConfig;
-    bool m_dataQualityBaselineConfigHasBeenSet;
+    bool m_dataQualityBaselineConfigHasBeenSet = false;
 
     DataQualityAppSpecification m_dataQualityAppSpecification;
-    bool m_dataQualityAppSpecificationHasBeenSet;
+    bool m_dataQualityAppSpecificationHasBeenSet = false;
 
     DataQualityJobInput m_dataQualityJobInput;
-    bool m_dataQualityJobInputHasBeenSet;
+    bool m_dataQualityJobInputHasBeenSet = false;
 
     MonitoringOutputConfig m_dataQualityJobOutputConfig;
-    bool m_dataQualityJobOutputConfigHasBeenSet;
+    bool m_dataQualityJobOutputConfigHasBeenSet = false;
 
     MonitoringResources m_jobResources;
-    bool m_jobResourcesHasBeenSet;
+    bool m_jobResourcesHasBeenSet = false;
 
     MonitoringNetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MonitoringStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

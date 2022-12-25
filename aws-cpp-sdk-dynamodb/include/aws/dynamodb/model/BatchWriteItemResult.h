@@ -35,19 +35,19 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItemOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BatchWriteItemResult
+  class BatchWriteItemResult
   {
   public:
-    BatchWriteItemResult();
-    BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API BatchWriteItemResult();
+    AWS_DYNAMODB_API BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -75,7 +75,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -103,7 +103,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -131,7 +131,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -159,7 +159,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -187,7 +187,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -215,7 +215,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -243,7 +243,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -271,7 +271,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -299,7 +299,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or
@@ -327,7 +327,7 @@ namespace Model
      * <p>A map of tables and requests against those tables that were not processed.
      * The <code>UnprocessedItems</code> value is in the same form as
      * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchGetItem</code> operation. For more information, see
+     * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
      * <code>UnprocessedItems</code> entry consists of a table name and, for that
      * table, a list of operations to perform (<code>DeleteRequest</code> or

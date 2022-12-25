@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyInstanceEventWindowRequest : public EC2Request
+  class ModifyInstanceEventWindowRequest : public EC2Request
   {
   public:
-    ModifyInstanceEventWindowRequest();
+    AWS_EC2_API ModifyInstanceEventWindowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceEventWindow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -341,19 +341,19 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_instanceEventWindowId;
-    bool m_instanceEventWindowIdHasBeenSet;
+    bool m_instanceEventWindowIdHasBeenSet = false;
 
     Aws::Vector<InstanceEventWindowTimeRangeRequest> m_timeRanges;
-    bool m_timeRangesHasBeenSet;
+    bool m_timeRangesHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageContent">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageContent
+  class InAppMessageContent
   {
   public:
-    InAppMessageContent();
-    InAppMessageContent(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageContent();
+    AWS_PINPOINT_API InAppMessageContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,22 +248,22 @@ namespace Model
   private:
 
     Aws::String m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     InAppMessageBodyConfig m_bodyConfig;
-    bool m_bodyConfigHasBeenSet;
+    bool m_bodyConfigHasBeenSet = false;
 
     InAppMessageHeaderConfig m_headerConfig;
-    bool m_headerConfigHasBeenSet;
+    bool m_headerConfigHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     InAppMessageButton m_primaryBtn;
-    bool m_primaryBtnHasBeenSet;
+    bool m_primaryBtnHasBeenSet = false;
 
     InAppMessageButton m_secondaryBtn;
-    bool m_secondaryBtnHasBeenSet;
+    bool m_secondaryBtnHasBeenSet = false;
   };
 
 } // namespace Model

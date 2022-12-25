@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotVersionLocaleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotVersionLocaleDetails
+  class BotVersionLocaleDetails
   {
   public:
-    BotVersionLocaleDetails();
-    BotVersionLocaleDetails(Aws::Utils::Json::JsonView jsonValue);
-    BotVersionLocaleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotVersionLocaleDetails();
+    AWS_LEXMODELSV2_API BotVersionLocaleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotVersionLocaleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_sourceBotVersion;
-    bool m_sourceBotVersionHasBeenSet;
+    bool m_sourceBotVersionHasBeenSet = false;
   };
 
 } // namespace Model

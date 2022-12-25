@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceTargetDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ResourceTargetDefinition
+  class ResourceTargetDefinition
   {
   public:
-    ResourceTargetDefinition();
-    ResourceTargetDefinition(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceTargetDefinition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceTargetDefinition();
+    AWS_CLOUDFORMATION_API ResourceTargetDefinition(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceTargetDefinition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -204,13 +204,13 @@ namespace Model
   private:
 
     ResourceAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RequiresRecreation m_requiresRecreation;
-    bool m_requiresRecreationHasBeenSet;
+    bool m_requiresRecreationHasBeenSet = false;
   };
 
 } // namespace Model

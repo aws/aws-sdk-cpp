@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ChannelTargetInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ChannelTargetInfo
+  class ChannelTargetInfo
   {
   public:
-    ChannelTargetInfo();
-    ChannelTargetInfo(Aws::Utils::Json::JsonView jsonValue);
-    ChannelTargetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ChannelTargetInfo();
+    AWS_SSMCONTACTS_API ChannelTargetInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ChannelTargetInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     int m_retryIntervalInMinutes;
-    bool m_retryIntervalInMinutesHasBeenSet;
+    bool m_retryIntervalInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API PublicAccess
+  class PublicAccess
   {
   public:
-    PublicAccess();
-    PublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API PublicAccess();
+    AWS_KAFKA_API PublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API PublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

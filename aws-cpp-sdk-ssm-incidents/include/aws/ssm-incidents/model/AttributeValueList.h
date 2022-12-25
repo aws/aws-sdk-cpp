@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/AttributeValueList">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API AttributeValueList
+  class AttributeValueList
   {
   public:
-    AttributeValueList();
-    AttributeValueList(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API AttributeValueList();
+    AWS_SSMINCIDENTS_API AttributeValueList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API AttributeValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<int> m_integerValues;
-    bool m_integerValuesHasBeenSet;
+    bool m_integerValuesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringValues;
-    bool m_stringValuesHasBeenSet;
+    bool m_stringValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EncryptionAtRest">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API EncryptionAtRest
+  class EncryptionAtRest
   {
   public:
-    EncryptionAtRest();
-    EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API EncryptionAtRest();
+    AWS_KAFKA_API EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_dataVolumeKMSKeyId;
-    bool m_dataVolumeKMSKeyIdHasBeenSet;
+    bool m_dataVolumeKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

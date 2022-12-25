@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ProvisionedCapacity">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API ProvisionedCapacity
+  class ProvisionedCapacity
   {
   public:
-    ProvisionedCapacity();
-    ProvisionedCapacity(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API ProvisionedCapacity();
+    AWS_KAFKACONNECT_API ProvisionedCapacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API ProvisionedCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     int m_mcuCount;
-    bool m_mcuCountHasBeenSet;
+    bool m_mcuCountHasBeenSet = false;
 
     int m_workerCount;
-    bool m_workerCountHasBeenSet;
+    bool m_workerCountHasBeenSet = false;
   };
 
 } // namespace Model

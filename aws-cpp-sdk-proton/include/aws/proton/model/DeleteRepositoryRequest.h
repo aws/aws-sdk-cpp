@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API DeleteRepositoryRequest : public ProtonRequest
+  class DeleteRepositoryRequest : public ProtonRequest
   {
   public:
-    DeleteRepositoryRequest();
+    AWS_PROTON_API DeleteRepositoryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,48 +30,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRepository"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline DeleteRepositoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline DeleteRepositoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository.</p>
+     * <p>The repository name.</p>
      */
     inline DeleteRepositoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

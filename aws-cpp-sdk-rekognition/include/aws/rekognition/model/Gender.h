@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Gender">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Gender
+  class Gender
   {
   public:
-    Gender();
-    Gender(Aws::Utils::Json::JsonView jsonValue);
-    Gender& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Gender();
+    AWS_REKOGNITION_API Gender(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Gender& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     GenderType m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

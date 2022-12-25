@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_STORAGEGATEWAY_API UpdateVTLDeviceTypeRequest : public StorageGatewayRequest
+  class UpdateVTLDeviceTypeRequest : public StorageGatewayRequest
   {
   public:
-    UpdateVTLDeviceTypeRequest();
+    AWS_STORAGEGATEWAY_API UpdateVTLDeviceTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateVTLDeviceType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_vTLDeviceARN;
-    bool m_vTLDeviceARNHasBeenSet;
+    bool m_vTLDeviceARNHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

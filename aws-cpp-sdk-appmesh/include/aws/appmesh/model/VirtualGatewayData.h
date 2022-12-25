@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayData">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayData
+  class VirtualGatewayData
   {
   public:
-    VirtualGatewayData();
-    VirtualGatewayData(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayData();
+    AWS_APPMESH_API VirtualGatewayData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,19 +206,19 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     VirtualGatewaySpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     VirtualGatewayStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualGatewayName;
-    bool m_virtualGatewayNameHasBeenSet;
+    bool m_virtualGatewayNameHasBeenSet = false;
   };
 
 } // namespace Model

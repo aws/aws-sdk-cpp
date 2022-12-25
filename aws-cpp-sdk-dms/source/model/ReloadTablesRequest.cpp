@@ -32,7 +32,7 @@ Aws::String ReloadTablesRequest::SerializePayload() const
 
   if(m_tablesToReloadHasBeenSet)
   {
-   Array<JsonValue> tablesToReloadJsonList(m_tablesToReload.size());
+   Aws::Utils::Array<JsonValue> tablesToReloadJsonList(m_tablesToReload.size());
    for(unsigned tablesToReloadIndex = 0; tablesToReloadIndex < tablesToReloadJsonList.GetLength(); ++tablesToReloadIndex)
    {
      tablesToReloadJsonList[tablesToReloadIndex].AsObject(m_tablesToReload[tablesToReloadIndex].Jsonize());

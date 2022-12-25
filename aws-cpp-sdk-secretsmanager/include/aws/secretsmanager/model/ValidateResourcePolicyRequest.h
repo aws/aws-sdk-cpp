@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API ValidateResourcePolicyRequest : public SecretsManagerRequest
+  class ValidateResourcePolicyRequest : public SecretsManagerRequest
   {
   public:
-    ValidateResourcePolicyRequest();
+    AWS_SECRETSMANAGER_API ValidateResourcePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ValidateResourcePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_resourcePolicy;
-    bool m_resourcePolicyHasBeenSet;
+    bool m_resourcePolicyHasBeenSet = false;
   };
 
 } // namespace Model

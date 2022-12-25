@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_KEYSPACES_API UpdateTableRequest : public KeyspacesRequest
+  class UpdateTableRequest : public KeyspacesRequest
   {
   public:
-    UpdateTableRequest();
+    AWS_KEYSPACES_API UpdateTableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KEYSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KEYSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -520,28 +520,28 @@ namespace Model
   private:
 
     Aws::String m_keyspaceName;
-    bool m_keyspaceNameHasBeenSet;
+    bool m_keyspaceNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<ColumnDefinition> m_addColumns;
-    bool m_addColumnsHasBeenSet;
+    bool m_addColumnsHasBeenSet = false;
 
     CapacitySpecification m_capacitySpecification;
-    bool m_capacitySpecificationHasBeenSet;
+    bool m_capacitySpecificationHasBeenSet = false;
 
     EncryptionSpecification m_encryptionSpecification;
-    bool m_encryptionSpecificationHasBeenSet;
+    bool m_encryptionSpecificationHasBeenSet = false;
 
     PointInTimeRecovery m_pointInTimeRecovery;
-    bool m_pointInTimeRecoveryHasBeenSet;
+    bool m_pointInTimeRecoveryHasBeenSet = false;
 
     TimeToLive m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     int m_defaultTimeToLive;
-    bool m_defaultTimeToLiveHasBeenSet;
+    bool m_defaultTimeToLiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ManagedActionHistoryItem">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ManagedActionHistoryItem
+  class ManagedActionHistoryItem
   {
   public:
-    ManagedActionHistoryItem();
-    ManagedActionHistoryItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ManagedActionHistoryItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ManagedActionHistoryItem();
+    AWS_ELASTICBEANSTALK_API ManagedActionHistoryItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ManagedActionHistoryItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -324,28 +324,28 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_actionDescription;
-    bool m_actionDescriptionHasBeenSet;
+    bool m_actionDescriptionHasBeenSet = false;
 
     FailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     ActionHistoryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_executedTime;
-    bool m_executedTimeHasBeenSet;
+    bool m_executedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedTime;
-    bool m_finishedTimeHasBeenSet;
+    bool m_finishedTimeHasBeenSet = false;
   };
 
 } // namespace Model

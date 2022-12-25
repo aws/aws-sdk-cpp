@@ -41,18 +41,17 @@ namespace Model
    * place game sessions on the first destination fleet listed. If that fleet has
    * multiple locations, the game session is placed on the first location (when
    * listed alphabetically).</p> </li> </ul> <p>Changing the priority order will
-   * affect how game sessions are placed.</p> <p>Priority configurations are part of
-   * a <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
+   * affect how game sessions are placed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PriorityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PriorityConfiguration
+  class PriorityConfiguration
   {
   public:
-    PriorityConfiguration();
-    PriorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PriorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PriorityConfiguration();
+    AWS_GAMELIFT_API PriorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PriorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,10 +250,10 @@ namespace Model
   private:
 
     Aws::Vector<PriorityType> m_priorityOrder;
-    bool m_priorityOrderHasBeenSet;
+    bool m_priorityOrderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_locationOrder;
-    bool m_locationOrderHasBeenSet;
+    bool m_locationOrderHasBeenSet = false;
   };
 
 } // namespace Model

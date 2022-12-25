@@ -5,114 +5,75 @@
 
 #pragma once
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
-#include <aws/mediastore-data/MediaStoreDataErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/mediastore-data/model/DeleteObjectResult.h>
-#include <aws/mediastore-data/model/DescribeObjectResult.h>
-#include <aws/mediastore-data/model/GetObjectResult.h>
-#include <aws/mediastore-data/model/ListItemsResult.h>
-#include <aws/mediastore-data/model/PutObjectResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MediaStoreData
 {
-
-namespace Model
-{
-        class DeleteObjectRequest;
-        class DescribeObjectRequest;
-        class GetObjectRequest;
-        class ListItemsRequest;
-        class PutObjectRequest;
-
-        typedef Aws::Utils::Outcome<DeleteObjectResult, MediaStoreDataError> DeleteObjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeObjectResult, MediaStoreDataError> DescribeObjectOutcome;
-        typedef Aws::Utils::Outcome<GetObjectResult, MediaStoreDataError> GetObjectOutcome;
-        typedef Aws::Utils::Outcome<ListItemsResult, MediaStoreDataError> ListItemsOutcome;
-        typedef Aws::Utils::Outcome<PutObjectResult, MediaStoreDataError> PutObjectOutcome;
-
-        typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
-        typedef std::future<DescribeObjectOutcome> DescribeObjectOutcomeCallable;
-        typedef std::future<GetObjectOutcome> GetObjectOutcomeCallable;
-        typedef std::future<ListItemsOutcome> ListItemsOutcomeCallable;
-        typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
-} // namespace Model
-
-  class MediaStoreDataClient;
-
-    typedef std::function<void(const MediaStoreDataClient*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::DescribeObjectRequest&, const Model::DescribeObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::GetObjectRequest&, Model::GetObjectOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::ListItemsRequest&, const Model::ListItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListItemsResponseReceivedHandler;
-    typedef std::function<void(const MediaStoreDataClient*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
-
   /**
    * <p>An AWS Elemental MediaStore asset is an object, similar to an object in the
    * Amazon S3 service. Objects are the fundamental entities that are stored in AWS
    * Elemental MediaStore.</p>
    */
-  class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaStoreDataClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaStoreDataClient(const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration(),
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaStoreDataClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaStoreDataClient(const Aws::Auth::AWSCredentials& credentials,
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MediaStoreDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaStoreDataClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaStoreDataClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MediaStoreDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MediaStoreDataClient();
-
 
         /**
          * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a
@@ -208,17 +169,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MediaStoreDataEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeObjectAsyncHelper(const Model::DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetObjectAsyncHelper(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListItemsAsyncHelper(const Model::ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutObjectAsyncHelper(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>;
+      void init(const MediaStoreDataClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MediaStoreDataClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MediaStoreDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaStoreData

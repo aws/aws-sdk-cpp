@@ -46,7 +46,10 @@ FleetAttributes::FleetAttributes() :
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
     m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false)
+    m_certificateConfigurationHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
 }
 
@@ -78,7 +81,10 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
     m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false)
+    m_certificateConfigurationHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -192,7 +198,7 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LogPaths"))
   {
-    Array<JsonView> logPathsJsonList = jsonValue.GetArray("LogPaths");
+    Aws::Utils::Array<JsonView> logPathsJsonList = jsonValue.GetArray("LogPaths");
     for(unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex)
     {
       m_logPaths.push_back(logPathsJsonList[logPathsIndex].AsString());
@@ -223,7 +229,7 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetricGroups"))
   {
-    Array<JsonView> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
+    Aws::Utils::Array<JsonView> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
     for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
     {
       m_metricGroups.push_back(metricGroupsJsonList[metricGroupsIndex].AsString());
@@ -233,7 +239,7 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StoppedActions"))
   {
-    Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
+    Aws::Utils::Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
     for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
     {
       m_stoppedActions.push_back(FleetActionMapper::GetFleetActionForName(stoppedActionsJsonList[stoppedActionsIndex].AsString()));
@@ -253,6 +259,20 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_certificateConfiguration = jsonValue.GetObject("CertificateConfiguration");
 
     m_certificateConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComputeType"))
+  {
+    m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("ComputeType"));
+
+    m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnywhereConfiguration"))
+  {
+    m_anywhereConfiguration = jsonValue.GetObject("AnywhereConfiguration");
+
+    m_anywhereConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -349,7 +369,7 @@ JsonValue FleetAttributes::Jsonize() const
 
   if(m_logPathsHasBeenSet)
   {
-   Array<JsonValue> logPathsJsonList(m_logPaths.size());
+   Aws::Utils::Array<JsonValue> logPathsJsonList(m_logPaths.size());
    for(unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex)
    {
      logPathsJsonList[logPathsIndex].AsString(m_logPaths[logPathsIndex]);
@@ -376,7 +396,7 @@ JsonValue FleetAttributes::Jsonize() const
 
   if(m_metricGroupsHasBeenSet)
   {
-   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
    for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
    {
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
@@ -387,7 +407,7 @@ JsonValue FleetAttributes::Jsonize() const
 
   if(m_stoppedActionsHasBeenSet)
   {
-   Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
+   Aws::Utils::Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
    for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
    {
      stoppedActionsJsonList[stoppedActionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_stoppedActions[stoppedActionsIndex]));
@@ -405,6 +425,17 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_certificateConfigurationHasBeenSet)
   {
    payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
+
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("ComputeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_anywhereConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
 
   }
 

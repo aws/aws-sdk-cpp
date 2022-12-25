@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ClientCertAuthSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API ClientCertAuthSettings
+  class ClientCertAuthSettings
   {
   public:
-    ClientCertAuthSettings();
-    ClientCertAuthSettings(Aws::Utils::Json::JsonView jsonValue);
-    ClientCertAuthSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API ClientCertAuthSettings();
+    AWS_DIRECTORYSERVICE_API ClientCertAuthSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API ClientCertAuthSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::String m_oCSPUrl;
-    bool m_oCSPUrlHasBeenSet;
+    bool m_oCSPUrlHasBeenSet = false;
   };
 
 } // namespace Model

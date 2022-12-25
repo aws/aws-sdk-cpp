@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API LogsConfig
+  class LogsConfig
   {
   public:
-    LogsConfig();
-    LogsConfig(Aws::Utils::Json::JsonView jsonValue);
-    LogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API LogsConfig();
+    AWS_CODEBUILD_API LogsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API LogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     CloudWatchLogsConfig m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     S3LogsConfig m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TimeSeriesServiceStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TimeSeriesServiceStatistics
+  class TimeSeriesServiceStatistics
   {
   public:
-    TimeSeriesServiceStatistics();
-    TimeSeriesServiceStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesServiceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TimeSeriesServiceStatistics();
+    AWS_XRAY_API TimeSeriesServiceStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TimeSeriesServiceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,19 +185,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     EdgeStatistics m_edgeSummaryStatistics;
-    bool m_edgeSummaryStatisticsHasBeenSet;
+    bool m_edgeSummaryStatisticsHasBeenSet = false;
 
     ServiceStatistics m_serviceSummaryStatistics;
-    bool m_serviceSummaryStatisticsHasBeenSet;
+    bool m_serviceSummaryStatisticsHasBeenSet = false;
 
     ForecastStatistics m_serviceForecastStatistics;
-    bool m_serviceForecastStatisticsHasBeenSet;
+    bool m_serviceForecastStatisticsHasBeenSet = false;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
-    bool m_responseTimeHistogramHasBeenSet;
+    bool m_responseTimeHistogramHasBeenSet = false;
   };
 
 } // namespace Model

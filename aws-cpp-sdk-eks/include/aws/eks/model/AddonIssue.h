@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonIssue">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API AddonIssue
+  class AddonIssue
   {
   public:
-    AddonIssue();
-    AddonIssue(Aws::Utils::Json::JsonView jsonValue);
-    AddonIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API AddonIssue();
+    AWS_EKS_API AddonIssue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API AddonIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     AddonIssueCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
   };
 
 } // namespace Model

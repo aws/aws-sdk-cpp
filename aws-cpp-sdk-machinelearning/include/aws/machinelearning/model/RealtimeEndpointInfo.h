@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RealtimeEndpointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RealtimeEndpointInfo
+  class RealtimeEndpointInfo
   {
   public:
-    RealtimeEndpointInfo();
-    RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
-    RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo();
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     int m_peakRequestsPerSecond;
-    bool m_peakRequestsPerSecondHasBeenSet;
+    bool m_peakRequestsPerSecondHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_endpointUrl;
-    bool m_endpointUrlHasBeenSet;
+    bool m_endpointUrlHasBeenSet = false;
 
     RealtimeEndpointStatus m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
   };
 
 } // namespace Model

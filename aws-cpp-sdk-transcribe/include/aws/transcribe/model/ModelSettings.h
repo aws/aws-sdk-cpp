@@ -33,99 +33,99 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ModelSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API ModelSettings
+  class ModelSettings
   {
   public:
-    ModelSettings();
-    ModelSettings(Aws::Utils::Json::JsonView jsonValue);
-    ModelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API ModelSettings();
+    AWS_TRANSCRIBESERVICE_API ModelSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API ModelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the custom language model you want to use when processing your
-     * transcription job. Note that language model names are case sensitive.</p> <p>The
-     * language of the specified language model must match the language code you
-     * specify in your transcription request. If the languages don't match, the
-     * language model isn't applied. There are no errors or warnings associated with a
-     * language mismatch.</p>
+     * transcription job. Note that custom language model names are case sensitive.</p>
+     * <p>The language of the specified custom language model must match the language
+     * code that you specify in your transcription request. If the languages don't
+     * match, the custom language model isn't applied. There are no errors or warnings
+     * associated with a language mismatch.</p>
      */
     inline ModelSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
 
   private:
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
   };
 
 } // namespace Model

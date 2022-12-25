@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotTopicPublishAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API IotTopicPublishAction
+  class IotTopicPublishAction
   {
   public:
-    IotTopicPublishAction();
-    IotTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
-    IotTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API IotTopicPublishAction();
+    AWS_IOTEVENTS_API IotTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API IotTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     Aws::String m_mqttTopic;
-    bool m_mqttTopicHasBeenSet;
+    bool m_mqttTopicHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

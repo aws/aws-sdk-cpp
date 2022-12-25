@@ -18,7 +18,8 @@ PutConformancePackRequest::PutConformancePackRequest() :
     m_templateBodyHasBeenSet(false),
     m_deliveryS3BucketHasBeenSet(false),
     m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false)
+    m_conformancePackInputParametersHasBeenSet(false),
+    m_templateSSMDocumentDetailsHasBeenSet(false)
 {
 }
 
@@ -58,12 +59,18 @@ Aws::String PutConformancePackRequest::SerializePayload() const
 
   if(m_conformancePackInputParametersHasBeenSet)
   {
-   Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
+   Aws::Utils::Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
    for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
    {
      conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject(m_conformancePackInputParameters[conformancePackInputParametersIndex].Jsonize());
    }
    payload.WithArray("ConformancePackInputParameters", std::move(conformancePackInputParametersJsonList));
+
+  }
+
+  if(m_templateSSMDocumentDetailsHasBeenSet)
+  {
+   payload.WithObject("TemplateSSMDocumentDetails", m_templateSSMDocumentDetails.Jsonize());
 
   }
 

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKIDENTITY_API RegisterAppInstanceUserEndpointRequest : public ChimeSDKIdentityRequest
+  class RegisterAppInstanceUserEndpointRequest : public ChimeSDKIdentityRequest
   {
   public:
-    RegisterAppInstanceUserEndpointRequest();
+    AWS_CHIMESDKIDENTITY_API RegisterAppInstanceUserEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterAppInstanceUserEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKIDENTITY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -343,25 +343,25 @@ namespace Model
   private:
 
     Aws::String m_appInstanceUserArn;
-    bool m_appInstanceUserArnHasBeenSet;
+    bool m_appInstanceUserArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AppInstanceUserEndpointType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     EndpointAttributes m_endpointAttributes;
-    bool m_endpointAttributesHasBeenSet;
+    bool m_endpointAttributesHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     AllowMessages m_allowMessages;
-    bool m_allowMessagesHasBeenSet;
+    bool m_allowMessagesHasBeenSet = false;
   };
 
 } // namespace Model

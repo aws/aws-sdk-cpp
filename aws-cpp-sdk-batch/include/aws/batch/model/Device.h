@@ -26,19 +26,19 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a container instance host device.</p>  <p>This
-   * object isn't applicable to jobs that are running on Fargate resources and
-   * shouldn't be provided.</p> <p><h3>See Also:</h3>   <a
+   * <p>An object that represents a container instance host device.</p> 
+   * <p>This object isn't applicable to jobs that are running on Fargate resources
+   * and shouldn't be provided.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Device">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Device();
+    AWS_BATCH_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_hostPath;
-    bool m_hostPathHasBeenSet;
+    bool m_hostPathHasBeenSet = false;
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
 
     Aws::Vector<DeviceCgroupPermission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteEventStream">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteEventStream
+  class WriteEventStream
   {
   public:
-    WriteEventStream();
-    WriteEventStream(Aws::Utils::Json::JsonView jsonValue);
-    WriteEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteEventStream();
+    AWS_PINPOINT_API WriteEventStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_destinationStreamArn;
-    bool m_destinationStreamArnHasBeenSet;
+    bool m_destinationStreamArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

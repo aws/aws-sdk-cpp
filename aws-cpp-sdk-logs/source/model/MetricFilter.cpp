@@ -57,7 +57,7 @@ MetricFilter& MetricFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("metricTransformations"))
   {
-    Array<JsonView> metricTransformationsJsonList = jsonValue.GetArray("metricTransformations");
+    Aws::Utils::Array<JsonView> metricTransformationsJsonList = jsonValue.GetArray("metricTransformations");
     for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
     {
       m_metricTransformations.push_back(metricTransformationsJsonList[metricTransformationsIndex].AsObject());
@@ -100,7 +100,7 @@ JsonValue MetricFilter::Jsonize() const
 
   if(m_metricTransformationsHasBeenSet)
   {
-   Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
+   Aws::Utils::Array<JsonValue> metricTransformationsJsonList(m_metricTransformations.size());
    for(unsigned metricTransformationsIndex = 0; metricTransformationsIndex < metricTransformationsJsonList.GetLength(); ++metricTransformationsIndex)
    {
      metricTransformationsJsonList[metricTransformationsIndex].AsObject(m_metricTransformations[metricTransformationsIndex].Jsonize());

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API VerifyRequest : public KMSRequest
+  class VerifyRequest : public KMSRequest
   {
   public:
-    VerifyRequest();
+    AWS_KMS_API VerifyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Verify"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -481,22 +481,22 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Utils::CryptoBuffer m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     SigningAlgorithmSpec m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

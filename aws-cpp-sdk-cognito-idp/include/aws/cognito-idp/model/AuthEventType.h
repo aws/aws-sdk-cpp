@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthEventType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AuthEventType
+  class AuthEventType
   {
   public:
-    AuthEventType();
-    AuthEventType(Aws::Utils::Json::JsonView jsonValue);
-    AuthEventType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AuthEventType();
+    AWS_COGNITOIDENTITYPROVIDER_API AuthEventType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AuthEventType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     EventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     EventResponseType m_eventResponse;
-    bool m_eventResponseHasBeenSet;
+    bool m_eventResponseHasBeenSet = false;
 
     EventRiskType m_eventRisk;
-    bool m_eventRiskHasBeenSet;
+    bool m_eventRiskHasBeenSet = false;
 
     Aws::Vector<ChallengeResponseType> m_challengeResponses;
-    bool m_challengeResponsesHasBeenSet;
+    bool m_challengeResponsesHasBeenSet = false;
 
     EventContextDataType m_eventContextData;
-    bool m_eventContextDataHasBeenSet;
+    bool m_eventContextDataHasBeenSet = false;
 
     EventFeedbackType m_eventFeedback;
-    bool m_eventFeedbackHasBeenSet;
+    bool m_eventFeedbackHasBeenSet = false;
   };
 
 } // namespace Model

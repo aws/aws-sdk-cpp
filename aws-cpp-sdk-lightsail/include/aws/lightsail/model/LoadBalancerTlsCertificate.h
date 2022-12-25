@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificate
+  class LoadBalancerTlsCertificate
   {
   public:
-    LoadBalancerTlsCertificate();
-    LoadBalancerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -219,32 +219,38 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The AWS Region and Availability Zone where you created your certificate.</p>
+     * <p>The Amazon Web Services Region and Availability Zone where you created your
+     * certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -1346,79 +1352,79 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     bool m_isAttached;
-    bool m_isAttachedHasBeenSet;
+    bool m_isAttachedHasBeenSet = false;
 
     LoadBalancerTlsCertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<LoadBalancerTlsCertificateDomainValidationRecord> m_domainValidationRecords;
-    bool m_domainValidationRecordsHasBeenSet;
+    bool m_domainValidationRecordsHasBeenSet = false;
 
     LoadBalancerTlsCertificateFailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     LoadBalancerTlsCertificateRenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     LoadBalancerTlsCertificateRevocationReason m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
   };
 
 } // namespace Model

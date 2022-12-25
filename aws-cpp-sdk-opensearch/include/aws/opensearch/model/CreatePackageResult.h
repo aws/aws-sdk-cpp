@@ -25,41 +25,41 @@ namespace OpenSearchService
 namespace Model
 {
   /**
-   * <p> Container for the response returned by the <code> <a>CreatePackage</a>
-   * </code> operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the response returned by the <code>CreatePackage</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API CreatePackageResult
+  class CreatePackageResult
   {
   public:
-    CreatePackageResult();
-    CreatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API CreatePackageResult();
+    AWS_OPENSEARCHSERVICE_API CreatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API CreatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Information about the package. </p>
+     * <p>Basic information about an OpenSearch Service package.</p>
      */
     inline const PackageDetails& GetPackageDetails() const{ return m_packageDetails; }
 
     /**
-     * <p>Information about the package. </p>
+     * <p>Basic information about an OpenSearch Service package.</p>
      */
     inline void SetPackageDetails(const PackageDetails& value) { m_packageDetails = value; }
 
     /**
-     * <p>Information about the package. </p>
+     * <p>Basic information about an OpenSearch Service package.</p>
      */
     inline void SetPackageDetails(PackageDetails&& value) { m_packageDetails = std::move(value); }
 
     /**
-     * <p>Information about the package. </p>
+     * <p>Basic information about an OpenSearch Service package.</p>
      */
     inline CreatePackageResult& WithPackageDetails(const PackageDetails& value) { SetPackageDetails(value); return *this;}
 
     /**
-     * <p>Information about the package. </p>
+     * <p>Basic information about an OpenSearch Service package.</p>
      */
     inline CreatePackageResult& WithPackageDetails(PackageDetails&& value) { SetPackageDetails(std::move(value)); return *this;}
 

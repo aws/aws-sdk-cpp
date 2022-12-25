@@ -26,46 +26,46 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult
+  class GetMobileDeviceAccessEffectResult
   {
   public:
-    GetMobileDeviceAccessEffectResult();
-    GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMobileDeviceAccessEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult();
+    AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the Amazon WorkMail organization
-     * for the simulated user parameters.</p>
+     * after evaluating mobile device access rules in the WorkMail organization for the
+     * simulated user parameters.</p>
      */
     inline const MobileDeviceAccessRuleEffect& GetEffect() const{ return m_effect; }
 
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the Amazon WorkMail organization
-     * for the simulated user parameters.</p>
+     * after evaluating mobile device access rules in the WorkMail organization for the
+     * simulated user parameters.</p>
      */
     inline void SetEffect(const MobileDeviceAccessRuleEffect& value) { m_effect = value; }
 
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the Amazon WorkMail organization
-     * for the simulated user parameters.</p>
+     * after evaluating mobile device access rules in the WorkMail organization for the
+     * simulated user parameters.</p>
      */
     inline void SetEffect(MobileDeviceAccessRuleEffect&& value) { m_effect = std::move(value); }
 
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the Amazon WorkMail organization
-     * for the simulated user parameters.</p>
+     * after evaluating mobile device access rules in the WorkMail organization for the
+     * simulated user parameters.</p>
      */
     inline GetMobileDeviceAccessEffectResult& WithEffect(const MobileDeviceAccessRuleEffect& value) { SetEffect(value); return *this;}
 
     /**
      * <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>,
-     * after evaluating mobile device access rules in the Amazon WorkMail organization
-     * for the simulated user parameters.</p>
+     * after evaluating mobile device access rules in the WorkMail organization for the
+     * simulated user parameters.</p>
      */
     inline GetMobileDeviceAccessEffectResult& WithEffect(MobileDeviceAccessRuleEffect&& value) { SetEffect(std::move(value)); return *this;}
 

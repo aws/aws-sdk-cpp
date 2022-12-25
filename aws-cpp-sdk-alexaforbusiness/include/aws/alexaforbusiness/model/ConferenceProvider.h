@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ConferenceProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API ConferenceProvider
+  class ConferenceProvider
   {
   public:
-    ConferenceProvider();
-    ConferenceProvider(Aws::Utils::Json::JsonView jsonValue);
-    ConferenceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API ConferenceProvider();
+    AWS_ALEXAFORBUSINESS_API ConferenceProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API ConferenceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ConferenceProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     IPDialIn m_iPDialIn;
-    bool m_iPDialInHasBeenSet;
+    bool m_iPDialInHasBeenSet = false;
 
     PSTNDialIn m_pSTNDialIn;
-    bool m_pSTNDialInHasBeenSet;
+    bool m_pSTNDialInHasBeenSet = false;
 
     MeetingSetting m_meetingSetting;
-    bool m_meetingSettingHasBeenSet;
+    bool m_meetingSettingHasBeenSet = false;
   };
 
 } // namespace Model

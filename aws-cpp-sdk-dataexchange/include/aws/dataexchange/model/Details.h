@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/Details">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API Details
+  class Details
   {
   public:
-    Details();
-    Details(Aws::Utils::Json::JsonView jsonValue);
-    Details& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API Details();
+    AWS_DATAEXCHANGE_API Details(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Details& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,52 +71,52 @@ namespace Model
 
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline const Aws::Vector<AssetSourceEntry>& GetImportAssetsFromS3JobErrorDetails() const{ return m_importAssetsFromS3JobErrorDetails; }
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline bool ImportAssetsFromS3JobErrorDetailsHasBeenSet() const { return m_importAssetsFromS3JobErrorDetailsHasBeenSet; }
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline void SetImportAssetsFromS3JobErrorDetails(const Aws::Vector<AssetSourceEntry>& value) { m_importAssetsFromS3JobErrorDetailsHasBeenSet = true; m_importAssetsFromS3JobErrorDetails = value; }
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline void SetImportAssetsFromS3JobErrorDetails(Aws::Vector<AssetSourceEntry>&& value) { m_importAssetsFromS3JobErrorDetailsHasBeenSet = true; m_importAssetsFromS3JobErrorDetails = std::move(value); }
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline Details& WithImportAssetsFromS3JobErrorDetails(const Aws::Vector<AssetSourceEntry>& value) { SetImportAssetsFromS3JobErrorDetails(value); return *this;}
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline Details& WithImportAssetsFromS3JobErrorDetails(Aws::Vector<AssetSourceEntry>&& value) { SetImportAssetsFromS3JobErrorDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline Details& AddImportAssetsFromS3JobErrorDetails(const AssetSourceEntry& value) { m_importAssetsFromS3JobErrorDetailsHasBeenSet = true; m_importAssetsFromS3JobErrorDetails.push_back(value); return *this; }
 
     /**
-     * <p>Information about the job error.</p>
+     * <p>Details about the job error.</p>
      */
     inline Details& AddImportAssetsFromS3JobErrorDetails(AssetSourceEntry&& value) { m_importAssetsFromS3JobErrorDetailsHasBeenSet = true; m_importAssetsFromS3JobErrorDetails.push_back(std::move(value)); return *this; }
 
   private:
 
     ImportAssetFromSignedUrlJobErrorDetails m_importAssetFromSignedUrlJobErrorDetails;
-    bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet;
+    bool m_importAssetFromSignedUrlJobErrorDetailsHasBeenSet = false;
 
     Aws::Vector<AssetSourceEntry> m_importAssetsFromS3JobErrorDetails;
-    bool m_importAssetsFromS3JobErrorDetailsHasBeenSet;
+    bool m_importAssetsFromS3JobErrorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

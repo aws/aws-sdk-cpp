@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionUtilizationMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric
+  class LambdaFunctionUtilizationMetric
   {
   public:
-    LambdaFunctionUtilizationMetric();
-    LambdaFunctionUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,13 +214,13 @@ namespace Model
   private:
 
     LambdaFunctionMetricName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LambdaFunctionMetricStatistic m_statistic;
-    bool m_statisticHasBeenSet;
+    bool m_statisticHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

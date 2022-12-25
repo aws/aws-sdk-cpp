@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API UpdateMacieSessionRequest : public Macie2Request
+  class UpdateMacieSessionRequest : public Macie2Request
   {
   public:
-    UpdateMacieSessionRequest();
+    AWS_MACIE2_API UpdateMacieSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,48 +30,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMacieSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
      * <p>Specifies how often to publish updates to policy findings for the account.
      * This includes publishing updates to Security Hub and Amazon EventBridge
-     * (formerly called Amazon CloudWatch Events).</p>
+     * (formerly Amazon CloudWatch Events).</p>
      */
     inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     FindingPublishingFrequency m_findingPublishingFrequency;
-    bool m_findingPublishingFrequencyHasBeenSet;
+    bool m_findingPublishingFrequencyHasBeenSet = false;
 
     MacieStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

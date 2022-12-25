@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API DescribeQuerySuggestionsBlockListRequest : public KendraRequest
+  class DescribeQuerySuggestionsBlockListRequest : public KendraRequest
   {
   public:
-    DescribeQuerySuggestionsBlockListRequest();
+    AWS_KENDRA_API DescribeQuerySuggestionsBlockListRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeQuerySuggestionsBlockList"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -76,52 +76,52 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline DescribeQuerySuggestionsBlockListRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline DescribeQuerySuggestionsBlockListRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the block list.</p>
+     * <p>The identifier of the block list you want to get information on.</p>
      */
     inline DescribeQuerySuggestionsBlockListRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

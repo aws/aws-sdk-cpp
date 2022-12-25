@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotDiskContainer">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SnapshotDiskContainer
+  class SnapshotDiskContainer
   {
   public:
-    SnapshotDiskContainer();
-    SnapshotDiskContainer(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotDiskContainer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotDiskContainer();
+    AWS_EC2_API SnapshotDiskContainer(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotDiskContainer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     UserBucket m_userBucket;
-    bool m_userBucketHasBeenSet;
+    bool m_userBucketHasBeenSet = false;
   };
 
 } // namespace Model

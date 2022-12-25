@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/SnowconeDeviceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API SnowconeDeviceConfiguration
+  class SnowconeDeviceConfiguration
   {
   public:
-    SnowconeDeviceConfiguration();
-    SnowconeDeviceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SnowconeDeviceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API SnowconeDeviceConfiguration();
+    AWS_SNOWBALL_API SnowconeDeviceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API SnowconeDeviceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     WirelessConnection m_wirelessConnection;
-    bool m_wirelessConnectionHasBeenSet;
+    bool m_wirelessConnectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchReadOperation
+  class BatchReadOperation
   {
   public:
-    BatchReadOperation();
-    BatchReadOperation(Aws::Utils::Json::JsonView jsonValue);
-    BatchReadOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchReadOperation();
+    AWS_CLOUDDIRECTORY_API BatchReadOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchReadOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -619,46 +619,46 @@ namespace Model
   private:
 
     BatchListObjectAttributes m_listObjectAttributes;
-    bool m_listObjectAttributesHasBeenSet;
+    bool m_listObjectAttributesHasBeenSet = false;
 
     BatchListObjectChildren m_listObjectChildren;
-    bool m_listObjectChildrenHasBeenSet;
+    bool m_listObjectChildrenHasBeenSet = false;
 
     BatchListAttachedIndices m_listAttachedIndices;
-    bool m_listAttachedIndicesHasBeenSet;
+    bool m_listAttachedIndicesHasBeenSet = false;
 
     BatchListObjectParentPaths m_listObjectParentPaths;
-    bool m_listObjectParentPathsHasBeenSet;
+    bool m_listObjectParentPathsHasBeenSet = false;
 
     BatchGetObjectInformation m_getObjectInformation;
-    bool m_getObjectInformationHasBeenSet;
+    bool m_getObjectInformationHasBeenSet = false;
 
     BatchGetObjectAttributes m_getObjectAttributes;
-    bool m_getObjectAttributesHasBeenSet;
+    bool m_getObjectAttributesHasBeenSet = false;
 
     BatchListObjectParents m_listObjectParents;
-    bool m_listObjectParentsHasBeenSet;
+    bool m_listObjectParentsHasBeenSet = false;
 
     BatchListObjectPolicies m_listObjectPolicies;
-    bool m_listObjectPoliciesHasBeenSet;
+    bool m_listObjectPoliciesHasBeenSet = false;
 
     BatchListPolicyAttachments m_listPolicyAttachments;
-    bool m_listPolicyAttachmentsHasBeenSet;
+    bool m_listPolicyAttachmentsHasBeenSet = false;
 
     BatchLookupPolicy m_lookupPolicy;
-    bool m_lookupPolicyHasBeenSet;
+    bool m_lookupPolicyHasBeenSet = false;
 
     BatchListIndex m_listIndex;
-    bool m_listIndexHasBeenSet;
+    bool m_listIndexHasBeenSet = false;
 
     BatchListOutgoingTypedLinks m_listOutgoingTypedLinks;
-    bool m_listOutgoingTypedLinksHasBeenSet;
+    bool m_listOutgoingTypedLinksHasBeenSet = false;
 
     BatchListIncomingTypedLinks m_listIncomingTypedLinks;
-    bool m_listIncomingTypedLinksHasBeenSet;
+    bool m_listIncomingTypedLinksHasBeenSet = false;
 
     BatchGetLinkAttributes m_getLinkAttributes;
-    bool m_getLinkAttributesHasBeenSet;
+    bool m_getLinkAttributesHasBeenSet = false;
   };
 
 } // namespace Model

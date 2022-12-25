@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 StartQueryRequest::StartQueryRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_logGroupNamesHasBeenSet(false),
+    m_logGroupIdentifiersHasBeenSet(false),
     m_startTime(0),
     m_startTimeHasBeenSet(false),
     m_endTime(0),
@@ -37,12 +38,23 @@ Aws::String StartQueryRequest::SerializePayload() const
 
   if(m_logGroupNamesHasBeenSet)
   {
-   Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
+   Aws::Utils::Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
    for(unsigned logGroupNamesIndex = 0; logGroupNamesIndex < logGroupNamesJsonList.GetLength(); ++logGroupNamesIndex)
    {
      logGroupNamesJsonList[logGroupNamesIndex].AsString(m_logGroupNames[logGroupNamesIndex]);
    }
    payload.WithArray("logGroupNames", std::move(logGroupNamesJsonList));
+
+  }
+
+  if(m_logGroupIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> logGroupIdentifiersJsonList(m_logGroupIdentifiers.size());
+   for(unsigned logGroupIdentifiersIndex = 0; logGroupIdentifiersIndex < logGroupIdentifiersJsonList.GetLength(); ++logGroupIdentifiersIndex)
+   {
+     logGroupIdentifiersJsonList[logGroupIdentifiersIndex].AsString(m_logGroupIdentifiers[logGroupIdentifiersIndex]);
+   }
+   payload.WithArray("logGroupIdentifiers", std::move(logGroupIdentifiersJsonList));
 
   }
 

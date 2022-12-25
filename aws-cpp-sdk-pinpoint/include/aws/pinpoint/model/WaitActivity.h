@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WaitActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WaitActivity
+  class WaitActivity
   {
   public:
-    WaitActivity();
-    WaitActivity(Aws::Utils::Json::JsonView jsonValue);
-    WaitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WaitActivity();
+    AWS_PINPOINT_API WaitActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WaitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_nextActivity;
-    bool m_nextActivityHasBeenSet;
+    bool m_nextActivityHasBeenSet = false;
 
     WaitTime m_waitTime;
-    bool m_waitTimeHasBeenSet;
+    bool m_waitTimeHasBeenSet = false;
   };
 
 } // namespace Model

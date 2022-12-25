@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DelegatedAdmin">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API DelegatedAdmin
+  class DelegatedAdmin
   {
   public:
-    DelegatedAdmin();
-    DelegatedAdmin(Aws::Utils::Json::JsonView jsonValue);
-    DelegatedAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API DelegatedAdmin();
+    AWS_INSPECTOR2_API DelegatedAdmin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API DelegatedAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     RelationshipStatus m_relationshipStatus;
-    bool m_relationshipStatusHasBeenSet;
+    bool m_relationshipStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,18 +25,18 @@ namespace Model
 
   /**
    * <p>Specifies where to store data classification results, and the encryption
-   * settings to use when storing results in that location. Currently, you can store
-   * classification results only in an S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * settings to use when storing results in that location. The location must be an
+   * S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationExportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ClassificationExportConfiguration
+  class ClassificationExportConfiguration
   {
   public:
-    ClassificationExportConfiguration();
-    ClassificationExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ClassificationExportConfiguration();
+    AWS_MACIE2_API ClassificationExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ClassificationExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
   };
 
 } // namespace Model

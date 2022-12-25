@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ScanStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ScanStatus
+  class ScanStatus
   {
   public:
-    ScanStatus();
-    ScanStatus(Aws::Utils::Json::JsonView jsonValue);
-    ScanStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ScanStatus();
+    AWS_INSPECTOR2_API ScanStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ScanStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ScanStatusReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     ScanStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

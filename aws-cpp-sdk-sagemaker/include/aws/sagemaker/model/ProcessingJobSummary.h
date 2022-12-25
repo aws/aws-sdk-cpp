@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingJobSummary
+  class ProcessingJobSummary
   {
   public:
-    ProcessingJobSummary();
-    ProcessingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingJobSummary();
+    AWS_SAGEMAKER_API ProcessingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -345,28 +345,28 @@ namespace Model
   private:
 
     Aws::String m_processingJobName;
-    bool m_processingJobNameHasBeenSet;
+    bool m_processingJobNameHasBeenSet = false;
 
     Aws::String m_processingJobArn;
-    bool m_processingJobArnHasBeenSet;
+    bool m_processingJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_processingEndTime;
-    bool m_processingEndTimeHasBeenSet;
+    bool m_processingEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     ProcessingJobStatus m_processingJobStatus;
-    bool m_processingJobStatusHasBeenSet;
+    bool m_processingJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_exitMessage;
-    bool m_exitMessageHasBeenSet;
+    bool m_exitMessageHasBeenSet = false;
   };
 
 } // namespace Model

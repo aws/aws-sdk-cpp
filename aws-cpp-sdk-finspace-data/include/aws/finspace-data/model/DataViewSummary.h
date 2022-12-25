@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DataViewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DataViewSummary
+  class DataViewSummary
   {
   public:
-    DataViewSummary();
-    DataViewSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DataViewSummary();
+    AWS_FINSPACEDATA_API DataViewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DataViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -507,40 +507,40 @@ namespace Model
   private:
 
     Aws::String m_dataViewId;
-    bool m_dataViewIdHasBeenSet;
+    bool m_dataViewIdHasBeenSet = false;
 
     Aws::String m_dataViewArn;
-    bool m_dataViewArnHasBeenSet;
+    bool m_dataViewArnHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     long long m_asOfTimestamp;
-    bool m_asOfTimestampHasBeenSet;
+    bool m_asOfTimestampHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionColumns;
-    bool m_partitionColumnsHasBeenSet;
+    bool m_partitionColumnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sortColumns;
-    bool m_sortColumnsHasBeenSet;
+    bool m_sortColumnsHasBeenSet = false;
 
     DataViewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     DataViewErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     DataViewDestinationTypeParams m_destinationTypeProperties;
-    bool m_destinationTypePropertiesHasBeenSet;
+    bool m_destinationTypePropertiesHasBeenSet = false;
 
     bool m_autoUpdate;
-    bool m_autoUpdateHasBeenSet;
+    bool m_autoUpdateHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

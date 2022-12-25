@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamOutputConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest
+  class MediaStreamOutputConfigurationRequest
   {
   public:
-    MediaStreamOutputConfigurationRequest();
-    MediaStreamOutputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    MediaStreamOutputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest();
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::Vector<DestinationConfigurationRequest> m_destinationConfigurations;
-    bool m_destinationConfigurationsHasBeenSet;
+    bool m_destinationConfigurationsHasBeenSet = false;
 
     EncodingName m_encodingName;
-    bool m_encodingNameHasBeenSet;
+    bool m_encodingNameHasBeenSet = false;
 
     EncodingParametersRequest m_encodingParameters;
-    bool m_encodingParametersHasBeenSet;
+    bool m_encodingParametersHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
   };
 
 } // namespace Model

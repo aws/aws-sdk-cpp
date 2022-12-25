@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API UntagResourceRequest : public KinesisAnalyticsV2Request
+  class UntagResourceRequest : public KinesisAnalyticsV2Request
   {
   public:
-    UntagResourceRequest();
+    AWS_KINESISANALYTICSV2_API UntagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

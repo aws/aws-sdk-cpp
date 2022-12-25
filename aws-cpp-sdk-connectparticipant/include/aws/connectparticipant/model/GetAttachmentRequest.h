@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTPARTICIPANT_API GetAttachmentRequest : public ConnectParticipantRequest
+  class GetAttachmentRequest : public ConnectParticipantRequest
   {
   public:
-    GetAttachmentRequest();
+    AWS_CONNECTPARTICIPANT_API GetAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionState">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionState
+  class ActionState
   {
   public:
-    ActionState();
-    ActionState(Aws::Utils::Json::JsonView jsonValue);
-    ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionState();
+    AWS_CODEPIPELINE_API ActionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,19 +243,19 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ActionRevision m_currentRevision;
-    bool m_currentRevisionHasBeenSet;
+    bool m_currentRevisionHasBeenSet = false;
 
     ActionExecution m_latestExecution;
-    bool m_latestExecutionHasBeenSet;
+    bool m_latestExecutionHasBeenSet = false;
 
     Aws::String m_entityUrl;
-    bool m_entityUrlHasBeenSet;
+    bool m_entityUrlHasBeenSet = false;
 
     Aws::String m_revisionUrl;
-    bool m_revisionUrlHasBeenSet;
+    bool m_revisionUrlHasBeenSet = false;
   };
 
 } // namespace Model

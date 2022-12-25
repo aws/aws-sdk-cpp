@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Task">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Task
+  class Task
   {
   public:
-    Task();
-    Task(Aws::Utils::Json::JsonView jsonValue);
-    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Task();
+    AWS_ECS_API Task(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -431,10 +431,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
@@ -456,10 +460,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
@@ -481,10 +489,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
@@ -506,10 +518,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
@@ -531,10 +547,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
@@ -556,10 +576,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
@@ -581,10 +605,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
@@ -606,10 +634,14 @@ namespace Model
      * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
      * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
      * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     * (1 GB)</p> </li> <li> <p>8192 (8 vCPU) - Available <code>memory</code> values:
+     * 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform
+     * <code>1.4.0</code> or later.</p> </li> <li> <p>16384 (16vCPU) - Available
+     * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
+     * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithCpu(const char* value) { SetCpu(value); return *this;}
 
@@ -1070,7 +1102,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
@@ -1091,7 +1128,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -1112,7 +1154,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -1133,7 +1180,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
@@ -1154,7 +1206,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
@@ -1175,7 +1232,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
@@ -1196,7 +1258,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
@@ -1217,7 +1284,12 @@ namespace Model
      * vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in increments of
      * 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li>
      * <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
-     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> <li> <p>Between 16 GB
+     * and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8
+     * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Between 32GB and 120 GB in 8 GB increments - Available
+     * <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux
+     * platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
     inline Task& WithMemory(const char* value) { SetMemory(value); return *this;}
 
@@ -2080,112 +2152,112 @@ namespace Model
   private:
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::Vector<Attribute> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_capacityProviderName;
-    bool m_capacityProviderNameHasBeenSet;
+    bool m_capacityProviderNameHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Connectivity m_connectivity;
-    bool m_connectivityHasBeenSet;
+    bool m_connectivityHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectivityAt;
-    bool m_connectivityAtHasBeenSet;
+    bool m_connectivityAtHasBeenSet = false;
 
     Aws::String m_containerInstanceArn;
-    bool m_containerInstanceArnHasBeenSet;
+    bool m_containerInstanceArnHasBeenSet = false;
 
     Aws::Vector<Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_desiredStatus;
-    bool m_desiredStatusHasBeenSet;
+    bool m_desiredStatusHasBeenSet = false;
 
     bool m_enableExecuteCommand;
-    bool m_enableExecuteCommandHasBeenSet;
+    bool m_enableExecuteCommandHasBeenSet = false;
 
     Aws::Utils::DateTime m_executionStoppedAt;
-    bool m_executionStoppedAtHasBeenSet;
+    bool m_executionStoppedAtHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     HealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
-    bool m_inferenceAcceleratorsHasBeenSet;
+    bool m_inferenceAcceleratorsHasBeenSet = false;
 
     Aws::String m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     TaskOverride m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformFamily;
-    bool m_platformFamilyHasBeenSet;
+    bool m_platformFamilyHasBeenSet = false;
 
     Aws::Utils::DateTime m_pullStartedAt;
-    bool m_pullStartedAtHasBeenSet;
+    bool m_pullStartedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_pullStoppedAt;
-    bool m_pullStoppedAtHasBeenSet;
+    bool m_pullStoppedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     TaskStopCode m_stopCode;
-    bool m_stopCodeHasBeenSet;
+    bool m_stopCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     Aws::String m_stoppedReason;
-    bool m_stoppedReasonHasBeenSet;
+    bool m_stoppedReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_stoppingAt;
-    bool m_stoppingAtHasBeenSet;
+    bool m_stoppingAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_taskDefinitionArn;
-    bool m_taskDefinitionArnHasBeenSet;
+    bool m_taskDefinitionArnHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

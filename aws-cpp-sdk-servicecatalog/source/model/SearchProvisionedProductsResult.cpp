@@ -32,7 +32,7 @@ SearchProvisionedProductsResult& SearchProvisionedProductsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedProducts"))
   {
-    Array<JsonView> provisionedProductsJsonList = jsonValue.GetArray("ProvisionedProducts");
+    Aws::Utils::Array<JsonView> provisionedProductsJsonList = jsonValue.GetArray("ProvisionedProducts");
     for(unsigned provisionedProductsIndex = 0; provisionedProductsIndex < provisionedProductsJsonList.GetLength(); ++provisionedProductsIndex)
     {
       m_provisionedProducts.push_back(provisionedProductsJsonList[provisionedProductsIndex].AsObject());

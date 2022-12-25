@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorResourcesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorResourcesSummary
+  class TrustedAdvisorResourcesSummary
   {
   public:
-    TrustedAdvisorResourcesSummary();
-    TrustedAdvisorResourcesSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorResourcesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorResourcesSummary();
+    AWS_SUPPORT_API TrustedAdvisorResourcesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorResourcesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,16 +139,16 @@ namespace Model
   private:
 
     long long m_resourcesProcessed;
-    bool m_resourcesProcessedHasBeenSet;
+    bool m_resourcesProcessedHasBeenSet = false;
 
     long long m_resourcesFlagged;
-    bool m_resourcesFlaggedHasBeenSet;
+    bool m_resourcesFlaggedHasBeenSet = false;
 
     long long m_resourcesIgnored;
-    bool m_resourcesIgnoredHasBeenSet;
+    bool m_resourcesIgnoredHasBeenSet = false;
 
     long long m_resourcesSuppressed;
-    bool m_resourcesSuppressedHasBeenSet;
+    bool m_resourcesSuppressedHasBeenSet = false;
   };
 
 } // namespace Model

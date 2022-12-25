@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyGrantingServiceAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API PolicyGrantingServiceAccess
+  class PolicyGrantingServiceAccess
   {
   public:
-    PolicyGrantingServiceAccess();
-    PolicyGrantingServiceAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyGrantingServiceAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyGrantingServiceAccess();
+    AWS_IAM_API PolicyGrantingServiceAccess(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyGrantingServiceAccess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -283,19 +283,19 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     PolicyOwnerEntityType m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
   };
 
 } // namespace Model

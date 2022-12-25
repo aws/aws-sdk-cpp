@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationCustomPolicyRuleMetadataNoPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationCustomPolicyRuleMetadataNoPolicy
+  class OrganizationCustomPolicyRuleMetadataNoPolicy
   {
   public:
-    OrganizationCustomPolicyRuleMetadataNoPolicy();
-    OrganizationCustomPolicyRuleMetadataNoPolicy(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationCustomPolicyRuleMetadataNoPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationCustomPolicyRuleMetadataNoPolicy();
+    AWS_CONFIGSERVICE_API OrganizationCustomPolicyRuleMetadataNoPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationCustomPolicyRuleMetadataNoPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -615,34 +615,34 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<OrganizationConfigRuleTriggerTypeNoSN> m_organizationConfigRuleTriggerTypes;
-    bool m_organizationConfigRuleTriggerTypesHasBeenSet;
+    bool m_organizationConfigRuleTriggerTypesHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypesScope;
-    bool m_resourceTypesScopeHasBeenSet;
+    bool m_resourceTypesScopeHasBeenSet = false;
 
     Aws::String m_resourceIdScope;
-    bool m_resourceIdScopeHasBeenSet;
+    bool m_resourceIdScopeHasBeenSet = false;
 
     Aws::String m_tagKeyScope;
-    bool m_tagKeyScopeHasBeenSet;
+    bool m_tagKeyScopeHasBeenSet = false;
 
     Aws::String m_tagValueScope;
-    bool m_tagValueScopeHasBeenSet;
+    bool m_tagValueScopeHasBeenSet = false;
 
     Aws::String m_policyRuntime;
-    bool m_policyRuntimeHasBeenSet;
+    bool m_policyRuntimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_debugLogDeliveryAccounts;
-    bool m_debugLogDeliveryAccountsHasBeenSet;
+    bool m_debugLogDeliveryAccountsHasBeenSet = false;
   };
 
 } // namespace Model

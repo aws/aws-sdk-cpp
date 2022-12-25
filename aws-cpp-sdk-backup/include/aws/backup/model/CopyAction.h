@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CopyAction">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API CopyAction
+  class CopyAction
   {
   public:
-    CopyAction();
-    CopyAction(Aws::Utils::Json::JsonView jsonValue);
-    CopyAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API CopyAction();
+    AWS_BACKUP_API CopyAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API CopyAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_destinationBackupVaultArn;
-    bool m_destinationBackupVaultArnHasBeenSet;
+    bool m_destinationBackupVaultArnHasBeenSet = false;
   };
 
 } // namespace Model

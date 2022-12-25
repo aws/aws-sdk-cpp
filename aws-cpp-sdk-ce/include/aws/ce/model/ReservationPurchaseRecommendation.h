@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationPurchaseRecommendation
+  class ReservationPurchaseRecommendation
   {
   public:
-    ReservationPurchaseRecommendation();
-    ReservationPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation();
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,25 +304,25 @@ namespace Model
   private:
 
     AccountScope m_accountScope;
-    bool m_accountScopeHasBeenSet;
+    bool m_accountScopeHasBeenSet = false;
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
-    bool m_lookbackPeriodInDaysHasBeenSet;
+    bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     TermInYears m_termInYears;
-    bool m_termInYearsHasBeenSet;
+    bool m_termInYearsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     ServiceSpecification m_serviceSpecification;
-    bool m_serviceSpecificationHasBeenSet;
+    bool m_serviceSpecificationHasBeenSet = false;
 
     Aws::Vector<ReservationPurchaseRecommendationDetail> m_recommendationDetails;
-    bool m_recommendationDetailsHasBeenSet;
+    bool m_recommendationDetailsHasBeenSet = false;
 
     ReservationPurchaseRecommendationSummary m_recommendationSummary;
-    bool m_recommendationSummaryHasBeenSet;
+    bool m_recommendationSummaryHasBeenSet = false;
   };
 
 } // namespace Model

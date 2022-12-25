@@ -30,7 +30,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 
   if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
    for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
@@ -45,7 +45,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.UntagResource"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.UntagResource"));
   return headers;
 
 }

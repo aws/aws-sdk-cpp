@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/Listener">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API Listener
+  class Listener
   {
   public:
-    Listener();
-    Listener(Aws::Utils::Json::JsonView jsonValue);
-    Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API Listener();
+    AWS_APPMESH_API Listener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,22 +237,22 @@ namespace Model
   private:
 
     VirtualNodeConnectionPool m_connectionPool;
-    bool m_connectionPoolHasBeenSet;
+    bool m_connectionPoolHasBeenSet = false;
 
     HealthCheckPolicy m_healthCheck;
-    bool m_healthCheckHasBeenSet;
+    bool m_healthCheckHasBeenSet = false;
 
     OutlierDetection m_outlierDetection;
-    bool m_outlierDetectionHasBeenSet;
+    bool m_outlierDetectionHasBeenSet = false;
 
     PortMapping m_portMapping;
-    bool m_portMappingHasBeenSet;
+    bool m_portMappingHasBeenSet = false;
 
     ListenerTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     ListenerTls m_tls;
-    bool m_tlsHasBeenSet;
+    bool m_tlsHasBeenSet = false;
   };
 
 } // namespace Model

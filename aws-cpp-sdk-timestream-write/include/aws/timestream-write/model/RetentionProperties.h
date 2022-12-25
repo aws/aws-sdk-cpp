@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RetentionProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API RetentionProperties
+  class RetentionProperties
   {
   public:
-    RetentionProperties();
-    RetentionProperties(Aws::Utils::Json::JsonView jsonValue);
-    RetentionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API RetentionProperties();
+    AWS_TIMESTREAMWRITE_API RetentionProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API RetentionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     long long m_memoryStoreRetentionPeriodInHours;
-    bool m_memoryStoreRetentionPeriodInHoursHasBeenSet;
+    bool m_memoryStoreRetentionPeriodInHoursHasBeenSet = false;
 
     long long m_magneticStoreRetentionPeriodInDays;
-    bool m_magneticStoreRetentionPeriodInDaysHasBeenSet;
+    bool m_magneticStoreRetentionPeriodInDaysHasBeenSet = false;
   };
 
 } // namespace Model

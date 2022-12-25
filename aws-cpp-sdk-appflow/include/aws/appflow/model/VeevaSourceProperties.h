@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/VeevaSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API VeevaSourceProperties
+  class VeevaSourceProperties
   {
   public:
-    VeevaSourceProperties();
-    VeevaSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    VeevaSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API VeevaSourceProperties();
+    AWS_APPFLOW_API VeevaSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API VeevaSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,19 +189,19 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::String m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
 
     bool m_includeSourceFiles;
-    bool m_includeSourceFilesHasBeenSet;
+    bool m_includeSourceFilesHasBeenSet = false;
 
     bool m_includeRenditions;
-    bool m_includeRenditionsHasBeenSet;
+    bool m_includeRenditionsHasBeenSet = false;
 
     bool m_includeAllVersions;
-    bool m_includeAllVersionsHasBeenSet;
+    bool m_includeAllVersionsHasBeenSet = false;
   };
 
 } // namespace Model

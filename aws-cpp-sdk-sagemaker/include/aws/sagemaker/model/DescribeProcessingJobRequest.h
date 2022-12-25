@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API DescribeProcessingJobRequest : public SageMakerRequest
+  class DescribeProcessingJobRequest : public SageMakerRequest
   {
   public:
-    DescribeProcessingJobRequest();
+    AWS_SAGEMAKER_API DescribeProcessingJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeProcessingJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_processingJobName;
-    bool m_processingJobNameHasBeenSet;
+    bool m_processingJobNameHasBeenSet = false;
   };
 
 } // namespace Model

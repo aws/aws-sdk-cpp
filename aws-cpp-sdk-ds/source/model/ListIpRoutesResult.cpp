@@ -30,7 +30,7 @@ ListIpRoutesResult& ListIpRoutesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IpRoutesInfo"))
   {
-    Array<JsonView> ipRoutesInfoJsonList = jsonValue.GetArray("IpRoutesInfo");
+    Aws::Utils::Array<JsonView> ipRoutesInfoJsonList = jsonValue.GetArray("IpRoutesInfo");
     for(unsigned ipRoutesInfoIndex = 0; ipRoutesInfoIndex < ipRoutesInfoJsonList.GetLength(); ++ipRoutesInfoIndex)
     {
       m_ipRoutesInfo.push_back(ipRoutesInfoJsonList[ipRoutesInfoIndex].AsObject());

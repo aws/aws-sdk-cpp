@@ -29,65 +29,59 @@ namespace Model
 {
 
   /**
-   * <p>Represents the transcription result stream from Amazon Transcribe to your
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains detailed information about your streaming session.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/TranscriptResultStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream
+  class TranscriptResultStream
   {
   public:
-    TranscriptResultStream();
-    TranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline const TranscriptEvent& GetTranscriptEvent() const{ return m_transcriptEvent; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline bool TranscriptEventHasBeenSet() const { return m_transcriptEventHasBeenSet; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline void SetTranscriptEvent(const TranscriptEvent& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = value; }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline void SetTranscriptEvent(TranscriptEvent&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::move(value); }
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline TranscriptResultStream& WithTranscriptEvent(const TranscriptEvent& value) { SetTranscriptEvent(value); return *this;}
 
     /**
-     * <p>A portion of the transcription of the audio stream. Events are sent
-     * periodically from Amazon Transcribe to your application. The event can be a
-     * partial transcription of a section of the audio stream, or it can be the entire
-     * transcription of that portion of the audio stream. </p>
+     * <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The
+     * <code/> object contains a set of transcription results from one or more audio
+     * segments, along with additional information per your request parameters.</p>
      */
     inline TranscriptResultStream& WithTranscriptEvent(TranscriptEvent&& value) { SetTranscriptEvent(std::move(value)); return *this;}
 
@@ -130,44 +124,44 @@ namespace Model
 
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline const LimitExceededException& GetLimitExceededException() const{ return m_limitExceededException; }
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline bool LimitExceededExceptionHasBeenSet() const { return m_limitExceededExceptionHasBeenSet; }
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline void SetLimitExceededException(const LimitExceededException& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = value; }
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline void SetLimitExceededException(LimitExceededException&& value) { m_limitExceededExceptionHasBeenSet = true; m_limitExceededException = std::move(value); }
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline TranscriptResultStream& WithLimitExceededException(const LimitExceededException& value) { SetLimitExceededException(value); return *this;}
 
     /**
-     * <p>Your client has exceeded one of the Amazon Transcribe limits, typically the
-     * limit on audio length. Break your audio stream into smaller chunks and try your
-     * request again.</p>
+     * <p>Your client has exceeded one of the Amazon Transcribe limits. This is
+     * typically the audio length limit. Break your audio stream into smaller chunks
+     * and try your request again.</p>
      */
     inline TranscriptResultStream& WithLimitExceededException(LimitExceededException&& value) { SetLimitExceededException(std::move(value)); return *this;}
 
@@ -247,54 +241,54 @@ namespace Model
 
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline TranscriptResultStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
 
     /**
-     * <p>Service is currently unavailable. Try your request later.</p>
+     * <p>The service is currently unavailable. Try your request later.</p>
      */
     inline TranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
 
   private:
 
     TranscriptEvent m_transcriptEvent;
-    bool m_transcriptEventHasBeenSet;
+    bool m_transcriptEventHasBeenSet = false;
 
     BadRequestException m_badRequestException;
-    bool m_badRequestExceptionHasBeenSet;
+    bool m_badRequestExceptionHasBeenSet = false;
 
     LimitExceededException m_limitExceededException;
-    bool m_limitExceededExceptionHasBeenSet;
+    bool m_limitExceededExceptionHasBeenSet = false;
 
     InternalFailureException m_internalFailureException;
-    bool m_internalFailureExceptionHasBeenSet;
+    bool m_internalFailureExceptionHasBeenSet = false;
 
     ConflictException m_conflictException;
-    bool m_conflictExceptionHasBeenSet;
+    bool m_conflictExceptionHasBeenSet = false;
 
     ServiceUnavailableException m_serviceUnavailableException;
-    bool m_serviceUnavailableExceptionHasBeenSet;
+    bool m_serviceUnavailableExceptionHasBeenSet = false;
   };
 
 } // namespace Model

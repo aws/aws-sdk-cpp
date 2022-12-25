@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API BatchCreatePartitionRequest : public GlueRequest
+  class BatchCreatePartitionRequest : public GlueRequest
   {
   public:
-    BatchCreatePartitionRequest();
+    AWS_GLUE_API BatchCreatePartitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchCreatePartition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -226,16 +226,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::Vector<PartitionInput> m_partitionInputList;
-    bool m_partitionInputListHasBeenSet;
+    bool m_partitionInputListHasBeenSet = false;
   };
 
 } // namespace Model

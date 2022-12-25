@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTWISDOMSERVICE_API DeleteContentRequest : public ConnectWisdomServiceRequest
+  class DeleteContentRequest : public ConnectWisdomServiceRequest
   {
   public:
-    DeleteContentRequest();
+    AWS_CONNECTWISDOMSERVICE_API DeleteContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteContent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_contentId;
-    bool m_contentIdHasBeenSet;
+    bool m_contentIdHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
-    bool m_knowledgeBaseIdHasBeenSet;
+    bool m_knowledgeBaseIdHasBeenSet = false;
   };
 
 } // namespace Model

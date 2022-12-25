@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationFleetCancellationState">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CapacityReservationFleetCancellationState
+  class CapacityReservationFleetCancellationState
   {
   public:
-    CapacityReservationFleetCancellationState();
-    CapacityReservationFleetCancellationState(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CapacityReservationFleetCancellationState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationFleetCancellationState();
+    AWS_EC2_API CapacityReservationFleetCancellationState(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationFleetCancellationState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     CapacityReservationFleetState m_currentFleetState;
-    bool m_currentFleetStateHasBeenSet;
+    bool m_currentFleetStateHasBeenSet = false;
 
     CapacityReservationFleetState m_previousFleetState;
-    bool m_previousFleetStateHasBeenSet;
+    bool m_previousFleetStateHasBeenSet = false;
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
   };
 
 } // namespace Model

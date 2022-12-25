@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsGroupSettings
+  class HlsGroupSettings
   {
   public:
-    HlsGroupSettings();
-    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsGroupSettings();
+    AWS_MEDIACONVERT_API HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1495,97 +1495,97 @@ namespace Model
   private:
 
     Aws::Vector<HlsAdMarkers> m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<HlsAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     HlsAudioOnlyHeader m_audioOnlyHeader;
-    bool m_audioOnlyHeaderHasBeenSet;
+    bool m_audioOnlyHeaderHasBeenSet = false;
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     Aws::Vector<HlsCaptionLanguageMapping> m_captionLanguageMappings;
-    bool m_captionLanguageMappingsHasBeenSet;
+    bool m_captionLanguageMappingsHasBeenSet = false;
 
     HlsCaptionLanguageSetting m_captionLanguageSetting;
-    bool m_captionLanguageSettingHasBeenSet;
+    bool m_captionLanguageSettingHasBeenSet = false;
 
     HlsCaptionSegmentLengthControl m_captionSegmentLengthControl;
-    bool m_captionSegmentLengthControlHasBeenSet;
+    bool m_captionSegmentLengthControlHasBeenSet = false;
 
     HlsClientCache m_clientCache;
-    bool m_clientCacheHasBeenSet;
+    bool m_clientCacheHasBeenSet = false;
 
     HlsCodecSpecification m_codecSpecification;
-    bool m_codecSpecificationHasBeenSet;
+    bool m_codecSpecificationHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     HlsDirectoryStructure m_directoryStructure;
-    bool m_directoryStructureHasBeenSet;
+    bool m_directoryStructureHasBeenSet = false;
 
     HlsEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     HlsImageBasedTrickPlay m_imageBasedTrickPlay;
-    bool m_imageBasedTrickPlayHasBeenSet;
+    bool m_imageBasedTrickPlayHasBeenSet = false;
 
     HlsImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
     HlsManifestCompression m_manifestCompression;
-    bool m_manifestCompressionHasBeenSet;
+    bool m_manifestCompressionHasBeenSet = false;
 
     HlsManifestDurationFormat m_manifestDurationFormat;
-    bool m_manifestDurationFormatHasBeenSet;
+    bool m_manifestDurationFormatHasBeenSet = false;
 
     double m_minFinalSegmentLength;
-    bool m_minFinalSegmentLengthHasBeenSet;
+    bool m_minFinalSegmentLengthHasBeenSet = false;
 
     int m_minSegmentLength;
-    bool m_minSegmentLengthHasBeenSet;
+    bool m_minSegmentLengthHasBeenSet = false;
 
     HlsOutputSelection m_outputSelection;
-    bool m_outputSelectionHasBeenSet;
+    bool m_outputSelectionHasBeenSet = false;
 
     HlsProgramDateTime m_programDateTime;
-    bool m_programDateTimeHasBeenSet;
+    bool m_programDateTimeHasBeenSet = false;
 
     int m_programDateTimePeriod;
-    bool m_programDateTimePeriodHasBeenSet;
+    bool m_programDateTimePeriodHasBeenSet = false;
 
     HlsSegmentControl m_segmentControl;
-    bool m_segmentControlHasBeenSet;
+    bool m_segmentControlHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     HlsSegmentLengthControl m_segmentLengthControl;
-    bool m_segmentLengthControlHasBeenSet;
+    bool m_segmentLengthControlHasBeenSet = false;
 
     int m_segmentsPerSubdirectory;
-    bool m_segmentsPerSubdirectoryHasBeenSet;
+    bool m_segmentsPerSubdirectoryHasBeenSet = false;
 
     HlsStreamInfResolution m_streamInfResolution;
-    bool m_streamInfResolutionHasBeenSet;
+    bool m_streamInfResolutionHasBeenSet = false;
 
     HlsTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
-    bool m_targetDurationCompatibilityModeHasBeenSet;
+    bool m_targetDurationCompatibilityModeHasBeenSet = false;
 
     HlsTimedMetadataId3Frame m_timedMetadataId3Frame;
-    bool m_timedMetadataId3FrameHasBeenSet;
+    bool m_timedMetadataId3FrameHasBeenSet = false;
 
     int m_timedMetadataId3Period;
-    bool m_timedMetadataId3PeriodHasBeenSet;
+    bool m_timedMetadataId3PeriodHasBeenSet = false;
 
     int m_timestampDeltaMilliseconds;
-    bool m_timestampDeltaMillisecondsHasBeenSet;
+    bool m_timestampDeltaMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

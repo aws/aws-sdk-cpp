@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchCreateIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchCreateIndex
+  class BatchCreateIndex
   {
   public:
-    BatchCreateIndex();
-    BatchCreateIndex(Aws::Utils::Json::JsonView jsonValue);
-    BatchCreateIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchCreateIndex();
+    AWS_CLOUDDIRECTORY_API BatchCreateIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchCreateIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<AttributeKey> m_orderedIndexedAttributeList;
-    bool m_orderedIndexedAttributeListHasBeenSet;
+    bool m_orderedIndexedAttributeListHasBeenSet = false;
 
     bool m_isUnique;
-    bool m_isUniqueHasBeenSet;
+    bool m_isUniqueHasBeenSet = false;
 
     ObjectReference m_parentReference;
-    bool m_parentReferenceHasBeenSet;
+    bool m_parentReferenceHasBeenSet = false;
 
     Aws::String m_linkName;
-    bool m_linkNameHasBeenSet;
+    bool m_linkNameHasBeenSet = false;
 
     Aws::String m_batchReferenceName;
-    bool m_batchReferenceNameHasBeenSet;
+    bool m_batchReferenceNameHasBeenSet = false;
   };
 
 } // namespace Model

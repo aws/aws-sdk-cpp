@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConversionContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConversionContext
+  class LicenseConversionContext
   {
   public:
-    LicenseConversionContext();
-    LicenseConversionContext(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConversionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConversionContext();
+    AWS_LICENSEMANAGER_API LicenseConversionContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConversionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,7 +113,7 @@ namespace Model
   private:
 
     Aws::String m_usageOperation;
-    bool m_usageOperationHasBeenSet;
+    bool m_usageOperationHasBeenSet = false;
   };
 
 } // namespace Model

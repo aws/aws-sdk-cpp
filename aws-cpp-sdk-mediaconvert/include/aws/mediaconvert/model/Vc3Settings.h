@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vc3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Vc3Settings
+  class Vc3Settings
   {
   public:
-    Vc3Settings();
-    Vc3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Vc3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Vc3Settings();
+    AWS_MEDIACONVERT_API Vc3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Vc3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -633,31 +633,31 @@ namespace Model
   private:
 
     Vc3FramerateControl m_framerateControl;
-    bool m_framerateControlHasBeenSet;
+    bool m_framerateControlHasBeenSet = false;
 
     Vc3FramerateConversionAlgorithm m_framerateConversionAlgorithm;
-    bool m_framerateConversionAlgorithmHasBeenSet;
+    bool m_framerateConversionAlgorithmHasBeenSet = false;
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     Vc3InterlaceMode m_interlaceMode;
-    bool m_interlaceModeHasBeenSet;
+    bool m_interlaceModeHasBeenSet = false;
 
     Vc3ScanTypeConversionMode m_scanTypeConversionMode;
-    bool m_scanTypeConversionModeHasBeenSet;
+    bool m_scanTypeConversionModeHasBeenSet = false;
 
     Vc3SlowPal m_slowPal;
-    bool m_slowPalHasBeenSet;
+    bool m_slowPalHasBeenSet = false;
 
     Vc3Telecine m_telecine;
-    bool m_telecineHasBeenSet;
+    bool m_telecineHasBeenSet = false;
 
     Vc3Class m_vc3Class;
-    bool m_vc3ClassHasBeenSet;
+    bool m_vc3ClassHasBeenSet = false;
   };
 
 } // namespace Model

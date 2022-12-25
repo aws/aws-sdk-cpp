@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API CopyDBClusterParameterGroupRequest : public RDSRequest
+  class CopyDBClusterParameterGroupRequest : public RDSRequest
   {
   public:
-    CopyDBClusterParameterGroupRequest();
+    AWS_RDS_API CopyDBClusterParameterGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CopyDBClusterParameterGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_sourceDBClusterParameterGroupIdentifier;
-    bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet;
+    bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterParameterGroupIdentifier;
-    bool m_targetDBClusterParameterGroupIdentifierHasBeenSet;
+    bool m_targetDBClusterParameterGroupIdentifierHasBeenSet = false;
 
     Aws::String m_targetDBClusterParameterGroupDescription;
-    bool m_targetDBClusterParameterGroupDescriptionHasBeenSet;
+    bool m_targetDBClusterParameterGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

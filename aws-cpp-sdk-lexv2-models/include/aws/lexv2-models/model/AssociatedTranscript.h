@@ -29,19 +29,19 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AssociatedTranscript">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AssociatedTranscript
+  class AssociatedTranscript
   {
   public:
-    AssociatedTranscript();
-    AssociatedTranscript(Aws::Utils::Json::JsonView jsonValue);
-    AssociatedTranscript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AssociatedTranscript();
+    AWS_LEXMODELSV2_API AssociatedTranscript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AssociatedTranscript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline const Aws::String& GetTranscript() const{ return m_transcript; }
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(const Aws::String& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(Aws::String&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(const char* value) { m_transcriptHasBeenSet = true; m_transcript.assign(value); }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(const Aws::String& value) { SetTranscript(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(Aws::String&& value) { SetTranscript(std::move(value)); return *this;}
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(const char* value) { SetTranscript(value); return *this;}
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
   };
 
 } // namespace Model

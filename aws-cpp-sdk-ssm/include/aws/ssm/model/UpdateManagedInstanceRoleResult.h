@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateManagedInstanceRoleResult
+  class UpdateManagedInstanceRoleResult
   {
   public:
-    UpdateManagedInstanceRoleResult();
-    UpdateManagedInstanceRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateManagedInstanceRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateManagedInstanceRoleResult();
+    AWS_SSM_API UpdateManagedInstanceRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateManagedInstanceRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

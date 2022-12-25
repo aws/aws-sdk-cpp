@@ -26,12 +26,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API ListDocumentClassifierSummariesResult
+  class ListDocumentClassifierSummariesResult
   {
   public:
-    ListDocumentClassifierSummariesResult();
-    ListDocumentClassifierSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDocumentClassifierSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListDocumentClassifierSummariesResult();
+    AWS_COMPREHEND_API ListDocumentClassifierSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListDocumentClassifierSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

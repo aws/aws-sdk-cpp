@@ -29,54 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API ValidationExceptionField
+  class ValidationExceptionField
   {
   public:
-    ValidationExceptionField();
-    ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message about the validation exception.</p>
-     */
-    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
+    AWS_ACCESSANALYZER_API ValidationExceptionField();
+    AWS_ACCESSANALYZER_API ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,13 +78,54 @@ namespace Model
      */
     inline ValidationExceptionField& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline ValidationExceptionField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline ValidationExceptionField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>A message about the validation exception.</p>
+     */
+    inline ValidationExceptionField& WithMessage(const char* value) { SetMessage(value); return *this;}
+
   private:
 
-    Aws::String m_message;
-    bool m_messageHasBeenSet;
-
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

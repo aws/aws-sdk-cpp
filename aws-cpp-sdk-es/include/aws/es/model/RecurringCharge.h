@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RecurringCharge">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API RecurringCharge
+  class RecurringCharge
   {
   public:
-    RecurringCharge();
-    RecurringCharge(Aws::Utils::Json::JsonView jsonValue);
-    RecurringCharge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API RecurringCharge();
+    AWS_ELASTICSEARCHSERVICE_API RecurringCharge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API RecurringCharge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     double m_recurringChargeAmount;
-    bool m_recurringChargeAmountHasBeenSet;
+    bool m_recurringChargeAmountHasBeenSet = false;
 
     Aws::String m_recurringChargeFrequency;
-    bool m_recurringChargeFrequencyHasBeenSet;
+    bool m_recurringChargeFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

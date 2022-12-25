@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Metric">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Metric
+  class Metric
   {
   public:
-    Metric();
-    Metric(Aws::Utils::Json::JsonView jsonValue);
-    Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Metric();
+    AWS_IOTSITEWISE_API Metric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,16 +253,16 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Vector<ExpressionVariable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     MetricWindow m_window;
-    bool m_windowHasBeenSet;
+    bool m_windowHasBeenSet = false;
 
     MetricProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet;
+    bool m_processingConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails
+  class AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails
   {
   public:
-    AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails();
-    AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

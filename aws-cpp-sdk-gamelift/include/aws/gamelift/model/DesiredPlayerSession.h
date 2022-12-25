@@ -25,18 +25,17 @@ namespace Model
 
   /**
    * <p>Player information for use when creating player sessions using a game session
-   * placement request with <a>StartGameSessionPlacement</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * placement request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DesiredPlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API DesiredPlayerSession
+  class DesiredPlayerSession
   {
   public:
-    DesiredPlayerSession();
-    DesiredPlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    DesiredPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API DesiredPlayerSession();
+    AWS_GAMELIFT_API DesiredPlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API DesiredPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_playerData;
-    bool m_playerDataHasBeenSet;
+    bool m_playerDataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateParam">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API UpdateParam
+  class UpdateParam
   {
   public:
-    UpdateParam();
-    UpdateParam(Aws::Utils::Json::JsonView jsonValue);
-    UpdateParam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API UpdateParam();
+    AWS_EKS_API UpdateParam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API UpdateParam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     UpdateParamType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

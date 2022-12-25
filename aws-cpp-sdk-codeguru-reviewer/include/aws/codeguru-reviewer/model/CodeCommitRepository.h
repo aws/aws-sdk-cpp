@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeCommitRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API CodeCommitRepository
+  class CodeCommitRepository
   {
   public:
-    CodeCommitRepository();
-    CodeCommitRepository(Aws::Utils::Json::JsonView jsonValue);
-    CodeCommitRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API CodeCommitRepository();
+    AWS_CODEGURUREVIEWER_API CodeCommitRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API CodeCommitRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

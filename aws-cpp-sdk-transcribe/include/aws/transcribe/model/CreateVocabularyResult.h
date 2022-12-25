@@ -27,12 +27,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API CreateVocabularyResult
+  class CreateVocabularyResult
   {
   public:
-    CreateVocabularyResult();
-    CreateVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API CreateVocabularyResult();
+    AWS_TRANSCRIBESERVICE_API CreateVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API CreateVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -99,35 +99,35 @@ namespace Model
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline CreateVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline CreateVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
@@ -176,8 +176,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -185,8 +185,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -194,8 +194,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -203,8 +203,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -212,8 +212,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -221,8 +221,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
@@ -230,8 +230,8 @@ namespace Model
 
     /**
      * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the vocabulary request
-     * failed. See also: <a
+     * <code>FailureReason</code> contains information about why the custom vocabulary
+     * request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */

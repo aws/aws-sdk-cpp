@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry
+  class PutEventsRequestEntry
   {
   public:
-    PutEventsRequestEntry();
-    PutEventsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutEventsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry();
+    AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PutEventsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -429,25 +429,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_detailType;
-    bool m_detailTypeHasBeenSet;
+    bool m_detailTypeHasBeenSet = false;
 
     Aws::String m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
 
     Aws::String m_traceHeader;
-    bool m_traceHeaderHasBeenSet;
+    bool m_traceHeaderHasBeenSet = false;
   };
 
 } // namespace Model

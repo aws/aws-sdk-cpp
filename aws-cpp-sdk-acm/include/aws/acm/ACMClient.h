@@ -5,160 +5,77 @@
 
 #pragma once
 #include <aws/acm/ACM_EXPORTS.h>
-#include <aws/acm/ACMErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/acm/model/DescribeCertificateResult.h>
-#include <aws/acm/model/ExportCertificateResult.h>
-#include <aws/acm/model/GetAccountConfigurationResult.h>
-#include <aws/acm/model/GetCertificateResult.h>
-#include <aws/acm/model/ImportCertificateResult.h>
-#include <aws/acm/model/ListCertificatesResult.h>
-#include <aws/acm/model/ListTagsForCertificateResult.h>
-#include <aws/acm/model/RequestCertificateResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/acm/ACMServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ACM
 {
-
-namespace Model
-{
-        class AddTagsToCertificateRequest;
-        class DeleteCertificateRequest;
-        class DescribeCertificateRequest;
-        class ExportCertificateRequest;
-        class GetCertificateRequest;
-        class ImportCertificateRequest;
-        class ListCertificatesRequest;
-        class ListTagsForCertificateRequest;
-        class PutAccountConfigurationRequest;
-        class RemoveTagsFromCertificateRequest;
-        class RenewCertificateRequest;
-        class RequestCertificateRequest;
-        class ResendValidationEmailRequest;
-        class UpdateCertificateOptionsRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> AddTagsToCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> DeleteCertificateOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificateResult, ACMError> DescribeCertificateOutcome;
-        typedef Aws::Utils::Outcome<ExportCertificateResult, ACMError> ExportCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetAccountConfigurationResult, ACMError> GetAccountConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetCertificateResult, ACMError> GetCertificateOutcome;
-        typedef Aws::Utils::Outcome<ImportCertificateResult, ACMError> ImportCertificateOutcome;
-        typedef Aws::Utils::Outcome<ListCertificatesResult, ACMError> ListCertificatesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForCertificateResult, ACMError> ListTagsForCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> PutAccountConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RemoveTagsFromCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RenewCertificateOutcome;
-        typedef Aws::Utils::Outcome<RequestCertificateResult, ACMError> RequestCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> ResendValidationEmailOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> UpdateCertificateOptionsOutcome;
-
-        typedef std::future<AddTagsToCertificateOutcome> AddTagsToCertificateOutcomeCallable;
-        typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
-        typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
-        typedef std::future<ExportCertificateOutcome> ExportCertificateOutcomeCallable;
-        typedef std::future<GetAccountConfigurationOutcome> GetAccountConfigurationOutcomeCallable;
-        typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
-        typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
-        typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
-        typedef std::future<ListTagsForCertificateOutcome> ListTagsForCertificateOutcomeCallable;
-        typedef std::future<PutAccountConfigurationOutcome> PutAccountConfigurationOutcomeCallable;
-        typedef std::future<RemoveTagsFromCertificateOutcome> RemoveTagsFromCertificateOutcomeCallable;
-        typedef std::future<RenewCertificateOutcome> RenewCertificateOutcomeCallable;
-        typedef std::future<RequestCertificateOutcome> RequestCertificateOutcomeCallable;
-        typedef std::future<ResendValidationEmailOutcome> ResendValidationEmailOutcomeCallable;
-        typedef std::future<UpdateCertificateOptionsOutcome> UpdateCertificateOptionsOutcomeCallable;
-} // namespace Model
-
-  class ACMClient;
-
-    typedef std::function<void(const ACMClient*, const Model::AddTagsToCertificateRequest&, const Model::AddTagsToCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::ExportCertificateRequest&, const Model::ExportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::GetAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::ListTagsForCertificateRequest&, const Model::ListTagsForCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::PutAccountConfigurationRequest&, const Model::PutAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::RemoveTagsFromCertificateRequest&, const Model::RemoveTagsFromCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::RenewCertificateRequest&, const Model::RenewCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::RequestCertificateRequest&, const Model::RequestCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestCertificateResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::ResendValidationEmailRequest&, const Model::ResendValidationEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendValidationEmailResponseReceivedHandler;
-    typedef std::function<void(const ACMClient*, const Model::UpdateCertificateOptionsRequest&, const Model::UpdateCertificateOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateOptionsResponseReceivedHandler;
-
   /**
-   * <fullname>Amazon Web Services Certificate Manager</fullname> <p>You can use
-   * Amazon Web Services Certificate Manager (ACM) to manage SSL/TLS certificates for
-   * your Amazon Web Services-based websites and applications. For more information
-   * about using ACM, see the <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/">Amazon Web Services
-   * Certificate Manager User Guide</a>.</p>
+   * <fullname>Certificate Manager</fullname> <p>You can use Certificate Manager
+   * (ACM) to manage SSL/TLS certificates for your Amazon Web Services-based websites
+   * and applications. For more information about using ACM, see the <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/">Certificate Manager
+   * User Guide</a>.</p>
    */
-  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
+  class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ACMClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ACMClient(const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration(),
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ACMClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ACMClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ACMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<ACMEndpointProviderBase> endpointProvider = Aws::MakeShared<ACMEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::ACM::ACMClientConfiguration& clientConfiguration = Aws::ACM::ACMClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ACMClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ACMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ACMClient();
-
 
         /**
          * <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use
@@ -218,8 +135,10 @@ namespace Model
         virtual void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns detailed metadata about the specified ACM certificate.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns detailed metadata about the specified ACM certificate.</p> <p>If you
+         * have just created a certificate using the <code>RequestCertificate</code>
+         * action, there is a delay of several seconds before you can retrieve information
+         * about it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">AWS
          * API Reference</a></p>
          */
@@ -300,8 +219,8 @@ namespace Model
         virtual void GetCertificateAsync(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports a certificate into Amazon Web Services Certificate Manager (ACM) to
-         * use with services that are integrated with ACM. Note that <a
+         * <p>Imports a certificate into Certificate Manager (ACM) to use with services
+         * that are integrated with ACM. Note that <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
          * services</a> allow only certificate types and keys they support to be associated
          * with their resources. Further, their support differs depending on whether the
@@ -309,8 +228,8 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>Amazon Web Services Certificate Manager User
-         * Guide</i>. </p>  <p>ACM does not provide <a
+         * Certificates</a> in the <i>Certificate Manager User Guide</i>. </p> 
+         * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
          * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
@@ -449,9 +368,9 @@ namespace Model
 
         /**
          * <p>Renews an eligible ACM certificate. At this time, only exported private
-         * certificates can be renewed with this operation. In order to renew your ACM PCA
-         * certificates with ACM, you must first <a
-         * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
+         * certificates can be renewed with this operation. In order to renew your Amazon
+         * Web Services Private CA certificates with ACM, you must first <a
+         * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
          * the ACM service principal permission to do so</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
          * Managed Renewal</a> in the ACM User Guide.</p><p><h3>See Also:</h3>   <a
@@ -484,10 +403,13 @@ namespace Model
          * validation</a>. We recommend that you use DNS validation. ACM issues public
          * certificates after receiving approval from the domain owner. </p>  <p>ACM
          * behavior differs from the <a
-         * href="https://tools.ietf.org/html/rfc6125#appendix-B.2">https://tools.ietf.org/html/rfc6125#appendix-B.2</a>RFC
-         * 6125 specification of the certificate validation process. first checks for a
-         * subject alternative name, and, if it finds one, ignores the common name (CN)</p>
-         * <p><h3>See Also:</h3>   <a
+         * href="https://datatracker.ietf.org/doc/html/rfc6125#appendix-B.2">RFC 6125</a>
+         * specification of the certificate validation process. ACM first checks for a
+         * Subject Alternative Name, and, if it finds one, ignores the common name
+         * (CN).</p>  <p>After successful completion of the
+         * <code>RequestCertificate</code> action, there is a delay of several seconds
+         * before you can retrieve information about the new certificate.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">AWS
          * API Reference</a></p>
          */
@@ -555,27 +477,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ACMEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsToCertificateAsyncHelper(const Model::AddTagsToCertificateRequest& request, const AddTagsToCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExportCertificateAsyncHelper(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAccountConfigurationAsyncHelper(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForCertificateAsyncHelper(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAccountConfigurationAsyncHelper(const Model::PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromCertificateAsyncHelper(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RenewCertificateAsyncHelper(const Model::RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RequestCertificateAsyncHelper(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResendValidationEmailAsyncHelper(const Model::ResendValidationEmailRequest& request, const ResendValidationEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCertificateOptionsAsyncHelper(const Model::UpdateCertificateOptionsRequest& request, const UpdateCertificateOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>;
+      void init(const ACMClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ACMClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ACM

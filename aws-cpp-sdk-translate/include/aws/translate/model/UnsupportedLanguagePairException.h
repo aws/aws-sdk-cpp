@@ -25,18 +25,19 @@ namespace Model
 
   /**
    * <p>Amazon Translate does not support translation from the language of the source
-   * text into the requested target language. For more information, see
-   * <a>how-to-error-msg</a>. </p><p><h3>See Also:</h3>   <a
+   * text into the requested target language. For more information, see <a
+   * href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error
+   * messages</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UnsupportedLanguagePairException">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API UnsupportedLanguagePairException
+  class UnsupportedLanguagePairException
   {
   public:
-    UnsupportedLanguagePairException();
-    UnsupportedLanguagePairException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedLanguagePairException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API UnsupportedLanguagePairException();
+    AWS_TRANSLATE_API UnsupportedLanguagePairException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API UnsupportedLanguagePairException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -148,13 +149,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_sourceLanguageCode;
-    bool m_sourceLanguageCodeHasBeenSet;
+    bool m_sourceLanguageCodeHasBeenSet = false;
 
     Aws::String m_targetLanguageCode;
-    bool m_targetLanguageCodeHasBeenSet;
+    bool m_targetLanguageCodeHasBeenSet = false;
   };
 
 } // namespace Model

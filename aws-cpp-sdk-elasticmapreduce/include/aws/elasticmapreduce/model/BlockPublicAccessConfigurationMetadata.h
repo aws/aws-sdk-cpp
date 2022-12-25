@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/BlockPublicAccessConfigurationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API BlockPublicAccessConfigurationMetadata
+  class BlockPublicAccessConfigurationMetadata
   {
   public:
-    BlockPublicAccessConfigurationMetadata();
-    BlockPublicAccessConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccessConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API BlockPublicAccessConfigurationMetadata();
+    AWS_EMR_API BlockPublicAccessConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API BlockPublicAccessConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_createdByArn;
-    bool m_createdByArnHasBeenSet;
+    bool m_createdByArnHasBeenSet = false;
   };
 
 } // namespace Model

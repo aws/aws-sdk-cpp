@@ -5,158 +5,16 @@
 
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/migrationhubstrategy/model/GetApplicationComponentDetailsResult.h>
-#include <aws/migrationhubstrategy/model/GetApplicationComponentStrategiesResult.h>
-#include <aws/migrationhubstrategy/model/GetAssessmentResult.h>
-#include <aws/migrationhubstrategy/model/GetImportFileTaskResult.h>
-#include <aws/migrationhubstrategy/model/GetPortfolioPreferencesResult.h>
-#include <aws/migrationhubstrategy/model/GetPortfolioSummaryResult.h>
-#include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsResult.h>
-#include <aws/migrationhubstrategy/model/GetServerDetailsResult.h>
-#include <aws/migrationhubstrategy/model/GetServerStrategiesResult.h>
-#include <aws/migrationhubstrategy/model/ListApplicationComponentsResult.h>
-#include <aws/migrationhubstrategy/model/ListCollectorsResult.h>
-#include <aws/migrationhubstrategy/model/ListImportFileTaskResult.h>
-#include <aws/migrationhubstrategy/model/ListServersResult.h>
-#include <aws/migrationhubstrategy/model/PutPortfolioPreferencesResult.h>
-#include <aws/migrationhubstrategy/model/StartAssessmentResult.h>
-#include <aws/migrationhubstrategy/model/StartImportFileTaskResult.h>
-#include <aws/migrationhubstrategy/model/StartRecommendationReportGenerationResult.h>
-#include <aws/migrationhubstrategy/model/StopAssessmentResult.h>
-#include <aws/migrationhubstrategy/model/UpdateApplicationComponentConfigResult.h>
-#include <aws/migrationhubstrategy/model/UpdateServerConfigResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MigrationHubStrategyRecommendations
 {
-
-namespace Model
-{
-        class GetApplicationComponentDetailsRequest;
-        class GetApplicationComponentStrategiesRequest;
-        class GetAssessmentRequest;
-        class GetImportFileTaskRequest;
-        class GetPortfolioPreferencesRequest;
-        class GetPortfolioSummaryRequest;
-        class GetRecommendationReportDetailsRequest;
-        class GetServerDetailsRequest;
-        class GetServerStrategiesRequest;
-        class ListApplicationComponentsRequest;
-        class ListCollectorsRequest;
-        class ListImportFileTaskRequest;
-        class ListServersRequest;
-        class PutPortfolioPreferencesRequest;
-        class StartAssessmentRequest;
-        class StartImportFileTaskRequest;
-        class StartRecommendationReportGenerationRequest;
-        class StopAssessmentRequest;
-        class UpdateApplicationComponentConfigRequest;
-        class UpdateServerConfigRequest;
-
-        typedef Aws::Utils::Outcome<GetApplicationComponentDetailsResult, MigrationHubStrategyRecommendationsError> GetApplicationComponentDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationComponentStrategiesResult, MigrationHubStrategyRecommendationsError> GetApplicationComponentStrategiesOutcome;
-        typedef Aws::Utils::Outcome<GetAssessmentResult, MigrationHubStrategyRecommendationsError> GetAssessmentOutcome;
-        typedef Aws::Utils::Outcome<GetImportFileTaskResult, MigrationHubStrategyRecommendationsError> GetImportFileTaskOutcome;
-        typedef Aws::Utils::Outcome<GetPortfolioPreferencesResult, MigrationHubStrategyRecommendationsError> GetPortfolioPreferencesOutcome;
-        typedef Aws::Utils::Outcome<GetPortfolioSummaryResult, MigrationHubStrategyRecommendationsError> GetPortfolioSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationReportDetailsResult, MigrationHubStrategyRecommendationsError> GetRecommendationReportDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetServerDetailsResult, MigrationHubStrategyRecommendationsError> GetServerDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetServerStrategiesResult, MigrationHubStrategyRecommendationsError> GetServerStrategiesOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationComponentsResult, MigrationHubStrategyRecommendationsError> ListApplicationComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListCollectorsResult, MigrationHubStrategyRecommendationsError> ListCollectorsOutcome;
-        typedef Aws::Utils::Outcome<ListImportFileTaskResult, MigrationHubStrategyRecommendationsError> ListImportFileTaskOutcome;
-        typedef Aws::Utils::Outcome<ListServersResult, MigrationHubStrategyRecommendationsError> ListServersOutcome;
-        typedef Aws::Utils::Outcome<PutPortfolioPreferencesResult, MigrationHubStrategyRecommendationsError> PutPortfolioPreferencesOutcome;
-        typedef Aws::Utils::Outcome<StartAssessmentResult, MigrationHubStrategyRecommendationsError> StartAssessmentOutcome;
-        typedef Aws::Utils::Outcome<StartImportFileTaskResult, MigrationHubStrategyRecommendationsError> StartImportFileTaskOutcome;
-        typedef Aws::Utils::Outcome<StartRecommendationReportGenerationResult, MigrationHubStrategyRecommendationsError> StartRecommendationReportGenerationOutcome;
-        typedef Aws::Utils::Outcome<StopAssessmentResult, MigrationHubStrategyRecommendationsError> StopAssessmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationComponentConfigResult, MigrationHubStrategyRecommendationsError> UpdateApplicationComponentConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdateServerConfigResult, MigrationHubStrategyRecommendationsError> UpdateServerConfigOutcome;
-
-        typedef std::future<GetApplicationComponentDetailsOutcome> GetApplicationComponentDetailsOutcomeCallable;
-        typedef std::future<GetApplicationComponentStrategiesOutcome> GetApplicationComponentStrategiesOutcomeCallable;
-        typedef std::future<GetAssessmentOutcome> GetAssessmentOutcomeCallable;
-        typedef std::future<GetImportFileTaskOutcome> GetImportFileTaskOutcomeCallable;
-        typedef std::future<GetPortfolioPreferencesOutcome> GetPortfolioPreferencesOutcomeCallable;
-        typedef std::future<GetPortfolioSummaryOutcome> GetPortfolioSummaryOutcomeCallable;
-        typedef std::future<GetRecommendationReportDetailsOutcome> GetRecommendationReportDetailsOutcomeCallable;
-        typedef std::future<GetServerDetailsOutcome> GetServerDetailsOutcomeCallable;
-        typedef std::future<GetServerStrategiesOutcome> GetServerStrategiesOutcomeCallable;
-        typedef std::future<ListApplicationComponentsOutcome> ListApplicationComponentsOutcomeCallable;
-        typedef std::future<ListCollectorsOutcome> ListCollectorsOutcomeCallable;
-        typedef std::future<ListImportFileTaskOutcome> ListImportFileTaskOutcomeCallable;
-        typedef std::future<ListServersOutcome> ListServersOutcomeCallable;
-        typedef std::future<PutPortfolioPreferencesOutcome> PutPortfolioPreferencesOutcomeCallable;
-        typedef std::future<StartAssessmentOutcome> StartAssessmentOutcomeCallable;
-        typedef std::future<StartImportFileTaskOutcome> StartImportFileTaskOutcomeCallable;
-        typedef std::future<StartRecommendationReportGenerationOutcome> StartRecommendationReportGenerationOutcomeCallable;
-        typedef std::future<StopAssessmentOutcome> StopAssessmentOutcomeCallable;
-        typedef std::future<UpdateApplicationComponentConfigOutcome> UpdateApplicationComponentConfigOutcomeCallable;
-        typedef std::future<UpdateServerConfigOutcome> UpdateServerConfigOutcomeCallable;
-} // namespace Model
-
-  class MigrationHubStrategyRecommendationsClient;
-
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetApplicationComponentDetailsRequest&, const Model::GetApplicationComponentDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationComponentDetailsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetApplicationComponentStrategiesRequest&, const Model::GetApplicationComponentStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationComponentStrategiesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetAssessmentRequest&, const Model::GetAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetImportFileTaskRequest&, const Model::GetImportFileTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportFileTaskResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetPortfolioPreferencesRequest&, const Model::GetPortfolioPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortfolioPreferencesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetPortfolioSummaryRequest&, const Model::GetPortfolioSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortfolioSummaryResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetRecommendationReportDetailsRequest&, const Model::GetRecommendationReportDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationReportDetailsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetServerDetailsRequest&, const Model::GetServerDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServerDetailsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetServerStrategiesRequest&, const Model::GetServerStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServerStrategiesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListApplicationComponentsRequest&, const Model::ListApplicationComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationComponentsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListCollectorsRequest&, const Model::ListCollectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectorsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListImportFileTaskRequest&, const Model::ListImportFileTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportFileTaskResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListServersRequest&, const Model::ListServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServersResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::PutPortfolioPreferencesRequest&, const Model::PutPortfolioPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPortfolioPreferencesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::StartAssessmentRequest&, const Model::StartAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssessmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::StartImportFileTaskRequest&, const Model::StartImportFileTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportFileTaskResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::StartRecommendationReportGenerationRequest&, const Model::StartRecommendationReportGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRecommendationReportGenerationResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::StopAssessmentRequest&, const Model::StopAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAssessmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::UpdateApplicationComponentConfigRequest&, const Model::UpdateApplicationComponentConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationComponentConfigResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::UpdateServerConfigRequest&, const Model::UpdateServerConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerConfigResponseReceivedHandler;
-
   /**
    * <p><fullname>Migration Hub Strategy Recommendations</fullname></p> <pre><code>
    * &lt;p&gt;This API reference provides descriptions, syntax, and other details
@@ -168,32 +26,60 @@ namespace Model
    * href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;AWS
    * SDKs&lt;/a&gt;.&lt;/p&gt; </code></pre>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MigrationHubStrategyRecommendationsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MigrationHubStrategyRecommendationsClient(const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration(),
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MigrationHubStrategyRecommendationsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MigrationHubStrategyRecommendationsClient(const Aws::Auth::AWSCredentials& credentials,
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MigrationHubStrategyRecommendationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MigrationHubStrategyRecommendationsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MigrationHubStrategyRecommendationsClient(const Aws::Auth::AWSCredentials& credentials,
+                                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MigrationHubStrategyRecommendationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MigrationHubStrategyRecommendationsClient();
-
 
         /**
          * <p> Retrieves details about an application component. </p><p><h3>See Also:</h3> 
@@ -266,6 +152,24 @@ namespace Model
          * An Async wrapper for GetImportFileTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetImportFileTaskAsync(const Model::GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve the latest ID of a specific assessment task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLatestAssessmentIdOutcome GetLatestAssessmentId(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLatestAssessmentId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLatestAssessmentIdOutcomeCallable GetLatestAssessmentIdCallable(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLatestAssessmentId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLatestAssessmentIdAsync(const Model::GetLatestAssessmentIdRequest& request, const GetLatestAssessmentIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves your migration and modernization preferences. </p><p><h3>See
@@ -554,32 +458,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetApplicationComponentDetailsAsyncHelper(const Model::GetApplicationComponentDetailsRequest& request, const GetApplicationComponentDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationComponentStrategiesAsyncHelper(const Model::GetApplicationComponentStrategiesRequest& request, const GetApplicationComponentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssessmentAsyncHelper(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetImportFileTaskAsyncHelper(const Model::GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPortfolioPreferencesAsyncHelper(const Model::GetPortfolioPreferencesRequest& request, const GetPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPortfolioSummaryAsyncHelper(const Model::GetPortfolioSummaryRequest& request, const GetPortfolioSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecommendationReportDetailsAsyncHelper(const Model::GetRecommendationReportDetailsRequest& request, const GetRecommendationReportDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServerDetailsAsyncHelper(const Model::GetServerDetailsRequest& request, const GetServerDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServerStrategiesAsyncHelper(const Model::GetServerStrategiesRequest& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationComponentsAsyncHelper(const Model::ListApplicationComponentsRequest& request, const ListApplicationComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCollectorsAsyncHelper(const Model::ListCollectorsRequest& request, const ListCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListImportFileTaskAsyncHelper(const Model::ListImportFileTaskRequest& request, const ListImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServersAsyncHelper(const Model::ListServersRequest& request, const ListServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPortfolioPreferencesAsyncHelper(const Model::PutPortfolioPreferencesRequest& request, const PutPortfolioPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartAssessmentAsyncHelper(const Model::StartAssessmentRequest& request, const StartAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartImportFileTaskAsyncHelper(const Model::StartImportFileTaskRequest& request, const StartImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartRecommendationReportGenerationAsyncHelper(const Model::StartRecommendationReportGenerationRequest& request, const StartRecommendationReportGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopAssessmentAsyncHelper(const Model::StopAssessmentRequest& request, const StopAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationComponentConfigAsyncHelper(const Model::UpdateApplicationComponentConfigRequest& request, const UpdateApplicationComponentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServerConfigAsyncHelper(const Model::UpdateServerConfigRequest& request, const UpdateServerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
+      void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MigrationHubStrategyRecommendations

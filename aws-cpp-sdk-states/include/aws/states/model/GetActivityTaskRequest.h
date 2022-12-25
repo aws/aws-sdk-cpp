@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SFN_API GetActivityTaskRequest : public SFNRequest
+  class GetActivityTaskRequest : public SFNRequest
   {
   public:
-    GetActivityTaskRequest();
+    AWS_SFN_API GetActivityTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetActivityTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SFN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_activityArn;
-    bool m_activityArnHasBeenSet;
+    bool m_activityArnHasBeenSet = false;
 
     Aws::String m_workerName;
-    bool m_workerNameHasBeenSet;
+    bool m_workerNameHasBeenSet = false;
   };
 
 } // namespace Model

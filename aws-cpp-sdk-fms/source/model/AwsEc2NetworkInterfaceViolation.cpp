@@ -42,7 +42,7 @@ AwsEc2NetworkInterfaceViolation& AwsEc2NetworkInterfaceViolation::operator =(Jso
 
   if(jsonValue.ValueExists("ViolatingSecurityGroups"))
   {
-    Array<JsonView> violatingSecurityGroupsJsonList = jsonValue.GetArray("ViolatingSecurityGroups");
+    Aws::Utils::Array<JsonView> violatingSecurityGroupsJsonList = jsonValue.GetArray("ViolatingSecurityGroups");
     for(unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength(); ++violatingSecurityGroupsIndex)
     {
       m_violatingSecurityGroups.push_back(violatingSecurityGroupsJsonList[violatingSecurityGroupsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue AwsEc2NetworkInterfaceViolation::Jsonize() const
 
   if(m_violatingSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> violatingSecurityGroupsJsonList(m_violatingSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> violatingSecurityGroupsJsonList(m_violatingSecurityGroups.size());
    for(unsigned violatingSecurityGroupsIndex = 0; violatingSecurityGroupsIndex < violatingSecurityGroupsJsonList.GetLength(); ++violatingSecurityGroupsIndex)
    {
      violatingSecurityGroupsJsonList[violatingSecurityGroupsIndex].AsString(m_violatingSecurityGroups[violatingSecurityGroupsIndex]);

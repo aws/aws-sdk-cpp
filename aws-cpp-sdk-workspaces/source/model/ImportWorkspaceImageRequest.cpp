@@ -52,7 +52,7 @@ Aws::String ImportWorkspaceImageRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String ImportWorkspaceImageRequest::SerializePayload() const
 
   if(m_applicationsHasBeenSet)
   {
-   Array<JsonValue> applicationsJsonList(m_applications.size());
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
    for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
    {
      applicationsJsonList[applicationsIndex].AsString(ApplicationMapper::GetNameForApplication(m_applications[applicationsIndex]));

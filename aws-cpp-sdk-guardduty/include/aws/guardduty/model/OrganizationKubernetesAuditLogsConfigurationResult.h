@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationKubernetesAuditLogsConfigurationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API OrganizationKubernetesAuditLogsConfigurationResult
+  class OrganizationKubernetesAuditLogsConfigurationResult
   {
   public:
-    OrganizationKubernetesAuditLogsConfigurationResult();
-    OrganizationKubernetesAuditLogsConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationKubernetesAuditLogsConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API OrganizationKubernetesAuditLogsConfigurationResult();
+    AWS_GUARDDUTY_API OrganizationKubernetesAuditLogsConfigurationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API OrganizationKubernetesAuditLogsConfigurationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     bool m_autoEnable;
-    bool m_autoEnableHasBeenSet;
+    bool m_autoEnableHasBeenSet = false;
   };
 
 } // namespace Model

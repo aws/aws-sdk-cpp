@@ -31,44 +31,44 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginShield">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginShield
+  class OriginShield
   {
   public:
-    OriginShield();
-    OriginShield(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginShield& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginShield();
+    AWS_CLOUDFRONT_API OriginShield(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginShield& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline OriginShield& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -189,10 +189,10 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_originShieldRegion;
-    bool m_originShieldRegionHasBeenSet;
+    bool m_originShieldRegionHasBeenSet = false;
   };
 
 } // namespace Model

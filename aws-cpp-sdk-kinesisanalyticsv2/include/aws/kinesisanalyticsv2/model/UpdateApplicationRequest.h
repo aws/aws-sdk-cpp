@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API UpdateApplicationRequest : public KinesisAnalyticsV2Request
+  class UpdateApplicationRequest : public KinesisAnalyticsV2Request
   {
   public:
-    UpdateApplicationRequest();
+    AWS_KINESISANALYTICSV2_API UpdateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -363,25 +363,25 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ApplicationConfigurationUpdate m_applicationConfigurationUpdate;
-    bool m_applicationConfigurationUpdateHasBeenSet;
+    bool m_applicationConfigurationUpdateHasBeenSet = false;
 
     Aws::String m_serviceExecutionRoleUpdate;
-    bool m_serviceExecutionRoleUpdateHasBeenSet;
+    bool m_serviceExecutionRoleUpdateHasBeenSet = false;
 
     RunConfigurationUpdate m_runConfigurationUpdate;
-    bool m_runConfigurationUpdateHasBeenSet;
+    bool m_runConfigurationUpdateHasBeenSet = false;
 
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
-    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
+    bool m_cloudWatchLoggingOptionUpdatesHasBeenSet = false;
 
     Aws::String m_conditionalToken;
-    bool m_conditionalTokenHasBeenSet;
+    bool m_conditionalTokenHasBeenSet = false;
   };
 
 } // namespace Model

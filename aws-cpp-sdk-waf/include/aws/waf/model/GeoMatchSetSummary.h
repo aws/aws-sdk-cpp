@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GeoMatchSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API GeoMatchSetSummary
+  class GeoMatchSetSummary
   {
   public:
-    GeoMatchSetSummary();
-    GeoMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API GeoMatchSetSummary();
+    AWS_WAF_API GeoMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API GeoMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_geoMatchSetId;
-    bool m_geoMatchSetIdHasBeenSet;
+    bool m_geoMatchSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

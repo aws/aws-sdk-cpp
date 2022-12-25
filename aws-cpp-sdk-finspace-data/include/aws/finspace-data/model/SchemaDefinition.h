@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/SchemaDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API SchemaDefinition
+  class SchemaDefinition
   {
   public:
-    SchemaDefinition();
-    SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API SchemaDefinition();
+    AWS_FINSPACEDATA_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<ColumnDefinition> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_primaryKeyColumns;
-    bool m_primaryKeyColumnsHasBeenSet;
+    bool m_primaryKeyColumnsHasBeenSet = false;
   };
 
 } // namespace Model

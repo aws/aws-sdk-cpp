@@ -30,15 +30,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EntityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API EntityInfo
+  class EntityInfo
   {
   public:
-    EntityInfo();
-    EntityInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EntityInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API EntityInfo();
+    AWS_IAM_API EntityInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API EntityInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -246,19 +246,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PolicyOwnerEntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

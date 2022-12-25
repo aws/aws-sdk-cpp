@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsRequest : public ApplicationAutoScalingRequest
+  class DescribeScheduledActionsRequest : public ApplicationAutoScalingRequest
   {
   public:
-    DescribeScheduledActionsRequest();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeScheduledActions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONAUTOSCALING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONAUTOSCALING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -944,22 +944,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_scheduledActionNames;
-    bool m_scheduledActionNamesHasBeenSet;
+    bool m_scheduledActionNamesHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 DescribeConfigRulesRequest::DescribeConfigRulesRequest() : 
     m_configRuleNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -24,7 +25,7 @@ Aws::String DescribeConfigRulesRequest::SerializePayload() const
 
   if(m_configRuleNamesHasBeenSet)
   {
-   Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
    for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
    {
      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
@@ -36,6 +37,12 @@ Aws::String DescribeConfigRulesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   payload.WithObject("Filters", m_filters.Jsonize());
 
   }
 

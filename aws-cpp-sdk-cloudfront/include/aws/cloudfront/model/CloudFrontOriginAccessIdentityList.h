@@ -36,14 +36,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CloudFrontOriginAccessIdentityList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList
+  class CloudFrontOriginAccessIdentityList
   {
   public:
-    CloudFrontOriginAccessIdentityList();
-    CloudFrontOriginAccessIdentityList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudFrontOriginAccessIdentityList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList();
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -51,7 +51,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -60,7 +60,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
@@ -69,7 +69,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -78,7 +78,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -96,7 +96,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -114,7 +114,7 @@ namespace Model
      * origin access identities. The results include identities in the list that occur
      * after the marker. To get the next page of results, set the <code>Marker</code>
      * to the value of the <code>NextMarker</code> from the current page's response
-     * (which is also the ID of the last identity on that page). </p>
+     * (which is also the ID of the last identity on that page).</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -122,81 +122,81 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your origin access identities where they left off. </p>
+     * continue listing your origin access identities where they left off.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline CloudFrontOriginAccessIdentityList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     bool m_isTruncated;
-    bool m_isTruncatedHasBeenSet;
+    bool m_isTruncatedHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<CloudFrontOriginAccessIdentitySummary> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

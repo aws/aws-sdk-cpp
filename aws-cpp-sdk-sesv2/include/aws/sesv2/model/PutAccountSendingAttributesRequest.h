@@ -20,10 +20,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSendingAttributesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountSendingAttributesRequest : public SESV2Request
+  class PutAccountSendingAttributesRequest : public SESV2Request
   {
   public:
-    PutAccountSendingAttributesRequest();
+    AWS_SESV2_API PutAccountSendingAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutAccountSendingAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

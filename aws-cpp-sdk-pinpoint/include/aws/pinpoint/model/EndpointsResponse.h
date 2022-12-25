@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointsResponse
+  class EndpointsResponse
   {
   public:
-    EndpointsResponse();
-    EndpointsResponse(Aws::Utils::Json::JsonView jsonValue);
-    EndpointsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointsResponse();
+    AWS_PINPOINT_API EndpointsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<EndpointResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

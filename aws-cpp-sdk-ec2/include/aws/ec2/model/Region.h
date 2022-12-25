@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Region">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Region
+  class Region
   {
   public:
-    Region();
-    Region(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Region& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Region();
+    AWS_EC2_API Region(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Region& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
   };
 
 } // namespace Model

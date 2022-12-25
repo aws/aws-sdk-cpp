@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensDataExport">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API StorageLensDataExport
+  class StorageLensDataExport
   {
   public:
-    StorageLensDataExport();
-    StorageLensDataExport(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StorageLensDataExport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensDataExport();
+    AWS_S3CONTROL_API StorageLensDataExport(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensDataExport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     S3BucketDestination m_s3BucketDestination;
-    bool m_s3BucketDestinationHasBeenSet;
+    bool m_s3BucketDestinationHasBeenSet = false;
 
     CloudWatchMetrics m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
   };
 
 } // namespace Model

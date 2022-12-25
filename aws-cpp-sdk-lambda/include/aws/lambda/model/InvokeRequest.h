@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API InvokeRequest : public StreamingLambdaRequest
+  class InvokeRequest : public StreamingLambdaRequest
   {
   public:
-    InvokeRequest();
+    AWS_LAMBDA_API InvokeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,18 +36,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Invoke"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LAMBDA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -57,11 +57,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -71,11 +71,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -85,11 +85,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -99,11 +99,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -113,11 +113,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -127,11 +127,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -141,11 +141,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -156,78 +156,78 @@ namespace Model
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline InvokeRequest& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
 
     /**
      * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep
      * the connection open until the function returns a response or times out. The API
      * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
+     * <code>Event</code> – Invoke the function asynchronously. Send events that fail
+     * multiple times to the function's dead-letter queue (if one is configured). The
+     * API response only includes a status code.</p> </li> <li> <p> <code>DryRun</code>
+     * – Validate parameter values and verify that the user or role has permission to
      * invoke the function.</p> </li> </ul>
      */
     inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
@@ -271,49 +271,49 @@ namespace Model
 
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline InvokeRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
     /**
-     * <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to
+     * <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to
      * the function in the context object.</p>
      */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
@@ -362,20 +362,20 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     InvocationType m_invocationType;
-    bool m_invocationTypeHasBeenSet;
+    bool m_invocationTypeHasBeenSet = false;
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     Aws::String m_clientContext;
-    bool m_clientContextHasBeenSet;
+    bool m_clientContextHasBeenSet = false;
 
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

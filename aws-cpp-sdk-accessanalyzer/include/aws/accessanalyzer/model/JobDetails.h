@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/accessanalyzer/model/JobError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/JobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/accessanalyzer/model/JobError.h>
 #include <utility>
 
 namespace Aws
@@ -32,75 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline JobDetails& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-
-    /**
-     * <p>A timestamp of when the job was completed.</p>
-     */
-    inline JobDetails& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline const JobError& GetJobError() const{ return m_jobError; }
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline bool JobErrorHasBeenSet() const { return m_jobErrorHasBeenSet; }
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline void SetJobError(const JobError& value) { m_jobErrorHasBeenSet = true; m_jobError = value; }
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline void SetJobError(JobError&& value) { m_jobErrorHasBeenSet = true; m_jobError = std::move(value); }
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline JobDetails& WithJobError(const JobError& value) { SetJobError(value); return *this;}
-
-    /**
-     * <p>The job error for the policy generation request.</p>
-     */
-    inline JobDetails& WithJobError(JobError&& value) { SetJobError(std::move(value)); return *this;}
+    AWS_ACCESSANALYZER_API JobDetails();
+    AWS_ACCESSANALYZER_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,6 +115,37 @@ namespace Model
 
 
     /**
+     * <p>The status of the job request.</p>
+     */
+    inline const JobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the job request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job request.</p>
+     */
+    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the job request.</p>
+     */
+    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the job request.</p>
+     */
+    inline JobDetails& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the job request.</p>
+     */
+    inline JobDetails& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>A timestamp of when the job was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
@@ -208,51 +177,82 @@ namespace Model
 
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline JobDetails& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
+    inline JobDetails& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
 
     /**
-     * <p>The status of the job request.</p>
+     * <p>A timestamp of when the job was completed.</p>
      */
-    inline JobDetails& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline JobDetails& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline const JobError& GetJobError() const{ return m_jobError; }
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline bool JobErrorHasBeenSet() const { return m_jobErrorHasBeenSet; }
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline void SetJobError(const JobError& value) { m_jobErrorHasBeenSet = true; m_jobError = value; }
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline void SetJobError(JobError&& value) { m_jobErrorHasBeenSet = true; m_jobError = std::move(value); }
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline JobDetails& WithJobError(const JobError& value) { SetJobError(value); return *this;}
+
+    /**
+     * <p>The job error for the policy generation request.</p>
+     */
+    inline JobDetails& WithJobError(JobError&& value) { SetJobError(std::move(value)); return *this;}
 
   private:
 
-    Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
-
-    JobError m_jobError;
-    bool m_jobErrorHasBeenSet;
-
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
-
-    Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedOn;
+    bool m_startedOnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_completedOn;
+    bool m_completedOnHasBeenSet = false;
+
+    JobError m_jobError;
+    bool m_jobErrorHasBeenSet = false;
   };
 
 } // namespace Model

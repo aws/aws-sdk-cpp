@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ServiceSoftwareOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ServiceSoftwareOptions
+  class ServiceSoftwareOptions
   {
   public:
-    ServiceSoftwareOptions();
-    ServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ServiceSoftwareOptions();
+    AWS_ELASTICSEARCHSERVICE_API ServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_newVersion;
-    bool m_newVersionHasBeenSet;
+    bool m_newVersionHasBeenSet = false;
 
     bool m_updateAvailable;
-    bool m_updateAvailableHasBeenSet;
+    bool m_updateAvailableHasBeenSet = false;
 
     bool m_cancellable;
-    bool m_cancellableHasBeenSet;
+    bool m_cancellableHasBeenSet = false;
 
     DeploymentStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_automatedUpdateDate;
-    bool m_automatedUpdateDateHasBeenSet;
+    bool m_automatedUpdateDateHasBeenSet = false;
 
     bool m_optionalDeployment;
-    bool m_optionalDeploymentHasBeenSet;
+    bool m_optionalDeploymentHasBeenSet = false;
   };
 
 } // namespace Model

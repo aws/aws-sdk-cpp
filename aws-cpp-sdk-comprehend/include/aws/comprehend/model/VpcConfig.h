@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/VpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API VpcConfig
+  class VpcConfig
   {
   public:
-    VpcConfig();
-    VpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API VpcConfig();
+    AWS_COMPREHEND_API VpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,10 +234,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

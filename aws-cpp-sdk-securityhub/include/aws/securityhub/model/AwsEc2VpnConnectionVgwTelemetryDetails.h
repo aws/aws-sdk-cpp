@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpnConnectionVgwTelemetryDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpnConnectionVgwTelemetryDetails
+  class AwsEc2VpnConnectionVgwTelemetryDetails
   {
   public:
-    AwsEc2VpnConnectionVgwTelemetryDetails();
-    AwsEc2VpnConnectionVgwTelemetryDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpnConnectionVgwTelemetryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionVgwTelemetryDetails();
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionVgwTelemetryDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionVgwTelemetryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,42 +222,50 @@ namespace Model
 
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the VPN tunnel.</p>
+     * <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or
+     * <code>UP</code>.</p>
      */
     inline AwsEc2VpnConnectionVgwTelemetryDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -305,22 +313,22 @@ namespace Model
   private:
 
     int m_acceptedRouteCount;
-    bool m_acceptedRouteCountHasBeenSet;
+    bool m_acceptedRouteCountHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_lastStatusChange;
-    bool m_lastStatusChangeHasBeenSet;
+    bool m_lastStatusChangeHasBeenSet = false;
 
     Aws::String m_outsideIpAddress;
-    bool m_outsideIpAddressHasBeenSet;
+    bool m_outsideIpAddressHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

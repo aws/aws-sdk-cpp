@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Firewall">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API Firewall
+  class Firewall
   {
   public:
-    Firewall();
-    Firewall(Aws::Utils::Json::JsonView jsonValue);
-    Firewall& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API Firewall();
+    AWS_NETWORKFIREWALL_API Firewall(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Firewall& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -561,40 +561,40 @@ namespace Model
   private:
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<SubnetMapping> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     bool m_deleteProtection;
-    bool m_deleteProtectionHasBeenSet;
+    bool m_deleteProtectionHasBeenSet = false;
 
     bool m_subnetChangeProtection;
-    bool m_subnetChangeProtectionHasBeenSet;
+    bool m_subnetChangeProtectionHasBeenSet = false;
 
     bool m_firewallPolicyChangeProtection;
-    bool m_firewallPolicyChangeProtectionHasBeenSet;
+    bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_firewallId;
-    bool m_firewallIdHasBeenSet;
+    bool m_firewallIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

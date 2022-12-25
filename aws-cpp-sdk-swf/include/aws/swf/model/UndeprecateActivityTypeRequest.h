@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SWF_API UndeprecateActivityTypeRequest : public SWFRequest
+  class UndeprecateActivityTypeRequest : public SWFRequest
   {
   public:
-    UndeprecateActivityTypeRequest();
+    AWS_SWF_API UndeprecateActivityTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UndeprecateActivityType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
   };
 
 } // namespace Model

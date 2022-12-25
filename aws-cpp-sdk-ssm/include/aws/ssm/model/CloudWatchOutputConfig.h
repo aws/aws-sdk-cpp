@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CloudWatchOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CloudWatchOutputConfig
+  class CloudWatchOutputConfig
   {
   public:
-    CloudWatchOutputConfig();
-    CloudWatchOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CloudWatchOutputConfig();
+    AWS_SSM_API CloudWatchOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CloudWatchOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogGroupName;
-    bool m_cloudWatchLogGroupNameHasBeenSet;
+    bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
     bool m_cloudWatchOutputEnabled;
-    bool m_cloudWatchOutputEnabledHasBeenSet;
+    bool m_cloudWatchOutputEnabledHasBeenSet = false;
   };
 
 } // namespace Model

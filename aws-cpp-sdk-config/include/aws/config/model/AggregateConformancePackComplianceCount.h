@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateConformancePackComplianceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount
+  class AggregateConformancePackComplianceCount
   {
   public:
-    AggregateConformancePackComplianceCount();
-    AggregateConformancePackComplianceCount(Aws::Utils::Json::JsonView jsonValue);
-    AggregateConformancePackComplianceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_compliantConformancePackCount;
-    bool m_compliantConformancePackCountHasBeenSet;
+    bool m_compliantConformancePackCountHasBeenSet = false;
 
     int m_nonCompliantConformancePackCount;
-    bool m_nonCompliantConformancePackCountHasBeenSet;
+    bool m_nonCompliantConformancePackCountHasBeenSet = false;
   };
 
 } // namespace Model

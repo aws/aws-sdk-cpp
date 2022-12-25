@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API DescribeApplicationInstanceRequest : public PanoramaRequest
+  class DescribeApplicationInstanceRequest : public PanoramaRequest
   {
   public:
-    DescribeApplicationInstanceRequest();
+    AWS_PANORAMA_API DescribeApplicationInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeApplicationInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceId;
-    bool m_applicationInstanceIdHasBeenSet;
+    bool m_applicationInstanceIdHasBeenSet = false;
   };
 
 } // namespace Model

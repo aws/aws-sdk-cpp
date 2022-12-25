@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ContributionMatrix">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API ContributionMatrix
+  class ContributionMatrix
   {
   public:
-    ContributionMatrix();
-    ContributionMatrix(Aws::Utils::Json::JsonView jsonValue);
-    ContributionMatrix& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API ContributionMatrix();
+    AWS_LOOKOUTMETRICS_API ContributionMatrix(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API ContributionMatrix& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<DimensionContribution> m_dimensionContributionList;
-    bool m_dimensionContributionListHasBeenSet;
+    bool m_dimensionContributionListHasBeenSet = false;
   };
 
 } // namespace Model

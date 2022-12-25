@@ -30,20 +30,20 @@ namespace Model
 {
 
   /**
-   * AWS Data Exchange Jobs are asynchronous import or export operations used to
+   * <p>AWS Data Exchange Jobs are asynchronous import or export operations used to
    * create or copy assets. A data set owner can both import and export as they see
    * fit. Someone with an entitlement to a data set can only export. Jobs are deleted
-   * 90 days after they are created.<p><h3>See Also:</h3>   <a
+   * 90 days after they are created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/JobEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API JobEntry
+  class JobEntry
   {
   public:
-    JobEntry();
-    JobEntry(Aws::Utils::Json::JsonView jsonValue);
-    JobEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API JobEntry();
+    AWS_DATAEXCHANGE_API JobEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API JobEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -332,28 +332,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ResponseDetails m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::Vector<JobError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

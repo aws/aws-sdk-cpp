@@ -19,95 +19,61 @@ namespace Model
 {
 
 AccessPreviewFinding::AccessPreviewFinding() : 
-    m_actionHasBeenSet(false),
-    m_changeType(FindingChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_existingFindingIdHasBeenSet(false),
     m_existingFindingStatus(FindingStatus::NOT_SET),
     m_existingFindingStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_principalHasBeenSet(false),
+    m_actionHasBeenSet(false),
+    m_conditionHasBeenSet(false),
+    m_resourceHasBeenSet(false),
     m_isPublic(false),
     m_isPublicHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_changeType(FindingChangeType::NOT_SET),
+    m_changeTypeHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
+    m_errorHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
 }
 
 AccessPreviewFinding::AccessPreviewFinding(JsonView jsonValue) : 
-    m_actionHasBeenSet(false),
-    m_changeType(FindingChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_existingFindingIdHasBeenSet(false),
     m_existingFindingStatus(FindingStatus::NOT_SET),
     m_existingFindingStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_principalHasBeenSet(false),
+    m_actionHasBeenSet(false),
+    m_conditionHasBeenSet(false),
+    m_resourceHasBeenSet(false),
     m_isPublic(false),
     m_isPublicHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_changeType(FindingChangeType::NOT_SET),
+    m_changeTypeHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
+    m_errorHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("action"))
+  if(jsonValue.ValueExists("id"))
   {
-    Array<JsonView> actionJsonList = jsonValue.GetArray("action");
-    for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
-    {
-      m_action.push_back(actionJsonList[actionIndex].AsString());
-    }
-    m_actionHasBeenSet = true;
-  }
+    m_id = jsonValue.GetString("id");
 
-  if(jsonValue.ValueExists("changeType"))
-  {
-    m_changeType = FindingChangeTypeMapper::GetFindingChangeTypeForName(jsonValue.GetString("changeType"));
-
-    m_changeTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("condition"))
-  {
-    Aws::Map<Aws::String, JsonView> conditionJsonMap = jsonValue.GetObject("condition").GetAllObjects();
-    for(auto& conditionItem : conditionJsonMap)
-    {
-      m_condition[conditionItem.first] = conditionItem.second.AsString();
-    }
-    m_conditionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("error"))
-  {
-    m_error = jsonValue.GetString("error");
-
-    m_errorHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("existingFindingId"))
@@ -124,20 +90,6 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     m_existingFindingStatusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("isPublic"))
-  {
-    m_isPublic = jsonValue.GetBool("isPublic");
-
-    m_isPublicHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("principal"))
   {
     Aws::Map<Aws::String, JsonView> principalJsonMap = jsonValue.GetObject("principal").GetAllObjects();
@@ -148,6 +100,26 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     m_principalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("action"))
+  {
+    Aws::Utils::Array<JsonView> actionJsonList = jsonValue.GetArray("action");
+    for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
+    {
+      m_action.push_back(actionJsonList[actionIndex].AsString());
+    }
+    m_actionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("condition"))
+  {
+    Aws::Map<Aws::String, JsonView> conditionJsonMap = jsonValue.GetObject("condition").GetAllObjects();
+    for(auto& conditionItem : conditionJsonMap)
+    {
+      m_condition[conditionItem.first] = conditionItem.second.AsString();
+    }
+    m_conditionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
@@ -155,11 +127,11 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     m_resourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("resourceOwnerAccount"))
+  if(jsonValue.ValueExists("isPublic"))
   {
-    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
+    m_isPublic = jsonValue.GetBool("isPublic");
 
-    m_resourceOwnerAccountHasBeenSet = true;
+    m_isPublicHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -169,14 +141,18 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("sources"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
-      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
-    }
-    m_sourcesHasBeenSet = true;
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("changeType"))
+  {
+    m_changeType = FindingChangeTypeMapper::GetFindingChangeTypeForName(jsonValue.GetString("changeType"));
+
+    m_changeTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -186,6 +162,30 @@ AccessPreviewFinding& AccessPreviewFinding::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceOwnerAccount"))
+  {
+    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
+
+    m_resourceOwnerAccountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetString("error");
+
+    m_errorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+    m_sourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,41 +193,9 @@ JsonValue AccessPreviewFinding::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   Array<JsonValue> actionJsonList(m_action.size());
-   for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
-   {
-     actionJsonList[actionIndex].AsString(m_action[actionIndex]);
-   }
-   payload.WithArray("action", std::move(actionJsonList));
-
-  }
-
-  if(m_changeTypeHasBeenSet)
-  {
-   payload.WithString("changeType", FindingChangeTypeMapper::GetNameForFindingChangeType(m_changeType));
-  }
-
-  if(m_conditionHasBeenSet)
-  {
-   JsonValue conditionJsonMap;
-   for(auto& conditionItem : m_condition)
-   {
-     conditionJsonMap.WithString(conditionItem.first, conditionItem.second);
-   }
-   payload.WithObject("condition", std::move(conditionJsonMap));
-
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
-  }
-
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
+   payload.WithString("id", m_id);
 
   }
 
@@ -242,18 +210,6 @@ JsonValue AccessPreviewFinding::Jsonize() const
    payload.WithString("existingFindingStatus", FindingStatusMapper::GetNameForFindingStatus(m_existingFindingStatus));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_isPublicHasBeenSet)
-  {
-   payload.WithBool("isPublic", m_isPublic);
-
-  }
-
   if(m_principalHasBeenSet)
   {
    JsonValue principalJsonMap;
@@ -265,15 +221,37 @@ JsonValue AccessPreviewFinding::Jsonize() const
 
   }
 
+  if(m_actionHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> actionJsonList(m_action.size());
+   for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
+   {
+     actionJsonList[actionIndex].AsString(m_action[actionIndex]);
+   }
+   payload.WithArray("action", std::move(actionJsonList));
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   JsonValue conditionJsonMap;
+   for(auto& conditionItem : m_condition)
+   {
+     conditionJsonMap.WithString(conditionItem.first, conditionItem.second);
+   }
+   payload.WithObject("condition", std::move(conditionJsonMap));
+
+  }
+
   if(m_resourceHasBeenSet)
   {
    payload.WithString("resource", m_resource);
 
   }
 
-  if(m_resourceOwnerAccountHasBeenSet)
+  if(m_isPublicHasBeenSet)
   {
-   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
+   payload.WithBool("isPublic", m_isPublic);
 
   }
 
@@ -282,20 +260,42 @@ JsonValue AccessPreviewFinding::Jsonize() const
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_changeTypeHasBeenSet)
+  {
+   payload.WithString("changeType", FindingChangeTypeMapper::GetNameForFindingChangeType(m_changeType));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", FindingStatusMapper::GetNameForFindingStatus(m_status));
+  }
+
+  if(m_resourceOwnerAccountHasBeenSet)
+  {
+   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
+
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithString("error", m_error);
+
+  }
+
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
    payload.WithArray("sources", std::move(sourcesJsonList));
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", FindingStatusMapper::GetNameForFindingStatus(m_status));
   }
 
   return payload;

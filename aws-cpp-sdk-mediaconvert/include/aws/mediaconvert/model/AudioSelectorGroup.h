@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelectorGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AudioSelectorGroup
+  class AudioSelectorGroup
   {
   public:
-    AudioSelectorGroup();
-    AudioSelectorGroup(Aws::Utils::Json::JsonView jsonValue);
-    AudioSelectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AudioSelectorGroup();
+    AWS_MEDIACONVERT_API AudioSelectorGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AudioSelectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,7 +117,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audioSelectorNames;
-    bool m_audioSelectorNamesHasBeenSet;
+    bool m_audioSelectorNamesHasBeenSet = false;
   };
 
 } // namespace Model

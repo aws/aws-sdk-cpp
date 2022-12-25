@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAF_API UpdateRegexPatternSetRequest : public WAFRequest
+  class UpdateRegexPatternSetRequest : public WAFRequest
   {
   public:
-    UpdateRegexPatternSetRequest();
+    AWS_WAF_API UpdateRegexPatternSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRegexPatternSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
 
     Aws::Vector<RegexPatternSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

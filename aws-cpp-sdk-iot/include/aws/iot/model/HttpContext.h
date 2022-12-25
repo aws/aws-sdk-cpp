@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/HttpContext">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API HttpContext
+  class HttpContext
   {
   public:
-    HttpContext();
-    HttpContext(Aws::Utils::Json::JsonView jsonValue);
-    HttpContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API HttpContext();
+    AWS_IOT_API HttpContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API HttpContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
   };
 
 } // namespace Model

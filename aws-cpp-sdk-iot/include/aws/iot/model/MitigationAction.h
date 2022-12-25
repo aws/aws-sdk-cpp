@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MitigationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MitigationAction
+  class MitigationAction
   {
   public:
-    MitigationAction();
-    MitigationAction(Aws::Utils::Json::JsonView jsonValue);
-    MitigationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MitigationAction();
+    AWS_IOT_API MitigationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MitigationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MitigationActionParams m_actionParams;
-    bool m_actionParamsHasBeenSet;
+    bool m_actionParamsHasBeenSet = false;
   };
 
 } // namespace Model

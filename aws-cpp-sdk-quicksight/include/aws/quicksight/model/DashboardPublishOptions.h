@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/AdHocFilteringOption.h>
 #include <aws/quicksight/model/ExportToCSVOption.h>
 #include <aws/quicksight/model/SheetControlsOption.h>
+#include <aws/quicksight/model/DashboardVisualPublishOptions.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardPublishOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardPublishOptions
+  class DashboardPublishOptions
   {
   public:
-    DashboardPublishOptions();
-    DashboardPublishOptions(Aws::Utils::Json::JsonView jsonValue);
-    DashboardPublishOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardPublishOptions();
+    AWS_QUICKSIGHT_API DashboardPublishOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardPublishOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,16 +132,50 @@ namespace Model
      */
     inline DashboardPublishOptions& WithSheetControlsOption(SheetControlsOption&& value) { SetSheetControlsOption(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const DashboardVisualPublishOptions& GetVisualPublishOptions() const{ return m_visualPublishOptions; }
+
+    /**
+     * <p/>
+     */
+    inline bool VisualPublishOptionsHasBeenSet() const { return m_visualPublishOptionsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetVisualPublishOptions(const DashboardVisualPublishOptions& value) { m_visualPublishOptionsHasBeenSet = true; m_visualPublishOptions = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetVisualPublishOptions(DashboardVisualPublishOptions&& value) { m_visualPublishOptionsHasBeenSet = true; m_visualPublishOptions = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline DashboardPublishOptions& WithVisualPublishOptions(const DashboardVisualPublishOptions& value) { SetVisualPublishOptions(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DashboardPublishOptions& WithVisualPublishOptions(DashboardVisualPublishOptions&& value) { SetVisualPublishOptions(std::move(value)); return *this;}
+
   private:
 
     AdHocFilteringOption m_adHocFilteringOption;
-    bool m_adHocFilteringOptionHasBeenSet;
+    bool m_adHocFilteringOptionHasBeenSet = false;
 
     ExportToCSVOption m_exportToCSVOption;
-    bool m_exportToCSVOptionHasBeenSet;
+    bool m_exportToCSVOptionHasBeenSet = false;
 
     SheetControlsOption m_sheetControlsOption;
-    bool m_sheetControlsOptionHasBeenSet;
+    bool m_sheetControlsOptionHasBeenSet = false;
+
+    DashboardVisualPublishOptions m_visualPublishOptions;
+    bool m_visualPublishOptionsHasBeenSet = false;
   };
 
 } // namespace Model

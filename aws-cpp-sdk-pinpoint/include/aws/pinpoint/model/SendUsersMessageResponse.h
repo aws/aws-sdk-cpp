@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SendUsersMessageResponse
+  class SendUsersMessageResponse
   {
   public:
-    SendUsersMessageResponse();
-    SendUsersMessageResponse(Aws::Utils::Json::JsonView jsonValue);
-    SendUsersMessageResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SendUsersMessageResponse();
+    AWS_PINPOINT_API SendUsersMessageResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SendUsersMessageResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>> m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

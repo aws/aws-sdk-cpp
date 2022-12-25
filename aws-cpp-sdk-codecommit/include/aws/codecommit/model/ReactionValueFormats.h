@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReactionValueFormats">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ReactionValueFormats
+  class ReactionValueFormats
   {
   public:
-    ReactionValueFormats();
-    ReactionValueFormats(Aws::Utils::Json::JsonView jsonValue);
-    ReactionValueFormats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ReactionValueFormats();
+    AWS_CODECOMMIT_API ReactionValueFormats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ReactionValueFormats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_emoji;
-    bool m_emojiHasBeenSet;
+    bool m_emojiHasBeenSet = false;
 
     Aws::String m_shortCode;
-    bool m_shortCodeHasBeenSet;
+    bool m_shortCodeHasBeenSet = false;
 
     Aws::String m_unicode;
-    bool m_unicodeHasBeenSet;
+    bool m_unicodeHasBeenSet = false;
   };
 
 } // namespace Model

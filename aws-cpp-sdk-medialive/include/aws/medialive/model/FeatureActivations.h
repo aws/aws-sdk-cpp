@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FeatureActivations">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FeatureActivations
+  class FeatureActivations
   {
   public:
-    FeatureActivations();
-    FeatureActivations(Aws::Utils::Json::JsonView jsonValue);
-    FeatureActivations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FeatureActivations();
+    AWS_MEDIALIVE_API FeatureActivations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FeatureActivations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,7 +94,7 @@ If you disable the feature on an
   private:
 
     FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions;
-    bool m_inputPrepareScheduleActionsHasBeenSet;
+    bool m_inputPrepareScheduleActionsHasBeenSet = false;
   };
 
 } // namespace Model

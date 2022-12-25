@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSet">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSet
+  class DataSet
   {
   public:
-    DataSet();
-    DataSet(Aws::Utils::Json::JsonView jsonValue);
-    DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSet();
+    AWS_QUICKSIGHT_API DataSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -754,52 +754,52 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, PhysicalTable> m_physicalTableMap;
-    bool m_physicalTableMapHasBeenSet;
+    bool m_physicalTableMapHasBeenSet = false;
 
     Aws::Map<Aws::String, LogicalTable> m_logicalTableMap;
-    bool m_logicalTableMapHasBeenSet;
+    bool m_logicalTableMapHasBeenSet = false;
 
     Aws::Vector<OutputColumn> m_outputColumns;
-    bool m_outputColumnsHasBeenSet;
+    bool m_outputColumnsHasBeenSet = false;
 
     DataSetImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
 
     long long m_consumedSpiceCapacityInBytes;
-    bool m_consumedSpiceCapacityInBytesHasBeenSet;
+    bool m_consumedSpiceCapacityInBytesHasBeenSet = false;
 
     Aws::Vector<ColumnGroup> m_columnGroups;
-    bool m_columnGroupsHasBeenSet;
+    bool m_columnGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
-    bool m_fieldFoldersHasBeenSet;
+    bool m_fieldFoldersHasBeenSet = false;
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-    bool m_rowLevelPermissionDataSetHasBeenSet;
+    bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
     RowLevelPermissionTagConfiguration m_rowLevelPermissionTagConfiguration;
-    bool m_rowLevelPermissionTagConfigurationHasBeenSet;
+    bool m_rowLevelPermissionTagConfigurationHasBeenSet = false;
 
     Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
-    bool m_columnLevelPermissionRulesHasBeenSet;
+    bool m_columnLevelPermissionRulesHasBeenSet = false;
 
     DataSetUsageConfiguration m_dataSetUsageConfiguration;
-    bool m_dataSetUsageConfigurationHasBeenSet;
+    bool m_dataSetUsageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

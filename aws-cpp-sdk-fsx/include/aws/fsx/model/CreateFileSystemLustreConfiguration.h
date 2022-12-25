@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemLustreConfiguration
+  class CreateFileSystemLustreConfiguration
   {
   public:
-    CreateFileSystemLustreConfiguration();
-    CreateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemLustreConfiguration();
+    AWS_FSX_API CreateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1256,46 +1256,46 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_importPath;
-    bool m_importPathHasBeenSet;
+    bool m_importPathHasBeenSet = false;
 
     Aws::String m_exportPath;
-    bool m_exportPathHasBeenSet;
+    bool m_exportPathHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     LustreDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     int m_perUnitStorageThroughput;
-    bool m_perUnitStorageThroughputHasBeenSet;
+    bool m_perUnitStorageThroughputHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     DriveCacheType m_driveCacheType;
-    bool m_driveCacheTypeHasBeenSet;
+    bool m_driveCacheTypeHasBeenSet = false;
 
     DataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
-    bool m_rootSquashConfigurationHasBeenSet;
+    bool m_rootSquashConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

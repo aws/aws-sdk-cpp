@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverActionType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType
+  class AccountTakeoverActionType
   {
   public:
-    AccountTakeoverActionType();
-    AccountTakeoverActionType(Aws::Utils::Json::JsonView jsonValue);
-    AccountTakeoverActionType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     bool m_notify;
-    bool m_notifyHasBeenSet;
+    bool m_notifyHasBeenSet = false;
 
     AccountTakeoverEventActionType m_eventAction;
-    bool m_eventActionHasBeenSet;
+    bool m_eventActionHasBeenSet = false;
   };
 
 } // namespace Model

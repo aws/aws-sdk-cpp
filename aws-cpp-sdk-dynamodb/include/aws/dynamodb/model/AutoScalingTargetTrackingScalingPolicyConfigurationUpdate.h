@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingTargetTrackingScalingPolicyConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationUpdate
+  class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate
   {
   public:
-    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate();
-    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationUpdate();
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     bool m_disableScaleIn;
-    bool m_disableScaleInHasBeenSet;
+    bool m_disableScaleInHasBeenSet = false;
 
     int m_scaleInCooldown;
-    bool m_scaleInCooldownHasBeenSet;
+    bool m_scaleInCooldownHasBeenSet = false;
 
     int m_scaleOutCooldown;
-    bool m_scaleOutCooldownHasBeenSet;
+    bool m_scaleOutCooldownHasBeenSet = false;
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
   };
 
 } // namespace Model

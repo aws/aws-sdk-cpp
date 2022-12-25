@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API GetCommentsForComparedCommitRequest : public CodeCommitRequest
+  class GetCommentsForComparedCommitRequest : public CodeCommitRequest
   {
   public:
-    GetCommentsForComparedCommitRequest();
+    AWS_CODECOMMIT_API GetCommentsForComparedCommitRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCommentsForComparedCommit"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_beforeCommitId;
-    bool m_beforeCommitIdHasBeenSet;
+    bool m_beforeCommitIdHasBeenSet = false;
 
     Aws::String m_afterCommitId;
-    bool m_afterCommitIdHasBeenSet;
+    bool m_afterCommitIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

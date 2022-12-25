@@ -29,12 +29,12 @@ namespace MigrationHubRefactorSpaces
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteResult
+  class CreateRouteResult
   {
   public:
-    CreateRouteResult();
-    CreateRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteResult();
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API CreateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -374,27 +374,37 @@ namespace Model
 
 
     /**
-     * <p>The current state of the route. </p>
+     * <p>The current state of the route. Activation state only allows
+     * <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code>
+     * is a route state that is system generated.</p>
      */
     inline const RouteState& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of the route. </p>
+     * <p>The current state of the route. Activation state only allows
+     * <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code>
+     * is a route state that is system generated.</p>
      */
     inline void SetState(const RouteState& value) { m_state = value; }
 
     /**
-     * <p>The current state of the route. </p>
+     * <p>The current state of the route. Activation state only allows
+     * <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code>
+     * is a route state that is system generated.</p>
      */
     inline void SetState(RouteState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>The current state of the route. </p>
+     * <p>The current state of the route. Activation state only allows
+     * <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code>
+     * is a route state that is system generated.</p>
      */
     inline CreateRouteResult& WithState(const RouteState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of the route. </p>
+     * <p>The current state of the route. Activation state only allows
+     * <code>ACTIVE</code> or <code>INACTIVE</code> as user inputs. <code>FAILED</code>
+     * is a route state that is system generated.</p>
      */
     inline CreateRouteResult& WithState(RouteState&& value) { SetState(std::move(value)); return *this;}
 
@@ -473,27 +483,27 @@ namespace Model
 
 
     /**
-     * <p>onfiguration for the URI path route type. </p>
+     * <p>Configuration for the URI path route type. </p>
      */
     inline const UriPathRouteInput& GetUriPathRoute() const{ return m_uriPathRoute; }
 
     /**
-     * <p>onfiguration for the URI path route type. </p>
+     * <p>Configuration for the URI path route type. </p>
      */
     inline void SetUriPathRoute(const UriPathRouteInput& value) { m_uriPathRoute = value; }
 
     /**
-     * <p>onfiguration for the URI path route type. </p>
+     * <p>Configuration for the URI path route type. </p>
      */
     inline void SetUriPathRoute(UriPathRouteInput&& value) { m_uriPathRoute = std::move(value); }
 
     /**
-     * <p>onfiguration for the URI path route type. </p>
+     * <p>Configuration for the URI path route type. </p>
      */
     inline CreateRouteResult& WithUriPathRoute(const UriPathRouteInput& value) { SetUriPathRoute(value); return *this;}
 
     /**
-     * <p>onfiguration for the URI path route type. </p>
+     * <p>Configuration for the URI path route type. </p>
      */
     inline CreateRouteResult& WithUriPathRoute(UriPathRouteInput&& value) { SetUriPathRoute(std::move(value)); return *this;}
 

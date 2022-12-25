@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction
+  class PendingMaintenanceAction
   {
   public:
-    PendingMaintenanceAction();
-    PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
-    PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction();
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API PendingMaintenanceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,22 +339,22 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_autoAppliedAfterDate;
-    bool m_autoAppliedAfterDateHasBeenSet;
+    bool m_autoAppliedAfterDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_forcedApplyDate;
-    bool m_forcedApplyDateHasBeenSet;
+    bool m_forcedApplyDateHasBeenSet = false;
 
     Aws::String m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_currentApplyDate;
-    bool m_currentApplyDateHasBeenSet;
+    bool m_currentApplyDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

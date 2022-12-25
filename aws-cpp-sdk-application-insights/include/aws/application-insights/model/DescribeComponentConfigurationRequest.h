@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRequest : public ApplicationInsightsRequest
+  class DescribeComponentConfigurationRequest : public ApplicationInsightsRequest
   {
   public:
-    DescribeComponentConfigurationRequest();
+    AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeComponentConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
   };
 
 } // namespace Model

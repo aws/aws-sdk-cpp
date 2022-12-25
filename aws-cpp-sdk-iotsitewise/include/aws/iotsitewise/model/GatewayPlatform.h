@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GatewayPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API GatewayPlatform
+  class GatewayPlatform
   {
   public:
-    GatewayPlatform();
-    GatewayPlatform(Aws::Utils::Json::JsonView jsonValue);
-    GatewayPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API GatewayPlatform();
+    AWS_IOTSITEWISE_API GatewayPlatform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API GatewayPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Greengrass m_greengrass;
-    bool m_greengrassHasBeenSet;
+    bool m_greengrassHasBeenSet = false;
 
     GreengrassV2 m_greengrassV2;
-    bool m_greengrassV2HasBeenSet;
+    bool m_greengrassV2HasBeenSet = false;
   };
 
 } // namespace Model

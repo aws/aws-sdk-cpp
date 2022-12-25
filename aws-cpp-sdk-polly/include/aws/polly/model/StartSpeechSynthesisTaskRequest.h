@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_POLLY_API StartSpeechSynthesisTaskRequest : public PollyRequest
+  class StartSpeechSynthesisTaskRequest : public PollyRequest
   {
   public:
-    StartSpeechSynthesisTaskRequest();
+    AWS_POLLY_API StartSpeechSynthesisTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSpeechSynthesisTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_POLLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -626,40 +626,40 @@ namespace Model
   private:
 
     Engine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lexiconNames;
-    bool m_lexiconNamesHasBeenSet;
+    bool m_lexiconNamesHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
 
     Aws::String m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::Vector<SpeechMarkType> m_speechMarkTypes;
-    bool m_speechMarkTypesHasBeenSet;
+    bool m_speechMarkTypesHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     TextType m_textType;
-    bool m_textTypeHasBeenSet;
+    bool m_textTypeHasBeenSet = false;
 
     VoiceId m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
   };
 
 } // namespace Model

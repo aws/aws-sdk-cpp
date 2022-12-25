@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AbpV1_0_x">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API AbpV1_0_x
+  class AbpV1_0_x
   {
   public:
-    AbpV1_0_x();
-    AbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
-    AbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API AbpV1_0_x();
+    AWS_IOTWIRELESS_API AbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API AbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_devAddr;
-    bool m_devAddrHasBeenSet;
+    bool m_devAddrHasBeenSet = false;
 
     SessionKeysAbpV1_0_x m_sessionKeys;
-    bool m_sessionKeysHasBeenSet;
+    bool m_sessionKeysHasBeenSet = false;
 
     int m_fCntStart;
-    bool m_fCntStartHasBeenSet;
+    bool m_fCntStartHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/MetricsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API MetricsConfiguration
+  class MetricsConfiguration
   {
   public:
-    MetricsConfiguration();
-    MetricsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MetricsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API MetricsConfiguration();
+    AWS_IOTTHINGSGRAPH_API MetricsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API MetricsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_cloudMetricEnabled;
-    bool m_cloudMetricEnabledHasBeenSet;
+    bool m_cloudMetricEnabledHasBeenSet = false;
 
     Aws::String m_metricRuleRoleArn;
-    bool m_metricRuleRoleArnHasBeenSet;
+    bool m_metricRuleRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

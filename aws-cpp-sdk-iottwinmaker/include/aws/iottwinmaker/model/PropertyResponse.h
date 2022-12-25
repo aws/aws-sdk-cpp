@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PropertyResponse
+  class PropertyResponse
   {
   public:
-    PropertyResponse();
-    PropertyResponse(Aws::Utils::Json::JsonView jsonValue);
-    PropertyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API PropertyResponse();
+    AWS_IOTTWINMAKER_API PropertyResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PropertyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     PropertyDefinitionResponse m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     DataValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

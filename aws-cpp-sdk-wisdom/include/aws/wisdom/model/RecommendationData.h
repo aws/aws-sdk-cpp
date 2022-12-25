@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RecommendationData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API RecommendationData
+  class RecommendationData
   {
   public:
-    RecommendationData();
-    RecommendationData(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API RecommendationData();
+    AWS_CONNECTWISDOMSERVICE_API RecommendationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API RecommendationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,19 +197,19 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     RelevanceLevel m_relevanceLevel;
-    bool m_relevanceLevelHasBeenSet;
+    bool m_relevanceLevelHasBeenSet = false;
 
     double m_relevanceScore;
-    bool m_relevanceScoreHasBeenSet;
+    bool m_relevanceScoreHasBeenSet = false;
 
     RecommendationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

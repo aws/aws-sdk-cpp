@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API ListDatasetEntriesRequest : public RekognitionRequest
+  class ListDatasetEntriesRequest : public RekognitionRequest
   {
   public:
-    ListDatasetEntriesRequest();
+    AWS_REKOGNITION_API ListDatasetEntriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDatasetEntries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -379,25 +379,25 @@ namespace Model
   private:
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containsLabels;
-    bool m_containsLabelsHasBeenSet;
+    bool m_containsLabelsHasBeenSet = false;
 
     bool m_labeled;
-    bool m_labeledHasBeenSet;
+    bool m_labeledHasBeenSet = false;
 
     Aws::String m_sourceRefContains;
-    bool m_sourceRefContainsHasBeenSet;
+    bool m_sourceRefContainsHasBeenSet = false;
 
     bool m_hasErrors;
-    bool m_hasErrorsHasBeenSet;
+    bool m_hasErrorsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

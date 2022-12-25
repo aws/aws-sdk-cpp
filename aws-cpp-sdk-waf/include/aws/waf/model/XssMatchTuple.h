@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchTuple">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API XssMatchTuple
+  class XssMatchTuple
   {
   public:
-    XssMatchTuple();
-    XssMatchTuple(Aws::Utils::Json::JsonView jsonValue);
-    XssMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API XssMatchTuple();
+    AWS_WAF_API XssMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API XssMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -310,10 +310,10 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     TextTransformation m_textTransformation;
-    bool m_textTransformationHasBeenSet;
+    bool m_textTransformationHasBeenSet = false;
   };
 
 } // namespace Model

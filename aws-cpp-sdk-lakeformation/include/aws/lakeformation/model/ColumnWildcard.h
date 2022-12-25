@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ColumnWildcard">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API ColumnWildcard
+  class ColumnWildcard
   {
   public:
-    ColumnWildcard();
-    ColumnWildcard(Aws::Utils::Json::JsonView jsonValue);
-    ColumnWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API ColumnWildcard();
+    AWS_LAKEFORMATION_API ColumnWildcard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API ColumnWildcard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_excludedColumnNames;
-    bool m_excludedColumnNamesHasBeenSet;
+    bool m_excludedColumnNamesHasBeenSet = false;
   };
 
 } // namespace Model

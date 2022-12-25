@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandPlugin">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CommandPlugin
+  class CommandPlugin
   {
   public:
-    CommandPlugin();
-    CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
-    CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CommandPlugin();
+    AWS_SSM_API CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -921,40 +921,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CommandPluginStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_responseStartDateTime;
-    bool m_responseStartDateTimeHasBeenSet;
+    bool m_responseStartDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_responseFinishDateTime;
-    bool m_responseFinishDateTimeHasBeenSet;
+    bool m_responseFinishDateTimeHasBeenSet = false;
 
     Aws::String m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     Aws::String m_standardOutputUrl;
-    bool m_standardOutputUrlHasBeenSet;
+    bool m_standardOutputUrlHasBeenSet = false;
 
     Aws::String m_standardErrorUrl;
-    bool m_standardErrorUrlHasBeenSet;
+    bool m_standardErrorUrlHasBeenSet = false;
 
     Aws::String m_outputS3Region;
-    bool m_outputS3RegionHasBeenSet;
+    bool m_outputS3RegionHasBeenSet = false;
 
     Aws::String m_outputS3BucketName;
-    bool m_outputS3BucketNameHasBeenSet;
+    bool m_outputS3BucketNameHasBeenSet = false;
 
     Aws::String m_outputS3KeyPrefix;
-    bool m_outputS3KeyPrefixHasBeenSet;
+    bool m_outputS3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringBaselineConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringBaselineConfig
+  class MonitoringBaselineConfig
   {
   public:
-    MonitoringBaselineConfig();
-    MonitoringBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringBaselineConfig();
+    AWS_SAGEMAKER_API MonitoringBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_baseliningJobName;
-    bool m_baseliningJobNameHasBeenSet;
+    bool m_baseliningJobNameHasBeenSet = false;
 
     MonitoringConstraintsResource m_constraintsResource;
-    bool m_constraintsResourceHasBeenSet;
+    bool m_constraintsResourceHasBeenSet = false;
 
     MonitoringStatisticsResource m_statisticsResource;
-    bool m_statisticsResourceHasBeenSet;
+    bool m_statisticsResourceHasBeenSet = false;
   };
 
 } // namespace Model

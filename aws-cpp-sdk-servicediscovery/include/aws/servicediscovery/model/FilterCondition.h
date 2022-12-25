@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     EQ,
     IN,
-    BETWEEN
+    BETWEEN,
+    BEGINS_WITH
   };
 
 namespace FilterConditionMapper

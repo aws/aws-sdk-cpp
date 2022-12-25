@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbPendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbPendingModifiedValues
+  class AwsRdsDbPendingModifiedValues
   {
   public:
-    AwsRdsDbPendingModifiedValues();
-    AwsRdsDbPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbPendingModifiedValues();
+    AWS_SECURITYHUB_API AwsRdsDbPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -552,49 +552,49 @@ namespace Model
   private:
 
     Aws::String m_dbInstanceClass;
-    bool m_dbInstanceClassHasBeenSet;
+    bool m_dbInstanceClassHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_dbInstanceIdentifier;
-    bool m_dbInstanceIdentifierHasBeenSet;
+    bool m_dbInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_caCertificateIdentifier;
-    bool m_caCertificateIdentifierHasBeenSet;
+    bool m_caCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_dbSubnetGroupName;
-    bool m_dbSubnetGroupNameHasBeenSet;
+    bool m_dbSubnetGroupNameHasBeenSet = false;
 
     AwsRdsPendingCloudWatchLogsExports m_pendingCloudWatchLogsExports;
-    bool m_pendingCloudWatchLogsExportsHasBeenSet;
+    bool m_pendingCloudWatchLogsExportsHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

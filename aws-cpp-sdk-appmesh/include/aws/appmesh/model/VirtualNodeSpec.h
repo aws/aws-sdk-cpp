@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeSpec
+  class VirtualNodeSpec
   {
   public:
-    VirtualNodeSpec();
-    VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeSpec();
+    AWS_APPMESH_API VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,19 +248,19 @@ namespace Model
   private:
 
     BackendDefaults m_backendDefaults;
-    bool m_backendDefaultsHasBeenSet;
+    bool m_backendDefaultsHasBeenSet = false;
 
     Aws::Vector<Backend> m_backends;
-    bool m_backendsHasBeenSet;
+    bool m_backendsHasBeenSet = false;
 
     Aws::Vector<Listener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     ServiceDiscovery m_serviceDiscovery;
-    bool m_serviceDiscoveryHasBeenSet;
+    bool m_serviceDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

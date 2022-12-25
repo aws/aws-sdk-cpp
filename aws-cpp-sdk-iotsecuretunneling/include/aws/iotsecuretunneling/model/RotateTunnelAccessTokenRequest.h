@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenRequest : public IoTSecureTunnelingRequest
+  class RotateTunnelAccessTokenRequest : public IoTSecureTunnelingRequest
   {
   public:
-    RotateTunnelAccessTokenRequest();
+    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RotateTunnelAccessToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSECURETUNNELING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_IOTSECURETUNNELING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
 
     ClientMode m_clientMode;
-    bool m_clientModeHasBeenSet;
+    bool m_clientModeHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,14 +17,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessionsInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API DescribePlayerSessionsRequest : public GameLiftRequest
+  class DescribePlayerSessionsRequest : public GameLiftRequest
   {
   public:
-    DescribePlayerSessionsRequest();
+    AWS_GAMELIFT_API DescribePlayerSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePlayerSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -161,106 +158,122 @@ namespace Model
 
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline const Aws::String& GetPlayerSessionStatusFilter() const{ return m_playerSessionStatusFilter; }
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline bool PlayerSessionStatusFilterHasBeenSet() const { return m_playerSessionStatusFilterHasBeenSet; }
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline void SetPlayerSessionStatusFilter(const Aws::String& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = value; }
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline void SetPlayerSessionStatusFilter(Aws::String&& value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter = std::move(value); }
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline void SetPlayerSessionStatusFilter(const char* value) { m_playerSessionStatusFilterHasBeenSet = true; m_playerSessionStatusFilter.assign(value); }
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(const Aws::String& value) { SetPlayerSessionStatusFilter(value); return *this;}
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(Aws::String&& value) { SetPlayerSessionStatusFilter(std::move(value)); return *this;}
 
     /**
-     * <p>Player session status to filter results on.</p> <p>Possible player session
-     * statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player
-     * session request has been received, but the player has not yet connected to the
-     * server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The
-     * player has been validated by the server process and is currently connected.</p>
-     * </li> <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p>
-     * </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
-     * player did not connect and/or was not validated within the timeout limit (60
-     * seconds).</p> </li> </ul>
+     * <p>Player session status to filter results on. Note that when a PlayerSessionId
+     * or PlayerId is provided in a DescribePlayerSessions request, then the
+     * PlayerSessionStatusFilter has no effect on the response.</p> <p>Possible player
+     * session statuses include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The
+     * player session request has been received, but the player has not yet connected
+     * to the server process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b>
+     * -- The player has been validated by the server process and is currently
+     * connected.</p> </li> <li> <p> <b>COMPLETED</b> -- The player connection has been
+     * dropped.</p> </li> <li> <p> <b>TIMEDOUT</b> -- A player session request was
+     * received, but the player did not connect and/or was not validated within the
+     * timeout limit (60 seconds).</p> </li> </ul>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionStatusFilter(const char* value) { SetPlayerSessionStatusFilter(value); return *this;}
 
@@ -361,22 +374,22 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
 
     Aws::String m_playerSessionStatusFilter;
-    bool m_playerSessionStatusFilterHasBeenSet;
+    bool m_playerSessionStatusFilterHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Timezone">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API Timezone
+  class Timezone
   {
   public:
-    Timezone();
-    Timezone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Timezone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Timezone();
+    AWS_RDS_API Timezone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Timezone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_timezoneName;
-    bool m_timezoneNameHasBeenSet;
+    bool m_timezoneNameHasBeenSet = false;
   };
 
 } // namespace Model

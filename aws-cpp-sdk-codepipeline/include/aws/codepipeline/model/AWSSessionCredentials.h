@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AWSSessionCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API AWSSessionCredentials
+  class AWSSessionCredentials
   {
   public:
-    AWSSessionCredentials();
-    AWSSessionCredentials(Aws::Utils::Json::JsonView jsonValue);
-    AWSSessionCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API AWSSessionCredentials();
+    AWS_CODEPIPELINE_API AWSSessionCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API AWSSessionCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     Aws::String m_secretAccessKey;
-    bool m_secretAccessKeyHasBeenSet;
+    bool m_secretAccessKeyHasBeenSet = false;
 
     Aws::String m_sessionToken;
-    bool m_sessionTokenHasBeenSet;
+    bool m_sessionTokenHasBeenSet = false;
   };
 
 } // namespace Model

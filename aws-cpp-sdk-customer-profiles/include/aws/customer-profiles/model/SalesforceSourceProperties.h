@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SalesforceSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API SalesforceSourceProperties
+  class SalesforceSourceProperties
   {
   public:
-    SalesforceSourceProperties();
-    SalesforceSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API SalesforceSourceProperties();
+    AWS_CUSTOMERPROFILES_API SalesforceSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API SalesforceSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,13 +127,13 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     bool m_enableDynamicFieldUpdate;
-    bool m_enableDynamicFieldUpdateHasBeenSet;
+    bool m_enableDynamicFieldUpdateHasBeenSet = false;
 
     bool m_includeDeletedRecords;
-    bool m_includeDeletedRecordsHasBeenSet;
+    bool m_includeDeletedRecordsHasBeenSet = false;
   };
 
 } // namespace Model

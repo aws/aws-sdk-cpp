@@ -9,7 +9,10 @@
 #include <aws/sagemaker/model/TrafficPattern.h>
 #include <aws/sagemaker/model/RecommendationJobResourceLimit.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/RecommendationJobContainerConfig.h>
+#include <aws/sagemaker/model/RecommendationJobVpcConfig.h>
 #include <aws/sagemaker/model/EndpointInputConfiguration.h>
+#include <aws/sagemaker/model/EndpointInfo.h>
 #include <utility>
 
 namespace Aws
@@ -33,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobInputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobInputConfig
+  class RecommendationJobInputConfig
   {
   public:
-    RecommendationJobInputConfig();
-    RecommendationJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobInputConfig();
+    AWS_SAGEMAKER_API RecommendationJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -399,25 +402,155 @@ namespace Model
      */
     inline RecommendationJobInputConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline const RecommendationJobContainerConfig& GetContainerConfig() const{ return m_containerConfig; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline bool ContainerConfigHasBeenSet() const { return m_containerConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline void SetContainerConfig(const RecommendationJobContainerConfig& value) { m_containerConfigHasBeenSet = true; m_containerConfig = value; }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline void SetContainerConfig(RecommendationJobContainerConfig&& value) { m_containerConfigHasBeenSet = true; m_containerConfig = std::move(value); }
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline RecommendationJobInputConfig& WithContainerConfig(const RecommendationJobContainerConfig& value) { SetContainerConfig(value); return *this;}
+
+    /**
+     * <p>Specifies mandatory fields for running an Inference Recommender job. The
+     * fields specified in <code>ContainerConfig</code> override the corresponding
+     * fields in the model package.</p>
+     */
+    inline RecommendationJobInputConfig& WithContainerConfig(RecommendationJobContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline const Aws::Vector<EndpointInfo>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline void SetEndpoints(const Aws::Vector<EndpointInfo>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline void SetEndpoints(Aws::Vector<EndpointInfo>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& WithEndpoints(const Aws::Vector<EndpointInfo>& value) { SetEndpoints(value); return *this;}
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& WithEndpoints(Aws::Vector<EndpointInfo>&& value) { SetEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& AddEndpoints(const EndpointInfo& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& AddEndpoints(EndpointInfo&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline const RecommendationJobVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline void SetVpcConfig(const RecommendationJobVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline void SetVpcConfig(RecommendationJobVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline RecommendationJobInputConfig& WithVpcConfig(const RecommendationJobVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline RecommendationJobInputConfig& WithVpcConfig(RecommendationJobVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageVersionArn;
-    bool m_modelPackageVersionArnHasBeenSet;
+    bool m_modelPackageVersionArnHasBeenSet = false;
 
     int m_jobDurationInSeconds;
-    bool m_jobDurationInSecondsHasBeenSet;
+    bool m_jobDurationInSecondsHasBeenSet = false;
 
     TrafficPattern m_trafficPattern;
-    bool m_trafficPatternHasBeenSet;
+    bool m_trafficPatternHasBeenSet = false;
 
     RecommendationJobResourceLimit m_resourceLimit;
-    bool m_resourceLimitHasBeenSet;
+    bool m_resourceLimitHasBeenSet = false;
 
     Aws::Vector<EndpointInputConfiguration> m_endpointConfigurations;
-    bool m_endpointConfigurationsHasBeenSet;
+    bool m_endpointConfigurationsHasBeenSet = false;
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
+
+    RecommendationJobContainerConfig m_containerConfig;
+    bool m_containerConfigHasBeenSet = false;
+
+    Aws::Vector<EndpointInfo> m_endpoints;
+    bool m_endpointsHasBeenSet = false;
+
+    RecommendationJobVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

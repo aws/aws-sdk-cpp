@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Target">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Target
+  class Target
   {
   public:
-    Target();
-    Target(Aws::Utils::Json::JsonView jsonValue);
-    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Target();
+    AWS_SSMCONTACTS_API Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ChannelTargetInfo m_channelTargetInfo;
-    bool m_channelTargetInfoHasBeenSet;
+    bool m_channelTargetInfoHasBeenSet = false;
 
     ContactTargetInfo m_contactTargetInfo;
-    bool m_contactTargetInfoHasBeenSet;
+    bool m_contactTargetInfoHasBeenSet = false;
   };
 
 } // namespace Model

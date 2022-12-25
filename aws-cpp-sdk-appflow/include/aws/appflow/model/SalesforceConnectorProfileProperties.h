@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SalesforceConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SalesforceConnectorProfileProperties
+  class SalesforceConnectorProfileProperties
   {
   public:
-    SalesforceConnectorProfileProperties();
-    SalesforceConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SalesforceConnectorProfileProperties();
+    AWS_APPFLOW_API SalesforceConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SalesforceConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_instanceUrl;
-    bool m_instanceUrlHasBeenSet;
+    bool m_instanceUrlHasBeenSet = false;
 
     bool m_isSandboxEnvironment;
-    bool m_isSandboxEnvironmentHasBeenSet;
+    bool m_isSandboxEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

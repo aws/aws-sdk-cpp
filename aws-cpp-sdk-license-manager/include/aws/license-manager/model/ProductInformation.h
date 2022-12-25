@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ProductInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ProductInformation
+  class ProductInformation
   {
   public:
-    ProductInformation();
-    ProductInformation(Aws::Utils::Json::JsonView jsonValue);
-    ProductInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ProductInformation();
+    AWS_LICENSEMANAGER_API ProductInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ProductInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -428,10 +428,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<ProductInformationFilter> m_productInformationFilterList;
-    bool m_productInformationFilterListHasBeenSet;
+    bool m_productInformationFilterListHasBeenSet = false;
   };
 
 } // namespace Model

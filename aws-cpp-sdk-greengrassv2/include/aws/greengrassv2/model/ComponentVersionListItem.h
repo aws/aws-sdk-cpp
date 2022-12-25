@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentVersionListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentVersionListItem
+  class ComponentVersionListItem
   {
   public:
-    ComponentVersionListItem();
-    ComponentVersionListItem(Aws::Utils::Json::JsonView jsonValue);
-    ComponentVersionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentVersionListItem();
+    AWS_GREENGRASSV2_API ComponentVersionListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentVersionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

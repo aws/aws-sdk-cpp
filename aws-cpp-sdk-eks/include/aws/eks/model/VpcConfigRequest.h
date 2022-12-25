@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API VpcConfigRequest
+  class VpcConfigRequest
   {
   public:
-    VpcConfigRequest();
-    VpcConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API VpcConfigRequest();
+    AWS_EKS_API VpcConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API VpcConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -123,10 +120,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -138,10 +132,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -153,10 +144,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -168,10 +156,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -183,10 +168,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -198,10 +180,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -213,10 +192,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -228,10 +204,7 @@ namespace Model
      * interfaces that Amazon EKS creates to use that allow communication between your
      * nodes and the Kubernetes control plane. If you don't specify any security
      * groups, then familiarize yourself with the difference between Amazon EKS
-     * defaults for clusters deployed with Kubernetes:</p> <ul> <li> <p>1.14 Amazon EKS
-     * platform version <code>eks.2</code> and earlier</p> </li> <li> <p>1.14 Amazon
-     * EKS platform version <code>eks.3</code> and later </p> </li> </ul> <p>For more
-     * information, see <a
+     * defaults for clusters deployed with Kubernetes. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
      * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i>
      * </i>.</p>
@@ -473,19 +446,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     bool m_endpointPublicAccess;
-    bool m_endpointPublicAccessHasBeenSet;
+    bool m_endpointPublicAccessHasBeenSet = false;
 
     bool m_endpointPrivateAccess;
-    bool m_endpointPrivateAccessHasBeenSet;
+    bool m_endpointPrivateAccessHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicAccessCidrs;
-    bool m_publicAccessCidrsHasBeenSet;
+    bool m_publicAccessCidrsHasBeenSet = false;
   };
 
 } // namespace Model

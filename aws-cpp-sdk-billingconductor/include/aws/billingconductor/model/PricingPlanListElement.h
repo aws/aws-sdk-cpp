@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/PricingPlanListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API PricingPlanListElement
+  class PricingPlanListElement
   {
   public:
-    PricingPlanListElement();
-    PricingPlanListElement(Aws::Utils::Json::JsonView jsonValue);
-    PricingPlanListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API PricingPlanListElement();
+    AWS_BILLINGCONDUCTOR_API PricingPlanListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API PricingPlanListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,90 +169,90 @@ namespace Model
 
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p> The pricing rules count currently associated with this pricing plan list
-     * element. </p>
+     * <p> The pricing rules count that's currently associated with this pricing plan
+     * list element. </p>
      */
     inline PricingPlanListElement& WithSize(long long value) { SetSize(value); return *this;}
 
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p> The time the pricing plan was created. </p>
+     * <p> The time when the pricing plan was created. </p>
      */
     inline PricingPlanListElement& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the pricing plan was modified. </p>
+     * <p> The most recent time when the pricing plan was modified. </p>
      */
     inline PricingPlanListElement& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

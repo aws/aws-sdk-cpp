@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProtectiveEquipmentBodyPart">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ProtectiveEquipmentBodyPart
+  class ProtectiveEquipmentBodyPart
   {
   public:
-    ProtectiveEquipmentBodyPart();
-    ProtectiveEquipmentBodyPart(Aws::Utils::Json::JsonView jsonValue);
-    ProtectiveEquipmentBodyPart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ProtectiveEquipmentBodyPart();
+    AWS_REKOGNITION_API ProtectiveEquipmentBodyPart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ProtectiveEquipmentBodyPart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     BodyPart m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<EquipmentDetection> m_equipmentDetections;
-    bool m_equipmentDetectionsHasBeenSet;
+    bool m_equipmentDetectionsHasBeenSet = false;
   };
 
 } // namespace Model

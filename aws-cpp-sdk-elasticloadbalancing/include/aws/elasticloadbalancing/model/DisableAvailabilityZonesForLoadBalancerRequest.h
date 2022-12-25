@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveAvailabilityZonesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API DisableAvailabilityZonesForLoadBalancerRequest : public ElasticLoadBalancingRequest
+  class DisableAvailabilityZonesForLoadBalancerRequest : public ElasticLoadBalancingRequest
   {
   public:
-    DisableAvailabilityZonesForLoadBalancerRequest();
+    AWS_ELASTICLOADBALANCING_API DisableAvailabilityZonesForLoadBalancerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisableAvailabilityZonesForLoadBalancer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICLOADBALANCING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICLOADBALANCING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACHINELEARNING_API CreateDataSourceFromRDSRequest : public MachineLearningRequest
+  class CreateDataSourceFromRDSRequest : public MachineLearningRequest
   {
   public:
-    CreateDataSourceFromRDSRequest();
+    AWS_MACHINELEARNING_API CreateDataSourceFromRDSRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataSourceFromRDS"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACHINELEARNING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -440,19 +440,19 @@ namespace Model
   private:
 
     Aws::String m_dataSourceId;
-    bool m_dataSourceIdHasBeenSet;
+    bool m_dataSourceIdHasBeenSet = false;
 
     Aws::String m_dataSourceName;
-    bool m_dataSourceNameHasBeenSet;
+    bool m_dataSourceNameHasBeenSet = false;
 
     RDSDataSpec m_rDSData;
-    bool m_rDSDataHasBeenSet;
+    bool m_rDSDataHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     bool m_computeStatistics;
-    bool m_computeStatisticsHasBeenSet;
+    bool m_computeStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

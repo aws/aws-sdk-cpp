@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ThemeValues">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ThemeValues
+  class ThemeValues
   {
   public:
-    ThemeValues();
-    ThemeValues(Aws::Utils::Json::JsonView jsonValue);
-    ThemeValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ThemeValues();
+    AWS_AMPLIFYUIBUILDER_API ThemeValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ThemeValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,40 +84,40 @@ namespace Model
     /**
      * <p>The value of the property.</p>
      */
-    const ThemeValue& GetValue() const;
+    AWS_AMPLIFYUIBUILDER_API const ThemeValue& GetValue() const;
 
     /**
      * <p>The value of the property.</p>
      */
-    bool ValueHasBeenSet() const;
+    AWS_AMPLIFYUIBUILDER_API bool ValueHasBeenSet() const;
 
     /**
      * <p>The value of the property.</p>
      */
-    void SetValue(const ThemeValue& value);
+    AWS_AMPLIFYUIBUILDER_API void SetValue(const ThemeValue& value);
 
     /**
      * <p>The value of the property.</p>
      */
-    void SetValue(ThemeValue&& value);
+    AWS_AMPLIFYUIBUILDER_API void SetValue(ThemeValue&& value);
 
     /**
      * <p>The value of the property.</p>
      */
-    ThemeValues& WithValue(const ThemeValue& value);
+    AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(const ThemeValue& value);
 
     /**
      * <p>The value of the property.</p>
      */
-    ThemeValues& WithValue(ThemeValue&& value);
+    AWS_AMPLIFYUIBUILDER_API ThemeValues& WithValue(ThemeValue&& value);
 
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     std::shared_ptr<ThemeValue> m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

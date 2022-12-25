@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ResourceTag">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API ResourceTag
+  class ResourceTag
   {
   public:
-    ResourceTag();
-    ResourceTag(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API ResourceTag();
+    AWS_CLOUDTRAIL_API ResourceTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsList;
-    bool m_tagsListHasBeenSet;
+    bool m_tagsListHasBeenSet = false;
   };
 
 } // namespace Model

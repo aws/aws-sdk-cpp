@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ActionLocalPortDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ActionLocalPortDetails
+  class ActionLocalPortDetails
   {
   public:
-    ActionLocalPortDetails();
-    ActionLocalPortDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActionLocalPortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ActionLocalPortDetails();
+    AWS_SECURITYHUB_API ActionLocalPortDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ActionLocalPortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_portName;
-    bool m_portNameHasBeenSet;
+    bool m_portNameHasBeenSet = false;
   };
 
 } // namespace Model

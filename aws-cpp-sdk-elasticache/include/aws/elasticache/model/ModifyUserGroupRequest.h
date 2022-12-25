@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API ModifyUserGroupRequest : public ElastiCacheRequest
+  class ModifyUserGroupRequest : public ElastiCacheRequest
   {
   public:
-    ModifyUserGroupRequest();
+    AWS_ELASTICACHE_API ModifyUserGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyUserGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_userGroupId;
-    bool m_userGroupIdHasBeenSet;
+    bool m_userGroupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdsToAdd;
-    bool m_userIdsToAddHasBeenSet;
+    bool m_userIdsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIdsToRemove;
-    bool m_userIdsToRemoveHasBeenSet;
+    bool m_userIdsToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

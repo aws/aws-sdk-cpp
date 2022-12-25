@@ -27,21 +27,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult
+  class DescribeInputDeviceThumbnailResult
   {
   public:
-    DescribeInputDeviceThumbnailResult();
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult();
     //We have to define these because Microsoft doesn't auto generate them
-    DescribeInputDeviceThumbnailResult(DescribeInputDeviceThumbnailResult&&);
-    DescribeInputDeviceThumbnailResult& operator=(DescribeInputDeviceThumbnailResult&&);
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult(DescribeInputDeviceThumbnailResult&&);
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult& operator=(DescribeInputDeviceThumbnailResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     DescribeInputDeviceThumbnailResult(const DescribeInputDeviceThumbnailResult&) = delete;
     DescribeInputDeviceThumbnailResult& operator=(const DescribeInputDeviceThumbnailResult&) = delete;
 
 
-    DescribeInputDeviceThumbnailResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    DescribeInputDeviceThumbnailResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

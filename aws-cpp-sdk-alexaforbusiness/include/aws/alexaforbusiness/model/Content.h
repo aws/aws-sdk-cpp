@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Content">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Content
+  class Content
   {
   public:
-    Content();
-    Content(Aws::Utils::Json::JsonView jsonValue);
-    Content& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Content();
+    AWS_ALEXAFORBUSINESS_API Content(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Content& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<Text> m_textList;
-    bool m_textListHasBeenSet;
+    bool m_textListHasBeenSet = false;
 
     Aws::Vector<Ssml> m_ssmlList;
-    bool m_ssmlListHasBeenSet;
+    bool m_ssmlListHasBeenSet = false;
 
     Aws::Vector<Audio> m_audioList;
-    bool m_audioListHasBeenSet;
+    bool m_audioListHasBeenSet = false;
   };
 
 } // namespace Model

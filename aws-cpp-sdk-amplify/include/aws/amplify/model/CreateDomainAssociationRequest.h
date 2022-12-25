@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateDomainAssociationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API CreateDomainAssociationRequest : public AmplifyRequest
+  class CreateDomainAssociationRequest : public AmplifyRequest
   {
   public:
-    CreateDomainAssociationRequest();
+    AWS_AMPLIFY_API CreateDomainAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDomainAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_enableAutoSubDomain;
-    bool m_enableAutoSubDomainHasBeenSet;
+    bool m_enableAutoSubDomainHasBeenSet = false;
 
     Aws::Vector<SubDomainSetting> m_subDomainSettings;
-    bool m_subDomainSettingsHasBeenSet;
+    bool m_subDomainSettingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoSubDomainCreationPatterns;
-    bool m_autoSubDomainCreationPatternsHasBeenSet;
+    bool m_autoSubDomainCreationPatternsHasBeenSet = false;
 
     Aws::String m_autoSubDomainIAMRole;
-    bool m_autoSubDomainIAMRoleHasBeenSet;
+    bool m_autoSubDomainIAMRoleHasBeenSet = false;
   };
 
 } // namespace Model

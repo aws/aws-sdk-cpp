@@ -44,7 +44,7 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
-    Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
+    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
     for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
     {
       m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
@@ -54,7 +54,7 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("stagingAccountIDs"))
   {
-    Array<JsonView> stagingAccountIDsJsonList = jsonValue.GetArray("stagingAccountIDs");
+    Aws::Utils::Array<JsonView> stagingAccountIDsJsonList = jsonValue.GetArray("stagingAccountIDs");
     for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
     {
       m_stagingAccountIDs.push_back(stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_sourceServerIDsHasBeenSet)
   {
-   Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+   Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
    for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
    {
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
@@ -88,7 +88,7 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_stagingAccountIDsHasBeenSet)
   {
-   Array<JsonValue> stagingAccountIDsJsonList(m_stagingAccountIDs.size());
+   Aws::Utils::Array<JsonValue> stagingAccountIDsJsonList(m_stagingAccountIDs.size());
    for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
    {
      stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString(m_stagingAccountIDs[stagingAccountIDsIndex]);

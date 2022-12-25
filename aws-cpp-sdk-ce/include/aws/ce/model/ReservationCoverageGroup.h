@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationCoverageGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationCoverageGroup
+  class ReservationCoverageGroup
   {
   public:
-    ReservationCoverageGroup();
-    ReservationCoverageGroup(Aws::Utils::Json::JsonView jsonValue);
-    ReservationCoverageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationCoverageGroup();
+    AWS_COSTEXPLORER_API ReservationCoverageGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationCoverageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Coverage m_coverage;
-    bool m_coverageHasBeenSet;
+    bool m_coverageHasBeenSet = false;
   };
 
 } // namespace Model

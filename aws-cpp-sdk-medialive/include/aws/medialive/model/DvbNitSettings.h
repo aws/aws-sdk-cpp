@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DvbNitSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DvbNitSettings
+  class DvbNitSettings
   {
   public:
-    DvbNitSettings();
-    DvbNitSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbNitSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API DvbNitSettings();
+    AWS_MEDIALIVE_API DvbNitSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API DvbNitSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     int m_networkId;
-    bool m_networkIdHasBeenSet;
+    bool m_networkIdHasBeenSet = false;
 
     Aws::String m_networkName;
-    bool m_networkNameHasBeenSet;
+    bool m_networkNameHasBeenSet = false;
 
     int m_repInterval;
-    bool m_repIntervalHasBeenSet;
+    bool m_repIntervalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API CloneStackRequest : public OpsWorksRequest
+  class CloneStackRequest : public OpsWorksRequest
   {
   public:
-    CloneStackRequest();
+    AWS_OPSWORKS_API CloneStackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CloneStack"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1930,70 +1930,70 @@ namespace Model
   private:
 
     Aws::String m_sourceStackId;
-    bool m_sourceStackIdHasBeenSet;
+    bool m_sourceStackIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::String m_defaultInstanceProfileArn;
-    bool m_defaultInstanceProfileArnHasBeenSet;
+    bool m_defaultInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_defaultOs;
-    bool m_defaultOsHasBeenSet;
+    bool m_defaultOsHasBeenSet = false;
 
     Aws::String m_hostnameTheme;
-    bool m_hostnameThemeHasBeenSet;
+    bool m_hostnameThemeHasBeenSet = false;
 
     Aws::String m_defaultAvailabilityZone;
-    bool m_defaultAvailabilityZoneHasBeenSet;
+    bool m_defaultAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_defaultSubnetId;
-    bool m_defaultSubnetIdHasBeenSet;
+    bool m_defaultSubnetIdHasBeenSet = false;
 
     Aws::String m_customJson;
-    bool m_customJsonHasBeenSet;
+    bool m_customJsonHasBeenSet = false;
 
     StackConfigurationManager m_configurationManager;
-    bool m_configurationManagerHasBeenSet;
+    bool m_configurationManagerHasBeenSet = false;
 
     ChefConfiguration m_chefConfiguration;
-    bool m_chefConfigurationHasBeenSet;
+    bool m_chefConfigurationHasBeenSet = false;
 
     bool m_useCustomCookbooks;
-    bool m_useCustomCookbooksHasBeenSet;
+    bool m_useCustomCookbooksHasBeenSet = false;
 
     bool m_useOpsworksSecurityGroups;
-    bool m_useOpsworksSecurityGroupsHasBeenSet;
+    bool m_useOpsworksSecurityGroupsHasBeenSet = false;
 
     Source m_customCookbooksSource;
-    bool m_customCookbooksSourceHasBeenSet;
+    bool m_customCookbooksSourceHasBeenSet = false;
 
     Aws::String m_defaultSshKeyName;
-    bool m_defaultSshKeyNameHasBeenSet;
+    bool m_defaultSshKeyNameHasBeenSet = false;
 
     bool m_clonePermissions;
-    bool m_clonePermissionsHasBeenSet;
+    bool m_clonePermissionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cloneAppIds;
-    bool m_cloneAppIdsHasBeenSet;
+    bool m_cloneAppIdsHasBeenSet = false;
 
     RootDeviceType m_defaultRootDeviceType;
-    bool m_defaultRootDeviceTypeHasBeenSet;
+    bool m_defaultRootDeviceTypeHasBeenSet = false;
 
     Aws::String m_agentVersion;
-    bool m_agentVersionHasBeenSet;
+    bool m_agentVersionHasBeenSet = false;
   };
 
 } // namespace Model

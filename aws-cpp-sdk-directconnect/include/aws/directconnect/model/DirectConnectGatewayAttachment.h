@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGatewayAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment
+  class DirectConnectGatewayAttachment
   {
   public:
-    DirectConnectGatewayAttachment();
-    DirectConnectGatewayAttachment(Aws::Utils::Json::JsonView jsonValue);
-    DirectConnectGatewayAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment();
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_virtualInterfaceId;
-    bool m_virtualInterfaceIdHasBeenSet;
+    bool m_virtualInterfaceIdHasBeenSet = false;
 
     Aws::String m_virtualInterfaceRegion;
-    bool m_virtualInterfaceRegionHasBeenSet;
+    bool m_virtualInterfaceRegionHasBeenSet = false;
 
     Aws::String m_virtualInterfaceOwnerAccount;
-    bool m_virtualInterfaceOwnerAccountHasBeenSet;
+    bool m_virtualInterfaceOwnerAccountHasBeenSet = false;
 
     DirectConnectGatewayAttachmentState m_attachmentState;
-    bool m_attachmentStateHasBeenSet;
+    bool m_attachmentStateHasBeenSet = false;
 
     DirectConnectGatewayAttachmentType m_attachmentType;
-    bool m_attachmentTypeHasBeenSet;
+    bool m_attachmentTypeHasBeenSet = false;
 
     Aws::String m_stateChangeError;
-    bool m_stateChangeErrorHasBeenSet;
+    bool m_stateChangeErrorHasBeenSet = false;
   };
 
 } // namespace Model

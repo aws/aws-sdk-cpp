@@ -7,6 +7,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/IdentityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/model/VerificationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/IdentityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API IdentityInfo
+  class IdentityInfo
   {
   public:
-    IdentityInfo();
-    IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
-    IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API IdentityInfo();
+    AWS_SESV2_API IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,16 +153,98 @@ namespace Model
      */
     inline IdentityInfo& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
 
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = std::move(value); }
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline IdentityInfo& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
+
+    /**
+     * <p>The verification status of the identity. The status can be one of the
+     * following:</p> <ul> <li> <p> <code>PENDING</code> – The verification process was
+     * initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+     * <li> <p> <code>SUCCESS</code> – The verification process completed
+     * successfully.</p> </li> <li> <p> <code>FAILED</code> – The verification process
+     * failed.</p> </li> <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is
+     * preventing Amazon SES from determining the verification status of the
+     * identity.</p> </li> <li> <p> <code>NOT_STARTED</code> – The verification process
+     * hasn't been initiated for the identity.</p> </li> </ul>
+     */
+    inline IdentityInfo& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
+
   private:
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_identityName;
-    bool m_identityNameHasBeenSet;
+    bool m_identityNameHasBeenSet = false;
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
+
+    VerificationStatus m_verificationStatus;
+    bool m_verificationStatusHasBeenSet = false;
   };
 
 } // namespace Model

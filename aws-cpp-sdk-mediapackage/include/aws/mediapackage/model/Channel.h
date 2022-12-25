@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API Channel();
+    AWS_MEDIAPACKAGE_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -263,25 +263,25 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EgressAccessLogs m_egressAccessLogs;
-    bool m_egressAccessLogsHasBeenSet;
+    bool m_egressAccessLogsHasBeenSet = false;
 
     HlsIngest m_hlsIngest;
-    bool m_hlsIngestHasBeenSet;
+    bool m_hlsIngestHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     IngressAccessLogs m_ingressAccessLogs;
-    bool m_ingressAccessLogsHasBeenSet;
+    bool m_ingressAccessLogsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

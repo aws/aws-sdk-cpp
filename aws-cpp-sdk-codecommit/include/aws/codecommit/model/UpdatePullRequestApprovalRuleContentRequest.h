@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentRequest : public CodeCommitRequest
+  class UpdatePullRequestApprovalRuleContentRequest : public CodeCommitRequest
   {
   public:
-    UpdatePullRequestApprovalRuleContentRequest();
+    AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePullRequestApprovalRuleContent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -368,16 +368,16 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_approvalRuleName;
-    bool m_approvalRuleNameHasBeenSet;
+    bool m_approvalRuleNameHasBeenSet = false;
 
     Aws::String m_existingRuleContentSha256;
-    bool m_existingRuleContentSha256HasBeenSet;
+    bool m_existingRuleContentSha256HasBeenSet = false;
 
     Aws::String m_newRuleContent;
-    bool m_newRuleContentHasBeenSet;
+    bool m_newRuleContentHasBeenSet = false;
   };
 
 } // namespace Model

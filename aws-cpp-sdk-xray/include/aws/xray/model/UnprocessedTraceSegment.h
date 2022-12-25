@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UnprocessedTraceSegment">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API UnprocessedTraceSegment
+  class UnprocessedTraceSegment
   {
   public:
-    UnprocessedTraceSegment();
-    UnprocessedTraceSegment(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedTraceSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API UnprocessedTraceSegment();
+    AWS_XRAY_API UnprocessedTraceSegment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API UnprocessedTraceSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

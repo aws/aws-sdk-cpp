@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/AutoAdjustData">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API AutoAdjustData
+  class AutoAdjustData
   {
   public:
-    AutoAdjustData();
-    AutoAdjustData(Aws::Utils::Json::JsonView jsonValue);
-    AutoAdjustData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API AutoAdjustData();
+    AWS_BUDGETS_API AutoAdjustData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API AutoAdjustData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AutoAdjustType m_autoAdjustType;
-    bool m_autoAdjustTypeHasBeenSet;
+    bool m_autoAdjustTypeHasBeenSet = false;
 
     HistoricalOptions m_historicalOptions;
-    bool m_historicalOptionsHasBeenSet;
+    bool m_historicalOptionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAutoAdjustTime;
-    bool m_lastAutoAdjustTimeHasBeenSet;
+    bool m_lastAutoAdjustTimeHasBeenSet = false;
   };
 
 } // namespace Model

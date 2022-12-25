@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AnalysisResultLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AnalysisResultLocation
+  class AnalysisResultLocation
   {
   public:
-    AnalysisResultLocation();
-    AnalysisResultLocation(Aws::Utils::Json::JsonView jsonValue);
-    AnalysisResultLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AnalysisResultLocation();
+    AWS_IOTEVENTS_API AnalysisResultLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AnalysisResultLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

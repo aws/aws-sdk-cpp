@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ReplaceRouteRequest : public EC2Request
+  class ReplaceRouteRequest : public EC2Request
   {
   public:
-    ReplaceRouteRequest();
+    AWS_EC2_API ReplaceRouteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReplaceRoute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -735,55 +735,55 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_destinationIpv6CidrBlock;
-    bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
-    bool m_destinationPrefixListIdHasBeenSet;
+    bool m_destinationPrefixListIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_egressOnlyInternetGatewayId;
-    bool m_egressOnlyInternetGatewayIdHasBeenSet;
+    bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_localTarget;
-    bool m_localTargetHasBeenSet;
+    bool m_localTargetHasBeenSet = false;
 
     Aws::String m_natGatewayId;
-    bool m_natGatewayIdHasBeenSet;
+    bool m_natGatewayIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_localGatewayId;
-    bool m_localGatewayIdHasBeenSet;
+    bool m_localGatewayIdHasBeenSet = false;
 
     Aws::String m_carrierGatewayId;
-    bool m_carrierGatewayIdHasBeenSet;
+    bool m_carrierGatewayIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
   };
 
 } // namespace Model

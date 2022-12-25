@@ -14,6 +14,7 @@
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EksProperties.h>
 #include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
@@ -30,10 +31,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinitionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API RegisterJobDefinitionRequest : public BatchRequest
+  class RegisterJobDefinitionRequest : public BatchRequest
   {
   public:
-    RegisterJobDefinitionRequest();
+    AWS_BATCH_API RegisterJobDefinitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +42,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterJobDefinition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -269,8 +270,8 @@ namespace Model
 
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This will only affect jobs in job queues with a fair share policy. Jobs with a
-     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * This only affects jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
      */
@@ -278,8 +279,8 @@ namespace Model
 
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This will only affect jobs in job queues with a fair share policy. Jobs with a
-     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * This only affects jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
      */
@@ -287,8 +288,8 @@ namespace Model
 
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This will only affect jobs in job queues with a fair share policy. Jobs with a
-     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * This only affects jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
      */
@@ -296,8 +297,8 @@ namespace Model
 
     /**
      * <p>The scheduling priority for jobs that are submitted with this job definition.
-     * This will only affect jobs in job queues with a fair share policy. Jobs with a
-     * higher scheduling priority will be scheduled before jobs with a lower scheduling
+     * This only affects jobs in job queues with a fair share policy. Jobs with a
+     * higher scheduling priority are scheduled before jobs with a lower scheduling
      * priority.</p> <p>The minimum supported value is 0 and the maximum supported
      * value is 9999.</p>
      */
@@ -305,68 +306,68 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline void SetContainerProperties(const ContainerProperties& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithContainerProperties(const ContainerProperties& value) { SetContainerProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to single-node container-based
-     * jobs. If the job definition's <code>type</code> parameter is
+     * <p>An object with various properties specific to Amazon ECS based single-node
+     * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>.</p> 
-     * <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
-     * 
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
+     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * only <code>containerProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
@@ -381,7 +382,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
@@ -395,7 +397,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
@@ -409,7 +412,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
@@ -423,7 +427,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
@@ -437,7 +442,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
@@ -451,7 +457,8 @@ namespace Model
      * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
      *  <p>If the job runs on Fargate resources, then you must not specify
      * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     * 
+     *   <p>If the job runs on Amazon EKS resources, then you must not
+     * specify <code>nodeProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
@@ -511,7 +518,9 @@ namespace Model
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * the job is moved to the <code>FAILED</code> state.</p>  <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>propagateTags</code>.</p> 
      */
     inline bool GetPropagateTags() const{ return m_propagateTags; }
 
@@ -521,7 +530,9 @@ namespace Model
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * the job is moved to the <code>FAILED</code> state.</p>  <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>propagateTags</code>.</p> 
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
@@ -531,7 +542,9 @@ namespace Model
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * the job is moved to the <code>FAILED</code> state.</p>  <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>propagateTags</code>.</p> 
      */
     inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
@@ -541,7 +554,9 @@ namespace Model
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * the job is moved to the <code>FAILED</code> state.</p>  <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>propagateTags</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
 
@@ -740,93 +755,149 @@ namespace Model
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline const Aws::Vector<PlatformCapability>& GetPlatformCapabilities() const{ return m_platformCapabilities; }
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline bool PlatformCapabilitiesHasBeenSet() const { return m_platformCapabilitiesHasBeenSet; }
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline void SetPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = value; }
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline void SetPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities = std::move(value); }
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline RegisterJobDefinitionRequest& WithPlatformCapabilities(const Aws::Vector<PlatformCapability>& value) { SetPlatformCapabilities(value); return *this;}
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline RegisterJobDefinitionRequest& WithPlatformCapabilities(Aws::Vector<PlatformCapability>&& value) { SetPlatformCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline RegisterJobDefinitionRequest& AddPlatformCapabilities(const PlatformCapability& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(value); return *this; }
 
     /**
      * <p>The platform capabilities required by the job definition. If no value is
      * specified, it defaults to <code>EC2</code>. To run the job on Fargate resources,
-     * specify <code>FARGATE</code>.</p>
+     * specify <code>FARGATE</code>.</p>  <p>If the job runs on Amazon EKS
+     * resources, then you must not specify <code>platformCapabilities</code>.</p>
+     * 
      */
     inline RegisterJobDefinitionRequest& AddPlatformCapabilities(PlatformCapability&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline const EksProperties& GetEksProperties() const{ return m_eksProperties; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline void SetEksProperties(const EksProperties& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline void SetEksProperties(EksProperties&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * This must not be specified for Amazon ECS based job definitions.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     JobDefinitionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     int m_schedulingPriority;
-    bool m_schedulingPriorityHasBeenSet;
+    bool m_schedulingPriorityHasBeenSet = false;
 
     ContainerProperties m_containerProperties;
-    bool m_containerPropertiesHasBeenSet;
+    bool m_containerPropertiesHasBeenSet = false;
 
     NodeProperties m_nodeProperties;
-    bool m_nodePropertiesHasBeenSet;
+    bool m_nodePropertiesHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     bool m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     JobTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<PlatformCapability> m_platformCapabilities;
-    bool m_platformCapabilitiesHasBeenSet;
+    bool m_platformCapabilitiesHasBeenSet = false;
+
+    EksProperties m_eksProperties;
+    bool m_eksPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

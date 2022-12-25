@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/OpsCenterIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API OpsCenterIntegration
+  class OpsCenterIntegration
   {
   public:
-    OpsCenterIntegration();
-    OpsCenterIntegration(Aws::Utils::Json::JsonView jsonValue);
-    OpsCenterIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API OpsCenterIntegration();
+    AWS_DEVOPSGURU_API OpsCenterIntegration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API OpsCenterIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     OptInStatus m_optInStatus;
-    bool m_optInStatusHasBeenSet;
+    bool m_optInStatusHasBeenSet = false;
   };
 
 } // namespace Model

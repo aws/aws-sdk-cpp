@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ReasonCodeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API ReasonCodeSummary
+  class ReasonCodeSummary
   {
   public:
-    ReasonCodeSummary();
-    ReasonCodeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReasonCodeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API ReasonCodeSummary();
+    AWS_COMPUTEOPTIMIZER_API ReasonCodeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API ReasonCodeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     FindingReasonCode m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

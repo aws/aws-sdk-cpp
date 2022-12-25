@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectRequestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateTransitGatewayConnectRequestOptions
+  class CreateTransitGatewayConnectRequestOptions
   {
   public:
-    CreateTransitGatewayConnectRequestOptions();
-    CreateTransitGatewayConnectRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateTransitGatewayConnectRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateTransitGatewayConnectRequestOptions();
+    AWS_EC2_API CreateTransitGatewayConnectRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateTransitGatewayConnectRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ProtocolValue m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

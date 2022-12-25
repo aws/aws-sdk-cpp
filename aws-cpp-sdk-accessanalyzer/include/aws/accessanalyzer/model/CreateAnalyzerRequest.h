@@ -7,9 +7,9 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/AccessAnalyzerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/accessanalyzer/model/Type.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/accessanalyzer/model/Type.h>
 #include <aws/accessanalyzer/model/InlineArchiveRule.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzerRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API CreateAnalyzerRequest : public AccessAnalyzerRequest
+  class CreateAnalyzerRequest : public AccessAnalyzerRequest
   {
   public:
-    CreateAnalyzerRequest();
+    AWS_ACCESSANALYZER_API CreateAnalyzerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAnalyzer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -79,6 +79,49 @@ namespace Model
      * <p>The name of the analyzer to create.</p>
      */
     inline CreateAnalyzerRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
+
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
+     * supported. You can create only one analyzer per account per Region. You can
+     * create up to 5 analyzers per organization per Region.</p>
+     */
+    inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
@@ -136,47 +179,6 @@ namespace Model
      * rule.</p>
      */
     inline CreateAnalyzerRequest& AddArchiveRules(InlineArchiveRule&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAnalyzerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAnalyzerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline CreateAnalyzerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -246,63 +248,61 @@ namespace Model
 
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are
-     * supported. You can create only one analyzer per account per Region. You can
-     * create up to 5 analyzers per organization per Region.</p>
+     * <p>A client token.</p>
      */
-    inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline CreateAnalyzerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline CreateAnalyzerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline CreateAnalyzerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
     Aws::String m_analyzerName;
-    bool m_analyzerNameHasBeenSet;
-
-    Aws::Vector<InlineArchiveRule> m_archiveRules;
-    bool m_archiveRulesHasBeenSet;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_analyzerNameHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
+
+    Aws::Vector<InlineArchiveRule> m_archiveRules;
+    bool m_archiveRulesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

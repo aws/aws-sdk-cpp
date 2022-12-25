@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Category">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Category
+  class Category
   {
   public:
-    Category();
-    Category(Aws::Utils::Json::JsonView jsonValue);
-    Category& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Category();
+    AWS_ALEXAFORBUSINESS_API Category(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Category& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     long long m_categoryId;
-    bool m_categoryIdHasBeenSet;
+    bool m_categoryIdHasBeenSet = false;
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
   };
 
 } // namespace Model

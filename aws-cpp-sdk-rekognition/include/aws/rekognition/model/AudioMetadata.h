@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AudioMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API AudioMetadata
+  class AudioMetadata
   {
   public:
-    AudioMetadata();
-    AudioMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AudioMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API AudioMetadata();
+    AWS_REKOGNITION_API AudioMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API AudioMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,16 +145,16 @@ namespace Model
   private:
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     long long m_durationMillis;
-    bool m_durationMillisHasBeenSet;
+    bool m_durationMillisHasBeenSet = false;
 
     long long m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     long long m_numberOfChannels;
-    bool m_numberOfChannelsHasBeenSet;
+    bool m_numberOfChannelsHasBeenSet = false;
   };
 
 } // namespace Model

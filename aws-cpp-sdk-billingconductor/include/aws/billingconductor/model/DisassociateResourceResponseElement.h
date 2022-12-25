@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/DisassociateResourceResponseElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API DisassociateResourceResponseElement
+  class DisassociateResourceResponseElement
   {
   public:
-    DisassociateResourceResponseElement();
-    DisassociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
-    DisassociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API DisassociateResourceResponseElement();
+    AWS_BILLINGCONDUCTOR_API DisassociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API DisassociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,48 +81,48 @@ namespace Model
 
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline const AssociateResourceError& GetError() const{ return m_error; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline void SetError(const AssociateResourceError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline void SetError(AssociateResourceError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline DisassociateResourceResponseElement& WithError(const AssociateResourceError& value) { SetError(value); return *this;}
 
     /**
-     * <p> An <code>AssociateResourceError</code> shown if the resource disassociation
-     * fails. </p>
+     * <p> An <code>AssociateResourceError</code> that's shown if the resource
+     * disassociation fails. </p>
      */
     inline DisassociateResourceResponseElement& WithError(AssociateResourceError&& value) { SetError(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AssociateResourceError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

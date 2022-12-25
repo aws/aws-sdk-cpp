@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ChatStreamingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ChatStreamingConfiguration
+  class ChatStreamingConfiguration
   {
   public:
-    ChatStreamingConfiguration();
-    ChatStreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChatStreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ChatStreamingConfiguration();
+    AWS_CONNECT_API ChatStreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ChatStreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_streamingEndpointArn;
-    bool m_streamingEndpointArnHasBeenSet;
+    bool m_streamingEndpointArnHasBeenSet = false;
   };
 
 } // namespace Model

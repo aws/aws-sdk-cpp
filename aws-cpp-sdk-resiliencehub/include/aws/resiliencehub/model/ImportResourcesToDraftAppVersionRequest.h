@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionRequest : public ResilienceHubRequest
+  class ImportResourcesToDraftAppVersionRequest : public ResilienceHubRequest
   {
   public:
-    ImportResourcesToDraftAppVersionRequest();
+    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportResourcesToDraftAppVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceArns;
-    bool m_sourceArnsHasBeenSet;
+    bool m_sourceArnsHasBeenSet = false;
 
     Aws::Vector<TerraformSource> m_terraformSources;
-    bool m_terraformSourcesHasBeenSet;
+    bool m_terraformSourcesHasBeenSet = false;
   };
 
 } // namespace Model

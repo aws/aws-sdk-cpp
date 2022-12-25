@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API RemoveCustomRoutingEndpointsRequest : public GlobalAcceleratorRequest
+  class RemoveCustomRoutingEndpointsRequest : public GlobalAcceleratorRequest
   {
   public:
-    RemoveCustomRoutingEndpointsRequest();
+    AWS_GLOBALACCELERATOR_API RemoveCustomRoutingEndpointsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveCustomRoutingEndpoints"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_endpointIds;
-    bool m_endpointIdsHasBeenSet;
+    bool m_endpointIdsHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

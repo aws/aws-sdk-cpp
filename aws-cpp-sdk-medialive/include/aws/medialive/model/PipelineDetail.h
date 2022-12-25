@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PipelineDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API PipelineDetail
+  class PipelineDetail
   {
   public:
-    PipelineDetail();
-    PipelineDetail(Aws::Utils::Json::JsonView jsonValue);
-    PipelineDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API PipelineDetail();
+    AWS_MEDIALIVE_API PipelineDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API PipelineDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_activeInputAttachmentName;
-    bool m_activeInputAttachmentNameHasBeenSet;
+    bool m_activeInputAttachmentNameHasBeenSet = false;
 
     Aws::String m_activeInputSwitchActionName;
-    bool m_activeInputSwitchActionNameHasBeenSet;
+    bool m_activeInputSwitchActionNameHasBeenSet = false;
 
     Aws::String m_activeMotionGraphicsActionName;
-    bool m_activeMotionGraphicsActionNameHasBeenSet;
+    bool m_activeMotionGraphicsActionNameHasBeenSet = false;
 
     Aws::String m_activeMotionGraphicsUri;
-    bool m_activeMotionGraphicsUriHasBeenSet;
+    bool m_activeMotionGraphicsUriHasBeenSet = false;
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

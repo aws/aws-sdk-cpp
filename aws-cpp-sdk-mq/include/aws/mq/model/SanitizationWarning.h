@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/SanitizationWarning">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API SanitizationWarning
+  class SanitizationWarning
   {
   public:
-    SanitizationWarning();
-    SanitizationWarning(Aws::Utils::Json::JsonView jsonValue);
-    SanitizationWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API SanitizationWarning();
+    AWS_MQ_API SanitizationWarning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API SanitizationWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_elementName;
-    bool m_elementNameHasBeenSet;
+    bool m_elementNameHasBeenSet = false;
 
     SanitizationWarningReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

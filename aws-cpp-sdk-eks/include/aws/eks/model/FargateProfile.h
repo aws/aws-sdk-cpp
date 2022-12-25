@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/FargateProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API FargateProfile
+  class FargateProfile
   {
   public:
-    FargateProfile();
-    FargateProfile(Aws::Utils::Json::JsonView jsonValue);
-    FargateProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API FargateProfile();
+    AWS_EKS_API FargateProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API FargateProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,31 +492,31 @@ namespace Model
   private:
 
     Aws::String m_fargateProfileName;
-    bool m_fargateProfileNameHasBeenSet;
+    bool m_fargateProfileNameHasBeenSet = false;
 
     Aws::String m_fargateProfileArn;
-    bool m_fargateProfileArnHasBeenSet;
+    bool m_fargateProfileArnHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_podExecutionRoleArn;
-    bool m_podExecutionRoleArnHasBeenSet;
+    bool m_podExecutionRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<FargateProfileSelector> m_selectors;
-    bool m_selectorsHasBeenSet;
+    bool m_selectorsHasBeenSet = false;
 
     FargateProfileStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

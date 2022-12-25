@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AccessPreviewStatusReason">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AccessPreviewStatusReason
+  class AccessPreviewStatusReason
   {
   public:
-    AccessPreviewStatusReason();
-    AccessPreviewStatusReason(Aws::Utils::Json::JsonView jsonValue);
-    AccessPreviewStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AccessPreviewStatusReason();
+    AWS_ACCESSANALYZER_API AccessPreviewStatusReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AccessPreviewStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,7 +74,7 @@ namespace Model
   private:
 
     AccessPreviewStatusReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

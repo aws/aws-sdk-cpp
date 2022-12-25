@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Problem">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Problem
+  class Problem
   {
   public:
-    Problem();
-    Problem(Aws::Utils::Json::JsonView jsonValue);
-    Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Problem();
+    AWS_DEVICEFARM_API Problem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,25 +287,25 @@ namespace Model
   private:
 
     ProblemDetail m_run;
-    bool m_runHasBeenSet;
+    bool m_runHasBeenSet = false;
 
     ProblemDetail m_job;
-    bool m_jobHasBeenSet;
+    bool m_jobHasBeenSet = false;
 
     ProblemDetail m_suite;
-    bool m_suiteHasBeenSet;
+    bool m_suiteHasBeenSet = false;
 
     ProblemDetail m_test;
-    bool m_testHasBeenSet;
+    bool m_testHasBeenSet = false;
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     ExecutionResult m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

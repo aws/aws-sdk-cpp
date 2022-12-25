@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MailboxExportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MailboxExportJob
+  class MailboxExportJob
   {
   public:
-    MailboxExportJob();
-    MailboxExportJob(Aws::Utils::Json::JsonView jsonValue);
-    MailboxExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MailboxExportJob();
+    AWS_WORKMAIL_API MailboxExportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MailboxExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -370,31 +370,31 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3Path;
-    bool m_s3PathHasBeenSet;
+    bool m_s3PathHasBeenSet = false;
 
     int m_estimatedProgress;
-    bool m_estimatedProgressHasBeenSet;
+    bool m_estimatedProgressHasBeenSet = false;
 
     MailboxExportJobState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,22 +30,22 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/S3Storage">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API S3Storage
+  class S3Storage
   {
   public:
-    S3Storage();
-    S3Storage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Storage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API S3Storage();
+    AWS_EC2_API S3Storage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API S3Storage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline const Aws::String& GetAWSAccessKeyId() const{ return m_aWSAccessKeyId; }
 
@@ -53,7 +53,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline bool AWSAccessKeyIdHasBeenSet() const { return m_aWSAccessKeyIdHasBeenSet; }
 
@@ -61,7 +61,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline void SetAWSAccessKeyId(const Aws::String& value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline void SetAWSAccessKeyId(Aws::String&& value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId = std::move(value); }
 
@@ -77,7 +77,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline void SetAWSAccessKeyId(const char* value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId.assign(value); }
 
@@ -85,7 +85,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline S3Storage& WithAWSAccessKeyId(const Aws::String& value) { SetAWSAccessKeyId(value); return *this;}
 
@@ -93,7 +93,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline S3Storage& WithAWSAccessKeyId(Aws::String&& value) { SetAWSAccessKeyId(std::move(value)); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-     * Practices for Managing Amazon Web Services Access Keys</a>.</p>
+     * practices for managing Amazon Web Services access keys</a>.</p>
      */
     inline S3Storage& WithAWSAccessKeyId(const char* value) { SetAWSAccessKeyId(value); return *this;}
 
@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_aWSAccessKeyId;
-    bool m_aWSAccessKeyIdHasBeenSet;
+    bool m_aWSAccessKeyIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_uploadPolicy;
-    bool m_uploadPolicyHasBeenSet;
+    bool m_uploadPolicyHasBeenSet = false;
 
     Aws::String m_uploadPolicySignature;
-    bool m_uploadPolicySignatureHasBeenSet;
+    bool m_uploadPolicySignatureHasBeenSet = false;
   };
 
 } // namespace Model

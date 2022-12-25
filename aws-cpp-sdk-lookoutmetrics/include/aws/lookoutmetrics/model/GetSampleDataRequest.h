@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API GetSampleDataRequest : public LookoutMetricsRequest
+  class GetSampleDataRequest : public LookoutMetricsRequest
   {
   public:
-    GetSampleDataRequest();
+    AWS_LOOKOUTMETRICS_API GetSampleDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSampleData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SampleDataS3SourceConfig m_s3SourceConfig;
-    bool m_s3SourceConfigHasBeenSet;
+    bool m_s3SourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

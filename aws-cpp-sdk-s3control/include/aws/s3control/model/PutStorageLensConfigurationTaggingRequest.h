@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API PutStorageLensConfigurationTaggingRequest : public S3ControlRequest
+  class PutStorageLensConfigurationTaggingRequest : public S3ControlRequest
   {
   public:
-    PutStorageLensConfigurationTaggingRequest();
+    AWS_S3CONTROL_API PutStorageLensConfigurationTaggingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutStorageLensConfigurationTagging"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The ID of the S3 Storage Lens configuration.</p>
@@ -169,13 +173,13 @@ namespace Model
   private:
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<StorageLensTag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

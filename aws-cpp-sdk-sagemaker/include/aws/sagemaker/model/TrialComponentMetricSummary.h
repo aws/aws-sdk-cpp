@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentMetricSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentMetricSummary
+  class TrialComponentMetricSummary
   {
   public:
-    TrialComponentMetricSummary();
-    TrialComponentMetricSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentMetricSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentMetricSummary();
+    AWS_SAGEMAKER_API TrialComponentMetricSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentMetricSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -279,31 +279,31 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeStamp;
-    bool m_timeStampHasBeenSet;
+    bool m_timeStampHasBeenSet = false;
 
     double m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     double m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     double m_last;
-    bool m_lastHasBeenSet;
+    bool m_lastHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     double m_avg;
-    bool m_avgHasBeenSet;
+    bool m_avgHasBeenSet = false;
 
     double m_stdDev;
-    bool m_stdDevHasBeenSet;
+    bool m_stdDevHasBeenSet = false;
   };
 
 } // namespace Model

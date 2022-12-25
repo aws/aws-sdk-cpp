@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelSummary
+  class ChannelSummary
   {
   public:
-    ChannelSummary();
-    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,54 +227,54 @@ namespace Model
 
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline const Aws::Utils::DateTime& GetLastMessageTimestamp() const{ return m_lastMessageTimestamp; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline bool LastMessageTimestampHasBeenSet() const { return m_lastMessageTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline void SetLastMessageTimestamp(const Aws::Utils::DateTime& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = value; }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline void SetLastMessageTimestamp(Aws::Utils::DateTime&& value) { m_lastMessageTimestampHasBeenSet = true; m_lastMessageTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline ChannelSummary& WithLastMessageTimestamp(const Aws::Utils::DateTime& value) { SetLastMessageTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which the last message in a channel was sent.</p>
+     * <p>The time at which the last persistent message in a channel was sent.</p>
      */
     inline ChannelSummary& WithLastMessageTimestamp(Aws::Utils::DateTime&& value) { SetLastMessageTimestamp(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     ChannelMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ChannelPrivacy m_privacy;
-    bool m_privacyHasBeenSet;
+    bool m_privacyHasBeenSet = false;
 
     Aws::String m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastMessageTimestamp;
-    bool m_lastMessageTimestampHasBeenSet;
+    bool m_lastMessageTimestampHasBeenSet = false;
   };
 
 } // namespace Model

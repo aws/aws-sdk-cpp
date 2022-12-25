@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ContainerOverride
+  class ContainerOverride
   {
   public:
-    ContainerOverride();
-    ContainerOverride(Aws::Utils::Json::JsonView jsonValue);
-    ContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ContainerOverride();
+    AWS_ECS_API ContainerOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -422,28 +422,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Vector<KeyValuePair> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Vector<EnvironmentFile> m_environmentFiles;
-    bool m_environmentFilesHasBeenSet;
+    bool m_environmentFilesHasBeenSet = false;
 
     int m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     int m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     int m_memoryReservation;
-    bool m_memoryReservationHasBeenSet;
+    bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<ResourceRequirement> m_resourceRequirements;
-    bool m_resourceRequirementsHasBeenSet;
+    bool m_resourceRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

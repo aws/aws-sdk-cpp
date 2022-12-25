@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API PutEncryptionConfigRequest : public XRayRequest
+  class PutEncryptionConfigRequest : public XRayRequest
   {
   public:
-    PutEncryptionConfigRequest();
+    AWS_XRAY_API PutEncryptionConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutEncryptionConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -177,10 +177,10 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     EncryptionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

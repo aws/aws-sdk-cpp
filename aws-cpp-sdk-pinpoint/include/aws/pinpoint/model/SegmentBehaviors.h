@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentBehaviors">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentBehaviors
+  class SegmentBehaviors
   {
   public:
-    SegmentBehaviors();
-    SegmentBehaviors(Aws::Utils::Json::JsonView jsonValue);
-    SegmentBehaviors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentBehaviors();
+    AWS_PINPOINT_API SegmentBehaviors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentBehaviors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     RecencyDimension m_recency;
-    bool m_recencyHasBeenSet;
+    bool m_recencyHasBeenSet = false;
   };
 
 } // namespace Model

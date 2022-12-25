@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FilterCriteria
+  class FilterCriteria
   {
   public:
-    FilterCriteria();
-    FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FilterCriteria();
+    AWS_INSPECTOR2_API FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -553,6 +553,47 @@ namespace Model
 
 
     /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetExploitAvailable() const{ return m_exploitAvailable; }
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline bool ExploitAvailableHasBeenSet() const { return m_exploitAvailableHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline void SetExploitAvailable(const Aws::Vector<StringFilter>& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline void SetExploitAvailable(Aws::Vector<StringFilter>&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline FilterCriteria& WithExploitAvailable(const Aws::Vector<StringFilter>& value) { SetExploitAvailable(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline FilterCriteria& WithExploitAvailable(Aws::Vector<StringFilter>&& value) { SetExploitAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline FilterCriteria& AddExploitAvailable(const StringFilter& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+     */
+    inline FilterCriteria& AddExploitAvailable(StringFilter&& value) { m_exploitAvailableHasBeenSet = true; m_exploitAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Details on the finding ARNs used to filter findings.</p>
      */
     inline const Aws::Vector<StringFilter>& GetFindingArn() const{ return m_findingArn; }
@@ -725,6 +766,71 @@ namespace Model
 
 
     /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const Aws::Vector<StringFilter>& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(Aws::Vector<StringFilter>&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(const Aws::Vector<StringFilter>& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(Aws::Vector<StringFilter>&& value) { SetFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(const StringFilter& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(StringFilter&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Inspector score to filter on.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetInspectorScore() const{ return m_inspectorScore; }
@@ -763,6 +869,259 @@ namespace Model
      * <p>The Amazon Inspector score to filter on.</p>
      */
     inline FilterCriteria& AddInspectorScore(NumberFilter&& value) { m_inspectorScoreHasBeenSet = true; m_inspectorScore.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetLambdaFunctionExecutionRoleArn() const{ return m_lambdaFunctionExecutionRoleArn; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline bool LambdaFunctionExecutionRoleArnHasBeenSet() const { return m_lambdaFunctionExecutionRoleArnHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline void SetLambdaFunctionExecutionRoleArn(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline void SetLambdaFunctionExecutionRoleArn(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionExecutionRoleArn(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionExecutionRoleArn(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionExecutionRoleArn(const StringFilter& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by execution role.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionExecutionRoleArn(StringFilter&& value) { m_lambdaFunctionExecutionRoleArnHasBeenSet = true; m_lambdaFunctionExecutionRoleArn.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline const Aws::Vector<DateFilter>& GetLambdaFunctionLastModifiedAt() const{ return m_lambdaFunctionLastModifiedAt; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline bool LambdaFunctionLastModifiedAtHasBeenSet() const { return m_lambdaFunctionLastModifiedAtHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline void SetLambdaFunctionLastModifiedAt(const Aws::Vector<DateFilter>& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline void SetLambdaFunctionLastModifiedAt(Aws::Vector<DateFilter>&& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline FilterCriteria& WithLambdaFunctionLastModifiedAt(const Aws::Vector<DateFilter>& value) { SetLambdaFunctionLastModifiedAt(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline FilterCriteria& WithLambdaFunctionLastModifiedAt(Aws::Vector<DateFilter>&& value) { SetLambdaFunctionLastModifiedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline FilterCriteria& AddLambdaFunctionLastModifiedAt(const DateFilter& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the date and time that a user
+     * last updated the configuration, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     * format</a> </p>
+     */
+    inline FilterCriteria& AddLambdaFunctionLastModifiedAt(DateFilter&& value) { m_lambdaFunctionLastModifiedAtHasBeenSet = true; m_lambdaFunctionLastModifiedAt.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetLambdaFunctionLayers() const{ return m_lambdaFunctionLayers; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline bool LambdaFunctionLayersHasBeenSet() const { return m_lambdaFunctionLayersHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline void SetLambdaFunctionLayers(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline void SetLambdaFunctionLayers(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionLayers(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionLayers(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionLayers(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionLayers(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionLayers(const StringFilter& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a>. A Lambda function can have up to five layers.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionLayers(StringFilter&& value) { m_lambdaFunctionLayersHasBeenSet = true; m_lambdaFunctionLayers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline void SetLambdaFunctionName(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline void SetLambdaFunctionName(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionName(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionName(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionName(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionName(const StringFilter& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionName(StringFilter&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetLambdaFunctionRuntime() const{ return m_lambdaFunctionRuntime; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline bool LambdaFunctionRuntimeHasBeenSet() const { return m_lambdaFunctionRuntimeHasBeenSet; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline void SetLambdaFunctionRuntime(const Aws::Vector<StringFilter>& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = value; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline void SetLambdaFunctionRuntime(Aws::Vector<StringFilter>&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime = std::move(value); }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionRuntime(const Aws::Vector<StringFilter>& value) { SetLambdaFunctionRuntime(value); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline FilterCriteria& WithLambdaFunctionRuntime(Aws::Vector<StringFilter>&& value) { SetLambdaFunctionRuntime(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionRuntime(const StringFilter& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(value); return *this; }
+
+    /**
+     * <p>Filters the list of AWS Lambda functions by the runtime environment for the
+     * Lambda function.</p>
+     */
+    inline FilterCriteria& AddLambdaFunctionRuntime(StringFilter&& value) { m_lambdaFunctionRuntimeHasBeenSet = true; m_lambdaFunctionRuntime.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1357,97 +1716,118 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceImageId;
-    bool m_ec2InstanceImageIdHasBeenSet;
+    bool m_ec2InstanceImageIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceSubnetId;
-    bool m_ec2InstanceSubnetIdHasBeenSet;
+    bool m_ec2InstanceSubnetIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceVpcId;
-    bool m_ec2InstanceVpcIdHasBeenSet;
+    bool m_ec2InstanceVpcIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageArchitecture;
-    bool m_ecrImageArchitectureHasBeenSet;
+    bool m_ecrImageArchitectureHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageHash;
-    bool m_ecrImageHashHasBeenSet;
+    bool m_ecrImageHashHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_ecrImagePushedAt;
-    bool m_ecrImagePushedAtHasBeenSet;
+    bool m_ecrImagePushedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageRegistry;
-    bool m_ecrImageRegistryHasBeenSet;
+    bool m_ecrImageRegistryHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageRepositoryName;
-    bool m_ecrImageRepositoryNameHasBeenSet;
+    bool m_ecrImageRepositoryNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageTags;
-    bool m_ecrImageTagsHasBeenSet;
+    bool m_ecrImageTagsHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_exploitAvailable;
+    bool m_exploitAvailableHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingStatus;
-    bool m_findingStatusHasBeenSet;
+    bool m_findingStatusHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_inspectorScore;
-    bool m_inspectorScoreHasBeenSet;
+    bool m_inspectorScoreHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_lambdaFunctionExecutionRoleArn;
+    bool m_lambdaFunctionExecutionRoleArnHasBeenSet = false;
+
+    Aws::Vector<DateFilter> m_lambdaFunctionLastModifiedAt;
+    bool m_lambdaFunctionLastModifiedAtHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_lambdaFunctionLayers;
+    bool m_lambdaFunctionLayersHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_lambdaFunctionName;
+    bool m_lambdaFunctionNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_lambdaFunctionRuntime;
+    bool m_lambdaFunctionRuntimeHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkProtocol;
-    bool m_networkProtocolHasBeenSet;
+    bool m_networkProtocolHasBeenSet = false;
 
     Aws::Vector<PortRangeFilter> m_portRange;
-    bool m_portRangeHasBeenSet;
+    bool m_portRangeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_relatedVulnerabilities;
-    bool m_relatedVulnerabilitiesHasBeenSet;
+    bool m_relatedVulnerabilitiesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vendorSeverity;
-    bool m_vendorSeverityHasBeenSet;
+    bool m_vendorSeverityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilityId;
-    bool m_vulnerabilityIdHasBeenSet;
+    bool m_vulnerabilityIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilitySource;
-    bool m_vulnerabilitySourceHasBeenSet;
+    bool m_vulnerabilitySourceHasBeenSet = false;
 
     Aws::Vector<PackageFilter> m_vulnerablePackages;
-    bool m_vulnerablePackagesHasBeenSet;
+    bool m_vulnerablePackagesHasBeenSet = false;
   };
 
 } // namespace Model

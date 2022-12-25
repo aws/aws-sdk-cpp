@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/SchemaDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API SchemaDefinition
+  class SchemaDefinition
   {
   public:
-    SchemaDefinition();
-    SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API SchemaDefinition();
+    AWS_IOTANALYTICS_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<Column> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

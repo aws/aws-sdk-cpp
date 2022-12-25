@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeSigningConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API CodeSigningConfig
+  class CodeSigningConfig
   {
   public:
-    CodeSigningConfig();
-    CodeSigningConfig(Aws::Utils::Json::JsonView jsonValue);
-    CodeSigningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API CodeSigningConfig();
+    AWS_LAMBDA_API CodeSigningConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API CodeSigningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_codeSigningConfigId;
-    bool m_codeSigningConfigIdHasBeenSet;
+    bool m_codeSigningConfigIdHasBeenSet = false;
 
     Aws::String m_codeSigningConfigArn;
-    bool m_codeSigningConfigArnHasBeenSet;
+    bool m_codeSigningConfigArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AllowedPublishers m_allowedPublishers;
-    bool m_allowedPublishersHasBeenSet;
+    bool m_allowedPublishersHasBeenSet = false;
 
     CodeSigningPolicies m_codeSigningPolicies;
-    bool m_codeSigningPoliciesHasBeenSet;
+    bool m_codeSigningPoliciesHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
   };
 
 } // namespace Model

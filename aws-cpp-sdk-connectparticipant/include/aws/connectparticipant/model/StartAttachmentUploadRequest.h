@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTPARTICIPANT_API StartAttachmentUploadRequest : public ConnectParticipantRequest
+  class StartAttachmentUploadRequest : public ConnectParticipantRequest
   {
   public:
-    StartAttachmentUploadRequest();
+    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,15 +30,15 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartAttachmentUpload"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline StartAttachmentUploadRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline StartAttachmentUploadRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>Describes the MIME file type of the attachment. For a list of supported file
      * types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
      * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline StartAttachmentUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
@@ -163,42 +163,74 @@ namespace Model
 
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartAttachmentUploadRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartAttachmentUploadRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique case sensitive identifier to support idempotency of request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartAttachmentUploadRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -246,19 +278,19 @@ namespace Model
   private:
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     long long m_attachmentSizeInBytes;
-    bool m_attachmentSizeInBytesHasBeenSet;
+    bool m_attachmentSizeInBytesHasBeenSet = false;
 
     Aws::String m_attachmentName;
-    bool m_attachmentNameHasBeenSet;
+    bool m_attachmentNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_connectionToken;
-    bool m_connectionTokenHasBeenSet;
+    bool m_connectionTokenHasBeenSet = false;
   };
 
 } // namespace Model

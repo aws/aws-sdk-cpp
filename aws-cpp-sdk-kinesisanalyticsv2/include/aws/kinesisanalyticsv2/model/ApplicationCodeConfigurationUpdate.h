@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationCodeConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate
+  class ApplicationCodeConfigurationUpdate
   {
   public:
-    ApplicationCodeConfigurationUpdate();
-    ApplicationCodeConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationCodeConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     CodeContentType m_codeContentTypeUpdate;
-    bool m_codeContentTypeUpdateHasBeenSet;
+    bool m_codeContentTypeUpdateHasBeenSet = false;
 
     CodeContentUpdate m_codeContentUpdate;
-    bool m_codeContentUpdateHasBeenSet;
+    bool m_codeContentUpdateHasBeenSet = false;
   };
 
 } // namespace Model

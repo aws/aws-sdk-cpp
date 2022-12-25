@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortState">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstancePortState
+  class InstancePortState
   {
   public:
-    InstancePortState();
-    InstancePortState(Aws::Utils::Json::JsonView jsonValue);
-    InstancePortState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstancePortState();
+    AWS_LIGHTSAIL_API InstancePortState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstancePortState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -663,25 +663,25 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     NetworkProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     PortState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Cidrs;
-    bool m_ipv6CidrsHasBeenSet;
+    bool m_ipv6CidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrListAliases;
-    bool m_cidrListAliasesHasBeenSet;
+    bool m_cidrListAliasesHasBeenSet = false;
   };
 
 } // namespace Model

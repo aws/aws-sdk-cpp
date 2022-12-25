@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageCost">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CoverageCost
+  class CoverageCost
   {
   public:
-    CoverageCost();
-    CoverageCost(Aws::Utils::Json::JsonView jsonValue);
-    CoverageCost& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CoverageCost();
+    AWS_COSTEXPLORER_API CoverageCost(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CoverageCost& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_onDemandCost;
-    bool m_onDemandCostHasBeenSet;
+    bool m_onDemandCostHasBeenSet = false;
   };
 
 } // namespace Model

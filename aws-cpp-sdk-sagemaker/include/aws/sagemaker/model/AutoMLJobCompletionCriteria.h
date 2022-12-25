@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobCompletionCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLJobCompletionCriteria
+  class AutoMLJobCompletionCriteria
   {
   public:
-    AutoMLJobCompletionCriteria();
-    AutoMLJobCompletionCriteria(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLJobCompletionCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLJobCompletionCriteria();
+    AWS_SAGEMAKER_API AutoMLJobCompletionCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLJobCompletionCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,30 +58,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, that each training job is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the
-     * action.</p>
+     * <p>The maximum time, in seconds, that each training job executed inside
+     * hyperparameter tuning is allowed to run as part of a hyperparameter tuning job.
+     * For more information, see the used by the action.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     int m_maxCandidates;
-    bool m_maxCandidatesHasBeenSet;
+    bool m_maxCandidatesHasBeenSet = false;
 
     int m_maxRuntimePerTrainingJobInSeconds;
-    bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet;
+    bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet = false;
 
     int m_maxAutoMLJobRuntimeInSeconds;
-    bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet;
+    bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_VOICEID_API ListDomainsRequest : public VoiceIDRequest
+  class ListDomainsRequest : public VoiceIDRequest
   {
   public:
-    ListDomainsRequest();
+    AWS_VOICEID_API ListDomainsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,36 +29,28 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDomains"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_VOICEID_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results that are returned per call. You can use
-     * <code>NextToken</code> to obtain further pages of results. The default is 100;
-     * the maximum allowed page size is also 100. </p>
+     * <p>The maximum number of domains to list per API call.</p>
      */
     inline ListDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -130,10 +122,10 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBEngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBEngineVersion
+  class DBEngineVersion
   {
   public:
-    DBEngineVersion();
-    DBEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBEngineVersion();
+    AWS_RDS_API DBEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -1190,6 +1190,95 @@ namespace Model
     inline DBEngineVersion& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
 
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline const Aws::String& GetCustomDBEngineVersionManifest() const{ return m_customDBEngineVersionManifest; }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline bool CustomDBEngineVersionManifestHasBeenSet() const { return m_customDBEngineVersionManifestHasBeenSet; }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(const Aws::String& value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest = value; }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(Aws::String&& value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest = std::move(value); }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline void SetCustomDBEngineVersionManifest(const char* value) { m_customDBEngineVersionManifestHasBeenSet = true; m_customDBEngineVersionManifest.assign(value); }
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline DBEngineVersion& WithCustomDBEngineVersionManifest(const Aws::String& value) { SetCustomDBEngineVersionManifest(value); return *this;}
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline DBEngineVersion& WithCustomDBEngineVersionManifest(Aws::String&& value) { SetCustomDBEngineVersionManifest(std::move(value)); return *this;}
+
+    /**
+     * <p>JSON string that lists the installation files and parameters that RDS Custom
+     * uses to create a custom engine version (CEV). RDS Custom applies the patches in
+     * the order in which they're listed in the manifest. You can set the Oracle home,
+     * Oracle base, and UNIX/Linux user and group using the installation parameters.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+     * fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+     */
+    inline DBEngineVersion& WithCustomDBEngineVersionManifest(const char* value) { SetCustomDBEngineVersionManifest(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1211,85 +1300,88 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_dBEngineDescription;
-    bool m_dBEngineDescriptionHasBeenSet;
+    bool m_dBEngineDescriptionHasBeenSet = false;
 
     Aws::String m_dBEngineVersionDescription;
-    bool m_dBEngineVersionDescriptionHasBeenSet;
+    bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
     CharacterSet m_defaultCharacterSet;
-    bool m_defaultCharacterSetHasBeenSet;
+    bool m_defaultCharacterSetHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedCharacterSets;
-    bool m_supportedCharacterSetsHasBeenSet;
+    bool m_supportedCharacterSetsHasBeenSet = false;
 
     Aws::Vector<CharacterSet> m_supportedNcharCharacterSets;
-    bool m_supportedNcharCharacterSetsHasBeenSet;
+    bool m_supportedNcharCharacterSetsHasBeenSet = false;
 
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-    bool m_validUpgradeTargetHasBeenSet;
+    bool m_validUpgradeTargetHasBeenSet = false;
 
     Aws::Vector<Timezone> m_supportedTimezones;
-    bool m_supportedTimezonesHasBeenSet;
+    bool m_supportedTimezonesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportableLogTypes;
-    bool m_exportableLogTypesHasBeenSet;
+    bool m_exportableLogTypesHasBeenSet = false;
 
     bool m_supportsLogExportsToCloudwatchLogs;
-    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
+    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
     bool m_supportsReadReplica;
-    bool m_supportsReadReplicaHasBeenSet;
+    bool m_supportsReadReplicaHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedEngineModes;
-    bool m_supportedEngineModesHasBeenSet;
+    bool m_supportedEngineModesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedFeatureNames;
-    bool m_supportedFeatureNamesHasBeenSet;
+    bool m_supportedFeatureNamesHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_supportsParallelQuery;
-    bool m_supportsParallelQueryHasBeenSet;
+    bool m_supportsParallelQueryHasBeenSet = false;
 
     bool m_supportsGlobalDatabases;
-    bool m_supportsGlobalDatabasesHasBeenSet;
+    bool m_supportsGlobalDatabasesHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3BucketName;
-    bool m_databaseInstallationFilesS3BucketNameHasBeenSet;
+    bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
     Aws::String m_databaseInstallationFilesS3Prefix;
-    bool m_databaseInstallationFilesS3PrefixHasBeenSet;
+    bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
     Aws::String m_dBEngineVersionArn;
-    bool m_dBEngineVersionArnHasBeenSet;
+    bool m_dBEngineVersionArnHasBeenSet = false;
 
     Aws::String m_kMSKeyId;
-    bool m_kMSKeyIdHasBeenSet;
+    bool m_kMSKeyIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     bool m_supportsBabelfish;
-    bool m_supportsBabelfishHasBeenSet;
+    bool m_supportsBabelfishHasBeenSet = false;
+
+    Aws::String m_customDBEngineVersionManifest;
+    bool m_customDBEngineVersionManifestHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKey">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API PublicKey
+  class PublicKey
   {
   public:
-    PublicKey();
-    PublicKey(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API PublicKey();
+    AWS_CLOUDFRONT_API PublicKey(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API PublicKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     PublicKeyConfig m_publicKeyConfig;
-    bool m_publicKeyConfigHasBeenSet;
+    bool m_publicKeyConfigHasBeenSet = false;
   };
 
 } // namespace Model

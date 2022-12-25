@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/TableRow">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API TableRow
+  class TableRow
   {
   public:
-    TableRow();
-    TableRow(Aws::Utils::Json::JsonView jsonValue);
-    TableRow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API TableRow();
+    AWS_HONEYCODE_API TableRow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API TableRow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_rowId;
-    bool m_rowIdHasBeenSet;
+    bool m_rowIdHasBeenSet = false;
 
     Aws::Vector<Cell> m_cells;
-    bool m_cellsHasBeenSet;
+    bool m_cellsHasBeenSet = false;
   };
 
 } // namespace Model

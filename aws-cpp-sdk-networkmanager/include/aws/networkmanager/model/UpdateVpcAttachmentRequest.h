@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API UpdateVpcAttachmentRequest : public NetworkManagerRequest
+  class UpdateVpcAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    UpdateVpcAttachmentRequest();
+    AWS_NETWORKMANAGER_API UpdateVpcAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateVpcAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSubnetArns;
-    bool m_addSubnetArnsHasBeenSet;
+    bool m_addSubnetArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSubnetArns;
-    bool m_removeSubnetArnsHasBeenSet;
+    bool m_removeSubnetArnsHasBeenSet = false;
 
     VpcOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

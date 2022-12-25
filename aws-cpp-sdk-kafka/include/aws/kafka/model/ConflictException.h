@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ConflictException();
+    AWS_KAFKA_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_invalidParameter;
-    bool m_invalidParameterHasBeenSet;
+    bool m_invalidParameterHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

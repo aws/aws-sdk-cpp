@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriodMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodRequest : public RedshiftRequest
+  class ModifySnapshotCopyRetentionPeriodRequest : public RedshiftRequest
   {
   public:
-    ModifySnapshotCopyRetentionPeriodRequest();
+    AWS_REDSHIFT_API ModifySnapshotCopyRetentionPeriodRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifySnapshotCopyRetentionPeriod"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     bool m_manual;
-    bool m_manualHasBeenSet;
+    bool m_manualHasBeenSet = false;
   };
 
 } // namespace Model

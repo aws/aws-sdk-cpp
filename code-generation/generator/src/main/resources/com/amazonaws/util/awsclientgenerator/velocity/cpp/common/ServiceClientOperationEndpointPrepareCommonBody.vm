@@ -1,3 +1,4 @@
+#if(!$serviceModel.endpointRules)
 #set($startIndex = 0)
 #set($skipFirst = false)
 #if($virtualAddressingSupported || $arnEndpointSupported)
@@ -33,9 +34,9 @@
   {
 #if($operation.s3CrtSpecific)
 #if($operation.request)
-    return handler(this, request, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+    return handler(this, request, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
 #else
-    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
 #end
 #else
     return ${operation.name}Outcome(computeEndpointOutcome.GetError());
@@ -101,9 +102,13 @@
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
 #if($operation.s3CrtSpecific)
 #if($operation.request)
-        return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)), context);
+        return handler(this, request,
+            ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+            handlerContext);
 #else
-        return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)), context);
+        return handler(this,
+            ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+            handlerContext);
 #end
 #else
         return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
@@ -139,9 +144,9 @@
       AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
 #if($operation.s3CrtSpecific)
 #if($operation.request)
-      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), context);
+      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), handlerContext);
 #else
-      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), context);
+      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), handlerContext);
 #end
 #else
       return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
@@ -154,9 +159,9 @@
       AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
 #if($operation.s3CrtSpecific)
 #if($operation.request)
-      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), context);
+      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), handlerContext);
 #else
-      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), context);
+      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), handlerContext);
 #end
 #else
       return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
@@ -164,11 +169,51 @@
     }
   }
 #end
+#end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember)
+#set($accountIdMemberWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($operation.accountIdMemberName))
+  if (request.Get${accountIdMemberWithFirstLetterCapitalized}().size() != 12 || request.Get${accountIdMemberWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${accountIdMemberWithFirstLetterCapitalized} has invalid value");
+    return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${accountIdMemberWithFirstLetterCapitalized} is invalid", false));
+  }
+#else
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.validationNeeded && !$memberEntry.value.streaming && !$memberEntry.value.usedForPayload && $memberEntry.key.equalsIgnoreCase("AccountId"))
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($memberEntry.key))
+  if (request.Get${memberKeyWithFirstLetterCapitalized}().size() != 12 || request.Get${memberKeyWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
+  {
+    AWS_LOGSTREAM_ERROR("${operation.name}", "Required field: ${memberKeyWithFirstLetterCapitalized} has invalid value");
+    return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${memberKeyWithFirstLetterCapitalized} is invalid", false));
+  }
+#end
+#end
+#end
 #if($operation.hasPreSignedUrl)
+  ${operation.request.shape.name} newRequest = request;
+  if (request.SourceRegionHasBeenSet() && !request.PreSignedUrlHasBeenSet())
+  {
+    Aws::Endpoint::EndpointParameters endpointParameters;
+#if($operation.staticContextParams)
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+    parameters.emplace_back(Aws::String("${staticParamPair.key}"), ${staticParamPair.value.get("value").getValue()});
+#end
+#end
+    endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
+    ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+    AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
+    newRequest.SetPreSignedUrl(GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+                                                    Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
+                                                    {{ "DestinationRegion", m_region }}, 3600));
+  }
+#end##-#if($operation.hasPreSignedUrl)
+#else##-#if($serviceModel.endpointRules)
   ${operation.request.shape.name} newRequest = request;
   if (request.SourceRegionHasBeenSet() && !request.PreSignedUrlHasBeenSet())
   {
     Aws::Http::URI sourceUri(m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(request.GetSourceRegion(), m_useDualStack));
     newRequest.SetPreSignedUrl(GeneratePresignedUrl(request, sourceUri, Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), {{ "DestinationRegion", m_region }}, 3600));
   }
-#end
+#end##-#if($serviceModel.endpointRules)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointDiscoveryWithRules.vm")

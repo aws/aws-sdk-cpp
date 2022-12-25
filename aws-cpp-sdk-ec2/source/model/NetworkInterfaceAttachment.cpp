@@ -32,7 +32,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment() :
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ NetworkInterfaceAttachment::NetworkInterfaceAttachment(const XmlNode& xmlNode) :
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -62,7 +64,7 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
-      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
     }
     XmlNode attachmentIdNode = resultNode.FirstChild("attachmentId");
@@ -107,6 +109,12 @@ NetworkInterfaceAttachment& NetworkInterfaceAttachment::operator =(const XmlNode
       m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
+    XmlNode enaSrdSpecificationNode = resultNode.FirstChild("enaSrdSpecification");
+    if(!enaSrdSpecificationNode.IsNull())
+    {
+      m_enaSrdSpecification = enaSrdSpecificationNode;
+      m_enaSrdSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,7 +124,7 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
 {
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_attachmentIdHasBeenSet)
@@ -154,13 +162,20 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
   }
 
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::StringStream enaSrdSpecificationLocationAndMemberSs;
+      enaSrdSpecificationLocationAndMemberSs << location << index << locationValue << ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_attachTimeHasBeenSet)
   {
-      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_attachmentIdHasBeenSet)
   {
@@ -189,6 +204,12 @@ void NetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const cha
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
+  }
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::String enaSrdSpecificationLocationAndMember(location);
+      enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
   }
 }
 

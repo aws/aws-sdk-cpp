@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaAccessPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API ObjectLambdaAccessPoint
+  class ObjectLambdaAccessPoint
   {
   public:
-    ObjectLambdaAccessPoint();
-    ObjectLambdaAccessPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectLambdaAccessPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaAccessPoint();
+    AWS_S3CONTROL_API ObjectLambdaAccessPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaAccessPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_objectLambdaAccessPointArn;
-    bool m_objectLambdaAccessPointArnHasBeenSet;
+    bool m_objectLambdaAccessPointArnHasBeenSet = false;
   };
 
 } // namespace Model

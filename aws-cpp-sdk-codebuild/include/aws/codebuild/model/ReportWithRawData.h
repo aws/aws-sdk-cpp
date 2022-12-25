@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportWithRawData">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ReportWithRawData
+  class ReportWithRawData
   {
   public:
-    ReportWithRawData();
-    ReportWithRawData(Aws::Utils::Json::JsonView jsonValue);
-    ReportWithRawData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ReportWithRawData();
+    AWS_CODEBUILD_API ReportWithRawData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ReportWithRawData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_reportArn;
-    bool m_reportArnHasBeenSet;
+    bool m_reportArnHasBeenSet = false;
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

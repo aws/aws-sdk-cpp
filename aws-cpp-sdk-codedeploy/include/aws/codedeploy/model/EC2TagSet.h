@@ -25,79 +25,80 @@ namespace Model
 {
 
   /**
-   * <p>Information about groups of EC2 instance tags.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about groups of Amazon EC2 instance tags.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/EC2TagSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API EC2TagSet
+  class EC2TagSet
   {
   public:
-    EC2TagSet();
-    EC2TagSet(Aws::Utils::Json::JsonView jsonValue);
-    EC2TagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API EC2TagSet();
+    AWS_CODEDEPLOY_API EC2TagSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API EC2TagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline const Aws::Vector<Aws::Vector<EC2TagFilter>>& GetEc2TagSetList() const{ return m_ec2TagSetList; }
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline bool Ec2TagSetListHasBeenSet() const { return m_ec2TagSetListHasBeenSet; }
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline void SetEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = value; }
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline void SetEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = std::move(value); }
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline EC2TagSet& WithEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { SetEc2TagSetList(value); return *this;}
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline EC2TagSet& WithEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { SetEc2TagSetList(std::move(value)); return *this;}
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline EC2TagSet& AddEc2TagSetList(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(value); return *this; }
 
     /**
-     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
-     * to be included in the deployment group, it must be identified by all of the tag
-     * groups in the list.</p>
+     * <p>A list that contains other lists of Amazon EC2 instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline EC2TagSet& AddEc2TagSetList(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::Vector<Aws::Vector<EC2TagFilter>> m_ec2TagSetList;
-    bool m_ec2TagSetListHasBeenSet;
+    bool m_ec2TagSetListHasBeenSet = false;
   };
 
 } // namespace Model

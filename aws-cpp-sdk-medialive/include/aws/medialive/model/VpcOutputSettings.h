@@ -33,13 +33,13 @@ When this property is specified, the
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VpcOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VpcOutputSettings
+  class VpcOutputSettings
   {
   public:
-    VpcOutputSettings();
-    VpcOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    VpcOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VpcOutputSettings();
+    AWS_MEDIALIVE_API VpcOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VpcOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,13 +281,13 @@ If STANDARD channel, subnet IDs must
   private:
 
     Aws::Vector<Aws::String> m_publicAddressAllocationIds;
-    bool m_publicAddressAllocationIdsHasBeenSet;
+    bool m_publicAddressAllocationIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

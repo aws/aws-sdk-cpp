@@ -1,0 +1,31 @@
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
+#if(false)
+##Failed attempt to replace duplicated functions bodies. Failed because of build time and binary size bloat due to too many template instantiations.
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+#set($regularBlockingOperation = "&" + ${className} + "::" + ${operation.name})
+#if($operation.name.endsWith("Async") || $operation.name.endsWith("Callable"))
+  typedef ${operation.name}Outcome (${className}::*RegularBlockingOperation)(${constText}${operation.request.shape.name}&) const;
+  RegularBlockingOperation regularBlockingOperation = &${className}::${operation.name};
+#set($regularBlockingOperation = "regularBlockingOperation")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+  MakeAsyncStreamingOperation(${regularBlockingOperation}, this, request, handler, context, m_executor.get());
+#else
+  MakeAsyncOperation(${regularBlockingOperation}, this, request, handler, context, m_executor.get());
+#end
+}#else
+##Original Existing duplicated function body
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, ${refText}request, handler, context]()
+    {
+      handler(this, request, ${operation.name}(request), context);
+    } );
+}#end

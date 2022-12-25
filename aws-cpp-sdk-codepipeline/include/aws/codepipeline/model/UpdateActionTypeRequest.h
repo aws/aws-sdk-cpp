@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEPIPELINE_API UpdateActionTypeRequest : public CodePipelineRequest
+  class UpdateActionTypeRequest : public CodePipelineRequest
   {
   public:
-    UpdateActionTypeRequest();
+    AWS_CODEPIPELINE_API UpdateActionTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateActionType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     ActionTypeDeclaration m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
   };
 
 } // namespace Model

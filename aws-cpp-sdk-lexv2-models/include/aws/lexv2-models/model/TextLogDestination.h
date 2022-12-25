@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TextLogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API TextLogDestination
+  class TextLogDestination
   {
   public:
-    TextLogDestination();
-    TextLogDestination(Aws::Utils::Json::JsonView jsonValue);
-    TextLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API TextLogDestination();
+    AWS_LEXMODELSV2_API TextLogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API TextLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CloudWatchLogGroupLogDestination m_cloudWatch;
-    bool m_cloudWatchHasBeenSet;
+    bool m_cloudWatchHasBeenSet = false;
   };
 
 } // namespace Model

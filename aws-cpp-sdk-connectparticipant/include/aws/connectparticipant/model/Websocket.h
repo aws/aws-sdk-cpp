@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/Websocket">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API Websocket
+  class Websocket
   {
   public:
-    Websocket();
-    Websocket(Aws::Utils::Json::JsonView jsonValue);
-    Websocket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API Websocket();
+    AWS_CONNECTPARTICIPANT_API Websocket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Websocket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_connectionExpiry;
-    bool m_connectionExpiryHasBeenSet;
+    bool m_connectionExpiryHasBeenSet = false;
   };
 
 } // namespace Model

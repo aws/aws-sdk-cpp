@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ActionTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ActionTarget
+  class ActionTarget
   {
   public:
-    ActionTarget();
-    ActionTarget(Aws::Utils::Json::JsonView jsonValue);
-    ActionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ActionTarget();
+    AWS_FIS_API ActionTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ActionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

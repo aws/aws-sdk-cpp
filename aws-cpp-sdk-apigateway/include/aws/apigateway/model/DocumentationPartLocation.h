@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPartLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DocumentationPartLocation
+  class DocumentationPartLocation
   {
   public:
-    DocumentationPartLocation();
-    DocumentationPartLocation(Aws::Utils::Json::JsonView jsonValue);
-    DocumentationPartLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DocumentationPartLocation();
+    AWS_APIGATEWAY_API DocumentationPartLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DocumentationPartLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,19 +492,19 @@ namespace Model
   private:
 
     DocumentationPartType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

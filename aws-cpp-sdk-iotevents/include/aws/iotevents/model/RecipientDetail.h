@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/RecipientDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API RecipientDetail
+  class RecipientDetail
   {
   public:
-    RecipientDetail();
-    RecipientDetail(Aws::Utils::Json::JsonView jsonValue);
-    RecipientDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API RecipientDetail();
+    AWS_IOTEVENTS_API RecipientDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API RecipientDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SSOIdentity m_ssoIdentity;
-    bool m_ssoIdentityHasBeenSet;
+    bool m_ssoIdentityHasBeenSet = false;
   };
 
 } // namespace Model

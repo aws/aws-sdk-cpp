@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Certificate">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Certificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Certificate();
+    AWS_DOCDB_API Certificate(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Certificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_certificateIdentifier;
-    bool m_certificateIdentifierHasBeenSet;
+    bool m_certificateIdentifierHasBeenSet = false;
 
     Aws::String m_certificateType;
-    bool m_certificateTypeHasBeenSet;
+    bool m_certificateTypeHasBeenSet = false;
 
     Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet;
+    bool m_thumbprintHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validTill;
-    bool m_validTillHasBeenSet;
+    bool m_validTillHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
   };
 
 } // namespace Model

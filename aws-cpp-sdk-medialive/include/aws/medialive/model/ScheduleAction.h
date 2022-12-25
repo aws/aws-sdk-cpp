@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleAction">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ScheduleAction
+  class ScheduleAction
   {
   public:
-    ScheduleAction();
-    ScheduleAction(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ScheduleAction();
+    AWS_MEDIALIVE_API ScheduleAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ScheduleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ScheduleActionSettings m_scheduleActionSettings;
-    bool m_scheduleActionSettingsHasBeenSet;
+    bool m_scheduleActionSettingsHasBeenSet = false;
 
     ScheduleActionStartSettings m_scheduleActionStartSettings;
-    bool m_scheduleActionStartSettingsHasBeenSet;
+    bool m_scheduleActionStartSettingsHasBeenSet = false;
   };
 
 } // namespace Model

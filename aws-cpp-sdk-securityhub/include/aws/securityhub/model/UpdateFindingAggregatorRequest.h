@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API UpdateFindingAggregatorRequest : public SecurityHubRequest
+  class UpdateFindingAggregatorRequest : public SecurityHubRequest
   {
   public:
-    UpdateFindingAggregatorRequest();
+    AWS_SECURITYHUB_API UpdateFindingAggregatorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFindingAggregator"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -253,90 +253,90 @@ namespace Model
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline UpdateFindingAggregatorRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline UpdateFindingAggregatorRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline UpdateFindingAggregatorRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline UpdateFindingAggregatorRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If <code>RegionLinkingMode</code> is
-     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list
+     * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
      * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * comma-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do aggregate findings to the aggregation
      * Region.</p>
      */
     inline UpdateFindingAggregatorRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
@@ -344,13 +344,13 @@ namespace Model
   private:
 
     Aws::String m_findingAggregatorArn;
-    bool m_findingAggregatorArnHasBeenSet;
+    bool m_findingAggregatorArnHasBeenSet = false;
 
     Aws::String m_regionLinkingMode;
-    bool m_regionLinkingModeHasBeenSet;
+    bool m_regionLinkingModeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

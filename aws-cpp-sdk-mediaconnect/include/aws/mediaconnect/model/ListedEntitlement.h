@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListedEntitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API ListedEntitlement
+  class ListedEntitlement
   {
   public:
-    ListedEntitlement();
-    ListedEntitlement(Aws::Utils::Json::JsonView jsonValue);
-    ListedEntitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API ListedEntitlement();
+    AWS_MEDIACONNECT_API ListedEntitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API ListedEntitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_entitlementName;
-    bool m_entitlementNameHasBeenSet;
+    bool m_entitlementNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail
+  class ReservationPurchaseRecommendationDetail
   {
   public:
-    ReservationPurchaseRecommendationDetail();
-    ReservationPurchaseRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPurchaseRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail();
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -984,61 +984,61 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     InstanceDetails m_instanceDetails;
-    bool m_instanceDetailsHasBeenSet;
+    bool m_instanceDetailsHasBeenSet = false;
 
     Aws::String m_recommendedNumberOfInstancesToPurchase;
-    bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet;
+    bool m_recommendedNumberOfInstancesToPurchaseHasBeenSet = false;
 
     Aws::String m_recommendedNormalizedUnitsToPurchase;
-    bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet;
+    bool m_recommendedNormalizedUnitsToPurchaseHasBeenSet = false;
 
     Aws::String m_minimumNumberOfInstancesUsedPerHour;
-    bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_minimumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_minimumNormalizedUnitsUsedPerHour;
-    bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_minimumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_maximumNumberOfInstancesUsedPerHour;
-    bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_maximumNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_maximumNormalizedUnitsUsedPerHour;
-    bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_maximumNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageNumberOfInstancesUsedPerHour;
-    bool m_averageNumberOfInstancesUsedPerHourHasBeenSet;
+    bool m_averageNumberOfInstancesUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageNormalizedUnitsUsedPerHour;
-    bool m_averageNormalizedUnitsUsedPerHourHasBeenSet;
+    bool m_averageNormalizedUnitsUsedPerHourHasBeenSet = false;
 
     Aws::String m_averageUtilization;
-    bool m_averageUtilizationHasBeenSet;
+    bool m_averageUtilizationHasBeenSet = false;
 
     Aws::String m_estimatedBreakEvenInMonths;
-    bool m_estimatedBreakEvenInMonthsHasBeenSet;
+    bool m_estimatedBreakEvenInMonthsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsAmount;
-    bool m_estimatedMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsPercentage;
-    bool m_estimatedMonthlySavingsPercentageHasBeenSet;
+    bool m_estimatedMonthlySavingsPercentageHasBeenSet = false;
 
     Aws::String m_estimatedMonthlyOnDemandCost;
-    bool m_estimatedMonthlyOnDemandCostHasBeenSet;
+    bool m_estimatedMonthlyOnDemandCostHasBeenSet = false;
 
     Aws::String m_estimatedReservationCostForLookbackPeriod;
-    bool m_estimatedReservationCostForLookbackPeriodHasBeenSet;
+    bool m_estimatedReservationCostForLookbackPeriodHasBeenSet = false;
 
     Aws::String m_upfrontCost;
-    bool m_upfrontCostHasBeenSet;
+    bool m_upfrontCostHasBeenSet = false;
 
     Aws::String m_recurringStandardMonthlyCost;
-    bool m_recurringStandardMonthlyCostHasBeenSet;
+    bool m_recurringStandardMonthlyCostHasBeenSet = false;
   };
 
 } // namespace Model

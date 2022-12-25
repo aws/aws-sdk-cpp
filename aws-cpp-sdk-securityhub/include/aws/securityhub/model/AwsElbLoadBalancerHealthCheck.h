@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerHealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck
+  class AwsElbLoadBalancerHealthCheck
   {
   public:
-    AwsElbLoadBalancerHealthCheck();
-    AwsElbLoadBalancerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -245,19 +245,19 @@ namespace Model
   private:
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
   };
 
 } // namespace Model

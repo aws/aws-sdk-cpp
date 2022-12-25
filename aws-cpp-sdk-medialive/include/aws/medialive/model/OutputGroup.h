@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputGroup
+  class OutputGroup
   {
   public:
-    OutputGroup();
-    OutputGroup(Aws::Utils::Json::JsonView jsonValue);
-    OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputGroup();
+    AWS_MEDIALIVE_API OutputGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     OutputGroupSettings m_outputGroupSettings;
-    bool m_outputGroupSettingsHasBeenSet;
+    bool m_outputGroupSettingsHasBeenSet = false;
 
     Aws::Vector<Output> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

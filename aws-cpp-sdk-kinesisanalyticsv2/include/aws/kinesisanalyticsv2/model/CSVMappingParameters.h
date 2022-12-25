@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CSVMappingParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CSVMappingParameters
+  class CSVMappingParameters
   {
   public:
-    CSVMappingParameters();
-    CSVMappingParameters(Aws::Utils::Json::JsonView jsonValue);
-    CSVMappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CSVMappingParameters();
+    AWS_KINESISANALYTICSV2_API CSVMappingParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CSVMappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_recordRowDelimiter;
-    bool m_recordRowDelimiterHasBeenSet;
+    bool m_recordRowDelimiterHasBeenSet = false;
 
     Aws::String m_recordColumnDelimiter;
-    bool m_recordColumnDelimiterHasBeenSet;
+    bool m_recordColumnDelimiterHasBeenSet = false;
   };
 
 } // namespace Model

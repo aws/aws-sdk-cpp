@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API DataSourceConfig
+  class DataSourceConfig
   {
   public:
-    DataSourceConfig();
-    DataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API DataSourceConfig();
+    AWS_ROBOMAKER_API DataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API DataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,19 +323,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_s3Keys;
-    bool m_s3KeysHasBeenSet;
+    bool m_s3KeysHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

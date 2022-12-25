@@ -28,21 +28,21 @@ namespace Model
   /**
    * <p>Specifies a location within the frame that Rekognition checks for objects of
    * interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or
-   * object or <code>Polygon</code> to set a region of the screen.</p> <p>A word,
-   * face, or label is included in the region if it is more than half in that region.
-   * If there is more than one region, the word, face, or label is compared with all
-   * regions of the screen. Any object of interest that is more than half in a region
-   * is kept in the results.</p><p><h3>See Also:</h3>   <a
+   * <code>Polygon</code> to set a region of the screen.</p> <p>A word, face, or
+   * label is included in the region if it is more than half in that region. If there
+   * is more than one region, the word, face, or label is compared with all regions
+   * of the screen. Any object of interest that is more than half in a region is kept
+   * in the results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RegionOfInterest">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API RegionOfInterest
+  class RegionOfInterest
   {
   public:
-    RegionOfInterest();
-    RegionOfInterest(Aws::Utils::Json::JsonView jsonValue);
-    RegionOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API RegionOfInterest();
+    AWS_REKOGNITION_API RegionOfInterest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API RegionOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     Aws::Vector<Point> m_polygon;
-    bool m_polygonHasBeenSet;
+    bool m_polygonHasBeenSet = false;
   };
 
 } // namespace Model

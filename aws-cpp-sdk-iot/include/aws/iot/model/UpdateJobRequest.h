@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateJobRequest : public IoTRequest
+  class UpdateJobRequest : public IoTRequest
   {
   public:
-    UpdateJobRequest();
+    AWS_IOT_API UpdateJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -395,28 +395,28 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PresignedUrlConfig m_presignedUrlConfig;
-    bool m_presignedUrlConfigHasBeenSet;
+    bool m_presignedUrlConfigHasBeenSet = false;
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-    bool m_jobExecutionsRolloutConfigHasBeenSet;
+    bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
     AbortConfig m_abortConfig;
-    bool m_abortConfigHasBeenSet;
+    bool m_abortConfigHasBeenSet = false;
 
     TimeoutConfig m_timeoutConfig;
-    bool m_timeoutConfigHasBeenSet;
+    bool m_timeoutConfigHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-    bool m_jobExecutionsRetryConfigHasBeenSet;
+    bool m_jobExecutionsRetryConfigHasBeenSet = false;
   };
 
 } // namespace Model

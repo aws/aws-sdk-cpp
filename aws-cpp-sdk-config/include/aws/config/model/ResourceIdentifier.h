@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceIdentifier
+  class ResourceIdentifier
   {
   public:
-    ResourceIdentifier();
-    ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceIdentifier();
+    AWS_CONFIGSERVICE_API ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_resourceDeletionTime;
-    bool m_resourceDeletionTimeHasBeenSet;
+    bool m_resourceDeletionTimeHasBeenSet = false;
   };
 
 } // namespace Model

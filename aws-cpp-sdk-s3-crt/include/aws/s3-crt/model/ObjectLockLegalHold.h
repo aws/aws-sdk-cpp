@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectLockLegalHold">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API ObjectLockLegalHold
+  class ObjectLockLegalHold
   {
   public:
-    ObjectLockLegalHold();
-    ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ObjectLockLegalHold();
+    AWS_S3CRT_API ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ObjectLockLegalHoldStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

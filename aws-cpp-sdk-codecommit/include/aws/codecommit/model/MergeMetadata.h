@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API MergeMetadata
+  class MergeMetadata
   {
   public:
-    MergeMetadata();
-    MergeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    MergeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API MergeMetadata();
+    AWS_CODECOMMIT_API MergeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API MergeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,16 +176,16 @@ namespace Model
   private:
 
     bool m_isMerged;
-    bool m_isMergedHasBeenSet;
+    bool m_isMergedHasBeenSet = false;
 
     Aws::String m_mergedBy;
-    bool m_mergedByHasBeenSet;
+    bool m_mergedByHasBeenSet = false;
 
     Aws::String m_mergeCommitId;
-    bool m_mergeCommitIdHasBeenSet;
+    bool m_mergeCommitIdHasBeenSet = false;
 
     MergeOptionTypeEnum m_mergeOption;
-    bool m_mergeOptionHasBeenSet;
+    bool m_mergeOptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/EgressConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API EgressConfiguration
+  class EgressConfiguration
   {
   public:
-    EgressConfiguration();
-    EgressConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EgressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API EgressConfiguration();
+    AWS_APPRUNNER_API EgressConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API EgressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     EgressType m_egressType;
-    bool m_egressTypeHasBeenSet;
+    bool m_egressTypeHasBeenSet = false;
 
     Aws::String m_vpcConnectorArn;
-    bool m_vpcConnectorArnHasBeenSet;
+    bool m_vpcConnectorArnHasBeenSet = false;
   };
 
 } // namespace Model

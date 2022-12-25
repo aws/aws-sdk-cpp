@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EcsCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API EcsCluster
+  class EcsCluster
   {
   public:
-    EcsCluster();
-    EcsCluster(Aws::Utils::Json::JsonView jsonValue);
-    EcsCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API EcsCluster();
+    AWS_OPSWORKS_API EcsCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API EcsCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_ecsClusterArn;
-    bool m_ecsClusterArnHasBeenSet;
+    bool m_ecsClusterArnHasBeenSet = false;
 
     Aws::String m_ecsClusterName;
-    bool m_ecsClusterNameHasBeenSet;
+    bool m_ecsClusterNameHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_registeredAt;
-    bool m_registeredAtHasBeenSet;
+    bool m_registeredAtHasBeenSet = false;
   };
 
 } // namespace Model

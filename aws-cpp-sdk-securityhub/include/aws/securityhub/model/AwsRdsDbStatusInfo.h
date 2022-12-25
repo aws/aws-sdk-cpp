@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbStatusInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbStatusInfo
+  class AwsRdsDbStatusInfo
   {
   public:
-    AwsRdsDbStatusInfo();
-    AwsRdsDbStatusInfo(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbStatusInfo();
+    AWS_SECURITYHUB_API AwsRdsDbStatusInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_statusType;
-    bool m_statusTypeHasBeenSet;
+    bool m_statusTypeHasBeenSet = false;
 
     bool m_normal;
-    bool m_normalHasBeenSet;
+    bool m_normalHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

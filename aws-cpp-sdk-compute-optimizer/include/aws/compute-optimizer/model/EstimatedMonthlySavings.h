@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EstimatedMonthlySavings">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API EstimatedMonthlySavings
+  class EstimatedMonthlySavings
   {
   public:
-    EstimatedMonthlySavings();
-    EstimatedMonthlySavings(Aws::Utils::Json::JsonView jsonValue);
-    EstimatedMonthlySavings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API EstimatedMonthlySavings();
+    AWS_COMPUTEOPTIMIZER_API EstimatedMonthlySavings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API EstimatedMonthlySavings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Currency m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

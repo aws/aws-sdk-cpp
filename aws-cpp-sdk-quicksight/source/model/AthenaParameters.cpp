@@ -19,12 +19,14 @@ namespace Model
 {
 
 AthenaParameters::AthenaParameters() : 
-    m_workGroupHasBeenSet(false)
+    m_workGroupHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
 AthenaParameters::AthenaParameters(JsonView jsonValue) : 
-    m_workGroupHasBeenSet(false)
+    m_workGroupHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ AthenaParameters& AthenaParameters::operator =(JsonView jsonValue)
     m_workGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue AthenaParameters::Jsonize() const
   if(m_workGroupHasBeenSet)
   {
    payload.WithString("WorkGroup", m_workGroup);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("RoleArn", m_roleArn);
 
   }
 

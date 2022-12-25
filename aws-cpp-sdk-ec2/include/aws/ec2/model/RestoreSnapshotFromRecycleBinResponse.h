@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API RestoreSnapshotFromRecycleBinResponse
+  class RestoreSnapshotFromRecycleBinResponse
   {
   public:
-    RestoreSnapshotFromRecycleBinResponse();
-    RestoreSnapshotFromRecycleBinResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreSnapshotFromRecycleBinResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreSnapshotFromRecycleBinResponse();
+    AWS_EC2_API RestoreSnapshotFromRecycleBinResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreSnapshotFromRecycleBinResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

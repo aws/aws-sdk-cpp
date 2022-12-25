@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DatasetSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API DatasetSchema
+  class DatasetSchema
   {
   public:
-    DatasetSchema();
-    DatasetSchema(Aws::Utils::Json::JsonView jsonValue);
-    DatasetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API DatasetSchema();
+    AWS_LOOKOUTEQUIPMENT_API DatasetSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API DatasetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_inlineDataSchema;
-    bool m_inlineDataSchemaHasBeenSet;
+    bool m_inlineDataSchemaHasBeenSet = false;
   };
 
 } // namespace Model

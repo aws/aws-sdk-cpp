@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StoreImageTaskResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API StoreImageTaskResponse
+  class StoreImageTaskResponse
   {
   public:
-    StoreImageTaskResponse();
-    StoreImageTaskResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StoreImageTaskResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StoreImageTaskResponse();
+    AWS_EC2_API StoreImageTaskResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API StoreImageTaskResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -316,25 +316,25 @@ namespace Model
   private:
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_taskStartTime;
-    bool m_taskStartTimeHasBeenSet;
+    bool m_taskStartTimeHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_s3objectKey;
-    bool m_s3objectKeyHasBeenSet;
+    bool m_s3objectKeyHasBeenSet = false;
 
     int m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
 
     Aws::String m_storeTaskState;
-    bool m_storeTaskStateHasBeenSet;
+    bool m_storeTaskStateHasBeenSet = false;
 
     Aws::String m_storeTaskFailureReason;
-    bool m_storeTaskFailureReasonHasBeenSet;
+    bool m_storeTaskFailureReasonHasBeenSet = false;
   };
 
 } // namespace Model

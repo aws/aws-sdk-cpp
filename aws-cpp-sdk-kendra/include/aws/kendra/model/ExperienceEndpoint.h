@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ExperienceEndpoint
+  class ExperienceEndpoint
   {
   public:
-    ExperienceEndpoint();
-    ExperienceEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    ExperienceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ExperienceEndpoint();
+    AWS_KENDRA_API ExperienceEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ExperienceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     EndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
   };
 
 } // namespace Model

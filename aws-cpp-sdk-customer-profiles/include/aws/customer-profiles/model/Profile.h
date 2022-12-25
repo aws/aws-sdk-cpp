@@ -10,6 +10,8 @@
 #include <aws/customer-profiles/model/Gender.h>
 #include <aws/customer-profiles/model/Address.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/customer-profiles/model/FoundByKeyValue.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Profile">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Profile
+  class Profile
   {
   public:
-    Profile();
-    Profile(Aws::Utils::Json::JsonView jsonValue);
-    Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Profile();
+    AWS_CUSTOMERPROFILES_API Profile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -929,73 +931,261 @@ namespace Model
      */
     inline Profile& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline const Aws::Vector<FoundByKeyValue>& GetFoundByItems() const{ return m_foundByItems; }
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline bool FoundByItemsHasBeenSet() const { return m_foundByItemsHasBeenSet; }
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline void SetFoundByItems(const Aws::Vector<FoundByKeyValue>& value) { m_foundByItemsHasBeenSet = true; m_foundByItems = value; }
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline void SetFoundByItems(Aws::Vector<FoundByKeyValue>&& value) { m_foundByItemsHasBeenSet = true; m_foundByItems = std::move(value); }
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline Profile& WithFoundByItems(const Aws::Vector<FoundByKeyValue>& value) { SetFoundByItems(value); return *this;}
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline Profile& WithFoundByItems(Aws::Vector<FoundByKeyValue>&& value) { SetFoundByItems(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline Profile& AddFoundByItems(const FoundByKeyValue& value) { m_foundByItemsHasBeenSet = true; m_foundByItems.push_back(value); return *this; }
+
+    /**
+     * <p>A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * response. An item is a key-value(s) pair that matches an attribute in the
+     * profile.</p> <p>If the optional <code>AdditionalSearchKeys</code> parameter was
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:</p> <ul> <li> <p>
+     * <code>AND</code> - The profile included in the response matched all of the
+     * search keys specified in the request. The <code>FoundByItems</code> will include
+     * all of the key-value(s) pairs that were specified in the request (as this is a
+     * requirement of <code>AND</code> search logic).</p> </li> <li> <p>
+     * <code>OR</code> - The profile included in the response matched at least one of
+     * the search keys specified in the request. The <code>FoundByItems</code> will
+     * include each of the key-value(s) pairs that the profile was found by.</p> </li>
+     * </ul> <p>The <code>OR</code> relationship is the default behavior if the
+     * <code>LogicalOperator</code> parameter is not included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+     * request.</p>
+     */
+    inline Profile& AddFoundByItems(FoundByKeyValue&& value) { m_foundByItemsHasBeenSet = true; m_foundByItems.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_accountNumber;
-    bool m_accountNumberHasBeenSet;
+    bool m_accountNumberHasBeenSet = false;
 
     Aws::String m_additionalInformation;
-    bool m_additionalInformationHasBeenSet;
+    bool m_additionalInformationHasBeenSet = false;
 
     PartyType m_partyType;
-    bool m_partyTypeHasBeenSet;
+    bool m_partyTypeHasBeenSet = false;
 
     Aws::String m_businessName;
-    bool m_businessNameHasBeenSet;
+    bool m_businessNameHasBeenSet = false;
 
     Aws::String m_firstName;
-    bool m_firstNameHasBeenSet;
+    bool m_firstNameHasBeenSet = false;
 
     Aws::String m_middleName;
-    bool m_middleNameHasBeenSet;
+    bool m_middleNameHasBeenSet = false;
 
     Aws::String m_lastName;
-    bool m_lastNameHasBeenSet;
+    bool m_lastNameHasBeenSet = false;
 
     Aws::String m_birthDate;
-    bool m_birthDateHasBeenSet;
+    bool m_birthDateHasBeenSet = false;
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_mobilePhoneNumber;
-    bool m_mobilePhoneNumberHasBeenSet;
+    bool m_mobilePhoneNumberHasBeenSet = false;
 
     Aws::String m_homePhoneNumber;
-    bool m_homePhoneNumberHasBeenSet;
+    bool m_homePhoneNumberHasBeenSet = false;
 
     Aws::String m_businessPhoneNumber;
-    bool m_businessPhoneNumberHasBeenSet;
+    bool m_businessPhoneNumberHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_personalEmailAddress;
-    bool m_personalEmailAddressHasBeenSet;
+    bool m_personalEmailAddressHasBeenSet = false;
 
     Aws::String m_businessEmailAddress;
-    bool m_businessEmailAddressHasBeenSet;
+    bool m_businessEmailAddressHasBeenSet = false;
 
     Address m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Address m_shippingAddress;
-    bool m_shippingAddressHasBeenSet;
+    bool m_shippingAddressHasBeenSet = false;
 
     Address m_mailingAddress;
-    bool m_mailingAddressHasBeenSet;
+    bool m_mailingAddressHasBeenSet = false;
 
     Address m_billingAddress;
-    bool m_billingAddressHasBeenSet;
+    bool m_billingAddressHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
+
+    Aws::Vector<FoundByKeyValue> m_foundByItems;
+    bool m_foundByItemsHasBeenSet = false;
   };
 
 } // namespace Model

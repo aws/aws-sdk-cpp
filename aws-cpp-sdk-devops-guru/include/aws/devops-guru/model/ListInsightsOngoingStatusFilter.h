@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsOngoingStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter
+  class ListInsightsOngoingStatusFilter
   {
   public:
-    ListInsightsOngoingStatusFilter();
-    ListInsightsOngoingStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListInsightsOngoingStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListInsightsOngoingStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     InsightType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

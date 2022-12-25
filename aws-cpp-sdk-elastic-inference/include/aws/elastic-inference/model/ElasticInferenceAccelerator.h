@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/ElasticInferenceAccelerator">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator
+  class ElasticInferenceAccelerator
   {
   public:
-    ElasticInferenceAccelerator();
-    ElasticInferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
-    ElasticInferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator();
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     ElasticInferenceAcceleratorHealth m_acceleratorHealth;
-    bool m_acceleratorHealthHasBeenSet;
+    bool m_acceleratorHealthHasBeenSet = false;
 
     Aws::String m_acceleratorType;
-    bool m_acceleratorTypeHasBeenSet;
+    bool m_acceleratorTypeHasBeenSet = false;
 
     Aws::String m_acceleratorId;
-    bool m_acceleratorIdHasBeenSet;
+    bool m_acceleratorIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_attachedResource;
-    bool m_attachedResourceHasBeenSet;
+    bool m_attachedResourceHasBeenSet = false;
   };
 
 } // namespace Model

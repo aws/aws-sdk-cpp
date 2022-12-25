@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API ListFunctionsRequest : public LambdaRequest
+  class ListFunctionsRequest : public LambdaRequest
   {
   public:
-    ListFunctionsRequest();
+    AWS_LAMBDA_API ListFunctionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,15 +34,15 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListFunctions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>For Lambda@Edge functions, the Amazon Web Services Region of the master
      * function. For example, <code>us-east-1</code> filters the list of functions to
-     * only include Lambda@Edge functions replicated from a master function in US East
+     * include only Lambda@Edge functions replicated from a master function in US East
      * (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.</p>
      */
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_masterRegion;
-    bool m_masterRegionHasBeenSet;
+    bool m_masterRegionHasBeenSet = false;
 
     FunctionVersion m_functionVersion;
-    bool m_functionVersionHasBeenSet;
+    bool m_functionVersionHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

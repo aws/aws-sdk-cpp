@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSFER_API ImportSshPublicKeyRequest : public TransferRequest
+  class ImportSshPublicKeyRequest : public TransferRequest
   {
   public:
-    ImportSshPublicKeyRequest();
+    AWS_TRANSFER_API ImportSshPublicKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportSshPublicKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSFER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -76,42 +76,50 @@ namespace Model
 
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
 
     /**
-     * <p>The public key portion of an SSH key pair.</p>
+     * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
+     * RSA, ECDSA, and ED25519 keys.</p>
      */
     inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
 
@@ -159,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_sshPublicKeyBody;
-    bool m_sshPublicKeyBodyHasBeenSet;
+    bool m_sshPublicKeyBodyHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
   };
 
 } // namespace Model

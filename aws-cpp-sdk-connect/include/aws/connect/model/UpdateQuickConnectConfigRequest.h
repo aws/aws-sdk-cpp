@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API UpdateQuickConnectConfigRequest : public ConnectRequest
+  class UpdateQuickConnectConfigRequest : public ConnectRequest
   {
   public:
-    UpdateQuickConnectConfigRequest();
+    AWS_CONNECT_API UpdateQuickConnectConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateQuickConnectConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_quickConnectId;
-    bool m_quickConnectIdHasBeenSet;
+    bool m_quickConnectIdHasBeenSet = false;
 
     QuickConnectConfig m_quickConnectConfig;
-    bool m_quickConnectConfigHasBeenSet;
+    bool m_quickConnectConfigHasBeenSet = false;
   };
 
 } // namespace Model

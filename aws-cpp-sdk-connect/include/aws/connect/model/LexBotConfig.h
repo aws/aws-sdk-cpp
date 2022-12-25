@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/LexBotConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API LexBotConfig
+  class LexBotConfig
   {
   public:
-    LexBotConfig();
-    LexBotConfig(Aws::Utils::Json::JsonView jsonValue);
-    LexBotConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API LexBotConfig();
+    AWS_CONNECT_API LexBotConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API LexBotConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     LexBot m_lexBot;
-    bool m_lexBotHasBeenSet;
+    bool m_lexBotHasBeenSet = false;
 
     LexV2Bot m_lexV2Bot;
-    bool m_lexV2BotHasBeenSet;
+    bool m_lexV2BotHasBeenSet = false;
   };
 
 } // namespace Model

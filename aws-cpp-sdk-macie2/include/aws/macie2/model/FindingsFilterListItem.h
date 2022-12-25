@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingsFilterListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API FindingsFilterListItem
+  class FindingsFilterListItem
   {
   public:
-    FindingsFilterListItem();
-    FindingsFilterListItem(Aws::Utils::Json::JsonView jsonValue);
-    FindingsFilterListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API FindingsFilterListItem();
+    AWS_MACIE2_API FindingsFilterListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API FindingsFilterListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline const FindingsFilterAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(const FindingsFilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline void SetAction(FindingsFilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
     inline FindingsFilterListItem& WithAction(const FindingsFilterAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that's performed on findings that meet the filter criteria.
+     * <p>The action that's performed on findings that match the filter criteria.
      * Possible values are: ARCHIVE, suppress (automatically archive) the findings;
      * and, NOOP, don't perform any action on the findings.</p>
      */
@@ -206,79 +206,79 @@ namespace Model
 
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of key-value pairs that identifies the tags (keys and values) that are
+     * <p>A map of key-value pairs that specifies which tags (keys and values) are
      * associated with the filter.</p>
      */
     inline FindingsFilterListItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -286,19 +286,19 @@ namespace Model
   private:
 
     FindingsFilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

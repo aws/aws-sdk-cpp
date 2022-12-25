@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/HumanLoopDataAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API HumanLoopDataAttributes
+  class HumanLoopDataAttributes
   {
   public:
-    HumanLoopDataAttributes();
-    HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API HumanLoopDataAttributes();
+    AWS_REKOGNITION_API HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<ContentClassifier> m_contentClassifiers;
-    bool m_contentClassifiersHasBeenSet;
+    bool m_contentClassifiersHasBeenSet = false;
   };
 
 } // namespace Model

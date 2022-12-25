@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API UpdatePortfolioShareRequest : public ServiceCatalogRequest
+  class UpdatePortfolioShareRequest : public ServiceCatalogRequest
   {
   public:
-    UpdatePortfolioShareRequest();
+    AWS_SERVICECATALOG_API UpdatePortfolioShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePortfolioShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -142,50 +142,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Account Id of the recipient account. This field is required when
-     * updating an external account to account type share.</p>
+     * <p>The Amazon Web Services account Id of the recipient account. This field is
+     * required when updating an external account to account type share.</p>
      */
     inline UpdatePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -210,49 +210,85 @@ namespace Model
 
 
     /**
-     * <p>A flag to enable or disable TagOptions sharing for the portfolio share. If
-     * this field is not provided, the current state of TagOptions sharing on the
+     * <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share.
+     * If this field is not provided, the current state of TagOptions sharing on the
      * portfolio share will not be modified.</p>
      */
     inline bool GetShareTagOptions() const{ return m_shareTagOptions; }
 
     /**
-     * <p>A flag to enable or disable TagOptions sharing for the portfolio share. If
-     * this field is not provided, the current state of TagOptions sharing on the
+     * <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share.
+     * If this field is not provided, the current state of TagOptions sharing on the
      * portfolio share will not be modified.</p>
      */
     inline bool ShareTagOptionsHasBeenSet() const { return m_shareTagOptionsHasBeenSet; }
 
     /**
-     * <p>A flag to enable or disable TagOptions sharing for the portfolio share. If
-     * this field is not provided, the current state of TagOptions sharing on the
+     * <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share.
+     * If this field is not provided, the current state of TagOptions sharing on the
      * portfolio share will not be modified.</p>
      */
     inline void SetShareTagOptions(bool value) { m_shareTagOptionsHasBeenSet = true; m_shareTagOptions = value; }
 
     /**
-     * <p>A flag to enable or disable TagOptions sharing for the portfolio share. If
-     * this field is not provided, the current state of TagOptions sharing on the
+     * <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share.
+     * If this field is not provided, the current state of TagOptions sharing on the
      * portfolio share will not be modified.</p>
      */
     inline UpdatePortfolioShareRequest& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
 
+
+    /**
+     * <p>A flag to enables or disables <code>Principals</code> sharing in the
+     * portfolio. If this field is not provided, the current state of the
+     * <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     */
+    inline bool GetSharePrincipals() const{ return m_sharePrincipals; }
+
+    /**
+     * <p>A flag to enables or disables <code>Principals</code> sharing in the
+     * portfolio. If this field is not provided, the current state of the
+     * <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     */
+    inline bool SharePrincipalsHasBeenSet() const { return m_sharePrincipalsHasBeenSet; }
+
+    /**
+     * <p>A flag to enables or disables <code>Principals</code> sharing in the
+     * portfolio. If this field is not provided, the current state of the
+     * <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     */
+    inline void SetSharePrincipals(bool value) { m_sharePrincipalsHasBeenSet = true; m_sharePrincipals = value; }
+
+    /**
+     * <p>A flag to enables or disables <code>Principals</code> sharing in the
+     * portfolio. If this field is not provided, the current state of the
+     * <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     */
+    inline UpdatePortfolioShareRequest& WithSharePrincipals(bool value) { SetSharePrincipals(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     OrganizationNode m_organizationNode;
-    bool m_organizationNodeHasBeenSet;
+    bool m_organizationNodeHasBeenSet = false;
 
     bool m_shareTagOptions;
-    bool m_shareTagOptionsHasBeenSet;
+    bool m_shareTagOptionsHasBeenSet = false;
+
+    bool m_sharePrincipals;
+    bool m_sharePrincipalsHasBeenSet = false;
   };
 
 } // namespace Model

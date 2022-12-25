@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Address">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API Address
+  class Address
   {
   public:
-    Address();
-    Address(Aws::Utils::Json::JsonView jsonValue);
-    Address& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API Address();
+    AWS_NETWORKFIREWALL_API Address(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Address& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,7 +145,7 @@ namespace Model
   private:
 
     Aws::String m_addressDefinition;
-    bool m_addressDefinitionHasBeenSet;
+    bool m_addressDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

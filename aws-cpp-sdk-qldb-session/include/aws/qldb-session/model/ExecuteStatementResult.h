@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/ExecuteStatementResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API ExecuteStatementResult
+  class ExecuteStatementResult
   {
   public:
-    ExecuteStatementResult();
-    ExecuteStatementResult(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API ExecuteStatementResult();
+    AWS_QLDBSESSION_API ExecuteStatementResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API ExecuteStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Page m_firstPage;
-    bool m_firstPageHasBeenSet;
+    bool m_firstPageHasBeenSet = false;
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
 
     IOUsage m_consumedIOs;
-    bool m_consumedIOsHasBeenSet;
+    bool m_consumedIOsHasBeenSet = false;
   };
 
 } // namespace Model

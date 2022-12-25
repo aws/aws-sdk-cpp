@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/EdiPartyName">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API EdiPartyName
+  class EdiPartyName
   {
   public:
-    EdiPartyName();
-    EdiPartyName(Aws::Utils::Json::JsonView jsonValue);
-    EdiPartyName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API EdiPartyName();
+    AWS_ACMPCA_API EdiPartyName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API EdiPartyName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_partyName;
-    bool m_partyNameHasBeenSet;
+    bool m_partyNameHasBeenSet = false;
 
     Aws::String m_nameAssigner;
-    bool m_nameAssignerHasBeenSet;
+    bool m_nameAssignerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API ConflictException();
+    AWS_VOICEID_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,10 +163,10 @@ namespace Model
   private:
 
     ConflictType m_conflictType;
-    bool m_conflictTypeHasBeenSet;
+    bool m_conflictTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

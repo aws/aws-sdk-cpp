@@ -57,13 +57,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsGroupSettings
+  class HlsGroupSettings
   {
   public:
-    HlsGroupSettings();
-    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsGroupSettings();
+    AWS_MEDIALIVE_API HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1497,26 +1497,30 @@ If this "keep segments" number is too low, the following might happen: the
 
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline int GetMinSegmentLength() const{ return m_minSegmentLength; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline bool MinSegmentLengthHasBeenSet() const { return m_minSegmentLengthHasBeenSet; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline void SetMinSegmentLength(int value) { m_minSegmentLengthHasBeenSet = true; m_minSegmentLength = value; }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the
-     * specified range for a nearby avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum
+     * segment length is enforced by looking ahead and back within the specified range
+     * for a nearby avail and extending the segment size if needed.
      */
     inline HlsGroupSettings& WithMinSegmentLength(int value) { SetMinSegmentLength(value); return *this;}
 
@@ -1932,30 +1936,30 @@ For an HLS output group with
 
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
-     * segments will end on the next keyframe after this number of seconds, so actual
-     * segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that
+     * segments will end on the next keyframe after this duration, so actual segment
+     * length may be longer.
      */
     inline HlsGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 
@@ -2217,133 +2221,133 @@ SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
   private:
 
     Aws::Vector<HlsAdMarkers> m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::String m_baseUrlContent;
-    bool m_baseUrlContentHasBeenSet;
+    bool m_baseUrlContentHasBeenSet = false;
 
     Aws::String m_baseUrlContent1;
-    bool m_baseUrlContent1HasBeenSet;
+    bool m_baseUrlContent1HasBeenSet = false;
 
     Aws::String m_baseUrlManifest;
-    bool m_baseUrlManifestHasBeenSet;
+    bool m_baseUrlManifestHasBeenSet = false;
 
     Aws::String m_baseUrlManifest1;
-    bool m_baseUrlManifest1HasBeenSet;
+    bool m_baseUrlManifest1HasBeenSet = false;
 
     Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
-    bool m_captionLanguageMappingsHasBeenSet;
+    bool m_captionLanguageMappingsHasBeenSet = false;
 
     HlsCaptionLanguageSetting m_captionLanguageSetting;
-    bool m_captionLanguageSettingHasBeenSet;
+    bool m_captionLanguageSettingHasBeenSet = false;
 
     HlsClientCache m_clientCache;
-    bool m_clientCacheHasBeenSet;
+    bool m_clientCacheHasBeenSet = false;
 
     HlsCodecSpecification m_codecSpecification;
-    bool m_codecSpecificationHasBeenSet;
+    bool m_codecSpecificationHasBeenSet = false;
 
     Aws::String m_constantIv;
-    bool m_constantIvHasBeenSet;
+    bool m_constantIvHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     HlsDirectoryStructure m_directoryStructure;
-    bool m_directoryStructureHasBeenSet;
+    bool m_directoryStructureHasBeenSet = false;
 
     HlsDiscontinuityTags m_discontinuityTags;
-    bool m_discontinuityTagsHasBeenSet;
+    bool m_discontinuityTagsHasBeenSet = false;
 
     HlsEncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     HlsCdnSettings m_hlsCdnSettings;
-    bool m_hlsCdnSettingsHasBeenSet;
+    bool m_hlsCdnSettingsHasBeenSet = false;
 
     HlsId3SegmentTaggingState m_hlsId3SegmentTagging;
-    bool m_hlsId3SegmentTaggingHasBeenSet;
+    bool m_hlsId3SegmentTaggingHasBeenSet = false;
 
     IFrameOnlyPlaylistType m_iFrameOnlyPlaylists;
-    bool m_iFrameOnlyPlaylistsHasBeenSet;
+    bool m_iFrameOnlyPlaylistsHasBeenSet = false;
 
     HlsIncompleteSegmentBehavior m_incompleteSegmentBehavior;
-    bool m_incompleteSegmentBehaviorHasBeenSet;
+    bool m_incompleteSegmentBehaviorHasBeenSet = false;
 
     int m_indexNSegments;
-    bool m_indexNSegmentsHasBeenSet;
+    bool m_indexNSegmentsHasBeenSet = false;
 
     InputLossActionForHlsOut m_inputLossAction;
-    bool m_inputLossActionHasBeenSet;
+    bool m_inputLossActionHasBeenSet = false;
 
     HlsIvInManifest m_ivInManifest;
-    bool m_ivInManifestHasBeenSet;
+    bool m_ivInManifestHasBeenSet = false;
 
     HlsIvSource m_ivSource;
-    bool m_ivSourceHasBeenSet;
+    bool m_ivSourceHasBeenSet = false;
 
     int m_keepSegments;
-    bool m_keepSegmentsHasBeenSet;
+    bool m_keepSegmentsHasBeenSet = false;
 
     Aws::String m_keyFormat;
-    bool m_keyFormatHasBeenSet;
+    bool m_keyFormatHasBeenSet = false;
 
     Aws::String m_keyFormatVersions;
-    bool m_keyFormatVersionsHasBeenSet;
+    bool m_keyFormatVersionsHasBeenSet = false;
 
     KeyProviderSettings m_keyProviderSettings;
-    bool m_keyProviderSettingsHasBeenSet;
+    bool m_keyProviderSettingsHasBeenSet = false;
 
     HlsManifestCompression m_manifestCompression;
-    bool m_manifestCompressionHasBeenSet;
+    bool m_manifestCompressionHasBeenSet = false;
 
     HlsManifestDurationFormat m_manifestDurationFormat;
-    bool m_manifestDurationFormatHasBeenSet;
+    bool m_manifestDurationFormatHasBeenSet = false;
 
     int m_minSegmentLength;
-    bool m_minSegmentLengthHasBeenSet;
+    bool m_minSegmentLengthHasBeenSet = false;
 
     HlsMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     HlsOutputSelection m_outputSelection;
-    bool m_outputSelectionHasBeenSet;
+    bool m_outputSelectionHasBeenSet = false;
 
     HlsProgramDateTime m_programDateTime;
-    bool m_programDateTimeHasBeenSet;
+    bool m_programDateTimeHasBeenSet = false;
 
     HlsProgramDateTimeClock m_programDateTimeClock;
-    bool m_programDateTimeClockHasBeenSet;
+    bool m_programDateTimeClockHasBeenSet = false;
 
     int m_programDateTimePeriod;
-    bool m_programDateTimePeriodHasBeenSet;
+    bool m_programDateTimePeriodHasBeenSet = false;
 
     HlsRedundantManifest m_redundantManifest;
-    bool m_redundantManifestHasBeenSet;
+    bool m_redundantManifestHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     HlsSegmentationMode m_segmentationMode;
-    bool m_segmentationModeHasBeenSet;
+    bool m_segmentationModeHasBeenSet = false;
 
     int m_segmentsPerSubdirectory;
-    bool m_segmentsPerSubdirectoryHasBeenSet;
+    bool m_segmentsPerSubdirectoryHasBeenSet = false;
 
     HlsStreamInfResolution m_streamInfResolution;
-    bool m_streamInfResolutionHasBeenSet;
+    bool m_streamInfResolutionHasBeenSet = false;
 
     HlsTimedMetadataId3Frame m_timedMetadataId3Frame;
-    bool m_timedMetadataId3FrameHasBeenSet;
+    bool m_timedMetadataId3FrameHasBeenSet = false;
 
     int m_timedMetadataId3Period;
-    bool m_timedMetadataId3PeriodHasBeenSet;
+    bool m_timedMetadataId3PeriodHasBeenSet = false;
 
     int m_timestampDeltaMilliseconds;
-    bool m_timestampDeltaMillisecondsHasBeenSet;
+    bool m_timestampDeltaMillisecondsHasBeenSet = false;
 
     HlsTsFileMode m_tsFileMode;
-    bool m_tsFileModeHasBeenSet;
+    bool m_tsFileModeHasBeenSet = false;
   };
 
 } // namespace Model

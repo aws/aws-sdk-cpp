@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMPORTEXPORT_API GetShippingLabelRequest : public ImportExportRequest
+  class GetShippingLabelRequest : public ImportExportRequest
   {
   public:
-    GetShippingLabelRequest();
+    AWS_IMPORTEXPORT_API GetShippingLabelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetShippingLabel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMPORTEXPORT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IMPORTEXPORT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -342,40 +342,40 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobIds;
-    bool m_jobIdsHasBeenSet;
+    bool m_jobIdsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_company;
-    bool m_companyHasBeenSet;
+    bool m_companyHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_stateOrProvince;
-    bool m_stateOrProvinceHasBeenSet;
+    bool m_stateOrProvinceHasBeenSet = false;
 
     Aws::String m_city;
-    bool m_cityHasBeenSet;
+    bool m_cityHasBeenSet = false;
 
     Aws::String m_postalCode;
-    bool m_postalCodeHasBeenSet;
+    bool m_postalCodeHasBeenSet = false;
 
     Aws::String m_street1;
-    bool m_street1HasBeenSet;
+    bool m_street1HasBeenSet = false;
 
     Aws::String m_street2;
-    bool m_street2HasBeenSet;
+    bool m_street2HasBeenSet = false;
 
     Aws::String m_street3;
-    bool m_street3HasBeenSet;
+    bool m_street3HasBeenSet = false;
 
     Aws::String m_aPIVersion;
-    bool m_aPIVersionHasBeenSet;
+    bool m_aPIVersionHasBeenSet = false;
   };
 
 } // namespace Model

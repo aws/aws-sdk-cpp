@@ -64,7 +64,7 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -74,7 +74,7 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
 
   if(jsonValue.ValueExists("BaseEndpointDnsNames"))
   {
-    Array<JsonView> baseEndpointDnsNamesJsonList = jsonValue.GetArray("BaseEndpointDnsNames");
+    Aws::Utils::Array<JsonView> baseEndpointDnsNamesJsonList = jsonValue.GetArray("BaseEndpointDnsNames");
     for(unsigned baseEndpointDnsNamesIndex = 0; baseEndpointDnsNamesIndex < baseEndpointDnsNamesJsonList.GetLength(); ++baseEndpointDnsNamesIndex)
     {
       m_baseEndpointDnsNames.push_back(baseEndpointDnsNamesJsonList[baseEndpointDnsNamesIndex].AsString());
@@ -91,7 +91,7 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
 
   if(jsonValue.ValueExists("GatewayLoadBalancerArns"))
   {
-    Array<JsonView> gatewayLoadBalancerArnsJsonList = jsonValue.GetArray("GatewayLoadBalancerArns");
+    Aws::Utils::Array<JsonView> gatewayLoadBalancerArnsJsonList = jsonValue.GetArray("GatewayLoadBalancerArns");
     for(unsigned gatewayLoadBalancerArnsIndex = 0; gatewayLoadBalancerArnsIndex < gatewayLoadBalancerArnsJsonList.GetLength(); ++gatewayLoadBalancerArnsIndex)
     {
       m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsJsonList[gatewayLoadBalancerArnsIndex].AsString());
@@ -101,7 +101,7 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
 
   if(jsonValue.ValueExists("NetworkLoadBalancerArns"))
   {
-    Array<JsonView> networkLoadBalancerArnsJsonList = jsonValue.GetArray("NetworkLoadBalancerArns");
+    Aws::Utils::Array<JsonView> networkLoadBalancerArnsJsonList = jsonValue.GetArray("NetworkLoadBalancerArns");
     for(unsigned networkLoadBalancerArnsIndex = 0; networkLoadBalancerArnsIndex < networkLoadBalancerArnsJsonList.GetLength(); ++networkLoadBalancerArnsIndex)
     {
       m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsJsonList[networkLoadBalancerArnsIndex].AsString());
@@ -139,7 +139,7 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
 
   if(jsonValue.ValueExists("ServiceType"))
   {
-    Array<JsonView> serviceTypeJsonList = jsonValue.GetArray("ServiceType");
+    Aws::Utils::Array<JsonView> serviceTypeJsonList = jsonValue.GetArray("ServiceType");
     for(unsigned serviceTypeIndex = 0; serviceTypeIndex < serviceTypeJsonList.GetLength(); ++serviceTypeIndex)
     {
       m_serviceType.push_back(serviceTypeJsonList[serviceTypeIndex].AsObject());
@@ -162,7 +162,7 @@ JsonValue AwsEc2VpcEndpointServiceDetails::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
@@ -173,7 +173,7 @@ JsonValue AwsEc2VpcEndpointServiceDetails::Jsonize() const
 
   if(m_baseEndpointDnsNamesHasBeenSet)
   {
-   Array<JsonValue> baseEndpointDnsNamesJsonList(m_baseEndpointDnsNames.size());
+   Aws::Utils::Array<JsonValue> baseEndpointDnsNamesJsonList(m_baseEndpointDnsNames.size());
    for(unsigned baseEndpointDnsNamesIndex = 0; baseEndpointDnsNamesIndex < baseEndpointDnsNamesJsonList.GetLength(); ++baseEndpointDnsNamesIndex)
    {
      baseEndpointDnsNamesJsonList[baseEndpointDnsNamesIndex].AsString(m_baseEndpointDnsNames[baseEndpointDnsNamesIndex]);
@@ -190,7 +190,7 @@ JsonValue AwsEc2VpcEndpointServiceDetails::Jsonize() const
 
   if(m_gatewayLoadBalancerArnsHasBeenSet)
   {
-   Array<JsonValue> gatewayLoadBalancerArnsJsonList(m_gatewayLoadBalancerArns.size());
+   Aws::Utils::Array<JsonValue> gatewayLoadBalancerArnsJsonList(m_gatewayLoadBalancerArns.size());
    for(unsigned gatewayLoadBalancerArnsIndex = 0; gatewayLoadBalancerArnsIndex < gatewayLoadBalancerArnsJsonList.GetLength(); ++gatewayLoadBalancerArnsIndex)
    {
      gatewayLoadBalancerArnsJsonList[gatewayLoadBalancerArnsIndex].AsString(m_gatewayLoadBalancerArns[gatewayLoadBalancerArnsIndex]);
@@ -201,7 +201,7 @@ JsonValue AwsEc2VpcEndpointServiceDetails::Jsonize() const
 
   if(m_networkLoadBalancerArnsHasBeenSet)
   {
-   Array<JsonValue> networkLoadBalancerArnsJsonList(m_networkLoadBalancerArns.size());
+   Aws::Utils::Array<JsonValue> networkLoadBalancerArnsJsonList(m_networkLoadBalancerArns.size());
    for(unsigned networkLoadBalancerArnsIndex = 0; networkLoadBalancerArnsIndex < networkLoadBalancerArnsJsonList.GetLength(); ++networkLoadBalancerArnsIndex)
    {
      networkLoadBalancerArnsJsonList[networkLoadBalancerArnsIndex].AsString(m_networkLoadBalancerArns[networkLoadBalancerArnsIndex]);
@@ -236,7 +236,7 @@ JsonValue AwsEc2VpcEndpointServiceDetails::Jsonize() const
 
   if(m_serviceTypeHasBeenSet)
   {
-   Array<JsonValue> serviceTypeJsonList(m_serviceType.size());
+   Aws::Utils::Array<JsonValue> serviceTypeJsonList(m_serviceType.size());
    for(unsigned serviceTypeIndex = 0; serviceTypeIndex < serviceTypeJsonList.GetLength(); ++serviceTypeIndex)
    {
      serviceTypeJsonList[serviceTypeIndex].AsObject(m_serviceType[serviceTypeIndex].Jsonize());

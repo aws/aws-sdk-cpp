@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ReprocessingSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ReprocessingSummary
+  class ReprocessingSummary
   {
   public:
-    ReprocessingSummary();
-    ReprocessingSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReprocessingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ReprocessingSummary();
+    AWS_IOTANALYTICS_API ReprocessingSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ReprocessingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ReprocessingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

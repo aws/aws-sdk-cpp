@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API UpdateStreamRequest : public KinesisVideoRequest
+  class UpdateStreamRequest : public KinesisVideoRequest
   {
   public:
-    UpdateStreamRequest();
+    AWS_KINESISVIDEO_API UpdateStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -335,19 +335,19 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
   };
 
 } // namespace Model

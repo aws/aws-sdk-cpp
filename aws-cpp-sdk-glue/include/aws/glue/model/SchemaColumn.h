@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SchemaColumn
+  class SchemaColumn
   {
   public:
-    SchemaColumn();
-    SchemaColumn(Aws::Utils::Json::JsonView jsonValue);
-    SchemaColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SchemaColumn();
+    AWS_GLUE_API SchemaColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SchemaColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
   };
 
 } // namespace Model

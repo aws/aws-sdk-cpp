@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API DeleteResiliencyPolicyRequest : public ResilienceHubRequest
+  class DeleteResiliencyPolicyRequest : public ResilienceHubRequest
   {
   public:
-    DeleteResiliencyPolicyRequest();
+    AWS_RESILIENCEHUB_API DeleteResiliencyPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteResiliencyPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -173,10 +173,10 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
   };
 
 } // namespace Model

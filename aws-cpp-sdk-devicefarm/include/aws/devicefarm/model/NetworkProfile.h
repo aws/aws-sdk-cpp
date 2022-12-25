@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/NetworkProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API NetworkProfile
+  class NetworkProfile
   {
   public:
-    NetworkProfile();
-    NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
-    NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API NetworkProfile();
+    AWS_DEVICEFARM_API NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -391,40 +391,40 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     NetworkProfileType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_uplinkBandwidthBits;
-    bool m_uplinkBandwidthBitsHasBeenSet;
+    bool m_uplinkBandwidthBitsHasBeenSet = false;
 
     long long m_downlinkBandwidthBits;
-    bool m_downlinkBandwidthBitsHasBeenSet;
+    bool m_downlinkBandwidthBitsHasBeenSet = false;
 
     long long m_uplinkDelayMs;
-    bool m_uplinkDelayMsHasBeenSet;
+    bool m_uplinkDelayMsHasBeenSet = false;
 
     long long m_downlinkDelayMs;
-    bool m_downlinkDelayMsHasBeenSet;
+    bool m_downlinkDelayMsHasBeenSet = false;
 
     long long m_uplinkJitterMs;
-    bool m_uplinkJitterMsHasBeenSet;
+    bool m_uplinkJitterMsHasBeenSet = false;
 
     long long m_downlinkJitterMs;
-    bool m_downlinkJitterMsHasBeenSet;
+    bool m_downlinkJitterMsHasBeenSet = false;
 
     int m_uplinkLossPercent;
-    bool m_uplinkLossPercentHasBeenSet;
+    bool m_uplinkLossPercentHasBeenSet = false;
 
     int m_downlinkLossPercent;
-    bool m_downlinkLossPercentHasBeenSet;
+    bool m_downlinkLossPercentHasBeenSet = false;
   };
 
 } // namespace Model

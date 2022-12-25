@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Resource();
+    AWS_GREENGRASS_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResourceDataContainer m_resourceDataContainer;
-    bool m_resourceDataContainerHasBeenSet;
+    bool m_resourceDataContainerHasBeenSet = false;
   };
 
 } // namespace Model

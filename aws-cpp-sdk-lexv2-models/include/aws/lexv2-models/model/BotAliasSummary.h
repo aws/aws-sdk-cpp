@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotAliasSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotAliasSummary
+  class BotAliasSummary
   {
   public:
-    BotAliasSummary();
-    BotAliasSummary(Aws::Utils::Json::JsonView jsonValue);
-    BotAliasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotAliasSummary();
+    AWS_LEXMODELSV2_API BotAliasSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotAliasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,25 +330,25 @@ namespace Model
   private:
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botAliasName;
-    bool m_botAliasNameHasBeenSet;
+    bool m_botAliasNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     BotAliasStatus m_botAliasStatus;
-    bool m_botAliasStatusHasBeenSet;
+    bool m_botAliasStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

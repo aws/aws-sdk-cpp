@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationConfigRule
+  class OrganizationConfigRule
   {
   public:
-    OrganizationConfigRule();
-    OrganizationConfigRule(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationConfigRule();
+    AWS_CONFIGSERVICE_API OrganizationConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
 
     Aws::String m_organizationConfigRuleArn;
-    bool m_organizationConfigRuleArnHasBeenSet;
+    bool m_organizationConfigRuleArnHasBeenSet = false;
 
     OrganizationManagedRuleMetadata m_organizationManagedRuleMetadata;
-    bool m_organizationManagedRuleMetadataHasBeenSet;
+    bool m_organizationManagedRuleMetadataHasBeenSet = false;
 
     OrganizationCustomRuleMetadata m_organizationCustomRuleMetadata;
-    bool m_organizationCustomRuleMetadataHasBeenSet;
+    bool m_organizationCustomRuleMetadataHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedAccounts;
-    bool m_excludedAccountsHasBeenSet;
+    bool m_excludedAccountsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     OrganizationCustomPolicyRuleMetadataNoPolicy m_organizationCustomPolicyRuleMetadata;
-    bool m_organizationCustomPolicyRuleMetadataHasBeenSet;
+    bool m_organizationCustomPolicyRuleMetadataHasBeenSet = false;
   };
 
 } // namespace Model

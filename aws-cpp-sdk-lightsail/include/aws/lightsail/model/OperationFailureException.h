@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OperationFailureException">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API OperationFailureException
+  class OperationFailureException
   {
   public:
-    OperationFailureException();
-    OperationFailureException(Aws::Utils::Json::JsonView jsonValue);
-    OperationFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API OperationFailureException();
+    AWS_LIGHTSAIL_API OperationFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API OperationFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -140,16 +140,16 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_docs;
-    bool m_docsHasBeenSet;
+    bool m_docsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_tip;
-    bool m_tipHasBeenSet;
+    bool m_tipHasBeenSet = false;
   };
 
 } // namespace Model

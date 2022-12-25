@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/model/FailbackLaunchType.h>
 #include <aws/drs/model/FailbackState.h>
 #include <utility>
 
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceFailback">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceFailback
+  class RecoveryInstanceFailback
   {
   public:
-    RecoveryInstanceFailback();
-    RecoveryInstanceFailback(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceFailback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceFailback();
+    AWS_DRS_API RecoveryInstanceFailback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceFailback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,6 +303,43 @@ namespace Model
 
 
     /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline const FailbackLaunchType& GetFailbackLaunchType() const{ return m_failbackLaunchType; }
+
+    /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline bool FailbackLaunchTypeHasBeenSet() const { return m_failbackLaunchTypeHasBeenSet; }
+
+    /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline void SetFailbackLaunchType(const FailbackLaunchType& value) { m_failbackLaunchTypeHasBeenSet = true; m_failbackLaunchType = value; }
+
+    /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline void SetFailbackLaunchType(FailbackLaunchType&& value) { m_failbackLaunchTypeHasBeenSet = true; m_failbackLaunchType = std::move(value); }
+
+    /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline RecoveryInstanceFailback& WithFailbackLaunchType(const FailbackLaunchType& value) { SetFailbackLaunchType(value); return *this;}
+
+    /**
+     * <p>The launch type (Recovery / Drill) of the last launch for the failback
+     * replication of this recovery instance.</p>
+     */
+    inline RecoveryInstanceFailback& WithFailbackLaunchType(FailbackLaunchType&& value) { SetFailbackLaunchType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Whether we are failing back to the original Source Server for this Recovery
      * Instance.</p>
      */
@@ -408,31 +446,34 @@ namespace Model
   private:
 
     Aws::String m_agentLastSeenByServiceDateTime;
-    bool m_agentLastSeenByServiceDateTimeHasBeenSet;
+    bool m_agentLastSeenByServiceDateTimeHasBeenSet = false;
 
     Aws::String m_elapsedReplicationDuration;
-    bool m_elapsedReplicationDurationHasBeenSet;
+    bool m_elapsedReplicationDurationHasBeenSet = false;
 
     Aws::String m_failbackClientID;
-    bool m_failbackClientIDHasBeenSet;
+    bool m_failbackClientIDHasBeenSet = false;
 
     Aws::String m_failbackClientLastSeenByServiceDateTime;
-    bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet;
+    bool m_failbackClientLastSeenByServiceDateTimeHasBeenSet = false;
 
     Aws::String m_failbackInitiationTime;
-    bool m_failbackInitiationTimeHasBeenSet;
+    bool m_failbackInitiationTimeHasBeenSet = false;
 
     Aws::String m_failbackJobID;
-    bool m_failbackJobIDHasBeenSet;
+    bool m_failbackJobIDHasBeenSet = false;
+
+    FailbackLaunchType m_failbackLaunchType;
+    bool m_failbackLaunchTypeHasBeenSet = false;
 
     bool m_failbackToOriginalServer;
-    bool m_failbackToOriginalServerHasBeenSet;
+    bool m_failbackToOriginalServerHasBeenSet = false;
 
     Aws::String m_firstByteDateTime;
-    bool m_firstByteDateTimeHasBeenSet;
+    bool m_firstByteDateTimeHasBeenSet = false;
 
     FailbackState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

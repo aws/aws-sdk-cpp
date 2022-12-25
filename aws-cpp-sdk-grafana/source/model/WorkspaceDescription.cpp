@@ -45,6 +45,7 @@ WorkspaceDescription::WorkspaceDescription() :
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
 }
@@ -76,6 +77,7 @@ WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) :
     m_status(WorkspaceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_workspaceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -106,7 +108,7 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dataSources"))
   {
-    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
+    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(DataSourceTypeMapper::GetDataSourceTypeForName(dataSourcesJsonList[dataSourcesIndex].AsString()));
@@ -186,7 +188,7 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notificationDestinations"))
   {
-    Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
+    Aws::Utils::Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
     for(unsigned notificationDestinationsIndex = 0; notificationDestinationsIndex < notificationDestinationsJsonList.GetLength(); ++notificationDestinationsIndex)
     {
       m_notificationDestinations.push_back(NotificationDestinationTypeMapper::GetNotificationDestinationTypeForName(notificationDestinationsJsonList[notificationDestinationsIndex].AsString()));
@@ -203,7 +205,7 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("organizationalUnits"))
   {
-    Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("organizationalUnits");
+    Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("organizationalUnits");
     for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
     {
       m_organizationalUnits.push_back(organizationalUnitsJsonList[organizationalUnitsIndex].AsString());
@@ -242,6 +244,13 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+
+    m_vpcConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("workspaceRoleArn"))
   {
     m_workspaceRoleArn = jsonValue.GetString("workspaceRoleArn");
@@ -274,7 +283,7 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   if(m_dataSourcesHasBeenSet)
   {
-   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
    {
      dataSourcesJsonList[dataSourcesIndex].AsString(DataSourceTypeMapper::GetNameForDataSourceType(m_dataSources[dataSourcesIndex]));
@@ -341,7 +350,7 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   if(m_notificationDestinationsHasBeenSet)
   {
-   Array<JsonValue> notificationDestinationsJsonList(m_notificationDestinations.size());
+   Aws::Utils::Array<JsonValue> notificationDestinationsJsonList(m_notificationDestinations.size());
    for(unsigned notificationDestinationsIndex = 0; notificationDestinationsIndex < notificationDestinationsJsonList.GetLength(); ++notificationDestinationsIndex)
    {
      notificationDestinationsJsonList[notificationDestinationsIndex].AsString(NotificationDestinationTypeMapper::GetNameForNotificationDestinationType(m_notificationDestinations[notificationDestinationsIndex]));
@@ -358,7 +367,7 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   if(m_organizationalUnitsHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitsJsonList(m_organizationalUnits.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitsJsonList(m_organizationalUnits.size());
    for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
    {
      organizationalUnitsJsonList[organizationalUnitsIndex].AsString(m_organizationalUnits[organizationalUnitsIndex]);
@@ -391,6 +400,12 @@ JsonValue WorkspaceDescription::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

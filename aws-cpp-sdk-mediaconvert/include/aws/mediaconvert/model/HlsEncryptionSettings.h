@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsEncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsEncryptionSettings
+  class HlsEncryptionSettings
   {
   public:
-    HlsEncryptionSettings();
-    HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsEncryptionSettings();
+    AWS_MEDIACONVERT_API HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     HlsEncryptionType m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     HlsInitializationVectorInManifest m_initializationVectorInManifest;
-    bool m_initializationVectorInManifestHasBeenSet;
+    bool m_initializationVectorInManifestHasBeenSet = false;
 
     HlsOfflineEncrypted m_offlineEncrypted;
-    bool m_offlineEncryptedHasBeenSet;
+    bool m_offlineEncryptedHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
 
     StaticKeyProvider m_staticKeyProvider;
-    bool m_staticKeyProviderHasBeenSet;
+    bool m_staticKeyProviderHasBeenSet = false;
 
     HlsKeyProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

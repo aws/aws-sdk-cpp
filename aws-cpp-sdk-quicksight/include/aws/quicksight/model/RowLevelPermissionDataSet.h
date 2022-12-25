@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RowLevelPermissionDataSet
+  class RowLevelPermissionDataSet
   {
   public:
-    RowLevelPermissionDataSet();
-    RowLevelPermissionDataSet(Aws::Utils::Json::JsonView jsonValue);
-    RowLevelPermissionDataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet();
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,19 +294,19 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     RowLevelPermissionPolicy m_permissionPolicy;
-    bool m_permissionPolicyHasBeenSet;
+    bool m_permissionPolicyHasBeenSet = false;
 
     RowLevelPermissionFormatVersion m_formatVersion;
-    bool m_formatVersionHasBeenSet;
+    bool m_formatVersionHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

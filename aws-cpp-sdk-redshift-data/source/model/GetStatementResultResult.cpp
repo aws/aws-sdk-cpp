@@ -32,7 +32,7 @@ GetStatementResultResult& GetStatementResultResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ColumnMetadata"))
   {
-    Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("ColumnMetadata");
+    Aws::Utils::Array<JsonView> columnMetadataJsonList = jsonValue.GetArray("ColumnMetadata");
     for(unsigned columnMetadataIndex = 0; columnMetadataIndex < columnMetadataJsonList.GetLength(); ++columnMetadataIndex)
     {
       m_columnMetadata.push_back(columnMetadataJsonList[columnMetadataIndex].AsObject());
@@ -47,10 +47,10 @@ GetStatementResultResult& GetStatementResultResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
-      Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
+      Aws::Utils::Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
       Aws::Vector<Field> fieldListList;
       fieldListList.reserve((size_t)fieldListJsonList.GetLength());
       for(unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex)

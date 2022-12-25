@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelEndpointDataBlob">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelEndpointDataBlob
+  class ModelEndpointDataBlob
   {
   public:
-    ModelEndpointDataBlob();
-    ModelEndpointDataBlob(Aws::Utils::Json::JsonView jsonValue);
-    ModelEndpointDataBlob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelEndpointDataBlob();
+    AWS_FRAUDDETECTOR_API ModelEndpointDataBlob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelEndpointDataBlob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_byteBuffer;
-    bool m_byteBufferHasBeenSet;
+    bool m_byteBufferHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
   };
 
 } // namespace Model

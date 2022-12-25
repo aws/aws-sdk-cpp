@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DevEndpointCustomLibraries">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DevEndpointCustomLibraries
+  class DevEndpointCustomLibraries
   {
   public:
-    DevEndpointCustomLibraries();
-    DevEndpointCustomLibraries(Aws::Utils::Json::JsonView jsonValue);
-    DevEndpointCustomLibraries& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DevEndpointCustomLibraries();
+    AWS_GLUE_API DevEndpointCustomLibraries(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DevEndpointCustomLibraries& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_extraPythonLibsS3Path;
-    bool m_extraPythonLibsS3PathHasBeenSet;
+    bool m_extraPythonLibsS3PathHasBeenSet = false;
 
     Aws::String m_extraJarsS3Path;
-    bool m_extraJarsS3PathHasBeenSet;
+    bool m_extraJarsS3PathHasBeenSet = false;
   };
 
 } // namespace Model

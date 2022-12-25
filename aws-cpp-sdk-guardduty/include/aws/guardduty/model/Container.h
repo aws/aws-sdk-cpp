@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Container">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Container();
+    AWS_GUARDDUTY_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,25 +351,25 @@ namespace Model
   private:
 
     Aws::String m_containerRuntime;
-    bool m_containerRuntimeHasBeenSet;
+    bool m_containerRuntimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_imagePrefix;
-    bool m_imagePrefixHasBeenSet;
+    bool m_imagePrefixHasBeenSet = false;
 
     Aws::Vector<VolumeMount> m_volumeMounts;
-    bool m_volumeMountsHasBeenSet;
+    bool m_volumeMountsHasBeenSet = false;
 
     SecurityContext m_securityContext;
-    bool m_securityContextHasBeenSet;
+    bool m_securityContextHasBeenSet = false;
   };
 
 } // namespace Model

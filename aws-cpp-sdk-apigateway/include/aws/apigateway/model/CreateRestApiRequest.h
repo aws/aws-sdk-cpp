@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApiRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API CreateRestApiRequest : public APIGatewayRequest
+  class CreateRestApiRequest : public APIGatewayRequest
   {
   public:
-    CreateRestApiRequest();
+    AWS_APIGATEWAY_API CreateRestApiRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRestApi"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -562,37 +562,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_cloneFrom;
-    bool m_cloneFromHasBeenSet;
+    bool m_cloneFromHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_binaryMediaTypes;
-    bool m_binaryMediaTypesHasBeenSet;
+    bool m_binaryMediaTypesHasBeenSet = false;
 
     int m_minimumCompressionSize;
-    bool m_minimumCompressionSizeHasBeenSet;
+    bool m_minimumCompressionSizeHasBeenSet = false;
 
     ApiKeySourceType m_apiKeySource;
-    bool m_apiKeySourceHasBeenSet;
+    bool m_apiKeySourceHasBeenSet = false;
 
     EndpointConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_disableExecuteApiEndpoint;
-    bool m_disableExecuteApiEndpointHasBeenSet;
+    bool m_disableExecuteApiEndpointHasBeenSet = false;
   };
 
 } // namespace Model

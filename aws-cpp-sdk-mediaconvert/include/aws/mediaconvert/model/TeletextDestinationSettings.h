@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TeletextDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TeletextDestinationSettings
+  class TeletextDestinationSettings
   {
   public:
-    TeletextDestinationSettings();
-    TeletextDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    TeletextDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TeletextDestinationSettings();
+    AWS_MEDIACONVERT_API TeletextDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TeletextDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
 
     Aws::Vector<TeletextPageType> m_pageTypes;
-    bool m_pageTypesHasBeenSet;
+    bool m_pageTypesHasBeenSet = false;
   };
 
 } // namespace Model

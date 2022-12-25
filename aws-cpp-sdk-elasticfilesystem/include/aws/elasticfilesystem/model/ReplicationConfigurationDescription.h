@@ -26,13 +26,13 @@ namespace EFS
 namespace Model
 {
 
-  class AWS_EFS_API ReplicationConfigurationDescription
+  class ReplicationConfigurationDescription
   {
   public:
-    ReplicationConfigurationDescription();
-    ReplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API ReplicationConfigurationDescription();
+    AWS_EFS_API ReplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API ReplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,22 +305,22 @@ namespace Model
   private:
 
     Aws::String m_sourceFileSystemId;
-    bool m_sourceFileSystemIdHasBeenSet;
+    bool m_sourceFileSystemIdHasBeenSet = false;
 
     Aws::String m_sourceFileSystemRegion;
-    bool m_sourceFileSystemRegionHasBeenSet;
+    bool m_sourceFileSystemRegionHasBeenSet = false;
 
     Aws::String m_sourceFileSystemArn;
-    bool m_sourceFileSystemArnHasBeenSet;
+    bool m_sourceFileSystemArnHasBeenSet = false;
 
     Aws::String m_originalSourceFileSystemArn;
-    bool m_originalSourceFileSystemArnHasBeenSet;
+    bool m_originalSourceFileSystemArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Destination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/NetworkProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API NetworkProfile
+  class NetworkProfile
   {
   public:
-    NetworkProfile();
-    NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
-    NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API NetworkProfile();
+    AWS_ALEXAFORBUSINESS_API NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -491,34 +491,34 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ssid;
-    bool m_ssidHasBeenSet;
+    bool m_ssidHasBeenSet = false;
 
     NetworkSecurityType m_securityType;
-    bool m_securityTypeHasBeenSet;
+    bool m_securityTypeHasBeenSet = false;
 
     NetworkEapMethod m_eapMethod;
-    bool m_eapMethodHasBeenSet;
+    bool m_eapMethodHasBeenSet = false;
 
     Aws::String m_currentPassword;
-    bool m_currentPasswordHasBeenSet;
+    bool m_currentPasswordHasBeenSet = false;
 
     Aws::String m_nextPassword;
-    bool m_nextPasswordHasBeenSet;
+    bool m_nextPasswordHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trustAnchors;
-    bool m_trustAnchorsHasBeenSet;
+    bool m_trustAnchorsHasBeenSet = false;
   };
 
 } // namespace Model

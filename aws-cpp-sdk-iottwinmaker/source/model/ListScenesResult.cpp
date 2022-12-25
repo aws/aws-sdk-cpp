@@ -28,19 +28,19 @@ ListScenesResult::ListScenesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListScenesResult& ListScenesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("sceneSummaries"))
   {
-    Array<JsonView> sceneSummariesJsonList = jsonValue.GetArray("sceneSummaries");
+    Aws::Utils::Array<JsonView> sceneSummariesJsonList = jsonValue.GetArray("sceneSummaries");
     for(unsigned sceneSummariesIndex = 0; sceneSummariesIndex < sceneSummariesJsonList.GetLength(); ++sceneSummariesIndex)
     {
       m_sceneSummaries.push_back(sceneSummariesJsonList[sceneSummariesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

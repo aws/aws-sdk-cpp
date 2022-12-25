@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/PerformanceMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API PerformanceMetrics
+  class PerformanceMetrics
   {
   public:
-    PerformanceMetrics();
-    PerformanceMetrics(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API PerformanceMetrics();
+    AWS_MACHINELEARNING_API PerformanceMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API PerformanceMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

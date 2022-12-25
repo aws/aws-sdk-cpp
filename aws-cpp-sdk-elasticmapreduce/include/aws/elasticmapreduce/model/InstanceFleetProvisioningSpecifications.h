@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetProvisioningSpecifications">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceFleetProvisioningSpecifications
+  class InstanceFleetProvisioningSpecifications
   {
   public:
-    InstanceFleetProvisioningSpecifications();
-    InstanceFleetProvisioningSpecifications(Aws::Utils::Json::JsonView jsonValue);
-    InstanceFleetProvisioningSpecifications& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceFleetProvisioningSpecifications();
+    AWS_EMR_API InstanceFleetProvisioningSpecifications(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceFleetProvisioningSpecifications& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     SpotProvisioningSpecification m_spotSpecification;
-    bool m_spotSpecificationHasBeenSet;
+    bool m_spotSpecificationHasBeenSet = false;
 
     OnDemandProvisioningSpecification m_onDemandSpecification;
-    bool m_onDemandSpecificationHasBeenSet;
+    bool m_onDemandSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

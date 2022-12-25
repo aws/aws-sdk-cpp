@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningImageFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningImageFormat
+  class SigningImageFormat
   {
   public:
-    SigningImageFormat();
-    SigningImageFormat(Aws::Utils::Json::JsonView jsonValue);
-    SigningImageFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningImageFormat();
+    AWS_SIGNER_API SigningImageFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningImageFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::Vector<ImageFormat> m_supportedFormats;
-    bool m_supportedFormatsHasBeenSet;
+    bool m_supportedFormatsHasBeenSet = false;
 
     ImageFormat m_defaultFormat;
-    bool m_defaultFormatHasBeenSet;
+    bool m_defaultFormatHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ScheduledAuditMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ScheduledAuditMetadata
+  class ScheduledAuditMetadata
   {
   public:
-    ScheduledAuditMetadata();
-    ScheduledAuditMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledAuditMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ScheduledAuditMetadata();
+    AWS_IOT_API ScheduledAuditMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ScheduledAuditMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
+    bool m_scheduledAuditNameHasBeenSet = false;
 
     Aws::String m_scheduledAuditArn;
-    bool m_scheduledAuditArnHasBeenSet;
+    bool m_scheduledAuditArnHasBeenSet = false;
 
     AuditFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
   };
 
 } // namespace Model

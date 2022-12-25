@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartSigningJobParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API StartSigningJobParameter
+  class StartSigningJobParameter
   {
   public:
-    StartSigningJobParameter();
-    StartSigningJobParameter(Aws::Utils::Json::JsonView jsonValue);
-    StartSigningJobParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StartSigningJobParameter();
+    AWS_IOT_API StartSigningJobParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StartSigningJobParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     SigningProfileParameter m_signingProfileParameter;
-    bool m_signingProfileParameterHasBeenSet;
+    bool m_signingProfileParameterHasBeenSet = false;
 
     Aws::String m_signingProfileName;
-    bool m_signingProfileNameHasBeenSet;
+    bool m_signingProfileNameHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

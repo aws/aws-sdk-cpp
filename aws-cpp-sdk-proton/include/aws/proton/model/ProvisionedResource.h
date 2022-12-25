@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ProvisionedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ProvisionedResource
+  class ProvisionedResource
   {
   public:
-    ProvisionedResource();
-    ProvisionedResource(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ProvisionedResource();
+    AWS_PROTON_API ProvisionedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ProvisionedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,8 +125,8 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const ProvisionedResourceEngine& GetProvisioningEngine() const{ return m_provisioningEngine; }
 
@@ -135,8 +135,8 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ProvisioningEngineHasBeenSet() const { return m_provisioningEngineHasBeenSet; }
 
@@ -145,8 +145,8 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetProvisioningEngine(const ProvisionedResourceEngine& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = value; }
 
@@ -155,8 +155,8 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetProvisioningEngine(ProvisionedResourceEngine&& value) { m_provisioningEngineHasBeenSet = true; m_provisioningEngine = std::move(value); }
 
@@ -165,8 +165,8 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ProvisionedResource& WithProvisioningEngine(const ProvisionedResourceEngine& value) { SetProvisioningEngine(value); return *this;}
 
@@ -175,21 +175,21 @@ namespace Model
      * can be used for Amazon Web Services-managed provisioning, and
      * <code>TERRAFORM</code> can be used for self-managed provisioning.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-     * provisioning</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+     * provisioning</a> in the <i>Proton User Guide</i>.</p>
      */
     inline ProvisionedResource& WithProvisioningEngine(ProvisionedResourceEngine&& value) { SetProvisioningEngine(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProvisionedResourceEngine m_provisioningEngine;
-    bool m_provisioningEngineHasBeenSet;
+    bool m_provisioningEngineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -69,7 +69,7 @@ Aws::String urlEncodeSegment(const Aws::String& segment)
 } // namespace Http
 } // namespace Aws
 
-URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT)
+URI::URI() : m_scheme(Scheme::HTTP), m_port(HTTP_DEFAULT_PORT), m_pathHasTrailingSlash(false)
 {
 }
 
@@ -458,7 +458,7 @@ void URI::ExtractAndSetAuthority(const Aws::String& uri)
 
     size_t posEndOfAuthority=0;
     // are we extracting an ipv6 address?
-    if (uri.at(authorityStart) == '[')
+    if (uri.length() > authorityStart && uri.at(authorityStart) == '[')
     {
         posEndOfAuthority = uri.find(']', authorityStart);
         if (posEndOfAuthority == Aws::String::npos) {
@@ -499,7 +499,7 @@ void URI::ExtractAndSetPort(const Aws::String& uri)
 
     size_t portSearchStart = authorityStart;
     // are we extracting an ipv6 address?
-    if (uri.at(portSearchStart) == '[')
+    if (uri.length() > portSearchStart && uri.at(portSearchStart) == '[')
     {
         size_t posEndOfAuthority = uri.find(']', portSearchStart);
         if (posEndOfAuthority == Aws::String::npos) {

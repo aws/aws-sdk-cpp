@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryGroup
+  class InventoryGroup
   {
   public:
-    InventoryGroup();
-    InventoryGroup(Aws::Utils::Json::JsonView jsonValue);
-    InventoryGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryGroup();
+    AWS_SSM_API InventoryGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<InventoryFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

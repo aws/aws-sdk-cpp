@@ -26,12 +26,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationResult
+  class ListCustomRoutingPortMappingsByDestinationResult
   {
   public:
-    ListCustomRoutingPortMappingsByDestinationResult();
-    ListCustomRoutingPortMappingsByDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCustomRoutingPortMappingsByDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationResult();
+    AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

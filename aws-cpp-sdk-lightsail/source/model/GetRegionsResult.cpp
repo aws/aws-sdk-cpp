@@ -30,7 +30,7 @@ GetRegionsResult& GetRegionsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("regions"))
   {
-    Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
+    Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsObject());

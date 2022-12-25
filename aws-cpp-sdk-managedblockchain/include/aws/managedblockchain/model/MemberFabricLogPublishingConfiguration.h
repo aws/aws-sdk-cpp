@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFabricLogPublishingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API MemberFabricLogPublishingConfiguration
+  class MemberFabricLogPublishingConfiguration
   {
   public:
-    MemberFabricLogPublishingConfiguration();
-    MemberFabricLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MemberFabricLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     LogConfigurations m_caLogs;
-    bool m_caLogsHasBeenSet;
+    bool m_caLogsHasBeenSet = false;
   };
 
 } // namespace Model

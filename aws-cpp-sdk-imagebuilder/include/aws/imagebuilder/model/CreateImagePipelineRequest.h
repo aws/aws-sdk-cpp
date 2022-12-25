@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API CreateImagePipelineRequest : public ImagebuilderRequest
+  class CreateImagePipelineRequest : public ImagebuilderRequest
   {
   public:
-    CreateImagePipelineRequest();
+    AWS_IMAGEBUILDER_API CreateImagePipelineRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateImagePipeline"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -550,40 +550,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_imageRecipeArn;
-    bool m_imageRecipeArnHasBeenSet;
+    bool m_imageRecipeArnHasBeenSet = false;
 
     Aws::String m_containerRecipeArn;
-    bool m_containerRecipeArnHasBeenSet;
+    bool m_containerRecipeArnHasBeenSet = false;
 
     Aws::String m_infrastructureConfigurationArn;
-    bool m_infrastructureConfigurationArnHasBeenSet;
+    bool m_infrastructureConfigurationArnHasBeenSet = false;
 
     Aws::String m_distributionConfigurationArn;
-    bool m_distributionConfigurationArnHasBeenSet;
+    bool m_distributionConfigurationArnHasBeenSet = false;
 
     ImageTestsConfiguration m_imageTestsConfiguration;
-    bool m_imageTestsConfigurationHasBeenSet;
+    bool m_imageTestsConfigurationHasBeenSet = false;
 
     bool m_enhancedImageMetadataEnabled;
-    bool m_enhancedImageMetadataEnabledHasBeenSet;
+    bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
     Schedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     PipelineStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

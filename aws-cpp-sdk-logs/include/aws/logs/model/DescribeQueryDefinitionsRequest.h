@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API DescribeQueryDefinitionsRequest : public CloudWatchLogsRequest
+  class DescribeQueryDefinitionsRequest : public CloudWatchLogsRequest
   {
   public:
-    DescribeQueryDefinitionsRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeQueryDefinitionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeQueryDefinitions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_queryDefinitionNamePrefix;
-    bool m_queryDefinitionNamePrefixHasBeenSet;
+    bool m_queryDefinitionNamePrefixHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

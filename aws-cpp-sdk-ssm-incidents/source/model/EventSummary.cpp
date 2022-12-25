@@ -20,6 +20,7 @@ namespace Model
 
 EventSummary::EventSummary() : 
     m_eventIdHasBeenSet(false),
+    m_eventReferencesHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventUpdatedTimeHasBeenSet(false),
@@ -29,6 +30,7 @@ EventSummary::EventSummary() :
 
 EventSummary::EventSummary(JsonView jsonValue) : 
     m_eventIdHasBeenSet(false),
+    m_eventReferencesHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_eventUpdatedTimeHasBeenSet(false),
@@ -44,6 +46,16 @@ EventSummary& EventSummary::operator =(JsonView jsonValue)
     m_eventId = jsonValue.GetString("eventId");
 
     m_eventIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventReferences"))
+  {
+    Aws::Utils::Array<JsonView> eventReferencesJsonList = jsonValue.GetArray("eventReferences");
+    for(unsigned eventReferencesIndex = 0; eventReferencesIndex < eventReferencesJsonList.GetLength(); ++eventReferencesIndex)
+    {
+      m_eventReferences.push_back(eventReferencesJsonList[eventReferencesIndex].AsObject());
+    }
+    m_eventReferencesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("eventTime"))
@@ -84,6 +96,17 @@ JsonValue EventSummary::Jsonize() const
   if(m_eventIdHasBeenSet)
   {
    payload.WithString("eventId", m_eventId);
+
+  }
+
+  if(m_eventReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eventReferencesJsonList(m_eventReferences.size());
+   for(unsigned eventReferencesIndex = 0; eventReferencesIndex < eventReferencesJsonList.GetLength(); ++eventReferencesIndex)
+   {
+     eventReferencesJsonList[eventReferencesIndex].AsObject(m_eventReferences[eventReferencesIndex].Jsonize());
+   }
+   payload.WithArray("eventReferences", std::move(eventReferencesJsonList));
 
   }
 

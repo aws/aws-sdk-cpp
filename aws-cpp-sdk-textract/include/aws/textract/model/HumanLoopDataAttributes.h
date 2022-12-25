@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/HumanLoopDataAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API HumanLoopDataAttributes
+  class HumanLoopDataAttributes
   {
   public:
-    HumanLoopDataAttributes();
-    HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API HumanLoopDataAttributes();
+    AWS_TEXTRACT_API HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<ContentClassifier> m_contentClassifiers;
-    bool m_contentClassifiersHasBeenSet;
+    bool m_contentClassifiersHasBeenSet = false;
   };
 
 } // namespace Model

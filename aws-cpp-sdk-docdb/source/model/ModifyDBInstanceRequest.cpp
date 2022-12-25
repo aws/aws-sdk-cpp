@@ -20,6 +20,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_newDBInstanceIdentifierHasBeenSet(false),
     m_cACertificateIdentifierHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
     m_enablePerformanceInsights(false),
@@ -65,6 +67,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_cACertificateIdentifierHasBeenSet)
   {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_promotionTierHasBeenSet)

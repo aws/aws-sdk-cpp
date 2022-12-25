@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ResultRowValue">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ResultRowValue
+  class ResultRowValue
   {
   public:
-    ResultRowValue();
-    ResultRowValue(Aws::Utils::Json::JsonView jsonValue);
-    ResultRowValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ResultRowValue();
+    AWS_PINPOINT_API ResultRowValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ResultRowValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

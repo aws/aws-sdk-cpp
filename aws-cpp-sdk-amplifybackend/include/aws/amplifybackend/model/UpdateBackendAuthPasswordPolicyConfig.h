@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthPasswordPolicyConfig
+  class UpdateBackendAuthPasswordPolicyConfig
   {
   public:
-    UpdateBackendAuthPasswordPolicyConfig();
-    UpdateBackendAuthPasswordPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthPasswordPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthPasswordPolicyConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthPasswordPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthPasswordPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<AdditionalConstraintsElement> m_additionalConstraints;
-    bool m_additionalConstraintsHasBeenSet;
+    bool m_additionalConstraintsHasBeenSet = false;
 
     double m_minimumLength;
-    bool m_minimumLengthHasBeenSet;
+    bool m_minimumLengthHasBeenSet = false;
   };
 
 } // namespace Model

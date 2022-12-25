@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusRequest : public RedshiftRequest
+  class DescribeReservedNodeExchangeStatusRequest : public RedshiftRequest
   {
   public:
-    DescribeReservedNodeExchangeStatusRequest();
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeReservedNodeExchangeStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_reservedNodeExchangeRequestId;
-    bool m_reservedNodeExchangeRequestIdHasBeenSet;
+    bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

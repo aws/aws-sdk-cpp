@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WafExcludedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API WafExcludedRule
+  class WafExcludedRule
   {
   public:
-    WafExcludedRule();
-    WafExcludedRule(Aws::Utils::Json::JsonView jsonValue);
-    WafExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API WafExcludedRule();
+    AWS_SECURITYHUB_API WafExcludedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API WafExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
   };
 
 } // namespace Model

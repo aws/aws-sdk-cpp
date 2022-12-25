@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails
+  class AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails
   {
   public:
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails();
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,19 +205,19 @@ namespace Model
   private:
 
     bool m_cloudWatchEncryptionEnabled;
-    bool m_cloudWatchEncryptionEnabledHasBeenSet;
+    bool m_cloudWatchEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupName;
-    bool m_cloudWatchLogGroupNameHasBeenSet;
+    bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     bool m_s3EncryptionEnabled;
-    bool m_s3EncryptionEnabledHasBeenSet;
+    bool m_s3EncryptionEnabledHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
   };
 
 } // namespace Model

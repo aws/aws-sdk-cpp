@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API IdentityDescription
+  class IdentityDescription
   {
   public:
-    IdentityDescription();
-    IdentityDescription(Aws::Utils::Json::JsonView jsonValue);
-    IdentityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API IdentityDescription();
+    AWS_COGNITOIDENTITY_API IdentityDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API IdentityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logins;
-    bool m_loginsHasBeenSet;
+    bool m_loginsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

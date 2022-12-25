@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowTaskParameterValueExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API MaintenanceWindowTaskParameterValueExpression
+  class MaintenanceWindowTaskParameterValueExpression
   {
   public:
-    MaintenanceWindowTaskParameterValueExpression();
-    MaintenanceWindowTaskParameterValueExpression(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceWindowTaskParameterValueExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API MaintenanceWindowTaskParameterValueExpression();
+    AWS_SSM_API MaintenanceWindowTaskParameterValueExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API MaintenanceWindowTaskParameterValueExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

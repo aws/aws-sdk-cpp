@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GeneralName">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API GeneralName
+  class GeneralName
   {
   public:
-    GeneralName();
-    GeneralName(Aws::Utils::Json::JsonView jsonValue);
-    GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API GeneralName();
+    AWS_ACMPCA_API GeneralName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -360,28 +360,28 @@ namespace Model
   private:
 
     OtherName m_otherName;
-    bool m_otherNameHasBeenSet;
+    bool m_otherNameHasBeenSet = false;
 
     Aws::String m_rfc822Name;
-    bool m_rfc822NameHasBeenSet;
+    bool m_rfc822NameHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     ASN1Subject m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     EdiPartyName m_ediPartyName;
-    bool m_ediPartyNameHasBeenSet;
+    bool m_ediPartyNameHasBeenSet = false;
 
     Aws::String m_uniformResourceIdentifier;
-    bool m_uniformResourceIdentifierHasBeenSet;
+    bool m_uniformResourceIdentifierHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_registeredId;
-    bool m_registeredIdHasBeenSet;
+    bool m_registeredIdHasBeenSet = false;
   };
 
 } // namespace Model

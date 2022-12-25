@@ -22,6 +22,8 @@ QueryResultItem::QueryResultItem() :
     m_idHasBeenSet(false),
     m_type(QueryResultType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_format(QueryResultFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_additionalAttributesHasBeenSet(false),
     m_documentIdHasBeenSet(false),
     m_documentTitleHasBeenSet(false),
@@ -29,7 +31,8 @@ QueryResultItem::QueryResultItem() :
     m_documentURIHasBeenSet(false),
     m_documentAttributesHasBeenSet(false),
     m_scoreAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false)
+    m_feedbackTokenHasBeenSet(false),
+    m_tableExcerptHasBeenSet(false)
 {
 }
 
@@ -37,6 +40,8 @@ QueryResultItem::QueryResultItem(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_type(QueryResultType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_format(QueryResultFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_additionalAttributesHasBeenSet(false),
     m_documentIdHasBeenSet(false),
     m_documentTitleHasBeenSet(false),
@@ -44,7 +49,8 @@ QueryResultItem::QueryResultItem(JsonView jsonValue) :
     m_documentURIHasBeenSet(false),
     m_documentAttributesHasBeenSet(false),
     m_scoreAttributesHasBeenSet(false),
-    m_feedbackTokenHasBeenSet(false)
+    m_feedbackTokenHasBeenSet(false),
+    m_tableExcerptHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,9 +71,16 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = QueryResultFormatMapper::GetQueryResultFormatForName(jsonValue.GetString("Format"));
+
+    m_formatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
-    Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
+    Aws::Utils::Array<JsonView> additionalAttributesJsonList = jsonValue.GetArray("AdditionalAttributes");
     for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
     {
       m_additionalAttributes.push_back(additionalAttributesJsonList[additionalAttributesIndex].AsObject());
@@ -105,7 +118,7 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DocumentAttributes"))
   {
-    Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
+    Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
     for(unsigned documentAttributesIndex = 0; documentAttributesIndex < documentAttributesJsonList.GetLength(); ++documentAttributesIndex)
     {
       m_documentAttributes.push_back(documentAttributesJsonList[documentAttributesIndex].AsObject());
@@ -127,6 +140,13 @@ QueryResultItem& QueryResultItem::operator =(JsonView jsonValue)
     m_feedbackTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableExcerpt"))
+  {
+    m_tableExcerpt = jsonValue.GetObject("TableExcerpt");
+
+    m_tableExcerptHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,9 +165,14 @@ JsonValue QueryResultItem::Jsonize() const
    payload.WithString("Type", QueryResultTypeMapper::GetNameForQueryResultType(m_type));
   }
 
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", QueryResultFormatMapper::GetNameForQueryResultFormat(m_format));
+  }
+
   if(m_additionalAttributesHasBeenSet)
   {
-   Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
+   Aws::Utils::Array<JsonValue> additionalAttributesJsonList(m_additionalAttributes.size());
    for(unsigned additionalAttributesIndex = 0; additionalAttributesIndex < additionalAttributesJsonList.GetLength(); ++additionalAttributesIndex)
    {
      additionalAttributesJsonList[additionalAttributesIndex].AsObject(m_additionalAttributes[additionalAttributesIndex].Jsonize());
@@ -182,7 +207,7 @@ JsonValue QueryResultItem::Jsonize() const
 
   if(m_documentAttributesHasBeenSet)
   {
-   Array<JsonValue> documentAttributesJsonList(m_documentAttributes.size());
+   Aws::Utils::Array<JsonValue> documentAttributesJsonList(m_documentAttributes.size());
    for(unsigned documentAttributesIndex = 0; documentAttributesIndex < documentAttributesJsonList.GetLength(); ++documentAttributesIndex)
    {
      documentAttributesJsonList[documentAttributesIndex].AsObject(m_documentAttributes[documentAttributesIndex].Jsonize());
@@ -200,6 +225,12 @@ JsonValue QueryResultItem::Jsonize() const
   if(m_feedbackTokenHasBeenSet)
   {
    payload.WithString("FeedbackToken", m_feedbackToken);
+
+  }
+
+  if(m_tableExcerptHasBeenSet)
+  {
+   payload.WithObject("TableExcerpt", m_tableExcerpt.Jsonize());
 
   }
 

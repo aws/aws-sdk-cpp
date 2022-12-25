@@ -10,7 +10,9 @@
 #include <aws/panorama/model/DeviceBrand.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/panorama/model/NetworkStatus.h>
+#include <aws/panorama/model/DeviceAggregatedStatus.h>
 #include <aws/panorama/model/DeviceConnectionStatus.h>
+#include <aws/panorama/model/LatestDeviceJob.h>
 #include <aws/panorama/model/NetworkPayload.h>
 #include <aws/panorama/model/DeviceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -34,12 +36,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API DescribeDeviceResult
+  class DescribeDeviceResult
   {
   public:
-    DescribeDeviceResult();
-    DescribeDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeDeviceResult();
+    AWS_PANORAMA_API DescribeDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -265,6 +267,37 @@ namespace Model
 
 
     /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline const DeviceAggregatedStatus& GetDeviceAggregatedStatus() const{ return m_deviceAggregatedStatus; }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline void SetDeviceAggregatedStatus(const DeviceAggregatedStatus& value) { m_deviceAggregatedStatus = value; }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline void SetDeviceAggregatedStatus(DeviceAggregatedStatus&& value) { m_deviceAggregatedStatus = std::move(value); }
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline DescribeDeviceResult& WithDeviceAggregatedStatus(const DeviceAggregatedStatus& value) { SetDeviceAggregatedStatus(value); return *this;}
+
+    /**
+     * <p>A device's aggregated status. Including the device's connection status,
+     * provisioning status, and lease status.</p>
+     */
+    inline DescribeDeviceResult& WithDeviceAggregatedStatus(DeviceAggregatedStatus&& value) { SetDeviceAggregatedStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The device's connection status.</p>
      */
     inline const DeviceConnectionStatus& GetDeviceConnectionStatus() const{ return m_deviceConnectionStatus; }
@@ -360,6 +393,37 @@ namespace Model
      * <p>The most recent beta software release.</p>
      */
     inline DescribeDeviceResult& WithLatestAlternateSoftware(const char* value) { SetLatestAlternateSoftware(value); return *this;}
+
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the job
+     * status.</p>
+     */
+    inline const LatestDeviceJob& GetLatestDeviceJob() const{ return m_latestDeviceJob; }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the job
+     * status.</p>
+     */
+    inline void SetLatestDeviceJob(const LatestDeviceJob& value) { m_latestDeviceJob = value; }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the job
+     * status.</p>
+     */
+    inline void SetLatestDeviceJob(LatestDeviceJob&& value) { m_latestDeviceJob = std::move(value); }
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the job
+     * status.</p>
+     */
+    inline DescribeDeviceResult& WithLatestDeviceJob(const LatestDeviceJob& value) { SetLatestDeviceJob(value); return *this;}
+
+    /**
+     * <p>A device's latest job. Includes the target image version, and the job
+     * status.</p>
+     */
+    inline DescribeDeviceResult& WithLatestDeviceJob(LatestDeviceJob&& value) { SetLatestDeviceJob(std::move(value)); return *this;}
 
 
     /**
@@ -650,11 +714,15 @@ namespace Model
 
     Aws::String m_description;
 
+    DeviceAggregatedStatus m_deviceAggregatedStatus;
+
     DeviceConnectionStatus m_deviceConnectionStatus;
 
     Aws::String m_deviceId;
 
     Aws::String m_latestAlternateSoftware;
+
+    LatestDeviceJob m_latestDeviceJob;
 
     Aws::String m_latestSoftware;
 

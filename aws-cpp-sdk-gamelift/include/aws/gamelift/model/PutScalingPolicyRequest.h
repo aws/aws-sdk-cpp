@@ -22,14 +22,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicyInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PutScalingPolicyRequest : public GameLiftRequest
+  class PutScalingPolicyRequest : public GameLiftRequest
   {
   public:
-    PutScalingPolicyRequest();
+    AWS_GAMELIFT_API PutScalingPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutScalingPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -178,80 +175,74 @@ namespace Model
 
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline const ScalingAdjustmentType& GetScalingAdjustmentType() const{ return m_scalingAdjustmentType; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline bool ScalingAdjustmentTypeHasBeenSet() const { return m_scalingAdjustmentTypeHasBeenSet; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline void SetScalingAdjustmentType(const ScalingAdjustmentType& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = std::move(value); }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustmentType(const ScalingAdjustmentType& value) { SetScalingAdjustmentType(value); return *this;}
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down; for example, a value
-     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count:</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down; for
+     * example, a value of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(std::move(value)); return *this;}
 
@@ -614,34 +605,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
 
     ScalingAdjustmentType m_scalingAdjustmentType;
-    bool m_scalingAdjustmentTypeHasBeenSet;
+    bool m_scalingAdjustmentTypeHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     ComparisonOperatorType m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     int m_evaluationPeriods;
-    bool m_evaluationPeriodsHasBeenSet;
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     MetricName m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

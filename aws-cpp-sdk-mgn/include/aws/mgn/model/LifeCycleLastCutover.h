@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycleLastCutover">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API LifeCycleLastCutover
+  class LifeCycleLastCutover
   {
   public:
-    LifeCycleLastCutover();
-    LifeCycleLastCutover(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycleLastCutover& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LifeCycleLastCutover();
+    AWS_MGN_API LifeCycleLastCutover(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LifeCycleLastCutover& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     LifeCycleLastCutoverFinalized m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     LifeCycleLastCutoverInitiated m_initiated;
-    bool m_initiatedHasBeenSet;
+    bool m_initiatedHasBeenSet = false;
 
     LifeCycleLastCutoverReverted m_reverted;
-    bool m_revertedHasBeenSet;
+    bool m_revertedHasBeenSet = false;
   };
 
 } // namespace Model

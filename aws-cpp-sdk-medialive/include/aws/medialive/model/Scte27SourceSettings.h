@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte27SourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte27SourceSettings
+  class Scte27SourceSettings
   {
   public:
-    Scte27SourceSettings();
-    Scte27SourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte27SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte27SourceSettings();
+    AWS_MEDIALIVE_API Scte27SourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte27SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,10 +149,10 @@ provide the language to consider when translating
   private:
 
     Scte27OcrLanguage m_ocrLanguage;
-    bool m_ocrLanguageHasBeenSet;
+    bool m_ocrLanguageHasBeenSet = false;
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
   };
 
 } // namespace Model

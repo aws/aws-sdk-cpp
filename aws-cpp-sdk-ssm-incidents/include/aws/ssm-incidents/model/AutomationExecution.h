@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/AutomationExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API AutomationExecution
+  class AutomationExecution
   {
   public:
-    AutomationExecution();
-    AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
-    AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API AutomationExecution();
+    AWS_SSMINCIDENTS_API AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ssmExecutionArn;
-    bool m_ssmExecutionArnHasBeenSet;
+    bool m_ssmExecutionArnHasBeenSet = false;
   };
 
 } // namespace Model

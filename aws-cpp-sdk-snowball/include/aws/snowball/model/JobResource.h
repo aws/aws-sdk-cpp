@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API JobResource
+  class JobResource
   {
   public:
-    JobResource();
-    JobResource(Aws::Utils::Json::JsonView jsonValue);
-    JobResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API JobResource();
+    AWS_SNOWBALL_API JobResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API JobResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::Vector<S3Resource> m_s3Resources;
-    bool m_s3ResourcesHasBeenSet;
+    bool m_s3ResourcesHasBeenSet = false;
 
     Aws::Vector<LambdaResource> m_lambdaResources;
-    bool m_lambdaResourcesHasBeenSet;
+    bool m_lambdaResourcesHasBeenSet = false;
 
     Aws::Vector<Ec2AmiResource> m_ec2AmiResources;
-    bool m_ec2AmiResourcesHasBeenSet;
+    bool m_ec2AmiResourcesHasBeenSet = false;
   };
 
 } // namespace Model

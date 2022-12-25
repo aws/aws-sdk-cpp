@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaGlobalSecondaryIndexAutoScalingUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate
+  class ReplicaGlobalSecondaryIndexAutoScalingUpdate
   {
   public:
-    ReplicaGlobalSecondaryIndexAutoScalingUpdate();
-    ReplicaGlobalSecondaryIndexAutoScalingUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaGlobalSecondaryIndexAutoScalingUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate();
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaGlobalSecondaryIndexAutoScalingUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedReadCapacityAutoScalingUpdate;
-    bool m_provisionedReadCapacityAutoScalingUpdateHasBeenSet;
+    bool m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = false;
   };
 
 } // namespace Model

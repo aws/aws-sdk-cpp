@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDataContainer">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ResourceDataContainer
+  class ResourceDataContainer
   {
   public:
-    ResourceDataContainer();
-    ResourceDataContainer(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ResourceDataContainer();
+    AWS_GREENGRASS_API ResourceDataContainer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ResourceDataContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,19 +208,19 @@ namespace Model
   private:
 
     LocalDeviceResourceData m_localDeviceResourceData;
-    bool m_localDeviceResourceDataHasBeenSet;
+    bool m_localDeviceResourceDataHasBeenSet = false;
 
     LocalVolumeResourceData m_localVolumeResourceData;
-    bool m_localVolumeResourceDataHasBeenSet;
+    bool m_localVolumeResourceDataHasBeenSet = false;
 
     S3MachineLearningModelResourceData m_s3MachineLearningModelResourceData;
-    bool m_s3MachineLearningModelResourceDataHasBeenSet;
+    bool m_s3MachineLearningModelResourceDataHasBeenSet = false;
 
     SageMakerMachineLearningModelResourceData m_sageMakerMachineLearningModelResourceData;
-    bool m_sageMakerMachineLearningModelResourceDataHasBeenSet;
+    bool m_sageMakerMachineLearningModelResourceDataHasBeenSet = false;
 
     SecretsManagerSecretResourceData m_secretsManagerSecretResourceData;
-    bool m_secretsManagerSecretResourceDataHasBeenSet;
+    bool m_secretsManagerSecretResourceDataHasBeenSet = false;
   };
 
 } // namespace Model

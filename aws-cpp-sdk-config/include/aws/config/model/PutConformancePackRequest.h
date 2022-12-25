@@ -8,6 +8,7 @@
 #include <aws/config/ConfigServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/TemplateSSMDocumentDetails.h>
 #include <aws/config/model/ConformancePackInputParameter.h>
 #include <utility>
 
@@ -20,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONFIGSERVICE_API PutConformancePackRequest : public ConfigServiceRequest
+  class PutConformancePackRequest : public ConfigServiceRequest
   {
   public:
-    PutConformancePackRequest();
+    AWS_CONFIGSERVICE_API PutConformancePackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,193 +32,193 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutConformancePack"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline PutConformancePackRequest& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline PutConformancePackRequest& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the conformance pack you want to create.</p>
+     * <p>The unique name of the conformance pack you want to deploy.</p>
      */
     inline PutConformancePackRequest& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
 
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline const Aws::String& GetTemplateS3Uri() const{ return m_templateS3Uri; }
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline bool TemplateS3UriHasBeenSet() const { return m_templateS3UriHasBeenSet; }
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(const Aws::String& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = value; }
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(Aws::String&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::move(value); }
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline void SetTemplateS3Uri(const char* value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri.assign(value); }
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(const Aws::String& value) { SetTemplateS3Uri(value); return *this;}
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(Aws::String&& value) { SetTemplateS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>Location of file containing the template body
-     * (<code>s3://bucketname/prefix</code>). The uri must point to the conformance
-     * pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     * same region as the conformance pack. </p>  <p>You must have access to read
+     * <p>The location of the file containing the template body
+     * (<code>s3://bucketname/prefix</code>). The uri must point to a conformance pack
+     * template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
+     * Region as the conformance pack. </p>  <p>You must have access to read
      * Amazon S3 bucket.</p> 
      */
     inline PutConformancePackRequest& WithTemplateS3Uri(const char* value) { SetTemplateS3Uri(value); return *this;}
 
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing full conformance pack template body. Structure containing
-     * the template body with a minimum length of 1 byte and a maximum length of 51,200
-     * bytes.</p>  <p>You can only use a YAML template with two resource types:
-     * Config rule (<code>AWS::Config::ConfigRule</code>) and a remediation action
+     * <p>A string containing the full conformance pack template body. The structure
+     * containing the template body has a minimum length of 1 byte and a maximum length
+     * of 51,200 bytes.</p>  <p>You can use a YAML template with two resource
+     * types: Config rule (<code>AWS::Config::ConfigRule</code>) and remediation action
      * (<code>AWS::Config::RemediationConfiguration</code>).</p> 
      */
     inline PutConformancePackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
@@ -361,25 +362,77 @@ namespace Model
      */
     inline PutConformancePackRequest& AddConformancePackInputParameters(ConformancePackInputParameter&& value) { m_conformancePackInputParametersHasBeenSet = true; m_conformancePackInputParameters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline const TemplateSSMDocumentDetails& GetTemplateSSMDocumentDetails() const{ return m_templateSSMDocumentDetails; }
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline bool TemplateSSMDocumentDetailsHasBeenSet() const { return m_templateSSMDocumentDetailsHasBeenSet; }
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline void SetTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = value; }
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline void SetTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { m_templateSSMDocumentDetailsHasBeenSet = true; m_templateSSMDocumentDetails = std::move(value); }
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline PutConformancePackRequest& WithTemplateSSMDocumentDetails(const TemplateSSMDocumentDetails& value) { SetTemplateSSMDocumentDetails(value); return *this;}
+
+    /**
+     * <p>An object of type <code>TemplateSSMDocumentDetails</code>, which contains the
+     * name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
+     * Manager document (SSM document) and the version of the SSM document that is used
+     * to create a conformance pack.</p>
+     */
+    inline PutConformancePackRequest& WithTemplateSSMDocumentDetails(TemplateSSMDocumentDetails&& value) { SetTemplateSSMDocumentDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::String m_templateS3Uri;
-    bool m_templateS3UriHasBeenSet;
+    bool m_templateS3UriHasBeenSet = false;
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::String m_deliveryS3Bucket;
-    bool m_deliveryS3BucketHasBeenSet;
+    bool m_deliveryS3BucketHasBeenSet = false;
 
     Aws::String m_deliveryS3KeyPrefix;
-    bool m_deliveryS3KeyPrefixHasBeenSet;
+    bool m_deliveryS3KeyPrefixHasBeenSet = false;
 
     Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
-    bool m_conformancePackInputParametersHasBeenSet;
+    bool m_conformancePackInputParametersHasBeenSet = false;
+
+    TemplateSSMDocumentDetails m_templateSSMDocumentDetails;
+    bool m_templateSSMDocumentDetailsHasBeenSet = false;
   };
 
 } // namespace Model

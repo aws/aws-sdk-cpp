@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleetErrorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DeleteFleetErrorItem
+  class DeleteFleetErrorItem
   {
   public:
-    DeleteFleetErrorItem();
-    DeleteFleetErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeleteFleetErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DeleteFleetErrorItem();
+    AWS_EC2_API DeleteFleetErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DeleteFleetErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DeleteFleetError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
   };
 
 } // namespace Model

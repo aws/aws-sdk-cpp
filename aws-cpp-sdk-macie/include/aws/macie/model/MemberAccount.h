@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/MemberAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API MemberAccount
+  class MemberAccount
   {
   public:
-    MemberAccount();
-    MemberAccount(Aws::Utils::Json::JsonView jsonValue);
-    MemberAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API MemberAccount();
+    AWS_MACIE_API MemberAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API MemberAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

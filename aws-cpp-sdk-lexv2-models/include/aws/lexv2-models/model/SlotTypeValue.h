@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotTypeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotTypeValue
+  class SlotTypeValue
   {
   public:
-    SlotTypeValue();
-    SlotTypeValue(Aws::Utils::Json::JsonView jsonValue);
-    SlotTypeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotTypeValue();
+    AWS_LEXMODELSV2_API SlotTypeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotTypeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     SampleValue m_sampleValue;
-    bool m_sampleValueHasBeenSet;
+    bool m_sampleValueHasBeenSet = false;
 
     Aws::Vector<SampleValue> m_synonyms;
-    bool m_synonymsHasBeenSet;
+    bool m_synonymsHasBeenSet = false;
   };
 
 } // namespace Model

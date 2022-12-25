@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEmailMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignEmailMessage
+  class CampaignEmailMessage
   {
   public:
-    CampaignEmailMessage();
-    CampaignEmailMessage(Aws::Utils::Json::JsonView jsonValue);
-    CampaignEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignEmailMessage();
+    AWS_PINPOINT_API CampaignEmailMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_fromAddress;
-    bool m_fromAddressHasBeenSet;
+    bool m_fromAddressHasBeenSet = false;
 
     Aws::String m_htmlBody;
-    bool m_htmlBodyHasBeenSet;
+    bool m_htmlBodyHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

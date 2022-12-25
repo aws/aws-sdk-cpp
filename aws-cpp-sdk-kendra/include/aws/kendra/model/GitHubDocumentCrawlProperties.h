@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GitHubDocumentCrawlProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GitHubDocumentCrawlProperties
+  class GitHubDocumentCrawlProperties
   {
   public:
-    GitHubDocumentCrawlProperties();
-    GitHubDocumentCrawlProperties(Aws::Utils::Json::JsonView jsonValue);
-    GitHubDocumentCrawlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GitHubDocumentCrawlProperties();
+    AWS_KENDRA_API GitHubDocumentCrawlProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GitHubDocumentCrawlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,25 +187,25 @@ namespace Model
   private:
 
     bool m_crawlRepositoryDocuments;
-    bool m_crawlRepositoryDocumentsHasBeenSet;
+    bool m_crawlRepositoryDocumentsHasBeenSet = false;
 
     bool m_crawlIssue;
-    bool m_crawlIssueHasBeenSet;
+    bool m_crawlIssueHasBeenSet = false;
 
     bool m_crawlIssueComment;
-    bool m_crawlIssueCommentHasBeenSet;
+    bool m_crawlIssueCommentHasBeenSet = false;
 
     bool m_crawlIssueCommentAttachment;
-    bool m_crawlIssueCommentAttachmentHasBeenSet;
+    bool m_crawlIssueCommentAttachmentHasBeenSet = false;
 
     bool m_crawlPullRequest;
-    bool m_crawlPullRequestHasBeenSet;
+    bool m_crawlPullRequestHasBeenSet = false;
 
     bool m_crawlPullRequestComment;
-    bool m_crawlPullRequestCommentHasBeenSet;
+    bool m_crawlPullRequestCommentHasBeenSet = false;
 
     bool m_crawlPullRequestCommentAttachment;
-    bool m_crawlPullRequestCommentAttachmentHasBeenSet;
+    bool m_crawlPullRequestCommentAttachmentHasBeenSet = false;
   };
 
 } // namespace Model

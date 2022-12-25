@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/S3Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API S3Resource
+  class S3Resource
   {
   public:
-    S3Resource();
-    S3Resource(Aws::Utils::Json::JsonView jsonValue);
-    S3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API S3Resource();
+    AWS_SNOWBALL_API S3Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API S3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     KeyRange m_keyRange;
-    bool m_keyRangeHasBeenSet;
+    bool m_keyRangeHasBeenSet = false;
 
     Aws::Vector<TargetOnDeviceService> m_targetOnDeviceServices;
-    bool m_targetOnDeviceServicesHasBeenSet;
+    bool m_targetOnDeviceServicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/SavingsPlanOfferingRate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlanOfferingRate
+  class SavingsPlanOfferingRate
   {
   public:
-    SavingsPlanOfferingRate();
-    SavingsPlanOfferingRate(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlanOfferingRate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRate();
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,28 +333,28 @@ namespace Model
   private:
 
     ParentSavingsPlanOffering m_savingsPlanOffering;
-    bool m_savingsPlanOfferingHasBeenSet;
+    bool m_savingsPlanOfferingHasBeenSet = false;
 
     Aws::String m_rate;
-    bool m_rateHasBeenSet;
+    bool m_rateHasBeenSet = false;
 
     SavingsPlanRateUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     SavingsPlanProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     SavingsPlanRateServiceCode m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Vector<SavingsPlanOfferingRateProperty> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

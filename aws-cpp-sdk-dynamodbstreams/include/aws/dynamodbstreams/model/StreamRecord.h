@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/StreamRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API StreamRecord
+  class StreamRecord
   {
   public:
-    StreamRecord();
-    StreamRecord(Aws::Utils::Json::JsonView jsonValue);
-    StreamRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API StreamRecord();
+    AWS_DYNAMODBSTREAMS_API StreamRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API StreamRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -393,25 +393,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_approximateCreationDateTime;
-    bool m_approximateCreationDateTimeHasBeenSet;
+    bool m_approximateCreationDateTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_newImage;
-    bool m_newImageHasBeenSet;
+    bool m_newImageHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_oldImage;
-    bool m_oldImageHasBeenSet;
+    bool m_oldImageHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
 
     long long m_sizeBytes;
-    bool m_sizeBytesHasBeenSet;
+    bool m_sizeBytesHasBeenSet = false;
 
     StreamViewType m_streamViewType;
-    bool m_streamViewTypeHasBeenSet;
+    bool m_streamViewTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/IndexStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API IndexStatistics
+  class IndexStatistics
   {
   public:
-    IndexStatistics();
-    IndexStatistics(Aws::Utils::Json::JsonView jsonValue);
-    IndexStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API IndexStatistics();
+    AWS_KENDRA_API IndexStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API IndexStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     FaqStatistics m_faqStatistics;
-    bool m_faqStatisticsHasBeenSet;
+    bool m_faqStatisticsHasBeenSet = false;
 
     TextDocumentStatistics m_textDocumentStatistics;
-    bool m_textDocumentStatisticsHasBeenSet;
+    bool m_textDocumentStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

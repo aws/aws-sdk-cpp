@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DefaultHyperParameterRanges">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DefaultHyperParameterRanges
+  class DefaultHyperParameterRanges
   {
   public:
-    DefaultHyperParameterRanges();
-    DefaultHyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
-    DefaultHyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DefaultHyperParameterRanges();
+    AWS_PERSONALIZE_API DefaultHyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DefaultHyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::Vector<DefaultIntegerHyperParameterRange> m_integerHyperParameterRanges;
-    bool m_integerHyperParameterRangesHasBeenSet;
+    bool m_integerHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<DefaultContinuousHyperParameterRange> m_continuousHyperParameterRanges;
-    bool m_continuousHyperParameterRangesHasBeenSet;
+    bool m_continuousHyperParameterRangesHasBeenSet = false;
 
     Aws::Vector<DefaultCategoricalHyperParameterRange> m_categoricalHyperParameterRanges;
-    bool m_categoricalHyperParameterRangesHasBeenSet;
+    bool m_categoricalHyperParameterRangesHasBeenSet = false;
   };
 
 } // namespace Model

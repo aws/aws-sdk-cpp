@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ApplicationSettingsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ApplicationSettingsResponse
+  class ApplicationSettingsResponse
   {
   public:
-    ApplicationSettingsResponse();
-    ApplicationSettingsResponse(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSettingsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ApplicationSettingsResponse();
+    AWS_APPSTREAM_API ApplicationSettingsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ApplicationSettingsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_settingsGroup;
-    bool m_settingsGroupHasBeenSet;
+    bool m_settingsGroupHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppCampaignSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppCampaignSchedule
+  class InAppCampaignSchedule
   {
   public:
-    InAppCampaignSchedule();
-    InAppCampaignSchedule(Aws::Utils::Json::JsonView jsonValue);
-    InAppCampaignSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppCampaignSchedule();
+    AWS_PINPOINT_API InAppCampaignSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppCampaignSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     CampaignEventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     QuietTime m_quietTime;
-    bool m_quietTimeHasBeenSet;
+    bool m_quietTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ApplicationSummary();
+    AWS_KINESISANALYTICS_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationARN;
-    bool m_applicationARNHasBeenSet;
+    bool m_applicationARNHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
   };
 
 } // namespace Model

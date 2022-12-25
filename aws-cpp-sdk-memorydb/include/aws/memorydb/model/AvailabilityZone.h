@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/AvailabilityZone">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API AvailabilityZone
+  class AvailabilityZone
   {
   public:
-    AvailabilityZone();
-    AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
-    AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API AvailabilityZone();
+    AWS_MEMORYDB_API AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

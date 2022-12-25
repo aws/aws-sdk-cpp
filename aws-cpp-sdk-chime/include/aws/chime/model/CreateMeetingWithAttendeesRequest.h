@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API CreateMeetingWithAttendeesRequest : public ChimeRequest
+  class CreateMeetingWithAttendeesRequest : public ChimeRequest
   {
   public:
-    CreateMeetingWithAttendeesRequest();
+    AWS_CHIME_API CreateMeetingWithAttendeesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMeetingWithAttendees"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -368,25 +368,25 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     MeetingNotificationConfiguration m_notificationsConfiguration;
-    bool m_notificationsConfigurationHasBeenSet;
+    bool m_notificationsConfigurationHasBeenSet = false;
 
     Aws::Vector<CreateAttendeeRequestItem> m_attendees;
-    bool m_attendeesHasBeenSet;
+    bool m_attendeesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API UpdateLicenseConfigurationRequest : public LicenseManagerRequest
+  class UpdateLicenseConfigurationRequest : public LicenseManagerRequest
   {
   public:
-    UpdateLicenseConfigurationRequest();
+    AWS_LICENSEMANAGER_API UpdateLicenseConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLicenseConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -352,31 +352,31 @@ namespace Model
   private:
 
     Aws::String m_licenseConfigurationArn;
-    bool m_licenseConfigurationArnHasBeenSet;
+    bool m_licenseConfigurationArnHasBeenSet = false;
 
     LicenseConfigurationStatus m_licenseConfigurationStatus;
-    bool m_licenseConfigurationStatusHasBeenSet;
+    bool m_licenseConfigurationStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_licenseRules;
-    bool m_licenseRulesHasBeenSet;
+    bool m_licenseRulesHasBeenSet = false;
 
     long long m_licenseCount;
-    bool m_licenseCountHasBeenSet;
+    bool m_licenseCountHasBeenSet = false;
 
     bool m_licenseCountHardLimit;
-    bool m_licenseCountHardLimitHasBeenSet;
+    bool m_licenseCountHardLimitHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<ProductInformation> m_productInformationList;
-    bool m_productInformationListHasBeenSet;
+    bool m_productInformationListHasBeenSet = false;
 
     bool m_disassociateWhenNotFound;
-    bool m_disassociateWhenNotFoundHasBeenSet;
+    bool m_disassociateWhenNotFoundHasBeenSet = false;
   };
 
 } // namespace Model

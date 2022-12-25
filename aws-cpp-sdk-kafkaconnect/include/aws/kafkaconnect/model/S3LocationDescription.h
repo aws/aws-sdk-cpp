@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/S3LocationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API S3LocationDescription
+  class S3LocationDescription
   {
   public:
-    S3LocationDescription();
-    S3LocationDescription(Aws::Utils::Json::JsonView jsonValue);
-    S3LocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API S3LocationDescription();
+    AWS_KAFKACONNECT_API S3LocationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API S3LocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_bucketArn;
-    bool m_bucketArnHasBeenSet;
+    bool m_bucketArnHasBeenSet = false;
 
     Aws::String m_fileKey;
-    bool m_fileKeyHasBeenSet;
+    bool m_fileKeyHasBeenSet = false;
 
     Aws::String m_objectVersion;
-    bool m_objectVersionHasBeenSet;
+    bool m_objectVersionHasBeenSet = false;
   };
 
 } // namespace Model

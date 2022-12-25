@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_DYNAMODB_API BatchExecuteStatementRequest : public DynamoDBRequest
+  class BatchExecuteStatementRequest : public DynamoDBRequest
   {
   public:
-    BatchExecuteStatementRequest();
+    AWS_DYNAMODB_API BatchExecuteStatementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchExecuteStatement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::Vector<BatchStatementRequest> m_statements;
-    bool m_statementsHasBeenSet;
+    bool m_statementsHasBeenSet = false;
 
     ReturnConsumedCapacity m_returnConsumedCapacity;
-    bool m_returnConsumedCapacityHasBeenSet;
+    bool m_returnConsumedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

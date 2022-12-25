@@ -59,7 +59,7 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -86,7 +86,7 @@ InputSecurityGroup& InputSecurityGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("whitelistRules"))
   {
-    Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
+    Aws::Utils::Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
     for(unsigned whitelistRulesIndex = 0; whitelistRulesIndex < whitelistRulesJsonList.GetLength(); ++whitelistRulesIndex)
     {
       m_whitelistRules.push_back(whitelistRulesJsonList[whitelistRulesIndex].AsObject());
@@ -115,7 +115,7 @@ JsonValue InputSecurityGroup::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -142,7 +142,7 @@ JsonValue InputSecurityGroup::Jsonize() const
 
   if(m_whitelistRulesHasBeenSet)
   {
-   Array<JsonValue> whitelistRulesJsonList(m_whitelistRules.size());
+   Aws::Utils::Array<JsonValue> whitelistRulesJsonList(m_whitelistRules.size());
    for(unsigned whitelistRulesIndex = 0; whitelistRulesIndex < whitelistRulesJsonList.GetLength(); ++whitelistRulesIndex)
    {
      whitelistRulesJsonList[whitelistRulesIndex].AsObject(m_whitelistRules[whitelistRulesIndex].Jsonize());

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Shard">AWS API
    * Reference</a></p>
    */
-  class AWS_MEMORYDB_API Shard
+  class Shard
   {
   public:
-    Shard();
-    Shard(Aws::Utils::Json::JsonView jsonValue);
-    Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Shard();
+    AWS_MEMORYDB_API Shard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::Vector<Node> m_nodes;
-    bool m_nodesHasBeenSet;
+    bool m_nodesHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
   };
 
 } // namespace Model

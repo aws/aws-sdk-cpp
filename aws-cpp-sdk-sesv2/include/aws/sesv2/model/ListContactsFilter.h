@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListContactsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListContactsFilter
+  class ListContactsFilter
   {
   public:
-    ListContactsFilter();
-    ListContactsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListContactsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ListContactsFilter();
+    AWS_SESV2_API ListContactsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ListContactsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SubscriptionStatus m_filteredStatus;
-    bool m_filteredStatusHasBeenSet;
+    bool m_filteredStatusHasBeenSet = false;
 
     TopicFilter m_topicFilter;
-    bool m_topicFilterHasBeenSet;
+    bool m_topicFilterHasBeenSet = false;
   };
 
 } // namespace Model

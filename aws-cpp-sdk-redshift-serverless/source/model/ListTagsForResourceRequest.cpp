@@ -33,7 +33,7 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListTagsForResource"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListTagsForResource"));
   return headers;
 
 }

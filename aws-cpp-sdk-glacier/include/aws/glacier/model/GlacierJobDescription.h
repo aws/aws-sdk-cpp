@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GlacierJobDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API GlacierJobDescription
+  class GlacierJobDescription
   {
   public:
-    GlacierJobDescription();
-    GlacierJobDescription(Aws::Utils::Json::JsonView jsonValue);
-    GlacierJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API GlacierJobDescription();
+    AWS_GLACIER_API GlacierJobDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API GlacierJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1012,67 +1012,67 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobDescription;
-    bool m_jobDescriptionHasBeenSet;
+    bool m_jobDescriptionHasBeenSet = false;
 
     ActionCode m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_archiveId;
-    bool m_archiveIdHasBeenSet;
+    bool m_archiveIdHasBeenSet = false;
 
     Aws::String m_vaultARN;
-    bool m_vaultARNHasBeenSet;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
 
     StatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     long long m_archiveSizeInBytes;
-    bool m_archiveSizeInBytesHasBeenSet;
+    bool m_archiveSizeInBytesHasBeenSet = false;
 
     long long m_inventorySizeInBytes;
-    bool m_inventorySizeInBytesHasBeenSet;
+    bool m_inventorySizeInBytesHasBeenSet = false;
 
     Aws::String m_sNSTopic;
-    bool m_sNSTopicHasBeenSet;
+    bool m_sNSTopicHasBeenSet = false;
 
     Aws::String m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     Aws::String m_sHA256TreeHash;
-    bool m_sHA256TreeHashHasBeenSet;
+    bool m_sHA256TreeHashHasBeenSet = false;
 
     Aws::String m_archiveSHA256TreeHash;
-    bool m_archiveSHA256TreeHashHasBeenSet;
+    bool m_archiveSHA256TreeHashHasBeenSet = false;
 
     Aws::String m_retrievalByteRange;
-    bool m_retrievalByteRangeHasBeenSet;
+    bool m_retrievalByteRangeHasBeenSet = false;
 
     Aws::String m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
 
     InventoryRetrievalJobDescription m_inventoryRetrievalParameters;
-    bool m_inventoryRetrievalParametersHasBeenSet;
+    bool m_inventoryRetrievalParametersHasBeenSet = false;
 
     Aws::String m_jobOutputPath;
-    bool m_jobOutputPathHasBeenSet;
+    bool m_jobOutputPathHasBeenSet = false;
 
     SelectParameters m_selectParameters;
-    bool m_selectParametersHasBeenSet;
+    bool m_selectParametersHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
   };
 
 } // namespace Model

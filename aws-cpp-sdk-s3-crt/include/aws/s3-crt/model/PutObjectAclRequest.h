@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API PutObjectAclRequest : public S3CrtRequest
+  class PutObjectAclRequest : public S3CrtRequest
   {
   public:
-    PutObjectAclRequest();
+    AWS_S3CRT_API PutObjectAclRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutObjectAcl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CRT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    Aws::String GetChecksumAlgorithmName() const override;
+    AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a
@@ -979,49 +983,49 @@ namespace Model
   private:
 
     ObjectCannedACL m_aCL;
-    bool m_aCLHasBeenSet;
+    bool m_aCLHasBeenSet = false;
 
     AccessControlPolicy m_accessControlPolicy;
-    bool m_accessControlPolicyHasBeenSet;
+    bool m_accessControlPolicyHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
+    bool m_contentMD5HasBeenSet = false;
 
     ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet;
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_grantFullControl;
-    bool m_grantFullControlHasBeenSet;
+    bool m_grantFullControlHasBeenSet = false;
 
     Aws::String m_grantRead;
-    bool m_grantReadHasBeenSet;
+    bool m_grantReadHasBeenSet = false;
 
     Aws::String m_grantReadACP;
-    bool m_grantReadACPHasBeenSet;
+    bool m_grantReadACPHasBeenSet = false;
 
     Aws::String m_grantWrite;
-    bool m_grantWriteHasBeenSet;
+    bool m_grantWriteHasBeenSet = false;
 
     Aws::String m_grantWriteACP;
-    bool m_grantWriteACPHasBeenSet;
+    bool m_grantWriteACPHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API CreateFunctionDefinitionVersionRequest : public GreengrassRequest
+  class CreateFunctionDefinitionVersionRequest : public GreengrassRequest
   {
   public:
-    CreateFunctionDefinitionVersionRequest();
+    AWS_GREENGRASS_API CreateFunctionDefinitionVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFunctionDefinitionVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GREENGRASS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_amznClientToken;
-    bool m_amznClientTokenHasBeenSet;
+    bool m_amznClientTokenHasBeenSet = false;
 
     FunctionDefaultConfig m_defaultConfig;
-    bool m_defaultConfigHasBeenSet;
+    bool m_defaultConfigHasBeenSet = false;
 
     Aws::String m_functionDefinitionId;
-    bool m_functionDefinitionIdHasBeenSet;
+    bool m_functionDefinitionIdHasBeenSet = false;
 
     Aws::Vector<Function> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
   };
 
 } // namespace Model

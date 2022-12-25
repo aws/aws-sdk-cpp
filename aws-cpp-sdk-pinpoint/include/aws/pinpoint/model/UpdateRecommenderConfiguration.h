@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API UpdateRecommenderConfiguration
+  class UpdateRecommenderConfiguration
   {
   public:
-    UpdateRecommenderConfiguration();
-    UpdateRecommenderConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateRecommenderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API UpdateRecommenderConfiguration();
+    AWS_PINPOINT_API UpdateRecommenderConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API UpdateRecommenderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -897,31 +897,31 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recommendationProviderIdType;
-    bool m_recommendationProviderIdTypeHasBeenSet;
+    bool m_recommendationProviderIdTypeHasBeenSet = false;
 
     Aws::String m_recommendationProviderRoleArn;
-    bool m_recommendationProviderRoleArnHasBeenSet;
+    bool m_recommendationProviderRoleArnHasBeenSet = false;
 
     Aws::String m_recommendationProviderUri;
-    bool m_recommendationProviderUriHasBeenSet;
+    bool m_recommendationProviderUriHasBeenSet = false;
 
     Aws::String m_recommendationTransformerUri;
-    bool m_recommendationTransformerUriHasBeenSet;
+    bool m_recommendationTransformerUriHasBeenSet = false;
 
     Aws::String m_recommendationsDisplayName;
-    bool m_recommendationsDisplayNameHasBeenSet;
+    bool m_recommendationsDisplayNameHasBeenSet = false;
 
     int m_recommendationsPerMessage;
-    bool m_recommendationsPerMessageHasBeenSet;
+    bool m_recommendationsPerMessageHasBeenSet = false;
   };
 
 } // namespace Model

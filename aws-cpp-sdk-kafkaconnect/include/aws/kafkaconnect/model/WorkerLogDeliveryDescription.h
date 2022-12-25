@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/WorkerLogDeliveryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API WorkerLogDeliveryDescription
+  class WorkerLogDeliveryDescription
   {
   public:
-    WorkerLogDeliveryDescription();
-    WorkerLogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
-    WorkerLogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API WorkerLogDeliveryDescription();
+    AWS_KAFKACONNECT_API WorkerLogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API WorkerLogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,13 +136,13 @@ namespace Model
   private:
 
     CloudWatchLogsLogDeliveryDescription m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     FirehoseLogDeliveryDescription m_firehose;
-    bool m_firehoseHasBeenSet;
+    bool m_firehoseHasBeenSet = false;
 
     S3LogDeliveryDescription m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

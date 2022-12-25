@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/GameConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API GameConfigurationDetails
+  class GameConfigurationDetails
   {
   public:
-    GameConfigurationDetails();
-    GameConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    GameConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API GameConfigurationDetails();
+    AWS_GAMESPARKS_API GameConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API GameConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::Map<Aws::String, Section> m_sections;
-    bool m_sectionsHasBeenSet;
+    bool m_sectionsHasBeenSet = false;
   };
 
 } // namespace Model

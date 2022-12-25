@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API SendAutomationSignalRequest : public SSMRequest
+  class SendAutomationSignalRequest : public SSMRequest
   {
   public:
-    SendAutomationSignalRequest();
+    AWS_SSM_API SendAutomationSignalRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendAutomationSignal"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -276,13 +276,13 @@ namespace Model
   private:
 
     Aws::String m_automationExecutionId;
-    bool m_automationExecutionIdHasBeenSet;
+    bool m_automationExecutionIdHasBeenSet = false;
 
     SignalType m_signalType;
-    bool m_signalTypeHasBeenSet;
+    bool m_signalTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

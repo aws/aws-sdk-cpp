@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Account">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Account();
+    AWS_CHIME_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -399,31 +399,31 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccountType m_accountType;
-    bool m_accountTypeHasBeenSet;
+    bool m_accountTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     License m_defaultLicense;
-    bool m_defaultLicenseHasBeenSet;
+    bool m_defaultLicenseHasBeenSet = false;
 
     Aws::Vector<License> m_supportedLicenses;
-    bool m_supportedLicensesHasBeenSet;
+    bool m_supportedLicensesHasBeenSet = false;
 
     AccountStatus m_accountStatus;
-    bool m_accountStatusHasBeenSet;
+    bool m_accountStatusHasBeenSet = false;
 
     Aws::Vector<SigninDelegateGroup> m_signinDelegateGroups;
-    bool m_signinDelegateGroupsHasBeenSet;
+    bool m_signinDelegateGroupsHasBeenSet = false;
   };
 
 } // namespace Model

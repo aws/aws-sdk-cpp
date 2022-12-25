@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RecommendationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API RecommendationItem
+  class RecommendationItem
   {
   public:
-    RecommendationItem();
-    RecommendationItem(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API RecommendationItem();
+    AWS_RESILIENCEHUB_API RecommendationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API RecommendationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     bool m_alreadyImplemented;
-    bool m_alreadyImplementedHasBeenSet;
+    bool m_alreadyImplementedHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_targetAccountId;
-    bool m_targetAccountIdHasBeenSet;
+    bool m_targetAccountIdHasBeenSet = false;
 
     Aws::String m_targetRegion;
-    bool m_targetRegionHasBeenSet;
+    bool m_targetRegionHasBeenSet = false;
   };
 
 } // namespace Model

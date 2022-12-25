@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API DescribeAgentStatusRequest : public ConnectRequest
+  class DescribeAgentStatusRequest : public ConnectRequest
   {
   public:
-    DescribeAgentStatusRequest();
+    AWS_CONNECT_API DescribeAgentStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAgentStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_agentStatusId;
-    bool m_agentStatusIdHasBeenSet;
+    bool m_agentStatusIdHasBeenSet = false;
   };
 
 } // namespace Model

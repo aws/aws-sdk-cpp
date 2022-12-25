@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIGDATA_API StartConfigurationSessionRequest : public AppConfigDataRequest
+  class StartConfigurationSessionRequest : public AppConfigDataRequest
   {
   public:
-    StartConfigurationSessionRequest();
+    AWS_APPCONFIGDATA_API StartConfigurationSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartConfigurationSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIGDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
 
     Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet;
+    bool m_environmentIdentifierHasBeenSet = false;
 
     Aws::String m_configurationProfileIdentifier;
-    bool m_configurationProfileIdentifierHasBeenSet;
+    bool m_configurationProfileIdentifierHasBeenSet = false;
 
     int m_requiredMinimumPollIntervalInSeconds;
-    bool m_requiredMinimumPollIntervalInSecondsHasBeenSet;
+    bool m_requiredMinimumPollIntervalInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

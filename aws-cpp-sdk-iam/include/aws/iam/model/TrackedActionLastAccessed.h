@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TrackedActionLastAccessed">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API TrackedActionLastAccessed
+  class TrackedActionLastAccessed
   {
   public:
-    TrackedActionLastAccessed();
-    TrackedActionLastAccessed(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrackedActionLastAccessed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API TrackedActionLastAccessed();
+    AWS_IAM_API TrackedActionLastAccessed(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API TrackedActionLastAccessed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -122,7 +122,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedTime() const{ return m_lastAccessedTime; }
@@ -133,7 +133,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline bool LastAccessedTimeHasBeenSet() const { return m_lastAccessedTimeHasBeenSet; }
@@ -144,7 +144,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAccessedTime(const Aws::Utils::DateTime& value) { m_lastAccessedTimeHasBeenSet = true; m_lastAccessedTime = value; }
@@ -155,7 +155,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAccessedTime(Aws::Utils::DateTime&& value) { m_lastAccessedTimeHasBeenSet = true; m_lastAccessedTime = std::move(value); }
@@ -166,7 +166,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline TrackedActionLastAccessed& WithLastAccessedTime(const Aws::Utils::DateTime& value) { SetLastAccessedTime(value); return *this;}
@@ -177,7 +177,7 @@ namespace Model
      * access the tracked service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no IAM entities attempted to access the
      * service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline TrackedActionLastAccessed& WithLastAccessedTime(Aws::Utils::DateTime&& value) { SetLastAccessedTime(std::move(value)); return *this;}
@@ -188,7 +188,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline const Aws::String& GetLastAccessedRegion() const{ return m_lastAccessedRegion; }
@@ -198,7 +198,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline bool LastAccessedRegionHasBeenSet() const { return m_lastAccessedRegionHasBeenSet; }
@@ -208,7 +208,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAccessedRegion(const Aws::String& value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion = value; }
@@ -218,7 +218,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAccessedRegion(Aws::String&& value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion = std::move(value); }
@@ -228,7 +228,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAccessedRegion(const char* value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion.assign(value); }
@@ -238,7 +238,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline TrackedActionLastAccessed& WithLastAccessedRegion(const Aws::String& value) { SetLastAccessedRegion(value); return *this;}
@@ -248,7 +248,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline TrackedActionLastAccessed& WithLastAccessedRegion(Aws::String&& value) { SetLastAccessedRegion(std::move(value)); return *this;}
@@ -258,7 +258,7 @@ namespace Model
      * to access the tracked action. Amazon Web Services does not report
      * unauthenticated requests.</p> <p>This field is null if no IAM entities attempted
      * to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline TrackedActionLastAccessed& WithLastAccessedRegion(const char* value) { SetLastAccessedRegion(value); return *this;}
@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_lastAccessedEntity;
-    bool m_lastAccessedEntityHasBeenSet;
+    bool m_lastAccessedEntityHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedTime;
-    bool m_lastAccessedTimeHasBeenSet;
+    bool m_lastAccessedTimeHasBeenSet = false;
 
     Aws::String m_lastAccessedRegion;
-    bool m_lastAccessedRegionHasBeenSet;
+    bool m_lastAccessedRegionHasBeenSet = false;
   };
 
 } // namespace Model

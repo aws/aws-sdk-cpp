@@ -13,6 +13,11 @@
 #set($signerRegionOverride = "")
 #set($signerServiceNameOverride = "")
 #end
+#if($serviceModel.endpointRules)
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #set($refText = "&")
@@ -35,35 +40,35 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
+#if($serviceModel.endpointRules)
+  return ${operation.name}Outcome(MakeRequestWithEventStream(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#else
   return ${operation.name}Outcome(MakeRequestWithEventStream(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
+#if($serviceModel.endpointRules)
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#else
   return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
+#else
+#if($serviceModel.endpointRules)
+  return ${operation.name}Outcome(MakeRequest(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
   return ${operation.name}Outcome(MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #end
+#end
 }
 
-${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this, ${refText}request](){ return this->${operation.name}(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
 
-void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, ${refText}request, handler, context](){ this->${operation.name}AsyncHelper( request, handler, context ); } );
-}
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
 
-void ${className}::${operation.name}AsyncHelper(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ${operation.name}(request), context);
-}
 
 #else
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+#if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
 #if($virtualAddressingSupported || $arnEndpointSupported)
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
@@ -73,12 +78,24 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   }
   ss << computeEndpointOutcome.GetResult().endpoint;
 #end
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName));
+#elseif($operation.request)
+  return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName));
+#else
+  return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#end
+#else##-#if($serviceModel.endpointRules)
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.request)
   return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #else
   return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #end
 }
 
@@ -92,12 +109,10 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
 
 void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->${operation.name}AsyncHelper( handler, context ); } );
-}
-
-void ${className}::${operation.name}AsyncHelper(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, ${operation.name}(), context);
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, ${operation.name}(), context);
+    } );
 }
 
 #end

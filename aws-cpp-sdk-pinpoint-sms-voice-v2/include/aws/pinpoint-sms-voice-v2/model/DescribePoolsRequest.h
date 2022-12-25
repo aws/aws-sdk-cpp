@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINTSMSVOICEV2_API DescribePoolsRequest : public PinpointSMSVoiceV2Request
+  class DescribePoolsRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    DescribePoolsRequest();
+    AWS_PINPOINTSMSVOICEV2_API DescribePoolsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePools"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_poolIds;
-    bool m_poolIdsHasBeenSet;
+    bool m_poolIdsHasBeenSet = false;
 
     Aws::Vector<PoolFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

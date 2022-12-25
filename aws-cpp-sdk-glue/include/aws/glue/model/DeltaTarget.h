@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeltaTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DeltaTarget
+  class DeltaTarget
   {
   public:
-    DeltaTarget();
-    DeltaTarget(Aws::Utils::Json::JsonView jsonValue);
-    DeltaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DeltaTarget();
+    AWS_GLUE_API DeltaTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DeltaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,16 +146,48 @@ namespace Model
      */
     inline DeltaTarget& WithWriteManifest(bool value) { SetWriteManifest(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline bool GetCreateNativeDeltaTable() const{ return m_createNativeDeltaTable; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline bool CreateNativeDeltaTableHasBeenSet() const { return m_createNativeDeltaTableHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline void SetCreateNativeDeltaTable(bool value) { m_createNativeDeltaTableHasBeenSet = true; m_createNativeDeltaTable = value; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline DeltaTarget& WithCreateNativeDeltaTable(bool value) { SetCreateNativeDeltaTable(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_deltaTables;
-    bool m_deltaTablesHasBeenSet;
+    bool m_deltaTablesHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     bool m_writeManifest;
-    bool m_writeManifestHasBeenSet;
+    bool m_writeManifestHasBeenSet = false;
+
+    bool m_createNativeDeltaTable;
+    bool m_createNativeDeltaTableHasBeenSet = false;
   };
 
 } // namespace Model

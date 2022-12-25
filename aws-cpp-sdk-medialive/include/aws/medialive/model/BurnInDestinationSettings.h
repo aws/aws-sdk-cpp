@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BurnInDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BurnInDestinationSettings
+  class BurnInDestinationSettings
   {
   public:
-    BurnInDestinationSettings();
-    BurnInDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    BurnInDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BurnInDestinationSettings();
+    AWS_MEDIALIVE_API BurnInDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BurnInDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -707,55 +707,55 @@ namespace Model
   private:
 
     BurnInAlignment m_alignment;
-    bool m_alignmentHasBeenSet;
+    bool m_alignmentHasBeenSet = false;
 
     BurnInBackgroundColor m_backgroundColor;
-    bool m_backgroundColorHasBeenSet;
+    bool m_backgroundColorHasBeenSet = false;
 
     int m_backgroundOpacity;
-    bool m_backgroundOpacityHasBeenSet;
+    bool m_backgroundOpacityHasBeenSet = false;
 
     InputLocation m_font;
-    bool m_fontHasBeenSet;
+    bool m_fontHasBeenSet = false;
 
     BurnInFontColor m_fontColor;
-    bool m_fontColorHasBeenSet;
+    bool m_fontColorHasBeenSet = false;
 
     int m_fontOpacity;
-    bool m_fontOpacityHasBeenSet;
+    bool m_fontOpacityHasBeenSet = false;
 
     int m_fontResolution;
-    bool m_fontResolutionHasBeenSet;
+    bool m_fontResolutionHasBeenSet = false;
 
     Aws::String m_fontSize;
-    bool m_fontSizeHasBeenSet;
+    bool m_fontSizeHasBeenSet = false;
 
     BurnInOutlineColor m_outlineColor;
-    bool m_outlineColorHasBeenSet;
+    bool m_outlineColorHasBeenSet = false;
 
     int m_outlineSize;
-    bool m_outlineSizeHasBeenSet;
+    bool m_outlineSizeHasBeenSet = false;
 
     BurnInShadowColor m_shadowColor;
-    bool m_shadowColorHasBeenSet;
+    bool m_shadowColorHasBeenSet = false;
 
     int m_shadowOpacity;
-    bool m_shadowOpacityHasBeenSet;
+    bool m_shadowOpacityHasBeenSet = false;
 
     int m_shadowXOffset;
-    bool m_shadowXOffsetHasBeenSet;
+    bool m_shadowXOffsetHasBeenSet = false;
 
     int m_shadowYOffset;
-    bool m_shadowYOffsetHasBeenSet;
+    bool m_shadowYOffsetHasBeenSet = false;
 
     BurnInTeletextGridControl m_teletextGridControl;
-    bool m_teletextGridControlHasBeenSet;
+    bool m_teletextGridControlHasBeenSet = false;
 
     int m_xPosition;
-    bool m_xPositionHasBeenSet;
+    bool m_xPositionHasBeenSet = false;
 
     int m_yPosition;
-    bool m_yPositionHasBeenSet;
+    bool m_yPositionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MultiRegionAccessPointReport">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API MultiRegionAccessPointReport
+  class MultiRegionAccessPointReport
   {
   public:
-    MultiRegionAccessPointReport();
-    MultiRegionAccessPointReport(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MultiRegionAccessPointReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointReport();
+    AWS_S3CONTROL_API MultiRegionAccessPointReport(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -210,7 +210,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -221,7 +221,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -232,7 +232,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -254,7 +254,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -265,7 +265,7 @@ namespace Model
     /**
      * <p>The current status of the Multi-Region Access Point.</p> <p>
      * <code>CREATING</code> and <code>DELETING</code> are temporary states that exist
-     * while the request is propogating and being completed. If a Multi-Region Access
+     * while the request is propagating and being completed. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_CREATED</code>, you can retry creation or
      * send a request to delete the Multi-Region Access Point. If a Multi-Region Access
      * Point has a status of <code>PARTIALLY_DELETED</code>, you can retry a delete
@@ -325,22 +325,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     PublicAccessBlockConfiguration m_publicAccessBlock;
-    bool m_publicAccessBlockHasBeenSet;
+    bool m_publicAccessBlockHasBeenSet = false;
 
     MultiRegionAccessPointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<RegionReport> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

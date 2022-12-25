@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataViewRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API CreateDataViewRequest : public FinSpaceDataRequest
+  class CreateDataViewRequest : public FinSpaceDataRequest
   {
   public:
-    CreateDataViewRequest();
+    AWS_FINSPACEDATA_API CreateDataViewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataView"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FINSPACEDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -295,25 +295,25 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     bool m_autoUpdate;
-    bool m_autoUpdateHasBeenSet;
+    bool m_autoUpdateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sortColumns;
-    bool m_sortColumnsHasBeenSet;
+    bool m_sortColumnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionColumns;
-    bool m_partitionColumnsHasBeenSet;
+    bool m_partitionColumnsHasBeenSet = false;
 
     long long m_asOfTimestamp;
-    bool m_asOfTimestampHasBeenSet;
+    bool m_asOfTimestampHasBeenSet = false;
 
     DataViewDestinationTypeParams m_destinationTypeParams;
-    bool m_destinationTypeParamsHasBeenSet;
+    bool m_destinationTypeParamsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConnectionNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ConnectionNotification
+  class ConnectionNotification
   {
   public:
-    ConnectionNotification();
-    ConnectionNotification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConnectionNotification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConnectionNotification();
+    AWS_EC2_API ConnectionNotification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConnectionNotification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -326,25 +326,25 @@ namespace Model
   private:
 
     Aws::String m_connectionNotificationId;
-    bool m_connectionNotificationIdHasBeenSet;
+    bool m_connectionNotificationIdHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     ConnectionNotificationType m_connectionNotificationType;
-    bool m_connectionNotificationTypeHasBeenSet;
+    bool m_connectionNotificationTypeHasBeenSet = false;
 
     Aws::String m_connectionNotificationArn;
-    bool m_connectionNotificationArnHasBeenSet;
+    bool m_connectionNotificationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionEvents;
-    bool m_connectionEventsHasBeenSet;
+    bool m_connectionEventsHasBeenSet = false;
 
     ConnectionNotificationState m_connectionNotificationState;
-    bool m_connectionNotificationStateHasBeenSet;
+    bool m_connectionNotificationStateHasBeenSet = false;
   };
 
 } // namespace Model

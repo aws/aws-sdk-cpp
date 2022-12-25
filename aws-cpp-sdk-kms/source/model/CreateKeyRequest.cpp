@@ -26,7 +26,8 @@ CreateKeyRequest::CreateKeyRequest() :
     m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_multiRegion(false),
-    m_multiRegionHasBeenSet(false)
+    m_multiRegionHasBeenSet(false),
+    m_xksKeyIdHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,7 @@ Aws::String CreateKeyRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -87,6 +88,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_multiRegionHasBeenSet)
   {
    payload.WithBool("MultiRegion", m_multiRegion);
+
+  }
+
+  if(m_xksKeyIdHasBeenSet)
+  {
+   payload.WithString("XksKeyId", m_xksKeyId);
 
   }
 

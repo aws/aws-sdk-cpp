@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType
+  class LambdaConfigType
   {
   public:
-    LambdaConfigType();
-    LambdaConfigType(Aws::Utils::Json::JsonView jsonValue);
-    LambdaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API LambdaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -579,43 +579,43 @@ namespace Model
   private:
 
     Aws::String m_preSignUp;
-    bool m_preSignUpHasBeenSet;
+    bool m_preSignUpHasBeenSet = false;
 
     Aws::String m_customMessage;
-    bool m_customMessageHasBeenSet;
+    bool m_customMessageHasBeenSet = false;
 
     Aws::String m_postConfirmation;
-    bool m_postConfirmationHasBeenSet;
+    bool m_postConfirmationHasBeenSet = false;
 
     Aws::String m_preAuthentication;
-    bool m_preAuthenticationHasBeenSet;
+    bool m_preAuthenticationHasBeenSet = false;
 
     Aws::String m_postAuthentication;
-    bool m_postAuthenticationHasBeenSet;
+    bool m_postAuthenticationHasBeenSet = false;
 
     Aws::String m_defineAuthChallenge;
-    bool m_defineAuthChallengeHasBeenSet;
+    bool m_defineAuthChallengeHasBeenSet = false;
 
     Aws::String m_createAuthChallenge;
-    bool m_createAuthChallengeHasBeenSet;
+    bool m_createAuthChallengeHasBeenSet = false;
 
     Aws::String m_verifyAuthChallengeResponse;
-    bool m_verifyAuthChallengeResponseHasBeenSet;
+    bool m_verifyAuthChallengeResponseHasBeenSet = false;
 
     Aws::String m_preTokenGeneration;
-    bool m_preTokenGenerationHasBeenSet;
+    bool m_preTokenGenerationHasBeenSet = false;
 
     Aws::String m_userMigration;
-    bool m_userMigrationHasBeenSet;
+    bool m_userMigrationHasBeenSet = false;
 
     CustomSMSLambdaVersionConfigType m_customSMSSender;
-    bool m_customSMSSenderHasBeenSet;
+    bool m_customSMSSenderHasBeenSet = false;
 
     CustomEmailLambdaVersionConfigType m_customEmailSender;
-    bool m_customEmailSenderHasBeenSet;
+    bool m_customEmailSenderHasBeenSet = false;
 
     Aws::String m_kMSKeyID;
-    bool m_kMSKeyIDHasBeenSet;
+    bool m_kMSKeyIDHasBeenSet = false;
   };
 
 } // namespace Model

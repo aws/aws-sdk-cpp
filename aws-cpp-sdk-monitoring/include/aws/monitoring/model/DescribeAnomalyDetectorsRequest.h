@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API DescribeAnomalyDetectorsRequest : public CloudWatchRequest
+  class DescribeAnomalyDetectorsRequest : public CloudWatchRequest
   {
   public:
-    DescribeAnomalyDetectorsRequest();
+    AWS_CLOUDWATCH_API DescribeAnomalyDetectorsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAnomalyDetectors"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -355,22 +355,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Vector<AnomalyDetectorType> m_anomalyDetectorTypes;
-    bool m_anomalyDetectorTypesHasBeenSet;
+    bool m_anomalyDetectorTypesHasBeenSet = false;
   };
 
 } // namespace Model

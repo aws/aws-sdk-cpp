@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API GrantListEntry
+  class GrantListEntry
   {
   public:
-    GrantListEntry();
-    GrantListEntry(Aws::Utils::Json::JsonView jsonValue);
-    GrantListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API GrantListEntry();
+    AWS_KMS_API GrantListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API GrantListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -462,31 +462,31 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_grantId;
-    bool m_grantIdHasBeenSet;
+    bool m_grantIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_granteePrincipal;
-    bool m_granteePrincipalHasBeenSet;
+    bool m_granteePrincipalHasBeenSet = false;
 
     Aws::String m_retiringPrincipal;
-    bool m_retiringPrincipalHasBeenSet;
+    bool m_retiringPrincipalHasBeenSet = false;
 
     Aws::String m_issuingAccount;
-    bool m_issuingAccountHasBeenSet;
+    bool m_issuingAccountHasBeenSet = false;
 
     Aws::Vector<GrantOperation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     GrantConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
   };
 
 } // namespace Model

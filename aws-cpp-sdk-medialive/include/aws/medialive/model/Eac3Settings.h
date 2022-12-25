@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Eac3Settings
+  class Eac3Settings
   {
   public:
-    Eac3Settings();
-    Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Eac3Settings();
+    AWS_MEDIALIVE_API Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -688,64 +688,64 @@ namespace Model
   private:
 
     Eac3AttenuationControl m_attenuationControl;
-    bool m_attenuationControlHasBeenSet;
+    bool m_attenuationControlHasBeenSet = false;
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Eac3BitstreamMode m_bitstreamMode;
-    bool m_bitstreamModeHasBeenSet;
+    bool m_bitstreamModeHasBeenSet = false;
 
     Eac3CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     Eac3DcFilter m_dcFilter;
-    bool m_dcFilterHasBeenSet;
+    bool m_dcFilterHasBeenSet = false;
 
     int m_dialnorm;
-    bool m_dialnormHasBeenSet;
+    bool m_dialnormHasBeenSet = false;
 
     Eac3DrcLine m_drcLine;
-    bool m_drcLineHasBeenSet;
+    bool m_drcLineHasBeenSet = false;
 
     Eac3DrcRf m_drcRf;
-    bool m_drcRfHasBeenSet;
+    bool m_drcRfHasBeenSet = false;
 
     Eac3LfeControl m_lfeControl;
-    bool m_lfeControlHasBeenSet;
+    bool m_lfeControlHasBeenSet = false;
 
     Eac3LfeFilter m_lfeFilter;
-    bool m_lfeFilterHasBeenSet;
+    bool m_lfeFilterHasBeenSet = false;
 
     double m_loRoCenterMixLevel;
-    bool m_loRoCenterMixLevelHasBeenSet;
+    bool m_loRoCenterMixLevelHasBeenSet = false;
 
     double m_loRoSurroundMixLevel;
-    bool m_loRoSurroundMixLevelHasBeenSet;
+    bool m_loRoSurroundMixLevelHasBeenSet = false;
 
     double m_ltRtCenterMixLevel;
-    bool m_ltRtCenterMixLevelHasBeenSet;
+    bool m_ltRtCenterMixLevelHasBeenSet = false;
 
     double m_ltRtSurroundMixLevel;
-    bool m_ltRtSurroundMixLevelHasBeenSet;
+    bool m_ltRtSurroundMixLevelHasBeenSet = false;
 
     Eac3MetadataControl m_metadataControl;
-    bool m_metadataControlHasBeenSet;
+    bool m_metadataControlHasBeenSet = false;
 
     Eac3PassthroughControl m_passthroughControl;
-    bool m_passthroughControlHasBeenSet;
+    bool m_passthroughControlHasBeenSet = false;
 
     Eac3PhaseControl m_phaseControl;
-    bool m_phaseControlHasBeenSet;
+    bool m_phaseControlHasBeenSet = false;
 
     Eac3StereoDownmix m_stereoDownmix;
-    bool m_stereoDownmixHasBeenSet;
+    bool m_stereoDownmixHasBeenSet = false;
 
     Eac3SurroundExMode m_surroundExMode;
-    bool m_surroundExModeHasBeenSet;
+    bool m_surroundExModeHasBeenSet = false;
 
     Eac3SurroundMode m_surroundMode;
-    bool m_surroundModeHasBeenSet;
+    bool m_surroundModeHasBeenSet = false;
   };
 
 } // namespace Model

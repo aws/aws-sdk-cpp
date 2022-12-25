@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/FileBatchJobIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier
+  class FileBatchJobIdentifier
   {
   public:
-    FileBatchJobIdentifier();
-    FileBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    FileBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API FileBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::String m_folderPath;
-    bool m_folderPathHasBeenSet;
+    bool m_folderPathHasBeenSet = false;
   };
 
 } // namespace Model

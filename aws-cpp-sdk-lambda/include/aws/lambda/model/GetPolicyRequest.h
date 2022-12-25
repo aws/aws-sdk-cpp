@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAMBDA_API GetPolicyRequest : public LambdaRequest
+  class GetPolicyRequest : public LambdaRequest
   {
   public:
-    GetPolicyRequest();
+    AWS_LAMBDA_API GetPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,18 +33,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -54,11 +54,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -68,11 +68,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -82,11 +82,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -96,11 +96,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -110,11 +110,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -124,11 +124,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -138,11 +138,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
-     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
-     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> -
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is
@@ -194,10 +194,10 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

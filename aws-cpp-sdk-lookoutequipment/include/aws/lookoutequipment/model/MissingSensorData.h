@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/MissingSensorData">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API MissingSensorData
+  class MissingSensorData
   {
   public:
-    MissingSensorData();
-    MissingSensorData(Aws::Utils::Json::JsonView jsonValue);
-    MissingSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API MissingSensorData();
+    AWS_LOOKOUTEQUIPMENT_API MissingSensorData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API MissingSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_affectedSensorCount;
-    bool m_affectedSensorCountHasBeenSet;
+    bool m_affectedSensorCountHasBeenSet = false;
 
     int m_totalNumberOfMissingValues;
-    bool m_totalNumberOfMissingValuesHasBeenSet;
+    bool m_totalNumberOfMissingValuesHasBeenSet = false;
   };
 
 } // namespace Model

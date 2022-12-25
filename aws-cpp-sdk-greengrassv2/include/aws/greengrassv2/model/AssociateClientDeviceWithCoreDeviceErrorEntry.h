@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateClientDeviceWithCoreDeviceErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceErrorEntry
+  class AssociateClientDeviceWithCoreDeviceErrorEntry
   {
   public:
-    AssociateClientDeviceWithCoreDeviceErrorEntry();
-    AssociateClientDeviceWithCoreDeviceErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    AssociateClientDeviceWithCoreDeviceErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceErrorEntry();
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ Aws::String ListReviewPolicyResultsForHITRequest::SerializePayload() const
 
   if(m_policyLevelsHasBeenSet)
   {
-   Array<JsonValue> policyLevelsJsonList(m_policyLevels.size());
+   Aws::Utils::Array<JsonValue> policyLevelsJsonList(m_policyLevels.size());
    for(unsigned policyLevelsIndex = 0; policyLevelsIndex < policyLevelsJsonList.GetLength(); ++policyLevelsIndex)
    {
      policyLevelsJsonList[policyLevelsIndex].AsString(ReviewPolicyLevelMapper::GetNameForReviewPolicyLevel(m_policyLevels[policyLevelsIndex]));

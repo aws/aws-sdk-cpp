@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_S3OUTPOSTS_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_S3OUTPOSTS_API Endpoint();
+    AWS_S3OUTPOSTS_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_S3OUTPOSTS_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_S3OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,37 +477,37 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_outpostsId;
-    bool m_outpostsIdHasBeenSet;
+    bool m_outpostsIdHasBeenSet = false;
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     EndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet;
+    bool m_securityGroupIdHasBeenSet = false;
 
     EndpointAccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
   };
 
 } // namespace Model

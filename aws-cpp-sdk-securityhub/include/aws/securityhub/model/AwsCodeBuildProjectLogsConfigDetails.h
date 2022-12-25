@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectLogsConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigDetails
+  class AwsCodeBuildProjectLogsConfigDetails
   {
   public:
-    AwsCodeBuildProjectLogsConfigDetails();
-    AwsCodeBuildProjectLogsConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectLogsConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     AwsCodeBuildProjectLogsConfigS3LogsDetails m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
   };
 
 } // namespace Model

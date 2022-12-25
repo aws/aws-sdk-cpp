@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DevEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DevEndpoint
+  class DevEndpoint
   {
   public:
-    DevEndpoint();
-    DevEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    DevEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DevEndpoint();
+    AWS_GLUE_API DevEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DevEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -732,42 +732,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline DevEndpoint& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline DevEndpoint& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+     * <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code>
+     * is located.</p>
      */
     inline DevEndpoint& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -1457,79 +1465,79 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_yarnEndpointAddress;
-    bool m_yarnEndpointAddressHasBeenSet;
+    bool m_yarnEndpointAddressHasBeenSet = false;
 
     Aws::String m_privateAddress;
-    bool m_privateAddressHasBeenSet;
+    bool m_privateAddressHasBeenSet = false;
 
     int m_zeppelinRemoteSparkInterpreterPort;
-    bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet;
+    bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet = false;
 
     Aws::String m_publicAddress;
-    bool m_publicAddressHasBeenSet;
+    bool m_publicAddressHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_extraPythonLibsS3Path;
-    bool m_extraPythonLibsS3PathHasBeenSet;
+    bool m_extraPythonLibsS3PathHasBeenSet = false;
 
     Aws::String m_extraJarsS3Path;
-    bool m_extraJarsS3PathHasBeenSet;
+    bool m_extraJarsS3PathHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_lastUpdateStatus;
-    bool m_lastUpdateStatusHasBeenSet;
+    bool m_lastUpdateStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimestamp;
-    bool m_lastModifiedTimestampHasBeenSet;
+    bool m_lastModifiedTimestampHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_publicKeys;
-    bool m_publicKeysHasBeenSet;
+    bool m_publicKeysHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_arguments;
-    bool m_argumentsHasBeenSet;
+    bool m_argumentsHasBeenSet = false;
   };
 
 } // namespace Model

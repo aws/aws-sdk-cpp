@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API AcceptInvitationRequest : public Macie2Request
+  class AcceptInvitationRequest : public Macie2Request
   {
   public:
-    AcceptInvitationRequest();
+    AWS_MACIE2_API AcceptInvitationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptInvitation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_administratorAccountId;
-    bool m_administratorAccountIdHasBeenSet;
+    bool m_administratorAccountIdHasBeenSet = false;
 
     Aws::String m_invitationId;
-    bool m_invitationIdHasBeenSet;
+    bool m_invitationIdHasBeenSet = false;
 
     Aws::String m_masterAccount;
-    bool m_masterAccountHasBeenSet;
+    bool m_masterAccountHasBeenSet = false;
   };
 
 } // namespace Model

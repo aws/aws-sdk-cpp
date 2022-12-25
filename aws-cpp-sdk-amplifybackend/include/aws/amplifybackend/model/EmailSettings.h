@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/EmailSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API EmailSettings
+  class EmailSettings
   {
   public:
-    EmailSettings();
-    EmailSettings(Aws::Utils::Json::JsonView jsonValue);
-    EmailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API EmailSettings();
+    AWS_AMPLIFYBACKEND_API EmailSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API EmailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Aws::String m_emailSubject;
-    bool m_emailSubjectHasBeenSet;
+    bool m_emailSubjectHasBeenSet = false;
   };
 
 } // namespace Model

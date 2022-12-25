@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnError">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ColumnError
+  class ColumnError
   {
   public:
-    ColumnError();
-    ColumnError(Aws::Utils::Json::JsonView jsonValue);
-    ColumnError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ColumnError();
+    AWS_GLUE_API ColumnError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ColumnError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

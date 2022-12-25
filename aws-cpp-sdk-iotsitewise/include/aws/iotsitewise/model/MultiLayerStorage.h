@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/MultiLayerStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API MultiLayerStorage
+  class MultiLayerStorage
   {
   public:
-    MultiLayerStorage();
-    MultiLayerStorage(Aws::Utils::Json::JsonView jsonValue);
-    MultiLayerStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API MultiLayerStorage();
+    AWS_IOTSITEWISE_API MultiLayerStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API MultiLayerStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     CustomerManagedS3Storage m_customerManagedS3Storage;
-    bool m_customerManagedS3StorageHasBeenSet;
+    bool m_customerManagedS3StorageHasBeenSet = false;
   };
 
 } // namespace Model

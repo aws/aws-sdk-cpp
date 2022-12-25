@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpRouteMatch
+  class HttpRouteMatch
   {
   public:
-    HttpRouteMatch();
-    HttpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    HttpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpRouteMatch();
+    AWS_APPMESH_API HttpRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,6 +145,27 @@ namespace Model
      * <p>The client request path to match on.</p>
      */
     inline HttpRouteMatch& WithPath(HttpPathMatch&& value) { SetPath(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline HttpRouteMatch& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
@@ -308,22 +329,25 @@ namespace Model
   private:
 
     Aws::Vector<HttpRouteHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
 
     HttpMethod m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     HttpPathMatch m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<HttpQueryParameter> m_queryParameters;
-    bool m_queryParametersHasBeenSet;
+    bool m_queryParametersHasBeenSet = false;
 
     HttpScheme m_scheme;
-    bool m_schemeHasBeenSet;
+    bool m_schemeHasBeenSet = false;
   };
 
 } // namespace Model

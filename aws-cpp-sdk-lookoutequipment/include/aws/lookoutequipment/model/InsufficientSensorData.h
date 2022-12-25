@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InsufficientSensorData">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData
+  class InsufficientSensorData
   {
   public:
-    InsufficientSensorData();
-    InsufficientSensorData(Aws::Utils::Json::JsonView jsonValue);
-    InsufficientSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData();
+    AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InsufficientSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     MissingCompleteSensorData m_missingCompleteSensorData;
-    bool m_missingCompleteSensorDataHasBeenSet;
+    bool m_missingCompleteSensorDataHasBeenSet = false;
 
     SensorsWithShortDateRange m_sensorsWithShortDateRange;
-    bool m_sensorsWithShortDateRangeHasBeenSet;
+    bool m_sensorsWithShortDateRangeHasBeenSet = false;
   };
 
 } // namespace Model

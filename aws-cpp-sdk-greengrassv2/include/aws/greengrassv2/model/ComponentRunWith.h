@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentRunWith">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentRunWith
+  class ComponentRunWith
   {
   public:
-    ComponentRunWith();
-    ComponentRunWith(Aws::Utils::Json::JsonView jsonValue);
-    ComponentRunWith& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentRunWith();
+    AWS_GREENGRASSV2_API ComponentRunWith(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentRunWith& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -322,13 +322,13 @@ namespace Model
   private:
 
     Aws::String m_posixUser;
-    bool m_posixUserHasBeenSet;
+    bool m_posixUserHasBeenSet = false;
 
     SystemResourceLimits m_systemResourceLimits;
-    bool m_systemResourceLimitsHasBeenSet;
+    bool m_systemResourceLimitsHasBeenSet = false;
 
     Aws::String m_windowsUser;
-    bool m_windowsUserHasBeenSet;
+    bool m_windowsUserHasBeenSet = false;
   };
 
 } // namespace Model

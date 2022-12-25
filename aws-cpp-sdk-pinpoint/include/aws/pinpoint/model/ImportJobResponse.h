@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ImportJobResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ImportJobResponse
+  class ImportJobResponse
   {
   public:
-    ImportJobResponse();
-    ImportJobResponse(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ImportJobResponse();
+    AWS_PINPOINT_API ImportJobResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ImportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -514,43 +514,43 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     int m_completedPieces;
-    bool m_completedPiecesHasBeenSet;
+    bool m_completedPiecesHasBeenSet = false;
 
     Aws::String m_completionDate;
-    bool m_completionDateHasBeenSet;
+    bool m_completionDateHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     ImportJobResource m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     int m_failedPieces;
-    bool m_failedPiecesHasBeenSet;
+    bool m_failedPiecesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_failures;
-    bool m_failuresHasBeenSet;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     int m_totalFailures;
-    bool m_totalFailuresHasBeenSet;
+    bool m_totalFailuresHasBeenSet = false;
 
     int m_totalPieces;
-    bool m_totalPiecesHasBeenSet;
+    bool m_totalPiecesHasBeenSet = false;
 
     int m_totalProcessed;
-    bool m_totalProcessedHasBeenSet;
+    bool m_totalProcessedHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

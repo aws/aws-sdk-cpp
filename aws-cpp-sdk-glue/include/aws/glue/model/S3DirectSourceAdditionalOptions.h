@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3DirectSourceAdditionalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3DirectSourceAdditionalOptions
+  class S3DirectSourceAdditionalOptions
   {
   public:
-    S3DirectSourceAdditionalOptions();
-    S3DirectSourceAdditionalOptions(Aws::Utils::Json::JsonView jsonValue);
-    S3DirectSourceAdditionalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3DirectSourceAdditionalOptions();
+    AWS_GLUE_API S3DirectSourceAdditionalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3DirectSourceAdditionalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,16 +152,16 @@ namespace Model
   private:
 
     long long m_boundedSize;
-    bool m_boundedSizeHasBeenSet;
+    bool m_boundedSizeHasBeenSet = false;
 
     long long m_boundedFiles;
-    bool m_boundedFilesHasBeenSet;
+    bool m_boundedFilesHasBeenSet = false;
 
     bool m_enableSamplePath;
-    bool m_enableSamplePathHasBeenSet;
+    bool m_enableSamplePathHasBeenSet = false;
 
     Aws::String m_samplePath;
-    bool m_samplePathHasBeenSet;
+    bool m_samplePathHasBeenSet = false;
   };
 
 } // namespace Model

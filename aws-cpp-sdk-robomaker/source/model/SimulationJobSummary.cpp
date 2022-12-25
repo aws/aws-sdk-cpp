@@ -79,7 +79,7 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("simulationApplicationNames"))
   {
-    Array<JsonView> simulationApplicationNamesJsonList = jsonValue.GetArray("simulationApplicationNames");
+    Aws::Utils::Array<JsonView> simulationApplicationNamesJsonList = jsonValue.GetArray("simulationApplicationNames");
     for(unsigned simulationApplicationNamesIndex = 0; simulationApplicationNamesIndex < simulationApplicationNamesJsonList.GetLength(); ++simulationApplicationNamesIndex)
     {
       m_simulationApplicationNames.push_back(simulationApplicationNamesJsonList[simulationApplicationNamesIndex].AsString());
@@ -89,7 +89,7 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("robotApplicationNames"))
   {
-    Array<JsonView> robotApplicationNamesJsonList = jsonValue.GetArray("robotApplicationNames");
+    Aws::Utils::Array<JsonView> robotApplicationNamesJsonList = jsonValue.GetArray("robotApplicationNames");
     for(unsigned robotApplicationNamesIndex = 0; robotApplicationNamesIndex < robotApplicationNamesJsonList.GetLength(); ++robotApplicationNamesIndex)
     {
       m_robotApplicationNames.push_back(robotApplicationNamesJsonList[robotApplicationNamesIndex].AsString());
@@ -99,7 +99,7 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dataSourceNames"))
   {
-    Array<JsonView> dataSourceNamesJsonList = jsonValue.GetArray("dataSourceNames");
+    Aws::Utils::Array<JsonView> dataSourceNamesJsonList = jsonValue.GetArray("dataSourceNames");
     for(unsigned dataSourceNamesIndex = 0; dataSourceNamesIndex < dataSourceNamesJsonList.GetLength(); ++dataSourceNamesIndex)
     {
       m_dataSourceNames.push_back(dataSourceNamesJsonList[dataSourceNamesIndex].AsString());
@@ -145,7 +145,7 @@ JsonValue SimulationJobSummary::Jsonize() const
 
   if(m_simulationApplicationNamesHasBeenSet)
   {
-   Array<JsonValue> simulationApplicationNamesJsonList(m_simulationApplicationNames.size());
+   Aws::Utils::Array<JsonValue> simulationApplicationNamesJsonList(m_simulationApplicationNames.size());
    for(unsigned simulationApplicationNamesIndex = 0; simulationApplicationNamesIndex < simulationApplicationNamesJsonList.GetLength(); ++simulationApplicationNamesIndex)
    {
      simulationApplicationNamesJsonList[simulationApplicationNamesIndex].AsString(m_simulationApplicationNames[simulationApplicationNamesIndex]);
@@ -156,7 +156,7 @@ JsonValue SimulationJobSummary::Jsonize() const
 
   if(m_robotApplicationNamesHasBeenSet)
   {
-   Array<JsonValue> robotApplicationNamesJsonList(m_robotApplicationNames.size());
+   Aws::Utils::Array<JsonValue> robotApplicationNamesJsonList(m_robotApplicationNames.size());
    for(unsigned robotApplicationNamesIndex = 0; robotApplicationNamesIndex < robotApplicationNamesJsonList.GetLength(); ++robotApplicationNamesIndex)
    {
      robotApplicationNamesJsonList[robotApplicationNamesIndex].AsString(m_robotApplicationNames[robotApplicationNamesIndex]);
@@ -167,7 +167,7 @@ JsonValue SimulationJobSummary::Jsonize() const
 
   if(m_dataSourceNamesHasBeenSet)
   {
-   Array<JsonValue> dataSourceNamesJsonList(m_dataSourceNames.size());
+   Aws::Utils::Array<JsonValue> dataSourceNamesJsonList(m_dataSourceNames.size());
    for(unsigned dataSourceNamesIndex = 0; dataSourceNamesIndex < dataSourceNamesJsonList.GetLength(); ++dataSourceNamesIndex)
    {
      dataSourceNamesJsonList[dataSourceNamesIndex].AsString(m_dataSourceNames[dataSourceNamesIndex]);

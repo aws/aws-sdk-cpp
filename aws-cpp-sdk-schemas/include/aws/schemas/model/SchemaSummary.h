@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SchemaSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEMAS_API SchemaSummary
+  class SchemaSummary
   {
   public:
-    SchemaSummary();
-    SchemaSummary(Aws::Utils::Json::JsonView jsonValue);
-    SchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SchemaSummary();
+    AWS_SCHEMAS_API SchemaSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     long long m_versionCount;
-    bool m_versionCountHasBeenSet;
+    bool m_versionCountHasBeenSet = false;
   };
 
 } // namespace Model

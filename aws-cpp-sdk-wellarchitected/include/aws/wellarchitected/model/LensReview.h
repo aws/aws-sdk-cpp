@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/LensReview">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API LensReview
+  class LensReview
   {
   public:
-    LensReview();
-    LensReview(Aws::Utils::Json::JsonView jsonValue);
-    LensReview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API LensReview();
+    AWS_WELLARCHITECTED_API LensReview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API LensReview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -327,34 +327,34 @@ namespace Model
   private:
 
     Aws::String m_lensAlias;
-    bool m_lensAliasHasBeenSet;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
-    bool m_lensArnHasBeenSet;
+    bool m_lensArnHasBeenSet = false;
 
     Aws::String m_lensVersion;
-    bool m_lensVersionHasBeenSet;
+    bool m_lensVersionHasBeenSet = false;
 
     Aws::String m_lensName;
-    bool m_lensNameHasBeenSet;
+    bool m_lensNameHasBeenSet = false;
 
     LensStatus m_lensStatus;
-    bool m_lensStatusHasBeenSet;
+    bool m_lensStatusHasBeenSet = false;
 
     Aws::Vector<PillarReviewSummary> m_pillarReviewSummaries;
-    bool m_pillarReviewSummariesHasBeenSet;
+    bool m_pillarReviewSummariesHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;
-    bool m_riskCountsHasBeenSet;
+    bool m_riskCountsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

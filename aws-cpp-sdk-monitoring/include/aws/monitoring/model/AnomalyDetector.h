@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AnomalyDetector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API AnomalyDetector
+  class AnomalyDetector
   {
   public:
-    AnomalyDetector();
-    AnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AnomalyDetector();
+    AWS_CLOUDWATCH_API AnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     AnomalyDetectorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     AnomalyDetectorStateValue m_stateValue;
-    bool m_stateValueHasBeenSet;
+    bool m_stateValueHasBeenSet = false;
 
     SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-    bool m_singleMetricAnomalyDetectorHasBeenSet;
+    bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
     MetricMathAnomalyDetector m_metricMathAnomalyDetector;
-    bool m_metricMathAnomalyDetectorHasBeenSet;
+    bool m_metricMathAnomalyDetectorHasBeenSet = false;
   };
 
 } // namespace Model

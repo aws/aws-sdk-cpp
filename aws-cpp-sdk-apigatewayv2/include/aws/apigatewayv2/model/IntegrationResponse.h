@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/IntegrationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API IntegrationResponse
+  class IntegrationResponse
   {
   public:
-    IntegrationResponse();
-    IntegrationResponse(Aws::Utils::Json::JsonView jsonValue);
-    IntegrationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API IntegrationResponse();
+    AWS_APIGATEWAYV2_API IntegrationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API IntegrationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -525,22 +525,22 @@ namespace Model
   private:
 
     ContentHandlingStrategy m_contentHandlingStrategy;
-    bool m_contentHandlingStrategyHasBeenSet;
+    bool m_contentHandlingStrategyHasBeenSet = false;
 
     Aws::String m_integrationResponseId;
-    bool m_integrationResponseIdHasBeenSet;
+    bool m_integrationResponseIdHasBeenSet = false;
 
     Aws::String m_integrationResponseKey;
-    bool m_integrationResponseKeyHasBeenSet;
+    bool m_integrationResponseKeyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
 
     Aws::String m_templateSelectionExpression;
-    bool m_templateSelectionExpressionHasBeenSet;
+    bool m_templateSelectionExpressionHasBeenSet = false;
   };
 
 } // namespace Model

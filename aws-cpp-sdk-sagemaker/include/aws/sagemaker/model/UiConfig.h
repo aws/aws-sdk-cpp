@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UiConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UiConfig
+  class UiConfig
   {
   public:
-    UiConfig();
-    UiConfig(Aws::Utils::Json::JsonView jsonValue);
-    UiConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UiConfig();
+    AWS_SAGEMAKER_API UiConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UiConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -406,10 +406,10 @@ namespace Model
   private:
 
     Aws::String m_uiTemplateS3Uri;
-    bool m_uiTemplateS3UriHasBeenSet;
+    bool m_uiTemplateS3UriHasBeenSet = false;
 
     Aws::String m_humanTaskUiArn;
-    bool m_humanTaskUiArnHasBeenSet;
+    bool m_humanTaskUiArnHasBeenSet = false;
   };
 
 } // namespace Model

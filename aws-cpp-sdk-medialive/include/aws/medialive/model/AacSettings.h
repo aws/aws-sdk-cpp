@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AacSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AacSettings
+  class AacSettings
   {
   public:
-    AacSettings();
-    AacSettings(Aws::Utils::Json::JsonView jsonValue);
-    AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AacSettings();
+    AWS_MEDIALIVE_API AacSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -386,31 +386,31 @@ Leave set to "normal" when input does not contain pre-mixed
   private:
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     AacCodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     AacInputType m_inputType;
-    bool m_inputTypeHasBeenSet;
+    bool m_inputTypeHasBeenSet = false;
 
     AacProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     AacRateControlMode m_rateControlMode;
-    bool m_rateControlModeHasBeenSet;
+    bool m_rateControlModeHasBeenSet = false;
 
     AacRawFormat m_rawFormat;
-    bool m_rawFormatHasBeenSet;
+    bool m_rawFormatHasBeenSet = false;
 
     double m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     AacSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     AacVbrQuality m_vbrQuality;
-    bool m_vbrQualityHasBeenSet;
+    bool m_vbrQualityHasBeenSet = false;
   };
 
 } // namespace Model

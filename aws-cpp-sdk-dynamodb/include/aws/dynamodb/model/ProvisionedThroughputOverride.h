@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughputOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ProvisionedThroughputOverride
+  class ProvisionedThroughputOverride
   {
   public:
-    ProvisionedThroughputOverride();
-    ProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ProvisionedThroughputOverride();
+    AWS_DYNAMODB_API ProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

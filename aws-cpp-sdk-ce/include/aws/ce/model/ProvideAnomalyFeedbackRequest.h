@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API ProvideAnomalyFeedbackRequest : public CostExplorerRequest
+  class ProvideAnomalyFeedbackRequest : public CostExplorerRequest
   {
   public:
-    ProvideAnomalyFeedbackRequest();
+    AWS_COSTEXPLORER_API ProvideAnomalyFeedbackRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ProvideAnomalyFeedback"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_anomalyId;
-    bool m_anomalyIdHasBeenSet;
+    bool m_anomalyIdHasBeenSet = false;
 
     AnomalyFeedbackType m_feedback;
-    bool m_feedbackHasBeenSet;
+    bool m_feedbackHasBeenSet = false;
   };
 
 } // namespace Model

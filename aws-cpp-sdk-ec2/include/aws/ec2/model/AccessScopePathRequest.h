@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AccessScopePathRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AccessScopePathRequest
+  class AccessScopePathRequest
   {
   public:
-    AccessScopePathRequest();
-    AccessScopePathRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessScopePathRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AccessScopePathRequest();
+    AWS_EC2_API AccessScopePathRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AccessScopePathRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     PathStatementRequest m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     PathStatementRequest m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::Vector<ThroughResourcesStatementRequest> m_throughResources;
-    bool m_throughResourcesHasBeenSet;
+    bool m_throughResourcesHasBeenSet = false;
   };
 
 } // namespace Model

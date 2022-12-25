@@ -39,7 +39,7 @@ ComplianceDetails& ComplianceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NoncompliantKeys"))
   {
-    Array<JsonView> noncompliantKeysJsonList = jsonValue.GetArray("NoncompliantKeys");
+    Aws::Utils::Array<JsonView> noncompliantKeysJsonList = jsonValue.GetArray("NoncompliantKeys");
     for(unsigned noncompliantKeysIndex = 0; noncompliantKeysIndex < noncompliantKeysJsonList.GetLength(); ++noncompliantKeysIndex)
     {
       m_noncompliantKeys.push_back(noncompliantKeysJsonList[noncompliantKeysIndex].AsString());
@@ -49,7 +49,7 @@ ComplianceDetails& ComplianceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KeysWithNoncompliantValues"))
   {
-    Array<JsonView> keysWithNoncompliantValuesJsonList = jsonValue.GetArray("KeysWithNoncompliantValues");
+    Aws::Utils::Array<JsonView> keysWithNoncompliantValuesJsonList = jsonValue.GetArray("KeysWithNoncompliantValues");
     for(unsigned keysWithNoncompliantValuesIndex = 0; keysWithNoncompliantValuesIndex < keysWithNoncompliantValuesJsonList.GetLength(); ++keysWithNoncompliantValuesIndex)
     {
       m_keysWithNoncompliantValues.push_back(keysWithNoncompliantValuesJsonList[keysWithNoncompliantValuesIndex].AsString());
@@ -73,7 +73,7 @@ JsonValue ComplianceDetails::Jsonize() const
 
   if(m_noncompliantKeysHasBeenSet)
   {
-   Array<JsonValue> noncompliantKeysJsonList(m_noncompliantKeys.size());
+   Aws::Utils::Array<JsonValue> noncompliantKeysJsonList(m_noncompliantKeys.size());
    for(unsigned noncompliantKeysIndex = 0; noncompliantKeysIndex < noncompliantKeysJsonList.GetLength(); ++noncompliantKeysIndex)
    {
      noncompliantKeysJsonList[noncompliantKeysIndex].AsString(m_noncompliantKeys[noncompliantKeysIndex]);
@@ -84,7 +84,7 @@ JsonValue ComplianceDetails::Jsonize() const
 
   if(m_keysWithNoncompliantValuesHasBeenSet)
   {
-   Array<JsonValue> keysWithNoncompliantValuesJsonList(m_keysWithNoncompliantValues.size());
+   Aws::Utils::Array<JsonValue> keysWithNoncompliantValuesJsonList(m_keysWithNoncompliantValues.size());
    for(unsigned keysWithNoncompliantValuesIndex = 0; keysWithNoncompliantValuesIndex < keysWithNoncompliantValuesJsonList.GetLength(); ++keysWithNoncompliantValuesIndex)
    {
      keysWithNoncompliantValuesJsonList[keysWithNoncompliantValuesIndex].AsString(m_keysWithNoncompliantValues[keysWithNoncompliantValuesIndex]);

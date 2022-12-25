@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/OutputArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API OutputArtifact
+  class OutputArtifact
   {
   public:
-    OutputArtifact();
-    OutputArtifact(Aws::Utils::Json::JsonView jsonValue);
-    OutputArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API OutputArtifact();
+    AWS_CODEPIPELINE_API OutputArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API OutputArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,7 +129,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

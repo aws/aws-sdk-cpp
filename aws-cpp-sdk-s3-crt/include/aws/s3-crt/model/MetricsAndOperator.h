@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsAndOperator">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API MetricsAndOperator
+  class MetricsAndOperator
   {
   public:
-    MetricsAndOperator();
-    MetricsAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricsAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API MetricsAndOperator();
+    AWS_S3CRT_API MetricsAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API MetricsAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -167,13 +167,13 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
   };
 
 } // namespace Model

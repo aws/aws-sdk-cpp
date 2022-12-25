@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateClusterRequest : public RedshiftRequest
+  class CreateClusterRequest : public RedshiftRequest
   {
   public:
-    CreateClusterRequest();
+    AWS_REDSHIFT_API CreateClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -1528,7 +1528,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1538,7 +1540,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1548,7 +1552,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1558,7 +1564,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1568,7 +1576,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1578,7 +1588,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1588,7 +1600,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1598,7 +1612,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -2006,62 +2022,44 @@ namespace Model
 
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) when it is created. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline CreateClusterRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
@@ -2166,106 +2164,106 @@ namespace Model
   private:
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
-    bool m_clusterSecurityGroupsHasBeenSet;
+    bool m_clusterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_clusterParameterGroupName;
-    bool m_clusterParameterGroupNameHasBeenSet;
+    bool m_clusterParameterGroupNameHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     bool m_allowVersionUpgrade;
-    bool m_allowVersionUpgradeHasBeenSet;
+    bool m_allowVersionUpgradeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_iamRoles;
-    bool m_iamRolesHasBeenSet;
+    bool m_iamRolesHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     Aws::String m_snapshotScheduleIdentifier;
-    bool m_snapshotScheduleIdentifierHasBeenSet;
+    bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
     bool m_availabilityZoneRelocation;
-    bool m_availabilityZoneRelocationHasBeenSet;
+    bool m_availabilityZoneRelocationHasBeenSet = false;
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
-    bool m_aquaConfigurationStatusHasBeenSet;
+    bool m_aquaConfigurationStatusHasBeenSet = false;
 
     Aws::String m_defaultIamRoleArn;
-    bool m_defaultIamRoleArnHasBeenSet;
+    bool m_defaultIamRoleArnHasBeenSet = false;
 
     Aws::String m_loadSampleData;
-    bool m_loadSampleDataHasBeenSet;
+    bool m_loadSampleDataHasBeenSet = false;
   };
 
 } // namespace Model

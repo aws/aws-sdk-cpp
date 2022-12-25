@@ -11,6 +11,7 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <utility>
@@ -36,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatchRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CreateAssociationBatchRequestEntry
+  class CreateAssociationBatchRequestEntry
   {
   public:
-    CreateAssociationBatchRequestEntry();
-    CreateAssociationBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    CreateAssociationBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CreateAssociationBatchRequestEntry();
+    AWS_SSM_API CreateAssociationBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CreateAssociationBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1193,61 +1194,83 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline CreateAssociationBatchRequestEntry& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline CreateAssociationBatchRequestEntry& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_automationTargetParameterName;
-    bool m_automationTargetParameterNameHasBeenSet;
+    bool m_automationTargetParameterNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     InstanceAssociationOutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_associationName;
-    bool m_associationNameHasBeenSet;
+    bool m_associationNameHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     AssociationComplianceSeverity m_complianceSeverity;
-    bool m_complianceSeverityHasBeenSet;
+    bool m_complianceSeverityHasBeenSet = false;
 
     AssociationSyncCompliance m_syncCompliance;
-    bool m_syncComplianceHasBeenSet;
+    bool m_syncComplianceHasBeenSet = false;
 
     bool m_applyOnlyAtCronInterval;
-    bool m_applyOnlyAtCronIntervalHasBeenSet;
+    bool m_applyOnlyAtCronIntervalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_calendarNames;
-    bool m_calendarNamesHasBeenSet;
+    bool m_calendarNamesHasBeenSet = false;
 
     Aws::Vector<TargetLocation> m_targetLocations;
-    bool m_targetLocationsHasBeenSet;
+    bool m_targetLocationsHasBeenSet = false;
 
     int m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-    bool m_targetMapsHasBeenSet;
+    bool m_targetMapsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

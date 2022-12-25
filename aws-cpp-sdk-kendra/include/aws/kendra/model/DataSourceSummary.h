@@ -27,18 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>Summary information for an Amazon Kendra data source. Returned in a call to
-   * the <code>DescribeDataSource</code> API.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information for a Amazon Kendra data source.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceSummary
+  class DataSourceSummary
   {
   public:
-    DataSourceSummary();
-    DataSourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceSummary();
+    AWS_KENDRA_API DataSourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline DataSourceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline DataSourceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the data source.</p>
+     * <p>The identifier for the data source.</p>
      */
     inline DataSourceSummary& WithId(const char* value) { SetId(value); return *this;}
 
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DataSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     DataSourceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
   };
 
 } // namespace Model

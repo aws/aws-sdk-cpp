@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityPoolShortDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API IdentityPoolShortDescription
+  class IdentityPoolShortDescription
   {
   public:
-    IdentityPoolShortDescription();
-    IdentityPoolShortDescription(Aws::Utils::Json::JsonView jsonValue);
-    IdentityPoolShortDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API IdentityPoolShortDescription();
+    AWS_COGNITOIDENTITY_API IdentityPoolShortDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API IdentityPoolShortDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityPoolName;
-    bool m_identityPoolNameHasBeenSet;
+    bool m_identityPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

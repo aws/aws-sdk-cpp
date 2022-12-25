@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API GetMembersRequest : public GuardDutyRequest
+  class GetMembersRequest : public GuardDutyRequest
   {
   public:
-    GetMembersRequest();
+    AWS_GUARDDUTY_API GetMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
   };
 
 } // namespace Model

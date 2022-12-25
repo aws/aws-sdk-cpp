@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSMetadata
+  class RDSMetadata
   {
   public:
-    RDSMetadata();
-    RDSMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RDSMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSMetadata();
+    AWS_MACHINELEARNING_API RDSMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,22 +349,22 @@ namespace Model
   private:
 
     RDSDatabase m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_databaseUserName;
-    bool m_databaseUserNameHasBeenSet;
+    bool m_databaseUserNameHasBeenSet = false;
 
     Aws::String m_selectSqlQuery;
-    bool m_selectSqlQueryHasBeenSet;
+    bool m_selectSqlQueryHasBeenSet = false;
 
     Aws::String m_resourceRole;
-    bool m_resourceRoleHasBeenSet;
+    bool m_resourceRoleHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_dataPipelineId;
-    bool m_dataPipelineIdHasBeenSet;
+    bool m_dataPipelineIdHasBeenSet = false;
   };
 
 } // namespace Model

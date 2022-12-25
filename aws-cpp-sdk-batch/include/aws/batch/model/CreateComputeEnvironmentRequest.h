@@ -11,6 +11,7 @@
 #include <aws/batch/model/CEState.h>
 #include <aws/batch/model/ComputeResource.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/batch/model/EksConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -26,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironmentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API CreateComputeEnvironmentRequest : public BatchRequest
+  class CreateComputeEnvironmentRequest : public BatchRequest
   {
   public:
-    CreateComputeEnvironmentRequest();
+    AWS_BATCH_API CreateComputeEnvironmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,61 +38,61 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateComputeEnvironment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::move(value); }
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName.assign(value); }
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for your compute environment. It can be up to 128 letters long. It
-     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * <p>The name for your compute environment. It can be up to 128 characters long.
+     * It can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
@@ -352,8 +353,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -378,8 +379,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -404,8 +405,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -430,8 +431,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -456,8 +457,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -482,8 +483,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -508,8 +509,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -534,8 +535,8 @@ namespace Model
      * your account.</p>  <p>If your specified role has a path other than
      * <code>/</code>, then you must specify either the full role ARN (recommended) or
      * prefix the role name with the path. For example, if a role with the name
-     * <code>bar</code> has a path of <code>/foo/</code> then you would specify
-     * <code>/foo/bar</code> as the role name. For more information, see <a
+     * <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code>
+     * as the role name. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>  <p>Depending on how
      * you created your Batch service role, its ARN might contain the
@@ -743,28 +744,68 @@ namespace Model
      */
     inline CreateComputeEnvironmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline const EksConfiguration& GetEksConfiguration() const{ return m_eksConfiguration; }
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline void SetEksConfiguration(const EksConfiguration& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = value; }
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline void SetEksConfiguration(EksConfiguration&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline CreateComputeEnvironmentRequest& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the Amazon EKS cluster that supports the compute
+     * environment.</p>
+     */
+    inline CreateComputeEnvironmentRequest& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_computeEnvironmentName;
-    bool m_computeEnvironmentNameHasBeenSet;
+    bool m_computeEnvironmentNameHasBeenSet = false;
 
     CEType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CEState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_unmanagedvCpus;
-    bool m_unmanagedvCpusHasBeenSet;
+    bool m_unmanagedvCpusHasBeenSet = false;
 
     ComputeResource m_computeResources;
-    bool m_computeResourcesHasBeenSet;
+    bool m_computeResourcesHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    EksConfiguration m_eksConfiguration;
+    bool m_eksConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

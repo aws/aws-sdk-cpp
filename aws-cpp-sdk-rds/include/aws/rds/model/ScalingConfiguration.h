@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ScalingConfiguration
+  class ScalingConfiguration
   {
   public:
-    ScalingConfiguration();
-    ScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ScalingConfiguration();
+    AWS_RDS_API ScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -367,22 +367,22 @@ namespace Model
   private:
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     bool m_autoPause;
-    bool m_autoPauseHasBeenSet;
+    bool m_autoPauseHasBeenSet = false;
 
     int m_secondsUntilAutoPause;
-    bool m_secondsUntilAutoPauseHasBeenSet;
+    bool m_secondsUntilAutoPauseHasBeenSet = false;
 
     Aws::String m_timeoutAction;
-    bool m_timeoutActionHasBeenSet;
+    bool m_timeoutActionHasBeenSet = false;
 
     int m_secondsBeforeTimeout;
-    bool m_secondsBeforeTimeoutHasBeenSet;
+    bool m_secondsBeforeTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

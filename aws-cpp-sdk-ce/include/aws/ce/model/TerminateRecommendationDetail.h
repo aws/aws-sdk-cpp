@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TerminateRecommendationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API TerminateRecommendationDetail
+  class TerminateRecommendationDetail
   {
   public:
-    TerminateRecommendationDetail();
-    TerminateRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
-    TerminateRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API TerminateRecommendationDetail();
+    AWS_COSTEXPLORER_API TerminateRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API TerminateRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

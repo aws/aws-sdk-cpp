@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 PutRecordRequest::PutRecordRequest() : 
     m_featureGroupNameHasBeenSet(false),
-    m_recordHasBeenSet(false)
+    m_recordHasBeenSet(false),
+    m_targetStoresHasBeenSet(false)
 {
 }
 
@@ -24,12 +25,23 @@ Aws::String PutRecordRequest::SerializePayload() const
 
   if(m_recordHasBeenSet)
   {
-   Array<JsonValue> recordJsonList(m_record.size());
+   Aws::Utils::Array<JsonValue> recordJsonList(m_record.size());
    for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
    {
      recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
    }
    payload.WithArray("Record", std::move(recordJsonList));
+
+  }
+
+  if(m_targetStoresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> targetStoresJsonList(m_targetStores.size());
+   for(unsigned targetStoresIndex = 0; targetStoresIndex < targetStoresJsonList.GetLength(); ++targetStoresIndex)
+   {
+     targetStoresJsonList[targetStoresIndex].AsString(TargetStoreMapper::GetNameForTargetStore(m_targetStores[targetStoresIndex]));
+   }
+   payload.WithArray("TargetStores", std::move(targetStoresJsonList));
 
   }
 

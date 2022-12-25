@@ -5,95 +5,17 @@
 
 #pragma once
 #include <aws/importexport/ImportExport_EXPORTS.h>
-#include <aws/importexport/ImportExportErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/importexport/model/CancelJobResult.h>
-#include <aws/importexport/model/CreateJobResult.h>
-#include <aws/importexport/model/GetShippingLabelResult.h>
-#include <aws/importexport/model/GetStatusResult.h>
-#include <aws/importexport/model/ListJobsResult.h>
-#include <aws/importexport/model/UpdateJobResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/importexport/ImportExportServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ImportExport
 {
-
-namespace Model
-{
-        class CancelJobRequest;
-        class CreateJobRequest;
-        class GetShippingLabelRequest;
-        class GetStatusRequest;
-        class ListJobsRequest;
-        class UpdateJobRequest;
-
-        typedef Aws::Utils::Outcome<CancelJobResult, ImportExportError> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, ImportExportError> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<GetShippingLabelResult, ImportExportError> GetShippingLabelOutcome;
-        typedef Aws::Utils::Outcome<GetStatusResult, ImportExportError> GetStatusOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, ImportExportError> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobResult, ImportExportError> UpdateJobOutcome;
-
-        typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
-        typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
-        typedef std::future<GetShippingLabelOutcome> GetShippingLabelOutcomeCallable;
-        typedef std::future<GetStatusOutcome> GetStatusOutcomeCallable;
-        typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
-        typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
-} // namespace Model
-
-  class ImportExportClient;
-
-    typedef std::function<void(const ImportExportClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
-    typedef std::function<void(const ImportExportClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
-    typedef std::function<void(const ImportExportClient*, const Model::GetShippingLabelRequest&, const Model::GetShippingLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShippingLabelResponseReceivedHandler;
-    typedef std::function<void(const ImportExportClient*, const Model::GetStatusRequest&, const Model::GetStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatusResponseReceivedHandler;
-    typedef std::function<void(const ImportExportClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
-    typedef std::function<void(const ImportExportClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
-
   /**
    * <fullname>AWS Import/Export Service</fullname> AWS Import/Export accelerates
    * transferring large amounts of data between the AWS cloud and portable storage
@@ -102,30 +24,59 @@ namespace Model
    * bypassing the Internet. For large data sets, AWS Import/Export is often faster
    * than Internet transfer and more cost effective than upgrading your connectivity.
    */
-  class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient
+  class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ImportExportClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ImportExportClient(const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration(),
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ImportExportClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ImportExportClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ImportExportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ImportExportEndpointProviderBase> endpointProvider = Aws::MakeShared<ImportExportEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ImportExport::ImportExportClientConfiguration& clientConfiguration = Aws::ImportExport::ImportExportClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImportExportClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ImportExportClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ImportExportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ImportExportClient();
 
 
@@ -257,18 +208,14 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<ImportExportEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetShippingLabelAsyncHelper(const Model::GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStatusAsyncHelper(const Model::GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>;
+        void init(const ImportExportClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        ImportExportClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<ImportExportEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ImportExport

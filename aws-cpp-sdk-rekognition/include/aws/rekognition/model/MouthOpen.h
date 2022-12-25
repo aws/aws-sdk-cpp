@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/MouthOpen">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API MouthOpen
+  class MouthOpen
   {
   public:
-    MouthOpen();
-    MouthOpen(Aws::Utils::Json::JsonView jsonValue);
-    MouthOpen& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API MouthOpen();
+    AWS_REKOGNITION_API MouthOpen(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API MouthOpen& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

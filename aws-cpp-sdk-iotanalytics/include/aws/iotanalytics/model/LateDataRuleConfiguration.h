@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/LateDataRuleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API LateDataRuleConfiguration
+  class LateDataRuleConfiguration
   {
   public:
-    LateDataRuleConfiguration();
-    LateDataRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LateDataRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API LateDataRuleConfiguration();
+    AWS_IOTANALYTICS_API LateDataRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API LateDataRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DeltaTimeSessionWindowConfiguration m_deltaTimeSessionWindowConfiguration;
-    bool m_deltaTimeSessionWindowConfigurationHasBeenSet;
+    bool m_deltaTimeSessionWindowConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

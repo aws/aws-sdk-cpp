@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRuleMatchAttributesSourcePorts">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSourcePorts
+  class RuleGroupSourceStatelessRuleMatchAttributesSourcePorts
   {
   public:
-    RuleGroupSourceStatelessRuleMatchAttributesSourcePorts();
-    RuleGroupSourceStatelessRuleMatchAttributesSourcePorts(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRuleMatchAttributesSourcePorts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSourcePorts();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSourcePorts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesSourcePorts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PropertyNameQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PropertyNameQuery
+  class PropertyNameQuery
   {
   public:
-    PropertyNameQuery();
-    PropertyNameQuery(Aws::Utils::Json::JsonView jsonValue);
-    PropertyNameQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PropertyNameQuery();
+    AWS_SAGEMAKER_API PropertyNameQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PropertyNameQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_propertyNameHint;
-    bool m_propertyNameHintHasBeenSet;
+    bool m_propertyNameHintHasBeenSet = false;
   };
 
 } // namespace Model

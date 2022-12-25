@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/model/LoadBalancerTlsCertificateDomainStatus.h>
+#include <aws/lightsail/model/LoadBalancerTlsCertificateDnsRecordCreationState.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateDomainValidationRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationRecord
+  class LoadBalancerTlsCertificateDomainValidationRecord
   {
   public:
-    LoadBalancerTlsCertificateDomainValidationRecord();
-    LoadBalancerTlsCertificateDomainValidationRecord(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificateDomainValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationRecord();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificateDomainValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,22 +250,68 @@ namespace Model
      */
     inline LoadBalancerTlsCertificateDomainValidationRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline const LoadBalancerTlsCertificateDnsRecordCreationState& GetDnsRecordCreationState() const{ return m_dnsRecordCreationState; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline bool DnsRecordCreationStateHasBeenSet() const { return m_dnsRecordCreationStateHasBeenSet; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline void SetDnsRecordCreationState(const LoadBalancerTlsCertificateDnsRecordCreationState& value) { m_dnsRecordCreationStateHasBeenSet = true; m_dnsRecordCreationState = value; }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline void SetDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState&& value) { m_dnsRecordCreationStateHasBeenSet = true; m_dnsRecordCreationState = std::move(value); }
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline LoadBalancerTlsCertificateDomainValidationRecord& WithDnsRecordCreationState(const LoadBalancerTlsCertificateDnsRecordCreationState& value) { SetDnsRecordCreationState(value); return *this;}
+
+    /**
+     * <p>An object that describes the state of the canonical name (CNAME) records that
+     * are automatically added by Lightsail to the DNS of a domain to validate domain
+     * ownership.</p>
+     */
+    inline LoadBalancerTlsCertificateDomainValidationRecord& WithDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState&& value) { SetDnsRecordCreationState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     LoadBalancerTlsCertificateDomainStatus m_validationStatus;
-    bool m_validationStatusHasBeenSet;
+    bool m_validationStatusHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
+
+    LoadBalancerTlsCertificateDnsRecordCreationState m_dnsRecordCreationState;
+    bool m_dnsRecordCreationStateHasBeenSet = false;
   };
 
 } // namespace Model

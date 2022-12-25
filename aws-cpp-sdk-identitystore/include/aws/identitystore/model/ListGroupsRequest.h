@@ -7,8 +7,6 @@
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/identitystore/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -20,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IDENTITYSTORE_API ListGroupsRequest : public IdentityStoreRequest
+  class ListGroupsRequest : public IdentityStoreRequest
   {
   public:
-    ListGroupsRequest();
+    AWS_IDENTITYSTORE_API ListGroupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,15 +29,15 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListGroups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IDENTITYSTORE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_IDENTITYSTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -48,7 +46,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -57,7 +55,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -75,7 +73,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -84,7 +82,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -93,7 +91,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -102,7 +100,7 @@ namespace Model
     /**
      * <p>The globally unique identifier for the identity store, such as
      * <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix,
-     * and <code>1234567890</code> is a randomly generated string that contains number
+     * and <code>1234567890</code> is a randomly generated string that contains numbers
      * and lower case letters. This value is generated at the time that a new identity
      * store is created.</p>
      */
@@ -111,7 +109,7 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> request to
+     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
      * specify how many results to return in one page. The length limit is 50
      * characters.</p>
      */
@@ -119,7 +117,7 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> request to
+     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
      * specify how many results to return in one page. The length limit is 50
      * characters.</p>
      */
@@ -127,7 +125,7 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> request to
+     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
      * specify how many results to return in one page. The length limit is 50
      * characters.</p>
      */
@@ -135,7 +133,7 @@ namespace Model
 
     /**
      * <p>The maximum number of results to be returned per request. This parameter is
-     * used in the <code>ListUsers</code> and <code>ListGroups</code> request to
+     * used in the <code>ListUsers</code> and <code>ListGroups</code> requests to
      * specify how many results to return in one page. The length limit is 50
      * characters.</p>
      */
@@ -214,68 +212,16 @@ namespace Model
      */
     inline ListGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline ListGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline ListGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline ListGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>Filter</code> objects, which is used in the
-     * <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-     */
-    inline ListGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_identityStoreId;
-    bool m_identityStoreIdHasBeenSet;
+    bool m_identityStoreIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

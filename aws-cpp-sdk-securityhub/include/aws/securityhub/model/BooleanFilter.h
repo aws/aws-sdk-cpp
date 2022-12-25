@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BooleanFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API BooleanFilter
+  class BooleanFilter
   {
   public:
-    BooleanFilter();
-    BooleanFilter(Aws::Utils::Json::JsonView jsonValue);
-    BooleanFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API BooleanFilter();
+    AWS_SECURITYHUB_API BooleanFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API BooleanFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/servicecatalog/model/ProductType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactProperties.h>
+#include <aws/servicecatalog/model/SourceConnection.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -23,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API CreateProductRequest : public ServiceCatalogRequest
+  class CreateProductRequest : public ServiceCatalogRequest
   {
   public:
-    CreateProductRequest();
+    AWS_SERVICECATALOG_API CreateProductRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProduct"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -550,43 +551,107 @@ namespace Model
      */
     inline CreateProductRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline const SourceConnection& GetSourceConnection() const{ return m_sourceConnection; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline bool SourceConnectionHasBeenSet() const { return m_sourceConnectionHasBeenSet; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(const SourceConnection& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = value; }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline void SetSourceConnection(SourceConnection&& value) { m_sourceConnectionHasBeenSet = true; m_sourceConnection = std::move(value); }
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline CreateProductRequest& WithSourceConnection(const SourceConnection& value) { SetSourceConnection(value); return *this;}
+
+    /**
+     * <p>Specifies connection details for the created product and syncs the product to
+     * the connection source artifact. This automatically manages the product's
+     * artifacts based on changes to the source. The <code>SourceConnection</code>
+     * parameter consists of the following sub-fields.</p> <ul> <li> <p>
+     * <code>Type</code> </p> </li> <li> <p> <code>ConnectionParamters</code> </p>
+     * </li> </ul>
+     */
+    inline CreateProductRequest& WithSourceConnection(SourceConnection&& value) { SetSourceConnection(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_distributor;
-    bool m_distributorHasBeenSet;
+    bool m_distributorHasBeenSet = false;
 
     Aws::String m_supportDescription;
-    bool m_supportDescriptionHasBeenSet;
+    bool m_supportDescriptionHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportUrl;
-    bool m_supportUrlHasBeenSet;
+    bool m_supportUrlHasBeenSet = false;
 
     ProductType m_productType;
-    bool m_productTypeHasBeenSet;
+    bool m_productTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ProvisioningArtifactProperties m_provisioningArtifactParameters;
-    bool m_provisioningArtifactParametersHasBeenSet;
+    bool m_provisioningArtifactParametersHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
+
+    SourceConnection m_sourceConnection;
+    bool m_sourceConnectionHasBeenSet = false;
   };
 
 } // namespace Model

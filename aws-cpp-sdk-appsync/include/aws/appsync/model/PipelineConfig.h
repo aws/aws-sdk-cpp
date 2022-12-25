@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PipelineConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API PipelineConfig
+  class PipelineConfig
   {
   public:
-    PipelineConfig();
-    PipelineConfig(Aws::Utils::Json::JsonView jsonValue);
-    PipelineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API PipelineConfig();
+    AWS_APPSYNC_API PipelineConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API PipelineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
   };
 
 } // namespace Model

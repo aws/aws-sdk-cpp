@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ContainerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ContainerSettings
+  class ContainerSettings
   {
   public:
-    ContainerSettings();
-    ContainerSettings(Aws::Utils::Json::JsonView jsonValue);
-    ContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ContainerSettings();
+    AWS_MEDIACONVERT_API ContainerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -416,31 +416,31 @@ namespace Model
   private:
 
     CmfcSettings m_cmfcSettings;
-    bool m_cmfcSettingsHasBeenSet;
+    bool m_cmfcSettingsHasBeenSet = false;
 
     ContainerType m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     F4vSettings m_f4vSettings;
-    bool m_f4vSettingsHasBeenSet;
+    bool m_f4vSettingsHasBeenSet = false;
 
     M2tsSettings m_m2tsSettings;
-    bool m_m2tsSettingsHasBeenSet;
+    bool m_m2tsSettingsHasBeenSet = false;
 
     M3u8Settings m_m3u8Settings;
-    bool m_m3u8SettingsHasBeenSet;
+    bool m_m3u8SettingsHasBeenSet = false;
 
     MovSettings m_movSettings;
-    bool m_movSettingsHasBeenSet;
+    bool m_movSettingsHasBeenSet = false;
 
     Mp4Settings m_mp4Settings;
-    bool m_mp4SettingsHasBeenSet;
+    bool m_mp4SettingsHasBeenSet = false;
 
     MpdSettings m_mpdSettings;
-    bool m_mpdSettingsHasBeenSet;
+    bool m_mpdSettingsHasBeenSet = false;
 
     MxfSettings m_mxfSettings;
-    bool m_mxfSettingsHasBeenSet;
+    bool m_mxfSettingsHasBeenSet = false;
   };
 
 } // namespace Model

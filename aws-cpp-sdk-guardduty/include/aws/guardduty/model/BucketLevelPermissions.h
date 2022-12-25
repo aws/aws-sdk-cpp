@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/BucketLevelPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API BucketLevelPermissions
+  class BucketLevelPermissions
   {
   public:
-    BucketLevelPermissions();
-    BucketLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
-    BucketLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API BucketLevelPermissions();
+    AWS_GUARDDUTY_API BucketLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API BucketLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     AccessControlList m_accessControlList;
-    bool m_accessControlListHasBeenSet;
+    bool m_accessControlListHasBeenSet = false;
 
     BucketPolicy m_bucketPolicy;
-    bool m_bucketPolicyHasBeenSet;
+    bool m_bucketPolicyHasBeenSet = false;
 
     BlockPublicAccess m_blockPublicAccess;
-    bool m_blockPublicAccessHasBeenSet;
+    bool m_blockPublicAccessHasBeenSet = false;
   };
 
 } // namespace Model

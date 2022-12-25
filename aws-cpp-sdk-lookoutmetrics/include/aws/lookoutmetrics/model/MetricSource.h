@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API MetricSource
+  class MetricSource
   {
   public:
-    MetricSource();
-    MetricSource(Aws::Utils::Json::JsonView jsonValue);
-    MetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API MetricSource();
+    AWS_LOOKOUTMETRICS_API MetricSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API MetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -219,22 +219,22 @@ namespace Model
   private:
 
     S3SourceConfig m_s3SourceConfig;
-    bool m_s3SourceConfigHasBeenSet;
+    bool m_s3SourceConfigHasBeenSet = false;
 
     AppFlowConfig m_appFlowConfig;
-    bool m_appFlowConfigHasBeenSet;
+    bool m_appFlowConfigHasBeenSet = false;
 
     CloudWatchConfig m_cloudWatchConfig;
-    bool m_cloudWatchConfigHasBeenSet;
+    bool m_cloudWatchConfigHasBeenSet = false;
 
     RDSSourceConfig m_rDSSourceConfig;
-    bool m_rDSSourceConfigHasBeenSet;
+    bool m_rDSSourceConfigHasBeenSet = false;
 
     RedshiftSourceConfig m_redshiftSourceConfig;
-    bool m_redshiftSourceConfigHasBeenSet;
+    bool m_redshiftSourceConfigHasBeenSet = false;
 
     AthenaSourceConfig m_athenaSourceConfig;
-    bool m_athenaSourceConfigHasBeenSet;
+    bool m_athenaSourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

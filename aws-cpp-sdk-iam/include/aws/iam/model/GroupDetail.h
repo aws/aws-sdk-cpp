@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GroupDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API GroupDetail
+  class GroupDetail
   {
   public:
-    GroupDetail();
-    GroupDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GroupDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API GroupDetail();
+    AWS_IAM_API GroupDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API GroupDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -354,25 +354,25 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::Vector<PolicyDetail> m_groupPolicyList;
-    bool m_groupPolicyListHasBeenSet;
+    bool m_groupPolicyListHasBeenSet = false;
 
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
-    bool m_attachedManagedPoliciesHasBeenSet;
+    bool m_attachedManagedPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

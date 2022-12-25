@@ -19,12 +19,14 @@ namespace Model
 {
 
 AudioTrackSelection::AudioTrackSelection() : 
-    m_tracksHasBeenSet(false)
+    m_tracksHasBeenSet(false),
+    m_dolbyEDecodeHasBeenSet(false)
 {
 }
 
 AudioTrackSelection::AudioTrackSelection(JsonView jsonValue) : 
-    m_tracksHasBeenSet(false)
+    m_tracksHasBeenSet(false),
+    m_dolbyEDecodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -33,12 +35,19 @@ AudioTrackSelection& AudioTrackSelection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tracks"))
   {
-    Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
+    Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsObject());
     }
     m_tracksHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dolbyEDecode"))
+  {
+    m_dolbyEDecode = jsonValue.GetObject("dolbyEDecode");
+
+    m_dolbyEDecodeHasBeenSet = true;
   }
 
   return *this;
@@ -50,12 +59,18 @@ JsonValue AudioTrackSelection::Jsonize() const
 
   if(m_tracksHasBeenSet)
   {
-   Array<JsonValue> tracksJsonList(m_tracks.size());
+   Aws::Utils::Array<JsonValue> tracksJsonList(m_tracks.size());
    for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
    {
      tracksJsonList[tracksIndex].AsObject(m_tracks[tracksIndex].Jsonize());
    }
    payload.WithArray("tracks", std::move(tracksJsonList));
+
+  }
+
+  if(m_dolbyEDecodeHasBeenSet)
+  {
+   payload.WithObject("dolbyEDecode", m_dolbyEDecode.Jsonize());
 
   }
 

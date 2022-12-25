@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionConfigurationProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionConfigurationProperty
+  class ActionConfigurationProperty
   {
   public:
-    ActionConfigurationProperty();
-    ActionConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
-    ActionConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionConfigurationProperty();
+    AWS_CODEPIPELINE_API ActionConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,25 +294,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     bool m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     bool m_secret;
-    bool m_secretHasBeenSet;
+    bool m_secretHasBeenSet = false;
 
     bool m_queryable;
-    bool m_queryableHasBeenSet;
+    bool m_queryableHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ActionConfigurationPropertyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

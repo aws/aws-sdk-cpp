@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ImageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ImageConfiguration
+  class ImageConfiguration
   {
   public:
-    ImageConfiguration();
-    ImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ImageConfiguration();
+    AWS_APPRUNNER_API ImageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ImageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
-    bool m_runtimeEnvironmentVariablesHasBeenSet;
+    bool m_runtimeEnvironmentVariablesHasBeenSet = false;
 
     Aws::String m_startCommand;
-    bool m_startCommandHasBeenSet;
+    bool m_startCommandHasBeenSet = false;
 
     Aws::String m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

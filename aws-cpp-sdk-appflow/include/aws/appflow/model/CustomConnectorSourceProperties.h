@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomConnectorSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomConnectorSourceProperties
+  class CustomConnectorSourceProperties
   {
   public:
-    CustomConnectorSourceProperties();
-    CustomConnectorSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    CustomConnectorSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomConnectorSourceProperties();
+    AWS_APPFLOW_API CustomConnectorSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomConnectorSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,10 +161,10 @@ namespace Model
   private:
 
     Aws::String m_entityName;
-    bool m_entityNameHasBeenSet;
+    bool m_entityNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customProperties;
-    bool m_customPropertiesHasBeenSet;
+    bool m_customPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

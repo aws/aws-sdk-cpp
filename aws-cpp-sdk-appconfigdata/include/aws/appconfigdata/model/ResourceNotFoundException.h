@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIGDATA_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIGDATA_API ResourceNotFoundException();
+    AWS_APPCONFIGDATA_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_referencedBy;
-    bool m_referencedByHasBeenSet;
+    bool m_referencedByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CustomDataIdentifiersDetections">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API CustomDataIdentifiersDetections
+  class CustomDataIdentifiersDetections
   {
   public:
-    CustomDataIdentifiersDetections();
-    CustomDataIdentifiersDetections(Aws::Utils::Json::JsonView jsonValue);
-    CustomDataIdentifiersDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections();
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Occurrences m_occurrences;
-    bool m_occurrencesHasBeenSet;
+    bool m_occurrencesHasBeenSet = false;
   };
 
 } // namespace Model

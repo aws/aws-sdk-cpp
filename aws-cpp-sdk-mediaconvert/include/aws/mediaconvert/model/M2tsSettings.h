@@ -56,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API M2tsSettings
+  class M2tsSettings
   {
   public:
-    M2tsSettings();
-    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
-    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API M2tsSettings();
+    AWS_MEDIACONVERT_API M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1635,121 +1635,121 @@ namespace Model
   private:
 
     M2tsAudioBufferModel m_audioBufferModel;
-    bool m_audioBufferModelHasBeenSet;
+    bool m_audioBufferModelHasBeenSet = false;
 
     M2tsAudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     int m_audioFramesPerPes;
-    bool m_audioFramesPerPesHasBeenSet;
+    bool m_audioFramesPerPesHasBeenSet = false;
 
     Aws::Vector<int> m_audioPids;
-    bool m_audioPidsHasBeenSet;
+    bool m_audioPidsHasBeenSet = false;
 
     int m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     M2tsBufferModel m_bufferModel;
-    bool m_bufferModelHasBeenSet;
+    bool m_bufferModelHasBeenSet = false;
 
     M2tsDataPtsControl m_dataPTSControl;
-    bool m_dataPTSControlHasBeenSet;
+    bool m_dataPTSControlHasBeenSet = false;
 
     DvbNitSettings m_dvbNitSettings;
-    bool m_dvbNitSettingsHasBeenSet;
+    bool m_dvbNitSettingsHasBeenSet = false;
 
     DvbSdtSettings m_dvbSdtSettings;
-    bool m_dvbSdtSettingsHasBeenSet;
+    bool m_dvbSdtSettingsHasBeenSet = false;
 
     Aws::Vector<int> m_dvbSubPids;
-    bool m_dvbSubPidsHasBeenSet;
+    bool m_dvbSubPidsHasBeenSet = false;
 
     DvbTdtSettings m_dvbTdtSettings;
-    bool m_dvbTdtSettingsHasBeenSet;
+    bool m_dvbTdtSettingsHasBeenSet = false;
 
     int m_dvbTeletextPid;
-    bool m_dvbTeletextPidHasBeenSet;
+    bool m_dvbTeletextPidHasBeenSet = false;
 
     M2tsEbpAudioInterval m_ebpAudioInterval;
-    bool m_ebpAudioIntervalHasBeenSet;
+    bool m_ebpAudioIntervalHasBeenSet = false;
 
     M2tsEbpPlacement m_ebpPlacement;
-    bool m_ebpPlacementHasBeenSet;
+    bool m_ebpPlacementHasBeenSet = false;
 
     M2tsEsRateInPes m_esRateInPes;
-    bool m_esRateInPesHasBeenSet;
+    bool m_esRateInPesHasBeenSet = false;
 
     M2tsForceTsVideoEbpOrder m_forceTsVideoEbpOrder;
-    bool m_forceTsVideoEbpOrderHasBeenSet;
+    bool m_forceTsVideoEbpOrderHasBeenSet = false;
 
     double m_fragmentTime;
-    bool m_fragmentTimeHasBeenSet;
+    bool m_fragmentTimeHasBeenSet = false;
 
     M2tsKlvMetadata m_klvMetadata;
-    bool m_klvMetadataHasBeenSet;
+    bool m_klvMetadataHasBeenSet = false;
 
     int m_maxPcrInterval;
-    bool m_maxPcrIntervalHasBeenSet;
+    bool m_maxPcrIntervalHasBeenSet = false;
 
     int m_minEbpInterval;
-    bool m_minEbpIntervalHasBeenSet;
+    bool m_minEbpIntervalHasBeenSet = false;
 
     M2tsNielsenId3 m_nielsenId3;
-    bool m_nielsenId3HasBeenSet;
+    bool m_nielsenId3HasBeenSet = false;
 
     double m_nullPacketBitrate;
-    bool m_nullPacketBitrateHasBeenSet;
+    bool m_nullPacketBitrateHasBeenSet = false;
 
     int m_patInterval;
-    bool m_patIntervalHasBeenSet;
+    bool m_patIntervalHasBeenSet = false;
 
     M2tsPcrControl m_pcrControl;
-    bool m_pcrControlHasBeenSet;
+    bool m_pcrControlHasBeenSet = false;
 
     int m_pcrPid;
-    bool m_pcrPidHasBeenSet;
+    bool m_pcrPidHasBeenSet = false;
 
     int m_pmtInterval;
-    bool m_pmtIntervalHasBeenSet;
+    bool m_pmtIntervalHasBeenSet = false;
 
     int m_pmtPid;
-    bool m_pmtPidHasBeenSet;
+    bool m_pmtPidHasBeenSet = false;
 
     int m_privateMetadataPid;
-    bool m_privateMetadataPidHasBeenSet;
+    bool m_privateMetadataPidHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     M2tsRateMode m_rateMode;
-    bool m_rateModeHasBeenSet;
+    bool m_rateModeHasBeenSet = false;
 
     M2tsScte35Esam m_scte35Esam;
-    bool m_scte35EsamHasBeenSet;
+    bool m_scte35EsamHasBeenSet = false;
 
     int m_scte35Pid;
-    bool m_scte35PidHasBeenSet;
+    bool m_scte35PidHasBeenSet = false;
 
     M2tsScte35Source m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
 
     M2tsSegmentationMarkers m_segmentationMarkers;
-    bool m_segmentationMarkersHasBeenSet;
+    bool m_segmentationMarkersHasBeenSet = false;
 
     M2tsSegmentationStyle m_segmentationStyle;
-    bool m_segmentationStyleHasBeenSet;
+    bool m_segmentationStyleHasBeenSet = false;
 
     double m_segmentationTime;
-    bool m_segmentationTimeHasBeenSet;
+    bool m_segmentationTimeHasBeenSet = false;
 
     int m_timedMetadataPid;
-    bool m_timedMetadataPidHasBeenSet;
+    bool m_timedMetadataPidHasBeenSet = false;
 
     int m_transportStreamId;
-    bool m_transportStreamIdHasBeenSet;
+    bool m_transportStreamIdHasBeenSet = false;
 
     int m_videoPid;
-    bool m_videoPidHasBeenSet;
+    bool m_videoPidHasBeenSet = false;
   };
 
 } // namespace Model

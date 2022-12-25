@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestoreErrorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DisableFastSnapshotRestoreErrorItem
+  class DisableFastSnapshotRestoreErrorItem
   {
   public:
-    DisableFastSnapshotRestoreErrorItem();
-    DisableFastSnapshotRestoreErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DisableFastSnapshotRestoreErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DisableFastSnapshotRestoreErrorItem();
+    AWS_EC2_API DisableFastSnapshotRestoreErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DisableFastSnapshotRestoreErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Vector<DisableFastSnapshotRestoreStateErrorItem> m_fastSnapshotRestoreStateErrors;
-    bool m_fastSnapshotRestoreStateErrorsHasBeenSet;
+    bool m_fastSnapshotRestoreStateErrorsHasBeenSet = false;
   };
 
 } // namespace Model

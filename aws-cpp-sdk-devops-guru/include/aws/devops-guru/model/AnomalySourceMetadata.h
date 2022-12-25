@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalySourceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AnomalySourceMetadata
+  class AnomalySourceMetadata
   {
   public:
-    AnomalySourceMetadata();
-    AnomalySourceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AnomalySourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AnomalySourceMetadata();
+    AWS_DEVOPSGURU_API AnomalySourceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AnomalySourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourceResourceName;
-    bool m_sourceResourceNameHasBeenSet;
+    bool m_sourceResourceNameHasBeenSet = false;
 
     Aws::String m_sourceResourceType;
-    bool m_sourceResourceTypeHasBeenSet;
+    bool m_sourceResourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

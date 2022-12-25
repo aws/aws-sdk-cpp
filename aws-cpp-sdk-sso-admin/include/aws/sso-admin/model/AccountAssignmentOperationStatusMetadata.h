@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccountAssignmentOperationStatusMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API AccountAssignmentOperationStatusMetadata
+  class AccountAssignmentOperationStatusMetadata
   {
   public:
-    AccountAssignmentOperationStatusMetadata();
-    AccountAssignmentOperationStatusMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AccountAssignmentOperationStatusMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API AccountAssignmentOperationStatusMetadata();
+    AWS_SSOADMIN_API AccountAssignmentOperationStatusMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API AccountAssignmentOperationStatusMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     StatusValues m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
   };
 
 } // namespace Model

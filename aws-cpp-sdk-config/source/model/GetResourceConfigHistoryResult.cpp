@@ -30,7 +30,7 @@ GetResourceConfigHistoryResult& GetResourceConfigHistoryResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationItems"))
   {
-    Array<JsonView> configurationItemsJsonList = jsonValue.GetArray("configurationItems");
+    Aws::Utils::Array<JsonView> configurationItemsJsonList = jsonValue.GetArray("configurationItems");
     for(unsigned configurationItemsIndex = 0; configurationItemsIndex < configurationItemsJsonList.GetLength(); ++configurationItemsIndex)
     {
       m_configurationItems.push_back(configurationItemsJsonList[configurationItemsIndex].AsObject());

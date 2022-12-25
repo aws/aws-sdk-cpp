@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Match">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Match
+  class Match
   {
   public:
-    Match();
-    Match(Aws::Utils::Json::JsonView jsonValue);
-    Match& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Match();
+    AWS_CODEGURUPROFILER_API Match(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Match& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_frameAddress;
-    bool m_frameAddressHasBeenSet;
+    bool m_frameAddressHasBeenSet = false;
 
     int m_targetFramesIndex;
-    bool m_targetFramesIndexHasBeenSet;
+    bool m_targetFramesIndexHasBeenSet = false;
 
     double m_thresholdBreachValue;
-    bool m_thresholdBreachValueHasBeenSet;
+    bool m_thresholdBreachValueHasBeenSet = false;
   };
 
 } // namespace Model

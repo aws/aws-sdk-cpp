@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ExternalModel">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ExternalModel
+  class ExternalModel
   {
   public:
-    ExternalModel();
-    ExternalModel(Aws::Utils::Json::JsonView jsonValue);
-    ExternalModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ExternalModel();
+    AWS_FRAUDDETECTOR_API ExternalModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ExternalModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -372,31 +372,31 @@ namespace Model
   private:
 
     Aws::String m_modelEndpoint;
-    bool m_modelEndpointHasBeenSet;
+    bool m_modelEndpointHasBeenSet = false;
 
     ModelSource m_modelSource;
-    bool m_modelSourceHasBeenSet;
+    bool m_modelSourceHasBeenSet = false;
 
     Aws::String m_invokeModelEndpointRoleArn;
-    bool m_invokeModelEndpointRoleArnHasBeenSet;
+    bool m_invokeModelEndpointRoleArnHasBeenSet = false;
 
     ModelInputConfiguration m_inputConfiguration;
-    bool m_inputConfigurationHasBeenSet;
+    bool m_inputConfigurationHasBeenSet = false;
 
     ModelOutputConfiguration m_outputConfiguration;
-    bool m_outputConfigurationHasBeenSet;
+    bool m_outputConfigurationHasBeenSet = false;
 
     ModelEndpointStatus m_modelEndpointStatus;
-    bool m_modelEndpointStatusHasBeenSet;
+    bool m_modelEndpointStatusHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

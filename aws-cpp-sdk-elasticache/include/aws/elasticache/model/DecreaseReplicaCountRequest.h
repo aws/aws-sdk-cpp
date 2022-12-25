@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICACHE_API DecreaseReplicaCountRequest : public ElastiCacheRequest
+  class DecreaseReplicaCountRequest : public ElastiCacheRequest
   {
   public:
-    DecreaseReplicaCountRequest();
+    AWS_ELASTICACHE_API DecreaseReplicaCountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DecreaseReplicaCount"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -291,19 +291,19 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     int m_newReplicaCount;
-    bool m_newReplicaCountHasBeenSet;
+    bool m_newReplicaCountHasBeenSet = false;
 
     Aws::Vector<ConfigureShard> m_replicaConfiguration;
-    bool m_replicaConfigurationHasBeenSet;
+    bool m_replicaConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicasToRemove;
-    bool m_replicasToRemoveHasBeenSet;
+    bool m_replicasToRemoveHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HttpConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API HttpConfiguration
+  class HttpConfiguration
   {
   public:
-    HttpConfiguration();
-    HttpConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HttpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API HttpConfiguration();
+    AWS_MEDIATAILOR_API HttpConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API HttpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
   };
 
 } // namespace Model

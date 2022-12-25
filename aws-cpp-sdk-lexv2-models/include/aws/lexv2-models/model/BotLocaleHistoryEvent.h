@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleHistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleHistoryEvent
+  class BotLocaleHistoryEvent
   {
   public:
-    BotLocaleHistoryEvent();
-    BotLocaleHistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleHistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleHistoryEvent();
+    AWS_LEXMODELSV2_API BotLocaleHistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleHistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventDate;
-    bool m_eventDateHasBeenSet;
+    bool m_eventDateHasBeenSet = false;
   };
 
 } // namespace Model

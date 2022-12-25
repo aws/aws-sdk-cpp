@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceConnectionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceConnectionStatus
+  class WorkspaceConnectionStatus
   {
   public:
-    WorkspaceConnectionStatus();
-    WorkspaceConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceConnectionStatus();
+    AWS_WORKSPACES_API WorkspaceConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,16 +181,16 @@ namespace Model
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     ConnectionState m_connectionState;
-    bool m_connectionStateHasBeenSet;
+    bool m_connectionStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectionStateCheckTimestamp;
-    bool m_connectionStateCheckTimestampHasBeenSet;
+    bool m_connectionStateCheckTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastKnownUserConnectionTimestamp;
-    bool m_lastKnownUserConnectionTimestampHasBeenSet;
+    bool m_lastKnownUserConnectionTimestampHasBeenSet = false;
   };
 
 } // namespace Model

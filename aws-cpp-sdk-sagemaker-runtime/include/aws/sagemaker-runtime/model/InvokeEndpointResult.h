@@ -19,37 +19,45 @@ namespace SageMakerRuntime
 {
 namespace Model
 {
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult
+  class InvokeEndpointResult
   {
   public:
-    InvokeEndpointResult();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult();
     //We have to define these because Microsoft doesn't auto generate them
-    InvokeEndpointResult(InvokeEndpointResult&&);
-    InvokeEndpointResult& operator=(InvokeEndpointResult&&);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult(InvokeEndpointResult&&);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult& operator=(InvokeEndpointResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     InvokeEndpointResult(const InvokeEndpointResult&) = delete;
     InvokeEndpointResult& operator=(const InvokeEndpointResult&) = delete;
 
 
-    InvokeEndpointResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    InvokeEndpointResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 
     /**
-     * <p>Includes the inference provided by the model.</p> <p>For information about
+     * <p>Includes the inference provided by the model. </p> <p>For information about
      * the format of the response body, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-     * Data Formats-Inference</a>.</p>
+     * Data Formats-Inference</a>.</p> <p>If the explainer is activated, the body
+     * includes the explanations provided by the model. For more information, see the
+     * <b>Response section</b> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke
+     * the Endpoint</a> in the Developer Guide.</p>
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
-     * <p>Includes the inference provided by the model.</p> <p>For information about
+     * <p>Includes the inference provided by the model. </p> <p>For information about
      * the format of the response body, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-     * Data Formats-Inference</a>.</p>
+     * Data Formats-Inference</a>.</p> <p>If the explainer is activated, the body
+     * includes the explanations provided by the model. For more information, see the
+     * <b>Response section</b> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-invoke-endpoint.html#clarify-online-explainability-response">Invoke
+     * the Endpoint</a> in the Developer Guide.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 

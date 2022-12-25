@@ -12,7 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 #include <fstream>
 #include <cassert>
@@ -125,7 +125,7 @@ TEST_F(STSProfileCredentialsProviderTest, TestCredentialsLoadAndCache)
     configFile << "source_profile = other" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
     configFile << std::endl;
-    configFile << " [other]" << std::endl;
+    configFile << " [profile other]" << std::endl;
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;
     configFile << "aws_secret_access_key = " << SECRET_ACCESS_KEY_ID_1 << std::endl;
     configFile.close();
@@ -161,6 +161,7 @@ TEST_F(STSProfileCredentialsProviderTest, TestCredentialsLoadAndCache)
     ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
 
     ASSERT_EQ(1, stsCallCounter);
+    ASSERT_TRUE(stsClient);
     ASSERT_STREQ(ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ(SECRET_ACCESS_KEY_ID_1, stsClient->Credentials().GetAWSSecretKey().c_str());
 
@@ -197,7 +198,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithStaticAndSourceProfile)
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;
     configFile << "aws_secret_access_key = " << SECRET_ACCESS_KEY_ID_1 << std::endl;
     configFile << std::endl;
-    configFile << " [B]" << std::endl;
+    configFile << " [profile B]" << std::endl;
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_2 << std::endl;
     configFile << "aws_secret_access_key = " << SECRET_ACCESS_KEY_ID_2 << std::endl;
     configFile.close();
@@ -251,7 +252,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithProcessCredentials)
     configFile << "source_profile = other" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
     configFile << std::endl;
-    configFile << " [other]" << std::endl;
+    configFile << " [profile other]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
     configFile.close();
     Aws::Config::ReloadCachedConfigFile();
@@ -287,6 +288,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithProcessCredentials)
     ASSERT_EQ(expiryTime, actualCredentials.GetExpiration());
 
     ASSERT_EQ(1, stsCallCounter);
+    ASSERT_TRUE(stsClient);
     ASSERT_STREQ("AccessKey123", stsClient->Credentials().GetAWSAccessKeyId().c_str());
     ASSERT_STREQ("SecretKey321", stsClient->Credentials().GetAWSSecretKey().c_str());
 }
@@ -302,7 +304,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithoutRoleARN)
     configFile << "[default]" << std::endl;
     configFile << "source_profile = other" << std::endl;
     configFile << std::endl;
-    configFile << " [other]" << std::endl;
+    configFile << " [profile other]" << std::endl;
     configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
     configFile.close();
     Aws::Config::ReloadCachedConfigFile();
@@ -426,15 +428,15 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleRecursively)
     Aws::OFStream configFile {m_configFilename.c_str(), Aws::OFStream::out | Aws::OFStream::trunc};
 
     configFile << std::endl;
-    configFile << "[A]" << std::endl;
+    configFile << "[profile A]" << std::endl;
     configFile << "source_profile = B" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
     configFile << std::endl;
-    configFile << "[B]" << std::endl;
+    configFile << "[profile B]" << std::endl;
     configFile << "source_profile = C" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_2 << std::endl;
     configFile << std::endl;
-    configFile << " [C]" << std::endl;
+    configFile << " [profile C]" << std::endl;
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;
     configFile << "aws_secret_access_key = " << SECRET_ACCESS_KEY_ID_1 << std::endl;
     configFile.close();
@@ -486,7 +488,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleSelfReferencing)
     Aws::OFStream configFile {m_configFilename.c_str(), Aws::OFStream::out | Aws::OFStream::trunc};
 
     configFile << std::endl;
-    configFile << "[A]" << std::endl;
+    configFile << "[profile A]" << std::endl;
     configFile << "source_profile = A" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;
@@ -531,10 +533,10 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleSelfReferencingSourceProfile
     Aws::OFStream configFile {m_configFilename.c_str(), Aws::OFStream::out | Aws::OFStream::trunc};
 
     configFile << std::endl;
-    configFile << "[A]" << std::endl;
+    configFile << "[profile A]" << std::endl;
     configFile << "source_profile = B" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_1 << std::endl;
-    configFile << "[B]" << std::endl;
+    configFile << "[profile B]" << std::endl;
     configFile << "source_profile = B" << std::endl;
     configFile << "role_arn = " << ROLE_ARN_2 << std::endl;
     configFile << "aws_access_key_id = " << ACCESS_KEY_ID_1 << std::endl;

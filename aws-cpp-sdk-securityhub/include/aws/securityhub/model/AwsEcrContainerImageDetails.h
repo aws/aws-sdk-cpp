@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrContainerImageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcrContainerImageDetails
+  class AwsEcrContainerImageDetails
   {
   public:
-    AwsEcrContainerImageDetails();
-    AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails();
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,42 +129,58 @@ namespace Model
 
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
-     * <p>The architecture of the image.</p>
+     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
+     * <code>x86_64</code> </p> </li> </ul>
      */
     inline AwsEcrContainerImageDetails& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
@@ -331,22 +347,22 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::String m_imagePublishedAt;
-    bool m_imagePublishedAtHasBeenSet;
+    bool m_imagePublishedAtHasBeenSet = false;
   };
 
 } // namespace Model

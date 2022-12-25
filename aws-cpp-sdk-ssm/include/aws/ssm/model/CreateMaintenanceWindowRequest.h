@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API CreateMaintenanceWindowRequest : public SSMRequest
+  class CreateMaintenanceWindowRequest : public SSMRequest
   {
   public:
-    CreateMaintenanceWindowRequest();
+    AWS_SSM_API CreateMaintenanceWindowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMaintenanceWindow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -647,40 +647,40 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_scheduleTimezone;
-    bool m_scheduleTimezoneHasBeenSet;
+    bool m_scheduleTimezoneHasBeenSet = false;
 
     int m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_cutoff;
-    bool m_cutoffHasBeenSet;
+    bool m_cutoffHasBeenSet = false;
 
     bool m_allowUnassociatedTargets;
-    bool m_allowUnassociatedTargetsHasBeenSet;
+    bool m_allowUnassociatedTargetsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

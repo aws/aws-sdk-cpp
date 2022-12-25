@@ -36,7 +36,7 @@ ListUsageLimitsResult& ListUsageLimitsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("usageLimits"))
   {
-    Array<JsonView> usageLimitsJsonList = jsonValue.GetArray("usageLimits");
+    Aws::Utils::Array<JsonView> usageLimitsJsonList = jsonValue.GetArray("usageLimits");
     for(unsigned usageLimitsIndex = 0; usageLimitsIndex < usageLimitsJsonList.GetLength(); ++usageLimitsIndex)
     {
       m_usageLimits.push_back(usageLimitsJsonList[usageLimitsIndex].AsObject());

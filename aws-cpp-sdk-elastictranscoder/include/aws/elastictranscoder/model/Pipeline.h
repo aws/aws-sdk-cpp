@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Pipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Pipeline
+  class Pipeline
   {
   public:
-    Pipeline();
-    Pipeline(Aws::Utils::Json::JsonView jsonValue);
-    Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Pipeline();
+    AWS_ELASTICTRANSCODER_API Pipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1019,37 +1019,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_inputBucket;
-    bool m_inputBucketHasBeenSet;
+    bool m_inputBucketHasBeenSet = false;
 
     Aws::String m_outputBucket;
-    bool m_outputBucketHasBeenSet;
+    bool m_outputBucketHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_awsKmsKeyArn;
-    bool m_awsKmsKeyArnHasBeenSet;
+    bool m_awsKmsKeyArnHasBeenSet = false;
 
     Notifications m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     PipelineOutputConfig m_contentConfig;
-    bool m_contentConfigHasBeenSet;
+    bool m_contentConfigHasBeenSet = false;
 
     PipelineOutputConfig m_thumbnailConfig;
-    bool m_thumbnailConfigHasBeenSet;
+    bool m_thumbnailConfigHasBeenSet = false;
   };
 
 } // namespace Model

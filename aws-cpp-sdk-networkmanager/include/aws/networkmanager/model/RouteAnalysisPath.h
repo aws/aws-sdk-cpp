@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteAnalysisPath">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteAnalysisPath
+  class RouteAnalysisPath
   {
   public:
-    RouteAnalysisPath();
-    RouteAnalysisPath(Aws::Utils::Json::JsonView jsonValue);
-    RouteAnalysisPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteAnalysisPath();
+    AWS_NETWORKMANAGER_API RouteAnalysisPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteAnalysisPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     RouteAnalysisCompletion m_completionStatus;
-    bool m_completionStatusHasBeenSet;
+    bool m_completionStatusHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

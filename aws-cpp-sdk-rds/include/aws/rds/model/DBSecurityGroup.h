@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBSecurityGroup
+  class DBSecurityGroup
   {
   public:
-    DBSecurityGroup();
-    DBSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSecurityGroup();
+    AWS_RDS_API DBSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -341,25 +341,25 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_dBSecurityGroupName;
-    bool m_dBSecurityGroupNameHasBeenSet;
+    bool m_dBSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_dBSecurityGroupDescription;
-    bool m_dBSecurityGroupDescriptionHasBeenSet;
+    bool m_dBSecurityGroupDescriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-    bool m_eC2SecurityGroupsHasBeenSet;
+    bool m_eC2SecurityGroupsHasBeenSet = false;
 
     Aws::Vector<IPRange> m_iPRanges;
-    bool m_iPRangesHasBeenSet;
+    bool m_iPRangesHasBeenSet = false;
 
     Aws::String m_dBSecurityGroupArn;
-    bool m_dBSecurityGroupArnHasBeenSet;
+    bool m_dBSecurityGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

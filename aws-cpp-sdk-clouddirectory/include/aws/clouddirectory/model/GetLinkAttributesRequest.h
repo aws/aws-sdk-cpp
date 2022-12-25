@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDDIRECTORY_API GetLinkAttributesRequest : public CloudDirectoryRequest
+  class GetLinkAttributesRequest : public CloudDirectoryRequest
   {
   public:
-    GetLinkAttributesRequest();
+    AWS_CLOUDDIRECTORY_API GetLinkAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLinkAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDDIRECTORY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -218,16 +218,16 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     TypedLinkSpecifier m_typedLinkSpecifier;
-    bool m_typedLinkSpecifierHasBeenSet;
+    bool m_typedLinkSpecifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     ConsistencyLevel m_consistencyLevel;
-    bool m_consistencyLevelHasBeenSet;
+    bool m_consistencyLevelHasBeenSet = false;
   };
 
 } // namespace Model

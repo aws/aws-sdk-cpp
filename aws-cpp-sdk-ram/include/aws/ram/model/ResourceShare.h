@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShare">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceShare
+  class ResourceShare
   {
   public:
-    ResourceShare();
-    ResourceShare(Aws::Utils::Json::JsonView jsonValue);
-    ResourceShare& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceShare();
+    AWS_RAM_API ResourceShare(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceShare& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,34 +492,34 @@ namespace Model
   private:
 
     Aws::String m_resourceShareArn;
-    bool m_resourceShareArnHasBeenSet;
+    bool m_resourceShareArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owningAccountId;
-    bool m_owningAccountIdHasBeenSet;
+    bool m_owningAccountIdHasBeenSet = false;
 
     bool m_allowExternalPrincipals;
-    bool m_allowExternalPrincipalsHasBeenSet;
+    bool m_allowExternalPrincipalsHasBeenSet = false;
 
     ResourceShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     ResourceShareFeatureSet m_featureSet;
-    bool m_featureSetHasBeenSet;
+    bool m_featureSetHasBeenSet = false;
   };
 
 } // namespace Model

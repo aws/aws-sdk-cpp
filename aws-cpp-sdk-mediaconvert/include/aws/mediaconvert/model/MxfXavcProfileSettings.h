@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MxfXavcProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MxfXavcProfileSettings
+  class MxfXavcProfileSettings
   {
   public:
-    MxfXavcProfileSettings();
-    MxfXavcProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    MxfXavcProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MxfXavcProfileSettings();
+    AWS_MEDIACONVERT_API MxfXavcProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MxfXavcProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     MxfXavcDurationMode m_durationMode;
-    bool m_durationModeHasBeenSet;
+    bool m_durationModeHasBeenSet = false;
 
     int m_maxAncDataSize;
-    bool m_maxAncDataSizeHasBeenSet;
+    bool m_maxAncDataSizeHasBeenSet = false;
   };
 
 } // namespace Model

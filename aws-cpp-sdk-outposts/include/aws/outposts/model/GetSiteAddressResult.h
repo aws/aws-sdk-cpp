@@ -26,12 +26,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API GetSiteAddressResult
+  class GetSiteAddressResult
   {
   public:
-    GetSiteAddressResult();
-    GetSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetSiteAddressResult();
+    AWS_OUTPOSTS_API GetSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     
@@ -57,27 +57,27 @@ namespace Model
 
 
     /**
-     * <p> The type of the address you receive. </p>
+     * <p>The type of the address you receive. </p>
      */
     inline const AddressType& GetAddressType() const{ return m_addressType; }
 
     /**
-     * <p> The type of the address you receive. </p>
+     * <p>The type of the address you receive. </p>
      */
     inline void SetAddressType(const AddressType& value) { m_addressType = value; }
 
     /**
-     * <p> The type of the address you receive. </p>
+     * <p>The type of the address you receive. </p>
      */
     inline void SetAddressType(AddressType&& value) { m_addressType = std::move(value); }
 
     /**
-     * <p> The type of the address you receive. </p>
+     * <p>The type of the address you receive. </p>
      */
     inline GetSiteAddressResult& WithAddressType(const AddressType& value) { SetAddressType(value); return *this;}
 
     /**
-     * <p> The type of the address you receive. </p>
+     * <p>The type of the address you receive. </p>
      */
     inline GetSiteAddressResult& WithAddressType(AddressType&& value) { SetAddressType(std::move(value)); return *this;}
 

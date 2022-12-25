@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BulkEmailContent">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API BulkEmailContent
+  class BulkEmailContent
   {
   public:
-    BulkEmailContent();
-    BulkEmailContent(Aws::Utils::Json::JsonView jsonValue);
-    BulkEmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API BulkEmailContent();
+    AWS_SESV2_API BulkEmailContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API BulkEmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Template m_template;
-    bool m_templateHasBeenSet;
+    bool m_templateHasBeenSet = false;
   };
 
 } // namespace Model

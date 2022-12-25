@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTORYSERVICE_API DescribeSharedDirectoriesRequest : public DirectoryServiceRequest
+  class DescribeSharedDirectoriesRequest : public DirectoryServiceRequest
   {
   public:
-    DescribeSharedDirectoriesRequest();
+    AWS_DIRECTORYSERVICE_API DescribeSharedDirectoriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSharedDirectories"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -202,16 +202,16 @@ namespace Model
   private:
 
     Aws::String m_ownerDirectoryId;
-    bool m_ownerDirectoryIdHasBeenSet;
+    bool m_ownerDirectoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sharedDirectoryIds;
-    bool m_sharedDirectoryIdsHasBeenSet;
+    bool m_sharedDirectoryIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

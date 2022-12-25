@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UserData">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API UserData
+  class UserData
   {
   public:
-    UserData();
-    UserData(Aws::Utils::Json::JsonView jsonValue);
-    UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API UserData();
+    AWS_SMS_API UserData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

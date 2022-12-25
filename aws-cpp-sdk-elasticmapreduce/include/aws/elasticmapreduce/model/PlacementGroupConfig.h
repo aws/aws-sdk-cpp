@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PlacementGroupConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API PlacementGroupConfig
+  class PlacementGroupConfig
   {
   public:
-    PlacementGroupConfig();
-    PlacementGroupConfig(Aws::Utils::Json::JsonView jsonValue);
-    PlacementGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API PlacementGroupConfig();
+    AWS_EMR_API PlacementGroupConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API PlacementGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     InstanceRoleType m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
 
     PlacementGroupStrategy m_placementStrategy;
-    bool m_placementStrategyHasBeenSet;
+    bool m_placementStrategyHasBeenSet = false;
   };
 
 } // namespace Model

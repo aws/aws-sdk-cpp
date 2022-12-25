@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CustomVerificationEmailTemplateAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CustomVerificationEmailTemplateAlreadyExistsException
+  class CustomVerificationEmailTemplateAlreadyExistsException
   {
   public:
-    CustomVerificationEmailTemplateAlreadyExistsException();
-    CustomVerificationEmailTemplateAlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomVerificationEmailTemplateAlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API CustomVerificationEmailTemplateAlreadyExistsException();
+    AWS_SES_API CustomVerificationEmailTemplateAlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API CustomVerificationEmailTemplateAlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_customVerificationEmailTemplateName;
-    bool m_customVerificationEmailTemplateNameHasBeenSet;
+    bool m_customVerificationEmailTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

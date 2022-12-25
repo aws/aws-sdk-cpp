@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentResponse
+  class SegmentResponse
   {
   public:
-    SegmentResponse();
-    SegmentResponse(Aws::Utils::Json::JsonView jsonValue);
-    SegmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentResponse();
+    AWS_PINPOINT_API SegmentResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -584,40 +584,40 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     SegmentDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     SegmentImportResource m_importDefinition;
-    bool m_importDefinitionHasBeenSet;
+    bool m_importDefinitionHasBeenSet = false;
 
     Aws::String m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SegmentGroupList m_segmentGroups;
-    bool m_segmentGroupsHasBeenSet;
+    bool m_segmentGroupsHasBeenSet = false;
 
     SegmentType m_segmentType;
-    bool m_segmentTypeHasBeenSet;
+    bool m_segmentTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

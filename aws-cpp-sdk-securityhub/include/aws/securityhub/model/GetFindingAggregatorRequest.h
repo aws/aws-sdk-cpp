@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API GetFindingAggregatorRequest : public SecurityHubRequest
+  class GetFindingAggregatorRequest : public SecurityHubRequest
   {
   public:
-    GetFindingAggregatorRequest();
+    AWS_SECURITYHUB_API GetFindingAggregatorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetFindingAggregator"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_findingAggregatorArn;
-    bool m_findingAggregatorArnHasBeenSet;
+    bool m_findingAggregatorArnHasBeenSet = false;
   };
 
 } // namespace Model

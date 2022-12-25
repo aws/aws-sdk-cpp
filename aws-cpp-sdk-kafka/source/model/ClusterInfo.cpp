@@ -39,7 +39,9 @@ ClusterInfo::ClusterInfo() :
     m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false)
+    m_zookeeperConnectStringTlsHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
     m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false)
+    m_zookeeperConnectStringTlsHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +204,13 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     m_zookeeperConnectStringTlsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("storageMode"))
+  {
+    m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
+
+    m_storageModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -239,7 +250,7 @@ JsonValue ClusterInfo::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_currentBrokerSoftwareInfoHasBeenSet)
@@ -315,6 +326,11 @@ JsonValue ClusterInfo::Jsonize() const
   {
    payload.WithString("zookeeperConnectStringTls", m_zookeeperConnectStringTls);
 
+  }
+
+  if(m_storageModeHasBeenSet)
+  {
+   payload.WithString("storageMode", StorageModeMapper::GetNameForStorageMode(m_storageMode));
   }
 
   return payload;

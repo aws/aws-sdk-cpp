@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchField">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API SearchField
+  class SearchField
   {
   public:
-    SearchField();
-    SearchField(Aws::Utils::Json::JsonView jsonValue);
-    SearchField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API SearchField();
+    AWS_CHIMESDKMESSAGING_API SearchField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API SearchField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,13 +220,13 @@ namespace Model
   private:
 
     SearchFieldKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     SearchFieldOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

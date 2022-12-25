@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheckRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API RefreshTrustedAdvisorCheckRequest : public SupportRequest
+  class RefreshTrustedAdvisorCheckRequest : public SupportRequest
   {
   public:
-    RefreshTrustedAdvisorCheckRequest();
+    AWS_SUPPORT_API RefreshTrustedAdvisorCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RefreshTrustedAdvisorCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SUPPORT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
   };
 
 } // namespace Model

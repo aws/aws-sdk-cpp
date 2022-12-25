@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityMailFromAttributesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutEmailIdentityMailFromAttributesRequest : public SESV2Request
+  class PutEmailIdentityMailFromAttributesRequest : public SESV2Request
   {
   public:
-    PutEmailIdentityMailFromAttributesRequest();
+    AWS_SESV2_API PutEmailIdentityMailFromAttributesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutEmailIdentityMailFromAttributes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -234,13 +234,13 @@ namespace Model
   private:
 
     Aws::String m_emailIdentity;
-    bool m_emailIdentityHasBeenSet;
+    bool m_emailIdentityHasBeenSet = false;
 
     Aws::String m_mailFromDomain;
-    bool m_mailFromDomainHasBeenSet;
+    bool m_mailFromDomainHasBeenSet = false;
 
     BehaviorOnMxFailure m_behaviorOnMxFailure;
-    bool m_behaviorOnMxFailureHasBeenSet;
+    bool m_behaviorOnMxFailureHasBeenSet = false;
   };
 
 } // namespace Model

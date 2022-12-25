@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetUsageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetUsageConfiguration
+  class DataSetUsageConfiguration
   {
   public:
-    DataSetUsageConfiguration();
-    DataSetUsageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataSetUsageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetUsageConfiguration();
+    AWS_QUICKSIGHT_API DataSetUsageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetUsageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_disableUseAsDirectQuerySource;
-    bool m_disableUseAsDirectQuerySourceHasBeenSet;
+    bool m_disableUseAsDirectQuerySourceHasBeenSet = false;
 
     bool m_disableUseAsImportedSource;
-    bool m_disableUseAsImportedSourceHasBeenSet;
+    bool m_disableUseAsImportedSourceHasBeenSet = false;
   };
 
 } // namespace Model

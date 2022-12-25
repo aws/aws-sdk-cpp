@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/KmsException">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API KmsException
+  class KmsException
   {
   public:
-    KmsException();
-    KmsException(Aws::Utils::Json::JsonView jsonValue);
-    KmsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API KmsException();
+    AWS_ECR_API KmsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API KmsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -105,10 +105,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_kmsError;
-    bool m_kmsErrorHasBeenSet;
+    bool m_kmsErrorHasBeenSet = false;
   };
 
 } // namespace Model

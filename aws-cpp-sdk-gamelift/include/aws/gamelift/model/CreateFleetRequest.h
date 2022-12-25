@@ -14,6 +14,8 @@
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/FleetType.h>
 #include <aws/gamelift/model/CertificateConfiguration.h>
+#include <aws/gamelift/model/ComputeType.h>
+#include <aws/gamelift/model/AnywhereConfiguration.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LocationConfiguration.h>
 #include <aws/gamelift/model/Tag.h>
@@ -27,14 +29,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CreateFleetRequest : public GameLiftRequest
+  class CreateFleetRequest : public GameLiftRequest
   {
   public:
-    CreateFleetRequest();
+    AWS_GAMELIFT_API CreateFleetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,9 +41,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFleet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -97,42 +96,42 @@ namespace Model
 
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A human-readable description of the fleet.</p>
+     * <p>A description for the fleet.</p>
      */
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -385,9 +384,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
@@ -395,9 +394,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline bool LogPathsHasBeenSet() const { return m_logPathsHasBeenSet; }
 
@@ -405,9 +404,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
@@ -415,9 +414,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
 
@@ -425,9 +424,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
@@ -435,9 +434,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
 
@@ -445,9 +444,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -455,9 +454,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
 
@@ -465,9 +464,9 @@ namespace Model
      * <p> <b>This parameter is no longer used.</b> To specify where GameLift should
      * store log files once a server process shuts down, use the GameLift server API
      * <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
-     * API Reference</a>. </p>
+     * <code>logParameters</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize
+     * the server process</a> in the <i>GameLift Developer Guide</i>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
@@ -601,66 +600,72 @@ namespace Model
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
 
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
      * <p>The status of termination protection for active game sessions on the fleet.
      * By default, this property is set to <code>NoProtection</code>. You can also set
-     * game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.</p> <ul> <li> <p> <b>NoProtection</b> - Game sessions
-     * can be terminated during active gameplay as a result of a scale-down event. </p>
-     * </li> <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code>
-     * status cannot be terminated during a scale-down event.</p> </li> </ul>
+     * game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> - Game sessions can be terminated during
+     * active gameplay as a result of a scale-down event. </p> </li> <li> <p>
+     * <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
@@ -911,7 +916,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
@@ -921,7 +926,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
 
@@ -931,7 +936,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
@@ -941,7 +946,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
@@ -951,7 +956,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
@@ -961,7 +966,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
@@ -971,7 +976,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
@@ -981,7 +986,7 @@ namespace Model
      * use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the
      * Amazon Web Services Management Console. Learn more about VPC peering in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-     * Peering with GameLift Fleets</a>. </p>
+     * Peering with GameLift Fleets</a>.</p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
@@ -1161,80 +1166,110 @@ namespace Model
 
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline CreateFleetRequest& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
 
     /**
-     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS
-     * certificates are used for encrypting traffic between game clients and the game
-     * servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This
-     * property cannot be changed after the fleet is created. </p> <p>Note: This
-     * feature requires the Amazon Web Services Certificate Manager (ACM) service,
-     * which is not available in all Amazon Web Services regions. When working in a
-     * region that does not support this feature, a fleet creation request with
-     * certificate generation fails with a 4xx error.</p>
+     * <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift
+     * uses the certificates to encrypt traffic between game clients and the game
+     * servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change
+     * this property after you create the fleet. </p> <p>Certificate Manager (ACM)
+     * certificates expire after 13 months. Certificate expiration can cause fleets to
+     * fail, preventing players from connecting to instances in the fleet. We recommend
+     * you replace fleets before 13 months, consider using fleet aliases for a smooth
+     * transition.</p>  <p>ACM isn't available in all Amazon Web Services
+     * regions. A fleet creation request with certificate generation enabled in an
+     * unsupported Region, fails with a 4xx error. For more information about the
+     * supported Regions, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported
+     * Regions</a> in the <i>Certificate Manager User Guide</i>.</p> 
      */
     inline CreateFleetRequest& WithCertificateConfiguration(CertificateConfiguration&& value) { SetCertificateConfiguration(std::move(value)); return *this;}
 
@@ -1327,10 +1362,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1341,10 +1373,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1355,10 +1384,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1369,10 +1395,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1383,10 +1406,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateFleetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1397,10 +1417,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateFleetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1411,10 +1428,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateFleetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1425,74 +1439,151 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the fleet is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     * Services General Reference</i> for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateFleetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline CreateFleetRequest& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
+
+    /**
+     * <p>The type of compute resource used to host your game servers. You can use your
+     * own compute resources with GameLift Anywhere or use Amazon EC2 instances with
+     * managed GameLift.</p>
+     */
+    inline CreateFleetRequest& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline CreateFleetRequest& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
+
+    /**
+     * <p>GameLift Anywhere configuration options.</p>
+     */
+    inline CreateFleetRequest& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_buildId;
-    bool m_buildIdHasBeenSet;
+    bool m_buildIdHasBeenSet = false;
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
 
     Aws::String m_serverLaunchPath;
-    bool m_serverLaunchPathHasBeenSet;
+    bool m_serverLaunchPathHasBeenSet = false;
 
     Aws::String m_serverLaunchParameters;
-    bool m_serverLaunchParametersHasBeenSet;
+    bool m_serverLaunchParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logPaths;
-    bool m_logPathsHasBeenSet;
+    bool m_logPathsHasBeenSet = false;
 
     EC2InstanceType m_eC2InstanceType;
-    bool m_eC2InstanceTypeHasBeenSet;
+    bool m_eC2InstanceTypeHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_eC2InboundPermissions;
-    bool m_eC2InboundPermissionsHasBeenSet;
+    bool m_eC2InboundPermissionsHasBeenSet = false;
 
     ProtectionPolicy m_newGameSessionProtectionPolicy;
-    bool m_newGameSessionProtectionPolicyHasBeenSet;
+    bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
     RuntimeConfiguration m_runtimeConfiguration;
-    bool m_runtimeConfigurationHasBeenSet;
+    bool m_runtimeConfigurationHasBeenSet = false;
 
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-    bool m_resourceCreationLimitPolicyHasBeenSet;
+    bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_metricGroups;
-    bool m_metricGroupsHasBeenSet;
+    bool m_metricGroupsHasBeenSet = false;
 
     Aws::String m_peerVpcAwsAccountId;
-    bool m_peerVpcAwsAccountIdHasBeenSet;
+    bool m_peerVpcAwsAccountIdHasBeenSet = false;
 
     Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet;
+    bool m_peerVpcIdHasBeenSet = false;
 
     FleetType m_fleetType;
-    bool m_fleetTypeHasBeenSet;
+    bool m_fleetTypeHasBeenSet = false;
 
     Aws::String m_instanceRoleArn;
-    bool m_instanceRoleArnHasBeenSet;
+    bool m_instanceRoleArnHasBeenSet = false;
 
     CertificateConfiguration m_certificateConfiguration;
-    bool m_certificateConfigurationHasBeenSet;
+    bool m_certificateConfigurationHasBeenSet = false;
 
     Aws::Vector<LocationConfiguration> m_locations;
-    bool m_locationsHasBeenSet;
+    bool m_locationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    ComputeType m_computeType;
+    bool m_computeTypeHasBeenSet = false;
+
+    AnywhereConfiguration m_anywhereConfiguration;
+    bool m_anywhereConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DocumentParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DocumentParameter
+  class DocumentParameter
   {
   public:
-    DocumentParameter();
-    DocumentParameter(Aws::Utils::Json::JsonView jsonValue);
-    DocumentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DocumentParameter();
+    AWS_IOT_API DocumentParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DocumentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::String m_example;
-    bool m_exampleHasBeenSet;
+    bool m_exampleHasBeenSet = false;
 
     bool m_optional;
-    bool m_optionalHasBeenSet;
+    bool m_optionalHasBeenSet = false;
   };
 
 } // namespace Model

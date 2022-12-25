@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PolicyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API PolicyDetails
+  class PolicyDetails
   {
   public:
-    PolicyDetails();
-    PolicyDetails(Aws::Utils::Json::JsonView jsonValue);
-    PolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API PolicyDetails();
+    AWS_MACIE2_API PolicyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API PolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     FindingAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     FindingActor m_actor;
-    bool m_actorHasBeenSet;
+    bool m_actorHasBeenSet = false;
   };
 
 } // namespace Model

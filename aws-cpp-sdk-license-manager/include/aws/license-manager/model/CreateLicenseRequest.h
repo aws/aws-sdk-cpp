@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CreateLicenseRequest : public LicenseManagerRequest
+  class CreateLicenseRequest : public LicenseManagerRequest
   {
   public:
-    CreateLicenseRequest();
+    AWS_LICENSEMANAGER_API CreateLicenseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLicense"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -489,37 +489,37 @@ namespace Model
   private:
 
     Aws::String m_licenseName;
-    bool m_licenseNameHasBeenSet;
+    bool m_licenseNameHasBeenSet = false;
 
     Aws::String m_productName;
-    bool m_productNameHasBeenSet;
+    bool m_productNameHasBeenSet = false;
 
     Aws::String m_productSKU;
-    bool m_productSKUHasBeenSet;
+    bool m_productSKUHasBeenSet = false;
 
     Issuer m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     DatetimeRange m_validity;
-    bool m_validityHasBeenSet;
+    bool m_validityHasBeenSet = false;
 
     Aws::Vector<Entitlement> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_beneficiary;
-    bool m_beneficiaryHasBeenSet;
+    bool m_beneficiaryHasBeenSet = false;
 
     ConsumptionConfiguration m_consumptionConfiguration;
-    bool m_consumptionConfigurationHasBeenSet;
+    bool m_consumptionConfigurationHasBeenSet = false;
 
     Aws::Vector<Metadata> m_licenseMetadata;
-    bool m_licenseMetadataHasBeenSet;
+    bool m_licenseMetadataHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

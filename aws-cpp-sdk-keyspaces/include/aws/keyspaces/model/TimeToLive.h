@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/TimeToLive">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API TimeToLive
+  class TimeToLive
   {
   public:
-    TimeToLive();
-    TimeToLive(Aws::Utils::Json::JsonView jsonValue);
-    TimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API TimeToLive();
+    AWS_KEYSPACES_API TimeToLive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API TimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     TimeToLiveStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/LoggingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API LoggingOptions
+  class LoggingOptions
   {
   public:
-    LoggingOptions();
-    LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
-    LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API LoggingOptions();
+    AWS_IOTSITEWISE_API LoggingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API LoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LoggingLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
   };
 
 } // namespace Model

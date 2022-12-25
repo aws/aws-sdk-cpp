@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMCONTACTS_API AcceptPageRequest : public SSMContactsRequest
+  class AcceptPageRequest : public SSMContactsRequest
   {
   public:
-    AcceptPageRequest();
+    AWS_SSMCONTACTS_API AcceptPageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptPage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMCONTACTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -312,22 +312,22 @@ namespace Model
   private:
 
     Aws::String m_pageId;
-    bool m_pageIdHasBeenSet;
+    bool m_pageIdHasBeenSet = false;
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     AcceptType m_acceptType;
-    bool m_acceptTypeHasBeenSet;
+    bool m_acceptTypeHasBeenSet = false;
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     Aws::String m_acceptCode;
-    bool m_acceptCodeHasBeenSet;
+    bool m_acceptCodeHasBeenSet = false;
 
     AcceptCodeValidation m_acceptCodeValidation;
-    bool m_acceptCodeValidationHasBeenSet;
+    bool m_acceptCodeValidationHasBeenSet = false;
   };
 
 } // namespace Model

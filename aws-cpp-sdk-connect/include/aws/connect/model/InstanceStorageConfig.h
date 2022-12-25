@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/InstanceStorageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API InstanceStorageConfig
+  class InstanceStorageConfig
   {
   public:
-    InstanceStorageConfig();
-    InstanceStorageConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceStorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API InstanceStorageConfig();
+    AWS_CONNECT_API InstanceStorageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API InstanceStorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,22 +248,22 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     S3Config m_s3Config;
-    bool m_s3ConfigHasBeenSet;
+    bool m_s3ConfigHasBeenSet = false;
 
     KinesisVideoStreamConfig m_kinesisVideoStreamConfig;
-    bool m_kinesisVideoStreamConfigHasBeenSet;
+    bool m_kinesisVideoStreamConfigHasBeenSet = false;
 
     KinesisStreamConfig m_kinesisStreamConfig;
-    bool m_kinesisStreamConfigHasBeenSet;
+    bool m_kinesisStreamConfigHasBeenSet = false;
 
     KinesisFirehoseConfig m_kinesisFirehoseConfig;
-    bool m_kinesisFirehoseConfigHasBeenSet;
+    bool m_kinesisFirehoseConfigHasBeenSet = false;
   };
 
 } // namespace Model

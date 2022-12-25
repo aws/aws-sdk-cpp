@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingGroupProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingGroupProperties
+  class ThingGroupProperties
   {
   public:
-    ThingGroupProperties();
-    ThingGroupProperties(Aws::Utils::Json::JsonView jsonValue);
-    ThingGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingGroupProperties();
+    AWS_IOT_API ThingGroupProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_thingGroupDescription;
-    bool m_thingGroupDescriptionHasBeenSet;
+    bool m_thingGroupDescriptionHasBeenSet = false;
 
     AttributePayload m_attributePayload;
-    bool m_attributePayloadHasBeenSet;
+    bool m_attributePayloadHasBeenSet = false;
   };
 
 } // namespace Model

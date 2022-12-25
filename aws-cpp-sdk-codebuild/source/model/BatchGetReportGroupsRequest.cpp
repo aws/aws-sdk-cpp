@@ -23,7 +23,7 @@ Aws::String BatchGetReportGroupsRequest::SerializePayload() const
 
   if(m_reportGroupArnsHasBeenSet)
   {
-   Array<JsonValue> reportGroupArnsJsonList(m_reportGroupArns.size());
+   Aws::Utils::Array<JsonValue> reportGroupArnsJsonList(m_reportGroupArns.size());
    for(unsigned reportGroupArnsIndex = 0; reportGroupArnsIndex < reportGroupArnsJsonList.GetLength(); ++reportGroupArnsIndex)
    {
      reportGroupArnsJsonList[reportGroupArnsIndex].AsString(m_reportGroupArns[reportGroupArnsIndex]);

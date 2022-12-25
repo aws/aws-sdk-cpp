@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MaintenanceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MaintenanceStatus
+  class MaintenanceStatus
   {
   public:
-    MaintenanceStatus();
-    MaintenanceStatus(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MaintenanceStatus();
+    AWS_MEDIALIVE_API MaintenanceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MaintenanceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     MaintenanceDay m_maintenanceDay;
-    bool m_maintenanceDayHasBeenSet;
+    bool m_maintenanceDayHasBeenSet = false;
 
     Aws::String m_maintenanceDeadline;
-    bool m_maintenanceDeadlineHasBeenSet;
+    bool m_maintenanceDeadlineHasBeenSet = false;
 
     Aws::String m_maintenanceScheduledDate;
-    bool m_maintenanceScheduledDateHasBeenSet;
+    bool m_maintenanceScheduledDateHasBeenSet = false;
 
     Aws::String m_maintenanceStartTime;
-    bool m_maintenanceStartTimeHasBeenSet;
+    bool m_maintenanceStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

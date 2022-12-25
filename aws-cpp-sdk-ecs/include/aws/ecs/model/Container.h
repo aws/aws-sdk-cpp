@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Container();
+    AWS_ECS_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -776,55 +776,55 @@ namespace Model
   private:
 
     Aws::String m_containerArn;
-    bool m_containerArnHasBeenSet;
+    bool m_containerArnHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::String m_runtimeId;
-    bool m_runtimeIdHasBeenSet;
+    bool m_runtimeIdHasBeenSet = false;
 
     Aws::String m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     int m_exitCode;
-    bool m_exitCodeHasBeenSet;
+    bool m_exitCodeHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Vector<NetworkBinding> m_networkBindings;
-    bool m_networkBindingsHasBeenSet;
+    bool m_networkBindingsHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     HealthStatus m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::Vector<ManagedAgent> m_managedAgents;
-    bool m_managedAgentsHasBeenSet;
+    bool m_managedAgentsHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_memoryReservation;
-    bool m_memoryReservationHasBeenSet;
+    bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gpuIds;
-    bool m_gpuIdsHasBeenSet;
+    bool m_gpuIdsHasBeenSet = false;
   };
 
 } // namespace Model

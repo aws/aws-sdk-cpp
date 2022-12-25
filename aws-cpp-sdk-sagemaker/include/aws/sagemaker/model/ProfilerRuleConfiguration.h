@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerRuleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProfilerRuleConfiguration
+  class ProfilerRuleConfiguration
   {
   public:
-    ProfilerRuleConfiguration();
-    ProfilerRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProfilerRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration();
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,79 +179,81 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline const Aws::String& GetRuleEvaluatorImage() const{ return m_ruleEvaluatorImage; }
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline bool RuleEvaluatorImageHasBeenSet() const { return m_ruleEvaluatorImageHasBeenSet; }
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline void SetRuleEvaluatorImage(const Aws::String& value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage = value; }
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline void SetRuleEvaluatorImage(Aws::String&& value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage = std::move(value); }
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline void SetRuleEvaluatorImage(const char* value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage.assign(value); }
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline ProfilerRuleConfiguration& WithRuleEvaluatorImage(const Aws::String& value) { SetRuleEvaluatorImage(value); return *this;}
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline ProfilerRuleConfiguration& WithRuleEvaluatorImage(Aws::String&& value) { SetRuleEvaluatorImage(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
+     * <p>The Amazon Elastic Container Registry Image for the managed rule
+     * evaluation.</p>
      */
     inline ProfilerRuleConfiguration& WithRuleEvaluatorImage(const char* value) { SetRuleEvaluatorImage(value); return *this;}
 
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline const ProcessingInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline void SetInstanceType(const ProcessingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline void SetInstanceType(ProcessingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline ProfilerRuleConfiguration& WithInstanceType(const ProcessingInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type to deploy a Debugger custom rule for profiling a training
-     * job.</p>
+     * <p>The instance type to deploy a custom rule for profiling a training job.</p>
      */
     inline ProfilerRuleConfiguration& WithInstanceType(ProcessingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -349,25 +351,25 @@ namespace Model
   private:
 
     Aws::String m_ruleConfigurationName;
-    bool m_ruleConfigurationNameHasBeenSet;
+    bool m_ruleConfigurationNameHasBeenSet = false;
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::String m_ruleEvaluatorImage;
-    bool m_ruleEvaluatorImageHasBeenSet;
+    bool m_ruleEvaluatorImageHasBeenSet = false;
 
     ProcessingInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_volumeSizeInGB;
-    bool m_volumeSizeInGBHasBeenSet;
+    bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_ruleParameters;
-    bool m_ruleParametersHasBeenSet;
+    bool m_ruleParametersHasBeenSet = false;
   };
 
 } // namespace Model

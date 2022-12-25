@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SubStatementData">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API SubStatementData
+  class SubStatementData
   {
   public:
-    SubStatementData();
-    SubStatementData(Aws::Utils::Json::JsonView jsonValue);
-    SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData();
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,37 +432,37 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     bool m_hasResultSet;
-    bool m_hasResultSetHasBeenSet;
+    bool m_hasResultSetHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     long long m_redshiftQueryId;
-    bool m_redshiftQueryIdHasBeenSet;
+    bool m_redshiftQueryIdHasBeenSet = false;
 
     long long m_resultRows;
-    bool m_resultRowsHasBeenSet;
+    bool m_resultRowsHasBeenSet = false;
 
     long long m_resultSize;
-    bool m_resultSizeHasBeenSet;
+    bool m_resultSizeHasBeenSet = false;
 
     StatementStatusString m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

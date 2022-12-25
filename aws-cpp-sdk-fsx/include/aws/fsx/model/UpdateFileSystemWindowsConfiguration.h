@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemWindowsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemWindowsConfiguration
+  class UpdateFileSystemWindowsConfiguration
   {
   public:
-    UpdateFileSystemWindowsConfiguration();
-    UpdateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemWindowsConfiguration();
+    AWS_FSX_API UpdateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -323,22 +323,22 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     SelfManagedActiveDirectoryConfigurationUpdates m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
     WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
-    bool m_auditLogConfigurationHasBeenSet;
+    bool m_auditLogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RowFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API RowFilter
+  class RowFilter
   {
   public:
-    RowFilter();
-    RowFilter(Aws::Utils::Json::JsonView jsonValue);
-    RowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API RowFilter();
+    AWS_LAKEFORMATION_API RowFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API RowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     AllRowsWildcard m_allRowsWildcard;
-    bool m_allRowsWildcardHasBeenSet;
+    bool m_allRowsWildcardHasBeenSet = false;
   };
 
 } // namespace Model

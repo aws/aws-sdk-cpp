@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CloudWatchDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CloudWatchDestination
+  class CloudWatchDestination
   {
   public:
-    CloudWatchDestination();
-    CloudWatchDestination(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API CloudWatchDestination();
+    AWS_PINPOINTEMAIL_API CloudWatchDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API CloudWatchDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::Vector<CloudWatchDimensionConfiguration> m_dimensionConfigurations;
-    bool m_dimensionConfigurationsHasBeenSet;
+    bool m_dimensionConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

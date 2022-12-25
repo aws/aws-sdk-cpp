@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DimensionMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API DimensionMapping
+  class DimensionMapping
   {
   public:
-    DimensionMapping();
-    DimensionMapping(Aws::Utils::Json::JsonView jsonValue);
-    DimensionMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API DimensionMapping();
+    AWS_TIMESTREAMQUERY_API DimensionMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API DimensionMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DimensionValueType m_dimensionValueType;
-    bool m_dimensionValueTypeHasBeenSet;
+    bool m_dimensionValueTypeHasBeenSet = false;
   };
 
 } // namespace Model

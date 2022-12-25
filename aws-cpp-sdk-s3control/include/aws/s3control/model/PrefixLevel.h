@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PrefixLevel">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API PrefixLevel
+  class PrefixLevel
   {
   public:
-    PrefixLevel();
-    PrefixLevel(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrefixLevel& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PrefixLevel();
+    AWS_S3CONTROL_API PrefixLevel(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PrefixLevel& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     PrefixLevelStorageMetrics m_storageMetrics;
-    bool m_storageMetricsHasBeenSet;
+    bool m_storageMetricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ServerSideEncryptionUpdateDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API ServerSideEncryptionUpdateDetails
+  class ServerSideEncryptionUpdateDetails
   {
   public:
-    ServerSideEncryptionUpdateDetails();
-    ServerSideEncryptionUpdateDetails(Aws::Utils::Json::JsonView jsonValue);
-    ServerSideEncryptionUpdateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API ServerSideEncryptionUpdateDetails();
+    AWS_VOICEID_API ServerSideEncryptionUpdateDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API ServerSideEncryptionUpdateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_oldKmsKeyId;
-    bool m_oldKmsKeyIdHasBeenSet;
+    bool m_oldKmsKeyIdHasBeenSet = false;
 
     ServerSideEncryptionUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
   };
 
 } // namespace Model

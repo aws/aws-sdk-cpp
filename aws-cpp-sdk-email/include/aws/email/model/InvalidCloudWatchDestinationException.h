@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidCloudWatchDestinationException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API InvalidCloudWatchDestinationException
+  class InvalidCloudWatchDestinationException
   {
   public:
-    InvalidCloudWatchDestinationException();
-    InvalidCloudWatchDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidCloudWatchDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidCloudWatchDestinationException();
+    AWS_SES_API InvalidCloudWatchDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidCloudWatchDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::String m_eventDestinationName;
-    bool m_eventDestinationNameHasBeenSet;
+    bool m_eventDestinationNameHasBeenSet = false;
   };
 
 } // namespace Model

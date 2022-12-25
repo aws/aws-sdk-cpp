@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrustRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DeleteTrustRequest : public DirectoryServiceRequest
+  class DeleteTrustRequest : public DirectoryServiceRequest
   {
   public:
-    DeleteTrustRequest();
+    AWS_DIRECTORYSERVICE_API DeleteTrustRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteTrust"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_trustId;
-    bool m_trustIdHasBeenSet;
+    bool m_trustIdHasBeenSet = false;
 
     bool m_deleteAssociatedConditionalForwarder;
-    bool m_deleteAssociatedConditionalForwarderHasBeenSet;
+    bool m_deleteAssociatedConditionalForwarderHasBeenSet = false;
   };
 
 } // namespace Model

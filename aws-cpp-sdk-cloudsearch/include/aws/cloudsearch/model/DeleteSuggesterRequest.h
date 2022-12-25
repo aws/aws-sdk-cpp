@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggesterRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DeleteSuggesterRequest : public CloudSearchRequest
+  class DeleteSuggesterRequest : public CloudSearchRequest
   {
   public:
-    DeleteSuggesterRequest();
+    AWS_CLOUDSEARCH_API DeleteSuggesterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSuggester"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDSEARCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDSEARCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_suggesterName;
-    bool m_suggesterNameHasBeenSet;
+    bool m_suggesterNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AsyncOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API AsyncOperation
+  class AsyncOperation
   {
   public:
-    AsyncOperation();
-    AsyncOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AsyncOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncOperation();
+    AWS_S3CONTROL_API AsyncOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -250,22 +250,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     AsyncOperationName m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_requestTokenARN;
-    bool m_requestTokenARNHasBeenSet;
+    bool m_requestTokenARNHasBeenSet = false;
 
     AsyncRequestParameters m_requestParameters;
-    bool m_requestParametersHasBeenSet;
+    bool m_requestParametersHasBeenSet = false;
 
     Aws::String m_requestStatus;
-    bool m_requestStatusHasBeenSet;
+    bool m_requestStatusHasBeenSet = false;
 
     AsyncResponseDetails m_responseDetails;
-    bool m_responseDetailsHasBeenSet;
+    bool m_responseDetailsHasBeenSet = false;
   };
 
 } // namespace Model

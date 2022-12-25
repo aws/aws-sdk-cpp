@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API FleetCapacity
+  class FleetCapacity
   {
   public:
-    FleetCapacity();
-    FleetCapacity(Aws::Utils::Json::JsonView jsonValue);
-    FleetCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API FleetCapacity();
+    AWS_GAMELIFT_API FleetCapacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API FleetCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,34 +216,22 @@ namespace Model
     inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline const EC2InstanceCounts& GetInstanceCounts() const{ return m_instanceCounts; }
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline bool InstanceCountsHasBeenSet() const { return m_instanceCountsHasBeenSet; }
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline void SetInstanceCounts(const EC2InstanceCounts& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = value; }
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline void SetInstanceCounts(EC2InstanceCounts&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts = std::move(value); }
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline FleetCapacity& WithInstanceCounts(const EC2InstanceCounts& value) { SetInstanceCounts(value); return *this;}
 
-    /**
-     * <p>The current instance count and capacity settings for the fleet location. </p>
-     */
+    
     inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
 
 
@@ -298,19 +286,19 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     EC2InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     EC2InstanceCounts m_instanceCounts;
-    bool m_instanceCountsHasBeenSet;
+    bool m_instanceCountsHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AccountHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AccountHealth
+  class AccountHealth
   {
   public:
-    AccountHealth();
-    AccountHealth(Aws::Utils::Json::JsonView jsonValue);
-    AccountHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AccountHealth();
+    AWS_DEVOPSGURU_API AccountHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AccountHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AccountInsightHealth m_insight;
-    bool m_insightHasBeenSet;
+    bool m_insightHasBeenSet = false;
   };
 
 } // namespace Model

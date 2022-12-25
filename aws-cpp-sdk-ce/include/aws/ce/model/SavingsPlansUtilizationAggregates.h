@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilizationAggregates">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates
+  class SavingsPlansUtilizationAggregates
   {
   public:
-    SavingsPlansUtilizationAggregates();
-    SavingsPlansUtilizationAggregates(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansUtilizationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates();
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     SavingsPlansUtilization m_utilization;
-    bool m_utilizationHasBeenSet;
+    bool m_utilizationHasBeenSet = false;
 
     SavingsPlansSavings m_savings;
-    bool m_savingsHasBeenSet;
+    bool m_savingsHasBeenSet = false;
 
     SavingsPlansAmortizedCommitment m_amortizedCommitment;
-    bool m_amortizedCommitmentHasBeenSet;
+    bool m_amortizedCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

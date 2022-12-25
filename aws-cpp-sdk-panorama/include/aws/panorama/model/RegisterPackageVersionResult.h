@@ -22,12 +22,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API RegisterPackageVersionResult
+  class RegisterPackageVersionResult
   {
   public:
-    RegisterPackageVersionResult();
-    RegisterPackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterPackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API RegisterPackageVersionResult();
+    AWS_PANORAMA_API RegisterPackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API RegisterPackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

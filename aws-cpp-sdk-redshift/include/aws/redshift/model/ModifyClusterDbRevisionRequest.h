@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API ModifyClusterDbRevisionRequest : public RedshiftRequest
+  class ModifyClusterDbRevisionRequest : public RedshiftRequest
   {
   public:
-    ModifyClusterDbRevisionRequest();
+    AWS_REDSHIFT_API ModifyClusterDbRevisionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyClusterDbRevision"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_revisionTarget;
-    bool m_revisionTargetHasBeenSet;
+    bool m_revisionTargetHasBeenSet = false;
   };
 
 } // namespace Model

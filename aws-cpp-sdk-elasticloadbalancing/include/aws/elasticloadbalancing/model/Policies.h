@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Policies">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API Policies
+  class Policies
   {
   public:
-    Policies();
-    Policies(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Policies& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API Policies();
+    AWS_ELASTICLOADBALANCING_API Policies(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API Policies& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::Vector<AppCookieStickinessPolicy> m_appCookieStickinessPolicies;
-    bool m_appCookieStickinessPoliciesHasBeenSet;
+    bool m_appCookieStickinessPoliciesHasBeenSet = false;
 
     Aws::Vector<LBCookieStickinessPolicy> m_lBCookieStickinessPolicies;
-    bool m_lBCookieStickinessPoliciesHasBeenSet;
+    bool m_lBCookieStickinessPoliciesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_otherPolicies;
-    bool m_otherPoliciesHasBeenSet;
+    bool m_otherPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

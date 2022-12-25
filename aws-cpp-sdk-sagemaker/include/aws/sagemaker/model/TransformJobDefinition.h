@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformJobDefinition
+  class TransformJobDefinition
   {
   public:
-    TransformJobDefinition();
-    TransformJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TransformJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformJobDefinition();
+    AWS_SAGEMAKER_API TransformJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     int m_maxConcurrentTransforms;
-    bool m_maxConcurrentTransformsHasBeenSet;
+    bool m_maxConcurrentTransformsHasBeenSet = false;
 
     int m_maxPayloadInMB;
-    bool m_maxPayloadInMBHasBeenSet;
+    bool m_maxPayloadInMBHasBeenSet = false;
 
     BatchStrategy m_batchStrategy;
-    bool m_batchStrategyHasBeenSet;
+    bool m_batchStrategyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     TransformInput m_transformInput;
-    bool m_transformInputHasBeenSet;
+    bool m_transformInputHasBeenSet = false;
 
     TransformOutput m_transformOutput;
-    bool m_transformOutputHasBeenSet;
+    bool m_transformOutputHasBeenSet = false;
 
     TransformResources m_transformResources;
-    bool m_transformResourcesHasBeenSet;
+    bool m_transformResourcesHasBeenSet = false;
   };
 
 } // namespace Model

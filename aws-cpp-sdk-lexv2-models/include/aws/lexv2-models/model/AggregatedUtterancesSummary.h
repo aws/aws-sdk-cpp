@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AggregatedUtterancesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AggregatedUtterancesSummary
+  class AggregatedUtterancesSummary
   {
   public:
-    AggregatedUtterancesSummary();
-    AggregatedUtterancesSummary(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedUtterancesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AggregatedUtterancesSummary();
+    AWS_LEXMODELSV2_API AggregatedUtterancesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AggregatedUtterancesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     Aws::String m_utterance;
-    bool m_utteranceHasBeenSet;
+    bool m_utteranceHasBeenSet = false;
 
     int m_hitCount;
-    bool m_hitCountHasBeenSet;
+    bool m_hitCountHasBeenSet = false;
 
     int m_missedCount;
-    bool m_missedCountHasBeenSet;
+    bool m_missedCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_utteranceFirstRecordedInAggregationDuration;
-    bool m_utteranceFirstRecordedInAggregationDurationHasBeenSet;
+    bool m_utteranceFirstRecordedInAggregationDurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_utteranceLastRecordedInAggregationDuration;
-    bool m_utteranceLastRecordedInAggregationDurationHasBeenSet;
+    bool m_utteranceLastRecordedInAggregationDurationHasBeenSet = false;
 
     bool m_containsDataFromDeletedResources;
-    bool m_containsDataFromDeletedResourcesHasBeenSet;
+    bool m_containsDataFromDeletedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

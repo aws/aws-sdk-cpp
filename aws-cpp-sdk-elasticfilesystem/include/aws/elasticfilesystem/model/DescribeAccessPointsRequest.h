@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_EFS_API DescribeAccessPointsRequest : public EFSRequest
+  class DescribeAccessPointsRequest : public EFSRequest
   {
   public:
-    DescribeAccessPointsRequest();
+    AWS_EFS_API DescribeAccessPointsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAccessPoints"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EFS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_EFS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

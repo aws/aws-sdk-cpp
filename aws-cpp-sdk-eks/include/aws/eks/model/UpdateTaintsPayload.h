@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateTaintsPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API UpdateTaintsPayload
+  class UpdateTaintsPayload
   {
   public:
-    UpdateTaintsPayload();
-    UpdateTaintsPayload(Aws::Utils::Json::JsonView jsonValue);
-    UpdateTaintsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API UpdateTaintsPayload();
+    AWS_EKS_API UpdateTaintsPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API UpdateTaintsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,52 +83,52 @@ namespace Model
 
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline const Aws::Vector<Taint>& GetRemoveTaints() const{ return m_removeTaints; }
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline bool RemoveTaintsHasBeenSet() const { return m_removeTaintsHasBeenSet; }
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline void SetRemoveTaints(const Aws::Vector<Taint>& value) { m_removeTaintsHasBeenSet = true; m_removeTaints = value; }
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline void SetRemoveTaints(Aws::Vector<Taint>&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints = std::move(value); }
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline UpdateTaintsPayload& WithRemoveTaints(const Aws::Vector<Taint>& value) { SetRemoveTaints(value); return *this;}
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline UpdateTaintsPayload& WithRemoveTaints(Aws::Vector<Taint>&& value) { SetRemoveTaints(std::move(value)); return *this;}
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline UpdateTaintsPayload& AddRemoveTaints(const Taint& value) { m_removeTaintsHasBeenSet = true; m_removeTaints.push_back(value); return *this; }
 
     /**
-     * <p>Kubernetes taints to be removed.</p>
+     * <p>Kubernetes taints to remove.</p>
      */
     inline UpdateTaintsPayload& AddRemoveTaints(Taint&& value) { m_removeTaintsHasBeenSet = true; m_removeTaints.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::Vector<Taint> m_addOrUpdateTaints;
-    bool m_addOrUpdateTaintsHasBeenSet;
+    bool m_addOrUpdateTaintsHasBeenSet = false;
 
     Aws::Vector<Taint> m_removeTaints;
-    bool m_removeTaintsHasBeenSet;
+    bool m_removeTaintsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListAssessmentFrameworkShareRequestsResult& ListAssessmentFrameworkShareRequests
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentFrameworkShareRequests"))
   {
-    Array<JsonView> assessmentFrameworkShareRequestsJsonList = jsonValue.GetArray("assessmentFrameworkShareRequests");
+    Aws::Utils::Array<JsonView> assessmentFrameworkShareRequestsJsonList = jsonValue.GetArray("assessmentFrameworkShareRequests");
     for(unsigned assessmentFrameworkShareRequestsIndex = 0; assessmentFrameworkShareRequestsIndex < assessmentFrameworkShareRequestsJsonList.GetLength(); ++assessmentFrameworkShareRequestsIndex)
     {
       m_assessmentFrameworkShareRequests.push_back(assessmentFrameworkShareRequestsJsonList[assessmentFrameworkShareRequestsIndex].AsObject());

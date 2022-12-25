@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/HdfsNameNode">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API HdfsNameNode
+  class HdfsNameNode
   {
   public:
-    HdfsNameNode();
-    HdfsNameNode(Aws::Utils::Json::JsonView jsonValue);
-    HdfsNameNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API HdfsNameNode();
+    AWS_DATASYNC_API HdfsNameNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API HdfsNameNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

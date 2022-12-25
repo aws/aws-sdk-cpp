@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API AssociateSubnetCidrBlockRequest : public EC2Request
+  class AssociateSubnetCidrBlockRequest : public EC2Request
   {
   public:
-    AssociateSubnetCidrBlockRequest();
+    AWS_EC2_API AssociateSubnetCidrBlockRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateSubnetCidrBlock"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet;
+    bool m_ipv6CidrBlockHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
   };
 
 } // namespace Model

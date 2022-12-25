@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ManagementPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ManagementPreference
+  class ManagementPreference
   {
   public:
-    ManagementPreference();
-    ManagementPreference(Aws::Utils::Json::JsonView jsonValue);
-    ManagementPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ManagementPreference();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ManagementPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ManagementPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     AwsManagedResources m_awsManagedResources;
-    bool m_awsManagedResourcesHasBeenSet;
+    bool m_awsManagedResourcesHasBeenSet = false;
 
     NoManagementPreference m_noPreference;
-    bool m_noPreferenceHasBeenSet;
+    bool m_noPreferenceHasBeenSet = false;
 
     SelfManageResources m_selfManageResources;
-    bool m_selfManageResourcesHasBeenSet;
+    bool m_selfManageResourcesHasBeenSet = false;
   };
 
 } // namespace Model

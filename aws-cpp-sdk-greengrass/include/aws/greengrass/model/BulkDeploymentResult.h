@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeploymentResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API BulkDeploymentResult
+  class BulkDeploymentResult
   {
   public:
-    BulkDeploymentResult();
-    BulkDeploymentResult(Aws::Utils::Json::JsonView jsonValue);
-    BulkDeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API BulkDeploymentResult();
+    AWS_GREENGRASS_API BulkDeploymentResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API BulkDeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deploymentArn;
-    bool m_deploymentArnHasBeenSet;
+    bool m_deploymentArnHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     DeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryReference">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategoryReference
+  class CostCategoryReference
   {
   public:
-    CostCategoryReference();
-    CostCategoryReference(Aws::Utils::Json::JsonView jsonValue);
-    CostCategoryReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategoryReference();
+    AWS_COSTEXPLORER_API CostCategoryReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategoryReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,28 +333,28 @@ namespace Model
   private:
 
     Aws::String m_costCategoryArn;
-    bool m_costCategoryArnHasBeenSet;
+    bool m_costCategoryArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_effectiveStart;
-    bool m_effectiveStartHasBeenSet;
+    bool m_effectiveStartHasBeenSet = false;
 
     Aws::String m_effectiveEnd;
-    bool m_effectiveEndHasBeenSet;
+    bool m_effectiveEndHasBeenSet = false;
 
     int m_numberOfRules;
-    bool m_numberOfRulesHasBeenSet;
+    bool m_numberOfRulesHasBeenSet = false;
 
     Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-    bool m_processingStatusHasBeenSet;
+    bool m_processingStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

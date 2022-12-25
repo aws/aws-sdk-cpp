@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Blueprint">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Blueprint
+  class Blueprint
   {
   public:
-    Blueprint();
-    Blueprint(Aws::Utils::Json::JsonView jsonValue);
-    Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Blueprint();
+    AWS_LIGHTSAIL_API Blueprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -524,40 +524,40 @@ namespace Model
   private:
 
     Aws::String m_blueprintId;
-    bool m_blueprintIdHasBeenSet;
+    bool m_blueprintIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     BlueprintType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
 
     int m_minPower;
-    bool m_minPowerHasBeenSet;
+    bool m_minPowerHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_versionCode;
-    bool m_versionCodeHasBeenSet;
+    bool m_versionCodeHasBeenSet = false;
 
     Aws::String m_productUrl;
-    bool m_productUrlHasBeenSet;
+    bool m_productUrlHasBeenSet = false;
 
     Aws::String m_licenseUrl;
-    bool m_licenseUrlHasBeenSet;
+    bool m_licenseUrlHasBeenSet = false;
 
     InstancePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

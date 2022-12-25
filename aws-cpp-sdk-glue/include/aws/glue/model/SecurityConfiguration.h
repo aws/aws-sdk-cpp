@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SecurityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SecurityConfiguration
+  class SecurityConfiguration
   {
   public:
-    SecurityConfiguration();
-    SecurityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SecurityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SecurityConfiguration();
+    AWS_GLUE_API SecurityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SecurityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimeStamp;
-    bool m_createdTimeStampHasBeenSet;
+    bool m_createdTimeStampHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

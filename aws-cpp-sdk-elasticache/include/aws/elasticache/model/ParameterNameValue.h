@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ParameterNameValue">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ParameterNameValue
+  class ParameterNameValue
   {
   public:
-    ParameterNameValue();
-    ParameterNameValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ParameterNameValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ParameterNameValue();
+    AWS_ELASTICACHE_API ParameterNameValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ParameterNameValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

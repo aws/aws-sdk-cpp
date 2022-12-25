@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ReservationPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ReservationPlan
+  class ReservationPlan
   {
   public:
-    ReservationPlan();
-    ReservationPlan(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ReservationPlan();
+    AWS_MEDIACONVERT_API ReservationPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ReservationPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Commitment m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchasedAt;
-    bool m_purchasedAtHasBeenSet;
+    bool m_purchasedAtHasBeenSet = false;
 
     RenewalType m_renewalType;
-    bool m_renewalTypeHasBeenSet;
+    bool m_renewalTypeHasBeenSet = false;
 
     int m_reservedSlots;
-    bool m_reservedSlotsHasBeenSet;
+    bool m_reservedSlotsHasBeenSet = false;
 
     ReservationPlanStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

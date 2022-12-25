@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DvbSubSourceSettings
+  class DvbSubSourceSettings
   {
   public:
-    DvbSubSourceSettings();
-    DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DvbSubSourceSettings();
+    AWS_MEDIACONVERT_API DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
   };
 
 } // namespace Model

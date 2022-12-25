@@ -69,7 +69,7 @@ PutAssetPropertyValueEntry& PutAssetPropertyValueEntry::operator =(JsonView json
 
   if(jsonValue.ValueExists("propertyValues"))
   {
-    Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
+    Aws::Utils::Array<JsonView> propertyValuesJsonList = jsonValue.GetArray("propertyValues");
     for(unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex)
     {
       m_propertyValues.push_back(propertyValuesJsonList[propertyValuesIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue PutAssetPropertyValueEntry::Jsonize() const
 
   if(m_propertyValuesHasBeenSet)
   {
-   Array<JsonValue> propertyValuesJsonList(m_propertyValues.size());
+   Aws::Utils::Array<JsonValue> propertyValuesJsonList(m_propertyValues.size());
    for(unsigned propertyValuesIndex = 0; propertyValuesIndex < propertyValuesJsonList.GetLength(); ++propertyValuesIndex)
    {
      propertyValuesJsonList[propertyValuesIndex].AsObject(m_propertyValues[propertyValuesIndex].Jsonize());

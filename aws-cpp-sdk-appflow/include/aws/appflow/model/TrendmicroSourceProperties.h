@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/TrendmicroSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API TrendmicroSourceProperties
+  class TrendmicroSourceProperties
   {
   public:
-    TrendmicroSourceProperties();
-    TrendmicroSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    TrendmicroSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API TrendmicroSourceProperties();
+    AWS_APPFLOW_API TrendmicroSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API TrendmicroSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

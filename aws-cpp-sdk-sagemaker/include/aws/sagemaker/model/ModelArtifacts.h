@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelArtifacts">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelArtifacts
+  class ModelArtifacts
   {
   public:
-    ModelArtifacts();
-    ModelArtifacts(Aws::Utils::Json::JsonView jsonValue);
-    ModelArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelArtifacts();
+    AWS_SAGEMAKER_API ModelArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_s3ModelArtifacts;
-    bool m_s3ModelArtifactsHasBeenSet;
+    bool m_s3ModelArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/Model">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API Model
+  class Model
   {
   public:
-    Model();
-    Model(Aws::Utils::Json::JsonView jsonValue);
-    Model& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API Model();
+    AWS_SAGEMAKEREDGEMANAGER_API Model(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestSampleTime;
-    bool m_latestSampleTimeHasBeenSet;
+    bool m_latestSampleTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestInference;
-    bool m_latestInferenceHasBeenSet;
+    bool m_latestInferenceHasBeenSet = false;
 
     Aws::Vector<EdgeMetric> m_modelMetrics;
-    bool m_modelMetricsHasBeenSet;
+    bool m_modelMetricsHasBeenSet = false;
   };
 
 } // namespace Model

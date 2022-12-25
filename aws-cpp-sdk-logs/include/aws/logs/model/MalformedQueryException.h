@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MalformedQueryException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API MalformedQueryException
+  class MalformedQueryException
   {
   public:
-    MalformedQueryException();
-    MalformedQueryException(Aws::Utils::Json::JsonView jsonValue);
-    MalformedQueryException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API MalformedQueryException();
+    AWS_CLOUDWATCHLOGS_API MalformedQueryException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API MalformedQueryException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     QueryCompileError m_queryCompileError;
-    bool m_queryCompileErrorHasBeenSet;
+    bool m_queryCompileErrorHasBeenSet = false;
   };
 
 } // namespace Model

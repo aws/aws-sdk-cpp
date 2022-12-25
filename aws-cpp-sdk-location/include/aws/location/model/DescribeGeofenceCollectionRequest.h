@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API DescribeGeofenceCollectionRequest : public LocationServiceRequest
+  class DescribeGeofenceCollectionRequest : public LocationServiceRequest
   {
   public:
-    DescribeGeofenceCollectionRequest();
+    AWS_LOCATIONSERVICE_API DescribeGeofenceCollectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeGeofenceCollection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
   };
 
 } // namespace Model

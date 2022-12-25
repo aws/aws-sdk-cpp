@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API CreateMembersRequest : public SecurityHubRequest
+  class CreateMembersRequest : public SecurityHubRequest
   {
   public:
-    CreateMembersRequest();
+    AWS_SECURITYHUB_API CreateMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<AccountDetails> m_accountDetails;
-    bool m_accountDetailsHasBeenSet;
+    bool m_accountDetailsHasBeenSet = false;
   };
 
 } // namespace Model

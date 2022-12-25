@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NEPTUNE_API DeleteDBInstanceRequest : public NeptuneRequest
+  class DeleteDBInstanceRequest : public NeptuneRequest
   {
   public:
-    DeleteDBInstanceRequest();
+    AWS_NEPTUNE_API DeleteDBInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDBInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -237,13 +237,13 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     bool m_skipFinalSnapshot;
-    bool m_skipFinalSnapshotHasBeenSet;
+    bool m_skipFinalSnapshotHasBeenSet = false;
 
     Aws::String m_finalDBSnapshotIdentifier;
-    bool m_finalDBSnapshotIdentifierHasBeenSet;
+    bool m_finalDBSnapshotIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

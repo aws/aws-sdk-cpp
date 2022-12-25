@@ -26,53 +26,53 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListBotsResult
+  class ListBotsResult
   {
   public:
-    ListBotsResult();
-    ListBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListBotsResult();
+    AWS_CONNECT_API ListBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline const Aws::Vector<LexBotConfig>& GetLexBots() const{ return m_lexBots; }
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline void SetLexBots(const Aws::Vector<LexBotConfig>& value) { m_lexBots = value; }
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline void SetLexBots(Aws::Vector<LexBotConfig>&& value) { m_lexBots = std::move(value); }
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline ListBotsResult& WithLexBots(const Aws::Vector<LexBotConfig>& value) { SetLexBots(value); return *this;}
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline ListBotsResult& WithLexBots(Aws::Vector<LexBotConfig>&& value) { SetLexBots(std::move(value)); return *this;}
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline ListBotsResult& AddLexBots(const LexBotConfig& value) { m_lexBots.push_back(value); return *this; }
 
     /**
-     * <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with
-     * the specified instance.</p>
+     * <p>The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2
+     * bots associated with the specified instance.</p>
      */
     inline ListBotsResult& AddLexBots(LexBotConfig&& value) { m_lexBots.push_back(std::move(value)); return *this; }
 

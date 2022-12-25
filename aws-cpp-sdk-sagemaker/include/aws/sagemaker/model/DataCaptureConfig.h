@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DataCaptureConfig
+  class DataCaptureConfig
   {
   public:
-    DataCaptureConfig();
-    DataCaptureConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataCaptureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DataCaptureConfig();
+    AWS_SAGEMAKER_API DataCaptureConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DataCaptureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,9 +130,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -144,9 +144,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -158,9 +158,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -172,9 +172,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -186,9 +186,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -200,9 +200,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -214,9 +214,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -228,9 +228,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to the ML compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be
-     * any of the following formats: </p> <ul> <li> <p>Key ID:
+     * Service key that SageMaker uses to encrypt the captured data at rest using
+     * Amazon S3 server-side encryption.</p> <p>The KmsKeyId can be any of the
+     * following formats: </p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -329,22 +329,22 @@ namespace Model
   private:
 
     bool m_enableCapture;
-    bool m_enableCaptureHasBeenSet;
+    bool m_enableCaptureHasBeenSet = false;
 
     int m_initialSamplingPercentage;
-    bool m_initialSamplingPercentageHasBeenSet;
+    bool m_initialSamplingPercentageHasBeenSet = false;
 
     Aws::String m_destinationS3Uri;
-    bool m_destinationS3UriHasBeenSet;
+    bool m_destinationS3UriHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<CaptureOption> m_captureOptions;
-    bool m_captureOptionsHasBeenSet;
+    bool m_captureOptionsHasBeenSet = false;
 
     CaptureContentTypeHeader m_captureContentTypeHeader;
-    bool m_captureContentTypeHeaderHasBeenSet;
+    bool m_captureContentTypeHeaderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -4,7 +4,8 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
@@ -245,7 +246,7 @@ protected:
         deleteTableRequest.SetTableName(tableName);
 
         DeleteTableOutcome deleteTableOutcome = m_client->DeleteTable(deleteTableRequest);
-        ASSERT_TRUE(deleteTableOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(deleteTableOutcome);
     }
 
     DescribeTableResult WaitUntilActive(const Aws::String tableName)
@@ -292,7 +293,7 @@ TEST_F(TableOperationTest, TestListTable)
     while(!done)
     {
         ListTablesOutcome listTablesOutcome = m_client->ListTables(listTablesRequest);
-        EXPECT_TRUE(listTablesOutcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(listTablesOutcome);
 
         auto tableNames = listTablesOutcome.GetResult().GetTableNames();
         std::copy_if(tableNames.cbegin(),
@@ -430,7 +431,7 @@ TEST_F(TableOperationTest, TestThrottling)
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
 
-        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(m_client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     int throttleCount = 0;
@@ -483,7 +484,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
 
-        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(m_client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     //wait for put operations to finish
@@ -509,14 +510,14 @@ TEST_F(TableOperationTest, TestCrudOperations)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+        getItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::GetItem, getItemRequest));
     }
 
     //verify the values
     for (unsigned i = 0; i < 50; ++i)
     {
         GetItemOutcome outcome = getItemOutcomes[i].get();
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
         GetItemResult result = outcome.GetResult();
         ss << HASH_KEY_NAME << i;
         Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
@@ -531,7 +532,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
     scanRequest.WithTableName(crudTestTableName);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
-    EXPECT_TRUE(scanOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(scanOutcome);
     EXPECT_EQ(50, scanOutcome.GetResult().GetCount());
 
     //now update the existing values
@@ -553,7 +554,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         testValueAttribute.SetValue(valueAttribute);
         updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
         ss.str("");
-        updateItemOutcomes.push_back(m_client->UpdateItemCallable(updateItemRequest));
+        updateItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::UpdateItem, updateItemRequest));
     }
 
     //wait for operations to finish.
@@ -579,14 +580,14 @@ TEST_F(TableOperationTest, TestCrudOperations)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+        getItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::GetItem,getItemRequest));
     }
 
     //verify values.
     for (unsigned i = 0; i < 50; ++i)
     {
         GetItemOutcome outcome = getItemOutcomes[i].get();
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
         GetItemResult result = outcome.GetResult();
         ss << HASH_KEY_NAME << i;
         Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
@@ -610,7 +611,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
 
-        deleteItemOutcomes.push_back(m_client->DeleteItemCallable(deleteItemRequest));
+        deleteItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::DeleteItem, deleteItemRequest));
     }
 
     //verify that we properly returned the old values.
@@ -618,7 +619,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
     for (DeleteItemOutcomeCallable& deleteItemOutcome : deleteItemOutcomes)
     {
         DeleteItemOutcome outcome = deleteItemOutcome.get();
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
         DeleteItemResult deleteItemResult = outcome.GetResult();
         Aws::Map<Aws::String, AttributeValue> attributes = deleteItemResult.GetAttributes();
         ss << HASH_KEY_NAME << count++;
@@ -663,7 +664,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetS(ss.str());
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->PutItemAsync(putItemRequest, putItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::PutItem, putItemRequest, putItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -685,7 +686,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest, getItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::GetItem, getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -697,7 +698,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     for (unsigned i = 0; i < 50; ++i)
     {
         GetItemOutcome outcome = getItemResultsFromCallbackTest[i];
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
         GetItemResult result = outcome.GetResult();
         Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
         getItemResults[returnedItemCollection[HASH_KEY_NAME].GetS()] = returnedItemCollection[testValueColumnName].GetS();
@@ -717,7 +718,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     scanRequest.WithTableName(crudCallbacksTestTableName);
 
     ScanOutcome scanOutcome = m_client->Scan(scanRequest);
-    EXPECT_TRUE(scanOutcome.IsSuccess());
+    AWS_EXPECT_SUCCESS(scanOutcome);
     EXPECT_EQ(50, scanOutcome.GetResult().GetCount());
 
     //now update the existing values
@@ -738,7 +739,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetValue(valueAttribute);
         updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->UpdateItemAsync(updateItemRequest, updateItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::UpdateItem, updateItemRequest, updateItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -764,7 +765,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest, getItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::GetItem, getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -774,7 +775,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     for (unsigned i = 0; i < 50; ++i)
     {
         GetItemOutcome outcome = getItemResultsFromCallbackTest[i];
-        EXPECT_TRUE(outcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(outcome);
         GetItemResult result = outcome.GetResult();
         Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
         getItemResults[returnedItemCollection[HASH_KEY_NAME].GetS()] = returnedItemCollection[testValueColumnName].GetS();
@@ -801,7 +802,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         deleteItemRequest.SetTableName(crudCallbacksTestTableName);
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
-        m_client->DeleteItemAsync(deleteItemRequest, deleteItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::DeleteItem, deleteItemRequest, deleteItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -812,7 +813,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     Aws::Set<Aws::String> deletedKeys;
     for (DeleteItemOutcome& deleteItemOutcome : deleteItemResultsFromCallbackTest)
     {
-        EXPECT_TRUE(deleteItemOutcome.IsSuccess());
+        AWS_EXPECT_SUCCESS(deleteItemOutcome);
         DeleteItemResult deleteItemResult = deleteItemOutcome.GetResult();
         Aws::Map<Aws::String, AttributeValue> attributes = deleteItemResult.GetAttributes();
         deletedKeys.insert(attributes[HASH_KEY_NAME].GetS());
@@ -852,13 +853,13 @@ void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
         testValueAttribute.SetS(ss.str());
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
 
-        putItemResults.push_back(client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     for (auto& putItemResult : putItemResults)
     {
         PutItemOutcome outcome = putItemResult.get();
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
     }
 }
 
@@ -928,7 +929,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         putItemRequest.AddItem("String", value);
 
         PutItemOutcome putOutcome = m_client->PutItem(putItemRequest);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -939,7 +940,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back("String Value");
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -969,7 +970,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Number", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -979,7 +980,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1004,7 +1005,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Number", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1014,7 +1015,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1040,7 +1041,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("ByteBuffer", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1050,7 +1051,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1078,7 +1079,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("String Set", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1088,7 +1089,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1120,7 +1121,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Number Set", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1130,7 +1131,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1166,7 +1167,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("ByteBuffer Set", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1176,7 +1177,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1218,7 +1219,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Map", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1228,7 +1229,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1275,7 +1276,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.SetExpressionAttributeValues(expressionAttributeValues);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1283,7 +1284,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         getItemRequest.SetTableName(attributeValueTestTableName);
 
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1310,7 +1311,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("List", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1320,7 +1321,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1372,7 +1373,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.SetExpressionAttributeValues(expressionAttributeValues);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1380,7 +1381,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         getItemRequest.SetTableName(attributeValueTestTableName);
 
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1406,7 +1407,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Bool", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1416,7 +1417,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();
@@ -1440,7 +1441,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         updateItemRequest.AddAttributeUpdates("Null", testValueAttribute);
 
         UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
-        ASSERT_TRUE(updateOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(updateOutcome);
 
         // Get
         GetItemRequest getItemRequest;
@@ -1450,7 +1451,7 @@ TEST_F(TableOperationTest, TestAttributeValues)
         Aws::Vector<Aws::String> attributesToGet;
         attributesToGet.push_back(HASH_KEY_NAME);
         GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
 
         // Parse
         GetItemResult result = getOutcome.GetResult();

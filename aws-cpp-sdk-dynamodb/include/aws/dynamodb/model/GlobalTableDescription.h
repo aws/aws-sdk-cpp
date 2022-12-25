@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalTableDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API GlobalTableDescription
+  class GlobalTableDescription
   {
   public:
-    GlobalTableDescription();
-    GlobalTableDescription(Aws::Utils::Json::JsonView jsonValue);
-    GlobalTableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API GlobalTableDescription();
+    AWS_DYNAMODB_API GlobalTableDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API GlobalTableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::Vector<ReplicaDescription> m_replicationGroup;
-    bool m_replicationGroupHasBeenSet;
+    bool m_replicationGroupHasBeenSet = false;
 
     Aws::String m_globalTableArn;
-    bool m_globalTableArnHasBeenSet;
+    bool m_globalTableArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     GlobalTableStatus m_globalTableStatus;
-    bool m_globalTableStatusHasBeenSet;
+    bool m_globalTableStatusHasBeenSet = false;
 
     Aws::String m_globalTableName;
-    bool m_globalTableNameHasBeenSet;
+    bool m_globalTableNameHasBeenSet = false;
   };
 
 } // namespace Model

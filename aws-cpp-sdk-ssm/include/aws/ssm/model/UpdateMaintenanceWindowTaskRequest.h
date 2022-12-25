@@ -12,6 +12,7 @@
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
 #include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -25,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API UpdateMaintenanceWindowTaskRequest : public SSMRequest
+  class UpdateMaintenanceWindowTaskRequest : public SSMRequest
   {
   public:
-    UpdateMaintenanceWindowTaskRequest();
+    AWS_SSM_API UpdateMaintenanceWindowTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMaintenanceWindowTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1187,52 +1188,86 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_windowTaskId;
-    bool m_windowTaskIdHasBeenSet;
+    bool m_windowTaskIdHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_taskArn;
-    bool m_taskArnHasBeenSet;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
-    bool m_taskParametersHasBeenSet;
+    bool m_taskParametersHasBeenSet = false;
 
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
-    bool m_taskInvocationParametersHasBeenSet;
+    bool m_taskInvocationParametersHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_replace;
-    bool m_replaceHasBeenSet;
+    bool m_replaceHasBeenSet = false;
 
     MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
-    bool m_cutoffBehaviorHasBeenSet;
+    bool m_cutoffBehaviorHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

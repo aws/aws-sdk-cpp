@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/EventTriggerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API EventTriggerDefinition
+  class EventTriggerDefinition
   {
   public:
-    EventTriggerDefinition();
-    EventTriggerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    EventTriggerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API EventTriggerDefinition();
+    AWS_SNOWBALL_API EventTriggerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API EventTriggerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_eventResourceARN;
-    bool m_eventResourceARNHasBeenSet;
+    bool m_eventResourceARNHasBeenSet = false;
   };
 
 } // namespace Model

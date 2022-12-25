@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AmiAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AmiAggregation
+  class AmiAggregation
   {
   public:
-    AmiAggregation();
-    AmiAggregation(Aws::Utils::Json::JsonView jsonValue);
-    AmiAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AmiAggregation();
+    AWS_INSPECTOR2_API AmiAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AmiAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_amis;
-    bool m_amisHasBeenSet;
+    bool m_amisHasBeenSet = false;
 
     AmiSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

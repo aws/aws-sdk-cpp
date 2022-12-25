@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/VirtualCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API VirtualCluster
+  class VirtualCluster
   {
   public:
-    VirtualCluster();
-    VirtualCluster(Aws::Utils::Json::JsonView jsonValue);
-    VirtualCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API VirtualCluster();
+    AWS_EMRCONTAINERS_API VirtualCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API VirtualCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,25 +331,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     VirtualClusterState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ContainerProvider m_containerProvider;
-    bool m_containerProviderHasBeenSet;
+    bool m_containerProviderHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

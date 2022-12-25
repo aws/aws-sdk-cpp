@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RadiusSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RadiusSettings
+  class RadiusSettings
   {
   public:
-    RadiusSettings();
-    RadiusSettings(Aws::Utils::Json::JsonView jsonValue);
-    RadiusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API RadiusSettings();
+    AWS_DIRECTORYSERVICE_API RadiusSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API RadiusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,28 +315,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_radiusServers;
-    bool m_radiusServersHasBeenSet;
+    bool m_radiusServersHasBeenSet = false;
 
     int m_radiusPort;
-    bool m_radiusPortHasBeenSet;
+    bool m_radiusPortHasBeenSet = false;
 
     int m_radiusTimeout;
-    bool m_radiusTimeoutHasBeenSet;
+    bool m_radiusTimeoutHasBeenSet = false;
 
     int m_radiusRetries;
-    bool m_radiusRetriesHasBeenSet;
+    bool m_radiusRetriesHasBeenSet = false;
 
     Aws::String m_sharedSecret;
-    bool m_sharedSecretHasBeenSet;
+    bool m_sharedSecretHasBeenSet = false;
 
     RadiusAuthenticationProtocol m_authenticationProtocol;
-    bool m_authenticationProtocolHasBeenSet;
+    bool m_authenticationProtocolHasBeenSet = false;
 
     Aws::String m_displayLabel;
-    bool m_displayLabelHasBeenSet;
+    bool m_displayLabelHasBeenSet = false;
 
     bool m_useSameUsername;
-    bool m_useSameUsernameHasBeenSet;
+    bool m_useSameUsernameHasBeenSet = false;
   };
 
 } // namespace Model

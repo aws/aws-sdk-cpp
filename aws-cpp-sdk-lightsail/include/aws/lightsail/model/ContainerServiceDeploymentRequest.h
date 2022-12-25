@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceDeploymentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest
+  class ContainerServiceDeploymentRequest
   {
   public:
-    ContainerServiceDeploymentRequest();
-    ContainerServiceDeploymentRequest(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceDeploymentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest();
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     EndpointRequest m_publicEndpoint;
-    bool m_publicEndpointHasBeenSet;
+    bool m_publicEndpointHasBeenSet = false;
   };
 
 } // namespace Model

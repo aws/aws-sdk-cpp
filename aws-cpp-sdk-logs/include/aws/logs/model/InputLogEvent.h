@@ -29,36 +29,36 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/InputLogEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API InputLogEvent
+  class InputLogEvent
   {
   public:
-    InputLogEvent();
-    InputLogEvent(Aws::Utils::Json::JsonView jsonValue);
-    InputLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API InputLogEvent();
+    AWS_CLOUDWATCHLOGS_API InputLogEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API InputLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline InputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

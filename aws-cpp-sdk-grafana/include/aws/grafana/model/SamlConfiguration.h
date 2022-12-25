@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/SamlConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API SamlConfiguration
+  class SamlConfiguration
   {
   public:
-    SamlConfiguration();
-    SamlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SamlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API SamlConfiguration();
+    AWS_MANAGEDGRAFANA_API SamlConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API SamlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedOrganizations;
-    bool m_allowedOrganizationsHasBeenSet;
+    bool m_allowedOrganizationsHasBeenSet = false;
 
     AssertionAttributes m_assertionAttributes;
-    bool m_assertionAttributesHasBeenSet;
+    bool m_assertionAttributesHasBeenSet = false;
 
     IdpMetadata m_idpMetadata;
-    bool m_idpMetadataHasBeenSet;
+    bool m_idpMetadataHasBeenSet = false;
 
     int m_loginValidityDuration;
-    bool m_loginValidityDurationHasBeenSet;
+    bool m_loginValidityDurationHasBeenSet = false;
 
     RoleValues m_roleValues;
-    bool m_roleValuesHasBeenSet;
+    bool m_roleValuesHasBeenSet = false;
   };
 
 } // namespace Model

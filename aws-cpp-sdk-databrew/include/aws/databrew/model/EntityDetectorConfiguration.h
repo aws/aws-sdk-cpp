@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/EntityDetectorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API EntityDetectorConfiguration
+  class EntityDetectorConfiguration
   {
   public:
-    EntityDetectorConfiguration();
-    EntityDetectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EntityDetectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API EntityDetectorConfiguration();
+    AWS_GLUEDATABREW_API EntityDetectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API EntityDetectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,10 +244,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     Aws::Vector<AllowedStatistics> m_allowedStatistics;
-    bool m_allowedStatisticsHasBeenSet;
+    bool m_allowedStatisticsHasBeenSet = false;
   };
 
 } // namespace Model

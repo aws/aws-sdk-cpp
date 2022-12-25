@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/KeyPhrasesDetectionJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API KeyPhrasesDetectionJobFilter
+  class KeyPhrasesDetectionJobFilter
   {
   public:
-    KeyPhrasesDetectionJobFilter();
-    KeyPhrasesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    KeyPhrasesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API KeyPhrasesDetectionJobFilter();
+    AWS_COMPREHEND_API KeyPhrasesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API KeyPhrasesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeBefore;
-    bool m_submitTimeBeforeHasBeenSet;
+    bool m_submitTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_submitTimeAfter;
-    bool m_submitTimeAfterHasBeenSet;
+    bool m_submitTimeAfterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PiiEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API PiiEntity
+  class PiiEntity
   {
   public:
-    PiiEntity();
-    PiiEntity(Aws::Utils::Json::JsonView jsonValue);
-    PiiEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API PiiEntity();
+    AWS_COMPREHEND_API PiiEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API PiiEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,91 +94,67 @@ namespace Model
 
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity begins
-     * (the first character is at position 0). The offset returns the position of each
-     * UTF-8 code point in the string. A <i>code point</i> is the abstract character
-     * from a particular graphical representation. For example, a multi-byte UTF-8
-     * character maps to a single code point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the first
+     * character in the entity.</p>
      */
     inline int GetBeginOffset() const{ return m_beginOffset; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity begins
-     * (the first character is at position 0). The offset returns the position of each
-     * UTF-8 code point in the string. A <i>code point</i> is the abstract character
-     * from a particular graphical representation. For example, a multi-byte UTF-8
-     * character maps to a single code point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the first
+     * character in the entity.</p>
      */
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity begins
-     * (the first character is at position 0). The offset returns the position of each
-     * UTF-8 code point in the string. A <i>code point</i> is the abstract character
-     * from a particular graphical representation. For example, a multi-byte UTF-8
-     * character maps to a single code point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the first
+     * character in the entity.</p>
      */
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity begins
-     * (the first character is at position 0). The offset returns the position of each
-     * UTF-8 code point in the string. A <i>code point</i> is the abstract character
-     * from a particular graphical representation. For example, a multi-byte UTF-8
-     * character maps to a single code point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the first
+     * character in the entity.</p>
      */
     inline PiiEntity& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
 
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity ends.
-     * The offset returns the position of each UTF-8 code point in the string. A
-     * <i>code point</i> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code
-     * point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the last
+     * character in the entity.</p>
      */
     inline int GetEndOffset() const{ return m_endOffset; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity ends.
-     * The offset returns the position of each UTF-8 code point in the string. A
-     * <i>code point</i> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code
-     * point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the last
+     * character in the entity.</p>
      */
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity ends.
-     * The offset returns the position of each UTF-8 code point in the string. A
-     * <i>code point</i> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code
-     * point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the last
+     * character in the entity.</p>
      */
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
 
     /**
-     * <p>A character offset in the input text that shows where the PII entity ends.
-     * The offset returns the position of each UTF-8 code point in the string. A
-     * <i>code point</i> is the abstract character from a particular graphical
-     * representation. For example, a multi-byte UTF-8 character maps to a single code
-     * point.</p>
+     * <p>The zero-based offset from the beginning of the source text to the last
+     * character in the entity.</p>
      */
     inline PiiEntity& WithEndOffset(int value) { SetEndOffset(value); return *this;}
 
   private:
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
 
     PiiEntityType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_beginOffset;
-    bool m_beginOffsetHasBeenSet;
+    bool m_beginOffsetHasBeenSet = false;
 
     int m_endOffset;
-    bool m_endOffsetHasBeenSet;
+    bool m_endOffsetHasBeenSet = false;
   };
 
 } // namespace Model

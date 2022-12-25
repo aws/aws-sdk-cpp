@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/WindowsAuditLogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API WindowsAuditLogConfiguration
+  class WindowsAuditLogConfiguration
   {
   public:
-    WindowsAuditLogConfiguration();
-    WindowsAuditLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WindowsAuditLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API WindowsAuditLogConfiguration();
+    AWS_FSX_API WindowsAuditLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API WindowsAuditLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,13 +289,13 @@ namespace Model
   private:
 
     WindowsAccessAuditLogLevel m_fileAccessAuditLogLevel;
-    bool m_fileAccessAuditLogLevelHasBeenSet;
+    bool m_fileAccessAuditLogLevelHasBeenSet = false;
 
     WindowsAccessAuditLogLevel m_fileShareAccessAuditLogLevel;
-    bool m_fileShareAccessAuditLogLevelHasBeenSet;
+    bool m_fileShareAccessAuditLogLevelHasBeenSet = false;
 
     Aws::String m_auditLogDestination;
-    bool m_auditLogDestinationHasBeenSet;
+    bool m_auditLogDestinationHasBeenSet = false;
   };
 
 } // namespace Model

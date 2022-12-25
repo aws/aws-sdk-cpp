@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TraceContent">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API TraceContent
+  class TraceContent
   {
   public:
-    TraceContent();
-    TraceContent(Aws::Utils::Json::JsonView jsonValue);
-    TraceContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API TraceContent();
+    AWS_IOTWIRELESS_API TraceContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API TraceContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo;
-    bool m_wirelessDeviceFrameInfoHasBeenSet;
+    bool m_wirelessDeviceFrameInfoHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
   };
 
 } // namespace Model

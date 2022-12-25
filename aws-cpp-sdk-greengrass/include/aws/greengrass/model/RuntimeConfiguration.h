@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/RuntimeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API RuntimeConfiguration
+  class RuntimeConfiguration
   {
   public:
-    RuntimeConfiguration();
-    RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API RuntimeConfiguration();
+    AWS_GREENGRASS_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     TelemetryConfiguration m_telemetryConfiguration;
-    bool m_telemetryConfigurationHasBeenSet;
+    bool m_telemetryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

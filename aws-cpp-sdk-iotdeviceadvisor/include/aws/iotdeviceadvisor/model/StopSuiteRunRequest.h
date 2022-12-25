@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTDEVICEADVISOR_API StopSuiteRunRequest : public IoTDeviceAdvisorRequest
+  class StopSuiteRunRequest : public IoTDeviceAdvisorRequest
   {
   public:
-    StopSuiteRunRequest();
+    AWS_IOTDEVICEADVISOR_API StopSuiteRunRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopSuiteRun"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTDEVICEADVISOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_suiteDefinitionId;
-    bool m_suiteDefinitionIdHasBeenSet;
+    bool m_suiteDefinitionIdHasBeenSet = false;
 
     Aws::String m_suiteRunId;
-    bool m_suiteRunIdHasBeenSet;
+    bool m_suiteRunIdHasBeenSet = false;
   };
 
 } // namespace Model

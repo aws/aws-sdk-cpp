@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationRequest : public GlobalAcceleratorRequest
+  class ListCustomRoutingPortMappingsByDestinationRequest : public GlobalAcceleratorRequest
   {
   public:
-    ListCustomRoutingPortMappingsByDestinationRequest();
+    AWS_GLOBALACCELERATOR_API ListCustomRoutingPortMappingsByDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListCustomRoutingPortMappingsByDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLOBALACCELERATOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLOBALACCELERATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_destinationAddress;
-    bool m_destinationAddressHasBeenSet;
+    bool m_destinationAddressHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

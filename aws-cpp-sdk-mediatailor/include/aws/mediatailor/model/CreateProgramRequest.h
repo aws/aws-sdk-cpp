@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API CreateProgramRequest : public MediaTailorRequest
+  class CreateProgramRequest : public MediaTailorRequest
   {
   public:
-    CreateProgramRequest();
+    AWS_MEDIATAILOR_API CreateProgramRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProgram"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,42 +77,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline CreateProgramRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline CreateProgramRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel for this Program.</p>
      */
     inline CreateProgramRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
@@ -159,42 +159,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline const Aws::String& GetProgramName() const{ return m_programName; }
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline CreateProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline CreateProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the program you are working on.</p>
+     * <p>The name of the Program.</p>
      */
     inline CreateProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
 
@@ -314,25 +314,25 @@ namespace Model
   private:
 
     Aws::Vector<AdBreak> m_adBreaks;
-    bool m_adBreaksHasBeenSet;
+    bool m_adBreaksHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_liveSourceName;
-    bool m_liveSourceNameHasBeenSet;
+    bool m_liveSourceNameHasBeenSet = false;
 
     Aws::String m_programName;
-    bool m_programNameHasBeenSet;
+    bool m_programNameHasBeenSet = false;
 
     ScheduleConfiguration m_scheduleConfiguration;
-    bool m_scheduleConfigurationHasBeenSet;
+    bool m_scheduleConfigurationHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

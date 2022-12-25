@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/BatchPrediction">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API BatchPrediction
+  class BatchPrediction
   {
   public:
-    BatchPrediction();
-    BatchPrediction(Aws::Utils::Json::JsonView jsonValue);
-    BatchPrediction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API BatchPrediction();
+    AWS_MACHINELEARNING_API BatchPrediction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API BatchPrediction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -687,52 +687,52 @@ namespace Model
   private:
 
     Aws::String m_batchPredictionId;
-    bool m_batchPredictionIdHasBeenSet;
+    bool m_batchPredictionIdHasBeenSet = false;
 
     Aws::String m_mLModelId;
-    bool m_mLModelIdHasBeenSet;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_batchPredictionDataSourceId;
-    bool m_batchPredictionDataSourceIdHasBeenSet;
+    bool m_batchPredictionDataSourceIdHasBeenSet = false;
 
     Aws::String m_inputDataLocationS3;
-    bool m_inputDataLocationS3HasBeenSet;
+    bool m_inputDataLocationS3HasBeenSet = false;
 
     Aws::String m_createdByIamUser;
-    bool m_createdByIamUserHasBeenSet;
+    bool m_createdByIamUserHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EntityStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_outputUri;
-    bool m_outputUriHasBeenSet;
+    bool m_outputUriHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     long long m_computeTime;
-    bool m_computeTimeHasBeenSet;
+    bool m_computeTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_finishedAt;
-    bool m_finishedAtHasBeenSet;
+    bool m_finishedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     long long m_totalRecordCount;
-    bool m_totalRecordCountHasBeenSet;
+    bool m_totalRecordCountHasBeenSet = false;
 
     long long m_invalidRecordCount;
-    bool m_invalidRecordCountHasBeenSet;
+    bool m_invalidRecordCountHasBeenSet = false;
   };
 
 } // namespace Model

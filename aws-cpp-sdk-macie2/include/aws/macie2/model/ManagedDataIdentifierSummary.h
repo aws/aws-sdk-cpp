@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ManagedDataIdentifierSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ManagedDataIdentifierSummary
+  class ManagedDataIdentifierSummary
   {
   public:
-    ManagedDataIdentifierSummary();
-    ManagedDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
-    ManagedDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ManagedDataIdentifierSummary();
+    AWS_MACIE2_API ManagedDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ManagedDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     SensitiveDataItemCategory m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

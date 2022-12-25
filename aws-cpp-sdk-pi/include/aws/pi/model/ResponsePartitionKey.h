@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ResponsePartitionKey">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API ResponsePartitionKey
+  class ResponsePartitionKey
   {
   public:
-    ResponsePartitionKey();
-    ResponsePartitionKey(Aws::Utils::Json::JsonView jsonValue);
-    ResponsePartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API ResponsePartitionKey();
+    AWS_PI_API ResponsePartitionKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API ResponsePartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API ListAccountAssociationsResult
+  class ListAccountAssociationsResult
   {
   public:
-    ListAccountAssociationsResult();
-    ListAccountAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsResult();
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -71,37 +71,37 @@ namespace Model
 
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline ListAccountAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline ListAccountAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used on subsequent calls to get accounts. </p>
+     * <p> The pagination token that's used on subsequent calls to get accounts. </p>
      */
     inline ListAccountAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

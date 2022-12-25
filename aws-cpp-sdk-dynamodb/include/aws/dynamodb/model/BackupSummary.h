@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BackupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BackupSummary
+  class BackupSummary
   {
   public:
-    BackupSummary();
-    BackupSummary(Aws::Utils::Json::JsonView jsonValue);
-    BackupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BackupSummary();
+    AWS_DYNAMODB_API BackupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BackupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -446,34 +446,34 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::String m_backupArn;
-    bool m_backupArnHasBeenSet;
+    bool m_backupArnHasBeenSet = false;
 
     Aws::String m_backupName;
-    bool m_backupNameHasBeenSet;
+    bool m_backupNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_backupCreationDateTime;
-    bool m_backupCreationDateTimeHasBeenSet;
+    bool m_backupCreationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_backupExpiryDateTime;
-    bool m_backupExpiryDateTimeHasBeenSet;
+    bool m_backupExpiryDateTimeHasBeenSet = false;
 
     BackupStatus m_backupStatus;
-    bool m_backupStatusHasBeenSet;
+    bool m_backupStatusHasBeenSet = false;
 
     BackupType m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
 
     long long m_backupSizeBytes;
-    bool m_backupSizeBytesHasBeenSet;
+    bool m_backupSizeBytesHasBeenSet = false;
   };
 
 } // namespace Model

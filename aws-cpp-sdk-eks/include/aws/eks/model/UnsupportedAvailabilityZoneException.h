@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UnsupportedAvailabilityZoneException">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API UnsupportedAvailabilityZoneException
+  class UnsupportedAvailabilityZoneException
   {
   public:
-    UnsupportedAvailabilityZoneException();
-    UnsupportedAvailabilityZoneException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedAvailabilityZoneException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API UnsupportedAvailabilityZoneException();
+    AWS_EKS_API UnsupportedAvailabilityZoneException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API UnsupportedAvailabilityZoneException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_validZones;
-    bool m_validZonesHasBeenSet;
+    bool m_validZonesHasBeenSet = false;
   };
 
 } // namespace Model

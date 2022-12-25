@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PANORAMA_API DescribeDeviceRequest : public PanoramaRequest
+  class DescribeDeviceRequest : public PanoramaRequest
   {
   public:
-    DescribeDeviceRequest();
+    AWS_PANORAMA_API DescribeDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PANORAMA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositionsResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry
+  class ListDevicePositionsResponseEntry
   {
   public:
-    ListDevicePositionsResponseEntry();
-    ListDevicePositionsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListDevicePositionsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry();
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     PositionalAccuracy m_accuracy;
-    bool m_accuracyHasBeenSet;
+    bool m_accuracyHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Vector<double> m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_positionProperties;
-    bool m_positionPropertiesHasBeenSet;
+    bool m_positionPropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_sampleTime;
-    bool m_sampleTimeHasBeenSet;
+    bool m_sampleTimeHasBeenSet = false;
   };
 
 } // namespace Model

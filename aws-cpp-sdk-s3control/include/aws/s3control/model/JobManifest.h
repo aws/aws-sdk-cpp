@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobManifest
+  class JobManifest
   {
   public:
-    JobManifest();
-    JobManifest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobManifest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifest();
+    AWS_S3CONTROL_API JobManifest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     JobManifestSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     JobManifestLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

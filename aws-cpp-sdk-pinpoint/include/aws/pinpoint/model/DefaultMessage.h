@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API DefaultMessage
+  class DefaultMessage
   {
   public:
-    DefaultMessage();
-    DefaultMessage(Aws::Utils::Json::JsonView jsonValue);
-    DefaultMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API DefaultMessage();
+    AWS_PINPOINT_API DefaultMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API DefaultMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayRouteTable">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayRouteTable
+  class TransitGatewayRouteTable
   {
   public:
-    TransitGatewayRouteTable();
-    TransitGatewayRouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayRouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRouteTable();
+    AWS_EC2_API TransitGatewayRouteTable(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRouteTable& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -280,25 +280,25 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     TransitGatewayRouteTableState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_defaultAssociationRouteTable;
-    bool m_defaultAssociationRouteTableHasBeenSet;
+    bool m_defaultAssociationRouteTableHasBeenSet = false;
 
     bool m_defaultPropagationRouteTable;
-    bool m_defaultPropagationRouteTableHasBeenSet;
+    bool m_defaultPropagationRouteTableHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

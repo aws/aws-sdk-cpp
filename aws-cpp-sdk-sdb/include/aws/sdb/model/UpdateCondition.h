@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/UpdateCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMPLEDB_API UpdateCondition
+  class UpdateCondition
   {
   public:
-    UpdateCondition();
-    UpdateCondition(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UpdateCondition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API UpdateCondition();
+    AWS_SIMPLEDB_API UpdateCondition(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API UpdateCondition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_exists;
-    bool m_existsHasBeenSet;
+    bool m_existsHasBeenSet = false;
   };
 
 } // namespace Model

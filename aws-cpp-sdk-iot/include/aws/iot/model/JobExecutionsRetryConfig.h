@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecutionsRetryConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecutionsRetryConfig
+  class JobExecutionsRetryConfig
   {
   public:
-    JobExecutionsRetryConfig();
-    JobExecutionsRetryConfig(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionsRetryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecutionsRetryConfig();
+    AWS_IOT_API JobExecutionsRetryConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecutionsRetryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<RetryCriteria> m_criteriaList;
-    bool m_criteriaListHasBeenSet;
+    bool m_criteriaListHasBeenSet = false;
   };
 
 } // namespace Model

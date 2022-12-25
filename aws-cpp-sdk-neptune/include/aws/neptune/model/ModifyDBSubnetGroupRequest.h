@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_NEPTUNE_API ModifyDBSubnetGroupRequest : public NeptuneRequest
+  class ModifyDBSubnetGroupRequest : public NeptuneRequest
   {
   public:
-    ModifyDBSubnetGroupRequest();
+    AWS_NEPTUNE_API ModifyDBSubnetGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyDBSubnetGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NEPTUNE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_NEPTUNE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -191,13 +191,13 @@ namespace Model
   private:
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupDescription;
-    bool m_dBSubnetGroupDescriptionHasBeenSet;
+    bool m_dBSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
   };
 
 } // namespace Model

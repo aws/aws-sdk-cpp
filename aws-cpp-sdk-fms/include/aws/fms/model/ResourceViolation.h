@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ResourceViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ResourceViolation
+  class ResourceViolation
   {
   public:
-    ResourceViolation();
-    ResourceViolation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ResourceViolation();
+    AWS_FMS_API ResourceViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ResourceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -882,73 +882,73 @@ namespace Model
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
-    bool m_awsVPCSecurityGroupViolationHasBeenSet;
+    bool m_awsVPCSecurityGroupViolationHasBeenSet = false;
 
     AwsEc2NetworkInterfaceViolation m_awsEc2NetworkInterfaceViolation;
-    bool m_awsEc2NetworkInterfaceViolationHasBeenSet;
+    bool m_awsEc2NetworkInterfaceViolationHasBeenSet = false;
 
     AwsEc2InstanceViolation m_awsEc2InstanceViolation;
-    bool m_awsEc2InstanceViolationHasBeenSet;
+    bool m_awsEc2InstanceViolationHasBeenSet = false;
 
     NetworkFirewallMissingFirewallViolation m_networkFirewallMissingFirewallViolation;
-    bool m_networkFirewallMissingFirewallViolationHasBeenSet;
+    bool m_networkFirewallMissingFirewallViolationHasBeenSet = false;
 
     NetworkFirewallMissingSubnetViolation m_networkFirewallMissingSubnetViolation;
-    bool m_networkFirewallMissingSubnetViolationHasBeenSet;
+    bool m_networkFirewallMissingSubnetViolationHasBeenSet = false;
 
     NetworkFirewallMissingExpectedRTViolation m_networkFirewallMissingExpectedRTViolation;
-    bool m_networkFirewallMissingExpectedRTViolationHasBeenSet;
+    bool m_networkFirewallMissingExpectedRTViolationHasBeenSet = false;
 
     NetworkFirewallPolicyModifiedViolation m_networkFirewallPolicyModifiedViolation;
-    bool m_networkFirewallPolicyModifiedViolationHasBeenSet;
+    bool m_networkFirewallPolicyModifiedViolationHasBeenSet = false;
 
     NetworkFirewallInternetTrafficNotInspectedViolation m_networkFirewallInternetTrafficNotInspectedViolation;
-    bool m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet;
+    bool m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = false;
 
     NetworkFirewallInvalidRouteConfigurationViolation m_networkFirewallInvalidRouteConfigurationViolation;
-    bool m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet;
+    bool m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = false;
 
     NetworkFirewallBlackHoleRouteDetectedViolation m_networkFirewallBlackHoleRouteDetectedViolation;
-    bool m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet;
+    bool m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = false;
 
     NetworkFirewallUnexpectedFirewallRoutesViolation m_networkFirewallUnexpectedFirewallRoutesViolation;
-    bool m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet;
+    bool m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = false;
 
     NetworkFirewallUnexpectedGatewayRoutesViolation m_networkFirewallUnexpectedGatewayRoutesViolation;
-    bool m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet;
+    bool m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = false;
 
     NetworkFirewallMissingExpectedRoutesViolation m_networkFirewallMissingExpectedRoutesViolation;
-    bool m_networkFirewallMissingExpectedRoutesViolationHasBeenSet;
+    bool m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = false;
 
     DnsRuleGroupPriorityConflictViolation m_dnsRuleGroupPriorityConflictViolation;
-    bool m_dnsRuleGroupPriorityConflictViolationHasBeenSet;
+    bool m_dnsRuleGroupPriorityConflictViolationHasBeenSet = false;
 
     DnsDuplicateRuleGroupViolation m_dnsDuplicateRuleGroupViolation;
-    bool m_dnsDuplicateRuleGroupViolationHasBeenSet;
+    bool m_dnsDuplicateRuleGroupViolationHasBeenSet = false;
 
     DnsRuleGroupLimitExceededViolation m_dnsRuleGroupLimitExceededViolation;
-    bool m_dnsRuleGroupLimitExceededViolationHasBeenSet;
+    bool m_dnsRuleGroupLimitExceededViolationHasBeenSet = false;
 
     PossibleRemediationActions m_possibleRemediationActions;
-    bool m_possibleRemediationActionsHasBeenSet;
+    bool m_possibleRemediationActionsHasBeenSet = false;
 
     FirewallSubnetIsOutOfScopeViolation m_firewallSubnetIsOutOfScopeViolation;
-    bool m_firewallSubnetIsOutOfScopeViolationHasBeenSet;
+    bool m_firewallSubnetIsOutOfScopeViolationHasBeenSet = false;
 
     RouteHasOutOfScopeEndpointViolation m_routeHasOutOfScopeEndpointViolation;
-    bool m_routeHasOutOfScopeEndpointViolationHasBeenSet;
+    bool m_routeHasOutOfScopeEndpointViolationHasBeenSet = false;
 
     ThirdPartyFirewallMissingFirewallViolation m_thirdPartyFirewallMissingFirewallViolation;
-    bool m_thirdPartyFirewallMissingFirewallViolationHasBeenSet;
+    bool m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = false;
 
     ThirdPartyFirewallMissingSubnetViolation m_thirdPartyFirewallMissingSubnetViolation;
-    bool m_thirdPartyFirewallMissingSubnetViolationHasBeenSet;
+    bool m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = false;
 
     ThirdPartyFirewallMissingExpectedRouteTableViolation m_thirdPartyFirewallMissingExpectedRouteTableViolation;
-    bool m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet;
+    bool m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = false;
 
     FirewallSubnetMissingVPCEndpointViolation m_firewallSubnetMissingVPCEndpointViolation;
-    bool m_firewallSubnetMissingVPCEndpointViolationHasBeenSet;
+    bool m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = false;
   };
 
 } // namespace Model

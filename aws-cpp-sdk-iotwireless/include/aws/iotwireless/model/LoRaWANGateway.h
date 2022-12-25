@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/Beaconing.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGateway">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGateway
+  class LoRaWANGateway
   {
   public:
-    LoRaWANGateway();
-    LoRaWANGateway(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGateway();
+    AWS_IOTWIRELESS_API LoRaWANGateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,22 +195,62 @@ namespace Model
     
     inline LoRaWANGateway& AddSubBands(int value) { m_subBandsHasBeenSet = true; m_subBands.push_back(value); return *this; }
 
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline const Beaconing& GetBeaconing() const{ return m_beaconing; }
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline bool BeaconingHasBeenSet() const { return m_beaconingHasBeenSet; }
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline void SetBeaconing(const Beaconing& value) { m_beaconingHasBeenSet = true; m_beaconing = value; }
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline void SetBeaconing(Beaconing&& value) { m_beaconingHasBeenSet = true; m_beaconing = std::move(value); }
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline LoRaWANGateway& WithBeaconing(const Beaconing& value) { SetBeaconing(value); return *this;}
+
+    /**
+     * <p>Beaconing object information, which consists of the data rate and frequency
+     * parameters.</p>
+     */
+    inline LoRaWANGateway& WithBeaconing(Beaconing&& value) { SetBeaconing(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gatewayEui;
-    bool m_gatewayEuiHasBeenSet;
+    bool m_gatewayEuiHasBeenSet = false;
 
     Aws::String m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
-    bool m_joinEuiFiltersHasBeenSet;
+    bool m_joinEuiFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_netIdFilters;
-    bool m_netIdFiltersHasBeenSet;
+    bool m_netIdFiltersHasBeenSet = false;
 
     Aws::Vector<int> m_subBands;
-    bool m_subBandsHasBeenSet;
+    bool m_subBandsHasBeenSet = false;
+
+    Beaconing m_beaconing;
+    bool m_beaconingHasBeenSet = false;
   };
 
 } // namespace Model

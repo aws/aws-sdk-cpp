@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MovSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MovSettings
+  class MovSettings
   {
   public:
-    MovSettings();
-    MovSettings(Aws::Utils::Json::JsonView jsonValue);
-    MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MovSettings();
+    AWS_MEDIACONVERT_API MovSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     MovClapAtom m_clapAtom;
-    bool m_clapAtomHasBeenSet;
+    bool m_clapAtomHasBeenSet = false;
 
     MovCslgAtom m_cslgAtom;
-    bool m_cslgAtomHasBeenSet;
+    bool m_cslgAtomHasBeenSet = false;
 
     MovMpeg2FourCCControl m_mpeg2FourCCControl;
-    bool m_mpeg2FourCCControlHasBeenSet;
+    bool m_mpeg2FourCCControlHasBeenSet = false;
 
     MovPaddingControl m_paddingControl;
-    bool m_paddingControlHasBeenSet;
+    bool m_paddingControlHasBeenSet = false;
 
     MovReference m_reference;
-    bool m_referenceHasBeenSet;
+    bool m_referenceHasBeenSet = false;
   };
 
 } // namespace Model

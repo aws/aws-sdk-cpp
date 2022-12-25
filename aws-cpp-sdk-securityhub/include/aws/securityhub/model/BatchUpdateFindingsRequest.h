@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API BatchUpdateFindingsRequest : public SecurityHubRequest
+  class BatchUpdateFindingsRequest : public SecurityHubRequest
   {
   public:
-    BatchUpdateFindingsRequest();
+    AWS_SECURITYHUB_API BatchUpdateFindingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchUpdateFindings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -531,34 +531,34 @@ namespace Model
   private:
 
     Aws::Vector<AwsSecurityFindingIdentifier> m_findingIdentifiers;
-    bool m_findingIdentifiersHasBeenSet;
+    bool m_findingIdentifiersHasBeenSet = false;
 
     NoteUpdate m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     SeverityUpdate m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     VerificationState m_verificationState;
-    bool m_verificationStateHasBeenSet;
+    bool m_verificationStateHasBeenSet = false;
 
     int m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     int m_criticality;
-    bool m_criticalityHasBeenSet;
+    bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet;
+    bool m_typesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
-    bool m_userDefinedFieldsHasBeenSet;
+    bool m_userDefinedFieldsHasBeenSet = false;
 
     WorkflowUpdate m_workflow;
-    bool m_workflowHasBeenSet;
+    bool m_workflowHasBeenSet = false;
 
     Aws::Vector<RelatedFinding> m_relatedFindings;
-    bool m_relatedFindingsHasBeenSet;
+    bool m_relatedFindingsHasBeenSet = false;
   };
 
 } // namespace Model

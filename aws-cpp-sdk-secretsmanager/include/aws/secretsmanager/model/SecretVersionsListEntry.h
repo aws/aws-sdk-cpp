@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/SecretVersionsListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API SecretVersionsListEntry
+  class SecretVersionsListEntry
   {
   public:
-    SecretVersionsListEntry();
-    SecretVersionsListEntry(Aws::Utils::Json::JsonView jsonValue);
-    SecretVersionsListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry();
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versionStages;
-    bool m_versionStagesHasBeenSet;
+    bool m_versionStagesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedDate;
-    bool m_lastAccessedDateHasBeenSet;
+    bool m_lastAccessedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_kmsKeyIds;
-    bool m_kmsKeyIdsHasBeenSet;
+    bool m_kmsKeyIdsHasBeenSet = false;
   };
 
 } // namespace Model

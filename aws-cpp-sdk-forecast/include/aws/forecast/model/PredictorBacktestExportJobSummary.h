@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorBacktestExportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary
+  class PredictorBacktestExportJobSummary
   {
   public:
-    PredictorBacktestExportJobSummary();
-    PredictorBacktestExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    PredictorBacktestExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary();
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -374,25 +374,25 @@ namespace Model
   private:
 
     Aws::String m_predictorBacktestExportJobArn;
-    bool m_predictorBacktestExportJobArnHasBeenSet;
+    bool m_predictorBacktestExportJobArnHasBeenSet = false;
 
     Aws::String m_predictorBacktestExportJobName;
-    bool m_predictorBacktestExportJobNameHasBeenSet;
+    bool m_predictorBacktestExportJobNameHasBeenSet = false;
 
     DataDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

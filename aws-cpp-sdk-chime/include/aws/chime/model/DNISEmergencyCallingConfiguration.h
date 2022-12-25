@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DNISEmergencyCallingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API DNISEmergencyCallingConfiguration
+  class DNISEmergencyCallingConfiguration
   {
   public:
-    DNISEmergencyCallingConfiguration();
-    DNISEmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DNISEmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API DNISEmergencyCallingConfiguration();
+    AWS_CHIME_API DNISEmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API DNISEmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_emergencyPhoneNumber;
-    bool m_emergencyPhoneNumberHasBeenSet;
+    bool m_emergencyPhoneNumberHasBeenSet = false;
 
     Aws::String m_testPhoneNumber;
-    bool m_testPhoneNumberHasBeenSet;
+    bool m_testPhoneNumberHasBeenSet = false;
 
     Aws::String m_callingCountry;
-    bool m_callingCountryHasBeenSet;
+    bool m_callingCountryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,52 +29,76 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/EventTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API EventTypeSummary
+  class EventTypeSummary
   {
   public:
-    EventTypeSummary();
-    EventTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary();
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline const Aws::String& GetEventTypeId() const{ return m_eventTypeId; }
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline bool EventTypeIdHasBeenSet() const { return m_eventTypeIdHasBeenSet; }
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline void SetEventTypeId(const Aws::String& value) { m_eventTypeIdHasBeenSet = true; m_eventTypeId = value; }
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline void SetEventTypeId(Aws::String&& value) { m_eventTypeIdHasBeenSet = true; m_eventTypeId = std::move(value); }
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline void SetEventTypeId(const char* value) { m_eventTypeIdHasBeenSet = true; m_eventTypeId.assign(value); }
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline EventTypeSummary& WithEventTypeId(const Aws::String& value) { SetEventTypeId(value); return *this;}
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline EventTypeSummary& WithEventTypeId(Aws::String&& value) { SetEventTypeId(std::move(value)); return *this;}
 
     /**
-     * <p>The system-generated ID of the event.</p>
+     * <p>The system-generated ID of the event. For a complete list of event types and
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+     * concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
      */
     inline EventTypeSummary& WithEventTypeId(const char* value) { SetEventTypeId(value); return *this;}
 
@@ -204,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_eventTypeId;
-    bool m_eventTypeIdHasBeenSet;
+    bool m_eventTypeIdHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

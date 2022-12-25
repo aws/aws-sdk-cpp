@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallBlackHoleRouteDetectedViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation
+  class NetworkFirewallBlackHoleRouteDetectedViolation
   {
   public:
-    NetworkFirewallBlackHoleRouteDetectedViolation();
-    NetworkFirewallBlackHoleRouteDetectedViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallBlackHoleRouteDetectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation();
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_violationTarget;
-    bool m_violationTargetHasBeenSet;
+    bool m_violationTargetHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Route> m_violatingRoutes;
-    bool m_violatingRoutesHasBeenSet;
+    bool m_violatingRoutesHasBeenSet = false;
   };
 
 } // namespace Model

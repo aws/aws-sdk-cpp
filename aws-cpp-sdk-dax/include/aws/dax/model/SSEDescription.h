@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/SSEDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API SSEDescription
+  class SSEDescription
   {
   public:
-    SSEDescription();
-    SSEDescription(Aws::Utils::Json::JsonView jsonValue);
-    SSEDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API SSEDescription();
+    AWS_DAX_API SSEDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API SSEDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,7 +101,7 @@ namespace Model
   private:
 
     SSEStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

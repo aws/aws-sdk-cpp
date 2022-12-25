@@ -30,7 +30,7 @@ GetFeedbackResult& GetFeedbackResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalyGroupTimeSeriesFeedback"))
   {
-    Array<JsonView> anomalyGroupTimeSeriesFeedbackJsonList = jsonValue.GetArray("AnomalyGroupTimeSeriesFeedback");
+    Aws::Utils::Array<JsonView> anomalyGroupTimeSeriesFeedbackJsonList = jsonValue.GetArray("AnomalyGroupTimeSeriesFeedback");
     for(unsigned anomalyGroupTimeSeriesFeedbackIndex = 0; anomalyGroupTimeSeriesFeedbackIndex < anomalyGroupTimeSeriesFeedbackJsonList.GetLength(); ++anomalyGroupTimeSeriesFeedbackIndex)
     {
       m_anomalyGroupTimeSeriesFeedback.push_back(anomalyGroupTimeSeriesFeedbackJsonList[anomalyGroupTimeSeriesFeedbackIndex].AsObject());

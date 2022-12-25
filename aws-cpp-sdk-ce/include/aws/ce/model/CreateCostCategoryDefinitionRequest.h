@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API CreateCostCategoryDefinitionRequest : public CostExplorerRequest
+  class CreateCostCategoryDefinitionRequest : public CostExplorerRequest
   {
   public:
-    CreateCostCategoryDefinitionRequest();
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCostCategoryDefinition"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -62,6 +62,71 @@ namespace Model
 
     
     inline CreateCostCategoryDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = value; }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStartHasBeenSet = true; m_effectiveStart = std::move(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline void SetEffectiveStart(const char* value) { m_effectiveStartHasBeenSet = true; m_effectiveStart.assign(value); }
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
+
+    /**
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month). If the date isn't provided, it's the first day of the
+     * current month. Dates can't be before the previous twelve months, or in the
+     * future.</p>
+     */
+    inline CreateCostCategoryDefinitionRequest& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
 
 
     
@@ -369,22 +434,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_effectiveStart;
+    bool m_effectiveStartHasBeenSet = false;
 
     CostCategoryRuleVersion m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::Vector<CostCategoryRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-    bool m_splitChargeRulesHasBeenSet;
+    bool m_splitChargeRulesHasBeenSet = false;
 
     Aws::Vector<ResourceTag> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DomainSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API DomainSummary
+  class DomainSummary
   {
   public:
-    DomainSummary();
-    DomainSummary(Aws::Utils::Json::JsonView jsonValue);
-    DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API DomainSummary();
+    AWS_VOICEID_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,7 +309,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline const ServerSideEncryptionUpdateDetails& GetServerSideEncryptionUpdateDetails() const{ return m_serverSideEncryptionUpdateDetails; }
 
@@ -317,7 +317,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline bool ServerSideEncryptionUpdateDetailsHasBeenSet() const { return m_serverSideEncryptionUpdateDetailsHasBeenSet; }
 
@@ -325,7 +325,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline void SetServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = value; }
 
@@ -333,7 +333,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline void SetServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = std::move(value); }
 
@@ -341,7 +341,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline DomainSummary& WithServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { SetServerSideEncryptionUpdateDetails(value); return *this;}
 
@@ -349,7 +349,7 @@ namespace Model
      * <p>Details about the most recent server-side encryption configuration update.
      * When the server-side encryption configuration is changed, dependency on the old
      * KMS key is removed through an asynchronous process. When this update is
-     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
     inline DomainSummary& WithServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { SetServerSideEncryptionUpdateDetails(std::move(value)); return *this;}
 
@@ -387,31 +387,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     DomainStatus m_domainStatus;
-    bool m_domainStatusHasBeenSet;
+    bool m_domainStatusHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
     ServerSideEncryptionUpdateDetails m_serverSideEncryptionUpdateDetails;
-    bool m_serverSideEncryptionUpdateDetailsHasBeenSet;
+    bool m_serverSideEncryptionUpdateDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACESWEB_API GetTrustStoreCertificateRequest : public WorkSpacesWebRequest
+  class GetTrustStoreCertificateRequest : public WorkSpacesWebRequest
   {
   public:
-    GetTrustStoreCertificateRequest();
+    AWS_WORKSPACESWEB_API GetTrustStoreCertificateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetTrustStoreCertificate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_thumbprint;
-    bool m_thumbprintHasBeenSet;
+    bool m_thumbprintHasBeenSet = false;
 
     Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet;
+    bool m_trustStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

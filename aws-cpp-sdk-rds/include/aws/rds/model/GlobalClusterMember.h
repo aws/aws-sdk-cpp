@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/GlobalClusterMember">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API GlobalClusterMember
+  class GlobalClusterMember
   {
   public:
-    GlobalClusterMember();
-    GlobalClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GlobalClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API GlobalClusterMember();
+    AWS_RDS_API GlobalClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API GlobalClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_dBClusterArn;
-    bool m_dBClusterArnHasBeenSet;
+    bool m_dBClusterArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readers;
-    bool m_readersHasBeenSet;
+    bool m_readersHasBeenSet = false;
 
     bool m_isWriter;
-    bool m_isWriterHasBeenSet;
+    bool m_isWriterHasBeenSet = false;
 
     WriteForwardingStatus m_globalWriteForwardingStatus;
-    bool m_globalWriteForwardingStatusHasBeenSet;
+    bool m_globalWriteForwardingStatusHasBeenSet = false;
   };
 
 } // namespace Model

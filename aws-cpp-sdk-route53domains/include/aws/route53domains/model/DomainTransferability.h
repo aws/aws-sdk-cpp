@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainTransferability">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API DomainTransferability
+  class DomainTransferability
   {
   public:
-    DomainTransferability();
-    DomainTransferability(Aws::Utils::Json::JsonView jsonValue);
-    DomainTransferability& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API DomainTransferability();
+    AWS_ROUTE53DOMAINS_API DomainTransferability(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API DomainTransferability& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     Transferable m_transferable;
-    bool m_transferableHasBeenSet;
+    bool m_transferableHasBeenSet = false;
   };
 
 } // namespace Model

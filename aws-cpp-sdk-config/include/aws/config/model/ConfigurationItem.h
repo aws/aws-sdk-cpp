@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigurationItem
+  class ConfigurationItem
   {
   public:
-    ConfigurationItem();
-    ConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigurationItem();
+    AWS_CONFIGSERVICE_API ConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -978,58 +978,58 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_configurationItemCaptureTime;
-    bool m_configurationItemCaptureTimeHasBeenSet;
+    bool m_configurationItemCaptureTimeHasBeenSet = false;
 
     ConfigurationItemStatus m_configurationItemStatus;
-    bool m_configurationItemStatusHasBeenSet;
+    bool m_configurationItemStatusHasBeenSet = false;
 
     Aws::String m_configurationStateId;
-    bool m_configurationStateIdHasBeenSet;
+    bool m_configurationStateIdHasBeenSet = false;
 
     Aws::String m_configurationItemMD5Hash;
-    bool m_configurationItemMD5HashHasBeenSet;
+    bool m_configurationItemMD5HashHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::Utils::DateTime m_resourceCreationTime;
-    bool m_resourceCreationTimeHasBeenSet;
+    bool m_resourceCreationTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_relatedEvents;
-    bool m_relatedEventsHasBeenSet;
+    bool m_relatedEventsHasBeenSet = false;
 
     Aws::Vector<Relationship> m_relationships;
-    bool m_relationshipsHasBeenSet;
+    bool m_relationshipsHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_supplementaryConfiguration;
-    bool m_supplementaryConfigurationHasBeenSet;
+    bool m_supplementaryConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

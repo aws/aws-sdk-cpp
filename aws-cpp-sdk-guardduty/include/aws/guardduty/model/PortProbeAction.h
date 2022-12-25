@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PortProbeAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API PortProbeAction
+  class PortProbeAction
   {
   public:
-    PortProbeAction();
-    PortProbeAction(Aws::Utils::Json::JsonView jsonValue);
-    PortProbeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API PortProbeAction();
+    AWS_GUARDDUTY_API PortProbeAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API PortProbeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
 
     Aws::Vector<PortProbeDetail> m_portProbeDetails;
-    bool m_portProbeDetailsHasBeenSet;
+    bool m_portProbeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

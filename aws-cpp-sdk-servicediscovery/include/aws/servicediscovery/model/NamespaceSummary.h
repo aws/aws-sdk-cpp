@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceSummary
+  class NamespaceSummary
   {
   public:
-    NamespaceSummary();
-    NamespaceSummary(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceSummary();
+    AWS_SERVICEDISCOVERY_API NamespaceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,56 +133,56 @@ namespace Model
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the namespace. When you create a namespace, Cloud Map
-     * automatically creates a Route 53 hosted zone that has the same name as the
+     * automatically creates a Route 53 hosted zone that has the same name as the
      * namespace.</p>
      */
     inline NamespaceSummary& WithName(const char* value) { SetName(value); return *this;}
@@ -345,28 +345,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     NamespaceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_serviceCount;
-    bool m_serviceCountHasBeenSet;
+    bool m_serviceCountHasBeenSet = false;
 
     NamespaceProperties m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

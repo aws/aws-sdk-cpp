@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API StartExportTaskRequest : public RDSRequest
+  class StartExportTaskRequest : public RDSRequest
   {
   public:
-    StartExportTaskRequest();
+    AWS_RDS_API StartExportTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartExportTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -533,25 +533,25 @@ namespace Model
   private:
 
     Aws::String m_exportTaskIdentifier;
-    bool m_exportTaskIdentifierHasBeenSet;
+    bool m_exportTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportOnly;
-    bool m_exportOnlyHasBeenSet;
+    bool m_exportOnlyHasBeenSet = false;
   };
 
 } // namespace Model

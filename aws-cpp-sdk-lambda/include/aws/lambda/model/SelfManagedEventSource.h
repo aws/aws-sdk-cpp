@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SelfManagedEventSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SelfManagedEventSource
+  class SelfManagedEventSource
   {
   public:
-    SelfManagedEventSource();
-    SelfManagedEventSource(Aws::Utils::Json::JsonView jsonValue);
-    SelfManagedEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SelfManagedEventSource();
+    AWS_LAMBDA_API SelfManagedEventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SelfManagedEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,7 +114,7 @@ namespace Model
   private:
 
     Aws::Map<EndPointType, Aws::Vector<Aws::String>> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

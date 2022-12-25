@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/evidently/CloudWatchEvidentlyRequest.h>
+#include <aws/evidently/model/ProjectAppConfigResourceConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -18,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectRequest : public CloudWatchEvidentlyRequest
+  class UpdateProjectRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    UpdateProjectRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +30,80 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline const ProjectAppConfigResourceConfig& GetAppConfigResource() const{ return m_appConfigResource; }
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline bool AppConfigResourceHasBeenSet() const { return m_appConfigResourceHasBeenSet; }
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline void SetAppConfigResource(const ProjectAppConfigResourceConfig& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = value; }
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline void SetAppConfigResource(ProjectAppConfigResourceConfig&& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = std::move(value); }
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline UpdateProjectRequest& WithAppConfigResource(const ProjectAppConfigResourceConfig& value) { SetAppConfigResource(value); return *this;}
+
+    /**
+     * <p>Use this parameter if the project will use client-side evaluation powered by
+     * AppConfig. Client-side evaluation allows your application to assign variations
+     * to user sessions locally instead of by calling the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+     * operation. This mitigates the latency and availability risks that come with an
+     * API call. allows you to</p> <p>This parameter is a structure that contains
+     * information about the AppConfig application that will be used for client-side
+     * evaluation.</p>
+     */
+    inline UpdateProjectRequest& WithAppConfigResource(ProjectAppConfigResourceConfig&& value) { SetAppConfigResource(std::move(value)); return *this;}
 
 
     /**
@@ -115,11 +189,14 @@ namespace Model
 
   private:
 
+    ProjectAppConfigResourceConfig m_appConfigResource;
+    bool m_appConfigResourceHasBeenSet = false;
+
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

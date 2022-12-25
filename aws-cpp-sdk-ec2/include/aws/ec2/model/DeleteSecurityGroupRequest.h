@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DeleteSecurityGroupRequest : public EC2Request
+  class DeleteSecurityGroupRequest : public EC2Request
   {
   public:
-    DeleteSecurityGroupRequest();
+    AWS_EC2_API DeleteSecurityGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSecurityGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -79,49 +79,57 @@ namespace Model
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline DeleteSecurityGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline DeleteSecurityGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
-     * either the security group name or the security group ID.</p>
+     * either the security group name or the security group ID. For security groups in
+     * a nondefault VPC, you must specify the security group ID.</p>
      */
     inline DeleteSecurityGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -161,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

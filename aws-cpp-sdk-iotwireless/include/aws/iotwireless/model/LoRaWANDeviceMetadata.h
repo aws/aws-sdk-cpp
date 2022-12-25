@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDeviceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANDeviceMetadata
+  class LoRaWANDeviceMetadata
   {
   public:
-    LoRaWANDeviceMetadata();
-    LoRaWANDeviceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANDeviceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANDeviceMetadata();
+    AWS_IOTWIRELESS_API LoRaWANDeviceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANDeviceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,22 +227,22 @@ namespace Model
   private:
 
     Aws::String m_devEui;
-    bool m_devEuiHasBeenSet;
+    bool m_devEuiHasBeenSet = false;
 
     int m_fPort;
-    bool m_fPortHasBeenSet;
+    bool m_fPortHasBeenSet = false;
 
     int m_dataRate;
-    bool m_dataRateHasBeenSet;
+    bool m_dataRateHasBeenSet = false;
 
     int m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::Vector<LoRaWANGatewayMetadata> m_gateways;
-    bool m_gatewaysHasBeenSet;
+    bool m_gatewaysHasBeenSet = false;
   };
 
 } // namespace Model

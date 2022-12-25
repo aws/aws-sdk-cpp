@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderableTask">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RenderableTask
+  class RenderableTask
   {
   public:
-    RenderableTask();
-    RenderableTask(Aws::Utils::Json::JsonView jsonValue);
-    RenderableTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RenderableTask();
+    AWS_SAGEMAKER_API RenderableTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RenderableTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,7 +112,7 @@ namespace Model
   private:
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

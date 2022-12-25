@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_HEALTHLAKE_API CreateFHIRDatastoreRequest : public HealthLakeRequest
+  class CreateFHIRDatastoreRequest : public HealthLakeRequest
   {
   public:
-    CreateFHIRDatastoreRequest();
+    AWS_HEALTHLAKE_API CreateFHIRDatastoreRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFHIRDatastore"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     FHIRVersion m_datastoreTypeVersion;
-    bool m_datastoreTypeVersionHasBeenSet;
+    bool m_datastoreTypeVersionHasBeenSet = false;
 
     SseConfiguration m_sseConfiguration;
-    bool m_sseConfigurationHasBeenSet;
+    bool m_sseConfigurationHasBeenSet = false;
 
     PreloadDataConfig m_preloadDataConfig;
-    bool m_preloadDataConfigHasBeenSet;
+    bool m_preloadDataConfigHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

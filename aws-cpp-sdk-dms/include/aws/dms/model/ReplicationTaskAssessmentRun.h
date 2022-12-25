@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskAssessmentRun">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun
+  class ReplicationTaskAssessmentRun
   {
   public:
-    ReplicationTaskAssessmentRun();
-    ReplicationTaskAssessmentRun(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationTaskAssessmentRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -705,40 +705,40 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskAssessmentRunArn;
-    bool m_replicationTaskAssessmentRunArnHasBeenSet;
+    bool m_replicationTaskAssessmentRunArnHasBeenSet = false;
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationTaskAssessmentRunCreationDate;
-    bool m_replicationTaskAssessmentRunCreationDateHasBeenSet;
+    bool m_replicationTaskAssessmentRunCreationDateHasBeenSet = false;
 
     ReplicationTaskAssessmentRunProgress m_assessmentProgress;
-    bool m_assessmentProgressHasBeenSet;
+    bool m_assessmentProgressHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
-    bool m_lastFailureMessageHasBeenSet;
+    bool m_lastFailureMessageHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_resultLocationBucket;
-    bool m_resultLocationBucketHasBeenSet;
+    bool m_resultLocationBucketHasBeenSet = false;
 
     Aws::String m_resultLocationFolder;
-    bool m_resultLocationFolderHasBeenSet;
+    bool m_resultLocationFolderHasBeenSet = false;
 
     Aws::String m_resultEncryptionMode;
-    bool m_resultEncryptionModeHasBeenSet;
+    bool m_resultEncryptionModeHasBeenSet = false;
 
     Aws::String m_resultKmsKeyArn;
-    bool m_resultKmsKeyArnHasBeenSet;
+    bool m_resultKmsKeyArnHasBeenSet = false;
 
     Aws::String m_assessmentRunName;
-    bool m_assessmentRunNameHasBeenSet;
+    bool m_assessmentRunNameHasBeenSet = false;
   };
 
 } // namespace Model

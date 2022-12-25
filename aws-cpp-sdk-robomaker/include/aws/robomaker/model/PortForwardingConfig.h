@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/PortForwardingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API PortForwardingConfig
+  class PortForwardingConfig
   {
   public:
-    PortForwardingConfig();
-    PortForwardingConfig(Aws::Utils::Json::JsonView jsonValue);
-    PortForwardingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API PortForwardingConfig();
+    AWS_ROBOMAKER_API PortForwardingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API PortForwardingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<PortMapping> m_portMappings;
-    bool m_portMappingsHasBeenSet;
+    bool m_portMappingsHasBeenSet = false;
   };
 
 } // namespace Model

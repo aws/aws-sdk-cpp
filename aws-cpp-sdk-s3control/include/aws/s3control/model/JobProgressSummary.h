@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobProgressSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobProgressSummary
+  class JobProgressSummary
   {
   public:
-    JobProgressSummary();
-    JobProgressSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobProgressSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobProgressSummary();
+    AWS_S3CONTROL_API JobProgressSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobProgressSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -135,16 +135,16 @@ namespace Model
   private:
 
     long long m_totalNumberOfTasks;
-    bool m_totalNumberOfTasksHasBeenSet;
+    bool m_totalNumberOfTasksHasBeenSet = false;
 
     long long m_numberOfTasksSucceeded;
-    bool m_numberOfTasksSucceededHasBeenSet;
+    bool m_numberOfTasksSucceededHasBeenSet = false;
 
     long long m_numberOfTasksFailed;
-    bool m_numberOfTasksFailedHasBeenSet;
+    bool m_numberOfTasksFailedHasBeenSet = false;
 
     JobTimers m_timers;
-    bool m_timersHasBeenSet;
+    bool m_timersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionRequest : public ConnectParticipantRequest
+  class CreateParticipantConnectionRequest : public ConnectParticipantRequest
   {
   public:
-    CreateParticipantConnectionRequest();
+    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,48 +31,56 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateParticipantConnection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline const Aws::Vector<ConnectionType>& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline void SetType(const Aws::Vector<ConnectionType>& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline void SetType(Aws::Vector<ConnectionType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline CreateParticipantConnectionRequest& WithType(const Aws::Vector<ConnectionType>& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline CreateParticipantConnectionRequest& WithType(Aws::Vector<ConnectionType>&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline CreateParticipantConnectionRequest& AddType(const ConnectionType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
 
     /**
-     * <p>Type of connection information required.</p>
+     * <p>Type of connection information required. This can be omitted if
+     * <code>ConnectParticipant</code> is <code>true</code>.</p>
      */
     inline CreateParticipantConnectionRequest& AddType(ConnectionType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
 
@@ -161,13 +169,13 @@ namespace Model
   private:
 
     Aws::Vector<ConnectionType> m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_participantToken;
-    bool m_participantTokenHasBeenSet;
+    bool m_participantTokenHasBeenSet = false;
 
     bool m_connectParticipant;
-    bool m_connectParticipantHasBeenSet;
+    bool m_connectParticipantHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DeviceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API DeviceConfiguration
+  class DeviceConfiguration
   {
   public:
-    DeviceConfiguration();
-    DeviceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeviceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API DeviceConfiguration();
+    AWS_SNOWBALL_API DeviceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API DeviceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SnowconeDeviceConfiguration m_snowconeDeviceConfiguration;
-    bool m_snowconeDeviceConfigurationHasBeenSet;
+    bool m_snowconeDeviceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

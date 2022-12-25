@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API StartSigningJobRequest : public SignerRequest
+  class StartSigningJobRequest : public SignerRequest
   {
   public:
-    StartSigningJobRequest();
+    AWS_SIGNER_API StartSigningJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSigningJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Source m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Destination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_profileOwner;
-    bool m_profileOwnerHasBeenSet;
+    bool m_profileOwnerHasBeenSet = false;
   };
 
 } // namespace Model

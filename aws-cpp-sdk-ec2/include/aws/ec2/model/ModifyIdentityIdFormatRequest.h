@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyIdentityIdFormatRequest : public EC2Request
+  class ModifyIdentityIdFormatRequest : public EC2Request
   {
   public:
-    ModifyIdentityIdFormatRequest();
+    AWS_EC2_API ModifyIdentityIdFormatRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyIdentityIdFormat"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -269,13 +269,13 @@ namespace Model
   private:
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     bool m_useLongIds;
-    bool m_useLongIdsHasBeenSet;
+    bool m_useLongIdsHasBeenSet = false;
   };
 
 } // namespace Model

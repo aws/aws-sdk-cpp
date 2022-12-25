@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AccessDeniedForDependencyException">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API AccessDeniedForDependencyException
+  class AccessDeniedForDependencyException
   {
   public:
-    AccessDeniedForDependencyException();
-    AccessDeniedForDependencyException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedForDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API AccessDeniedForDependencyException();
+    AWS_ORGANIZATIONS_API AccessDeniedForDependencyException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API AccessDeniedForDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     AccessDeniedForDependencyExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

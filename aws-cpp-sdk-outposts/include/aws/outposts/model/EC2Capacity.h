@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/EC2Capacity">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API EC2Capacity
+  class EC2Capacity
   {
   public:
-    EC2Capacity();
-    EC2Capacity(Aws::Utils::Json::JsonView jsonValue);
-    EC2Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API EC2Capacity();
+    AWS_OUTPOSTS_API EC2Capacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API EC2Capacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     Aws::String m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
   };
 
 } // namespace Model

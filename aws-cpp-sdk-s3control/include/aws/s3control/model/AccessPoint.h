@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AccessPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API AccessPoint
+  class AccessPoint
   {
   public:
-    AccessPoint();
-    AccessPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AccessPoint();
+    AWS_S3CONTROL_API AccessPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AccessPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -306,25 +306,77 @@ namespace Model
      */
     inline AccessPoint& WithAlias(const char* value) { SetAlias(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services account ID associated with the S3 bucket associated
+     * with this access point.</p>
+     */
+    inline AccessPoint& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     NetworkOrigin m_networkOrigin;
-    bool m_networkOriginHasBeenSet;
+    bool m_networkOriginHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_accessPointArn;
-    bool m_accessPointArnHasBeenSet;
+    bool m_accessPointArnHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
+
+    Aws::String m_bucketAccountId;
+    bool m_bucketAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,8 @@ UpdateOpsItemRequest::UpdateOpsItemRequest() :
     m_actualStartTimeHasBeenSet(false),
     m_actualEndTimeHasBeenSet(false),
     m_plannedStartTimeHasBeenSet(false),
-    m_plannedEndTimeHasBeenSet(false)
+    m_plannedEndTimeHasBeenSet(false),
+    m_opsItemArnHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,7 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
 
   if(m_operationalDataToDeleteHasBeenSet)
   {
-   Array<JsonValue> operationalDataToDeleteJsonList(m_operationalDataToDelete.size());
+   Aws::Utils::Array<JsonValue> operationalDataToDeleteJsonList(m_operationalDataToDelete.size());
    for(unsigned operationalDataToDeleteIndex = 0; operationalDataToDeleteIndex < operationalDataToDeleteJsonList.GetLength(); ++operationalDataToDeleteIndex)
    {
      operationalDataToDeleteJsonList[operationalDataToDeleteIndex].AsString(m_operationalDataToDelete[operationalDataToDeleteIndex]);
@@ -67,7 +68,7 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
 
   if(m_notificationsHasBeenSet)
   {
-   Array<JsonValue> notificationsJsonList(m_notifications.size());
+   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
    {
      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
@@ -84,7 +85,7 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
 
   if(m_relatedOpsItemsHasBeenSet)
   {
-   Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
+   Aws::Utils::Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
    for(unsigned relatedOpsItemsIndex = 0; relatedOpsItemsIndex < relatedOpsItemsJsonList.GetLength(); ++relatedOpsItemsIndex)
    {
      relatedOpsItemsJsonList[relatedOpsItemsIndex].AsObject(m_relatedOpsItems[relatedOpsItemsIndex].Jsonize());
@@ -140,6 +141,12 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
   if(m_plannedEndTimeHasBeenSet)
   {
    payload.WithDouble("PlannedEndTime", m_plannedEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_opsItemArnHasBeenSet)
+  {
+   payload.WithString("OpsItemArn", m_opsItemArn);
+
   }
 
   return payload.View().WriteReadable();

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/StartSessionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API StartSessionRequest
+  class StartSessionRequest
   {
   public:
-    StartSessionRequest();
-    StartSessionRequest(Aws::Utils::Json::JsonView jsonValue);
-    StartSessionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API StartSessionRequest();
+    AWS_QLDBSESSION_API StartSessionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API StartSessionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
   };
 
 } // namespace Model

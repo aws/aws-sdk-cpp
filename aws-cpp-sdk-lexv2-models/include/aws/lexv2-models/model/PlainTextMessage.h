@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PlainTextMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PlainTextMessage
+  class PlainTextMessage
   {
   public:
-    PlainTextMessage();
-    PlainTextMessage(Aws::Utils::Json::JsonView jsonValue);
-    PlainTextMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PlainTextMessage();
+    AWS_LEXMODELSV2_API PlainTextMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PlainTextMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

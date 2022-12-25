@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ResumeClusterMessage
+  class ResumeClusterMessage
   {
   public:
-    ResumeClusterMessage();
-    ResumeClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResumeClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResumeClusterMessage();
+    AWS_REDSHIFT_API ResumeClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResumeClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EffectivePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API EffectivePolicy
+  class EffectivePolicy
   {
   public:
-    EffectivePolicy();
-    EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
-    EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API EffectivePolicy();
+    AWS_ORGANIZATIONS_API EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_policyContent;
-    bool m_policyContentHasBeenSet;
+    bool m_policyContentHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     EffectivePolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

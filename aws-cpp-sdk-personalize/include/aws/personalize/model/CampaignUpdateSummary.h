@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CampaignUpdateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API CampaignUpdateSummary
+  class CampaignUpdateSummary
   {
   public:
-    CampaignUpdateSummary();
-    CampaignUpdateSummary(Aws::Utils::Json::JsonView jsonValue);
-    CampaignUpdateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API CampaignUpdateSummary();
+    AWS_PERSONALIZE_API CampaignUpdateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API CampaignUpdateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -303,25 +303,25 @@ namespace Model
   private:
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
 
     int m_minProvisionedTPS;
-    bool m_minProvisionedTPSHasBeenSet;
+    bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;
-    bool m_campaignConfigHasBeenSet;
+    bool m_campaignConfigHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AclGrantee">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AclGrantee
+  class AclGrantee
   {
   public:
-    AclGrantee();
-    AclGrantee(Aws::Utils::Json::JsonView jsonValue);
-    AclGrantee& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AclGrantee();
+    AWS_ACCESSANALYZER_API AclGrantee(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AclGrantee& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
   };
 
 } // namespace Model

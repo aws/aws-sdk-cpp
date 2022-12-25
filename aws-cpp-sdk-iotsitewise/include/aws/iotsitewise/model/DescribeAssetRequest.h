@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTSiteWise
 {
 namespace Model
@@ -18,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API DescribeAssetRequest : public IoTSiteWiseRequest
+  class DescribeAssetRequest : public IoTSiteWiseRequest
   {
   public:
-    DescribeAssetRequest();
+    AWS_IOTSITEWISE_API DescribeAssetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAsset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
+
+    AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -72,10 +78,34 @@ namespace Model
      */
     inline DescribeAssetRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
+
+    /**
+     * <p> Whether or not to exclude asset properties from the response. </p>
+     */
+    inline bool GetExcludeProperties() const{ return m_excludeProperties; }
+
+    /**
+     * <p> Whether or not to exclude asset properties from the response. </p>
+     */
+    inline bool ExcludePropertiesHasBeenSet() const { return m_excludePropertiesHasBeenSet; }
+
+    /**
+     * <p> Whether or not to exclude asset properties from the response. </p>
+     */
+    inline void SetExcludeProperties(bool value) { m_excludePropertiesHasBeenSet = true; m_excludeProperties = value; }
+
+    /**
+     * <p> Whether or not to exclude asset properties from the response. </p>
+     */
+    inline DescribeAssetRequest& WithExcludeProperties(bool value) { SetExcludeProperties(value); return *this;}
+
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
+
+    bool m_excludeProperties;
+    bool m_excludePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

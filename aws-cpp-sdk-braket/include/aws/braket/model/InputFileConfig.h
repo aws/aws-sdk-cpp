@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/InputFileConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API InputFileConfig
+  class InputFileConfig
   {
   public:
-    InputFileConfig();
-    InputFileConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputFileConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API InputFileConfig();
+    AWS_BRAKET_API InputFileConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API InputFileConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
   };
 
 } // namespace Model

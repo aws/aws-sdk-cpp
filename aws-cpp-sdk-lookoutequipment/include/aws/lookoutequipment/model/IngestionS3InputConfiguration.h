@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/IngestionS3InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration
+  class IngestionS3InputConfiguration
   {
   public:
-    IngestionS3InputConfiguration();
-    IngestionS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    IngestionS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API IngestionS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_keyPattern;
-    bool m_keyPatternHasBeenSet;
+    bool m_keyPatternHasBeenSet = false;
   };
 
 } // namespace Model

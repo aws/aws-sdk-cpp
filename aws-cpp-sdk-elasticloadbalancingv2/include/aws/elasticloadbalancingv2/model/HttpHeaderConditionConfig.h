@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/HttpHeaderConditionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig
+  class HttpHeaderConditionConfig
   {
   public:
-    HttpHeaderConditionConfig();
-    HttpHeaderConditionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HttpHeaderConditionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API HttpHeaderConditionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
 
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -128,10 +128,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -140,10 +140,10 @@ namespace Model
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -152,10 +152,10 @@ namespace Model
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -164,10 +164,10 @@ namespace Model
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -176,10 +176,10 @@ namespace Model
     inline HttpHeaderConditionConfig& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -188,10 +188,10 @@ namespace Model
     inline HttpHeaderConditionConfig& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -200,10 +200,10 @@ namespace Model
     inline HttpHeaderConditionConfig& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -212,10 +212,10 @@ namespace Model
     inline HttpHeaderConditionConfig& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more strings to compare against the value of the HTTP header. The
-     * maximum size of each string is 128 characters. The comparison strings are case
-     * insensitive. The following wildcard characters are supported: * (matches 0 or
-     * more characters) and ? (matches exactly 1 character).</p> <p>If the same header
+     * <p>The strings to compare against the value of the HTTP header. The maximum size
+     * of each string is 128 characters. The comparison strings are case insensitive.
+     * The following wildcard characters are supported: * (matches 0 or more
+     * characters) and ? (matches exactly 1 character).</p> <p>If the same header
      * appears multiple times in the request, we search them in order until a match is
      * found.</p> <p>If you specify multiple strings, the condition is satisfied if one
      * of the strings matches the value of the HTTP header. To require that all of the
@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_httpHeaderName;
-    bool m_httpHeaderNameHasBeenSet;
+    bool m_httpHeaderNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

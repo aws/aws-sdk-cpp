@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingTypeRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DeprecateThingTypeRequest : public IoTRequest
+  class DeprecateThingTypeRequest : public IoTRequest
   {
   public:
-    DeprecateThingTypeRequest();
+    AWS_IOT_API DeprecateThingTypeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeprecateThingType"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
 
     bool m_undoDeprecate;
-    bool m_undoDeprecateHasBeenSet;
+    bool m_undoDeprecateHasBeenSet = false;
   };
 
 } // namespace Model

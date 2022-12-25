@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/OperatingSystem">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API OperatingSystem
+  class OperatingSystem
   {
   public:
-    OperatingSystem();
-    OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
-    OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API OperatingSystem();
+    AWS_OPSWORKS_API OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,25 +349,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<OperatingSystemConfigurationManager> m_configurationManagers;
-    bool m_configurationManagersHasBeenSet;
+    bool m_configurationManagersHasBeenSet = false;
 
     Aws::String m_reportedName;
-    bool m_reportedNameHasBeenSet;
+    bool m_reportedNameHasBeenSet = false;
 
     Aws::String m_reportedVersion;
-    bool m_reportedVersionHasBeenSet;
+    bool m_reportedVersionHasBeenSet = false;
 
     bool m_supported;
-    bool m_supportedHasBeenSet;
+    bool m_supportedHasBeenSet = false;
   };
 
 } // namespace Model

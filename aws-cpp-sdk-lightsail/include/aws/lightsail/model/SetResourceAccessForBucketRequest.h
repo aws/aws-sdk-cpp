@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API SetResourceAccessForBucketRequest : public LightsailRequest
+  class SetResourceAccessForBucketRequest : public LightsailRequest
   {
   public:
-    SetResourceAccessForBucketRequest();
+    AWS_LIGHTSAIL_API SetResourceAccessForBucketRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetResourceAccessForBucket"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     ResourceBucketAccess m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
   };
 
 } // namespace Model

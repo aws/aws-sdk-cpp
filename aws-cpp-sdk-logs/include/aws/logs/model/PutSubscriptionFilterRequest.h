@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API PutSubscriptionFilterRequest : public CloudWatchLogsRequest
+  class PutSubscriptionFilterRequest : public CloudWatchLogsRequest
   {
   public:
-    PutSubscriptionFilterRequest();
+    AWS_CLOUDWATCHLOGS_API PutSubscriptionFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSubscriptionFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -187,12 +187,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -204,12 +204,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -221,12 +221,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -238,12 +238,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -255,12 +255,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -272,12 +272,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -289,12 +289,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -306,12 +306,12 @@ namespace Model
      * supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging
      * to the same account as the subscription filter, for same-account delivery.</p>
      * </li> <li> <p>A logical destination (specified using an ARN) belonging to a
-     * different account, for cross-account delivery.</p> <p>If you are setting up a
+     * different account, for cross-account delivery.</p> <p>If you're setting up a
      * cross-account subscription, the destination must have an IAM policy associated
-     * with it that allows the sender to send logs to the destination. For more
-     * information, see <a
+     * with it. The IAM policy must allow the sender to send logs to the destination.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-     * </li> <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same
+     * </li> <li> <p>A Kinesis Data Firehose delivery stream belonging to the same
      * account as the subscription filter, for same-account delivery.</p> </li> <li>
      * <p>A Lambda function belonging to the same account as the subscription filter,
      * for same-account delivery.</p> </li> </ul>
@@ -380,7 +380,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
@@ -388,7 +388,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline bool DistributionHasBeenSet() const { return m_distributionHasBeenSet; }
 
@@ -396,7 +396,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
@@ -404,7 +404,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
 
@@ -412,7 +412,7 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
@@ -420,29 +420,29 @@ namespace Model
      * <p>The method used to distribute log data to the destination. By default, log
      * data is grouped by log stream, but the grouping can be set to random for a more
      * even distribution. This property is only applicable when the destination is an
-     * Amazon Kinesis stream. </p>
+     * Amazon Kinesis data stream. </p>
      */
     inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_filterName;
-    bool m_filterNameHasBeenSet;
+    bool m_filterNameHasBeenSet = false;
 
     Aws::String m_filterPattern;
-    bool m_filterPatternHasBeenSet;
+    bool m_filterPatternHasBeenSet = false;
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Distribution m_distribution;
-    bool m_distributionHasBeenSet;
+    bool m_distributionHasBeenSet = false;
   };
 
 } // namespace Model

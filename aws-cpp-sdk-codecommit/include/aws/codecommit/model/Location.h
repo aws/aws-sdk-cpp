@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Location">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Location
+  class Location
   {
   public:
-    Location();
-    Location(Aws::Utils::Json::JsonView jsonValue);
-    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Location();
+    AWS_CODECOMMIT_API Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     long long m_filePosition;
-    bool m_filePositionHasBeenSet;
+    bool m_filePositionHasBeenSet = false;
 
     RelativeFileVersionEnum m_relativeFileVersion;
-    bool m_relativeFileVersionHasBeenSet;
+    bool m_relativeFileVersionHasBeenSet = false;
   };
 
 } // namespace Model

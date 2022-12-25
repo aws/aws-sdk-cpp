@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Communication">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API Communication
+  class Communication
   {
   public:
-    Communication();
-    Communication(Aws::Utils::Json::JsonView jsonValue);
-    Communication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API Communication();
+    AWS_SUPPORT_API Communication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Communication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,19 +305,19 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::String m_submittedBy;
-    bool m_submittedByHasBeenSet;
+    bool m_submittedByHasBeenSet = false;
 
     Aws::String m_timeCreated;
-    bool m_timeCreatedHasBeenSet;
+    bool m_timeCreatedHasBeenSet = false;
 
     Aws::Vector<AttachmentDetails> m_attachmentSet;
-    bool m_attachmentSetHasBeenSet;
+    bool m_attachmentSetHasBeenSet = false;
   };
 
 } // namespace Model

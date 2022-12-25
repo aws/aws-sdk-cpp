@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/PackageAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API PackageAggregation
+  class PackageAggregation
   {
   public:
-    PackageAggregation();
-    PackageAggregation(Aws::Utils::Json::JsonView jsonValue);
-    PackageAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API PackageAggregation();
+    AWS_INSPECTOR2_API PackageAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API PackageAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_packageNames;
-    bool m_packageNamesHasBeenSet;
+    bool m_packageNamesHasBeenSet = false;
 
     PackageSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DistributionBundle">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DistributionBundle
+  class DistributionBundle
   {
   public:
-    DistributionBundle();
-    DistributionBundle(Aws::Utils::Json::JsonView jsonValue);
-    DistributionBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DistributionBundle();
+    AWS_LIGHTSAIL_API DistributionBundle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DistributionBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,19 +189,19 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     int m_transferPerMonthInGb;
-    bool m_transferPerMonthInGbHasBeenSet;
+    bool m_transferPerMonthInGbHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

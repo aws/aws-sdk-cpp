@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/OnlineAbConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig
+  class OnlineAbConfig
   {
   public:
-    OnlineAbConfig();
-    OnlineAbConfig(Aws::Utils::Json::JsonView jsonValue);
-    OnlineAbConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,10 +165,10 @@ namespace Model
   private:
 
     Aws::String m_controlTreatmentName;
-    bool m_controlTreatmentNameHasBeenSet;
+    bool m_controlTreatmentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_treatmentWeights;
-    bool m_treatmentWeightsHasBeenSet;
+    bool m_treatmentWeightsHasBeenSet = false;
   };
 
 } // namespace Model

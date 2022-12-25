@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystemRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DeleteFileSystemRequest : public FSxRequest
+  class DeleteFileSystemRequest : public FSxRequest
   {
   public:
-    DeleteFileSystemRequest();
+    AWS_FSX_API DeleteFileSystemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteFileSystem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     DeleteFileSystemWindowsConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     DeleteFileSystemLustreConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     DeleteFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

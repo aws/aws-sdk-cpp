@@ -19,7 +19,8 @@ GetCurrentMetricDataRequest::GetCurrentMetricDataRequest() :
     m_currentMetricsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_sortCriteriaHasBeenSet(false)
 {
 }
 
@@ -35,7 +36,7 @@ Aws::String GetCurrentMetricDataRequest::SerializePayload() const
 
   if(m_groupingsHasBeenSet)
   {
-   Array<JsonValue> groupingsJsonList(m_groupings.size());
+   Aws::Utils::Array<JsonValue> groupingsJsonList(m_groupings.size());
    for(unsigned groupingsIndex = 0; groupingsIndex < groupingsJsonList.GetLength(); ++groupingsIndex)
    {
      groupingsJsonList[groupingsIndex].AsString(GroupingMapper::GetNameForGrouping(m_groupings[groupingsIndex]));
@@ -46,7 +47,7 @@ Aws::String GetCurrentMetricDataRequest::SerializePayload() const
 
   if(m_currentMetricsHasBeenSet)
   {
-   Array<JsonValue> currentMetricsJsonList(m_currentMetrics.size());
+   Aws::Utils::Array<JsonValue> currentMetricsJsonList(m_currentMetrics.size());
    for(unsigned currentMetricsIndex = 0; currentMetricsIndex < currentMetricsJsonList.GetLength(); ++currentMetricsIndex)
    {
      currentMetricsJsonList[currentMetricsIndex].AsObject(m_currentMetrics[currentMetricsIndex].Jsonize());
@@ -64,6 +65,17 @@ Aws::String GetCurrentMetricDataRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_sortCriteriaHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sortCriteriaJsonList(m_sortCriteria.size());
+   for(unsigned sortCriteriaIndex = 0; sortCriteriaIndex < sortCriteriaJsonList.GetLength(); ++sortCriteriaIndex)
+   {
+     sortCriteriaJsonList[sortCriteriaIndex].AsObject(m_sortCriteria[sortCriteriaIndex].Jsonize());
+   }
+   payload.WithArray("SortCriteria", std::move(sortCriteriaJsonList));
 
   }
 

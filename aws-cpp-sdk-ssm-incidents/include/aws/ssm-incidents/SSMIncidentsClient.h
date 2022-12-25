@@ -5,203 +5,16 @@
 
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
-#include <aws/ssm-incidents/SSMIncidentsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ssm-incidents/model/CreateReplicationSetResult.h>
-#include <aws/ssm-incidents/model/CreateResponsePlanResult.h>
-#include <aws/ssm-incidents/model/CreateTimelineEventResult.h>
-#include <aws/ssm-incidents/model/DeleteIncidentRecordResult.h>
-#include <aws/ssm-incidents/model/DeleteReplicationSetResult.h>
-#include <aws/ssm-incidents/model/DeleteResourcePolicyResult.h>
-#include <aws/ssm-incidents/model/DeleteResponsePlanResult.h>
-#include <aws/ssm-incidents/model/DeleteTimelineEventResult.h>
-#include <aws/ssm-incidents/model/GetIncidentRecordResult.h>
-#include <aws/ssm-incidents/model/GetReplicationSetResult.h>
-#include <aws/ssm-incidents/model/GetResourcePoliciesResult.h>
-#include <aws/ssm-incidents/model/GetResponsePlanResult.h>
-#include <aws/ssm-incidents/model/GetTimelineEventResult.h>
-#include <aws/ssm-incidents/model/ListIncidentRecordsResult.h>
-#include <aws/ssm-incidents/model/ListRelatedItemsResult.h>
-#include <aws/ssm-incidents/model/ListReplicationSetsResult.h>
-#include <aws/ssm-incidents/model/ListResponsePlansResult.h>
-#include <aws/ssm-incidents/model/ListTagsForResourceResult.h>
-#include <aws/ssm-incidents/model/ListTimelineEventsResult.h>
-#include <aws/ssm-incidents/model/PutResourcePolicyResult.h>
-#include <aws/ssm-incidents/model/StartIncidentResult.h>
-#include <aws/ssm-incidents/model/TagResourceResult.h>
-#include <aws/ssm-incidents/model/UntagResourceResult.h>
-#include <aws/ssm-incidents/model/UpdateDeletionProtectionResult.h>
-#include <aws/ssm-incidents/model/UpdateIncidentRecordResult.h>
-#include <aws/ssm-incidents/model/UpdateRelatedItemsResult.h>
-#include <aws/ssm-incidents/model/UpdateReplicationSetResult.h>
-#include <aws/ssm-incidents/model/UpdateResponsePlanResult.h>
-#include <aws/ssm-incidents/model/UpdateTimelineEventResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SSMIncidents
 {
-
-namespace Model
-{
-        class CreateReplicationSetRequest;
-        class CreateResponsePlanRequest;
-        class CreateTimelineEventRequest;
-        class DeleteIncidentRecordRequest;
-        class DeleteReplicationSetRequest;
-        class DeleteResourcePolicyRequest;
-        class DeleteResponsePlanRequest;
-        class DeleteTimelineEventRequest;
-        class GetIncidentRecordRequest;
-        class GetReplicationSetRequest;
-        class GetResourcePoliciesRequest;
-        class GetResponsePlanRequest;
-        class GetTimelineEventRequest;
-        class ListIncidentRecordsRequest;
-        class ListRelatedItemsRequest;
-        class ListReplicationSetsRequest;
-        class ListResponsePlansRequest;
-        class ListTagsForResourceRequest;
-        class ListTimelineEventsRequest;
-        class PutResourcePolicyRequest;
-        class StartIncidentRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDeletionProtectionRequest;
-        class UpdateIncidentRecordRequest;
-        class UpdateRelatedItemsRequest;
-        class UpdateReplicationSetRequest;
-        class UpdateResponsePlanRequest;
-        class UpdateTimelineEventRequest;
-
-        typedef Aws::Utils::Outcome<CreateReplicationSetResult, SSMIncidentsError> CreateReplicationSetOutcome;
-        typedef Aws::Utils::Outcome<CreateResponsePlanResult, SSMIncidentsError> CreateResponsePlanOutcome;
-        typedef Aws::Utils::Outcome<CreateTimelineEventResult, SSMIncidentsError> CreateTimelineEventOutcome;
-        typedef Aws::Utils::Outcome<DeleteIncidentRecordResult, SSMIncidentsError> DeleteIncidentRecordOutcome;
-        typedef Aws::Utils::Outcome<DeleteReplicationSetResult, SSMIncidentsError> DeleteReplicationSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SSMIncidentsError> DeleteResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteResponsePlanResult, SSMIncidentsError> DeleteResponsePlanOutcome;
-        typedef Aws::Utils::Outcome<DeleteTimelineEventResult, SSMIncidentsError> DeleteTimelineEventOutcome;
-        typedef Aws::Utils::Outcome<GetIncidentRecordResult, SSMIncidentsError> GetIncidentRecordOutcome;
-        typedef Aws::Utils::Outcome<GetReplicationSetResult, SSMIncidentsError> GetReplicationSetOutcome;
-        typedef Aws::Utils::Outcome<GetResourcePoliciesResult, SSMIncidentsError> GetResourcePoliciesOutcome;
-        typedef Aws::Utils::Outcome<GetResponsePlanResult, SSMIncidentsError> GetResponsePlanOutcome;
-        typedef Aws::Utils::Outcome<GetTimelineEventResult, SSMIncidentsError> GetTimelineEventOutcome;
-        typedef Aws::Utils::Outcome<ListIncidentRecordsResult, SSMIncidentsError> ListIncidentRecordsOutcome;
-        typedef Aws::Utils::Outcome<ListRelatedItemsResult, SSMIncidentsError> ListRelatedItemsOutcome;
-        typedef Aws::Utils::Outcome<ListReplicationSetsResult, SSMIncidentsError> ListReplicationSetsOutcome;
-        typedef Aws::Utils::Outcome<ListResponsePlansResult, SSMIncidentsError> ListResponsePlansOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SSMIncidentsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTimelineEventsResult, SSMIncidentsError> ListTimelineEventsOutcome;
-        typedef Aws::Utils::Outcome<PutResourcePolicyResult, SSMIncidentsError> PutResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<StartIncidentResult, SSMIncidentsError> StartIncidentOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, SSMIncidentsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, SSMIncidentsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeletionProtectionResult, SSMIncidentsError> UpdateDeletionProtectionOutcome;
-        typedef Aws::Utils::Outcome<UpdateIncidentRecordResult, SSMIncidentsError> UpdateIncidentRecordOutcome;
-        typedef Aws::Utils::Outcome<UpdateRelatedItemsResult, SSMIncidentsError> UpdateRelatedItemsOutcome;
-        typedef Aws::Utils::Outcome<UpdateReplicationSetResult, SSMIncidentsError> UpdateReplicationSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateResponsePlanResult, SSMIncidentsError> UpdateResponsePlanOutcome;
-        typedef Aws::Utils::Outcome<UpdateTimelineEventResult, SSMIncidentsError> UpdateTimelineEventOutcome;
-
-        typedef std::future<CreateReplicationSetOutcome> CreateReplicationSetOutcomeCallable;
-        typedef std::future<CreateResponsePlanOutcome> CreateResponsePlanOutcomeCallable;
-        typedef std::future<CreateTimelineEventOutcome> CreateTimelineEventOutcomeCallable;
-        typedef std::future<DeleteIncidentRecordOutcome> DeleteIncidentRecordOutcomeCallable;
-        typedef std::future<DeleteReplicationSetOutcome> DeleteReplicationSetOutcomeCallable;
-        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
-        typedef std::future<DeleteResponsePlanOutcome> DeleteResponsePlanOutcomeCallable;
-        typedef std::future<DeleteTimelineEventOutcome> DeleteTimelineEventOutcomeCallable;
-        typedef std::future<GetIncidentRecordOutcome> GetIncidentRecordOutcomeCallable;
-        typedef std::future<GetReplicationSetOutcome> GetReplicationSetOutcomeCallable;
-        typedef std::future<GetResourcePoliciesOutcome> GetResourcePoliciesOutcomeCallable;
-        typedef std::future<GetResponsePlanOutcome> GetResponsePlanOutcomeCallable;
-        typedef std::future<GetTimelineEventOutcome> GetTimelineEventOutcomeCallable;
-        typedef std::future<ListIncidentRecordsOutcome> ListIncidentRecordsOutcomeCallable;
-        typedef std::future<ListRelatedItemsOutcome> ListRelatedItemsOutcomeCallable;
-        typedef std::future<ListReplicationSetsOutcome> ListReplicationSetsOutcomeCallable;
-        typedef std::future<ListResponsePlansOutcome> ListResponsePlansOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTimelineEventsOutcome> ListTimelineEventsOutcomeCallable;
-        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
-        typedef std::future<StartIncidentOutcome> StartIncidentOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDeletionProtectionOutcome> UpdateDeletionProtectionOutcomeCallable;
-        typedef std::future<UpdateIncidentRecordOutcome> UpdateIncidentRecordOutcomeCallable;
-        typedef std::future<UpdateRelatedItemsOutcome> UpdateRelatedItemsOutcomeCallable;
-        typedef std::future<UpdateReplicationSetOutcome> UpdateReplicationSetOutcomeCallable;
-        typedef std::future<UpdateResponsePlanOutcome> UpdateResponsePlanOutcomeCallable;
-        typedef std::future<UpdateTimelineEventOutcome> UpdateTimelineEventOutcomeCallable;
-} // namespace Model
-
-  class SSMIncidentsClient;
-
-    typedef std::function<void(const SSMIncidentsClient*, const Model::CreateReplicationSetRequest&, const Model::CreateReplicationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationSetResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::CreateResponsePlanRequest&, const Model::CreateResponsePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResponsePlanResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::CreateTimelineEventRequest&, const Model::CreateTimelineEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTimelineEventResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::DeleteIncidentRecordRequest&, const Model::DeleteIncidentRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIncidentRecordResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::DeleteReplicationSetRequest&, const Model::DeleteReplicationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationSetResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::DeleteResponsePlanRequest&, const Model::DeleteResponsePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResponsePlanResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::DeleteTimelineEventRequest&, const Model::DeleteTimelineEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTimelineEventResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::GetIncidentRecordRequest&, const Model::GetIncidentRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIncidentRecordResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::GetReplicationSetRequest&, const Model::GetReplicationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReplicationSetResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::GetResourcePoliciesRequest&, const Model::GetResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePoliciesResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::GetResponsePlanRequest&, const Model::GetResponsePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResponsePlanResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::GetTimelineEventRequest&, const Model::GetTimelineEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTimelineEventResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListIncidentRecordsRequest&, const Model::ListIncidentRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIncidentRecordsResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListRelatedItemsRequest&, const Model::ListRelatedItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRelatedItemsResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListReplicationSetsRequest&, const Model::ListReplicationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReplicationSetsResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListResponsePlansRequest&, const Model::ListResponsePlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResponsePlansResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::ListTimelineEventsRequest&, const Model::ListTimelineEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTimelineEventsResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::StartIncidentRequest&, const Model::StartIncidentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartIncidentResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateDeletionProtectionRequest&, const Model::UpdateDeletionProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeletionProtectionResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateIncidentRecordRequest&, const Model::UpdateIncidentRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIncidentRecordResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateRelatedItemsRequest&, const Model::UpdateRelatedItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelatedItemsResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateReplicationSetRequest&, const Model::UpdateReplicationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationSetResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateResponsePlanRequest&, const Model::UpdateResponsePlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResponsePlanResponseReceivedHandler;
-    typedef std::function<void(const SSMIncidentsClient*, const Model::UpdateTimelineEventRequest&, const Model::UpdateTimelineEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimelineEventResponseReceivedHandler;
-
   /**
    * <p>Systems Manager Incident Manager is an incident management console designed
    * to help users mitigate and recover from incidents affecting their Amazon Web
@@ -213,32 +26,60 @@ namespace Model
    * critical incidents, Incident Manager automates response plans and enables
    * responder team escalation. </p>
    */
-  class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient
+  class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SSMIncidentsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SSMIncidentsClient(const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration(),
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SSMIncidentsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SSMIncidentsClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SSMIncidentsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<SSMIncidentsEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMIncidentsEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::SSMIncidents::SSMIncidentsClientConfiguration& clientConfiguration = Aws::SSMIncidents::SSMIncidentsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SSMIncidentsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SSMIncidentsClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SSMIncidentsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SSMIncidentsClient();
-
 
         /**
          * <p>A replication set replicates and encrypts your data to the provided Regions
@@ -588,8 +429,8 @@ namespace Model
          * <p>Adds a resource policy to the specified response plan. The resource policy is
          * used to share the response plan using Resource Access Manager (RAM). For more
          * information about cross-account sharing, see <a
-         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
-         * up cross-account functionality</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html">Cross-Region
+         * and cross-account incident management</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -769,41 +610,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SSMIncidentsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateReplicationSetAsyncHelper(const Model::CreateReplicationSetRequest& request, const CreateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateResponsePlanAsyncHelper(const Model::CreateResponsePlanRequest& request, const CreateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTimelineEventAsyncHelper(const Model::CreateTimelineEventRequest& request, const CreateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIncidentRecordAsyncHelper(const Model::DeleteIncidentRecordRequest& request, const DeleteIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReplicationSetAsyncHelper(const Model::DeleteReplicationSetRequest& request, const DeleteReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResponsePlanAsyncHelper(const Model::DeleteResponsePlanRequest& request, const DeleteResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTimelineEventAsyncHelper(const Model::DeleteTimelineEventRequest& request, const DeleteTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIncidentRecordAsyncHelper(const Model::GetIncidentRecordRequest& request, const GetIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReplicationSetAsyncHelper(const Model::GetReplicationSetRequest& request, const GetReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourcePoliciesAsyncHelper(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResponsePlanAsyncHelper(const Model::GetResponsePlanRequest& request, const GetResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTimelineEventAsyncHelper(const Model::GetTimelineEventRequest& request, const GetTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIncidentRecordsAsyncHelper(const Model::ListIncidentRecordsRequest& request, const ListIncidentRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRelatedItemsAsyncHelper(const Model::ListRelatedItemsRequest& request, const ListRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReplicationSetsAsyncHelper(const Model::ListReplicationSetsRequest& request, const ListReplicationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResponsePlansAsyncHelper(const Model::ListResponsePlansRequest& request, const ListResponsePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTimelineEventsAsyncHelper(const Model::ListTimelineEventsRequest& request, const ListTimelineEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartIncidentAsyncHelper(const Model::StartIncidentRequest& request, const StartIncidentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDeletionProtectionAsyncHelper(const Model::UpdateDeletionProtectionRequest& request, const UpdateDeletionProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateIncidentRecordAsyncHelper(const Model::UpdateIncidentRecordRequest& request, const UpdateIncidentRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRelatedItemsAsyncHelper(const Model::UpdateRelatedItemsRequest& request, const UpdateRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReplicationSetAsyncHelper(const Model::UpdateReplicationSetRequest& request, const UpdateReplicationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateResponsePlanAsyncHelper(const Model::UpdateResponsePlanRequest& request, const UpdateResponsePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTimelineEventAsyncHelper(const Model::UpdateTimelineEventRequest& request, const UpdateTimelineEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>;
+      void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SSMIncidentsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SSMIncidentsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSMIncidents

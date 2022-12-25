@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PhoneNumberFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter
+  class PhoneNumberFilter
   {
   public:
-    PhoneNumberFilter();
-    PhoneNumberFilter(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter();
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API PhoneNumberFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     PhoneNumberFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

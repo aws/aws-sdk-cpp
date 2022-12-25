@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RepositoryCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API RepositoryCredentials
+  class RepositoryCredentials
   {
   public:
-    RepositoryCredentials();
-    RepositoryCredentials(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API RepositoryCredentials();
+    AWS_ECS_API RepositoryCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API RepositoryCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,7 +121,7 @@ namespace Model
   private:
 
     Aws::String m_credentialsParameter;
-    bool m_credentialsParameterHasBeenSet;
+    bool m_credentialsParameterHasBeenSet = false;
   };
 
 } // namespace Model

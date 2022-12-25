@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONINSIGHTS_API CreateLogPatternRequest : public ApplicationInsightsRequest
+  class CreateLogPatternRequest : public ApplicationInsightsRequest
   {
   public:
-    CreateLogPatternRequest();
+    AWS_APPLICATIONINSIGHTS_API CreateLogPatternRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLogPattern"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_patternSetName;
-    bool m_patternSetNameHasBeenSet;
+    bool m_patternSetNameHasBeenSet = false;
 
     Aws::String m_patternName;
-    bool m_patternNameHasBeenSet;
+    bool m_patternNameHasBeenSet = false;
 
     Aws::String m_pattern;
-    bool m_patternHasBeenSet;
+    bool m_patternHasBeenSet = false;
 
     int m_rank;
-    bool m_rankHasBeenSet;
+    bool m_rankHasBeenSet = false;
   };
 
 } // namespace Model

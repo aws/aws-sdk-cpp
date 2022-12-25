@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FindingCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API FindingCriteria
+  class FindingCriteria
   {
   public:
-    FindingCriteria();
-    FindingCriteria(Aws::Utils::Json::JsonView jsonValue);
-    FindingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API FindingCriteria();
+    AWS_GUARDDUTY_API FindingCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API FindingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,7 +115,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Condition> m_criterion;
-    bool m_criterionHasBeenSet;
+    bool m_criterionHasBeenSet = false;
   };
 
 } // namespace Model

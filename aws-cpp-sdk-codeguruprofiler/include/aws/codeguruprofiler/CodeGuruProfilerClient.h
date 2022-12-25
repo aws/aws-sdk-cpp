@@ -5,173 +5,16 @@
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
-#include <aws/codeguruprofiler/CodeGuruProfilerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codeguruprofiler/model/AddNotificationChannelsResult.h>
-#include <aws/codeguruprofiler/model/BatchGetFrameMetricDataResult.h>
-#include <aws/codeguruprofiler/model/ConfigureAgentResult.h>
-#include <aws/codeguruprofiler/model/CreateProfilingGroupResult.h>
-#include <aws/codeguruprofiler/model/DeleteProfilingGroupResult.h>
-#include <aws/codeguruprofiler/model/DescribeProfilingGroupResult.h>
-#include <aws/codeguruprofiler/model/GetFindingsReportAccountSummaryResult.h>
-#include <aws/codeguruprofiler/model/GetNotificationConfigurationResult.h>
-#include <aws/codeguruprofiler/model/GetPolicyResult.h>
-#include <aws/codeguruprofiler/model/GetProfileResult.h>
-#include <aws/codeguruprofiler/model/GetRecommendationsResult.h>
-#include <aws/codeguruprofiler/model/ListFindingsReportsResult.h>
-#include <aws/codeguruprofiler/model/ListProfileTimesResult.h>
-#include <aws/codeguruprofiler/model/ListProfilingGroupsResult.h>
-#include <aws/codeguruprofiler/model/ListTagsForResourceResult.h>
-#include <aws/codeguruprofiler/model/PostAgentProfileResult.h>
-#include <aws/codeguruprofiler/model/PutPermissionResult.h>
-#include <aws/codeguruprofiler/model/RemoveNotificationChannelResult.h>
-#include <aws/codeguruprofiler/model/RemovePermissionResult.h>
-#include <aws/codeguruprofiler/model/SubmitFeedbackResult.h>
-#include <aws/codeguruprofiler/model/TagResourceResult.h>
-#include <aws/codeguruprofiler/model/UntagResourceResult.h>
-#include <aws/codeguruprofiler/model/UpdateProfilingGroupResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeGuruProfiler
 {
-
-namespace Model
-{
-        class AddNotificationChannelsRequest;
-        class BatchGetFrameMetricDataRequest;
-        class ConfigureAgentRequest;
-        class CreateProfilingGroupRequest;
-        class DeleteProfilingGroupRequest;
-        class DescribeProfilingGroupRequest;
-        class GetFindingsReportAccountSummaryRequest;
-        class GetNotificationConfigurationRequest;
-        class GetPolicyRequest;
-        class GetProfileRequest;
-        class GetRecommendationsRequest;
-        class ListFindingsReportsRequest;
-        class ListProfileTimesRequest;
-        class ListProfilingGroupsRequest;
-        class ListTagsForResourceRequest;
-        class PostAgentProfileRequest;
-        class PutPermissionRequest;
-        class RemoveNotificationChannelRequest;
-        class RemovePermissionRequest;
-        class SubmitFeedbackRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateProfilingGroupRequest;
-
-        typedef Aws::Utils::Outcome<AddNotificationChannelsResult, CodeGuruProfilerError> AddNotificationChannelsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetFrameMetricDataResult, CodeGuruProfilerError> BatchGetFrameMetricDataOutcome;
-        typedef Aws::Utils::Outcome<ConfigureAgentResult, CodeGuruProfilerError> ConfigureAgentOutcome;
-        typedef Aws::Utils::Outcome<CreateProfilingGroupResult, CodeGuruProfilerError> CreateProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfilingGroupResult, CodeGuruProfilerError> DeleteProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeProfilingGroupResult, CodeGuruProfilerError> DescribeProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<GetFindingsReportAccountSummaryResult, CodeGuruProfilerError> GetFindingsReportAccountSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetNotificationConfigurationResult, CodeGuruProfilerError> GetNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetPolicyResult, CodeGuruProfilerError> GetPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetProfileResult, CodeGuruProfilerError> GetProfileOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationsResult, CodeGuruProfilerError> GetRecommendationsOutcome;
-        typedef Aws::Utils::Outcome<ListFindingsReportsResult, CodeGuruProfilerError> ListFindingsReportsOutcome;
-        typedef Aws::Utils::Outcome<ListProfileTimesResult, CodeGuruProfilerError> ListProfileTimesOutcome;
-        typedef Aws::Utils::Outcome<ListProfilingGroupsResult, CodeGuruProfilerError> ListProfilingGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeGuruProfilerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PostAgentProfileResult, CodeGuruProfilerError> PostAgentProfileOutcome;
-        typedef Aws::Utils::Outcome<PutPermissionResult, CodeGuruProfilerError> PutPermissionOutcome;
-        typedef Aws::Utils::Outcome<RemoveNotificationChannelResult, CodeGuruProfilerError> RemoveNotificationChannelOutcome;
-        typedef Aws::Utils::Outcome<RemovePermissionResult, CodeGuruProfilerError> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<SubmitFeedbackResult, CodeGuruProfilerError> SubmitFeedbackOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CodeGuruProfilerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CodeGuruProfilerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateProfilingGroupResult, CodeGuruProfilerError> UpdateProfilingGroupOutcome;
-
-        typedef std::future<AddNotificationChannelsOutcome> AddNotificationChannelsOutcomeCallable;
-        typedef std::future<BatchGetFrameMetricDataOutcome> BatchGetFrameMetricDataOutcomeCallable;
-        typedef std::future<ConfigureAgentOutcome> ConfigureAgentOutcomeCallable;
-        typedef std::future<CreateProfilingGroupOutcome> CreateProfilingGroupOutcomeCallable;
-        typedef std::future<DeleteProfilingGroupOutcome> DeleteProfilingGroupOutcomeCallable;
-        typedef std::future<DescribeProfilingGroupOutcome> DescribeProfilingGroupOutcomeCallable;
-        typedef std::future<GetFindingsReportAccountSummaryOutcome> GetFindingsReportAccountSummaryOutcomeCallable;
-        typedef std::future<GetNotificationConfigurationOutcome> GetNotificationConfigurationOutcomeCallable;
-        typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
-        typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
-        typedef std::future<GetRecommendationsOutcome> GetRecommendationsOutcomeCallable;
-        typedef std::future<ListFindingsReportsOutcome> ListFindingsReportsOutcomeCallable;
-        typedef std::future<ListProfileTimesOutcome> ListProfileTimesOutcomeCallable;
-        typedef std::future<ListProfilingGroupsOutcome> ListProfilingGroupsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PostAgentProfileOutcome> PostAgentProfileOutcomeCallable;
-        typedef std::future<PutPermissionOutcome> PutPermissionOutcomeCallable;
-        typedef std::future<RemoveNotificationChannelOutcome> RemoveNotificationChannelOutcomeCallable;
-        typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
-        typedef std::future<SubmitFeedbackOutcome> SubmitFeedbackOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateProfilingGroupOutcome> UpdateProfilingGroupOutcomeCallable;
-} // namespace Model
-
-  class CodeGuruProfilerClient;
-
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::AddNotificationChannelsRequest&, const Model::AddNotificationChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddNotificationChannelsResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::BatchGetFrameMetricDataRequest&, const Model::BatchGetFrameMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFrameMetricDataResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ConfigureAgentRequest&, const Model::ConfigureAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureAgentResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::CreateProfilingGroupRequest&, const Model::CreateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfilingGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::DeleteProfilingGroupRequest&, const Model::DeleteProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfilingGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::DescribeProfilingGroupRequest&, const Model::DescribeProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProfilingGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetFindingsReportAccountSummaryRequest&, const Model::GetFindingsReportAccountSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsReportAccountSummaryResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetNotificationConfigurationRequest&, const Model::GetNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetProfileRequest&, Model::GetProfileOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetRecommendationsRequest&, const Model::GetRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationsResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListFindingsReportsRequest&, const Model::ListFindingsReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsReportsResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfileTimesRequest&, const Model::ListProfileTimesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileTimesResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfilingGroupsRequest&, const Model::ListProfilingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilingGroupsResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::PostAgentProfileRequest&, const Model::PostAgentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostAgentProfileResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::PutPermissionRequest&, const Model::PutPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::RemoveNotificationChannelRequest&, const Model::RemoveNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveNotificationChannelResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::SubmitFeedbackRequest&, const Model::SubmitFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitFeedbackResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeGuruProfilerClient*, const Model::UpdateProfilingGroupRequest&, const Model::UpdateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfilingGroupResponseReceivedHandler;
-
   /**
    * <p> This section provides documentation for the Amazon CodeGuru Profiler API
    * operations. </p> <p> Amazon CodeGuru Profiler collects runtime performance data
@@ -191,32 +34,60 @@ namespace Model
    * is Amazon CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User
    * Guide</i>. </p>
    */
-  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeGuruProfilerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeGuruProfilerClient(const Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration& clientConfiguration = Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration(),
+                               std::shared_ptr<CodeGuruProfilerEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeGuruProfilerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeGuruProfilerClient(const Aws::Auth::AWSCredentials& credentials,
+                               std::shared_ptr<CodeGuruProfilerEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration& clientConfiguration = Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeGuruProfilerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<CodeGuruProfilerEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration& clientConfiguration = Aws::CodeGuruProfiler::CodeGuruProfilerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeGuruProfilerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeGuruProfilerClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeGuruProfilerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeGuruProfilerClient();
-
 
         /**
          * <p>Add up to 2 anomaly notifications channels for a profiling
@@ -714,35 +585,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddNotificationChannelsAsyncHelper(const Model::AddNotificationChannelsRequest& request, const AddNotificationChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetFrameMetricDataAsyncHelper(const Model::BatchGetFrameMetricDataRequest& request, const BatchGetFrameMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ConfigureAgentAsyncHelper(const Model::ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProfilingGroupAsyncHelper(const Model::CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfilingGroupAsyncHelper(const Model::DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProfilingGroupAsyncHelper(const Model::DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingsReportAccountSummaryAsyncHelper(const Model::GetFindingsReportAccountSummaryRequest& request, const GetFindingsReportAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetNotificationConfigurationAsyncHelper(const Model::GetNotificationConfigurationRequest& request, const GetNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProfileAsyncHelper(const Model::GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecommendationsAsyncHelper(const Model::GetRecommendationsRequest& request, const GetRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFindingsReportsAsyncHelper(const Model::ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfileTimesAsyncHelper(const Model::ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfilingGroupsAsyncHelper(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostAgentProfileAsyncHelper(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPermissionAsyncHelper(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveNotificationChannelAsyncHelper(const Model::RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubmitFeedbackAsyncHelper(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProfilingGroupAsyncHelper(const Model::UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;
+      void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeGuruProfilerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeGuruProfilerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeGuruProfiler

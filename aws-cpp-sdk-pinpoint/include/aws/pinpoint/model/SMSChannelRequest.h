@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SMSChannelRequest
+  class SMSChannelRequest
   {
   public:
-    SMSChannelRequest();
-    SMSChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    SMSChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SMSChannelRequest();
+    AWS_PINPOINT_API SMSChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SMSChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_shortCode;
-    bool m_shortCodeHasBeenSet;
+    bool m_shortCodeHasBeenSet = false;
   };
 
 } // namespace Model

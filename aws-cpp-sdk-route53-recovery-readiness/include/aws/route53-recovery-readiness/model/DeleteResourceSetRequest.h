@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API DeleteResourceSetRequest : public Route53RecoveryReadinessRequest
+  class DeleteResourceSetRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    DeleteResourceSetRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API DeleteResourceSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteResourceSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_resourceSetName;
-    bool m_resourceSetNameHasBeenSet;
+    bool m_resourceSetNameHasBeenSet = false;
   };
 
 } // namespace Model

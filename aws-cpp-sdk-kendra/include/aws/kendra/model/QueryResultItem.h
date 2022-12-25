@@ -7,9 +7,11 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/QueryResultType.h>
+#include <aws/kendra/model/QueryResultFormat.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/TextWithHighlights.h>
 #include <aws/kendra/model/ScoreAttributes.h>
+#include <aws/kendra/model/TableExcerpt.h>
 #include <aws/kendra/model/AdditionalResultAttribute.h>
 #include <aws/kendra/model/DocumentAttribute.h>
 #include <utility>
@@ -37,85 +39,146 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/QueryResultItem">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API QueryResultItem
+  class QueryResultItem
   {
   public:
-    QueryResultItem();
-    QueryResultItem(Aws::Utils::Json::JsonView jsonValue);
-    QueryResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API QueryResultItem();
+    AWS_KENDRA_API QueryResultItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API QueryResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline QueryResultItem& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline QueryResultItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the query result.</p>
+     * <p>The identifier for the query result.</p>
      */
     inline QueryResultItem& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline const QueryResultType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline void SetType(const QueryResultType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline void SetType(QueryResultType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline QueryResultItem& WithType(const QueryResultType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document within the response. For example, a response could
+     * include a question-answer that's relevant to the query.</p>
      */
     inline QueryResultItem& WithType(QueryResultType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline const QueryResultFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline void SetFormat(const QueryResultFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline void SetFormat(QueryResultFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline QueryResultItem& WithFormat(const QueryResultFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>If the <code>Type</code> of document within the response is
+     * <code>ANSWER</code>, then it is either a <code>TABLE</code> answer or
+     * <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     * <code>DocumentExcerpt</code>.</p>
+     */
+    inline QueryResultItem& WithFormat(QueryResultFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
@@ -160,42 +223,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline QueryResultItem& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline QueryResultItem& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the document.</p>
+     * <p>The identifier for the document.</p>
      */
     inline QueryResultItem& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
@@ -449,8 +512,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline const Aws::String& GetFeedbackToken() const{ return m_feedbackToken; }
 
@@ -458,8 +521,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline bool FeedbackTokenHasBeenSet() const { return m_feedbackTokenHasBeenSet; }
 
@@ -467,8 +530,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline void SetFeedbackToken(const Aws::String& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = value; }
 
@@ -476,8 +539,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline void SetFeedbackToken(Aws::String&& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = std::move(value); }
 
@@ -485,8 +548,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline void SetFeedbackToken(const char* value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken.assign(value); }
 
@@ -494,8 +557,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(const Aws::String& value) { SetFeedbackToken(value); return *this;}
 
@@ -503,8 +566,8 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(Aws::String&& value) { SetFeedbackToken(std::move(value)); return *this;}
 
@@ -512,42 +575,79 @@ namespace Model
      * <p>A token that identifies a particular result from a particular query. Use this
      * token to provide click-through feedback for the result. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
-     * Submitting feedback </a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
+     * feedback </a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(const char* value) { SetFeedbackToken(value); return *this;}
+
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline const TableExcerpt& GetTableExcerpt() const{ return m_tableExcerpt; }
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline bool TableExcerptHasBeenSet() const { return m_tableExcerptHasBeenSet; }
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline void SetTableExcerpt(const TableExcerpt& value) { m_tableExcerptHasBeenSet = true; m_tableExcerpt = value; }
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline void SetTableExcerpt(TableExcerpt&& value) { m_tableExcerptHasBeenSet = true; m_tableExcerpt = std::move(value); }
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline QueryResultItem& WithTableExcerpt(const TableExcerpt& value) { SetTableExcerpt(value); return *this;}
+
+    /**
+     * <p>An excerpt from a table within a document.</p>
+     */
+    inline QueryResultItem& WithTableExcerpt(TableExcerpt&& value) { SetTableExcerpt(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     QueryResultType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
+
+    QueryResultFormat m_format;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<AdditionalResultAttribute> m_additionalAttributes;
-    bool m_additionalAttributesHasBeenSet;
+    bool m_additionalAttributesHasBeenSet = false;
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     TextWithHighlights m_documentTitle;
-    bool m_documentTitleHasBeenSet;
+    bool m_documentTitleHasBeenSet = false;
 
     TextWithHighlights m_documentExcerpt;
-    bool m_documentExcerptHasBeenSet;
+    bool m_documentExcerptHasBeenSet = false;
 
     Aws::String m_documentURI;
-    bool m_documentURIHasBeenSet;
+    bool m_documentURIHasBeenSet = false;
 
     Aws::Vector<DocumentAttribute> m_documentAttributes;
-    bool m_documentAttributesHasBeenSet;
+    bool m_documentAttributesHasBeenSet = false;
 
     ScoreAttributes m_scoreAttributes;
-    bool m_scoreAttributesHasBeenSet;
+    bool m_scoreAttributesHasBeenSet = false;
 
     Aws::String m_feedbackToken;
-    bool m_feedbackTokenHasBeenSet;
+    bool m_feedbackTokenHasBeenSet = false;
+
+    TableExcerpt m_tableExcerpt;
+    bool m_tableExcerptHasBeenSet = false;
   };
 
 } // namespace Model

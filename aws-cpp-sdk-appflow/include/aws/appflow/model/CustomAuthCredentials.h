@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomAuthCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomAuthCredentials
+  class CustomAuthCredentials
   {
   public:
-    CustomAuthCredentials();
-    CustomAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
-    CustomAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomAuthCredentials();
+    AWS_APPFLOW_API CustomAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_customAuthenticationType;
-    bool m_customAuthenticationTypeHasBeenSet;
+    bool m_customAuthenticationTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_credentialsMap;
-    bool m_credentialsMapHasBeenSet;
+    bool m_credentialsMapHasBeenSet = false;
   };
 
 } // namespace Model

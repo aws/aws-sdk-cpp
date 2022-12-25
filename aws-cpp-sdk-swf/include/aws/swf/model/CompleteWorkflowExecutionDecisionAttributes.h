@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CompleteWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes
+  class CompleteWorkflowExecutionDecisionAttributes
   {
   public:
-    CompleteWorkflowExecutionDecisionAttributes();
-    CompleteWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    CompleteWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API CompleteWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,7 +102,7 @@ namespace Model
   private:
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

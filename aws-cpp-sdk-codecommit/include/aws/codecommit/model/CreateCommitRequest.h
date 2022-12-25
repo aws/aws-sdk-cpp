@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API CreateCommitRequest : public CodeCommitRequest
+  class CreateCommitRequest : public CodeCommitRequest
   {
   public:
-    CreateCommitRequest();
+    AWS_CODECOMMIT_API CreateCommitRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCommit"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -470,34 +470,34 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_parentCommitId;
-    bool m_parentCommitIdHasBeenSet;
+    bool m_parentCommitIdHasBeenSet = false;
 
     Aws::String m_authorName;
-    bool m_authorNameHasBeenSet;
+    bool m_authorNameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     bool m_keepEmptyFolders;
-    bool m_keepEmptyFoldersHasBeenSet;
+    bool m_keepEmptyFoldersHasBeenSet = false;
 
     Aws::Vector<PutFileEntry> m_putFiles;
-    bool m_putFilesHasBeenSet;
+    bool m_putFilesHasBeenSet = false;
 
     Aws::Vector<DeleteFileEntry> m_deleteFiles;
-    bool m_deleteFilesHasBeenSet;
+    bool m_deleteFilesHasBeenSet = false;
 
     Aws::Vector<SetFileModeEntry> m_setFileModes;
-    bool m_setFileModesHasBeenSet;
+    bool m_setFileModesHasBeenSet = false;
   };
 
 } // namespace Model

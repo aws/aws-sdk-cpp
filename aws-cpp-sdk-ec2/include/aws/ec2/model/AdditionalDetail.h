@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdditionalDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AdditionalDetail
+  class AdditionalDetail
   {
   public:
-    AdditionalDetail();
-    AdditionalDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AdditionalDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AdditionalDetail();
+    AWS_EC2_API AdditionalDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AdditionalDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_additionalDetailType;
-    bool m_additionalDetailTypeHasBeenSet;
+    bool m_additionalDetailTypeHasBeenSet = false;
 
     AnalysisComponent m_component;
-    bool m_componentHasBeenSet;
+    bool m_componentHasBeenSet = false;
   };
 
 } // namespace Model

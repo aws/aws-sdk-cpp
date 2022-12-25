@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckRefreshStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus
+  class TrustedAdvisorCheckRefreshStatus
   {
   public:
-    TrustedAdvisorCheckRefreshStatus();
-    TrustedAdvisorCheckRefreshStatus(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorCheckRefreshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus();
+    AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -202,13 +202,13 @@ namespace Model
   private:
 
     Aws::String m_checkId;
-    bool m_checkIdHasBeenSet;
+    bool m_checkIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     long long m_millisUntilNextRefreshable;
-    bool m_millisUntilNextRefreshableHasBeenSet;
+    bool m_millisUntilNextRefreshableHasBeenSet = false;
   };
 
 } // namespace Model

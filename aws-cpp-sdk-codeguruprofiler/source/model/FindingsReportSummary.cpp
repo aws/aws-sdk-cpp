@@ -91,12 +91,12 @@ JsonValue FindingsReportSummary::Jsonize() const
 
   if(m_profileEndTimeHasBeenSet)
   {
-   payload.WithString("profileEndTime", m_profileEndTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("profileEndTime", m_profileEndTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_profileStartTimeHasBeenSet)
   {
-   payload.WithString("profileStartTime", m_profileStartTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("profileStartTime", m_profileStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_profilingGroupNameHasBeenSet)

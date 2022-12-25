@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/FlowDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API FlowDefinition
+  class FlowDefinition
   {
   public:
-    FlowDefinition();
-    FlowDefinition(Aws::Utils::Json::JsonView jsonValue);
-    FlowDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API FlowDefinition();
+    AWS_APPFLOW_API FlowDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API FlowDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -642,49 +642,49 @@ namespace Model
   private:
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     FlowStatus m_flowStatus;
-    bool m_flowStatusHasBeenSet;
+    bool m_flowStatusHasBeenSet = false;
 
     ConnectorType m_sourceConnectorType;
-    bool m_sourceConnectorTypeHasBeenSet;
+    bool m_sourceConnectorTypeHasBeenSet = false;
 
     Aws::String m_sourceConnectorLabel;
-    bool m_sourceConnectorLabelHasBeenSet;
+    bool m_sourceConnectorLabelHasBeenSet = false;
 
     ConnectorType m_destinationConnectorType;
-    bool m_destinationConnectorTypeHasBeenSet;
+    bool m_destinationConnectorTypeHasBeenSet = false;
 
     Aws::String m_destinationConnectorLabel;
-    bool m_destinationConnectorLabelHasBeenSet;
+    bool m_destinationConnectorLabelHasBeenSet = false;
 
     TriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_lastUpdatedBy;
-    bool m_lastUpdatedByHasBeenSet;
+    bool m_lastUpdatedByHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ExecutionDetails m_lastRunExecutionDetails;
-    bool m_lastRunExecutionDetailsHasBeenSet;
+    bool m_lastRunExecutionDetailsHasBeenSet = false;
   };
 
 } // namespace Model

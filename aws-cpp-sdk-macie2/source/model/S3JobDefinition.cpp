@@ -19,25 +19,32 @@ namespace Model
 {
 
 S3JobDefinition::S3JobDefinition() : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_scopingHasBeenSet(false)
 {
 }
 
 S3JobDefinition::S3JobDefinition(JsonView jsonValue) : 
+    m_bucketCriteriaHasBeenSet(false),
     m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false),
-    m_bucketCriteriaHasBeenSet(false)
+    m_scopingHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 S3JobDefinition& S3JobDefinition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("bucketCriteria"))
+  {
+    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
+
+    m_bucketCriteriaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
-    Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
+    Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
     for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
     {
       m_bucketDefinitions.push_back(bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject());
@@ -52,13 +59,6 @@ S3JobDefinition& S3JobDefinition::operator =(JsonView jsonValue)
     m_scopingHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("bucketCriteria"))
-  {
-    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
-
-    m_bucketCriteriaHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -66,9 +66,15 @@ JsonValue S3JobDefinition::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_bucketCriteriaHasBeenSet)
+  {
+   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
+
+  }
+
   if(m_bucketDefinitionsHasBeenSet)
   {
-   Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
+   Aws::Utils::Array<JsonValue> bucketDefinitionsJsonList(m_bucketDefinitions.size());
    for(unsigned bucketDefinitionsIndex = 0; bucketDefinitionsIndex < bucketDefinitionsJsonList.GetLength(); ++bucketDefinitionsIndex)
    {
      bucketDefinitionsJsonList[bucketDefinitionsIndex].AsObject(m_bucketDefinitions[bucketDefinitionsIndex].Jsonize());
@@ -80,12 +86,6 @@ JsonValue S3JobDefinition::Jsonize() const
   if(m_scopingHasBeenSet)
   {
    payload.WithObject("scoping", m_scoping.Jsonize());
-
-  }
-
-  if(m_bucketCriteriaHasBeenSet)
-  {
-   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
 
   }
 

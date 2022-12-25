@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API GroupFilter
+  class GroupFilter
   {
   public:
-    GroupFilter();
-    GroupFilter(Aws::Utils::Json::JsonView jsonValue);
-    GroupFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API GroupFilter();
+    AWS_RESOURCEGROUPS_API GroupFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API GroupFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     GroupFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

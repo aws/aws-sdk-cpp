@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SnapshotDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SnapshotDetail
+  class SnapshotDetail
   {
   public:
-    SnapshotDetail();
-    SnapshotDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotDetail();
+    AWS_EC2_API SnapshotDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SnapshotDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -423,34 +423,34 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     double m_diskImageSize;
-    bool m_diskImageSizeHasBeenSet;
+    bool m_diskImageSizeHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     UserBucketDetails m_userBucket;
-    bool m_userBucketHasBeenSet;
+    bool m_userBucketHasBeenSet = false;
   };
 
 } // namespace Model

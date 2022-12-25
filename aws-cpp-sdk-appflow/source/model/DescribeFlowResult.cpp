@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeFlowResult::DescribeFlowResult() : 
-    m_flowStatus(FlowStatus::NOT_SET)
+    m_flowStatus(FlowStatus::NOT_SET),
+    m_schemaVersion(0)
 {
 }
 
 DescribeFlowResult::DescribeFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_flowStatus(FlowStatus::NOT_SET)
+    m_flowStatus(FlowStatus::NOT_SET),
+    m_schemaVersion(0)
 {
   *this = result;
 }
@@ -74,7 +76,7 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("destinationFlowConfigList"))
   {
-    Array<JsonView> destinationFlowConfigListJsonList = jsonValue.GetArray("destinationFlowConfigList");
+    Aws::Utils::Array<JsonView> destinationFlowConfigListJsonList = jsonValue.GetArray("destinationFlowConfigList");
     for(unsigned destinationFlowConfigListIndex = 0; destinationFlowConfigListIndex < destinationFlowConfigListJsonList.GetLength(); ++destinationFlowConfigListIndex)
     {
       m_destinationFlowConfigList.push_back(destinationFlowConfigListJsonList[destinationFlowConfigListIndex].AsObject());
@@ -95,7 +97,7 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("tasks"))
   {
-    Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
+    Aws::Utils::Array<JsonView> tasksJsonList = jsonValue.GetArray("tasks");
     for(unsigned tasksIndex = 0; tasksIndex < tasksJsonList.GetLength(); ++tasksIndex)
     {
       m_tasks.push_back(tasksJsonList[tasksIndex].AsObject());
@@ -133,6 +135,27 @@ DescribeFlowResult& DescribeFlowResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("metadataCatalogConfig"))
+  {
+    m_metadataCatalogConfig = jsonValue.GetObject("metadataCatalogConfig");
+
+  }
+
+  if(jsonValue.ValueExists("lastRunMetadataCatalogDetails"))
+  {
+    Aws::Utils::Array<JsonView> lastRunMetadataCatalogDetailsJsonList = jsonValue.GetArray("lastRunMetadataCatalogDetails");
+    for(unsigned lastRunMetadataCatalogDetailsIndex = 0; lastRunMetadataCatalogDetailsIndex < lastRunMetadataCatalogDetailsJsonList.GetLength(); ++lastRunMetadataCatalogDetailsIndex)
+    {
+      m_lastRunMetadataCatalogDetails.push_back(lastRunMetadataCatalogDetailsJsonList[lastRunMetadataCatalogDetailsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("schemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetInt64("schemaVersion");
+
   }
 
 

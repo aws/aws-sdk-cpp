@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVENTS_API RemovePermissionRequest : public CloudWatchEventsRequest
+  class RemovePermissionRequest : public CloudWatchEventsRequest
   {
   public:
-    RemovePermissionRequest();
+    AWS_CLOUDWATCHEVENTS_API RemovePermissionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemovePermission"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVENTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHEVENTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     bool m_removeAllPermissions;
-    bool m_removeAllPermissionsHasBeenSet;
+    bool m_removeAllPermissionsHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
   };
 
 } // namespace Model

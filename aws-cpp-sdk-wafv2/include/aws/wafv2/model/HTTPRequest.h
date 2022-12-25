@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/HTTPRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API HTTPRequest
+  class HTTPRequest
   {
   public:
-    HTTPRequest();
-    HTTPRequest(Aws::Utils::Json::JsonView jsonValue);
-    HTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API HTTPRequest();
+    AWS_WAFV2_API HTTPRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API HTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -378,22 +378,22 @@ namespace Model
   private:
 
     Aws::String m_clientIP;
-    bool m_clientIPHasBeenSet;
+    bool m_clientIPHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_uRI;
-    bool m_uRIHasBeenSet;
+    bool m_uRIHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_hTTPVersion;
-    bool m_hTTPVersionHasBeenSet;
+    bool m_hTTPVersionHasBeenSet = false;
 
     Aws::Vector<HTTPHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

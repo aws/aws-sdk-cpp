@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/ReconnectEnum.h>
+#include <aws/workspaces/model/LogUploadEnum.h>
 #include <utility>
 
 namespace Aws
@@ -28,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ClientProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ClientProperties
+  class ClientProperties
   {
   public:
-    ClientProperties();
-    ClientProperties(Aws::Utils::Json::JsonView jsonValue);
-    ClientProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ClientProperties();
+    AWS_WORKSPACES_API ClientProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ClientProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +80,62 @@ namespace Model
      */
     inline ClientProperties& WithReconnectEnabled(ReconnectEnum&& value) { SetReconnectEnabled(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline const LogUploadEnum& GetLogUploadEnabled() const{ return m_logUploadEnabled; }
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline bool LogUploadEnabledHasBeenSet() const { return m_logUploadEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline void SetLogUploadEnabled(const LogUploadEnum& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = value; }
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline void SetLogUploadEnabled(LogUploadEnum&& value) { m_logUploadEnabledHasBeenSet = true; m_logUploadEnabled = std::move(value); }
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline ClientProperties& WithLogUploadEnabled(const LogUploadEnum& value) { SetLogUploadEnabled(value); return *this;}
+
+    /**
+     * <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces
+     * client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces
+     * client. When enabled, the log files will be sent to WorkSpaces automatically and
+     * will be applied to all users in the specified directory.</p>
+     */
+    inline ClientProperties& WithLogUploadEnabled(LogUploadEnum&& value) { SetLogUploadEnabled(std::move(value)); return *this;}
+
   private:
 
     ReconnectEnum m_reconnectEnabled;
-    bool m_reconnectEnabledHasBeenSet;
+    bool m_reconnectEnabledHasBeenSet = false;
+
+    LogUploadEnum m_logUploadEnabled;
+    bool m_logUploadEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExecutionControls">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ExecutionControls
+  class ExecutionControls
   {
   public:
-    ExecutionControls();
-    ExecutionControls(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionControls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ExecutionControls();
+    AWS_CONFIGSERVICE_API ExecutionControls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ExecutionControls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     SsmControls m_ssmControls;
-    bool m_ssmControlsHasBeenSet;
+    bool m_ssmControlsHasBeenSet = false;
   };
 
 } // namespace Model

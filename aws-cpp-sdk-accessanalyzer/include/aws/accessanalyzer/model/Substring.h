@@ -27,34 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Substring">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Substring
+  class Substring
   {
   public:
-    Substring();
-    Substring(Aws::Utils::Json::JsonView jsonValue);
-    Substring& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline int GetLength() const{ return m_length; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline Substring& WithLength(int value) { SetLength(value); return *this;}
+    AWS_ACCESSANALYZER_API Substring();
+    AWS_ACCESSANALYZER_API Substring(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Substring& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,13 +56,34 @@ namespace Model
      */
     inline Substring& WithStart(int value) { SetStart(value); return *this;}
 
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline int GetLength() const{ return m_length; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline Substring& WithLength(int value) { SetLength(value); return *this;}
+
   private:
 
-    int m_length;
-    bool m_lengthHasBeenSet;
-
     int m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
+
+    int m_length;
+    bool m_lengthHasBeenSet = false;
   };
 
 } // namespace Model

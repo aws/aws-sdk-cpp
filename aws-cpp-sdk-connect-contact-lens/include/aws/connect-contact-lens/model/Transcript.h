@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/Transcript">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API Transcript
+  class Transcript
   {
   public:
-    Transcript();
-    Transcript(Aws::Utils::Json::JsonView jsonValue);
-    Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API Transcript();
+    AWS_CONNECTCONTACTLENS_API Transcript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -320,28 +320,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_participantId;
-    bool m_participantIdHasBeenSet;
+    bool m_participantIdHasBeenSet = false;
 
     Aws::String m_participantRole;
-    bool m_participantRoleHasBeenSet;
+    bool m_participantRoleHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     int m_beginOffsetMillis;
-    bool m_beginOffsetMillisHasBeenSet;
+    bool m_beginOffsetMillisHasBeenSet = false;
 
     int m_endOffsetMillis;
-    bool m_endOffsetMillisHasBeenSet;
+    bool m_endOffsetMillisHasBeenSet = false;
 
     SentimentValue m_sentiment;
-    bool m_sentimentHasBeenSet;
+    bool m_sentimentHasBeenSet = false;
 
     Aws::Vector<IssueDetected> m_issuesDetected;
-    bool m_issuesDetectedHasBeenSet;
+    bool m_issuesDetectedHasBeenSet = false;
   };
 
 } // namespace Model

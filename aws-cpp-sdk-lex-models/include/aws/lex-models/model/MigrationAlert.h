@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/MigrationAlert">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert
+  class MigrationAlert
   {
   public:
-    MigrationAlert();
-    MigrationAlert(Aws::Utils::Json::JsonView jsonValue);
-    MigrationAlert& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert();
+    AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     MigrationAlertType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_referenceURLs;
-    bool m_referenceURLsHasBeenSet;
+    bool m_referenceURLsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelFlow">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelFlow
+  class ChannelFlow
   {
   public:
-    ChannelFlow();
-    ChannelFlow(Aws::Utils::Json::JsonView jsonValue);
-    ChannelFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelFlow();
+    AWS_CHIMESDKMESSAGING_API ChannelFlow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_channelFlowArn;
-    bool m_channelFlowArnHasBeenSet;
+    bool m_channelFlowArnHasBeenSet = false;
 
     Aws::Vector<Processor> m_processors;
-    bool m_processorsHasBeenSet;
+    bool m_processorsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

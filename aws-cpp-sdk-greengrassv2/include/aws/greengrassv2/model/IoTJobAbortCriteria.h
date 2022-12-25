@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/IoTJobAbortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API IoTJobAbortCriteria
+  class IoTJobAbortCriteria
   {
   public:
-    IoTJobAbortCriteria();
-    IoTJobAbortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    IoTJobAbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria();
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API IoTJobAbortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,16 +165,16 @@ namespace Model
   private:
 
     IoTJobExecutionFailureType m_failureType;
-    bool m_failureTypeHasBeenSet;
+    bool m_failureTypeHasBeenSet = false;
 
     IoTJobAbortAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     double m_thresholdPercentage;
-    bool m_thresholdPercentageHasBeenSet;
+    bool m_thresholdPercentageHasBeenSet = false;
 
     int m_minNumberOfExecutedThings;
-    bool m_minNumberOfExecutedThingsHasBeenSet;
+    bool m_minNumberOfExecutedThingsHasBeenSet = false;
   };
 
 } // namespace Model

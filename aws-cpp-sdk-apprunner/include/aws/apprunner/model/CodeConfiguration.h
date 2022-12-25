@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CodeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API CodeConfiguration
+  class CodeConfiguration
   {
   public:
-    CodeConfiguration();
-    CodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API CodeConfiguration();
+    AWS_APPRUNNER_API CodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API CodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ConfigurationSource m_configurationSource;
-    bool m_configurationSourceHasBeenSet;
+    bool m_configurationSourceHasBeenSet = false;
 
     CodeConfigurationValues m_codeConfigurationValues;
-    bool m_codeConfigurationValuesHasBeenSet;
+    bool m_codeConfigurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

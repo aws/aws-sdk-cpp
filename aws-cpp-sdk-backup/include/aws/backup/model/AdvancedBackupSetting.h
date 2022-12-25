@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/AdvancedBackupSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API AdvancedBackupSetting
+  class AdvancedBackupSetting
   {
   public:
-    AdvancedBackupSetting();
-    AdvancedBackupSetting(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedBackupSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API AdvancedBackupSetting();
+    AWS_BACKUP_API AdvancedBackupSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API AdvancedBackupSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,10 +305,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_backupOptions;
-    bool m_backupOptionsHasBeenSet;
+    bool m_backupOptionsHasBeenSet = false;
   };
 
 } // namespace Model

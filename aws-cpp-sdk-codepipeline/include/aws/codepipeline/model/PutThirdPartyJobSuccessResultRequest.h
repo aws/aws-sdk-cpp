@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResultInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PutThirdPartyJobSuccessResultRequest : public CodePipelineRequest
+  class PutThirdPartyJobSuccessResultRequest : public CodePipelineRequest
   {
   public:
-    PutThirdPartyJobSuccessResultRequest();
+    AWS_CODEPIPELINE_API PutThirdPartyJobSuccessResultRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutThirdPartyJobSuccessResult"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -281,19 +281,19 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     CurrentRevision m_currentRevision;
-    bool m_currentRevisionHasBeenSet;
+    bool m_currentRevisionHasBeenSet = false;
 
     Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet;
+    bool m_continuationTokenHasBeenSet = false;
 
     ExecutionDetails m_executionDetails;
-    bool m_executionDetailsHasBeenSet;
+    bool m_executionDetailsHasBeenSet = false;
   };
 
 } // namespace Model

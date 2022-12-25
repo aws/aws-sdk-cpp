@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ChangeServerLifeCycleStateSourceServerLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle
+  class ChangeServerLifeCycleStateSourceServerLifecycle
   {
   public:
-    ChangeServerLifeCycleStateSourceServerLifecycle();
-    ChangeServerLifeCycleStateSourceServerLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    ChangeServerLifeCycleStateSourceServerLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle();
+    AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ChangeServerLifeCycleStateSourceServerLifecycleState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

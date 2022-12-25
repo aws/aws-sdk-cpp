@@ -24,12 +24,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API ExportSchemaResult
+  class ExportSchemaResult
   {
   public:
-    ExportSchemaResult();
-    ExportSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API ExportSchemaResult();
+    AWS_SCHEMAS_API ExportSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API ExportSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

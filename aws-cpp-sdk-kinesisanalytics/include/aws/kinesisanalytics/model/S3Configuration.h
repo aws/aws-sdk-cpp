@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API S3Configuration
+  class S3Configuration
   {
   public:
-    S3Configuration();
-    S3Configuration(Aws::Utils::Json::JsonView jsonValue);
-    S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API S3Configuration();
+    AWS_KINESISANALYTICS_API S3Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_fileKey;
-    bool m_fileKeyHasBeenSet;
+    bool m_fileKeyHasBeenSet = false;
   };
 
 } // namespace Model

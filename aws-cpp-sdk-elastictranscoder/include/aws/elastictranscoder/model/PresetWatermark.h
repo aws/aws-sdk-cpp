@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PresetWatermark">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API PresetWatermark
+  class PresetWatermark
   {
   public:
-    PresetWatermark();
-    PresetWatermark(Aws::Utils::Json::JsonView jsonValue);
-    PresetWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API PresetWatermark();
+    AWS_ELASTICTRANSCODER_API PresetWatermark(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API PresetWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1164,34 +1164,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_maxWidth;
-    bool m_maxWidthHasBeenSet;
+    bool m_maxWidthHasBeenSet = false;
 
     Aws::String m_maxHeight;
-    bool m_maxHeightHasBeenSet;
+    bool m_maxHeightHasBeenSet = false;
 
     Aws::String m_sizingPolicy;
-    bool m_sizingPolicyHasBeenSet;
+    bool m_sizingPolicyHasBeenSet = false;
 
     Aws::String m_horizontalAlign;
-    bool m_horizontalAlignHasBeenSet;
+    bool m_horizontalAlignHasBeenSet = false;
 
     Aws::String m_horizontalOffset;
-    bool m_horizontalOffsetHasBeenSet;
+    bool m_horizontalOffsetHasBeenSet = false;
 
     Aws::String m_verticalAlign;
-    bool m_verticalAlignHasBeenSet;
+    bool m_verticalAlignHasBeenSet = false;
 
     Aws::String m_verticalOffset;
-    bool m_verticalOffsetHasBeenSet;
+    bool m_verticalOffsetHasBeenSet = false;
 
     Aws::String m_opacity;
-    bool m_opacityHasBeenSet;
+    bool m_opacityHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
   };
 
 } // namespace Model

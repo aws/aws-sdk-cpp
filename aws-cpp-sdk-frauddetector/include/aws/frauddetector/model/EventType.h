@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EventType">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EventType
+  class EventType
   {
   public:
-    EventType();
-    EventType(Aws::Utils::Json::JsonView jsonValue);
-    EventType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EventType();
+    AWS_FRAUDDETECTOR_API EventType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EventType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -471,34 +471,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eventVariables;
-    bool m_eventVariablesHasBeenSet;
+    bool m_eventVariablesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_entityTypes;
-    bool m_entityTypesHasBeenSet;
+    bool m_entityTypesHasBeenSet = false;
 
     EventIngestion m_eventIngestion;
-    bool m_eventIngestionHasBeenSet;
+    bool m_eventIngestionHasBeenSet = false;
 
     IngestedEventStatistics m_ingestedEventStatistics;
-    bool m_ingestedEventStatisticsHasBeenSet;
+    bool m_ingestedEventStatisticsHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

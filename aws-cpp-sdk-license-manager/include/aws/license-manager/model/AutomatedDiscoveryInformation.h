@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AutomatedDiscoveryInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API AutomatedDiscoveryInformation
+  class AutomatedDiscoveryInformation
   {
   public:
-    AutomatedDiscoveryInformation();
-    AutomatedDiscoveryInformation(Aws::Utils::Json::JsonView jsonValue);
-    AutomatedDiscoveryInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API AutomatedDiscoveryInformation();
+    AWS_LICENSEMANAGER_API AutomatedDiscoveryInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API AutomatedDiscoveryInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_lastRunTime;
-    bool m_lastRunTimeHasBeenSet;
+    bool m_lastRunTimeHasBeenSet = false;
   };
 
 } // namespace Model

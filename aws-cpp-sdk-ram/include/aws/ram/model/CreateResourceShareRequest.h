@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RAM_API CreateResourceShareRequest : public RAMRequest
+  class CreateResourceShareRequest : public RAMRequest
   {
   public:
-    CreateResourceShareRequest();
+    AWS_RAM_API CreateResourceShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResourceShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RAM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -609,25 +609,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_allowExternalPrincipals;
-    bool m_allowExternalPrincipalsHasBeenSet;
+    bool m_allowExternalPrincipalsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permissionArns;
-    bool m_permissionArnsHasBeenSet;
+    bool m_permissionArnsHasBeenSet = false;
   };
 
 } // namespace Model

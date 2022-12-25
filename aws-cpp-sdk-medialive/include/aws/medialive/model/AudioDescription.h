@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioDescription
+  class AudioDescription
   {
   public:
-    AudioDescription();
-    AudioDescription(Aws::Utils::Json::JsonView jsonValue);
-    AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioDescription();
+    AWS_MEDIALIVE_API AudioDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -551,37 +551,37 @@ Note
   private:
 
     AudioNormalizationSettings m_audioNormalizationSettings;
-    bool m_audioNormalizationSettingsHasBeenSet;
+    bool m_audioNormalizationSettingsHasBeenSet = false;
 
     Aws::String m_audioSelectorName;
-    bool m_audioSelectorNameHasBeenSet;
+    bool m_audioSelectorNameHasBeenSet = false;
 
     AudioType m_audioType;
-    bool m_audioTypeHasBeenSet;
+    bool m_audioTypeHasBeenSet = false;
 
     AudioDescriptionAudioTypeControl m_audioTypeControl;
-    bool m_audioTypeControlHasBeenSet;
+    bool m_audioTypeControlHasBeenSet = false;
 
     AudioWatermarkSettings m_audioWatermarkingSettings;
-    bool m_audioWatermarkingSettingsHasBeenSet;
+    bool m_audioWatermarkingSettingsHasBeenSet = false;
 
     AudioCodecSettings m_codecSettings;
-    bool m_codecSettingsHasBeenSet;
+    bool m_codecSettingsHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     AudioDescriptionLanguageCodeControl m_languageCodeControl;
-    bool m_languageCodeControlHasBeenSet;
+    bool m_languageCodeControlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RemixSettings m_remixSettings;
-    bool m_remixSettingsHasBeenSet;
+    bool m_remixSettingsHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

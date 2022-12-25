@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkDeviceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkDeviceMetadata
+  class SidewalkDeviceMetadata
   {
   public:
-    SidewalkDeviceMetadata();
-    SidewalkDeviceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkDeviceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkDeviceMetadata();
+    AWS_IOTWIRELESS_API SidewalkDeviceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkDeviceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,16 +155,16 @@ namespace Model
   private:
 
     int m_rssi;
-    bool m_rssiHasBeenSet;
+    bool m_rssiHasBeenSet = false;
 
     BatteryLevel m_batteryLevel;
-    bool m_batteryLevelHasBeenSet;
+    bool m_batteryLevelHasBeenSet = false;
 
     Event m_event;
-    bool m_eventHasBeenSet;
+    bool m_eventHasBeenSet = false;
 
     DeviceState m_deviceState;
-    bool m_deviceStateHasBeenSet;
+    bool m_deviceStateHasBeenSet = false;
   };
 
 } // namespace Model

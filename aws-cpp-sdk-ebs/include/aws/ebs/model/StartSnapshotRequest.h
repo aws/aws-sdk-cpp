@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EBS_API StartSnapshotRequest : public EBSRequest
+  class StartSnapshotRequest : public EBSRequest
   {
   public:
-    StartSnapshotRequest();
+    AWS_EBS_API StartSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EBS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -697,28 +697,28 @@ namespace Model
   private:
 
     long long m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     Aws::String m_parentSnapshotId;
-    bool m_parentSnapshotIdHasBeenSet;
+    bool m_parentSnapshotIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

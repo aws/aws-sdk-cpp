@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccountRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountRequest : public Route53DomainsRequest
+  class AcceptDomainTransferFromAnotherAwsAccountRequest : public Route53DomainsRequest
   {
   public:
-    AcceptDomainTransferFromAnotherAwsAccountRequest();
+    AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptDomainTransferFromAnotherAwsAccount"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53DOMAINS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
   };
 
 } // namespace Model

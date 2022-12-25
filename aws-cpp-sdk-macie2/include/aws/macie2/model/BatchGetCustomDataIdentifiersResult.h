@@ -26,52 +26,52 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API BatchGetCustomDataIdentifiersResult
+  class BatchGetCustomDataIdentifiersResult
   {
   public:
-    BatchGetCustomDataIdentifiersResult();
-    BatchGetCustomDataIdentifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetCustomDataIdentifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API BatchGetCustomDataIdentifiersResult();
+    AWS_MACIE2_API BatchGetCustomDataIdentifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API BatchGetCustomDataIdentifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline const Aws::Vector<BatchGetCustomDataIdentifierSummary>& GetCustomDataIdentifiers() const{ return m_customDataIdentifiers; }
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline void SetCustomDataIdentifiers(const Aws::Vector<BatchGetCustomDataIdentifierSummary>& value) { m_customDataIdentifiers = value; }
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline void SetCustomDataIdentifiers(Aws::Vector<BatchGetCustomDataIdentifierSummary>&& value) { m_customDataIdentifiers = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& WithCustomDataIdentifiers(const Aws::Vector<BatchGetCustomDataIdentifierSummary>& value) { SetCustomDataIdentifiers(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& WithCustomDataIdentifiers(Aws::Vector<BatchGetCustomDataIdentifierSummary>&& value) { SetCustomDataIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& AddCustomDataIdentifiers(const BatchGetCustomDataIdentifierSummary& value) { m_customDataIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each custom data identifier that meets the
+     * <p>An array of objects, one for each custom data identifier that matches the
      * criteria specified in the request.</p>
      */
     inline BatchGetCustomDataIdentifiersResult& AddCustomDataIdentifiers(BatchGetCustomDataIdentifierSummary&& value) { m_customDataIdentifiers.push_back(std::move(value)); return *this; }

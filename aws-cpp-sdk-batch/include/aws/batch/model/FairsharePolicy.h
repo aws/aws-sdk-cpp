@@ -29,63 +29,63 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FairsharePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API FairsharePolicy
+  class FairsharePolicy
   {
   public:
-    FairsharePolicy();
-    FairsharePolicy(Aws::Utils::Json::JsonView jsonValue);
-    FairsharePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API FairsharePolicy();
+    AWS_BATCH_API FairsharePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API FairsharePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The time period to use to calculate a fair share percentage for each fair
-     * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured. The decay allows for more recently run jobs to
-     * have more weight than jobs that ran earlier. The maximum supported value is
-     * 604800 (1 week).</p>
+     * <p>The amount of time (in seconds) to use to calculate a fair share percentage
+     * for each fair share identifier in use. A value of zero (0) indicates that only
+     * current usage is measured. The decay allows for more recently run jobs to have
+     * more weight than jobs that ran earlier. The maximum supported value is 604800 (1
+     * week).</p>
      */
     inline int GetShareDecaySeconds() const{ return m_shareDecaySeconds; }
 
     /**
-     * <p>The time period to use to calculate a fair share percentage for each fair
-     * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured. The decay allows for more recently run jobs to
-     * have more weight than jobs that ran earlier. The maximum supported value is
-     * 604800 (1 week).</p>
+     * <p>The amount of time (in seconds) to use to calculate a fair share percentage
+     * for each fair share identifier in use. A value of zero (0) indicates that only
+     * current usage is measured. The decay allows for more recently run jobs to have
+     * more weight than jobs that ran earlier. The maximum supported value is 604800 (1
+     * week).</p>
      */
     inline bool ShareDecaySecondsHasBeenSet() const { return m_shareDecaySecondsHasBeenSet; }
 
     /**
-     * <p>The time period to use to calculate a fair share percentage for each fair
-     * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured. The decay allows for more recently run jobs to
-     * have more weight than jobs that ran earlier. The maximum supported value is
-     * 604800 (1 week).</p>
+     * <p>The amount of time (in seconds) to use to calculate a fair share percentage
+     * for each fair share identifier in use. A value of zero (0) indicates that only
+     * current usage is measured. The decay allows for more recently run jobs to have
+     * more weight than jobs that ran earlier. The maximum supported value is 604800 (1
+     * week).</p>
      */
     inline void SetShareDecaySeconds(int value) { m_shareDecaySecondsHasBeenSet = true; m_shareDecaySeconds = value; }
 
     /**
-     * <p>The time period to use to calculate a fair share percentage for each fair
-     * share identifier in use, in seconds. A value of zero (0) indicates that only
-     * current usage should be measured. The decay allows for more recently run jobs to
-     * have more weight than jobs that ran earlier. The maximum supported value is
-     * 604800 (1 week).</p>
+     * <p>The amount of time (in seconds) to use to calculate a fair share percentage
+     * for each fair share identifier in use. A value of zero (0) indicates that only
+     * current usage is measured. The decay allows for more recently run jobs to have
+     * more weight than jobs that ran earlier. The maximum supported value is 604800 (1
+     * week).</p>
      */
     inline FairsharePolicy& WithShareDecaySeconds(int value) { SetShareDecaySeconds(value); return *this;}
 
 
     /**
      * <p>A value used to reserve some of the available maximum vCPU for fair share
-     * identifiers that have not yet been used.</p> <p>The reserved ratio is
+     * identifiers that aren't already used.</p> <p>The reserved ratio is
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batch should reserve 50% of the maximum available vCPU if there
-     * is only one fair share identifier, 25% if there are two fair share identifiers,
-     * and 12.5% if there are three fair share identifiers. A
+     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * one fair share identifier. It reserves 25% if there are two fair share
+     * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
-     * 25% of the maximum available vCPU if there is only one fair share identifier,
+     * 25% of the maximum available vCPU if there's only one fair share identifier,
      * 6.25% if there are two fair share identifiers, and 1.56% if there are three fair
      * share identifiers.</p> <p>The minimum value is 0 and the maximum value is
      * 99.</p>
@@ -94,15 +94,15 @@ namespace Model
 
     /**
      * <p>A value used to reserve some of the available maximum vCPU for fair share
-     * identifiers that have not yet been used.</p> <p>The reserved ratio is
+     * identifiers that aren't already used.</p> <p>The reserved ratio is
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batch should reserve 50% of the maximum available vCPU if there
-     * is only one fair share identifier, 25% if there are two fair share identifiers,
-     * and 12.5% if there are three fair share identifiers. A
+     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * one fair share identifier. It reserves 25% if there are two fair share
+     * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
-     * 25% of the maximum available vCPU if there is only one fair share identifier,
+     * 25% of the maximum available vCPU if there's only one fair share identifier,
      * 6.25% if there are two fair share identifiers, and 1.56% if there are three fair
      * share identifiers.</p> <p>The minimum value is 0 and the maximum value is
      * 99.</p>
@@ -111,15 +111,15 @@ namespace Model
 
     /**
      * <p>A value used to reserve some of the available maximum vCPU for fair share
-     * identifiers that have not yet been used.</p> <p>The reserved ratio is
+     * identifiers that aren't already used.</p> <p>The reserved ratio is
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batch should reserve 50% of the maximum available vCPU if there
-     * is only one fair share identifier, 25% if there are two fair share identifiers,
-     * and 12.5% if there are three fair share identifiers. A
+     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * one fair share identifier. It reserves 25% if there are two fair share
+     * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
-     * 25% of the maximum available vCPU if there is only one fair share identifier,
+     * 25% of the maximum available vCPU if there's only one fair share identifier,
      * 6.25% if there are two fair share identifiers, and 1.56% if there are three fair
      * share identifiers.</p> <p>The minimum value is 0 and the maximum value is
      * 99.</p>
@@ -128,15 +128,15 @@ namespace Model
 
     /**
      * <p>A value used to reserve some of the available maximum vCPU for fair share
-     * identifiers that have not yet been used.</p> <p>The reserved ratio is
+     * identifiers that aren't already used.</p> <p>The reserved ratio is
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batch should reserve 50% of the maximum available vCPU if there
-     * is only one fair share identifier, 25% if there are two fair share identifiers,
-     * and 12.5% if there are three fair share identifiers. A
+     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * one fair share identifier. It reserves 25% if there are two fair share
+     * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
-     * 25% of the maximum available vCPU if there is only one fair share identifier,
+     * 25% of the maximum available vCPU if there's only one fair share identifier,
      * 6.25% if there are two fair share identifiers, and 1.56% if there are three fair
      * share identifiers.</p> <p>The minimum value is 0 and the maximum value is
      * 99.</p>
@@ -203,13 +203,13 @@ namespace Model
   private:
 
     int m_shareDecaySeconds;
-    bool m_shareDecaySecondsHasBeenSet;
+    bool m_shareDecaySecondsHasBeenSet = false;
 
     int m_computeReservation;
-    bool m_computeReservationHasBeenSet;
+    bool m_computeReservationHasBeenSet = false;
 
     Aws::Vector<ShareAttributes> m_shareDistribution;
-    bool m_shareDistributionHasBeenSet;
+    bool m_shareDistributionHasBeenSet = false;
   };
 
 } // namespace Model

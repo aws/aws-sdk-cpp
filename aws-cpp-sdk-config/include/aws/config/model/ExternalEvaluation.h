@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExternalEvaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ExternalEvaluation
+  class ExternalEvaluation
   {
   public:
-    ExternalEvaluation();
-    ExternalEvaluation(Aws::Utils::Json::JsonView jsonValue);
-    ExternalEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ExternalEvaluation();
+    AWS_CONFIGSERVICE_API ExternalEvaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ExternalEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,19 +258,19 @@ namespace Model
   private:
 
     Aws::String m_complianceResourceType;
-    bool m_complianceResourceTypeHasBeenSet;
+    bool m_complianceResourceTypeHasBeenSet = false;
 
     Aws::String m_complianceResourceId;
-    bool m_complianceResourceIdHasBeenSet;
+    bool m_complianceResourceIdHasBeenSet = false;
 
     ComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_annotation;
-    bool m_annotationHasBeenSet;
+    bool m_annotationHasBeenSet = false;
 
     Aws::Utils::DateTime m_orderingTimestamp;
-    bool m_orderingTimestampHasBeenSet;
+    bool m_orderingTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceMaintenanceOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceMaintenanceOptions
+  class InstanceMaintenanceOptions
   {
   public:
-    InstanceMaintenanceOptions();
-    InstanceMaintenanceOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceMaintenanceOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceMaintenanceOptions();
+    AWS_EC2_API InstanceMaintenanceOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceMaintenanceOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     InstanceAutoRecoveryState m_autoRecovery;
-    bool m_autoRecoveryHasBeenSet;
+    bool m_autoRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

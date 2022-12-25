@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API UpdateSkillGroupRequest : public AlexaForBusinessRequest
+  class UpdateSkillGroupRequest : public AlexaForBusinessRequest
   {
   public:
-    UpdateSkillGroupRequest();
+    AWS_ALEXAFORBUSINESS_API UpdateSkillGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSkillGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
 
     Aws::String m_skillGroupName;
-    bool m_skillGroupNameHasBeenSet;
+    bool m_skillGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -16,7 +16,8 @@ GetComplianceDetailsByResourceRequest::GetComplianceDetailsByResourceRequest() :
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_complianceTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_resourceEvaluationIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,7 @@ Aws::String GetComplianceDetailsByResourceRequest::SerializePayload() const
 
   if(m_complianceTypesHasBeenSet)
   {
-   Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
+   Aws::Utils::Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
    for(unsigned complianceTypesIndex = 0; complianceTypesIndex < complianceTypesJsonList.GetLength(); ++complianceTypesIndex)
    {
      complianceTypesJsonList[complianceTypesIndex].AsString(ComplianceTypeMapper::GetNameForComplianceType(m_complianceTypes[complianceTypesIndex]));
@@ -50,6 +51,12 @@ Aws::String GetComplianceDetailsByResourceRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_resourceEvaluationIdHasBeenSet)
+  {
+   payload.WithString("ResourceEvaluationId", m_resourceEvaluationId);
 
   }
 

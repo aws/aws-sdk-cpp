@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTagsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API ListTagsRequest : public CloudTrailRequest
+  class ListTagsRequest : public CloudTrailRequest
   {
   public:
-    ListTagsRequest();
+    AWS_CLOUDTRAIL_API ListTagsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTags"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_resourceIdList;
-    bool m_resourceIdListHasBeenSet;
+    bool m_resourceIdListHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

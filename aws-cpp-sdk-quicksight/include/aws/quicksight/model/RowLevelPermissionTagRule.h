@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionTagRule">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RowLevelPermissionTagRule
+  class RowLevelPermissionTagRule
   {
   public:
-    RowLevelPermissionTagRule();
-    RowLevelPermissionTagRule(Aws::Utils::Json::JsonView jsonValue);
-    RowLevelPermissionTagRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RowLevelPermissionTagRule();
+    AWS_QUICKSIGHT_API RowLevelPermissionTagRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RowLevelPermissionTagRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_tagMultiValueDelimiter;
-    bool m_tagMultiValueDelimiterHasBeenSet;
+    bool m_tagMultiValueDelimiterHasBeenSet = false;
 
     Aws::String m_matchAllValue;
-    bool m_matchAllValueHasBeenSet;
+    bool m_matchAllValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API GetComplianceDetailsByResourceRequest : public ConfigServiceRequest
+  class GetComplianceDetailsByResourceRequest : public ConfigServiceRequest
   {
   public:
-    GetComplianceDetailsByResourceRequest();
+    AWS_CONFIGSERVICE_API GetComplianceDetailsByResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetComplianceDetailsByResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONFIGSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -242,19 +242,87 @@ namespace Model
      */
     inline GetComplianceDetailsByResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline bool ResourceEvaluationIdHasBeenSet() const { return m_resourceEvaluationIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = value; }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId = std::move(value); }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationIdHasBeenSet = true; m_resourceEvaluationId.assign(value); }
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of Amazon Web Services resource execution for which you want to
+     * retrieve evaluation results. </p>  <p>You need to only provide either a
+     * <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and
+     * <code>ResourceType</code>.</p> 
+     */
+    inline GetComplianceDetailsByResourceRequest& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<ComplianceType> m_complianceTypes;
-    bool m_complianceTypesHasBeenSet;
+    bool m_complianceTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_resourceEvaluationId;
+    bool m_resourceEvaluationIdHasBeenSet = false;
   };
 
 } // namespace Model

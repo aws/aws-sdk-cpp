@@ -90,14 +90,14 @@ void GetAssetPropertyAggregatesRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_startDateHasBeenSet)
     {
-      ss << m_startDate.ToGmtString(DateFormat::ISO_8601);
+      ss << m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startDate", ss.str());
       ss.str("");
     }
 
     if(m_endDateHasBeenSet)
     {
-      ss << m_endDate.ToGmtString(DateFormat::ISO_8601);
+      ss << m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("endDate", ss.str());
       ss.str("");
     }

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EnrollmentJobFraudDetectionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API EnrollmentJobFraudDetectionConfig
+  class EnrollmentJobFraudDetectionConfig
   {
   public:
-    EnrollmentJobFraudDetectionConfig();
-    EnrollmentJobFraudDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
-    EnrollmentJobFraudDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API EnrollmentJobFraudDetectionConfig();
+    AWS_VOICEID_API EnrollmentJobFraudDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API EnrollmentJobFraudDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     FraudDetectionAction m_fraudDetectionAction;
-    bool m_fraudDetectionActionHasBeenSet;
+    bool m_fraudDetectionActionHasBeenSet = false;
 
     int m_riskThreshold;
-    bool m_riskThresholdHasBeenSet;
+    bool m_riskThresholdHasBeenSet = false;
   };
 
 } // namespace Model

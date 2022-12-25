@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API DeleteSecurityProfileRequest : public ConnectRequest
+  class DeleteSecurityProfileRequest : public ConnectRequest
   {
   public:
-    DeleteSecurityProfileRequest();
+    AWS_CONNECT_API DeleteSecurityProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSecurityProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_securityProfileId;
-    bool m_securityProfileIdHasBeenSet;
+    bool m_securityProfileIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,12 +15,14 @@
 #include <aws/mediaconvert/model/CmafImageBasedTrickPlaySettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
+#include <aws/mediaconvert/model/CmafMpdManifestBandwidthType.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
 #include <aws/mediaconvert/model/CmafPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
 #include <aws/mediaconvert/model/CmafSegmentLengthControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
 #include <aws/mediaconvert/model/CmafTargetDurationCompatibilityMode.h>
+#include <aws/mediaconvert/model/CmafVideoCompositionOffsets.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
 #include <aws/mediaconvert/model/CmafWriteHLSManifest.h>
 #include <aws/mediaconvert/model/CmafWriteSegmentTimelineInRepresentation.h>
@@ -51,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmafGroupSettings
+  class CmafGroupSettings
   {
   public:
-    CmafGroupSettings();
-    CmafGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    CmafGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmafGroupSettings();
+    AWS_MEDIACONVERT_API CmafGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmafGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -741,6 +743,67 @@ namespace Model
 
 
     /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline const CmafMpdManifestBandwidthType& GetMpdManifestBandwidthType() const{ return m_mpdManifestBandwidthType; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline bool MpdManifestBandwidthTypeHasBeenSet() const { return m_mpdManifestBandwidthTypeHasBeenSet; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline void SetMpdManifestBandwidthType(const CmafMpdManifestBandwidthType& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = value; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline void SetMpdManifestBandwidthType(CmafMpdManifestBandwidthType&& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = std::move(value); }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline CmafGroupSettings& WithMpdManifestBandwidthType(const CmafMpdManifestBandwidthType& value) { SetMpdManifestBandwidthType(value); return *this;}
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline CmafGroupSettings& WithMpdManifestBandwidthType(CmafMpdManifestBandwidthType&& value) { SetMpdManifestBandwidthType(std::move(value)); return *this;}
+
+
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
      * profile (MAIN_PROFILE), the service signals 
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
@@ -1142,6 +1205,73 @@ namespace Model
 
 
     /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline const CmafVideoCompositionOffsets& GetVideoCompositionOffsets() const{ return m_videoCompositionOffsets; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline bool VideoCompositionOffsetsHasBeenSet() const { return m_videoCompositionOffsetsHasBeenSet; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline void SetVideoCompositionOffsets(const CmafVideoCompositionOffsets& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = value; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline void SetVideoCompositionOffsets(CmafVideoCompositionOffsets&& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = std::move(value); }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline CmafGroupSettings& WithVideoCompositionOffsets(const CmafVideoCompositionOffsets& value) { SetVideoCompositionOffsets(value); return *this;}
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline CmafGroupSettings& WithVideoCompositionOffsets(CmafVideoCompositionOffsets&& value) { SetVideoCompositionOffsets(std::move(value)); return *this;}
+
+
+    /**
      * When set to ENABLED, a DASH MPD manifest will be generated for this output.
      */
     inline const CmafWriteDASHManifest& GetWriteDashManifest() const{ return m_writeDashManifest; }
@@ -1272,76 +1402,82 @@ namespace Model
   private:
 
     Aws::Vector<CmafAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     CmafClientCache m_clientCache;
-    bool m_clientCacheHasBeenSet;
+    bool m_clientCacheHasBeenSet = false;
 
     CmafCodecSpecification m_codecSpecification;
-    bool m_codecSpecificationHasBeenSet;
+    bool m_codecSpecificationHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     CmafEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     CmafImageBasedTrickPlay m_imageBasedTrickPlay;
-    bool m_imageBasedTrickPlayHasBeenSet;
+    bool m_imageBasedTrickPlayHasBeenSet = false;
 
     CmafImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
     CmafManifestCompression m_manifestCompression;
-    bool m_manifestCompressionHasBeenSet;
+    bool m_manifestCompressionHasBeenSet = false;
 
     CmafManifestDurationFormat m_manifestDurationFormat;
-    bool m_manifestDurationFormatHasBeenSet;
+    bool m_manifestDurationFormatHasBeenSet = false;
 
     int m_minBufferTime;
-    bool m_minBufferTimeHasBeenSet;
+    bool m_minBufferTimeHasBeenSet = false;
 
     double m_minFinalSegmentLength;
-    bool m_minFinalSegmentLengthHasBeenSet;
+    bool m_minFinalSegmentLengthHasBeenSet = false;
+
+    CmafMpdManifestBandwidthType m_mpdManifestBandwidthType;
+    bool m_mpdManifestBandwidthTypeHasBeenSet = false;
 
     CmafMpdProfile m_mpdProfile;
-    bool m_mpdProfileHasBeenSet;
+    bool m_mpdProfileHasBeenSet = false;
 
     CmafPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
-    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
     CmafSegmentControl m_segmentControl;
-    bool m_segmentControlHasBeenSet;
+    bool m_segmentControlHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     CmafSegmentLengthControl m_segmentLengthControl;
-    bool m_segmentLengthControlHasBeenSet;
+    bool m_segmentLengthControlHasBeenSet = false;
 
     CmafStreamInfResolution m_streamInfResolution;
-    bool m_streamInfResolutionHasBeenSet;
+    bool m_streamInfResolutionHasBeenSet = false;
 
     CmafTargetDurationCompatibilityMode m_targetDurationCompatibilityMode;
-    bool m_targetDurationCompatibilityModeHasBeenSet;
+    bool m_targetDurationCompatibilityModeHasBeenSet = false;
+
+    CmafVideoCompositionOffsets m_videoCompositionOffsets;
+    bool m_videoCompositionOffsetsHasBeenSet = false;
 
     CmafWriteDASHManifest m_writeDashManifest;
-    bool m_writeDashManifestHasBeenSet;
+    bool m_writeDashManifestHasBeenSet = false;
 
     CmafWriteHLSManifest m_writeHlsManifest;
-    bool m_writeHlsManifestHasBeenSet;
+    bool m_writeHlsManifestHasBeenSet = false;
 
     CmafWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
-    bool m_writeSegmentTimelineInRepresentationHasBeenSet;
+    bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
   };
 
 } // namespace Model

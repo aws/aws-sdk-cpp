@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceRecommendation
+  class InferenceRecommendation
   {
   public:
-    InferenceRecommendation();
-    InferenceRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    InferenceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceRecommendation();
+    AWS_SAGEMAKER_API InferenceRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     RecommendationMetrics m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
 
     EndpointOutputConfiguration m_endpointConfiguration;
-    bool m_endpointConfigurationHasBeenSet;
+    bool m_endpointConfigurationHasBeenSet = false;
 
     ModelConfiguration m_modelConfiguration;
-    bool m_modelConfigurationHasBeenSet;
+    bool m_modelConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

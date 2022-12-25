@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyVpcEndpointServiceConfigurationRequest : public EC2Request
+  class ModifyVpcEndpointServiceConfigurationRequest : public EC2Request
   {
   public:
-    ModifyVpcEndpointServiceConfigurationRequest();
+    AWS_EC2_API ModifyVpcEndpointServiceConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyVpcEndpointServiceConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -524,37 +524,37 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     bool m_removePrivateDnsName;
-    bool m_removePrivateDnsNameHasBeenSet;
+    bool m_removePrivateDnsNameHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addNetworkLoadBalancerArns;
-    bool m_addNetworkLoadBalancerArnsHasBeenSet;
+    bool m_addNetworkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeNetworkLoadBalancerArns;
-    bool m_removeNetworkLoadBalancerArnsHasBeenSet;
+    bool m_removeNetworkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addGatewayLoadBalancerArns;
-    bool m_addGatewayLoadBalancerArnsHasBeenSet;
+    bool m_addGatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeGatewayLoadBalancerArns;
-    bool m_removeGatewayLoadBalancerArnsHasBeenSet;
+    bool m_removeGatewayLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_addSupportedIpAddressTypes;
-    bool m_addSupportedIpAddressTypesHasBeenSet;
+    bool m_addSupportedIpAddressTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
-    bool m_removeSupportedIpAddressTypesHasBeenSet;
+    bool m_removeSupportedIpAddressTypesHasBeenSet = false;
   };
 
 } // namespace Model

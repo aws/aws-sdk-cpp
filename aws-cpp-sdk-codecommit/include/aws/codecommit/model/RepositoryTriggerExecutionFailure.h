@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTriggerExecutionFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API RepositoryTriggerExecutionFailure
+  class RepositoryTriggerExecutionFailure
   {
   public:
-    RepositoryTriggerExecutionFailure();
-    RepositoryTriggerExecutionFailure(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryTriggerExecutionFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API RepositoryTriggerExecutionFailure();
+    AWS_CODECOMMIT_API RepositoryTriggerExecutionFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API RepositoryTriggerExecutionFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_trigger;
-    bool m_triggerHasBeenSet;
+    bool m_triggerHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
   };
 
 } // namespace Model

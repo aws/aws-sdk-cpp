@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/KinesisFirehoseConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API KinesisFirehoseConfig
+  class KinesisFirehoseConfig
   {
   public:
-    KinesisFirehoseConfig();
-    KinesisFirehoseConfig(Aws::Utils::Json::JsonView jsonValue);
-    KinesisFirehoseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API KinesisFirehoseConfig();
+    AWS_CONNECT_API KinesisFirehoseConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API KinesisFirehoseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_firehoseArn;
-    bool m_firehoseArnHasBeenSet;
+    bool m_firehoseArnHasBeenSet = false;
   };
 
 } // namespace Model

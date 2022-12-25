@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EC2SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API EC2SecurityGroup
+  class EC2SecurityGroup
   {
   public:
-    EC2SecurityGroup();
-    EC2SecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EC2SecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EC2SecurityGroup();
+    AWS_REDSHIFT_API EC2SecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EC2SecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupName;
-    bool m_eC2SecurityGroupNameHasBeenSet;
+    bool m_eC2SecurityGroupNameHasBeenSet = false;
 
     Aws::String m_eC2SecurityGroupOwnerId;
-    bool m_eC2SecurityGroupOwnerIdHasBeenSet;
+    bool m_eC2SecurityGroupOwnerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

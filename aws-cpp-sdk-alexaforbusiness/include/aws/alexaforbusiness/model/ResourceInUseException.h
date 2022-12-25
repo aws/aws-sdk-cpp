@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResourceInUseException">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API ResourceInUseException
+  class ResourceInUseException
   {
   public:
-    ResourceInUseException();
-    ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API ResourceInUseException();
+    AWS_ALEXAFORBUSINESS_API ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

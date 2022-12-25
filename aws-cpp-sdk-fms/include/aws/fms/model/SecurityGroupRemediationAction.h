@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/SecurityGroupRemediationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API SecurityGroupRemediationAction
+  class SecurityGroupRemediationAction
   {
   public:
-    SecurityGroupRemediationAction();
-    SecurityGroupRemediationAction(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroupRemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API SecurityGroupRemediationAction();
+    AWS_FMS_API SecurityGroupRemediationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API SecurityGroupRemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,16 +172,16 @@ namespace Model
   private:
 
     RemediationActionType m_remediationActionType;
-    bool m_remediationActionTypeHasBeenSet;
+    bool m_remediationActionTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SecurityGroupRuleDescription m_remediationResult;
-    bool m_remediationResultHasBeenSet;
+    bool m_remediationResultHasBeenSet = false;
 
     bool m_isDefaultAction;
-    bool m_isDefaultActionHasBeenSet;
+    bool m_isDefaultActionHasBeenSet = false;
   };
 
 } // namespace Model

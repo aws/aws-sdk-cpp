@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexSummary
+  class MultiplexSummary
   {
   public:
-    MultiplexSummary();
-    MultiplexSummary(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexSummary();
+    AWS_MEDIALIVE_API MultiplexSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -382,31 +382,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MultiplexSettingsSummary m_multiplexSettings;
-    bool m_multiplexSettingsHasBeenSet;
+    bool m_multiplexSettingsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_pipelinesRunningCount;
-    bool m_pipelinesRunningCountHasBeenSet;
+    bool m_pipelinesRunningCountHasBeenSet = false;
 
     int m_programCount;
-    bool m_programCountHasBeenSet;
+    bool m_programCountHasBeenSet = false;
 
     MultiplexState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/FirehoseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API FirehoseAction
+  class FirehoseAction
   {
   public:
-    FirehoseAction();
-    FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
-    FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API FirehoseAction();
+    AWS_IOT_API FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_separator;
-    bool m_separatorHasBeenSet;
+    bool m_separatorHasBeenSet = false;
 
     bool m_batchMode;
-    bool m_batchModeHasBeenSet;
+    bool m_batchModeHasBeenSet = false;
   };
 
 } // namespace Model

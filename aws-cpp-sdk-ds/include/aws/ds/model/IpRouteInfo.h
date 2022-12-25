@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRouteInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API IpRouteInfo
+  class IpRouteInfo
   {
   public:
-    IpRouteInfo();
-    IpRouteInfo(Aws::Utils::Json::JsonView jsonValue);
-    IpRouteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API IpRouteInfo();
+    AWS_DIRECTORYSERVICE_API IpRouteInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API IpRouteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     IpRouteStatusMsg m_ipRouteStatusMsg;
-    bool m_ipRouteStatusMsgHasBeenSet;
+    bool m_ipRouteStatusMsgHasBeenSet = false;
 
     Aws::Utils::DateTime m_addedDateTime;
-    bool m_addedDateTimeHasBeenSet;
+    bool m_addedDateTimeHasBeenSet = false;
 
     Aws::String m_ipRouteStatusReason;
-    bool m_ipRouteStatusReasonHasBeenSet;
+    bool m_ipRouteStatusReasonHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

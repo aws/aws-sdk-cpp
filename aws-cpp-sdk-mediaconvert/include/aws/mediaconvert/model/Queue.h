@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Queue">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Queue
+  class Queue
   {
   public:
-    Queue();
-    Queue(Aws::Utils::Json::JsonView jsonValue);
-    Queue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Queue();
+    AWS_MEDIACONVERT_API Queue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Queue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -456,37 +456,37 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PricingPlan m_pricingPlan;
-    bool m_pricingPlanHasBeenSet;
+    bool m_pricingPlanHasBeenSet = false;
 
     int m_progressingJobsCount;
-    bool m_progressingJobsCountHasBeenSet;
+    bool m_progressingJobsCountHasBeenSet = false;
 
     ReservationPlan m_reservationPlan;
-    bool m_reservationPlanHasBeenSet;
+    bool m_reservationPlanHasBeenSet = false;
 
     QueueStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_submittedJobsCount;
-    bool m_submittedJobsCountHasBeenSet;
+    bool m_submittedJobsCountHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

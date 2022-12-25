@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/VpcConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API VpcConfigurationUpdate
+  class VpcConfigurationUpdate
   {
   public:
-    VpcConfigurationUpdate();
-    VpcConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API VpcConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API VpcConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API VpcConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,13 +210,13 @@ namespace Model
   private:
 
     Aws::String m_vpcConfigurationId;
-    bool m_vpcConfigurationIdHasBeenSet;
+    bool m_vpcConfigurationIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIdUpdates;
-    bool m_subnetIdUpdatesHasBeenSet;
+    bool m_subnetIdUpdatesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIdUpdates;
-    bool m_securityGroupIdUpdatesHasBeenSet;
+    bool m_securityGroupIdUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/DataColorPalette.h>
 #include <aws/quicksight/model/UIColorPalette.h>
 #include <aws/quicksight/model/SheetStyle.h>
+#include <aws/quicksight/model/Typography.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThemeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThemeConfiguration
+  class ThemeConfiguration
   {
   public:
-    ThemeConfiguration();
-    ThemeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ThemeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThemeConfiguration();
+    AWS_QUICKSIGHT_API ThemeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThemeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,16 +139,38 @@ namespace Model
      */
     inline ThemeConfiguration& WithSheet(SheetStyle&& value) { SetSheet(std::move(value)); return *this;}
 
+
+    
+    inline const Typography& GetTypography() const{ return m_typography; }
+
+    
+    inline bool TypographyHasBeenSet() const { return m_typographyHasBeenSet; }
+
+    
+    inline void SetTypography(const Typography& value) { m_typographyHasBeenSet = true; m_typography = value; }
+
+    
+    inline void SetTypography(Typography&& value) { m_typographyHasBeenSet = true; m_typography = std::move(value); }
+
+    
+    inline ThemeConfiguration& WithTypography(const Typography& value) { SetTypography(value); return *this;}
+
+    
+    inline ThemeConfiguration& WithTypography(Typography&& value) { SetTypography(std::move(value)); return *this;}
+
   private:
 
     DataColorPalette m_dataColorPalette;
-    bool m_dataColorPaletteHasBeenSet;
+    bool m_dataColorPaletteHasBeenSet = false;
 
     UIColorPalette m_uIColorPalette;
-    bool m_uIColorPaletteHasBeenSet;
+    bool m_uIColorPaletteHasBeenSet = false;
 
     SheetStyle m_sheet;
-    bool m_sheetHasBeenSet;
+    bool m_sheetHasBeenSet = false;
+
+    Typography m_typography;
+    bool m_typographyHasBeenSet = false;
   };
 
 } // namespace Model

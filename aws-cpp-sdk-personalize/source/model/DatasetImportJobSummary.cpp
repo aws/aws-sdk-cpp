@@ -24,7 +24,9 @@ DatasetImportJobSummary::DatasetImportJobSummary() :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ DatasetImportJobSummary::DatasetImportJobSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_importMode(ImportMode::NOT_SET),
+    m_importModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ DatasetImportJobSummary& DatasetImportJobSummary::operator =(JsonView jsonValue)
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("importMode"))
+  {
+    m_importMode = ImportModeMapper::GetImportModeForName(jsonValue.GetString("importMode"));
+
+    m_importModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +133,11 @@ JsonValue DatasetImportJobSummary::Jsonize() const
   {
    payload.WithString("failureReason", m_failureReason);
 
+  }
+
+  if(m_importModeHasBeenSet)
+  {
+   payload.WithString("importMode", ImportModeMapper::GetNameForImportMode(m_importMode));
   }
 
   return payload;

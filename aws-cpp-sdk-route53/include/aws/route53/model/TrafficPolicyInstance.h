@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TrafficPolicyInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API TrafficPolicyInstance
+  class TrafficPolicyInstance
   {
   public:
-    TrafficPolicyInstance();
-    TrafficPolicyInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficPolicyInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicyInstance();
+    AWS_ROUTE53_API TrafficPolicyInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicyInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -494,31 +494,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_trafficPolicyId;
-    bool m_trafficPolicyIdHasBeenSet;
+    bool m_trafficPolicyIdHasBeenSet = false;
 
     int m_trafficPolicyVersion;
-    bool m_trafficPolicyVersionHasBeenSet;
+    bool m_trafficPolicyVersionHasBeenSet = false;
 
     RRType m_trafficPolicyType;
-    bool m_trafficPolicyTypeHasBeenSet;
+    bool m_trafficPolicyTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/FailoverConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API FailoverConfig
+  class FailoverConfig
   {
   public:
-    FailoverConfig();
-    FailoverConfig(Aws::Utils::Json::JsonView jsonValue);
-    FailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API FailoverConfig();
+    AWS_EVENTBRIDGE_API FailoverConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API FailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Primary m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Secondary m_secondary;
-    bool m_secondaryHasBeenSet;
+    bool m_secondaryHasBeenSet = false;
   };
 
 } // namespace Model

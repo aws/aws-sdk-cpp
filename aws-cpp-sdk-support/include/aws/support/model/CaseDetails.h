@@ -36,13 +36,13 @@ namespace Model
    * to the <code>CategoryCode</code> values returned by a call to
    * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId</b> - The identifier
    * for the case on pages in the Amazon Web Services Support Center.</p> </li> <li>
-   * <p> <b>language</b> - The ISO 639-1 code for the language in which Amazon Web
-   * Services provides support. Amazon Web Services Support currently supports
-   * English ("en") and Japanese ("ja"). Language parameters must be passed
-   * explicitly for operations that take them.</p> </li> <li> <p> <b>nextToken</b> -
-   * A resumption point for pagination.</p> </li> <li> <p>
-   * <b>recentCommunications</b> - One or more <a>Communication</a> objects. Fields
-   * of these objects are <code>attachments</code>, <code>body</code>,
+   * <p> <b>language</b> - The language in which Amazon Web Services Support handles
+   * the case. Amazon Web Services Support currently supports English ("en") and
+   * Japanese ("ja"). You must specify the ISO 639-1 code for the
+   * <code>language</code> parameter if you want support in that language.</p> </li>
+   * <li> <p> <b>nextToken</b> - A resumption point for pagination.</p> </li> <li>
+   * <p> <b>recentCommunications</b> - One or more <a>Communication</a> objects.
+   * Fields of these objects are <code>attachments</code>, <code>body</code>,
    * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p>
    * </li> <li> <p> <b>serviceCode</b> - The identifier for the Amazon Web Services
    * service that corresponds to the service code defined in the call to
@@ -63,13 +63,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API CaseDetails
+  class CaseDetails
   {
   public:
-    CaseDetails();
-    CaseDetails(Aws::Utils::Json::JsonView jsonValue);
-    CaseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API CaseDetails();
+    AWS_SUPPORT_API CaseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API CaseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -617,106 +617,106 @@ namespace Model
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
-     * support. Amazon Web Services Support currently supports English ("en") and
-     * Japanese ("ja"). Language parameters must be passed explicitly for operations
-     * that take them.</p>
+     * <p>The language in which Amazon Web Services Support handles the case. Amazon
+     * Web Services Support currently supports English ("en") and Japanese ("ja"). You
+     * must specify the ISO 639-1 code for the <code>language</code> parameter if you
+     * want support in that language.</p>
      */
     inline CaseDetails& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_displayId;
-    bool m_displayIdHasBeenSet;
+    bool m_displayIdHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_categoryCode;
-    bool m_categoryCodeHasBeenSet;
+    bool m_categoryCodeHasBeenSet = false;
 
     Aws::String m_severityCode;
-    bool m_severityCodeHasBeenSet;
+    bool m_severityCodeHasBeenSet = false;
 
     Aws::String m_submittedBy;
-    bool m_submittedByHasBeenSet;
+    bool m_submittedByHasBeenSet = false;
 
     Aws::String m_timeCreated;
-    bool m_timeCreatedHasBeenSet;
+    bool m_timeCreatedHasBeenSet = false;
 
     RecentCaseCommunications m_recentCommunications;
-    bool m_recentCommunicationsHasBeenSet;
+    bool m_recentCommunicationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccEmailAddresses;
-    bool m_ccEmailAddressesHasBeenSet;
+    bool m_ccEmailAddressesHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
   };
 
 } // namespace Model

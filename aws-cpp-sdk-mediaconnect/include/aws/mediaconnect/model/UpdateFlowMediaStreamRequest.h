@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStreamRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API UpdateFlowMediaStreamRequest : public MediaConnectRequest
+  class UpdateFlowMediaStreamRequest : public MediaConnectRequest
   {
   public:
-    UpdateFlowMediaStreamRequest();
+    AWS_MEDIACONNECT_API UpdateFlowMediaStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFlowMediaStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -295,25 +295,25 @@ namespace Model
   private:
 
     MediaStreamAttributesRequest m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     int m_clockRate;
-    bool m_clockRateHasBeenSet;
+    bool m_clockRateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_mediaStreamName;
-    bool m_mediaStreamNameHasBeenSet;
+    bool m_mediaStreamNameHasBeenSet = false;
 
     MediaStreamType m_mediaStreamType;
-    bool m_mediaStreamTypeHasBeenSet;
+    bool m_mediaStreamTypeHasBeenSet = false;
 
     Aws::String m_videoFormat;
-    bool m_videoFormatHasBeenSet;
+    bool m_videoFormatHasBeenSet = false;
   };
 
 } // namespace Model

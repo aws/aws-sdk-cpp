@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PermissionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API PermissionConfiguration
+  class PermissionConfiguration
   {
   public:
-    PermissionConfiguration();
-    PermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API PermissionConfiguration();
+    AWS_GUARDDUTY_API PermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API PermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     BucketLevelPermissions m_bucketLevelPermissions;
-    bool m_bucketLevelPermissionsHasBeenSet;
+    bool m_bucketLevelPermissionsHasBeenSet = false;
 
     AccountLevelPermissions m_accountLevelPermissions;
-    bool m_accountLevelPermissionsHasBeenSet;
+    bool m_accountLevelPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

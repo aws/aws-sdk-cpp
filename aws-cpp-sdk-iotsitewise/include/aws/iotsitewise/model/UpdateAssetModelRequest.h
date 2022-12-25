@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateAssetModelRequest : public IoTSiteWiseRequest
+  class UpdateAssetModelRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateAssetModelRequest();
+    AWS_IOTSITEWISE_API UpdateAssetModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssetModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -470,25 +470,25 @@ namespace Model
   private:
 
     Aws::String m_assetModelId;
-    bool m_assetModelIdHasBeenSet;
+    bool m_assetModelIdHasBeenSet = false;
 
     Aws::String m_assetModelName;
-    bool m_assetModelNameHasBeenSet;
+    bool m_assetModelNameHasBeenSet = false;
 
     Aws::String m_assetModelDescription;
-    bool m_assetModelDescriptionHasBeenSet;
+    bool m_assetModelDescriptionHasBeenSet = false;
 
     Aws::Vector<AssetModelProperty> m_assetModelProperties;
-    bool m_assetModelPropertiesHasBeenSet;
+    bool m_assetModelPropertiesHasBeenSet = false;
 
     Aws::Vector<AssetModelHierarchy> m_assetModelHierarchies;
-    bool m_assetModelHierarchiesHasBeenSet;
+    bool m_assetModelHierarchiesHasBeenSet = false;
 
     Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
-    bool m_assetModelCompositeModelsHasBeenSet;
+    bool m_assetModelCompositeModelsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

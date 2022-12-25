@@ -24,7 +24,8 @@ LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDoma
     m_valueHasBeenSet(false),
     m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
     m_validationStatusHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_dnsRecordCreationStateHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ LoadBalancerTlsCertificateDomainValidationRecord::LoadBalancerTlsCertificateDoma
     m_valueHasBeenSet(false),
     m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
     m_validationStatusHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_dnsRecordCreationStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ LoadBalancerTlsCertificateDomainValidationRecord& LoadBalancerTlsCertificateDoma
     m_domainNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dnsRecordCreationState"))
+  {
+    m_dnsRecordCreationState = jsonValue.GetObject("dnsRecordCreationState");
+
+    m_dnsRecordCreationStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue LoadBalancerTlsCertificateDomainValidationRecord::Jsonize() const
   if(m_domainNameHasBeenSet)
   {
    payload.WithString("domainName", m_domainName);
+
+  }
+
+  if(m_dnsRecordCreationStateHasBeenSet)
+  {
+   payload.WithObject("dnsRecordCreationState", m_dnsRecordCreationState.Jsonize());
 
   }
 

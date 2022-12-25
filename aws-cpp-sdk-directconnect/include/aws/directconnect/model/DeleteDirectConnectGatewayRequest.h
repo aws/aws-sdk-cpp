@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayRequest : public DirectConnectRequest
+  class DeleteDirectConnectGatewayRequest : public DirectConnectRequest
   {
   public:
-    DeleteDirectConnectGatewayRequest();
+    AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDirectConnectGateway"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTCONNECT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

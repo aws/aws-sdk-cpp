@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/AudioCodecOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API AudioCodecOptions
+  class AudioCodecOptions
   {
   public:
-    AudioCodecOptions();
-    AudioCodecOptions(Aws::Utils::Json::JsonView jsonValue);
-    AudioCodecOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API AudioCodecOptions();
+    AWS_ELASTICTRANSCODER_API AudioCodecOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API AudioCodecOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -387,16 +387,16 @@ namespace Model
   private:
 
     Aws::String m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     Aws::String m_bitDepth;
-    bool m_bitDepthHasBeenSet;
+    bool m_bitDepthHasBeenSet = false;
 
     Aws::String m_bitOrder;
-    bool m_bitOrderHasBeenSet;
+    bool m_bitOrderHasBeenSet = false;
 
     Aws::String m_signed;
-    bool m_signedHasBeenSet;
+    bool m_signedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioSelector
+  class AudioSelector
   {
   public:
-    AudioSelector();
-    AudioSelector(Aws::Utils::Json::JsonView jsonValue);
-    AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioSelector();
+    AWS_MEDIALIVE_API AudioSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AudioSelectorSettings m_selectorSettings;
-    bool m_selectorSettingsHasBeenSet;
+    bool m_selectorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

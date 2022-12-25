@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FieldFolder">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FieldFolder
+  class FieldFolder
   {
   public:
-    FieldFolder();
-    FieldFolder(Aws::Utils::Json::JsonView jsonValue);
-    FieldFolder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FieldFolder();
+    AWS_QUICKSIGHT_API FieldFolder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FieldFolder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

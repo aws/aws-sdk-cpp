@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API StartCopyJobRequest : public BackupRequest
+  class StartCopyJobRequest : public BackupRequest
   {
   public:
-    StartCopyJobRequest();
+    AWS_BACKUP_API StartCopyJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartCopyJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -355,22 +355,22 @@ namespace Model
   private:
 
     Aws::String m_recoveryPointArn;
-    bool m_recoveryPointArnHasBeenSet;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::String m_sourceBackupVaultName;
-    bool m_sourceBackupVaultNameHasBeenSet;
+    bool m_sourceBackupVaultNameHasBeenSet = false;
 
     Aws::String m_destinationBackupVaultArn;
-    bool m_destinationBackupVaultArnHasBeenSet;
+    bool m_destinationBackupVaultArnHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
   };
 
 } // namespace Model

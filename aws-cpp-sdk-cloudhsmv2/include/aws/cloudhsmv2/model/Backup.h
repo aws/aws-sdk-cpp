@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Backup">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Backup
+  class Backup
   {
   public:
-    Backup();
-    Backup(Aws::Utils::Json::JsonView jsonValue);
-    Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Backup();
+    AWS_CLOUDHSMV2_API Backup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,37 +477,37 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     BackupState m_backupState;
-    bool m_backupStateHasBeenSet;
+    bool m_backupStateHasBeenSet = false;
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_copyTimestamp;
-    bool m_copyTimestampHasBeenSet;
+    bool m_copyTimestampHasBeenSet = false;
 
     bool m_neverExpires;
-    bool m_neverExpiresHasBeenSet;
+    bool m_neverExpiresHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_sourceBackup;
-    bool m_sourceBackupHasBeenSet;
+    bool m_sourceBackupHasBeenSet = false;
 
     Aws::String m_sourceCluster;
-    bool m_sourceClusterHasBeenSet;
+    bool m_sourceClusterHasBeenSet = false;
 
     Aws::Utils::DateTime m_deleteTimestamp;
-    bool m_deleteTimestampHasBeenSet;
+    bool m_deleteTimestampHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

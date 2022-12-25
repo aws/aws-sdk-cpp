@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageCampaign">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageCampaign
+  class InAppMessageCampaign
   {
   public:
-    InAppMessageCampaign();
-    InAppMessageCampaign(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageCampaign();
+    AWS_PINPOINT_API InAppMessageCampaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -287,28 +287,28 @@ namespace Model
   private:
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     int m_dailyCap;
-    bool m_dailyCapHasBeenSet;
+    bool m_dailyCapHasBeenSet = false;
 
     InAppMessage m_inAppMessage;
-    bool m_inAppMessageHasBeenSet;
+    bool m_inAppMessageHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     InAppCampaignSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     int m_sessionCap;
-    bool m_sessionCapHasBeenSet;
+    bool m_sessionCapHasBeenSet = false;
 
     int m_totalCap;
-    bool m_totalCapHasBeenSet;
+    bool m_totalCapHasBeenSet = false;
 
     Aws::String m_treatmentId;
-    bool m_treatmentIdHasBeenSet;
+    bool m_treatmentIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ServiceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ServiceUpdate
+  class ServiceUpdate
   {
   public:
-    ServiceUpdate();
-    ServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ServiceUpdate();
+    AWS_MEMORYDB_API ServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -331,28 +331,28 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_releaseDate;
-    bool m_releaseDateHasBeenSet;
+    bool m_releaseDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ServiceUpdateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ServiceUpdateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_nodesUpdated;
-    bool m_nodesUpdatedHasBeenSet;
+    bool m_nodesUpdatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_autoUpdateStartDate;
-    bool m_autoUpdateStartDateHasBeenSet;
+    bool m_autoUpdateStartDateHasBeenSet = false;
   };
 
 } // namespace Model

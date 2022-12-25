@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BUDGETS_API UpdateBudgetActionRequest : public BudgetsRequest
+  class UpdateBudgetActionRequest : public BudgetsRequest
   {
   public:
-    UpdateBudgetActionRequest();
+    AWS_BUDGETS_API UpdateBudgetActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBudgetAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BUDGETS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_BUDGETS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     
@@ -295,31 +295,31 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     NotificationType m_notificationType;
-    bool m_notificationTypeHasBeenSet;
+    bool m_notificationTypeHasBeenSet = false;
 
     ActionThreshold m_actionThreshold;
-    bool m_actionThresholdHasBeenSet;
+    bool m_actionThresholdHasBeenSet = false;
 
     Definition m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     ApprovalModel m_approvalModel;
-    bool m_approvalModelHasBeenSet;
+    bool m_approvalModelHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

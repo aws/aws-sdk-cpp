@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTagsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API RemoveTagsRequest : public CloudTrailRequest
+  class RemoveTagsRequest : public CloudTrailRequest
   {
   public:
-    RemoveTagsRequest();
+    AWS_CLOUDTRAIL_API RemoveTagsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RemoveTags"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDTRAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsList;
-    bool m_tagsListHasBeenSet;
+    bool m_tagsListHasBeenSet = false;
   };
 
 } // namespace Model

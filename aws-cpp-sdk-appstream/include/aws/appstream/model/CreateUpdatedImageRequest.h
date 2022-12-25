@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPSTREAM_API CreateUpdatedImageRequest : public AppStreamRequest
+  class CreateUpdatedImageRequest : public AppStreamRequest
   {
   public:
-    CreateUpdatedImageRequest();
+    AWS_APPSTREAM_API CreateUpdatedImageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateUpdatedImage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -407,22 +407,22 @@ namespace Model
   private:
 
     Aws::String m_existingImageName;
-    bool m_existingImageNameHasBeenSet;
+    bool m_existingImageNameHasBeenSet = false;
 
     Aws::String m_newImageName;
-    bool m_newImageNameHasBeenSet;
+    bool m_newImageNameHasBeenSet = false;
 
     Aws::String m_newImageDescription;
-    bool m_newImageDescriptionHasBeenSet;
+    bool m_newImageDescriptionHasBeenSet = false;
 
     Aws::String m_newImageDisplayName;
-    bool m_newImageDisplayNameHasBeenSet;
+    bool m_newImageDisplayNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_newImageTags;
-    bool m_newImageTagsHasBeenSet;
+    bool m_newImageTagsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DoubleColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DoubleColumnStatisticsData
+  class DoubleColumnStatisticsData
   {
   public:
-    DoubleColumnStatisticsData();
-    DoubleColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    DoubleColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DoubleColumnStatisticsData();
+    AWS_GLUE_API DoubleColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DoubleColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,16 +122,16 @@ namespace Model
   private:
 
     double m_minimumValue;
-    bool m_minimumValueHasBeenSet;
+    bool m_minimumValueHasBeenSet = false;
 
     double m_maximumValue;
-    bool m_maximumValueHasBeenSet;
+    bool m_maximumValueHasBeenSet = false;
 
     long long m_numberOfNulls;
-    bool m_numberOfNullsHasBeenSet;
+    bool m_numberOfNullsHasBeenSet = false;
 
     long long m_numberOfDistinctValues;
-    bool m_numberOfDistinctValuesHasBeenSet;
+    bool m_numberOfDistinctValuesHasBeenSet = false;
   };
 
 } // namespace Model

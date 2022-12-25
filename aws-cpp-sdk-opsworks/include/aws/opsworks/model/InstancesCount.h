@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/InstancesCount">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API InstancesCount
+  class InstancesCount
   {
   public:
-    InstancesCount();
-    InstancesCount(Aws::Utils::Json::JsonView jsonValue);
-    InstancesCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API InstancesCount();
+    AWS_OPSWORKS_API InstancesCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API InstancesCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -458,64 +458,64 @@ namespace Model
   private:
 
     int m_assigning;
-    bool m_assigningHasBeenSet;
+    bool m_assigningHasBeenSet = false;
 
     int m_booting;
-    bool m_bootingHasBeenSet;
+    bool m_bootingHasBeenSet = false;
 
     int m_connectionLost;
-    bool m_connectionLostHasBeenSet;
+    bool m_connectionLostHasBeenSet = false;
 
     int m_deregistering;
-    bool m_deregisteringHasBeenSet;
+    bool m_deregisteringHasBeenSet = false;
 
     int m_online;
-    bool m_onlineHasBeenSet;
+    bool m_onlineHasBeenSet = false;
 
     int m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     int m_rebooting;
-    bool m_rebootingHasBeenSet;
+    bool m_rebootingHasBeenSet = false;
 
     int m_registered;
-    bool m_registeredHasBeenSet;
+    bool m_registeredHasBeenSet = false;
 
     int m_registering;
-    bool m_registeringHasBeenSet;
+    bool m_registeringHasBeenSet = false;
 
     int m_requested;
-    bool m_requestedHasBeenSet;
+    bool m_requestedHasBeenSet = false;
 
     int m_runningSetup;
-    bool m_runningSetupHasBeenSet;
+    bool m_runningSetupHasBeenSet = false;
 
     int m_setupFailed;
-    bool m_setupFailedHasBeenSet;
+    bool m_setupFailedHasBeenSet = false;
 
     int m_shuttingDown;
-    bool m_shuttingDownHasBeenSet;
+    bool m_shuttingDownHasBeenSet = false;
 
     int m_startFailed;
-    bool m_startFailedHasBeenSet;
+    bool m_startFailedHasBeenSet = false;
 
     int m_stopFailed;
-    bool m_stopFailedHasBeenSet;
+    bool m_stopFailedHasBeenSet = false;
 
     int m_stopped;
-    bool m_stoppedHasBeenSet;
+    bool m_stoppedHasBeenSet = false;
 
     int m_stopping;
-    bool m_stoppingHasBeenSet;
+    bool m_stoppingHasBeenSet = false;
 
     int m_terminated;
-    bool m_terminatedHasBeenSet;
+    bool m_terminatedHasBeenSet = false;
 
     int m_terminating;
-    bool m_terminatingHasBeenSet;
+    bool m_terminatingHasBeenSet = false;
 
     int m_unassigning;
-    bool m_unassigningHasBeenSet;
+    bool m_unassigningHasBeenSet = false;
   };
 
 } // namespace Model

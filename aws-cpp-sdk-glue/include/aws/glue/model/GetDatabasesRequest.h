@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API GetDatabasesRequest : public GlueRequest
+  class GetDatabasesRequest : public GlueRequest
   {
   public:
-    GetDatabasesRequest();
+    AWS_GLUE_API GetDatabasesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDatabases"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ResourceShareType m_resourceShareType;
-    bool m_resourceShareTypeHasBeenSet;
+    bool m_resourceShareTypeHasBeenSet = false;
   };
 
 } // namespace Model

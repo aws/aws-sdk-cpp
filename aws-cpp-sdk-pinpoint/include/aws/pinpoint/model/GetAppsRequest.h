@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API GetAppsRequest : public PinpointRequest
+  class GetAppsRequest : public PinpointRequest
   {
   public:
-    GetAppsRequest();
+    AWS_PINPOINT_API GetAppsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetApps"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PINPOINT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
   };
 
 } // namespace Model

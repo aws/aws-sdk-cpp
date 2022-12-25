@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateInstanceSnapshotRequest : public LightsailRequest
+  class CreateInstanceSnapshotRequest : public LightsailRequest
   {
   public:
-    CreateInstanceSnapshotRequest();
+    AWS_LIGHTSAIL_API CreateInstanceSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInstanceSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_instanceSnapshotName;
-    bool m_instanceSnapshotNameHasBeenSet;
+    bool m_instanceSnapshotNameHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

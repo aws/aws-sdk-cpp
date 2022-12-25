@@ -30,7 +30,7 @@ ListDeploymentTargetsResult& ListDeploymentTargetsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("targetIds"))
   {
-    Array<JsonView> targetIdsJsonList = jsonValue.GetArray("targetIds");
+    Aws::Utils::Array<JsonView> targetIdsJsonList = jsonValue.GetArray("targetIds");
     for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
     {
       m_targetIds.push_back(targetIdsJsonList[targetIdsIndex].AsString());

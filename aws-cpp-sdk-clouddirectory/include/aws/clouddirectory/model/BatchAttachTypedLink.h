@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachTypedLink">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchAttachTypedLink
+  class BatchAttachTypedLink
   {
   public:
-    BatchAttachTypedLink();
-    BatchAttachTypedLink(Aws::Utils::Json::JsonView jsonValue);
-    BatchAttachTypedLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchAttachTypedLink();
+    AWS_CLOUDDIRECTORY_API BatchAttachTypedLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchAttachTypedLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     ObjectReference m_sourceObjectReference;
-    bool m_sourceObjectReferenceHasBeenSet;
+    bool m_sourceObjectReferenceHasBeenSet = false;
 
     ObjectReference m_targetObjectReference;
-    bool m_targetObjectReferenceHasBeenSet;
+    bool m_targetObjectReferenceHasBeenSet = false;
 
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
-    bool m_typedLinkFacetHasBeenSet;
+    bool m_typedLinkFacetHasBeenSet = false;
 
     Aws::Vector<AttributeNameAndValue> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

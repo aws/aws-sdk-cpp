@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API CreateSimulationApplicationRequest : public RoboMakerRequest
+  class CreateSimulationApplicationRequest : public RoboMakerRequest
   {
   public:
-    CreateSimulationApplicationRequest();
+    AWS_ROBOMAKER_API CreateSimulationApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSimulationApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -338,25 +338,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<SourceConfig> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
 
     SimulationSoftwareSuite m_simulationSoftwareSuite;
-    bool m_simulationSoftwareSuiteHasBeenSet;
+    bool m_simulationSoftwareSuiteHasBeenSet = false;
 
     RobotSoftwareSuite m_robotSoftwareSuite;
-    bool m_robotSoftwareSuiteHasBeenSet;
+    bool m_robotSoftwareSuiteHasBeenSet = false;
 
     RenderingEngine m_renderingEngine;
-    bool m_renderingEngineHasBeenSet;
+    bool m_renderingEngineHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Environment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
   };
 
 } // namespace Model

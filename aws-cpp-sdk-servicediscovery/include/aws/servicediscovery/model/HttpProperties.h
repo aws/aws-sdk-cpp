@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HttpProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API HttpProperties
+  class HttpProperties
   {
   public:
-    HttpProperties();
-    HttpProperties(Aws::Utils::Json::JsonView jsonValue);
-    HttpProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API HttpProperties();
+    AWS_SERVICEDISCOVERY_API HttpProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API HttpProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_httpName;
-    bool m_httpNameHasBeenSet;
+    bool m_httpNameHasBeenSet = false;
   };
 
 } // namespace Model

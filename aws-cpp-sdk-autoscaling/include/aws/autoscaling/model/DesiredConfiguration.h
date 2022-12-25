@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DesiredConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API DesiredConfiguration
+  class DesiredConfiguration
   {
   public:
-    DesiredConfiguration();
-    DesiredConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DesiredConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API DesiredConfiguration();
+    AWS_AUTOSCALING_API DesiredConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API DesiredConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,16 +17,15 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the <code> <a>StartServiceSoftwareUpdate</a>
-   * </code> operation. Specifies the name of the domain to schedule a service
-   * software update for. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for the request parameters to the
+   * <code>StartServiceSoftwareUpdate</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API StartServiceSoftwareUpdateRequest : public OpenSearchServiceRequest
+  class StartServiceSoftwareUpdateRequest : public OpenSearchServiceRequest
   {
   public:
-    StartServiceSoftwareUpdateRequest();
+    AWS_OPENSEARCHSERVICE_API StartServiceSoftwareUpdateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartServiceSoftwareUpdate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -88,7 +87,7 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

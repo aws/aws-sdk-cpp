@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSOADMIN_API ListAccountAssignmentsRequest : public SSOAdminRequest
+  class ListAccountAssignmentsRequest : public SSOAdminRequest
   {
   public:
-    ListAccountAssignmentsRequest();
+    AWS_SSOADMIN_API ListAccountAssignmentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,129 +29,113 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAccountAssignments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSOADMIN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountAssignmentsRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountAssignmentsRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the SSO instance under which the operation will be executed. For
-     * more information about ARNs, see <a
+     * <p>The ARN of the IAM Identity Center instance under which the operation will be
+     * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
-     * Services General Reference</i>.</p>
+     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline ListAccountAssignmentsRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline ListAccountAssignmentsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline ListAccountAssignmentsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Web Services account from which to list the
-     * assignments.</p>
+     * <p>The identifier of the AWS account from which to list the assignments.</p>
      */
     inline ListAccountAssignmentsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -269,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_instanceArn;
-    bool m_instanceArnHasBeenSet;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet;
+    bool m_permissionSetArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

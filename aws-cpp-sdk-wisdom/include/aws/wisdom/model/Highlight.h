@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/Highlight">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API Highlight
+  class Highlight
   {
   public:
-    Highlight();
-    Highlight(Aws::Utils::Json::JsonView jsonValue);
-    Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API Highlight();
+    AWS_CONNECTWISDOMSERVICE_API Highlight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_beginOffsetInclusive;
-    bool m_beginOffsetInclusiveHasBeenSet;
+    bool m_beginOffsetInclusiveHasBeenSet = false;
 
     int m_endOffsetExclusive;
-    bool m_endOffsetExclusiveHasBeenSet;
+    bool m_endOffsetExclusiveHasBeenSet = false;
   };
 
 } // namespace Model

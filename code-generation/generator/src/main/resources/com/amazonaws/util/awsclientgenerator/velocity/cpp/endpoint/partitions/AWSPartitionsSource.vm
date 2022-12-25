@@ -1,0 +1,49 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+\#include <aws/core/endpoint/AWSPartitions.h>
+
+namespace Aws
+{
+namespace Endpoint
+{
+#set($PartitionsBlobStrLen = $serviceModel.partitionsBlob.length() - 1)
+const size_t AWSPartitions::PartitionsBlobStrLen = $PartitionsBlobStrLen;
+const size_t AWSPartitions::PartitionsBlobSize = $serviceModel.partitionsBlob.length();
+
+using PartitionsBlobT = Aws::Array<const char, AWSPartitions::PartitionsBlobSize>;
+static constexpr PartitionsBlobT PartitionsBlob = {{
+#set($lineLenth = 0)
+#foreach($tmpChar in $serviceModel.partitionsBlob.toCharArray())
+#if($tmpChar.equals($nl) || $tmpChar == $nl)
+#set($tmpChar = "\n")
+#end
+#if($tmpChar == "\")
+#set($tmpChar = "\\")
+#end
+#if($tmpChar == "'")
+#set($tmpChar = "\'")
+#end
+#if($tmpChar == $nullChar)
+#set($tmpChar = "\0")
+#end
+#if(25 == $lineLenth)
+#set($lineLenth = 0)
+
+#end
+#set($lineLenth = $lineLenth + 1)
+#if( $foreach.hasNext )
+'${tmpChar}',##comment to avoid newline
+#else
+'${tmpChar}'##comment to avoid newline
+#end
+#end
+
+}};
+
+const char* AWSPartitions::GetPartitionsBlob()
+{
+    return PartitionsBlob.data();
+}
+
+} // namespace Endpoint
+} // namespace Aws

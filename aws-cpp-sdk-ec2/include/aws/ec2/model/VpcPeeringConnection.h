@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcPeeringConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpcPeeringConnection
+  class VpcPeeringConnection
   {
   public:
-    VpcPeeringConnection();
-    VpcPeeringConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcPeeringConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcPeeringConnection();
+    AWS_EC2_API VpcPeeringConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcPeeringConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -264,22 +264,22 @@ namespace Model
   private:
 
     VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
-    bool m_accepterVpcInfoHasBeenSet;
+    bool m_accepterVpcInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
-    bool m_requesterVpcInfoHasBeenSet;
+    bool m_requesterVpcInfoHasBeenSet = false;
 
     VpcPeeringConnectionStateReason m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

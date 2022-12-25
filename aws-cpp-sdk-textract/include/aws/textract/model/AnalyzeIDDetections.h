@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeIDDetections">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API AnalyzeIDDetections
+  class AnalyzeIDDetections
   {
   public:
-    AnalyzeIDDetections();
-    AnalyzeIDDetections(Aws::Utils::Json::JsonView jsonValue);
-    AnalyzeIDDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API AnalyzeIDDetections();
+    AWS_TEXTRACT_API AnalyzeIDDetections(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API AnalyzeIDDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     NormalizedValue m_normalizedValue;
-    bool m_normalizedValueHasBeenSet;
+    bool m_normalizedValueHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ManifestFileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ManifestFileLocation
+  class ManifestFileLocation
   {
   public:
-    ManifestFileLocation();
-    ManifestFileLocation(Aws::Utils::Json::JsonView jsonValue);
-    ManifestFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ManifestFileLocation();
+    AWS_QUICKSIGHT_API ManifestFileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ManifestFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

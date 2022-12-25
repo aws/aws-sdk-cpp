@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ConfigListItem
+  class ConfigListItem
   {
   public:
-    ConfigListItem();
-    ConfigListItem(Aws::Utils::Json::JsonView jsonValue);
-    ConfigListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ConfigListItem();
+    AWS_GROUNDSTATION_API ConfigListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ConfigListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_configArn;
-    bool m_configArnHasBeenSet;
+    bool m_configArnHasBeenSet = false;
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

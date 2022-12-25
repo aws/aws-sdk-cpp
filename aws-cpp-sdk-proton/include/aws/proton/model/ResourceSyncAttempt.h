@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ResourceSyncAttempt">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ResourceSyncAttempt
+  class ResourceSyncAttempt
   {
   public:
-    ResourceSyncAttempt();
-    ResourceSyncAttempt(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ResourceSyncAttempt();
+    AWS_PROTON_API ResourceSyncAttempt(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ResourceSyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,22 +251,22 @@ namespace Model
   private:
 
     Aws::Vector<ResourceSyncEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Revision m_initialRevision;
-    bool m_initialRevisionHasBeenSet;
+    bool m_initialRevisionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     ResourceSyncStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Revision m_targetRevision;
-    bool m_targetRevisionHasBeenSet;
+    bool m_targetRevisionHasBeenSet = false;
   };
 
 } // namespace Model

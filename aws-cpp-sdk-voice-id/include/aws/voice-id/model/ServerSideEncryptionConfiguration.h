@@ -29,67 +29,67 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API ServerSideEncryptionConfiguration
+  class ServerSideEncryptionConfiguration
   {
   public:
-    ServerSideEncryptionConfiguration();
-    ServerSideEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerSideEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API ServerSideEncryptionConfiguration();
+    AWS_VOICEID_API ServerSideEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API ServerSideEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
-     * data.</p>
+     * <p>The identifier of the KMS key to use to encrypt data stored by Voice ID.
+     * Voice ID doesn't support asymmetric customer managed keys. </p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

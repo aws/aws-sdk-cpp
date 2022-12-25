@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ImportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ImportJobSummary
+  class ImportJobSummary
   {
   public:
-    ImportJobSummary();
-    ImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ImportJobSummary();
+    AWS_SESV2_API ImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -133,19 +133,71 @@ namespace Model
      */
     inline ImportJobSummary& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline int GetProcessedRecordsCount() const{ return m_processedRecordsCount; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline bool ProcessedRecordsCountHasBeenSet() const { return m_processedRecordsCountHasBeenSet; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline void SetProcessedRecordsCount(int value) { m_processedRecordsCountHasBeenSet = true; m_processedRecordsCount = value; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline ImportJobSummary& WithProcessedRecordsCount(int value) { SetProcessedRecordsCount(value); return *this;}
+
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline int GetFailedRecordsCount() const{ return m_failedRecordsCount; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline bool FailedRecordsCountHasBeenSet() const { return m_failedRecordsCountHasBeenSet; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline void SetFailedRecordsCount(int value) { m_failedRecordsCountHasBeenSet = true; m_failedRecordsCount = value; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline ImportJobSummary& WithFailedRecordsCount(int value) { SetFailedRecordsCount(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     ImportDestination m_importDestination;
-    bool m_importDestinationHasBeenSet;
+    bool m_importDestinationHasBeenSet = false;
 
     JobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
+
+    int m_processedRecordsCount;
+    bool m_processedRecordsCountHasBeenSet = false;
+
+    int m_failedRecordsCount;
+    bool m_failedRecordsCountHasBeenSet = false;
   };
 
 } // namespace Model

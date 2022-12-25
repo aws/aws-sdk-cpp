@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DemodulationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DemodulationConfig
+  class DemodulationConfig
   {
   public:
-    DemodulationConfig();
-    DemodulationConfig(Aws::Utils::Json::JsonView jsonValue);
-    DemodulationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DemodulationConfig();
+    AWS_GROUNDSTATION_API DemodulationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DemodulationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_unvalidatedJSON;
-    bool m_unvalidatedJSONHasBeenSet;
+    bool m_unvalidatedJSONHasBeenSet = false;
   };
 
 } // namespace Model

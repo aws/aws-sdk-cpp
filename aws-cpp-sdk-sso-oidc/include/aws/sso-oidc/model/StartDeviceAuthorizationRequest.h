@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSOOIDC_API StartDeviceAuthorizationRequest : public SSOOIDCRequest
+  class StartDeviceAuthorizationRequest : public SSOOIDCRequest
   {
   public:
-    StartDeviceAuthorizationRequest();
+    AWS_SSOOIDC_API StartDeviceAuthorizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,62 +29,62 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartDeviceAuthorization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSOOIDC_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline StartDeviceAuthorizationRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline StartDeviceAuthorizationRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier string for the client that is registered with AWS SSO.
-     * This value should come from the persisted result of the <a>RegisterClient</a>
-     * API operation.</p>
+     * <p>The unique identifier string for the client that is registered with IAM
+     * Identity Center. This value should come from the persisted result of the
+     * <a>RegisterClient</a> API operation.</p>
      */
     inline StartDeviceAuthorizationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
@@ -139,71 +139,71 @@ namespace Model
 
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline const Aws::String& GetStartUrl() const{ return m_startUrl; }
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline bool StartUrlHasBeenSet() const { return m_startUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline void SetStartUrl(const Aws::String& value) { m_startUrlHasBeenSet = true; m_startUrl = value; }
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline void SetStartUrl(Aws::String&& value) { m_startUrlHasBeenSet = true; m_startUrl = std::move(value); }
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline void SetStartUrl(const char* value) { m_startUrlHasBeenSet = true; m_startUrl.assign(value); }
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(const Aws::String& value) { SetStartUrl(value); return *this;}
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(Aws::String&& value) { SetStartUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the AWS SSO user portal. For more information, see <a
+     * <p>The URL for the AWS access portal. For more information, see <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(const char* value) { SetStartUrl(value); return *this;}
 
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
 
     Aws::String m_startUrl;
-    bool m_startUrlHasBeenSet;
+    bool m_startUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemAlreadyExists">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemAlreadyExists
+  class FileSystemAlreadyExists
   {
   public:
-    FileSystemAlreadyExists();
-    FileSystemAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemAlreadyExists();
+    AWS_EFS_API FileSystemAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

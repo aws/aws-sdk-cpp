@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramServiceDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor
+  class MultiplexProgramServiceDescriptor
   {
   public:
-    MultiplexProgramServiceDescriptor();
-    MultiplexProgramServiceDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramServiceDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor();
+    AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramServiceDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

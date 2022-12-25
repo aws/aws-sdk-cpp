@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API GetSamplingTargetsRequest : public XRayRequest
+  class GetSamplingTargetsRequest : public XRayRequest
   {
   public:
-    GetSamplingTargetsRequest();
+    AWS_XRAY_API GetSamplingTargetsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSamplingTargets"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     Aws::Vector<SamplingStatisticsDocument> m_samplingStatisticsDocuments;
-    bool m_samplingStatisticsDocumentsHasBeenSet;
+    bool m_samplingStatisticsDocumentsHasBeenSet = false;
   };
 
 } // namespace Model

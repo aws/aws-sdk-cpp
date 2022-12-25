@@ -4,8 +4,10 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+#if(!$serviceModel.endpointRules)
 #if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+#end
 #end
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -30,6 +32,30 @@ using namespace Aws::Http;
 ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
+#if($shape.hasEmbeddedErrors())
+
+bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  (void) header;
+
+  auto readPointer = body.tellg();
+  XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+
+  if (!doc.WasParseSuccessful()) {
+    body.seekg(readPointer);
+    return false;
+  }
+
+  if (doc.GetRootElement().GetName() == "Error") {
+    body.seekg(readPointer);
+    return true;
+  }
+  body.seekg(readPointer);
+  return false;
+}
+#end
 
 Aws::String ${typeInfo.className}::SerializePayload() const
 {
@@ -93,4 +119,5 @@ Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeader
   return headers;
 }
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")

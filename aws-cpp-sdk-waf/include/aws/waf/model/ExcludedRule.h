@@ -38,13 +38,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ExcludedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API ExcludedRule
+  class ExcludedRule
   {
   public:
-    ExcludedRule();
-    ExcludedRule(Aws::Utils::Json::JsonView jsonValue);
-    ExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API ExcludedRule();
+    AWS_WAF_API ExcludedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API ExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
   };
 
 } // namespace Model

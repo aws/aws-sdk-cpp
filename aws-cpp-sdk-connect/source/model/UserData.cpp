@@ -26,7 +26,8 @@ UserData::UserData() :
     m_availableSlotsByChannelHasBeenSet(false),
     m_maxSlotsByChannelHasBeenSet(false),
     m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false)
+    m_contactsHasBeenSet(false),
+    m_nextStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserData::UserData(JsonView jsonValue) :
     m_availableSlotsByChannelHasBeenSet(false),
     m_maxSlotsByChannelHasBeenSet(false),
     m_activeSlotsByChannelHasBeenSet(false),
-    m_contactsHasBeenSet(false)
+    m_contactsHasBeenSet(false),
+    m_nextStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,12 +107,19 @@ UserData& UserData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Contacts"))
   {
-    Array<JsonView> contactsJsonList = jsonValue.GetArray("Contacts");
+    Aws::Utils::Array<JsonView> contactsJsonList = jsonValue.GetArray("Contacts");
     for(unsigned contactsIndex = 0; contactsIndex < contactsJsonList.GetLength(); ++contactsIndex)
     {
       m_contacts.push_back(contactsJsonList[contactsIndex].AsObject());
     }
     m_contactsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextStatus"))
+  {
+    m_nextStatus = jsonValue.GetString("NextStatus");
+
+    m_nextStatusHasBeenSet = true;
   }
 
   return *this;
@@ -179,12 +188,18 @@ JsonValue UserData::Jsonize() const
 
   if(m_contactsHasBeenSet)
   {
-   Array<JsonValue> contactsJsonList(m_contacts.size());
+   Aws::Utils::Array<JsonValue> contactsJsonList(m_contacts.size());
    for(unsigned contactsIndex = 0; contactsIndex < contactsJsonList.GetLength(); ++contactsIndex)
    {
      contactsJsonList[contactsIndex].AsObject(m_contacts[contactsIndex].Jsonize());
    }
    payload.WithArray("Contacts", std::move(contactsJsonList));
+
+  }
+
+  if(m_nextStatusHasBeenSet)
+  {
+   payload.WithString("NextStatus", m_nextStatus);
 
   }
 

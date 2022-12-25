@@ -26,46 +26,46 @@ namespace ChimeSDKMediaPipelines
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult
+  class ListMediaCapturePipelinesResult
   {
   public:
-    ListMediaCapturePipelinesResult();
-    ListMediaCapturePipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMediaCapturePipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API ListMediaCapturePipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline const Aws::Vector<MediaCapturePipelineSummary>& GetMediaCapturePipelines() const{ return m_mediaCapturePipelines; }
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline void SetMediaCapturePipelines(const Aws::Vector<MediaCapturePipelineSummary>& value) { m_mediaCapturePipelines = value; }
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline void SetMediaCapturePipelines(Aws::Vector<MediaCapturePipelineSummary>&& value) { m_mediaCapturePipelines = std::move(value); }
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline ListMediaCapturePipelinesResult& WithMediaCapturePipelines(const Aws::Vector<MediaCapturePipelineSummary>& value) { SetMediaCapturePipelines(value); return *this;}
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline ListMediaCapturePipelinesResult& WithMediaCapturePipelines(Aws::Vector<MediaCapturePipelineSummary>&& value) { SetMediaCapturePipelines(std::move(value)); return *this;}
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline ListMediaCapturePipelinesResult& AddMediaCapturePipelines(const MediaCapturePipelineSummary& value) { m_mediaCapturePipelines.push_back(value); return *this; }
 
     /**
-     * <p>The media capture pipeline objects in the list.</p>
+     * <p>The media pipeline objects in the list.</p>
      */
     inline ListMediaCapturePipelinesResult& AddMediaCapturePipelines(MediaCapturePipelineSummary&& value) { m_mediaCapturePipelines.push_back(std::move(value)); return *this; }
 

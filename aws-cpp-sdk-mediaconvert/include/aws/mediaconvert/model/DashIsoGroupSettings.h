@@ -13,10 +13,12 @@
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/DashIsoImageBasedTrickPlaySettings.h>
+#include <aws/mediaconvert/model/DashIsoMpdManifestBandwidthType.h>
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
 #include <aws/mediaconvert/model/DashIsoSegmentLengthControl.h>
+#include <aws/mediaconvert/model/DashIsoVideoCompositionOffsets.h>
 #include <aws/mediaconvert/model/DashIsoWriteSegmentTimelineInRepresentation.h>
 #include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <utility>
@@ -45,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DashIsoGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DashIsoGroupSettings
+  class DashIsoGroupSettings
   {
   public:
-    DashIsoGroupSettings();
-    DashIsoGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    DashIsoGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DashIsoGroupSettings();
+    AWS_MEDIACONVERT_API DashIsoGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DashIsoGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -665,6 +667,67 @@ namespace Model
 
 
     /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline const DashIsoMpdManifestBandwidthType& GetMpdManifestBandwidthType() const{ return m_mpdManifestBandwidthType; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline bool MpdManifestBandwidthTypeHasBeenSet() const { return m_mpdManifestBandwidthTypeHasBeenSet; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline void SetMpdManifestBandwidthType(const DashIsoMpdManifestBandwidthType& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = value; }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline void SetMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType&& value) { m_mpdManifestBandwidthTypeHasBeenSet = true; m_mpdManifestBandwidthType = std::move(value); }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline DashIsoGroupSettings& WithMpdManifestBandwidthType(const DashIsoMpdManifestBandwidthType& value) { SetMpdManifestBandwidthType(value); return *this;}
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation
+     * in your output MPD manifest. We recommend that you choose a MPD manifest
+     * bandwidth type that is compatible with your downstream player configuration.
+     * Max: Use the same value that you specify for Max bitrate in the video output, in
+     * bits per second. Average: Use the calculated average bitrate of the encoded
+     * video output, in bits per second.
+     */
+    inline DashIsoGroupSettings& WithMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType&& value) { SetMpdManifestBandwidthType(std::move(value)); return *this;}
+
+
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main
      * profile (MAIN_PROFILE), the service signals 
      * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you
@@ -950,6 +1013,73 @@ namespace Model
 
 
     /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline const DashIsoVideoCompositionOffsets& GetVideoCompositionOffsets() const{ return m_videoCompositionOffsets; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline bool VideoCompositionOffsetsHasBeenSet() const { return m_videoCompositionOffsetsHasBeenSet; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline void SetVideoCompositionOffsets(const DashIsoVideoCompositionOffsets& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = value; }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline void SetVideoCompositionOffsets(DashIsoVideoCompositionOffsets&& value) { m_videoCompositionOffsetsHasBeenSet = true; m_videoCompositionOffsets = std::move(value); }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline DashIsoGroupSettings& WithVideoCompositionOffsets(const DashIsoVideoCompositionOffsets& value) { SetVideoCompositionOffsets(value); return *this;}
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN
+     * box. For wider player compatibility, set Video composition offsets to Unsigned
+     * or leave blank. The earliest presentation time may be greater than zero, and
+     * sample composition time offsets will increment using unsigned integers. For
+     * strict fMP4 video and audio timing, set Video composition offsets to Signed. The
+     * earliest presentation time will be equal to zero, and sample composition time
+     * offsets will increment using signed integers.
+     */
+    inline DashIsoGroupSettings& WithVideoCompositionOffsets(DashIsoVideoCompositionOffsets&& value) { SetVideoCompositionOffsets(std::move(value)); return *this;}
+
+
+    /**
      * If you get an HTTP error in the 400 range when you play back your DASH output,
      * enable this setting and run your transcoding job again. When you enable this
      * setting, the service writes precise segment durations in the DASH manifest. The
@@ -1012,58 +1142,64 @@ namespace Model
   private:
 
     Aws::Vector<DashAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     DashIsoGroupAudioChannelConfigSchemeIdUri m_audioChannelConfigSchemeIdUri;
-    bool m_audioChannelConfigSchemeIdUriHasBeenSet;
+    bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     DashIsoEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     DashIsoHbbtvCompliance m_hbbtvCompliance;
-    bool m_hbbtvComplianceHasBeenSet;
+    bool m_hbbtvComplianceHasBeenSet = false;
 
     DashIsoImageBasedTrickPlay m_imageBasedTrickPlay;
-    bool m_imageBasedTrickPlayHasBeenSet;
+    bool m_imageBasedTrickPlayHasBeenSet = false;
 
     DashIsoImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-    bool m_imageBasedTrickPlaySettingsHasBeenSet;
+    bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
     int m_minBufferTime;
-    bool m_minBufferTimeHasBeenSet;
+    bool m_minBufferTimeHasBeenSet = false;
 
     double m_minFinalSegmentLength;
-    bool m_minFinalSegmentLengthHasBeenSet;
+    bool m_minFinalSegmentLengthHasBeenSet = false;
+
+    DashIsoMpdManifestBandwidthType m_mpdManifestBandwidthType;
+    bool m_mpdManifestBandwidthTypeHasBeenSet = false;
 
     DashIsoMpdProfile m_mpdProfile;
-    bool m_mpdProfileHasBeenSet;
+    bool m_mpdProfileHasBeenSet = false;
 
     DashIsoPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
-    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet = false;
 
     DashIsoSegmentControl m_segmentControl;
-    bool m_segmentControlHasBeenSet;
+    bool m_segmentControlHasBeenSet = false;
 
     int m_segmentLength;
-    bool m_segmentLengthHasBeenSet;
+    bool m_segmentLengthHasBeenSet = false;
 
     DashIsoSegmentLengthControl m_segmentLengthControl;
-    bool m_segmentLengthControlHasBeenSet;
+    bool m_segmentLengthControlHasBeenSet = false;
+
+    DashIsoVideoCompositionOffsets m_videoCompositionOffsets;
+    bool m_videoCompositionOffsetsHasBeenSet = false;
 
     DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
-    bool m_writeSegmentTimelineInRepresentationHasBeenSet;
+    bool m_writeSegmentTimelineInRepresentationHasBeenSet = false;
   };
 
 } // namespace Model

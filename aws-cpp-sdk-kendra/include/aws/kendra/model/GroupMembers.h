@@ -27,19 +27,19 @@ namespace Model
 {
 
   /**
-   * <p>A list of users or sub groups that belong to a group. Users and groups are
-   * useful for filtering search results to different users based on their group's
-   * access to documents.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of users or sub groups that belong to a group. This is useful for user
+   * context filtering, where search results are filtered based on the user or their
+   * group access to documents.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupMembers">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GroupMembers
+  class GroupMembers
   {
   public:
-    GroupMembers();
-    GroupMembers(Aws::Utils::Json::JsonView jsonValue);
-    GroupMembers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GroupMembers();
+    AWS_KENDRA_API GroupMembers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GroupMembers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,13 +235,13 @@ namespace Model
   private:
 
     Aws::Vector<MemberGroup> m_memberGroups;
-    bool m_memberGroupsHasBeenSet;
+    bool m_memberGroupsHasBeenSet = false;
 
     Aws::Vector<MemberUser> m_memberUsers;
-    bool m_memberUsersHasBeenSet;
+    bool m_memberUsersHasBeenSet = false;
 
     S3Path m_s3PathforGroupMembers;
-    bool m_s3PathforGroupMembersHasBeenSet;
+    bool m_s3PathforGroupMembersHasBeenSet = false;
   };
 
 } // namespace Model

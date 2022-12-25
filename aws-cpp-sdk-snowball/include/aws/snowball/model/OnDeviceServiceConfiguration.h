@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/OnDeviceServiceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API OnDeviceServiceConfiguration
+  class OnDeviceServiceConfiguration
   {
   public:
-    OnDeviceServiceConfiguration();
-    OnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API OnDeviceServiceConfiguration();
+    AWS_SNOWBALL_API OnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API OnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     NFSOnDeviceServiceConfiguration m_nFSOnDeviceService;
-    bool m_nFSOnDeviceServiceHasBeenSet;
+    bool m_nFSOnDeviceServiceHasBeenSet = false;
 
     TGWOnDeviceServiceConfiguration m_tGWOnDeviceService;
-    bool m_tGWOnDeviceServiceHasBeenSet;
+    bool m_tGWOnDeviceServiceHasBeenSet = false;
   };
 
 } // namespace Model

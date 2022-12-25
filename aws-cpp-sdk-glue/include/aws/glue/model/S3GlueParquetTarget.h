@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3GlueParquetTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3GlueParquetTarget
+  class S3GlueParquetTarget
   {
   public:
-    S3GlueParquetTarget();
-    S3GlueParquetTarget(Aws::Utils::Json::JsonView jsonValue);
-    S3GlueParquetTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3GlueParquetTarget();
+    AWS_GLUE_API S3GlueParquetTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3GlueParquetTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     ParquetCompressionType m_compression;
-    bool m_compressionHasBeenSet;
+    bool m_compressionHasBeenSet = false;
 
     DirectSchemaChangePolicy m_schemaChangePolicy;
-    bool m_schemaChangePolicyHasBeenSet;
+    bool m_schemaChangePolicyHasBeenSet = false;
   };
 
 } // namespace Model

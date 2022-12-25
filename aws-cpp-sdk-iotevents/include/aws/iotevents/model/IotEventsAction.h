@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotEventsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API IotEventsAction
+  class IotEventsAction
   {
   public:
-    IotEventsAction();
-    IotEventsAction(Aws::Utils::Json::JsonView jsonValue);
-    IotEventsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API IotEventsAction();
+    AWS_IOTEVENTS_API IotEventsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API IotEventsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

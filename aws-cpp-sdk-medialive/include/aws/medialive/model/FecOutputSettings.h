@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FecOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FecOutputSettings
+  class FecOutputSettings
   {
   public:
-    FecOutputSettings();
-    FecOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    FecOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FecOutputSettings();
+    AWS_MEDIALIVE_API FecOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FecOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,13 +140,13 @@ namespace Model
   private:
 
     int m_columnDepth;
-    bool m_columnDepthHasBeenSet;
+    bool m_columnDepthHasBeenSet = false;
 
     FecOutputIncludeFec m_includeFec;
-    bool m_includeFecHasBeenSet;
+    bool m_includeFecHasBeenSet = false;
 
     int m_rowLength;
-    bool m_rowLengthHasBeenSet;
+    bool m_rowLengthHasBeenSet = false;
   };
 
 } // namespace Model

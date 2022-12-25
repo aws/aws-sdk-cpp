@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttributePayload">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AttributePayload
+  class AttributePayload
   {
   public:
-    AttributePayload();
-    AttributePayload(Aws::Utils::Json::JsonView jsonValue);
-    AttributePayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AttributePayload();
+    AWS_IOT_API AttributePayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AttributePayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     bool m_merge;
-    bool m_mergeHasBeenSet;
+    bool m_mergeHasBeenSet = false;
   };
 
 } // namespace Model

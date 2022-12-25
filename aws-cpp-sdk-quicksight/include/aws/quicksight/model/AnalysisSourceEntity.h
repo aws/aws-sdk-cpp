@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnalysisSourceEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AnalysisSourceEntity
+  class AnalysisSourceEntity
   {
   public:
-    AnalysisSourceEntity();
-    AnalysisSourceEntity(Aws::Utils::Json::JsonView jsonValue);
-    AnalysisSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AnalysisSourceEntity();
+    AWS_QUICKSIGHT_API AnalysisSourceEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AnalysisSourceEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AnalysisSourceTemplate m_sourceTemplate;
-    bool m_sourceTemplateHasBeenSet;
+    bool m_sourceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

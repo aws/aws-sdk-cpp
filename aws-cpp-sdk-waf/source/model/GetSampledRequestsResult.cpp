@@ -32,7 +32,7 @@ GetSampledRequestsResult& GetSampledRequestsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SampledRequests"))
   {
-    Array<JsonView> sampledRequestsJsonList = jsonValue.GetArray("SampledRequests");
+    Aws::Utils::Array<JsonView> sampledRequestsJsonList = jsonValue.GetArray("SampledRequests");
     for(unsigned sampledRequestsIndex = 0; sampledRequestsIndex < sampledRequestsJsonList.GetLength(); ++sampledRequestsIndex)
     {
       m_sampledRequests.push_back(sampledRequestsJsonList[sampledRequestsIndex].AsObject());

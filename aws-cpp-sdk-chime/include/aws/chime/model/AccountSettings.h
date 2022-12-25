@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AccountSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AccountSettings
+  class AccountSettings
   {
   public:
-    AccountSettings();
-    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AccountSettings();
+    AWS_CHIME_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     bool m_disableRemoteControl;
-    bool m_disableRemoteControlHasBeenSet;
+    bool m_disableRemoteControlHasBeenSet = false;
 
     bool m_enableDialOut;
-    bool m_enableDialOutHasBeenSet;
+    bool m_enableDialOutHasBeenSet = false;
   };
 
 } // namespace Model

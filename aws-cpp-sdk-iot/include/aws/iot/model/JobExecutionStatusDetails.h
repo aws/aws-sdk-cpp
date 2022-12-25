@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecutionStatusDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecutionStatusDetails
+  class JobExecutionStatusDetails
   {
   public:
-    JobExecutionStatusDetails();
-    JobExecutionStatusDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecutionStatusDetails();
+    AWS_IOT_API JobExecutionStatusDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecutionStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_detailsMap;
-    bool m_detailsMapHasBeenSet;
+    bool m_detailsMapHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeParty">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API HandshakeParty
+  class HandshakeParty
   {
   public:
-    HandshakeParty();
-    HandshakeParty(Aws::Utils::Json::JsonView jsonValue);
-    HandshakeParty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API HandshakeParty();
+    AWS_ORGANIZATIONS_API HandshakeParty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API HandshakeParty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     HandshakePartyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

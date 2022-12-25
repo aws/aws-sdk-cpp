@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API PhoneNumberValidateRequest : public PinpointRequest
+  class PhoneNumberValidateRequest : public PinpointRequest
   {
   public:
-    PhoneNumberValidateRequest();
+    AWS_PINPOINT_API PhoneNumberValidateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PhoneNumberValidate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
     
@@ -53,7 +53,7 @@ namespace Model
   private:
 
     NumberValidateRequest m_numberValidateRequest;
-    bool m_numberValidateRequestHasBeenSet;
+    bool m_numberValidateRequestHasBeenSet = false;
   };
 
 } // namespace Model

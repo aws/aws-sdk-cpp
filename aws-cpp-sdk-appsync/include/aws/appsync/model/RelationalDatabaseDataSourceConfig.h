@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/RelationalDatabaseDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API RelationalDatabaseDataSourceConfig
+  class RelationalDatabaseDataSourceConfig
   {
   public:
-    RelationalDatabaseDataSourceConfig();
-    RelationalDatabaseDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API RelationalDatabaseDataSourceConfig();
+    AWS_APPSYNC_API RelationalDatabaseDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API RelationalDatabaseDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     RelationalDatabaseSourceType m_relationalDatabaseSourceType;
-    bool m_relationalDatabaseSourceTypeHasBeenSet;
+    bool m_relationalDatabaseSourceTypeHasBeenSet = false;
 
     RdsHttpEndpointConfig m_rdsHttpEndpointConfig;
-    bool m_rdsHttpEndpointConfigHasBeenSet;
+    bool m_rdsHttpEndpointConfigHasBeenSet = false;
   };
 
 } // namespace Model

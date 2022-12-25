@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItem">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TransactGetItem
+  class TransactGetItem
   {
   public:
-    TransactGetItem();
-    TransactGetItem(Aws::Utils::Json::JsonView jsonValue);
-    TransactGetItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TransactGetItem();
+    AWS_DYNAMODB_API TransactGetItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TransactGetItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Get m_get;
-    bool m_getHasBeenSet;
+    bool m_getHasBeenSet = false;
   };
 
 } // namespace Model

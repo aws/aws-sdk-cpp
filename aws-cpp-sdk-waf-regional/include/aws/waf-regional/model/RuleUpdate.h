@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RuleUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API RuleUpdate
+  class RuleUpdate
   {
   public:
-    RuleUpdate();
-    RuleUpdate(Aws::Utils::Json::JsonView jsonValue);
-    RuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API RuleUpdate();
+    AWS_WAFREGIONAL_API RuleUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API RuleUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Predicate m_predicate;
-    bool m_predicateHasBeenSet;
+    bool m_predicateHasBeenSet = false;
   };
 
 } // namespace Model

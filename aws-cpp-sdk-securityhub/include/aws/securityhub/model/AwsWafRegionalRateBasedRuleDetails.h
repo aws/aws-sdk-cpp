@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRateBasedRuleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails
+  class AwsWafRegionalRateBasedRuleDetails
   {
   public:
-    AwsWafRegionalRateBasedRuleDetails();
-    AwsWafRegionalRateBasedRuleDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalRateBasedRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,22 +294,22 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_rateKey;
-    bool m_rateKeyHasBeenSet;
+    bool m_rateKeyHasBeenSet = false;
 
     long long m_rateLimit;
-    bool m_rateLimitHasBeenSet;
+    bool m_rateLimitHasBeenSet = false;
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::Vector<AwsWafRegionalRateBasedRuleMatchPredicate> m_matchPredicates;
-    bool m_matchPredicatesHasBeenSet;
+    bool m_matchPredicatesHasBeenSet = false;
   };
 
 } // namespace Model

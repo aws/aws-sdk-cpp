@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API UpdateResourceCollectionRequest : public DevOpsGuruRequest
+  class UpdateResourceCollectionRequest : public DevOpsGuruRequest
   {
   public:
-    UpdateResourceCollectionRequest();
+    AWS_DEVOPSGURU_API UpdateResourceCollectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateResourceCollection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     UpdateResourceCollectionAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     UpdateResourceCollectionFilter m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

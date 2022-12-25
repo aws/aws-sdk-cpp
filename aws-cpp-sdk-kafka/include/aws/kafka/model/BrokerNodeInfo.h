@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BrokerNodeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API BrokerNodeInfo
+  class BrokerNodeInfo
   {
   public:
-    BrokerNodeInfo();
-    BrokerNodeInfo(Aws::Utils::Json::JsonView jsonValue);
-    BrokerNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API BrokerNodeInfo();
+    AWS_KAFKA_API BrokerNodeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API BrokerNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -372,22 +372,22 @@ namespace Model
   private:
 
     Aws::String m_attachedENIId;
-    bool m_attachedENIIdHasBeenSet;
+    bool m_attachedENIIdHasBeenSet = false;
 
     double m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     Aws::String m_clientSubnet;
-    bool m_clientSubnetHasBeenSet;
+    bool m_clientSubnetHasBeenSet = false;
 
     Aws::String m_clientVpcIpAddress;
-    bool m_clientVpcIpAddressHasBeenSet;
+    bool m_clientVpcIpAddressHasBeenSet = false;
 
     BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-    bool m_currentBrokerSoftwareInfoHasBeenSet;
+    bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

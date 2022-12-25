@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Page">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Page
+  class Page
   {
   public:
-    Page();
-    Page(Aws::Utils::Json::JsonView jsonValue);
-    Page& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Page();
+    AWS_SECURITYHUB_API Page(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Page& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     long long m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
 
     Range m_lineRange;
-    bool m_lineRangeHasBeenSet;
+    bool m_lineRangeHasBeenSet = false;
 
     Range m_offsetRange;
-    bool m_offsetRangeHasBeenSet;
+    bool m_offsetRangeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,14 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
+    m_enableMapAutoTagging(false),
+    m_enableMapAutoTaggingHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
+    m_mapAutoTaggingMpeIDHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_postLaunchActionsHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
     m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
@@ -50,6 +54,12 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_enableMapAutoTaggingHasBeenSet)
+  {
+   payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
+
+  }
+
   if(m_launchDispositionHasBeenSet)
   {
    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
@@ -61,9 +71,21 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
 
   }
 
+  if(m_mapAutoTaggingMpeIDHasBeenSet)
+  {
+   payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_postLaunchActionsHasBeenSet)
+  {
+   payload.WithObject("postLaunchActions", m_postLaunchActions.Jsonize());
 
   }
 

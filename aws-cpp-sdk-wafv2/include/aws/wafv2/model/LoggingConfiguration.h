@@ -35,11 +35,13 @@ namespace Model
    * about the traffic that WAF inspects using the following steps:</p> <ol> <li>
    * <p>Create your logging destination. You can use an Amazon CloudWatch Logs log
    * group, an Amazon Simple Storage Service (Amazon S3) bucket, or an Amazon Kinesis
-   * Data Firehose. For information about configuring logging destinations and the
-   * permissions that are required for each, see <a
+   * Data Firehose. </p> <p>The name that you give the destination must start with
+   * <code>aws-waf-logs-</code>. Depending on the type of destination, you might need
+   * to configure additional settings or permissions. </p> <p>For configuration
+   * requirements and pricing information for each destination type, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
-   * web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p> </li>
-   * <li> <p>Associate your logging destination to your web ACL using a
+   * web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p> </li> <li>
+   * <p>Associate your logging destination to your web ACL using a
    * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
    * successfully enable logging using a <code>PutLoggingConfiguration</code>
    * request, WAF creates an additional role or policy that is required to write logs
@@ -53,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API LoggingConfiguration();
+    AWS_WAFV2_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,19 +332,19 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logDestinationConfigs;
-    bool m_logDestinationConfigsHasBeenSet;
+    bool m_logDestinationConfigsHasBeenSet = false;
 
     Aws::Vector<FieldToMatch> m_redactedFields;
-    bool m_redactedFieldsHasBeenSet;
+    bool m_redactedFieldsHasBeenSet = false;
 
     bool m_managedByFirewallManager;
-    bool m_managedByFirewallManagerHasBeenSet;
+    bool m_managedByFirewallManagerHasBeenSet = false;
 
     LoggingFilter m_loggingFilter;
-    bool m_loggingFilterHasBeenSet;
+    bool m_loggingFilterHasBeenSet = false;
   };
 
 } // namespace Model

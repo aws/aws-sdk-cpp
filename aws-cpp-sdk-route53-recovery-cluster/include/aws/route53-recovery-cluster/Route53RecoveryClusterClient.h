@@ -5,78 +5,16 @@
 
 #pragma once
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
-#include <aws/route53-recovery-cluster/Route53RecoveryClusterErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/route53-recovery-cluster/model/GetRoutingControlStateResult.h>
-#include <aws/route53-recovery-cluster/model/ListRoutingControlsResult.h>
-#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStateResult.h>
-#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStatesResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Route53RecoveryCluster
 {
-
-namespace Model
-{
-        class GetRoutingControlStateRequest;
-        class ListRoutingControlsRequest;
-        class UpdateRoutingControlStateRequest;
-        class UpdateRoutingControlStatesRequest;
-
-        typedef Aws::Utils::Outcome<GetRoutingControlStateResult, Route53RecoveryClusterError> GetRoutingControlStateOutcome;
-        typedef Aws::Utils::Outcome<ListRoutingControlsResult, Route53RecoveryClusterError> ListRoutingControlsOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoutingControlStateResult, Route53RecoveryClusterError> UpdateRoutingControlStateOutcome;
-        typedef Aws::Utils::Outcome<UpdateRoutingControlStatesResult, Route53RecoveryClusterError> UpdateRoutingControlStatesOutcome;
-
-        typedef std::future<GetRoutingControlStateOutcome> GetRoutingControlStateOutcomeCallable;
-        typedef std::future<ListRoutingControlsOutcome> ListRoutingControlsOutcomeCallable;
-        typedef std::future<UpdateRoutingControlStateOutcome> UpdateRoutingControlStateOutcomeCallable;
-        typedef std::future<UpdateRoutingControlStatesOutcome> UpdateRoutingControlStatesOutcomeCallable;
-} // namespace Model
-
-  class Route53RecoveryClusterClient;
-
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::GetRoutingControlStateRequest&, const Model::GetRoutingControlStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoutingControlStateResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::ListRoutingControlsRequest&, const Model::ListRoutingControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingControlsResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::UpdateRoutingControlStateRequest&, const Model::UpdateRoutingControlStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlStateResponseReceivedHandler;
-    typedef std::function<void(const Route53RecoveryClusterClient*, const Model::UpdateRoutingControlStatesRequest&, const Model::UpdateRoutingControlStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingControlStatesResponseReceivedHandler;
-
   /**
    * <p>Welcome to the Routing Control (Recovery Cluster) API Reference Guide for
    * Amazon Route 53 Application Recovery Controller.</p> <p>With Route 53 ARC, you
@@ -122,32 +60,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/">Amazon Route 53
    * Application Recovery Controller Developer Guide</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53RecoveryClusterClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53RecoveryClusterClient(const Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration = Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration(),
+                                     std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Route53RecoveryClusterClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Route53RecoveryClusterClient(const Aws::Auth::AWSCredentials& credentials,
+                                     std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration = Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         Route53RecoveryClusterClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                     std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration = Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53RecoveryClusterClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        Route53RecoveryClusterClient(const Aws::Auth::AWSCredentials& credentials,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        Route53RecoveryClusterClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~Route53RecoveryClusterClient();
-
 
         /**
          * <p>Get the state for a routing control. A routing control is a simple on/off
@@ -319,16 +285,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetRoutingControlStateAsyncHelper(const Model::GetRoutingControlStateRequest& request, const GetRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRoutingControlsAsyncHelper(const Model::ListRoutingControlsRequest& request, const ListRoutingControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingControlStateAsyncHelper(const Model::UpdateRoutingControlStateRequest& request, const UpdateRoutingControlStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingControlStatesAsyncHelper(const Model::UpdateRoutingControlStatesRequest& request, const UpdateRoutingControlStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>;
+      void init(const Route53RecoveryClusterClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      Route53RecoveryClusterClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Route53RecoveryCluster

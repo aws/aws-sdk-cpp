@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_FORECASTQUERYSERVICE_API QueryForecastRequest : public ForecastQueryServiceRequest
+  class QueryForecastRequest : public ForecastQueryServiceRequest
   {
   public:
-    QueryForecastRequest();
+    AWS_FORECASTQUERYSERVICE_API QueryForecastRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "QueryForecast"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FORECASTQUERYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FORECASTQUERYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -364,19 +364,19 @@ namespace Model
   private:
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

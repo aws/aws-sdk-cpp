@@ -26,7 +26,8 @@ UserSettings::UserSettings() :
     m_kernelGatewayAppSettingsHasBeenSet(false),
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false)
+    m_rSessionAppSettingsHasBeenSet(false),
+    m_canvasAppSettingsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserSettings::UserSettings(JsonView jsonValue) :
     m_kernelGatewayAppSettingsHasBeenSet(false),
     m_tensorBoardAppSettingsHasBeenSet(false),
     m_rStudioServerProAppSettingsHasBeenSet(false),
-    m_rSessionAppSettingsHasBeenSet(false)
+    m_rSessionAppSettingsHasBeenSet(false),
+    m_canvasAppSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -54,7 +56,7 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -104,6 +106,13 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
     m_rSessionAppSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CanvasAppSettings"))
+  {
+    m_canvasAppSettings = jsonValue.GetObject("CanvasAppSettings");
+
+    m_canvasAppSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,7 +128,7 @@ JsonValue UserSettings::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -161,6 +170,12 @@ JsonValue UserSettings::Jsonize() const
   if(m_rSessionAppSettingsHasBeenSet)
   {
    payload.WithObject("RSessionAppSettings", m_rSessionAppSettings.Jsonize());
+
+  }
+
+  if(m_canvasAppSettingsHasBeenSet)
+  {
+   payload.WithObject("CanvasAppSettings", m_canvasAppSettings.Jsonize());
 
   }
 

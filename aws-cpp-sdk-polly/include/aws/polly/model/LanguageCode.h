@@ -48,7 +48,10 @@ namespace Model
     en_NZ,
     en_ZA,
     ca_ES,
-    de_AT
+    de_AT,
+    yue_CN,
+    ar_AE,
+    fi_FI
   };
 
 namespace LanguageCodeMapper

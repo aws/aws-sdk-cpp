@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API UpdateSegmentRequest : public PinpointRequest
+  class UpdateSegmentRequest : public PinpointRequest
   {
   public:
-    UpdateSegmentRequest();
+    AWS_PINPOINT_API UpdateSegmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSegment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     WriteSegmentRequest m_writeSegmentRequest;
-    bool m_writeSegmentRequestHasBeenSet;
+    bool m_writeSegmentRequestHasBeenSet = false;
   };
 
 } // namespace Model

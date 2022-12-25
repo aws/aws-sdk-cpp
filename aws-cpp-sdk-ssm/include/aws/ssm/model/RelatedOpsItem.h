@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RelatedOpsItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API RelatedOpsItem
+  class RelatedOpsItem
   {
   public:
-    RelatedOpsItem();
-    RelatedOpsItem(Aws::Utils::Json::JsonView jsonValue);
-    RelatedOpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API RelatedOpsItem();
+    AWS_SSM_API RelatedOpsItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API RelatedOpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_opsItemId;
-    bool m_opsItemIdHasBeenSet;
+    bool m_opsItemIdHasBeenSet = false;
   };
 
 } // namespace Model

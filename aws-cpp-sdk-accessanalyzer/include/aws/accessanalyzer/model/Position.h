@@ -26,34 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Position">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Position
+  class Position
   {
   public:
-    Position();
-    Position(Aws::Utils::Json::JsonView jsonValue);
-    Position& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline int GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline Position& WithColumn(int value) { SetColumn(value); return *this;}
+    AWS_ACCESSANALYZER_API Position();
+    AWS_ACCESSANALYZER_API Position(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Position& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,6 +54,27 @@ namespace Model
      * <p>The line of the position, starting from 1.</p>
      */
     inline Position& WithLine(int value) { SetLine(value); return *this;}
+
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline int GetColumn() const{ return m_column; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline Position& WithColumn(int value) { SetColumn(value); return *this;}
 
 
     /**
@@ -103,14 +103,14 @@ namespace Model
 
   private:
 
-    int m_column;
-    bool m_columnHasBeenSet;
-
     int m_line;
-    bool m_lineHasBeenSet;
+    bool m_lineHasBeenSet = false;
+
+    int m_column;
+    bool m_columnHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/AclConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API AclConfiguration
+  class AclConfiguration
   {
   public:
-    AclConfiguration();
-    AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API AclConfiguration();
+    AWS_ATHENA_API AclConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API AclConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,7 +118,7 @@ namespace Model
   private:
 
     S3AclOption m_s3AclOption;
-    bool m_s3AclOptionHasBeenSet;
+    bool m_s3AclOptionHasBeenSet = false;
   };
 
 } // namespace Model

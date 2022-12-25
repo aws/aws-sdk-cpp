@@ -114,7 +114,7 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Associations"))
   {
-    Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
     for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
@@ -205,7 +205,7 @@ JsonValue PhoneNumber::Jsonize() const
 
   if(m_associationsHasBeenSet)
   {
-   Array<JsonValue> associationsJsonList(m_associations.size());
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
    {
      associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
@@ -227,17 +227,17 @@ JsonValue PhoneNumber::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_deletionTimestampHasBeenSet)
   {
-   payload.WithString("DeletionTimestamp", m_deletionTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DeletionTimestamp", m_deletionTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

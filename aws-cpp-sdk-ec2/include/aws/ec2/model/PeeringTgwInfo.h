@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PeeringTgwInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PeeringTgwInfo
+  class PeeringTgwInfo
   {
   public:
-    PeeringTgwInfo();
-    PeeringTgwInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PeeringTgwInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PeeringTgwInfo();
+    AWS_EC2_API PeeringTgwInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PeeringTgwInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -79,6 +79,47 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline PeeringTgwInfo& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
 
 
     /**
@@ -165,13 +206,16 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
+
+    Aws::String m_coreNetworkId;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API DisassociateEntitiesFromExperienceRequest : public KendraRequest
+  class DisassociateEntitiesFromExperienceRequest : public KendraRequest
   {
   public:
-    DisassociateEntitiesFromExperienceRequest();
+    AWS_KENDRA_API DisassociateEntitiesFromExperienceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateEntitiesFromExperience"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -119,55 +119,55 @@ namespace Model
 
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline const Aws::Vector<EntityConfiguration>& GetEntityList() const{ return m_entityList; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline void SetEntityList(const Aws::Vector<EntityConfiguration>& value) { m_entityListHasBeenSet = true; m_entityList = value; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline void SetEntityList(Aws::Vector<EntityConfiguration>&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& WithEntityList(const Aws::Vector<EntityConfiguration>& value) { SetEntityList(value); return *this;}
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& WithEntityList(Aws::Vector<EntityConfiguration>&& value) { SetEntityList(std::move(value)); return *this;}
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& AddEntityList(const EntityConfiguration& value) { m_entityListHasBeenSet = true; m_entityList.push_back(value); return *this; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& AddEntityList(EntityConfiguration&& value) { m_entityListHasBeenSet = true; m_entityList.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<EntityConfiguration> m_entityList;
-    bool m_entityListHasBeenSet;
+    bool m_entityListHasBeenSet = false;
   };
 
 } // namespace Model

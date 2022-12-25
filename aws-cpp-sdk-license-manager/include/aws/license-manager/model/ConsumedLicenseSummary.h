@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ConsumedLicenseSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ConsumedLicenseSummary
+  class ConsumedLicenseSummary
   {
   public:
-    ConsumedLicenseSummary();
-    ConsumedLicenseSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConsumedLicenseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ConsumedLicenseSummary();
+    AWS_LICENSEMANAGER_API ConsumedLicenseSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ConsumedLicenseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_consumedLicenses;
-    bool m_consumedLicensesHasBeenSet;
+    bool m_consumedLicensesHasBeenSet = false;
   };
 
 } // namespace Model

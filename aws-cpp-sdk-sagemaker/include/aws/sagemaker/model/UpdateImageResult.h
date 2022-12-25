@@ -24,46 +24,46 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API UpdateImageResult
+  class UpdateImageResult
   {
   public:
-    UpdateImageResult();
-    UpdateImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API UpdateImageResult();
+    AWS_SAGEMAKER_API UpdateImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API UpdateImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline const Aws::String& GetImageArn() const{ return m_imageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const Aws::String& value) { m_imageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(Aws::String&& value) { m_imageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const char* value) { m_imageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline UpdateImageResult& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline UpdateImageResult& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline UpdateImageResult& WithImageArn(const char* value) { SetImageArn(value); return *this;}
 

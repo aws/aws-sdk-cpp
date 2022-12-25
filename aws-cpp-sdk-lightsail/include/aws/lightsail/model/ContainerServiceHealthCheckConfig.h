@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceHealthCheckConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig
+  class ContainerServiceHealthCheckConfig
   {
   public:
-    ContainerServiceHealthCheckConfig();
-    ContainerServiceHealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceHealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig();
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,22 +270,22 @@ namespace Model
   private:
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     int m_intervalSeconds;
-    bool m_intervalSecondsHasBeenSet;
+    bool m_intervalSecondsHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_successCodes;
-    bool m_successCodesHasBeenSet;
+    bool m_successCodesHasBeenSet = false;
   };
 
 } // namespace Model

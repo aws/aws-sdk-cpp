@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NexGuardFileMarkerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NexGuardFileMarkerSettings
+  class NexGuardFileMarkerSettings
   {
   public:
-    NexGuardFileMarkerSettings();
-    NexGuardFileMarkerSettings(Aws::Utils::Json::JsonView jsonValue);
-    NexGuardFileMarkerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NexGuardFileMarkerSettings();
+    AWS_MEDIACONVERT_API NexGuardFileMarkerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NexGuardFileMarkerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -264,16 +264,16 @@ namespace Model
   private:
 
     Aws::String m_license;
-    bool m_licenseHasBeenSet;
+    bool m_licenseHasBeenSet = false;
 
     int m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_preset;
-    bool m_presetHasBeenSet;
+    bool m_presetHasBeenSet = false;
 
     WatermarkingStrength m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

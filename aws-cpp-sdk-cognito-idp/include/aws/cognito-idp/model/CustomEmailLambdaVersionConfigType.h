@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CustomEmailLambdaVersionConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType
+  class CustomEmailLambdaVersionConfigType
   {
   public:
-    CustomEmailLambdaVersionConfigType();
-    CustomEmailLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
-    CustomEmailLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     CustomEmailSenderLambdaVersionType m_lambdaVersion;
-    bool m_lambdaVersionHasBeenSet;
+    bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

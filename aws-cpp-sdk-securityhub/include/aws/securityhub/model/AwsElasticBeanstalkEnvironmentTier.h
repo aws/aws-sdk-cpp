@@ -29,93 +29,109 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticBeanstalkEnvironmentTier">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentTier
+  class AwsElasticBeanstalkEnvironmentTier
   {
   public:
-    AwsElasticBeanstalkEnvironmentTier();
-    AwsElasticBeanstalkEnvironmentTier(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticBeanstalkEnvironmentTier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentTier();
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentTier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentTier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the environment tier.</p>
+     * <p>The name of the environment tier. Valid values are <code>WebServer</code> or
+     * <code>Worker</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of environment tier.</p>
+     * <p>The type of environment tier. Valid values are <code>Standard</code> or
+     * <code>SQS/HTTP</code>.</p>
      */
     inline AwsElasticBeanstalkEnvironmentTier& WithType(const char* value) { SetType(value); return *this;}
 
@@ -163,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

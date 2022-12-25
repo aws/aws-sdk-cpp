@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CostTypes">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API CostTypes
+  class CostTypes
   {
   public:
-    CostTypes();
-    CostTypes(Aws::Utils::Json::JsonView jsonValue);
-    CostTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API CostTypes();
+    AWS_BUDGETS_API CostTypes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API CostTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -316,37 +316,37 @@ namespace Model
   private:
 
     bool m_includeTax;
-    bool m_includeTaxHasBeenSet;
+    bool m_includeTaxHasBeenSet = false;
 
     bool m_includeSubscription;
-    bool m_includeSubscriptionHasBeenSet;
+    bool m_includeSubscriptionHasBeenSet = false;
 
     bool m_useBlended;
-    bool m_useBlendedHasBeenSet;
+    bool m_useBlendedHasBeenSet = false;
 
     bool m_includeRefund;
-    bool m_includeRefundHasBeenSet;
+    bool m_includeRefundHasBeenSet = false;
 
     bool m_includeCredit;
-    bool m_includeCreditHasBeenSet;
+    bool m_includeCreditHasBeenSet = false;
 
     bool m_includeUpfront;
-    bool m_includeUpfrontHasBeenSet;
+    bool m_includeUpfrontHasBeenSet = false;
 
     bool m_includeRecurring;
-    bool m_includeRecurringHasBeenSet;
+    bool m_includeRecurringHasBeenSet = false;
 
     bool m_includeOtherSubscription;
-    bool m_includeOtherSubscriptionHasBeenSet;
+    bool m_includeOtherSubscriptionHasBeenSet = false;
 
     bool m_includeSupport;
-    bool m_includeSupportHasBeenSet;
+    bool m_includeSupportHasBeenSet = false;
 
     bool m_includeDiscount;
-    bool m_includeDiscountHasBeenSet;
+    bool m_includeDiscountHasBeenSet = false;
 
     bool m_useAmortized;
-    bool m_useAmortizedHasBeenSet;
+    bool m_useAmortizedHasBeenSet = false;
   };
 
 } // namespace Model

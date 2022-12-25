@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AppDetails
+  class AppDetails
   {
   public:
-    AppDetails();
-    AppDetails(Aws::Utils::Json::JsonView jsonValue);
-    AppDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AppDetails();
+    AWS_SAGEMAKER_API AppDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AppDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,25 +255,69 @@ namespace Model
      */
     inline AppDetails& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space.</p>
+     */
+    inline AppDetails& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
-    bool m_appNameHasBeenSet;
+    bool m_appNameHasBeenSet = false;
 
     AppStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
   };
 
 } // namespace Model

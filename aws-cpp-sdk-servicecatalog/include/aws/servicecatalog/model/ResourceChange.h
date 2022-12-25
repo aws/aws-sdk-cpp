@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ResourceChange
+  class ResourceChange
   {
   public:
-    ResourceChange();
-    ResourceChange(Aws::Utils::Json::JsonView jsonValue);
-    ResourceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ResourceChange();
+    AWS_SERVICECATALOG_API ResourceChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ResourceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,25 +318,25 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Replacement m_replacement;
-    bool m_replacementHasBeenSet;
+    bool m_replacementHasBeenSet = false;
 
     Aws::Vector<ResourceAttribute> m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<ResourceChangeDetail> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

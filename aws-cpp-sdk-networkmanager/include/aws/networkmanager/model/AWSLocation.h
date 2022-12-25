@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AWSLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API AWSLocation
+  class AWSLocation
   {
   public:
-    AWSLocation();
-    AWSLocation(Aws::Utils::Json::JsonView jsonValue);
-    AWSLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API AWSLocation();
+    AWS_NETWORKMANAGER_API AWSLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API AWSLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_zone;
-    bool m_zoneHasBeenSet;
+    bool m_zoneHasBeenSet = false;
 
     Aws::String m_subnetArn;
-    bool m_subnetArnHasBeenSet;
+    bool m_subnetArnHasBeenSet = false;
   };
 
 } // namespace Model

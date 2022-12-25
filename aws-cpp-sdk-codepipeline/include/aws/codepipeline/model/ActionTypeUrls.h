@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeUrls">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeUrls
+  class ActionTypeUrls
   {
   public:
-    ActionTypeUrls();
-    ActionTypeUrls(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeUrls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeUrls();
+    AWS_CODEPIPELINE_API ActionTypeUrls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeUrls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,16 +261,16 @@ namespace Model
   private:
 
     Aws::String m_configurationUrl;
-    bool m_configurationUrlHasBeenSet;
+    bool m_configurationUrlHasBeenSet = false;
 
     Aws::String m_entityUrlTemplate;
-    bool m_entityUrlTemplateHasBeenSet;
+    bool m_entityUrlTemplateHasBeenSet = false;
 
     Aws::String m_executionUrlTemplate;
-    bool m_executionUrlTemplateHasBeenSet;
+    bool m_executionUrlTemplateHasBeenSet = false;
 
     Aws::String m_revisionUrlTemplate;
-    bool m_revisionUrlTemplateHasBeenSet;
+    bool m_revisionUrlTemplateHasBeenSet = false;
   };
 
 } // namespace Model

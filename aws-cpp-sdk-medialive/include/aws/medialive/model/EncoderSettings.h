@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EncoderSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API EncoderSettings
+  class EncoderSettings
   {
   public:
-    EncoderSettings();
-    EncoderSettings(Aws::Utils::Json::JsonView jsonValue);
-    EncoderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API EncoderSettings();
+    AWS_MEDIALIVE_API EncoderSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API EncoderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -415,40 +415,40 @@ namespace Model
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
-    bool m_audioDescriptionsHasBeenSet;
+    bool m_audioDescriptionsHasBeenSet = false;
 
     AvailBlanking m_availBlanking;
-    bool m_availBlankingHasBeenSet;
+    bool m_availBlankingHasBeenSet = false;
 
     AvailConfiguration m_availConfiguration;
-    bool m_availConfigurationHasBeenSet;
+    bool m_availConfigurationHasBeenSet = false;
 
     BlackoutSlate m_blackoutSlate;
-    bool m_blackoutSlateHasBeenSet;
+    bool m_blackoutSlateHasBeenSet = false;
 
     Aws::Vector<CaptionDescription> m_captionDescriptions;
-    bool m_captionDescriptionsHasBeenSet;
+    bool m_captionDescriptionsHasBeenSet = false;
 
     FeatureActivations m_featureActivations;
-    bool m_featureActivationsHasBeenSet;
+    bool m_featureActivationsHasBeenSet = false;
 
     GlobalConfiguration m_globalConfiguration;
-    bool m_globalConfigurationHasBeenSet;
+    bool m_globalConfigurationHasBeenSet = false;
 
     MotionGraphicsConfiguration m_motionGraphicsConfiguration;
-    bool m_motionGraphicsConfigurationHasBeenSet;
+    bool m_motionGraphicsConfigurationHasBeenSet = false;
 
     NielsenConfiguration m_nielsenConfiguration;
-    bool m_nielsenConfigurationHasBeenSet;
+    bool m_nielsenConfigurationHasBeenSet = false;
 
     Aws::Vector<OutputGroup> m_outputGroups;
-    bool m_outputGroupsHasBeenSet;
+    bool m_outputGroupsHasBeenSet = false;
 
     TimecodeConfig m_timecodeConfig;
-    bool m_timecodeConfigHasBeenSet;
+    bool m_timecodeConfigHasBeenSet = false;
 
     Aws::Vector<VideoDescription> m_videoDescriptions;
-    bool m_videoDescriptionsHasBeenSet;
+    bool m_videoDescriptionsHasBeenSet = false;
   };
 
 } // namespace Model

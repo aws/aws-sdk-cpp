@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGatewaysRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeCustomerGatewaysRequest : public EC2Request
+  class DescribeCustomerGatewaysRequest : public EC2Request
   {
   public:
-    DescribeCustomerGatewaysRequest();
+    AWS_EC2_API DescribeCustomerGatewaysRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeCustomerGateways"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -102,7 +102,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -123,7 +123,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -144,7 +144,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -165,7 +165,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -186,7 +186,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -207,7 +207,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -228,7 +228,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -249,7 +249,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -301,13 +301,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_customerGatewayIds;
-    bool m_customerGatewayIdsHasBeenSet;
+    bool m_customerGatewayIdsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

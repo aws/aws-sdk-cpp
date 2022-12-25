@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API CreateInstanceRequest : public ConnectRequest
+  class CreateInstanceRequest : public ConnectRequest
   {
   public:
-    CreateInstanceRequest();
+    AWS_CONNECT_API CreateInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -231,22 +231,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     DirectoryType m_identityManagementType;
-    bool m_identityManagementTypeHasBeenSet;
+    bool m_identityManagementTypeHasBeenSet = false;
 
     Aws::String m_instanceAlias;
-    bool m_instanceAliasHasBeenSet;
+    bool m_instanceAliasHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     bool m_inboundCallsEnabled;
-    bool m_inboundCallsEnabledHasBeenSet;
+    bool m_inboundCallsEnabledHasBeenSet = false;
 
     bool m_outboundCallsEnabled;
-    bool m_outboundCallsEnabledHasBeenSet;
+    bool m_outboundCallsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

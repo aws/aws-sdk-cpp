@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -11,6 +11,7 @@
 
 int main(int argc, char** argv)
 {
+    Aws::Testing::SetDefaultSigPipeHandler();
     Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);

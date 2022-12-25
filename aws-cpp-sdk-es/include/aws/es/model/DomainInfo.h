@@ -24,13 +24,13 @@ namespace ElasticsearchService
 namespace Model
 {
 
-  class AWS_ELASTICSEARCHSERVICE_API DomainInfo
+  class DomainInfo
   {
   public:
-    DomainInfo();
-    DomainInfo(Aws::Utils::Json::JsonView jsonValue);
-    DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo();
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
   };
 
 } // namespace Model

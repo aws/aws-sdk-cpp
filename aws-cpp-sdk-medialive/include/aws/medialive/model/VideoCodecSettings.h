@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VideoCodecSettings
+  class VideoCodecSettings
   {
   public:
-    VideoCodecSettings();
-    VideoCodecSettings(Aws::Utils::Json::JsonView jsonValue);
-    VideoCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VideoCodecSettings();
+    AWS_MEDIALIVE_API VideoCodecSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VideoCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -118,16 +118,16 @@ namespace Model
   private:
 
     FrameCaptureSettings m_frameCaptureSettings;
-    bool m_frameCaptureSettingsHasBeenSet;
+    bool m_frameCaptureSettingsHasBeenSet = false;
 
     H264Settings m_h264Settings;
-    bool m_h264SettingsHasBeenSet;
+    bool m_h264SettingsHasBeenSet = false;
 
     H265Settings m_h265Settings;
-    bool m_h265SettingsHasBeenSet;
+    bool m_h265SettingsHasBeenSet = false;
 
     Mpeg2Settings m_mpeg2Settings;
-    bool m_mpeg2SettingsHasBeenSet;
+    bool m_mpeg2SettingsHasBeenSet = false;
   };
 
 } // namespace Model

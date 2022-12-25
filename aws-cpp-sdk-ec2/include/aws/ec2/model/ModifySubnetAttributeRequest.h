@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifySubnetAttributeRequest : public EC2Request
+  class ModifySubnetAttributeRequest : public EC2Request
   {
   public:
-    ModifySubnetAttributeRequest();
+    AWS_EC2_API ModifySubnetAttributeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifySubnetAttribute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -539,37 +539,37 @@ namespace Model
   private:
 
     AttributeBooleanValue m_assignIpv6AddressOnCreation;
-    bool m_assignIpv6AddressOnCreationHasBeenSet;
+    bool m_assignIpv6AddressOnCreationHasBeenSet = false;
 
     AttributeBooleanValue m_mapPublicIpOnLaunch;
-    bool m_mapPublicIpOnLaunchHasBeenSet;
+    bool m_mapPublicIpOnLaunchHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     AttributeBooleanValue m_mapCustomerOwnedIpOnLaunch;
-    bool m_mapCustomerOwnedIpOnLaunchHasBeenSet;
+    bool m_mapCustomerOwnedIpOnLaunchHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;
-    bool m_customerOwnedIpv4PoolHasBeenSet;
+    bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
     AttributeBooleanValue m_enableDns64;
-    bool m_enableDns64HasBeenSet;
+    bool m_enableDns64HasBeenSet = false;
 
     HostnameType m_privateDnsHostnameTypeOnLaunch;
-    bool m_privateDnsHostnameTypeOnLaunchHasBeenSet;
+    bool m_privateDnsHostnameTypeOnLaunchHasBeenSet = false;
 
     AttributeBooleanValue m_enableResourceNameDnsARecordOnLaunch;
-    bool m_enableResourceNameDnsARecordOnLaunchHasBeenSet;
+    bool m_enableResourceNameDnsARecordOnLaunchHasBeenSet = false;
 
     AttributeBooleanValue m_enableResourceNameDnsAAAARecordOnLaunch;
-    bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet;
+    bool m_enableResourceNameDnsAAAARecordOnLaunchHasBeenSet = false;
 
     int m_enableLniAtDeviceIndex;
-    bool m_enableLniAtDeviceIndexHasBeenSet;
+    bool m_enableLniAtDeviceIndexHasBeenSet = false;
 
     AttributeBooleanValue m_disableLniAtDeviceIndex;
-    bool m_disableLniAtDeviceIndexHasBeenSet;
+    bool m_disableLniAtDeviceIndexHasBeenSet = false;
   };
 
 } // namespace Model

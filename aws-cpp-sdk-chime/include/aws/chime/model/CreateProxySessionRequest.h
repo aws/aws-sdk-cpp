@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API CreateProxySessionRequest : public ChimeRequest
+  class CreateProxySessionRequest : public ChimeRequest
   {
   public:
-    CreateProxySessionRequest();
+    AWS_CHIME_API CreateProxySessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProxySession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -334,28 +334,28 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_participantPhoneNumbers;
-    bool m_participantPhoneNumbersHasBeenSet;
+    bool m_participantPhoneNumbersHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_expiryMinutes;
-    bool m_expiryMinutesHasBeenSet;
+    bool m_expiryMinutesHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     NumberSelectionBehavior m_numberSelectionBehavior;
-    bool m_numberSelectionBehaviorHasBeenSet;
+    bool m_numberSelectionBehaviorHasBeenSet = false;
 
     GeoMatchLevel m_geoMatchLevel;
-    bool m_geoMatchLevelHasBeenSet;
+    bool m_geoMatchLevelHasBeenSet = false;
 
     GeoMatchParams m_geoMatchParams;
-    bool m_geoMatchParamsHasBeenSet;
+    bool m_geoMatchParamsHasBeenSet = false;
   };
 
 } // namespace Model

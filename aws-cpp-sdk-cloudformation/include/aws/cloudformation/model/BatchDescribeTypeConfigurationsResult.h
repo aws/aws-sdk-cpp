@@ -28,12 +28,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult
+  class BatchDescribeTypeConfigurationsResult
   {
   public:
-    BatchDescribeTypeConfigurationsResult();
-    BatchDescribeTypeConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BatchDescribeTypeConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult();
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

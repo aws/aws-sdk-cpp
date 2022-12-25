@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BrokerSoftwareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API BrokerSoftwareInfo
+  class BrokerSoftwareInfo
   {
   public:
-    BrokerSoftwareInfo();
-    BrokerSoftwareInfo(Aws::Utils::Json::JsonView jsonValue);
-    BrokerSoftwareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API BrokerSoftwareInfo();
+    AWS_KAFKA_API BrokerSoftwareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API BrokerSoftwareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_configurationArn;
-    bool m_configurationArnHasBeenSet;
+    bool m_configurationArnHasBeenSet = false;
 
     long long m_configurationRevision;
-    bool m_configurationRevisionHasBeenSet;
+    bool m_configurationRevisionHasBeenSet = false;
 
     Aws::String m_kafkaVersion;
-    bool m_kafkaVersionHasBeenSet;
+    bool m_kafkaVersionHasBeenSet = false;
   };
 
 } // namespace Model

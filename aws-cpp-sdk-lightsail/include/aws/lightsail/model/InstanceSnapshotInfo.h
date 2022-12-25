@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceSnapshotInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceSnapshotInfo
+  class InstanceSnapshotInfo
   {
   public:
-    InstanceSnapshotInfo();
-    InstanceSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceSnapshotInfo();
+    AWS_LIGHTSAIL_API InstanceSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_fromBundleId;
-    bool m_fromBundleIdHasBeenSet;
+    bool m_fromBundleIdHasBeenSet = false;
 
     Aws::String m_fromBlueprintId;
-    bool m_fromBlueprintIdHasBeenSet;
+    bool m_fromBlueprintIdHasBeenSet = false;
 
     Aws::Vector<DiskInfo> m_fromDiskInfo;
-    bool m_fromDiskInfoHasBeenSet;
+    bool m_fromDiskInfoHasBeenSet = false;
   };
 
 } // namespace Model

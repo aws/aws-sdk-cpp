@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AdvancedRecognitionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AdvancedRecognitionSetting
+  class AdvancedRecognitionSetting
   {
   public:
-    AdvancedRecognitionSetting();
-    AdvancedRecognitionSetting(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedRecognitionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AdvancedRecognitionSetting();
+    AWS_LEXMODELSV2_API AdvancedRecognitionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AdvancedRecognitionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AudioRecognitionStrategy m_audioRecognitionStrategy;
-    bool m_audioRecognitionStrategyHasBeenSet;
+    bool m_audioRecognitionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

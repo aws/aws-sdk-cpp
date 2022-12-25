@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MappingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API MappingRule
+  class MappingRule
   {
   public:
-    MappingRule();
-    MappingRule(Aws::Utils::Json::JsonView jsonValue);
-    MappingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API MappingRule();
+    AWS_COGNITOIDENTITY_API MappingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API MappingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_claim;
-    bool m_claimHasBeenSet;
+    bool m_claimHasBeenSet = false;
 
     MappingRuleMatchType m_matchType;
-    bool m_matchTypeHasBeenSet;
+    bool m_matchTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

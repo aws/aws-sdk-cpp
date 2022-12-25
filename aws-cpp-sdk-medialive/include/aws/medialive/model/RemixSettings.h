@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RemixSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RemixSettings
+  class RemixSettings
   {
   public:
-    RemixSettings();
-    RemixSettings(Aws::Utils::Json::JsonView jsonValue);
-    RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API RemixSettings();
+    AWS_MEDIALIVE_API RemixSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,13 +127,13 @@ Valid values: 1, 2, 4, 6, 8
   private:
 
     Aws::Vector<AudioChannelMapping> m_channelMappings;
-    bool m_channelMappingsHasBeenSet;
+    bool m_channelMappingsHasBeenSet = false;
 
     int m_channelsIn;
-    bool m_channelsInHasBeenSet;
+    bool m_channelsInHasBeenSet = false;
 
     int m_channelsOut;
-    bool m_channelsOutHasBeenSet;
+    bool m_channelsOutHasBeenSet = false;
   };
 
 } // namespace Model

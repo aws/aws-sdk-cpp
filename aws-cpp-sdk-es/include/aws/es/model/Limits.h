@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/Limits">AWS API
    * Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API Limits
+  class Limits
   {
   public:
-    Limits();
-    Limits(Aws::Utils::Json::JsonView jsonValue);
-    Limits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API Limits();
+    AWS_ELASTICSEARCHSERVICE_API Limits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Limits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::Vector<StorageType> m_storageTypes;
-    bool m_storageTypesHasBeenSet;
+    bool m_storageTypesHasBeenSet = false;
 
     InstanceLimits m_instanceLimits;
-    bool m_instanceLimitsHasBeenSet;
+    bool m_instanceLimitsHasBeenSet = false;
 
     Aws::Vector<AdditionalLimit> m_additionalLimits;
-    bool m_additionalLimitsHasBeenSet;
+    bool m_additionalLimitsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ResourceRequirement">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ResourceRequirement
+  class ResourceRequirement
   {
   public:
-    ResourceRequirement();
-    ResourceRequirement(Aws::Utils::Json::JsonView jsonValue);
-    ResourceRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ResourceRequirement();
+    AWS_ECS_API ResourceRequirement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ResourceRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ResourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API DescribeNodegroupRequest : public EKSRequest
+  class DescribeNodegroupRequest : public EKSRequest
   {
   public:
-    DescribeNodegroupRequest();
+    AWS_EKS_API DescribeNodegroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeNodegroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     Aws::String m_nodegroupName;
-    bool m_nodegroupNameHasBeenSet;
+    bool m_nodegroupNameHasBeenSet = false;
   };
 
 } // namespace Model

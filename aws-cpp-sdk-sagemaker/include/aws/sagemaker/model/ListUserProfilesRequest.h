@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API ListUserProfilesRequest : public SageMakerRequest
+  class ListUserProfilesRequest : public SageMakerRequest
   {
   public:
-    ListUserProfilesRequest();
+    AWS_SAGEMAKER_API ListUserProfilesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListUserProfiles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -252,22 +252,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     UserProfileSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     Aws::String m_domainIdEquals;
-    bool m_domainIdEqualsHasBeenSet;
+    bool m_domainIdEqualsHasBeenSet = false;
 
     Aws::String m_userProfileNameContains;
-    bool m_userProfileNameContainsHasBeenSet;
+    bool m_userProfileNameContainsHasBeenSet = false;
   };
 
 } // namespace Model

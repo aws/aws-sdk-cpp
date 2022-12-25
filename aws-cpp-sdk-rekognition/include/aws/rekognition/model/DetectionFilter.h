@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DetectionFilter
+  class DetectionFilter
   {
   public:
-    DetectionFilter();
-    DetectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    DetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DetectionFilter();
+    AWS_REKOGNITION_API DetectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,13 +125,13 @@ namespace Model
   private:
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     double m_minBoundingBoxHeight;
-    bool m_minBoundingBoxHeightHasBeenSet;
+    bool m_minBoundingBoxHeightHasBeenSet = false;
 
     double m_minBoundingBoxWidth;
-    bool m_minBoundingBoxWidthHasBeenSet;
+    bool m_minBoundingBoxWidthHasBeenSet = false;
   };
 
 } // namespace Model

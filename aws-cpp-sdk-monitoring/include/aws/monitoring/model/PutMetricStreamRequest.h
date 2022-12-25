@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API PutMetricStreamRequest : public CloudWatchRequest
+  class PutMetricStreamRequest : public CloudWatchRequest
   {
   public:
-    PutMetricStreamRequest();
+    AWS_CLOUDWATCH_API PutMetricStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutMetricStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -237,66 +237,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline const Aws::String& GetFirehoseArn() const{ return m_firehoseArn; }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline bool FirehoseArnHasBeenSet() const { return m_firehoseArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline void SetFirehoseArn(const Aws::String& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline void SetFirehoseArn(Aws::String&& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline void SetFirehoseArn(const char* value) { m_firehoseArnHasBeenSet = true; m_firehoseArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline PutMetricStreamRequest& WithFirehoseArn(const Aws::String& value) { SetFirehoseArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline PutMetricStreamRequest& WithFirehoseArn(Aws::String&& value) { SetFirehoseArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric
-     * stream. This Amazon Kinesis Firehose delivery stream must already exist and must
-     * be in the same account as the metric stream.</p>
+     * <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this
+     * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
+     * exist and must be in the same account as the metric stream.</p>
      */
     inline PutMetricStreamRequest& WithFirehoseArn(const char* value) { SetFirehoseArn(value); return *this;}
 
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -304,8 +304,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -313,8 +313,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -322,8 +322,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -331,8 +331,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -340,8 +340,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -349,8 +349,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -358,8 +358,8 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that this metric stream will use to access Amazon
-     * Kinesis Firehose resources. This IAM role must already exist and must be in the
-     * same account as the metric stream. This IAM role must include the following
+     * Kinesis Data Firehose resources. This IAM role must already exist and must be in
+     * the same account as the metric stream. This IAM role must include the following
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
@@ -556,7 +556,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const{ return m_statisticsConfigurations; }
 
@@ -574,7 +574,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline bool StatisticsConfigurationsHasBeenSet() const { return m_statisticsConfigurationsHasBeenSet; }
 
@@ -592,7 +592,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline void SetStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = value; }
 
@@ -610,7 +610,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline void SetStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = std::move(value); }
 
@@ -628,7 +628,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& WithStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { SetStatisticsConfigurations(value); return *this;}
 
@@ -646,7 +646,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& WithStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { SetStatisticsConfigurations(std::move(value)); return *this;}
 
@@ -664,7 +664,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& AddStatisticsConfigurations(const MetricStreamStatisticsConfiguration& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(value); return *this; }
 
@@ -682,35 +682,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is
      * <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-     * p99.9 and so on.</p>
+     * p99.9, and so on.</p>
      */
     inline PutMetricStreamRequest& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<MetricStreamFilter> m_includeFilters;
-    bool m_includeFiltersHasBeenSet;
+    bool m_includeFiltersHasBeenSet = false;
 
     Aws::Vector<MetricStreamFilter> m_excludeFilters;
-    bool m_excludeFiltersHasBeenSet;
+    bool m_excludeFiltersHasBeenSet = false;
 
     Aws::String m_firehoseArn;
-    bool m_firehoseArnHasBeenSet;
+    bool m_firehoseArnHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MetricStreamOutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
-    bool m_statisticsConfigurationsHasBeenSet;
+    bool m_statisticsConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

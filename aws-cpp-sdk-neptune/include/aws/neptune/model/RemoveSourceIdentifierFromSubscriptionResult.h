@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API RemoveSourceIdentifierFromSubscriptionResult
+  class RemoveSourceIdentifierFromSubscriptionResult
   {
   public:
-    RemoveSourceIdentifierFromSubscriptionResult();
-    RemoveSourceIdentifierFromSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveSourceIdentifierFromSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API RemoveSourceIdentifierFromSubscriptionResult();
+    AWS_NEPTUNE_API RemoveSourceIdentifierFromSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API RemoveSourceIdentifierFromSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

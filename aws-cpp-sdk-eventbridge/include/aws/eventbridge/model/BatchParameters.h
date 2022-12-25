@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/BatchParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API BatchParameters
+  class BatchParameters
   {
   public:
-    BatchParameters();
-    BatchParameters(Aws::Utils::Json::JsonView jsonValue);
-    BatchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API BatchParameters();
+    AWS_EVENTBRIDGE_API BatchParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API BatchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,16 +238,16 @@ namespace Model
   private:
 
     Aws::String m_jobDefinition;
-    bool m_jobDefinitionHasBeenSet;
+    bool m_jobDefinitionHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     BatchArrayProperties m_arrayProperties;
-    bool m_arrayPropertiesHasBeenSet;
+    bool m_arrayPropertiesHasBeenSet = false;
 
     BatchRetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaVersionErrorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SchemaVersionErrorItem
+  class SchemaVersionErrorItem
   {
   public:
-    SchemaVersionErrorItem();
-    SchemaVersionErrorItem(Aws::Utils::Json::JsonView jsonValue);
-    SchemaVersionErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SchemaVersionErrorItem();
+    AWS_GLUE_API SchemaVersionErrorItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SchemaVersionErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

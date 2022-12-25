@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API DescribeTestCasesRequest : public CodeBuildRequest
+  class DescribeTestCasesRequest : public CodeBuildRequest
   {
   public:
-    DescribeTestCasesRequest();
+    AWS_CODEBUILD_API DescribeTestCasesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeTestCases"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_reportArn;
-    bool m_reportArnHasBeenSet;
+    bool m_reportArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     TestCaseFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

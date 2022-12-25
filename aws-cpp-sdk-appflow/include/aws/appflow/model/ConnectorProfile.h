@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorProfile
+  class ConnectorProfile
   {
   public:
-    ConnectorProfile();
-    ConnectorProfile(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorProfile();
+    AWS_APPFLOW_API ConnectorProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -407,34 +407,34 @@ namespace Model
   private:
 
     Aws::String m_connectorProfileArn;
-    bool m_connectorProfileArnHasBeenSet;
+    bool m_connectorProfileArnHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorLabel;
-    bool m_connectorLabelHasBeenSet;
+    bool m_connectorLabelHasBeenSet = false;
 
     ConnectionMode m_connectionMode;
-    bool m_connectionModeHasBeenSet;
+    bool m_connectionModeHasBeenSet = false;
 
     Aws::String m_credentialsArn;
-    bool m_credentialsArnHasBeenSet;
+    bool m_credentialsArnHasBeenSet = false;
 
     ConnectorProfileProperties m_connectorProfileProperties;
-    bool m_connectorProfilePropertiesHasBeenSet;
+    bool m_connectorProfilePropertiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     PrivateConnectionProvisioningState m_privateConnectionProvisioningState;
-    bool m_privateConnectionProvisioningStateHasBeenSet;
+    bool m_privateConnectionProvisioningStateHasBeenSet = false;
   };
 
 } // namespace Model

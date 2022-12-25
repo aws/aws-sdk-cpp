@@ -34,7 +34,10 @@ SharePointConfiguration::SharePointConfiguration() :
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
     m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
+    m_sslCertificateS3PathHasBeenSet(false),
+    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,7 +57,10 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
     m_disableLocalGroupsHasBeenSet(false),
-    m_sslCertificateS3PathHasBeenSet(false)
+    m_sslCertificateS3PathHasBeenSet(false),
+    m_authenticationType(SharePointOnlineAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,7 +76,7 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Urls"))
   {
-    Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
+    Aws::Utils::Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
     for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());
@@ -101,7 +107,7 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -111,7 +117,7 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -128,7 +134,7 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FieldMappings"))
   {
-    Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
+    Aws::Utils::Array<JsonView> fieldMappingsJsonList = jsonValue.GetArray("FieldMappings");
     for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
     {
       m_fieldMappings.push_back(fieldMappingsJsonList[fieldMappingsIndex].AsObject());
@@ -157,6 +163,20 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_sslCertificateS3PathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = SharePointOnlineAuthenticationTypeMapper::GetSharePointOnlineAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,7 +191,7 @@ JsonValue SharePointConfiguration::Jsonize() const
 
   if(m_urlsHasBeenSet)
   {
-   Array<JsonValue> urlsJsonList(m_urls.size());
+   Aws::Utils::Array<JsonValue> urlsJsonList(m_urls.size());
    for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
    {
      urlsJsonList[urlsIndex].AsString(m_urls[urlsIndex]);
@@ -200,7 +220,7 @@ JsonValue SharePointConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -211,7 +231,7 @@ JsonValue SharePointConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);
@@ -228,7 +248,7 @@ JsonValue SharePointConfiguration::Jsonize() const
 
   if(m_fieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
+   Aws::Utils::Array<JsonValue> fieldMappingsJsonList(m_fieldMappings.size());
    for(unsigned fieldMappingsIndex = 0; fieldMappingsIndex < fieldMappingsJsonList.GetLength(); ++fieldMappingsIndex)
    {
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
@@ -252,6 +272,17 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_sslCertificateS3PathHasBeenSet)
   {
    payload.WithObject("SslCertificateS3Path", m_sslCertificateS3Path.Jsonize());
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", SharePointOnlineAuthenticationTypeMapper::GetNameForSharePointOnlineAuthenticationType(m_authenticationType));
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProxyConfiguration", m_proxyConfiguration.Jsonize());
 
   }
 

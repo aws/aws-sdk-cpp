@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentComponentUpdatePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy
+  class DeploymentComponentUpdatePolicy
   {
   public:
-    DeploymentComponentUpdatePolicy();
-    DeploymentComponentUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentComponentUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy();
+    AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API DeploymentComponentUpdatePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,10 +183,10 @@ namespace Model
   private:
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     DeploymentComponentUpdatePolicyAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

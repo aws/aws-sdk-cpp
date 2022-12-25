@@ -27,18 +27,18 @@ namespace Model
    * <p>The deployment controller to use for the service. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-   * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+   * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeploymentController">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API DeploymentController
+  class DeploymentController
   {
   public:
-    DeploymentController();
-    DeploymentController(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentController& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API DeploymentController();
+    AWS_ECS_API DeploymentController(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API DeploymentController& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,7 +152,7 @@ namespace Model
   private:
 
     DeploymentControllerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecutionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionExecutionOutput
+  class ActionExecutionOutput
   {
   public:
-    ActionExecutionOutput();
-    ActionExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
-    ActionExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionExecutionOutput();
+    AWS_CODEPIPELINE_API ActionExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,13 +209,13 @@ namespace Model
   private:
 
     Aws::Vector<ArtifactDetail> m_outputArtifacts;
-    bool m_outputArtifactsHasBeenSet;
+    bool m_outputArtifactsHasBeenSet = false;
 
     ActionExecutionResult m_executionResult;
-    bool m_executionResultHasBeenSet;
+    bool m_executionResultHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_outputVariables;
-    bool m_outputVariablesHasBeenSet;
+    bool m_outputVariablesHasBeenSet = false;
   };
 
 } // namespace Model

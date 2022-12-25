@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CertificateValidationRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API CertificateValidationRecord
+  class CertificateValidationRecord
   {
   public:
-    CertificateValidationRecord();
-    CertificateValidationRecord(Aws::Utils::Json::JsonView jsonValue);
-    CertificateValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API CertificateValidationRecord();
+    AWS_APPRUNNER_API CertificateValidationRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API CertificateValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     CertificateValidationRecordStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

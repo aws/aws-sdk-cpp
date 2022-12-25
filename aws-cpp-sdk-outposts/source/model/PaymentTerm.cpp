@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
+        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
 
 
         PaymentTerm GetPaymentTermForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == THREE_YEARS_HASH)
           {
             return PaymentTerm::THREE_YEARS;
+          }
+          else if (hashCode == ONE_YEAR_HASH)
+          {
+            return PaymentTerm::ONE_YEAR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case PaymentTerm::THREE_YEARS:
             return "THREE_YEARS";
+          case PaymentTerm::ONE_YEAR:
+            return "ONE_YEAR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

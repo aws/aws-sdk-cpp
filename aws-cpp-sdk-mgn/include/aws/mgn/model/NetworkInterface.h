@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API NetworkInterface();
+    AWS_MGN_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ips;
-    bool m_ipsHasBeenSet;
+    bool m_ipsHasBeenSet = false;
 
     bool m_isPrimary;
-    bool m_isPrimaryHasBeenSet;
+    bool m_isPrimaryHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
   };
 
 } // namespace Model

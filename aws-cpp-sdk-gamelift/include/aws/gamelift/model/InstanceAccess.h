@@ -26,18 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>Information required to remotely connect to a fleet instance. Access is
-   * requested by calling <a>GetInstanceAccess</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Information required to remotely connect to a fleet instance. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API InstanceAccess
+  class InstanceAccess
   {
   public:
-    InstanceAccess();
-    InstanceAccess(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API InstanceAccess();
+    AWS_GAMELIFT_API InstanceAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API InstanceAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     InstanceCredentials m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
   };
 
 } // namespace Model

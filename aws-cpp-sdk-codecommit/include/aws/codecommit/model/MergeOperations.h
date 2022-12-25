@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeOperations">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API MergeOperations
+  class MergeOperations
   {
   public:
-    MergeOperations();
-    MergeOperations(Aws::Utils::Json::JsonView jsonValue);
-    MergeOperations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API MergeOperations();
+    AWS_CODECOMMIT_API MergeOperations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API MergeOperations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ChangeTypeEnum m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ChangeTypeEnum m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

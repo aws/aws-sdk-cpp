@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/TriggerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API TriggerDetails
+  class TriggerDetails
   {
   public:
-    TriggerDetails();
-    TriggerDetails(Aws::Utils::Json::JsonView jsonValue);
-    TriggerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API TriggerDetails();
+    AWS_SSMINCIDENTS_API TriggerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API TriggerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_rawData;
-    bool m_rawDataHasBeenSet;
+    bool m_rawDataHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_triggerArn;
-    bool m_triggerArnHasBeenSet;
+    bool m_triggerArnHasBeenSet = false;
   };
 
 } // namespace Model

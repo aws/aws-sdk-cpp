@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceTargetDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ResourceTargetDefinition
+  class ResourceTargetDefinition
   {
   public:
-    ResourceTargetDefinition();
-    ResourceTargetDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTargetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ResourceTargetDefinition();
+    AWS_SERVICECATALOG_API ResourceTargetDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ResourceTargetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     ResourceAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RequiresRecreation m_requiresRecreation;
-    bool m_requiresRecreationHasBeenSet;
+    bool m_requiresRecreationHasBeenSet = false;
   };
 
 } // namespace Model

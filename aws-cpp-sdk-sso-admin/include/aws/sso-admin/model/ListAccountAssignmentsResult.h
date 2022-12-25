@@ -26,53 +26,53 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API ListAccountAssignmentsResult
+  class ListAccountAssignmentsResult
   {
   public:
-    ListAccountAssignmentsResult();
-    ListAccountAssignmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAccountAssignmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListAccountAssignmentsResult();
+    AWS_SSOADMIN_API ListAccountAssignmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListAccountAssignmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline const Aws::Vector<AccountAssignment>& GetAccountAssignments() const{ return m_accountAssignments; }
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline void SetAccountAssignments(const Aws::Vector<AccountAssignment>& value) { m_accountAssignments = value; }
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline void SetAccountAssignments(Aws::Vector<AccountAssignment>&& value) { m_accountAssignments = std::move(value); }
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline ListAccountAssignmentsResult& WithAccountAssignments(const Aws::Vector<AccountAssignment>& value) { SetAccountAssignments(value); return *this;}
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline ListAccountAssignmentsResult& WithAccountAssignments(Aws::Vector<AccountAssignment>&& value) { SetAccountAssignments(std::move(value)); return *this;}
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline ListAccountAssignmentsResult& AddAccountAssignments(const AccountAssignment& value) { m_accountAssignments.push_back(value); return *this; }
 
     /**
-     * <p>The list of assignments that match the input Amazon Web Services account and
-     * permission set.</p>
+     * <p>The list of assignments that match the input AWS account and permission
+     * set.</p>
      */
     inline ListAccountAssignmentsResult& AddAccountAssignments(AccountAssignment&& value) { m_accountAssignments.push_back(std::move(value)); return *this; }
 

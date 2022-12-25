@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/StorageRuleType">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API StorageRuleType
+  class StorageRuleType
   {
   public:
-    StorageRuleType();
-    StorageRuleType(Aws::Utils::Json::JsonView jsonValue);
-    StorageRuleType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API StorageRuleType();
+    AWS_WORKDOCS_API StorageRuleType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API StorageRuleType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     long long m_storageAllocatedInBytes;
-    bool m_storageAllocatedInBytesHasBeenSet;
+    bool m_storageAllocatedInBytesHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

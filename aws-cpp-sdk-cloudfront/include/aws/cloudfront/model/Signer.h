@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Signer">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Signer
+  class Signer
   {
   public:
-    Signer();
-    Signer(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Signer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Signer();
+    AWS_CLOUDFRONT_API Signer(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Signer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_awsAccountNumber;
-    bool m_awsAccountNumberHasBeenSet;
+    bool m_awsAccountNumberHasBeenSet = false;
 
     KeyPairIds m_keyPairIds;
-    bool m_keyPairIdsHasBeenSet;
+    bool m_keyPairIdsHasBeenSet = false;
   };
 
 } // namespace Model

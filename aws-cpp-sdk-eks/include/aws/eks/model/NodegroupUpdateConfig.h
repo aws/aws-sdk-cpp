@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupUpdateConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API NodegroupUpdateConfig
+  class NodegroupUpdateConfig
   {
   public:
-    NodegroupUpdateConfig();
-    NodegroupUpdateConfig(Aws::Utils::Json::JsonView jsonValue);
-    NodegroupUpdateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API NodegroupUpdateConfig();
+    AWS_EKS_API NodegroupUpdateConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API NodegroupUpdateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,10 +99,10 @@ namespace Model
   private:
 
     int m_maxUnavailable;
-    bool m_maxUnavailableHasBeenSet;
+    bool m_maxUnavailableHasBeenSet = false;
 
     int m_maxUnavailablePercentage;
-    bool m_maxUnavailablePercentageHasBeenSet;
+    bool m_maxUnavailablePercentageHasBeenSet = false;
   };
 
 } // namespace Model

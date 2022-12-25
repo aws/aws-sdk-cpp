@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Output();
+    AWS_MEDIALIVE_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_audioDescriptionNames;
-    bool m_audioDescriptionNamesHasBeenSet;
+    bool m_audioDescriptionNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_captionDescriptionNames;
-    bool m_captionDescriptionNamesHasBeenSet;
+    bool m_captionDescriptionNamesHasBeenSet = false;
 
     Aws::String m_outputName;
-    bool m_outputNameHasBeenSet;
+    bool m_outputNameHasBeenSet = false;
 
     OutputSettings m_outputSettings;
-    bool m_outputSettingsHasBeenSet;
+    bool m_outputSettingsHasBeenSet = false;
 
     Aws::String m_videoDescriptionName;
-    bool m_videoDescriptionNameHasBeenSet;
+    bool m_videoDescriptionNameHasBeenSet = false;
   };
 
 } // namespace Model

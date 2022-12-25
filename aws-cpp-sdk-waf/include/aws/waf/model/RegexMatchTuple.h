@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RegexMatchTuple">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RegexMatchTuple
+  class RegexMatchTuple
   {
   public:
-    RegexMatchTuple();
-    RegexMatchTuple(Aws::Utils::Json::JsonView jsonValue);
-    RegexMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RegexMatchTuple();
+    AWS_WAF_API RegexMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RegexMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -423,13 +423,13 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     TextTransformation m_textTransformation;
-    bool m_textTransformationHasBeenSet;
+    bool m_textTransformationHasBeenSet = false;
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
   };
 
 } // namespace Model

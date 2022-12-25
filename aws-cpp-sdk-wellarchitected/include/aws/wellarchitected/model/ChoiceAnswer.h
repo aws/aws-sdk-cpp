@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ChoiceAnswer">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ChoiceAnswer
+  class ChoiceAnswer
   {
   public:
-    ChoiceAnswer();
-    ChoiceAnswer(Aws::Utils::Json::JsonView jsonValue);
-    ChoiceAnswer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API ChoiceAnswer();
+    AWS_WELLARCHITECTED_API ChoiceAnswer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API ChoiceAnswer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -170,16 +170,16 @@ namespace Model
   private:
 
     Aws::String m_choiceId;
-    bool m_choiceIdHasBeenSet;
+    bool m_choiceIdHasBeenSet = false;
 
     ChoiceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ChoiceReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
   };
 
 } // namespace Model

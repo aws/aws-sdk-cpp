@@ -29,17 +29,17 @@ namespace Model
 
   /**
    * <p>Information about a phone number that has been claimed to your Amazon Connect
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * instance or traffic distribution group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimedPhoneNumberSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ClaimedPhoneNumberSummary
+  class ClaimedPhoneNumberSummary
   {
   public:
-    ClaimedPhoneNumberSummary();
-    ClaimedPhoneNumberSummary(Aws::Utils::Json::JsonView jsonValue);
-    ClaimedPhoneNumberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ClaimedPhoneNumberSummary();
+    AWS_CONNECT_API ClaimedPhoneNumberSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ClaimedPhoneNumberSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,178 +277,329 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline const PhoneNumberStatus& GetPhoneNumberStatus() const{ return m_phoneNumberStatus; }
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline bool PhoneNumberStatusHasBeenSet() const { return m_phoneNumberStatusHasBeenSet; }
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline void SetPhoneNumberStatus(const PhoneNumberStatus& value) { m_phoneNumberStatusHasBeenSet = true; m_phoneNumberStatus = value; }
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline void SetPhoneNumberStatus(PhoneNumberStatus&& value) { m_phoneNumberStatusHasBeenSet = true; m_phoneNumberStatus = std::move(value); }
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline ClaimedPhoneNumberSummary& WithPhoneNumberStatus(const PhoneNumberStatus& value) { SetPhoneNumberStatus(value); return *this;}
 
     /**
-     * <p>The status of the phone number.</p>
+     * <p>The status of the phone number.</p> <ul> <li> <p> <code>CLAIMED</code> means
+     * the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation succeeded.</p> </li> <li> <p> <code>IN_PROGRESS</code> means a <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation is still in progress and has not yet completed. You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+     * at a later time to verify if the previous operation has completed.</p> </li>
+     * <li> <p> <code>FAILED</code> indicates that the previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation has failed. It will include a message indicating the failure reason. A
+     * common reason for a failure may be that the <code>TargetArn</code> value you are
+     * claiming or updating a phone number to has reached its limit of total claimed
+     * numbers. If you received a <code>FAILED</code> status from a
+     * <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the
+     * phone number before the number is released back to the inventory for other
+     * customers to claim.</p> </li> </ul>  <p>You will not be billed for the
+     * phone number during the 1-day period if number claiming fails. </p> 
      */
     inline ClaimedPhoneNumberSummary& WithPhoneNumberStatus(PhoneNumberStatus&& value) { SetPhoneNumberStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_phoneNumberArn;
-    bool m_phoneNumberArnHasBeenSet;
+    bool m_phoneNumberArnHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
 
     Aws::String m_phoneNumberDescription;
-    bool m_phoneNumberDescriptionHasBeenSet;
+    bool m_phoneNumberDescriptionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PhoneNumberStatus m_phoneNumberStatus;
-    bool m_phoneNumberStatusHasBeenSet;
+    bool m_phoneNumberStatusHasBeenSet = false;
   };
 
 } // namespace Model

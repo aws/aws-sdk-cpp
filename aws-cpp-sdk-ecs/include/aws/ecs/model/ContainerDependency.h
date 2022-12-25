@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDependency">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ContainerDependency
+  class ContainerDependency
   {
   public:
-    ContainerDependency();
-    ContainerDependency(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ContainerDependency();
+    AWS_ECS_API ContainerDependency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ContainerDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,10 +215,10 @@ namespace Model
   private:
 
     Aws::String m_containerName;
-    bool m_containerNameHasBeenSet;
+    bool m_containerNameHasBeenSet = false;
 
     ContainerCondition m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
   };
 
 } // namespace Model

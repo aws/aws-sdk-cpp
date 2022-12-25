@@ -69,7 +69,7 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludedPages"))
   {
-    Array<JsonView> excludedPagesJsonList = jsonValue.GetArray("ExcludedPages");
+    Aws::Utils::Array<JsonView> excludedPagesJsonList = jsonValue.GetArray("ExcludedPages");
     for(unsigned excludedPagesIndex = 0; excludedPagesIndex < excludedPagesJsonList.GetLength(); ++excludedPagesIndex)
     {
       m_excludedPages.push_back(excludedPagesJsonList[excludedPagesIndex].AsString());
@@ -79,7 +79,7 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FavoritePages"))
   {
-    Array<JsonView> favoritePagesJsonList = jsonValue.GetArray("FavoritePages");
+    Aws::Utils::Array<JsonView> favoritePagesJsonList = jsonValue.GetArray("FavoritePages");
     for(unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex)
     {
       m_favoritePages.push_back(favoritePagesJsonList[favoritePagesIndex].AsString());
@@ -103,7 +103,7 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IncludedPages"))
   {
-    Array<JsonView> includedPagesJsonList = jsonValue.GetArray("IncludedPages");
+    Aws::Utils::Array<JsonView> includedPagesJsonList = jsonValue.GetArray("IncludedPages");
     for(unsigned includedPagesIndex = 0; includedPagesIndex < includedPagesJsonList.GetLength(); ++includedPagesIndex)
     {
       m_includedPages.push_back(includedPagesJsonList[includedPagesIndex].AsString());
@@ -120,7 +120,7 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Telemetries"))
   {
-    Array<JsonView> telemetriesJsonList = jsonValue.GetArray("Telemetries");
+    Aws::Utils::Array<JsonView> telemetriesJsonList = jsonValue.GetArray("Telemetries");
     for(unsigned telemetriesIndex = 0; telemetriesIndex < telemetriesJsonList.GetLength(); ++telemetriesIndex)
     {
       m_telemetries.push_back(TelemetryMapper::GetTelemetryForName(telemetriesJsonList[telemetriesIndex].AsString()));
@@ -149,7 +149,7 @@ JsonValue AppMonitorConfiguration::Jsonize() const
 
   if(m_excludedPagesHasBeenSet)
   {
-   Array<JsonValue> excludedPagesJsonList(m_excludedPages.size());
+   Aws::Utils::Array<JsonValue> excludedPagesJsonList(m_excludedPages.size());
    for(unsigned excludedPagesIndex = 0; excludedPagesIndex < excludedPagesJsonList.GetLength(); ++excludedPagesIndex)
    {
      excludedPagesJsonList[excludedPagesIndex].AsString(m_excludedPages[excludedPagesIndex]);
@@ -160,7 +160,7 @@ JsonValue AppMonitorConfiguration::Jsonize() const
 
   if(m_favoritePagesHasBeenSet)
   {
-   Array<JsonValue> favoritePagesJsonList(m_favoritePages.size());
+   Aws::Utils::Array<JsonValue> favoritePagesJsonList(m_favoritePages.size());
    for(unsigned favoritePagesIndex = 0; favoritePagesIndex < favoritePagesJsonList.GetLength(); ++favoritePagesIndex)
    {
      favoritePagesJsonList[favoritePagesIndex].AsString(m_favoritePages[favoritePagesIndex]);
@@ -183,7 +183,7 @@ JsonValue AppMonitorConfiguration::Jsonize() const
 
   if(m_includedPagesHasBeenSet)
   {
-   Array<JsonValue> includedPagesJsonList(m_includedPages.size());
+   Aws::Utils::Array<JsonValue> includedPagesJsonList(m_includedPages.size());
    for(unsigned includedPagesIndex = 0; includedPagesIndex < includedPagesJsonList.GetLength(); ++includedPagesIndex)
    {
      includedPagesJsonList[includedPagesIndex].AsString(m_includedPages[includedPagesIndex]);
@@ -200,7 +200,7 @@ JsonValue AppMonitorConfiguration::Jsonize() const
 
   if(m_telemetriesHasBeenSet)
   {
-   Array<JsonValue> telemetriesJsonList(m_telemetries.size());
+   Aws::Utils::Array<JsonValue> telemetriesJsonList(m_telemetries.size());
    for(unsigned telemetriesIndex = 0; telemetriesIndex < telemetriesJsonList.GetLength(); ++telemetriesIndex)
    {
      telemetriesJsonList[telemetriesIndex].AsString(TelemetryMapper::GetNameForTelemetry(m_telemetries[telemetriesIndex]));

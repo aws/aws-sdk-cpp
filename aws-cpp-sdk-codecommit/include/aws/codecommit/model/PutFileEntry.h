@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFileEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PutFileEntry
+  class PutFileEntry
   {
   public:
-    PutFileEntry();
-    PutFileEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PutFileEntry();
+    AWS_CODECOMMIT_API PutFileEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PutFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     FileModeTypeEnum m_fileMode;
-    bool m_fileModeHasBeenSet;
+    bool m_fileModeHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_fileContent;
-    bool m_fileContentHasBeenSet;
+    bool m_fileContentHasBeenSet = false;
 
     SourceFileSpecifier m_sourceFile;
-    bool m_sourceFileHasBeenSet;
+    bool m_sourceFileHasBeenSet = false;
   };
 
 } // namespace Model

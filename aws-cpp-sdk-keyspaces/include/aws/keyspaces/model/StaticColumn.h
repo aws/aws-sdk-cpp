@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/StaticColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API StaticColumn
+  class StaticColumn
   {
   public:
-    StaticColumn();
-    StaticColumn(Aws::Utils::Json::JsonView jsonValue);
-    StaticColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API StaticColumn();
+    AWS_KEYSPACES_API StaticColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API StaticColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

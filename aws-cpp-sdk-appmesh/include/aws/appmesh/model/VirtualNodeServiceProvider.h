@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeServiceProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeServiceProvider
+  class VirtualNodeServiceProvider
   {
   public:
-    VirtualNodeServiceProvider();
-    VirtualNodeServiceProvider(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeServiceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeServiceProvider();
+    AWS_APPMESH_API VirtualNodeServiceProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeServiceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_virtualNodeName;
-    bool m_virtualNodeNameHasBeenSet;
+    bool m_virtualNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

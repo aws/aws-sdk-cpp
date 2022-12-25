@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ImportJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ImportJobRequest
+  class ImportJobRequest
   {
   public:
-    ImportJobRequest();
-    ImportJobRequest(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ImportJobRequest();
+    AWS_PINPOINT_API ImportJobRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ImportJobRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -471,28 +471,28 @@ namespace Model
   private:
 
     bool m_defineSegment;
-    bool m_defineSegmentHasBeenSet;
+    bool m_defineSegmentHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     bool m_registerEndpoints;
-    bool m_registerEndpointsHasBeenSet;
+    bool m_registerEndpointsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_s3Url;
-    bool m_s3UrlHasBeenSet;
+    bool m_s3UrlHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     Aws::String m_segmentName;
-    bool m_segmentNameHasBeenSet;
+    bool m_segmentNameHasBeenSet = false;
   };
 
 } // namespace Model

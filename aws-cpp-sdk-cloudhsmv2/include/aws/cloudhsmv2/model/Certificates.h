@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Certificates">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Certificates
+  class Certificates
   {
   public:
-    Certificates();
-    Certificates(Aws::Utils::Json::JsonView jsonValue);
-    Certificates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Certificates();
+    AWS_CLOUDHSMV2_API Certificates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Certificates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::String m_clusterCsr;
-    bool m_clusterCsrHasBeenSet;
+    bool m_clusterCsrHasBeenSet = false;
 
     Aws::String m_hsmCertificate;
-    bool m_hsmCertificateHasBeenSet;
+    bool m_hsmCertificateHasBeenSet = false;
 
     Aws::String m_awsHardwareCertificate;
-    bool m_awsHardwareCertificateHasBeenSet;
+    bool m_awsHardwareCertificateHasBeenSet = false;
 
     Aws::String m_manufacturerHardwareCertificate;
-    bool m_manufacturerHardwareCertificateHasBeenSet;
+    bool m_manufacturerHardwareCertificateHasBeenSet = false;
 
     Aws::String m_clusterCertificate;
-    bool m_clusterCertificateHasBeenSet;
+    bool m_clusterCertificateHasBeenSet = false;
   };
 
 } // namespace Model

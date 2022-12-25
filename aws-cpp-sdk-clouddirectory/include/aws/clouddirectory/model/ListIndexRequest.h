@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDDIRECTORY_API ListIndexRequest : public CloudDirectoryRequest
+  class ListIndexRequest : public CloudDirectoryRequest
   {
   public:
-    ListIndexRequest();
+    AWS_CLOUDDIRECTORY_API ListIndexRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListIndex"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDDIRECTORY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
-    bool m_rangesOnIndexedValuesHasBeenSet;
+    bool m_rangesOnIndexedValuesHasBeenSet = false;
 
     ObjectReference m_indexReference;
-    bool m_indexReferenceHasBeenSet;
+    bool m_indexReferenceHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ConsistencyLevel m_consistencyLevel;
-    bool m_consistencyLevelHasBeenSet;
+    bool m_consistencyLevelHasBeenSet = false;
   };
 
 } // namespace Model

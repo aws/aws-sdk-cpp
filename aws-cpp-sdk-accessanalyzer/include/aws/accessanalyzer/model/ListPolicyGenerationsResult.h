@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/PolicyGeneration.h>
 #include <utility>
 
@@ -26,48 +26,12 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  class AWS_ACCESSANALYZER_API ListPolicyGenerationsResult
+  class ListPolicyGenerationsResult
   {
   public:
-    ListPolicyGenerationsResult();
-    ListPolicyGenerationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPolicyGenerationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline ListPolicyGenerationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline ListPolicyGenerationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
-    inline ListPolicyGenerationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    AWS_ACCESSANALYZER_API ListPolicyGenerationsResult();
+    AWS_ACCESSANALYZER_API ListPolicyGenerationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListPolicyGenerationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -112,11 +76,47 @@ namespace Model
      */
     inline ListPolicyGenerationsResult& AddPolicyGenerations(PolicyGeneration&& value) { m_policyGenerations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline ListPolicyGenerationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline ListPolicyGenerationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token used for pagination of results returned.</p>
+     */
+    inline ListPolicyGenerationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<PolicyGeneration> m_policyGenerations;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

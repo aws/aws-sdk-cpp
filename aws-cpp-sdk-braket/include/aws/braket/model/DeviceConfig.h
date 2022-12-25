@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeviceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API DeviceConfig
+  class DeviceConfig
   {
   public:
-    DeviceConfig();
-    DeviceConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeviceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API DeviceConfig();
+    AWS_BRAKET_API DeviceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API DeviceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CustomerAgreement">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API CustomerAgreement
+  class CustomerAgreement
   {
   public:
-    CustomerAgreement();
-    CustomerAgreement(Aws::Utils::Json::JsonView jsonValue);
-    CustomerAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API CustomerAgreement();
+    AWS_DIRECTCONNECT_API CustomerAgreement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API CustomerAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_agreementName;
-    bool m_agreementNameHasBeenSet;
+    bool m_agreementNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

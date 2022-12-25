@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API DescribeLifecycleHooksRequest : public AutoScalingRequest
+  class DescribeLifecycleHooksRequest : public AutoScalingRequest
   {
   public:
-    DescribeLifecycleHooksRequest();
+    AWS_AUTOSCALING_API DescribeLifecycleHooksRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLifecycleHooks"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -79,55 +79,55 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline bool LifecycleHookNamesHasBeenSet() const { return m_lifecycleHookNamesHasBeenSet; }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline void SetLifecycleHookNames(const Aws::Vector<Aws::String>& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = value; }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline void SetLifecycleHookNames(Aws::Vector<Aws::String>&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = std::move(value); }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(Aws::Vector<Aws::String>&& value) { SetLifecycleHookNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const Aws::String& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(Aws::String&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const char* value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifecycleHookNames;
-    bool m_lifecycleHookNamesHasBeenSet;
+    bool m_lifecycleHookNamesHasBeenSet = false;
   };
 
 } // namespace Model

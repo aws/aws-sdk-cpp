@@ -19,14 +19,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessionsInput">AWS
-   * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CreatePlayerSessionsRequest : public GameLiftRequest
+  class CreatePlayerSessionsRequest : public GameLiftRequest
   {
   public:
-    CreatePlayerSessionsRequest();
+    AWS_GAMELIFT_API CreatePlayerSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePlayerSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -246,13 +243,13 @@ namespace Model
   private:
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_playerIds;
-    bool m_playerIdsHasBeenSet;
+    bool m_playerIdsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_playerDataMap;
-    bool m_playerDataMapHasBeenSet;
+    bool m_playerDataMapHasBeenSet = false;
   };
 
 } // namespace Model

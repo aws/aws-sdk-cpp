@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Patch">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Patch
+  class Patch
   {
   public:
-    Patch();
-    Patch(Aws::Utils::Json::JsonView jsonValue);
-    Patch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Patch();
+    AWS_SSM_API Patch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Patch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1156,73 +1156,73 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_releaseDate;
-    bool m_releaseDateHasBeenSet;
+    bool m_releaseDateHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_contentUrl;
-    bool m_contentUrlHasBeenSet;
+    bool m_contentUrlHasBeenSet = false;
 
     Aws::String m_vendor;
-    bool m_vendorHasBeenSet;
+    bool m_vendorHasBeenSet = false;
 
     Aws::String m_productFamily;
-    bool m_productFamilyHasBeenSet;
+    bool m_productFamilyHasBeenSet = false;
 
     Aws::String m_product;
-    bool m_productHasBeenSet;
+    bool m_productHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_msrcSeverity;
-    bool m_msrcSeverityHasBeenSet;
+    bool m_msrcSeverityHasBeenSet = false;
 
     Aws::String m_kbNumber;
-    bool m_kbNumberHasBeenSet;
+    bool m_kbNumberHasBeenSet = false;
 
     Aws::String m_msrcNumber;
-    bool m_msrcNumberHasBeenSet;
+    bool m_msrcNumberHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_advisoryIds;
-    bool m_advisoryIdsHasBeenSet;
+    bool m_advisoryIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bugzillaIds;
-    bool m_bugzillaIdsHasBeenSet;
+    bool m_bugzillaIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cVEIds;
-    bool m_cVEIdsHasBeenSet;
+    bool m_cVEIdsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_epoch;
-    bool m_epochHasBeenSet;
+    bool m_epochHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_release;
-    bool m_releaseHasBeenSet;
+    bool m_releaseHasBeenSet = false;
 
     Aws::String m_arch;
-    bool m_archHasBeenSet;
+    bool m_archHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
   };
 
 } // namespace Model

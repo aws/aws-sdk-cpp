@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ScalingTrigger
+  class ScalingTrigger
   {
   public:
-    ScalingTrigger();
-    ScalingTrigger(Aws::Utils::Json::JsonView jsonValue);
-    ScalingTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ScalingTrigger();
+    AWS_EMR_API ScalingTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ScalingTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     CloudWatchAlarmDefinition m_cloudWatchAlarmDefinition;
-    bool m_cloudWatchAlarmDefinitionHasBeenSet;
+    bool m_cloudWatchAlarmDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

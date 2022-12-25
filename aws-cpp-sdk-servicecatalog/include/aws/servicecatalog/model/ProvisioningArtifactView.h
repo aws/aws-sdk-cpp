@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactView">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisioningArtifactView
+  class ProvisioningArtifactView
   {
   public:
-    ProvisioningArtifactView();
-    ProvisioningArtifactView(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningArtifactView& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisioningArtifactView();
+    AWS_SERVICECATALOG_API ProvisioningArtifactView(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisioningArtifactView& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     ProductViewSummary m_productViewSummary;
-    bool m_productViewSummaryHasBeenSet;
+    bool m_productViewSummaryHasBeenSet = false;
 
     ProvisioningArtifact m_provisioningArtifact;
-    bool m_provisioningArtifactHasBeenSet;
+    bool m_provisioningArtifactHasBeenSet = false;
   };
 
 } // namespace Model

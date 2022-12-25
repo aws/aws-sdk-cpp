@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SUPPORT_API AddAttachmentsToSetRequest : public SupportRequest
+  class AddAttachmentsToSetRequest : public SupportRequest
   {
   public:
-    AddAttachmentsToSetRequest();
+    AWS_SUPPORT_API AddAttachmentsToSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddAttachmentsToSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SUPPORT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_attachmentSetId;
-    bool m_attachmentSetIdHasBeenSet;
+    bool m_attachmentSetIdHasBeenSet = false;
 
     Aws::Vector<Attachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
   };
 
 } // namespace Model

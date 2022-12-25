@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmStatusItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmStatusItem
+  class AlgorithmStatusItem
   {
   public:
-    AlgorithmStatusItem();
-    AlgorithmStatusItem(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmStatusItem();
+    AWS_SAGEMAKER_API AlgorithmStatusItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DetailedAlgorithmStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

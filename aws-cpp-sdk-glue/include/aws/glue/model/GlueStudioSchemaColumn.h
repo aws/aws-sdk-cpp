@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GlueStudioSchemaColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API GlueStudioSchemaColumn
+  class GlueStudioSchemaColumn
   {
   public:
-    GlueStudioSchemaColumn();
-    GlueStudioSchemaColumn(Aws::Utils::Json::JsonView jsonValue);
-    GlueStudioSchemaColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GlueStudioSchemaColumn();
+    AWS_GLUE_API GlueStudioSchemaColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GlueStudioSchemaColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,84 +35,92 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration
+  class DeliveryStreamEncryptionConfiguration
   {
   public:
-    DeliveryStreamEncryptionConfiguration();
-    DeliveryStreamEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeliveryStreamEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration();
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline const Aws::String& GetKeyARN() const{ return m_keyARN; }
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline bool KeyARNHasBeenSet() const { return m_keyARNHasBeenSet; }
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline void SetKeyARN(const Aws::String& value) { m_keyARNHasBeenSet = true; m_keyARN = value; }
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline void SetKeyARN(Aws::String&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::move(value); }
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline void SetKeyARN(const char* value) { m_keyARNHasBeenSet = true; m_keyARN.assign(value); }
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline DeliveryStreamEncryptionConfiguration& WithKeyARN(const Aws::String& value) { SetKeyARN(value); return *this;}
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline DeliveryStreamEncryptionConfiguration& WithKeyARN(Aws::String&& value) { SetKeyARN(std::move(value)); return *this;}
 
     /**
      * <p>If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field
      * contains the ARN of the customer managed CMK. If <code>KeyType</code> is
-     * <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.</p>
+     * <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for
+     * <code>KeyARN</code>.</p>
      */
     inline DeliveryStreamEncryptionConfiguration& WithKeyARN(const char* value) { SetKeyARN(value); return *this;}
 
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -120,8 +128,8 @@ namespace Model
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -129,8 +137,8 @@ namespace Model
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -138,8 +146,8 @@ namespace Model
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -147,8 +155,8 @@ namespace Model
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -156,8 +164,8 @@ namespace Model
 
     /**
      * <p>Indicates the type of customer master key (CMK) that is used for encryption.
-     * The default setting is <code>AWS_OWNED_CMK</code>. For more information about
-     * CMKs, see <a
+     * The default setting is <code>Amazon Web Services_OWNED_CMK</code>. For more
+     * information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys (CMKs)</a>.</p>
      */
@@ -270,16 +278,16 @@ namespace Model
   private:
 
     Aws::String m_keyARN;
-    bool m_keyARNHasBeenSet;
+    bool m_keyARNHasBeenSet = false;
 
     KeyType m_keyType;
-    bool m_keyTypeHasBeenSet;
+    bool m_keyTypeHasBeenSet = false;
 
     DeliveryStreamEncryptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FailureDescription m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

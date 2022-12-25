@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_STORAGEGATEWAY_API UpdateAutomaticTapeCreationPolicyRequest : public StorageGatewayRequest
+  class UpdateAutomaticTapeCreationPolicyRequest : public StorageGatewayRequest
   {
   public:
-    UpdateAutomaticTapeCreationPolicyRequest();
+    AWS_STORAGEGATEWAY_API UpdateAutomaticTapeCreationPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAutomaticTapeCreationPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Vector<AutomaticTapeCreationRule> m_automaticTapeCreationRules;
-    bool m_automaticTapeCreationRulesHasBeenSet;
+    bool m_automaticTapeCreationRulesHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

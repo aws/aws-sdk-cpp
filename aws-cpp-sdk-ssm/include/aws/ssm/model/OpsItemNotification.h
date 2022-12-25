@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemNotification
+  class OpsItemNotification
   {
   public:
-    OpsItemNotification();
-    OpsItemNotification(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemNotification();
+    AWS_SSM_API OpsItemNotification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

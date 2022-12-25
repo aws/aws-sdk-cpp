@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API InventoryRetrievalJobInput
+  class InventoryRetrievalJobInput
   {
   public:
-    InventoryRetrievalJobInput();
-    InventoryRetrievalJobInput(Aws::Utils::Json::JsonView jsonValue);
-    InventoryRetrievalJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API InventoryRetrievalJobInput();
+    AWS_GLACIER_API InventoryRetrievalJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API InventoryRetrievalJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

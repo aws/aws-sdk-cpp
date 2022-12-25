@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingSpecification
+  class TrainingSpecification
   {
   public:
-    TrainingSpecification();
-    TrainingSpecification(Aws::Utils::Json::JsonView jsonValue);
-    TrainingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingSpecification();
+    AWS_SAGEMAKER_API TrainingSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,28 +414,28 @@ namespace Model
   private:
 
     Aws::String m_trainingImage;
-    bool m_trainingImageHasBeenSet;
+    bool m_trainingImageHasBeenSet = false;
 
     Aws::String m_trainingImageDigest;
-    bool m_trainingImageDigestHasBeenSet;
+    bool m_trainingImageDigestHasBeenSet = false;
 
     Aws::Vector<HyperParameterSpecification> m_supportedHyperParameters;
-    bool m_supportedHyperParametersHasBeenSet;
+    bool m_supportedHyperParametersHasBeenSet = false;
 
     Aws::Vector<TrainingInstanceType> m_supportedTrainingInstanceTypes;
-    bool m_supportedTrainingInstanceTypesHasBeenSet;
+    bool m_supportedTrainingInstanceTypesHasBeenSet = false;
 
     bool m_supportsDistributedTraining;
-    bool m_supportsDistributedTrainingHasBeenSet;
+    bool m_supportsDistributedTrainingHasBeenSet = false;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
-    bool m_metricDefinitionsHasBeenSet;
+    bool m_metricDefinitionsHasBeenSet = false;
 
     Aws::Vector<ChannelSpecification> m_trainingChannels;
-    bool m_trainingChannelsHasBeenSet;
+    bool m_trainingChannelsHasBeenSet = false;
 
     Aws::Vector<HyperParameterTuningJobObjective> m_supportedTuningJobObjectiveMetrics;
-    bool m_supportedTuningJobObjectiveMetricsHasBeenSet;
+    bool m_supportedTuningJobObjectiveMetricsHasBeenSet = false;
   };
 
 } // namespace Model

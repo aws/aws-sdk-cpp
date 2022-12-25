@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentFrameworkShareRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API AssessmentFrameworkShareRequest
+  class AssessmentFrameworkShareRequest
   {
   public:
-    AssessmentFrameworkShareRequest();
-    AssessmentFrameworkShareRequest(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentFrameworkShareRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API AssessmentFrameworkShareRequest();
+    AWS_AUDITMANAGER_API AssessmentFrameworkShareRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API AssessmentFrameworkShareRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -593,49 +593,49 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_frameworkId;
-    bool m_frameworkIdHasBeenSet;
+    bool m_frameworkIdHasBeenSet = false;
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkDescription;
-    bool m_frameworkDescriptionHasBeenSet;
+    bool m_frameworkDescriptionHasBeenSet = false;
 
     ShareRequestStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_sourceAccount;
-    bool m_sourceAccountHasBeenSet;
+    bool m_sourceAccountHasBeenSet = false;
 
     Aws::String m_destinationAccount;
-    bool m_destinationAccountHasBeenSet;
+    bool m_destinationAccountHasBeenSet = false;
 
     Aws::String m_destinationRegion;
-    bool m_destinationRegionHasBeenSet;
+    bool m_destinationRegionHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     int m_standardControlsCount;
-    bool m_standardControlsCountHasBeenSet;
+    bool m_standardControlsCountHasBeenSet = false;
 
     int m_customControlsCount;
-    bool m_customControlsCountHasBeenSet;
+    bool m_customControlsCountHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
   };
 
 } // namespace Model

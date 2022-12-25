@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NatGateway">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API NatGateway
+  class NatGateway
   {
   public:
-    NatGateway();
-    NatGateway(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NatGateway& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NatGateway();
+    AWS_EC2_API NatGateway(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NatGateway& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -710,40 +710,40 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deleteTime;
-    bool m_deleteTimeHasBeenSet;
+    bool m_deleteTimeHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
-    bool m_natGatewayAddressesHasBeenSet;
+    bool m_natGatewayAddressesHasBeenSet = false;
 
     Aws::String m_natGatewayId;
-    bool m_natGatewayIdHasBeenSet;
+    bool m_natGatewayIdHasBeenSet = false;
 
     ProvisionedBandwidth m_provisionedBandwidth;
-    bool m_provisionedBandwidthHasBeenSet;
+    bool m_provisionedBandwidthHasBeenSet = false;
 
     NatGatewayState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ConnectivityType m_connectivityType;
-    bool m_connectivityTypeHasBeenSet;
+    bool m_connectivityTypeHasBeenSet = false;
   };
 
 } // namespace Model

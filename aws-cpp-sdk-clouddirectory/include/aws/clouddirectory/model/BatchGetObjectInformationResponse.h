@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetObjectInformationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchGetObjectInformationResponse
+  class BatchGetObjectInformationResponse
   {
   public:
-    BatchGetObjectInformationResponse();
-    BatchGetObjectInformationResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetObjectInformationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchGetObjectInformationResponse();
+    AWS_CLOUDDIRECTORY_API BatchGetObjectInformationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchGetObjectInformationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<SchemaFacet> m_schemaFacets;
-    bool m_schemaFacetsHasBeenSet;
+    bool m_schemaFacetsHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
-    bool m_objectIdentifierHasBeenSet;
+    bool m_objectIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

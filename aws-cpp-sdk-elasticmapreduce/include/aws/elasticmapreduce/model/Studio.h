@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Studio">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API Studio
+  class Studio
   {
   public:
-    Studio();
-    Studio(Aws::Utils::Json::JsonView jsonValue);
-    Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API Studio();
+    AWS_EMR_API Studio(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -804,55 +804,55 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_studioArn;
-    bool m_studioArnHasBeenSet;
+    bool m_studioArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AuthMode m_authMode;
-    bool m_authModeHasBeenSet;
+    bool m_authModeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     Aws::String m_userRole;
-    bool m_userRoleHasBeenSet;
+    bool m_userRoleHasBeenSet = false;
 
     Aws::String m_workspaceSecurityGroupId;
-    bool m_workspaceSecurityGroupIdHasBeenSet;
+    bool m_workspaceSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_engineSecurityGroupId;
-    bool m_engineSecurityGroupIdHasBeenSet;
+    bool m_engineSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_defaultS3Location;
-    bool m_defaultS3LocationHasBeenSet;
+    bool m_defaultS3LocationHasBeenSet = false;
 
     Aws::String m_idpAuthUrl;
-    bool m_idpAuthUrlHasBeenSet;
+    bool m_idpAuthUrlHasBeenSet = false;
 
     Aws::String m_idpRelayStateParameterName;
-    bool m_idpRelayStateParameterNameHasBeenSet;
+    bool m_idpRelayStateParameterNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

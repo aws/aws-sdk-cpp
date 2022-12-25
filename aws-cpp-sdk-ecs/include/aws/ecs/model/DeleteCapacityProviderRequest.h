@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API DeleteCapacityProviderRequest : public ECSRequest
+  class DeleteCapacityProviderRequest : public ECSRequest
   {
   public:
-    DeleteCapacityProviderRequest();
+    AWS_ECS_API DeleteCapacityProviderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCapacityProvider"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_capacityProvider;
-    bool m_capacityProviderHasBeenSet;
+    bool m_capacityProviderHasBeenSet = false;
   };
 
 } // namespace Model

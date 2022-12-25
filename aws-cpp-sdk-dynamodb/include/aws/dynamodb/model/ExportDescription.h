@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ExportDescription
+  class ExportDescription
   {
   public:
-    ExportDescription();
-    ExportDescription(Aws::Utils::Json::JsonView jsonValue);
-    ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ExportDescription();
+    AWS_DYNAMODB_API ExportDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -799,61 +799,61 @@ namespace Model
   private:
 
     Aws::String m_exportArn;
-    bool m_exportArnHasBeenSet;
+    bool m_exportArnHasBeenSet = false;
 
     ExportStatus m_exportStatus;
-    bool m_exportStatusHasBeenSet;
+    bool m_exportStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_exportManifest;
-    bool m_exportManifestHasBeenSet;
+    bool m_exportManifestHasBeenSet = false;
 
     Aws::String m_tableArn;
-    bool m_tableArnHasBeenSet;
+    bool m_tableArnHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_exportTime;
-    bool m_exportTimeHasBeenSet;
+    bool m_exportTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3BucketOwner;
-    bool m_s3BucketOwnerHasBeenSet;
+    bool m_s3BucketOwnerHasBeenSet = false;
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
 
     S3SseAlgorithm m_s3SseAlgorithm;
-    bool m_s3SseAlgorithmHasBeenSet;
+    bool m_s3SseAlgorithmHasBeenSet = false;
 
     Aws::String m_s3SseKmsKeyId;
-    bool m_s3SseKmsKeyIdHasBeenSet;
+    bool m_s3SseKmsKeyIdHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     ExportFormat m_exportFormat;
-    bool m_exportFormatHasBeenSet;
+    bool m_exportFormatHasBeenSet = false;
 
     long long m_billedSizeBytes;
-    bool m_billedSizeBytesHasBeenSet;
+    bool m_billedSizeBytesHasBeenSet = false;
 
     long long m_itemCount;
-    bool m_itemCountHasBeenSet;
+    bool m_itemCountHasBeenSet = false;
   };
 
 } // namespace Model

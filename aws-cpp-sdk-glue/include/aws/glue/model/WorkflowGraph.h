@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowGraph">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API WorkflowGraph
+  class WorkflowGraph
   {
   public:
-    WorkflowGraph();
-    WorkflowGraph(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowGraph& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API WorkflowGraph();
+    AWS_GLUE_API WorkflowGraph(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API WorkflowGraph& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::Vector<Node> m_nodes;
-    bool m_nodesHasBeenSet;
+    bool m_nodesHasBeenSet = false;
 
     Aws::Vector<Edge> m_edges;
-    bool m_edgesHasBeenSet;
+    bool m_edgesHasBeenSet = false;
   };
 
 } // namespace Model

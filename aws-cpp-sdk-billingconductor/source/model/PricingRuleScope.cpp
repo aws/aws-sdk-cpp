@@ -22,6 +22,7 @@ namespace Aws
 
         static const int GLOBAL_HASH = HashingUtils::HashString("GLOBAL");
         static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
 
 
         PricingRuleScope GetPricingRuleScopeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SERVICE_HASH)
           {
             return PricingRuleScope::SERVICE;
+          }
+          else if (hashCode == BILLING_ENTITY_HASH)
+          {
+            return PricingRuleScope::BILLING_ENTITY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "GLOBAL";
           case PricingRuleScope::SERVICE:
             return "SERVICE";
+          case PricingRuleScope::BILLING_ENTITY:
+            return "BILLING_ENTITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

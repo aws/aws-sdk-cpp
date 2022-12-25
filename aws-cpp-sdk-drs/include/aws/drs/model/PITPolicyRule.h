@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PITPolicyRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API PITPolicyRule
+  class PITPolicyRule
   {
   public:
-    PITPolicyRule();
-    PITPolicyRule(Aws::Utils::Json::JsonView jsonValue);
-    PITPolicyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API PITPolicyRule();
+    AWS_DRS_API PITPolicyRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API PITPolicyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,19 +155,19 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_retentionDuration;
-    bool m_retentionDurationHasBeenSet;
+    bool m_retentionDurationHasBeenSet = false;
 
     long long m_ruleID;
-    bool m_ruleIDHasBeenSet;
+    bool m_ruleIDHasBeenSet = false;
 
     PITPolicyRuleUnits m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API NotificationConfiguration();
+    AWS_TIMESTREAMQUERY_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     SnsConfiguration m_snsConfiguration;
-    bool m_snsConfigurationHasBeenSet;
+    bool m_snsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

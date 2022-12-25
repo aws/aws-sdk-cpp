@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigRequest : public KinesisVideoSignalingChannelsRequest
+  class GetIceServerConfigRequest : public KinesisVideoSignalingChannelsRequest
   {
   public:
-    GetIceServerConfigRequest();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetIceServerConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Service m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

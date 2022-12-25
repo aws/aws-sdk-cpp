@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/NewAssertionRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule
+  class NewAssertionRule
   {
   public:
-    NewAssertionRule();
-    NewAssertionRule(Aws::Utils::Json::JsonView jsonValue);
-    NewAssertionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -294,19 +294,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_assertedControls;
-    bool m_assertedControlsHasBeenSet;
+    bool m_assertedControlsHasBeenSet = false;
 
     Aws::String m_controlPanelArn;
-    bool m_controlPanelArnHasBeenSet;
+    bool m_controlPanelArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RuleConfig m_ruleConfig;
-    bool m_ruleConfigHasBeenSet;
+    bool m_ruleConfigHasBeenSet = false;
 
     int m_waitPeriodMs;
-    bool m_waitPeriodMsHasBeenSet;
+    bool m_waitPeriodMsHasBeenSet = false;
   };
 
 } // namespace Model

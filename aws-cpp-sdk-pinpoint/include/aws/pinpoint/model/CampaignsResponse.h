@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignsResponse
+  class CampaignsResponse
   {
   public:
-    CampaignsResponse();
-    CampaignsResponse(Aws::Utils::Json::JsonView jsonValue);
-    CampaignsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignsResponse();
+    AWS_PINPOINT_API CampaignsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<CampaignResponse> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

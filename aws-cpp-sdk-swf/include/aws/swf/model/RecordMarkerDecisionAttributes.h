@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordMarkerDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API RecordMarkerDecisionAttributes
+  class RecordMarkerDecisionAttributes
   {
   public:
-    RecordMarkerDecisionAttributes();
-    RecordMarkerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    RecordMarkerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API RecordMarkerDecisionAttributes();
+    AWS_SWF_API RecordMarkerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API RecordMarkerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_markerName;
-    bool m_markerNameHasBeenSet;
+    bool m_markerNameHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

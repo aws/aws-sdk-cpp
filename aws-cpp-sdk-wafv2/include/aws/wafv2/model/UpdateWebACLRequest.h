@@ -13,6 +13,7 @@
 #include <aws/wafv2/model/VisibilityConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
+#include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
 #include <utility>
@@ -26,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API UpdateWebACLRequest : public WAFV2Request
+  class UpdateWebACLRequest : public WAFV2Request
   {
   public:
-    UpdateWebACLRequest();
+    AWS_WAFV2_API UpdateWebACLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWebACL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -94,72 +95,72 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline UpdateWebACLRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
-     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
-     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
-     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
-     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
-     * </ul>
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool. </p> <p>To work with CloudFront, you must also specify the
+     * Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the
+     * Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
      */
     inline UpdateWebACLRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -757,37 +758,213 @@ namespace Model
      */
     inline UpdateWebACLRequest& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline const ChallengeConfig& GetChallengeConfig() const{ return m_challengeConfig; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline bool ChallengeConfigHasBeenSet() const { return m_challengeConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline void SetChallengeConfig(const ChallengeConfig& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = value; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline void SetChallengeConfig(ChallengeConfig&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline UpdateWebACLRequest& WithChallengeConfig(const ChallengeConfig& value) { SetChallengeConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline UpdateWebACLRequest& WithChallengeConfig(ChallengeConfig&& value) { SetChallengeConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline UpdateWebACLRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline UpdateWebACLRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline UpdateWebACLRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline UpdateWebACLRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
+     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
+     * as token domains.</p>
+     */
+    inline UpdateWebACLRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DefaultAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     Aws::String m_lockToken;
-    bool m_lockTokenHasBeenSet;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-    bool m_customResponseBodiesHasBeenSet;
+    bool m_customResponseBodiesHasBeenSet = false;
 
     CaptchaConfig m_captchaConfig;
-    bool m_captchaConfigHasBeenSet;
+    bool m_captchaConfigHasBeenSet = false;
+
+    ChallengeConfig m_challengeConfig;
+    bool m_challengeConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tokenDomains;
+    bool m_tokenDomainsHasBeenSet = false;
   };
 
 } // namespace Model

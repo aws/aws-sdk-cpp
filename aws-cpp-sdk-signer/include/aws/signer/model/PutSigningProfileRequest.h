@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SIGNER_API PutSigningProfileRequest : public SignerRequest
+  class PutSigningProfileRequest : public SignerRequest
   {
   public:
-    PutSigningProfileRequest();
+    AWS_SIGNER_API PutSigningProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutSigningProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SIGNER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -382,25 +382,25 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     SigningMaterial m_signingMaterial;
-    bool m_signingMaterialHasBeenSet;
+    bool m_signingMaterialHasBeenSet = false;
 
     SignatureValidityPeriod m_signatureValidityPeriod;
-    bool m_signatureValidityPeriodHasBeenSet;
+    bool m_signatureValidityPeriodHasBeenSet = false;
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     SigningPlatformOverrides m_overrides;
-    bool m_overridesHasBeenSet;
+    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_signingParameters;
-    bool m_signingParametersHasBeenSet;
+    bool m_signingParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

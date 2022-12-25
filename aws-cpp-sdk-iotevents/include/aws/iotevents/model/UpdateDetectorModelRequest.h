@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTEVENTS_API UpdateDetectorModelRequest : public IoTEventsRequest
+  class UpdateDetectorModelRequest : public IoTEventsRequest
   {
   public:
-    UpdateDetectorModelRequest();
+    AWS_IOTEVENTS_API UpdateDetectorModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDetectorModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_detectorModelName;
-    bool m_detectorModelNameHasBeenSet;
+    bool m_detectorModelNameHasBeenSet = false;
 
     DetectorModelDefinition m_detectorModelDefinition;
-    bool m_detectorModelDefinitionHasBeenSet;
+    bool m_detectorModelDefinitionHasBeenSet = false;
 
     Aws::String m_detectorModelDescription;
-    bool m_detectorModelDescriptionHasBeenSet;
+    bool m_detectorModelDescriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     EvaluationMethod m_evaluationMethod;
-    bool m_evaluationMethodHasBeenSet;
+    bool m_evaluationMethodHasBeenSet = false;
   };
 
 } // namespace Model

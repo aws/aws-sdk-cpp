@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BackendConnectionErrors">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API BackendConnectionErrors
+  class BackendConnectionErrors
   {
   public:
-    BackendConnectionErrors();
-    BackendConnectionErrors(Aws::Utils::Json::JsonView jsonValue);
-    BackendConnectionErrors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API BackendConnectionErrors();
+    AWS_XRAY_API BackendConnectionErrors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API BackendConnectionErrors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,22 +163,22 @@ namespace Model
   private:
 
     int m_timeoutCount;
-    bool m_timeoutCountHasBeenSet;
+    bool m_timeoutCountHasBeenSet = false;
 
     int m_connectionRefusedCount;
-    bool m_connectionRefusedCountHasBeenSet;
+    bool m_connectionRefusedCountHasBeenSet = false;
 
     int m_hTTPCode4XXCount;
-    bool m_hTTPCode4XXCountHasBeenSet;
+    bool m_hTTPCode4XXCountHasBeenSet = false;
 
     int m_hTTPCode5XXCount;
-    bool m_hTTPCode5XXCountHasBeenSet;
+    bool m_hTTPCode5XXCountHasBeenSet = false;
 
     int m_unknownHostCount;
-    bool m_unknownHostCountHasBeenSet;
+    bool m_unknownHostCountHasBeenSet = false;
 
     int m_otherCount;
-    bool m_otherCountHasBeenSet;
+    bool m_otherCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/Content">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API Content
+  class Content
   {
   public:
-    Content();
-    Content(Aws::Utils::Json::JsonView jsonValue);
-    Content& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API Content();
+    AWS_PINPOINTEMAIL_API Content(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Content& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_charset;
-    bool m_charsetHasBeenSet;
+    bool m_charsetHasBeenSet = false;
   };
 
 } // namespace Model

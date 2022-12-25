@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CustomArtifactConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CustomArtifactConfigurationDescription
+  class CustomArtifactConfigurationDescription
   {
   public:
-    CustomArtifactConfigurationDescription();
-    CustomArtifactConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    CustomArtifactConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CustomArtifactConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API CustomArtifactConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CustomArtifactConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     ArtifactType m_artifactType;
-    bool m_artifactTypeHasBeenSet;
+    bool m_artifactTypeHasBeenSet = false;
 
     S3ContentLocation m_s3ContentLocationDescription;
-    bool m_s3ContentLocationDescriptionHasBeenSet;
+    bool m_s3ContentLocationDescriptionHasBeenSet = false;
 
     MavenReference m_mavenReferenceDescription;
-    bool m_mavenReferenceDescriptionHasBeenSet;
+    bool m_mavenReferenceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

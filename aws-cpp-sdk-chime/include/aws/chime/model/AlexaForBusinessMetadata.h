@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AlexaForBusinessMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AlexaForBusinessMetadata
+  class AlexaForBusinessMetadata
   {
   public:
-    AlexaForBusinessMetadata();
-    AlexaForBusinessMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AlexaForBusinessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AlexaForBusinessMetadata();
+    AWS_CHIME_API AlexaForBusinessMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AlexaForBusinessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_isAlexaForBusinessEnabled;
-    bool m_isAlexaForBusinessEnabledHasBeenSet;
+    bool m_isAlexaForBusinessEnabledHasBeenSet = false;
 
     Aws::String m_alexaForBusinessRoomArn;
-    bool m_alexaForBusinessRoomArnHasBeenSet;
+    bool m_alexaForBusinessRoomArnHasBeenSet = false;
   };
 
 } // namespace Model

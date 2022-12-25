@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API UpdateServiceRequest : public AppRunnerRequest
+  class UpdateServiceRequest : public AppRunnerRequest
   {
   public:
-    UpdateServiceRequest();
+    AWS_APPRUNNER_API UpdateServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     InstanceConfiguration m_instanceConfiguration;
-    bool m_instanceConfigurationHasBeenSet;
+    bool m_instanceConfigurationHasBeenSet = false;
 
     Aws::String m_autoScalingConfigurationArn;
-    bool m_autoScalingConfigurationArnHasBeenSet;
+    bool m_autoScalingConfigurationArnHasBeenSet = false;
 
     HealthCheckConfiguration m_healthCheckConfiguration;
-    bool m_healthCheckConfigurationHasBeenSet;
+    bool m_healthCheckConfigurationHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     ServiceObservabilityConfiguration m_observabilityConfiguration;
-    bool m_observabilityConfigurationHasBeenSet;
+    bool m_observabilityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

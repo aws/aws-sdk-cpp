@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionLifecycleConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig
+  class ApplicationVersionLifecycleConfig
   {
   public:
-    ApplicationVersionLifecycleConfig();
-    ApplicationVersionLifecycleConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ApplicationVersionLifecycleConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig();
+    AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     MaxCountRule m_maxCountRule;
-    bool m_maxCountRuleHasBeenSet;
+    bool m_maxCountRuleHasBeenSet = false;
 
     MaxAgeRule m_maxAgeRule;
-    bool m_maxAgeRuleHasBeenSet;
+    bool m_maxAgeRuleHasBeenSet = false;
   };
 
 } // namespace Model

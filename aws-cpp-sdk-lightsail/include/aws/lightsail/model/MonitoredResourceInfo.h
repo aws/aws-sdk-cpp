@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/MonitoredResourceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API MonitoredResourceInfo
+  class MonitoredResourceInfo
   {
   public:
-    MonitoredResourceInfo();
-    MonitoredResourceInfo(Aws::Utils::Json::JsonView jsonValue);
-    MonitoredResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API MonitoredResourceInfo();
+    AWS_LIGHTSAIL_API MonitoredResourceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API MonitoredResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

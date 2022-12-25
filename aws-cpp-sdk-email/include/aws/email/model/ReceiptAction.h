@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptAction
+  class ReceiptAction
   {
   public:
-    ReceiptAction();
-    ReceiptAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptAction();
+    AWS_SES_API ReceiptAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -305,25 +305,25 @@ namespace Model
   private:
 
     S3Action m_s3Action;
-    bool m_s3ActionHasBeenSet;
+    bool m_s3ActionHasBeenSet = false;
 
     BounceAction m_bounceAction;
-    bool m_bounceActionHasBeenSet;
+    bool m_bounceActionHasBeenSet = false;
 
     WorkmailAction m_workmailAction;
-    bool m_workmailActionHasBeenSet;
+    bool m_workmailActionHasBeenSet = false;
 
     LambdaAction m_lambdaAction;
-    bool m_lambdaActionHasBeenSet;
+    bool m_lambdaActionHasBeenSet = false;
 
     StopAction m_stopAction;
-    bool m_stopActionHasBeenSet;
+    bool m_stopActionHasBeenSet = false;
 
     AddHeaderAction m_addHeaderAction;
-    bool m_addHeaderActionHasBeenSet;
+    bool m_addHeaderActionHasBeenSet = false;
 
     SNSAction m_sNSAction;
-    bool m_sNSActionHasBeenSet;
+    bool m_sNSActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyCapacityReservationFleetRequest : public EC2Request
+  class ModifyCapacityReservationFleetRequest : public EC2Request
   {
   public:
-    ModifyCapacityReservationFleetRequest();
+    AWS_EC2_API ModifyCapacityReservationFleetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyCapacityReservationFleet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -268,19 +268,19 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_removeEndDate;
-    bool m_removeEndDateHasBeenSet;
+    bool m_removeEndDateHasBeenSet = false;
   };
 
 } // namespace Model

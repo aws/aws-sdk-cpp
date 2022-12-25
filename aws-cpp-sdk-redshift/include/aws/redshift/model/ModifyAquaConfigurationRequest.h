@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API ModifyAquaConfigurationRequest : public RedshiftRequest
+  class ModifyAquaConfigurationRequest : public RedshiftRequest
   {
   public:
-    ModifyAquaConfigurationRequest();
+    AWS_REDSHIFT_API ModifyAquaConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyAquaConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -79,66 +79,48 @@ namespace Model
 
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline ModifyAquaConfigurationRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
     /**
-     * <p>The new value of AQUA configuration status. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. Amazon Redshift automatically determines whether
+     * to use AQUA (Advanced Query Accelerator).</p>
      */
     inline ModifyAquaConfigurationRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
-    bool m_aquaConfigurationStatusHasBeenSet;
+    bool m_aquaConfigurationStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMEETINGS_API BatchUpdateAttendeeCapabilitiesExceptRequest : public ChimeSDKMeetingsRequest
+  class BatchUpdateAttendeeCapabilitiesExceptRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    BatchUpdateAttendeeCapabilitiesExceptRequest();
+    AWS_CHIMESDKMEETINGS_API BatchUpdateAttendeeCapabilitiesExceptRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchUpdateAttendeeCapabilitiesExcept"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMEETINGS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::Vector<AttendeeIdItem> m_excludedAttendeeIds;
-    bool m_excludedAttendeeIdsHasBeenSet;
+    bool m_excludedAttendeeIdsHasBeenSet = false;
 
     AttendeeCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

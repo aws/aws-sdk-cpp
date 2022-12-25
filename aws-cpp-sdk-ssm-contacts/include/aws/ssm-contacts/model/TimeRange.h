@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/TimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API TimeRange();
+    AWS_SSMCONTACTS_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

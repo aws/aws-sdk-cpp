@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyRequest : public ApplicationAutoScalingRequest
+  class PutScalingPolicyRequest : public ApplicationAutoScalingRequest
   {
   public:
-    PutScalingPolicyRequest();
+    AWS_APPLICATIONAUTOSCALING_API PutScalingPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutScalingPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONAUTOSCALING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONAUTOSCALING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1014,25 +1014,25 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
-    bool m_stepScalingPolicyConfigurationHasBeenSet;
+    bool m_stepScalingPolicyConfigurationHasBeenSet = false;
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
-    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
+    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

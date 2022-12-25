@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesRequest : public SupportRequest
+  class DescribeTrustedAdvisorCheckSummariesRequest : public SupportRequest
   {
   public:
-    DescribeTrustedAdvisorCheckSummariesRequest();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeTrustedAdvisorCheckSummaries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SUPPORT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_checkIds;
-    bool m_checkIdsHasBeenSet;
+    bool m_checkIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CurrentInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CurrentInstance
+  class CurrentInstance
   {
   public:
-    CurrentInstance();
-    CurrentInstance(Aws::Utils::Json::JsonView jsonValue);
-    CurrentInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CurrentInstance();
+    AWS_COSTEXPLORER_API CurrentInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CurrentInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -528,37 +528,37 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::Vector<TagValues> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ResourceDetails m_resourceDetails;
-    bool m_resourceDetailsHasBeenSet;
+    bool m_resourceDetailsHasBeenSet = false;
 
     ResourceUtilization m_resourceUtilization;
-    bool m_resourceUtilizationHasBeenSet;
+    bool m_resourceUtilizationHasBeenSet = false;
 
     Aws::String m_reservationCoveredHoursInLookbackPeriod;
-    bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet;
+    bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_savingsPlansCoveredHoursInLookbackPeriod;
-    bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet;
+    bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_onDemandHoursInLookbackPeriod;
-    bool m_onDemandHoursInLookbackPeriodHasBeenSet;
+    bool m_onDemandHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_totalRunningHoursInLookbackPeriod;
-    bool m_totalRunningHoursInLookbackPeriodHasBeenSet;
+    bool m_totalRunningHoursInLookbackPeriodHasBeenSet = false;
 
     Aws::String m_monthlyCost;
-    bool m_monthlyCostHasBeenSet;
+    bool m_monthlyCostHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

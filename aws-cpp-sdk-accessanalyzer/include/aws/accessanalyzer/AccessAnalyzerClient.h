@@ -5,192 +5,16 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/AccessAnalyzerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/accessanalyzer/model/CancelPolicyGenerationResult.h>
-#include <aws/accessanalyzer/model/CreateAccessPreviewResult.h>
-#include <aws/accessanalyzer/model/CreateAnalyzerResult.h>
-#include <aws/accessanalyzer/model/GetAccessPreviewResult.h>
-#include <aws/accessanalyzer/model/GetAnalyzedResourceResult.h>
-#include <aws/accessanalyzer/model/GetAnalyzerResult.h>
-#include <aws/accessanalyzer/model/GetArchiveRuleResult.h>
-#include <aws/accessanalyzer/model/GetFindingResult.h>
-#include <aws/accessanalyzer/model/GetGeneratedPolicyResult.h>
-#include <aws/accessanalyzer/model/ListAccessPreviewFindingsResult.h>
-#include <aws/accessanalyzer/model/ListAccessPreviewsResult.h>
-#include <aws/accessanalyzer/model/ListAnalyzedResourcesResult.h>
-#include <aws/accessanalyzer/model/ListAnalyzersResult.h>
-#include <aws/accessanalyzer/model/ListArchiveRulesResult.h>
-#include <aws/accessanalyzer/model/ListFindingsResult.h>
-#include <aws/accessanalyzer/model/ListPolicyGenerationsResult.h>
-#include <aws/accessanalyzer/model/ListTagsForResourceResult.h>
-#include <aws/accessanalyzer/model/StartPolicyGenerationResult.h>
-#include <aws/accessanalyzer/model/TagResourceResult.h>
-#include <aws/accessanalyzer/model/UntagResourceResult.h>
-#include <aws/accessanalyzer/model/ValidatePolicyResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AccessAnalyzer
 {
-
-namespace Model
-{
-        class ApplyArchiveRuleRequest;
-        class CancelPolicyGenerationRequest;
-        class CreateAccessPreviewRequest;
-        class CreateAnalyzerRequest;
-        class CreateArchiveRuleRequest;
-        class DeleteAnalyzerRequest;
-        class DeleteArchiveRuleRequest;
-        class GetAccessPreviewRequest;
-        class GetAnalyzedResourceRequest;
-        class GetAnalyzerRequest;
-        class GetArchiveRuleRequest;
-        class GetFindingRequest;
-        class GetGeneratedPolicyRequest;
-        class ListAccessPreviewFindingsRequest;
-        class ListAccessPreviewsRequest;
-        class ListAnalyzedResourcesRequest;
-        class ListAnalyzersRequest;
-        class ListArchiveRulesRequest;
-        class ListFindingsRequest;
-        class ListPolicyGenerationsRequest;
-        class ListTagsForResourceRequest;
-        class StartPolicyGenerationRequest;
-        class StartResourceScanRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateArchiveRuleRequest;
-        class UpdateFindingsRequest;
-        class ValidatePolicyRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> ApplyArchiveRuleOutcome;
-        typedef Aws::Utils::Outcome<CancelPolicyGenerationResult, AccessAnalyzerError> CancelPolicyGenerationOutcome;
-        typedef Aws::Utils::Outcome<CreateAccessPreviewResult, AccessAnalyzerError> CreateAccessPreviewOutcome;
-        typedef Aws::Utils::Outcome<CreateAnalyzerResult, AccessAnalyzerError> CreateAnalyzerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> CreateArchiveRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteAnalyzerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> DeleteArchiveRuleOutcome;
-        typedef Aws::Utils::Outcome<GetAccessPreviewResult, AccessAnalyzerError> GetAccessPreviewOutcome;
-        typedef Aws::Utils::Outcome<GetAnalyzedResourceResult, AccessAnalyzerError> GetAnalyzedResourceOutcome;
-        typedef Aws::Utils::Outcome<GetAnalyzerResult, AccessAnalyzerError> GetAnalyzerOutcome;
-        typedef Aws::Utils::Outcome<GetArchiveRuleResult, AccessAnalyzerError> GetArchiveRuleOutcome;
-        typedef Aws::Utils::Outcome<GetFindingResult, AccessAnalyzerError> GetFindingOutcome;
-        typedef Aws::Utils::Outcome<GetGeneratedPolicyResult, AccessAnalyzerError> GetGeneratedPolicyOutcome;
-        typedef Aws::Utils::Outcome<ListAccessPreviewFindingsResult, AccessAnalyzerError> ListAccessPreviewFindingsOutcome;
-        typedef Aws::Utils::Outcome<ListAccessPreviewsResult, AccessAnalyzerError> ListAccessPreviewsOutcome;
-        typedef Aws::Utils::Outcome<ListAnalyzedResourcesResult, AccessAnalyzerError> ListAnalyzedResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListAnalyzersResult, AccessAnalyzerError> ListAnalyzersOutcome;
-        typedef Aws::Utils::Outcome<ListArchiveRulesResult, AccessAnalyzerError> ListArchiveRulesOutcome;
-        typedef Aws::Utils::Outcome<ListFindingsResult, AccessAnalyzerError> ListFindingsOutcome;
-        typedef Aws::Utils::Outcome<ListPolicyGenerationsResult, AccessAnalyzerError> ListPolicyGenerationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AccessAnalyzerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartPolicyGenerationResult, AccessAnalyzerError> StartPolicyGenerationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> StartResourceScanOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, AccessAnalyzerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, AccessAnalyzerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateArchiveRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateFindingsOutcome;
-        typedef Aws::Utils::Outcome<ValidatePolicyResult, AccessAnalyzerError> ValidatePolicyOutcome;
-
-        typedef std::future<ApplyArchiveRuleOutcome> ApplyArchiveRuleOutcomeCallable;
-        typedef std::future<CancelPolicyGenerationOutcome> CancelPolicyGenerationOutcomeCallable;
-        typedef std::future<CreateAccessPreviewOutcome> CreateAccessPreviewOutcomeCallable;
-        typedef std::future<CreateAnalyzerOutcome> CreateAnalyzerOutcomeCallable;
-        typedef std::future<CreateArchiveRuleOutcome> CreateArchiveRuleOutcomeCallable;
-        typedef std::future<DeleteAnalyzerOutcome> DeleteAnalyzerOutcomeCallable;
-        typedef std::future<DeleteArchiveRuleOutcome> DeleteArchiveRuleOutcomeCallable;
-        typedef std::future<GetAccessPreviewOutcome> GetAccessPreviewOutcomeCallable;
-        typedef std::future<GetAnalyzedResourceOutcome> GetAnalyzedResourceOutcomeCallable;
-        typedef std::future<GetAnalyzerOutcome> GetAnalyzerOutcomeCallable;
-        typedef std::future<GetArchiveRuleOutcome> GetArchiveRuleOutcomeCallable;
-        typedef std::future<GetFindingOutcome> GetFindingOutcomeCallable;
-        typedef std::future<GetGeneratedPolicyOutcome> GetGeneratedPolicyOutcomeCallable;
-        typedef std::future<ListAccessPreviewFindingsOutcome> ListAccessPreviewFindingsOutcomeCallable;
-        typedef std::future<ListAccessPreviewsOutcome> ListAccessPreviewsOutcomeCallable;
-        typedef std::future<ListAnalyzedResourcesOutcome> ListAnalyzedResourcesOutcomeCallable;
-        typedef std::future<ListAnalyzersOutcome> ListAnalyzersOutcomeCallable;
-        typedef std::future<ListArchiveRulesOutcome> ListArchiveRulesOutcomeCallable;
-        typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
-        typedef std::future<ListPolicyGenerationsOutcome> ListPolicyGenerationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartPolicyGenerationOutcome> StartPolicyGenerationOutcomeCallable;
-        typedef std::future<StartResourceScanOutcome> StartResourceScanOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateArchiveRuleOutcome> UpdateArchiveRuleOutcomeCallable;
-        typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
-        typedef std::future<ValidatePolicyOutcome> ValidatePolicyOutcomeCallable;
-} // namespace Model
-
-  class AccessAnalyzerClient;
-
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ApplyArchiveRuleRequest&, const Model::ApplyArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyArchiveRuleResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::CancelPolicyGenerationRequest&, const Model::CancelPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelPolicyGenerationResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateAccessPreviewRequest&, const Model::CreateAccessPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPreviewResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateAnalyzerRequest&, const Model::CreateAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalyzerResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::CreateArchiveRuleRequest&, const Model::CreateArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateArchiveRuleResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteAnalyzerRequest&, const Model::DeleteAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalyzerResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::DeleteArchiveRuleRequest&, const Model::DeleteArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteArchiveRuleResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetAccessPreviewRequest&, const Model::GetAccessPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPreviewResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetAnalyzedResourceRequest&, const Model::GetAnalyzedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnalyzedResourceResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetAnalyzerRequest&, const Model::GetAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnalyzerResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetArchiveRuleRequest&, const Model::GetArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetArchiveRuleResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetFindingRequest&, const Model::GetFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::GetGeneratedPolicyRequest&, const Model::GetGeneratedPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeneratedPolicyResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAccessPreviewFindingsRequest&, const Model::ListAccessPreviewFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPreviewFindingsResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAccessPreviewsRequest&, const Model::ListAccessPreviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPreviewsResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAnalyzedResourcesRequest&, const Model::ListAnalyzedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyzedResourcesResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListAnalyzersRequest&, const Model::ListAnalyzersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyzersResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListArchiveRulesRequest&, const Model::ListArchiveRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArchiveRulesResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListPolicyGenerationsRequest&, const Model::ListPolicyGenerationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyGenerationsResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::StartPolicyGenerationRequest&, const Model::StartPolicyGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPolicyGenerationResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::StartResourceScanRequest&, const Model::StartResourceScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceScanResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateArchiveRuleRequest&, const Model::UpdateArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveRuleResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
-    typedef std::function<void(const AccessAnalyzerClient*, const Model::ValidatePolicyRequest&, const Model::ValidatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePolicyResponseReceivedHandler;
-
   /**
    * <p>Identity and Access Management Access Analyzer helps identify potential
    * resource-access risks by enabling you to identify any policies that grant access
@@ -207,32 +31,60 @@ namespace Model
    * and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.</p>
    * <p>To start using IAM Access Analyzer, you first need to create an analyzer.</p>
    */
-  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient
+  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AccessAnalyzerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AccessAnalyzerClient(const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration(),
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AccessAnalyzerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AccessAnalyzerClient(const Aws::Auth::AWSCredentials& credentials,
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AccessAnalyzerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<AccessAnalyzerEndpointProviderBase> endpointProvider = Aws::MakeShared<AccessAnalyzerEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration& clientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AccessAnalyzerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AccessAnalyzerClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AccessAnalyzerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AccessAnalyzerClient();
-
 
         /**
          * <p>Retroactively applies the archive rule to existing findings that meet the
@@ -748,40 +600,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ApplyArchiveRuleAsyncHelper(const Model::ApplyArchiveRuleRequest& request, const ApplyArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelPolicyGenerationAsyncHelper(const Model::CancelPolicyGenerationRequest& request, const CancelPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAccessPreviewAsyncHelper(const Model::CreateAccessPreviewRequest& request, const CreateAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAnalyzerAsyncHelper(const Model::CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateArchiveRuleAsyncHelper(const Model::CreateArchiveRuleRequest& request, const CreateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAnalyzerAsyncHelper(const Model::DeleteAnalyzerRequest& request, const DeleteAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteArchiveRuleAsyncHelper(const Model::DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAccessPreviewAsyncHelper(const Model::GetAccessPreviewRequest& request, const GetAccessPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAnalyzedResourceAsyncHelper(const Model::GetAnalyzedResourceRequest& request, const GetAnalyzedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAnalyzerAsyncHelper(const Model::GetAnalyzerRequest& request, const GetAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetArchiveRuleAsyncHelper(const Model::GetArchiveRuleRequest& request, const GetArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingAsyncHelper(const Model::GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGeneratedPolicyAsyncHelper(const Model::GetGeneratedPolicyRequest& request, const GetGeneratedPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccessPreviewFindingsAsyncHelper(const Model::ListAccessPreviewFindingsRequest& request, const ListAccessPreviewFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccessPreviewsAsyncHelper(const Model::ListAccessPreviewsRequest& request, const ListAccessPreviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnalyzedResourcesAsyncHelper(const Model::ListAnalyzedResourcesRequest& request, const ListAnalyzedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnalyzersAsyncHelper(const Model::ListAnalyzersRequest& request, const ListAnalyzersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListArchiveRulesAsyncHelper(const Model::ListArchiveRulesRequest& request, const ListArchiveRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFindingsAsyncHelper(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPolicyGenerationsAsyncHelper(const Model::ListPolicyGenerationsRequest& request, const ListPolicyGenerationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartPolicyGenerationAsyncHelper(const Model::StartPolicyGenerationRequest& request, const StartPolicyGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartResourceScanAsyncHelper(const Model::StartResourceScanRequest& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateArchiveRuleAsyncHelper(const Model::UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFindingsAsyncHelper(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ValidatePolicyAsyncHelper(const Model::ValidatePolicyRequest& request, const ValidatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>;
+      void init(const AccessAnalyzerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AccessAnalyzerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AccessAnalyzerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AccessAnalyzer

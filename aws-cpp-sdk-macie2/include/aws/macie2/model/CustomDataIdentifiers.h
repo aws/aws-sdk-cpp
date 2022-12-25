@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDataIdentifiers">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API CustomDataIdentifiers
+  class CustomDataIdentifiers
   {
   public:
-    CustomDataIdentifiers();
-    CustomDataIdentifiers(Aws::Utils::Json::JsonView jsonValue);
-    CustomDataIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API CustomDataIdentifiers();
+    AWS_MACIE2_API CustomDataIdentifiers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API CustomDataIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::Vector<CustomDetection> m_detections;
-    bool m_detectionsHasBeenSet;
+    bool m_detectionsHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

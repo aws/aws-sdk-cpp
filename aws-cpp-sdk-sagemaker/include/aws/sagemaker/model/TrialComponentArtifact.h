@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentArtifact
+  class TrialComponentArtifact
   {
   public:
-    TrialComponentArtifact();
-    TrialComponentArtifact(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentArtifact();
+    AWS_SAGEMAKER_API TrialComponentArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_mediaType;
-    bool m_mediaTypeHasBeenSet;
+    bool m_mediaTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,119 +5,104 @@
 
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
-#include <aws/sso-oidc/SSOOIDCErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sso-oidc/model/CreateTokenResult.h>
-#include <aws/sso-oidc/model/RegisterClientResult.h>
-#include <aws/sso-oidc/model/StartDeviceAuthorizationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sso-oidc/SSOOIDCServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SSOOIDC
 {
-
-namespace Model
-{
-        class CreateTokenRequest;
-        class RegisterClientRequest;
-        class StartDeviceAuthorizationRequest;
-
-        typedef Aws::Utils::Outcome<CreateTokenResult, SSOOIDCError> CreateTokenOutcome;
-        typedef Aws::Utils::Outcome<RegisterClientResult, SSOOIDCError> RegisterClientOutcome;
-        typedef Aws::Utils::Outcome<StartDeviceAuthorizationResult, SSOOIDCError> StartDeviceAuthorizationOutcome;
-
-        typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
-        typedef std::future<RegisterClientOutcome> RegisterClientOutcomeCallable;
-        typedef std::future<StartDeviceAuthorizationOutcome> StartDeviceAuthorizationOutcomeCallable;
-} // namespace Model
-
-  class SSOOIDCClient;
-
-    typedef std::function<void(const SSOOIDCClient*, const Model::CreateTokenRequest&, const Model::CreateTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTokenResponseReceivedHandler;
-    typedef std::function<void(const SSOOIDCClient*, const Model::RegisterClientRequest&, const Model::RegisterClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterClientResponseReceivedHandler;
-    typedef std::function<void(const SSOOIDCClient*, const Model::StartDeviceAuthorizationRequest&, const Model::StartDeviceAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeviceAuthorizationResponseReceivedHandler;
-
   /**
-   * <p>AWS Single Sign-On (SSO) OpenID Connect (OIDC) is a web service that enables
-   * a client (such as AWS CLI or a native application) to register with AWS SSO. The
-   * service also enables the client to fetch the user’s access token upon successful
-   * authentication and authorization with AWS SSO. This service conforms with the
-   * OAuth 2.0 based implementation of the device authorization grant standard (<a
-   * href="https://tools.ietf.org/html/rfc8628">https://tools.ietf.org/html/rfc8628</a>).</p>
-   * <p>For general information about AWS SSO, see <a
+   * <p>AWS IAM Identity Center (successor to AWS Single Sign-On) OpenID Connect
+   * (OIDC) is a web service that enables a client (such as AWS CLI or a native
+   * application) to register with IAM Identity Center. The service also enables the
+   * client to fetch the user’s access token upon successful authentication and
+   * authorization with IAM Identity Center.</p>  <p>Although AWS Single
+   * Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API
+   * namespaces will continue to retain their original name for backward
+   * compatibility purposes. For more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
+   * Identity Center rename</a>.</p>  <p> <b>Considerations for Using This
+   * Guide</b> </p> <p>Before you begin using this guide, we recommend that you first
+   * review the following important information about how the IAM Identity Center
+   * OIDC service works.</p> <ul> <li> <p>The IAM Identity Center OIDC service
+   * currently implements only the portions of the OAuth 2.0 Device Authorization
+   * Grant standard (<a
+   * href="https://tools.ietf.org/html/rfc8628">https://tools.ietf.org/html/rfc8628</a>)
+   * that are necessary to enable single sign-on authentication with the AWS CLI.
+   * Support for other OIDC flows frequently needed for native applications, such as
+   * Authorization Code Flow (+ PKCE), will be addressed in future releases.</p>
+   * </li> <li> <p>The service emits only OIDC access tokens, such that obtaining a
+   * new token (For example, token refresh) requires explicit user
+   * re-authentication.</p> </li> <li> <p>The access tokens provided by this service
+   * grant access to all AWS account entitlements assigned to an IAM Identity Center
+   * user, not just a particular application.</p> </li> <li> <p>The documentation in
+   * this guide does not describe the mechanism to convert the access token into AWS
+   * Auth (“sigv4”) credentials for use with IAM-protected AWS service endpoints. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/PortalAPIReference/API_GetRoleCredentials.html">GetRoleCredentials</a>
+   * in the <i>IAM Identity Center Portal API Reference Guide</i>.</p> </li> </ul>
+   * <p>For general information about IAM Identity Center, see <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">What
-   * is AWS Single Sign-On?</a> in the <i>AWS SSO User Guide</i>.</p> <p>This API
-   * reference guide describes the AWS SSO OIDC operations that you can call
-   * programatically and includes detailed information on data types and errors.</p>
-   *  <p>AWS provides SDKs that consist of libraries and sample code for
-   * various programming languages and platforms such as Java, Ruby, .Net, iOS, and
-   * Android. The SDKs provide a convenient way to create programmatic access to AWS
-   * SSO and other AWS services. For more information about the AWS SDKs, including
-   * how to download and install them, see <a
-   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   * 
+   * is IAM Identity Center?</a> in the <i>IAM Identity Center User Guide</i>.</p>
    */
-  class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient
+  class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SSOOIDCClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SSOOIDCClient(const Aws::SSOOIDC::SSOOIDCClientConfiguration& clientConfiguration = Aws::SSOOIDC::SSOOIDCClientConfiguration(),
+                      std::shared_ptr<SSOOIDCEndpointProviderBase> endpointProvider = Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SSOOIDCClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SSOOIDCClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<SSOOIDCEndpointProviderBase> endpointProvider = Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::SSOOIDC::SSOOIDCClientConfiguration& clientConfiguration = Aws::SSOOIDC::SSOOIDCClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SSOOIDCClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<SSOOIDCEndpointProviderBase> endpointProvider = Aws::MakeShared<SSOOIDCEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::SSOOIDC::SSOOIDCClientConfiguration& clientConfiguration = Aws::SSOOIDC::SSOOIDCClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SSOOIDCClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SSOOIDCClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SSOOIDCClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SSOOIDCClient();
-
 
         /**
          * <p>Creates and returns an access token for the authorized client. The access
@@ -139,8 +124,8 @@ namespace Model
         virtual void CreateTokenAsync(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a client with AWS SSO. This allows clients to initiate device
-         * authorization. The output should be persisted for reuse through many
+         * <p>Registers a client with IAM Identity Center. This allows clients to initiate
+         * device authorization. The output should be persisted for reuse through many
          * authentication requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">AWS
          * API Reference</a></p>
@@ -177,15 +162,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SSOOIDCEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateTokenAsyncHelper(const Model::CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterClientAsyncHelper(const Model::RegisterClientRequest& request, const RegisterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDeviceAuthorizationAsyncHelper(const Model::StartDeviceAuthorizationRequest& request, const StartDeviceAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;
+      void init(const SSOOIDCClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SSOOIDCClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SSOOIDC

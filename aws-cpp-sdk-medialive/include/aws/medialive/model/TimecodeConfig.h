@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TimecodeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API TimecodeConfig
+  class TimecodeConfig
   {
   public:
-    TimecodeConfig();
-    TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
-    TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API TimecodeConfig();
+    AWS_MEDIALIVE_API TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     TimecodeConfigSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     int m_syncThreshold;
-    bool m_syncThresholdHasBeenSet;
+    bool m_syncThresholdHasBeenSet = false;
   };
 
 } // namespace Model

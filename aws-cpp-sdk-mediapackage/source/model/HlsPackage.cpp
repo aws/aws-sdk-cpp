@@ -80,7 +80,7 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("adTriggers"))
   {
-    Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
+    Aws::Utils::Array<JsonView> adTriggersJsonList = jsonValue.GetArray("adTriggers");
     for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
     {
       m_adTriggers.push_back(__AdTriggersElementMapper::Get__AdTriggersElementForName(adTriggersJsonList[adTriggersIndex].AsString()));
@@ -172,7 +172,7 @@ JsonValue HlsPackage::Jsonize() const
 
   if(m_adTriggersHasBeenSet)
   {
-   Array<JsonValue> adTriggersJsonList(m_adTriggers.size());
+   Aws::Utils::Array<JsonValue> adTriggersJsonList(m_adTriggers.size());
    for(unsigned adTriggersIndex = 0; adTriggersIndex < adTriggersJsonList.GetLength(); ++adTriggersIndex)
    {
      adTriggersJsonList[adTriggersIndex].AsString(__AdTriggersElementMapper::GetNameFor__AdTriggersElement(m_adTriggers[adTriggersIndex]));

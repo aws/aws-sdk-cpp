@@ -34,13 +34,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API MetricQuery
+  class MetricQuery
   {
   public:
-    MetricQuery();
-    MetricQuery(Aws::Utils::Json::JsonView jsonValue);
-    MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API MetricQuery();
+    AWS_PI_API MetricQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -366,13 +366,13 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     DimensionGroup m_groupBy;
-    bool m_groupByHasBeenSet;
+    bool m_groupByHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

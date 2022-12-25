@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API ChangeServerLifeCycleStateRequest : public MgnRequest
+  class ChangeServerLifeCycleStateRequest : public MgnRequest
   {
   public:
-    ChangeServerLifeCycleStateRequest();
+    AWS_MGN_API ChangeServerLifeCycleStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChangeServerLifeCycleState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     ChangeServerLifeCycleStateSourceServerLifecycle m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

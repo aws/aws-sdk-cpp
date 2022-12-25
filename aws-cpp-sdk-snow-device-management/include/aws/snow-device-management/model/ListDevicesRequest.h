@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API ListDevicesRequest : public SnowDeviceManagementRequest
+  class ListDevicesRequest : public SnowDeviceManagementRequest
   {
   public:
-    ListDevicesRequest();
+    AWS_SNOWDEVICEMANAGEMENT_API ListDevicesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDevices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SNOWDEVICEMANAGEMENT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

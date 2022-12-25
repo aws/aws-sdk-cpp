@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/HttpUrlDestinationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API HttpUrlDestinationSummary
+  class HttpUrlDestinationSummary
   {
   public:
-    HttpUrlDestinationSummary();
-    HttpUrlDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
-    HttpUrlDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API HttpUrlDestinationSummary();
+    AWS_IOT_API HttpUrlDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API HttpUrlDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::String m_confirmationUrl;
-    bool m_confirmationUrlHasBeenSet;
+    bool m_confirmationUrlHasBeenSet = false;
   };
 
 } // namespace Model

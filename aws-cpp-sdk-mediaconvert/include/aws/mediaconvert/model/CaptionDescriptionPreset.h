@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionDescriptionPreset">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CaptionDescriptionPreset
+  class CaptionDescriptionPreset
   {
   public:
-    CaptionDescriptionPreset();
-    CaptionDescriptionPreset(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDescriptionPreset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CaptionDescriptionPreset();
+    AWS_MEDIACONVERT_API CaptionDescriptionPreset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CaptionDescriptionPreset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,16 +335,16 @@ namespace Model
   private:
 
     Aws::String m_customLanguageCode;
-    bool m_customLanguageCodeHasBeenSet;
+    bool m_customLanguageCodeHasBeenSet = false;
 
     CaptionDestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

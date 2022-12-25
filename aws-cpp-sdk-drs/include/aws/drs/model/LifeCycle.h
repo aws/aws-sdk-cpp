@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/LifeCycle">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API LifeCycle
+  class LifeCycle
   {
   public:
-    LifeCycle();
-    LifeCycle(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API LifeCycle();
+    AWS_DRS_API LifeCycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API LifeCycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_addedToServiceDateTime;
-    bool m_addedToServiceDateTimeHasBeenSet;
+    bool m_addedToServiceDateTimeHasBeenSet = false;
 
     Aws::String m_elapsedReplicationDuration;
-    bool m_elapsedReplicationDurationHasBeenSet;
+    bool m_elapsedReplicationDurationHasBeenSet = false;
 
     Aws::String m_firstByteDateTime;
-    bool m_firstByteDateTimeHasBeenSet;
+    bool m_firstByteDateTimeHasBeenSet = false;
 
     LifeCycleLastLaunch m_lastLaunch;
-    bool m_lastLaunchHasBeenSet;
+    bool m_lastLaunchHasBeenSet = false;
 
     Aws::String m_lastSeenByServiceDateTime;
-    bool m_lastSeenByServiceDateTimeHasBeenSet;
+    bool m_lastSeenByServiceDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

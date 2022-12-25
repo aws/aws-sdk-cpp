@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIREHOSE_API PutRecordRequest : public FirehoseRequest
+  class PutRecordRequest : public FirehoseRequest
   {
   public:
-    PutRecordRequest();
+    AWS_FIREHOSE_API PutRecordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutRecord"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIREHOSE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FIREHOSE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Record m_record;
-    bool m_recordHasBeenSet;
+    bool m_recordHasBeenSet = false;
   };
 
 } // namespace Model

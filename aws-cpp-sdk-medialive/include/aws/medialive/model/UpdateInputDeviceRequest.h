@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDeviceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UpdateInputDeviceRequest : public MediaLiveRequest
+  class UpdateInputDeviceRequest : public MediaLiveRequest
   {
   public:
-    UpdateInputDeviceRequest();
+    AWS_MEDIALIVE_API UpdateInputDeviceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateInputDevice"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     InputDeviceConfigurableSettings m_hdDeviceSettings;
-    bool m_hdDeviceSettingsHasBeenSet;
+    bool m_hdDeviceSettingsHasBeenSet = false;
 
     Aws::String m_inputDeviceId;
-    bool m_inputDeviceIdHasBeenSet;
+    bool m_inputDeviceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InputDeviceConfigurableSettings m_uhdDeviceSettings;
-    bool m_uhdDeviceSettingsHasBeenSet;
+    bool m_uhdDeviceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> The dimension of am Amazon CloudWatch metric that is used when DevOps Guru
+   * <p> The dimension of an Amazon CloudWatch metric that is used when DevOps Guru
    * analyzes the resources in your account for operational problems and anomalous
    * behavior. A dimension is a name/value pair that is part of the identity of a
    * metric. A metric can have up to 10 dimensions. For more information, see <a
@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudWatchMetricsDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API CloudWatchMetricsDimension
+  class CloudWatchMetricsDimension
   {
   public:
-    CloudWatchMetricsDimension();
-    CloudWatchMetricsDimension(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchMetricsDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API CloudWatchMetricsDimension();
+    AWS_DEVOPSGURU_API CloudWatchMetricsDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API CloudWatchMetricsDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

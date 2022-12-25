@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaiduMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BaiduMessage
+  class BaiduMessage
   {
   public:
-    BaiduMessage();
-    BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
-    BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BaiduMessage();
+    AWS_PINPOINT_API BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -779,46 +779,46 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_iconReference;
-    bool m_iconReferenceHasBeenSet;
+    bool m_iconReferenceHasBeenSet = false;
 
     Aws::String m_imageIconUrl;
-    bool m_imageIconUrlHasBeenSet;
+    bool m_imageIconUrlHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     bool m_silentPush;
-    bool m_silentPushHasBeenSet;
+    bool m_silentPushHasBeenSet = false;
 
     Aws::String m_smallImageIconUrl;
-    bool m_smallImageIconUrlHasBeenSet;
+    bool m_smallImageIconUrlHasBeenSet = false;
 
     Aws::String m_sound;
-    bool m_soundHasBeenSet;
+    bool m_soundHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     int m_timeToLive;
-    bool m_timeToLiveHasBeenSet;
+    bool m_timeToLiveHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

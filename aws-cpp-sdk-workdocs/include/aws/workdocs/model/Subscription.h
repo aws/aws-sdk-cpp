@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Subscription">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Subscription
+  class Subscription
   {
   public:
-    Subscription();
-    Subscription(Aws::Utils::Json::JsonView jsonValue);
-    Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Subscription();
+    AWS_WORKDOCS_API Subscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_subscriptionId;
-    bool m_subscriptionIdHasBeenSet;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_endPoint;
-    bool m_endPointHasBeenSet;
+    bool m_endPointHasBeenSet = false;
 
     SubscriptionProtocolType m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

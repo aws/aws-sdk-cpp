@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CustomDeliveryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CustomDeliveryConfiguration
+  class CustomDeliveryConfiguration
   {
   public:
-    CustomDeliveryConfiguration();
-    CustomDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CustomDeliveryConfiguration();
+    AWS_PINPOINT_API CustomDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CustomDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,10 +182,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryUri;
-    bool m_deliveryUriHasBeenSet;
+    bool m_deliveryUriHasBeenSet = false;
 
     Aws::Vector<__EndpointTypesElement> m_endpointTypes;
-    bool m_endpointTypesHasBeenSet;
+    bool m_endpointTypesHasBeenSet = false;
   };
 
 } // namespace Model

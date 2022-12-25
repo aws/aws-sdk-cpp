@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription
+  class SqlApplicationConfigurationDescription
   {
   public:
-    SqlApplicationConfigurationDescription();
-    SqlApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    SqlApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -190,13 +190,13 @@ namespace Model
   private:
 
     Aws::Vector<InputDescription> m_inputDescriptions;
-    bool m_inputDescriptionsHasBeenSet;
+    bool m_inputDescriptionsHasBeenSet = false;
 
     Aws::Vector<OutputDescription> m_outputDescriptions;
-    bool m_outputDescriptionsHasBeenSet;
+    bool m_outputDescriptionsHasBeenSet = false;
 
     Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
-    bool m_referenceDataSourceDescriptionsHasBeenSet;
+    bool m_referenceDataSourceDescriptionsHasBeenSet = false;
   };
 
 } // namespace Model

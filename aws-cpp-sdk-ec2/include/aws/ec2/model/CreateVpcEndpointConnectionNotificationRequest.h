@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API CreateVpcEndpointConnectionNotificationRequest : public EC2Request
+  class CreateVpcEndpointConnectionNotificationRequest : public EC2Request
   {
   public:
-    CreateVpcEndpointConnectionNotificationRequest();
+    AWS_EC2_API CreateVpcEndpointConnectionNotificationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcEndpointConnectionNotification"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -324,22 +324,22 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_connectionNotificationArn;
-    bool m_connectionNotificationArnHasBeenSet;
+    bool m_connectionNotificationArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionEvents;
-    bool m_connectionEventsHasBeenSet;
+    bool m_connectionEventsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

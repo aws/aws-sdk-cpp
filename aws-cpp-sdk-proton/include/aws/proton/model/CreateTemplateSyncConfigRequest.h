@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API CreateTemplateSyncConfigRequest : public ProtonRequest
+  class CreateTemplateSyncConfigRequest : public ProtonRequest
   {
   public:
-    CreateTemplateSyncConfigRequest();
+    AWS_PROTON_API CreateTemplateSyncConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,89 +31,89 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTemplateSyncConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline const Aws::String& GetBranch() const{ return m_branch; }
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline CreateTemplateSyncConfigRequest& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline CreateTemplateSyncConfigRequest& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
 
     /**
-     * <p>The branch of the registered repository for your template.</p>
+     * <p>The repository branch for your template.</p>
      */
     inline CreateTemplateSyncConfigRequest& WithBranch(const char* value) { SetBranch(value); return *this;}
 
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline CreateTemplateSyncConfigRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline CreateTemplateSyncConfigRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your repository (for example, <code>myrepos/myrepo</code>).</p>
+     * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
     inline CreateTemplateSyncConfigRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
@@ -280,22 +280,22 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

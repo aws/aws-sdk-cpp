@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TemplateAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TemplateAlias
+  class TemplateAlias
   {
   public:
-    TemplateAlias();
-    TemplateAlias(Aws::Utils::Json::JsonView jsonValue);
-    TemplateAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TemplateAlias();
+    AWS_QUICKSIGHT_API TemplateAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TemplateAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_templateVersionNumber;
-    bool m_templateVersionNumberHasBeenSet;
+    bool m_templateVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

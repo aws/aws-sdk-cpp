@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaExecutionParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaExecutionParameters
+  class LambdaExecutionParameters
   {
   public:
-    LambdaExecutionParameters();
-    LambdaExecutionParameters(Aws::Utils::Json::JsonView jsonValue);
-    LambdaExecutionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaExecutionParameters();
+    AWS_GREENGRASSV2_API LambdaExecutionParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaExecutionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -477,37 +477,37 @@ namespace Model
   private:
 
     Aws::Vector<LambdaEventSource> m_eventSources;
-    bool m_eventSourcesHasBeenSet;
+    bool m_eventSourcesHasBeenSet = false;
 
     int m_maxQueueSize;
-    bool m_maxQueueSizeHasBeenSet;
+    bool m_maxQueueSizeHasBeenSet = false;
 
     int m_maxInstancesCount;
-    bool m_maxInstancesCountHasBeenSet;
+    bool m_maxInstancesCountHasBeenSet = false;
 
     int m_maxIdleTimeInSeconds;
-    bool m_maxIdleTimeInSecondsHasBeenSet;
+    bool m_maxIdleTimeInSecondsHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     int m_statusTimeoutInSeconds;
-    bool m_statusTimeoutInSecondsHasBeenSet;
+    bool m_statusTimeoutInSecondsHasBeenSet = false;
 
     bool m_pinned;
-    bool m_pinnedHasBeenSet;
+    bool m_pinnedHasBeenSet = false;
 
     LambdaInputPayloadEncodingType m_inputPayloadEncodingType;
-    bool m_inputPayloadEncodingTypeHasBeenSet;
+    bool m_inputPayloadEncodingTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_execArgs;
-    bool m_execArgsHasBeenSet;
+    bool m_execArgsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     LambdaLinuxProcessParams m_linuxProcessParams;
-    bool m_linuxProcessParamsHasBeenSet;
+    bool m_linuxProcessParamsHasBeenSet = false;
   };
 
 } // namespace Model

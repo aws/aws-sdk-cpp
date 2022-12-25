@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Endpoint">AWS API
    * Reference</a></p>
    */
-  class AWS_DOCDB_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Endpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Endpoint();
+    AWS_DOCDB_API Endpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Endpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

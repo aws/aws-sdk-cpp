@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentSummary
+  class TrialComponentSummary
   {
   public:
-    TrialComponentSummary();
-    TrialComponentSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentSummary();
+    AWS_SAGEMAKER_API TrialComponentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,42 +85,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline const Aws::String& GetTrialComponentArn() const{ return m_trialComponentArn; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline bool TrialComponentArnHasBeenSet() const { return m_trialComponentArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const Aws::String& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = value; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(Aws::String&& value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn = std::move(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const char* value) { m_trialComponentArnHasBeenSet = true; m_trialComponentArn.assign(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(const Aws::String& value) { SetTrialComponentArn(value); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(Aws::String&& value) { SetTrialComponentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline TrialComponentSummary& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
 
@@ -418,37 +418,37 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_trialComponentArn;
-    bool m_trialComponentArnHasBeenSet;
+    bool m_trialComponentArnHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     TrialComponentSource m_trialComponentSource;
-    bool m_trialComponentSourceHasBeenSet;
+    bool m_trialComponentSourceHasBeenSet = false;
 
     TrialComponentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
   };
 
 } // namespace Model

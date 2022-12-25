@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DiskImageDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DiskImageDescription
+  class DiskImageDescription
   {
   public:
-    DiskImageDescription();
-    DiskImageDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DiskImageDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskImageDescription();
+    AWS_EC2_API DiskImageDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DiskImageDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     DiskImageFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_importManifestUrl;
-    bool m_importManifestUrlHasBeenSet;
+    bool m_importManifestUrlHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

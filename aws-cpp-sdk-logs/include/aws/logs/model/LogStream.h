@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogStream">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API LogStream
+  class LogStream
   {
   public:
-    LogStream();
-    LogStream(Aws::Utils::Json::JsonView jsonValue);
-    LogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API LogStream();
+    AWS_CLOUDWATCHLOGS_API LogStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API LogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,58 +81,58 @@ namespace Model
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * after Jan 1, 1970 00:00:00 UTC.</p>
+     * after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
      * <p>The time of the first event, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetFirstEventTimestamp() const{ return m_firstEventTimestamp; }
 
     /**
      * <p>The time of the first event, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool FirstEventTimestampHasBeenSet() const { return m_firstEventTimestampHasBeenSet; }
 
     /**
      * <p>The time of the first event, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetFirstEventTimestamp(long long value) { m_firstEventTimestampHasBeenSet = true; m_firstEventTimestamp = value; }
 
     /**
      * <p>The time of the first event, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
 
 
     /**
      * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * This number is expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
      * in rare situations might take longer.</p>
      */
@@ -140,8 +140,8 @@ namespace Model
 
     /**
      * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * This number is expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
      * in rare situations might take longer.</p>
      */
@@ -149,8 +149,8 @@ namespace Model
 
     /**
      * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * This number is expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
      * in rare situations might take longer.</p>
      */
@@ -158,8 +158,8 @@ namespace Model
 
     /**
      * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * This number is expressed as the number of milliseconds after <code>Jan 1, 1970
+     * 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual
      * consistency basis. It typically updates in less than an hour from ingestion, but
      * in rare situations might take longer.</p>
      */
@@ -167,26 +167,26 @@ namespace Model
 
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
+     * 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
+     * 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline bool LastIngestionTimeHasBeenSet() const { return m_lastIngestionTimeHasBeenSet; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
+     * 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC.</p>
+     * <p>The ingestion time, expressed as the number of milliseconds after <code>Jan
+     * 1, 1970 00:00:00 UTC</code>.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
 
@@ -275,25 +275,25 @@ namespace Model
   private:
 
     Aws::String m_logStreamName;
-    bool m_logStreamNameHasBeenSet;
+    bool m_logStreamNameHasBeenSet = false;
 
     long long m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     long long m_firstEventTimestamp;
-    bool m_firstEventTimestampHasBeenSet;
+    bool m_firstEventTimestampHasBeenSet = false;
 
     long long m_lastEventTimestamp;
-    bool m_lastEventTimestampHasBeenSet;
+    bool m_lastEventTimestampHasBeenSet = false;
 
     long long m_lastIngestionTime;
-    bool m_lastIngestionTimeHasBeenSet;
+    bool m_lastIngestionTimeHasBeenSet = false;
 
     Aws::String m_uploadSequenceToken;
-    bool m_uploadSequenceTokenHasBeenSet;
+    bool m_uploadSequenceTokenHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

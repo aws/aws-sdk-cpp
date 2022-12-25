@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AuthenticationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AuthenticationConfiguration
+  class AuthenticationConfiguration
   {
   public:
-    AuthenticationConfiguration();
-    AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AuthenticationConfiguration();
+    AWS_KENDRA_API AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<BasicAuthenticationConfiguration> m_basicAuthentication;
-    bool m_basicAuthenticationHasBeenSet;
+    bool m_basicAuthenticationHasBeenSet = false;
   };
 
 } // namespace Model

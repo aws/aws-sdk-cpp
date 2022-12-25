@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesRequest : public IoTSiteWiseRequest
+  class GetInterpolatedAssetPropertyValuesRequest : public IoTSiteWiseRequest
   {
   public:
-    GetInterpolatedAssetPropertyValuesRequest();
+    AWS_IOTSITEWISE_API GetInterpolatedAssetPropertyValuesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetInterpolatedAssetPropertyValues"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTSITEWISE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -700,43 +700,43 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     long long m_startTimeInSeconds;
-    bool m_startTimeInSecondsHasBeenSet;
+    bool m_startTimeInSecondsHasBeenSet = false;
 
     int m_startTimeOffsetInNanos;
-    bool m_startTimeOffsetInNanosHasBeenSet;
+    bool m_startTimeOffsetInNanosHasBeenSet = false;
 
     long long m_endTimeInSeconds;
-    bool m_endTimeInSecondsHasBeenSet;
+    bool m_endTimeInSecondsHasBeenSet = false;
 
     int m_endTimeOffsetInNanos;
-    bool m_endTimeOffsetInNanosHasBeenSet;
+    bool m_endTimeOffsetInNanosHasBeenSet = false;
 
     Quality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     long long m_intervalInSeconds;
-    bool m_intervalInSecondsHasBeenSet;
+    bool m_intervalInSecondsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_intervalWindowInSeconds;
-    bool m_intervalWindowInSecondsHasBeenSet;
+    bool m_intervalWindowInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

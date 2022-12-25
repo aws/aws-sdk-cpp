@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateWorkspaceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API FailedCreateWorkspaceRequest
+  class FailedCreateWorkspaceRequest
   {
   public:
-    FailedCreateWorkspaceRequest();
-    FailedCreateWorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
-    FailedCreateWorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API FailedCreateWorkspaceRequest();
+    AWS_WORKSPACES_API FailedCreateWorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API FailedCreateWorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     WorkspaceRequest m_workspaceRequest;
-    bool m_workspaceRequestHasBeenSet;
+    bool m_workspaceRequestHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

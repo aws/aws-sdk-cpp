@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Comment">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Comment
+  class Comment
   {
   public:
-    Comment();
-    Comment(Aws::Utils::Json::JsonView jsonValue);
-    Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Comment();
+    AWS_CODECOMMIT_API Comment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -470,34 +470,34 @@ namespace Model
   private:
 
     Aws::String m_commentId;
-    bool m_commentIdHasBeenSet;
+    bool m_commentIdHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_inReplyTo;
-    bool m_inReplyToHasBeenSet;
+    bool m_inReplyToHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_authorArn;
-    bool m_authorArnHasBeenSet;
+    bool m_authorArnHasBeenSet = false;
 
     bool m_deleted;
-    bool m_deletedHasBeenSet;
+    bool m_deletedHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_callerReactions;
-    bool m_callerReactionsHasBeenSet;
+    bool m_callerReactionsHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_reactionCounts;
-    bool m_reactionCountsHasBeenSet;
+    bool m_reactionCountsHasBeenSet = false;
   };
 
 } // namespace Model

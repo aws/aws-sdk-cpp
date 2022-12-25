@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackEvaluationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackEvaluationResult
+  class ConformancePackEvaluationResult
   {
   public:
-    ConformancePackEvaluationResult();
-    ConformancePackEvaluationResult(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackEvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationResult();
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackEvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,19 +212,19 @@ namespace Model
   private:
 
     ConformancePackComplianceType m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     EvaluationResultIdentifier m_evaluationResultIdentifier;
-    bool m_evaluationResultIdentifierHasBeenSet;
+    bool m_evaluationResultIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_configRuleInvokedTime;
-    bool m_configRuleInvokedTimeHasBeenSet;
+    bool m_configRuleInvokedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_resultRecordedTime;
-    bool m_resultRecordedTimeHasBeenSet;
+    bool m_resultRecordedTimeHasBeenSet = false;
 
     Aws::String m_annotation;
-    bool m_annotationHasBeenSet;
+    bool m_annotationHasBeenSet = false;
   };
 
 } // namespace Model

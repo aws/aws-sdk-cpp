@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricDataQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MetricDataQuery
+  class MetricDataQuery
   {
   public:
-    MetricDataQuery();
-    MetricDataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricDataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricDataQuery();
+    AWS_AUTOSCALING_API MetricDataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricDataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -360,19 +360,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     MetricStat m_metricStat;
-    bool m_metricStatHasBeenSet;
+    bool m_metricStatHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     bool m_returnData;
-    bool m_returnDataHasBeenSet;
+    bool m_returnDataHasBeenSet = false;
   };
 
 } // namespace Model

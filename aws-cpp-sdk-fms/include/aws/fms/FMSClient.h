@@ -5,202 +5,16 @@
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
-#include <aws/fms/FMSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/fms/model/AssociateThirdPartyFirewallResult.h>
-#include <aws/fms/model/DisassociateThirdPartyFirewallResult.h>
-#include <aws/fms/model/GetAdminAccountResult.h>
-#include <aws/fms/model/GetAppsListResult.h>
-#include <aws/fms/model/GetComplianceDetailResult.h>
-#include <aws/fms/model/GetNotificationChannelResult.h>
-#include <aws/fms/model/GetPolicyResult.h>
-#include <aws/fms/model/GetProtectionStatusResult.h>
-#include <aws/fms/model/GetProtocolsListResult.h>
-#include <aws/fms/model/GetThirdPartyFirewallAssociationStatusResult.h>
-#include <aws/fms/model/GetViolationDetailsResult.h>
-#include <aws/fms/model/ListAppsListsResult.h>
-#include <aws/fms/model/ListComplianceStatusResult.h>
-#include <aws/fms/model/ListMemberAccountsResult.h>
-#include <aws/fms/model/ListPoliciesResult.h>
-#include <aws/fms/model/ListProtocolsListsResult.h>
-#include <aws/fms/model/ListTagsForResourceResult.h>
-#include <aws/fms/model/ListThirdPartyFirewallFirewallPoliciesResult.h>
-#include <aws/fms/model/PutAppsListResult.h>
-#include <aws/fms/model/PutPolicyResult.h>
-#include <aws/fms/model/PutProtocolsListResult.h>
-#include <aws/fms/model/TagResourceResult.h>
-#include <aws/fms/model/UntagResourceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/fms/FMSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace FMS
 {
-
-namespace Model
-{
-        class AssociateAdminAccountRequest;
-        class AssociateThirdPartyFirewallRequest;
-        class DeleteAppsListRequest;
-        class DeleteNotificationChannelRequest;
-        class DeletePolicyRequest;
-        class DeleteProtocolsListRequest;
-        class DisassociateAdminAccountRequest;
-        class DisassociateThirdPartyFirewallRequest;
-        class GetAdminAccountRequest;
-        class GetAppsListRequest;
-        class GetComplianceDetailRequest;
-        class GetNotificationChannelRequest;
-        class GetPolicyRequest;
-        class GetProtectionStatusRequest;
-        class GetProtocolsListRequest;
-        class GetThirdPartyFirewallAssociationStatusRequest;
-        class GetViolationDetailsRequest;
-        class ListAppsListsRequest;
-        class ListComplianceStatusRequest;
-        class ListMemberAccountsRequest;
-        class ListPoliciesRequest;
-        class ListProtocolsListsRequest;
-        class ListTagsForResourceRequest;
-        class ListThirdPartyFirewallFirewallPoliciesRequest;
-        class PutAppsListRequest;
-        class PutNotificationChannelRequest;
-        class PutPolicyRequest;
-        class PutProtocolsListRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> AssociateAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<AssociateThirdPartyFirewallResult, FMSError> AssociateThirdPartyFirewallOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteAppsListOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteNotificationChannelOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeletePolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DeleteProtocolsListOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> DisassociateAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateThirdPartyFirewallResult, FMSError> DisassociateThirdPartyFirewallOutcome;
-        typedef Aws::Utils::Outcome<GetAdminAccountResult, FMSError> GetAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<GetAppsListResult, FMSError> GetAppsListOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceDetailResult, FMSError> GetComplianceDetailOutcome;
-        typedef Aws::Utils::Outcome<GetNotificationChannelResult, FMSError> GetNotificationChannelOutcome;
-        typedef Aws::Utils::Outcome<GetPolicyResult, FMSError> GetPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetProtectionStatusResult, FMSError> GetProtectionStatusOutcome;
-        typedef Aws::Utils::Outcome<GetProtocolsListResult, FMSError> GetProtocolsListOutcome;
-        typedef Aws::Utils::Outcome<GetThirdPartyFirewallAssociationStatusResult, FMSError> GetThirdPartyFirewallAssociationStatusOutcome;
-        typedef Aws::Utils::Outcome<GetViolationDetailsResult, FMSError> GetViolationDetailsOutcome;
-        typedef Aws::Utils::Outcome<ListAppsListsResult, FMSError> ListAppsListsOutcome;
-        typedef Aws::Utils::Outcome<ListComplianceStatusResult, FMSError> ListComplianceStatusOutcome;
-        typedef Aws::Utils::Outcome<ListMemberAccountsResult, FMSError> ListMemberAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListPoliciesResult, FMSError> ListPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListProtocolsListsResult, FMSError> ListProtocolsListsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, FMSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListThirdPartyFirewallFirewallPoliciesResult, FMSError> ListThirdPartyFirewallFirewallPoliciesOutcome;
-        typedef Aws::Utils::Outcome<PutAppsListResult, FMSError> PutAppsListOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, FMSError> PutNotificationChannelOutcome;
-        typedef Aws::Utils::Outcome<PutPolicyResult, FMSError> PutPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutProtocolsListResult, FMSError> PutProtocolsListOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, FMSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, FMSError> UntagResourceOutcome;
-
-        typedef std::future<AssociateAdminAccountOutcome> AssociateAdminAccountOutcomeCallable;
-        typedef std::future<AssociateThirdPartyFirewallOutcome> AssociateThirdPartyFirewallOutcomeCallable;
-        typedef std::future<DeleteAppsListOutcome> DeleteAppsListOutcomeCallable;
-        typedef std::future<DeleteNotificationChannelOutcome> DeleteNotificationChannelOutcomeCallable;
-        typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
-        typedef std::future<DeleteProtocolsListOutcome> DeleteProtocolsListOutcomeCallable;
-        typedef std::future<DisassociateAdminAccountOutcome> DisassociateAdminAccountOutcomeCallable;
-        typedef std::future<DisassociateThirdPartyFirewallOutcome> DisassociateThirdPartyFirewallOutcomeCallable;
-        typedef std::future<GetAdminAccountOutcome> GetAdminAccountOutcomeCallable;
-        typedef std::future<GetAppsListOutcome> GetAppsListOutcomeCallable;
-        typedef std::future<GetComplianceDetailOutcome> GetComplianceDetailOutcomeCallable;
-        typedef std::future<GetNotificationChannelOutcome> GetNotificationChannelOutcomeCallable;
-        typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
-        typedef std::future<GetProtectionStatusOutcome> GetProtectionStatusOutcomeCallable;
-        typedef std::future<GetProtocolsListOutcome> GetProtocolsListOutcomeCallable;
-        typedef std::future<GetThirdPartyFirewallAssociationStatusOutcome> GetThirdPartyFirewallAssociationStatusOutcomeCallable;
-        typedef std::future<GetViolationDetailsOutcome> GetViolationDetailsOutcomeCallable;
-        typedef std::future<ListAppsListsOutcome> ListAppsListsOutcomeCallable;
-        typedef std::future<ListComplianceStatusOutcome> ListComplianceStatusOutcomeCallable;
-        typedef std::future<ListMemberAccountsOutcome> ListMemberAccountsOutcomeCallable;
-        typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
-        typedef std::future<ListProtocolsListsOutcome> ListProtocolsListsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListThirdPartyFirewallFirewallPoliciesOutcome> ListThirdPartyFirewallFirewallPoliciesOutcomeCallable;
-        typedef std::future<PutAppsListOutcome> PutAppsListOutcomeCallable;
-        typedef std::future<PutNotificationChannelOutcome> PutNotificationChannelOutcomeCallable;
-        typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
-        typedef std::future<PutProtocolsListOutcome> PutProtocolsListOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class FMSClient;
-
-    typedef std::function<void(const FMSClient*, const Model::AssociateAdminAccountRequest&, const Model::AssociateAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::AssociateThirdPartyFirewallRequest&, const Model::AssociateThirdPartyFirewallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateThirdPartyFirewallResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DeleteAppsListRequest&, const Model::DeleteAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DeleteNotificationChannelRequest&, const Model::DeleteNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationChannelResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DeleteProtocolsListRequest&, const Model::DeleteProtocolsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtocolsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DisassociateAdminAccountRequest&, const Model::DisassociateAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::DisassociateThirdPartyFirewallRequest&, const Model::DisassociateThirdPartyFirewallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateThirdPartyFirewallResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetAdminAccountRequest&, const Model::GetAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetAppsListRequest&, const Model::GetAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetComplianceDetailRequest&, const Model::GetComplianceDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetNotificationChannelRequest&, const Model::GetNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNotificationChannelResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetProtectionStatusRequest&, const Model::GetProtectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtectionStatusResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetProtocolsListRequest&, const Model::GetProtocolsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtocolsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetThirdPartyFirewallAssociationStatusRequest&, const Model::GetThirdPartyFirewallAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyFirewallAssociationStatusResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::GetViolationDetailsRequest&, const Model::GetViolationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetViolationDetailsResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListAppsListsRequest&, const Model::ListAppsListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsListsResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListComplianceStatusRequest&, const Model::ListComplianceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceStatusResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListMemberAccountsRequest&, const Model::ListMemberAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMemberAccountsResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListProtocolsListsRequest&, const Model::ListProtocolsListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtocolsListsResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::ListThirdPartyFirewallFirewallPoliciesRequest&, const Model::ListThirdPartyFirewallFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::PutAppsListRequest&, const Model::PutAppsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::PutNotificationChannelRequest&, const Model::PutNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationChannelResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::PutProtocolsListRequest&, const Model::PutProtocolsListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProtocolsListResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const FMSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>This is the <i>Firewall Manager API Reference</i>. This guide is for
    * developers who need detailed information about the Firewall Manager API actions,
@@ -212,32 +26,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
    * Manager required permissions for API actions</a>. </p>
    */
-  class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient
+  class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FMSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FMSClient(const Aws::FMS::FMSClientConfiguration& clientConfiguration = Aws::FMS::FMSClientConfiguration(),
+                  std::shared_ptr<FMSEndpointProviderBase> endpointProvider = Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FMSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FMSClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<FMSEndpointProviderBase> endpointProvider = Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FMS::FMSClientConfiguration& clientConfiguration = Aws::FMS::FMSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         FMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<FMSEndpointProviderBase> endpointProvider = Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::FMS::FMSClientConfiguration& clientConfiguration = Aws::FMS::FMSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FMSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        FMSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        FMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~FMSClient();
-
 
         /**
          * <p>Sets the Firewall Manager administrator account. The account must be a member
@@ -280,6 +122,42 @@ namespace Model
          * An Async wrapper for AssociateThirdPartyFirewall that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateThirdPartyFirewallAsync(const Model::AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate resources to a Firewall Manager resource set.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAssociateResourceOutcome BatchAssociateResource(const Model::BatchAssociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchAssociateResourceOutcomeCallable BatchAssociateResourceCallable(const Model::BatchAssociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchAssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchAssociateResourceAsync(const Model::BatchAssociateResourceRequest& request, const BatchAssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates resources from a Firewall Manager resource set.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateResourceOutcome BatchDisassociateResource(const Model::BatchDisassociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDisassociateResourceOutcomeCallable BatchDisassociateResourceCallable(const Model::BatchDisassociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDisassociateResourceAsync(const Model::BatchDisassociateResourceRequest& request, const BatchDisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Permanently deletes an Firewall Manager applications list.</p><p><h3>See
@@ -352,6 +230,23 @@ namespace Model
          * An Async wrapper for DeleteProtocolsList that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProtocolsListAsync(const Model::DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified <a>ResourceSet</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceSetOutcome DeleteResourceSet(const Model::DeleteResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceSetOutcomeCallable DeleteResourceSetCallable(const Model::DeleteResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceSetAsync(const Model::DeleteResourceSetRequest& request, const DeleteResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the account that has been set as the Firewall Manager
@@ -534,6 +429,23 @@ namespace Model
         virtual void GetProtocolsListAsync(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about a specific resource set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceSetOutcome GetResourceSet(const Model::GetResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceSetOutcomeCallable GetResourceSetCallable(const Model::GetResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for GetResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceSetAsync(const Model::GetResourceSetRequest& request, const GetResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The onboarding status of a Firewall Manager admin account to third-party
          * firewall vendor tenant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">AWS
@@ -607,6 +519,24 @@ namespace Model
         virtual void ListComplianceStatusAsync(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of resources in the organization's accounts that are
+         * available to be associated with a resource set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDiscoveredResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDiscoveredResourcesOutcomeCallable ListDiscoveredResourcesCallable(const Model::ListDiscoveredResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListDiscoveredResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
          * in the administrator's Amazon Web Services organization.</p> <p>The
          * <code>ListMemberAccounts</code> must be submitted by the account that is set as
@@ -661,6 +591,42 @@ namespace Model
          * An Async wrapper for ListProtocolsLists that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProtocolsListsAsync(const Model::ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of resources that are currently associated to a resource
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSetResourcesOutcome ListResourceSetResources(const Model::ListResourceSetResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSetResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceSetResourcesOutcomeCallable ListResourceSetResourcesCallable(const Model::ListResourceSetResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceSetResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceSetResourcesAsync(const Model::ListResourceSetResourcesRequest& request, const ListResourceSetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of <code>ResourceSetSummary</code> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceSetsOutcome ListResourceSets(const Model::ListResourceSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceSetsOutcomeCallable ListResourceSetsCallable(const Model::ListResourceSetsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourceSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceSetsAsync(const Model::ListResourceSetsRequest& request, const ListResourceSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the list of tags for the specified Amazon Web Services resource.
@@ -792,6 +758,25 @@ namespace Model
         virtual void PutProtocolsListAsync(const Model::PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates the resource set.</p> <p>An Firewall Manager resource set defines the
+         * resources to import into an Firewall Manager policy from another Amazon Web
+         * Services service.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourceSetOutcome PutResourceSet(const Model::PutResourceSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourceSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourceSetOutcomeCallable PutResourceSetCallable(const Model::PutResourceSetRequest& request) const;
+
+        /**
+         * An Async wrapper for PutResourceSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourceSetAsync(const Model::PutResourceSetRequest& request, const PutResourceSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds one or more tags to an Amazon Web Services resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">AWS API
@@ -829,42 +814,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<FMSEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateAdminAccountAsyncHelper(const Model::AssociateAdminAccountRequest& request, const AssociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateThirdPartyFirewallAsyncHelper(const Model::AssociateThirdPartyFirewallRequest& request, const AssociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppsListAsyncHelper(const Model::DeleteAppsListRequest& request, const DeleteAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteNotificationChannelAsyncHelper(const Model::DeleteNotificationChannelRequest& request, const DeleteNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProtocolsListAsyncHelper(const Model::DeleteProtocolsListRequest& request, const DeleteProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateAdminAccountAsyncHelper(const Model::DisassociateAdminAccountRequest& request, const DisassociateAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateThirdPartyFirewallAsyncHelper(const Model::DisassociateThirdPartyFirewallRequest& request, const DisassociateThirdPartyFirewallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAdminAccountAsyncHelper(const Model::GetAdminAccountRequest& request, const GetAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAppsListAsyncHelper(const Model::GetAppsListRequest& request, const GetAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComplianceDetailAsyncHelper(const Model::GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetNotificationChannelAsyncHelper(const Model::GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProtectionStatusAsyncHelper(const Model::GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProtocolsListAsyncHelper(const Model::GetProtocolsListRequest& request, const GetProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetThirdPartyFirewallAssociationStatusAsyncHelper(const Model::GetThirdPartyFirewallAssociationStatusRequest& request, const GetThirdPartyFirewallAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetViolationDetailsAsyncHelper(const Model::GetViolationDetailsRequest& request, const GetViolationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppsListsAsyncHelper(const Model::ListAppsListsRequest& request, const ListAppsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListComplianceStatusAsyncHelper(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMemberAccountsAsyncHelper(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProtocolsListsAsyncHelper(const Model::ListProtocolsListsRequest& request, const ListProtocolsListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListThirdPartyFirewallFirewallPoliciesAsyncHelper(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request, const ListThirdPartyFirewallFirewallPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAppsListAsyncHelper(const Model::PutAppsListRequest& request, const PutAppsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutNotificationChannelAsyncHelper(const Model::PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutPolicyAsyncHelper(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutProtocolsListAsyncHelper(const Model::PutProtocolsListRequest& request, const PutProtocolsListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;
+      void init(const FMSClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      FMSClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<FMSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace FMS

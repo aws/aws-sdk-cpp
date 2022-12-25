@@ -34,21 +34,19 @@ namespace Model
    * including player data, is automatically passed to a game session when the player
    * connects to the game session and is validated. After the game session ends,
    * player sessions information is retained for 30 days and then removed.</p> <p>
-   * <b>Related actions</b> </p> <p> <a>CreatePlayerSession</a> |
-   * <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> |
-   * <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a
+   * <b>Related actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlayerSession
+  class PlayerSession
   {
   public:
-    PlayerSession();
-    PlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlayerSession();
+    AWS_GAMELIFT_API PlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -707,40 +705,40 @@ namespace Model
   private:
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_gameSessionId;
-    bool m_gameSessionIdHasBeenSet;
+    bool m_gameSessionIdHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminationTime;
-    bool m_terminationTimeHasBeenSet;
+    bool m_terminationTimeHasBeenSet = false;
 
     PlayerSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_playerData;
-    bool m_playerDataHasBeenSet;
+    bool m_playerDataHasBeenSet = false;
   };
 
 } // namespace Model

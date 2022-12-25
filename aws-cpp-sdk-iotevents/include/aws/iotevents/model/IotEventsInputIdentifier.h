@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotEventsInputIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API IotEventsInputIdentifier
+  class IotEventsInputIdentifier
   {
   public:
-    IotEventsInputIdentifier();
-    IotEventsInputIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    IotEventsInputIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API IotEventsInputIdentifier();
+    AWS_IOTEVENTS_API IotEventsInputIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API IotEventsInputIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
   };
 
 } // namespace Model

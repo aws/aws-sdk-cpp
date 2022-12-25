@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/OcspConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API OcspConfiguration
+  class OcspConfiguration
   {
   public:
-    OcspConfiguration();
-    OcspConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OcspConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API OcspConfiguration();
+    AWS_ACMPCA_API OcspConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API OcspConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,8 +73,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline const Aws::String& GetOcspCustomCname() const{ return m_ocspCustomCname; }
 
@@ -86,8 +86,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline bool OcspCustomCnameHasBeenSet() const { return m_ocspCustomCnameHasBeenSet; }
 
@@ -99,8 +99,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline void SetOcspCustomCname(const Aws::String& value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname = value; }
 
@@ -112,8 +112,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline void SetOcspCustomCname(Aws::String&& value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname = std::move(value); }
 
@@ -125,8 +125,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline void SetOcspCustomCname(const char* value) { m_ocspCustomCnameHasBeenSet = true; m_ocspCustomCname.assign(value); }
 
@@ -138,8 +138,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline OcspConfiguration& WithOcspCustomCname(const Aws::String& value) { SetOcspCustomCname(value); return *this;}
 
@@ -151,8 +151,8 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline OcspConfiguration& WithOcspCustomCname(Aws::String&& value) { SetOcspCustomCname(std::move(value)); return *this;}
 
@@ -164,18 +164,18 @@ namespace Model
      * protocol prefix such as "http://" or "https://".</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-     * Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager
-     * Private Certificate Authority (PCA) User Guide</i>.</p>
+     * Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate
+     * Authority (PCA) User Guide</i>.</p>
      */
     inline OcspConfiguration& WithOcspCustomCname(const char* value) { SetOcspCustomCname(value); return *this;}
 
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_ocspCustomCname;
-    bool m_ocspCustomCnameHasBeenSet;
+    bool m_ocspCustomCnameHasBeenSet = false;
   };
 
 } // namespace Model

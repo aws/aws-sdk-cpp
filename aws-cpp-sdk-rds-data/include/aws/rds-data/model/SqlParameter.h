@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rds-data/model/TypeHint.h>
 #include <aws/rds-data/model/Field.h>
+#include <aws/rds-data/model/TypeHint.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API SqlParameter
+  class SqlParameter
   {
   public:
-    SqlParameter();
-    SqlParameter(Aws::Utils::Json::JsonView jsonValue);
-    SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API SqlParameter();
+    AWS_RDSDATASERVICE_API SqlParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,6 +78,37 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline SqlParameter& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline const Field& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline void SetValue(const Field& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline void SetValue(Field&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline SqlParameter& WithValue(const Field& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline SqlParameter& WithValue(Field&& value) { SetValue(std::move(value)); return *this;}
 
 
     /**
@@ -206,47 +237,16 @@ namespace Model
      */
     inline SqlParameter& WithTypeHint(TypeHint&& value) { SetTypeHint(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline const Field& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline void SetValue(const Field& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline void SetValue(Field&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline SqlParameter& WithValue(const Field& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the parameter.</p>
-     */
-    inline SqlParameter& WithValue(Field&& value) { SetValue(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
-
-    TypeHint m_typeHint;
-    bool m_typeHintHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Field m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
+
+    TypeHint m_typeHint;
+    bool m_typeHintHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVS_API ListStreamSessionsRequest : public IVSRequest
+  class ListStreamSessionsRequest : public IVSRequest
   {
   public:
-    ListStreamSessionsRequest();
+    AWS_IVS_API ListStreamSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListStreamSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -74,22 +74,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of streams to return. Default: 50.</p>
+     * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline ListStreamSessionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

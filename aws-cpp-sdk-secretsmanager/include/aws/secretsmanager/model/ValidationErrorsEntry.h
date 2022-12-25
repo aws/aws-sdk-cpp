@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidationErrorsEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API ValidationErrorsEntry
+  class ValidationErrorsEntry
   {
   public:
-    ValidationErrorsEntry();
-    ValidationErrorsEntry(Aws::Utils::Json::JsonView jsonValue);
-    ValidationErrorsEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API ValidationErrorsEntry();
+    AWS_SECRETSMANAGER_API ValidationErrorsEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API ValidationErrorsEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

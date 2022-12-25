@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/OriginationIdentityMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API OriginationIdentityMetadata
+  class OriginationIdentityMetadata
   {
   public:
-    OriginationIdentityMetadata();
-    OriginationIdentityMetadata(Aws::Utils::Json::JsonView jsonValue);
-    OriginationIdentityMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API OriginationIdentityMetadata();
+    AWS_PINPOINTSMSVOICEV2_API OriginationIdentityMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API OriginationIdentityMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_originationIdentityArn;
-    bool m_originationIdentityArnHasBeenSet;
+    bool m_originationIdentityArnHasBeenSet = false;
 
     Aws::String m_originationIdentity;
-    bool m_originationIdentityHasBeenSet;
+    bool m_originationIdentityHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
-    bool m_isoCountryCodeHasBeenSet;
+    bool m_isoCountryCodeHasBeenSet = false;
 
     Aws::Vector<NumberCapability> m_numberCapabilities;
-    bool m_numberCapabilitiesHasBeenSet;
+    bool m_numberCapabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

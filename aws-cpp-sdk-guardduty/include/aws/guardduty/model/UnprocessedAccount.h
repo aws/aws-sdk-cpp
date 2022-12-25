@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnprocessedAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API UnprocessedAccount
+  class UnprocessedAccount
   {
   public:
-    UnprocessedAccount();
-    UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API UnprocessedAccount();
+    AWS_GUARDDUTY_API UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

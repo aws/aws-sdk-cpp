@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/WebhookDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API WebhookDefinition
+  class WebhookDefinition
   {
   public:
-    WebhookDefinition();
-    WebhookDefinition(Aws::Utils::Json::JsonView jsonValue);
-    WebhookDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API WebhookDefinition();
+    AWS_CODEPIPELINE_API WebhookDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API WebhookDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -360,22 +360,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_targetPipeline;
-    bool m_targetPipelineHasBeenSet;
+    bool m_targetPipelineHasBeenSet = false;
 
     Aws::String m_targetAction;
-    bool m_targetActionHasBeenSet;
+    bool m_targetActionHasBeenSet = false;
 
     Aws::Vector<WebhookFilterRule> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     WebhookAuthenticationType m_authentication;
-    bool m_authenticationHasBeenSet;
+    bool m_authenticationHasBeenSet = false;
 
     WebhookAuthConfiguration m_authenticationConfiguration;
-    bool m_authenticationConfigurationHasBeenSet;
+    bool m_authenticationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventStartCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventStartCondition
+  class EventStartCondition
   {
   public:
-    EventStartCondition();
-    EventStartCondition(Aws::Utils::Json::JsonView jsonValue);
-    EventStartCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventStartCondition();
+    AWS_PINPOINT_API EventStartCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventStartCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -85,10 +85,10 @@ namespace Model
   private:
 
     EventFilter m_eventFilter;
-    bool m_eventFilterHasBeenSet;
+    bool m_eventFilterHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
   };
 
 } // namespace Model

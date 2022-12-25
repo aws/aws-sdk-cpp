@@ -60,13 +60,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DynamoDBAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DynamoDBAction
+  class DynamoDBAction
   {
   public:
-    DynamoDBAction();
-    DynamoDBAction(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DynamoDBAction();
+    AWS_IOTEVENTS_API DynamoDBAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DynamoDBAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -667,34 +667,34 @@ namespace Model
   private:
 
     Aws::String m_hashKeyType;
-    bool m_hashKeyTypeHasBeenSet;
+    bool m_hashKeyTypeHasBeenSet = false;
 
     Aws::String m_hashKeyField;
-    bool m_hashKeyFieldHasBeenSet;
+    bool m_hashKeyFieldHasBeenSet = false;
 
     Aws::String m_hashKeyValue;
-    bool m_hashKeyValueHasBeenSet;
+    bool m_hashKeyValueHasBeenSet = false;
 
     Aws::String m_rangeKeyType;
-    bool m_rangeKeyTypeHasBeenSet;
+    bool m_rangeKeyTypeHasBeenSet = false;
 
     Aws::String m_rangeKeyField;
-    bool m_rangeKeyFieldHasBeenSet;
+    bool m_rangeKeyFieldHasBeenSet = false;
 
     Aws::String m_rangeKeyValue;
-    bool m_rangeKeyValueHasBeenSet;
+    bool m_rangeKeyValueHasBeenSet = false;
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_payloadField;
-    bool m_payloadFieldHasBeenSet;
+    bool m_payloadFieldHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

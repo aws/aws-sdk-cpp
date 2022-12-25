@@ -20,7 +20,9 @@ CreateProvisioningTemplateRequest::CreateProvisioningTemplateRequest() :
     m_enabledHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
     m_preProvisioningHookHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_type(TemplateType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -66,13 +68,18 @@ Aws::String CreateProvisioningTemplateRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TemplateTypeMapper::GetNameForTemplateType(m_type));
   }
 
   return payload.View().WriteReadable();

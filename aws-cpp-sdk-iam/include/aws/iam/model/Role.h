@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API Role
+  class Role
   {
   public:
-    Role();
-    Role(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Role& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Role();
+    AWS_IAM_API Role(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Role& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -609,37 +609,37 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_roleId;
-    bool m_roleIdHasBeenSet;
+    bool m_roleIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_assumeRolePolicyDocument;
-    bool m_assumeRolePolicyDocumentHasBeenSet;
+    bool m_assumeRolePolicyDocumentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_maxSessionDuration;
-    bool m_maxSessionDurationHasBeenSet;
+    bool m_maxSessionDurationHasBeenSet = false;
 
     AttachedPermissionsBoundary m_permissionsBoundary;
-    bool m_permissionsBoundaryHasBeenSet;
+    bool m_permissionsBoundaryHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     RoleLastUsed m_roleLastUsed;
-    bool m_roleLastUsedHasBeenSet;
+    bool m_roleLastUsedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SubnetCidrBlockState">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SubnetCidrBlockState
+  class SubnetCidrBlockState
   {
   public:
-    SubnetCidrBlockState();
-    SubnetCidrBlockState(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SubnetCidrBlockState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetCidrBlockState();
+    AWS_EC2_API SubnetCidrBlockState(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SubnetCidrBlockState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     SubnetCidrBlockStateCode m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

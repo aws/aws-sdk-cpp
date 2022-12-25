@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAVINGSPLANS_API CreateSavingsPlanRequest : public SavingsPlansRequest
+  class CreateSavingsPlanRequest : public SavingsPlansRequest
   {
   public:
-    CreateSavingsPlanRequest();
+    AWS_SAVINGSPLANS_API CreateSavingsPlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSavingsPlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAVINGSPLANS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -336,22 +336,22 @@ namespace Model
   private:
 
     Aws::String m_savingsPlanOfferingId;
-    bool m_savingsPlanOfferingIdHasBeenSet;
+    bool m_savingsPlanOfferingIdHasBeenSet = false;
 
     Aws::String m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     Aws::String m_upfrontPaymentAmount;
-    bool m_upfrontPaymentAmountHasBeenSet;
+    bool m_upfrontPaymentAmountHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchaseTime;
-    bool m_purchaseTimeHasBeenSet;
+    bool m_purchaseTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

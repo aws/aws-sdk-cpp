@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API LoggingEnabled
+  class LoggingEnabled
   {
   public:
-    LoggingEnabled();
-    LoggingEnabled(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoggingEnabled& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API LoggingEnabled();
+    AWS_S3_API LoggingEnabled(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API LoggingEnabled& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -256,13 +256,13 @@ namespace Model
   private:
 
     Aws::String m_targetBucket;
-    bool m_targetBucketHasBeenSet;
+    bool m_targetBucketHasBeenSet = false;
 
     Aws::Vector<TargetGrant> m_targetGrants;
-    bool m_targetGrantsHasBeenSet;
+    bool m_targetGrantsHasBeenSet = false;
 
     Aws::String m_targetPrefix;
-    bool m_targetPrefixHasBeenSet;
+    bool m_targetPrefixHasBeenSet = false;
   };
 
 } // namespace Model

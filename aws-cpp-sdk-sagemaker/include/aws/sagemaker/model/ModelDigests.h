@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelDigests">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelDigests
+  class ModelDigests
   {
   public:
-    ModelDigests();
-    ModelDigests(Aws::Utils::Json::JsonView jsonValue);
-    ModelDigests& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelDigests();
+    AWS_SAGEMAKER_API ModelDigests(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelDigests& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_artifactDigest;
-    bool m_artifactDigestHasBeenSet;
+    bool m_artifactDigestHasBeenSet = false;
   };
 
 } // namespace Model

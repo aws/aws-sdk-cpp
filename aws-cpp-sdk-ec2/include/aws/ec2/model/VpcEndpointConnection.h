@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpAddressType.h>
 #include <aws/ec2/model/DnsEntry.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -34,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcEndpointConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpcEndpointConnection
+  class VpcEndpointConnection
   {
   public:
-    VpcEndpointConnection();
-    VpcEndpointConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcEndpointConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcEndpointConnection();
+    AWS_EC2_API VpcEndpointConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcEndpointConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -411,34 +412,122 @@ namespace Model
      */
     inline VpcEndpointConnection& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline const Aws::String& GetVpcEndpointConnectionId() const{ return m_vpcEndpointConnectionId; }
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline bool VpcEndpointConnectionIdHasBeenSet() const { return m_vpcEndpointConnectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline void SetVpcEndpointConnectionId(const Aws::String& value) { m_vpcEndpointConnectionIdHasBeenSet = true; m_vpcEndpointConnectionId = value; }
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline void SetVpcEndpointConnectionId(Aws::String&& value) { m_vpcEndpointConnectionIdHasBeenSet = true; m_vpcEndpointConnectionId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline void SetVpcEndpointConnectionId(const char* value) { m_vpcEndpointConnectionIdHasBeenSet = true; m_vpcEndpointConnectionId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline VpcEndpointConnection& WithVpcEndpointConnectionId(const Aws::String& value) { SetVpcEndpointConnectionId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline VpcEndpointConnection& WithVpcEndpointConnectionId(Aws::String&& value) { SetVpcEndpointConnectionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC endpoint connection.</p>
+     */
+    inline VpcEndpointConnection& WithVpcEndpointConnectionId(const char* value) { SetVpcEndpointConnectionId(value); return *this;}
+
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline VpcEndpointConnection& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline VpcEndpointConnection& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline VpcEndpointConnection& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags.</p>
+     */
+    inline VpcEndpointConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointId;
-    bool m_vpcEndpointIdHasBeenSet;
+    bool m_vpcEndpointIdHasBeenSet = false;
 
     Aws::String m_vpcEndpointOwner;
-    bool m_vpcEndpointOwnerHasBeenSet;
+    bool m_vpcEndpointOwnerHasBeenSet = false;
 
     State m_vpcEndpointState;
-    bool m_vpcEndpointStateHasBeenSet;
+    bool m_vpcEndpointStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Vector<DnsEntry> m_dnsEntries;
-    bool m_dnsEntriesHasBeenSet;
+    bool m_dnsEntriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-    bool m_networkLoadBalancerArnsHasBeenSet;
+    bool m_networkLoadBalancerArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-    bool m_gatewayLoadBalancerArnsHasBeenSet;
+    bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
+
+    Aws::String m_vpcEndpointConnectionId;
+    bool m_vpcEndpointConnectionIdHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

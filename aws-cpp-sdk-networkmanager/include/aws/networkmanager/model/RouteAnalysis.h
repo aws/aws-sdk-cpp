@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteAnalysis
+  class RouteAnalysis
   {
   public:
-    RouteAnalysis();
-    RouteAnalysis(Aws::Utils::Json::JsonView jsonValue);
-    RouteAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteAnalysis();
+    AWS_NETWORKMANAGER_API RouteAnalysis(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -402,37 +402,37 @@ namespace Model
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::String m_routeAnalysisId;
-    bool m_routeAnalysisIdHasBeenSet;
+    bool m_routeAnalysisIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     RouteAnalysisStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     RouteAnalysisEndpointOptions m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     RouteAnalysisEndpointOptions m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     bool m_includeReturnPath;
-    bool m_includeReturnPathHasBeenSet;
+    bool m_includeReturnPathHasBeenSet = false;
 
     bool m_useMiddleboxes;
-    bool m_useMiddleboxesHasBeenSet;
+    bool m_useMiddleboxesHasBeenSet = false;
 
     RouteAnalysisPath m_forwardPath;
-    bool m_forwardPathHasBeenSet;
+    bool m_forwardPathHasBeenSet = false;
 
     RouteAnalysisPath m_returnPath;
-    bool m_returnPathHasBeenSet;
+    bool m_returnPathHasBeenSet = false;
   };
 
 } // namespace Model

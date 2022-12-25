@@ -28,38 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DataConnector">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API DataConnector
+  class DataConnector
   {
   public:
-    DataConnector();
-    DataConnector(Aws::Utils::Json::JsonView jsonValue);
-    DataConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline bool GetIsNative() const{ return m_isNative; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
-
-    /**
-     * <p>A Boolean value that specifies whether the data connector is native to IoT
-     * TwinMaker.</p>
-     */
-    inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}
+    AWS_IOTTWINMAKER_API DataConnector();
+    AWS_IOTTWINMAKER_API DataConnector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API DataConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,13 +67,38 @@ namespace Model
      */
     inline DataConnector& WithLambda(LambdaFunction&& value) { SetLambda(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline bool GetIsNative() const{ return m_isNative; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline bool IsNativeHasBeenSet() const { return m_isNativeHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline void SetIsNative(bool value) { m_isNativeHasBeenSet = true; m_isNative = value; }
+
+    /**
+     * <p>A Boolean value that specifies whether the data connector is native to IoT
+     * TwinMaker.</p>
+     */
+    inline DataConnector& WithIsNative(bool value) { SetIsNative(value); return *this;}
+
   private:
 
-    bool m_isNative;
-    bool m_isNativeHasBeenSet;
-
     LambdaFunction m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
+
+    bool m_isNative;
+    bool m_isNativeHasBeenSet = false;
   };
 
 } // namespace Model

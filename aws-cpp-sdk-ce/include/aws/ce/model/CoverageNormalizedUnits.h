@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageNormalizedUnits">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CoverageNormalizedUnits
+  class CoverageNormalizedUnits
   {
   public:
-    CoverageNormalizedUnits();
-    CoverageNormalizedUnits(Aws::Utils::Json::JsonView jsonValue);
-    CoverageNormalizedUnits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CoverageNormalizedUnits();
+    AWS_COSTEXPLORER_API CoverageNormalizedUnits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CoverageNormalizedUnits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_onDemandNormalizedUnits;
-    bool m_onDemandNormalizedUnitsHasBeenSet;
+    bool m_onDemandNormalizedUnitsHasBeenSet = false;
 
     Aws::String m_reservedNormalizedUnits;
-    bool m_reservedNormalizedUnitsHasBeenSet;
+    bool m_reservedNormalizedUnitsHasBeenSet = false;
 
     Aws::String m_totalRunningNormalizedUnits;
-    bool m_totalRunningNormalizedUnitsHasBeenSet;
+    bool m_totalRunningNormalizedUnitsHasBeenSet = false;
 
     Aws::String m_coverageNormalizedUnitsPercentage;
-    bool m_coverageNormalizedUnitsPercentageHasBeenSet;
+    bool m_coverageNormalizedUnitsPercentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TruckWeight">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API TruckWeight
+  class TruckWeight
   {
   public:
-    TruckWeight();
-    TruckWeight(Aws::Utils::Json::JsonView jsonValue);
-    TruckWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API TruckWeight();
+    AWS_LOCATIONSERVICE_API TruckWeight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API TruckWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     VehicleWeightUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

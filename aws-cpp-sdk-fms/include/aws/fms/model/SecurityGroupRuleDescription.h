@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/SecurityGroupRuleDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API SecurityGroupRuleDescription
+  class SecurityGroupRuleDescription
   {
   public:
-    SecurityGroupRuleDescription();
-    SecurityGroupRuleDescription(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroupRuleDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API SecurityGroupRuleDescription();
+    AWS_FMS_API SecurityGroupRuleDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API SecurityGroupRuleDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,22 +262,22 @@ namespace Model
   private:
 
     Aws::String m_iPV4Range;
-    bool m_iPV4RangeHasBeenSet;
+    bool m_iPV4RangeHasBeenSet = false;
 
     Aws::String m_iPV6Range;
-    bool m_iPV6RangeHasBeenSet;
+    bool m_iPV6RangeHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     long long m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     long long m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
   };
 
 } // namespace Model

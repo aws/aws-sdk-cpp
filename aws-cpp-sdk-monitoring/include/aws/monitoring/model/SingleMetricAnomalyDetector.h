@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SingleMetricAnomalyDetector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API SingleMetricAnomalyDetector
+  class SingleMetricAnomalyDetector
   {
   public:
-    SingleMetricAnomalyDetector();
-    SingleMetricAnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SingleMetricAnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API SingleMetricAnomalyDetector();
+    AWS_CLOUDWATCH_API SingleMetricAnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API SingleMetricAnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_stat;
-    bool m_statHasBeenSet;
+    bool m_statHasBeenSet = false;
   };
 
 } // namespace Model

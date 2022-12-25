@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListHyperParameterTuningJobsResult
+  class ListHyperParameterTuningJobsResult
   {
   public:
-    ListHyperParameterTuningJobsResult();
-    ListHyperParameterTuningJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHyperParameterTuningJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListHyperParameterTuningJobsResult();
+    AWS_SAGEMAKER_API ListHyperParameterTuningJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListHyperParameterTuningJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

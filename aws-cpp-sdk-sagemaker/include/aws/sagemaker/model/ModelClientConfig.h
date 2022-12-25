@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelClientConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelClientConfig
+  class ModelClientConfig
   {
   public:
-    ModelClientConfig();
-    ModelClientConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelClientConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelClientConfig();
+    AWS_SAGEMAKER_API ModelClientConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelClientConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_invocationsTimeoutInSeconds;
-    bool m_invocationsTimeoutInSecondsHasBeenSet;
+    bool m_invocationsTimeoutInSecondsHasBeenSet = false;
 
     int m_invocationsMaxRetries;
-    bool m_invocationsMaxRetriesHasBeenSet;
+    bool m_invocationsMaxRetriesHasBeenSet = false;
   };
 
 } // namespace Model

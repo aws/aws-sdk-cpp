@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHRUM_API GetAppMonitorDataRequest : public CloudWatchRUMRequest
+  class GetAppMonitorDataRequest : public CloudWatchRUMRequest
   {
   public:
-    GetAppMonitorDataRequest();
+    AWS_CLOUDWATCHRUM_API GetAppMonitorDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAppMonitorData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHRUM_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -242,19 +242,19 @@ namespace Model
   private:
 
     Aws::Vector<QueryFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     TimeRange m_timeRange;
-    bool m_timeRangeHasBeenSet;
+    bool m_timeRangeHasBeenSet = false;
   };
 
 } // namespace Model

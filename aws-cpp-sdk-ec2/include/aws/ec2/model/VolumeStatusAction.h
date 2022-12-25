@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusAction">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VolumeStatusAction
+  class VolumeStatusAction
   {
   public:
-    VolumeStatusAction();
-    VolumeStatusAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VolumeStatusAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusAction();
+    AWS_EC2_API VolumeStatusAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
   };
 
 } // namespace Model

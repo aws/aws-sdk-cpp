@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Batch">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Batch
+  class Batch
   {
   public:
-    Batch();
-    Batch(Aws::Utils::Json::JsonView jsonValue);
-    Batch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Batch();
+    AWS_CUSTOMERPROFILES_API Batch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Batch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

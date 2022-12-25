@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API PutResourcePolicyRequest : public GlueRequest
+  class PutResourcePolicyRequest : public GlueRequest
   {
   public:
-    PutResourcePolicyRequest();
+    AWS_GLUE_API PutResourcePolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutResourcePolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -301,19 +301,19 @@ namespace Model
   private:
 
     Aws::String m_policyInJson;
-    bool m_policyInJsonHasBeenSet;
+    bool m_policyInJsonHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_policyHashCondition;
-    bool m_policyHashConditionHasBeenSet;
+    bool m_policyHashConditionHasBeenSet = false;
 
     ExistCondition m_policyExistsCondition;
-    bool m_policyExistsConditionHasBeenSet;
+    bool m_policyExistsConditionHasBeenSet = false;
 
     EnableHybridValues m_enableHybrid;
-    bool m_enableHybridHasBeenSet;
+    bool m_enableHybridHasBeenSet = false;
   };
 
 } // namespace Model

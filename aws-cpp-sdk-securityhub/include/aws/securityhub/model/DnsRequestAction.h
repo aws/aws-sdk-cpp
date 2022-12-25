@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DnsRequestAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API DnsRequestAction
+  class DnsRequestAction
   {
   public:
-    DnsRequestAction();
-    DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
-    DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API DnsRequestAction();
+    AWS_SECURITYHUB_API DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     bool m_blocked;
-    bool m_blockedHasBeenSet;
+    bool m_blockedHasBeenSet = false;
   };
 
 } // namespace Model

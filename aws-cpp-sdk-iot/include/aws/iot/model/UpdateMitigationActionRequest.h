@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateMitigationActionRequest : public IoTRequest
+  class UpdateMitigationActionRequest : public IoTRequest
   {
   public:
-    UpdateMitigationActionRequest();
+    AWS_IOT_API UpdateMitigationActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMitigationAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     MitigationActionParams m_actionParams;
-    bool m_actionParamsHasBeenSet;
+    bool m_actionParamsHasBeenSet = false;
   };
 
 } // namespace Model

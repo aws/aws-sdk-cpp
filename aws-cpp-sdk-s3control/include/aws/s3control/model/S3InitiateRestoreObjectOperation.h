@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3InitiateRestoreObjectOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3InitiateRestoreObjectOperation
+  class S3InitiateRestoreObjectOperation
   {
   public:
-    S3InitiateRestoreObjectOperation();
-    S3InitiateRestoreObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3InitiateRestoreObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3InitiateRestoreObjectOperation();
+    AWS_S3CONTROL_API S3InitiateRestoreObjectOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3InitiateRestoreObjectOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     int m_expirationInDays;
-    bool m_expirationInDaysHasBeenSet;
+    bool m_expirationInDaysHasBeenSet = false;
 
     S3GlacierJobTier m_glacierJobTier;
-    bool m_glacierJobTierHasBeenSet;
+    bool m_glacierJobTierHasBeenSet = false;
   };
 
 } // namespace Model

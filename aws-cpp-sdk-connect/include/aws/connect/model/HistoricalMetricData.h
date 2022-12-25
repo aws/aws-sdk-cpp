@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetricData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HistoricalMetricData
+  class HistoricalMetricData
   {
   public:
-    HistoricalMetricData();
-    HistoricalMetricData(Aws::Utils::Json::JsonView jsonValue);
-    HistoricalMetricData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HistoricalMetricData();
+    AWS_CONNECT_API HistoricalMetricData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HistoricalMetricData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     HistoricalMetric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

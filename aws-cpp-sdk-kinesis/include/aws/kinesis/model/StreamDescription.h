@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StreamDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API StreamDescription
+  class StreamDescription
   {
   public:
-    StreamDescription();
-    StreamDescription(Aws::Utils::Json::JsonView jsonValue);
-    StreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API StreamDescription();
+    AWS_KINESIS_API StreamDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API StreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -616,37 +616,37 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     StreamStatus m_streamStatus;
-    bool m_streamStatusHasBeenSet;
+    bool m_streamStatusHasBeenSet = false;
 
     StreamModeDetails m_streamModeDetails;
-    bool m_streamModeDetailsHasBeenSet;
+    bool m_streamModeDetailsHasBeenSet = false;
 
     Aws::Vector<Shard> m_shards;
-    bool m_shardsHasBeenSet;
+    bool m_shardsHasBeenSet = false;
 
     bool m_hasMoreShards;
-    bool m_hasMoreShardsHasBeenSet;
+    bool m_hasMoreShardsHasBeenSet = false;
 
     int m_retentionPeriodHours;
-    bool m_retentionPeriodHoursHasBeenSet;
+    bool m_retentionPeriodHoursHasBeenSet = false;
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
-    bool m_streamCreationTimestampHasBeenSet;
+    bool m_streamCreationTimestampHasBeenSet = false;
 
     Aws::Vector<EnhancedMetrics> m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     EncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
   };
 
 } // namespace Model

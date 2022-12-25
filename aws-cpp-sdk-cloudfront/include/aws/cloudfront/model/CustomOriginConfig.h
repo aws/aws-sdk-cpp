@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CustomOriginConfig
+  class CustomOriginConfig
   {
   public:
-    CustomOriginConfig();
-    CustomOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomOriginConfig();
+    AWS_CLOUDFRONT_API CustomOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -223,7 +223,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront waits for a response from the
      * origin. This is also known as the <i>origin response timeout</i>. The minimum
-     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
      * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
      * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -233,7 +233,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront waits for a response from the
      * origin. This is also known as the <i>origin response timeout</i>. The minimum
-     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
      * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
      * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront waits for a response from the
      * origin. This is also known as the <i>origin response timeout</i>. The minimum
-     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
      * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
      * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -253,7 +253,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront waits for a response from the
      * origin. This is also known as the <i>origin response timeout</i>. The minimum
-     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
      * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
      * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -264,7 +264,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront persists its connection to the
      * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
      * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -274,7 +274,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront persists its connection to the
      * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
      * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -284,7 +284,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront persists its connection to the
      * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
      * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -294,7 +294,7 @@ namespace Model
     /**
      * <p>Specifies how long, in seconds, CloudFront persists its connection to the
      * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     * default (if you don’t specify otherwise) is 5 seconds.</p> <p>For more
+     * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
      * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -304,22 +304,22 @@ namespace Model
   private:
 
     int m_hTTPPort;
-    bool m_hTTPPortHasBeenSet;
+    bool m_hTTPPortHasBeenSet = false;
 
     int m_hTTPSPort;
-    bool m_hTTPSPortHasBeenSet;
+    bool m_hTTPSPortHasBeenSet = false;
 
     OriginProtocolPolicy m_originProtocolPolicy;
-    bool m_originProtocolPolicyHasBeenSet;
+    bool m_originProtocolPolicyHasBeenSet = false;
 
     OriginSslProtocols m_originSslProtocols;
-    bool m_originSslProtocolsHasBeenSet;
+    bool m_originSslProtocolsHasBeenSet = false;
 
     int m_originReadTimeout;
-    bool m_originReadTimeoutHasBeenSet;
+    bool m_originReadTimeoutHasBeenSet = false;
 
     int m_originKeepaliveTimeout;
-    bool m_originKeepaliveTimeoutHasBeenSet;
+    bool m_originKeepaliveTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

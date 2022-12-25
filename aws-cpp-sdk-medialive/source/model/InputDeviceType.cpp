@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int HD_HASH = HashingUtils::HashString("HD");
+        static const int UHD_HASH = HashingUtils::HashString("UHD");
 
 
         InputDeviceType GetInputDeviceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == HD_HASH)
           {
             return InputDeviceType::HD;
+          }
+          else if (hashCode == UHD_HASH)
+          {
+            return InputDeviceType::UHD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case InputDeviceType::HD:
             return "HD";
+          case InputDeviceType::UHD:
+            return "UHD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

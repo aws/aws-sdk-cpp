@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RelatedObservations">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API RelatedObservations
+  class RelatedObservations
   {
   public:
-    RelatedObservations();
-    RelatedObservations(Aws::Utils::Json::JsonView jsonValue);
-    RelatedObservations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API RelatedObservations();
+    AWS_APPLICATIONINSIGHTS_API RelatedObservations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API RelatedObservations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Observation> m_observationList;
-    bool m_observationListHasBeenSet;
+    bool m_observationListHasBeenSet = false;
   };
 
 } // namespace Model

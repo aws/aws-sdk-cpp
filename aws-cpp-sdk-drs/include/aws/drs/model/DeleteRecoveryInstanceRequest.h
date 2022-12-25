@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DRS_API DeleteRecoveryInstanceRequest : public DrsRequest
+  class DeleteRecoveryInstanceRequest : public DrsRequest
   {
   public:
-    DeleteRecoveryInstanceRequest();
+    AWS_DRS_API DeleteRecoveryInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,53 +29,53 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRecoveryInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DRS_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline const Aws::String& GetRecoveryInstanceID() const{ return m_recoveryInstanceID; }
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline void SetRecoveryInstanceID(const Aws::String& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = value; }
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline void SetRecoveryInstanceID(Aws::String&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::move(value); }
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline void SetRecoveryInstanceID(const char* value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID.assign(value); }
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline DeleteRecoveryInstanceRequest& WithRecoveryInstanceID(const Aws::String& value) { SetRecoveryInstanceID(value); return *this;}
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline DeleteRecoveryInstanceRequest& WithRecoveryInstanceID(Aws::String&& value) { SetRecoveryInstanceID(std::move(value)); return *this;}
 
     /**
-     * <p>RThe ID of the Recovery Instance to be deleted.</p>
+     * <p>The ID of the Recovery Instance to be deleted.</p>
      */
     inline DeleteRecoveryInstanceRequest& WithRecoveryInstanceID(const char* value) { SetRecoveryInstanceID(value); return *this;}
 
   private:
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
   };
 
 } // namespace Model

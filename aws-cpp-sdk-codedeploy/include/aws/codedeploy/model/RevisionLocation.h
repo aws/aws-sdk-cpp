@@ -33,23 +33,23 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RevisionLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API RevisionLocation
+  class RevisionLocation
   {
   public:
-    RevisionLocation();
-    RevisionLocation(Aws::Utils::Json::JsonView jsonValue);
-    RevisionLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API RevisionLocation();
+    AWS_CODEDEPLOY_API RevisionLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API RevisionLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
 
@@ -57,10 +57,10 @@ namespace Model
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline bool RevisionTypeHasBeenSet() const { return m_revisionTypeHasBeenSet; }
 
@@ -68,10 +68,10 @@ namespace Model
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
@@ -79,10 +79,10 @@ namespace Model
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
 
@@ -90,10 +90,10 @@ namespace Model
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
 
@@ -101,10 +101,10 @@ namespace Model
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
      * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li>
      * <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the
-     * contents of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The
-     * content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
+     * contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content
+     * is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>
      */
     inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(std::move(value)); return *this;}
 
@@ -172,94 +172,94 @@ namespace Model
 
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline const RawString& GetString() const{ return m_string; }
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline void SetString(const RawString& value) { m_stringHasBeenSet = true; m_string = value; }
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline void SetString(RawString&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline RevisionLocation& WithString(const RawString& value) { SetString(value); return *this;}
 
     /**
-     * <p>Information about the location of an AWS Lambda deployment revision stored as
-     * a RawString.</p>
+     * <p>Information about the location of an Lambda deployment revision stored as a
+     * RawString.</p>
      */
     inline RevisionLocation& WithString(RawString&& value) { SetString(std::move(value)); return *this;}
 
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline const AppSpecContent& GetAppSpecContent() const{ return m_appSpecContent; }
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline bool AppSpecContentHasBeenSet() const { return m_appSpecContentHasBeenSet; }
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline void SetAppSpecContent(const AppSpecContent& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = value; }
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline void SetAppSpecContent(AppSpecContent&& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = std::move(value); }
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline RevisionLocation& WithAppSpecContent(const AppSpecContent& value) { SetAppSpecContent(value); return *this;}
 
     /**
-     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
-     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     * <p> The content of an AppSpec file for an Lambda or Amazon ECS deployment. The
+     * content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline RevisionLocation& WithAppSpecContent(AppSpecContent&& value) { SetAppSpecContent(std::move(value)); return *this;}
 
   private:
 
     RevisionLocationType m_revisionType;
-    bool m_revisionTypeHasBeenSet;
+    bool m_revisionTypeHasBeenSet = false;
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
 
     GitHubLocation m_gitHubLocation;
-    bool m_gitHubLocationHasBeenSet;
+    bool m_gitHubLocationHasBeenSet = false;
 
     RawString m_string;
-    bool m_stringHasBeenSet;
+    bool m_stringHasBeenSet = false;
 
     AppSpecContent m_appSpecContent;
-    bool m_appSpecContentHasBeenSet;
+    bool m_appSpecContentHasBeenSet = false;
   };
 
 } // namespace Model

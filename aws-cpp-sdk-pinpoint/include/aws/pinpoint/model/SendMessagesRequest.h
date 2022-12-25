@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API SendMessagesRequest : public PinpointRequest
+  class SendMessagesRequest : public PinpointRequest
   {
   public:
-    SendMessagesRequest();
+    AWS_PINPOINT_API SendMessagesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendMessages"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     MessageRequest m_messageRequest;
-    bool m_messageRequestHasBeenSet;
+    bool m_messageRequestHasBeenSet = false;
   };
 
 } // namespace Model

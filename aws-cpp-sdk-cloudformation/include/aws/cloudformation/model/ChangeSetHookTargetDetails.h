@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetHookTargetDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ChangeSetHookTargetDetails
+  class ChangeSetHookTargetDetails
   {
   public:
-    ChangeSetHookTargetDetails();
-    ChangeSetHookTargetDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ChangeSetHookTargetDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ChangeSetHookTargetDetails();
+    AWS_CLOUDFORMATION_API ChangeSetHookTargetDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ChangeSetHookTargetDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     HookTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     ChangeSetHookResourceTargetDetails m_resourceTargetDetails;
-    bool m_resourceTargetDetailsHasBeenSet;
+    bool m_resourceTargetDetailsHasBeenSet = false;
   };
 
 } // namespace Model

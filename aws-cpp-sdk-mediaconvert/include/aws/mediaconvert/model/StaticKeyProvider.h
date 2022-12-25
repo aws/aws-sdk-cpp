@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StaticKeyProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API StaticKeyProvider
+  class StaticKeyProvider
   {
   public:
-    StaticKeyProvider();
-    StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
-    StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API StaticKeyProvider();
+    AWS_MEDIACONVERT_API StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_keyFormat;
-    bool m_keyFormatHasBeenSet;
+    bool m_keyFormatHasBeenSet = false;
 
     Aws::String m_keyFormatVersions;
-    bool m_keyFormatVersionsHasBeenSet;
+    bool m_keyFormatVersionsHasBeenSet = false;
 
     Aws::String m_staticKeyValue;
-    bool m_staticKeyValueHasBeenSet;
+    bool m_staticKeyValueHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

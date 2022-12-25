@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
+    m_codebuildRoleArnHasBeenSet(false),
     m_componentRoleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentAccountConnectionIdHasBeenSet(false),
@@ -30,6 +31,12 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
 Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_codebuildRoleArnHasBeenSet)
+  {
+   payload.WithString("codebuildRoleArn", m_codebuildRoleArn);
+
+  }
 
   if(m_componentRoleArnHasBeenSet)
   {
@@ -75,7 +82,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

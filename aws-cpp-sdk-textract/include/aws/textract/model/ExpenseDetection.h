@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseDetection
+  class ExpenseDetection
   {
   public:
-    ExpenseDetection();
-    ExpenseDetection(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseDetection();
+    AWS_TEXTRACT_API ExpenseDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Geometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

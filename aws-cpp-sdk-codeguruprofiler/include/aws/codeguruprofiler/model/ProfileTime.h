@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfileTime">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ProfileTime
+  class ProfileTime
   {
   public:
-    ProfileTime();
-    ProfileTime(Aws::Utils::Json::JsonView jsonValue);
-    ProfileTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API ProfileTime();
+    AWS_CODEGURUPROFILER_API ProfileTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API ProfileTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
   };
 
 } // namespace Model

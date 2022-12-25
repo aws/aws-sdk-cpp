@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GatewayResponse
+  class GatewayResponse
   {
   public:
-    GatewayResponse();
-    GatewayResponse(Aws::Utils::Json::JsonView jsonValue);
-    GatewayResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API GatewayResponse();
+    AWS_APIGATEWAY_API GatewayResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API GatewayResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,19 +305,19 @@ namespace Model
   private:
 
     GatewayResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
 
     bool m_defaultResponse;
-    bool m_defaultResponseHasBeenSet;
+    bool m_defaultResponseHasBeenSet = false;
   };
 
 } // namespace Model

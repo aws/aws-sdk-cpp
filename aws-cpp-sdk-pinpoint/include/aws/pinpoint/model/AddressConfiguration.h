@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AddressConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API AddressConfiguration
+  class AddressConfiguration
   {
   public:
-    AddressConfiguration();
-    AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API AddressConfiguration();
+    AWS_PINPOINT_API AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -424,22 +424,22 @@ namespace Model
   private:
 
     Aws::String m_bodyOverride;
-    bool m_bodyOverrideHasBeenSet;
+    bool m_bodyOverrideHasBeenSet = false;
 
     ChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_rawContent;
-    bool m_rawContentHasBeenSet;
+    bool m_rawContentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_titleOverride;
-    bool m_titleOverrideHasBeenSet;
+    bool m_titleOverrideHasBeenSet = false;
   };
 
 } // namespace Model

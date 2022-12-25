@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
 #include <aws/wafv2/model/ManagedRuleGroupConfig.h>
+#include <aws/wafv2/model/RuleActionOverride.h>
 #include <utility>
 #include <memory>
 
@@ -35,17 +36,23 @@ namespace Model
    * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-   * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
+   * as a top-level statement within a rule.</p>  <p>You are charged additional
+   * fees when you use the WAF Bot Control managed rule group
+   * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+   * takeover prevention (ATP) managed rule group
+   * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+   * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ManagedRuleGroupStatement
+  class ManagedRuleGroupStatement
   {
   public:
-    ManagedRuleGroupStatement();
-    ManagedRuleGroupStatement(Aws::Utils::Json::JsonView jsonValue);
-    ManagedRuleGroupStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ManagedRuleGroupStatement();
+    AWS_WAFV2_API ManagedRuleGroupStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ManagedRuleGroupStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,74 +219,66 @@ namespace Model
 
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline ManagedRuleGroupStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline ManagedRuleGroupStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
 
     /**
-     * <p>The rules in the referenced rule group whose actions are set to
-     * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-     * would if the rule action setting were <code>Count</code>. This is a useful
-     * option for testing the rules in a rule group without modifying how they handle
-     * your web traffic.</p>
+     * <p>Rules in the referenced rule group whose actions are set to
+     * <code>Count</code>. </p>  <p>Instead of this option, use
+     * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.</p> 
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 
@@ -291,7 +290,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    const Statement& GetScopeDownStatement() const;
+    AWS_WAFV2_API const Statement& GetScopeDownStatement() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -300,7 +299,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    bool ScopeDownStatementHasBeenSet() const;
+    AWS_WAFV2_API bool ScopeDownStatementHasBeenSet() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -309,7 +308,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API void SetScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -318,7 +317,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API void SetScopeDownStatement(Statement&& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -327,7 +326,7 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -336,148 +335,184 @@ namespace Model
      * <a>Statement</a> in the scope-down statement, and you can nest statements at any
      * level, the same as you can for a rule statement. </p>
      */
-    ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
 
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline const Aws::Vector<ManagedRuleGroupConfig>& GetManagedRuleGroupConfigs() const{ return m_managedRuleGroupConfigs; }
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline bool ManagedRuleGroupConfigsHasBeenSet() const { return m_managedRuleGroupConfigsHasBeenSet; }
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline void SetManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = value; }
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline void SetManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs = std::move(value); }
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(const Aws::Vector<ManagedRuleGroupConfig>& value) { SetManagedRuleGroupConfigs(value); return *this;}
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline ManagedRuleGroupStatement& WithManagedRuleGroupConfigs(Aws::Vector<ManagedRuleGroupConfig>&& value) { SetManagedRuleGroupConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(const ManagedRuleGroupConfig& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(value); return *this; }
 
     /**
-     * <p>Additional information that's used by a managed rule group. Most managed rule
-     * groups don't require this.</p> <p>Use this for the account takeover prevention
-     * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-     * information about the sign-in page of your application. </p> <p>You can provide
-     * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-     * group configuration, for example <code>UsernameField</code> and
-     * <code>PasswordField</code>. The configuration that you provide depends on the
-     * needs of the managed rule group. For the ATP managed rule group, you provide the
-     * following individual configuration objects: <code>LoginPath</code>,
-     * <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.</p>
+     * <p>Additional information that's used by a managed rule group. Many managed rule
+     * groups don't require this.</p> <p>Use the
+     * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+     * the protection level that you want the Bot Control rule group to use. </p>
      */
     inline ManagedRuleGroupStatement& AddManagedRuleGroupConfigs(ManagedRuleGroupConfig&& value) { m_managedRuleGroupConfigsHasBeenSet = true; m_managedRuleGroupConfigs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline const Aws::Vector<RuleActionOverride>& GetRuleActionOverrides() const{ return m_ruleActionOverrides; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline bool RuleActionOverridesHasBeenSet() const { return m_ruleActionOverridesHasBeenSet; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline void SetRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = value; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline void SetRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides = std::move(value); }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline ManagedRuleGroupStatement& WithRuleActionOverrides(const Aws::Vector<RuleActionOverride>& value) { SetRuleActionOverrides(value); return *this;}
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline ManagedRuleGroupStatement& WithRuleActionOverrides(Aws::Vector<RuleActionOverride>&& value) { SetRuleActionOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline ManagedRuleGroupStatement& AddRuleActionOverrides(const RuleActionOverride& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(value); return *this; }
+
+    /**
+     * <p>Action settings to use in the place of the rule actions that are configured
+     * inside the rule group. You specify one override for each rule whose action you
+     * want to change. </p> <p>You can use overrides for testing, for example you can
+     * override all of rule actions to <code>Count</code> and then monitor the
+     * resulting count metrics to understand how the rule group would handle your web
+     * traffic. You can also permanently override some or all actions, to modify how
+     * the rule group manages your web traffic.</p>
+     */
+    inline ManagedRuleGroupStatement& AddRuleActionOverrides(RuleActionOverride&& value) { m_ruleActionOverridesHasBeenSet = true; m_ruleActionOverrides.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;
-    bool m_scopeDownStatementHasBeenSet;
+    bool m_scopeDownStatementHasBeenSet = false;
 
     Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
-    bool m_managedRuleGroupConfigsHasBeenSet;
+    bool m_managedRuleGroupConfigsHasBeenSet = false;
+
+    Aws::Vector<RuleActionOverride> m_ruleActionOverrides;
+    bool m_ruleActionOverridesHasBeenSet = false;
   };
 
 } // namespace Model

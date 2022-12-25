@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SFN_API UpdateStateMachineRequest : public SFNRequest
+  class UpdateStateMachineRequest : public SFNRequest
   {
   public:
-    UpdateStateMachineRequest();
+    AWS_SFN_API UpdateStateMachineRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStateMachine"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SFN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SFN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -213,51 +213,51 @@ namespace Model
 
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline bool TracingConfigurationHasBeenSet() const { return m_tracingConfigurationHasBeenSet; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = value; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::move(value); }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline UpdateStateMachineRequest& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline UpdateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     LoggingConfiguration m_loggingConfiguration;
-    bool m_loggingConfigurationHasBeenSet;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     TracingConfiguration m_tracingConfiguration;
-    bool m_tracingConfigurationHasBeenSet;
+    bool m_tracingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

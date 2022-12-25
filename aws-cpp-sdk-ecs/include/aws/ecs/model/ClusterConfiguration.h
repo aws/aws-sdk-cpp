@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ClusterConfiguration
+  class ClusterConfiguration
   {
   public:
-    ClusterConfiguration();
-    ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ClusterConfiguration();
+    AWS_ECS_API ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ExecuteCommandConfiguration m_executeCommandConfiguration;
-    bool m_executeCommandConfigurationHasBeenSet;
+    bool m_executeCommandConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

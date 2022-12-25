@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CustomStepDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API CustomStepDetails
+  class CustomStepDetails
   {
   public:
-    CustomStepDetails();
-    CustomStepDetails(Aws::Utils::Json::JsonView jsonValue);
-    CustomStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API CustomStepDetails();
+    AWS_TRANSFER_API CustomStepDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API CustomStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     Aws::String m_sourceFileLocation;
-    bool m_sourceFileLocationHasBeenSet;
+    bool m_sourceFileLocationHasBeenSet = false;
   };
 
 } // namespace Model

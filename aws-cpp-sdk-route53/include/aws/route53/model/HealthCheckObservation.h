@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheckObservation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HealthCheckObservation
+  class HealthCheckObservation
   {
   public:
-    HealthCheckObservation();
-    HealthCheckObservation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HealthCheckObservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheckObservation();
+    AWS_ROUTE53_API HealthCheckObservation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheckObservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     HealthCheckRegion m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_iPAddress;
-    bool m_iPAddressHasBeenSet;
+    bool m_iPAddressHasBeenSet = false;
 
     StatusReport m_statusReport;
-    bool m_statusReportHasBeenSet;
+    bool m_statusReportHasBeenSet = false;
   };
 
 } // namespace Model

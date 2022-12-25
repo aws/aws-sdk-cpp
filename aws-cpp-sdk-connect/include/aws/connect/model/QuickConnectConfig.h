@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QuickConnectConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QuickConnectConfig
+  class QuickConnectConfig
   {
   public:
-    QuickConnectConfig();
-    QuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
-    QuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QuickConnectConfig();
+    AWS_CONNECT_API QuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,16 +197,16 @@ namespace Model
   private:
 
     QuickConnectType m_quickConnectType;
-    bool m_quickConnectTypeHasBeenSet;
+    bool m_quickConnectTypeHasBeenSet = false;
 
     UserQuickConnectConfig m_userConfig;
-    bool m_userConfigHasBeenSet;
+    bool m_userConfigHasBeenSet = false;
 
     QueueQuickConnectConfig m_queueConfig;
-    bool m_queueConfigHasBeenSet;
+    bool m_queueConfigHasBeenSet = false;
 
     PhoneNumberQuickConnectConfig m_phoneConfig;
-    bool m_phoneConfigHasBeenSet;
+    bool m_phoneConfigHasBeenSet = false;
   };
 
 } // namespace Model

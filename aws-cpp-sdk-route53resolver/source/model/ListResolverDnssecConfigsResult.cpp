@@ -36,7 +36,7 @@ ListResolverDnssecConfigsResult& ListResolverDnssecConfigsResult::operator =(con
 
   if(jsonValue.ValueExists("ResolverDnssecConfigs"))
   {
-    Array<JsonView> resolverDnssecConfigsJsonList = jsonValue.GetArray("ResolverDnssecConfigs");
+    Aws::Utils::Array<JsonView> resolverDnssecConfigsJsonList = jsonValue.GetArray("ResolverDnssecConfigs");
     for(unsigned resolverDnssecConfigsIndex = 0; resolverDnssecConfigsIndex < resolverDnssecConfigsJsonList.GetLength(); ++resolverDnssecConfigsIndex)
     {
       m_resolverDnssecConfigs.push_back(resolverDnssecConfigsJsonList[resolverDnssecConfigsIndex].AsObject());

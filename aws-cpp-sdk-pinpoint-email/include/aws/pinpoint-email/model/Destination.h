@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API Destination();
+    AWS_PINPOINTEMAIL_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_toAddresses;
-    bool m_toAddressesHasBeenSet;
+    bool m_toAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccAddresses;
-    bool m_ccAddressesHasBeenSet;
+    bool m_ccAddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_bccAddresses;
-    bool m_bccAddressesHasBeenSet;
+    bool m_bccAddressesHasBeenSet = false;
   };
 
 } // namespace Model

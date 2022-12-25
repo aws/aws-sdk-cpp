@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricCollectionType">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MetricCollectionType
+  class MetricCollectionType
   {
   public:
-    MetricCollectionType();
-    MetricCollectionType(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricCollectionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricCollectionType();
+    AWS_AUTOSCALING_API MetricCollectionType(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricCollectionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -234,7 +234,7 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
   };
 
 } // namespace Model

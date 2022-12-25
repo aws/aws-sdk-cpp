@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UIColorPalette">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API UIColorPalette
+  class UIColorPalette
   {
   public:
-    UIColorPalette();
-    UIColorPalette(Aws::Utils::Json::JsonView jsonValue);
-    UIColorPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API UIColorPalette();
+    AWS_QUICKSIGHT_API UIColorPalette(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API UIColorPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -805,52 +805,52 @@ namespace Model
   private:
 
     Aws::String m_primaryForeground;
-    bool m_primaryForegroundHasBeenSet;
+    bool m_primaryForegroundHasBeenSet = false;
 
     Aws::String m_primaryBackground;
-    bool m_primaryBackgroundHasBeenSet;
+    bool m_primaryBackgroundHasBeenSet = false;
 
     Aws::String m_secondaryForeground;
-    bool m_secondaryForegroundHasBeenSet;
+    bool m_secondaryForegroundHasBeenSet = false;
 
     Aws::String m_secondaryBackground;
-    bool m_secondaryBackgroundHasBeenSet;
+    bool m_secondaryBackgroundHasBeenSet = false;
 
     Aws::String m_accent;
-    bool m_accentHasBeenSet;
+    bool m_accentHasBeenSet = false;
 
     Aws::String m_accentForeground;
-    bool m_accentForegroundHasBeenSet;
+    bool m_accentForegroundHasBeenSet = false;
 
     Aws::String m_danger;
-    bool m_dangerHasBeenSet;
+    bool m_dangerHasBeenSet = false;
 
     Aws::String m_dangerForeground;
-    bool m_dangerForegroundHasBeenSet;
+    bool m_dangerForegroundHasBeenSet = false;
 
     Aws::String m_warning;
-    bool m_warningHasBeenSet;
+    bool m_warningHasBeenSet = false;
 
     Aws::String m_warningForeground;
-    bool m_warningForegroundHasBeenSet;
+    bool m_warningForegroundHasBeenSet = false;
 
     Aws::String m_success;
-    bool m_successHasBeenSet;
+    bool m_successHasBeenSet = false;
 
     Aws::String m_successForeground;
-    bool m_successForegroundHasBeenSet;
+    bool m_successForegroundHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     Aws::String m_dimensionForeground;
-    bool m_dimensionForegroundHasBeenSet;
+    bool m_dimensionForegroundHasBeenSet = false;
 
     Aws::String m_measure;
-    bool m_measureHasBeenSet;
+    bool m_measureHasBeenSet = false;
 
     Aws::String m_measureForeground;
-    bool m_measureForegroundHasBeenSet;
+    bool m_measureForegroundHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceChangeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ResourceChangeDetail
+  class ResourceChangeDetail
   {
   public:
-    ResourceChangeDetail();
-    ResourceChangeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceChangeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceChangeDetail();
+    AWS_CLOUDFORMATION_API ResourceChangeDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceChangeDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -414,16 +414,16 @@ namespace Model
   private:
 
     ResourceTargetDefinition m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     EvaluationType m_evaluation;
-    bool m_evaluationHasBeenSet;
+    bool m_evaluationHasBeenSet = false;
 
     ChangeSource m_changeSource;
-    bool m_changeSourceHasBeenSet;
+    bool m_changeSourceHasBeenSet = false;
 
     Aws::String m_causingEntity;
-    bool m_causingEntityHasBeenSet;
+    bool m_causingEntityHasBeenSet = false;
   };
 
 } // namespace Model

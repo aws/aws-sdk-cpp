@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Eula">AWS API
    * Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API Eula
+  class Eula
   {
   public:
-    Eula();
-    Eula(Aws::Utils::Json::JsonView jsonValue);
-    Eula& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API Eula();
+    AWS_NIMBLESTUDIO_API Eula(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Eula& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline Eula& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline Eula& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -193,51 +193,51 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline Eula& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline Eula& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_eulaId;
-    bool m_eulaIdHasBeenSet;
+    bool m_eulaIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

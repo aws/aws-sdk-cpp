@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CloudWatchMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API CloudWatchMetrics
+  class CloudWatchMetrics
   {
   public:
-    CloudWatchMetrics();
-    CloudWatchMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudWatchMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CloudWatchMetrics();
+    AWS_S3CONTROL_API CloudWatchMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CloudWatchMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
   };
 
 } // namespace Model

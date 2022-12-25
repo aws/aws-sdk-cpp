@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ConfigurationOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API ConfigurationOverrides
+  class ConfigurationOverrides
   {
   public:
-    ConfigurationOverrides();
-    ConfigurationOverrides(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API ConfigurationOverrides();
+    AWS_EMRCONTAINERS_API ConfigurationOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API ConfigurationOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<Configuration> m_applicationConfiguration;
-    bool m_applicationConfigurationHasBeenSet;
+    bool m_applicationConfigurationHasBeenSet = false;
 
     MonitoringConfiguration m_monitoringConfiguration;
-    bool m_monitoringConfigurationHasBeenSet;
+    bool m_monitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

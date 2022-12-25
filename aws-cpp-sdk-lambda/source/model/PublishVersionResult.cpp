@@ -162,7 +162,7 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Layers"))
   {
-    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());
@@ -207,7 +207,7 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("FileSystemConfigs"))
   {
-    Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
+    Aws::Utils::Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
     for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
     {
       m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
@@ -240,7 +240,7 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Architectures"))
   {
-    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
     for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
     {
       m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
@@ -250,6 +250,12 @@ PublishVersionResult& PublishVersionResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("EphemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+  }
+
+  if(jsonValue.ValueExists("SnapStart"))
+  {
+    m_snapStart = jsonValue.GetObject("SnapStart");
 
   }
 

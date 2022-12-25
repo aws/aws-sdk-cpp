@@ -19,21 +19,21 @@ namespace KinesisVideoMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOMEDIA_API GetMediaResult
+  class GetMediaResult
   {
   public:
-    GetMediaResult();
+    AWS_KINESISVIDEOMEDIA_API GetMediaResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetMediaResult(GetMediaResult&&);
-    GetMediaResult& operator=(GetMediaResult&&);
+    AWS_KINESISVIDEOMEDIA_API GetMediaResult(GetMediaResult&&);
+    AWS_KINESISVIDEOMEDIA_API GetMediaResult& operator=(GetMediaResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMediaResult(const GetMediaResult&) = delete;
     GetMediaResult& operator=(const GetMediaResult&) = delete;
 
 
-    GetMediaResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetMediaResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_KINESISVIDEOMEDIA_API GetMediaResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_KINESISVIDEOMEDIA_API GetMediaResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

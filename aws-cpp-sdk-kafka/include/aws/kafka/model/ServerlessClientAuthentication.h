@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ServerlessClientAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ServerlessClientAuthentication
+  class ServerlessClientAuthentication
   {
   public:
-    ServerlessClientAuthentication();
-    ServerlessClientAuthentication(Aws::Utils::Json::JsonView jsonValue);
-    ServerlessClientAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ServerlessClientAuthentication();
+    AWS_KAFKA_API ServerlessClientAuthentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ServerlessClientAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     ServerlessSasl m_sasl;
-    bool m_saslHasBeenSet;
+    bool m_saslHasBeenSet = false;
   };
 
 } // namespace Model

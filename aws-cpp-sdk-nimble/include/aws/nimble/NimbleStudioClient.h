@@ -5,293 +5,16 @@
 
 #pragma once
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
-#include <aws/nimble/NimbleStudioErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/nimble/model/AcceptEulasResult.h>
-#include <aws/nimble/model/CreateLaunchProfileResult.h>
-#include <aws/nimble/model/CreateStreamingImageResult.h>
-#include <aws/nimble/model/CreateStreamingSessionResult.h>
-#include <aws/nimble/model/CreateStreamingSessionStreamResult.h>
-#include <aws/nimble/model/CreateStudioResult.h>
-#include <aws/nimble/model/CreateStudioComponentResult.h>
-#include <aws/nimble/model/DeleteLaunchProfileResult.h>
-#include <aws/nimble/model/DeleteLaunchProfileMemberResult.h>
-#include <aws/nimble/model/DeleteStreamingImageResult.h>
-#include <aws/nimble/model/DeleteStreamingSessionResult.h>
-#include <aws/nimble/model/DeleteStudioResult.h>
-#include <aws/nimble/model/DeleteStudioComponentResult.h>
-#include <aws/nimble/model/DeleteStudioMemberResult.h>
-#include <aws/nimble/model/GetEulaResult.h>
-#include <aws/nimble/model/GetLaunchProfileResult.h>
-#include <aws/nimble/model/GetLaunchProfileDetailsResult.h>
-#include <aws/nimble/model/GetLaunchProfileInitializationResult.h>
-#include <aws/nimble/model/GetLaunchProfileMemberResult.h>
-#include <aws/nimble/model/GetStreamingImageResult.h>
-#include <aws/nimble/model/GetStreamingSessionResult.h>
-#include <aws/nimble/model/GetStreamingSessionStreamResult.h>
-#include <aws/nimble/model/GetStudioResult.h>
-#include <aws/nimble/model/GetStudioComponentResult.h>
-#include <aws/nimble/model/GetStudioMemberResult.h>
-#include <aws/nimble/model/ListEulaAcceptancesResult.h>
-#include <aws/nimble/model/ListEulasResult.h>
-#include <aws/nimble/model/ListLaunchProfileMembersResult.h>
-#include <aws/nimble/model/ListLaunchProfilesResult.h>
-#include <aws/nimble/model/ListStreamingImagesResult.h>
-#include <aws/nimble/model/ListStreamingSessionsResult.h>
-#include <aws/nimble/model/ListStudioComponentsResult.h>
-#include <aws/nimble/model/ListStudioMembersResult.h>
-#include <aws/nimble/model/ListStudiosResult.h>
-#include <aws/nimble/model/ListTagsForResourceResult.h>
-#include <aws/nimble/model/PutLaunchProfileMembersResult.h>
-#include <aws/nimble/model/PutStudioMembersResult.h>
-#include <aws/nimble/model/StartStreamingSessionResult.h>
-#include <aws/nimble/model/StartStudioSSOConfigurationRepairResult.h>
-#include <aws/nimble/model/StopStreamingSessionResult.h>
-#include <aws/nimble/model/TagResourceResult.h>
-#include <aws/nimble/model/UntagResourceResult.h>
-#include <aws/nimble/model/UpdateLaunchProfileResult.h>
-#include <aws/nimble/model/UpdateLaunchProfileMemberResult.h>
-#include <aws/nimble/model/UpdateStreamingImageResult.h>
-#include <aws/nimble/model/UpdateStudioResult.h>
-#include <aws/nimble/model/UpdateStudioComponentResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/nimble/NimbleStudioServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace NimbleStudio
 {
-
-namespace Model
-{
-        class AcceptEulasRequest;
-        class CreateLaunchProfileRequest;
-        class CreateStreamingImageRequest;
-        class CreateStreamingSessionRequest;
-        class CreateStreamingSessionStreamRequest;
-        class CreateStudioRequest;
-        class CreateStudioComponentRequest;
-        class DeleteLaunchProfileRequest;
-        class DeleteLaunchProfileMemberRequest;
-        class DeleteStreamingImageRequest;
-        class DeleteStreamingSessionRequest;
-        class DeleteStudioRequest;
-        class DeleteStudioComponentRequest;
-        class DeleteStudioMemberRequest;
-        class GetEulaRequest;
-        class GetLaunchProfileRequest;
-        class GetLaunchProfileDetailsRequest;
-        class GetLaunchProfileInitializationRequest;
-        class GetLaunchProfileMemberRequest;
-        class GetStreamingImageRequest;
-        class GetStreamingSessionRequest;
-        class GetStreamingSessionStreamRequest;
-        class GetStudioRequest;
-        class GetStudioComponentRequest;
-        class GetStudioMemberRequest;
-        class ListEulaAcceptancesRequest;
-        class ListEulasRequest;
-        class ListLaunchProfileMembersRequest;
-        class ListLaunchProfilesRequest;
-        class ListStreamingImagesRequest;
-        class ListStreamingSessionsRequest;
-        class ListStudioComponentsRequest;
-        class ListStudioMembersRequest;
-        class ListStudiosRequest;
-        class ListTagsForResourceRequest;
-        class PutLaunchProfileMembersRequest;
-        class PutStudioMembersRequest;
-        class StartStreamingSessionRequest;
-        class StartStudioSSOConfigurationRepairRequest;
-        class StopStreamingSessionRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateLaunchProfileRequest;
-        class UpdateLaunchProfileMemberRequest;
-        class UpdateStreamingImageRequest;
-        class UpdateStudioRequest;
-        class UpdateStudioComponentRequest;
-
-        typedef Aws::Utils::Outcome<AcceptEulasResult, NimbleStudioError> AcceptEulasOutcome;
-        typedef Aws::Utils::Outcome<CreateLaunchProfileResult, NimbleStudioError> CreateLaunchProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamingImageResult, NimbleStudioError> CreateStreamingImageOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamingSessionResult, NimbleStudioError> CreateStreamingSessionOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamingSessionStreamResult, NimbleStudioError> CreateStreamingSessionStreamOutcome;
-        typedef Aws::Utils::Outcome<CreateStudioResult, NimbleStudioError> CreateStudioOutcome;
-        typedef Aws::Utils::Outcome<CreateStudioComponentResult, NimbleStudioError> CreateStudioComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteLaunchProfileResult, NimbleStudioError> DeleteLaunchProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteLaunchProfileMemberResult, NimbleStudioError> DeleteLaunchProfileMemberOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamingImageResult, NimbleStudioError> DeleteStreamingImageOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamingSessionResult, NimbleStudioError> DeleteStreamingSessionOutcome;
-        typedef Aws::Utils::Outcome<DeleteStudioResult, NimbleStudioError> DeleteStudioOutcome;
-        typedef Aws::Utils::Outcome<DeleteStudioComponentResult, NimbleStudioError> DeleteStudioComponentOutcome;
-        typedef Aws::Utils::Outcome<DeleteStudioMemberResult, NimbleStudioError> DeleteStudioMemberOutcome;
-        typedef Aws::Utils::Outcome<GetEulaResult, NimbleStudioError> GetEulaOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchProfileResult, NimbleStudioError> GetLaunchProfileOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchProfileDetailsResult, NimbleStudioError> GetLaunchProfileDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchProfileInitializationResult, NimbleStudioError> GetLaunchProfileInitializationOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchProfileMemberResult, NimbleStudioError> GetLaunchProfileMemberOutcome;
-        typedef Aws::Utils::Outcome<GetStreamingImageResult, NimbleStudioError> GetStreamingImageOutcome;
-        typedef Aws::Utils::Outcome<GetStreamingSessionResult, NimbleStudioError> GetStreamingSessionOutcome;
-        typedef Aws::Utils::Outcome<GetStreamingSessionStreamResult, NimbleStudioError> GetStreamingSessionStreamOutcome;
-        typedef Aws::Utils::Outcome<GetStudioResult, NimbleStudioError> GetStudioOutcome;
-        typedef Aws::Utils::Outcome<GetStudioComponentResult, NimbleStudioError> GetStudioComponentOutcome;
-        typedef Aws::Utils::Outcome<GetStudioMemberResult, NimbleStudioError> GetStudioMemberOutcome;
-        typedef Aws::Utils::Outcome<ListEulaAcceptancesResult, NimbleStudioError> ListEulaAcceptancesOutcome;
-        typedef Aws::Utils::Outcome<ListEulasResult, NimbleStudioError> ListEulasOutcome;
-        typedef Aws::Utils::Outcome<ListLaunchProfileMembersResult, NimbleStudioError> ListLaunchProfileMembersOutcome;
-        typedef Aws::Utils::Outcome<ListLaunchProfilesResult, NimbleStudioError> ListLaunchProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListStreamingImagesResult, NimbleStudioError> ListStreamingImagesOutcome;
-        typedef Aws::Utils::Outcome<ListStreamingSessionsResult, NimbleStudioError> ListStreamingSessionsOutcome;
-        typedef Aws::Utils::Outcome<ListStudioComponentsResult, NimbleStudioError> ListStudioComponentsOutcome;
-        typedef Aws::Utils::Outcome<ListStudioMembersResult, NimbleStudioError> ListStudioMembersOutcome;
-        typedef Aws::Utils::Outcome<ListStudiosResult, NimbleStudioError> ListStudiosOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, NimbleStudioError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutLaunchProfileMembersResult, NimbleStudioError> PutLaunchProfileMembersOutcome;
-        typedef Aws::Utils::Outcome<PutStudioMembersResult, NimbleStudioError> PutStudioMembersOutcome;
-        typedef Aws::Utils::Outcome<StartStreamingSessionResult, NimbleStudioError> StartStreamingSessionOutcome;
-        typedef Aws::Utils::Outcome<StartStudioSSOConfigurationRepairResult, NimbleStudioError> StartStudioSSOConfigurationRepairOutcome;
-        typedef Aws::Utils::Outcome<StopStreamingSessionResult, NimbleStudioError> StopStreamingSessionOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, NimbleStudioError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, NimbleStudioError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLaunchProfileResult, NimbleStudioError> UpdateLaunchProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateLaunchProfileMemberResult, NimbleStudioError> UpdateLaunchProfileMemberOutcome;
-        typedef Aws::Utils::Outcome<UpdateStreamingImageResult, NimbleStudioError> UpdateStreamingImageOutcome;
-        typedef Aws::Utils::Outcome<UpdateStudioResult, NimbleStudioError> UpdateStudioOutcome;
-        typedef Aws::Utils::Outcome<UpdateStudioComponentResult, NimbleStudioError> UpdateStudioComponentOutcome;
-
-        typedef std::future<AcceptEulasOutcome> AcceptEulasOutcomeCallable;
-        typedef std::future<CreateLaunchProfileOutcome> CreateLaunchProfileOutcomeCallable;
-        typedef std::future<CreateStreamingImageOutcome> CreateStreamingImageOutcomeCallable;
-        typedef std::future<CreateStreamingSessionOutcome> CreateStreamingSessionOutcomeCallable;
-        typedef std::future<CreateStreamingSessionStreamOutcome> CreateStreamingSessionStreamOutcomeCallable;
-        typedef std::future<CreateStudioOutcome> CreateStudioOutcomeCallable;
-        typedef std::future<CreateStudioComponentOutcome> CreateStudioComponentOutcomeCallable;
-        typedef std::future<DeleteLaunchProfileOutcome> DeleteLaunchProfileOutcomeCallable;
-        typedef std::future<DeleteLaunchProfileMemberOutcome> DeleteLaunchProfileMemberOutcomeCallable;
-        typedef std::future<DeleteStreamingImageOutcome> DeleteStreamingImageOutcomeCallable;
-        typedef std::future<DeleteStreamingSessionOutcome> DeleteStreamingSessionOutcomeCallable;
-        typedef std::future<DeleteStudioOutcome> DeleteStudioOutcomeCallable;
-        typedef std::future<DeleteStudioComponentOutcome> DeleteStudioComponentOutcomeCallable;
-        typedef std::future<DeleteStudioMemberOutcome> DeleteStudioMemberOutcomeCallable;
-        typedef std::future<GetEulaOutcome> GetEulaOutcomeCallable;
-        typedef std::future<GetLaunchProfileOutcome> GetLaunchProfileOutcomeCallable;
-        typedef std::future<GetLaunchProfileDetailsOutcome> GetLaunchProfileDetailsOutcomeCallable;
-        typedef std::future<GetLaunchProfileInitializationOutcome> GetLaunchProfileInitializationOutcomeCallable;
-        typedef std::future<GetLaunchProfileMemberOutcome> GetLaunchProfileMemberOutcomeCallable;
-        typedef std::future<GetStreamingImageOutcome> GetStreamingImageOutcomeCallable;
-        typedef std::future<GetStreamingSessionOutcome> GetStreamingSessionOutcomeCallable;
-        typedef std::future<GetStreamingSessionStreamOutcome> GetStreamingSessionStreamOutcomeCallable;
-        typedef std::future<GetStudioOutcome> GetStudioOutcomeCallable;
-        typedef std::future<GetStudioComponentOutcome> GetStudioComponentOutcomeCallable;
-        typedef std::future<GetStudioMemberOutcome> GetStudioMemberOutcomeCallable;
-        typedef std::future<ListEulaAcceptancesOutcome> ListEulaAcceptancesOutcomeCallable;
-        typedef std::future<ListEulasOutcome> ListEulasOutcomeCallable;
-        typedef std::future<ListLaunchProfileMembersOutcome> ListLaunchProfileMembersOutcomeCallable;
-        typedef std::future<ListLaunchProfilesOutcome> ListLaunchProfilesOutcomeCallable;
-        typedef std::future<ListStreamingImagesOutcome> ListStreamingImagesOutcomeCallable;
-        typedef std::future<ListStreamingSessionsOutcome> ListStreamingSessionsOutcomeCallable;
-        typedef std::future<ListStudioComponentsOutcome> ListStudioComponentsOutcomeCallable;
-        typedef std::future<ListStudioMembersOutcome> ListStudioMembersOutcomeCallable;
-        typedef std::future<ListStudiosOutcome> ListStudiosOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutLaunchProfileMembersOutcome> PutLaunchProfileMembersOutcomeCallable;
-        typedef std::future<PutStudioMembersOutcome> PutStudioMembersOutcomeCallable;
-        typedef std::future<StartStreamingSessionOutcome> StartStreamingSessionOutcomeCallable;
-        typedef std::future<StartStudioSSOConfigurationRepairOutcome> StartStudioSSOConfigurationRepairOutcomeCallable;
-        typedef std::future<StopStreamingSessionOutcome> StopStreamingSessionOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateLaunchProfileOutcome> UpdateLaunchProfileOutcomeCallable;
-        typedef std::future<UpdateLaunchProfileMemberOutcome> UpdateLaunchProfileMemberOutcomeCallable;
-        typedef std::future<UpdateStreamingImageOutcome> UpdateStreamingImageOutcomeCallable;
-        typedef std::future<UpdateStudioOutcome> UpdateStudioOutcomeCallable;
-        typedef std::future<UpdateStudioComponentOutcome> UpdateStudioComponentOutcomeCallable;
-} // namespace Model
-
-  class NimbleStudioClient;
-
-    typedef std::function<void(const NimbleStudioClient*, const Model::AcceptEulasRequest&, const Model::AcceptEulasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptEulasResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateLaunchProfileRequest&, const Model::CreateLaunchProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchProfileResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateStreamingImageRequest&, const Model::CreateStreamingImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingImageResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateStreamingSessionRequest&, const Model::CreateStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingSessionResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateStreamingSessionStreamRequest&, const Model::CreateStreamingSessionStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingSessionStreamResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateStudioRequest&, const Model::CreateStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStudioResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::CreateStudioComponentRequest&, const Model::CreateStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStudioComponentResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteLaunchProfileRequest&, const Model::DeleteLaunchProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchProfileResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteLaunchProfileMemberRequest&, const Model::DeleteLaunchProfileMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchProfileMemberResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteStreamingImageRequest&, const Model::DeleteStreamingImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingImageResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteStreamingSessionRequest&, const Model::DeleteStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingSessionResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteStudioRequest&, const Model::DeleteStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStudioResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteStudioComponentRequest&, const Model::DeleteStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStudioComponentResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::DeleteStudioMemberRequest&, const Model::DeleteStudioMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStudioMemberResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetEulaRequest&, const Model::GetEulaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEulaResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetLaunchProfileRequest&, const Model::GetLaunchProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchProfileResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetLaunchProfileDetailsRequest&, const Model::GetLaunchProfileDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchProfileDetailsResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetLaunchProfileInitializationRequest&, const Model::GetLaunchProfileInitializationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchProfileInitializationResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetLaunchProfileMemberRequest&, const Model::GetLaunchProfileMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchProfileMemberResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingImageRequest&, const Model::GetStreamingImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingImageResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingSessionRequest&, const Model::GetStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingSessionResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingSessionStreamRequest&, const Model::GetStreamingSessionStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingSessionStreamResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStudioRequest&, const Model::GetStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStudioComponentRequest&, const Model::GetStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioComponentResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::GetStudioMemberRequest&, const Model::GetStudioMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioMemberResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListEulaAcceptancesRequest&, const Model::ListEulaAcceptancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEulaAcceptancesResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListEulasRequest&, const Model::ListEulasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEulasResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListLaunchProfileMembersRequest&, const Model::ListLaunchProfileMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchProfileMembersResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListLaunchProfilesRequest&, const Model::ListLaunchProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchProfilesResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListStreamingImagesRequest&, const Model::ListStreamingImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingImagesResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListStreamingSessionsRequest&, const Model::ListStreamingSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingSessionsResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListStudioComponentsRequest&, const Model::ListStudioComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioComponentsResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListStudioMembersRequest&, const Model::ListStudioMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioMembersResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListStudiosRequest&, const Model::ListStudiosOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudiosResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::PutLaunchProfileMembersRequest&, const Model::PutLaunchProfileMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLaunchProfileMembersResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::PutStudioMembersRequest&, const Model::PutStudioMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStudioMembersResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::StartStreamingSessionRequest&, const Model::StartStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamingSessionResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::StartStudioSSOConfigurationRepairRequest&, const Model::StartStudioSSOConfigurationRepairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStudioSSOConfigurationRepairResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::StopStreamingSessionRequest&, const Model::StopStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamingSessionResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UpdateLaunchProfileRequest&, const Model::UpdateLaunchProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchProfileResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UpdateLaunchProfileMemberRequest&, const Model::UpdateLaunchProfileMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchProfileMemberResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UpdateStreamingImageRequest&, const Model::UpdateStreamingImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamingImageResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UpdateStudioRequest&, const Model::UpdateStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioResponseReceivedHandler;
-    typedef std::function<void(const NimbleStudioClient*, const Model::UpdateStudioComponentRequest&, const Model::UpdateStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStudioComponentResponseReceivedHandler;
-
   /**
    * <p>Welcome to the Amazon Nimble Studio API reference. This API reference
    * provides methods, schema, resources, parameters, and more to help you get the
@@ -299,32 +22,60 @@ namespace Model
    * empowers visual effects, animation, and interactive content teams to create
    * content securely within a scalable, private cloud service.</p>
    */
-  class AWS_NIMBLESTUDIO_API NimbleStudioClient : public Aws::Client::AWSJsonClient
+  class AWS_NIMBLESTUDIO_API NimbleStudioClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NimbleStudioClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        NimbleStudioClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        NimbleStudioClient(const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration(),
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        NimbleStudioClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        NimbleStudioClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         NimbleStudioClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider = Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration = Aws::NimbleStudio::NimbleStudioClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        NimbleStudioClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        NimbleStudioClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        NimbleStudioClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~NimbleStudioClient();
-
 
         /**
          * <p>Accept EULAs.</p><p><h3>See Also:</h3>   <a
@@ -380,7 +131,7 @@ namespace Model
         /**
          * <p>Creates a streaming session in a studio.</p> <p>After invoking this
          * operation, you must poll GetStreamingSession until the streaming session is in
-         * state READY.</p><p><h3>See Also:</h3>   <a
+         * the <code>READY</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession">AWS
          * API Reference</a></p>
          */
@@ -399,7 +150,8 @@ namespace Model
         /**
          * <p>Creates a streaming session stream for a streaming session.</p> <p>After
          * invoking this API, invoke GetStreamingSessionStream with the returned streamId
-         * to poll the resource until it is in state READY.</p><p><h3>See Also:</h3>   <a
+         * to poll the resource until it is in the <code>READY</code> state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream">AWS
          * API Reference</a></p>
          */
@@ -416,23 +168,23 @@ namespace Model
         virtual void CreateStreamingSessionStreamAsync(const Model::CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a new Studio.</p> <p>When creating a Studio, two IAM roles must be
-         * provided: the admin role and the user Role. These roles are assumed by your
+         * <p>Create a new studio.</p> <p>When creating a studio, two IAM roles must be
+         * provided: the admin role and the user role. These roles are assumed by your
          * users when they log in to the Nimble Studio portal.</p> <p>The user role must
-         * have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to
-         * function properly.</p> <p>The Admin Role must have the
-         * AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to
-         * function properly.</p> <p>You may optionally specify a KMS key in the
-         * StudioEncryptionConfiguration.</p> <p>In Nimble Studio, resource names,
-         * descriptions, initialization scripts, and other data you provide are always
-         * encrypted at rest using an KMS key. By default, this key is owned by Amazon Web
-         * Services and managed on your behalf. You may provide your own KMS key when
-         * calling CreateStudio to encrypt this data using a key you own and manage.</p>
-         * <p>When providing an KMS key during studio creation, Nimble Studio creates KMS
-         * grants in your account to provide your studio user and admin roles access to
-         * these KMS keys.</p> <p>If you delete this grant, the studio will no longer be
-         * accessible to your portal users.</p> <p>If you delete the studio KMS key, your
-         * studio will no longer be accessible.</p><p><h3>See Also:</h3>   <a
+         * have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for
+         * the portal to function properly.</p> <p>The admin role must have the
+         * <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the
+         * portal to function properly.</p> <p>You may optionally specify a KMS key in the
+         * <code>StudioEncryptionConfiguration</code>.</p> <p>In Nimble Studio, resource
+         * names, descriptions, initialization scripts, and other data you provide are
+         * always encrypted at rest using an KMS key. By default, this key is owned by
+         * Amazon Web Services and managed on your behalf. You may provide your own KMS key
+         * when calling <code>CreateStudio</code> to encrypt this data using a key you own
+         * and manage.</p> <p>When providing an KMS key during studio creation, Nimble
+         * Studio creates KMS grants in your account to provide your studio user and admin
+         * roles access to these KMS keys.</p> <p>If you delete this grant, the studio will
+         * no longer be accessible to your portal users.</p> <p>If you delete the studio
+         * KMS key, your studio will no longer be accessible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio">AWS
          * API Reference</a></p>
          */
@@ -518,9 +270,10 @@ namespace Model
 
         /**
          * <p>Deletes streaming session resource.</p> <p>After invoking this operation, use
-         * GetStreamingSession to poll the resource until it transitions to a DELETED
-         * state.</p> <p>A streaming session will count against your streaming session
-         * quota until it is marked DELETED.</p><p><h3>See Also:</h3>   <a
+         * GetStreamingSession to poll the resource until it transitions to a
+         * <code>DELETED</code> state.</p> <p>A streaming session will count against your
+         * streaming session quota until it is marked <code>DELETED</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingSession">AWS
          * API Reference</a></p>
          */
@@ -588,7 +341,7 @@ namespace Model
         virtual void DeleteStudioMemberAsync(const Model::DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get Eula.</p><p><h3>See Also:</h3>   <a
+         * <p>Get EULA.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetEula">AWS API
          * Reference</a></p>
          */
@@ -714,11 +467,31 @@ namespace Model
         virtual void GetStreamingSessionAsync(const Model::GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets <code>StreamingSessionBackup</code> resource.</p> <p>Invoke this
+         * operation to poll for a streaming session backup while stopping a streaming
+         * session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStreamingSessionBackupOutcome GetStreamingSessionBackup(const Model::GetStreamingSessionBackupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetStreamingSessionBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStreamingSessionBackupOutcomeCallable GetStreamingSessionBackupCallable(const Model::GetStreamingSessionBackupRequest& request) const;
+
+        /**
+         * An Async wrapper for GetStreamingSessionBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStreamingSessionBackupAsync(const Model::GetStreamingSessionBackupRequest& request, const GetStreamingSessionBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a StreamingSessionStream for a streaming session.</p> <p>Invoke this
-         * operation to poll the resource after invoking CreateStreamingSessionStream.</p>
-         * <p>After the StreamingSessionStream changes to the state READY, the url property
-         * will contain a stream to be used with the DCV streaming client.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation to poll the resource after invoking
+         * <code>CreateStreamingSessionStream</code>.</p> <p>After the
+         * <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the
+         * url property will contain a stream to be used with the DCV streaming
+         * client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionStream">AWS
          * API Reference</a></p>
          */
@@ -735,7 +508,7 @@ namespace Model
         virtual void GetStreamingSessionStreamAsync(const Model::GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get a Studio resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Get a studio resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudio">AWS
          * API Reference</a></p>
          */
@@ -786,7 +559,7 @@ namespace Model
         virtual void GetStudioMemberAsync(const Model::GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List Eula Acceptances.</p><p><h3>See Also:</h3>   <a
+         * <p>List EULA acceptances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulaAcceptances">AWS
          * API Reference</a></p>
          */
@@ -803,7 +576,7 @@ namespace Model
         virtual void ListEulaAcceptancesAsync(const Model::ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List Eulas.</p><p><h3>See Also:</h3>   <a
+         * <p>List EULAs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas">AWS
          * API Reference</a></p>
          */
@@ -874,8 +647,25 @@ namespace Model
         virtual void ListStreamingImagesAsync(const Model::ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the streaming image resources in a studio.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the backups of a streaming session in a studio.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStreamingSessionBackupsOutcome ListStreamingSessionBackups(const Model::ListStreamingSessionBackupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStreamingSessionBackups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStreamingSessionBackupsOutcomeCallable ListStreamingSessionBackupsCallable(const Model::ListStreamingSessionBackupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListStreamingSessionBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStreamingSessionBackupsAsync(const Model::ListStreamingSessionBackupsRequest& request, const ListStreamingSessionBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the streaming sessions in a studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessions">AWS
          * API Reference</a></p>
          */
@@ -892,7 +682,8 @@ namespace Model
         virtual void ListStreamingSessionsAsync(const Model::ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the StudioComponents in a studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the <code>StudioComponents</code> in a studio.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioComponents">AWS
          * API Reference</a></p>
          */
@@ -928,7 +719,7 @@ namespace Model
         virtual void ListStudioMembersAsync(const Model::ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List studios in your Amazon Web Services account in the requested Amazon Web
+         * <p>List studios in your Amazon Web Services accounts in the requested Amazon Web
          * Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios">AWS
          * API Reference</a></p>
@@ -1004,8 +795,9 @@ namespace Model
         virtual void PutStudioMembersAsync(const Model::PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Transitions sessions from the STOPPED state into the READY state. The
-         * START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+         * <p>Transitions sessions from the <code>STOPPED</code> state into the
+         * <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the
+         * intermediate state between the <code>STOPPED</code> and <code>READY</code>
          * states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">AWS
          * API Reference</a></p>
@@ -1023,15 +815,15 @@ namespace Model
         virtual void StartStreamingSessionAsync(const Model::StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
-         * <p>If the studio has a valid Amazon Web Services SSO configuration currently
-         * associated with it, this operation will fail with a validation error.</p> <p>If
-         * the studio does not have a valid Amazon Web Services SSO configuration currently
-         * associated with it, then a new Amazon Web Services SSO application is created
-         * for the studio and the studio is changed to the READY state.</p> <p>After the
-         * Amazon Web Services SSO application is repaired, you must use the Amazon Nimble
-         * Studio console to add administrators and users to your studio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Repairs the IAM Identity Center configuration for a given studio.</p> <p>If
+         * the studio has a valid IAM Identity Center configuration currently associated
+         * with it, this operation will fail with a validation error.</p> <p>If the studio
+         * does not have a valid IAM Identity Center configuration currently associated
+         * with it, then a new IAM Identity Center application is created for the studio
+         * and the studio is changed to the <code>READY</code> state.</p> <p>After the IAM
+         * Identity Center application is repaired, you must use the Amazon Nimble Studio
+         * console to add administrators and users to your studio.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          */
@@ -1048,8 +840,9 @@ namespace Model
         virtual void StartStudioSSOConfigurationRepairAsync(const Model::StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Transitions sessions from the READY state into the STOPPED state. The
-         * STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED
+         * <p>Transitions sessions from the <code>READY</code> state into the
+         * <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the
+         * intermediate state between the <code>READY</code> and <code>STOPPED</code>
          * states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">AWS
          * API Reference</a></p>
@@ -1189,59 +982,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<NimbleStudioEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptEulasAsyncHelper(const Model::AcceptEulasRequest& request, const AcceptEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLaunchProfileAsyncHelper(const Model::CreateLaunchProfileRequest& request, const CreateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamingImageAsyncHelper(const Model::CreateStreamingImageRequest& request, const CreateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamingSessionAsyncHelper(const Model::CreateStreamingSessionRequest& request, const CreateStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamingSessionStreamAsyncHelper(const Model::CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStudioAsyncHelper(const Model::CreateStudioRequest& request, const CreateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStudioComponentAsyncHelper(const Model::CreateStudioComponentRequest& request, const CreateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLaunchProfileAsyncHelper(const Model::DeleteLaunchProfileRequest& request, const DeleteLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLaunchProfileMemberAsyncHelper(const Model::DeleteLaunchProfileMemberRequest& request, const DeleteLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamingImageAsyncHelper(const Model::DeleteStreamingImageRequest& request, const DeleteStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamingSessionAsyncHelper(const Model::DeleteStreamingSessionRequest& request, const DeleteStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStudioAsyncHelper(const Model::DeleteStudioRequest& request, const DeleteStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStudioComponentAsyncHelper(const Model::DeleteStudioComponentRequest& request, const DeleteStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStudioMemberAsyncHelper(const Model::DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEulaAsyncHelper(const Model::GetEulaRequest& request, const GetEulaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchProfileAsyncHelper(const Model::GetLaunchProfileRequest& request, const GetLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchProfileDetailsAsyncHelper(const Model::GetLaunchProfileDetailsRequest& request, const GetLaunchProfileDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchProfileInitializationAsyncHelper(const Model::GetLaunchProfileInitializationRequest& request, const GetLaunchProfileInitializationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchProfileMemberAsyncHelper(const Model::GetLaunchProfileMemberRequest& request, const GetLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamingImageAsyncHelper(const Model::GetStreamingImageRequest& request, const GetStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamingSessionAsyncHelper(const Model::GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamingSessionStreamAsyncHelper(const Model::GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStudioAsyncHelper(const Model::GetStudioRequest& request, const GetStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStudioComponentAsyncHelper(const Model::GetStudioComponentRequest& request, const GetStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStudioMemberAsyncHelper(const Model::GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEulaAcceptancesAsyncHelper(const Model::ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEulasAsyncHelper(const Model::ListEulasRequest& request, const ListEulasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLaunchProfileMembersAsyncHelper(const Model::ListLaunchProfileMembersRequest& request, const ListLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLaunchProfilesAsyncHelper(const Model::ListLaunchProfilesRequest& request, const ListLaunchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamingImagesAsyncHelper(const Model::ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamingSessionsAsyncHelper(const Model::ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStudioComponentsAsyncHelper(const Model::ListStudioComponentsRequest& request, const ListStudioComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStudioMembersAsyncHelper(const Model::ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStudiosAsyncHelper(const Model::ListStudiosRequest& request, const ListStudiosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLaunchProfileMembersAsyncHelper(const Model::PutLaunchProfileMembersRequest& request, const PutLaunchProfileMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutStudioMembersAsyncHelper(const Model::PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStreamingSessionAsyncHelper(const Model::StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStudioSSOConfigurationRepairAsyncHelper(const Model::StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStreamingSessionAsyncHelper(const Model::StopStreamingSessionRequest& request, const StopStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLaunchProfileAsyncHelper(const Model::UpdateLaunchProfileRequest& request, const UpdateLaunchProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLaunchProfileMemberAsyncHelper(const Model::UpdateLaunchProfileMemberRequest& request, const UpdateLaunchProfileMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamingImageAsyncHelper(const Model::UpdateStreamingImageRequest& request, const UpdateStreamingImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStudioAsyncHelper(const Model::UpdateStudioRequest& request, const UpdateStudioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStudioComponentAsyncHelper(const Model::UpdateStudioComponentRequest& request, const UpdateStudioComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<NimbleStudioClient>;
+      void init(const NimbleStudioClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      NimbleStudioClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<NimbleStudioEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace NimbleStudio

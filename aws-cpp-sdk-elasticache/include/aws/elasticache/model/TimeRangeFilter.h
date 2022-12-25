@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TimeRangeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API TimeRangeFilter
+  class TimeRangeFilter
   {
   public:
-    TimeRangeFilter();
-    TimeRangeFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TimeRangeFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API TimeRangeFilter();
+    AWS_ELASTICACHE_API TimeRangeFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API TimeRangeFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

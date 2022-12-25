@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ChangeTagsForResourceRequest : public Route53Request
+  class ChangeTagsForResourceRequest : public Route53Request
   {
   public:
-    ChangeTagsForResourceRequest();
+    AWS_ROUTE53_API ChangeTagsForResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChangeTagsForResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -245,16 +245,16 @@ namespace Model
   private:
 
     TagResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_addTags;
-    bool m_addTagsHasBeenSet;
+    bool m_addTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeTagKeys;
-    bool m_removeTagKeysHasBeenSet;
+    bool m_removeTagKeysHasBeenSet = false;
   };
 
 } // namespace Model

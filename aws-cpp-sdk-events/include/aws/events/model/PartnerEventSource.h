@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PartnerEventSource">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PartnerEventSource
+  class PartnerEventSource
   {
   public:
-    PartnerEventSource();
-    PartnerEventSource(Aws::Utils::Json::JsonView jsonValue);
-    PartnerEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSource();
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

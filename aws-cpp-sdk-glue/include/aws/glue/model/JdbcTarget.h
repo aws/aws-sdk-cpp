@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/JdbcMetadataEntry.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JdbcTarget">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API JdbcTarget
+  class JdbcTarget
   {
   public:
-    JdbcTarget();
-    JdbcTarget(Aws::Utils::Json::JsonView jsonValue);
-    JdbcTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JdbcTarget();
+    AWS_GLUE_API JdbcTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JdbcTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +193,92 @@ namespace Model
      */
     inline JdbcTarget& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline const Aws::Vector<JdbcMetadataEntry>& GetEnableAdditionalMetadata() const{ return m_enableAdditionalMetadata; }
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline bool EnableAdditionalMetadataHasBeenSet() const { return m_enableAdditionalMetadataHasBeenSet; }
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline void SetEnableAdditionalMetadata(const Aws::Vector<JdbcMetadataEntry>& value) { m_enableAdditionalMetadataHasBeenSet = true; m_enableAdditionalMetadata = value; }
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline void SetEnableAdditionalMetadata(Aws::Vector<JdbcMetadataEntry>&& value) { m_enableAdditionalMetadataHasBeenSet = true; m_enableAdditionalMetadata = std::move(value); }
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline JdbcTarget& WithEnableAdditionalMetadata(const Aws::Vector<JdbcMetadataEntry>& value) { SetEnableAdditionalMetadata(value); return *this;}
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline JdbcTarget& WithEnableAdditionalMetadata(Aws::Vector<JdbcMetadataEntry>&& value) { SetEnableAdditionalMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline JdbcTarget& AddEnableAdditionalMetadata(const JdbcMetadataEntry& value) { m_enableAdditionalMetadataHasBeenSet = true; m_enableAdditionalMetadata.push_back(value); return *this; }
+
+    /**
+     * <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable
+     * additional metadata in table responses. <code>RAWTYPES</code> provides the
+     * native-level datatype. <code>COMMENTS</code> provides comments associated with a
+     * column or table in the database.</p> <p>If you do not need additional metadata,
+     * keep the field empty.</p>
+     */
+    inline JdbcTarget& AddEnableAdditionalMetadata(JdbcMetadataEntry&& value) { m_enableAdditionalMetadataHasBeenSet = true; m_enableAdditionalMetadata.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
+
+    Aws::Vector<JdbcMetadataEntry> m_enableAdditionalMetadata;
+    bool m_enableAdditionalMetadataHasBeenSet = false;
   };
 
 } // namespace Model

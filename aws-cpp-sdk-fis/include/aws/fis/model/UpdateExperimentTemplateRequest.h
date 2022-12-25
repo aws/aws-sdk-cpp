@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_FIS_API UpdateExperimentTemplateRequest : public FISRequest
+  class UpdateExperimentTemplateRequest : public FISRequest
   {
   public:
-    UpdateExperimentTemplateRequest();
+    AWS_FIS_API UpdateExperimentTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateExperimentTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FIS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<UpdateExperimentTemplateStopConditionInput> m_stopConditions;
-    bool m_stopConditionsHasBeenSet;
+    bool m_stopConditionsHasBeenSet = false;
 
     Aws::Map<Aws::String, UpdateExperimentTemplateTargetInput> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Map<Aws::String, UpdateExperimentTemplateActionInputItem> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     UpdateExperimentTemplateLogConfigurationInput m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

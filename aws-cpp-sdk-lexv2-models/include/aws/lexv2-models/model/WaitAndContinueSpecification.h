@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/WaitAndContinueSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API WaitAndContinueSpecification
+  class WaitAndContinueSpecification
   {
   public:
-    WaitAndContinueSpecification();
-    WaitAndContinueSpecification(Aws::Utils::Json::JsonView jsonValue);
-    WaitAndContinueSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API WaitAndContinueSpecification();
+    AWS_LEXMODELSV2_API WaitAndContinueSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API WaitAndContinueSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,16 +181,16 @@ namespace Model
   private:
 
     ResponseSpecification m_waitingResponse;
-    bool m_waitingResponseHasBeenSet;
+    bool m_waitingResponseHasBeenSet = false;
 
     ResponseSpecification m_continueResponse;
-    bool m_continueResponseHasBeenSet;
+    bool m_continueResponseHasBeenSet = false;
 
     StillWaitingResponseSpecification m_stillWaitingResponse;
-    bool m_stillWaitingResponseHasBeenSet;
+    bool m_stillWaitingResponseHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,6 +23,7 @@ namespace Aws
         static const int EC2_INSTANCE_HOURS_HASH = HashingUtils::HashString("EC2_INSTANCE_HOURS");
         static const int ECR_INITIAL_SCAN_HASH = HashingUtils::HashString("ECR_INITIAL_SCAN");
         static const int ECR_RESCAN_HASH = HashingUtils::HashString("ECR_RESCAN");
+        static const int LAMBDA_FUNCTION_HOURS_HASH = HashingUtils::HashString("LAMBDA_FUNCTION_HOURS");
 
 
         UsageType GetUsageTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ECR_RESCAN_HASH)
           {
             return UsageType::ECR_RESCAN;
+          }
+          else if (hashCode == LAMBDA_FUNCTION_HOURS_HASH)
+          {
+            return UsageType::LAMBDA_FUNCTION_HOURS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "ECR_INITIAL_SCAN";
           case UsageType::ECR_RESCAN:
             return "ECR_RESCAN";
+          case UsageType::LAMBDA_FUNCTION_HOURS:
+            return "LAMBDA_FUNCTION_HOURS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

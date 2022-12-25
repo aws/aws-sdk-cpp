@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewRequest : public CustomerProfilesRequest
+  class GetAutoMergingPreviewRequest : public CustomerProfilesRequest
   {
   public:
-    GetAutoMergingPreviewRequest();
+    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAutoMergingPreview"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -142,16 +142,44 @@ namespace Model
      */
     inline GetAutoMergingPreviewRequest& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline double GetMinAllowedConfidenceScoreForMerging() const{ return m_minAllowedConfidenceScoreForMerging; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline bool MinAllowedConfidenceScoreForMergingHasBeenSet() const { return m_minAllowedConfidenceScoreForMergingHasBeenSet; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline void SetMinAllowedConfidenceScoreForMerging(double value) { m_minAllowedConfidenceScoreForMergingHasBeenSet = true; m_minAllowedConfidenceScoreForMerging = value; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline GetAutoMergingPreviewRequest& WithMinAllowedConfidenceScoreForMerging(double value) { SetMinAllowedConfidenceScoreForMerging(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
+
+    double m_minAllowedConfidenceScoreForMerging;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

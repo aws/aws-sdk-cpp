@@ -44,7 +44,8 @@ Job::Job() :
     m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false),
     m_isConcurrent(false),
-    m_isConcurrentHasBeenSet(false)
+    m_isConcurrentHasBeenSet(false),
+    m_schedulingConfigHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ Job::Job(JsonView jsonValue) :
     m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false),
     m_isConcurrent(false),
-    m_isConcurrentHasBeenSet(false)
+    m_isConcurrentHasBeenSet(false),
+    m_schedulingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -132,7 +134,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());
@@ -241,6 +243,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_isConcurrentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schedulingConfig"))
+  {
+    m_schedulingConfig = jsonValue.GetObject("schedulingConfig");
+
+    m_schedulingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,7 +299,7 @@ JsonValue Job::Jsonize() const
 
   if(m_targetsHasBeenSet)
   {
-   Array<JsonValue> targetsJsonList(m_targets.size());
+   Aws::Utils::Array<JsonValue> targetsJsonList(m_targets.size());
    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
    {
      targetsJsonList[targetsIndex].AsString(m_targets[targetsIndex]);
@@ -382,6 +391,12 @@ JsonValue Job::Jsonize() const
   if(m_isConcurrentHasBeenSet)
   {
    payload.WithBool("isConcurrent", m_isConcurrent);
+
+  }
+
+  if(m_schedulingConfigHasBeenSet)
+  {
+   payload.WithObject("schedulingConfig", m_schedulingConfig.Jsonize());
 
   }
 

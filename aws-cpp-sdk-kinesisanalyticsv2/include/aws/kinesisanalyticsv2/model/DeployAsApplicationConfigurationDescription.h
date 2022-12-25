@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeployAsApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription
+  class DeployAsApplicationConfigurationDescription
   {
   public:
-    DeployAsApplicationConfigurationDescription();
-    DeployAsApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    DeployAsApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     S3ContentBaseLocationDescription m_s3ContentLocationDescription;
-    bool m_s3ContentLocationDescriptionHasBeenSet;
+    bool m_s3ContentLocationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/DatabaseConfigDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail
+  class DatabaseConfigDetail
   {
   public:
-    DatabaseConfigDetail();
-    DatabaseConfigDetail(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseConfigDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_secretName;
-    bool m_secretNameHasBeenSet;
+    bool m_secretNameHasBeenSet = false;
   };
 
 } // namespace Model

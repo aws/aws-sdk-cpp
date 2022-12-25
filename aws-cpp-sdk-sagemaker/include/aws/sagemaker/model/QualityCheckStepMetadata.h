@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QualityCheckStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API QualityCheckStepMetadata
+  class QualityCheckStepMetadata
   {
   public:
-    QualityCheckStepMetadata();
-    QualityCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    QualityCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API QualityCheckStepMetadata();
+    AWS_SAGEMAKER_API QualityCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API QualityCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -469,34 +469,34 @@ namespace Model
   private:
 
     Aws::String m_checkType;
-    bool m_checkTypeHasBeenSet;
+    bool m_checkTypeHasBeenSet = false;
 
     Aws::String m_baselineUsedForDriftCheckStatistics;
-    bool m_baselineUsedForDriftCheckStatisticsHasBeenSet;
+    bool m_baselineUsedForDriftCheckStatisticsHasBeenSet = false;
 
     Aws::String m_baselineUsedForDriftCheckConstraints;
-    bool m_baselineUsedForDriftCheckConstraintsHasBeenSet;
+    bool m_baselineUsedForDriftCheckConstraintsHasBeenSet = false;
 
     Aws::String m_calculatedBaselineStatistics;
-    bool m_calculatedBaselineStatisticsHasBeenSet;
+    bool m_calculatedBaselineStatisticsHasBeenSet = false;
 
     Aws::String m_calculatedBaselineConstraints;
-    bool m_calculatedBaselineConstraintsHasBeenSet;
+    bool m_calculatedBaselineConstraintsHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_violationReport;
-    bool m_violationReportHasBeenSet;
+    bool m_violationReportHasBeenSet = false;
 
     Aws::String m_checkJobArn;
-    bool m_checkJobArnHasBeenSet;
+    bool m_checkJobArnHasBeenSet = false;
 
     bool m_skipCheck;
-    bool m_skipCheckHasBeenSet;
+    bool m_skipCheckHasBeenSet = false;
 
     bool m_registerNewBaseline;
-    bool m_registerNewBaselineHasBeenSet;
+    bool m_registerNewBaselineHasBeenSet = false;
   };
 
 } // namespace Model

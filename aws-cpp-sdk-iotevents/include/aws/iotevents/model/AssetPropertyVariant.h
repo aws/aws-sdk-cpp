@@ -52,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyVariant">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AssetPropertyVariant
+  class AssetPropertyVariant
   {
   public:
-    AssetPropertyVariant();
-    AssetPropertyVariant(Aws::Utils::Json::JsonView jsonValue);
-    AssetPropertyVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AssetPropertyVariant();
+    AWS_IOTEVENTS_API AssetPropertyVariant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AssetPropertyVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,16 +267,16 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::String m_integerValue;
-    bool m_integerValueHasBeenSet;
+    bool m_integerValueHasBeenSet = false;
 
     Aws::String m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     Aws::String m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
   };
 
 } // namespace Model

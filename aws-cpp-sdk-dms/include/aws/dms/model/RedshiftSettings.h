@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RedshiftSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings
+  class RedshiftSettings
   {
   public:
-    RedshiftSettings();
-    RedshiftSettings(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API RedshiftSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1565,94 +1565,94 @@ namespace Model
   private:
 
     bool m_acceptAnyDate;
-    bool m_acceptAnyDateHasBeenSet;
+    bool m_acceptAnyDateHasBeenSet = false;
 
     Aws::String m_afterConnectScript;
-    bool m_afterConnectScriptHasBeenSet;
+    bool m_afterConnectScriptHasBeenSet = false;
 
     Aws::String m_bucketFolder;
-    bool m_bucketFolderHasBeenSet;
+    bool m_bucketFolderHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     bool m_caseSensitiveNames;
-    bool m_caseSensitiveNamesHasBeenSet;
+    bool m_caseSensitiveNamesHasBeenSet = false;
 
     bool m_compUpdate;
-    bool m_compUpdateHasBeenSet;
+    bool m_compUpdateHasBeenSet = false;
 
     int m_connectionTimeout;
-    bool m_connectionTimeoutHasBeenSet;
+    bool m_connectionTimeoutHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dateFormat;
-    bool m_dateFormatHasBeenSet;
+    bool m_dateFormatHasBeenSet = false;
 
     bool m_emptyAsNull;
-    bool m_emptyAsNullHasBeenSet;
+    bool m_emptyAsNullHasBeenSet = false;
 
     EncryptionModeValue m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     bool m_explicitIds;
-    bool m_explicitIdsHasBeenSet;
+    bool m_explicitIdsHasBeenSet = false;
 
     int m_fileTransferUploadStreams;
-    bool m_fileTransferUploadStreamsHasBeenSet;
+    bool m_fileTransferUploadStreamsHasBeenSet = false;
 
     int m_loadTimeout;
-    bool m_loadTimeoutHasBeenSet;
+    bool m_loadTimeoutHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     bool m_removeQuotes;
-    bool m_removeQuotesHasBeenSet;
+    bool m_removeQuotesHasBeenSet = false;
 
     Aws::String m_replaceInvalidChars;
-    bool m_replaceInvalidCharsHasBeenSet;
+    bool m_replaceInvalidCharsHasBeenSet = false;
 
     Aws::String m_replaceChars;
-    bool m_replaceCharsHasBeenSet;
+    bool m_replaceCharsHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_serverSideEncryptionKmsKeyId;
-    bool m_serverSideEncryptionKmsKeyIdHasBeenSet;
+    bool m_serverSideEncryptionKmsKeyIdHasBeenSet = false;
 
     Aws::String m_timeFormat;
-    bool m_timeFormatHasBeenSet;
+    bool m_timeFormatHasBeenSet = false;
 
     bool m_trimBlanks;
-    bool m_trimBlanksHasBeenSet;
+    bool m_trimBlanksHasBeenSet = false;
 
     bool m_truncateColumns;
-    bool m_truncateColumnsHasBeenSet;
+    bool m_truncateColumnsHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     int m_writeBufferSize;
-    bool m_writeBufferSizeHasBeenSet;
+    bool m_writeBufferSizeHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
-    bool m_secretsManagerAccessRoleArnHasBeenSet;
+    bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
     Aws::String m_secretsManagerSecretId;
-    bool m_secretsManagerSecretIdHasBeenSet;
+    bool m_secretsManagerSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/DataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTQUERYSERVICE_API DataPoint
+  class DataPoint
   {
   public:
-    DataPoint();
-    DataPoint(Aws::Utils::Json::JsonView jsonValue);
-    DataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTQUERYSERVICE_API DataPoint();
+    AWS_FORECASTQUERYSERVICE_API DataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTQUERYSERVICE_API DataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTQUERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupRuleUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SecurityGroupRuleUpdate
+  class SecurityGroupRuleUpdate
   {
   public:
-    SecurityGroupRuleUpdate();
-    SecurityGroupRuleUpdate(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SecurityGroupRuleUpdate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRuleUpdate();
+    AWS_EC2_API SecurityGroupRuleUpdate(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRuleUpdate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_securityGroupRuleId;
-    bool m_securityGroupRuleIdHasBeenSet;
+    bool m_securityGroupRuleIdHasBeenSet = false;
 
     SecurityGroupRuleRequest m_securityGroupRule;
-    bool m_securityGroupRuleHasBeenSet;
+    bool m_securityGroupRuleHasBeenSet = false;
   };
 
 } // namespace Model

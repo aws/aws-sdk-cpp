@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SharePrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API SharePrincipal
+  class SharePrincipal
   {
   public:
-    SharePrincipal();
-    SharePrincipal(Aws::Utils::Json::JsonView jsonValue);
-    SharePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API SharePrincipal();
+    AWS_WORKDOCS_API SharePrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API SharePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     PrincipalType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
   };
 
 } // namespace Model

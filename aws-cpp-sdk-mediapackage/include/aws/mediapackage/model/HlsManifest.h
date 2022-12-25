@@ -8,6 +8,9 @@
 #include <aws/mediapackage/model/AdMarkers.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage/model/PlaylistType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediapackage/model/AdsOnDeliveryRestrictions.h>
+#include <aws/mediapackage/model/__AdTriggersElement.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsManifest
+  class HlsManifest
   {
   public:
-    HlsManifest();
-    HlsManifest(Aws::Utils::Json::JsonView jsonValue);
-    HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsManifest();
+    AWS_MEDIAPACKAGE_API HlsManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -498,31 +501,81 @@ it will
      */
     inline HlsManifest& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
+    
+    inline const Aws::Vector<__AdTriggersElement>& GetAdTriggers() const{ return m_adTriggers; }
+
+    
+    inline bool AdTriggersHasBeenSet() const { return m_adTriggersHasBeenSet; }
+
+    
+    inline void SetAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { m_adTriggersHasBeenSet = true; m_adTriggers = value; }
+
+    
+    inline void SetAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { m_adTriggersHasBeenSet = true; m_adTriggers = std::move(value); }
+
+    
+    inline HlsManifest& WithAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { SetAdTriggers(value); return *this;}
+
+    
+    inline HlsManifest& WithAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { SetAdTriggers(std::move(value)); return *this;}
+
+    
+    inline HlsManifest& AddAdTriggers(const __AdTriggersElement& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(value); return *this; }
+
+    
+    inline HlsManifest& AddAdTriggers(__AdTriggersElement&& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AdsOnDeliveryRestrictions& GetAdsOnDeliveryRestrictions() const{ return m_adsOnDeliveryRestrictions; }
+
+    
+    inline bool AdsOnDeliveryRestrictionsHasBeenSet() const { return m_adsOnDeliveryRestrictionsHasBeenSet; }
+
+    
+    inline void SetAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = value; }
+
+    
+    inline void SetAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = std::move(value); }
+
+    
+    inline HlsManifest& WithAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { SetAdsOnDeliveryRestrictions(value); return *this;}
+
+    
+    inline HlsManifest& WithAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { SetAdsOnDeliveryRestrictions(std::move(value)); return *this;}
+
   private:
 
     AdMarkers m_adMarkers;
-    bool m_adMarkersHasBeenSet;
+    bool m_adMarkersHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_includeIframeOnlyStream;
-    bool m_includeIframeOnlyStreamHasBeenSet;
+    bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     PlaylistType m_playlistType;
-    bool m_playlistTypeHasBeenSet;
+    bool m_playlistTypeHasBeenSet = false;
 
     int m_playlistWindowSeconds;
-    bool m_playlistWindowSecondsHasBeenSet;
+    bool m_playlistWindowSecondsHasBeenSet = false;
 
     int m_programDateTimeIntervalSeconds;
-    bool m_programDateTimeIntervalSecondsHasBeenSet;
+    bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
+
+    Aws::Vector<__AdTriggersElement> m_adTriggers;
+    bool m_adTriggersHasBeenSet = false;
+
+    AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
+    bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
   };
 
 } // namespace Model

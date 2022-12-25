@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
+#include <aws/evidently/model/ProjectAppConfigResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/evidently/model/ProjectDataDelivery.h>
@@ -34,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/Project">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API Project
+  class Project
   {
   public:
-    Project();
-    Project(Aws::Utils::Json::JsonView jsonValue);
-    Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API Project();
+    AWS_CLOUDWATCHEVIDENTLY_API Project(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,6 +84,43 @@ namespace Model
      * <p>The number of ongoing launches currently in the project.</p>
      */
     inline Project& WithActiveLaunchCount(long long value) { SetActiveLaunchCount(value); return *this;}
+
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline const ProjectAppConfigResource& GetAppConfigResource() const{ return m_appConfigResource; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline bool AppConfigResourceHasBeenSet() const { return m_appConfigResourceHasBeenSet; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline void SetAppConfigResource(const ProjectAppConfigResource& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = value; }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline void SetAppConfigResource(ProjectAppConfigResource&& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = std::move(value); }
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline Project& WithAppConfigResource(const ProjectAppConfigResource& value) { SetAppConfigResource(value); return *this;}
+
+    /**
+     * <p>This structure defines the configuration of how your application integrates
+     * with AppConfig to run client-side evaluation.</p>
+     */
+    inline Project& WithAppConfigResource(ProjectAppConfigResource&& value) { SetAppConfigResource(std::move(value)); return *this;}
 
 
     /**
@@ -481,43 +519,46 @@ namespace Model
   private:
 
     long long m_activeExperimentCount;
-    bool m_activeExperimentCountHasBeenSet;
+    bool m_activeExperimentCountHasBeenSet = false;
 
     long long m_activeLaunchCount;
-    bool m_activeLaunchCountHasBeenSet;
+    bool m_activeLaunchCountHasBeenSet = false;
+
+    ProjectAppConfigResource m_appConfigResource;
+    bool m_appConfigResourceHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     ProjectDataDelivery m_dataDelivery;
-    bool m_dataDeliveryHasBeenSet;
+    bool m_dataDeliveryHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     long long m_experimentCount;
-    bool m_experimentCountHasBeenSet;
+    bool m_experimentCountHasBeenSet = false;
 
     long long m_featureCount;
-    bool m_featureCountHasBeenSet;
+    bool m_featureCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     long long m_launchCount;
-    bool m_launchCountHasBeenSet;
+    bool m_launchCountHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProjectStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

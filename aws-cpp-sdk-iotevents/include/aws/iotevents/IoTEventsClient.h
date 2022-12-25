@@ -5,220 +5,76 @@
 
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
-#include <aws/iotevents/IoTEventsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iotevents/model/CreateAlarmModelResult.h>
-#include <aws/iotevents/model/CreateDetectorModelResult.h>
-#include <aws/iotevents/model/CreateInputResult.h>
-#include <aws/iotevents/model/DeleteAlarmModelResult.h>
-#include <aws/iotevents/model/DeleteDetectorModelResult.h>
-#include <aws/iotevents/model/DeleteInputResult.h>
-#include <aws/iotevents/model/DescribeAlarmModelResult.h>
-#include <aws/iotevents/model/DescribeDetectorModelResult.h>
-#include <aws/iotevents/model/DescribeDetectorModelAnalysisResult.h>
-#include <aws/iotevents/model/DescribeInputResult.h>
-#include <aws/iotevents/model/DescribeLoggingOptionsResult.h>
-#include <aws/iotevents/model/GetDetectorModelAnalysisResultsResult.h>
-#include <aws/iotevents/model/ListAlarmModelVersionsResult.h>
-#include <aws/iotevents/model/ListAlarmModelsResult.h>
-#include <aws/iotevents/model/ListDetectorModelVersionsResult.h>
-#include <aws/iotevents/model/ListDetectorModelsResult.h>
-#include <aws/iotevents/model/ListInputRoutingsResult.h>
-#include <aws/iotevents/model/ListInputsResult.h>
-#include <aws/iotevents/model/ListTagsForResourceResult.h>
-#include <aws/iotevents/model/StartDetectorModelAnalysisResult.h>
-#include <aws/iotevents/model/TagResourceResult.h>
-#include <aws/iotevents/model/UntagResourceResult.h>
-#include <aws/iotevents/model/UpdateAlarmModelResult.h>
-#include <aws/iotevents/model/UpdateDetectorModelResult.h>
-#include <aws/iotevents/model/UpdateInputResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iotevents/IoTEventsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTEvents
 {
-
-namespace Model
-{
-        class CreateAlarmModelRequest;
-        class CreateDetectorModelRequest;
-        class CreateInputRequest;
-        class DeleteAlarmModelRequest;
-        class DeleteDetectorModelRequest;
-        class DeleteInputRequest;
-        class DescribeAlarmModelRequest;
-        class DescribeDetectorModelRequest;
-        class DescribeDetectorModelAnalysisRequest;
-        class DescribeInputRequest;
-        class DescribeLoggingOptionsRequest;
-        class GetDetectorModelAnalysisResultsRequest;
-        class ListAlarmModelVersionsRequest;
-        class ListAlarmModelsRequest;
-        class ListDetectorModelVersionsRequest;
-        class ListDetectorModelsRequest;
-        class ListInputRoutingsRequest;
-        class ListInputsRequest;
-        class ListTagsForResourceRequest;
-        class PutLoggingOptionsRequest;
-        class StartDetectorModelAnalysisRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAlarmModelRequest;
-        class UpdateDetectorModelRequest;
-        class UpdateInputRequest;
-
-        typedef Aws::Utils::Outcome<CreateAlarmModelResult, IoTEventsError> CreateAlarmModelOutcome;
-        typedef Aws::Utils::Outcome<CreateDetectorModelResult, IoTEventsError> CreateDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<CreateInputResult, IoTEventsError> CreateInputOutcome;
-        typedef Aws::Utils::Outcome<DeleteAlarmModelResult, IoTEventsError> DeleteAlarmModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteDetectorModelResult, IoTEventsError> DeleteDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteInputResult, IoTEventsError> DeleteInputOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmModelResult, IoTEventsError> DescribeAlarmModelOutcome;
-        typedef Aws::Utils::Outcome<DescribeDetectorModelResult, IoTEventsError> DescribeDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<DescribeDetectorModelAnalysisResult, IoTEventsError> DescribeDetectorModelAnalysisOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputResult, IoTEventsError> DescribeInputOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTEventsError> DescribeLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<GetDetectorModelAnalysisResultsResult, IoTEventsError> GetDetectorModelAnalysisResultsOutcome;
-        typedef Aws::Utils::Outcome<ListAlarmModelVersionsResult, IoTEventsError> ListAlarmModelVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListAlarmModelsResult, IoTEventsError> ListAlarmModelsOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorModelVersionsResult, IoTEventsError> ListDetectorModelVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorModelsResult, IoTEventsError> ListDetectorModelsOutcome;
-        typedef Aws::Utils::Outcome<ListInputRoutingsResult, IoTEventsError> ListInputRoutingsOutcome;
-        typedef Aws::Utils::Outcome<ListInputsResult, IoTEventsError> ListInputsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTEventsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IoTEventsError> PutLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<StartDetectorModelAnalysisResult, IoTEventsError> StartDetectorModelAnalysisOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IoTEventsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IoTEventsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAlarmModelResult, IoTEventsError> UpdateAlarmModelOutcome;
-        typedef Aws::Utils::Outcome<UpdateDetectorModelResult, IoTEventsError> UpdateDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<UpdateInputResult, IoTEventsError> UpdateInputOutcome;
-
-        typedef std::future<CreateAlarmModelOutcome> CreateAlarmModelOutcomeCallable;
-        typedef std::future<CreateDetectorModelOutcome> CreateDetectorModelOutcomeCallable;
-        typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
-        typedef std::future<DeleteAlarmModelOutcome> DeleteAlarmModelOutcomeCallable;
-        typedef std::future<DeleteDetectorModelOutcome> DeleteDetectorModelOutcomeCallable;
-        typedef std::future<DeleteInputOutcome> DeleteInputOutcomeCallable;
-        typedef std::future<DescribeAlarmModelOutcome> DescribeAlarmModelOutcomeCallable;
-        typedef std::future<DescribeDetectorModelOutcome> DescribeDetectorModelOutcomeCallable;
-        typedef std::future<DescribeDetectorModelAnalysisOutcome> DescribeDetectorModelAnalysisOutcomeCallable;
-        typedef std::future<DescribeInputOutcome> DescribeInputOutcomeCallable;
-        typedef std::future<DescribeLoggingOptionsOutcome> DescribeLoggingOptionsOutcomeCallable;
-        typedef std::future<GetDetectorModelAnalysisResultsOutcome> GetDetectorModelAnalysisResultsOutcomeCallable;
-        typedef std::future<ListAlarmModelVersionsOutcome> ListAlarmModelVersionsOutcomeCallable;
-        typedef std::future<ListAlarmModelsOutcome> ListAlarmModelsOutcomeCallable;
-        typedef std::future<ListDetectorModelVersionsOutcome> ListDetectorModelVersionsOutcomeCallable;
-        typedef std::future<ListDetectorModelsOutcome> ListDetectorModelsOutcomeCallable;
-        typedef std::future<ListInputRoutingsOutcome> ListInputRoutingsOutcomeCallable;
-        typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutLoggingOptionsOutcome> PutLoggingOptionsOutcomeCallable;
-        typedef std::future<StartDetectorModelAnalysisOutcome> StartDetectorModelAnalysisOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAlarmModelOutcome> UpdateAlarmModelOutcomeCallable;
-        typedef std::future<UpdateDetectorModelOutcome> UpdateDetectorModelOutcomeCallable;
-        typedef std::future<UpdateInputOutcome> UpdateInputOutcomeCallable;
-} // namespace Model
-
-  class IoTEventsClient;
-
-    typedef std::function<void(const IoTEventsClient*, const Model::CreateAlarmModelRequest&, const Model::CreateAlarmModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlarmModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::CreateDetectorModelRequest&, const Model::CreateDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDetectorModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::CreateInputRequest&, const Model::CreateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DeleteAlarmModelRequest&, const Model::DeleteAlarmModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlarmModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DeleteDetectorModelRequest&, const Model::DeleteDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DeleteInputRequest&, const Model::DeleteInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DescribeAlarmModelRequest&, const Model::DescribeAlarmModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlarmModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DescribeDetectorModelRequest&, const Model::DescribeDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DescribeDetectorModelAnalysisRequest&, const Model::DescribeDetectorModelAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorModelAnalysisResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DescribeInputRequest&, const Model::DescribeInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::DescribeLoggingOptionsRequest&, const Model::DescribeLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingOptionsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::GetDetectorModelAnalysisResultsRequest&, const Model::GetDetectorModelAnalysisResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorModelAnalysisResultsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListAlarmModelVersionsRequest&, const Model::ListAlarmModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlarmModelVersionsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListAlarmModelsRequest&, const Model::ListAlarmModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlarmModelsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListDetectorModelVersionsRequest&, const Model::ListDetectorModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorModelVersionsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListDetectorModelsRequest&, const Model::ListDetectorModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorModelsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListInputRoutingsRequest&, const Model::ListInputRoutingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputRoutingsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::PutLoggingOptionsRequest&, const Model::PutLoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingOptionsResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::StartDetectorModelAnalysisRequest&, const Model::StartDetectorModelAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDetectorModelAnalysisResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::UpdateAlarmModelRequest&, const Model::UpdateAlarmModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAlarmModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::UpdateDetectorModelRequest&, const Model::UpdateDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorModelResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::UpdateInputRequest&, const Model::UpdateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputResponseReceivedHandler;
-
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
    * changes in operation, and triggers actions when such events occur. You can use
    * AWS IoT Events API operations to create, read, update, and delete inputs and
    * detector models, and to list their versions.</p>
    */
-  class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTEventsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTEventsClient(const Aws::IoTEvents::IoTEventsClientConfiguration& clientConfiguration = Aws::IoTEvents::IoTEventsClientConfiguration(),
+                        std::shared_ptr<IoTEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTEventsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTEventsClient(const Aws::Auth::AWSCredentials& credentials,
+                        std::shared_ptr<IoTEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::IoTEvents::IoTEventsClientConfiguration& clientConfiguration = Aws::IoTEvents::IoTEventsClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTEventsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<IoTEventsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::IoTEvents::IoTEventsClientConfiguration& clientConfiguration = Aws::IoTEvents::IoTEventsClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTEventsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTEventsClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoTEventsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoTEventsClient();
-
 
         /**
          * <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can
@@ -700,38 +556,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoTEventsEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAlarmModelAsyncHelper(const Model::CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDetectorModelAsyncHelper(const Model::CreateDetectorModelRequest& request, const CreateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInputAsyncHelper(const Model::CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAlarmModelAsyncHelper(const Model::DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDetectorModelAsyncHelper(const Model::DeleteDetectorModelRequest& request, const DeleteDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInputAsyncHelper(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAlarmModelAsyncHelper(const Model::DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDetectorModelAsyncHelper(const Model::DescribeDetectorModelRequest& request, const DescribeDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDetectorModelAnalysisAsyncHelper(const Model::DescribeDetectorModelAnalysisRequest& request, const DescribeDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInputAsyncHelper(const Model::DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoggingOptionsAsyncHelper(const Model::DescribeLoggingOptionsRequest& request, const DescribeLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDetectorModelAnalysisResultsAsyncHelper(const Model::GetDetectorModelAnalysisResultsRequest& request, const GetDetectorModelAnalysisResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAlarmModelVersionsAsyncHelper(const Model::ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAlarmModelsAsyncHelper(const Model::ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDetectorModelVersionsAsyncHelper(const Model::ListDetectorModelVersionsRequest& request, const ListDetectorModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDetectorModelsAsyncHelper(const Model::ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputRoutingsAsyncHelper(const Model::ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLoggingOptionsAsyncHelper(const Model::PutLoggingOptionsRequest& request, const PutLoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDetectorModelAnalysisAsyncHelper(const Model::StartDetectorModelAnalysisRequest& request, const StartDetectorModelAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAlarmModelAsyncHelper(const Model::UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDetectorModelAsyncHelper(const Model::UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInputAsyncHelper(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>;
+      void init(const IoTEventsClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      IoTEventsClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoTEventsEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTEvents

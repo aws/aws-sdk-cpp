@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroupsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ModifyInstanceGroupsRequest : public EMRRequest
+  class ModifyInstanceGroupsRequest : public EMRRequest
   {
   public:
-    ModifyInstanceGroupsRequest();
+    AWS_EMR_API ModifyInstanceGroupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyInstanceGroups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_clusterId;
-    bool m_clusterIdHasBeenSet;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::Vector<InstanceGroupModifyConfig> m_instanceGroups;
-    bool m_instanceGroupsHasBeenSet;
+    bool m_instanceGroupsHasBeenSet = false;
   };
 
 } // namespace Model

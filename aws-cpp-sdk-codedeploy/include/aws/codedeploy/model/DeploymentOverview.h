@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentOverview">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentOverview
+  class DeploymentOverview
   {
   public:
-    DeploymentOverview();
-    DeploymentOverview(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentOverview();
+    AWS_CODEDEPLOY_API DeploymentOverview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentOverview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,22 +172,22 @@ namespace Model
   private:
 
     long long m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
 
     long long m_inProgress;
-    bool m_inProgressHasBeenSet;
+    bool m_inProgressHasBeenSet = false;
 
     long long m_succeeded;
-    bool m_succeededHasBeenSet;
+    bool m_succeededHasBeenSet = false;
 
     long long m_failed;
-    bool m_failedHasBeenSet;
+    bool m_failedHasBeenSet = false;
 
     long long m_skipped;
-    bool m_skippedHasBeenSet;
+    bool m_skippedHasBeenSet = false;
 
     long long m_ready;
-    bool m_readyHasBeenSet;
+    bool m_readyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Ulimit">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Ulimit
+  class Ulimit
   {
   public:
-    Ulimit();
-    Ulimit(Aws::Utils::Json::JsonView jsonValue);
-    Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Ulimit();
+    AWS_ECS_API Ulimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,56 +75,56 @@ namespace Model
 
 
     /**
-     * <p>The soft limit for the ulimit type.</p>
+     * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
     inline int GetSoftLimit() const{ return m_softLimit; }
 
     /**
-     * <p>The soft limit for the ulimit type.</p>
+     * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
     inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
 
     /**
-     * <p>The soft limit for the ulimit type.</p>
+     * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
     inline void SetSoftLimit(int value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
 
     /**
-     * <p>The soft limit for the ulimit type.</p>
+     * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
     inline Ulimit& WithSoftLimit(int value) { SetSoftLimit(value); return *this;}
 
 
     /**
-     * <p>The hard limit for the ulimit type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
     inline int GetHardLimit() const{ return m_hardLimit; }
 
     /**
-     * <p>The hard limit for the ulimit type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
     inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
 
     /**
-     * <p>The hard limit for the ulimit type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
     inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
 
     /**
-     * <p>The hard limit for the ulimit type.</p>
+     * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
     inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
 
   private:
 
     UlimitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_softLimit;
-    bool m_softLimitHasBeenSet;
+    bool m_softLimitHasBeenSet = false;
 
     int m_hardLimit;
-    bool m_hardLimitHasBeenSet;
+    bool m_hardLimitHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API NodegroupHealth
+  class NodegroupHealth
   {
   public:
-    NodegroupHealth();
-    NodegroupHealth(Aws::Utils::Json::JsonView jsonValue);
-    NodegroupHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API NodegroupHealth();
+    AWS_EKS_API NodegroupHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API NodegroupHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Issue> m_issues;
-    bool m_issuesHasBeenSet;
+    bool m_issuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API AssociateDeviceWithNetworkProfileRequest : public AlexaForBusinessRequest
+  class AssociateDeviceWithNetworkProfileRequest : public AlexaForBusinessRequest
   {
   public:
-    AssociateDeviceWithNetworkProfileRequest();
+    AWS_ALEXAFORBUSINESS_API AssociateDeviceWithNetworkProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateDeviceWithNetworkProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelPackagingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration
+  class ModelPackagingConfiguration
   {
   public:
-    ModelPackagingConfiguration();
-    ModelPackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration();
+    AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     GreengrassConfiguration m_greengrass;
-    bool m_greengrassHasBeenSet;
+    bool m_greengrassHasBeenSet = false;
   };
 
 } // namespace Model

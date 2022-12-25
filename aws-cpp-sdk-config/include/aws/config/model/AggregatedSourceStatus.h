@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregatedSourceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregatedSourceStatus
+  class AggregatedSourceStatus
   {
   public:
-    AggregatedSourceStatus();
-    AggregatedSourceStatus(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedSourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus();
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -334,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_sourceId;
-    bool m_sourceIdHasBeenSet;
+    bool m_sourceIdHasBeenSet = false;
 
     AggregatedSourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     AggregatedSourceStatusType m_lastUpdateStatus;
-    bool m_lastUpdateStatusHasBeenSet;
+    bool m_lastUpdateStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
   };
 
 } // namespace Model

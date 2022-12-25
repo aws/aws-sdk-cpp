@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GenericAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API GenericAttachment
+  class GenericAttachment
   {
   public:
-    GenericAttachment();
-    GenericAttachment(Aws::Utils::Json::JsonView jsonValue);
-    GenericAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API GenericAttachment();
+    AWS_LEXRUNTIMESERVICE_API GenericAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API GenericAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_subTitle;
-    bool m_subTitleHasBeenSet;
+    bool m_subTitleHasBeenSet = false;
 
     Aws::String m_attachmentLinkUrl;
-    bool m_attachmentLinkUrlHasBeenSet;
+    bool m_attachmentLinkUrlHasBeenSet = false;
 
     Aws::String m_imageUrl;
-    bool m_imageUrlHasBeenSet;
+    bool m_imageUrlHasBeenSet = false;
 
     Aws::Vector<Button> m_buttons;
-    bool m_buttonsHasBeenSet;
+    bool m_buttonsHasBeenSet = false;
   };
 
 } // namespace Model

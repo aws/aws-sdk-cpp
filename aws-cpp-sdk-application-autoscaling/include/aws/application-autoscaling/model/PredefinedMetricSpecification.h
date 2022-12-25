@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredefinedMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API PredefinedMetricSpecification
+  class PredefinedMetricSpecification
   {
   public:
-    PredefinedMetricSpecification();
-    PredefinedMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PredefinedMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API PredefinedMetricSpecification();
+    AWS_APPLICATIONAUTOSCALING_API PredefinedMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API PredefinedMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,10 +261,10 @@ namespace Model
   private:
 
     MetricType m_predefinedMetricType;
-    bool m_predefinedMetricTypeHasBeenSet;
+    bool m_predefinedMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

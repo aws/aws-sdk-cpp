@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/FailWorkflowExecutionFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API FailWorkflowExecutionFailedEventAttributes
+  class FailWorkflowExecutionFailedEventAttributes
   {
   public:
-    FailWorkflowExecutionFailedEventAttributes();
-    FailWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    FailWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API FailWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API FailWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API FailWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     FailWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableReplicaGlobalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableReplicaGlobalSecondaryIndex
+  class AwsDynamoDbTableReplicaGlobalSecondaryIndex
   {
   public:
-    AwsDynamoDbTableReplicaGlobalSecondaryIndex();
-    AwsDynamoDbTableReplicaGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableReplicaGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplicaGlobalSecondaryIndex();
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplicaGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplicaGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
   };
 
 } // namespace Model

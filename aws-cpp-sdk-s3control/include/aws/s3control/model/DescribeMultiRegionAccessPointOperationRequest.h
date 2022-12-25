@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationRequest : public S3ControlRequest
+  class DescribeMultiRegionAccessPointOperationRequest : public S3ControlRequest
   {
   public:
-    DescribeMultiRegionAccessPointOperationRequest();
+    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,12 +29,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeMultiRegionAccessPointOperation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access
@@ -152,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_requestTokenARN;
-    bool m_requestTokenARNHasBeenSet;
+    bool m_requestTokenARNHasBeenSet = false;
   };
 
 } // namespace Model

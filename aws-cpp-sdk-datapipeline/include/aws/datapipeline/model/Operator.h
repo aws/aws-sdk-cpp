@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Operator">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API Operator
+  class Operator
   {
   public:
-    Operator();
-    Operator(Aws::Utils::Json::JsonView jsonValue);
-    Operator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API Operator();
+    AWS_DATAPIPELINE_API Operator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Operator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,10 +221,10 @@ namespace Model
   private:
 
     OperatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

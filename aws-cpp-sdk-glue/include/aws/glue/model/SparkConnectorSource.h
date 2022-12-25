@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SparkConnectorSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SparkConnectorSource
+  class SparkConnectorSource
   {
   public:
-    SparkConnectorSource();
-    SparkConnectorSource(Aws::Utils::Json::JsonView jsonValue);
-    SparkConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SparkConnectorSource();
+    AWS_GLUE_API SparkConnectorSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SparkConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,22 +330,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_connectorName;
-    bool m_connectorNameHasBeenSet;
+    bool m_connectorNameHasBeenSet = false;
 
     Aws::String m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalOptions;
-    bool m_additionalOptionsHasBeenSet;
+    bool m_additionalOptionsHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

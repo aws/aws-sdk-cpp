@@ -21,6 +21,7 @@ CreateExperimentRequest::CreateExperimentRequest() :
     m_randomizationSaltHasBeenSet(false),
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_treatmentsHasBeenSet(false)
 {
@@ -38,7 +39,7 @@ Aws::String CreateExperimentRequest::SerializePayload() const
 
   if(m_metricGoalsHasBeenSet)
   {
-   Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
+   Aws::Utils::Array<JsonValue> metricGoalsJsonList(m_metricGoals.size());
    for(unsigned metricGoalsIndex = 0; metricGoalsIndex < metricGoalsJsonList.GetLength(); ++metricGoalsIndex)
    {
      metricGoalsJsonList[metricGoalsIndex].AsObject(m_metricGoals[metricGoalsIndex].Jsonize());
@@ -71,6 +72,12 @@ Aws::String CreateExperimentRequest::SerializePayload() const
 
   }
 
+  if(m_segmentHasBeenSet)
+  {
+   payload.WithString("segment", m_segment);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -84,7 +91,7 @@ Aws::String CreateExperimentRequest::SerializePayload() const
 
   if(m_treatmentsHasBeenSet)
   {
-   Array<JsonValue> treatmentsJsonList(m_treatments.size());
+   Aws::Utils::Array<JsonValue> treatmentsJsonList(m_treatments.size());
    for(unsigned treatmentsIndex = 0; treatmentsIndex < treatmentsJsonList.GetLength(); ++treatmentsIndex)
    {
      treatmentsJsonList[treatmentsIndex].AsObject(m_treatments[treatmentsIndex].Jsonize());

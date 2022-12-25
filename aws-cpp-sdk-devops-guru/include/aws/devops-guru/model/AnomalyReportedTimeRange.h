@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalyReportedTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AnomalyReportedTimeRange
+  class AnomalyReportedTimeRange
   {
   public:
-    AnomalyReportedTimeRange();
-    AnomalyReportedTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyReportedTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AnomalyReportedTimeRange();
+    AWS_DEVOPSGURU_API AnomalyReportedTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AnomalyReportedTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_openTime;
-    bool m_openTimeHasBeenSet;
+    bool m_openTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_closeTime;
-    bool m_closeTimeHasBeenSet;
+    bool m_closeTimeHasBeenSet = false;
   };
 
 } // namespace Model

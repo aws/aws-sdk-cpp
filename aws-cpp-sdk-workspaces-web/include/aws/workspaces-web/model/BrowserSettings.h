@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/BrowserSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API BrowserSettings
+  class BrowserSettings
   {
   public:
-    BrowserSettings();
-    BrowserSettings(Aws::Utils::Json::JsonView jsonValue);
-    BrowserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API BrowserSettings();
+    AWS_WORKSPACESWEB_API BrowserSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API BrowserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
-    bool m_associatedPortalArnsHasBeenSet;
+    bool m_associatedPortalArnsHasBeenSet = false;
 
     Aws::String m_browserPolicy;
-    bool m_browserPolicyHasBeenSet;
+    bool m_browserPolicyHasBeenSet = false;
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupRequest : public MediaPackageVodRequest
+  class DescribePackagingGroupRequest : public MediaPackageVodRequest
   {
   public:
-    DescribePackagingGroupRequest();
+    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePackagingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

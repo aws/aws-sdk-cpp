@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Output();
+    AWS_MEDIACONNECT_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -561,43 +561,43 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_listenerAddress;
-    bool m_listenerAddressHasBeenSet;
+    bool m_listenerAddressHasBeenSet = false;
 
     Aws::String m_mediaLiveInputArn;
-    bool m_mediaLiveInputArnHasBeenSet;
+    bool m_mediaLiveInputArnHasBeenSet = false;
 
     Aws::Vector<MediaStreamOutputConfiguration> m_mediaStreamOutputConfigurations;
-    bool m_mediaStreamOutputConfigurationsHasBeenSet;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_outputArn;
-    bool m_outputArnHasBeenSet;
+    bool m_outputArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Transport m_transport;
-    bool m_transportHasBeenSet;
+    bool m_transportHasBeenSet = false;
 
     VpcInterfaceAttachment m_vpcInterfaceAttachment;
-    bool m_vpcInterfaceAttachmentHasBeenSet;
+    bool m_vpcInterfaceAttachmentHasBeenSet = false;
   };
 
 } // namespace Model

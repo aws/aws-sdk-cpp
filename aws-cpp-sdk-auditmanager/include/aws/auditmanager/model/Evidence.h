@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Evidence">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Evidence
+  class Evidence
   {
   public:
-    Evidence();
-    Evidence(Aws::Utils::Json::JsonView jsonValue);
-    Evidence& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Evidence();
+    AWS_AUDITMANAGER_API Evidence(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Evidence& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -463,66 +463,130 @@ namespace Model
 
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetComplianceCheck() const{ return m_complianceCheck; }
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline bool ComplianceCheckHasBeenSet() const { return m_complianceCheckHasBeenSet; }
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline void SetComplianceCheck(const Aws::String& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = value; }
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline void SetComplianceCheck(Aws::String&& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = std::move(value); }
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline void SetComplianceCheck(const char* value) { m_complianceCheckHasBeenSet = true; m_complianceCheck.assign(value); }
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline Evidence& WithComplianceCheck(const Aws::String& value) { SetComplianceCheck(value); return *this;}
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline Evidence& WithComplianceCheck(Aws::String&& value) { SetComplianceCheck(std::move(value)); return *this;}
 
     /**
-     * <p> The evaluation status for evidence that falls under the compliance check
-     * category. For evidence collected from Security Hub, a <i>Pass</i> or <i>Fail</i>
-     * result is shown. For evidence collected from Config, a <i>Compliant</i> or
-     * <i>Noncompliant</i> result is shown. </p>
+     * <p>The evaluation status for automated evidence that falls under the compliance
+     * check category.</p> <ul> <li> <p>Audit Manager classes evidence as non-compliant
+     * if Security Hub reports a <i>Fail</i> result, or if Config reports a
+     * <i>Non-compliant</i> result.</p> </li> <li> <p>Audit Manager classes evidence as
+     * compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.</p> </li> <li> <p>If a compliance check isn't available
+     * or applicable, then no compliance evaluation can be made for that evidence. This
+     * is the case if the evidence uses Config or Security Hub as the underlying data
+     * source type, but those services aren't enabled. This is also the case if the
+     * evidence uses an underlying data source type that doesn't support compliance
+     * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p> </li> </ul>
      */
     inline Evidence& WithComplianceCheck(const char* value) { SetComplianceCheck(value); return *this;}
 
@@ -742,49 +806,49 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_evidenceAwsAccountId;
-    bool m_evidenceAwsAccountIdHasBeenSet;
+    bool m_evidenceAwsAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::String m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::String m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_evidenceByType;
-    bool m_evidenceByTypeHasBeenSet;
+    bool m_evidenceByTypeHasBeenSet = false;
 
     Aws::Vector<Resource> m_resourcesIncluded;
-    bool m_resourcesIncludedHasBeenSet;
+    bool m_resourcesIncludedHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::String m_iamId;
-    bool m_iamIdHasBeenSet;
+    bool m_iamIdHasBeenSet = false;
 
     Aws::String m_complianceCheck;
-    bool m_complianceCheckHasBeenSet;
+    bool m_complianceCheckHasBeenSet = false;
 
     Aws::String m_awsOrganization;
-    bool m_awsOrganizationHasBeenSet;
+    bool m_awsOrganizationHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_evidenceFolderId;
-    bool m_evidenceFolderIdHasBeenSet;
+    bool m_evidenceFolderIdHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_assessmentReportSelection;
-    bool m_assessmentReportSelectionHasBeenSet;
+    bool m_assessmentReportSelectionHasBeenSet = false;
   };
 
 } // namespace Model

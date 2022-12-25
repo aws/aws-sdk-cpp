@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastorePartition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatastorePartition
+  class DatastorePartition
   {
   public:
-    DatastorePartition();
-    DatastorePartition(Aws::Utils::Json::JsonView jsonValue);
-    DatastorePartition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatastorePartition();
+    AWS_IOTANALYTICS_API DatastorePartition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatastorePartition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Partition m_attributePartition;
-    bool m_attributePartitionHasBeenSet;
+    bool m_attributePartitionHasBeenSet = false;
 
     TimestampPartition m_timestampPartition;
-    bool m_timestampPartitionHasBeenSet;
+    bool m_timestampPartitionHasBeenSet = false;
   };
 
 } // namespace Model

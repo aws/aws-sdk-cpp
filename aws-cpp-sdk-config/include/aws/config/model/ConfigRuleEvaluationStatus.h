@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleEvaluationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigRuleEvaluationStatus
+  class ConfigRuleEvaluationStatus
   {
   public:
-    ConfigRuleEvaluationStatus();
-    ConfigRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigRuleEvaluationStatus();
+    AWS_CONFIGSERVICE_API ConfigRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -631,49 +631,49 @@ namespace Model
   private:
 
     Aws::String m_configRuleName;
-    bool m_configRuleNameHasBeenSet;
+    bool m_configRuleNameHasBeenSet = false;
 
     Aws::String m_configRuleArn;
-    bool m_configRuleArnHasBeenSet;
+    bool m_configRuleArnHasBeenSet = false;
 
     Aws::String m_configRuleId;
-    bool m_configRuleIdHasBeenSet;
+    bool m_configRuleIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulInvocationTime;
-    bool m_lastSuccessfulInvocationTimeHasBeenSet;
+    bool m_lastSuccessfulInvocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastFailedInvocationTime;
-    bool m_lastFailedInvocationTimeHasBeenSet;
+    bool m_lastFailedInvocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulEvaluationTime;
-    bool m_lastSuccessfulEvaluationTimeHasBeenSet;
+    bool m_lastSuccessfulEvaluationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastFailedEvaluationTime;
-    bool m_lastFailedEvaluationTimeHasBeenSet;
+    bool m_lastFailedEvaluationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstActivatedTime;
-    bool m_firstActivatedTimeHasBeenSet;
+    bool m_firstActivatedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeactivatedTime;
-    bool m_lastDeactivatedTimeHasBeenSet;
+    bool m_lastDeactivatedTimeHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     bool m_firstEvaluationStarted;
-    bool m_firstEvaluationStartedHasBeenSet;
+    bool m_firstEvaluationStartedHasBeenSet = false;
 
     Aws::String m_lastDebugLogDeliveryStatus;
-    bool m_lastDebugLogDeliveryStatusHasBeenSet;
+    bool m_lastDebugLogDeliveryStatusHasBeenSet = false;
 
     Aws::String m_lastDebugLogDeliveryStatusReason;
-    bool m_lastDebugLogDeliveryStatusReasonHasBeenSet;
+    bool m_lastDebugLogDeliveryStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDebugLogDeliveryTime;
-    bool m_lastDebugLogDeliveryTimeHasBeenSet;
+    bool m_lastDebugLogDeliveryTimeHasBeenSet = false;
   };
 
 } // namespace Model

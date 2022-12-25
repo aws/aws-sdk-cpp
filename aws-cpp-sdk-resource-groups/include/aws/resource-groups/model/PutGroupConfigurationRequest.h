@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESOURCEGROUPS_API PutGroupConfigurationRequest : public ResourceGroupsRequest
+  class PutGroupConfigurationRequest : public ResourceGroupsRequest
   {
   public:
-    PutGroupConfigurationRequest();
+    AWS_RESOURCEGROUPS_API PutGroupConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutGroupConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESOURCEGROUPS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -190,10 +190,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::Vector<GroupConfigurationItem> m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

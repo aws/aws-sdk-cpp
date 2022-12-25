@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConversionTask">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ConversionTask
+  class ConversionTask
   {
   public:
-    ConversionTask();
-    ConversionTask(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConversionTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConversionTask();
+    AWS_EC2_API ConversionTask(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ConversionTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_conversionTaskId;
-    bool m_conversionTaskIdHasBeenSet;
+    bool m_conversionTaskIdHasBeenSet = false;
 
     Aws::String m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     ImportInstanceTaskDetails m_importInstance;
-    bool m_importInstanceHasBeenSet;
+    bool m_importInstanceHasBeenSet = false;
 
     ImportVolumeTaskDetails m_importVolume;
-    bool m_importVolumeHasBeenSet;
+    bool m_importVolumeHasBeenSet = false;
 
     ConversionTaskState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

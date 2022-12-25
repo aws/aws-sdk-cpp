@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Action();
+    AWS_SECURITYHUB_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     NetworkConnectionAction m_networkConnectionAction;
-    bool m_networkConnectionActionHasBeenSet;
+    bool m_networkConnectionActionHasBeenSet = false;
 
     AwsApiCallAction m_awsApiCallAction;
-    bool m_awsApiCallActionHasBeenSet;
+    bool m_awsApiCallActionHasBeenSet = false;
 
     DnsRequestAction m_dnsRequestAction;
-    bool m_dnsRequestActionHasBeenSet;
+    bool m_dnsRequestActionHasBeenSet = false;
 
     PortProbeAction m_portProbeAction;
-    bool m_portProbeActionHasBeenSet;
+    bool m_portProbeActionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CodeGenEdge">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CodeGenEdge
+  class CodeGenEdge
   {
   public:
-    CodeGenEdge();
-    CodeGenEdge(Aws::Utils::Json::JsonView jsonValue);
-    CodeGenEdge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CodeGenEdge();
+    AWS_GLUE_API CodeGenEdge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CodeGenEdge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_targetParameter;
-    bool m_targetParameterHasBeenSet;
+    bool m_targetParameterHasBeenSet = false;
   };
 
 } // namespace Model

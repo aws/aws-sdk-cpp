@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/AttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_PRICING_API AttributeValue
+  class AttributeValue
   {
   public:
-    AttributeValue();
-    AttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRICING_API AttributeValue();
+    AWS_PRICING_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

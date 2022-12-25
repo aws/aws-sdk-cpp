@@ -13,7 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateApplicationComponentConfigRequest::UpdateApplicationComponentConfigRequest() : 
+    m_appType(AppType::NOT_SET),
+    m_appTypeHasBeenSet(false),
     m_applicationComponentIdHasBeenSet(false),
+    m_configureOnly(false),
+    m_configureOnlyHasBeenSet(false),
     m_inclusionStatus(InclusionStatus::NOT_SET),
     m_inclusionStatusHasBeenSet(false),
     m_secretsManagerKeyHasBeenSet(false),
@@ -26,9 +30,20 @@ Aws::String UpdateApplicationComponentConfigRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_appTypeHasBeenSet)
+  {
+   payload.WithString("appType", AppTypeMapper::GetNameForAppType(m_appType));
+  }
+
   if(m_applicationComponentIdHasBeenSet)
   {
    payload.WithString("applicationComponentId", m_applicationComponentId);
+
+  }
+
+  if(m_configureOnlyHasBeenSet)
+  {
+   payload.WithBool("configureOnly", m_configureOnly);
 
   }
 
@@ -45,7 +60,7 @@ Aws::String UpdateApplicationComponentConfigRequest::SerializePayload() const
 
   if(m_sourceCodeListHasBeenSet)
   {
-   Array<JsonValue> sourceCodeListJsonList(m_sourceCodeList.size());
+   Aws::Utils::Array<JsonValue> sourceCodeListJsonList(m_sourceCodeList.size());
    for(unsigned sourceCodeListIndex = 0; sourceCodeListIndex < sourceCodeListJsonList.GetLength(); ++sourceCodeListIndex)
    {
      sourceCodeListJsonList[sourceCodeListIndex].AsObject(m_sourceCodeList[sourceCodeListIndex].Jsonize());

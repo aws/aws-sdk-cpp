@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GAMELIFT_API UpdateScriptRequest : public GameLiftRequest
+  class UpdateScriptRequest : public GameLiftRequest
   {
   public:
-    UpdateScriptRequest();
+    AWS_GAMELIFT_API UpdateScriptRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateScript"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GAMELIFT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -135,50 +135,50 @@ namespace Model
 
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique.</p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique.</p>
      */
     inline UpdateScriptRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -319,19 +319,19 @@ namespace Model
   private:
 
     Aws::String m_scriptId;
-    bool m_scriptIdHasBeenSet;
+    bool m_scriptIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     S3Location m_storageLocation;
-    bool m_storageLocationHasBeenSet;
+    bool m_storageLocationHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_zipFile;
-    bool m_zipFileHasBeenSet;
+    bool m_zipFileHasBeenSet = false;
   };
 
 } // namespace Model

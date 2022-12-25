@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GrokClassifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API GrokClassifier
+  class GrokClassifier
   {
   public:
-    GrokClassifier();
-    GrokClassifier(Aws::Utils::Json::JsonView jsonValue);
-    GrokClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GrokClassifier();
+    AWS_GLUE_API GrokClassifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GrokClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_grokPattern;
-    bool m_grokPatternHasBeenSet;
+    bool m_grokPatternHasBeenSet = false;
 
     Aws::String m_customPatterns;
-    bool m_customPatternsHasBeenSet;
+    bool m_customPatternsHasBeenSet = false;
   };
 
 } // namespace Model

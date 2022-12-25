@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails
+  class AwsEcsClusterConfigurationDetails
   {
   public:
-    AwsEcsClusterConfigurationDetails();
-    AwsEcsClusterConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsClusterConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AwsEcsClusterConfigurationExecuteCommandConfigurationDetails m_executeCommandConfiguration;
-    bool m_executeCommandConfigurationHasBeenSet;
+    bool m_executeCommandConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

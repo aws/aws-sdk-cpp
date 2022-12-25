@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/EvidenceInsights">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API EvidenceInsights
+  class EvidenceInsights
   {
   public:
-    EvidenceInsights();
-    EvidenceInsights(Aws::Utils::Json::JsonView jsonValue);
-    EvidenceInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API EvidenceInsights();
+    AWS_AUDITMANAGER_API EvidenceInsights(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API EvidenceInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     int m_noncompliantEvidenceCount;
-    bool m_noncompliantEvidenceCountHasBeenSet;
+    bool m_noncompliantEvidenceCountHasBeenSet = false;
 
     int m_compliantEvidenceCount;
-    bool m_compliantEvidenceCountHasBeenSet;
+    bool m_compliantEvidenceCountHasBeenSet = false;
 
     int m_inconclusiveEvidenceCount;
-    bool m_inconclusiveEvidenceCountHasBeenSet;
+    bool m_inconclusiveEvidenceCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnectionOAuthRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API CreateConnectionOAuthRequestParameters
+  class CreateConnectionOAuthRequestParameters
   {
   public:
-    CreateConnectionOAuthRequestParameters();
-    CreateConnectionOAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    CreateConnectionOAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthRequestParameters();
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,16 +197,16 @@ namespace Model
   private:
 
     CreateConnectionOAuthClientRequestParameters m_clientParameters;
-    bool m_clientParametersHasBeenSet;
+    bool m_clientParametersHasBeenSet = false;
 
     Aws::String m_authorizationEndpoint;
-    bool m_authorizationEndpointHasBeenSet;
+    bool m_authorizationEndpointHasBeenSet = false;
 
     ConnectionOAuthHttpMethod m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     ConnectionHttpParameters m_oAuthHttpParameters;
-    bool m_oAuthHttpParametersHasBeenSet;
+    bool m_oAuthHttpParametersHasBeenSet = false;
   };
 
 } // namespace Model

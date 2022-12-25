@@ -21,6 +21,7 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_engineVersionHasBeenSet(false),
     m_highAvailabilityConfigHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -71,6 +72,12 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   }
 
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -91,7 +98,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -102,7 +109,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   if(m_storageConfigurationsHasBeenSet)
   {
-   Array<JsonValue> storageConfigurationsJsonList(m_storageConfigurations.size());
+   Aws::Utils::Array<JsonValue> storageConfigurationsJsonList(m_storageConfigurations.size());
    for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
    {
      storageConfigurationsJsonList[storageConfigurationsIndex].AsObject(m_storageConfigurations[storageConfigurationsIndex].Jsonize());
@@ -113,7 +120,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);

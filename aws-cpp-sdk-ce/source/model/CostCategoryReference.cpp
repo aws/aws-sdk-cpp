@@ -84,7 +84,7 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProcessingStatus"))
   {
-    Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
+    Aws::Utils::Array<JsonView> processingStatusJsonList = jsonValue.GetArray("ProcessingStatus");
     for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
     {
       m_processingStatus.push_back(processingStatusJsonList[processingStatusIndex].AsObject());
@@ -94,7 +94,7 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -148,7 +148,7 @@ JsonValue CostCategoryReference::Jsonize() const
 
   if(m_processingStatusHasBeenSet)
   {
-   Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
+   Aws::Utils::Array<JsonValue> processingStatusJsonList(m_processingStatus.size());
    for(unsigned processingStatusIndex = 0; processingStatusIndex < processingStatusJsonList.GetLength(); ++processingStatusIndex)
    {
      processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());
@@ -159,7 +159,7 @@ JsonValue CostCategoryReference::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);

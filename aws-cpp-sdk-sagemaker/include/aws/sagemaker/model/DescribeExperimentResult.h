@@ -27,12 +27,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeExperimentResult
+  class DescribeExperimentResult
   {
   public:
-    DescribeExperimentResult();
-    DescribeExperimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeExperimentResult();
+    AWS_SAGEMAKER_API DescribeExperimentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeExperimentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -151,27 +151,27 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the source and, optionally, the type.</p>
+     * <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
      */
     inline const ExperimentSource& GetSource() const{ return m_source; }
 
     /**
-     * <p>The ARN of the source and, optionally, the type.</p>
+     * <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
      */
     inline void SetSource(const ExperimentSource& value) { m_source = value; }
 
     /**
-     * <p>The ARN of the source and, optionally, the type.</p>
+     * <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
      */
     inline void SetSource(ExperimentSource&& value) { m_source = std::move(value); }
 
     /**
-     * <p>The ARN of the source and, optionally, the type.</p>
+     * <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
      */
     inline DescribeExperimentResult& WithSource(const ExperimentSource& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The ARN of the source and, optionally, the type.</p>
+     * <p>The Amazon Resource Name (ARN) of the source and, optionally, the type.</p>
      */
     inline DescribeExperimentResult& WithSource(ExperimentSource&& value) { SetSource(std::move(value)); return *this;}
 

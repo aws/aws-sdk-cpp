@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ApplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationInfo
+  class ApplicationInfo
   {
   public:
-    ApplicationInfo();
-    ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo();
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -342,28 +342,28 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_lifeCycle;
-    bool m_lifeCycleHasBeenSet;
+    bool m_lifeCycleHasBeenSet = false;
 
     Aws::String m_opsItemSNSTopicArn;
-    bool m_opsItemSNSTopicArnHasBeenSet;
+    bool m_opsItemSNSTopicArnHasBeenSet = false;
 
     bool m_opsCenterEnabled;
-    bool m_opsCenterEnabledHasBeenSet;
+    bool m_opsCenterEnabledHasBeenSet = false;
 
     bool m_cWEMonitorEnabled;
-    bool m_cWEMonitorEnabledHasBeenSet;
+    bool m_cWEMonitorEnabledHasBeenSet = false;
 
     Aws::String m_remarks;
-    bool m_remarksHasBeenSet;
+    bool m_remarksHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
 
     DiscoveryType m_discoveryType;
-    bool m_discoveryTypeHasBeenSet;
+    bool m_discoveryTypeHasBeenSet = false;
   };
 
 } // namespace Model

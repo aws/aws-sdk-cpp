@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobCheckpointConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API JobCheckpointConfig
+  class JobCheckpointConfig
   {
   public:
-    JobCheckpointConfig();
-    JobCheckpointConfig(Aws::Utils::Json::JsonView jsonValue);
-    JobCheckpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API JobCheckpointConfig();
+    AWS_BRAKET_API JobCheckpointConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API JobCheckpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

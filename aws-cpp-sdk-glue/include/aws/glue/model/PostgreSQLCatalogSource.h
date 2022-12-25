@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PostgreSQLCatalogSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PostgreSQLCatalogSource
+  class PostgreSQLCatalogSource
   {
   public:
-    PostgreSQLCatalogSource();
-    PostgreSQLCatalogSource(Aws::Utils::Json::JsonView jsonValue);
-    PostgreSQLCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PostgreSQLCatalogSource();
+    AWS_GLUE_API PostgreSQLCatalogSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PostgreSQLCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
   };
 
 } // namespace Model

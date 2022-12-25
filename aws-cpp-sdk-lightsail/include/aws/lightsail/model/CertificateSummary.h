@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CertificateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API CertificateSummary
+  class CertificateSummary
   {
   public:
-    CertificateSummary();
-    CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
-    CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API CertificateSummary();
+    AWS_LIGHTSAIL_API CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Certificate m_certificateDetail;
-    bool m_certificateDetailHasBeenSet;
+    bool m_certificateDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

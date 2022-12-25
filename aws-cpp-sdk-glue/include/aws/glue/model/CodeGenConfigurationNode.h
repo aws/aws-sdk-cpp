@@ -55,6 +55,8 @@
 #include <aws/glue/model/MySQLCatalogTarget.h>
 #include <aws/glue/model/OracleSQLCatalogTarget.h>
 #include <aws/glue/model/PostgreSQLCatalogTarget.h>
+#include <aws/glue/model/DynamicTransform.h>
+#include <aws/glue/model/EvaluateDataQuality.h>
 #include <utility>
 
 namespace Aws
@@ -79,13 +81,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CodeGenConfigurationNode">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CodeGenConfigurationNode
+  class CodeGenConfigurationNode
   {
   public:
-    CodeGenConfigurationNode();
-    CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
-    CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CodeGenConfigurationNode();
+    AWS_GLUE_API CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1793,157 +1795,225 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithPostgreSQLCatalogTarget(PostgreSQLCatalogTarget&& value) { SetPostgreSQLCatalogTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline const DynamicTransform& GetDynamicTransform() const{ return m_dynamicTransform; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline bool DynamicTransformHasBeenSet() const { return m_dynamicTransformHasBeenSet; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(const DynamicTransform& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = value; }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline void SetDynamicTransform(DynamicTransform&& value) { m_dynamicTransformHasBeenSet = true; m_dynamicTransform = std::move(value); }
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(const DynamicTransform& value) { SetDynamicTransform(value); return *this;}
+
+    /**
+     * <p>Specifies a custom visual transform created by a user.</p>
+     */
+    inline CodeGenConfigurationNode& WithDynamicTransform(DynamicTransform&& value) { SetDynamicTransform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline const EvaluateDataQuality& GetEvaluateDataQuality() const{ return m_evaluateDataQuality; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline bool EvaluateDataQualityHasBeenSet() const { return m_evaluateDataQualityHasBeenSet; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(const EvaluateDataQuality& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = value; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline void SetEvaluateDataQuality(EvaluateDataQuality&& value) { m_evaluateDataQualityHasBeenSet = true; m_evaluateDataQuality = std::move(value); }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(const EvaluateDataQuality& value) { SetEvaluateDataQuality(value); return *this;}
+
+    /**
+     * <p>Specifies your data quality evaluation criteria.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQuality(EvaluateDataQuality&& value) { SetEvaluateDataQuality(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
-    bool m_athenaConnectorSourceHasBeenSet;
+    bool m_athenaConnectorSourceHasBeenSet = false;
 
     JDBCConnectorSource m_jDBCConnectorSource;
-    bool m_jDBCConnectorSourceHasBeenSet;
+    bool m_jDBCConnectorSourceHasBeenSet = false;
 
     SparkConnectorSource m_sparkConnectorSource;
-    bool m_sparkConnectorSourceHasBeenSet;
+    bool m_sparkConnectorSourceHasBeenSet = false;
 
     CatalogSource m_catalogSource;
-    bool m_catalogSourceHasBeenSet;
+    bool m_catalogSourceHasBeenSet = false;
 
     RedshiftSource m_redshiftSource;
-    bool m_redshiftSourceHasBeenSet;
+    bool m_redshiftSourceHasBeenSet = false;
 
     S3CatalogSource m_s3CatalogSource;
-    bool m_s3CatalogSourceHasBeenSet;
+    bool m_s3CatalogSourceHasBeenSet = false;
 
     S3CsvSource m_s3CsvSource;
-    bool m_s3CsvSourceHasBeenSet;
+    bool m_s3CsvSourceHasBeenSet = false;
 
     S3JsonSource m_s3JsonSource;
-    bool m_s3JsonSourceHasBeenSet;
+    bool m_s3JsonSourceHasBeenSet = false;
 
     S3ParquetSource m_s3ParquetSource;
-    bool m_s3ParquetSourceHasBeenSet;
+    bool m_s3ParquetSourceHasBeenSet = false;
 
     RelationalCatalogSource m_relationalCatalogSource;
-    bool m_relationalCatalogSourceHasBeenSet;
+    bool m_relationalCatalogSourceHasBeenSet = false;
 
     DynamoDBCatalogSource m_dynamoDBCatalogSource;
-    bool m_dynamoDBCatalogSourceHasBeenSet;
+    bool m_dynamoDBCatalogSourceHasBeenSet = false;
 
     JDBCConnectorTarget m_jDBCConnectorTarget;
-    bool m_jDBCConnectorTargetHasBeenSet;
+    bool m_jDBCConnectorTargetHasBeenSet = false;
 
     SparkConnectorTarget m_sparkConnectorTarget;
-    bool m_sparkConnectorTargetHasBeenSet;
+    bool m_sparkConnectorTargetHasBeenSet = false;
 
     BasicCatalogTarget m_catalogTarget;
-    bool m_catalogTargetHasBeenSet;
+    bool m_catalogTargetHasBeenSet = false;
 
     RedshiftTarget m_redshiftTarget;
-    bool m_redshiftTargetHasBeenSet;
+    bool m_redshiftTargetHasBeenSet = false;
 
     S3CatalogTarget m_s3CatalogTarget;
-    bool m_s3CatalogTargetHasBeenSet;
+    bool m_s3CatalogTargetHasBeenSet = false;
 
     S3GlueParquetTarget m_s3GlueParquetTarget;
-    bool m_s3GlueParquetTargetHasBeenSet;
+    bool m_s3GlueParquetTargetHasBeenSet = false;
 
     S3DirectTarget m_s3DirectTarget;
-    bool m_s3DirectTargetHasBeenSet;
+    bool m_s3DirectTargetHasBeenSet = false;
 
     ApplyMapping m_applyMapping;
-    bool m_applyMappingHasBeenSet;
+    bool m_applyMappingHasBeenSet = false;
 
     SelectFields m_selectFields;
-    bool m_selectFieldsHasBeenSet;
+    bool m_selectFieldsHasBeenSet = false;
 
     DropFields m_dropFields;
-    bool m_dropFieldsHasBeenSet;
+    bool m_dropFieldsHasBeenSet = false;
 
     RenameField m_renameField;
-    bool m_renameFieldHasBeenSet;
+    bool m_renameFieldHasBeenSet = false;
 
     Spigot m_spigot;
-    bool m_spigotHasBeenSet;
+    bool m_spigotHasBeenSet = false;
 
     Join m_join;
-    bool m_joinHasBeenSet;
+    bool m_joinHasBeenSet = false;
 
     SplitFields m_splitFields;
-    bool m_splitFieldsHasBeenSet;
+    bool m_splitFieldsHasBeenSet = false;
 
     SelectFromCollection m_selectFromCollection;
-    bool m_selectFromCollectionHasBeenSet;
+    bool m_selectFromCollectionHasBeenSet = false;
 
     FillMissingValues m_fillMissingValues;
-    bool m_fillMissingValuesHasBeenSet;
+    bool m_fillMissingValuesHasBeenSet = false;
 
     Filter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     CustomCode m_customCode;
-    bool m_customCodeHasBeenSet;
+    bool m_customCodeHasBeenSet = false;
 
     SparkSQL m_sparkSQL;
-    bool m_sparkSQLHasBeenSet;
+    bool m_sparkSQLHasBeenSet = false;
 
     DirectKinesisSource m_directKinesisSource;
-    bool m_directKinesisSourceHasBeenSet;
+    bool m_directKinesisSourceHasBeenSet = false;
 
     DirectKafkaSource m_directKafkaSource;
-    bool m_directKafkaSourceHasBeenSet;
+    bool m_directKafkaSourceHasBeenSet = false;
 
     CatalogKinesisSource m_catalogKinesisSource;
-    bool m_catalogKinesisSourceHasBeenSet;
+    bool m_catalogKinesisSourceHasBeenSet = false;
 
     CatalogKafkaSource m_catalogKafkaSource;
-    bool m_catalogKafkaSourceHasBeenSet;
+    bool m_catalogKafkaSourceHasBeenSet = false;
 
     DropNullFields m_dropNullFields;
-    bool m_dropNullFieldsHasBeenSet;
+    bool m_dropNullFieldsHasBeenSet = false;
 
     Merge m_merge;
-    bool m_mergeHasBeenSet;
+    bool m_mergeHasBeenSet = false;
 
     Union m_union;
-    bool m_unionHasBeenSet;
+    bool m_unionHasBeenSet = false;
 
     PIIDetection m_pIIDetection;
-    bool m_pIIDetectionHasBeenSet;
+    bool m_pIIDetectionHasBeenSet = false;
 
     Aggregate m_aggregate;
-    bool m_aggregateHasBeenSet;
+    bool m_aggregateHasBeenSet = false;
 
     DropDuplicates m_dropDuplicates;
-    bool m_dropDuplicatesHasBeenSet;
+    bool m_dropDuplicatesHasBeenSet = false;
 
     GovernedCatalogTarget m_governedCatalogTarget;
-    bool m_governedCatalogTargetHasBeenSet;
+    bool m_governedCatalogTargetHasBeenSet = false;
 
     GovernedCatalogSource m_governedCatalogSource;
-    bool m_governedCatalogSourceHasBeenSet;
+    bool m_governedCatalogSourceHasBeenSet = false;
 
     MicrosoftSQLServerCatalogSource m_microsoftSQLServerCatalogSource;
-    bool m_microsoftSQLServerCatalogSourceHasBeenSet;
+    bool m_microsoftSQLServerCatalogSourceHasBeenSet = false;
 
     MySQLCatalogSource m_mySQLCatalogSource;
-    bool m_mySQLCatalogSourceHasBeenSet;
+    bool m_mySQLCatalogSourceHasBeenSet = false;
 
     OracleSQLCatalogSource m_oracleSQLCatalogSource;
-    bool m_oracleSQLCatalogSourceHasBeenSet;
+    bool m_oracleSQLCatalogSourceHasBeenSet = false;
 
     PostgreSQLCatalogSource m_postgreSQLCatalogSource;
-    bool m_postgreSQLCatalogSourceHasBeenSet;
+    bool m_postgreSQLCatalogSourceHasBeenSet = false;
 
     MicrosoftSQLServerCatalogTarget m_microsoftSQLServerCatalogTarget;
-    bool m_microsoftSQLServerCatalogTargetHasBeenSet;
+    bool m_microsoftSQLServerCatalogTargetHasBeenSet = false;
 
     MySQLCatalogTarget m_mySQLCatalogTarget;
-    bool m_mySQLCatalogTargetHasBeenSet;
+    bool m_mySQLCatalogTargetHasBeenSet = false;
 
     OracleSQLCatalogTarget m_oracleSQLCatalogTarget;
-    bool m_oracleSQLCatalogTargetHasBeenSet;
+    bool m_oracleSQLCatalogTargetHasBeenSet = false;
 
     PostgreSQLCatalogTarget m_postgreSQLCatalogTarget;
-    bool m_postgreSQLCatalogTargetHasBeenSet;
+    bool m_postgreSQLCatalogTargetHasBeenSet = false;
+
+    DynamicTransform m_dynamicTransform;
+    bool m_dynamicTransformHasBeenSet = false;
+
+    EvaluateDataQuality m_evaluateDataQuality;
+    bool m_evaluateDataQualityHasBeenSet = false;
   };
 
 } // namespace Model

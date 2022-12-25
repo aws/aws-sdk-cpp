@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SecurityGroupRuleRequest
+  class SecurityGroupRuleRequest
   {
   public:
-    SecurityGroupRuleRequest();
-    SecurityGroupRuleRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SecurityGroupRuleRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRuleRequest();
+    AWS_EC2_API SecurityGroupRuleRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupRuleRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -399,28 +399,28 @@ namespace Model
   private:
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::String m_cidrIpv4;
-    bool m_cidrIpv4HasBeenSet;
+    bool m_cidrIpv4HasBeenSet = false;
 
     Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet;
+    bool m_cidrIpv6HasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_referencedGroupId;
-    bool m_referencedGroupIdHasBeenSet;
+    bool m_referencedGroupIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/FirewallMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API FirewallMetadata
+  class FirewallMetadata
   {
   public:
-    FirewallMetadata();
-    FirewallMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FirewallMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API FirewallMetadata();
+    AWS_NETWORKFIREWALL_API FirewallMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API FirewallMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallArn;
-    bool m_firewallArnHasBeenSet;
+    bool m_firewallArnHasBeenSet = false;
   };
 
 } // namespace Model

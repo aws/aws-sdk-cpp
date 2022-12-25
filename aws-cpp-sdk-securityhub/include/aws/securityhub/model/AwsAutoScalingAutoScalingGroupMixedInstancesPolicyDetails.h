@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails
+  class AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails
   {
   public:
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails();
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails m_instancesDistribution;
-    bool m_instancesDistributionHasBeenSet;
+    bool m_instancesDistributionHasBeenSet = false;
 
     AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
   };
 
 } // namespace Model

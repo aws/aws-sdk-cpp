@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NetworkFrameworkAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NetworkFrameworkAttributes
+  class NetworkFrameworkAttributes
   {
   public:
-    NetworkFrameworkAttributes();
-    NetworkFrameworkAttributes(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFrameworkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFrameworkAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFrameworkAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFrameworkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     NetworkFabricAttributes m_fabric;
-    bool m_fabricHasBeenSet;
+    bool m_fabricHasBeenSet = false;
 
     NetworkEthereumAttributes m_ethereum;
-    bool m_ethereumHasBeenSet;
+    bool m_ethereumHasBeenSet = false;
   };
 
 } // namespace Model

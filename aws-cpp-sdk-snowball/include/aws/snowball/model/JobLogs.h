@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobLogs">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API JobLogs
+  class JobLogs
   {
   public:
-    JobLogs();
-    JobLogs(Aws::Utils::Json::JsonView jsonValue);
-    JobLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API JobLogs();
+    AWS_SNOWBALL_API JobLogs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API JobLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_jobCompletionReportURI;
-    bool m_jobCompletionReportURIHasBeenSet;
+    bool m_jobCompletionReportURIHasBeenSet = false;
 
     Aws::String m_jobSuccessLogURI;
-    bool m_jobSuccessLogURIHasBeenSet;
+    bool m_jobSuccessLogURIHasBeenSet = false;
 
     Aws::String m_jobFailureLogURI;
-    bool m_jobFailureLogURIHasBeenSet;
+    bool m_jobFailureLogURIHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateRequest : public ResilienceHubRequest
+  class PutDraftAppVersionTemplateRequest : public ResilienceHubRequest
   {
   public:
-    PutDraftAppVersionTemplateRequest();
+    AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDraftAppVersionTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appTemplateBody;
-    bool m_appTemplateBodyHasBeenSet;
+    bool m_appTemplateBodyHasBeenSet = false;
   };
 
 } // namespace Model

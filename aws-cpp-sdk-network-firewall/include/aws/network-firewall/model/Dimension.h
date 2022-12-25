@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Dimension">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API Dimension
+  class Dimension
   {
   public:
-    Dimension();
-    Dimension(Aws::Utils::Json::JsonView jsonValue);
-    Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API Dimension();
+    AWS_NETWORKFIREWALL_API Dimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

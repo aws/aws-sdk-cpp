@@ -18,6 +18,7 @@ using namespace Aws;
 
 DescribeDeviceResult::DescribeDeviceResult() : 
     m_brand(DeviceBrand::NOT_SET),
+    m_deviceAggregatedStatus(DeviceAggregatedStatus::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
     m_provisioningStatus(DeviceStatus::NOT_SET),
     m_type(DeviceType::NOT_SET)
@@ -26,6 +27,7 @@ DescribeDeviceResult::DescribeDeviceResult() :
 
 DescribeDeviceResult::DescribeDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_brand(DeviceBrand::NOT_SET),
+    m_deviceAggregatedStatus(DeviceAggregatedStatus::NOT_SET),
     m_deviceConnectionStatus(DeviceConnectionStatus::NOT_SET),
     m_provisioningStatus(DeviceStatus::NOT_SET),
     m_type(DeviceType::NOT_SET)
@@ -38,7 +40,7 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AlternateSoftwares"))
   {
-    Array<JsonView> alternateSoftwaresJsonList = jsonValue.GetArray("AlternateSoftwares");
+    Aws::Utils::Array<JsonView> alternateSoftwaresJsonList = jsonValue.GetArray("AlternateSoftwares");
     for(unsigned alternateSoftwaresIndex = 0; alternateSoftwaresIndex < alternateSoftwaresJsonList.GetLength(); ++alternateSoftwaresIndex)
     {
       m_alternateSoftwares.push_back(alternateSoftwaresJsonList[alternateSoftwaresIndex].AsObject());
@@ -81,6 +83,12 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("DeviceAggregatedStatus"))
+  {
+    m_deviceAggregatedStatus = DeviceAggregatedStatusMapper::GetDeviceAggregatedStatusForName(jsonValue.GetString("DeviceAggregatedStatus"));
+
+  }
+
   if(jsonValue.ValueExists("DeviceConnectionStatus"))
   {
     m_deviceConnectionStatus = DeviceConnectionStatusMapper::GetDeviceConnectionStatusForName(jsonValue.GetString("DeviceConnectionStatus"));
@@ -96,6 +104,12 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("LatestAlternateSoftware"))
   {
     m_latestAlternateSoftware = jsonValue.GetString("LatestAlternateSoftware");
+
+  }
+
+  if(jsonValue.ValueExists("LatestDeviceJob"))
+  {
+    m_latestDeviceJob = jsonValue.GetObject("LatestDeviceJob");
 
   }
 

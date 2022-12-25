@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/SensorStatisticsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary
+  class SensorStatisticsSummary
   {
   public:
-    SensorStatisticsSummary();
-    SensorStatisticsSummary(Aws::Utils::Json::JsonView jsonValue);
-    SensorStatisticsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary();
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -532,43 +532,43 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_sensorName;
-    bool m_sensorNameHasBeenSet;
+    bool m_sensorNameHasBeenSet = false;
 
     bool m_dataExists;
-    bool m_dataExistsHasBeenSet;
+    bool m_dataExistsHasBeenSet = false;
 
     CountPercent m_missingValues;
-    bool m_missingValuesHasBeenSet;
+    bool m_missingValuesHasBeenSet = false;
 
     CountPercent m_invalidValues;
-    bool m_invalidValuesHasBeenSet;
+    bool m_invalidValuesHasBeenSet = false;
 
     CountPercent m_invalidDateEntries;
-    bool m_invalidDateEntriesHasBeenSet;
+    bool m_invalidDateEntriesHasBeenSet = false;
 
     CountPercent m_duplicateTimestamps;
-    bool m_duplicateTimestampsHasBeenSet;
+    bool m_duplicateTimestampsHasBeenSet = false;
 
     CategoricalValues m_categoricalValues;
-    bool m_categoricalValuesHasBeenSet;
+    bool m_categoricalValuesHasBeenSet = false;
 
     MultipleOperatingModes m_multipleOperatingModes;
-    bool m_multipleOperatingModesHasBeenSet;
+    bool m_multipleOperatingModesHasBeenSet = false;
 
     LargeTimestampGaps m_largeTimestampGaps;
-    bool m_largeTimestampGapsHasBeenSet;
+    bool m_largeTimestampGapsHasBeenSet = false;
 
     MonotonicValues m_monotonicValues;
-    bool m_monotonicValuesHasBeenSet;
+    bool m_monotonicValuesHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataStartTime;
-    bool m_dataStartTimeHasBeenSet;
+    bool m_dataStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataEndTime;
-    bool m_dataEndTimeHasBeenSet;
+    bool m_dataEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

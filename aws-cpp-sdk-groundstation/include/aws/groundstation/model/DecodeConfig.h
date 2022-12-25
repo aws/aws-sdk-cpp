@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DecodeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DecodeConfig
+  class DecodeConfig
   {
   public:
-    DecodeConfig();
-    DecodeConfig(Aws::Utils::Json::JsonView jsonValue);
-    DecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DecodeConfig();
+    AWS_GROUNDSTATION_API DecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_unvalidatedJSON;
-    bool m_unvalidatedJSONHasBeenSet;
+    bool m_unvalidatedJSONHasBeenSet = false;
   };
 
 } // namespace Model

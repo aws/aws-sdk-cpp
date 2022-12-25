@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TrackingOptionsDoesNotExistException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API TrackingOptionsDoesNotExistException
+  class TrackingOptionsDoesNotExistException
   {
   public:
-    TrackingOptionsDoesNotExistException();
-    TrackingOptionsDoesNotExistException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrackingOptionsDoesNotExistException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API TrackingOptionsDoesNotExistException();
+    AWS_SES_API TrackingOptionsDoesNotExistException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API TrackingOptionsDoesNotExistException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
   };
 
 } // namespace Model

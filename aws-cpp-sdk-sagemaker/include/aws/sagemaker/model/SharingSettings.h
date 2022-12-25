@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SharingSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SharingSettings
+  class SharingSettings
   {
   public:
-    SharingSettings();
-    SharingSettings(Aws::Utils::Json::JsonView jsonValue);
-    SharingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SharingSettings();
+    AWS_SAGEMAKER_API SharingSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SharingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     NotebookOutputOption m_notebookOutputOption;
-    bool m_notebookOutputOptionHasBeenSet;
+    bool m_notebookOutputOptionHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::String m_s3KmsKeyId;
-    bool m_s3KmsKeyIdHasBeenSet;
+    bool m_s3KmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

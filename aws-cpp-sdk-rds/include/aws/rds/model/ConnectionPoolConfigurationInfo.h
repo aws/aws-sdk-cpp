@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ConnectionPoolConfigurationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ConnectionPoolConfigurationInfo
+  class ConnectionPoolConfigurationInfo
   {
   public:
-    ConnectionPoolConfigurationInfo();
-    ConnectionPoolConfigurationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConnectionPoolConfigurationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ConnectionPoolConfigurationInfo();
+    AWS_RDS_API ConnectionPoolConfigurationInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ConnectionPoolConfigurationInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -152,8 +152,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSessionPinningFilters() const{ return m_sessionPinningFilters; }
 
@@ -161,8 +162,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline bool SessionPinningFiltersHasBeenSet() const { return m_sessionPinningFiltersHasBeenSet; }
 
@@ -170,8 +172,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline void SetSessionPinningFilters(const Aws::Vector<Aws::String>& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters = value; }
 
@@ -179,8 +182,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline void SetSessionPinningFilters(Aws::Vector<Aws::String>&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters = std::move(value); }
 
@@ -188,8 +192,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline ConnectionPoolConfigurationInfo& WithSessionPinningFilters(const Aws::Vector<Aws::String>& value) { SetSessionPinningFilters(value); return *this;}
 
@@ -197,8 +202,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline ConnectionPoolConfigurationInfo& WithSessionPinningFilters(Aws::Vector<Aws::String>&& value) { SetSessionPinningFilters(std::move(value)); return *this;}
 
@@ -206,8 +212,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline ConnectionPoolConfigurationInfo& AddSessionPinningFilters(const Aws::String& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(value); return *this; }
 
@@ -215,8 +222,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline ConnectionPoolConfigurationInfo& AddSessionPinningFilters(Aws::String&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(std::move(value)); return *this; }
 
@@ -224,8 +232,9 @@ namespace Model
      * <p>Each item in the list represents a class of SQL operations that normally
      * cause all later statements in a session using a proxy to be pinned to the same
      * underlying database connection. Including an item in the list exempts that class
-     * of SQL operations from the pinning behavior. Currently, the only allowed value
-     * is <code>EXCLUDE_VARIABLE_SETS</code>.</p>
+     * of SQL operations from the pinning behavior. This setting is only supported for
+     * MySQL engine family databases. Currently, the only allowed value is
+     * <code>EXCLUDE_VARIABLE_SETS</code>.</p>
      */
     inline ConnectionPoolConfigurationInfo& AddSessionPinningFilters(const char* value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(value); return *this; }
 
@@ -313,19 +322,19 @@ namespace Model
   private:
 
     int m_maxConnectionsPercent;
-    bool m_maxConnectionsPercentHasBeenSet;
+    bool m_maxConnectionsPercentHasBeenSet = false;
 
     int m_maxIdleConnectionsPercent;
-    bool m_maxIdleConnectionsPercentHasBeenSet;
+    bool m_maxIdleConnectionsPercentHasBeenSet = false;
 
     int m_connectionBorrowTimeout;
-    bool m_connectionBorrowTimeoutHasBeenSet;
+    bool m_connectionBorrowTimeoutHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sessionPinningFilters;
-    bool m_sessionPinningFiltersHasBeenSet;
+    bool m_sessionPinningFiltersHasBeenSet = false;
 
     Aws::String m_initQuery;
-    bool m_initQueryHasBeenSet;
+    bool m_initQueryHasBeenSet = false;
   };
 
 } // namespace Model

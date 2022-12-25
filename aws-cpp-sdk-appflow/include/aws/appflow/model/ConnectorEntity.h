@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorEntity
+  class ConnectorEntity
   {
   public:
-    ConnectorEntity();
-    ConnectorEntity(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorEntity();
+    AWS_APPFLOW_API ConnectorEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     bool m_hasNestedEntities;
-    bool m_hasNestedEntitiesHasBeenSet;
+    bool m_hasNestedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

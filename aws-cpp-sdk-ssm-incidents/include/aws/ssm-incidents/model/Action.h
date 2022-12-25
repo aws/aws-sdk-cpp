@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API Action();
+    AWS_SSMINCIDENTS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SsmAutomation m_ssmAutomation;
-    bool m_ssmAutomationHasBeenSet;
+    bool m_ssmAutomationHasBeenSet = false;
   };
 
 } // namespace Model

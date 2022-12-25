@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/NotificationTargetItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API NotificationTargetItem
+  class NotificationTargetItem
   {
   public:
-    NotificationTargetItem();
-    NotificationTargetItem(Aws::Utils::Json::JsonView jsonValue);
-    NotificationTargetItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API NotificationTargetItem();
+    AWS_SSMINCIDENTS_API NotificationTargetItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API NotificationTargetItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

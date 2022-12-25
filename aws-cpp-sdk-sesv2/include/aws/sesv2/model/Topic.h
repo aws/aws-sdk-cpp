@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Topic">AWS API
    * Reference</a></p>
    */
-  class AWS_SESV2_API Topic
+  class Topic
   {
   public:
-    Topic();
-    Topic(Aws::Utils::Json::JsonView jsonValue);
-    Topic& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API Topic();
+    AWS_SESV2_API Topic(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Topic& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SubscriptionStatus m_defaultSubscriptionStatus;
-    bool m_defaultSubscriptionStatusHasBeenSet;
+    bool m_defaultSubscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

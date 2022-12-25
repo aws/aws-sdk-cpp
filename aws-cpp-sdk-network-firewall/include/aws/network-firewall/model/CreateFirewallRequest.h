@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKFIREWALL_API CreateFirewallRequest : public NetworkFirewallRequest
+  class CreateFirewallRequest : public NetworkFirewallRequest
   {
   public:
-    CreateFirewallRequest();
+    AWS_NETWORKFIREWALL_API CreateFirewallRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFirewall"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKFIREWALL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NETWORKFIREWALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -478,34 +478,34 @@ namespace Model
   private:
 
     Aws::String m_firewallName;
-    bool m_firewallNameHasBeenSet;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<SubnetMapping> m_subnetMappings;
-    bool m_subnetMappingsHasBeenSet;
+    bool m_subnetMappingsHasBeenSet = false;
 
     bool m_deleteProtection;
-    bool m_deleteProtectionHasBeenSet;
+    bool m_deleteProtectionHasBeenSet = false;
 
     bool m_subnetChangeProtection;
-    bool m_subnetChangeProtectionHasBeenSet;
+    bool m_subnetChangeProtectionHasBeenSet = false;
 
     bool m_firewallPolicyChangeProtection;
-    bool m_firewallPolicyChangeProtectionHasBeenSet;
+    bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

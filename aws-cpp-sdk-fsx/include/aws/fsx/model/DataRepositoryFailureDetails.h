@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Provides detailed information about the data respository if its
+   * <p>Provides detailed information about the data repository if its
    * <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or
    * <code>FAILED</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryFailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryFailureDetails
+  class DataRepositoryFailureDetails
   {
   public:
-    DataRepositoryFailureDetails();
-    DataRepositoryFailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryFailureDetails();
+    AWS_FSX_API DataRepositoryFailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

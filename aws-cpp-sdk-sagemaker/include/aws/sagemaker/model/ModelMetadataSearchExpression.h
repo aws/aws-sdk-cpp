@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelMetadataSearchExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelMetadataSearchExpression
+  class ModelMetadataSearchExpression
   {
   public:
-    ModelMetadataSearchExpression();
-    ModelMetadataSearchExpression(Aws::Utils::Json::JsonView jsonValue);
-    ModelMetadataSearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelMetadataSearchExpression();
+    AWS_SAGEMAKER_API ModelMetadataSearchExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelMetadataSearchExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<ModelMetadataFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

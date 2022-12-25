@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/KafkaClusterEncryptionInTransitDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API KafkaClusterEncryptionInTransitDescription
+  class KafkaClusterEncryptionInTransitDescription
   {
   public:
-    KafkaClusterEncryptionInTransitDescription();
-    KafkaClusterEncryptionInTransitDescription(Aws::Utils::Json::JsonView jsonValue);
-    KafkaClusterEncryptionInTransitDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API KafkaClusterEncryptionInTransitDescription();
+    AWS_KAFKACONNECT_API KafkaClusterEncryptionInTransitDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API KafkaClusterEncryptionInTransitDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     KafkaClusterEncryptionInTransitType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ReplicaConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ReplicaConfigurationRequest
+  class ReplicaConfigurationRequest
   {
   public:
-    ReplicaConfigurationRequest();
-    ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ReplicaConfigurationRequest();
+    AWS_MEMORYDB_API ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_replicaCount;
-    bool m_replicaCountHasBeenSet;
+    bool m_replicaCountHasBeenSet = false;
   };
 
 } // namespace Model

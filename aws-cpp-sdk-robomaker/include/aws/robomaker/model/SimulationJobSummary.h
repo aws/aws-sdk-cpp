@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationJobSummary
+  class SimulationJobSummary
   {
   public:
-    SimulationJobSummary();
-    SimulationJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    SimulationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationJobSummary();
+    AWS_ROBOMAKER_API SimulationJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SimulationJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_simulationApplicationNames;
-    bool m_simulationApplicationNamesHasBeenSet;
+    bool m_simulationApplicationNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_robotApplicationNames;
-    bool m_robotApplicationNamesHasBeenSet;
+    bool m_robotApplicationNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataSourceNames;
-    bool m_dataSourceNamesHasBeenSet;
+    bool m_dataSourceNamesHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
   };
 
 } // namespace Model

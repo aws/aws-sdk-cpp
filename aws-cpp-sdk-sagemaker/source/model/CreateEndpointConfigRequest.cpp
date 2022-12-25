@@ -18,7 +18,9 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_asyncInferenceConfigHasBeenSet(false)
+    m_asyncInferenceConfigHasBeenSet(false),
+    m_explainerConfigHasBeenSet(false),
+    m_shadowProductionVariantsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_productionVariantsHasBeenSet)
   {
-   Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
+   Aws::Utils::Array<JsonValue> productionVariantsJsonList(m_productionVariants.size());
    for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
    {
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());
@@ -51,7 +53,7 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -69,6 +71,23 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_asyncInferenceConfigHasBeenSet)
   {
    payload.WithObject("AsyncInferenceConfig", m_asyncInferenceConfig.Jsonize());
+
+  }
+
+  if(m_explainerConfigHasBeenSet)
+  {
+   payload.WithObject("ExplainerConfig", m_explainerConfig.Jsonize());
+
+  }
+
+  if(m_shadowProductionVariantsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> shadowProductionVariantsJsonList(m_shadowProductionVariants.size());
+   for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+   {
+     shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject(m_shadowProductionVariants[shadowProductionVariantsIndex].Jsonize());
+   }
+   payload.WithArray("ShadowProductionVariants", std::move(shadowProductionVariantsJsonList));
 
   }
 

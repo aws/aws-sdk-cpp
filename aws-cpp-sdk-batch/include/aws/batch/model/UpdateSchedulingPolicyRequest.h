@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API UpdateSchedulingPolicyRequest : public BatchRequest
+  class UpdateSchedulingPolicyRequest : public BatchRequest
   {
   public:
-    UpdateSchedulingPolicyRequest();
+    AWS_BATCH_API UpdateSchedulingPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSchedulingPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     FairsharePolicy m_fairsharePolicy;
-    bool m_fairsharePolicyHasBeenSet;
+    bool m_fairsharePolicyHasBeenSet = false;
   };
 
 } // namespace Model

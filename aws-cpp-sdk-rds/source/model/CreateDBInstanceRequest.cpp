@@ -78,7 +78,12 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_enableCustomerOwnedIpHasBeenSet(false),
     m_customIamInstanceProfileHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false),
+    m_manageMasterUserPassword(false),
+    m_manageMasterUserPasswordHasBeenSet(false),
+    m_masterUserSecretKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -367,6 +372,21 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_storageThroughputHasBeenSet)
+  {
+    ss << "StorageThroughput=" << m_storageThroughput << "&";
+  }
+
+  if(m_manageMasterUserPasswordHasBeenSet)
+  {
+    ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
+  }
+
+  if(m_masterUserSecretKmsKeyIdHasBeenSet)
+  {
+    ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIAuthType">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendAPIAuthType
+  class BackendAPIAuthType
   {
   public:
-    BackendAPIAuthType();
-    BackendAPIAuthType(Aws::Utils::Json::JsonView jsonValue);
-    BackendAPIAuthType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendAPIAuthType();
+    AWS_AMPLIFYBACKEND_API BackendAPIAuthType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendAPIAuthType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     BackendAPIAppSyncAuthSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

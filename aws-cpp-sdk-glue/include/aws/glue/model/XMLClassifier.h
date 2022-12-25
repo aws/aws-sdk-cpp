@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/XMLClassifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API XMLClassifier
+  class XMLClassifier
   {
   public:
-    XMLClassifier();
-    XMLClassifier(Aws::Utils::Json::JsonView jsonValue);
-    XMLClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API XMLClassifier();
+    AWS_GLUE_API XMLClassifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API XMLClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_rowTag;
-    bool m_rowTagHasBeenSet;
+    bool m_rowTagHasBeenSet = false;
   };
 
 } // namespace Model

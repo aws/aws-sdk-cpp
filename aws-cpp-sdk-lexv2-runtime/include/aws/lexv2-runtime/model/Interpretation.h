@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Interpretation">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Interpretation
+  class Interpretation
   {
   public:
-    Interpretation();
-    Interpretation(Aws::Utils::Json::JsonView jsonValue);
-    Interpretation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Interpretation();
+    AWS_LEXRUNTIMEV2_API Interpretation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Interpretation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     ConfidenceScore m_nluConfidence;
-    bool m_nluConfidenceHasBeenSet;
+    bool m_nluConfidenceHasBeenSet = false;
 
     SentimentResponse m_sentimentResponse;
-    bool m_sentimentResponseHasBeenSet;
+    bool m_sentimentResponseHasBeenSet = false;
 
     Intent m_intent;
-    bool m_intentHasBeenSet;
+    bool m_intentHasBeenSet = false;
   };
 
 } // namespace Model

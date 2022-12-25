@@ -26,12 +26,12 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API GetChannelScheduleResult
+  class GetChannelScheduleResult
   {
   public:
-    GetChannelScheduleResult();
-    GetChannelScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChannelScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetChannelScheduleResult();
+    AWS_MEDIATAILOR_API GetChannelScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API GetChannelScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -71,44 +71,44 @@ namespace Model
 
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline GetChannelScheduleResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline GetChannelScheduleResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline GetChannelScheduleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

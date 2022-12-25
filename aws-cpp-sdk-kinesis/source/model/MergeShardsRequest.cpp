@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 MergeShardsRequest::MergeShardsRequest() : 
     m_streamNameHasBeenSet(false),
     m_shardToMergeHasBeenSet(false),
-    m_adjacentShardToMergeHasBeenSet(false)
+    m_adjacentShardToMergeHasBeenSet(false),
+    m_streamARNHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String MergeShardsRequest::SerializePayload() const
 
   }
 
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
@@ -53,5 +60,17 @@ Aws::Http::HeaderValueCollection MergeShardsRequest::GetRequestSpecificHeaders()
 }
 
 
+
+MergeShardsRequest::EndpointParameters MergeShardsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

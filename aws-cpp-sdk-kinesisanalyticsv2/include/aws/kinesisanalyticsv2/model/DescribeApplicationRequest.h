@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API DescribeApplicationRequest : public KinesisAnalyticsV2Request
+  class DescribeApplicationRequest : public KinesisAnalyticsV2Request
   {
   public:
-    DescribeApplicationRequest();
+    AWS_KINESISANALYTICSV2_API DescribeApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     bool m_includeAdditionalDetails;
-    bool m_includeAdditionalDetailsHasBeenSet;
+    bool m_includeAdditionalDetailsHasBeenSet = false;
   };
 
 } // namespace Model

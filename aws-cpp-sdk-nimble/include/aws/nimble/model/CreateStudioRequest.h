@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API CreateStudioRequest : public NimbleStudioRequest
+  class CreateStudioRequest : public NimbleStudioRequest
   {
   public:
-    CreateStudioRequest();
+    AWS_NIMBLESTUDIO_API CreateStudioRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,55 +32,55 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStudio"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline const Aws::String& GetAdminRoleArn() const{ return m_adminRoleArn; }
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline bool AdminRoleArnHasBeenSet() const { return m_adminRoleArnHasBeenSet; }
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetAdminRoleArn(const Aws::String& value) { m_adminRoleArnHasBeenSet = true; m_adminRoleArn = value; }
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetAdminRoleArn(Aws::String&& value) { m_adminRoleArnHasBeenSet = true; m_adminRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetAdminRoleArn(const char* value) { m_adminRoleArnHasBeenSet = true; m_adminRoleArn.assign(value); }
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithAdminRoleArn(const Aws::String& value) { SetAdminRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithAdminRoleArn(Aws::String&& value) { SetAdminRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that Studio Admins will assume when logging in to the Nimble
+     * <p>The IAM role that studio admins will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithAdminRoleArn(const char* value) { SetAdminRoleArn(value); return *this;}
@@ -88,57 +88,65 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStudioRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStudioRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStudioRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -265,128 +273,128 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStudioRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline const Aws::String& GetUserRoleArn() const{ return m_userRoleArn; }
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline bool UserRoleArnHasBeenSet() const { return m_userRoleArnHasBeenSet; }
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetUserRoleArn(const Aws::String& value) { m_userRoleArnHasBeenSet = true; m_userRoleArn = value; }
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetUserRoleArn(Aws::String&& value) { m_userRoleArnHasBeenSet = true; m_userRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline void SetUserRoleArn(const char* value) { m_userRoleArnHasBeenSet = true; m_userRoleArn.assign(value); }
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithUserRoleArn(const Aws::String& value) { SetUserRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithUserRoleArn(Aws::String&& value) { SetUserRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that Studio Users will assume when logging in to the Nimble
+     * <p>The IAM role that studio users will assume when logging in to the Nimble
      * Studio portal.</p>
      */
     inline CreateStudioRequest& WithUserRoleArn(const char* value) { SetUserRoleArn(value); return *this;}
@@ -394,25 +402,25 @@ namespace Model
   private:
 
     Aws::String m_adminRoleArn;
-    bool m_adminRoleArnHasBeenSet;
+    bool m_adminRoleArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     StudioEncryptionConfiguration m_studioEncryptionConfiguration;
-    bool m_studioEncryptionConfigurationHasBeenSet;
+    bool m_studioEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_studioName;
-    bool m_studioNameHasBeenSet;
+    bool m_studioNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_userRoleArn;
-    bool m_userRoleArnHasBeenSet;
+    bool m_userRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

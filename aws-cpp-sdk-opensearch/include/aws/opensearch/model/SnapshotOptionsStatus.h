@@ -25,17 +25,18 @@ namespace Model
 {
 
   /**
-   * <p>Status of a daily automated snapshot.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for information about a daily automated snapshot for an OpenSearch
+   * Service domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SnapshotOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API SnapshotOptionsStatus
+  class SnapshotOptionsStatus
   {
   public:
-    SnapshotOptionsStatus();
-    SnapshotOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API SnapshotOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API SnapshotOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API SnapshotOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +103,10 @@ namespace Model
   private:
 
     SnapshotOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

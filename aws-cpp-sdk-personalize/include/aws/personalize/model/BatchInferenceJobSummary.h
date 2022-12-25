@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchInferenceJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchInferenceJobSummary
+  class BatchInferenceJobSummary
   {
   public:
-    BatchInferenceJobSummary();
-    BatchInferenceJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    BatchInferenceJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchInferenceJobSummary();
+    AWS_PERSONALIZE_API BatchInferenceJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchInferenceJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_batchInferenceJobArn;
-    bool m_batchInferenceJobArnHasBeenSet;
+    bool m_batchInferenceJobArnHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

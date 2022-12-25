@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexMediaConnectOutputDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexMediaConnectOutputDestinationSettings
+  class MultiplexMediaConnectOutputDestinationSettings
   {
   public:
-    MultiplexMediaConnectOutputDestinationSettings();
-    MultiplexMediaConnectOutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexMediaConnectOutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexMediaConnectOutputDestinationSettings();
+    AWS_MEDIALIVE_API MultiplexMediaConnectOutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexMediaConnectOutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
   };
 
 } // namespace Model

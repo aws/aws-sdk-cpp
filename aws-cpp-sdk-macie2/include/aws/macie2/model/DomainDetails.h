@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DomainDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API DomainDetails
+  class DomainDetails
   {
   public:
-    DomainDetails();
-    DomainDetails(Aws::Utils::Json::JsonView jsonValue);
-    DomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API DomainDetails();
+    AWS_MACIE2_API DomainDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API DomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

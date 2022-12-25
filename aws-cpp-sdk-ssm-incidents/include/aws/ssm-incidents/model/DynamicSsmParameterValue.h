@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DynamicSsmParameterValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API DynamicSsmParameterValue
+  class DynamicSsmParameterValue
   {
   public:
-    DynamicSsmParameterValue();
-    DynamicSsmParameterValue(Aws::Utils::Json::JsonView jsonValue);
-    DynamicSsmParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API DynamicSsmParameterValue();
+    AWS_SSMINCIDENTS_API DynamicSsmParameterValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API DynamicSsmParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     VariableType m_variable;
-    bool m_variableHasBeenSet;
+    bool m_variableHasBeenSet = false;
   };
 
 } // namespace Model

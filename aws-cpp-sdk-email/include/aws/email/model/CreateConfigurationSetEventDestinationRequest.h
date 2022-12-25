@@ -28,10 +28,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestinationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateConfigurationSetEventDestinationRequest : public SESRequest
+  class CreateConfigurationSetEventDestinationRequest : public SESRequest
   {
   public:
-    CreateConfigurationSetEventDestinationRequest();
+    AWS_SES_API CreateConfigurationSetEventDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,10 +39,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfigurationSetEventDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     EventDestination m_eventDestination;
-    bool m_eventDestinationHasBeenSet;
+    bool m_eventDestinationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesRequest : public ComputeOptimizerRequest
+  class DeleteRecommendationPreferencesRequest : public ComputeOptimizerRequest
   {
   public:
-    DeleteRecommendationPreferencesRequest();
+    AWS_COMPUTEOPTIMIZER_API DeleteRecommendationPreferencesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteRecommendationPreferences"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPUTEOPTIMIZER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPUTEOPTIMIZER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -166,79 +166,55 @@ namespace Model
 
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline const Aws::Vector<RecommendationPreferenceName>& GetRecommendationPreferenceNames() const{ return m_recommendationPreferenceNames; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline bool RecommendationPreferenceNamesHasBeenSet() const { return m_recommendationPreferenceNamesHasBeenSet; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline void SetRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = value; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline void SetRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames = std::move(value); }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(const Aws::Vector<RecommendationPreferenceName>& value) { SetRecommendationPreferenceNames(value); return *this;}
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& WithRecommendationPreferenceNames(Aws::Vector<RecommendationPreferenceName>&& value) { SetRecommendationPreferenceNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(const RecommendationPreferenceName& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the recommendation preference to delete.</p> <p>Enhanced
-     * infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only
-     * feature that can be activated through preferences. Therefore, it is also the
-     * only recommendation preference that can be deleted.</p>
+     * <p>The name of the recommendation preference to delete.</p>
      */
     inline DeleteRecommendationPreferencesRequest& AddRecommendationPreferenceNames(RecommendationPreferenceName&& value) { m_recommendationPreferenceNamesHasBeenSet = true; m_recommendationPreferenceNames.push_back(std::move(value)); return *this; }
 
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<RecommendationPreferenceName> m_recommendationPreferenceNames;
-    bool m_recommendationPreferenceNamesHasBeenSet;
+    bool m_recommendationPreferenceNamesHasBeenSet = false;
   };
 
 } // namespace Model

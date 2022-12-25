@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TimeWindow">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API TimeWindow
+  class TimeWindow
   {
   public:
-    TimeWindow();
-    TimeWindow(Aws::Utils::Json::JsonView jsonValue);
-    TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API TimeWindow();
+    AWS_WAF_API TimeWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,10 +181,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DomainStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API DomainStats
+  class DomainStats
   {
   public:
-    DomainStats();
-    DomainStats(Aws::Utils::Json::JsonView jsonValue);
-    DomainStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API DomainStats();
+    AWS_CUSTOMERPROFILES_API DomainStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API DomainStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,16 +133,16 @@ namespace Model
   private:
 
     long long m_profileCount;
-    bool m_profileCountHasBeenSet;
+    bool m_profileCountHasBeenSet = false;
 
     long long m_meteringProfileCount;
-    bool m_meteringProfileCountHasBeenSet;
+    bool m_meteringProfileCountHasBeenSet = false;
 
     long long m_objectCount;
-    bool m_objectCountHasBeenSet;
+    bool m_objectCountHasBeenSet = false;
 
     long long m_totalSize;
-    bool m_totalSizeHasBeenSet;
+    bool m_totalSizeHasBeenSet = false;
   };
 
 } // namespace Model

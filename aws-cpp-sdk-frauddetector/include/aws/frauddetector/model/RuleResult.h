@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/RuleResult">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API RuleResult
+  class RuleResult
   {
   public:
-    RuleResult();
-    RuleResult(Aws::Utils::Json::JsonView jsonValue);
-    RuleResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API RuleResult();
+    AWS_FRAUDDETECTOR_API RuleResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API RuleResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outcomes;
-    bool m_outcomesHasBeenSet;
+    bool m_outcomesHasBeenSet = false;
   };
 
 } // namespace Model

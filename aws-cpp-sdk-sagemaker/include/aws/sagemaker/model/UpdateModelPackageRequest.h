@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateModelPackageRequest : public SageMakerRequest
+  class UpdateModelPackageRequest : public SageMakerRequest
   {
   public:
-    UpdateModelPackageRequest();
+    AWS_SAGEMAKER_API UpdateModelPackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateModelPackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -355,22 +355,22 @@ namespace Model
   private:
 
     Aws::String m_modelPackageArn;
-    bool m_modelPackageArnHasBeenSet;
+    bool m_modelPackageArnHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
 
     Aws::String m_approvalDescription;
-    bool m_approvalDescriptionHasBeenSet;
+    bool m_approvalDescriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-    bool m_customerMetadataPropertiesHasBeenSet;
+    bool m_customerMetadataPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customerMetadataPropertiesToRemove;
-    bool m_customerMetadataPropertiesToRemoveHasBeenSet;
+    bool m_customerMetadataPropertiesToRemoveHasBeenSet = false;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecificationsToAdd;
-    bool m_additionalInferenceSpecificationsToAddHasBeenSet;
+    bool m_additionalInferenceSpecificationsToAddHasBeenSet = false;
   };
 
 } // namespace Model

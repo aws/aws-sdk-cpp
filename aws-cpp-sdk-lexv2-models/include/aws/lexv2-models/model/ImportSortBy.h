@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ImportSortBy
+  class ImportSortBy
   {
   public:
-    ImportSortBy();
-    ImportSortBy(Aws::Utils::Json::JsonView jsonValue);
-    ImportSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ImportSortBy();
+    AWS_LEXMODELSV2_API ImportSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ImportSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ImportSortAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortOrder m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

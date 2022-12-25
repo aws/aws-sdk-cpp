@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteTableIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteTableIdentifier
+  class RouteTableIdentifier
   {
   public:
-    RouteTableIdentifier();
-    RouteTableIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    RouteTableIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteTableIdentifier();
+    AWS_NETWORKMANAGER_API RouteTableIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteTableIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableArn;
-    bool m_transitGatewayRouteTableArnHasBeenSet;
+    bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
     CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
-    bool m_coreNetworkSegmentEdgeHasBeenSet;
+    bool m_coreNetworkSegmentEdgeHasBeenSet = false;
   };
 
 } // namespace Model

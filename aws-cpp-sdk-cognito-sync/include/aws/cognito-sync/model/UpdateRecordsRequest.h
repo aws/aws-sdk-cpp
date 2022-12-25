@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UpdateRecordsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API UpdateRecordsRequest : public CognitoSyncRequest
+  class UpdateRecordsRequest : public CognitoSyncRequest
   {
   public:
-    UpdateRecordsRequest();
+    AWS_COGNITOSYNC_API UpdateRecordsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRecords"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOSYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOSYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -369,25 +369,25 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     Aws::Vector<RecordPatch> m_recordPatches;
-    bool m_recordPatchesHasBeenSet;
+    bool m_recordPatchesHasBeenSet = false;
 
     Aws::String m_syncSessionToken;
-    bool m_syncSessionTokenHasBeenSet;
+    bool m_syncSessionTokenHasBeenSet = false;
 
     Aws::String m_clientContext;
-    bool m_clientContextHasBeenSet;
+    bool m_clientContextHasBeenSet = false;
   };
 
 } // namespace Model

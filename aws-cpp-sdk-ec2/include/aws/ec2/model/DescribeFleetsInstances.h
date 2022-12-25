@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetsInstances">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeFleetsInstances
+  class DescribeFleetsInstances
   {
   public:
-    DescribeFleetsInstances();
-    DescribeFleetsInstances(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DescribeFleetsInstances& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DescribeFleetsInstances();
+    AWS_EC2_API DescribeFleetsInstances(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DescribeFleetsInstances& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -241,19 +241,19 @@ namespace Model
   private:
 
     LaunchTemplateAndOverridesResponse m_launchTemplateAndOverrides;
-    bool m_launchTemplateAndOverridesHasBeenSet;
+    bool m_launchTemplateAndOverridesHasBeenSet = false;
 
     InstanceLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     PlatformValues m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

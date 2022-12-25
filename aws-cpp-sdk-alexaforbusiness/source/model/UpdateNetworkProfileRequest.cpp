@@ -65,7 +65,7 @@ Aws::String UpdateNetworkProfileRequest::SerializePayload() const
 
   if(m_trustAnchorsHasBeenSet)
   {
-   Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
+   Aws::Utils::Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
    for(unsigned trustAnchorsIndex = 0; trustAnchorsIndex < trustAnchorsJsonList.GetLength(); ++trustAnchorsIndex)
    {
      trustAnchorsJsonList[trustAnchorsIndex].AsString(m_trustAnchors[trustAnchorsIndex]);

@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/SlotMigration">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API SlotMigration
+  class SlotMigration
   {
   public:
-    SlotMigration();
-    SlotMigration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SlotMigration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API SlotMigration();
+    AWS_ELASTICACHE_API SlotMigration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API SlotMigration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -61,7 +61,7 @@ namespace Model
   private:
 
     double m_progressPercentage;
-    bool m_progressPercentageHasBeenSet;
+    bool m_progressPercentageHasBeenSet = false;
   };
 
 } // namespace Model

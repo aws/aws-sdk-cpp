@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchTemplateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API LaunchTemplateConfiguration
+  class LaunchTemplateConfiguration
   {
   public:
-    LaunchTemplateConfiguration();
-    LaunchTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration();
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     bool m_setDefaultVersion;
-    bool m_setDefaultVersionHasBeenSet;
+    bool m_setDefaultVersionHasBeenSet = false;
   };
 
 } // namespace Model

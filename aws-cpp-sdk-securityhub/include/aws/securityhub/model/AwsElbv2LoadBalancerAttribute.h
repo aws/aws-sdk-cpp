@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbv2LoadBalancerAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbv2LoadBalancerAttribute
+  class AwsElbv2LoadBalancerAttribute
   {
   public:
-    AwsElbv2LoadBalancerAttribute();
-    AwsElbv2LoadBalancerAttribute(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbv2LoadBalancerAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerAttribute();
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AccessScopeAnalysisFinding">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AccessScopeAnalysisFinding
+  class AccessScopeAnalysisFinding
   {
   public:
-    AccessScopeAnalysisFinding();
-    AccessScopeAnalysisFinding(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessScopeAnalysisFinding& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AccessScopeAnalysisFinding();
+    AWS_EC2_API AccessScopeAnalysisFinding(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AccessScopeAnalysisFinding& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;
-    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeId;
-    bool m_networkInsightsAccessScopeIdHasBeenSet;
+    bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
     Aws::String m_findingId;
-    bool m_findingIdHasBeenSet;
+    bool m_findingIdHasBeenSet = false;
 
     Aws::Vector<PathComponent> m_findingComponents;
-    bool m_findingComponentsHasBeenSet;
+    bool m_findingComponentsHasBeenSet = false;
   };
 
 } // namespace Model

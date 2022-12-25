@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorBaseline">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorBaseline
+  class PredictorBaseline
   {
   public:
-    PredictorBaseline();
-    PredictorBaseline(Aws::Utils::Json::JsonView jsonValue);
-    PredictorBaseline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorBaseline();
+    AWS_FORECASTSERVICE_API PredictorBaseline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorBaseline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::Vector<BaselineMetric> m_baselineMetrics;
-    bool m_baselineMetricsHasBeenSet;
+    bool m_baselineMetricsHasBeenSet = false;
   };
 
 } // namespace Model

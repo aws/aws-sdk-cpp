@@ -24,27 +24,37 @@ namespace ChimeSDKMeetings
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEETINGS_API UpdateAttendeeCapabilitiesResult
+  class UpdateAttendeeCapabilitiesResult
   {
   public:
-    UpdateAttendeeCapabilitiesResult();
-    UpdateAttendeeCapabilitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAttendeeCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API UpdateAttendeeCapabilitiesResult();
+    AWS_CHIMESDKMEETINGS_API UpdateAttendeeCapabilitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API UpdateAttendeeCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline const Attendee& GetAttendee() const{ return m_attendee; }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline void SetAttendee(const Attendee& value) { m_attendee = value; }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline void SetAttendee(Attendee&& value) { m_attendee = std::move(value); }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
 
   private:

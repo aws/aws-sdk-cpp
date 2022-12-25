@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SqsAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API SqsAction
+  class SqsAction
   {
   public:
-    SqsAction();
-    SqsAction(Aws::Utils::Json::JsonView jsonValue);
-    SqsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API SqsAction();
+    AWS_IOTEVENTS_API SqsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API SqsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     bool m_useBase64;
-    bool m_useBase64HasBeenSet;
+    bool m_useBase64HasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

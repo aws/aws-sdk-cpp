@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ReplicationSet">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ReplicationSet
+  class ReplicationSet
   {
   public:
-    ReplicationSet();
-    ReplicationSet(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ReplicationSet();
+    AWS_SSMINCIDENTS_API ReplicationSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ReplicationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     bool m_deletionProtected;
-    bool m_deletionProtectedHasBeenSet;
+    bool m_deletionProtectedHasBeenSet = false;
 
     Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, RegionInfo> m_regionMap;
-    bool m_regionMapHasBeenSet;
+    bool m_regionMapHasBeenSet = false;
 
     ReplicationSetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

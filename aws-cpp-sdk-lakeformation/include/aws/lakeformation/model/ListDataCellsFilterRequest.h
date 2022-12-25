@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API ListDataCellsFilterRequest : public LakeFormationRequest
+  class ListDataCellsFilterRequest : public LakeFormationRequest
   {
   public:
-    ListDataCellsFilterRequest();
+    AWS_LAKEFORMATION_API ListDataCellsFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDataCellsFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -128,13 +128,13 @@ namespace Model
   private:
 
     TableResource m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

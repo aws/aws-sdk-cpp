@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateConnectionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TerminateConnectionStatus
+  class TerminateConnectionStatus
   {
   public:
-    TerminateConnectionStatus();
-    TerminateConnectionStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TerminateConnectionStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TerminateConnectionStatus();
+    AWS_EC2_API TerminateConnectionStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TerminateConnectionStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     ClientVpnConnectionStatus m_previousStatus;
-    bool m_previousStatusHasBeenSet;
+    bool m_previousStatusHasBeenSet = false;
 
     ClientVpnConnectionStatus m_currentStatus;
-    bool m_currentStatusHasBeenSet;
+    bool m_currentStatusHasBeenSet = false;
   };
 
 } // namespace Model

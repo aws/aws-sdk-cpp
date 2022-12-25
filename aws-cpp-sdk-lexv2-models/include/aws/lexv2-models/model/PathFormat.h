@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PathFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PathFormat
+  class PathFormat
   {
   public:
-    PathFormat();
-    PathFormat(Aws::Utils::Json::JsonView jsonValue);
-    PathFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PathFormat();
+    AWS_LEXMODELSV2_API PathFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PathFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_objectPrefixes;
-    bool m_objectPrefixesHasBeenSet;
+    bool m_objectPrefixesHasBeenSet = false;
   };
 
 } // namespace Model

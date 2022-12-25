@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TemplateActiveVersionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TemplateActiveVersionRequest
+  class TemplateActiveVersionRequest
   {
   public:
-    TemplateActiveVersionRequest();
-    TemplateActiveVersionRequest(Aws::Utils::Json::JsonView jsonValue);
-    TemplateActiveVersionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TemplateActiveVersionRequest();
+    AWS_PINPOINT_API TemplateActiveVersionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TemplateActiveVersionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

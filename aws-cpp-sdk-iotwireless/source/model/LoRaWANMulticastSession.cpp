@@ -92,7 +92,7 @@ JsonValue LoRaWANMulticastSession::Jsonize() const
 
   if(m_sessionStartTimeHasBeenSet)
   {
-   payload.WithString("SessionStartTime", m_sessionStartTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("SessionStartTime", m_sessionStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_sessionTimeoutHasBeenSet)

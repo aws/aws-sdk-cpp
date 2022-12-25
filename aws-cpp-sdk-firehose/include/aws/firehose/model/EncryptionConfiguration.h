@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API EncryptionConfiguration();
+    AWS_FIREHOSE_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     NoEncryptionConfig m_noEncryptionConfig;
-    bool m_noEncryptionConfigHasBeenSet;
+    bool m_noEncryptionConfigHasBeenSet = false;
 
     KMSEncryptionConfig m_kMSEncryptionConfig;
-    bool m_kMSEncryptionConfigHasBeenSet;
+    bool m_kMSEncryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AthenaIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AthenaIntegration
+  class AthenaIntegration
   {
   public:
-    AthenaIntegration();
-    AthenaIntegration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AthenaIntegration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AthenaIntegration();
+    AWS_EC2_API AthenaIntegration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AthenaIntegration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_integrationResultS3DestinationArn;
-    bool m_integrationResultS3DestinationArnHasBeenSet;
+    bool m_integrationResultS3DestinationArnHasBeenSet = false;
 
     PartitionLoadFrequency m_partitionLoadFrequency;
-    bool m_partitionLoadFrequencyHasBeenSet;
+    bool m_partitionLoadFrequencyHasBeenSet = false;
 
     Aws::Utils::DateTime m_partitionStartDate;
-    bool m_partitionStartDateHasBeenSet;
+    bool m_partitionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_partitionEndDate;
-    bool m_partitionEndDateHasBeenSet;
+    bool m_partitionEndDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UpdateOriginEndpointRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API UpdateOriginEndpointRequest : public MediaPackageRequest
+  class UpdateOriginEndpointRequest : public MediaPackageRequest
   {
   public:
-    UpdateOriginEndpointRequest();
+    AWS_MEDIAPACKAGE_API UpdateOriginEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateOriginEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGE_API Aws::String SerializePayload() const override;
 
 
     
@@ -457,40 +457,40 @@ If not
   private:
 
     Authorization m_authorization;
-    bool m_authorizationHasBeenSet;
+    bool m_authorizationHasBeenSet = false;
 
     CmafPackageCreateOrUpdateParameters m_cmafPackage;
-    bool m_cmafPackageHasBeenSet;
+    bool m_cmafPackageHasBeenSet = false;
 
     DashPackage m_dashPackage;
-    bool m_dashPackageHasBeenSet;
+    bool m_dashPackageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
-    bool m_hlsPackageHasBeenSet;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     MssPackage m_mssPackage;
-    bool m_mssPackageHasBeenSet;
+    bool m_mssPackageHasBeenSet = false;
 
     Origination m_origination;
-    bool m_originationHasBeenSet;
+    bool m_originationHasBeenSet = false;
 
     int m_startoverWindowSeconds;
-    bool m_startoverWindowSecondsHasBeenSet;
+    bool m_startoverWindowSecondsHasBeenSet = false;
 
     int m_timeDelaySeconds;
-    bool m_timeDelaySecondsHasBeenSet;
+    bool m_timeDelaySecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_whitelist;
-    bool m_whitelistHasBeenSet;
+    bool m_whitelistHasBeenSet = false;
   };
 
 } // namespace Model

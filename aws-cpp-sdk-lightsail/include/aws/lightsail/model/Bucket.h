@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bucket">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Bucket
+  class Bucket
   {
   public:
-    Bucket();
-    Bucket(Aws::Utils::Json::JsonView jsonValue);
-    Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Bucket();
+    AWS_LIGHTSAIL_API Bucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -805,52 +805,52 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     AccessRules m_accessRules;
-    bool m_accessRulesHasBeenSet;
+    bool m_accessRulesHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     ResourceLocation m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_objectVersioning;
-    bool m_objectVersioningHasBeenSet;
+    bool m_objectVersioningHasBeenSet = false;
 
     bool m_ableToUpdateBundle;
-    bool m_ableToUpdateBundleHasBeenSet;
+    bool m_ableToUpdateBundleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readonlyAccessAccounts;
-    bool m_readonlyAccessAccountsHasBeenSet;
+    bool m_readonlyAccessAccountsHasBeenSet = false;
 
     Aws::Vector<ResourceReceivingAccess> m_resourcesReceivingAccess;
-    bool m_resourcesReceivingAccessHasBeenSet;
+    bool m_resourcesReceivingAccessHasBeenSet = false;
 
     BucketState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     BucketAccessLogConfig m_accessLogConfig;
-    bool m_accessLogConfigHasBeenSet;
+    bool m_accessLogConfigHasBeenSet = false;
   };
 
 } // namespace Model

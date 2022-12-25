@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLChannel
+  class AutoMLChannel
   {
   public:
-    AutoMLChannel();
-    AutoMLChannel(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLChannel();
+    AWS_SAGEMAKER_API AutoMLChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,19 +289,19 @@ namespace Model
   private:
 
     AutoMLDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::String m_targetAttributeName;
-    bool m_targetAttributeNameHasBeenSet;
+    bool m_targetAttributeNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     AutoMLChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
   };
 
 } // namespace Model

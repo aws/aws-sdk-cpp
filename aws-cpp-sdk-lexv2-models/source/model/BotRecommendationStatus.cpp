@@ -27,6 +27,8 @@ namespace Aws
         static const int Updating_HASH = HashingUtils::HashString("Updating");
         static const int Available_HASH = HashingUtils::HashString("Available");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
+        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 
         BotRecommendationStatus GetBotRecommendationStatusForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return BotRecommendationStatus::Failed;
           }
+          else if (hashCode == Stopping_HASH)
+          {
+            return BotRecommendationStatus::Stopping;
+          }
+          else if (hashCode == Stopped_HASH)
+          {
+            return BotRecommendationStatus::Stopped;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +98,10 @@ namespace Aws
             return "Available";
           case BotRecommendationStatus::Failed:
             return "Failed";
+          case BotRecommendationStatus::Stopping:
+            return "Stopping";
+          case BotRecommendationStatus::Stopped:
+            return "Stopped";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -53,7 +53,7 @@ CustomResponse& CustomResponse::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResponseHeaders"))
   {
-    Array<JsonView> responseHeadersJsonList = jsonValue.GetArray("ResponseHeaders");
+    Aws::Utils::Array<JsonView> responseHeadersJsonList = jsonValue.GetArray("ResponseHeaders");
     for(unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex)
     {
       m_responseHeaders.push_back(responseHeadersJsonList[responseHeadersIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue CustomResponse::Jsonize() const
 
   if(m_responseHeadersHasBeenSet)
   {
-   Array<JsonValue> responseHeadersJsonList(m_responseHeaders.size());
+   Aws::Utils::Array<JsonValue> responseHeadersJsonList(m_responseHeaders.size());
    for(unsigned responseHeadersIndex = 0; responseHeadersIndex < responseHeadersJsonList.GetLength(); ++responseHeadersIndex)
    {
      responseHeadersJsonList[responseHeadersIndex].AsObject(m_responseHeaders[responseHeadersIndex].Jsonize());

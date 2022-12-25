@@ -30,54 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PropertyFilter
+  class PropertyFilter
   {
   public:
-    PropertyFilter();
-    PropertyFilter(Aws::Utils::Json::JsonView jsonValue);
-    PropertyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline const Aws::String& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
-
-    /**
-     * <p>The operator associated with this property filter.</p>
-     */
-    inline PropertyFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
+    AWS_IOTTWINMAKER_API PropertyFilter();
+    AWS_IOTTWINMAKER_API PropertyFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PropertyFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,6 +81,47 @@ namespace Model
 
 
     /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline const Aws::String& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
+
+    /**
+     * <p>The operator associated with this property filter.</p>
+     */
+    inline PropertyFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
+
+
+    /**
      * <p>The value associated with this property filter.</p>
      */
     inline const DataValue& GetValue() const{ return m_value; }
@@ -153,14 +153,14 @@ namespace Model
 
   private:
 
-    Aws::String m_operator;
-    bool m_operatorHasBeenSet;
-
     Aws::String m_propertyName;
-    bool m_propertyNameHasBeenSet;
+    bool m_propertyNameHasBeenSet = false;
+
+    Aws::String m_operator;
+    bool m_operatorHasBeenSet = false;
 
     DataValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

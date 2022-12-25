@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionStep">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineExecutionStep
+  class PipelineExecutionStep
   {
   public:
-    PipelineExecutionStep();
-    PipelineExecutionStep(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineExecutionStep();
+    AWS_SAGEMAKER_API PipelineExecutionStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineExecutionStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -367,66 +367,66 @@ namespace Model
 
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline const PipelineExecutionStepMetadata& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline void SetMetadata(const PipelineExecutionStepMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline void SetMetadata(PipelineExecutionStepMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline PipelineExecutionStep& WithMetadata(const PipelineExecutionStepMetadata& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Metadata for the step execution.</p>
+     * <p>Metadata to run the pipeline step.</p>
      */
     inline PipelineExecutionStep& WithMetadata(PipelineExecutionStepMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_stepName;
-    bool m_stepNameHasBeenSet;
+    bool m_stepNameHasBeenSet = false;
 
     Aws::String m_stepDisplayName;
-    bool m_stepDisplayNameHasBeenSet;
+    bool m_stepDisplayNameHasBeenSet = false;
 
     Aws::String m_stepDescription;
-    bool m_stepDescriptionHasBeenSet;
+    bool m_stepDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     StepStatus m_stepStatus;
-    bool m_stepStatusHasBeenSet;
+    bool m_stepStatusHasBeenSet = false;
 
     CacheHitResult m_cacheHitResult;
-    bool m_cacheHitResultHasBeenSet;
+    bool m_cacheHitResultHasBeenSet = false;
 
     int m_attemptCount;
-    bool m_attemptCountHasBeenSet;
+    bool m_attemptCountHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     PipelineExecutionStepMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

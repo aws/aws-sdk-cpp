@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PendingModifiedServiceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API PendingModifiedServiceUpdate
+  class PendingModifiedServiceUpdate
   {
   public:
-    PendingModifiedServiceUpdate();
-    PendingModifiedServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    PendingModifiedServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API PendingModifiedServiceUpdate();
+    AWS_MEMORYDB_API PendingModifiedServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API PendingModifiedServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     ServiceUpdateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

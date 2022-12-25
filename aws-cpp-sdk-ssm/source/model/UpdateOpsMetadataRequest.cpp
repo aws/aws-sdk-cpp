@@ -42,7 +42,7 @@ Aws::String UpdateOpsMetadataRequest::SerializePayload() const
 
   if(m_keysToDeleteHasBeenSet)
   {
-   Array<JsonValue> keysToDeleteJsonList(m_keysToDelete.size());
+   Aws::Utils::Array<JsonValue> keysToDeleteJsonList(m_keysToDelete.size());
    for(unsigned keysToDeleteIndex = 0; keysToDeleteIndex < keysToDeleteJsonList.GetLength(); ++keysToDeleteIndex)
    {
      keysToDeleteJsonList[keysToDeleteIndex].AsString(m_keysToDelete[keysToDeleteIndex]);

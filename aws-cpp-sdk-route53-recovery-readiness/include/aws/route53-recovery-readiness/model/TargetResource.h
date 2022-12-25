@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/TargetResource">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API TargetResource
+  class TargetResource
   {
   public:
-    TargetResource();
-    TargetResource(Aws::Utils::Json::JsonView jsonValue);
-    TargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API TargetResource();
+    AWS_ROUTE53RECOVERYREADINESS_API TargetResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API TargetResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     NLBResource m_nLBResource;
-    bool m_nLBResourceHasBeenSet;
+    bool m_nLBResourceHasBeenSet = false;
 
     R53ResourceRecord m_r53Resource;
-    bool m_r53ResourceHasBeenSet;
+    bool m_r53ResourceHasBeenSet = false;
   };
 
 } // namespace Model

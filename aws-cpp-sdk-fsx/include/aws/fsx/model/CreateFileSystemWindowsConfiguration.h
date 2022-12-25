@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemWindowsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemWindowsConfiguration
+  class CreateFileSystemWindowsConfiguration
   {
   public:
-    CreateFileSystemWindowsConfiguration();
-    CreateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemWindowsConfiguration();
+    AWS_FSX_API CreateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -767,37 +767,37 @@ namespace Model
   private:
 
     Aws::String m_activeDirectoryId;
-    bool m_activeDirectoryIdHasBeenSet;
+    bool m_activeDirectoryIdHasBeenSet = false;
 
     SelfManagedActiveDirectoryConfiguration m_selfManagedActiveDirectoryConfiguration;
-    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+    bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 
     WindowsDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_preferredSubnetId;
-    bool m_preferredSubnetIdHasBeenSet;
+    bool m_preferredSubnetIdHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
 
     WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
-    bool m_auditLogConfigurationHasBeenSet;
+    bool m_auditLogConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

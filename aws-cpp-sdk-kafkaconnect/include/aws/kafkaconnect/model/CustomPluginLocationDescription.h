@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPluginLocationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CustomPluginLocationDescription
+  class CustomPluginLocationDescription
   {
   public:
-    CustomPluginLocationDescription();
-    CustomPluginLocationDescription(Aws::Utils::Json::JsonView jsonValue);
-    CustomPluginLocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CustomPluginLocationDescription();
+    AWS_KAFKACONNECT_API CustomPluginLocationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CustomPluginLocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3LocationDescription m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

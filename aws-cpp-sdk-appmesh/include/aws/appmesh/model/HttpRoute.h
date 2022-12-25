@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpRoute
+  class HttpRoute
   {
   public:
-    HttpRoute();
-    HttpRoute(Aws::Utils::Json::JsonView jsonValue);
-    HttpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpRoute();
+    AWS_APPMESH_API HttpRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,16 +167,16 @@ namespace Model
   private:
 
     HttpRouteAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     HttpRouteMatch m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     HttpRetryPolicy m_retryPolicy;
-    bool m_retryPolicyHasBeenSet;
+    bool m_retryPolicyHasBeenSet = false;
 
     HttpTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

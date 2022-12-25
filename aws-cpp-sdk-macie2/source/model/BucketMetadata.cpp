@@ -33,6 +33,7 @@ BucketMetadata::BucketMetadata() :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
+    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -40,6 +41,8 @@ BucketMetadata::BucketMetadata() :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_sensitivityScore(0),
+    m_sensitivityScoreHasBeenSet(false),
     m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
@@ -70,6 +73,7 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_jobDetailsHasBeenSet(false),
+    m_lastAutomatedDiscoveryTimeHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_objectCount(0),
     m_objectCountHasBeenSet(false),
@@ -77,6 +81,8 @@ BucketMetadata::BucketMetadata(JsonView jsonValue) :
     m_publicAccessHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_replicationDetailsHasBeenSet(false),
+    m_sensitivityScore(0),
+    m_sensitivityScoreHasBeenSet(false),
     m_serverSideEncryptionHasBeenSet(false),
     m_sharedAccess(SharedAccess::NOT_SET),
     m_sharedAccessHasBeenSet(false),
@@ -165,6 +171,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_jobDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastAutomatedDiscoveryTime"))
+  {
+    m_lastAutomatedDiscoveryTime = jsonValue.GetString("lastAutomatedDiscoveryTime");
+
+    m_lastAutomatedDiscoveryTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetString("lastUpdated");
@@ -207,6 +220,13 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
     m_replicationDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sensitivityScore"))
+  {
+    m_sensitivityScore = jsonValue.GetInteger("sensitivityScore");
+
+    m_sensitivityScoreHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("serverSideEncryption"))
   {
     m_serverSideEncryption = jsonValue.GetObject("serverSideEncryption");
@@ -237,7 +257,7 @@ BucketMetadata& BucketMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -292,7 +312,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_bucketCreatedAtHasBeenSet)
   {
-   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("bucketCreatedAt", m_bucketCreatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_bucketNameHasBeenSet)
@@ -330,9 +350,14 @@ JsonValue BucketMetadata::Jsonize() const
 
   }
 
+  if(m_lastAutomatedDiscoveryTimeHasBeenSet)
+  {
+   payload.WithString("lastAutomatedDiscoveryTime", m_lastAutomatedDiscoveryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_lastUpdatedHasBeenSet)
   {
-   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastUpdated", m_lastUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_objectCountHasBeenSet)
@@ -365,6 +390,12 @@ JsonValue BucketMetadata::Jsonize() const
 
   }
 
+  if(m_sensitivityScoreHasBeenSet)
+  {
+   payload.WithInteger("sensitivityScore", m_sensitivityScore);
+
+  }
+
   if(m_serverSideEncryptionHasBeenSet)
   {
    payload.WithObject("serverSideEncryption", m_serverSideEncryption.Jsonize());
@@ -390,7 +421,7 @@ JsonValue BucketMetadata::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

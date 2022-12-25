@@ -82,7 +82,7 @@ SystemInstanceDescription& SystemInstanceDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("validatedDependencyRevisions"))
   {
-    Array<JsonView> validatedDependencyRevisionsJsonList = jsonValue.GetArray("validatedDependencyRevisions");
+    Aws::Utils::Array<JsonView> validatedDependencyRevisionsJsonList = jsonValue.GetArray("validatedDependencyRevisions");
     for(unsigned validatedDependencyRevisionsIndex = 0; validatedDependencyRevisionsIndex < validatedDependencyRevisionsJsonList.GetLength(); ++validatedDependencyRevisionsIndex)
     {
       m_validatedDependencyRevisions.push_back(validatedDependencyRevisionsJsonList[validatedDependencyRevisionsIndex].AsObject());
@@ -136,7 +136,7 @@ JsonValue SystemInstanceDescription::Jsonize() const
 
   if(m_validatedDependencyRevisionsHasBeenSet)
   {
-   Array<JsonValue> validatedDependencyRevisionsJsonList(m_validatedDependencyRevisions.size());
+   Aws::Utils::Array<JsonValue> validatedDependencyRevisionsJsonList(m_validatedDependencyRevisions.size());
    for(unsigned validatedDependencyRevisionsIndex = 0; validatedDependencyRevisionsIndex < validatedDependencyRevisionsJsonList.GetLength(); ++validatedDependencyRevisionsIndex)
    {
      validatedDependencyRevisionsJsonList[validatedDependencyRevisionsIndex].AsObject(m_validatedDependencyRevisions[validatedDependencyRevisionsIndex].Jsonize());

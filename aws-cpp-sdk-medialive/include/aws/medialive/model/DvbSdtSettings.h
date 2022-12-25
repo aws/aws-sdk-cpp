@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DvbSdtSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DvbSdtSettings
+  class DvbSdtSettings
   {
   public:
-    DvbSdtSettings();
-    DvbSdtSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API DvbSdtSettings();
+    AWS_MEDIALIVE_API DvbSdtSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API DvbSdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -230,16 +230,16 @@ namespace Model
   private:
 
     DvbSdtOutputSdt m_outputSdt;
-    bool m_outputSdtHasBeenSet;
+    bool m_outputSdtHasBeenSet = false;
 
     int m_repInterval;
-    bool m_repIntervalHasBeenSet;
+    bool m_repIntervalHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceProviderName;
-    bool m_serviceProviderNameHasBeenSet;
+    bool m_serviceProviderNameHasBeenSet = false;
   };
 
 } // namespace Model

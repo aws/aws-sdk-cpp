@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API HandshakeFilter
+  class HandshakeFilter
   {
   public:
-    HandshakeFilter();
-    HandshakeFilter(Aws::Utils::Json::JsonView jsonValue);
-    HandshakeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API HandshakeFilter();
+    AWS_ORGANIZATIONS_API HandshakeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API HandshakeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,10 +157,10 @@ namespace Model
   private:
 
     ActionType m_actionType;
-    bool m_actionTypeHasBeenSet;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_parentHandshakeId;
-    bool m_parentHandshakeIdHasBeenSet;
+    bool m_parentHandshakeIdHasBeenSet = false;
   };
 
 } // namespace Model

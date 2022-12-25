@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ElasticsearchDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API ElasticsearchDataSourceConfig
+  class ElasticsearchDataSourceConfig
   {
   public:
-    ElasticsearchDataSourceConfig();
-    ElasticsearchDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ElasticsearchDataSourceConfig();
+    AWS_APPSYNC_API ElasticsearchDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ElasticsearchDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
   };
 
 } // namespace Model

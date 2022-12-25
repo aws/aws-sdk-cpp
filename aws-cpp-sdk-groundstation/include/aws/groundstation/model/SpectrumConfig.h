@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/SpectrumConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API SpectrumConfig
+  class SpectrumConfig
   {
   public:
-    SpectrumConfig();
-    SpectrumConfig(Aws::Utils::Json::JsonView jsonValue);
-    SpectrumConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API SpectrumConfig();
+    AWS_GROUNDSTATION_API SpectrumConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API SpectrumConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,13 +195,13 @@ namespace Model
   private:
 
     FrequencyBandwidth m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     Frequency m_centerFrequency;
-    bool m_centerFrequencyHasBeenSet;
+    bool m_centerFrequencyHasBeenSet = false;
 
     Polarization m_polarization;
-    bool m_polarizationHasBeenSet;
+    bool m_polarizationHasBeenSet = false;
   };
 
 } // namespace Model

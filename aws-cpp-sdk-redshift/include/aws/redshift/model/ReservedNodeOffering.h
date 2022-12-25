@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ReservedNodeOffering
+  class ReservedNodeOffering
   {
   public:
-    ReservedNodeOffering();
-    ReservedNodeOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedNodeOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeOffering();
+    AWS_REDSHIFT_API ReservedNodeOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -375,31 +375,31 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeOfferingId;
-    bool m_reservedNodeOfferingIdHasBeenSet;
+    bool m_reservedNodeOfferingIdHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
 
     ReservedNodeOfferingType m_reservedNodeOfferingType;
-    bool m_reservedNodeOfferingTypeHasBeenSet;
+    bool m_reservedNodeOfferingTypeHasBeenSet = false;
   };
 
 } // namespace Model

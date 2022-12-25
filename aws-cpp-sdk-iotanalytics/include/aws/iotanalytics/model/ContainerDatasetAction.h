@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ContainerDatasetAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ContainerDatasetAction
+  class ContainerDatasetAction
   {
   public:
-    ContainerDatasetAction();
-    ContainerDatasetAction(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ContainerDatasetAction();
+    AWS_IOTANALYTICS_API ContainerDatasetAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ContainerDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,16 +275,16 @@ namespace Model
   private:
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     ResourceConfiguration m_resourceConfiguration;
-    bool m_resourceConfigurationHasBeenSet;
+    bool m_resourceConfigurationHasBeenSet = false;
 
     Aws::Vector<Variable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCategorySpecificSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary
+  class TrustedAdvisorCategorySpecificSummary
   {
   public:
-    TrustedAdvisorCategorySpecificSummary();
-    TrustedAdvisorCategorySpecificSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorCategorySpecificSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary();
+    AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorCategorySpecificSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     TrustedAdvisorCostOptimizingSummary m_costOptimizing;
-    bool m_costOptimizingHasBeenSet;
+    bool m_costOptimizingHasBeenSet = false;
   };
 
 } // namespace Model

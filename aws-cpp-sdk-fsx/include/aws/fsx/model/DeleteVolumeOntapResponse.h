@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolumeOntapResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DeleteVolumeOntapResponse
+  class DeleteVolumeOntapResponse
   {
   public:
-    DeleteVolumeOntapResponse();
-    DeleteVolumeOntapResponse(Aws::Utils::Json::JsonView jsonValue);
-    DeleteVolumeOntapResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DeleteVolumeOntapResponse();
+    AWS_FSX_API DeleteVolumeOntapResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DeleteVolumeOntapResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     Aws::String m_finalBackupId;
-    bool m_finalBackupIdHasBeenSet;
+    bool m_finalBackupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
   };
 
 } // namespace Model

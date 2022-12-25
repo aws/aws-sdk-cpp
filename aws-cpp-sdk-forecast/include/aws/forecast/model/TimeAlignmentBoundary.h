@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeAlignmentBoundary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeAlignmentBoundary
+  class TimeAlignmentBoundary
   {
   public:
-    TimeAlignmentBoundary();
-    TimeAlignmentBoundary(Aws::Utils::Json::JsonView jsonValue);
-    TimeAlignmentBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary();
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,16 +165,16 @@ namespace Model
   private:
 
     Month m_month;
-    bool m_monthHasBeenSet;
+    bool m_monthHasBeenSet = false;
 
     int m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     int m_hour;
-    bool m_hourHasBeenSet;
+    bool m_hourHasBeenSet = false;
   };
 
 } // namespace Model

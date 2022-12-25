@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageImportJobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageImportJobOutput
+  class PackageImportJobOutput
   {
   public:
-    PackageImportJobOutput();
-    PackageImportJobOutput(Aws::Utils::Json::JsonView jsonValue);
-    PackageImportJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageImportJobOutput();
+    AWS_PANORAMA_API PackageImportJobOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageImportJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     OutPutS3Location m_outputS3Location;
-    bool m_outputS3LocationHasBeenSet;
+    bool m_outputS3LocationHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_patchVersion;
-    bool m_patchVersionHasBeenSet;
+    bool m_patchVersionHasBeenSet = false;
   };
 
 } // namespace Model

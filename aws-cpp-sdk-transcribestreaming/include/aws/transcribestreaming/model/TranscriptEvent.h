@@ -24,61 +24,80 @@ namespace Model
 {
 
   /**
-   * <p>Represents a set of transcription results from the server to the client. It
-   * contains one or more segments of the transcription.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The <code>TranscriptEvent</code> associated with a
+   * <code>TranscriptResultStream</code>.</p> <p>Contains a set of transcription
+   * results from one or more audio segments, along with additional information per
+   * your request parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/TranscriptEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent
+  class TranscriptEvent
   {
   public:
-    TranscriptEvent();
-    TranscriptEvent(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API TranscriptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline const Transcript& GetTranscript() const{ return m_transcript; }
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline TranscriptEvent& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
 
     /**
-     * <p>The transcription of the audio stream. The transcription is composed of all
-     * of the items in the results list.</p>
+     * <p>Contains <code>Results</code>, which contains a set of transcription results
+     * from one or more audio segments, along with additional information per your
+     * request parameters. This can include information relating to alternative
+     * transcriptions, channel identification, partial result stabilization, language
+     * identification, and other transcription-related data.</p>
      */
     inline TranscriptEvent& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
 
   private:
 
     Transcript m_transcript;
-    bool m_transcriptHasBeenSet;
+    bool m_transcriptHasBeenSet = false;
   };
 
 } // namespace Model

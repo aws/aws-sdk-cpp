@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductPlanSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisionedProductPlanSummary
+  class ProvisionedProductPlanSummary
   {
   public:
-    ProvisionedProductPlanSummary();
-    ProvisionedProductPlanSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedProductPlanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisionedProductPlanSummary();
+    AWS_SERVICECATALOG_API ProvisionedProductPlanSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisionedProductPlanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_planName;
-    bool m_planNameHasBeenSet;
+    bool m_planNameHasBeenSet = false;
 
     Aws::String m_planId;
-    bool m_planIdHasBeenSet;
+    bool m_planIdHasBeenSet = false;
 
     Aws::String m_provisionProductId;
-    bool m_provisionProductIdHasBeenSet;
+    bool m_provisionProductIdHasBeenSet = false;
 
     Aws::String m_provisionProductName;
-    bool m_provisionProductNameHasBeenSet;
+    bool m_provisionProductNameHasBeenSet = false;
 
     ProvisionedProductPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
   };
 
 } // namespace Model

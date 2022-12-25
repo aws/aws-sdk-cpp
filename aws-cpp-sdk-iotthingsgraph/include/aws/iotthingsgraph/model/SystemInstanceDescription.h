@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SystemInstanceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API SystemInstanceDescription
+  class SystemInstanceDescription
   {
   public:
-    SystemInstanceDescription();
-    SystemInstanceDescription(Aws::Utils::Json::JsonView jsonValue);
-    SystemInstanceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API SystemInstanceDescription();
+    AWS_IOTTHINGSGRAPH_API SystemInstanceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API SystemInstanceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,25 +302,25 @@ namespace Model
   private:
 
     SystemInstanceSummary m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     DefinitionDocument m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     MetricsConfiguration m_metricsConfiguration;
-    bool m_metricsConfigurationHasBeenSet;
+    bool m_metricsConfigurationHasBeenSet = false;
 
     long long m_validatedNamespaceVersion;
-    bool m_validatedNamespaceVersionHasBeenSet;
+    bool m_validatedNamespaceVersionHasBeenSet = false;
 
     Aws::Vector<DependencyRevision> m_validatedDependencyRevisions;
-    bool m_validatedDependencyRevisionsHasBeenSet;
+    bool m_validatedDependencyRevisionsHasBeenSet = false;
 
     Aws::String m_flowActionsRoleArn;
-    bool m_flowActionsRoleArnHasBeenSet;
+    bool m_flowActionsRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

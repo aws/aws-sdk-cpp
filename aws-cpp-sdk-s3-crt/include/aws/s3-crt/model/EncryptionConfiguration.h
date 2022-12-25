@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API EncryptionConfiguration();
+    AWS_S3CRT_API EncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API EncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -137,7 +137,7 @@ namespace Model
   private:
 
     Aws::String m_replicaKmsKeyID;
-    bool m_replicaKmsKeyIDHasBeenSet;
+    bool m_replicaKmsKeyIDHasBeenSet = false;
   };
 
 } // namespace Model

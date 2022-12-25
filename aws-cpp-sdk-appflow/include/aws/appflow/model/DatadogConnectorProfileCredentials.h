@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DatadogConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DatadogConnectorProfileCredentials
+  class DatadogConnectorProfileCredentials
   {
   public:
-    DatadogConnectorProfileCredentials();
-    DatadogConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    DatadogConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DatadogConnectorProfileCredentials();
+    AWS_APPFLOW_API DatadogConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DatadogConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     Aws::String m_applicationKey;
-    bool m_applicationKeyHasBeenSet;
+    bool m_applicationKeyHasBeenSet = false;
   };
 
 } // namespace Model

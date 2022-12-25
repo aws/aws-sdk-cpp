@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API ListReviewableHITsRequest : public MTurkRequest
+  class ListReviewableHITsRequest : public MTurkRequest
   {
   public:
-    ListReviewableHITsRequest();
+    AWS_MTURK_API ListReviewableHITsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListReviewableHITs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet;
+    bool m_hITTypeIdHasBeenSet = false;
 
     ReviewableHITStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

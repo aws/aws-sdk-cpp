@@ -29,55 +29,79 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ActionCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ActionCondition
+  class ActionCondition
   {
   public:
-    ActionCondition();
-    ActionCondition(Aws::Utils::Json::JsonView jsonValue);
-    ActionCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ActionCondition();
+    AWS_WAFV2_API ActionCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ActionCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline const ActionValue& GetAction() const{ return m_action; }
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline void SetAction(const ActionValue& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline void SetAction(ActionValue&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline ActionCondition& WithAction(const ActionValue& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action setting that a log record must contain in order to meet the
-     * condition. </p>
+     * condition. This is the action that WAF applied to the web request. </p> <p>For
+     * rule groups, this is either the configured rule action setting, or if you've
+     * applied a rule action override to the rule, it's the override action. The value
+     * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
+     * have a rule action override of Count. </p>
      */
     inline ActionCondition& WithAction(ActionValue&& value) { SetAction(std::move(value)); return *this;}
 
   private:
 
     ActionValue m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

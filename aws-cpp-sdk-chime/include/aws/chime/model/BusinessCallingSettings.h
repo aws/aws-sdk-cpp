@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BusinessCallingSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API BusinessCallingSettings
+  class BusinessCallingSettings
   {
   public:
-    BusinessCallingSettings();
-    BusinessCallingSettings(Aws::Utils::Json::JsonView jsonValue);
-    BusinessCallingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API BusinessCallingSettings();
+    AWS_CHIME_API BusinessCallingSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API BusinessCallingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_cdrBucket;
-    bool m_cdrBucketHasBeenSet;
+    bool m_cdrBucketHasBeenSet = false;
   };
 
 } // namespace Model

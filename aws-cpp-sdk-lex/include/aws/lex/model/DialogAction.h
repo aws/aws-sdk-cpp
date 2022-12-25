@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DialogAction">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API DialogAction
+  class DialogAction
   {
   public:
-    DialogAction();
-    DialogAction(Aws::Utils::Json::JsonView jsonValue);
-    DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API DialogAction();
+    AWS_LEXRUNTIMESERVICE_API DialogAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -475,25 +475,25 @@ namespace Model
   private:
 
     DialogActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::String m_slotToElicit;
-    bool m_slotToElicitHasBeenSet;
+    bool m_slotToElicitHasBeenSet = false;
 
     FulfillmentState m_fulfillmentState;
-    bool m_fulfillmentStateHasBeenSet;
+    bool m_fulfillmentStateHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MessageFormatType m_messageFormat;
-    bool m_messageFormatHasBeenSet;
+    bool m_messageFormatHasBeenSet = false;
   };
 
 } // namespace Model

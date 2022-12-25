@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API NotificationConfiguration();
+    AWS_KINESISVIDEO_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     ConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     NotificationDestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
   };
 
 } // namespace Model

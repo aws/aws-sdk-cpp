@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListGroundStationsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ListGroundStationsRequest : public GroundStationRequest
+  class ListGroundStationsRequest : public GroundStationRequest
   {
   public:
-    ListGroundStationsRequest();
+    AWS_GROUNDSTATION_API ListGroundStationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListGroundStations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GROUNDSTATION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_satelliteId;
-    bool m_satelliteIdHasBeenSet;
+    bool m_satelliteIdHasBeenSet = false;
   };
 
 } // namespace Model

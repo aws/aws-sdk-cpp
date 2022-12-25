@@ -5,78 +5,16 @@
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
-#include <aws/cur/CostandUsageReportServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cur/model/DeleteReportDefinitionResult.h>
-#include <aws/cur/model/DescribeReportDefinitionsResult.h>
-#include <aws/cur/model/ModifyReportDefinitionResult.h>
-#include <aws/cur/model/PutReportDefinitionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CostandUsageReportService
 {
-
-namespace Model
-{
-        class DeleteReportDefinitionRequest;
-        class DescribeReportDefinitionsRequest;
-        class ModifyReportDefinitionRequest;
-        class PutReportDefinitionRequest;
-
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, CostandUsageReportServiceError> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, CostandUsageReportServiceError> DescribeReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, CostandUsageReportServiceError> ModifyReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, CostandUsageReportServiceError> PutReportDefinitionOutcome;
-
-        typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
-        typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;
-        typedef std::future<ModifyReportDefinitionOutcome> ModifyReportDefinitionOutcomeCallable;
-        typedef std::future<PutReportDefinitionOutcome> PutReportDefinitionOutcomeCallable;
-} // namespace Model
-
-  class CostandUsageReportServiceClient;
-
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DeleteReportDefinitionRequest&, const Model::DeleteReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::DescribeReportDefinitionsRequest&, const Model::DescribeReportDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::ModifyReportDefinitionRequest&, const Model::ModifyReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const CostandUsageReportServiceClient*, const Model::PutReportDefinitionRequest&, const Model::PutReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReportDefinitionResponseReceivedHandler;
-
   /**
    * <p>The AWS Cost and Usage Report API enables you to programmatically create,
    * query, and delete AWS Cost and Usage report definitions.</p> <p>AWS Cost and
@@ -88,32 +26,60 @@ namespace Model
    * API provides the following endpoint:</p> <ul> <li>
    * <p>cur.us-east-1.amazonaws.com</p> </li> </ul>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CostandUsageReportServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CostandUsageReportServiceClient(const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration(),
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CostandUsageReportServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CostandUsageReportServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG),
+                                        const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CostandUsageReportServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                        std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<CostandUsageReportServiceEndpointProvider>(ALLOCATION_TAG),
+                                        const Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration& clientConfiguration = Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CostandUsageReportServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CostandUsageReportServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CostandUsageReportServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CostandUsageReportServiceClient();
-
 
         /**
          * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
@@ -188,16 +154,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CostandUsageReportServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteReportDefinitionAsyncHelper(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReportDefinitionsAsyncHelper(const Model::DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyReportDefinitionAsyncHelper(const Model::ModifyReportDefinitionRequest& request, const ModifyReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutReportDefinitionAsyncHelper(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>;
+      void init(const CostandUsageReportServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CostandUsageReportServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CostandUsageReportService

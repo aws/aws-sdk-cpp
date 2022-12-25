@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HttpEndpointDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API HttpEndpointDescription
+  class HttpEndpointDescription
   {
   public:
-    HttpEndpointDescription();
-    HttpEndpointDescription(Aws::Utils::Json::JsonView jsonValue);
-    HttpEndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API HttpEndpointDescription();
+    AWS_FIREHOSE_API HttpEndpointDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API HttpEndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

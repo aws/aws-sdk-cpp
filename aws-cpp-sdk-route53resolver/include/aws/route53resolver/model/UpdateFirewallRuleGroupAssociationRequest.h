@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationRequest : public Route53ResolverRequest
+  class UpdateFirewallRuleGroupAssociationRequest : public Route53ResolverRequest
   {
   public:
-    UpdateFirewallRuleGroupAssociationRequest();
+    AWS_ROUTE53RESOLVER_API UpdateFirewallRuleGroupAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFirewallRuleGroupAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -211,16 +211,16 @@ namespace Model
   private:
 
     Aws::String m_firewallRuleGroupAssociationId;
-    bool m_firewallRuleGroupAssociationIdHasBeenSet;
+    bool m_firewallRuleGroupAssociationIdHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     MutationProtectionStatus m_mutationProtection;
-    bool m_mutationProtectionHasBeenSet;
+    bool m_mutationProtectionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetDestinationEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AssetDestinationEntry
+  class AssetDestinationEntry
   {
   public:
-    AssetDestinationEntry();
-    AssetDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
-    AssetDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AssetDestinationEntry();
+    AWS_DATAEXCHANGE_API AssetDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AssetDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline AssetDestinationEntry& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline AssetDestinationEntry& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket that is the destination for the asset.</p>
+     * <p>The Amazon S3 bucket that is the destination for the asset.</p>
      */
     inline AssetDestinationEntry& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

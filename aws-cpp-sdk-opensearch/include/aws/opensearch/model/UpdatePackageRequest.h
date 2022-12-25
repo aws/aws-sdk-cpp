@@ -18,15 +18,15 @@ namespace Model
 {
 
   /**
-   * <p> Container for request parameters to the <code> <a>UpdatePackage</a> </code>
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * <p>Container for request parameters to the <code>UpdatePackage</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API UpdatePackageRequest : public OpenSearchServiceRequest
+  class UpdatePackageRequest : public OpenSearchServiceRequest
   {
   public:
-    UpdatePackageRequest();
+    AWS_OPENSEARCHSERVICE_API UpdatePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -78,22 +78,34 @@ namespace Model
     inline UpdatePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
 
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline const PackageSource& GetPackageSource() const{ return m_packageSource; }
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline bool PackageSourceHasBeenSet() const { return m_packageSourceHasBeenSet; }
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline void SetPackageSource(const PackageSource& value) { m_packageSourceHasBeenSet = true; m_packageSource = value; }
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline void SetPackageSource(PackageSource&& value) { m_packageSourceHasBeenSet = true; m_packageSource = std::move(value); }
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline UpdatePackageRequest& WithPackageSource(const PackageSource& value) { SetPackageSource(value); return *this;}
 
-    
+    /**
+     * <p>Amazon S3 bucket and key for the package.</p>
+     */
     inline UpdatePackageRequest& WithPackageSource(PackageSource&& value) { SetPackageSource(std::move(value)); return *this;}
 
 
@@ -139,66 +151,66 @@ namespace Model
 
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline UpdatePackageRequest& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline UpdatePackageRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A commit message for the new version which is shown as part of
-     * <code>GetPackageVersionHistoryResponse</code>. </p>
+     * <p>Commit message for the updated file, which is shown as part of
+     * <code>GetPackageVersionHistoryResponse</code>.</p>
      */
     inline UpdatePackageRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
 
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
   };
 
 } // namespace Model

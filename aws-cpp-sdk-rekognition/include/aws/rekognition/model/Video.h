@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Video">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Video
+  class Video
   {
   public:
-    Video();
-    Video(Aws::Utils::Json::JsonView jsonValue);
-    Video& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Video();
+    AWS_REKOGNITION_API Video(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Video& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     S3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet;
+    bool m_s3ObjectHasBeenSet = false;
   };
 
 } // namespace Model

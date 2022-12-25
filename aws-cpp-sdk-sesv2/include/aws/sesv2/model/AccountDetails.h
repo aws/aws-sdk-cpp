@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/AccountDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API AccountDetails
+  class AccountDetails
   {
   public:
-    AccountDetails();
-    AccountDetails(Aws::Utils::Json::JsonView jsonValue);
-    AccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API AccountDetails();
+    AWS_SESV2_API AccountDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API AccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -312,22 +312,22 @@ namespace Model
   private:
 
     MailType m_mailType;
-    bool m_mailTypeHasBeenSet;
+    bool m_mailTypeHasBeenSet = false;
 
     Aws::String m_websiteURL;
-    bool m_websiteURLHasBeenSet;
+    bool m_websiteURLHasBeenSet = false;
 
     ContactLanguage m_contactLanguage;
-    bool m_contactLanguageHasBeenSet;
+    bool m_contactLanguageHasBeenSet = false;
 
     Aws::String m_useCaseDescription;
-    bool m_useCaseDescriptionHasBeenSet;
+    bool m_useCaseDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalContactEmailAddresses;
-    bool m_additionalContactEmailAddressesHasBeenSet;
+    bool m_additionalContactEmailAddressesHasBeenSet = false;
 
     ReviewDetails m_reviewDetails;
-    bool m_reviewDetailsHasBeenSet;
+    bool m_reviewDetailsHasBeenSet = false;
   };
 
 } // namespace Model

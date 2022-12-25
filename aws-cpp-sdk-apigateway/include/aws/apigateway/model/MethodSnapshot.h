@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodSnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API MethodSnapshot
+  class MethodSnapshot
   {
   public:
-    MethodSnapshot();
-    MethodSnapshot(Aws::Utils::Json::JsonView jsonValue);
-    MethodSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API MethodSnapshot();
+    AWS_APIGATEWAY_API MethodSnapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API MethodSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet;
+    bool m_authorizationTypeHasBeenSet = false;
 
     bool m_apiKeyRequired;
-    bool m_apiKeyRequiredHasBeenSet;
+    bool m_apiKeyRequiredHasBeenSet = false;
   };
 
 } // namespace Model

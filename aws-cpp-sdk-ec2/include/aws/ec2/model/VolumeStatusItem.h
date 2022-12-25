@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VolumeStatusItem
+  class VolumeStatusItem
   {
   public:
-    VolumeStatusItem();
-    VolumeStatusItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VolumeStatusItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusItem();
+    AWS_EC2_API VolumeStatusItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::Vector<VolumeStatusAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<VolumeStatusEvent> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     VolumeStatusInfo m_volumeStatus;
-    bool m_volumeStatusHasBeenSet;
+    bool m_volumeStatusHasBeenSet = false;
 
     Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
-    bool m_attachmentStatusesHasBeenSet;
+    bool m_attachmentStatusesHasBeenSet = false;
   };
 
 } // namespace Model

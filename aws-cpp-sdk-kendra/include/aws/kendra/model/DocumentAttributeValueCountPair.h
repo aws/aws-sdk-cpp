@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValueCountPair">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentAttributeValueCountPair
+  class DocumentAttributeValueCountPair
   {
   public:
-    DocumentAttributeValueCountPair();
-    DocumentAttributeValueCountPair(Aws::Utils::Json::JsonView jsonValue);
-    DocumentAttributeValueCountPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentAttributeValueCountPair();
+    AWS_KENDRA_API DocumentAttributeValueCountPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentAttributeValueCountPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,13 +204,13 @@ namespace Model
   private:
 
     DocumentAttributeValue m_documentAttributeValue;
-    bool m_documentAttributeValueHasBeenSet;
+    bool m_documentAttributeValueHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::Vector<FacetResult> m_facetResults;
-    bool m_facetResultsHasBeenSet;
+    bool m_facetResultsHasBeenSet = false;
   };
 
 } // namespace Model

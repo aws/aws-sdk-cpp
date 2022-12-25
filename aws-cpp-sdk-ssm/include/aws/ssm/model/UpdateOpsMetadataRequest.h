@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API UpdateOpsMetadataRequest : public SSMRequest
+  class UpdateOpsMetadataRequest : public SSMRequest
   {
   public:
-    UpdateOpsMetadataRequest();
+    AWS_SSM_API UpdateOpsMetadataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateOpsMetadata"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_opsMetadataArn;
-    bool m_opsMetadataArnHasBeenSet;
+    bool m_opsMetadataArnHasBeenSet = false;
 
     Aws::Map<Aws::String, MetadataValue> m_metadataToUpdate;
-    bool m_metadataToUpdateHasBeenSet;
+    bool m_metadataToUpdateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_keysToDelete;
-    bool m_keysToDeleteHasBeenSet;
+    bool m_keysToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

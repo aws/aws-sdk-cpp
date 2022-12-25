@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/IdentityResolutionJob">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API IdentityResolutionJob
+  class IdentityResolutionJob
   {
   public:
-    IdentityResolutionJob();
-    IdentityResolutionJob(Aws::Utils::Json::JsonView jsonValue);
-    IdentityResolutionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API IdentityResolutionJob();
+    AWS_CUSTOMERPROFILES_API IdentityResolutionJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API IdentityResolutionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -413,28 +413,28 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     IdentityResolutionJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_jobStartTime;
-    bool m_jobStartTimeHasBeenSet;
+    bool m_jobStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_jobEndTime;
-    bool m_jobEndTimeHasBeenSet;
+    bool m_jobEndTimeHasBeenSet = false;
 
     JobStats m_jobStats;
-    bool m_jobStatsHasBeenSet;
+    bool m_jobStatsHasBeenSet = false;
 
     ExportingLocation m_exportingLocation;
-    bool m_exportingLocationHasBeenSet;
+    bool m_exportingLocationHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,41 +28,60 @@ namespace Model
    * when a player tries to create a new game session. On receiving a
    * <code>CreateGameSession</code> request, GameLift checks that the player
    * (identified by <code>CreatorId</code>) has created fewer than game session limit
-   * in the specified time period.</p> <p>The resource creation limit policy is
-   * included in <a>FleetAttributes</a>.</p><p><h3>See Also:</h3>   <a
+   * in the specified time period.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ResourceCreationLimitPolicy
+  class ResourceCreationLimitPolicy
   {
   public:
-    ResourceCreationLimitPolicy();
-    ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy();
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The maximum number of game sessions that an individual can create during the
-     * policy period. </p>
+     * <p>A policy that puts limits on the number of game sessions that a player can
+     * create within a specified span of time. With this policy, you can control
+     * players' ability to consume available resources.</p> <p>The policy is evaluated
+     * when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player
+     * (identified by <code>CreatorId</code>) has created fewer than game session limit
+     * in the specified time period.</p>
      */
     inline int GetNewGameSessionsPerCreator() const{ return m_newGameSessionsPerCreator; }
 
     /**
-     * <p>The maximum number of game sessions that an individual can create during the
-     * policy period. </p>
+     * <p>A policy that puts limits on the number of game sessions that a player can
+     * create within a specified span of time. With this policy, you can control
+     * players' ability to consume available resources.</p> <p>The policy is evaluated
+     * when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player
+     * (identified by <code>CreatorId</code>) has created fewer than game session limit
+     * in the specified time period.</p>
      */
     inline bool NewGameSessionsPerCreatorHasBeenSet() const { return m_newGameSessionsPerCreatorHasBeenSet; }
 
     /**
-     * <p>The maximum number of game sessions that an individual can create during the
-     * policy period. </p>
+     * <p>A policy that puts limits on the number of game sessions that a player can
+     * create within a specified span of time. With this policy, you can control
+     * players' ability to consume available resources.</p> <p>The policy is evaluated
+     * when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player
+     * (identified by <code>CreatorId</code>) has created fewer than game session limit
+     * in the specified time period.</p>
      */
     inline void SetNewGameSessionsPerCreator(int value) { m_newGameSessionsPerCreatorHasBeenSet = true; m_newGameSessionsPerCreator = value; }
 
     /**
-     * <p>The maximum number of game sessions that an individual can create during the
-     * policy period. </p>
+     * <p>A policy that puts limits on the number of game sessions that a player can
+     * create within a specified span of time. With this policy, you can control
+     * players' ability to consume available resources.</p> <p>The policy is evaluated
+     * when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player
+     * (identified by <code>CreatorId</code>) has created fewer than game session limit
+     * in the specified time period.</p>
      */
     inline ResourceCreationLimitPolicy& WithNewGameSessionsPerCreator(int value) { SetNewGameSessionsPerCreator(value); return *this;}
 
@@ -90,10 +109,10 @@ namespace Model
   private:
 
     int m_newGameSessionsPerCreator;
-    bool m_newGameSessionsPerCreatorHasBeenSet;
+    bool m_newGameSessionsPerCreatorHasBeenSet = false;
 
     int m_policyPeriodInMinutes;
-    bool m_policyPeriodInMinutesHasBeenSet;
+    bool m_policyPeriodInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

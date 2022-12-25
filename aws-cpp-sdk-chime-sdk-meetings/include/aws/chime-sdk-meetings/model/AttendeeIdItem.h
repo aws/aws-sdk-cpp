@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AttendeeIdItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API AttendeeIdItem
+  class AttendeeIdItem
   {
   public:
-    AttendeeIdItem();
-    AttendeeIdItem(Aws::Utils::Json::JsonView jsonValue);
-    AttendeeIdItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API AttendeeIdItem();
+    AWS_CHIMESDKMEETINGS_API AttendeeIdItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API AttendeeIdItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_attendeeId;
-    bool m_attendeeIdHasBeenSet;
+    bool m_attendeeIdHasBeenSet = false;
   };
 
 } // namespace Model

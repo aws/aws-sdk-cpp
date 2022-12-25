@@ -24,36 +24,36 @@ namespace Synthetics
 {
 namespace Model
 {
-  class AWS_SYNTHETICS_API GetCanaryResult
+  class GetCanaryResult
   {
   public:
-    GetCanaryResult();
-    GetCanaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCanaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API GetCanaryResult();
+    AWS_SYNTHETICS_API GetCanaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API GetCanaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A strucure that contains the full information about the canary.</p>
+     * <p>A structure that contains the full information about the canary.</p>
      */
     inline const Canary& GetCanary() const{ return m_canary; }
 
     /**
-     * <p>A strucure that contains the full information about the canary.</p>
+     * <p>A structure that contains the full information about the canary.</p>
      */
     inline void SetCanary(const Canary& value) { m_canary = value; }
 
     /**
-     * <p>A strucure that contains the full information about the canary.</p>
+     * <p>A structure that contains the full information about the canary.</p>
      */
     inline void SetCanary(Canary&& value) { m_canary = std::move(value); }
 
     /**
-     * <p>A strucure that contains the full information about the canary.</p>
+     * <p>A structure that contains the full information about the canary.</p>
      */
     inline GetCanaryResult& WithCanary(const Canary& value) { SetCanary(value); return *this;}
 
     /**
-     * <p>A strucure that contains the full information about the canary.</p>
+     * <p>A structure that contains the full information about the canary.</p>
      */
     inline GetCanaryResult& WithCanary(Canary&& value) { SetCanary(std::move(value)); return *this;}
 

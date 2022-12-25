@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/WorldConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API WorldConfig
+  class WorldConfig
   {
   public:
-    WorldConfig();
-    WorldConfig(Aws::Utils::Json::JsonView jsonValue);
-    WorldConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API WorldConfig();
+    AWS_ROBOMAKER_API WorldConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API WorldConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_world;
-    bool m_worldHasBeenSet;
+    bool m_worldHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorDataSharingPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorDataSharingPreference
+  class StreamProcessorDataSharingPreference
   {
   public:
-    StreamProcessorDataSharingPreference();
-    StreamProcessorDataSharingPreference(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorDataSharingPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorDataSharingPreference();
+    AWS_REKOGNITION_API StreamProcessorDataSharingPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorDataSharingPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_optIn;
-    bool m_optInHasBeenSet;
+    bool m_optInHasBeenSet = false;
   };
 
 } // namespace Model

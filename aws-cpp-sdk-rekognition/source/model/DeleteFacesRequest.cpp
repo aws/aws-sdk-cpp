@@ -30,7 +30,7 @@ Aws::String DeleteFacesRequest::SerializePayload() const
 
   if(m_faceIdsHasBeenSet)
   {
-   Array<JsonValue> faceIdsJsonList(m_faceIds.size());
+   Aws::Utils::Array<JsonValue> faceIdsJsonList(m_faceIds.size());
    for(unsigned faceIdsIndex = 0; faceIdsIndex < faceIdsJsonList.GetLength(); ++faceIdsIndex)
    {
      faceIdsJsonList[faceIdsIndex].AsString(m_faceIds[faceIdsIndex]);

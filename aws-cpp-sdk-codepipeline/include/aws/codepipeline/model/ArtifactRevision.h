@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactRevision
+  class ArtifactRevision
   {
   public:
-    ArtifactRevision();
-    ArtifactRevision(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactRevision();
+    AWS_CODEPIPELINE_API ArtifactRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -346,22 +346,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_revisionChangeIdentifier;
-    bool m_revisionChangeIdentifierHasBeenSet;
+    bool m_revisionChangeIdentifierHasBeenSet = false;
 
     Aws::String m_revisionSummary;
-    bool m_revisionSummaryHasBeenSet;
+    bool m_revisionSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
-    bool m_createdHasBeenSet;
+    bool m_createdHasBeenSet = false;
 
     Aws::String m_revisionUrl;
-    bool m_revisionUrlHasBeenSet;
+    bool m_revisionUrlHasBeenSet = false;
   };
 
 } // namespace Model

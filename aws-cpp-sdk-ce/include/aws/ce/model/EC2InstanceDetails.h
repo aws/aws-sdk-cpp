@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2InstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EC2InstanceDetails
+  class EC2InstanceDetails
   {
   public:
-    EC2InstanceDetails();
-    EC2InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    EC2InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EC2InstanceDetails();
+    AWS_COSTEXPLORER_API EC2InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EC2InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -340,28 +340,28 @@ namespace Model
   private:
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet;
+    bool m_sizeFlexEligibleHasBeenSet = false;
   };
 
 } // namespace Model

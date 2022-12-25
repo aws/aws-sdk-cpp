@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API CreateExportTaskRequest : public CloudWatchLogsRequest
+  class CreateExportTaskRequest : public CloudWatchLogsRequest
   {
   public:
-    CreateExportTaskRequest();
+    AWS_CLOUDWATCHLOGS_API CreateExportTaskRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateExportTask"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -167,107 +167,111 @@ namespace Model
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
-     * than this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp earlier than this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
-     * than this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp earlier than this time are not exported.</p>
      */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
-     * than this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp earlier than this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
-     * than this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp earlier than this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithFrom(long long value) { SetFrom(value); return *this;}
 
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
-     * this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.</p> <p>You must specify a time
+     * that is not earlier than when this log group was created.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
-     * this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.</p> <p>You must specify a time
+     * that is not earlier than when this log group was created.</p>
      */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
-     * this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.</p> <p>You must specify a time
+     * that is not earlier than when this log group was created.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
-     * this time are not exported.</p>
+     * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.</p> <p>You must specify a time
+     * that is not earlier than when this log group was created.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
 
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
-     * same Amazon Web Services region.</p>
+     * same Amazon Web Services Region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -323,25 +327,25 @@ namespace Model
   private:
 
     Aws::String m_taskName;
-    bool m_taskNameHasBeenSet;
+    bool m_taskNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
 
     long long m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     long long m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPrefix;
-    bool m_destinationPrefixHasBeenSet;
+    bool m_destinationPrefixHasBeenSet = false;
   };
 
 } // namespace Model

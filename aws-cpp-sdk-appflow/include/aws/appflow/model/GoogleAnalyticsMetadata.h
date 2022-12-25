@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/GoogleAnalyticsMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API GoogleAnalyticsMetadata
+  class GoogleAnalyticsMetadata
   {
   public:
-    GoogleAnalyticsMetadata();
-    GoogleAnalyticsMetadata(Aws::Utils::Json::JsonView jsonValue);
-    GoogleAnalyticsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API GoogleAnalyticsMetadata();
+    AWS_APPFLOW_API GoogleAnalyticsMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API GoogleAnalyticsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_oAuthScopes;
-    bool m_oAuthScopesHasBeenSet;
+    bool m_oAuthScopesHasBeenSet = false;
   };
 
 } // namespace Model

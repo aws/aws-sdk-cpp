@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AuthenticationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API AuthenticationConfig
+  class AuthenticationConfig
   {
   public:
-    AuthenticationConfig();
-    AuthenticationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API AuthenticationConfig();
+    AWS_APPFLOW_API AuthenticationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API AuthenticationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,22 +198,22 @@ namespace Model
   private:
 
     bool m_isBasicAuthSupported;
-    bool m_isBasicAuthSupportedHasBeenSet;
+    bool m_isBasicAuthSupportedHasBeenSet = false;
 
     bool m_isApiKeyAuthSupported;
-    bool m_isApiKeyAuthSupportedHasBeenSet;
+    bool m_isApiKeyAuthSupportedHasBeenSet = false;
 
     bool m_isOAuth2Supported;
-    bool m_isOAuth2SupportedHasBeenSet;
+    bool m_isOAuth2SupportedHasBeenSet = false;
 
     bool m_isCustomAuthSupported;
-    bool m_isCustomAuthSupportedHasBeenSet;
+    bool m_isCustomAuthSupportedHasBeenSet = false;
 
     OAuth2Defaults m_oAuth2Defaults;
-    bool m_oAuth2DefaultsHasBeenSet;
+    bool m_oAuth2DefaultsHasBeenSet = false;
 
     Aws::Vector<CustomAuthConfig> m_customAuthConfigs;
-    bool m_customAuthConfigsHasBeenSet;
+    bool m_customAuthConfigsHasBeenSet = false;
   };
 
 } // namespace Model

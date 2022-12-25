@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingInput
+  class ProcessingInput
   {
   public:
-    ProcessingInput();
-    ProcessingInput(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingInput();
+    AWS_SAGEMAKER_API ProcessingInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,16 +181,16 @@ namespace Model
   private:
 
     Aws::String m_inputName;
-    bool m_inputNameHasBeenSet;
+    bool m_inputNameHasBeenSet = false;
 
     bool m_appManaged;
-    bool m_appManagedHasBeenSet;
+    bool m_appManagedHasBeenSet = false;
 
     ProcessingS3Input m_s3Input;
-    bool m_s3InputHasBeenSet;
+    bool m_s3InputHasBeenSet = false;
 
     DatasetDefinition m_datasetDefinition;
-    bool m_datasetDefinitionHasBeenSet;
+    bool m_datasetDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

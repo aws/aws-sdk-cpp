@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDHSM_API DescribeLunaClientRequest : public CloudHSMRequest
+  class DescribeLunaClientRequest : public CloudHSMRequest
   {
   public:
-    DescribeLunaClientRequest();
+    AWS_CLOUDHSM_API DescribeLunaClientRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeLunaClient"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_clientArn;
-    bool m_clientArnHasBeenSet;
+    bool m_clientArnHasBeenSet = false;
 
     Aws::String m_certificateFingerprint;
-    bool m_certificateFingerprintHasBeenSet;
+    bool m_certificateFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

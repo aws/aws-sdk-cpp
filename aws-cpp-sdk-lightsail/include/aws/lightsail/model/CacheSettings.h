@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CacheSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API CacheSettings
+  class CacheSettings
   {
   public:
-    CacheSettings();
-    CacheSettings(Aws::Utils::Json::JsonView jsonValue);
-    CacheSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API CacheSettings();
+    AWS_LIGHTSAIL_API CacheSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API CacheSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -490,28 +490,28 @@ namespace Model
   private:
 
     long long m_defaultTTL;
-    bool m_defaultTTLHasBeenSet;
+    bool m_defaultTTLHasBeenSet = false;
 
     long long m_minimumTTL;
-    bool m_minimumTTLHasBeenSet;
+    bool m_minimumTTLHasBeenSet = false;
 
     long long m_maximumTTL;
-    bool m_maximumTTLHasBeenSet;
+    bool m_maximumTTLHasBeenSet = false;
 
     Aws::String m_allowedHTTPMethods;
-    bool m_allowedHTTPMethodsHasBeenSet;
+    bool m_allowedHTTPMethodsHasBeenSet = false;
 
     Aws::String m_cachedHTTPMethods;
-    bool m_cachedHTTPMethodsHasBeenSet;
+    bool m_cachedHTTPMethodsHasBeenSet = false;
 
     CookieObject m_forwardedCookies;
-    bool m_forwardedCookiesHasBeenSet;
+    bool m_forwardedCookiesHasBeenSet = false;
 
     HeaderObject m_forwardedHeaders;
-    bool m_forwardedHeadersHasBeenSet;
+    bool m_forwardedHeadersHasBeenSet = false;
 
     QueryStringObject m_forwardedQueryStrings;
-    bool m_forwardedQueryStringsHasBeenSet;
+    bool m_forwardedQueryStringsHasBeenSet = false;
   };
 
 } // namespace Model

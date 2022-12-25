@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API CreateContactMethodRequest : public LightsailRequest
+  class CreateContactMethodRequest : public LightsailRequest
   {
   public:
-    CreateContactMethodRequest();
+    AWS_LIGHTSAIL_API CreateContactMethodRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateContactMethod"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -255,10 +255,10 @@ namespace Model
   private:
 
     ContactProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_contactEndpoint;
-    bool m_contactEndpointHasBeenSet;
+    bool m_contactEndpointHasBeenSet = false;
   };
 
 } // namespace Model

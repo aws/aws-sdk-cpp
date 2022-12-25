@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Trust
+  class Trust
   {
   public:
-    Trust();
-    Trust(Aws::Utils::Json::JsonView jsonValue);
-    Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Trust();
+    AWS_DIRECTORYSERVICE_API Trust(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -442,37 +442,37 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_trustId;
-    bool m_trustIdHasBeenSet;
+    bool m_trustIdHasBeenSet = false;
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
 
     TrustType m_trustType;
-    bool m_trustTypeHasBeenSet;
+    bool m_trustTypeHasBeenSet = false;
 
     TrustDirection m_trustDirection;
-    bool m_trustDirectionHasBeenSet;
+    bool m_trustDirectionHasBeenSet = false;
 
     TrustState m_trustState;
-    bool m_trustStateHasBeenSet;
+    bool m_trustStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDateTime;
-    bool m_createdDateTimeHasBeenSet;
+    bool m_createdDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateLastUpdatedDateTime;
-    bool m_stateLastUpdatedDateTimeHasBeenSet;
+    bool m_stateLastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_trustStateReason;
-    bool m_trustStateReasonHasBeenSet;
+    bool m_trustStateReasonHasBeenSet = false;
 
     SelectiveAuth m_selectiveAuth;
-    bool m_selectiveAuthHasBeenSet;
+    bool m_selectiveAuthHasBeenSet = false;
   };
 
 } // namespace Model

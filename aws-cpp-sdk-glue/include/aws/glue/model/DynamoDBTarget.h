@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamoDBTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DynamoDBTarget
+  class DynamoDBTarget
   {
   public:
-    DynamoDBTarget();
-    DynamoDBTarget(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DynamoDBTarget();
+    AWS_GLUE_API DynamoDBTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DynamoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     bool m_scanAll;
-    bool m_scanAllHasBeenSet;
+    bool m_scanAllHasBeenSet = false;
 
     double m_scanRate;
-    bool m_scanRateHasBeenSet;
+    bool m_scanRateHasBeenSet = false;
   };
 
 } // namespace Model

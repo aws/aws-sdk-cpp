@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API KinesisStreamsInput
+  class KinesisStreamsInput
   {
   public:
-    KinesisStreamsInput();
-    KinesisStreamsInput(Aws::Utils::Json::JsonView jsonValue);
-    KinesisStreamsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInput();
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
   };
 
 } // namespace Model

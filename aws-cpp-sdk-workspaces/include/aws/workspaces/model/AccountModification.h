@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AccountModification">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API AccountModification
+  class AccountModification
   {
   public:
-    AccountModification();
-    AccountModification(Aws::Utils::Json::JsonView jsonValue);
-    AccountModification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API AccountModification();
+    AWS_WORKSPACES_API AccountModification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API AccountModification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,22 +289,22 @@ namespace Model
   private:
 
     DedicatedTenancyModificationStateEnum m_modificationState;
-    bool m_modificationStateHasBeenSet;
+    bool m_modificationStateHasBeenSet = false;
 
     DedicatedTenancySupportResultEnum m_dedicatedTenancySupport;
-    bool m_dedicatedTenancySupportHasBeenSet;
+    bool m_dedicatedTenancySupportHasBeenSet = false;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;
-    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet;
+    bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

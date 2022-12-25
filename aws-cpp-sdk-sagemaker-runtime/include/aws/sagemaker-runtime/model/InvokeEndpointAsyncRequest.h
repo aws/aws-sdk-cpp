@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest
+  class InvokeEndpointAsyncRequest : public SageMakerRuntimeRequest
   {
   public:
-    InvokeEndpointAsyncRequest();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeEndpointAsync"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKERRUNTIME_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKERRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -451,25 +451,25 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     Aws::String m_customAttributes;
-    bool m_customAttributesHasBeenSet;
+    bool m_customAttributesHasBeenSet = false;
 
     Aws::String m_inferenceId;
-    bool m_inferenceIdHasBeenSet;
+    bool m_inferenceIdHasBeenSet = false;
 
     Aws::String m_inputLocation;
-    bool m_inputLocationHasBeenSet;
+    bool m_inputLocationHasBeenSet = false;
 
     int m_requestTTLSeconds;
-    bool m_requestTTLSecondsHasBeenSet;
+    bool m_requestTTLSecondsHasBeenSet = false;
   };
 
 } // namespace Model

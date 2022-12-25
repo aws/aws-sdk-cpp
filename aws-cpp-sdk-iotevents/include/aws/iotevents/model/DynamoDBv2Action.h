@@ -59,13 +59,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DynamoDBv2Action">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API DynamoDBv2Action
+  class DynamoDBv2Action
   {
   public:
-    DynamoDBv2Action();
-    DynamoDBv2Action(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBv2Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API DynamoDBv2Action();
+    AWS_IOTEVENTS_API DynamoDBv2Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API DynamoDBv2Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

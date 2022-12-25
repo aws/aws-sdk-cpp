@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstanceMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API RebootDBInstanceRequest : public DocDBRequest
+  class RebootDBInstanceRequest : public DocDBRequest
   {
   public:
-    RebootDBInstanceRequest();
+    AWS_DOCDB_API RebootDBInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RebootDBInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DOCDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     bool m_forceFailover;
-    bool m_forceFailoverHasBeenSet;
+    bool m_forceFailoverHasBeenSet = false;
   };
 
 } // namespace Model

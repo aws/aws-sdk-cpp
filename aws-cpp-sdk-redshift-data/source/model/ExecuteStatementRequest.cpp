@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ExecuteStatementRequest::ExecuteStatementRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_clusterIdentifierHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
@@ -21,13 +23,20 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_sqlHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_withEvent(false),
-    m_withEventHasBeenSet(false)
+    m_withEventHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
 Aws::String ExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
 
   if(m_clusterIdentifierHasBeenSet)
   {
@@ -49,7 +58,7 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
 
   if(m_parametersHasBeenSet)
   {
-   Array<JsonValue> parametersJsonList(m_parameters.size());
+   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
    {
      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
@@ -79,6 +88,12 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   if(m_withEventHasBeenSet)
   {
    payload.WithBool("WithEvent", m_withEvent);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

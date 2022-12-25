@@ -37,7 +37,7 @@ Aws::String GetReservationUtilizationRequest::SerializePayload() const
 
   if(m_groupByHasBeenSet)
   {
-   Array<JsonValue> groupByJsonList(m_groupBy.size());
+   Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
    for(unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex)
    {
      groupByJsonList[groupByIndex].AsObject(m_groupBy[groupByIndex].Jsonize());

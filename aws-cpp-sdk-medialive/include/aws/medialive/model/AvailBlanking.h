@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AvailBlanking">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AvailBlanking
+  class AvailBlanking
   {
   public:
-    AvailBlanking();
-    AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
-    AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AvailBlanking();
+    AWS_MEDIALIVE_API AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     InputLocation m_availBlankingImage;
-    bool m_availBlankingImageHasBeenSet;
+    bool m_availBlankingImageHasBeenSet = false;
 
     AvailBlankingState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

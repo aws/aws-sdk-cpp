@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FrameCaptureSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API FrameCaptureSettings
+  class FrameCaptureSettings
   {
   public:
-    FrameCaptureSettings();
-    FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API FrameCaptureSettings();
+    AWS_MEDIACONVERT_API FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,16 +158,16 @@ namespace Model
   private:
 
     int m_framerateDenominator;
-    bool m_framerateDenominatorHasBeenSet;
+    bool m_framerateDenominatorHasBeenSet = false;
 
     int m_framerateNumerator;
-    bool m_framerateNumeratorHasBeenSet;
+    bool m_framerateNumeratorHasBeenSet = false;
 
     int m_maxCaptures;
-    bool m_maxCapturesHasBeenSet;
+    bool m_maxCapturesHasBeenSet = false;
 
     int m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
   };
 
 } // namespace Model

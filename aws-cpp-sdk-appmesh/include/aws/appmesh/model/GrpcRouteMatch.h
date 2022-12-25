@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRouteMatch
+  class GrpcRouteMatch
   {
   public:
-    GrpcRouteMatch();
-    GrpcRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRouteMatch();
+    AWS_APPMESH_API GrpcRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,6 +131,27 @@ namespace Model
 
 
     /**
+     * <p>The port number to match on.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>The port number to match on.</p>
+     */
+    inline GrpcRouteMatch& WithPort(int value) { SetPort(value); return *this;}
+
+
+    /**
      * <p>The fully qualified domain name for the service to match from the
      * request.</p>
      */
@@ -181,13 +202,16 @@ namespace Model
   private:
 
     Aws::Vector<GrpcRouteMetadata> m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_methodName;
-    bool m_methodNameHasBeenSet;
+    bool m_methodNameHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

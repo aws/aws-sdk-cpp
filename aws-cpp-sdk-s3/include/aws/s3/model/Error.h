@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Error">AWS API
    * Reference</a></p>
    */
-  class AWS_S3_API Error
+  class Error
   {
   public:
-    Error();
-    Error(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Error& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API Error();
+    AWS_S3_API Error(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API Error& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -3115,16 +3115,16 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

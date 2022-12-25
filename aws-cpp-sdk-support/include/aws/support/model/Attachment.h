@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Attachment">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API Attachment
+  class Attachment
   {
   public:
-    Attachment();
-    Attachment(Aws::Utils::Json::JsonView jsonValue);
-    Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API Attachment();
+    AWS_SUPPORT_API Attachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

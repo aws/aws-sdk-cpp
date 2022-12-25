@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SsmControls">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API SsmControls
+  class SsmControls
   {
   public:
-    SsmControls();
-    SsmControls(Aws::Utils::Json::JsonView jsonValue);
-    SsmControls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API SsmControls();
+    AWS_CONFIGSERVICE_API SsmControls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API SsmControls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     int m_concurrentExecutionRatePercentage;
-    bool m_concurrentExecutionRatePercentageHasBeenSet;
+    bool m_concurrentExecutionRatePercentageHasBeenSet = false;
 
     int m_errorPercentage;
-    bool m_errorPercentageHasBeenSet;
+    bool m_errorPercentageHasBeenSet = false;
   };
 
 } // namespace Model

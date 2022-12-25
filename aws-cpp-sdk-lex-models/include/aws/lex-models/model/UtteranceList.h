@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UtteranceList">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API UtteranceList
+  class UtteranceList
   {
   public:
-    UtteranceList();
-    UtteranceList(Aws::Utils::Json::JsonView jsonValue);
-    UtteranceList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceList();
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Vector<UtteranceData> m_utterances;
-    bool m_utterancesHasBeenSet;
+    bool m_utterancesHasBeenSet = false;
   };
 
 } // namespace Model

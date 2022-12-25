@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterResizeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo
+  class AwsRedshiftClusterResizeInfo
   {
   public:
-    AwsRedshiftClusterResizeInfo();
-    AwsRedshiftClusterResizeInfo(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterResizeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo();
+    AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterResizeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     bool m_allowCancelResize;
-    bool m_allowCancelResizeHasBeenSet;
+    bool m_allowCancelResizeHasBeenSet = false;
 
     Aws::String m_resizeType;
-    bool m_resizeTypeHasBeenSet;
+    bool m_resizeTypeHasBeenSet = false;
   };
 
 } // namespace Model

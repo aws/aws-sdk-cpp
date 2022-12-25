@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsAdditionalManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsAdditionalManifest
+  class HlsAdditionalManifest
   {
   public:
-    HlsAdditionalManifest();
-    HlsAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
-    HlsAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsAdditionalManifest();
+    AWS_MEDIACONVERT_API HlsAdditionalManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsAdditionalManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,10 +194,10 @@ namespace Model
   private:
 
     Aws::String m_manifestNameModifier;
-    bool m_manifestNameModifierHasBeenSet;
+    bool m_manifestNameModifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedOutputs;
-    bool m_selectedOutputsHasBeenSet;
+    bool m_selectedOutputsHasBeenSet = false;
   };
 
 } // namespace Model

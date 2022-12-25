@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API ImportSourceCredentialsRequest : public CodeBuildRequest
+  class ImportSourceCredentialsRequest : public CodeBuildRequest
   {
   public:
-    ImportSourceCredentialsRequest();
+    AWS_CODEBUILD_API ImportSourceCredentialsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportSourceCredentials"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -239,19 +239,19 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     ServerType m_serverType;
-    bool m_serverTypeHasBeenSet;
+    bool m_serverTypeHasBeenSet = false;
 
     AuthType m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     bool m_shouldOverwrite;
-    bool m_shouldOverwriteHasBeenSet;
+    bool m_shouldOverwriteHasBeenSet = false;
   };
 
 } // namespace Model

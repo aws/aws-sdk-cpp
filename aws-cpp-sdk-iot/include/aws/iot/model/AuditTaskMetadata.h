@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditTaskMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditTaskMetadata
+  class AuditTaskMetadata
   {
   public:
-    AuditTaskMetadata();
-    AuditTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AuditTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditTaskMetadata();
+    AWS_IOT_API AuditTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_taskId;
-    bool m_taskIdHasBeenSet;
+    bool m_taskIdHasBeenSet = false;
 
     AuditTaskStatus m_taskStatus;
-    bool m_taskStatusHasBeenSet;
+    bool m_taskStatusHasBeenSet = false;
 
     AuditTaskType m_taskType;
-    bool m_taskTypeHasBeenSet;
+    bool m_taskTypeHasBeenSet = false;
   };
 
 } // namespace Model

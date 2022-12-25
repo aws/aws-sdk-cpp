@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceSummaryByResourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType
+  class ComplianceSummaryByResourceType
   {
   public:
-    ComplianceSummaryByResourceType();
-    ComplianceSummaryByResourceType(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceSummaryByResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType();
+    AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ComplianceSummaryByResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ComplianceSummary m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
   };
 
 } // namespace Model

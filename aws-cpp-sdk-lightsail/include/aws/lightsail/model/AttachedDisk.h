@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachedDisk">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AttachedDisk
+  class AttachedDisk
   {
   public:
-    AttachedDisk();
-    AttachedDisk(Aws::Utils::Json::JsonView jsonValue);
-    AttachedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AttachedDisk();
+    AWS_LIGHTSAIL_API AttachedDisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AttachedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

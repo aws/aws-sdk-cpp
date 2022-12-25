@@ -5,349 +5,127 @@
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
-#include <aws/codedeploy/CodeDeployErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/codedeploy/model/BatchGetApplicationRevisionsResult.h>
-#include <aws/codedeploy/model/BatchGetApplicationsResult.h>
-#include <aws/codedeploy/model/BatchGetDeploymentGroupsResult.h>
-#include <aws/codedeploy/model/BatchGetDeploymentTargetsResult.h>
-#include <aws/codedeploy/model/BatchGetDeploymentsResult.h>
-#include <aws/codedeploy/model/BatchGetOnPremisesInstancesResult.h>
-#include <aws/codedeploy/model/CreateApplicationResult.h>
-#include <aws/codedeploy/model/CreateDeploymentResult.h>
-#include <aws/codedeploy/model/CreateDeploymentConfigResult.h>
-#include <aws/codedeploy/model/CreateDeploymentGroupResult.h>
-#include <aws/codedeploy/model/DeleteDeploymentGroupResult.h>
-#include <aws/codedeploy/model/DeleteGitHubAccountTokenResult.h>
-#include <aws/codedeploy/model/DeleteResourcesByExternalIdResult.h>
-#include <aws/codedeploy/model/GetApplicationResult.h>
-#include <aws/codedeploy/model/GetApplicationRevisionResult.h>
-#include <aws/codedeploy/model/GetDeploymentResult.h>
-#include <aws/codedeploy/model/GetDeploymentConfigResult.h>
-#include <aws/codedeploy/model/GetDeploymentGroupResult.h>
-#include <aws/codedeploy/model/GetDeploymentTargetResult.h>
-#include <aws/codedeploy/model/GetOnPremisesInstanceResult.h>
-#include <aws/codedeploy/model/ListApplicationRevisionsResult.h>
-#include <aws/codedeploy/model/ListApplicationsResult.h>
-#include <aws/codedeploy/model/ListDeploymentConfigsResult.h>
-#include <aws/codedeploy/model/ListDeploymentGroupsResult.h>
-#include <aws/codedeploy/model/ListDeploymentTargetsResult.h>
-#include <aws/codedeploy/model/ListDeploymentsResult.h>
-#include <aws/codedeploy/model/ListGitHubAccountTokenNamesResult.h>
-#include <aws/codedeploy/model/ListOnPremisesInstancesResult.h>
-#include <aws/codedeploy/model/ListTagsForResourceResult.h>
-#include <aws/codedeploy/model/PutLifecycleEventHookExecutionStatusResult.h>
-#include <aws/codedeploy/model/StopDeploymentResult.h>
-#include <aws/codedeploy/model/TagResourceResult.h>
-#include <aws/codedeploy/model/UntagResourceResult.h>
-#include <aws/codedeploy/model/UpdateDeploymentGroupResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/codedeploy/CodeDeployServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CodeDeploy
 {
-
-namespace Model
-{
-        class AddTagsToOnPremisesInstancesRequest;
-        class BatchGetApplicationRevisionsRequest;
-        class BatchGetApplicationsRequest;
-        class BatchGetDeploymentGroupsRequest;
-        class BatchGetDeploymentTargetsRequest;
-        class BatchGetDeploymentsRequest;
-        class BatchGetOnPremisesInstancesRequest;
-        class ContinueDeploymentRequest;
-        class CreateApplicationRequest;
-        class CreateDeploymentRequest;
-        class CreateDeploymentConfigRequest;
-        class CreateDeploymentGroupRequest;
-        class DeleteApplicationRequest;
-        class DeleteDeploymentConfigRequest;
-        class DeleteDeploymentGroupRequest;
-        class DeleteGitHubAccountTokenRequest;
-        class DeleteResourcesByExternalIdRequest;
-        class DeregisterOnPremisesInstanceRequest;
-        class GetApplicationRequest;
-        class GetApplicationRevisionRequest;
-        class GetDeploymentRequest;
-        class GetDeploymentConfigRequest;
-        class GetDeploymentGroupRequest;
-        class GetDeploymentTargetRequest;
-        class GetOnPremisesInstanceRequest;
-        class ListApplicationRevisionsRequest;
-        class ListApplicationsRequest;
-        class ListDeploymentConfigsRequest;
-        class ListDeploymentGroupsRequest;
-        class ListDeploymentTargetsRequest;
-        class ListDeploymentsRequest;
-        class ListGitHubAccountTokenNamesRequest;
-        class ListOnPremisesInstancesRequest;
-        class ListTagsForResourceRequest;
-        class PutLifecycleEventHookExecutionStatusRequest;
-        class RegisterApplicationRevisionRequest;
-        class RegisterOnPremisesInstanceRequest;
-        class RemoveTagsFromOnPremisesInstancesRequest;
-        class StopDeploymentRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-        class UpdateDeploymentGroupRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> AddTagsToOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<BatchGetApplicationRevisionsResult, CodeDeployError> BatchGetApplicationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetApplicationsResult, CodeDeployError> BatchGetApplicationsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentGroupsResult, CodeDeployError> BatchGetDeploymentGroupsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentTargetsResult, CodeDeployError> BatchGetDeploymentTargetsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetDeploymentsResult, CodeDeployError> BatchGetDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<BatchGetOnPremisesInstancesResult, CodeDeployError> BatchGetOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> ContinueDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, CodeDeployError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, CodeDeployError> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentConfigResult, CodeDeployError> CreateDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentGroupResult, CodeDeployError> CreateDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeleteDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeploymentGroupResult, CodeDeployError> DeleteDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteGitHubAccountTokenResult, CodeDeployError> DeleteGitHubAccountTokenOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourcesByExternalIdResult, CodeDeployError> DeleteResourcesByExternalIdOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> DeregisterOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, CodeDeployError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationRevisionResult, CodeDeployError> GetApplicationRevisionOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, CodeDeployError> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentConfigResult, CodeDeployError> GetDeploymentConfigOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentGroupResult, CodeDeployError> GetDeploymentGroupOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentTargetResult, CodeDeployError> GetDeploymentTargetOutcome;
-        typedef Aws::Utils::Outcome<GetOnPremisesInstanceResult, CodeDeployError> GetOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationRevisionsResult, CodeDeployError> ListApplicationRevisionsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, CodeDeployError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentConfigsResult, CodeDeployError> ListDeploymentConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentGroupsResult, CodeDeployError> ListDeploymentGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentTargetsResult, CodeDeployError> ListDeploymentTargetsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, CodeDeployError> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListGitHubAccountTokenNamesResult, CodeDeployError> ListGitHubAccountTokenNamesOutcome;
-        typedef Aws::Utils::Outcome<ListOnPremisesInstancesResult, CodeDeployError> ListOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeDeployError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutLifecycleEventHookExecutionStatusResult, CodeDeployError> PutLifecycleEventHookExecutionStatusOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RegisterApplicationRevisionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RegisterOnPremisesInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> RemoveTagsFromOnPremisesInstancesOutcome;
-        typedef Aws::Utils::Outcome<StopDeploymentResult, CodeDeployError> StopDeploymentOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CodeDeployError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CodeDeployError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CodeDeployError> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeploymentGroupResult, CodeDeployError> UpdateDeploymentGroupOutcome;
-
-        typedef std::future<AddTagsToOnPremisesInstancesOutcome> AddTagsToOnPremisesInstancesOutcomeCallable;
-        typedef std::future<BatchGetApplicationRevisionsOutcome> BatchGetApplicationRevisionsOutcomeCallable;
-        typedef std::future<BatchGetApplicationsOutcome> BatchGetApplicationsOutcomeCallable;
-        typedef std::future<BatchGetDeploymentGroupsOutcome> BatchGetDeploymentGroupsOutcomeCallable;
-        typedef std::future<BatchGetDeploymentTargetsOutcome> BatchGetDeploymentTargetsOutcomeCallable;
-        typedef std::future<BatchGetDeploymentsOutcome> BatchGetDeploymentsOutcomeCallable;
-        typedef std::future<BatchGetOnPremisesInstancesOutcome> BatchGetOnPremisesInstancesOutcomeCallable;
-        typedef std::future<ContinueDeploymentOutcome> ContinueDeploymentOutcomeCallable;
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
-        typedef std::future<CreateDeploymentConfigOutcome> CreateDeploymentConfigOutcomeCallable;
-        typedef std::future<CreateDeploymentGroupOutcome> CreateDeploymentGroupOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteDeploymentConfigOutcome> DeleteDeploymentConfigOutcomeCallable;
-        typedef std::future<DeleteDeploymentGroupOutcome> DeleteDeploymentGroupOutcomeCallable;
-        typedef std::future<DeleteGitHubAccountTokenOutcome> DeleteGitHubAccountTokenOutcomeCallable;
-        typedef std::future<DeleteResourcesByExternalIdOutcome> DeleteResourcesByExternalIdOutcomeCallable;
-        typedef std::future<DeregisterOnPremisesInstanceOutcome> DeregisterOnPremisesInstanceOutcomeCallable;
-        typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetApplicationRevisionOutcome> GetApplicationRevisionOutcomeCallable;
-        typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
-        typedef std::future<GetDeploymentConfigOutcome> GetDeploymentConfigOutcomeCallable;
-        typedef std::future<GetDeploymentGroupOutcome> GetDeploymentGroupOutcomeCallable;
-        typedef std::future<GetDeploymentTargetOutcome> GetDeploymentTargetOutcomeCallable;
-        typedef std::future<GetOnPremisesInstanceOutcome> GetOnPremisesInstanceOutcomeCallable;
-        typedef std::future<ListApplicationRevisionsOutcome> ListApplicationRevisionsOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListDeploymentConfigsOutcome> ListDeploymentConfigsOutcomeCallable;
-        typedef std::future<ListDeploymentGroupsOutcome> ListDeploymentGroupsOutcomeCallable;
-        typedef std::future<ListDeploymentTargetsOutcome> ListDeploymentTargetsOutcomeCallable;
-        typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
-        typedef std::future<ListGitHubAccountTokenNamesOutcome> ListGitHubAccountTokenNamesOutcomeCallable;
-        typedef std::future<ListOnPremisesInstancesOutcome> ListOnPremisesInstancesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutLifecycleEventHookExecutionStatusOutcome> PutLifecycleEventHookExecutionStatusOutcomeCallable;
-        typedef std::future<RegisterApplicationRevisionOutcome> RegisterApplicationRevisionOutcomeCallable;
-        typedef std::future<RegisterOnPremisesInstanceOutcome> RegisterOnPremisesInstanceOutcomeCallable;
-        typedef std::future<RemoveTagsFromOnPremisesInstancesOutcome> RemoveTagsFromOnPremisesInstancesOutcomeCallable;
-        typedef std::future<StopDeploymentOutcome> StopDeploymentOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-        typedef std::future<UpdateDeploymentGroupOutcome> UpdateDeploymentGroupOutcomeCallable;
-} // namespace Model
-
-  class CodeDeployClient;
-
-    typedef std::function<void(const CodeDeployClient*, const Model::AddTagsToOnPremisesInstancesRequest&, const Model::AddTagsToOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToOnPremisesInstancesResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationRevisionsRequest&, const Model::BatchGetApplicationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationRevisionsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetApplicationsRequest&, const Model::BatchGetApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetApplicationsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentGroupsRequest&, const Model::BatchGetDeploymentGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentGroupsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentTargetsRequest&, const Model::BatchGetDeploymentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentTargetsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetDeploymentsRequest&, const Model::BatchGetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::BatchGetOnPremisesInstancesRequest&, const Model::BatchGetOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetOnPremisesInstancesResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ContinueDeploymentRequest&, const Model::ContinueDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContinueDeploymentResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::CreateDeploymentConfigRequest&, const Model::CreateDeploymentConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentConfigResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::CreateDeploymentGroupRequest&, const Model::CreateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeleteDeploymentConfigRequest&, const Model::DeleteDeploymentConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentConfigResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeleteDeploymentGroupRequest&, const Model::DeleteDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeleteGitHubAccountTokenRequest&, const Model::DeleteGitHubAccountTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGitHubAccountTokenResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeleteResourcesByExternalIdRequest&, const Model::DeleteResourcesByExternalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcesByExternalIdResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::DeregisterOnPremisesInstanceRequest&, const Model::DeregisterOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterOnPremisesInstanceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetApplicationRevisionRequest&, const Model::GetApplicationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationRevisionResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetDeploymentConfigRequest&, const Model::GetDeploymentConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentConfigResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetDeploymentGroupRequest&, const Model::GetDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentGroupResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetDeploymentTargetRequest&, const Model::GetDeploymentTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentTargetResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::GetOnPremisesInstanceRequest&, const Model::GetOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOnPremisesInstanceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListApplicationRevisionsRequest&, const Model::ListApplicationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationRevisionsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentConfigsRequest&, const Model::ListDeploymentConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentConfigsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentGroupsRequest&, const Model::ListDeploymentGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentGroupsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentTargetsRequest&, const Model::ListDeploymentTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentTargetsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListGitHubAccountTokenNamesRequest&, const Model::ListGitHubAccountTokenNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGitHubAccountTokenNamesResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListOnPremisesInstancesRequest&, const Model::ListOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOnPremisesInstancesResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::PutLifecycleEventHookExecutionStatusRequest&, const Model::PutLifecycleEventHookExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleEventHookExecutionStatusResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::RegisterApplicationRevisionRequest&, const Model::RegisterApplicationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterApplicationRevisionResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::RegisterOnPremisesInstanceRequest&, const Model::RegisterOnPremisesInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOnPremisesInstanceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::RemoveTagsFromOnPremisesInstancesRequest&, const Model::RemoveTagsFromOnPremisesInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromOnPremisesInstancesResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeploymentResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-    typedef std::function<void(const CodeDeployClient*, const Model::UpdateDeploymentGroupRequest&, const Model::UpdateDeploymentGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentGroupResponseReceivedHandler;
-
   /**
-   * <fullname>AWS CodeDeploy</fullname> <p>AWS CodeDeploy is a deployment service
-   * that automates application deployments to Amazon EC2 instances, on-premises
-   * instances running in your own facility, serverless AWS Lambda functions, or
-   * applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited
-   * variety of application content, such as an updated Lambda function, updated
-   * applications in an Amazon ECS service, code, web and configuration files,
-   * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can
-   * deploy application content stored in Amazon S3 buckets, GitHub repositories, or
-   * Bitbucket repositories. You do not need to make changes to your existing code
-   * before you can use AWS CodeDeploy.</p> <p>AWS CodeDeploy makes it easier for you
-   * to rapidly release new features, helps you avoid downtime during application
-   * deployment, and handles the complexity of updating your applications, without
-   * many of the risks associated with error-prone manual deployments.</p> <p> <b>AWS
-   * CodeDeploy Components</b> </p> <p>Use the information in this guide to help you
-   * work with the following AWS CodeDeploy components:</p> <ul> <li> <p>
-   * <b>Application</b>: A name that uniquely identifies the application you want to
-   * deploy. AWS CodeDeploy uses this name, which functions as a container, to ensure
-   * the correct combination of revision, deployment configuration, and deployment
-   * group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment
-   * group</b>: A set of individual instances, CodeDeploy Lambda deployment
-   * configuration settings, or an Amazon ECS service and network details. A Lambda
-   * deployment group specifies how to route traffic to a new version of a Lambda
-   * function. An Amazon ECS deployment group specifies the service created in Amazon
-   * ECS to deploy, a load balancer, and a listener to reroute production traffic to
-   * an updated containerized application. An EC2/On-premises deployment group
-   * contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto
-   * Scaling groups, or both. All deployment groups can specify optional trigger,
-   * alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment
+   * <p>CodeDeploy is a deployment service that automates application deployments to
+   * Amazon EC2 instances, on-premises instances running in your own facility,
+   * serverless Lambda functions, or applications in an Amazon ECS service.</p>
+   * <p>You can deploy a nearly unlimited variety of application content, such as an
+   * updated Lambda function, updated applications in an Amazon ECS service, code,
+   * web and configuration files, executables, packages, scripts, multimedia files,
+   * and so on. CodeDeploy can deploy application content stored in Amazon S3
+   * buckets, GitHub repositories, or Bitbucket repositories. You do not need to make
+   * changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy
+   * makes it easier for you to rapidly release new features, helps you avoid
+   * downtime during application deployment, and handles the complexity of updating
+   * your applications, without many of the risks associated with error-prone manual
+   * deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in
+   * this guide to help you work with the following CodeDeploy components:</p> <ul>
+   * <li> <p> <b>Application</b>: A name that uniquely identifies the application you
+   * want to deploy. CodeDeploy uses this name, which functions as a container, to
+   * ensure the correct combination of revision, deployment configuration, and
+   * deployment group are referenced during a deployment.</p> </li> <li> <p>
+   * <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda
+   * deployment configuration settings, or an Amazon ECS service and network details.
+   * A Lambda deployment group specifies how to route traffic to a new version of a
+   * Lambda function. An Amazon ECS deployment group specifies the service created in
+   * Amazon ECS to deploy, a load balancer, and a listener to reroute production
+   * traffic to an updated containerized application. An Amazon EC2/On-premises
+   * deployment group contains individually tagged instances, Amazon EC2 instances in
+   * Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify
+   * optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment
    * configuration</b>: A set of deployment rules and deployment success and failure
-   * conditions used by AWS CodeDeploy during a deployment.</p> </li> <li> <p>
+   * conditions used by CodeDeploy during a deployment.</p> </li> <li> <p>
    * <b>Deployment</b>: The process and the components used when updating a Lambda
    * function, a containerized application in an Amazon ECS service, or of installing
    * content on one or more instances. </p> </li> <li> <p> <b>Application
-   * revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that
-   * specifies the Lambda function to be updated and one or more functions to
-   * validate deployment lifecycle events. For an Amazon ECS deployment, this is an
-   * AppSpec file that specifies the Amazon ECS task definition, container, and port
-   * where production traffic is rerouted. For an EC2/On-premises deployment, this is
-   * an archive file that contains source content—source code, webpages, executable
+   * revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies
+   * the Lambda function to be updated and one or more functions to validate
+   * deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec
+   * file that specifies the Amazon ECS task definition, container, and port where
+   * production traffic is rerouted. For an EC2/On-premises deployment, this is an
+   * archive file that contains source content—source code, webpages, executable
    * files, and deployment scripts—along with an AppSpec file. Revisions are stored
    * in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is
    * uniquely identified by its Amazon S3 object key and its ETag, version, or both.
    * For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul>
    * <p>This guide also contains information to help you get details about the
-   * instances in your deployments, to make on-premises instances available for AWS
+   * instances in your deployments, to make on-premises instances available for
    * CodeDeploy deployments, to get details about a Lambda function deployment, and
-   * to get details about Amazon ECS service deployments.</p> <p> <b>AWS CodeDeploy
+   * to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy
    * Information Resources</b> </p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-   * User Guide</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS
-   * CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS
-   * CLI Reference for AWS CodeDeploy</a> </p> </li> <li> <p> <a
-   * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">AWS CodeDeploy
-   * Developer Forum</a> </p> </li> </ul>
+   * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+   * Guide</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy
+   * API Reference Guide</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI
+   * Reference for CodeDeploy</a> </p> </li> <li> <p> <a
+   * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer
+   * Forum</a> </p> </li> </ul>
    */
-  class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeDeployClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeDeployClient(const Aws::CodeDeploy::CodeDeployClientConfiguration& clientConfiguration = Aws::CodeDeploy::CodeDeployClientConfiguration(),
+                         std::shared_ptr<CodeDeployEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodeDeployClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CodeDeployClient(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<CodeDeployEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CodeDeploy::CodeDeployClientConfiguration& clientConfiguration = Aws::CodeDeploy::CodeDeployClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CodeDeployClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CodeDeployEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeDeployEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CodeDeploy::CodeDeployClientConfiguration& clientConfiguration = Aws::CodeDeploy::CodeDeployClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeDeployClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CodeDeployClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CodeDeployClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CodeDeployClient();
-
 
         /**
          * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
@@ -427,11 +205,11 @@ namespace Model
          * <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can
          * be returned is 25.</p> <p> The type of targets returned depends on the
          * deployment's compute platform or deployment method: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
-         * </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green
-         * deployments initiated by a CloudFormation stack update.</p> </li>
+         * <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. </p>
+         * </li> <li> <p> <b>Lambda</b>: Information about Lambda functions targets. </p>
+         * </li> <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets.
+         * </p> </li> <li> <p> <b>CloudFormation</b>: Information about targets of
+         * blue/green deployments initiated by a CloudFormation stack update.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
@@ -826,7 +604,7 @@ namespace Model
         virtual void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the applications registered with the IAM user or AWS
+         * <p>Lists the applications registered with the IAM user or Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
@@ -844,7 +622,7 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the deployment configurations with the IAM user or AWS
+         * <p>Lists the deployment configurations with the IAM user or Amazon Web Services
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
@@ -863,7 +641,7 @@ namespace Model
 
         /**
          * <p>Lists the deployment groups for an application registered with the IAM user
-         * or AWS account.</p><p><h3>See Also:</h3>   <a
+         * or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
          * API Reference</a></p>
          */
@@ -899,7 +677,7 @@ namespace Model
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
-         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * with the IAM user or Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          */
@@ -974,8 +752,8 @@ namespace Model
 
         /**
          * <p> Sets the result of a Lambda validation function. The function validates
-         * lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
-         * compute platform. For AWS Lambda deployments, the available lifecycle hooks are
+         * lifecycle hooks during a deployment that uses the Lambda or Amazon ECS compute
+         * platform. For Lambda deployments, the available lifecycle hooks are
          * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon
          * ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>,
          * <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
@@ -983,7 +761,7 @@ namespace Model
          * validation functions return <code>Succeeded</code> or <code>Failed</code>. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
-         * 'hooks' Section for an AWS Lambda Deployment </a> and <a
+         * 'hooks' Section for an Lambda Deployment </a> and <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
          * 'hooks' Section for an Amazon ECS Deployment</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus">AWS
@@ -1002,7 +780,7 @@ namespace Model
         virtual void PutLifecycleEventHookExecutionStatusAsync(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers with AWS CodeDeploy a revision for the specified
+         * <p>Registers with CodeDeploy a revision for the specified
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">AWS
          * API Reference</a></p>
@@ -1148,55 +926,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CodeDeployEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsToOnPremisesInstancesAsyncHelper(const Model::AddTagsToOnPremisesInstancesRequest& request, const AddTagsToOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetApplicationRevisionsAsyncHelper(const Model::BatchGetApplicationRevisionsRequest& request, const BatchGetApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetApplicationsAsyncHelper(const Model::BatchGetApplicationsRequest& request, const BatchGetApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetDeploymentGroupsAsyncHelper(const Model::BatchGetDeploymentGroupsRequest& request, const BatchGetDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetDeploymentTargetsAsyncHelper(const Model::BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetDeploymentsAsyncHelper(const Model::BatchGetDeploymentsRequest& request, const BatchGetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetOnPremisesInstancesAsyncHelper(const Model::BatchGetOnPremisesInstancesRequest& request, const BatchGetOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ContinueDeploymentAsyncHelper(const Model::ContinueDeploymentRequest& request, const ContinueDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentConfigAsyncHelper(const Model::CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentGroupAsyncHelper(const Model::CreateDeploymentGroupRequest& request, const CreateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDeploymentConfigAsyncHelper(const Model::DeleteDeploymentConfigRequest& request, const DeleteDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDeploymentGroupAsyncHelper(const Model::DeleteDeploymentGroupRequest& request, const DeleteDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteGitHubAccountTokenAsyncHelper(const Model::DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcesByExternalIdAsyncHelper(const Model::DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterOnPremisesInstanceAsyncHelper(const Model::DeregisterOnPremisesInstanceRequest& request, const DeregisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationRevisionAsyncHelper(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentConfigAsyncHelper(const Model::GetDeploymentConfigRequest& request, const GetDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentGroupAsyncHelper(const Model::GetDeploymentGroupRequest& request, const GetDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentTargetAsyncHelper(const Model::GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOnPremisesInstanceAsyncHelper(const Model::GetOnPremisesInstanceRequest& request, const GetOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationRevisionsAsyncHelper(const Model::ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentConfigsAsyncHelper(const Model::ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentGroupsAsyncHelper(const Model::ListDeploymentGroupsRequest& request, const ListDeploymentGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentTargetsAsyncHelper(const Model::ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGitHubAccountTokenNamesAsyncHelper(const Model::ListGitHubAccountTokenNamesRequest& request, const ListGitHubAccountTokenNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOnPremisesInstancesAsyncHelper(const Model::ListOnPremisesInstancesRequest& request, const ListOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLifecycleEventHookExecutionStatusAsyncHelper(const Model::PutLifecycleEventHookExecutionStatusRequest& request, const PutLifecycleEventHookExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterApplicationRevisionAsyncHelper(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterOnPremisesInstanceAsyncHelper(const Model::RegisterOnPremisesInstanceRequest& request, const RegisterOnPremisesInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromOnPremisesInstancesAsyncHelper(const Model::RemoveTagsFromOnPremisesInstancesRequest& request, const RemoveTagsFromOnPremisesInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDeploymentGroupAsyncHelper(const Model::UpdateDeploymentGroupRequest& request, const UpdateDeploymentGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>;
+      void init(const CodeDeployClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CodeDeployClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CodeDeploy

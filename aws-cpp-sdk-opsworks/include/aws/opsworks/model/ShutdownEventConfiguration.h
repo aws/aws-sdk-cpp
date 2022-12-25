@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ShutdownEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ShutdownEventConfiguration
+  class ShutdownEventConfiguration
   {
   public:
-    ShutdownEventConfiguration();
-    ShutdownEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ShutdownEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ShutdownEventConfiguration();
+    AWS_OPSWORKS_API ShutdownEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ShutdownEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     int m_executionTimeout;
-    bool m_executionTimeoutHasBeenSet;
+    bool m_executionTimeoutHasBeenSet = false;
 
     bool m_delayUntilElbConnectionsDrained;
-    bool m_delayUntilElbConnectionsDrainedHasBeenSet;
+    bool m_delayUntilElbConnectionsDrainedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,10 @@ SourceServer::SourceServer() :
     m_lastLaunchResultHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_recoveryInstanceIdHasBeenSet(false),
+    m_replicationDirection(ReplicationDirection::NOT_SET),
+    m_replicationDirectionHasBeenSet(false),
+    m_reversedDirectionSourceServerArnHasBeenSet(false),
+    m_sourceCloudPropertiesHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_stagingAreaHasBeenSet(false),
@@ -39,6 +43,10 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_lastLaunchResultHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_recoveryInstanceIdHasBeenSet(false),
+    m_replicationDirection(ReplicationDirection::NOT_SET),
+    m_replicationDirectionHasBeenSet(false),
+    m_reversedDirectionSourceServerArnHasBeenSet(false),
+    m_sourceCloudPropertiesHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_stagingAreaHasBeenSet(false),
@@ -82,6 +90,27 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_recoveryInstanceId = jsonValue.GetString("recoveryInstanceId");
 
     m_recoveryInstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("replicationDirection"))
+  {
+    m_replicationDirection = ReplicationDirectionMapper::GetReplicationDirectionForName(jsonValue.GetString("replicationDirection"));
+
+    m_replicationDirectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("reversedDirectionSourceServerArn"))
+  {
+    m_reversedDirectionSourceServerArn = jsonValue.GetString("reversedDirectionSourceServerArn");
+
+    m_reversedDirectionSourceServerArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceCloudProperties"))
+  {
+    m_sourceCloudProperties = jsonValue.GetObject("sourceCloudProperties");
+
+    m_sourceCloudPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceProperties"))
@@ -148,6 +177,23 @@ JsonValue SourceServer::Jsonize() const
   if(m_recoveryInstanceIdHasBeenSet)
   {
    payload.WithString("recoveryInstanceId", m_recoveryInstanceId);
+
+  }
+
+  if(m_replicationDirectionHasBeenSet)
+  {
+   payload.WithString("replicationDirection", ReplicationDirectionMapper::GetNameForReplicationDirection(m_replicationDirection));
+  }
+
+  if(m_reversedDirectionSourceServerArnHasBeenSet)
+  {
+   payload.WithString("reversedDirectionSourceServerArn", m_reversedDirectionSourceServerArn);
+
+  }
+
+  if(m_sourceCloudPropertiesHasBeenSet)
+  {
+   payload.WithObject("sourceCloudProperties", m_sourceCloudProperties.Jsonize());
 
   }
 

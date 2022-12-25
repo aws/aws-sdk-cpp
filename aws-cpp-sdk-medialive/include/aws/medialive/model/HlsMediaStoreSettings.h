@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsMediaStoreSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsMediaStoreSettings
+  class HlsMediaStoreSettings
   {
   public:
-    HlsMediaStoreSettings();
-    HlsMediaStoreSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsMediaStoreSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsMediaStoreSettings();
+    AWS_MEDIALIVE_API HlsMediaStoreSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsMediaStoreSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,19 +172,19 @@ namespace Model
   private:
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     int m_filecacheDuration;
-    bool m_filecacheDurationHasBeenSet;
+    bool m_filecacheDurationHasBeenSet = false;
 
     HlsMediaStoreStorageClass m_mediaStoreStorageClass;
-    bool m_mediaStoreStorageClassHasBeenSet;
+    bool m_mediaStoreStorageClassHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
   };
 
 } // namespace Model

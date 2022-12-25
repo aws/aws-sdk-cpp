@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateRoutingControlRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlRequest : public Route53RecoveryControlConfigRequest
+  class UpdateRoutingControlRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    UpdateRoutingControlRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRoutingControl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
 
     Aws::String m_routingControlName;
-    bool m_routingControlNameHasBeenSet;
+    bool m_routingControlNameHasBeenSet = false;
   };
 
 } // namespace Model

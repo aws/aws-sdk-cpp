@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTTWINMAKER_API DeleteEntityRequest : public IoTTwinMakerRequest
+  class DeleteEntityRequest : public IoTTwinMakerRequest
   {
   public:
-    DeleteEntityRequest();
+    AWS_IOTTWINMAKER_API DeleteEntityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,50 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteEntity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTTWINMAKER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTTWINMAKER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline DeleteEntityRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline DeleteEntityRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace that contains the entity to delete.</p>
+     */
+    inline DeleteEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
 
     /**
@@ -103,57 +144,16 @@ namespace Model
      */
     inline DeleteEntityRequest& WithIsRecursive(bool value) { SetIsRecursive(value); return *this;}
 
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline DeleteEntityRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline DeleteEntityRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace that contains the entity to delete.</p>
-     */
-    inline DeleteEntityRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
 
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
+
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     bool m_isRecursive;
-    bool m_isRecursiveHasBeenSet;
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_isRecursiveHasBeenSet = false;
   };
 
 } // namespace Model

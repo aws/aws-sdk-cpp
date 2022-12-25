@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API UpdateConfigRequest : public GroundStationRequest
+  class UpdateConfigRequest : public GroundStationRequest
   {
   public:
-    UpdateConfigRequest();
+    AWS_GROUNDSTATION_API UpdateConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     ConfigTypeData m_configData;
-    bool m_configDataHasBeenSet;
+    bool m_configDataHasBeenSet = false;
 
     Aws::String m_configId;
-    bool m_configIdHasBeenSet;
+    bool m_configIdHasBeenSet = false;
 
     ConfigCapabilityType m_configType;
-    bool m_configTypeHasBeenSet;
+    bool m_configTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,15 +28,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucket">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API UserBucket
+  class UserBucket
   {
   public:
-    UserBucket();
-    UserBucket(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserBucket& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API UserBucket();
+    AWS_EC2_API UserBucket(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API UserBucket& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
   };
 
 } // namespace Model

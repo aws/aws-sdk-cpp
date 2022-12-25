@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Image">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Image();
+    AWS_REKOGNITION_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_bytes;
-    bool m_bytesHasBeenSet;
+    bool m_bytesHasBeenSet = false;
 
     S3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet;
+    bool m_s3ObjectHasBeenSet = false;
   };
 
 } // namespace Model

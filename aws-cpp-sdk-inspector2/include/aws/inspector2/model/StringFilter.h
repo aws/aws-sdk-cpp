@@ -30,42 +30,42 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StringFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API StringFilter
+  class StringFilter
   {
   public:
-    StringFilter();
-    StringFilter(Aws::Utils::Json::JsonView jsonValue);
-    StringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API StringFilter();
+    AWS_INSPECTOR2_API StringFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API StringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline const StringComparison& GetComparison() const{ return m_comparison; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline void SetComparison(const StringComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline void SetComparison(StringComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline StringFilter& WithComparison(const StringComparison& value) { SetComparison(value); return *this;}
 
     /**
-     * <p>The operator to use when comparing values in the filter</p>
+     * <p>The operator to use when comparing values in the filter.</p>
      */
     inline StringFilter& WithComparison(StringComparison&& value) { SetComparison(std::move(value)); return *this;}
 
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     StringComparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

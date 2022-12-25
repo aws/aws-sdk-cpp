@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/InstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API InstanceDetails
+  class InstanceDetails
   {
   public:
-    InstanceDetails();
-    InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API InstanceDetails();
+    AWS_COSTEXPLORER_API InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     EC2InstanceDetails m_eC2InstanceDetails;
-    bool m_eC2InstanceDetailsHasBeenSet;
+    bool m_eC2InstanceDetailsHasBeenSet = false;
 
     RDSInstanceDetails m_rDSInstanceDetails;
-    bool m_rDSInstanceDetailsHasBeenSet;
+    bool m_rDSInstanceDetailsHasBeenSet = false;
 
     RedshiftInstanceDetails m_redshiftInstanceDetails;
-    bool m_redshiftInstanceDetailsHasBeenSet;
+    bool m_redshiftInstanceDetailsHasBeenSet = false;
 
     ElastiCacheInstanceDetails m_elastiCacheInstanceDetails;
-    bool m_elastiCacheInstanceDetailsHasBeenSet;
+    bool m_elastiCacheInstanceDetailsHasBeenSet = false;
 
     ESInstanceDetails m_eSInstanceDetails;
-    bool m_eSInstanceDetailsHasBeenSet;
+    bool m_eSInstanceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

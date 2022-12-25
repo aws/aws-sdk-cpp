@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DomainNotWhitelistedException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DomainNotWhitelistedException
+  class DomainNotWhitelistedException
   {
   public:
-    DomainNotWhitelistedException();
-    DomainNotWhitelistedException(Aws::Utils::Json::JsonView jsonValue);
-    DomainNotWhitelistedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DomainNotWhitelistedException();
+    AWS_QUICKSIGHT_API DomainNotWhitelistedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DomainNotWhitelistedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

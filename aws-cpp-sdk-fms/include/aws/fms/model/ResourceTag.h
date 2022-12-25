@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ResourceTag">AWS API
    * Reference</a></p>
    */
-  class AWS_FMS_API ResourceTag
+  class ResourceTag
   {
   public:
-    ResourceTag();
-    ResourceTag(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ResourceTag();
+    AWS_FMS_API ResourceTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

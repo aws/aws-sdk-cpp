@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AsyncInferenceNotificationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AsyncInferenceNotificationConfig
+  class AsyncInferenceNotificationConfig
   {
   public:
-    AsyncInferenceNotificationConfig();
-    AsyncInferenceNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AsyncInferenceNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AsyncInferenceNotificationConfig();
+    AWS_SAGEMAKER_API AsyncInferenceNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AsyncInferenceNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_successTopic;
-    bool m_successTopicHasBeenSet;
+    bool m_successTopicHasBeenSet = false;
 
     Aws::String m_errorTopic;
-    bool m_errorTopicHasBeenSet;
+    bool m_errorTopicHasBeenSet = false;
   };
 
 } // namespace Model

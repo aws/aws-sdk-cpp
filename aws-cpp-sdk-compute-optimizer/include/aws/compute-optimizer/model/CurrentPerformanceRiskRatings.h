@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/CurrentPerformanceRiskRatings">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API CurrentPerformanceRiskRatings
+  class CurrentPerformanceRiskRatings
   {
   public:
-    CurrentPerformanceRiskRatings();
-    CurrentPerformanceRiskRatings(Aws::Utils::Json::JsonView jsonValue);
-    CurrentPerformanceRiskRatings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API CurrentPerformanceRiskRatings();
+    AWS_COMPUTEOPTIMIZER_API CurrentPerformanceRiskRatings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API CurrentPerformanceRiskRatings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,16 +141,16 @@ namespace Model
   private:
 
     long long m_high;
-    bool m_highHasBeenSet;
+    bool m_highHasBeenSet = false;
 
     long long m_medium;
-    bool m_mediumHasBeenSet;
+    bool m_mediumHasBeenSet = false;
 
     long long m_low;
-    bool m_lowHasBeenSet;
+    bool m_lowHasBeenSet = false;
 
     long long m_veryLow;
-    bool m_veryLowHasBeenSet;
+    bool m_veryLowHasBeenSet = false;
   };
 
 } // namespace Model

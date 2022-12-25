@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableSseDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription
+  class AwsDynamoDbTableSseDescription
   {
   public:
-    AwsDynamoDbTableSseDescription();
-    AwsDynamoDbTableSseDescription(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableSseDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription();
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -236,16 +236,16 @@ namespace Model
   private:
 
     Aws::String m_inaccessibleEncryptionDateTime;
-    bool m_inaccessibleEncryptionDateTimeHasBeenSet;
+    bool m_inaccessibleEncryptionDateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_sseType;
-    bool m_sseTypeHasBeenSet;
+    bool m_sseTypeHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyArn;
-    bool m_kmsMasterKeyArnHasBeenSet;
+    bool m_kmsMasterKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

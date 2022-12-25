@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionRecommendationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter
+  class LambdaFunctionRecommendationFilter
   {
   public:
-    LambdaFunctionRecommendationFilter();
-    LambdaFunctionRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionRecommendationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,10 +211,10 @@ namespace Model
   private:
 
     LambdaFunctionRecommendationFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

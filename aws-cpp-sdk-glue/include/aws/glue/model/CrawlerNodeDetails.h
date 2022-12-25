@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerNodeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CrawlerNodeDetails
+  class CrawlerNodeDetails
   {
   public:
-    CrawlerNodeDetails();
-    CrawlerNodeDetails(Aws::Utils::Json::JsonView jsonValue);
-    CrawlerNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CrawlerNodeDetails();
+    AWS_GLUE_API CrawlerNodeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CrawlerNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Crawl> m_crawls;
-    bool m_crawlsHasBeenSet;
+    bool m_crawlsHasBeenSet = false;
   };
 
 } // namespace Model

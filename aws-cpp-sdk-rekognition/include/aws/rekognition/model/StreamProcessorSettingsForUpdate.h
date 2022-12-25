@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorSettingsForUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorSettingsForUpdate
+  class StreamProcessorSettingsForUpdate
   {
   public:
-    StreamProcessorSettingsForUpdate();
-    StreamProcessorSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorSettingsForUpdate();
+    AWS_REKOGNITION_API StreamProcessorSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     ConnectedHomeSettingsForUpdate m_connectedHomeForUpdate;
-    bool m_connectedHomeForUpdateHasBeenSet;
+    bool m_connectedHomeForUpdateHasBeenSet = false;
   };
 
 } // namespace Model

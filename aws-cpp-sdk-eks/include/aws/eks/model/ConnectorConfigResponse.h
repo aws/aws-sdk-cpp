@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ConnectorConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ConnectorConfigResponse
+  class ConnectorConfigResponse
   {
   public:
-    ConnectorConfigResponse();
-    ConnectorConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ConnectorConfigResponse();
+    AWS_EKS_API ConnectorConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ConnectorConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_activationId;
-    bool m_activationIdHasBeenSet;
+    bool m_activationIdHasBeenSet = false;
 
     Aws::String m_activationCode;
-    bool m_activationCodeHasBeenSet;
+    bool m_activationCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_activationExpiry;
-    bool m_activationExpiryHasBeenSet;
+    bool m_activationExpiryHasBeenSet = false;
 
     Aws::String m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

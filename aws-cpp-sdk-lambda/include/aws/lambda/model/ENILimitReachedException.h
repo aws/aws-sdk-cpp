@@ -24,19 +24,21 @@ namespace Model
 {
 
   /**
-   * <p>Lambda was not able to create an elastic network interface in the VPC,
-   * specified as part of Lambda function configuration, because the limit for
-   * network interfaces has been reached.</p><p><h3>See Also:</h3>   <a
+   * <p>Lambda couldn't create an elastic network interface in the VPC, specified as
+   * part of Lambda function configuration, because the limit for network interfaces
+   * has been reached. For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+   * quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ENILimitReachedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ENILimitReachedException
+  class ENILimitReachedException
   {
   public:
-    ENILimitReachedException();
-    ENILimitReachedException(Aws::Utils::Json::JsonView jsonValue);
-    ENILimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ENILimitReachedException();
+    AWS_LAMBDA_API ENILimitReachedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ENILimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -91,10 +93,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

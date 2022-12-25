@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API SearchAvailablePhoneNumbersResult
+  class SearchAvailablePhoneNumbersResult
   {
   public:
-    SearchAvailablePhoneNumbersResult();
-    SearchAvailablePhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchAvailablePhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchAvailablePhoneNumbersResult();
+    AWS_CONNECT_API SearchAvailablePhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchAvailablePhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -78,44 +78,44 @@ namespace Model
 
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline const Aws::Vector<AvailableNumberSummary>& GetAvailableNumbersList() const{ return m_availableNumbersList; }
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline void SetAvailableNumbersList(const Aws::Vector<AvailableNumberSummary>& value) { m_availableNumbersList = value; }
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline void SetAvailableNumbersList(Aws::Vector<AvailableNumberSummary>&& value) { m_availableNumbersList = std::move(value); }
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline SearchAvailablePhoneNumbersResult& WithAvailableNumbersList(const Aws::Vector<AvailableNumberSummary>& value) { SetAvailableNumbersList(value); return *this;}
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline SearchAvailablePhoneNumbersResult& WithAvailableNumbersList(Aws::Vector<AvailableNumberSummary>&& value) { SetAvailableNumbersList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline SearchAvailablePhoneNumbersResult& AddAvailableNumbersList(const AvailableNumberSummary& value) { m_availableNumbersList.push_back(value); return *this; }
 
     /**
-     * <p>A list of available phone numbers that you can claim for your Amazon Connect
-     * instance.</p>
+     * <p>A list of available phone numbers that you can claim to your Amazon Connect
+     * instance or traffic distribution group.</p>
      */
     inline SearchAvailablePhoneNumbersResult& AddAvailableNumbersList(AvailableNumberSummary&& value) { m_availableNumbersList.push_back(std::move(value)); return *this; }
 

@@ -23,23 +23,23 @@ namespace Model
 {
 
   /**
-   * <p> A complex type that contains <code>Tag</code> key and <code>Tag</code>
+   * <p>A complex type that contains <code>Tag</code> key and <code>Tag</code>
    * value.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Tag();
+    AWS_CLOUDFRONT_API Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -47,7 +47,7 @@ namespace Model
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -55,7 +55,7 @@ namespace Model
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -63,7 +63,7 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -71,7 +71,7 @@ namespace Model
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -79,7 +79,7 @@ namespace Model
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -87,7 +87,7 @@ namespace Model
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -95,7 +95,7 @@ namespace Model
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * <p>A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
@@ -104,7 +104,7 @@ namespace Model
 
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -112,7 +112,7 @@ namespace Model
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -120,7 +120,7 @@ namespace Model
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -128,7 +128,7 @@ namespace Model
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -136,7 +136,7 @@ namespace Model
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -144,7 +144,7 @@ namespace Model
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -152,7 +152,7 @@ namespace Model
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -160,7 +160,7 @@ namespace Model
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * <p>A string that contains an optional <code>Tag</code> value.</p> <p>The string
      * length should be between 0 and 256 characters. Valid characters include
      * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
      * characters <code>_ - . : / = + @</code>.</p>
@@ -170,10 +170,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

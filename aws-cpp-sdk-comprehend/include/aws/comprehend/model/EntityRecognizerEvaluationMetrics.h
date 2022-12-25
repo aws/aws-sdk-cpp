@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerEvaluationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics
+  class EntityRecognizerEvaluationMetrics
   {
   public:
-    EntityRecognizerEvaluationMetrics();
-    EntityRecognizerEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics();
+    AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1Score;
-    bool m_f1ScoreHasBeenSet;
+    bool m_f1ScoreHasBeenSet = false;
   };
 
 } // namespace Model

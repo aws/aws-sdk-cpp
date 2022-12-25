@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ExponentialRolloutRate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ExponentialRolloutRate
+  class ExponentialRolloutRate
   {
   public:
-    ExponentialRolloutRate();
-    ExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
-    ExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ExponentialRolloutRate();
+    AWS_IOT_API ExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     int m_baseRatePerMinute;
-    bool m_baseRatePerMinuteHasBeenSet;
+    bool m_baseRatePerMinuteHasBeenSet = false;
 
     double m_incrementFactor;
-    bool m_incrementFactorHasBeenSet;
+    bool m_incrementFactorHasBeenSet = false;
 
     RateIncreaseCriteria m_rateIncreaseCriteria;
-    bool m_rateIncreaseCriteriaHasBeenSet;
+    bool m_rateIncreaseCriteriaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListResourceInventoryResult& ListResourceInventoryResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceInventoryList"))
   {
-    Array<JsonView> resourceInventoryListJsonList = jsonValue.GetArray("ResourceInventoryList");
+    Aws::Utils::Array<JsonView> resourceInventoryListJsonList = jsonValue.GetArray("ResourceInventoryList");
     for(unsigned resourceInventoryListIndex = 0; resourceInventoryListIndex < resourceInventoryListJsonList.GetLength(); ++resourceInventoryListIndex)
     {
       m_resourceInventoryList.push_back(resourceInventoryListJsonList[resourceInventoryListIndex].AsObject());

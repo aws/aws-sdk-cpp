@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThemeAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThemeAlias
+  class ThemeAlias
   {
   public:
-    ThemeAlias();
-    ThemeAlias(Aws::Utils::Json::JsonView jsonValue);
-    ThemeAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThemeAlias();
+    AWS_QUICKSIGHT_API ThemeAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThemeAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_aliasName;
-    bool m_aliasNameHasBeenSet;
+    bool m_aliasNameHasBeenSet = false;
 
     long long m_themeVersionNumber;
-    bool m_themeVersionNumberHasBeenSet;
+    bool m_themeVersionNumberHasBeenSet = false;
   };
 
 } // namespace Model

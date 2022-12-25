@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceChangeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ResourceChangeDetail
+  class ResourceChangeDetail
   {
   public:
-    ResourceChangeDetail();
-    ResourceChangeDetail(Aws::Utils::Json::JsonView jsonValue);
-    ResourceChangeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ResourceChangeDetail();
+    AWS_SERVICECATALOG_API ResourceChangeDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ResourceChangeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     ResourceTargetDefinition m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     EvaluationType m_evaluation;
-    bool m_evaluationHasBeenSet;
+    bool m_evaluationHasBeenSet = false;
 
     Aws::String m_causingEntity;
-    bool m_causingEntityHasBeenSet;
+    bool m_causingEntityHasBeenSet = false;
   };
 
 } // namespace Model

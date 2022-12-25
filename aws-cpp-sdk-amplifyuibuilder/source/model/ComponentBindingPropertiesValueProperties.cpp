@@ -25,6 +25,7 @@ ComponentBindingPropertiesValueProperties::ComponentBindingPropertiesValueProper
     m_keyHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_predicatesHasBeenSet(false),
+    m_slotNameHasBeenSet(false),
     m_userAttributeHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ ComponentBindingPropertiesValueProperties::ComponentBindingPropertiesValueProper
     m_keyHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_predicatesHasBeenSet(false),
+    m_slotNameHasBeenSet(false),
     m_userAttributeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -80,12 +82,19 @@ ComponentBindingPropertiesValueProperties& ComponentBindingPropertiesValueProper
 
   if(jsonValue.ValueExists("predicates"))
   {
-    Array<JsonView> predicatesJsonList = jsonValue.GetArray("predicates");
+    Aws::Utils::Array<JsonView> predicatesJsonList = jsonValue.GetArray("predicates");
     for(unsigned predicatesIndex = 0; predicatesIndex < predicatesJsonList.GetLength(); ++predicatesIndex)
     {
       m_predicates.push_back(predicatesJsonList[predicatesIndex].AsObject());
     }
     m_predicatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("slotName"))
+  {
+    m_slotName = jsonValue.GetString("slotName");
+
+    m_slotNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("userAttribute"))
@@ -134,12 +143,18 @@ JsonValue ComponentBindingPropertiesValueProperties::Jsonize() const
 
   if(m_predicatesHasBeenSet)
   {
-   Array<JsonValue> predicatesJsonList(m_predicates.size());
+   Aws::Utils::Array<JsonValue> predicatesJsonList(m_predicates.size());
    for(unsigned predicatesIndex = 0; predicatesIndex < predicatesJsonList.GetLength(); ++predicatesIndex)
    {
      predicatesJsonList[predicatesIndex].AsObject(m_predicates[predicatesIndex].Jsonize());
    }
    payload.WithArray("predicates", std::move(predicatesJsonList));
+
+  }
+
+  if(m_slotNameHasBeenSet)
+  {
+   payload.WithString("slotName", m_slotName);
 
   }
 

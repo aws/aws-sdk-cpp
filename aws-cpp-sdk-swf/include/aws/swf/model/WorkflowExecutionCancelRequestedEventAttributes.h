@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCancelRequestedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes
+  class WorkflowExecutionCancelRequestedEventAttributes
   {
   public:
-    WorkflowExecutionCancelRequestedEventAttributes();
-    WorkflowExecutionCancelRequestedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionCancelRequestedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes();
+    AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionCancelRequestedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     WorkflowExecution m_externalWorkflowExecution;
-    bool m_externalWorkflowExecutionHasBeenSet;
+    bool m_externalWorkflowExecutionHasBeenSet = false;
 
     long long m_externalInitiatedEventId;
-    bool m_externalInitiatedEventIdHasBeenSet;
+    bool m_externalInitiatedEventIdHasBeenSet = false;
 
     WorkflowExecutionCancelRequestedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
   };
 
 } // namespace Model

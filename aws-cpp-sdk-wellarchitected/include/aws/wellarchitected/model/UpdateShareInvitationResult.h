@@ -24,36 +24,36 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API UpdateShareInvitationResult
+  class UpdateShareInvitationResult
   {
   public:
-    UpdateShareInvitationResult();
-    UpdateShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateShareInvitationResult();
+    AWS_WELLARCHITECTED_API UpdateShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline const ShareInvitation& GetShareInvitation() const{ return m_shareInvitation; }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline void SetShareInvitation(const ShareInvitation& value) { m_shareInvitation = value; }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline void SetShareInvitation(ShareInvitation&& value) { m_shareInvitation = std::move(value); }
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline UpdateShareInvitationResult& WithShareInvitation(const ShareInvitation& value) { SetShareInvitation(value); return *this;}
 
     /**
-     * <p>The updated workload share invitation.</p>
+     * <p>The updated workload or custom lens share invitation.</p>
      */
     inline UpdateShareInvitationResult& WithShareInvitation(ShareInvitation&& value) { SetShareInvitation(std::move(value)); return *this;}
 

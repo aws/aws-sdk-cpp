@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API DescribeFunction2020_05_31Request : public CloudFrontRequest
+  class DescribeFunction2020_05_31Request : public CloudFrontRequest
   {
   public:
-    DescribeFunction2020_05_31Request();
+    AWS_CLOUDFRONT_API DescribeFunction2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeFunction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline const FunctionStage& GetStage() const{ return m_stage; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline DescribeFunction2020_05_31Request& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline DescribeFunction2020_05_31Request& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FunctionStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
   };
 
 } // namespace Model

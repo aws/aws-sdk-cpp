@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVpnConnectionResponse
+  class ModifyVpnConnectionResponse
   {
   public:
-    ModifyVpnConnectionResponse();
-    ModifyVpnConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpnConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnConnectionResponse();
+    AWS_EC2_API ModifyVpnConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline const VpnConnection& GetVpnConnection() const{ return m_vpnConnection; }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(const VpnConnection& value) { m_vpnConnection = value; }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline void SetVpnConnection(VpnConnection&& value) { m_vpnConnection = std::move(value); }
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline ModifyVpnConnectionResponse& WithVpnConnection(const VpnConnection& value) { SetVpnConnection(value); return *this;}
 
-    
+    /**
+     * <p>Information about the VPN connection.</p>
+     */
     inline ModifyVpnConnectionResponse& WithVpnConnection(VpnConnection&& value) { SetVpnConnection(std::move(value)); return *this;}
 
 

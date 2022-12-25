@@ -25,19 +25,19 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for updating the Debugger profile parameters,
-   * system and framework metrics configurations, and storage paths.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configuration information for updating the Amazon SageMaker Debugger profile
+   * parameters, system and framework metrics configurations, and storage
+   * paths.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfigForUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProfilerConfigForUpdate
+  class ProfilerConfigForUpdate
   {
   public:
-    ProfilerConfigForUpdate();
-    ProfilerConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ProfilerConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate();
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,38 +281,42 @@ namespace Model
 
 
     /**
-     * <p>To disable Debugger monitoring and profiling, set to <code>True</code>.</p>
+     * <p>To turn off Amazon SageMaker Debugger monitoring and profiling while a
+     * training job is in progress, set to <code>True</code>.</p>
      */
     inline bool GetDisableProfiler() const{ return m_disableProfiler; }
 
     /**
-     * <p>To disable Debugger monitoring and profiling, set to <code>True</code>.</p>
+     * <p>To turn off Amazon SageMaker Debugger monitoring and profiling while a
+     * training job is in progress, set to <code>True</code>.</p>
      */
     inline bool DisableProfilerHasBeenSet() const { return m_disableProfilerHasBeenSet; }
 
     /**
-     * <p>To disable Debugger monitoring and profiling, set to <code>True</code>.</p>
+     * <p>To turn off Amazon SageMaker Debugger monitoring and profiling while a
+     * training job is in progress, set to <code>True</code>.</p>
      */
     inline void SetDisableProfiler(bool value) { m_disableProfilerHasBeenSet = true; m_disableProfiler = value; }
 
     /**
-     * <p>To disable Debugger monitoring and profiling, set to <code>True</code>.</p>
+     * <p>To turn off Amazon SageMaker Debugger monitoring and profiling while a
+     * training job is in progress, set to <code>True</code>.</p>
      */
     inline ProfilerConfigForUpdate& WithDisableProfiler(bool value) { SetDisableProfiler(value); return *this;}
 
   private:
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     long long m_profilingIntervalInMilliseconds;
-    bool m_profilingIntervalInMillisecondsHasBeenSet;
+    bool m_profilingIntervalInMillisecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_profilingParameters;
-    bool m_profilingParametersHasBeenSet;
+    bool m_profilingParametersHasBeenSet = false;
 
     bool m_disableProfiler;
-    bool m_disableProfilerHasBeenSet;
+    bool m_disableProfilerHasBeenSet = false;
   };
 
 } // namespace Model

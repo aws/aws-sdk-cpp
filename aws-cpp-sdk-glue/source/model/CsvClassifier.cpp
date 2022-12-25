@@ -32,7 +32,10 @@ CsvClassifier::CsvClassifier() :
     m_disableValueTrimming(false),
     m_disableValueTrimmingHasBeenSet(false),
     m_allowSingleColumn(false),
-    m_allowSingleColumnHasBeenSet(false)
+    m_allowSingleColumnHasBeenSet(false),
+    m_customDatatypeConfigured(false),
+    m_customDatatypeConfiguredHasBeenSet(false),
+    m_customDatatypesHasBeenSet(false)
 {
 }
 
@@ -50,7 +53,10 @@ CsvClassifier::CsvClassifier(JsonView jsonValue) :
     m_disableValueTrimming(false),
     m_disableValueTrimmingHasBeenSet(false),
     m_allowSingleColumn(false),
-    m_allowSingleColumnHasBeenSet(false)
+    m_allowSingleColumnHasBeenSet(false),
+    m_customDatatypeConfigured(false),
+    m_customDatatypeConfiguredHasBeenSet(false),
+    m_customDatatypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,7 +114,7 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Header"))
   {
-    Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
+    Aws::Utils::Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
     for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
     {
       m_header.push_back(headerJsonList[headerIndex].AsString());
@@ -128,6 +134,23 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
     m_allowSingleColumn = jsonValue.GetBool("AllowSingleColumn");
 
     m_allowSingleColumnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDatatypeConfigured"))
+  {
+    m_customDatatypeConfigured = jsonValue.GetBool("CustomDatatypeConfigured");
+
+    m_customDatatypeConfiguredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDatatypes"))
+  {
+    Aws::Utils::Array<JsonView> customDatatypesJsonList = jsonValue.GetArray("CustomDatatypes");
+    for(unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex)
+    {
+      m_customDatatypes.push_back(customDatatypesJsonList[customDatatypesIndex].AsString());
+    }
+    m_customDatatypesHasBeenSet = true;
   }
 
   return *this;
@@ -178,7 +201,7 @@ JsonValue CsvClassifier::Jsonize() const
 
   if(m_headerHasBeenSet)
   {
-   Array<JsonValue> headerJsonList(m_header.size());
+   Aws::Utils::Array<JsonValue> headerJsonList(m_header.size());
    for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
    {
      headerJsonList[headerIndex].AsString(m_header[headerIndex]);
@@ -196,6 +219,23 @@ JsonValue CsvClassifier::Jsonize() const
   if(m_allowSingleColumnHasBeenSet)
   {
    payload.WithBool("AllowSingleColumn", m_allowSingleColumn);
+
+  }
+
+  if(m_customDatatypeConfiguredHasBeenSet)
+  {
+   payload.WithBool("CustomDatatypeConfigured", m_customDatatypeConfigured);
+
+  }
+
+  if(m_customDatatypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customDatatypesJsonList(m_customDatatypes.size());
+   for(unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex)
+   {
+     customDatatypesJsonList[customDatatypesIndex].AsString(m_customDatatypes[customDatatypesIndex]);
+   }
+   payload.WithArray("CustomDatatypes", std::move(customDatatypesJsonList));
 
   }
 

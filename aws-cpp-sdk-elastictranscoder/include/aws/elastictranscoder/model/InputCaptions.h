@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/InputCaptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API InputCaptions
+  class InputCaptions
   {
   public:
-    InputCaptions();
-    InputCaptions(Aws::Utils::Json::JsonView jsonValue);
-    InputCaptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API InputCaptions();
+    AWS_ELASTICTRANSCODER_API InputCaptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API InputCaptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,10 +243,10 @@ namespace Model
   private:
 
     Aws::String m_mergePolicy;
-    bool m_mergePolicyHasBeenSet;
+    bool m_mergePolicyHasBeenSet = false;
 
     Aws::Vector<CaptionSource> m_captionSources;
-    bool m_captionSourcesHasBeenSet;
+    bool m_captionSourcesHasBeenSet = false;
   };
 
 } // namespace Model

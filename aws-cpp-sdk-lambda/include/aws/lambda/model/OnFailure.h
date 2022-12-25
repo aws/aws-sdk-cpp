@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API OnFailure
+  class OnFailure
   {
   public:
-    OnFailure();
-    OnFailure(Aws::Utils::Json::JsonView jsonValue);
-    OnFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API OnFailure();
+    AWS_LAMBDA_API OnFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API OnFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
   };
 
 } // namespace Model

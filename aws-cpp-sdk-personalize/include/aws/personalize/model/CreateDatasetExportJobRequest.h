@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_PERSONALIZE_API CreateDatasetExportJobRequest : public PersonalizeRequest
+  class CreateDatasetExportJobRequest : public PersonalizeRequest
   {
   public:
-    CreateDatasetExportJobRequest();
+    AWS_PERSONALIZE_API CreateDatasetExportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDatasetExportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PERSONALIZE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     IngestionMode m_ingestionMode;
-    bool m_ingestionModeHasBeenSet;
+    bool m_ingestionModeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DatasetExportJobOutput m_jobOutput;
-    bool m_jobOutputHasBeenSet;
+    bool m_jobOutputHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

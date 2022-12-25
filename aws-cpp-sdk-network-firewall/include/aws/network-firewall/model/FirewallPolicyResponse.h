@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/FirewallPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API FirewallPolicyResponse
+  class FirewallPolicyResponse
   {
   public:
-    FirewallPolicyResponse();
-    FirewallPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
-    FirewallPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API FirewallPolicyResponse();
+    AWS_NETWORKFIREWALL_API FirewallPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API FirewallPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -466,37 +466,37 @@ namespace Model
   private:
 
     Aws::String m_firewallPolicyName;
-    bool m_firewallPolicyNameHasBeenSet;
+    bool m_firewallPolicyNameHasBeenSet = false;
 
     Aws::String m_firewallPolicyArn;
-    bool m_firewallPolicyArnHasBeenSet;
+    bool m_firewallPolicyArnHasBeenSet = false;
 
     Aws::String m_firewallPolicyId;
-    bool m_firewallPolicyIdHasBeenSet;
+    bool m_firewallPolicyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ResourceStatus m_firewallPolicyStatus;
-    bool m_firewallPolicyStatusHasBeenSet;
+    bool m_firewallPolicyStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_consumedStatelessRuleCapacity;
-    bool m_consumedStatelessRuleCapacityHasBeenSet;
+    bool m_consumedStatelessRuleCapacityHasBeenSet = false;
 
     int m_consumedStatefulRuleCapacity;
-    bool m_consumedStatefulRuleCapacityHasBeenSet;
+    bool m_consumedStatefulRuleCapacityHasBeenSet = false;
 
     int m_numberOfAssociations;
-    bool m_numberOfAssociationsHasBeenSet;
+    bool m_numberOfAssociationsHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

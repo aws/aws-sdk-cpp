@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginGroupFailoverStatusCodes">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes
+  class AwsCloudFrontDistributionOriginGroupFailoverStatusCodes
   {
   public:
-    AwsCloudFrontDistributionOriginGroupFailoverStatusCodes();
-    AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     Aws::Vector<int> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
   };
 
 } // namespace Model

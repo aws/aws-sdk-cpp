@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/FileSizes">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API FileSizes
+  class FileSizes
   {
   public:
-    FileSizes();
-    FileSizes(Aws::Utils::Json::JsonView jsonValue);
-    FileSizes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API FileSizes();
+    AWS_CODECOMMIT_API FileSizes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API FileSizes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     long long m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     long long m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

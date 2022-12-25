@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GroupSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GroupSearchFilter
+  class GroupSearchFilter
   {
   public:
-    GroupSearchFilter();
-    GroupSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    GroupSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GroupSearchFilter();
+    AWS_QUICKSIGHT_API GroupSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GroupSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     GroupFilterOperator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     GroupFilterAttribute m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

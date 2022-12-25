@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainNameRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateDomainNameRequest : public ApiGatewayV2Request
+  class CreateDomainNameRequest : public ApiGatewayV2Request
   {
   public:
-    CreateDomainNameRequest();
+    AWS_APIGATEWAYV2_API CreateDomainNameRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDomainName"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<DomainNameConfiguration> m_domainNameConfigurations;
-    bool m_domainNameConfigurationsHasBeenSet;
+    bool m_domainNameConfigurationsHasBeenSet = false;
 
     MutualTlsAuthenticationInput m_mutualTlsAuthentication;
-    bool m_mutualTlsAuthenticationHasBeenSet;
+    bool m_mutualTlsAuthenticationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

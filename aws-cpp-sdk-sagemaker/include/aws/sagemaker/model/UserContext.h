@@ -25,17 +25,18 @@ namespace Model
 
   /**
    * <p>Information about the user who created or modified an experiment, trial,
-   * trial component, lineage group, or project.</p><p><h3>See Also:</h3>   <a
+   * trial component, lineage group, project, or model card.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserContext">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UserContext
+  class UserContext
   {
   public:
-    UserContext();
-    UserContext(Aws::Utils::Json::JsonView jsonValue);
-    UserContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UserContext();
+    AWS_SAGEMAKER_API UserContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UserContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_userProfileArn;
-    bool m_userProfileArnHasBeenSet;
+    bool m_userProfileArnHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
   };
 
 } // namespace Model

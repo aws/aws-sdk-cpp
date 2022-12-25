@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AnomalySourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AnomalySourceDetails
+  class AnomalySourceDetails
   {
   public:
-    AnomalySourceDetails();
-    AnomalySourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AnomalySourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AnomalySourceDetails();
+    AWS_DEVOPSGURU_API AnomalySourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AnomalySourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Vector<CloudWatchMetricsDetail> m_cloudWatchMetrics;
-    bool m_cloudWatchMetricsHasBeenSet;
+    bool m_cloudWatchMetricsHasBeenSet = false;
 
     Aws::Vector<PerformanceInsightsMetricsDetail> m_performanceInsightsMetrics;
-    bool m_performanceInsightsMetricsHasBeenSet;
+    bool m_performanceInsightsMetricsHasBeenSet = false;
   };
 
 } // namespace Model

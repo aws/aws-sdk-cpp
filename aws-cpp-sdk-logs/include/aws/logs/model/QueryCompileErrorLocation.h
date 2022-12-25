@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/QueryCompileErrorLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API QueryCompileErrorLocation
+  class QueryCompileErrorLocation
   {
   public:
-    QueryCompileErrorLocation();
-    QueryCompileErrorLocation(Aws::Utils::Json::JsonView jsonValue);
-    QueryCompileErrorLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API QueryCompileErrorLocation();
+    AWS_CLOUDWATCHLOGS_API QueryCompileErrorLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API QueryCompileErrorLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_startCharOffset;
-    bool m_startCharOffsetHasBeenSet;
+    bool m_startCharOffsetHasBeenSet = false;
 
     int m_endCharOffset;
-    bool m_endCharOffsetHasBeenSet;
+    bool m_endCharOffsetHasBeenSet = false;
   };
 
 } // namespace Model

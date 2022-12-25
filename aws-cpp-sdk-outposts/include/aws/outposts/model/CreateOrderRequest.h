@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_OUTPOSTS_API CreateOrderRequest : public OutpostsRequest
+  class CreateOrderRequest : public OutpostsRequest
   {
   public:
-    CreateOrderRequest();
+    AWS_OUTPOSTS_API CreateOrderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOrder"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OUTPOSTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -119,79 +119,79 @@ namespace Model
 
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline CreateOrderRequest& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline CreateOrderRequest& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline const PaymentTerm& GetPaymentTerm() const{ return m_paymentTerm; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline bool PaymentTermHasBeenSet() const { return m_paymentTermHasBeenSet; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline void SetPaymentTerm(const PaymentTerm& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = value; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline void SetPaymentTerm(PaymentTerm&& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = std::move(value); }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline CreateOrderRequest& WithPaymentTerm(const PaymentTerm& value) { SetPaymentTerm(value); return *this;}
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline CreateOrderRequest& WithPaymentTerm(PaymentTerm&& value) { SetPaymentTerm(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_outpostIdentifier;
-    bool m_outpostIdentifierHasBeenSet;
+    bool m_outpostIdentifierHasBeenSet = false;
 
     Aws::Vector<LineItemRequest> m_lineItems;
-    bool m_lineItemsHasBeenSet;
+    bool m_lineItemsHasBeenSet = false;
 
     PaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     PaymentTerm m_paymentTerm;
-    bool m_paymentTermHasBeenSet;
+    bool m_paymentTermHasBeenSet = false;
   };
 
 } // namespace Model

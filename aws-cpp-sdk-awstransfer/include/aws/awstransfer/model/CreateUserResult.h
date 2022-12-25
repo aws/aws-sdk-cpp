@@ -24,46 +24,46 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API CreateUserResult
+  class CreateUserResult
   {
   public:
-    CreateUserResult();
-    CreateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API CreateUserResult();
+    AWS_TRANSFER_API CreateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API CreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline CreateUserResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline CreateUserResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the server that the user is attached to.</p>
+     * <p>The identifier of the server that the user is attached to.</p>
      */
     inline CreateUserResult& WithServerId(const char* value) { SetServerId(value); return *this;}
 

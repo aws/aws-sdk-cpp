@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API S3Location();
+    AWS_CODESTAR_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketKey;
-    bool m_bucketKeyHasBeenSet;
+    bool m_bucketKeyHasBeenSet = false;
   };
 
 } // namespace Model

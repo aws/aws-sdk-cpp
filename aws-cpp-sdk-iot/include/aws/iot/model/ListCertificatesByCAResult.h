@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCertificatesByCAResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListCertificatesByCAResult
+  class ListCertificatesByCAResult
   {
   public:
-    ListCertificatesByCAResult();
-    ListCertificatesByCAResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCertificatesByCAResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListCertificatesByCAResult();
+    AWS_IOT_API ListCertificatesByCAResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListCertificatesByCAResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

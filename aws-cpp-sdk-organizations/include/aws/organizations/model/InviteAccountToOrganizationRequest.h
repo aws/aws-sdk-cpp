@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API InviteAccountToOrganizationRequest : public OrganizationsRequest
+  class InviteAccountToOrganizationRequest : public OrganizationsRequest
   {
   public:
-    InviteAccountToOrganizationRequest();
+    AWS_ORGANIZATIONS_API InviteAccountToOrganizationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InviteAccountToOrganization"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ORGANIZATIONS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -326,13 +326,13 @@ namespace Model
   private:
 
     HandshakeParty m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

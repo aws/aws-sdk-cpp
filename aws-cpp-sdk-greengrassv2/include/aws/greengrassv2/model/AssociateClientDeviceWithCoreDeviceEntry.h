@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/AssociateClientDeviceWithCoreDeviceEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry
+  class AssociateClientDeviceWithCoreDeviceEntry
   {
   public:
-    AssociateClientDeviceWithCoreDeviceEntry();
-    AssociateClientDeviceWithCoreDeviceEntry(Aws::Utils::Json::JsonView jsonValue);
-    AssociateClientDeviceWithCoreDeviceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry();
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API AssociateClientDeviceWithCoreDeviceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
   };
 
 } // namespace Model

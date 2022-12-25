@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentAttributeValue
+  class DocumentAttributeValue
   {
   public:
-    DocumentAttributeValue();
-    DocumentAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    DocumentAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentAttributeValue();
+    AWS_KENDRA_API DocumentAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,47 +82,47 @@ namespace Model
 
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStringListValue() const{ return m_stringListValue; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline bool StringListValueHasBeenSet() const { return m_stringListValueHasBeenSet; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline void SetStringListValue(const Aws::Vector<Aws::String>& value) { m_stringListValueHasBeenSet = true; m_stringListValue = value; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline void SetStringListValue(Aws::Vector<Aws::String>&& value) { m_stringListValueHasBeenSet = true; m_stringListValue = std::move(value); }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& WithStringListValue(const Aws::Vector<Aws::String>& value) { SetStringListValue(value); return *this;}
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& WithStringListValue(Aws::Vector<Aws::String>&& value) { SetStringListValue(std::move(value)); return *this;}
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(const Aws::String& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(Aws::String&& value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of strings. </p>
+     * <p>A list of strings. The default maximum length or number of strings is 10.</p>
      */
     inline DocumentAttributeValue& AddStringListValue(const char* value) { m_stringListValueHasBeenSet = true; m_stringListValue.push_back(value); return *this; }
 
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringListValue;
-    bool m_stringListValueHasBeenSet;
+    bool m_stringListValueHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateValue;
-    bool m_dateValueHasBeenSet;
+    bool m_dateValueHasBeenSet = false;
   };
 
 } // namespace Model

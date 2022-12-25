@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ServiceError">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ServiceError
+  class ServiceError
   {
   public:
-    ServiceError();
-    ServiceError(Aws::Utils::Json::JsonView jsonValue);
-    ServiceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ServiceError();
+    AWS_OPSWORKS_API ServiceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ServiceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_serviceErrorId;
-    bool m_serviceErrorIdHasBeenSet;
+    bool m_serviceErrorIdHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

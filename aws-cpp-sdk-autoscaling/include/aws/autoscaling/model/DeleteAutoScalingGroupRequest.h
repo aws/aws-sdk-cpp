@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API DeleteAutoScalingGroupRequest : public AutoScalingRequest
+  class DeleteAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
-    DeleteAutoScalingGroupRequest();
+    AWS_AUTOSCALING_API DeleteAutoScalingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAutoScalingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -79,43 +79,39 @@ namespace Model
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline DeleteAutoScalingGroupRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

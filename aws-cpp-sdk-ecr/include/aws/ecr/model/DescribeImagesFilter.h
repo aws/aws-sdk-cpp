@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImagesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API DescribeImagesFilter
+  class DescribeImagesFilter
   {
   public:
-    DescribeImagesFilter();
-    DescribeImagesFilter(Aws::Utils::Json::JsonView jsonValue);
-    DescribeImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API DescribeImagesFilter();
+    AWS_ECR_API DescribeImagesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API DescribeImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     TagStatus m_tagStatus;
-    bool m_tagStatusHasBeenSet;
+    bool m_tagStatusHasBeenSet = false;
   };
 
 } // namespace Model

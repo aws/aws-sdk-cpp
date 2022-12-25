@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ShrinkPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ShrinkPolicy
+  class ShrinkPolicy
   {
   public:
-    ShrinkPolicy();
-    ShrinkPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ShrinkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ShrinkPolicy();
+    AWS_EMR_API ShrinkPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ShrinkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     int m_decommissionTimeout;
-    bool m_decommissionTimeoutHasBeenSet;
+    bool m_decommissionTimeoutHasBeenSet = false;
 
     InstanceResizePolicy m_instanceResizePolicy;
-    bool m_instanceResizePolicyHasBeenSet;
+    bool m_instanceResizePolicyHasBeenSet = false;
   };
 
 } // namespace Model

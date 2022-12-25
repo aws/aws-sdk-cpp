@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositoriesError">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesError
+  class BatchAssociateApprovalRuleTemplateWithRepositoriesError
   {
   public:
-    BatchAssociateApprovalRuleTemplateWithRepositoriesError();
-    BatchAssociateApprovalRuleTemplateWithRepositoriesError(Aws::Utils::Json::JsonView jsonValue);
-    BatchAssociateApprovalRuleTemplateWithRepositoriesError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesError();
+    AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API BatchAssociateApprovalRuleTemplateWithRepositoriesError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

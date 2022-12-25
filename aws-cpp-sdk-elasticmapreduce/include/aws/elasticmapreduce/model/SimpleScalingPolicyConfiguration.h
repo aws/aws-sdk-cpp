@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SimpleScalingPolicyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API SimpleScalingPolicyConfiguration
+  class SimpleScalingPolicyConfiguration
   {
   public:
-    SimpleScalingPolicyConfiguration();
-    SimpleScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SimpleScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API SimpleScalingPolicyConfiguration();
+    AWS_EMR_API SimpleScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API SimpleScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -223,13 +223,13 @@ namespace Model
   private:
 
     AdjustmentType m_adjustmentType;
-    bool m_adjustmentTypeHasBeenSet;
+    bool m_adjustmentTypeHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
 
     int m_coolDown;
-    bool m_coolDownHasBeenSet;
+    bool m_coolDownHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ResizeClusterMessage
+  class ResizeClusterMessage
   {
   public:
-    ResizeClusterMessage();
-    ResizeClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResizeClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResizeClusterMessage();
+    AWS_REDSHIFT_API ResizeClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ResizeClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -309,25 +309,25 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_clusterType;
-    bool m_clusterTypeHasBeenSet;
+    bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     bool m_classic;
-    bool m_classicHasBeenSet;
+    bool m_classicHasBeenSet = false;
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_targetReservedNodeOfferingId;
-    bool m_targetReservedNodeOfferingIdHasBeenSet;
+    bool m_targetReservedNodeOfferingIdHasBeenSet = false;
   };
 
 } // namespace Model

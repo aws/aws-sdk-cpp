@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExperimentConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineExperimentConfig
+  class PipelineExperimentConfig
   {
   public:
-    PipelineExperimentConfig();
-    PipelineExperimentConfig(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExperimentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineExperimentConfig();
+    AWS_SAGEMAKER_API PipelineExperimentConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineExperimentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_experimentName;
-    bool m_experimentNameHasBeenSet;
+    bool m_experimentNameHasBeenSet = false;
 
     Aws::String m_trialName;
-    bool m_trialNameHasBeenSet;
+    bool m_trialNameHasBeenSet = false;
   };
 
 } // namespace Model

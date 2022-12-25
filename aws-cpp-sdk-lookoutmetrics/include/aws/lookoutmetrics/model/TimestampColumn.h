@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TimestampColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API TimestampColumn
+  class TimestampColumn
   {
   public:
-    TimestampColumn();
-    TimestampColumn(Aws::Utils::Json::JsonView jsonValue);
-    TimestampColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API TimestampColumn();
+    AWS_LOOKOUTMETRICS_API TimestampColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API TimestampColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnFormat;
-    bool m_columnFormatHasBeenSet;
+    bool m_columnFormatHasBeenSet = false;
   };
 
 } // namespace Model

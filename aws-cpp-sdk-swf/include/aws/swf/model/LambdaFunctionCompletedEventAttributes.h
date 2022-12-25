@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionCompletedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API LambdaFunctionCompletedEventAttributes
+  class LambdaFunctionCompletedEventAttributes
   {
   public:
-    LambdaFunctionCompletedEventAttributes();
-    LambdaFunctionCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API LambdaFunctionCompletedEventAttributes();
+    AWS_SWF_API LambdaFunctionCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API LambdaFunctionCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,13 +139,13 @@ namespace Model
   private:
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
   };
 
 } // namespace Model

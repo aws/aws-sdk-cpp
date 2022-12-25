@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnectorSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API VoiceConnectorSettings
+  class VoiceConnectorSettings
   {
   public:
-    VoiceConnectorSettings();
-    VoiceConnectorSettings(Aws::Utils::Json::JsonView jsonValue);
-    VoiceConnectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API VoiceConnectorSettings();
+    AWS_CHIME_API VoiceConnectorSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API VoiceConnectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_cdrBucket;
-    bool m_cdrBucketHasBeenSet;
+    bool m_cdrBucketHasBeenSet = false;
   };
 
 } // namespace Model

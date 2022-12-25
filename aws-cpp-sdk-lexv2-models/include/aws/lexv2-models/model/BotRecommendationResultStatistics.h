@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationResultStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotRecommendationResultStatistics
+  class BotRecommendationResultStatistics
   {
   public:
-    BotRecommendationResultStatistics();
-    BotRecommendationResultStatistics(Aws::Utils::Json::JsonView jsonValue);
-    BotRecommendationResultStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotRecommendationResultStatistics();
+    AWS_LEXMODELSV2_API BotRecommendationResultStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotRecommendationResultStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     IntentStatistics m_intents;
-    bool m_intentsHasBeenSet;
+    bool m_intentsHasBeenSet = false;
 
     SlotTypeStatistics m_slotTypes;
-    bool m_slotTypesHasBeenSet;
+    bool m_slotTypesHasBeenSet = false;
   };
 
 } // namespace Model

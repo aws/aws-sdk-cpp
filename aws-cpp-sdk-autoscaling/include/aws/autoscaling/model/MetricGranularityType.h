@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MetricGranularityType">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MetricGranularityType
+  class MetricGranularityType
   {
   public:
-    MetricGranularityType();
-    MetricGranularityType(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricGranularityType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricGranularityType();
+    AWS_AUTOSCALING_API MetricGranularityType(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MetricGranularityType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

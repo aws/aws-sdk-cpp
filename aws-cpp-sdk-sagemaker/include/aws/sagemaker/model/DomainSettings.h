@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RStudioServerProDomainSettings.h>
+#include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DomainSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DomainSettings
+  class DomainSettings
   {
   public:
-    DomainSettings();
-    DomainSettings(Aws::Utils::Json::JsonView jsonValue);
-    DomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DomainSettings();
+    AWS_SAGEMAKER_API DomainSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -141,13 +142,65 @@ namespace Model
      */
     inline DomainSettings& WithRStudioServerProDomainSettings(RStudioServerProDomainSettings&& value) { SetRStudioServerProDomainSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline const ExecutionRoleIdentityConfig& GetExecutionRoleIdentityConfig() const{ return m_executionRoleIdentityConfig; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline bool ExecutionRoleIdentityConfigHasBeenSet() const { return m_executionRoleIdentityConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline DomainSettings& WithExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { SetExecutionRoleIdentityConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>.</p>
+     */
+    inline DomainSettings& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     RStudioServerProDomainSettings m_rStudioServerProDomainSettings;
-    bool m_rStudioServerProDomainSettingsHasBeenSet;
+    bool m_rStudioServerProDomainSettingsHasBeenSet = false;
+
+    ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
+    bool m_executionRoleIdentityConfigHasBeenSet = false;
   };
 
 } // namespace Model

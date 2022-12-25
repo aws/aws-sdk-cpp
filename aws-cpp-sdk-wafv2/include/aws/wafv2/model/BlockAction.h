@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/BlockAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API BlockAction
+  class BlockAction
   {
   public:
-    BlockAction();
-    BlockAction(Aws::Utils::Json::JsonView jsonValue);
-    BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API BlockAction();
+    AWS_WAFV2_API BlockAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     CustomResponse m_customResponse;
-    bool m_customResponseHasBeenSet;
+    bool m_customResponseHasBeenSet = false;
   };
 
 } // namespace Model

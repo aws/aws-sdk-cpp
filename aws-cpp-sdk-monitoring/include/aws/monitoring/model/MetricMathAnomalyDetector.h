@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricMathAnomalyDetector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricMathAnomalyDetector
+  class MetricMathAnomalyDetector
   {
   public:
-    MetricMathAnomalyDetector();
-    MetricMathAnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricMathAnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricMathAnomalyDetector();
+    AWS_CLOUDWATCH_API MetricMathAnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricMathAnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -48,9 +48,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
@@ -61,9 +61,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
@@ -74,9 +74,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
@@ -87,9 +87,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
@@ -100,9 +100,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline MetricMathAnomalyDetector& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
@@ -113,9 +113,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline MetricMathAnomalyDetector& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
@@ -126,9 +126,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline MetricMathAnomalyDetector& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
@@ -139,9 +139,9 @@ namespace Model
      * <code>MetricDataQueries</code> gets a metric or performs a math expression. One
      * item in <code>MetricDataQueries</code> is the expression that provides the time
      * series that the anomaly detector uses as input. Designate the expression by
-     * setting <code>ReturnData</code> to <code>True</code> for this object in the
+     * setting <code>ReturnData</code> to <code>true</code> for this object in the
      * array. For all other expressions and metrics, set <code>ReturnData</code> to
-     * <code>False</code>. The designated expression must return a single time
+     * <code>false</code>. The designated expression must return a single time
      * series.</p>
      */
     inline MetricMathAnomalyDetector& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
@@ -149,7 +149,7 @@ namespace Model
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
-    bool m_metricDataQueriesHasBeenSet;
+    bool m_metricDataQueriesHasBeenSet = false;
   };
 
 } // namespace Model

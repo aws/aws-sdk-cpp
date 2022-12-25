@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ControlInputParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ControlInputParameter
+  class ControlInputParameter
   {
   public:
-    ControlInputParameter();
-    ControlInputParameter(Aws::Utils::Json::JsonView jsonValue);
-    ControlInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ControlInputParameter();
+    AWS_BACKUP_API ControlInputParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ControlInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

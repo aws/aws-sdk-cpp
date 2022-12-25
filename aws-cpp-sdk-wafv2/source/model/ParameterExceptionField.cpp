@@ -83,6 +83,8 @@ namespace Aws
         static const int COOKIE_MATCH_PATTERN_HASH = HashingUtils::HashString("COOKIE_MATCH_PATTERN");
         static const int MAP_MATCH_SCOPE_HASH = HashingUtils::HashString("MAP_MATCH_SCOPE");
         static const int OVERSIZE_HANDLING_HASH = HashingUtils::HashString("OVERSIZE_HANDLING");
+        static const int CHALLENGE_CONFIG_HASH = HashingUtils::HashString("CHALLENGE_CONFIG");
+        static const int TOKEN_DOMAIN_HASH = HashingUtils::HashString("TOKEN_DOMAIN");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -340,6 +342,14 @@ namespace Aws
           {
             return ParameterExceptionField::OVERSIZE_HANDLING;
           }
+          else if (hashCode == CHALLENGE_CONFIG_HASH)
+          {
+            return ParameterExceptionField::CHALLENGE_CONFIG;
+          }
+          else if (hashCode == TOKEN_DOMAIN_HASH)
+          {
+            return ParameterExceptionField::TOKEN_DOMAIN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -480,6 +490,10 @@ namespace Aws
             return "MAP_MATCH_SCOPE";
           case ParameterExceptionField::OVERSIZE_HANDLING:
             return "OVERSIZE_HANDLING";
+          case ParameterExceptionField::CHALLENGE_CONFIG:
+            return "CHALLENGE_CONFIG";
+          case ParameterExceptionField::TOKEN_DOMAIN:
+            return "TOKEN_DOMAIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

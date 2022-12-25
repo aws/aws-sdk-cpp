@@ -19,7 +19,8 @@ UpdateFleetAttributesRequest::UpdateFleetAttributesRequest() :
     m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,12 +59,18 @@ Aws::String UpdateFleetAttributesRequest::SerializePayload() const
 
   if(m_metricGroupsHasBeenSet)
   {
-   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
    for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
    {
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
    }
    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
+
+  }
+
+  if(m_anywhereConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
 
   }
 

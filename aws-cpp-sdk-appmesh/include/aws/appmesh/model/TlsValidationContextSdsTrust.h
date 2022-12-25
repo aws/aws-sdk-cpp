@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TlsValidationContextSdsTrust">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TlsValidationContextSdsTrust
+  class TlsValidationContextSdsTrust
   {
   public:
-    TlsValidationContextSdsTrust();
-    TlsValidationContextSdsTrust(Aws::Utils::Json::JsonView jsonValue);
-    TlsValidationContextSdsTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TlsValidationContextSdsTrust();
+    AWS_APPMESH_API TlsValidationContextSdsTrust(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TlsValidationContextSdsTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::String m_secretName;
-    bool m_secretNameHasBeenSet;
+    bool m_secretNameHasBeenSet = false;
   };
 
 } // namespace Model

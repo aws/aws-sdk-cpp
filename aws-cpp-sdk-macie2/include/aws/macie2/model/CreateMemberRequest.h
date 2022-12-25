@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API CreateMemberRequest : public Macie2Request
+  class CreateMemberRequest : public Macie2Request
   {
   public:
-    CreateMemberRequest();
+    AWS_MACIE2_API CreateMemberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMember"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -185,10 +185,10 @@ namespace Model
   private:
 
     AccountDetail m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

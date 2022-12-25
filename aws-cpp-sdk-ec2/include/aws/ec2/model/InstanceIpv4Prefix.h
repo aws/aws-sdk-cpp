@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceIpv4Prefix">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceIpv4Prefix
+  class InstanceIpv4Prefix
   {
   public:
-    InstanceIpv4Prefix();
-    InstanceIpv4Prefix(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceIpv4Prefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceIpv4Prefix();
+    AWS_EC2_API InstanceIpv4Prefix(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceIpv4Prefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_ipv4Prefix;
-    bool m_ipv4PrefixHasBeenSet;
+    bool m_ipv4PrefixHasBeenSet = false;
   };
 
 } // namespace Model

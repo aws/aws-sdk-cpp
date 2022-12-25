@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIACONNECT_API RevokeFlowEntitlementRequest : public MediaConnectRequest
+  class RevokeFlowEntitlementRequest : public MediaConnectRequest
   {
   public:
-    RevokeFlowEntitlementRequest();
+    AWS_MEDIACONNECT_API RevokeFlowEntitlementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RevokeFlowEntitlement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
   };
 
 } // namespace Model

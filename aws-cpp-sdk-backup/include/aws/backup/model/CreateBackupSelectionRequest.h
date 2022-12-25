@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API CreateBackupSelectionRequest : public BackupRequest
+  class CreateBackupSelectionRequest : public BackupRequest
   {
   public:
-    CreateBackupSelectionRequest();
+    AWS_BACKUP_API CreateBackupSelectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBackupSelection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -186,13 +186,13 @@ namespace Model
   private:
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     BackupSelection m_backupSelection;
-    bool m_backupSelectionHasBeenSet;
+    bool m_backupSelectionHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2ReplaceRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2ReplaceRouteAction
+  class EC2ReplaceRouteAction
   {
   public:
-    EC2ReplaceRouteAction();
-    EC2ReplaceRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2ReplaceRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2ReplaceRouteAction();
+    AWS_FMS_API EC2ReplaceRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2ReplaceRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,22 +305,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
-    bool m_destinationPrefixListIdHasBeenSet;
+    bool m_destinationPrefixListIdHasBeenSet = false;
 
     Aws::String m_destinationIpv6CidrBlock;
-    bool m_destinationIpv6CidrBlockHasBeenSet;
+    bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
     ActionTarget m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     ActionTarget m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
   };
 
 } // namespace Model

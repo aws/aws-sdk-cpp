@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALINGPLANS_API CreateScalingPlanRequest : public AutoScalingPlansRequest
+  class CreateScalingPlanRequest : public AutoScalingPlansRequest
   {
   public:
-    CreateScalingPlanRequest();
+    AWS_AUTOSCALINGPLANS_API CreateScalingPlanRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateScalingPlan"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALINGPLANS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_AUTOSCALINGPLANS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet;
+    bool m_scalingPlanNameHasBeenSet = false;
 
     ApplicationSource m_applicationSource;
-    bool m_applicationSourceHasBeenSet;
+    bool m_applicationSourceHasBeenSet = false;
 
     Aws::Vector<ScalingInstruction> m_scalingInstructions;
-    bool m_scalingInstructionsHasBeenSet;
+    bool m_scalingInstructionsHasBeenSet = false;
   };
 
 } // namespace Model

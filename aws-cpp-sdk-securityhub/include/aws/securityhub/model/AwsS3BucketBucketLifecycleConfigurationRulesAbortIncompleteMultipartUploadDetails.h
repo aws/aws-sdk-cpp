@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails
+  class AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails
   {
   public:
-    AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails();
-    AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_daysAfterInitiation;
-    bool m_daysAfterInitiationHasBeenSet;
+    bool m_daysAfterInitiationHasBeenSet = false;
   };
 
 } // namespace Model

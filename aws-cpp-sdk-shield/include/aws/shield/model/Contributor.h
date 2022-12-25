@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Contributor">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API Contributor
+  class Contributor
   {
   public:
-    Contributor();
-    Contributor(Aws::Utils::Json::JsonView jsonValue);
-    Contributor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API Contributor();
+    AWS_SHIELD_API Contributor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Contributor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

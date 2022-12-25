@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PublicIpv4PoolRange">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PublicIpv4PoolRange
+  class PublicIpv4PoolRange
   {
   public:
-    PublicIpv4PoolRange();
-    PublicIpv4PoolRange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicIpv4PoolRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PublicIpv4PoolRange();
+    AWS_EC2_API PublicIpv4PoolRange(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PublicIpv4PoolRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_firstAddress;
-    bool m_firstAddressHasBeenSet;
+    bool m_firstAddressHasBeenSet = false;
 
     Aws::String m_lastAddress;
-    bool m_lastAddressHasBeenSet;
+    bool m_lastAddressHasBeenSet = false;
 
     int m_addressCount;
-    bool m_addressCountHasBeenSet;
+    bool m_addressCountHasBeenSet = false;
 
     int m_availableAddressCount;
-    bool m_availableAddressCountHasBeenSet;
+    bool m_availableAddressCountHasBeenSet = false;
   };
 
 } // namespace Model

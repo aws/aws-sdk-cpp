@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Bumper">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API Bumper
+  class Bumper
   {
   public:
-    Bumper();
-    Bumper(Aws::Utils::Json::JsonView jsonValue);
-    Bumper& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API Bumper();
+    AWS_MEDIATAILOR_API Bumper(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Bumper& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_endUrl;
-    bool m_endUrlHasBeenSet;
+    bool m_endUrlHasBeenSet = false;
 
     Aws::String m_startUrl;
-    bool m_startUrlHasBeenSet;
+    bool m_startUrlHasBeenSet = false;
   };
 
 } // namespace Model

@@ -109,7 +109,7 @@ ApiKey& ApiKey::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stageKeys"))
   {
-    Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
+    Aws::Utils::Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
     for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
     {
       m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());
@@ -182,7 +182,7 @@ JsonValue ApiKey::Jsonize() const
 
   if(m_stageKeysHasBeenSet)
   {
-   Array<JsonValue> stageKeysJsonList(m_stageKeys.size());
+   Aws::Utils::Array<JsonValue> stageKeysJsonList(m_stageKeys.size());
    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
    {
      stageKeysJsonList[stageKeysIndex].AsString(m_stageKeys[stageKeysIndex]);

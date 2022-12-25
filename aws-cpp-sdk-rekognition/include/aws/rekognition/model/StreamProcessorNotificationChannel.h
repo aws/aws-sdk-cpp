@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorNotificationChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorNotificationChannel
+  class StreamProcessorNotificationChannel
   {
   public:
-    StreamProcessorNotificationChannel();
-    StreamProcessorNotificationChannel(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorNotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorNotificationChannel();
+    AWS_REKOGNITION_API StreamProcessorNotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorNotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
   };
 
 } // namespace Model

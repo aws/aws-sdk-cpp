@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecretsManagerSecretRotationRules">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSecretsManagerSecretRotationRules
+  class AwsSecretsManagerSecretRotationRules
   {
   public:
-    AwsSecretsManagerSecretRotationRules();
-    AwsSecretsManagerSecretRotationRules(Aws::Utils::Json::JsonView jsonValue);
-    AwsSecretsManagerSecretRotationRules& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretRotationRules();
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretRotationRules(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSecretsManagerSecretRotationRules& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_automaticallyAfterDays;
-    bool m_automaticallyAfterDaysHasBeenSet;
+    bool m_automaticallyAfterDaysHasBeenSet = false;
   };
 
 } // namespace Model

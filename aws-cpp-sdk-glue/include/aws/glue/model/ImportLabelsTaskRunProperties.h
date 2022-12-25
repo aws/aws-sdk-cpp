@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportLabelsTaskRunProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ImportLabelsTaskRunProperties
+  class ImportLabelsTaskRunProperties
   {
   public:
-    ImportLabelsTaskRunProperties();
-    ImportLabelsTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
-    ImportLabelsTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ImportLabelsTaskRunProperties();
+    AWS_GLUE_API ImportLabelsTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ImportLabelsTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_inputS3Path;
-    bool m_inputS3PathHasBeenSet;
+    bool m_inputS3PathHasBeenSet = false;
 
     bool m_replace;
-    bool m_replaceHasBeenSet;
+    bool m_replaceHasBeenSet = false;
   };
 
 } // namespace Model

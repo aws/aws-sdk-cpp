@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CacheBehaviorPerPath">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API CacheBehaviorPerPath
+  class CacheBehaviorPerPath
   {
   public:
-    CacheBehaviorPerPath();
-    CacheBehaviorPerPath(Aws::Utils::Json::JsonView jsonValue);
-    CacheBehaviorPerPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API CacheBehaviorPerPath();
+    AWS_LIGHTSAIL_API CacheBehaviorPerPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API CacheBehaviorPerPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -272,10 +272,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     BehaviorEnum m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexVideoSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexVideoSettings
+  class MultiplexVideoSettings
   {
   public:
-    MultiplexVideoSettings();
-    MultiplexVideoSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexVideoSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexVideoSettings();
+    AWS_MEDIALIVE_API MultiplexVideoSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexVideoSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ When this field is defined, ConstantBitrate must
   private:
 
     int m_constantBitrate;
-    bool m_constantBitrateHasBeenSet;
+    bool m_constantBitrateHasBeenSet = false;
 
     MultiplexStatmuxVideoSettings m_statmuxSettings;
-    bool m_statmuxSettingsHasBeenSet;
+    bool m_statmuxSettingsHasBeenSet = false;
   };
 
 } // namespace Model

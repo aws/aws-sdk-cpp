@@ -20,13 +20,15 @@ namespace Model
 
 Filters::Filters() : 
     m_queuesHasBeenSet(false),
-    m_channelsHasBeenSet(false)
+    m_channelsHasBeenSet(false),
+    m_routingProfilesHasBeenSet(false)
 {
 }
 
 Filters::Filters(JsonView jsonValue) : 
     m_queuesHasBeenSet(false),
-    m_channelsHasBeenSet(false)
+    m_channelsHasBeenSet(false),
+    m_routingProfilesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -35,7 +37,7 @@ Filters& Filters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsString());
@@ -45,12 +47,22 @@ Filters& Filters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Channels"))
   {
-    Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("Channels");
     for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
     {
       m_channels.push_back(ChannelMapper::GetChannelForName(channelsJsonList[channelsIndex].AsString()));
     }
     m_channelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingProfiles"))
+  {
+    Aws::Utils::Array<JsonView> routingProfilesJsonList = jsonValue.GetArray("RoutingProfiles");
+    for(unsigned routingProfilesIndex = 0; routingProfilesIndex < routingProfilesJsonList.GetLength(); ++routingProfilesIndex)
+    {
+      m_routingProfiles.push_back(routingProfilesJsonList[routingProfilesIndex].AsString());
+    }
+    m_routingProfilesHasBeenSet = true;
   }
 
   return *this;
@@ -62,7 +74,7 @@ JsonValue Filters::Jsonize() const
 
   if(m_queuesHasBeenSet)
   {
-   Array<JsonValue> queuesJsonList(m_queues.size());
+   Aws::Utils::Array<JsonValue> queuesJsonList(m_queues.size());
    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
    {
      queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);
@@ -73,12 +85,23 @@ JsonValue Filters::Jsonize() const
 
   if(m_channelsHasBeenSet)
   {
-   Array<JsonValue> channelsJsonList(m_channels.size());
+   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
    {
      channelsJsonList[channelsIndex].AsString(ChannelMapper::GetNameForChannel(m_channels[channelsIndex]));
    }
    payload.WithArray("Channels", std::move(channelsJsonList));
+
+  }
+
+  if(m_routingProfilesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> routingProfilesJsonList(m_routingProfiles.size());
+   for(unsigned routingProfilesIndex = 0; routingProfilesIndex < routingProfilesJsonList.GetLength(); ++routingProfilesIndex)
+   {
+     routingProfilesJsonList[routingProfilesIndex].AsString(m_routingProfiles[routingProfilesIndex]);
+   }
+   payload.WithArray("RoutingProfiles", std::move(routingProfilesJsonList));
 
   }
 

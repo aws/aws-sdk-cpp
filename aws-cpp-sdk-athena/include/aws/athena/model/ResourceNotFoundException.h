@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResourceNotFoundException();
+    AWS_ATHENA_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -62,37 +62,53 @@ namespace Model
     inline ResourceNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline ResourceNotFoundException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline ResourceNotFoundException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the Amazon resource.</p>
+     */
     inline ResourceNotFoundException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model

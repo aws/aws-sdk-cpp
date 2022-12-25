@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/TableWithColumnsResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API TableWithColumnsResource
+  class TableWithColumnsResource
   {
   public:
-    TableWithColumnsResource();
-    TableWithColumnsResource(Aws::Utils::Json::JsonView jsonValue);
-    TableWithColumnsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API TableWithColumnsResource();
+    AWS_LAKEFORMATION_API TableWithColumnsResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API TableWithColumnsResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_columnNames;
-    bool m_columnNamesHasBeenSet;
+    bool m_columnNamesHasBeenSet = false;
 
     ColumnWildcard m_columnWildcard;
-    bool m_columnWildcardHasBeenSet;
+    bool m_columnWildcardHasBeenSet = false;
   };
 
 } // namespace Model

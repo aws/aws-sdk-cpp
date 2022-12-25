@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AuditContext">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API AuditContext
+  class AuditContext
   {
   public:
-    AuditContext();
-    AuditContext(Aws::Utils::Json::JsonView jsonValue);
-    AuditContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API AuditContext();
+    AWS_GLUE_API AuditContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API AuditContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_additionalAuditContext;
-    bool m_additionalAuditContextHasBeenSet;
+    bool m_additionalAuditContextHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requestedColumns;
-    bool m_requestedColumnsHasBeenSet;
+    bool m_requestedColumnsHasBeenSet = false;
 
     bool m_allColumnsRequested;
-    bool m_allColumnsRequestedHasBeenSet;
+    bool m_allColumnsRequestedHasBeenSet = false;
   };
 
 } // namespace Model

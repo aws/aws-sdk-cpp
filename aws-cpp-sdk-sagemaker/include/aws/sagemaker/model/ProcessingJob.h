@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingJob
+  class ProcessingJob
   {
   public:
-    ProcessingJob();
-    ProcessingJob(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingJob();
+    AWS_SAGEMAKER_API ProcessingJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -855,70 +855,70 @@ namespace Model
   private:
 
     Aws::Vector<ProcessingInput> m_processingInputs;
-    bool m_processingInputsHasBeenSet;
+    bool m_processingInputsHasBeenSet = false;
 
     ProcessingOutputConfig m_processingOutputConfig;
-    bool m_processingOutputConfigHasBeenSet;
+    bool m_processingOutputConfigHasBeenSet = false;
 
     Aws::String m_processingJobName;
-    bool m_processingJobNameHasBeenSet;
+    bool m_processingJobNameHasBeenSet = false;
 
     ProcessingResources m_processingResources;
-    bool m_processingResourcesHasBeenSet;
+    bool m_processingResourcesHasBeenSet = false;
 
     ProcessingStoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     AppSpecification m_appSpecification;
-    bool m_appSpecificationHasBeenSet;
+    bool m_appSpecificationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     NetworkConfig m_networkConfig;
-    bool m_networkConfigHasBeenSet;
+    bool m_networkConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
-    bool m_experimentConfigHasBeenSet;
+    bool m_experimentConfigHasBeenSet = false;
 
     Aws::String m_processingJobArn;
-    bool m_processingJobArnHasBeenSet;
+    bool m_processingJobArnHasBeenSet = false;
 
     ProcessingJobStatus m_processingJobStatus;
-    bool m_processingJobStatusHasBeenSet;
+    bool m_processingJobStatusHasBeenSet = false;
 
     Aws::String m_exitMessage;
-    bool m_exitMessageHasBeenSet;
+    bool m_exitMessageHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_processingEndTime;
-    bool m_processingEndTimeHasBeenSet;
+    bool m_processingEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_processingStartTime;
-    bool m_processingStartTimeHasBeenSet;
+    bool m_processingStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_monitoringScheduleArn;
-    bool m_monitoringScheduleArnHasBeenSet;
+    bool m_monitoringScheduleArnHasBeenSet = false;
 
     Aws::String m_autoMLJobArn;
-    bool m_autoMLJobArnHasBeenSet;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     Aws::String m_trainingJobArn;
-    bool m_trainingJobArnHasBeenSet;
+    bool m_trainingJobArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

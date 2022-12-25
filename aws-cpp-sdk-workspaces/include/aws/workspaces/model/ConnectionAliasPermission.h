@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ConnectionAliasPermission">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ConnectionAliasPermission
+  class ConnectionAliasPermission
   {
   public:
-    ConnectionAliasPermission();
-    ConnectionAliasPermission(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionAliasPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ConnectionAliasPermission();
+    AWS_WORKSPACES_API ConnectionAliasPermission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ConnectionAliasPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     bool m_allowAssociation;
-    bool m_allowAssociationHasBeenSet;
+    bool m_allowAssociationHasBeenSet = false;
   };
 
 } // namespace Model

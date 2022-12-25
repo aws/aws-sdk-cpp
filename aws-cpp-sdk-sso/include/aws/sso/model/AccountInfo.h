@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/AccountInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_SSO_API AccountInfo
+  class AccountInfo
   {
   public:
-    AccountInfo();
-    AccountInfo(Aws::Utils::Json::JsonView jsonValue);
-    AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSO_API AccountInfo();
+    AWS_SSO_API AccountInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameProperty
+  class GameProperty
   {
   public:
-    GameProperty();
-    GameProperty(Aws::Utils::Json::JsonView jsonValue);
-    GameProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameProperty();
+    AWS_GAMELIFT_API GameProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

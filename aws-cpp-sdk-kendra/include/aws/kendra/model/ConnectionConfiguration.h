@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConnectionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ConnectionConfiguration
+  class ConnectionConfiguration
   {
   public:
-    ConnectionConfiguration();
-    ConnectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ConnectionConfiguration();
+    AWS_KENDRA_API ConnectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ConnectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -273,19 +273,19 @@ namespace Model
   private:
 
     Aws::String m_databaseHost;
-    bool m_databaseHostHasBeenSet;
+    bool m_databaseHostHasBeenSet = false;
 
     int m_databasePort;
-    bool m_databasePortHasBeenSet;
+    bool m_databasePortHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

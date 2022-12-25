@@ -23,15 +23,15 @@ namespace EC2
 namespace Model
 {
 
-  class AWS_EC2_API BlobAttributeValue
+  class BlobAttributeValue
   {
   public:
-    BlobAttributeValue();
-    BlobAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BlobAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API BlobAttributeValue();
+    AWS_EC2_API BlobAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API BlobAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -55,7 +55,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

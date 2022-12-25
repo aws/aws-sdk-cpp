@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API UpdateNetworkProfileRequest : public AlexaForBusinessRequest
+  class UpdateNetworkProfileRequest : public AlexaForBusinessRequest
   {
   public:
-    UpdateNetworkProfileRequest();
+    AWS_ALEXAFORBUSINESS_API UpdateNetworkProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNetworkProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -371,25 +371,25 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_currentPassword;
-    bool m_currentPasswordHasBeenSet;
+    bool m_currentPasswordHasBeenSet = false;
 
     Aws::String m_nextPassword;
-    bool m_nextPasswordHasBeenSet;
+    bool m_nextPasswordHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trustAnchors;
-    bool m_trustAnchorsHasBeenSet;
+    bool m_trustAnchorsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PillarDifference">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API PillarDifference
+  class PillarDifference
   {
   public:
-    PillarDifference();
-    PillarDifference(Aws::Utils::Json::JsonView jsonValue);
-    PillarDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API PillarDifference();
+    AWS_WELLARCHITECTED_API PillarDifference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API PillarDifference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     Aws::String m_pillarName;
-    bool m_pillarNameHasBeenSet;
+    bool m_pillarNameHasBeenSet = false;
 
     DifferenceStatus m_differenceStatus;
-    bool m_differenceStatusHasBeenSet;
+    bool m_differenceStatusHasBeenSet = false;
 
     Aws::Vector<QuestionDifference> m_questionDifferences;
-    bool m_questionDifferencesHasBeenSet;
+    bool m_questionDifferencesHasBeenSet = false;
   };
 
 } // namespace Model

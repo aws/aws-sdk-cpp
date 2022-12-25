@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/IoTJobTimeoutConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API IoTJobTimeoutConfig
+  class IoTJobTimeoutConfig
   {
   public:
-    IoTJobTimeoutConfig();
-    IoTJobTimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
-    IoTJobTimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API IoTJobTimeoutConfig();
+    AWS_GREENGRASSV2_API IoTJobTimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API IoTJobTimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     long long m_inProgressTimeoutInMinutes;
-    bool m_inProgressTimeoutInMinutesHasBeenSet;
+    bool m_inProgressTimeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

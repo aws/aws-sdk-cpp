@@ -26,52 +26,52 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API SearchResourcesResult
+  class SearchResourcesResult
   {
   public:
-    SearchResourcesResult();
-    SearchResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API SearchResourcesResult();
+    AWS_MACIE2_API SearchResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API SearchResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline const Aws::Vector<MatchingResource>& GetMatchingResources() const{ return m_matchingResources; }
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetMatchingResources(const Aws::Vector<MatchingResource>& value) { m_matchingResources = value; }
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline void SetMatchingResources(Aws::Vector<MatchingResource>&& value) { m_matchingResources = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline SearchResourcesResult& WithMatchingResources(const Aws::Vector<MatchingResource>& value) { SetMatchingResources(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline SearchResourcesResult& WithMatchingResources(Aws::Vector<MatchingResource>&& value) { SetMatchingResources(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline SearchResourcesResult& AddMatchingResources(const MatchingResource& value) { m_matchingResources.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each resource that meets the filter criteria
+     * <p>An array of objects, one for each resource that matches the filter criteria
      * specified in the request.</p>
      */
     inline SearchResourcesResult& AddMatchingResources(MatchingResource&& value) { m_matchingResources.push_back(std::move(value)); return *this; }

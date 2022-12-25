@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SecretsManagerAccessTokenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration
+  class SecretsManagerAccessTokenConfiguration
   {
   public:
-    SecretsManagerAccessTokenConfiguration();
-    SecretsManagerAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SecretsManagerAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration();
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::String m_headerName;
-    bool m_headerNameHasBeenSet;
+    bool m_headerNameHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::String m_secretStringKey;
-    bool m_secretStringKeyHasBeenSet;
+    bool m_secretStringKeyHasBeenSet = false;
   };
 
 } // namespace Model

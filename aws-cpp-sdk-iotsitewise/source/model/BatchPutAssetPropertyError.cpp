@@ -53,7 +53,7 @@ BatchPutAssetPropertyError& BatchPutAssetPropertyError::operator =(JsonView json
 
   if(jsonValue.ValueExists("timestamps"))
   {
-    Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
+    Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
     for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
     {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue BatchPutAssetPropertyError::Jsonize() const
 
   if(m_timestampsHasBeenSet)
   {
-   Array<JsonValue> timestampsJsonList(m_timestamps.size());
+   Aws::Utils::Array<JsonValue> timestampsJsonList(m_timestamps.size());
    for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
    {
      timestampsJsonList[timestampsIndex].AsObject(m_timestamps[timestampsIndex].Jsonize());

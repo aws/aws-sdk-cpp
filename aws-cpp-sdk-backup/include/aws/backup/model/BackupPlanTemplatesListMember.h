@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupPlanTemplatesListMember">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupPlanTemplatesListMember
+  class BackupPlanTemplatesListMember
   {
   public:
-    BackupPlanTemplatesListMember();
-    BackupPlanTemplatesListMember(Aws::Utils::Json::JsonView jsonValue);
-    BackupPlanTemplatesListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupPlanTemplatesListMember();
+    AWS_BACKUP_API BackupPlanTemplatesListMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupPlanTemplatesListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_backupPlanTemplateId;
-    bool m_backupPlanTemplateIdHasBeenSet;
+    bool m_backupPlanTemplateIdHasBeenSet = false;
 
     Aws::String m_backupPlanTemplateName;
-    bool m_backupPlanTemplateNameHasBeenSet;
+    bool m_backupPlanTemplateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DebugRuleEvaluationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DebugRuleEvaluationStatus
+  class DebugRuleEvaluationStatus
   {
   public:
-    DebugRuleEvaluationStatus();
-    DebugRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
-    DebugRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus();
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_ruleConfigurationName;
-    bool m_ruleConfigurationNameHasBeenSet;
+    bool m_ruleConfigurationNameHasBeenSet = false;
 
     Aws::String m_ruleEvaluationJobArn;
-    bool m_ruleEvaluationJobArnHasBeenSet;
+    bool m_ruleEvaluationJobArnHasBeenSet = false;
 
     RuleEvaluationStatus m_ruleEvaluationStatus;
-    bool m_ruleEvaluationStatusHasBeenSet;
+    bool m_ruleEvaluationStatusHasBeenSet = false;
 
     Aws::String m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/FailureDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API FailureDescription
+  class FailureDescription
   {
   public:
-    FailureDescription();
-    FailureDescription(Aws::Utils::Json::JsonView jsonValue);
-    FailureDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API FailureDescription();
+    AWS_FIREHOSE_API FailureDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API FailureDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DeliveryStreamFailureType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

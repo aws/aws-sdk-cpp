@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequest : public AmplifyUIBuilderRequest
+  class ExchangeCodeForTokenRequest : public AmplifyUIBuilderRequest
   {
   public:
-    ExchangeCodeForTokenRequest();
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExchangeCodeForToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYUIBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     TokenProviders m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
 
     ExchangeCodeForTokenRequestBody m_request;
-    bool m_requestHasBeenSet;
+    bool m_requestHasBeenSet = false;
   };
 
 } // namespace Model

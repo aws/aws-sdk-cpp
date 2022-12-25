@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/EncodingParametersRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API EncodingParametersRequest
+  class EncodingParametersRequest
   {
   public:
-    EncodingParametersRequest();
-    EncodingParametersRequest(Aws::Utils::Json::JsonView jsonValue);
-    EncodingParametersRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API EncodingParametersRequest();
+    AWS_MEDIACONNECT_API EncodingParametersRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API EncodingParametersRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     double m_compressionFactor;
-    bool m_compressionFactorHasBeenSet;
+    bool m_compressionFactorHasBeenSet = false;
 
     EncoderProfile m_encoderProfile;
-    bool m_encoderProfileHasBeenSet;
+    bool m_encoderProfileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RdsParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RdsParameters
+  class RdsParameters
   {
   public:
-    RdsParameters();
-    RdsParameters(Aws::Utils::Json::JsonView jsonValue);
-    RdsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RdsParameters();
+    AWS_QUICKSIGHT_API RdsParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RdsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

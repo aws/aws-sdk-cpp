@@ -44,7 +44,7 @@ DescribeUserResult& DescribeUserResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());

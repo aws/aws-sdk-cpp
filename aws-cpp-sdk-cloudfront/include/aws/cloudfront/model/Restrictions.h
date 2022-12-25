@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Restrictions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Restrictions
+  class Restrictions
   {
   public:
-    Restrictions();
-    Restrictions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Restrictions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Restrictions();
+    AWS_CLOUDFRONT_API Restrictions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Restrictions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     GeoRestriction m_geoRestriction;
-    bool m_geoRestrictionHasBeenSet;
+    bool m_geoRestrictionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetRelationshipSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetRelationshipSummary
+  class AssetRelationshipSummary
   {
   public:
-    AssetRelationshipSummary();
-    AssetRelationshipSummary(Aws::Utils::Json::JsonView jsonValue);
-    AssetRelationshipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetRelationshipSummary();
+    AWS_IOTSITEWISE_API AssetRelationshipSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetRelationshipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     AssetHierarchyInfo m_hierarchyInfo;
-    bool m_hierarchyInfoHasBeenSet;
+    bool m_hierarchyInfoHasBeenSet = false;
 
     AssetRelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
   };
 
 } // namespace Model

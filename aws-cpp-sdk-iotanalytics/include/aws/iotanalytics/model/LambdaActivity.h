@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/LambdaActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API LambdaActivity
+  class LambdaActivity
   {
   public:
-    LambdaActivity();
-    LambdaActivity(Aws::Utils::Json::JsonView jsonValue);
-    LambdaActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API LambdaActivity();
+    AWS_IOTANALYTICS_API LambdaActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API LambdaActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_lambdaName;
-    bool m_lambdaNameHasBeenSet;
+    bool m_lambdaNameHasBeenSet = false;
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     Aws::String m_next;
-    bool m_nextHasBeenSet;
+    bool m_nextHasBeenSet = false;
   };
 
 } // namespace Model

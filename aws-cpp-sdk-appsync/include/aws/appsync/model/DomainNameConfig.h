@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DomainNameConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API DomainNameConfig
+  class DomainNameConfig
   {
   public:
-    DomainNameConfig();
-    DomainNameConfig(Aws::Utils::Json::JsonView jsonValue);
-    DomainNameConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API DomainNameConfig();
+    AWS_APPSYNC_API DomainNameConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API DomainNameConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,19 +260,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_appsyncDomainName;
-    bool m_appsyncDomainNameHasBeenSet;
+    bool m_appsyncDomainNameHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessGatewayStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessGatewayStatistics
+  class WirelessGatewayStatistics
   {
   public:
-    WirelessGatewayStatistics();
-    WirelessGatewayStatistics(Aws::Utils::Json::JsonView jsonValue);
-    WirelessGatewayStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics();
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,22 +277,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     LoRaWANGateway m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     Aws::String m_lastUplinkReceivedAt;
-    bool m_lastUplinkReceivedAtHasBeenSet;
+    bool m_lastUplinkReceivedAtHasBeenSet = false;
   };
 
 } // namespace Model

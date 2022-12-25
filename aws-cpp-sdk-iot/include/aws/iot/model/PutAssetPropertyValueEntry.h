@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PutAssetPropertyValueEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API PutAssetPropertyValueEntry
+  class PutAssetPropertyValueEntry
   {
   public:
-    PutAssetPropertyValueEntry();
-    PutAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API PutAssetPropertyValueEntry();
+    AWS_IOT_API PutAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API PutAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -319,19 +319,19 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::String m_assetId;
-    bool m_assetIdHasBeenSet;
+    bool m_assetIdHasBeenSet = false;
 
     Aws::String m_propertyId;
-    bool m_propertyIdHasBeenSet;
+    bool m_propertyIdHasBeenSet = false;
 
     Aws::String m_propertyAlias;
-    bool m_propertyAliasHasBeenSet;
+    bool m_propertyAliasHasBeenSet = false;
 
     Aws::Vector<AssetPropertyValue> m_propertyValues;
-    bool m_propertyValuesHasBeenSet;
+    bool m_propertyValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Statistics">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API Statistics
+  class Statistics
   {
   public:
-    Statistics();
-    Statistics(Aws::Utils::Json::JsonView jsonValue);
-    Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Statistics();
+    AWS_MACIE2_API Statistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     double m_approximateNumberOfObjectsToProcess;
-    bool m_approximateNumberOfObjectsToProcessHasBeenSet;
+    bool m_approximateNumberOfObjectsToProcessHasBeenSet = false;
 
     double m_numberOfRuns;
-    bool m_numberOfRunsHasBeenSet;
+    bool m_numberOfRunsHasBeenSet = false;
   };
 
 } // namespace Model

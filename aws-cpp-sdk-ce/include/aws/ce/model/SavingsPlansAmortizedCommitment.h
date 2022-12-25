@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansAmortizedCommitment">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment
+  class SavingsPlansAmortizedCommitment
   {
   public:
-    SavingsPlansAmortizedCommitment();
-    SavingsPlansAmortizedCommitment(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansAmortizedCommitment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment();
+    AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansAmortizedCommitment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_amortizedRecurringCommitment;
-    bool m_amortizedRecurringCommitmentHasBeenSet;
+    bool m_amortizedRecurringCommitmentHasBeenSet = false;
 
     Aws::String m_amortizedUpfrontCommitment;
-    bool m_amortizedUpfrontCommitmentHasBeenSet;
+    bool m_amortizedUpfrontCommitmentHasBeenSet = false;
 
     Aws::String m_totalAmortizedCommitment;
-    bool m_totalAmortizedCommitmentHasBeenSet;
+    bool m_totalAmortizedCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

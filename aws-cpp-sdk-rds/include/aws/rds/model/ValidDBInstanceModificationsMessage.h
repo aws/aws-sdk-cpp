@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ValidDBInstanceModificationsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ValidDBInstanceModificationsMessage
+  class ValidDBInstanceModificationsMessage
   {
   public:
-    ValidDBInstanceModificationsMessage();
-    ValidDBInstanceModificationsMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ValidDBInstanceModificationsMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ValidDBInstanceModificationsMessage();
+    AWS_RDS_API ValidDBInstanceModificationsMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ValidDBInstanceModificationsMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
 
     Aws::Vector<AvailableProcessorFeature> m_validProcessorFeatures;
-    bool m_validProcessorFeaturesHasBeenSet;
+    bool m_validProcessorFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

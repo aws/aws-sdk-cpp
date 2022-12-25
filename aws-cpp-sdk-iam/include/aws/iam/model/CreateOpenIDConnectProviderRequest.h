@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IAM_API CreateOpenIDConnectProviderRequest : public IAMRequest
+  class CreateOpenIDConnectProviderRequest : public IAMRequest
   {
   public:
-    CreateOpenIDConnectProviderRequest();
+    AWS_IAM_API CreateOpenIDConnectProviderRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOpenIDConnectProvider"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IAM_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_IAM_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -550,16 +550,16 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientIDList;
-    bool m_clientIDListHasBeenSet;
+    bool m_clientIDListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thumbprintList;
-    bool m_thumbprintListHasBeenSet;
+    bool m_thumbprintListHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelQuality">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelQuality
+  class ModelQuality
   {
   public:
-    ModelQuality();
-    ModelQuality(Aws::Utils::Json::JsonView jsonValue);
-    ModelQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelQuality();
+    AWS_SAGEMAKER_API ModelQuality(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     MetricsSource m_statistics;
-    bool m_statisticsHasBeenSet;
+    bool m_statisticsHasBeenSet = false;
 
     MetricsSource m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
   };
 
 } // namespace Model

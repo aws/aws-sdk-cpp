@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EmbeddedDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API EmbeddedDestinationSettings
+  class EmbeddedDestinationSettings
   {
   public:
-    EmbeddedDestinationSettings();
-    EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API EmbeddedDestinationSettings();
+    AWS_MEDIACONVERT_API EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     int m_destination608ChannelNumber;
-    bool m_destination608ChannelNumberHasBeenSet;
+    bool m_destination608ChannelNumberHasBeenSet = false;
 
     int m_destination708ServiceNumber;
-    bool m_destination708ServiceNumberHasBeenSet;
+    bool m_destination708ServiceNumberHasBeenSet = false;
   };
 
 } // namespace Model

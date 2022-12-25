@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Reference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API Reference
+  class Reference
   {
   public:
-    Reference();
-    Reference(Aws::Utils::Json::JsonView jsonValue);
-    Reference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Reference();
+    AWS_CONNECT_API Reference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Reference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,42 +98,48 @@ namespace Model
 
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline const ReferenceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline void SetType(const ReferenceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline void SetType(ReferenceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline Reference& WithType(const ReferenceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the reference.</p>
+     * <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
+     * </p>
      */
     inline Reference& WithType(ReferenceType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ReferenceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

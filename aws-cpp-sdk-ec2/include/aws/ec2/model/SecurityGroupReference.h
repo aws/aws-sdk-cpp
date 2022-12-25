@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SecurityGroupReference">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SecurityGroupReference
+  class SecurityGroupReference
   {
   public:
-    SecurityGroupReference();
-    SecurityGroupReference(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SecurityGroupReference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupReference();
+    AWS_EC2_API SecurityGroupReference(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SecurityGroupReference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_referencingVpcId;
-    bool m_referencingVpcIdHasBeenSet;
+    bool m_referencingVpcIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

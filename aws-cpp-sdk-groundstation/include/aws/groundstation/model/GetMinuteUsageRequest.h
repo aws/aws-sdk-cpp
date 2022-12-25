@@ -19,10 +19,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API GetMinuteUsageRequest : public GroundStationRequest
+  class GetMinuteUsageRequest : public GroundStationRequest
   {
   public:
-    GetMinuteUsageRequest();
+    AWS_GROUNDSTATION_API GetMinuteUsageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMinuteUsage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,10 +77,10 @@ namespace Model
   private:
 
     int m_month;
-    bool m_monthHasBeenSet;
+    bool m_monthHasBeenSet = false;
 
     int m_year;
-    bool m_yearHasBeenSet;
+    bool m_yearHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceCreationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceCreationProperties
+  class WorkspaceCreationProperties
   {
   public:
-    WorkspaceCreationProperties();
-    WorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceCreationProperties();
+    AWS_WORKSPACES_API WorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -360,22 +360,22 @@ namespace Model
   private:
 
     bool m_enableWorkDocs;
-    bool m_enableWorkDocsHasBeenSet;
+    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableInternetAccess;
-    bool m_enableInternetAccessHasBeenSet;
+    bool m_enableInternetAccessHasBeenSet = false;
 
     Aws::String m_defaultOu;
-    bool m_defaultOuHasBeenSet;
+    bool m_defaultOuHasBeenSet = false;
 
     Aws::String m_customSecurityGroupId;
-    bool m_customSecurityGroupIdHasBeenSet;
+    bool m_customSecurityGroupIdHasBeenSet = false;
 
     bool m_userEnabledAsLocalAdministrator;
-    bool m_userEnabledAsLocalAdministratorHasBeenSet;
+    bool m_userEnabledAsLocalAdministratorHasBeenSet = false;
 
     bool m_enableMaintenanceMode;
-    bool m_enableMaintenanceModeHasBeenSet;
+    bool m_enableMaintenanceModeHasBeenSet = false;
   };
 
 } // namespace Model

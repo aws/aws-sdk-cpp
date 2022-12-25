@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API ImportClientBrandingRequest : public WorkSpacesRequest
+  class ImportClientBrandingRequest : public WorkSpacesRequest
   {
   public:
-    ImportClientBrandingRequest();
+    AWS_WORKSPACES_API ImportClientBrandingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ImportClientBranding"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeWindows;
-    bool m_deviceTypeWindowsHasBeenSet;
+    bool m_deviceTypeWindowsHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeOsx;
-    bool m_deviceTypeOsxHasBeenSet;
+    bool m_deviceTypeOsxHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeAndroid;
-    bool m_deviceTypeAndroidHasBeenSet;
+    bool m_deviceTypeAndroidHasBeenSet = false;
 
     IosImportClientBrandingAttributes m_deviceTypeIos;
-    bool m_deviceTypeIosHasBeenSet;
+    bool m_deviceTypeIosHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeLinux;
-    bool m_deviceTypeLinuxHasBeenSet;
+    bool m_deviceTypeLinuxHasBeenSet = false;
 
     DefaultImportClientBrandingAttributes m_deviceTypeWeb;
-    bool m_deviceTypeWebHasBeenSet;
+    bool m_deviceTypeWebHasBeenSet = false;
   };
 
 } // namespace Model

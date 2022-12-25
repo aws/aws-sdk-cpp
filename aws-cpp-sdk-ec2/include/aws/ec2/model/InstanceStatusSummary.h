@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStatusSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceStatusSummary
+  class InstanceStatusSummary
   {
   public:
-    InstanceStatusSummary();
-    InstanceStatusSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceStatusSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatusSummary();
+    AWS_EC2_API InstanceStatusSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStatusSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::Vector<InstanceStatusDetails> m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     SummaryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

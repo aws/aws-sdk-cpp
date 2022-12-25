@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TaskRunFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TaskRunFilterCriteria
+  class TaskRunFilterCriteria
   {
   public:
-    TaskRunFilterCriteria();
-    TaskRunFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    TaskRunFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TaskRunFilterCriteria();
+    AWS_GLUE_API TaskRunFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TaskRunFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     TaskType m_taskRunType;
-    bool m_taskRunTypeHasBeenSet;
+    bool m_taskRunTypeHasBeenSet = false;
 
     TaskStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedBefore;
-    bool m_startedBeforeHasBeenSet;
+    bool m_startedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAfter;
-    bool m_startedAfterHasBeenSet;
+    bool m_startedAfterHasBeenSet = false;
   };
 
 } // namespace Model

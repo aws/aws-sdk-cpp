@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/Recommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API Recommendation
+  class Recommendation
   {
   public:
-    Recommendation();
-    Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API Recommendation();
+    AWS_DEVOPSGURU_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -346,25 +346,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_link;
-    bool m_linkHasBeenSet;
+    bool m_linkHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Vector<RecommendationRelatedEvent> m_relatedEvents;
-    bool m_relatedEventsHasBeenSet;
+    bool m_relatedEventsHasBeenSet = false;
 
     Aws::Vector<RecommendationRelatedAnomaly> m_relatedAnomalies;
-    bool m_relatedAnomaliesHasBeenSet;
+    bool m_relatedAnomaliesHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
   };
 
 } // namespace Model

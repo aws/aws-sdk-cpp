@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API ListChannelMessagesRequest : public ChimeSDKMessagingRequest
+  class ListChannelMessagesRequest : public ChimeSDKMessagingRequest
   {
   public:
-    ListChannelMessagesRequest();
+    AWS_CHIMESDKMESSAGING_API ListChannelMessagesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,11 +35,11 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListChannelMessages"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CHIMESDKMESSAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -292,28 +292,80 @@ namespace Model
      */
     inline ListChannelMessagesRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline ListChannelMessagesRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline ListChannelMessagesRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel in the request.</p>  <p>Only required when
+     * listing the messages in a SubChannel that the user belongs to.</p> 
+     */
+    inline ListChannelMessagesRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

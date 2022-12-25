@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API ListMonitoringExecutionsRequest : public SageMakerRequest
+  class ListMonitoringExecutionsRequest : public SageMakerRequest
   {
   public:
-    ListMonitoringExecutionsRequest();
+    AWS_SAGEMAKER_API ListMonitoringExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListMonitoringExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -574,49 +574,49 @@ namespace Model
   private:
 
     Aws::String m_monitoringScheduleName;
-    bool m_monitoringScheduleNameHasBeenSet;
+    bool m_monitoringScheduleNameHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     MonitoringExecutionSortKey m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTimeBefore;
-    bool m_scheduledTimeBeforeHasBeenSet;
+    bool m_scheduledTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTimeAfter;
-    bool m_scheduledTimeAfterHasBeenSet;
+    bool m_scheduledTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeBefore;
-    bool m_lastModifiedTimeBeforeHasBeenSet;
+    bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTimeAfter;
-    bool m_lastModifiedTimeAfterHasBeenSet;
+    bool m_lastModifiedTimeAfterHasBeenSet = false;
 
     ExecutionStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     MonitoringType m_monitoringTypeEquals;
-    bool m_monitoringTypeEqualsHasBeenSet;
+    bool m_monitoringTypeEqualsHasBeenSet = false;
   };
 
 } // namespace Model

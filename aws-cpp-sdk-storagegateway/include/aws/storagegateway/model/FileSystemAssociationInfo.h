@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileSystemAssociationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API FileSystemAssociationInfo
+  class FileSystemAssociationInfo
   {
   public:
-    FileSystemAssociationInfo();
-    FileSystemAssociationInfo(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemAssociationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo();
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -440,31 +440,31 @@ namespace Model
   private:
 
     Aws::String m_fileSystemAssociationARN;
-    bool m_fileSystemAssociationARNHasBeenSet;
+    bool m_fileSystemAssociationARNHasBeenSet = false;
 
     Aws::String m_locationARN;
-    bool m_locationARNHasBeenSet;
+    bool m_locationARNHasBeenSet = false;
 
     Aws::String m_fileSystemAssociationStatus;
-    bool m_fileSystemAssociationStatusHasBeenSet;
+    bool m_fileSystemAssociationStatusHasBeenSet = false;
 
     Aws::String m_auditDestinationARN;
-    bool m_auditDestinationARNHasBeenSet;
+    bool m_auditDestinationARNHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     CacheAttributes m_cacheAttributes;
-    bool m_cacheAttributesHasBeenSet;
+    bool m_cacheAttributesHasBeenSet = false;
 
     EndpointNetworkConfiguration m_endpointNetworkConfiguration;
-    bool m_endpointNetworkConfigurationHasBeenSet;
+    bool m_endpointNetworkConfigurationHasBeenSet = false;
 
     Aws::Vector<FileSystemAssociationStatusDetail> m_fileSystemAssociationStatusDetails;
-    bool m_fileSystemAssociationStatusDetailsHasBeenSet;
+    bool m_fileSystemAssociationStatusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails
+  class AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails
   {
   public:
-    AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails();
-    AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_assignPublicIp;
-    bool m_assignPublicIpHasBeenSet;
+    bool m_assignPublicIpHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
   };
 
 } // namespace Model

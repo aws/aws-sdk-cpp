@@ -24,7 +24,8 @@ ListChannelMessagesRequest::ListChannelMessagesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
@@ -60,14 +61,14 @@ void ListChannelMessagesRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_notBeforeHasBeenSet)
     {
-      ss << m_notBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_notBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-before", ss.str());
       ss.str("");
     }
 
     if(m_notAfterHasBeenSet)
     {
-      ss << m_notAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_notAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("not-after", ss.str());
       ss.str("");
     }
@@ -83,6 +84,13 @@ void ListChannelMessagesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("next-token", ss.str());
+      ss.str("");
+    }
+
+    if(m_subChannelIdHasBeenSet)
+    {
+      ss << m_subChannelId;
+      uri.AddQueryStringParameter("sub-channel-id", ss.str());
       ss.str("");
     }
 

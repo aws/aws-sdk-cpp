@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthMFAConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API CreateBackendAuthMFAConfig
+  class CreateBackendAuthMFAConfig
   {
   public:
-    CreateBackendAuthMFAConfig();
-    CreateBackendAuthMFAConfig(Aws::Utils::Json::JsonView jsonValue);
-    CreateBackendAuthMFAConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthMFAConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthMFAConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthMFAConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     MFAMode m_mFAMode;
-    bool m_mFAModeHasBeenSet;
+    bool m_mFAModeHasBeenSet = false;
 
     Settings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

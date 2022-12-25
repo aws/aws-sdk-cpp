@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SnapshotOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API SnapshotOptions
+  class SnapshotOptions
   {
   public:
-    SnapshotOptions();
-    SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptions();
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -68,7 +68,7 @@ namespace Model
   private:
 
     int m_automatedSnapshotStartHour;
-    bool m_automatedSnapshotStartHourHasBeenSet;
+    bool m_automatedSnapshotStartHourHasBeenSet = false;
   };
 
 } // namespace Model

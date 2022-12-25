@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSCreateRootVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSCreateRootVolumeConfiguration
+  class OpenZFSCreateRootVolumeConfiguration
   {
   public:
-    OpenZFSCreateRootVolumeConfiguration();
-    OpenZFSCreateRootVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSCreateRootVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSCreateRootVolumeConfiguration();
+    AWS_FSX_API OpenZFSCreateRootVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSCreateRootVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,22 +339,22 @@ namespace Model
   private:
 
     int m_recordSizeKiB;
-    bool m_recordSizeKiBHasBeenSet;
+    bool m_recordSizeKiBHasBeenSet = false;
 
     OpenZFSDataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     Aws::Vector<OpenZFSNfsExport> m_nfsExports;
-    bool m_nfsExportsHasBeenSet;
+    bool m_nfsExportsHasBeenSet = false;
 
     Aws::Vector<OpenZFSUserOrGroupQuota> m_userAndGroupQuotas;
-    bool m_userAndGroupQuotasHasBeenSet;
+    bool m_userAndGroupQuotasHasBeenSet = false;
 
     bool m_copyTagsToSnapshots;
-    bool m_copyTagsToSnapshotsHasBeenSet;
+    bool m_copyTagsToSnapshotsHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobSample">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API JobSample
+  class JobSample
   {
   public:
-    JobSample();
-    JobSample(Aws::Utils::Json::JsonView jsonValue);
-    JobSample& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API JobSample();
+    AWS_GLUEDATABREW_API JobSample(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API JobSample& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     SampleMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

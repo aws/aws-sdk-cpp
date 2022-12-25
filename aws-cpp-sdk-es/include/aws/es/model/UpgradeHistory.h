@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API UpgradeHistory
+  class UpgradeHistory
   {
   public:
-    UpgradeHistory();
-    UpgradeHistory(Aws::Utils::Json::JsonView jsonValue);
-    UpgradeHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API UpgradeHistory();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API UpgradeHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_upgradeName;
-    bool m_upgradeNameHasBeenSet;
+    bool m_upgradeNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     UpgradeStatus m_upgradeStatus;
-    bool m_upgradeStatusHasBeenSet;
+    bool m_upgradeStatusHasBeenSet = false;
 
     Aws::Vector<UpgradeStepItem> m_stepsList;
-    bool m_stepsListHasBeenSet;
+    bool m_stepsListHasBeenSet = false;
   };
 
 } // namespace Model

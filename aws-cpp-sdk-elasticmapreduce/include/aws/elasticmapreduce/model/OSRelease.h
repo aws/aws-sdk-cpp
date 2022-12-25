@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/OSRelease">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API OSRelease
+  class OSRelease
   {
   public:
-    OSRelease();
-    OSRelease(Aws::Utils::Json::JsonView jsonValue);
-    OSRelease& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API OSRelease();
+    AWS_EMR_API OSRelease(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API OSRelease& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

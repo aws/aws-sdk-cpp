@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ClusteringKey">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API ClusteringKey
+  class ClusteringKey
   {
   public:
-    ClusteringKey();
-    ClusteringKey(Aws::Utils::Json::JsonView jsonValue);
-    ClusteringKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API ClusteringKey();
+    AWS_KEYSPACES_API ClusteringKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API ClusteringKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SortOrder m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

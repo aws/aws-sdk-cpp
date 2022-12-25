@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ReadinessCheckOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput
+  class ReadinessCheckOutput
   {
   public:
-    ReadinessCheckOutput();
-    ReadinessCheckOutput(Aws::Utils::Json::JsonView jsonValue);
-    ReadinessCheckOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_readinessCheckArn;
-    bool m_readinessCheckArnHasBeenSet;
+    bool m_readinessCheckArnHasBeenSet = false;
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceSet;
-    bool m_resourceSetHasBeenSet;
+    bool m_resourceSetHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

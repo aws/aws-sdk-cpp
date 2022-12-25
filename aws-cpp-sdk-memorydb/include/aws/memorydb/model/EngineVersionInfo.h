@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/EngineVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API EngineVersionInfo
+  class EngineVersionInfo
   {
   public:
-    EngineVersionInfo();
-    EngineVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    EngineVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API EngineVersionInfo();
+    AWS_MEMORYDB_API EngineVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API EngineVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_enginePatchVersion;
-    bool m_enginePatchVersionHasBeenSet;
+    bool m_enginePatchVersionHasBeenSet = false;
 
     Aws::String m_parameterGroupFamily;
-    bool m_parameterGroupFamilyHasBeenSet;
+    bool m_parameterGroupFamilyHasBeenSet = false;
   };
 
 } // namespace Model

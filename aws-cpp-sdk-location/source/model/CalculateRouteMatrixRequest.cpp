@@ -46,10 +46,10 @@ Aws::String CalculateRouteMatrixRequest::SerializePayload() const
 
   if(m_departurePositionsHasBeenSet)
   {
-   Array<JsonValue> departurePositionsJsonList(m_departurePositions.size());
+   Aws::Utils::Array<JsonValue> departurePositionsJsonList(m_departurePositions.size());
    for(unsigned departurePositionsIndex = 0; departurePositionsIndex < departurePositionsJsonList.GetLength(); ++departurePositionsIndex)
    {
-     Array<JsonValue> positionJsonList(m_departurePositions[departurePositionsIndex].size());
+     Aws::Utils::Array<JsonValue> positionJsonList(m_departurePositions[departurePositionsIndex].size());
      for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
      {
        positionJsonList[positionIndex].AsDouble(m_departurePositions[departurePositionsIndex][positionIndex]);
@@ -62,15 +62,15 @@ Aws::String CalculateRouteMatrixRequest::SerializePayload() const
 
   if(m_departureTimeHasBeenSet)
   {
-   payload.WithString("DepartureTime", m_departureTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_destinationPositionsHasBeenSet)
   {
-   Array<JsonValue> destinationPositionsJsonList(m_destinationPositions.size());
+   Aws::Utils::Array<JsonValue> destinationPositionsJsonList(m_destinationPositions.size());
    for(unsigned destinationPositionsIndex = 0; destinationPositionsIndex < destinationPositionsJsonList.GetLength(); ++destinationPositionsIndex)
    {
-     Array<JsonValue> positionJsonList(m_destinationPositions[destinationPositionsIndex].size());
+     Aws::Utils::Array<JsonValue> positionJsonList(m_destinationPositions[destinationPositionsIndex].size());
      for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
      {
        positionJsonList[positionIndex].AsDouble(m_destinationPositions[destinationPositionsIndex][positionIndex]);

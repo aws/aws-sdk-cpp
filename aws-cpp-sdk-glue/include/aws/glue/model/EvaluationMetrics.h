@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EvaluationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API EvaluationMetrics
+  class EvaluationMetrics
   {
   public:
-    EvaluationMetrics();
-    EvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API EvaluationMetrics();
+    AWS_GLUE_API EvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API EvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     FindMatchesMetrics m_findMatchesMetrics;
-    bool m_findMatchesMetricsHasBeenSet;
+    bool m_findMatchesMetricsHasBeenSet = false;
   };
 
 } // namespace Model

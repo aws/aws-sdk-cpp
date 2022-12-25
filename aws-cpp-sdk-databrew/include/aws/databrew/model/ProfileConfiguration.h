@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ProfileConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ProfileConfiguration
+  class ProfileConfiguration
   {
   public:
-    ProfileConfiguration();
-    ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ProfileConfiguration();
+    AWS_GLUEDATABREW_API ProfileConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ProfileConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -256,16 +256,16 @@ namespace Model
   private:
 
     StatisticsConfiguration m_datasetStatisticsConfiguration;
-    bool m_datasetStatisticsConfigurationHasBeenSet;
+    bool m_datasetStatisticsConfigurationHasBeenSet = false;
 
     Aws::Vector<ColumnSelector> m_profileColumns;
-    bool m_profileColumnsHasBeenSet;
+    bool m_profileColumnsHasBeenSet = false;
 
     Aws::Vector<ColumnStatisticsConfiguration> m_columnStatisticsConfigurations;
-    bool m_columnStatisticsConfigurationsHasBeenSet;
+    bool m_columnStatisticsConfigurationsHasBeenSet = false;
 
     EntityDetectorConfiguration m_entityDetectorConfiguration;
-    bool m_entityDetectorConfigurationHasBeenSet;
+    bool m_entityDetectorConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

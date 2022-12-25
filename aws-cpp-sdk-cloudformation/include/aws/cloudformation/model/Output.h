@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API Output
+  class Output
   {
   public:
-    Output();
-    Output(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Output& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Output();
+    AWS_CLOUDFORMATION_API Output(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API Output& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_outputKey;
-    bool m_outputKeyHasBeenSet;
+    bool m_outputKeyHasBeenSet = false;
 
     Aws::String m_outputValue;
-    bool m_outputValueHasBeenSet;
+    bool m_outputValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_exportName;
-    bool m_exportNameHasBeenSet;
+    bool m_exportNameHasBeenSet = false;
   };
 
 } // namespace Model

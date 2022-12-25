@@ -5,191 +5,74 @@
 
 #pragma once
 #include <aws/voice-id/VoiceID_EXPORTS.h>
-#include <aws/voice-id/VoiceIDErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/voice-id/model/CreateDomainResult.h>
-#include <aws/voice-id/model/DescribeDomainResult.h>
-#include <aws/voice-id/model/DescribeFraudsterResult.h>
-#include <aws/voice-id/model/DescribeFraudsterRegistrationJobResult.h>
-#include <aws/voice-id/model/DescribeSpeakerResult.h>
-#include <aws/voice-id/model/DescribeSpeakerEnrollmentJobResult.h>
-#include <aws/voice-id/model/EvaluateSessionResult.h>
-#include <aws/voice-id/model/ListDomainsResult.h>
-#include <aws/voice-id/model/ListFraudsterRegistrationJobsResult.h>
-#include <aws/voice-id/model/ListSpeakerEnrollmentJobsResult.h>
-#include <aws/voice-id/model/ListSpeakersResult.h>
-#include <aws/voice-id/model/ListTagsForResourceResult.h>
-#include <aws/voice-id/model/OptOutSpeakerResult.h>
-#include <aws/voice-id/model/StartFraudsterRegistrationJobResult.h>
-#include <aws/voice-id/model/StartSpeakerEnrollmentJobResult.h>
-#include <aws/voice-id/model/TagResourceResult.h>
-#include <aws/voice-id/model/UntagResourceResult.h>
-#include <aws/voice-id/model/UpdateDomainResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/voice-id/VoiceIDServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace VoiceID
 {
-
-namespace Model
-{
-        class CreateDomainRequest;
-        class DeleteDomainRequest;
-        class DeleteFraudsterRequest;
-        class DeleteSpeakerRequest;
-        class DescribeDomainRequest;
-        class DescribeFraudsterRequest;
-        class DescribeFraudsterRegistrationJobRequest;
-        class DescribeSpeakerRequest;
-        class DescribeSpeakerEnrollmentJobRequest;
-        class EvaluateSessionRequest;
-        class ListDomainsRequest;
-        class ListFraudsterRegistrationJobsRequest;
-        class ListSpeakerEnrollmentJobsRequest;
-        class ListSpeakersRequest;
-        class ListTagsForResourceRequest;
-        class OptOutSpeakerRequest;
-        class StartFraudsterRegistrationJobRequest;
-        class StartSpeakerEnrollmentJobRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDomainRequest;
-
-        typedef Aws::Utils::Outcome<CreateDomainResult, VoiceIDError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, VoiceIDError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, VoiceIDError> DeleteFraudsterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, VoiceIDError> DeleteSpeakerOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, VoiceIDError> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeFraudsterResult, VoiceIDError> DescribeFraudsterOutcome;
-        typedef Aws::Utils::Outcome<DescribeFraudsterRegistrationJobResult, VoiceIDError> DescribeFraudsterRegistrationJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeSpeakerResult, VoiceIDError> DescribeSpeakerOutcome;
-        typedef Aws::Utils::Outcome<DescribeSpeakerEnrollmentJobResult, VoiceIDError> DescribeSpeakerEnrollmentJobOutcome;
-        typedef Aws::Utils::Outcome<EvaluateSessionResult, VoiceIDError> EvaluateSessionOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, VoiceIDError> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<ListFraudsterRegistrationJobsResult, VoiceIDError> ListFraudsterRegistrationJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSpeakerEnrollmentJobsResult, VoiceIDError> ListSpeakerEnrollmentJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSpeakersResult, VoiceIDError> ListSpeakersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, VoiceIDError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<OptOutSpeakerResult, VoiceIDError> OptOutSpeakerOutcome;
-        typedef Aws::Utils::Outcome<StartFraudsterRegistrationJobResult, VoiceIDError> StartFraudsterRegistrationJobOutcome;
-        typedef Aws::Utils::Outcome<StartSpeakerEnrollmentJobResult, VoiceIDError> StartSpeakerEnrollmentJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, VoiceIDError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, VoiceIDError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainResult, VoiceIDError> UpdateDomainOutcome;
-
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DeleteFraudsterOutcome> DeleteFraudsterOutcomeCallable;
-        typedef std::future<DeleteSpeakerOutcome> DeleteSpeakerOutcomeCallable;
-        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-        typedef std::future<DescribeFraudsterOutcome> DescribeFraudsterOutcomeCallable;
-        typedef std::future<DescribeFraudsterRegistrationJobOutcome> DescribeFraudsterRegistrationJobOutcomeCallable;
-        typedef std::future<DescribeSpeakerOutcome> DescribeSpeakerOutcomeCallable;
-        typedef std::future<DescribeSpeakerEnrollmentJobOutcome> DescribeSpeakerEnrollmentJobOutcomeCallable;
-        typedef std::future<EvaluateSessionOutcome> EvaluateSessionOutcomeCallable;
-        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-        typedef std::future<ListFraudsterRegistrationJobsOutcome> ListFraudsterRegistrationJobsOutcomeCallable;
-        typedef std::future<ListSpeakerEnrollmentJobsOutcome> ListSpeakerEnrollmentJobsOutcomeCallable;
-        typedef std::future<ListSpeakersOutcome> ListSpeakersOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<OptOutSpeakerOutcome> OptOutSpeakerOutcomeCallable;
-        typedef std::future<StartFraudsterRegistrationJobOutcome> StartFraudsterRegistrationJobOutcomeCallable;
-        typedef std::future<StartSpeakerEnrollmentJobOutcome> StartSpeakerEnrollmentJobOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
-} // namespace Model
-
-  class VoiceIDClient;
-
-    typedef std::function<void(const VoiceIDClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DeleteFraudsterRequest&, const Model::DeleteFraudsterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFraudsterResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DeleteSpeakerRequest&, const Model::DeleteSpeakerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSpeakerResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DescribeFraudsterRequest&, const Model::DescribeFraudsterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFraudsterResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DescribeFraudsterRegistrationJobRequest&, const Model::DescribeFraudsterRegistrationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFraudsterRegistrationJobResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DescribeSpeakerRequest&, const Model::DescribeSpeakerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSpeakerResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::DescribeSpeakerEnrollmentJobRequest&, const Model::DescribeSpeakerEnrollmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSpeakerEnrollmentJobResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::EvaluateSessionRequest&, const Model::EvaluateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvaluateSessionResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::ListFraudsterRegistrationJobsRequest&, const Model::ListFraudsterRegistrationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFraudsterRegistrationJobsResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::ListSpeakerEnrollmentJobsRequest&, const Model::ListSpeakerEnrollmentJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpeakerEnrollmentJobsResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::ListSpeakersRequest&, const Model::ListSpeakersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpeakersResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::OptOutSpeakerRequest&, const Model::OptOutSpeakerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OptOutSpeakerResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::StartFraudsterRegistrationJobRequest&, const Model::StartFraudsterRegistrationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFraudsterRegistrationJobResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::StartSpeakerEnrollmentJobRequest&, const Model::StartSpeakerEnrollmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSpeakerEnrollmentJobResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const VoiceIDClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
-
   /**
    * <p>Amazon Connect Voice ID provides real-time caller authentication and fraud
    * screening. This guide describes the APIs used for this service. </p>
    */
-  class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient
+  class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        VoiceIDClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        VoiceIDClient(const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration(),
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        VoiceIDClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        VoiceIDClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         VoiceIDClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider = Aws::MakeShared<VoiceIDEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::VoiceID::VoiceIDClientConfiguration& clientConfiguration = Aws::VoiceID::VoiceIDClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        VoiceIDClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        VoiceIDClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        VoiceIDClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~VoiceIDClient();
-
 
         /**
          * <p>Creates a domain that contains all Amazon Connect Voice ID data, such as
@@ -574,33 +457,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<VoiceIDEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFraudsterAsyncHelper(const Model::DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSpeakerAsyncHelper(const Model::DeleteSpeakerRequest& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFraudsterAsyncHelper(const Model::DescribeFraudsterRequest& request, const DescribeFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFraudsterRegistrationJobAsyncHelper(const Model::DescribeFraudsterRegistrationJobRequest& request, const DescribeFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSpeakerAsyncHelper(const Model::DescribeSpeakerRequest& request, const DescribeSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSpeakerEnrollmentJobAsyncHelper(const Model::DescribeSpeakerEnrollmentJobRequest& request, const DescribeSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EvaluateSessionAsyncHelper(const Model::EvaluateSessionRequest& request, const EvaluateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFraudsterRegistrationJobsAsyncHelper(const Model::ListFraudsterRegistrationJobsRequest& request, const ListFraudsterRegistrationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSpeakerEnrollmentJobsAsyncHelper(const Model::ListSpeakerEnrollmentJobsRequest& request, const ListSpeakerEnrollmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSpeakersAsyncHelper(const Model::ListSpeakersRequest& request, const ListSpeakersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void OptOutSpeakerAsyncHelper(const Model::OptOutSpeakerRequest& request, const OptOutSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartFraudsterRegistrationJobAsyncHelper(const Model::StartFraudsterRegistrationJobRequest& request, const StartFraudsterRegistrationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSpeakerEnrollmentJobAsyncHelper(const Model::StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDomainAsyncHelper(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>;
+      void init(const VoiceIDClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      VoiceIDClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<VoiceIDEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace VoiceID

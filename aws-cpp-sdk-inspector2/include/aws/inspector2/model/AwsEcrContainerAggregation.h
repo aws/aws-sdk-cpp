@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AwsEcrContainerAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AwsEcrContainerAggregation
+  class AwsEcrContainerAggregation
   {
   public:
-    AwsEcrContainerAggregation();
-    AwsEcrContainerAggregation(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrContainerAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AwsEcrContainerAggregation();
+    AWS_INSPECTOR2_API AwsEcrContainerAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AwsEcrContainerAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -310,25 +310,25 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_architectures;
-    bool m_architecturesHasBeenSet;
+    bool m_architecturesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_imageShas;
-    bool m_imageShasHasBeenSet;
+    bool m_imageShasHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet;
+    bool m_repositoriesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     AwsEcrContainerSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

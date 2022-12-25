@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CallAnalyticsJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSummary
+  class CallAnalyticsJobSummary
   {
   public:
-    CallAnalyticsJobSummary();
-    CallAnalyticsJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    CallAnalyticsJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSummary();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -404,25 +404,25 @@ namespace Model
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
-    bool m_callAnalyticsJobStatusHasBeenSet;
+    bool m_callAnalyticsJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainLogPublishingOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainLogPublishingOptionsDetails
+  class AwsOpenSearchServiceDomainLogPublishingOptionsDetails
   {
   public:
-    AwsOpenSearchServiceDomainLogPublishingOptionsDetails();
-    AwsOpenSearchServiceDomainLogPublishingOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainLogPublishingOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainLogPublishingOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainLogPublishingOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainLogPublishingOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     AwsOpenSearchServiceDomainLogPublishingOption m_indexSlowLogs;
-    bool m_indexSlowLogsHasBeenSet;
+    bool m_indexSlowLogsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainLogPublishingOption m_searchSlowLogs;
-    bool m_searchSlowLogsHasBeenSet;
+    bool m_searchSlowLogsHasBeenSet = false;
 
     AwsOpenSearchServiceDomainLogPublishingOption m_auditLogs;
-    bool m_auditLogsHasBeenSet;
+    bool m_auditLogsHasBeenSet = false;
   };
 
 } // namespace Model

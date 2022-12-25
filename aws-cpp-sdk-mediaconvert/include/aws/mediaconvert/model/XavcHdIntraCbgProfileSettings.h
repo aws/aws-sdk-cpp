@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcHdIntraCbgProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API XavcHdIntraCbgProfileSettings
+  class XavcHdIntraCbgProfileSettings
   {
   public:
-    XavcHdIntraCbgProfileSettings();
-    XavcHdIntraCbgProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    XavcHdIntraCbgProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API XavcHdIntraCbgProfileSettings();
+    AWS_MEDIACONVERT_API XavcHdIntraCbgProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API XavcHdIntraCbgProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     XavcHdIntraCbgProfileClass m_xavcClass;
-    bool m_xavcClassHasBeenSet;
+    bool m_xavcClassHasBeenSet = false;
   };
 
 } // namespace Model

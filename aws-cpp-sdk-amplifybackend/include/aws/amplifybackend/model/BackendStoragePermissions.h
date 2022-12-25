@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendStoragePermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendStoragePermissions
+  class BackendStoragePermissions
   {
   public:
-    BackendStoragePermissions();
-    BackendStoragePermissions(Aws::Utils::Json::JsonView jsonValue);
-    BackendStoragePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendStoragePermissions();
+    AWS_AMPLIFYBACKEND_API BackendStoragePermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendStoragePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<AuthenticatedElement> m_authenticated;
-    bool m_authenticatedHasBeenSet;
+    bool m_authenticatedHasBeenSet = false;
 
     Aws::Vector<UnAuthenticatedElement> m_unAuthenticated;
-    bool m_unAuthenticatedHasBeenSet;
+    bool m_unAuthenticatedHasBeenSet = false;
   };
 
 } // namespace Model

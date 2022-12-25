@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/INDTaxDocuments">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API INDTaxDocuments
+  class INDTaxDocuments
   {
   public:
-    INDTaxDocuments();
-    INDTaxDocuments(Aws::Utils::Json::JsonView jsonValue);
-    INDTaxDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API INDTaxDocuments();
+    AWS_SNOWBALL_API INDTaxDocuments(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API INDTaxDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_gSTIN;
-    bool m_gSTINHasBeenSet;
+    bool m_gSTINHasBeenSet = false;
   };
 
 } // namespace Model

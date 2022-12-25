@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API SnapshotSchedule
+  class SnapshotSchedule
   {
   public:
-    SnapshotSchedule();
-    SnapshotSchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SnapshotSchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotSchedule();
+    AWS_REDSHIFT_API SnapshotSchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API SnapshotSchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -347,28 +347,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_scheduleDefinitions;
-    bool m_scheduleDefinitionsHasBeenSet;
+    bool m_scheduleDefinitionsHasBeenSet = false;
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     Aws::String m_scheduleDescription;
-    bool m_scheduleDescriptionHasBeenSet;
+    bool m_scheduleDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
-    bool m_nextInvocationsHasBeenSet;
+    bool m_nextInvocationsHasBeenSet = false;
 
     int m_associatedClusterCount;
-    bool m_associatedClusterCountHasBeenSet;
+    bool m_associatedClusterCountHasBeenSet = false;
 
     Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
-    bool m_associatedClustersHasBeenSet;
+    bool m_associatedClustersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

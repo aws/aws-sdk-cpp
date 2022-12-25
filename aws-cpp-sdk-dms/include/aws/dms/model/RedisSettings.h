@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RedisSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API RedisSettings
+  class RedisSettings
   {
   public:
-    RedisSettings();
-    RedisSettings(Aws::Utils::Json::JsonView jsonValue);
-    RedisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API RedisSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API RedisSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API RedisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -399,25 +399,25 @@ namespace Model
   private:
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     SslSecurityProtocolValue m_sslSecurityProtocol;
-    bool m_sslSecurityProtocolHasBeenSet;
+    bool m_sslSecurityProtocolHasBeenSet = false;
 
     RedisAuthTypeValue m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_authUserName;
-    bool m_authUserNameHasBeenSet;
+    bool m_authUserNameHasBeenSet = false;
 
     Aws::String m_authPassword;
-    bool m_authPasswordHasBeenSet;
+    bool m_authPasswordHasBeenSet = false;
 
     Aws::String m_sslCaCertificateArn;
-    bool m_sslCaCertificateArnHasBeenSet;
+    bool m_sslCaCertificateArnHasBeenSet = false;
   };
 
 } // namespace Model

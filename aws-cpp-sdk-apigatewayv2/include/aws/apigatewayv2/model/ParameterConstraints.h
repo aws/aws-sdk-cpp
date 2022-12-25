@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ParameterConstraints">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API ParameterConstraints
+  class ParameterConstraints
   {
   public:
-    ParameterConstraints();
-    ParameterConstraints(Aws::Utils::Json::JsonView jsonValue);
-    ParameterConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API ParameterConstraints();
+    AWS_APIGATEWAYV2_API ParameterConstraints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API ParameterConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
   };
 
 } // namespace Model

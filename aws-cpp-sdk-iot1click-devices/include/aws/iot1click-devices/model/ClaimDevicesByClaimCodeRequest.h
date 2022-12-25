@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT1CLICKDEVICESSERVICE_API ClaimDevicesByClaimCodeRequest : public IoT1ClickDevicesServiceRequest
+  class ClaimDevicesByClaimCodeRequest : public IoT1ClickDevicesServiceRequest
   {
   public:
-    ClaimDevicesByClaimCodeRequest();
+    AWS_IOT1CLICKDEVICESSERVICE_API ClaimDevicesByClaimCodeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ClaimDevicesByClaimCode"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_claimCode;
-    bool m_claimCodeHasBeenSet;
+    bool m_claimCodeHasBeenSet = false;
   };
 
 } // namespace Model

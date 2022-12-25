@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/EventResource">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API EventResource
+  class EventResource
   {
   public:
-    EventResource();
-    EventResource(Aws::Utils::Json::JsonView jsonValue);
-    EventResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API EventResource();
+    AWS_DEVOPSGURU_API EventResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API EventResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

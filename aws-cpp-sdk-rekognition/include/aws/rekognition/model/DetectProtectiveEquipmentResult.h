@@ -27,12 +27,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API DetectProtectiveEquipmentResult
+  class DetectProtectiveEquipmentResult
   {
   public:
-    DetectProtectiveEquipmentResult();
-    DetectProtectiveEquipmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectProtectiveEquipmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DetectProtectiveEquipmentResult();
+    AWS_REKOGNITION_API DetectProtectiveEquipmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DetectProtectiveEquipmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

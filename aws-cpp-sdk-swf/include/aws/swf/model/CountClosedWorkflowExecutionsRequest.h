@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SWF_API CountClosedWorkflowExecutionsRequest : public SWFRequest
+  class CountClosedWorkflowExecutionsRequest : public SWFRequest
   {
   public:
-    CountClosedWorkflowExecutionsRequest();
+    AWS_SWF_API CountClosedWorkflowExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CountClosedWorkflowExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SWF_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -406,25 +406,25 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     ExecutionTimeFilter m_startTimeFilter;
-    bool m_startTimeFilterHasBeenSet;
+    bool m_startTimeFilterHasBeenSet = false;
 
     ExecutionTimeFilter m_closeTimeFilter;
-    bool m_closeTimeFilterHasBeenSet;
+    bool m_closeTimeFilterHasBeenSet = false;
 
     WorkflowExecutionFilter m_executionFilter;
-    bool m_executionFilterHasBeenSet;
+    bool m_executionFilterHasBeenSet = false;
 
     WorkflowTypeFilter m_typeFilter;
-    bool m_typeFilterHasBeenSet;
+    bool m_typeFilterHasBeenSet = false;
 
     TagFilter m_tagFilter;
-    bool m_tagFilterHasBeenSet;
+    bool m_tagFilterHasBeenSet = false;
 
     CloseStatusFilter m_closeStatusFilter;
-    bool m_closeStatusFilterHasBeenSet;
+    bool m_closeStatusFilterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ReshardingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ReshardingStatus
+  class ReshardingStatus
   {
   public:
-    ReshardingStatus();
-    ReshardingStatus(Aws::Utils::Json::JsonView jsonValue);
-    ReshardingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ReshardingStatus();
+    AWS_MEMORYDB_API ReshardingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ReshardingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     SlotMigration m_slotMigration;
-    bool m_slotMigrationHasBeenSet;
+    bool m_slotMigrationHasBeenSet = false;
   };
 
 } // namespace Model

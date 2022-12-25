@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTANALYTICS_API StartPipelineReprocessingRequest : public IoTAnalyticsRequest
+  class StartPipelineReprocessingRequest : public IoTAnalyticsRequest
   {
   public:
-    StartPipelineReprocessingRequest();
+    AWS_IOTANALYTICS_API StartPipelineReprocessingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartPipelineReprocessing"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ChannelMessages m_channelMessages;
-    bool m_channelMessagesHasBeenSet;
+    bool m_channelMessagesHasBeenSet = false;
   };
 
 } // namespace Model

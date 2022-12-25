@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API AdministrativeAction
+  class AdministrativeAction
   {
   public:
-    AdministrativeAction();
-    AdministrativeAction(Aws::Utils::Json::JsonView jsonValue);
-    AdministrativeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API AdministrativeAction();
+    AWS_FSX_API AdministrativeAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API AdministrativeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -214,42 +214,42 @@ namespace Model
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    const FileSystem& GetTargetFileSystemValues() const;
+    AWS_FSX_API const FileSystem& GetTargetFileSystemValues() const;
 
     /**
      * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    bool TargetFileSystemValuesHasBeenSet() const;
+    AWS_FSX_API bool TargetFileSystemValuesHasBeenSet() const;
 
     /**
      * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    void SetTargetFileSystemValues(const FileSystem& value);
+    AWS_FSX_API void SetTargetFileSystemValues(const FileSystem& value);
 
     /**
      * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    void SetTargetFileSystemValues(FileSystem&& value);
+    AWS_FSX_API void SetTargetFileSystemValues(FileSystem&& value);
 
     /**
      * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value);
+    AWS_FSX_API AdministrativeAction& WithTargetFileSystemValues(const FileSystem& value);
 
     /**
      * <p>Describes the target value for the administration action, provided in the
      * <code>UpdateFileSystem</code> operation. Returned for
      * <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
      */
-    AdministrativeAction& WithTargetFileSystemValues(FileSystem&& value);
+    AWS_FSX_API AdministrativeAction& WithTargetFileSystemValues(FileSystem&& value);
 
 
     
@@ -272,67 +272,67 @@ namespace Model
 
 
     
-    const Volume& GetTargetVolumeValues() const;
+    AWS_FSX_API const Volume& GetTargetVolumeValues() const;
 
     
-    bool TargetVolumeValuesHasBeenSet() const;
+    AWS_FSX_API bool TargetVolumeValuesHasBeenSet() const;
 
     
-    void SetTargetVolumeValues(const Volume& value);
+    AWS_FSX_API void SetTargetVolumeValues(const Volume& value);
 
     
-    void SetTargetVolumeValues(Volume&& value);
+    AWS_FSX_API void SetTargetVolumeValues(Volume&& value);
 
     
-    AdministrativeAction& WithTargetVolumeValues(const Volume& value);
+    AWS_FSX_API AdministrativeAction& WithTargetVolumeValues(const Volume& value);
 
     
-    AdministrativeAction& WithTargetVolumeValues(Volume&& value);
+    AWS_FSX_API AdministrativeAction& WithTargetVolumeValues(Volume&& value);
 
 
     
-    const Snapshot& GetTargetSnapshotValues() const;
+    AWS_FSX_API const Snapshot& GetTargetSnapshotValues() const;
 
     
-    bool TargetSnapshotValuesHasBeenSet() const;
+    AWS_FSX_API bool TargetSnapshotValuesHasBeenSet() const;
 
     
-    void SetTargetSnapshotValues(const Snapshot& value);
+    AWS_FSX_API void SetTargetSnapshotValues(const Snapshot& value);
 
     
-    void SetTargetSnapshotValues(Snapshot&& value);
+    AWS_FSX_API void SetTargetSnapshotValues(Snapshot&& value);
 
     
-    AdministrativeAction& WithTargetSnapshotValues(const Snapshot& value);
+    AWS_FSX_API AdministrativeAction& WithTargetSnapshotValues(const Snapshot& value);
 
     
-    AdministrativeAction& WithTargetSnapshotValues(Snapshot&& value);
+    AWS_FSX_API AdministrativeAction& WithTargetSnapshotValues(Snapshot&& value);
 
   private:
 
     AdministrativeActionType m_administrativeActionType;
-    bool m_administrativeActionTypeHasBeenSet;
+    bool m_administrativeActionTypeHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
+    bool m_requestTimeHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     std::shared_ptr<FileSystem> m_targetFileSystemValues;
-    bool m_targetFileSystemValuesHasBeenSet;
+    bool m_targetFileSystemValuesHasBeenSet = false;
 
     AdministrativeActionFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     std::shared_ptr<Volume> m_targetVolumeValues;
-    bool m_targetVolumeValuesHasBeenSet;
+    bool m_targetVolumeValuesHasBeenSet = false;
 
     std::shared_ptr<Snapshot> m_targetSnapshotValues;
-    bool m_targetSnapshotValuesHasBeenSet;
+    bool m_targetSnapshotValuesHasBeenSet = false;
   };
 
 } // namespace Model

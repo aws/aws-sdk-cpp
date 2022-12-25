@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TemporalFilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API TemporalFilterSettings
+  class TemporalFilterSettings
   {
   public:
-    TemporalFilterSettings();
-    TemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    TemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API TemporalFilterSettings();
+    AWS_MEDIALIVE_API TemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API TemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     TemporalFilterPostFilterSharpening m_postFilterSharpening;
-    bool m_postFilterSharpeningHasBeenSet;
+    bool m_postFilterSharpeningHasBeenSet = false;
 
     TemporalFilterStrength m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

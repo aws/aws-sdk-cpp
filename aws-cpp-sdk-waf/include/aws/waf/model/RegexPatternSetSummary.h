@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RegexPatternSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RegexPatternSetSummary
+  class RegexPatternSetSummary
   {
   public:
-    RegexPatternSetSummary();
-    RegexPatternSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RegexPatternSetSummary();
+    AWS_WAF_API RegexPatternSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RegexPatternSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,10 +187,10 @@ namespace Model
   private:
 
     Aws::String m_regexPatternSetId;
-    bool m_regexPatternSetIdHasBeenSet;
+    bool m_regexPatternSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

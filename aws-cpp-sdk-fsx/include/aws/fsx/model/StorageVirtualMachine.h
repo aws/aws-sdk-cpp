@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StorageVirtualMachine">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API StorageVirtualMachine
+  class StorageVirtualMachine
   {
   public:
-    StorageVirtualMachine();
-    StorageVirtualMachine(Aws::Utils::Json::JsonView jsonValue);
-    StorageVirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API StorageVirtualMachine();
+    AWS_FSX_API StorageVirtualMachine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API StorageVirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -518,43 +518,43 @@ namespace Model
   private:
 
     SvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-    bool m_activeDirectoryConfigurationHasBeenSet;
+    bool m_activeDirectoryConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SvmEndpoints m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     StorageVirtualMachineLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_storageVirtualMachineId;
-    bool m_storageVirtualMachineIdHasBeenSet;
+    bool m_storageVirtualMachineIdHasBeenSet = false;
 
     StorageVirtualMachineSubtype m_subtype;
-    bool m_subtypeHasBeenSet;
+    bool m_subtypeHasBeenSet = false;
 
     Aws::String m_uUID;
-    bool m_uUIDHasBeenSet;
+    bool m_uUIDHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     LifecycleTransitionReason m_lifecycleTransitionReason;
-    bool m_lifecycleTransitionReasonHasBeenSet;
+    bool m_lifecycleTransitionReasonHasBeenSet = false;
 
     StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle;
-    bool m_rootVolumeSecurityStyleHasBeenSet;
+    bool m_rootVolumeSecurityStyleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TwitterParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TwitterParameters
+  class TwitterParameters
   {
   public:
-    TwitterParameters();
-    TwitterParameters(Aws::Utils::Json::JsonView jsonValue);
-    TwitterParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TwitterParameters();
+    AWS_QUICKSIGHT_API TwitterParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TwitterParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     int m_maxRows;
-    bool m_maxRowsHasBeenSet;
+    bool m_maxRowsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/Instance.h>
 #include <aws/rekognition/model/Parent.h>
+#include <aws/rekognition/model/LabelAlias.h>
+#include <aws/rekognition/model/LabelCategory.h>
 #include <utility>
 
 namespace Aws
@@ -33,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Label">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Label
+  class Label
   {
   public:
-    Label();
-    Label(Aws::Utils::Json::JsonView jsonValue);
-    Label& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Label();
+    AWS_REKOGNITION_API Label(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Label& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,19 +211,107 @@ namespace Model
      */
     inline Label& AddParents(Parent&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline const Aws::Vector<LabelAlias>& GetAliases() const{ return m_aliases; }
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline void SetAliases(const Aws::Vector<LabelAlias>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline void SetAliases(Aws::Vector<LabelAlias>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline Label& WithAliases(const Aws::Vector<LabelAlias>& value) { SetAliases(value); return *this;}
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline Label& WithAliases(Aws::Vector<LabelAlias>&& value) { SetAliases(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline Label& AddAliases(const LabelAlias& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+    /**
+     * <p>A list of potential aliases for a given label.</p>
+     */
+    inline Label& AddAliases(LabelAlias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline const Aws::Vector<LabelCategory>& GetCategories() const{ return m_categories; }
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline void SetCategories(const Aws::Vector<LabelCategory>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline void SetCategories(Aws::Vector<LabelCategory>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline Label& WithCategories(const Aws::Vector<LabelCategory>& value) { SetCategories(value); return *this;}
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline Label& WithCategories(Aws::Vector<LabelCategory>&& value) { SetCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline Label& AddCategories(const LabelCategory& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the categories associated with a given label.</p>
+     */
+    inline Label& AddCategories(LabelCategory&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     Aws::Vector<Parent> m_parents;
-    bool m_parentsHasBeenSet;
+    bool m_parentsHasBeenSet = false;
+
+    Aws::Vector<LabelAlias> m_aliases;
+    bool m_aliasesHasBeenSet = false;
+
+    Aws::Vector<LabelCategory> m_categories;
+    bool m_categoriesHasBeenSet = false;
   };
 
 } // namespace Model

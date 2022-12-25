@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/FieldInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API FieldInfo
+  class FieldInfo
   {
   public:
-    FieldInfo();
-    FieldInfo(Aws::Utils::Json::JsonView jsonValue);
-    FieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API FieldInfo();
+    AWS_CONFIGSERVICE_API FieldInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API FieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

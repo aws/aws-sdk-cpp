@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/FailedRemediationBatch">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API FailedRemediationBatch
+  class FailedRemediationBatch
   {
   public:
-    FailedRemediationBatch();
-    FailedRemediationBatch(Aws::Utils::Json::JsonView jsonValue);
-    FailedRemediationBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API FailedRemediationBatch();
+    AWS_CONFIGSERVICE_API FailedRemediationBatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API FailedRemediationBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_failureMessage;
-    bool m_failureMessageHasBeenSet;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::Vector<RemediationConfiguration> m_failedItems;
-    bool m_failedItemsHasBeenSet;
+    bool m_failedItemsHasBeenSet = false;
   };
 
 } // namespace Model

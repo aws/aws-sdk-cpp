@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedFace">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ComparedFace
+  class ComparedFace
   {
   public:
-    ComparedFace();
-    ComparedFace(Aws::Utils::Json::JsonView jsonValue);
-    ComparedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ComparedFace();
+    AWS_REKOGNITION_API ComparedFace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ComparedFace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,25 +296,25 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Landmark> m_landmarks;
-    bool m_landmarksHasBeenSet;
+    bool m_landmarksHasBeenSet = false;
 
     Pose m_pose;
-    bool m_poseHasBeenSet;
+    bool m_poseHasBeenSet = false;
 
     ImageQuality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     Aws::Vector<Emotion> m_emotions;
-    bool m_emotionsHasBeenSet;
+    bool m_emotionsHasBeenSet = false;
 
     Smile m_smile;
-    bool m_smileHasBeenSet;
+    bool m_smileHasBeenSet = false;
   };
 
 } // namespace Model

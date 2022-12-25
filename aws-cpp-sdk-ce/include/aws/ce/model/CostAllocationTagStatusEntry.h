@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostAllocationTagStatusEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostAllocationTagStatusEntry
+  class CostAllocationTagStatusEntry
   {
   public:
-    CostAllocationTagStatusEntry();
-    CostAllocationTagStatusEntry(Aws::Utils::Json::JsonView jsonValue);
-    CostAllocationTagStatusEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostAllocationTagStatusEntry();
+    AWS_COSTEXPLORER_API CostAllocationTagStatusEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostAllocationTagStatusEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     CostAllocationTagStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

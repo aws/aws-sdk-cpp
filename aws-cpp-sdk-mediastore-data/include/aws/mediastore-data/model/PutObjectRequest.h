@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIASTOREDATA_API PutObjectRequest : public StreamingMediaStoreDataRequest
+  class PutObjectRequest : public StreamingMediaStoreDataRequest
   {
   public:
-    PutObjectRequest();
+    AWS_MEDIASTOREDATA_API PutObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,11 +32,11 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutObject"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MEDIASTOREDATA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_MEDIASTOREDATA_API bool SignBody() const override { return false; }
 
-    bool IsChunked() const override { return true; }
+    AWS_MEDIASTOREDATA_API bool IsChunked() const override { return true; }
 
 
     /**
@@ -410,16 +410,16 @@ namespace Model
 
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_cacheControl;
-    bool m_cacheControlHasBeenSet;
+    bool m_cacheControlHasBeenSet = false;
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     UploadAvailability m_uploadAvailability;
-    bool m_uploadAvailabilityHasBeenSet;
+    bool m_uploadAvailabilityHasBeenSet = false;
   };
 
 } // namespace Model

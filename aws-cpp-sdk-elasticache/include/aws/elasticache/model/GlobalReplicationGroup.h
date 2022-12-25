@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API GlobalReplicationGroup
+  class GlobalReplicationGroup
   {
   public:
-    GlobalReplicationGroup();
-    GlobalReplicationGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GlobalReplicationGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalReplicationGroup();
+    AWS_ELASTICACHE_API GlobalReplicationGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalReplicationGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -562,43 +562,43 @@ namespace Model
   private:
 
     Aws::String m_globalReplicationGroupId;
-    bool m_globalReplicationGroupIdHasBeenSet;
+    bool m_globalReplicationGroupIdHasBeenSet = false;
 
     Aws::String m_globalReplicationGroupDescription;
-    bool m_globalReplicationGroupDescriptionHasBeenSet;
+    bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Vector<GlobalReplicationGroupMember> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     bool m_clusterEnabled;
-    bool m_clusterEnabledHasBeenSet;
+    bool m_clusterEnabledHasBeenSet = false;
 
     Aws::Vector<GlobalNodeGroup> m_globalNodeGroups;
-    bool m_globalNodeGroupsHasBeenSet;
+    bool m_globalNodeGroupsHasBeenSet = false;
 
     bool m_authTokenEnabled;
-    bool m_authTokenEnabledHasBeenSet;
+    bool m_authTokenEnabledHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

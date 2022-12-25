@@ -25,27 +25,37 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyInstanceEventStartTimeResponse
+  class ModifyInstanceEventStartTimeResponse
   {
   public:
-    ModifyInstanceEventStartTimeResponse();
-    ModifyInstanceEventStartTimeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyInstanceEventStartTimeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse();
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Information about the event.</p>
+     */
     inline const InstanceStatusEvent& GetEvent() const{ return m_event; }
 
-    
+    /**
+     * <p>Information about the event.</p>
+     */
     inline void SetEvent(const InstanceStatusEvent& value) { m_event = value; }
 
-    
+    /**
+     * <p>Information about the event.</p>
+     */
     inline void SetEvent(InstanceStatusEvent&& value) { m_event = std::move(value); }
 
-    
+    /**
+     * <p>Information about the event.</p>
+     */
     inline ModifyInstanceEventStartTimeResponse& WithEvent(const InstanceStatusEvent& value) { SetEvent(value); return *this;}
 
-    
+    /**
+     * <p>Information about the event.</p>
+     */
     inline ModifyInstanceEventStartTimeResponse& WithEvent(InstanceStatusEvent&& value) { SetEvent(std::move(value)); return *this;}
 
 

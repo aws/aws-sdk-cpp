@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/IngestedFilesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API IngestedFilesSummary
+  class IngestedFilesSummary
   {
   public:
-    IngestedFilesSummary();
-    IngestedFilesSummary(Aws::Utils::Json::JsonView jsonValue);
-    IngestedFilesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API IngestedFilesSummary();
+    AWS_LOOKOUTEQUIPMENT_API IngestedFilesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API IngestedFilesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     int m_totalNumberOfFiles;
-    bool m_totalNumberOfFilesHasBeenSet;
+    bool m_totalNumberOfFilesHasBeenSet = false;
 
     int m_ingestedNumberOfFiles;
-    bool m_ingestedNumberOfFilesHasBeenSet;
+    bool m_ingestedNumberOfFilesHasBeenSet = false;
 
     Aws::Vector<S3Object> m_discardedFiles;
-    bool m_discardedFilesHasBeenSet;
+    bool m_discardedFilesHasBeenSet = false;
   };
 
 } // namespace Model

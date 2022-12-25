@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/MetricWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API MetricWindow
+  class MetricWindow
   {
   public:
-    MetricWindow();
-    MetricWindow(Aws::Utils::Json::JsonView jsonValue);
-    MetricWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API MetricWindow();
+    AWS_IOTSITEWISE_API MetricWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API MetricWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     TumblingWindow m_tumbling;
-    bool m_tumblingHasBeenSet;
+    bool m_tumblingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeFabricAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NodeFabricAttributes
+  class NodeFabricAttributes
   {
   public:
-    NodeFabricAttributes();
-    NodeFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
-    NodeFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_peerEndpoint;
-    bool m_peerEndpointHasBeenSet;
+    bool m_peerEndpointHasBeenSet = false;
 
     Aws::String m_peerEventEndpoint;
-    bool m_peerEventEndpointHasBeenSet;
+    bool m_peerEventEndpointHasBeenSet = false;
   };
 
 } // namespace Model

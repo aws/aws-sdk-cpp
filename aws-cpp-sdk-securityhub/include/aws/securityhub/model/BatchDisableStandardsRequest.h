@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYHUB_API BatchDisableStandardsRequest : public SecurityHubRequest
+  class BatchDisableStandardsRequest : public SecurityHubRequest
   {
   public:
-    BatchDisableStandardsRequest();
+    AWS_SECURITYHUB_API BatchDisableStandardsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchDisableStandards"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_standardsSubscriptionArns;
-    bool m_standardsSubscriptionArnsHasBeenSet;
+    bool m_standardsSubscriptionArnsHasBeenSet = false;
   };
 
 } // namespace Model

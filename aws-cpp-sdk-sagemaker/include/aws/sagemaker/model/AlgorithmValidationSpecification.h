@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmValidationSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmValidationSpecification
+  class AlgorithmValidationSpecification
   {
   public:
-    AlgorithmValidationSpecification();
-    AlgorithmValidationSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmValidationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmValidationSpecification();
+    AWS_SAGEMAKER_API AlgorithmValidationSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmValidationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_validationRole;
-    bool m_validationRoleHasBeenSet;
+    bool m_validationRoleHasBeenSet = false;
 
     Aws::Vector<AlgorithmValidationProfile> m_validationProfiles;
-    bool m_validationProfilesHasBeenSet;
+    bool m_validationProfilesHasBeenSet = false;
   };
 
 } // namespace Model

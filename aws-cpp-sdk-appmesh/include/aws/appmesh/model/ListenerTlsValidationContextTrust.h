@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTlsValidationContextTrust">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListenerTlsValidationContextTrust
+  class ListenerTlsValidationContextTrust
   {
   public:
-    ListenerTlsValidationContextTrust();
-    ListenerTlsValidationContextTrust(Aws::Utils::Json::JsonView jsonValue);
-    ListenerTlsValidationContextTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ListenerTlsValidationContextTrust();
+    AWS_APPMESH_API ListenerTlsValidationContextTrust(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ListenerTlsValidationContextTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     TlsValidationContextFileTrust m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
 
     TlsValidationContextSdsTrust m_sds;
-    bool m_sdsHasBeenSet;
+    bool m_sdsHasBeenSet = false;
   };
 
 } // namespace Model

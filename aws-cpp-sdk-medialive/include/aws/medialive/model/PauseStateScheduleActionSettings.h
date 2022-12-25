@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PauseStateScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API PauseStateScheduleActionSettings
+  class PauseStateScheduleActionSettings
   {
   public:
-    PauseStateScheduleActionSettings();
-    PauseStateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    PauseStateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API PauseStateScheduleActionSettings();
+    AWS_MEDIALIVE_API PauseStateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API PauseStateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -66,7 +66,7 @@ namespace Model
   private:
 
     Aws::Vector<PipelinePauseStateSettings> m_pipelines;
-    bool m_pipelinesHasBeenSet;
+    bool m_pipelinesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemDataValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemDataValue
+  class OpsItemDataValue
   {
   public:
-    OpsItemDataValue();
-    OpsItemDataValue(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemDataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemDataValue();
+    AWS_SSM_API OpsItemDataValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemDataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     OpsItemDataType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

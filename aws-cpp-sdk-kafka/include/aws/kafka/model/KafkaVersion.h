@@ -24,13 +24,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API KafkaVersion
+  class KafkaVersion
   {
   public:
-    KafkaVersion();
-    KafkaVersion(Aws::Utils::Json::JsonView jsonValue);
-    KafkaVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API KafkaVersion();
+    AWS_KAFKA_API KafkaVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API KafkaVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -79,10 +79,10 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     KafkaVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,37 +25,37 @@ namespace Model
 
   /**
    * <p>A complex type that contains zero or more <code>CacheBehavior</code>
-   * elements. </p><p><h3>See Also:</h3>   <a
+   * elements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CacheBehaviors">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CacheBehaviors
+  class CacheBehaviors
   {
   public:
-    CacheBehaviors();
-    CacheBehaviors(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheBehaviors& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehaviors();
+    AWS_CLOUDFRONT_API CacheBehaviors(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehaviors& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p>The number of cache behaviors for this distribution. </p>
+     * <p>The number of cache behaviors for this distribution.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of cache behaviors for this distribution. </p>
+     * <p>The number of cache behaviors for this distribution.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of cache behaviors for this distribution. </p>
+     * <p>The number of cache behaviors for this distribution.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of cache behaviors for this distribution. </p>
+     * <p>The number of cache behaviors for this distribution.</p>
      */
     inline CacheBehaviors& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -111,10 +111,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<CacheBehavior> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

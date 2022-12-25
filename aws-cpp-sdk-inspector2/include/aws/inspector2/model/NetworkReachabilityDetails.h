@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/NetworkReachabilityDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API NetworkReachabilityDetails
+  class NetworkReachabilityDetails
   {
   public:
-    NetworkReachabilityDetails();
-    NetworkReachabilityDetails(Aws::Utils::Json::JsonView jsonValue);
-    NetworkReachabilityDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API NetworkReachabilityDetails();
+    AWS_INSPECTOR2_API NetworkReachabilityDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API NetworkReachabilityDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     NetworkPath m_networkPath;
-    bool m_networkPathHasBeenSet;
+    bool m_networkPathHasBeenSet = false;
 
     PortRange m_openPortRange;
-    bool m_openPortRangeHasBeenSet;
+    bool m_openPortRangeHasBeenSet = false;
 
     NetworkProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

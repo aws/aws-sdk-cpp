@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectParentsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListObjectParentsResponse
+  class BatchListObjectParentsResponse
   {
   public:
-    BatchListObjectParentsResponse();
-    BatchListObjectParentsResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchListObjectParentsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListObjectParentsResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectParentsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListObjectParentsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
-    bool m_parentLinksHasBeenSet;
+    bool m_parentLinksHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

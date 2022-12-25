@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AnomalyGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AnomalyGroupSummary
+  class AnomalyGroupSummary
   {
   public:
-    AnomalyGroupSummary();
-    AnomalyGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AnomalyGroupSummary();
+    AWS_LOOKOUTMETRICS_API AnomalyGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AnomalyGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,19 +224,19 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     double m_anomalyGroupScore;
-    bool m_anomalyGroupScoreHasBeenSet;
+    bool m_anomalyGroupScoreHasBeenSet = false;
 
     Aws::String m_primaryMetricName;
-    bool m_primaryMetricNameHasBeenSet;
+    bool m_primaryMetricNameHasBeenSet = false;
   };
 
 } // namespace Model

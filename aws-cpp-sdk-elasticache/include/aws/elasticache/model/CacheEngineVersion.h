@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheEngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API CacheEngineVersion
+  class CacheEngineVersion
   {
   public:
-    CacheEngineVersion();
-    CacheEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheEngineVersion();
+    AWS_ELASTICACHE_API CacheEngineVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API CacheEngineVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -279,19 +279,19 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_cacheEngineDescription;
-    bool m_cacheEngineDescriptionHasBeenSet;
+    bool m_cacheEngineDescriptionHasBeenSet = false;
 
     Aws::String m_cacheEngineVersionDescription;
-    bool m_cacheEngineVersionDescriptionHasBeenSet;
+    bool m_cacheEngineVersionDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SkewedInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API SkewedInfo
+  class SkewedInfo
   {
   public:
-    SkewedInfo();
-    SkewedInfo(Aws::Utils::Json::JsonView jsonValue);
-    SkewedInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SkewedInfo();
+    AWS_GLUE_API SkewedInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SkewedInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_skewedColumnNames;
-    bool m_skewedColumnNamesHasBeenSet;
+    bool m_skewedColumnNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_skewedColumnValues;
-    bool m_skewedColumnValuesHasBeenSet;
+    bool m_skewedColumnValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_skewedColumnValueLocationMaps;
-    bool m_skewedColumnValueLocationMapsHasBeenSet;
+    bool m_skewedColumnValueLocationMapsHasBeenSet = false;
   };
 
 } // namespace Model

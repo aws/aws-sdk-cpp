@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostVolumeProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API HostVolumeProperties
+  class HostVolumeProperties
   {
   public:
-    HostVolumeProperties();
-    HostVolumeProperties(Aws::Utils::Json::JsonView jsonValue);
-    HostVolumeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API HostVolumeProperties();
+    AWS_ECS_API HostVolumeProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API HostVolumeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,7 +153,7 @@ namespace Model
   private:
 
     Aws::String m_sourcePath;
-    bool m_sourcePathHasBeenSet;
+    bool m_sourcePathHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ReplaceRouteTableAssociationResponse
+  class ReplaceRouteTableAssociationResponse
   {
   public:
-    ReplaceRouteTableAssociationResponse();
-    ReplaceRouteTableAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReplaceRouteTableAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceRouteTableAssociationResponse();
+    AWS_EC2_API ReplaceRouteTableAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceRouteTableAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

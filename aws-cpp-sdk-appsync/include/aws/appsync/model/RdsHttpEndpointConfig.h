@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/RdsHttpEndpointConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API RdsHttpEndpointConfig
+  class RdsHttpEndpointConfig
   {
   public:
-    RdsHttpEndpointConfig();
-    RdsHttpEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
-    RdsHttpEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API RdsHttpEndpointConfig();
+    AWS_APPSYNC_API RdsHttpEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API RdsHttpEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_dbClusterIdentifier;
-    bool m_dbClusterIdentifierHasBeenSet;
+    bool m_dbClusterIdentifierHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_awsSecretStoreArn;
-    bool m_awsSecretStoreArnHasBeenSet;
+    bool m_awsSecretStoreArnHasBeenSet = false;
   };
 
 } // namespace Model

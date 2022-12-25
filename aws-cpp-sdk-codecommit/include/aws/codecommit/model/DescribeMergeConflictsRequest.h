@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API DescribeMergeConflictsRequest : public CodeCommitRequest
+  class DescribeMergeConflictsRequest : public CodeCommitRequest
   {
   public:
-    DescribeMergeConflictsRequest();
+    AWS_CODECOMMIT_API DescribeMergeConflictsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeMergeConflicts"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_destinationCommitSpecifier;
-    bool m_destinationCommitSpecifierHasBeenSet;
+    bool m_destinationCommitSpecifierHasBeenSet = false;
 
     Aws::String m_sourceCommitSpecifier;
-    bool m_sourceCommitSpecifierHasBeenSet;
+    bool m_sourceCommitSpecifierHasBeenSet = false;
 
     MergeOptionTypeEnum m_mergeOption;
-    bool m_mergeOptionHasBeenSet;
+    bool m_mergeOptionHasBeenSet = false;
 
     int m_maxMergeHunks;
-    bool m_maxMergeHunksHasBeenSet;
+    bool m_maxMergeHunksHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     ConflictDetailLevelTypeEnum m_conflictDetailLevel;
-    bool m_conflictDetailLevelHasBeenSet;
+    bool m_conflictDetailLevelHasBeenSet = false;
 
     ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
-    bool m_conflictResolutionStrategyHasBeenSet;
+    bool m_conflictResolutionStrategyHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

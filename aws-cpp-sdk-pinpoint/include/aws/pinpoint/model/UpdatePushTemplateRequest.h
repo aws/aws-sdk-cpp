@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_PINPOINT_API UpdatePushTemplateRequest : public PinpointRequest
+  class UpdatePushTemplateRequest : public PinpointRequest
   {
   public:
-    UpdatePushTemplateRequest();
+    AWS_PINPOINT_API UpdatePushTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePushTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PINPOINT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -323,16 +323,16 @@ namespace Model
   private:
 
     bool m_createNewVersion;
-    bool m_createNewVersionHasBeenSet;
+    bool m_createNewVersionHasBeenSet = false;
 
     PushNotificationTemplateRequest m_pushNotificationTemplateRequest;
-    bool m_pushNotificationTemplateRequestHasBeenSet;
+    bool m_pushNotificationTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

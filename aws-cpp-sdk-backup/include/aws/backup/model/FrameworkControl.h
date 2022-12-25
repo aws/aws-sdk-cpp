@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/FrameworkControl">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API FrameworkControl
+  class FrameworkControl
   {
   public:
-    FrameworkControl();
-    FrameworkControl(Aws::Utils::Json::JsonView jsonValue);
-    FrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API FrameworkControl();
+    AWS_BACKUP_API FrameworkControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API FrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::String m_controlName;
-    bool m_controlNameHasBeenSet;
+    bool m_controlNameHasBeenSet = false;
 
     Aws::Vector<ControlInputParameter> m_controlInputParameters;
-    bool m_controlInputParametersHasBeenSet;
+    bool m_controlInputParametersHasBeenSet = false;
 
     ControlScope m_controlScope;
-    bool m_controlScopeHasBeenSet;
+    bool m_controlScopeHasBeenSet = false;
   };
 
 } // namespace Model

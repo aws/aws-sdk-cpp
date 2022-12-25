@@ -30,7 +30,7 @@ ListAppVersionsResult& ListAppVersionsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("appVersions"))
   {
-    Array<JsonView> appVersionsJsonList = jsonValue.GetArray("appVersions");
+    Aws::Utils::Array<JsonView> appVersionsJsonList = jsonValue.GetArray("appVersions");
     for(unsigned appVersionsIndex = 0; appVersionsIndex < appVersionsJsonList.GetLength(); ++appVersionsIndex)
     {
       m_appVersions.push_back(appVersionsJsonList[appVersionsIndex].AsObject());

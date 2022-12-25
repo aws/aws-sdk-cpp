@@ -30,7 +30,7 @@ DescribeFleetAttributesResult& DescribeFleetAttributesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetAttributes"))
   {
-    Array<JsonView> fleetAttributesJsonList = jsonValue.GetArray("FleetAttributes");
+    Aws::Utils::Array<JsonView> fleetAttributesJsonList = jsonValue.GetArray("FleetAttributes");
     for(unsigned fleetAttributesIndex = 0; fleetAttributesIndex < fleetAttributesJsonList.GetLength(); ++fleetAttributesIndex)
     {
       m_fleetAttributes.push_back(fleetAttributesJsonList[fleetAttributesIndex].AsObject());

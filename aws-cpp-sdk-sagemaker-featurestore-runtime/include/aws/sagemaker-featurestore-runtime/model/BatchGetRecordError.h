@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecordError">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordError
+  class BatchGetRecordError
   {
   public:
-    BatchGetRecordError();
-    BatchGetRecordError(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetRecordError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordError();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,64 +139,56 @@ namespace Model
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline BatchGetRecordError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline BatchGetRecordError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code of an error that has occured when attempting to retrieve a
      * batch of Records. For more information on errors, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">
-     * Errors</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors">Errors</a>.</p>
      */
     inline BatchGetRecordError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
@@ -252,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
 
     Aws::String m_recordIdentifierValueAsString;
-    bool m_recordIdentifierValueAsStringHasBeenSet;
+    bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

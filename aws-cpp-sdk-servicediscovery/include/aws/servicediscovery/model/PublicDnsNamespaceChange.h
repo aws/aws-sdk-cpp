@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PublicDnsNamespaceChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API PublicDnsNamespaceChange
+  class PublicDnsNamespaceChange
   {
   public:
-    PublicDnsNamespaceChange();
-    PublicDnsNamespaceChange(Aws::Utils::Json::JsonView jsonValue);
-    PublicDnsNamespaceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API PublicDnsNamespaceChange();
+    AWS_SERVICEDISCOVERY_API PublicDnsNamespaceChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API PublicDnsNamespaceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     PublicDnsNamespacePropertiesChange m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
   };
 
 } // namespace Model

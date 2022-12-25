@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICINFERENCE_API DescribeAcceleratorOfferingsRequest : public ElasticInferenceRequest
+  class DescribeAcceleratorOfferingsRequest : public ElasticInferenceRequest
   {
   public:
-    DescribeAcceleratorOfferingsRequest();
+    AWS_ELASTICINFERENCE_API DescribeAcceleratorOfferingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeAcceleratorOfferings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICINFERENCE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -143,10 +143,10 @@ namespace Model
   private:
 
     LocationType m_locationType;
-    bool m_locationTypeHasBeenSet;
+    bool m_locationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
   };
 
 } // namespace Model

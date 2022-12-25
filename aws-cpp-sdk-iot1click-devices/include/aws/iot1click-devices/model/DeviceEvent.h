@@ -24,13 +24,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent
+  class DeviceEvent
   {
   public:
-    DeviceEvent();
-    DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
-    DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent();
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Device m_device;
-    bool m_deviceHasBeenSet;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_stdEvent;
-    bool m_stdEventHasBeenSet;
+    bool m_stdEventHasBeenSet = false;
   };
 
 } // namespace Model

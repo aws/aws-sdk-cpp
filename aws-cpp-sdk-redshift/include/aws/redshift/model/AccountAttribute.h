@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AccountAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API AccountAttribute
+  class AccountAttribute
   {
   public:
-    AccountAttribute();
-    AccountAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccountAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AccountAttribute();
+    AWS_REDSHIFT_API AccountAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API AccountAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Vector<AttributeValueTarget> m_attributeValues;
-    bool m_attributeValuesHasBeenSet;
+    bool m_attributeValuesHasBeenSet = false;
   };
 
 } // namespace Model

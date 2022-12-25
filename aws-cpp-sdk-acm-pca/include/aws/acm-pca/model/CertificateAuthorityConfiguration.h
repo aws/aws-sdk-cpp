@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API CertificateAuthorityConfiguration
+  class CertificateAuthorityConfiguration
   {
   public:
-    CertificateAuthorityConfiguration();
-    CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API CertificateAuthorityConfiguration();
+    AWS_ACMPCA_API CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     KeyAlgorithm m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     SigningAlgorithm m_signingAlgorithm;
-    bool m_signingAlgorithmHasBeenSet;
+    bool m_signingAlgorithmHasBeenSet = false;
 
     ASN1Subject m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     CsrExtensions m_csrExtensions;
-    bool m_csrExtensionsHasBeenSet;
+    bool m_csrExtensionsHasBeenSet = false;
   };
 
 } // namespace Model

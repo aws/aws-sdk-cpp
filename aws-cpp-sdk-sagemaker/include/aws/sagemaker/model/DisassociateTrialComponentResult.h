@@ -24,46 +24,46 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DisassociateTrialComponentResult
+  class DisassociateTrialComponentResult
   {
   public:
-    DisassociateTrialComponentResult();
-    DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DisassociateTrialComponentResult();
+    AWS_SAGEMAKER_API DisassociateTrialComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DisassociateTrialComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline const Aws::String& GetTrialComponentArn() const{ return m_trialComponentArn; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const Aws::String& value) { m_trialComponentArn = value; }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(Aws::String&& value) { m_trialComponentArn = std::move(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline void SetTrialComponentArn(const char* value) { m_trialComponentArn.assign(value); }
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline DisassociateTrialComponentResult& WithTrialComponentArn(const Aws::String& value) { SetTrialComponentArn(value); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline DisassociateTrialComponentResult& WithTrialComponentArn(Aws::String&& value) { SetTrialComponentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the trial component.</p>
+     * <p>The Amazon Resource Name (ARN) of the trial component.</p>
      */
     inline DisassociateTrialComponentResult& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
 

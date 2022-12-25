@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRouteAction
+  class GrpcRouteAction
   {
   public:
-    GrpcRouteAction();
-    GrpcRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRouteAction();
+    AWS_APPMESH_API GrpcRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<WeightedTarget> m_weightedTargets;
-    bool m_weightedTargetsHasBeenSet;
+    bool m_weightedTargetsHasBeenSet = false;
   };
 
 } // namespace Model

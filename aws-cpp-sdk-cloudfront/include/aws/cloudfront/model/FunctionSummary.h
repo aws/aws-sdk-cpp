@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FunctionSummary
+  class FunctionSummary
   {
   public:
-    FunctionSummary();
-    FunctionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FunctionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionSummary();
+    AWS_CLOUDFRONT_API FunctionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     FunctionConfig m_functionConfig;
-    bool m_functionConfigHasBeenSet;
+    bool m_functionConfigHasBeenSet = false;
 
     FunctionMetadata m_functionMetadata;
-    bool m_functionMetadataHasBeenSet;
+    bool m_functionMetadataHasBeenSet = false;
   };
 
 } // namespace Model

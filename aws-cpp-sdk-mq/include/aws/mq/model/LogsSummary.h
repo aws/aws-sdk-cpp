@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LogsSummary">AWS API
    * Reference</a></p>
    */
-  class AWS_MQ_API LogsSummary
+  class LogsSummary
   {
   public:
-    LogsSummary();
-    LogsSummary(Aws::Utils::Json::JsonView jsonValue);
-    LogsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API LogsSummary();
+    AWS_MQ_API LogsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API LogsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,19 +214,19 @@ namespace Model
   private:
 
     bool m_audit;
-    bool m_auditHasBeenSet;
+    bool m_auditHasBeenSet = false;
 
     Aws::String m_auditLogGroup;
-    bool m_auditLogGroupHasBeenSet;
+    bool m_auditLogGroupHasBeenSet = false;
 
     bool m_general;
-    bool m_generalHasBeenSet;
+    bool m_generalHasBeenSet = false;
 
     Aws::String m_generalLogGroup;
-    bool m_generalLogGroupHasBeenSet;
+    bool m_generalLogGroupHasBeenSet = false;
 
     PendingLogs m_pending;
-    bool m_pendingHasBeenSet;
+    bool m_pendingHasBeenSet = false;
   };
 
 } // namespace Model

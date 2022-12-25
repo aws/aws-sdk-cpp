@@ -5,153 +5,16 @@
 
 #pragma once
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
-#include <aws/service-quotas/ServiceQuotasErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/service-quotas/model/AssociateServiceQuotaTemplateResult.h>
-#include <aws/service-quotas/model/DeleteServiceQuotaIncreaseRequestFromTemplateResult.h>
-#include <aws/service-quotas/model/DisassociateServiceQuotaTemplateResult.h>
-#include <aws/service-quotas/model/GetAWSDefaultServiceQuotaResult.h>
-#include <aws/service-quotas/model/GetAssociationForServiceQuotaTemplateResult.h>
-#include <aws/service-quotas/model/GetRequestedServiceQuotaChangeResult.h>
-#include <aws/service-quotas/model/GetServiceQuotaResult.h>
-#include <aws/service-quotas/model/GetServiceQuotaIncreaseRequestFromTemplateResult.h>
-#include <aws/service-quotas/model/ListAWSDefaultServiceQuotasResult.h>
-#include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryResult.h>
-#include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryByQuotaResult.h>
-#include <aws/service-quotas/model/ListServiceQuotaIncreaseRequestsInTemplateResult.h>
-#include <aws/service-quotas/model/ListServiceQuotasResult.h>
-#include <aws/service-quotas/model/ListServicesResult.h>
-#include <aws/service-quotas/model/ListTagsForResourceResult.h>
-#include <aws/service-quotas/model/PutServiceQuotaIncreaseRequestIntoTemplateResult.h>
-#include <aws/service-quotas/model/RequestServiceQuotaIncreaseResult.h>
-#include <aws/service-quotas/model/TagResourceResult.h>
-#include <aws/service-quotas/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ServiceQuotas
 {
-
-namespace Model
-{
-        class AssociateServiceQuotaTemplateRequest;
-        class DeleteServiceQuotaIncreaseRequestFromTemplateRequest;
-        class DisassociateServiceQuotaTemplateRequest;
-        class GetAWSDefaultServiceQuotaRequest;
-        class GetAssociationForServiceQuotaTemplateRequest;
-        class GetRequestedServiceQuotaChangeRequest;
-        class GetServiceQuotaRequest;
-        class GetServiceQuotaIncreaseRequestFromTemplateRequest;
-        class ListAWSDefaultServiceQuotasRequest;
-        class ListRequestedServiceQuotaChangeHistoryRequest;
-        class ListRequestedServiceQuotaChangeHistoryByQuotaRequest;
-        class ListServiceQuotaIncreaseRequestsInTemplateRequest;
-        class ListServiceQuotasRequest;
-        class ListServicesRequest;
-        class ListTagsForResourceRequest;
-        class PutServiceQuotaIncreaseRequestIntoTemplateRequest;
-        class RequestServiceQuotaIncreaseRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<AssociateServiceQuotaTemplateResult, ServiceQuotasError> AssociateServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> DeleteServiceQuotaIncreaseRequestFromTemplateOutcome;
-        typedef Aws::Utils::Outcome<DisassociateServiceQuotaTemplateResult, ServiceQuotasError> DisassociateServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetAWSDefaultServiceQuotaResult, ServiceQuotasError> GetAWSDefaultServiceQuotaOutcome;
-        typedef Aws::Utils::Outcome<GetAssociationForServiceQuotaTemplateResult, ServiceQuotasError> GetAssociationForServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetRequestedServiceQuotaChangeResult, ServiceQuotasError> GetRequestedServiceQuotaChangeOutcome;
-        typedef Aws::Utils::Outcome<GetServiceQuotaResult, ServiceQuotasError> GetServiceQuotaOutcome;
-        typedef Aws::Utils::Outcome<GetServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> GetServiceQuotaIncreaseRequestFromTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListAWSDefaultServiceQuotasResult, ServiceQuotasError> ListAWSDefaultServiceQuotasOutcome;
-        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryResult, ServiceQuotasError> ListRequestedServiceQuotaChangeHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryByQuotaResult, ServiceQuotasError> ListRequestedServiceQuotaChangeHistoryByQuotaOutcome;
-        typedef Aws::Utils::Outcome<ListServiceQuotaIncreaseRequestsInTemplateResult, ServiceQuotasError> ListServiceQuotaIncreaseRequestsInTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListServiceQuotasResult, ServiceQuotasError> ListServiceQuotasOutcome;
-        typedef Aws::Utils::Outcome<ListServicesResult, ServiceQuotasError> ListServicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ServiceQuotasError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutServiceQuotaIncreaseRequestIntoTemplateResult, ServiceQuotasError> PutServiceQuotaIncreaseRequestIntoTemplateOutcome;
-        typedef Aws::Utils::Outcome<RequestServiceQuotaIncreaseResult, ServiceQuotasError> RequestServiceQuotaIncreaseOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ServiceQuotasError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ServiceQuotasError> UntagResourceOutcome;
-
-        typedef std::future<AssociateServiceQuotaTemplateOutcome> AssociateServiceQuotaTemplateOutcomeCallable;
-        typedef std::future<DeleteServiceQuotaIncreaseRequestFromTemplateOutcome> DeleteServiceQuotaIncreaseRequestFromTemplateOutcomeCallable;
-        typedef std::future<DisassociateServiceQuotaTemplateOutcome> DisassociateServiceQuotaTemplateOutcomeCallable;
-        typedef std::future<GetAWSDefaultServiceQuotaOutcome> GetAWSDefaultServiceQuotaOutcomeCallable;
-        typedef std::future<GetAssociationForServiceQuotaTemplateOutcome> GetAssociationForServiceQuotaTemplateOutcomeCallable;
-        typedef std::future<GetRequestedServiceQuotaChangeOutcome> GetRequestedServiceQuotaChangeOutcomeCallable;
-        typedef std::future<GetServiceQuotaOutcome> GetServiceQuotaOutcomeCallable;
-        typedef std::future<GetServiceQuotaIncreaseRequestFromTemplateOutcome> GetServiceQuotaIncreaseRequestFromTemplateOutcomeCallable;
-        typedef std::future<ListAWSDefaultServiceQuotasOutcome> ListAWSDefaultServiceQuotasOutcomeCallable;
-        typedef std::future<ListRequestedServiceQuotaChangeHistoryOutcome> ListRequestedServiceQuotaChangeHistoryOutcomeCallable;
-        typedef std::future<ListRequestedServiceQuotaChangeHistoryByQuotaOutcome> ListRequestedServiceQuotaChangeHistoryByQuotaOutcomeCallable;
-        typedef std::future<ListServiceQuotaIncreaseRequestsInTemplateOutcome> ListServiceQuotaIncreaseRequestsInTemplateOutcomeCallable;
-        typedef std::future<ListServiceQuotasOutcome> ListServiceQuotasOutcomeCallable;
-        typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutServiceQuotaIncreaseRequestIntoTemplateOutcome> PutServiceQuotaIncreaseRequestIntoTemplateOutcomeCallable;
-        typedef std::future<RequestServiceQuotaIncreaseOutcome> RequestServiceQuotaIncreaseOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class ServiceQuotasClient;
-
-    typedef std::function<void(const ServiceQuotasClient*, const Model::AssociateServiceQuotaTemplateRequest&, const Model::AssociateServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateServiceQuotaTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::DeleteServiceQuotaIncreaseRequestFromTemplateRequest&, const Model::DeleteServiceQuotaIncreaseRequestFromTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::DisassociateServiceQuotaTemplateRequest&, const Model::DisassociateServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceQuotaTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::GetAWSDefaultServiceQuotaRequest&, const Model::GetAWSDefaultServiceQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSDefaultServiceQuotaResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::GetAssociationForServiceQuotaTemplateRequest&, const Model::GetAssociationForServiceQuotaTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociationForServiceQuotaTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::GetRequestedServiceQuotaChangeRequest&, const Model::GetRequestedServiceQuotaChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRequestedServiceQuotaChangeResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::GetServiceQuotaRequest&, const Model::GetServiceQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceQuotaResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::GetServiceQuotaIncreaseRequestFromTemplateRequest&, const Model::GetServiceQuotaIncreaseRequestFromTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListAWSDefaultServiceQuotasRequest&, const Model::ListAWSDefaultServiceQuotasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAWSDefaultServiceQuotasResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListRequestedServiceQuotaChangeHistoryRequest&, const Model::ListRequestedServiceQuotaChangeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListRequestedServiceQuotaChangeHistoryByQuotaRequest&, const Model::ListRequestedServiceQuotaChangeHistoryByQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListServiceQuotaIncreaseRequestsInTemplateRequest&, const Model::ListServiceQuotaIncreaseRequestsInTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListServiceQuotasRequest&, const Model::ListServiceQuotasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceQuotasResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::PutServiceQuotaIncreaseRequestIntoTemplateRequest&, const Model::PutServiceQuotaIncreaseRequestIntoTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::RequestServiceQuotaIncreaseRequest&, const Model::RequestServiceQuotaIncreaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestServiceQuotaIncreaseResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ServiceQuotasClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>With Service Quotas, you can view and manage your quotas easily as your AWS
    * workloads grow. Quotas, also referred to as limits, are the maximum number of
@@ -159,32 +22,60 @@ namespace Model
    * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
    * Quotas User Guide</a>.</p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient
+  class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ServiceQuotasClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ServiceQuotasClient(const Aws::ServiceQuotas::ServiceQuotasClientConfiguration& clientConfiguration = Aws::ServiceQuotas::ServiceQuotasClientConfiguration(),
+                            std::shared_ptr<ServiceQuotasEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ServiceQuotasClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ServiceQuotasClient(const Aws::Auth::AWSCredentials& credentials,
+                            std::shared_ptr<ServiceQuotasEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::ServiceQuotas::ServiceQuotasClientConfiguration& clientConfiguration = Aws::ServiceQuotas::ServiceQuotasClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ServiceQuotasClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<ServiceQuotasEndpointProviderBase> endpointProvider = Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::ServiceQuotas::ServiceQuotasClientConfiguration& clientConfiguration = Aws::ServiceQuotas::ServiceQuotasClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ServiceQuotasClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ServiceQuotasClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ServiceQuotasClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ServiceQuotasClient();
-
 
         /**
          * <p>Associates your quota request template with your organization. When a new
@@ -537,31 +428,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ServiceQuotasEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateServiceQuotaTemplateAsyncHelper(const Model::AssociateServiceQuotaTemplateRequest& request, const AssociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServiceQuotaIncreaseRequestFromTemplateAsyncHelper(const Model::DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request, const DeleteServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateServiceQuotaTemplateAsyncHelper(const Model::DisassociateServiceQuotaTemplateRequest& request, const DisassociateServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAWSDefaultServiceQuotaAsyncHelper(const Model::GetAWSDefaultServiceQuotaRequest& request, const GetAWSDefaultServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssociationForServiceQuotaTemplateAsyncHelper(const Model::GetAssociationForServiceQuotaTemplateRequest& request, const GetAssociationForServiceQuotaTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRequestedServiceQuotaChangeAsyncHelper(const Model::GetRequestedServiceQuotaChangeRequest& request, const GetRequestedServiceQuotaChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServiceQuotaAsyncHelper(const Model::GetServiceQuotaRequest& request, const GetServiceQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServiceQuotaIncreaseRequestFromTemplateAsyncHelper(const Model::GetServiceQuotaIncreaseRequestFromTemplateRequest& request, const GetServiceQuotaIncreaseRequestFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAWSDefaultServiceQuotasAsyncHelper(const Model::ListAWSDefaultServiceQuotasRequest& request, const ListAWSDefaultServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRequestedServiceQuotaChangeHistoryAsyncHelper(const Model::ListRequestedServiceQuotaChangeHistoryRequest& request, const ListRequestedServiceQuotaChangeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRequestedServiceQuotaChangeHistoryByQuotaAsyncHelper(const Model::ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request, const ListRequestedServiceQuotaChangeHistoryByQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServiceQuotaIncreaseRequestsInTemplateAsyncHelper(const Model::ListServiceQuotaIncreaseRequestsInTemplateRequest& request, const ListServiceQuotaIncreaseRequestsInTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServiceQuotasAsyncHelper(const Model::ListServiceQuotasRequest& request, const ListServiceQuotasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutServiceQuotaIncreaseRequestIntoTemplateAsyncHelper(const Model::PutServiceQuotaIncreaseRequestIntoTemplateRequest& request, const PutServiceQuotaIncreaseRequestIntoTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RequestServiceQuotaIncreaseAsyncHelper(const Model::RequestServiceQuotaIncreaseRequest& request, const RequestServiceQuotaIncreaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;
+      void init(const ServiceQuotasClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ServiceQuotasClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ServiceQuotasEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ServiceQuotas

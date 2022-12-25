@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SqlConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SqlConfiguration
+  class SqlConfiguration
   {
   public:
-    SqlConfiguration();
-    SqlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SqlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SqlConfiguration();
+    AWS_KENDRA_API SqlConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SqlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,7 +125,7 @@ namespace Model
   private:
 
     QueryIdentifiersEnclosingOption m_queryIdentifiersEnclosingOption;
-    bool m_queryIdentifiersEnclosingOptionHasBeenSet;
+    bool m_queryIdentifiersEnclosingOptionHasBeenSet = false;
   };
 
 } // namespace Model

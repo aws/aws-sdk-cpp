@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSECURETUNNELING_API CloseTunnelRequest : public IoTSecureTunnelingRequest
+  class CloseTunnelRequest : public IoTSecureTunnelingRequest
   {
   public:
-    CloseTunnelRequest();
+    AWS_IOTSECURETUNNELING_API CloseTunnelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CloseTunnel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSECURETUNNELING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_IOTSECURETUNNELING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_tunnelId;
-    bool m_tunnelIdHasBeenSet;
+    bool m_tunnelIdHasBeenSet = false;
 
     bool m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
   };
 
 } // namespace Model

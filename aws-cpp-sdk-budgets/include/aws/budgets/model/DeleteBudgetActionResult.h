@@ -25,12 +25,12 @@ namespace Budgets
 {
 namespace Model
 {
-  class AWS_BUDGETS_API DeleteBudgetActionResult
+  class DeleteBudgetActionResult
   {
   public:
-    DeleteBudgetActionResult();
-    DeleteBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DeleteBudgetActionResult();
+    AWS_BUDGETS_API DeleteBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DeleteBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

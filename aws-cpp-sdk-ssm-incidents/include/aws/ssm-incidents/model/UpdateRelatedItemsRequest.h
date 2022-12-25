@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMINCIDENTS_API UpdateRelatedItemsRequest : public SSMIncidentsRequest
+  class UpdateRelatedItemsRequest : public SSMIncidentsRequest
   {
   public:
-    UpdateRelatedItemsRequest();
+    AWS_SSMINCIDENTS_API UpdateRelatedItemsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRelatedItems"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_incidentRecordArn;
-    bool m_incidentRecordArnHasBeenSet;
+    bool m_incidentRecordArnHasBeenSet = false;
 
     RelatedItemsUpdate m_relatedItemsUpdate;
-    bool m_relatedItemsUpdateHasBeenSet;
+    bool m_relatedItemsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/OS">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API OS
+  class OS
   {
   public:
-    OS();
-    OS(Aws::Utils::Json::JsonView jsonValue);
-    OS& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API OS();
+    AWS_MGN_API OS(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API OS& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_fullString;
-    bool m_fullStringHasBeenSet;
+    bool m_fullStringHasBeenSet = false;
   };
 
 } // namespace Model

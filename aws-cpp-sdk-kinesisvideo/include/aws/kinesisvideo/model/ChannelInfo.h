@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ChannelInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API ChannelInfo
+  class ChannelInfo
   {
   public:
-    ChannelInfo();
-    ChannelInfo(Aws::Utils::Json::JsonView jsonValue);
-    ChannelInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API ChannelInfo();
+    AWS_KINESISVIDEO_API ChannelInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API ChannelInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,25 +297,25 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     ChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
 
     Status m_channelStatus;
-    bool m_channelStatusHasBeenSet;
+    bool m_channelStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SingleMasterConfiguration m_singleMasterConfiguration;
-    bool m_singleMasterConfigurationHasBeenSet;
+    bool m_singleMasterConfigurationHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

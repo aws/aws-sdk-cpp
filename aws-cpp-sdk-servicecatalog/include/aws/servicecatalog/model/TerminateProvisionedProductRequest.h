@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API TerminateProvisionedProductRequest : public ServiceCatalogRequest
+  class TerminateProvisionedProductRequest : public ServiceCatalogRequest
   {
   public:
-    TerminateProvisionedProductRequest();
+    AWS_SERVICECATALOG_API TerminateProvisionedProductRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TerminateProvisionedProduct"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -199,25 +199,25 @@ namespace Model
 
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline bool IgnoreErrorsHasBeenSet() const { return m_ignoreErrorsHasBeenSet; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline void SetIgnoreErrors(bool value) { m_ignoreErrorsHasBeenSet = true; m_ignoreErrors = value; }
 
     /**
-     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * <p>If set to true, Service Catalog stops managing the specified provisioned
      * product even if it cannot delete the underlying resources.</p>
      */
     inline TerminateProvisionedProductRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}
@@ -319,22 +319,22 @@ namespace Model
   private:
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::String m_terminateToken;
-    bool m_terminateTokenHasBeenSet;
+    bool m_terminateTokenHasBeenSet = false;
 
     bool m_ignoreErrors;
-    bool m_ignoreErrorsHasBeenSet;
+    bool m_ignoreErrorsHasBeenSet = false;
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     bool m_retainPhysicalResources;
-    bool m_retainPhysicalResourcesHasBeenSet;
+    bool m_retainPhysicalResourcesHasBeenSet = false;
   };
 
 } // namespace Model

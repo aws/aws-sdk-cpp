@@ -48,7 +48,7 @@ UpdateSlotTypeResult& UpdateSlotTypeResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("slotTypeValues"))
   {
-    Array<JsonView> slotTypeValuesJsonList = jsonValue.GetArray("slotTypeValues");
+    Aws::Utils::Array<JsonView> slotTypeValuesJsonList = jsonValue.GetArray("slotTypeValues");
     for(unsigned slotTypeValuesIndex = 0; slotTypeValuesIndex < slotTypeValuesJsonList.GetLength(); ++slotTypeValuesIndex)
     {
       m_slotTypeValues.push_back(slotTypeValuesJsonList[slotTypeValuesIndex].AsObject());
@@ -100,6 +100,12 @@ UpdateSlotTypeResult& UpdateSlotTypeResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("externalSourceSetting"))
   {
     m_externalSourceSetting = jsonValue.GetObject("externalSourceSetting");
+
+  }
+
+  if(jsonValue.ValueExists("compositeSlotTypeSetting"))
+  {
+    m_compositeSlotTypeSetting = jsonValue.GetObject("compositeSlotTypeSetting");
 
   }
 

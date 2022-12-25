@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/Row">AWS API
    * Reference</a></p>
    */
-  class AWS_ATHENA_API Row
+  class Row
   {
   public:
-    Row();
-    Row(Aws::Utils::Json::JsonView jsonValue);
-    Row& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API Row();
+    AWS_ATHENA_API Row(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Row& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Datum> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

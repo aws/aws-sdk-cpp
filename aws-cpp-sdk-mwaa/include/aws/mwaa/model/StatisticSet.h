@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/StatisticSet">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API StatisticSet
+  class StatisticSet
   {
   public:
-    StatisticSet();
-    StatisticSet(Aws::Utils::Json::JsonView jsonValue);
-    StatisticSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API StatisticSet();
+    AWS_MWAA_API StatisticSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API StatisticSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,16 +125,16 @@ namespace Model
   private:
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
 
     int m_sampleCount;
-    bool m_sampleCountHasBeenSet;
+    bool m_sampleCountHasBeenSet = false;
 
     double m_sum;
-    bool m_sumHasBeenSet;
+    bool m_sumHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecoveryRequestSourceServer">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API StartRecoveryRequestSourceServer
+  class StartRecoveryRequestSourceServer
   {
   public:
-    StartRecoveryRequestSourceServer();
-    StartRecoveryRequestSourceServer(Aws::Utils::Json::JsonView jsonValue);
-    StartRecoveryRequestSourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API StartRecoveryRequestSourceServer();
+    AWS_DRS_API StartRecoveryRequestSourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API StartRecoveryRequestSourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_recoverySnapshotID;
-    bool m_recoverySnapshotIDHasBeenSet;
+    bool m_recoverySnapshotIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

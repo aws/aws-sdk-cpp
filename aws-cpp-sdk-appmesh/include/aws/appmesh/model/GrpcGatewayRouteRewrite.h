@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcGatewayRouteRewrite">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcGatewayRouteRewrite
+  class GrpcGatewayRouteRewrite
   {
   public:
-    GrpcGatewayRouteRewrite();
-    GrpcGatewayRouteRewrite(Aws::Utils::Json::JsonView jsonValue);
-    GrpcGatewayRouteRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcGatewayRouteRewrite();
+    AWS_APPMESH_API GrpcGatewayRouteRewrite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcGatewayRouteRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     GatewayRouteHostnameRewrite m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
   };
 
 } // namespace Model

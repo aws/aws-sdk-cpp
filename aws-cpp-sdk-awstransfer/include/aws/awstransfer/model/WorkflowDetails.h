@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API WorkflowDetails
+  class WorkflowDetails
   {
   public:
-    WorkflowDetails();
-    WorkflowDetails(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API WorkflowDetails();
+    AWS_TRANSFER_API WorkflowDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API WorkflowDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,78 @@ namespace Model
      */
     inline WorkflowDetails& AddOnUpload(WorkflowDetail&& value) { m_onUploadHasBeenSet = true; m_onUpload.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline const Aws::Vector<WorkflowDetail>& GetOnPartialUpload() const{ return m_onPartialUpload; }
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline bool OnPartialUploadHasBeenSet() const { return m_onPartialUploadHasBeenSet; }
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline void SetOnPartialUpload(const Aws::Vector<WorkflowDetail>& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload = value; }
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline void SetOnPartialUpload(Aws::Vector<WorkflowDetail>&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload = std::move(value); }
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline WorkflowDetails& WithOnPartialUpload(const Aws::Vector<WorkflowDetail>& value) { SetOnPartialUpload(value); return *this;}
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline WorkflowDetails& WithOnPartialUpload(Aws::Vector<WorkflowDetail>&& value) { SetOnPartialUpload(std::move(value)); return *this;}
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline WorkflowDetails& AddOnPartialUpload(const WorkflowDetail& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload.push_back(value); return *this; }
+
+    /**
+     * <p>A trigger that starts a workflow if a file is only partially uploaded. You
+     * can attach a workflow to a server that executes whenever there is a partial
+     * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
+     * session disconnects.</p>
+     */
+    inline WorkflowDetails& AddOnPartialUpload(WorkflowDetail&& value) { m_onPartialUploadHasBeenSet = true; m_onPartialUpload.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<WorkflowDetail> m_onUpload;
-    bool m_onUploadHasBeenSet;
+    bool m_onUploadHasBeenSet = false;
+
+    Aws::Vector<WorkflowDetail> m_onPartialUpload;
+    bool m_onPartialUploadHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/CreateProjectRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API CreateProjectRequest : public StreamingMobileRequest
+  class CreateProjectRequest : public StreamingMobileRequest
   {
   public:
-    CreateProjectRequest();
+    AWS_MOBILE_API CreateProjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProject"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MOBILE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -182,14 +182,14 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
   };
 
 } // namespace Model

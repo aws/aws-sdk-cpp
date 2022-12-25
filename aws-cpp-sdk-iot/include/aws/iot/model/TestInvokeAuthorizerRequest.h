@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API TestInvokeAuthorizerRequest : public IoTRequest
+  class TestInvokeAuthorizerRequest : public IoTRequest
   {
   public:
-    TestInvokeAuthorizerRequest();
+    AWS_IOT_API TestInvokeAuthorizerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestInvokeAuthorizer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_tokenSignature;
-    bool m_tokenSignatureHasBeenSet;
+    bool m_tokenSignatureHasBeenSet = false;
 
     HttpContext m_httpContext;
-    bool m_httpContextHasBeenSet;
+    bool m_httpContextHasBeenSet = false;
 
     MqttContext m_mqttContext;
-    bool m_mqttContextHasBeenSet;
+    bool m_mqttContextHasBeenSet = false;
 
     TlsContext m_tlsContext;
-    bool m_tlsContextHasBeenSet;
+    bool m_tlsContextHasBeenSet = false;
   };
 
 } // namespace Model

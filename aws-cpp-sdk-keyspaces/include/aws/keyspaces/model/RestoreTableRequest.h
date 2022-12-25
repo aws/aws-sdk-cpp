@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_KEYSPACES_API RestoreTableRequest : public KeyspacesRequest
+  class RestoreTableRequest : public KeyspacesRequest
   {
   public:
-    RestoreTableRequest();
+    AWS_KEYSPACES_API RestoreTableRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreTable"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KEYSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KEYSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -529,31 +529,31 @@ namespace Model
   private:
 
     Aws::String m_sourceKeyspaceName;
-    bool m_sourceKeyspaceNameHasBeenSet;
+    bool m_sourceKeyspaceNameHasBeenSet = false;
 
     Aws::String m_sourceTableName;
-    bool m_sourceTableNameHasBeenSet;
+    bool m_sourceTableNameHasBeenSet = false;
 
     Aws::String m_targetKeyspaceName;
-    bool m_targetKeyspaceNameHasBeenSet;
+    bool m_targetKeyspaceNameHasBeenSet = false;
 
     Aws::String m_targetTableName;
-    bool m_targetTableNameHasBeenSet;
+    bool m_targetTableNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreTimestamp;
-    bool m_restoreTimestampHasBeenSet;
+    bool m_restoreTimestampHasBeenSet = false;
 
     CapacitySpecification m_capacitySpecificationOverride;
-    bool m_capacitySpecificationOverrideHasBeenSet;
+    bool m_capacitySpecificationOverrideHasBeenSet = false;
 
     EncryptionSpecification m_encryptionSpecificationOverride;
-    bool m_encryptionSpecificationOverrideHasBeenSet;
+    bool m_encryptionSpecificationOverrideHasBeenSet = false;
 
     PointInTimeRecovery m_pointInTimeRecoveryOverride;
-    bool m_pointInTimeRecoveryOverrideHasBeenSet;
+    bool m_pointInTimeRecoveryOverrideHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsOverride;
-    bool m_tagsOverrideHasBeenSet;
+    bool m_tagsOverrideHasBeenSet = false;
   };
 
 } // namespace Model

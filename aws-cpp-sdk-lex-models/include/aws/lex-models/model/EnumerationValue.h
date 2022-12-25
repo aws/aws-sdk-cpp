@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/EnumerationValue">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API EnumerationValue
+  class EnumerationValue
   {
   public:
-    EnumerationValue();
-    EnumerationValue(Aws::Utils::Json::JsonView jsonValue);
-    EnumerationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API EnumerationValue();
+    AWS_LEXMODELBUILDINGSERVICE_API EnumerationValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API EnumerationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_synonyms;
-    bool m_synonymsHasBeenSet;
+    bool m_synonymsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayMethodSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayMethodSettings
+  class AwsApiGatewayMethodSettings
   {
   public:
-    AwsApiGatewayMethodSettings();
-    AwsApiGatewayMethodSettings(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayMethodSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings();
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -499,40 +499,40 @@ namespace Model
   private:
 
     bool m_metricsEnabled;
-    bool m_metricsEnabledHasBeenSet;
+    bool m_metricsEnabledHasBeenSet = false;
 
     Aws::String m_loggingLevel;
-    bool m_loggingLevelHasBeenSet;
+    bool m_loggingLevelHasBeenSet = false;
 
     bool m_dataTraceEnabled;
-    bool m_dataTraceEnabledHasBeenSet;
+    bool m_dataTraceEnabledHasBeenSet = false;
 
     int m_throttlingBurstLimit;
-    bool m_throttlingBurstLimitHasBeenSet;
+    bool m_throttlingBurstLimitHasBeenSet = false;
 
     double m_throttlingRateLimit;
-    bool m_throttlingRateLimitHasBeenSet;
+    bool m_throttlingRateLimitHasBeenSet = false;
 
     bool m_cachingEnabled;
-    bool m_cachingEnabledHasBeenSet;
+    bool m_cachingEnabledHasBeenSet = false;
 
     int m_cacheTtlInSeconds;
-    bool m_cacheTtlInSecondsHasBeenSet;
+    bool m_cacheTtlInSecondsHasBeenSet = false;
 
     bool m_cacheDataEncrypted;
-    bool m_cacheDataEncryptedHasBeenSet;
+    bool m_cacheDataEncryptedHasBeenSet = false;
 
     bool m_requireAuthorizationForCacheControl;
-    bool m_requireAuthorizationForCacheControlHasBeenSet;
+    bool m_requireAuthorizationForCacheControlHasBeenSet = false;
 
     Aws::String m_unauthorizedCacheControlHeaderStrategy;
-    bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet;
+    bool m_unauthorizedCacheControlHeaderStrategyHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_resourcePath;
-    bool m_resourcePathHasBeenSet;
+    bool m_resourcePathHasBeenSet = false;
   };
 
 } // namespace Model

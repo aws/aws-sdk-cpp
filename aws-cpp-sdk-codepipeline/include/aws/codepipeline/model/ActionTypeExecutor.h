@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeExecutor">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeExecutor
+  class ActionTypeExecutor
   {
   public:
-    ActionTypeExecutor();
-    ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeExecutor();
+    AWS_CODEPIPELINE_API ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,16 +224,16 @@ namespace Model
   private:
 
     ExecutorConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     ExecutorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_policyStatementsTemplate;
-    bool m_policyStatementsTemplateHasBeenSet;
+    bool m_policyStatementsTemplateHasBeenSet = false;
 
     int m_jobTimeout;
-    bool m_jobTimeoutHasBeenSet;
+    bool m_jobTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

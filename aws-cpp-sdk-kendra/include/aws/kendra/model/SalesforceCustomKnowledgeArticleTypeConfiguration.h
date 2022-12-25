@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceCustomKnowledgeArticleTypeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceCustomKnowledgeArticleTypeConfiguration
+  class SalesforceCustomKnowledgeArticleTypeConfiguration
   {
   public:
-    SalesforceCustomKnowledgeArticleTypeConfiguration();
-    SalesforceCustomKnowledgeArticleTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceCustomKnowledgeArticleTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceCustomKnowledgeArticleTypeConfiguration();
+    AWS_KENDRA_API SalesforceCustomKnowledgeArticleTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceCustomKnowledgeArticleTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,16 +270,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_documentDataFieldName;
-    bool m_documentDataFieldNameHasBeenSet;
+    bool m_documentDataFieldNameHasBeenSet = false;
 
     Aws::String m_documentTitleFieldName;
-    bool m_documentTitleFieldNameHasBeenSet;
+    bool m_documentTitleFieldNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

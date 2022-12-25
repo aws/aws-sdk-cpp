@@ -31,7 +31,9 @@ RegisterImageRequest::RegisterImageRequest() :
     m_bootModeHasBeenSet(false),
     m_tpmSupport(TpmSupportValues::NOT_SET),
     m_tpmSupportHasBeenSet(false),
-    m_uefiDataHasBeenSet(false)
+    m_uefiDataHasBeenSet(false),
+    m_imdsSupport(ImdsSupportValues::NOT_SET),
+    m_imdsSupportHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,11 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_uefiDataHasBeenSet)
   {
     ss << "UefiData=" << StringUtils::URLEncode(m_uefiData.c_str()) << "&";
+  }
+
+  if(m_imdsSupportHasBeenSet)
+  {
+    ss << "ImdsSupport=" << ImdsSupportValuesMapper::GetNameForImdsSupportValues(m_imdsSupport) << "&";
   }
 
   ss << "Version=2016-11-15";

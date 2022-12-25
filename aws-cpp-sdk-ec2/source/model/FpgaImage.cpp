@@ -37,7 +37,8 @@ FpgaImage::FpgaImage() :
     m_public(false),
     m_publicHasBeenSet(false),
     m_dataRetentionSupport(false),
-    m_dataRetentionSupportHasBeenSet(false)
+    m_dataRetentionSupportHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ FpgaImage::FpgaImage(const XmlNode& xmlNode) :
     m_public(false),
     m_publicHasBeenSet(false),
     m_dataRetentionSupport(false),
-    m_dataRetentionSupportHasBeenSet(false)
+    m_dataRetentionSupportHasBeenSet(false),
+    m_instanceTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -114,13 +116,13 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("updateTime");
     if(!updateTimeNode.IsNull())
     {
-      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateTimeHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
@@ -171,6 +173,18 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
       m_dataRetentionSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataRetentionSupportNode.GetText()).c_str()).c_str());
       m_dataRetentionSupportHasBeenSet = true;
     }
+    XmlNode instanceTypesNode = resultNode.FirstChild("instanceTypes");
+    if(!instanceTypesNode.IsNull())
+    {
+      XmlNode instanceTypesMember = instanceTypesNode.FirstChild("item");
+      while(!instanceTypesMember.IsNull())
+      {
+        m_instanceTypes.push_back(instanceTypesMember.GetText());
+        instanceTypesMember = instanceTypesMember.NextNode("item");
+      }
+
+      m_instanceTypesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -219,12 +233,12 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
 
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -269,6 +283,15 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DataRetentionSupport=" << std::boolalpha << m_dataRetentionSupport << "&";
   }
 
+  if(m_instanceTypesHasBeenSet)
+  {
+      unsigned instanceTypesIdx = 1;
+      for(auto& item : m_instanceTypes)
+      {
+        oStream << location << index << locationValue << ".InstanceTypes." << instanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -307,11 +330,11 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_updateTimeHasBeenSet)
   {
-      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
@@ -348,6 +371,14 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_dataRetentionSupportHasBeenSet)
   {
       oStream << location << ".DataRetentionSupport=" << std::boolalpha << m_dataRetentionSupport << "&";
+  }
+  if(m_instanceTypesHasBeenSet)
+  {
+      unsigned instanceTypesIdx = 1;
+      for(auto& item : m_instanceTypes)
+      {
+        oStream << location << ".InstanceTypes." << instanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

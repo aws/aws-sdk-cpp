@@ -30,7 +30,7 @@ ListActionExecutionsResult& ListActionExecutionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionExecutionDetails"))
   {
-    Array<JsonView> actionExecutionDetailsJsonList = jsonValue.GetArray("actionExecutionDetails");
+    Aws::Utils::Array<JsonView> actionExecutionDetailsJsonList = jsonValue.GetArray("actionExecutionDetails");
     for(unsigned actionExecutionDetailsIndex = 0; actionExecutionDetailsIndex < actionExecutionDetailsJsonList.GetLength(); ++actionExecutionDetailsIndex)
     {
       m_actionExecutionDetails.push_back(actionExecutionDetailsJsonList[actionExecutionDetailsIndex].AsObject());

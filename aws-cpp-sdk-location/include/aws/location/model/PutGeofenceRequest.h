@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API PutGeofenceRequest : public LocationServiceRequest
+  class PutGeofenceRequest : public LocationServiceRequest
   {
   public:
-    PutGeofenceRequest();
+    AWS_LOCATIONSERVICE_API PutGeofenceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutGeofence"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -124,63 +124,69 @@ namespace Model
 
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline const GeofenceGeometry& GetGeometry() const{ return m_geometry; }
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline void SetGeometry(const GeofenceGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline void SetGeometry(GeofenceGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline PutGeofenceRequest& WithGeometry(const GeofenceGeometry& value) { SetGeometry(value); return *this;}
 
     /**
-     * <p>Contains the polygon details to specify the position of the geofence.</p>
-     *  <p>Each <a
-     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-     * polygon</a> can have a maximum of 1,000 vertices.</p> 
+     * <p>Contains the details to specify the position of the geofence. Can be either a
+     * polygon or a circle. Including both will return a validation error.</p> 
+     * <p>Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+     * geofence polygon</a> can have a maximum of 1,000 vertices.</p> 
      */
     inline PutGeofenceRequest& WithGeometry(GeofenceGeometry&& value) { SetGeometry(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_collectionName;
-    bool m_collectionNameHasBeenSet;
+    bool m_collectionNameHasBeenSet = false;
 
     Aws::String m_geofenceId;
-    bool m_geofenceIdHasBeenSet;
+    bool m_geofenceIdHasBeenSet = false;
 
     GeofenceGeometry m_geometry;
-    bool m_geometryHasBeenSet;
+    bool m_geometryHasBeenSet = false;
   };
 
 } // namespace Model

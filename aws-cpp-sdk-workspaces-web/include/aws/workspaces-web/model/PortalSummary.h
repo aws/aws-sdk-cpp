@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/PortalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API PortalSummary
+  class PortalSummary
   {
   public:
-    PortalSummary();
-    PortalSummary(Aws::Utils::Json::JsonView jsonValue);
-    PortalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API PortalSummary();
+    AWS_WORKSPACESWEB_API PortalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API PortalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -420,6 +420,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline const Aws::String& GetUserAccessLoggingSettingsArn() const{ return m_userAccessLoggingSettingsArn; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline bool UserAccessLoggingSettingsArnHasBeenSet() const { return m_userAccessLoggingSettingsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(const Aws::String& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = value; }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(Aws::String&& value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline void SetUserAccessLoggingSettingsArn(const char* value) { m_userAccessLoggingSettingsArnHasBeenSet = true; m_userAccessLoggingSettingsArn.assign(value); }
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(const Aws::String& value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(Aws::String&& value) { SetUserAccessLoggingSettingsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the user access logging settings that is associated with the web
+     * portal.</p>
+     */
+    inline PortalSummary& WithUserAccessLoggingSettingsArn(const char* value) { SetUserAccessLoggingSettingsArn(value); return *this;}
+
+
+    /**
      * <p>The ARN of the user settings that is associated with the web portal.</p>
      */
     inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
@@ -462,37 +511,40 @@ namespace Model
   private:
 
     Aws::String m_browserSettingsArn;
-    bool m_browserSettingsArnHasBeenSet;
+    bool m_browserSettingsArnHasBeenSet = false;
 
     BrowserType m_browserType;
-    bool m_browserTypeHasBeenSet;
+    bool m_browserTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::String m_portalArn;
-    bool m_portalArnHasBeenSet;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_portalEndpoint;
-    bool m_portalEndpointHasBeenSet;
+    bool m_portalEndpointHasBeenSet = false;
 
     PortalStatus m_portalStatus;
-    bool m_portalStatusHasBeenSet;
+    bool m_portalStatusHasBeenSet = false;
 
     RendererType m_rendererType;
-    bool m_rendererTypeHasBeenSet;
+    bool m_rendererTypeHasBeenSet = false;
 
     Aws::String m_trustStoreArn;
-    bool m_trustStoreArnHasBeenSet;
+    bool m_trustStoreArnHasBeenSet = false;
+
+    Aws::String m_userAccessLoggingSettingsArn;
+    bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
     Aws::String m_userSettingsArn;
-    bool m_userSettingsArnHasBeenSet;
+    bool m_userSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

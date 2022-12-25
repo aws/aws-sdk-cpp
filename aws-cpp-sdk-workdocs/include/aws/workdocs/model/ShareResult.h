@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ShareResult">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API ShareResult
+  class ShareResult
   {
   public:
-    ShareResult();
-    ShareResult(Aws::Utils::Json::JsonView jsonValue);
-    ShareResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API ShareResult();
+    AWS_WORKDOCS_API ShareResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API ShareResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_inviteePrincipalId;
-    bool m_inviteePrincipalIdHasBeenSet;
+    bool m_inviteePrincipalIdHasBeenSet = false;
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     ShareStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_shareId;
-    bool m_shareIdHasBeenSet;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

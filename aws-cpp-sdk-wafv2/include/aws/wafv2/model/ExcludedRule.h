@@ -25,20 +25,19 @@ namespace Model
 
   /**
    * <p>Specifies a single rule in a rule group whose action you want to override to
-   * <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it
-   * would if the rule action setting were <code>Count</code>. This is a useful
-   * option for testing the rules in a rule group without modifying how they handle
-   * your web traffic. </p><p><h3>See Also:</h3>   <a
+   * <code>Count</code>. </p>  <p>Instead of this option, use
+   * <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+   * <code>Count</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ExcludedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ExcludedRule
+  class ExcludedRule
   {
   public:
-    ExcludedRule();
-    ExcludedRule(Aws::Utils::Json::JsonView jsonValue);
-    ExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ExcludedRule();
+    AWS_WAFV2_API ExcludedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

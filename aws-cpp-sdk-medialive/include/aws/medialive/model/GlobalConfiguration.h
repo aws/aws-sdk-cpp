@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GlobalConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API GlobalConfiguration
+  class GlobalConfiguration
   {
   public:
-    GlobalConfiguration();
-    GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API GlobalConfiguration();
+    AWS_MEDIALIVE_API GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -315,22 +315,22 @@ EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
   private:
 
     int m_initialAudioGain;
-    bool m_initialAudioGainHasBeenSet;
+    bool m_initialAudioGainHasBeenSet = false;
 
     GlobalConfigurationInputEndAction m_inputEndAction;
-    bool m_inputEndActionHasBeenSet;
+    bool m_inputEndActionHasBeenSet = false;
 
     InputLossBehavior m_inputLossBehavior;
-    bool m_inputLossBehaviorHasBeenSet;
+    bool m_inputLossBehaviorHasBeenSet = false;
 
     GlobalConfigurationOutputLockingMode m_outputLockingMode;
-    bool m_outputLockingModeHasBeenSet;
+    bool m_outputLockingModeHasBeenSet = false;
 
     GlobalConfigurationOutputTimingSource m_outputTimingSource;
-    bool m_outputTimingSourceHasBeenSet;
+    bool m_outputTimingSourceHasBeenSet = false;
 
     GlobalConfigurationLowFramerateInputs m_supportLowFramerateInputs;
-    bool m_supportLowFramerateInputsHasBeenSet;
+    bool m_supportLowFramerateInputsHasBeenSet = false;
   };
 
 } // namespace Model

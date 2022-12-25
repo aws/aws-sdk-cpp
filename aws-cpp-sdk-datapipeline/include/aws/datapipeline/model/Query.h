@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Query">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API Query
+  class Query
   {
   public:
-    Query();
-    Query(Aws::Utils::Json::JsonView jsonValue);
-    Query& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API Query();
+    AWS_DATAPIPELINE_API Query(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Query& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::Vector<Selector> m_selectors;
-    bool m_selectorsHasBeenSet;
+    bool m_selectorsHasBeenSet = false;
   };
 
 } // namespace Model

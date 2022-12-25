@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/SqsParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API SqsParameters
+  class SqsParameters
   {
   public:
-    SqsParameters();
-    SqsParameters(Aws::Utils::Json::JsonView jsonValue);
-    SqsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API SqsParameters();
+    AWS_EVENTBRIDGE_API SqsParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API SqsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_messageGroupId;
-    bool m_messageGroupIdHasBeenSet;
+    bool m_messageGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Schedule">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Schedule
+  class Schedule
   {
   public:
-    Schedule();
-    Schedule(Aws::Utils::Json::JsonView jsonValue);
-    Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Schedule();
+    AWS_IMAGEBUILDER_API Schedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,13 +270,13 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     PipelineExecutionStartCondition m_pipelineExecutionStartCondition;
-    bool m_pipelineExecutionStartConditionHasBeenSet;
+    bool m_pipelineExecutionStartConditionHasBeenSet = false;
   };
 
 } // namespace Model

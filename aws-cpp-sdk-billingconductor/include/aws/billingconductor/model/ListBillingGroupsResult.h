@@ -26,12 +26,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult
+  class ListBillingGroupsResult
   {
   public:
-    ListBillingGroupsResult();
-    ListBillingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBillingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult();
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListBillingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -71,37 +71,44 @@ namespace Model
 
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline ListBillingGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline ListBillingGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token used on subsequent calls to get billing groups. </p>
+     * <p>The pagination token that's used on subsequent calls to get billing groups.
+     * </p>
      */
     inline ListBillingGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

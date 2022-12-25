@@ -22,6 +22,7 @@ namespace Aws
 
         static const int MARKUP_HASH = HashingUtils::HashString("MARKUP");
         static const int DISCOUNT_HASH = HashingUtils::HashString("DISCOUNT");
+        static const int TIERING_HASH = HashingUtils::HashString("TIERING");
 
 
         PricingRuleType GetPricingRuleTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DISCOUNT_HASH)
           {
             return PricingRuleType::DISCOUNT;
+          }
+          else if (hashCode == TIERING_HASH)
+          {
+            return PricingRuleType::TIERING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "MARKUP";
           case PricingRuleType::DISCOUNT:
             return "DISCOUNT";
+          case PricingRuleType::TIERING:
+            return "TIERING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

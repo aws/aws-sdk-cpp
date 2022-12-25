@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberCapabilities">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API PhoneNumberCapabilities
+  class PhoneNumberCapabilities
   {
   public:
-    PhoneNumberCapabilities();
-    PhoneNumberCapabilities(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API PhoneNumberCapabilities();
+    AWS_CHIME_API PhoneNumberCapabilities(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API PhoneNumberCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,22 +165,22 @@ namespace Model
   private:
 
     bool m_inboundCall;
-    bool m_inboundCallHasBeenSet;
+    bool m_inboundCallHasBeenSet = false;
 
     bool m_outboundCall;
-    bool m_outboundCallHasBeenSet;
+    bool m_outboundCallHasBeenSet = false;
 
     bool m_inboundSMS;
-    bool m_inboundSMSHasBeenSet;
+    bool m_inboundSMSHasBeenSet = false;
 
     bool m_outboundSMS;
-    bool m_outboundSMSHasBeenSet;
+    bool m_outboundSMSHasBeenSet = false;
 
     bool m_inboundMMS;
-    bool m_inboundMMSHasBeenSet;
+    bool m_inboundMMSHasBeenSet = false;
 
     bool m_outboundMMS;
-    bool m_outboundMMSHasBeenSet;
+    bool m_outboundMMSHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,8 @@ GlueTable::GlueTable() :
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_additionalOptionsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ GlueTable::GlueTable(JsonView jsonValue) :
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_additionalOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,16 @@ GlueTable& GlueTable::operator =(JsonView jsonValue)
     m_connectionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalOptions"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalOptionsJsonMap = jsonValue.GetObject("AdditionalOptions").GetAllObjects();
+    for(auto& additionalOptionsItem : additionalOptionsJsonMap)
+    {
+      m_additionalOptions[additionalOptionsItem.first] = additionalOptionsItem.second.AsString();
+    }
+    m_additionalOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +105,17 @@ JsonValue GlueTable::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_additionalOptionsHasBeenSet)
+  {
+   JsonValue additionalOptionsJsonMap;
+   for(auto& additionalOptionsItem : m_additionalOptions)
+   {
+     additionalOptionsJsonMap.WithString(additionalOptionsItem.first, additionalOptionsItem.second);
+   }
+   payload.WithObject("AdditionalOptions", std::move(additionalOptionsJsonMap));
 
   }
 

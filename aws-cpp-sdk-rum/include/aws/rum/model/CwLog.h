@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/CwLog">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API CwLog
+  class CwLog
   {
   public:
-    CwLog();
-    CwLog(Aws::Utils::Json::JsonView jsonValue);
-    CwLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API CwLog();
+    AWS_CLOUDWATCHRUM_API CwLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API CwLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     bool m_cwLogEnabled;
-    bool m_cwLogEnabledHasBeenSet;
+    bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_cwLogGroup;
-    bool m_cwLogGroupHasBeenSet;
+    bool m_cwLogGroupHasBeenSet = false;
   };
 
 } // namespace Model

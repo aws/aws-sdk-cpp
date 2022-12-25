@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SourceConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SourceConnectorProperties
+  class SourceConnectorProperties
   {
   public:
-    SourceConnectorProperties();
-    SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SourceConnectorProperties();
+    AWS_APPFLOW_API SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -533,52 +533,52 @@ namespace Model
   private:
 
     AmplitudeSourceProperties m_amplitude;
-    bool m_amplitudeHasBeenSet;
+    bool m_amplitudeHasBeenSet = false;
 
     DatadogSourceProperties m_datadog;
-    bool m_datadogHasBeenSet;
+    bool m_datadogHasBeenSet = false;
 
     DynatraceSourceProperties m_dynatrace;
-    bool m_dynatraceHasBeenSet;
+    bool m_dynatraceHasBeenSet = false;
 
     GoogleAnalyticsSourceProperties m_googleAnalytics;
-    bool m_googleAnalyticsHasBeenSet;
+    bool m_googleAnalyticsHasBeenSet = false;
 
     InforNexusSourceProperties m_inforNexus;
-    bool m_inforNexusHasBeenSet;
+    bool m_inforNexusHasBeenSet = false;
 
     MarketoSourceProperties m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     S3SourceProperties m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceSourceProperties m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowSourceProperties m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     SingularSourceProperties m_singular;
-    bool m_singularHasBeenSet;
+    bool m_singularHasBeenSet = false;
 
     SlackSourceProperties m_slack;
-    bool m_slackHasBeenSet;
+    bool m_slackHasBeenSet = false;
 
     TrendmicroSourceProperties m_trendmicro;
-    bool m_trendmicroHasBeenSet;
+    bool m_trendmicroHasBeenSet = false;
 
     VeevaSourceProperties m_veeva;
-    bool m_veevaHasBeenSet;
+    bool m_veevaHasBeenSet = false;
 
     ZendeskSourceProperties m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     SAPODataSourceProperties m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
 
     CustomConnectorSourceProperties m_customConnector;
-    bool m_customConnectorHasBeenSet;
+    bool m_customConnectorHasBeenSet = false;
   };
 
 } // namespace Model

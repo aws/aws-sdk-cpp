@@ -5,129 +5,75 @@
 
 #pragma once
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
-#include <aws/cloudcontrol/CloudControlApiErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cloudcontrol/model/CancelResourceRequestResult.h>
-#include <aws/cloudcontrol/model/CreateResourceResult.h>
-#include <aws/cloudcontrol/model/DeleteResourceResult.h>
-#include <aws/cloudcontrol/model/GetResourceResult.h>
-#include <aws/cloudcontrol/model/GetResourceRequestStatusResult.h>
-#include <aws/cloudcontrol/model/ListResourceRequestsResult.h>
-#include <aws/cloudcontrol/model/ListResourcesResult.h>
-#include <aws/cloudcontrol/model/UpdateResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudControlApi
 {
-
-namespace Model
-{
-        class CancelResourceRequestRequest;
-        class CreateResourceRequest;
-        class DeleteResourceRequest;
-        class GetResourceRequest;
-        class GetResourceRequestStatusRequest;
-        class ListResourceRequestsRequest;
-        class ListResourcesRequest;
-        class UpdateResourceRequest;
-
-        typedef Aws::Utils::Outcome<CancelResourceRequestResult, CloudControlApiError> CancelResourceRequestOutcome;
-        typedef Aws::Utils::Outcome<CreateResourceResult, CloudControlApiError> CreateResourceOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourceResult, CloudControlApiError> DeleteResourceOutcome;
-        typedef Aws::Utils::Outcome<GetResourceResult, CloudControlApiError> GetResourceOutcome;
-        typedef Aws::Utils::Outcome<GetResourceRequestStatusResult, CloudControlApiError> GetResourceRequestStatusOutcome;
-        typedef Aws::Utils::Outcome<ListResourceRequestsResult, CloudControlApiError> ListResourceRequestsOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesResult, CloudControlApiError> ListResourcesOutcome;
-        typedef Aws::Utils::Outcome<UpdateResourceResult, CloudControlApiError> UpdateResourceOutcome;
-
-        typedef std::future<CancelResourceRequestOutcome> CancelResourceRequestOutcomeCallable;
-        typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
-        typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
-        typedef std::future<GetResourceOutcome> GetResourceOutcomeCallable;
-        typedef std::future<GetResourceRequestStatusOutcome> GetResourceRequestStatusOutcomeCallable;
-        typedef std::future<ListResourceRequestsOutcome> ListResourceRequestsOutcomeCallable;
-        typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
-        typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
-} // namespace Model
-
-  class CloudControlApiClient;
-
-    typedef std::function<void(const CloudControlApiClient*, const Model::CancelResourceRequestRequest&, const Model::CancelResourceRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelResourceRequestResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::DeleteResourceRequest&, const Model::DeleteResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::GetResourceRequest&, const Model::GetResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::GetResourceRequestStatusRequest&, const Model::GetResourceRequestStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceRequestStatusResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::ListResourceRequestsRequest&, const Model::ListResourceRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceRequestsResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
-    typedef std::function<void(const CloudControlApiClient*, const Model::UpdateResourceRequest&, const Model::UpdateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceResponseReceivedHandler;
-
   /**
    * <p>For more information about Amazon Web Services Cloud Control API, see the <a
    * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
    * Web Services Cloud Control API User Guide</a>.</p>
    */
-  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudControlApiClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudControlApiClient(const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration(),
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudControlApiClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudControlApiClient(const Aws::Auth::AWSCredentials& credentials,
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudControlApiClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudControlApiClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudControlApiClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudControlApiClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudControlApiClient();
-
 
         /**
          * <p>Cancels the specified resource operation request. For more information, see
@@ -325,20 +271,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudControlApiEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelResourceRequestAsyncHelper(const Model::CancelResourceRequestRequest& request, const CancelResourceRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateResourceAsyncHelper(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourceAsyncHelper(const Model::DeleteResourceRequest& request, const DeleteResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourceAsyncHelper(const Model::GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourceRequestStatusAsyncHelper(const Model::GetResourceRequestStatusRequest& request, const GetResourceRequestStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourceRequestsAsyncHelper(const Model::ListResourceRequestsRequest& request, const ListResourceRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateResourceAsyncHelper(const Model::UpdateResourceRequest& request, const UpdateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;
+      void init(const CloudControlApiClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudControlApiClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudControlApiEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudControlApi

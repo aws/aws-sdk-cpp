@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/StartSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOMEDIA_API StartSelector
+  class StartSelector
   {
   public:
-    StartSelector();
-    StartSelector(Aws::Utils::Json::JsonView jsonValue);
-    StartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOMEDIA_API StartSelector();
+    AWS_KINESISVIDEOMEDIA_API StartSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOMEDIA_API StartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -303,16 +303,16 @@ namespace Model
   private:
 
     StartSelectorType m_startSelectorType;
-    bool m_startSelectorTypeHasBeenSet;
+    bool m_startSelectorTypeHasBeenSet = false;
 
     Aws::String m_afterFragmentNumber;
-    bool m_afterFragmentNumberHasBeenSet;
+    bool m_afterFragmentNumberHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTimestamp;
-    bool m_startTimestampHasBeenSet;
+    bool m_startTimestampHasBeenSet = false;
 
     Aws::String m_continuationToken;
-    bool m_continuationTokenHasBeenSet;
+    bool m_continuationTokenHasBeenSet = false;
   };
 
 } // namespace Model

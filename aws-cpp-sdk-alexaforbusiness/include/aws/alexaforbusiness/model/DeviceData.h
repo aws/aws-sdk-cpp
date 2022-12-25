@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceData
+  class DeviceData
   {
   public:
-    DeviceData();
-    DeviceData(Aws::Utils::Json::JsonView jsonValue);
-    DeviceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceData();
+    AWS_ALEXAFORBUSINESS_API DeviceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -545,43 +545,43 @@ namespace Model
   private:
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::String m_deviceSerialNumber;
-    bool m_deviceSerialNumberHasBeenSet;
+    bool m_deviceSerialNumberHasBeenSet = false;
 
     Aws::String m_deviceType;
-    bool m_deviceTypeHasBeenSet;
+    bool m_deviceTypeHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     Aws::String m_softwareVersion;
-    bool m_softwareVersionHasBeenSet;
+    bool m_softwareVersionHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     DeviceStatus m_deviceStatus;
-    bool m_deviceStatusHasBeenSet;
+    bool m_deviceStatusHasBeenSet = false;
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_roomArn;
-    bool m_roomArnHasBeenSet;
+    bool m_roomArnHasBeenSet = false;
 
     Aws::String m_roomName;
-    bool m_roomNameHasBeenSet;
+    bool m_roomNameHasBeenSet = false;
 
     DeviceStatusInfo m_deviceStatusInfo;
-    bool m_deviceStatusInfoHasBeenSet;
+    bool m_deviceStatusInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

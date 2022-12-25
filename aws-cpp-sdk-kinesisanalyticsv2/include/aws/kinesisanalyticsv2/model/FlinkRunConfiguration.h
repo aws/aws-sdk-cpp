@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkRunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API FlinkRunConfiguration
+  class FlinkRunConfiguration
   {
   public:
-    FlinkRunConfiguration();
-    FlinkRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FlinkRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API FlinkRunConfiguration();
+    AWS_KINESISANALYTICSV2_API FlinkRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API FlinkRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     bool m_allowNonRestoredState;
-    bool m_allowNonRestoredStateHasBeenSet;
+    bool m_allowNonRestoredStateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputProcessingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputProcessingConfiguration
+  class InputProcessingConfiguration
   {
   public:
-    InputProcessingConfiguration();
-    InputProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputProcessingConfiguration();
+    AWS_KINESISANALYTICS_API InputProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     InputLambdaProcessor m_inputLambdaProcessor;
-    bool m_inputLambdaProcessorHasBeenSet;
+    bool m_inputLambdaProcessorHasBeenSet = false;
   };
 
 } // namespace Model

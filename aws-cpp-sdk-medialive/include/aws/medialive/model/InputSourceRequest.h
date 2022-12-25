@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSourceRequest
+  class InputSourceRequest
   {
   public:
-    InputSourceRequest();
-    InputSourceRequest(Aws::Utils::Json::JsonView jsonValue);
-    InputSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSourceRequest();
+    AWS_MEDIALIVE_API InputSourceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ pulled from.
   private:
 
     Aws::String m_passwordParam;
-    bool m_passwordParamHasBeenSet;
+    bool m_passwordParamHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

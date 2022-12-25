@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ExecutionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API ExecutionStatus
+  class ExecutionStatus
   {
   public:
-    ExecutionStatus();
-    ExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API ExecutionStatus();
+    AWS_LOOKOUTMETRICS_API ExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API ExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     AnomalyDetectionTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

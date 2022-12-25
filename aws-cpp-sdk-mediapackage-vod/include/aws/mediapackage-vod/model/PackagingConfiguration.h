@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/PackagingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API PackagingConfiguration
+  class PackagingConfiguration
   {
   public:
-    PackagingConfiguration();
-    PackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration();
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -283,28 +283,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     CmafPackage m_cmafPackage;
-    bool m_cmafPackageHasBeenSet;
+    bool m_cmafPackageHasBeenSet = false;
 
     DashPackage m_dashPackage;
-    bool m_dashPackageHasBeenSet;
+    bool m_dashPackageHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
-    bool m_hlsPackageHasBeenSet;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MssPackage m_mssPackage;
-    bool m_mssPackageHasBeenSet;
+    bool m_mssPackageHasBeenSet = false;
 
     Aws::String m_packagingGroupId;
-    bool m_packagingGroupIdHasBeenSet;
+    bool m_packagingGroupIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

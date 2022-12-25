@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentConfigInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentConfigInfo
+  class DeploymentConfigInfo
   {
   public:
-    DeploymentConfigInfo();
-    DeploymentConfigInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentConfigInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentConfigInfo();
+    AWS_CODEDEPLOY_API DeploymentConfigInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentConfigInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -224,59 +224,59 @@ namespace Model
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline bool TrafficRoutingConfigHasBeenSet() const { return m_trafficRoutingConfigHasBeenSet; }
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Used
-     * for deployments with a Lambda or ECS compute platform only.</p>
+     * for deployments with a Lambda or Amazon ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_deploymentConfigId;
-    bool m_deploymentConfigIdHasBeenSet;
+    bool m_deploymentConfigIdHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     MinimumHealthyHosts m_minimumHealthyHosts;
-    bool m_minimumHealthyHostsHasBeenSet;
+    bool m_minimumHealthyHostsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
 
     TrafficRoutingConfig m_trafficRoutingConfig;
-    bool m_trafficRoutingConfigHasBeenSet;
+    bool m_trafficRoutingConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LIGHTSAIL_API GetCertificatesRequest : public LightsailRequest
+  class GetCertificatesRequest : public LightsailRequest
   {
   public:
-    GetCertificatesRequest();
+    AWS_LIGHTSAIL_API GetCertificatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCertificates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LIGHTSAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
-    bool m_certificateStatusesHasBeenSet;
+    bool m_certificateStatusesHasBeenSet = false;
 
     bool m_includeCertificateDetails;
-    bool m_includeCertificateDetailsHasBeenSet;
+    bool m_includeCertificateDetailsHasBeenSet = false;
 
     Aws::String m_certificateName;
-    bool m_certificateNameHasBeenSet;
+    bool m_certificateNameHasBeenSet = false;
   };
 
 } // namespace Model

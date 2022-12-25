@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm/model/Filters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/acm/model/SortBy.h>
+#include <aws/acm/model/SortOrder.h>
 #include <aws/acm/model/CertificateStatus.h>
 #include <utility>
 
@@ -21,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_ACM_API ListCertificatesRequest : public ACMRequest
+  class ListCertificatesRequest : public ACMRequest
   {
   public:
-    ListCertificatesRequest();
+    AWS_ACM_API ListCertificatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListCertificates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -208,19 +210,99 @@ namespace Model
      */
     inline ListCertificatesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline const SortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline void SetSortBy(const SortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline void SetSortBy(SortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline ListCertificatesRequest& WithSortBy(const SortBy& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
+     * you must also specify <code>SortOrder</code>.</p>
+     */
+    inline ListCertificatesRequest& WithSortBy(SortBy&& value) { SetSortBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline ListCertificatesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
+
+    /**
+     * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
+     * you must also specify <code>SortBy</code>.</p>
+     */
+    inline ListCertificatesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
-    bool m_certificateStatusesHasBeenSet;
+    bool m_certificateStatusesHasBeenSet = false;
 
     Filters m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
+
+    SortBy m_sortBy;
+    bool m_sortByHasBeenSet = false;
+
+    SortOrder m_sortOrder;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

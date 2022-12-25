@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIteratorInput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API GetShardIteratorRequest : public DynamoDBStreamsRequest
+  class GetShardIteratorRequest : public DynamoDBStreamsRequest
   {
   public:
-    GetShardIteratorRequest();
+    AWS_DYNAMODBSTREAMS_API GetShardIteratorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetShardIterator"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODBSTREAMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODBSTREAMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -271,16 +271,16 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     Aws::String m_shardId;
-    bool m_shardIdHasBeenSet;
+    bool m_shardIdHasBeenSet = false;
 
     ShardIteratorType m_shardIteratorType;
-    bool m_shardIteratorTypeHasBeenSet;
+    bool m_shardIteratorTypeHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
-    bool m_sequenceNumberHasBeenSet;
+    bool m_sequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

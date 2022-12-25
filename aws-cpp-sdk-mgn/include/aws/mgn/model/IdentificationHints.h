@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/IdentificationHints">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API IdentificationHints
+  class IdentificationHints
   {
   public:
-    IdentificationHints();
-    IdentificationHints(Aws::Utils::Json::JsonView jsonValue);
-    IdentificationHints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API IdentificationHints();
+    AWS_MGN_API IdentificationHints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API IdentificationHints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_awsInstanceID;
-    bool m_awsInstanceIDHasBeenSet;
+    bool m_awsInstanceIDHasBeenSet = false;
 
     Aws::String m_fqdn;
-    bool m_fqdnHasBeenSet;
+    bool m_fqdnHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_vmPath;
-    bool m_vmPathHasBeenSet;
+    bool m_vmPathHasBeenSet = false;
 
     Aws::String m_vmWareUuid;
-    bool m_vmWareUuidHasBeenSet;
+    bool m_vmWareUuidHasBeenSet = false;
   };
 
 } // namespace Model

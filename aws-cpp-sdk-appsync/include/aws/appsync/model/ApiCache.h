@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiCache">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API ApiCache
+  class ApiCache
   {
   public:
-    ApiCache();
-    ApiCache(Aws::Utils::Json::JsonView jsonValue);
-    ApiCache& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ApiCache();
+    AWS_APPSYNC_API ApiCache(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ApiCache& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     long long m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     ApiCachingBehavior m_apiCachingBehavior;
-    bool m_apiCachingBehaviorHasBeenSet;
+    bool m_apiCachingBehaviorHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     ApiCacheType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ApiCacheStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GroupMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API GroupMetadata
+  class GroupMetadata
   {
   public:
-    GroupMetadata();
-    GroupMetadata(Aws::Utils::Json::JsonView jsonValue);
-    GroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API GroupMetadata();
+    AWS_WORKDOCS_API GroupMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API GroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

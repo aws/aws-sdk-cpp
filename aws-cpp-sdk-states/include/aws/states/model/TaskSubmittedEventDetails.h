@@ -30,93 +30,93 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSubmittedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TaskSubmittedEventDetails
+  class TaskSubmittedEventDetails
   {
   public:
-    TaskSubmittedEventDetails();
-    TaskSubmittedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    TaskSubmittedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TaskSubmittedEventDetails();
+    AWS_SFN_API TaskSubmittedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TaskSubmittedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the resource called by a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The service name of the resource in a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSubmittedEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
 
@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_output;
-    bool m_outputHasBeenSet;
+    bool m_outputHasBeenSet = false;
 
     HistoryEventExecutionDataDetails m_outputDetails;
-    bool m_outputDetailsHasBeenSet;
+    bool m_outputDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3AccessControlList">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3AccessControlList
+  class S3AccessControlList
   {
   public:
-    S3AccessControlList();
-    S3AccessControlList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3AccessControlList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3AccessControlList();
+    AWS_S3CONTROL_API S3AccessControlList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3AccessControlList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     S3ObjectOwner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<S3Grant> m_grants;
-    bool m_grantsHasBeenSet;
+    bool m_grantsHasBeenSet = false;
   };
 
 } // namespace Model

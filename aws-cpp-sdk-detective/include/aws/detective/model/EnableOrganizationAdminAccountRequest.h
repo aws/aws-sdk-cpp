@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_DETECTIVE_API EnableOrganizationAdminAccountRequest : public DetectiveRequest
+  class EnableOrganizationAdminAccountRequest : public DetectiveRequest
   {
   public:
-    EnableOrganizationAdminAccountRequest();
+    AWS_DETECTIVE_API EnableOrganizationAdminAccountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "EnableOrganizationAdminAccount"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DETECTIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

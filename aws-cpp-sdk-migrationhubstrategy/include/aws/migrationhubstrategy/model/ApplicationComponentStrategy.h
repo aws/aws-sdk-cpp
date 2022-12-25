@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ApplicationComponentStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy
+  class ApplicationComponentStrategy
   {
   public:
-    ApplicationComponentStrategy();
-    ApplicationComponentStrategy(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationComponentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,13 +124,13 @@ namespace Model
   private:
 
     bool m_isPreferred;
-    bool m_isPreferredHasBeenSet;
+    bool m_isPreferredHasBeenSet = false;
 
     RecommendationSet m_recommendation;
-    bool m_recommendationHasBeenSet;
+    bool m_recommendationHasBeenSet = false;
 
     StrategyRecommendation m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

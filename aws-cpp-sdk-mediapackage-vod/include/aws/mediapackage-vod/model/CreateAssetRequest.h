@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreateAssetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API CreateAssetRequest : public MediaPackageVodRequest
+  class CreateAssetRequest : public MediaPackageVodRequest
   {
   public:
-    CreateAssetRequest();
+    AWS_MEDIAPACKAGEVOD_API CreateAssetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAsset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_packagingGroupId;
-    bool m_packagingGroupIdHasBeenSet;
+    bool m_packagingGroupIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_sourceRoleArn;
-    bool m_sourceRoleArnHasBeenSet;
+    bool m_sourceRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

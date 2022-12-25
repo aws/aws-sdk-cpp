@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DefaultSegmentDeliveryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API DefaultSegmentDeliveryConfiguration
+  class DefaultSegmentDeliveryConfiguration
   {
   public:
-    DefaultSegmentDeliveryConfiguration();
-    DefaultSegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DefaultSegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API DefaultSegmentDeliveryConfiguration();
+    AWS_MEDIATAILOR_API DefaultSegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API DefaultSegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,7 +94,7 @@ namespace Model
   private:
 
     Aws::String m_baseUrl;
-    bool m_baseUrlHasBeenSet;
+    bool m_baseUrlHasBeenSet = false;
   };
 
 } // namespace Model

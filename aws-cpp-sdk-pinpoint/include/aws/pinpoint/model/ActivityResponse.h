@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ActivityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ActivityResponse
+  class ActivityResponse
   {
   public:
-    ActivityResponse();
-    ActivityResponse(Aws::Utils::Json::JsonView jsonValue);
-    ActivityResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ActivityResponse();
+    AWS_PINPOINT_API ActivityResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ActivityResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -545,43 +545,43 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_campaignId;
-    bool m_campaignIdHasBeenSet;
+    bool m_campaignIdHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_scheduledStart;
-    bool m_scheduledStartHasBeenSet;
+    bool m_scheduledStartHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     int m_successfulEndpointCount;
-    bool m_successfulEndpointCountHasBeenSet;
+    bool m_successfulEndpointCountHasBeenSet = false;
 
     int m_timezonesCompletedCount;
-    bool m_timezonesCompletedCountHasBeenSet;
+    bool m_timezonesCompletedCountHasBeenSet = false;
 
     int m_timezonesTotalCount;
-    bool m_timezonesTotalCountHasBeenSet;
+    bool m_timezonesTotalCountHasBeenSet = false;
 
     int m_totalEndpointCount;
-    bool m_totalEndpointCountHasBeenSet;
+    bool m_totalEndpointCountHasBeenSet = false;
 
     Aws::String m_treatmentId;
-    bool m_treatmentIdHasBeenSet;
+    bool m_treatmentIdHasBeenSet = false;
   };
 
 } // namespace Model

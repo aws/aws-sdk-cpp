@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationRequest : public IoTSiteWiseRequest
+  class UpdateGatewayCapabilityConfigurationRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateGatewayCapabilityConfigurationRequest();
+    AWS_IOTSITEWISE_API UpdateGatewayCapabilityConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateGatewayCapabilityConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_capabilityNamespace;
-    bool m_capabilityNamespaceHasBeenSet;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
     Aws::String m_capabilityConfiguration;
-    bool m_capabilityConfigurationHasBeenSet;
+    bool m_capabilityConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageVersionOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageVersionOutputConfig
+  class PackageVersionOutputConfig
   {
   public:
-    PackageVersionOutputConfig();
-    PackageVersionOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    PackageVersionOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageVersionOutputConfig();
+    AWS_PANORAMA_API PackageVersionOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageVersionOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     bool m_markLatest;
-    bool m_markLatestHasBeenSet;
+    bool m_markLatestHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
   };
 
 } // namespace Model

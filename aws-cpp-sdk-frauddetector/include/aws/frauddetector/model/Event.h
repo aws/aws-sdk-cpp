@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/Event">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API Event
+  class Event
   {
   public:
-    Event();
-    Event(Aws::Utils::Json::JsonView jsonValue);
-    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API Event();
+    AWS_FRAUDDETECTOR_API Event(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -396,25 +396,25 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_eventTimestamp;
-    bool m_eventTimestampHasBeenSet;
+    bool m_eventTimestampHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_eventVariables;
-    bool m_eventVariablesHasBeenSet;
+    bool m_eventVariablesHasBeenSet = false;
 
     Aws::String m_currentLabel;
-    bool m_currentLabelHasBeenSet;
+    bool m_currentLabelHasBeenSet = false;
 
     Aws::String m_labelTimestamp;
-    bool m_labelTimestampHasBeenSet;
+    bool m_labelTimestampHasBeenSet = false;
 
     Aws::Vector<Entity> m_entities;
-    bool m_entitiesHasBeenSet;
+    bool m_entitiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CloudWatchDashboard">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API CloudWatchDashboard
+  class CloudWatchDashboard
   {
   public:
-    CloudWatchDashboard();
-    CloudWatchDashboard(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchDashboard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API CloudWatchDashboard();
+    AWS_SERVICECATALOG_API CloudWatchDashboard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API CloudWatchDashboard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

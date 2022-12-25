@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API ImageIdentifier
+  class ImageIdentifier
   {
   public:
-    ImageIdentifier();
-    ImageIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ImageIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API ImageIdentifier();
+    AWS_ECRPUBLIC_API ImageIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API ImageIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
 
     Aws::String m_imageTag;
-    bool m_imageTagHasBeenSet;
+    bool m_imageTagHasBeenSet = false;
   };
 
 } // namespace Model

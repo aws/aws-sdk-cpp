@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SecurityGroupIpv6Range">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range
+  class AwsEc2SecurityGroupIpv6Range
   {
   public:
-    AwsEc2SecurityGroupIpv6Range();
-    AwsEc2SecurityGroupIpv6Range(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2SecurityGroupIpv6Range& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet;
+    bool m_cidrIpv6HasBeenSet = false;
   };
 
 } // namespace Model

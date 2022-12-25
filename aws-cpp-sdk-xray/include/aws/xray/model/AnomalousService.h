@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/AnomalousService">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API AnomalousService
+  class AnomalousService
   {
   public:
-    AnomalousService();
-    AnomalousService(Aws::Utils::Json::JsonView jsonValue);
-    AnomalousService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API AnomalousService();
+    AWS_XRAY_API AnomalousService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API AnomalousService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     ServiceId m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
   };
 
 } // namespace Model

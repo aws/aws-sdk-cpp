@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ConnectionStatusEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ConnectionStatusEventConfiguration
+  class ConnectionStatusEventConfiguration
   {
   public:
-    ConnectionStatusEventConfiguration();
-    ConnectionStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ConnectionStatusEventConfiguration();
+    AWS_IOTWIRELESS_API ConnectionStatusEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ConnectionStatusEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,48 +77,48 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetWirelessGatewayIdEventTopic() const{ return m_wirelessGatewayIdEventTopic; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline bool WirelessGatewayIdEventTopicHasBeenSet() const { return m_wirelessGatewayIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessGatewayIdEventTopic(const EventNotificationTopicStatus& value) { m_wirelessGatewayIdEventTopicHasBeenSet = true; m_wirelessGatewayIdEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline void SetWirelessGatewayIdEventTopic(EventNotificationTopicStatus&& value) { m_wirelessGatewayIdEventTopicHasBeenSet = true; m_wirelessGatewayIdEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline ConnectionStatusEventConfiguration& WithWirelessGatewayIdEventTopic(const EventNotificationTopicStatus& value) { SetWirelessGatewayIdEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether the wireless gateway id connection status event topic
-     * is enabled or disabled .</p>
+     * <p>Denotes whether the wireless gateway ID connection status event topic is
+     * enabled or disabled.</p>
      */
     inline ConnectionStatusEventConfiguration& WithWirelessGatewayIdEventTopic(EventNotificationTopicStatus&& value) { SetWirelessGatewayIdEventTopic(std::move(value)); return *this;}
 
   private:
 
     LoRaWANConnectionStatusEventNotificationConfigurations m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
 
     EventNotificationTopicStatus m_wirelessGatewayIdEventTopic;
-    bool m_wirelessGatewayIdEventTopicHasBeenSet;
+    bool m_wirelessGatewayIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

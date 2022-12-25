@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API TcpRouteAction
+  class TcpRouteAction
   {
   public:
-    TcpRouteAction();
-    TcpRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    TcpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API TcpRouteAction();
+    AWS_APPMESH_API TcpRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API TcpRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<WeightedTarget> m_weightedTargets;
-    bool m_weightedTargetsHasBeenSet;
+    bool m_weightedTargetsHasBeenSet = false;
   };
 
 } // namespace Model

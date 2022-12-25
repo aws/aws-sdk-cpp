@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/NeptuneSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings
+  class NeptuneSettings
   {
   public:
-    NeptuneSettings();
-    NeptuneSettings(Aws::Utils::Json::JsonView jsonValue);
-    NeptuneSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API NeptuneSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -355,25 +355,25 @@ namespace Model
   private:
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3BucketFolder;
-    bool m_s3BucketFolderHasBeenSet;
+    bool m_s3BucketFolderHasBeenSet = false;
 
     int m_errorRetryDuration;
-    bool m_errorRetryDurationHasBeenSet;
+    bool m_errorRetryDurationHasBeenSet = false;
 
     int m_maxFileSize;
-    bool m_maxFileSizeHasBeenSet;
+    bool m_maxFileSizeHasBeenSet = false;
 
     int m_maxRetryCount;
-    bool m_maxRetryCountHasBeenSet;
+    bool m_maxRetryCountHasBeenSet = false;
 
     bool m_iamAuthEnabled;
-    bool m_iamAuthEnabledHasBeenSet;
+    bool m_iamAuthEnabledHasBeenSet = false;
   };
 
 } // namespace Model

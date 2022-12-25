@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/MeetingFeaturesConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API MeetingFeaturesConfiguration
+  class MeetingFeaturesConfiguration
   {
   public:
-    MeetingFeaturesConfiguration();
-    MeetingFeaturesConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MeetingFeaturesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API MeetingFeaturesConfiguration();
+    AWS_CHIMESDKMEETINGS_API MeetingFeaturesConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API MeetingFeaturesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     AudioFeatures m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
   };
 
 } // namespace Model

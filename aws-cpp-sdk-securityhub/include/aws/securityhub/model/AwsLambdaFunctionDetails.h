@@ -31,17 +31,18 @@ namespace Model
 {
 
   /**
-   * <p>Details about a function's configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Lambda function's configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsLambdaFunctionDetails
+  class AwsLambdaFunctionDetails
   {
   public:
-    AwsLambdaFunctionDetails();
-    AwsLambdaFunctionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsLambdaFunctionDetails();
+    AWS_SECURITYHUB_API AwsLambdaFunctionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsLambdaFunctionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -743,61 +744,179 @@ namespace Model
      */
     inline AwsLambdaFunctionDetails& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Aws::String>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Aws::String>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& WithArchitectures(const Aws::Vector<Aws::String>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& WithArchitectures(Aws::Vector<Aws::String>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(const Aws::String& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(Aws::String&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function uses. Valid values are
+     * <code>x86_64</code> or <code>arm64</code>.</p>
+     */
+    inline AwsLambdaFunctionDetails& AddArchitectures(const char* value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline const Aws::String& GetPackageType() const{ return m_packageType; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(const Aws::String& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(Aws::String&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline void SetPackageType(const char* value) { m_packageTypeHasBeenSet = true; m_packageType.assign(value); }
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(const Aws::String& value) { SetPackageType(value); return *this;}
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(Aws::String&& value) { SetPackageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of deployment package that's used to deploy the function code to
+     * Lambda. Set to <code>Image</code> for a container image and <code>Zip</code> for
+     * a .zip file archive. </p>
+     */
+    inline AwsLambdaFunctionDetails& WithPackageType(const char* value) { SetPackageType(value); return *this;}
+
   private:
 
     AwsLambdaFunctionCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_codeSha256;
-    bool m_codeSha256HasBeenSet;
+    bool m_codeSha256HasBeenSet = false;
 
     AwsLambdaFunctionDeadLetterConfig m_deadLetterConfig;
-    bool m_deadLetterConfigHasBeenSet;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     AwsLambdaFunctionEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_handler;
-    bool m_handlerHasBeenSet;
+    bool m_handlerHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_lastModified;
-    bool m_lastModifiedHasBeenSet;
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::Vector<AwsLambdaFunctionLayer> m_layers;
-    bool m_layersHasBeenSet;
+    bool m_layersHasBeenSet = false;
 
     Aws::String m_masterArn;
-    bool m_masterArnHasBeenSet;
+    bool m_masterArnHasBeenSet = false;
 
     int m_memorySize;
-    bool m_memorySizeHasBeenSet;
+    bool m_memorySizeHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     AwsLambdaFunctionTracingConfig m_tracingConfig;
-    bool m_tracingConfigHasBeenSet;
+    bool m_tracingConfigHasBeenSet = false;
 
     AwsLambdaFunctionVpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_architectures;
+    bool m_architecturesHasBeenSet = false;
+
+    Aws::String m_packageType;
+    bool m_packageTypeHasBeenSet = false;
   };
 
 } // namespace Model

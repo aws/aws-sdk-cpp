@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API NetworkInterface();
+    AWS_ECS_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     Aws::String m_privateIpv4Address;
-    bool m_privateIpv4AddressHasBeenSet;
+    bool m_privateIpv4AddressHasBeenSet = false;
 
     Aws::String m_ipv6Address;
-    bool m_ipv6AddressHasBeenSet;
+    bool m_ipv6AddressHasBeenSet = false;
   };
 
 } // namespace Model

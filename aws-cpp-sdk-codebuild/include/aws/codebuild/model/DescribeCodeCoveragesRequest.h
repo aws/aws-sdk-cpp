@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODEBUILD_API DescribeCodeCoveragesRequest : public CodeBuildRequest
+  class DescribeCodeCoveragesRequest : public CodeBuildRequest
   {
   public:
-    DescribeCodeCoveragesRequest();
+    AWS_CODEBUILD_API DescribeCodeCoveragesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeCodeCoverages"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEBUILD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEBUILD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -279,25 +279,25 @@ namespace Model
   private:
 
     Aws::String m_reportArn;
-    bool m_reportArnHasBeenSet;
+    bool m_reportArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     SortOrderType m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
 
     ReportCodeCoverageSortByType m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     double m_minLineCoveragePercentage;
-    bool m_minLineCoveragePercentageHasBeenSet;
+    bool m_minLineCoveragePercentageHasBeenSet = false;
 
     double m_maxLineCoveragePercentage;
-    bool m_maxLineCoveragePercentageHasBeenSet;
+    bool m_maxLineCoveragePercentageHasBeenSet = false;
   };
 
 } // namespace Model

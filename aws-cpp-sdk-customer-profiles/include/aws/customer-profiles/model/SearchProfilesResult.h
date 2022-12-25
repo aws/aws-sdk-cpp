@@ -26,46 +26,46 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API SearchProfilesResult
+  class SearchProfilesResult
   {
   public:
-    SearchProfilesResult();
-    SearchProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult();
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API SearchProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline const Aws::Vector<Profile>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline void SetItems(const Aws::Vector<Profile>& value) { m_items = value; }
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline void SetItems(Aws::Vector<Profile>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline SearchProfilesResult& WithItems(const Aws::Vector<Profile>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline SearchProfilesResult& WithItems(Aws::Vector<Profile>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline SearchProfilesResult& AddItems(const Profile& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The list of SearchProfiles instances.</p>
+     * <p>The list of Profiles matching the search criteria.</p>
      */
     inline SearchProfilesResult& AddItems(Profile&& value) { m_items.push_back(std::move(value)); return *this; }
 

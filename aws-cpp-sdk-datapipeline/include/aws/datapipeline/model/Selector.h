@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Selector">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API Selector
+  class Selector
   {
   public:
-    Selector();
-    Selector(Aws::Utils::Json::JsonView jsonValue);
-    Selector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API Selector();
+    AWS_DATAPIPELINE_API Selector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Selector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_fieldName;
-    bool m_fieldNameHasBeenSet;
+    bool m_fieldNameHasBeenSet = false;
 
     Operator m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

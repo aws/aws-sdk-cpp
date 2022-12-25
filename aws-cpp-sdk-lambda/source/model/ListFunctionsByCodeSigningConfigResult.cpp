@@ -36,7 +36,7 @@ ListFunctionsByCodeSigningConfigResult& ListFunctionsByCodeSigningConfigResult::
 
   if(jsonValue.ValueExists("FunctionArns"))
   {
-    Array<JsonView> functionArnsJsonList = jsonValue.GetArray("FunctionArns");
+    Aws::Utils::Array<JsonView> functionArnsJsonList = jsonValue.GetArray("FunctionArns");
     for(unsigned functionArnsIndex = 0; functionArnsIndex < functionArnsJsonList.GetLength(); ++functionArnsIndex)
     {
       m_functionArns.push_back(functionArnsJsonList[functionArnsIndex].AsString());

@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API DBSnapshot
+  class DBSnapshot
   {
   public:
-    DBSnapshot();
-    DBSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSnapshot();
+    AWS_RDS_API DBSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -1244,6 +1244,79 @@ namespace Model
 
 
     /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSnapshotDatabaseTime() const{ return m_snapshotDatabaseTime; }
+
+    /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline bool SnapshotDatabaseTimeHasBeenSet() const { return m_snapshotDatabaseTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline void SetSnapshotDatabaseTime(const Aws::Utils::DateTime& value) { m_snapshotDatabaseTimeHasBeenSet = true; m_snapshotDatabaseTime = value; }
+
+    /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline void SetSnapshotDatabaseTime(Aws::Utils::DateTime&& value) { m_snapshotDatabaseTimeHasBeenSet = true; m_snapshotDatabaseTime = std::move(value); }
+
+    /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline DBSnapshot& WithSnapshotDatabaseTime(const Aws::Utils::DateTime& value) { SetSnapshotDatabaseTime(value); return *this;}
+
+    /**
+     * <p>The timestamp of the most recent transaction applied to the database that
+     * you're backing up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the
+     * most recent transaction in the restored DB instance. In contrast,
+     * originalSnapshotCreateTime specifies the system time that the snapshot
+     * completed.</p> <p>If you back up a read replica, you can determine the replica
+     * lag by comparing SnapshotDatabaseTime with originalSnapshotCreateTime. For
+     * example, if originalSnapshotCreateTime is two hours later than
+     * SnapshotDatabaseTime, then the replica lag is two hours.</p>
+     */
+    inline DBSnapshot& WithSnapshotDatabaseTime(Aws::Utils::DateTime&& value) { SetSnapshotDatabaseTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies where manual snapshots are stored: Amazon Web Services Outposts or
      * the Amazon Web Services Region.</p>
      */
@@ -1291,100 +1364,127 @@ namespace Model
      */
     inline DBSnapshot& WithSnapshotTarget(const char* value) { SetSnapshotTarget(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_snapshotCreateTime;
-    bool m_snapshotCreateTimeHasBeenSet;
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_instanceCreateTime;
-    bool m_instanceCreateTimeHasBeenSet;
+    bool m_instanceCreateTimeHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_licenseModel;
-    bool m_licenseModelHasBeenSet;
+    bool m_licenseModelHasBeenSet = false;
 
     Aws::String m_snapshotType;
-    bool m_snapshotTypeHasBeenSet;
+    bool m_snapshotTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     int m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
 
     Aws::String m_sourceDBSnapshotIdentifier;
-    bool m_sourceDBSnapshotIdentifierHasBeenSet;
+    bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_tdeCredentialArn;
-    bool m_tdeCredentialArnHasBeenSet;
+    bool m_tdeCredentialArnHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dBSnapshotArn;
-    bool m_dBSnapshotArnHasBeenSet;
+    bool m_dBSnapshotArnHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     Aws::String m_dbiResourceId;
-    bool m_dbiResourceIdHasBeenSet;
+    bool m_dbiResourceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     Aws::Utils::DateTime m_originalSnapshotCreateTime;
-    bool m_originalSnapshotCreateTimeHasBeenSet;
+    bool m_originalSnapshotCreateTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_snapshotDatabaseTime;
+    bool m_snapshotDatabaseTimeHasBeenSet = false;
 
     Aws::String m_snapshotTarget;
-    bool m_snapshotTargetHasBeenSet;
+    bool m_snapshotTargetHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

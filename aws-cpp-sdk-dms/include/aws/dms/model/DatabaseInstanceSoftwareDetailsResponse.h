@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DatabaseInstanceSoftwareDetailsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse
+  class DatabaseInstanceSoftwareDetailsResponse
   {
   public:
-    DatabaseInstanceSoftwareDetailsResponse();
-    DatabaseInstanceSoftwareDetailsResponse(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseInstanceSoftwareDetailsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -347,25 +347,25 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_engineEdition;
-    bool m_engineEditionHasBeenSet;
+    bool m_engineEditionHasBeenSet = false;
 
     Aws::String m_servicePack;
-    bool m_servicePackHasBeenSet;
+    bool m_servicePackHasBeenSet = false;
 
     Aws::String m_supportLevel;
-    bool m_supportLevelHasBeenSet;
+    bool m_supportLevelHasBeenSet = false;
 
     int m_osArchitecture;
-    bool m_osArchitectureHasBeenSet;
+    bool m_osArchitectureHasBeenSet = false;
 
     Aws::String m_tooltip;
-    bool m_tooltipHasBeenSet;
+    bool m_tooltipHasBeenSet = false;
   };
 
 } // namespace Model

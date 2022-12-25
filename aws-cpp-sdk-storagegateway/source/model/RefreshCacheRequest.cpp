@@ -32,7 +32,7 @@ Aws::String RefreshCacheRequest::SerializePayload() const
 
   if(m_folderListHasBeenSet)
   {
-   Array<JsonValue> folderListJsonList(m_folderList.size());
+   Aws::Utils::Array<JsonValue> folderListJsonList(m_folderList.size());
    for(unsigned folderListIndex = 0; folderListIndex < folderListJsonList.GetLength(); ++folderListIndex)
    {
      folderListJsonList[folderListIndex].AsString(m_folderList[folderListIndex]);

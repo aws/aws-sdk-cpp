@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRuleGroupReference">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulRuleGroupReference
+  class StatefulRuleGroupReference
   {
   public:
-    StatefulRuleGroupReference();
-    StatefulRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupReference();
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     StatefulRuleGroupOverride m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

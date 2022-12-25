@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ExternalModelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ExternalModelSummary
+  class ExternalModelSummary
   {
   public:
-    ExternalModelSummary();
-    ExternalModelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExternalModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ExternalModelSummary();
+    AWS_FRAUDDETECTOR_API ExternalModelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ExternalModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_modelEndpoint;
-    bool m_modelEndpointHasBeenSet;
+    bool m_modelEndpointHasBeenSet = false;
 
     ModelSource m_modelSource;
-    bool m_modelSourceHasBeenSet;
+    bool m_modelSourceHasBeenSet = false;
   };
 
 } // namespace Model

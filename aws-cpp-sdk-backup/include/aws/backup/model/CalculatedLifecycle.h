@@ -33,22 +33,21 @@ namespace Model
    * days. Therefore, the “retention” setting must be 90 days greater than the
    * “transition to cold after days” setting. The “transition to cold after days”
    * setting cannot be changed after a backup has been transitioned to cold.</p>
-   * <p>Only resource types that support full Backup management can transition their
-   * backups to cold storage. Those resource types are listed in the "Full Backup
-   * management" section of the <a
+   * <p>Resource types that are able to be transitioned to cold storage are listed in
+   * the "Lifecycle to cold storage" section of the <a
    * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
    * Feature availability by resource</a> table. Backup ignores this expression for
    * other resource types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CalculatedLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API CalculatedLifecycle
+  class CalculatedLifecycle
   {
   public:
-    CalculatedLifecycle();
-    CalculatedLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    CalculatedLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API CalculatedLifecycle();
+    AWS_BACKUP_API CalculatedLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API CalculatedLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +120,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_moveToColdStorageAt;
-    bool m_moveToColdStorageAtHasBeenSet;
+    bool m_moveToColdStorageAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_deleteAt;
-    bool m_deleteAtHasBeenSet;
+    bool m_deleteAtHasBeenSet = false;
   };
 
 } // namespace Model

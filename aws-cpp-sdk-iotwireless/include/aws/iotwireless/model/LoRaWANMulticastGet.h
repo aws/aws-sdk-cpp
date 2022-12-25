@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANMulticastGet">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANMulticastGet
+  class LoRaWANMulticastGet
   {
   public:
-    LoRaWANMulticastGet();
-    LoRaWANMulticastGet(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANMulticastGet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANMulticastGet();
+    AWS_IOTWIRELESS_API LoRaWANMulticastGet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANMulticastGet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -105,16 +105,16 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     DlClass m_dlClass;
-    bool m_dlClassHasBeenSet;
+    bool m_dlClassHasBeenSet = false;
 
     int m_numberOfDevicesRequested;
-    bool m_numberOfDevicesRequestedHasBeenSet;
+    bool m_numberOfDevicesRequestedHasBeenSet = false;
 
     int m_numberOfDevicesInGroup;
-    bool m_numberOfDevicesInGroupHasBeenSet;
+    bool m_numberOfDevicesInGroupHasBeenSet = false;
   };
 
 } // namespace Model

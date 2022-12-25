@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTWISDOMSERVICE_API CreateAssistantAssociationRequest : public ConnectWisdomServiceRequest
+  class CreateAssistantAssociationRequest : public ConnectWisdomServiceRequest
   {
   public:
-    CreateAssistantAssociationRequest();
+    AWS_CONNECTWISDOMSERVICE_API CreateAssistantAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAssistantAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTWISDOMSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_assistantId;
-    bool m_assistantIdHasBeenSet;
+    bool m_assistantIdHasBeenSet = false;
 
     AssistantAssociationInputData m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     AssociationType m_associationType;
-    bool m_associationTypeHasBeenSet;
+    bool m_associationTypeHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

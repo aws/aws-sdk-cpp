@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BlueprintDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BlueprintDetails
+  class BlueprintDetails
   {
   public:
-    BlueprintDetails();
-    BlueprintDetails(Aws::Utils::Json::JsonView jsonValue);
-    BlueprintDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BlueprintDetails();
+    AWS_GLUE_API BlueprintDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BlueprintDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_blueprintName;
-    bool m_blueprintNameHasBeenSet;
+    bool m_blueprintNameHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/QueriesConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API QueriesConfig
+  class QueriesConfig
   {
   public:
-    QueriesConfig();
-    QueriesConfig(Aws::Utils::Json::JsonView jsonValue);
-    QueriesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API QueriesConfig();
+    AWS_TEXTRACT_API QueriesConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API QueriesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<Query> m_queries;
-    bool m_queriesHasBeenSet;
+    bool m_queriesHasBeenSet = false;
   };
 
 } // namespace Model

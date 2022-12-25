@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ScheduledQueryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ScheduledQueryDescription
+  class ScheduledQueryDescription
   {
   public:
-    ScheduledQueryDescription();
-    ScheduledQueryDescription(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledQueryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ScheduledQueryDescription();
+    AWS_TIMESTREAMQUERY_API ScheduledQueryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ScheduledQueryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -572,49 +572,49 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_queryString;
-    bool m_queryStringHasBeenSet;
+    bool m_queryStringHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ScheduledQueryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_previousInvocationTime;
-    bool m_previousInvocationTimeHasBeenSet;
+    bool m_previousInvocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextInvocationTime;
-    bool m_nextInvocationTimeHasBeenSet;
+    bool m_nextInvocationTimeHasBeenSet = false;
 
     ScheduleConfiguration m_scheduleConfiguration;
-    bool m_scheduleConfigurationHasBeenSet;
+    bool m_scheduleConfigurationHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
 
     Aws::String m_scheduledQueryExecutionRoleArn;
-    bool m_scheduledQueryExecutionRoleArnHasBeenSet;
+    bool m_scheduledQueryExecutionRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ErrorReportConfiguration m_errorReportConfiguration;
-    bool m_errorReportConfigurationHasBeenSet;
+    bool m_errorReportConfigurationHasBeenSet = false;
 
     ScheduledQueryRunSummary m_lastRunSummary;
-    bool m_lastRunSummaryHasBeenSet;
+    bool m_lastRunSummaryHasBeenSet = false;
 
     Aws::Vector<ScheduledQueryRunSummary> m_recentlyFailedRuns;
-    bool m_recentlyFailedRunsHasBeenSet;
+    bool m_recentlyFailedRunsHasBeenSet = false;
   };
 
 } // namespace Model

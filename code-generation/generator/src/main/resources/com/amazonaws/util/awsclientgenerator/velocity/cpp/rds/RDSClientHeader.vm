@@ -1,70 +1,22 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
-\#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/client/AWSClient.h>
-\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
-\#include <aws/core/client/AsyncCallerContext.h>
-\#include <aws/core/http/HttpTypes.h>
-#if($metadata.hasEndpointDiscoveryTrait)
-\#include <aws/core/utils/ConcurrentCache.h>
-#end
-\#include <future>
-\#include <functional>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 
-namespace Aws
+namespace ${rootNamespace}
 {
-    namespace Http
-    {
-        class HttpClient;
-        class HttpClientFactory;
-    } // namespace Http
-
-    namespace Utils
-    {
-        template< typename R, typename E> class Outcome;
-
-        namespace Threading
-        {
-            class Executor;
-        } // namespace Threading
-
-        namespace Xml
-        {
-            class XmlDocument;
-        } // namespace Xml
-    } // namespace Utils
-
-    namespace Auth
-    {
-        class AWSCredentials;
-        class AWSCredentialsProvider;
-    } // namespace Auth
-
-    namespace Client
-    {
-        class RetryStrategy;
-    } // namespace Client
-
-    namespace ${metadata.namespace}
-    {
-    namespace Model
-    {
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
-    } // namespace Model
-
-    #set($className = "${metadata.classNamePrefix}Client")
-    class ${className};
-
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
-
+  namespace ${metadata.namespace}
+  {
     #if($serviceModel.documentation)
     /**
      * ${serviceModel.documentation}
@@ -74,12 +26,14 @@ namespace Aws
     #if($serviceModel.enableVirtualOperations)
     #set($finalClass = "")
     #end
-    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
     {
     public:
     typedef Aws::Client::AWSXMLClient BASECLASS;
+    static const char* SERVICE_NAME;
+    static const char* ALLOCATION_TAG;
 
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
     #if($metadata.protocol == "query")
 
@@ -97,30 +51,48 @@ namespace Aws
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;
+#if(!$serviceModel.endpointRules)
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-#if($metadata.hasEndpointDiscoveryTrait)
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
 #end
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
+#if(!$serviceModel.endpointRules)
 #if($metadata.hasEndpointTrait)
         Aws::String m_baseUri;
         Aws::String m_scheme;
-        bool m_enableHostPrefixInjection;
+        bool m_enableHostPrefixInjection = false;
 #else
         Aws::String m_uri;
 #end
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-        bool m_enableEndpointDiscovery;
+#if(!$serviceModel.endpointRules)
+        bool m_enableEndpointDiscovery = false;
 #end
+#end
+#if(!$serviceModel.endpointRules)
         Aws::String m_configScheme;
 #if($metadata.hasPreSignedUrl)
-        bool m_useDualStack;
+        bool m_useDualStack = false;
+#end
+#end
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+#if($serviceModel.endpointRules)
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
+#end
     };
-
-    } // namespace ${metadata.namespace}
-} // namespace Aws
+  } // namespace ${metadata.namespace}
+} // namespace ${rootNamespace}

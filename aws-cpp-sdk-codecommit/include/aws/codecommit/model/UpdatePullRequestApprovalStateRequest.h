@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODECOMMIT_API UpdatePullRequestApprovalStateRequest : public CodeCommitRequest
+  class UpdatePullRequestApprovalStateRequest : public CodeCommitRequest
   {
   public:
-    UpdatePullRequestApprovalStateRequest();
+    AWS_CODECOMMIT_API UpdatePullRequestApprovalStateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePullRequestApprovalState"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
 
     ApprovalState m_approvalState;
-    bool m_approvalStateHasBeenSet;
+    bool m_approvalStateHasBeenSet = false;
   };
 
 } // namespace Model

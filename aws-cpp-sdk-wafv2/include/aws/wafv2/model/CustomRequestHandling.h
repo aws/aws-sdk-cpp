@@ -26,9 +26,10 @@ namespace Model
 
   /**
    * <p>Custom request handling behavior that inserts custom headers into a web
-   * request. You can add custom request handling for the rule actions allow and
-   * count. </p> <p>For information about customizing web requests and responses, see
-   * <a
+   * request. You can add custom request handling for WAF to use when the rule action
+   * doesn't block the request. For example, <code>CaptchaAction</code> for requests
+   * with valid t okens, and <code>AllowAction</code>. </p> <p>For information about
+   * customizing web requests and responses, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
    * web requests and responses in WAF</a> in the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
@@ -36,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomRequestHandling">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CustomRequestHandling
+  class CustomRequestHandling
   {
   public:
-    CustomRequestHandling();
-    CustomRequestHandling(Aws::Utils::Json::JsonView jsonValue);
-    CustomRequestHandling& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CustomRequestHandling();
+    AWS_WAFV2_API CustomRequestHandling(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CustomRequestHandling& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,7 +137,7 @@ namespace Model
   private:
 
     Aws::Vector<CustomHTTPHeader> m_insertHeaders;
-    bool m_insertHeadersHasBeenSet;
+    bool m_insertHeadersHasBeenSet = false;
   };
 
 } // namespace Model

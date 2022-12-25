@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ImageGenerationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API ImageGenerationConfiguration
+  class ImageGenerationConfiguration
   {
   public:
-    ImageGenerationConfiguration();
-    ImageGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ImageGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration();
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -461,28 +461,28 @@ namespace Model
   private:
 
     ConfigurationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ImageSelectorType m_imageSelectorType;
-    bool m_imageSelectorTypeHasBeenSet;
+    bool m_imageSelectorTypeHasBeenSet = false;
 
     ImageGenerationDestinationConfig m_destinationConfig;
-    bool m_destinationConfigHasBeenSet;
+    bool m_destinationConfigHasBeenSet = false;
 
     int m_samplingInterval;
-    bool m_samplingIntervalHasBeenSet;
+    bool m_samplingIntervalHasBeenSet = false;
 
     Format m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
-    bool m_formatConfigHasBeenSet;
+    bool m_formatConfigHasBeenSet = false;
 
     int m_widthPixels;
-    bool m_widthPixelsHasBeenSet;
+    bool m_widthPixelsHasBeenSet = false;
 
     int m_heightPixels;
-    bool m_heightPixelsHasBeenSet;
+    bool m_heightPixelsHasBeenSet = false;
   };
 
 } // namespace Model

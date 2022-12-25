@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ManagedScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ManagedScalingPolicy
+  class ManagedScalingPolicy
   {
   public:
-    ManagedScalingPolicy();
-    ManagedScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ManagedScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ManagedScalingPolicy();
+    AWS_EMR_API ManagedScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ManagedScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     ComputeLimits m_computeLimits;
-    bool m_computeLimitsHasBeenSet;
+    bool m_computeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

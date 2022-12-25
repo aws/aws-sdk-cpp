@@ -11,7 +11,9 @@
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/DeploymentRolloutState.h>
+#include <aws/ecs/model/ServiceConnectConfiguration.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
+#include <aws/ecs/model/ServiceConnectServiceResource.h>
 #include <utility>
 
 namespace Aws
@@ -36,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Deployment
+  class Deployment
   {
   public:
-    Deployment();
-    Deployment(Aws::Utils::Json::JsonView jsonValue);
-    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Deployment();
+    AWS_ECS_API Deployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -826,55 +828,215 @@ namespace Model
      */
     inline Deployment& WithRolloutStateReason(const char* value) { SetRolloutStateReason(value); return *this;}
 
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline const ServiceConnectConfiguration& GetServiceConnectConfiguration() const{ return m_serviceConnectConfiguration; }
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline bool ServiceConnectConfigurationHasBeenSet() const { return m_serviceConnectConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectConfiguration(const ServiceConnectConfiguration& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = value; }
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectConfiguration(ServiceConnectConfiguration&& value) { m_serviceConnectConfigurationHasBeenSet = true; m_serviceConnectConfiguration = std::move(value); }
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline Deployment& WithServiceConnectConfiguration(const ServiceConnectConfiguration& value) { SetServiceConnectConfiguration(value); return *this;}
+
+    /**
+     * <p>The details of the Service Connect configuration that's used by this
+     * deployment. Compare the configuration between multiple deployments when
+     * troubleshooting issues with new deployments.</p> <p>The configuration for this
+     * service to discover and connect to services, and be discovered by, and connected
+     * from, other services within a namespace.</p> <p>Tasks that run in a namespace
+     * can use short names to connect to services in the namespace. Tasks can connect
+     * to services across all of the clusters in the namespace. Tasks connect through a
+     * managed proxy container that collects logs and metrics for increased visibility.
+     * Only the tasks that Amazon ECS services create are supported with Service
+     * Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline Deployment& WithServiceConnectConfiguration(ServiceConnectConfiguration&& value) { SetServiceConnectConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline const Aws::Vector<ServiceConnectServiceResource>& GetServiceConnectResources() const{ return m_serviceConnectResources; }
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline bool ServiceConnectResourcesHasBeenSet() const { return m_serviceConnectResourcesHasBeenSet; }
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline void SetServiceConnectResources(const Aws::Vector<ServiceConnectServiceResource>& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources = value; }
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline void SetServiceConnectResources(Aws::Vector<ServiceConnectServiceResource>&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources = std::move(value); }
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline Deployment& WithServiceConnectResources(const Aws::Vector<ServiceConnectServiceResource>& value) { SetServiceConnectResources(value); return *this;}
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline Deployment& WithServiceConnectResources(Aws::Vector<ServiceConnectServiceResource>&& value) { SetServiceConnectResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline Deployment& AddServiceConnectResources(const ServiceConnectServiceResource& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Service Connect resources that are associated with this
+     * deployment. Each list entry maps a discovery name to a Cloud Map service
+     * name.</p>
+     */
+    inline Deployment& AddServiceConnectResources(ServiceConnectServiceResource&& value) { m_serviceConnectResourcesHasBeenSet = true; m_serviceConnectResources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     int m_desiredCount;
-    bool m_desiredCountHasBeenSet;
+    bool m_desiredCountHasBeenSet = false;
 
     int m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     int m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     int m_failedTasks;
-    bool m_failedTasksHasBeenSet;
+    bool m_failedTasksHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformFamily;
-    bool m_platformFamilyHasBeenSet;
+    bool m_platformFamilyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     DeploymentRolloutState m_rolloutState;
-    bool m_rolloutStateHasBeenSet;
+    bool m_rolloutStateHasBeenSet = false;
 
     Aws::String m_rolloutStateReason;
-    bool m_rolloutStateReasonHasBeenSet;
+    bool m_rolloutStateReasonHasBeenSet = false;
+
+    ServiceConnectConfiguration m_serviceConnectConfiguration;
+    bool m_serviceConnectConfigurationHasBeenSet = false;
+
+    Aws::Vector<ServiceConnectServiceResource> m_serviceConnectResources;
+    bool m_serviceConnectResourcesHasBeenSet = false;
   };
 
 } // namespace Model

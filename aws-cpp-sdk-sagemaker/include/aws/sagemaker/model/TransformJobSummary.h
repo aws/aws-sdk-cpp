@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformJobSummary
+  class TransformJobSummary
   {
   public:
-    TransformJobSummary();
-    TransformJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    TransformJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformJobSummary();
+    AWS_SAGEMAKER_API TransformJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -308,25 +308,25 @@ namespace Model
   private:
 
     Aws::String m_transformJobName;
-    bool m_transformJobNameHasBeenSet;
+    bool m_transformJobNameHasBeenSet = false;
 
     Aws::String m_transformJobArn;
-    bool m_transformJobArnHasBeenSet;
+    bool m_transformJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_transformEndTime;
-    bool m_transformEndTimeHasBeenSet;
+    bool m_transformEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TransformJobStatus m_transformJobStatus;
-    bool m_transformJobStatusHasBeenSet;
+    bool m_transformJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

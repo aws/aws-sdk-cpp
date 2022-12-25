@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTagPolicyResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API LFTagPolicyResource
+  class LFTagPolicyResource
   {
   public:
-    LFTagPolicyResource();
-    LFTagPolicyResource(Aws::Utils::Json::JsonView jsonValue);
-    LFTagPolicyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API LFTagPolicyResource();
+    AWS_LAKEFORMATION_API LFTagPolicyResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API LFTagPolicyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<LFTag> m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/JobLogEventData">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API JobLogEventData
+  class JobLogEventData
   {
   public:
-    JobLogEventData();
-    JobLogEventData(Aws::Utils::Json::JsonView jsonValue);
-    JobLogEventData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API JobLogEventData();
+    AWS_DRS_API JobLogEventData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API JobLogEventData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     ConversionProperties m_conversionProperties;
-    bool m_conversionPropertiesHasBeenSet;
+    bool m_conversionPropertiesHasBeenSet = false;
 
     Aws::String m_conversionServerID;
-    bool m_conversionServerIDHasBeenSet;
+    bool m_conversionServerIDHasBeenSet = false;
 
     Aws::String m_rawError;
-    bool m_rawErrorHasBeenSet;
+    bool m_rawErrorHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::String m_targetInstanceID;
-    bool m_targetInstanceIDHasBeenSet;
+    bool m_targetInstanceIDHasBeenSet = false;
   };
 
 } // namespace Model

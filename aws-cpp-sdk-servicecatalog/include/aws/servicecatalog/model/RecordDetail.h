@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API RecordDetail
+  class RecordDetail
   {
   public:
-    RecordDetail();
-    RecordDetail(Aws::Utils::Json::JsonView jsonValue);
-    RecordDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API RecordDetail();
+    AWS_SERVICECATALOG_API RecordDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API RecordDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -660,46 +660,46 @@ namespace Model
   private:
 
     Aws::String m_recordId;
-    bool m_recordIdHasBeenSet;
+    bool m_recordIdHasBeenSet = false;
 
     Aws::String m_provisionedProductName;
-    bool m_provisionedProductNameHasBeenSet;
+    bool m_provisionedProductNameHasBeenSet = false;
 
     RecordStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     Aws::String m_provisionedProductType;
-    bool m_provisionedProductTypeHasBeenSet;
+    bool m_provisionedProductTypeHasBeenSet = false;
 
     Aws::String m_recordType;
-    bool m_recordTypeHasBeenSet;
+    bool m_recordTypeHasBeenSet = false;
 
     Aws::String m_provisionedProductId;
-    bool m_provisionedProductIdHasBeenSet;
+    bool m_provisionedProductIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::Vector<RecordError> m_recordErrors;
-    bool m_recordErrorsHasBeenSet;
+    bool m_recordErrorsHasBeenSet = false;
 
     Aws::Vector<RecordTag> m_recordTags;
-    bool m_recordTagsHasBeenSet;
+    bool m_recordTagsHasBeenSet = false;
 
     Aws::String m_launchRoleArn;
-    bool m_launchRoleArnHasBeenSet;
+    bool m_launchRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

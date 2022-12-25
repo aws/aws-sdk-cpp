@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SslProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SslProperties
+  class SslProperties
   {
   public:
-    SslProperties();
-    SslProperties(Aws::Utils::Json::JsonView jsonValue);
-    SslProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SslProperties();
+    AWS_QUICKSIGHT_API SslProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SslProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_disableSsl;
-    bool m_disableSslHasBeenSet;
+    bool m_disableSslHasBeenSet = false;
   };
 
 } // namespace Model

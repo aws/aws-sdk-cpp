@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketNotificationConfigurationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter
+  class AwsS3BucketNotificationConfigurationFilter
   {
   public:
-    AwsS3BucketNotificationConfigurationFilter();
-    AwsS3BucketNotificationConfigurationFilter(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketNotificationConfigurationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsS3BucketNotificationConfigurationS3KeyFilter m_s3KeyFilter;
-    bool m_s3KeyFilterHasBeenSet;
+    bool m_s3KeyFilterHasBeenSet = false;
   };
 
 } // namespace Model

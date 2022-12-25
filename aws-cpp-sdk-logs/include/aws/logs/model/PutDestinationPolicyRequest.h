@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API PutDestinationPolicyRequest : public CloudWatchLogsRequest
+  class PutDestinationPolicyRequest : public CloudWatchLogsRequest
   {
   public:
-    PutDestinationPolicyRequest();
+    AWS_CLOUDWATCHLOGS_API PutDestinationPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutDestinationPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet;
+    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_accessPolicy;
-    bool m_accessPolicyHasBeenSet;
+    bool m_accessPolicyHasBeenSet = false;
 
     bool m_forceUpdate;
-    bool m_forceUpdateHasBeenSet;
+    bool m_forceUpdateHasBeenSet = false;
   };
 
 } // namespace Model

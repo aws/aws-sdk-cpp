@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ByteMatchTuple">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API ByteMatchTuple
+  class ByteMatchTuple
   {
   public:
-    ByteMatchTuple();
-    ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
-    ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API ByteMatchTuple();
+    AWS_WAFREGIONAL_API ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -776,16 +776,16 @@ namespace Model
   private:
 
     FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet;
+    bool m_fieldToMatchHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_targetString;
-    bool m_targetStringHasBeenSet;
+    bool m_targetStringHasBeenSet = false;
 
     TextTransformation m_textTransformation;
-    bool m_textTransformationHasBeenSet;
+    bool m_textTransformationHasBeenSet = false;
 
     PositionalConstraint m_positionalConstraint;
-    bool m_positionalConstraintHasBeenSet;
+    bool m_positionalConstraintHasBeenSet = false;
   };
 
 } // namespace Model

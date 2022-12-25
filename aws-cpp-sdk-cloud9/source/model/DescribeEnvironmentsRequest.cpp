@@ -23,7 +23,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
 
   if(m_environmentIdsHasBeenSet)
   {
-   Array<JsonValue> environmentIdsJsonList(m_environmentIds.size());
+   Aws::Utils::Array<JsonValue> environmentIdsJsonList(m_environmentIds.size());
    for(unsigned environmentIdsIndex = 0; environmentIdsIndex < environmentIdsJsonList.GetLength(); ++environmentIdsIndex)
    {
      environmentIdsJsonList[environmentIdsIndex].AsString(m_environmentIds[environmentIdsIndex]);

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/InvalidLayerPartException">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API InvalidLayerPartException
+  class InvalidLayerPartException
   {
   public:
-    InvalidLayerPartException();
-    InvalidLayerPartException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidLayerPartException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API InvalidLayerPartException();
+    AWS_ECRPUBLIC_API InvalidLayerPartException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API InvalidLayerPartException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,19 +210,19 @@ namespace Model
   private:
 
     Aws::String m_registryId;
-    bool m_registryIdHasBeenSet;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     long long m_lastValidByteReceived;
-    bool m_lastValidByteReceivedHasBeenSet;
+    bool m_lastValidByteReceivedHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

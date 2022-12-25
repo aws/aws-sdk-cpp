@@ -29,6 +29,14 @@ TableStatistics::TableStatistics() :
     m_updatesHasBeenSet(false),
     m_ddls(0),
     m_ddlsHasBeenSet(false),
+    m_appliedInserts(0),
+    m_appliedInsertsHasBeenSet(false),
+    m_appliedDeletes(0),
+    m_appliedDeletesHasBeenSet(false),
+    m_appliedUpdates(0),
+    m_appliedUpdatesHasBeenSet(false),
+    m_appliedDdls(0),
+    m_appliedDdlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
     m_fullLoadCondtnlChkFailedRows(0),
@@ -63,6 +71,14 @@ TableStatistics::TableStatistics(JsonView jsonValue) :
     m_updatesHasBeenSet(false),
     m_ddls(0),
     m_ddlsHasBeenSet(false),
+    m_appliedInserts(0),
+    m_appliedInsertsHasBeenSet(false),
+    m_appliedDeletes(0),
+    m_appliedDeletesHasBeenSet(false),
+    m_appliedUpdates(0),
+    m_appliedUpdatesHasBeenSet(false),
+    m_appliedDdls(0),
+    m_appliedDdlsHasBeenSet(false),
     m_fullLoadRows(0),
     m_fullLoadRowsHasBeenSet(false),
     m_fullLoadCondtnlChkFailedRows(0),
@@ -129,6 +145,34 @@ TableStatistics& TableStatistics::operator =(JsonView jsonValue)
     m_ddls = jsonValue.GetInt64("Ddls");
 
     m_ddlsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppliedInserts"))
+  {
+    m_appliedInserts = jsonValue.GetInt64("AppliedInserts");
+
+    m_appliedInsertsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppliedDeletes"))
+  {
+    m_appliedDeletes = jsonValue.GetInt64("AppliedDeletes");
+
+    m_appliedDeletesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppliedUpdates"))
+  {
+    m_appliedUpdates = jsonValue.GetInt64("AppliedUpdates");
+
+    m_appliedUpdatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppliedDdls"))
+  {
+    m_appliedDdls = jsonValue.GetInt64("AppliedDdls");
+
+    m_appliedDdlsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FullLoadRows"))
@@ -262,6 +306,30 @@ JsonValue TableStatistics::Jsonize() const
   if(m_ddlsHasBeenSet)
   {
    payload.WithInt64("Ddls", m_ddls);
+
+  }
+
+  if(m_appliedInsertsHasBeenSet)
+  {
+   payload.WithInt64("AppliedInserts", m_appliedInserts);
+
+  }
+
+  if(m_appliedDeletesHasBeenSet)
+  {
+   payload.WithInt64("AppliedDeletes", m_appliedDeletes);
+
+  }
+
+  if(m_appliedUpdatesHasBeenSet)
+  {
+   payload.WithInt64("AppliedUpdates", m_appliedUpdates);
+
+  }
+
+  if(m_appliedDdlsHasBeenSet)
+  {
+   payload.WithInt64("AppliedDdls", m_appliedDdls);
 
   }
 

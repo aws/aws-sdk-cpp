@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/model/PropertyDefinitionRequest.h>
-#include <aws/iottwinmaker/model/PropertyUpdateType.h>
 #include <aws/iottwinmaker/model/DataValue.h>
+#include <aws/iottwinmaker/model/PropertyUpdateType.h>
 #include <utility>
 
 namespace Aws
@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PropertyRequest
+  class PropertyRequest
   {
   public:
-    PropertyRequest();
-    PropertyRequest(Aws::Utils::Json::JsonView jsonValue);
-    PropertyRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API PropertyRequest();
+    AWS_IOTTWINMAKER_API PropertyRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PropertyRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,37 +72,6 @@ namespace Model
 
 
     /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline const PropertyUpdateType& GetUpdateType() const{ return m_updateType; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline void SetUpdateType(const PropertyUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline void SetUpdateType(PropertyUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline PropertyRequest& WithUpdateType(const PropertyUpdateType& value) { SetUpdateType(value); return *this;}
-
-    /**
-     * <p>The update type of the update property request.</p>
-     */
-    inline PropertyRequest& WithUpdateType(PropertyUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
-
-
-    /**
      * <p>The value of the property.</p>
      */
     inline const DataValue& GetValue() const{ return m_value; }
@@ -132,16 +101,47 @@ namespace Model
      */
     inline PropertyRequest& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline const PropertyUpdateType& GetUpdateType() const{ return m_updateType; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline void SetUpdateType(const PropertyUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline void SetUpdateType(PropertyUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline PropertyRequest& WithUpdateType(const PropertyUpdateType& value) { SetUpdateType(value); return *this;}
+
+    /**
+     * <p>The update type of the update property request.</p>
+     */
+    inline PropertyRequest& WithUpdateType(PropertyUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+
   private:
 
     PropertyDefinitionRequest m_definition;
-    bool m_definitionHasBeenSet;
-
-    PropertyUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     DataValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
+
+    PropertyUpdateType m_updateType;
+    bool m_updateTypeHasBeenSet = false;
   };
 
 } // namespace Model

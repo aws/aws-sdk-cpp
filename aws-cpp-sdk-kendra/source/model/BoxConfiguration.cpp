@@ -107,7 +107,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FileFieldMappings"))
   {
-    Array<JsonView> fileFieldMappingsJsonList = jsonValue.GetArray("FileFieldMappings");
+    Aws::Utils::Array<JsonView> fileFieldMappingsJsonList = jsonValue.GetArray("FileFieldMappings");
     for(unsigned fileFieldMappingsIndex = 0; fileFieldMappingsIndex < fileFieldMappingsJsonList.GetLength(); ++fileFieldMappingsIndex)
     {
       m_fileFieldMappings.push_back(fileFieldMappingsJsonList[fileFieldMappingsIndex].AsObject());
@@ -117,7 +117,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TaskFieldMappings"))
   {
-    Array<JsonView> taskFieldMappingsJsonList = jsonValue.GetArray("TaskFieldMappings");
+    Aws::Utils::Array<JsonView> taskFieldMappingsJsonList = jsonValue.GetArray("TaskFieldMappings");
     for(unsigned taskFieldMappingsIndex = 0; taskFieldMappingsIndex < taskFieldMappingsJsonList.GetLength(); ++taskFieldMappingsIndex)
     {
       m_taskFieldMappings.push_back(taskFieldMappingsJsonList[taskFieldMappingsIndex].AsObject());
@@ -127,7 +127,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CommentFieldMappings"))
   {
-    Array<JsonView> commentFieldMappingsJsonList = jsonValue.GetArray("CommentFieldMappings");
+    Aws::Utils::Array<JsonView> commentFieldMappingsJsonList = jsonValue.GetArray("CommentFieldMappings");
     for(unsigned commentFieldMappingsIndex = 0; commentFieldMappingsIndex < commentFieldMappingsJsonList.GetLength(); ++commentFieldMappingsIndex)
     {
       m_commentFieldMappings.push_back(commentFieldMappingsJsonList[commentFieldMappingsIndex].AsObject());
@@ -137,7 +137,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("WebLinkFieldMappings"))
   {
-    Array<JsonView> webLinkFieldMappingsJsonList = jsonValue.GetArray("WebLinkFieldMappings");
+    Aws::Utils::Array<JsonView> webLinkFieldMappingsJsonList = jsonValue.GetArray("WebLinkFieldMappings");
     for(unsigned webLinkFieldMappingsIndex = 0; webLinkFieldMappingsIndex < webLinkFieldMappingsJsonList.GetLength(); ++webLinkFieldMappingsIndex)
     {
       m_webLinkFieldMappings.push_back(webLinkFieldMappingsJsonList[webLinkFieldMappingsIndex].AsObject());
@@ -147,7 +147,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -157,7 +157,7 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -217,7 +217,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_fileFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> fileFieldMappingsJsonList(m_fileFieldMappings.size());
+   Aws::Utils::Array<JsonValue> fileFieldMappingsJsonList(m_fileFieldMappings.size());
    for(unsigned fileFieldMappingsIndex = 0; fileFieldMappingsIndex < fileFieldMappingsJsonList.GetLength(); ++fileFieldMappingsIndex)
    {
      fileFieldMappingsJsonList[fileFieldMappingsIndex].AsObject(m_fileFieldMappings[fileFieldMappingsIndex].Jsonize());
@@ -228,7 +228,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_taskFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> taskFieldMappingsJsonList(m_taskFieldMappings.size());
+   Aws::Utils::Array<JsonValue> taskFieldMappingsJsonList(m_taskFieldMappings.size());
    for(unsigned taskFieldMappingsIndex = 0; taskFieldMappingsIndex < taskFieldMappingsJsonList.GetLength(); ++taskFieldMappingsIndex)
    {
      taskFieldMappingsJsonList[taskFieldMappingsIndex].AsObject(m_taskFieldMappings[taskFieldMappingsIndex].Jsonize());
@@ -239,7 +239,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_commentFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> commentFieldMappingsJsonList(m_commentFieldMappings.size());
+   Aws::Utils::Array<JsonValue> commentFieldMappingsJsonList(m_commentFieldMappings.size());
    for(unsigned commentFieldMappingsIndex = 0; commentFieldMappingsIndex < commentFieldMappingsJsonList.GetLength(); ++commentFieldMappingsIndex)
    {
      commentFieldMappingsJsonList[commentFieldMappingsIndex].AsObject(m_commentFieldMappings[commentFieldMappingsIndex].Jsonize());
@@ -250,7 +250,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_webLinkFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> webLinkFieldMappingsJsonList(m_webLinkFieldMappings.size());
+   Aws::Utils::Array<JsonValue> webLinkFieldMappingsJsonList(m_webLinkFieldMappings.size());
    for(unsigned webLinkFieldMappingsIndex = 0; webLinkFieldMappingsIndex < webLinkFieldMappingsJsonList.GetLength(); ++webLinkFieldMappingsIndex)
    {
      webLinkFieldMappingsJsonList[webLinkFieldMappingsIndex].AsObject(m_webLinkFieldMappings[webLinkFieldMappingsIndex].Jsonize());
@@ -261,7 +261,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -272,7 +272,7 @@ JsonValue BoxConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API ReplicateKeyRequest : public KMSRequest
+  class ReplicateKeyRequest : public KMSRequest
   {
   public:
-    ReplicateKeyRequest();
+    AWS_KMS_API ReplicateKeyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReplicateKey"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -398,13 +398,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -432,13 +438,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -466,13 +478,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -500,13 +518,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -534,13 +558,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -568,13 +598,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline ReplicateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -602,13 +638,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline ReplicateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -636,13 +678,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i> <i>Identity and
      * Access Management User Guide</i> </i>.</p> </li> </ul> <p>A key policy document
-     * must conform to the following rules.</p> <ul> <li> <p>Up to 32 kilobytes (32768
-     * bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li> <p>The only
-     * Unicode characters that are permitted in a key policy document are the
-     * horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul>
+     * can include only the following characters:</p> <ul> <li> <p>Printable ASCII
+     * characters from the space character (<code>\u0020</code>) through the end of the
+     * ASCII character range.</p> </li> <li> <p>Printable characters in the Basic Latin
+     * and Latin-1 Supplement character set (through <code>\u00FF</code>).</p> </li>
+     * <li> <p>The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>) special characters</p> </li> </ul> <p>For
+     * information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
+     * help writing and formatting a JSON policy document, see the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+     * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
+     * Guide</i> </i>.</p>
      */
     inline ReplicateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -778,7 +826,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -803,7 +851,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -828,7 +876,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -853,7 +901,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -878,7 +926,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -903,7 +951,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -928,7 +976,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -953,7 +1001,7 @@ namespace Model
      * KMS key when it is created. To tag an existing KMS key, use the
      * <a>TagResource</a> operation.</p>  <p>Tagging or untagging a KMS key can
      * allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
@@ -976,22 +1024,22 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_replicaRegion;
-    bool m_replicaRegionHasBeenSet;
+    bool m_replicaRegionHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     bool m_bypassPolicyLockoutSafetyCheck;
-    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

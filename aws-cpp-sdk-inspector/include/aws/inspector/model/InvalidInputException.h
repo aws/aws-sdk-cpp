@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/InvalidInputException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API InvalidInputException
+  class InvalidInputException
   {
   public:
-    InvalidInputException();
-    InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API InvalidInputException();
+    AWS_INSPECTOR_API InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     InvalidInputErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

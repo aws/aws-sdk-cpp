@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/SnsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API SnsConfiguration
+  class SnsConfiguration
   {
   public:
-    SnsConfiguration();
-    SnsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SnsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API SnsConfiguration();
+    AWS_TIMESTREAMQUERY_API SnsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API SnsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

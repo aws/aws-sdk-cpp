@@ -33,7 +33,7 @@ Aws::String DeleteUsageLimitRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteUsageLimitRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.DeleteUsageLimit"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.DeleteUsageLimit"));
   return headers;
 
 }

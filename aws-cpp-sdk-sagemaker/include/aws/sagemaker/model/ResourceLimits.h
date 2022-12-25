@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ResourceLimits
+  class ResourceLimits
   {
   public:
-    ResourceLimits();
-    ResourceLimits(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ResourceLimits();
+    AWS_SAGEMAKER_API ResourceLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ResourceLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_maxNumberOfTrainingJobs;
-    bool m_maxNumberOfTrainingJobsHasBeenSet;
+    bool m_maxNumberOfTrainingJobsHasBeenSet = false;
 
     int m_maxParallelTrainingJobs;
-    bool m_maxParallelTrainingJobsHasBeenSet;
+    bool m_maxParallelTrainingJobsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BlueInstanceTerminationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API BlueInstanceTerminationOption
+  class BlueInstanceTerminationOption
   {
   public:
-    BlueInstanceTerminationOption();
-    BlueInstanceTerminationOption(Aws::Utils::Json::JsonView jsonValue);
-    BlueInstanceTerminationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API BlueInstanceTerminationOption();
+    AWS_CODEDEPLOY_API BlueInstanceTerminationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API BlueInstanceTerminationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     InstanceAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     int m_terminationWaitTimeInMinutes;
-    bool m_terminationWaitTimeInMinutesHasBeenSet;
+    bool m_terminationWaitTimeInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

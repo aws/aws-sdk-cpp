@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeferredMaintenanceWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DeferredMaintenanceWindow
+  class DeferredMaintenanceWindow
   {
   public:
-    DeferredMaintenanceWindow();
-    DeferredMaintenanceWindow(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeferredMaintenanceWindow& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DeferredMaintenanceWindow();
+    AWS_REDSHIFT_API DeferredMaintenanceWindow(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DeferredMaintenanceWindow& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_deferMaintenanceIdentifier;
-    bool m_deferMaintenanceIdentifierHasBeenSet;
+    bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceStartTime;
-    bool m_deferMaintenanceStartTimeHasBeenSet;
+    bool m_deferMaintenanceStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceEndTime;
-    bool m_deferMaintenanceEndTimeHasBeenSet;
+    bool m_deferMaintenanceEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

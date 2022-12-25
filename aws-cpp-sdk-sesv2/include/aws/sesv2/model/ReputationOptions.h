@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReputationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ReputationOptions
+  class ReputationOptions
   {
   public:
-    ReputationOptions();
-    ReputationOptions(Aws::Utils::Json::JsonView jsonValue);
-    ReputationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ReputationOptions();
+    AWS_SESV2_API ReputationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ReputationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     bool m_reputationMetricsEnabled;
-    bool m_reputationMetricsEnabledHasBeenSet;
+    bool m_reputationMetricsEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastFreshStart;
-    bool m_lastFreshStartHasBeenSet;
+    bool m_lastFreshStartHasBeenSet = false;
   };
 
 } // namespace Model

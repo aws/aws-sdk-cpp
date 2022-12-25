@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFRONT_API ListDistributionsByKeyGroup2020_05_31Request : public CloudFrontRequest
+  class ListDistributionsByKeyGroup2020_05_31Request : public CloudFrontRequest
   {
   public:
-    ListDistributionsByKeyGroup2020_05_31Request();
+    AWS_CLOUDFRONT_API ListDistributionsByKeyGroup2020_05_31Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,16 +33,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListDistributionsByKeyGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -50,8 +50,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
@@ -59,8 +59,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
@@ -68,8 +68,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
@@ -77,8 +77,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
@@ -86,8 +86,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline ListDistributionsByKeyGroup2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
@@ -95,8 +95,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline ListDistributionsByKeyGroup2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
@@ -104,8 +104,8 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of distribution IDs. The response includes distribution IDs in the list
-     * that occur after the marker. To get the next page of the list, set this field’s
-     * value to the value of <code>NextMarker</code> from the current page’s
+     * that occur after the marker. To get the next page of the list, set this field's
+     * value to the value of <code>NextMarker</code> from the current page's
      * response.</p>
      */
     inline ListDistributionsByKeyGroup2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_keyGroupId;
-    bool m_keyGroupIdHasBeenSet;
+    bool m_keyGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

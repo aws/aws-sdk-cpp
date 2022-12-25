@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ScheduledInstancesEbs">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ScheduledInstancesEbs
+  class ScheduledInstancesEbs
   {
   public:
-    ScheduledInstancesEbs();
-    ScheduledInstancesEbs(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledInstancesEbs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstancesEbs();
+    AWS_EC2_API ScheduledInstancesEbs(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ScheduledInstancesEbs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -288,22 +288,22 @@ namespace Model
   private:
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_snapshotId;
-    bool m_snapshotIdHasBeenSet;
+    bool m_snapshotIdHasBeenSet = false;
 
     int m_volumeSize;
-    bool m_volumeSizeHasBeenSet;
+    bool m_volumeSizeHasBeenSet = false;
 
     Aws::String m_volumeType;
-    bool m_volumeTypeHasBeenSet;
+    bool m_volumeTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_POLLY_API LexiconDescription
+  class LexiconDescription
   {
   public:
-    LexiconDescription();
-    LexiconDescription(Aws::Utils::Json::JsonView jsonValue);
-    LexiconDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_POLLY_API LexiconDescription();
+    AWS_POLLY_API LexiconDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API LexiconDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LexiconAttributes m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

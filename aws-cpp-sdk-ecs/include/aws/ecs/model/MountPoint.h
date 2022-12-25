@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/MountPoint">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API MountPoint
+  class MountPoint
   {
   public:
-    MountPoint();
-    MountPoint(Aws::Utils::Json::JsonView jsonValue);
-    MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API MountPoint();
+    AWS_ECS_API MountPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_sourceVolume;
-    bool m_sourceVolumeHasBeenSet;
+    bool m_sourceVolumeHasBeenSet = false;
 
     Aws::String m_containerPath;
-    bool m_containerPathHasBeenSet;
+    bool m_containerPathHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
   };
 
 } // namespace Model

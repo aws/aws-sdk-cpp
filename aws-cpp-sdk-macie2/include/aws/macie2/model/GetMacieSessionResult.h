@@ -27,12 +27,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetMacieSessionResult
+  class GetMacieSessionResult
   {
   public:
-    GetMacieSessionResult();
-    GetMacieSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMacieSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMacieSessionResult();
+    AWS_MACIE2_API GetMacieSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetMacieSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -69,35 +69,35 @@ namespace Model
     /**
      * <p>The frequency with which Amazon Macie publishes updates to policy findings
      * for the account. This includes publishing updates to Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * EventBridge (formerly Amazon CloudWatch Events).</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
      * <p>The frequency with which Amazon Macie publishes updates to policy findings
      * for the account. This includes publishing updates to Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * EventBridge (formerly Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
 
     /**
      * <p>The frequency with which Amazon Macie publishes updates to policy findings
      * for the account. This includes publishing updates to Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * EventBridge (formerly Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
 
     /**
      * <p>The frequency with which Amazon Macie publishes updates to policy findings
      * for the account. This includes publishing updates to Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * EventBridge (formerly Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
      * <p>The frequency with which Amazon Macie publishes updates to policy findings
      * for the account. This includes publishing updates to Security Hub and Amazon
-     * EventBridge (formerly called Amazon CloudWatch Events).</p>
+     * EventBridge (formerly Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 

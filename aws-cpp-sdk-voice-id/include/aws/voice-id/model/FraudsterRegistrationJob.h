@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudsterRegistrationJob">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudsterRegistrationJob
+  class FraudsterRegistrationJob
   {
   public:
-    FraudsterRegistrationJob();
-    FraudsterRegistrationJob(Aws::Utils::Json::JsonView jsonValue);
-    FraudsterRegistrationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudsterRegistrationJob();
+    AWS_VOICEID_API FraudsterRegistrationJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudsterRegistrationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -449,42 +449,42 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline FraudsterRegistrationJob& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where you want Voice ID to
-     * write your job output file; you must also include a KMS key iD in order to
+     * write your job output file; you must also include a KMS key ID in order to
      * encrypt the file.</p>
      */
     inline FraudsterRegistrationJob& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
@@ -535,40 +535,40 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet;
+    bool m_endedAtHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobProgress m_jobProgress;
-    bool m_jobProgressHasBeenSet;
+    bool m_jobProgressHasBeenSet = false;
 
     FraudsterRegistrationJobStatus m_jobStatus;
-    bool m_jobStatusHasBeenSet;
+    bool m_jobStatusHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
-    bool m_registrationConfigHasBeenSet;
+    bool m_registrationConfigHasBeenSet = false;
   };
 
 } // namespace Model

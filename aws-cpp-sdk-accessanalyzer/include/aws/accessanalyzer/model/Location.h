@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Location">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Location
+  class Location
   {
   public:
-    Location();
-    Location(Aws::Utils::Json::JsonView jsonValue);
-    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Location();
+    AWS_ACCESSANALYZER_API Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<PathElement> m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Span m_span;
-    bool m_spanHasBeenSet;
+    bool m_spanHasBeenSet = false;
   };
 
 } // namespace Model

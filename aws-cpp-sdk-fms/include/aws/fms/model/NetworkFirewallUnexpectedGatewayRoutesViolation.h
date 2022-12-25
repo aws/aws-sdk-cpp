@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallUnexpectedGatewayRoutesViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation
+  class NetworkFirewallUnexpectedGatewayRoutesViolation
   {
   public:
-    NetworkFirewallUnexpectedGatewayRoutesViolation();
-    NetworkFirewallUnexpectedGatewayRoutesViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallUnexpectedGatewayRoutesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation();
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::Vector<Route> m_violatingRoutes;
-    bool m_violatingRoutesHasBeenSet;
+    bool m_violatingRoutesHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

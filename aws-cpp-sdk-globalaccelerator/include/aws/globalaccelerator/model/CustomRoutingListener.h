@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingListener">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CustomRoutingListener
+  class CustomRoutingListener
   {
   public:
-    CustomRoutingListener();
-    CustomRoutingListener(Aws::Utils::Json::JsonView jsonValue);
-    CustomRoutingListener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CustomRoutingListener();
+    AWS_GLOBALACCELERATOR_API CustomRoutingListener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CustomRoutingListener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetContentDeliveryDestination
+  class DatasetContentDeliveryDestination
   {
   public:
-    DatasetContentDeliveryDestination();
-    DatasetContentDeliveryDestination(Aws::Utils::Json::JsonView jsonValue);
-    DatasetContentDeliveryDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetContentDeliveryDestination();
+    AWS_IOTANALYTICS_API DatasetContentDeliveryDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetContentDeliveryDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     IotEventsDestinationConfiguration m_iotEventsDestinationConfiguration;
-    bool m_iotEventsDestinationConfigurationHasBeenSet;
+    bool m_iotEventsDestinationConfigurationHasBeenSet = false;
 
     S3DestinationConfiguration m_s3DestinationConfiguration;
-    bool m_s3DestinationConfigurationHasBeenSet;
+    bool m_s3DestinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

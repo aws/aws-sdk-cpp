@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVSCHAT_API CreateChatTokenRequest : public IvschatRequest
+  class CreateChatTokenRequest : public IvschatRequest
   {
   public:
-    CreateChatTokenRequest();
+    AWS_IVSCHAT_API CreateChatTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateChatToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVSCHAT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -309,19 +309,19 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<ChatTokenCapability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet;
+    bool m_roomIdentifierHasBeenSet = false;
 
     int m_sessionDurationInMinutes;
-    bool m_sessionDurationInMinutesHasBeenSet;
+    bool m_sessionDurationInMinutesHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

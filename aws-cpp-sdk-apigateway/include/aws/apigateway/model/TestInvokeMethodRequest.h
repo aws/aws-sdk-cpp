@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethodRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API TestInvokeMethodRequest : public APIGatewayRequest
+  class TestInvokeMethodRequest : public APIGatewayRequest
   {
   public:
-    TestInvokeMethodRequest();
+    AWS_APIGATEWAY_API TestInvokeMethodRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestInvokeMethod"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -528,31 +528,31 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet;
+    bool m_httpMethodHasBeenSet = false;
 
     Aws::String m_pathWithQueryString;
-    bool m_pathWithQueryStringHasBeenSet;
+    bool m_pathWithQueryStringHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
-    bool m_multiValueHeadersHasBeenSet;
+    bool m_multiValueHeadersHasBeenSet = false;
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
 
     Aws::String m_requestBody;
-    bool m_requestBodyHasBeenSet;
+    bool m_requestBodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-    bool m_requestHeadersHasBeenSet;
+    bool m_requestHeadersHasBeenSet = false;
   };
 
 } // namespace Model

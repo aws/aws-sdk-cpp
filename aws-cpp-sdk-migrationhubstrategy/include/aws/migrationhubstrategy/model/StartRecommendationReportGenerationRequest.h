@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartRecommendationReportGenerationRequest : public MigrationHubStrategyRecommendationsRequest
+  class StartRecommendationReportGenerationRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    StartRecommendationReportGenerationRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StartRecommendationReportGenerationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartRecommendationReportGeneration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Vector<Group> m_groupIdFilter;
-    bool m_groupIdFilterHasBeenSet;
+    bool m_groupIdFilterHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
   };
 
 } // namespace Model

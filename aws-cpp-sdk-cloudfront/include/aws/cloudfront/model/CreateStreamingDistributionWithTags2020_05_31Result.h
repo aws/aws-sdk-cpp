@@ -26,41 +26,41 @@ namespace CloudFront
 namespace Model
 {
   /**
-   * <p>The returned result of the corresponding request. </p><p><h3>See Also:</h3>  
+   * <p>The returned result of the corresponding request.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTagsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Result
+  class CreateStreamingDistributionWithTags2020_05_31Result
   {
   public:
-    CreateStreamingDistributionWithTags2020_05_31Result();
-    CreateStreamingDistributionWithTags2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStreamingDistributionWithTags2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Result();
+    AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateStreamingDistributionWithTags2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
-     * <p>The streaming distribution's information. </p>
+     * <p>The streaming distribution's information.</p>
      */
     inline const StreamingDistribution& GetStreamingDistribution() const{ return m_streamingDistribution; }
 
     /**
-     * <p>The streaming distribution's information. </p>
+     * <p>The streaming distribution's information.</p>
      */
     inline void SetStreamingDistribution(const StreamingDistribution& value) { m_streamingDistribution = value; }
 
     /**
-     * <p>The streaming distribution's information. </p>
+     * <p>The streaming distribution's information.</p>
      */
     inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = std::move(value); }
 
     /**
-     * <p>The streaming distribution's information. </p>
+     * <p>The streaming distribution's information.</p>
      */
     inline CreateStreamingDistributionWithTags2020_05_31Result& WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
 
     /**
-     * <p>The streaming distribution's information. </p>
+     * <p>The streaming distribution's information.</p>
      */
     inline CreateStreamingDistributionWithTags2020_05_31Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(std::move(value)); return *this;}
 

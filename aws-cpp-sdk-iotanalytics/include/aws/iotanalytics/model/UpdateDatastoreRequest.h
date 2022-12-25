@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTANALYTICS_API UpdateDatastoreRequest : public IoTAnalyticsRequest
+  class UpdateDatastoreRequest : public IoTAnalyticsRequest
   {
   public:
-    UpdateDatastoreRequest();
+    AWS_IOTANALYTICS_API UpdateDatastoreRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDatastore"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -225,16 +225,16 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     DatastoreStorage m_datastoreStorage;
-    bool m_datastoreStorageHasBeenSet;
+    bool m_datastoreStorageHasBeenSet = false;
 
     FileFormatConfiguration m_fileFormatConfiguration;
-    bool m_fileFormatConfigurationHasBeenSet;
+    bool m_fileFormatConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

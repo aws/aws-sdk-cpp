@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BehaviorModelTrainingSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BehaviorModelTrainingSummary
+  class BehaviorModelTrainingSummary
   {
   public:
-    BehaviorModelTrainingSummary();
-    BehaviorModelTrainingSummary(Aws::Utils::Json::JsonView jsonValue);
-    BehaviorModelTrainingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BehaviorModelTrainingSummary();
+    AWS_IOT_API BehaviorModelTrainingSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BehaviorModelTrainingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -237,22 +237,22 @@ namespace Model
   private:
 
     Aws::String m_securityProfileName;
-    bool m_securityProfileNameHasBeenSet;
+    bool m_securityProfileNameHasBeenSet = false;
 
     Aws::String m_behaviorName;
-    bool m_behaviorNameHasBeenSet;
+    bool m_behaviorNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingDataCollectionStartDate;
-    bool m_trainingDataCollectionStartDateHasBeenSet;
+    bool m_trainingDataCollectionStartDateHasBeenSet = false;
 
     ModelStatus m_modelStatus;
-    bool m_modelStatusHasBeenSet;
+    bool m_modelStatusHasBeenSet = false;
 
     double m_datapointsCollectionPercentage;
-    bool m_datapointsCollectionPercentageHasBeenSet;
+    bool m_datapointsCollectionPercentageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModelRefreshDate;
-    bool m_lastModelRefreshDateHasBeenSet;
+    bool m_lastModelRefreshDateHasBeenSet = false;
   };
 
 } // namespace Model

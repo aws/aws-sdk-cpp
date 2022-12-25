@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVICEFARM_API ListTestGridSessionsRequest : public DeviceFarmRequest
+  class ListTestGridSessionsRequest : public DeviceFarmRequest
   {
   public:
-    ListTestGridSessionsRequest();
+    AWS_DEVICEFARM_API ListTestGridSessionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTestGridSessions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVICEFARM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -296,28 +296,28 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     TestGridSessionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeAfter;
-    bool m_creationTimeAfterHasBeenSet;
+    bool m_creationTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimeBefore;
-    bool m_creationTimeBeforeHasBeenSet;
+    bool m_creationTimeBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimeAfter;
-    bool m_endTimeAfterHasBeenSet;
+    bool m_endTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimeBefore;
-    bool m_endTimeBeforeHasBeenSet;
+    bool m_endTimeBeforeHasBeenSet = false;
 
     int m_maxResult;
-    bool m_maxResultHasBeenSet;
+    bool m_maxResultHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

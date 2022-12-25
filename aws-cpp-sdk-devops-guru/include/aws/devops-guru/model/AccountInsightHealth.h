@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AccountInsightHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API AccountInsightHealth
+  class AccountInsightHealth
   {
   public:
-    AccountInsightHealth();
-    AccountInsightHealth(Aws::Utils::Json::JsonView jsonValue);
-    AccountInsightHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API AccountInsightHealth();
+    AWS_DEVOPSGURU_API AccountInsightHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API AccountInsightHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_openProactiveInsights;
-    bool m_openProactiveInsightsHasBeenSet;
+    bool m_openProactiveInsightsHasBeenSet = false;
 
     int m_openReactiveInsights;
-    bool m_openReactiveInsightsHasBeenSet;
+    bool m_openReactiveInsightsHasBeenSet = false;
   };
 
 } // namespace Model

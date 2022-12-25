@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeveloperInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeveloperInfo
+  class DeveloperInfo
   {
   public:
-    DeveloperInfo();
-    DeveloperInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeveloperInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeveloperInfo();
+    AWS_ALEXAFORBUSINESS_API DeveloperInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeveloperInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_developerName;
-    bool m_developerNameHasBeenSet;
+    bool m_developerNameHasBeenSet = false;
 
     Aws::String m_privacyPolicy;
-    bool m_privacyPolicyHasBeenSet;
+    bool m_privacyPolicyHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

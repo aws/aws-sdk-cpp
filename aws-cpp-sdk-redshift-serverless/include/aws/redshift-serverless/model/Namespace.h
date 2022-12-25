@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Namespace">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Namespace
+  class Namespace
   {
   public:
-    Namespace();
-    Namespace(Aws::Utils::Json::JsonView jsonValue);
-    Namespace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Namespace();
+    AWS_REDSHIFTSERVERLESS_API Namespace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Namespace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -543,37 +543,37 @@ namespace Model
   private:
 
     Aws::String m_adminUsername;
-    bool m_adminUsernameHasBeenSet;
+    bool m_adminUsernameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_dbName;
-    bool m_dbNameHasBeenSet;
+    bool m_dbNameHasBeenSet = false;
 
     Aws::String m_defaultIamRoleArn;
-    bool m_defaultIamRoleArnHasBeenSet;
+    bool m_defaultIamRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_iamRoles;
-    bool m_iamRolesHasBeenSet;
+    bool m_iamRolesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Vector<LogExport> m_logExports;
-    bool m_logExportsHasBeenSet;
+    bool m_logExportsHasBeenSet = false;
 
     Aws::String m_namespaceArn;
-    bool m_namespaceArnHasBeenSet;
+    bool m_namespaceArnHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     NamespaceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

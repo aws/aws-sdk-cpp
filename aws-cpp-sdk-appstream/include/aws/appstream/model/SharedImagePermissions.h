@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/SharedImagePermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API SharedImagePermissions
+  class SharedImagePermissions
   {
   public:
-    SharedImagePermissions();
-    SharedImagePermissions(Aws::Utils::Json::JsonView jsonValue);
-    SharedImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API SharedImagePermissions();
+    AWS_APPSTREAM_API SharedImagePermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API SharedImagePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     ImagePermissions m_imagePermissions;
-    bool m_imagePermissionsHasBeenSet;
+    bool m_imagePermissionsHasBeenSet = false;
   };
 
 } // namespace Model

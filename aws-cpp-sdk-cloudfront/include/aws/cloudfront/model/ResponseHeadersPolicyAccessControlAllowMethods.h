@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyAccessControlAllowMethods">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowMethods
+  class ResponseHeadersPolicyAccessControlAllowMethods
   {
   public:
-    ResponseHeadersPolicyAccessControlAllowMethods();
-    ResponseHeadersPolicyAccessControlAllowMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyAccessControlAllowMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowMethods();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

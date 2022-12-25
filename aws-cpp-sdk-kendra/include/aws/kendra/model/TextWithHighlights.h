@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TextWithHighlights">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API TextWithHighlights
+  class TextWithHighlights
   {
   public:
-    TextWithHighlights();
-    TextWithHighlights(Aws::Utils::Json::JsonView jsonValue);
-    TextWithHighlights& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TextWithHighlights();
+    AWS_KENDRA_API TextWithHighlights(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TextWithHighlights& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::Vector<Highlight> m_highlights;
-    bool m_highlightsHasBeenSet;
+    bool m_highlightsHasBeenSet = false;
   };
 
 } // namespace Model

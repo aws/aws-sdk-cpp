@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ContactChannelAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ContactChannelAddress
+  class ContactChannelAddress
   {
   public:
-    ContactChannelAddress();
-    ContactChannelAddress(Aws::Utils::Json::JsonView jsonValue);
-    ContactChannelAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ContactChannelAddress();
+    AWS_SSMCONTACTS_API ContactChannelAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ContactChannelAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::String m_simpleAddress;
-    bool m_simpleAddressHasBeenSet;
+    bool m_simpleAddressHasBeenSet = false;
   };
 
 } // namespace Model

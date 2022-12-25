@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListDataSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API AppsListDataSummary
+  class AppsListDataSummary
   {
   public:
-    AppsListDataSummary();
-    AppsListDataSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppsListDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API AppsListDataSummary();
+    AWS_FMS_API AppsListDataSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API AppsListDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_listArn;
-    bool m_listArnHasBeenSet;
+    bool m_listArnHasBeenSet = false;
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
 
     Aws::String m_listName;
-    bool m_listNameHasBeenSet;
+    bool m_listNameHasBeenSet = false;
 
     Aws::Vector<App> m_appsList;
-    bool m_appsListHasBeenSet;
+    bool m_appsListHasBeenSet = false;
   };
 
 } // namespace Model

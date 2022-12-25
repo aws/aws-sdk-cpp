@@ -39,7 +39,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_aCLNameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(false),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -91,7 +93,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -132,7 +134,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_snapshotArnsHasBeenSet)
   {
-   Array<JsonValue> snapshotArnsJsonList(m_snapshotArns.size());
+   Aws::Utils::Array<JsonValue> snapshotArnsJsonList(m_snapshotArns.size());
    for(unsigned snapshotArnsIndex = 0; snapshotArnsIndex < snapshotArnsJsonList.GetLength(); ++snapshotArnsIndex)
    {
      snapshotArnsJsonList[snapshotArnsIndex].AsString(m_snapshotArns[snapshotArnsIndex]);
@@ -155,7 +157,7 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -185,6 +187,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
+
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+   payload.WithBool("DataTiering", m_dataTiering);
 
   }
 

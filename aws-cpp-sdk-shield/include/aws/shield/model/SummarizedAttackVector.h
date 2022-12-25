@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SummarizedAttackVector">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API SummarizedAttackVector
+  class SummarizedAttackVector
   {
   public:
-    SummarizedAttackVector();
-    SummarizedAttackVector(Aws::Utils::Json::JsonView jsonValue);
-    SummarizedAttackVector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API SummarizedAttackVector();
+    AWS_SHIELD_API SummarizedAttackVector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API SummarizedAttackVector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_vectorType;
-    bool m_vectorTypeHasBeenSet;
+    bool m_vectorTypeHasBeenSet = false;
 
     Aws::Vector<SummarizedCounter> m_vectorCounters;
-    bool m_vectorCountersHasBeenSet;
+    bool m_vectorCountersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ProductionVariants"))
   {
-    Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
+    Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
     for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
     {
       m_productionVariants.push_back(productionVariantsJsonList[productionVariantsIndex].AsObject());
@@ -71,6 +71,21 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
   {
     m_asyncInferenceConfig = jsonValue.GetObject("AsyncInferenceConfig");
 
+  }
+
+  if(jsonValue.ValueExists("ExplainerConfig"))
+  {
+    m_explainerConfig = jsonValue.GetObject("ExplainerConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ShadowProductionVariants"))
+  {
+    Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
+    for(unsigned shadowProductionVariantsIndex = 0; shadowProductionVariantsIndex < shadowProductionVariantsJsonList.GetLength(); ++shadowProductionVariantsIndex)
+    {
+      m_shadowProductionVariants.push_back(shadowProductionVariantsJsonList[shadowProductionVariantsIndex].AsObject());
+    }
   }
 
 

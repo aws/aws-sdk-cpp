@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/FeaturizationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API FeaturizationConfig
+  class FeaturizationConfig
   {
   public:
-    FeaturizationConfig();
-    FeaturizationConfig(Aws::Utils::Json::JsonView jsonValue);
-    FeaturizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API FeaturizationConfig();
+    AWS_FORECASTSERVICE_API FeaturizationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API FeaturizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -311,13 +311,13 @@ namespace Model
   private:
 
     Aws::String m_forecastFrequency;
-    bool m_forecastFrequencyHasBeenSet;
+    bool m_forecastFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastDimensions;
-    bool m_forecastDimensionsHasBeenSet;
+    bool m_forecastDimensionsHasBeenSet = false;
 
     Aws::Vector<Featurization> m_featurizations;
-    bool m_featurizationsHasBeenSet;
+    bool m_featurizationsHasBeenSet = false;
   };
 
 } // namespace Model

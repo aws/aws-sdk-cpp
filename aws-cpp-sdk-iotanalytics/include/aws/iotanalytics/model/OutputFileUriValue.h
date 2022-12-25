@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/OutputFileUriValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API OutputFileUriValue
+  class OutputFileUriValue
   {
   public:
-    OutputFileUriValue();
-    OutputFileUriValue(Aws::Utils::Json::JsonView jsonValue);
-    OutputFileUriValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API OutputFileUriValue();
+    AWS_IOTANALYTICS_API OutputFileUriValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API OutputFileUriValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_fileName;
-    bool m_fileNameHasBeenSet;
+    bool m_fileNameHasBeenSet = false;
   };
 
 } // namespace Model

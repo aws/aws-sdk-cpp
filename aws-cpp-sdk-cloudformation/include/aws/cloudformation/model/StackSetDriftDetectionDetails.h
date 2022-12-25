@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetDriftDetectionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails
+  class StackSetDriftDetectionDetails
   {
   public:
-    StackSetDriftDetectionDetails();
-    StackSetDriftDetectionDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSetDriftDetectionDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails();
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -409,28 +409,28 @@ namespace Model
   private:
 
     StackSetDriftStatus m_driftStatus;
-    bool m_driftStatusHasBeenSet;
+    bool m_driftStatusHasBeenSet = false;
 
     StackSetDriftDetectionStatus m_driftDetectionStatus;
-    bool m_driftDetectionStatusHasBeenSet;
+    bool m_driftDetectionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
-    bool m_lastDriftCheckTimestampHasBeenSet;
+    bool m_lastDriftCheckTimestampHasBeenSet = false;
 
     int m_totalStackInstancesCount;
-    bool m_totalStackInstancesCountHasBeenSet;
+    bool m_totalStackInstancesCountHasBeenSet = false;
 
     int m_driftedStackInstancesCount;
-    bool m_driftedStackInstancesCountHasBeenSet;
+    bool m_driftedStackInstancesCountHasBeenSet = false;
 
     int m_inSyncStackInstancesCount;
-    bool m_inSyncStackInstancesCountHasBeenSet;
+    bool m_inSyncStackInstancesCountHasBeenSet = false;
 
     int m_inProgressStackInstancesCount;
-    bool m_inProgressStackInstancesCountHasBeenSet;
+    bool m_inProgressStackInstancesCountHasBeenSet = false;
 
     int m_failedStackInstancesCount;
-    bool m_failedStackInstancesCountHasBeenSet;
+    bool m_failedStackInstancesCountHasBeenSet = false;
   };
 
 } // namespace Model

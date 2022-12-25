@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CloudFrontOriginAccessIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity
+  class CloudFrontOriginAccessIdentity
   {
   public:
-    CloudFrontOriginAccessIdentity();
-    CloudFrontOriginAccessIdentity(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudFrontOriginAccessIdentity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity();
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -89,101 +89,93 @@ namespace Model
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline const Aws::String& GetS3CanonicalUserId() const{ return m_s3CanonicalUserId; }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline bool S3CanonicalUserIdHasBeenSet() const { return m_s3CanonicalUserIdHasBeenSet; }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline void SetS3CanonicalUserId(const Aws::String& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline void SetS3CanonicalUserId(Aws::String&& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = std::move(value); }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline void SetS3CanonicalUserId(const char* value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId.assign(value); }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(const Aws::String& value) { SetS3CanonicalUserId(value); return *this;}
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(Aws::String&& value) { SetS3CanonicalUserId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
-     * giving the origin access identity read permission to an object in Amazon S3.
-     * </p>
+     * giving the origin access identity read permission to an object in Amazon S3.</p>
      */
     inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(const char* value) { SetS3CanonicalUserId(value); return *this;}
 
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline bool CloudFrontOriginAccessIdentityConfigHasBeenSet() const { return m_cloudFrontOriginAccessIdentityConfigHasBeenSet; }
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline CloudFrontOriginAccessIdentity& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
 
     /**
-     * <p>The current configuration information for the identity. </p>
+     * <p>The current configuration information for the identity.</p>
      */
     inline CloudFrontOriginAccessIdentity& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_s3CanonicalUserId;
-    bool m_s3CanonicalUserIdHasBeenSet;
+    bool m_s3CanonicalUserIdHasBeenSet = false;
 
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
-    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
+    bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet = false;
   };
 
 } // namespace Model

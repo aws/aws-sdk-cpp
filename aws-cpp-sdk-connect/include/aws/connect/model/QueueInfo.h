@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QueueInfo
+  class QueueInfo
   {
   public:
-    QueueInfo();
-    QueueInfo(Aws::Utils::Json::JsonView jsonValue);
-    QueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QueueInfo();
+    AWS_CONNECT_API QueueInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QueueInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline QueueInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline QueueInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the agent who accepted the contact.</p>
+     * <p>The unique identifier for the queue.</p>
      */
     inline QueueInfo& WithId(const char* value) { SetId(value); return *this;}
 
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_enqueueTimestamp;
-    bool m_enqueueTimestampHasBeenSet;
+    bool m_enqueueTimestampHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EmergencyContact">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API EmergencyContact
+  class EmergencyContact
   {
   public:
-    EmergencyContact();
-    EmergencyContact(Aws::Utils::Json::JsonView jsonValue);
-    EmergencyContact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API EmergencyContact();
+    AWS_SHIELD_API EmergencyContact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API EmergencyContact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_contactNotes;
-    bool m_contactNotesHasBeenSet;
+    bool m_contactNotesHasBeenSet = false;
   };
 
 } // namespace Model

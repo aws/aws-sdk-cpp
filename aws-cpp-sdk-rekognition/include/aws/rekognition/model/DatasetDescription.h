@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DatasetDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DatasetDescription
+  class DatasetDescription
   {
   public:
-    DatasetDescription();
-    DatasetDescription(Aws::Utils::Json::JsonView jsonValue);
-    DatasetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DatasetDescription();
+    AWS_REKOGNITION_API DatasetDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DatasetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     DatasetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     DatasetStatusMessageCode m_statusMessageCode;
-    bool m_statusMessageCodeHasBeenSet;
+    bool m_statusMessageCodeHasBeenSet = false;
 
     DatasetStats m_datasetStats;
-    bool m_datasetStatsHasBeenSet;
+    bool m_datasetStatsHasBeenSet = false;
   };
 
 } // namespace Model

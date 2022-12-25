@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StaticValue">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API StaticValue
+  class StaticValue
   {
   public:
-    StaticValue();
-    StaticValue(Aws::Utils::Json::JsonView jsonValue);
-    StaticValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API StaticValue();
+    AWS_CONFIGSERVICE_API StaticValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API StaticValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

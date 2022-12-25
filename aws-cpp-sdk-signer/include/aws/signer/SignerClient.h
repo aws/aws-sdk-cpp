@@ -5,141 +5,16 @@
 
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
-#include <aws/signer/SignerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/signer/model/AddProfilePermissionResult.h>
-#include <aws/signer/model/DescribeSigningJobResult.h>
-#include <aws/signer/model/GetSigningPlatformResult.h>
-#include <aws/signer/model/GetSigningProfileResult.h>
-#include <aws/signer/model/ListProfilePermissionsResult.h>
-#include <aws/signer/model/ListSigningJobsResult.h>
-#include <aws/signer/model/ListSigningPlatformsResult.h>
-#include <aws/signer/model/ListSigningProfilesResult.h>
-#include <aws/signer/model/ListTagsForResourceResult.h>
-#include <aws/signer/model/PutSigningProfileResult.h>
-#include <aws/signer/model/RemoveProfilePermissionResult.h>
-#include <aws/signer/model/StartSigningJobResult.h>
-#include <aws/signer/model/TagResourceResult.h>
-#include <aws/signer/model/UntagResourceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/signer/SignerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace signer
 {
-
-namespace Model
-{
-        class AddProfilePermissionRequest;
-        class CancelSigningProfileRequest;
-        class DescribeSigningJobRequest;
-        class GetSigningPlatformRequest;
-        class GetSigningProfileRequest;
-        class ListProfilePermissionsRequest;
-        class ListSigningJobsRequest;
-        class ListSigningPlatformsRequest;
-        class ListSigningProfilesRequest;
-        class ListTagsForResourceRequest;
-        class PutSigningProfileRequest;
-        class RemoveProfilePermissionRequest;
-        class RevokeSignatureRequest;
-        class RevokeSigningProfileRequest;
-        class StartSigningJobRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<AddProfilePermissionResult, SignerError> AddProfilePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> CancelSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeSigningJobResult, SignerError> DescribeSigningJobOutcome;
-        typedef Aws::Utils::Outcome<GetSigningPlatformResult, SignerError> GetSigningPlatformOutcome;
-        typedef Aws::Utils::Outcome<GetSigningProfileResult, SignerError> GetSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<ListProfilePermissionsResult, SignerError> ListProfilePermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListSigningJobsResult, SignerError> ListSigningJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSigningPlatformsResult, SignerError> ListSigningPlatformsOutcome;
-        typedef Aws::Utils::Outcome<ListSigningProfilesResult, SignerError> ListSigningProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SignerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutSigningProfileResult, SignerError> PutSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<RemoveProfilePermissionResult, SignerError> RemoveProfilePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> RevokeSignatureOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> RevokeSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<StartSigningJobResult, SignerError> StartSigningJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, SignerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, SignerError> UntagResourceOutcome;
-
-        typedef std::future<AddProfilePermissionOutcome> AddProfilePermissionOutcomeCallable;
-        typedef std::future<CancelSigningProfileOutcome> CancelSigningProfileOutcomeCallable;
-        typedef std::future<DescribeSigningJobOutcome> DescribeSigningJobOutcomeCallable;
-        typedef std::future<GetSigningPlatformOutcome> GetSigningPlatformOutcomeCallable;
-        typedef std::future<GetSigningProfileOutcome> GetSigningProfileOutcomeCallable;
-        typedef std::future<ListProfilePermissionsOutcome> ListProfilePermissionsOutcomeCallable;
-        typedef std::future<ListSigningJobsOutcome> ListSigningJobsOutcomeCallable;
-        typedef std::future<ListSigningPlatformsOutcome> ListSigningPlatformsOutcomeCallable;
-        typedef std::future<ListSigningProfilesOutcome> ListSigningProfilesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutSigningProfileOutcome> PutSigningProfileOutcomeCallable;
-        typedef std::future<RemoveProfilePermissionOutcome> RemoveProfilePermissionOutcomeCallable;
-        typedef std::future<RevokeSignatureOutcome> RevokeSignatureOutcomeCallable;
-        typedef std::future<RevokeSigningProfileOutcome> RevokeSigningProfileOutcomeCallable;
-        typedef std::future<StartSigningJobOutcome> StartSigningJobOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class SignerClient;
-
-    typedef std::function<void(const SignerClient*, const Model::AddProfilePermissionRequest&, const Model::AddProfilePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddProfilePermissionResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::CancelSigningProfileRequest&, const Model::CancelSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSigningProfileResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::DescribeSigningJobRequest&, const Model::DescribeSigningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSigningJobResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::GetSigningPlatformRequest&, const Model::GetSigningPlatformOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningPlatformResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::GetSigningProfileRequest&, const Model::GetSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningProfileResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::ListProfilePermissionsRequest&, const Model::ListProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilePermissionsResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::ListSigningJobsRequest&, const Model::ListSigningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningJobsResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::ListSigningPlatformsRequest&, const Model::ListSigningPlatformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningPlatformsResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::ListSigningProfilesRequest&, const Model::ListSigningProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningProfilesResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::PutSigningProfileRequest&, const Model::PutSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSigningProfileResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::RemoveProfilePermissionRequest&, const Model::RemoveProfilePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveProfilePermissionResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::RevokeSignatureRequest&, const Model::RevokeSignatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSignatureResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::RevokeSigningProfileRequest&, const Model::RevokeSigningProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSigningProfileResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::StartSigningJobRequest&, const Model::StartSigningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSigningJobResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SignerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>AWS Signer is a fully managed code signing service to help you ensure the
    * trust and integrity of your code. </p> <p>AWS Signer supports the following
@@ -159,32 +34,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
    * Signer Developer Guide</a>.</p> <p/>
    */
-  class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient
+  class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SignerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SignerClient(const Aws::signer::SignerClientConfiguration& clientConfiguration = Aws::signer::SignerClientConfiguration(),
+                     std::shared_ptr<SignerEndpointProviderBase> endpointProvider = Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SignerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SignerClient(const Aws::Auth::AWSCredentials& credentials,
+                     std::shared_ptr<SignerEndpointProviderBase> endpointProvider = Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::signer::SignerClientConfiguration& clientConfiguration = Aws::signer::SignerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SignerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<SignerEndpointProviderBase> endpointProvider = Aws::MakeShared<SignerEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::signer::SignerClientConfiguration& clientConfiguration = Aws::signer::SignerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SignerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SignerClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SignerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SignerClient();
-
 
         /**
          * <p>Adds cross-account permissions to a signing profile.</p><p><h3>See Also:</h3>
@@ -538,29 +441,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SignerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddProfilePermissionAsyncHelper(const Model::AddProfilePermissionRequest& request, const AddProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelSigningProfileAsyncHelper(const Model::CancelSigningProfileRequest& request, const CancelSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSigningJobAsyncHelper(const Model::DescribeSigningJobRequest& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSigningPlatformAsyncHelper(const Model::GetSigningPlatformRequest& request, const GetSigningPlatformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSigningProfileAsyncHelper(const Model::GetSigningProfileRequest& request, const GetSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfilePermissionsAsyncHelper(const Model::ListProfilePermissionsRequest& request, const ListProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSigningJobsAsyncHelper(const Model::ListSigningJobsRequest& request, const ListSigningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSigningPlatformsAsyncHelper(const Model::ListSigningPlatformsRequest& request, const ListSigningPlatformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSigningProfilesAsyncHelper(const Model::ListSigningProfilesRequest& request, const ListSigningProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSigningProfileAsyncHelper(const Model::PutSigningProfileRequest& request, const PutSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveProfilePermissionAsyncHelper(const Model::RemoveProfilePermissionRequest& request, const RemoveProfilePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RevokeSignatureAsyncHelper(const Model::RevokeSignatureRequest& request, const RevokeSignatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RevokeSigningProfileAsyncHelper(const Model::RevokeSigningProfileRequest& request, const RevokeSigningProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSigningJobAsyncHelper(const Model::StartSigningJobRequest& request, const StartSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>;
+      void init(const SignerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      SignerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SignerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace signer

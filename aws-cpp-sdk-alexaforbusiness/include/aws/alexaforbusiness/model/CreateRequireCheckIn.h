@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRequireCheckIn">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API CreateRequireCheckIn
+  class CreateRequireCheckIn
   {
   public:
-    CreateRequireCheckIn();
-    CreateRequireCheckIn(Aws::Utils::Json::JsonView jsonValue);
-    CreateRequireCheckIn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API CreateRequireCheckIn();
+    AWS_ALEXAFORBUSINESS_API CreateRequireCheckIn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API CreateRequireCheckIn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_releaseAfterMinutes;
-    bool m_releaseAfterMinutesHasBeenSet;
+    bool m_releaseAfterMinutesHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

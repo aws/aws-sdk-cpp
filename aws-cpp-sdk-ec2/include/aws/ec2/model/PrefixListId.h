@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixListId">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PrefixListId
+  class PrefixListId
   {
   public:
-    PrefixListId();
-    PrefixListId(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrefixListId& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrefixListId();
+    AWS_EC2_API PrefixListId(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrefixListId& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
   };
 
 } // namespace Model

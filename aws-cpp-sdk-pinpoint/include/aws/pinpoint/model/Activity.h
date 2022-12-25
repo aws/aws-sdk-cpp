@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Activity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API Activity
+  class Activity
   {
   public:
-    Activity();
-    Activity(Aws::Utils::Json::JsonView jsonValue);
-    Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API Activity();
+    AWS_PINPOINT_API Activity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -485,37 +485,37 @@ namespace Model
   private:
 
     CustomMessageActivity m_cUSTOM;
-    bool m_cUSTOMHasBeenSet;
+    bool m_cUSTOMHasBeenSet = false;
 
     ConditionalSplitActivity m_conditionalSplit;
-    bool m_conditionalSplitHasBeenSet;
+    bool m_conditionalSplitHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EmailMessageActivity m_eMAIL;
-    bool m_eMAILHasBeenSet;
+    bool m_eMAILHasBeenSet = false;
 
     HoldoutActivity m_holdout;
-    bool m_holdoutHasBeenSet;
+    bool m_holdoutHasBeenSet = false;
 
     MultiConditionalSplitActivity m_multiCondition;
-    bool m_multiConditionHasBeenSet;
+    bool m_multiConditionHasBeenSet = false;
 
     PushMessageActivity m_pUSH;
-    bool m_pUSHHasBeenSet;
+    bool m_pUSHHasBeenSet = false;
 
     RandomSplitActivity m_randomSplit;
-    bool m_randomSplitHasBeenSet;
+    bool m_randomSplitHasBeenSet = false;
 
     SMSMessageActivity m_sMS;
-    bool m_sMSHasBeenSet;
+    bool m_sMSHasBeenSet = false;
 
     WaitActivity m_wait;
-    bool m_waitHasBeenSet;
+    bool m_waitHasBeenSet = false;
 
     ContactCenterActivity m_contactCenter;
-    bool m_contactCenterHasBeenSet;
+    bool m_contactCenterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/WebvttDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API WebvttDestinationSettings
+  class WebvttDestinationSettings
   {
   public:
-    WebvttDestinationSettings();
-    WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API WebvttDestinationSettings();
+    AWS_MEDIALIVE_API WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     WebvttDestinationStyleControl m_styleControl;
-    bool m_styleControlHasBeenSet;
+    bool m_styleControlHasBeenSet = false;
   };
 
 } // namespace Model

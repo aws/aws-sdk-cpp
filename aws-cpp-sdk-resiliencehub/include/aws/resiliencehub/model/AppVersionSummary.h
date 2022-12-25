@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AppVersionSummary
+  class AppVersionSummary
   {
   public:
-    AppVersionSummary();
-    AppVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AppVersionSummary();
+    AWS_RESILIENCEHUB_API AppVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AppVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
   };
 
 } // namespace Model

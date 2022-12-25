@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API MaintenanceWindowIdentity
+  class MaintenanceWindowIdentity
   {
   public:
-    MaintenanceWindowIdentity();
-    MaintenanceWindowIdentity(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceWindowIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API MaintenanceWindowIdentity();
+    AWS_SSM_API MaintenanceWindowIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API MaintenanceWindowIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -499,40 +499,40 @@ namespace Model
   private:
 
     Aws::String m_windowId;
-    bool m_windowIdHasBeenSet;
+    bool m_windowIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     int m_cutoff;
-    bool m_cutoffHasBeenSet;
+    bool m_cutoffHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::String m_scheduleTimezone;
-    bool m_scheduleTimezoneHasBeenSet;
+    bool m_scheduleTimezoneHasBeenSet = false;
 
     int m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_nextExecutionTime;
-    bool m_nextExecutionTimeHasBeenSet;
+    bool m_nextExecutionTimeHasBeenSet = false;
   };
 
 } // namespace Model

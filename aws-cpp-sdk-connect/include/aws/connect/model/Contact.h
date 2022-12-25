@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Contact">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECT_API Contact
+  class Contact
   {
   public:
-    Contact();
-    Contact(Aws::Utils::Json::JsonView jsonValue);
-    Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Contact();
+    AWS_CONNECT_API Contact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -596,46 +596,46 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_initialContactId;
-    bool m_initialContactIdHasBeenSet;
+    bool m_initialContactIdHasBeenSet = false;
 
     Aws::String m_previousContactId;
-    bool m_previousContactIdHasBeenSet;
+    bool m_previousContactIdHasBeenSet = false;
 
     ContactInitiationMethod m_initiationMethod;
-    bool m_initiationMethodHasBeenSet;
+    bool m_initiationMethodHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     QueueInfo m_queueInfo;
-    bool m_queueInfoHasBeenSet;
+    bool m_queueInfoHasBeenSet = false;
 
     AgentInfo m_agentInfo;
-    bool m_agentInfoHasBeenSet;
+    bool m_agentInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_initiationTimestamp;
-    bool m_initiationTimestampHasBeenSet;
+    bool m_initiationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_disconnectTimestamp;
-    bool m_disconnectTimestampHasBeenSet;
+    bool m_disconnectTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTimestamp;
-    bool m_scheduledTimestampHasBeenSet;
+    bool m_scheduledTimestampHasBeenSet = false;
   };
 
 } // namespace Model

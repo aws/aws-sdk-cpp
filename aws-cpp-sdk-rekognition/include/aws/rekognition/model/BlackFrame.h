@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/BlackFrame">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API BlackFrame
+  class BlackFrame
   {
   public:
-    BlackFrame();
-    BlackFrame(Aws::Utils::Json::JsonView jsonValue);
-    BlackFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API BlackFrame();
+    AWS_REKOGNITION_API BlackFrame(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API BlackFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     double m_maxPixelThreshold;
-    bool m_maxPixelThresholdHasBeenSet;
+    bool m_maxPixelThresholdHasBeenSet = false;
 
     double m_minCoveragePercentage;
-    bool m_minCoveragePercentageHasBeenSet;
+    bool m_minCoveragePercentageHasBeenSet = false;
   };
 
 } // namespace Model

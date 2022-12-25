@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Scope">AWS API
    * Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API Scope
+  class Scope
   {
   public:
-    Scope();
-    Scope(Aws::Utils::Json::JsonView jsonValue);
-    Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API Scope();
+    AWS_CONFIGSERVICE_API Scope(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_complianceResourceTypes;
-    bool m_complianceResourceTypesHasBeenSet;
+    bool m_complianceResourceTypesHasBeenSet = false;
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::String m_tagValue;
-    bool m_tagValueHasBeenSet;
+    bool m_tagValueHasBeenSet = false;
 
     Aws::String m_complianceResourceId;
-    bool m_complianceResourceIdHasBeenSet;
+    bool m_complianceResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/KnownGender">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API KnownGender
+  class KnownGender
   {
   public:
-    KnownGender();
-    KnownGender(Aws::Utils::Json::JsonView jsonValue);
-    KnownGender& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API KnownGender();
+    AWS_REKOGNITION_API KnownGender(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API KnownGender& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     KnownGenderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

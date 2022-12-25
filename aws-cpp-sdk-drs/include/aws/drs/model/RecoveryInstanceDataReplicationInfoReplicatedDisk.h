@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceDataReplicationInfoReplicatedDisk">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk
+  class RecoveryInstanceDataReplicationInfoReplicatedDisk
   {
   public:
-    RecoveryInstanceDataReplicationInfoReplicatedDisk();
-    RecoveryInstanceDataReplicationInfoReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceDataReplicationInfoReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk();
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,19 +164,19 @@ namespace Model
   private:
 
     long long m_backloggedStorageBytes;
-    bool m_backloggedStorageBytesHasBeenSet;
+    bool m_backloggedStorageBytesHasBeenSet = false;
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     long long m_replicatedStorageBytes;
-    bool m_replicatedStorageBytesHasBeenSet;
+    bool m_replicatedStorageBytesHasBeenSet = false;
 
     long long m_rescannedStorageBytes;
-    bool m_rescannedStorageBytesHasBeenSet;
+    bool m_rescannedStorageBytesHasBeenSet = false;
 
     long long m_totalStorageBytes;
-    bool m_totalStorageBytesHasBeenSet;
+    bool m_totalStorageBytesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoPreprocessor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API VideoPreprocessor
+  class VideoPreprocessor
   {
   public:
-    VideoPreprocessor();
-    VideoPreprocessor(Aws::Utils::Json::JsonView jsonValue);
-    VideoPreprocessor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API VideoPreprocessor();
+    AWS_MEDIACONVERT_API VideoPreprocessor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API VideoPreprocessor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -356,28 +356,28 @@ namespace Model
   private:
 
     ColorCorrector m_colorCorrector;
-    bool m_colorCorrectorHasBeenSet;
+    bool m_colorCorrectorHasBeenSet = false;
 
     Deinterlacer m_deinterlacer;
-    bool m_deinterlacerHasBeenSet;
+    bool m_deinterlacerHasBeenSet = false;
 
     DolbyVision m_dolbyVision;
-    bool m_dolbyVisionHasBeenSet;
+    bool m_dolbyVisionHasBeenSet = false;
 
     Hdr10Plus m_hdr10Plus;
-    bool m_hdr10PlusHasBeenSet;
+    bool m_hdr10PlusHasBeenSet = false;
 
     ImageInserter m_imageInserter;
-    bool m_imageInserterHasBeenSet;
+    bool m_imageInserterHasBeenSet = false;
 
     NoiseReducer m_noiseReducer;
-    bool m_noiseReducerHasBeenSet;
+    bool m_noiseReducerHasBeenSet = false;
 
     PartnerWatermarking m_partnerWatermarking;
-    bool m_partnerWatermarkingHasBeenSet;
+    bool m_partnerWatermarkingHasBeenSet = false;
 
     TimecodeBurnin m_timecodeBurnin;
-    bool m_timecodeBurninHasBeenSet;
+    bool m_timecodeBurninHasBeenSet = false;
   };
 
 } // namespace Model

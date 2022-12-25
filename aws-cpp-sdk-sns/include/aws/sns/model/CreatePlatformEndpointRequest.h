@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API CreatePlatformEndpointRequest : public SNSRequest
+  class CreatePlatformEndpointRequest : public SNSRequest
   {
   public:
-    CreatePlatformEndpointRequest();
+    AWS_SNS_API CreatePlatformEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePlatformEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -292,16 +292,16 @@ namespace Model
   private:
 
     Aws::String m_platformApplicationArn;
-    bool m_platformApplicationArnHasBeenSet;
+    bool m_platformApplicationArnHasBeenSet = false;
 
     Aws::String m_token;
-    bool m_tokenHasBeenSet;
+    bool m_tokenHasBeenSet = false;
 
     Aws::String m_customUserData;
-    bool m_customUserDataHasBeenSet;
+    bool m_customUserDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

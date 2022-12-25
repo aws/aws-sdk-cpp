@@ -26,47 +26,47 @@ namespace Model
 
   /**
    * <p>The configuration object of the Amazon Chime SDK meeting for a specified
-   * media capture pipeline. <code>SourceType</code> must be
+   * media pipeline. <code>SourceType</code> must be
    * <code>ChimeSdkMeeting</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ChimeSdkMeetingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConfiguration
+  class ChimeSdkMeetingConfiguration
   {
   public:
-    ChimeSdkMeetingConfiguration();
-    ChimeSdkMeetingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChimeSdkMeetingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline void SetSourceConfiguration(const SourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(const SourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
 
     /**
-     * <p>The source configuration for a specified media capture pipline.</p>
+     * <p>The source configuration for a specified media pipline.</p>
      */
     inline ChimeSdkMeetingConfiguration& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
 
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     SourceConfiguration m_sourceConfiguration;
-    bool m_sourceConfigurationHasBeenSet;
+    bool m_sourceConfigurationHasBeenSet = false;
 
     ArtifactsConfiguration m_artifactsConfiguration;
-    bool m_artifactsConfigurationHasBeenSet;
+    bool m_artifactsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

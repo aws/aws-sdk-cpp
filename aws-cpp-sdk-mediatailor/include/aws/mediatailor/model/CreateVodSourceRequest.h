@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API CreateVodSourceRequest : public MediaTailorRequest
+  class CreateVodSourceRequest : public MediaTailorRequest
   {
   public:
-    CreateVodSourceRequest();
+    AWS_MEDIATAILOR_API CreateVodSourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVodSource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -77,165 +77,217 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline CreateVodSourceRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline CreateVodSourceRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name of the source location for this VOD source.</p>
      */
     inline CreateVodSourceRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the VOD source.</p>
+     * <p>The tags to assign to the VOD source. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateVodSourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline const Aws::String& GetVodSourceName() const{ return m_vodSourceName; }
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline bool VodSourceNameHasBeenSet() const { return m_vodSourceNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline void SetVodSourceName(const Aws::String& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = value; }
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline void SetVodSourceName(Aws::String&& value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName = std::move(value); }
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline void SetVodSourceName(const char* value) { m_vodSourceNameHasBeenSet = true; m_vodSourceName.assign(value); }
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline CreateVodSourceRequest& WithVodSourceName(const Aws::String& value) { SetVodSourceName(value); return *this;}
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline CreateVodSourceRequest& WithVodSourceName(Aws::String&& value) { SetVodSourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the VOD source you are working on.</p>
+     * <p>The name associated with the VOD source.&gt;</p>
      */
     inline CreateVodSourceRequest& WithVodSourceName(const char* value) { SetVodSourceName(value); return *this;}
 
   private:
 
     Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-    bool m_httpPackageConfigurationsHasBeenSet;
+    bool m_httpPackageConfigurationsHasBeenSet = false;
 
     Aws::String m_sourceLocationName;
-    bool m_sourceLocationNameHasBeenSet;
+    bool m_sourceLocationNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vodSourceName;
-    bool m_vodSourceNameHasBeenSet;
+    bool m_vodSourceNameHasBeenSet = false;
   };
 
 } // namespace Model

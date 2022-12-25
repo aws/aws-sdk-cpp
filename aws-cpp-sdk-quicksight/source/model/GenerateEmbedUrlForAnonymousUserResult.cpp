@@ -42,6 +42,12 @@ GenerateEmbedUrlForAnonymousUserResult& GenerateEmbedUrlForAnonymousUserResult::
 
   }
 
+  if(jsonValue.ValueExists("AnonymousUserArn"))
+  {
+    m_anonymousUserArn = jsonValue.GetString("AnonymousUserArn");
+
+  }
+
 
 
   m_status = static_cast<int>(result.GetResponseCode());

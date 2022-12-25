@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTls">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListenerTls
+  class ListenerTls
   {
   public:
-    ListenerTls();
-    ListenerTls(Aws::Utils::Json::JsonView jsonValue);
-    ListenerTls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ListenerTls();
+    AWS_APPMESH_API ListenerTls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ListenerTls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     ListenerTlsCertificate m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     ListenerTlsMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     ListenerTlsValidationContext m_validation;
-    bool m_validationHasBeenSet;
+    bool m_validationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest
+  class RegisterWorkspaceDirectoryRequest : public WorkSpacesRequest
   {
   public:
-    RegisterWorkspaceDirectoryRequest();
+    AWS_WORKSPACES_API RegisterWorkspaceDirectoryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterWorkspaceDirectory"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -361,22 +361,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     bool m_enableWorkDocs;
-    bool m_enableWorkDocsHasBeenSet;
+    bool m_enableWorkDocsHasBeenSet = false;
 
     bool m_enableSelfService;
-    bool m_enableSelfServiceHasBeenSet;
+    bool m_enableSelfServiceHasBeenSet = false;
 
     Tenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

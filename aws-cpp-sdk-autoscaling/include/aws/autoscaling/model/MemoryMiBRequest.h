@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MemoryMiBRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API MemoryMiBRequest
+  class MemoryMiBRequest
   {
   public:
-    MemoryMiBRequest();
-    MemoryMiBRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MemoryMiBRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MemoryMiBRequest();
+    AWS_AUTOSCALING_API MemoryMiBRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API MemoryMiBRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
 
     int m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
   };
 
 } // namespace Model

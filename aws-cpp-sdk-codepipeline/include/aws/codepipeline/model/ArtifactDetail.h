@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactDetail
+  class ArtifactDetail
   {
   public:
-    ArtifactDetail();
-    ArtifactDetail(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactDetail();
+    AWS_CODEPIPELINE_API ArtifactDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     S3Location m_s3location;
-    bool m_s3locationHasBeenSet;
+    bool m_s3locationHasBeenSet = false;
   };
 
 } // namespace Model

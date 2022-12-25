@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducerTemporalFilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings
+  class NoiseReducerTemporalFilterSettings
   {
   public:
-    NoiseReducerTemporalFilterSettings();
-    NoiseReducerTemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    NoiseReducerTemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings();
+    AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NoiseReducerTemporalFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     int m_aggressiveMode;
-    bool m_aggressiveModeHasBeenSet;
+    bool m_aggressiveModeHasBeenSet = false;
 
     NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
-    bool m_postTemporalSharpeningHasBeenSet;
+    bool m_postTemporalSharpeningHasBeenSet = false;
 
     NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength;
-    bool m_postTemporalSharpeningStrengthHasBeenSet;
+    bool m_postTemporalSharpeningStrengthHasBeenSet = false;
 
     int m_speed;
-    bool m_speedHasBeenSet;
+    bool m_speedHasBeenSet = false;
 
     int m_strength;
-    bool m_strengthHasBeenSet;
+    bool m_strengthHasBeenSet = false;
   };
 
 } // namespace Model

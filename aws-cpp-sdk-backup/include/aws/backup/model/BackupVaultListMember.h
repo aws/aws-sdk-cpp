@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupVaultListMember">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupVaultListMember
+  class BackupVaultListMember
   {
   public:
-    BackupVaultListMember();
-    BackupVaultListMember(Aws::Utils::Json::JsonView jsonValue);
-    BackupVaultListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupVaultListMember();
+    AWS_BACKUP_API BackupVaultListMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupVaultListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -608,34 +608,34 @@ namespace Model
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_backupVaultArn;
-    bool m_backupVaultArnHasBeenSet;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     long long m_numberOfRecoveryPoints;
-    bool m_numberOfRecoveryPointsHasBeenSet;
+    bool m_numberOfRecoveryPointsHasBeenSet = false;
 
     bool m_locked;
-    bool m_lockedHasBeenSet;
+    bool m_lockedHasBeenSet = false;
 
     long long m_minRetentionDays;
-    bool m_minRetentionDaysHasBeenSet;
+    bool m_minRetentionDaysHasBeenSet = false;
 
     long long m_maxRetentionDays;
-    bool m_maxRetentionDaysHasBeenSet;
+    bool m_maxRetentionDaysHasBeenSet = false;
 
     Aws::Utils::DateTime m_lockDate;
-    bool m_lockDateHasBeenSet;
+    bool m_lockDateHasBeenSet = false;
   };
 
 } // namespace Model

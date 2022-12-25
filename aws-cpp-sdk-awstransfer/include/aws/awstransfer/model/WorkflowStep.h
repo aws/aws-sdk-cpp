@@ -10,6 +10,7 @@
 #include <aws/awstransfer/model/CustomStepDetails.h>
 #include <aws/awstransfer/model/DeleteStepDetails.h>
 #include <aws/awstransfer/model/TagStepDetails.h>
+#include <aws/awstransfer/model/DecryptStepDetails.h>
 #include <utility>
 
 namespace Aws
@@ -32,60 +33,66 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowStep">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API WorkflowStep
+  class WorkflowStep
   {
   public:
-    WorkflowStep();
-    WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API WorkflowStep();
+    AWS_TRANSFER_API WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline const WorkflowStepType& GetType() const{ return m_type; }
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline void SetType(const WorkflowStepType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline void SetType(WorkflowStepType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline WorkflowStep& WithType(const WorkflowStepType& value) { SetType(value); return *this;}
 
     /**
      * <p> Currently, the following step types are supported. </p> <ul> <li> <p>
-     * <i>COPY</i>: copy the file to another location</p> </li> <li> <p> <i>CUSTOM</i>:
-     * custom step with a lambda target</p> </li> <li> <p> <i>DELETE</i>: delete the
-     * file</p> </li> <li> <p> <i>TAG</i>: add a tag to the file</p> </li> </ul>
+     * <i>COPY</i>: Copy the file to another location.</p> </li> <li> <p>
+     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+     * <li> <p> <i>DELETE</i>: Delete the file.</p> </li> <li> <p> <i>TAG</i>: Add a
+     * tag to the file.</p> </li> </ul>
      */
     inline WorkflowStep& WithType(WorkflowStepType&& value) { SetType(std::move(value)); return *this;}
 
@@ -249,22 +256,44 @@ namespace Model
      */
     inline WorkflowStep& WithTagStepDetails(TagStepDetails&& value) { SetTagStepDetails(std::move(value)); return *this;}
 
+
+    
+    inline const DecryptStepDetails& GetDecryptStepDetails() const{ return m_decryptStepDetails; }
+
+    
+    inline bool DecryptStepDetailsHasBeenSet() const { return m_decryptStepDetailsHasBeenSet; }
+
+    
+    inline void SetDecryptStepDetails(const DecryptStepDetails& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = value; }
+
+    
+    inline void SetDecryptStepDetails(DecryptStepDetails&& value) { m_decryptStepDetailsHasBeenSet = true; m_decryptStepDetails = std::move(value); }
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(const DecryptStepDetails& value) { SetDecryptStepDetails(value); return *this;}
+
+    
+    inline WorkflowStep& WithDecryptStepDetails(DecryptStepDetails&& value) { SetDecryptStepDetails(std::move(value)); return *this;}
+
   private:
 
     WorkflowStepType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CopyStepDetails m_copyStepDetails;
-    bool m_copyStepDetailsHasBeenSet;
+    bool m_copyStepDetailsHasBeenSet = false;
 
     CustomStepDetails m_customStepDetails;
-    bool m_customStepDetailsHasBeenSet;
+    bool m_customStepDetailsHasBeenSet = false;
 
     DeleteStepDetails m_deleteStepDetails;
-    bool m_deleteStepDetailsHasBeenSet;
+    bool m_deleteStepDetailsHasBeenSet = false;
 
     TagStepDetails m_tagStepDetails;
-    bool m_tagStepDetailsHasBeenSet;
+    bool m_tagStepDetailsHasBeenSet = false;
+
+    DecryptStepDetails m_decryptStepDetails;
+    bool m_decryptStepDetailsHasBeenSet = false;
   };
 
 } // namespace Model

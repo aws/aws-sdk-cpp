@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Grantee">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3Grantee
+  class S3Grantee
   {
   public:
-    S3Grantee();
-    S3Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Grantee();
+    AWS_S3CONTROL_API S3Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     S3GranteeTypeIdentifier m_typeIdentifier;
-    bool m_typeIdentifierHasBeenSet;
+    bool m_typeIdentifierHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

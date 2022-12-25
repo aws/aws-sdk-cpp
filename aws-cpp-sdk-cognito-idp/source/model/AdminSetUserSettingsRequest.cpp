@@ -37,7 +37,7 @@ Aws::String AdminSetUserSettingsRequest::SerializePayload() const
 
   if(m_mFAOptionsHasBeenSet)
   {
-   Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
+   Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
    for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
    {
      mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());

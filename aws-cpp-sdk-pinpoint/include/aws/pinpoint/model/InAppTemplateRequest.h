@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppTemplateRequest
+  class InAppTemplateRequest
   {
   public:
-    InAppTemplateRequest();
-    InAppTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
-    InAppTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppTemplateRequest();
+    AWS_PINPOINT_API InAppTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -330,19 +330,19 @@ namespace Model
   private:
 
     Aws::Vector<InAppMessageContent> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customConfig;
-    bool m_customConfigHasBeenSet;
+    bool m_customConfigHasBeenSet = false;
 
     Layout m_layout;
-    bool m_layoutHasBeenSet;
+    bool m_layoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_templateDescription;
-    bool m_templateDescriptionHasBeenSet;
+    bool m_templateDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

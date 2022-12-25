@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/LogConfigurations">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API LogConfigurations
+  class LogConfigurations
   {
   public:
-    LogConfigurations();
-    LogConfigurations(Aws::Utils::Json::JsonView jsonValue);
-    LogConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API LogConfigurations();
+    AWS_MANAGEDBLOCKCHAIN_API LogConfigurations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API LogConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LogConfiguration m_cloudwatch;
-    bool m_cloudwatchHasBeenSet;
+    bool m_cloudwatchHasBeenSet = false;
   };
 
 } // namespace Model

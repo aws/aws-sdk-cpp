@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchRuleGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchRuleGroup
+  class PatchRuleGroup
   {
   public:
-    PatchRuleGroup();
-    PatchRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-    PatchRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchRuleGroup();
+    AWS_SSM_API PatchRuleGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PatchRule> m_patchRules;
-    bool m_patchRulesHasBeenSet;
+    bool m_patchRulesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpPermission">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API IpPermission
+  class IpPermission
   {
   public:
-    IpPermission();
-    IpPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IpPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpPermission();
+    AWS_EC2_API IpPermission(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpPermission& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -382,25 +382,25 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     Aws::String m_ipProtocol;
-    bool m_ipProtocolHasBeenSet;
+    bool m_ipProtocolHasBeenSet = false;
 
     Aws::Vector<IpRange> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::Vector<Ipv6Range> m_ipv6Ranges;
-    bool m_ipv6RangesHasBeenSet;
+    bool m_ipv6RangesHasBeenSet = false;
 
     Aws::Vector<PrefixListId> m_prefixListIds;
-    bool m_prefixListIdsHasBeenSet;
+    bool m_prefixListIdsHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
-    bool m_userIdGroupPairsHasBeenSet;
+    bool m_userIdGroupPairsHasBeenSet = false;
   };
 
 } // namespace Model

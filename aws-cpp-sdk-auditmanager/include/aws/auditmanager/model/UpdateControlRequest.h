@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API UpdateControlRequest : public AuditManagerRequest
+  class UpdateControlRequest : public AuditManagerRequest
   {
   public:
-    UpdateControlRequest();
+    AWS_AUDITMANAGER_API UpdateControlRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateControl"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_controlId;
-    bool m_controlIdHasBeenSet;
+    bool m_controlIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_testingInformation;
-    bool m_testingInformationHasBeenSet;
+    bool m_testingInformationHasBeenSet = false;
 
     Aws::String m_actionPlanTitle;
-    bool m_actionPlanTitleHasBeenSet;
+    bool m_actionPlanTitleHasBeenSet = false;
 
     Aws::String m_actionPlanInstructions;
-    bool m_actionPlanInstructionsHasBeenSet;
+    bool m_actionPlanInstructionsHasBeenSet = false;
 
     Aws::Vector<ControlMappingSource> m_controlMappingSources;
-    bool m_controlMappingSourcesHasBeenSet;
+    bool m_controlMappingSourcesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Preset">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Preset
+  class Preset
   {
   public:
-    Preset();
-    Preset(Aws::Utils::Json::JsonView jsonValue);
-    Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Preset();
+    AWS_ELASTICTRANSCODER_API Preset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,31 +452,31 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     AudioParameters m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoParameters m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     Thumbnails m_thumbnails;
-    bool m_thumbnailsHasBeenSet;
+    bool m_thumbnailsHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

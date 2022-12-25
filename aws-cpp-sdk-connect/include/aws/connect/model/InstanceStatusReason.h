@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/InstanceStatusReason">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API InstanceStatusReason
+  class InstanceStatusReason
   {
   public:
-    InstanceStatusReason();
-    InstanceStatusReason(Aws::Utils::Json::JsonView jsonValue);
-    InstanceStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API InstanceStatusReason();
+    AWS_CONNECT_API InstanceStatusReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API InstanceStatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

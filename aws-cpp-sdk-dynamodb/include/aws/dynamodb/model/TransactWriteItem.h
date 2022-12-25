@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItem">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TransactWriteItem
+  class TransactWriteItem
   {
   public:
-    TransactWriteItem();
-    TransactWriteItem(Aws::Utils::Json::JsonView jsonValue);
-    TransactWriteItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TransactWriteItem();
+    AWS_DYNAMODB_API TransactWriteItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TransactWriteItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     ConditionCheck m_conditionCheck;
-    bool m_conditionCheckHasBeenSet;
+    bool m_conditionCheckHasBeenSet = false;
 
     Put m_put;
-    bool m_putHasBeenSet;
+    bool m_putHasBeenSet = false;
 
     Delete m_delete;
-    bool m_deleteHasBeenSet;
+    bool m_deleteHasBeenSet = false;
 
     Update m_update;
-    bool m_updateHasBeenSet;
+    bool m_updateHasBeenSet = false;
   };
 
 } // namespace Model

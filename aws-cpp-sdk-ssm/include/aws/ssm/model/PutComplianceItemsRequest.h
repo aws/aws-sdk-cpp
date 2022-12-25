@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API PutComplianceItemsRequest : public SSMRequest
+  class PutComplianceItemsRequest : public SSMRequest
   {
   public:
-    PutComplianceItemsRequest();
+    AWS_SSM_API PutComplianceItemsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutComplianceItems"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -421,25 +421,25 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     ComplianceExecutionSummary m_executionSummary;
-    bool m_executionSummaryHasBeenSet;
+    bool m_executionSummaryHasBeenSet = false;
 
     Aws::Vector<ComplianceItemEntry> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_itemContentHash;
-    bool m_itemContentHashHasBeenSet;
+    bool m_itemContentHashHasBeenSet = false;
 
     ComplianceUploadType m_uploadType;
-    bool m_uploadTypeHasBeenSet;
+    bool m_uploadTypeHasBeenSet = false;
   };
 
 } // namespace Model

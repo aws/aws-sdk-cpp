@@ -47,7 +47,7 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
 
   if(m_purchaseTimeHasBeenSet)
   {
-    ss << "PurchaseTime=" << StringUtils::URLEncode(m_purchaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "PurchaseTime=" << StringUtils::URLEncode(m_purchaseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

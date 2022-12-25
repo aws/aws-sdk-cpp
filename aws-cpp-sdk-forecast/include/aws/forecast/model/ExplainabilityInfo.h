@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ExplainabilityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ExplainabilityInfo
+  class ExplainabilityInfo
   {
   public:
-    ExplainabilityInfo();
-    ExplainabilityInfo(Aws::Utils::Json::JsonView jsonValue);
-    ExplainabilityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ExplainabilityInfo();
+    AWS_FORECASTSERVICE_API ExplainabilityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ExplainabilityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_explainabilityArn;
-    bool m_explainabilityArnHasBeenSet;
+    bool m_explainabilityArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Checksum">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Checksum
+  class Checksum
   {
   public:
-    Checksum();
-    Checksum(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Checksum& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Checksum();
+    AWS_S3CRT_API Checksum(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Checksum& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -364,16 +364,16 @@ namespace Model
   private:
 
     Aws::String m_checksumCRC32;
-    bool m_checksumCRC32HasBeenSet;
+    bool m_checksumCRC32HasBeenSet = false;
 
     Aws::String m_checksumCRC32C;
-    bool m_checksumCRC32CHasBeenSet;
+    bool m_checksumCRC32CHasBeenSet = false;
 
     Aws::String m_checksumSHA1;
-    bool m_checksumSHA1HasBeenSet;
+    bool m_checksumSHA1HasBeenSet = false;
 
     Aws::String m_checksumSHA256;
-    bool m_checksumSHA256HasBeenSet;
+    bool m_checksumSHA256HasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,28 +22,22 @@ namespace Model
 {
 
   /**
-   * <p>Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A
-   * target-based policy tracks a particular fleet metric specifies a target value
-   * for the metric. As player usage changes, the policy triggers Amazon GameLift to
-   * adjust capacity so that the metric returns to the target value. The target
-   * configuration specifies settings as needed for the target based policy,
-   * including the target value. </p> <p> <b>Related actions</b> </p> <p>
-   * <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> |
-   * <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> |
-   * <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> |
-   * <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * <p>Settings for a target-based scaling policy. A target-based policy tracks a
+   * particular fleet metric specifies a target value for the metric. As player usage
+   * changes, the policy triggers Amazon GameLift to adjust capacity so that the
+   * metric returns to the target value. The target configuration specifies settings
+   * as needed for the target based policy, including the target value.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TargetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API TargetConfiguration
+  class TargetConfiguration
   {
   public:
-    TargetConfiguration();
-    TargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API TargetConfiguration();
+    AWS_GAMELIFT_API TargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API TargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +79,7 @@ namespace Model
   private:
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
   };
 
 } // namespace Model

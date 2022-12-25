@@ -28,19 +28,18 @@ namespace Model
   /**
    * <p>Log entry describing an event that involves GameLift resources (such as a
    * fleet). In addition to tracking activity, event codes and messages can provide
-   * additional information for troubleshooting and debugging problems.</p> <p>
-   * <b>Related actions</b> </p> <p> <a>DescribeFleetEvents</a> </p><p><h3>See
+   * additional information for troubleshooting and debugging problems.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event">AWS API
    * Reference</a></p>
    */
-  class AWS_GAMELIFT_API Event
+  class Event
   {
   public:
-    Event();
-    Event(Aws::Utils::Json::JsonView jsonValue);
-    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Event();
+    AWS_GAMELIFT_API Event(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,23 +188,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -299,23 +298,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -409,23 +408,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -519,23 +518,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -629,23 +628,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -739,23 +738,23 @@ namespace Model
      * <p>FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established
      * between the VPC for an GameLift fleet and a VPC in your Amazon Web Services
      * account.</p> </li> <li> <p>FLEET_VPC_PEERING_FAILED -- A requested VPC peering
-     * connection has failed. Event details and status information (see
-     * <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason
-     * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
-     * addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web
-     * Services account. For more information on VPC peering failures, see <a
+     * connection has failed. Event details and status information provide additional
+     * detail. A common reason for peering failure is that the two VPCs have
+     * overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR
+     * block for the VPC in your Amazon Web Services account. For more information on
+     * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Spot process events:</b>
-     * </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or
-     * script could not be found based on the Fleet runtime configuration. Check that
-     * the launch path is correct based on the operating system of the Fleet.</p> </li>
-     * <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not
-     * call InitSDK() within the time expected. Check your game session log to see why
-     * InitSDK() was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
+     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
+     * executable or script could not be found based on the Fleet runtime
+     * configuration. Check that the launch path is correct based on the operating
+     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
+     * -- The server process did not call InitSDK() within the time expected. Check
+     * your game session log to see why InitSDK() was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * ProcessReady() within the time expected after calling InitSDK(). Check your game
      * session log to see why ProcessReady() was not called in time.</p> </li> <li>
      * <p>SERVER_PROCESS_CRASHED -- The server process exited without calling
@@ -923,22 +922,22 @@ namespace Model
   private:
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     EventCode m_eventCode;
-    bool m_eventCodeHasBeenSet;
+    bool m_eventCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_preSignedLogUrl;
-    bool m_preSignedLogUrlHasBeenSet;
+    bool m_preSignedLogUrlHasBeenSet = false;
   };
 
 } // namespace Model

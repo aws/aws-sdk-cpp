@@ -5,176 +5,73 @@
 
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
-#include <aws/mediapackage/MediaPackageErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/mediapackage/model/ConfigureLogsResult.h>
-#include <aws/mediapackage/model/CreateChannelResult.h>
-#include <aws/mediapackage/model/CreateHarvestJobResult.h>
-#include <aws/mediapackage/model/CreateOriginEndpointResult.h>
-#include <aws/mediapackage/model/DeleteChannelResult.h>
-#include <aws/mediapackage/model/DeleteOriginEndpointResult.h>
-#include <aws/mediapackage/model/DescribeChannelResult.h>
-#include <aws/mediapackage/model/DescribeHarvestJobResult.h>
-#include <aws/mediapackage/model/DescribeOriginEndpointResult.h>
-#include <aws/mediapackage/model/ListChannelsResult.h>
-#include <aws/mediapackage/model/ListHarvestJobsResult.h>
-#include <aws/mediapackage/model/ListOriginEndpointsResult.h>
-#include <aws/mediapackage/model/ListTagsForResourceResult.h>
-#include <aws/mediapackage/model/RotateIngestEndpointCredentialsResult.h>
-#include <aws/mediapackage/model/UpdateChannelResult.h>
-#include <aws/mediapackage/model/UpdateOriginEndpointResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mediapackage/MediaPackageServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MediaPackage
 {
-
-namespace Model
-{
-        class ConfigureLogsRequest;
-        class CreateChannelRequest;
-        class CreateHarvestJobRequest;
-        class CreateOriginEndpointRequest;
-        class DeleteChannelRequest;
-        class DeleteOriginEndpointRequest;
-        class DescribeChannelRequest;
-        class DescribeHarvestJobRequest;
-        class DescribeOriginEndpointRequest;
-        class ListChannelsRequest;
-        class ListHarvestJobsRequest;
-        class ListOriginEndpointsRequest;
-        class ListTagsForResourceRequest;
-        class RotateIngestEndpointCredentialsRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateChannelRequest;
-        class UpdateOriginEndpointRequest;
-
-        typedef Aws::Utils::Outcome<ConfigureLogsResult, MediaPackageError> ConfigureLogsOutcome;
-        typedef Aws::Utils::Outcome<CreateChannelResult, MediaPackageError> CreateChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateHarvestJobResult, MediaPackageError> CreateHarvestJobOutcome;
-        typedef Aws::Utils::Outcome<CreateOriginEndpointResult, MediaPackageError> CreateOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<DeleteChannelResult, MediaPackageError> DeleteChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteOriginEndpointResult, MediaPackageError> DeleteOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<DescribeChannelResult, MediaPackageError> DescribeChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeHarvestJobResult, MediaPackageError> DescribeHarvestJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeOriginEndpointResult, MediaPackageError> DescribeOriginEndpointOutcome;
-        typedef Aws::Utils::Outcome<ListChannelsResult, MediaPackageError> ListChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListHarvestJobsResult, MediaPackageError> ListHarvestJobsOutcome;
-        typedef Aws::Utils::Outcome<ListOriginEndpointsResult, MediaPackageError> ListOriginEndpointsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaPackageError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RotateIngestEndpointCredentialsResult, MediaPackageError> RotateIngestEndpointCredentialsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateChannelResult, MediaPackageError> UpdateChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateOriginEndpointResult, MediaPackageError> UpdateOriginEndpointOutcome;
-
-        typedef std::future<ConfigureLogsOutcome> ConfigureLogsOutcomeCallable;
-        typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
-        typedef std::future<CreateHarvestJobOutcome> CreateHarvestJobOutcomeCallable;
-        typedef std::future<CreateOriginEndpointOutcome> CreateOriginEndpointOutcomeCallable;
-        typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
-        typedef std::future<DeleteOriginEndpointOutcome> DeleteOriginEndpointOutcomeCallable;
-        typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
-        typedef std::future<DescribeHarvestJobOutcome> DescribeHarvestJobOutcomeCallable;
-        typedef std::future<DescribeOriginEndpointOutcome> DescribeOriginEndpointOutcomeCallable;
-        typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
-        typedef std::future<ListHarvestJobsOutcome> ListHarvestJobsOutcomeCallable;
-        typedef std::future<ListOriginEndpointsOutcome> ListOriginEndpointsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RotateIngestEndpointCredentialsOutcome> RotateIngestEndpointCredentialsOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
-        typedef std::future<UpdateOriginEndpointOutcome> UpdateOriginEndpointOutcomeCallable;
-} // namespace Model
-
-  class MediaPackageClient;
-
-    typedef std::function<void(const MediaPackageClient*, const Model::ConfigureLogsRequest&, const Model::ConfigureLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureLogsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::CreateHarvestJobRequest&, const Model::CreateHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHarvestJobResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::CreateOriginEndpointRequest&, const Model::CreateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginEndpointResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::DeleteOriginEndpointRequest&, const Model::DeleteOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOriginEndpointResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::DescribeHarvestJobRequest&, const Model::DescribeHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHarvestJobResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::DescribeOriginEndpointRequest&, const Model::DescribeOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOriginEndpointResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::ListHarvestJobsRequest&, const Model::ListHarvestJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHarvestJobsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::ListOriginEndpointsRequest&, const Model::ListOriginEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginEndpointsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::RotateIngestEndpointCredentialsRequest&, const Model::RotateIngestEndpointCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateIngestEndpointCredentialsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::UpdateOriginEndpointRequest&, const Model::UpdateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginEndpointResponseReceivedHandler;
-
   /**
    * AWS Elemental MediaPackage
    */
-  class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaPackageClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaPackageClient(const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration(),
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaPackageClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaPackageClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MediaPackageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::MediaPackage::MediaPackageClientConfiguration& clientConfiguration = Aws::MediaPackage::MediaPackageClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaPackageClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MediaPackageClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MediaPackageClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MediaPackageClient();
-
 
         /**
          * Changes the Channel's properities to configure log subscription<p><h3>See
@@ -480,30 +377,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MediaPackageEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ConfigureLogsAsyncHelper(const Model::ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHarvestJobAsyncHelper(const Model::CreateHarvestJobRequest& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOriginEndpointAsyncHelper(const Model::CreateOriginEndpointRequest& request, const CreateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOriginEndpointAsyncHelper(const Model::DeleteOriginEndpointRequest& request, const DeleteOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeChannelAsyncHelper(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeHarvestJobAsyncHelper(const Model::DescribeHarvestJobRequest& request, const DescribeHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOriginEndpointAsyncHelper(const Model::DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHarvestJobsAsyncHelper(const Model::ListHarvestJobsRequest& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOriginEndpointsAsyncHelper(const Model::ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RotateIngestEndpointCredentialsAsyncHelper(const Model::RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateOriginEndpointAsyncHelper(const Model::UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>;
+      void init(const MediaPackageClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MediaPackageClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MediaPackageEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaPackage

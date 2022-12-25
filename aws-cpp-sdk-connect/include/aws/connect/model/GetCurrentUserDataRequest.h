@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API GetCurrentUserDataRequest : public ConnectRequest
+  class GetCurrentUserDataRequest : public ConnectRequest
   {
   public:
-    GetCurrentUserDataRequest();
+    AWS_CONNECT_API GetCurrentUserDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCurrentUserData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,50 +83,74 @@ namespace Model
 
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline const UserDataFilters& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline void SetFilters(const UserDataFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline void SetFilters(UserDataFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline GetCurrentUserDataRequest& WithFilters(const UserDataFilters& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>.
-     * The user data is retrieved only for those users who are associated with the
-     * queues and have contacts that are in the specified <code>ContactState</code>.
-     * </p>
+     * <p>The filters to apply to returned user data. You can filter up to the
+     * following limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing
+     * profiles: 100</p> </li> <li> <p>Agents: 100</p> </li> <li> <p>Contact states:
+     * 9</p> </li> <li> <p>User hierarchy groups: 1</p> </li> </ul> <p> The user data
+     * is retrieved for only the specified values/resources in the filter. A maximum of
+     * one filter can be passed from queues, routing profiles, agents, and user
+     * hierarchy groups. </p> <p>Currently tagging is only supported on the resources
+     * that are passed in the filter.</p>
      */
     inline GetCurrentUserDataRequest& WithFilters(UserDataFilters&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -203,16 +227,16 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     UserDataFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

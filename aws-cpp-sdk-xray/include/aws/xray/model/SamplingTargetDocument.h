@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingTargetDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingTargetDocument
+  class SamplingTargetDocument
   {
   public:
-    SamplingTargetDocument();
-    SamplingTargetDocument(Aws::Utils::Json::JsonView jsonValue);
-    SamplingTargetDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingTargetDocument();
+    AWS_XRAY_API SamplingTargetDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingTargetDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,19 +187,19 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     double m_fixedRate;
-    bool m_fixedRateHasBeenSet;
+    bool m_fixedRateHasBeenSet = false;
 
     int m_reservoirQuota;
-    bool m_reservoirQuotaHasBeenSet;
+    bool m_reservoirQuotaHasBeenSet = false;
 
     Aws::Utils::DateTime m_reservoirQuotaTTL;
-    bool m_reservoirQuotaTTLHasBeenSet;
+    bool m_reservoirQuotaTTLHasBeenSet = false;
 
     int m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
   };
 
 } // namespace Model

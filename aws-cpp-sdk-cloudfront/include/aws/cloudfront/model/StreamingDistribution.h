@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistribution">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingDistribution
+  class StreamingDistribution
   {
   public:
-    StreamingDistribution();
-    StreamingDistribution(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingDistribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistribution();
+    AWS_CLOUDFRONT_API StreamingDistribution(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -206,81 +206,81 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline StreamingDistribution& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time that the distribution was last modified. </p>
+     * <p>The date and time that the distribution was last modified.</p>
      */
     inline StreamingDistribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline StreamingDistribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline StreamingDistribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * <p>The domain name that corresponds to the streaming distribution, for example,
-     * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
+     * <code>s5c39gqb8ow64r.cloudfront.net</code>.</p>
      */
     inline StreamingDistribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -298,7 +298,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
@@ -315,7 +315,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }
 
@@ -332,7 +332,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
@@ -349,7 +349,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
@@ -366,7 +366,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
@@ -383,7 +383,7 @@ namespace Model
      * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
@@ -421,25 +421,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ActiveTrustedSigners m_activeTrustedSigners;
-    bool m_activeTrustedSignersHasBeenSet;
+    bool m_activeTrustedSignersHasBeenSet = false;
 
     StreamingDistributionConfig m_streamingDistributionConfig;
-    bool m_streamingDistributionConfigHasBeenSet;
+    bool m_streamingDistributionConfigHasBeenSet = false;
   };
 
 } // namespace Model

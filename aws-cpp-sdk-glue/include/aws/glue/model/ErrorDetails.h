@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ErrorDetails
+  class ErrorDetails
   {
   public:
-    ErrorDetails();
-    ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ErrorDetails();
+    AWS_GLUE_API ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

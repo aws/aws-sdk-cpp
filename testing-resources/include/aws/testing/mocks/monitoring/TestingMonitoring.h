@@ -83,7 +83,8 @@ public:
         AWS_UNREFERENCED_PARAM(context);
         TestingMonitoringMetrics::s_lastUriString = request->GetUri().GetURIString().c_str();
         TestingMonitoringMetrics::s_lastSigningRegion = request->GetSigningRegion().c_str();
-        Aws::Vector<Aws::String> authComponents = Aws::Utils::StringUtils::Split(request->GetAwsAuthorization(), '/');
+        Aws::Vector<Aws::String> authComponents = request->HasAwsAuthorization() ?
+                Aws::Utils::StringUtils::Split(request->GetAwsAuthorization(), '/') : Aws::Vector<Aws::String>();
         if (authComponents.size() > 3)
         {
             if (authComponents[0].find("AWS4-HMAC-SHA256") == 0)

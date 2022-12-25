@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceInfo
+  class ServiceInfo
   {
   public:
-    ServiceInfo();
-    ServiceInfo(Aws::Utils::Json::JsonView jsonValue);
-    ServiceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API ServiceInfo();
+    AWS_SERVICEQUOTAS_API ServiceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API ServiceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
   };
 
 } // namespace Model

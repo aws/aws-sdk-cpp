@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/FolderMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API FolderMetadata
+  class FolderMetadata
   {
   public:
-    FolderMetadata();
-    FolderMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FolderMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API FolderMetadata();
+    AWS_WORKDOCS_API FolderMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API FolderMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -436,37 +436,37 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_creatorId;
-    bool m_creatorIdHasBeenSet;
+    bool m_creatorIdHasBeenSet = false;
 
     Aws::String m_parentFolderId;
-    bool m_parentFolderIdHasBeenSet;
+    bool m_parentFolderIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_modifiedTimestamp;
-    bool m_modifiedTimestampHasBeenSet;
+    bool m_modifiedTimestampHasBeenSet = false;
 
     ResourceStateType m_resourceState;
-    bool m_resourceStateHasBeenSet;
+    bool m_resourceStateHasBeenSet = false;
 
     Aws::String m_signature;
-    bool m_signatureHasBeenSet;
+    bool m_signatureHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     long long m_latestVersionSize;
-    bool m_latestVersionSizeHasBeenSet;
+    bool m_latestVersionSizeHasBeenSet = false;
   };
 
 } // namespace Model

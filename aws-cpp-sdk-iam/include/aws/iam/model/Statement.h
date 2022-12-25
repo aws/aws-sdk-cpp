@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Statement">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API Statement
+  class Statement
   {
   public:
-    Statement();
-    Statement(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Statement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Statement();
+    AWS_IAM_API Statement(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API Statement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_sourcePolicyId;
-    bool m_sourcePolicyIdHasBeenSet;
+    bool m_sourcePolicyIdHasBeenSet = false;
 
     PolicySourceType m_sourcePolicyType;
-    bool m_sourcePolicyTypeHasBeenSet;
+    bool m_sourcePolicyTypeHasBeenSet = false;
 
     Position m_startPosition;
-    bool m_startPositionHasBeenSet;
+    bool m_startPositionHasBeenSet = false;
 
     Position m_endPosition;
-    bool m_endPositionHasBeenSet;
+    bool m_endPositionHasBeenSet = false;
   };
 
 } // namespace Model

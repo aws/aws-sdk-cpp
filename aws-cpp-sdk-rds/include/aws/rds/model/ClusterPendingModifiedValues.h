@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ClusterPendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ClusterPendingModifiedValues
+  class ClusterPendingModifiedValues
   {
   public:
-    ClusterPendingModifiedValues();
-    ClusterPendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterPendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ClusterPendingModifiedValues();
+    AWS_RDS_API ClusterPendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API ClusterPendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -208,22 +208,110 @@ namespace Model
      */
     inline ClusterPendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
+    /**
+     * <p>The number of days for which automatic DB snapshots are retained.</p>
+     */
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+
+    /**
+     * <p>The number of days for which automatic DB snapshots are retained.</p>
+     */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automatic DB snapshots are retained.</p>
+     */
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days for which automatic DB snapshots are retained.</p>
+     */
+    inline ClusterPendingModifiedValues& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
+
+    /**
+     * <p>The allocated storage size in gibibytes (GiB) for all database engines except
+     * Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1,
+     * because Aurora DB cluster storage size isn't fixed, but instead automatically
+     * adjusts as needed.</p>
+     */
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+
+    /**
+     * <p>The allocated storage size in gibibytes (GiB) for all database engines except
+     * Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1,
+     * because Aurora DB cluster storage size isn't fixed, but instead automatically
+     * adjusts as needed.</p>
+     */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The allocated storage size in gibibytes (GiB) for all database engines except
+     * Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1,
+     * because Aurora DB cluster storage size isn't fixed, but instead automatically
+     * adjusts as needed.</p>
+     */
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+
+    /**
+     * <p>The allocated storage size in gibibytes (GiB) for all database engines except
+     * Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1,
+     * because Aurora DB cluster storage size isn't fixed, but instead automatically
+     * adjusts as needed.</p>
+     */
+    inline ClusterPendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value. This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value. This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value. This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p>The Provisioned IOPS (I/O operations per second) value. This setting is only
+     * for non-Aurora Multi-AZ DB clusters.</p>
+     */
+    inline ClusterPendingModifiedValues& WithIops(int value) { SetIops(value); return *this;}
+
   private:
 
     PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
-    bool m_pendingCloudwatchLogsExportsHasBeenSet;
+    bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
+
+    int m_backupRetentionPeriod;
+    bool m_backupRetentionPeriodHasBeenSet = false;
+
+    int m_allocatedStorage;
+    bool m_allocatedStorageHasBeenSet = false;
+
+    int m_iops;
+    bool m_iopsHasBeenSet = false;
   };
 
 } // namespace Model

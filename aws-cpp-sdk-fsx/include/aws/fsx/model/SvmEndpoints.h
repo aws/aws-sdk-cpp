@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SvmEndpoints">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API SvmEndpoints
+  class SvmEndpoints
   {
   public:
-    SvmEndpoints();
-    SvmEndpoints(Aws::Utils::Json::JsonView jsonValue);
-    SvmEndpoints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API SvmEndpoints();
+    AWS_FSX_API SvmEndpoints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API SvmEndpoints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     SvmEndpoint m_iscsi;
-    bool m_iscsiHasBeenSet;
+    bool m_iscsiHasBeenSet = false;
 
     SvmEndpoint m_management;
-    bool m_managementHasBeenSet;
+    bool m_managementHasBeenSet = false;
 
     SvmEndpoint m_nfs;
-    bool m_nfsHasBeenSet;
+    bool m_nfsHasBeenSet = false;
 
     SvmEndpoint m_smb;
-    bool m_smbHasBeenSet;
+    bool m_smbHasBeenSet = false;
   };
 
 } // namespace Model

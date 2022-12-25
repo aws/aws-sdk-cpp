@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API UnassignIpv6AddressesRequest : public EC2Request
+  class UnassignIpv6AddressesRequest : public EC2Request
   {
   public:
-    UnassignIpv6AddressesRequest();
+    AWS_EC2_API UnassignIpv6AddressesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UnassignIpv6Addresses"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -84,47 +84,47 @@ namespace Model
 
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline void SetIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline void SetIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline UnassignIpv6AddressesRequest& WithIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv6Prefixes(value); return *this;}
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline UnassignIpv6AddressesRequest& WithIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(const Aws::String& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(Aws::String&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(const char* value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
 
@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Prefixes;
-    bool m_ipv6PrefixesHasBeenSet;
+    bool m_ipv6PrefixesHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
   };
 
 } // namespace Model

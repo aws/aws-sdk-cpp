@@ -30,7 +30,7 @@ ListEngineVersionsResult& ListEngineVersionsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("engineVersions"))
   {
-    Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("engineVersions");
+    Aws::Utils::Array<JsonView> engineVersionsJsonList = jsonValue.GetArray("engineVersions");
     for(unsigned engineVersionsIndex = 0; engineVersionsIndex < engineVersionsJsonList.GetLength(); ++engineVersionsIndex)
     {
       m_engineVersions.push_back(engineVersionsJsonList[engineVersionsIndex].AsObject());

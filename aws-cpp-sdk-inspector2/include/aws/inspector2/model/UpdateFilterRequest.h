@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR2_API UpdateFilterRequest : public Inspector2Request
+  class UpdateFilterRequest : public Inspector2Request
   {
   public:
-    UpdateFilterRequest();
+    AWS_INSPECTOR2_API UpdateFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -224,22 +224,66 @@ namespace Model
      */
     inline UpdateFilterRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline UpdateFilterRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline UpdateFilterRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason the filter was updated.</p>
+     */
+    inline UpdateFilterRequest& WithReason(const char* value) { SetReason(value); return *this;}
+
   private:
 
     FilterAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet;
+    bool m_filterArnHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
-    bool m_filterCriteriaHasBeenSet;
+    bool m_filterCriteriaHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_reason;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

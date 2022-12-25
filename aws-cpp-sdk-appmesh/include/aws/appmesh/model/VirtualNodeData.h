@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeData">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeData
+  class VirtualNodeData
   {
   public:
-    VirtualNodeData();
-    VirtualNodeData(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeData();
+    AWS_APPMESH_API VirtualNodeData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,19 +218,19 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
 
     ResourceMetadata m_metadata;
-    bool m_metadataHasBeenSet;
+    bool m_metadataHasBeenSet = false;
 
     VirtualNodeSpec m_spec;
-    bool m_specHasBeenSet;
+    bool m_specHasBeenSet = false;
 
     VirtualNodeStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_virtualNodeName;
-    bool m_virtualNodeNameHasBeenSet;
+    bool m_virtualNodeNameHasBeenSet = false;
   };
 
 } // namespace Model

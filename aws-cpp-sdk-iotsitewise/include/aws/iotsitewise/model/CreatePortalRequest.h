@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API CreatePortalRequest : public IoTSiteWiseRequest
+  class CreatePortalRequest : public IoTSiteWiseRequest
   {
   public:
-    CreatePortalRequest();
+    AWS_IOTSITEWISE_API CreatePortalRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePortal"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -450,97 +450,97 @@ namespace Model
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline const AuthMode& GetPortalAuthMode() const{ return m_portalAuthMode; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline bool PortalAuthModeHasBeenSet() const { return m_portalAuthModeHasBeenSet; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline void SetPortalAuthMode(const AuthMode& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = value; }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline void SetPortalAuthMode(AuthMode&& value) { m_portalAuthModeHasBeenSet = true; m_portalAuthMode = std::move(value); }
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(const AuthMode& value) { SetPortalAuthMode(value); return *this;}
 
     /**
      * <p>The service to use to authenticate users to the portal. Choose from the
-     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses Amazon
-     * Web Services Single Sign On to authenticate users and manage user permissions.
-     * Before you can create a portal that uses Amazon Web Services SSO, you must
-     * enable Amazon Web Services SSO. For more information, see <a
+     * following options:</p> <ul> <li> <p> <code>SSO</code> – The portal uses IAM
+     * Identity Center (successor to Single Sign-On) to authenticate users and manage
+     * user permissions. Before you can create a portal that uses IAM Identity Center,
+     * you must enable IAM Identity Center. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-     * Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option
-     * is only available in Amazon Web Services Regions other than the China
-     * Regions.</p> </li> <li> <p> <code>IAM</code> – The portal uses Identity and
-     * Access Management to authenticate users and manage user permissions.</p> </li>
-     * </ul> <p>You can't change this value after you create a portal.</p> <p>Default:
-     * <code>SSO</code> </p>
+     * IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is
+     * only available in Amazon Web Services Regions other than the China Regions.</p>
+     * </li> <li> <p> <code>IAM</code> – The portal uses Identity and Access Management
+     * to authenticate users and manage user permissions.</p> </li> </ul> <p>You can't
+     * change this value after you create a portal.</p> <p>Default: <code>SSO</code>
+     * </p>
      */
     inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
 
@@ -689,34 +689,34 @@ namespace Model
   private:
 
     Aws::String m_portalName;
-    bool m_portalNameHasBeenSet;
+    bool m_portalNameHasBeenSet = false;
 
     Aws::String m_portalDescription;
-    bool m_portalDescriptionHasBeenSet;
+    bool m_portalDescriptionHasBeenSet = false;
 
     Aws::String m_portalContactEmail;
-    bool m_portalContactEmailHasBeenSet;
+    bool m_portalContactEmailHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     ImageFile m_portalLogoImageFile;
-    bool m_portalLogoImageFileHasBeenSet;
+    bool m_portalLogoImageFileHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     AuthMode m_portalAuthMode;
-    bool m_portalAuthModeHasBeenSet;
+    bool m_portalAuthModeHasBeenSet = false;
 
     Aws::String m_notificationSenderEmail;
-    bool m_notificationSenderEmailHasBeenSet;
+    bool m_notificationSenderEmailHasBeenSet = false;
 
     Alarms m_alarms;
-    bool m_alarmsHasBeenSet;
+    bool m_alarmsHasBeenSet = false;
   };
 
 } // namespace Model

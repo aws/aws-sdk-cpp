@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ReplaceTopicRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ReplaceTopicRuleRequest : public IoTRequest
+  class ReplaceTopicRuleRequest : public IoTRequest
   {
   public:
-    ReplaceTopicRuleRequest();
+    AWS_IOT_API ReplaceTopicRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReplaceTopicRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     TopicRulePayload m_topicRulePayload;
-    bool m_topicRulePayloadHasBeenSet;
+    bool m_topicRulePayloadHasBeenSet = false;
   };
 
 } // namespace Model

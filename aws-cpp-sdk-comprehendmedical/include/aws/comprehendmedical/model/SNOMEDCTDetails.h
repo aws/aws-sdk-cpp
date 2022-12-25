@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API SNOMEDCTDetails
+  class SNOMEDCTDetails
   {
   public:
-    SNOMEDCTDetails();
-    SNOMEDCTDetails(Aws::Utils::Json::JsonView jsonValue);
-    SNOMEDCTDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTDetails();
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API SNOMEDCTDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_versionDate;
-    bool m_versionDateHasBeenSet;
+    bool m_versionDateHasBeenSet = false;
   };
 
 } // namespace Model

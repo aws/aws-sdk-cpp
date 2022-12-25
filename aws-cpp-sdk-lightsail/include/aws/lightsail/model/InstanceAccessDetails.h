@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceAccessDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceAccessDetails
+  class InstanceAccessDetails
   {
   public:
-    InstanceAccessDetails();
-    InstanceAccessDetails(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAccessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceAccessDetails();
+    AWS_LIGHTSAIL_API InstanceAccessDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceAccessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -537,34 +537,34 @@ namespace Model
   private:
 
     Aws::String m_certKey;
-    bool m_certKeyHasBeenSet;
+    bool m_certKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiresAt;
-    bool m_expiresAtHasBeenSet;
+    bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     PasswordData m_passwordData;
-    bool m_passwordDataHasBeenSet;
+    bool m_passwordDataHasBeenSet = false;
 
     Aws::String m_privateKey;
-    bool m_privateKeyHasBeenSet;
+    bool m_privateKeyHasBeenSet = false;
 
     InstanceAccessProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<HostKeyAttributes> m_hostKeys;
-    bool m_hostKeysHasBeenSet;
+    bool m_hostKeysHasBeenSet = false;
   };
 
 } // namespace Model

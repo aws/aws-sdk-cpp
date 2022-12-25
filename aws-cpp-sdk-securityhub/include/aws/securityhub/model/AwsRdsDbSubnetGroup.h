@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSubnetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSubnetGroup
+  class AwsRdsDbSubnetGroup
   {
   public:
-    AwsRdsDbSubnetGroup();
-    AwsRdsDbSubnetGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup();
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,22 +288,22 @@ namespace Model
   private:
 
     Aws::String m_dbSubnetGroupName;
-    bool m_dbSubnetGroupNameHasBeenSet;
+    bool m_dbSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_dbSubnetGroupDescription;
-    bool m_dbSubnetGroupDescriptionHasBeenSet;
+    bool m_dbSubnetGroupDescriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetGroupStatus;
-    bool m_subnetGroupStatusHasBeenSet;
+    bool m_subnetGroupStatusHasBeenSet = false;
 
     Aws::Vector<AwsRdsDbSubnetGroupSubnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::String m_dbSubnetGroupArn;
-    bool m_dbSubnetGroupArnHasBeenSet;
+    bool m_dbSubnetGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

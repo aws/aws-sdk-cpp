@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SnsDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API SnsDestination
+  class SnsDestination
   {
   public:
-    SnsDestination();
-    SnsDestination(Aws::Utils::Json::JsonView jsonValue);
-    SnsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API SnsDestination();
+    AWS_PINPOINTEMAIL_API SnsDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API SnsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,7 +106,7 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerLaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerLaunchConfiguration
+  class ServerLaunchConfiguration
   {
   public:
-    ServerLaunchConfiguration();
-    ServerLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerLaunchConfiguration();
+    AWS_SMS_API ServerLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -481,40 +481,40 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     Aws::String m_logicalId;
-    bool m_logicalIdHasBeenSet;
+    bool m_logicalIdHasBeenSet = false;
 
     Aws::String m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
 
     Aws::String m_subnet;
-    bool m_subnetHasBeenSet;
+    bool m_subnetHasBeenSet = false;
 
     Aws::String m_securityGroup;
-    bool m_securityGroupHasBeenSet;
+    bool m_securityGroupHasBeenSet = false;
 
     Aws::String m_ec2KeyName;
-    bool m_ec2KeyNameHasBeenSet;
+    bool m_ec2KeyNameHasBeenSet = false;
 
     UserData m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     bool m_associatePublicIpAddress;
-    bool m_associatePublicIpAddressHasBeenSet;
+    bool m_associatePublicIpAddressHasBeenSet = false;
 
     Aws::String m_iamInstanceProfileName;
-    bool m_iamInstanceProfileNameHasBeenSet;
+    bool m_iamInstanceProfileNameHasBeenSet = false;
 
     S3Location m_configureScript;
-    bool m_configureScriptHasBeenSet;
+    bool m_configureScriptHasBeenSet = false;
 
     ScriptType m_configureScriptType;
-    bool m_configureScriptTypeHasBeenSet;
+    bool m_configureScriptTypeHasBeenSet = false;
   };
 
 } // namespace Model

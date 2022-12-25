@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EncryptionInTransit">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API EncryptionInTransit
+  class EncryptionInTransit
   {
   public:
-    EncryptionInTransit();
-    EncryptionInTransit(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionInTransit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API EncryptionInTransit();
+    AWS_KAFKA_API EncryptionInTransit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API EncryptionInTransit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -208,10 +208,10 @@ namespace Model
   private:
 
     ClientBroker m_clientBroker;
-    bool m_clientBrokerHasBeenSet;
+    bool m_clientBrokerHasBeenSet = false;
 
     bool m_inCluster;
-    bool m_inClusterHasBeenSet;
+    bool m_inClusterHasBeenSet = false;
   };
 
 } // namespace Model

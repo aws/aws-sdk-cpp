@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/Destinations">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API Destinations
+  class Destinations
   {
   public:
-    Destinations();
-    Destinations(Aws::Utils::Json::JsonView jsonValue);
-    Destinations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API Destinations();
+    AWS_IOTWIRELESS_API Destinations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Destinations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ExpressionType m_expressionType;
-    bool m_expressionTypeHasBeenSet;
+    bool m_expressionTypeHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

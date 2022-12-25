@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RuleGroupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RuleGroupResponse
+  class RuleGroupResponse
   {
   public:
-    RuleGroupResponse();
-    RuleGroupResponse(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RuleGroupResponse();
+    AWS_NETWORKFIREWALL_API RuleGroupResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RuleGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -646,46 +646,46 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupArn;
-    bool m_ruleGroupArnHasBeenSet;
+    bool m_ruleGroupArnHasBeenSet = false;
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RuleGroupType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     ResourceStatus m_ruleGroupStatus;
-    bool m_ruleGroupStatusHasBeenSet;
+    bool m_ruleGroupStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_consumedCapacity;
-    bool m_consumedCapacityHasBeenSet;
+    bool m_consumedCapacityHasBeenSet = false;
 
     int m_numberOfAssociations;
-    bool m_numberOfAssociationsHasBeenSet;
+    bool m_numberOfAssociationsHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     SourceMetadata m_sourceMetadata;
-    bool m_sourceMetadataHasBeenSet;
+    bool m_sourceMetadataHasBeenSet = false;
 
     Aws::String m_snsTopic;
-    bool m_snsTopicHasBeenSet;
+    bool m_snsTopicHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlementsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API GrantFlowEntitlementsRequest : public MediaConnectRequest
+  class GrantFlowEntitlementsRequest : public MediaConnectRequest
   {
   public:
-    GrantFlowEntitlementsRequest();
+    AWS_MEDIACONNECT_API GrantFlowEntitlementsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GrantFlowEntitlements"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::Vector<GrantEntitlementRequest> m_entitlements;
-    bool m_entitlementsHasBeenSet;
+    bool m_entitlementsHasBeenSet = false;
 
     Aws::String m_flowArn;
-    bool m_flowArnHasBeenSet;
+    bool m_flowArnHasBeenSet = false;
   };
 
 } // namespace Model

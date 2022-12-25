@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorRequest : public ChimeSDKMessagingRequest
+  class DescribeChannelModeratorRequest : public ChimeSDKMessagingRequest
   {
   public:
-    DescribeChannelModeratorRequest();
+    AWS_CHIMESDKMESSAGING_API DescribeChannelModeratorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeChannelModerator"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_channelModeratorArn;
-    bool m_channelModeratorArnHasBeenSet;
+    bool m_channelModeratorArnHasBeenSet = false;
 
     Aws::String m_chimeBearer;
-    bool m_chimeBearerHasBeenSet;
+    bool m_chimeBearerHasBeenSet = false;
   };
 
 } // namespace Model

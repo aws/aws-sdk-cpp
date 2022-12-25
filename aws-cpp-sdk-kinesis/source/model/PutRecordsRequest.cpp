@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 PutRecordsRequest::PutRecordsRequest() : 
     m_recordsHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_streamARNHasBeenSet(false)
 {
 }
 
@@ -24,7 +25,7 @@ Aws::String PutRecordsRequest::SerializePayload() const
 
   if(m_recordsHasBeenSet)
   {
-   Array<JsonValue> recordsJsonList(m_records.size());
+   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
    {
      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
@@ -36,6 +37,12 @@ Aws::String PutRecordsRequest::SerializePayload() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("StreamName", m_streamName);
+
+  }
+
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
 
   }
 
@@ -51,5 +58,17 @@ Aws::Http::HeaderValueCollection PutRecordsRequest::GetRequestSpecificHeaders() 
 }
 
 
+
+PutRecordsRequest::EndpointParameters PutRecordsRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "data", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

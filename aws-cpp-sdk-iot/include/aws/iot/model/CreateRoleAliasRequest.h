@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API CreateRoleAliasRequest : public IoTRequest
+  class CreateRoleAliasRequest : public IoTRequest
   {
   public:
-    CreateRoleAliasRequest();
+    AWS_IOT_API CreateRoleAliasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoleAlias"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_roleAlias;
-    bool m_roleAliasHasBeenSet;
+    bool m_roleAliasHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     int m_credentialDurationSeconds;
-    bool m_credentialDurationSecondsHasBeenSet;
+    bool m_credentialDurationSecondsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

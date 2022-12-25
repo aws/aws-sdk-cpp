@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Recipes">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API Recipes
+  class Recipes
   {
   public:
-    Recipes();
-    Recipes(Aws::Utils::Json::JsonView jsonValue);
-    Recipes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Recipes();
+    AWS_OPSWORKS_API Recipes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Recipes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -325,19 +325,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_setup;
-    bool m_setupHasBeenSet;
+    bool m_setupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_configure;
-    bool m_configureHasBeenSet;
+    bool m_configureHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploy;
-    bool m_deployHasBeenSet;
+    bool m_deployHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_undeploy;
-    bool m_undeployHasBeenSet;
+    bool m_undeployHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_shutdown;
-    bool m_shutdownHasBeenSet;
+    bool m_shutdownHasBeenSet = false;
   };
 
 } // namespace Model

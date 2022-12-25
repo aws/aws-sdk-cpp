@@ -25,12 +25,12 @@ namespace DataExchange
 {
 namespace Model
 {
-  class AWS_DATAEXCHANGE_API UpdateRevisionResult
+  class UpdateRevisionResult
   {
   public:
-    UpdateRevisionResult();
-    UpdateRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API UpdateRevisionResult();
+    AWS_DATAEXCHANGE_API UpdateRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API UpdateRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -132,37 +132,44 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline UpdateRevisionResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline UpdateRevisionResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the data set associated with this revision.</p>
+     * <p>The unique identifier for the data set associated with the data set
+     * revision.</p>
      */
     inline UpdateRevisionResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -171,10 +178,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that changes to the
      * assets in the revision are complete. After it's in this read-only state, you can
-     * publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline bool GetFinalized() const{ return m_finalized; }
 
@@ -182,10 +189,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that changes to the
      * assets in the revision are complete. After it's in this read-only state, you can
-     * publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline void SetFinalized(bool value) { m_finalized = value; }
 
@@ -193,10 +200,10 @@ namespace Model
      * <p>To publish a revision to a data set in a product, the revision must first be
      * finalized. Finalizing a revision tells AWS Data Exchange that changes to the
      * assets in the revision are complete. After it's in this read-only state, you can
-     * publish the revision to your products.</p> <p>Finalized revisions can be
-     * published through the AWS Data Exchange console or the AWS Marketplace Catalog
-     * API, using the StartChangeSet AWS Marketplace Catalog API action. When using the
-     * API, revisions are uniquely identified by their ARN.</p>
+     * publish the revision to your products. Finalized revisions can be published
+     * through the AWS Data Exchange console or the AWS Marketplace Catalog API, using
+     * the StartChangeSet AWS Marketplace Catalog API action. When using the API,
+     * revisions are uniquely identified by their ARN.</p>
      */
     inline UpdateRevisionResult& WithFinalized(bool value) { SetFinalized(value); return *this;}
 

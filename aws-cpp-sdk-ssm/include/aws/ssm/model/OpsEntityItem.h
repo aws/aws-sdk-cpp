@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsEntityItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsEntityItem
+  class OpsEntityItem
   {
   public:
-    OpsEntityItem();
-    OpsEntityItem(Aws::Utils::Json::JsonView jsonValue);
-    OpsEntityItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsEntityItem();
+    AWS_SSM_API OpsEntityItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsEntityItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_captureTime;
-    bool m_captureTimeHasBeenSet;
+    bool m_captureTimeHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

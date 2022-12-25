@@ -43,15 +43,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API EventDestination
+  class EventDestination
   {
   public:
-    EventDestination();
-    EventDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API EventDestination();
+    AWS_SES_API EventDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API EventDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -298,22 +298,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::Vector<EventType> m_matchingEventTypes;
-    bool m_matchingEventTypesHasBeenSet;
+    bool m_matchingEventTypesHasBeenSet = false;
 
     KinesisFirehoseDestination m_kinesisFirehoseDestination;
-    bool m_kinesisFirehoseDestinationHasBeenSet;
+    bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
     CloudWatchDestination m_cloudWatchDestination;
-    bool m_cloudWatchDestinationHasBeenSet;
+    bool m_cloudWatchDestinationHasBeenSet = false;
 
     SNSDestination m_sNSDestination;
-    bool m_sNSDestinationHasBeenSet;
+    bool m_sNSDestinationHasBeenSet = false;
   };
 
 } // namespace Model

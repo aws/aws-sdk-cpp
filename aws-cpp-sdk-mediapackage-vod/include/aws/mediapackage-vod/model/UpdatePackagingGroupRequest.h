@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupRequest : public MediaPackageVodRequest
+  class UpdatePackagingGroupRequest : public MediaPackageVodRequest
   {
   public:
-    UpdatePackagingGroupRequest();
+    AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePackagingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
     
@@ -99,10 +99,10 @@ namespace Model
   private:
 
     Authorization m_authorization;
-    bool m_authorizationHasBeenSet;
+    bool m_authorizationHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

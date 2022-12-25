@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadowRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API UpdateThingShadowRequest : public StreamingIoTDataPlaneRequest
+  class UpdateThingShadowRequest : public StreamingIoTDataPlaneRequest
   {
   public:
-    UpdateThingShadowRequest();
+    AWS_IOTDATAPLANE_API UpdateThingShadowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateThingShadow"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTDATAPLANE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_shadowName;
-    bool m_shadowNameHasBeenSet;
+    bool m_shadowNameHasBeenSet = false;
 
   };
 

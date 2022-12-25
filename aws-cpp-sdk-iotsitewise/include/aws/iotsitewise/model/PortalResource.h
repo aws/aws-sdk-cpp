@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PortalResource">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PortalResource
+  class PortalResource
   {
   public:
-    PortalResource();
-    PortalResource(Aws::Utils::Json::JsonView jsonValue);
-    PortalResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PortalResource();
+    AWS_IOTSITEWISE_API PortalResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PortalResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

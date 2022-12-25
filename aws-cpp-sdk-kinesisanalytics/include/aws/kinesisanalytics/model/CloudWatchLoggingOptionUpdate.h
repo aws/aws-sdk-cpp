@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CloudWatchLoggingOptionUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API CloudWatchLoggingOptionUpdate
+  class CloudWatchLoggingOptionUpdate
   {
   public:
-    CloudWatchLoggingOptionUpdate();
-    CloudWatchLoggingOptionUpdate(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLoggingOptionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API CloudWatchLoggingOptionUpdate();
+    AWS_KINESISANALYTICS_API CloudWatchLoggingOptionUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API CloudWatchLoggingOptionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLoggingOptionId;
-    bool m_cloudWatchLoggingOptionIdHasBeenSet;
+    bool m_cloudWatchLoggingOptionIdHasBeenSet = false;
 
     Aws::String m_logStreamARNUpdate;
-    bool m_logStreamARNUpdateHasBeenSet;
+    bool m_logStreamARNUpdateHasBeenSet = false;
 
     Aws::String m_roleARNUpdate;
-    bool m_roleARNUpdateHasBeenSet;
+    bool m_roleARNUpdateHasBeenSet = false;
   };
 
 } // namespace Model

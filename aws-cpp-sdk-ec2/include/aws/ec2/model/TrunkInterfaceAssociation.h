@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TrunkInterfaceAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TrunkInterfaceAssociation
+  class TrunkInterfaceAssociation
   {
   public:
-    TrunkInterfaceAssociation();
-    TrunkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrunkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrunkInterfaceAssociation();
+    AWS_EC2_API TrunkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TrunkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -290,25 +290,25 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_branchInterfaceId;
-    bool m_branchInterfaceIdHasBeenSet;
+    bool m_branchInterfaceIdHasBeenSet = false;
 
     Aws::String m_trunkInterfaceId;
-    bool m_trunkInterfaceIdHasBeenSet;
+    bool m_trunkInterfaceIdHasBeenSet = false;
 
     InterfaceProtocolType m_interfaceProtocol;
-    bool m_interfaceProtocolHasBeenSet;
+    bool m_interfaceProtocolHasBeenSet = false;
 
     int m_vlanId;
-    bool m_vlanIdHasBeenSet;
+    bool m_vlanIdHasBeenSet = false;
 
     int m_greKey;
-    bool m_greKeyHasBeenSet;
+    bool m_greKeyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GroupNameAndArn">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API GroupNameAndArn
+  class GroupNameAndArn
   {
   public:
-    GroupNameAndArn();
-    GroupNameAndArn(Aws::Utils::Json::JsonView jsonValue);
-    GroupNameAndArn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API GroupNameAndArn();
+    AWS_IOT_API GroupNameAndArn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API GroupNameAndArn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
   };
 
 } // namespace Model

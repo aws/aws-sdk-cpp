@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentImage">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API EnvironmentImage
+  class EnvironmentImage
   {
   public:
-    EnvironmentImage();
-    EnvironmentImage(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API EnvironmentImage();
+    AWS_CODEBUILD_API EnvironmentImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API EnvironmentImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;
-    bool m_versionsHasBeenSet;
+    bool m_versionsHasBeenSet = false;
   };
 
 } // namespace Model

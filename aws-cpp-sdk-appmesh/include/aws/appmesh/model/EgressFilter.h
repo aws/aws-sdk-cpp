@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/EgressFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API EgressFilter
+  class EgressFilter
   {
   public:
-    EgressFilter();
-    EgressFilter(Aws::Utils::Json::JsonView jsonValue);
-    EgressFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API EgressFilter();
+    AWS_APPMESH_API EgressFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API EgressFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,7 +95,7 @@ namespace Model
   private:
 
     EgressFilterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/EmailRecipients">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API EmailRecipients
+  class EmailRecipients
   {
   public:
-    EmailRecipients();
-    EmailRecipients(Aws::Utils::Json::JsonView jsonValue);
-    EmailRecipients& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API EmailRecipients();
+    AWS_IOTEVENTS_API EmailRecipients(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API EmailRecipients& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<RecipientDetail> m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryLimits
+  class DirectoryLimits
   {
   public:
-    DirectoryLimits();
-    DirectoryLimits(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryLimits();
+    AWS_DIRECTORYSERVICE_API DirectoryLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -231,31 +231,31 @@ namespace Model
   private:
 
     int m_cloudOnlyDirectoriesLimit;
-    bool m_cloudOnlyDirectoriesLimitHasBeenSet;
+    bool m_cloudOnlyDirectoriesLimitHasBeenSet = false;
 
     int m_cloudOnlyDirectoriesCurrentCount;
-    bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet;
+    bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet = false;
 
     bool m_cloudOnlyDirectoriesLimitReached;
-    bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet;
+    bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet = false;
 
     int m_cloudOnlyMicrosoftADLimit;
-    bool m_cloudOnlyMicrosoftADLimitHasBeenSet;
+    bool m_cloudOnlyMicrosoftADLimitHasBeenSet = false;
 
     int m_cloudOnlyMicrosoftADCurrentCount;
-    bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet;
+    bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = false;
 
     bool m_cloudOnlyMicrosoftADLimitReached;
-    bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet;
+    bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = false;
 
     int m_connectedDirectoriesLimit;
-    bool m_connectedDirectoriesLimitHasBeenSet;
+    bool m_connectedDirectoriesLimitHasBeenSet = false;
 
     int m_connectedDirectoriesCurrentCount;
-    bool m_connectedDirectoriesCurrentCountHasBeenSet;
+    bool m_connectedDirectoriesCurrentCountHasBeenSet = false;
 
     bool m_connectedDirectoriesLimitReached;
-    bool m_connectedDirectoriesLimitReachedHasBeenSet;
+    bool m_connectedDirectoriesLimitReachedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,13 +41,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileSystem">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileSystem
+  class FileSystem
   {
   public:
-    FileSystem();
-    FileSystem(Aws::Utils::Json::JsonView jsonValue);
-    FileSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileSystem();
+    AWS_FSX_API FileSystem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1161,67 +1161,67 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     FileSystemType m_fileSystemType;
-    bool m_fileSystemTypeHasBeenSet;
+    bool m_fileSystemTypeHasBeenSet = false;
 
     FileSystemLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     FileSystemFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     int m_storageCapacity;
-    bool m_storageCapacityHasBeenSet;
+    bool m_storageCapacityHasBeenSet = false;
 
     StorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
-    bool m_networkInterfaceIdsHasBeenSet;
+    bool m_networkInterfaceIdsHasBeenSet = false;
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WindowsFileSystemConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     LustreFileSystemConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     Aws::Vector<AdministrativeAction> m_administrativeActions;
-    bool m_administrativeActionsHasBeenSet;
+    bool m_administrativeActionsHasBeenSet = false;
 
     OntapFileSystemConfiguration m_ontapConfiguration;
-    bool m_ontapConfigurationHasBeenSet;
+    bool m_ontapConfigurationHasBeenSet = false;
 
     Aws::String m_fileSystemTypeVersion;
-    bool m_fileSystemTypeVersionHasBeenSet;
+    bool m_fileSystemTypeVersionHasBeenSet = false;
 
     OpenZFSFileSystemConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

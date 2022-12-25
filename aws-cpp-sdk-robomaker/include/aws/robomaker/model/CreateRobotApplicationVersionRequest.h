@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ROBOMAKER_API CreateRobotApplicationVersionRequest : public RoboMakerRequest
+  class CreateRobotApplicationVersionRequest : public RoboMakerRequest
   {
   public:
-    CreateRobotApplicationVersionRequest();
+    AWS_ROBOMAKER_API CreateRobotApplicationVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRobotApplicationVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_currentRevisionId;
-    bool m_currentRevisionIdHasBeenSet;
+    bool m_currentRevisionIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_s3Etags;
-    bool m_s3EtagsHasBeenSet;
+    bool m_s3EtagsHasBeenSet = false;
 
     Aws::String m_imageDigest;
-    bool m_imageDigestHasBeenSet;
+    bool m_imageDigestHasBeenSet = false;
   };
 
 } // namespace Model

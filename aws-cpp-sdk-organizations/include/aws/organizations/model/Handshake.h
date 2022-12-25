@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Handshake
+  class Handshake
   {
   public:
-    Handshake();
-    Handshake(Aws::Utils::Json::JsonView jsonValue);
-    Handshake& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Handshake();
+    AWS_ORGANIZATIONS_API Handshake(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Handshake& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -584,28 +584,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<HandshakeParty> m_parties;
-    bool m_partiesHasBeenSet;
+    bool m_partiesHasBeenSet = false;
 
     HandshakeState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedTimestamp;
-    bool m_requestedTimestampHasBeenSet;
+    bool m_requestedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTimestamp;
-    bool m_expirationTimestampHasBeenSet;
+    bool m_expirationTimestampHasBeenSet = false;
 
     ActionType m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<HandshakeResource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

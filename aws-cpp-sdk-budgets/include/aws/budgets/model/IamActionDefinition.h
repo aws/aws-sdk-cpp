@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/IamActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API IamActionDefinition
+  class IamActionDefinition
   {
   public:
-    IamActionDefinition();
-    IamActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    IamActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API IamActionDefinition();
+    AWS_BUDGETS_API IamActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API IamActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_roles;
-    bool m_rolesHasBeenSet;
+    bool m_rolesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_users;
-    bool m_usersHasBeenSet;
+    bool m_usersHasBeenSet = false;
   };
 
 } // namespace Model

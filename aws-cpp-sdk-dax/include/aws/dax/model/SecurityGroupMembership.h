@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/SecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API SecurityGroupMembership
+  class SecurityGroupMembership
   {
   public:
-    SecurityGroupMembership();
-    SecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API SecurityGroupMembership();
+    AWS_DAX_API SecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API SecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_securityGroupIdentifier;
-    bool m_securityGroupIdentifierHasBeenSet;
+    bool m_securityGroupIdentifierHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

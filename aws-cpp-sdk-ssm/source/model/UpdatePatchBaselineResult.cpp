@@ -68,7 +68,7 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ApprovedPatches"))
   {
-    Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
+    Aws::Utils::Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
     for(unsigned approvedPatchesIndex = 0; approvedPatchesIndex < approvedPatchesJsonList.GetLength(); ++approvedPatchesIndex)
     {
       m_approvedPatches.push_back(approvedPatchesJsonList[approvedPatchesIndex].AsString());
@@ -89,7 +89,7 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("RejectedPatches"))
   {
-    Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
+    Aws::Utils::Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
     for(unsigned rejectedPatchesIndex = 0; rejectedPatchesIndex < rejectedPatchesJsonList.GetLength(); ++rejectedPatchesIndex)
     {
       m_rejectedPatches.push_back(rejectedPatchesJsonList[rejectedPatchesIndex].AsString());
@@ -122,7 +122,7 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());

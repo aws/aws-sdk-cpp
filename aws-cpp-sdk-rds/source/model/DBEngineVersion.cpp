@@ -52,6 +52,7 @@ DBEngineVersion::DBEngineVersion() :
     m_tagListHasBeenSet(false),
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
+    m_customDBEngineVersionManifestHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -88,6 +89,7 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_tagListHasBeenSet(false),
     m_supportsBabelfish(false),
     m_supportsBabelfishHasBeenSet(false),
+    m_customDBEngineVersionManifestHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -282,7 +284,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
@@ -302,6 +304,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
       m_supportsBabelfishHasBeenSet = true;
+    }
+    XmlNode customDBEngineVersionManifestNode = resultNode.FirstChild("CustomDBEngineVersionManifest");
+    if(!customDBEngineVersionManifestNode.IsNull())
+    {
+      m_customDBEngineVersionManifest = Aws::Utils::Xml::DecodeEscapedXmlText(customDBEngineVersionManifestNode.GetText());
+      m_customDBEngineVersionManifestHasBeenSet = true;
     }
   }
 
@@ -465,7 +473,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
 
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_tagListHasBeenSet)
@@ -482,6 +490,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+
+  if(m_customDBEngineVersionManifestHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
 
   if(m_responseMetadataHasBeenSet)
@@ -627,7 +640,7 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   }
   if(m_createTimeHasBeenSet)
   {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_tagListHasBeenSet)
   {
@@ -642,6 +655,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsBabelfishHasBeenSet)
   {
       oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+  if(m_customDBEngineVersionManifestHasBeenSet)
+  {
+      oStream << location << ".CustomDBEngineVersionManifest=" << StringUtils::URLEncode(m_customDBEngineVersionManifest.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

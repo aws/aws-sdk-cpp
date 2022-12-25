@@ -59,7 +59,7 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_outcomesHasBeenSet)
   {
-   Array<JsonValue> outcomesJsonList(m_outcomes.size());
+   Aws::Utils::Array<JsonValue> outcomesJsonList(m_outcomes.size());
    for(unsigned outcomesIndex = 0; outcomesIndex < outcomesJsonList.GetLength(); ++outcomesIndex)
    {
      outcomesJsonList[outcomesIndex].AsString(m_outcomes[outcomesIndex]);
@@ -70,7 +70,7 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

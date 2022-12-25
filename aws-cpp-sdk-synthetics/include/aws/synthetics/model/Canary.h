@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/Canary">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API Canary
+  class Canary
   {
   public:
-    Canary();
-    Canary(Aws::Utils::Json::JsonView jsonValue);
-    Canary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API Canary();
+    AWS_SYNTHETICS_API Canary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Canary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -721,55 +721,55 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CanaryCodeOutput m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     CanaryScheduleOutput m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     CanaryRunConfigOutput m_runConfig;
-    bool m_runConfigHasBeenSet;
+    bool m_runConfigHasBeenSet = false;
 
     int m_successRetentionPeriodInDays;
-    bool m_successRetentionPeriodInDaysHasBeenSet;
+    bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
     int m_failureRetentionPeriodInDays;
-    bool m_failureRetentionPeriodInDaysHasBeenSet;
+    bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
     CanaryStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     CanaryTimeline m_timeline;
-    bool m_timelineHasBeenSet;
+    bool m_timelineHasBeenSet = false;
 
     Aws::String m_artifactS3Location;
-    bool m_artifactS3LocationHasBeenSet;
+    bool m_artifactS3LocationHasBeenSet = false;
 
     Aws::String m_engineArn;
-    bool m_engineArnHasBeenSet;
+    bool m_engineArnHasBeenSet = false;
 
     Aws::String m_runtimeVersion;
-    bool m_runtimeVersionHasBeenSet;
+    bool m_runtimeVersionHasBeenSet = false;
 
     VpcConfigOutput m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     VisualReferenceOutput m_visualReference;
-    bool m_visualReferenceHasBeenSet;
+    bool m_visualReferenceHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ArtifactConfigOutput m_artifactConfig;
-    bool m_artifactConfigHasBeenSet;
+    bool m_artifactConfigHasBeenSet = false;
   };
 
 } // namespace Model

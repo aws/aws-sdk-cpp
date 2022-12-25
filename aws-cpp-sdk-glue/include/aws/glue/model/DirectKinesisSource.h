@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DirectKinesisSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DirectKinesisSource
+  class DirectKinesisSource
   {
   public:
-    DirectKinesisSource();
-    DirectKinesisSource(Aws::Utils::Json::JsonView jsonValue);
-    DirectKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DirectKinesisSource();
+    AWS_GLUE_API DirectKinesisSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DirectKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,19 +186,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_windowSize;
-    bool m_windowSizeHasBeenSet;
+    bool m_windowSizeHasBeenSet = false;
 
     bool m_detectSchema;
-    bool m_detectSchemaHasBeenSet;
+    bool m_detectSchemaHasBeenSet = false;
 
     KinesisStreamingSourceOptions m_streamingOptions;
-    bool m_streamingOptionsHasBeenSet;
+    bool m_streamingOptionsHasBeenSet = false;
 
     StreamingDataPreviewOptions m_dataPreviewOptions;
-    bool m_dataPreviewOptionsHasBeenSet;
+    bool m_dataPreviewOptionsHasBeenSet = false;
   };
 
 } // namespace Model

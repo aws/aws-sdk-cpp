@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API GetWorkUnitResultsRequest : public LakeFormationRequest
+  class GetWorkUnitResultsRequest : public LakeFormationRequest
   {
   public:
-    GetWorkUnitResultsRequest();
+    AWS_LAKEFORMATION_API GetWorkUnitResultsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetWorkUnitResults"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     long long m_workUnitId;
-    bool m_workUnitIdHasBeenSet;
+    bool m_workUnitIdHasBeenSet = false;
 
     Aws::String m_workUnitToken;
-    bool m_workUnitTokenHasBeenSet;
+    bool m_workUnitTokenHasBeenSet = false;
   };
 
 } // namespace Model

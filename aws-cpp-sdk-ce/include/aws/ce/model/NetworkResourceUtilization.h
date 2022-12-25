@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/NetworkResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API NetworkResourceUtilization
+  class NetworkResourceUtilization
   {
   public:
-    NetworkResourceUtilization();
-    NetworkResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API NetworkResourceUtilization();
+    AWS_COSTEXPLORER_API NetworkResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API NetworkResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::String m_networkInBytesPerSecond;
-    bool m_networkInBytesPerSecondHasBeenSet;
+    bool m_networkInBytesPerSecondHasBeenSet = false;
 
     Aws::String m_networkOutBytesPerSecond;
-    bool m_networkOutBytesPerSecondHasBeenSet;
+    bool m_networkOutBytesPerSecondHasBeenSet = false;
 
     Aws::String m_networkPacketsInPerSecond;
-    bool m_networkPacketsInPerSecondHasBeenSet;
+    bool m_networkPacketsInPerSecondHasBeenSet = false;
 
     Aws::String m_networkPacketsOutPerSecond;
-    bool m_networkPacketsOutPerSecondHasBeenSet;
+    bool m_networkPacketsOutPerSecondHasBeenSet = false;
   };
 
 } // namespace Model

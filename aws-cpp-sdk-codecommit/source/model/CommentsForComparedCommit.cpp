@@ -87,7 +87,7 @@ CommentsForComparedCommit& CommentsForComparedCommit::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("comments"))
   {
-    Array<JsonView> commentsJsonList = jsonValue.GetArray("comments");
+    Aws::Utils::Array<JsonView> commentsJsonList = jsonValue.GetArray("comments");
     for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
     {
       m_comments.push_back(commentsJsonList[commentsIndex].AsObject());
@@ -140,7 +140,7 @@ JsonValue CommentsForComparedCommit::Jsonize() const
 
   if(m_commentsHasBeenSet)
   {
-   Array<JsonValue> commentsJsonList(m_comments.size());
+   Aws::Utils::Array<JsonValue> commentsJsonList(m_comments.size());
    for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
    {
      commentsJsonList[commentsIndex].AsObject(m_comments[commentsIndex].Jsonize());

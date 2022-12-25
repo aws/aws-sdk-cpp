@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LinkAttributeUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API LinkAttributeUpdate
+  class LinkAttributeUpdate
   {
   public:
-    LinkAttributeUpdate();
-    LinkAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
-    LinkAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API LinkAttributeUpdate();
+    AWS_CLOUDDIRECTORY_API LinkAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API LinkAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AttributeKey m_attributeKey;
-    bool m_attributeKeyHasBeenSet;
+    bool m_attributeKeyHasBeenSet = false;
 
     LinkAttributeAction m_attributeAction;
-    bool m_attributeActionHasBeenSet;
+    bool m_attributeActionHasBeenSet = false;
   };
 
 } // namespace Model

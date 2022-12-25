@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/WeeklyStartTime">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API WeeklyStartTime
+  class WeeklyStartTime
   {
   public:
-    WeeklyStartTime();
-    WeeklyStartTime(Aws::Utils::Json::JsonView jsonValue);
-    WeeklyStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API WeeklyStartTime();
+    AWS_MQ_API WeeklyStartTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API WeeklyStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     Aws::String m_timeOfDay;
-    bool m_timeOfDayHasBeenSet;
+    bool m_timeOfDayHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
   };
 
 } // namespace Model

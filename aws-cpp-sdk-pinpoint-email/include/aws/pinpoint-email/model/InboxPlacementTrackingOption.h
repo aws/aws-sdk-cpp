@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/InboxPlacementTrackingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API InboxPlacementTrackingOption
+  class InboxPlacementTrackingOption
   {
   public:
-    InboxPlacementTrackingOption();
-    InboxPlacementTrackingOption(Aws::Utils::Json::JsonView jsonValue);
-    InboxPlacementTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API InboxPlacementTrackingOption();
+    AWS_PINPOINTEMAIL_API InboxPlacementTrackingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API InboxPlacementTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     bool m_global;
-    bool m_globalHasBeenSet;
+    bool m_globalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_trackedIsps;
-    bool m_trackedIspsHasBeenSet;
+    bool m_trackedIspsHasBeenSet = false;
   };
 
 } // namespace Model

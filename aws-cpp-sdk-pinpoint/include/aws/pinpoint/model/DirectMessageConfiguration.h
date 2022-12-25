@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DirectMessageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API DirectMessageConfiguration
+  class DirectMessageConfiguration
   {
   public:
-    DirectMessageConfiguration();
-    DirectMessageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DirectMessageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API DirectMessageConfiguration();
+    AWS_PINPOINT_API DirectMessageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API DirectMessageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -399,31 +399,31 @@ namespace Model
   private:
 
     ADMMessage m_aDMMessage;
-    bool m_aDMMessageHasBeenSet;
+    bool m_aDMMessageHasBeenSet = false;
 
     APNSMessage m_aPNSMessage;
-    bool m_aPNSMessageHasBeenSet;
+    bool m_aPNSMessageHasBeenSet = false;
 
     BaiduMessage m_baiduMessage;
-    bool m_baiduMessageHasBeenSet;
+    bool m_baiduMessageHasBeenSet = false;
 
     DefaultMessage m_defaultMessage;
-    bool m_defaultMessageHasBeenSet;
+    bool m_defaultMessageHasBeenSet = false;
 
     DefaultPushNotificationMessage m_defaultPushNotificationMessage;
-    bool m_defaultPushNotificationMessageHasBeenSet;
+    bool m_defaultPushNotificationMessageHasBeenSet = false;
 
     EmailMessage m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     GCMMessage m_gCMMessage;
-    bool m_gCMMessageHasBeenSet;
+    bool m_gCMMessageHasBeenSet = false;
 
     SMSMessage m_sMSMessage;
-    bool m_sMSMessageHasBeenSet;
+    bool m_sMSMessageHasBeenSet = false;
 
     VoiceMessage m_voiceMessage;
-    bool m_voiceMessageHasBeenSet;
+    bool m_voiceMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ GetSampleDataResult& GetSampleDataResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HeaderValues"))
   {
-    Array<JsonView> headerValuesJsonList = jsonValue.GetArray("HeaderValues");
+    Aws::Utils::Array<JsonView> headerValuesJsonList = jsonValue.GetArray("HeaderValues");
     for(unsigned headerValuesIndex = 0; headerValuesIndex < headerValuesJsonList.GetLength(); ++headerValuesIndex)
     {
       m_headerValues.push_back(headerValuesJsonList[headerValuesIndex].AsString());
@@ -39,10 +39,10 @@ GetSampleDataResult& GetSampleDataResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("SampleRows"))
   {
-    Array<JsonView> sampleRowsJsonList = jsonValue.GetArray("SampleRows");
+    Aws::Utils::Array<JsonView> sampleRowsJsonList = jsonValue.GetArray("SampleRows");
     for(unsigned sampleRowsIndex = 0; sampleRowsIndex < sampleRowsJsonList.GetLength(); ++sampleRowsIndex)
     {
-      Array<JsonView> sampleRowJsonList = sampleRowsJsonList[sampleRowsIndex].AsArray();
+      Aws::Utils::Array<JsonView> sampleRowJsonList = sampleRowsJsonList[sampleRowsIndex].AsArray();
       Aws::Vector<Aws::String> sampleRowList;
       sampleRowList.reserve((size_t)sampleRowJsonList.GetLength());
       for(unsigned sampleRowIndex = 0; sampleRowIndex < sampleRowJsonList.GetLength(); ++sampleRowIndex)

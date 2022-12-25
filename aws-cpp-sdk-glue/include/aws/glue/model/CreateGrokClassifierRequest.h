@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGrokClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CreateGrokClassifierRequest
+  class CreateGrokClassifierRequest
   {
   public:
-    CreateGrokClassifierRequest();
-    CreateGrokClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    CreateGrokClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CreateGrokClassifierRequest();
+    AWS_GLUE_API CreateGrokClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CreateGrokClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_grokPattern;
-    bool m_grokPatternHasBeenSet;
+    bool m_grokPatternHasBeenSet = false;
 
     Aws::String m_customPatterns;
-    bool m_customPatternsHasBeenSet;
+    bool m_customPatternsHasBeenSet = false;
   };
 
 } // namespace Model

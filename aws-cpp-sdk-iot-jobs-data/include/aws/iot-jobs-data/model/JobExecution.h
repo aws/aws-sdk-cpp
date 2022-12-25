@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/JobExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTJOBSDATAPLANE_API JobExecution
+  class JobExecution
   {
   public:
-    JobExecution();
-    JobExecution(Aws::Utils::Json::JsonView jsonValue);
-    JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTJOBSDATAPLANE_API JobExecution();
+    AWS_IOTJOBSDATAPLANE_API JobExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -434,37 +434,37 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     long long m_queuedAt;
-    bool m_queuedAtHasBeenSet;
+    bool m_queuedAtHasBeenSet = false;
 
     long long m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     long long m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     long long m_approximateSecondsBeforeTimedOut;
-    bool m_approximateSecondsBeforeTimedOutHasBeenSet;
+    bool m_approximateSecondsBeforeTimedOutHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
 
     long long m_executionNumber;
-    bool m_executionNumberHasBeenSet;
+    bool m_executionNumberHasBeenSet = false;
 
     Aws::String m_jobDocument;
-    bool m_jobDocumentHasBeenSet;
+    bool m_jobDocumentHasBeenSet = false;
   };
 
 } // namespace Model

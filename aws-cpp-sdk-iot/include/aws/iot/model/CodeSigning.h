@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CodeSigning">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API CodeSigning
+  class CodeSigning
   {
   public:
-    CodeSigning();
-    CodeSigning(Aws::Utils::Json::JsonView jsonValue);
-    CodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CodeSigning();
+    AWS_IOT_API CodeSigning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_awsSignerJobId;
-    bool m_awsSignerJobIdHasBeenSet;
+    bool m_awsSignerJobIdHasBeenSet = false;
 
     StartSigningJobParameter m_startSigningJobParameter;
-    bool m_startSigningJobParameterHasBeenSet;
+    bool m_startSigningJobParameterHasBeenSet = false;
 
     CustomCodeSigning m_customCodeSigning;
-    bool m_customCodeSigningHasBeenSet;
+    bool m_customCodeSigningHasBeenSet = false;
   };
 
 } // namespace Model

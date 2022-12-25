@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxyTargetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBProxyTargetGroup
+  class DBProxyTargetGroup
   {
   public:
-    DBProxyTargetGroup();
-    DBProxyTargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBProxyTargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxyTargetGroup();
+    AWS_RDS_API DBProxyTargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxyTargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -379,28 +379,28 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_targetGroupName;
-    bool m_targetGroupNameHasBeenSet;
+    bool m_targetGroupNameHasBeenSet = false;
 
     Aws::String m_targetGroupArn;
-    bool m_targetGroupArnHasBeenSet;
+    bool m_targetGroupArnHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ConnectionPoolConfigurationInfo m_connectionPoolConfig;
-    bool m_connectionPoolConfigHasBeenSet;
+    bool m_connectionPoolConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedDate;
-    bool m_updatedDateHasBeenSet;
+    bool m_updatedDateHasBeenSet = false;
   };
 
 } // namespace Model

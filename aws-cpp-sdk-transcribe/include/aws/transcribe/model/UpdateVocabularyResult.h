@@ -27,12 +27,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult
+  class UpdateVocabularyResult
   {
   public:
-    UpdateVocabularyResult();
-    UpdateVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult();
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API UpdateVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
 
 
     /**
-     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>The date and time the specified custom vocabulary was last updated.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -106,7 +106,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>The date and time the specified custom vocabulary was last updated.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -114,7 +114,7 @@ namespace Model
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>The date and time the specified custom vocabulary was last updated.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -122,7 +122,7 @@ namespace Model
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>The date and time the specified custom vocabulary was last updated.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -130,7 +130,7 @@ namespace Model
     inline UpdateVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The date and time the specified vocabulary was last updated.</p>
+     * <p>The date and time the specified custom vocabulary was last updated.</p>
      * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
      * UTC-7 on May 4, 2022.</p>
@@ -140,35 +140,35 @@ namespace Model
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of your custom vocabulary. If the state is
-     * <code>READY</code>, you can use the vocabulary in a
+     * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartTranscriptionJob</code> request.</p>
      */
     inline UpdateVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}

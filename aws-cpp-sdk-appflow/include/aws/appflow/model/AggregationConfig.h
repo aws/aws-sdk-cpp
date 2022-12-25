@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AggregationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API AggregationConfig
+  class AggregationConfig
   {
   public:
-    AggregationConfig();
-    AggregationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AggregationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API AggregationConfig();
+    AWS_APPFLOW_API AggregationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API AggregationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,10 +74,46 @@ namespace Model
      */
     inline AggregationConfig& WithAggregationType(AggregationType&& value) { SetAggregationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
+     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
+     * size that you specify. The actual file sizes might differ from this target based
+     * on the number and size of the records that each file contains.</p>
+     */
+    inline long long GetTargetFileSize() const{ return m_targetFileSize; }
+
+    /**
+     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
+     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
+     * size that you specify. The actual file sizes might differ from this target based
+     * on the number and size of the records that each file contains.</p>
+     */
+    inline bool TargetFileSizeHasBeenSet() const { return m_targetFileSizeHasBeenSet; }
+
+    /**
+     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
+     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
+     * size that you specify. The actual file sizes might differ from this target based
+     * on the number and size of the records that each file contains.</p>
+     */
+    inline void SetTargetFileSize(long long value) { m_targetFileSizeHasBeenSet = true; m_targetFileSize = value; }
+
+    /**
+     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
+     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
+     * size that you specify. The actual file sizes might differ from this target based
+     * on the number and size of the records that each file contains.</p>
+     */
+    inline AggregationConfig& WithTargetFileSize(long long value) { SetTargetFileSize(value); return *this;}
+
   private:
 
     AggregationType m_aggregationType;
-    bool m_aggregationTypeHasBeenSet;
+    bool m_aggregationTypeHasBeenSet = false;
+
+    long long m_targetFileSize;
+    bool m_targetFileSizeHasBeenSet = false;
   };
 
 } // namespace Model

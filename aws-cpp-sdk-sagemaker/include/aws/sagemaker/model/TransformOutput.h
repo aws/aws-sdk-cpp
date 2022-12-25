@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformOutput
+  class TransformOutput
   {
   public:
-    TransformOutput();
-    TransformOutput(Aws::Utils::Json::JsonView jsonValue);
-    TransformOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformOutput();
+    AWS_SAGEMAKER_API TransformOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -492,16 +492,16 @@ namespace Model
   private:
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     AssemblyType m_assembleWith;
-    bool m_assembleWithHasBeenSet;
+    bool m_assembleWithHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CalculatedColumn">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CalculatedColumn
+  class CalculatedColumn
   {
   public:
-    CalculatedColumn();
-    CalculatedColumn(Aws::Utils::Json::JsonView jsonValue);
-    CalculatedColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CalculatedColumn();
+    AWS_QUICKSIGHT_API CalculatedColumn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CalculatedColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_columnName;
-    bool m_columnNameHasBeenSet;
+    bool m_columnNameHasBeenSet = false;
 
     Aws::String m_columnId;
-    bool m_columnIdHasBeenSet;
+    bool m_columnIdHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

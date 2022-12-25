@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API AccountLimit
+  class AccountLimit
   {
   public:
-    AccountLimit();
-    AccountLimit(Aws::Utils::Json::JsonView jsonValue);
-    AccountLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API AccountLimit();
+    AWS_LAMBDA_API AccountLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API AccountLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,19 +159,19 @@ namespace Model
   private:
 
     long long m_totalCodeSize;
-    bool m_totalCodeSizeHasBeenSet;
+    bool m_totalCodeSizeHasBeenSet = false;
 
     long long m_codeSizeUnzipped;
-    bool m_codeSizeUnzippedHasBeenSet;
+    bool m_codeSizeUnzippedHasBeenSet = false;
 
     long long m_codeSizeZipped;
-    bool m_codeSizeZippedHasBeenSet;
+    bool m_codeSizeZippedHasBeenSet = false;
 
     int m_concurrentExecutions;
-    bool m_concurrentExecutionsHasBeenSet;
+    bool m_concurrentExecutionsHasBeenSet = false;
 
     int m_unreservedConcurrentExecutions;
-    bool m_unreservedConcurrentExecutionsHasBeenSet;
+    bool m_unreservedConcurrentExecutionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioWatermarkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioWatermarkSettings
+  class AudioWatermarkSettings
   {
   public:
-    AudioWatermarkSettings();
-    AudioWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
-    AudioWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioWatermarkSettings();
+    AWS_MEDIALIVE_API AudioWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     NielsenWatermarksSettings m_nielsenWatermarksSettings;
-    bool m_nielsenWatermarksSettingsHasBeenSet;
+    bool m_nielsenWatermarksSettingsHasBeenSet = false;
   };
 
 } // namespace Model

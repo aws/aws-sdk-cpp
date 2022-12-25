@@ -28,7 +28,8 @@ ModifyReplicationInstanceRequest::ModifyReplicationInstanceRequest() :
     m_allowMajorVersionUpgradeHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_replicationInstanceIdentifierHasBeenSet(false)
+    m_replicationInstanceIdentifierHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,7 @@ Aws::String ModifyReplicationInstanceRequest::SerializePayload() const
 
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
    for(unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength(); ++vpcSecurityGroupIdsIndex)
    {
      vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString(m_vpcSecurityGroupIds[vpcSecurityGroupIdsIndex]);
@@ -104,6 +105,12 @@ Aws::String ModifyReplicationInstanceRequest::SerializePayload() const
   if(m_replicationInstanceIdentifierHasBeenSet)
   {
    payload.WithString("ReplicationInstanceIdentifier", m_replicationInstanceIdentifier);
+
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", m_networkType);
 
   }
 

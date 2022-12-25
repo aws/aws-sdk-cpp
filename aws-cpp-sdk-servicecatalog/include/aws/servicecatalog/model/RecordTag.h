@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordTag">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API RecordTag
+  class RecordTag
   {
   public:
-    RecordTag();
-    RecordTag(Aws::Utils::Json::JsonView jsonValue);
-    RecordTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API RecordTag();
+    AWS_SERVICECATALOG_API RecordTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API RecordTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

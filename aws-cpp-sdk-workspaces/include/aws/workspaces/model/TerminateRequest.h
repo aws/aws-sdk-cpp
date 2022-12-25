@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API TerminateRequest
+  class TerminateRequest
   {
   public:
-    TerminateRequest();
-    TerminateRequest(Aws::Utils::Json::JsonView jsonValue);
-    TerminateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API TerminateRequest();
+    AWS_WORKSPACES_API TerminateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API TerminateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

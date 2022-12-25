@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Subnet();
+    AWS_RDS_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     AvailabilityZone m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     Outpost m_subnetOutpost;
-    bool m_subnetOutpostHasBeenSet;
+    bool m_subnetOutpostHasBeenSet = false;
 
     Aws::String m_subnetStatus;
-    bool m_subnetStatusHasBeenSet;
+    bool m_subnetStatusHasBeenSet = false;
   };
 
 } // namespace Model

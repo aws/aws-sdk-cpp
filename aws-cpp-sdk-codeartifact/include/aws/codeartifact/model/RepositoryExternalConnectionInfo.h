@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositoryExternalConnectionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo
+  class RepositoryExternalConnectionInfo
   {
   public:
-    RepositoryExternalConnectionInfo();
-    RepositoryExternalConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryExternalConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo();
+    AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API RepositoryExternalConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::String m_externalConnectionName;
-    bool m_externalConnectionNameHasBeenSet;
+    bool m_externalConnectionNameHasBeenSet = false;
 
     PackageFormat m_packageFormat;
-    bool m_packageFormatHasBeenSet;
+    bool m_packageFormatHasBeenSet = false;
 
     ExternalConnectionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

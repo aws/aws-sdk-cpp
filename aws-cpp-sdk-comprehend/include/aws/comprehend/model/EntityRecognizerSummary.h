@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerSummary
+  class EntityRecognizerSummary
   {
   public:
-    EntityRecognizerSummary();
-    EntityRecognizerSummary(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerSummary();
+    AWS_COMPREHEND_API EntityRecognizerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     Aws::String m_recognizerName;
-    bool m_recognizerNameHasBeenSet;
+    bool m_recognizerNameHasBeenSet = false;
 
     int m_numberOfVersions;
-    bool m_numberOfVersionsHasBeenSet;
+    bool m_numberOfVersionsHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestVersionCreatedAt;
-    bool m_latestVersionCreatedAtHasBeenSet;
+    bool m_latestVersionCreatedAtHasBeenSet = false;
 
     Aws::String m_latestVersionName;
-    bool m_latestVersionNameHasBeenSet;
+    bool m_latestVersionNameHasBeenSet = false;
 
     ModelStatus m_latestVersionStatus;
-    bool m_latestVersionStatusHasBeenSet;
+    bool m_latestVersionStatusHasBeenSet = false;
   };
 
 } // namespace Model

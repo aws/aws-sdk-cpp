@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowEndpointConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DataflowEndpointConfig
+  class DataflowEndpointConfig
   {
   public:
-    DataflowEndpointConfig();
-    DataflowEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataflowEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DataflowEndpointConfig();
+    AWS_GROUNDSTATION_API DataflowEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DataflowEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_dataflowEndpointName;
-    bool m_dataflowEndpointNameHasBeenSet;
+    bool m_dataflowEndpointNameHasBeenSet = false;
 
     Aws::String m_dataflowEndpointRegion;
-    bool m_dataflowEndpointRegionHasBeenSet;
+    bool m_dataflowEndpointRegionHasBeenSet = false;
   };
 
 } // namespace Model

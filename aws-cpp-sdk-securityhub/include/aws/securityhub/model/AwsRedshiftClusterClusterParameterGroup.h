@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterClusterParameterGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterClusterParameterGroup
+  class AwsRedshiftClusterClusterParameterGroup
   {
   public:
-    AwsRedshiftClusterClusterParameterGroup();
-    AwsRedshiftClusterClusterParameterGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterClusterParameterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterParameterGroup();
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterParameterGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterParameterGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<AwsRedshiftClusterClusterParameterStatus> m_clusterParameterStatusList;
-    bool m_clusterParameterStatusListHasBeenSet;
+    bool m_clusterParameterStatusListHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

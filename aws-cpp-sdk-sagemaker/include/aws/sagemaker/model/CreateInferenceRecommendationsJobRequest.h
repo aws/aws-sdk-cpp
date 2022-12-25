@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API CreateInferenceRecommendationsJobRequest : public SageMakerRequest
+  class CreateInferenceRecommendationsJobRequest : public SageMakerRequest
   {
   public:
-    CreateInferenceRecommendationsJobRequest();
+    AWS_SAGEMAKER_API CreateInferenceRecommendationsJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInferenceRecommendationsJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -422,28 +422,28 @@ namespace Model
   private:
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     RecommendationJobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     RecommendationJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
 
     Aws::String m_jobDescription;
-    bool m_jobDescriptionHasBeenSet;
+    bool m_jobDescriptionHasBeenSet = false;
 
     RecommendationJobStoppingConditions m_stoppingConditions;
-    bool m_stoppingConditionsHasBeenSet;
+    bool m_stoppingConditionsHasBeenSet = false;
 
     RecommendationJobOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

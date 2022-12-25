@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API UpdateRdsDbInstanceRequest : public OpsWorksRequest
+  class UpdateRdsDbInstanceRequest : public OpsWorksRequest
   {
   public:
-    UpdateRdsDbInstanceRequest();
+    AWS_OPSWORKS_API UpdateRdsDbInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRdsDbInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_rdsDbInstanceArn;
-    bool m_rdsDbInstanceArnHasBeenSet;
+    bool m_rdsDbInstanceArnHasBeenSet = false;
 
     Aws::String m_dbUser;
-    bool m_dbUserHasBeenSet;
+    bool m_dbUserHasBeenSet = false;
 
     Aws::String m_dbPassword;
-    bool m_dbPasswordHasBeenSet;
+    bool m_dbPasswordHasBeenSet = false;
   };
 
 } // namespace Model

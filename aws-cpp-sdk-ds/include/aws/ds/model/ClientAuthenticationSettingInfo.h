@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ClientAuthenticationSettingInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo
+  class ClientAuthenticationSettingInfo
   {
   public:
-    ClientAuthenticationSettingInfo();
-    ClientAuthenticationSettingInfo(Aws::Utils::Json::JsonView jsonValue);
-    ClientAuthenticationSettingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo();
+    AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     ClientAuthenticationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ClientAuthenticationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

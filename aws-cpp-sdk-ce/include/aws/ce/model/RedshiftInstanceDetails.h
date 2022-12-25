@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RedshiftInstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RedshiftInstanceDetails
+  class RedshiftInstanceDetails
   {
   public:
-    RedshiftInstanceDetails();
-    RedshiftInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RedshiftInstanceDetails();
+    AWS_COSTEXPLORER_API RedshiftInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RedshiftInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet;
+    bool m_sizeFlexEligibleHasBeenSet = false;
   };
 
 } // namespace Model

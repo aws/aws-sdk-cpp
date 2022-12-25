@@ -36,7 +36,8 @@ Workspace::Workspace() :
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
-    m_modificationStatesHasBeenSet(false)
+    m_modificationStatesHasBeenSet(false),
+    m_relatedWorkspacesHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Workspace::Workspace(JsonView jsonValue) :
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
-    m_modificationStatesHasBeenSet(false)
+    m_modificationStatesHasBeenSet(false),
+    m_relatedWorkspacesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,12 +167,22 @@ Workspace& Workspace::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ModificationStates"))
   {
-    Array<JsonView> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
+    Aws::Utils::Array<JsonView> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
     for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
     {
       m_modificationStates.push_back(modificationStatesJsonList[modificationStatesIndex].AsObject());
     }
     m_modificationStatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RelatedWorkspaces"))
+  {
+    Aws::Utils::Array<JsonView> relatedWorkspacesJsonList = jsonValue.GetArray("RelatedWorkspaces");
+    for(unsigned relatedWorkspacesIndex = 0; relatedWorkspacesIndex < relatedWorkspacesJsonList.GetLength(); ++relatedWorkspacesIndex)
+    {
+      m_relatedWorkspaces.push_back(relatedWorkspacesJsonList[relatedWorkspacesIndex].AsObject());
+    }
+    m_relatedWorkspacesHasBeenSet = true;
   }
 
   return *this;
@@ -265,12 +277,23 @@ JsonValue Workspace::Jsonize() const
 
   if(m_modificationStatesHasBeenSet)
   {
-   Array<JsonValue> modificationStatesJsonList(m_modificationStates.size());
+   Aws::Utils::Array<JsonValue> modificationStatesJsonList(m_modificationStates.size());
    for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
    {
      modificationStatesJsonList[modificationStatesIndex].AsObject(m_modificationStates[modificationStatesIndex].Jsonize());
    }
    payload.WithArray("ModificationStates", std::move(modificationStatesJsonList));
+
+  }
+
+  if(m_relatedWorkspacesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> relatedWorkspacesJsonList(m_relatedWorkspaces.size());
+   for(unsigned relatedWorkspacesIndex = 0; relatedWorkspacesIndex < relatedWorkspacesJsonList.GetLength(); ++relatedWorkspacesIndex)
+   {
+     relatedWorkspacesJsonList[relatedWorkspacesIndex].AsObject(m_relatedWorkspaces[relatedWorkspacesIndex].Jsonize());
+   }
+   payload.WithArray("RelatedWorkspaces", std::move(relatedWorkspacesJsonList));
 
   }
 

@@ -31,52 +31,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ColumnConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ColumnConfiguration
+  class ColumnConfiguration
   {
   public:
-    ColumnConfiguration();
-    ColumnConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ColumnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ColumnConfiguration();
+    AWS_KENDRA_API ColumnConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ColumnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline const Aws::String& GetDocumentIdColumnName() const{ return m_documentIdColumnName; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline bool DocumentIdColumnNameHasBeenSet() const { return m_documentIdColumnNameHasBeenSet; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(const Aws::String& value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName = value; }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(Aws::String&& value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName = std::move(value); }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline void SetDocumentIdColumnName(const char* value) { m_documentIdColumnNameHasBeenSet = true; m_documentIdColumnName.assign(value); }
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(const Aws::String& value) { SetDocumentIdColumnName(value); return *this;}
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(Aws::String&& value) { SetDocumentIdColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>The column that provides the document's unique identifier.</p>
+     * <p>The column that provides the document's identifier.</p>
      */
     inline ColumnConfiguration& WithDocumentIdColumnName(const char* value) { SetDocumentIdColumnName(value); return *this;}
 
@@ -277,19 +277,19 @@ namespace Model
   private:
 
     Aws::String m_documentIdColumnName;
-    bool m_documentIdColumnNameHasBeenSet;
+    bool m_documentIdColumnNameHasBeenSet = false;
 
     Aws::String m_documentDataColumnName;
-    bool m_documentDataColumnNameHasBeenSet;
+    bool m_documentDataColumnNameHasBeenSet = false;
 
     Aws::String m_documentTitleColumnName;
-    bool m_documentTitleColumnNameHasBeenSet;
+    bool m_documentTitleColumnNameHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_changeDetectingColumns;
-    bool m_changeDetectingColumnsHasBeenSet;
+    bool m_changeDetectingColumnsHasBeenSet = false;
   };
 
 } // namespace Model

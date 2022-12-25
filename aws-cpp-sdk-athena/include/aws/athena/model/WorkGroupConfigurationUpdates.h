@@ -7,6 +7,8 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfigurationUpdates.h>
 #include <aws/athena/model/EngineVersion.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -34,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfigurationUpdates">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API WorkGroupConfigurationUpdates
+  class WorkGroupConfigurationUpdates
   {
   public:
-    WorkGroupConfigurationUpdates();
-    WorkGroupConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
-    WorkGroupConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API WorkGroupConfigurationUpdates();
+    AWS_ATHENA_API WorkGroupConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API WorkGroupConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,28 +307,170 @@ namespace Model
      */
     inline WorkGroupConfigurationUpdates& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Removes content encryption configuration for a workgroup.</p>
+     */
+    inline bool GetRemoveCustomerContentEncryptionConfiguration() const{ return m_removeCustomerContentEncryptionConfiguration; }
+
+    /**
+     * <p>Removes content encryption configuration for a workgroup.</p>
+     */
+    inline bool RemoveCustomerContentEncryptionConfigurationHasBeenSet() const { return m_removeCustomerContentEncryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Removes content encryption configuration for a workgroup.</p>
+     */
+    inline void SetRemoveCustomerContentEncryptionConfiguration(bool value) { m_removeCustomerContentEncryptionConfigurationHasBeenSet = true; m_removeCustomerContentEncryptionConfiguration = value; }
+
+    /**
+     * <p>Removes content encryption configuration for a workgroup.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithRemoveCustomerContentEncryptionConfiguration(bool value) { SetRemoveCustomerContentEncryptionConfiguration(value); return *this;}
+
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline const Aws::String& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::String& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::String&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline void SetAdditionalConfiguration(const char* value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.assign(value); }
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithAdditionalConfiguration(const Aws::String& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithAdditionalConfiguration(Aws::String&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a user defined string in JSON format for a Spark-enabled
+     * workgroup.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithAdditionalConfiguration(const char* value) { SetAdditionalConfiguration(value); return *this;}
+
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the ARN of the execution role for the workgroup</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+
+
+    
+    inline const CustomerContentEncryptionConfiguration& GetCustomerContentEncryptionConfiguration() const{ return m_customerContentEncryptionConfiguration; }
+
+    
+    inline bool CustomerContentEncryptionConfigurationHasBeenSet() const { return m_customerContentEncryptionConfigurationHasBeenSet; }
+
+    
+    inline void SetCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = value; }
+
+    
+    inline void SetCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = std::move(value); }
+
+    
+    inline WorkGroupConfigurationUpdates& WithCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { SetCustomerContentEncryptionConfiguration(value); return *this;}
+
+    
+    inline WorkGroupConfigurationUpdates& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     bool m_enforceWorkGroupConfiguration;
-    bool m_enforceWorkGroupConfigurationHasBeenSet;
+    bool m_enforceWorkGroupConfigurationHasBeenSet = false;
 
     ResultConfigurationUpdates m_resultConfigurationUpdates;
-    bool m_resultConfigurationUpdatesHasBeenSet;
+    bool m_resultConfigurationUpdatesHasBeenSet = false;
 
     bool m_publishCloudWatchMetricsEnabled;
-    bool m_publishCloudWatchMetricsEnabledHasBeenSet;
+    bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
 
     long long m_bytesScannedCutoffPerQuery;
-    bool m_bytesScannedCutoffPerQueryHasBeenSet;
+    bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
 
     bool m_removeBytesScannedCutoffPerQuery;
-    bool m_removeBytesScannedCutoffPerQueryHasBeenSet;
+    bool m_removeBytesScannedCutoffPerQueryHasBeenSet = false;
 
     bool m_requesterPaysEnabled;
-    bool m_requesterPaysEnabledHasBeenSet;
+    bool m_requesterPaysEnabledHasBeenSet = false;
 
     EngineVersion m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
+
+    bool m_removeCustomerContentEncryptionConfiguration;
+    bool m_removeCustomerContentEncryptionConfigurationHasBeenSet = false;
+
+    Aws::String m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
+
+    Aws::String m_executionRole;
+    bool m_executionRoleHasBeenSet = false;
+
+    CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
+    bool m_customerContentEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

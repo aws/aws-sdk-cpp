@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API BatchGetDocumentStatusRequest : public KendraRequest
+  class BatchGetDocumentStatusRequest : public KendraRequest
   {
   public:
-    BatchGetDocumentStatusRequest();
+    AWS_KENDRA_API BatchGetDocumentStatusRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchGetDocumentStatus"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -160,10 +160,10 @@ namespace Model
   private:
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::Vector<DocumentInfo> m_documentInfoList;
-    bool m_documentInfoListHasBeenSet;
+    bool m_documentInfoListHasBeenSet = false;
   };
 
 } // namespace Model

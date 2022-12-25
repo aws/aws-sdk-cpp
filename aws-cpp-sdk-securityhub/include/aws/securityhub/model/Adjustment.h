@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Adjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Adjustment
+  class Adjustment
   {
   public:
-    Adjustment();
-    Adjustment(Aws::Utils::Json::JsonView jsonValue);
-    Adjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Adjustment();
+    AWS_SECURITYHUB_API Adjustment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Adjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

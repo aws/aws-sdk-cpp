@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_FORECASTSERVICE_API CreateDatasetImportJobRequest : public ForecastServiceRequest
+  class CreateDatasetImportJobRequest : public ForecastServiceRequest
   {
   public:
-    CreateDatasetImportJobRequest();
+    AWS_FORECASTSERVICE_API CreateDatasetImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDatasetImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FORECASTSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -730,31 +730,31 @@ namespace Model
   private:
 
     Aws::String m_datasetImportJobName;
-    bool m_datasetImportJobNameHasBeenSet;
+    bool m_datasetImportJobNameHasBeenSet = false;
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     DataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     Aws::String m_timestampFormat;
-    bool m_timestampFormatHasBeenSet;
+    bool m_timestampFormatHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
 
     bool m_useGeolocationForTimeZone;
-    bool m_useGeolocationForTimeZoneHasBeenSet;
+    bool m_useGeolocationForTimeZoneHasBeenSet = false;
 
     Aws::String m_geolocationFormat;
-    bool m_geolocationFormatHasBeenSet;
+    bool m_geolocationFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
   };
 
 } // namespace Model

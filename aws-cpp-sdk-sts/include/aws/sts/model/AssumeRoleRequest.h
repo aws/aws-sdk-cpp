@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_STS_API AssumeRoleRequest : public STSRequest
+  class AssumeRoleRequest : public STSRequest
   {
   public:
-    AssumeRoleRequest();
+    AWS_STS_API AssumeRoleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssumeRole"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_STS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_STS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -211,11 +211,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -238,11 +238,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -265,11 +265,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -292,11 +292,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -319,11 +319,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -346,11 +346,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -373,11 +373,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -400,11 +400,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
      * Amazon Web Services General Reference.</p>  <p>An Amazon Web Services
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plaintext meets the other requirements. The
+     * conversion compresses the passed inline session policy, managed policy ARNs, and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * the policies and tags for your request are to the upper size limit.</p> 
      * <p>Passing policies to this operation returns new temporary credentials. The
      * resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary
@@ -434,11 +434,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -458,11 +459,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -482,11 +484,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -506,11 +509,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -530,11 +534,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -554,11 +559,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -578,11 +584,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -602,11 +609,12 @@ namespace Model
      * policy characters can be any ASCII character from the space character to the end
      * of the valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
+     * <p>An Amazon Web Services conversion compresses the passed inline session
+     * policy, managed policy ARNs, and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit.</p> 
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -743,17 +751,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -778,17 +786,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -813,17 +821,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -848,17 +856,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -883,17 +891,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -918,17 +926,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -953,17 +961,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -988,17 +996,17 @@ namespace Model
      * characters. For these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
-     * Amazon Web Services conversion compresses the passed session policies and
-     * session tags into a packed binary format that has a separate limit. Your request
-     * can fail for this limit even if your plaintext meets the other requirements. The
-     * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> 
-     * <p>You can pass a session tag with the same key as a tag that is already
-     * attached to the role. When you do, session tags override a role tag with the
-     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
-     * preserved. This means that you cannot have separate <code>Department</code> and
-     * <code>department</code> tag keys. Assume that the role has the
-     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * Amazon Web Services conversion compresses the passed inline session policy,
+     * managed policy ARNs, and session tags into a packed binary format that has a
+     * separate limit. Your request can fail for this limit even if your plaintext
+     * meets the other requirements. The <code>PackedPolicySize</code> response element
+     * indicates by percentage how close the policies and tags for your request are to
+     * the upper size limit.</p>  <p>You can pass a session tag with the same
+     * key as a tag that is already attached to the role. When you do, session tags
+     * override a role tag with the same key. </p> <p>Tag key–value pairs are not case
+     * sensitive, but case is preserved. This means that you cannot have separate
+     * <code>Department</code> and <code>department</code> tag keys. Assume that the
+     * role has the <code>Department</code>=<code>Marketing</code> tag and you pass the
      * <code>department</code>=<code>engineering</code> session tag.
      * <code>Department</code> and <code>department</code> are not saved as separate
      * tags, and the session tag passed in the request takes precedence over the role
@@ -1625,37 +1633,37 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_roleSessionName;
-    bool m_roleSessionNameHasBeenSet;
+    bool m_roleSessionNameHasBeenSet = false;
 
     Aws::Vector<PolicyDescriptorType> m_policyArns;
-    bool m_policyArnsHasBeenSet;
+    bool m_policyArnsHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     int m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_transitiveTagKeys;
-    bool m_transitiveTagKeysHasBeenSet;
+    bool m_transitiveTagKeysHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_tokenCode;
-    bool m_tokenCodeHasBeenSet;
+    bool m_tokenCodeHasBeenSet = false;
 
     Aws::String m_sourceIdentity;
-    bool m_sourceIdentityHasBeenSet;
+    bool m_sourceIdentityHasBeenSet = false;
   };
 
 } // namespace Model

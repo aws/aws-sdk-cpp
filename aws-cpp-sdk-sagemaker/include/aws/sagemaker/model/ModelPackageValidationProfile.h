@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageValidationProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelPackageValidationProfile
+  class ModelPackageValidationProfile
   {
   public:
-    ModelPackageValidationProfile();
-    ModelPackageValidationProfile(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackageValidationProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelPackageValidationProfile();
+    AWS_SAGEMAKER_API ModelPackageValidationProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelPackageValidationProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     TransformJobDefinition m_transformJobDefinition;
-    bool m_transformJobDefinitionHasBeenSet;
+    bool m_transformJobDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

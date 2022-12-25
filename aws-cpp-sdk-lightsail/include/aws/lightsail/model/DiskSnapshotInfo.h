@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskSnapshotInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DiskSnapshotInfo
+  class DiskSnapshotInfo
   {
   public:
-    DiskSnapshotInfo();
-    DiskSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
-    DiskSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DiskSnapshotInfo();
+    AWS_LIGHTSAIL_API DiskSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DiskSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

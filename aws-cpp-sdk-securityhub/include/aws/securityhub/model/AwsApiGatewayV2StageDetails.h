@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayV2StageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayV2StageDetails
+  class AwsApiGatewayV2StageDetails
   {
   public:
-    AwsApiGatewayV2StageDetails();
-    AwsApiGatewayV2StageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayV2StageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayV2StageDetails();
+    AWS_SECURITYHUB_API AwsApiGatewayV2StageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayV2StageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -667,43 +667,43 @@ namespace Model
   private:
 
     Aws::String m_clientCertificateId;
-    bool m_clientCertificateIdHasBeenSet;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     AwsApiGatewayV2RouteSettings m_defaultRouteSettings;
-    bool m_defaultRouteSettingsHasBeenSet;
+    bool m_defaultRouteSettingsHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     AwsApiGatewayV2RouteSettings m_routeSettings;
-    bool m_routeSettingsHasBeenSet;
+    bool m_routeSettingsHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
-    bool m_stageVariablesHasBeenSet;
+    bool m_stageVariablesHasBeenSet = false;
 
     AwsApiGatewayAccessLogSettings m_accessLogSettings;
-    bool m_accessLogSettingsHasBeenSet;
+    bool m_accessLogSettingsHasBeenSet = false;
 
     bool m_autoDeploy;
-    bool m_autoDeployHasBeenSet;
+    bool m_autoDeployHasBeenSet = false;
 
     Aws::String m_lastDeploymentStatusMessage;
-    bool m_lastDeploymentStatusMessageHasBeenSet;
+    bool m_lastDeploymentStatusMessageHasBeenSet = false;
 
     bool m_apiGatewayManaged;
-    bool m_apiGatewayManagedHasBeenSet;
+    bool m_apiGatewayManagedHasBeenSet = false;
   };
 
 } // namespace Model

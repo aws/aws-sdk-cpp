@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonMatchPattern">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API JsonMatchPattern
+  class JsonMatchPattern
   {
   public:
-    JsonMatchPattern();
-    JsonMatchPattern(Aws::Utils::Json::JsonView jsonValue);
-    JsonMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API JsonMatchPattern();
+    AWS_WAFV2_API JsonMatchPattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API JsonMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     All m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedPaths;
-    bool m_includedPathsHasBeenSet;
+    bool m_includedPathsHasBeenSet = false;
   };
 
 } // namespace Model

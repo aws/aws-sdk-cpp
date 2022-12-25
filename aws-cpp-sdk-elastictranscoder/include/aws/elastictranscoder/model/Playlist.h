@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Playlist">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Playlist
+  class Playlist
   {
   public:
-    Playlist();
-    Playlist(Aws::Utils::Json::JsonView jsonValue);
-    Playlist& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Playlist();
+    AWS_ELASTICTRANSCODER_API Playlist(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Playlist& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -645,25 +645,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outputKeys;
-    bool m_outputKeysHasBeenSet;
+    bool m_outputKeysHasBeenSet = false;
 
     HlsContentProtection m_hlsContentProtection;
-    bool m_hlsContentProtectionHasBeenSet;
+    bool m_hlsContentProtectionHasBeenSet = false;
 
     PlayReadyDrm m_playReadyDrm;
-    bool m_playReadyDrmHasBeenSet;
+    bool m_playReadyDrmHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
-    bool m_statusDetailHasBeenSet;
+    bool m_statusDetailHasBeenSet = false;
   };
 
 } // namespace Model

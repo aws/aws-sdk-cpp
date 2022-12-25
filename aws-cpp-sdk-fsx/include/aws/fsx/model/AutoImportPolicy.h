@@ -27,20 +27,21 @@ namespace Model
   /**
    * <p>Describes the data repository association's automatic import policy. The
    * AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory
-   * listings up to date by importing changes to your file system as you modify
-   * objects in a linked S3 bucket.</p> <p>This <code>AutoImportPolicy</code> is
-   * supported only for file systems with the <code>Persistent_2</code> deployment
-   * type.</p><p><h3>See Also:</h3>   <a
+   * listings up to date by importing changes to your Amazon FSx for Lustre file
+   * system as you modify objects in a linked S3 bucket.</p> <p>The
+   * <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file
+   * systems with the <code>Persistent_2</code> deployment type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AutoImportPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API AutoImportPolicy
+  class AutoImportPolicy
   {
   public:
-    AutoImportPolicy();
-    AutoImportPolicy(Aws::Utils::Json::JsonView jsonValue);
-    AutoImportPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API AutoImportPolicy();
+    AWS_FSX_API AutoImportPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API AutoImportPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,7 +151,7 @@ namespace Model
   private:
 
     Aws::Vector<EventType> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingConstraints">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ScalingConstraints
+  class ScalingConstraints
   {
   public:
-    ScalingConstraints();
-    ScalingConstraints(Aws::Utils::Json::JsonView jsonValue);
-    ScalingConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ScalingConstraints();
+    AWS_EMR_API ScalingConstraints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ScalingConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,10 +98,10 @@ namespace Model
   private:
 
     int m_minCapacity;
-    bool m_minCapacityHasBeenSet;
+    bool m_minCapacityHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
   };
 
 } // namespace Model

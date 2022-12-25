@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API UpdateAuthorizerRequest : public IoTRequest
+  class UpdateAuthorizerRequest : public IoTRequest
   {
   public:
-    UpdateAuthorizerRequest();
+    AWS_IOT_API UpdateAuthorizerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAuthorizer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -285,22 +285,22 @@ namespace Model
   private:
 
     Aws::String m_authorizerName;
-    bool m_authorizerNameHasBeenSet;
+    bool m_authorizerNameHasBeenSet = false;
 
     Aws::String m_authorizerFunctionArn;
-    bool m_authorizerFunctionArnHasBeenSet;
+    bool m_authorizerFunctionArnHasBeenSet = false;
 
     Aws::String m_tokenKeyName;
-    bool m_tokenKeyNameHasBeenSet;
+    bool m_tokenKeyNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tokenSigningPublicKeys;
-    bool m_tokenSigningPublicKeysHasBeenSet;
+    bool m_tokenSigningPublicKeysHasBeenSet = false;
 
     AuthorizerStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_enableCachingForHttp;
-    bool m_enableCachingForHttpHasBeenSet;
+    bool m_enableCachingForHttpHasBeenSet = false;
   };
 
 } // namespace Model

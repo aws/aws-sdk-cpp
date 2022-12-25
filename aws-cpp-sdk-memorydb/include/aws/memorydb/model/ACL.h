@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ACL">AWS API
    * Reference</a></p>
    */
-  class AWS_MEMORYDB_API ACL
+  class ACL
   {
   public:
-    ACL();
-    ACL(Aws::Utils::Json::JsonView jsonValue);
-    ACL& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ACL();
+    AWS_MEMORYDB_API ACL(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ACL& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,25 +339,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNames;
-    bool m_userNamesHasBeenSet;
+    bool m_userNamesHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
-    bool m_minimumEngineVersionHasBeenSet;
+    bool m_minimumEngineVersionHasBeenSet = false;
 
     ACLPendingChanges m_pendingChanges;
-    bool m_pendingChangesHasBeenSet;
+    bool m_pendingChangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusters;
-    bool m_clustersHasBeenSet;
+    bool m_clustersHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
   };
 
 } // namespace Model

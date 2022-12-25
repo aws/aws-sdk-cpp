@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AutoSnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AutoSnapshotDetails
+  class AutoSnapshotDetails
   {
   public:
-    AutoSnapshotDetails();
-    AutoSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    AutoSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AutoSnapshotDetails();
+    AWS_LIGHTSAIL_API AutoSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AutoSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     AutoSnapshotStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<AttachedDisk> m_fromAttachedDisks;
-    bool m_fromAttachedDisksHasBeenSet;
+    bool m_fromAttachedDisksHasBeenSet = false;
   };
 
 } // namespace Model

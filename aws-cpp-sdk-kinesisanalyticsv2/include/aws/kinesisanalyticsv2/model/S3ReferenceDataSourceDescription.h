@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ReferenceDataSourceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API S3ReferenceDataSourceDescription
+  class S3ReferenceDataSourceDescription
   {
   public:
-    S3ReferenceDataSourceDescription();
-    S3ReferenceDataSourceDescription(Aws::Utils::Json::JsonView jsonValue);
-    S3ReferenceDataSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API S3ReferenceDataSourceDescription();
+    AWS_KINESISANALYTICSV2_API S3ReferenceDataSourceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API S3ReferenceDataSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_fileKey;
-    bool m_fileKeyHasBeenSet;
+    bool m_fileKeyHasBeenSet = false;
 
     Aws::String m_referenceRoleARN;
-    bool m_referenceRoleARNHasBeenSet;
+    bool m_referenceRoleARNHasBeenSet = false;
   };
 
 } // namespace Model

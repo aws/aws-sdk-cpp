@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StoredQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API StoredQuery
+  class StoredQuery
   {
   public:
-    StoredQuery();
-    StoredQuery(Aws::Utils::Json::JsonView jsonValue);
-    StoredQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API StoredQuery();
+    AWS_CONFIGSERVICE_API StoredQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API StoredQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_queryId;
-    bool m_queryIdHasBeenSet;
+    bool m_queryIdHasBeenSet = false;
 
     Aws::String m_queryArn;
-    bool m_queryArnHasBeenSet;
+    bool m_queryArnHasBeenSet = false;
 
     Aws::String m_queryName;
-    bool m_queryNameHasBeenSet;
+    bool m_queryNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
   };
 
 } // namespace Model

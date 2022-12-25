@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAccessKeySessionContextAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes
+  class AwsIamAccessKeySessionContextAttributes
   {
   public:
-    AwsIamAccessKeySessionContextAttributes();
-    AwsIamAccessKeySessionContextAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamAccessKeySessionContextAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes();
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContextAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,10 +134,10 @@ namespace Model
   private:
 
     bool m_mfaAuthenticated;
-    bool m_mfaAuthenticatedHasBeenSet;
+    bool m_mfaAuthenticatedHasBeenSet = false;
 
     Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

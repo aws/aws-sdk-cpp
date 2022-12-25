@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SimpleRule">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API SimpleRule
+  class SimpleRule
   {
   public:
-    SimpleRule();
-    SimpleRule(Aws::Utils::Json::JsonView jsonValue);
-    SimpleRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API SimpleRule();
+    AWS_IOTEVENTS_API SimpleRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API SimpleRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_inputProperty;
-    bool m_inputPropertyHasBeenSet;
+    bool m_inputPropertyHasBeenSet = false;
 
     ComparisonOperator m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     Aws::String m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
   };
 
 } // namespace Model

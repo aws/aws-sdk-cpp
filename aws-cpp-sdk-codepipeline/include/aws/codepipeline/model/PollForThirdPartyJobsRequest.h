@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PollForThirdPartyJobsRequest : public CodePipelineRequest
+  class PollForThirdPartyJobsRequest : public CodePipelineRequest
   {
   public:
-    PollForThirdPartyJobsRequest();
+    AWS_CODEPIPELINE_API PollForThirdPartyJobsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PollForThirdPartyJobs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEPIPELINE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODEPIPELINE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     ActionTypeId m_actionTypeId;
-    bool m_actionTypeIdHasBeenSet;
+    bool m_actionTypeIdHasBeenSet = false;
 
     int m_maxBatchSize;
-    bool m_maxBatchSizeHasBeenSet;
+    bool m_maxBatchSizeHasBeenSet = false;
   };
 
 } // namespace Model

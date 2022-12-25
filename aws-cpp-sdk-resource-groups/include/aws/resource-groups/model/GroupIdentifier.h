@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API GroupIdentifier
+  class GroupIdentifier
   {
   public:
-    GroupIdentifier();
-    GroupIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    GroupIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API GroupIdentifier();
+    AWS_RESOURCEGROUPS_API GroupIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API GroupIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_groupArn;
-    bool m_groupArnHasBeenSet;
+    bool m_groupArnHasBeenSet = false;
   };
 
 } // namespace Model

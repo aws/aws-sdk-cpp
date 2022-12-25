@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequestEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequestEvent
+  class PullRequestEvent
   {
   public:
-    PullRequestEvent();
-    PullRequestEvent(Aws::Utils::Json::JsonView jsonValue);
-    PullRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequestEvent();
+    AWS_CODECOMMIT_API PullRequestEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -449,37 +449,37 @@ namespace Model
   private:
 
     Aws::String m_pullRequestId;
-    bool m_pullRequestIdHasBeenSet;
+    bool m_pullRequestIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventDate;
-    bool m_eventDateHasBeenSet;
+    bool m_eventDateHasBeenSet = false;
 
     PullRequestEventType m_pullRequestEventType;
-    bool m_pullRequestEventTypeHasBeenSet;
+    bool m_pullRequestEventTypeHasBeenSet = false;
 
     Aws::String m_actorArn;
-    bool m_actorArnHasBeenSet;
+    bool m_actorArnHasBeenSet = false;
 
     PullRequestCreatedEventMetadata m_pullRequestCreatedEventMetadata;
-    bool m_pullRequestCreatedEventMetadataHasBeenSet;
+    bool m_pullRequestCreatedEventMetadataHasBeenSet = false;
 
     PullRequestStatusChangedEventMetadata m_pullRequestStatusChangedEventMetadata;
-    bool m_pullRequestStatusChangedEventMetadataHasBeenSet;
+    bool m_pullRequestStatusChangedEventMetadataHasBeenSet = false;
 
     PullRequestSourceReferenceUpdatedEventMetadata m_pullRequestSourceReferenceUpdatedEventMetadata;
-    bool m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet;
+    bool m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = false;
 
     PullRequestMergedStateChangedEventMetadata m_pullRequestMergedStateChangedEventMetadata;
-    bool m_pullRequestMergedStateChangedEventMetadataHasBeenSet;
+    bool m_pullRequestMergedStateChangedEventMetadataHasBeenSet = false;
 
     ApprovalRuleEventMetadata m_approvalRuleEventMetadata;
-    bool m_approvalRuleEventMetadataHasBeenSet;
+    bool m_approvalRuleEventMetadataHasBeenSet = false;
 
     ApprovalStateChangedEventMetadata m_approvalStateChangedEventMetadata;
-    bool m_approvalStateChangedEventMetadataHasBeenSet;
+    bool m_approvalStateChangedEventMetadataHasBeenSet = false;
 
     ApprovalRuleOverriddenEventMetadata m_approvalRuleOverriddenEventMetadata;
-    bool m_approvalRuleOverriddenEventMetadataHasBeenSet;
+    bool m_approvalRuleOverriddenEventMetadataHasBeenSet = false;
   };
 
 } // namespace Model

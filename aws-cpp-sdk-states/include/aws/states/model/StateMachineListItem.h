@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateMachineListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API StateMachineListItem
+  class StateMachineListItem
   {
   public:
-    StateMachineListItem();
-    StateMachineListItem(Aws::Utils::Json::JsonView jsonValue);
-    StateMachineListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API StateMachineListItem();
+    AWS_SFN_API StateMachineListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API StateMachineListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -233,16 +233,16 @@ namespace Model
   private:
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StateMachineType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ DescribeSavingsPlansOfferingsResult& DescribeSavingsPlansOfferingsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("searchResults"))
   {
-    Array<JsonView> searchResultsJsonList = jsonValue.GetArray("searchResults");
+    Aws::Utils::Array<JsonView> searchResultsJsonList = jsonValue.GetArray("searchResults");
     for(unsigned searchResultsIndex = 0; searchResultsIndex < searchResultsJsonList.GetLength(); ++searchResultsIndex)
     {
       m_searchResults.push_back(searchResultsJsonList[searchResultsIndex].AsObject());

@@ -22,7 +22,8 @@ DirectoryConfig::DirectoryConfig() :
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
     m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DirectoryConfig::DirectoryConfig(JsonView jsonValue) :
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
     m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,7 +48,7 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedNames"))
   {
-    Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
+    Aws::Utils::Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
     for(unsigned organizationalUnitDistinguishedNamesIndex = 0; organizationalUnitDistinguishedNamesIndex < organizationalUnitDistinguishedNamesJsonList.GetLength(); ++organizationalUnitDistinguishedNamesIndex)
     {
       m_organizationalUnitDistinguishedNames.push_back(organizationalUnitDistinguishedNamesJsonList[organizationalUnitDistinguishedNamesIndex].AsString());
@@ -68,6 +70,13 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateBasedAuthProperties"))
+  {
+    m_certificateBasedAuthProperties = jsonValue.GetObject("CertificateBasedAuthProperties");
+
+    m_certificateBasedAuthPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,7 +92,7 @@ JsonValue DirectoryConfig::Jsonize() const
 
   if(m_organizationalUnitDistinguishedNamesHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitDistinguishedNamesJsonList(m_organizationalUnitDistinguishedNames.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitDistinguishedNamesJsonList(m_organizationalUnitDistinguishedNames.size());
    for(unsigned organizationalUnitDistinguishedNamesIndex = 0; organizationalUnitDistinguishedNamesIndex < organizationalUnitDistinguishedNamesJsonList.GetLength(); ++organizationalUnitDistinguishedNamesIndex)
    {
      organizationalUnitDistinguishedNamesJsonList[organizationalUnitDistinguishedNamesIndex].AsString(m_organizationalUnitDistinguishedNames[organizationalUnitDistinguishedNamesIndex]);
@@ -101,6 +110,12 @@ JsonValue DirectoryConfig::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_certificateBasedAuthPropertiesHasBeenSet)
+  {
+   payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
+
   }
 
   return payload;

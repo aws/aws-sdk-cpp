@@ -26,43 +26,43 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HlsPlaylistSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API HlsPlaylistSettings
+  class HlsPlaylistSettings
   {
   public:
-    HlsPlaylistSettings();
-    HlsPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API HlsPlaylistSettings();
+    AWS_MEDIATAILOR_API HlsPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API HlsPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline HlsPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
 
   private:
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
   };
 
 } // namespace Model

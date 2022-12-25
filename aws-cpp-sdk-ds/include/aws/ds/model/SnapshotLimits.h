@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SnapshotLimits
+  class SnapshotLimits
   {
   public:
-    SnapshotLimits();
-    SnapshotLimits(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SnapshotLimits();
+    AWS_DIRECTORYSERVICE_API SnapshotLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SnapshotLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_manualSnapshotsLimit;
-    bool m_manualSnapshotsLimitHasBeenSet;
+    bool m_manualSnapshotsLimitHasBeenSet = false;
 
     int m_manualSnapshotsCurrentCount;
-    bool m_manualSnapshotsCurrentCountHasBeenSet;
+    bool m_manualSnapshotsCurrentCountHasBeenSet = false;
 
     bool m_manualSnapshotsLimitReached;
-    bool m_manualSnapshotsLimitReachedHasBeenSet;
+    bool m_manualSnapshotsLimitReachedHasBeenSet = false;
   };
 
 } // namespace Model

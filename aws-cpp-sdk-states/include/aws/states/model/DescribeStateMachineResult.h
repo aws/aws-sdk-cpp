@@ -29,12 +29,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeStateMachineResult
+  class DescribeStateMachineResult
   {
   public:
-    DescribeStateMachineResult();
-    DescribeStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineResult();
+    AWS_SFN_API DescribeStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -230,49 +230,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline DescribeStateMachineResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline DescribeStateMachineResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. (The IAM role maintains security by granting Step Functions access to
-     * AWS resources.)</p>
+     * Amazon Web Services resources.)</p>
      */
     inline DescribeStateMachineResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -351,29 +351,79 @@ namespace Model
 
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline const TracingConfiguration& GetTracingConfiguration() const{ return m_tracingConfiguration; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(const TracingConfiguration& value) { m_tracingConfiguration = value; }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline void SetTracingConfiguration(TracingConfiguration&& value) { m_tracingConfiguration = std::move(value); }
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline DescribeStateMachineResult& WithTracingConfiguration(const TracingConfiguration& value) { SetTracingConfiguration(value); return *this;}
 
     /**
-     * <p>Selects whether AWS X-Ray tracing is enabled.</p>
+     * <p>Selects whether X-Ray tracing is enabled.</p>
      */
     inline DescribeStateMachineResult& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(const Aws::String& value) { m_label = value; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(Aws::String&& value) { m_label = std::move(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(const char* value) { m_label.assign(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
 
@@ -394,6 +444,8 @@ namespace Model
     LoggingConfiguration m_loggingConfiguration;
 
     TracingConfiguration m_tracingConfiguration;
+
+    Aws::String m_label;
   };
 
 } // namespace Model

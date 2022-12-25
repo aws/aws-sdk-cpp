@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API RiskConfigurationType
+  class RiskConfigurationType
   {
   public:
-    RiskConfigurationType();
-    RiskConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    RiskConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API RiskConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API RiskConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API RiskConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     CompromisedCredentialsRiskConfigurationType m_compromisedCredentialsRiskConfiguration;
-    bool m_compromisedCredentialsRiskConfigurationHasBeenSet;
+    bool m_compromisedCredentialsRiskConfigurationHasBeenSet = false;
 
     AccountTakeoverRiskConfigurationType m_accountTakeoverRiskConfiguration;
-    bool m_accountTakeoverRiskConfigurationHasBeenSet;
+    bool m_accountTakeoverRiskConfigurationHasBeenSet = false;
 
     RiskExceptionConfigurationType m_riskExceptionConfiguration;
-    bool m_riskExceptionConfigurationHasBeenSet;
+    bool m_riskExceptionConfigurationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

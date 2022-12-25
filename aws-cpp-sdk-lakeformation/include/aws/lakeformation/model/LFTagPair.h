@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTagPair">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API LFTagPair
+  class LFTagPair
   {
   public:
-    LFTagPair();
-    LFTagPair(Aws::Utils::Json::JsonView jsonValue);
-    LFTagPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API LFTagPair();
+    AWS_LAKEFORMATION_API LFTagPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API LFTagPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagValues;
-    bool m_tagValuesHasBeenSet;
+    bool m_tagValuesHasBeenSet = false;
   };
 
 } // namespace Model

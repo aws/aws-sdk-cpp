@@ -27,19 +27,19 @@ namespace Model
    * <p>A complex type that contains information about the objects that you want to
    * invalidate. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-   * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-   * </p><p><h3>See Also:</h3>   <a
+   * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Paths">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Paths
+  class Paths
   {
   public:
-    Paths();
-    Paths(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Paths& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Paths();
+    AWS_CLOUDFRONT_API Paths(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Paths& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

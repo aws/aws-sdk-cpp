@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DatadogSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DatadogSourceProperties
+  class DatadogSourceProperties
   {
   public:
-    DatadogSourceProperties();
-    DatadogSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    DatadogSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DatadogSourceProperties();
+    AWS_APPFLOW_API DatadogSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DatadogSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

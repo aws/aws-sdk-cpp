@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ResourcePermission">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ResourcePermission
+  class ResourcePermission
   {
   public:
-    ResourcePermission();
-    ResourcePermission(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ResourcePermission();
+    AWS_QUICKSIGHT_API ResourcePermission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ResourcePermission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,10 +183,10 @@ namespace Model
   private:
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
   };
 
 } // namespace Model

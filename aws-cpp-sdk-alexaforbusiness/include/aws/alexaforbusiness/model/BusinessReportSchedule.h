@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/BusinessReportSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API BusinessReportSchedule
+  class BusinessReportSchedule
   {
   public:
-    BusinessReportSchedule();
-    BusinessReportSchedule(Aws::Utils::Json::JsonView jsonValue);
-    BusinessReportSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API BusinessReportSchedule();
+    AWS_ALEXAFORBUSINESS_API BusinessReportSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API BusinessReportSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -343,28 +343,28 @@ namespace Model
   private:
 
     Aws::String m_scheduleArn;
-    bool m_scheduleArnHasBeenSet;
+    bool m_scheduleArnHasBeenSet = false;
 
     Aws::String m_scheduleName;
-    bool m_scheduleNameHasBeenSet;
+    bool m_scheduleNameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     BusinessReportFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     BusinessReportContentRange m_contentRange;
-    bool m_contentRangeHasBeenSet;
+    bool m_contentRangeHasBeenSet = false;
 
     BusinessReportRecurrence m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     BusinessReport m_lastBusinessReport;
-    bool m_lastBusinessReportHasBeenSet;
+    bool m_lastBusinessReportHasBeenSet = false;
   };
 
 } // namespace Model

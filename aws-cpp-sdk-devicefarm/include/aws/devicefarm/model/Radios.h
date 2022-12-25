@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Radios">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Radios
+  class Radios
   {
   public:
-    Radios();
-    Radios(Aws::Utils::Json::JsonView jsonValue);
-    Radios& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Radios();
+    AWS_DEVICEFARM_API Radios(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Radios& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,16 +126,16 @@ namespace Model
   private:
 
     bool m_wifi;
-    bool m_wifiHasBeenSet;
+    bool m_wifiHasBeenSet = false;
 
     bool m_bluetooth;
-    bool m_bluetoothHasBeenSet;
+    bool m_bluetoothHasBeenSet = false;
 
     bool m_nfc;
-    bool m_nfcHasBeenSet;
+    bool m_nfcHasBeenSet = false;
 
     bool m_gps;
-    bool m_gpsHasBeenSet;
+    bool m_gpsHasBeenSet = false;
   };
 
 } // namespace Model

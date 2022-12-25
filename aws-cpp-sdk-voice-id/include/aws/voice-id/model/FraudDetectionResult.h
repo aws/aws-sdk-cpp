@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudDetectionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudDetectionResult
+  class FraudDetectionResult
   {
   public:
-    FraudDetectionResult();
-    FraudDetectionResult(Aws::Utils::Json::JsonView jsonValue);
-    FraudDetectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudDetectionResult();
+    AWS_VOICEID_API FraudDetectionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudDetectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,113 +268,127 @@ namespace Model
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline const Aws::Vector<FraudDetectionReason>& GetReasons() const{ return m_reasons; }
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline void SetReasons(const Aws::Vector<FraudDetectionReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline void SetReasons(Aws::Vector<FraudDetectionReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline FraudDetectionResult& WithReasons(const Aws::Vector<FraudDetectionReason>& value) { SetReasons(value); return *this;}
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline FraudDetectionResult& WithReasons(Aws::Vector<FraudDetectionReason>&& value) { SetReasons(std::move(value)); return *this;}
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline FraudDetectionResult& AddReasons(const FraudDetectionReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
 
     /**
      * <p>The reason speaker was flagged by the fraud detection system. This is only be
-     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has
-     * one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+     * populated if fraud detection Decision is <code>HIGH_RISK</code>, and the
+     * following possible values: <code>KNOWN_FRAUDSTER</code> and
+     * <code>VOICE_SPOOFING</code>.</p>
      */
     inline FraudDetectionResult& AddReasons(FraudDetectionReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline const FraudRiskDetails& GetRiskDetails() const{ return m_riskDetails; }
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline bool RiskDetailsHasBeenSet() const { return m_riskDetailsHasBeenSet; }
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline void SetRiskDetails(const FraudRiskDetails& value) { m_riskDetailsHasBeenSet = true; m_riskDetails = value; }
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline void SetRiskDetails(FraudRiskDetails&& value) { m_riskDetailsHasBeenSet = true; m_riskDetails = std::move(value); }
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline FraudDetectionResult& WithRiskDetails(const FraudRiskDetails& value) { SetRiskDetails(value); return *this;}
 
     /**
-     * <p>Details about each risk analyzed for this speaker.</p>
+     * <p>Details about each risk analyzed for this speaker. Currently, this contains
+     * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
     inline FraudDetectionResult& WithRiskDetails(FraudRiskDetails&& value) { SetRiskDetails(std::move(value)); return *this;}
 
   private:
 
     Aws::Utils::DateTime m_audioAggregationEndedAt;
-    bool m_audioAggregationEndedAtHasBeenSet;
+    bool m_audioAggregationEndedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_audioAggregationStartedAt;
-    bool m_audioAggregationStartedAtHasBeenSet;
+    bool m_audioAggregationStartedAtHasBeenSet = false;
 
     FraudDetectionConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     FraudDetectionDecision m_decision;
-    bool m_decisionHasBeenSet;
+    bool m_decisionHasBeenSet = false;
 
     Aws::String m_fraudDetectionResultId;
-    bool m_fraudDetectionResultIdHasBeenSet;
+    bool m_fraudDetectionResultIdHasBeenSet = false;
 
     Aws::Vector<FraudDetectionReason> m_reasons;
-    bool m_reasonsHasBeenSet;
+    bool m_reasonsHasBeenSet = false;
 
     FraudRiskDetails m_riskDetails;
-    bool m_riskDetailsHasBeenSet;
+    bool m_riskDetailsHasBeenSet = false;
   };
 
 } // namespace Model

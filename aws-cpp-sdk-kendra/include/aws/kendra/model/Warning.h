@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Warning">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Warning
+  class Warning
   {
   public:
-    Warning();
-    Warning(Aws::Utils::Json::JsonView jsonValue);
-    Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Warning();
+    AWS_KENDRA_API Warning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     WarningCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

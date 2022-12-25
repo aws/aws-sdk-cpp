@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EntitlementAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API EntitlementAttribute
+  class EntitlementAttribute
   {
   public:
-    EntitlementAttribute();
-    EntitlementAttribute(Aws::Utils::Json::JsonView jsonValue);
-    EntitlementAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API EntitlementAttribute();
+    AWS_APPSTREAM_API EntitlementAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API EntitlementAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

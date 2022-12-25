@@ -68,7 +68,7 @@ PhoneNumberOrder& PhoneNumberOrder::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OrderedPhoneNumbers"))
   {
-    Array<JsonView> orderedPhoneNumbersJsonList = jsonValue.GetArray("OrderedPhoneNumbers");
+    Aws::Utils::Array<JsonView> orderedPhoneNumbersJsonList = jsonValue.GetArray("OrderedPhoneNumbers");
     for(unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength(); ++orderedPhoneNumbersIndex)
     {
       m_orderedPhoneNumbers.push_back(orderedPhoneNumbersJsonList[orderedPhoneNumbersIndex].AsObject());
@@ -115,7 +115,7 @@ JsonValue PhoneNumberOrder::Jsonize() const
 
   if(m_orderedPhoneNumbersHasBeenSet)
   {
-   Array<JsonValue> orderedPhoneNumbersJsonList(m_orderedPhoneNumbers.size());
+   Aws::Utils::Array<JsonValue> orderedPhoneNumbersJsonList(m_orderedPhoneNumbers.size());
    for(unsigned orderedPhoneNumbersIndex = 0; orderedPhoneNumbersIndex < orderedPhoneNumbersJsonList.GetLength(); ++orderedPhoneNumbersIndex)
    {
      orderedPhoneNumbersJsonList[orderedPhoneNumbersIndex].AsObject(m_orderedPhoneNumbers[orderedPhoneNumbersIndex].Jsonize());
@@ -126,12 +126,12 @@ JsonValue PhoneNumberOrder::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

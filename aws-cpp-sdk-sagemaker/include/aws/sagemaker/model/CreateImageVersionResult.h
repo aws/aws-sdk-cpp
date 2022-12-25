@@ -24,46 +24,46 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API CreateImageVersionResult
+  class CreateImageVersionResult
   {
   public:
-    CreateImageVersionResult();
-    CreateImageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateImageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateImageVersionResult();
+    AWS_SAGEMAKER_API CreateImageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreateImageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline const Aws::String& GetImageVersionArn() const{ return m_imageVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline void SetImageVersionArn(const Aws::String& value) { m_imageVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline void SetImageVersionArn(Aws::String&& value) { m_imageVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline void SetImageVersionArn(const char* value) { m_imageVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline CreateImageVersionResult& WithImageVersionArn(const Aws::String& value) { SetImageVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline CreateImageVersionResult& WithImageVersionArn(Aws::String&& value) { SetImageVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image version.</p>
+     * <p>The ARN of the image version.</p>
      */
     inline CreateImageVersionResult& WithImageVersionArn(const char* value) { SetImageVersionArn(value); return *this;}
 

@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Listener">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API Listener
+  class Listener
   {
   public:
-    Listener();
-    Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Listener();
+    AWS_ELASTICLOADBALANCINGV2_API Listener(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API Listener& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -365,28 +365,28 @@ namespace Model
   private:
 
     Aws::String m_listenerArn;
-    bool m_listenerArnHasBeenSet;
+    bool m_listenerArnHasBeenSet = false;
 
     Aws::String m_loadBalancerArn;
-    bool m_loadBalancerArnHasBeenSet;
+    bool m_loadBalancerArnHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     ProtocolEnum m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::Vector<Certificate> m_certificates;
-    bool m_certificatesHasBeenSet;
+    bool m_certificatesHasBeenSet = false;
 
     Aws::String m_sslPolicy;
-    bool m_sslPolicyHasBeenSet;
+    bool m_sslPolicyHasBeenSet = false;
 
     Aws::Vector<Action> m_defaultActions;
-    bool m_defaultActionsHasBeenSet;
+    bool m_defaultActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alpnPolicy;
-    bool m_alpnPolicyHasBeenSet;
+    bool m_alpnPolicyHasBeenSet = false;
   };
 
 } // namespace Model

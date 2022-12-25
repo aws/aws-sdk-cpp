@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API CreateSchedulingPolicyRequest : public BatchRequest
+  class CreateSchedulingPolicyRequest : public BatchRequest
   {
   public:
-    CreateSchedulingPolicyRequest();
+    AWS_BATCH_API CreateSchedulingPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSchedulingPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -311,13 +311,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FairsharePolicy m_fairsharePolicy;
-    bool m_fairsharePolicyHasBeenSet;
+    bool m_fairsharePolicyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

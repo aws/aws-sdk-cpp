@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccessRules">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AccessRules
+  class AccessRules
   {
   public:
-    AccessRules();
-    AccessRules(Aws::Utils::Json::JsonView jsonValue);
-    AccessRules& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AccessRules();
+    AWS_LIGHTSAIL_API AccessRules(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AccessRules& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     AccessType m_getObject;
-    bool m_getObjectHasBeenSet;
+    bool m_getObjectHasBeenSet = false;
 
     bool m_allowPublicOverrides;
-    bool m_allowPublicOverridesHasBeenSet;
+    bool m_allowPublicOverridesHasBeenSet = false;
   };
 
 } // namespace Model

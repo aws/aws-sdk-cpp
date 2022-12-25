@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API CreateFrameworkRequest : public BackupRequest
+  class CreateFrameworkRequest : public BackupRequest
   {
   public:
-    CreateFrameworkRequest();
+    AWS_BACKUP_API CreateFrameworkRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFramework"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -337,19 +337,19 @@ namespace Model
   private:
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkDescription;
-    bool m_frameworkDescriptionHasBeenSet;
+    bool m_frameworkDescriptionHasBeenSet = false;
 
     Aws::Vector<FrameworkControl> m_frameworkControls;
-    bool m_frameworkControlsHasBeenSet;
+    bool m_frameworkControlsHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_frameworkTags;
-    bool m_frameworkTagsHasBeenSet;
+    bool m_frameworkTagsHasBeenSet = false;
   };
 
 } // namespace Model

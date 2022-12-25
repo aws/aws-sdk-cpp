@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DimensionKeyDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API DimensionKeyDescription
+  class DimensionKeyDescription
   {
   public:
-    DimensionKeyDescription();
-    DimensionKeyDescription(Aws::Utils::Json::JsonView jsonValue);
-    DimensionKeyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API DimensionKeyDescription();
+    AWS_PI_API DimensionKeyDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API DimensionKeyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_additionalMetrics;
-    bool m_additionalMetricsHasBeenSet;
+    bool m_additionalMetricsHasBeenSet = false;
 
     Aws::Vector<double> m_partitions;
-    bool m_partitionsHasBeenSet;
+    bool m_partitionsHasBeenSet = false;
   };
 
 } // namespace Model

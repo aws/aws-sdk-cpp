@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>A subset of the attributes about a log group. In CloudWatch a log group is a
-   * group of log streams that share the same retention, monitoring, and access
-   * control settings.</p><p><h3>See Also:</h3>   <a
+   * <p>A subset of the attributes that describe a log group. In CloudWatch a log
+   * group is a group of log streams that share the same retention, monitoring, and
+   * access control settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/LogGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API LogGroupSummary
+  class LogGroupSummary
   {
   public:
-    LogGroupSummary();
-    LogGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    LogGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API LogGroupSummary();
+    AWS_MAINFRAMEMODERNIZATION_API LogGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API LogGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
   };
 
 } // namespace Model

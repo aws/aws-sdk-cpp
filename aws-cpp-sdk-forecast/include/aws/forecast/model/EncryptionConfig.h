@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/EncryptionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API EncryptionConfig
+  class EncryptionConfig
   {
   public:
-    EncryptionConfig();
-    EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API EncryptionConfig();
+    AWS_FORECASTSERVICE_API EncryptionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API EncryptionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_kMSKeyArn;
-    bool m_kMSKeyArnHasBeenSet;
+    bool m_kMSKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

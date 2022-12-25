@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API BatchMeterUsageRequest : public MarketplaceMeteringRequest
+  class BatchMeterUsageRequest : public MarketplaceMeteringRequest
   {
   public:
-    BatchMeterUsageRequest();
+    AWS_MARKETPLACEMETERING_API BatchMeterUsageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchMeterUsage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACEMETERING_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACEMETERING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::Vector<UsageRecord> m_usageRecords;
-    bool m_usageRecordsHasBeenSet;
+    bool m_usageRecordsHasBeenSet = false;
 
     Aws::String m_productCode;
-    bool m_productCodeHasBeenSet;
+    bool m_productCodeHasBeenSet = false;
   };
 
 } // namespace Model

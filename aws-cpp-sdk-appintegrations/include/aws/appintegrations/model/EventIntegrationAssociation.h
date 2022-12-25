@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventIntegrationAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation
+  class EventIntegrationAssociation
   {
   public:
-    EventIntegrationAssociation();
-    EventIntegrationAssociation(Aws::Utils::Json::JsonView jsonValue);
-    EventIntegrationAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation();
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -319,22 +319,22 @@ namespace Model
   private:
 
     Aws::String m_eventIntegrationAssociationArn;
-    bool m_eventIntegrationAssociationArnHasBeenSet;
+    bool m_eventIntegrationAssociationArnHasBeenSet = false;
 
     Aws::String m_eventIntegrationAssociationId;
-    bool m_eventIntegrationAssociationIdHasBeenSet;
+    bool m_eventIntegrationAssociationIdHasBeenSet = false;
 
     Aws::String m_eventIntegrationName;
-    bool m_eventIntegrationNameHasBeenSet;
+    bool m_eventIntegrationNameHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_eventBridgeRuleName;
-    bool m_eventBridgeRuleNameHasBeenSet;
+    bool m_eventBridgeRuleNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientAssociationMetadata;
-    bool m_clientAssociationMetadataHasBeenSet;
+    bool m_clientAssociationMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FrameCaptureGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FrameCaptureGroupSettings
+  class FrameCaptureGroupSettings
   {
   public:
-    FrameCaptureGroupSettings();
-    FrameCaptureGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FrameCaptureGroupSettings();
+    AWS_MEDIALIVE_API FrameCaptureGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FrameCaptureGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     FrameCaptureCdnSettings m_frameCaptureCdnSettings;
-    bool m_frameCaptureCdnSettingsHasBeenSet;
+    bool m_frameCaptureCdnSettingsHasBeenSet = false;
   };
 
 } // namespace Model

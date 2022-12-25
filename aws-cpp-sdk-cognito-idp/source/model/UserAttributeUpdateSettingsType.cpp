@@ -33,7 +33,7 @@ UserAttributeUpdateSettingsType& UserAttributeUpdateSettingsType::operator =(Jso
 {
   if(jsonValue.ValueExists("AttributesRequireVerificationBeforeUpdate"))
   {
-    Array<JsonView> attributesRequireVerificationBeforeUpdateJsonList = jsonValue.GetArray("AttributesRequireVerificationBeforeUpdate");
+    Aws::Utils::Array<JsonView> attributesRequireVerificationBeforeUpdateJsonList = jsonValue.GetArray("AttributesRequireVerificationBeforeUpdate");
     for(unsigned attributesRequireVerificationBeforeUpdateIndex = 0; attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength(); ++attributesRequireVerificationBeforeUpdateIndex)
     {
       m_attributesRequireVerificationBeforeUpdate.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue UserAttributeUpdateSettingsType::Jsonize() const
 
   if(m_attributesRequireVerificationBeforeUpdateHasBeenSet)
   {
-   Array<JsonValue> attributesRequireVerificationBeforeUpdateJsonList(m_attributesRequireVerificationBeforeUpdate.size());
+   Aws::Utils::Array<JsonValue> attributesRequireVerificationBeforeUpdateJsonList(m_attributesRequireVerificationBeforeUpdate.size());
    for(unsigned attributesRequireVerificationBeforeUpdateIndex = 0; attributesRequireVerificationBeforeUpdateIndex < attributesRequireVerificationBeforeUpdateJsonList.GetLength(); ++attributesRequireVerificationBeforeUpdateIndex)
    {
      attributesRequireVerificationBeforeUpdateJsonList[attributesRequireVerificationBeforeUpdateIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_attributesRequireVerificationBeforeUpdate[attributesRequireVerificationBeforeUpdateIndex]));

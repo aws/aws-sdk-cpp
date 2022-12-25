@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API Action();
+    AWS_DATAEXCHANGE_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     AutoExportRevisionToS3RequestDetails m_exportRevisionToS3;
-    bool m_exportRevisionToS3HasBeenSet;
+    bool m_exportRevisionToS3HasBeenSet = false;
   };
 
 } // namespace Model

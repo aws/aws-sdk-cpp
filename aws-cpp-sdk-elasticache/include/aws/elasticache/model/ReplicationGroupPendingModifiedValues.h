@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroupPendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ReplicationGroupPendingModifiedValues
+  class ReplicationGroupPendingModifiedValues
   {
   public:
-    ReplicationGroupPendingModifiedValues();
-    ReplicationGroupPendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReplicationGroupPendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ReplicationGroupPendingModifiedValues();
+    AWS_ELASTICACHE_API ReplicationGroupPendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ReplicationGroupPendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -276,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_primaryClusterId;
-    bool m_primaryClusterIdHasBeenSet;
+    bool m_primaryClusterIdHasBeenSet = false;
 
     PendingAutomaticFailoverStatus m_automaticFailoverStatus;
-    bool m_automaticFailoverStatusHasBeenSet;
+    bool m_automaticFailoverStatusHasBeenSet = false;
 
     ReshardingStatus m_resharding;
-    bool m_reshardingHasBeenSet;
+    bool m_reshardingHasBeenSet = false;
 
     AuthTokenUpdateStatus m_authTokenStatus;
-    bool m_authTokenStatusHasBeenSet;
+    bool m_authTokenStatusHasBeenSet = false;
 
     UserGroupsUpdateStatus m_userGroups;
-    bool m_userGroupsHasBeenSet;
+    bool m_userGroupsHasBeenSet = false;
 
     Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

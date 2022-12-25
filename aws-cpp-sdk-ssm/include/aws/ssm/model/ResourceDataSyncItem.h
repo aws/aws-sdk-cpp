@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncItem
+  class ResourceDataSyncItem
   {
   public:
-    ResourceDataSyncItem();
-    ResourceDataSyncItem(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncItem();
+    AWS_SSM_API ResourceDataSyncItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -422,34 +422,34 @@ namespace Model
   private:
 
     Aws::String m_syncName;
-    bool m_syncNameHasBeenSet;
+    bool m_syncNameHasBeenSet = false;
 
     Aws::String m_syncType;
-    bool m_syncTypeHasBeenSet;
+    bool m_syncTypeHasBeenSet = false;
 
     ResourceDataSyncSourceWithState m_syncSource;
-    bool m_syncSourceHasBeenSet;
+    bool m_syncSourceHasBeenSet = false;
 
     ResourceDataSyncS3Destination m_s3Destination;
-    bool m_s3DestinationHasBeenSet;
+    bool m_s3DestinationHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSyncTime;
-    bool m_lastSyncTimeHasBeenSet;
+    bool m_lastSyncTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulSyncTime;
-    bool m_lastSuccessfulSyncTimeHasBeenSet;
+    bool m_lastSuccessfulSyncTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_syncLastModifiedTime;
-    bool m_syncLastModifiedTimeHasBeenSet;
+    bool m_syncLastModifiedTimeHasBeenSet = false;
 
     LastResourceDataSyncStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_syncCreatedTime;
-    bool m_syncCreatedTimeHasBeenSet;
+    bool m_syncCreatedTimeHasBeenSet = false;
 
     Aws::String m_lastSyncStatusMessage;
-    bool m_lastSyncStatusMessageHasBeenSet;
+    bool m_lastSyncStatusMessageHasBeenSet = false;
   };
 
 } // namespace Model

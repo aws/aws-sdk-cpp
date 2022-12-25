@@ -15,9 +15,11 @@
 #include <aws/batch/model/NodeProperties.h>
 #include <aws/batch/model/ArrayPropertiesDetail.h>
 #include <aws/batch/model/JobTimeout.h>
+#include <aws/batch/model/EksPropertiesDetail.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
 #include <aws/batch/model/PlatformCapability.h>
+#include <aws/batch/model/EksAttemptDetail.h>
 #include <utility>
 
 namespace Aws
@@ -36,17 +38,17 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Batch job.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an Batch job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API JobDetail
+  class JobDetail
   {
   public:
-    JobDetail();
-    JobDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobDetail();
+    AWS_BATCH_API JobDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,83 +93,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline JobDetail& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline JobDetail& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job.</p>
+     * <p>The job name.</p>
      */
     inline JobDetail& WithJobName(const char* value) { SetJobName(value); return *this;}
 
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline JobDetail& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline JobDetail& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the job.</p>
+     * <p>The job ID.</p>
      */
     inline JobDetail& WithJobId(const char* value) { SetJobId(value); return *this;}
 
@@ -347,91 +349,91 @@ namespace Model
 
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline const Aws::Vector<AttemptDetail>& GetAttempts() const{ return m_attempts; }
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline void SetAttempts(const Aws::Vector<AttemptDetail>& value) { m_attemptsHasBeenSet = true; m_attempts = value; }
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline void SetAttempts(Aws::Vector<AttemptDetail>&& value) { m_attemptsHasBeenSet = true; m_attempts = std::move(value); }
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline JobDetail& WithAttempts(const Aws::Vector<AttemptDetail>& value) { SetAttempts(value); return *this;}
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline JobDetail& WithAttempts(Aws::Vector<AttemptDetail>&& value) { SetAttempts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline JobDetail& AddAttempts(const AttemptDetail& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(value); return *this; }
 
     /**
-     * <p>A list of job attempts associated with this job.</p>
+     * <p>A list of job attempts that are associated with this job.</p>
      */
     inline JobDetail& AddAttempts(AttemptDetail&& value) { m_attemptsHasBeenSet = true; m_attempts.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline JobDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>A short, human-readable string to provide additional details about the
-     * current status of the job.</p>
+     * <p>A short, human-readable string to provide more details for the current status
+     * of the job.</p>
      */
     inline JobDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -439,36 +441,36 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * was called. For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * was called. For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * was called. For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * was called. For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline JobDetail& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
 
@@ -505,63 +507,63 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
-     * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
-     * array jobs or multi-node parallel jobs.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started. More
+     * specifically, it's when the job transitioned from the <code>STARTING</code>
+     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
+     * jobs of array jobs or multi-node parallel jobs.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
-     * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
-     * array jobs or multi-node parallel jobs.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started. More
+     * specifically, it's when the job transitioned from the <code>STARTING</code>
+     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
+     * jobs of array jobs or multi-node parallel jobs.</p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
-     * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
-     * array jobs or multi-node parallel jobs.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started. More
+     * specifically, it's when the job transitioned from the <code>STARTING</code>
+     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
+     * jobs of array jobs or multi-node parallel jobs.</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was started (when the
-     * job transitioned from the <code>STARTING</code> state to the
-     * <code>RUNNING</code> state). This parameter isn't provided for child jobs of
-     * array jobs or multi-node parallel jobs.</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was started. More
+     * specifically, it's when the job transitioned from the <code>STARTING</code>
+     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
+     * jobs of array jobs or multi-node parallel jobs.</p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
-     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
-     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped. More
+     * specifically, it's when the job transitioned from the <code>RUNNING</code> state
+     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
-     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
-     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped. More
+     * specifically, it's when the job transitioned from the <code>RUNNING</code> state
+     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
      */
     inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
-     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
-     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped. More
+     * specifically, it's when the job transitioned from the <code>RUNNING</code> state
+     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp (in milliseconds) for when the job was stopped (when the
-     * job transitioned from the <code>RUNNING</code> state to a terminal state, such
-     * as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in milliseconds) for when the job was stopped. More
+     * specifically, it's when the job transitioned from the <code>RUNNING</code> state
+     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
      */
     inline JobDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 
@@ -608,290 +610,282 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline const Aws::String& GetJobDefinition() const{ return m_jobDefinition; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline void SetJobDefinition(Aws::String&& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline void SetJobDefinition(const char* value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline JobDetail& WithJobDefinition(const Aws::String& value) { SetJobDefinition(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline JobDetail& WithJobDefinition(Aws::String&& value) { SetJobDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the job definition that's used by this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
      */
     inline JobDetail& WithJobDefinition(const char* value) { SetJobDefinition(value); return *this;}
 
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional parameters passed to the job that replace parameter substitution
-     * placeholders or override any corresponding parameter defaults from the job
-     * definition.</p>
+     * <p>Additional parameters that are passed to the job that replace parameter
+     * substitution placeholders or override any corresponding parameter defaults from
+     * the job definition.</p>
      */
     inline JobDetail& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline const ContainerDetail& GetContainer() const{ return m_container; }
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline void SetContainer(const ContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline void SetContainer(ContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline JobDetail& WithContainer(const ContainerDetail& value) { SetContainer(value); return *this;}
 
     /**
-     * <p>An object representing the details of the container that's associated with
-     * the job.</p>
+     * <p>An object that represents the details for the container that's associated
+     * with the job.</p>
      */
     inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline const NodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline bool NodeDetailsHasBeenSet() const { return m_nodeDetailsHasBeenSet; }
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline void SetNodeDetails(const NodeDetails& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = value; }
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline void SetNodeDetails(NodeDetails&& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = std::move(value); }
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline JobDetail& WithNodeDetails(const NodeDetails& value) { SetNodeDetails(value); return *this;}
 
     /**
-     * <p>An object representing the details of a node that's associated with a
+     * <p>An object that represents the details of a node that's associated with a
      * multi-node parallel job.</p>
      */
     inline JobDetail& WithNodeDetails(NodeDetails&& value) { SetNodeDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline JobDetail& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>An object representing the node properties of a multi-node parallel job.</p>
-     *  <p>This isn't applicable to jobs that are running on Fargate
+     * <p>An object that represents the node properties of a multi-node parallel
+     * job.</p>  <p>This isn't applicable to jobs that are running on Fargate
      * resources.</p> 
      */
     inline JobDetail& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline const ArrayPropertiesDetail& GetArrayProperties() const{ return m_arrayProperties; }
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline void SetArrayProperties(const ArrayPropertiesDetail& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline void SetArrayProperties(ArrayPropertiesDetail&& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = std::move(value); }
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline JobDetail& WithArrayProperties(const ArrayPropertiesDetail& value) { SetArrayProperties(value); return *this;}
 
     /**
-     * <p>The array properties of the job, if it is an array job.</p>
+     * <p>The array properties of the job, if it's an array job.</p>
      */
     inline JobDetail& WithArrayProperties(ArrayPropertiesDetail&& value) { SetArrayProperties(std::move(value)); return *this;}
 
@@ -928,67 +922,67 @@ namespace Model
 
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags applied to the job.</p>
+     * <p>The tags that are applied to the job.</p>
      */
     inline JobDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -996,40 +990,40 @@ namespace Model
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline bool GetPropagateTags() const{ return m_propagateTags; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline void SetPropagateTags(bool value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
      * corresponding Amazon ECS task. If no value is specified, the tags aren't
-     * propagated. Tags can only be propagated to the tasks during task creation. For
-     * tags with the same name, job tags are given priority over job definitions tags.
-     * If the total number of combined tags from the job and job definition is over 50,
-     * the job is moved to the <code>FAILED</code> state.</p>
+     * propagated. Tags can only be propagated to the tasks when the tasks are created.
+     * For tags with the same name, job tags are given priority over job definitions
+     * tags. If the total number of combined tags from the job and job definition is
+     * over 50, the job is moved to the <code>FAILED</code> state.</p>
      */
     inline JobDetail& WithPropagateTags(bool value) { SetPropagateTags(value); return *this;}
 
@@ -1090,79 +1084,217 @@ namespace Model
      */
     inline JobDetail& AddPlatformCapabilities(PlatformCapability&& value) { m_platformCapabilitiesHasBeenSet = true; m_platformCapabilities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline const EksPropertiesDetail& GetEksProperties() const{ return m_eksProperties; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline void SetEksProperties(const EksPropertiesDetail& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline void SetEksProperties(EksPropertiesDetail&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline JobDetail& WithEksProperties(const EksPropertiesDetail& value) { SetEksProperties(value); return *this;}
+
+    /**
+     * <p>An object with various properties that are specific to Amazon EKS based jobs.
+     * Only one of <code>container</code>, <code>eksProperties</code>, or
+     * <code>nodeDetails</code> is specified.</p>
+     */
+    inline JobDetail& WithEksProperties(EksPropertiesDetail&& value) { SetEksProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline const Aws::Vector<EksAttemptDetail>& GetEksAttempts() const{ return m_eksAttempts; }
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline bool EksAttemptsHasBeenSet() const { return m_eksAttemptsHasBeenSet; }
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline void SetEksAttempts(const Aws::Vector<EksAttemptDetail>& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts = value; }
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline void SetEksAttempts(Aws::Vector<EksAttemptDetail>&& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts = std::move(value); }
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline JobDetail& WithEksAttempts(const Aws::Vector<EksAttemptDetail>& value) { SetEksAttempts(value); return *this;}
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline JobDetail& WithEksAttempts(Aws::Vector<EksAttemptDetail>&& value) { SetEksAttempts(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline JobDetail& AddEksAttempts(const EksAttemptDetail& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts.push_back(value); return *this; }
+
+    /**
+     * <p>A list of job attempts that are associated with this job.</p>
+     */
+    inline JobDetail& AddEksAttempts(EksAttemptDetail&& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline bool GetIsCancelled() const{ return m_isCancelled; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline bool IsCancelledHasBeenSet() const { return m_isCancelledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline void SetIsCancelled(bool value) { m_isCancelledHasBeenSet = true; m_isCancelled = value; }
+
+    /**
+     * <p>Indicates whether the job is canceled.</p>
+     */
+    inline JobDetail& WithIsCancelled(bool value) { SetIsCancelled(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline bool GetIsTerminated() const{ return m_isTerminated; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline bool IsTerminatedHasBeenSet() const { return m_isTerminatedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline void SetIsTerminated(bool value) { m_isTerminatedHasBeenSet = true; m_isTerminated = value; }
+
+    /**
+     * <p>Indicates whether the job is terminated.</p>
+     */
+    inline JobDetail& WithIsTerminated(bool value) { SetIsTerminated(value); return *this;}
+
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobQueue;
-    bool m_jobQueueHasBeenSet;
+    bool m_jobQueueHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_shareIdentifier;
-    bool m_shareIdentifierHasBeenSet;
+    bool m_shareIdentifierHasBeenSet = false;
 
     int m_schedulingPriority;
-    bool m_schedulingPriorityHasBeenSet;
+    bool m_schedulingPriorityHasBeenSet = false;
 
     Aws::Vector<AttemptDetail> m_attempts;
-    bool m_attemptsHasBeenSet;
+    bool m_attemptsHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
 
     long long m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     long long m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     long long m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     Aws::Vector<JobDependency> m_dependsOn;
-    bool m_dependsOnHasBeenSet;
+    bool m_dependsOnHasBeenSet = false;
 
     Aws::String m_jobDefinition;
-    bool m_jobDefinitionHasBeenSet;
+    bool m_jobDefinitionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     ContainerDetail m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     NodeDetails m_nodeDetails;
-    bool m_nodeDetailsHasBeenSet;
+    bool m_nodeDetailsHasBeenSet = false;
 
     NodeProperties m_nodeProperties;
-    bool m_nodePropertiesHasBeenSet;
+    bool m_nodePropertiesHasBeenSet = false;
 
     ArrayPropertiesDetail m_arrayProperties;
-    bool m_arrayPropertiesHasBeenSet;
+    bool m_arrayPropertiesHasBeenSet = false;
 
     JobTimeout m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_propagateTags;
-    bool m_propagateTagsHasBeenSet;
+    bool m_propagateTagsHasBeenSet = false;
 
     Aws::Vector<PlatformCapability> m_platformCapabilities;
-    bool m_platformCapabilitiesHasBeenSet;
+    bool m_platformCapabilitiesHasBeenSet = false;
+
+    EksPropertiesDetail m_eksProperties;
+    bool m_eksPropertiesHasBeenSet = false;
+
+    Aws::Vector<EksAttemptDetail> m_eksAttempts;
+    bool m_eksAttemptsHasBeenSet = false;
+
+    bool m_isCancelled;
+    bool m_isCancelledHasBeenSet = false;
+
+    bool m_isTerminated;
+    bool m_isTerminatedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3Destination
+  class S3Destination
   {
   public:
-    S3Destination();
-    S3Destination(Aws::Utils::Json::JsonView jsonValue);
-    S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3Destination();
+    AWS_MACIE2_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,71 +130,79 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the
-     * results. This must be the ARN of an existing, symmetric, customer managed KMS
-     * key that's in the same Amazon Web Services Region as the bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for
+     * encryption of the results. This must be the ARN of an existing, symmetric
+     * encryption KMS key that's in the same Amazon Web Services Region as the
+     * bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_keyPrefix;
-    bool m_keyPrefixHasBeenSet;
+    bool m_keyPrefixHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

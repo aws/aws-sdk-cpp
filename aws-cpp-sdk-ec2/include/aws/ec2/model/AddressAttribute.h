@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AddressAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AddressAttribute
+  class AddressAttribute
   {
   public:
-    AddressAttribute();
-    AddressAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AddressAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddressAttribute();
+    AWS_EC2_API AddressAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddressAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -197,16 +197,16 @@ namespace Model
   private:
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_allocationId;
-    bool m_allocationIdHasBeenSet;
+    bool m_allocationIdHasBeenSet = false;
 
     Aws::String m_ptrRecord;
-    bool m_ptrRecordHasBeenSet;
+    bool m_ptrRecordHasBeenSet = false;
 
     PtrUpdateStatus m_ptrRecordUpdate;
-    bool m_ptrRecordUpdateHasBeenSet;
+    bool m_ptrRecordUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LdapServerMetadataInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API LdapServerMetadataInput
+  class LdapServerMetadataInput
   {
   public:
-    LdapServerMetadataInput();
-    LdapServerMetadataInput(Aws::Utils::Json::JsonView jsonValue);
-    LdapServerMetadataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API LdapServerMetadataInput();
+    AWS_MQ_API LdapServerMetadataInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API LdapServerMetadataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -707,37 +707,37 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_hosts;
-    bool m_hostsHasBeenSet;
+    bool m_hostsHasBeenSet = false;
 
     Aws::String m_roleBase;
-    bool m_roleBaseHasBeenSet;
+    bool m_roleBaseHasBeenSet = false;
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_roleSearchMatching;
-    bool m_roleSearchMatchingHasBeenSet;
+    bool m_roleSearchMatchingHasBeenSet = false;
 
     bool m_roleSearchSubtree;
-    bool m_roleSearchSubtreeHasBeenSet;
+    bool m_roleSearchSubtreeHasBeenSet = false;
 
     Aws::String m_serviceAccountPassword;
-    bool m_serviceAccountPasswordHasBeenSet;
+    bool m_serviceAccountPasswordHasBeenSet = false;
 
     Aws::String m_serviceAccountUsername;
-    bool m_serviceAccountUsernameHasBeenSet;
+    bool m_serviceAccountUsernameHasBeenSet = false;
 
     Aws::String m_userBase;
-    bool m_userBaseHasBeenSet;
+    bool m_userBaseHasBeenSet = false;
 
     Aws::String m_userRoleName;
-    bool m_userRoleNameHasBeenSet;
+    bool m_userRoleNameHasBeenSet = false;
 
     Aws::String m_userSearchMatching;
-    bool m_userSearchMatchingHasBeenSet;
+    bool m_userSearchMatchingHasBeenSet = false;
 
     bool m_userSearchSubtree;
-    bool m_userSearchSubtreeHasBeenSet;
+    bool m_userSearchSubtreeHasBeenSet = false;
   };
 
 } // namespace Model

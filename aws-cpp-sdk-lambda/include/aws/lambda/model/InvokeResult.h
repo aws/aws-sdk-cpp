@@ -19,21 +19,21 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API InvokeResult
+  class InvokeResult
   {
   public:
-    InvokeResult();
+    AWS_LAMBDA_API InvokeResult();
     //We have to define these because Microsoft doesn't auto generate them
-    InvokeResult(InvokeResult&&);
-    InvokeResult& operator=(InvokeResult&&);
+    AWS_LAMBDA_API InvokeResult(InvokeResult&&);
+    AWS_LAMBDA_API InvokeResult& operator=(InvokeResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     InvokeResult(const InvokeResult&) = delete;
     InvokeResult& operator=(const InvokeResult&) = delete;
 
 
-    InvokeResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    InvokeResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAMBDA_API InvokeResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAMBDA_API InvokeResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 
@@ -106,37 +106,37 @@ namespace Model
 
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline const Aws::String& GetLogResult() const{ return m_logResult; }
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline void SetLogResult(const Aws::String& value) { m_logResult = value; }
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline void SetLogResult(Aws::String&& value) { m_logResult = std::move(value); }
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline void SetLogResult(const char* value) { m_logResult.assign(value); }
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline InvokeResult& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(std::move(value)); return *this;}
 
     /**
-     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64-encoded.</p>
      */
     inline InvokeResult& WithLogResult(const char* value) { SetLogResult(value); return *this;}
 

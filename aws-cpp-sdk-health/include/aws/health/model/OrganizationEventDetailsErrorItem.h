@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetailsErrorItem">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API OrganizationEventDetailsErrorItem
+  class OrganizationEventDetailsErrorItem
   {
   public:
-    OrganizationEventDetailsErrorItem();
-    OrganizationEventDetailsErrorItem(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationEventDetailsErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API OrganizationEventDetailsErrorItem();
+    AWS_HEALTH_API OrganizationEventDetailsErrorItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API OrganizationEventDetailsErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -349,16 +349,16 @@ namespace Model
   private:
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::String m_eventArn;
-    bool m_eventArnHasBeenSet;
+    bool m_eventArnHasBeenSet = false;
 
     Aws::String m_errorName;
-    bool m_errorNameHasBeenSet;
+    bool m_errorNameHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotTypeSummary
+  class SlotTypeSummary
   {
   public:
-    SlotTypeSummary();
-    SlotTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    SlotTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotTypeSummary();
+    AWS_LEXMODELSV2_API SlotTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet;
+    bool m_slotTypeIdHasBeenSet = false;
 
     Aws::String m_slotTypeName;
-    bool m_slotTypeNameHasBeenSet;
+    bool m_slotTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     SlotTypeCategory m_slotTypeCategory;
-    bool m_slotTypeCategoryHasBeenSet;
+    bool m_slotTypeCategoryHasBeenSet = false;
   };
 
 } // namespace Model

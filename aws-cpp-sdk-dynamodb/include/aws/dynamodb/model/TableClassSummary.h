@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TableClassSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TableClassSummary
+  class TableClassSummary
   {
   public:
-    TableClassSummary();
-    TableClassSummary(Aws::Utils::Json::JsonView jsonValue);
-    TableClassSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TableClassSummary();
+    AWS_DYNAMODB_API TableClassSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TableClassSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     TableClass m_tableClass;
-    bool m_tableClassHasBeenSet;
+    bool m_tableClassHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateDateTime;
-    bool m_lastUpdateDateTimeHasBeenSet;
+    bool m_lastUpdateDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

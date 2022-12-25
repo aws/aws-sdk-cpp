@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API TaskOverride
+  class TaskOverride
   {
   public:
-    TaskOverride();
-    TaskOverride(Aws::Utils::Json::JsonView jsonValue);
-    TaskOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API TaskOverride();
+    AWS_ECS_API TaskOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API TaskOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
-     * <p>The cpu override for the task.</p>
+     * <p>The CPU override for the task.</p>
      */
     inline TaskOverride& WithCpu(const char* value) { SetCpu(value); return *this;}
 
@@ -416,25 +416,25 @@ namespace Model
   private:
 
     Aws::Vector<ContainerOverride> m_containerOverrides;
-    bool m_containerOverridesHasBeenSet;
+    bool m_containerOverridesHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::Vector<InferenceAcceleratorOverride> m_inferenceAcceleratorOverrides;
-    bool m_inferenceAcceleratorOverridesHasBeenSet;
+    bool m_inferenceAcceleratorOverridesHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_taskRoleArn;
-    bool m_taskRoleArnHasBeenSet;
+    bool m_taskRoleArnHasBeenSet = false;
 
     EphemeralStorage m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
   };
 
 } // namespace Model

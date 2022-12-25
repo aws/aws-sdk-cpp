@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API CreateLanguageModelRequest : public TranscribeServiceRequest
+  class CreateLanguageModelRequest : public TranscribeServiceRequest
   {
   public:
-    CreateLanguageModelRequest();
+    AWS_TRANSCRIBESERVICE_API CreateLanguageModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,102 +34,102 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLanguageModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
     inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
     inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
     inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
     inline CreateLanguageModelRequest& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code that represents the language of your model. Each language
-     * model must contain terms in only one language, and the language you select for
-     * your model must match the language of your training and tuning data.</p> <p>For
-     * a list of supported languages and their associated language codes, refer to the
-     * <a
+     * <p>The language code that represents the language of your model. Each custom
+     * language model must contain terms in only one language, and the language you
+     * select for your custom language model must match the language of your training
+     * and tuning data.</p> <p>For a list of supported languages and their associated
+     * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p> <p>A custom language
      * model can only be used to transcribe files in the same language as the model.
-     * For example, if you create a language model using US English
+     * For example, if you create a custom language model using US English
      * (<code>en-US</code>), you can only apply this model to files that contain
      * English audio.</p>
      */
@@ -200,8 +200,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
@@ -209,8 +209,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
@@ -218,8 +218,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
@@ -227,8 +227,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
@@ -236,8 +236,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
@@ -245,8 +245,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline CreateLanguageModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
@@ -254,8 +254,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline CreateLanguageModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
@@ -263,8 +263,8 @@ namespace Model
     /**
      * <p>A unique name, chosen by you, for your custom language model.</p> <p>This
      * name is case sensitive, cannot contain spaces, and must be unique within an
-     * Amazon Web Services account. If you try to create a new language model with the
-     * same name as an existing language model, you get a
+     * Amazon Web Services account. If you try to create a new custom language model
+     * with the same name as an existing custom language model, you get a
      * <code>ConflictException</code> error.</p>
      */
     inline CreateLanguageModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
@@ -430,19 +430,19 @@ namespace Model
   private:
 
     CLMLanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     BaseModelName m_baseModelName;
-    bool m_baseModelNameHasBeenSet;
+    bool m_baseModelNameHasBeenSet = false;
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

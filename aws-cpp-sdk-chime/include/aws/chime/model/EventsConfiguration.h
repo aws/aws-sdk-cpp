@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/EventsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API EventsConfiguration
+  class EventsConfiguration
   {
   public:
-    EventsConfiguration();
-    EventsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EventsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API EventsConfiguration();
+    AWS_CHIME_API EventsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API EventsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_outboundEventsHTTPSEndpoint;
-    bool m_outboundEventsHTTPSEndpointHasBeenSet;
+    bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;
-    bool m_lambdaFunctionArnHasBeenSet;
+    bool m_lambdaFunctionArnHasBeenSet = false;
   };
 
 } // namespace Model

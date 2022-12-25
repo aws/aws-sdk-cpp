@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ServerlessSasl">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ServerlessSasl
+  class ServerlessSasl
   {
   public:
-    ServerlessSasl();
-    ServerlessSasl(Aws::Utils::Json::JsonView jsonValue);
-    ServerlessSasl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ServerlessSasl();
+    AWS_KAFKA_API ServerlessSasl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ServerlessSasl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Iam m_iam;
-    bool m_iamHasBeenSet;
+    bool m_iamHasBeenSet = false;
   };
 
 } // namespace Model

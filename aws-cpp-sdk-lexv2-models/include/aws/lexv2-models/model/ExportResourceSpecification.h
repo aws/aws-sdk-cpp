@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ExportResourceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ExportResourceSpecification
+  class ExportResourceSpecification
   {
   public:
-    ExportResourceSpecification();
-    ExportResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ExportResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ExportResourceSpecification();
+    AWS_LEXMODELSV2_API ExportResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ExportResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,13 +137,13 @@ namespace Model
   private:
 
     BotExportSpecification m_botExportSpecification;
-    bool m_botExportSpecificationHasBeenSet;
+    bool m_botExportSpecificationHasBeenSet = false;
 
     BotLocaleExportSpecification m_botLocaleExportSpecification;
-    bool m_botLocaleExportSpecificationHasBeenSet;
+    bool m_botLocaleExportSpecificationHasBeenSet = false;
 
     CustomVocabularyExportSpecification m_customVocabularyExportSpecification;
-    bool m_customVocabularyExportSpecificationHasBeenSet;
+    bool m_customVocabularyExportSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API UpdateConfigurationProfileRequest : public AppConfigRequest
+  class UpdateConfigurationProfileRequest : public AppConfigRequest
   {
   public:
-    UpdateConfigurationProfileRequest();
+    AWS_APPCONFIG_API UpdateConfigurationProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConfigurationProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_configurationProfileId;
-    bool m_configurationProfileIdHasBeenSet;
+    bool m_configurationProfileIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_retrievalRoleArn;
-    bool m_retrievalRoleArnHasBeenSet;
+    bool m_retrievalRoleArnHasBeenSet = false;
 
     Aws::Vector<Validator> m_validators;
-    bool m_validatorsHasBeenSet;
+    bool m_validatorsHasBeenSet = false;
   };
 
 } // namespace Model

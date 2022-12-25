@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API CreateChannelRequest : public MediaPackageRequest
+  class CreateChannelRequest : public MediaPackageRequest
   {
   public:
-    CreateChannelRequest();
+    AWS_MEDIAPACKAGE_API CreateChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -184,13 +184,13 @@ cannot be
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

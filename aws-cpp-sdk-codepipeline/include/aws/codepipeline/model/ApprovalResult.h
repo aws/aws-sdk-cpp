@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ApprovalResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ApprovalResult
+  class ApprovalResult
   {
   public:
-    ApprovalResult();
-    ApprovalResult(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ApprovalResult();
+    AWS_CODEPIPELINE_API ApprovalResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ApprovalResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     ApprovalStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

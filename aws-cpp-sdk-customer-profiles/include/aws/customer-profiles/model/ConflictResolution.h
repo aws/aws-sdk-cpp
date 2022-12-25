@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ConflictResolution">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ConflictResolution
+  class ConflictResolution
   {
   public:
-    ConflictResolution();
-    ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
-    ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ConflictResolution();
+    AWS_CUSTOMERPROFILES_API ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,10 +165,10 @@ namespace Model
   private:
 
     ConflictResolvingModel m_conflictResolvingModel;
-    bool m_conflictResolvingModelHasBeenSet;
+    bool m_conflictResolvingModelHasBeenSet = false;
 
     Aws::String m_sourceName;
-    bool m_sourceNameHasBeenSet;
+    bool m_sourceNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ProactiveOrganizationInsightSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ProactiveOrganizationInsightSummary
+  class ProactiveOrganizationInsightSummary
   {
   public:
-    ProactiveOrganizationInsightSummary();
-    ProactiveOrganizationInsightSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProactiveOrganizationInsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ProactiveOrganizationInsightSummary();
+    AWS_DEVOPSGURU_API ProactiveOrganizationInsightSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ProactiveOrganizationInsightSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -366,34 +366,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_organizationalUnitId;
-    bool m_organizationalUnitIdHasBeenSet;
+    bool m_organizationalUnitIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     InsightSeverity m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     InsightStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     InsightTimeRange m_insightTimeRange;
-    bool m_insightTimeRangeHasBeenSet;
+    bool m_insightTimeRangeHasBeenSet = false;
 
     PredictionTimeRange m_predictionTimeRange;
-    bool m_predictionTimeRangeHasBeenSet;
+    bool m_predictionTimeRangeHasBeenSet = false;
 
     ResourceCollection m_resourceCollection;
-    bool m_resourceCollectionHasBeenSet;
+    bool m_resourceCollectionHasBeenSet = false;
 
     ServiceCollection m_serviceCollection;
-    bool m_serviceCollectionHasBeenSet;
+    bool m_serviceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessor">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessor
+  class StreamProcessor
   {
   public:
-    StreamProcessor();
-    StreamProcessor(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessor();
+    AWS_REKOGNITION_API StreamProcessor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamProcessorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

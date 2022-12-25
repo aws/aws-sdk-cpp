@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TranscriptSourceSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API TranscriptSourceSetting
+  class TranscriptSourceSetting
   {
   public:
-    TranscriptSourceSetting();
-    TranscriptSourceSetting(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptSourceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API TranscriptSourceSetting();
+    AWS_LEXMODELSV2_API TranscriptSourceSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API TranscriptSourceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     S3BucketTranscriptSource m_s3BucketTranscriptSource;
-    bool m_s3BucketTranscriptSourceHasBeenSet;
+    bool m_s3BucketTranscriptSourceHasBeenSet = false;
   };
 
 } // namespace Model

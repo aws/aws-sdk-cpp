@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchCreateDelegationByAssessmentError">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentError
+  class BatchCreateDelegationByAssessmentError
   {
   public:
-    BatchCreateDelegationByAssessmentError();
-    BatchCreateDelegationByAssessmentError(Aws::Utils::Json::JsonView jsonValue);
-    BatchCreateDelegationByAssessmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentError();
+    AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API BatchCreateDelegationByAssessmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     CreateDelegationRequest m_createDelegationRequest;
-    bool m_createDelegationRequestHasBeenSet;
+    bool m_createDelegationRequestHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

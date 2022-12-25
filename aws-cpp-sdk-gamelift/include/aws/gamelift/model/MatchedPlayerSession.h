@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchedPlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API MatchedPlayerSession
+  class MatchedPlayerSession
   {
   public:
-    MatchedPlayerSession();
-    MatchedPlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    MatchedPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API MatchedPlayerSession();
+    AWS_GAMELIFT_API MatchedPlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API MatchedPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::String m_playerSessionId;
-    bool m_playerSessionIdHasBeenSet;
+    bool m_playerSessionIdHasBeenSet = false;
   };
 
 } // namespace Model

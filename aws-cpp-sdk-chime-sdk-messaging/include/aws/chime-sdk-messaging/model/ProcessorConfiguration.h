@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ProcessorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ProcessorConfiguration
+  class ProcessorConfiguration
   {
   public:
-    ProcessorConfiguration();
-    ProcessorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProcessorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ProcessorConfiguration();
+    AWS_CHIMESDKMESSAGING_API ProcessorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ProcessorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LambdaConfiguration m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

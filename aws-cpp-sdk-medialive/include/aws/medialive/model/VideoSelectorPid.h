@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoSelectorPid">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VideoSelectorPid
+  class VideoSelectorPid
   {
   public:
-    VideoSelectorPid();
-    VideoSelectorPid(Aws::Utils::Json::JsonView jsonValue);
-    VideoSelectorPid& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VideoSelectorPid();
+    AWS_MEDIALIVE_API VideoSelectorPid(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VideoSelectorPid& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     int m_pid;
-    bool m_pidHasBeenSet;
+    bool m_pidHasBeenSet = false;
   };
 
 } // namespace Model

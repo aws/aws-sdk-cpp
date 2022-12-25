@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/JobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -31,44 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/PolicyGeneration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API PolicyGeneration
+  class PolicyGeneration
   {
   public:
-    PolicyGeneration();
-    PolicyGeneration(Aws::Utils::Json::JsonView jsonValue);
-    PolicyGeneration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline PolicyGeneration& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-
-    /**
-     * <p>A timestamp of when the policy generation was completed.</p>
-     */
-    inline PolicyGeneration& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+    AWS_ACCESSANALYZER_API PolicyGeneration();
+    AWS_ACCESSANALYZER_API PolicyGeneration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API PolicyGeneration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,6 +163,37 @@ namespace Model
 
 
     /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline const JobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline PolicyGeneration& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the policy generation request.</p>
+     */
+    inline PolicyGeneration& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>A timestamp of when the policy generation started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
@@ -225,51 +225,51 @@ namespace Model
 
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline PolicyGeneration& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
+    inline PolicyGeneration& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
 
     /**
-     * <p>The status of the policy generation request.</p>
+     * <p>A timestamp of when the policy generation was completed.</p>
      */
-    inline PolicyGeneration& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PolicyGeneration& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
 
   private:
 
-    Aws::Utils::DateTime m_completedOn;
-    bool m_completedOnHasBeenSet;
-
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
-
-    Aws::Utils::DateTime m_startedOn;
-    bool m_startedOnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedOn;
+    bool m_startedOnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_completedOn;
+    bool m_completedOnHasBeenSet = false;
   };
 
 } // namespace Model

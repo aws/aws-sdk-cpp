@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PortRange">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API PortRange
+  class PortRange
   {
   public:
-    PortRange();
-    PortRange(Aws::Utils::Json::JsonView jsonValue);
-    PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API PortRange();
+    AWS_NETWORKFIREWALL_API PortRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
   };
 
 } // namespace Model

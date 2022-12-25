@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUEDATABREW_API SendProjectSessionActionRequest : public GlueDataBrewRequest
+  class SendProjectSessionActionRequest : public GlueDataBrewRequest
   {
   public:
-    SendProjectSessionActionRequest();
+    AWS_GLUEDATABREW_API SendProjectSessionActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendProjectSessionAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUEDATABREW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -214,22 +214,22 @@ namespace Model
   private:
 
     bool m_preview;
-    bool m_previewHasBeenSet;
+    bool m_previewHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RecipeStep m_recipeStep;
-    bool m_recipeStepHasBeenSet;
+    bool m_recipeStepHasBeenSet = false;
 
     int m_stepIndex;
-    bool m_stepIndexHasBeenSet;
+    bool m_stepIndexHasBeenSet = false;
 
     Aws::String m_clientSessionId;
-    bool m_clientSessionIdHasBeenSet;
+    bool m_clientSessionIdHasBeenSet = false;
 
     ViewFrame m_viewFrame;
-    bool m_viewFrameHasBeenSet;
+    bool m_viewFrameHasBeenSet = false;
   };
 
 } // namespace Model

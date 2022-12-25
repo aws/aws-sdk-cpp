@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType
+  class CodeDeliveryDetailsType
   {
   public:
-    CodeDeliveryDetailsType();
-    CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
-    CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType();
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DeliveryMediumType m_deliveryMedium;
-    bool m_deliveryMediumHasBeenSet;
+    bool m_deliveryMediumHasBeenSet = false;
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
   };
 
 } // namespace Model

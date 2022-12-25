@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/PasswordPolicyType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API PasswordPolicyType
+  class PasswordPolicyType
   {
   public:
-    PasswordPolicyType();
-    PasswordPolicyType(Aws::Utils::Json::JsonView jsonValue);
-    PasswordPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API PasswordPolicyType();
+    AWS_COGNITOIDENTITYPROVIDER_API PasswordPolicyType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API PasswordPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,22 +199,22 @@ namespace Model
   private:
 
     int m_minimumLength;
-    bool m_minimumLengthHasBeenSet;
+    bool m_minimumLengthHasBeenSet = false;
 
     bool m_requireUppercase;
-    bool m_requireUppercaseHasBeenSet;
+    bool m_requireUppercaseHasBeenSet = false;
 
     bool m_requireLowercase;
-    bool m_requireLowercaseHasBeenSet;
+    bool m_requireLowercaseHasBeenSet = false;
 
     bool m_requireNumbers;
-    bool m_requireNumbersHasBeenSet;
+    bool m_requireNumbersHasBeenSet = false;
 
     bool m_requireSymbols;
-    bool m_requireSymbolsHasBeenSet;
+    bool m_requireSymbolsHasBeenSet = false;
 
     int m_temporaryPasswordValidityDays;
-    bool m_temporaryPasswordValidityDaysHasBeenSet;
+    bool m_temporaryPasswordValidityDaysHasBeenSet = false;
   };
 
 } // namespace Model

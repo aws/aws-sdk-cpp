@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionsInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RegionsInfo
+  class RegionsInfo
   {
   public:
-    RegionsInfo();
-    RegionsInfo(Aws::Utils::Json::JsonView jsonValue);
-    RegionsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API RegionsInfo();
+    AWS_DIRECTORYSERVICE_API RegionsInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API RegionsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_primaryRegion;
-    bool m_primaryRegionHasBeenSet;
+    bool m_primaryRegionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalRegions;
-    bool m_additionalRegionsHasBeenSet;
+    bool m_additionalRegionsHasBeenSet = false;
   };
 
 } // namespace Model

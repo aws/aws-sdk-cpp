@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UsageLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API UsageLimit
+  class UsageLimit
   {
   public:
-    UsageLimit();
-    UsageLimit(Aws::Utils::Json::JsonView jsonValue);
-    UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API UsageLimit();
+    AWS_REDSHIFTSERVERLESS_API UsageLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,42 +193,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline const Aws::String& GetUsageLimitArn() const{ return m_usageLimitArn; }
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline bool UsageLimitArnHasBeenSet() const { return m_usageLimitArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline void SetUsageLimitArn(const Aws::String& value) { m_usageLimitArnHasBeenSet = true; m_usageLimitArn = value; }
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline void SetUsageLimitArn(Aws::String&& value) { m_usageLimitArnHasBeenSet = true; m_usageLimitArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline void SetUsageLimitArn(const char* value) { m_usageLimitArnHasBeenSet = true; m_usageLimitArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline UsageLimit& WithUsageLimitArn(const Aws::String& value) { SetUsageLimitArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline UsageLimit& WithUsageLimitArn(Aws::String&& value) { SetUsageLimitArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the resource associated with the usage limit.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource associated with the usage
+     * limit.</p>
      */
     inline UsageLimit& WithUsageLimitArn(const char* value) { SetUsageLimitArn(value); return *this;}
 
@@ -307,25 +315,25 @@ namespace Model
   private:
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     UsageLimitPeriod m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_usageLimitArn;
-    bool m_usageLimitArnHasBeenSet;
+    bool m_usageLimitArnHasBeenSet = false;
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
 
     UsageLimitUsageType m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

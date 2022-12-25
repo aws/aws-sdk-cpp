@@ -72,7 +72,7 @@ Connection& Connection::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MatchCriteria"))
   {
-    Array<JsonView> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
+    Aws::Utils::Array<JsonView> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
     for(unsigned matchCriteriaIndex = 0; matchCriteriaIndex < matchCriteriaJsonList.GetLength(); ++matchCriteriaIndex)
     {
       m_matchCriteria.push_back(matchCriteriaJsonList[matchCriteriaIndex].AsString());
@@ -144,7 +144,7 @@ JsonValue Connection::Jsonize() const
 
   if(m_matchCriteriaHasBeenSet)
   {
-   Array<JsonValue> matchCriteriaJsonList(m_matchCriteria.size());
+   Aws::Utils::Array<JsonValue> matchCriteriaJsonList(m_matchCriteria.size());
    for(unsigned matchCriteriaIndex = 0; matchCriteriaIndex < matchCriteriaJsonList.GetLength(); ++matchCriteriaIndex)
    {
      matchCriteriaJsonList[matchCriteriaIndex].AsString(m_matchCriteria[matchCriteriaIndex]);

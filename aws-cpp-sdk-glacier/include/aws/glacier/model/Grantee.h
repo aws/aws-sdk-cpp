@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/Grantee">AWS API
    * Reference</a></p>
    */
-  class AWS_GLACIER_API Grantee
+  class Grantee
   {
   public:
-    Grantee();
-    Grantee(Aws::Utils::Json::JsonView jsonValue);
-    Grantee& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API Grantee();
+    AWS_GLACIER_API Grantee(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Grantee& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_uRI;
-    bool m_uRIHasBeenSet;
+    bool m_uRIHasBeenSet = false;
 
     Aws::String m_iD;
-    bool m_iDHasBeenSet;
+    bool m_iDHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
   };
 
 } // namespace Model

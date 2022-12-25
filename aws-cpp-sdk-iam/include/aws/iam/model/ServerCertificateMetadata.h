@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServerCertificateMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ServerCertificateMetadata
+  class ServerCertificateMetadata
   {
   public:
-    ServerCertificateMetadata();
-    ServerCertificateMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ServerCertificateMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ServerCertificateMetadata();
+    AWS_IAM_API ServerCertificateMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ServerCertificateMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_serverCertificateName;
-    bool m_serverCertificateNameHasBeenSet;
+    bool m_serverCertificateNameHasBeenSet = false;
 
     Aws::String m_serverCertificateId;
-    bool m_serverCertificateIdHasBeenSet;
+    bool m_serverCertificateIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_uploadDate;
-    bool m_uploadDateHasBeenSet;
+    bool m_uploadDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiration;
-    bool m_expirationHasBeenSet;
+    bool m_expirationHasBeenSet = false;
   };
 
 } // namespace Model

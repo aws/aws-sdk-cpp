@@ -25,19 +25,17 @@ namespace Model
 
   /**
    * <p>A remote location where a multi-location fleet can deploy EC2 instances for
-   * game hosting. </p> <p> <b>Related actions</b> </p> <p> <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * game hosting. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LocationConfiguration
+  class LocationConfiguration
   {
   public:
-    LocationConfiguration();
-    LocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LocationConfiguration();
+    AWS_GAMELIFT_API LocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

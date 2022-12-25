@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMaintenanceOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest
+  class LaunchTemplateInstanceMaintenanceOptionsRequest
   {
   public:
-    LaunchTemplateInstanceMaintenanceOptionsRequest();
-    LaunchTemplateInstanceMaintenanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateInstanceMaintenanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest();
+    AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMaintenanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     LaunchTemplateAutoRecoveryState m_autoRecovery;
-    bool m_autoRecoveryHasBeenSet;
+    bool m_autoRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

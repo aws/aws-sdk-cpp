@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CvssScore">AWS API
    * Reference</a></p>
    */
-  class AWS_ECR_API CvssScore
+  class CvssScore
   {
   public:
-    CvssScore();
-    CvssScore(Aws::Utils::Json::JsonView jsonValue);
-    CvssScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API CvssScore();
+    AWS_ECR_API CvssScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API CvssScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     double m_baseScore;
-    bool m_baseScoreHasBeenSet;
+    bool m_baseScoreHasBeenSet = false;
 
     Aws::String m_scoringVector;
-    bool m_scoringVectorHasBeenSet;
+    bool m_scoringVectorHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

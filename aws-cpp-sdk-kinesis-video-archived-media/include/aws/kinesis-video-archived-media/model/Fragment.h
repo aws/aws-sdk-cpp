@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/Fragment">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment
+  class Fragment
   {
   public:
-    Fragment();
-    Fragment(Aws::Utils::Json::JsonView jsonValue);
-    Fragment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,19 +198,19 @@ namespace Model
   private:
 
     Aws::String m_fragmentNumber;
-    bool m_fragmentNumberHasBeenSet;
+    bool m_fragmentNumberHasBeenSet = false;
 
     long long m_fragmentSizeInBytes;
-    bool m_fragmentSizeInBytesHasBeenSet;
+    bool m_fragmentSizeInBytesHasBeenSet = false;
 
     Aws::Utils::DateTime m_producerTimestamp;
-    bool m_producerTimestampHasBeenSet;
+    bool m_producerTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_serverTimestamp;
-    bool m_serverTimestampHasBeenSet;
+    bool m_serverTimestampHasBeenSet = false;
 
     long long m_fragmentLengthInMilliseconds;
-    bool m_fragmentLengthInMillisecondsHasBeenSet;
+    bool m_fragmentLengthInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

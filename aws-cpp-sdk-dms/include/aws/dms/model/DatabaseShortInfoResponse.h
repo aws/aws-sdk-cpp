@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DatabaseShortInfoResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse
+  class DatabaseShortInfoResponse
   {
   public:
-    DatabaseShortInfoResponse();
-    DatabaseShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_databaseId;
-    bool m_databaseIdHasBeenSet;
+    bool m_databaseIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_databaseIpAddress;
-    bool m_databaseIpAddressHasBeenSet;
+    bool m_databaseIpAddressHasBeenSet = false;
 
     Aws::String m_databaseEngine;
-    bool m_databaseEngineHasBeenSet;
+    bool m_databaseEngineHasBeenSet = false;
   };
 
 } // namespace Model

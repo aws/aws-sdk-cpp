@@ -26,12 +26,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API GetDimensionValuesResult
+  class GetDimensionValuesResult
   {
   public:
-    GetDimensionValuesResult();
-    GetDimensionValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDimensionValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetDimensionValuesResult();
+    AWS_COSTEXPLORER_API GetDimensionValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetDimensionValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -63,12 +63,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -122,12 +124,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -181,12 +185,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -240,12 +246,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -299,12 +307,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -358,12 +368,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member
@@ -417,12 +429,14 @@ namespace Model
      * different types of charges such as RI fees, usage costs, tax refunds, and
      * credits.</p> </li> <li> <p>RESOURCE_ID - The unique identifier of the resource.
      * ResourceId is an opt-in feature only available for last 14 days for EC2-Compute
-     * Service.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>,
-     * you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The
-     * Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li>
-     * <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows
-     * or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational
-     * Database Service deployments. Valid values are <code>SingleAZ</code> and
+     * Service. You can opt-in by enabling <code>Hourly</code> and <code>Resource Level
+     * Data</code> in Cost Management Console preferences.</p> </li> </ul> <p>If you
+     * set the context to <code>RESERVATIONS</code>, you can use the following
+     * dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An
+     * example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon
+     * ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li>
+     * <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service
+     * deployments. Valid values are <code>SingleAZ</code> and
      * <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2
      * instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT
      * - The description in the attribute map that includes the full name of the member

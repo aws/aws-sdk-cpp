@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/S3MonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API S3MonitoringConfiguration
+  class S3MonitoringConfiguration
   {
   public:
-    S3MonitoringConfiguration();
-    S3MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API S3MonitoringConfiguration();
+    AWS_EMRCONTAINERS_API S3MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API S3MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/OfferingStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API OfferingStatus
+  class OfferingStatus
   {
   public:
-    OfferingStatus();
-    OfferingStatus(Aws::Utils::Json::JsonView jsonValue);
-    OfferingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API OfferingStatus();
+    AWS_DEVICEFARM_API OfferingStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API OfferingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,16 +155,16 @@ namespace Model
   private:
 
     OfferingTransactionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Offering m_offering;
-    bool m_offeringHasBeenSet;
+    bool m_offeringHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Utils::DateTime m_effectiveOn;
-    bool m_effectiveOnHasBeenSet;
+    bool m_effectiveOnHasBeenSet = false;
   };
 
 } // namespace Model

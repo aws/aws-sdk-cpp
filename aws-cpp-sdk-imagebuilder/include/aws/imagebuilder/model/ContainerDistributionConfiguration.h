@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ContainerDistributionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ContainerDistributionConfiguration
+  class ContainerDistributionConfiguration
   {
   public:
-    ContainerDistributionConfiguration();
-    ContainerDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ContainerDistributionConfiguration();
+    AWS_IMAGEBUILDER_API ContainerDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ContainerDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -160,13 +160,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerTags;
-    bool m_containerTagsHasBeenSet;
+    bool m_containerTagsHasBeenSet = false;
 
     TargetContainerRepository m_targetRepository;
-    bool m_targetRepositoryHasBeenSet;
+    bool m_targetRepositoryHasBeenSet = false;
   };
 
 } // namespace Model

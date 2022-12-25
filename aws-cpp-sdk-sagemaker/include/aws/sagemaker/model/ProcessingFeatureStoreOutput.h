@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingFeatureStoreOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingFeatureStoreOutput
+  class ProcessingFeatureStoreOutput
   {
   public:
-    ProcessingFeatureStoreOutput();
-    ProcessingFeatureStoreOutput(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingFeatureStoreOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingFeatureStoreOutput();
+    AWS_SAGEMAKER_API ProcessingFeatureStoreOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingFeatureStoreOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

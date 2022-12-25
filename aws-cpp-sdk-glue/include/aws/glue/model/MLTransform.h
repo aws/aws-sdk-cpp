@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MLTransform">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MLTransform
+  class MLTransform
   {
   public:
-    MLTransform();
-    MLTransform(Aws::Utils::Json::JsonView jsonValue);
-    MLTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MLTransform();
+    AWS_GLUE_API MLTransform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MLTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1033,61 +1033,61 @@ namespace Model
   private:
 
     Aws::String m_transformId;
-    bool m_transformIdHasBeenSet;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     TransformStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     Aws::Vector<GlueTable> m_inputRecordTables;
-    bool m_inputRecordTablesHasBeenSet;
+    bool m_inputRecordTablesHasBeenSet = false;
 
     TransformParameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     EvaluationMetrics m_evaluationMetrics;
-    bool m_evaluationMetricsHasBeenSet;
+    bool m_evaluationMetricsHasBeenSet = false;
 
     int m_labelCount;
-    bool m_labelCountHasBeenSet;
+    bool m_labelCountHasBeenSet = false;
 
     Aws::Vector<SchemaColumn> m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     TransformEncryption m_transformEncryption;
-    bool m_transformEncryptionHasBeenSet;
+    bool m_transformEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

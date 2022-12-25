@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualServiceSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualServiceSpec
+  class VirtualServiceSpec
   {
   public:
-    VirtualServiceSpec();
-    VirtualServiceSpec(Aws::Utils::Json::JsonView jsonValue);
-    VirtualServiceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualServiceSpec();
+    AWS_APPMESH_API VirtualServiceSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualServiceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     VirtualServiceProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

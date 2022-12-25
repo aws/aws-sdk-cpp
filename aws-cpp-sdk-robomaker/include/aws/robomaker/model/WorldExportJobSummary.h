@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/WorldExportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API WorldExportJobSummary
+  class WorldExportJobSummary
   {
   public:
-    WorldExportJobSummary();
-    WorldExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorldExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API WorldExportJobSummary();
+    AWS_ROBOMAKER_API WorldExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API WorldExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -259,19 +259,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     WorldExportJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_worlds;
-    bool m_worldsHasBeenSet;
+    bool m_worldsHasBeenSet = false;
 
     OutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/Service">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API Service();
+    AWS_SERVICEDISCOVERY_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -290,38 +290,50 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline Service& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
-     * you want Cloud Map to create when you register an instance.</p>
+     * <p>A complex type that contains information about the Route 53 DNS records that
+     * you want Cloud Map to create when you register an instance.</p> 
+     * <p>The record types of a service can only be changed by deleting the service and
+     * recreating it with a new <code>Dnsconfig</code>.</p> 
      */
     inline Service& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
@@ -392,7 +404,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
@@ -402,7 +414,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
@@ -412,7 +424,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
@@ -422,7 +434,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
@@ -432,7 +444,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
@@ -442,7 +454,7 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
      * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
@@ -613,40 +625,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     DnsConfig m_dnsConfig;
-    bool m_dnsConfigHasBeenSet;
+    bool m_dnsConfigHasBeenSet = false;
 
     ServiceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
 
     HealthCheckCustomConfig m_healthCheckCustomConfig;
-    bool m_healthCheckCustomConfigHasBeenSet;
+    bool m_healthCheckCustomConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCH_API GetMetricDataRequest : public CloudWatchRequest
+  class GetMetricDataRequest : public CloudWatchRequest
   {
   public:
-    GetMetricDataRequest();
+    AWS_CLOUDWATCH_API GetMetricDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,10 +34,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetMetricData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -510,25 +510,25 @@ namespace Model
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
-    bool m_metricDataQueriesHasBeenSet;
+    bool m_metricDataQueriesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScanBy m_scanBy;
-    bool m_scanByHasBeenSet;
+    bool m_scanByHasBeenSet = false;
 
     int m_maxDatapoints;
-    bool m_maxDatapointsHasBeenSet;
+    bool m_maxDatapointsHasBeenSet = false;
 
     LabelOptions m_labelOptions;
-    bool m_labelOptionsHasBeenSet;
+    bool m_labelOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodRequest : public IoT1ClickDevicesServiceRequest
+  class InvokeDeviceMethodRequest : public IoT1ClickDevicesServiceRequest
   {
   public:
-    InvokeDeviceMethodRequest();
+    AWS_IOT1CLICKDEVICESSERVICE_API InvokeDeviceMethodRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeDeviceMethod"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     DeviceMethod m_deviceMethod;
-    bool m_deviceMethodHasBeenSet;
+    bool m_deviceMethodHasBeenSet = false;
 
     Aws::String m_deviceMethodParameters;
-    bool m_deviceMethodParametersHasBeenSet;
+    bool m_deviceMethodParametersHasBeenSet = false;
   };
 
 } // namespace Model

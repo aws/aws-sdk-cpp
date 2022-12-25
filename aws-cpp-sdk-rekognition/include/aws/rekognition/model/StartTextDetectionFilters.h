@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetectionFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StartTextDetectionFilters
+  class StartTextDetectionFilters
   {
   public:
-    StartTextDetectionFilters();
-    StartTextDetectionFilters(Aws::Utils::Json::JsonView jsonValue);
-    StartTextDetectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StartTextDetectionFilters();
+    AWS_REKOGNITION_API StartTextDetectionFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StartTextDetectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     DetectionFilter m_wordFilter;
-    bool m_wordFilterHasBeenSet;
+    bool m_wordFilterHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterest;
-    bool m_regionsOfInterestHasBeenSet;
+    bool m_regionsOfInterestHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceProperties
+  class RecoveryInstanceProperties
   {
   public:
-    RecoveryInstanceProperties();
-    RecoveryInstanceProperties(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceProperties();
+    AWS_DRS_API RecoveryInstanceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -292,25 +292,25 @@ namespace Model
   private:
 
     Aws::Vector<CPU> m_cpus;
-    bool m_cpusHasBeenSet;
+    bool m_cpusHasBeenSet = false;
 
     Aws::Vector<RecoveryInstanceDisk> m_disks;
-    bool m_disksHasBeenSet;
+    bool m_disksHasBeenSet = false;
 
     IdentificationHints m_identificationHints;
-    bool m_identificationHintsHasBeenSet;
+    bool m_identificationHintsHasBeenSet = false;
 
     Aws::String m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     OS m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     long long m_ramBytes;
-    bool m_ramBytesHasBeenSet;
+    bool m_ramBytesHasBeenSet = false;
   };
 
 } // namespace Model

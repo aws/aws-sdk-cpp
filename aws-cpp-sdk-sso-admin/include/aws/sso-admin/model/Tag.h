@@ -26,18 +26,17 @@ namespace Model
   /**
    * <p>A set of key-value pairs that are used to manage the resource. Tags can only
    * be applied to permission sets and cannot be applied to corresponding roles that
-   * Amazon Web Services SSO creates in Amazon Web Services accounts.</p><p><h3>See
-   * Also:</h3>   <a
+   * IAM Identity Center creates in AWS accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_SSOADMIN_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API Tag();
+    AWS_SSOADMIN_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

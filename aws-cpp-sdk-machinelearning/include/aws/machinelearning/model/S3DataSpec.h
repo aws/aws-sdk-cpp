@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/S3DataSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API S3DataSpec
+  class S3DataSpec
   {
   public:
-    S3DataSpec();
-    S3DataSpec(Aws::Utils::Json::JsonView jsonValue);
-    S3DataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API S3DataSpec();
+    AWS_MACHINELEARNING_API S3DataSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API S3DataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -828,16 +828,16 @@ namespace Model
   private:
 
     Aws::String m_dataLocationS3;
-    bool m_dataLocationS3HasBeenSet;
+    bool m_dataLocationS3HasBeenSet = false;
 
     Aws::String m_dataRearrangement;
-    bool m_dataRearrangementHasBeenSet;
+    bool m_dataRearrangementHasBeenSet = false;
 
     Aws::String m_dataSchema;
-    bool m_dataSchemaHasBeenSet;
+    bool m_dataSchemaHasBeenSet = false;
 
     Aws::String m_dataSchemaLocationS3;
-    bool m_dataSchemaLocationS3HasBeenSet;
+    bool m_dataSchemaLocationS3HasBeenSet = false;
   };
 
 } // namespace Model

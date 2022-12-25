@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteMatrixSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary
+  class CalculateRouteMatrixSummary
   {
   public:
-    CalculateRouteMatrixSummary();
-    CalculateRouteMatrixSummary(Aws::Utils::Json::JsonView jsonValue);
-    CalculateRouteMatrixSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary();
+    AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -206,16 +206,16 @@ namespace Model
   private:
 
     Aws::String m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     int m_errorCount;
-    bool m_errorCountHasBeenSet;
+    bool m_errorCountHasBeenSet = false;
 
     int m_routeCount;
-    bool m_routeCountHasBeenSet;
+    bool m_routeCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALING_API UpdateAutoScalingGroupRequest : public AutoScalingRequest
+  class UpdateAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
-    UpdateAutoScalingGroupRequest();
+    AWS_AUTOSCALING_API UpdateAutoScalingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAutoScalingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALING_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_AUTOSCALING_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -181,8 +181,7 @@ namespace Model
 
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -190,8 +189,7 @@ namespace Model
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -199,8 +197,7 @@ namespace Model
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -208,8 +205,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -217,8 +213,7 @@ namespace Model
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -226,8 +221,7 @@ namespace Model
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>An embedded object that specifies a mixed instances policy. For more
-     * information, see <a
+     * <p>The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -418,66 +412,82 @@ namespace Model
 
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
@@ -485,48 +495,48 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
      * checking the health status of an EC2 instance that has come into service and
-     * marking it unhealthy due to a failed Elastic Load Balancing or custom health
-     * check. This is useful if your instances do not immediately pass these health
-     * checks after they enter the <code>InService</code> state. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the
+     * <code>InService</code> state. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+     * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -623,64 +633,56 @@ namespace Model
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If
      * you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>,
-     * the subnets that you specify for this parameter must reside in those
-     * Availability Zones.</p>
+     * the subnets that you specify must reside in those Availability Zones.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
@@ -689,9 +691,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
@@ -699,9 +705,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline bool TerminationPoliciesHasBeenSet() const { return m_terminationPoliciesHasBeenSet; }
 
@@ -709,9 +719,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
@@ -719,9 +733,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
 
@@ -729,9 +747,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
@@ -739,9 +761,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
 
@@ -749,9 +775,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
@@ -759,9 +789,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
 
@@ -769,9 +803,13 @@ namespace Model
      * <p>A policy or a list of policies that are used to select the instances to
      * terminate. The policies are executed in the order that you list them. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-     * Auto Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+     * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+     * Scaling User Guide</i>.</p> <p>Valid values: <code>Default</code> |
+     * <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> |
+     * <code>NewestInstance</code> | <code>OldestInstance</code> |
+     * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
+     * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
@@ -937,33 +975,33 @@ namespace Model
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
 
     /**
      * <p>Enables or disables Capacity Rebalancing. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon
-     * EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use
+     * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
 
@@ -1197,67 +1235,67 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     MixedInstancesPolicy m_mixedInstancesPolicy;
-    bool m_mixedInstancesPolicyHasBeenSet;
+    bool m_mixedInstancesPolicyHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     int m_defaultCooldown;
-    bool m_defaultCooldownHasBeenSet;
+    bool m_defaultCooldownHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_healthCheckType;
-    bool m_healthCheckTypeHasBeenSet;
+    bool m_healthCheckTypeHasBeenSet = false;
 
     int m_healthCheckGracePeriod;
-    bool m_healthCheckGracePeriodHasBeenSet;
+    bool m_healthCheckGracePeriodHasBeenSet = false;
 
     Aws::String m_placementGroup;
-    bool m_placementGroupHasBeenSet;
+    bool m_placementGroupHasBeenSet = false;
 
     Aws::String m_vPCZoneIdentifier;
-    bool m_vPCZoneIdentifierHasBeenSet;
+    bool m_vPCZoneIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_terminationPolicies;
-    bool m_terminationPoliciesHasBeenSet;
+    bool m_terminationPoliciesHasBeenSet = false;
 
     bool m_newInstancesProtectedFromScaleIn;
-    bool m_newInstancesProtectedFromScaleInHasBeenSet;
+    bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
     Aws::String m_serviceLinkedRoleARN;
-    bool m_serviceLinkedRoleARNHasBeenSet;
+    bool m_serviceLinkedRoleARNHasBeenSet = false;
 
     int m_maxInstanceLifetime;
-    bool m_maxInstanceLifetimeHasBeenSet;
+    bool m_maxInstanceLifetimeHasBeenSet = false;
 
     bool m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_desiredCapacityType;
-    bool m_desiredCapacityTypeHasBeenSet;
+    bool m_desiredCapacityTypeHasBeenSet = false;
 
     int m_defaultInstanceWarmup;
-    bool m_defaultInstanceWarmupHasBeenSet;
+    bool m_defaultInstanceWarmupHasBeenSet = false;
   };
 
 } // namespace Model

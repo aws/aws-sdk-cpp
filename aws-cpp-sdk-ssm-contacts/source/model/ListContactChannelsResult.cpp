@@ -36,7 +36,7 @@ ListContactChannelsResult& ListContactChannelsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ContactChannels"))
   {
-    Array<JsonView> contactChannelsJsonList = jsonValue.GetArray("ContactChannels");
+    Aws::Utils::Array<JsonView> contactChannelsJsonList = jsonValue.GetArray("ContactChannels");
     for(unsigned contactChannelsIndex = 0; contactChannelsIndex < contactChannelsJsonList.GetLength(); ++contactChannelsIndex)
     {
       m_contactChannels.push_back(contactChannelsJsonList[contactChannelsIndex].AsObject());

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputDecryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API InputDecryptionSettings
+  class InputDecryptionSettings
   {
   public:
-    InputDecryptionSettings();
-    InputDecryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputDecryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API InputDecryptionSettings();
+    AWS_MEDIACONVERT_API InputDecryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API InputDecryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -277,16 +277,16 @@ namespace Model
   private:
 
     DecryptionMode m_decryptionMode;
-    bool m_decryptionModeHasBeenSet;
+    bool m_decryptionModeHasBeenSet = false;
 
     Aws::String m_encryptedDecryptionKey;
-    bool m_encryptedDecryptionKeyHasBeenSet;
+    bool m_encryptedDecryptionKeyHasBeenSet = false;
 
     Aws::String m_initializationVector;
-    bool m_initializationVectorHasBeenSet;
+    bool m_initializationVectorHasBeenSet = false;
 
     Aws::String m_kmsKeyRegion;
-    bool m_kmsKeyRegionHasBeenSet;
+    bool m_kmsKeyRegionHasBeenSet = false;
   };
 
 } // namespace Model

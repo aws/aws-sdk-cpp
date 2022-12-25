@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionRectangle">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionRectangle
+  class CaptionRectangle
   {
   public:
-    CaptionRectangle();
-    CaptionRectangle(Aws::Utils::Json::JsonView jsonValue);
-    CaptionRectangle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionRectangle();
+    AWS_MEDIALIVE_API CaptionRectangle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionRectangle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,16 +257,16 @@ This field corresponds to
   private:
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_leftOffset;
-    bool m_leftOffsetHasBeenSet;
+    bool m_leftOffsetHasBeenSet = false;
 
     double m_topOffset;
-    bool m_topOffsetHasBeenSet;
+    bool m_topOffsetHasBeenSet = false;
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

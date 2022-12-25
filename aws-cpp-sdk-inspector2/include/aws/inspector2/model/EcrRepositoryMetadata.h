@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EcrRepositoryMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API EcrRepositoryMetadata
+  class EcrRepositoryMetadata
   {
   public:
-    EcrRepositoryMetadata();
-    EcrRepositoryMetadata(Aws::Utils::Json::JsonView jsonValue);
-    EcrRepositoryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API EcrRepositoryMetadata();
+    AWS_INSPECTOR2_API EcrRepositoryMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API EcrRepositoryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     EcrScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

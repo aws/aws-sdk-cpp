@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RegionalConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API RegionalConfiguration
+  class RegionalConfiguration
   {
   public:
-    RegionalConfiguration();
-    RegionalConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RegionalConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API RegionalConfiguration();
+    AWS_ELASTICACHE_API RegionalConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API RegionalConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_replicationGroupRegion;
-    bool m_replicationGroupRegionHasBeenSet;
+    bool m_replicationGroupRegionHasBeenSet = false;
 
     Aws::Vector<ReshardingConfiguration> m_reshardingConfiguration;
-    bool m_reshardingConfigurationHasBeenSet;
+    bool m_reshardingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

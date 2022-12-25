@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Connector">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API Connector
+  class Connector
   {
   public:
-    Connector();
-    Connector(Aws::Utils::Json::JsonView jsonValue);
-    Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API Connector();
+    AWS_SMS_API Connector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -424,34 +424,34 @@ namespace Model
   private:
 
     Aws::String m_connectorId;
-    bool m_connectorIdHasBeenSet;
+    bool m_connectorIdHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ConnectorStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<ConnectorCapability> m_capabilityList;
-    bool m_capabilityListHasBeenSet;
+    bool m_capabilityListHasBeenSet = false;
 
     Aws::String m_vmManagerName;
-    bool m_vmManagerNameHasBeenSet;
+    bool m_vmManagerNameHasBeenSet = false;
 
     VmManagerType m_vmManagerType;
-    bool m_vmManagerTypeHasBeenSet;
+    bool m_vmManagerTypeHasBeenSet = false;
 
     Aws::String m_vmManagerId;
-    bool m_vmManagerIdHasBeenSet;
+    bool m_vmManagerIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_macAddress;
-    bool m_macAddressHasBeenSet;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::Utils::DateTime m_associatedOn;
-    bool m_associatedOnHasBeenSet;
+    bool m_associatedOnHasBeenSet = false;
   };
 
 } // namespace Model

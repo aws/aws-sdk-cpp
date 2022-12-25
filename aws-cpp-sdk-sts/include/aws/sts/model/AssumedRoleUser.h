@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumedRoleUser">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API AssumedRoleUser
+  class AssumedRoleUser
   {
   public:
-    AssumedRoleUser();
-    AssumedRoleUser(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AssumedRoleUser& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API AssumedRoleUser();
+    AWS_STS_API AssumedRoleUser(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_STS_API AssumedRoleUser& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_STS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -172,10 +172,10 @@ namespace Model
   private:
 
     Aws::String m_assumedRoleId;
-    bool m_assumedRoleIdHasBeenSet;
+    bool m_assumedRoleIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

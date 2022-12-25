@@ -26,18 +26,17 @@ namespace Model
   /**
    * <p>Current resource utilization statistics in a specified fleet or location. The
    * location value might refer to a fleet's remote location or its home Region.</p>
-   * <p> <b>Related actions</b> </p> <p> <a>DescribeFleetUtilization</a> |
-   * <a>DescribeFleetLocationUtilization</a> </p><p><h3>See Also:</h3>   <a
+   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API FleetUtilization
+  class FleetUtilization
   {
   public:
-    FleetUtilization();
-    FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
-    FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API FleetUtilization();
+    AWS_GAMELIFT_API FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -305,25 +304,25 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     int m_activeServerProcessCount;
-    bool m_activeServerProcessCountHasBeenSet;
+    bool m_activeServerProcessCountHasBeenSet = false;
 
     int m_activeGameSessionCount;
-    bool m_activeGameSessionCountHasBeenSet;
+    bool m_activeGameSessionCountHasBeenSet = false;
 
     int m_currentPlayerSessionCount;
-    bool m_currentPlayerSessionCountHasBeenSet;
+    bool m_currentPlayerSessionCountHasBeenSet = false;
 
     int m_maximumPlayerSessionCount;
-    bool m_maximumPlayerSessionCountHasBeenSet;
+    bool m_maximumPlayerSessionCountHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/UnsupportedGrantTypeException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API UnsupportedGrantTypeException
+  class UnsupportedGrantTypeException
   {
   public:
-    UnsupportedGrantTypeException();
-    UnsupportedGrantTypeException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedGrantTypeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API UnsupportedGrantTypeException();
+    AWS_SSOOIDC_API UnsupportedGrantTypeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API UnsupportedGrantTypeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_error_description;
-    bool m_error_descriptionHasBeenSet;
+    bool m_error_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

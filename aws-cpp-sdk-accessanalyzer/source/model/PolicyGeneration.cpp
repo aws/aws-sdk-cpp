@@ -19,35 +19,28 @@ namespace Model
 {
 
 PolicyGeneration::PolicyGeneration() : 
-    m_completedOnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_principalArnHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startedOnHasBeenSet(false),
+    m_completedOnHasBeenSet(false)
 {
 }
 
 PolicyGeneration::PolicyGeneration(JsonView jsonValue) : 
-    m_completedOnHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_principalArnHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startedOnHasBeenSet(false),
+    m_completedOnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PolicyGeneration& PolicyGeneration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("completedOn"))
-  {
-    m_completedOn = jsonValue.GetString("completedOn");
-
-    m_completedOnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
@@ -62,6 +55,13 @@ PolicyGeneration& PolicyGeneration::operator =(JsonView jsonValue)
     m_principalArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("startedOn"))
   {
     m_startedOn = jsonValue.GetString("startedOn");
@@ -69,11 +69,11 @@ PolicyGeneration& PolicyGeneration::operator =(JsonView jsonValue)
     m_startedOnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("completedOn"))
   {
-    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
+    m_completedOn = jsonValue.GetString("completedOn");
 
-    m_statusHasBeenSet = true;
+    m_completedOnHasBeenSet = true;
   }
 
   return *this;
@@ -82,11 +82,6 @@ PolicyGeneration& PolicyGeneration::operator =(JsonView jsonValue)
 JsonValue PolicyGeneration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_completedOnHasBeenSet)
-  {
-   payload.WithString("completedOn", m_completedOn.ToGmtString(DateFormat::ISO_8601));
-  }
 
   if(m_jobIdHasBeenSet)
   {
@@ -100,14 +95,19 @@ JsonValue PolicyGeneration::Jsonize() const
 
   }
 
-  if(m_startedOnHasBeenSet)
-  {
-   payload.WithString("startedOn", m_startedOn.ToGmtString(DateFormat::ISO_8601));
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+  }
+
+  if(m_startedOnHasBeenSet)
+  {
+   payload.WithString("startedOn", m_startedOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_completedOnHasBeenSet)
+  {
+   payload.WithString("completedOn", m_completedOn.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

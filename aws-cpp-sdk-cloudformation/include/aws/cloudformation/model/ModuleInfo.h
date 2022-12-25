@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ModuleInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ModuleInfo
+  class ModuleInfo
   {
   public:
-    ModuleInfo();
-    ModuleInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ModuleInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ModuleInfo();
+    AWS_CLOUDFORMATION_API ModuleInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ModuleInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -232,10 +232,10 @@ namespace Model
   private:
 
     Aws::String m_typeHierarchy;
-    bool m_typeHierarchyHasBeenSet;
+    bool m_typeHierarchyHasBeenSet = false;
 
     Aws::String m_logicalIdHierarchy;
-    bool m_logicalIdHierarchyHasBeenSet;
+    bool m_logicalIdHierarchyHasBeenSet = false;
   };
 
 } // namespace Model

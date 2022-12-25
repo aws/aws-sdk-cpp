@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API UpdateStreamProcessorRequest : public RekognitionRequest
+  class UpdateStreamProcessorRequest : public RekognitionRequest
   {
   public:
-    UpdateStreamProcessorRequest();
+    AWS_REKOGNITION_API UpdateStreamProcessorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateStreamProcessor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -272,19 +272,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     StreamProcessorSettingsForUpdate m_settingsForUpdate;
-    bool m_settingsForUpdateHasBeenSet;
+    bool m_settingsForUpdateHasBeenSet = false;
 
     Aws::Vector<RegionOfInterest> m_regionsOfInterestForUpdate;
-    bool m_regionsOfInterestForUpdateHasBeenSet;
+    bool m_regionsOfInterestForUpdateHasBeenSet = false;
 
     StreamProcessorDataSharingPreference m_dataSharingPreferenceForUpdate;
-    bool m_dataSharingPreferenceForUpdateHasBeenSet;
+    bool m_dataSharingPreferenceForUpdateHasBeenSet = false;
 
     Aws::Vector<StreamProcessorParameterToDelete> m_parametersToDelete;
-    bool m_parametersToDeleteHasBeenSet;
+    bool m_parametersToDeleteHasBeenSet = false;
   };
 
 } // namespace Model

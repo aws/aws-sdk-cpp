@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOutInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API CheckIfPhoneNumberIsOptedOutRequest : public SNSRequest
+  class CheckIfPhoneNumberIsOptedOutRequest : public SNSRequest
   {
   public:
-    CheckIfPhoneNumberIsOptedOutRequest();
+    AWS_SNS_API CheckIfPhoneNumberIsOptedOutRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CheckIfPhoneNumberIsOptedOut"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SNS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
   };
 
 } // namespace Model

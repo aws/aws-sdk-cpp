@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ReferenceDataSource
+  class ReferenceDataSource
   {
   public:
-    ReferenceDataSource();
-    ReferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ReferenceDataSource();
+    AWS_KINESISANALYTICS_API ReferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ReferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     S3ReferenceDataSource m_s3ReferenceDataSource;
-    bool m_s3ReferenceDataSourceHasBeenSet;
+    bool m_s3ReferenceDataSourceHasBeenSet = false;
 
     SourceSchema m_referenceSchema;
-    bool m_referenceSchemaHasBeenSet;
+    bool m_referenceSchemaHasBeenSet = false;
   };
 
 } // namespace Model

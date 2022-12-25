@@ -93,7 +93,7 @@ ChangeSetSummaryListItem& ChangeSetSummaryListItem::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("EntityIdList"))
   {
-    Array<JsonView> entityIdListJsonList = jsonValue.GetArray("EntityIdList");
+    Aws::Utils::Array<JsonView> entityIdListJsonList = jsonValue.GetArray("EntityIdList");
     for(unsigned entityIdListIndex = 0; entityIdListIndex < entityIdListJsonList.GetLength(); ++entityIdListIndex)
     {
       m_entityIdList.push_back(entityIdListJsonList[entityIdListIndex].AsString());
@@ -152,7 +152,7 @@ JsonValue ChangeSetSummaryListItem::Jsonize() const
 
   if(m_entityIdListHasBeenSet)
   {
-   Array<JsonValue> entityIdListJsonList(m_entityIdList.size());
+   Aws::Utils::Array<JsonValue> entityIdListJsonList(m_entityIdList.size());
    for(unsigned entityIdListIndex = 0; entityIdListIndex < entityIdListJsonList.GetLength(); ++entityIdListIndex)
    {
      entityIdListJsonList[entityIdListIndex].AsString(m_entityIdList[entityIdListIndex]);

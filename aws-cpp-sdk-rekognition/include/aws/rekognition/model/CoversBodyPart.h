@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CoversBodyPart">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API CoversBodyPart
+  class CoversBodyPart
   {
   public:
-    CoversBodyPart();
-    CoversBodyPart(Aws::Utils::Json::JsonView jsonValue);
-    CoversBodyPart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API CoversBodyPart();
+    AWS_REKOGNITION_API CoversBodyPart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API CoversBodyPart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -85,10 +85,10 @@ namespace Model
   private:
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     bool m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

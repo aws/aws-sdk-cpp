@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateAppRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API UpdateAppRequest : public AmplifyRequest
+  class UpdateAppRequest : public AmplifyRequest
   {
   public:
-    UpdateAppRequest();
+    AWS_AMPLIFY_API UpdateAppRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApp"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -165,32 +165,56 @@ namespace Model
 
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline UpdateAppRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p> The platform for an Amplify app. </p>
+     * <p> The platform for the Amplify app. For a static app, set the platform type to
+     * <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform
+     * type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's
+     * original SSR support only, set the platform type to
+     * <code>WEB_DYNAMIC</code>.</p>
      */
     inline UpdateAppRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
@@ -981,61 +1005,61 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_iamServiceRoleArn;
-    bool m_iamServiceRoleArnHasBeenSet;
+    bool m_iamServiceRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     bool m_enableBranchAutoBuild;
-    bool m_enableBranchAutoBuildHasBeenSet;
+    bool m_enableBranchAutoBuildHasBeenSet = false;
 
     bool m_enableBranchAutoDeletion;
-    bool m_enableBranchAutoDeletionHasBeenSet;
+    bool m_enableBranchAutoDeletionHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     Aws::Vector<CustomRule> m_customRules;
-    bool m_customRulesHasBeenSet;
+    bool m_customRulesHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     Aws::String m_customHeaders;
-    bool m_customHeadersHasBeenSet;
+    bool m_customHeadersHasBeenSet = false;
 
     bool m_enableAutoBranchCreation;
-    bool m_enableAutoBranchCreationHasBeenSet;
+    bool m_enableAutoBranchCreationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoBranchCreationPatterns;
-    bool m_autoBranchCreationPatternsHasBeenSet;
+    bool m_autoBranchCreationPatternsHasBeenSet = false;
 
     AutoBranchCreationConfig m_autoBranchCreationConfig;
-    bool m_autoBranchCreationConfigHasBeenSet;
+    bool m_autoBranchCreationConfigHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_oauthToken;
-    bool m_oauthTokenHasBeenSet;
+    bool m_oauthTokenHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

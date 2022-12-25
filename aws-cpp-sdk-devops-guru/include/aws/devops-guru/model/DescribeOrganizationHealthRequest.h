@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_DEVOPSGURU_API DescribeOrganizationHealthRequest : public DevOpsGuruRequest
+  class DescribeOrganizationHealthRequest : public DevOpsGuruRequest
   {
   public:
-    DescribeOrganizationHealthRequest();
+    AWS_DEVOPSGURU_API DescribeOrganizationHealthRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeOrganizationHealth"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
   };
 
 } // namespace Model

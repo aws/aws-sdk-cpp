@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DataSetImportItem">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem
+  class DataSetImportItem
   {
   public:
-    DataSetImportItem();
-    DataSetImportItem(Aws::Utils::Json::JsonView jsonValue);
-    DataSetImportItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem();
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     DataSet m_dataSet;
-    bool m_dataSetHasBeenSet;
+    bool m_dataSetHasBeenSet = false;
 
     ExternalLocation m_externalLocation;
-    bool m_externalLocationHasBeenSet;
+    bool m_externalLocationHasBeenSet = false;
   };
 
 } // namespace Model

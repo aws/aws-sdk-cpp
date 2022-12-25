@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API Backup
+  class Backup
   {
   public:
-    Backup();
-    Backup(Aws::Utils::Json::JsonView jsonValue);
-    Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API Backup();
+    AWS_FSX_API Backup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -637,52 +637,52 @@ namespace Model
   private:
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
 
     BackupLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     BackupFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
 
     BackupType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_progressPercent;
-    bool m_progressPercentHasBeenSet;
+    bool m_progressPercentHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     FileSystem m_fileSystem;
-    bool m_fileSystemHasBeenSet;
+    bool m_fileSystemHasBeenSet = false;
 
     ActiveDirectoryBackupAttributes m_directoryInformation;
-    bool m_directoryInformationHasBeenSet;
+    bool m_directoryInformationHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_sourceBackupId;
-    bool m_sourceBackupIdHasBeenSet;
+    bool m_sourceBackupIdHasBeenSet = false;
 
     Aws::String m_sourceBackupRegion;
-    bool m_sourceBackupRegionHasBeenSet;
+    bool m_sourceBackupRegionHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Volume m_volume;
-    bool m_volumeHasBeenSet;
+    bool m_volumeHasBeenSet = false;
   };
 
 } // namespace Model

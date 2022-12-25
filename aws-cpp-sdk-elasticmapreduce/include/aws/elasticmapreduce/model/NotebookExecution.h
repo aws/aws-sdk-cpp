@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/NotebookExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API NotebookExecution
+  class NotebookExecution
   {
   public:
-    NotebookExecution();
-    NotebookExecution(Aws::Utils::Json::JsonView jsonValue);
-    NotebookExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API NotebookExecution();
+    AWS_EMR_API NotebookExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API NotebookExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -705,43 +705,43 @@ namespace Model
   private:
 
     Aws::String m_notebookExecutionId;
-    bool m_notebookExecutionIdHasBeenSet;
+    bool m_notebookExecutionIdHasBeenSet = false;
 
     Aws::String m_editorId;
-    bool m_editorIdHasBeenSet;
+    bool m_editorIdHasBeenSet = false;
 
     ExecutionEngineConfig m_executionEngine;
-    bool m_executionEngineHasBeenSet;
+    bool m_executionEngineHasBeenSet = false;
 
     Aws::String m_notebookExecutionName;
-    bool m_notebookExecutionNameHasBeenSet;
+    bool m_notebookExecutionNameHasBeenSet = false;
 
     Aws::String m_notebookParams;
-    bool m_notebookParamsHasBeenSet;
+    bool m_notebookParamsHasBeenSet = false;
 
     NotebookExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_outputNotebookURI;
-    bool m_outputNotebookURIHasBeenSet;
+    bool m_outputNotebookURIHasBeenSet = false;
 
     Aws::String m_lastStateChangeReason;
-    bool m_lastStateChangeReasonHasBeenSet;
+    bool m_lastStateChangeReasonHasBeenSet = false;
 
     Aws::String m_notebookInstanceSecurityGroupId;
-    bool m_notebookInstanceSecurityGroupIdHasBeenSet;
+    bool m_notebookInstanceSecurityGroupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

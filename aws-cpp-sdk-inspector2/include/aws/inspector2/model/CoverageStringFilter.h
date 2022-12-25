@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoverageStringFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoverageStringFilter
+  class CoverageStringFilter
   {
   public:
-    CoverageStringFilter();
-    CoverageStringFilter(Aws::Utils::Json::JsonView jsonValue);
-    CoverageStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoverageStringFilter();
+    AWS_INSPECTOR2_API CoverageStringFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoverageStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     CoverageStringComparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

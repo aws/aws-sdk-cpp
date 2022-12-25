@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/PortProbeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API PortProbeDetail
+  class PortProbeDetail
   {
   public:
-    PortProbeDetail();
-    PortProbeDetail(Aws::Utils::Json::JsonView jsonValue);
-    PortProbeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API PortProbeDetail();
+    AWS_SECURITYHUB_API PortProbeDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API PortProbeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     ActionLocalPortDetails m_localPortDetails;
-    bool m_localPortDetailsHasBeenSet;
+    bool m_localPortDetailsHasBeenSet = false;
 
     ActionLocalIpDetails m_localIpDetails;
-    bool m_localIpDetailsHasBeenSet;
+    bool m_localIpDetailsHasBeenSet = false;
 
     ActionRemoteIpDetails m_remoteIpDetails;
-    bool m_remoteIpDetailsHasBeenSet;
+    bool m_remoteIpDetailsHasBeenSet = false;
   };
 
 } // namespace Model

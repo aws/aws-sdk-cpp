@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/FulfillmentUpdatesSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API FulfillmentUpdatesSpecification
+  class FulfillmentUpdatesSpecification
   {
   public:
-    FulfillmentUpdatesSpecification();
-    FulfillmentUpdatesSpecification(Aws::Utils::Json::JsonView jsonValue);
-    FulfillmentUpdatesSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API FulfillmentUpdatesSpecification();
+    AWS_LEXMODELSV2_API FulfillmentUpdatesSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API FulfillmentUpdatesSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -173,16 +173,16 @@ namespace Model
   private:
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
 
     FulfillmentStartResponseSpecification m_startResponse;
-    bool m_startResponseHasBeenSet;
+    bool m_startResponseHasBeenSet = false;
 
     FulfillmentUpdateResponseSpecification m_updateResponse;
-    bool m_updateResponseHasBeenSet;
+    bool m_updateResponseHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API CreateCrawlerRequest : public GlueRequest
+  class CreateCrawlerRequest : public GlueRequest
   {
   public:
-    CreateCrawlerRequest();
+    AWS_GLUE_API CreateCrawlerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCrawler"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -521,86 +521,98 @@ namespace Model
     inline CreateCrawlerRequest& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline CreateCrawlerRequest& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline CreateCrawlerRequest& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting
+     * crawler configuration options</a>.</p>
      */
     inline CreateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
@@ -761,49 +773,49 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     CrawlerTargets m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_classifiers;
-    bool m_classifiersHasBeenSet;
+    bool m_classifiersHasBeenSet = false;
 
     Aws::String m_tablePrefix;
-    bool m_tablePrefixHasBeenSet;
+    bool m_tablePrefixHasBeenSet = false;
 
     SchemaChangePolicy m_schemaChangePolicy;
-    bool m_schemaChangePolicyHasBeenSet;
+    bool m_schemaChangePolicyHasBeenSet = false;
 
     RecrawlPolicy m_recrawlPolicy;
-    bool m_recrawlPolicyHasBeenSet;
+    bool m_recrawlPolicyHasBeenSet = false;
 
     LineageConfiguration m_lineageConfiguration;
-    bool m_lineageConfigurationHasBeenSet;
+    bool m_lineageConfigurationHasBeenSet = false;
 
     LakeFormationConfiguration m_lakeFormationConfiguration;
-    bool m_lakeFormationConfigurationHasBeenSet;
+    bool m_lakeFormationConfigurationHasBeenSet = false;
 
     Aws::String m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_crawlerSecurityConfiguration;
-    bool m_crawlerSecurityConfigurationHasBeenSet;
+    bool m_crawlerSecurityConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

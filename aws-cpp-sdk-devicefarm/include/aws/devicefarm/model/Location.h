@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Location">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Location
+  class Location
   {
   public:
-    Location();
-    Location(Aws::Utils::Json::JsonView jsonValue);
-    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Location();
+    AWS_DEVICEFARM_API Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,10 +81,10 @@ namespace Model
   private:
 
     double m_latitude;
-    bool m_latitudeHasBeenSet;
+    bool m_latitudeHasBeenSet = false;
 
     double m_longitude;
-    bool m_longitudeHasBeenSet;
+    bool m_longitudeHasBeenSet = false;
   };
 
 } // namespace Model

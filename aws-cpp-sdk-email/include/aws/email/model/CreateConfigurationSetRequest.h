@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateConfigurationSetRequest : public SESRequest
+  class CreateConfigurationSetRequest : public SESRequest
   {
   public:
-    CreateConfigurationSetRequest();
+    AWS_SES_API CreateConfigurationSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfigurationSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     ConfigurationSet m_configurationSet;
-    bool m_configurationSetHasBeenSet;
+    bool m_configurationSetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API RecordHandlerProgressRequest : public CloudFormationRequest
+  class RecordHandlerProgressRequest : public CloudFormationRequest
   {
   public:
-    RecordHandlerProgressRequest();
+    AWS_CLOUDFORMATION_API RecordHandlerProgressRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RecordHandlerProgress"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -397,25 +397,25 @@ namespace Model
   private:
 
     Aws::String m_bearerToken;
-    bool m_bearerTokenHasBeenSet;
+    bool m_bearerTokenHasBeenSet = false;
 
     OperationStatus m_operationStatus;
-    bool m_operationStatusHasBeenSet;
+    bool m_operationStatusHasBeenSet = false;
 
     OperationStatus m_currentOperationStatus;
-    bool m_currentOperationStatusHasBeenSet;
+    bool m_currentOperationStatusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     HandlerErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_resourceModel;
-    bool m_resourceModelHasBeenSet;
+    bool m_resourceModelHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

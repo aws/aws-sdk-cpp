@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/PredefinedLoadMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification
+  class PredefinedLoadMetricSpecification
   {
   public:
-    PredefinedLoadMetricSpecification();
-    PredefinedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PredefinedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API PredefinedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -245,10 +245,10 @@ namespace Model
   private:
 
     LoadMetricType m_predefinedLoadMetricType;
-    bool m_predefinedLoadMetricTypeHasBeenSet;
+    bool m_predefinedLoadMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

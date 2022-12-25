@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConnectionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API ConnectionSettings
+  class ConnectionSettings
   {
   public:
-    ConnectionSettings();
-    ConnectionSettings(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConnectionSettings& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API ConnectionSettings();
+    AWS_ELASTICLOADBALANCING_API ConnectionSettings(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API ConnectionSettings& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_idleTimeout;
-    bool m_idleTimeoutHasBeenSet;
+    bool m_idleTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

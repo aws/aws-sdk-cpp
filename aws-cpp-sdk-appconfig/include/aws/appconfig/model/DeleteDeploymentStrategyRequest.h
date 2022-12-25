@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPCONFIG_API DeleteDeploymentStrategyRequest : public AppConfigRequest
+  class DeleteDeploymentStrategyRequest : public AppConfigRequest
   {
   public:
-    DeleteDeploymentStrategyRequest();
+    AWS_APPCONFIG_API DeleteDeploymentStrategyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDeploymentStrategy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_deploymentStrategyId;
-    bool m_deploymentStrategyIdHasBeenSet;
+    bool m_deploymentStrategyIdHasBeenSet = false;
   };
 
 } // namespace Model

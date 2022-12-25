@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RelatedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RelatedResource
+  class RelatedResource
   {
   public:
-    RelatedResource();
-    RelatedResource(Aws::Utils::Json::JsonView jsonValue);
-    RelatedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API RelatedResource();
+    AWS_IOT_API RelatedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API RelatedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
   };
 
 } // namespace Model

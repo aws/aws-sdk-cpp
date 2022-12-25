@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkListDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkListDevice
+  class SidewalkListDevice
   {
   public:
-    SidewalkListDevice();
-    SidewalkListDevice(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkListDevice();
+    AWS_IOTWIRELESS_API SidewalkListDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::String m_amazonId;
-    bool m_amazonIdHasBeenSet;
+    bool m_amazonIdHasBeenSet = false;
 
     Aws::String m_sidewalkId;
-    bool m_sidewalkIdHasBeenSet;
+    bool m_sidewalkIdHasBeenSet = false;
 
     Aws::String m_sidewalkManufacturingSn;
-    bool m_sidewalkManufacturingSnHasBeenSet;
+    bool m_sidewalkManufacturingSnHasBeenSet = false;
 
     Aws::Vector<CertificateList> m_deviceCertificates;
-    bool m_deviceCertificatesHasBeenSet;
+    bool m_deviceCertificatesHasBeenSet = false;
   };
 
 } // namespace Model

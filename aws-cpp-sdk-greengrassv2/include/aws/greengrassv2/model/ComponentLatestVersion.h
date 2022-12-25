@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentLatestVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentLatestVersion
+  class ComponentLatestVersion
   {
   public:
-    ComponentLatestVersion();
-    ComponentLatestVersion(Aws::Utils::Json::JsonView jsonValue);
-    ComponentLatestVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentLatestVersion();
+    AWS_GREENGRASSV2_API ComponentLatestVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentLatestVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_publisher;
-    bool m_publisherHasBeenSet;
+    bool m_publisherHasBeenSet = false;
 
     Aws::Vector<ComponentPlatform> m_platforms;
-    bool m_platformsHasBeenSet;
+    bool m_platformsHasBeenSet = false;
   };
 
 } // namespace Model

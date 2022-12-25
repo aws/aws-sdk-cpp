@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/NotificationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API NotificationConfiguration
+  class NotificationConfiguration
   {
   public:
-    NotificationConfiguration();
-    NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API NotificationConfiguration();
+    AWS_DAX_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_topicArn;
-    bool m_topicArnHasBeenSet;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::String m_topicStatus;
-    bool m_topicStatusHasBeenSet;
+    bool m_topicStatusHasBeenSet = false;
   };
 
 } // namespace Model

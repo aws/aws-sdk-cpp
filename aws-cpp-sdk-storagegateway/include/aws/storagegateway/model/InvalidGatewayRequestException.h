@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/InvalidGatewayRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API InvalidGatewayRequestException
+  class InvalidGatewayRequestException
   {
   public:
-    InvalidGatewayRequestException();
-    InvalidGatewayRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidGatewayRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API InvalidGatewayRequestException();
+    AWS_STORAGEGATEWAY_API InvalidGatewayRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API InvalidGatewayRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     StorageGatewayError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

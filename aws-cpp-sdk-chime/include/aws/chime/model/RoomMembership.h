@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RoomMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API RoomMembership
+  class RoomMembership
   {
   public:
-    RoomMembership();
-    RoomMembership(Aws::Utils::Json::JsonView jsonValue);
-    RoomMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API RoomMembership();
+    AWS_CHIME_API RoomMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API RoomMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,19 +205,19 @@ namespace Model
   private:
 
     Aws::String m_roomId;
-    bool m_roomIdHasBeenSet;
+    bool m_roomIdHasBeenSet = false;
 
     Member m_member;
-    bool m_memberHasBeenSet;
+    bool m_memberHasBeenSet = false;
 
     RoomMembershipRole m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::String m_invitedBy;
-    bool m_invitedByHasBeenSet;
+    bool m_invitedByHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

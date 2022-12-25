@@ -20,6 +20,7 @@ namespace Model
     client_vpn_endpoint,
     customer_gateway,
     carrier_gateway,
+    coip_pool,
     dedicated_host,
     dhcp_options,
     egress_only_internet_gateway,
@@ -75,15 +76,29 @@ namespace Model
     transit_gateway_attachment,
     transit_gateway_connect_peer,
     transit_gateway_multicast_domain,
+    transit_gateway_policy_table,
     transit_gateway_route_table,
+    transit_gateway_route_table_announcement,
     volume,
     vpc,
     vpc_endpoint,
+    vpc_endpoint_connection,
     vpc_endpoint_service,
+    vpc_endpoint_service_permission,
     vpc_peering_connection,
     vpn_connection,
     vpn_gateway,
-    vpc_flow_log
+    vpc_flow_log,
+    capacity_reservation_fleet,
+    traffic_mirror_filter_rule,
+    vpc_endpoint_connection_device_type,
+    verified_access_instance,
+    verified_access_group,
+    verified_access_endpoint,
+    verified_access_policy,
+    verified_access_trust_provider,
+    vpn_connection_device_type,
+    vpc_block_public_access_exclusion
   };
 
 namespace ResourceTypeMapper

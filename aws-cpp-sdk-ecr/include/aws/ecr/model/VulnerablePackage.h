@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/VulnerablePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API VulnerablePackage
+  class VulnerablePackage
   {
   public:
-    VulnerablePackage();
-    VulnerablePackage(Aws::Utils::Json::JsonView jsonValue);
-    VulnerablePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API VulnerablePackage();
+    AWS_ECR_API VulnerablePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API VulnerablePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -348,28 +348,28 @@ namespace Model
   private:
 
     Aws::String m_arch;
-    bool m_archHasBeenSet;
+    bool m_archHasBeenSet = false;
 
     int m_epoch;
-    bool m_epochHasBeenSet;
+    bool m_epochHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_packageManager;
-    bool m_packageManagerHasBeenSet;
+    bool m_packageManagerHasBeenSet = false;
 
     Aws::String m_release;
-    bool m_releaseHasBeenSet;
+    bool m_releaseHasBeenSet = false;
 
     Aws::String m_sourceLayerHash;
-    bool m_sourceLayerHashHasBeenSet;
+    bool m_sourceLayerHashHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RetentionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API RetentionSettings
+  class RetentionSettings
   {
   public:
-    RetentionSettings();
-    RetentionSettings(Aws::Utils::Json::JsonView jsonValue);
-    RetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API RetentionSettings();
+    AWS_CHIME_API RetentionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API RetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     RoomRetentionSettings m_roomRetentionSettings;
-    bool m_roomRetentionSettingsHasBeenSet;
+    bool m_roomRetentionSettingsHasBeenSet = false;
 
     ConversationRetentionSettings m_conversationRetentionSettings;
-    bool m_conversationRetentionSettingsHasBeenSet;
+    bool m_conversationRetentionSettingsHasBeenSet = false;
   };
 
 } // namespace Model

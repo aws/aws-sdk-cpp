@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API StageContext
+  class StageContext
   {
   public:
-    StageContext();
-    StageContext(Aws::Utils::Json::JsonView jsonValue);
-    StageContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API StageContext();
+    AWS_CODEPIPELINE_API StageContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API StageContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

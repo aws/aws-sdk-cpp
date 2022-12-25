@@ -30,7 +30,7 @@ ListDatastoresResult& ListDatastoresResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("datastoreSummaries"))
   {
-    Array<JsonView> datastoreSummariesJsonList = jsonValue.GetArray("datastoreSummaries");
+    Aws::Utils::Array<JsonView> datastoreSummariesJsonList = jsonValue.GetArray("datastoreSummaries");
     for(unsigned datastoreSummariesIndex = 0; datastoreSummariesIndex < datastoreSummariesJsonList.GetLength(); ++datastoreSummariesIndex)
     {
       m_datastoreSummaries.push_back(datastoreSummariesJsonList[datastoreSummariesIndex].AsObject());

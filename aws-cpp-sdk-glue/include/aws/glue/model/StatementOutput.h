@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StatementOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StatementOutput
+  class StatementOutput
   {
   public:
-    StatementOutput();
-    StatementOutput(Aws::Utils::Json::JsonView jsonValue);
-    StatementOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StatementOutput();
+    AWS_GLUE_API StatementOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StatementOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,22 +253,22 @@ namespace Model
   private:
 
     StatementOutputData m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     int m_executionCount;
-    bool m_executionCountHasBeenSet;
+    bool m_executionCountHasBeenSet = false;
 
     StatementState m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorName;
-    bool m_errorNameHasBeenSet;
+    bool m_errorNameHasBeenSet = false;
 
     Aws::String m_errorValue;
-    bool m_errorValueHasBeenSet;
+    bool m_errorValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_traceback;
-    bool m_tracebackHasBeenSet;
+    bool m_tracebackHasBeenSet = false;
   };
 
 } // namespace Model

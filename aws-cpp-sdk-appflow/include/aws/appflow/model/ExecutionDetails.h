@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ExecutionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ExecutionDetails
+  class ExecutionDetails
   {
   public:
-    ExecutionDetails();
-    ExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ExecutionDetails();
+    AWS_APPFLOW_API ExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_mostRecentExecutionMessage;
-    bool m_mostRecentExecutionMessageHasBeenSet;
+    bool m_mostRecentExecutionMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_mostRecentExecutionTime;
-    bool m_mostRecentExecutionTimeHasBeenSet;
+    bool m_mostRecentExecutionTimeHasBeenSet = false;
 
     ExecutionStatus m_mostRecentExecutionStatus;
-    bool m_mostRecentExecutionStatusHasBeenSet;
+    bool m_mostRecentExecutionStatusHasBeenSet = false;
   };
 
 } // namespace Model

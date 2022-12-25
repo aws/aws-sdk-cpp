@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceHealthSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceHealthSummary
+  class InstanceHealthSummary
   {
   public:
-    InstanceHealthSummary();
-    InstanceHealthSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceHealthSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceHealthSummary();
+    AWS_LIGHTSAIL_API InstanceHealthSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceHealthSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -363,13 +363,13 @@ namespace Model
   private:
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
 
     InstanceHealthState m_instanceHealth;
-    bool m_instanceHealthHasBeenSet;
+    bool m_instanceHealthHasBeenSet = false;
 
     InstanceHealthReason m_instanceHealthReason;
-    bool m_instanceHealthReasonHasBeenSet;
+    bool m_instanceHealthReasonHasBeenSet = false;
   };
 
 } // namespace Model

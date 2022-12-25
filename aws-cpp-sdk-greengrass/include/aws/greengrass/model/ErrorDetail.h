@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ErrorDetail
+  class ErrorDetail
   {
   public:
-    ErrorDetail();
-    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ErrorDetail();
+    AWS_GREENGRASS_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_detailedErrorCode;
-    bool m_detailedErrorCodeHasBeenSet;
+    bool m_detailedErrorCodeHasBeenSet = false;
 
     Aws::String m_detailedErrorMessage;
-    bool m_detailedErrorMessageHasBeenSet;
+    bool m_detailedErrorMessageHasBeenSet = false;
   };
 
 } // namespace Model

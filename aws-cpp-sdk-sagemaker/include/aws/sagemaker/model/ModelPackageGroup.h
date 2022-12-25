@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelPackageGroup
+  class ModelPackageGroup
   {
   public:
-    ModelPackageGroup();
-    ModelPackageGroup(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelPackageGroup();
+    AWS_SAGEMAKER_API ModelPackageGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelPackageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -362,25 +362,25 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupArn;
-    bool m_modelPackageGroupArnHasBeenSet;
+    bool m_modelPackageGroupArnHasBeenSet = false;
 
     Aws::String m_modelPackageGroupDescription;
-    bool m_modelPackageGroupDescriptionHasBeenSet;
+    bool m_modelPackageGroupDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     ModelPackageGroupStatus m_modelPackageGroupStatus;
-    bool m_modelPackageGroupStatusHasBeenSet;
+    bool m_modelPackageGroupStatusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

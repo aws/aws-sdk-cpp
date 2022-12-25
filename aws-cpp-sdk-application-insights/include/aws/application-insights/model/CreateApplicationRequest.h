@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPLICATIONINSIGHTS_API CreateApplicationRequest : public ApplicationInsightsRequest
+  class CreateApplicationRequest : public ApplicationInsightsRequest
   {
   public:
-    CreateApplicationRequest();
+    AWS_APPLICATIONINSIGHTS_API CreateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -341,28 +341,28 @@ namespace Model
   private:
 
     Aws::String m_resourceGroupName;
-    bool m_resourceGroupNameHasBeenSet;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     bool m_opsCenterEnabled;
-    bool m_opsCenterEnabledHasBeenSet;
+    bool m_opsCenterEnabledHasBeenSet = false;
 
     bool m_cWEMonitorEnabled;
-    bool m_cWEMonitorEnabledHasBeenSet;
+    bool m_cWEMonitorEnabledHasBeenSet = false;
 
     Aws::String m_opsItemSNSTopicArn;
-    bool m_opsItemSNSTopicArnHasBeenSet;
+    bool m_opsItemSNSTopicArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_autoConfigEnabled;
-    bool m_autoConfigEnabledHasBeenSet;
+    bool m_autoConfigEnabledHasBeenSet = false;
 
     bool m_autoCreate;
-    bool m_autoCreateHasBeenSet;
+    bool m_autoCreateHasBeenSet = false;
 
     GroupingType m_groupingType;
-    bool m_groupingTypeHasBeenSet;
+    bool m_groupingTypeHasBeenSet = false;
   };
 
 } // namespace Model

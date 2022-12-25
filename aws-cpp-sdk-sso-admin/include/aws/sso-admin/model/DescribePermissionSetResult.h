@@ -24,36 +24,36 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DescribePermissionSetResult
+  class DescribePermissionSetResult
   {
   public:
-    DescribePermissionSetResult();
-    DescribePermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribePermissionSetResult();
+    AWS_SSOADMIN_API DescribePermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribePermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
+     * <p>Describes the level of access on an AWS account.</p>
      */
     inline const PermissionSet& GetPermissionSet() const{ return m_permissionSet; }
 
     /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
+     * <p>Describes the level of access on an AWS account.</p>
      */
     inline void SetPermissionSet(const PermissionSet& value) { m_permissionSet = value; }
 
     /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
+     * <p>Describes the level of access on an AWS account.</p>
      */
     inline void SetPermissionSet(PermissionSet&& value) { m_permissionSet = std::move(value); }
 
     /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
+     * <p>Describes the level of access on an AWS account.</p>
      */
     inline DescribePermissionSetResult& WithPermissionSet(const PermissionSet& value) { SetPermissionSet(value); return *this;}
 
     /**
-     * <p>Describes the level of access on an Amazon Web Services account.</p>
+     * <p>Describes the level of access on an AWS account.</p>
      */
     inline DescribePermissionSetResult& WithPermissionSet(PermissionSet&& value) { SetPermissionSet(std::move(value)); return *this;}
 

@@ -23,6 +23,7 @@ namespace Aws
         static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
         static const int task_lifecycle_HASH = HashingUtils::HashString("task-lifecycle");
         static const int data_repository_association_id_HASH = HashingUtils::HashString("data-repository-association-id");
+        static const int file_cache_id_HASH = HashingUtils::HashString("file-cache-id");
 
 
         DataRepositoryTaskFilterName GetDataRepositoryTaskFilterNameForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == data_repository_association_id_HASH)
           {
             return DataRepositoryTaskFilterName::data_repository_association_id;
+          }
+          else if (hashCode == file_cache_id_HASH)
+          {
+            return DataRepositoryTaskFilterName::file_cache_id;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "task-lifecycle";
           case DataRepositoryTaskFilterName::data_repository_association_id:
             return "data-repository-association-id";
+          case DataRepositoryTaskFilterName::file_cache_id:
+            return "file-cache-id";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

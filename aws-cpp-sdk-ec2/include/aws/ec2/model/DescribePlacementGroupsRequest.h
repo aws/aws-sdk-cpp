@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API DescribePlacementGroupsRequest : public EC2Request
+  class DescribePlacementGroupsRequest : public EC2Request
   {
   public:
-    DescribePlacementGroupsRequest();
+    AWS_EC2_API DescribePlacementGroupsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,18 +31,20 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePlacementGroups"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -60,8 +62,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -79,8 +83,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -98,8 +104,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -117,8 +125,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -136,8 +146,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -155,8 +167,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -174,8 +188,10 @@ namespace Model
     /**
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
      * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>state</code> - The
-     * state of the placement group (<code>pending</code> | <code>available</code> |
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>strategy</code> - The strategy of the placement group
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
@@ -327,16 +343,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupNames;
-    bool m_groupNamesHasBeenSet;
+    bool m_groupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet;
+    bool m_groupIdsHasBeenSet = false;
   };
 
 } // namespace Model

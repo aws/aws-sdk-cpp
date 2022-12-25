@@ -24,13 +24,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API SchemaVersionSummary
+  class SchemaVersionSummary
   {
   public:
-    SchemaVersionSummary();
-    SchemaVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SchemaVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SchemaVersionSummary();
+    AWS_SCHEMAS_API SchemaVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SchemaVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -189,16 +189,16 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

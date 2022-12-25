@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelMetrics
+  class ModelMetrics
   {
   public:
-    ModelMetrics();
-    ModelMetrics(Aws::Utils::Json::JsonView jsonValue);
-    ModelMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelMetrics();
+    AWS_SAGEMAKER_API ModelMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,16 +166,16 @@ namespace Model
   private:
 
     ModelQuality m_modelQuality;
-    bool m_modelQualityHasBeenSet;
+    bool m_modelQualityHasBeenSet = false;
 
     ModelDataQuality m_modelDataQuality;
-    bool m_modelDataQualityHasBeenSet;
+    bool m_modelDataQualityHasBeenSet = false;
 
     Bias m_bias;
-    bool m_biasHasBeenSet;
+    bool m_biasHasBeenSet = false;
 
     Explainability m_explainability;
-    bool m_explainabilityHasBeenSet;
+    bool m_explainabilityHasBeenSet = false;
   };
 
 } // namespace Model

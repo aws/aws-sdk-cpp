@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkSchemaAndFacetName">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName
+  class TypedLinkSchemaAndFacetName
   {
   public:
-    TypedLinkSchemaAndFacetName();
-    TypedLinkSchemaAndFacetName(Aws::Utils::Json::JsonView jsonValue);
-    TypedLinkSchemaAndFacetName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName();
+    AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_typedLinkName;
-    bool m_typedLinkNameHasBeenSet;
+    bool m_typedLinkNameHasBeenSet = false;
   };
 
 } // namespace Model

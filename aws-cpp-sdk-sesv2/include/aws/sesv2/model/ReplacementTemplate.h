@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReplacementTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ReplacementTemplate
+  class ReplacementTemplate
   {
   public:
-    ReplacementTemplate();
-    ReplacementTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ReplacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ReplacementTemplate();
+    AWS_SESV2_API ReplacementTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ReplacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_replacementTemplateData;
-    bool m_replacementTemplateDataHasBeenSet;
+    bool m_replacementTemplateDataHasBeenSet = false;
   };
 
 } // namespace Model

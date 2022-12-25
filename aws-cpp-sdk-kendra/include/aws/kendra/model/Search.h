@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Search">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Search
+  class Search
   {
   public:
-    Search();
-    Search(Aws::Utils::Json::JsonView jsonValue);
-    Search& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Search();
+    AWS_KENDRA_API Search(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Search& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,16 +158,16 @@ namespace Model
   private:
 
     bool m_facetable;
-    bool m_facetableHasBeenSet;
+    bool m_facetableHasBeenSet = false;
 
     bool m_searchable;
-    bool m_searchableHasBeenSet;
+    bool m_searchableHasBeenSet = false;
 
     bool m_displayable;
-    bool m_displayableHasBeenSet;
+    bool m_displayableHasBeenSet = false;
 
     bool m_sortable;
-    bool m_sortableHasBeenSet;
+    bool m_sortableHasBeenSet = false;
   };
 
 } // namespace Model

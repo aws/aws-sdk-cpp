@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ContactChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ContactChannel
+  class ContactChannel
   {
   public:
-    ContactChannel();
-    ContactChannel(Aws::Utils::Json::JsonView jsonValue);
-    ContactChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ContactChannel();
+    AWS_SSMCONTACTS_API ContactChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ContactChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,22 +289,22 @@ namespace Model
   private:
 
     Aws::String m_contactChannelArn;
-    bool m_contactChannelArnHasBeenSet;
+    bool m_contactChannelArnHasBeenSet = false;
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ChannelType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ContactChannelAddress m_deliveryAddress;
-    bool m_deliveryAddressHasBeenSet;
+    bool m_deliveryAddressHasBeenSet = false;
 
     ActivationStatus m_activationStatus;
-    bool m_activationStatusHasBeenSet;
+    bool m_activationStatusHasBeenSet = false;
   };
 
 } // namespace Model

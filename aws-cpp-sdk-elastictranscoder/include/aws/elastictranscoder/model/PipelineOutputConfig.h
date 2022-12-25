@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PipelineOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API PipelineOutputConfig
+  class PipelineOutputConfig
   {
   public:
-    PipelineOutputConfig();
-    PipelineOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    PipelineOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API PipelineOutputConfig();
+    AWS_ELASTICTRANSCODER_API PipelineOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API PipelineOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,13 +365,13 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

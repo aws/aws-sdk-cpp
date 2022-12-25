@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpCountry">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API IpCountry
+  class IpCountry
   {
   public:
-    IpCountry();
-    IpCountry(Aws::Utils::Json::JsonView jsonValue);
-    IpCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API IpCountry();
+    AWS_MACIE2_API IpCountry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API IpCountry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

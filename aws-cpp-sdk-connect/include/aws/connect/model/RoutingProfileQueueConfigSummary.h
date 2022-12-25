@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileQueueConfigSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfileQueueConfigSummary
+  class RoutingProfileQueueConfigSummary
   {
   public:
-    RoutingProfileQueueConfigSummary();
-    RoutingProfileQueueConfigSummary(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfileQueueConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfileQueueConfigSummary();
+    AWS_CONNECT_API RoutingProfileQueueConfigSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfileQueueConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,22 +261,22 @@ namespace Model
   private:
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     Aws::String m_queueArn;
-    bool m_queueArnHasBeenSet;
+    bool m_queueArnHasBeenSet = false;
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     int m_delay;
-    bool m_delayHasBeenSet;
+    bool m_delayHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobSummary
+  class LabelingJobSummary
   {
   public:
-    LabelingJobSummary();
-    LabelingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobSummary();
+    AWS_SAGEMAKER_API LabelingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -533,40 +533,40 @@ namespace Model
   private:
 
     Aws::String m_labelingJobName;
-    bool m_labelingJobNameHasBeenSet;
+    bool m_labelingJobNameHasBeenSet = false;
 
     Aws::String m_labelingJobArn;
-    bool m_labelingJobArnHasBeenSet;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     LabelingJobStatus m_labelingJobStatus;
-    bool m_labelingJobStatusHasBeenSet;
+    bool m_labelingJobStatusHasBeenSet = false;
 
     LabelCounters m_labelCounters;
-    bool m_labelCountersHasBeenSet;
+    bool m_labelCountersHasBeenSet = false;
 
     Aws::String m_workteamArn;
-    bool m_workteamArnHasBeenSet;
+    bool m_workteamArnHasBeenSet = false;
 
     Aws::String m_preHumanTaskLambdaArn;
-    bool m_preHumanTaskLambdaArnHasBeenSet;
+    bool m_preHumanTaskLambdaArnHasBeenSet = false;
 
     Aws::String m_annotationConsolidationLambdaArn;
-    bool m_annotationConsolidationLambdaArnHasBeenSet;
+    bool m_annotationConsolidationLambdaArnHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     LabelingJobOutput m_labelingJobOutput;
-    bool m_labelingJobOutputHasBeenSet;
+    bool m_labelingJobOutputHasBeenSet = false;
 
     LabelingJobInputConfig m_inputConfig;
-    bool m_inputConfigHasBeenSet;
+    bool m_inputConfigHasBeenSet = false;
   };
 
 } // namespace Model

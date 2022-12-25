@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DeviceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKLINK_API DeviceSummary
+  class DeviceSummary
   {
   public:
-    DeviceSummary();
-    DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKLINK_API DeviceSummary();
+    AWS_WORKLINK_API DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     DeviceStatus m_deviceStatus;
-    bool m_deviceStatusHasBeenSet;
+    bool m_deviceStatusHasBeenSet = false;
   };
 
 } // namespace Model

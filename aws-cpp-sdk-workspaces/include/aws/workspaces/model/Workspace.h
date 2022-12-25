@@ -10,6 +10,7 @@
 #include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/ModificationState.h>
+#include <aws/workspaces/model/RelatedWorkspaceProperties.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Workspace">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API Workspace
+  class Workspace
   {
   public:
-    Workspace();
-    Workspace(Aws::Utils::Json::JsonView jsonValue);
-    Workspace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API Workspace();
+    AWS_WORKSPACES_API Workspace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Workspace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -677,52 +678,104 @@ namespace Model
      */
     inline Workspace& AddModificationStates(ModificationState&& value) { m_modificationStatesHasBeenSet = true; m_modificationStates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline const Aws::Vector<RelatedWorkspaceProperties>& GetRelatedWorkspaces() const{ return m_relatedWorkspaces; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline bool RelatedWorkspacesHasBeenSet() const { return m_relatedWorkspacesHasBeenSet; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline void SetRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = value; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline void SetRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces = std::move(value); }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& WithRelatedWorkspaces(const Aws::Vector<RelatedWorkspaceProperties>& value) { SetRelatedWorkspaces(value); return *this;}
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& WithRelatedWorkspaces(Aws::Vector<RelatedWorkspaceProperties>&& value) { SetRelatedWorkspaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& AddRelatedWorkspaces(const RelatedWorkspaceProperties& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(value); return *this; }
+
+    /**
+     * <p>The Standby WorkSpace or Primary WorkSpace related to the specified
+     * WorkSpace.</p>
+     */
+    inline Workspace& AddRelatedWorkspaces(RelatedWorkspaceProperties&& value) { m_relatedWorkspacesHasBeenSet = true; m_relatedWorkspaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     WorkspaceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::String m_volumeEncryptionKey;
-    bool m_volumeEncryptionKeyHasBeenSet;
+    bool m_volumeEncryptionKeyHasBeenSet = false;
 
     bool m_userVolumeEncryptionEnabled;
-    bool m_userVolumeEncryptionEnabledHasBeenSet;
+    bool m_userVolumeEncryptionEnabledHasBeenSet = false;
 
     bool m_rootVolumeEncryptionEnabled;
-    bool m_rootVolumeEncryptionEnabledHasBeenSet;
+    bool m_rootVolumeEncryptionEnabledHasBeenSet = false;
 
     WorkspaceProperties m_workspaceProperties;
-    bool m_workspacePropertiesHasBeenSet;
+    bool m_workspacePropertiesHasBeenSet = false;
 
     Aws::Vector<ModificationState> m_modificationStates;
-    bool m_modificationStatesHasBeenSet;
+    bool m_modificationStatesHasBeenSet = false;
+
+    Aws::Vector<RelatedWorkspaceProperties> m_relatedWorkspaces;
+    bool m_relatedWorkspacesHasBeenSet = false;
   };
 
 } // namespace Model

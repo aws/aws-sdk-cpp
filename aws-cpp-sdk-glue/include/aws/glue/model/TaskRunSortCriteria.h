@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TaskRunSortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TaskRunSortCriteria
+  class TaskRunSortCriteria
   {
   public:
-    TaskRunSortCriteria();
-    TaskRunSortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    TaskRunSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TaskRunSortCriteria();
+    AWS_GLUE_API TaskRunSortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TaskRunSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     TaskRunSortColumnType m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
 
     SortDirectionType m_sortDirection;
-    bool m_sortDirectionHasBeenSet;
+    bool m_sortDirectionHasBeenSet = false;
   };
 
 } // namespace Model

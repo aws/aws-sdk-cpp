@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/RawMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API RawMessage
+  class RawMessage
   {
   public:
-    RawMessage();
-    RawMessage(Aws::Utils::Json::JsonView jsonValue);
-    RawMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API RawMessage();
+    AWS_SESV2_API RawMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API RawMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,7 +136,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/SubDomainSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API SubDomainSetting
+  class SubDomainSetting
   {
   public:
-    SubDomainSetting();
-    SubDomainSetting(Aws::Utils::Json::JsonView jsonValue);
-    SubDomainSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API SubDomainSetting();
+    AWS_AMPLIFY_API SubDomainSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API SubDomainSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
   };
 
 } // namespace Model

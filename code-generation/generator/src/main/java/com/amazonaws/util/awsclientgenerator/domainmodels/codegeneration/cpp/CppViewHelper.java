@@ -10,12 +10,15 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.transform.CoreErrors;
 import com.google.common.base.CaseFormat;
+import com.google.common.collect.ImmutableSet;
+
 import java.lang.RuntimeException;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -29,6 +32,11 @@ public class CppViewHelper {
     private static final Map<String, String> CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT = new HashMap<>();
 
+    private static final Set<String> FORBIDDEN_FUNCTION_NAMES =
+            ImmutableSet.<String>builder()
+                    .add("GetBody")
+                    .build();
+
     static {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("long", "long long");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("integer", "int");
@@ -40,6 +48,11 @@ public class CppViewHelper {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("float", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("blob", "Aws::Utils::ByteBuffer");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_blob", "Aws::Utils::CryptoBuffer");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_long", "long long");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_integer", "int");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_float", "double");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_double", "double");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_timestamp", "Aws::Utils::DateTime");
 
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("long", "Int64");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
@@ -56,6 +69,12 @@ public class CppViewHelper {
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("unixtimestamp", "Double");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("rfc822", "String");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("iso8601", "String");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_long", "Int64");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_integer", "Integer");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_float", "Double");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_double", "Double");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_timestamp", "Double");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_unixtimestamp", "Double");
 
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("long", "StringUtils::ConvertToInt64");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("integer", "StringUtils::ConvertToInt32");
@@ -63,6 +82,10 @@ public class CppViewHelper {
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_boolean", "StringUtils::ConvertToBool");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("double", "StringUtils::ConvertToDouble");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("float", "StringUtils::ConvertToDouble");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_long", "StringUtils::ConvertToInt64");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_integer", "StringUtils::ConvertToInt32");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_float", "StringUtils::ConvertToDouble");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_double", "StringUtils::ConvertToDouble");
 
         CORAL_TYPE_TO_DEFAULT_VALUES.put("long", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("integer", "0");
@@ -70,6 +93,10 @@ public class CppViewHelper {
         CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_boolean", "false");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("double", "0.0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("float", "0.0");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_long", "0");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_integer", "0");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_float", "0.0");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_double", "0.0");
 
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json1.0", "Aws::AMZN_JSON_CONTENT_TYPE_1_0");
@@ -127,6 +154,10 @@ public class CppViewHelper {
     public static String computeJsonizeString(Shape shape, boolean isPointer) {
         String memberAccessOp = isPointer ? "->" : ".";
 
+	if (shape.isDocument()) {
+            return memberAccessOp + "View()";
+        }
+
         if(shape.isStructure()) {
             return memberAccessOp + "Jsonize()";
         }
@@ -137,11 +168,11 @@ public class CppViewHelper {
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("rfc822")) {
-                return memberAccessOp + "ToGmtString(DateFormat::RFC822)";
+                return memberAccessOp + "ToGmtString(Aws::Utils::DateFormat::RFC822)";
             }
 
             if(shape.getTimestampFormat().toLowerCase().equalsIgnoreCase("iso8601")) {
-                return memberAccessOp + "ToGmtString(DateFormat::ISO_8601)";
+                return memberAccessOp + "ToGmtString(Aws::Utils::DateFormat::ISO_8601)";
             }
         }
 
@@ -438,5 +469,16 @@ public class CppViewHelper {
     public static String computeChecksumLocation(String location)
     {
         return "Aws::Checksum::Location::" + location.toUpperCase();
+    }
+
+    public static String checkForCollision(
+            final String functionName,
+            final String prefix,
+            final String cppType
+    ) {
+        return Optional.of(functionName)
+                .filter(FORBIDDEN_FUNCTION_NAMES::contains)
+                .map(__ -> prefix + cppType)
+                .orElse(functionName);
     }
 }

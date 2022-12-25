@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatasetParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatasetParameter
+  class DatasetParameter
   {
   public:
-    DatasetParameter();
-    DatasetParameter(Aws::Utils::Json::JsonView jsonValue);
-    DatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatasetParameter();
+    AWS_GLUEDATABREW_API DatasetParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ParameterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     DatetimeOptions m_datetimeOptions;
-    bool m_datetimeOptionsHasBeenSet;
+    bool m_datetimeOptionsHasBeenSet = false;
 
     bool m_createColumn;
-    bool m_createColumnHasBeenSet;
+    bool m_createColumnHasBeenSet = false;
 
     FilterExpression m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

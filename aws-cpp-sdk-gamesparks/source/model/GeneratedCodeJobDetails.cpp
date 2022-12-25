@@ -91,7 +91,7 @@ JsonValue GeneratedCodeJobDetails::Jsonize() const
 
   if(m_expirationTimeHasBeenSet)
   {
-   payload.WithString("ExpirationTime", m_expirationTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ExpirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_generatedCodeJobIdHasBeenSet)

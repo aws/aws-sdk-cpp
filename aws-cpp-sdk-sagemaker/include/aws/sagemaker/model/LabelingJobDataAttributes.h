@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobDataAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobDataAttributes
+  class LabelingJobDataAttributes
   {
   public:
-    LabelingJobDataAttributes();
-    LabelingJobDataAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobDataAttributes();
+    AWS_SAGEMAKER_API LabelingJobDataAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -98,7 +98,7 @@ namespace Model
   private:
 
     Aws::Vector<ContentClassifier> m_contentClassifiers;
-    bool m_contentClassifiersHasBeenSet;
+    bool m_contentClassifiersHasBeenSet = false;
   };
 
 } // namespace Model

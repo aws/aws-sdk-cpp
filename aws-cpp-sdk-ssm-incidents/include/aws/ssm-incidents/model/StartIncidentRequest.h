@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMINCIDENTS_API StartIncidentRequest : public SSMIncidentsRequest
+  class StartIncidentRequest : public SSMIncidentsRequest
   {
   public:
-    StartIncidentRequest();
+    AWS_SSMINCIDENTS_API StartIncidentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartIncident"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMINCIDENTS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -338,22 +338,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     Aws::Vector<RelatedItem> m_relatedItems;
-    bool m_relatedItemsHasBeenSet;
+    bool m_relatedItemsHasBeenSet = false;
 
     Aws::String m_responsePlanArn;
-    bool m_responsePlanArnHasBeenSet;
+    bool m_responsePlanArnHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     TriggerDetails m_triggerDetails;
-    bool m_triggerDetailsHasBeenSet;
+    bool m_triggerDetailsHasBeenSet = false;
   };
 
 } // namespace Model

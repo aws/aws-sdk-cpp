@@ -42,7 +42,7 @@ Aws::String UpdateDetectorVersionRequest::SerializePayload() const
 
   if(m_externalModelEndpointsHasBeenSet)
   {
-   Array<JsonValue> externalModelEndpointsJsonList(m_externalModelEndpoints.size());
+   Aws::Utils::Array<JsonValue> externalModelEndpointsJsonList(m_externalModelEndpoints.size());
    for(unsigned externalModelEndpointsIndex = 0; externalModelEndpointsIndex < externalModelEndpointsJsonList.GetLength(); ++externalModelEndpointsIndex)
    {
      externalModelEndpointsJsonList[externalModelEndpointsIndex].AsString(m_externalModelEndpoints[externalModelEndpointsIndex]);
@@ -53,7 +53,7 @@ Aws::String UpdateDetectorVersionRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -70,7 +70,7 @@ Aws::String UpdateDetectorVersionRequest::SerializePayload() const
 
   if(m_modelVersionsHasBeenSet)
   {
-   Array<JsonValue> modelVersionsJsonList(m_modelVersions.size());
+   Aws::Utils::Array<JsonValue> modelVersionsJsonList(m_modelVersions.size());
    for(unsigned modelVersionsIndex = 0; modelVersionsIndex < modelVersionsJsonList.GetLength(); ++modelVersionsIndex)
    {
      modelVersionsJsonList[modelVersionsIndex].AsObject(m_modelVersions[modelVersionsIndex].Jsonize());

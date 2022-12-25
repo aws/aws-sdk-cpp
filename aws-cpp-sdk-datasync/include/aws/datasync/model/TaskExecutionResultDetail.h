@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionResultDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API TaskExecutionResultDetail
+  class TaskExecutionResultDetail
   {
   public:
-    TaskExecutionResultDetail();
-    TaskExecutionResultDetail(Aws::Utils::Json::JsonView jsonValue);
-    TaskExecutionResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API TaskExecutionResultDetail();
+    AWS_DATASYNC_API TaskExecutionResultDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API TaskExecutionResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -333,31 +333,31 @@ namespace Model
   private:
 
     long long m_prepareDuration;
-    bool m_prepareDurationHasBeenSet;
+    bool m_prepareDurationHasBeenSet = false;
 
     PhaseStatus m_prepareStatus;
-    bool m_prepareStatusHasBeenSet;
+    bool m_prepareStatusHasBeenSet = false;
 
     long long m_totalDuration;
-    bool m_totalDurationHasBeenSet;
+    bool m_totalDurationHasBeenSet = false;
 
     long long m_transferDuration;
-    bool m_transferDurationHasBeenSet;
+    bool m_transferDurationHasBeenSet = false;
 
     PhaseStatus m_transferStatus;
-    bool m_transferStatusHasBeenSet;
+    bool m_transferStatusHasBeenSet = false;
 
     long long m_verifyDuration;
-    bool m_verifyDurationHasBeenSet;
+    bool m_verifyDurationHasBeenSet = false;
 
     PhaseStatus m_verifyStatus;
-    bool m_verifyStatusHasBeenSet;
+    bool m_verifyStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorDetail;
-    bool m_errorDetailHasBeenSet;
+    bool m_errorDetailHasBeenSet = false;
   };
 
 } // namespace Model

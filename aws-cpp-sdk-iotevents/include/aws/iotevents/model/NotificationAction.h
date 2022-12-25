@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/NotificationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API NotificationAction
+  class NotificationAction
   {
   public:
-    NotificationAction();
-    NotificationAction(Aws::Utils::Json::JsonView jsonValue);
-    NotificationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API NotificationAction();
+    AWS_IOTEVENTS_API NotificationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API NotificationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     NotificationTargetActions m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<SMSConfiguration> m_smsConfigurations;
-    bool m_smsConfigurationsHasBeenSet;
+    bool m_smsConfigurationsHasBeenSet = false;
 
     Aws::Vector<EmailConfiguration> m_emailConfigurations;
-    bool m_emailConfigurationsHasBeenSet;
+    bool m_emailConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

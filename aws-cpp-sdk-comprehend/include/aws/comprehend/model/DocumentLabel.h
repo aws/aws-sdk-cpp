@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentLabel">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentLabel
+  class DocumentLabel
   {
   public:
-    DocumentLabel();
-    DocumentLabel(Aws::Utils::Json::JsonView jsonValue);
-    DocumentLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentLabel();
+    AWS_COMPREHEND_API DocumentLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,13 +103,41 @@ namespace Model
      */
     inline DocumentLabel& WithScore(double value) { SetScore(value); return *this;}
 
+
+    /**
+     * <p>Page number where the label occurs. This field is present in the response
+     * only if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline int GetPage() const{ return m_page; }
+
+    /**
+     * <p>Page number where the label occurs. This field is present in the response
+     * only if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
+
+    /**
+     * <p>Page number where the label occurs. This field is present in the response
+     * only if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
+
+    /**
+     * <p>Page number where the label occurs. This field is present in the response
+     * only if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline DocumentLabel& WithPage(int value) { SetPage(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
+
+    int m_page;
+    bool m_pageHasBeenSet = false;
   };
 
 } // namespace Model

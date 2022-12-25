@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListRoomsRequest::ListRoomsRequest() : 
+    m_loggingConfigurationIdentifierHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_messageReviewHandlerUriHasBeenSet(false),
@@ -24,6 +25,12 @@ ListRoomsRequest::ListRoomsRequest() :
 Aws::String ListRoomsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_loggingConfigurationIdentifierHasBeenSet)
+  {
+   payload.WithString("loggingConfigurationIdentifier", m_loggingConfigurationIdentifier);
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

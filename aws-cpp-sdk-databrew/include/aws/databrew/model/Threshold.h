@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Threshold">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Threshold
+  class Threshold
   {
   public:
-    Threshold();
-    Threshold(Aws::Utils::Json::JsonView jsonValue);
-    Threshold& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Threshold();
+    AWS_GLUEDATABREW_API Threshold(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Threshold& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ThresholdType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ThresholdUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

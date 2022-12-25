@@ -30,46 +30,46 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API UpdateChannelResult
+  class UpdateChannelResult
   {
   public:
-    UpdateChannelResult();
-    UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateChannelResult();
+    AWS_MEDIATAILOR_API UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline UpdateChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline UpdateChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline UpdateChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -111,27 +111,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the channel is in a running state or not.</p>
+     * <p>Returns the state whether the channel is running or not.</p>
      */
     inline const ChannelState& GetChannelState() const{ return m_channelState; }
 
     /**
-     * <p>Indicates whether the channel is in a running state or not.</p>
+     * <p>Returns the state whether the channel is running or not.</p>
      */
     inline void SetChannelState(const ChannelState& value) { m_channelState = value; }
 
     /**
-     * <p>Indicates whether the channel is in a running state or not.</p>
+     * <p>Returns the state whether the channel is running or not.</p>
      */
     inline void SetChannelState(ChannelState&& value) { m_channelState = std::move(value); }
 
     /**
-     * <p>Indicates whether the channel is in a running state or not.</p>
+     * <p>Returns the state whether the channel is running or not.</p>
      */
     inline UpdateChannelResult& WithChannelState(const ChannelState& value) { SetChannelState(value); return *this;}
 
     /**
-     * <p>Indicates whether the channel is in a running state or not.</p>
+     * <p>Returns the state whether the channel is running or not.</p>
      */
     inline UpdateChannelResult& WithChannelState(ChannelState&& value) { SetChannelState(std::move(value)); return *this;}
 
@@ -163,58 +163,68 @@ namespace Model
 
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline void SetFillerSlate(const SlateSource& value) { m_fillerSlate = value; }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline void SetFillerSlate(SlateSource&& value) { m_fillerSlate = std::move(value); }
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline UpdateChannelResult& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
 
     /**
-     * <p>Contains information about the slate used to fill gaps between programs in
-     * the schedule.</p>
+     * <p>The slate used to fill gaps between programs in the schedule. You must
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline UpdateChannelResult& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp of when the channel was last modified.</p>
+     * <p>The timestamp that indicates when the channel was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The timestamp of when the channel was last modified.</p>
+     * <p>The timestamp that indicates when the channel was last modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The timestamp of when the channel was last modified.</p>
+     * <p>The timestamp that indicates when the channel was last modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The timestamp of when the channel was last modified.</p>
+     * <p>The timestamp that indicates when the channel was last modified.</p>
      */
     inline UpdateChannelResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The timestamp of when the channel was last modified.</p>
+     * <p>The timestamp that indicates when the channel was last modified.</p>
      */
     inline UpdateChannelResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
@@ -256,134 +266,203 @@ namespace Model
 
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const Aws::String& value) { m_playbackMode = value; }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(Aws::String&& value) { m_playbackMode = std::move(value); }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const char* value) { m_playbackMode.assign(value); }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline UpdateChannelResult& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
 
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tier = value; }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tier = std::move(value); }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline void SetTier(const char* value) { m_tier.assign(value); }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline UpdateChannelResult& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline UpdateChannelResult& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier associated with this Channel.</p>
      */
     inline UpdateChannelResult& WithTier(const char* value) { SetTier(value); return *this;}
 

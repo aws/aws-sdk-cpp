@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Host">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Host
+  class Host
   {
   public:
-    Host();
-    Host(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Host& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Host();
+    AWS_EC2_API Host(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Host& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -769,58 +769,58 @@ namespace Model
   private:
 
     AutoPlacement m_autoPlacement;
-    bool m_autoPlacementHasBeenSet;
+    bool m_autoPlacementHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     AvailableCapacity m_availableCapacity;
-    bool m_availableCapacityHasBeenSet;
+    bool m_availableCapacityHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
+    bool m_hostIdHasBeenSet = false;
 
     HostProperties m_hostProperties;
-    bool m_hostPropertiesHasBeenSet;
+    bool m_hostPropertiesHasBeenSet = false;
 
     Aws::String m_hostReservationId;
-    bool m_hostReservationIdHasBeenSet;
+    bool m_hostReservationIdHasBeenSet = false;
 
     Aws::Vector<HostInstance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     AllocationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_allocationTime;
-    bool m_allocationTimeHasBeenSet;
+    bool m_allocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_releaseTime;
-    bool m_releaseTimeHasBeenSet;
+    bool m_releaseTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     HostRecovery m_hostRecovery;
-    bool m_hostRecoveryHasBeenSet;
+    bool m_hostRecoveryHasBeenSet = false;
 
     AllowsMultipleInstanceTypes m_allowsMultipleInstanceTypes;
-    bool m_allowsMultipleInstanceTypesHasBeenSet;
+    bool m_allowsMultipleInstanceTypesHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     bool m_memberOfServiceLinkedResourceGroup;
-    bool m_memberOfServiceLinkedResourceGroupHasBeenSet;
+    bool m_memberOfServiceLinkedResourceGroupHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
   };
 
 } // namespace Model

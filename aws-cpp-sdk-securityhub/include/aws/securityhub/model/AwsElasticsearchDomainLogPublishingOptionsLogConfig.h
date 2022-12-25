@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainLogPublishingOptionsLogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptionsLogConfig
+  class AwsElasticsearchDomainLogPublishingOptionsLogConfig
   {
   public:
-    AwsElasticsearchDomainLogPublishingOptionsLogConfig();
-    AwsElasticsearchDomainLogPublishingOptionsLogConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainLogPublishingOptionsLogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptionsLogConfig();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptionsLogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainLogPublishingOptionsLogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -40,7 +40,7 @@ namespace Model
    * include as many as 10 structures that contain a <code>MetricStat</code>
    * parameter to retrieve a metric, and as many as 10 structures that contain the
    * <code>Expression</code> parameter to perform a math expression. Of those
-   * <code>Expression</code> structures, one must have <code>True</code> as the value
+   * <code>Expression</code> structures, one must have <code>true</code> as the value
    * for <code>ReturnData</code>. The result of this expression is the value the
    * alarm watches.</p> <p>Any expression used in a <code>PutMetricAlarm</code>
    * operation must return a single time series. For more information, see <a
@@ -53,15 +53,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricDataQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricDataQuery
+  class MetricDataQuery
   {
   public:
-    MetricDataQuery();
-    MetricDataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricDataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricDataQuery();
+    AWS_CLOUDWATCH_API MetricDataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricDataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -438,9 +438,9 @@ namespace Model
      * <p>When used in <code>GetMetricData</code>, this option indicates whether to
      * return the timestamps and raw data values of this metric. If you are performing
      * this call just to do math expressions and do not also need the raw data
-     * returned, you can specify <code>False</code>. If you omit this, the default of
-     * <code>True</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
-     * specify <code>True</code> for the one expression result to use as the alarm. For
+     * returned, you can specify <code>false</code>. If you omit this, the default of
+     * <code>true</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
+     * specify <code>true</code> for the one expression result to use as the alarm. For
      * all other metrics and expressions in the same <code>PutMetricAlarm</code>
      * operation, specify <code>ReturnData</code> as False.</p>
      */
@@ -450,9 +450,9 @@ namespace Model
      * <p>When used in <code>GetMetricData</code>, this option indicates whether to
      * return the timestamps and raw data values of this metric. If you are performing
      * this call just to do math expressions and do not also need the raw data
-     * returned, you can specify <code>False</code>. If you omit this, the default of
-     * <code>True</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
-     * specify <code>True</code> for the one expression result to use as the alarm. For
+     * returned, you can specify <code>false</code>. If you omit this, the default of
+     * <code>true</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
+     * specify <code>true</code> for the one expression result to use as the alarm. For
      * all other metrics and expressions in the same <code>PutMetricAlarm</code>
      * operation, specify <code>ReturnData</code> as False.</p>
      */
@@ -462,9 +462,9 @@ namespace Model
      * <p>When used in <code>GetMetricData</code>, this option indicates whether to
      * return the timestamps and raw data values of this metric. If you are performing
      * this call just to do math expressions and do not also need the raw data
-     * returned, you can specify <code>False</code>. If you omit this, the default of
-     * <code>True</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
-     * specify <code>True</code> for the one expression result to use as the alarm. For
+     * returned, you can specify <code>false</code>. If you omit this, the default of
+     * <code>true</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
+     * specify <code>true</code> for the one expression result to use as the alarm. For
      * all other metrics and expressions in the same <code>PutMetricAlarm</code>
      * operation, specify <code>ReturnData</code> as False.</p>
      */
@@ -474,9 +474,9 @@ namespace Model
      * <p>When used in <code>GetMetricData</code>, this option indicates whether to
      * return the timestamps and raw data values of this metric. If you are performing
      * this call just to do math expressions and do not also need the raw data
-     * returned, you can specify <code>False</code>. If you omit this, the default of
-     * <code>True</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
-     * specify <code>True</code> for the one expression result to use as the alarm. For
+     * returned, you can specify <code>false</code>. If you omit this, the default of
+     * <code>true</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
+     * specify <code>true</code> for the one expression result to use as the alarm. For
      * all other metrics and expressions in the same <code>PutMetricAlarm</code>
      * operation, specify <code>ReturnData</code> as False.</p>
      */
@@ -529,83 +529,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline MetricDataQuery& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline MetricDataQuery& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account where the metrics are located, if this is a
-     * cross-account alarm.</p> <p>Use this field only for <code>PutMetricAlarm</code>
-     * operations. It is not used in <code>GetMetricData</code> operations.</p>
+     * <p>The ID of the account where the metrics are located.</p> <p>If you are
+     * performing a <code>GetMetricData</code> operation in a monitoring account, use
+     * this to specify which account to retrieve this metric from.</p> <p>If you are
+     * performing a <code>PutMetricAlarm</code> operation, use this to specify which
+     * account contains the metric that the alarm is watching.</p>
      */
     inline MetricDataQuery& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MetricStat m_metricStat;
-    bool m_metricStatHasBeenSet;
+    bool m_metricStatHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     bool m_returnData;
-    bool m_returnDataHasBeenSet;
+    bool m_returnDataHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

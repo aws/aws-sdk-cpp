@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessageRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API VerifyOTPMessageRequestParameters
+  class VerifyOTPMessageRequestParameters
   {
   public:
-    VerifyOTPMessageRequestParameters();
-    VerifyOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    VerifyOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters();
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_destinationIdentity;
-    bool m_destinationIdentityHasBeenSet;
+    bool m_destinationIdentityHasBeenSet = false;
 
     Aws::String m_otp;
-    bool m_otpHasBeenSet;
+    bool m_otpHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
   };
 
 } // namespace Model

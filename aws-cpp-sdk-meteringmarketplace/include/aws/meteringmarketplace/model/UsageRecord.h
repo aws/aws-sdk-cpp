@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API UsageRecord
+  class UsageRecord
   {
   public:
-    UsageRecord();
-    UsageRecord(Aws::Utils::Json::JsonView jsonValue);
-    UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEMETERING_API UsageRecord();
+    AWS_MARKETPLACEMETERING_API UsageRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -276,19 +276,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_customerIdentifier;
-    bool m_customerIdentifierHasBeenSet;
+    bool m_customerIdentifierHasBeenSet = false;
 
     Aws::String m_dimension;
-    bool m_dimensionHasBeenSet;
+    bool m_dimensionHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<UsageAllocation> m_usageAllocations;
-    bool m_usageAllocationsHasBeenSet;
+    bool m_usageAllocationsHasBeenSet = false;
   };
 
 } // namespace Model

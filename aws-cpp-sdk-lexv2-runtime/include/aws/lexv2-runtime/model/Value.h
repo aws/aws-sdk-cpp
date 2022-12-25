@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Value">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API Value
+  class Value
   {
   public:
-    Value();
-    Value(Aws::Utils::Json::JsonView jsonValue);
-    Value& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API Value();
+    AWS_LEXRUNTIMEV2_API Value(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Value& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_originalValue;
-    bool m_originalValueHasBeenSet;
+    bool m_originalValueHasBeenSet = false;
 
     Aws::String m_interpretedValue;
-    bool m_interpretedValueHasBeenSet;
+    bool m_interpretedValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resolvedValues;
-    bool m_resolvedValuesHasBeenSet;
+    bool m_resolvedValuesHasBeenSet = false;
   };
 
 } // namespace Model

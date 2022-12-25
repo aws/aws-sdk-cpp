@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSimpleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrialComponentSimpleSummary
+  class TrialComponentSimpleSummary
   {
   public:
-    TrialComponentSimpleSummary();
-    TrialComponentSimpleSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrialComponentSimpleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrialComponentSimpleSummary();
+    AWS_SAGEMAKER_API TrialComponentSimpleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrialComponentSimpleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,19 +193,19 @@ namespace Model
   private:
 
     Aws::String m_trialComponentName;
-    bool m_trialComponentNameHasBeenSet;
+    bool m_trialComponentNameHasBeenSet = false;
 
     Aws::String m_trialComponentArn;
-    bool m_trialComponentArnHasBeenSet;
+    bool m_trialComponentArnHasBeenSet = false;
 
     TrialComponentSource m_trialComponentSource;
-    bool m_trialComponentSourceHasBeenSet;
+    bool m_trialComponentSourceHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

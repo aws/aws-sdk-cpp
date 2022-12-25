@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPRUNNER_API CreateVpcConnectorRequest : public AppRunnerRequest
+  class CreateVpcConnectorRequest : public AppRunnerRequest
   {
   public:
-    CreateVpcConnectorRequest();
+    AWS_APPRUNNER_API CreateVpcConnectorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcConnector"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -274,16 +274,16 @@ namespace Model
   private:
 
     Aws::String m_vpcConnectorName;
-    bool m_vpcConnectorNameHasBeenSet;
+    bool m_vpcConnectorNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

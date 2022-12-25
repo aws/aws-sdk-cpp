@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API DeleteChannelRequest : public MediaTailorRequest
+  class DeleteChannelRequest : public MediaTailorRequest
   {
   public:
-    DeleteChannelRequest();
+    AWS_MEDIATAILOR_API DeleteChannelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,53 +29,53 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteChannel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline DeleteChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline DeleteChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The name of the channel.</p>
      */
     inline DeleteChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
   };
 
 } // namespace Model

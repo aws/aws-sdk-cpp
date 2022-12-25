@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelRetentionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelRetentionSettings
+  class ChannelRetentionSettings
   {
   public:
-    ChannelRetentionSettings();
-    ChannelRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
-    ChannelRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelRetentionSettings();
+    AWS_CHIME_API ChannelRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_retentionDays;
-    bool m_retentionDaysHasBeenSet;
+    bool m_retentionDaysHasBeenSet = false;
   };
 
 } // namespace Model

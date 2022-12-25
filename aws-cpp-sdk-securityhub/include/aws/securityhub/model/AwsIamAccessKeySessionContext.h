@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAccessKeySessionContext">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamAccessKeySessionContext
+  class AwsIamAccessKeySessionContext
   {
   public:
-    AwsIamAccessKeySessionContext();
-    AwsIamAccessKeySessionContext(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamAccessKeySessionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContext();
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamAccessKeySessionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     AwsIamAccessKeySessionContextAttributes m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     AwsIamAccessKeySessionContextSessionIssuer m_sessionIssuer;
-    bool m_sessionIssuerHasBeenSet;
+    bool m_sessionIssuerHasBeenSet = false;
   };
 
 } // namespace Model

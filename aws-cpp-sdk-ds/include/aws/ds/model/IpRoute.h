@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRoute">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API IpRoute
+  class IpRoute
   {
   public:
-    IpRoute();
-    IpRoute(Aws::Utils::Json::JsonView jsonValue);
-    IpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API IpRoute();
+    AWS_DIRECTORYSERVICE_API IpRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API IpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

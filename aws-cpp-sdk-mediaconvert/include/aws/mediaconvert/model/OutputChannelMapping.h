@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/OutputChannelMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API OutputChannelMapping
+  class OutputChannelMapping
   {
   public:
-    OutputChannelMapping();
-    OutputChannelMapping(Aws::Utils::Json::JsonView jsonValue);
-    OutputChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API OutputChannelMapping();
+    AWS_MEDIACONVERT_API OutputChannelMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API OutputChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<int> m_inputChannels;
-    bool m_inputChannelsHasBeenSet;
+    bool m_inputChannelsHasBeenSet = false;
 
     Aws::Vector<double> m_inputChannelsFineTune;
-    bool m_inputChannelsFineTuneHasBeenSet;
+    bool m_inputChannelsFineTuneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPoolResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CreateDedicatedIpPoolResult
+  class CreateDedicatedIpPoolResult
   {
   public:
-    CreateDedicatedIpPoolResult();
-    CreateDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API CreateDedicatedIpPoolResult();
+    AWS_PINPOINTEMAIL_API CreateDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API CreateDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

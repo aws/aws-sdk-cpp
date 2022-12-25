@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/InsightHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API InsightHealth
+  class InsightHealth
   {
   public:
-    InsightHealth();
-    InsightHealth(Aws::Utils::Json::JsonView jsonValue);
-    InsightHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API InsightHealth();
+    AWS_DEVOPSGURU_API InsightHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API InsightHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,13 +101,13 @@ namespace Model
   private:
 
     int m_openProactiveInsights;
-    bool m_openProactiveInsightsHasBeenSet;
+    bool m_openProactiveInsightsHasBeenSet = false;
 
     int m_openReactiveInsights;
-    bool m_openReactiveInsightsHasBeenSet;
+    bool m_openReactiveInsightsHasBeenSet = false;
 
     long long m_meanTimeToRecoverInMilliseconds;
-    bool m_meanTimeToRecoverInMillisecondsHasBeenSet;
+    bool m_meanTimeToRecoverInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

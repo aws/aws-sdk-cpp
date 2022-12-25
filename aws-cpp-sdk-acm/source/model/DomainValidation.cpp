@@ -54,7 +54,7 @@ DomainValidation& DomainValidation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ValidationEmails"))
   {
-    Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
+    Aws::Utils::Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
     for(unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex)
     {
       m_validationEmails.push_back(validationEmailsJsonList[validationEmailsIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue DomainValidation::Jsonize() const
 
   if(m_validationEmailsHasBeenSet)
   {
-   Array<JsonValue> validationEmailsJsonList(m_validationEmails.size());
+   Aws::Utils::Array<JsonValue> validationEmailsJsonList(m_validationEmails.size());
    for(unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex)
    {
      validationEmailsJsonList[validationEmailsIndex].AsString(m_validationEmails[validationEmailsIndex]);

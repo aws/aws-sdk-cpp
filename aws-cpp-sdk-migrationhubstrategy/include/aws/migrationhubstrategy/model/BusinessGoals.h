@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/BusinessGoals">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API BusinessGoals
+  class BusinessGoals
   {
   public:
-    BusinessGoals();
-    BusinessGoals(Aws::Utils::Json::JsonView jsonValue);
-    BusinessGoals& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API BusinessGoals();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API BusinessGoals(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API BusinessGoals& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,16 +129,16 @@ namespace Model
   private:
 
     int m_licenseCostReduction;
-    bool m_licenseCostReductionHasBeenSet;
+    bool m_licenseCostReductionHasBeenSet = false;
 
     int m_modernizeInfrastructureWithCloudNativeTechnologies;
-    bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet;
+    bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = false;
 
     int m_reduceOperationalOverheadWithManagedServices;
-    bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet;
+    bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet = false;
 
     int m_speedOfMigration;
-    bool m_speedOfMigrationHasBeenSet;
+    bool m_speedOfMigrationHasBeenSet = false;
   };
 
 } // namespace Model

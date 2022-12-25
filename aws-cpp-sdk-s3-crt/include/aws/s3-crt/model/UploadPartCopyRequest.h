@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API UploadPartCopyRequest : public S3CrtRequest
+  class UploadPartCopyRequest : public S3CrtRequest
   {
   public:
-    UploadPartCopyRequest();
+    AWS_S3CRT_API UploadPartCopyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,17 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UploadPartCopy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CRT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    AWS_S3CRT_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The bucket name.</p> <p>When using this action with an access point, you must
@@ -1374,64 +1379,64 @@ namespace Model
   private:
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_copySource;
-    bool m_copySourceHasBeenSet;
+    bool m_copySourceHasBeenSet = false;
 
     Aws::String m_copySourceIfMatch;
-    bool m_copySourceIfMatchHasBeenSet;
+    bool m_copySourceIfMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_copySourceIfModifiedSince;
-    bool m_copySourceIfModifiedSinceHasBeenSet;
+    bool m_copySourceIfModifiedSinceHasBeenSet = false;
 
     Aws::String m_copySourceIfNoneMatch;
-    bool m_copySourceIfNoneMatchHasBeenSet;
+    bool m_copySourceIfNoneMatchHasBeenSet = false;
 
     Aws::Utils::DateTime m_copySourceIfUnmodifiedSince;
-    bool m_copySourceIfUnmodifiedSinceHasBeenSet;
+    bool m_copySourceIfUnmodifiedSinceHasBeenSet = false;
 
     Aws::String m_copySourceRange;
-    bool m_copySourceRangeHasBeenSet;
+    bool m_copySourceRangeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     int m_partNumber;
-    bool m_partNumberHasBeenSet;
+    bool m_partNumberHasBeenSet = false;
 
     Aws::String m_uploadId;
-    bool m_uploadIdHasBeenSet;
+    bool m_uploadIdHasBeenSet = false;
 
     Aws::String m_sSECustomerAlgorithm;
-    bool m_sSECustomerAlgorithmHasBeenSet;
+    bool m_sSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_sSECustomerKey;
-    bool m_sSECustomerKeyHasBeenSet;
+    bool m_sSECustomerKeyHasBeenSet = false;
 
     Aws::String m_sSECustomerKeyMD5;
-    bool m_sSECustomerKeyMD5HasBeenSet;
+    bool m_sSECustomerKeyMD5HasBeenSet = false;
 
     Aws::String m_copySourceSSECustomerAlgorithm;
-    bool m_copySourceSSECustomerAlgorithmHasBeenSet;
+    bool m_copySourceSSECustomerAlgorithmHasBeenSet = false;
 
     Aws::String m_copySourceSSECustomerKey;
-    bool m_copySourceSSECustomerKeyHasBeenSet;
+    bool m_copySourceSSECustomerKeyHasBeenSet = false;
 
     Aws::String m_copySourceSSECustomerKeyMD5;
-    bool m_copySourceSSECustomerKeyMD5HasBeenSet;
+    bool m_copySourceSSECustomerKeyMD5HasBeenSet = false;
 
     RequestPayer m_requestPayer;
-    bool m_requestPayerHasBeenSet;
+    bool m_requestPayerHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     Aws::String m_expectedSourceBucketOwner;
-    bool m_expectedSourceBucketOwnerHasBeenSet;
+    bool m_expectedSourceBucketOwnerHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
-    bool m_customizedAccessLogTagHasBeenSet;
+    bool m_customizedAccessLogTagHasBeenSet = false;
   };
 
 } // namespace Model

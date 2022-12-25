@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ResourceDetails
+  class ResourceDetails
   {
   public:
-    ResourceDetails();
-    ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ResourceDetails();
+    AWS_COSTEXPLORER_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     EC2ResourceDetails m_eC2ResourceDetails;
-    bool m_eC2ResourceDetailsHasBeenSet;
+    bool m_eC2ResourceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

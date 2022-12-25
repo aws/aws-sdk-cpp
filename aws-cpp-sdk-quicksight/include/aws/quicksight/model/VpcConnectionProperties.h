@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/VpcConnectionProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API VpcConnectionProperties
+  class VpcConnectionProperties
   {
   public:
-    VpcConnectionProperties();
-    VpcConnectionProperties(Aws::Utils::Json::JsonView jsonValue);
-    VpcConnectionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API VpcConnectionProperties();
+    AWS_QUICKSIGHT_API VpcConnectionProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API VpcConnectionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_vpcConnectionArn;
-    bool m_vpcConnectionArnHasBeenSet;
+    bool m_vpcConnectionArnHasBeenSet = false;
   };
 
 } // namespace Model

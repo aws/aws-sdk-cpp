@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ResetTimerAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API ResetTimerAction
+  class ResetTimerAction
   {
   public:
-    ResetTimerAction();
-    ResetTimerAction(Aws::Utils::Json::JsonView jsonValue);
-    ResetTimerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API ResetTimerAction();
+    AWS_IOTEVENTS_API ResetTimerAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API ResetTimerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_timerName;
-    bool m_timerNameHasBeenSet;
+    bool m_timerNameHasBeenSet = false;
   };
 
 } // namespace Model

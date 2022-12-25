@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudWatchMetricsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API CloudWatchMetricsDetail
+  class CloudWatchMetricsDetail
   {
   public:
-    CloudWatchMetricsDetail();
-    CloudWatchMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API CloudWatchMetricsDetail();
+    AWS_DEVOPSGURU_API CloudWatchMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API CloudWatchMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -337,25 +337,25 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::Vector<CloudWatchMetricsDimension> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     CloudWatchMetricsStat m_stat;
-    bool m_statHasBeenSet;
+    bool m_statHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     int m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
 
     CloudWatchMetricsDataSummary m_metricDataSummary;
-    bool m_metricDataSummaryHasBeenSet;
+    bool m_metricDataSummaryHasBeenSet = false;
   };
 
 } // namespace Model

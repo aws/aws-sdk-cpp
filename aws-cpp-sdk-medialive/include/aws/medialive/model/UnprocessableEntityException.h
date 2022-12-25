@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UnprocessableEntityException">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UnprocessableEntityException
+  class UnprocessableEntityException
   {
   public:
-    UnprocessableEntityException();
-    UnprocessableEntityException(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessableEntityException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API UnprocessableEntityException();
+    AWS_MEDIALIVE_API UnprocessableEntityException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API UnprocessableEntityException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<ValidationError> m_validationErrors;
-    bool m_validationErrorsHasBeenSet;
+    bool m_validationErrorsHasBeenSet = false;
   };
 
 } // namespace Model

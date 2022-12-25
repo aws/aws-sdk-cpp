@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressionListDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SuppressionListDestination
+  class SuppressionListDestination
   {
   public:
-    SuppressionListDestination();
-    SuppressionListDestination(Aws::Utils::Json::JsonView jsonValue);
-    SuppressionListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SuppressionListDestination();
+    AWS_SESV2_API SuppressionListDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SuppressionListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     SuppressionListImportAction m_suppressionListImportAction;
-    bool m_suppressionListImportActionHasBeenSet;
+    bool m_suppressionListImportActionHasBeenSet = false;
   };
 
 } // namespace Model

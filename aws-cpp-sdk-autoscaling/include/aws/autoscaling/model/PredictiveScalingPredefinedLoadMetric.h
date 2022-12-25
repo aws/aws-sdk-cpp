@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingPredefinedLoadMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredictiveScalingPredefinedLoadMetric
+  class PredictiveScalingPredefinedLoadMetric
   {
   public:
-    PredictiveScalingPredefinedLoadMetric();
-    PredictiveScalingPredefinedLoadMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredictiveScalingPredefinedLoadMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingPredefinedLoadMetric();
+    AWS_AUTOSCALING_API PredictiveScalingPredefinedLoadMetric(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingPredefinedLoadMetric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -253,10 +253,10 @@ namespace Model
   private:
 
     PredefinedLoadMetricType m_predefinedMetricType;
-    bool m_predefinedMetricTypeHasBeenSet;
+    bool m_predefinedMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

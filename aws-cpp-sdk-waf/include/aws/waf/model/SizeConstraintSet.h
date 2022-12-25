@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API SizeConstraintSet
+  class SizeConstraintSet
   {
   public:
-    SizeConstraintSet();
-    SizeConstraintSet(Aws::Utils::Json::JsonView jsonValue);
-    SizeConstraintSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API SizeConstraintSet();
+    AWS_WAF_API SizeConstraintSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API SizeConstraintSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -248,13 +248,13 @@ namespace Model
   private:
 
     Aws::String m_sizeConstraintSetId;
-    bool m_sizeConstraintSetIdHasBeenSet;
+    bool m_sizeConstraintSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<SizeConstraint> m_sizeConstraints;
-    bool m_sizeConstraintsHasBeenSet;
+    bool m_sizeConstraintsHasBeenSet = false;
   };
 
 } // namespace Model

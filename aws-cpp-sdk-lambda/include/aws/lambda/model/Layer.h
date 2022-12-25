@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Layer">AWS API
    * Reference</a></p>
    */
-  class AWS_LAMBDA_API Layer
+  class Layer
   {
   public:
-    Layer();
-    Layer(Aws::Utils::Json::JsonView jsonValue);
-    Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API Layer();
+    AWS_LAMBDA_API Layer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     long long m_codeSize;
-    bool m_codeSizeHasBeenSet;
+    bool m_codeSizeHasBeenSet = false;
 
     Aws::String m_signingProfileVersionArn;
-    bool m_signingProfileVersionArnHasBeenSet;
+    bool m_signingProfileVersionArnHasBeenSet = false;
 
     Aws::String m_signingJobArn;
-    bool m_signingJobArnHasBeenSet;
+    bool m_signingJobArnHasBeenSet = false;
   };
 
 } // namespace Model

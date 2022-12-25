@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobS3DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobS3DataSource
+  class LabelingJobS3DataSource
   {
   public:
-    LabelingJobS3DataSource();
-    LabelingJobS3DataSource(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobS3DataSource();
+    AWS_SAGEMAKER_API LabelingJobS3DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,7 +177,7 @@ namespace Model
   private:
 
     Aws::String m_manifestS3Uri;
-    bool m_manifestS3UriHasBeenSet;
+    bool m_manifestS3UriHasBeenSet = false;
   };
 
 } // namespace Model

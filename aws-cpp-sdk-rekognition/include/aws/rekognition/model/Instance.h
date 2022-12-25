@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/BoundingBox.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/DominantColor.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Instance">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Instance
+  class Instance
   {
   public:
-    Instance();
-    Instance(Aws::Utils::Json::JsonView jsonValue);
-    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Instance();
+    AWS_REKOGNITION_API Instance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -94,13 +96,57 @@ namespace Model
      */
     inline Instance& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline const Aws::Vector<DominantColor>& GetDominantColors() const{ return m_dominantColors; }
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline bool DominantColorsHasBeenSet() const { return m_dominantColorsHasBeenSet; }
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline void SetDominantColors(const Aws::Vector<DominantColor>& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = value; }
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline void SetDominantColors(Aws::Vector<DominantColor>&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = std::move(value); }
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline Instance& WithDominantColors(const Aws::Vector<DominantColor>& value) { SetDominantColors(value); return *this;}
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline Instance& WithDominantColors(Aws::Vector<DominantColor>&& value) { SetDominantColors(std::move(value)); return *this;}
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline Instance& AddDominantColors(const DominantColor& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(value); return *this; }
+
+    /**
+     * <p>The dominant colors found in an individual instance of a label.</p>
+     */
+    inline Instance& AddDominantColors(DominantColor&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(std::move(value)); return *this; }
+
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
+
+    Aws::Vector<DominantColor> m_dominantColors;
+    bool m_dominantColorsHasBeenSet = false;
   };
 
 } // namespace Model

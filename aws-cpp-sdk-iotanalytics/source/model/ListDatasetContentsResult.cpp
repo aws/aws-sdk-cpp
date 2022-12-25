@@ -30,7 +30,7 @@ ListDatasetContentsResult& ListDatasetContentsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("datasetContentSummaries"))
   {
-    Array<JsonView> datasetContentSummariesJsonList = jsonValue.GetArray("datasetContentSummaries");
+    Aws::Utils::Array<JsonView> datasetContentSummariesJsonList = jsonValue.GetArray("datasetContentSummaries");
     for(unsigned datasetContentSummariesIndex = 0; datasetContentSummariesIndex < datasetContentSummariesJsonList.GetLength(); ++datasetContentSummariesIndex)
     {
       m_datasetContentSummaries.push_back(datasetContentSummariesJsonList[datasetContentSummariesIndex].AsObject());

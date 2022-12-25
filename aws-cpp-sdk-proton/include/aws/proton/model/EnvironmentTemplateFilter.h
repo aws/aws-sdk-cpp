@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/EnvironmentTemplateFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API EnvironmentTemplateFilter
+  class EnvironmentTemplateFilter
   {
   public:
-    EnvironmentTemplateFilter();
-    EnvironmentTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API EnvironmentTemplateFilter();
+    AWS_PROTON_API EnvironmentTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API EnvironmentTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/BackupRestoring">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API BackupRestoring
+  class BackupRestoring
   {
   public:
-    BackupRestoring();
-    BackupRestoring(Aws::Utils::Json::JsonView jsonValue);
-    BackupRestoring& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API BackupRestoring();
+    AWS_FSX_API BackupRestoring(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API BackupRestoring& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

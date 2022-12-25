@@ -48,7 +48,7 @@ GenericRevisionInfo& GenericRevisionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("deploymentGroups"))
   {
-    Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
+    Aws::Utils::Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
     for(unsigned deploymentGroupsIndex = 0; deploymentGroupsIndex < deploymentGroupsJsonList.GetLength(); ++deploymentGroupsIndex)
     {
       m_deploymentGroups.push_back(deploymentGroupsJsonList[deploymentGroupsIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue GenericRevisionInfo::Jsonize() const
 
   if(m_deploymentGroupsHasBeenSet)
   {
-   Array<JsonValue> deploymentGroupsJsonList(m_deploymentGroups.size());
+   Aws::Utils::Array<JsonValue> deploymentGroupsJsonList(m_deploymentGroups.size());
    for(unsigned deploymentGroupsIndex = 0; deploymentGroupsIndex < deploymentGroupsJsonList.GetLength(); ++deploymentGroupsIndex)
    {
      deploymentGroupsJsonList[deploymentGroupsIndex].AsString(m_deploymentGroups[deploymentGroupsIndex]);

@@ -26,12 +26,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult
+  class DescribeInstanceAccessControlAttributeConfigurationResult
   {
   public:
-    DescribeInstanceAccessControlAttributeConfigurationResult();
-    DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult();
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -104,32 +104,32 @@ namespace Model
 
 
     /**
-     * <p>Gets the list of Amazon Web Services SSO identity store attributes that have
-     * been added to your ABAC configuration.</p>
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
      */
     inline const InstanceAccessControlAttributeConfiguration& GetInstanceAccessControlAttributeConfiguration() const{ return m_instanceAccessControlAttributeConfiguration; }
 
     /**
-     * <p>Gets the list of Amazon Web Services SSO identity store attributes that have
-     * been added to your ABAC configuration.</p>
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
      */
     inline void SetInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { m_instanceAccessControlAttributeConfiguration = value; }
 
     /**
-     * <p>Gets the list of Amazon Web Services SSO identity store attributes that have
-     * been added to your ABAC configuration.</p>
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
      */
     inline void SetInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { m_instanceAccessControlAttributeConfiguration = std::move(value); }
 
     /**
-     * <p>Gets the list of Amazon Web Services SSO identity store attributes that have
-     * been added to your ABAC configuration.</p>
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
      */
     inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(const InstanceAccessControlAttributeConfiguration& value) { SetInstanceAccessControlAttributeConfiguration(value); return *this;}
 
     /**
-     * <p>Gets the list of Amazon Web Services SSO identity store attributes that have
-     * been added to your ABAC configuration.</p>
+     * <p>Gets the list of IAM Identity Center identity store attributes that have been
+     * added to your ABAC configuration.</p>
      */
     inline DescribeInstanceAccessControlAttributeConfigurationResult& WithInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration&& value) { SetInstanceAccessControlAttributeConfiguration(std::move(value)); return *this;}
 

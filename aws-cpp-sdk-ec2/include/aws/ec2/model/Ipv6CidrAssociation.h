@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6CidrAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API Ipv6CidrAssociation
+  class Ipv6CidrAssociation
   {
   public:
-    Ipv6CidrAssociation();
-    Ipv6CidrAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Ipv6CidrAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipv6CidrAssociation();
+    AWS_EC2_API Ipv6CidrAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipv6CidrAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_ipv6Cidr;
-    bool m_ipv6CidrHasBeenSet;
+    bool m_ipv6CidrHasBeenSet = false;
 
     Aws::String m_associatedResource;
-    bool m_associatedResourceHasBeenSet;
+    bool m_associatedResourceHasBeenSet = false;
   };
 
 } // namespace Model

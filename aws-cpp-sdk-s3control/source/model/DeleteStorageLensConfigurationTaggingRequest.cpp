@@ -39,3 +39,15 @@ Aws::Http::HeaderValueCollection DeleteStorageLensConfigurationTaggingRequest::G
 
   return headers;
 }
+
+DeleteStorageLensConfigurationTaggingRequest::EndpointParameters DeleteStorageLensConfigurationTaggingRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("RequiresAccountId"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (AccountIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("AccountId"), this->GetAccountId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}

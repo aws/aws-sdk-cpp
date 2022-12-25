@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventCondition
+  class EventCondition
   {
   public:
-    EventCondition();
-    EventCondition(Aws::Utils::Json::JsonView jsonValue);
-    EventCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventCondition();
+    AWS_PINPOINT_API EventCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     EventDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::String m_messageActivity;
-    bool m_messageActivityHasBeenSet;
+    bool m_messageActivityHasBeenSet = false;
   };
 
 } // namespace Model

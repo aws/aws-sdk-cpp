@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Summary">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API Summary
+  class Summary
   {
   public:
-    Summary();
-    Summary(Aws::Utils::Json::JsonView jsonValue);
-    Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API Summary();
+    AWS_COMPUTEOPTIMIZER_API Summary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Finding m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<ReasonCodeSummary> m_reasonCodeSummaries;
-    bool m_reasonCodeSummariesHasBeenSet;
+    bool m_reasonCodeSummariesHasBeenSet = false;
   };
 
 } // namespace Model

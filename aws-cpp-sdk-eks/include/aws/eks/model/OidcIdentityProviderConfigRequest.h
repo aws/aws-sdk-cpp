@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OidcIdentityProviderConfigRequest
+  class OidcIdentityProviderConfigRequest
   {
   public:
-    OidcIdentityProviderConfigRequest();
-    OidcIdentityProviderConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    OidcIdentityProviderConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OidcIdentityProviderConfigRequest();
+    AWS_EKS_API OidcIdentityProviderConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OidcIdentityProviderConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -618,28 +618,28 @@ namespace Model
   private:
 
     Aws::String m_identityProviderConfigName;
-    bool m_identityProviderConfigNameHasBeenSet;
+    bool m_identityProviderConfigNameHasBeenSet = false;
 
     Aws::String m_issuerUrl;
-    bool m_issuerUrlHasBeenSet;
+    bool m_issuerUrlHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     Aws::String m_usernameClaim;
-    bool m_usernameClaimHasBeenSet;
+    bool m_usernameClaimHasBeenSet = false;
 
     Aws::String m_usernamePrefix;
-    bool m_usernamePrefixHasBeenSet;
+    bool m_usernamePrefixHasBeenSet = false;
 
     Aws::String m_groupsClaim;
-    bool m_groupsClaimHasBeenSet;
+    bool m_groupsClaimHasBeenSet = false;
 
     Aws::String m_groupsPrefix;
-    bool m_groupsPrefixHasBeenSet;
+    bool m_groupsPrefixHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_requiredClaims;
-    bool m_requiredClaimsHasBeenSet;
+    bool m_requiredClaimsHasBeenSet = false;
   };
 
 } // namespace Model

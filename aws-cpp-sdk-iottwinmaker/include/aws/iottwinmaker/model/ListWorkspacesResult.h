@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/model/WorkspaceSummary.h>
 #include <utility>
 
@@ -26,48 +26,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API ListWorkspacesResult
+  class ListWorkspacesResult
   {
   public:
-    ListWorkspacesResult();
-    ListWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The string that specifies the next page of results.</p>
-     */
-    inline ListWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    AWS_IOTTWINMAKER_API ListWorkspacesResult();
+    AWS_IOTTWINMAKER_API ListWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ListWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -105,11 +69,47 @@ namespace Model
      */
     inline ListWorkspacesResult& AddWorkspaceSummaries(WorkspaceSummary&& value) { m_workspaceSummaries.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The string that specifies the next page of results.</p>
+     */
+    inline ListWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<WorkspaceSummary> m_workspaceSummaries;
+
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

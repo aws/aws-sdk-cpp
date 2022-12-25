@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Revision">AWS API
    * Reference</a></p>
    */
-  class AWS_PROTON_API Revision
+  class Revision
   {
   public:
-    Revision();
-    Revision(Aws::Utils::Json::JsonView jsonValue);
-    Revision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API Revision();
+    AWS_PROTON_API Revision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Revision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_directory;
-    bool m_directoryHasBeenSet;
+    bool m_directoryHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     Aws::String m_sha;
-    bool m_shaHasBeenSet;
+    bool m_shaHasBeenSet = false;
   };
 
 } // namespace Model

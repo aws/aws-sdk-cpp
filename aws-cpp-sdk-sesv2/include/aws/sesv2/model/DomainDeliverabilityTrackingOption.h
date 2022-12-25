@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DomainDeliverabilityTrackingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DomainDeliverabilityTrackingOption
+  class DomainDeliverabilityTrackingOption
   {
   public:
-    DomainDeliverabilityTrackingOption();
-    DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DomainDeliverabilityTrackingOption();
+    AWS_SESV2_API DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,38 +93,32 @@ namespace Model
 
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline const Aws::Utils::DateTime& GetSubscriptionStartDate() const{ return m_subscriptionStartDate; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline bool SubscriptionStartDateHasBeenSet() const { return m_subscriptionStartDateHasBeenSet; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline void SetSubscriptionStartDate(const Aws::Utils::DateTime& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = value; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline void SetSubscriptionStartDate(Aws::Utils::DateTime&& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = std::move(value); }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(const Aws::Utils::DateTime& value) { SetSubscriptionStartDate(value); return *this;}
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(Aws::Utils::DateTime&& value) { SetSubscriptionStartDate(std::move(value)); return *this;}
 
@@ -168,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::Utils::DateTime m_subscriptionStartDate;
-    bool m_subscriptionStartDateHasBeenSet;
+    bool m_subscriptionStartDateHasBeenSet = false;
 
     InboxPlacementTrackingOption m_inboxPlacementTrackingOption;
-    bool m_inboxPlacementTrackingOptionHasBeenSet;
+    bool m_inboxPlacementTrackingOptionHasBeenSet = false;
   };
 
 } // namespace Model

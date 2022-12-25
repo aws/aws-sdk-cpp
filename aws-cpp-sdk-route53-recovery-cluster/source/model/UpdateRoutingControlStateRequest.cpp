@@ -37,7 +37,7 @@ Aws::String UpdateRoutingControlStateRequest::SerializePayload() const
 
   if(m_safetyRulesToOverrideHasBeenSet)
   {
-   Array<JsonValue> safetyRulesToOverrideJsonList(m_safetyRulesToOverride.size());
+   Aws::Utils::Array<JsonValue> safetyRulesToOverrideJsonList(m_safetyRulesToOverride.size());
    for(unsigned safetyRulesToOverrideIndex = 0; safetyRulesToOverrideIndex < safetyRulesToOverrideJsonList.GetLength(); ++safetyRulesToOverrideIndex)
    {
      safetyRulesToOverrideJsonList[safetyRulesToOverrideIndex].AsString(m_safetyRulesToOverride[safetyRulesToOverrideIndex]);

@@ -44,7 +44,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("attachedChannels"))
   {
-    Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
+    Aws::Utils::Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
     for(unsigned attachedChannelsIndex = 0; attachedChannelsIndex < attachedChannelsJsonList.GetLength(); ++attachedChannelsIndex)
     {
       m_attachedChannels.push_back(attachedChannelsJsonList[attachedChannelsIndex].AsString());
@@ -53,7 +53,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -74,7 +74,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("inputDevices"))
   {
-    Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
+    Aws::Utils::Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
     for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
     {
       m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
@@ -83,7 +83,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("inputPartnerIds"))
   {
-    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    Aws::Utils::Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
     for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
     {
       m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
@@ -98,7 +98,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("mediaConnectFlows"))
   {
-    Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
+    Aws::Utils::Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
     for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
     {
       m_mediaConnectFlows.push_back(mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject());
@@ -119,7 +119,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -128,7 +128,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());

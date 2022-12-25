@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SHIELD_API CreateProtectionRequest : public ShieldRequest
+  class CreateProtectionRequest : public ShieldRequest
   {
   public:
-    CreateProtectionRequest();
+    AWS_SHIELD_API CreateProtectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateProtection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SHIELD_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SHIELD_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -105,7 +105,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -124,7 +124,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -143,7 +143,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -162,7 +162,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -181,7 +181,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -200,7 +200,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -219,7 +219,7 @@ namespace Model
      * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
      * </code> </p> </li> <li> <p>For an Amazon CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Global Accelerator accelerator:
+     * </code> </p> </li> <li> <p>For an Global Accelerator standard accelerator:
      * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
      * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
@@ -281,13 +281,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API DomainSummary
+  class DomainSummary
   {
   public:
-    DomainSummary();
-    DomainSummary(Aws::Utils::Json::JsonView jsonValue);
-    DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API DomainSummary();
+    AWS_ROUTE53DOMAINS_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     bool m_autoRenew;
-    bool m_autoRenewHasBeenSet;
+    bool m_autoRenewHasBeenSet = false;
 
     bool m_transferLock;
-    bool m_transferLockHasBeenSet;
+    bool m_transferLockHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiry;
-    bool m_expiryHasBeenSet;
+    bool m_expiryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryptionProfileConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig
+  class FieldLevelEncryptionProfileConfig
   {
   public:
-    FieldLevelEncryptionProfileConfig();
-    FieldLevelEncryptionProfileConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FieldLevelEncryptionProfileConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     EncryptionEntities m_encryptionEntities;
-    bool m_encryptionEntitiesHasBeenSet;
+    bool m_encryptionEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

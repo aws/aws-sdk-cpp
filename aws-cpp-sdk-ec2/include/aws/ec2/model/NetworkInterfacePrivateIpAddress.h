@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfacePrivateIpAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfacePrivateIpAddress
+  class NetworkInterfacePrivateIpAddress
   {
   public:
-    NetworkInterfacePrivateIpAddress();
-    NetworkInterfacePrivateIpAddress(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfacePrivateIpAddress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfacePrivateIpAddress();
+    AWS_EC2_API NetworkInterfacePrivateIpAddress(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfacePrivateIpAddress& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     NetworkInterfaceAssociation m_association;
-    bool m_associationHasBeenSet;
+    bool m_associationHasBeenSet = false;
 
     bool m_primary;
-    bool m_primaryHasBeenSet;
+    bool m_primaryHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

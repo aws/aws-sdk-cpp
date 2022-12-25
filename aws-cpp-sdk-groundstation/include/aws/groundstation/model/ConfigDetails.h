@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ConfigDetails
+  class ConfigDetails
   {
   public:
-    ConfigDetails();
-    ConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    ConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ConfigDetails();
+    AWS_GROUNDSTATION_API ConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,13 +123,13 @@ namespace Model
   private:
 
     AntennaDemodDecodeDetails m_antennaDemodDecodeDetails;
-    bool m_antennaDemodDecodeDetailsHasBeenSet;
+    bool m_antennaDemodDecodeDetailsHasBeenSet = false;
 
     EndpointDetails m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     S3RecordingDetails m_s3RecordingDetails;
-    bool m_s3RecordingDetailsHasBeenSet;
+    bool m_s3RecordingDetailsHasBeenSet = false;
   };
 
 } // namespace Model

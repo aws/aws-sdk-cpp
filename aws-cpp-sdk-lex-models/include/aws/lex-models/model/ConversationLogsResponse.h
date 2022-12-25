@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ConversationLogsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsResponse
+  class ConversationLogsResponse
   {
   public:
-    ConversationLogsResponse();
-    ConversationLogsResponse(Aws::Utils::Json::JsonView jsonValue);
-    ConversationLogsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsResponse();
+    AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API ConversationLogsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<LogSettingsResponse> m_logSettings;
-    bool m_logSettingsHasBeenSet;
+    bool m_logSettingsHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

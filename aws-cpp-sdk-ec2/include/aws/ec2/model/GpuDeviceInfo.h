@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GpuDeviceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API GpuDeviceInfo
+  class GpuDeviceInfo
   {
   public:
-    GpuDeviceInfo();
-    GpuDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GpuDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuDeviceInfo();
+    AWS_EC2_API GpuDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API GpuDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -177,16 +177,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_manufacturer;
-    bool m_manufacturerHasBeenSet;
+    bool m_manufacturerHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     GpuDeviceMemoryInfo m_memoryInfo;
-    bool m_memoryInfoHasBeenSet;
+    bool m_memoryInfoHasBeenSet = false;
   };
 
 } // namespace Model

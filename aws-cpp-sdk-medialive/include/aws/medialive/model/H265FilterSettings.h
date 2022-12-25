@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H265FilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H265FilterSettings
+  class H265FilterSettings
   {
   public:
-    H265FilterSettings();
-    H265FilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    H265FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H265FilterSettings();
+    AWS_MEDIALIVE_API H265FilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H265FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     TemporalFilterSettings m_temporalFilterSettings;
-    bool m_temporalFilterSettingsHasBeenSet;
+    bool m_temporalFilterSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageScanningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageScanningConfiguration
+  class ImageScanningConfiguration
   {
   public:
-    ImageScanningConfiguration();
-    ImageScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ImageScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageScanningConfiguration();
+    AWS_ECR_API ImageScanningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageScanningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     bool m_scanOnPush;
-    bool m_scanOnPushHasBeenSet;
+    bool m_scanOnPushHasBeenSet = false;
   };
 
 } // namespace Model

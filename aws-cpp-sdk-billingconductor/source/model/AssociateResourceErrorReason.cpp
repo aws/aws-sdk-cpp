@@ -24,6 +24,7 @@ namespace Aws
         static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SERVICE_LIMIT_EXCEEDED");
         static const int ILLEGAL_CUSTOMLINEITEM_HASH = HashingUtils::HashString("ILLEGAL_CUSTOMLINEITEM");
         static const int INTERNAL_SERVER_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
+        static const int INVALID_BILLING_PERIOD_RANGE_HASH = HashingUtils::HashString("INVALID_BILLING_PERIOD_RANGE");
 
 
         AssociateResourceErrorReason GetAssociateResourceErrorReasonForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == INTERNAL_SERVER_EXCEPTION_HASH)
           {
             return AssociateResourceErrorReason::INTERNAL_SERVER_EXCEPTION;
+          }
+          else if (hashCode == INVALID_BILLING_PERIOD_RANGE_HASH)
+          {
+            return AssociateResourceErrorReason::INVALID_BILLING_PERIOD_RANGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "ILLEGAL_CUSTOMLINEITEM";
           case AssociateResourceErrorReason::INTERNAL_SERVER_EXCEPTION:
             return "INTERNAL_SERVER_EXCEPTION";
+          case AssociateResourceErrorReason::INVALID_BILLING_PERIOD_RANGE:
+            return "INVALID_BILLING_PERIOD_RANGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

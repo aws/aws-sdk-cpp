@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomConnectorProfileProperties
+  class CustomConnectorProfileProperties
   {
   public:
-    CustomConnectorProfileProperties();
-    CustomConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    CustomConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomConnectorProfileProperties();
+    AWS_APPFLOW_API CustomConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_profileProperties;
-    bool m_profilePropertiesHasBeenSet;
+    bool m_profilePropertiesHasBeenSet = false;
 
     OAuth2Properties m_oAuth2Properties;
-    bool m_oAuth2PropertiesHasBeenSet;
+    bool m_oAuth2PropertiesHasBeenSet = false;
   };
 
 } // namespace Model

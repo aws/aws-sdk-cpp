@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportAssetsToS3RequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails
+  class ExportAssetsToS3RequestDetails
   {
   public:
-    ExportAssetsToS3RequestDetails();
-    ExportAssetsToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExportAssetsToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails();
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -205,16 +205,16 @@ namespace Model
   private:
 
     Aws::Vector<AssetDestinationEntry> m_assetDestinations;
-    bool m_assetDestinationsHasBeenSet;
+    bool m_assetDestinationsHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     ExportServerSideEncryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyType">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PropertyType
+  class PropertyType
   {
   public:
-    PropertyType();
-    PropertyType(Aws::Utils::Json::JsonView jsonValue);
-    PropertyType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PropertyType();
+    AWS_IOTSITEWISE_API PropertyType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PropertyType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Attribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Measurement m_measurement;
-    bool m_measurementHasBeenSet;
+    bool m_measurementHasBeenSet = false;
 
     Transform m_transform;
-    bool m_transformHasBeenSet;
+    bool m_transformHasBeenSet = false;
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
   };
 
 } // namespace Model

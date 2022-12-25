@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API KernelSpec
+  class KernelSpec
   {
   public:
-    KernelSpec();
-    KernelSpec(Aws::Utils::Json::JsonView jsonValue);
-    KernelSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API KernelSpec();
+    AWS_SAGEMAKER_API KernelSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API KernelSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

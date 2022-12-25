@@ -22,72 +22,91 @@ namespace Model
 {
 
   /**
-   * Contains information about provisioned throughput for EBS storage volumes
-   * attached to kafka broker nodes.<p><h3>See Also:</h3>   <a
+   * 
+            <p>Contains information about provisioned throughput for EBS
+   * storage volumes attached to kafka broker nodes.</p>
+         <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ProvisionedThroughput">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ProvisionedThroughput
+  class ProvisionedThroughput
   {
   public:
-    ProvisionedThroughput();
-    ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ProvisionedThroughput();
+    AWS_KAFKA_API ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Provisioned throughput is enabled or not.
+     * 
+            <p>Provisioned throughput is enabled or not.</p>
+         
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * Provisioned throughput is enabled or not.
+     * 
+            <p>Provisioned throughput is enabled or not.</p>
+         
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * Provisioned throughput is enabled or not.
+     * 
+            <p>Provisioned throughput is enabled or not.</p>
+         
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * Provisioned throughput is enabled or not.
+     * 
+            <p>Provisioned throughput is enabled or not.</p>
+         
      */
     inline ProvisionedThroughput& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * Throughput value of the EBS volumes for the data drive on each kafka broker node
-     * in MiB per second.
+     * 
+            <p>Throughput value of the EBS volumes for the data drive on each
+     * kafka broker node in MiB per second.</p>
+         
      */
     inline int GetVolumeThroughput() const{ return m_volumeThroughput; }
 
     /**
-     * Throughput value of the EBS volumes for the data drive on each kafka broker node
-     * in MiB per second.
+     * 
+            <p>Throughput value of the EBS volumes for the data drive on each
+     * kafka broker node in MiB per second.</p>
+         
      */
     inline bool VolumeThroughputHasBeenSet() const { return m_volumeThroughputHasBeenSet; }
 
     /**
-     * Throughput value of the EBS volumes for the data drive on each kafka broker node
-     * in MiB per second.
+     * 
+            <p>Throughput value of the EBS volumes for the data drive on each
+     * kafka broker node in MiB per second.</p>
+         
      */
     inline void SetVolumeThroughput(int value) { m_volumeThroughputHasBeenSet = true; m_volumeThroughput = value; }
 
     /**
-     * Throughput value of the EBS volumes for the data drive on each kafka broker node
-     * in MiB per second.
+     * 
+            <p>Throughput value of the EBS volumes for the data drive on each
+     * kafka broker node in MiB per second.</p>
+         
      */
     inline ProvisionedThroughput& WithVolumeThroughput(int value) { SetVolumeThroughput(value); return *this;}
 
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_volumeThroughput;
-    bool m_volumeThroughputHasBeenSet;
+    bool m_volumeThroughputHasBeenSet = false;
   };
 
 } // namespace Model

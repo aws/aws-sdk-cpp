@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductPlanDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisionedProductPlanDetails
+  class ProvisionedProductPlanDetails
   {
   public:
-    ProvisionedProductPlanDetails();
-    ProvisionedProductPlanDetails(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedProductPlanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails();
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisionedProductPlanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -440,32 +440,32 @@ namespace Model
 
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(const Aws::Utils::DateTime& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = value; }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline void SetUpdatedTime(Aws::Utils::DateTime&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::move(value); }
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(const Aws::Utils::DateTime& value) { SetUpdatedTime(value); return *this;}
 
     /**
-     * <p>The time when the plan was last updated.</p>
+     * <p>The UTC time stamp when the plan was last updated.</p>
      */
     inline ProvisionedProductPlanDetails& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 
@@ -658,49 +658,49 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_planName;
-    bool m_planNameHasBeenSet;
+    bool m_planNameHasBeenSet = false;
 
     Aws::String m_planId;
-    bool m_planIdHasBeenSet;
+    bool m_planIdHasBeenSet = false;
 
     Aws::String m_provisionProductId;
-    bool m_provisionProductIdHasBeenSet;
+    bool m_provisionProductIdHasBeenSet = false;
 
     Aws::String m_provisionProductName;
-    bool m_provisionProductNameHasBeenSet;
+    bool m_provisionProductNameHasBeenSet = false;
 
     ProvisionedProductPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     ProvisionedProductPlanStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationArns;
-    bool m_notificationArnsHasBeenSet;
+    bool m_notificationArnsHasBeenSet = false;
 
     Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

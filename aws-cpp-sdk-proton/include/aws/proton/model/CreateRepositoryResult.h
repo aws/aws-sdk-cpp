@@ -24,36 +24,36 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API CreateRepositoryResult
+  class CreateRepositoryResult
   {
   public:
-    CreateRepositoryResult();
-    CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CreateRepositoryResult();
+    AWS_PROTON_API CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The repository detail data that's returned by Proton.</p>
+     * <p>The repository link's detail data that's returned by Proton.</p>
      */
     inline const Repository& GetRepository() const{ return m_repository; }
 
     /**
-     * <p>The repository detail data that's returned by Proton.</p>
+     * <p>The repository link's detail data that's returned by Proton.</p>
      */
     inline void SetRepository(const Repository& value) { m_repository = value; }
 
     /**
-     * <p>The repository detail data that's returned by Proton.</p>
+     * <p>The repository link's detail data that's returned by Proton.</p>
      */
     inline void SetRepository(Repository&& value) { m_repository = std::move(value); }
 
     /**
-     * <p>The repository detail data that's returned by Proton.</p>
+     * <p>The repository link's detail data that's returned by Proton.</p>
      */
     inline CreateRepositoryResult& WithRepository(const Repository& value) { SetRepository(value); return *this;}
 
     /**
-     * <p>The repository detail data that's returned by Proton.</p>
+     * <p>The repository link's detail data that's returned by Proton.</p>
      */
     inline CreateRepositoryResult& WithRepository(Repository&& value) { SetRepository(std::move(value)); return *this;}
 

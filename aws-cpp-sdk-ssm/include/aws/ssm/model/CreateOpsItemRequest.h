@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API CreateOpsItemRequest : public SSMRequest
+  class CreateOpsItemRequest : public SSMRequest
   {
   public:
-    CreateOpsItemRequest();
+    AWS_SSM_API CreateOpsItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOpsItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -83,50 +83,90 @@ namespace Model
 
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline const Aws::String& GetOpsItemType() const{ return m_opsItemType; }
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline bool OpsItemTypeHasBeenSet() const { return m_opsItemTypeHasBeenSet; }
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const Aws::String& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = value; }
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(Aws::String&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::move(value); }
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const char* value) { m_opsItemTypeHasBeenSet = true; m_opsItemType.assign(value); }
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(const Aws::String& value) { SetOpsItemType(value); return *this;}
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(Aws::String&& value) { SetOpsItemType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of OpsItem to create. Currently, the only valid values are
-     * <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+     * <p>The type of OpsItem to create. Systems Manager supports the following types
+     * of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of
+     * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
+     * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
+     * Manager for reviewing and approving or rejecting change requests. </p> </li>
+     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(const char* value) { SetOpsItemType(value); return *this;}
 
@@ -1031,52 +1071,136 @@ namespace Model
      */
     inline CreateOpsItemRequest& WithPlannedEndTime(Aws::Utils::DateTime&& value) { SetPlannedEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline CreateOpsItemRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline CreateOpsItemRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The target Amazon Web Services account where you want to create an OpsItem.
+     * To make this call, your account must be configured to work with OpsItems across
+     * accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+     * up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
+     */
+    inline CreateOpsItemRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_opsItemType;
-    bool m_opsItemTypeHasBeenSet;
+    bool m_opsItemTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
-    bool m_operationalDataHasBeenSet;
+    bool m_operationalDataHasBeenSet = false;
 
     Aws::Vector<OpsItemNotification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<RelatedOpsItem> m_relatedOpsItems;
-    bool m_relatedOpsItemsHasBeenSet;
+    bool m_relatedOpsItemsHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_category;
-    bool m_categoryHasBeenSet;
+    bool m_categoryHasBeenSet = false;
 
     Aws::String m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualStartTime;
-    bool m_actualStartTimeHasBeenSet;
+    bool m_actualStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_actualEndTime;
-    bool m_actualEndTimeHasBeenSet;
+    bool m_actualEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedStartTime;
-    bool m_plannedStartTimeHasBeenSet;
+    bool m_plannedStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_plannedEndTime;
-    bool m_plannedEndTimeHasBeenSet;
+    bool m_plannedEndTimeHasBeenSet = false;
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

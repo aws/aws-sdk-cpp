@@ -30,7 +30,7 @@ SearchInsightsResult& SearchInsightsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProactiveInsights"))
   {
-    Array<JsonView> proactiveInsightsJsonList = jsonValue.GetArray("ProactiveInsights");
+    Aws::Utils::Array<JsonView> proactiveInsightsJsonList = jsonValue.GetArray("ProactiveInsights");
     for(unsigned proactiveInsightsIndex = 0; proactiveInsightsIndex < proactiveInsightsJsonList.GetLength(); ++proactiveInsightsIndex)
     {
       m_proactiveInsights.push_back(proactiveInsightsJsonList[proactiveInsightsIndex].AsObject());
@@ -39,7 +39,7 @@ SearchInsightsResult& SearchInsightsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("ReactiveInsights"))
   {
-    Array<JsonView> reactiveInsightsJsonList = jsonValue.GetArray("ReactiveInsights");
+    Aws::Utils::Array<JsonView> reactiveInsightsJsonList = jsonValue.GetArray("ReactiveInsights");
     for(unsigned reactiveInsightsIndex = 0; reactiveInsightsIndex < reactiveInsightsJsonList.GetLength(); ++reactiveInsightsIndex)
     {
       m_reactiveInsights.push_back(reactiveInsightsJsonList[reactiveInsightsIndex].AsObject());

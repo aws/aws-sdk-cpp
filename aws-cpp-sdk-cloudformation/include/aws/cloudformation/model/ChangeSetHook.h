@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ChangeSetHook">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ChangeSetHook
+  class ChangeSetHook
   {
   public:
-    ChangeSetHook();
-    ChangeSetHook(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ChangeSetHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ChangeSetHook();
+    AWS_CLOUDFORMATION_API ChangeSetHook(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ChangeSetHook& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -343,22 +343,22 @@ namespace Model
   private:
 
     HookInvocationPoint m_invocationPoint;
-    bool m_invocationPointHasBeenSet;
+    bool m_invocationPointHasBeenSet = false;
 
     HookFailureMode m_failureMode;
-    bool m_failureModeHasBeenSet;
+    bool m_failureModeHasBeenSet = false;
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_typeVersionId;
-    bool m_typeVersionIdHasBeenSet;
+    bool m_typeVersionIdHasBeenSet = false;
 
     Aws::String m_typeConfigurationVersionId;
-    bool m_typeConfigurationVersionIdHasBeenSet;
+    bool m_typeConfigurationVersionIdHasBeenSet = false;
 
     ChangeSetHookTargetDetails m_targetDetails;
-    bool m_targetDetailsHasBeenSet;
+    bool m_targetDetailsHasBeenSet = false;
   };
 
 } // namespace Model

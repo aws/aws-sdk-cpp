@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ParameterDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition
+  class ParameterDefinition
   {
   public:
-    ParameterDefinition();
-    ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -847,43 +847,43 @@ namespace Model
   private:
 
     Aws::String m_allowedPattern;
-    bool m_allowedPatternHasBeenSet;
+    bool m_allowedPatternHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedValues;
-    bool m_allowedValuesHasBeenSet;
+    bool m_allowedValuesHasBeenSet = false;
 
     Aws::String m_constraintDescription;
-    bool m_constraintDescriptionHasBeenSet;
+    bool m_constraintDescriptionHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_maxLength;
-    bool m_maxLengthHasBeenSet;
+    bool m_maxLengthHasBeenSet = false;
 
     int m_maxValue;
-    bool m_maxValueHasBeenSet;
+    bool m_maxValueHasBeenSet = false;
 
     int m_minLength;
-    bool m_minLengthHasBeenSet;
+    bool m_minLengthHasBeenSet = false;
 
     int m_minValue;
-    bool m_minValueHasBeenSet;
+    bool m_minValueHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_noEcho;
-    bool m_noEchoHasBeenSet;
+    bool m_noEchoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_referencedByResources;
-    bool m_referencedByResourcesHasBeenSet;
+    bool m_referencedByResourcesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

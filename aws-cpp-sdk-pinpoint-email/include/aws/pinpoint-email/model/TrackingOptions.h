@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TrackingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API TrackingOptions
+  class TrackingOptions
   {
   public:
-    TrackingOptions();
-    TrackingOptions(Aws::Utils::Json::JsonView jsonValue);
-    TrackingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API TrackingOptions();
+    AWS_PINPOINTEMAIL_API TrackingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API TrackingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::String m_customRedirectDomain;
-    bool m_customRedirectDomainHasBeenSet;
+    bool m_customRedirectDomainHasBeenSet = false;
   };
 
 } // namespace Model

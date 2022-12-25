@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DestinationConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DestinationConnectorProperties
+  class DestinationConnectorProperties
   {
   public:
-    DestinationConnectorProperties();
-    DestinationConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DestinationConnectorProperties();
+    AWS_APPFLOW_API DestinationConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DestinationConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -455,43 +455,43 @@ namespace Model
   private:
 
     RedshiftDestinationProperties m_redshift;
-    bool m_redshiftHasBeenSet;
+    bool m_redshiftHasBeenSet = false;
 
     S3DestinationProperties m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceDestinationProperties m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     SnowflakeDestinationProperties m_snowflake;
-    bool m_snowflakeHasBeenSet;
+    bool m_snowflakeHasBeenSet = false;
 
     EventBridgeDestinationProperties m_eventBridge;
-    bool m_eventBridgeHasBeenSet;
+    bool m_eventBridgeHasBeenSet = false;
 
     LookoutMetricsDestinationProperties m_lookoutMetrics;
-    bool m_lookoutMetricsHasBeenSet;
+    bool m_lookoutMetricsHasBeenSet = false;
 
     UpsolverDestinationProperties m_upsolver;
-    bool m_upsolverHasBeenSet;
+    bool m_upsolverHasBeenSet = false;
 
     HoneycodeDestinationProperties m_honeycode;
-    bool m_honeycodeHasBeenSet;
+    bool m_honeycodeHasBeenSet = false;
 
     CustomerProfilesDestinationProperties m_customerProfiles;
-    bool m_customerProfilesHasBeenSet;
+    bool m_customerProfilesHasBeenSet = false;
 
     ZendeskDestinationProperties m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     MarketoDestinationProperties m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     CustomConnectorDestinationProperties m_customConnector;
-    bool m_customConnectorHasBeenSet;
+    bool m_customConnectorHasBeenSet = false;
 
     SAPODataDestinationProperties m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
   };
 
 } // namespace Model

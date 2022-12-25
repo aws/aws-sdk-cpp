@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PROTON_API GetEnvironmentTemplateVersionRequest : public ProtonRequest
+  class GetEnvironmentTemplateVersionRequest : public ProtonRequest
   {
   public:
-    GetEnvironmentTemplateVersionRequest();
+    AWS_PROTON_API GetEnvironmentTemplateVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetEnvironmentTemplateVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROTON_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -134,62 +134,62 @@ namespace Model
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline GetEnvironmentTemplateVersionRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline GetEnvironmentTemplateVersionRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the environment template a version of which you want to get
-     * detailed data for..</p>
+     * detailed data for.</p>
      */
     inline GetEnvironmentTemplateVersionRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
   private:
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

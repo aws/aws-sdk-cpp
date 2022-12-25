@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AmiAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AmiAggregationResponse
+  class AmiAggregationResponse
   {
   public:
-    AmiAggregationResponse();
-    AmiAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    AmiAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AmiAggregationResponse();
+    AWS_INSPECTOR2_API AmiAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AmiAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline AmiAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline AmiAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that the AMI belongs.</p>
+     * <p>The Amazon Web Services account ID for the AMI.</p>
      */
     inline AmiAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -175,16 +175,16 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     long long m_affectedInstances;
-    bool m_affectedInstancesHasBeenSet;
+    bool m_affectedInstancesHasBeenSet = false;
 
     Aws::String m_ami;
-    bool m_amiHasBeenSet;
+    bool m_amiHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

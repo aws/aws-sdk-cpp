@@ -5,83 +5,16 @@
 
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
-#include <aws/lex/LexRuntimeServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/lex/model/DeleteSessionResult.h>
-#include <aws/lex/model/GetSessionResult.h>
-#include <aws/lex/model/PostContentResult.h>
-#include <aws/lex/model/PostTextResult.h>
-#include <aws/lex/model/PutSessionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/lex/LexRuntimeServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LexRuntimeService
 {
-
-namespace Model
-{
-        class DeleteSessionRequest;
-        class GetSessionRequest;
-        class PostContentRequest;
-        class PostTextRequest;
-        class PutSessionRequest;
-
-        typedef Aws::Utils::Outcome<DeleteSessionResult, LexRuntimeServiceError> DeleteSessionOutcome;
-        typedef Aws::Utils::Outcome<GetSessionResult, LexRuntimeServiceError> GetSessionOutcome;
-        typedef Aws::Utils::Outcome<PostContentResult, LexRuntimeServiceError> PostContentOutcome;
-        typedef Aws::Utils::Outcome<PostTextResult, LexRuntimeServiceError> PostTextOutcome;
-        typedef Aws::Utils::Outcome<PutSessionResult, LexRuntimeServiceError> PutSessionOutcome;
-
-        typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
-        typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
-        typedef std::future<PostContentOutcome> PostContentOutcomeCallable;
-        typedef std::future<PostTextOutcome> PostTextOutcomeCallable;
-        typedef std::future<PutSessionOutcome> PutSessionOutcomeCallable;
-} // namespace Model
-
-  class LexRuntimeServiceClient;
-
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostContentRequest&, Model::PostContentOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostContentResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PostTextRequest&, const Model::PostTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostTextResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeServiceClient*, const Model::PutSessionRequest&, Model::PutSessionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
-
   /**
    * <p>Amazon Lex provides both build and runtime endpoints. Each endpoint provides
    * a set of operations (API). Your conversational bot uses the runtime API to
@@ -95,32 +28,60 @@ namespace Model
    * and manage your Amazon Lex bot. For a list of build-time operations, see the
    * build-time API, . </p>
    */
-  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeServiceClient(const Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration = Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration(),
+                                std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration = Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexRuntimeServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeServiceEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration& clientConfiguration = Aws::LexRuntimeService::LexRuntimeServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LexRuntimeServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LexRuntimeServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LexRuntimeServiceClient();
-
 
         /**
          * <p>Removes session information for a specified bot, alias, and user ID.
@@ -288,17 +249,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteSessionAsyncHelper(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSessionAsyncHelper(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostContentAsyncHelper(const Model::PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostTextAsyncHelper(const Model::PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSessionAsyncHelper(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>;
+      void init(const LexRuntimeServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      LexRuntimeServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LexRuntimeServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LexRuntimeService

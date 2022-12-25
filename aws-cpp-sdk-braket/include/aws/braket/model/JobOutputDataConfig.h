@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobOutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API JobOutputDataConfig
+  class JobOutputDataConfig
   {
   public:
-    JobOutputDataConfig();
-    JobOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    JobOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API JobOutputDataConfig();
+    AWS_BRAKET_API JobOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API JobOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_s3Path;
-    bool m_s3PathHasBeenSet;
+    bool m_s3PathHasBeenSet = false;
   };
 
 } // namespace Model

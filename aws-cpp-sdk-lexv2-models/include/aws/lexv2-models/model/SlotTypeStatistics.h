@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotTypeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotTypeStatistics
+  class SlotTypeStatistics
   {
   public:
-    SlotTypeStatistics();
-    SlotTypeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    SlotTypeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotTypeStatistics();
+    AWS_LEXMODELSV2_API SlotTypeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotTypeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_discoveredSlotTypeCount;
-    bool m_discoveredSlotTypeCountHasBeenSet;
+    bool m_discoveredSlotTypeCountHasBeenSet = false;
   };
 
 } // namespace Model

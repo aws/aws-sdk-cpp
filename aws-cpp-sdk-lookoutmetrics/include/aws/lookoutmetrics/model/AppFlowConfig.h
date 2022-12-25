@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AppFlowConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AppFlowConfig
+  class AppFlowConfig
   {
   public:
-    AppFlowConfig();
-    AppFlowConfig(Aws::Utils::Json::JsonView jsonValue);
-    AppFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AppFlowConfig();
+    AWS_LOOKOUTMETRICS_API AppFlowConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AppFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
   };
 
 } // namespace Model

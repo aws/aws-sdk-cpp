@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataRequest : public AutoScalingPlansRequest
+  class GetScalingPlanResourceForecastDataRequest : public AutoScalingPlansRequest
   {
   public:
-    GetScalingPlanResourceForecastDataRequest();
+    AWS_AUTOSCALINGPLANS_API GetScalingPlanResourceForecastDataRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetScalingPlanResourceForecastData"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUTOSCALINGPLANS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_AUTOSCALINGPLANS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -414,28 +414,28 @@ namespace Model
   private:
 
     Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet;
+    bool m_scalingPlanNameHasBeenSet = false;
 
     long long m_scalingPlanVersion;
-    bool m_scalingPlanVersionHasBeenSet;
+    bool m_scalingPlanVersionHasBeenSet = false;
 
     ServiceNamespace m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ScalableDimension m_scalableDimension;
-    bool m_scalableDimensionHasBeenSet;
+    bool m_scalableDimensionHasBeenSet = false;
 
     ForecastDataType m_forecastDataType;
-    bool m_forecastDataTypeHasBeenSet;
+    bool m_forecastDataTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

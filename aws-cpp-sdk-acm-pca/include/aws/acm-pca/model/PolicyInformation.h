@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PolicyInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API PolicyInformation
+  class PolicyInformation
   {
   public:
-    PolicyInformation();
-    PolicyInformation(Aws::Utils::Json::JsonView jsonValue);
-    PolicyInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API PolicyInformation();
+    AWS_ACMPCA_API PolicyInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API PolicyInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_certPolicyId;
-    bool m_certPolicyIdHasBeenSet;
+    bool m_certPolicyIdHasBeenSet = false;
 
     Aws::Vector<PolicyQualifierInfo> m_policyQualifiers;
-    bool m_policyQualifiersHasBeenSet;
+    bool m_policyQualifiersHasBeenSet = false;
   };
 
 } // namespace Model

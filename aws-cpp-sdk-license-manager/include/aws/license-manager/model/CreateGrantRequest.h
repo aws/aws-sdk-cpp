@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LICENSEMANAGER_API CreateGrantRequest : public LicenseManagerRequest
+  class CreateGrantRequest : public LicenseManagerRequest
   {
   public:
-    CreateGrantRequest();
+    AWS_LICENSEMANAGER_API CreateGrantRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateGrant"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LICENSEMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -168,47 +168,56 @@ namespace Model
 
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The grant principals.</p>
+     * <p>The grant principals. This value should be specified as an Amazon Resource
+     * Name (ARN).</p>
      */
     inline CreateGrantRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
@@ -297,22 +306,22 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_grantName;
-    bool m_grantNameHasBeenSet;
+    bool m_grantNameHasBeenSet = false;
 
     Aws::String m_licenseArn;
-    bool m_licenseArnHasBeenSet;
+    bool m_licenseArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
-    bool m_allowedOperationsHasBeenSet;
+    bool m_allowedOperationsHasBeenSet = false;
   };
 
 } // namespace Model

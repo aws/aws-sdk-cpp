@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RDS_API ModifyDBProxyTargetGroupRequest : public RDSRequest
+  class ModifyDBProxyTargetGroupRequest : public RDSRequest
   {
   public:
-    ModifyDBProxyTargetGroupRequest();
+    AWS_RDS_API ModifyDBProxyTargetGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,91 +30,91 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyDBProxyTargetGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new target group to assign to the proxy.</p>
+     * <p>The name of the target group to modify.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new proxy to which to assign the target group.</p>
+     * <p>The name of the proxy.</p>
      */
     inline ModifyDBProxyTargetGroupRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 
@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_targetGroupName;
-    bool m_targetGroupNameHasBeenSet;
+    bool m_targetGroupNameHasBeenSet = false;
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     ConnectionPoolConfiguration m_connectionPoolConfig;
-    bool m_connectionPoolConfigHasBeenSet;
+    bool m_connectionPoolConfigHasBeenSet = false;
 
     Aws::String m_newName;
-    bool m_newNameHasBeenSet;
+    bool m_newNameHasBeenSet = false;
   };
 
 } // namespace Model

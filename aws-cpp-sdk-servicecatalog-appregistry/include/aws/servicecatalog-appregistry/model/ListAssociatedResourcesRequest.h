@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPREGISTRY_API ListAssociatedResourcesRequest : public AppRegistryRequest
+  class ListAssociatedResourcesRequest : public AppRegistryRequest
   {
   public:
-    ListAssociatedResourcesRequest();
+    AWS_APPREGISTRY_API ListAssociatedResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAssociatedResources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPREGISTRY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_application;
-    bool m_applicationHasBeenSet;
+    bool m_applicationHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

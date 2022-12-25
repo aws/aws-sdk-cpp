@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CodeRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API CodeRepository
+  class CodeRepository
   {
   public:
-    CodeRepository();
-    CodeRepository(Aws::Utils::Json::JsonView jsonValue);
-    CodeRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API CodeRepository();
+    AWS_APPRUNNER_API CodeRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API CodeRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_repositoryUrl;
-    bool m_repositoryUrlHasBeenSet;
+    bool m_repositoryUrlHasBeenSet = false;
 
     SourceCodeVersion m_sourceCodeVersion;
-    bool m_sourceCodeVersionHasBeenSet;
+    bool m_sourceCodeVersionHasBeenSet = false;
 
     CodeConfiguration m_codeConfiguration;
-    bool m_codeConfigurationHasBeenSet;
+    bool m_codeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

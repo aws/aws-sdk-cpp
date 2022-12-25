@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACES_API RebootWorkspacesRequest : public WorkSpacesRequest
+  class RebootWorkspacesRequest : public WorkSpacesRequest
   {
   public:
-    RebootWorkspacesRequest();
+    AWS_WORKSPACES_API RebootWorkspacesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RebootWorkspaces"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACES_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::Vector<RebootRequest> m_rebootWorkspaceRequests;
-    bool m_rebootWorkspaceRequestsHasBeenSet;
+    bool m_rebootWorkspaceRequestsHasBeenSet = false;
   };
 
 } // namespace Model

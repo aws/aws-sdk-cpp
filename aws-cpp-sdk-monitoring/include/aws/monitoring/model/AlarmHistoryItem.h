@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/AlarmHistoryItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API AlarmHistoryItem
+  class AlarmHistoryItem
   {
   public:
-    AlarmHistoryItem();
-    AlarmHistoryItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AlarmHistoryItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AlarmHistoryItem();
+    AWS_CLOUDWATCH_API AlarmHistoryItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API AlarmHistoryItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -260,22 +260,22 @@ namespace Model
   private:
 
     Aws::String m_alarmName;
-    bool m_alarmNameHasBeenSet;
+    bool m_alarmNameHasBeenSet = false;
 
     AlarmType m_alarmType;
-    bool m_alarmTypeHasBeenSet;
+    bool m_alarmTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     HistoryItemType m_historyItemType;
-    bool m_historyItemTypeHasBeenSet;
+    bool m_historyItemTypeHasBeenSet = false;
 
     Aws::String m_historySummary;
-    bool m_historySummaryHasBeenSet;
+    bool m_historySummaryHasBeenSet = false;
 
     Aws::String m_historyData;
-    bool m_historyDataHasBeenSet;
+    bool m_historyDataHasBeenSet = false;
   };
 
 } // namespace Model

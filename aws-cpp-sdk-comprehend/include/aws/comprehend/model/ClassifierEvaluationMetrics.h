@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifierEvaluationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API ClassifierEvaluationMetrics
+  class ClassifierEvaluationMetrics
   {
   public:
-    ClassifierEvaluationMetrics();
-    ClassifierEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
-    ClassifierEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API ClassifierEvaluationMetrics();
+    AWS_COMPREHEND_API ClassifierEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API ClassifierEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -298,28 +298,28 @@ namespace Model
   private:
 
     double m_accuracy;
-    bool m_accuracyHasBeenSet;
+    bool m_accuracyHasBeenSet = false;
 
     double m_precision;
-    bool m_precisionHasBeenSet;
+    bool m_precisionHasBeenSet = false;
 
     double m_recall;
-    bool m_recallHasBeenSet;
+    bool m_recallHasBeenSet = false;
 
     double m_f1Score;
-    bool m_f1ScoreHasBeenSet;
+    bool m_f1ScoreHasBeenSet = false;
 
     double m_microPrecision;
-    bool m_microPrecisionHasBeenSet;
+    bool m_microPrecisionHasBeenSet = false;
 
     double m_microRecall;
-    bool m_microRecallHasBeenSet;
+    bool m_microRecallHasBeenSet = false;
 
     double m_microF1Score;
-    bool m_microF1ScoreHasBeenSet;
+    bool m_microF1ScoreHasBeenSet = false;
 
     double m_hammingLoss;
-    bool m_hammingLossHasBeenSet;
+    bool m_hammingLossHasBeenSet = false;
   };
 
 } // namespace Model

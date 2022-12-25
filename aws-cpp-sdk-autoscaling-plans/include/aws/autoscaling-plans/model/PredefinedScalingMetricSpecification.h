@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/PredefinedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification
+  class PredefinedScalingMetricSpecification
   {
   public:
-    PredefinedScalingMetricSpecification();
-    PredefinedScalingMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PredefinedScalingMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API PredefinedScalingMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,10 +255,10 @@ namespace Model
   private:
 
     ScalingMetricType m_predefinedScalingMetricType;
-    bool m_predefinedScalingMetricTypeHasBeenSet;
+    bool m_predefinedScalingMetricTypeHasBeenSet = false;
 
     Aws::String m_resourceLabel;
-    bool m_resourceLabelHasBeenSet;
+    bool m_resourceLabelHasBeenSet = false;
   };
 
 } // namespace Model

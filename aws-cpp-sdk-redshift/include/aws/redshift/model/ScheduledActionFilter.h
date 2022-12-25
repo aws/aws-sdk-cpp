@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ScheduledActionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ScheduledActionFilter
+  class ScheduledActionFilter
   {
   public:
-    ScheduledActionFilter();
-    ScheduledActionFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledActionFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ScheduledActionFilter();
+    AWS_REDSHIFT_API ScheduledActionFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ScheduledActionFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     ScheduledActionFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

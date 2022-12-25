@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API CreateTopicRuleDestinationRequest : public IoTRequest
+  class CreateTopicRuleDestinationRequest : public IoTRequest
   {
   public:
-    CreateTopicRuleDestinationRequest();
+    AWS_IOT_API CreateTopicRuleDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTopicRuleDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     TopicRuleDestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet;
+    bool m_destinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

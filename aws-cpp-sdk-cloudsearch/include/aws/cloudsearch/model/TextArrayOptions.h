@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/TextArrayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API TextArrayOptions
+  class TextArrayOptions
   {
   public:
-    TextArrayOptions();
-    TextArrayOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TextArrayOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API TextArrayOptions();
+    AWS_CLOUDSEARCH_API TextArrayOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API TextArrayOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceFields;
-    bool m_sourceFieldsHasBeenSet;
+    bool m_sourceFieldsHasBeenSet = false;
 
     bool m_returnEnabled;
-    bool m_returnEnabledHasBeenSet;
+    bool m_returnEnabledHasBeenSet = false;
 
     bool m_highlightEnabled;
-    bool m_highlightEnabledHasBeenSet;
+    bool m_highlightEnabledHasBeenSet = false;
 
     Aws::String m_analysisScheme;
-    bool m_analysisSchemeHasBeenSet;
+    bool m_analysisSchemeHasBeenSet = false;
   };
 
 } // namespace Model

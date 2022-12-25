@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DefinitionInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API DefinitionInformation
+  class DefinitionInformation
   {
   public:
-    DefinitionInformation();
-    DefinitionInformation(Aws::Utils::Json::JsonView jsonValue);
-    DefinitionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API DefinitionInformation();
+    AWS_GREENGRASS_API DefinitionInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API DefinitionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -393,28 +393,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lastUpdatedTimestamp;
-    bool m_lastUpdatedTimestampHasBeenSet;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_latestVersion;
-    bool m_latestVersionHasBeenSet;
+    bool m_latestVersionHasBeenSet = false;
 
     Aws::String m_latestVersionArn;
-    bool m_latestVersionArnHasBeenSet;
+    bool m_latestVersionArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

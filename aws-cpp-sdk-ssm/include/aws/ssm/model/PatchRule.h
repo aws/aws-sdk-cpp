@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchRule">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API PatchRule
+  class PatchRule
   {
   public:
-    PatchRule();
-    PatchRule(Aws::Utils::Json::JsonView jsonValue);
-    PatchRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchRule();
+    AWS_SSM_API PatchRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -234,19 +234,19 @@ namespace Model
   private:
 
     PatchFilterGroup m_patchFilterGroup;
-    bool m_patchFilterGroupHasBeenSet;
+    bool m_patchFilterGroupHasBeenSet = false;
 
     PatchComplianceLevel m_complianceLevel;
-    bool m_complianceLevelHasBeenSet;
+    bool m_complianceLevelHasBeenSet = false;
 
     int m_approveAfterDays;
-    bool m_approveAfterDaysHasBeenSet;
+    bool m_approveAfterDaysHasBeenSet = false;
 
     Aws::String m_approveUntilDate;
-    bool m_approveUntilDateHasBeenSet;
+    bool m_approveUntilDateHasBeenSet = false;
 
     bool m_enableNonSecurity;
-    bool m_enableNonSecurityHasBeenSet;
+    bool m_enableNonSecurityHasBeenSet = false;
   };
 
 } // namespace Model

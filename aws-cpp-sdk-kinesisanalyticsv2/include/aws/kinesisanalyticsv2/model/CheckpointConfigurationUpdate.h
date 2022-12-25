@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate
+  class CheckpointConfigurationUpdate
   {
   public:
-    CheckpointConfigurationUpdate();
-    CheckpointConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    CheckpointConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CheckpointConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -238,16 +238,16 @@ namespace Model
   private:
 
     ConfigurationType m_configurationTypeUpdate;
-    bool m_configurationTypeUpdateHasBeenSet;
+    bool m_configurationTypeUpdateHasBeenSet = false;
 
     bool m_checkpointingEnabledUpdate;
-    bool m_checkpointingEnabledUpdateHasBeenSet;
+    bool m_checkpointingEnabledUpdateHasBeenSet = false;
 
     long long m_checkpointIntervalUpdate;
-    bool m_checkpointIntervalUpdateHasBeenSet;
+    bool m_checkpointIntervalUpdateHasBeenSet = false;
 
     long long m_minPauseBetweenCheckpointsUpdate;
-    bool m_minPauseBetweenCheckpointsUpdateHasBeenSet;
+    bool m_minPauseBetweenCheckpointsUpdateHasBeenSet = false;
   };
 
 } // namespace Model

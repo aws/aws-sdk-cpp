@@ -24,6 +24,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis() :
     m_networkInsightsAnalysisIdHasBeenSet(false),
     m_networkInsightsAnalysisArnHasBeenSet(false),
     m_networkInsightsPathIdHasBeenSet(false),
+    m_additionalAccountsHasBeenSet(false),
     m_filterInArnsHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_status(AnalysisStatus::NOT_SET),
@@ -36,6 +37,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis() :
     m_returnPathComponentsHasBeenSet(false),
     m_explanationsHasBeenSet(false),
     m_alternatePathHintsHasBeenSet(false),
+    m_suggestedAccountsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -44,6 +46,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode) :
     m_networkInsightsAnalysisIdHasBeenSet(false),
     m_networkInsightsAnalysisArnHasBeenSet(false),
     m_networkInsightsPathIdHasBeenSet(false),
+    m_additionalAccountsHasBeenSet(false),
     m_filterInArnsHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_status(AnalysisStatus::NOT_SET),
@@ -56,6 +59,7 @@ NetworkInsightsAnalysis::NetworkInsightsAnalysis(const XmlNode& xmlNode) :
     m_returnPathComponentsHasBeenSet(false),
     m_explanationsHasBeenSet(false),
     m_alternatePathHintsHasBeenSet(false),
+    m_suggestedAccountsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -85,6 +89,18 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
       m_networkInsightsPathId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsPathIdNode.GetText());
       m_networkInsightsPathIdHasBeenSet = true;
     }
+    XmlNode additionalAccountsNode = resultNode.FirstChild("additionalAccountSet");
+    if(!additionalAccountsNode.IsNull())
+    {
+      XmlNode additionalAccountsMember = additionalAccountsNode.FirstChild("item");
+      while(!additionalAccountsMember.IsNull())
+      {
+        m_additionalAccounts.push_back(additionalAccountsMember.GetText());
+        additionalAccountsMember = additionalAccountsMember.NextNode("item");
+      }
+
+      m_additionalAccountsHasBeenSet = true;
+    }
     XmlNode filterInArnsNode = resultNode.FirstChild("filterInArnSet");
     if(!filterInArnsNode.IsNull())
     {
@@ -100,7 +116,7 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
-      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
@@ -175,6 +191,18 @@ NetworkInsightsAnalysis& NetworkInsightsAnalysis::operator =(const XmlNode& xmlN
 
       m_alternatePathHintsHasBeenSet = true;
     }
+    XmlNode suggestedAccountsNode = resultNode.FirstChild("suggestedAccountSet");
+    if(!suggestedAccountsNode.IsNull())
+    {
+      XmlNode suggestedAccountsMember = suggestedAccountsNode.FirstChild("item");
+      while(!suggestedAccountsMember.IsNull())
+      {
+        m_suggestedAccounts.push_back(suggestedAccountsMember.GetText());
+        suggestedAccountsMember = suggestedAccountsMember.NextNode("item");
+      }
+
+      m_suggestedAccountsHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -209,6 +237,15 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".NetworkInsightsPathId=" << StringUtils::URLEncode(m_networkInsightsPathId.c_str()) << "&";
   }
 
+  if(m_additionalAccountsHasBeenSet)
+  {
+      unsigned additionalAccountsIdx = 1;
+      for(auto& item : m_additionalAccounts)
+      {
+        oStream << location << index << locationValue << ".AdditionalAccountSet." << additionalAccountsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_filterInArnsHasBeenSet)
   {
       unsigned filterInArnsIdx = 1;
@@ -220,7 +257,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
 
   if(m_startDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_statusHasBeenSet)
@@ -287,6 +324,15 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
       }
   }
 
+  if(m_suggestedAccountsHasBeenSet)
+  {
+      unsigned suggestedAccountsIdx = 1;
+      for(auto& item : m_suggestedAccounts)
+      {
+        oStream << location << index << locationValue << ".SuggestedAccountSet." << suggestedAccountsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -314,6 +360,14 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << ".NetworkInsightsPathId=" << StringUtils::URLEncode(m_networkInsightsPathId.c_str()) << "&";
   }
+  if(m_additionalAccountsHasBeenSet)
+  {
+      unsigned additionalAccountsIdx = 1;
+      for(auto& item : m_additionalAccounts)
+      {
+        oStream << location << ".AdditionalAccountSet." << additionalAccountsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
   if(m_filterInArnsHasBeenSet)
   {
       unsigned filterInArnsIdx = 1;
@@ -324,7 +378,7 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
   }
   if(m_startDateHasBeenSet)
   {
-      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusHasBeenSet)
   {
@@ -380,6 +434,14 @@ void NetworkInsightsAnalysis::OutputToStream(Aws::OStream& oStream, const char* 
         Aws::StringStream alternatePathHintsSs;
         alternatePathHintsSs << location <<  ".AlternatePathHintSet." << alternatePathHintsIdx++;
         item.OutputToStream(oStream, alternatePathHintsSs.str().c_str());
+      }
+  }
+  if(m_suggestedAccountsHasBeenSet)
+  {
+      unsigned suggestedAccountsIdx = 1;
+      for(auto& item : m_suggestedAccounts)
+      {
+        oStream << location << ".SuggestedAccountSet." << suggestedAccountsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_tagsHasBeenSet)

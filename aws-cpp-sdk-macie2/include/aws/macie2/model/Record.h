@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Record">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Record();
+    AWS_MACIE2_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
 
     long long m_recordIndex;
-    bool m_recordIndexHasBeenSet;
+    bool m_recordIndexHasBeenSet = false;
   };
 
 } // namespace Model

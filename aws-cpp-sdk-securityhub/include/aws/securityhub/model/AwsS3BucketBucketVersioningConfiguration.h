@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketBucketVersioningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration
+  class AwsS3BucketBucketVersioningConfiguration
   {
   public:
-    AwsS3BucketBucketVersioningConfiguration();
-    AwsS3BucketBucketVersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketBucketVersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,52 +67,60 @@ namespace Model
 
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The versioning status of the S3 bucket.</p>
+     * <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code>
+     * or <code>Suspended</code>.</p>
      */
     inline AwsS3BucketBucketVersioningConfiguration& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
 
     bool m_isMfaDeleteEnabled;
-    bool m_isMfaDeleteEnabledHasBeenSet;
+    bool m_isMfaDeleteEnabledHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>The function couldn't mount the configured file system due to a permission or
-   * configuration issue.</p><p><h3>See Also:</h3>   <a
+   * <p>The Lambda function couldn't mount the configured file system due to a
+   * permission or configuration issue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSMountFailureException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EFSMountFailureException
+  class EFSMountFailureException
   {
   public:
-    EFSMountFailureException();
-    EFSMountFailureException(Aws::Utils::Json::JsonView jsonValue);
-    EFSMountFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EFSMountFailureException();
+    AWS_LAMBDA_API EFSMountFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EFSMountFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,83 +27,83 @@ namespace Model
 
   /**
    * <p>The results of an operation to update or read environment variables. If the
-   * operation is successful, the response contains the environment variables. If it
-   * failed, the response contains details about the error.</p><p><h3>See Also:</h3> 
+   * operation succeeds, the response contains the environment variables. If it
+   * fails, the response contains details about the error.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EnvironmentResponse
+  class EnvironmentResponse
   {
   public:
-    EnvironmentResponse();
-    EnvironmentResponse(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EnvironmentResponse();
+    AWS_LAMBDA_API EnvironmentResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EnvironmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Environment variable key-value pairs.</p>
+     * <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
      */
     inline EnvironmentResponse& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
@@ -141,10 +141,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     EnvironmentError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

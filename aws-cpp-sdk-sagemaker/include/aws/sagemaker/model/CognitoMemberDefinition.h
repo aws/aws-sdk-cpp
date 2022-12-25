@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CognitoMemberDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CognitoMemberDefinition
+  class CognitoMemberDefinition
   {
   public:
-    CognitoMemberDefinition();
-    CognitoMemberDefinition(Aws::Utils::Json::JsonView jsonValue);
-    CognitoMemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CognitoMemberDefinition();
+    AWS_SAGEMAKER_API CognitoMemberDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CognitoMemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_userPool;
-    bool m_userPoolHasBeenSet;
+    bool m_userPoolHasBeenSet = false;
 
     Aws::String m_userGroup;
-    bool m_userGroupHasBeenSet;
+    bool m_userGroupHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

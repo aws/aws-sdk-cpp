@@ -38,7 +38,7 @@ GetMaintenanceWindowExecutionResult& GetMaintenanceWindowExecutionResult::operat
 
   if(jsonValue.ValueExists("TaskIds"))
   {
-    Array<JsonView> taskIdsJsonList = jsonValue.GetArray("TaskIds");
+    Aws::Utils::Array<JsonView> taskIdsJsonList = jsonValue.GetArray("TaskIds");
     for(unsigned taskIdsIndex = 0; taskIdsIndex < taskIdsJsonList.GetLength(); ++taskIdsIndex)
     {
       m_taskIds.push_back(taskIdsJsonList[taskIdsIndex].AsString());

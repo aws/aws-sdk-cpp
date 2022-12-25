@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstancePortInfo
+  class InstancePortInfo
   {
   public:
-    InstancePortInfo();
-    InstancePortInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstancePortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstancePortInfo();
+    AWS_LIGHTSAIL_API InstancePortInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstancePortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -793,34 +793,34 @@ namespace Model
   private:
 
     int m_fromPort;
-    bool m_fromPortHasBeenSet;
+    bool m_fromPortHasBeenSet = false;
 
     int m_toPort;
-    bool m_toPortHasBeenSet;
+    bool m_toPortHasBeenSet = false;
 
     NetworkProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_accessFrom;
-    bool m_accessFromHasBeenSet;
+    bool m_accessFromHasBeenSet = false;
 
     PortAccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_commonName;
-    bool m_commonNameHasBeenSet;
+    bool m_commonNameHasBeenSet = false;
 
     AccessDirection m_accessDirection;
-    bool m_accessDirectionHasBeenSet;
+    bool m_accessDirectionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
-    bool m_cidrsHasBeenSet;
+    bool m_cidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv6Cidrs;
-    bool m_ipv6CidrsHasBeenSet;
+    bool m_ipv6CidrsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrListAliases;
-    bool m_cidrListAliasesHasBeenSet;
+    bool m_cidrListAliasesHasBeenSet = false;
   };
 
 } // namespace Model

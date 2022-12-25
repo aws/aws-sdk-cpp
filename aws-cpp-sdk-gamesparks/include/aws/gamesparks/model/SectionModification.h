@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/SectionModification">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API SectionModification
+  class SectionModification
   {
   public:
-    SectionModification();
-    SectionModification(Aws::Utils::Json::JsonView jsonValue);
-    SectionModification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API SectionModification();
+    AWS_GAMESPARKS_API SectionModification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API SectionModification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Operation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_section;
-    bool m_sectionHasBeenSet;
+    bool m_sectionHasBeenSet = false;
 
     Aws::Utils::Document m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API BatchDescribeModelPackageSummary
+  class BatchDescribeModelPackageSummary
   {
   public:
-    BatchDescribeModelPackageSummary();
-    BatchDescribeModelPackageSummary(Aws::Utils::Json::JsonView jsonValue);
-    BatchDescribeModelPackageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API BatchDescribeModelPackageSummary();
+    AWS_SAGEMAKER_API BatchDescribeModelPackageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API BatchDescribeModelPackageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -300,28 +300,28 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     int m_modelPackageVersion;
-    bool m_modelPackageVersionHasBeenSet;
+    bool m_modelPackageVersionHasBeenSet = false;
 
     Aws::String m_modelPackageArn;
-    bool m_modelPackageArnHasBeenSet;
+    bool m_modelPackageArnHasBeenSet = false;
 
     Aws::String m_modelPackageDescription;
-    bool m_modelPackageDescriptionHasBeenSet;
+    bool m_modelPackageDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
-    bool m_inferenceSpecificationHasBeenSet;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     ModelPackageStatus m_modelPackageStatus;
-    bool m_modelPackageStatusHasBeenSet;
+    bool m_modelPackageStatusHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
   };
 
 } // namespace Model

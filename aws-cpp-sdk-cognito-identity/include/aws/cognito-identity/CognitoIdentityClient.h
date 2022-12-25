@@ -5,170 +5,16 @@
 
 #pragma once
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
-#include <aws/cognito-identity/CognitoIdentityErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cognito-identity/model/CreateIdentityPoolResult.h>
-#include <aws/cognito-identity/model/DeleteIdentitiesResult.h>
-#include <aws/cognito-identity/model/DescribeIdentityResult.h>
-#include <aws/cognito-identity/model/DescribeIdentityPoolResult.h>
-#include <aws/cognito-identity/model/GetCredentialsForIdentityResult.h>
-#include <aws/cognito-identity/model/GetIdResult.h>
-#include <aws/cognito-identity/model/GetIdentityPoolRolesResult.h>
-#include <aws/cognito-identity/model/GetOpenIdTokenResult.h>
-#include <aws/cognito-identity/model/GetOpenIdTokenForDeveloperIdentityResult.h>
-#include <aws/cognito-identity/model/GetPrincipalTagAttributeMapResult.h>
-#include <aws/cognito-identity/model/ListIdentitiesResult.h>
-#include <aws/cognito-identity/model/ListIdentityPoolsResult.h>
-#include <aws/cognito-identity/model/ListTagsForResourceResult.h>
-#include <aws/cognito-identity/model/LookupDeveloperIdentityResult.h>
-#include <aws/cognito-identity/model/MergeDeveloperIdentitiesResult.h>
-#include <aws/cognito-identity/model/SetPrincipalTagAttributeMapResult.h>
-#include <aws/cognito-identity/model/TagResourceResult.h>
-#include <aws/cognito-identity/model/UntagResourceResult.h>
-#include <aws/cognito-identity/model/UpdateIdentityPoolResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CognitoIdentity
 {
-
-namespace Model
-{
-        class CreateIdentityPoolRequest;
-        class DeleteIdentitiesRequest;
-        class DeleteIdentityPoolRequest;
-        class DescribeIdentityRequest;
-        class DescribeIdentityPoolRequest;
-        class GetCredentialsForIdentityRequest;
-        class GetIdRequest;
-        class GetIdentityPoolRolesRequest;
-        class GetOpenIdTokenRequest;
-        class GetOpenIdTokenForDeveloperIdentityRequest;
-        class GetPrincipalTagAttributeMapRequest;
-        class ListIdentitiesRequest;
-        class ListIdentityPoolsRequest;
-        class ListTagsForResourceRequest;
-        class LookupDeveloperIdentityRequest;
-        class MergeDeveloperIdentitiesRequest;
-        class SetIdentityPoolRolesRequest;
-        class SetPrincipalTagAttributeMapRequest;
-        class TagResourceRequest;
-        class UnlinkDeveloperIdentityRequest;
-        class UnlinkIdentityRequest;
-        class UntagResourceRequest;
-        class UpdateIdentityPoolRequest;
-
-        typedef Aws::Utils::Outcome<CreateIdentityPoolResult, CognitoIdentityError> CreateIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<DeleteIdentitiesResult, CognitoIdentityError> DeleteIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> DeleteIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityResult, CognitoIdentityError> DescribeIdentityOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityPoolResult, CognitoIdentityError> DescribeIdentityPoolOutcome;
-        typedef Aws::Utils::Outcome<GetCredentialsForIdentityResult, CognitoIdentityError> GetCredentialsForIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetIdResult, CognitoIdentityError> GetIdOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityPoolRolesResult, CognitoIdentityError> GetIdentityPoolRolesOutcome;
-        typedef Aws::Utils::Outcome<GetOpenIdTokenResult, CognitoIdentityError> GetOpenIdTokenOutcome;
-        typedef Aws::Utils::Outcome<GetOpenIdTokenForDeveloperIdentityResult, CognitoIdentityError> GetOpenIdTokenForDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetPrincipalTagAttributeMapResult, CognitoIdentityError> GetPrincipalTagAttributeMapOutcome;
-        typedef Aws::Utils::Outcome<ListIdentitiesResult, CognitoIdentityError> ListIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityPoolsResult, CognitoIdentityError> ListIdentityPoolsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<LookupDeveloperIdentityResult, CognitoIdentityError> LookupDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<MergeDeveloperIdentitiesResult, CognitoIdentityError> MergeDeveloperIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> SetIdentityPoolRolesOutcome;
-        typedef Aws::Utils::Outcome<SetPrincipalTagAttributeMapResult, CognitoIdentityError> SetPrincipalTagAttributeMapOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CognitoIdentityError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityError> UnlinkIdentityOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CognitoIdentityError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateIdentityPoolResult, CognitoIdentityError> UpdateIdentityPoolOutcome;
-
-        typedef std::future<CreateIdentityPoolOutcome> CreateIdentityPoolOutcomeCallable;
-        typedef std::future<DeleteIdentitiesOutcome> DeleteIdentitiesOutcomeCallable;
-        typedef std::future<DeleteIdentityPoolOutcome> DeleteIdentityPoolOutcomeCallable;
-        typedef std::future<DescribeIdentityOutcome> DescribeIdentityOutcomeCallable;
-        typedef std::future<DescribeIdentityPoolOutcome> DescribeIdentityPoolOutcomeCallable;
-        typedef std::future<GetCredentialsForIdentityOutcome> GetCredentialsForIdentityOutcomeCallable;
-        typedef std::future<GetIdOutcome> GetIdOutcomeCallable;
-        typedef std::future<GetIdentityPoolRolesOutcome> GetIdentityPoolRolesOutcomeCallable;
-        typedef std::future<GetOpenIdTokenOutcome> GetOpenIdTokenOutcomeCallable;
-        typedef std::future<GetOpenIdTokenForDeveloperIdentityOutcome> GetOpenIdTokenForDeveloperIdentityOutcomeCallable;
-        typedef std::future<GetPrincipalTagAttributeMapOutcome> GetPrincipalTagAttributeMapOutcomeCallable;
-        typedef std::future<ListIdentitiesOutcome> ListIdentitiesOutcomeCallable;
-        typedef std::future<ListIdentityPoolsOutcome> ListIdentityPoolsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<LookupDeveloperIdentityOutcome> LookupDeveloperIdentityOutcomeCallable;
-        typedef std::future<MergeDeveloperIdentitiesOutcome> MergeDeveloperIdentitiesOutcomeCallable;
-        typedef std::future<SetIdentityPoolRolesOutcome> SetIdentityPoolRolesOutcomeCallable;
-        typedef std::future<SetPrincipalTagAttributeMapOutcome> SetPrincipalTagAttributeMapOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UnlinkDeveloperIdentityOutcome> UnlinkDeveloperIdentityOutcomeCallable;
-        typedef std::future<UnlinkIdentityOutcome> UnlinkIdentityOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateIdentityPoolOutcome> UpdateIdentityPoolOutcomeCallable;
-} // namespace Model
-
-  class CognitoIdentityClient;
-
-    typedef std::function<void(const CognitoIdentityClient*, const Model::CreateIdentityPoolRequest&, const Model::CreateIdentityPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentityPoolResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::DeleteIdentitiesRequest&, const Model::DeleteIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentitiesResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::DeleteIdentityPoolRequest&, const Model::DeleteIdentityPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityPoolResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::DescribeIdentityRequest&, const Model::DescribeIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::DescribeIdentityPoolRequest&, const Model::DescribeIdentityPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityPoolResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetCredentialsForIdentityRequest&, const Model::GetCredentialsForIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCredentialsForIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetIdRequest&, const Model::GetIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetIdentityPoolRolesRequest&, const Model::GetIdentityPoolRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityPoolRolesResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetOpenIdTokenRequest&, const Model::GetOpenIdTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpenIdTokenResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetOpenIdTokenForDeveloperIdentityRequest&, const Model::GetOpenIdTokenForDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::GetPrincipalTagAttributeMapRequest&, const Model::GetPrincipalTagAttributeMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPrincipalTagAttributeMapResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::ListIdentitiesRequest&, const Model::ListIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentitiesResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::ListIdentityPoolsRequest&, const Model::ListIdentityPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityPoolsResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::LookupDeveloperIdentityRequest&, const Model::LookupDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupDeveloperIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::MergeDeveloperIdentitiesRequest&, const Model::MergeDeveloperIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeDeveloperIdentitiesResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::SetIdentityPoolRolesRequest&, const Model::SetIdentityPoolRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityPoolRolesResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::SetPrincipalTagAttributeMapRequest&, const Model::SetPrincipalTagAttributeMapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetPrincipalTagAttributeMapResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::UnlinkDeveloperIdentityRequest&, const Model::UnlinkDeveloperIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlinkDeveloperIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::UnlinkIdentityRequest&, const Model::UnlinkIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlinkIdentityResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CognitoIdentityClient*, const Model::UpdateIdentityPoolRequest&, const Model::UpdateIdentityPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityPoolResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Cognito Federated Identities</fullname> <p>Amazon Cognito
    * Federated Identities is a web service that delivers scoped temporary credentials
@@ -187,32 +33,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
    * Cognito Federated Identities</a>.</p>
    */
-  class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJsonClient
+  class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CognitoIdentityClient(const Aws::CognitoIdentity::CognitoIdentityClientConfiguration& clientConfiguration = Aws::CognitoIdentity::CognitoIdentityClientConfiguration(),
+                              std::shared_ptr<CognitoIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CognitoIdentityClient(const Aws::Auth::AWSCredentials& credentials,
+                              std::shared_ptr<CognitoIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::CognitoIdentity::CognitoIdentityClientConfiguration& clientConfiguration = Aws::CognitoIdentity::CognitoIdentityClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CognitoIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<CognitoIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<CognitoIdentityEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::CognitoIdentity::CognitoIdentityClientConfiguration& clientConfiguration = Aws::CognitoIdentity::CognitoIdentityClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CognitoIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CognitoIdentityClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CognitoIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CognitoIdentityClient();
-
 
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity
@@ -712,35 +586,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CognitoIdentityEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateIdentityPoolAsyncHelper(const Model::CreateIdentityPoolRequest& request, const CreateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIdentitiesAsyncHelper(const Model::DeleteIdentitiesRequest& request, const DeleteIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIdentityPoolAsyncHelper(const Model::DeleteIdentityPoolRequest& request, const DeleteIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeIdentityAsyncHelper(const Model::DescribeIdentityRequest& request, const DescribeIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeIdentityPoolAsyncHelper(const Model::DescribeIdentityPoolRequest& request, const DescribeIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCredentialsForIdentityAsyncHelper(const Model::GetCredentialsForIdentityRequest& request, const GetCredentialsForIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIdAsyncHelper(const Model::GetIdRequest& request, const GetIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIdentityPoolRolesAsyncHelper(const Model::GetIdentityPoolRolesRequest& request, const GetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOpenIdTokenAsyncHelper(const Model::GetOpenIdTokenRequest& request, const GetOpenIdTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOpenIdTokenForDeveloperIdentityAsyncHelper(const Model::GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPrincipalTagAttributeMapAsyncHelper(const Model::GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentitiesAsyncHelper(const Model::ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentityPoolsAsyncHelper(const Model::ListIdentityPoolsRequest& request, const ListIdentityPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void LookupDeveloperIdentityAsyncHelper(const Model::LookupDeveloperIdentityRequest& request, const LookupDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeDeveloperIdentitiesAsyncHelper(const Model::MergeDeveloperIdentitiesRequest& request, const MergeDeveloperIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetIdentityPoolRolesAsyncHelper(const Model::SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetPrincipalTagAttributeMapAsyncHelper(const Model::SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnlinkDeveloperIdentityAsyncHelper(const Model::UnlinkDeveloperIdentityRequest& request, const UnlinkDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnlinkIdentityAsyncHelper(const Model::UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateIdentityPoolAsyncHelper(const Model::UpdateIdentityPoolRequest& request, const UpdateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>;
+      void init(const CognitoIdentityClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CognitoIdentityClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CognitoIdentityEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CognitoIdentity

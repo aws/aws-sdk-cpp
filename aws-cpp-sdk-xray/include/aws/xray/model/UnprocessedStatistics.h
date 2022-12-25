@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UnprocessedStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API UnprocessedStatistics
+  class UnprocessedStatistics
   {
   public:
-    UnprocessedStatistics();
-    UnprocessedStatistics(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API UnprocessedStatistics();
+    AWS_XRAY_API UnprocessedStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API UnprocessedStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

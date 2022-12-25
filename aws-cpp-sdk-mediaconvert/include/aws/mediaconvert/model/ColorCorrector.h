@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ColorCorrector">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ColorCorrector
+  class ColorCorrector
   {
   public:
-    ColorCorrector();
-    ColorCorrector(Aws::Utils::Json::JsonView jsonValue);
-    ColorCorrector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ColorCorrector();
+    AWS_MEDIACONVERT_API ColorCorrector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ColorCorrector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -66,7 +66,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
 
@@ -76,7 +79,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
 
@@ -86,7 +92,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
 
@@ -96,7 +105,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline void SetColorSpaceConversion(ColorSpaceConversion&& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = std::move(value); }
 
@@ -106,7 +118,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline ColorCorrector& WithColorSpaceConversion(const ColorSpaceConversion& value) { SetColorSpaceConversion(value); return *this;}
 
@@ -116,7 +131,10 @@ namespace Model
      * HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an
      * unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-     * to approximate the outcome of manually regrading from HDR to SDR.
+     * to approximate the outcome of manually regrading from HDR to SDR. Select Force
+     * P3D65 (SDR) to set the output color space metadata to the following: * Color
+     * primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     * coefficients: BT.709
      */
     inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion&& value) { SetColorSpaceConversion(std::move(value)); return *this;}
 
@@ -365,28 +383,80 @@ namespace Model
      */
     inline ColorCorrector& WithSaturation(int value) { SetSaturation(value); return *this;}
 
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to
+     * correct brightness levels within HDR10 outputs. The following color metadata
+     * must be present in your SDR input: color primaries, transfer characteristics,
+     * and matrix coefficients. If your SDR input has missing color metadata, or if you
+     * want to correct input color metadata, manually specify a color space in the
+     * input video selector. For 1,000 nit peak brightness displays, we recommend that
+     * you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
+     * blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+    inline int GetSdrReferenceWhiteLevel() const{ return m_sdrReferenceWhiteLevel; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to
+     * correct brightness levels within HDR10 outputs. The following color metadata
+     * must be present in your SDR input: color primaries, transfer characteristics,
+     * and matrix coefficients. If your SDR input has missing color metadata, or if you
+     * want to correct input color metadata, manually specify a color space in the
+     * input video selector. For 1,000 nit peak brightness displays, we recommend that
+     * you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
+     * blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+    inline bool SdrReferenceWhiteLevelHasBeenSet() const { return m_sdrReferenceWhiteLevelHasBeenSet; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to
+     * correct brightness levels within HDR10 outputs. The following color metadata
+     * must be present in your SDR input: color primaries, transfer characteristics,
+     * and matrix coefficients. If your SDR input has missing color metadata, or if you
+     * want to correct input color metadata, manually specify a color space in the
+     * input video selector. For 1,000 nit peak brightness displays, we recommend that
+     * you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
+     * blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+    inline void SetSdrReferenceWhiteLevel(int value) { m_sdrReferenceWhiteLevelHasBeenSet = true; m_sdrReferenceWhiteLevel = value; }
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to
+     * correct brightness levels within HDR10 outputs. The following color metadata
+     * must be present in your SDR input: color primaries, transfer characteristics,
+     * and matrix coefficients. If your SDR input has missing color metadata, or if you
+     * want to correct input color metadata, manually specify a color space in the
+     * input video selector. For 1,000 nit peak brightness displays, we recommend that
+     * you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
+     * blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+    inline ColorCorrector& WithSdrReferenceWhiteLevel(int value) { SetSdrReferenceWhiteLevel(value); return *this;}
+
   private:
 
     int m_brightness;
-    bool m_brightnessHasBeenSet;
+    bool m_brightnessHasBeenSet = false;
 
     ColorSpaceConversion m_colorSpaceConversion;
-    bool m_colorSpaceConversionHasBeenSet;
+    bool m_colorSpaceConversionHasBeenSet = false;
 
     int m_contrast;
-    bool m_contrastHasBeenSet;
+    bool m_contrastHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
-    bool m_hdr10MetadataHasBeenSet;
+    bool m_hdr10MetadataHasBeenSet = false;
 
     int m_hue;
-    bool m_hueHasBeenSet;
+    bool m_hueHasBeenSet = false;
 
     SampleRangeConversion m_sampleRangeConversion;
-    bool m_sampleRangeConversionHasBeenSet;
+    bool m_sampleRangeConversionHasBeenSet = false;
 
     int m_saturation;
-    bool m_saturationHasBeenSet;
+    bool m_saturationHasBeenSet = false;
+
+    int m_sdrReferenceWhiteLevel;
+    bool m_sdrReferenceWhiteLevelHasBeenSet = false;
   };
 
 } // namespace Model

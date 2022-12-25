@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowType">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowType
+  class WorkflowType
   {
   public:
-    WorkflowType();
-    WorkflowType(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowType();
+    AWS_SWF_API WorkflowType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -137,10 +137,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

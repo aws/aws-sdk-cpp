@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemRequest : public BillingConductorRequest
+  class BatchDisassociateResourcesFromCustomLineItemRequest : public BillingConductorRequest
   {
   public:
-    BatchDisassociateResourcesFromCustomLineItemRequest();
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "BatchDisassociateResourcesFromCustomLineItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     CustomLineItemBillingPeriodRange m_billingPeriodRange;
-    bool m_billingPeriodRangeHasBeenSet;
+    bool m_billingPeriodRangeHasBeenSet = false;
   };
 
 } // namespace Model

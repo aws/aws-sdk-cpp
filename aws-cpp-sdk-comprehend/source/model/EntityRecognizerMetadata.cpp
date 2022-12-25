@@ -64,7 +64,7 @@ EntityRecognizerMetadata& EntityRecognizerMetadata::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("EntityTypes"))
   {
-    Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
+    Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
     for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
     {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue EntityRecognizerMetadata::Jsonize() const
 
   if(m_entityTypesHasBeenSet)
   {
-   Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
    {
      entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());

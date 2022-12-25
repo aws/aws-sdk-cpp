@@ -24,19 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>Contains the specific price and frequency of a recurring charges for a
-   * reserved OpenSearch instance, or for a reserved OpenSearch instance offering.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the specific price and frequency of a recurring charges for an
+   * OpenSearch Reserved Instance, or for a Reserved Instance offering.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RecurringCharge">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API RecurringCharge
+  class RecurringCharge
   {
   public:
-    RecurringCharge();
-    RecurringCharge(Aws::Utils::Json::JsonView jsonValue);
-    RecurringCharge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API RecurringCharge();
+    AWS_OPENSEARCHSERVICE_API RecurringCharge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API RecurringCharge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     double m_recurringChargeAmount;
-    bool m_recurringChargeAmountHasBeenSet;
+    bool m_recurringChargeAmountHasBeenSet = false;
 
     Aws::String m_recurringChargeFrequency;
-    bool m_recurringChargeFrequencyHasBeenSet;
+    bool m_recurringChargeFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

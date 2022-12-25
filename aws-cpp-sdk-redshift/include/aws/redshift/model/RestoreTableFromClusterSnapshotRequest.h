@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshotMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API RestoreTableFromClusterSnapshotRequest : public RedshiftRequest
+  class RestoreTableFromClusterSnapshotRequest : public RedshiftRequest
   {
   public:
-    RestoreTableFromClusterSnapshotRequest();
+    AWS_REDSHIFT_API RestoreTableFromClusterSnapshotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RestoreTableFromClusterSnapshot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -430,31 +430,31 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_sourceDatabaseName;
-    bool m_sourceDatabaseNameHasBeenSet;
+    bool m_sourceDatabaseNameHasBeenSet = false;
 
     Aws::String m_sourceSchemaName;
-    bool m_sourceSchemaNameHasBeenSet;
+    bool m_sourceSchemaNameHasBeenSet = false;
 
     Aws::String m_sourceTableName;
-    bool m_sourceTableNameHasBeenSet;
+    bool m_sourceTableNameHasBeenSet = false;
 
     Aws::String m_targetDatabaseName;
-    bool m_targetDatabaseNameHasBeenSet;
+    bool m_targetDatabaseNameHasBeenSet = false;
 
     Aws::String m_targetSchemaName;
-    bool m_targetSchemaNameHasBeenSet;
+    bool m_targetSchemaNameHasBeenSet = false;
 
     Aws::String m_newTableName;
-    bool m_newTableNameHasBeenSet;
+    bool m_newTableNameHasBeenSet = false;
 
     bool m_enableCaseSensitiveIdentifier;
-    bool m_enableCaseSensitiveIdentifierHasBeenSet;
+    bool m_enableCaseSensitiveIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

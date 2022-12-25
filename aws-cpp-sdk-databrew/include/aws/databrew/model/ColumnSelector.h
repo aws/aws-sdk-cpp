@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ColumnSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ColumnSelector
+  class ColumnSelector
   {
   public:
-    ColumnSelector();
-    ColumnSelector(Aws::Utils::Json::JsonView jsonValue);
-    ColumnSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ColumnSelector();
+    AWS_GLUEDATABREW_API ColumnSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ColumnSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

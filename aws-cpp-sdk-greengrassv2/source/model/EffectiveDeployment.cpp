@@ -29,7 +29,8 @@ EffectiveDeployment::EffectiveDeployment() :
     m_coreDeviceExecutionStatusHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false)
+    m_modifiedTimestampHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ EffectiveDeployment::EffectiveDeployment(JsonView jsonValue) :
     m_coreDeviceExecutionStatusHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false)
+    m_modifiedTimestampHasBeenSet(false),
+    m_statusDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ EffectiveDeployment& EffectiveDeployment::operator =(JsonView jsonValue)
     m_modifiedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statusDetails"))
+  {
+    m_statusDetails = jsonValue.GetObject("statusDetails");
+
+    m_statusDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue EffectiveDeployment::Jsonize() const
   if(m_modifiedTimestampHasBeenSet)
   {
    payload.WithDouble("modifiedTimestamp", m_modifiedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_statusDetailsHasBeenSet)
+  {
+   payload.WithObject("statusDetails", m_statusDetails.Jsonize());
+
   }
 
   return payload;

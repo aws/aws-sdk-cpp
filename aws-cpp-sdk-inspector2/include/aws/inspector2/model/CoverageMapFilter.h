@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoverageMapFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoverageMapFilter
+  class CoverageMapFilter
   {
   public:
-    CoverageMapFilter();
-    CoverageMapFilter(Aws::Utils::Json::JsonView jsonValue);
-    CoverageMapFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoverageMapFilter();
+    AWS_INSPECTOR2_API CoverageMapFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoverageMapFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     CoverageMapComparison m_comparison;
-    bool m_comparisonHasBeenSet;
+    bool m_comparisonHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Cluster">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API Cluster();
+    AWS_EMR_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1505,97 +1505,97 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ClusterStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Ec2InstanceAttributes m_ec2InstanceAttributes;
-    bool m_ec2InstanceAttributesHasBeenSet;
+    bool m_ec2InstanceAttributesHasBeenSet = false;
 
     InstanceCollectionType m_instanceCollectionType;
-    bool m_instanceCollectionTypeHasBeenSet;
+    bool m_instanceCollectionTypeHasBeenSet = false;
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_logEncryptionKmsKeyId;
-    bool m_logEncryptionKmsKeyIdHasBeenSet;
+    bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
     Aws::String m_requestedAmiVersion;
-    bool m_requestedAmiVersionHasBeenSet;
+    bool m_requestedAmiVersionHasBeenSet = false;
 
     Aws::String m_runningAmiVersion;
-    bool m_runningAmiVersionHasBeenSet;
+    bool m_runningAmiVersionHasBeenSet = false;
 
     Aws::String m_releaseLabel;
-    bool m_releaseLabelHasBeenSet;
+    bool m_releaseLabelHasBeenSet = false;
 
     bool m_autoTerminate;
-    bool m_autoTerminateHasBeenSet;
+    bool m_autoTerminateHasBeenSet = false;
 
     bool m_terminationProtected;
-    bool m_terminationProtectedHasBeenSet;
+    bool m_terminationProtectedHasBeenSet = false;
 
     bool m_visibleToAllUsers;
-    bool m_visibleToAllUsersHasBeenSet;
+    bool m_visibleToAllUsersHasBeenSet = false;
 
     Aws::Vector<Application> m_applications;
-    bool m_applicationsHasBeenSet;
+    bool m_applicationsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_serviceRole;
-    bool m_serviceRoleHasBeenSet;
+    bool m_serviceRoleHasBeenSet = false;
 
     int m_normalizedInstanceHours;
-    bool m_normalizedInstanceHoursHasBeenSet;
+    bool m_normalizedInstanceHoursHasBeenSet = false;
 
     Aws::String m_masterPublicDnsName;
-    bool m_masterPublicDnsNameHasBeenSet;
+    bool m_masterPublicDnsNameHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     Aws::String m_autoScalingRole;
-    bool m_autoScalingRoleHasBeenSet;
+    bool m_autoScalingRoleHasBeenSet = false;
 
     ScaleDownBehavior m_scaleDownBehavior;
-    bool m_scaleDownBehaviorHasBeenSet;
+    bool m_scaleDownBehaviorHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
 
     int m_ebsRootVolumeSize;
-    bool m_ebsRootVolumeSizeHasBeenSet;
+    bool m_ebsRootVolumeSizeHasBeenSet = false;
 
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
-    bool m_repoUpgradeOnBootHasBeenSet;
+    bool m_repoUpgradeOnBootHasBeenSet = false;
 
     KerberosAttributes m_kerberosAttributes;
-    bool m_kerberosAttributesHasBeenSet;
+    bool m_kerberosAttributesHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     int m_stepConcurrencyLevel;
-    bool m_stepConcurrencyLevelHasBeenSet;
+    bool m_stepConcurrencyLevelHasBeenSet = false;
 
     Aws::Vector<PlacementGroupConfig> m_placementGroups;
-    bool m_placementGroupsHasBeenSet;
+    bool m_placementGroupsHasBeenSet = false;
 
     Aws::String m_oSReleaseLabel;
-    bool m_oSReleaseLabelHasBeenSet;
+    bool m_oSReleaseLabelHasBeenSet = false;
   };
 
 } // namespace Model

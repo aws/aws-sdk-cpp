@@ -65,7 +65,7 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
@@ -82,7 +82,7 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalLocations"))
   {
-    Array<JsonView> additionalLocationsJsonList = jsonValue.GetArray("AdditionalLocations");
+    Aws::Utils::Array<JsonView> additionalLocationsJsonList = jsonValue.GetArray("AdditionalLocations");
     for(unsigned additionalLocationsIndex = 0; additionalLocationsIndex < additionalLocationsJsonList.GetLength(); ++additionalLocationsIndex)
     {
       m_additionalLocations.push_back(additionalLocationsJsonList[additionalLocationsIndex].AsString());
@@ -127,7 +127,7 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BucketColumns"))
   {
-    Array<JsonView> bucketColumnsJsonList = jsonValue.GetArray("BucketColumns");
+    Aws::Utils::Array<JsonView> bucketColumnsJsonList = jsonValue.GetArray("BucketColumns");
     for(unsigned bucketColumnsIndex = 0; bucketColumnsIndex < bucketColumnsJsonList.GetLength(); ++bucketColumnsIndex)
     {
       m_bucketColumns.push_back(bucketColumnsJsonList[bucketColumnsIndex].AsString());
@@ -137,7 +137,7 @@ StorageDescriptor& StorageDescriptor::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SortColumns"))
   {
-    Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("SortColumns");
+    Aws::Utils::Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("SortColumns");
     for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
     {
       m_sortColumns.push_back(sortColumnsJsonList[sortColumnsIndex].AsObject());
@@ -185,7 +185,7 @@ JsonValue StorageDescriptor::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
      columnsJsonList[columnsIndex].AsObject(m_columns[columnsIndex].Jsonize());
@@ -202,7 +202,7 @@ JsonValue StorageDescriptor::Jsonize() const
 
   if(m_additionalLocationsHasBeenSet)
   {
-   Array<JsonValue> additionalLocationsJsonList(m_additionalLocations.size());
+   Aws::Utils::Array<JsonValue> additionalLocationsJsonList(m_additionalLocations.size());
    for(unsigned additionalLocationsIndex = 0; additionalLocationsIndex < additionalLocationsJsonList.GetLength(); ++additionalLocationsIndex)
    {
      additionalLocationsJsonList[additionalLocationsIndex].AsString(m_additionalLocations[additionalLocationsIndex]);
@@ -243,7 +243,7 @@ JsonValue StorageDescriptor::Jsonize() const
 
   if(m_bucketColumnsHasBeenSet)
   {
-   Array<JsonValue> bucketColumnsJsonList(m_bucketColumns.size());
+   Aws::Utils::Array<JsonValue> bucketColumnsJsonList(m_bucketColumns.size());
    for(unsigned bucketColumnsIndex = 0; bucketColumnsIndex < bucketColumnsJsonList.GetLength(); ++bucketColumnsIndex)
    {
      bucketColumnsJsonList[bucketColumnsIndex].AsString(m_bucketColumns[bucketColumnsIndex]);
@@ -254,7 +254,7 @@ JsonValue StorageDescriptor::Jsonize() const
 
   if(m_sortColumnsHasBeenSet)
   {
-   Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
+   Aws::Utils::Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
    for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
    {
      sortColumnsJsonList[sortColumnsIndex].AsObject(m_sortColumns[sortColumnsIndex].Jsonize());

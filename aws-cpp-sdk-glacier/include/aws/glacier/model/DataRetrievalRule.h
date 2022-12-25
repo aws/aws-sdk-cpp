@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DataRetrievalRule">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API DataRetrievalRule
+  class DataRetrievalRule
   {
   public:
-    DataRetrievalRule();
-    DataRetrievalRule(Aws::Utils::Json::JsonView jsonValue);
-    DataRetrievalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API DataRetrievalRule();
+    AWS_GLACIER_API DataRetrievalRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API DataRetrievalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     long long m_bytesPerHour;
-    bool m_bytesPerHourHasBeenSet;
+    bool m_bytesPerHourHasBeenSet = false;
   };
 
 } // namespace Model

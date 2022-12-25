@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ReservationPlanSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ReservationPlanSettings
+  class ReservationPlanSettings
   {
   public:
-    ReservationPlanSettings();
-    ReservationPlanSettings(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPlanSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ReservationPlanSettings();
+    AWS_MEDIACONVERT_API ReservationPlanSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ReservationPlanSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Commitment m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     RenewalType m_renewalType;
-    bool m_renewalTypeHasBeenSet;
+    bool m_renewalTypeHasBeenSet = false;
 
     int m_reservedSlots;
-    bool m_reservedSlotsHasBeenSet;
+    bool m_reservedSlotsHasBeenSet = false;
   };
 
 } // namespace Model

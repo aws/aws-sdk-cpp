@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItemFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter
+  class ListResourcesAssociatedToCustomLineItemFilter
   {
   public:
-    ListResourcesAssociatedToCustomLineItemFilter();
-    ListResourcesAssociatedToCustomLineItemFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListResourcesAssociatedToCustomLineItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CustomLineItemRelationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
   };
 
 } // namespace Model

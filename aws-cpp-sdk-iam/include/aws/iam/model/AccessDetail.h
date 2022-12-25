@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API AccessDetail
+  class AccessDetail
   {
   public:
-    AccessDetail();
-    AccessDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AccessDetail();
+    AWS_IAM_API AccessDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AccessDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -211,7 +211,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -220,7 +220,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -229,7 +229,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
@@ -238,7 +238,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
@@ -247,7 +247,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
@@ -256,7 +256,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
@@ -265,7 +265,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
@@ -274,7 +274,7 @@ namespace Model
      * <p>The Region where the last service access attempt occurred.</p> <p>This field
      * is null if no principals in the reported Organizations entity attempted to
      * access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
@@ -286,7 +286,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline const Aws::String& GetEntityPath() const{ return m_entityPath; }
@@ -297,7 +297,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline bool EntityPathHasBeenSet() const { return m_entityPathHasBeenSet; }
@@ -308,7 +308,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetEntityPath(const Aws::String& value) { m_entityPathHasBeenSet = true; m_entityPath = value; }
@@ -319,7 +319,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetEntityPath(Aws::String&& value) { m_entityPathHasBeenSet = true; m_entityPath = std::move(value); }
@@ -330,7 +330,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetEntityPath(const char* value) { m_entityPathHasBeenSet = true; m_entityPath.assign(value); }
@@ -341,7 +341,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithEntityPath(const Aws::String& value) { SetEntityPath(value); return *this;}
@@ -352,7 +352,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithEntityPath(Aws::String&& value) { SetEntityPath(std::move(value)); return *this;}
@@ -363,7 +363,7 @@ namespace Model
      * Amazon Web Services does not report unauthenticated requests.</p> <p>This field
      * is null if no principals (IAM users, IAM roles, or root users) in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithEntityPath(const char* value) { SetEntityPath(value); return *this;}
@@ -375,7 +375,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAuthenticatedTime() const{ return m_lastAuthenticatedTime; }
@@ -386,7 +386,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline bool LastAuthenticatedTimeHasBeenSet() const { return m_lastAuthenticatedTimeHasBeenSet; }
@@ -397,7 +397,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAuthenticatedTime(const Aws::Utils::DateTime& value) { m_lastAuthenticatedTimeHasBeenSet = true; m_lastAuthenticatedTime = value; }
@@ -408,7 +408,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline void SetLastAuthenticatedTime(Aws::Utils::DateTime&& value) { m_lastAuthenticatedTimeHasBeenSet = true; m_lastAuthenticatedTime = std::move(value); }
@@ -419,7 +419,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithLastAuthenticatedTime(const Aws::Utils::DateTime& value) { SetLastAuthenticatedTime(value); return *this;}
@@ -430,7 +430,7 @@ namespace Model
      * access the service. Amazon Web Services does not report unauthenticated
      * requests.</p> <p>This field is null if no principals in the reported
      * Organizations entity attempted to access the service within the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
     inline AccessDetail& WithLastAuthenticatedTime(Aws::Utils::DateTime&& value) { SetLastAuthenticatedTime(std::move(value)); return *this;}
@@ -438,47 +438,47 @@ namespace Model
 
     /**
      * <p>The number of accounts with authenticated principals (root users, IAM users,
-     * and IAM roles) that attempted to access the service in the reporting period.</p>
+     * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
 
     /**
      * <p>The number of accounts with authenticated principals (root users, IAM users,
-     * and IAM roles) that attempted to access the service in the reporting period.</p>
+     * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
 
     /**
      * <p>The number of accounts with authenticated principals (root users, IAM users,
-     * and IAM roles) that attempted to access the service in the reporting period.</p>
+     * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline void SetTotalAuthenticatedEntities(int value) { m_totalAuthenticatedEntitiesHasBeenSet = true; m_totalAuthenticatedEntities = value; }
 
     /**
      * <p>The number of accounts with authenticated principals (root users, IAM users,
-     * and IAM roles) that attempted to access the service in the reporting period.</p>
+     * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
     inline AccessDetail& WithTotalAuthenticatedEntities(int value) { SetTotalAuthenticatedEntities(value); return *this;}
 
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceNamespace;
-    bool m_serviceNamespaceHasBeenSet;
+    bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_entityPath;
-    bool m_entityPathHasBeenSet;
+    bool m_entityPathHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAuthenticatedTime;
-    bool m_lastAuthenticatedTimeHasBeenSet;
+    bool m_lastAuthenticatedTimeHasBeenSet = false;
 
     int m_totalAuthenticatedEntities;
-    bool m_totalAuthenticatedEntitiesHasBeenSet;
+    bool m_totalAuthenticatedEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

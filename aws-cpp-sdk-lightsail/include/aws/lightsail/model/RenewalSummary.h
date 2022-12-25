@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RenewalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RenewalSummary
+  class RenewalSummary
   {
   public:
-    RenewalSummary();
-    RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
-    RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RenewalSummary();
+    AWS_LIGHTSAIL_API RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -280,16 +280,16 @@ namespace Model
   private:
 
     Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-    bool m_domainValidationRecordsHasBeenSet;
+    bool m_domainValidationRecordsHasBeenSet = false;
 
     RenewalStatus m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::String m_renewalStatusReason;
-    bool m_renewalStatusReasonHasBeenSet;
+    bool m_renewalStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

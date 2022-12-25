@@ -56,7 +56,7 @@ GetNetworkRoutesResult& GetNetworkRoutesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("NetworkRoutes"))
   {
-    Array<JsonView> networkRoutesJsonList = jsonValue.GetArray("NetworkRoutes");
+    Aws::Utils::Array<JsonView> networkRoutesJsonList = jsonValue.GetArray("NetworkRoutes");
     for(unsigned networkRoutesIndex = 0; networkRoutesIndex < networkRoutesJsonList.GetLength(); ++networkRoutesIndex)
     {
       m_networkRoutes.push_back(networkRoutesJsonList[networkRoutesIndex].AsObject());

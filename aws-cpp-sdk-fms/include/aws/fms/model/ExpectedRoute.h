@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ExpectedRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ExpectedRoute
+  class ExpectedRoute
   {
   public:
-    ExpectedRoute();
-    ExpectedRoute(Aws::Utils::Json::JsonView jsonValue);
-    ExpectedRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ExpectedRoute();
+    AWS_FMS_API ExpectedRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ExpectedRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -297,22 +297,22 @@ namespace Model
   private:
 
     Aws::String m_ipV4Cidr;
-    bool m_ipV4CidrHasBeenSet;
+    bool m_ipV4CidrHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_ipV6Cidr;
-    bool m_ipV6CidrHasBeenSet;
+    bool m_ipV6CidrHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_contributingSubnets;
-    bool m_contributingSubnetsHasBeenSet;
+    bool m_contributingSubnetsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedTargets;
-    bool m_allowedTargetsHasBeenSet;
+    bool m_allowedTargetsHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
   };
 
 } // namespace Model

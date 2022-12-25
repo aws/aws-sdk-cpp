@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/HumanLoopQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API HumanLoopQuotaExceededException
+  class HumanLoopQuotaExceededException
   {
   public:
-    HumanLoopQuotaExceededException();
-    HumanLoopQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API HumanLoopQuotaExceededException();
+    AWS_TEXTRACT_API HumanLoopQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API HumanLoopQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

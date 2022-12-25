@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StreamingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API StreamingConfiguration
+  class StreamingConfiguration
   {
   public:
-    StreamingConfiguration();
-    StreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API StreamingConfiguration();
+    AWS_CHIME_API StreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API StreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,13 +126,13 @@ namespace Model
   private:
 
     int m_dataRetentionInHours;
-    bool m_dataRetentionInHoursHasBeenSet;
+    bool m_dataRetentionInHoursHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::Vector<StreamingNotificationTarget> m_streamingNotificationTargets;
-    bool m_streamingNotificationTargetsHasBeenSet;
+    bool m_streamingNotificationTargetsHasBeenSet = false;
   };
 
 } // namespace Model

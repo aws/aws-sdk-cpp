@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SvmEndpoint">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API SvmEndpoint
+  class SvmEndpoint
   {
   public:
-    SvmEndpoint();
-    SvmEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    SvmEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API SvmEndpoint();
+    AWS_FSX_API SvmEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API SvmEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_dNSName;
-    bool m_dNSNameHasBeenSet;
+    bool m_dNSNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

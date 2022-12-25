@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API AccessKeyMetadata
+  class AccessKeyMetadata
   {
   public:
-    AccessKeyMetadata();
-    AccessKeyMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessKeyMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AccessKeyMetadata();
+    AWS_IAM_API AccessKeyMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API AccessKeyMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -195,16 +195,16 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_accessKeyId;
-    bool m_accessKeyIdHasBeenSet;
+    bool m_accessKeyIdHasBeenSet = false;
 
     StatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
   };
 
 } // namespace Model

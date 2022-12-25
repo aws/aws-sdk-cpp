@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFREGIONAL_API UpdateWebACLRequest : public WAFRegionalRequest
+  class UpdateWebACLRequest : public WAFRegionalRequest
   {
   public:
-    UpdateWebACLRequest();
+    AWS_WAFREGIONAL_API UpdateWebACLRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWebACL"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -317,16 +317,16 @@ namespace Model
   private:
 
     Aws::String m_webACLId;
-    bool m_webACLIdHasBeenSet;
+    bool m_webACLIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<WebACLUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     WafAction m_defaultAction;
-    bool m_defaultActionHasBeenSet;
+    bool m_defaultActionHasBeenSet = false;
   };
 
 } // namespace Model

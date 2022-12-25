@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentGroup
+  class SegmentGroup
   {
   public:
-    SegmentGroup();
-    SegmentGroup(Aws::Utils::Json::JsonView jsonValue);
-    SegmentGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentGroup();
+    AWS_PINPOINT_API SegmentGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,16 +269,16 @@ namespace Model
   private:
 
     Aws::Vector<SegmentDimensions> m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     Aws::Vector<SegmentReference> m_sourceSegments;
-    bool m_sourceSegmentsHasBeenSet;
+    bool m_sourceSegmentsHasBeenSet = false;
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     Type m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

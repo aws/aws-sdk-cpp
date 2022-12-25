@@ -32,60 +32,66 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AvailSuppression">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AvailSuppression
+  class AvailSuppression
   {
   public:
-    AvailSuppression();
-    AvailSuppression(Aws::Utils::Json::JsonView jsonValue);
-    AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AvailSuppression();
+    AWS_MEDIATAILOR_API AvailSuppression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline AvailSuppression& WithMode(const Mode& value) { SetMode(value); return *this;}
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline AvailSuppression& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
 
@@ -189,10 +195,10 @@ namespace Model
   private:
 
     Mode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

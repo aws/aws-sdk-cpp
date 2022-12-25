@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DiskInfo
+  class DiskInfo
   {
   public:
-    DiskInfo();
-    DiskInfo(Aws::Utils::Json::JsonView jsonValue);
-    DiskInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DiskInfo();
+    AWS_LIGHTSAIL_API DiskInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DiskInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,16 +167,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_sizeInGb;
-    bool m_sizeInGbHasBeenSet;
+    bool m_sizeInGbHasBeenSet = false;
 
     bool m_isSystemDisk;
-    bool m_isSystemDiskHasBeenSet;
+    bool m_isSystemDiskHasBeenSet = false;
   };
 
 } // namespace Model

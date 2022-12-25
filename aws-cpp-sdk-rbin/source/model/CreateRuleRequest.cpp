@@ -18,7 +18,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_tagsHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_lockConfigurationHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,7 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -56,12 +57,18 @@ Aws::String CreateRuleRequest::SerializePayload() const
 
   if(m_resourceTagsHasBeenSet)
   {
-   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   Aws::Utils::Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
    for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
    {
      resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
    }
    payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
+
+  }
+
+  if(m_lockConfigurationHasBeenSet)
+  {
+   payload.WithObject("LockConfiguration", m_lockConfiguration.Jsonize());
 
   }
 

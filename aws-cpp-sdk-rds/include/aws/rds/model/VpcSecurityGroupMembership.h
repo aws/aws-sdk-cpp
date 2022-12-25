@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API VpcSecurityGroupMembership
+  class VpcSecurityGroupMembership
   {
   public:
-    VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcSecurityGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API VpcSecurityGroupMembership();
+    AWS_RDS_API VpcSecurityGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API VpcSecurityGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -82,52 +82,60 @@ namespace Model
 
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the VPC security group.</p>
+     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
+     * valid status is <code>active</code>.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
 
     Aws::String m_vpcSecurityGroupId;
-    bool m_vpcSecurityGroupIdHasBeenSet;
+    bool m_vpcSecurityGroupIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

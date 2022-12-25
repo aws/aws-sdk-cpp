@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/BatchCreateChannelMembershipError">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipError
+  class BatchCreateChannelMembershipError
   {
   public:
-    BatchCreateChannelMembershipError();
-    BatchCreateChannelMembershipError(Aws::Utils::Json::JsonView jsonValue);
-    BatchCreateChannelMembershipError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipError();
+    AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API BatchCreateChannelMembershipError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_memberArn;
-    bool m_memberArnHasBeenSet;
+    bool m_memberArnHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

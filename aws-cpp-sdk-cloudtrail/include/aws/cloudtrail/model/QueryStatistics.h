@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/QueryStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API QueryStatistics
+  class QueryStatistics
   {
   public:
-    QueryStatistics();
-    QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
-    QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API QueryStatistics();
+    AWS_CLOUDTRAIL_API QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,13 +109,13 @@ namespace Model
   private:
 
     int m_resultsCount;
-    bool m_resultsCountHasBeenSet;
+    bool m_resultsCountHasBeenSet = false;
 
     int m_totalResultsCount;
-    bool m_totalResultsCountHasBeenSet;
+    bool m_totalResultsCountHasBeenSet = false;
 
     long long m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
   };
 
 } // namespace Model

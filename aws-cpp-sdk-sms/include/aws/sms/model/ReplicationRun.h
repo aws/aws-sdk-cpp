@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationRun">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ReplicationRun
+  class ReplicationRun
   {
   public:
-    ReplicationRun();
-    ReplicationRun(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ReplicationRun();
+    AWS_SMS_API ReplicationRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ReplicationRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -464,37 +464,37 @@ namespace Model
   private:
 
     Aws::String m_replicationRunId;
-    bool m_replicationRunIdHasBeenSet;
+    bool m_replicationRunIdHasBeenSet = false;
 
     ReplicationRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     ReplicationRunType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ReplicationRunStageDetails m_stageDetails;
-    bool m_stageDetailsHasBeenSet;
+    bool m_stageDetailsHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledStartTime;
-    bool m_scheduledStartTimeHasBeenSet;
+    bool m_scheduledStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedTime;
-    bool m_completedTimeHasBeenSet;
+    bool m_completedTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

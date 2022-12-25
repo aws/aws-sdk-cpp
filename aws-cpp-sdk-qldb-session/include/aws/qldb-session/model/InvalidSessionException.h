@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/InvalidSessionException">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API InvalidSessionException
+  class InvalidSessionException
   {
   public:
-    InvalidSessionException();
-    InvalidSessionException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSessionException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API InvalidSessionException();
+    AWS_QLDBSESSION_API InvalidSessionException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API InvalidSessionException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

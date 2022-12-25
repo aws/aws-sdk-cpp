@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ForecastResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ForecastResult
+  class ForecastResult
   {
   public:
-    ForecastResult();
-    ForecastResult(Aws::Utils::Json::JsonView jsonValue);
-    ForecastResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ForecastResult();
+    AWS_COSTEXPLORER_API ForecastResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ForecastResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     DateInterval m_timePeriod;
-    bool m_timePeriodHasBeenSet;
+    bool m_timePeriodHasBeenSet = false;
 
     Aws::String m_meanValue;
-    bool m_meanValueHasBeenSet;
+    bool m_meanValueHasBeenSet = false;
 
     Aws::String m_predictionIntervalLowerBound;
-    bool m_predictionIntervalLowerBoundHasBeenSet;
+    bool m_predictionIntervalLowerBoundHasBeenSet = false;
 
     Aws::String m_predictionIntervalUpperBound;
-    bool m_predictionIntervalUpperBoundHasBeenSet;
+    bool m_predictionIntervalUpperBoundHasBeenSet = false;
   };
 
 } // namespace Model

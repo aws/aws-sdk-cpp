@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Engagement">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Engagement
+  class Engagement
   {
   public:
-    Engagement();
-    Engagement(Aws::Utils::Json::JsonView jsonValue);
-    Engagement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Engagement();
+    AWS_SSMCONTACTS_API Engagement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Engagement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_engagementArn;
-    bool m_engagementArnHasBeenSet;
+    bool m_engagementArnHasBeenSet = false;
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
 
     Aws::String m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     Aws::String m_incidentId;
-    bool m_incidentIdHasBeenSet;
+    bool m_incidentIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopTime;
-    bool m_stopTimeHasBeenSet;
+    bool m_stopTimeHasBeenSet = false;
   };
 
 } // namespace Model

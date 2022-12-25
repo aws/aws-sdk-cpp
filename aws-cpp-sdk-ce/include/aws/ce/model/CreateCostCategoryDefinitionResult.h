@@ -24,12 +24,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult
+  class CreateCostCategoryDefinitionResult
   {
   public:
-    CreateCostCategoryDefinitionResult();
-    CreateCostCategoryDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCostCategoryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult();
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API CreateCostCategoryDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -69,37 +69,44 @@ namespace Model
 
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline const Aws::String& GetEffectiveStart() const{ return m_effectiveStart; }
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline void SetEffectiveStart(const Aws::String& value) { m_effectiveStart = value; }
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline void SetEffectiveStart(Aws::String&& value) { m_effectiveStart = std::move(value); }
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline void SetEffectiveStart(const char* value) { m_effectiveStart.assign(value); }
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline CreateCostCategoryDefinitionResult& WithEffectiveStart(const Aws::String& value) { SetEffectiveStart(value); return *this;}
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline CreateCostCategoryDefinitionResult& WithEffectiveStart(Aws::String&& value) { SetEffectiveStart(std::move(value)); return *this;}
 
     /**
-     * <p>The Cost Category's effective start date. </p>
+     * <p>The Cost Category's effective start date. It can only be a billing start date
+     * (first day of the month).</p>
      */
     inline CreateCostCategoryDefinitionResult& WithEffectiveStart(const char* value) { SetEffectiveStart(value); return *this;}
 

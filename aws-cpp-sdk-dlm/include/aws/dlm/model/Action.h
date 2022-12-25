@@ -26,17 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an action for an event-based policy.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Event-based policies only]</b> Specifies an action for an event-based
+   * policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_DLM_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API Action();
+    AWS_DLM_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<CrossRegionCopyAction> m_crossRegionCopy;
-    bool m_crossRegionCopyHasBeenSet;
+    bool m_crossRegionCopyHasBeenSet = false;
   };
 
 } // namespace Model

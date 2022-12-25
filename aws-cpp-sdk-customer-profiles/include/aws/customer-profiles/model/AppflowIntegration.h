@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AppflowIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AppflowIntegration
+  class AppflowIntegration
   {
   public:
-    AppflowIntegration();
-    AppflowIntegration(Aws::Utils::Json::JsonView jsonValue);
-    AppflowIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AppflowIntegration();
+    AWS_CUSTOMERPROFILES_API AppflowIntegration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AppflowIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     FlowDefinition m_flowDefinition;
-    bool m_flowDefinitionHasBeenSet;
+    bool m_flowDefinitionHasBeenSet = false;
 
     Aws::Vector<Batch> m_batches;
-    bool m_batchesHasBeenSet;
+    bool m_batchesHasBeenSet = false;
   };
 
 } // namespace Model

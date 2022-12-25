@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PermissionsBoundaryDecisionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API PermissionsBoundaryDecisionDetail
+  class PermissionsBoundaryDecisionDetail
   {
   public:
-    PermissionsBoundaryDecisionDetail();
-    PermissionsBoundaryDecisionDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PermissionsBoundaryDecisionDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PermissionsBoundaryDecisionDetail();
+    AWS_IAM_API PermissionsBoundaryDecisionDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PermissionsBoundaryDecisionDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -94,7 +94,7 @@ namespace Model
   private:
 
     bool m_allowedByPermissionsBoundary;
-    bool m_allowedByPermissionsBoundaryHasBeenSet;
+    bool m_allowedByPermissionsBoundaryHasBeenSet = false;
   };
 
 } // namespace Model

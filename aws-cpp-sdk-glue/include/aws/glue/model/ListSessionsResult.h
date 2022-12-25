@@ -26,51 +26,51 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API ListSessionsResult
+  class ListSessionsResult
   {
   public:
-    ListSessionsResult();
-    ListSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListSessionsResult();
+    AWS_GLUE_API ListSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_ids = value; }
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline ListSessionsResult& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline ListSessionsResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline ListSessionsResult& AddIds(const Aws::String& value) { m_ids.push_back(value); return *this; }
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline ListSessionsResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Returns the Id of the session. </p>
+     * <p>Returns the ID of the session. </p>
      */
     inline ListSessionsResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
 

@@ -27,10 +27,9 @@ namespace Model
   /**
    * <p>Set of rule statements, used with FlexMatch, that determine how to build your
    * player matches. Each rule set describes a type of group to be created and
-   * defines the parameters for acceptable player matches. Rule sets are used in
-   * <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the
-   * following elements for a match. For detailed information and examples showing
-   * how to construct a rule set, see <a
+   * defines the parameters for acceptable player matches.</p> <p>A rule set may
+   * define the following elements for a match. For detailed information and examples
+   * showing how to construct a rule set, see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
    * a FlexMatch rule set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team
@@ -56,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingRuleSet">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API MatchmakingRuleSet
+  class MatchmakingRuleSet
   {
   public:
-    MatchmakingRuleSet();
-    MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
-    MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API MatchmakingRuleSet();
+    AWS_GAMELIFT_API MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -289,16 +288,16 @@ namespace Model
   private:
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_ruleSetArn;
-    bool m_ruleSetArnHasBeenSet;
+    bool m_ruleSetArnHasBeenSet = false;
 
     Aws::String m_ruleSetBody;
-    bool m_ruleSetBodyHasBeenSet;
+    bool m_ruleSetBodyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
   };
 
 } // namespace Model

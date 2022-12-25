@@ -29,36 +29,44 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ContentModerationDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ContentModerationDetection
+  class ContentModerationDetection
   {
   public:
-    ContentModerationDetection();
-    ContentModerationDetection(Aws::Utils::Json::JsonView jsonValue);
-    ContentModerationDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ContentModerationDetection();
+    AWS_REKOGNITION_API ContentModerationDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ContentModerationDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>Time, in milliseconds from the beginning of the video, that the content
-     * moderation label was detected.</p>
+     * moderation label was detected. Note that <code>Timestamp</code> is not
+     * guaranteed to be accurate to the individual frame where the moderated content
+     * first appears.</p>
      */
     inline ContentModerationDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 
@@ -96,10 +104,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     ModerationLabel m_moderationLabel;
-    bool m_moderationLabelHasBeenSet;
+    bool m_moderationLabelHasBeenSet = false;
   };
 
 } // namespace Model

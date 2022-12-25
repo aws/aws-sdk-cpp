@@ -31,72 +31,77 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API UpdateSourceLocationResult
+  class UpdateSourceLocationResult
   {
   public:
-    UpdateSourceLocationResult();
-    UpdateSourceLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSourceLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateSourceLocationResult();
+    AWS_MEDIATAILOR_API UpdateSourceLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API UpdateSourceLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The access configuration for the source location.</p>
+     * <p>Access configuration parameters. Configures the type of authentication used
+     * to access content from your source location.</p>
      */
     inline const AccessConfiguration& GetAccessConfiguration() const{ return m_accessConfiguration; }
 
     /**
-     * <p>The access configuration for the source location.</p>
+     * <p>Access configuration parameters. Configures the type of authentication used
+     * to access content from your source location.</p>
      */
     inline void SetAccessConfiguration(const AccessConfiguration& value) { m_accessConfiguration = value; }
 
     /**
-     * <p>The access configuration for the source location.</p>
+     * <p>Access configuration parameters. Configures the type of authentication used
+     * to access content from your source location.</p>
      */
     inline void SetAccessConfiguration(AccessConfiguration&& value) { m_accessConfiguration = std::move(value); }
 
     /**
-     * <p>The access configuration for the source location.</p>
+     * <p>Access configuration parameters. Configures the type of authentication used
+     * to access content from your source location.</p>
      */
     inline UpdateSourceLocationResult& WithAccessConfiguration(const AccessConfiguration& value) { SetAccessConfiguration(value); return *this;}
 
     /**
-     * <p>The access configuration for the source location.</p>
+     * <p>Access configuration parameters. Configures the type of authentication used
+     * to access content from your source location.</p>
      */
     inline UpdateSourceLocationResult& WithAccessConfiguration(AccessConfiguration&& value) { SetAccessConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline UpdateSourceLocationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline UpdateSourceLocationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the source location.</p>
+     * <p>The Amazon Resource Name (ARN) associated with the source location.</p>
      */
     inline UpdateSourceLocationResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -128,53 +133,53 @@ namespace Model
 
 
     /**
-     * <p>The default segment delivery configuration settings.</p>
+     * <p>The optional configuration for the host server that serves segments.</p>
      */
     inline const DefaultSegmentDeliveryConfiguration& GetDefaultSegmentDeliveryConfiguration() const{ return m_defaultSegmentDeliveryConfiguration; }
 
     /**
-     * <p>The default segment delivery configuration settings.</p>
+     * <p>The optional configuration for the host server that serves segments.</p>
      */
     inline void SetDefaultSegmentDeliveryConfiguration(const DefaultSegmentDeliveryConfiguration& value) { m_defaultSegmentDeliveryConfiguration = value; }
 
     /**
-     * <p>The default segment delivery configuration settings.</p>
+     * <p>The optional configuration for the host server that serves segments.</p>
      */
     inline void SetDefaultSegmentDeliveryConfiguration(DefaultSegmentDeliveryConfiguration&& value) { m_defaultSegmentDeliveryConfiguration = std::move(value); }
 
     /**
-     * <p>The default segment delivery configuration settings.</p>
+     * <p>The optional configuration for the host server that serves segments.</p>
      */
     inline UpdateSourceLocationResult& WithDefaultSegmentDeliveryConfiguration(const DefaultSegmentDeliveryConfiguration& value) { SetDefaultSegmentDeliveryConfiguration(value); return *this;}
 
     /**
-     * <p>The default segment delivery configuration settings.</p>
+     * <p>The optional configuration for the host server that serves segments.</p>
      */
     inline UpdateSourceLocationResult& WithDefaultSegmentDeliveryConfiguration(DefaultSegmentDeliveryConfiguration&& value) { SetDefaultSegmentDeliveryConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The HTTP package configuration settings for the source location.</p>
+     * <p>The HTTP configuration for the source location.</p>
      */
     inline const HttpConfiguration& GetHttpConfiguration() const{ return m_httpConfiguration; }
 
     /**
-     * <p>The HTTP package configuration settings for the source location.</p>
+     * <p>The HTTP configuration for the source location.</p>
      */
     inline void SetHttpConfiguration(const HttpConfiguration& value) { m_httpConfiguration = value; }
 
     /**
-     * <p>The HTTP package configuration settings for the source location.</p>
+     * <p>The HTTP configuration for the source location.</p>
      */
     inline void SetHttpConfiguration(HttpConfiguration&& value) { m_httpConfiguration = std::move(value); }
 
     /**
-     * <p>The HTTP package configuration settings for the source location.</p>
+     * <p>The HTTP configuration for the source location.</p>
      */
     inline UpdateSourceLocationResult& WithHttpConfiguration(const HttpConfiguration& value) { SetHttpConfiguration(value); return *this;}
 
     /**
-     * <p>The HTTP package configuration settings for the source location.</p>
+     * <p>The HTTP configuration for the source location.</p>
      */
     inline UpdateSourceLocationResult& WithHttpConfiguration(HttpConfiguration&& value) { SetHttpConfiguration(std::move(value)); return *this;}
 
@@ -206,44 +211,58 @@ namespace Model
 
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline const Aws::Vector<SegmentDeliveryConfiguration>& GetSegmentDeliveryConfigurations() const{ return m_segmentDeliveryConfigurations; }
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline void SetSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { m_segmentDeliveryConfigurations = value; }
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline void SetSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { m_segmentDeliveryConfigurations = std::move(value); }
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline UpdateSourceLocationResult& WithSegmentDeliveryConfigurations(const Aws::Vector<SegmentDeliveryConfiguration>& value) { SetSegmentDeliveryConfigurations(value); return *this;}
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline UpdateSourceLocationResult& WithSegmentDeliveryConfigurations(Aws::Vector<SegmentDeliveryConfiguration>&& value) { SetSegmentDeliveryConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline UpdateSourceLocationResult& AddSegmentDeliveryConfigurations(const SegmentDeliveryConfiguration& value) { m_segmentDeliveryConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>A list of the segment delivery configurations associated with this
-     * resource.</p>
+     * <p>The segment delivery configurations for the source location. For information
+     * about MediaTailor configurations, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+     * with configurations in AWS Elemental MediaTailor</a>.</p>
      */
     inline UpdateSourceLocationResult& AddSegmentDeliveryConfigurations(SegmentDeliveryConfiguration&& value) { m_segmentDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
@@ -285,62 +304,110 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline UpdateSourceLocationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

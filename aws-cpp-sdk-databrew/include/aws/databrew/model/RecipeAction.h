@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/RecipeAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API RecipeAction
+  class RecipeAction
   {
   public:
-    RecipeAction();
-    RecipeAction(Aws::Utils::Json::JsonView jsonValue);
-    RecipeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API RecipeAction();
+    AWS_GLUEDATABREW_API RecipeAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API RecipeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

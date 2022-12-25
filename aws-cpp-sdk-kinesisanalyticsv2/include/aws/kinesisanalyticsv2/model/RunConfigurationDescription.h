@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API RunConfigurationDescription
+  class RunConfigurationDescription
   {
   public:
-    RunConfigurationDescription();
-    RunConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    RunConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API RunConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API RunConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API RunConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;
-    bool m_applicationRestoreConfigurationDescriptionHasBeenSet;
+    bool m_applicationRestoreConfigurationDescriptionHasBeenSet = false;
 
     FlinkRunConfiguration m_flinkRunConfigurationDescription;
-    bool m_flinkRunConfigurationDescriptionHasBeenSet;
+    bool m_flinkRunConfigurationDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

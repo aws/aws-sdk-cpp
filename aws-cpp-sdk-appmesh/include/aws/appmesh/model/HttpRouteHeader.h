@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpRouteHeader
+  class HttpRouteHeader
   {
   public:
-    HttpRouteHeader();
-    HttpRouteHeader(Aws::Utils::Json::JsonView jsonValue);
-    HttpRouteHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpRouteHeader();
+    AWS_APPMESH_API HttpRouteHeader(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpRouteHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     bool m_invert;
-    bool m_invertHasBeenSet;
+    bool m_invertHasBeenSet = false;
 
     HeaderMatchMethod m_match;
-    bool m_matchHasBeenSet;
+    bool m_matchHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

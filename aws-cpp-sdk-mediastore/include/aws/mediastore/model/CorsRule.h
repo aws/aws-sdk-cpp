@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CorsRule">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTORE_API CorsRule
+  class CorsRule
   {
   public:
-    CorsRule();
-    CorsRule(Aws::Utils::Json::JsonView jsonValue);
-    CorsRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTORE_API CorsRule();
+    AWS_MEDIASTORE_API CorsRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API CorsRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -393,19 +393,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowedOrigins;
-    bool m_allowedOriginsHasBeenSet;
+    bool m_allowedOriginsHasBeenSet = false;
 
     Aws::Vector<MethodName> m_allowedMethods;
-    bool m_allowedMethodsHasBeenSet;
+    bool m_allowedMethodsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedHeaders;
-    bool m_allowedHeadersHasBeenSet;
+    bool m_allowedHeadersHasBeenSet = false;
 
     int m_maxAgeSeconds;
-    bool m_maxAgeSecondsHasBeenSet;
+    bool m_maxAgeSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exposeHeaders;
-    bool m_exposeHeadersHasBeenSet;
+    bool m_exposeHeadersHasBeenSet = false;
   };
 
 } // namespace Model

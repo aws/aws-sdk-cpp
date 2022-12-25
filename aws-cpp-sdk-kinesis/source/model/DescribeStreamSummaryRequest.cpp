@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeStreamSummaryRequest::DescribeStreamSummaryRequest() : 
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_streamARNHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DescribeStreamSummaryRequest::SerializePayload() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("StreamName", m_streamName);
+
+  }
+
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
 
   }
 
@@ -39,5 +46,17 @@ Aws::Http::HeaderValueCollection DescribeStreamSummaryRequest::GetRequestSpecifi
 }
 
 
+
+DescribeStreamSummaryRequest::EndpointParameters DescribeStreamSummaryRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

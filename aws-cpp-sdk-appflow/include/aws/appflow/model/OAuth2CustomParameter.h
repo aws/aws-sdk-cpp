@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuth2CustomParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuth2CustomParameter
+  class OAuth2CustomParameter
   {
   public:
-    OAuth2CustomParameter();
-    OAuth2CustomParameter(Aws::Utils::Json::JsonView jsonValue);
-    OAuth2CustomParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuth2CustomParameter();
+    AWS_APPFLOW_API OAuth2CustomParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuth2CustomParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -309,25 +309,25 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     bool m_isRequired;
-    bool m_isRequiredHasBeenSet;
+    bool m_isRequiredHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_isSensitiveField;
-    bool m_isSensitiveFieldHasBeenSet;
+    bool m_isSensitiveFieldHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectorSuppliedValues;
-    bool m_connectorSuppliedValuesHasBeenSet;
+    bool m_connectorSuppliedValuesHasBeenSet = false;
 
     OAuth2CustomPropType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

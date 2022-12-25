@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorMonitorEvaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorMonitorEvaluation
+  class PredictorMonitorEvaluation
   {
   public:
-    PredictorMonitorEvaluation();
-    PredictorMonitorEvaluation(Aws::Utils::Json::JsonView jsonValue);
-    PredictorMonitorEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation();
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -469,37 +469,37 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_monitorArn;
-    bool m_monitorArnHasBeenSet;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_evaluationTime;
-    bool m_evaluationTimeHasBeenSet;
+    bool m_evaluationTimeHasBeenSet = false;
 
     Aws::String m_evaluationState;
-    bool m_evaluationStateHasBeenSet;
+    bool m_evaluationStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_windowStartDatetime;
-    bool m_windowStartDatetimeHasBeenSet;
+    bool m_windowStartDatetimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_windowEndDatetime;
-    bool m_windowEndDatetimeHasBeenSet;
+    bool m_windowEndDatetimeHasBeenSet = false;
 
     PredictorEvent m_predictorEvent;
-    bool m_predictorEventHasBeenSet;
+    bool m_predictorEventHasBeenSet = false;
 
     MonitorDataSource m_monitorDataSource;
-    bool m_monitorDataSourceHasBeenSet;
+    bool m_monitorDataSourceHasBeenSet = false;
 
     Aws::Vector<MetricResult> m_metricResults;
-    bool m_metricResultsHasBeenSet;
+    bool m_metricResultsHasBeenSet = false;
 
     long long m_numItemsEvaluated;
-    bool m_numItemsEvaluatedHasBeenSet;
+    bool m_numItemsEvaluatedHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

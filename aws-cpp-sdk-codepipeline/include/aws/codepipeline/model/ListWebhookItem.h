@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhookItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ListWebhookItem
+  class ListWebhookItem
   {
   public:
-    ListWebhookItem();
-    ListWebhookItem(Aws::Utils::Json::JsonView jsonValue);
-    ListWebhookItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ListWebhookItem();
+    AWS_CODEPIPELINE_API ListWebhookItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ListWebhookItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -348,25 +348,25 @@ namespace Model
   private:
 
     WebhookDefinition m_definition;
-    bool m_definitionHasBeenSet;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastTriggered;
-    bool m_lastTriggeredHasBeenSet;
+    bool m_lastTriggeredHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

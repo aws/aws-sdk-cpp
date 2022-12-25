@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationSummary();
+    AWS_KINESISANALYTICSV2_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,22 +251,22 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationARN;
-    bool m_applicationARNHasBeenSet;
+    bool m_applicationARNHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
 
     long long m_applicationVersionId;
-    bool m_applicationVersionIdHasBeenSet;
+    bool m_applicationVersionIdHasBeenSet = false;
 
     RuntimeEnvironment m_runtimeEnvironment;
-    bool m_runtimeEnvironmentHasBeenSet;
+    bool m_runtimeEnvironmentHasBeenSet = false;
 
     ApplicationMode m_applicationMode;
-    bool m_applicationModeHasBeenSet;
+    bool m_applicationModeHasBeenSet = false;
   };
 
 } // namespace Model

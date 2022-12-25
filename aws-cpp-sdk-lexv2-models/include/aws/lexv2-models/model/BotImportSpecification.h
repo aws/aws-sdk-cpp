@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotImportSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotImportSpecification
+  class BotImportSpecification
   {
   public:
-    BotImportSpecification();
-    BotImportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    BotImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotImportSpecification();
+    AWS_LEXMODELSV2_API BotImportSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -385,22 +385,22 @@ namespace Model
   private:
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     DataPrivacy m_dataPrivacy;
-    bool m_dataPrivacyHasBeenSet;
+    bool m_dataPrivacyHasBeenSet = false;
 
     int m_idleSessionTTLInSeconds;
-    bool m_idleSessionTTLInSecondsHasBeenSet;
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_botTags;
-    bool m_botTagsHasBeenSet;
+    bool m_botTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_testBotAliasTags;
-    bool m_testBotAliasTagsHasBeenSet;
+    bool m_testBotAliasTagsHasBeenSet = false;
   };
 
 } // namespace Model

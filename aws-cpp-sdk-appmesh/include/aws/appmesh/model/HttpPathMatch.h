@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpPathMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpPathMatch
+  class HttpPathMatch
   {
   public:
-    HttpPathMatch();
-    HttpPathMatch(Aws::Utils::Json::JsonView jsonValue);
-    HttpPathMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpPathMatch();
+    AWS_APPMESH_API HttpPathMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpPathMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_exact;
-    bool m_exactHasBeenSet;
+    bool m_exactHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
   };
 
 } // namespace Model

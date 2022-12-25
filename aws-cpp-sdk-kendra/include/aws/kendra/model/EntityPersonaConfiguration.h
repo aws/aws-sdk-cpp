@@ -25,66 +25,66 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information for users or groups in your Amazon Web
-   * Services SSO identity source for access to your Amazon Kendra experience.
+   * <p>Provides the configuration information for users or groups in your IAM
+   * Identity Center identity source for access to your Amazon Kendra experience.
    * Specific permissions are defined for each user or group once they are granted
    * access to your Amazon Kendra experience.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/EntityPersonaConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API EntityPersonaConfiguration
+  class EntityPersonaConfiguration
   {
   public:
-    EntityPersonaConfiguration();
-    EntityPersonaConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EntityPersonaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API EntityPersonaConfiguration();
+    AWS_KENDRA_API EntityPersonaConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API EntityPersonaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityPersonaConfiguration& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityPersonaConfiguration& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of a user or group in your Amazon Web Services SSO identity
+     * <p>The identifier of a user or group in your IAM Identity Center identity
      * source. For example, a user ID could be an email.</p>
      */
     inline EntityPersonaConfiguration& WithEntityId(const char* value) { SetEntityId(value); return *this;}
@@ -92,9 +92,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -102,9 +102,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -112,9 +112,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -122,9 +122,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -132,9 +132,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -142,9 +142,9 @@ namespace Model
 
     /**
      * <p>The persona that defines the specific permissions of the user or group in
-     * your Amazon Web Services SSO identity source. The available personas or access
-     * roles are <code>Owner</code> and <code>Viewer</code>. For more information on
-     * these personas, see <a
+     * your IAM Identity Center identity source. The available personas or access roles
+     * are <code>Owner</code> and <code>Viewer</code>. For more information on these
+     * personas, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
      * access to your search page</a>.</p>
      */
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Persona m_persona;
-    bool m_personaHasBeenSet;
+    bool m_personaHasBeenSet = false;
   };
 
 } // namespace Model

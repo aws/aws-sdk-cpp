@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultPushNotificationMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API DefaultPushNotificationMessage
+  class DefaultPushNotificationMessage
   {
   public:
-    DefaultPushNotificationMessage();
-    DefaultPushNotificationMessage(Aws::Utils::Json::JsonView jsonValue);
-    DefaultPushNotificationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API DefaultPushNotificationMessage();
+    AWS_PINPOINT_API DefaultPushNotificationMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API DefaultPushNotificationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -461,25 +461,25 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     bool m_silentPush;
-    bool m_silentPushHasBeenSet;
+    bool m_silentPushHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-    bool m_substitutionsHasBeenSet;
+    bool m_substitutionsHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

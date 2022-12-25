@@ -25,71 +25,72 @@ namespace Model
 {
 
   /**
-   * <p>Object representing any node overrides to a job definition that's used in a
-   * <a>SubmitJob</a> API operation.</p>  <p>This isn't applicable to jobs that
-   * are running on Fargate resources and shouldn't be provided; use
-   * <code>containerOverrides</code> instead.</p> <p><h3>See Also:</h3>   <a
+   * <p>An object that represents any node overrides to a job definition that's used
+   * in a <a>SubmitJob</a> API operation.</p>  <p>This parameter isn't
+   * applicable to jobs that are running on Fargate resources. Don't provide it for
+   * these jobs. Rather, use <code>containerOverrides</code> instead.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodeOverrides
+  class NodeOverrides
   {
   public:
-    NodeOverrides();
-    NodeOverrides(Aws::Utils::Json::JsonView jsonValue);
-    NodeOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodeOverrides();
+    AWS_BATCH_API NodeOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodeOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The number of nodes to use with a multi-node parallel job. This value
      * overrides the number of nodes that are specified in the job definition. To use
-     * this override:</p> <ul> <li> <p>There must be at least one node range in your
-     * job definition that has an open upper boundary (such as <code>:</code> or
-     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
-     * specified in the job definition must be fewer than the number of nodes specified
-     * in the override.</p> </li> <li> <p>The main node index specified in the job
-     * definition must be fewer than the number of nodes specified in the override.</p>
-     * </li> </ul>
+     * this override, you must meet the following conditions:</p> <ul> <li> <p>There
+     * must be at least one node range in your job definition that has an open upper
+     * boundary, such as <code>:</code> or <code>n:</code>.</p> </li> <li> <p>The lower
+     * boundary of the node range that's specified in the job definition must be fewer
+     * than the number of nodes specified in the override.</p> </li> <li> <p>The main
+     * node index that's specified in the job definition must be fewer than the number
+     * of nodes specified in the override.</p> </li> </ul>
      */
     inline int GetNumNodes() const{ return m_numNodes; }
 
     /**
      * <p>The number of nodes to use with a multi-node parallel job. This value
      * overrides the number of nodes that are specified in the job definition. To use
-     * this override:</p> <ul> <li> <p>There must be at least one node range in your
-     * job definition that has an open upper boundary (such as <code>:</code> or
-     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
-     * specified in the job definition must be fewer than the number of nodes specified
-     * in the override.</p> </li> <li> <p>The main node index specified in the job
-     * definition must be fewer than the number of nodes specified in the override.</p>
-     * </li> </ul>
+     * this override, you must meet the following conditions:</p> <ul> <li> <p>There
+     * must be at least one node range in your job definition that has an open upper
+     * boundary, such as <code>:</code> or <code>n:</code>.</p> </li> <li> <p>The lower
+     * boundary of the node range that's specified in the job definition must be fewer
+     * than the number of nodes specified in the override.</p> </li> <li> <p>The main
+     * node index that's specified in the job definition must be fewer than the number
+     * of nodes specified in the override.</p> </li> </ul>
      */
     inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
 
     /**
      * <p>The number of nodes to use with a multi-node parallel job. This value
      * overrides the number of nodes that are specified in the job definition. To use
-     * this override:</p> <ul> <li> <p>There must be at least one node range in your
-     * job definition that has an open upper boundary (such as <code>:</code> or
-     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
-     * specified in the job definition must be fewer than the number of nodes specified
-     * in the override.</p> </li> <li> <p>The main node index specified in the job
-     * definition must be fewer than the number of nodes specified in the override.</p>
-     * </li> </ul>
+     * this override, you must meet the following conditions:</p> <ul> <li> <p>There
+     * must be at least one node range in your job definition that has an open upper
+     * boundary, such as <code>:</code> or <code>n:</code>.</p> </li> <li> <p>The lower
+     * boundary of the node range that's specified in the job definition must be fewer
+     * than the number of nodes specified in the override.</p> </li> <li> <p>The main
+     * node index that's specified in the job definition must be fewer than the number
+     * of nodes specified in the override.</p> </li> </ul>
      */
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
 
     /**
      * <p>The number of nodes to use with a multi-node parallel job. This value
      * overrides the number of nodes that are specified in the job definition. To use
-     * this override:</p> <ul> <li> <p>There must be at least one node range in your
-     * job definition that has an open upper boundary (such as <code>:</code> or
-     * <code>n:</code>).</p> </li> <li> <p>The lower boundary of the node range
-     * specified in the job definition must be fewer than the number of nodes specified
-     * in the override.</p> </li> <li> <p>The main node index specified in the job
-     * definition must be fewer than the number of nodes specified in the override.</p>
-     * </li> </ul>
+     * this override, you must meet the following conditions:</p> <ul> <li> <p>There
+     * must be at least one node range in your job definition that has an open upper
+     * boundary, such as <code>:</code> or <code>n:</code>.</p> </li> <li> <p>The lower
+     * boundary of the node range that's specified in the job definition must be fewer
+     * than the number of nodes specified in the override.</p> </li> <li> <p>The main
+     * node index that's specified in the job definition must be fewer than the number
+     * of nodes specified in the override.</p> </li> </ul>
      */
     inline NodeOverrides& WithNumNodes(int value) { SetNumNodes(value); return *this;}
 
@@ -137,10 +138,10 @@ namespace Model
   private:
 
     int m_numNodes;
-    bool m_numNodesHasBeenSet;
+    bool m_numNodesHasBeenSet = false;
 
     Aws::Vector<NodePropertyOverride> m_nodePropertyOverrides;
-    bool m_nodePropertyOverridesHasBeenSet;
+    bool m_nodePropertyOverridesHasBeenSet = false;
   };
 
 } // namespace Model

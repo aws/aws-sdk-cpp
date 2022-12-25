@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchPermissionsFailureEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API BatchPermissionsFailureEntry
+  class BatchPermissionsFailureEntry
   {
   public:
-    BatchPermissionsFailureEntry();
-    BatchPermissionsFailureEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPermissionsFailureEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API BatchPermissionsFailureEntry();
+    AWS_LAKEFORMATION_API BatchPermissionsFailureEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API BatchPermissionsFailureEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     BatchPermissionsRequestEntry m_requestEntry;
-    bool m_requestEntryHasBeenSet;
+    bool m_requestEntryHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

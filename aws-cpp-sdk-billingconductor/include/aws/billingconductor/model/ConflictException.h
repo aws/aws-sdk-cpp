@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/billingconductor/model/ConflictExceptionReason.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ConflictException();
+    AWS_BILLINGCONDUCTOR_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -144,16 +145,50 @@ namespace Model
      */
     inline ConflictException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline const ConflictExceptionReason& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline void SetReason(const ConflictExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline void SetReason(ConflictExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline ConflictException& WithReason(const ConflictExceptionReason& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>Reason for the inconsistent state. </p>
+     */
+    inline ConflictException& WithReason(ConflictExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
+
+    ConflictExceptionReason m_reason;
+    bool m_reasonHasBeenSet = false;
   };
 
 } // namespace Model

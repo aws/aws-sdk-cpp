@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityRequest : public AuditManagerRequest
+  class ValidateAssessmentReportIntegrityRequest : public AuditManagerRequest
   {
   public:
-    ValidateAssessmentReportIntegrityRequest();
+    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ValidateAssessmentReportIntegrity"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_s3RelativePath;
-    bool m_s3RelativePathHasBeenSet;
+    bool m_s3RelativePathHasBeenSet = false;
   };
 
 } // namespace Model

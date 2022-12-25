@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ManagedJobTemplateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ManagedJobTemplateSummary
+  class ManagedJobTemplateSummary
   {
   public:
-    ManagedJobTemplateSummary();
-    ManagedJobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
-    ManagedJobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ManagedJobTemplateSummary();
+    AWS_IOT_API ManagedJobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ManagedJobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::String m_templateArn;
-    bool m_templateArnHasBeenSet;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_environments;
-    bool m_environmentsHasBeenSet;
+    bool m_environmentsHasBeenSet = false;
 
     Aws::String m_templateVersion;
-    bool m_templateVersionHasBeenSet;
+    bool m_templateVersionHasBeenSet = false;
   };
 
 } // namespace Model

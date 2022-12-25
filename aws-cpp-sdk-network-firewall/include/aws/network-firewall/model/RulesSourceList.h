@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSourceList">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RulesSourceList
+  class RulesSourceList
   {
   public:
-    RulesSourceList();
-    RulesSourceList(Aws::Utils::Json::JsonView jsonValue);
-    RulesSourceList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RulesSourceList();
+    AWS_NETWORKFIREWALL_API RulesSourceList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RulesSourceList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,13 +255,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::Vector<TargetType> m_targetTypes;
-    bool m_targetTypesHasBeenSet;
+    bool m_targetTypesHasBeenSet = false;
 
     GeneratedRulesType m_generatedRulesType;
-    bool m_generatedRulesTypeHasBeenSet;
+    bool m_generatedRulesTypeHasBeenSet = false;
   };
 
 } // namespace Model

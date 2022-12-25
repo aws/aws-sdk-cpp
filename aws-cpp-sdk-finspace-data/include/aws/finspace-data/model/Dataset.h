@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API Dataset();
+    AWS_FINSPACEDATA_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -416,34 +416,34 @@ namespace Model
   private:
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_datasetArn;
-    bool m_datasetArnHasBeenSet;
+    bool m_datasetArnHasBeenSet = false;
 
     Aws::String m_datasetTitle;
-    bool m_datasetTitleHasBeenSet;
+    bool m_datasetTitleHasBeenSet = false;
 
     DatasetKind m_kind;
-    bool m_kindHasBeenSet;
+    bool m_kindHasBeenSet = false;
 
     Aws::String m_datasetDescription;
-    bool m_datasetDescriptionHasBeenSet;
+    bool m_datasetDescriptionHasBeenSet = false;
 
     DatasetOwnerInfo m_ownerInfo;
-    bool m_ownerInfoHasBeenSet;
+    bool m_ownerInfoHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     long long m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     SchemaUnion m_schemaDefinition;
-    bool m_schemaDefinitionHasBeenSet;
+    bool m_schemaDefinitionHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

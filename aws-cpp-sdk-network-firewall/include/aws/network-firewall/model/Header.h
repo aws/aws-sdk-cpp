@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Header">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API Header
+  class Header
   {
   public:
-    Header();
-    Header(Aws::Utils::Json::JsonView jsonValue);
-    Header& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API Header();
+    AWS_NETWORKFIREWALL_API Header(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Header& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -491,22 +491,22 @@ namespace Model
   private:
 
     StatefulRuleProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_sourcePort;
-    bool m_sourcePortHasBeenSet;
+    bool m_sourcePortHasBeenSet = false;
 
     StatefulRuleDirection m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPort;
-    bool m_destinationPortHasBeenSet;
+    bool m_destinationPortHasBeenSet = false;
   };
 
 } // namespace Model

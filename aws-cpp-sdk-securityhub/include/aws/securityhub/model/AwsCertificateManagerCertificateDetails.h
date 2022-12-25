@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails
+  class AwsCertificateManagerCertificateDetails
   {
   public:
-    AwsCertificateManagerCertificateDetails();
-    AwsCertificateManagerCertificateDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1426,73 +1426,73 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     Aws::Vector<AwsCertificateManagerCertificateExtendedKeyUsage> m_extendedKeyUsages;
-    bool m_extendedKeyUsagesHasBeenSet;
+    bool m_extendedKeyUsagesHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_importedAt;
-    bool m_importedAtHasBeenSet;
+    bool m_importedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inUseBy;
-    bool m_inUseByHasBeenSet;
+    bool m_inUseByHasBeenSet = false;
 
     Aws::String m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::Vector<AwsCertificateManagerCertificateKeyUsage> m_keyUsages;
-    bool m_keyUsagesHasBeenSet;
+    bool m_keyUsagesHasBeenSet = false;
 
     Aws::String m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::String m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     AwsCertificateManagerCertificateOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::String m_renewalEligibility;
-    bool m_renewalEligibilityHasBeenSet;
+    bool m_renewalEligibilityHasBeenSet = false;
 
     AwsCertificateManagerCertificateRenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     Aws::String m_serial;
-    bool m_serialHasBeenSet;
+    bool m_serialHasBeenSet = false;
 
     Aws::String m_signatureAlgorithm;
-    bool m_signatureAlgorithmHasBeenSet;
+    bool m_signatureAlgorithmHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

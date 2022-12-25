@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ProximityResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ProximityResourceTypeEventConfiguration
+  class ProximityResourceTypeEventConfiguration
   {
   public:
-    ProximityResourceTypeEventConfiguration();
-    ProximityResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProximityResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ProximityResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API ProximityResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ProximityResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     SidewalkResourceTypeEventConfiguration m_sidewalk;
-    bool m_sidewalkHasBeenSet;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateServerConfigRequest : public MigrationHubStrategyRecommendationsRequest
+  class UpdateServerConfigRequest : public MigrationHubStrategyRecommendationsRequest
   {
   public:
-    UpdateServerConfigRequest();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API UpdateServerConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateServerConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     StrategyOption m_strategyOption;
-    bool m_strategyOptionHasBeenSet;
+    bool m_strategyOptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/MutationActionSetStateParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter
+  class MutationActionSetStateParameter
   {
   public:
-    MutationActionSetStateParameter();
-    MutationActionSetStateParameter(Aws::Utils::Json::JsonView jsonValue);
-    MutationActionSetStateParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter();
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
 
     ComponentProperty m_set;
-    bool m_setHasBeenSet;
+    bool m_setHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolumeOntapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DeleteVolumeOntapConfiguration
+  class DeleteVolumeOntapConfiguration
   {
   public:
-    DeleteVolumeOntapConfiguration();
-    DeleteVolumeOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeleteVolumeOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DeleteVolumeOntapConfiguration();
+    AWS_FSX_API DeleteVolumeOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DeleteVolumeOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     bool m_skipFinalBackup;
-    bool m_skipFinalBackupHasBeenSet;
+    bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
   };
 
 } // namespace Model

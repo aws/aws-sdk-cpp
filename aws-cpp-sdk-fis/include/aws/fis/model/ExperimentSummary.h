@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentSummary
+  class ExperimentSummary
   {
   public:
-    ExperimentSummary();
-    ExperimentSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentSummary();
+    AWS_FIS_API ExperimentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -252,19 +252,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_experimentTemplateId;
-    bool m_experimentTemplateIdHasBeenSet;
+    bool m_experimentTemplateIdHasBeenSet = false;
 
     ExperimentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

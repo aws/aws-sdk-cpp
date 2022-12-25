@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StudioLifecycleConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API StudioLifecycleConfigDetails
+  class StudioLifecycleConfigDetails
   {
   public:
-    StudioLifecycleConfigDetails();
-    StudioLifecycleConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    StudioLifecycleConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API StudioLifecycleConfigDetails();
+    AWS_SAGEMAKER_API StudioLifecycleConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API StudioLifecycleConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_studioLifecycleConfigArn;
-    bool m_studioLifecycleConfigArnHasBeenSet;
+    bool m_studioLifecycleConfigArnHasBeenSet = false;
 
     Aws::String m_studioLifecycleConfigName;
-    bool m_studioLifecycleConfigNameHasBeenSet;
+    bool m_studioLifecycleConfigNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     StudioLifecycleConfigAppType m_studioLifecycleConfigAppType;
-    bool m_studioLifecycleConfigAppTypeHasBeenSet;
+    bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
   };
 
 } // namespace Model

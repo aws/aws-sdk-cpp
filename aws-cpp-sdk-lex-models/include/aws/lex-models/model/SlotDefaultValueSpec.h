@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/SlotDefaultValueSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValueSpec
+  class SlotDefaultValueSpec
   {
   public:
-    SlotDefaultValueSpec();
-    SlotDefaultValueSpec(Aws::Utils::Json::JsonView jsonValue);
-    SlotDefaultValueSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValueSpec();
+    AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValueSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API SlotDefaultValueSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,7 +122,7 @@ namespace Model
   private:
 
     Aws::Vector<SlotDefaultValue> m_defaultValueList;
-    bool m_defaultValueListHasBeenSet;
+    bool m_defaultValueListHasBeenSet = false;
   };
 
 } // namespace Model

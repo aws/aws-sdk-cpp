@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSNfsExport">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSNfsExport
+  class OpenZFSNfsExport
   {
   public:
-    OpenZFSNfsExport();
-    OpenZFSNfsExport(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSNfsExport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSNfsExport();
+    AWS_FSX_API OpenZFSNfsExport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSNfsExport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<OpenZFSClientConfiguration> m_clientConfigurations;
-    bool m_clientConfigurationsHasBeenSet;
+    bool m_clientConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

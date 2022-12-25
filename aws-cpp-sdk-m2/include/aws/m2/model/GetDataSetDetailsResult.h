@@ -26,12 +26,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API GetDataSetDetailsResult
+  class GetDataSetDetailsResult
   {
   public:
-    GetDataSetDetailsResult();
-    GetDataSetDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataSetDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetDetailsResult();
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API GetDataSetDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -113,32 +113,27 @@ namespace Model
 
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline const DatasetDetailOrgAttributes& GetDataSetOrg() const{ return m_dataSetOrg; }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline void SetDataSetOrg(const DatasetDetailOrgAttributes& value) { m_dataSetOrg = value; }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline void SetDataSetOrg(DatasetDetailOrgAttributes&& value) { m_dataSetOrg = std::move(value); }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline GetDataSetDetailsResult& WithDataSetOrg(const DatasetDetailOrgAttributes& value) { SetDataSetOrg(value); return *this;}
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline GetDataSetDetailsResult& WithDataSetOrg(DatasetDetailOrgAttributes&& value) { SetDataSetOrg(std::move(value)); return *this;}
 
@@ -196,37 +191,37 @@ namespace Model
 
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline GetDataSetDetailsResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline GetDataSetDetailsResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The locaion where the data set is stored.</p>
+     * <p>The location where the data set is stored.</p>
      */
     inline GetDataSetDetailsResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 

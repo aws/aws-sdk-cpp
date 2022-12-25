@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCostOptimizingSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorCostOptimizingSummary
+  class TrustedAdvisorCostOptimizingSummary
   {
   public:
-    TrustedAdvisorCostOptimizingSummary();
-    TrustedAdvisorCostOptimizingSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorCostOptimizingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorCostOptimizingSummary();
+    AWS_SUPPORT_API TrustedAdvisorCostOptimizingSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorCostOptimizingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     double m_estimatedMonthlySavings;
-    bool m_estimatedMonthlySavingsHasBeenSet;
+    bool m_estimatedMonthlySavingsHasBeenSet = false;
 
     double m_estimatedPercentMonthlySavings;
-    bool m_estimatedPercentMonthlySavingsHasBeenSet;
+    bool m_estimatedPercentMonthlySavingsHasBeenSet = false;
   };
 
 } // namespace Model

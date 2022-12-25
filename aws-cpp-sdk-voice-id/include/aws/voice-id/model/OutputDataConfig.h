@@ -29,60 +29,60 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/OutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API OutputDataConfig
+  class OutputDataConfig
   {
   public:
-    OutputDataConfig();
-    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API OutputDataConfig();
+    AWS_VOICEID_API OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>the identifier of the KMS key you want Voice ID to use to encrypt the output
-     * file of the fraudster registration job.</p>
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt the output
+     * file of a speaker enrollment job/fraudster registration job. </p>
      */
     inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
   };
 
 } // namespace Model

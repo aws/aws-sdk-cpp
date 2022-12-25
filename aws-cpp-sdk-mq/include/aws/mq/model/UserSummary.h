@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UserSummary">AWS API
    * Reference</a></p>
    */
-  class AWS_MQ_API UserSummary
+  class UserSummary
   {
   public:
-    UserSummary();
-    UserSummary(Aws::Utils::Json::JsonView jsonValue);
-    UserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API UserSummary();
+    AWS_MQ_API UserSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API UserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     ChangeType m_pendingChange;
-    bool m_pendingChangeHasBeenSet;
+    bool m_pendingChangeHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
   };
 
 } // namespace Model

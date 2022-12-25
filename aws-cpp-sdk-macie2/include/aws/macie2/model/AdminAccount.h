@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AdminAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AdminAccount
+  class AdminAccount
   {
   public:
-    AdminAccount();
-    AdminAccount(Aws::Utils::Json::JsonView jsonValue);
-    AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AdminAccount();
+    AWS_MACIE2_API AdminAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     AdminStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ Aws::String StartFleetActionsRequest::SerializePayload() const
 
   if(m_actionsHasBeenSet)
   {
-   Array<JsonValue> actionsJsonList(m_actions.size());
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
    {
      actionsJsonList[actionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_actions[actionsIndex]));

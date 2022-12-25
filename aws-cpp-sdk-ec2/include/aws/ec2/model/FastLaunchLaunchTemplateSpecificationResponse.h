@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchLaunchTemplateSpecificationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FastLaunchLaunchTemplateSpecificationResponse
+  class FastLaunchLaunchTemplateSpecificationResponse
   {
   public:
-    FastLaunchLaunchTemplateSpecificationResponse();
-    FastLaunchLaunchTemplateSpecificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FastLaunchLaunchTemplateSpecificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FastLaunchLaunchTemplateSpecificationResponse();
+    AWS_EC2_API FastLaunchLaunchTemplateSpecificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FastLaunchLaunchTemplateSpecificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -189,13 +189,13 @@ namespace Model
   private:
 
     Aws::String m_launchTemplateId;
-    bool m_launchTemplateIdHasBeenSet;
+    bool m_launchTemplateIdHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidation">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API DomainValidation
+  class DomainValidation
   {
   public:
-    DomainValidation();
-    DomainValidation(Aws::Utils::Json::JsonView jsonValue);
-    DomainValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API DomainValidation();
+    AWS_ACM_API DomainValidation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API DomainValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -327,22 +327,22 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_validationEmails;
-    bool m_validationEmailsHasBeenSet;
+    bool m_validationEmailsHasBeenSet = false;
 
     Aws::String m_validationDomain;
-    bool m_validationDomainHasBeenSet;
+    bool m_validationDomainHasBeenSet = false;
 
     DomainStatus m_validationStatus;
-    bool m_validationStatusHasBeenSet;
+    bool m_validationStatusHasBeenSet = false;
 
     ResourceRecord m_resourceRecord;
-    bool m_resourceRecordHasBeenSet;
+    bool m_resourceRecordHasBeenSet = false;
 
     ValidationMethod m_validationMethod;
-    bool m_validationMethodHasBeenSet;
+    bool m_validationMethodHasBeenSet = false;
   };
 
 } // namespace Model

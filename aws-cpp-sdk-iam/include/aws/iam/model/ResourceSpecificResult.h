@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResourceSpecificResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ResourceSpecificResult
+  class ResourceSpecificResult
   {
   public:
-    ResourceSpecificResult();
-    ResourceSpecificResult(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceSpecificResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ResourceSpecificResult();
+    AWS_IAM_API ResourceSpecificResult(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API ResourceSpecificResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -460,22 +460,22 @@ namespace Model
   private:
 
     Aws::String m_evalResourceName;
-    bool m_evalResourceNameHasBeenSet;
+    bool m_evalResourceNameHasBeenSet = false;
 
     PolicyEvaluationDecisionType m_evalResourceDecision;
-    bool m_evalResourceDecisionHasBeenSet;
+    bool m_evalResourceDecisionHasBeenSet = false;
 
     Aws::Vector<Statement> m_matchedStatements;
-    bool m_matchedStatementsHasBeenSet;
+    bool m_matchedStatementsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;
-    bool m_missingContextValuesHasBeenSet;
+    bool m_missingContextValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
-    bool m_evalDecisionDetailsHasBeenSet;
+    bool m_evalDecisionDetailsHasBeenSet = false;
 
     PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
-    bool m_permissionsBoundaryDecisionDetailHasBeenSet;
+    bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
   };
 
 } // namespace Model

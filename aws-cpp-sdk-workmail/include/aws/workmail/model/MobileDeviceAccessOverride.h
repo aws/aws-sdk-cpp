@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MobileDeviceAccessOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MobileDeviceAccessOverride
+  class MobileDeviceAccessOverride
   {
   public:
-    MobileDeviceAccessOverride();
-    MobileDeviceAccessOverride(Aws::Utils::Json::JsonView jsonValue);
-    MobileDeviceAccessOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MobileDeviceAccessOverride();
+    AWS_WORKMAIL_API MobileDeviceAccessOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MobileDeviceAccessOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     MobileDeviceAccessRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
   };
 
 } // namespace Model

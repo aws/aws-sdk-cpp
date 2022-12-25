@@ -42,7 +42,8 @@ namespace Model
     ChangeRequestByApproverName,
     ChangeRequestByTemplate,
     ChangeRequestByTargetsResourceGroup,
-    InsightByType
+    InsightByType,
+    AccountId
   };
 
 namespace OpsItemFilterKeyMapper

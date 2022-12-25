@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayPrefixListReference">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayPrefixListReference
+  class TransitGatewayPrefixListReference
   {
   public:
-    TransitGatewayPrefixListReference();
-    TransitGatewayPrefixListReference(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayPrefixListReference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPrefixListReference();
+    AWS_EC2_API TransitGatewayPrefixListReference(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayPrefixListReference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -249,22 +249,22 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayRouteTableId;
-    bool m_transitGatewayRouteTableIdHasBeenSet;
+    bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_prefixListOwnerId;
-    bool m_prefixListOwnerIdHasBeenSet;
+    bool m_prefixListOwnerIdHasBeenSet = false;
 
     TransitGatewayPrefixListReferenceState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_blackhole;
-    bool m_blackholeHasBeenSet;
+    bool m_blackholeHasBeenSet = false;
 
     TransitGatewayPrefixListAttachment m_transitGatewayAttachment;
-    bool m_transitGatewayAttachmentHasBeenSet;
+    bool m_transitGatewayAttachmentHasBeenSet = false;
   };
 
 } // namespace Model

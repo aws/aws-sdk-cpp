@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DecimalNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DecimalNumber
+  class DecimalNumber
   {
   public:
-    DecimalNumber();
-    DecimalNumber(Aws::Utils::Json::JsonView jsonValue);
-    DecimalNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DecimalNumber();
+    AWS_GLUE_API DecimalNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DecimalNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_unscaledValue;
-    bool m_unscaledValueHasBeenSet;
+    bool m_unscaledValueHasBeenSet = false;
 
     int m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
   };
 
 } // namespace Model

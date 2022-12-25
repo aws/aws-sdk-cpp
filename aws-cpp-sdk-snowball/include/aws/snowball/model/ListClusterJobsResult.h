@@ -26,12 +26,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API ListClusterJobsResult
+  class ListClusterJobsResult
   {
   public:
-    ListClusterJobsResult();
-    ListClusterJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClusterJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListClusterJobsResult();
+    AWS_SNOWBALL_API ListClusterJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListClusterJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

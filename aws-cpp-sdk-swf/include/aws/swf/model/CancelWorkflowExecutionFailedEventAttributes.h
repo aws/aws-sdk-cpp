@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CancelWorkflowExecutionFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API CancelWorkflowExecutionFailedEventAttributes
+  class CancelWorkflowExecutionFailedEventAttributes
   {
   public:
-    CancelWorkflowExecutionFailedEventAttributes();
-    CancelWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    CancelWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API CancelWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API CancelWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API CancelWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     CancelWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

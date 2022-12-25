@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/BadRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIGDATA_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIGDATA_API BadRequestException();
+    AWS_APPCONFIGDATA_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -129,13 +129,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     BadRequestReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     BadRequestDetails m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
   };
 
 } // namespace Model

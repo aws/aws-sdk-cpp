@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMEV2_API RecognizeUtteranceRequest : public StreamingLexRuntimeV2Request
+  class RecognizeUtteranceRequest : public StreamingLexRuntimeV2Request
   {
   public:
-    RecognizeUtteranceRequest();
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RecognizeUtterance"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LEXRUNTIMEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_LEXRUNTIMEV2_API bool SignBody() const override { return false; }
 
 
     /**
@@ -613,28 +613,28 @@ namespace Model
   private:
 
     Aws::String m_botId;
-    bool m_botIdHasBeenSet;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botAliasId;
-    bool m_botAliasIdHasBeenSet;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_localeId;
-    bool m_localeIdHasBeenSet;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_sessionState;
-    bool m_sessionStateHasBeenSet;
+    bool m_sessionStateHasBeenSet = false;
 
     Aws::String m_requestAttributes;
-    bool m_requestAttributesHasBeenSet;
+    bool m_requestAttributesHasBeenSet = false;
 
     Aws::String m_requestContentType;
-    bool m_requestContentTypeHasBeenSet;
+    bool m_requestContentTypeHasBeenSet = false;
 
     Aws::String m_responseContentType;
-    bool m_responseContentTypeHasBeenSet;
+    bool m_responseContentTypeHasBeenSet = false;
 
   };
 

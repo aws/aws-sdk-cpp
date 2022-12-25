@@ -24,87 +24,97 @@ namespace Model
 {
 
   /**
-   * <p>Specifies encryption at rest options.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies whether the domain should encrypt data at rest, and if so, the Key
+   * Management Service (KMS) key to use. Can be used only to create a new domain,
+   * not update an existing one.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EncryptionAtRestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions
+  class EncryptionAtRestOptions
   {
   public:
-    EncryptionAtRestOptions();
-    EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions();
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The option to enable encryption at rest.</p>
+     * <p>True to enable encryption at rest.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>The option to enable encryption at rest.</p>
+     * <p>True to enable encryption at rest.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>The option to enable encryption at rest.</p>
+     * <p>True to enable encryption at rest.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>The option to enable encryption at rest.</p>
+     * <p>True to enable encryption at rest.</p>
      */
     inline EncryptionAtRestOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline EncryptionAtRestOptions& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline EncryptionAtRestOptions& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key ID for encryption at rest options.</p>
+     * <p>The KMS key ID. Takes the form
+     * <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
      */
     inline EncryptionAtRestOptions& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

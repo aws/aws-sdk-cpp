@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDFORMATION_API DescribePublisherRequest : public CloudFormationRequest
+  class DescribePublisherRequest : public CloudFormationRequest
   {
   public:
-    DescribePublisherRequest();
+    AWS_CLOUDFORMATION_API DescribePublisherRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribePublisher"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::String m_publisherId;
-    bool m_publisherIdHasBeenSet;
+    bool m_publisherIdHasBeenSet = false;
   };
 
 } // namespace Model

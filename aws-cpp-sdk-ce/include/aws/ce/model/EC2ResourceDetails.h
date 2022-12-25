@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EC2ResourceDetails
+  class EC2ResourceDetails
   {
   public:
-    EC2ResourceDetails();
-    EC2ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    EC2ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EC2ResourceDetails();
+    AWS_COSTEXPLORER_API EC2ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EC2ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -432,31 +432,31 @@ namespace Model
   private:
 
     Aws::String m_hourlyOnDemandRate;
-    bool m_hourlyOnDemandRateHasBeenSet;
+    bool m_hourlyOnDemandRateHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_sku;
-    bool m_skuHasBeenSet;
+    bool m_skuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_networkPerformance;
-    bool m_networkPerformanceHasBeenSet;
+    bool m_networkPerformanceHasBeenSet = false;
 
     Aws::String m_storage;
-    bool m_storageHasBeenSet;
+    bool m_storageHasBeenSet = false;
 
     Aws::String m_vcpu;
-    bool m_vcpuHasBeenSet;
+    bool m_vcpuHasBeenSet = false;
   };
 
 } // namespace Model

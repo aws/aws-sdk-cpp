@@ -9,6 +9,8 @@
 #include <aws/appflow/model/ExecutionStatus.h>
 #include <aws/appflow/model/ExecutionResult.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appflow/model/MetadataCatalogDetail.h>
 #include <utility>
 
 namespace Aws
@@ -32,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ExecutionRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ExecutionRecord
+  class ExecutionRecord
   {
   public:
-    ExecutionRecord();
-    ExecutionRecord(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ExecutionRecord();
+    AWS_APPFLOW_API ExecutionRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ExecutionRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -285,28 +287,80 @@ namespace Model
      */
     inline ExecutionRecord& WithDataPullEndTime(Aws::Utils::DateTime&& value) { SetDataPullEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline const Aws::Vector<MetadataCatalogDetail>& GetMetadataCatalogDetails() const{ return m_metadataCatalogDetails; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline bool MetadataCatalogDetailsHasBeenSet() const { return m_metadataCatalogDetailsHasBeenSet; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline void SetMetadataCatalogDetails(const Aws::Vector<MetadataCatalogDetail>& value) { m_metadataCatalogDetailsHasBeenSet = true; m_metadataCatalogDetails = value; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline void SetMetadataCatalogDetails(Aws::Vector<MetadataCatalogDetail>&& value) { m_metadataCatalogDetailsHasBeenSet = true; m_metadataCatalogDetails = std::move(value); }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline ExecutionRecord& WithMetadataCatalogDetails(const Aws::Vector<MetadataCatalogDetail>& value) { SetMetadataCatalogDetails(value); return *this;}
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline ExecutionRecord& WithMetadataCatalogDetails(Aws::Vector<MetadataCatalogDetail>&& value) { SetMetadataCatalogDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline ExecutionRecord& AddMetadataCatalogDetails(const MetadataCatalogDetail& value) { m_metadataCatalogDetailsHasBeenSet = true; m_metadataCatalogDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline ExecutionRecord& AddMetadataCatalogDetails(MetadataCatalogDetail&& value) { m_metadataCatalogDetailsHasBeenSet = true; m_metadataCatalogDetails.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     ExecutionStatus m_executionStatus;
-    bool m_executionStatusHasBeenSet;
+    bool m_executionStatusHasBeenSet = false;
 
     ExecutionResult m_executionResult;
-    bool m_executionResultHasBeenSet;
+    bool m_executionResultHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataPullStartTime;
-    bool m_dataPullStartTimeHasBeenSet;
+    bool m_dataPullStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataPullEndTime;
-    bool m_dataPullEndTimeHasBeenSet;
+    bool m_dataPullEndTimeHasBeenSet = false;
+
+    Aws::Vector<MetadataCatalogDetail> m_metadataCatalogDetails;
+    bool m_metadataCatalogDetailsHasBeenSet = false;
   };
 
 } // namespace Model

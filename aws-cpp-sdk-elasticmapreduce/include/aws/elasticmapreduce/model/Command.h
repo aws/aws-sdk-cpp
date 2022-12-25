@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Command">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API Command
+  class Command
   {
   public:
-    Command();
-    Command(Aws::Utils::Json::JsonView jsonValue);
-    Command& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API Command();
+    AWS_EMR_API Command(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Command& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_scriptPath;
-    bool m_scriptPathHasBeenSet;
+    bool m_scriptPathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_args;
-    bool m_argsHasBeenSet;
+    bool m_argsHasBeenSet = false;
   };
 
 } // namespace Model

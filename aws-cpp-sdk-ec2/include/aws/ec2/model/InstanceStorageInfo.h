@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceStorageInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceStorageInfo
+  class InstanceStorageInfo
   {
   public:
-    InstanceStorageInfo();
-    InstanceStorageInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceStorageInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStorageInfo();
+    AWS_EC2_API InstanceStorageInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceStorageInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -169,16 +169,16 @@ namespace Model
   private:
 
     long long m_totalSizeInGB;
-    bool m_totalSizeInGBHasBeenSet;
+    bool m_totalSizeInGBHasBeenSet = false;
 
     Aws::Vector<DiskInfo> m_disks;
-    bool m_disksHasBeenSet;
+    bool m_disksHasBeenSet = false;
 
     EphemeralNvmeSupport m_nvmeSupport;
-    bool m_nvmeSupportHasBeenSet;
+    bool m_nvmeSupportHasBeenSet = false;
 
     InstanceStorageEncryptionSupport m_encryptionSupport;
-    bool m_encryptionSupportHasBeenSet;
+    bool m_encryptionSupportHasBeenSet = false;
   };
 
 } // namespace Model

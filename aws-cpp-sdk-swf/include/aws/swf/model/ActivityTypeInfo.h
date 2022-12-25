@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ActivityTypeInfo
+  class ActivityTypeInfo
   {
   public:
-    ActivityTypeInfo();
-    ActivityTypeInfo(Aws::Utils::Json::JsonView jsonValue);
-    ActivityTypeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ActivityTypeInfo();
+    AWS_SWF_API ActivityTypeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ActivityTypeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -221,19 +221,19 @@ namespace Model
   private:
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     RegistrationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
   };
 
 } // namespace Model

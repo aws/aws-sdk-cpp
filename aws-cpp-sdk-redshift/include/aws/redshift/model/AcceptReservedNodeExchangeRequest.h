@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API AcceptReservedNodeExchangeRequest : public RedshiftRequest
+  class AcceptReservedNodeExchangeRequest : public RedshiftRequest
   {
   public:
-    AcceptReservedNodeExchangeRequest();
+    AWS_REDSHIFT_API AcceptReservedNodeExchangeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,10 +29,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AcceptReservedNodeExchange"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_targetReservedNodeOfferingId;
-    bool m_targetReservedNodeOfferingIdHasBeenSet;
+    bool m_targetReservedNodeOfferingIdHasBeenSet = false;
   };
 
 } // namespace Model

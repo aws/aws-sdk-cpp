@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MACIE2_API DeleteFindingsFilterRequest : public Macie2Request
+  class DeleteFindingsFilterRequest : public Macie2Request
   {
   public:
-    DeleteFindingsFilterRequest();
+    AWS_MACIE2_API DeleteFindingsFilterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,61 +29,61 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteFindingsFilter"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline DeleteFindingsFilterRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline DeleteFindingsFilterRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the Amazon Macie resource or account that the
-     * request applies to.</p>
+     * <p>The unique identifier for the Amazon Macie resource that the request applies
+     * to.</p>
      */
     inline DeleteFindingsFilterRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

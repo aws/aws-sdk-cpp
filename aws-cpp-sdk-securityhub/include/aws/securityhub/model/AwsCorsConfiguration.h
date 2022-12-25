@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCorsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCorsConfiguration
+  class AwsCorsConfiguration
   {
   public:
-    AwsCorsConfiguration();
-    AwsCorsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsCorsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCorsConfiguration();
+    AWS_SECURITYHUB_API AwsCorsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCorsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allowOrigins;
-    bool m_allowOriginsHasBeenSet;
+    bool m_allowOriginsHasBeenSet = false;
 
     bool m_allowCredentials;
-    bool m_allowCredentialsHasBeenSet;
+    bool m_allowCredentialsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exposeHeaders;
-    bool m_exposeHeadersHasBeenSet;
+    bool m_exposeHeadersHasBeenSet = false;
 
     int m_maxAge;
-    bool m_maxAgeHasBeenSet;
+    bool m_maxAgeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowMethods;
-    bool m_allowMethodsHasBeenSet;
+    bool m_allowMethodsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowHeaders;
-    bool m_allowHeadersHasBeenSet;
+    bool m_allowHeadersHasBeenSet = false;
   };
 
 } // namespace Model

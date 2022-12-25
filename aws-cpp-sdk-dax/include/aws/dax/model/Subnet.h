@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(Aws::Utils::Json::JsonView jsonValue);
-    Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Subnet();
+    AWS_DAX_API Subnet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     Aws::String m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

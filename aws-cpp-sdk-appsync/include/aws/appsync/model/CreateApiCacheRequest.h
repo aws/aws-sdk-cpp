@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCacheRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API CreateApiCacheRequest : public AppSyncRequest
+  class CreateApiCacheRequest : public AppSyncRequest
   {
   public:
-    CreateApiCacheRequest();
+    AWS_APPSYNC_API CreateApiCacheRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApiCache"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPSYNC_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -314,22 +314,22 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     long long m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     ApiCachingBehavior m_apiCachingBehavior;
-    bool m_apiCachingBehaviorHasBeenSet;
+    bool m_apiCachingBehaviorHasBeenSet = false;
 
     ApiCacheType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

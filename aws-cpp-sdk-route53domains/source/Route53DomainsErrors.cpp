@@ -24,6 +24,7 @@ static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateReq
 static const int OPERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OperationLimitExceeded");
 static const int T_L_D_RULES_VIOLATION_HASH = HashingUtils::HashString("TLDRulesViolation");
 static const int UNSUPPORTED_T_L_D_HASH = HashingUtils::HashString("UnsupportedTLD");
+static const int DNSSEC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DnssecLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_T_L_D_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::UNSUPPORTED_T_L_D), false);
+  }
+  else if (hashCode == DNSSEC_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53DomainsErrors::DNSSEC_LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

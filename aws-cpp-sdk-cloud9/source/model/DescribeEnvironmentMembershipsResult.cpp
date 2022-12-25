@@ -30,7 +30,7 @@ DescribeEnvironmentMembershipsResult& DescribeEnvironmentMembershipsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("memberships"))
   {
-    Array<JsonView> membershipsJsonList = jsonValue.GetArray("memberships");
+    Aws::Utils::Array<JsonView> membershipsJsonList = jsonValue.GetArray("memberships");
     for(unsigned membershipsIndex = 0; membershipsIndex < membershipsJsonList.GetLength(); ++membershipsIndex)
     {
       m_memberships.push_back(membershipsJsonList[membershipsIndex].AsObject());

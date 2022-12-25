@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningJobSummary
+  class HyperParameterTuningJobSummary
   {
   public:
-    HyperParameterTuningJobSummary();
-    HyperParameterTuningJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningJobSummary();
+    AWS_SAGEMAKER_API HyperParameterTuningJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,43 +159,37 @@ namespace Model
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline void SetStrategy(HyperParameterTuningJobStrategyType&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline HyperParameterTuningJobSummary& WithStrategy(const HyperParameterTuningJobStrategyType& value) { SetStrategy(value); return *this;}
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
-     * hyperparameters to use for each iteration. Currently, the only valid value is
-     * Bayesian.</p>
+     * hyperparameters to evaluate at each iteration.</p>
      */
     inline HyperParameterTuningJobSummary& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
 
@@ -412,34 +406,34 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     Aws::String m_hyperParameterTuningJobArn;
-    bool m_hyperParameterTuningJobArnHasBeenSet;
+    bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
     HyperParameterTuningJobStatus m_hyperParameterTuningJobStatus;
-    bool m_hyperParameterTuningJobStatusHasBeenSet;
+    bool m_hyperParameterTuningJobStatusHasBeenSet = false;
 
     HyperParameterTuningJobStrategyType m_strategy;
-    bool m_strategyHasBeenSet;
+    bool m_strategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_hyperParameterTuningEndTime;
-    bool m_hyperParameterTuningEndTimeHasBeenSet;
+    bool m_hyperParameterTuningEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     TrainingJobStatusCounters m_trainingJobStatusCounters;
-    bool m_trainingJobStatusCountersHasBeenSet;
+    bool m_trainingJobStatusCountersHasBeenSet = false;
 
     ObjectiveStatusCounters m_objectiveStatusCounters;
-    bool m_objectiveStatusCountersHasBeenSet;
+    bool m_objectiveStatusCountersHasBeenSet = false;
 
     ResourceLimits m_resourceLimits;
-    bool m_resourceLimitsHasBeenSet;
+    bool m_resourceLimitsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/InvalidRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API InvalidRequestException();
+    AWS_DATASYNC_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -115,13 +115,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_datasyncErrorCode;
-    bool m_datasyncErrorCodeHasBeenSet;
+    bool m_datasyncErrorCodeHasBeenSet = false;
   };
 
 } // namespace Model

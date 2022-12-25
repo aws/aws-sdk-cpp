@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ClusterOperationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ClusterOperationInfo
+  class ClusterOperationInfo
   {
   public:
-    ClusterOperationInfo();
-    ClusterOperationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ClusterOperationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ClusterOperationInfo();
+    AWS_KAFKA_API ClusterOperationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ClusterOperationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -624,37 +624,37 @@ namespace Model
   private:
 
     Aws::String m_clientRequestId;
-    bool m_clientRequestIdHasBeenSet;
+    bool m_clientRequestIdHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     Aws::String m_operationArn;
-    bool m_operationArnHasBeenSet;
+    bool m_operationArnHasBeenSet = false;
 
     Aws::String m_operationState;
-    bool m_operationStateHasBeenSet;
+    bool m_operationStateHasBeenSet = false;
 
     Aws::Vector<ClusterOperationStep> m_operationSteps;
-    bool m_operationStepsHasBeenSet;
+    bool m_operationStepsHasBeenSet = false;
 
     Aws::String m_operationType;
-    bool m_operationTypeHasBeenSet;
+    bool m_operationTypeHasBeenSet = false;
 
     MutableClusterInfo m_sourceClusterInfo;
-    bool m_sourceClusterInfoHasBeenSet;
+    bool m_sourceClusterInfoHasBeenSet = false;
 
     MutableClusterInfo m_targetClusterInfo;
-    bool m_targetClusterInfoHasBeenSet;
+    bool m_targetClusterInfoHasBeenSet = false;
   };
 
 } // namespace Model

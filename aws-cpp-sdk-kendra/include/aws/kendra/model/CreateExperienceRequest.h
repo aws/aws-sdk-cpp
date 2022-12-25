@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API CreateExperienceRequest : public KendraRequest
+  class CreateExperienceRequest : public KendraRequest
   {
   public:
-    CreateExperienceRequest();
+    AWS_KENDRA_API CreateExperienceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateExperience"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -121,8 +121,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -131,8 +131,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -141,8 +141,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -151,8 +151,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -161,8 +161,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -171,8 +171,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -181,8 +181,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -191,8 +191,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a role with permission to access
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and Amazon Web Services SSO that stores your
-     * user and group information. For more information, see <a
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
+     * and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
      * Amazon Kendra</a>.</p>
      */
@@ -348,22 +348,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_indexId;
-    bool m_indexIdHasBeenSet;
+    bool m_indexIdHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ExperienceConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceQuotaIncreaseRequestInTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate
+  class ServiceQuotaIncreaseRequestInTemplate
   {
   public:
-    ServiceQuotaIncreaseRequestInTemplate();
-    ServiceQuotaIncreaseRequestInTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaIncreaseRequestInTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate();
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -327,28 +327,28 @@ namespace Model
   private:
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_quotaName;
-    bool m_quotaNameHasBeenSet;
+    bool m_quotaNameHasBeenSet = false;
 
     double m_desiredValue;
-    bool m_desiredValueHasBeenSet;
+    bool m_desiredValueHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     bool m_globalQuota;
-    bool m_globalQuotaHasBeenSet;
+    bool m_globalQuotaHasBeenSet = false;
   };
 
 } // namespace Model

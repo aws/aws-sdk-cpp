@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AppSpecification
+  class AppSpecification
   {
   public:
-    AppSpecification();
-    AppSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AppSpecification();
+    AWS_SAGEMAKER_API AppSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerEntrypoint;
-    bool m_containerEntrypointHasBeenSet;
+    bool m_containerEntrypointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerArguments;
-    bool m_containerArgumentsHasBeenSet;
+    bool m_containerArgumentsHasBeenSet = false;
   };
 
 } // namespace Model

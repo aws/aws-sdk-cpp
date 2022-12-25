@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API InputTemplate
+  class InputTemplate
   {
   public:
-    InputTemplate();
-    InputTemplate(Aws::Utils::Json::JsonView jsonValue);
-    InputTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API InputTemplate();
+    AWS_MEDIACONVERT_API InputTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API InputTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1170,58 +1170,58 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AudioSelectorGroup> m_audioSelectorGroups;
-    bool m_audioSelectorGroupsHasBeenSet;
+    bool m_audioSelectorGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, AudioSelector> m_audioSelectors;
-    bool m_audioSelectorsHasBeenSet;
+    bool m_audioSelectorsHasBeenSet = false;
 
     Aws::Map<Aws::String, CaptionSelector> m_captionSelectors;
-    bool m_captionSelectorsHasBeenSet;
+    bool m_captionSelectorsHasBeenSet = false;
 
     Rectangle m_crop;
-    bool m_cropHasBeenSet;
+    bool m_cropHasBeenSet = false;
 
     InputDeblockFilter m_deblockFilter;
-    bool m_deblockFilterHasBeenSet;
+    bool m_deblockFilterHasBeenSet = false;
 
     InputDenoiseFilter m_denoiseFilter;
-    bool m_denoiseFilterHasBeenSet;
+    bool m_denoiseFilterHasBeenSet = false;
 
     Aws::String m_dolbyVisionMetadataXml;
-    bool m_dolbyVisionMetadataXmlHasBeenSet;
+    bool m_dolbyVisionMetadataXmlHasBeenSet = false;
 
     InputFilterEnable m_filterEnable;
-    bool m_filterEnableHasBeenSet;
+    bool m_filterEnableHasBeenSet = false;
 
     int m_filterStrength;
-    bool m_filterStrengthHasBeenSet;
+    bool m_filterStrengthHasBeenSet = false;
 
     ImageInserter m_imageInserter;
-    bool m_imageInserterHasBeenSet;
+    bool m_imageInserterHasBeenSet = false;
 
     Aws::Vector<InputClipping> m_inputClippings;
-    bool m_inputClippingsHasBeenSet;
+    bool m_inputClippingsHasBeenSet = false;
 
     InputScanType m_inputScanType;
-    bool m_inputScanTypeHasBeenSet;
+    bool m_inputScanTypeHasBeenSet = false;
 
     Rectangle m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     InputPsiControl m_psiControl;
-    bool m_psiControlHasBeenSet;
+    bool m_psiControlHasBeenSet = false;
 
     InputTimecodeSource m_timecodeSource;
-    bool m_timecodeSourceHasBeenSet;
+    bool m_timecodeSourceHasBeenSet = false;
 
     Aws::String m_timecodeStart;
-    bool m_timecodeStartHasBeenSet;
+    bool m_timecodeStartHasBeenSet = false;
 
     VideoSelector m_videoSelector;
-    bool m_videoSelectorHasBeenSet;
+    bool m_videoSelectorHasBeenSet = false;
   };
 
 } // namespace Model

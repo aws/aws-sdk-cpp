@@ -23,7 +23,7 @@ Aws::String BatchGetRepositoryScanningConfigurationRequest::SerializePayload() c
 
   if(m_repositoryNamesHasBeenSet)
   {
-   Array<JsonValue> repositoryNamesJsonList(m_repositoryNames.size());
+   Aws::Utils::Array<JsonValue> repositoryNamesJsonList(m_repositoryNames.size());
    for(unsigned repositoryNamesIndex = 0; repositoryNamesIndex < repositoryNamesJsonList.GetLength(); ++repositoryNamesIndex)
    {
      repositoryNamesJsonList[repositoryNamesIndex].AsString(m_repositoryNames[repositoryNamesIndex]);

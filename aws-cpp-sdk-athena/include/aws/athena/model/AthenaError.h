@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/AthenaError">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API AthenaError
+  class AthenaError
   {
   public:
-    AthenaError();
-    AthenaError(Aws::Utils::Json::JsonView jsonValue);
-    AthenaError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API AthenaError();
+    AWS_ATHENA_API AthenaError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API AthenaError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -168,16 +168,16 @@ namespace Model
   private:
 
     int m_errorCategory;
-    bool m_errorCategoryHasBeenSet;
+    bool m_errorCategoryHasBeenSet = false;
 
     int m_errorType;
-    bool m_errorTypeHasBeenSet;
+    bool m_errorTypeHasBeenSet = false;
 
     bool m_retryable;
-    bool m_retryableHasBeenSet;
+    bool m_retryableHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

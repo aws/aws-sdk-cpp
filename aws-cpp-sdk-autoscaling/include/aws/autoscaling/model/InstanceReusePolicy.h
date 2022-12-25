@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceReusePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API InstanceReusePolicy
+  class InstanceReusePolicy
   {
   public:
-    InstanceReusePolicy();
-    InstanceReusePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceReusePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceReusePolicy();
+    AWS_AUTOSCALING_API InstanceReusePolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API InstanceReusePolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -68,7 +68,7 @@ namespace Model
   private:
 
     bool m_reuseOnScaleIn;
-    bool m_reuseOnScaleInHasBeenSet;
+    bool m_reuseOnScaleInHasBeenSet = false;
   };
 
 } // namespace Model

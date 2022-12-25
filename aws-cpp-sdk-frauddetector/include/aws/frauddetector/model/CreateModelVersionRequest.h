@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_FRAUDDETECTOR_API CreateModelVersionRequest : public FraudDetectorRequest
+  class CreateModelVersionRequest : public FraudDetectorRequest
   {
   public:
-    CreateModelVersionRequest();
+    AWS_FRAUDDETECTOR_API CreateModelVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateModelVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FRAUDDETECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -292,25 +292,25 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     ModelTypeEnum m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     TrainingDataSourceEnum m_trainingDataSource;
-    bool m_trainingDataSourceHasBeenSet;
+    bool m_trainingDataSourceHasBeenSet = false;
 
     TrainingDataSchema m_trainingDataSchema;
-    bool m_trainingDataSchemaHasBeenSet;
+    bool m_trainingDataSchemaHasBeenSet = false;
 
     ExternalEventsDetail m_externalEventsDetail;
-    bool m_externalEventsDetailHasBeenSet;
+    bool m_externalEventsDetailHasBeenSet = false;
 
     IngestedEventsDetail m_ingestedEventsDetail;
-    bool m_ingestedEventsDetailHasBeenSet;
+    bool m_ingestedEventsDetailHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,760 +5,16 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
-#include <aws/connect/ConnectErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/connect/model/AssociateDefaultVocabularyResult.h>
-#include <aws/connect/model/AssociateInstanceStorageConfigResult.h>
-#include <aws/connect/model/AssociateSecurityKeyResult.h>
-#include <aws/connect/model/ClaimPhoneNumberResult.h>
-#include <aws/connect/model/CreateAgentStatusResult.h>
-#include <aws/connect/model/CreateContactFlowResult.h>
-#include <aws/connect/model/CreateContactFlowModuleResult.h>
-#include <aws/connect/model/CreateHoursOfOperationResult.h>
-#include <aws/connect/model/CreateInstanceResult.h>
-#include <aws/connect/model/CreateIntegrationAssociationResult.h>
-#include <aws/connect/model/CreateQueueResult.h>
-#include <aws/connect/model/CreateQuickConnectResult.h>
-#include <aws/connect/model/CreateRoutingProfileResult.h>
-#include <aws/connect/model/CreateSecurityProfileResult.h>
-#include <aws/connect/model/CreateTaskTemplateResult.h>
-#include <aws/connect/model/CreateUseCaseResult.h>
-#include <aws/connect/model/CreateUserResult.h>
-#include <aws/connect/model/CreateUserHierarchyGroupResult.h>
-#include <aws/connect/model/CreateVocabularyResult.h>
-#include <aws/connect/model/DeleteContactFlowModuleResult.h>
-#include <aws/connect/model/DeleteTaskTemplateResult.h>
-#include <aws/connect/model/DeleteVocabularyResult.h>
-#include <aws/connect/model/DescribeAgentStatusResult.h>
-#include <aws/connect/model/DescribeContactResult.h>
-#include <aws/connect/model/DescribeContactFlowResult.h>
-#include <aws/connect/model/DescribeContactFlowModuleResult.h>
-#include <aws/connect/model/DescribeHoursOfOperationResult.h>
-#include <aws/connect/model/DescribeInstanceResult.h>
-#include <aws/connect/model/DescribeInstanceAttributeResult.h>
-#include <aws/connect/model/DescribeInstanceStorageConfigResult.h>
-#include <aws/connect/model/DescribePhoneNumberResult.h>
-#include <aws/connect/model/DescribeQueueResult.h>
-#include <aws/connect/model/DescribeQuickConnectResult.h>
-#include <aws/connect/model/DescribeRoutingProfileResult.h>
-#include <aws/connect/model/DescribeSecurityProfileResult.h>
-#include <aws/connect/model/DescribeUserResult.h>
-#include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
-#include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
-#include <aws/connect/model/DescribeVocabularyResult.h>
-#include <aws/connect/model/GetContactAttributesResult.h>
-#include <aws/connect/model/GetCurrentMetricDataResult.h>
-#include <aws/connect/model/GetCurrentUserDataResult.h>
-#include <aws/connect/model/GetFederationTokenResult.h>
-#include <aws/connect/model/GetMetricDataResult.h>
-#include <aws/connect/model/GetTaskTemplateResult.h>
-#include <aws/connect/model/ListAgentStatusesResult.h>
-#include <aws/connect/model/ListApprovedOriginsResult.h>
-#include <aws/connect/model/ListBotsResult.h>
-#include <aws/connect/model/ListContactFlowModulesResult.h>
-#include <aws/connect/model/ListContactFlowsResult.h>
-#include <aws/connect/model/ListContactReferencesResult.h>
-#include <aws/connect/model/ListDefaultVocabulariesResult.h>
-#include <aws/connect/model/ListHoursOfOperationsResult.h>
-#include <aws/connect/model/ListInstanceAttributesResult.h>
-#include <aws/connect/model/ListInstanceStorageConfigsResult.h>
-#include <aws/connect/model/ListInstancesResult.h>
-#include <aws/connect/model/ListIntegrationAssociationsResult.h>
-#include <aws/connect/model/ListLambdaFunctionsResult.h>
-#include <aws/connect/model/ListLexBotsResult.h>
-#include <aws/connect/model/ListPhoneNumbersResult.h>
-#include <aws/connect/model/ListPhoneNumbersV2Result.h>
-#include <aws/connect/model/ListPromptsResult.h>
-#include <aws/connect/model/ListQueueQuickConnectsResult.h>
-#include <aws/connect/model/ListQueuesResult.h>
-#include <aws/connect/model/ListQuickConnectsResult.h>
-#include <aws/connect/model/ListRoutingProfileQueuesResult.h>
-#include <aws/connect/model/ListRoutingProfilesResult.h>
-#include <aws/connect/model/ListSecurityKeysResult.h>
-#include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
-#include <aws/connect/model/ListSecurityProfilesResult.h>
-#include <aws/connect/model/ListTagsForResourceResult.h>
-#include <aws/connect/model/ListTaskTemplatesResult.h>
-#include <aws/connect/model/ListUseCasesResult.h>
-#include <aws/connect/model/ListUserHierarchyGroupsResult.h>
-#include <aws/connect/model/ListUsersResult.h>
-#include <aws/connect/model/PutUserStatusResult.h>
-#include <aws/connect/model/ResumeContactRecordingResult.h>
-#include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
-#include <aws/connect/model/SearchUsersResult.h>
-#include <aws/connect/model/SearchVocabulariesResult.h>
-#include <aws/connect/model/StartChatContactResult.h>
-#include <aws/connect/model/StartContactRecordingResult.h>
-#include <aws/connect/model/StartContactStreamingResult.h>
-#include <aws/connect/model/StartOutboundVoiceContactResult.h>
-#include <aws/connect/model/StartTaskContactResult.h>
-#include <aws/connect/model/StopContactResult.h>
-#include <aws/connect/model/StopContactRecordingResult.h>
-#include <aws/connect/model/StopContactStreamingResult.h>
-#include <aws/connect/model/SuspendContactRecordingResult.h>
-#include <aws/connect/model/TransferContactResult.h>
-#include <aws/connect/model/UpdateContactResult.h>
-#include <aws/connect/model/UpdateContactAttributesResult.h>
-#include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
-#include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
-#include <aws/connect/model/UpdateContactScheduleResult.h>
-#include <aws/connect/model/UpdatePhoneNumberResult.h>
-#include <aws/connect/model/UpdateTaskTemplateResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/connect/ConnectServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Connect
 {
-
-namespace Model
-{
-        class AssociateApprovedOriginRequest;
-        class AssociateBotRequest;
-        class AssociateDefaultVocabularyRequest;
-        class AssociateInstanceStorageConfigRequest;
-        class AssociateLambdaFunctionRequest;
-        class AssociateLexBotRequest;
-        class AssociatePhoneNumberContactFlowRequest;
-        class AssociateQueueQuickConnectsRequest;
-        class AssociateRoutingProfileQueuesRequest;
-        class AssociateSecurityKeyRequest;
-        class ClaimPhoneNumberRequest;
-        class CreateAgentStatusRequest;
-        class CreateContactFlowRequest;
-        class CreateContactFlowModuleRequest;
-        class CreateHoursOfOperationRequest;
-        class CreateInstanceRequest;
-        class CreateIntegrationAssociationRequest;
-        class CreateQueueRequest;
-        class CreateQuickConnectRequest;
-        class CreateRoutingProfileRequest;
-        class CreateSecurityProfileRequest;
-        class CreateTaskTemplateRequest;
-        class CreateUseCaseRequest;
-        class CreateUserRequest;
-        class CreateUserHierarchyGroupRequest;
-        class CreateVocabularyRequest;
-        class DeleteContactFlowRequest;
-        class DeleteContactFlowModuleRequest;
-        class DeleteHoursOfOperationRequest;
-        class DeleteInstanceRequest;
-        class DeleteIntegrationAssociationRequest;
-        class DeleteQuickConnectRequest;
-        class DeleteSecurityProfileRequest;
-        class DeleteTaskTemplateRequest;
-        class DeleteUseCaseRequest;
-        class DeleteUserRequest;
-        class DeleteUserHierarchyGroupRequest;
-        class DeleteVocabularyRequest;
-        class DescribeAgentStatusRequest;
-        class DescribeContactRequest;
-        class DescribeContactFlowRequest;
-        class DescribeContactFlowModuleRequest;
-        class DescribeHoursOfOperationRequest;
-        class DescribeInstanceRequest;
-        class DescribeInstanceAttributeRequest;
-        class DescribeInstanceStorageConfigRequest;
-        class DescribePhoneNumberRequest;
-        class DescribeQueueRequest;
-        class DescribeQuickConnectRequest;
-        class DescribeRoutingProfileRequest;
-        class DescribeSecurityProfileRequest;
-        class DescribeUserRequest;
-        class DescribeUserHierarchyGroupRequest;
-        class DescribeUserHierarchyStructureRequest;
-        class DescribeVocabularyRequest;
-        class DisassociateApprovedOriginRequest;
-        class DisassociateBotRequest;
-        class DisassociateInstanceStorageConfigRequest;
-        class DisassociateLambdaFunctionRequest;
-        class DisassociateLexBotRequest;
-        class DisassociatePhoneNumberContactFlowRequest;
-        class DisassociateQueueQuickConnectsRequest;
-        class DisassociateRoutingProfileQueuesRequest;
-        class DisassociateSecurityKeyRequest;
-        class GetContactAttributesRequest;
-        class GetCurrentMetricDataRequest;
-        class GetCurrentUserDataRequest;
-        class GetFederationTokenRequest;
-        class GetMetricDataRequest;
-        class GetTaskTemplateRequest;
-        class ListAgentStatusesRequest;
-        class ListApprovedOriginsRequest;
-        class ListBotsRequest;
-        class ListContactFlowModulesRequest;
-        class ListContactFlowsRequest;
-        class ListContactReferencesRequest;
-        class ListDefaultVocabulariesRequest;
-        class ListHoursOfOperationsRequest;
-        class ListInstanceAttributesRequest;
-        class ListInstanceStorageConfigsRequest;
-        class ListInstancesRequest;
-        class ListIntegrationAssociationsRequest;
-        class ListLambdaFunctionsRequest;
-        class ListLexBotsRequest;
-        class ListPhoneNumbersRequest;
-        class ListPhoneNumbersV2Request;
-        class ListPromptsRequest;
-        class ListQueueQuickConnectsRequest;
-        class ListQueuesRequest;
-        class ListQuickConnectsRequest;
-        class ListRoutingProfileQueuesRequest;
-        class ListRoutingProfilesRequest;
-        class ListSecurityKeysRequest;
-        class ListSecurityProfilePermissionsRequest;
-        class ListSecurityProfilesRequest;
-        class ListTagsForResourceRequest;
-        class ListTaskTemplatesRequest;
-        class ListUseCasesRequest;
-        class ListUserHierarchyGroupsRequest;
-        class ListUsersRequest;
-        class PutUserStatusRequest;
-        class ReleasePhoneNumberRequest;
-        class ResumeContactRecordingRequest;
-        class SearchAvailablePhoneNumbersRequest;
-        class SearchUsersRequest;
-        class SearchVocabulariesRequest;
-        class StartChatContactRequest;
-        class StartContactRecordingRequest;
-        class StartContactStreamingRequest;
-        class StartOutboundVoiceContactRequest;
-        class StartTaskContactRequest;
-        class StopContactRequest;
-        class StopContactRecordingRequest;
-        class StopContactStreamingRequest;
-        class SuspendContactRecordingRequest;
-        class TagResourceRequest;
-        class TransferContactRequest;
-        class UntagResourceRequest;
-        class UpdateAgentStatusRequest;
-        class UpdateContactRequest;
-        class UpdateContactAttributesRequest;
-        class UpdateContactFlowContentRequest;
-        class UpdateContactFlowMetadataRequest;
-        class UpdateContactFlowModuleContentRequest;
-        class UpdateContactFlowModuleMetadataRequest;
-        class UpdateContactFlowNameRequest;
-        class UpdateContactScheduleRequest;
-        class UpdateHoursOfOperationRequest;
-        class UpdateInstanceAttributeRequest;
-        class UpdateInstanceStorageConfigRequest;
-        class UpdatePhoneNumberRequest;
-        class UpdateQueueHoursOfOperationRequest;
-        class UpdateQueueMaxContactsRequest;
-        class UpdateQueueNameRequest;
-        class UpdateQueueOutboundCallerConfigRequest;
-        class UpdateQueueStatusRequest;
-        class UpdateQuickConnectConfigRequest;
-        class UpdateQuickConnectNameRequest;
-        class UpdateRoutingProfileConcurrencyRequest;
-        class UpdateRoutingProfileDefaultOutboundQueueRequest;
-        class UpdateRoutingProfileNameRequest;
-        class UpdateRoutingProfileQueuesRequest;
-        class UpdateSecurityProfileRequest;
-        class UpdateTaskTemplateRequest;
-        class UpdateUserHierarchyRequest;
-        class UpdateUserHierarchyGroupNameRequest;
-        class UpdateUserHierarchyStructureRequest;
-        class UpdateUserIdentityInfoRequest;
-        class UpdateUserPhoneConfigRequest;
-        class UpdateUserRoutingProfileRequest;
-        class UpdateUserSecurityProfilesRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateApprovedOriginOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateBotOutcome;
-        typedef Aws::Utils::Outcome<AssociateDefaultVocabularyResult, ConnectError> AssociateDefaultVocabularyOutcome;
-        typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> AssociateInstanceStorageConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLexBotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociatePhoneNumberContactFlowOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateQueueQuickConnectsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateRoutingProfileQueuesOutcome;
-        typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
-        typedef Aws::Utils::Outcome<ClaimPhoneNumberResult, ConnectError> ClaimPhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
-        typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
-        typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
-        typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHoursOfOperationOutcome;
-        typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateIntegrationAssociationResult, ConnectError> CreateIntegrationAssociationOutcome;
-        typedef Aws::Utils::Outcome<CreateQueueResult, ConnectError> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
-        typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateSecurityProfileResult, ConnectError> CreateSecurityProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateTaskTemplateResult, ConnectError> CreateTaskTemplateOutcome;
-        typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
-        typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
-        typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactFlowOutcome;
-        typedef Aws::Utils::Outcome<DeleteContactFlowModuleResult, ConnectError> DeleteContactFlowModuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteHoursOfOperationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteTaskTemplateResult, ConnectError> DeleteTaskTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteVocabularyResult, ConnectError> DeleteVocabularyOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
-        typedef Aws::Utils::Outcome<DescribeContactFlowResult, ConnectError> DescribeContactFlowOutcome;
-        typedef Aws::Utils::Outcome<DescribeContactFlowModuleResult, ConnectError> DescribeContactFlowModuleOutcome;
-        typedef Aws::Utils::Outcome<DescribeHoursOfOperationResult, ConnectError> DescribeHoursOfOperationOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceResult, ConnectError> DescribeInstanceOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceAttributeResult, ConnectError> DescribeInstanceAttributeOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceStorageConfigResult, ConnectError> DescribeInstanceStorageConfigOutcome;
-        typedef Aws::Utils::Outcome<DescribePhoneNumberResult, ConnectError> DescribePhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<DescribeQueueResult, ConnectError> DescribeQueueOutcome;
-        typedef Aws::Utils::Outcome<DescribeQuickConnectResult, ConnectError> DescribeQuickConnectOutcome;
-        typedef Aws::Utils::Outcome<DescribeRoutingProfileResult, ConnectError> DescribeRoutingProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeSecurityProfileResult, ConnectError> DescribeSecurityProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, ConnectError> DescribeUserHierarchyStructureOutcome;
-        typedef Aws::Utils::Outcome<DescribeVocabularyResult, ConnectError> DescribeVocabularyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOriginOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceStorageConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLambdaFunctionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLexBotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociatePhoneNumberContactFlowOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateQueueQuickConnectsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateRoutingProfileQueuesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateSecurityKeyOutcome;
-        typedef Aws::Utils::Outcome<GetContactAttributesResult, ConnectError> GetContactAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetCurrentUserDataResult, ConnectError> GetCurrentUserDataOutcome;
-        typedef Aws::Utils::Outcome<GetFederationTokenResult, ConnectError> GetFederationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetMetricDataResult, ConnectError> GetMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetTaskTemplateResult, ConnectError> GetTaskTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
-        typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
-        typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
-        typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
-        typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
-        typedef Aws::Utils::Outcome<ListContactReferencesResult, ConnectError> ListContactReferencesOutcome;
-        typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDefaultVocabulariesOutcome;
-        typedef Aws::Utils::Outcome<ListHoursOfOperationsResult, ConnectError> ListHoursOfOperationsOutcome;
-        typedef Aws::Utils::Outcome<ListInstanceAttributesResult, ConnectError> ListInstanceAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListInstanceStorageConfigsResult, ConnectError> ListInstanceStorageConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListInstancesResult, ConnectError> ListInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListIntegrationAssociationsResult, ConnectError> ListIntegrationAssociationsOutcome;
-        typedef Aws::Utils::Outcome<ListLambdaFunctionsResult, ConnectError> ListLambdaFunctionsOutcome;
-        typedef Aws::Utils::Outcome<ListLexBotsResult, ConnectError> ListLexBotsOutcome;
-        typedef Aws::Utils::Outcome<ListPhoneNumbersResult, ConnectError> ListPhoneNumbersOutcome;
-        typedef Aws::Utils::Outcome<ListPhoneNumbersV2Result, ConnectError> ListPhoneNumbersV2Outcome;
-        typedef Aws::Utils::Outcome<ListPromptsResult, ConnectError> ListPromptsOutcome;
-        typedef Aws::Utils::Outcome<ListQueueQuickConnectsResult, ConnectError> ListQueueQuickConnectsOutcome;
-        typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
-        typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
-        typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTaskTemplatesResult, ConnectError> ListTaskTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
-        typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
-        typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
-        typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
-        typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
-        typedef Aws::Utils::Outcome<SearchVocabulariesResult, ConnectError> SearchVocabulariesOutcome;
-        typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
-        typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
-        typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
-        typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
-        typedef Aws::Utils::Outcome<StartTaskContactResult, ConnectError> StartTaskContactOutcome;
-        typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
-        typedef Aws::Utils::Outcome<StopContactRecordingResult, ConnectError> StopContactRecordingOutcome;
-        typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
-        typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TransferContactResult, ConnectError> TransferContactOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowContentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowMetadataOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactFlowModuleContentResult, ConnectError> UpdateContactFlowModuleContentOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactFlowModuleMetadataResult, ConnectError> UpdateContactFlowModuleMetadataOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateContactFlowNameOutcome;
-        typedef Aws::Utils::Outcome<UpdateContactScheduleResult, ConnectError> UpdateContactScheduleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueHoursOfOperationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueMaxContactsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueNameOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueOutboundCallerConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQueueStatusOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateQuickConnectNameOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileConcurrencyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileDefaultOutboundQueueOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileNameOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileQueuesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateSecurityProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateTaskTemplateResult, ConnectError> UpdateTaskTemplateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyStructureOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserIdentityInfoOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserPhoneConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserRoutingProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserSecurityProfilesOutcome;
-
-        typedef std::future<AssociateApprovedOriginOutcome> AssociateApprovedOriginOutcomeCallable;
-        typedef std::future<AssociateBotOutcome> AssociateBotOutcomeCallable;
-        typedef std::future<AssociateDefaultVocabularyOutcome> AssociateDefaultVocabularyOutcomeCallable;
-        typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStorageConfigOutcomeCallable;
-        typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
-        typedef std::future<AssociateLexBotOutcome> AssociateLexBotOutcomeCallable;
-        typedef std::future<AssociatePhoneNumberContactFlowOutcome> AssociatePhoneNumberContactFlowOutcomeCallable;
-        typedef std::future<AssociateQueueQuickConnectsOutcome> AssociateQueueQuickConnectsOutcomeCallable;
-        typedef std::future<AssociateRoutingProfileQueuesOutcome> AssociateRoutingProfileQueuesOutcomeCallable;
-        typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
-        typedef std::future<ClaimPhoneNumberOutcome> ClaimPhoneNumberOutcomeCallable;
-        typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
-        typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
-        typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
-        typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcomeCallable;
-        typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
-        typedef std::future<CreateIntegrationAssociationOutcome> CreateIntegrationAssociationOutcomeCallable;
-        typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
-        typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
-        typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
-        typedef std::future<CreateSecurityProfileOutcome> CreateSecurityProfileOutcomeCallable;
-        typedef std::future<CreateTaskTemplateOutcome> CreateTaskTemplateOutcomeCallable;
-        typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
-        typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
-        typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
-        typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
-        typedef std::future<DeleteContactFlowOutcome> DeleteContactFlowOutcomeCallable;
-        typedef std::future<DeleteContactFlowModuleOutcome> DeleteContactFlowModuleOutcomeCallable;
-        typedef std::future<DeleteHoursOfOperationOutcome> DeleteHoursOfOperationOutcomeCallable;
-        typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
-        typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
-        typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
-        typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
-        typedef std::future<DeleteTaskTemplateOutcome> DeleteTaskTemplateOutcomeCallable;
-        typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
-        typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
-        typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
-        typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
-        typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
-        typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
-        typedef std::future<DescribeContactFlowOutcome> DescribeContactFlowOutcomeCallable;
-        typedef std::future<DescribeContactFlowModuleOutcome> DescribeContactFlowModuleOutcomeCallable;
-        typedef std::future<DescribeHoursOfOperationOutcome> DescribeHoursOfOperationOutcomeCallable;
-        typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
-        typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
-        typedef std::future<DescribeInstanceStorageConfigOutcome> DescribeInstanceStorageConfigOutcomeCallable;
-        typedef std::future<DescribePhoneNumberOutcome> DescribePhoneNumberOutcomeCallable;
-        typedef std::future<DescribeQueueOutcome> DescribeQueueOutcomeCallable;
-        typedef std::future<DescribeQuickConnectOutcome> DescribeQuickConnectOutcomeCallable;
-        typedef std::future<DescribeRoutingProfileOutcome> DescribeRoutingProfileOutcomeCallable;
-        typedef std::future<DescribeSecurityProfileOutcome> DescribeSecurityProfileOutcomeCallable;
-        typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
-        typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
-        typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
-        typedef std::future<DescribeVocabularyOutcome> DescribeVocabularyOutcomeCallable;
-        typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOriginOutcomeCallable;
-        typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
-        typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstanceStorageConfigOutcomeCallable;
-        typedef std::future<DisassociateLambdaFunctionOutcome> DisassociateLambdaFunctionOutcomeCallable;
-        typedef std::future<DisassociateLexBotOutcome> DisassociateLexBotOutcomeCallable;
-        typedef std::future<DisassociatePhoneNumberContactFlowOutcome> DisassociatePhoneNumberContactFlowOutcomeCallable;
-        typedef std::future<DisassociateQueueQuickConnectsOutcome> DisassociateQueueQuickConnectsOutcomeCallable;
-        typedef std::future<DisassociateRoutingProfileQueuesOutcome> DisassociateRoutingProfileQueuesOutcomeCallable;
-        typedef std::future<DisassociateSecurityKeyOutcome> DisassociateSecurityKeyOutcomeCallable;
-        typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
-        typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
-        typedef std::future<GetCurrentUserDataOutcome> GetCurrentUserDataOutcomeCallable;
-        typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
-        typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
-        typedef std::future<GetTaskTemplateOutcome> GetTaskTemplateOutcomeCallable;
-        typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
-        typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
-        typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
-        typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
-        typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
-        typedef std::future<ListContactReferencesOutcome> ListContactReferencesOutcomeCallable;
-        typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutcomeCallable;
-        typedef std::future<ListHoursOfOperationsOutcome> ListHoursOfOperationsOutcomeCallable;
-        typedef std::future<ListInstanceAttributesOutcome> ListInstanceAttributesOutcomeCallable;
-        typedef std::future<ListInstanceStorageConfigsOutcome> ListInstanceStorageConfigsOutcomeCallable;
-        typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
-        typedef std::future<ListIntegrationAssociationsOutcome> ListIntegrationAssociationsOutcomeCallable;
-        typedef std::future<ListLambdaFunctionsOutcome> ListLambdaFunctionsOutcomeCallable;
-        typedef std::future<ListLexBotsOutcome> ListLexBotsOutcomeCallable;
-        typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
-        typedef std::future<ListPhoneNumbersV2Outcome> ListPhoneNumbersV2OutcomeCallable;
-        typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
-        typedef std::future<ListQueueQuickConnectsOutcome> ListQueueQuickConnectsOutcomeCallable;
-        typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
-        typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
-        typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
-        typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
-        typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
-        typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
-        typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTaskTemplatesOutcome> ListTaskTemplatesOutcomeCallable;
-        typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
-        typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
-        typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
-        typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
-        typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
-        typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
-        typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
-        typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
-        typedef std::future<SearchVocabulariesOutcome> SearchVocabulariesOutcomeCallable;
-        typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
-        typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
-        typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
-        typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
-        typedef std::future<StartTaskContactOutcome> StartTaskContactOutcomeCallable;
-        typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
-        typedef std::future<StopContactRecordingOutcome> StopContactRecordingOutcomeCallable;
-        typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
-        typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TransferContactOutcome> TransferContactOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
-        typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
-        typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
-        typedef std::future<UpdateContactFlowContentOutcome> UpdateContactFlowContentOutcomeCallable;
-        typedef std::future<UpdateContactFlowMetadataOutcome> UpdateContactFlowMetadataOutcomeCallable;
-        typedef std::future<UpdateContactFlowModuleContentOutcome> UpdateContactFlowModuleContentOutcomeCallable;
-        typedef std::future<UpdateContactFlowModuleMetadataOutcome> UpdateContactFlowModuleMetadataOutcomeCallable;
-        typedef std::future<UpdateContactFlowNameOutcome> UpdateContactFlowNameOutcomeCallable;
-        typedef std::future<UpdateContactScheduleOutcome> UpdateContactScheduleOutcomeCallable;
-        typedef std::future<UpdateHoursOfOperationOutcome> UpdateHoursOfOperationOutcomeCallable;
-        typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
-        typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
-        typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
-        typedef std::future<UpdateQueueHoursOfOperationOutcome> UpdateQueueHoursOfOperationOutcomeCallable;
-        typedef std::future<UpdateQueueMaxContactsOutcome> UpdateQueueMaxContactsOutcomeCallable;
-        typedef std::future<UpdateQueueNameOutcome> UpdateQueueNameOutcomeCallable;
-        typedef std::future<UpdateQueueOutboundCallerConfigOutcome> UpdateQueueOutboundCallerConfigOutcomeCallable;
-        typedef std::future<UpdateQueueStatusOutcome> UpdateQueueStatusOutcomeCallable;
-        typedef std::future<UpdateQuickConnectConfigOutcome> UpdateQuickConnectConfigOutcomeCallable;
-        typedef std::future<UpdateQuickConnectNameOutcome> UpdateQuickConnectNameOutcomeCallable;
-        typedef std::future<UpdateRoutingProfileConcurrencyOutcome> UpdateRoutingProfileConcurrencyOutcomeCallable;
-        typedef std::future<UpdateRoutingProfileDefaultOutboundQueueOutcome> UpdateRoutingProfileDefaultOutboundQueueOutcomeCallable;
-        typedef std::future<UpdateRoutingProfileNameOutcome> UpdateRoutingProfileNameOutcomeCallable;
-        typedef std::future<UpdateRoutingProfileQueuesOutcome> UpdateRoutingProfileQueuesOutcomeCallable;
-        typedef std::future<UpdateSecurityProfileOutcome> UpdateSecurityProfileOutcomeCallable;
-        typedef std::future<UpdateTaskTemplateOutcome> UpdateTaskTemplateOutcomeCallable;
-        typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
-        typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
-        typedef std::future<UpdateUserHierarchyStructureOutcome> UpdateUserHierarchyStructureOutcomeCallable;
-        typedef std::future<UpdateUserIdentityInfoOutcome> UpdateUserIdentityInfoOutcomeCallable;
-        typedef std::future<UpdateUserPhoneConfigOutcome> UpdateUserPhoneConfigOutcomeCallable;
-        typedef std::future<UpdateUserRoutingProfileOutcome> UpdateUserRoutingProfileOutcomeCallable;
-        typedef std::future<UpdateUserSecurityProfilesOutcome> UpdateUserSecurityProfilesOutcomeCallable;
-} // namespace Model
-
-  class ConnectClient;
-
-    typedef std::function<void(const ConnectClient*, const Model::AssociateApprovedOriginRequest&, const Model::AssociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateApprovedOriginResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateBotRequest&, const Model::AssociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateBotResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateDefaultVocabularyRequest&, const Model::AssociateDefaultVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDefaultVocabularyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateInstanceStorageConfigRequest&, const Model::AssociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateInstanceStorageConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateLambdaFunctionRequest&, const Model::AssociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLambdaFunctionResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateLexBotRequest&, const Model::AssociateLexBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLexBotResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociatePhoneNumberContactFlowRequest&, const Model::AssociatePhoneNumberContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumberContactFlowResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateQueueQuickConnectsRequest&, const Model::AssociateQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateQueueQuickConnectsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateRoutingProfileQueuesRequest&, const Model::AssociateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRoutingProfileQueuesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::AssociateSecurityKeyRequest&, const Model::AssociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSecurityKeyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ClaimPhoneNumberRequest&, const Model::ClaimPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimPhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentStatusResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleRequest&, const Model::CreateContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowModuleResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateHoursOfOperationRequest&, const Model::CreateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHoursOfOperationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateIntegrationAssociationRequest&, const Model::CreateIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationAssociationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateSecurityProfileRequest&, const Model::CreateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateTaskTemplateRequest&, const Model::CreateTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskTemplateResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowRequest&, const Model::DeleteContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteContactFlowModuleRequest&, const Model::DeleteContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactFlowModuleResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteHoursOfOperationRequest&, const Model::DeleteHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHoursOfOperationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProfileRequest&, const Model::DeleteSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteTaskTemplateRequest&, const Model::DeleteTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskTemplateResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentStatusResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowRequest&, const Model::DescribeContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeContactFlowModuleRequest&, const Model::DescribeContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactFlowModuleResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeHoursOfOperationRequest&, const Model::DescribeHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHoursOfOperationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceRequest&, const Model::DescribeInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeInstanceStorageConfigRequest&, const Model::DescribeInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStorageConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribePhoneNumberRequest&, const Model::DescribePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeQueueRequest&, const Model::DescribeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueueResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeQuickConnectRequest&, const Model::DescribeQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuickConnectResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeRoutingProfileRequest&, const Model::DescribeRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRoutingProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeSecurityProfileRequest&, const Model::DescribeSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyStructureRequest&, const Model::DescribeUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyStructureResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DescribeVocabularyRequest&, const Model::DescribeVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVocabularyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateApprovedOriginRequest&, const Model::DisassociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApprovedOriginResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateBotRequest&, const Model::DisassociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBotResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateInstanceStorageConfigRequest&, const Model::DisassociateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateInstanceStorageConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateLambdaFunctionRequest&, const Model::DisassociateLambdaFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLambdaFunctionResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateLexBotRequest&, const Model::DisassociateLexBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLexBotResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociatePhoneNumberContactFlowRequest&, const Model::DisassociatePhoneNumberContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumberContactFlowResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateQueueQuickConnectsRequest&, const Model::DisassociateQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateQueueQuickConnectsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateRoutingProfileQueuesRequest&, const Model::DisassociateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRoutingProfileQueuesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::DisassociateSecurityKeyRequest&, const Model::DisassociateSecurityKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSecurityKeyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetContactAttributesRequest&, const Model::GetContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactAttributesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentMetricDataResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetCurrentUserDataRequest&, const Model::GetCurrentUserDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentUserDataResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::GetTaskTemplateRequest&, const Model::GetTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTaskTemplateResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListApprovedOriginsRequest&, const Model::ListApprovedOriginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovedOriginsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowModulesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListContactFlowsRequest&, const Model::ListContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListContactReferencesRequest&, const Model::ListContactReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactReferencesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListDefaultVocabulariesRequest&, const Model::ListDefaultVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDefaultVocabulariesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListHoursOfOperationsRequest&, const Model::ListHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHoursOfOperationsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListInstanceAttributesRequest&, const Model::ListInstanceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceAttributesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListInstanceStorageConfigsRequest&, const Model::ListInstanceStorageConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceStorageConfigsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListIntegrationAssociationsRequest&, const Model::ListIntegrationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationAssociationsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListLambdaFunctionsRequest&, const Model::ListLambdaFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLambdaFunctionsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListLexBotsRequest&, const Model::ListLexBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLexBotsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListPhoneNumbersV2Request&, const Model::ListPhoneNumbersV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersV2ResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListPromptsRequest&, const Model::ListPromptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPromptsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListQueueQuickConnectsRequest&, const Model::ListQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueueQuickConnectsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListQuickConnectsRequest&, const Model::ListQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickConnectsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileQueuesRequest&, const Model::ListRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfileQueuesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfilesRequest&, const Model::ListRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfilesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListSecurityKeysRequest&, const Model::ListSecurityKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityKeysResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilePermissionsRequest&, const Model::ListSecurityProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilePermissionsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilesRequest&, const Model::ListSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListTaskTemplatesRequest&, const Model::ListTaskTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskTemplatesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::PutUserStatusRequest&, const Model::PutUserStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserStatusResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::SearchVocabulariesRequest&, const Model::SearchVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVocabulariesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StartContactStreamingRequest&, const Model::StartContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactStreamingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StartOutboundVoiceContactRequest&, const Model::StartOutboundVoiceContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundVoiceContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StartTaskContactRequest&, const Model::StartTaskContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StopContactRecordingRequest&, const Model::StopContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactRecordingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::StopContactStreamingRequest&, const Model::StopContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactStreamingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::SuspendContactRecordingRequest&, const Model::SuspendContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendContactRecordingResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::TransferContactRequest&, const Model::TransferContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentStatusResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactAttributesRequest&, const Model::UpdateContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactAttributesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowContentRequest&, const Model::UpdateContactFlowContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowContentResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowMetadataRequest&, const Model::UpdateContactFlowMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowMetadataResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleContentRequest&, const Model::UpdateContactFlowModuleContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowModuleContentResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowModuleMetadataRequest&, const Model::UpdateContactFlowModuleMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowModuleMetadataResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactFlowNameRequest&, const Model::UpdateContactFlowNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactFlowNameResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateContactScheduleRequest&, const Model::UpdateContactScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactScheduleResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateHoursOfOperationRequest&, const Model::UpdateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHoursOfOperationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttributeRequest&, const Model::UpdateInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAttributeResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueHoursOfOperationRequest&, const Model::UpdateQueueHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueHoursOfOperationResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueMaxContactsRequest&, const Model::UpdateQueueMaxContactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueMaxContactsResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueNameRequest&, const Model::UpdateQueueNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueNameResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueOutboundCallerConfigRequest&, const Model::UpdateQueueOutboundCallerConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueOutboundCallerConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQueueStatusRequest&, const Model::UpdateQueueStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueStatusResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectConfigRequest&, const Model::UpdateQuickConnectConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateQuickConnectNameRequest&, const Model::UpdateQuickConnectNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickConnectNameResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileConcurrencyRequest&, const Model::UpdateRoutingProfileConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileConcurrencyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileDefaultOutboundQueueRequest&, const Model::UpdateRoutingProfileDefaultOutboundQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileNameRequest&, const Model::UpdateRoutingProfileNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileNameResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileQueuesRequest&, const Model::UpdateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileQueuesResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateSecurityProfileRequest&, const Model::UpdateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateTaskTemplateRequest&, const Model::UpdateTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskTemplateResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyRequest&, const Model::UpdateUserHierarchyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyGroupNameRequest&, const Model::UpdateUserHierarchyGroupNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyGroupNameResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyStructureRequest&, const Model::UpdateUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyStructureResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserIdentityInfoRequest&, const Model::UpdateUserIdentityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserIdentityInfoResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserPhoneConfigRequest&, const Model::UpdateUserPhoneConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPhoneConfigResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserRoutingProfileRequest&, const Model::UpdateUserRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserRoutingProfileResponseReceivedHandler;
-    typedef std::function<void(const ConnectClient*, const Model::UpdateUserSecurityProfilesRequest&, const Model::UpdateUserSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSecurityProfilesResponseReceivedHandler;
-
   /**
    * <p>Amazon Connect is a cloud-based contact center solution that you use to set
    * up and manage a customer contact center and provide reliable customer engagement
@@ -773,37 +29,62 @@ namespace Model
    * <p>You can connect programmatically to an Amazon Web Services service by using
    * an endpoint. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect Endpoints</a>.</p>  <p>Working with contact flows? Check out the
-   * <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-   * Connect Flow language</a>.</p> 
+   * Connect Endpoints</a>.</p>
    */
-  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectClient(const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration(),
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectClient(const Aws::Auth::AWSCredentials& credentials,
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<ConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Connect::ConnectClientConfiguration& clientConfiguration = Aws::Connect::ConnectClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ConnectClient();
-
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -925,8 +206,17 @@ namespace Model
         virtual void AssociateLexBotAsync(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a contact flow with a phone number claimed to your Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a flow with a phone number claimed to your Amazon Connect
+         * instance.</p>  <p>If the number is claimed to a traffic distribution
+         * group, and you are calling this API using an instance in the Amazon Web Services
+         * Region where the traffic distribution group was created, you can use either a
+         * full phone number ARN or UUID value for the <code>PhoneNumberId</code> URI
+         * request parameter. However, if the number is claimed to a traffic distribution
+         * group and you are calling this API using an instance in the alternate Amazon Web
+         * Services Region associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
          */
@@ -999,8 +289,21 @@ namespace Model
         virtual void AssociateSecurityKeyAsync(const Model::AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Claims an available phone number to your Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Claims an available phone number to your Amazon Connect instance or traffic
+         * distribution group. You can call this API only in the same Amazon Web Services
+         * Region where the Amazon Connect instance or traffic distribution group was
+         * created.</p> <p>For more information about how to use this operation, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
+         * a phone number in your country</a> and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
+         * phone numbers to traffic distribution groups</a> in the <i>Amazon Connect
+         * Administrator Guide</i>. </p>  <p>You can call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html">SearchAvailablePhoneNumbers</a>
+         * API for available phone numbers that you can claim. Call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API to verify the status of a previous <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1036,9 +339,9 @@ namespace Model
         virtual void CreateAgentStatusAsync(const Model::CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a contact flow for the specified Amazon Connect instance.</p> <p>You
-         * can also create and update contact flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also
+         * create and update flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
          * API Reference</a></p>
@@ -1056,7 +359,7 @@ namespace Model
         virtual void CreateContactFlowAsync(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a contact flow module for the specified Amazon Connect instance.
+         * <p>Creates a flow module for the specified Amazon Connect instance.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
          * API Reference</a></p>
@@ -1138,7 +441,18 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p>  <p>If the number being used in the input is claimed to
+         * a traffic distribution group, and you are calling this API using an instance in
+         * the Amazon Web Services Region where the traffic distribution group was created,
+         * you can use either a full phone number ARN or UUID value for the
+         * <code>OutboundCallerIdNumberId</code> value of the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+         * request body parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API using an instance in the
+         * alternate Amazon Web Services Region associated with the traffic distribution
+         * group, you must provide a full phone number ARN. If a UUID is provided in this
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
          * API Reference</a></p>
          */
@@ -1190,6 +504,26 @@ namespace Model
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+         * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a security profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateSecurityProfile">AWS
@@ -1224,6 +558,28 @@ namespace Model
          * An Async wrapper for CreateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTaskTemplateAsync(const Model::CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a traffic distribution group given an Amazon Connect instance that
+         * has been replicated. </p> <p>For more information about creating traffic
+         * distribution groups, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
+         * up traffic distribution groups</a> in the <i>Amazon Connect Administrator
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrafficDistributionGroupOutcome CreateTrafficDistributionGroup(const Model::CreateTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTrafficDistributionGroupOutcomeCallable CreateTrafficDistributionGroupCallable(const Model::CreateTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTrafficDistributionGroupAsync(const Model::CreateTrafficDistributionGroupRequest& request, const CreateTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
@@ -1304,8 +660,8 @@ namespace Model
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a contact flow for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a flow for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
          * API Reference</a></p>
          */
@@ -1322,7 +678,7 @@ namespace Model
         virtual void DeleteContactFlowAsync(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -1416,6 +772,24 @@ namespace Model
         virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Deletes a security profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">AWS
@@ -1449,6 +823,28 @@ namespace Model
          * An Async wrapper for DeleteTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTaskTemplateAsync(const Model::DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a traffic distribution group. This API can be called only in the
+         * Region where the traffic distribution group is created.</p> <p>For more
+         * information about deleting traffic distribution groups, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+         * traffic distribution groups</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrafficDistributionGroupOutcome DeleteTrafficDistributionGroup(const Model::DeleteTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTrafficDistributionGroupOutcomeCallable DeleteTrafficDistributionGroupCallable(const Model::DeleteTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTrafficDistributionGroupAsync(const Model::DeleteTrafficDistributionGroupRequest& request, const DeleteTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
@@ -1548,7 +944,8 @@ namespace Model
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
          * information remains available in Amazon Connect for 24 months, and then it is
-         * deleted.</p> <p><h3>See Also:</h3>   <a
+         * deleted.</p> <p>Only data from November 12, 2021, and later is returned by this
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -1565,9 +962,9 @@ namespace Model
         virtual void DescribeContactAsync(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified contact flow.</p> <p>You can also create and update
-         * contact flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * <p>Describes the specified flow.</p> <p>You can also create and update flows
+         * using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
@@ -1585,7 +982,7 @@ namespace Model
         virtual void DescribeContactFlowAsync(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified contact flow module.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -1682,7 +1079,16 @@ namespace Model
 
         /**
          * <p>Gets details and status of a phone number that’s claimed to your Amazon
-         * Connect instance</p><p><h3>See Also:</h3>   <a
+         * Connect instance or traffic distribution group.</p>  <p>If the number
+         * is claimed to a traffic distribution group, and you are calling in the Amazon
+         * Web Services Region where the traffic distribution group was created, you can
+         * use either a phone number ARN or UUID value for the <code>PhoneNumberId</code>
+         * URI request parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API in the alternate Amazon Web
+         * Services Region associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1751,6 +1157,24 @@ namespace Model
         virtual void DescribeRoutingProfileAsync(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRuleOutcome DescribeRule(const Model::DescribeRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRuleAsync(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Gets basic information about the security profle.</p><p><h3>See
          * Also:</h3>   <a
@@ -1768,6 +1192,24 @@ namespace Model
          * An Async wrapper for DescribeSecurityProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSecurityProfileAsync(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets details and status of a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrafficDistributionGroupOutcome DescribeTrafficDistributionGroup(const Model::DescribeTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTrafficDistributionGroupOutcomeCallable DescribeTrafficDistributionGroupCallable(const Model::DescribeTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTrafficDistributionGroupAsync(const Model::DescribeTrafficDistributionGroupRequest& request, const DescribeTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified user account. You can find the instance ID in the
@@ -1901,7 +1343,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Remove the Lambda function from the dropdown options available in
-         * the relevant contact flow blocks.</p><p><h3>See Also:</h3>   <a
+         * the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">AWS
          * API Reference</a></p>
          */
@@ -1937,9 +1379,18 @@ namespace Model
         virtual void DisassociateLexBotAsync(const Model::DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the contact flow association from a phone number claimed to your
-         * Amazon Connect instance, if a contact flow association exists.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the flow association from a phone number claimed to your Amazon
+         * Connect instance.</p>  <p>If the number is claimed to a traffic
+         * distribution group, and you are calling this API using an instance in the Amazon
+         * Web Services Region where the traffic distribution group was created, you can
+         * use either a full phone number ARN or UUID value for the
+         * <code>PhoneNumberId</code> URI request parameter. However, if the number is
+         * claimed to a traffic distribution group and you are calling this API using an
+         * instance in the alternate Amazon Web Services Region associated with the traffic
+         * distribution group, you must provide a full phone number ARN. If a UUID is
+         * provided in this scenario, you will receive a
+         * <code>ResourceNotFoundException</code>.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
          */
@@ -2009,6 +1460,28 @@ namespace Model
          * An Async wrapper for DisassociateSecurityKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateSecurityKeyAsync(const Model::DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Dismisses contacts from an agent’s CCP and returns the agent to an available
+         * state, which allows the agent to receive a new routed contact. Contacts can only
+         * be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>,
+         * <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent
+         * Event Stream</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DismissUserContactOutcome DismissUserContact(const Model::DismissUserContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for DismissUserContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DismissUserContactOutcomeCallable DismissUserContactCallable(const Model::DismissUserContactRequest& request) const;
+
+        /**
+         * An Async wrapper for DismissUserContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DismissUserContactAsync(const Model::DismissUserContactRequest& request, const DismissUserContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the contact attributes for the specified contact.</p><p><h3>See
@@ -2128,6 +1601,24 @@ namespace Model
         virtual void GetTaskTemplateAsync(const Model::GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the current traffic distribution for a given traffic distribution
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrafficDistributionOutcome GetTrafficDistribution(const Model::GetTrafficDistributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrafficDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTrafficDistributionOutcomeCallable GetTrafficDistributionCallable(const Model::GetTrafficDistributionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTrafficDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTrafficDistributionAsync(const Model::GetTrafficDistributionRequest& request, const GetTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">AWS
@@ -2167,8 +1658,8 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>For the specified version of Amazon Lex, returns a paginated list
-         * of all the Amazon Lex bots currently associated with the instance.
-         * </p><p><h3>See Also:</h3>   <a
+         * of all the Amazon Lex bots currently associated with the instance. Use this API
+         * to returns both Amazon Lex V1 and V2 bots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">AWS
          * API Reference</a></p>
          */
@@ -2185,8 +1676,8 @@ namespace Model
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information about the contact flow modules for the specified Amazon
-         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about the flow modules for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
          * API Reference</a></p>
          */
@@ -2203,14 +1694,12 @@ namespace Model
         virtual void ListContactFlowModulesAsync(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>You can also create and update contact flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-         * Connect Flow language</a>.</p> <p>For more information about contact flows, see
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-         * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides information about the flows for the specified Amazon Connect
+         * instance.</p> <p>You can also create and update flows using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
+         * Connect Flow language</a>.</p> <p>For more information about flows, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
+         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
          * API Reference</a></p>
          */
@@ -2365,8 +1854,7 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns a paginated list of all Lambda functions that display in
-         * the dropdown options in the relevant contact flow blocks.</p><p><h3>See
-         * Also:</h3>   <a
+         * the dropdown options in the relevant flow blocks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">AWS
          * API Reference</a></p>
          */
@@ -2384,8 +1872,11 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Returns a paginated list of all the Amazon Lex bots currently
-         * associated with the instance.</p><p><h3>See Also:</h3>   <a
+         * change.</p> <p>Returns a paginated list of all the Amazon Lex V1 bots currently
+         * associated with the instance. To return both Amazon Lex V1 and V2 bots, use the
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">AWS
          * API Reference</a></p>
          */
@@ -2406,7 +1897,14 @@ namespace Model
          * instance. </p> <p>For more information about phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Administrator Guide</i>.</p>  <p>The phone number <code>Arn</code>
+         * value that is returned from each of the items in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+         * cannot be used to tag phone number resources. It will fail with a
+         * <code>ResourceNotFoundException</code>. Instead, use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+         * API. It returns the new phone number ARN that can be used to tag phone number
+         * resources.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -2423,8 +1921,11 @@ namespace Model
         virtual void ListPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists phone numbers claimed to your Amazon Connect instance. </p> <p>For more
-         * information about phone numbers, see <a
+         * <p>Lists phone numbers claimed to your Amazon Connect instance or traffic
+         * distribution group. If the provided <code>TargetArn</code> is a traffic
+         * distribution group, you can call this API in both Amazon Web Services Regions
+         * associated with traffic distribution group.</p> <p>For more information about
+         * phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2566,6 +2067,24 @@ namespace Model
         virtual void ListRoutingProfilesAsync(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List all rules for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Returns a paginated list of all security keys associated with the
          * instance.</p><p><h3>See Also:</h3>   <a
@@ -2665,6 +2184,23 @@ namespace Model
         virtual void ListTaskTemplatesAsync(const Model::ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists traffic distribution groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrafficDistributionGroupsOutcome ListTrafficDistributionGroups(const Model::ListTrafficDistributionGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrafficDistributionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTrafficDistributionGroupsOutcomeCallable ListTrafficDistributionGroupsCallable(const Model::ListTrafficDistributionGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTrafficDistributionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTrafficDistributionGroupsAsync(const Model::ListTrafficDistributionGroupsRequest& request, const ListTrafficDistributionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the use cases for the integration association. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
@@ -2723,6 +2259,25 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of
+         * the user specified by <i>userId</i> will be set to silent monitoring mode on the
+         * contact.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MonitorContactOutcome MonitorContact(const Model::MonitorContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for MonitorContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MonitorContactOutcomeCallable MonitorContactCallable(const Model::MonitorContactRequest& request) const;
+
+        /**
+         * An Async wrapper for MonitorContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MonitorContactAsync(const Model::MonitorContactRequest& request, const MonitorContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the current status of a user or agent in Amazon Connect. If the agent
          * is currently handling a contact, this sets the agent's next status.</p> <p>For
          * more information, see <a
@@ -2747,8 +2302,15 @@ namespace Model
         virtual void PutUserStatusAsync(const Model::PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Releases a phone number previously claimed to an Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Releases a phone number previously claimed to an Amazon Connect instance or
+         * traffic distribution group. You can call this API only in the Amazon Web
+         * Services Region where the number was claimed.</p>  <p>To release
+         * phone numbers from a traffic distribution group, use the
+         * <code>ReleasePhoneNumber</code> API, not the Amazon Connect console.</p>
+         * <p>After releasing a phone number, the phone number enters into a cooldown
+         * period of 30 days. It cannot be searched for or claimed again until the period
+         * has ended. If you accidentally release a phone number, contact Amazon Web
+         * Services Support.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2763,6 +2325,28 @@ namespace Model
          * An Async wrapper for ReleasePhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReleasePhoneNumberAsync(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Replicates an Amazon Connect instance in the specified Amazon Web Services
+         * Region.</p> <p>For more information about replicating an Amazon Connect
+         * instance, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+         * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
+         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplicateInstanceOutcome ReplicateInstance(const Model::ReplicateInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReplicateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReplicateInstanceOutcomeCallable ReplicateInstanceCallable(const Model::ReplicateInstanceRequest& request) const;
+
+        /**
+         * An Async wrapper for ReplicateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReplicateInstanceAsync(const Model::ReplicateInstanceRequest& request, const ReplicateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When a contact is being recorded, and the recording has been suspended using
@@ -2785,7 +2369,10 @@ namespace Model
 
         /**
          * <p>Searches for available phone numbers that you can claim to your Amazon
-         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * Connect instance or traffic distribution group. If the provided
+         * <code>TargetArn</code> is a traffic distribution group, you can call this API in
+         * both Amazon Web Services Regions associated with the traffic distribution
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -2802,8 +2389,66 @@ namespace Model
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Searches users in an Amazon Connect instance, with optional
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches queues in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchQueuesOutcome SearchQueues(const Model::SearchQueuesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchQueues that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchQueuesOutcomeCallable SearchQueuesCallable(const Model::SearchQueuesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchQueuesAsync(const Model::SearchQueuesRequest& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches routing profiles in an Amazon Connect instance, with
+         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchRoutingProfilesOutcome SearchRoutingProfiles(const Model::SearchRoutingProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchRoutingProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchRoutingProfilesOutcomeCallable SearchRoutingProfilesCallable(const Model::SearchRoutingProfilesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchRoutingProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchRoutingProfilesAsync(const Model::SearchRoutingProfilesRequest& request, const SearchRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and is subject to
+         * change.</p> <p>Searches security profiles in an Amazon Connect instance, with
+         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchSecurityProfilesOutcome SearchSecurityProfiles(const Model::SearchSecurityProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchSecurityProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchSecurityProfilesOutcomeCallable SearchSecurityProfilesCallable(const Model::SearchSecurityProfilesRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchSecurityProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchSecurityProfilesAsync(const Model::SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
+         *  <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
          * API Reference</a></p>
          */
@@ -2839,8 +2484,8 @@ namespace Model
         virtual void SearchVocabulariesAsync(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a contact flow to start a new chat for the customer. Response of
-         * this API provides a token required to obtain credentials from the <a
+         * <p>Initiates a flow to start a new chat for the customer. Response of this API
+         * provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * API in the Amazon Connect Participant Service.</p> <p>When a new chat contact is
          * successfully created, clients must subscribe to the participant’s connection for
@@ -2926,24 +2571,23 @@ namespace Model
         virtual void StartContactStreamingAsync(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Places an outbound call to a contact, and then initiates the contact flow. It
-         * performs the actions in the contact flow that's specified (in
+         * <p>Places an outbound call to a contact, and then initiates the flow. It
+         * performs the actions in the flow that's specified (in
          * <code>ContactFlowId</code>).</p> <p>Agents do not initiate the outbound API,
-         * which means that they do not dial the contact. If the contact flow places an
-         * outbound call to a contact, and then puts the contact in queue, the call is then
-         * routed to the agent, like any other inbound case.</p> <p>There is a 60-second
-         * dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
-         * default. Before you can dial these UK mobile numbers, you must submit a service
-         * quota increase request. For more information, see <a
+         * which means that they do not dial the contact. If the flow places an outbound
+         * call to a contact, and then puts the contact in queue, the call is then routed
+         * to the agent, like any other inbound case.</p> <p>There is a 60-second dialing
+         * timeout for this operation. If the call is not connected after 60 seconds, it
+         * fails.</p>  <p>UK numbers with a 447 prefix are not allowed by default.
+         * Before you can dial these UK mobile numbers, you must submit a service quota
+         * increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
          * </p>   <p>Campaign calls are not allowed by default. Before you can
          * make a call with <code>TrafficType</code> = <code>CAMPAIGN</code>, you must
-         * submit a service quota increase request. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> <p><h3>See Also:</h3>   <a
+         * submit a service quota increase request to the quota <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
+         * Connect campaigns</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          */
@@ -2960,7 +2604,7 @@ namespace Model
         virtual void StartOutboundVoiceContactAsync(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a contact flow to start a new task.</p><p><h3>See Also:</h3>   <a
+         * <p>Initiates a flow to start a new task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">AWS
          * API Reference</a></p>
          */
@@ -3061,10 +2705,13 @@ namespace Model
         virtual void SuspendContactRecordingAsync(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource types are users, routing profiles, queues, quick connects, contact
-         * flows, agent status, hours of operation, phone number, security profiles, and
-         * task templates.</p> <p>For sample policies that use tags, see <a
+         * <p>Adds the specified tags to the specified resource.</p> <p>Some of the
+         * supported resource types are agents, routing profiles, queues, quick connects,
+         * contact flows, agent statuses, hours of operation, phone numbers, security
+         * profiles, and task templates. For a complete list, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+         * resources in Amazon Connect</a>.</p> <p>For sample policies that use tags, see
+         * <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3086,17 +2733,16 @@ namespace Model
         /**
          * <p>Transfers contacts from one agent or queue to another agent or queue at any
          * point after a contact is created. You can transfer a contact to another queue by
-         * providing the contact flow which orchestrates the contact to the destination
-         * queue. This gives you more control over contact handling and helps you adhere to
-         * the service level agreement (SLA) guaranteed to your customers.</p> <p>Note the
-         * following requirements:</p> <ul> <li> <p>Transfer is supported for only
-         * <code>TASK</code> contacts.</p> </li> <li> <p>Do not use both
-         * <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li> <li>
-         * <p>The following contact flow types are supported: Inbound contact flow,
-         * Transfer to agent flow, and Transfer to queue flow.</p> </li> <li> <p>The
-         * <code>TransferContact</code> API can be called only on active contacts.</p>
-         * </li> <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * providing the flow which orchestrates the contact to the destination queue. This
+         * gives you more control over contact handling and helps you adhere to the service
+         * level agreement (SLA) guaranteed to your customers.</p> <p>Note the following
+         * requirements:</p> <ul> <li> <p>Transfer is supported for only <code>TASK</code>
+         * contacts.</p> </li> <li> <p>Do not use both <code>QueueId</code> and
+         * <code>UserId</code> in the same call.</p> </li> <li> <p>The following flow types
+         * are supported: Inbound flow, Transfer to agent flow, and Transfer to queue
+         * flow.</p> </li> <li> <p>The <code>TransferContact</code> API can be called only
+         * on active contacts.</p> </li> <li> <p>A contact cannot be transferred more than
+         * 11 times.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">AWS
          * API Reference</a></p>
          */
@@ -3180,17 +2826,12 @@ namespace Model
          * data from your CRM application and save the data with the contact in Amazon
          * Connect. You could also flag calls for additional analysis, such as legal review
          * or to identify abusive callers.</p> <p>Contact attributes are available in
-         * Amazon Connect for 24 months, and are then deleted. For information about CTR
-         * retention and the maximum size of the CTR attributes section, see <a
+         * Amazon Connect for 24 months, and are then deleted. For information about
+         * contact record retention and the maximum size of the contact record attributes
+         * section, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <p>
-         * <b>Important:</b> You cannot use the operation to update attributes for contacts
-         * that occurred prior to the release of the API, which was September 12, 2018. You
-         * can update attributes only for contacts that started after the release of the
-         * API. If you attempt to update attributes for a contact that occurred prior to
-         * the release of the API, a 400 error is returned. This applies also to queued
-         * callbacks that were initiated prior to the release of the API but are still
-         * active in your instance.</p><p><h3>See Also:</h3>   <a
+         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          */
@@ -3207,9 +2848,9 @@ namespace Model
         virtual void UpdateContactAttributesAsync(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified contact flow.</p> <p>You can also create and update
-         * contact flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * <p>Updates the specified flow.</p> <p>You can also create and update flows using
+         * the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
@@ -3227,7 +2868,7 @@ namespace Model
         virtual void UpdateContactFlowContentAsync(const Model::UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates metadata about specified contact flow.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates metadata about specified flow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowMetadata">AWS
          * API Reference</a></p>
          */
@@ -3244,8 +2885,8 @@ namespace Model
         virtual void UpdateContactFlowMetadataAsync(const Model::UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates specified contact flow module for the specified Amazon Connect
-         * instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates specified flow module for the specified Amazon Connect instance.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
          * API Reference</a></p>
          */
@@ -3262,8 +2903,7 @@ namespace Model
         virtual void UpdateContactFlowModuleContentAsync(const Model::UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates metadata about specified contact flow module.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates metadata about specified flow module.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleMetadata">AWS
          * API Reference</a></p>
          */
@@ -3280,9 +2920,9 @@ namespace Model
         virtual void UpdateContactFlowModuleMetadataAsync(const Model::UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The name of the contact flow.</p> <p>You can also create and update contact
-         * flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * <p>The name of the flow.</p> <p>You can also create and update flows using the
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">AWS
          * API Reference</a></p>
@@ -3374,9 +3014,38 @@ namespace Model
         virtual void UpdateInstanceStorageConfigAsync(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates your claimed phone number from its current Amazon Connect instance to
-         * another Amazon Connect instance in the same Region.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates timeouts for when human chat participants are to be considered idle,
+         * and when agents are automatically disconnected from a chat due to idleness. You
+         * can set four timers:</p> <ul> <li> <p>Customer idle timeout</p> </li> <li>
+         * <p>Customer auto-disconnect timeout</p> </li> <li> <p>Agent idle timeout</p>
+         * </li> <li> <p>Agent auto-disconnect timeout</p> </li> </ul> <p>For more
+         * information about how chat timeouts work, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set
+         * up chat timeouts for human participants</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateParticipantRoleConfigOutcome UpdateParticipantRoleConfig(const Model::UpdateParticipantRoleConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateParticipantRoleConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateParticipantRoleConfigOutcomeCallable UpdateParticipantRoleConfigCallable(const Model::UpdateParticipantRoleConfigRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateParticipantRoleConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateParticipantRoleConfigAsync(const Model::UpdateParticipantRoleConfigRequest& request, const UpdateParticipantRoleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates your claimed phone number from its current Amazon Connect instance or
+         * traffic distribution group to another Amazon Connect instance or traffic
+         * distribution group in the same Amazon Web Services Region.</p> 
+         * <p>You can call <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API to verify the status of a previous <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3453,7 +3122,18 @@ namespace Model
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
-         * flow for a specified queue.</p><p><h3>See Also:</h3>   <a
+         * flow for a specified queue.</p>  <p>If the number being used in the
+         * input is claimed to a traffic distribution group, and you are calling this API
+         * using an instance in the Amazon Web Services Region where the traffic
+         * distribution group was created, you can use either a full phone number ARN or
+         * UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+         * request body parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API using an instance in the
+         * alternate Amazon Web Services Region associated with the traffic distribution
+         * group, you must provide a full phone number ARN. If a UUID is provided in this
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
          * API Reference</a></p>
          */
@@ -3598,6 +3278,26 @@ namespace Model
         virtual void UpdateRoutingProfileQueuesAsync(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+         * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates a security profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">AWS
@@ -3633,6 +3333,27 @@ namespace Model
          * An Async wrapper for UpdateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateTaskTemplateAsync(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the traffic distribution for a given traffic distribution group. </p>
+         * <p>For more information about updating a traffic distribution group, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+         * telephony traffic distribution across Amazon Web Services Regions </a> in the
+         * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrafficDistributionOutcome UpdateTrafficDistribution(const Model::UpdateTrafficDistributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTrafficDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrafficDistributionOutcomeCallable UpdateTrafficDistributionCallable(const Model::UpdateTrafficDistributionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateTrafficDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrafficDistributionAsync(const Model::UpdateTrafficDistributionRequest& request, const UpdateTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the specified hierarchy group to the specified user.</p><p><h3>See
@@ -3769,163 +3490,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ConnectEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateApprovedOriginAsyncHelper(const Model::AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateBotAsyncHelper(const Model::AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateDefaultVocabularyAsyncHelper(const Model::AssociateDefaultVocabularyRequest& request, const AssociateDefaultVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateInstanceStorageConfigAsyncHelper(const Model::AssociateInstanceStorageConfigRequest& request, const AssociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateLambdaFunctionAsyncHelper(const Model::AssociateLambdaFunctionRequest& request, const AssociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateLexBotAsyncHelper(const Model::AssociateLexBotRequest& request, const AssociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociatePhoneNumberContactFlowAsyncHelper(const Model::AssociatePhoneNumberContactFlowRequest& request, const AssociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateQueueQuickConnectsAsyncHelper(const Model::AssociateQueueQuickConnectsRequest& request, const AssociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateRoutingProfileQueuesAsyncHelper(const Model::AssociateRoutingProfileQueuesRequest& request, const AssociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateSecurityKeyAsyncHelper(const Model::AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ClaimPhoneNumberAsyncHelper(const Model::ClaimPhoneNumberRequest& request, const ClaimPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAgentStatusAsyncHelper(const Model::CreateAgentStatusRequest& request, const CreateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateContactFlowAsyncHelper(const Model::CreateContactFlowRequest& request, const CreateContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateContactFlowModuleAsyncHelper(const Model::CreateContactFlowModuleRequest& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHoursOfOperationAsyncHelper(const Model::CreateHoursOfOperationRequest& request, const CreateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateIntegrationAssociationAsyncHelper(const Model::CreateIntegrationAssociationRequest& request, const CreateIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQueueAsyncHelper(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQuickConnectAsyncHelper(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRoutingProfileAsyncHelper(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSecurityProfileAsyncHelper(const Model::CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTaskTemplateAsyncHelper(const Model::CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateVocabularyAsyncHelper(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteContactFlowAsyncHelper(const Model::DeleteContactFlowRequest& request, const DeleteContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteContactFlowModuleAsyncHelper(const Model::DeleteContactFlowModuleRequest& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHoursOfOperationAsyncHelper(const Model::DeleteHoursOfOperationRequest& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIntegrationAssociationAsyncHelper(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteQuickConnectAsyncHelper(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSecurityProfileAsyncHelper(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTaskTemplateAsyncHelper(const Model::DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUseCaseAsyncHelper(const Model::DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVocabularyAsyncHelper(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAgentStatusAsyncHelper(const Model::DescribeAgentStatusRequest& request, const DescribeAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeContactAsyncHelper(const Model::DescribeContactRequest& request, const DescribeContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeContactFlowAsyncHelper(const Model::DescribeContactFlowRequest& request, const DescribeContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeContactFlowModuleAsyncHelper(const Model::DescribeContactFlowModuleRequest& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeHoursOfOperationAsyncHelper(const Model::DescribeHoursOfOperationRequest& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceAsyncHelper(const Model::DescribeInstanceRequest& request, const DescribeInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceStorageConfigAsyncHelper(const Model::DescribeInstanceStorageConfigRequest& request, const DescribeInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePhoneNumberAsyncHelper(const Model::DescribePhoneNumberRequest& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeQueueAsyncHelper(const Model::DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeQuickConnectAsyncHelper(const Model::DescribeQuickConnectRequest& request, const DescribeQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRoutingProfileAsyncHelper(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSecurityProfileAsyncHelper(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserHierarchyGroupAsyncHelper(const Model::DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserHierarchyStructureAsyncHelper(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVocabularyAsyncHelper(const Model::DescribeVocabularyRequest& request, const DescribeVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateApprovedOriginAsyncHelper(const Model::DisassociateApprovedOriginRequest& request, const DisassociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateBotAsyncHelper(const Model::DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateInstanceStorageConfigAsyncHelper(const Model::DisassociateInstanceStorageConfigRequest& request, const DisassociateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateLambdaFunctionAsyncHelper(const Model::DisassociateLambdaFunctionRequest& request, const DisassociateLambdaFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateLexBotAsyncHelper(const Model::DisassociateLexBotRequest& request, const DisassociateLexBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociatePhoneNumberContactFlowAsyncHelper(const Model::DisassociatePhoneNumberContactFlowRequest& request, const DisassociatePhoneNumberContactFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateQueueQuickConnectsAsyncHelper(const Model::DisassociateQueueQuickConnectsRequest& request, const DisassociateQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateRoutingProfileQueuesAsyncHelper(const Model::DisassociateRoutingProfileQueuesRequest& request, const DisassociateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateSecurityKeyAsyncHelper(const Model::DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetContactAttributesAsyncHelper(const Model::GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCurrentMetricDataAsyncHelper(const Model::GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCurrentUserDataAsyncHelper(const Model::GetCurrentUserDataRequest& request, const GetCurrentUserDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFederationTokenAsyncHelper(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTaskTemplateAsyncHelper(const Model::GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAgentStatusesAsyncHelper(const Model::ListAgentStatusesRequest& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApprovedOriginsAsyncHelper(const Model::ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListContactFlowModulesAsyncHelper(const Model::ListContactFlowModulesRequest& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListContactFlowsAsyncHelper(const Model::ListContactFlowsRequest& request, const ListContactFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListContactReferencesAsyncHelper(const Model::ListContactReferencesRequest& request, const ListContactReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDefaultVocabulariesAsyncHelper(const Model::ListDefaultVocabulariesRequest& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHoursOfOperationsAsyncHelper(const Model::ListHoursOfOperationsRequest& request, const ListHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstanceAttributesAsyncHelper(const Model::ListInstanceAttributesRequest& request, const ListInstanceAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstanceStorageConfigsAsyncHelper(const Model::ListInstanceStorageConfigsRequest& request, const ListInstanceStorageConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIntegrationAssociationsAsyncHelper(const Model::ListIntegrationAssociationsRequest& request, const ListIntegrationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLambdaFunctionsAsyncHelper(const Model::ListLambdaFunctionsRequest& request, const ListLambdaFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLexBotsAsyncHelper(const Model::ListLexBotsRequest& request, const ListLexBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPhoneNumbersV2AsyncHelper(const Model::ListPhoneNumbersV2Request& request, const ListPhoneNumbersV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPromptsAsyncHelper(const Model::ListPromptsRequest& request, const ListPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueueQuickConnectsAsyncHelper(const Model::ListQueueQuickConnectsRequest& request, const ListQueueQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQuickConnectsAsyncHelper(const Model::ListQuickConnectsRequest& request, const ListQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRoutingProfileQueuesAsyncHelper(const Model::ListRoutingProfileQueuesRequest& request, const ListRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRoutingProfilesAsyncHelper(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecurityKeysAsyncHelper(const Model::ListSecurityKeysRequest& request, const ListSecurityKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecurityProfilePermissionsAsyncHelper(const Model::ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecurityProfilesAsyncHelper(const Model::ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTaskTemplatesAsyncHelper(const Model::ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUseCasesAsyncHelper(const Model::ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUserHierarchyGroupsAsyncHelper(const Model::ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutUserStatusAsyncHelper(const Model::PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReleasePhoneNumberAsyncHelper(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchUsersAsyncHelper(const Model::SearchUsersRequest& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchVocabulariesAsyncHelper(const Model::SearchVocabulariesRequest& request, const SearchVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartContactRecordingAsyncHelper(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartContactStreamingAsyncHelper(const Model::StartContactStreamingRequest& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartOutboundVoiceContactAsyncHelper(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartTaskContactAsyncHelper(const Model::StartTaskContactRequest& request, const StartTaskContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopContactAsyncHelper(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopContactRecordingAsyncHelper(const Model::StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopContactStreamingAsyncHelper(const Model::StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SuspendContactRecordingAsyncHelper(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TransferContactAsyncHelper(const Model::TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAgentStatusAsyncHelper(const Model::UpdateAgentStatusRequest& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactAsyncHelper(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactAttributesAsyncHelper(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactFlowContentAsyncHelper(const Model::UpdateContactFlowContentRequest& request, const UpdateContactFlowContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactFlowMetadataAsyncHelper(const Model::UpdateContactFlowMetadataRequest& request, const UpdateContactFlowMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactFlowModuleContentAsyncHelper(const Model::UpdateContactFlowModuleContentRequest& request, const UpdateContactFlowModuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactFlowModuleMetadataAsyncHelper(const Model::UpdateContactFlowModuleMetadataRequest& request, const UpdateContactFlowModuleMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactFlowNameAsyncHelper(const Model::UpdateContactFlowNameRequest& request, const UpdateContactFlowNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContactScheduleAsyncHelper(const Model::UpdateContactScheduleRequest& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateHoursOfOperationAsyncHelper(const Model::UpdateHoursOfOperationRequest& request, const UpdateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInstanceAttributeAsyncHelper(const Model::UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInstanceStorageConfigAsyncHelper(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePhoneNumberAsyncHelper(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueHoursOfOperationAsyncHelper(const Model::UpdateQueueHoursOfOperationRequest& request, const UpdateQueueHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueMaxContactsAsyncHelper(const Model::UpdateQueueMaxContactsRequest& request, const UpdateQueueMaxContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueNameAsyncHelper(const Model::UpdateQueueNameRequest& request, const UpdateQueueNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueOutboundCallerConfigAsyncHelper(const Model::UpdateQueueOutboundCallerConfigRequest& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQueueStatusAsyncHelper(const Model::UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQuickConnectConfigAsyncHelper(const Model::UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateQuickConnectNameAsyncHelper(const Model::UpdateQuickConnectNameRequest& request, const UpdateQuickConnectNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingProfileConcurrencyAsyncHelper(const Model::UpdateRoutingProfileConcurrencyRequest& request, const UpdateRoutingProfileConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingProfileDefaultOutboundQueueAsyncHelper(const Model::UpdateRoutingProfileDefaultOutboundQueueRequest& request, const UpdateRoutingProfileDefaultOutboundQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingProfileNameAsyncHelper(const Model::UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRoutingProfileQueuesAsyncHelper(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSecurityProfileAsyncHelper(const Model::UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTaskTemplateAsyncHelper(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserHierarchyAsyncHelper(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserHierarchyGroupNameAsyncHelper(const Model::UpdateUserHierarchyGroupNameRequest& request, const UpdateUserHierarchyGroupNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserHierarchyStructureAsyncHelper(const Model::UpdateUserHierarchyStructureRequest& request, const UpdateUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserIdentityInfoAsyncHelper(const Model::UpdateUserIdentityInfoRequest& request, const UpdateUserIdentityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserPhoneConfigAsyncHelper(const Model::UpdateUserPhoneConfigRequest& request, const UpdateUserPhoneConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserRoutingProfileAsyncHelper(const Model::UpdateUserRoutingProfileRequest& request, const UpdateUserRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserSecurityProfilesAsyncHelper(const Model::UpdateUserSecurityProfilesRequest& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>;
+      void init(const ConnectClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ConnectClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ConnectEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Connect

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DestinationSettings
+  class DestinationSettings
   {
   public:
-    DestinationSettings();
-    DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DestinationSettings();
+    AWS_MEDIACONVERT_API DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3DestinationSettings m_s3Settings;
-    bool m_s3SettingsHasBeenSet;
+    bool m_s3SettingsHasBeenSet = false;
   };
 
 } // namespace Model

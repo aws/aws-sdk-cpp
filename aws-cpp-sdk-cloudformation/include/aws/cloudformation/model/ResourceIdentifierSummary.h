@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ResourceIdentifierSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ResourceIdentifierSummary
+  class ResourceIdentifierSummary
   {
   public:
-    ResourceIdentifierSummary();
-    ResourceIdentifierSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceIdentifierSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceIdentifierSummary();
+    AWS_CLOUDFORMATION_API ResourceIdentifierSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API ResourceIdentifierSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_logicalResourceIds;
-    bool m_logicalResourceIdsHasBeenSet;
+    bool m_logicalResourceIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceIdentifiers;
-    bool m_resourceIdentifiersHasBeenSet;
+    bool m_resourceIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

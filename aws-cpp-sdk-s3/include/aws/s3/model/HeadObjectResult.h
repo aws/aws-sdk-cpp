@@ -33,12 +33,12 @@ namespace S3
 {
 namespace Model
 {
-  class AWS_S3_API HeadObjectResult
+  class HeadObjectResult
   {
   public:
-    HeadObjectResult();
-    HeadObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    HeadObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API HeadObjectResult();
+    AWS_S3_API HeadObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API HeadObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

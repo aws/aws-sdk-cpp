@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CreateInputSecurityGroupRequest : public MediaLiveRequest
+  class CreateInputSecurityGroupRequest : public MediaLiveRequest
   {
   public:
-    CreateInputSecurityGroupRequest();
+    AWS_MEDIALIVE_API CreateInputSecurityGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateInputSecurityGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<InputWhitelistRuleCidr> m_whitelistRules;
-    bool m_whitelistRulesHasBeenSet;
+    bool m_whitelistRulesHasBeenSet = false;
   };
 
 } // namespace Model

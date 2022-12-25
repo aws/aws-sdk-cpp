@@ -41,7 +41,7 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("oauthScopes"))
   {
-    Array<JsonView> oauthScopesJsonList = jsonValue.GetArray("oauthScopes");
+    Aws::Utils::Array<JsonView> oauthScopesJsonList = jsonValue.GetArray("oauthScopes");
     for(unsigned oauthScopesIndex = 0; oauthScopesIndex < oauthScopesJsonList.GetLength(); ++oauthScopesIndex)
     {
       m_oauthScopes.push_back(oauthScopesJsonList[oauthScopesIndex].AsString());
@@ -51,7 +51,7 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tokenUrls"))
   {
-    Array<JsonView> tokenUrlsJsonList = jsonValue.GetArray("tokenUrls");
+    Aws::Utils::Array<JsonView> tokenUrlsJsonList = jsonValue.GetArray("tokenUrls");
     for(unsigned tokenUrlsIndex = 0; tokenUrlsIndex < tokenUrlsJsonList.GetLength(); ++tokenUrlsIndex)
     {
       m_tokenUrls.push_back(tokenUrlsJsonList[tokenUrlsIndex].AsString());
@@ -61,7 +61,7 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("authCodeUrls"))
   {
-    Array<JsonView> authCodeUrlsJsonList = jsonValue.GetArray("authCodeUrls");
+    Aws::Utils::Array<JsonView> authCodeUrlsJsonList = jsonValue.GetArray("authCodeUrls");
     for(unsigned authCodeUrlsIndex = 0; authCodeUrlsIndex < authCodeUrlsJsonList.GetLength(); ++authCodeUrlsIndex)
     {
       m_authCodeUrls.push_back(authCodeUrlsJsonList[authCodeUrlsIndex].AsString());
@@ -71,7 +71,7 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("oauth2GrantTypesSupported"))
   {
-    Array<JsonView> oauth2GrantTypesSupportedJsonList = jsonValue.GetArray("oauth2GrantTypesSupported");
+    Aws::Utils::Array<JsonView> oauth2GrantTypesSupportedJsonList = jsonValue.GetArray("oauth2GrantTypesSupported");
     for(unsigned oauth2GrantTypesSupportedIndex = 0; oauth2GrantTypesSupportedIndex < oauth2GrantTypesSupportedJsonList.GetLength(); ++oauth2GrantTypesSupportedIndex)
     {
       m_oauth2GrantTypesSupported.push_back(OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(oauth2GrantTypesSupportedJsonList[oauth2GrantTypesSupportedIndex].AsString()));
@@ -81,7 +81,7 @@ OAuth2Defaults& OAuth2Defaults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("oauth2CustomProperties"))
   {
-    Array<JsonView> oauth2CustomPropertiesJsonList = jsonValue.GetArray("oauth2CustomProperties");
+    Aws::Utils::Array<JsonView> oauth2CustomPropertiesJsonList = jsonValue.GetArray("oauth2CustomProperties");
     for(unsigned oauth2CustomPropertiesIndex = 0; oauth2CustomPropertiesIndex < oauth2CustomPropertiesJsonList.GetLength(); ++oauth2CustomPropertiesIndex)
     {
       m_oauth2CustomProperties.push_back(oauth2CustomPropertiesJsonList[oauth2CustomPropertiesIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue OAuth2Defaults::Jsonize() const
 
   if(m_oauthScopesHasBeenSet)
   {
-   Array<JsonValue> oauthScopesJsonList(m_oauthScopes.size());
+   Aws::Utils::Array<JsonValue> oauthScopesJsonList(m_oauthScopes.size());
    for(unsigned oauthScopesIndex = 0; oauthScopesIndex < oauthScopesJsonList.GetLength(); ++oauthScopesIndex)
    {
      oauthScopesJsonList[oauthScopesIndex].AsString(m_oauthScopes[oauthScopesIndex]);
@@ -109,7 +109,7 @@ JsonValue OAuth2Defaults::Jsonize() const
 
   if(m_tokenUrlsHasBeenSet)
   {
-   Array<JsonValue> tokenUrlsJsonList(m_tokenUrls.size());
+   Aws::Utils::Array<JsonValue> tokenUrlsJsonList(m_tokenUrls.size());
    for(unsigned tokenUrlsIndex = 0; tokenUrlsIndex < tokenUrlsJsonList.GetLength(); ++tokenUrlsIndex)
    {
      tokenUrlsJsonList[tokenUrlsIndex].AsString(m_tokenUrls[tokenUrlsIndex]);
@@ -120,7 +120,7 @@ JsonValue OAuth2Defaults::Jsonize() const
 
   if(m_authCodeUrlsHasBeenSet)
   {
-   Array<JsonValue> authCodeUrlsJsonList(m_authCodeUrls.size());
+   Aws::Utils::Array<JsonValue> authCodeUrlsJsonList(m_authCodeUrls.size());
    for(unsigned authCodeUrlsIndex = 0; authCodeUrlsIndex < authCodeUrlsJsonList.GetLength(); ++authCodeUrlsIndex)
    {
      authCodeUrlsJsonList[authCodeUrlsIndex].AsString(m_authCodeUrls[authCodeUrlsIndex]);
@@ -131,7 +131,7 @@ JsonValue OAuth2Defaults::Jsonize() const
 
   if(m_oauth2GrantTypesSupportedHasBeenSet)
   {
-   Array<JsonValue> oauth2GrantTypesSupportedJsonList(m_oauth2GrantTypesSupported.size());
+   Aws::Utils::Array<JsonValue> oauth2GrantTypesSupportedJsonList(m_oauth2GrantTypesSupported.size());
    for(unsigned oauth2GrantTypesSupportedIndex = 0; oauth2GrantTypesSupportedIndex < oauth2GrantTypesSupportedJsonList.GetLength(); ++oauth2GrantTypesSupportedIndex)
    {
      oauth2GrantTypesSupportedJsonList[oauth2GrantTypesSupportedIndex].AsString(OAuth2GrantTypeMapper::GetNameForOAuth2GrantType(m_oauth2GrantTypesSupported[oauth2GrantTypesSupportedIndex]));
@@ -142,7 +142,7 @@ JsonValue OAuth2Defaults::Jsonize() const
 
   if(m_oauth2CustomPropertiesHasBeenSet)
   {
-   Array<JsonValue> oauth2CustomPropertiesJsonList(m_oauth2CustomProperties.size());
+   Aws::Utils::Array<JsonValue> oauth2CustomPropertiesJsonList(m_oauth2CustomProperties.size());
    for(unsigned oauth2CustomPropertiesIndex = 0; oauth2CustomPropertiesIndex < oauth2CustomPropertiesJsonList.GetLength(); ++oauth2CustomPropertiesIndex)
    {
      oauth2CustomPropertiesJsonList[oauth2CustomPropertiesIndex].AsObject(m_oauth2CustomProperties[oauth2CustomPropertiesIndex].Jsonize());

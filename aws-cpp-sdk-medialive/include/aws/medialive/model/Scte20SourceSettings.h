@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte20SourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte20SourceSettings
+  class Scte20SourceSettings
   {
   public:
-    Scte20SourceSettings();
-    Scte20SourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte20SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte20SourceSettings();
+    AWS_MEDIALIVE_API Scte20SourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte20SourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Scte20Convert608To708 m_convert608To708;
-    bool m_convert608To708HasBeenSet;
+    bool m_convert608To708HasBeenSet = false;
 
     int m_source608ChannelNumber;
-    bool m_source608ChannelNumberHasBeenSet;
+    bool m_source608ChannelNumberHasBeenSet = false;
   };
 
 } // namespace Model

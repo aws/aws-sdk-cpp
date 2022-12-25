@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineExecutionSummary
+  class PipelineExecutionSummary
   {
   public:
-    PipelineExecutionSummary();
-    PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineExecutionSummary();
+    AWS_SAGEMAKER_API PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     PipelineExecutionStatus m_pipelineExecutionStatus;
-    bool m_pipelineExecutionStatusHasBeenSet;
+    bool m_pipelineExecutionStatusHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDescription;
-    bool m_pipelineExecutionDescriptionHasBeenSet;
+    bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDisplayName;
-    bool m_pipelineExecutionDisplayNameHasBeenSet;
+    bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
     Aws::String m_pipelineExecutionFailureReason;
-    bool m_pipelineExecutionFailureReasonHasBeenSet;
+    bool m_pipelineExecutionFailureReasonHasBeenSet = false;
   };
 
 } // namespace Model

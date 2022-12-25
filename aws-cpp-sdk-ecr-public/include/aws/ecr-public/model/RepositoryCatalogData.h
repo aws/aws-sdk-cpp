@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/RepositoryCatalogData">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API RepositoryCatalogData
+  class RepositoryCatalogData
   {
   public:
-    RepositoryCatalogData();
-    RepositoryCatalogData(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryCatalogData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API RepositoryCatalogData();
+    AWS_ECRPUBLIC_API RepositoryCatalogData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API RepositoryCatalogData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -388,25 +388,25 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_architectures;
-    bool m_architecturesHasBeenSet;
+    bool m_architecturesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_operatingSystems;
-    bool m_operatingSystemsHasBeenSet;
+    bool m_operatingSystemsHasBeenSet = false;
 
     Aws::String m_logoUrl;
-    bool m_logoUrlHasBeenSet;
+    bool m_logoUrlHasBeenSet = false;
 
     Aws::String m_aboutText;
-    bool m_aboutTextHasBeenSet;
+    bool m_aboutTextHasBeenSet = false;
 
     Aws::String m_usageText;
-    bool m_usageTextHasBeenSet;
+    bool m_usageTextHasBeenSet = false;
 
     bool m_marketplaceCertified;
-    bool m_marketplaceCertifiedHasBeenSet;
+    bool m_marketplaceCertifiedHasBeenSet = false;
   };
 
 } // namespace Model

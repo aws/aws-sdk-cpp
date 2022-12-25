@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/SnsChannelConfig.h>
+#include <aws/devops-guru/model/NotificationFilterConfig.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/NotificationChannelConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API NotificationChannelConfig
+  class NotificationChannelConfig
   {
   public:
-    NotificationChannelConfig();
-    NotificationChannelConfig(Aws::Utils::Json::JsonView jsonValue);
-    NotificationChannelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API NotificationChannelConfig();
+    AWS_DEVOPSGURU_API NotificationChannelConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API NotificationChannelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,10 +166,62 @@ namespace Model
      */
     inline NotificationChannelConfig& WithSns(SnsChannelConfig&& value) { SetSns(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline const NotificationFilterConfig& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline void SetFilters(const NotificationFilterConfig& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline void SetFilters(NotificationFilterConfig&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline NotificationChannelConfig& WithFilters(const NotificationFilterConfig& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p> The filter configurations for the Amazon SNS notification topic you use with
+     * DevOps Guru. If you do not provide filter configurations, the default
+     * configurations are to receive notifications for all message types of
+     * <code>High</code> or <code>Medium</code> severity. </p>
+     */
+    inline NotificationChannelConfig& WithFilters(NotificationFilterConfig&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     SnsChannelConfig m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
+
+    NotificationFilterConfig m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

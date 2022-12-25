@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MsSmoothGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MsSmoothGroupSettings
+  class MsSmoothGroupSettings
   {
   public:
-    MsSmoothGroupSettings();
-    MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MsSmoothGroupSettings();
+    AWS_MEDIALIVE_API MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -838,61 +838,61 @@ Options:
   private:
 
     Aws::String m_acquisitionPointId;
-    bool m_acquisitionPointIdHasBeenSet;
+    bool m_acquisitionPointIdHasBeenSet = false;
 
     SmoothGroupAudioOnlyTimecodeControl m_audioOnlyTimecodeControl;
-    bool m_audioOnlyTimecodeControlHasBeenSet;
+    bool m_audioOnlyTimecodeControlHasBeenSet = false;
 
     SmoothGroupCertificateMode m_certificateMode;
-    bool m_certificateModeHasBeenSet;
+    bool m_certificateModeHasBeenSet = false;
 
     int m_connectionRetryInterval;
-    bool m_connectionRetryIntervalHasBeenSet;
+    bool m_connectionRetryIntervalHasBeenSet = false;
 
     OutputLocationRef m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     SmoothGroupEventIdMode m_eventIdMode;
-    bool m_eventIdModeHasBeenSet;
+    bool m_eventIdModeHasBeenSet = false;
 
     SmoothGroupEventStopBehavior m_eventStopBehavior;
-    bool m_eventStopBehaviorHasBeenSet;
+    bool m_eventStopBehaviorHasBeenSet = false;
 
     int m_filecacheDuration;
-    bool m_filecacheDurationHasBeenSet;
+    bool m_filecacheDurationHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     InputLossActionForMsSmoothOut m_inputLossAction;
-    bool m_inputLossActionHasBeenSet;
+    bool m_inputLossActionHasBeenSet = false;
 
     int m_numRetries;
-    bool m_numRetriesHasBeenSet;
+    bool m_numRetriesHasBeenSet = false;
 
     int m_restartDelay;
-    bool m_restartDelayHasBeenSet;
+    bool m_restartDelayHasBeenSet = false;
 
     SmoothGroupSegmentationMode m_segmentationMode;
-    bool m_segmentationModeHasBeenSet;
+    bool m_segmentationModeHasBeenSet = false;
 
     int m_sendDelayMs;
-    bool m_sendDelayMsHasBeenSet;
+    bool m_sendDelayMsHasBeenSet = false;
 
     SmoothGroupSparseTrackType m_sparseTrackType;
-    bool m_sparseTrackTypeHasBeenSet;
+    bool m_sparseTrackTypeHasBeenSet = false;
 
     SmoothGroupStreamManifestBehavior m_streamManifestBehavior;
-    bool m_streamManifestBehaviorHasBeenSet;
+    bool m_streamManifestBehaviorHasBeenSet = false;
 
     Aws::String m_timestampOffset;
-    bool m_timestampOffsetHasBeenSet;
+    bool m_timestampOffsetHasBeenSet = false;
 
     SmoothGroupTimestampOffsetMode m_timestampOffsetMode;
-    bool m_timestampOffsetModeHasBeenSet;
+    bool m_timestampOffsetModeHasBeenSet = false;
   };
 
 } // namespace Model

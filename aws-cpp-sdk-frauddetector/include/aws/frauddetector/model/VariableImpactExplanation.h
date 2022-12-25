@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/VariableImpactExplanation">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API VariableImpactExplanation
+  class VariableImpactExplanation
   {
   public:
-    VariableImpactExplanation();
-    VariableImpactExplanation(Aws::Utils::Json::JsonView jsonValue);
-    VariableImpactExplanation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API VariableImpactExplanation();
+    AWS_FRAUDDETECTOR_API VariableImpactExplanation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API VariableImpactExplanation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_eventVariableName;
-    bool m_eventVariableNameHasBeenSet;
+    bool m_eventVariableNameHasBeenSet = false;
 
     Aws::String m_relativeImpact;
-    bool m_relativeImpactHasBeenSet;
+    bool m_relativeImpactHasBeenSet = false;
 
     double m_logOddsImpact;
-    bool m_logOddsImpactHasBeenSet;
+    bool m_logOddsImpactHasBeenSet = false;
   };
 
 } // namespace Model

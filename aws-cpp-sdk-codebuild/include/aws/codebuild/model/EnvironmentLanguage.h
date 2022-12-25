@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentLanguage">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API EnvironmentLanguage
+  class EnvironmentLanguage
   {
   public:
-    EnvironmentLanguage();
-    EnvironmentLanguage(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API EnvironmentLanguage();
+    AWS_CODEBUILD_API EnvironmentLanguage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API EnvironmentLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     LanguageType m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::Vector<EnvironmentImage> m_images;
-    bool m_imagesHasBeenSet;
+    bool m_imagesHasBeenSet = false;
   };
 
 } // namespace Model

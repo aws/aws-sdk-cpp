@@ -24,12 +24,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API DiscoverPollEndpointResult
+  class DiscoverPollEndpointResult
   {
   public:
-    DiscoverPollEndpointResult();
-    DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DiscoverPollEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DiscoverPollEndpointResult();
+    AWS_ECS_API DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DiscoverPollEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -103,11 +103,70 @@ namespace Model
      */
     inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const char* value) { SetTelemetryEndpoint(value); return *this;}
 
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetServiceConnectEndpoint() const{ return m_serviceConnectEndpoint; }
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectEndpoint(const Aws::String& value) { m_serviceConnectEndpoint = value; }
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectEndpoint(Aws::String&& value) { m_serviceConnectEndpoint = std::move(value); }
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetServiceConnectEndpoint(const char* value) { m_serviceConnectEndpoint.assign(value); }
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(const Aws::String& value) { SetServiceConnectEndpoint(value); return *this;}
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(Aws::String&& value) { SetServiceConnectEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The endpoint for the Amazon ECS agent to poll for Service Connect
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(const char* value) { SetServiceConnectEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_endpoint;
 
     Aws::String m_telemetryEndpoint;
+
+    Aws::String m_serviceConnectEndpoint;
   };
 
 } // namespace Model

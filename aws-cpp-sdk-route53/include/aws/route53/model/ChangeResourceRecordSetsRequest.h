@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSetsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ChangeResourceRecordSetsRequest : public Route53Request
+  class ChangeResourceRecordSetsRequest : public Route53Request
   {
   public:
-    ChangeResourceRecordSetsRequest();
+    AWS_ROUTE53_API ChangeResourceRecordSetsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ChangeResourceRecordSets"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     ChangeBatch m_changeBatch;
-    bool m_changeBatchHasBeenSet;
+    bool m_changeBatchHasBeenSet = false;
   };
 
 } // namespace Model

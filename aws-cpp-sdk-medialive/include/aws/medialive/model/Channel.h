@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Channel();
+    AWS_MEDIALIVE_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -738,58 +738,58 @@ one destination per
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     CdiInputSpecification m_cdiInputSpecification;
-    bool m_cdiInputSpecificationHasBeenSet;
+    bool m_cdiInputSpecificationHasBeenSet = false;
 
     ChannelClass m_channelClass;
-    bool m_channelClassHasBeenSet;
+    bool m_channelClassHasBeenSet = false;
 
     Aws::Vector<OutputDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<ChannelEgressEndpoint> m_egressEndpoints;
-    bool m_egressEndpointsHasBeenSet;
+    bool m_egressEndpointsHasBeenSet = false;
 
     EncoderSettings m_encoderSettings;
-    bool m_encoderSettingsHasBeenSet;
+    bool m_encoderSettingsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<InputAttachment> m_inputAttachments;
-    bool m_inputAttachmentsHasBeenSet;
+    bool m_inputAttachmentsHasBeenSet = false;
 
     InputSpecification m_inputSpecification;
-    bool m_inputSpecificationHasBeenSet;
+    bool m_inputSpecificationHasBeenSet = false;
 
     LogLevel m_logLevel;
-    bool m_logLevelHasBeenSet;
+    bool m_logLevelHasBeenSet = false;
 
     MaintenanceStatus m_maintenance;
-    bool m_maintenanceHasBeenSet;
+    bool m_maintenanceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<PipelineDetail> m_pipelineDetails;
-    bool m_pipelineDetailsHasBeenSet;
+    bool m_pipelineDetailsHasBeenSet = false;
 
     int m_pipelinesRunningCount;
-    bool m_pipelinesRunningCountHasBeenSet;
+    bool m_pipelinesRunningCountHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     ChannelState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     VpcOutputSettingsDescription m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

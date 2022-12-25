@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SmartHomeAppliance">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SmartHomeAppliance
+  class SmartHomeAppliance
   {
   public:
-    SmartHomeAppliance();
-    SmartHomeAppliance(Aws::Utils::Json::JsonView jsonValue);
-    SmartHomeAppliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SmartHomeAppliance();
+    AWS_ALEXAFORBUSINESS_API SmartHomeAppliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SmartHomeAppliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_friendlyName;
-    bool m_friendlyNameHasBeenSet;
+    bool m_friendlyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_manufacturerName;
-    bool m_manufacturerNameHasBeenSet;
+    bool m_manufacturerNameHasBeenSet = false;
   };
 
 } // namespace Model

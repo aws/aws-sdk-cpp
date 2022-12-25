@@ -27,15 +27,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CrossZoneLoadBalancing">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing
+  class CrossZoneLoadBalancing
   {
   public:
-    CrossZoneLoadBalancing();
-    CrossZoneLoadBalancing(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CrossZoneLoadBalancing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing();
+    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

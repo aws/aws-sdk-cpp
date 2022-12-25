@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Container">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Container();
+    AWS_IMAGEBUILDER_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -136,10 +136,10 @@ namespace Model
   private:
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageUris;
-    bool m_imageUrisHasBeenSet;
+    bool m_imageUrisHasBeenSet = false;
   };
 
 } // namespace Model

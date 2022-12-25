@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketCountBySharedAccessType
+  class BucketCountBySharedAccessType
   {
   public:
-    BucketCountBySharedAccessType();
-    BucketCountBySharedAccessType(Aws::Utils::Json::JsonView jsonValue);
-    BucketCountBySharedAccessType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketCountBySharedAccessType();
+    AWS_MACIE2_API BucketCountBySharedAccessType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketCountBySharedAccessType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,16 +142,16 @@ namespace Model
   private:
 
     long long m_external;
-    bool m_externalHasBeenSet;
+    bool m_externalHasBeenSet = false;
 
     long long m_internal;
-    bool m_internalHasBeenSet;
+    bool m_internalHasBeenSet = false;
 
     long long m_notShared;
-    bool m_notSharedHasBeenSet;
+    bool m_notSharedHasBeenSet = false;
 
     long long m_unknown;
-    bool m_unknownHasBeenSet;
+    bool m_unknownHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API KeyGroup
+  class KeyGroup
   {
   public:
-    KeyGroup();
-    KeyGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KeyGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyGroup();
+    AWS_CLOUDFRONT_API KeyGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     KeyGroupConfig m_keyGroupConfig;
-    bool m_keyGroupConfigHasBeenSet;
+    bool m_keyGroupConfigHasBeenSet = false;
   };
 
 } // namespace Model

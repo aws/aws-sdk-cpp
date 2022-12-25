@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranchRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API UpdateBranchRequest : public AmplifyRequest
+  class UpdateBranchRequest : public AmplifyRequest
   {
   public:
-    UpdateBranchRequest();
+    AWS_AMPLIFY_API UpdateBranchRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBranch"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -696,55 +696,55 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Stage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     bool m_enableNotification;
-    bool m_enableNotificationHasBeenSet;
+    bool m_enableNotificationHasBeenSet = false;
 
     bool m_enableAutoBuild;
-    bool m_enableAutoBuildHasBeenSet;
+    bool m_enableAutoBuildHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     bool m_enablePerformanceMode;
-    bool m_enablePerformanceModeHasBeenSet;
+    bool m_enablePerformanceModeHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     Aws::String m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     bool m_enablePullRequestPreview;
-    bool m_enablePullRequestPreviewHasBeenSet;
+    bool m_enablePullRequestPreviewHasBeenSet = false;
 
     Aws::String m_pullRequestEnvironmentName;
-    bool m_pullRequestEnvironmentNameHasBeenSet;
+    bool m_pullRequestEnvironmentNameHasBeenSet = false;
 
     Aws::String m_backendEnvironmentArn;
-    bool m_backendEnvironmentArnHasBeenSet;
+    bool m_backendEnvironmentArnHasBeenSet = false;
   };
 
 } // namespace Model

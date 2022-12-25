@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUD9_API DeleteEnvironmentRequest : public Cloud9Request
+  class DeleteEnvironmentRequest : public Cloud9Request
   {
   public:
-    DeleteEnvironmentRequest();
+    AWS_CLOUD9_API DeleteEnvironmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteEnvironment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUD9_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
   };
 
 } // namespace Model

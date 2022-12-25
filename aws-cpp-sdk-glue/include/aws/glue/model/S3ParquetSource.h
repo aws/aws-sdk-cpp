@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3ParquetSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3ParquetSource
+  class S3ParquetSource
   {
   public:
-    S3ParquetSource();
-    S3ParquetSource(Aws::Utils::Json::JsonView jsonValue);
-    S3ParquetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3ParquetSource();
+    AWS_GLUE_API S3ParquetSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3ParquetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -522,37 +522,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     ParquetCompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
 
     Aws::String m_groupSize;
-    bool m_groupSizeHasBeenSet;
+    bool m_groupSizeHasBeenSet = false;
 
     Aws::String m_groupFiles;
-    bool m_groupFilesHasBeenSet;
+    bool m_groupFilesHasBeenSet = false;
 
     bool m_recurse;
-    bool m_recurseHasBeenSet;
+    bool m_recurseHasBeenSet = false;
 
     int m_maxBand;
-    bool m_maxBandHasBeenSet;
+    bool m_maxBandHasBeenSet = false;
 
     int m_maxFilesInBand;
-    bool m_maxFilesInBandHasBeenSet;
+    bool m_maxFilesInBandHasBeenSet = false;
 
     S3DirectSourceAdditionalOptions m_additionalOptions;
-    bool m_additionalOptionsHasBeenSet;
+    bool m_additionalOptionsHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

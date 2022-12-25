@@ -19,7 +19,8 @@ GenerateEmbedUrlForAnonymousUserRequest::GenerateEmbedUrlForAnonymousUserRequest
     m_namespaceHasBeenSet(false),
     m_sessionTagsHasBeenSet(false),
     m_authorizedResourceArnsHasBeenSet(false),
-    m_experienceConfigurationHasBeenSet(false)
+    m_experienceConfigurationHasBeenSet(false),
+    m_allowedDomainsHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,7 @@ Aws::String GenerateEmbedUrlForAnonymousUserRequest::SerializePayload() const
 
   if(m_sessionTagsHasBeenSet)
   {
-   Array<JsonValue> sessionTagsJsonList(m_sessionTags.size());
+   Aws::Utils::Array<JsonValue> sessionTagsJsonList(m_sessionTags.size());
    for(unsigned sessionTagsIndex = 0; sessionTagsIndex < sessionTagsJsonList.GetLength(); ++sessionTagsIndex)
    {
      sessionTagsJsonList[sessionTagsIndex].AsObject(m_sessionTags[sessionTagsIndex].Jsonize());
@@ -52,7 +53,7 @@ Aws::String GenerateEmbedUrlForAnonymousUserRequest::SerializePayload() const
 
   if(m_authorizedResourceArnsHasBeenSet)
   {
-   Array<JsonValue> authorizedResourceArnsJsonList(m_authorizedResourceArns.size());
+   Aws::Utils::Array<JsonValue> authorizedResourceArnsJsonList(m_authorizedResourceArns.size());
    for(unsigned authorizedResourceArnsIndex = 0; authorizedResourceArnsIndex < authorizedResourceArnsJsonList.GetLength(); ++authorizedResourceArnsIndex)
    {
      authorizedResourceArnsJsonList[authorizedResourceArnsIndex].AsString(m_authorizedResourceArns[authorizedResourceArnsIndex]);
@@ -64,6 +65,17 @@ Aws::String GenerateEmbedUrlForAnonymousUserRequest::SerializePayload() const
   if(m_experienceConfigurationHasBeenSet)
   {
    payload.WithObject("ExperienceConfiguration", m_experienceConfiguration.Jsonize());
+
+  }
+
+  if(m_allowedDomainsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedDomainsJsonList(m_allowedDomains.size());
+   for(unsigned allowedDomainsIndex = 0; allowedDomainsIndex < allowedDomainsJsonList.GetLength(); ++allowedDomainsIndex)
+   {
+     allowedDomainsJsonList[allowedDomainsIndex].AsString(m_allowedDomains[allowedDomainsIndex]);
+   }
+   payload.WithArray("AllowedDomains", std::move(allowedDomainsJsonList));
 
   }
 

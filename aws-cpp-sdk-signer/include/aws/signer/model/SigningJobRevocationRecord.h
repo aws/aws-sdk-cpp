@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningJobRevocationRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningJobRevocationRecord
+  class SigningJobRevocationRecord
   {
   public:
-    SigningJobRevocationRecord();
-    SigningJobRevocationRecord(Aws::Utils::Json::JsonView jsonValue);
-    SigningJobRevocationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningJobRevocationRecord();
+    AWS_SIGNER_API SigningJobRevocationRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningJobRevocationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_revokedBy;
-    bool m_revokedByHasBeenSet;
+    bool m_revokedByHasBeenSet = false;
   };
 
 } // namespace Model

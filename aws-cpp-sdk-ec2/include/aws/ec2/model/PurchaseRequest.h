@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PurchaseRequest
+  class PurchaseRequest
   {
   public:
-    PurchaseRequest();
-    PurchaseRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PurchaseRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PurchaseRequest();
+    AWS_EC2_API PurchaseRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PurchaseRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -104,10 +104,10 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_purchaseToken;
-    bool m_purchaseTokenHasBeenSet;
+    bool m_purchaseTokenHasBeenSet = false;
   };
 
 } // namespace Model

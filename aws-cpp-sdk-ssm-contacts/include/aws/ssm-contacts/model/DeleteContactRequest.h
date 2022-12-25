@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSMCONTACTS_API DeleteContactRequest : public SSMContactsRequest
+  class DeleteContactRequest : public SSMContactsRequest
   {
   public:
-    DeleteContactRequest();
+    AWS_SSMCONTACTS_API DeleteContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSMCONTACTS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSMCONTACTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
   };
 
 } // namespace Model

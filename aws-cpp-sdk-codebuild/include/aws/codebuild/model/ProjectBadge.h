@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectBadge">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectBadge
+  class ProjectBadge
   {
   public:
-    ProjectBadge();
-    ProjectBadge(Aws::Utils::Json::JsonView jsonValue);
-    ProjectBadge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectBadge();
+    AWS_CODEBUILD_API ProjectBadge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectBadge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     bool m_badgeEnabled;
-    bool m_badgeEnabledHasBeenSet;
+    bool m_badgeEnabledHasBeenSet = false;
 
     Aws::String m_badgeRequestUrl;
-    bool m_badgeRequestUrlHasBeenSet;
+    bool m_badgeRequestUrlHasBeenSet = false;
   };
 
 } // namespace Model

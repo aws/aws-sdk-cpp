@@ -36,7 +36,7 @@ ListCodeSigningConfigsResult& ListCodeSigningConfigsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("CodeSigningConfigs"))
   {
-    Array<JsonView> codeSigningConfigsJsonList = jsonValue.GetArray("CodeSigningConfigs");
+    Aws::Utils::Array<JsonView> codeSigningConfigsJsonList = jsonValue.GetArray("CodeSigningConfigs");
     for(unsigned codeSigningConfigsIndex = 0; codeSigningConfigsIndex < codeSigningConfigsJsonList.GetLength(); ++codeSigningConfigsIndex)
     {
       m_codeSigningConfigs.push_back(codeSigningConfigsJsonList[codeSigningConfigsIndex].AsObject());

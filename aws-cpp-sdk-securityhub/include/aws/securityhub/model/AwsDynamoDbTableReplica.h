@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableReplica">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableReplica
+  class AwsDynamoDbTableReplica
   {
   public:
-    AwsDynamoDbTableReplica();
-    AwsDynamoDbTableReplica(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableReplica& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplica();
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplica(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplica& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,42 +204,66 @@ namespace Model
 
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline const Aws::String& GetReplicaStatus() const{ return m_replicaStatus; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(const Aws::String& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(Aws::String&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline void SetReplicaStatus(const char* value) { m_replicaStatusHasBeenSet = true; m_replicaStatus.assign(value); }
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(const Aws::String& value) { SetReplicaStatus(value); return *this;}
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(Aws::String&& value) { SetReplicaStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the replica.</p>
+     * <p>The current status of the replica. Valid values are as follows:</p> <ul> <li>
+     * <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATING</code> </p> </li>
+     * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
+     * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
     inline AwsDynamoDbTableReplica& WithReplicaStatus(const char* value) { SetReplicaStatus(value); return *this;}
 
@@ -287,22 +311,22 @@ namespace Model
   private:
 
     Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     Aws::String m_kmsMasterKeyId;
-    bool m_kmsMasterKeyIdHasBeenSet;
+    bool m_kmsMasterKeyIdHasBeenSet = false;
 
     AwsDynamoDbTableProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
 
     Aws::String m_regionName;
-    bool m_regionNameHasBeenSet;
+    bool m_regionNameHasBeenSet = false;
 
     Aws::String m_replicaStatus;
-    bool m_replicaStatusHasBeenSet;
+    bool m_replicaStatusHasBeenSet = false;
 
     Aws::String m_replicaStatusDescription;
-    bool m_replicaStatusDescriptionHasBeenSet;
+    bool m_replicaStatusDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Frequency">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API Frequency
+  class Frequency
   {
   public:
-    Frequency();
-    Frequency(Aws::Utils::Json::JsonView jsonValue);
-    Frequency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API Frequency();
+    AWS_GROUNDSTATION_API Frequency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Frequency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -95,10 +95,10 @@ namespace Model
   private:
 
     FrequencyUnits m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

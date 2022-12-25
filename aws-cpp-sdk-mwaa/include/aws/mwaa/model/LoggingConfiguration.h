@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API LoggingConfiguration();
+    AWS_MWAA_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,19 +213,19 @@ namespace Model
   private:
 
     ModuleLoggingConfiguration m_dagProcessingLogs;
-    bool m_dagProcessingLogsHasBeenSet;
+    bool m_dagProcessingLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_schedulerLogs;
-    bool m_schedulerLogsHasBeenSet;
+    bool m_schedulerLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_taskLogs;
-    bool m_taskLogsHasBeenSet;
+    bool m_taskLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_webserverLogs;
-    bool m_webserverLogsHasBeenSet;
+    bool m_webserverLogsHasBeenSet = false;
 
     ModuleLoggingConfiguration m_workerLogs;
-    bool m_workerLogsHasBeenSet;
+    bool m_workerLogsHasBeenSet = false;
   };
 
 } // namespace Model

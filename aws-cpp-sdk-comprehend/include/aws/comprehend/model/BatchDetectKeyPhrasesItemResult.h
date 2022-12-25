@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrasesItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult
+  class BatchDetectKeyPhrasesItemResult
   {
   public:
-    BatchDetectKeyPhrasesItemResult();
-    BatchDetectKeyPhrasesItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectKeyPhrasesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult();
+    AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<KeyPhrase> m_keyPhrases;
-    bool m_keyPhrasesHasBeenSet;
+    bool m_keyPhrasesHasBeenSet = false;
   };
 
 } // namespace Model

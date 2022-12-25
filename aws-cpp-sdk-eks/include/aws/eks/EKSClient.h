@@ -5,228 +5,16 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
-#include <aws/eks/EKSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/eks/model/AssociateEncryptionConfigResult.h>
-#include <aws/eks/model/AssociateIdentityProviderConfigResult.h>
-#include <aws/eks/model/CreateAddonResult.h>
-#include <aws/eks/model/CreateClusterResult.h>
-#include <aws/eks/model/CreateFargateProfileResult.h>
-#include <aws/eks/model/CreateNodegroupResult.h>
-#include <aws/eks/model/DeleteAddonResult.h>
-#include <aws/eks/model/DeleteClusterResult.h>
-#include <aws/eks/model/DeleteFargateProfileResult.h>
-#include <aws/eks/model/DeleteNodegroupResult.h>
-#include <aws/eks/model/DeregisterClusterResult.h>
-#include <aws/eks/model/DescribeAddonResult.h>
-#include <aws/eks/model/DescribeAddonVersionsResult.h>
-#include <aws/eks/model/DescribeClusterResult.h>
-#include <aws/eks/model/DescribeFargateProfileResult.h>
-#include <aws/eks/model/DescribeIdentityProviderConfigResult.h>
-#include <aws/eks/model/DescribeNodegroupResult.h>
-#include <aws/eks/model/DescribeUpdateResult.h>
-#include <aws/eks/model/DisassociateIdentityProviderConfigResult.h>
-#include <aws/eks/model/ListAddonsResult.h>
-#include <aws/eks/model/ListClustersResult.h>
-#include <aws/eks/model/ListFargateProfilesResult.h>
-#include <aws/eks/model/ListIdentityProviderConfigsResult.h>
-#include <aws/eks/model/ListNodegroupsResult.h>
-#include <aws/eks/model/ListTagsForResourceResult.h>
-#include <aws/eks/model/ListUpdatesResult.h>
-#include <aws/eks/model/RegisterClusterResult.h>
-#include <aws/eks/model/TagResourceResult.h>
-#include <aws/eks/model/UntagResourceResult.h>
-#include <aws/eks/model/UpdateAddonResult.h>
-#include <aws/eks/model/UpdateClusterConfigResult.h>
-#include <aws/eks/model/UpdateClusterVersionResult.h>
-#include <aws/eks/model/UpdateNodegroupConfigResult.h>
-#include <aws/eks/model/UpdateNodegroupVersionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/eks/EKSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace EKS
 {
-
-namespace Model
-{
-        class AssociateEncryptionConfigRequest;
-        class AssociateIdentityProviderConfigRequest;
-        class CreateAddonRequest;
-        class CreateClusterRequest;
-        class CreateFargateProfileRequest;
-        class CreateNodegroupRequest;
-        class DeleteAddonRequest;
-        class DeleteClusterRequest;
-        class DeleteFargateProfileRequest;
-        class DeleteNodegroupRequest;
-        class DeregisterClusterRequest;
-        class DescribeAddonRequest;
-        class DescribeAddonVersionsRequest;
-        class DescribeClusterRequest;
-        class DescribeFargateProfileRequest;
-        class DescribeIdentityProviderConfigRequest;
-        class DescribeNodegroupRequest;
-        class DescribeUpdateRequest;
-        class DisassociateIdentityProviderConfigRequest;
-        class ListAddonsRequest;
-        class ListClustersRequest;
-        class ListFargateProfilesRequest;
-        class ListIdentityProviderConfigsRequest;
-        class ListNodegroupsRequest;
-        class ListTagsForResourceRequest;
-        class ListUpdatesRequest;
-        class RegisterClusterRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAddonRequest;
-        class UpdateClusterConfigRequest;
-        class UpdateClusterVersionRequest;
-        class UpdateNodegroupConfigRequest;
-        class UpdateNodegroupVersionRequest;
-
-        typedef Aws::Utils::Outcome<AssociateEncryptionConfigResult, EKSError> AssociateEncryptionConfigOutcome;
-        typedef Aws::Utils::Outcome<AssociateIdentityProviderConfigResult, EKSError> AssociateIdentityProviderConfigOutcome;
-        typedef Aws::Utils::Outcome<CreateAddonResult, EKSError> CreateAddonOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterResult, EKSError> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateFargateProfileResult, EKSError> CreateFargateProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateNodegroupResult, EKSError> CreateNodegroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteAddonResult, EKSError> DeleteAddonOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, EKSError> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteFargateProfileResult, EKSError> DeleteFargateProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteNodegroupResult, EKSError> DeleteNodegroupOutcome;
-        typedef Aws::Utils::Outcome<DeregisterClusterResult, EKSError> DeregisterClusterOutcome;
-        typedef Aws::Utils::Outcome<DescribeAddonResult, EKSError> DescribeAddonOutcome;
-        typedef Aws::Utils::Outcome<DescribeAddonVersionsResult, EKSError> DescribeAddonVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClusterResult, EKSError> DescribeClusterOutcome;
-        typedef Aws::Utils::Outcome<DescribeFargateProfileResult, EKSError> DescribeFargateProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigResult, EKSError> DescribeIdentityProviderConfigOutcome;
-        typedef Aws::Utils::Outcome<DescribeNodegroupResult, EKSError> DescribeNodegroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeUpdateResult, EKSError> DescribeUpdateOutcome;
-        typedef Aws::Utils::Outcome<DisassociateIdentityProviderConfigResult, EKSError> DisassociateIdentityProviderConfigOutcome;
-        typedef Aws::Utils::Outcome<ListAddonsResult, EKSError> ListAddonsOutcome;
-        typedef Aws::Utils::Outcome<ListClustersResult, EKSError> ListClustersOutcome;
-        typedef Aws::Utils::Outcome<ListFargateProfilesResult, EKSError> ListFargateProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityProviderConfigsResult, EKSError> ListIdentityProviderConfigsOutcome;
-        typedef Aws::Utils::Outcome<ListNodegroupsResult, EKSError> ListNodegroupsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, EKSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListUpdatesResult, EKSError> ListUpdatesOutcome;
-        typedef Aws::Utils::Outcome<RegisterClusterResult, EKSError> RegisterClusterOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, EKSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, EKSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAddonResult, EKSError> UpdateAddonOutcome;
-        typedef Aws::Utils::Outcome<UpdateClusterConfigResult, EKSError> UpdateClusterConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdateClusterVersionResult, EKSError> UpdateClusterVersionOutcome;
-        typedef Aws::Utils::Outcome<UpdateNodegroupConfigResult, EKSError> UpdateNodegroupConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdateNodegroupVersionResult, EKSError> UpdateNodegroupVersionOutcome;
-
-        typedef std::future<AssociateEncryptionConfigOutcome> AssociateEncryptionConfigOutcomeCallable;
-        typedef std::future<AssociateIdentityProviderConfigOutcome> AssociateIdentityProviderConfigOutcomeCallable;
-        typedef std::future<CreateAddonOutcome> CreateAddonOutcomeCallable;
-        typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-        typedef std::future<CreateFargateProfileOutcome> CreateFargateProfileOutcomeCallable;
-        typedef std::future<CreateNodegroupOutcome> CreateNodegroupOutcomeCallable;
-        typedef std::future<DeleteAddonOutcome> DeleteAddonOutcomeCallable;
-        typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-        typedef std::future<DeleteFargateProfileOutcome> DeleteFargateProfileOutcomeCallable;
-        typedef std::future<DeleteNodegroupOutcome> DeleteNodegroupOutcomeCallable;
-        typedef std::future<DeregisterClusterOutcome> DeregisterClusterOutcomeCallable;
-        typedef std::future<DescribeAddonOutcome> DescribeAddonOutcomeCallable;
-        typedef std::future<DescribeAddonVersionsOutcome> DescribeAddonVersionsOutcomeCallable;
-        typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
-        typedef std::future<DescribeFargateProfileOutcome> DescribeFargateProfileOutcomeCallable;
-        typedef std::future<DescribeIdentityProviderConfigOutcome> DescribeIdentityProviderConfigOutcomeCallable;
-        typedef std::future<DescribeNodegroupOutcome> DescribeNodegroupOutcomeCallable;
-        typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
-        typedef std::future<DisassociateIdentityProviderConfigOutcome> DisassociateIdentityProviderConfigOutcomeCallable;
-        typedef std::future<ListAddonsOutcome> ListAddonsOutcomeCallable;
-        typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
-        typedef std::future<ListFargateProfilesOutcome> ListFargateProfilesOutcomeCallable;
-        typedef std::future<ListIdentityProviderConfigsOutcome> ListIdentityProviderConfigsOutcomeCallable;
-        typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
-        typedef std::future<RegisterClusterOutcome> RegisterClusterOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAddonOutcome> UpdateAddonOutcomeCallable;
-        typedef std::future<UpdateClusterConfigOutcome> UpdateClusterConfigOutcomeCallable;
-        typedef std::future<UpdateClusterVersionOutcome> UpdateClusterVersionOutcomeCallable;
-        typedef std::future<UpdateNodegroupConfigOutcome> UpdateNodegroupConfigOutcomeCallable;
-        typedef std::future<UpdateNodegroupVersionOutcome> UpdateNodegroupVersionOutcomeCallable;
-} // namespace Model
-
-  class EKSClient;
-
-    typedef std::function<void(const EKSClient*, const Model::AssociateEncryptionConfigRequest&, const Model::AssociateEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEncryptionConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::AssociateIdentityProviderConfigRequest&, const Model::AssociateIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIdentityProviderConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::CreateAddonRequest&, const Model::CreateAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddonResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::CreateFargateProfileRequest&, const Model::CreateFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFargateProfileResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::CreateNodegroupRequest&, const Model::CreateNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodegroupResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DeleteAddonRequest&, const Model::DeleteAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAddonResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DeleteFargateProfileRequest&, const Model::DeleteFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFargateProfileResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DeleteNodegroupRequest&, const Model::DeleteNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodegroupResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DeregisterClusterRequest&, const Model::DeregisterClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterClusterResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeAddonRequest&, const Model::DescribeAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeAddonVersionsRequest&, const Model::DescribeAddonVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonVersionsResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeFargateProfileRequest&, const Model::DescribeFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFargateProfileResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeIdentityProviderConfigRequest&, const Model::DescribeIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeNodegroupRequest&, const Model::DescribeNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodegroupResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::DisassociateIdentityProviderConfigRequest&, const Model::DisassociateIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIdentityProviderConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListAddonsRequest&, const Model::ListAddonsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAddonsResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListFargateProfilesRequest&, const Model::ListFargateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFargateProfilesResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListIdentityProviderConfigsRequest&, const Model::ListIdentityProviderConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProviderConfigsResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::RegisterClusterRequest&, const Model::RegisterClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterClusterResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UpdateAddonRequest&, const Model::UpdateAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAddonResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UpdateClusterConfigRequest&, const Model::UpdateClusterConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UpdateClusterVersionRequest&, const Model::UpdateClusterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterVersionResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UpdateNodegroupConfigRequest&, const Model::UpdateNodegroupConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodegroupConfigResponseReceivedHandler;
-    typedef std::function<void(const EKSClient*, const Model::UpdateNodegroupVersionRequest&, const Model::UpdateNodegroupVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodegroupVersionResponseReceivedHandler;
-
   /**
    * <p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
    * makes it easy for you to run Kubernetes on Amazon Web Services without needing
@@ -240,32 +28,60 @@ namespace Model
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient
+  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EKSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EKSClient(const Aws::EKS::EKSClientConfiguration& clientConfiguration = Aws::EKS::EKSClientConfiguration(),
+                  std::shared_ptr<EKSEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EKSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EKSClient(const Aws::Auth::AWSCredentials& credentials,
+                  std::shared_ptr<EKSEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EKS::EKSClientConfiguration& clientConfiguration = Aws::EKS::EKSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         EKSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EKSEndpointProviderBase> endpointProvider = Aws::MakeShared<EKSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EKS::EKSClientConfiguration& clientConfiguration = Aws::EKS::EKSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EKSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EKSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        EKSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~EKSClient();
-
 
         /**
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
@@ -317,10 +133,7 @@ namespace Model
         /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
-         * EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later
-         * because Amazon EKS add-ons rely on the Server-side Apply Kubernetes feature,
-         * which is only available in Kubernetes 1.18 and later. For more information, see
-         * <a
+         * EKS clusters. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon
          * EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">AWS
@@ -430,11 +243,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
-         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
+         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
-         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a
+         * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
+         * types are only supported for commercial Regions that support Windows Amazon
+         * EKS.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
          * API Reference</a></p>
          */
@@ -572,8 +385,27 @@ namespace Model
         virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Kubernetes versions that the add-on can be used
-         * with.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns configuration options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddonConfigurationOutcome DescribeAddonConfiguration(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddonConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddonConfigurationOutcomeCallable DescribeAddonConfigurationCallable(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddonConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddonConfigurationAsync(const Model::DescribeAddonConfigurationRequest& request, const DescribeAddonConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the versions for an add-on. Information such as the Kubernetes
+         * versions that you can use the add-on with, the <code>owner</code>,
+         * <code>publisher</code>, and the <code>type</code> of the add-on are returned.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">AWS
          * API Reference</a></p>
          */
@@ -1022,16 +854,19 @@ namespace Model
          * the latest available AMI version of a node group's current Kubernetes version by
          * not specifying a Kubernetes version in the request. You can update to the latest
          * AMI version of your cluster's current Kubernetes version by specifying your
-         * cluster's Kubernetes version in the request. For more information, see <a
+         * cluster's Kubernetes version in the request. For information about Linux
+         * versions, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-         * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-         * Guide</i>.</p> <p>You cannot roll back a node group to an earlier Kubernetes
-         * version or AMI version.</p> <p>When a node in a managed node group is terminated
-         * due to a scaling action or update, the pods in that node are drained first.
-         * Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable
-         * to do so. You can <code>force</code> the update if Amazon EKS is unable to drain
-         * the nodes as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>
-         * <a
+         * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+         * For information about Windows versions, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+         * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>. </p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
          * API Reference</a></p>
          */
@@ -1049,46 +884,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateEncryptionConfigAsyncHelper(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateIdentityProviderConfigAsyncHelper(const Model::AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAddonAsyncHelper(const Model::CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFargateProfileAsyncHelper(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateNodegroupAsyncHelper(const Model::CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAddonAsyncHelper(const Model::DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFargateProfileAsyncHelper(const Model::DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteNodegroupAsyncHelper(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterClusterAsyncHelper(const Model::DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAddonAsyncHelper(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAddonVersionsAsyncHelper(const Model::DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFargateProfileAsyncHelper(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeIdentityProviderConfigAsyncHelper(const Model::DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeNodegroupAsyncHelper(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateIdentityProviderConfigAsyncHelper(const Model::DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAddonsAsyncHelper(const Model::ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFargateProfilesAsyncHelper(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentityProviderConfigsAsyncHelper(const Model::ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListNodegroupsAsyncHelper(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterClusterAsyncHelper(const Model::RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAddonAsyncHelper(const Model::UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateClusterConfigAsyncHelper(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateClusterVersionAsyncHelper(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateNodegroupConfigAsyncHelper(const Model::UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateNodegroupVersionAsyncHelper(const Model::UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
+      void init(const EKSClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      EKSClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EKS

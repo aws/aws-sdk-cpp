@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallPolicy
+  class NetworkFirewallPolicy
   {
   public:
-    NetworkFirewallPolicy();
-    NetworkFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallPolicy();
+    AWS_FMS_API NetworkFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     FirewallDeploymentModel m_firewallDeploymentModel;
-    bool m_firewallDeploymentModelHasBeenSet;
+    bool m_firewallDeploymentModelHasBeenSet = false;
   };
 
 } // namespace Model

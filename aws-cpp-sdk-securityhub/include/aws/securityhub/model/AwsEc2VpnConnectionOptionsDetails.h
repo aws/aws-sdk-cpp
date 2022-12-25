@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpnConnectionOptionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails
+  class AwsEc2VpnConnectionOptionsDetails
   {
   public:
-    AwsEc2VpnConnectionOptionsDetails();
-    AwsEc2VpnConnectionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpnConnectionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_staticRoutesOnly;
-    bool m_staticRoutesOnlyHasBeenSet;
+    bool m_staticRoutesOnlyHasBeenSet = false;
 
     Aws::Vector<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> m_tunnelOptions;
-    bool m_tunnelOptionsHasBeenSet;
+    bool m_tunnelOptionsHasBeenSet = false;
   };
 
 } // namespace Model

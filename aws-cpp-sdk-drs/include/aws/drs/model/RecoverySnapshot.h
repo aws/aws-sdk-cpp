@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoverySnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoverySnapshot
+  class RecoverySnapshot
   {
   public:
-    RecoverySnapshot();
-    RecoverySnapshot(Aws::Utils::Json::JsonView jsonValue);
-    RecoverySnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoverySnapshot();
+    AWS_DRS_API RecoverySnapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoverySnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -251,19 +251,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ebsSnapshots;
-    bool m_ebsSnapshotsHasBeenSet;
+    bool m_ebsSnapshotsHasBeenSet = false;
 
     Aws::String m_expectedTimestamp;
-    bool m_expectedTimestampHasBeenSet;
+    bool m_expectedTimestampHasBeenSet = false;
 
     Aws::String m_snapshotID;
-    bool m_snapshotIDHasBeenSet;
+    bool m_snapshotIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     Aws::String m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
   };
 
 } // namespace Model

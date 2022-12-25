@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingStoppingCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingStoppingCondition
+  class ProcessingStoppingCondition
   {
   public:
-    ProcessingStoppingCondition();
-    ProcessingStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingStoppingCondition();
+    AWS_SAGEMAKER_API ProcessingStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

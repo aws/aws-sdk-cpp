@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Folder">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Folder
+  class Folder
   {
   public:
-    Folder();
-    Folder(Aws::Utils::Json::JsonView jsonValue);
-    Folder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Folder();
+    AWS_CODECOMMIT_API Folder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Folder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_treeId;
-    bool m_treeIdHasBeenSet;
+    bool m_treeIdHasBeenSet = false;
 
     Aws::String m_absolutePath;
-    bool m_absolutePathHasBeenSet;
+    bool m_absolutePathHasBeenSet = false;
 
     Aws::String m_relativePath;
-    bool m_relativePathHasBeenSet;
+    bool m_relativePathHasBeenSet = false;
   };
 
 } // namespace Model

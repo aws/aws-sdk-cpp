@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Recommender">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API Recommender
+  class Recommender
   {
   public:
-    Recommender();
-    Recommender(Aws::Utils::Json::JsonView jsonValue);
-    Recommender& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API Recommender();
+    AWS_PERSONALIZE_API Recommender(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Recommender& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -538,37 +538,37 @@ namespace Model
   private:
 
     Aws::String m_recommenderArn;
-    bool m_recommenderArnHasBeenSet;
+    bool m_recommenderArnHasBeenSet = false;
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recipeArn;
-    bool m_recipeArnHasBeenSet;
+    bool m_recipeArnHasBeenSet = false;
 
     RecommenderConfig m_recommenderConfig;
-    bool m_recommenderConfigHasBeenSet;
+    bool m_recommenderConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     RecommenderUpdateSummary m_latestRecommenderUpdate;
-    bool m_latestRecommenderUpdateHasBeenSet;
+    bool m_latestRecommenderUpdateHasBeenSet = false;
 
     Aws::Map<Aws::String, double> m_modelMetrics;
-    bool m_modelMetricsHasBeenSet;
+    bool m_modelMetricsHasBeenSet = false;
   };
 
 } // namespace Model

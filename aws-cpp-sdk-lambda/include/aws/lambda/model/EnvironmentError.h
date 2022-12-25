@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EnvironmentError
+  class EnvironmentError
   {
   public:
-    EnvironmentError();
-    EnvironmentError(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EnvironmentError();
+    AWS_LAMBDA_API EnvironmentError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EnvironmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilizationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansUtilizationDetail
+  class SavingsPlansUtilizationDetail
   {
   public:
-    SavingsPlansUtilizationDetail();
-    SavingsPlansUtilizationDetail(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansUtilizationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationDetail();
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -270,19 +270,19 @@ namespace Model
   private:
 
     Aws::String m_savingsPlanArn;
-    bool m_savingsPlanArnHasBeenSet;
+    bool m_savingsPlanArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SavingsPlansUtilization m_utilization;
-    bool m_utilizationHasBeenSet;
+    bool m_utilizationHasBeenSet = false;
 
     SavingsPlansSavings m_savings;
-    bool m_savingsHasBeenSet;
+    bool m_savingsHasBeenSet = false;
 
     SavingsPlansAmortizedCommitment m_amortizedCommitment;
-    bool m_amortizedCommitmentHasBeenSet;
+    bool m_amortizedCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

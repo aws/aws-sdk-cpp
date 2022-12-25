@@ -8,6 +8,7 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/ScalingMode.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -23,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDedicatedIpPoolRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CreateDedicatedIpPoolRequest : public SESV2Request
+  class CreateDedicatedIpPoolRequest : public SESV2Request
   {
   public:
-    CreateDedicatedIpPoolRequest();
+    AWS_SESV2_API CreateDedicatedIpPoolRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDedicatedIpPool"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -126,13 +127,47 @@ namespace Model
      */
     inline CreateDedicatedIpPoolRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline const ScalingMode& GetScalingMode() const{ return m_scalingMode; }
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline bool ScalingModeHasBeenSet() const { return m_scalingModeHasBeenSet; }
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline void SetScalingMode(const ScalingMode& value) { m_scalingModeHasBeenSet = true; m_scalingMode = value; }
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline void SetScalingMode(ScalingMode&& value) { m_scalingModeHasBeenSet = true; m_scalingMode = std::move(value); }
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline CreateDedicatedIpPoolRequest& WithScalingMode(const ScalingMode& value) { SetScalingMode(value); return *this;}
+
+    /**
+     * <p>The type of scaling mode.</p>
+     */
+    inline CreateDedicatedIpPoolRequest& WithScalingMode(ScalingMode&& value) { SetScalingMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_poolName;
-    bool m_poolNameHasBeenSet;
+    bool m_poolNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    ScalingMode m_scalingMode;
+    bool m_scalingModeHasBeenSet = false;
   };
 
 } // namespace Model

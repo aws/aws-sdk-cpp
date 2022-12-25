@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DestinationSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API DestinationSchema
+  class DestinationSchema
   {
   public:
-    DestinationSchema();
-    DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
-    DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API DestinationSchema();
+    AWS_KINESISANALYTICSV2_API DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     RecordFormatType m_recordFormatType;
-    bool m_recordFormatTypeHasBeenSet;
+    bool m_recordFormatTypeHasBeenSet = false;
   };
 
 } // namespace Model

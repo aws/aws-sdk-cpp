@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentSummary
+  class IntentSummary
   {
   public:
-    IntentSummary();
-    IntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentSummary();
+    AWS_LEXMODELSV2_API IntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_parentIntentSignature;
-    bool m_parentIntentSignatureHasBeenSet;
+    bool m_parentIntentSignatureHasBeenSet = false;
 
     Aws::Vector<InputContext> m_inputContexts;
-    bool m_inputContextsHasBeenSet;
+    bool m_inputContextsHasBeenSet = false;
 
     Aws::Vector<OutputContext> m_outputContexts;
-    bool m_outputContextsHasBeenSet;
+    bool m_outputContextsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

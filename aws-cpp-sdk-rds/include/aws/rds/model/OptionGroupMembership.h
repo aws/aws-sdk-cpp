@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionGroupMembership
+  class OptionGroupMembership
   {
   public:
-    OptionGroupMembership();
-    OptionGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupMembership();
+    AWS_RDS_API OptionGroupMembership(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupMembership& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,6 +15,7 @@
 #include <aws/kafka/model/OpenMonitoringInfo.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/kafka/model/StorageMode.h>
 #include <utility>
 
 namespace Aws
@@ -26,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API CreateClusterRequest : public KafkaRequest
+  class CreateClusterRequest : public KafkaRequest
   {
   public:
-    CreateClusterRequest();
+    AWS_KAFKA_API CreateClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -575,40 +576,92 @@ namespace Model
      */
     inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline const StorageMode& GetStorageMode() const{ return m_storageMode; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline bool StorageModeHasBeenSet() const { return m_storageModeHasBeenSet; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(const StorageMode& value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(StorageMode&& value) { m_storageModeHasBeenSet = true; m_storageMode = std::move(value); }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline CreateClusterRequest& WithStorageMode(const StorageMode& value) { SetStorageMode(value); return *this;}
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline CreateClusterRequest& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
+
   private:
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-    bool m_brokerNodeGroupInfoHasBeenSet;
+    bool m_brokerNodeGroupInfoHasBeenSet = false;
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
 
     ConfigurationInfo m_configurationInfo;
-    bool m_configurationInfoHasBeenSet;
+    bool m_configurationInfoHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoringInfo m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     Aws::String m_kafkaVersion;
-    bool m_kafkaVersionHasBeenSet;
+    bool m_kafkaVersionHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     int m_numberOfBrokerNodes;
-    bool m_numberOfBrokerNodesHasBeenSet;
+    bool m_numberOfBrokerNodesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    StorageMode m_storageMode;
+    bool m_storageModeHasBeenSet = false;
   };
 
 } // namespace Model

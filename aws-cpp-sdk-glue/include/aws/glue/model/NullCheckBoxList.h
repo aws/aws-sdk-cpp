@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/NullCheckBoxList">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API NullCheckBoxList
+  class NullCheckBoxList
   {
   public:
-    NullCheckBoxList();
-    NullCheckBoxList(Aws::Utils::Json::JsonView jsonValue);
-    NullCheckBoxList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API NullCheckBoxList();
+    AWS_GLUE_API NullCheckBoxList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API NullCheckBoxList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -105,13 +105,13 @@ namespace Model
   private:
 
     bool m_isEmpty;
-    bool m_isEmptyHasBeenSet;
+    bool m_isEmptyHasBeenSet = false;
 
     bool m_isNullString;
-    bool m_isNullStringHasBeenSet;
+    bool m_isNullStringHasBeenSet = false;
 
     bool m_isNegOne;
-    bool m_isNegOneHasBeenSet;
+    bool m_isNegOneHasBeenSet = false;
   };
 
 } // namespace Model

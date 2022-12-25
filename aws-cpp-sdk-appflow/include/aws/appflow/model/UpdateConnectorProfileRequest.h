@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_APPFLOW_API UpdateConnectorProfileRequest : public AppflowRequest
+  class UpdateConnectorProfileRequest : public AppflowRequest
   {
   public:
-    UpdateConnectorProfileRequest();
+    AWS_APPFLOW_API UpdateConnectorProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConnectorProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPFLOW_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     ConnectionMode m_connectionMode;
-    bool m_connectionModeHasBeenSet;
+    bool m_connectionModeHasBeenSet = false;
 
     ConnectorProfileConfig m_connectorProfileConfig;
-    bool m_connectorProfileConfigHasBeenSet;
+    bool m_connectorProfileConfigHasBeenSet = false;
   };
 
 } // namespace Model

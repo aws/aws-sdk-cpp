@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SubscribedRuleGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API SubscribedRuleGroupSummary
+  class SubscribedRuleGroupSummary
   {
   public:
-    SubscribedRuleGroupSummary();
-    SubscribedRuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    SubscribedRuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API SubscribedRuleGroupSummary();
+    AWS_WAF_API SubscribedRuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API SubscribedRuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,13 +218,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
   };
 
 } // namespace Model

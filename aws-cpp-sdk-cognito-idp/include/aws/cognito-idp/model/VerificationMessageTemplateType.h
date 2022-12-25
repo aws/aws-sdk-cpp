@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerificationMessageTemplateType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType
+  class VerificationMessageTemplateType
   {
   public:
-    VerificationMessageTemplateType();
-    VerificationMessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
-    VerificationMessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType();
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -476,22 +476,22 @@ namespace Model
   private:
 
     Aws::String m_smsMessage;
-    bool m_smsMessageHasBeenSet;
+    bool m_smsMessageHasBeenSet = false;
 
     Aws::String m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     Aws::String m_emailSubject;
-    bool m_emailSubjectHasBeenSet;
+    bool m_emailSubjectHasBeenSet = false;
 
     Aws::String m_emailMessageByLink;
-    bool m_emailMessageByLinkHasBeenSet;
+    bool m_emailMessageByLinkHasBeenSet = false;
 
     Aws::String m_emailSubjectByLink;
-    bool m_emailSubjectByLinkHasBeenSet;
+    bool m_emailSubjectByLinkHasBeenSet = false;
 
     DefaultEmailOptionType m_defaultEmailOption;
-    bool m_defaultEmailOptionHasBeenSet;
+    bool m_defaultEmailOptionHasBeenSet = false;
   };
 
 } // namespace Model

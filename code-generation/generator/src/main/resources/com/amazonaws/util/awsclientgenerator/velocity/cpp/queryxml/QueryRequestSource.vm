@@ -80,7 +80,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #if($member.value.shape.listMember.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.listMember.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.listMember.shape)).c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.listMember.shape.name}Mapper::GetNameFor${member.value.shape.listMember.shape.name}(item).c_str()) << "&";
 #elseif($member.value.shape.listMember.shape.double)
@@ -118,7 +118,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #if($member.value.shape.mapKey.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.first.c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.mapKey.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.first.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.mapKey.shape)).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapKey.shape.name}Mapper::GetNameFor${member.value.shape.mapKey.shape.name}(item.first).c_str()) << "&";
 #elseif($member.value.shape.mapKey.shape.structure)
@@ -136,7 +136,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #if($member.value.shape.mapValue.shape.string)
   ${spaces}      << StringUtils::URLEncode(item.second.c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.timeStamp)
-  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.mapValue.shape)).c_str()) << "&";
+  ${spaces}      << StringUtils::URLEncode(item.second.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape.mapValue.shape)).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.enum)
   ${spaces}      << StringUtils::URLEncode(${member.value.shape.mapValue.shape.name}Mapper::GetNameFor${member.value.shape.mapValue.shape.name}(item.second).c_str()) << "&";
 #elseif($member.value.shape.mapValue.shape.structure)
@@ -164,7 +164,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #if($member.value.shape.blob)
   ${spaces}ss << "${location}=" << HashingUtils::Base64Encode(${memberVarName}) << "&";
 #elseif($member.value.shape.timeStamp)
-  ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape)).c_str()) << "&";
+  ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}.ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($member.value.shape)).c_str()) << "&";
 #elseif($member.value.shape.string)
   ${spaces}ss << "${location}=" << StringUtils::URLEncode(${memberVarName}.c_str()) << "&";
 #elseif($member.value.shape.enum)
@@ -199,4 +199,5 @@ void  ${typeInfo.className}::DumpBodyToUrl(Aws::Http::URI& uri ) const
   uri.SetQueryString(SerializePayload());
 }
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")

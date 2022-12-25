@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ValidationError">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ValidationError
+  class ValidationError
   {
   public:
-    ValidationError();
-    ValidationError(Aws::Utils::Json::JsonView jsonValue);
-    ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ValidationError();
+    AWS_MEDIALIVE_API ValidationError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_elementPath;
-    bool m_elementPathHasBeenSet;
+    bool m_elementPathHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

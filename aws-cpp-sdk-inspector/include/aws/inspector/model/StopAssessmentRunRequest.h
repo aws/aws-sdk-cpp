@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_INSPECTOR_API StopAssessmentRunRequest : public InspectorRequest
+  class StopAssessmentRunRequest : public InspectorRequest
   {
   public:
-    StopAssessmentRunRequest();
+    AWS_INSPECTOR_API StopAssessmentRunRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopAssessmentRun"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_INSPECTOR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     StopAction m_stopAction;
-    bool m_stopActionHasBeenSet;
+    bool m_stopActionHasBeenSet = false;
   };
 
 } // namespace Model

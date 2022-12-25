@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/HostKeyAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API HostKeyAttributes
+  class HostKeyAttributes
   {
   public:
-    HostKeyAttributes();
-    HostKeyAttributes(Aws::Utils::Json::JsonView jsonValue);
-    HostKeyAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API HostKeyAttributes();
+    AWS_LIGHTSAIL_API HostKeyAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API HostKeyAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -420,25 +420,25 @@ namespace Model
   private:
 
     Aws::String m_algorithm;
-    bool m_algorithmHasBeenSet;
+    bool m_algorithmHasBeenSet = false;
 
     Aws::String m_publicKey;
-    bool m_publicKeyHasBeenSet;
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::Utils::DateTime m_witnessedAt;
-    bool m_witnessedAtHasBeenSet;
+    bool m_witnessedAtHasBeenSet = false;
 
     Aws::String m_fingerprintSHA1;
-    bool m_fingerprintSHA1HasBeenSet;
+    bool m_fingerprintSHA1HasBeenSet = false;
 
     Aws::String m_fingerprintSHA256;
-    bool m_fingerprintSHA256HasBeenSet;
+    bool m_fingerprintSHA256HasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidBefore;
-    bool m_notValidBeforeHasBeenSet;
+    bool m_notValidBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notValidAfter;
-    bool m_notValidAfterHasBeenSet;
+    bool m_notValidAfterHasBeenSet = false;
   };
 
 } // namespace Model

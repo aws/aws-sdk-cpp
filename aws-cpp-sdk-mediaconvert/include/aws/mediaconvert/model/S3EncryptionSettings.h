@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/S3EncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API S3EncryptionSettings
+  class S3EncryptionSettings
   {
   public:
-    S3EncryptionSettings();
-    S3EncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    S3EncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API S3EncryptionSettings();
+    AWS_MEDIACONVERT_API S3EncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API S3EncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -318,13 +318,13 @@ namespace Model
   private:
 
     S3ServerSideEncryptionType m_encryptionType;
-    bool m_encryptionTypeHasBeenSet;
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsEncryptionContext;
-    bool m_kmsEncryptionContextHasBeenSet;
+    bool m_kmsEncryptionContextHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

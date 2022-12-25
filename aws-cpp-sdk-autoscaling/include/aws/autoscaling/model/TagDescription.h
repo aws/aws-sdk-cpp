@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TagDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API TagDescription
+  class TagDescription
   {
   public:
-    TagDescription();
-    TagDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TagDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TagDescription();
+    AWS_AUTOSCALING_API TagDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API TagDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -238,19 +238,19 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_propagateAtLaunch;
-    bool m_propagateAtLaunchHasBeenSet;
+    bool m_propagateAtLaunchHasBeenSet = false;
   };
 
 } // namespace Model

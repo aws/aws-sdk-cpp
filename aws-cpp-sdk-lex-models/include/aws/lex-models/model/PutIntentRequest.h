@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API PutIntentRequest : public LexModelBuildingServiceRequest
+  class PutIntentRequest : public LexModelBuildingServiceRequest
   {
   public:
-    PutIntentRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutIntentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutIntent"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -1083,52 +1083,52 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Slot> m_slots;
-    bool m_slotsHasBeenSet;
+    bool m_slotsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sampleUtterances;
-    bool m_sampleUtterancesHasBeenSet;
+    bool m_sampleUtterancesHasBeenSet = false;
 
     Prompt m_confirmationPrompt;
-    bool m_confirmationPromptHasBeenSet;
+    bool m_confirmationPromptHasBeenSet = false;
 
     Statement m_rejectionStatement;
-    bool m_rejectionStatementHasBeenSet;
+    bool m_rejectionStatementHasBeenSet = false;
 
     FollowUpPrompt m_followUpPrompt;
-    bool m_followUpPromptHasBeenSet;
+    bool m_followUpPromptHasBeenSet = false;
 
     Statement m_conclusionStatement;
-    bool m_conclusionStatementHasBeenSet;
+    bool m_conclusionStatementHasBeenSet = false;
 
     CodeHook m_dialogCodeHook;
-    bool m_dialogCodeHookHasBeenSet;
+    bool m_dialogCodeHookHasBeenSet = false;
 
     FulfillmentActivity m_fulfillmentActivity;
-    bool m_fulfillmentActivityHasBeenSet;
+    bool m_fulfillmentActivityHasBeenSet = false;
 
     Aws::String m_parentIntentSignature;
-    bool m_parentIntentSignatureHasBeenSet;
+    bool m_parentIntentSignatureHasBeenSet = false;
 
     Aws::String m_checksum;
-    bool m_checksumHasBeenSet;
+    bool m_checksumHasBeenSet = false;
 
     bool m_createVersion;
-    bool m_createVersionHasBeenSet;
+    bool m_createVersionHasBeenSet = false;
 
     KendraConfiguration m_kendraConfiguration;
-    bool m_kendraConfigurationHasBeenSet;
+    bool m_kendraConfigurationHasBeenSet = false;
 
     Aws::Vector<InputContext> m_inputContexts;
-    bool m_inputContextsHasBeenSet;
+    bool m_inputContextsHasBeenSet = false;
 
     Aws::Vector<OutputContext> m_outputContexts;
-    bool m_outputContextsHasBeenSet;
+    bool m_outputContextsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API GetStudioMemberRequest : public NimbleStudioRequest
+  class GetStudioMemberRequest : public NimbleStudioRequest
   {
   public:
-    GetStudioMemberRequest();
+    AWS_NIMBLESTUDIO_API GetStudioMemberRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,54 +29,46 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetStudioMember"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline GetStudioMemberRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline GetStudioMemberRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline GetStudioMemberRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
@@ -124,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

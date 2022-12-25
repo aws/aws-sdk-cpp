@@ -32,13 +32,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Player">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API Player
+  class Player
   {
   public:
-    Player();
-    Player(Aws::Utils::Json::JsonView jsonValue);
-    Player& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Player();
+    AWS_GAMELIFT_API Player(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Player& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetPlayerAttributes() const{ return m_playerAttributes; }
 
@@ -94,7 +95,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline bool PlayerAttributesHasBeenSet() const { return m_playerAttributesHasBeenSet; }
 
@@ -102,7 +104,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline void SetPlayerAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes = value; }
 
@@ -110,7 +113,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline void SetPlayerAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes = std::move(value); }
 
@@ -118,7 +122,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& WithPlayerAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetPlayerAttributes(value); return *this;}
 
@@ -126,7 +131,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& WithPlayerAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetPlayerAttributes(std::move(value)); return *this;}
 
@@ -134,7 +140,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(const Aws::String& key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, value); return *this; }
 
@@ -142,7 +149,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(Aws::String&& key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(std::move(key), value); return *this; }
 
@@ -150,7 +158,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(const Aws::String& key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -158,7 +167,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(Aws::String&& key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -166,7 +176,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(const char* key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -174,7 +185,8 @@ namespace Model
      * <p>A collection of key:value pairs containing player information for use in
      * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
      * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
-     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p> <p>You can provide up to 10
+     * <code>PlayerAttributes</code>.</p>
      */
     inline Player& AddPlayerAttributes(const char* key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, value); return *this; }
 
@@ -330,16 +342,16 @@ namespace Model
   private:
 
     Aws::String m_playerId;
-    bool m_playerIdHasBeenSet;
+    bool m_playerIdHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_playerAttributes;
-    bool m_playerAttributesHasBeenSet;
+    bool m_playerAttributesHasBeenSet = false;
 
     Aws::String m_team;
-    bool m_teamHasBeenSet;
+    bool m_teamHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_latencyInMs;
-    bool m_latencyInMsHasBeenSet;
+    bool m_latencyInMsHasBeenSet = false;
   };
 
 } // namespace Model

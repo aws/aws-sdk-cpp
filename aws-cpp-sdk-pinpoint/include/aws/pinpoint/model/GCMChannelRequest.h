@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API GCMChannelRequest
+  class GCMChannelRequest
   {
   public:
-    GCMChannelRequest();
-    GCMChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    GCMChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API GCMChannelRequest();
+    AWS_PINPOINT_API GCMChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API GCMChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

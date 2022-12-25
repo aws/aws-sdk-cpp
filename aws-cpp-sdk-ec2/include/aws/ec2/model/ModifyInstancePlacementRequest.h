@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EC2_API ModifyInstancePlacementRequest : public EC2Request
+  class ModifyInstancePlacementRequest : public EC2Request
   {
   public:
-    ModifyInstancePlacementRequest();
+    AWS_EC2_API ModifyInstancePlacementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,10 +31,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyInstancePlacement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -344,28 +344,80 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
 
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Group Id of a placement group. You must specify the Placement Group
+     * <b>Group Id</b> to launch an instance in a shared placement group.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
   private:
 
     Affinity m_affinity;
-    bool m_affinityHasBeenSet;
+    bool m_affinityHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_hostId;
-    bool m_hostIdHasBeenSet;
+    bool m_hostIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     HostTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_partitionNumber;
-    bool m_partitionNumberHasBeenSet;
+    bool m_partitionNumberHasBeenSet = false;
 
     Aws::String m_hostResourceGroupArn;
-    bool m_hostResourceGroupArnHasBeenSet;
+    bool m_hostResourceGroupArnHasBeenSet = false;
+
+    Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
   };
 
 } // namespace Model

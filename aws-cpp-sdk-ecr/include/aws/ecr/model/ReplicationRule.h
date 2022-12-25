@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ReplicationRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ReplicationRule
+  class ReplicationRule
   {
   public:
-    ReplicationRule();
-    ReplicationRule(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ReplicationRule();
+    AWS_ECR_API ReplicationRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ReplicationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::Vector<ReplicationDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     Aws::Vector<RepositoryFilter> m_repositoryFilters;
-    bool m_repositoryFiltersHasBeenSet;
+    bool m_repositoryFiltersHasBeenSet = false;
   };
 
 } // namespace Model

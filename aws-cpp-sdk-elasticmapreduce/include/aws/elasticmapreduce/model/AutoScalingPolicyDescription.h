@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API AutoScalingPolicyDescription
+  class AutoScalingPolicyDescription
   {
   public:
-    AutoScalingPolicyDescription();
-    AutoScalingPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API AutoScalingPolicyDescription();
+    AWS_EMR_API AutoScalingPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API AutoScalingPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     AutoScalingPolicyStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ScalingConstraints m_constraints;
-    bool m_constraintsHasBeenSet;
+    bool m_constraintsHasBeenSet = false;
 
     Aws::Vector<ScalingRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

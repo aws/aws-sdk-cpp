@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansCoverageData">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansCoverageData
+  class SavingsPlansCoverageData
   {
   public:
-    SavingsPlansCoverageData();
-    SavingsPlansCoverageData(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansCoverageData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansCoverageData();
+    AWS_COSTEXPLORER_API SavingsPlansCoverageData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansCoverageData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_spendCoveredBySavingsPlans;
-    bool m_spendCoveredBySavingsPlansHasBeenSet;
+    bool m_spendCoveredBySavingsPlansHasBeenSet = false;
 
     Aws::String m_onDemandCost;
-    bool m_onDemandCostHasBeenSet;
+    bool m_onDemandCostHasBeenSet = false;
 
     Aws::String m_totalCost;
-    bool m_totalCostHasBeenSet;
+    bool m_totalCostHasBeenSet = false;
 
     Aws::String m_coveragePercentage;
-    bool m_coveragePercentageHasBeenSet;
+    bool m_coveragePercentageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANServiceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANServiceProfile
+  class LoRaWANServiceProfile
   {
   public:
-    LoRaWANServiceProfile();
-    LoRaWANServiceProfile(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANServiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANServiceProfile();
+    AWS_IOTWIRELESS_API LoRaWANServiceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANServiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -55,10 +55,58 @@ namespace Model
      */
     inline LoRaWANServiceProfile& WithAddGwMetadata(bool value) { SetAddGwMetadata(value); return *this;}
 
+
+    /**
+     * <p>The DrMin value.</p>
+     */
+    inline int GetDrMin() const{ return m_drMin; }
+
+    /**
+     * <p>The DrMin value.</p>
+     */
+    inline bool DrMinHasBeenSet() const { return m_drMinHasBeenSet; }
+
+    /**
+     * <p>The DrMin value.</p>
+     */
+    inline void SetDrMin(int value) { m_drMinHasBeenSet = true; m_drMin = value; }
+
+    /**
+     * <p>The DrMin value.</p>
+     */
+    inline LoRaWANServiceProfile& WithDrMin(int value) { SetDrMin(value); return *this;}
+
+
+    /**
+     * <p>The DrMax value.</p>
+     */
+    inline int GetDrMax() const{ return m_drMax; }
+
+    /**
+     * <p>The DrMax value.</p>
+     */
+    inline bool DrMaxHasBeenSet() const { return m_drMaxHasBeenSet; }
+
+    /**
+     * <p>The DrMax value.</p>
+     */
+    inline void SetDrMax(int value) { m_drMaxHasBeenSet = true; m_drMax = value; }
+
+    /**
+     * <p>The DrMax value.</p>
+     */
+    inline LoRaWANServiceProfile& WithDrMax(int value) { SetDrMax(value); return *this;}
+
   private:
 
     bool m_addGwMetadata;
-    bool m_addGwMetadataHasBeenSet;
+    bool m_addGwMetadataHasBeenSet = false;
+
+    int m_drMin;
+    bool m_drMinHasBeenSet = false;
+
+    int m_drMax;
+    bool m_drMaxHasBeenSet = false;
   };
 
 } // namespace Model

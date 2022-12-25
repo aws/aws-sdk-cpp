@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANFuotaTask">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANFuotaTask
+  class LoRaWANFuotaTask
   {
   public:
-    LoRaWANFuotaTask();
-    LoRaWANFuotaTask(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANFuotaTask();
+    AWS_IOTWIRELESS_API LoRaWANFuotaTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANFuotaTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
   };
 
 } // namespace Model

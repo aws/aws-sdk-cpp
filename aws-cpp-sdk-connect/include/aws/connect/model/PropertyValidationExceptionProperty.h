@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PropertyValidationExceptionProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API PropertyValidationExceptionProperty
+  class PropertyValidationExceptionProperty
   {
   public:
-    PropertyValidationExceptionProperty();
-    PropertyValidationExceptionProperty(Aws::Utils::Json::JsonView jsonValue);
-    PropertyValidationExceptionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API PropertyValidationExceptionProperty();
+    AWS_CONNECT_API PropertyValidationExceptionProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API PropertyValidationExceptionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_propertyPath;
-    bool m_propertyPathHasBeenSet;
+    bool m_propertyPathHasBeenSet = false;
 
     PropertyValidationExceptionReason m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

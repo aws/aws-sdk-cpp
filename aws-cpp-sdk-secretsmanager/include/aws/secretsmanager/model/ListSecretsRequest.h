@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API ListSecretsRequest : public SecretsManagerRequest
+  class ListSecretsRequest : public SecretsManagerRequest
   {
   public:
-    ListSecretsRequest();
+    AWS_SECRETSMANAGER_API ListSecretsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListSecrets"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -169,48 +169,48 @@ namespace Model
 
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline ListSecretsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>Lists secrets in the requested order. </p>
+     * <p>Secrets are listed by <code>CreatedDate</code>. </p>
      */
     inline ListSecretsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     SortOrderType m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

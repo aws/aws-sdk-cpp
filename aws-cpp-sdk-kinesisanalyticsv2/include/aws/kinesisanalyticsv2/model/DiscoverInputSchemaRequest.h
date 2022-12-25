@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICSV2_API DiscoverInputSchemaRequest : public KinesisAnalyticsV2Request
+  class DiscoverInputSchemaRequest : public KinesisAnalyticsV2Request
   {
   public:
-    DiscoverInputSchemaRequest();
+    AWS_KINESISANALYTICSV2_API DiscoverInputSchemaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DiscoverInputSchema"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_serviceExecutionRole;
-    bool m_serviceExecutionRoleHasBeenSet;
+    bool m_serviceExecutionRoleHasBeenSet = false;
 
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
-    bool m_inputStartingPositionConfigurationHasBeenSet;
+    bool m_inputStartingPositionConfigurationHasBeenSet = false;
 
     S3Configuration m_s3Configuration;
-    bool m_s3ConfigurationHasBeenSet;
+    bool m_s3ConfigurationHasBeenSet = false;
 
     InputProcessingConfiguration m_inputProcessingConfiguration;
-    bool m_inputProcessingConfigurationHasBeenSet;
+    bool m_inputProcessingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

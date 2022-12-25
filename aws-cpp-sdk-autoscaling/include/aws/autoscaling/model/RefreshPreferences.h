@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RefreshPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API RefreshPreferences
+  class RefreshPreferences
   {
   public:
-    RefreshPreferences();
-    RefreshPreferences(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RefreshPreferences& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API RefreshPreferences();
+    AWS_AUTOSCALING_API RefreshPreferences(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API RefreshPreferences& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     int m_minHealthyPercentage;
-    bool m_minHealthyPercentageHasBeenSet;
+    bool m_minHealthyPercentageHasBeenSet = false;
 
     int m_instanceWarmup;
-    bool m_instanceWarmupHasBeenSet;
+    bool m_instanceWarmupHasBeenSet = false;
 
     Aws::Vector<int> m_checkpointPercentages;
-    bool m_checkpointPercentagesHasBeenSet;
+    bool m_checkpointPercentagesHasBeenSet = false;
 
     int m_checkpointDelay;
-    bool m_checkpointDelayHasBeenSet;
+    bool m_checkpointDelayHasBeenSet = false;
 
     bool m_skipMatching;
-    bool m_skipMatchingHasBeenSet;
+    bool m_skipMatchingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Device">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Device();
+    AWS_DEVICEFARM_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -820,67 +820,67 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_manufacturer;
-    bool m_manufacturerHasBeenSet;
+    bool m_manufacturerHasBeenSet = false;
 
     Aws::String m_model;
-    bool m_modelHasBeenSet;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     DeviceFormFactor m_formFactor;
-    bool m_formFactorHasBeenSet;
+    bool m_formFactorHasBeenSet = false;
 
     DevicePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_os;
-    bool m_osHasBeenSet;
+    bool m_osHasBeenSet = false;
 
     CPU m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Resolution m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
 
     long long m_heapSize;
-    bool m_heapSizeHasBeenSet;
+    bool m_heapSizeHasBeenSet = false;
 
     long long m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_image;
-    bool m_imageHasBeenSet;
+    bool m_imageHasBeenSet = false;
 
     Aws::String m_carrier;
-    bool m_carrierHasBeenSet;
+    bool m_carrierHasBeenSet = false;
 
     Aws::String m_radio;
-    bool m_radioHasBeenSet;
+    bool m_radioHasBeenSet = false;
 
     bool m_remoteAccessEnabled;
-    bool m_remoteAccessEnabledHasBeenSet;
+    bool m_remoteAccessEnabledHasBeenSet = false;
 
     bool m_remoteDebugEnabled;
-    bool m_remoteDebugEnabledHasBeenSet;
+    bool m_remoteDebugEnabledHasBeenSet = false;
 
     Aws::String m_fleetType;
-    bool m_fleetTypeHasBeenSet;
+    bool m_fleetTypeHasBeenSet = false;
 
     Aws::String m_fleetName;
-    bool m_fleetNameHasBeenSet;
+    bool m_fleetNameHasBeenSet = false;
 
     Aws::Vector<DeviceInstance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
 
     DeviceAvailability m_availability;
-    bool m_availabilityHasBeenSet;
+    bool m_availabilityHasBeenSet = false;
   };
 
 } // namespace Model

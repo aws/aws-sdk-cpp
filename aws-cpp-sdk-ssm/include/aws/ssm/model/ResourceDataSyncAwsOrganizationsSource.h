@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncAwsOrganizationsSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncAwsOrganizationsSource
+  class ResourceDataSyncAwsOrganizationsSource
   {
   public:
-    ResourceDataSyncAwsOrganizationsSource();
-    ResourceDataSyncAwsOrganizationsSource(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncAwsOrganizationsSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncAwsOrganizationsSource();
+    AWS_SSM_API ResourceDataSyncAwsOrganizationsSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncAwsOrganizationsSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_organizationSourceType;
-    bool m_organizationSourceTypeHasBeenSet;
+    bool m_organizationSourceTypeHasBeenSet = false;
 
     Aws::Vector<ResourceDataSyncOrganizationalUnit> m_organizationalUnits;
-    bool m_organizationalUnitsHasBeenSet;
+    bool m_organizationalUnitsHasBeenSet = false;
   };
 
 } // namespace Model

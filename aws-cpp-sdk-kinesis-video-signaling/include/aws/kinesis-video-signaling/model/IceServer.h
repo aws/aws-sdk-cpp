@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-signaling-2019-12-04/IceServer">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer
+  class IceServer
   {
   public:
-    IceServer();
-    IceServer(Aws::Utils::Json::JsonView jsonValue);
-    IceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API IceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -220,16 +220,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_uris;
-    bool m_urisHasBeenSet;
+    bool m_urisHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     int m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
   };
 
 } // namespace Model

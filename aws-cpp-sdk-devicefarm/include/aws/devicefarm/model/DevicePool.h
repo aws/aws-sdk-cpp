@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DevicePool">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DevicePool
+  class DevicePool
   {
   public:
-    DevicePool();
-    DevicePool(Aws::Utils::Json::JsonView jsonValue);
-    DevicePool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DevicePool();
+    AWS_DEVICEFARM_API DevicePool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DevicePool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DevicePoolType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     int m_maxDevices;
-    bool m_maxDevicesHasBeenSet;
+    bool m_maxDevicesHasBeenSet = false;
   };
 
 } // namespace Model

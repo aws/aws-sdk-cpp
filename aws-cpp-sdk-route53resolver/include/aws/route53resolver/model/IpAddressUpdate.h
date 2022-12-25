@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API IpAddressUpdate
+  class IpAddressUpdate
   {
   public:
-    IpAddressUpdate();
-    IpAddressUpdate(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API IpAddressUpdate();
+    AWS_ROUTE53RESOLVER_API IpAddressUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API IpAddressUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -197,13 +197,13 @@ namespace Model
   private:
 
     Aws::String m_ipId;
-    bool m_ipIdHasBeenSet;
+    bool m_ipIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
   };
 
 } // namespace Model

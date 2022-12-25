@@ -28,9 +28,9 @@ namespace Model
    * Validity can be expressed as an explicit date and time when the validity of a
    * certificate starts or expires, or as a span of time after issuance, stated in
    * days, months, or years. For more information, see <a
-   * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
-   * in RFC 5280.</p> <p>ACM Private CA API consumes the <code>Validity</code> data
-   * type differently in two distinct parameters of the <code>IssueCertificate</code>
+   * href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC
+   * 5280.</p> <p>ACM Private CA API consumes the <code>Validity</code> data type
+   * differently in two distinct parameters of the <code>IssueCertificate</code>
    * action. The required parameter
    * <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a
    * certificate's validity period. The optional parameter
@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API Validity
+  class Validity
   {
   public:
-    Validity();
-    Validity(Aws::Utils::Json::JsonView jsonValue);
-    Validity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API Validity();
+    AWS_ACMPCA_API Validity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Validity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,10 +232,10 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ValidityPeriodType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DynatraceConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DynatraceConnectorProfileCredentials
+  class DynatraceConnectorProfileCredentials
   {
   public:
-    DynatraceConnectorProfileCredentials();
-    DynatraceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    DynatraceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DynatraceConnectorProfileCredentials();
+    AWS_APPFLOW_API DynatraceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DynatraceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_apiToken;
-    bool m_apiTokenHasBeenSet;
+    bool m_apiTokenHasBeenSet = false;
   };
 
 } // namespace Model

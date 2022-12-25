@@ -32,10 +32,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrustRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API CreateTrustRequest : public DirectoryServiceRequest
+  class CreateTrustRequest : public DirectoryServiceRequest
   {
   public:
-    CreateTrustRequest();
+    AWS_DIRECTORYSERVICE_API CreateTrustRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,9 +43,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTrust"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DIRECTORYSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -345,25 +345,25 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
 
     Aws::String m_trustPassword;
-    bool m_trustPasswordHasBeenSet;
+    bool m_trustPasswordHasBeenSet = false;
 
     TrustDirection m_trustDirection;
-    bool m_trustDirectionHasBeenSet;
+    bool m_trustDirectionHasBeenSet = false;
 
     TrustType m_trustType;
-    bool m_trustTypeHasBeenSet;
+    bool m_trustTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
-    bool m_conditionalForwarderIpAddrsHasBeenSet;
+    bool m_conditionalForwarderIpAddrsHasBeenSet = false;
 
     SelectiveAuth m_selectiveAuth;
-    bool m_selectiveAuthHasBeenSet;
+    bool m_selectiveAuthHasBeenSet = false;
   };
 
 } // namespace Model

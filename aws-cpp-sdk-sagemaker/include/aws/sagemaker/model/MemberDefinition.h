@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MemberDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MemberDefinition
+  class MemberDefinition
   {
   public:
-    MemberDefinition();
-    MemberDefinition(Aws::Utils::Json::JsonView jsonValue);
-    MemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MemberDefinition();
+    AWS_SAGEMAKER_API MemberDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MemberDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     CognitoMemberDefinition m_cognitoMemberDefinition;
-    bool m_cognitoMemberDefinitionHasBeenSet;
+    bool m_cognitoMemberDefinitionHasBeenSet = false;
 
     OidcMemberDefinition m_oidcMemberDefinition;
-    bool m_oidcMemberDefinitionHasBeenSet;
+    bool m_oidcMemberDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API SearchTablesRequest : public GlueRequest
+  class SearchTablesRequest : public GlueRequest
   {
   public:
-    SearchTablesRequest();
+    AWS_GLUE_API SearchTablesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SearchTables"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -431,25 +431,25 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<PropertyPredicate> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_searchText;
-    bool m_searchTextHasBeenSet;
+    bool m_searchTextHasBeenSet = false;
 
     Aws::Vector<SortCriterion> m_sortCriteria;
-    bool m_sortCriteriaHasBeenSet;
+    bool m_sortCriteriaHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ResourceShareType m_resourceShareType;
-    bool m_resourceShareTypeHasBeenSet;
+    bool m_resourceShareTypeHasBeenSet = false;
   };
 
 } // namespace Model

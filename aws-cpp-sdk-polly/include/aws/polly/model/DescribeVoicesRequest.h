@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_POLLY_API DescribeVoicesRequest : public PollyRequest
+  class DescribeVoicesRequest : public PollyRequest
   {
   public:
-    DescribeVoicesRequest();
+    AWS_POLLY_API DescribeVoicesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeVoices"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_POLLY_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_POLLY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Engine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     bool m_includeAdditionalLanguageCodes;
-    bool m_includeAdditionalLanguageCodesHasBeenSet;
+    bool m_includeAdditionalLanguageCodesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

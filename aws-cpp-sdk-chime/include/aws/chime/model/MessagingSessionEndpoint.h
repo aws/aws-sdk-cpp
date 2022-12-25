@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MessagingSessionEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API MessagingSessionEndpoint
+  class MessagingSessionEndpoint
   {
   public:
-    MessagingSessionEndpoint();
-    MessagingSessionEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    MessagingSessionEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API MessagingSessionEndpoint();
+    AWS_CHIME_API MessagingSessionEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API MessagingSessionEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

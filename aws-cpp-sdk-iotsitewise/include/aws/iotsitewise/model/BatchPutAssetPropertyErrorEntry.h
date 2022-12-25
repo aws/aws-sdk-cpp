@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry
+  class BatchPutAssetPropertyErrorEntry
   {
   public:
-    BatchPutAssetPropertyErrorEntry();
-    BatchPutAssetPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutAssetPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry();
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchPutAssetPropertyErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_entryId;
-    bool m_entryIdHasBeenSet;
+    bool m_entryIdHasBeenSet = false;
 
     Aws::Vector<BatchPutAssetPropertyError> m_errors;
-    bool m_errorsHasBeenSet;
+    bool m_errorsHasBeenSet = false;
   };
 
 } // namespace Model

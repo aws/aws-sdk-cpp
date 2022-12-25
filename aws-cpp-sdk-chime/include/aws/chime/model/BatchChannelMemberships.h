@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchChannelMemberships">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API BatchChannelMemberships
+  class BatchChannelMemberships
   {
   public:
-    BatchChannelMemberships();
-    BatchChannelMemberships(Aws::Utils::Json::JsonView jsonValue);
-    BatchChannelMemberships& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API BatchChannelMemberships();
+    AWS_CHIME_API BatchChannelMemberships(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API BatchChannelMemberships& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Identity m_invitedBy;
-    bool m_invitedByHasBeenSet;
+    bool m_invitedByHasBeenSet = false;
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Identity> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
   };
 
 } // namespace Model

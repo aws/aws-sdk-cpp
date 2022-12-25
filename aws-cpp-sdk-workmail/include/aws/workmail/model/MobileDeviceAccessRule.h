@@ -27,57 +27,57 @@ namespace Model
 {
 
   /**
-   * <p>A rule that controls access to mobile devices for an Amazon WorkMail
+   * <p>A rule that controls access to mobile devices for an WorkMail
    * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MobileDeviceAccessRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MobileDeviceAccessRule
+  class MobileDeviceAccessRule
   {
   public:
-    MobileDeviceAccessRule();
-    MobileDeviceAccessRule(Aws::Utils::Json::JsonView jsonValue);
-    MobileDeviceAccessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MobileDeviceAccessRule();
+    AWS_WORKMAIL_API MobileDeviceAccessRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MobileDeviceAccessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline const Aws::String& GetMobileDeviceAccessRuleId() const{ return m_mobileDeviceAccessRuleId; }
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline bool MobileDeviceAccessRuleIdHasBeenSet() const { return m_mobileDeviceAccessRuleIdHasBeenSet; }
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline void SetMobileDeviceAccessRuleId(const Aws::String& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = value; }
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline void SetMobileDeviceAccessRuleId(Aws::String&& value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId = std::move(value); }
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline void SetMobileDeviceAccessRuleId(const char* value) { m_mobileDeviceAccessRuleIdHasBeenSet = true; m_mobileDeviceAccessRuleId.assign(value); }
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline MobileDeviceAccessRule& WithMobileDeviceAccessRuleId(const Aws::String& value) { SetMobileDeviceAccessRuleId(value); return *this;}
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline MobileDeviceAccessRule& WithMobileDeviceAccessRuleId(Aws::String&& value) { SetMobileDeviceAccessRuleId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID assigned to a mobile access rule. </p>
+     * <p>The ID assigned to a mobile access rule.</p>
      */
     inline MobileDeviceAccessRule& WithMobileDeviceAccessRuleId(const char* value) { SetMobileDeviceAccessRuleId(value); return *this;}
 
@@ -202,47 +202,47 @@ namespace Model
 
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeviceTypes() const{ return m_deviceTypes; }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline bool DeviceTypesHasBeenSet() const { return m_deviceTypesHasBeenSet; }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline void SetDeviceTypes(const Aws::Vector<Aws::String>& value) { m_deviceTypesHasBeenSet = true; m_deviceTypes = value; }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline void SetDeviceTypes(Aws::Vector<Aws::String>&& value) { m_deviceTypesHasBeenSet = true; m_deviceTypes = std::move(value); }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline MobileDeviceAccessRule& WithDeviceTypes(const Aws::Vector<Aws::String>& value) { SetDeviceTypes(value); return *this;}
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline MobileDeviceAccessRule& WithDeviceTypes(Aws::Vector<Aws::String>&& value) { SetDeviceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline MobileDeviceAccessRule& AddDeviceTypes(const Aws::String& value) { m_deviceTypesHasBeenSet = true; m_deviceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline MobileDeviceAccessRule& AddDeviceTypes(Aws::String&& value) { m_deviceTypesHasBeenSet = true; m_deviceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Device types that a rule will match. </p>
+     * <p>Device types that a rule will match.</p>
      */
     inline MobileDeviceAccessRule& AddDeviceTypes(const char* value) { m_deviceTypesHasBeenSet = true; m_deviceTypes.push_back(value); return *this; }
 
@@ -669,46 +669,46 @@ namespace Model
   private:
 
     Aws::String m_mobileDeviceAccessRuleId;
-    bool m_mobileDeviceAccessRuleIdHasBeenSet;
+    bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     MobileDeviceAccessRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceTypes;
-    bool m_deviceTypesHasBeenSet;
+    bool m_deviceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceTypes;
-    bool m_notDeviceTypesHasBeenSet;
+    bool m_notDeviceTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceModels;
-    bool m_deviceModelsHasBeenSet;
+    bool m_deviceModelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceModels;
-    bool m_notDeviceModelsHasBeenSet;
+    bool m_notDeviceModelsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceOperatingSystems;
-    bool m_deviceOperatingSystemsHasBeenSet;
+    bool m_deviceOperatingSystemsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceOperatingSystems;
-    bool m_notDeviceOperatingSystemsHasBeenSet;
+    bool m_notDeviceOperatingSystemsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deviceUserAgents;
-    bool m_deviceUserAgentsHasBeenSet;
+    bool m_deviceUserAgentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notDeviceUserAgents;
-    bool m_notDeviceUserAgentsHasBeenSet;
+    bool m_notDeviceUserAgentsHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
   };
 
 } // namespace Model

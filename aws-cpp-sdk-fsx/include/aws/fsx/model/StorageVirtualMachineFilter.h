@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StorageVirtualMachineFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API StorageVirtualMachineFilter
+  class StorageVirtualMachineFilter
   {
   public:
-    StorageVirtualMachineFilter();
-    StorageVirtualMachineFilter(Aws::Utils::Json::JsonView jsonValue);
-    StorageVirtualMachineFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API StorageVirtualMachineFilter();
+    AWS_FSX_API StorageVirtualMachineFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API StorageVirtualMachineFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     StorageVirtualMachineFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

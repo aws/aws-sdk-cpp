@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESOURCEGROUPS_API UpdateGroupQueryRequest : public ResourceGroupsRequest
+  class UpdateGroupQueryRequest : public ResourceGroupsRequest
   {
   public:
-    UpdateGroupQueryRequest();
+    AWS_RESOURCEGROUPS_API UpdateGroupQueryRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateGroupQuery"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESOURCEGROUPS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     ResourceQuery m_resourceQuery;
-    bool m_resourceQueryHasBeenSet;
+    bool m_resourceQueryHasBeenSet = false;
   };
 
 } // namespace Model

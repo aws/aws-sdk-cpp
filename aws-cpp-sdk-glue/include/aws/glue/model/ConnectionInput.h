@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ConnectionInput
+  class ConnectionInput
   {
   public:
-    ConnectionInput();
-    ConnectionInput(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ConnectionInput();
+    AWS_GLUE_API ConnectionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ConnectionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -380,22 +380,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_matchCriteria;
-    bool m_matchCriteriaHasBeenSet;
+    bool m_matchCriteriaHasBeenSet = false;
 
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
-    bool m_connectionPropertiesHasBeenSet;
+    bool m_connectionPropertiesHasBeenSet = false;
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
-    bool m_physicalConnectionRequirementsHasBeenSet;
+    bool m_physicalConnectionRequirementsHasBeenSet = false;
   };
 
 } // namespace Model

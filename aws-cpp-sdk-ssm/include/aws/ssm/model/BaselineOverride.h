@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/BaselineOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API BaselineOverride
+  class BaselineOverride
   {
   public:
-    BaselineOverride();
-    BaselineOverride(Aws::Utils::Json::JsonView jsonValue);
-    BaselineOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API BaselineOverride();
+    AWS_SSM_API BaselineOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API BaselineOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -476,31 +476,31 @@ namespace Model
   private:
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     PatchFilterGroup m_globalFilters;
-    bool m_globalFiltersHasBeenSet;
+    bool m_globalFiltersHasBeenSet = false;
 
     PatchRuleGroup m_approvalRules;
-    bool m_approvalRulesHasBeenSet;
+    bool m_approvalRulesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_approvedPatches;
-    bool m_approvedPatchesHasBeenSet;
+    bool m_approvedPatchesHasBeenSet = false;
 
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
-    bool m_approvedPatchesComplianceLevelHasBeenSet;
+    bool m_approvedPatchesComplianceLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rejectedPatches;
-    bool m_rejectedPatchesHasBeenSet;
+    bool m_rejectedPatchesHasBeenSet = false;
 
     PatchAction m_rejectedPatchesAction;
-    bool m_rejectedPatchesActionHasBeenSet;
+    bool m_rejectedPatchesActionHasBeenSet = false;
 
     bool m_approvedPatchesEnableNonSecurity;
-    bool m_approvedPatchesEnableNonSecurityHasBeenSet;
+    bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
 
     Aws::Vector<PatchSource> m_sources;
-    bool m_sourcesHasBeenSet;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

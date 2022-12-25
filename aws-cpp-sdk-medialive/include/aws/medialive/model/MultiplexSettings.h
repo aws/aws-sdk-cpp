@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexSettings
+  class MultiplexSettings
   {
   public:
-    MultiplexSettings();
-    MultiplexSettings(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexSettings();
+    AWS_MEDIALIVE_API MultiplexSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,16 +121,16 @@ namespace Model
   private:
 
     int m_maximumVideoBufferDelayMilliseconds;
-    bool m_maximumVideoBufferDelayMillisecondsHasBeenSet;
+    bool m_maximumVideoBufferDelayMillisecondsHasBeenSet = false;
 
     int m_transportStreamBitrate;
-    bool m_transportStreamBitrateHasBeenSet;
+    bool m_transportStreamBitrateHasBeenSet = false;
 
     int m_transportStreamId;
-    bool m_transportStreamIdHasBeenSet;
+    bool m_transportStreamIdHasBeenSet = false;
 
     int m_transportStreamReservedBitrate;
-    bool m_transportStreamReservedBitrateHasBeenSet;
+    bool m_transportStreamReservedBitrateHasBeenSet = false;
   };
 
 } // namespace Model

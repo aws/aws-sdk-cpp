@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/SsmAutomation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API SsmAutomation
+  class SsmAutomation
   {
   public:
-    SsmAutomation();
-    SsmAutomation(Aws::Utils::Json::JsonView jsonValue);
-    SsmAutomation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API SsmAutomation();
+    AWS_SSMINCIDENTS_API SsmAutomation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API SsmAutomation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -358,22 +358,22 @@ namespace Model
   private:
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, DynamicSsmParameterValue> m_dynamicParameters;
-    bool m_dynamicParametersHasBeenSet;
+    bool m_dynamicParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     SsmTargetAccount m_targetAccount;
-    bool m_targetAccountHasBeenSet;
+    bool m_targetAccountHasBeenSet = false;
   };
 
 } // namespace Model

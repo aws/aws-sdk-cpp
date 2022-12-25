@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayHealthCheckPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayHealthCheckPolicy
+  class VirtualGatewayHealthCheckPolicy
   {
   public:
-    VirtualGatewayHealthCheckPolicy();
-    VirtualGatewayHealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayHealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy();
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,25 +268,25 @@ namespace Model
   private:
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     long long m_intervalMillis;
-    bool m_intervalMillisHasBeenSet;
+    bool m_intervalMillisHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     VirtualGatewayPortProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     long long m_timeoutMillis;
-    bool m_timeoutMillisHasBeenSet;
+    bool m_timeoutMillisHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
   };
 
 } // namespace Model

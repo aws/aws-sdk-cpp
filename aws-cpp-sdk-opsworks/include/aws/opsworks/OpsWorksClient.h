@@ -5,389 +5,16 @@
 
 #pragma once
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
-#include <aws/opsworks/OpsWorksErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/opsworks/model/CloneStackResult.h>
-#include <aws/opsworks/model/CreateAppResult.h>
-#include <aws/opsworks/model/CreateDeploymentResult.h>
-#include <aws/opsworks/model/CreateInstanceResult.h>
-#include <aws/opsworks/model/CreateLayerResult.h>
-#include <aws/opsworks/model/CreateStackResult.h>
-#include <aws/opsworks/model/CreateUserProfileResult.h>
-#include <aws/opsworks/model/DescribeAgentVersionsResult.h>
-#include <aws/opsworks/model/DescribeAppsResult.h>
-#include <aws/opsworks/model/DescribeCommandsResult.h>
-#include <aws/opsworks/model/DescribeDeploymentsResult.h>
-#include <aws/opsworks/model/DescribeEcsClustersResult.h>
-#include <aws/opsworks/model/DescribeElasticIpsResult.h>
-#include <aws/opsworks/model/DescribeElasticLoadBalancersResult.h>
-#include <aws/opsworks/model/DescribeInstancesResult.h>
-#include <aws/opsworks/model/DescribeLayersResult.h>
-#include <aws/opsworks/model/DescribeLoadBasedAutoScalingResult.h>
-#include <aws/opsworks/model/DescribeMyUserProfileResult.h>
-#include <aws/opsworks/model/DescribeOperatingSystemsResult.h>
-#include <aws/opsworks/model/DescribePermissionsResult.h>
-#include <aws/opsworks/model/DescribeRaidArraysResult.h>
-#include <aws/opsworks/model/DescribeRdsDbInstancesResult.h>
-#include <aws/opsworks/model/DescribeServiceErrorsResult.h>
-#include <aws/opsworks/model/DescribeStackProvisioningParametersResult.h>
-#include <aws/opsworks/model/DescribeStackSummaryResult.h>
-#include <aws/opsworks/model/DescribeStacksResult.h>
-#include <aws/opsworks/model/DescribeTimeBasedAutoScalingResult.h>
-#include <aws/opsworks/model/DescribeUserProfilesResult.h>
-#include <aws/opsworks/model/DescribeVolumesResult.h>
-#include <aws/opsworks/model/GetHostnameSuggestionResult.h>
-#include <aws/opsworks/model/GrantAccessResult.h>
-#include <aws/opsworks/model/ListTagsResult.h>
-#include <aws/opsworks/model/RegisterEcsClusterResult.h>
-#include <aws/opsworks/model/RegisterElasticIpResult.h>
-#include <aws/opsworks/model/RegisterInstanceResult.h>
-#include <aws/opsworks/model/RegisterVolumeResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/opsworks/OpsWorksServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace OpsWorks
 {
-
-namespace Model
-{
-        class AssignInstanceRequest;
-        class AssignVolumeRequest;
-        class AssociateElasticIpRequest;
-        class AttachElasticLoadBalancerRequest;
-        class CloneStackRequest;
-        class CreateAppRequest;
-        class CreateDeploymentRequest;
-        class CreateInstanceRequest;
-        class CreateLayerRequest;
-        class CreateStackRequest;
-        class CreateUserProfileRequest;
-        class DeleteAppRequest;
-        class DeleteInstanceRequest;
-        class DeleteLayerRequest;
-        class DeleteStackRequest;
-        class DeleteUserProfileRequest;
-        class DeregisterEcsClusterRequest;
-        class DeregisterElasticIpRequest;
-        class DeregisterInstanceRequest;
-        class DeregisterRdsDbInstanceRequest;
-        class DeregisterVolumeRequest;
-        class DescribeAgentVersionsRequest;
-        class DescribeAppsRequest;
-        class DescribeCommandsRequest;
-        class DescribeDeploymentsRequest;
-        class DescribeEcsClustersRequest;
-        class DescribeElasticIpsRequest;
-        class DescribeElasticLoadBalancersRequest;
-        class DescribeInstancesRequest;
-        class DescribeLayersRequest;
-        class DescribeLoadBasedAutoScalingRequest;
-        class DescribePermissionsRequest;
-        class DescribeRaidArraysRequest;
-        class DescribeRdsDbInstancesRequest;
-        class DescribeServiceErrorsRequest;
-        class DescribeStackProvisioningParametersRequest;
-        class DescribeStackSummaryRequest;
-        class DescribeStacksRequest;
-        class DescribeTimeBasedAutoScalingRequest;
-        class DescribeUserProfilesRequest;
-        class DescribeVolumesRequest;
-        class DetachElasticLoadBalancerRequest;
-        class DisassociateElasticIpRequest;
-        class GetHostnameSuggestionRequest;
-        class GrantAccessRequest;
-        class ListTagsRequest;
-        class RebootInstanceRequest;
-        class RegisterEcsClusterRequest;
-        class RegisterElasticIpRequest;
-        class RegisterInstanceRequest;
-        class RegisterRdsDbInstanceRequest;
-        class RegisterVolumeRequest;
-        class SetLoadBasedAutoScalingRequest;
-        class SetPermissionRequest;
-        class SetTimeBasedAutoScalingRequest;
-        class StartInstanceRequest;
-        class StartStackRequest;
-        class StopInstanceRequest;
-        class StopStackRequest;
-        class TagResourceRequest;
-        class UnassignInstanceRequest;
-        class UnassignVolumeRequest;
-        class UntagResourceRequest;
-        class UpdateAppRequest;
-        class UpdateElasticIpRequest;
-        class UpdateInstanceRequest;
-        class UpdateLayerRequest;
-        class UpdateMyUserProfileRequest;
-        class UpdateRdsDbInstanceRequest;
-        class UpdateStackRequest;
-        class UpdateUserProfileRequest;
-        class UpdateVolumeRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssignInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssignVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AssociateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> AttachElasticLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CloneStackResult, OpsWorksError> CloneStackOutcome;
-        typedef Aws::Utils::Outcome<CreateAppResult, OpsWorksError> CreateAppOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, OpsWorksError> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateInstanceResult, OpsWorksError> CreateInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateLayerResult, OpsWorksError> CreateLayerOutcome;
-        typedef Aws::Utils::Outcome<CreateStackResult, OpsWorksError> CreateStackOutcome;
-        typedef Aws::Utils::Outcome<CreateUserProfileResult, OpsWorksError> CreateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteAppOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteLayerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeleteUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterEcsClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DeregisterVolumeOutcome;
-        typedef Aws::Utils::Outcome<DescribeAgentVersionsResult, OpsWorksError> DescribeAgentVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppsResult, OpsWorksError> DescribeAppsOutcome;
-        typedef Aws::Utils::Outcome<DescribeCommandsResult, OpsWorksError> DescribeCommandsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeploymentsResult, OpsWorksError> DescribeDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEcsClustersResult, OpsWorksError> DescribeEcsClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeElasticIpsResult, OpsWorksError> DescribeElasticIpsOutcome;
-        typedef Aws::Utils::Outcome<DescribeElasticLoadBalancersResult, OpsWorksError> DescribeElasticLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstancesResult, OpsWorksError> DescribeInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLayersResult, OpsWorksError> DescribeLayersOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBasedAutoScalingResult, OpsWorksError> DescribeLoadBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<DescribeMyUserProfileResult, OpsWorksError> DescribeMyUserProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeOperatingSystemsResult, OpsWorksError> DescribeOperatingSystemsOutcome;
-        typedef Aws::Utils::Outcome<DescribePermissionsResult, OpsWorksError> DescribePermissionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRaidArraysResult, OpsWorksError> DescribeRaidArraysOutcome;
-        typedef Aws::Utils::Outcome<DescribeRdsDbInstancesResult, OpsWorksError> DescribeRdsDbInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeServiceErrorsResult, OpsWorksError> DescribeServiceErrorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackProvisioningParametersResult, OpsWorksError> DescribeStackProvisioningParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeStackSummaryResult, OpsWorksError> DescribeStackSummaryOutcome;
-        typedef Aws::Utils::Outcome<DescribeStacksResult, OpsWorksError> DescribeStacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeTimeBasedAutoScalingResult, OpsWorksError> DescribeTimeBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<DescribeUserProfilesResult, OpsWorksError> DescribeUserProfilesOutcome;
-        typedef Aws::Utils::Outcome<DescribeVolumesResult, OpsWorksError> DescribeVolumesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DetachElasticLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> DisassociateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<GetHostnameSuggestionResult, OpsWorksError> GetHostnameSuggestionOutcome;
-        typedef Aws::Utils::Outcome<GrantAccessResult, OpsWorksError> GrantAccessOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, OpsWorksError> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> RebootInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterEcsClusterResult, OpsWorksError> RegisterEcsClusterOutcome;
-        typedef Aws::Utils::Outcome<RegisterElasticIpResult, OpsWorksError> RegisterElasticIpOutcome;
-        typedef Aws::Utils::Outcome<RegisterInstanceResult, OpsWorksError> RegisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> RegisterRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterVolumeResult, OpsWorksError> RegisterVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetLoadBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetPermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> SetTimeBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StartInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StartStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StopInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> StopStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UnassignInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UnassignVolumeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateAppOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateLayerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateMyUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateStackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpsWorksError> UpdateVolumeOutcome;
-
-        typedef std::future<AssignInstanceOutcome> AssignInstanceOutcomeCallable;
-        typedef std::future<AssignVolumeOutcome> AssignVolumeOutcomeCallable;
-        typedef std::future<AssociateElasticIpOutcome> AssociateElasticIpOutcomeCallable;
-        typedef std::future<AttachElasticLoadBalancerOutcome> AttachElasticLoadBalancerOutcomeCallable;
-        typedef std::future<CloneStackOutcome> CloneStackOutcomeCallable;
-        typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
-        typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
-        typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
-        typedef std::future<CreateLayerOutcome> CreateLayerOutcomeCallable;
-        typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
-        typedef std::future<CreateUserProfileOutcome> CreateUserProfileOutcomeCallable;
-        typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
-        typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
-        typedef std::future<DeleteLayerOutcome> DeleteLayerOutcomeCallable;
-        typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
-        typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
-        typedef std::future<DeregisterEcsClusterOutcome> DeregisterEcsClusterOutcomeCallable;
-        typedef std::future<DeregisterElasticIpOutcome> DeregisterElasticIpOutcomeCallable;
-        typedef std::future<DeregisterInstanceOutcome> DeregisterInstanceOutcomeCallable;
-        typedef std::future<DeregisterRdsDbInstanceOutcome> DeregisterRdsDbInstanceOutcomeCallable;
-        typedef std::future<DeregisterVolumeOutcome> DeregisterVolumeOutcomeCallable;
-        typedef std::future<DescribeAgentVersionsOutcome> DescribeAgentVersionsOutcomeCallable;
-        typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
-        typedef std::future<DescribeCommandsOutcome> DescribeCommandsOutcomeCallable;
-        typedef std::future<DescribeDeploymentsOutcome> DescribeDeploymentsOutcomeCallable;
-        typedef std::future<DescribeEcsClustersOutcome> DescribeEcsClustersOutcomeCallable;
-        typedef std::future<DescribeElasticIpsOutcome> DescribeElasticIpsOutcomeCallable;
-        typedef std::future<DescribeElasticLoadBalancersOutcome> DescribeElasticLoadBalancersOutcomeCallable;
-        typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
-        typedef std::future<DescribeLayersOutcome> DescribeLayersOutcomeCallable;
-        typedef std::future<DescribeLoadBasedAutoScalingOutcome> DescribeLoadBasedAutoScalingOutcomeCallable;
-        typedef std::future<DescribeMyUserProfileOutcome> DescribeMyUserProfileOutcomeCallable;
-        typedef std::future<DescribeOperatingSystemsOutcome> DescribeOperatingSystemsOutcomeCallable;
-        typedef std::future<DescribePermissionsOutcome> DescribePermissionsOutcomeCallable;
-        typedef std::future<DescribeRaidArraysOutcome> DescribeRaidArraysOutcomeCallable;
-        typedef std::future<DescribeRdsDbInstancesOutcome> DescribeRdsDbInstancesOutcomeCallable;
-        typedef std::future<DescribeServiceErrorsOutcome> DescribeServiceErrorsOutcomeCallable;
-        typedef std::future<DescribeStackProvisioningParametersOutcome> DescribeStackProvisioningParametersOutcomeCallable;
-        typedef std::future<DescribeStackSummaryOutcome> DescribeStackSummaryOutcomeCallable;
-        typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
-        typedef std::future<DescribeTimeBasedAutoScalingOutcome> DescribeTimeBasedAutoScalingOutcomeCallable;
-        typedef std::future<DescribeUserProfilesOutcome> DescribeUserProfilesOutcomeCallable;
-        typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
-        typedef std::future<DetachElasticLoadBalancerOutcome> DetachElasticLoadBalancerOutcomeCallable;
-        typedef std::future<DisassociateElasticIpOutcome> DisassociateElasticIpOutcomeCallable;
-        typedef std::future<GetHostnameSuggestionOutcome> GetHostnameSuggestionOutcomeCallable;
-        typedef std::future<GrantAccessOutcome> GrantAccessOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
-        typedef std::future<RegisterEcsClusterOutcome> RegisterEcsClusterOutcomeCallable;
-        typedef std::future<RegisterElasticIpOutcome> RegisterElasticIpOutcomeCallable;
-        typedef std::future<RegisterInstanceOutcome> RegisterInstanceOutcomeCallable;
-        typedef std::future<RegisterRdsDbInstanceOutcome> RegisterRdsDbInstanceOutcomeCallable;
-        typedef std::future<RegisterVolumeOutcome> RegisterVolumeOutcomeCallable;
-        typedef std::future<SetLoadBasedAutoScalingOutcome> SetLoadBasedAutoScalingOutcomeCallable;
-        typedef std::future<SetPermissionOutcome> SetPermissionOutcomeCallable;
-        typedef std::future<SetTimeBasedAutoScalingOutcome> SetTimeBasedAutoScalingOutcomeCallable;
-        typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
-        typedef std::future<StartStackOutcome> StartStackOutcomeCallable;
-        typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
-        typedef std::future<StopStackOutcome> StopStackOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UnassignInstanceOutcome> UnassignInstanceOutcomeCallable;
-        typedef std::future<UnassignVolumeOutcome> UnassignVolumeOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAppOutcome> UpdateAppOutcomeCallable;
-        typedef std::future<UpdateElasticIpOutcome> UpdateElasticIpOutcomeCallable;
-        typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
-        typedef std::future<UpdateLayerOutcome> UpdateLayerOutcomeCallable;
-        typedef std::future<UpdateMyUserProfileOutcome> UpdateMyUserProfileOutcomeCallable;
-        typedef std::future<UpdateRdsDbInstanceOutcome> UpdateRdsDbInstanceOutcomeCallable;
-        typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
-        typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
-        typedef std::future<UpdateVolumeOutcome> UpdateVolumeOutcomeCallable;
-} // namespace Model
-
-  class OpsWorksClient;
-
-    typedef std::function<void(const OpsWorksClient*, const Model::AssignInstanceRequest&, const Model::AssignInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::AssignVolumeRequest&, const Model::AssignVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignVolumeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::AssociateElasticIpRequest&, const Model::AssociateElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateElasticIpResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::AttachElasticLoadBalancerRequest&, const Model::AttachElasticLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachElasticLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CloneStackRequest&, const Model::CloneStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloneStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateLayerRequest&, const Model::CreateLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLayerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeleteLayerRequest&, const Model::DeleteLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeregisterEcsClusterRequest&, const Model::DeregisterEcsClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterEcsClusterResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeregisterElasticIpRequest&, const Model::DeregisterElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterElasticIpResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeregisterInstanceRequest&, const Model::DeregisterInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeregisterRdsDbInstanceRequest&, const Model::DeregisterRdsDbInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterRdsDbInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DeregisterVolumeRequest&, const Model::DeregisterVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterVolumeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeAgentVersionsRequest&, const Model::DescribeAgentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentVersionsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeAppsRequest&, const Model::DescribeAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeCommandsRequest&, const Model::DescribeCommandsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCommandsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeDeploymentsRequest&, const Model::DescribeDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeEcsClustersRequest&, const Model::DescribeEcsClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEcsClustersResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeElasticIpsRequest&, const Model::DescribeElasticIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticIpsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeElasticLoadBalancersRequest&, const Model::DescribeElasticLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLayersResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBasedAutoScalingResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMyUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeOperatingSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOperatingSystemsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRaidArraysResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRdsDbInstancesResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeServiceErrorsRequest&, const Model::DescribeServiceErrorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceErrorsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeStackProvisioningParametersRequest&, const Model::DescribeStackProvisioningParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackProvisioningParametersResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeStackSummaryRequest&, const Model::DescribeStackSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSummaryResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeTimeBasedAutoScalingRequest&, const Model::DescribeTimeBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeBasedAutoScalingResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeUserProfilesRequest&, const Model::DescribeUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserProfilesResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeVolumesRequest&, const Model::DescribeVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVolumesResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DetachElasticLoadBalancerRequest&, const Model::DetachElasticLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachElasticLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DisassociateElasticIpRequest&, const Model::DisassociateElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateElasticIpResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::GetHostnameSuggestionRequest&, const Model::GetHostnameSuggestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostnameSuggestionResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::GrantAccessRequest&, const Model::GrantAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GrantAccessResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RegisterEcsClusterRequest&, const Model::RegisterEcsClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEcsClusterResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RegisterElasticIpRequest&, const Model::RegisterElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterElasticIpResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RegisterInstanceRequest&, const Model::RegisterInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RegisterRdsDbInstanceRequest&, const Model::RegisterRdsDbInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterRdsDbInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::RegisterVolumeRequest&, const Model::RegisterVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterVolumeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::SetLoadBasedAutoScalingRequest&, const Model::SetLoadBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLoadBasedAutoScalingResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::SetPermissionRequest&, const Model::SetPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetPermissionResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::SetTimeBasedAutoScalingRequest&, const Model::SetTimeBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTimeBasedAutoScalingResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::StartStackRequest&, const Model::StartStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::StopStackRequest&, const Model::StopStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UnassignInstanceRequest&, const Model::UnassignInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UnassignVolumeRequest&, const Model::UnassignVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignVolumeResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateAppRequest&, const Model::UpdateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateElasticIpRequest&, const Model::UpdateElasticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateElasticIpResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateInstanceRequest&, const Model::UpdateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateLayerRequest&, const Model::UpdateLayerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLayerResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateMyUserProfileRequest&, const Model::UpdateMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMyUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateRdsDbInstanceRequest&, const Model::UpdateRdsDbInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRdsDbInstanceResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::UpdateVolumeRequest&, const Model::UpdateVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVolumeResponseReceivedHandler;
-
   /**
    * <fullname>AWS OpsWorks</fullname> <p>Welcome to the <i>AWS OpsWorks Stacks API
    * Reference</i>. This guide provides descriptions, syntax, and usage examples for
@@ -442,32 +69,60 @@ namespace Model
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
    * soon as possible.</p> 
    */
-  class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient
+  class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpsWorksClient(const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration(),
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpsWorksClient(const Aws::Auth::AWSCredentials& credentials,
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         OpsWorksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<OpsWorksEndpointProviderBase> endpointProvider = Aws::MakeShared<OpsWorksEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::OpsWorks::OpsWorksClientConfiguration& clientConfiguration = Aws::OpsWorks::OpsWorksClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpsWorksClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        OpsWorksClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        OpsWorksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~OpsWorksClient();
-
 
         /**
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign
@@ -2223,86 +1878,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<OpsWorksEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssignInstanceAsyncHelper(const Model::AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssignVolumeAsyncHelper(const Model::AssignVolumeRequest& request, const AssignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateElasticIpAsyncHelper(const Model::AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AttachElasticLoadBalancerAsyncHelper(const Model::AttachElasticLoadBalancerRequest& request, const AttachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CloneStackAsyncHelper(const Model::CloneStackRequest& request, const CloneStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInstanceAsyncHelper(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLayerAsyncHelper(const Model::CreateLayerRequest& request, const CreateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLayerAsyncHelper(const Model::DeleteLayerRequest& request, const DeleteLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterEcsClusterAsyncHelper(const Model::DeregisterEcsClusterRequest& request, const DeregisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterElasticIpAsyncHelper(const Model::DeregisterElasticIpRequest& request, const DeregisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterInstanceAsyncHelper(const Model::DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterRdsDbInstanceAsyncHelper(const Model::DeregisterRdsDbInstanceRequest& request, const DeregisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterVolumeAsyncHelper(const Model::DeregisterVolumeRequest& request, const DeregisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAgentVersionsAsyncHelper(const Model::DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAppsAsyncHelper(const Model::DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCommandsAsyncHelper(const Model::DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeploymentsAsyncHelper(const Model::DescribeDeploymentsRequest& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEcsClustersAsyncHelper(const Model::DescribeEcsClustersRequest& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeElasticIpsAsyncHelper(const Model::DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeElasticLoadBalancersAsyncHelper(const Model::DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLayersAsyncHelper(const Model::DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBasedAutoScalingAsyncHelper(const Model::DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMyUserProfileAsyncHelper(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOperatingSystemsAsyncHelper(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePermissionsAsyncHelper(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRaidArraysAsyncHelper(const Model::DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRdsDbInstancesAsyncHelper(const Model::DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServiceErrorsAsyncHelper(const Model::DescribeServiceErrorsRequest& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStackProvisioningParametersAsyncHelper(const Model::DescribeStackProvisioningParametersRequest& request, const DescribeStackProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStackSummaryAsyncHelper(const Model::DescribeStackSummaryRequest& request, const DescribeStackSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTimeBasedAutoScalingAsyncHelper(const Model::DescribeTimeBasedAutoScalingRequest& request, const DescribeTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeUserProfilesAsyncHelper(const Model::DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVolumesAsyncHelper(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetachElasticLoadBalancerAsyncHelper(const Model::DetachElasticLoadBalancerRequest& request, const DetachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateElasticIpAsyncHelper(const Model::DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostnameSuggestionAsyncHelper(const Model::GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GrantAccessAsyncHelper(const Model::GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterEcsClusterAsyncHelper(const Model::RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterElasticIpAsyncHelper(const Model::RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterInstanceAsyncHelper(const Model::RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterRdsDbInstanceAsyncHelper(const Model::RegisterRdsDbInstanceRequest& request, const RegisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterVolumeAsyncHelper(const Model::RegisterVolumeRequest& request, const RegisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetLoadBasedAutoScalingAsyncHelper(const Model::SetLoadBasedAutoScalingRequest& request, const SetLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetPermissionAsyncHelper(const Model::SetPermissionRequest& request, const SetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetTimeBasedAutoScalingAsyncHelper(const Model::SetTimeBasedAutoScalingRequest& request, const SetTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStackAsyncHelper(const Model::StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStackAsyncHelper(const Model::StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnassignInstanceAsyncHelper(const Model::UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnassignVolumeAsyncHelper(const Model::UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAppAsyncHelper(const Model::UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateElasticIpAsyncHelper(const Model::UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInstanceAsyncHelper(const Model::UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLayerAsyncHelper(const Model::UpdateLayerRequest& request, const UpdateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMyUserProfileAsyncHelper(const Model::UpdateMyUserProfileRequest& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRdsDbInstanceAsyncHelper(const Model::UpdateRdsDbInstanceRequest& request, const UpdateRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateVolumeAsyncHelper(const Model::UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksClient>;
+      void init(const OpsWorksClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      OpsWorksClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<OpsWorksEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpsWorks

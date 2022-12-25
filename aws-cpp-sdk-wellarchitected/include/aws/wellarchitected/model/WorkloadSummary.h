@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/WorkloadSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API WorkloadSummary
+  class WorkloadSummary
   {
   public:
-    WorkloadSummary();
-    WorkloadSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorkloadSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API WorkloadSummary();
+    AWS_WELLARCHITECTED_API WorkloadSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API WorkloadSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -235,28 +235,28 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_workloadArn;
-    bool m_workloadArnHasBeenSet;
+    bool m_workloadArnHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lenses;
-    bool m_lensesHasBeenSet;
+    bool m_lensesHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;
-    bool m_riskCountsHasBeenSet;
+    bool m_riskCountsHasBeenSet = false;
 
     WorkloadImprovementStatus m_improvementStatus;
-    bool m_improvementStatusHasBeenSet;
+    bool m_improvementStatusHasBeenSet = false;
   };
 
 } // namespace Model

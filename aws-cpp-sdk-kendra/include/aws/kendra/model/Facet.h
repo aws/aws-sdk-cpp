@@ -35,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Facet">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Facet
+  class Facet
   {
   public:
-    Facet();
-    Facet(Aws::Utils::Json::JsonView jsonValue);
-    Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Facet();
+    AWS_KENDRA_API Facet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_documentAttributeKey;
-    bool m_documentAttributeKeyHasBeenSet;
+    bool m_documentAttributeKeyHasBeenSet = false;
 
     Aws::Vector<Facet> m_facets;
-    bool m_facetsHasBeenSet;
+    bool m_facetsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

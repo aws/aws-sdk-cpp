@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice">AWS API
    * Reference</a></p>
    */
-  class AWS_POLLY_API Voice
+  class Voice
   {
   public:
-    Voice();
-    Voice(Aws::Utils::Json::JsonView jsonValue);
-    Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_POLLY_API Voice();
+    AWS_POLLY_API Voice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -355,25 +355,25 @@ namespace Model
   private:
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     VoiceId m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageName;
-    bool m_languageNameHasBeenSet;
+    bool m_languageNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<LanguageCode> m_additionalLanguageCodes;
-    bool m_additionalLanguageCodesHasBeenSet;
+    bool m_additionalLanguageCodesHasBeenSet = false;
 
     Aws::Vector<Engine> m_supportedEngines;
-    bool m_supportedEnginesHasBeenSet;
+    bool m_supportedEnginesHasBeenSet = false;
   };
 
 } // namespace Model

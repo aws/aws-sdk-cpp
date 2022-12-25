@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizer">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Authorizer
+  class Authorizer
   {
   public:
-    Authorizer();
-    Authorizer(Aws::Utils::Json::JsonView jsonValue);
-    Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Authorizer();
+    AWS_APIGATEWAY_API Authorizer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -814,34 +814,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AuthorizerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_providerARNs;
-    bool m_providerARNsHasBeenSet;
+    bool m_providerARNsHasBeenSet = false;
 
     Aws::String m_authType;
-    bool m_authTypeHasBeenSet;
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_authorizerUri;
-    bool m_authorizerUriHasBeenSet;
+    bool m_authorizerUriHasBeenSet = false;
 
     Aws::String m_authorizerCredentials;
-    bool m_authorizerCredentialsHasBeenSet;
+    bool m_authorizerCredentialsHasBeenSet = false;
 
     Aws::String m_identitySource;
-    bool m_identitySourceHasBeenSet;
+    bool m_identitySourceHasBeenSet = false;
 
     Aws::String m_identityValidationExpression;
-    bool m_identityValidationExpressionHasBeenSet;
+    bool m_identityValidationExpressionHasBeenSet = false;
 
     int m_authorizerResultTtlInSeconds;
-    bool m_authorizerResultTtlInSecondsHasBeenSet;
+    bool m_authorizerResultTtlInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/AugmentedManifestsListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API AugmentedManifestsListItem
+  class AugmentedManifestsListItem
   {
   public:
-    AugmentedManifestsListItem();
-    AugmentedManifestsListItem(Aws::Utils::Json::JsonView jsonValue);
-    AugmentedManifestsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API AugmentedManifestsListItem();
+    AWS_COMPREHEND_API AugmentedManifestsListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API AugmentedManifestsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -426,22 +426,22 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     Split m_split;
-    bool m_splitHasBeenSet;
+    bool m_splitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributeNames;
-    bool m_attributeNamesHasBeenSet;
+    bool m_attributeNamesHasBeenSet = false;
 
     Aws::String m_annotationDataS3Uri;
-    bool m_annotationDataS3UriHasBeenSet;
+    bool m_annotationDataS3UriHasBeenSet = false;
 
     Aws::String m_sourceDocumentsS3Uri;
-    bool m_sourceDocumentsS3UriHasBeenSet;
+    bool m_sourceDocumentsS3UriHasBeenSet = false;
 
     AugmentedManifestsDocumentTypeFormat m_documentType;
-    bool m_documentTypeHasBeenSet;
+    bool m_documentTypeHasBeenSet = false;
   };
 
 } // namespace Model

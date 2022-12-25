@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Branch">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Branch
+  class Branch
   {
   public:
-    Branch();
-    Branch(Aws::Utils::Json::JsonView jsonValue);
-    Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Branch();
+    AWS_AMPLIFY_API Branch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1147,85 +1147,85 @@ namespace Model
   private:
 
     Aws::String m_branchArn;
-    bool m_branchArnHasBeenSet;
+    bool m_branchArnHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Stage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     bool m_enableNotification;
-    bool m_enableNotificationHasBeenSet;
+    bool m_enableNotificationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-    bool m_environmentVariablesHasBeenSet;
+    bool m_environmentVariablesHasBeenSet = false;
 
     bool m_enableAutoBuild;
-    bool m_enableAutoBuildHasBeenSet;
+    bool m_enableAutoBuildHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customDomains;
-    bool m_customDomainsHasBeenSet;
+    bool m_customDomainsHasBeenSet = false;
 
     Aws::String m_framework;
-    bool m_frameworkHasBeenSet;
+    bool m_frameworkHasBeenSet = false;
 
     Aws::String m_activeJobId;
-    bool m_activeJobIdHasBeenSet;
+    bool m_activeJobIdHasBeenSet = false;
 
     Aws::String m_totalNumberOfJobs;
-    bool m_totalNumberOfJobsHasBeenSet;
+    bool m_totalNumberOfJobsHasBeenSet = false;
 
     bool m_enableBasicAuth;
-    bool m_enableBasicAuthHasBeenSet;
+    bool m_enableBasicAuthHasBeenSet = false;
 
     bool m_enablePerformanceMode;
-    bool m_enablePerformanceModeHasBeenSet;
+    bool m_enablePerformanceModeHasBeenSet = false;
 
     Aws::String m_thumbnailUrl;
-    bool m_thumbnailUrlHasBeenSet;
+    bool m_thumbnailUrlHasBeenSet = false;
 
     Aws::String m_basicAuthCredentials;
-    bool m_basicAuthCredentialsHasBeenSet;
+    bool m_basicAuthCredentialsHasBeenSet = false;
 
     Aws::String m_buildSpec;
-    bool m_buildSpecHasBeenSet;
+    bool m_buildSpecHasBeenSet = false;
 
     Aws::String m_ttl;
-    bool m_ttlHasBeenSet;
+    bool m_ttlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedResources;
-    bool m_associatedResourcesHasBeenSet;
+    bool m_associatedResourcesHasBeenSet = false;
 
     bool m_enablePullRequestPreview;
-    bool m_enablePullRequestPreviewHasBeenSet;
+    bool m_enablePullRequestPreviewHasBeenSet = false;
 
     Aws::String m_pullRequestEnvironmentName;
-    bool m_pullRequestEnvironmentNameHasBeenSet;
+    bool m_pullRequestEnvironmentNameHasBeenSet = false;
 
     Aws::String m_destinationBranch;
-    bool m_destinationBranchHasBeenSet;
+    bool m_destinationBranchHasBeenSet = false;
 
     Aws::String m_sourceBranch;
-    bool m_sourceBranchHasBeenSet;
+    bool m_sourceBranchHasBeenSet = false;
 
     Aws::String m_backendEnvironmentArn;
-    bool m_backendEnvironmentArnHasBeenSet;
+    bool m_backendEnvironmentArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -11,6 +11,8 @@
 #include <aws/inspector2/model/Ec2InstanceAggregationResponse.h>
 #include <aws/inspector2/model/FindingTypeAggregationResponse.h>
 #include <aws/inspector2/model/ImageLayerAggregationResponse.h>
+#include <aws/inspector2/model/LambdaFunctionAggregationResponse.h>
+#include <aws/inspector2/model/LambdaLayerAggregationResponse.h>
 #include <aws/inspector2/model/PackageAggregationResponse.h>
 #include <aws/inspector2/model/RepositoryAggregationResponse.h>
 #include <aws/inspector2/model/TitleAggregationResponse.h>
@@ -37,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AggregationResponse
+  class AggregationResponse
   {
   public:
-    AggregationResponse();
-    AggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    AggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AggregationResponse();
+    AWS_INSPECTOR2_API AggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,6 +271,68 @@ namespace Model
 
 
     /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline const LambdaFunctionAggregationResponse& GetLambdaFunctionAggregation() const{ return m_lambdaFunctionAggregation; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline bool LambdaFunctionAggregationHasBeenSet() const { return m_lambdaFunctionAggregationHasBeenSet; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunctionAggregation(const LambdaFunctionAggregationResponse& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = value; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline void SetLambdaFunctionAggregation(LambdaFunctionAggregationResponse&& value) { m_lambdaFunctionAggregationHasBeenSet = true; m_lambdaFunctionAggregation = std::move(value); }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline AggregationResponse& WithLambdaFunctionAggregation(const LambdaFunctionAggregationResponse& value) { SetLambdaFunctionAggregation(value); return *this;}
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda function.</p>
+     */
+    inline AggregationResponse& WithLambdaFunctionAggregation(LambdaFunctionAggregationResponse&& value) { SetLambdaFunctionAggregation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline const LambdaLayerAggregationResponse& GetLambdaLayerAggregation() const{ return m_lambdaLayerAggregation; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline bool LambdaLayerAggregationHasBeenSet() const { return m_lambdaLayerAggregationHasBeenSet; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline void SetLambdaLayerAggregation(const LambdaLayerAggregationResponse& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = value; }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline void SetLambdaLayerAggregation(LambdaLayerAggregationResponse&& value) { m_lambdaLayerAggregationHasBeenSet = true; m_lambdaLayerAggregation = std::move(value); }
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline AggregationResponse& WithLambdaLayerAggregation(const LambdaLayerAggregationResponse& value) { SetLambdaLayerAggregation(value); return *this;}
+
+    /**
+     * <p>An aggregation of findings by AWS Lambda layer.</p>
+     */
+    inline AggregationResponse& WithLambdaLayerAggregation(LambdaLayerAggregationResponse&& value) { SetLambdaLayerAggregation(std::move(value)); return *this;}
+
+
+    /**
      * <p>An object that contains details about an aggregation response based on
      * operating system package type.</p>
      */
@@ -381,31 +445,37 @@ namespace Model
   private:
 
     AccountAggregationResponse m_accountAggregation;
-    bool m_accountAggregationHasBeenSet;
+    bool m_accountAggregationHasBeenSet = false;
 
     AmiAggregationResponse m_amiAggregation;
-    bool m_amiAggregationHasBeenSet;
+    bool m_amiAggregationHasBeenSet = false;
 
     AwsEcrContainerAggregationResponse m_awsEcrContainerAggregation;
-    bool m_awsEcrContainerAggregationHasBeenSet;
+    bool m_awsEcrContainerAggregationHasBeenSet = false;
 
     Ec2InstanceAggregationResponse m_ec2InstanceAggregation;
-    bool m_ec2InstanceAggregationHasBeenSet;
+    bool m_ec2InstanceAggregationHasBeenSet = false;
 
     FindingTypeAggregationResponse m_findingTypeAggregation;
-    bool m_findingTypeAggregationHasBeenSet;
+    bool m_findingTypeAggregationHasBeenSet = false;
 
     ImageLayerAggregationResponse m_imageLayerAggregation;
-    bool m_imageLayerAggregationHasBeenSet;
+    bool m_imageLayerAggregationHasBeenSet = false;
+
+    LambdaFunctionAggregationResponse m_lambdaFunctionAggregation;
+    bool m_lambdaFunctionAggregationHasBeenSet = false;
+
+    LambdaLayerAggregationResponse m_lambdaLayerAggregation;
+    bool m_lambdaLayerAggregationHasBeenSet = false;
 
     PackageAggregationResponse m_packageAggregation;
-    bool m_packageAggregationHasBeenSet;
+    bool m_packageAggregationHasBeenSet = false;
 
     RepositoryAggregationResponse m_repositoryAggregation;
-    bool m_repositoryAggregationHasBeenSet;
+    bool m_repositoryAggregationHasBeenSet = false;
 
     TitleAggregationResponse m_titleAggregation;
-    bool m_titleAggregationHasBeenSet;
+    bool m_titleAggregationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecutionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionExecutionResult
+  class ActionExecutionResult
   {
   public:
-    ActionExecutionResult();
-    ActionExecutionResult(Aws::Utils::Json::JsonView jsonValue);
-    ActionExecutionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionExecutionResult();
+    AWS_CODEPIPELINE_API ActionExecutionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionExecutionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
 
     Aws::String m_externalExecutionSummary;
-    bool m_externalExecutionSummaryHasBeenSet;
+    bool m_externalExecutionSummaryHasBeenSet = false;
 
     Aws::String m_externalExecutionUrl;
-    bool m_externalExecutionUrlHasBeenSet;
+    bool m_externalExecutionUrlHasBeenSet = false;
   };
 
 } // namespace Model

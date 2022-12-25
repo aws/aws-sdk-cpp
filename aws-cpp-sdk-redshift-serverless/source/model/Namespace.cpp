@@ -83,7 +83,7 @@ Namespace& Namespace::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("iamRoles"))
   {
-    Array<JsonView> iamRolesJsonList = jsonValue.GetArray("iamRoles");
+    Aws::Utils::Array<JsonView> iamRolesJsonList = jsonValue.GetArray("iamRoles");
     for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
     {
       m_iamRoles.push_back(iamRolesJsonList[iamRolesIndex].AsString());
@@ -100,7 +100,7 @@ Namespace& Namespace::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("logExports"))
   {
-    Array<JsonView> logExportsJsonList = jsonValue.GetArray("logExports");
+    Aws::Utils::Array<JsonView> logExportsJsonList = jsonValue.GetArray("logExports");
     for(unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex)
     {
       m_logExports.push_back(LogExportMapper::GetLogExportForName(logExportsJsonList[logExportsIndex].AsString()));
@@ -151,7 +151,7 @@ JsonValue Namespace::Jsonize() const
 
   if(m_creationDateHasBeenSet)
   {
-   payload.WithString("creationDate", m_creationDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_dbNameHasBeenSet)
@@ -168,7 +168,7 @@ JsonValue Namespace::Jsonize() const
 
   if(m_iamRolesHasBeenSet)
   {
-   Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
+   Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
    for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
    {
      iamRolesJsonList[iamRolesIndex].AsString(m_iamRoles[iamRolesIndex]);
@@ -185,7 +185,7 @@ JsonValue Namespace::Jsonize() const
 
   if(m_logExportsHasBeenSet)
   {
-   Array<JsonValue> logExportsJsonList(m_logExports.size());
+   Aws::Utils::Array<JsonValue> logExportsJsonList(m_logExports.size());
    for(unsigned logExportsIndex = 0; logExportsIndex < logExportsJsonList.GetLength(); ++logExportsIndex)
    {
      logExportsJsonList[logExportsIndex].AsString(LogExportMapper::GetNameForLogExport(m_logExports[logExportsIndex]));

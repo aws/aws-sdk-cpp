@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PublicIpv4Pool">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PublicIpv4Pool
+  class PublicIpv4Pool
   {
   public:
-    PublicIpv4Pool();
-    PublicIpv4Pool(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicIpv4Pool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PublicIpv4Pool();
+    AWS_EC2_API PublicIpv4Pool(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PublicIpv4Pool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -307,25 +307,25 @@ namespace Model
   private:
 
     Aws::String m_poolId;
-    bool m_poolIdHasBeenSet;
+    bool m_poolIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<PublicIpv4PoolRange> m_poolAddressRanges;
-    bool m_poolAddressRangesHasBeenSet;
+    bool m_poolAddressRangesHasBeenSet = false;
 
     int m_totalAddressCount;
-    bool m_totalAddressCountHasBeenSet;
+    bool m_totalAddressCountHasBeenSet = false;
 
     int m_totalAvailableAddressCount;
-    bool m_totalAvailableAddressCountHasBeenSet;
+    bool m_totalAvailableAddressCountHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;
-    bool m_networkBorderGroupHasBeenSet;
+    bool m_networkBorderGroupHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

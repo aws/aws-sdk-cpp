@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CategoricalParameterRangeSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CategoricalParameterRangeSpecification
+  class CategoricalParameterRangeSpecification
   {
   public:
-    CategoricalParameterRangeSpecification();
-    CategoricalParameterRangeSpecification(Aws::Utils::Json::JsonView jsonValue);
-    CategoricalParameterRangeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CategoricalParameterRangeSpecification();
+    AWS_SAGEMAKER_API CategoricalParameterRangeSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CategoricalParameterRangeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

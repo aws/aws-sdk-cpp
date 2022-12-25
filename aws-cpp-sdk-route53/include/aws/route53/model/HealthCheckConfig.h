@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheckConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HealthCheckConfig
+  class HealthCheckConfig
   {
   public:
-    HealthCheckConfig();
-    HealthCheckConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HealthCheckConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheckConfig();
+    AWS_ROUTE53_API HealthCheckConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheckConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -1938,58 +1938,58 @@ namespace Model
   private:
 
     Aws::String m_iPAddress;
-    bool m_iPAddressHasBeenSet;
+    bool m_iPAddressHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     HealthCheckType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_resourcePath;
-    bool m_resourcePathHasBeenSet;
+    bool m_resourcePathHasBeenSet = false;
 
     Aws::String m_fullyQualifiedDomainName;
-    bool m_fullyQualifiedDomainNameHasBeenSet;
+    bool m_fullyQualifiedDomainNameHasBeenSet = false;
 
     Aws::String m_searchString;
-    bool m_searchStringHasBeenSet;
+    bool m_searchStringHasBeenSet = false;
 
     int m_requestInterval;
-    bool m_requestIntervalHasBeenSet;
+    bool m_requestIntervalHasBeenSet = false;
 
     int m_failureThreshold;
-    bool m_failureThresholdHasBeenSet;
+    bool m_failureThresholdHasBeenSet = false;
 
     bool m_measureLatency;
-    bool m_measureLatencyHasBeenSet;
+    bool m_measureLatencyHasBeenSet = false;
 
     bool m_inverted;
-    bool m_invertedHasBeenSet;
+    bool m_invertedHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     int m_healthThreshold;
-    bool m_healthThresholdHasBeenSet;
+    bool m_healthThresholdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_childHealthChecks;
-    bool m_childHealthChecksHasBeenSet;
+    bool m_childHealthChecksHasBeenSet = false;
 
     bool m_enableSNI;
-    bool m_enableSNIHasBeenSet;
+    bool m_enableSNIHasBeenSet = false;
 
     Aws::Vector<HealthCheckRegion> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
 
     AlarmIdentifier m_alarmIdentifier;
-    bool m_alarmIdentifierHasBeenSet;
+    bool m_alarmIdentifierHasBeenSet = false;
 
     InsufficientDataHealthStatus m_insufficientDataHealthStatus;
-    bool m_insufficientDataHealthStatusHasBeenSet;
+    bool m_insufficientDataHealthStatusHasBeenSet = false;
 
     Aws::String m_routingControlArn;
-    bool m_routingControlArnHasBeenSet;
+    bool m_routingControlArnHasBeenSet = false;
   };
 
 } // namespace Model

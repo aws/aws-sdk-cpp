@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/OperatingSystem">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API OperatingSystem
+  class OperatingSystem
   {
   public:
-    OperatingSystem();
-    OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
-    OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API OperatingSystem();
+    AWS_WORKSPACES_API OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     OperatingSystemType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

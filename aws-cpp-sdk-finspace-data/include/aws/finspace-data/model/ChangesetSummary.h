@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ChangesetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ChangesetSummary
+  class ChangesetSummary
   {
   public:
-    ChangesetSummary();
-    ChangesetSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChangesetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API ChangesetSummary();
+    AWS_FINSPACEDATA_API ChangesetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API ChangesetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -628,43 +628,43 @@ namespace Model
   private:
 
     Aws::String m_changesetId;
-    bool m_changesetIdHasBeenSet;
+    bool m_changesetIdHasBeenSet = false;
 
     Aws::String m_changesetArn;
-    bool m_changesetArnHasBeenSet;
+    bool m_changesetArnHasBeenSet = false;
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     ChangeType m_changeType;
-    bool m_changeTypeHasBeenSet;
+    bool m_changeTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceParams;
-    bool m_sourceParamsHasBeenSet;
+    bool m_sourceParamsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_formatParams;
-    bool m_formatParamsHasBeenSet;
+    bool m_formatParamsHasBeenSet = false;
 
     long long m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     IngestionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ChangesetErrorInfo m_errorInfo;
-    bool m_errorInfoHasBeenSet;
+    bool m_errorInfoHasBeenSet = false;
 
     long long m_activeUntilTimestamp;
-    bool m_activeUntilTimestampHasBeenSet;
+    bool m_activeUntilTimestampHasBeenSet = false;
 
     long long m_activeFromTimestamp;
-    bool m_activeFromTimestampHasBeenSet;
+    bool m_activeFromTimestampHasBeenSet = false;
 
     Aws::String m_updatesChangesetId;
-    bool m_updatesChangesetIdHasBeenSet;
+    bool m_updatesChangesetIdHasBeenSet = false;
 
     Aws::String m_updatedByChangesetId;
-    bool m_updatedByChangesetIdHasBeenSet;
+    bool m_updatedByChangesetIdHasBeenSet = false;
   };
 
 } // namespace Model

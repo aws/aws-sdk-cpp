@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_IMAGEBUILDER_API UpdateDistributionConfigurationRequest : public ImagebuilderRequest
+  class UpdateDistributionConfigurationRequest : public ImagebuilderRequest
   {
   public:
-    UpdateDistributionConfigurationRequest();
+    AWS_IMAGEBUILDER_API UpdateDistributionConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDistributionConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_distributionConfigurationArn;
-    bool m_distributionConfigurationArnHasBeenSet;
+    bool m_distributionConfigurationArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Distribution> m_distributions;
-    bool m_distributionsHasBeenSet;
+    bool m_distributionsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

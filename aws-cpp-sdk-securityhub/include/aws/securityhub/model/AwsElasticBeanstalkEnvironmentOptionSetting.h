@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticBeanstalkEnvironmentOptionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentOptionSetting
+  class AwsElasticBeanstalkEnvironmentOptionSetting
   {
   public:
-    AwsElasticBeanstalkEnvironmentOptionSetting();
-    AwsElasticBeanstalkEnvironmentOptionSetting(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticBeanstalkEnvironmentOptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentOptionSetting();
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentOptionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticBeanstalkEnvironmentOptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_namespace;
-    bool m_namespaceHasBeenSet;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_optionName;
-    bool m_optionNameHasBeenSet;
+    bool m_optionNameHasBeenSet = false;
 
     Aws::String m_resourceName;
-    bool m_resourceNameHasBeenSet;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

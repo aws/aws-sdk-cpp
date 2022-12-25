@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NetworkStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NetworkStatus
+  class NetworkStatus
   {
   public:
-    NetworkStatus();
-    NetworkStatus(Aws::Utils::Json::JsonView jsonValue);
-    NetworkStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NetworkStatus();
+    AWS_PANORAMA_API NetworkStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NetworkStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,16 +165,16 @@ namespace Model
   private:
 
     EthernetStatus m_ethernet0Status;
-    bool m_ethernet0StatusHasBeenSet;
+    bool m_ethernet0StatusHasBeenSet = false;
 
     EthernetStatus m_ethernet1Status;
-    bool m_ethernet1StatusHasBeenSet;
+    bool m_ethernet1StatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     NtpStatus m_ntpStatus;
-    bool m_ntpStatusHasBeenSet;
+    bool m_ntpStatusHasBeenSet = false;
   };
 
 } // namespace Model

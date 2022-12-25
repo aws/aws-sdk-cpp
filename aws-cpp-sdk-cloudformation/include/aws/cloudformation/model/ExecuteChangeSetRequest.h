@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSetInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ExecuteChangeSetRequest : public CloudFormationRequest
+  class ExecuteChangeSetRequest : public CloudFormationRequest
   {
   public:
-    ExecuteChangeSetRequest();
+    AWS_CLOUDFORMATION_API ExecuteChangeSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExecuteChangeSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -246,16 +246,16 @@ namespace Model
   private:
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     bool m_disableRollback;
-    bool m_disableRollbackHasBeenSet;
+    bool m_disableRollbackHasBeenSet = false;
   };
 
 } // namespace Model

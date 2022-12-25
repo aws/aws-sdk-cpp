@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AccountAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AccountAggregation
+  class AccountAggregation
   {
   public:
-    AccountAggregation();
-    AccountAggregation(Aws::Utils::Json::JsonView jsonValue);
-    AccountAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AccountAggregation();
+    AWS_INSPECTOR2_API AccountAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AccountAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -167,16 +167,16 @@ namespace Model
   private:
 
     AggregationFindingType m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     AggregationResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     AccountSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

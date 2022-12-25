@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FlowDefinitionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FlowDefinitionSummary
+  class FlowDefinitionSummary
   {
   public:
-    FlowDefinitionSummary();
-    FlowDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
-    FlowDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FlowDefinitionSummary();
+    AWS_SAGEMAKER_API FlowDefinitionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FlowDefinitionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_flowDefinitionName;
-    bool m_flowDefinitionNameHasBeenSet;
+    bool m_flowDefinitionNameHasBeenSet = false;
 
     Aws::String m_flowDefinitionArn;
-    bool m_flowDefinitionArnHasBeenSet;
+    bool m_flowDefinitionArnHasBeenSet = false;
 
     FlowDefinitionStatus m_flowDefinitionStatus;
-    bool m_flowDefinitionStatusHasBeenSet;
+    bool m_flowDefinitionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

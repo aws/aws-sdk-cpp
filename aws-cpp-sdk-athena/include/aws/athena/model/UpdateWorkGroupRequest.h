@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_ATHENA_API UpdateWorkGroupRequest : public AthenaRequest
+  class UpdateWorkGroupRequest : public AthenaRequest
   {
   public:
-    UpdateWorkGroupRequest();
+    AWS_ATHENA_API UpdateWorkGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorkGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ATHENA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -119,32 +119,32 @@ namespace Model
 
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline const WorkGroupConfigurationUpdates& GetConfigurationUpdates() const{ return m_configurationUpdates; }
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline bool ConfigurationUpdatesHasBeenSet() const { return m_configurationUpdatesHasBeenSet; }
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline void SetConfigurationUpdates(const WorkGroupConfigurationUpdates& value) { m_configurationUpdatesHasBeenSet = true; m_configurationUpdates = value; }
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline void SetConfigurationUpdates(WorkGroupConfigurationUpdates&& value) { m_configurationUpdatesHasBeenSet = true; m_configurationUpdates = std::move(value); }
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline UpdateWorkGroupRequest& WithConfigurationUpdates(const WorkGroupConfigurationUpdates& value) { SetConfigurationUpdates(value); return *this;}
 
     /**
-     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline UpdateWorkGroupRequest& WithConfigurationUpdates(WorkGroupConfigurationUpdates&& value) { SetConfigurationUpdates(std::move(value)); return *this;}
 
@@ -182,16 +182,16 @@ namespace Model
   private:
 
     Aws::String m_workGroup;
-    bool m_workGroupHasBeenSet;
+    bool m_workGroupHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     WorkGroupConfigurationUpdates m_configurationUpdates;
-    bool m_configurationUpdatesHasBeenSet;
+    bool m_configurationUpdatesHasBeenSet = false;
 
     WorkGroupState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

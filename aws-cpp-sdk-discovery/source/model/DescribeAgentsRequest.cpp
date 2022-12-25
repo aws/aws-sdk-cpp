@@ -27,7 +27,7 @@ Aws::String DescribeAgentsRequest::SerializePayload() const
 
   if(m_agentIdsHasBeenSet)
   {
-   Array<JsonValue> agentIdsJsonList(m_agentIds.size());
+   Aws::Utils::Array<JsonValue> agentIdsJsonList(m_agentIds.size());
    for(unsigned agentIdsIndex = 0; agentIdsIndex < agentIdsJsonList.GetLength(); ++agentIdsIndex)
    {
      agentIdsJsonList[agentIdsIndex].AsString(m_agentIds[agentIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeAgentsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

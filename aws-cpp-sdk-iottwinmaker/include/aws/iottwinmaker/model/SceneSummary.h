@@ -30,54 +30,54 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/SceneSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API SceneSummary
+  class SceneSummary
   {
   public:
-    SceneSummary();
-    SceneSummary(Aws::Utils::Json::JsonView jsonValue);
-    SceneSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API SceneSummary();
+    AWS_IOTTWINMAKER_API SceneSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API SceneSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetSceneId() const{ return m_sceneId; }
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline bool SceneIdHasBeenSet() const { return m_sceneIdHasBeenSet; }
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetSceneId(const Aws::String& value) { m_sceneIdHasBeenSet = true; m_sceneId = value; }
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetSceneId(Aws::String&& value) { m_sceneIdHasBeenSet = true; m_sceneId = std::move(value); }
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline void SetSceneId(const char* value) { m_sceneIdHasBeenSet = true; m_sceneId.assign(value); }
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline SceneSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline SceneSummary& WithSceneId(const Aws::String& value) { SetSceneId(value); return *this;}
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline SceneSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline SceneSummary& WithSceneId(Aws::String&& value) { SetSceneId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the scene.</p>
+     * <p>The ID of the scene.</p>
      */
-    inline SceneSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    inline SceneSummary& WithSceneId(const char* value) { SetSceneId(value); return *this;}
 
 
     /**
@@ -130,6 +130,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline SceneSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline SceneSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the scene.</p>
+     */
+    inline SceneSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The date and time when the scene was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
@@ -158,6 +199,37 @@ namespace Model
      * <p>The date and time when the scene was created.</p>
      */
     inline SceneSummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline SceneSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the scene was last updated.</p>
+     */
+    inline SceneSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
 
 
     /**
@@ -200,97 +272,25 @@ namespace Model
      */
     inline SceneSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline const Aws::String& GetSceneId() const{ return m_sceneId; }
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline bool SceneIdHasBeenSet() const { return m_sceneIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline void SetSceneId(const Aws::String& value) { m_sceneIdHasBeenSet = true; m_sceneId = value; }
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline void SetSceneId(Aws::String&& value) { m_sceneIdHasBeenSet = true; m_sceneId = std::move(value); }
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline void SetSceneId(const char* value) { m_sceneIdHasBeenSet = true; m_sceneId.assign(value); }
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline SceneSummary& WithSceneId(const Aws::String& value) { SetSceneId(value); return *this;}
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline SceneSummary& WithSceneId(Aws::String&& value) { SetSceneId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the scene.</p>
-     */
-    inline SceneSummary& WithSceneId(const char* value) { SetSceneId(value); return *this;}
-
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline SceneSummary& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time when the scene was last updated.</p>
-     */
-    inline SceneSummary& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
-
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    Aws::String m_sceneId;
+    bool m_sceneIdHasBeenSet = false;
 
     Aws::String m_contentLocation;
-    bool m_contentLocationHasBeenSet;
+    bool m_contentLocationHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet;
-
-    Aws::String m_sceneId;
-    bool m_sceneIdHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

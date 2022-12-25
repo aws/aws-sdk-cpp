@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/SSMOutput">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API SSMOutput
+  class SSMOutput
   {
   public:
-    SSMOutput();
-    SSMOutput(Aws::Utils::Json::JsonView jsonValue);
-    SSMOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API SSMOutput();
+    AWS_SMS_API SSMOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API SSMOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     S3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

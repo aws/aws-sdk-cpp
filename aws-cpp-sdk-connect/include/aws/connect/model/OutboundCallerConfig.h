@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundCallerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API OutboundCallerConfig
+  class OutboundCallerConfig
   {
   public:
-    OutboundCallerConfig();
-    OutboundCallerConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutboundCallerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API OutboundCallerConfig();
+    AWS_CONNECT_API OutboundCallerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API OutboundCallerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_outboundCallerIdName;
-    bool m_outboundCallerIdNameHasBeenSet;
+    bool m_outboundCallerIdNameHasBeenSet = false;
 
     Aws::String m_outboundCallerIdNumberId;
-    bool m_outboundCallerIdNumberIdHasBeenSet;
+    bool m_outboundCallerIdNumberIdHasBeenSet = false;
 
     Aws::String m_outboundFlowId;
-    bool m_outboundFlowIdHasBeenSet;
+    bool m_outboundFlowIdHasBeenSet = false;
   };
 
 } // namespace Model

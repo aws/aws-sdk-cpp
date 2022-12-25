@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeFromTemplateJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeFromTemplateJob
+  class NodeFromTemplateJob
   {
   public:
-    NodeFromTemplateJob();
-    NodeFromTemplateJob(Aws::Utils::Json::JsonView jsonValue);
-    NodeFromTemplateJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeFromTemplateJob();
+    AWS_PANORAMA_API NodeFromTemplateJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeFromTemplateJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_nodeName;
-    bool m_nodeNameHasBeenSet;
+    bool m_nodeNameHasBeenSet = false;
 
     NodeFromTemplateJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

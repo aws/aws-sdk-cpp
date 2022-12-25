@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalKinesisStreamDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API JournalKinesisStreamDescription
+  class JournalKinesisStreamDescription
   {
   public:
-    JournalKinesisStreamDescription();
-    JournalKinesisStreamDescription(Aws::Utils::Json::JsonView jsonValue);
-    JournalKinesisStreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API JournalKinesisStreamDescription();
+    AWS_QLDB_API JournalKinesisStreamDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API JournalKinesisStreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -495,37 +495,37 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_inclusiveStartTime;
-    bool m_inclusiveStartTimeHasBeenSet;
+    bool m_inclusiveStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_exclusiveEndTime;
-    bool m_exclusiveEndTimeHasBeenSet;
+    bool m_exclusiveEndTimeHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     StreamStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     KinesisConfiguration m_kinesisConfiguration;
-    bool m_kinesisConfigurationHasBeenSet;
+    bool m_kinesisConfigurationHasBeenSet = false;
 
     ErrorCause m_errorCause;
-    bool m_errorCauseHasBeenSet;
+    bool m_errorCauseHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

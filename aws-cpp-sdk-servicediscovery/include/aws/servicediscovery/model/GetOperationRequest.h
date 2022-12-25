@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICEDISCOVERY_API GetOperationRequest : public ServiceDiscoveryRequest
+  class GetOperationRequest : public ServiceDiscoveryRequest
   {
   public:
-    GetOperationRequest();
+    AWS_SERVICEDISCOVERY_API GetOperationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetOperation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICEDISCOVERY_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICEDISCOVERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/S3EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API S3EncryptionConfiguration
+  class S3EncryptionConfiguration
   {
   public:
-    S3EncryptionConfiguration();
-    S3EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API S3EncryptionConfiguration();
+    AWS_QLDB_API S3EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API S3EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     S3ObjectEncryptionType m_objectEncryptionType;
-    bool m_objectEncryptionTypeHasBeenSet;
+    bool m_objectEncryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet;
+    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

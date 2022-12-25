@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/BackendDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API BackendDefaults
+  class BackendDefaults
   {
   public:
-    BackendDefaults();
-    BackendDefaults(Aws::Utils::Json::JsonView jsonValue);
-    BackendDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API BackendDefaults();
+    AWS_APPMESH_API BackendDefaults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API BackendDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ClientPolicy m_clientPolicy;
-    bool m_clientPolicyHasBeenSet;
+    bool m_clientPolicyHasBeenSet = false;
   };
 
 } // namespace Model

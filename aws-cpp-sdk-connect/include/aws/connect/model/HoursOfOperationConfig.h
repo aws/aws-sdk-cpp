@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HoursOfOperationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HoursOfOperationConfig
+  class HoursOfOperationConfig
   {
   public:
-    HoursOfOperationConfig();
-    HoursOfOperationConfig(Aws::Utils::Json::JsonView jsonValue);
-    HoursOfOperationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HoursOfOperationConfig();
+    AWS_CONNECT_API HoursOfOperationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HoursOfOperationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     HoursOfOperationDays m_day;
-    bool m_dayHasBeenSet;
+    bool m_dayHasBeenSet = false;
 
     HoursOfOperationTimeSlice m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     HoursOfOperationTimeSlice m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

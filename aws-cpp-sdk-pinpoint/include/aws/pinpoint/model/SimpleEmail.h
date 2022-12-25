@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleEmail">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SimpleEmail
+  class SimpleEmail
   {
   public:
-    SimpleEmail();
-    SimpleEmail(Aws::Utils::Json::JsonView jsonValue);
-    SimpleEmail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SimpleEmail();
+    AWS_PINPOINT_API SimpleEmail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SimpleEmail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -157,13 +157,13 @@ namespace Model
   private:
 
     SimpleEmailPart m_htmlPart;
-    bool m_htmlPartHasBeenSet;
+    bool m_htmlPartHasBeenSet = false;
 
     SimpleEmailPart m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     SimpleEmailPart m_textPart;
-    bool m_textPartHasBeenSet;
+    bool m_textPartHasBeenSet = false;
   };
 
 } // namespace Model

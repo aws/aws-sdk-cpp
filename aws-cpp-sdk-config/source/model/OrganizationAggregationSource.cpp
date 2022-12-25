@@ -46,7 +46,7 @@ OrganizationAggregationSource& OrganizationAggregationSource::operator =(JsonVie
 
   if(jsonValue.ValueExists("AwsRegions"))
   {
-    Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
+    Aws::Utils::Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
     for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
     {
       m_awsRegions.push_back(awsRegionsJsonList[awsRegionsIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue OrganizationAggregationSource::Jsonize() const
 
   if(m_awsRegionsHasBeenSet)
   {
-   Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
    for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
    {
      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);

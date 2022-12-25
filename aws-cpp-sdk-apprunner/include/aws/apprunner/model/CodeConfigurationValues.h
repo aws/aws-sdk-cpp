@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CodeConfigurationValues">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API CodeConfigurationValues
+  class CodeConfigurationValues
   {
   public:
-    CodeConfigurationValues();
-    CodeConfigurationValues(Aws::Utils::Json::JsonView jsonValue);
-    CodeConfigurationValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API CodeConfigurationValues();
+    AWS_APPRUNNER_API CodeConfigurationValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API CodeConfigurationValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -304,19 +304,19 @@ namespace Model
   private:
 
     Runtime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     Aws::String m_buildCommand;
-    bool m_buildCommandHasBeenSet;
+    bool m_buildCommandHasBeenSet = false;
 
     Aws::String m_startCommand;
-    bool m_startCommandHasBeenSet;
+    bool m_startCommandHasBeenSet = false;
 
     Aws::String m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
-    bool m_runtimeEnvironmentVariablesHasBeenSet;
+    bool m_runtimeEnvironmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

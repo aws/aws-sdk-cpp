@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferData">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TransferData
+  class TransferData
   {
   public:
-    TransferData();
-    TransferData(Aws::Utils::Json::JsonView jsonValue);
-    TransferData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TransferData();
+    AWS_IOT_API TransferData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TransferData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_transferMessage;
-    bool m_transferMessageHasBeenSet;
+    bool m_transferMessageHasBeenSet = false;
 
     Aws::String m_rejectReason;
-    bool m_rejectReasonHasBeenSet;
+    bool m_rejectReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_transferDate;
-    bool m_transferDateHasBeenSet;
+    bool m_transferDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_acceptDate;
-    bool m_acceptDateHasBeenSet;
+    bool m_acceptDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_rejectDate;
-    bool m_rejectDateHasBeenSet;
+    bool m_rejectDateHasBeenSet = false;
   };
 
 } // namespace Model

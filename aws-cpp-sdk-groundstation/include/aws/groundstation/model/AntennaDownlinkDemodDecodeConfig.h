@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/AntennaDownlinkDemodDecodeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API AntennaDownlinkDemodDecodeConfig
+  class AntennaDownlinkDemodDecodeConfig
   {
   public:
-    AntennaDownlinkDemodDecodeConfig();
-    AntennaDownlinkDemodDecodeConfig(Aws::Utils::Json::JsonView jsonValue);
-    AntennaDownlinkDemodDecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API AntennaDownlinkDemodDecodeConfig();
+    AWS_GROUNDSTATION_API AntennaDownlinkDemodDecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API AntennaDownlinkDemodDecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     DecodeConfig m_decodeConfig;
-    bool m_decodeConfigHasBeenSet;
+    bool m_decodeConfigHasBeenSet = false;
 
     DemodulationConfig m_demodulationConfig;
-    bool m_demodulationConfigHasBeenSet;
+    bool m_demodulationConfigHasBeenSet = false;
 
     SpectrumConfig m_spectrumConfig;
-    bool m_spectrumConfigHasBeenSet;
+    bool m_spectrumConfigHasBeenSet = false;
   };
 
 } // namespace Model

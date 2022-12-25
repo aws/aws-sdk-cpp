@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/accessanalyzer/model/Criterion.h>
 #include <utility>
 
@@ -31,13 +31,54 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/InlineArchiveRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API InlineArchiveRule
+  class InlineArchiveRule
   {
   public:
-    InlineArchiveRule();
-    InlineArchiveRule(Aws::Utils::Json::JsonView jsonValue);
-    InlineArchiveRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API InlineArchiveRule();
+    AWS_ACCESSANALYZER_API InlineArchiveRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API InlineArchiveRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline InlineArchiveRule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline InlineArchiveRule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline InlineArchiveRule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
 
     /**
@@ -100,54 +141,13 @@ namespace Model
      */
     inline InlineArchiveRule& AddFilter(const char* key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline InlineArchiveRule& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline InlineArchiveRule& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the rule.</p>
-     */
-    inline InlineArchiveRule& WithRuleName(const char* value) { SetRuleName(value); return *this;}
-
   private:
 
-    Aws::Map<Aws::String, Criterion> m_filter;
-    bool m_filterHasBeenSet;
-
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, Criterion> m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

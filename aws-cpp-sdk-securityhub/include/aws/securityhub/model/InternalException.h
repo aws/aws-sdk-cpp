@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InternalException">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API InternalException
+  class InternalException
   {
   public:
-    InternalException();
-    InternalException(Aws::Utils::Json::JsonView jsonValue);
-    InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API InternalException();
+    AWS_SECURITYHUB_API InternalException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipMediaApplicationLoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SipMediaApplicationLoggingConfiguration
+  class SipMediaApplicationLoggingConfiguration
   {
   public:
-    SipMediaApplicationLoggingConfiguration();
-    SipMediaApplicationLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SipMediaApplicationLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SipMediaApplicationLoggingConfiguration();
+    AWS_CHIME_API SipMediaApplicationLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SipMediaApplicationLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enableSipMediaApplicationMessageLogs;
-    bool m_enableSipMediaApplicationMessageLogsHasBeenSet;
+    bool m_enableSipMediaApplicationMessageLogsHasBeenSet = false;
   };
 
 } // namespace Model

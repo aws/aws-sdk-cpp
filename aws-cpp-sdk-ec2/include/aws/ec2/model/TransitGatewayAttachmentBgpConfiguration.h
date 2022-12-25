@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayAttachmentBgpConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayAttachmentBgpConfiguration
+  class TransitGatewayAttachmentBgpConfiguration
   {
   public:
-    TransitGatewayAttachmentBgpConfiguration();
-    TransitGatewayAttachmentBgpConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayAttachmentBgpConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayAttachmentBgpConfiguration();
+    AWS_EC2_API TransitGatewayAttachmentBgpConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayAttachmentBgpConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -197,19 +197,19 @@ namespace Model
   private:
 
     long long m_transitGatewayAsn;
-    bool m_transitGatewayAsnHasBeenSet;
+    bool m_transitGatewayAsnHasBeenSet = false;
 
     long long m_peerAsn;
-    bool m_peerAsnHasBeenSet;
+    bool m_peerAsnHasBeenSet = false;
 
     Aws::String m_transitGatewayAddress;
-    bool m_transitGatewayAddressHasBeenSet;
+    bool m_transitGatewayAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
 
     BgpStatus m_bgpStatus;
-    bool m_bgpStatusHasBeenSet;
+    bool m_bgpStatusHasBeenSet = false;
   };
 
 } // namespace Model

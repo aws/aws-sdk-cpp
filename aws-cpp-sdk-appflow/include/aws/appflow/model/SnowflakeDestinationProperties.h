@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SnowflakeDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SnowflakeDestinationProperties
+  class SnowflakeDestinationProperties
   {
   public:
-    SnowflakeDestinationProperties();
-    SnowflakeDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    SnowflakeDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SnowflakeDestinationProperties();
+    AWS_APPFLOW_API SnowflakeDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SnowflakeDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -241,16 +241,16 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::String m_intermediateBucketName;
-    bool m_intermediateBucketNameHasBeenSet;
+    bool m_intermediateBucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
   };
 
 } // namespace Model

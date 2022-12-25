@@ -29,21 +29,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ErrorInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ErrorInformation
+  class ErrorInformation
   {
   public:
-    ErrorInformation();
-    ErrorInformation(Aws::Utils::Json::JsonView jsonValue);
-    ErrorInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ErrorInformation();
+    AWS_CODEDEPLOY_API ErrorInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ErrorInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -61,19 +61,19 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline const ErrorCode& GetCode() const{ return m_code; }
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -91,19 +91,19 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -121,19 +121,19 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -151,19 +151,19 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -181,19 +181,19 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline ErrorInformation& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
 
     /**
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-     * Codes for AWS CodeDeploy</a> in the <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
-     * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
+     * Codes for CodeDeploy</a> in the <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User
+     * Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
      * started.</p> </li> <li> <p>DEPLOYMENT_GROUP_MISSING: The deployment group was
@@ -211,10 +211,10 @@ namespace Model
      * instances can be found.</p> </li> <li> <p>OVER_MAX_INSTANCES: The maximum number
      * of instances was exceeded.</p> </li> <li> <p>THROTTLED: The operation was
      * throttled because the calling account exceeded the throttling limits of one or
-     * more AWS services.</p> </li> <li> <p>TIMEOUT: The deployment has timed out.</p>
-     * </li> <li> <p>REVISION_MISSING: The revision ID was missing. This error code is
-     * most likely raised if the revision is deleted after the deployment is created,
-     * but before it is started.</p> </li> </ul>
+     * more Amazon Web Services services.</p> </li> <li> <p>TIMEOUT: The deployment has
+     * timed out.</p> </li> <li> <p>REVISION_MISSING: The revision ID was missing. This
+     * error code is most likely raised if the revision is deleted after the deployment
+     * is created, but before it is started.</p> </li> </ul>
      */
     inline ErrorInformation& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
 
@@ -262,10 +262,10 @@ namespace Model
   private:
 
     ErrorCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

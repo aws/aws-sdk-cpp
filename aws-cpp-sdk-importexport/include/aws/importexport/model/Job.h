@@ -30,15 +30,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/Job">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API Job
+  class Job
   {
   public:
-    Job();
-    Job(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Job& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IMPORTEXPORT_API Job();
+    AWS_IMPORTEXPORT_API Job(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IMPORTEXPORT_API Job& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IMPORTEXPORT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IMPORTEXPORT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     
@@ -119,16 +119,16 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     bool m_isCanceled;
-    bool m_isCanceledHasBeenSet;
+    bool m_isCanceledHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

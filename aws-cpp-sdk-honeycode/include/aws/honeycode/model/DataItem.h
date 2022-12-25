@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DataItem">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API DataItem
+  class DataItem
   {
   public:
-    DataItem();
-    DataItem(Aws::Utils::Json::JsonView jsonValue);
-    DataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API DataItem();
+    AWS_HONEYCODE_API DataItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API DataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Format m_overrideFormat;
-    bool m_overrideFormatHasBeenSet;
+    bool m_overrideFormatHasBeenSet = false;
 
     Aws::String m_rawValue;
-    bool m_rawValueHasBeenSet;
+    bool m_rawValueHasBeenSet = false;
 
     Aws::String m_formattedValue;
-    bool m_formattedValueHasBeenSet;
+    bool m_formattedValueHasBeenSet = false;
   };
 
 } // namespace Model

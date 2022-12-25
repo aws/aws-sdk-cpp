@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagInfoForResource">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API TagInfoForResource
+  class TagInfoForResource
   {
   public:
-    TagInfoForResource();
-    TagInfoForResource(Aws::Utils::Json::JsonView jsonValue);
-    TagInfoForResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API TagInfoForResource();
+    AWS_WAFV2_API TagInfoForResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API TagInfoForResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUEDATABREW_API ListRecipesRequest : public GlueDataBrewRequest
+  class ListRecipesRequest : public GlueDataBrewRequest
   {
   public:
-    ListRecipesRequest();
+    AWS_GLUEDATABREW_API ListRecipesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRecipes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUEDATABREW_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_GLUEDATABREW_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_recipeVersion;
-    bool m_recipeVersionHasBeenSet;
+    bool m_recipeVersionHasBeenSet = false;
   };
 
 } // namespace Model

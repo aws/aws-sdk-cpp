@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentStatusReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AgentStatusReference
+  class AgentStatusReference
   {
   public:
-    AgentStatusReference();
-    AgentStatusReference(Aws::Utils::Json::JsonView jsonValue);
-    AgentStatusReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AgentStatusReference();
+    AWS_CONNECT_API AgentStatusReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AgentStatusReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,13 +109,57 @@ namespace Model
      */
     inline AgentStatusReference& WithStatusArn(const char* value) { SetStatusArn(value); return *this;}
 
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline const Aws::String& GetStatusName() const{ return m_statusName; }
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline bool StatusNameHasBeenSet() const { return m_statusNameHasBeenSet; }
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline void SetStatusName(const Aws::String& value) { m_statusNameHasBeenSet = true; m_statusName = value; }
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline void SetStatusName(Aws::String&& value) { m_statusNameHasBeenSet = true; m_statusName = std::move(value); }
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline void SetStatusName(const char* value) { m_statusNameHasBeenSet = true; m_statusName.assign(value); }
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline AgentStatusReference& WithStatusName(const Aws::String& value) { SetStatusName(value); return *this;}
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline AgentStatusReference& WithStatusName(Aws::String&& value) { SetStatusName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the agent status.</p>
+     */
+    inline AgentStatusReference& WithStatusName(const char* value) { SetStatusName(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_statusStartTimestamp;
-    bool m_statusStartTimestampHasBeenSet;
+    bool m_statusStartTimestampHasBeenSet = false;
 
     Aws::String m_statusArn;
-    bool m_statusArnHasBeenSet;
+    bool m_statusArnHasBeenSet = false;
+
+    Aws::String m_statusName;
+    bool m_statusNameHasBeenSet = false;
   };
 
 } // namespace Model

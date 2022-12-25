@@ -29,17 +29,21 @@ namespace Model
 {
 
   /**
-   * <p>The configuration parameters for a channel.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration parameters for a channel. For information about MediaTailor
+   * channels, see <a
+   * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+   * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API Channel();
+    AWS_MEDIATAILOR_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -198,43 +202,49 @@ namespace Model
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline Channel& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
 
     /**
      * <p>The slate used to fill gaps between programs in the schedule. You must
-     * configure filler slate if your channel uses the LINEAR PlaybackMode. MediaTailor
-     * doesn't support filler slate for channels using the LOOP PlaybackMode.</p>
+     * configure filler slate if your channel uses the <code>LINEAR</code>
+     * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
+     * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
     inline Channel& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
 
@@ -312,132 +322,184 @@ namespace Model
 
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const Aws::String& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(Aws::String&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline void SetPlaybackMode(const char* value) { m_playbackModeHasBeenSet = true; m_playbackMode.assign(value); }
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
     /**
-     * <p>The type of playback mode for this channel.</p> <p>LINEAR - Programs play
-     * back-to-back only once.</p> <p>LOOP - Programs play back-to-back in an endless
-     * loop. When the last program in the schedule plays, playback loops back to the
-     * first program in the schedule.</p>
+     * <p>The type of playback mode for this channel.</p> <p> <code>LINEAR</code> -
+     * Programs play back-to-back only once.</p> <p> <code>LOOP</code> - Programs play
+     * back-to-back in an endless loop. When the last program in the schedule plays,
+     * playback loops back to the first program in the schedule.</p>
      */
     inline Channel& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline Channel& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -493,34 +555,34 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     Aws::String m_channelState;
-    bool m_channelStateHasBeenSet;
+    bool m_channelStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     SlateSource m_fillerSlate;
-    bool m_fillerSlateHasBeenSet;
+    bool m_fillerSlateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<ResponseOutputItem> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
 
     Aws::String m_playbackMode;
-    bool m_playbackModeHasBeenSet;
+    bool m_playbackModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_tier;
-    bool m_tierHasBeenSet;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/QueryError">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API QueryError
+  class QueryError
   {
   public:
-    QueryError();
-    QueryError(Aws::Utils::Json::JsonView jsonValue);
-    QueryError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API QueryError();
+    AWS_RESOURCEGROUPS_API QueryError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API QueryError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     QueryErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,18 +27,18 @@ namespace Model
 {
 
   /**
-   * <p>A rule that controls access to an Amazon WorkMail organization.</p><p><h3>See
+   * <p>A rule that controls access to an WorkMail organization.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AccessControlRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API AccessControlRule
+  class AccessControlRule
   {
   public:
-    AccessControlRule();
-    AccessControlRule(Aws::Utils::Json::JsonView jsonValue);
-    AccessControlRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API AccessControlRule();
+    AWS_WORKMAIL_API AccessControlRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API AccessControlRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -545,40 +545,138 @@ namespace Model
      */
     inline AccessControlRule& WithDateModified(Aws::Utils::DateTime&& value) { SetDateModified(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetImpersonationRoleIds() const{ return m_impersonationRoleIds; }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline bool ImpersonationRoleIdsHasBeenSet() const { return m_impersonationRoleIdsHasBeenSet; }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline void SetImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds = value; }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline void SetImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds = std::move(value); }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline AccessControlRule& WithImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { SetImpersonationRoleIds(value); return *this;}
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline AccessControlRule& WithImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { SetImpersonationRoleIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline AccessControlRule& AddImpersonationRoleIds(const Aws::String& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(value); return *this; }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline AccessControlRule& AddImpersonationRoleIds(Aws::String&& value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Impersonation role IDs to include in the rule.</p>
+     */
+    inline AccessControlRule& AddImpersonationRoleIds(const char* value) { m_impersonationRoleIdsHasBeenSet = true; m_impersonationRoleIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNotImpersonationRoleIds() const{ return m_notImpersonationRoleIds; }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline bool NotImpersonationRoleIdsHasBeenSet() const { return m_notImpersonationRoleIdsHasBeenSet; }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline void SetNotImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds = value; }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline void SetNotImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds = std::move(value); }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline AccessControlRule& WithNotImpersonationRoleIds(const Aws::Vector<Aws::String>& value) { SetNotImpersonationRoleIds(value); return *this;}
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline AccessControlRule& WithNotImpersonationRoleIds(Aws::Vector<Aws::String>&& value) { SetNotImpersonationRoleIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline AccessControlRule& AddNotImpersonationRoleIds(const Aws::String& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(value); return *this; }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline AccessControlRule& AddNotImpersonationRoleIds(Aws::String&& value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Impersonation role IDs to exclude from the rule.</p>
+     */
+    inline AccessControlRule& AddNotImpersonationRoleIds(const char* value) { m_notImpersonationRoleIdsHasBeenSet = true; m_notImpersonationRoleIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccessControlRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notIpRanges;
-    bool m_notIpRangesHasBeenSet;
+    bool m_notIpRangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notActions;
-    bool m_notActionsHasBeenSet;
+    bool m_notActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notUserIds;
-    bool m_notUserIdsHasBeenSet;
+    bool m_notUserIdsHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_impersonationRoleIds;
+    bool m_impersonationRoleIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_notImpersonationRoleIds;
+    bool m_notImpersonationRoleIdsHasBeenSet = false;
   };
 
 } // namespace Model

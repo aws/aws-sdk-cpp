@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/LexV2Bot">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API LexV2Bot
+  class LexV2Bot
   {
   public:
-    LexV2Bot();
-    LexV2Bot(Aws::Utils::Json::JsonView jsonValue);
-    LexV2Bot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API LexV2Bot();
+    AWS_CONNECT_API LexV2Bot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API LexV2Bot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_aliasArn;
-    bool m_aliasArnHasBeenSet;
+    bool m_aliasArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/NotificationWithSubscribers">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API NotificationWithSubscribers
+  class NotificationWithSubscribers
   {
   public:
-    NotificationWithSubscribers();
-    NotificationWithSubscribers(Aws::Utils::Json::JsonView jsonValue);
-    NotificationWithSubscribers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API NotificationWithSubscribers();
+    AWS_BUDGETS_API NotificationWithSubscribers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API NotificationWithSubscribers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Notification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     Aws::Vector<Subscriber> m_subscribers;
-    bool m_subscribersHasBeenSet;
+    bool m_subscribersHasBeenSet = false;
   };
 
 } // namespace Model

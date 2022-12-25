@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Point">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Point
+  class Point
   {
   public:
-    Point();
-    Point(Aws::Utils::Json::JsonView jsonValue);
-    Point& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Point();
+    AWS_REKOGNITION_API Point(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Point& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -87,10 +87,10 @@ namespace Model
   private:
 
     double m_x;
-    bool m_xHasBeenSet;
+    bool m_xHasBeenSet = false;
 
     double m_y;
-    bool m_yHasBeenSet;
+    bool m_yHasBeenSet = false;
   };
 
 } // namespace Model

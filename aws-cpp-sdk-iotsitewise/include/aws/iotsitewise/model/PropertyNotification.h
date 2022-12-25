@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PropertyNotification
+  class PropertyNotification
   {
   public:
-    PropertyNotification();
-    PropertyNotification(Aws::Utils::Json::JsonView jsonValue);
-    PropertyNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PropertyNotification();
+    AWS_IOTSITEWISE_API PropertyNotification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PropertyNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     PropertyNotificationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/MemberUser">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API MemberUser
+  class MemberUser
   {
   public:
-    MemberUser();
-    MemberUser(Aws::Utils::Json::JsonView jsonValue);
-    MemberUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API MemberUser();
+    AWS_KENDRA_API MemberUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API MemberUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

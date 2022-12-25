@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/GlobalCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API GlobalCluster
+  class GlobalCluster
   {
   public:
-    GlobalCluster();
-    GlobalCluster(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GlobalCluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API GlobalCluster();
+    AWS_NEPTUNE_API GlobalCluster(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API GlobalCluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -416,31 +416,31 @@ namespace Model
   private:
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     Aws::String m_globalClusterResourceId;
-    bool m_globalClusterResourceIdHasBeenSet;
+    bool m_globalClusterResourceIdHasBeenSet = false;
 
     Aws::String m_globalClusterArn;
-    bool m_globalClusterArnHasBeenSet;
+    bool m_globalClusterArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
-    bool m_globalClusterMembersHasBeenSet;
+    bool m_globalClusterMembersHasBeenSet = false;
   };
 
 } // namespace Model

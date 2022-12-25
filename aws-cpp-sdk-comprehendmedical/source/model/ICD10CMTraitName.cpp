@@ -24,6 +24,9 @@ namespace Aws
         static const int DIAGNOSIS_HASH = HashingUtils::HashString("DIAGNOSIS");
         static const int SIGN_HASH = HashingUtils::HashString("SIGN");
         static const int SYMPTOM_HASH = HashingUtils::HashString("SYMPTOM");
+        static const int PERTAINS_TO_FAMILY_HASH = HashingUtils::HashString("PERTAINS_TO_FAMILY");
+        static const int HYPOTHETICAL_HASH = HashingUtils::HashString("HYPOTHETICAL");
+        static const int LOW_CONFIDENCE_HASH = HashingUtils::HashString("LOW_CONFIDENCE");
 
 
         ICD10CMTraitName GetICD10CMTraitNameForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == SYMPTOM_HASH)
           {
             return ICD10CMTraitName::SYMPTOM;
+          }
+          else if (hashCode == PERTAINS_TO_FAMILY_HASH)
+          {
+            return ICD10CMTraitName::PERTAINS_TO_FAMILY;
+          }
+          else if (hashCode == HYPOTHETICAL_HASH)
+          {
+            return ICD10CMTraitName::HYPOTHETICAL;
+          }
+          else if (hashCode == LOW_CONFIDENCE_HASH)
+          {
+            return ICD10CMTraitName::LOW_CONFIDENCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +82,12 @@ namespace Aws
             return "SIGN";
           case ICD10CMTraitName::SYMPTOM:
             return "SYMPTOM";
+          case ICD10CMTraitName::PERTAINS_TO_FAMILY:
+            return "PERTAINS_TO_FAMILY";
+          case ICD10CMTraitName::HYPOTHETICAL:
+            return "HYPOTHETICAL";
+          case ICD10CMTraitName::LOW_CONFIDENCE:
+            return "LOW_CONFIDENCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

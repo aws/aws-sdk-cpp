@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API TimeRange();
+    AWS_SHIELD_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_fromInclusive;
-    bool m_fromInclusiveHasBeenSet;
+    bool m_fromInclusiveHasBeenSet = false;
 
     Aws::Utils::DateTime m_toExclusive;
-    bool m_toExclusiveHasBeenSet;
+    bool m_toExclusiveHasBeenSet = false;
   };
 
 } // namespace Model

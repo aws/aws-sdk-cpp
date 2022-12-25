@@ -30,82 +30,82 @@ namespace MediaTailor
 {
 namespace Model
 {
-  class AWS_MEDIATAILOR_API CreateChannelResult
+  class CreateChannelResult
   {
   public:
-    CreateChannelResult();
-    CreateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateChannelResult();
+    AWS_MEDIATAILOR_API CreateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIATAILOR_API CreateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline CreateChannelResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline CreateChannelResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the channel.</p>
+     * <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
      */
     inline CreateChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelName = value; }
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelName = std::move(value); }
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline void SetChannelName(const char* value) { m_channelName.assign(value); }
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline CreateChannelResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline CreateChannelResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the channel.</p>
+     * <p>The name to assign to the channel.</p>
      */
     inline CreateChannelResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
@@ -220,170 +220,218 @@ namespace Model
 
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline const Aws::Vector<ResponseOutputItem>& GetOutputs() const{ return m_outputs; }
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline void SetOutputs(const Aws::Vector<ResponseOutputItem>& value) { m_outputs = value; }
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline void SetOutputs(Aws::Vector<ResponseOutputItem>&& value) { m_outputs = std::move(value); }
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline CreateChannelResult& WithOutputs(const Aws::Vector<ResponseOutputItem>& value) { SetOutputs(value); return *this;}
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline CreateChannelResult& WithOutputs(Aws::Vector<ResponseOutputItem>&& value) { SetOutputs(std::move(value)); return *this;}
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline CreateChannelResult& AddOutputs(const ResponseOutputItem& value) { m_outputs.push_back(value); return *this; }
 
     /**
-     * <p>The channel's output properties.</p>
+     * <p>The output properties to assign to the channel.</p>
      */
     inline CreateChannelResult& AddOutputs(ResponseOutputItem&& value) { m_outputs.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline void SetPlaybackMode(const Aws::String& value) { m_playbackMode = value; }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline void SetPlaybackMode(Aws::String&& value) { m_playbackMode = std::move(value); }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline void SetPlaybackMode(const char* value) { m_playbackMode.assign(value); }
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline CreateChannelResult& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline CreateChannelResult& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
     /**
-     * <p>The channel's playback mode.</p>
+     * <p>The playback mode to assign to the channel.</p>
      */
     inline CreateChannelResult& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
 
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the channel.</p>
+     * <p>The tags to assign to the channel. Tags are key-value pairs that you can
+     * associate with Amazon resources to help with organization, access control, and
+     * cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tier = value; }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tier = std::move(value); }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline void SetTier(const char* value) { m_tier.assign(value); }
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline CreateChannelResult& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline CreateChannelResult& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
-     * <p>The channel's tier.</p>
+     * <p>The tier of the channel.</p>
      */
     inline CreateChannelResult& WithTier(const char* value) { SetTier(value); return *this;}
 

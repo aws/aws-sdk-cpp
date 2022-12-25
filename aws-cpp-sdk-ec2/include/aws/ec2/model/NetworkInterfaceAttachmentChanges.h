@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAttachmentChanges">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfaceAttachmentChanges
+  class NetworkInterfaceAttachmentChanges
   {
   public:
-    NetworkInterfaceAttachmentChanges();
-    NetworkInterfaceAttachmentChanges(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfaceAttachmentChanges& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAttachmentChanges();
+    AWS_EC2_API NetworkInterfaceAttachmentChanges(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAttachmentChanges& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet;
+    bool m_attachmentIdHasBeenSet = false;
 
     bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet;
+    bool m_deleteOnTerminationHasBeenSet = false;
   };
 
 } // namespace Model

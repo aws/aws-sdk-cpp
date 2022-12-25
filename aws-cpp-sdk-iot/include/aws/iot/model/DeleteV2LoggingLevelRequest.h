@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOT_API DeleteV2LoggingLevelRequest : public IoTRequest
+  class DeleteV2LoggingLevelRequest : public IoTRequest
   {
   public:
-    DeleteV2LoggingLevelRequest();
+    AWS_IOT_API DeleteV2LoggingLevelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteV2LoggingLevel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOT_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     LogTargetType m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetName;
-    bool m_targetNameHasBeenSet;
+    bool m_targetNameHasBeenSet = false;
   };
 
 } // namespace Model

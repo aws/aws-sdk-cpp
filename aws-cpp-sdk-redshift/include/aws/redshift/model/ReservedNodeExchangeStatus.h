@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeExchangeStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ReservedNodeExchangeStatus
+  class ReservedNodeExchangeStatus
   {
   public:
-    ReservedNodeExchangeStatus();
-    ReservedNodeExchangeStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedNodeExchangeStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeExchangeStatus();
+    AWS_REDSHIFT_API ReservedNodeExchangeStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeExchangeStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -366,31 +366,31 @@ namespace Model
   private:
 
     Aws::String m_reservedNodeExchangeRequestId;
-    bool m_reservedNodeExchangeRequestIdHasBeenSet;
+    bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
 
     ReservedNodeExchangeStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestTime;
-    bool m_requestTimeHasBeenSet;
+    bool m_requestTimeHasBeenSet = false;
 
     Aws::String m_sourceReservedNodeId;
-    bool m_sourceReservedNodeIdHasBeenSet;
+    bool m_sourceReservedNodeIdHasBeenSet = false;
 
     Aws::String m_sourceReservedNodeType;
-    bool m_sourceReservedNodeTypeHasBeenSet;
+    bool m_sourceReservedNodeTypeHasBeenSet = false;
 
     int m_sourceReservedNodeCount;
-    bool m_sourceReservedNodeCountHasBeenSet;
+    bool m_sourceReservedNodeCountHasBeenSet = false;
 
     Aws::String m_targetReservedNodeOfferingId;
-    bool m_targetReservedNodeOfferingIdHasBeenSet;
+    bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 
     Aws::String m_targetReservedNodeType;
-    bool m_targetReservedNodeTypeHasBeenSet;
+    bool m_targetReservedNodeTypeHasBeenSet = false;
 
     int m_targetReservedNodeCount;
-    bool m_targetReservedNodeCountHasBeenSet;
+    bool m_targetReservedNodeCountHasBeenSet = false;
   };
 
 } // namespace Model

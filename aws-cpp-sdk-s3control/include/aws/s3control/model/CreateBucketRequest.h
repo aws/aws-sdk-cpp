@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API CreateBucketRequest : public S3ControlRequest
+  class CreateBucketRequest : public S3ControlRequest
   {
   public:
-    CreateBucketRequest();
+    AWS_S3CONTROL_API CreateBucketRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,12 +31,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateBucket"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The canned ACL to apply to the bucket.</p>  <p>This is not supported by
@@ -437,83 +441,83 @@ namespace Model
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline CreateBucketRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline CreateBucketRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Outposts where the bucket is being created.</p>  <p>This
-     * is required by Amazon S3 on Outposts buckets.</p> 
+     * ID is required by Amazon S3 on Outposts buckets.</p> 
      */
     inline CreateBucketRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 
   private:
 
     BucketCannedACL m_aCL;
-    bool m_aCLHasBeenSet;
+    bool m_aCLHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     CreateBucketConfiguration m_createBucketConfiguration;
-    bool m_createBucketConfigurationHasBeenSet;
+    bool m_createBucketConfigurationHasBeenSet = false;
 
     Aws::String m_grantFullControl;
-    bool m_grantFullControlHasBeenSet;
+    bool m_grantFullControlHasBeenSet = false;
 
     Aws::String m_grantRead;
-    bool m_grantReadHasBeenSet;
+    bool m_grantReadHasBeenSet = false;
 
     Aws::String m_grantReadACP;
-    bool m_grantReadACPHasBeenSet;
+    bool m_grantReadACPHasBeenSet = false;
 
     Aws::String m_grantWrite;
-    bool m_grantWriteHasBeenSet;
+    bool m_grantWriteHasBeenSet = false;
 
     Aws::String m_grantWriteACP;
-    bool m_grantWriteACPHasBeenSet;
+    bool m_grantWriteACPHasBeenSet = false;
 
     bool m_objectLockEnabledForBucket;
-    bool m_objectLockEnabledForBucketHasBeenSet;
+    bool m_objectLockEnabledForBucketHasBeenSet = false;
 
     Aws::String m_outpostId;
-    bool m_outpostIdHasBeenSet;
+    bool m_outpostIdHasBeenSet = false;
   };
 
 } // namespace Model

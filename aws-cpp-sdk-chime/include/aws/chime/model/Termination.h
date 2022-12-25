@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Termination">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API Termination
+  class Termination
   {
   public:
-    Termination();
-    Termination(Aws::Utils::Json::JsonView jsonValue);
-    Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Termination();
+    AWS_CHIME_API Termination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -229,19 +229,19 @@ namespace Model
   private:
 
     int m_cpsLimit;
-    bool m_cpsLimitHasBeenSet;
+    bool m_cpsLimitHasBeenSet = false;
 
     Aws::String m_defaultPhoneNumber;
-    bool m_defaultPhoneNumberHasBeenSet;
+    bool m_defaultPhoneNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_callingRegions;
-    bool m_callingRegionsHasBeenSet;
+    bool m_callingRegionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrAllowedList;
-    bool m_cidrAllowedListHasBeenSet;
+    bool m_cidrAllowedListHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

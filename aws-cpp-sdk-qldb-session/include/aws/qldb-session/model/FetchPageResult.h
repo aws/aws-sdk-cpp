@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/FetchPageResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API FetchPageResult
+  class FetchPageResult
   {
   public:
-    FetchPageResult();
-    FetchPageResult(Aws::Utils::Json::JsonView jsonValue);
-    FetchPageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API FetchPageResult();
+    AWS_QLDBSESSION_API FetchPageResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API FetchPageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Page m_page;
-    bool m_pageHasBeenSet;
+    bool m_pageHasBeenSet = false;
 
     TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet;
+    bool m_timingInformationHasBeenSet = false;
 
     IOUsage m_consumedIOs;
-    bool m_consumedIOsHasBeenSet;
+    bool m_consumedIOsHasBeenSet = false;
   };
 
 } // namespace Model

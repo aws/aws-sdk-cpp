@@ -24,18 +24,18 @@ namespace Model
 {
 
   /**
-   * <p>A parameter for a studio component script, in the form of a key:value
+   * <p>A parameter for a studio component script, in the form of a key-value
    * pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ScriptParameterKeyValue">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ScriptParameterKeyValue
+  class ScriptParameterKeyValue
   {
   public:
-    ScriptParameterKeyValue();
-    ScriptParameterKeyValue(Aws::Utils::Json::JsonView jsonValue);
-    ScriptParameterKeyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ScriptParameterKeyValue();
+    AWS_NIMBLESTUDIO_API ScriptParameterKeyValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ScriptParameterKeyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API GenerateDataKeyWithoutPlaintextRequest : public KMSRequest
+  class GenerateDataKeyWithoutPlaintextRequest : public KMSRequest
   {
   public:
-    GenerateDataKeyWithoutPlaintextRequest();
+    AWS_KMS_API GenerateDataKeyWithoutPlaintextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateDataKeyWithoutPlaintext"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -537,19 +537,19 @@ namespace Model
   private:
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-    bool m_encryptionContextHasBeenSet;
+    bool m_encryptionContextHasBeenSet = false;
 
     DataKeySpec m_keySpec;
-    bool m_keySpecHasBeenSet;
+    bool m_keySpecHasBeenSet = false;
 
     int m_numberOfBytes;
-    bool m_numberOfBytesHasBeenSet;
+    bool m_numberOfBytesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

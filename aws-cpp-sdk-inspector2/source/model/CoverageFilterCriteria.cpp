@@ -23,6 +23,9 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
+    m_lambdaFunctionTagsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -36,6 +39,9 @@ CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) :
     m_ec2InstanceTagsHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
     m_ecrRepositoryNameHasBeenSet(false),
+    m_lambdaFunctionNameHasBeenSet(false),
+    m_lambdaFunctionRuntimeHasBeenSet(false),
+    m_lambdaFunctionTagsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -49,7 +55,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {
-    Array<JsonView> accountIdJsonList = jsonValue.GetArray("accountId");
+    Aws::Utils::Array<JsonView> accountIdJsonList = jsonValue.GetArray("accountId");
     for(unsigned accountIdIndex = 0; accountIdIndex < accountIdJsonList.GetLength(); ++accountIdIndex)
     {
       m_accountId.push_back(accountIdJsonList[accountIdIndex].AsObject());
@@ -59,7 +65,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ec2InstanceTags"))
   {
-    Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
+    Aws::Utils::Array<JsonView> ec2InstanceTagsJsonList = jsonValue.GetArray("ec2InstanceTags");
     for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
     {
       m_ec2InstanceTags.push_back(ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject());
@@ -69,7 +75,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ecrImageTags"))
   {
-    Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
+    Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
     for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
     {
       m_ecrImageTags.push_back(ecrImageTagsJsonList[ecrImageTagsIndex].AsObject());
@@ -79,7 +85,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ecrRepositoryName"))
   {
-    Array<JsonView> ecrRepositoryNameJsonList = jsonValue.GetArray("ecrRepositoryName");
+    Aws::Utils::Array<JsonView> ecrRepositoryNameJsonList = jsonValue.GetArray("ecrRepositoryName");
     for(unsigned ecrRepositoryNameIndex = 0; ecrRepositoryNameIndex < ecrRepositoryNameJsonList.GetLength(); ++ecrRepositoryNameIndex)
     {
       m_ecrRepositoryName.push_back(ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject());
@@ -87,9 +93,39 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     m_ecrRepositoryNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaFunctionName"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
+    for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+    {
+      m_lambdaFunctionName.push_back(lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject());
+    }
+    m_lambdaFunctionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionRuntime"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
+    for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+    {
+      m_lambdaFunctionRuntime.push_back(lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject());
+    }
+    m_lambdaFunctionRuntimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lambdaFunctionTags"))
+  {
+    Aws::Utils::Array<JsonView> lambdaFunctionTagsJsonList = jsonValue.GetArray("lambdaFunctionTags");
+    for(unsigned lambdaFunctionTagsIndex = 0; lambdaFunctionTagsIndex < lambdaFunctionTagsJsonList.GetLength(); ++lambdaFunctionTagsIndex)
+    {
+      m_lambdaFunctionTags.push_back(lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject());
+    }
+    m_lambdaFunctionTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resourceId"))
   {
-    Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
+    Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
     for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
     {
       m_resourceId.push_back(resourceIdJsonList[resourceIdIndex].AsObject());
@@ -99,7 +135,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceType"))
   {
-    Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
+    Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
     for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
     {
       m_resourceType.push_back(resourceTypeJsonList[resourceTypeIndex].AsObject());
@@ -109,7 +145,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("scanStatusCode"))
   {
-    Array<JsonView> scanStatusCodeJsonList = jsonValue.GetArray("scanStatusCode");
+    Aws::Utils::Array<JsonView> scanStatusCodeJsonList = jsonValue.GetArray("scanStatusCode");
     for(unsigned scanStatusCodeIndex = 0; scanStatusCodeIndex < scanStatusCodeJsonList.GetLength(); ++scanStatusCodeIndex)
     {
       m_scanStatusCode.push_back(scanStatusCodeJsonList[scanStatusCodeIndex].AsObject());
@@ -119,7 +155,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("scanStatusReason"))
   {
-    Array<JsonView> scanStatusReasonJsonList = jsonValue.GetArray("scanStatusReason");
+    Aws::Utils::Array<JsonView> scanStatusReasonJsonList = jsonValue.GetArray("scanStatusReason");
     for(unsigned scanStatusReasonIndex = 0; scanStatusReasonIndex < scanStatusReasonJsonList.GetLength(); ++scanStatusReasonIndex)
     {
       m_scanStatusReason.push_back(scanStatusReasonJsonList[scanStatusReasonIndex].AsObject());
@@ -129,7 +165,7 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("scanType"))
   {
-    Array<JsonView> scanTypeJsonList = jsonValue.GetArray("scanType");
+    Aws::Utils::Array<JsonView> scanTypeJsonList = jsonValue.GetArray("scanType");
     for(unsigned scanTypeIndex = 0; scanTypeIndex < scanTypeJsonList.GetLength(); ++scanTypeIndex)
     {
       m_scanType.push_back(scanTypeJsonList[scanTypeIndex].AsObject());
@@ -146,7 +182,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_accountIdHasBeenSet)
   {
-   Array<JsonValue> accountIdJsonList(m_accountId.size());
+   Aws::Utils::Array<JsonValue> accountIdJsonList(m_accountId.size());
    for(unsigned accountIdIndex = 0; accountIdIndex < accountIdJsonList.GetLength(); ++accountIdIndex)
    {
      accountIdJsonList[accountIdIndex].AsObject(m_accountId[accountIdIndex].Jsonize());
@@ -157,7 +193,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_ec2InstanceTagsHasBeenSet)
   {
-   Array<JsonValue> ec2InstanceTagsJsonList(m_ec2InstanceTags.size());
+   Aws::Utils::Array<JsonValue> ec2InstanceTagsJsonList(m_ec2InstanceTags.size());
    for(unsigned ec2InstanceTagsIndex = 0; ec2InstanceTagsIndex < ec2InstanceTagsJsonList.GetLength(); ++ec2InstanceTagsIndex)
    {
      ec2InstanceTagsJsonList[ec2InstanceTagsIndex].AsObject(m_ec2InstanceTags[ec2InstanceTagsIndex].Jsonize());
@@ -168,7 +204,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_ecrImageTagsHasBeenSet)
   {
-   Array<JsonValue> ecrImageTagsJsonList(m_ecrImageTags.size());
+   Aws::Utils::Array<JsonValue> ecrImageTagsJsonList(m_ecrImageTags.size());
    for(unsigned ecrImageTagsIndex = 0; ecrImageTagsIndex < ecrImageTagsJsonList.GetLength(); ++ecrImageTagsIndex)
    {
      ecrImageTagsJsonList[ecrImageTagsIndex].AsObject(m_ecrImageTags[ecrImageTagsIndex].Jsonize());
@@ -179,7 +215,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_ecrRepositoryNameHasBeenSet)
   {
-   Array<JsonValue> ecrRepositoryNameJsonList(m_ecrRepositoryName.size());
+   Aws::Utils::Array<JsonValue> ecrRepositoryNameJsonList(m_ecrRepositoryName.size());
    for(unsigned ecrRepositoryNameIndex = 0; ecrRepositoryNameIndex < ecrRepositoryNameJsonList.GetLength(); ++ecrRepositoryNameIndex)
    {
      ecrRepositoryNameJsonList[ecrRepositoryNameIndex].AsObject(m_ecrRepositoryName[ecrRepositoryNameIndex].Jsonize());
@@ -188,9 +224,42 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   }
 
+  if(m_lambdaFunctionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionNameJsonList(m_lambdaFunctionName.size());
+   for(unsigned lambdaFunctionNameIndex = 0; lambdaFunctionNameIndex < lambdaFunctionNameJsonList.GetLength(); ++lambdaFunctionNameIndex)
+   {
+     lambdaFunctionNameJsonList[lambdaFunctionNameIndex].AsObject(m_lambdaFunctionName[lambdaFunctionNameIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionName", std::move(lambdaFunctionNameJsonList));
+
+  }
+
+  if(m_lambdaFunctionRuntimeHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionRuntimeJsonList(m_lambdaFunctionRuntime.size());
+   for(unsigned lambdaFunctionRuntimeIndex = 0; lambdaFunctionRuntimeIndex < lambdaFunctionRuntimeJsonList.GetLength(); ++lambdaFunctionRuntimeIndex)
+   {
+     lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
+
+  }
+
+  if(m_lambdaFunctionTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lambdaFunctionTagsJsonList(m_lambdaFunctionTags.size());
+   for(unsigned lambdaFunctionTagsIndex = 0; lambdaFunctionTagsIndex < lambdaFunctionTagsJsonList.GetLength(); ++lambdaFunctionTagsIndex)
+   {
+     lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject(m_lambdaFunctionTags[lambdaFunctionTagsIndex].Jsonize());
+   }
+   payload.WithArray("lambdaFunctionTags", std::move(lambdaFunctionTagsJsonList));
+
+  }
+
   if(m_resourceIdHasBeenSet)
   {
-   Array<JsonValue> resourceIdJsonList(m_resourceId.size());
+   Aws::Utils::Array<JsonValue> resourceIdJsonList(m_resourceId.size());
    for(unsigned resourceIdIndex = 0; resourceIdIndex < resourceIdJsonList.GetLength(); ++resourceIdIndex)
    {
      resourceIdJsonList[resourceIdIndex].AsObject(m_resourceId[resourceIdIndex].Jsonize());
@@ -201,7 +270,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_resourceTypeHasBeenSet)
   {
-   Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
+   Aws::Utils::Array<JsonValue> resourceTypeJsonList(m_resourceType.size());
    for(unsigned resourceTypeIndex = 0; resourceTypeIndex < resourceTypeJsonList.GetLength(); ++resourceTypeIndex)
    {
      resourceTypeJsonList[resourceTypeIndex].AsObject(m_resourceType[resourceTypeIndex].Jsonize());
@@ -212,7 +281,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_scanStatusCodeHasBeenSet)
   {
-   Array<JsonValue> scanStatusCodeJsonList(m_scanStatusCode.size());
+   Aws::Utils::Array<JsonValue> scanStatusCodeJsonList(m_scanStatusCode.size());
    for(unsigned scanStatusCodeIndex = 0; scanStatusCodeIndex < scanStatusCodeJsonList.GetLength(); ++scanStatusCodeIndex)
    {
      scanStatusCodeJsonList[scanStatusCodeIndex].AsObject(m_scanStatusCode[scanStatusCodeIndex].Jsonize());
@@ -223,7 +292,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_scanStatusReasonHasBeenSet)
   {
-   Array<JsonValue> scanStatusReasonJsonList(m_scanStatusReason.size());
+   Aws::Utils::Array<JsonValue> scanStatusReasonJsonList(m_scanStatusReason.size());
    for(unsigned scanStatusReasonIndex = 0; scanStatusReasonIndex < scanStatusReasonJsonList.GetLength(); ++scanStatusReasonIndex)
    {
      scanStatusReasonJsonList[scanStatusReasonIndex].AsObject(m_scanStatusReason[scanStatusReasonIndex].Jsonize());
@@ -234,7 +303,7 @@ JsonValue CoverageFilterCriteria::Jsonize() const
 
   if(m_scanTypeHasBeenSet)
   {
-   Array<JsonValue> scanTypeJsonList(m_scanType.size());
+   Aws::Utils::Array<JsonValue> scanTypeJsonList(m_scanType.size());
    for(unsigned scanTypeIndex = 0; scanTypeIndex < scanTypeJsonList.GetLength(); ++scanTypeIndex)
    {
      scanTypeJsonList[scanTypeIndex].AsObject(m_scanType[scanTypeIndex].Jsonize());

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ScheduleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API ScheduleConfiguration
+  class ScheduleConfiguration
   {
   public:
-    ScheduleConfiguration();
-    ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API ScheduleConfiguration();
+    AWS_MEDIATAILOR_API ScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API ScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     Transition m_transition;
-    bool m_transitionHasBeenSet;
+    bool m_transitionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,17 +27,17 @@ namespace Model
 
   /**
    * <p>An object with details the status of an Amazon Web Services account within
-   * your Amazon Inspector environment</p><p><h3>See Also:</h3>   <a
+   * your Amazon Inspector environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AccountState">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AccountState
+  class AccountState
   {
   public:
-    AccountState();
-    AccountState(Aws::Utils::Json::JsonView jsonValue);
-    AccountState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AccountState();
+    AWS_INSPECTOR2_API AccountState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AccountState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     ResourceState m_resourceState;
-    bool m_resourceStateHasBeenSet;
+    bool m_resourceStateHasBeenSet = false;
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

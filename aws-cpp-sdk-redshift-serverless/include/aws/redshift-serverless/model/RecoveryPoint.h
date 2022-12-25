@@ -30,13 +30,62 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RecoveryPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API RecoveryPoint
+  class RecoveryPoint
   {
   public:
-    RecoveryPoint();
-    RecoveryPoint(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint();
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline const Aws::String& GetNamespaceArn() const{ return m_namespaceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline bool NamespaceArnHasBeenSet() const { return m_namespaceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(const Aws::String& value) { m_namespaceArnHasBeenSet = true; m_namespaceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(Aws::String&& value) { m_namespaceArnHasBeenSet = true; m_namespaceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(const char* value) { m_namespaceArnHasBeenSet = true; m_namespaceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(const Aws::String& value) { SetNamespaceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(Aws::String&& value) { SetNamespaceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(const char* value) { SetNamespaceArn(value); return *this;}
 
 
     /**
@@ -215,20 +264,23 @@ namespace Model
 
   private:
 
+    Aws::String m_namespaceArn;
+    bool m_namespaceArnHasBeenSet = false;
+
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_recoveryPointCreateTime;
-    bool m_recoveryPointCreateTimeHasBeenSet;
+    bool m_recoveryPointCreateTimeHasBeenSet = false;
 
     Aws::String m_recoveryPointId;
-    bool m_recoveryPointIdHasBeenSet;
+    bool m_recoveryPointIdHasBeenSet = false;
 
     double m_totalSizeInMegaBytes;
-    bool m_totalSizeInMegaBytesHasBeenSet;
+    bool m_totalSizeInMegaBytesHasBeenSet = false;
 
     Aws::String m_workgroupName;
-    bool m_workgroupNameHasBeenSet;
+    bool m_workgroupNameHasBeenSet = false;
   };
 
 } // namespace Model

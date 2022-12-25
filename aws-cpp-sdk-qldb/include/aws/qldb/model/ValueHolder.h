@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ValueHolder">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API ValueHolder
+  class ValueHolder
   {
   public:
-    ValueHolder();
-    ValueHolder(Aws::Utils::Json::JsonView jsonValue);
-    ValueHolder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API ValueHolder();
+    AWS_QLDB_API ValueHolder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API ValueHolder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_ionText;
-    bool m_ionTextHasBeenSet;
+    bool m_ionTextHasBeenSet = false;
   };
 
 } // namespace Model

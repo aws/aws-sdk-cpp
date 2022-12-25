@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidationError">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ValidationError
+  class ValidationError
   {
   public:
-    ValidationError();
-    ValidationError(Aws::Utils::Json::JsonView jsonValue);
-    ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ValidationError();
+    AWS_IOT_API ValidationError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

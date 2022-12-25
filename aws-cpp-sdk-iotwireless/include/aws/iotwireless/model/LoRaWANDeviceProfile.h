@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDeviceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANDeviceProfile
+  class LoRaWANDeviceProfile
   {
   public:
-    LoRaWANDeviceProfile();
-    LoRaWANDeviceProfile(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANDeviceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANDeviceProfile();
+    AWS_IOTWIRELESS_API LoRaWANDeviceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANDeviceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -522,61 +522,61 @@ namespace Model
   private:
 
     bool m_supportsClassB;
-    bool m_supportsClassBHasBeenSet;
+    bool m_supportsClassBHasBeenSet = false;
 
     int m_classBTimeout;
-    bool m_classBTimeoutHasBeenSet;
+    bool m_classBTimeoutHasBeenSet = false;
 
     int m_pingSlotPeriod;
-    bool m_pingSlotPeriodHasBeenSet;
+    bool m_pingSlotPeriodHasBeenSet = false;
 
     int m_pingSlotDr;
-    bool m_pingSlotDrHasBeenSet;
+    bool m_pingSlotDrHasBeenSet = false;
 
     int m_pingSlotFreq;
-    bool m_pingSlotFreqHasBeenSet;
+    bool m_pingSlotFreqHasBeenSet = false;
 
     bool m_supportsClassC;
-    bool m_supportsClassCHasBeenSet;
+    bool m_supportsClassCHasBeenSet = false;
 
     int m_classCTimeout;
-    bool m_classCTimeoutHasBeenSet;
+    bool m_classCTimeoutHasBeenSet = false;
 
     Aws::String m_macVersion;
-    bool m_macVersionHasBeenSet;
+    bool m_macVersionHasBeenSet = false;
 
     Aws::String m_regParamsRevision;
-    bool m_regParamsRevisionHasBeenSet;
+    bool m_regParamsRevisionHasBeenSet = false;
 
     int m_rxDelay1;
-    bool m_rxDelay1HasBeenSet;
+    bool m_rxDelay1HasBeenSet = false;
 
     int m_rxDrOffset1;
-    bool m_rxDrOffset1HasBeenSet;
+    bool m_rxDrOffset1HasBeenSet = false;
 
     int m_rxDataRate2;
-    bool m_rxDataRate2HasBeenSet;
+    bool m_rxDataRate2HasBeenSet = false;
 
     int m_rxFreq2;
-    bool m_rxFreq2HasBeenSet;
+    bool m_rxFreq2HasBeenSet = false;
 
     Aws::Vector<int> m_factoryPresetFreqsList;
-    bool m_factoryPresetFreqsListHasBeenSet;
+    bool m_factoryPresetFreqsListHasBeenSet = false;
 
     int m_maxEirp;
-    bool m_maxEirpHasBeenSet;
+    bool m_maxEirpHasBeenSet = false;
 
     int m_maxDutyCycle;
-    bool m_maxDutyCycleHasBeenSet;
+    bool m_maxDutyCycleHasBeenSet = false;
 
     Aws::String m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     bool m_supportsJoin;
-    bool m_supportsJoinHasBeenSet;
+    bool m_supportsJoinHasBeenSet = false;
 
     bool m_supports32BitFCnt;
-    bool m_supports32BitFCntHasBeenSet;
+    bool m_supports32BitFCntHasBeenSet = false;
   };
 
 } // namespace Model

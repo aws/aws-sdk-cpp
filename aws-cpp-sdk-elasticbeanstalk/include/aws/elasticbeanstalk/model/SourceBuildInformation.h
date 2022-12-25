@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SourceBuildInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API SourceBuildInformation
+  class SourceBuildInformation
   {
   public:
-    SourceBuildInformation();
-    SourceBuildInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SourceBuildInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SourceBuildInformation();
+    AWS_ELASTICBEANSTALK_API SourceBuildInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SourceBuildInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -215,13 +215,13 @@ namespace Model
   private:
 
     SourceType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
 
     SourceRepository m_sourceRepository;
-    bool m_sourceRepositoryHasBeenSet;
+    bool m_sourceRepositoryHasBeenSet = false;
 
     Aws::String m_sourceLocation;
-    bool m_sourceLocationHasBeenSet;
+    bool m_sourceLocationHasBeenSet = false;
   };
 
 } // namespace Model

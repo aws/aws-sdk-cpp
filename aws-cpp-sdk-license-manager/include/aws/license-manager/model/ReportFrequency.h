@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReportFrequency">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ReportFrequency
+  class ReportFrequency
   {
   public:
-    ReportFrequency();
-    ReportFrequency(Aws::Utils::Json::JsonView jsonValue);
-    ReportFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ReportFrequency();
+    AWS_LICENSEMANAGER_API ReportFrequency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ReportFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     ReportFrequencyType m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
   };
 
 } // namespace Model

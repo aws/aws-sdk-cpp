@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExportRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportRequest : public MarketplaceCommerceAnalyticsRequest
+  class StartSupportDataExportRequest : public MarketplaceCommerceAnalyticsRequest
   {
   public:
-    StartSupportDataExportRequest();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSupportDataExport"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -476,25 +476,25 @@ namespace Model
   private:
 
     SupportDataSetType m_dataSetType;
-    bool m_dataSetTypeHasBeenSet;
+    bool m_dataSetTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_fromDate;
-    bool m_fromDateHasBeenSet;
+    bool m_fromDateHasBeenSet = false;
 
     Aws::String m_roleNameArn;
-    bool m_roleNameArnHasBeenSet;
+    bool m_roleNameArnHasBeenSet = false;
 
     Aws::String m_destinationS3BucketName;
-    bool m_destinationS3BucketNameHasBeenSet;
+    bool m_destinationS3BucketNameHasBeenSet = false;
 
     Aws::String m_destinationS3Prefix;
-    bool m_destinationS3PrefixHasBeenSet;
+    bool m_destinationS3PrefixHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customerDefinedValues;
-    bool m_customerDefinedValuesHasBeenSet;
+    bool m_customerDefinedValuesHasBeenSet = false;
   };
 
 } // namespace Model

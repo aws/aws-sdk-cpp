@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API PauseClusterMessage
+  class PauseClusterMessage
   {
   public:
-    PauseClusterMessage();
-    PauseClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PauseClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API PauseClusterMessage();
+    AWS_REDSHIFT_API PauseClusterMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API PauseClusterMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

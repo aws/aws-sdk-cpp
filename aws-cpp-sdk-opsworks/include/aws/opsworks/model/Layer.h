@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Layer">AWS API
    * Reference</a></p>
    */
-  class AWS_OPSWORKS_API Layer
+  class Layer
   {
   public:
-    Layer();
-    Layer(Aws::Utils::Json::JsonView jsonValue);
-    Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Layer();
+    AWS_OPSWORKS_API Layer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1106,73 +1106,73 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_layerId;
-    bool m_layerIdHasBeenSet;
+    bool m_layerIdHasBeenSet = false;
 
     LayerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_shortname;
-    bool m_shortnameHasBeenSet;
+    bool m_shortnameHasBeenSet = false;
 
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
-    bool m_cloudWatchLogsConfigurationHasBeenSet;
+    bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
     Aws::String m_customInstanceProfileArn;
-    bool m_customInstanceProfileArnHasBeenSet;
+    bool m_customInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_customJson;
-    bool m_customJsonHasBeenSet;
+    bool m_customJsonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
-    bool m_customSecurityGroupIdsHasBeenSet;
+    bool m_customSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_defaultSecurityGroupNames;
-    bool m_defaultSecurityGroupNamesHasBeenSet;
+    bool m_defaultSecurityGroupNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_packages;
-    bool m_packagesHasBeenSet;
+    bool m_packagesHasBeenSet = false;
 
     Aws::Vector<VolumeConfiguration> m_volumeConfigurations;
-    bool m_volumeConfigurationsHasBeenSet;
+    bool m_volumeConfigurationsHasBeenSet = false;
 
     bool m_enableAutoHealing;
-    bool m_enableAutoHealingHasBeenSet;
+    bool m_enableAutoHealingHasBeenSet = false;
 
     bool m_autoAssignElasticIps;
-    bool m_autoAssignElasticIpsHasBeenSet;
+    bool m_autoAssignElasticIpsHasBeenSet = false;
 
     bool m_autoAssignPublicIps;
-    bool m_autoAssignPublicIpsHasBeenSet;
+    bool m_autoAssignPublicIpsHasBeenSet = false;
 
     Recipes m_defaultRecipes;
-    bool m_defaultRecipesHasBeenSet;
+    bool m_defaultRecipesHasBeenSet = false;
 
     Recipes m_customRecipes;
-    bool m_customRecipesHasBeenSet;
+    bool m_customRecipesHasBeenSet = false;
 
     Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     bool m_installUpdatesOnBoot;
-    bool m_installUpdatesOnBootHasBeenSet;
+    bool m_installUpdatesOnBootHasBeenSet = false;
 
     bool m_useEbsOptimizedInstances;
-    bool m_useEbsOptimizedInstancesHasBeenSet;
+    bool m_useEbsOptimizedInstancesHasBeenSet = false;
 
     LifecycleEventConfiguration m_lifecycleEventConfiguration;
-    bool m_lifecycleEventConfigurationHasBeenSet;
+    bool m_lifecycleEventConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

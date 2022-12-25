@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/EndPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API EndPoint
+  class EndPoint
   {
   public:
-    EndPoint();
-    EndPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EndPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EndPoint();
+    AWS_CLOUDFRONT_API EndPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EndPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_streamType;
-    bool m_streamTypeHasBeenSet;
+    bool m_streamTypeHasBeenSet = false;
 
     KinesisStreamConfig m_kinesisStreamConfig;
-    bool m_kinesisStreamConfigHasBeenSet;
+    bool m_kinesisStreamConfigHasBeenSet = false;
   };
 
 } // namespace Model

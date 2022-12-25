@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/JobStoppingCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API JobStoppingCondition
+  class JobStoppingCondition
   {
   public:
-    JobStoppingCondition();
-    JobStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
-    JobStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API JobStoppingCondition();
+    AWS_BRAKET_API JobStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API JobStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

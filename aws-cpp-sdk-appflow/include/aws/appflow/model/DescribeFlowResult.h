@@ -13,8 +13,10 @@
 #include <aws/appflow/model/TriggerConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appflow/model/MetadataCatalogConfig.h>
 #include <aws/appflow/model/DestinationFlowConfig.h>
 #include <aws/appflow/model/Task.h>
+#include <aws/appflow/model/MetadataCatalogDetail.h>
 #include <utility>
 
 namespace Aws
@@ -33,12 +35,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API DescribeFlowResult
+  class DescribeFlowResult
   {
   public:
-    DescribeFlowResult();
-    DescribeFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DescribeFlowResult();
+    AWS_APPFLOW_API DescribeFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DescribeFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -642,6 +644,113 @@ namespace Model
      */
     inline DescribeFlowResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline const MetadataCatalogConfig& GetMetadataCatalogConfig() const{ return m_metadataCatalogConfig; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(const MetadataCatalogConfig& value) { m_metadataCatalogConfig = value; }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline void SetMetadataCatalogConfig(MetadataCatalogConfig&& value) { m_metadataCatalogConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline DescribeFlowResult& WithMetadataCatalogConfig(const MetadataCatalogConfig& value) { SetMetadataCatalogConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the
+     * data that's transferred by the associated flow. When Amazon AppFlow catalogs the
+     * data from a flow, it stores metadata in a data catalog.</p>
+     */
+    inline DescribeFlowResult& WithMetadataCatalogConfig(MetadataCatalogConfig&& value) { SetMetadataCatalogConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline const Aws::Vector<MetadataCatalogDetail>& GetLastRunMetadataCatalogDetails() const{ return m_lastRunMetadataCatalogDetails; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline void SetLastRunMetadataCatalogDetails(const Aws::Vector<MetadataCatalogDetail>& value) { m_lastRunMetadataCatalogDetails = value; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline void SetLastRunMetadataCatalogDetails(Aws::Vector<MetadataCatalogDetail>&& value) { m_lastRunMetadataCatalogDetails = std::move(value); }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline DescribeFlowResult& WithLastRunMetadataCatalogDetails(const Aws::Vector<MetadataCatalogDetail>& value) { SetLastRunMetadataCatalogDetails(value); return *this;}
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline DescribeFlowResult& WithLastRunMetadataCatalogDetails(Aws::Vector<MetadataCatalogDetail>&& value) { SetLastRunMetadataCatalogDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline DescribeFlowResult& AddLastRunMetadataCatalogDetails(const MetadataCatalogDetail& value) { m_lastRunMetadataCatalogDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the metadata catalog, metadata table, and data partitions that
+     * Amazon AppFlow used for the associated flow run.</p>
+     */
+    inline DescribeFlowResult& AddLastRunMetadataCatalogDetails(MetadataCatalogDetail&& value) { m_lastRunMetadataCatalogDetails.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The version number of your data schema. Amazon AppFlow assigns this version
+     * number. The version number increases by one when you change any of the following
+     * settings in your flow configuration:</p> <ul> <li> <p>Source-to-destination
+     * field mappings</p> </li> <li> <p>Field data types</p> </li> <li> <p>Partition
+     * keys</p> </li> </ul>
+     */
+    inline long long GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The version number of your data schema. Amazon AppFlow assigns this version
+     * number. The version number increases by one when you change any of the following
+     * settings in your flow configuration:</p> <ul> <li> <p>Source-to-destination
+     * field mappings</p> </li> <li> <p>Field data types</p> </li> <li> <p>Partition
+     * keys</p> </li> </ul>
+     */
+    inline void SetSchemaVersion(long long value) { m_schemaVersion = value; }
+
+    /**
+     * <p>The version number of your data schema. Amazon AppFlow assigns this version
+     * number. The version number increases by one when you change any of the following
+     * settings in your flow configuration:</p> <ul> <li> <p>Source-to-destination
+     * field mappings</p> </li> <li> <p>Field data types</p> </li> <li> <p>Partition
+     * keys</p> </li> </ul>
+     */
+    inline DescribeFlowResult& WithSchemaVersion(long long value) { SetSchemaVersion(value); return *this;}
+
   private:
 
     Aws::String m_flowArn;
@@ -675,6 +784,12 @@ namespace Model
     Aws::String m_lastUpdatedBy;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    MetadataCatalogConfig m_metadataCatalogConfig;
+
+    Aws::Vector<MetadataCatalogDetail> m_lastRunMetadataCatalogDetails;
+
+    long long m_schemaVersion;
   };
 
 } // namespace Model

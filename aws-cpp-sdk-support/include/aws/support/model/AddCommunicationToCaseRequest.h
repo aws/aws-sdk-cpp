@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SUPPORT_API AddCommunicationToCaseRequest : public SupportRequest
+  class AddCommunicationToCaseRequest : public SupportRequest
   {
   public:
-    AddCommunicationToCaseRequest();
+    AWS_SUPPORT_API AddCommunicationToCaseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddCommunicationToCase"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SUPPORT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SUPPORT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -239,16 +239,16 @@ namespace Model
   private:
 
     Aws::String m_caseId;
-    bool m_caseIdHasBeenSet;
+    bool m_caseIdHasBeenSet = false;
 
     Aws::String m_communicationBody;
-    bool m_communicationBodyHasBeenSet;
+    bool m_communicationBodyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ccEmailAddresses;
-    bool m_ccEmailAddressesHasBeenSet;
+    bool m_ccEmailAddressesHasBeenSet = false;
 
     Aws::String m_attachmentSetId;
-    bool m_attachmentSetIdHasBeenSet;
+    bool m_attachmentSetIdHasBeenSet = false;
   };
 
 } // namespace Model

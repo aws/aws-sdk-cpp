@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MsSmoothGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MsSmoothGroupSettings
+  class MsSmoothGroupSettings
   {
   public:
-    MsSmoothGroupSettings();
-    MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MsSmoothGroupSettings();
+    AWS_MEDIACONVERT_API MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -437,28 +437,28 @@ namespace Model
   private:
 
     Aws::Vector<MsSmoothAdditionalManifest> m_additionalManifests;
-    bool m_additionalManifestsHasBeenSet;
+    bool m_additionalManifestsHasBeenSet = false;
 
     MsSmoothAudioDeduplication m_audioDeduplication;
-    bool m_audioDeduplicationHasBeenSet;
+    bool m_audioDeduplicationHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     MsSmoothEncryptionSettings m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
 
     int m_fragmentLength;
-    bool m_fragmentLengthHasBeenSet;
+    bool m_fragmentLengthHasBeenSet = false;
 
     MsSmoothFragmentLengthControl m_fragmentLengthControl;
-    bool m_fragmentLengthControlHasBeenSet;
+    bool m_fragmentLengthControlHasBeenSet = false;
 
     MsSmoothManifestEncoding m_manifestEncoding;
-    bool m_manifestEncodingHasBeenSet;
+    bool m_manifestEncodingHasBeenSet = false;
   };
 
 } // namespace Model

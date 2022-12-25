@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelInput
+  class ModelInput
   {
   public:
-    ModelInput();
-    ModelInput(Aws::Utils::Json::JsonView jsonValue);
-    ModelInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelInput();
+    AWS_SAGEMAKER_API ModelInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_dataInputConfig;
-    bool m_dataInputConfigHasBeenSet;
+    bool m_dataInputConfigHasBeenSet = false;
   };
 
 } // namespace Model

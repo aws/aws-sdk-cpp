@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/InternalException">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API InternalException
+  class InternalException
   {
   public:
-    InternalException();
-    InternalException(Aws::Utils::Json::JsonView jsonValue);
-    InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API InternalException();
+    AWS_DATASYNC_API InternalException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API InternalException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

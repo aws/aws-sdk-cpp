@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Resolution">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Resolution
+  class Resolution
   {
   public:
-    Resolution();
-    Resolution(Aws::Utils::Json::JsonView jsonValue);
-    Resolution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Resolution();
+    AWS_DEVICEFARM_API Resolution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Resolution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
   };
 
 } // namespace Model

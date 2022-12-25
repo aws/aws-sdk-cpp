@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecordResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API UsageRecordResult
+  class UsageRecordResult
   {
   public:
-    UsageRecordResult();
-    UsageRecordResult(Aws::Utils::Json::JsonView jsonValue);
-    UsageRecordResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEMETERING_API UsageRecordResult();
+    AWS_MARKETPLACEMETERING_API UsageRecordResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API UsageRecordResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,13 +250,13 @@ namespace Model
   private:
 
     UsageRecord m_usageRecord;
-    bool m_usageRecordHasBeenSet;
+    bool m_usageRecordHasBeenSet = false;
 
     Aws::String m_meteringRecordId;
-    bool m_meteringRecordIdHasBeenSet;
+    bool m_meteringRecordIdHasBeenSet = false;
 
     UsageRecordResultStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MGN_API DeleteVcenterClientRequest : public MgnRequest
+  class DeleteVcenterClientRequest : public MgnRequest
   {
   public:
-    DeleteVcenterClientRequest();
+    AWS_MGN_API DeleteVcenterClientRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteVcenterClient"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MGN_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConflictingOperationException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ConflictingOperationException
+  class ConflictingOperationException
   {
   public:
-    ConflictingOperationException();
-    ConflictingOperationException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictingOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ConflictingOperationException();
+    AWS_IOTSITEWISE_API ConflictingOperationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ConflictingOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

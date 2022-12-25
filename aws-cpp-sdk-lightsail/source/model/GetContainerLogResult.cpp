@@ -30,7 +30,7 @@ GetContainerLogResult& GetContainerLogResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logEvents"))
   {
-    Array<JsonView> logEventsJsonList = jsonValue.GetArray("logEvents");
+    Aws::Utils::Array<JsonView> logEventsJsonList = jsonValue.GetArray("logEvents");
     for(unsigned logEventsIndex = 0; logEventsIndex < logEventsJsonList.GetLength(); ++logEventsIndex)
     {
       m_logEvents.push_back(logEventsJsonList[logEventsIndex].AsObject());

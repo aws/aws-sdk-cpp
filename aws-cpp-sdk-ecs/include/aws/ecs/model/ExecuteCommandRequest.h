@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API ExecuteCommandRequest : public ECSRequest
+  class ExecuteCommandRequest : public ECSRequest
   {
   public:
-    ExecuteCommandRequest();
+    AWS_ECS_API ExecuteCommandRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExecuteCommand"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -245,19 +245,19 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_container;
-    bool m_containerHasBeenSet;
+    bool m_containerHasBeenSet = false;
 
     Aws::String m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     bool m_interactive;
-    bool m_interactiveHasBeenSet;
+    bool m_interactiveHasBeenSet = false;
 
     Aws::String m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
   };
 
 } // namespace Model

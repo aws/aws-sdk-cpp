@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceEventWindowTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceEventWindowTimeRange
+  class InstanceEventWindowTimeRange
   {
   public:
-    InstanceEventWindowTimeRange();
-    InstanceEventWindowTimeRange(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceEventWindowTimeRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceEventWindowTimeRange();
+    AWS_EC2_API InstanceEventWindowTimeRange(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceEventWindowTimeRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -146,16 +146,16 @@ namespace Model
   private:
 
     WeekDay m_startWeekDay;
-    bool m_startWeekDayHasBeenSet;
+    bool m_startWeekDayHasBeenSet = false;
 
     int m_startHour;
-    bool m_startHourHasBeenSet;
+    bool m_startHourHasBeenSet = false;
 
     WeekDay m_endWeekDay;
-    bool m_endWeekDayHasBeenSet;
+    bool m_endWeekDayHasBeenSet = false;
 
     int m_endHour;
-    bool m_endHourHasBeenSet;
+    bool m_endHourHasBeenSet = false;
   };
 
 } // namespace Model

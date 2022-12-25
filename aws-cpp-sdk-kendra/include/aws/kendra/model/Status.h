@@ -30,52 +30,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Status">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Status
+  class Status
   {
   public:
-    Status();
-    Status(Aws::Utils::Json::JsonView jsonValue);
-    Status& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Status();
+    AWS_KENDRA_API Status(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Status& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the document.</p>
+     * <p>The identifier of the document.</p>
      */
     inline Status& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
 
@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::String m_documentId;
-    bool m_documentIdHasBeenSet;
+    bool m_documentIdHasBeenSet = false;
 
     DocumentStatus m_documentStatus;
-    bool m_documentStatusHasBeenSet;
+    bool m_documentStatusHasBeenSet = false;
 
     Aws::String m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

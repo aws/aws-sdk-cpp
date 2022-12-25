@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EnrollmentFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API EnrollmentFilter
+  class EnrollmentFilter
   {
   public:
-    EnrollmentFilter();
-    EnrollmentFilter(Aws::Utils::Json::JsonView jsonValue);
-    EnrollmentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API EnrollmentFilter();
+    AWS_COMPUTEOPTIMIZER_API EnrollmentFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API EnrollmentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     EnrollmentFilterName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/WirelessConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API WirelessConnection
+  class WirelessConnection
   {
   public:
-    WirelessConnection();
-    WirelessConnection(Aws::Utils::Json::JsonView jsonValue);
-    WirelessConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API WirelessConnection();
+    AWS_SNOWBALL_API WirelessConnection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API WirelessConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_isWifiEnabled;
-    bool m_isWifiEnabledHasBeenSet;
+    bool m_isWifiEnabledHasBeenSet = false;
   };
 
 } // namespace Model

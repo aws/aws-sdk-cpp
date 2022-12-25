@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/KinesisFirehoseDestinationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails
+  class KinesisFirehoseDestinationDetails
   {
   public:
-    KinesisFirehoseDestinationDetails();
-    KinesisFirehoseDestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KinesisFirehoseDestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails();
+    AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API KinesisFirehoseDestinationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_deliveryStream;
-    bool m_deliveryStreamHasBeenSet;
+    bool m_deliveryStreamHasBeenSet = false;
   };
 
 } // namespace Model

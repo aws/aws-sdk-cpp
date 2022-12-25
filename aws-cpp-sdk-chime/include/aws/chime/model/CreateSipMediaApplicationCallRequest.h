@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API CreateSipMediaApplicationCallRequest : public ChimeRequest
+  class CreateSipMediaApplicationCallRequest : public ChimeRequest
   {
   public:
-    CreateSipMediaApplicationCallRequest();
+    AWS_CHIME_API CreateSipMediaApplicationCallRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateSipMediaApplicationCall"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_fromPhoneNumber;
-    bool m_fromPhoneNumberHasBeenSet;
+    bool m_fromPhoneNumberHasBeenSet = false;
 
     Aws::String m_toPhoneNumber;
-    bool m_toPhoneNumberHasBeenSet;
+    bool m_toPhoneNumberHasBeenSet = false;
 
     Aws::String m_sipMediaApplicationId;
-    bool m_sipMediaApplicationIdHasBeenSet;
+    bool m_sipMediaApplicationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sipHeaders;
-    bool m_sipHeadersHasBeenSet;
+    bool m_sipHeadersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SecurityGroupIpRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2SecurityGroupIpRange
+  class AwsEc2SecurityGroupIpRange
   {
   public:
-    AwsEc2SecurityGroupIpRange();
-    AwsEc2SecurityGroupIpRange(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2SecurityGroupIpRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpRange();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
   };
 
 } // namespace Model

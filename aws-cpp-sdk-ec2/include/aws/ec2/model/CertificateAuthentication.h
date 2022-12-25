@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CertificateAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CertificateAuthentication
+  class CertificateAuthentication
   {
   public:
-    CertificateAuthentication();
-    CertificateAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CertificateAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CertificateAuthentication();
+    AWS_EC2_API CertificateAuthentication(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CertificateAuthentication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_clientRootCertificateChain;
-    bool m_clientRootCertificateChainHasBeenSet;
+    bool m_clientRootCertificateChainHasBeenSet = false;
   };
 
 } // namespace Model

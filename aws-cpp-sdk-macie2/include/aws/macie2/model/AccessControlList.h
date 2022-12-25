@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccessControlList">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AccessControlList
+  class AccessControlList
   {
   public:
-    AccessControlList();
-    AccessControlList(Aws::Utils::Json::JsonView jsonValue);
-    AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AccessControlList();
+    AWS_MACIE2_API AccessControlList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_allowsPublicReadAccess;
-    bool m_allowsPublicReadAccessHasBeenSet;
+    bool m_allowsPublicReadAccessHasBeenSet = false;
 
     bool m_allowsPublicWriteAccess;
-    bool m_allowsPublicWriteAccessHasBeenSet;
+    bool m_allowsPublicWriteAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DataSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API DataSourceConfiguration
+  class DataSourceConfiguration
   {
   public:
-    DataSourceConfiguration();
-    DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API DataSourceConfiguration();
+    AWS_LOCATIONSERVICE_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -104,7 +104,7 @@ namespace Model
   private:
 
     IntendedUse m_intendedUse;
-    bool m_intendedUseHasBeenSet;
+    bool m_intendedUseHasBeenSet = false;
   };
 
 } // namespace Model

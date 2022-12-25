@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DefaultDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API DefaultDetection
+  class DefaultDetection
   {
   public:
-    DefaultDetection();
-    DefaultDetection(Aws::Utils::Json::JsonView jsonValue);
-    DefaultDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API DefaultDetection();
+    AWS_MACIE2_API DefaultDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API DefaultDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     long long m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Occurrences m_occurrences;
-    bool m_occurrencesHasBeenSet;
+    bool m_occurrencesHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTemplateCloudWatchLogsLogConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentTemplateCloudWatchLogsLogConfigurationInput
+  class ExperimentTemplateCloudWatchLogsLogConfigurationInput
   {
   public:
-    ExperimentTemplateCloudWatchLogsLogConfigurationInput();
-    ExperimentTemplateCloudWatchLogsLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentTemplateCloudWatchLogsLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentTemplateCloudWatchLogsLogConfigurationInput();
+    AWS_FIS_API ExperimentTemplateCloudWatchLogsLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentTemplateCloudWatchLogsLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_logGroupArn;
-    bool m_logGroupArnHasBeenSet;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

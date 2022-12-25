@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API UpdateGlobalSettingsRequest : public BackupRequest
+  class UpdateGlobalSettingsRequest : public BackupRequest
   {
   public:
-    UpdateGlobalSettingsRequest();
+    AWS_BACKUP_API UpdateGlobalSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateGlobalSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -127,7 +127,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_globalSettings;
-    bool m_globalSettingsHasBeenSet;
+    bool m_globalSettingsHasBeenSet = false;
   };
 
 } // namespace Model

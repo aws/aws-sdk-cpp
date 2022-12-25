@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API VoteSummary
+  class VoteSummary
   {
   public:
-    VoteSummary();
-    VoteSummary(Aws::Utils::Json::JsonView jsonValue);
-    VoteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API VoteSummary();
+    AWS_MANAGEDBLOCKCHAIN_API VoteSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API VoteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     VoteValue m_vote;
-    bool m_voteHasBeenSet;
+    bool m_voteHasBeenSet = false;
 
     Aws::String m_memberName;
-    bool m_memberNameHasBeenSet;
+    bool m_memberNameHasBeenSet = false;
 
     Aws::String m_memberId;
-    bool m_memberIdHasBeenSet;
+    bool m_memberIdHasBeenSet = false;
   };
 
 } // namespace Model

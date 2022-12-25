@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ImageLayerAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ImageLayerAggregation
+  class ImageLayerAggregation
   {
   public:
-    ImageLayerAggregation();
-    ImageLayerAggregation(Aws::Utils::Json::JsonView jsonValue);
-    ImageLayerAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ImageLayerAggregation();
+    AWS_INSPECTOR2_API ImageLayerAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ImageLayerAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,19 +228,19 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_layerHashes;
-    bool m_layerHashesHasBeenSet;
+    bool m_layerHashesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet;
+    bool m_repositoriesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceIds;
-    bool m_resourceIdsHasBeenSet;
+    bool m_resourceIdsHasBeenSet = false;
 
     ImageLayerSortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionSignaledEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionSignaledEventAttributes
+  class WorkflowExecutionSignaledEventAttributes
   {
   public:
-    WorkflowExecutionSignaledEventAttributes();
-    WorkflowExecutionSignaledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionSignaledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionSignaledEventAttributes();
+    AWS_SWF_API WorkflowExecutionSignaledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionSignaledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_signalName;
-    bool m_signalNameHasBeenSet;
+    bool m_signalNameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     WorkflowExecution m_externalWorkflowExecution;
-    bool m_externalWorkflowExecutionHasBeenSet;
+    bool m_externalWorkflowExecutionHasBeenSet = false;
 
     long long m_externalInitiatedEventId;
-    bool m_externalInitiatedEventIdHasBeenSet;
+    bool m_externalInitiatedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

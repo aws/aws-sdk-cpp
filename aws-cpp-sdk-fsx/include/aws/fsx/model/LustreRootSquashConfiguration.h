@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreRootSquashConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LustreRootSquashConfiguration
+  class LustreRootSquashConfiguration
   {
   public:
-    LustreRootSquashConfiguration();
-    LustreRootSquashConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LustreRootSquashConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LustreRootSquashConfiguration();
+    AWS_FSX_API LustreRootSquashConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LustreRootSquashConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -262,10 +262,10 @@ namespace Model
   private:
 
     Aws::String m_rootSquash;
-    bool m_rootSquashHasBeenSet;
+    bool m_rootSquashHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_noSquashNids;
-    bool m_noSquashNidsHasBeenSet;
+    bool m_noSquashNidsHasBeenSet = false;
   };
 
 } // namespace Model

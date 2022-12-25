@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Grant">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3Grant
+  class S3Grant
   {
   public:
-    S3Grant();
-    S3Grant(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Grant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Grant();
+    AWS_S3CONTROL_API S3Grant(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Grant& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     S3Grantee m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     S3Permission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

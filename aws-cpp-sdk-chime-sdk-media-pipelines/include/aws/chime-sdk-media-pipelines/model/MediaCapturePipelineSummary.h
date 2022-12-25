@@ -24,107 +24,107 @@ namespace Model
 {
 
   /**
-   * <p>A summary of a media capture pipeline.</p><p><h3>See Also:</h3>   <a
+   * <p>The summary data of a media capture pipeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/MediaCapturePipelineSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSummary
+  class MediaCapturePipelineSummary
   {
   public:
-    MediaCapturePipelineSummary();
-    MediaCapturePipelineSummary(Aws::Utils::Json::JsonView jsonValue);
-    MediaCapturePipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSummary();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline const Aws::String& GetMediaPipelineId() const{ return m_mediaPipelineId; }
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline bool MediaPipelineIdHasBeenSet() const { return m_mediaPipelineIdHasBeenSet; }
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineId(const Aws::String& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = value; }
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineId(Aws::String&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::move(value); }
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineId(const char* value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId.assign(value); }
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineId(const Aws::String& value) { SetMediaPipelineId(value); return *this;}
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineId(Aws::String&& value) { SetMediaPipelineId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a media capture pipeline.</p>
+     * <p>The ID of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineId(const char* value) { SetMediaPipelineId(value); return *this;}
 
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline const Aws::String& GetMediaPipelineArn() const{ return m_mediaPipelineArn; }
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline bool MediaPipelineArnHasBeenSet() const { return m_mediaPipelineArnHasBeenSet; }
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineArn(const Aws::String& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = value; }
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineArn(Aws::String&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::move(value); }
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline void SetMediaPipelineArn(const char* value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn.assign(value); }
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineArn(const Aws::String& value) { SetMediaPipelineArn(value); return *this;}
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineArn(Aws::String&& value) { SetMediaPipelineArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a media capture pipeline.</p>
+     * <p>The ARN of the media pipeline in the summary.</p>
      */
     inline MediaCapturePipelineSummary& WithMediaPipelineArn(const char* value) { SetMediaPipelineArn(value); return *this;}
 
   private:
 
     Aws::String m_mediaPipelineId;
-    bool m_mediaPipelineIdHasBeenSet;
+    bool m_mediaPipelineIdHasBeenSet = false;
 
     Aws::String m_mediaPipelineArn;
-    bool m_mediaPipelineArnHasBeenSet;
+    bool m_mediaPipelineArnHasBeenSet = false;
   };
 
 } // namespace Model

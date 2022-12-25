@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncS3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncS3Destination
+  class ResourceDataSyncS3Destination
   {
   public:
-    ResourceDataSyncS3Destination();
-    ResourceDataSyncS3Destination(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncS3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncS3Destination();
+    AWS_SSM_API ResourceDataSyncS3Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncS3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     ResourceDataSyncS3Format m_syncFormat;
-    bool m_syncFormatHasBeenSet;
+    bool m_syncFormatHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_aWSKMSKeyARN;
-    bool m_aWSKMSKeyARNHasBeenSet;
+    bool m_aWSKMSKeyARNHasBeenSet = false;
 
     ResourceDataSyncDestinationDataSharing m_destinationDataSharing;
-    bool m_destinationDataSharingHasBeenSet;
+    bool m_destinationDataSharingHasBeenSet = false;
   };
 
 } // namespace Model

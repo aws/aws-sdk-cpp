@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceGroup
+  class InstanceGroup
   {
   public:
-    InstanceGroup();
-    InstanceGroup(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceGroup();
+    AWS_EMR_API InstanceGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -733,58 +733,58 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     InstanceGroupType m_instanceGroupType;
-    bool m_instanceGroupTypeHasBeenSet;
+    bool m_instanceGroupTypeHasBeenSet = false;
 
     Aws::String m_bidPrice;
-    bool m_bidPriceHasBeenSet;
+    bool m_bidPriceHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_requestedInstanceCount;
-    bool m_requestedInstanceCountHasBeenSet;
+    bool m_requestedInstanceCountHasBeenSet = false;
 
     int m_runningInstanceCount;
-    bool m_runningInstanceCountHasBeenSet;
+    bool m_runningInstanceCountHasBeenSet = false;
 
     InstanceGroupStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     long long m_configurationsVersion;
-    bool m_configurationsVersionHasBeenSet;
+    bool m_configurationsVersionHasBeenSet = false;
 
     Aws::Vector<Configuration> m_lastSuccessfullyAppliedConfigurations;
-    bool m_lastSuccessfullyAppliedConfigurationsHasBeenSet;
+    bool m_lastSuccessfullyAppliedConfigurationsHasBeenSet = false;
 
     long long m_lastSuccessfullyAppliedConfigurationsVersion;
-    bool m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet;
+    bool m_lastSuccessfullyAppliedConfigurationsVersionHasBeenSet = false;
 
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
-    bool m_ebsBlockDevicesHasBeenSet;
+    bool m_ebsBlockDevicesHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     ShrinkPolicy m_shrinkPolicy;
-    bool m_shrinkPolicyHasBeenSet;
+    bool m_shrinkPolicyHasBeenSet = false;
 
     AutoScalingPolicyDescription m_autoScalingPolicy;
-    bool m_autoScalingPolicyHasBeenSet;
+    bool m_autoScalingPolicyHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

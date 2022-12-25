@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TlsContext">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API TlsContext
+  class TlsContext
   {
   public:
-    TlsContext();
-    TlsContext(Aws::Utils::Json::JsonView jsonValue);
-    TlsContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TlsContext();
+    AWS_IOT_API TlsContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TlsContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
   };
 
 } // namespace Model

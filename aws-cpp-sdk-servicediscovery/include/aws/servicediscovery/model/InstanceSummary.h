@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/InstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API InstanceSummary
+  class InstanceSummary
   {
   public:
-    InstanceSummary();
-    InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API InstanceSummary();
+    AWS_SERVICEDISCOVERY_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -97,17 +97,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
@@ -129,17 +129,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -161,17 +161,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
@@ -193,17 +193,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
@@ -225,17 +225,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
@@ -257,17 +257,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
@@ -289,17 +289,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -321,17 +321,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -353,17 +353,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -385,17 +385,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
@@ -417,17 +417,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
@@ -449,17 +449,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
@@ -481,17 +481,17 @@ namespace Model
      * health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
-     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
+     * <code>CNAME</code> record, the domain name that Route 53 returns in response to
      * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries (for example,
+     * address that Route 53 returns in response to DNS queries (for example,
      * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
-     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
+     * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
      * DNS queries (for example,
      * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
-     * that Route 53 returns for the port. In addition, if the service includes
-     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
+     * that Route 53 returns for the port. In addition, if the service includes
+     * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
      * requests to.</p> </dd> </dl>
      */
     inline InstanceSummary& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -499,10 +499,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

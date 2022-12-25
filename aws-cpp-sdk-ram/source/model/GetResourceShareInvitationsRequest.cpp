@@ -27,7 +27,7 @@ Aws::String GetResourceShareInvitationsRequest::SerializePayload() const
 
   if(m_resourceShareInvitationArnsHasBeenSet)
   {
-   Array<JsonValue> resourceShareInvitationArnsJsonList(m_resourceShareInvitationArns.size());
+   Aws::Utils::Array<JsonValue> resourceShareInvitationArnsJsonList(m_resourceShareInvitationArns.size());
    for(unsigned resourceShareInvitationArnsIndex = 0; resourceShareInvitationArnsIndex < resourceShareInvitationArnsJsonList.GetLength(); ++resourceShareInvitationArnsIndex)
    {
      resourceShareInvitationArnsJsonList[resourceShareInvitationArnsIndex].AsString(m_resourceShareInvitationArns[resourceShareInvitationArnsIndex]);
@@ -38,7 +38,7 @@ Aws::String GetResourceShareInvitationsRequest::SerializePayload() const
 
   if(m_resourceShareArnsHasBeenSet)
   {
-   Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+   Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
    for(unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex)
    {
      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);

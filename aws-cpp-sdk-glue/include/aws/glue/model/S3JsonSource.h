@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3JsonSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3JsonSource
+  class S3JsonSource
   {
   public:
-    S3JsonSource();
-    S3JsonSource(Aws::Utils::Json::JsonView jsonValue);
-    S3JsonSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3JsonSource();
+    AWS_GLUE_API S3JsonSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3JsonSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -600,43 +600,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_paths;
-    bool m_pathsHasBeenSet;
+    bool m_pathsHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusions;
-    bool m_exclusionsHasBeenSet;
+    bool m_exclusionsHasBeenSet = false;
 
     Aws::String m_groupSize;
-    bool m_groupSizeHasBeenSet;
+    bool m_groupSizeHasBeenSet = false;
 
     Aws::String m_groupFiles;
-    bool m_groupFilesHasBeenSet;
+    bool m_groupFilesHasBeenSet = false;
 
     bool m_recurse;
-    bool m_recurseHasBeenSet;
+    bool m_recurseHasBeenSet = false;
 
     int m_maxBand;
-    bool m_maxBandHasBeenSet;
+    bool m_maxBandHasBeenSet = false;
 
     int m_maxFilesInBand;
-    bool m_maxFilesInBandHasBeenSet;
+    bool m_maxFilesInBandHasBeenSet = false;
 
     S3DirectSourceAdditionalOptions m_additionalOptions;
-    bool m_additionalOptionsHasBeenSet;
+    bool m_additionalOptionsHasBeenSet = false;
 
     Aws::String m_jsonPath;
-    bool m_jsonPathHasBeenSet;
+    bool m_jsonPathHasBeenSet = false;
 
     bool m_multiline;
-    bool m_multilineHasBeenSet;
+    bool m_multilineHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

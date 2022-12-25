@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnectionAuthRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API UpdateConnectionAuthRequestParameters
+  class UpdateConnectionAuthRequestParameters
   {
   public:
-    UpdateConnectionAuthRequestParameters();
-    UpdateConnectionAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    UpdateConnectionAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API UpdateConnectionAuthRequestParameters();
+    AWS_EVENTBRIDGE_API UpdateConnectionAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API UpdateConnectionAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -191,16 +191,16 @@ namespace Model
   private:
 
     UpdateConnectionBasicAuthRequestParameters m_basicAuthParameters;
-    bool m_basicAuthParametersHasBeenSet;
+    bool m_basicAuthParametersHasBeenSet = false;
 
     UpdateConnectionOAuthRequestParameters m_oAuthParameters;
-    bool m_oAuthParametersHasBeenSet;
+    bool m_oAuthParametersHasBeenSet = false;
 
     UpdateConnectionApiKeyAuthRequestParameters m_apiKeyAuthParameters;
-    bool m_apiKeyAuthParametersHasBeenSet;
+    bool m_apiKeyAuthParametersHasBeenSet = false;
 
     ConnectionHttpParameters m_invocationHttpParameters;
-    bool m_invocationHttpParametersHasBeenSet;
+    bool m_invocationHttpParametersHasBeenSet = false;
   };
 
 } // namespace Model

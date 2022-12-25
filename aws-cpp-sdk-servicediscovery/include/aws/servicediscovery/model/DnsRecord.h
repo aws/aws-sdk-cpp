@@ -24,39 +24,39 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the Route 53 DNS records that
+   * <p>A complex type that contains information about the Route 53 DNS records that
    * you want Cloud Map to create when you register an instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API DnsRecord
+  class DnsRecord
   {
   public:
-    DnsRecord();
-    DnsRecord(Aws::Utils::Json::JsonView jsonValue);
-    DnsRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API DnsRecord();
+    AWS_SERVICEDISCOVERY_API DnsRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API DnsRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -68,7 +68,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -100,23 +100,23 @@ namespace Model
     inline const RecordType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -128,7 +128,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -160,23 +160,23 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -188,7 +188,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -220,23 +220,23 @@ namespace Model
     inline void SetType(const RecordType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -248,7 +248,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -280,23 +280,23 @@ namespace Model
     inline void SetType(RecordType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -308,7 +308,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -340,23 +340,23 @@ namespace Model
     inline DnsRecord& WithType(const RecordType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the resource, which indicates the type of value that Route 53
+     * <p>The type of the resource, which indicates the type of value that Route 53
      * returns in response to DNS queries. You can specify values for <code>Type</code>
      * in the following combinations:</p> <ul> <li> <p> <b> <code>A</code> </b> </p>
      * </li> <li> <p> <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>A</code>
      * </b> and <b> <code>AAAA</code> </b> </p> </li> <li> <p> <b> <code>SRV</code>
      * </b> </p> </li> <li> <p> <b> <code>CNAME</code> </b> </p> </li> </ul> <p>If you
-     * want Cloud Map to create a Route 53 alias record when you register an instance,
+     * want Cloud Map to create a Route 53 alias record when you register an instance,
      * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.</p> <p>You
      * specify other settings, such as the IP address for <code>A</code> and
      * <code>AAAA</code> records, when you register an instance. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.</p>
-     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
+     * <p>The following values are supported:</p> <dl> <dt>A</dt> <dd> <p>Route 53
      * returns the IP address of the resource in IPv4 format, such as 192.0.2.44.</p>
-     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
+     * </dd> <dt>AAAA</dt> <dd> <p>Route 53 returns the IP address of the resource in
      * IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.</p> </dd>
-     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
+     * <dt>CNAME</dt> <dd> <p>Route 53 returns the domain name of the resource, such as
      * www.example.com. Note the following:</p> <ul> <li> <p>You specify the domain
      * name that you want to route traffic to when you register an instance. For more
      * information, see <a
@@ -368,7 +368,7 @@ namespace Model
      * <code>CNAME</code> for <code>Type</code> and settings for
      * <code>HealthCheckConfig</code>. If you do, the request will fail with an
      * <code>InvalidInput</code> error.</p> </li> </ul> </dd> <dt>SRV</dt> <dd>
-     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
+     * <p>Route 53 returns the value for an <code>SRV</code> record. The value for an
      * <code>SRV</code> record uses the following values:</p> <p> <code>priority weight
      * port service-hostname</code> </p> <p>Note the following about the values:</p>
      * <ul> <li> <p>The values of <code>priority</code> and <code>weight</code> are
@@ -403,7 +403,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
      * settings for this record.</p>  <p>Alias records don't include a TTL
-     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
+     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
      * record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
      * attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -416,7 +416,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
      * settings for this record.</p>  <p>Alias records don't include a TTL
-     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
+     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
      * record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
      * attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -429,7 +429,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
      * settings for this record.</p>  <p>Alias records don't include a TTL
-     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
+     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
      * record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
      * attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -442,7 +442,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
      * settings for this record.</p>  <p>Alias records don't include a TTL
-     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
+     * because Route 53 uses the TTL for the Amazon Web Services resource that an alias
      * record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
      * attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
@@ -455,10 +455,10 @@ namespace Model
   private:
 
     RecordType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_tTL;
-    bool m_tTLHasBeenSet;
+    bool m_tTLHasBeenSet = false;
   };
 
 } // namespace Model

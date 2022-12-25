@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TrustedSigners">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API TrustedSigners
+  class TrustedSigners
   {
   public:
-    TrustedSigners();
-    TrustedSigners(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrustedSigners& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TrustedSigners();
+    AWS_CLOUDFRONT_API TrustedSigners(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TrustedSigners& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -138,13 +138,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

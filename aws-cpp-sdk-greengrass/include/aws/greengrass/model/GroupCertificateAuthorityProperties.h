@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupCertificateAuthorityProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API GroupCertificateAuthorityProperties
+  class GroupCertificateAuthorityProperties
   {
   public:
-    GroupCertificateAuthorityProperties();
-    GroupCertificateAuthorityProperties(Aws::Utils::Json::JsonView jsonValue);
-    GroupCertificateAuthorityProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API GroupCertificateAuthorityProperties();
+    AWS_GREENGRASS_API GroupCertificateAuthorityProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API GroupCertificateAuthorityProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_groupCertificateAuthorityArn;
-    bool m_groupCertificateAuthorityArnHasBeenSet;
+    bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
     Aws::String m_groupCertificateAuthorityId;
-    bool m_groupCertificateAuthorityIdHasBeenSet;
+    bool m_groupCertificateAuthorityIdHasBeenSet = false;
   };
 
 } // namespace Model

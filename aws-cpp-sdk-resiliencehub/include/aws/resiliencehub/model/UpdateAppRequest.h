@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESILIENCEHUB_API UpdateAppRequest : public ResilienceHubRequest
+  class UpdateAppRequest : public ResilienceHubRequest
   {
   public:
-    UpdateAppRequest();
+    AWS_RESILIENCEHUB_API UpdateAppRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateApp"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESILIENCEHUB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -290,19 +290,19 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     AppAssessmentScheduleType m_assessmentSchedule;
-    bool m_assessmentScheduleHasBeenSet;
+    bool m_assessmentScheduleHasBeenSet = false;
 
     bool m_clearResiliencyPolicyArn;
-    bool m_clearResiliencyPolicyArnHasBeenSet;
+    bool m_clearResiliencyPolicyArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_policyArn;
-    bool m_policyArnHasBeenSet;
+    bool m_policyArnHasBeenSet = false;
   };
 
 } // namespace Model

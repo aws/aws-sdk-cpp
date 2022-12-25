@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobAlbumArt">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API JobAlbumArt
+  class JobAlbumArt
   {
   public:
-    JobAlbumArt();
-    JobAlbumArt(Aws::Utils::Json::JsonView jsonValue);
-    JobAlbumArt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API JobAlbumArt();
+    AWS_ELASTICTRANSCODER_API JobAlbumArt(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API JobAlbumArt& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,10 +204,10 @@ namespace Model
   private:
 
     Aws::String m_mergePolicy;
-    bool m_mergePolicyHasBeenSet;
+    bool m_mergePolicyHasBeenSet = false;
 
     Aws::Vector<Artwork> m_artwork;
-    bool m_artworkHasBeenSet;
+    bool m_artworkHasBeenSet = false;
   };
 
 } // namespace Model

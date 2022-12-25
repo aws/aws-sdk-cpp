@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ContactFilter
+  class ContactFilter
   {
   public:
-    ContactFilter();
-    ContactFilter(Aws::Utils::Json::JsonView jsonValue);
-    ContactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ContactFilter();
+    AWS_CONNECT_API ContactFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ContactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,7 +100,7 @@ namespace Model
   private:
 
     Aws::Vector<ContactState> m_contactStates;
-    bool m_contactStatesHasBeenSet;
+    bool m_contactStatesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Record">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API Record();
+    AWS_DYNAMODBSTREAMS_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -404,25 +404,25 @@ namespace Model
   private:
 
     Aws::String m_eventID;
-    bool m_eventIDHasBeenSet;
+    bool m_eventIDHasBeenSet = false;
 
     OperationType m_eventName;
-    bool m_eventNameHasBeenSet;
+    bool m_eventNameHasBeenSet = false;
 
     Aws::String m_eventVersion;
-    bool m_eventVersionHasBeenSet;
+    bool m_eventVersionHasBeenSet = false;
 
     Aws::String m_eventSource;
-    bool m_eventSourceHasBeenSet;
+    bool m_eventSourceHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     StreamRecord m_dynamodb;
-    bool m_dynamodbHasBeenSet;
+    bool m_dynamodbHasBeenSet = false;
 
     Identity m_userIdentity;
-    bool m_userIdentityHasBeenSet;
+    bool m_userIdentityHasBeenSet = false;
   };
 
 } // namespace Model

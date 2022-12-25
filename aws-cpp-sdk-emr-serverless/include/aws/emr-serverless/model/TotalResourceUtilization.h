@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/TotalResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API TotalResourceUtilization
+  class TotalResourceUtilization
   {
   public:
-    TotalResourceUtilization();
-    TotalResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    TotalResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API TotalResourceUtilization();
+    AWS_EMRSERVERLESS_API TotalResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API TotalResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,13 +114,13 @@ namespace Model
   private:
 
     double m_vCPUHour;
-    bool m_vCPUHourHasBeenSet;
+    bool m_vCPUHourHasBeenSet = false;
 
     double m_memoryGBHour;
-    bool m_memoryGBHourHasBeenSet;
+    bool m_memoryGBHourHasBeenSet = false;
 
     double m_storageGBHour;
-    bool m_storageGBHourHasBeenSet;
+    bool m_storageGBHourHasBeenSet = false;
   };
 
 } // namespace Model

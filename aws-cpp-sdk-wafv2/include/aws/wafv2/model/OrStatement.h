@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OrStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API OrStatement
+  class OrStatement
   {
   public:
-    OrStatement();
-    OrStatement(Aws::Utils::Json::JsonView jsonValue);
-    OrStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API OrStatement();
+    AWS_WAFV2_API OrStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API OrStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<Statement> m_statements;
-    bool m_statementsHasBeenSet;
+    bool m_statementsHasBeenSet = false;
   };
 
 } // namespace Model

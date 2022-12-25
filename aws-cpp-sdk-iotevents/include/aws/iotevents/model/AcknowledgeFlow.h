@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AcknowledgeFlow">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AcknowledgeFlow
+  class AcknowledgeFlow
   {
   public:
-    AcknowledgeFlow();
-    AcknowledgeFlow(Aws::Utils::Json::JsonView jsonValue);
-    AcknowledgeFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AcknowledgeFlow();
+    AWS_IOTEVENTS_API AcknowledgeFlow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AcknowledgeFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -79,7 +79,7 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

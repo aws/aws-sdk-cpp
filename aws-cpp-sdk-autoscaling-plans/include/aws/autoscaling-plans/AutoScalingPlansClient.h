@@ -5,88 +5,16 @@
 
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
-#include <aws/autoscaling-plans/AutoScalingPlansErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/autoscaling-plans/model/CreateScalingPlanResult.h>
-#include <aws/autoscaling-plans/model/DeleteScalingPlanResult.h>
-#include <aws/autoscaling-plans/model/DescribeScalingPlanResourcesResult.h>
-#include <aws/autoscaling-plans/model/DescribeScalingPlansResult.h>
-#include <aws/autoscaling-plans/model/GetScalingPlanResourceForecastDataResult.h>
-#include <aws/autoscaling-plans/model/UpdateScalingPlanResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AutoScalingPlans
 {
-
-namespace Model
-{
-        class CreateScalingPlanRequest;
-        class DeleteScalingPlanRequest;
-        class DescribeScalingPlanResourcesRequest;
-        class DescribeScalingPlansRequest;
-        class GetScalingPlanResourceForecastDataRequest;
-        class UpdateScalingPlanRequest;
-
-        typedef Aws::Utils::Outcome<CreateScalingPlanResult, AutoScalingPlansError> CreateScalingPlanOutcome;
-        typedef Aws::Utils::Outcome<DeleteScalingPlanResult, AutoScalingPlansError> DeleteScalingPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingPlanResourcesResult, AutoScalingPlansError> DescribeScalingPlanResourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingPlansResult, AutoScalingPlansError> DescribeScalingPlansOutcome;
-        typedef Aws::Utils::Outcome<GetScalingPlanResourceForecastDataResult, AutoScalingPlansError> GetScalingPlanResourceForecastDataOutcome;
-        typedef Aws::Utils::Outcome<UpdateScalingPlanResult, AutoScalingPlansError> UpdateScalingPlanOutcome;
-
-        typedef std::future<CreateScalingPlanOutcome> CreateScalingPlanOutcomeCallable;
-        typedef std::future<DeleteScalingPlanOutcome> DeleteScalingPlanOutcomeCallable;
-        typedef std::future<DescribeScalingPlanResourcesOutcome> DescribeScalingPlanResourcesOutcomeCallable;
-        typedef std::future<DescribeScalingPlansOutcome> DescribeScalingPlansOutcomeCallable;
-        typedef std::future<GetScalingPlanResourceForecastDataOutcome> GetScalingPlanResourceForecastDataOutcomeCallable;
-        typedef std::future<UpdateScalingPlanOutcome> UpdateScalingPlanOutcomeCallable;
-} // namespace Model
-
-  class AutoScalingPlansClient;
-
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::CreateScalingPlanRequest&, const Model::CreateScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateScalingPlanResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::DeleteScalingPlanRequest&, const Model::DeleteScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPlanResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::DescribeScalingPlanResourcesRequest&, const Model::DescribeScalingPlanResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPlanResourcesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::DescribeScalingPlansRequest&, const Model::DescribeScalingPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPlansResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::GetScalingPlanResourceForecastDataRequest&, const Model::GetScalingPlanResourceForecastDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetScalingPlanResourceForecastDataResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingPlansClient*, const Model::UpdateScalingPlanRequest&, const Model::UpdateScalingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScalingPlanResponseReceivedHandler;
-
   /**
    * <fullname>AWS Auto Scaling</fullname> <p>Use AWS Auto Scaling to create scaling
    * plans for your applications to automatically scale your scalable AWS resources.
@@ -104,32 +32,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
    * Auto Scaling User Guide</a>. </p>
    */
-  class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient
+  class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingPlansClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AutoScalingPlansClient(const Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration& clientConfiguration = Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration(),
+                               std::shared_ptr<AutoScalingPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingPlansEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingPlansClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AutoScalingPlansClient(const Aws::Auth::AWSCredentials& credentials,
+                               std::shared_ptr<AutoScalingPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingPlansEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration& clientConfiguration = Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AutoScalingPlansClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<AutoScalingPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingPlansEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration& clientConfiguration = Aws::AutoScalingPlans::AutoScalingPlansClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AutoScalingPlansClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AutoScalingPlansClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AutoScalingPlansClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AutoScalingPlansClient();
-
 
         /**
          * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
@@ -245,18 +201,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AutoScalingPlansEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateScalingPlanAsyncHelper(const Model::CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteScalingPlanAsyncHelper(const Model::DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScalingPlanResourcesAsyncHelper(const Model::DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScalingPlansAsyncHelper(const Model::DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetScalingPlanResourceForecastDataAsyncHelper(const Model::GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateScalingPlanAsyncHelper(const Model::UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>;
+      void init(const AutoScalingPlansClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AutoScalingPlansClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AutoScalingPlansEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AutoScalingPlans

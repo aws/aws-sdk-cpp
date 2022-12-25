@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AccountSettings
+  class AccountSettings
   {
   public:
-    AccountSettings();
-    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AccountSettings();
+    AWS_QUICKSIGHT_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,53 +232,93 @@ namespace Model
 
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline bool GetPublicSharingEnabled() const{ return m_publicSharingEnabled; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline void SetPublicSharingEnabled(bool value) { m_publicSharingEnabledHasBeenSet = true; m_publicSharingEnabled = value; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline AccountSettings& WithPublicSharingEnabled(bool value) { SetPublicSharingEnabled(value); return *this;}
 
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline bool TerminationProtectionEnabledHasBeenSet() const { return m_terminationProtectionEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
+
+    /**
+     * <p>A boolean value that determines whether or not an Amazon QuickSight account
+     * can be deleted. A <code>True</code> value doesn't allow the account to be
+     * deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will
+     * allow the ccount to be deleted. </p>
+     */
+    inline AccountSettings& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     bool m_publicSharingEnabled;
-    bool m_publicSharingEnabledHasBeenSet;
+    bool m_publicSharingEnabledHasBeenSet = false;
+
+    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabledHasBeenSet = false;
   };
 
 } // namespace Model

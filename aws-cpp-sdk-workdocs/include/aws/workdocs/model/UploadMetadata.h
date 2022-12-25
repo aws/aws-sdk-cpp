@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UploadMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API UploadMetadata
+  class UploadMetadata
   {
   public:
-    UploadMetadata();
-    UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
-    UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API UploadMetadata();
+    AWS_WORKDOCS_API UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_uploadUrl;
-    bool m_uploadUrlHasBeenSet;
+    bool m_uploadUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_signedHeaders;
-    bool m_signedHeadersHasBeenSet;
+    bool m_signedHeadersHasBeenSet = false;
   };
 
 } // namespace Model

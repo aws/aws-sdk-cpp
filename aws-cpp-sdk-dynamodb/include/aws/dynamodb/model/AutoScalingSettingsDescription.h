@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AutoScalingSettingsDescription
+  class AutoScalingSettingsDescription
   {
   public:
-    AutoScalingSettingsDescription();
-    AutoScalingSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AutoScalingSettingsDescription();
+    AWS_DYNAMODB_API AutoScalingSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AutoScalingSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -195,19 +195,19 @@ namespace Model
   private:
 
     long long m_minimumUnits;
-    bool m_minimumUnitsHasBeenSet;
+    bool m_minimumUnitsHasBeenSet = false;
 
     long long m_maximumUnits;
-    bool m_maximumUnitsHasBeenSet;
+    bool m_maximumUnitsHasBeenSet = false;
 
     bool m_autoScalingDisabled;
-    bool m_autoScalingDisabledHasBeenSet;
+    bool m_autoScalingDisabledHasBeenSet = false;
 
     Aws::String m_autoScalingRoleArn;
-    bool m_autoScalingRoleArnHasBeenSet;
+    bool m_autoScalingRoleArnHasBeenSet = false;
 
     Aws::Vector<AutoScalingPolicyDescription> m_scalingPolicies;
-    bool m_scalingPoliciesHasBeenSet;
+    bool m_scalingPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

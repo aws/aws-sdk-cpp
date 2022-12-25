@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteTableAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API RouteTableAssociation
+  class RouteTableAssociation
   {
   public:
-    RouteTableAssociation();
-    RouteTableAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RouteTableAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RouteTableAssociation();
+    AWS_EC2_API RouteTableAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API RouteTableAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -267,22 +267,22 @@ namespace Model
   private:
 
     bool m_main;
-    bool m_mainHasBeenSet;
+    bool m_mainHasBeenSet = false;
 
     Aws::String m_routeTableAssociationId;
-    bool m_routeTableAssociationIdHasBeenSet;
+    bool m_routeTableAssociationIdHasBeenSet = false;
 
     Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet;
+    bool m_routeTableIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     RouteTableAssociationState m_associationState;
-    bool m_associationStateHasBeenSet;
+    bool m_associationStateHasBeenSet = false;
   };
 
 } // namespace Model

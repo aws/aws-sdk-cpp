@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentTarget
+  class ExperimentTarget
   {
   public:
-    ExperimentTarget();
-    ExperimentTarget(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentTarget();
+    AWS_FIS_API ExperimentTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     Aws::Vector<ExperimentTargetFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_selectionMode;
-    bool m_selectionModeHasBeenSet;
+    bool m_selectionModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

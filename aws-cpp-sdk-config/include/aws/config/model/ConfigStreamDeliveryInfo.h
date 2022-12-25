@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigStreamDeliveryInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo
+  class ConfigStreamDeliveryInfo
   {
   public:
-    ConfigStreamDeliveryInfo();
-    ConfigStreamDeliveryInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConfigStreamDeliveryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo();
+    AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigStreamDeliveryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -210,16 +210,16 @@ namespace Model
   private:
 
     DeliveryStatus m_lastStatus;
-    bool m_lastStatusHasBeenSet;
+    bool m_lastStatusHasBeenSet = false;
 
     Aws::String m_lastErrorCode;
-    bool m_lastErrorCodeHasBeenSet;
+    bool m_lastErrorCodeHasBeenSet = false;
 
     Aws::String m_lastErrorMessage;
-    bool m_lastErrorMessageHasBeenSet;
+    bool m_lastErrorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastStatusChangeTime;
-    bool m_lastStatusChangeTimeHasBeenSet;
+    bool m_lastStatusChangeTimeHasBeenSet = false;
   };
 
 } // namespace Model

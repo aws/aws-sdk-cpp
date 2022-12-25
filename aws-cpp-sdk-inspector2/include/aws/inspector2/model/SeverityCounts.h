@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SeverityCounts">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API SeverityCounts
+  class SeverityCounts
   {
   public:
-    SeverityCounts();
-    SeverityCounts(Aws::Utils::Json::JsonView jsonValue);
-    SeverityCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API SeverityCounts();
+    AWS_INSPECTOR2_API SeverityCounts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API SeverityCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,16 +122,16 @@ namespace Model
   private:
 
     long long m_all;
-    bool m_allHasBeenSet;
+    bool m_allHasBeenSet = false;
 
     long long m_critical;
-    bool m_criticalHasBeenSet;
+    bool m_criticalHasBeenSet = false;
 
     long long m_high;
-    bool m_highHasBeenSet;
+    bool m_highHasBeenSet = false;
 
     long long m_medium;
-    bool m_mediumHasBeenSet;
+    bool m_mediumHasBeenSet = false;
   };
 
 } // namespace Model

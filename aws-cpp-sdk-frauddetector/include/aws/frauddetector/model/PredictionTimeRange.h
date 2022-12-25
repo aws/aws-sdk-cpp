@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PredictionTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API PredictionTimeRange
+  class PredictionTimeRange
   {
   public:
-    PredictionTimeRange();
-    PredictionTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    PredictionTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API PredictionTimeRange();
+    AWS_FRAUDDETECTOR_API PredictionTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API PredictionTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

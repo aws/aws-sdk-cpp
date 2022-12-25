@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DashIsoEncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DashIsoEncryptionSettings
+  class DashIsoEncryptionSettings
   {
   public:
-    DashIsoEncryptionSettings();
-    DashIsoEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    DashIsoEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DashIsoEncryptionSettings();
+    AWS_MEDIACONVERT_API DashIsoEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DashIsoEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,10 +144,10 @@ namespace Model
   private:
 
     DashIsoPlaybackDeviceCompatibility m_playbackDeviceCompatibility;
-    bool m_playbackDeviceCompatibilityHasBeenSet;
+    bool m_playbackDeviceCompatibilityHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
   };
 
 } // namespace Model

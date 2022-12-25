@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIASTOREDATA_API DescribeObjectRequest : public MediaStoreDataRequest
+  class DescribeObjectRequest : public MediaStoreDataRequest
   {
   public:
-    DescribeObjectRequest();
+    AWS_MEDIASTOREDATA_API DescribeObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeObject"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIASTOREDATA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
   };
 
 } // namespace Model

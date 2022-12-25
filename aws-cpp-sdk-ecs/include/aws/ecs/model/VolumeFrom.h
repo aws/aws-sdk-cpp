@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/VolumeFrom">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API VolumeFrom
+  class VolumeFrom
   {
   public:
-    VolumeFrom();
-    VolumeFrom(Aws::Utils::Json::JsonView jsonValue);
-    VolumeFrom& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API VolumeFrom();
+    AWS_ECS_API VolumeFrom(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API VolumeFrom& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_sourceContainer;
-    bool m_sourceContainerHasBeenSet;
+    bool m_sourceContainerHasBeenSet = false;
 
     bool m_readOnly;
-    bool m_readOnlyHasBeenSet;
+    bool m_readOnlyHasBeenSet = false;
   };
 
 } // namespace Model

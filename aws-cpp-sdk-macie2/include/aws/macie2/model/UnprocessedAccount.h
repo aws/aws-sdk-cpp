@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnprocessedAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UnprocessedAccount
+  class UnprocessedAccount
   {
   public:
-    UnprocessedAccount();
-    UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UnprocessedAccount();
+    AWS_MACIE2_API UnprocessedAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UnprocessedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     ErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
   };
 
 } // namespace Model

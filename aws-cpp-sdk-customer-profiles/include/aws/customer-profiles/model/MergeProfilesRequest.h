@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CUSTOMERPROFILES_API MergeProfilesRequest : public CustomerProfilesRequest
+  class MergeProfilesRequest : public CustomerProfilesRequest
   {
   public:
-    MergeProfilesRequest();
+    AWS_CUSTOMERPROFILES_API MergeProfilesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "MergeProfiles"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_mainProfileId;
-    bool m_mainProfileIdHasBeenSet;
+    bool m_mainProfileIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_profileIdsToBeMerged;
-    bool m_profileIdsToBeMergedHasBeenSet;
+    bool m_profileIdsToBeMergedHasBeenSet = false;
 
     FieldSourceProfileIds m_fieldSourceProfileIds;
-    bool m_fieldSourceProfileIdsHasBeenSet;
+    bool m_fieldSourceProfileIdsHasBeenSet = false;
   };
 
 } // namespace Model

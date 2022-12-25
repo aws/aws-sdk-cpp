@@ -74,6 +74,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+  }
+
   if(jsonValue.ValueExists("lastStartTime"))
   {
     m_lastStartTime = jsonValue.GetDouble("lastStartTime");
@@ -88,7 +94,7 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("listenerArns"))
   {
-    Array<JsonView> listenerArnsJsonList = jsonValue.GetArray("listenerArns");
+    Aws::Utils::Array<JsonView> listenerArnsJsonList = jsonValue.GetArray("listenerArns");
     for(unsigned listenerArnsIndex = 0; listenerArnsIndex < listenerArnsJsonList.GetLength(); ++listenerArnsIndex)
     {
       m_listenerArns.push_back(listenerArnsJsonList[listenerArnsIndex].AsString());
@@ -97,7 +103,7 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("listenerPorts"))
   {
-    Array<JsonView> listenerPortsJsonList = jsonValue.GetArray("listenerPorts");
+    Aws::Utils::Array<JsonView> listenerPortsJsonList = jsonValue.GetArray("listenerPorts");
     for(unsigned listenerPortsIndex = 0; listenerPortsIndex < listenerPortsJsonList.GetLength(); ++listenerPortsIndex)
     {
       m_listenerPorts.push_back(listenerPortsJsonList[listenerPortsIndex].AsInteger());
@@ -112,7 +118,7 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("logGroups"))
   {
-    Array<JsonView> logGroupsJsonList = jsonValue.GetArray("logGroups");
+    Aws::Utils::Array<JsonView> logGroupsJsonList = jsonValue.GetArray("logGroups");
     for(unsigned logGroupsIndex = 0; logGroupsIndex < logGroupsJsonList.GetLength(); ++logGroupsIndex)
     {
       m_logGroups.push_back(logGroupsJsonList[logGroupsIndex].AsObject());
@@ -148,7 +154,7 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("targetGroupArns"))
   {
-    Array<JsonView> targetGroupArnsJsonList = jsonValue.GetArray("targetGroupArns");
+    Aws::Utils::Array<JsonView> targetGroupArnsJsonList = jsonValue.GetArray("targetGroupArns");
     for(unsigned targetGroupArnsIndex = 0; targetGroupArnsIndex < targetGroupArnsJsonList.GetLength(); ++targetGroupArnsIndex)
     {
       m_targetGroupArns.push_back(targetGroupArnsJsonList[targetGroupArnsIndex].AsString());

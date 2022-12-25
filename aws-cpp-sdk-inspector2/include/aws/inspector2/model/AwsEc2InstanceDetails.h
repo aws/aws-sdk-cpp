@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AwsEc2InstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AwsEc2InstanceDetails
+  class AwsEc2InstanceDetails
   {
   public:
-    AwsEc2InstanceDetails();
-    AwsEc2InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AwsEc2InstanceDetails();
+    AWS_INSPECTOR2_API AwsEc2InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AwsEc2InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,34 +452,34 @@ namespace Model
   private:
 
     Aws::String m_iamInstanceProfileArn;
-    bool m_iamInstanceProfileArnHasBeenSet;
+    bool m_iamInstanceProfileArnHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV4Addresses;
-    bool m_ipV4AddressesHasBeenSet;
+    bool m_ipV4AddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipV6Addresses;
-    bool m_ipV6AddressesHasBeenSet;
+    bool m_ipV6AddressesHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_launchedAt;
-    bool m_launchedAtHasBeenSet;
+    bool m_launchedAtHasBeenSet = false;
 
     Aws::String m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluencePageToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ConfluencePageToIndexFieldMapping
+  class ConfluencePageToIndexFieldMapping
   {
   public:
-    ConfluencePageToIndexFieldMapping();
-    ConfluencePageToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
-    ConfluencePageToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ConfluencePageToIndexFieldMapping();
+    AWS_KENDRA_API ConfluencePageToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ConfluencePageToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -182,13 +182,13 @@ namespace Model
   private:
 
     ConfluencePageFieldName m_dataSourceFieldName;
-    bool m_dataSourceFieldNameHasBeenSet;
+    bool m_dataSourceFieldNameHasBeenSet = false;
 
     Aws::String m_dateFieldFormat;
-    bool m_dateFieldFormatHasBeenSet;
+    bool m_dateFieldFormatHasBeenSet = false;
 
     Aws::String m_indexFieldName;
-    bool m_indexFieldNameHasBeenSet;
+    bool m_indexFieldNameHasBeenSet = false;
   };
 
 } // namespace Model

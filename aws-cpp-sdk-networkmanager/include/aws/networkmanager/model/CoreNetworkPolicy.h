@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkPolicy
+  class CoreNetworkPolicy
   {
   public:
-    CoreNetworkPolicy();
-    CoreNetworkPolicy(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy();
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -329,28 +329,28 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     int m_policyVersionId;
-    bool m_policyVersionIdHasBeenSet;
+    bool m_policyVersionIdHasBeenSet = false;
 
     CoreNetworkPolicyAlias m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     ChangeSetState m_changeSetState;
-    bool m_changeSetStateHasBeenSet;
+    bool m_changeSetStateHasBeenSet = false;
 
     Aws::Vector<CoreNetworkPolicyError> m_policyErrors;
-    bool m_policyErrorsHasBeenSet;
+    bool m_policyErrorsHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
   };
 
 } // namespace Model

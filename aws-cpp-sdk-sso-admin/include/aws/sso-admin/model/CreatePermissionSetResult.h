@@ -24,36 +24,36 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API CreatePermissionSetResult
+  class CreatePermissionSetResult
   {
   public:
-    CreatePermissionSetResult();
-    CreatePermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API CreatePermissionSetResult();
+    AWS_SSOADMIN_API CreatePermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API CreatePermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline const PermissionSet& GetPermissionSet() const{ return m_permissionSet; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline void SetPermissionSet(const PermissionSet& value) { m_permissionSet = value; }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline void SetPermissionSet(PermissionSet&& value) { m_permissionSet = std::move(value); }
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline CreatePermissionSetResult& WithPermissionSet(const PermissionSet& value) { SetPermissionSet(value); return *this;}
 
     /**
-     * <p>Defines the level of access on an Amazon Web Services account.</p>
+     * <p>Defines the level of access on an AWS account.</p>
      */
     inline CreatePermissionSetResult& WithPermissionSet(PermissionSet&& value) { SetPermissionSet(std::move(value)); return *this;}
 

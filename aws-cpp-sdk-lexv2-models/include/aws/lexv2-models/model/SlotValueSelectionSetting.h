@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueSelectionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValueSelectionSetting
+  class SlotValueSelectionSetting
   {
   public:
-    SlotValueSelectionSetting();
-    SlotValueSelectionSetting(Aws::Utils::Json::JsonView jsonValue);
-    SlotValueSelectionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting();
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     SlotValueResolutionStrategy m_resolutionStrategy;
-    bool m_resolutionStrategyHasBeenSet;
+    bool m_resolutionStrategyHasBeenSet = false;
 
     SlotValueRegexFilter m_regexFilter;
-    bool m_regexFilterHasBeenSet;
+    bool m_regexFilterHasBeenSet = false;
 
     AdvancedRecognitionSetting m_advancedRecognitionSetting;
-    bool m_advancedRecognitionSettingHasBeenSet;
+    bool m_advancedRecognitionSettingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ManagedRuleSet
+  class ManagedRuleSet
   {
   public:
-    ManagedRuleSet();
-    ManagedRuleSet(Aws::Utils::Json::JsonView jsonValue);
-    ManagedRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ManagedRuleSet();
+    AWS_WAFV2_API ManagedRuleSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ManagedRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -473,25 +473,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, ManagedRuleSetVersion> m_publishedVersions;
-    bool m_publishedVersionsHasBeenSet;
+    bool m_publishedVersionsHasBeenSet = false;
 
     Aws::String m_recommendedVersion;
-    bool m_recommendedVersionHasBeenSet;
+    bool m_recommendedVersionHasBeenSet = false;
 
     Aws::String m_labelNamespace;
-    bool m_labelNamespaceHasBeenSet;
+    bool m_labelNamespaceHasBeenSet = false;
   };
 
 } // namespace Model

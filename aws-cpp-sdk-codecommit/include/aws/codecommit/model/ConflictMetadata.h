@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ConflictMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ConflictMetadata
+  class ConflictMetadata
   {
   public:
-    ConflictMetadata();
-    ConflictMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ConflictMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ConflictMetadata();
+    AWS_CODECOMMIT_API ConflictMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ConflictMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,34 +365,34 @@ namespace Model
   private:
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     FileSizes m_fileSizes;
-    bool m_fileSizesHasBeenSet;
+    bool m_fileSizesHasBeenSet = false;
 
     FileModes m_fileModes;
-    bool m_fileModesHasBeenSet;
+    bool m_fileModesHasBeenSet = false;
 
     ObjectTypes m_objectTypes;
-    bool m_objectTypesHasBeenSet;
+    bool m_objectTypesHasBeenSet = false;
 
     int m_numberOfConflicts;
-    bool m_numberOfConflictsHasBeenSet;
+    bool m_numberOfConflictsHasBeenSet = false;
 
     IsBinaryFile m_isBinaryFile;
-    bool m_isBinaryFileHasBeenSet;
+    bool m_isBinaryFileHasBeenSet = false;
 
     bool m_contentConflict;
-    bool m_contentConflictHasBeenSet;
+    bool m_contentConflictHasBeenSet = false;
 
     bool m_fileModeConflict;
-    bool m_fileModeConflictHasBeenSet;
+    bool m_fileModeConflictHasBeenSet = false;
 
     bool m_objectTypeConflict;
-    bool m_objectTypeConflictHasBeenSet;
+    bool m_objectTypeConflictHasBeenSet = false;
 
     MergeOperations m_mergeOperations;
-    bool m_mergeOperationsHasBeenSet;
+    bool m_mergeOperationsHasBeenSet = false;
   };
 
 } // namespace Model

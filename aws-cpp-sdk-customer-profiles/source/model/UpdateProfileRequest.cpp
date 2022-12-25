@@ -37,7 +37,9 @@ UpdateProfileRequest::UpdateProfileRequest() :
     m_shippingAddressHasBeenSet(false),
     m_mailingAddressHasBeenSet(false),
     m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_partyTypeStringHasBeenSet(false),
+    m_genderStringHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,18 @@ Aws::String UpdateProfileRequest::SerializePayload() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_partyTypeStringHasBeenSet)
+  {
+   payload.WithString("PartyTypeString", m_partyTypeString);
+
+  }
+
+  if(m_genderStringHasBeenSet)
+  {
+   payload.WithString("GenderString", m_genderString);
 
   }
 

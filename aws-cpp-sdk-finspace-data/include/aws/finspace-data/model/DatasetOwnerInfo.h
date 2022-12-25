@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DatasetOwnerInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DatasetOwnerInfo
+  class DatasetOwnerInfo
   {
   public:
-    DatasetOwnerInfo();
-    DatasetOwnerInfo(Aws::Utils::Json::JsonView jsonValue);
-    DatasetOwnerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DatasetOwnerInfo();
+    AWS_FINSPACEDATA_API DatasetOwnerInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DatasetOwnerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
   };
 
 } // namespace Model

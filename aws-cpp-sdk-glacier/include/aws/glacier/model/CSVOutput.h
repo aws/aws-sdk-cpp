@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CSVOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API CSVOutput
+  class CSVOutput
   {
   public:
-    CSVOutput();
-    CSVOutput(Aws::Utils::Json::JsonView jsonValue);
-    CSVOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API CSVOutput();
+    AWS_GLACIER_API CSVOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API CSVOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,19 +266,19 @@ namespace Model
   private:
 
     QuoteFields m_quoteFields;
-    bool m_quoteFieldsHasBeenSet;
+    bool m_quoteFieldsHasBeenSet = false;
 
     Aws::String m_quoteEscapeCharacter;
-    bool m_quoteEscapeCharacterHasBeenSet;
+    bool m_quoteEscapeCharacterHasBeenSet = false;
 
     Aws::String m_recordDelimiter;
-    bool m_recordDelimiterHasBeenSet;
+    bool m_recordDelimiterHasBeenSet = false;
 
     Aws::String m_fieldDelimiter;
-    bool m_fieldDelimiterHasBeenSet;
+    bool m_fieldDelimiterHasBeenSet = false;
 
     Aws::String m_quoteCharacter;
-    bool m_quoteCharacterHasBeenSet;
+    bool m_quoteCharacterHasBeenSet = false;
   };
 
 } // namespace Model

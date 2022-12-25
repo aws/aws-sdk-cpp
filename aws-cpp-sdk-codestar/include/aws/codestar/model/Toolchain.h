@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/Toolchain">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API Toolchain
+  class Toolchain
   {
   public:
-    Toolchain();
-    Toolchain(Aws::Utils::Json::JsonView jsonValue);
-    Toolchain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API Toolchain();
+    AWS_CODESTAR_API Toolchain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Toolchain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,13 +214,13 @@ namespace Model
   private:
 
     ToolchainSource m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_stackParameters;
-    bool m_stackParametersHasBeenSet;
+    bool m_stackParametersHasBeenSet = false;
   };
 
 } // namespace Model

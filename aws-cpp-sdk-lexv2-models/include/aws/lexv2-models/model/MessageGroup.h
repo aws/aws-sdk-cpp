@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/MessageGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API MessageGroup
+  class MessageGroup
   {
   public:
-    MessageGroup();
-    MessageGroup(Aws::Utils::Json::JsonView jsonValue);
-    MessageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API MessageGroup();
+    AWS_LEXMODELSV2_API MessageGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API MessageGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Message m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<Message> m_variations;
-    bool m_variationsHasBeenSet;
+    bool m_variationsHasBeenSet = false;
   };
 
 } // namespace Model

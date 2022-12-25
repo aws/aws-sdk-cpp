@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ScheduledQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ScheduledQuery
+  class ScheduledQuery
   {
   public:
-    ScheduledQuery();
-    ScheduledQuery(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ScheduledQuery();
+    AWS_TIMESTREAMQUERY_API ScheduledQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ScheduledQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -343,31 +343,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ScheduledQueryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_previousInvocationTime;
-    bool m_previousInvocationTimeHasBeenSet;
+    bool m_previousInvocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextInvocationTime;
-    bool m_nextInvocationTimeHasBeenSet;
+    bool m_nextInvocationTimeHasBeenSet = false;
 
     ErrorReportConfiguration m_errorReportConfiguration;
-    bool m_errorReportConfigurationHasBeenSet;
+    bool m_errorReportConfigurationHasBeenSet = false;
 
     TargetDestination m_targetDestination;
-    bool m_targetDestinationHasBeenSet;
+    bool m_targetDestinationHasBeenSet = false;
 
     ScheduledQueryRunStatus m_lastRunStatus;
-    bool m_lastRunStatusHasBeenSet;
+    bool m_lastRunStatusHasBeenSet = false;
   };
 
 } // namespace Model

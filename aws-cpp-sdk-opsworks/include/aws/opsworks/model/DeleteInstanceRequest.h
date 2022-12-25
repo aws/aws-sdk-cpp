@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_OPSWORKS_API DeleteInstanceRequest : public OpsWorksRequest
+  class DeleteInstanceRequest : public OpsWorksRequest
   {
   public:
-    DeleteInstanceRequest();
+    AWS_OPSWORKS_API DeleteInstanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteInstance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPSWORKS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -119,13 +119,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     bool m_deleteElasticIp;
-    bool m_deleteElasticIpHasBeenSet;
+    bool m_deleteElasticIpHasBeenSet = false;
 
     bool m_deleteVolumes;
-    bool m_deleteVolumesHasBeenSet;
+    bool m_deleteVolumesHasBeenSet = false;
   };
 
 } // namespace Model

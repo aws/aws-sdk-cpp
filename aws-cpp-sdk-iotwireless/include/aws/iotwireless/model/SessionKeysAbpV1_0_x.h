@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SessionKeysAbpV1_0_x">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SessionKeysAbpV1_0_x
+  class SessionKeysAbpV1_0_x
   {
   public:
-    SessionKeysAbpV1_0_x();
-    SessionKeysAbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
-    SessionKeysAbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_0_x();
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_0_x(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_0_x& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_nwkSKey;
-    bool m_nwkSKeyHasBeenSet;
+    bool m_nwkSKeyHasBeenSet = false;
 
     Aws::String m_appSKey;
-    bool m_appSKeyHasBeenSet;
+    bool m_appSKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelStorageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ChannelStorageSummary
+  class ChannelStorageSummary
   {
   public:
-    ChannelStorageSummary();
-    ChannelStorageSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ChannelStorageSummary();
+    AWS_IOTANALYTICS_API ChannelStorageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ChannelStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ServiceManagedChannelS3StorageSummary m_serviceManagedS3;
-    bool m_serviceManagedS3HasBeenSet;
+    bool m_serviceManagedS3HasBeenSet = false;
 
     CustomerManagedChannelS3StorageSummary m_customerManagedS3;
-    bool m_customerManagedS3HasBeenSet;
+    bool m_customerManagedS3HasBeenSet = false;
   };
 
 } // namespace Model

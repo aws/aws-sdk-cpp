@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/RStudioServerProDomainSettingsForUpdate.h>
+#include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -29,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DomainSettingsForUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DomainSettingsForUpdate
+  class DomainSettingsForUpdate
   {
   public:
-    DomainSettingsForUpdate();
-    DomainSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
-    DomainSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DomainSettingsForUpdate();
+    AWS_SAGEMAKER_API DomainSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DomainSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -74,10 +77,135 @@ namespace Model
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { SetRStudioServerProDomainSettingsForUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline const ExecutionRoleIdentityConfig& GetExecutionRoleIdentityConfig() const{ return m_executionRoleIdentityConfig; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline bool ExecutionRoleIdentityConfigHasBeenSet() const { return m_executionRoleIdentityConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = value; }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline void SetExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { m_executionRoleIdentityConfigHasBeenSet = true; m_executionRoleIdentityConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline DomainSettingsForUpdate& WithExecutionRoleIdentityConfig(const ExecutionRoleIdentityConfig& value) { SetExecutionRoleIdentityConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for attaching a SageMaker user profile name to the
+     * execution role as a <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+     * key</a>. This configuration can only be modified if there are no apps in the
+     * <code>InService</code> or <code>Pending</code> state.</p>
+     */
+    inline DomainSettingsForUpdate& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline DomainSettingsForUpdate& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline DomainSettingsForUpdate& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline DomainSettingsForUpdate& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline DomainSettingsForUpdate& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The security groups for the Amazon Virtual Private Cloud that the
+     * <code>Domain</code> uses for communication between Domain-level apps and user
+     * apps.</p>
+     */
+    inline DomainSettingsForUpdate& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
   private:
 
     RStudioServerProDomainSettingsForUpdate m_rStudioServerProDomainSettingsForUpdate;
-    bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet;
+    bool m_rStudioServerProDomainSettingsForUpdateHasBeenSet = false;
+
+    ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
+    bool m_executionRoleIdentityConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ElasticGpuAssociation
+  class ElasticGpuAssociation
   {
   public:
-    ElasticGpuAssociation();
-    ElasticGpuAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ElasticGpuAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpuAssociation();
+    AWS_EC2_API ElasticGpuAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ElasticGpuAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -222,16 +222,16 @@ namespace Model
   private:
 
     Aws::String m_elasticGpuId;
-    bool m_elasticGpuIdHasBeenSet;
+    bool m_elasticGpuIdHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationId;
-    bool m_elasticGpuAssociationIdHasBeenSet;
+    bool m_elasticGpuAssociationIdHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationState;
-    bool m_elasticGpuAssociationStateHasBeenSet;
+    bool m_elasticGpuAssociationStateHasBeenSet = false;
 
     Aws::String m_elasticGpuAssociationTime;
-    bool m_elasticGpuAssociationTimeHasBeenSet;
+    bool m_elasticGpuAssociationTimeHasBeenSet = false;
   };
 
 } // namespace Model

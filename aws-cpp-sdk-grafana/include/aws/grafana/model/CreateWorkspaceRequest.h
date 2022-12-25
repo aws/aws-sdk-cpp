@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/model/PermissionType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/grafana/model/VpcConfiguration.h>
 #include <aws/grafana/model/AuthenticationProviderTypes.h>
 #include <aws/grafana/model/DataSourceType.h>
 #include <aws/grafana/model/NotificationDestinationType.h>
@@ -26,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDGRAFANA_API CreateWorkspaceRequest : public ManagedGrafanaRequest
+  class CreateWorkspaceRequest : public ManagedGrafanaRequest
   {
   public:
-    CreateWorkspaceRequest();
+    AWS_MANAGEDGRAFANA_API CreateWorkspaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateWorkspace"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -102,72 +103,72 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const{ return m_authenticationProviders; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = value; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::move(value); }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& WithAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetAuthenticationProviders(value); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& WithAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetAuthenticationProviders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& AddAuthenticationProviders(const AuthenticationProviderTypes& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single
-     * Sign On, or both to authenticate users for using the Grafana console within a
-     * workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
+     * (successor to Single Sign-On), or both to authenticate users for using the
+     * Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
@@ -221,6 +222,71 @@ namespace Model
      * of the request.</p>
      */
     inline CreateWorkspaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline CreateWorkspaceRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline CreateWorkspaceRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration string for the workspace that you create. For more
+     * information about the format and configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+     * in your Grafana workspace</a>.</p>
+     */
+    inline CreateWorkspaceRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
 
     /**
@@ -284,14 +350,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -302,14 +371,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -320,14 +392,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -338,14 +413,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -356,14 +434,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -374,14 +455,17 @@ namespace Model
      * <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon
      * Managed Grafana automatically creates the IAM roles and provisions the
      * permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType
-     * <code>SERVICE_MANAGED</code> will not create the IAM role for you.</p> <p>If you
-     * specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and
-     * permissions yourself. If you are creating this workspace in a member account of
-     * an organization that is not a delegated administrator account, and you want the
-     * workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.</p> <p>For more
-     * information, see <a
+     * notification channels. In the CLI mode, the permissionType
+     * <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability
+     * for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the
+     * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the
+     * CLI. </p> <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those
+     * roles and permissions yourself. If you are creating this workspace in a member
+     * account of an organization that is not a delegated administrator account, and
+     * you want the workspace to access data sources in other Amazon Web Services
+     * accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
      * Managed Grafana permissions and policies for Amazon Web Services data sources
      * and notification channels</a>.</p>
@@ -502,6 +586,43 @@ namespace Model
      * <p>The list of tags associated with the workspace.</p>
      */
     inline CreateWorkspaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline CreateWorkspaceRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration settings for an Amazon VPC that contains data sources for
+     * your Grafana workspace to connect to.</p>
+     */
+    inline CreateWorkspaceRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -887,43 +1008,49 @@ namespace Model
   private:
 
     AccountAccessType m_accountAccessType;
-    bool m_accountAccessTypeHasBeenSet;
+    bool m_accountAccessTypeHasBeenSet = false;
 
     Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-    bool m_authenticationProvidersHasBeenSet;
+    bool m_authenticationProvidersHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_organizationRoleName;
-    bool m_organizationRoleNameHasBeenSet;
+    bool m_organizationRoleNameHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<DataSourceType> m_workspaceDataSources;
-    bool m_workspaceDataSourcesHasBeenSet;
+    bool m_workspaceDataSourcesHasBeenSet = false;
 
     Aws::String m_workspaceDescription;
-    bool m_workspaceDescriptionHasBeenSet;
+    bool m_workspaceDescriptionHasBeenSet = false;
 
     Aws::String m_workspaceName;
-    bool m_workspaceNameHasBeenSet;
+    bool m_workspaceNameHasBeenSet = false;
 
     Aws::Vector<NotificationDestinationType> m_workspaceNotificationDestinations;
-    bool m_workspaceNotificationDestinationsHasBeenSet;
+    bool m_workspaceNotificationDestinationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
-    bool m_workspaceOrganizationalUnitsHasBeenSet;
+    bool m_workspaceOrganizationalUnitsHasBeenSet = false;
 
     Aws::String m_workspaceRoleArn;
-    bool m_workspaceRoleArnHasBeenSet;
+    bool m_workspaceRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

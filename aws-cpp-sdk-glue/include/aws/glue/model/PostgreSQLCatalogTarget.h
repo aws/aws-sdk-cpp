@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PostgreSQLCatalogTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PostgreSQLCatalogTarget
+  class PostgreSQLCatalogTarget
   {
   public:
-    PostgreSQLCatalogTarget();
-    PostgreSQLCatalogTarget(Aws::Utils::Json::JsonView jsonValue);
-    PostgreSQLCatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PostgreSQLCatalogTarget();
+    AWS_GLUE_API PostgreSQLCatalogTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PostgreSQLCatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/PartitionKey">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API PartitionKey
+  class PartitionKey
   {
   public:
-    PartitionKey();
-    PartitionKey(Aws::Utils::Json::JsonView jsonValue);
-    PartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API PartitionKey();
+    AWS_KEYSPACES_API PartitionKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API PartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

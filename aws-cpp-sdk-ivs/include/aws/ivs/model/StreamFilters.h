@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API StreamFilters
+  class StreamFilters
   {
   public:
-    StreamFilters();
-    StreamFilters(Aws::Utils::Json::JsonView jsonValue);
-    StreamFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamFilters();
+    AWS_IVS_API StreamFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     StreamHealth m_health;
-    bool m_healthHasBeenSet;
+    bool m_healthHasBeenSet = false;
   };
 
 } // namespace Model

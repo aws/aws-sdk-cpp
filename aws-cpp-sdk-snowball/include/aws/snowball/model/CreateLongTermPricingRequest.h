@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SNOWBALL_API CreateLongTermPricingRequest : public SnowballRequest
+  class CreateLongTermPricingRequest : public SnowballRequest
   {
   public:
-    CreateLongTermPricingRequest();
+    AWS_SNOWBALL_API CreateLongTermPricingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLongTermPricing"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SNOWBALL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -73,70 +73,70 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the current long-term pricing type for the device should be
-     * renewed.</p>
+     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
+     * the device should be renewed.</p>
      */
     inline bool GetIsLongTermPricingAutoRenew() const{ return m_isLongTermPricingAutoRenew; }
 
     /**
-     * <p>Specifies whether the current long-term pricing type for the device should be
-     * renewed.</p>
+     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
+     * the device should be renewed.</p>
      */
     inline bool IsLongTermPricingAutoRenewHasBeenSet() const { return m_isLongTermPricingAutoRenewHasBeenSet; }
 
     /**
-     * <p>Specifies whether the current long-term pricing type for the device should be
-     * renewed.</p>
+     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
+     * the device should be renewed.</p>
      */
     inline void SetIsLongTermPricingAutoRenew(bool value) { m_isLongTermPricingAutoRenewHasBeenSet = true; m_isLongTermPricingAutoRenew = value; }
 
     /**
-     * <p>Specifies whether the current long-term pricing type for the device should be
-     * renewed.</p>
+     * <p>snowballty</p> <p>Specifies whether the current long-term pricing type for
+     * the device should be renewed.</p>
      */
     inline CreateLongTermPricingRequest& WithIsLongTermPricingAutoRenew(bool value) { SetIsLongTermPricingAutoRenew(value); return *this;}
 
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline CreateLongTermPricingRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+     * <p>The type of Snow Family devices to use for the long-term pricing job.</p>
      */
     inline CreateLongTermPricingRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
   private:
 
     LongTermPricingType m_longTermPricingType;
-    bool m_longTermPricingTypeHasBeenSet;
+    bool m_longTermPricingTypeHasBeenSet = false;
 
     bool m_isLongTermPricingAutoRenew;
-    bool m_isLongTermPricingAutoRenewHasBeenSet;
+    bool m_isLongTermPricingAutoRenewHasBeenSet = false;
 
     SnowballType m_snowballType;
-    bool m_snowballTypeHasBeenSet;
+    bool m_snowballTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ApacheKafkaCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API ApacheKafkaCluster
+  class ApacheKafkaCluster
   {
   public:
-    ApacheKafkaCluster();
-    ApacheKafkaCluster(Aws::Utils::Json::JsonView jsonValue);
-    ApacheKafkaCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API ApacheKafkaCluster();
+    AWS_KAFKACONNECT_API ApacheKafkaCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API ApacheKafkaCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_bootstrapServers;
-    bool m_bootstrapServersHasBeenSet;
+    bool m_bootstrapServersHasBeenSet = false;
 
     Vpc m_vpc;
-    bool m_vpcHasBeenSet;
+    bool m_vpcHasBeenSet = false;
   };
 
 } // namespace Model

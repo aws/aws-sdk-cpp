@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsInputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsInputSettings
+  class HlsInputSettings
   {
   public:
-    HlsInputSettings();
-    HlsInputSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsInputSettings();
+    AWS_MEDIALIVE_API HlsInputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,19 +200,19 @@ namespace Model
   private:
 
     int m_bandwidth;
-    bool m_bandwidthHasBeenSet;
+    bool m_bandwidthHasBeenSet = false;
 
     int m_bufferSegments;
-    bool m_bufferSegmentsHasBeenSet;
+    bool m_bufferSegmentsHasBeenSet = false;
 
     int m_retries;
-    bool m_retriesHasBeenSet;
+    bool m_retriesHasBeenSet = false;
 
     int m_retryInterval;
-    bool m_retryIntervalHasBeenSet;
+    bool m_retryIntervalHasBeenSet = false;
 
     HlsScte35SourceType m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
   };
 
 } // namespace Model

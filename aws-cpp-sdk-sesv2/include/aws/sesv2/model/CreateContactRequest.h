@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SESV2_API CreateContactRequest : public SESV2Request
+  class CreateContactRequest : public SESV2Request
   {
   public:
-    CreateContactRequest();
+    AWS_SESV2_API CreateContactRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateContact"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_contactListName;
-    bool m_contactListNameHasBeenSet;
+    bool m_contactListNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::Vector<TopicPreference> m_topicPreferences;
-    bool m_topicPreferencesHasBeenSet;
+    bool m_topicPreferencesHasBeenSet = false;
 
     bool m_unsubscribeAll;
-    bool m_unsubscribeAllHasBeenSet;
+    bool m_unsubscribeAllHasBeenSet = false;
 
     Aws::String m_attributesData;
-    bool m_attributesDataHasBeenSet;
+    bool m_attributesDataHasBeenSet = false;
   };
 
 } // namespace Model

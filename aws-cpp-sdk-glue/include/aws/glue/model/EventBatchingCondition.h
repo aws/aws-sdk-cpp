@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EventBatchingCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API EventBatchingCondition
+  class EventBatchingCondition
   {
   public:
-    EventBatchingCondition();
-    EventBatchingCondition(Aws::Utils::Json::JsonView jsonValue);
-    EventBatchingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API EventBatchingCondition();
+    AWS_GLUE_API EventBatchingCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API EventBatchingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,10 +89,10 @@ namespace Model
   private:
 
     int m_batchSize;
-    bool m_batchSizeHasBeenSet;
+    bool m_batchSizeHasBeenSet = false;
 
     int m_batchWindow;
-    bool m_batchWindowHasBeenSet;
+    bool m_batchWindowHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/KinesisFirehoseDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API KinesisFirehoseDestination
+  class KinesisFirehoseDestination
   {
   public:
-    KinesisFirehoseDestination();
-    KinesisFirehoseDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KinesisFirehoseDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API KinesisFirehoseDestination();
+    AWS_SES_API KinesisFirehoseDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API KinesisFirehoseDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_iAMRoleARN;
-    bool m_iAMRoleARNHasBeenSet;
+    bool m_iAMRoleARNHasBeenSet = false;
 
     Aws::String m_deliveryStreamARN;
-    bool m_deliveryStreamARNHasBeenSet;
+    bool m_deliveryStreamARNHasBeenSet = false;
   };
 
 } // namespace Model

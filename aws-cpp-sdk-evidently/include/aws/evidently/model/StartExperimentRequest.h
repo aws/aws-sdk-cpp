@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API StartExperimentRequest : public CloudWatchEvidentlyRequest
+  class StartExperimentRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    StartExperimentRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API StartExperimentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartExperiment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_analysisCompleteTime;
-    bool m_analysisCompleteTimeHasBeenSet;
+    bool m_analysisCompleteTimeHasBeenSet = false;
 
     Aws::String m_experiment;
-    bool m_experimentHasBeenSet;
+    bool m_experimentHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

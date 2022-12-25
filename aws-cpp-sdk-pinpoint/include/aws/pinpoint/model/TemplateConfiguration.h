@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TemplateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TemplateConfiguration
+  class TemplateConfiguration
   {
   public:
-    TemplateConfiguration();
-    TemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TemplateConfiguration();
+    AWS_PINPOINT_API TemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,16 +170,16 @@ namespace Model
   private:
 
     Template m_emailTemplate;
-    bool m_emailTemplateHasBeenSet;
+    bool m_emailTemplateHasBeenSet = false;
 
     Template m_pushTemplate;
-    bool m_pushTemplateHasBeenSet;
+    bool m_pushTemplateHasBeenSet = false;
 
     Template m_sMSTemplate;
-    bool m_sMSTemplateHasBeenSet;
+    bool m_sMSTemplateHasBeenSet = false;
 
     Template m_voiceTemplate;
-    bool m_voiceTemplateHasBeenSet;
+    bool m_voiceTemplateHasBeenSet = false;
   };
 
 } // namespace Model

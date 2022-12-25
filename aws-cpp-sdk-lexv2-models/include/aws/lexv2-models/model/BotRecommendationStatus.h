@@ -22,7 +22,9 @@ namespace Model
     Downloading,
     Updating,
     Available,
-    Failed
+    Failed,
+    Stopping,
+    Stopped
   };
 
 namespace BotRecommendationStatusMapper

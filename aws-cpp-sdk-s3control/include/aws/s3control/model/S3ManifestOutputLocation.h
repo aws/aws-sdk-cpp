@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ManifestOutputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3ManifestOutputLocation
+  class S3ManifestOutputLocation
   {
   public:
-    S3ManifestOutputLocation();
-    S3ManifestOutputLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3ManifestOutputLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ManifestOutputLocation();
+    AWS_S3CONTROL_API S3ManifestOutputLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ManifestOutputLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -233,19 +233,19 @@ namespace Model
   private:
 
     Aws::String m_expectedManifestBucketOwner;
-    bool m_expectedManifestBucketOwnerHasBeenSet;
+    bool m_expectedManifestBucketOwnerHasBeenSet = false;
 
     Aws::String m_bucket;
-    bool m_bucketHasBeenSet;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_manifestPrefix;
-    bool m_manifestPrefixHasBeenSet;
+    bool m_manifestPrefixHasBeenSet = false;
 
     GeneratedManifestEncryption m_manifestEncryption;
-    bool m_manifestEncryptionHasBeenSet;
+    bool m_manifestEncryptionHasBeenSet = false;
 
     GeneratedManifestFormat m_manifestFormat;
-    bool m_manifestFormatHasBeenSet;
+    bool m_manifestFormatHasBeenSet = false;
   };
 
 } // namespace Model

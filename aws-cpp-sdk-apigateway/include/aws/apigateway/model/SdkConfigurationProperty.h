@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkConfigurationProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API SdkConfigurationProperty
+  class SdkConfigurationProperty
   {
   public:
-    SdkConfigurationProperty();
-    SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
-    SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API SdkConfigurationProperty();
+    AWS_APIGATEWAY_API SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -232,19 +232,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_friendlyName;
-    bool m_friendlyNameHasBeenSet;
+    bool m_friendlyNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
   };
 
 } // namespace Model

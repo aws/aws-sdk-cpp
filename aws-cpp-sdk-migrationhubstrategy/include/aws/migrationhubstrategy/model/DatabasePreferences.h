@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/DatabasePreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabasePreferences
+  class DatabasePreferences
   {
   public:
-    DatabasePreferences();
-    DatabasePreferences(Aws::Utils::Json::JsonView jsonValue);
-    DatabasePreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabasePreferences();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabasePreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabasePreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DatabaseManagementPreference m_databaseManagementPreference;
-    bool m_databaseManagementPreferenceHasBeenSet;
+    bool m_databaseManagementPreferenceHasBeenSet = false;
 
     DatabaseMigrationPreference m_databaseMigrationPreference;
-    bool m_databaseMigrationPreferenceHasBeenSet;
+    bool m_databaseMigrationPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

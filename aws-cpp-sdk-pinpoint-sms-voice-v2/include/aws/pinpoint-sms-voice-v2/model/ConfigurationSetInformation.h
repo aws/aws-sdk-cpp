@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ConfigurationSetInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation
+  class ConfigurationSetInformation
   {
   public:
-    ConfigurationSetInformation();
-    ConfigurationSetInformation(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation();
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -296,22 +296,22 @@ namespace Model
   private:
 
     Aws::String m_configurationSetArn;
-    bool m_configurationSetArnHasBeenSet;
+    bool m_configurationSetArnHasBeenSet = false;
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     Aws::Vector<EventDestination> m_eventDestinations;
-    bool m_eventDestinationsHasBeenSet;
+    bool m_eventDestinationsHasBeenSet = false;
 
     MessageType m_defaultMessageType;
-    bool m_defaultMessageTypeHasBeenSet;
+    bool m_defaultMessageTypeHasBeenSet = false;
 
     Aws::String m_defaultSenderId;
-    bool m_defaultSenderIdHasBeenSet;
+    bool m_defaultSenderIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

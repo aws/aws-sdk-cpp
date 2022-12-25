@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AccountLevelBpaSync">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AccountLevelBpaSync
+  class AccountLevelBpaSync
   {
   public:
-    AccountLevelBpaSync();
-    AccountLevelBpaSync(Aws::Utils::Json::JsonView jsonValue);
-    AccountLevelBpaSync& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AccountLevelBpaSync();
+    AWS_LIGHTSAIL_API AccountLevelBpaSync(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AccountLevelBpaSync& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -414,16 +414,16 @@ namespace Model
   private:
 
     AccountLevelBpaSyncStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSyncedAt;
-    bool m_lastSyncedAtHasBeenSet;
+    bool m_lastSyncedAtHasBeenSet = false;
 
     BPAStatusMessage m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     bool m_bpaImpactsLightsail;
-    bool m_bpaImpactsLightsailHasBeenSet;
+    bool m_bpaImpactsLightsailHasBeenSet = false;
   };
 
 } // namespace Model

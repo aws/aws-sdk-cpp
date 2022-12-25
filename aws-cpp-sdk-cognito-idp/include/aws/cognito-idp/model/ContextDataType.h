@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ContextDataType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ContextDataType
+  class ContextDataType
   {
   public:
-    ContextDataType();
-    ContextDataType(Aws::Utils::Json::JsonView jsonValue);
-    ContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API ContextDataType();
+    AWS_COGNITOIDENTITYPROVIDER_API ContextDataType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API ContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_serverPath;
-    bool m_serverPathHasBeenSet;
+    bool m_serverPathHasBeenSet = false;
 
     Aws::Vector<HttpHeader> m_httpHeaders;
-    bool m_httpHeadersHasBeenSet;
+    bool m_httpHeadersHasBeenSet = false;
 
     Aws::String m_encodedData;
-    bool m_encodedDataHasBeenSet;
+    bool m_encodedDataHasBeenSet = false;
   };
 
 } // namespace Model

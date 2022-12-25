@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaiduChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BaiduChannelRequest
+  class BaiduChannelRequest
   {
   public:
-    BaiduChannelRequest();
-    BaiduChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    BaiduChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BaiduChannelRequest();
+    AWS_PINPOINT_API BaiduChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BaiduChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_apiKey;
-    bool m_apiKeyHasBeenSet;
+    bool m_apiKeyHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_secretKey;
-    bool m_secretKeyHasBeenSet;
+    bool m_secretKeyHasBeenSet = false;
   };
 
 } // namespace Model

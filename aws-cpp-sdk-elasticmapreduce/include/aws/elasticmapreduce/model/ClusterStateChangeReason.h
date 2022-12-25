@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterStateChangeReason">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ClusterStateChangeReason
+  class ClusterStateChangeReason
   {
   public:
-    ClusterStateChangeReason();
-    ClusterStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
-    ClusterStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ClusterStateChangeReason();
+    AWS_EMR_API ClusterStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ClusterStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     ClusterStateChangeReasonCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

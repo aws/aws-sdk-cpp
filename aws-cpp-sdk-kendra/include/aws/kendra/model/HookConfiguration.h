@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/HookConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API HookConfiguration
+  class HookConfiguration
   {
   public:
-    HookConfiguration();
-    HookConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HookConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API HookConfiguration();
+    AWS_KENDRA_API HookConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API HookConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -231,13 +231,13 @@ namespace Model
   private:
 
     DocumentAttributeCondition m_invocationCondition;
-    bool m_invocationConditionHasBeenSet;
+    bool m_invocationConditionHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
   };
 
 } // namespace Model

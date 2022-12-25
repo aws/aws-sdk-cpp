@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeNetworkInterfacePermissionsRequest : public EC2Request
+  class DescribeNetworkInterfacePermissionsRequest : public EC2Request
   {
   public:
-    DescribeNetworkInterfacePermissionsRequest();
+    AWS_EC2_API DescribeNetworkInterfacePermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,55 +35,55 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeNetworkInterfacePermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfacePermissionIds() const{ return m_networkInterfacePermissionIds; }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline bool NetworkInterfacePermissionIdsHasBeenSet() const { return m_networkInterfacePermissionIdsHasBeenSet; }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline void SetNetworkInterfacePermissionIds(const Aws::Vector<Aws::String>& value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds = value; }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline void SetNetworkInterfacePermissionIds(Aws::Vector<Aws::String>&& value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds = std::move(value); }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& WithNetworkInterfacePermissionIds(const Aws::Vector<Aws::String>& value) { SetNetworkInterfacePermissionIds(value); return *this;}
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& WithNetworkInterfacePermissionIds(Aws::Vector<Aws::String>&& value) { SetNetworkInterfacePermissionIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddNetworkInterfacePermissionIds(const Aws::String& value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddNetworkInterfacePermissionIds(Aws::String&& value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more network interface permission IDs.</p>
+     * <p>The network interface permission IDs.</p>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddNetworkInterfacePermissionIds(const char* value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds.push_back(value); return *this; }
 
@@ -285,16 +285,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_networkInterfacePermissionIds;
-    bool m_networkInterfacePermissionIdsHasBeenSet;
+    bool m_networkInterfacePermissionIdsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

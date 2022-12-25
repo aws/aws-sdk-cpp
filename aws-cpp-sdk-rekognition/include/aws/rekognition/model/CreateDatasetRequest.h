@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_REKOGNITION_API CreateDatasetRequest : public RekognitionRequest
+  class CreateDatasetRequest : public RekognitionRequest
   {
   public:
-    CreateDatasetRequest();
+    AWS_REKOGNITION_API CreateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REKOGNITION_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     DatasetSource m_datasetSource;
-    bool m_datasetSourceHasBeenSet;
+    bool m_datasetSourceHasBeenSet = false;
 
     DatasetType m_datasetType;
-    bool m_datasetTypeHasBeenSet;
+    bool m_datasetTypeHasBeenSet = false;
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
   };
 
 } // namespace Model

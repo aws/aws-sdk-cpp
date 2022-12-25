@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2CreateRouteTableAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2CreateRouteTableAction
+  class EC2CreateRouteTableAction
   {
   public:
-    EC2CreateRouteTableAction();
-    EC2CreateRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2CreateRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2CreateRouteTableAction();
+    AWS_FMS_API EC2CreateRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2CreateRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ActionTarget m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

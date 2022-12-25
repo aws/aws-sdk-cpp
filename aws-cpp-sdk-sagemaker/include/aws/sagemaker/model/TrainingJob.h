@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingJob
+  class TrainingJob
   {
   public:
-    TrainingJob();
-    TrainingJob(Aws::Utils::Json::JsonView jsonValue);
-    TrainingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingJob();
+    AWS_SAGEMAKER_API TrainingJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -1756,115 +1756,115 @@ namespace Model
   private:
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     Aws::String m_trainingJobArn;
-    bool m_trainingJobArnHasBeenSet;
+    bool m_trainingJobArnHasBeenSet = false;
 
     Aws::String m_tuningJobArn;
-    bool m_tuningJobArnHasBeenSet;
+    bool m_tuningJobArnHasBeenSet = false;
 
     Aws::String m_labelingJobArn;
-    bool m_labelingJobArnHasBeenSet;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::String m_autoMLJobArn;
-    bool m_autoMLJobArnHasBeenSet;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     ModelArtifacts m_modelArtifacts;
-    bool m_modelArtifactsHasBeenSet;
+    bool m_modelArtifactsHasBeenSet = false;
 
     TrainingJobStatus m_trainingJobStatus;
-    bool m_trainingJobStatusHasBeenSet;
+    bool m_trainingJobStatusHasBeenSet = false;
 
     SecondaryStatus m_secondaryStatus;
-    bool m_secondaryStatusHasBeenSet;
+    bool m_secondaryStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-    bool m_hyperParametersHasBeenSet;
+    bool m_hyperParametersHasBeenSet = false;
 
     AlgorithmSpecification m_algorithmSpecification;
-    bool m_algorithmSpecificationHasBeenSet;
+    bool m_algorithmSpecificationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Channel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
-    bool m_resourceConfigHasBeenSet;
+    bool m_resourceConfigHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingStartTime;
-    bool m_trainingStartTimeHasBeenSet;
+    bool m_trainingStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTime;
-    bool m_trainingEndTimeHasBeenSet;
+    bool m_trainingEndTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
-    bool m_secondaryStatusTransitionsHasBeenSet;
+    bool m_secondaryStatusTransitionsHasBeenSet = false;
 
     Aws::Vector<MetricData> m_finalMetricDataList;
-    bool m_finalMetricDataListHasBeenSet;
+    bool m_finalMetricDataListHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     bool m_enableManagedSpotTraining;
-    bool m_enableManagedSpotTrainingHasBeenSet;
+    bool m_enableManagedSpotTrainingHasBeenSet = false;
 
     CheckpointConfig m_checkpointConfig;
-    bool m_checkpointConfigHasBeenSet;
+    bool m_checkpointConfigHasBeenSet = false;
 
     int m_trainingTimeInSeconds;
-    bool m_trainingTimeInSecondsHasBeenSet;
+    bool m_trainingTimeInSecondsHasBeenSet = false;
 
     int m_billableTimeInSeconds;
-    bool m_billableTimeInSecondsHasBeenSet;
+    bool m_billableTimeInSecondsHasBeenSet = false;
 
     DebugHookConfig m_debugHookConfig;
-    bool m_debugHookConfigHasBeenSet;
+    bool m_debugHookConfigHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
-    bool m_experimentConfigHasBeenSet;
+    bool m_experimentConfigHasBeenSet = false;
 
     Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
-    bool m_debugRuleConfigurationsHasBeenSet;
+    bool m_debugRuleConfigurationsHasBeenSet = false;
 
     TensorBoardOutputConfig m_tensorBoardOutputConfig;
-    bool m_tensorBoardOutputConfigHasBeenSet;
+    bool m_tensorBoardOutputConfigHasBeenSet = false;
 
     Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
-    bool m_debugRuleEvaluationStatusesHasBeenSet;
+    bool m_debugRuleEvaluationStatusesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

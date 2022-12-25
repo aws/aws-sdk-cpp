@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConversionTask">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConversionTask
+  class LicenseConversionTask
   {
   public:
-    LicenseConversionTask();
-    LicenseConversionTask(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConversionTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConversionTask();
+    AWS_LICENSEMANAGER_API LicenseConversionTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConversionTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -360,31 +360,31 @@ namespace Model
   private:
 
     Aws::String m_licenseConversionTaskId;
-    bool m_licenseConversionTaskIdHasBeenSet;
+    bool m_licenseConversionTaskIdHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     LicenseConversionContext m_sourceLicenseContext;
-    bool m_sourceLicenseContextHasBeenSet;
+    bool m_sourceLicenseContextHasBeenSet = false;
 
     LicenseConversionContext m_destinationLicenseContext;
-    bool m_destinationLicenseContextHasBeenSet;
+    bool m_destinationLicenseContextHasBeenSet = false;
 
     LicenseConversionTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_licenseConversionTime;
-    bool m_licenseConversionTimeHasBeenSet;
+    bool m_licenseConversionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
   };
 
 } // namespace Model

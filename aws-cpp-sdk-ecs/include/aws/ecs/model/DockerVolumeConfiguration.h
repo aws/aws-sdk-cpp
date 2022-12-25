@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API DockerVolumeConfiguration
+  class DockerVolumeConfiguration
   {
   public:
-    DockerVolumeConfiguration();
-    DockerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DockerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API DockerVolumeConfiguration();
+    AWS_ECS_API DockerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API DockerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -581,19 +581,19 @@ namespace Model
   private:
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     bool m_autoprovision;
-    bool m_autoprovisionHasBeenSet;
+    bool m_autoprovisionHasBeenSet = false;
 
     Aws::String m_driver;
-    bool m_driverHasBeenSet;
+    bool m_driverHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_driverOpts;
-    bool m_driverOptsHasBeenSet;
+    bool m_driverOptsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_labels;
-    bool m_labelsHasBeenSet;
+    bool m_labelsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,9 +39,9 @@ namespace Model
    * quota (formerly known as limit) on the number of cache behaviors that you can
    * add to a distribution, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
-   * in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If you don’t want to
+   * in the <i>Amazon CloudFront Developer Guide</i>.</p> <p>If you don't want to
    * specify any cache behaviors, include only an empty <code>CacheBehaviors</code>
-   * element. Don’t include an empty <code>CacheBehavior</code> element because this
+   * element. Don't include an empty <code>CacheBehavior</code> element because this
    * is invalid.</p> <p>To delete all cache behaviors in an existing distribution,
    * update the distribution configuration and include only an empty
    * <code>CacheBehaviors</code> element.</p> <p>To add, change, or remove one or
@@ -54,14 +54,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CacheBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CacheBehavior
+  class CacheBehavior
   {
   public:
-    CacheBehavior();
-    CacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehavior();
+    AWS_CLOUDFRONT_API CacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -257,7 +257,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -272,7 +272,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -287,7 +287,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -302,7 +302,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -317,7 +317,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -332,7 +332,7 @@ namespace Model
      * signed cookies.</p> <p>When a cache behavior contains trusted signers,
      * CloudFront requires signed URLs or signed cookies for all requests that match
      * the cache behavior. The URLs or cookies must be signed with the private key of a
-     * CloudFront key pair in the trusted signer’s Amazon Web Services account. The
+     * CloudFront key pair in the trusted signer's Amazon Web Services account. The
      * signed URL or cookie contains information about which public key CloudFront
      * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -427,16 +427,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -453,16 +453,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -479,16 +479,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -505,16 +505,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -531,16 +531,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -557,16 +557,16 @@ namespace Model
      * <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li> <li> <p>
      * <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront
      * returns an HTTP status code of 301 (Moved Permanently) to the viewer along with
-     * the HTTPS URL. The viewer then resubmits the request using the new URL. </p>
+     * the HTTPS URL. The viewer then resubmits the request using the new URL.</p>
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
-     * CloudFront returns an HTTP status code of 403 (Forbidden). </p> </li> </ul>
+     * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
-     * we recommend that you clear your objects’ cache because cached objects are
+     * we recommend that you clear your objects' cache because cached objects are
      * protocol agnostic. That means that an edge location will return an object from
      * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
@@ -602,7 +602,7 @@ namespace Model
      * If so, specify <code>true</code>; if not, specify <code>false</code>. If you
      * specify <code>true</code> for <code>SmoothStreaming</code>, you can still
      * distribute other content using this cache behavior if the content matches the
-     * value of <code>PathPattern</code>. </p>
+     * value of <code>PathPattern</code>.</p>
      */
     inline bool GetSmoothStreaming() const{ return m_smoothStreaming; }
 
@@ -612,7 +612,7 @@ namespace Model
      * If so, specify <code>true</code>; if not, specify <code>false</code>. If you
      * specify <code>true</code> for <code>SmoothStreaming</code>, you can still
      * distribute other content using this cache behavior if the content matches the
-     * value of <code>PathPattern</code>. </p>
+     * value of <code>PathPattern</code>.</p>
      */
     inline bool SmoothStreamingHasBeenSet() const { return m_smoothStreamingHasBeenSet; }
 
@@ -622,7 +622,7 @@ namespace Model
      * If so, specify <code>true</code>; if not, specify <code>false</code>. If you
      * specify <code>true</code> for <code>SmoothStreaming</code>, you can still
      * distribute other content using this cache behavior if the content matches the
-     * value of <code>PathPattern</code>. </p>
+     * value of <code>PathPattern</code>.</p>
      */
     inline void SetSmoothStreaming(bool value) { m_smoothStreamingHasBeenSet = true; m_smoothStreaming = value; }
 
@@ -632,7 +632,7 @@ namespace Model
      * If so, specify <code>true</code>; if not, specify <code>false</code>. If you
      * specify <code>true</code> for <code>SmoothStreaming</code>, you can still
      * distribute other content using this cache behavior if the content matches the
-     * value of <code>PathPattern</code>. </p>
+     * value of <code>PathPattern</code>.</p>
      */
     inline CacheBehavior& WithSmoothStreaming(bool value) { SetSmoothStreaming(value); return *this;}
 
@@ -1113,49 +1113,49 @@ namespace Model
   private:
 
     Aws::String m_pathPattern;
-    bool m_pathPatternHasBeenSet;
+    bool m_pathPatternHasBeenSet = false;
 
     Aws::String m_targetOriginId;
-    bool m_targetOriginIdHasBeenSet;
+    bool m_targetOriginIdHasBeenSet = false;
 
     TrustedSigners m_trustedSigners;
-    bool m_trustedSignersHasBeenSet;
+    bool m_trustedSignersHasBeenSet = false;
 
     TrustedKeyGroups m_trustedKeyGroups;
-    bool m_trustedKeyGroupsHasBeenSet;
+    bool m_trustedKeyGroupsHasBeenSet = false;
 
     ViewerProtocolPolicy m_viewerProtocolPolicy;
-    bool m_viewerProtocolPolicyHasBeenSet;
+    bool m_viewerProtocolPolicyHasBeenSet = false;
 
     AllowedMethods m_allowedMethods;
-    bool m_allowedMethodsHasBeenSet;
+    bool m_allowedMethodsHasBeenSet = false;
 
     bool m_smoothStreaming;
-    bool m_smoothStreamingHasBeenSet;
+    bool m_smoothStreamingHasBeenSet = false;
 
     bool m_compress;
-    bool m_compressHasBeenSet;
+    bool m_compressHasBeenSet = false;
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
-    bool m_lambdaFunctionAssociationsHasBeenSet;
+    bool m_lambdaFunctionAssociationsHasBeenSet = false;
 
     FunctionAssociations m_functionAssociations;
-    bool m_functionAssociationsHasBeenSet;
+    bool m_functionAssociationsHasBeenSet = false;
 
     Aws::String m_fieldLevelEncryptionId;
-    bool m_fieldLevelEncryptionIdHasBeenSet;
+    bool m_fieldLevelEncryptionIdHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigArn;
-    bool m_realtimeLogConfigArnHasBeenSet;
+    bool m_realtimeLogConfigArnHasBeenSet = false;
 
     Aws::String m_cachePolicyId;
-    bool m_cachePolicyIdHasBeenSet;
+    bool m_cachePolicyIdHasBeenSet = false;
 
     Aws::String m_originRequestPolicyId;
-    bool m_originRequestPolicyIdHasBeenSet;
+    bool m_originRequestPolicyIdHasBeenSet = false;
 
     Aws::String m_responseHeadersPolicyId;
-    bool m_responseHeadersPolicyIdHasBeenSet;
+    bool m_responseHeadersPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

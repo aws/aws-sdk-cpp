@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HostProperties
+  class HostProperties
   {
   public:
-    HostProperties();
-    HostProperties(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostProperties& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostProperties();
+    AWS_EC2_API HostProperties(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostProperties& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -210,19 +210,19 @@ namespace Model
   private:
 
     int m_cores;
-    bool m_coresHasBeenSet;
+    bool m_coresHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     int m_sockets;
-    bool m_socketsHasBeenSet;
+    bool m_socketsHasBeenSet = false;
 
     int m_totalVCpus;
-    bool m_totalVCpusHasBeenSet;
+    bool m_totalVCpusHasBeenSet = false;
   };
 
 } // namespace Model

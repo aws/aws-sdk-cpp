@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudFormationCostEstimationResourceCollectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API CloudFormationCostEstimationResourceCollectionFilter
+  class CloudFormationCostEstimationResourceCollectionFilter
   {
   public:
-    CloudFormationCostEstimationResourceCollectionFilter();
-    CloudFormationCostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    CloudFormationCostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API CloudFormationCostEstimationResourceCollectionFilter();
+    AWS_DEVOPSGURU_API CloudFormationCostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API CloudFormationCostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_stackNames;
-    bool m_stackNamesHasBeenSet;
+    bool m_stackNamesHasBeenSet = false;
   };
 
 } // namespace Model

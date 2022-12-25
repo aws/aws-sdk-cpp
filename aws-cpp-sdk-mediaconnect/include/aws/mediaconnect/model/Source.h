@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Source">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Source();
+    AWS_MEDIACONNECT_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -597,46 +597,46 @@ namespace Model
   private:
 
     int m_dataTransferSubscriberFeePercent;
-    bool m_dataTransferSubscriberFeePercentHasBeenSet;
+    bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
     Encryption m_decryption;
-    bool m_decryptionHasBeenSet;
+    bool m_decryptionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_entitlementArn;
-    bool m_entitlementArnHasBeenSet;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_ingestIp;
-    bool m_ingestIpHasBeenSet;
+    bool m_ingestIpHasBeenSet = false;
 
     int m_ingestPort;
-    bool m_ingestPortHasBeenSet;
+    bool m_ingestPortHasBeenSet = false;
 
     Aws::Vector<MediaStreamSourceConfiguration> m_mediaStreamSourceConfigurations;
-    bool m_mediaStreamSourceConfigurationsHasBeenSet;
+    bool m_mediaStreamSourceConfigurationsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_senderControlPort;
-    bool m_senderControlPortHasBeenSet;
+    bool m_senderControlPortHasBeenSet = false;
 
     Aws::String m_senderIpAddress;
-    bool m_senderIpAddressHasBeenSet;
+    bool m_senderIpAddressHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Transport m_transport;
-    bool m_transportHasBeenSet;
+    bool m_transportHasBeenSet = false;
 
     Aws::String m_vpcInterfaceName;
-    bool m_vpcInterfaceNameHasBeenSet;
+    bool m_vpcInterfaceNameHasBeenSet = false;
 
     Aws::String m_whitelistCidr;
-    bool m_whitelistCidrHasBeenSet;
+    bool m_whitelistCidrHasBeenSet = false;
   };
 
 } // namespace Model

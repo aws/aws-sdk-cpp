@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKMAIL_API PutMailboxPermissionsRequest : public WorkMailRequest
+  class PutMailboxPermissionsRequest : public WorkMailRequest
   {
   public:
-    PutMailboxPermissionsRequest();
+    AWS_WORKMAIL_API PutMailboxPermissionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutMailboxPermissions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_granteeId;
-    bool m_granteeIdHasBeenSet;
+    bool m_granteeIdHasBeenSet = false;
 
     Aws::Vector<PermissionType> m_permissionValues;
-    bool m_permissionValuesHasBeenSet;
+    bool m_permissionValuesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ApplicationDateRangeKpiResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ApplicationDateRangeKpiResponse
+  class ApplicationDateRangeKpiResponse
   {
   public:
-    ApplicationDateRangeKpiResponse();
-    ApplicationDateRangeKpiResponse(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDateRangeKpiResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ApplicationDateRangeKpiResponse();
+    AWS_PINPOINT_API ApplicationDateRangeKpiResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ApplicationDateRangeKpiResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -341,22 +341,22 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_kpiName;
-    bool m_kpiNameHasBeenSet;
+    bool m_kpiNameHasBeenSet = false;
 
     BaseKpiResult m_kpiResult;
-    bool m_kpiResultHasBeenSet;
+    bool m_kpiResultHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

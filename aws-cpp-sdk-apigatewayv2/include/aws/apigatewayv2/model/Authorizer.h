@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Authorizer">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Authorizer
+  class Authorizer
   {
   public:
-    Authorizer();
-    Authorizer(Aws::Utils::Json::JsonView jsonValue);
-    Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Authorizer();
+    AWS_APIGATEWAYV2_API Authorizer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -807,37 +807,37 @@ namespace Model
   private:
 
     Aws::String m_authorizerCredentialsArn;
-    bool m_authorizerCredentialsArnHasBeenSet;
+    bool m_authorizerCredentialsArnHasBeenSet = false;
 
     Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet;
+    bool m_authorizerIdHasBeenSet = false;
 
     Aws::String m_authorizerPayloadFormatVersion;
-    bool m_authorizerPayloadFormatVersionHasBeenSet;
+    bool m_authorizerPayloadFormatVersionHasBeenSet = false;
 
     int m_authorizerResultTtlInSeconds;
-    bool m_authorizerResultTtlInSecondsHasBeenSet;
+    bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
     AuthorizerType m_authorizerType;
-    bool m_authorizerTypeHasBeenSet;
+    bool m_authorizerTypeHasBeenSet = false;
 
     Aws::String m_authorizerUri;
-    bool m_authorizerUriHasBeenSet;
+    bool m_authorizerUriHasBeenSet = false;
 
     bool m_enableSimpleResponses;
-    bool m_enableSimpleResponsesHasBeenSet;
+    bool m_enableSimpleResponsesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_identitySource;
-    bool m_identitySourceHasBeenSet;
+    bool m_identitySourceHasBeenSet = false;
 
     Aws::String m_identityValidationExpression;
-    bool m_identityValidationExpressionHasBeenSet;
+    bool m_identityValidationExpressionHasBeenSet = false;
 
     JWTConfiguration m_jwtConfiguration;
-    bool m_jwtConfigurationHasBeenSet;
+    bool m_jwtConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

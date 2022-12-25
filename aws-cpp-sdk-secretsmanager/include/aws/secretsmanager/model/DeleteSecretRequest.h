@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECRETSMANAGER_API DeleteSecretRequest : public SecretsManagerRequest
+  class DeleteSecretRequest : public SecretsManagerRequest
   {
   public:
-    DeleteSecretRequest();
+    AWS_SECRETSMANAGER_API DeleteSecretRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSecret"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECRETSMANAGER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SECRETSMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -143,7 +143,7 @@ namespace Model
      * <p>Use this parameter with caution. This parameter causes the operation to skip
      * the normal recovery window before the permanent deletion that Secrets Manager
      * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter,
+     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
      * then you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
@@ -160,7 +160,7 @@ namespace Model
      * <p>Use this parameter with caution. This parameter causes the operation to skip
      * the normal recovery window before the permanent deletion that Secrets Manager
      * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter,
+     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
      * then you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
@@ -177,7 +177,7 @@ namespace Model
      * <p>Use this parameter with caution. This parameter causes the operation to skip
      * the normal recovery window before the permanent deletion that Secrets Manager
      * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter,
+     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
      * then you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
@@ -194,7 +194,7 @@ namespace Model
      * <p>Use this parameter with caution. This parameter causes the operation to skip
      * the normal recovery window before the permanent deletion that Secrets Manager
      * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter,
+     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
      * then you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
@@ -203,13 +203,13 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     long long m_recoveryWindowInDays;
-    bool m_recoveryWindowInDaysHasBeenSet;
+    bool m_recoveryWindowInDaysHasBeenSet = false;
 
     bool m_forceDeleteWithoutRecovery;
-    bool m_forceDeleteWithoutRecoveryHasBeenSet;
+    bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DatasetChanges">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DatasetChanges
+  class DatasetChanges
   {
   public:
-    DatasetChanges();
-    DatasetChanges(Aws::Utils::Json::JsonView jsonValue);
-    DatasetChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DatasetChanges();
+    AWS_REKOGNITION_API DatasetChanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DatasetChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -111,7 +111,7 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_groundTruth;
-    bool m_groundTruthHasBeenSet;
+    bool m_groundTruthHasBeenSet = false;
   };
 
 } // namespace Model

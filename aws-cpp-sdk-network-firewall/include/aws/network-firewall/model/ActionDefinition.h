@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API ActionDefinition
+  class ActionDefinition
   {
   public:
-    ActionDefinition();
-    ActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API ActionDefinition();
+    AWS_NETWORKFIREWALL_API ActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API ActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -107,7 +107,7 @@ namespace Model
   private:
 
     PublishMetricAction m_publishMetricAction;
-    bool m_publishMetricActionHasBeenSet;
+    bool m_publishMetricActionHasBeenSet = false;
   };
 
 } // namespace Model

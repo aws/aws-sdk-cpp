@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayRequestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayRequestOptions
+  class TransitGatewayRequestOptions
   {
   public:
-    TransitGatewayRequestOptions();
-    TransitGatewayRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRequestOptions();
+    AWS_EC2_API TransitGatewayRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -351,28 +351,28 @@ namespace Model
   private:
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments;
-    bool m_autoAcceptSharedAttachmentsHasBeenSet;
+    bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
     DefaultRouteTableAssociationValue m_defaultRouteTableAssociation;
-    bool m_defaultRouteTableAssociationHasBeenSet;
+    bool m_defaultRouteTableAssociationHasBeenSet = false;
 
     DefaultRouteTablePropagationValue m_defaultRouteTablePropagation;
-    bool m_defaultRouteTablePropagationHasBeenSet;
+    bool m_defaultRouteTablePropagationHasBeenSet = false;
 
     VpnEcmpSupportValue m_vpnEcmpSupport;
-    bool m_vpnEcmpSupportHasBeenSet;
+    bool m_vpnEcmpSupportHasBeenSet = false;
 
     DnsSupportValue m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     MulticastSupportValue m_multicastSupport;
-    bool m_multicastSupportHasBeenSet;
+    bool m_multicastSupportHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
-    bool m_transitGatewayCidrBlocksHasBeenSet;
+    bool m_transitGatewayCidrBlocksHasBeenSet = false;
   };
 
 } // namespace Model

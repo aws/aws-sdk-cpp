@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SAPODataDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SAPODataDestinationProperties
+  class SAPODataDestinationProperties
   {
   public:
-    SAPODataDestinationProperties();
-    SAPODataDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    SAPODataDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SAPODataDestinationProperties();
+    AWS_APPFLOW_API SAPODataDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SAPODataDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -200,19 +200,19 @@ namespace Model
   private:
 
     Aws::String m_objectPath;
-    bool m_objectPathHasBeenSet;
+    bool m_objectPathHasBeenSet = false;
 
     SuccessResponseHandlingConfig m_successResponseHandlingConfig;
-    bool m_successResponseHandlingConfigHasBeenSet;
+    bool m_successResponseHandlingConfigHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;
-    bool m_idFieldNamesHasBeenSet;
+    bool m_idFieldNamesHasBeenSet = false;
 
     ErrorHandlingConfig m_errorHandlingConfig;
-    bool m_errorHandlingConfigHasBeenSet;
+    bool m_errorHandlingConfigHasBeenSet = false;
 
     WriteOperationType m_writeOperationType;
-    bool m_writeOperationTypeHasBeenSet;
+    bool m_writeOperationTypeHasBeenSet = false;
   };
 
 } // namespace Model

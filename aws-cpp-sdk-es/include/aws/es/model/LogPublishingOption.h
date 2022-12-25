@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/LogPublishingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API LogPublishingOption
+  class LogPublishingOption
   {
   public:
-    LogPublishingOption();
-    LogPublishingOption(Aws::Utils::Json::JsonView jsonValue);
-    LogPublishingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOption();
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
   };
 
 } // namespace Model

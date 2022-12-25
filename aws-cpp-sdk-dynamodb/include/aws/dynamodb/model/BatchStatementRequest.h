@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchStatementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BatchStatementRequest
+  class BatchStatementRequest
   {
   public:
-    BatchStatementRequest();
-    BatchStatementRequest(Aws::Utils::Json::JsonView jsonValue);
-    BatchStatementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BatchStatementRequest();
+    AWS_DYNAMODB_API BatchStatementRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BatchStatementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -152,13 +152,13 @@ namespace Model
   private:
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<AttributeValue> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     bool m_consistentRead;
-    bool m_consistentReadHasBeenSet;
+    bool m_consistentReadHasBeenSet = false;
   };
 
 } // namespace Model

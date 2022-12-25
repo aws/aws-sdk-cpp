@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/OrganizationNode">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API OrganizationNode
+  class OrganizationNode
   {
   public:
-    OrganizationNode();
-    OrganizationNode(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API OrganizationNode();
+    AWS_SERVICECATALOG_API OrganizationNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API OrganizationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     OrganizationNodeType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

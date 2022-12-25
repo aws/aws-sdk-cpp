@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/JobDriver">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API JobDriver
+  class JobDriver
   {
   public:
-    JobDriver();
-    JobDriver(Aws::Utils::Json::JsonView jsonValue);
-    JobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API JobDriver();
+    AWS_EMRSERVERLESS_API JobDriver(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API JobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     SparkSubmit m_sparkSubmit;
-    bool m_sparkSubmitHasBeenSet;
+    bool m_sparkSubmitHasBeenSet = false;
 
     Hive m_hive;
-    bool m_hiveHasBeenSet;
+    bool m_hiveHasBeenSet = false;
   };
 
 } // namespace Model

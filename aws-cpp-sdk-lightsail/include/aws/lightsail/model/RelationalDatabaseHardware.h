@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseHardware">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseHardware
+  class RelationalDatabaseHardware
   {
   public:
-    RelationalDatabaseHardware();
-    RelationalDatabaseHardware(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseHardware& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseHardware();
+    AWS_LIGHTSAIL_API RelationalDatabaseHardware(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseHardware& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -100,13 +100,13 @@ namespace Model
   private:
 
     int m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     int m_diskSizeInGb;
-    bool m_diskSizeInGbHasBeenSet;
+    bool m_diskSizeInGbHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

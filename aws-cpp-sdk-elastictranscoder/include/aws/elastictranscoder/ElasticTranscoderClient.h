@@ -5,168 +5,74 @@
 
 #pragma once
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
-#include <aws/elastictranscoder/ElasticTranscoderErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/elastictranscoder/model/CancelJobResult.h>
-#include <aws/elastictranscoder/model/CreateJobResult.h>
-#include <aws/elastictranscoder/model/CreatePipelineResult.h>
-#include <aws/elastictranscoder/model/CreatePresetResult.h>
-#include <aws/elastictranscoder/model/DeletePipelineResult.h>
-#include <aws/elastictranscoder/model/DeletePresetResult.h>
-#include <aws/elastictranscoder/model/ListJobsByPipelineResult.h>
-#include <aws/elastictranscoder/model/ListJobsByStatusResult.h>
-#include <aws/elastictranscoder/model/ListPipelinesResult.h>
-#include <aws/elastictranscoder/model/ListPresetsResult.h>
-#include <aws/elastictranscoder/model/ReadJobResult.h>
-#include <aws/elastictranscoder/model/ReadPipelineResult.h>
-#include <aws/elastictranscoder/model/ReadPresetResult.h>
-#include <aws/elastictranscoder/model/UpdatePipelineResult.h>
-#include <aws/elastictranscoder/model/UpdatePipelineNotificationsResult.h>
-#include <aws/elastictranscoder/model/UpdatePipelineStatusResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/elastictranscoder/ElasticTranscoderServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ElasticTranscoder
 {
-
-namespace Model
-{
-        class CancelJobRequest;
-        class CreateJobRequest;
-        class CreatePipelineRequest;
-        class CreatePresetRequest;
-        class DeletePipelineRequest;
-        class DeletePresetRequest;
-        class ListJobsByPipelineRequest;
-        class ListJobsByStatusRequest;
-        class ListPipelinesRequest;
-        class ListPresetsRequest;
-        class ReadJobRequest;
-        class ReadPipelineRequest;
-        class ReadPresetRequest;
-        class UpdatePipelineRequest;
-        class UpdatePipelineNotificationsRequest;
-        class UpdatePipelineStatusRequest;
-
-        typedef Aws::Utils::Outcome<CancelJobResult, ElasticTranscoderError> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, ElasticTranscoderError> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, ElasticTranscoderError> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<CreatePresetResult, ElasticTranscoderError> CreatePresetOutcome;
-        typedef Aws::Utils::Outcome<DeletePipelineResult, ElasticTranscoderError> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeletePresetResult, ElasticTranscoderError> DeletePresetOutcome;
-        typedef Aws::Utils::Outcome<ListJobsByPipelineResult, ElasticTranscoderError> ListJobsByPipelineOutcome;
-        typedef Aws::Utils::Outcome<ListJobsByStatusResult, ElasticTranscoderError> ListJobsByStatusOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, ElasticTranscoderError> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListPresetsResult, ElasticTranscoderError> ListPresetsOutcome;
-        typedef Aws::Utils::Outcome<ReadJobResult, ElasticTranscoderError> ReadJobOutcome;
-        typedef Aws::Utils::Outcome<ReadPipelineResult, ElasticTranscoderError> ReadPipelineOutcome;
-        typedef Aws::Utils::Outcome<ReadPresetResult, ElasticTranscoderError> ReadPresetOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineResult, ElasticTranscoderError> UpdatePipelineOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineNotificationsResult, ElasticTranscoderError> UpdatePipelineNotificationsOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineStatusResult, ElasticTranscoderError> UpdatePipelineStatusOutcome;
-
-        typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
-        typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
-        typedef std::future<CreatePipelineOutcome> CreatePipelineOutcomeCallable;
-        typedef std::future<CreatePresetOutcome> CreatePresetOutcomeCallable;
-        typedef std::future<DeletePipelineOutcome> DeletePipelineOutcomeCallable;
-        typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
-        typedef std::future<ListJobsByPipelineOutcome> ListJobsByPipelineOutcomeCallable;
-        typedef std::future<ListJobsByStatusOutcome> ListJobsByStatusOutcomeCallable;
-        typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
-        typedef std::future<ListPresetsOutcome> ListPresetsOutcomeCallable;
-        typedef std::future<ReadJobOutcome> ReadJobOutcomeCallable;
-        typedef std::future<ReadPipelineOutcome> ReadPipelineOutcomeCallable;
-        typedef std::future<ReadPresetOutcome> ReadPresetOutcomeCallable;
-        typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
-        typedef std::future<UpdatePipelineNotificationsOutcome> UpdatePipelineNotificationsOutcomeCallable;
-        typedef std::future<UpdatePipelineStatusOutcome> UpdatePipelineStatusOutcomeCallable;
-} // namespace Model
-
-  class ElasticTranscoderClient;
-
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::CreatePipelineRequest&, const Model::CreatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePipelineResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::CreatePresetRequest&, const Model::CreatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresetResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::DeletePipelineRequest&, const Model::DeletePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePipelineResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ListJobsByPipelineRequest&, const Model::ListJobsByPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsByPipelineResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ListJobsByStatusRequest&, const Model::ListJobsByStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsByStatusResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPresetsResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ReadJobRequest&, const Model::ReadJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReadJobResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ReadPipelineRequest&, const Model::ReadPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReadPipelineResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::ReadPresetRequest&, const Model::ReadPresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReadPresetResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::UpdatePipelineNotificationsRequest&, const Model::UpdatePipelineNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineNotificationsResponseReceivedHandler;
-    typedef std::function<void(const ElasticTranscoderClient*, const Model::UpdatePipelineStatusRequest&, const Model::UpdatePipelineStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineStatusResponseReceivedHandler;
-
   /**
    * <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic
    * Transcoder Service.</p>
    */
-  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient
+  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticTranscoderClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElasticTranscoderClient(const Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration& clientConfiguration = Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration(),
+                                std::shared_ptr<ElasticTranscoderEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticTranscoderClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElasticTranscoderClient(const Aws::Auth::AWSCredentials& credentials,
+                                std::shared_ptr<ElasticTranscoderEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration& clientConfiguration = Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ElasticTranscoderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<ElasticTranscoderEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration& clientConfiguration = Aws::ElasticTranscoder::ElasticTranscoderClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticTranscoderClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticTranscoderClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ElasticTranscoderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ElasticTranscoderClient();
-
 
         /**
          * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
@@ -495,28 +401,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ElasticTranscoderEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePipelineAsyncHelper(const Model::CreatePipelineRequest& request, const CreatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePresetAsyncHelper(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePipelineAsyncHelper(const Model::DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsByPipelineAsyncHelper(const Model::ListJobsByPipelineRequest& request, const ListJobsByPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListJobsByStatusAsyncHelper(const Model::ListJobsByStatusRequest& request, const ListJobsByStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReadJobAsyncHelper(const Model::ReadJobRequest& request, const ReadJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReadPipelineAsyncHelper(const Model::ReadPipelineRequest& request, const ReadPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReadPresetAsyncHelper(const Model::ReadPresetRequest& request, const ReadPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePipelineNotificationsAsyncHelper(const Model::UpdatePipelineNotificationsRequest& request, const UpdatePipelineNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePipelineStatusAsyncHelper(const Model::UpdatePipelineStatusRequest& request, const UpdatePipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>;
+      void init(const ElasticTranscoderClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ElasticTranscoderClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ElasticTranscoderEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticTranscoder

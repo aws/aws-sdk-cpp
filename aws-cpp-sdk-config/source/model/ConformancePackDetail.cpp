@@ -26,7 +26,8 @@ ConformancePackDetail::ConformancePackDetail() :
     m_deliveryS3KeyPrefixHasBeenSet(false),
     m_conformancePackInputParametersHasBeenSet(false),
     m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_templateSSMDocumentDetailsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ConformancePackDetail::ConformancePackDetail(JsonView jsonValue) :
     m_deliveryS3KeyPrefixHasBeenSet(false),
     m_conformancePackInputParametersHasBeenSet(false),
     m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_templateSSMDocumentDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,7 +84,7 @@ ConformancePackDetail& ConformancePackDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConformancePackInputParameters"))
   {
-    Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
+    Aws::Utils::Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
     for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
     {
       m_conformancePackInputParameters.push_back(conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject());
@@ -102,6 +104,13 @@ ConformancePackDetail& ConformancePackDetail::operator =(JsonView jsonValue)
     m_createdBy = jsonValue.GetString("CreatedBy");
 
     m_createdByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateSSMDocumentDetails"))
+  {
+    m_templateSSMDocumentDetails = jsonValue.GetObject("TemplateSSMDocumentDetails");
+
+    m_templateSSMDocumentDetailsHasBeenSet = true;
   }
 
   return *this;
@@ -143,7 +152,7 @@ JsonValue ConformancePackDetail::Jsonize() const
 
   if(m_conformancePackInputParametersHasBeenSet)
   {
-   Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
+   Aws::Utils::Array<JsonValue> conformancePackInputParametersJsonList(m_conformancePackInputParameters.size());
    for(unsigned conformancePackInputParametersIndex = 0; conformancePackInputParametersIndex < conformancePackInputParametersJsonList.GetLength(); ++conformancePackInputParametersIndex)
    {
      conformancePackInputParametersJsonList[conformancePackInputParametersIndex].AsObject(m_conformancePackInputParameters[conformancePackInputParametersIndex].Jsonize());
@@ -160,6 +169,12 @@ JsonValue ConformancePackDetail::Jsonize() const
   if(m_createdByHasBeenSet)
   {
    payload.WithString("CreatedBy", m_createdBy);
+
+  }
+
+  if(m_templateSSMDocumentDetailsHasBeenSet)
+  {
+   payload.WithObject("TemplateSSMDocumentDetails", m_templateSSMDocumentDetails.Jsonize());
 
   }
 

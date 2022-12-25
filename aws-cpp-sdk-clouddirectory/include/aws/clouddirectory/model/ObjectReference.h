@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API ObjectReference
+  class ObjectReference
   {
   public:
-    ObjectReference();
-    ObjectReference(Aws::Utils::Json::JsonView jsonValue);
-    ObjectReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API ObjectReference();
+    AWS_CLOUDDIRECTORY_API ObjectReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API ObjectReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,7 +192,7 @@ namespace Model
   private:
 
     Aws::String m_selector;
-    bool m_selectorHasBeenSet;
+    bool m_selectorHasBeenSet = false;
   };
 
 } // namespace Model

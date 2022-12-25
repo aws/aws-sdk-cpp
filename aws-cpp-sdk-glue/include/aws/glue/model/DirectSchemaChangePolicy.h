@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DirectSchemaChangePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DirectSchemaChangePolicy
+  class DirectSchemaChangePolicy
   {
   public:
-    DirectSchemaChangePolicy();
-    DirectSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
-    DirectSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DirectSchemaChangePolicy();
+    AWS_GLUE_API DirectSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DirectSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,16 +187,16 @@ namespace Model
   private:
 
     bool m_enableUpdateCatalog;
-    bool m_enableUpdateCatalogHasBeenSet;
+    bool m_enableUpdateCatalogHasBeenSet = false;
 
     UpdateCatalogBehavior m_updateBehavior;
-    bool m_updateBehaviorHasBeenSet;
+    bool m_updateBehaviorHasBeenSet = false;
 
     Aws::String m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     Aws::String m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
   };
 
 } // namespace Model

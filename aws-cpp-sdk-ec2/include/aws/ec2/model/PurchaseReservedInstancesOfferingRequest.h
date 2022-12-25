@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOfferingRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PurchaseReservedInstancesOfferingRequest : public EC2Request
+  class PurchaseReservedInstancesOfferingRequest : public EC2Request
   {
   public:
-    PurchaseReservedInstancesOfferingRequest();
+    AWS_EC2_API PurchaseReservedInstancesOfferingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PurchaseReservedInstancesOffering"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EC2_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -219,19 +219,19 @@ namespace Model
   private:
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet;
+    bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     ReservedInstanceLimitPrice m_limitPrice;
-    bool m_limitPriceHasBeenSet;
+    bool m_limitPriceHasBeenSet = false;
 
     Aws::Utils::DateTime m_purchaseTime;
-    bool m_purchaseTimeHasBeenSet;
+    bool m_purchaseTimeHasBeenSet = false;
   };
 
 } // namespace Model

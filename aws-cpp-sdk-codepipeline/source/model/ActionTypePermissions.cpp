@@ -33,7 +33,7 @@ ActionTypePermissions& ActionTypePermissions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedAccounts"))
   {
-    Array<JsonView> allowedAccountsJsonList = jsonValue.GetArray("allowedAccounts");
+    Aws::Utils::Array<JsonView> allowedAccountsJsonList = jsonValue.GetArray("allowedAccounts");
     for(unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex)
     {
       m_allowedAccounts.push_back(allowedAccountsJsonList[allowedAccountsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ActionTypePermissions::Jsonize() const
 
   if(m_allowedAccountsHasBeenSet)
   {
-   Array<JsonValue> allowedAccountsJsonList(m_allowedAccounts.size());
+   Aws::Utils::Array<JsonValue> allowedAccountsJsonList(m_allowedAccounts.size());
    for(unsigned allowedAccountsIndex = 0; allowedAccountsIndex < allowedAccountsJsonList.GetLength(); ++allowedAccountsIndex)
    {
      allowedAccountsJsonList[allowedAccountsIndex].AsString(m_allowedAccounts[allowedAccountsIndex]);

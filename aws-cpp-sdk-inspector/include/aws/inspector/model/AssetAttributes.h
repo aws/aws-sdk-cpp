@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssetAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssetAttributes
+  class AssetAttributes
   {
   public:
-    AssetAttributes();
-    AssetAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AssetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssetAttributes();
+    AWS_INSPECTOR_API AssetAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -397,28 +397,28 @@ namespace Model
   private:
 
     int m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_agentId;
-    bool m_agentIdHasBeenSet;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_autoScalingGroup;
-    bool m_autoScalingGroupHasBeenSet;
+    bool m_autoScalingGroupHasBeenSet = false;
 
     Aws::String m_amiId;
-    bool m_amiIdHasBeenSet;
+    bool m_amiIdHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipv4Addresses;
-    bool m_ipv4AddressesHasBeenSet;
+    bool m_ipv4AddressesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
   };
 
 } // namespace Model

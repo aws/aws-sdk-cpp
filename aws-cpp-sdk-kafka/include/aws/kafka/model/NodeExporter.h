@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/NodeExporter">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API NodeExporter
+  class NodeExporter
   {
   public:
-    NodeExporter();
-    NodeExporter(Aws::Utils::Json::JsonView jsonValue);
-    NodeExporter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API NodeExporter();
+    AWS_KAFKA_API NodeExporter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API NodeExporter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -73,7 +73,7 @@ namespace Model
   private:
 
     bool m_enabledInBroker;
-    bool m_enabledInBrokerHasBeenSet;
+    bool m_enabledInBrokerHasBeenSet = false;
   };
 
 } // namespace Model

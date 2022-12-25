@@ -48,15 +48,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/Cluster">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Cluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API Cluster();
+    AWS_REDSHIFT_API Cluster(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API Cluster& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -2238,32 +2238,38 @@ namespace Model
 
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline bool AquaConfigurationHasBeenSet() const { return m_aquaConfigurationHasBeenSet; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = value; }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = std::move(value); }
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline Cluster& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
 
     /**
-     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     * <p>This field is retired. Amazon Redshift automatically determines whether to
+     * use AQUA (Advanced Query Accelerator).</p>
      */
     inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
 
@@ -2356,160 +2362,160 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_clusterStatus;
-    bool m_clusterStatusHasBeenSet;
+    bool m_clusterStatusHasBeenSet = false;
 
     Aws::String m_clusterAvailabilityStatus;
-    bool m_clusterAvailabilityStatusHasBeenSet;
+    bool m_clusterAvailabilityStatusHasBeenSet = false;
 
     Aws::String m_modifyStatus;
-    bool m_modifyStatusHasBeenSet;
+    bool m_modifyStatusHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Endpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<ClusterSecurityGroupMembership> m_clusterSecurityGroups;
-    bool m_clusterSecurityGroupsHasBeenSet;
+    bool m_clusterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<ClusterParameterGroupStatus> m_clusterParameterGroups;
-    bool m_clusterParameterGroupsHasBeenSet;
+    bool m_clusterParameterGroupsHasBeenSet = false;
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     PendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     bool m_allowVersionUpgrade;
-    bool m_allowVersionUpgradeHasBeenSet;
+    bool m_allowVersionUpgradeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     RestoreStatus m_restoreStatus;
-    bool m_restoreStatusHasBeenSet;
+    bool m_restoreStatusHasBeenSet = false;
 
     DataTransferProgress m_dataTransferProgress;
-    bool m_dataTransferProgressHasBeenSet;
+    bool m_dataTransferProgressHasBeenSet = false;
 
     HsmStatus m_hsmStatus;
-    bool m_hsmStatusHasBeenSet;
+    bool m_hsmStatusHasBeenSet = false;
 
     ClusterSnapshotCopyStatus m_clusterSnapshotCopyStatus;
-    bool m_clusterSnapshotCopyStatusHasBeenSet;
+    bool m_clusterSnapshotCopyStatusHasBeenSet = false;
 
     Aws::String m_clusterPublicKey;
-    bool m_clusterPublicKeyHasBeenSet;
+    bool m_clusterPublicKeyHasBeenSet = false;
 
     Aws::Vector<ClusterNode> m_clusterNodes;
-    bool m_clusterNodesHasBeenSet;
+    bool m_clusterNodesHasBeenSet = false;
 
     ElasticIpStatus m_elasticIpStatus;
-    bool m_elasticIpStatusHasBeenSet;
+    bool m_elasticIpStatusHasBeenSet = false;
 
     Aws::String m_clusterRevisionNumber;
-    bool m_clusterRevisionNumberHasBeenSet;
+    bool m_clusterRevisionNumberHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::Vector<ClusterIamRole> m_iamRoles;
-    bool m_iamRolesHasBeenSet;
+    bool m_iamRolesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pendingActions;
-    bool m_pendingActionsHasBeenSet;
+    bool m_pendingActionsHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     Aws::String m_elasticResizeNumberOfNodeOptions;
-    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet;
+    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
 
     Aws::Vector<DeferredMaintenanceWindow> m_deferredMaintenanceWindows;
-    bool m_deferredMaintenanceWindowsHasBeenSet;
+    bool m_deferredMaintenanceWindowsHasBeenSet = false;
 
     Aws::String m_snapshotScheduleIdentifier;
-    bool m_snapshotScheduleIdentifierHasBeenSet;
+    bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
     ScheduleState m_snapshotScheduleState;
-    bool m_snapshotScheduleStateHasBeenSet;
+    bool m_snapshotScheduleStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_expectedNextSnapshotScheduleTime;
-    bool m_expectedNextSnapshotScheduleTimeHasBeenSet;
+    bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
 
     Aws::String m_expectedNextSnapshotScheduleTimeStatus;
-    bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet;
+    bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextMaintenanceWindowStartTime;
-    bool m_nextMaintenanceWindowStartTimeHasBeenSet;
+    bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
 
     ResizeInfo m_resizeInfo;
-    bool m_resizeInfoHasBeenSet;
+    bool m_resizeInfoHasBeenSet = false;
 
     Aws::String m_availabilityZoneRelocationStatus;
-    bool m_availabilityZoneRelocationStatusHasBeenSet;
+    bool m_availabilityZoneRelocationStatusHasBeenSet = false;
 
     Aws::String m_clusterNamespaceArn;
-    bool m_clusterNamespaceArnHasBeenSet;
+    bool m_clusterNamespaceArnHasBeenSet = false;
 
     long long m_totalStorageCapacityInMegaBytes;
-    bool m_totalStorageCapacityInMegaBytesHasBeenSet;
+    bool m_totalStorageCapacityInMegaBytesHasBeenSet = false;
 
     AquaConfiguration m_aquaConfiguration;
-    bool m_aquaConfigurationHasBeenSet;
+    bool m_aquaConfigurationHasBeenSet = false;
 
     Aws::String m_defaultIamRoleArn;
-    bool m_defaultIamRoleArnHasBeenSet;
+    bool m_defaultIamRoleArnHasBeenSet = false;
 
     ReservedNodeExchangeStatus m_reservedNodeExchangeStatus;
-    bool m_reservedNodeExchangeStatusHasBeenSet;
+    bool m_reservedNodeExchangeStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CustomVerificationEmailTemplateMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CustomVerificationEmailTemplateMetadata
+  class CustomVerificationEmailTemplateMetadata
   {
   public:
-    CustomVerificationEmailTemplateMetadata();
-    CustomVerificationEmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
-    CustomVerificationEmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata();
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -261,19 +261,19 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_templateSubject;
-    bool m_templateSubjectHasBeenSet;
+    bool m_templateSubjectHasBeenSet = false;
 
     Aws::String m_successRedirectionURL;
-    bool m_successRedirectionURLHasBeenSet;
+    bool m_successRedirectionURLHasBeenSet = false;
 
     Aws::String m_failureRedirectionURL;
-    bool m_failureRedirectionURLHasBeenSet;
+    bool m_failureRedirectionURLHasBeenSet = false;
   };
 
 } // namespace Model

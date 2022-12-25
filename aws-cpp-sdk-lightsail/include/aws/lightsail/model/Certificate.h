@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Certificate">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Certificate();
+    AWS_LIGHTSAIL_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -365,12 +365,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -383,14 +383,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -408,12 +409,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -426,14 +427,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -451,12 +453,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -469,14 +471,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -494,12 +497,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -512,14 +515,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -537,12 +541,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -555,14 +559,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -580,12 +585,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -598,14 +603,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -623,12 +629,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -641,14 +647,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -666,12 +673,12 @@ namespace Model
      * additional information to process this certificate request. This can happen as a
      * fraud-protection measure, such as when the domain ranks within the Alexa top
      * 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
-     * contact AWS Support.</p>  <p>You cannot request a certificate for
-     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
-     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
-     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-     * certificate request was reported as an unsafe domain by <a
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> to contact Amazon Web Services Support.</p>  <p>You cannot
+     * request a certificate for Amazon-owned domain names such as those ending in
+     * amazonaws.com, cloudfront.net, or elasticbeanstalk.com.</p>  </li> <li>
+     * <p> <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names
+     * in the certificate request was reported as an unsafe domain by <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
@@ -684,14 +691,15 @@ namespace Model
      * problem and the VirusTotal registry has been updated, request a new
      * certificate.</p> <p>If you see this error and your domain is not included in the
      * VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
-     * One or more of the domain names in the certificate request is not valid.
-     * Typically, this is because a domain name in the request is not a valid top-level
-     * domain. Try to request a certificate again, correcting any spelling errors or
-     * typos that were in the failed request, and ensure that all domain names in the
-     * request are for valid top-level domains. For example, you cannot request a
-     * certificate for <code>example.invalidpublicdomain</code> because
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+     * Center</a> and create a case.</p> </li> <li> <p> <b>
+     * <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the
+     * certificate request is not valid. Typically, this is because a domain name in
+     * the request is not a valid top-level domain. Try to request a certificate again,
+     * correcting any spelling errors or typos that were in the failed request, and
+     * ensure that all domain names in the request are for valid top-level domains. For
+     * example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because
      * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
      * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
      * typographical error in one or more of the domain names in the certificate
@@ -1224,67 +1232,67 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     CertificateStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::Vector<DomainValidationRecord> m_domainValidationRecords;
-    bool m_domainValidationRecordsHasBeenSet;
+    bool m_domainValidationRecordsHasBeenSet = false;
 
     Aws::String m_requestFailureReason;
-    bool m_requestFailureReasonHasBeenSet;
+    bool m_requestFailureReasonHasBeenSet = false;
 
     int m_inUseResourceCount;
-    bool m_inUseResourceCountHasBeenSet;
+    bool m_inUseResourceCountHasBeenSet = false;
 
     Aws::String m_keyAlgorithm;
-    bool m_keyAlgorithmHasBeenSet;
+    bool m_keyAlgorithmHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_issuedAt;
-    bool m_issuedAtHasBeenSet;
+    bool m_issuedAtHasBeenSet = false;
 
     Aws::String m_issuerCA;
-    bool m_issuerCAHasBeenSet;
+    bool m_issuerCAHasBeenSet = false;
 
     Aws::Utils::DateTime m_notBefore;
-    bool m_notBeforeHasBeenSet;
+    bool m_notBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_notAfter;
-    bool m_notAfterHasBeenSet;
+    bool m_notAfterHasBeenSet = false;
 
     Aws::String m_eligibleToRenew;
-    bool m_eligibleToRenewHasBeenSet;
+    bool m_eligibleToRenewHasBeenSet = false;
 
     RenewalSummary m_renewalSummary;
-    bool m_renewalSummaryHasBeenSet;
+    bool m_renewalSummaryHasBeenSet = false;
 
     Aws::Utils::DateTime m_revokedAt;
-    bool m_revokedAtHasBeenSet;
+    bool m_revokedAtHasBeenSet = false;
 
     Aws::String m_revocationReason;
-    bool m_revocationReasonHasBeenSet;
+    bool m_revocationReasonHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_supportCode;
-    bool m_supportCodeHasBeenSet;
+    bool m_supportCodeHasBeenSet = false;
   };
 
 } // namespace Model

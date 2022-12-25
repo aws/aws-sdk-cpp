@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceActionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API ApplyPendingMaintenanceActionRequest : public RDSRequest
+  class ApplyPendingMaintenanceActionRequest : public RDSRequest
   {
   public:
-    ApplyPendingMaintenanceActionRequest();
+    AWS_RDS_API ApplyPendingMaintenanceActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ApplyPendingMaintenanceAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDS_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_RDS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -252,13 +252,13 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_applyAction;
-    bool m_applyActionHasBeenSet;
+    bool m_applyActionHasBeenSet = false;
 
     Aws::String m_optInType;
-    bool m_optInTypeHasBeenSet;
+    bool m_optInTypeHasBeenSet = false;
   };
 
 } // namespace Model

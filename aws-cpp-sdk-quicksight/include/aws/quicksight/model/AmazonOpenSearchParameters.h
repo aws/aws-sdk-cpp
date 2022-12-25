@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonOpenSearchParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AmazonOpenSearchParameters
+  class AmazonOpenSearchParameters
   {
   public:
-    AmazonOpenSearchParameters();
-    AmazonOpenSearchParameters(Aws::Utils::Json::JsonView jsonValue);
-    AmazonOpenSearchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AmazonOpenSearchParameters();
+    AWS_QUICKSIGHT_API AmazonOpenSearchParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AmazonOpenSearchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
   };
 
 } // namespace Model

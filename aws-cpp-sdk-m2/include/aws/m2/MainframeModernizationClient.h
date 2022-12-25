@@ -5,218 +5,16 @@
 
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
-#include <aws/m2/MainframeModernizationErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/m2/model/CancelBatchJobExecutionResult.h>
-#include <aws/m2/model/CreateApplicationResult.h>
-#include <aws/m2/model/CreateDataSetImportTaskResult.h>
-#include <aws/m2/model/CreateDeploymentResult.h>
-#include <aws/m2/model/CreateEnvironmentResult.h>
-#include <aws/m2/model/DeleteApplicationResult.h>
-#include <aws/m2/model/DeleteApplicationFromEnvironmentResult.h>
-#include <aws/m2/model/DeleteEnvironmentResult.h>
-#include <aws/m2/model/GetApplicationResult.h>
-#include <aws/m2/model/GetApplicationVersionResult.h>
-#include <aws/m2/model/GetBatchJobExecutionResult.h>
-#include <aws/m2/model/GetDataSetDetailsResult.h>
-#include <aws/m2/model/GetDataSetImportTaskResult.h>
-#include <aws/m2/model/GetDeploymentResult.h>
-#include <aws/m2/model/GetEnvironmentResult.h>
-#include <aws/m2/model/ListApplicationVersionsResult.h>
-#include <aws/m2/model/ListApplicationsResult.h>
-#include <aws/m2/model/ListBatchJobDefinitionsResult.h>
-#include <aws/m2/model/ListBatchJobExecutionsResult.h>
-#include <aws/m2/model/ListDataSetImportHistoryResult.h>
-#include <aws/m2/model/ListDataSetsResult.h>
-#include <aws/m2/model/ListDeploymentsResult.h>
-#include <aws/m2/model/ListEngineVersionsResult.h>
-#include <aws/m2/model/ListEnvironmentsResult.h>
-#include <aws/m2/model/ListTagsForResourceResult.h>
-#include <aws/m2/model/StartApplicationResult.h>
-#include <aws/m2/model/StartBatchJobResult.h>
-#include <aws/m2/model/StopApplicationResult.h>
-#include <aws/m2/model/TagResourceResult.h>
-#include <aws/m2/model/UntagResourceResult.h>
-#include <aws/m2/model/UpdateApplicationResult.h>
-#include <aws/m2/model/UpdateEnvironmentResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/m2/MainframeModernizationServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MainframeModernization
 {
-
-namespace Model
-{
-        class CancelBatchJobExecutionRequest;
-        class CreateApplicationRequest;
-        class CreateDataSetImportTaskRequest;
-        class CreateDeploymentRequest;
-        class CreateEnvironmentRequest;
-        class DeleteApplicationRequest;
-        class DeleteApplicationFromEnvironmentRequest;
-        class DeleteEnvironmentRequest;
-        class GetApplicationRequest;
-        class GetApplicationVersionRequest;
-        class GetBatchJobExecutionRequest;
-        class GetDataSetDetailsRequest;
-        class GetDataSetImportTaskRequest;
-        class GetDeploymentRequest;
-        class GetEnvironmentRequest;
-        class ListApplicationVersionsRequest;
-        class ListApplicationsRequest;
-        class ListBatchJobDefinitionsRequest;
-        class ListBatchJobExecutionsRequest;
-        class ListDataSetImportHistoryRequest;
-        class ListDataSetsRequest;
-        class ListDeploymentsRequest;
-        class ListEngineVersionsRequest;
-        class ListEnvironmentsRequest;
-        class ListTagsForResourceRequest;
-        class StartApplicationRequest;
-        class StartBatchJobRequest;
-        class StopApplicationRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-        class UpdateEnvironmentRequest;
-
-        typedef Aws::Utils::Outcome<CancelBatchJobExecutionResult, MainframeModernizationError> CancelBatchJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, MainframeModernizationError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateDataSetImportTaskResult, MainframeModernizationError> CreateDataSetImportTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentResult, MainframeModernizationError> CreateDeploymentOutcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, MainframeModernizationError> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, MainframeModernizationError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationFromEnvironmentResult, MainframeModernizationError> DeleteApplicationFromEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, MainframeModernizationError> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, MainframeModernizationError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationVersionResult, MainframeModernizationError> GetApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<GetBatchJobExecutionResult, MainframeModernizationError> GetBatchJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetDataSetDetailsResult, MainframeModernizationError> GetDataSetDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetDataSetImportTaskResult, MainframeModernizationError> GetDataSetImportTaskOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, MainframeModernizationError> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetEnvironmentResult, MainframeModernizationError> GetEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationVersionsResult, MainframeModernizationError> ListApplicationVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, MainframeModernizationError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListBatchJobDefinitionsResult, MainframeModernizationError> ListBatchJobDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListBatchJobExecutionsResult, MainframeModernizationError> ListBatchJobExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListDataSetImportHistoryResult, MainframeModernizationError> ListDataSetImportHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListDataSetsResult, MainframeModernizationError> ListDataSetsOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, MainframeModernizationError> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListEngineVersionsResult, MainframeModernizationError> ListEngineVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, MainframeModernizationError> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MainframeModernizationError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartApplicationResult, MainframeModernizationError> StartApplicationOutcome;
-        typedef Aws::Utils::Outcome<StartBatchJobResult, MainframeModernizationError> StartBatchJobOutcome;
-        typedef Aws::Utils::Outcome<StopApplicationResult, MainframeModernizationError> StopApplicationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, MainframeModernizationError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, MainframeModernizationError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, MainframeModernizationError> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, MainframeModernizationError> UpdateEnvironmentOutcome;
-
-        typedef std::future<CancelBatchJobExecutionOutcome> CancelBatchJobExecutionOutcomeCallable;
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateDataSetImportTaskOutcome> CreateDataSetImportTaskOutcomeCallable;
-        typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
-        typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteApplicationFromEnvironmentOutcome> DeleteApplicationFromEnvironmentOutcomeCallable;
-        typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
-        typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetApplicationVersionOutcome> GetApplicationVersionOutcomeCallable;
-        typedef std::future<GetBatchJobExecutionOutcome> GetBatchJobExecutionOutcomeCallable;
-        typedef std::future<GetDataSetDetailsOutcome> GetDataSetDetailsOutcomeCallable;
-        typedef std::future<GetDataSetImportTaskOutcome> GetDataSetImportTaskOutcomeCallable;
-        typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
-        typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
-        typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListBatchJobDefinitionsOutcome> ListBatchJobDefinitionsOutcomeCallable;
-        typedef std::future<ListBatchJobExecutionsOutcome> ListBatchJobExecutionsOutcomeCallable;
-        typedef std::future<ListDataSetImportHistoryOutcome> ListDataSetImportHistoryOutcomeCallable;
-        typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
-        typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
-        typedef std::future<ListEngineVersionsOutcome> ListEngineVersionsOutcomeCallable;
-        typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
-        typedef std::future<StartBatchJobOutcome> StartBatchJobOutcomeCallable;
-        typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-        typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
-} // namespace Model
-
-  class MainframeModernizationClient;
-
-    typedef std::function<void(const MainframeModernizationClient*, const Model::CancelBatchJobExecutionRequest&, const Model::CancelBatchJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelBatchJobExecutionResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::CreateDataSetImportTaskRequest&, const Model::CreateDataSetImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSetImportTaskResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::DeleteApplicationFromEnvironmentRequest&, const Model::DeleteApplicationFromEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationFromEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetApplicationVersionRequest&, const Model::GetApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationVersionResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetBatchJobExecutionRequest&, const Model::GetBatchJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBatchJobExecutionResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetDataSetDetailsRequest&, const Model::GetDataSetDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSetDetailsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetDataSetImportTaskRequest&, const Model::GetDataSetImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSetImportTaskResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListBatchJobDefinitionsRequest&, const Model::ListBatchJobDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchJobDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListBatchJobExecutionsRequest&, const Model::ListBatchJobExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchJobExecutionsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListDataSetImportHistoryRequest&, const Model::ListDataSetImportHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetImportHistoryResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListDataSetsRequest&, const Model::ListDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListEngineVersionsRequest&, const Model::ListEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEngineVersionsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::StartBatchJobRequest&, const Model::StartBatchJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBatchJobResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-    typedef std::function<void(const MainframeModernizationClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services Mainframe Modernization provides tools and resources to
    * help you plan and implement migration and modernization from mainframes to
@@ -225,32 +23,60 @@ namespace Model
    * applications using COBOL or PL/I, and implementing an automated pipeline for
    * continuous integration and continuous delivery (CI/CD) of the applications.</p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : public Aws::Client::AWSJsonClient
+  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MainframeModernizationClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MainframeModernizationClient(const Aws::MainframeModernization::MainframeModernizationClientConfiguration& clientConfiguration = Aws::MainframeModernization::MainframeModernizationClientConfiguration(),
+                                     std::shared_ptr<MainframeModernizationEndpointProviderBase> endpointProvider = Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MainframeModernizationClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MainframeModernizationClient(const Aws::Auth::AWSCredentials& credentials,
+                                     std::shared_ptr<MainframeModernizationEndpointProviderBase> endpointProvider = Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::MainframeModernization::MainframeModernizationClientConfiguration& clientConfiguration = Aws::MainframeModernization::MainframeModernizationClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MainframeModernizationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                     std::shared_ptr<MainframeModernizationEndpointProviderBase> endpointProvider = Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG),
+                                     const Aws::MainframeModernization::MainframeModernizationClientConfiguration& clientConfiguration = Aws::MainframeModernization::MainframeModernizationClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MainframeModernizationClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        MainframeModernizationClient(const Aws::Auth::AWSCredentials& credentials,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        MainframeModernizationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~MainframeModernizationClient();
-
 
         /**
          * <p>Cancels the running of a specific batch job execution.</p><p><h3>See
@@ -271,7 +97,7 @@ namespace Model
         virtual void CancelBatchJobExecutionAsync(const Model::CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new application with given parameters. Requires an existing
+         * <p>Creates a new application with given parameters. Requires an existing runtime
          * environment and application definition file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateApplication">AWS
          * API Reference</a></p>
@@ -307,7 +133,7 @@ namespace Model
         virtual void CreateDataSetImportTaskAsync(const Model::CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates and starts a deployment to deploy an application into an
+         * <p>Creates and starts a deployment to deploy an application into a runtime
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDeployment">AWS
          * API Reference</a></p>
@@ -361,11 +187,11 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific application from a specified environment where it has been
-         * previously deployed. You cannot delete an environment using DeleteEnvironment,
-         * if any application has ever been deployed to it. This API removes the
-         * association of the application with the environment so you can delete the
-         * environment smoothly.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific application from the specific runtime environment where it
+         * was previously deployed. You cannot delete a runtime environment using
+         * DeleteEnvironment if any application has ever been deployed to it. This API
+         * removes the association of the application with the runtime environment so you
+         * can delete the environment smoothly.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplicationFromEnvironment">AWS
          * API Reference</a></p>
          */
@@ -382,9 +208,9 @@ namespace Model
         virtual void DeleteApplicationFromEnvironmentAsync(const Model::DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific environment. The environment cannot contain deployed
-         * applications. If it does, you must delete those applications before you delete
-         * the environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific runtime environment. The environment cannot contain
+         * deployed applications. If it does, you must delete those applications before you
+         * delete the environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteEnvironment">AWS
          * API Reference</a></p>
          */
@@ -544,8 +370,8 @@ namespace Model
 
         /**
          * <p>Lists the applications associated with a specific Amazon Web Services
-         * account. You can provide the unique identifier of a specific environment in a
-         * query parameter to see all applications associated with that
+         * account. You can provide the unique identifier of a specific runtime environment
+         * in a query parameter to see all applications associated with that
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplications">AWS
          * API Reference</a></p>
@@ -564,8 +390,8 @@ namespace Model
 
         /**
          * <p>Lists all the available batch job definitions based on the batch job
-         * resources uploaded during the application creation. The listed batch job
-         * definitions can then be used to start a batch job.</p><p><h3>See Also:</h3>   <a
+         * resources uploaded during the application creation. You can use the batch job
+         * definitions in the list to start a batch job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobDefinitions">AWS
          * API Reference</a></p>
          */
@@ -620,9 +446,9 @@ namespace Model
         /**
          * <p>Lists the data sets imported for a specific application. In Amazon Web
          * Services Mainframe Modernization, data sets are associated with applications
-         * deployed on environments. This is known as importing data sets. Currently,
-         * Amazon Web Services Mainframe Modernization can import data sets into catalogs
-         * using <a
+         * deployed on runtime environments. This is known as importing data sets.
+         * Currently, Amazon Web Services Mainframe Modernization can import data sets into
+         * catalogs using <a
          * href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSets">AWS API
@@ -819,8 +645,8 @@ namespace Model
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration details for a specific environment.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the configuration details for a specific runtime
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -838,44 +664,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<MainframeModernizationEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelBatchJobExecutionAsyncHelper(const Model::CancelBatchJobExecutionRequest& request, const CancelBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDataSetImportTaskAsyncHelper(const Model::CreateDataSetImportTaskRequest& request, const CreateDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationFromEnvironmentAsyncHelper(const Model::DeleteApplicationFromEnvironmentRequest& request, const DeleteApplicationFromEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationVersionAsyncHelper(const Model::GetApplicationVersionRequest& request, const GetApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBatchJobExecutionAsyncHelper(const Model::GetBatchJobExecutionRequest& request, const GetBatchJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataSetDetailsAsyncHelper(const Model::GetDataSetDetailsRequest& request, const GetDataSetDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDataSetImportTaskAsyncHelper(const Model::GetDataSetImportTaskRequest& request, const GetDataSetImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEnvironmentAsyncHelper(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationVersionsAsyncHelper(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBatchJobDefinitionsAsyncHelper(const Model::ListBatchJobDefinitionsRequest& request, const ListBatchJobDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBatchJobExecutionsAsyncHelper(const Model::ListBatchJobExecutionsRequest& request, const ListBatchJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDataSetImportHistoryAsyncHelper(const Model::ListDataSetImportHistoryRequest& request, const ListDataSetImportHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDataSetsAsyncHelper(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEngineVersionsAsyncHelper(const Model::ListEngineVersionsRequest& request, const ListEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEnvironmentsAsyncHelper(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartApplicationAsyncHelper(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartBatchJobAsyncHelper(const Model::StartBatchJobRequest& request, const StartBatchJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopApplicationAsyncHelper(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>;
+      void init(const MainframeModernizationClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      MainframeModernizationClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<MainframeModernizationEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MainframeModernization

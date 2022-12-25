@@ -53,7 +53,7 @@ CustomRoutingEndpointGroup& CustomRoutingEndpointGroup::operator =(JsonView json
 
   if(jsonValue.ValueExists("DestinationDescriptions"))
   {
-    Array<JsonView> destinationDescriptionsJsonList = jsonValue.GetArray("DestinationDescriptions");
+    Aws::Utils::Array<JsonView> destinationDescriptionsJsonList = jsonValue.GetArray("DestinationDescriptions");
     for(unsigned destinationDescriptionsIndex = 0; destinationDescriptionsIndex < destinationDescriptionsJsonList.GetLength(); ++destinationDescriptionsIndex)
     {
       m_destinationDescriptions.push_back(destinationDescriptionsJsonList[destinationDescriptionsIndex].AsObject());
@@ -63,7 +63,7 @@ CustomRoutingEndpointGroup& CustomRoutingEndpointGroup::operator =(JsonView json
 
   if(jsonValue.ValueExists("EndpointDescriptions"))
   {
-    Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
+    Aws::Utils::Array<JsonView> endpointDescriptionsJsonList = jsonValue.GetArray("EndpointDescriptions");
     for(unsigned endpointDescriptionsIndex = 0; endpointDescriptionsIndex < endpointDescriptionsJsonList.GetLength(); ++endpointDescriptionsIndex)
     {
       m_endpointDescriptions.push_back(endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject());
@@ -92,7 +92,7 @@ JsonValue CustomRoutingEndpointGroup::Jsonize() const
 
   if(m_destinationDescriptionsHasBeenSet)
   {
-   Array<JsonValue> destinationDescriptionsJsonList(m_destinationDescriptions.size());
+   Aws::Utils::Array<JsonValue> destinationDescriptionsJsonList(m_destinationDescriptions.size());
    for(unsigned destinationDescriptionsIndex = 0; destinationDescriptionsIndex < destinationDescriptionsJsonList.GetLength(); ++destinationDescriptionsIndex)
    {
      destinationDescriptionsJsonList[destinationDescriptionsIndex].AsObject(m_destinationDescriptions[destinationDescriptionsIndex].Jsonize());
@@ -103,7 +103,7 @@ JsonValue CustomRoutingEndpointGroup::Jsonize() const
 
   if(m_endpointDescriptionsHasBeenSet)
   {
-   Array<JsonValue> endpointDescriptionsJsonList(m_endpointDescriptions.size());
+   Aws::Utils::Array<JsonValue> endpointDescriptionsJsonList(m_endpointDescriptions.size());
    for(unsigned endpointDescriptionsIndex = 0; endpointDescriptionsIndex < endpointDescriptionsJsonList.GetLength(); ++endpointDescriptionsIndex)
    {
      endpointDescriptionsJsonList[endpointDescriptionsIndex].AsObject(m_endpointDescriptions[endpointDescriptionsIndex].Jsonize());

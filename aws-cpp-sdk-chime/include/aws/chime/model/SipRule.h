@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipRule">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API SipRule
+  class SipRule
   {
   public:
-    SipRule();
-    SipRule(Aws::Utils::Json::JsonView jsonValue);
-    SipRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SipRule();
+    AWS_CHIME_API SipRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SipRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -388,28 +388,28 @@ namespace Model
   private:
 
     Aws::String m_sipRuleId;
-    bool m_sipRuleIdHasBeenSet;
+    bool m_sipRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     SipRuleTriggerType m_triggerType;
-    bool m_triggerTypeHasBeenSet;
+    bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerValue;
-    bool m_triggerValueHasBeenSet;
+    bool m_triggerValueHasBeenSet = false;
 
     Aws::Vector<SipRuleTargetApplication> m_targetApplications;
-    bool m_targetApplicationsHasBeenSet;
+    bool m_targetApplicationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTimestamp;
-    bool m_updatedTimestampHasBeenSet;
+    bool m_updatedTimestampHasBeenSet = false;
   };
 
 } // namespace Model

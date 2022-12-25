@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DashManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API DashManifest
+  class DashManifest
   {
   public:
-    DashManifest();
-    DashManifest(Aws::Utils::Json::JsonView jsonValue);
-    DashManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API DashManifest();
+    AWS_MEDIAPACKAGEVOD_API DashManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API DashManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,42 +196,60 @@ namespace Model
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline const ScteMarkersSource& GetScteMarkersSource() const{ return m_scteMarkersSource; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline bool ScteMarkersSourceHasBeenSet() const { return m_scteMarkersSourceHasBeenSet; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline void SetScteMarkersSource(const ScteMarkersSource& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = value; }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline void SetScteMarkersSource(ScteMarkersSource&& value) { m_scteMarkersSourceHasBeenSet = true; m_scteMarkersSource = std::move(value); }
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline DashManifest& WithScteMarkersSource(const ScteMarkersSource& value) { SetScteMarkersSource(value); return *this;}
 
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are
      * sourced from the segments of the ingested content. When set to MANIFEST, the
-     * scte markers are sourced from the manifest of the ingested content.
+     * scte markers are sourced from the manifest of the ingested content. The MANIFEST
+     * value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     * (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are
+     * not supported with this option.
      */
     inline DashManifest& WithScteMarkersSource(ScteMarkersSource&& value) { SetScteMarkersSource(std::move(value)); return *this;}
 
@@ -257,22 +275,22 @@ namespace Model
   private:
 
     ManifestLayout m_manifestLayout;
-    bool m_manifestLayoutHasBeenSet;
+    bool m_manifestLayoutHasBeenSet = false;
 
     Aws::String m_manifestName;
-    bool m_manifestNameHasBeenSet;
+    bool m_manifestNameHasBeenSet = false;
 
     int m_minBufferTimeSeconds;
-    bool m_minBufferTimeSecondsHasBeenSet;
+    bool m_minBufferTimeSecondsHasBeenSet = false;
 
     Profile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     ScteMarkersSource m_scteMarkersSource;
-    bool m_scteMarkersSourceHasBeenSet;
+    bool m_scteMarkersSourceHasBeenSet = false;
 
     StreamSelection m_streamSelection;
-    bool m_streamSelectionHasBeenSet;
+    bool m_streamSelectionHasBeenSet = false;
   };
 
 } // namespace Model

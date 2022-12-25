@@ -16,7 +16,7 @@ SubscribeToShardRequest::SubscribeToShardRequest() :
     m_consumerARNHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_startingPositionHasBeenSet(false),
-    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
+    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
 
@@ -54,5 +54,17 @@ Aws::Http::HeaderValueCollection SubscribeToShardRequest::GetRequestSpecificHead
 }
 
 
+
+SubscribeToShardRequest::EndpointParameters SubscribeToShardRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "data", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (ConsumerARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ConsumerARN"), this->GetConsumerARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

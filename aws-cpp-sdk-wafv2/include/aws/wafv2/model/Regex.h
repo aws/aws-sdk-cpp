@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Regex">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Regex
+  class Regex
   {
   public:
-    Regex();
-    Regex(Aws::Utils::Json::JsonView jsonValue);
-    Regex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Regex();
+    AWS_WAFV2_API Regex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Regex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_regexString;
-    bool m_regexStringHasBeenSet;
+    bool m_regexStringHasBeenSet = false;
   };
 
 } // namespace Model

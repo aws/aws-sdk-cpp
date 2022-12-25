@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AutoDetectionS3SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AutoDetectionS3SourceConfig
+  class AutoDetectionS3SourceConfig
   {
   public:
-    AutoDetectionS3SourceConfig();
-    AutoDetectionS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoDetectionS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AutoDetectionS3SourceConfig();
+    AWS_LOOKOUTMETRICS_API AutoDetectionS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AutoDetectionS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_templatedPathList;
-    bool m_templatedPathListHasBeenSet;
+    bool m_templatedPathListHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_historicalDataPathList;
-    bool m_historicalDataPathListHasBeenSet;
+    bool m_historicalDataPathListHasBeenSet = false;
   };
 
 } // namespace Model

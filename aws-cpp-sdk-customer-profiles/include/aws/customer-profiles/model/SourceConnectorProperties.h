@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SourceConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API SourceConnectorProperties
+  class SourceConnectorProperties
   {
   public:
-    SourceConnectorProperties();
-    SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties();
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,19 +218,19 @@ namespace Model
   private:
 
     MarketoSourceProperties m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     S3SourceProperties m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
 
     SalesforceSourceProperties m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowSourceProperties m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     ZendeskSourceProperties m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
   };
 
 } // namespace Model

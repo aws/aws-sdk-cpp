@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RegexPatternSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API RegexPatternSetUpdate
+  class RegexPatternSetUpdate
   {
   public:
-    RegexPatternSetUpdate();
-    RegexPatternSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API RegexPatternSetUpdate();
+    AWS_WAFREGIONAL_API RegexPatternSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API RegexPatternSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_regexPatternString;
-    bool m_regexPatternStringHasBeenSet;
+    bool m_regexPatternStringHasBeenSet = false;
   };
 
 } // namespace Model

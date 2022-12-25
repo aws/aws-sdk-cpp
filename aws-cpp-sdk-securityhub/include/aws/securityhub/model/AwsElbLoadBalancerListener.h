@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerListener">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerListener
+  class AwsElbLoadBalancerListener
   {
   public:
-    AwsElbLoadBalancerListener();
-    AwsElbLoadBalancerListener(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerListener& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListener();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListener(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerListener& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     int m_instancePort;
-    bool m_instancePortHasBeenSet;
+    bool m_instancePortHasBeenSet = false;
 
     Aws::String m_instanceProtocol;
-    bool m_instanceProtocolHasBeenSet;
+    bool m_instanceProtocolHasBeenSet = false;
 
     int m_loadBalancerPort;
-    bool m_loadBalancerPortHasBeenSet;
+    bool m_loadBalancerPortHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_sslCertificateId;
-    bool m_sslCertificateIdHasBeenSet;
+    bool m_sslCertificateIdHasBeenSet = false;
   };
 
 } // namespace Model

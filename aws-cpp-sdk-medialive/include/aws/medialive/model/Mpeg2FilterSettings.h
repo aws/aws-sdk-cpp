@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mpeg2FilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Mpeg2FilterSettings
+  class Mpeg2FilterSettings
   {
   public:
-    Mpeg2FilterSettings();
-    Mpeg2FilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    Mpeg2FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Mpeg2FilterSettings();
+    AWS_MEDIALIVE_API Mpeg2FilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Mpeg2FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     TemporalFilterSettings m_temporalFilterSettings;
-    bool m_temporalFilterSettingsHasBeenSet;
+    bool m_temporalFilterSettingsHasBeenSet = false;
   };
 
 } // namespace Model

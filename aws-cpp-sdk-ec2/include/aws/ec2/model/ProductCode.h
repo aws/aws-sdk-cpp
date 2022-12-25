@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProductCode">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API ProductCode
+  class ProductCode
   {
   public:
-    ProductCode();
-    ProductCode(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ProductCode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ProductCode();
+    AWS_EC2_API ProductCode(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ProductCode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_productCodeId;
-    bool m_productCodeIdHasBeenSet;
+    bool m_productCodeIdHasBeenSet = false;
 
     ProductCodeValues m_productCodeType;
-    bool m_productCodeTypeHasBeenSet;
+    bool m_productCodeTypeHasBeenSet = false;
   };
 
 } // namespace Model

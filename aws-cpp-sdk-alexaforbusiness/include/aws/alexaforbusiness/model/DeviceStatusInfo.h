@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceStatusInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceStatusInfo
+  class DeviceStatusInfo
   {
   public:
-    DeviceStatusInfo();
-    DeviceStatusInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeviceStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceStatusInfo();
+    AWS_ALEXAFORBUSINESS_API DeviceStatusInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,13 +151,13 @@ namespace Model
   private:
 
     Aws::Vector<DeviceStatusDetail> m_deviceStatusDetails;
-    bool m_deviceStatusDetailsHasBeenSet;
+    bool m_deviceStatusDetailsHasBeenSet = false;
 
     ConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectionStatusUpdatedTime;
-    bool m_connectionStatusUpdatedTimeHasBeenSet;
+    bool m_connectionStatusUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

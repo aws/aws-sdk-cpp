@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceBlockDeviceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceBlockDeviceMapping
+  class InstanceBlockDeviceMapping
   {
   public:
-    InstanceBlockDeviceMapping();
-    InstanceBlockDeviceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceBlockDeviceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceBlockDeviceMapping();
+    AWS_EC2_API InstanceBlockDeviceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceBlockDeviceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     EbsInstanceBlockDevice m_ebs;
-    bool m_ebsHasBeenSet;
+    bool m_ebsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentReviewerResponseSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentReviewerResponseSource
+  class DocumentReviewerResponseSource
   {
   public:
-    DocumentReviewerResponseSource();
-    DocumentReviewerResponseSource(Aws::Utils::Json::JsonView jsonValue);
-    DocumentReviewerResponseSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentReviewerResponseSource();
+    AWS_SSM_API DocumentReviewerResponseSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentReviewerResponseSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,19 +269,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedTime;
-    bool m_updatedTimeHasBeenSet;
+    bool m_updatedTimeHasBeenSet = false;
 
     ReviewStatus m_reviewStatus;
-    bool m_reviewStatusHasBeenSet;
+    bool m_reviewStatusHasBeenSet = false;
 
     Aws::Vector<DocumentReviewCommentSource> m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_reviewer;
-    bool m_reviewerHasBeenSet;
+    bool m_reviewerHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ActiveContextTimeToLive">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive
+  class ActiveContextTimeToLive
   {
   public:
-    ActiveContextTimeToLive();
-    ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
-    ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive();
+    AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,10 +88,10 @@ namespace Model
   private:
 
     int m_timeToLiveInSeconds;
-    bool m_timeToLiveInSecondsHasBeenSet;
+    bool m_timeToLiveInSecondsHasBeenSet = false;
 
     int m_turnsToLive;
-    bool m_turnsToLiveHasBeenSet;
+    bool m_turnsToLiveHasBeenSet = false;
   };
 
 } // namespace Model

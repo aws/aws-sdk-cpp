@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Stream">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Stream
+  class Stream
   {
   public:
-    Stream();
-    Stream(Aws::Utils::Json::JsonView jsonValue);
-    Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Stream();
+    AWS_IOT_API Stream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Stream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_streamId;
-    bool m_streamIdHasBeenSet;
+    bool m_streamIdHasBeenSet = false;
 
     int m_fileId;
-    bool m_fileIdHasBeenSet;
+    bool m_fileIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobWatermark">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API JobWatermark
+  class JobWatermark
   {
   public:
-    JobWatermark();
-    JobWatermark(Aws::Utils::Json::JsonView jsonValue);
-    JobWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API JobWatermark();
+    AWS_ELASTICTRANSCODER_API JobWatermark(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API JobWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_presetWatermarkId;
-    bool m_presetWatermarkIdHasBeenSet;
+    bool m_presetWatermarkIdHasBeenSet = false;
 
     Aws::String m_inputKey;
-    bool m_inputKeyHasBeenSet;
+    bool m_inputKeyHasBeenSet = false;
 
     Encryption m_encryption;
-    bool m_encryptionHasBeenSet;
+    bool m_encryptionHasBeenSet = false;
   };
 
 } // namespace Model

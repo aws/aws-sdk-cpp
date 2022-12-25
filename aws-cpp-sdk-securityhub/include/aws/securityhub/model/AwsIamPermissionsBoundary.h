@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamPermissionsBoundary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamPermissionsBoundary
+  class AwsIamPermissionsBoundary
   {
   public:
-    AwsIamPermissionsBoundary();
-    AwsIamPermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamPermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamPermissionsBoundary();
+    AWS_SECURITYHUB_API AwsIamPermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamPermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_permissionsBoundaryArn;
-    bool m_permissionsBoundaryArnHasBeenSet;
+    bool m_permissionsBoundaryArnHasBeenSet = false;
 
     Aws::String m_permissionsBoundaryType;
-    bool m_permissionsBoundaryTypeHasBeenSet;
+    bool m_permissionsBoundaryTypeHasBeenSet = false;
   };
 
 } // namespace Model

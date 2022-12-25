@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_HONEYCODE_API StartTableDataImportJobRequest : public HoneycodeRequest
+  class StartTableDataImportJobRequest : public HoneycodeRequest
   {
   public:
-    StartTableDataImportJobRequest();
+    AWS_HONEYCODE_API StartTableDataImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartTableDataImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HONEYCODE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     ImportDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     ImportSourceDataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_destinationTableId;
-    bool m_destinationTableIdHasBeenSet;
+    bool m_destinationTableIdHasBeenSet = false;
 
     ImportOptions m_importOptions;
-    bool m_importOptionsHasBeenSet;
+    bool m_importOptionsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

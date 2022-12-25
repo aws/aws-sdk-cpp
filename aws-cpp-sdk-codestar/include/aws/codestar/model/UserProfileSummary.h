@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UserProfileSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API UserProfileSummary
+  class UserProfileSummary
   {
   public:
-    UserProfileSummary();
-    UserProfileSummary(Aws::Utils::Json::JsonView jsonValue);
-    UserProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API UserProfileSummary();
+    AWS_CODESTAR_API UserProfileSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API UserProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -284,16 +284,16 @@ namespace Model
   private:
 
     Aws::String m_userArn;
-    bool m_userArnHasBeenSet;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
-    bool m_emailAddressHasBeenSet;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_sshPublicKey;
-    bool m_sshPublicKeyHasBeenSet;
+    bool m_sshPublicKeyHasBeenSet = false;
   };
 
 } // namespace Model

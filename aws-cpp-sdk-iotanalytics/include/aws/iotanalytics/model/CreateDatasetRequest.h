@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTANALYTICS_API CreateDatasetRequest : public IoTAnalyticsRequest
+  class CreateDatasetRequest : public IoTAnalyticsRequest
   {
   public:
-    CreateDatasetRequest();
+    AWS_IOTANALYTICS_API CreateDatasetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,7 +37,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateDataset"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -484,28 +484,28 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::Vector<DatasetAction> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Vector<DatasetTrigger> m_triggers;
-    bool m_triggersHasBeenSet;
+    bool m_triggersHasBeenSet = false;
 
     Aws::Vector<DatasetContentDeliveryRule> m_contentDeliveryRules;
-    bool m_contentDeliveryRulesHasBeenSet;
+    bool m_contentDeliveryRulesHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     VersioningConfiguration m_versioningConfiguration;
-    bool m_versioningConfigurationHasBeenSet;
+    bool m_versioningConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<LateDataRule> m_lateDataRules;
-    bool m_lateDataRulesHasBeenSet;
+    bool m_lateDataRulesHasBeenSet = false;
   };
 
 } // namespace Model

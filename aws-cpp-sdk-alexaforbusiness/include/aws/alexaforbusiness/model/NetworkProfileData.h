@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/NetworkProfileData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API NetworkProfileData
+  class NetworkProfileData
   {
   public:
-    NetworkProfileData();
-    NetworkProfileData(Aws::Utils::Json::JsonView jsonValue);
-    NetworkProfileData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API NetworkProfileData();
+    AWS_ALEXAFORBUSINESS_API NetworkProfileData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API NetworkProfileData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ssid;
-    bool m_ssidHasBeenSet;
+    bool m_ssidHasBeenSet = false;
 
     NetworkSecurityType m_securityType;
-    bool m_securityTypeHasBeenSet;
+    bool m_securityTypeHasBeenSet = false;
 
     NetworkEapMethod m_eapMethod;
-    bool m_eapMethodHasBeenSet;
+    bool m_eapMethodHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
   };
 
 } // namespace Model

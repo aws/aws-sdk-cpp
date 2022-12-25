@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionDefinitionVersion
+  class FunctionDefinitionVersion
   {
   public:
-    FunctionDefinitionVersion();
-    FunctionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    FunctionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionDefinitionVersion();
+    AWS_GREENGRASS_API FunctionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -119,10 +119,10 @@ namespace Model
   private:
 
     FunctionDefaultConfig m_defaultConfig;
-    bool m_defaultConfigHasBeenSet;
+    bool m_defaultConfigHasBeenSet = false;
 
     Aws::Vector<Function> m_functions;
-    bool m_functionsHasBeenSet;
+    bool m_functionsHasBeenSet = false;
   };
 
 } // namespace Model

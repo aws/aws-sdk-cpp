@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/GreengrassOutputDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API GreengrassOutputDetails
+  class GreengrassOutputDetails
   {
   public:
-    GreengrassOutputDetails();
-    GreengrassOutputDetails(Aws::Utils::Json::JsonView jsonValue);
-    GreengrassOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails();
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_componentVersionArn;
-    bool m_componentVersionArnHasBeenSet;
+    bool m_componentVersionArnHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
   };
 
 } // namespace Model

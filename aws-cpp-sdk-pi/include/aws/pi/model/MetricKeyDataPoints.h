@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricKeyDataPoints">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API MetricKeyDataPoints
+  class MetricKeyDataPoints
   {
   public:
-    MetricKeyDataPoints();
-    MetricKeyDataPoints(Aws::Utils::Json::JsonView jsonValue);
-    MetricKeyDataPoints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API MetricKeyDataPoints();
+    AWS_PI_API MetricKeyDataPoints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API MetricKeyDataPoints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     ResponseResourceMetricKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<DataPoint> m_dataPoints;
-    bool m_dataPointsHasBeenSet;
+    bool m_dataPointsHasBeenSet = false;
   };
 
 } // namespace Model

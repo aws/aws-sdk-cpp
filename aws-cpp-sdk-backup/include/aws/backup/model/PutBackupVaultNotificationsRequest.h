@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUP_API PutBackupVaultNotificationsRequest : public BackupRequest
+  class PutBackupVaultNotificationsRequest : public BackupRequest
   {
   public:
-    PutBackupVaultNotificationsRequest();
+    AWS_BACKUP_API PutBackupVaultNotificationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutBackupVaultNotifications"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -168,8 +168,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
 
@@ -185,8 +187,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
 
@@ -202,8 +206,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline void SetBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = value; }
 
@@ -219,8 +225,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline void SetBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents = std::move(value); }
 
@@ -236,8 +244,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(const Aws::Vector<BackupVaultEvent>& value) { SetBackupVaultEvents(value); return *this;}
 
@@ -253,8 +263,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline PutBackupVaultNotificationsRequest& WithBackupVaultEvents(Aws::Vector<BackupVaultEvent>&& value) { SetBackupVaultEvents(std::move(value)); return *this;}
 
@@ -270,8 +282,10 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(const BackupVaultEvent& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(value); return *this; }
 
@@ -287,21 +301,23 @@ namespace Model
      * <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
      * <code>RECOVERY_POINT_MODIFIED</code> </p> </li> <li> <p>
      * <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code>
-     * </p> </li> </ul>  <p>Ignore the list below because it includes deprecated
-     * events. Refer to the list above.</p> 
+     * </p> </li> </ul>  <p>The list below shows items that are deprecated events
+     * (for reference) and are no longer in use. They are no longer supported and will
+     * not return statuses or notifications. Refer to the list above for current
+     * supported events.</p> 
      */
     inline PutBackupVaultNotificationsRequest& AddBackupVaultEvents(BackupVaultEvent&& value) { m_backupVaultEventsHasBeenSet = true; m_backupVaultEvents.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_backupVaultName;
-    bool m_backupVaultNameHasBeenSet;
+    bool m_backupVaultNameHasBeenSet = false;
 
     Aws::String m_sNSTopicArn;
-    bool m_sNSTopicArnHasBeenSet;
+    bool m_sNSTopicArnHasBeenSet = false;
 
     Aws::Vector<BackupVaultEvent> m_backupVaultEvents;
-    bool m_backupVaultEventsHasBeenSet;
+    bool m_backupVaultEventsHasBeenSet = false;
   };
 
 } // namespace Model

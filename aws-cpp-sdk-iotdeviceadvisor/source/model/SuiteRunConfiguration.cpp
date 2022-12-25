@@ -46,7 +46,7 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("selectedTestList"))
   {
-    Array<JsonView> selectedTestListJsonList = jsonValue.GetArray("selectedTestList");
+    Aws::Utils::Array<JsonView> selectedTestListJsonList = jsonValue.GetArray("selectedTestList");
     for(unsigned selectedTestListIndex = 0; selectedTestListIndex < selectedTestListJsonList.GetLength(); ++selectedTestListIndex)
     {
       m_selectedTestList.push_back(selectedTestListJsonList[selectedTestListIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue SuiteRunConfiguration::Jsonize() const
 
   if(m_selectedTestListHasBeenSet)
   {
-   Array<JsonValue> selectedTestListJsonList(m_selectedTestList.size());
+   Aws::Utils::Array<JsonValue> selectedTestListJsonList(m_selectedTestList.size());
    for(unsigned selectedTestListIndex = 0; selectedTestListIndex < selectedTestListJsonList.GetLength(); ++selectedTestListIndex)
    {
      selectedTestListJsonList[selectedTestListIndex].AsString(m_selectedTestList[selectedTestListIndex]);

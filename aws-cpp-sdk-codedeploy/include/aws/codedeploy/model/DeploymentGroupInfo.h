@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentGroupInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentGroupInfo
+  class DeploymentGroupInfo
   {
   public:
-    DeploymentGroupInfo();
-    DeploymentGroupInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentGroupInfo();
+    AWS_CODEDEPLOY_API DeploymentGroupInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -359,73 +359,73 @@ namespace Model
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>A service role Amazon Resource Name (ARN) that grants CodeDeploy permission
-     * to make calls to AWS services on your behalf. For more information, see <a
+     * to make calls to Amazon Web Services services on your behalf. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-     * a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User
-     * Guide</i>.</p>
+     * a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
      */
     inline DeploymentGroupInfo& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -614,68 +614,74 @@ namespace Model
 
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline const OutdatedInstancesStrategy& GetOutdatedInstancesStrategy() const{ return m_outdatedInstancesStrategy; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline bool OutdatedInstancesStrategyHasBeenSet() const { return m_outdatedInstancesStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline void SetOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = value; }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline void SetOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { m_outdatedInstancesStrategyHasBeenSet = true; m_outdatedInstancesStrategy = std::move(value); }
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline DeploymentGroupInfo& WithOutdatedInstancesStrategy(const OutdatedInstancesStrategy& value) { SetOutdatedInstancesStrategy(value); return *this;}
 
     /**
-     * <p>Indicates what happens when new EC2 instances are launched mid-deployment and
-     * do not receive the deployed application revision.</p> <p>If this option is set
-     * to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
-     * 'auto-update outdated instances' deployments to apply the deployed application
-     * revision to the new EC2 instances.</p> <p>If this option is set to
-     * <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
-     * EC2 instances. This may result in instances having different revisions.</p>
+     * <p>Indicates what happens when new Amazon EC2 instances are launched
+     * mid-deployment and do not receive the deployed application revision.</p> <p>If
+     * this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy
+     * initiates one or more 'auto-update outdated instances' deployments to apply the
+     * deployed application revision to the new Amazon EC2 instances.</p> <p>If this
+     * option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+     * to update the new Amazon EC2 instances. This may result in instances having
+     * different revisions.</p>
      */
     inline DeploymentGroupInfo& WithOutdatedInstancesStrategy(OutdatedInstancesStrategy&& value) { SetOutdatedInstancesStrategy(std::move(value)); return *this;}
 
@@ -817,44 +823,44 @@ namespace Model
 
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
-     * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all of the tag groups. Cannot be
-     * used in the same call as ec2TagFilters.</p>
+     * <p>Information about groups of tags applied to an Amazon EC2 instance. The
+     * deployment group includes only Amazon EC2 instances identified by all of the tag
+     * groups. Cannot be used in the same call as ec2TagFilters.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 
@@ -1006,70 +1012,70 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupId;
-    bool m_deploymentGroupIdHasBeenSet;
+    bool m_deploymentGroupIdHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::Vector<EC2TagFilter> m_ec2TagFilters;
-    bool m_ec2TagFiltersHasBeenSet;
+    bool m_ec2TagFiltersHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
-    bool m_onPremisesInstanceTagFiltersHasBeenSet;
+    bool m_onPremisesInstanceTagFiltersHasBeenSet = false;
 
     Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-    bool m_autoScalingGroupsHasBeenSet;
+    bool m_autoScalingGroupsHasBeenSet = false;
 
     Aws::String m_serviceRoleArn;
-    bool m_serviceRoleArnHasBeenSet;
+    bool m_serviceRoleArnHasBeenSet = false;
 
     RevisionLocation m_targetRevision;
-    bool m_targetRevisionHasBeenSet;
+    bool m_targetRevisionHasBeenSet = false;
 
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
-    bool m_triggerConfigurationsHasBeenSet;
+    bool m_triggerConfigurationsHasBeenSet = false;
 
     AlarmConfiguration m_alarmConfiguration;
-    bool m_alarmConfigurationHasBeenSet;
+    bool m_alarmConfigurationHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
-    bool m_deploymentStyleHasBeenSet;
+    bool m_deploymentStyleHasBeenSet = false;
 
     OutdatedInstancesStrategy m_outdatedInstancesStrategy;
-    bool m_outdatedInstancesStrategyHasBeenSet;
+    bool m_outdatedInstancesStrategyHasBeenSet = false;
 
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
     LoadBalancerInfo m_loadBalancerInfo;
-    bool m_loadBalancerInfoHasBeenSet;
+    bool m_loadBalancerInfoHasBeenSet = false;
 
     LastDeploymentInfo m_lastSuccessfulDeployment;
-    bool m_lastSuccessfulDeploymentHasBeenSet;
+    bool m_lastSuccessfulDeploymentHasBeenSet = false;
 
     LastDeploymentInfo m_lastAttemptedDeployment;
-    bool m_lastAttemptedDeploymentHasBeenSet;
+    bool m_lastAttemptedDeploymentHasBeenSet = false;
 
     EC2TagSet m_ec2TagSet;
-    bool m_ec2TagSetHasBeenSet;
+    bool m_ec2TagSetHasBeenSet = false;
 
     OnPremisesTagSet m_onPremisesTagSet;
-    bool m_onPremisesTagSetHasBeenSet;
+    bool m_onPremisesTagSetHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
 
     Aws::Vector<ECSService> m_ecsServices;
-    bool m_ecsServicesHasBeenSet;
+    bool m_ecsServicesHasBeenSet = false;
   };
 
 } // namespace Model

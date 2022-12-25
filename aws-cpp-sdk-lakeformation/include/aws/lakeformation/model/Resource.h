@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API Resource();
+    AWS_LAKEFORMATION_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -348,28 +348,28 @@ namespace Model
   private:
 
     CatalogResource m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
 
     DatabaseResource m_database;
-    bool m_databaseHasBeenSet;
+    bool m_databaseHasBeenSet = false;
 
     TableResource m_table;
-    bool m_tableHasBeenSet;
+    bool m_tableHasBeenSet = false;
 
     TableWithColumnsResource m_tableWithColumns;
-    bool m_tableWithColumnsHasBeenSet;
+    bool m_tableWithColumnsHasBeenSet = false;
 
     DataLocationResource m_dataLocation;
-    bool m_dataLocationHasBeenSet;
+    bool m_dataLocationHasBeenSet = false;
 
     DataCellsFilterResource m_dataCellsFilter;
-    bool m_dataCellsFilterHasBeenSet;
+    bool m_dataCellsFilterHasBeenSet = false;
 
     LFTagKeyResource m_lFTag;
-    bool m_lFTagHasBeenSet;
+    bool m_lFTagHasBeenSet = false;
 
     LFTagPolicyResource m_lFTagPolicy;
-    bool m_lFTagPolicyHasBeenSet;
+    bool m_lFTagPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,16 +26,16 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API GetMailDomainResult
+  class GetMailDomainResult
   {
   public:
-    GetMailDomainResult();
-    GetMailDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMailDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetMailDomainResult();
+    AWS_WORKMAIL_API GetMailDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetMailDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -43,7 +43,7 @@ namespace Model
     inline const Aws::Vector<DnsRecord>& GetRecords() const{ return m_records; }
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -51,7 +51,7 @@ namespace Model
     inline void SetRecords(const Aws::Vector<DnsRecord>& value) { m_records = value; }
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -59,7 +59,7 @@ namespace Model
     inline void SetRecords(Aws::Vector<DnsRecord>&& value) { m_records = std::move(value); }
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -67,7 +67,7 @@ namespace Model
     inline GetMailDomainResult& WithRecords(const Aws::Vector<DnsRecord>& value) { SetRecords(value); return *this;}
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -75,7 +75,7 @@ namespace Model
     inline GetMailDomainResult& WithRecords(Aws::Vector<DnsRecord>&& value) { SetRecords(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>
@@ -83,7 +83,7 @@ namespace Model
     inline GetMailDomainResult& AddRecords(const DnsRecord& value) { m_records.push_back(value); return *this; }
 
     /**
-     * <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS
+     * <p>A list of the DNS records that WorkMail recommends adding in your DNS
      * provider for the best user experience. The records configure your domain with
      * DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for
      * more details.</p>

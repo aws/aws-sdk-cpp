@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsOutputDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API KinesisStreamsOutputDescription
+  class KinesisStreamsOutputDescription
   {
   public:
-    KinesisStreamsOutputDescription();
-    KinesisStreamsOutputDescription(Aws::Utils::Json::JsonView jsonValue);
-    KinesisStreamsOutputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API KinesisStreamsOutputDescription();
+    AWS_KINESISANALYTICS_API KinesisStreamsOutputDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API KinesisStreamsOutputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

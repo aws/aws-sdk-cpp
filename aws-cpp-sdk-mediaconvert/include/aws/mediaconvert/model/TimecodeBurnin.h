@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimecodeBurnin">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API TimecodeBurnin
+  class TimecodeBurnin
   {
   public:
-    TimecodeBurnin();
-    TimecodeBurnin(Aws::Utils::Json::JsonView jsonValue);
-    TimecodeBurnin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API TimecodeBurnin();
+    AWS_MEDIACONVERT_API TimecodeBurnin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API TimecodeBurnin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,13 +176,13 @@ namespace Model
   private:
 
     int m_fontSize;
-    bool m_fontSizeHasBeenSet;
+    bool m_fontSizeHasBeenSet = false;
 
     TimecodeBurninPosition m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API Filter();
+    AWS_HONEYCODE_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -178,10 +178,10 @@ namespace Model
   private:
 
     Aws::String m_formula;
-    bool m_formulaHasBeenSet;
+    bool m_formulaHasBeenSet = false;
 
     Aws::String m_contextRowId;
-    bool m_contextRowIdHasBeenSet;
+    bool m_contextRowIdHasBeenSet = false;
   };
 
 } // namespace Model

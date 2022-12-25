@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/Tagging">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API Tagging
+  class Tagging
   {
   public:
-    Tagging();
-    Tagging(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Tagging& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API Tagging();
+    AWS_S3CONTROL_API Tagging(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API Tagging& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<S3Tag> m_tagSet;
-    bool m_tagSetHasBeenSet;
+    bool m_tagSetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TrackingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API TrackingConfig
+  class TrackingConfig
   {
   public:
-    TrackingConfig();
-    TrackingConfig(Aws::Utils::Json::JsonView jsonValue);
-    TrackingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API TrackingConfig();
+    AWS_GROUNDSTATION_API TrackingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API TrackingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     Criticality m_autotrack;
-    bool m_autotrackHasBeenSet;
+    bool m_autotrackHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/BusinessReport">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API BusinessReport
+  class BusinessReport
   {
   public:
-    BusinessReport();
-    BusinessReport(Aws::Utils::Json::JsonView jsonValue);
-    BusinessReport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API BusinessReport();
+    AWS_ALEXAFORBUSINESS_API BusinessReport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API BusinessReport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -214,19 +214,19 @@ namespace Model
   private:
 
     BusinessReportStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     BusinessReportFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     BusinessReportS3Location m_s3Location;
-    bool m_s3LocationHasBeenSet;
+    bool m_s3LocationHasBeenSet = false;
 
     Aws::Utils::DateTime m_deliveryTime;
-    bool m_deliveryTimeHasBeenSet;
+    bool m_deliveryTimeHasBeenSet = false;
 
     Aws::String m_downloadUrl;
-    bool m_downloadUrlHasBeenSet;
+    bool m_downloadUrlHasBeenSet = false;
   };
 
 } // namespace Model

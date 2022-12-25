@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API UpdatePublishingDestinationRequest : public GuardDutyRequest
+  class UpdatePublishingDestinationRequest : public GuardDutyRequest
   {
   public:
-    UpdatePublishingDestinationRequest();
+    AWS_GUARDDUTY_API UpdatePublishingDestinationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePublishingDestination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -168,13 +168,13 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_destinationId;
-    bool m_destinationIdHasBeenSet;
+    bool m_destinationIdHasBeenSet = false;
 
     DestinationProperties m_destinationProperties;
-    bool m_destinationPropertiesHasBeenSet;
+    bool m_destinationPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

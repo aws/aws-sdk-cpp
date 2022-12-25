@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSettings
+  class InputSettings
   {
   public:
-    InputSettings();
-    InputSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSettings();
+    AWS_MEDIALIVE_API InputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -486,37 +486,37 @@ namespace Model
   private:
 
     Aws::Vector<AudioSelector> m_audioSelectors;
-    bool m_audioSelectorsHasBeenSet;
+    bool m_audioSelectorsHasBeenSet = false;
 
     Aws::Vector<CaptionSelector> m_captionSelectors;
-    bool m_captionSelectorsHasBeenSet;
+    bool m_captionSelectorsHasBeenSet = false;
 
     InputDeblockFilter m_deblockFilter;
-    bool m_deblockFilterHasBeenSet;
+    bool m_deblockFilterHasBeenSet = false;
 
     InputDenoiseFilter m_denoiseFilter;
-    bool m_denoiseFilterHasBeenSet;
+    bool m_denoiseFilterHasBeenSet = false;
 
     int m_filterStrength;
-    bool m_filterStrengthHasBeenSet;
+    bool m_filterStrengthHasBeenSet = false;
 
     InputFilter m_inputFilter;
-    bool m_inputFilterHasBeenSet;
+    bool m_inputFilterHasBeenSet = false;
 
     NetworkInputSettings m_networkInputSettings;
-    bool m_networkInputSettingsHasBeenSet;
+    bool m_networkInputSettingsHasBeenSet = false;
 
     int m_scte35Pid;
-    bool m_scte35PidHasBeenSet;
+    bool m_scte35PidHasBeenSet = false;
 
     Smpte2038DataPreference m_smpte2038DataPreference;
-    bool m_smpte2038DataPreferenceHasBeenSet;
+    bool m_smpte2038DataPreferenceHasBeenSet = false;
 
     InputSourceEndBehavior m_sourceEndBehavior;
-    bool m_sourceEndBehaviorHasBeenSet;
+    bool m_sourceEndBehaviorHasBeenSet = false;
 
     VideoSelector m_videoSelector;
-    bool m_videoSelectorHasBeenSet;
+    bool m_videoSelectorHasBeenSet = false;
   };
 
 } // namespace Model

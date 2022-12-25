@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SourceFlowConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SourceFlowConfig
+  class SourceFlowConfig
   {
   public:
-    SourceFlowConfig();
-    SourceFlowConfig(Aws::Utils::Json::JsonView jsonValue);
-    SourceFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SourceFlowConfig();
+    AWS_APPFLOW_API SourceFlowConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SourceFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_apiVersion;
-    bool m_apiVersionHasBeenSet;
+    bool m_apiVersionHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     SourceConnectorProperties m_sourceConnectorProperties;
-    bool m_sourceConnectorPropertiesHasBeenSet;
+    bool m_sourceConnectorPropertiesHasBeenSet = false;
 
     IncrementalPullConfig m_incrementalPullConfig;
-    bool m_incrementalPullConfigHasBeenSet;
+    bool m_incrementalPullConfigHasBeenSet = false;
   };
 
 } // namespace Model

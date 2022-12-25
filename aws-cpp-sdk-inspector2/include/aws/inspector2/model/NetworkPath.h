@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/NetworkPath">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API NetworkPath
+  class NetworkPath
   {
   public:
-    NetworkPath();
-    NetworkPath(Aws::Utils::Json::JsonView jsonValue);
-    NetworkPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API NetworkPath();
+    AWS_INSPECTOR2_API NetworkPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API NetworkPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Step> m_steps;
-    bool m_stepsHasBeenSet;
+    bool m_stepsHasBeenSet = false;
   };
 
 } // namespace Model

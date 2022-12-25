@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/AttributeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API AttributeConfig
+  class AttributeConfig
   {
   public:
-    AttributeConfig();
-    AttributeConfig(Aws::Utils::Json::JsonView jsonValue);
-    AttributeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API AttributeConfig();
+    AWS_FORECASTSERVICE_API AttributeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API AttributeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -501,10 +501,10 @@ namespace Model
   private:
 
     Aws::String m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_transformations;
-    bool m_transformationsHasBeenSet;
+    bool m_transformationsHasBeenSet = false;
   };
 
 } // namespace Model

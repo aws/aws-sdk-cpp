@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SourcePriority">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API SourcePriority
+  class SourcePriority
   {
   public:
-    SourcePriority();
-    SourcePriority(Aws::Utils::Json::JsonView jsonValue);
-    SourcePriority& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API SourcePriority();
+    AWS_MEDIACONNECT_API SourcePriority(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API SourcePriority& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_primarySource;
-    bool m_primarySourceHasBeenSet;
+    bool m_primarySourceHasBeenSet = false;
   };
 
 } // namespace Model

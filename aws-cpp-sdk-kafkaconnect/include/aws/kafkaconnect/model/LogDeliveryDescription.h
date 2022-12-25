@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/LogDeliveryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API LogDeliveryDescription
+  class LogDeliveryDescription
   {
   public:
-    LogDeliveryDescription();
-    LogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
-    LogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API LogDeliveryDescription();
+    AWS_KAFKACONNECT_API LogDeliveryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API LogDeliveryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     WorkerLogDeliveryDescription m_workerLogDelivery;
-    bool m_workerLogDeliveryHasBeenSet;
+    bool m_workerLogDeliveryHasBeenSet = false;
   };
 
 } // namespace Model

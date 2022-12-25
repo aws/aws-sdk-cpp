@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/KinesisVideoStreamConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API KinesisVideoStreamConfig
+  class KinesisVideoStreamConfig
   {
   public:
-    KinesisVideoStreamConfig();
-    KinesisVideoStreamConfig(Aws::Utils::Json::JsonView jsonValue);
-    KinesisVideoStreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API KinesisVideoStreamConfig();
+    AWS_CONNECT_API KinesisVideoStreamConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API KinesisVideoStreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     int m_retentionPeriodHours;
-    bool m_retentionPeriodHoursHasBeenSet;
+    bool m_retentionPeriodHoursHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

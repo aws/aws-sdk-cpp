@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PerformanceInsightsReferenceMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric
+  class PerformanceInsightsReferenceMetric
   {
   public:
-    PerformanceInsightsReferenceMetric();
-    PerformanceInsightsReferenceMetric(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceInsightsReferenceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     PerformanceInsightsMetricQuery m_metricQuery;
-    bool m_metricQueryHasBeenSet;
+    bool m_metricQueryHasBeenSet = false;
   };
 
 } // namespace Model

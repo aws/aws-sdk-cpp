@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/BudgetNotificationsForAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API BudgetNotificationsForAccount
+  class BudgetNotificationsForAccount
   {
   public:
-    BudgetNotificationsForAccount();
-    BudgetNotificationsForAccount(Aws::Utils::Json::JsonView jsonValue);
-    BudgetNotificationsForAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API BudgetNotificationsForAccount();
+    AWS_BUDGETS_API BudgetNotificationsForAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API BudgetNotificationsForAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     Aws::Vector<Notification> m_notifications;
-    bool m_notificationsHasBeenSet;
+    bool m_notificationsHasBeenSet = false;
 
     Aws::String m_budgetName;
-    bool m_budgetNameHasBeenSet;
+    bool m_budgetNameHasBeenSet = false;
   };
 
 } // namespace Model

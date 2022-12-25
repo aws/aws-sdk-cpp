@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M3u8Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API M3u8Settings
+  class M3u8Settings
   {
   public:
-    M3u8Settings();
-    M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
-    M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API M3u8Settings();
+    AWS_MEDIACONVERT_API M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -728,61 +728,61 @@ namespace Model
   private:
 
     M3u8AudioDuration m_audioDuration;
-    bool m_audioDurationHasBeenSet;
+    bool m_audioDurationHasBeenSet = false;
 
     int m_audioFramesPerPes;
-    bool m_audioFramesPerPesHasBeenSet;
+    bool m_audioFramesPerPesHasBeenSet = false;
 
     Aws::Vector<int> m_audioPids;
-    bool m_audioPidsHasBeenSet;
+    bool m_audioPidsHasBeenSet = false;
 
     M3u8DataPtsControl m_dataPTSControl;
-    bool m_dataPTSControlHasBeenSet;
+    bool m_dataPTSControlHasBeenSet = false;
 
     int m_maxPcrInterval;
-    bool m_maxPcrIntervalHasBeenSet;
+    bool m_maxPcrIntervalHasBeenSet = false;
 
     M3u8NielsenId3 m_nielsenId3;
-    bool m_nielsenId3HasBeenSet;
+    bool m_nielsenId3HasBeenSet = false;
 
     int m_patInterval;
-    bool m_patIntervalHasBeenSet;
+    bool m_patIntervalHasBeenSet = false;
 
     M3u8PcrControl m_pcrControl;
-    bool m_pcrControlHasBeenSet;
+    bool m_pcrControlHasBeenSet = false;
 
     int m_pcrPid;
-    bool m_pcrPidHasBeenSet;
+    bool m_pcrPidHasBeenSet = false;
 
     int m_pmtInterval;
-    bool m_pmtIntervalHasBeenSet;
+    bool m_pmtIntervalHasBeenSet = false;
 
     int m_pmtPid;
-    bool m_pmtPidHasBeenSet;
+    bool m_pmtPidHasBeenSet = false;
 
     int m_privateMetadataPid;
-    bool m_privateMetadataPidHasBeenSet;
+    bool m_privateMetadataPidHasBeenSet = false;
 
     int m_programNumber;
-    bool m_programNumberHasBeenSet;
+    bool m_programNumberHasBeenSet = false;
 
     int m_scte35Pid;
-    bool m_scte35PidHasBeenSet;
+    bool m_scte35PidHasBeenSet = false;
 
     M3u8Scte35Source m_scte35Source;
-    bool m_scte35SourceHasBeenSet;
+    bool m_scte35SourceHasBeenSet = false;
 
     TimedMetadata m_timedMetadata;
-    bool m_timedMetadataHasBeenSet;
+    bool m_timedMetadataHasBeenSet = false;
 
     int m_timedMetadataPid;
-    bool m_timedMetadataPidHasBeenSet;
+    bool m_timedMetadataPidHasBeenSet = false;
 
     int m_transportStreamId;
-    bool m_transportStreamIdHasBeenSet;
+    bool m_transportStreamIdHasBeenSet = false;
 
     int m_videoPid;
-    bool m_videoPidHasBeenSet;
+    bool m_videoPidHasBeenSet = false;
   };
 
 } // namespace Model

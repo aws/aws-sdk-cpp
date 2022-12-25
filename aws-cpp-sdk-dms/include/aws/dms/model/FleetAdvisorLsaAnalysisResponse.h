@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/FleetAdvisorLsaAnalysisResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse
+  class FleetAdvisorLsaAnalysisResponse
   {
   public:
-    FleetAdvisorLsaAnalysisResponse();
-    FleetAdvisorLsaAnalysisResponse(Aws::Utils::Json::JsonView jsonValue);
-    FleetAdvisorLsaAnalysisResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API FleetAdvisorLsaAnalysisResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_lsaAnalysisId;
-    bool m_lsaAnalysisIdHasBeenSet;
+    bool m_lsaAnalysisIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

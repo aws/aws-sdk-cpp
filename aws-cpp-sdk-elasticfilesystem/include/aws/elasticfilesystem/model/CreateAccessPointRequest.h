@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_EFS_API CreateAccessPointRequest : public EFSRequest
+  class CreateAccessPointRequest : public EFSRequest
   {
   public:
-    CreateAccessPointRequest();
+    AWS_EFS_API CreateAccessPointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAccessPoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EFS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -336,19 +336,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     PosixUser m_posixUser;
-    bool m_posixUserHasBeenSet;
+    bool m_posixUserHasBeenSet = false;
 
     RootDirectory m_rootDirectory;
-    bool m_rootDirectoryHasBeenSet;
+    bool m_rootDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

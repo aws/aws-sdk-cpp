@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetSummary
+  class DataSetSummary
   {
   public:
-    DataSetSummary();
-    DataSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetSummary();
+    AWS_QUICKSIGHT_API DataSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,31 +335,31 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     DataSetImportMode m_importMode;
-    bool m_importModeHasBeenSet;
+    bool m_importModeHasBeenSet = false;
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
-    bool m_rowLevelPermissionDataSetHasBeenSet;
+    bool m_rowLevelPermissionDataSetHasBeenSet = false;
 
     bool m_rowLevelPermissionTagConfigurationApplied;
-    bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet;
+    bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = false;
 
     bool m_columnLevelPermissionRulesApplied;
-    bool m_columnLevelPermissionRulesAppliedHasBeenSet;
+    bool m_columnLevelPermissionRulesAppliedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterParameterGroupStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ClusterParameterGroupStatus
+  class ClusterParameterGroupStatus
   {
   public:
-    ClusterParameterGroupStatus();
-    ClusterParameterGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterParameterGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterParameterGroupStatus();
+    AWS_REDSHIFT_API ClusterParameterGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterParameterGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -198,13 +198,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterApplyStatus;
-    bool m_parameterApplyStatusHasBeenSet;
+    bool m_parameterApplyStatusHasBeenSet = false;
 
     Aws::Vector<ClusterParameterStatus> m_clusterParameterStatusList;
-    bool m_clusterParameterStatusListHasBeenSet;
+    bool m_clusterParameterStatusListHasBeenSet = false;
   };
 
 } // namespace Model

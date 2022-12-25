@@ -41,7 +41,7 @@ MediaStreamOutputConfiguration& MediaStreamOutputConfiguration::operator =(JsonV
 {
   if(jsonValue.ValueExists("destinationConfigurations"))
   {
-    Array<JsonView> destinationConfigurationsJsonList = jsonValue.GetArray("destinationConfigurations");
+    Aws::Utils::Array<JsonView> destinationConfigurationsJsonList = jsonValue.GetArray("destinationConfigurations");
     for(unsigned destinationConfigurationsIndex = 0; destinationConfigurationsIndex < destinationConfigurationsJsonList.GetLength(); ++destinationConfigurationsIndex)
     {
       m_destinationConfigurations.push_back(destinationConfigurationsJsonList[destinationConfigurationsIndex].AsObject());
@@ -79,7 +79,7 @@ JsonValue MediaStreamOutputConfiguration::Jsonize() const
 
   if(m_destinationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> destinationConfigurationsJsonList(m_destinationConfigurations.size());
+   Aws::Utils::Array<JsonValue> destinationConfigurationsJsonList(m_destinationConfigurations.size());
    for(unsigned destinationConfigurationsIndex = 0; destinationConfigurationsIndex < destinationConfigurationsJsonList.GetLength(); ++destinationConfigurationsIndex)
    {
      destinationConfigurationsJsonList[destinationConfigurationsIndex].AsObject(m_destinationConfigurations[destinationConfigurationsIndex].Jsonize());

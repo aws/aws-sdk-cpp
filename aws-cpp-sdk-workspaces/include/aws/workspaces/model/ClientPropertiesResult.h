@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ClientPropertiesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ClientPropertiesResult
+  class ClientPropertiesResult
   {
   public:
-    ClientPropertiesResult();
-    ClientPropertiesResult(Aws::Utils::Json::JsonView jsonValue);
-    ClientPropertiesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ClientPropertiesResult();
+    AWS_WORKSPACES_API ClientPropertiesResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ClientPropertiesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ClientProperties m_clientProperties;
-    bool m_clientPropertiesHasBeenSet;
+    bool m_clientPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

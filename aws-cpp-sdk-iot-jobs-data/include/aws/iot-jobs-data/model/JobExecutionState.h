@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/JobExecutionState">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTJOBSDATAPLANE_API JobExecutionState
+  class JobExecutionState
   {
   public:
-    JobExecutionState();
-    JobExecutionState(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTJOBSDATAPLANE_API JobExecutionState();
+    AWS_IOTJOBSDATAPLANE_API JobExecutionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API JobExecutionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTJOBSDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     JobExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
-    bool m_statusDetailsHasBeenSet;
+    bool m_statusDetailsHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

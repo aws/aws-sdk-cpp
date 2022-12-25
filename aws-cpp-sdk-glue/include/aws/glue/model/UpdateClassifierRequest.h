@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUE_API UpdateClassifierRequest : public GlueRequest
+  class UpdateClassifierRequest : public GlueRequest
   {
   public:
-    UpdateClassifierRequest();
+    AWS_GLUE_API UpdateClassifierRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateClassifier"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -163,16 +163,16 @@ namespace Model
   private:
 
     UpdateGrokClassifierRequest m_grokClassifier;
-    bool m_grokClassifierHasBeenSet;
+    bool m_grokClassifierHasBeenSet = false;
 
     UpdateXMLClassifierRequest m_xMLClassifier;
-    bool m_xMLClassifierHasBeenSet;
+    bool m_xMLClassifierHasBeenSet = false;
 
     UpdateJsonClassifierRequest m_jsonClassifier;
-    bool m_jsonClassifierHasBeenSet;
+    bool m_jsonClassifierHasBeenSet = false;
 
     UpdateCsvClassifierRequest m_csvClassifier;
-    bool m_csvClassifierHasBeenSet;
+    bool m_csvClassifierHasBeenSet = false;
   };
 
 } // namespace Model

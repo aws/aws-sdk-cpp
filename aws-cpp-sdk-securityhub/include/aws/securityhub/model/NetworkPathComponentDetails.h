@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/NetworkPathComponentDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API NetworkPathComponentDetails
+  class NetworkPathComponentDetails
   {
   public:
-    NetworkPathComponentDetails();
-    NetworkPathComponentDetails(Aws::Utils::Json::JsonView jsonValue);
-    NetworkPathComponentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API NetworkPathComponentDetails();
+    AWS_SECURITYHUB_API NetworkPathComponentDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API NetworkPathComponentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::Vector<PortRange> m_portRanges;
-    bool m_portRangesHasBeenSet;
+    bool m_portRangesHasBeenSet = false;
   };
 
 } // namespace Model

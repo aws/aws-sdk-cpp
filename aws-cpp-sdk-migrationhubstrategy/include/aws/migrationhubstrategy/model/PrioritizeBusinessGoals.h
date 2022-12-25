@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/PrioritizeBusinessGoals">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals
+  class PrioritizeBusinessGoals
   {
   public:
-    PrioritizeBusinessGoals();
-    PrioritizeBusinessGoals(Aws::Utils::Json::JsonView jsonValue);
-    PrioritizeBusinessGoals& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PrioritizeBusinessGoals& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     BusinessGoals m_businessGoals;
-    bool m_businessGoalsHasBeenSet;
+    bool m_businessGoalsHasBeenSet = false;
   };
 
 } // namespace Model

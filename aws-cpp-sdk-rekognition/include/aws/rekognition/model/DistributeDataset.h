@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDataset">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DistributeDataset
+  class DistributeDataset
   {
   public:
-    DistributeDataset();
-    DistributeDataset(Aws::Utils::Json::JsonView jsonValue);
-    DistributeDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DistributeDataset();
+    AWS_REKOGNITION_API DistributeDataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DistributeDataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

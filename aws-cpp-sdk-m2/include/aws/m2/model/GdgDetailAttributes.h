@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GdgDetailAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes
+  class GdgDetailAttributes
   {
   public:
-    GdgDetailAttributes();
-    GdgDetailAttributes(Aws::Utils::Json::JsonView jsonValue);
-    GdgDetailAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -106,10 +106,10 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_rollDisposition;
-    bool m_rollDispositionHasBeenSet;
+    bool m_rollDispositionHasBeenSet = false;
   };
 
 } // namespace Model

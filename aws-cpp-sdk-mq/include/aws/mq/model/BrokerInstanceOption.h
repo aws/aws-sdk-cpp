@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstanceOption">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerInstanceOption
+  class BrokerInstanceOption
   {
   public:
-    BrokerInstanceOption();
-    BrokerInstanceOption(Aws::Utils::Json::JsonView jsonValue);
-    BrokerInstanceOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerInstanceOption();
+    AWS_MQ_API BrokerInstanceOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerInstanceOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -275,22 +275,22 @@ namespace Model
   private:
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_hostInstanceType;
-    bool m_hostInstanceTypeHasBeenSet;
+    bool m_hostInstanceTypeHasBeenSet = false;
 
     BrokerStorageType m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::Vector<DeploymentMode> m_supportedDeploymentModes;
-    bool m_supportedDeploymentModesHasBeenSet;
+    bool m_supportedDeploymentModesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedEngineVersions;
-    bool m_supportedEngineVersionsHasBeenSet;
+    bool m_supportedEngineVersionsHasBeenSet = false;
   };
 
 } // namespace Model

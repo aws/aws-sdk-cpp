@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CodeCoverage">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API CodeCoverage
+  class CodeCoverage
   {
   public:
-    CodeCoverage();
-    CodeCoverage(Aws::Utils::Json::JsonView jsonValue);
-    CodeCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API CodeCoverage();
+    AWS_CODEBUILD_API CodeCoverage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API CodeCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -324,34 +324,34 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_reportARN;
-    bool m_reportARNHasBeenSet;
+    bool m_reportARNHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     double m_lineCoveragePercentage;
-    bool m_lineCoveragePercentageHasBeenSet;
+    bool m_lineCoveragePercentageHasBeenSet = false;
 
     int m_linesCovered;
-    bool m_linesCoveredHasBeenSet;
+    bool m_linesCoveredHasBeenSet = false;
 
     int m_linesMissed;
-    bool m_linesMissedHasBeenSet;
+    bool m_linesMissedHasBeenSet = false;
 
     double m_branchCoveragePercentage;
-    bool m_branchCoveragePercentageHasBeenSet;
+    bool m_branchCoveragePercentageHasBeenSet = false;
 
     int m_branchesCovered;
-    bool m_branchesCoveredHasBeenSet;
+    bool m_branchesCoveredHasBeenSet = false;
 
     int m_branchesMissed;
-    bool m_branchesMissedHasBeenSet;
+    bool m_branchesMissedHasBeenSet = false;
 
     Aws::Utils::DateTime m_expired;
-    bool m_expiredHasBeenSet;
+    bool m_expiredHasBeenSet = false;
   };
 
 } // namespace Model

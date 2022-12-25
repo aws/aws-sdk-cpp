@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Core">AWS API
    * Reference</a></p>
    */
-  class AWS_GREENGRASS_API Core
+  class Core
   {
   public:
-    Core();
-    Core(Aws::Utils::Json::JsonView jsonValue);
-    Core& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Core();
+    AWS_GREENGRASS_API Core(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Core& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_certificateArn;
-    bool m_certificateArnHasBeenSet;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     bool m_syncShadow;
-    bool m_syncShadowHasBeenSet;
+    bool m_syncShadowHasBeenSet = false;
 
     Aws::String m_thingArn;
-    bool m_thingArnHasBeenSet;
+    bool m_thingArnHasBeenSet = false;
   };
 
 } // namespace Model

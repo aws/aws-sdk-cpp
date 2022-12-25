@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsMetadata">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API OpsMetadata
+  class OpsMetadata
   {
   public:
-    OpsMetadata();
-    OpsMetadata(Aws::Utils::Json::JsonView jsonValue);
-    OpsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsMetadata();
+    AWS_SSM_API OpsMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_opsMetadataArn;
-    bool m_opsMetadataArnHasBeenSet;
+    bool m_opsMetadataArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;
-    bool m_lastModifiedUserHasBeenSet;
+    bool m_lastModifiedUserHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
   };
 
 } // namespace Model

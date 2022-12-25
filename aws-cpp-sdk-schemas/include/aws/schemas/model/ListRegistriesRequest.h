@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SCHEMAS_API ListRegistriesRequest : public SchemasRequest
+  class ListRegistriesRequest : public SchemasRequest
   {
   public:
-    ListRegistriesRequest();
+    AWS_SCHEMAS_API ListRegistriesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListRegistries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SCHEMAS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     
@@ -208,16 +208,16 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_registryNamePrefix;
-    bool m_registryNamePrefixHasBeenSet;
+    bool m_registryNamePrefixHasBeenSet = false;
 
     Aws::String m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -48,7 +48,7 @@ SpekeKeyProviderCmaf& SpekeKeyProviderCmaf::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dashSignaledSystemIds"))
   {
-    Array<JsonView> dashSignaledSystemIdsJsonList = jsonValue.GetArray("dashSignaledSystemIds");
+    Aws::Utils::Array<JsonView> dashSignaledSystemIdsJsonList = jsonValue.GetArray("dashSignaledSystemIds");
     for(unsigned dashSignaledSystemIdsIndex = 0; dashSignaledSystemIdsIndex < dashSignaledSystemIdsJsonList.GetLength(); ++dashSignaledSystemIdsIndex)
     {
       m_dashSignaledSystemIds.push_back(dashSignaledSystemIdsJsonList[dashSignaledSystemIdsIndex].AsString());
@@ -58,7 +58,7 @@ SpekeKeyProviderCmaf& SpekeKeyProviderCmaf::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hlsSignaledSystemIds"))
   {
-    Array<JsonView> hlsSignaledSystemIdsJsonList = jsonValue.GetArray("hlsSignaledSystemIds");
+    Aws::Utils::Array<JsonView> hlsSignaledSystemIdsJsonList = jsonValue.GetArray("hlsSignaledSystemIds");
     for(unsigned hlsSignaledSystemIdsIndex = 0; hlsSignaledSystemIdsIndex < hlsSignaledSystemIdsJsonList.GetLength(); ++hlsSignaledSystemIdsIndex)
     {
       m_hlsSignaledSystemIds.push_back(hlsSignaledSystemIdsJsonList[hlsSignaledSystemIdsIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue SpekeKeyProviderCmaf::Jsonize() const
 
   if(m_dashSignaledSystemIdsHasBeenSet)
   {
-   Array<JsonValue> dashSignaledSystemIdsJsonList(m_dashSignaledSystemIds.size());
+   Aws::Utils::Array<JsonValue> dashSignaledSystemIdsJsonList(m_dashSignaledSystemIds.size());
    for(unsigned dashSignaledSystemIdsIndex = 0; dashSignaledSystemIdsIndex < dashSignaledSystemIdsJsonList.GetLength(); ++dashSignaledSystemIdsIndex)
    {
      dashSignaledSystemIdsJsonList[dashSignaledSystemIdsIndex].AsString(m_dashSignaledSystemIds[dashSignaledSystemIdsIndex]);
@@ -106,7 +106,7 @@ JsonValue SpekeKeyProviderCmaf::Jsonize() const
 
   if(m_hlsSignaledSystemIdsHasBeenSet)
   {
-   Array<JsonValue> hlsSignaledSystemIdsJsonList(m_hlsSignaledSystemIds.size());
+   Aws::Utils::Array<JsonValue> hlsSignaledSystemIdsJsonList(m_hlsSignaledSystemIds.size());
    for(unsigned hlsSignaledSystemIdsIndex = 0; hlsSignaledSystemIdsIndex < hlsSignaledSystemIdsJsonList.GetLength(); ++hlsSignaledSystemIdsIndex)
    {
      hlsSignaledSystemIdsJsonList[hlsSignaledSystemIdsIndex].AsString(m_hlsSignaledSystemIds[hlsSignaledSystemIdsIndex]);

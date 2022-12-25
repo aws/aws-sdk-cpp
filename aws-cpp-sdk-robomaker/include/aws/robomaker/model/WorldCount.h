@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/WorldCount">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API WorldCount
+  class WorldCount
   {
   public:
-    WorldCount();
-    WorldCount(Aws::Utils::Json::JsonView jsonValue);
-    WorldCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API WorldCount();
+    AWS_ROBOMAKER_API WorldCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API WorldCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,10 +86,10 @@ namespace Model
   private:
 
     int m_floorplanCount;
-    bool m_floorplanCountHasBeenSet;
+    bool m_floorplanCountHasBeenSet = false;
 
     int m_interiorCountPerFloorplan;
-    bool m_interiorCountPerFloorplanHasBeenSet;
+    bool m_interiorCountPerFloorplanHasBeenSet = false;
   };
 
 } // namespace Model

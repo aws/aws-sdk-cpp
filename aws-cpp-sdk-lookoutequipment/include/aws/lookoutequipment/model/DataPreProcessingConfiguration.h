@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DataPreProcessingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration
+  class DataPreProcessingConfiguration
   {
   public:
-    DataPreProcessingConfiguration();
-    DataPreProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataPreProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,7 +120,7 @@ namespace Model
   private:
 
     TargetSamplingRate m_targetSamplingRate;
-    bool m_targetSamplingRateHasBeenSet;
+    bool m_targetSamplingRateHasBeenSet = false;
   };
 
 } // namespace Model

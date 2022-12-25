@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/BadRequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIGDATA_API BadRequestDetails
+  class BadRequestDetails
   {
   public:
-    BadRequestDetails();
-    BadRequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIGDATA_API BadRequestDetails();
+    AWS_APPCONFIGDATA_API BadRequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API BadRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,7 +103,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, InvalidParameterDetail> m_invalidParameters;
-    bool m_invalidParametersHasBeenSet;
+    bool m_invalidParametersHasBeenSet = false;
   };
 
 } // namespace Model

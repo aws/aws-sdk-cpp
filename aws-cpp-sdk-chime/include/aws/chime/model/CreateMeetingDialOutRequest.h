@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API CreateMeetingDialOutRequest : public ChimeRequest
+  class CreateMeetingDialOutRequest : public ChimeRequest
   {
   public:
-    CreateMeetingDialOutRequest();
+    AWS_CHIME_API CreateMeetingDialOutRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMeetingDialOut"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -214,16 +214,16 @@ namespace Model
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::String m_fromPhoneNumber;
-    bool m_fromPhoneNumberHasBeenSet;
+    bool m_fromPhoneNumberHasBeenSet = false;
 
     Aws::String m_toPhoneNumber;
-    bool m_toPhoneNumberHasBeenSet;
+    bool m_toPhoneNumberHasBeenSet = false;
 
     Aws::String m_joinToken;
-    bool m_joinTokenHasBeenSet;
+    bool m_joinTokenHasBeenSet = false;
   };
 
 } // namespace Model

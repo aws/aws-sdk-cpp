@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FirewallPolicyStatelessCustomActionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails
+  class FirewallPolicyStatelessCustomActionsDetails
   {
   public:
-    FirewallPolicyStatelessCustomActionsDetails();
-    FirewallPolicyStatelessCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    FirewallPolicyStatelessCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails();
+    AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -113,10 +113,10 @@ namespace Model
   private:
 
     StatelessCustomActionDefinition m_actionDefinition;
-    bool m_actionDefinitionHasBeenSet;
+    bool m_actionDefinitionHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/BillingRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API BillingRecord
+  class BillingRecord
   {
   public:
-    BillingRecord();
-    BillingRecord(Aws::Utils::Json::JsonView jsonValue);
-    BillingRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API BillingRecord();
+    AWS_ROUTE53DOMAINS_API BillingRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API BillingRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -250,19 +250,19 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     OperationType m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_invoiceId;
-    bool m_invoiceIdHasBeenSet;
+    bool m_invoiceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_billDate;
-    bool m_billDateHasBeenSet;
+    bool m_billDateHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
   };
 
 } // namespace Model

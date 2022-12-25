@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendConfigRequest : public AmplifyBackendRequest
+  class UpdateBackendConfigRequest : public AmplifyBackendRequest
   {
   public:
-    UpdateBackendConfigRequest();
+    AWS_AMPLIFYBACKEND_API UpdateBackendConfigRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBackendConfig"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     LoginAuthConfigReqObj m_loginAuthConfig;
-    bool m_loginAuthConfigHasBeenSet;
+    bool m_loginAuthConfigHasBeenSet = false;
   };
 
 } // namespace Model

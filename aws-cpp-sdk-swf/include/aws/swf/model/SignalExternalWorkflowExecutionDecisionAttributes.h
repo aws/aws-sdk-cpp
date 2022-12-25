@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalExternalWorkflowExecutionDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes
+  class SignalExternalWorkflowExecutionDecisionAttributes
   {
   public:
-    SignalExternalWorkflowExecutionDecisionAttributes();
-    SignalExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    SignalExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API SignalExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     Aws::String m_signalName;
-    bool m_signalNameHasBeenSet;
+    bool m_signalNameHasBeenSet = false;
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
   };
 
 } // namespace Model

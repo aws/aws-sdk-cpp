@@ -18,14 +18,11 @@ namespace Model
 {
 
   /**
-   * <p>The request body for UpdateEventAction.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateEventActionRequest">AWS
-   * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API UpdateEventActionRequest : public DataExchangeRequest
+  class UpdateEventActionRequest : public DataExchangeRequest
   {
   public:
-    UpdateEventActionRequest();
+    AWS_DATAEXCHANGE_API UpdateEventActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEventAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -110,10 +107,10 @@ namespace Model
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_eventActionId;
-    bool m_eventActionIdHasBeenSet;
+    bool m_eventActionIdHasBeenSet = false;
   };
 
 } // namespace Model

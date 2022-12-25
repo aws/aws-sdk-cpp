@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Urls">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Urls
+  class Urls
   {
   public:
-    Urls();
-    Urls(Aws::Utils::Json::JsonView jsonValue);
-    Urls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Urls();
+    AWS_KENDRA_API Urls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Urls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -146,10 +146,10 @@ namespace Model
   private:
 
     SeedUrlConfiguration m_seedUrlConfiguration;
-    bool m_seedUrlConfigurationHasBeenSet;
+    bool m_seedUrlConfigurationHasBeenSet = false;
 
     SiteMapsConfiguration m_siteMapsConfiguration;
-    bool m_siteMapsConfigurationHasBeenSet;
+    bool m_siteMapsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

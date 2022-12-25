@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ResourceEndpointListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API ResourceEndpointListItem
+  class ResourceEndpointListItem
   {
   public:
-    ResourceEndpointListItem();
-    ResourceEndpointListItem(Aws::Utils::Json::JsonView jsonValue);
-    ResourceEndpointListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API ResourceEndpointListItem();
+    AWS_KINESISVIDEO_API ResourceEndpointListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API ResourceEndpointListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -127,10 +127,10 @@ namespace Model
   private:
 
     ChannelProtocol m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
 
     Aws::String m_resourceEndpoint;
-    bool m_resourceEndpointHasBeenSet;
+    bool m_resourceEndpointHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Merge">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Merge
+  class Merge
   {
   public:
-    Merge();
-    Merge(Aws::Utils::Json::JsonView jsonValue);
-    Merge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Merge();
+    AWS_GLUE_API Merge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Merge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_primaryKeys;
-    bool m_primaryKeysHasBeenSet;
+    bool m_primaryKeysHasBeenSet = false;
   };
 
 } // namespace Model

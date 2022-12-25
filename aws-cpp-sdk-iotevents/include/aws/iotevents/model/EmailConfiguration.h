@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/EmailConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API EmailConfiguration
+  class EmailConfiguration
   {
   public:
-    EmailConfiguration();
-    EmailConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EmailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API EmailConfiguration();
+    AWS_IOTEVENTS_API EmailConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API EmailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     EmailContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     EmailRecipients m_recipients;
-    bool m_recipientsHasBeenSet;
+    bool m_recipientsHasBeenSet = false;
   };
 
 } // namespace Model

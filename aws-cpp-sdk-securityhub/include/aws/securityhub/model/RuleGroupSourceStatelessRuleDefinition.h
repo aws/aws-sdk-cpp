@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRuleDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition
+  class RuleGroupSourceStatelessRuleDefinition
   {
   public:
-    RuleGroupSourceStatelessRuleDefinition();
-    RuleGroupSourceStatelessRuleDefinition(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     RuleGroupSourceStatelessRuleMatchAttributes m_matchAttributes;
-    bool m_matchAttributesHasBeenSet;
+    bool m_matchAttributesHasBeenSet = false;
   };
 
 } // namespace Model

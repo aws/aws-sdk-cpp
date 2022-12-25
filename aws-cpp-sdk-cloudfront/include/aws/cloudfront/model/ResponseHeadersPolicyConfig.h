@@ -8,8 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyCorsConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicySecurityHeadersConfig.h>
-#include <aws/cloudfront/model/ResponseHeadersPolicyCustomHeadersConfig.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyServerTimingHeadersConfig.h>
+#include <aws/cloudfront/model/ResponseHeadersPolicyCustomHeadersConfig.h>
 #include <utility>
 
 namespace Aws
@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyConfig
+  class ResponseHeadersPolicyConfig
   {
   public:
-    ResponseHeadersPolicyConfig();
-    ResponseHeadersPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -212,37 +212,6 @@ namespace Model
 
 
     /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline const ResponseHeadersPolicyCustomHeadersConfig& GetCustomHeadersConfig() const{ return m_customHeadersConfig; }
-
-    /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline bool CustomHeadersConfigHasBeenSet() const { return m_customHeadersConfigHasBeenSet; }
-
-    /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline void SetCustomHeadersConfig(const ResponseHeadersPolicyCustomHeadersConfig& value) { m_customHeadersConfigHasBeenSet = true; m_customHeadersConfig = value; }
-
-    /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline void SetCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { m_customHeadersConfigHasBeenSet = true; m_customHeadersConfig = std::move(value); }
-
-    /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(const ResponseHeadersPolicyCustomHeadersConfig& value) { SetCustomHeadersConfig(value); return *this;}
-
-    /**
-     * <p>A configuration for a set of custom HTTP response headers.</p>
-     */
-    inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { SetCustomHeadersConfig(std::move(value)); return *this;}
-
-
-    /**
      * <p>A configuration for enabling the <code>Server-Timing</code> header in HTTP
      * responses sent from CloudFront.</p>
      */
@@ -278,25 +247,56 @@ namespace Model
      */
     inline ResponseHeadersPolicyConfig& WithServerTimingHeadersConfig(ResponseHeadersPolicyServerTimingHeadersConfig&& value) { SetServerTimingHeadersConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline const ResponseHeadersPolicyCustomHeadersConfig& GetCustomHeadersConfig() const{ return m_customHeadersConfig; }
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline bool CustomHeadersConfigHasBeenSet() const { return m_customHeadersConfigHasBeenSet; }
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline void SetCustomHeadersConfig(const ResponseHeadersPolicyCustomHeadersConfig& value) { m_customHeadersConfigHasBeenSet = true; m_customHeadersConfig = value; }
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline void SetCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { m_customHeadersConfigHasBeenSet = true; m_customHeadersConfig = std::move(value); }
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(const ResponseHeadersPolicyCustomHeadersConfig& value) { SetCustomHeadersConfig(value); return *this;}
+
+    /**
+     * <p>A configuration for a set of custom HTTP response headers.</p>
+     */
+    inline ResponseHeadersPolicyConfig& WithCustomHeadersConfig(ResponseHeadersPolicyCustomHeadersConfig&& value) { SetCustomHeadersConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ResponseHeadersPolicyCorsConfig m_corsConfig;
-    bool m_corsConfigHasBeenSet;
+    bool m_corsConfigHasBeenSet = false;
 
     ResponseHeadersPolicySecurityHeadersConfig m_securityHeadersConfig;
-    bool m_securityHeadersConfigHasBeenSet;
-
-    ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
-    bool m_customHeadersConfigHasBeenSet;
+    bool m_securityHeadersConfigHasBeenSet = false;
 
     ResponseHeadersPolicyServerTimingHeadersConfig m_serverTimingHeadersConfig;
-    bool m_serverTimingHeadersConfigHasBeenSet;
+    bool m_serverTimingHeadersConfigHasBeenSet = false;
+
+    ResponseHeadersPolicyCustomHeadersConfig m_customHeadersConfig;
+    bool m_customHeadersConfigHasBeenSet = false;
   };
 
 } // namespace Model

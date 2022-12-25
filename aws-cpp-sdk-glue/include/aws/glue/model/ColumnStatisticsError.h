@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnStatisticsError">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ColumnStatisticsError
+  class ColumnStatisticsError
   {
   public:
-    ColumnStatisticsError();
-    ColumnStatisticsError(Aws::Utils::Json::JsonView jsonValue);
-    ColumnStatisticsError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ColumnStatisticsError();
+    AWS_GLUE_API ColumnStatisticsError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ColumnStatisticsError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -103,10 +103,10 @@ namespace Model
   private:
 
     ColumnStatistics m_columnStatistics;
-    bool m_columnStatisticsHasBeenSet;
+    bool m_columnStatisticsHasBeenSet = false;
 
     ErrorDetail m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
   };
 
 } // namespace Model

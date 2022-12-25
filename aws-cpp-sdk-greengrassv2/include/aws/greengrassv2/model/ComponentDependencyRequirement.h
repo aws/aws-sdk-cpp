@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentDependencyRequirement">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentDependencyRequirement
+  class ComponentDependencyRequirement
   {
   public:
-    ComponentDependencyRequirement();
-    ComponentDependencyRequirement(Aws::Utils::Json::JsonView jsonValue);
-    ComponentDependencyRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentDependencyRequirement();
+    AWS_GREENGRASSV2_API ComponentDependencyRequirement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentDependencyRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_versionRequirement;
-    bool m_versionRequirementHasBeenSet;
+    bool m_versionRequirementHasBeenSet = false;
 
     ComponentDependencyType m_dependencyType;
-    bool m_dependencyTypeHasBeenSet;
+    bool m_dependencyTypeHasBeenSet = false;
   };
 
 } // namespace Model

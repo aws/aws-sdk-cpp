@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProvisionedThroughputOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride
+  class AwsDynamoDbTableProvisionedThroughputOverride
   {
   public:
-    AwsDynamoDbTableProvisionedThroughputOverride();
-    AwsDynamoDbTableProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride();
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughputOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

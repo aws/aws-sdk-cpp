@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsRequest : public LookoutEquipmentRequest
+  class ListInferenceExecutionsRequest : public LookoutEquipmentRequest
   {
   public:
-    ListInferenceExecutionsRequest();
+    AWS_LOOKOUTEQUIPMENT_API ListInferenceExecutionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListInferenceExecutions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -254,22 +254,22 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_inferenceSchedulerName;
-    bool m_inferenceSchedulerNameHasBeenSet;
+    bool m_inferenceSchedulerNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataStartTimeAfter;
-    bool m_dataStartTimeAfterHasBeenSet;
+    bool m_dataStartTimeAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataEndTimeBefore;
-    bool m_dataEndTimeBeforeHasBeenSet;
+    bool m_dataEndTimeBeforeHasBeenSet = false;
 
     InferenceExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

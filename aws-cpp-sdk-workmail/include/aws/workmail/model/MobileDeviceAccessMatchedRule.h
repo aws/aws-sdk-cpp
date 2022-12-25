@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MobileDeviceAccessMatchedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MobileDeviceAccessMatchedRule
+  class MobileDeviceAccessMatchedRule
   {
   public:
-    MobileDeviceAccessMatchedRule();
-    MobileDeviceAccessMatchedRule(Aws::Utils::Json::JsonView jsonValue);
-    MobileDeviceAccessMatchedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MobileDeviceAccessMatchedRule();
+    AWS_WORKMAIL_API MobileDeviceAccessMatchedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MobileDeviceAccessMatchedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_mobileDeviceAccessRuleId;
-    bool m_mobileDeviceAccessRuleIdHasBeenSet;
+    bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

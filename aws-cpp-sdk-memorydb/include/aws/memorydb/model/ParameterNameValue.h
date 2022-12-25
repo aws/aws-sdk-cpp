@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ParameterNameValue">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ParameterNameValue
+  class ParameterNameValue
   {
   public:
-    ParameterNameValue();
-    ParameterNameValue(Aws::Utils::Json::JsonView jsonValue);
-    ParameterNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ParameterNameValue();
+    AWS_MEMORYDB_API ParameterNameValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ParameterNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_parameterName;
-    bool m_parameterNameHasBeenSet;
+    bool m_parameterNameHasBeenSet = false;
 
     Aws::String m_parameterValue;
-    bool m_parameterValueHasBeenSet;
+    bool m_parameterValueHasBeenSet = false;
   };
 
 } // namespace Model

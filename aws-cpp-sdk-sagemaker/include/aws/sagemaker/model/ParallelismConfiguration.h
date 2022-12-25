@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParallelismConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ParallelismConfiguration
+  class ParallelismConfiguration
   {
   public:
-    ParallelismConfiguration();
-    ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ParallelismConfiguration();
+    AWS_SAGEMAKER_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_maxParallelExecutionSteps;
-    bool m_maxParallelExecutionStepsHasBeenSet;
+    bool m_maxParallelExecutionStepsHasBeenSet = false;
   };
 
 } // namespace Model

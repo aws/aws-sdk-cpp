@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/xray/model/EdgeStatistics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/model/HistogramEntry.h>
 #include <aws/xray/model/Alias.h>
 #include <utility>
@@ -28,17 +29,20 @@ namespace Model
 {
 
   /**
-   * <p>Information about a connection between two services.</p><p><h3>See Also:</h3>
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge">AWS API
+   * <p>Information about a connection between two services. An edge can be a
+   * synchronous connection, such as typical call between client and service, or an
+   * asynchronous link, such as a Lambda function which retrieves an event from an
+   * SNS queue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Edge
+  class Edge
   {
   public:
-    Edge();
-    Edge(Aws::Utils::Json::JsonView jsonValue);
-    Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Edge();
+    AWS_XRAY_API Edge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -156,42 +160,50 @@ namespace Model
 
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline bool ResponseTimeHistogramHasBeenSet() const { return m_responseTimeHistogramHasBeenSet; }
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline void SetResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = value; }
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::move(value); }
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline Edge& WithResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { SetResponseTimeHistogram(value); return *this;}
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline Edge& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(std::move(value)); return *this;}
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline Edge& AddResponseTimeHistogram(const HistogramEntry& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(value); return *this; }
 
     /**
-     * <p>A histogram that maps the spread of client response times on an edge.</p>
+     * <p>A histogram that maps the spread of client response times on an edge. Only
+     * populated for synchronous edges.</p>
      */
     inline Edge& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
 
@@ -236,25 +248,129 @@ namespace Model
      */
     inline Edge& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline const Aws::String& GetEdgeType() const{ return m_edgeType; }
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline bool EdgeTypeHasBeenSet() const { return m_edgeTypeHasBeenSet; }
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline void SetEdgeType(const Aws::String& value) { m_edgeTypeHasBeenSet = true; m_edgeType = value; }
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline void SetEdgeType(Aws::String&& value) { m_edgeTypeHasBeenSet = true; m_edgeType = std::move(value); }
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline void SetEdgeType(const char* value) { m_edgeTypeHasBeenSet = true; m_edgeType.assign(value); }
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline Edge& WithEdgeType(const Aws::String& value) { SetEdgeType(value); return *this;}
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline Edge& WithEdgeType(Aws::String&& value) { SetEdgeType(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+     */
+    inline Edge& WithEdgeType(const char* value) { SetEdgeType(value); return *this;}
+
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline const Aws::Vector<HistogramEntry>& GetReceivedEventAgeHistogram() const{ return m_receivedEventAgeHistogram; }
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline bool ReceivedEventAgeHistogramHasBeenSet() const { return m_receivedEventAgeHistogramHasBeenSet; }
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline void SetReceivedEventAgeHistogram(const Aws::Vector<HistogramEntry>& value) { m_receivedEventAgeHistogramHasBeenSet = true; m_receivedEventAgeHistogram = value; }
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline void SetReceivedEventAgeHistogram(Aws::Vector<HistogramEntry>&& value) { m_receivedEventAgeHistogramHasBeenSet = true; m_receivedEventAgeHistogram = std::move(value); }
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline Edge& WithReceivedEventAgeHistogram(const Aws::Vector<HistogramEntry>& value) { SetReceivedEventAgeHistogram(value); return *this;}
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline Edge& WithReceivedEventAgeHistogram(Aws::Vector<HistogramEntry>&& value) { SetReceivedEventAgeHistogram(std::move(value)); return *this;}
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline Edge& AddReceivedEventAgeHistogram(const HistogramEntry& value) { m_receivedEventAgeHistogramHasBeenSet = true; m_receivedEventAgeHistogram.push_back(value); return *this; }
+
+    /**
+     * <p>A histogram that maps the spread of event age when received by consumers. Age
+     * is calculated each time an event is received. Only populated when
+     * <i>EdgeType</i> is <code>link</code>.</p>
+     */
+    inline Edge& AddReceivedEventAgeHistogram(HistogramEntry&& value) { m_receivedEventAgeHistogramHasBeenSet = true; m_receivedEventAgeHistogram.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     EdgeStatistics m_summaryStatistics;
-    bool m_summaryStatisticsHasBeenSet;
+    bool m_summaryStatisticsHasBeenSet = false;
 
     Aws::Vector<HistogramEntry> m_responseTimeHistogram;
-    bool m_responseTimeHistogramHasBeenSet;
+    bool m_responseTimeHistogramHasBeenSet = false;
 
     Aws::Vector<Alias> m_aliases;
-    bool m_aliasesHasBeenSet;
+    bool m_aliasesHasBeenSet = false;
+
+    Aws::String m_edgeType;
+    bool m_edgeTypeHasBeenSet = false;
+
+    Aws::Vector<HistogramEntry> m_receivedEventAgeHistogram;
+    bool m_receivedEventAgeHistogramHasBeenSet = false;
   };
 
 } // namespace Model

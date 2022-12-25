@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WafOverrideAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API WafOverrideAction
+  class WafOverrideAction
   {
   public:
-    WafOverrideAction();
-    WafOverrideAction(Aws::Utils::Json::JsonView jsonValue);
-    WafOverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API WafOverrideAction();
+    AWS_WAFREGIONAL_API WafOverrideAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API WafOverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,7 +91,7 @@ namespace Model
   private:
 
     WafOverrideActionType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

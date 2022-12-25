@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API ListLanguageModelsRequest : public TranscribeServiceRequest
+  class ListLanguageModelsRequest : public TranscribeServiceRequest
   {
   public:
-    ListLanguageModelsRequest();
+    AWS_TRANSCRIBESERVICE_API ListLanguageModelsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListLanguageModels"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -202,45 +202,49 @@ namespace Model
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of custom language models to return in each page of
-     * results. If there are fewer results than the value you specify, only the actual
-     * results are returned. If you don't specify a value, a default of 5 is used.</p>
+     * results. If there are fewer results than the value that you specify, only the
+     * actual results are returned. If you don't specify a value, a default of 5 is
+     * used.</p>
      */
     inline ListLanguageModelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     ModelStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet;
+    bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
-    bool m_nameContainsHasBeenSet;
+    bool m_nameContainsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

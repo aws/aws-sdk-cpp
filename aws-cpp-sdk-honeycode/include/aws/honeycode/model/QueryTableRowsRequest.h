@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_HONEYCODE_API QueryTableRowsRequest : public HoneycodeRequest
+  class QueryTableRowsRequest : public HoneycodeRequest
   {
   public:
-    QueryTableRowsRequest();
+    AWS_HONEYCODE_API QueryTableRowsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "QueryTableRows"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HONEYCODE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -264,19 +264,19 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     Aws::String m_tableId;
-    bool m_tableIdHasBeenSet;
+    bool m_tableIdHasBeenSet = false;
 
     Filter m_filterFormula;
-    bool m_filterFormulaHasBeenSet;
+    bool m_filterFormulaHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

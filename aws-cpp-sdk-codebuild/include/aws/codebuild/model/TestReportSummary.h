@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/TestReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API TestReportSummary
+  class TestReportSummary
   {
   public:
-    TestReportSummary();
-    TestReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    TestReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API TestReportSummary();
+    AWS_CODEBUILD_API TestReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API TestReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     int m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_statusCounts;
-    bool m_statusCountsHasBeenSet;
+    bool m_statusCountsHasBeenSet = false;
 
     long long m_durationInNanoSeconds;
-    bool m_durationInNanoSecondsHasBeenSet;
+    bool m_durationInNanoSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API SolutionSummary
+  class SolutionSummary
   {
   public:
-    SolutionSummary();
-    SolutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SolutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API SolutionSummary();
+    AWS_PERSONALIZE_API SolutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API SolutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -249,22 +249,66 @@ namespace Model
      */
     inline SolutionSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline SolutionSummary& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline SolutionSummary& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recipe used by the solution.</p>
+     */
+    inline SolutionSummary& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_solutionArn;
-    bool m_solutionArnHasBeenSet;
+    bool m_solutionArnHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
+
+    Aws::String m_recipeArn;
+    bool m_recipeArnHasBeenSet = false;
   };
 
 } // namespace Model

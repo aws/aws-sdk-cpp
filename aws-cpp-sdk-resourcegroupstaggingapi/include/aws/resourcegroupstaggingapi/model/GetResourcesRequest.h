@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesRequest : public ResourceGroupsTaggingAPIRequest
+  class GetResourcesRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    GetResourcesRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -828,28 +828,28 @@ namespace Model
   private:
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
 
     int m_resourcesPerPage;
-    bool m_resourcesPerPageHasBeenSet;
+    bool m_resourcesPerPageHasBeenSet = false;
 
     int m_tagsPerPage;
-    bool m_tagsPerPageHasBeenSet;
+    bool m_tagsPerPageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
-    bool m_resourceTypeFiltersHasBeenSet;
+    bool m_resourceTypeFiltersHasBeenSet = false;
 
     bool m_includeComplianceDetails;
-    bool m_includeComplianceDetailsHasBeenSet;
+    bool m_includeComplianceDetailsHasBeenSet = false;
 
     bool m_excludeCompliantResources;
-    bool m_excludeCompliantResourcesHasBeenSet;
+    bool m_excludeCompliantResourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceARNList;
-    bool m_resourceARNListHasBeenSet;
+    bool m_resourceARNListHasBeenSet = false;
   };
 
 } // namespace Model

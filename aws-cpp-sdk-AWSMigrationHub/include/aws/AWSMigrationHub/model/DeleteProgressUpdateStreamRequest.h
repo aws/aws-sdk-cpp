@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUB_API DeleteProgressUpdateStreamRequest : public MigrationHubRequest
+  class DeleteProgressUpdateStreamRequest : public MigrationHubRequest
   {
   public:
-    DeleteProgressUpdateStreamRequest();
+    AWS_MIGRATIONHUB_API DeleteProgressUpdateStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteProgressUpdateStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MIGRATIONHUB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStreamName;
-    bool m_progressUpdateStreamNameHasBeenSet;
+    bool m_progressUpdateStreamNameHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

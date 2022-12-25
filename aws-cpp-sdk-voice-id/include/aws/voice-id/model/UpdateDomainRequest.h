@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_VOICEID_API UpdateDomainRequest : public VoiceIDRequest
+  class UpdateDomainRequest : public VoiceIDRequest
   {
   public:
-    UpdateDomainRequest();
+    AWS_VOICEID_API UpdateDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,48 +30,48 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_VOICEID_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline UpdateDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline UpdateDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief description about this domain.</p>
+     * <p>A brief description of the domain.</p>
      */
     inline UpdateDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -160,65 +160,77 @@ namespace Model
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline UpdateDomainRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Note that all the existing data in
-     * the domain are still encrypted using the existing key, only the data added to
-     * domain after updating the key is encrypted using the new key. </p>
+     * for the server-side encryption of your data. Changing the domain's associated
+     * KMS key immediately triggers an asynchronous process to remove dependency on the
+     * old KMS key, such that the domain's data can only be accessed using the new KMS
+     * key. The domain's <code>ServerSideEncryptionUpdateDetails</code> contains the
+     * details for this process.</p>
      */
     inline UpdateDomainRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-    bool m_serverSideEncryptionConfigurationHasBeenSet;
+    bool m_serverSideEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MappingParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API MappingParameters
+  class MappingParameters
   {
   public:
-    MappingParameters();
-    MappingParameters(Aws::Utils::Json::JsonView jsonValue);
-    MappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API MappingParameters();
+    AWS_KINESISANALYTICSV2_API MappingParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API MappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     JSONMappingParameters m_jSONMappingParameters;
-    bool m_jSONMappingParametersHasBeenSet;
+    bool m_jSONMappingParametersHasBeenSet = false;
 
     CSVMappingParameters m_cSVMappingParameters;
-    bool m_cSVMappingParametersHasBeenSet;
+    bool m_cSVMappingParametersHasBeenSet = false;
   };
 
 } // namespace Model

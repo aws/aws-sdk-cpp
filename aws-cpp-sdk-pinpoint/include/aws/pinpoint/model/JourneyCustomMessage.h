@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyCustomMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyCustomMessage
+  class JourneyCustomMessage
   {
   public:
-    JourneyCustomMessage();
-    JourneyCustomMessage(Aws::Utils::Json::JsonView jsonValue);
-    JourneyCustomMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyCustomMessage();
+    AWS_PINPOINT_API JourneyCustomMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyCustomMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
   };
 
 } // namespace Model

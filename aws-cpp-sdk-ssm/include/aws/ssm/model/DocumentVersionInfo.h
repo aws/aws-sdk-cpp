@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentVersionInfo
+  class DocumentVersionInfo
   {
   public:
-    DocumentVersionInfo();
-    DocumentVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    DocumentVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentVersionInfo();
+    AWS_SSM_API DocumentVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -461,34 +461,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_versionName;
-    bool m_versionNameHasBeenSet;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     bool m_isDefaultVersion;
-    bool m_isDefaultVersionHasBeenSet;
+    bool m_isDefaultVersionHasBeenSet = false;
 
     DocumentFormat m_documentFormat;
-    bool m_documentFormatHasBeenSet;
+    bool m_documentFormatHasBeenSet = false;
 
     DocumentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusInformation;
-    bool m_statusInformationHasBeenSet;
+    bool m_statusInformationHasBeenSet = false;
 
     ReviewStatus m_reviewStatus;
-    bool m_reviewStatusHasBeenSet;
+    bool m_reviewStatusHasBeenSet = false;
   };
 
 } // namespace Model

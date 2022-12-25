@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ResourceTag">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API ResourceTag
+  class ResourceTag
   {
   public:
-    ResourceTag();
-    ResourceTag(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API ResourceTag();
+    AWS_RECYCLEBIN_API ResourceTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_resourceTagKey;
-    bool m_resourceTagKeyHasBeenSet;
+    bool m_resourceTagKeyHasBeenSet = false;
 
     Aws::String m_resourceTagValue;
-    bool m_resourceTagValueHasBeenSet;
+    bool m_resourceTagValueHasBeenSet = false;
   };
 
 } // namespace Model

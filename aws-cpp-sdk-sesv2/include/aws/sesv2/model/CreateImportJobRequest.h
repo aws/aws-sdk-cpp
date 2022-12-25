@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CreateImportJobRequest : public SESV2Request
+  class CreateImportJobRequest : public SESV2Request
   {
   public:
-    CreateImportJobRequest();
+    AWS_SESV2_API CreateImportJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateImportJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     ImportDestination m_importDestination;
-    bool m_importDestinationHasBeenSet;
+    bool m_importDestinationHasBeenSet = false;
 
     ImportDataSource m_importDataSource;
-    bool m_importDataSourceHasBeenSet;
+    bool m_importDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

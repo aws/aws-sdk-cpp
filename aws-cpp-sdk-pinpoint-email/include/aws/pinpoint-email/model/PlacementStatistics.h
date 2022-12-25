@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PlacementStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PlacementStatistics
+  class PlacementStatistics
   {
   public:
-    PlacementStatistics();
-    PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API PlacementStatistics();
+    AWS_PINPOINTEMAIL_API PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,19 +163,19 @@ namespace Model
   private:
 
     double m_inboxPercentage;
-    bool m_inboxPercentageHasBeenSet;
+    bool m_inboxPercentageHasBeenSet = false;
 
     double m_spamPercentage;
-    bool m_spamPercentageHasBeenSet;
+    bool m_spamPercentageHasBeenSet = false;
 
     double m_missingPercentage;
-    bool m_missingPercentageHasBeenSet;
+    bool m_missingPercentageHasBeenSet = false;
 
     double m_spfPercentage;
-    bool m_spfPercentageHasBeenSet;
+    bool m_spfPercentageHasBeenSet = false;
 
     double m_dkimPercentage;
-    bool m_dkimPercentageHasBeenSet;
+    bool m_dkimPercentageHasBeenSet = false;
   };
 
 } // namespace Model

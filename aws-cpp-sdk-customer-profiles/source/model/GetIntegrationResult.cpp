@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIntegrationResult::GetIntegrationResult()
+GetIntegrationResult::GetIntegrationResult() : 
+    m_isUnstructured(false)
 {
 }
 
-GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_isUnstructured(false)
 {
   *this = result;
 }
@@ -79,6 +81,12 @@ GetIntegrationResult& GetIntegrationResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
+
+  }
+
+  if(jsonValue.ValueExists("IsUnstructured"))
+  {
+    m_isUnstructured = jsonValue.GetBool("IsUnstructured");
 
   }
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ShareDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ShareDetails
+  class ShareDetails
   {
   public:
-    ShareDetails();
-    ShareDetails(Aws::Utils::Json::JsonView jsonValue);
-    ShareDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ShareDetails();
+    AWS_SERVICECATALOG_API ShareDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ShareDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_successfulShares;
-    bool m_successfulSharesHasBeenSet;
+    bool m_successfulSharesHasBeenSet = false;
 
     Aws::Vector<ShareError> m_shareErrors;
-    bool m_shareErrorsHasBeenSet;
+    bool m_shareErrorsHasBeenSet = false;
   };
 
 } // namespace Model

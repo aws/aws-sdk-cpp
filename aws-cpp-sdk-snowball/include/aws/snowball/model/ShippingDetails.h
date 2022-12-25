@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ShippingDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API ShippingDetails
+  class ShippingDetails
   {
   public:
-    ShippingDetails();
-    ShippingDetails(Aws::Utils::Json::JsonView jsonValue);
-    ShippingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API ShippingDetails();
+    AWS_SNOWBALL_API ShippingDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API ShippingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -218,13 +218,13 @@ namespace Model
   private:
 
     ShippingOption m_shippingOption;
-    bool m_shippingOptionHasBeenSet;
+    bool m_shippingOptionHasBeenSet = false;
 
     Shipment m_inboundShipment;
-    bool m_inboundShipmentHasBeenSet;
+    bool m_inboundShipmentHasBeenSet = false;
 
     Shipment m_outboundShipment;
-    bool m_outboundShipmentHasBeenSet;
+    bool m_outboundShipmentHasBeenSet = false;
   };
 
 } // namespace Model

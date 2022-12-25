@@ -34,14 +34,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginGroup
+  class OriginGroup
   {
   public:
-    OriginGroup();
-    OriginGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginGroup();
+    AWS_CLOUDFRONT_API OriginGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     OriginGroupFailoverCriteria m_failoverCriteria;
-    bool m_failoverCriteriaHasBeenSet;
+    bool m_failoverCriteriaHasBeenSet = false;
 
     OriginGroupMembers m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
   };
 
 } // namespace Model

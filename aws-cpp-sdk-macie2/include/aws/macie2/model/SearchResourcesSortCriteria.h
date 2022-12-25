@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesSortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SearchResourcesSortCriteria
+  class SearchResourcesSortCriteria
   {
   public:
-    SearchResourcesSortCriteria();
-    SearchResourcesSortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    SearchResourcesSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SearchResourcesSortCriteria();
+    AWS_MACIE2_API SearchResourcesSortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SearchResourcesSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,10 +116,10 @@ namespace Model
   private:
 
     SearchResourcesSortAttributeName m_attributeName;
-    bool m_attributeNameHasBeenSet;
+    bool m_attributeNameHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

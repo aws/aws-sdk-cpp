@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICEQUOTAS_API PutServiceQuotaIncreaseRequestIntoTemplateRequest : public ServiceQuotasRequest
+  class PutServiceQuotaIncreaseRequestIntoTemplateRequest : public ServiceQuotasRequest
   {
   public:
-    PutServiceQuotaIncreaseRequestIntoTemplateRequest();
+    AWS_SERVICEQUOTAS_API PutServiceQuotaIncreaseRequestIntoTemplateRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutServiceQuotaIncreaseRequestIntoTemplate"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICEQUOTAS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICEQUOTAS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -180,16 +180,16 @@ namespace Model
   private:
 
     Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_awsRegion;
-    bool m_awsRegionHasBeenSet;
+    bool m_awsRegionHasBeenSet = false;
 
     double m_desiredValue;
-    bool m_desiredValueHasBeenSet;
+    bool m_desiredValueHasBeenSet = false;
   };
 
 } // namespace Model

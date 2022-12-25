@@ -24,17 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Information about the origin of the data set.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the origin of the data set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/OriginDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API OriginDetails
+  class OriginDetails
   {
   public:
-    OriginDetails();
-    OriginDetails(Aws::Utils::Json::JsonView jsonValue);
-    OriginDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API OriginDetails();
+    AWS_DATAEXCHANGE_API OriginDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API OriginDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
   };
 
 } // namespace Model

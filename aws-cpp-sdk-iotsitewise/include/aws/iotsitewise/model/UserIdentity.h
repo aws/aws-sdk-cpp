@@ -29,59 +29,59 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UserIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API UserIdentity
+  class UserIdentity
   {
   public:
-    UserIdentity();
-    UserIdentity(Aws::Utils::Json::JsonView jsonValue);
-    UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API UserIdentity();
+    AWS_IOTSITEWISE_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline UserIdentity& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline UserIdentity& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO ID of the user.</p>
+     * <p>The IAM Identity Center ID of the user.</p>
      */
     inline UserIdentity& WithId(const char* value) { SetId(value); return *this;}
 
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

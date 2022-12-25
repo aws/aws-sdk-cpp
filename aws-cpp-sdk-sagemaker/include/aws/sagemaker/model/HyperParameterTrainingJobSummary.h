@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTrainingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTrainingJobSummary
+  class HyperParameterTrainingJobSummary
   {
   public:
-    HyperParameterTrainingJobSummary();
-    HyperParameterTrainingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTrainingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary();
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -580,40 +580,40 @@ namespace Model
   private:
 
     Aws::String m_trainingJobDefinitionName;
-    bool m_trainingJobDefinitionNameHasBeenSet;
+    bool m_trainingJobDefinitionNameHasBeenSet = false;
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     Aws::String m_trainingJobArn;
-    bool m_trainingJobArnHasBeenSet;
+    bool m_trainingJobArnHasBeenSet = false;
 
     Aws::String m_tuningJobName;
-    bool m_tuningJobNameHasBeenSet;
+    bool m_tuningJobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingStartTime;
-    bool m_trainingStartTimeHasBeenSet;
+    bool m_trainingStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_trainingEndTime;
-    bool m_trainingEndTimeHasBeenSet;
+    bool m_trainingEndTimeHasBeenSet = false;
 
     TrainingJobStatus m_trainingJobStatus;
-    bool m_trainingJobStatusHasBeenSet;
+    bool m_trainingJobStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tunedHyperParameters;
-    bool m_tunedHyperParametersHasBeenSet;
+    bool m_tunedHyperParametersHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     FinalHyperParameterTuningJobObjectiveMetric m_finalHyperParameterTuningJobObjectiveMetric;
-    bool m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet;
+    bool m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = false;
 
     ObjectiveStatus m_objectiveStatus;
-    bool m_objectiveStatusHasBeenSet;
+    bool m_objectiveStatusHasBeenSet = false;
   };
 
 } // namespace Model

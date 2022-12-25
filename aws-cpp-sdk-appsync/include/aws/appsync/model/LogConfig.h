@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API LogConfig
+  class LogConfig
   {
   public:
-    LogConfig();
-    LogConfig(Aws::Utils::Json::JsonView jsonValue);
-    LogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API LogConfig();
+    AWS_APPSYNC_API LogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API LogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,13 +199,13 @@ namespace Model
   private:
 
     FieldLogLevel m_fieldLogLevel;
-    bool m_fieldLogLevelHasBeenSet;
+    bool m_fieldLogLevelHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     bool m_excludeVerboseContent;
-    bool m_excludeVerboseContentHasBeenSet;
+    bool m_excludeVerboseContentHasBeenSet = false;
   };
 
 } // namespace Model

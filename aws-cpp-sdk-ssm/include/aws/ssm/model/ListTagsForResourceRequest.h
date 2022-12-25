@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API ListTagsForResourceRequest : public SSMRequest
+  class ListTagsForResourceRequest : public SSMRequest
   {
   public:
-    ListTagsForResourceRequest();
+    AWS_SSM_API ListTagsForResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     ResourceTypeForTagging m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
   };
 
 } // namespace Model

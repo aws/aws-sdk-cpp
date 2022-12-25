@@ -17,7 +17,8 @@ UpdateTemplateRequest::UpdateTemplateRequest() :
     m_templateIdHasBeenSet(false),
     m_sourceEntityHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String UpdateTemplateRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_definitionHasBeenSet)
+  {
+   payload.WithObject("Definition", m_definition.Jsonize());
 
   }
 

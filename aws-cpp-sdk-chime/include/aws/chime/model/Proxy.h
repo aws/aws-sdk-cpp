@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Proxy">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Proxy
+  class Proxy
   {
   public:
-    Proxy();
-    Proxy(Aws::Utils::Json::JsonView jsonValue);
-    Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Proxy();
+    AWS_CHIME_API Proxy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -174,16 +174,16 @@ namespace Model
   private:
 
     int m_defaultSessionExpiryMinutes;
-    bool m_defaultSessionExpiryMinutesHasBeenSet;
+    bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
 
     Aws::String m_fallBackPhoneNumber;
-    bool m_fallBackPhoneNumberHasBeenSet;
+    bool m_fallBackPhoneNumberHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_phoneNumberCountries;
-    bool m_phoneNumberCountriesHasBeenSet;
+    bool m_phoneNumberCountriesHasBeenSet = false;
   };
 
 } // namespace Model

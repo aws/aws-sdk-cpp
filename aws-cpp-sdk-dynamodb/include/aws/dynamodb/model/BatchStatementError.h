@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchStatementError">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BatchStatementError
+  class BatchStatementError
   {
   public:
-    BatchStatementError();
-    BatchStatementError(Aws::Utils::Json::JsonView jsonValue);
-    BatchStatementError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BatchStatementError();
+    AWS_DYNAMODB_API BatchStatementError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BatchStatementError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,52 +71,52 @@ namespace Model
 
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p> The error message associated with the PartiQL batch resposne. </p>
+     * <p> The error message associated with the PartiQL batch response. </p>
      */
     inline BatchStatementError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
 
     BatchStatementErrorCodeEnum m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

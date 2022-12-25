@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeInputPort">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeInputPort
+  class NodeInputPort
   {
   public:
-    NodeInputPort();
-    NodeInputPort(Aws::Utils::Json::JsonView jsonValue);
-    NodeInputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeInputPort();
+    AWS_PANORAMA_API NodeInputPort(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeInputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -215,19 +215,19 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_maxConnections;
-    bool m_maxConnectionsHasBeenSet;
+    bool m_maxConnectionsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PortType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

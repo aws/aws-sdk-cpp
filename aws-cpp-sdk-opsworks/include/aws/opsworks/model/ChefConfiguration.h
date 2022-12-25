@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ChefConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ChefConfiguration
+  class ChefConfiguration
   {
   public:
-    ChefConfiguration();
-    ChefConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChefConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ChefConfiguration();
+    AWS_OPSWORKS_API ChefConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ChefConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -101,10 +101,10 @@ namespace Model
   private:
 
     bool m_manageBerkshelf;
-    bool m_manageBerkshelfHasBeenSet;
+    bool m_manageBerkshelfHasBeenSet = false;
 
     Aws::String m_berkshelfVersion;
-    bool m_berkshelfVersionHasBeenSet;
+    bool m_berkshelfVersionHasBeenSet = false;
   };
 
 } // namespace Model

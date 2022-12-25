@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DynamoDBv2Action">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DynamoDBv2Action
+  class DynamoDBv2Action
   {
   public:
-    DynamoDBv2Action();
-    DynamoDBv2Action(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBv2Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DynamoDBv2Action();
+    AWS_IOT_API DynamoDBv2Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DynamoDBv2Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     PutItemInput m_putItem;
-    bool m_putItemHasBeenSet;
+    bool m_putItemHasBeenSet = false;
   };
 
 } // namespace Model

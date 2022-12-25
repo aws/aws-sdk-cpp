@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/GlueDataCatalogConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationDescription
+  class GlueDataCatalogConfigurationDescription
   {
   public:
-    GlueDataCatalogConfigurationDescription();
-    GlueDataCatalogConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    GlueDataCatalogConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::String m_databaseARN;
-    bool m_databaseARNHasBeenSet;
+    bool m_databaseARNHasBeenSet = false;
   };
 
 } // namespace Model

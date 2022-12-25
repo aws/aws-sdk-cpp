@@ -5,223 +5,74 @@
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
-#include <aws/xray/XRayErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/xray/model/BatchGetTracesResult.h>
-#include <aws/xray/model/CreateGroupResult.h>
-#include <aws/xray/model/CreateSamplingRuleResult.h>
-#include <aws/xray/model/DeleteGroupResult.h>
-#include <aws/xray/model/DeleteSamplingRuleResult.h>
-#include <aws/xray/model/GetEncryptionConfigResult.h>
-#include <aws/xray/model/GetGroupResult.h>
-#include <aws/xray/model/GetGroupsResult.h>
-#include <aws/xray/model/GetInsightResult.h>
-#include <aws/xray/model/GetInsightEventsResult.h>
-#include <aws/xray/model/GetInsightImpactGraphResult.h>
-#include <aws/xray/model/GetInsightSummariesResult.h>
-#include <aws/xray/model/GetSamplingRulesResult.h>
-#include <aws/xray/model/GetSamplingStatisticSummariesResult.h>
-#include <aws/xray/model/GetSamplingTargetsResult.h>
-#include <aws/xray/model/GetServiceGraphResult.h>
-#include <aws/xray/model/GetTimeSeriesServiceStatisticsResult.h>
-#include <aws/xray/model/GetTraceGraphResult.h>
-#include <aws/xray/model/GetTraceSummariesResult.h>
-#include <aws/xray/model/ListTagsForResourceResult.h>
-#include <aws/xray/model/PutEncryptionConfigResult.h>
-#include <aws/xray/model/PutTelemetryRecordsResult.h>
-#include <aws/xray/model/PutTraceSegmentsResult.h>
-#include <aws/xray/model/TagResourceResult.h>
-#include <aws/xray/model/UntagResourceResult.h>
-#include <aws/xray/model/UpdateGroupResult.h>
-#include <aws/xray/model/UpdateSamplingRuleResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/xray/XRayServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace XRay
 {
-
-namespace Model
-{
-        class BatchGetTracesRequest;
-        class CreateGroupRequest;
-        class CreateSamplingRuleRequest;
-        class DeleteGroupRequest;
-        class DeleteSamplingRuleRequest;
-        class GetEncryptionConfigRequest;
-        class GetGroupRequest;
-        class GetGroupsRequest;
-        class GetInsightRequest;
-        class GetInsightEventsRequest;
-        class GetInsightImpactGraphRequest;
-        class GetInsightSummariesRequest;
-        class GetSamplingRulesRequest;
-        class GetSamplingStatisticSummariesRequest;
-        class GetSamplingTargetsRequest;
-        class GetServiceGraphRequest;
-        class GetTimeSeriesServiceStatisticsRequest;
-        class GetTraceGraphRequest;
-        class GetTraceSummariesRequest;
-        class ListTagsForResourceRequest;
-        class PutEncryptionConfigRequest;
-        class PutTelemetryRecordsRequest;
-        class PutTraceSegmentsRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateGroupRequest;
-        class UpdateSamplingRuleRequest;
-
-        typedef Aws::Utils::Outcome<BatchGetTracesResult, XRayError> BatchGetTracesOutcome;
-        typedef Aws::Utils::Outcome<CreateGroupResult, XRayError> CreateGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateSamplingRuleResult, XRayError> CreateSamplingRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteGroupResult, XRayError> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteSamplingRuleResult, XRayError> DeleteSamplingRuleOutcome;
-        typedef Aws::Utils::Outcome<GetEncryptionConfigResult, XRayError> GetEncryptionConfigOutcome;
-        typedef Aws::Utils::Outcome<GetGroupResult, XRayError> GetGroupOutcome;
-        typedef Aws::Utils::Outcome<GetGroupsResult, XRayError> GetGroupsOutcome;
-        typedef Aws::Utils::Outcome<GetInsightResult, XRayError> GetInsightOutcome;
-        typedef Aws::Utils::Outcome<GetInsightEventsResult, XRayError> GetInsightEventsOutcome;
-        typedef Aws::Utils::Outcome<GetInsightImpactGraphResult, XRayError> GetInsightImpactGraphOutcome;
-        typedef Aws::Utils::Outcome<GetInsightSummariesResult, XRayError> GetInsightSummariesOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingRulesResult, XRayError> GetSamplingRulesOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingStatisticSummariesResult, XRayError> GetSamplingStatisticSummariesOutcome;
-        typedef Aws::Utils::Outcome<GetSamplingTargetsResult, XRayError> GetSamplingTargetsOutcome;
-        typedef Aws::Utils::Outcome<GetServiceGraphResult, XRayError> GetServiceGraphOutcome;
-        typedef Aws::Utils::Outcome<GetTimeSeriesServiceStatisticsResult, XRayError> GetTimeSeriesServiceStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetTraceGraphResult, XRayError> GetTraceGraphOutcome;
-        typedef Aws::Utils::Outcome<GetTraceSummariesResult, XRayError> GetTraceSummariesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, XRayError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutEncryptionConfigResult, XRayError> PutEncryptionConfigOutcome;
-        typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, XRayError> PutTelemetryRecordsOutcome;
-        typedef Aws::Utils::Outcome<PutTraceSegmentsResult, XRayError> PutTraceSegmentsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, XRayError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, XRayError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupResult, XRayError> UpdateGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateSamplingRuleResult, XRayError> UpdateSamplingRuleOutcome;
-
-        typedef std::future<BatchGetTracesOutcome> BatchGetTracesOutcomeCallable;
-        typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
-        typedef std::future<CreateSamplingRuleOutcome> CreateSamplingRuleOutcomeCallable;
-        typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
-        typedef std::future<DeleteSamplingRuleOutcome> DeleteSamplingRuleOutcomeCallable;
-        typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
-        typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
-        typedef std::future<GetGroupsOutcome> GetGroupsOutcomeCallable;
-        typedef std::future<GetInsightOutcome> GetInsightOutcomeCallable;
-        typedef std::future<GetInsightEventsOutcome> GetInsightEventsOutcomeCallable;
-        typedef std::future<GetInsightImpactGraphOutcome> GetInsightImpactGraphOutcomeCallable;
-        typedef std::future<GetInsightSummariesOutcome> GetInsightSummariesOutcomeCallable;
-        typedef std::future<GetSamplingRulesOutcome> GetSamplingRulesOutcomeCallable;
-        typedef std::future<GetSamplingStatisticSummariesOutcome> GetSamplingStatisticSummariesOutcomeCallable;
-        typedef std::future<GetSamplingTargetsOutcome> GetSamplingTargetsOutcomeCallable;
-        typedef std::future<GetServiceGraphOutcome> GetServiceGraphOutcomeCallable;
-        typedef std::future<GetTimeSeriesServiceStatisticsOutcome> GetTimeSeriesServiceStatisticsOutcomeCallable;
-        typedef std::future<GetTraceGraphOutcome> GetTraceGraphOutcomeCallable;
-        typedef std::future<GetTraceSummariesOutcome> GetTraceSummariesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutEncryptionConfigOutcome> PutEncryptionConfigOutcomeCallable;
-        typedef std::future<PutTelemetryRecordsOutcome> PutTelemetryRecordsOutcomeCallable;
-        typedef std::future<PutTraceSegmentsOutcome> PutTraceSegmentsOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
-        typedef std::future<UpdateSamplingRuleOutcome> UpdateSamplingRuleOutcomeCallable;
-} // namespace Model
-
-  class XRayClient;
-
-    typedef std::function<void(const XRayClient*, const Model::BatchGetTracesRequest&, const Model::BatchGetTracesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTracesResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::CreateSamplingRuleRequest&, const Model::CreateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSamplingRuleResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::DeleteSamplingRuleRequest&, const Model::DeleteSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSamplingRuleResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetGroupsRequest&, const Model::GetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetInsightRequest&, const Model::GetInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetInsightEventsRequest&, const Model::GetInsightEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightEventsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetInsightImpactGraphRequest&, const Model::GetInsightImpactGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightImpactGraphResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetInsightSummariesRequest&, const Model::GetInsightSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightSummariesResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetSamplingRulesRequest&, const Model::GetSamplingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingRulesResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetSamplingStatisticSummariesRequest&, const Model::GetSamplingStatisticSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingStatisticSummariesResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetSamplingTargetsRequest&, const Model::GetSamplingTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingTargetsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetServiceGraphRequest&, const Model::GetServiceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceGraphResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetTimeSeriesServiceStatisticsRequest&, const Model::GetTimeSeriesServiceStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTimeSeriesServiceStatisticsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetTraceGraphRequest&, const Model::GetTraceGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceGraphResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::GetTraceSummariesRequest&, const Model::GetTraceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTraceSummariesResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::PutEncryptionConfigRequest&, const Model::PutEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::PutTelemetryRecordsRequest&, const Model::PutTelemetryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTelemetryRecordsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::PutTraceSegmentsRequest&, const Model::PutTraceSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTraceSegmentsResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
-    typedef std::function<void(const XRayClient*, const Model::UpdateSamplingRuleRequest&, const Model::UpdateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSamplingRuleResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services X-Ray provides APIs for managing debug traces and
    * retrieving service maps and other data created by processing those traces.</p>
    */
-  class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient
+  class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        XRayClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        XRayClient(const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration(),
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        XRayClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        XRayClient(const Aws::Auth::AWSCredentials& credentials,
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         XRayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        XRayClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        XRayClient(const Aws::Auth::AWSCredentials& credentials,
+                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        XRayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~XRayClient();
-
 
         /**
          * <p>Retrieves a list of traces specified by ID. Each trace is a collection of
@@ -303,6 +154,24 @@ namespace Model
          * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a resource policy from the target Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a sampling rule.</p><p><h3>See Also:</h3>   <a
@@ -593,6 +462,24 @@ namespace Model
         virtual void GetTraceSummariesAsync(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the list of resource policies in the target Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourcePoliciesOutcome ListResourcePolicies(const Model::ListResourcePoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourcePolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourcePoliciesOutcomeCallable ListResourcePoliciesCallable(const Model::ListResourcePoliciesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListResourcePolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourcePoliciesAsync(const Model::ListResourcePoliciesRequest& request, const ListResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of tags that are applied to the specified Amazon Web Services
          * X-Ray group or sampling rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">AWS
@@ -627,6 +514,28 @@ namespace Model
          * An Async wrapper for PutEncryptionConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEncryptionConfigAsync(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Sets the resource policy to grant one or more Amazon Web Services services
+         * and accounts permissions to access X-Ray. Each resource policy will be
+         * associated with a specific Amazon Web Services account. Each Amazon Web Services
+         * account can have a maximum of 5 resource policies, and each policy name must be
+         * unique within that account. The maximum size of each resource policy is 5KB.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by the Amazon Web Services X-Ray daemon to upload
@@ -770,39 +679,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchGetTracesAsyncHelper(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSamplingRuleAsyncHelper(const Model::CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSamplingRuleAsyncHelper(const Model::DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEncryptionConfigAsyncHelper(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGroupsAsyncHelper(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightAsyncHelper(const Model::GetInsightRequest& request, const GetInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightEventsAsyncHelper(const Model::GetInsightEventsRequest& request, const GetInsightEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightImpactGraphAsyncHelper(const Model::GetInsightImpactGraphRequest& request, const GetInsightImpactGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightSummariesAsyncHelper(const Model::GetInsightSummariesRequest& request, const GetInsightSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSamplingRulesAsyncHelper(const Model::GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSamplingStatisticSummariesAsyncHelper(const Model::GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSamplingTargetsAsyncHelper(const Model::GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServiceGraphAsyncHelper(const Model::GetServiceGraphRequest& request, const GetServiceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTimeSeriesServiceStatisticsAsyncHelper(const Model::GetTimeSeriesServiceStatisticsRequest& request, const GetTimeSeriesServiceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTraceGraphAsyncHelper(const Model::GetTraceGraphRequest& request, const GetTraceGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTraceSummariesAsyncHelper(const Model::GetTraceSummariesRequest& request, const GetTraceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutEncryptionConfigAsyncHelper(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutTelemetryRecordsAsyncHelper(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutTraceSegmentsAsyncHelper(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSamplingRuleAsyncHelper(const Model::UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;
+      void init(const XRayClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      XRayClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace XRay

@@ -10,6 +10,7 @@
 #include <aws/iotwireless/model/ProximityResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/JoinResourceTypeEventConfiguration.h>
 #include <aws/iotwireless/model/ConnectionStatusResourceTypeEventConfiguration.h>
+#include <aws/iotwireless/model/MessageDeliveryStatusResourceTypeEventConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -21,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API UpdateEventConfigurationByResourceTypesRequest : public IoTWirelessRequest
+  class UpdateEventConfigurationByResourceTypesRequest : public IoTWirelessRequest
   {
   public:
-    UpdateEventConfigurationByResourceTypesRequest();
+    AWS_IOTWIRELESS_API UpdateEventConfigurationByResourceTypesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEventConfigurationByResourceTypes"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -182,19 +183,59 @@ namespace Model
      */
     inline UpdateEventConfigurationByResourceTypesRequest& WithConnectionStatus(ConnectionStatusResourceTypeEventConfiguration&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline const MessageDeliveryStatusResourceTypeEventConfiguration& GetMessageDeliveryStatus() const{ return m_messageDeliveryStatus; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline bool MessageDeliveryStatusHasBeenSet() const { return m_messageDeliveryStatusHasBeenSet; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline void SetMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = value; }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline void SetMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { m_messageDeliveryStatusHasBeenSet = true; m_messageDeliveryStatus = std::move(value); }
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline UpdateEventConfigurationByResourceTypesRequest& WithMessageDeliveryStatus(const MessageDeliveryStatusResourceTypeEventConfiguration& value) { SetMessageDeliveryStatus(value); return *this;}
+
+    /**
+     * <p>Message delivery status resource type event configuration object for enabling
+     * and disabling wireless device topic.</p>
+     */
+    inline UpdateEventConfigurationByResourceTypesRequest& WithMessageDeliveryStatus(MessageDeliveryStatusResourceTypeEventConfiguration&& value) { SetMessageDeliveryStatus(std::move(value)); return *this;}
+
   private:
 
     DeviceRegistrationStateResourceTypeEventConfiguration m_deviceRegistrationState;
-    bool m_deviceRegistrationStateHasBeenSet;
+    bool m_deviceRegistrationStateHasBeenSet = false;
 
     ProximityResourceTypeEventConfiguration m_proximity;
-    bool m_proximityHasBeenSet;
+    bool m_proximityHasBeenSet = false;
 
     JoinResourceTypeEventConfiguration m_join;
-    bool m_joinHasBeenSet;
+    bool m_joinHasBeenSet = false;
 
     ConnectionStatusResourceTypeEventConfiguration m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
+
+    MessageDeliveryStatusResourceTypeEventConfiguration m_messageDeliveryStatus;
+    bool m_messageDeliveryStatusHasBeenSet = false;
   };
 
 } // namespace Model

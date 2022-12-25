@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NtpPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NtpPayload
+  class NtpPayload
   {
   public:
-    NtpPayload();
-    NtpPayload(Aws::Utils::Json::JsonView jsonValue);
-    NtpPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NtpPayload();
+    AWS_PANORAMA_API NtpPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NtpPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ntpServers;
-    bool m_ntpServersHasBeenSet;
+    bool m_ntpServersHasBeenSet = false;
   };
 
 } // namespace Model

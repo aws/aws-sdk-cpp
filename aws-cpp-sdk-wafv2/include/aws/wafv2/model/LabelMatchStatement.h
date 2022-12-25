@@ -25,26 +25,26 @@ namespace Model
 {
 
   /**
-   * <p>A rule statement that defines a string match search against labels that have
-   * been added to the web request by rules that have already run in the web ACL.
-   * </p> <p>The label match statement provides the label or namespace string to
-   * search for. The label string can represent a part or all of the fully qualified
-   * label name that had been added to the web request. Fully qualified labels have a
-   * prefix, optional namespaces, and label name. The prefix identifies the rule
-   * group or web ACL context of the rule that added the label. If you do not provide
-   * the fully qualified name in your label match string, WAF performs the search for
-   * labels that were added in the same context as the label match statement.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A rule statement to match against labels that have been added to the web
+   * request by rules that have already run in the web ACL. </p> <p>The label match
+   * statement provides the label or namespace string to search for. The label string
+   * can represent a part or all of the fully qualified label name that had been
+   * added to the web request. Fully qualified labels have a prefix, optional
+   * namespaces, and label name. The prefix identifies the rule group or web ACL
+   * context of the rule that added the label. If you do not provide the fully
+   * qualified name in your label match string, WAF performs the search for labels
+   * that were added in the same context as the label match statement. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LabelMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API LabelMatchStatement
+  class LabelMatchStatement
   {
   public:
-    LabelMatchStatement();
-    LabelMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    LabelMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API LabelMatchStatement();
+    AWS_WAFV2_API LabelMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API LabelMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,10 +207,10 @@ namespace Model
   private:
 
     LabelMatchScope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RenderingEngine">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API RenderingEngine
+  class RenderingEngine
   {
   public:
-    RenderingEngine();
-    RenderingEngine(Aws::Utils::Json::JsonView jsonValue);
-    RenderingEngine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API RenderingEngine();
+    AWS_ROBOMAKER_API RenderingEngine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API RenderingEngine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,10 +112,10 @@ namespace Model
   private:
 
     RenderingEngineType m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ImportOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ImportOptions
+  class ImportOptions
   {
   public:
-    ImportOptions();
-    ImportOptions(Aws::Utils::Json::JsonView jsonValue);
-    ImportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ImportOptions();
+    AWS_HONEYCODE_API ImportOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ImportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DestinationOptions m_destinationOptions;
-    bool m_destinationOptionsHasBeenSet;
+    bool m_destinationOptionsHasBeenSet = false;
 
     DelimitedTextImportOptions m_delimitedTextOptions;
-    bool m_delimitedTextOptionsHasBeenSet;
+    bool m_delimitedTextOptionsHasBeenSet = false;
   };
 
 } // namespace Model

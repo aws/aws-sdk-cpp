@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentsMetadataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentsMetadataConfiguration
+  class DocumentsMetadataConfiguration
   {
   public:
-    DocumentsMetadataConfiguration();
-    DocumentsMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DocumentsMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentsMetadataConfiguration();
+    AWS_KENDRA_API DocumentsMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentsMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -99,7 +99,7 @@ namespace Model
   private:
 
     Aws::String m_s3Prefix;
-    bool m_s3PrefixHasBeenSet;
+    bool m_s3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

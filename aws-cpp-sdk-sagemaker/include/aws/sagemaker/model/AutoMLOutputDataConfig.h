@@ -28,52 +28,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLOutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLOutputDataConfig
+  class AutoMLOutputDataConfig
   {
   public:
-    AutoMLOutputDataConfig();
-    AutoMLOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLOutputDataConfig();
+    AWS_SAGEMAKER_API AutoMLOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services KMS encryption key ID.</p>
+     * <p>The Key Management Service (KMS) encryption key ID.</p>
      */
     inline AutoMLOutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
   };
 
 } // namespace Model

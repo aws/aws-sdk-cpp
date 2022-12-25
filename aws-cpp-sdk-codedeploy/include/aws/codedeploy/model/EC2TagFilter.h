@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/EC2TagFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API EC2TagFilter
+  class EC2TagFilter
   {
   public:
-    EC2TagFilter();
-    EC2TagFilter(Aws::Utils::Json::JsonView jsonValue);
-    EC2TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API EC2TagFilter();
+    AWS_CODEDEPLOY_API EC2TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API EC2TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     EC2TagFilterType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

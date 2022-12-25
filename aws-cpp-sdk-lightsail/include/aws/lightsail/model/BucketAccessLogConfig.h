@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/BucketAccessLogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API BucketAccessLogConfig
+  class BucketAccessLogConfig
   {
   public:
-    BucketAccessLogConfig();
-    BucketAccessLogConfig(Aws::Utils::Json::JsonView jsonValue);
-    BucketAccessLogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API BucketAccessLogConfig();
+    AWS_LIGHTSAIL_API BucketAccessLogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API BucketAccessLogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -239,13 +239,13 @@ namespace Model
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
   };
 
 } // namespace Model

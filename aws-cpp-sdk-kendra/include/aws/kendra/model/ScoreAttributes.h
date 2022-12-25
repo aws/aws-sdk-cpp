@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ScoreAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ScoreAttributes
+  class ScoreAttributes
   {
   public:
-    ScoreAttributes();
-    ScoreAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ScoreAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ScoreAttributes();
+    AWS_KENDRA_API ScoreAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ScoreAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ScoreConfidence m_scoreConfidence;
-    bool m_scoreConfidenceHasBeenSet;
+    bool m_scoreConfidenceHasBeenSet = false;
   };
 
 } // namespace Model

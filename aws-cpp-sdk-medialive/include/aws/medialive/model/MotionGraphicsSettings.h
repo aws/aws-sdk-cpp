@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MotionGraphicsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MotionGraphicsSettings
+  class MotionGraphicsSettings
   {
   public:
-    MotionGraphicsSettings();
-    MotionGraphicsSettings(Aws::Utils::Json::JsonView jsonValue);
-    MotionGraphicsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MotionGraphicsSettings();
+    AWS_MEDIALIVE_API MotionGraphicsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MotionGraphicsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     HtmlMotionGraphicsSettings m_htmlMotionGraphicsSettings;
-    bool m_htmlMotionGraphicsSettingsHasBeenSet;
+    bool m_htmlMotionGraphicsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

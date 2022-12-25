@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESERVICE_API StartCallAnalyticsJobRequest : public TranscribeServiceRequest
+  class StartCallAnalyticsJobRequest : public TranscribeServiceRequest
   {
   public:
-    StartCallAnalyticsJobRequest();
+    AWS_TRANSCRIBESERVICE_API StartCallAnalyticsJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartCallAnalyticsJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -103,22 +103,40 @@ namespace Model
     inline StartCallAnalyticsJobRequest& WithCallAnalyticsJobName(const char* value) { SetCallAnalyticsJobName(value); return *this;}
 
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline const Media& GetMedia() const{ return m_media; }
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline StartCallAnalyticsJobRequest& WithMedia(const Media& value) { SetMedia(value); return *this;}
 
-    
+    /**
+     * <p>Describes the Amazon S3 location of the media file you want to use in your
+     * Call Analytics request.</p>
+     */
     inline StartCallAnalyticsJobRequest& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
 
 
@@ -470,9 +488,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -483,9 +501,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -496,9 +514,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -509,9 +527,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -522,9 +540,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -535,9 +553,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -548,9 +566,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -561,9 +579,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access
-     * the Amazon S3 bucket that contains your input files. If the role you specify
-     * doesn’t have the appropriate permissions to access the specified Amazon S3
-     * location, your request fails.</p> <p>IAM role ARNs have the format
+     * the Amazon S3 bucket that contains your input files. If the role that you
+     * specify doesn’t have the appropriate permissions to access the specified Amazon
+     * S3 location, your request fails.</p> <p>IAM role ARNs have the format
      * <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
      * <code>arn:aws:iam::111122223333:role/Admin</code>.</p> <p>For more information,
      * see <a
@@ -617,91 +635,99 @@ namespace Model
 
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline StartCallAnalyticsJobRequest& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline StartCallAnalyticsJobRequest& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline StartCallAnalyticsJobRequest& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>Allows you to specify which speaker is on which channel. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to
-     * <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code>
-     * to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
+     * <p>Makes it possible to specify which speaker is on which channel. For example,
+     * if your agent is the first participant to speak, you would set
+     * <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the
+     * agent speaking).</p>
      */
     inline StartCallAnalyticsJobRequest& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
 
     Media m_media;
-    bool m_mediaHasBeenSet;
+    bool m_mediaHasBeenSet = false;
 
     Aws::String m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_outputEncryptionKMSKeyId;
-    bool m_outputEncryptionKMSKeyIdHasBeenSet;
+    bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
-    bool m_dataAccessRoleArnHasBeenSet;
+    bool m_dataAccessRoleArnHasBeenSet = false;
 
     CallAnalyticsJobSettings m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;
-    bool m_channelDefinitionsHasBeenSet;
+    bool m_channelDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

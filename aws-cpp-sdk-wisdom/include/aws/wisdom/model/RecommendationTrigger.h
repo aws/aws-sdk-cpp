@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RecommendationTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger
+  class RecommendationTrigger
   {
   public:
-    RecommendationTrigger();
-    RecommendationTrigger(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger();
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -244,19 +244,19 @@ namespace Model
   private:
 
     RecommendationTriggerData m_data;
-    bool m_dataHasBeenSet;
+    bool m_dataHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_recommendationIds;
-    bool m_recommendationIdsHasBeenSet;
+    bool m_recommendationIdsHasBeenSet = false;
 
     RecommendationSourceType m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     RecommendationTriggerType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

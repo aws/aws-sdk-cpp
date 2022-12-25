@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAPIConflictResolution">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution
+  class BackendAPIConflictResolution
   {
   public:
-    BackendAPIConflictResolution();
-    BackendAPIConflictResolution(Aws::Utils::Json::JsonView jsonValue);
-    BackendAPIConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution();
+    AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendAPIConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ResolutionStrategy m_resolutionStrategy;
-    bool m_resolutionStrategyHasBeenSet;
+    bool m_resolutionStrategyHasBeenSet = false;
   };
 
 } // namespace Model

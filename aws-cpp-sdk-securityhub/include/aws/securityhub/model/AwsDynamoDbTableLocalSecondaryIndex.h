@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableLocalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex
+  class AwsDynamoDbTableLocalSecondaryIndex
   {
   public:
-    AwsDynamoDbTableLocalSecondaryIndex();
-    AwsDynamoDbTableLocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableLocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex();
+    AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableLocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -209,16 +209,16 @@ namespace Model
   private:
 
     Aws::String m_indexArn;
-    bool m_indexArnHasBeenSet;
+    bool m_indexArnHasBeenSet = false;
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-    bool m_keySchemaHasBeenSet;
+    bool m_keySchemaHasBeenSet = false;
 
     AwsDynamoDbTableProjection m_projection;
-    bool m_projectionHasBeenSet;
+    bool m_projectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PipelineSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API PipelineSummary
+  class PipelineSummary
   {
   public:
-    PipelineSummary();
-    PipelineSummary(Aws::Utils::Json::JsonView jsonValue);
-    PipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API PipelineSummary();
+    AWS_IOTANALYTICS_API PipelineSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API PipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::Vector<ReprocessingSummary> m_reprocessingSummaries;
-    bool m_reprocessingSummariesHasBeenSet;
+    bool m_reprocessingSummariesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

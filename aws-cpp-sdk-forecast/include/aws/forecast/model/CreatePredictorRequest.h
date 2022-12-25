@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_FORECASTSERVICE_API CreatePredictorRequest : public ForecastServiceRequest
+  class CreatePredictorRequest : public ForecastServiceRequest
   {
   public:
-    CreatePredictorRequest();
+    AWS_FORECASTSERVICE_API CreatePredictorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,9 +39,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePredictor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FORECASTSERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1013,49 +1013,49 @@ namespace Model
   private:
 
     Aws::String m_predictorName;
-    bool m_predictorNameHasBeenSet;
+    bool m_predictorNameHasBeenSet = false;
 
     Aws::String m_algorithmArn;
-    bool m_algorithmArnHasBeenSet;
+    bool m_algorithmArnHasBeenSet = false;
 
     int m_forecastHorizon;
-    bool m_forecastHorizonHasBeenSet;
+    bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
-    bool m_forecastTypesHasBeenSet;
+    bool m_forecastTypesHasBeenSet = false;
 
     bool m_performAutoML;
-    bool m_performAutoMLHasBeenSet;
+    bool m_performAutoMLHasBeenSet = false;
 
     AutoMLOverrideStrategy m_autoMLOverrideStrategy;
-    bool m_autoMLOverrideStrategyHasBeenSet;
+    bool m_autoMLOverrideStrategyHasBeenSet = false;
 
     bool m_performHPO;
-    bool m_performHPOHasBeenSet;
+    bool m_performHPOHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_trainingParameters;
-    bool m_trainingParametersHasBeenSet;
+    bool m_trainingParametersHasBeenSet = false;
 
     EvaluationParameters m_evaluationParameters;
-    bool m_evaluationParametersHasBeenSet;
+    bool m_evaluationParametersHasBeenSet = false;
 
     HyperParameterTuningJobConfig m_hPOConfig;
-    bool m_hPOConfigHasBeenSet;
+    bool m_hPOConfigHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     FeaturizationConfig m_featurizationConfig;
-    bool m_featurizationConfigHasBeenSet;
+    bool m_featurizationConfigHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     OptimizationMetric m_optimizationMetric;
-    bool m_optimizationMetricHasBeenSet;
+    bool m_optimizationMetricHasBeenSet = false;
   };
 
 } // namespace Model

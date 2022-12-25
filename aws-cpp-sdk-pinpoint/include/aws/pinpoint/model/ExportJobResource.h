@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ExportJobResource
+  class ExportJobResource
   {
   public:
-    ExportJobResource();
-    ExportJobResource(Aws::Utils::Json::JsonView jsonValue);
-    ExportJobResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ExportJobResource();
+    AWS_PINPOINT_API ExportJobResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ExportJobResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_s3UrlPrefix;
-    bool m_s3UrlPrefixHasBeenSet;
+    bool m_s3UrlPrefixHasBeenSet = false;
 
     Aws::String m_segmentId;
-    bool m_segmentIdHasBeenSet;
+    bool m_segmentIdHasBeenSet = false;
 
     int m_segmentVersion;
-    bool m_segmentVersionHasBeenSet;
+    bool m_segmentVersionHasBeenSet = false;
   };
 
 } // namespace Model

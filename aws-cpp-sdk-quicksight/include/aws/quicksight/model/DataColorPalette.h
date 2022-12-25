@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataColorPalette">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataColorPalette
+  class DataColorPalette
   {
   public:
-    DataColorPalette();
-    DataColorPalette(Aws::Utils::Json::JsonView jsonValue);
-    DataColorPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataColorPalette();
+    AWS_QUICKSIGHT_API DataColorPalette(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataColorPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_colors;
-    bool m_colorsHasBeenSet;
+    bool m_colorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_minMaxGradient;
-    bool m_minMaxGradientHasBeenSet;
+    bool m_minMaxGradientHasBeenSet = false;
 
     Aws::String m_emptyFillColor;
-    bool m_emptyFillColorHasBeenSet;
+    bool m_emptyFillColorHasBeenSet = false;
   };
 
 } // namespace Model

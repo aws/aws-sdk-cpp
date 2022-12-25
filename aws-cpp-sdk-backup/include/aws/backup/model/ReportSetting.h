@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ReportSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ReportSetting
+  class ReportSetting
   {
   public:
-    ReportSetting();
-    ReportSetting(Aws::Utils::Json::JsonView jsonValue);
-    ReportSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ReportSetting();
+    AWS_BACKUP_API ReportSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ReportSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -170,16 +170,163 @@ namespace Model
      */
     inline ReportSetting& WithNumberOfFrameworks(int value) { SetNumberOfFrameworks(value); return *this;}
 
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline ReportSetting& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline ReportSetting& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline ReportSetting& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline ReportSetting& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>These are the accounts to be included in the report.</p>
+     */
+    inline ReportSetting& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrganizationUnits() const{ return m_organizationUnits; }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline bool OrganizationUnitsHasBeenSet() const { return m_organizationUnitsHasBeenSet; }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline void SetOrganizationUnits(const Aws::Vector<Aws::String>& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits = value; }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline void SetOrganizationUnits(Aws::Vector<Aws::String>&& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits = std::move(value); }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline ReportSetting& WithOrganizationUnits(const Aws::Vector<Aws::String>& value) { SetOrganizationUnits(value); return *this;}
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline ReportSetting& WithOrganizationUnits(Aws::Vector<Aws::String>&& value) { SetOrganizationUnits(std::move(value)); return *this;}
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline ReportSetting& AddOrganizationUnits(const Aws::String& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(value); return *this; }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline ReportSetting& AddOrganizationUnits(Aws::String&& value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>These are the Organizational Units to be included in the report.</p>
+     */
+    inline ReportSetting& AddOrganizationUnits(const char* value) { m_organizationUnitsHasBeenSet = true; m_organizationUnits.push_back(value); return *this; }
+
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline ReportSetting& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline ReportSetting& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline ReportSetting& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline ReportSetting& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>These are the Regions to be included in the report.</p>
+     */
+    inline ReportSetting& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
   private:
 
     Aws::String m_reportTemplate;
-    bool m_reportTemplateHasBeenSet;
+    bool m_reportTemplateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_frameworkArns;
-    bool m_frameworkArnsHasBeenSet;
+    bool m_frameworkArnsHasBeenSet = false;
 
     int m_numberOfFrameworks;
-    bool m_numberOfFrameworksHasBeenSet;
+    bool m_numberOfFrameworksHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_accounts;
+    bool m_accountsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_organizationUnits;
+    bool m_organizationUnitsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regions;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

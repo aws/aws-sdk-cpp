@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API UpdateThreatIntelSetRequest : public GuardDutyRequest
+  class UpdateThreatIntelSetRequest : public GuardDutyRequest
   {
   public:
-    UpdateThreatIntelSetRequest();
+    AWS_GUARDDUTY_API UpdateThreatIntelSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateThreatIntelSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -231,19 +231,19 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_threatIntelSetId;
-    bool m_threatIntelSetIdHasBeenSet;
+    bool m_threatIntelSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_activate;
-    bool m_activateHasBeenSet;
+    bool m_activateHasBeenSet = false;
   };
 
 } // namespace Model

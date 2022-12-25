@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/LogOddsMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API LogOddsMetric
+  class LogOddsMetric
   {
   public:
-    LogOddsMetric();
-    LogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
-    LogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API LogOddsMetric();
+    AWS_FRAUDDETECTOR_API LogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API LogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_variableName;
-    bool m_variableNameHasBeenSet;
+    bool m_variableNameHasBeenSet = false;
 
     Aws::String m_variableType;
-    bool m_variableTypeHasBeenSet;
+    bool m_variableTypeHasBeenSet = false;
 
     double m_variableImportance;
-    bool m_variableImportanceHasBeenSet;
+    bool m_variableImportanceHasBeenSet = false;
   };
 
 } // namespace Model

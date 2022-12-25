@@ -73,7 +73,7 @@ AwsEc2NetworkAclDetails& AwsEc2NetworkAclDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Associations"))
   {
-    Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
     for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
@@ -83,7 +83,7 @@ AwsEc2NetworkAclDetails& AwsEc2NetworkAclDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Entries"))
   {
-    Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
+    Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());
@@ -124,7 +124,7 @@ JsonValue AwsEc2NetworkAclDetails::Jsonize() const
 
   if(m_associationsHasBeenSet)
   {
-   Array<JsonValue> associationsJsonList(m_associations.size());
+   Aws::Utils::Array<JsonValue> associationsJsonList(m_associations.size());
    for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
    {
      associationsJsonList[associationsIndex].AsObject(m_associations[associationsIndex].Jsonize());
@@ -135,7 +135,7 @@ JsonValue AwsEc2NetworkAclDetails::Jsonize() const
 
   if(m_entriesHasBeenSet)
   {
-   Array<JsonValue> entriesJsonList(m_entries.size());
+   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
    for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
    {
      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());

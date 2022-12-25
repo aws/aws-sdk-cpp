@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASSV2_API ResolveComponentCandidatesRequest : public GreengrassV2Request
+  class ResolveComponentCandidatesRequest : public GreengrassV2Request
   {
   public:
-    ResolveComponentCandidatesRequest();
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ResolveComponentCandidates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -108,10 +108,10 @@ namespace Model
   private:
 
     ComponentPlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<ComponentCandidate> m_componentCandidates;
-    bool m_componentCandidatesHasBeenSet;
+    bool m_componentCandidatesHasBeenSet = false;
   };
 
 } // namespace Model

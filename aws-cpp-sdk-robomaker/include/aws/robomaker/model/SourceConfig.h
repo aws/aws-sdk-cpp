@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SourceConfig
+  class SourceConfig
   {
   public:
-    SourceConfig();
-    SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SourceConfig();
+    AWS_ROBOMAKER_API SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Architecture m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
   };
 
 } // namespace Model

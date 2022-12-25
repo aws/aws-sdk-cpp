@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TransformFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TransformFilterCriteria
+  class TransformFilterCriteria
   {
   public:
-    TransformFilterCriteria();
-    TransformFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    TransformFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TransformFilterCriteria();
+    AWS_GLUE_API TransformFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TransformFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -452,31 +452,31 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TransformType m_transformType;
-    bool m_transformTypeHasBeenSet;
+    bool m_transformTypeHasBeenSet = false;
 
     TransformStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
-    bool m_createdBeforeHasBeenSet;
+    bool m_createdBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
-    bool m_createdAfterHasBeenSet;
+    bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedBefore;
-    bool m_lastModifiedBeforeHasBeenSet;
+    bool m_lastModifiedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedAfter;
-    bool m_lastModifiedAfterHasBeenSet;
+    bool m_lastModifiedAfterHasBeenSet = false;
 
     Aws::Vector<SchemaColumn> m_schema;
-    bool m_schemaHasBeenSet;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

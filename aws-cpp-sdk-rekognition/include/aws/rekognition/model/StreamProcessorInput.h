@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorInput">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API StreamProcessorInput
+  class StreamProcessorInput
   {
   public:
-    StreamProcessorInput();
-    StreamProcessorInput(Aws::Utils::Json::JsonView jsonValue);
-    StreamProcessorInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API StreamProcessorInput();
+    AWS_REKOGNITION_API StreamProcessorInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API StreamProcessorInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     KinesisVideoStream m_kinesisVideoStream;
-    bool m_kinesisVideoStreamHasBeenSet;
+    bool m_kinesisVideoStreamHasBeenSet = false;
   };
 
 } // namespace Model

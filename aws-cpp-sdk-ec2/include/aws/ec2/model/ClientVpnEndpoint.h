@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClientVpnEndpoint
+  class ClientVpnEndpoint
   {
   public:
-    ClientVpnEndpoint();
-    ClientVpnEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientVpnEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnEndpoint();
+    AWS_EC2_API ClientVpnEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -900,70 +900,70 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ClientVpnEndpointStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deletionTime;
-    bool m_deletionTimeHasBeenSet;
+    bool m_deletionTimeHasBeenSet = false;
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     Aws::String m_clientCidrBlock;
-    bool m_clientCidrBlockHasBeenSet;
+    bool m_clientCidrBlockHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
-    bool m_dnsServersHasBeenSet;
+    bool m_dnsServersHasBeenSet = false;
 
     bool m_splitTunnel;
-    bool m_splitTunnelHasBeenSet;
+    bool m_splitTunnelHasBeenSet = false;
 
     VpnProtocol m_vpnProtocol;
-    bool m_vpnProtocolHasBeenSet;
+    bool m_vpnProtocolHasBeenSet = false;
 
     TransportProtocol m_transportProtocol;
-    bool m_transportProtocolHasBeenSet;
+    bool m_transportProtocolHasBeenSet = false;
 
     int m_vpnPort;
-    bool m_vpnPortHasBeenSet;
+    bool m_vpnPortHasBeenSet = false;
 
     Aws::String m_serverCertificateArn;
-    bool m_serverCertificateArnHasBeenSet;
+    bool m_serverCertificateArnHasBeenSet = false;
 
     Aws::Vector<ClientVpnAuthentication> m_authenticationOptions;
-    bool m_authenticationOptionsHasBeenSet;
+    bool m_authenticationOptionsHasBeenSet = false;
 
     ConnectionLogResponseOptions m_connectionLogOptions;
-    bool m_connectionLogOptionsHasBeenSet;
+    bool m_connectionLogOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_selfServicePortalUrl;
-    bool m_selfServicePortalUrlHasBeenSet;
+    bool m_selfServicePortalUrlHasBeenSet = false;
 
     ClientConnectResponseOptions m_clientConnectOptions;
-    bool m_clientConnectOptionsHasBeenSet;
+    bool m_clientConnectOptionsHasBeenSet = false;
 
     int m_sessionTimeoutHours;
-    bool m_sessionTimeoutHoursHasBeenSet;
+    bool m_sessionTimeoutHoursHasBeenSet = false;
 
     ClientLoginBannerResponseOptions m_clientLoginBannerOptions;
-    bool m_clientLoginBannerOptionsHasBeenSet;
+    bool m_clientLoginBannerOptionsHasBeenSet = false;
   };
 
 } // namespace Model

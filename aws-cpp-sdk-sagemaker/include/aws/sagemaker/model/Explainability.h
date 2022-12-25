@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Explainability">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Explainability
+  class Explainability
   {
   public:
-    Explainability();
-    Explainability(Aws::Utils::Json::JsonView jsonValue);
-    Explainability& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Explainability();
+    AWS_SAGEMAKER_API Explainability(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Explainability& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     MetricsSource m_report;
-    bool m_reportHasBeenSet;
+    bool m_reportHasBeenSet = false;
   };
 
 } // namespace Model

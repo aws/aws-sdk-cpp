@@ -28,7 +28,8 @@ namespace Model
     Amazon_Relational_Database_Service_on_PostgreSQL,
     Amazon_DocumentDB,
     Amazon_DynamoDB,
-    Amazon_Relational_Database_Service
+    Amazon_Relational_Database_Service,
+    Babelfish_for_Aurora_PostgreSQL
   };
 
 namespace TargetDestinationMapper

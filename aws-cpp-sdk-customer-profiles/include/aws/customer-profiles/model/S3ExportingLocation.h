@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/S3ExportingLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API S3ExportingLocation
+  class S3ExportingLocation
   {
   public:
-    S3ExportingLocation();
-    S3ExportingLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3ExportingLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API S3ExportingLocation();
+    AWS_CUSTOMERPROFILES_API S3ExportingLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API S3ExportingLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyName;
-    bool m_s3KeyNameHasBeenSet;
+    bool m_s3KeyNameHasBeenSet = false;
   };
 
 } // namespace Model

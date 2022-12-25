@@ -26,46 +26,46 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListContactFlowsResult
+  class ListContactFlowsResult
   {
   public:
-    ListContactFlowsResult();
-    ListContactFlowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContactFlowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactFlowsResult();
+    AWS_CONNECT_API ListContactFlowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListContactFlowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline const Aws::Vector<ContactFlowSummary>& GetContactFlowSummaryList() const{ return m_contactFlowSummaryList; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline void SetContactFlowSummaryList(const Aws::Vector<ContactFlowSummary>& value) { m_contactFlowSummaryList = value; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline void SetContactFlowSummaryList(Aws::Vector<ContactFlowSummary>&& value) { m_contactFlowSummaryList = std::move(value); }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactFlowsResult& WithContactFlowSummaryList(const Aws::Vector<ContactFlowSummary>& value) { SetContactFlowSummaryList(value); return *this;}
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactFlowsResult& WithContactFlowSummaryList(Aws::Vector<ContactFlowSummary>&& value) { SetContactFlowSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactFlowsResult& AddContactFlowSummaryList(const ContactFlowSummary& value) { m_contactFlowSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>Information about the contact flows.</p>
+     * <p>Information about the flows.</p>
      */
     inline ListContactFlowsResult& AddContactFlowSummaryList(ContactFlowSummary&& value) { m_contactFlowSummaryList.push_back(std::move(value)); return *this; }
 

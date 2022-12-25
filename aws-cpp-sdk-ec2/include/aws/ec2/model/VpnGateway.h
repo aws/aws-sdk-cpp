@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnGateway">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API VpnGateway
+  class VpnGateway
   {
   public:
-    VpnGateway();
-    VpnGateway(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpnGateway& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpnGateway();
+    AWS_EC2_API VpnGateway(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpnGateway& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -305,25 +305,25 @@ namespace Model
   private:
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     VpnState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     GatewayType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<VpcAttachment> m_vpcAttachments;
-    bool m_vpcAttachmentsHasBeenSet;
+    bool m_vpcAttachmentsHasBeenSet = false;
 
     Aws::String m_vpnGatewayId;
-    bool m_vpnGatewayIdHasBeenSet;
+    bool m_vpnGatewayIdHasBeenSet = false;
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

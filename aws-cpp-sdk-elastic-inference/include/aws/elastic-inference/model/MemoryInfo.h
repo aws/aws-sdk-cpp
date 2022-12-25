@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/MemoryInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API MemoryInfo
+  class MemoryInfo
   {
   public:
-    MemoryInfo();
-    MemoryInfo(Aws::Utils::Json::JsonView jsonValue);
-    MemoryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API MemoryInfo();
+    AWS_ELASTICINFERENCE_API MemoryInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API MemoryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_sizeInMiB;
-    bool m_sizeInMiBHasBeenSet;
+    bool m_sizeInMiBHasBeenSet = false;
   };
 
 } // namespace Model

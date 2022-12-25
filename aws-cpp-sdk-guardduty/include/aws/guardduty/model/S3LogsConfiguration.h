@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/S3LogsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API S3LogsConfiguration
+  class S3LogsConfiguration
   {
   public:
-    S3LogsConfiguration();
-    S3LogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3LogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API S3LogsConfiguration();
+    AWS_GUARDDUTY_API S3LogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API S3LogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_enable;
-    bool m_enableHasBeenSet;
+    bool m_enableHasBeenSet = false;
   };
 
 } // namespace Model

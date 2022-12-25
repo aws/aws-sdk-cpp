@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AsyncInferenceClientConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AsyncInferenceClientConfig
+  class AsyncInferenceClientConfig
   {
   public:
-    AsyncInferenceClientConfig();
-    AsyncInferenceClientConfig(Aws::Utils::Json::JsonView jsonValue);
-    AsyncInferenceClientConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AsyncInferenceClientConfig();
+    AWS_SAGEMAKER_API AsyncInferenceClientConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AsyncInferenceClientConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
   private:
 
     int m_maxConcurrentInvocationsPerInstance;
-    bool m_maxConcurrentInvocationsPerInstanceHasBeenSet;
+    bool m_maxConcurrentInvocationsPerInstanceHasBeenSet = false;
   };
 
 } // namespace Model

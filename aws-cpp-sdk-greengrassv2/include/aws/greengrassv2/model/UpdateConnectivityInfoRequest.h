@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GREENGRASSV2_API UpdateConnectivityInfoRequest : public GreengrassV2Request
+  class UpdateConnectivityInfoRequest : public GreengrassV2Request
   {
   public:
-    UpdateConnectivityInfoRequest();
+    AWS_GREENGRASSV2_API UpdateConnectivityInfoRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateConnectivityInfo"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;
-    bool m_connectivityInfoHasBeenSet;
+    bool m_connectivityInfoHasBeenSet = false;
   };
 
 } // namespace Model

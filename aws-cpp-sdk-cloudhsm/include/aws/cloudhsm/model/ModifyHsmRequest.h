@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsmRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API ModifyHsmRequest : public CloudHSMRequest
+  class ModifyHsmRequest : public CloudHSMRequest
   {
   public:
-    ModifyHsmRequest();
+    AWS_CLOUDHSM_API ModifyHsmRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyHsm"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -326,22 +326,22 @@ namespace Model
   private:
 
     Aws::String m_hsmArn;
-    bool m_hsmArnHasBeenSet;
+    bool m_hsmArnHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_eniIp;
-    bool m_eniIpHasBeenSet;
+    bool m_eniIpHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_syslogIp;
-    bool m_syslogIpHasBeenSet;
+    bool m_syslogIpHasBeenSet = false;
   };
 
 } // namespace Model

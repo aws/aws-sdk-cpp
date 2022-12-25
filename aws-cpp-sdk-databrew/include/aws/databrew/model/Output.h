@@ -34,13 +34,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Output();
+    AWS_GLUEDATABREW_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -269,25 +269,25 @@ namespace Model
   private:
 
     CompressionFormat m_compressionFormat;
-    bool m_compressionFormatHasBeenSet;
+    bool m_compressionFormatHasBeenSet = false;
 
     OutputFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionColumns;
-    bool m_partitionColumnsHasBeenSet;
+    bool m_partitionColumnsHasBeenSet = false;
 
     S3Location m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
 
     bool m_overwrite;
-    bool m_overwriteHasBeenSet;
+    bool m_overwriteHasBeenSet = false;
 
     OutputFormatOptions m_formatOptions;
-    bool m_formatOptionsHasBeenSet;
+    bool m_formatOptionsHasBeenSet = false;
 
     int m_maxOutputFiles;
-    bool m_maxOutputFilesHasBeenSet;
+    bool m_maxOutputFilesHasBeenSet = false;
   };
 
 } // namespace Model

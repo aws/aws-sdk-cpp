@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/RemixSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API RemixSettings
+  class RemixSettings
   {
   public:
-    RemixSettings();
-    RemixSettings(Aws::Utils::Json::JsonView jsonValue);
-    RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API RemixSettings();
+    AWS_MEDIACONVERT_API RemixSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -211,13 +211,13 @@ namespace Model
   private:
 
     ChannelMapping m_channelMapping;
-    bool m_channelMappingHasBeenSet;
+    bool m_channelMappingHasBeenSet = false;
 
     int m_channelsIn;
-    bool m_channelsInHasBeenSet;
+    bool m_channelsInHasBeenSet = false;
 
     int m_channelsOut;
-    bool m_channelsOutHasBeenSet;
+    bool m_channelsOutHasBeenSet = false;
   };
 
 } // namespace Model

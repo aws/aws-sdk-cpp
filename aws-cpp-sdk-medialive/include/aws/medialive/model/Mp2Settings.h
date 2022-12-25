@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mp2Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Mp2Settings
+  class Mp2Settings
   {
   public:
-    Mp2Settings();
-    Mp2Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mp2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Mp2Settings();
+    AWS_MEDIALIVE_API Mp2Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Mp2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,13 +118,13 @@ namespace Model
   private:
 
     double m_bitrate;
-    bool m_bitrateHasBeenSet;
+    bool m_bitrateHasBeenSet = false;
 
     Mp2CodingMode m_codingMode;
-    bool m_codingModeHasBeenSet;
+    bool m_codingModeHasBeenSet = false;
 
     double m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
   };
 
 } // namespace Model

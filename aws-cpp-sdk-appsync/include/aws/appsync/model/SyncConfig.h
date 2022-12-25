@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/SyncConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API SyncConfig
+  class SyncConfig
   {
   public:
-    SyncConfig();
-    SyncConfig(Aws::Utils::Json::JsonView jsonValue);
-    SyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API SyncConfig();
+    AWS_APPSYNC_API SyncConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API SyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,13 +196,13 @@ namespace Model
   private:
 
     ConflictHandlerType m_conflictHandler;
-    bool m_conflictHandlerHasBeenSet;
+    bool m_conflictHandlerHasBeenSet = false;
 
     ConflictDetectionType m_conflictDetection;
-    bool m_conflictDetectionHasBeenSet;
+    bool m_conflictDetectionHasBeenSet = false;
 
     LambdaConflictHandlerConfig m_lambdaConflictHandlerConfig;
-    bool m_lambdaConflictHandlerConfigHasBeenSet;
+    bool m_lambdaConflictHandlerConfigHasBeenSet = false;
   };
 
 } // namespace Model

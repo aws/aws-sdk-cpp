@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessagesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessagesResponse
+  class InAppMessagesResponse
   {
   public:
-    InAppMessagesResponse();
-    InAppMessagesResponse(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessagesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessagesResponse();
+    AWS_PINPOINT_API InAppMessagesResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessagesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<InAppMessageCampaign> m_inAppMessageCampaigns;
-    bool m_inAppMessageCampaignsHasBeenSet;
+    bool m_inAppMessageCampaignsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerRequest : public LocationServiceRequest
+  class DisassociateTrackerConsumerRequest : public LocationServiceRequest
   {
   public:
-    DisassociateTrackerConsumerRequest();
+    AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateTrackerConsumer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_consumerArn;
-    bool m_consumerArnHasBeenSet;
+    bool m_consumerArnHasBeenSet = false;
 
     Aws::String m_trackerName;
-    bool m_trackerNameHasBeenSet;
+    bool m_trackerNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SuggestRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API SuggestRequest : public CloudSearchDomainRequest
+  class SuggestRequest : public CloudSearchDomainRequest
   {
   public:
-    SuggestRequest();
+    AWS_CLOUDSEARCHDOMAIN_API SuggestRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Suggest"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDSEARCHDOMAIN_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_CLOUDSEARCHDOMAIN_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_suggester;
-    bool m_suggesterHasBeenSet;
+    bool m_suggesterHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

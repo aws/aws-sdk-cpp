@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemSize">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemSize
+  class FileSystemSize
   {
   public:
-    FileSystemSize();
-    FileSystemSize(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemSize& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemSize();
+    AWS_EFS_API FileSystemSize(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemSize& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,16 +164,16 @@ namespace Model
   private:
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     long long m_valueInIA;
-    bool m_valueInIAHasBeenSet;
+    bool m_valueInIAHasBeenSet = false;
 
     long long m_valueInStandard;
-    bool m_valueInStandardHasBeenSet;
+    bool m_valueInStandardHasBeenSet = false;
   };
 
 } // namespace Model

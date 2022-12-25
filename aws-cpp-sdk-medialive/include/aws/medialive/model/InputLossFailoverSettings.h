@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputLossFailoverSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputLossFailoverSettings
+  class InputLossFailoverSettings
   {
   public:
-    InputLossFailoverSettings();
-    InputLossFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputLossFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputLossFailoverSettings();
+    AWS_MEDIALIVE_API InputLossFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputLossFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_inputLossThresholdMsec;
-    bool m_inputLossThresholdMsecHasBeenSet;
+    bool m_inputLossThresholdMsecHasBeenSet = false;
   };
 
 } // namespace Model

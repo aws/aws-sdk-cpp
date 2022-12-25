@@ -5,210 +5,17 @@
 
 #pragma once
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
-#include <aws/elasticloadbalancing/ElasticLoadBalancingErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/elasticloadbalancing/model/AddTagsResult.h>
-#include <aws/elasticloadbalancing/model/ApplySecurityGroupsToLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/AttachLoadBalancerToSubnetsResult.h>
-#include <aws/elasticloadbalancing/model/ConfigureHealthCheckResult.h>
-#include <aws/elasticloadbalancing/model/CreateAppCookieStickinessPolicyResult.h>
-#include <aws/elasticloadbalancing/model/CreateLBCookieStickinessPolicyResult.h>
-#include <aws/elasticloadbalancing/model/CreateLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/CreateLoadBalancerListenersResult.h>
-#include <aws/elasticloadbalancing/model/CreateLoadBalancerPolicyResult.h>
-#include <aws/elasticloadbalancing/model/DeleteLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/DeleteLoadBalancerListenersResult.h>
-#include <aws/elasticloadbalancing/model/DeleteLoadBalancerPolicyResult.h>
-#include <aws/elasticloadbalancing/model/DeregisterInstancesFromLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/DescribeAccountLimitsResult.h>
-#include <aws/elasticloadbalancing/model/DescribeInstanceHealthResult.h>
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesResult.h>
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPoliciesResult.h>
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPolicyTypesResult.h>
-#include <aws/elasticloadbalancing/model/DescribeLoadBalancersResult.h>
-#include <aws/elasticloadbalancing/model/DescribeTagsResult.h>
-#include <aws/elasticloadbalancing/model/DetachLoadBalancerFromSubnetsResult.h>
-#include <aws/elasticloadbalancing/model/DisableAvailabilityZonesForLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/EnableAvailabilityZonesForLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/ModifyLoadBalancerAttributesResult.h>
-#include <aws/elasticloadbalancing/model/RegisterInstancesWithLoadBalancerResult.h>
-#include <aws/elasticloadbalancing/model/RemoveTagsResult.h>
-#include <aws/elasticloadbalancing/model/SetLoadBalancerListenerSSLCertificateResult.h>
-#include <aws/elasticloadbalancing/model/SetLoadBalancerPoliciesForBackendServerResult.h>
-#include <aws/elasticloadbalancing/model/SetLoadBalancerPoliciesOfListenerResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ElasticLoadBalancing
 {
-
-namespace Model
-{
-        class AddTagsRequest;
-        class ApplySecurityGroupsToLoadBalancerRequest;
-        class AttachLoadBalancerToSubnetsRequest;
-        class ConfigureHealthCheckRequest;
-        class CreateAppCookieStickinessPolicyRequest;
-        class CreateLBCookieStickinessPolicyRequest;
-        class CreateLoadBalancerRequest;
-        class CreateLoadBalancerListenersRequest;
-        class CreateLoadBalancerPolicyRequest;
-        class DeleteLoadBalancerRequest;
-        class DeleteLoadBalancerListenersRequest;
-        class DeleteLoadBalancerPolicyRequest;
-        class DeregisterInstancesFromLoadBalancerRequest;
-        class DescribeAccountLimitsRequest;
-        class DescribeInstanceHealthRequest;
-        class DescribeLoadBalancerAttributesRequest;
-        class DescribeLoadBalancerPoliciesRequest;
-        class DescribeLoadBalancerPolicyTypesRequest;
-        class DescribeLoadBalancersRequest;
-        class DescribeTagsRequest;
-        class DetachLoadBalancerFromSubnetsRequest;
-        class DisableAvailabilityZonesForLoadBalancerRequest;
-        class EnableAvailabilityZonesForLoadBalancerRequest;
-        class ModifyLoadBalancerAttributesRequest;
-        class RegisterInstancesWithLoadBalancerRequest;
-        class RemoveTagsRequest;
-        class SetLoadBalancerListenerSSLCertificateRequest;
-        class SetLoadBalancerPoliciesForBackendServerRequest;
-        class SetLoadBalancerPoliciesOfListenerRequest;
-
-        typedef Aws::Utils::Outcome<AddTagsResult, ElasticLoadBalancingError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<ApplySecurityGroupsToLoadBalancerResult, ElasticLoadBalancingError> ApplySecurityGroupsToLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<AttachLoadBalancerToSubnetsResult, ElasticLoadBalancingError> AttachLoadBalancerToSubnetsOutcome;
-        typedef Aws::Utils::Outcome<ConfigureHealthCheckResult, ElasticLoadBalancingError> ConfigureHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<CreateAppCookieStickinessPolicyResult, ElasticLoadBalancingError> CreateAppCookieStickinessPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateLBCookieStickinessPolicyResult, ElasticLoadBalancingError> CreateLBCookieStickinessPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, ElasticLoadBalancingError> CreateLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerListenersResult, ElasticLoadBalancingError> CreateLoadBalancerListenersOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerPolicyResult, ElasticLoadBalancingError> CreateLoadBalancerPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, ElasticLoadBalancingError> DeleteLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerListenersResult, ElasticLoadBalancingError> DeleteLoadBalancerListenersOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerPolicyResult, ElasticLoadBalancingError> DeleteLoadBalancerPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeregisterInstancesFromLoadBalancerResult, ElasticLoadBalancingError> DeregisterInstancesFromLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, ElasticLoadBalancingError> DescribeAccountLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceHealthResult, ElasticLoadBalancingError> DescribeInstanceHealthOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, ElasticLoadBalancingError> DescribeLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerPoliciesResult, ElasticLoadBalancingError> DescribeLoadBalancerPoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerPolicyTypesResult, ElasticLoadBalancingError> DescribeLoadBalancerPolicyTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, ElasticLoadBalancingError> DescribeLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, ElasticLoadBalancingError> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DetachLoadBalancerFromSubnetsResult, ElasticLoadBalancingError> DetachLoadBalancerFromSubnetsOutcome;
-        typedef Aws::Utils::Outcome<DisableAvailabilityZonesForLoadBalancerResult, ElasticLoadBalancingError> DisableAvailabilityZonesForLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<EnableAvailabilityZonesForLoadBalancerResult, ElasticLoadBalancingError> EnableAvailabilityZonesForLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, ElasticLoadBalancingError> ModifyLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<RegisterInstancesWithLoadBalancerResult, ElasticLoadBalancingError> RegisterInstancesWithLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, ElasticLoadBalancingError> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerListenerSSLCertificateResult, ElasticLoadBalancingError> SetLoadBalancerListenerSSLCertificateOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesForBackendServerResult, ElasticLoadBalancingError> SetLoadBalancerPoliciesForBackendServerOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesOfListenerResult, ElasticLoadBalancingError> SetLoadBalancerPoliciesOfListenerOutcome;
-
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<ApplySecurityGroupsToLoadBalancerOutcome> ApplySecurityGroupsToLoadBalancerOutcomeCallable;
-        typedef std::future<AttachLoadBalancerToSubnetsOutcome> AttachLoadBalancerToSubnetsOutcomeCallable;
-        typedef std::future<ConfigureHealthCheckOutcome> ConfigureHealthCheckOutcomeCallable;
-        typedef std::future<CreateAppCookieStickinessPolicyOutcome> CreateAppCookieStickinessPolicyOutcomeCallable;
-        typedef std::future<CreateLBCookieStickinessPolicyOutcome> CreateLBCookieStickinessPolicyOutcomeCallable;
-        typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
-        typedef std::future<CreateLoadBalancerListenersOutcome> CreateLoadBalancerListenersOutcomeCallable;
-        typedef std::future<CreateLoadBalancerPolicyOutcome> CreateLoadBalancerPolicyOutcomeCallable;
-        typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
-        typedef std::future<DeleteLoadBalancerListenersOutcome> DeleteLoadBalancerListenersOutcomeCallable;
-        typedef std::future<DeleteLoadBalancerPolicyOutcome> DeleteLoadBalancerPolicyOutcomeCallable;
-        typedef std::future<DeregisterInstancesFromLoadBalancerOutcome> DeregisterInstancesFromLoadBalancerOutcomeCallable;
-        typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
-        typedef std::future<DescribeInstanceHealthOutcome> DescribeInstanceHealthOutcomeCallable;
-        typedef std::future<DescribeLoadBalancerAttributesOutcome> DescribeLoadBalancerAttributesOutcomeCallable;
-        typedef std::future<DescribeLoadBalancerPoliciesOutcome> DescribeLoadBalancerPoliciesOutcomeCallable;
-        typedef std::future<DescribeLoadBalancerPolicyTypesOutcome> DescribeLoadBalancerPolicyTypesOutcomeCallable;
-        typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
-        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
-        typedef std::future<DetachLoadBalancerFromSubnetsOutcome> DetachLoadBalancerFromSubnetsOutcomeCallable;
-        typedef std::future<DisableAvailabilityZonesForLoadBalancerOutcome> DisableAvailabilityZonesForLoadBalancerOutcomeCallable;
-        typedef std::future<EnableAvailabilityZonesForLoadBalancerOutcome> EnableAvailabilityZonesForLoadBalancerOutcomeCallable;
-        typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
-        typedef std::future<RegisterInstancesWithLoadBalancerOutcome> RegisterInstancesWithLoadBalancerOutcomeCallable;
-        typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
-        typedef std::future<SetLoadBalancerListenerSSLCertificateOutcome> SetLoadBalancerListenerSSLCertificateOutcomeCallable;
-        typedef std::future<SetLoadBalancerPoliciesForBackendServerOutcome> SetLoadBalancerPoliciesForBackendServerOutcomeCallable;
-        typedef std::future<SetLoadBalancerPoliciesOfListenerOutcome> SetLoadBalancerPoliciesOfListenerOutcomeCallable;
-} // namespace Model
-
-  class ElasticLoadBalancingClient;
-
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::ApplySecurityGroupsToLoadBalancerRequest&, const Model::ApplySecurityGroupsToLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplySecurityGroupsToLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::AttachLoadBalancerToSubnetsRequest&, const Model::AttachLoadBalancerToSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerToSubnetsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::ConfigureHealthCheckRequest&, const Model::ConfigureHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfigureHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::CreateAppCookieStickinessPolicyRequest&, const Model::CreateAppCookieStickinessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppCookieStickinessPolicyResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::CreateLBCookieStickinessPolicyRequest&, const Model::CreateLBCookieStickinessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLBCookieStickinessPolicyResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::CreateLoadBalancerRequest&, const Model::CreateLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::CreateLoadBalancerListenersRequest&, const Model::CreateLoadBalancerListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoadBalancerListenersResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::CreateLoadBalancerPolicyRequest&, const Model::CreateLoadBalancerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLoadBalancerPolicyResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DeleteLoadBalancerRequest&, const Model::DeleteLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DeleteLoadBalancerListenersRequest&, const Model::DeleteLoadBalancerListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerListenersResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DeleteLoadBalancerPolicyRequest&, const Model::DeleteLoadBalancerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerPolicyResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DeregisterInstancesFromLoadBalancerRequest&, const Model::DeregisterInstancesFromLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstancesFromLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeInstanceHealthRequest&, const Model::DescribeInstanceHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceHealthResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeLoadBalancerAttributesRequest&, const Model::DescribeLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerAttributesResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeLoadBalancerPoliciesRequest&, const Model::DescribeLoadBalancerPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerPoliciesResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeLoadBalancerPolicyTypesRequest&, const Model::DescribeLoadBalancerPolicyTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerPolicyTypesResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DetachLoadBalancerFromSubnetsRequest&, const Model::DetachLoadBalancerFromSubnetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancerFromSubnetsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::DisableAvailabilityZonesForLoadBalancerRequest&, const Model::DisableAvailabilityZonesForLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::EnableAvailabilityZonesForLoadBalancerRequest&, const Model::EnableAvailabilityZonesForLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::ModifyLoadBalancerAttributesRequest&, const Model::ModifyLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLoadBalancerAttributesResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::RegisterInstancesWithLoadBalancerRequest&, const Model::RegisterInstancesWithLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterInstancesWithLoadBalancerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::SetLoadBalancerListenerSSLCertificateRequest&, const Model::SetLoadBalancerListenerSSLCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLoadBalancerListenerSSLCertificateResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::SetLoadBalancerPoliciesForBackendServerRequest&, const Model::SetLoadBalancerPoliciesForBackendServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingClient*, const Model::SetLoadBalancerPoliciesOfListenerRequest&, const Model::SetLoadBalancerPoliciesOfListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLoadBalancerPoliciesOfListenerResponseReceivedHandler;
-
   /**
    * <fullname>Elastic Load Balancing</fullname> <p>A load balancer can distribute
    * incoming traffic across your EC2 instances. This enables you to increase the
@@ -231,30 +38,59 @@ namespace Model
    * operations are <i>idempotent</i>, which means that they complete at most one
    * time. If you repeat an operation, it succeeds with a 200 OK response code.</p>
    */
-  class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient : public Aws::Client::AWSXMLClient
+  class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticLoadBalancingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElasticLoadBalancingClient(const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration(),
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticLoadBalancingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ElasticLoadBalancingClient(const Aws::Auth::AWSCredentials& credentials,
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG),
+                                   const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ElasticLoadBalancingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG),
+                                   const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticLoadBalancingClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ElasticLoadBalancingClient(const Aws::Auth::AWSCredentials& credentials,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ElasticLoadBalancingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ElasticLoadBalancingClient();
 
 
@@ -954,41 +790,14 @@ namespace Model
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<ElasticLoadBalancingEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ApplySecurityGroupsToLoadBalancerAsyncHelper(const Model::ApplySecurityGroupsToLoadBalancerRequest& request, const ApplySecurityGroupsToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AttachLoadBalancerToSubnetsAsyncHelper(const Model::AttachLoadBalancerToSubnetsRequest& request, const AttachLoadBalancerToSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ConfigureHealthCheckAsyncHelper(const Model::ConfigureHealthCheckRequest& request, const ConfigureHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAppCookieStickinessPolicyAsyncHelper(const Model::CreateAppCookieStickinessPolicyRequest& request, const CreateAppCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLBCookieStickinessPolicyAsyncHelper(const Model::CreateLBCookieStickinessPolicyRequest& request, const CreateLBCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLoadBalancerAsyncHelper(const Model::CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLoadBalancerListenersAsyncHelper(const Model::CreateLoadBalancerListenersRequest& request, const CreateLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLoadBalancerPolicyAsyncHelper(const Model::CreateLoadBalancerPolicyRequest& request, const CreateLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLoadBalancerAsyncHelper(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLoadBalancerListenersAsyncHelper(const Model::DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLoadBalancerPolicyAsyncHelper(const Model::DeleteLoadBalancerPolicyRequest& request, const DeleteLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterInstancesFromLoadBalancerAsyncHelper(const Model::DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceHealthAsyncHelper(const Model::DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancerAttributesAsyncHelper(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancerPoliciesAsyncHelper(const Model::DescribeLoadBalancerPoliciesRequest& request, const DescribeLoadBalancerPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancerPolicyTypesAsyncHelper(const Model::DescribeLoadBalancerPolicyTypesRequest& request, const DescribeLoadBalancerPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetachLoadBalancerFromSubnetsAsyncHelper(const Model::DetachLoadBalancerFromSubnetsRequest& request, const DetachLoadBalancerFromSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableAvailabilityZonesForLoadBalancerAsyncHelper(const Model::DisableAvailabilityZonesForLoadBalancerRequest& request, const DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableAvailabilityZonesForLoadBalancerAsyncHelper(const Model::EnableAvailabilityZonesForLoadBalancerRequest& request, const EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyLoadBalancerAttributesAsyncHelper(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterInstancesWithLoadBalancerAsyncHelper(const Model::RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetLoadBalancerListenerSSLCertificateAsyncHelper(const Model::SetLoadBalancerListenerSSLCertificateRequest& request, const SetLoadBalancerListenerSSLCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetLoadBalancerPoliciesForBackendServerAsyncHelper(const Model::SetLoadBalancerPoliciesForBackendServerRequest& request, const SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetLoadBalancerPoliciesOfListenerAsyncHelper(const Model::SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>;
+        void init(const ElasticLoadBalancingClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
+        ElasticLoadBalancingClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ElasticLoadBalancing

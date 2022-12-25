@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EnvironmentParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EnvironmentParameter
+  class EnvironmentParameter
   {
   public:
-    EnvironmentParameter();
-    EnvironmentParameter(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EnvironmentParameter();
+    AWS_SAGEMAKER_API EnvironmentParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EnvironmentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_valueType;
-    bool m_valueTypeHasBeenSet;
+    bool m_valueTypeHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

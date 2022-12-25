@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/FeatureMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API FeatureMetadata
+  class FeatureMetadata
   {
   public:
-    FeatureMetadata();
-    FeatureMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FeatureMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API FeatureMetadata();
+    AWS_PI_API FeatureMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API FeatureMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -126,7 +126,7 @@ namespace Model
   private:
 
     FeatureStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

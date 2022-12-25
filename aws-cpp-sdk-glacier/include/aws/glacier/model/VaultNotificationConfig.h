@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/VaultNotificationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API VaultNotificationConfig
+  class VaultNotificationConfig
   {
   public:
-    VaultNotificationConfig();
-    VaultNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
-    VaultNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API VaultNotificationConfig();
+    AWS_GLACIER_API VaultNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API VaultNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_sNSTopic;
-    bool m_sNSTopicHasBeenSet;
+    bool m_sNSTopicHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_events;
-    bool m_eventsHasBeenSet;
+    bool m_eventsHasBeenSet = false;
   };
 
 } // namespace Model

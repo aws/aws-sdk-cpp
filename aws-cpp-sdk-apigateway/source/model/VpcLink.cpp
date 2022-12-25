@@ -68,7 +68,7 @@ VpcLink& VpcLink::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targetArns"))
   {
-    Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
+    Aws::Utils::Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
     for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
     {
       m_targetArns.push_back(targetArnsJsonList[targetArnsIndex].AsString());
@@ -127,7 +127,7 @@ JsonValue VpcLink::Jsonize() const
 
   if(m_targetArnsHasBeenSet)
   {
-   Array<JsonValue> targetArnsJsonList(m_targetArns.size());
+   Aws::Utils::Array<JsonValue> targetArnsJsonList(m_targetArns.size());
    for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
    {
      targetArnsJsonList[targetArnsIndex].AsString(m_targetArns[targetArnsIndex]);

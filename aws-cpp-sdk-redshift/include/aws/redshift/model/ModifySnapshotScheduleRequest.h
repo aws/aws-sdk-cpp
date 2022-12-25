@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFT_API ModifySnapshotScheduleRequest : public RedshiftRequest
+  class ModifySnapshotScheduleRequest : public RedshiftRequest
   {
   public:
-    ModifySnapshotScheduleRequest();
+    AWS_REDSHIFT_API ModifySnapshotScheduleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,10 +30,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifySnapshotSchedule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -135,10 +135,10 @@ namespace Model
   private:
 
     Aws::String m_scheduleIdentifier;
-    bool m_scheduleIdentifierHasBeenSet;
+    bool m_scheduleIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scheduleDefinitions;
-    bool m_scheduleDefinitionsHasBeenSet;
+    bool m_scheduleDefinitionsHasBeenSet = false;
   };
 
 } // namespace Model

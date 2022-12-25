@@ -32,52 +32,52 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PackageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API PackageDetails
+  class PackageDetails
   {
   public:
-    PackageDetails();
-    PackageDetails(Aws::Utils::Json::JsonView jsonValue);
-    PackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API PackageDetails();
+    AWS_OPENSEARCHSERVICE_API PackageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API PackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline PackageDetails& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline PackageDetails& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
 
     /**
-     * <p>Internal ID of the package.</p>
+     * <p>The unique identifier of the package.</p>
      */
     inline PackageDetails& WithPackageID(const char* value) { SetPackageID(value); return *this;}
 
@@ -124,32 +124,32 @@ namespace Model
 
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline const PackageType& GetPackageType() const{ return m_packageType; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline PackageDetails& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
 
     /**
-     * <p>Currently supports only TXT-DICTIONARY.</p>
+     * <p>The type of package.</p>
      */
     inline PackageDetails& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 
@@ -196,114 +196,136 @@ namespace Model
 
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline const PackageStatus& GetPackageStatus() const{ return m_packageStatus; }
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline bool PackageStatusHasBeenSet() const { return m_packageStatusHasBeenSet; }
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline void SetPackageStatus(const PackageStatus& value) { m_packageStatusHasBeenSet = true; m_packageStatus = value; }
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline void SetPackageStatus(PackageStatus&& value) { m_packageStatusHasBeenSet = true; m_packageStatus = std::move(value); }
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline PackageDetails& WithPackageStatus(const PackageStatus& value) { SetPackageStatus(value); return *this;}
 
     /**
-     * <p>Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE,
-     * DELETING, and DELETE_FAILED.</p>
+     * <p>Current status of the package.</p>
      */
     inline PackageDetails& WithPackageStatus(PackageStatus&& value) { SetPackageStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline PackageDetails& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp of when the package was created.</p>
+     * <p>The timestamp when the package was created.</p>
      */
     inline PackageDetails& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline PackageDetails& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
-    
+    /**
+     * <p>Date and time when the package was last updated.</p>
+     */
     inline PackageDetails& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline const Aws::String& GetAvailablePackageVersion() const{ return m_availablePackageVersion; }
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline bool AvailablePackageVersionHasBeenSet() const { return m_availablePackageVersionHasBeenSet; }
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline void SetAvailablePackageVersion(const Aws::String& value) { m_availablePackageVersionHasBeenSet = true; m_availablePackageVersion = value; }
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline void SetAvailablePackageVersion(Aws::String&& value) { m_availablePackageVersionHasBeenSet = true; m_availablePackageVersion = std::move(value); }
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline void SetAvailablePackageVersion(const char* value) { m_availablePackageVersionHasBeenSet = true; m_availablePackageVersion.assign(value); }
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline PackageDetails& WithAvailablePackageVersion(const Aws::String& value) { SetAvailablePackageVersion(value); return *this;}
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline PackageDetails& WithAvailablePackageVersion(Aws::String&& value) { SetAvailablePackageVersion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The package version.</p>
+     */
     inline PackageDetails& WithAvailablePackageVersion(const char* value) { SetAvailablePackageVersion(value); return *this;}
 
 
@@ -346,31 +368,31 @@ namespace Model
   private:
 
     Aws::String m_packageID;
-    bool m_packageIDHasBeenSet;
+    bool m_packageIDHasBeenSet = false;
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     PackageStatus m_packageStatus;
-    bool m_packageStatusHasBeenSet;
+    bool m_packageStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_availablePackageVersion;
-    bool m_availablePackageVersionHasBeenSet;
+    bool m_availablePackageVersionHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

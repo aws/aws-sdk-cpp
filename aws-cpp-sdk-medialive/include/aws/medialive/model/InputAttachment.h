@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputAttachment
+  class InputAttachment
   {
   public:
-    InputAttachment();
-    InputAttachment(Aws::Utils::Json::JsonView jsonValue);
-    InputAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputAttachment();
+    AWS_MEDIALIVE_API InputAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,16 +199,16 @@ namespace Model
   private:
 
     AutomaticInputFailoverSettings m_automaticInputFailoverSettings;
-    bool m_automaticInputFailoverSettingsHasBeenSet;
+    bool m_automaticInputFailoverSettingsHasBeenSet = false;
 
     Aws::String m_inputAttachmentName;
-    bool m_inputAttachmentNameHasBeenSet;
+    bool m_inputAttachmentNameHasBeenSet = false;
 
     Aws::String m_inputId;
-    bool m_inputIdHasBeenSet;
+    bool m_inputIdHasBeenSet = false;
 
     InputSettings m_inputSettings;
-    bool m_inputSettingsHasBeenSet;
+    bool m_inputSettingsHasBeenSet = false;
   };
 
 } // namespace Model

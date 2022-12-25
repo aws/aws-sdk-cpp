@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Elevation">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API Elevation
+  class Elevation
   {
   public:
-    Elevation();
-    Elevation(Aws::Utils::Json::JsonView jsonValue);
-    Elevation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API Elevation();
+    AWS_GROUNDSTATION_API Elevation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Elevation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     AngleUnits m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

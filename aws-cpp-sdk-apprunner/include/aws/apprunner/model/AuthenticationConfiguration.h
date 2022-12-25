@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/AuthenticationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API AuthenticationConfiguration
+  class AuthenticationConfiguration
   {
   public:
-    AuthenticationConfiguration();
-    AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API AuthenticationConfiguration();
+    AWS_APPRUNNER_API AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,10 +155,10 @@ namespace Model
   private:
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_accessRoleArn;
-    bool m_accessRoleArnHasBeenSet;
+    bool m_accessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

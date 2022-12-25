@@ -26,12 +26,12 @@ namespace ConnectContactLens
 {
 namespace Model
 {
-  class AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult
+  class ListRealtimeContactAnalysisSegmentsResult
   {
   public:
-    ListRealtimeContactAnalysisSegmentsResult();
-    ListRealtimeContactAnalysisSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRealtimeContactAnalysisSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult();
+    AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCONTACTLENS_API ListRealtimeContactAnalysisSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSService">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ECSService
+  class ECSService
   {
   public:
-    ECSService();
-    ECSService(Aws::Utils::Json::JsonView jsonValue);
-    ECSService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ECSService();
+    AWS_CODEDEPLOY_API ECSService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ECSService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_clusterName;
-    bool m_clusterNameHasBeenSet;
+    bool m_clusterNameHasBeenSet = false;
   };
 
 } // namespace Model

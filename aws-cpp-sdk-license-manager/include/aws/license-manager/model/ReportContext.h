@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ReportContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ReportContext
+  class ReportContext
   {
   public:
-    ReportContext();
-    ReportContext(Aws::Utils::Json::JsonView jsonValue);
-    ReportContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ReportContext();
+    AWS_LICENSEMANAGER_API ReportContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ReportContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_licenseConfigurationArns;
-    bool m_licenseConfigurationArnsHasBeenSet;
+    bool m_licenseConfigurationArnsHasBeenSet = false;
   };
 
 } // namespace Model

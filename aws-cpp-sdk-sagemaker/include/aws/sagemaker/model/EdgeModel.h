@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgeModel">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgeModel
+  class EdgeModel
   {
   public:
-    EdgeModel();
-    EdgeModel(Aws::Utils::Json::JsonView jsonValue);
-    EdgeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgeModel();
+    AWS_SAGEMAKER_API EdgeModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestSampleTime;
-    bool m_latestSampleTimeHasBeenSet;
+    bool m_latestSampleTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestInference;
-    bool m_latestInferenceHasBeenSet;
+    bool m_latestInferenceHasBeenSet = false;
   };
 
 } // namespace Model

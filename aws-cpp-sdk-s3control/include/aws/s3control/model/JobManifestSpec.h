@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobManifestSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobManifestSpec
+  class JobManifestSpec
   {
   public:
-    JobManifestSpec();
-    JobManifestSpec(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobManifestSpec& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestSpec();
+    AWS_S3CONTROL_API JobManifestSpec(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobManifestSpec& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -131,10 +131,10 @@ namespace Model
   private:
 
     JobManifestFormat m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::Vector<JobManifestFieldName> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
   };
 
 } // namespace Model

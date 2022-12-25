@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/StorageLensConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API StorageLensConfiguration
+  class StorageLensConfiguration
   {
   public:
-    StorageLensConfiguration();
-    StorageLensConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StorageLensConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensConfiguration();
+    AWS_S3CONTROL_API StorageLensConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API StorageLensConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -369,28 +369,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AccountLevel m_accountLevel;
-    bool m_accountLevelHasBeenSet;
+    bool m_accountLevelHasBeenSet = false;
 
     Include m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
 
     Exclude m_exclude;
-    bool m_excludeHasBeenSet;
+    bool m_excludeHasBeenSet = false;
 
     StorageLensDataExport m_dataExport;
-    bool m_dataExportHasBeenSet;
+    bool m_dataExportHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
 
     StorageLensAwsOrg m_awsOrg;
-    bool m_awsOrgHasBeenSet;
+    bool m_awsOrgHasBeenSet = false;
 
     Aws::String m_storageLensArn;
-    bool m_storageLensArnHasBeenSet;
+    bool m_storageLensArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SlackSourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SlackSourceProperties
+  class SlackSourceProperties
   {
   public:
-    SlackSourceProperties();
-    SlackSourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    SlackSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SlackSourceProperties();
+    AWS_APPFLOW_API SlackSourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SlackSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketWebsiteConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration
+  class AwsS3BucketWebsiteConfiguration
   {
   public:
-    AwsS3BucketWebsiteConfiguration();
-    AwsS3BucketWebsiteConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketWebsiteConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_errorDocument;
-    bool m_errorDocumentHasBeenSet;
+    bool m_errorDocumentHasBeenSet = false;
 
     Aws::String m_indexDocumentSuffix;
-    bool m_indexDocumentSuffixHasBeenSet;
+    bool m_indexDocumentSuffixHasBeenSet = false;
 
     AwsS3BucketWebsiteConfigurationRedirectTo m_redirectAllRequestsTo;
-    bool m_redirectAllRequestsToHasBeenSet;
+    bool m_redirectAllRequestsToHasBeenSet = false;
 
     Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule> m_routingRules;
-    bool m_routingRulesHasBeenSet;
+    bool m_routingRulesHasBeenSet = false;
   };
 
 } // namespace Model

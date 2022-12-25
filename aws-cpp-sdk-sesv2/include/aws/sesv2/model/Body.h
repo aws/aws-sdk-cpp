@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Body">AWS API
    * Reference</a></p>
    */
-  class AWS_SESV2_API Body
+  class Body
   {
   public:
-    Body();
-    Body(Aws::Utils::Json::JsonView jsonValue);
-    Body& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API Body();
+    AWS_SESV2_API Body(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Body& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Content m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Content m_html;
-    bool m_htmlHasBeenSet;
+    bool m_htmlHasBeenSet = false;
   };
 
 } // namespace Model

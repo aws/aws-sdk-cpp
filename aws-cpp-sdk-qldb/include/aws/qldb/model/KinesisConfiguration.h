@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/KinesisConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API KinesisConfiguration
+  class KinesisConfiguration
   {
   public:
-    KinesisConfiguration();
-    KinesisConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KinesisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API KinesisConfiguration();
+    AWS_QLDB_API KinesisConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API KinesisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_streamArn;
-    bool m_streamArnHasBeenSet;
+    bool m_streamArnHasBeenSet = false;
 
     bool m_aggregationEnabled;
-    bool m_aggregationEnabledHasBeenSet;
+    bool m_aggregationEnabledHasBeenSet = false;
   };
 
 } // namespace Model

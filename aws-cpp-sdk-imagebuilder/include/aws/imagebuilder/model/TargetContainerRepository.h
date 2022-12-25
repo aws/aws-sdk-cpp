@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TargetContainerRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API TargetContainerRepository
+  class TargetContainerRepository
   {
   public:
-    TargetContainerRepository();
-    TargetContainerRepository(Aws::Utils::Json::JsonView jsonValue);
-    TargetContainerRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API TargetContainerRepository();
+    AWS_IMAGEBUILDER_API TargetContainerRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API TargetContainerRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -121,10 +121,10 @@ namespace Model
   private:
 
     ContainerRepositoryService m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
   };
 
 } // namespace Model

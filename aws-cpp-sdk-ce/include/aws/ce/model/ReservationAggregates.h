@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationAggregates">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationAggregates
+  class ReservationAggregates
   {
   public:
-    ReservationAggregates();
-    ReservationAggregates(Aws::Utils::Json::JsonView jsonValue);
-    ReservationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationAggregates();
+    AWS_COSTEXPLORER_API ReservationAggregates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -841,55 +841,55 @@ namespace Model
   private:
 
     Aws::String m_utilizationPercentage;
-    bool m_utilizationPercentageHasBeenSet;
+    bool m_utilizationPercentageHasBeenSet = false;
 
     Aws::String m_utilizationPercentageInUnits;
-    bool m_utilizationPercentageInUnitsHasBeenSet;
+    bool m_utilizationPercentageInUnitsHasBeenSet = false;
 
     Aws::String m_purchasedHours;
-    bool m_purchasedHoursHasBeenSet;
+    bool m_purchasedHoursHasBeenSet = false;
 
     Aws::String m_purchasedUnits;
-    bool m_purchasedUnitsHasBeenSet;
+    bool m_purchasedUnitsHasBeenSet = false;
 
     Aws::String m_totalActualHours;
-    bool m_totalActualHoursHasBeenSet;
+    bool m_totalActualHoursHasBeenSet = false;
 
     Aws::String m_totalActualUnits;
-    bool m_totalActualUnitsHasBeenSet;
+    bool m_totalActualUnitsHasBeenSet = false;
 
     Aws::String m_unusedHours;
-    bool m_unusedHoursHasBeenSet;
+    bool m_unusedHoursHasBeenSet = false;
 
     Aws::String m_unusedUnits;
-    bool m_unusedUnitsHasBeenSet;
+    bool m_unusedUnitsHasBeenSet = false;
 
     Aws::String m_onDemandCostOfRIHoursUsed;
-    bool m_onDemandCostOfRIHoursUsedHasBeenSet;
+    bool m_onDemandCostOfRIHoursUsedHasBeenSet = false;
 
     Aws::String m_netRISavings;
-    bool m_netRISavingsHasBeenSet;
+    bool m_netRISavingsHasBeenSet = false;
 
     Aws::String m_totalPotentialRISavings;
-    bool m_totalPotentialRISavingsHasBeenSet;
+    bool m_totalPotentialRISavingsHasBeenSet = false;
 
     Aws::String m_amortizedUpfrontFee;
-    bool m_amortizedUpfrontFeeHasBeenSet;
+    bool m_amortizedUpfrontFeeHasBeenSet = false;
 
     Aws::String m_amortizedRecurringFee;
-    bool m_amortizedRecurringFeeHasBeenSet;
+    bool m_amortizedRecurringFeeHasBeenSet = false;
 
     Aws::String m_totalAmortizedFee;
-    bool m_totalAmortizedFeeHasBeenSet;
+    bool m_totalAmortizedFeeHasBeenSet = false;
 
     Aws::String m_rICostForUnusedHours;
-    bool m_rICostForUnusedHoursHasBeenSet;
+    bool m_rICostForUnusedHoursHasBeenSet = false;
 
     Aws::String m_realizedSavings;
-    bool m_realizedSavingsHasBeenSet;
+    bool m_realizedSavingsHasBeenSet = false;
 
     Aws::String m_unrealizedSavings;
-    bool m_unrealizedSavingsHasBeenSet;
+    bool m_unrealizedSavingsHasBeenSet = false;
   };
 
 } // namespace Model

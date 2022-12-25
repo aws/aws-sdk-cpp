@@ -25,12 +25,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Result
+  class UpdateFieldLevelEncryptionProfile2020_05_31Result
   {
   public:
-    UpdateFieldLevelEncryptionProfile2020_05_31Result();
-    UpdateFieldLevelEncryptionProfile2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateFieldLevelEncryptionProfile2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateFieldLevelEncryptionProfile2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -60,37 +60,37 @@ namespace Model
 
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the field-level encryption profile request. </p>
+     * <p>The result of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
 

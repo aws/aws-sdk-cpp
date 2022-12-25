@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/WorldFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API WorldFailure
+  class WorldFailure
   {
   public:
-    WorldFailure();
-    WorldFailure(Aws::Utils::Json::JsonView jsonValue);
-    WorldFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API WorldFailure();
+    AWS_ROBOMAKER_API WorldFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API WorldFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -183,13 +183,13 @@ namespace Model
   private:
 
     WorldGenerationJobErrorCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_sampleFailureReason;
-    bool m_sampleFailureReasonHasBeenSet;
+    bool m_sampleFailureReasonHasBeenSet = false;
 
     int m_failureCount;
-    bool m_failureCountHasBeenSet;
+    bool m_failureCountHasBeenSet = false;
   };
 
 } // namespace Model

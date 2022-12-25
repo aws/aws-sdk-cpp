@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/IssuerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API IssuerDetails
+  class IssuerDetails
   {
   public:
-    IssuerDetails();
-    IssuerDetails(Aws::Utils::Json::JsonView jsonValue);
-    IssuerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API IssuerDetails();
+    AWS_LICENSEMANAGER_API IssuerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API IssuerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_signKey;
-    bool m_signKeyHasBeenSet;
+    bool m_signKeyHasBeenSet = false;
 
     Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet;
+    bool m_keyFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StackSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API StackSummary
+  class StackSummary
   {
   public:
-    StackSummary();
-    StackSummary(Aws::Utils::Json::JsonView jsonValue);
-    StackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API StackSummary();
+    AWS_OPSWORKS_API StackSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API StackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,22 +243,22 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     int m_layersCount;
-    bool m_layersCountHasBeenSet;
+    bool m_layersCountHasBeenSet = false;
 
     int m_appsCount;
-    bool m_appsCountHasBeenSet;
+    bool m_appsCountHasBeenSet = false;
 
     InstancesCount m_instancesCount;
-    bool m_instancesCountHasBeenSet;
+    bool m_instancesCountHasBeenSet = false;
   };
 
 } // namespace Model

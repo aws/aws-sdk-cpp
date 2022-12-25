@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ContentBaseLocationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate
+  class S3ContentBaseLocationUpdate
   {
   public:
-    S3ContentBaseLocationUpdate();
-    S3ContentBaseLocationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    S3ContentBaseLocationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate();
+    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_bucketARNUpdate;
-    bool m_bucketARNUpdateHasBeenSet;
+    bool m_bucketARNUpdateHasBeenSet = false;
 
     Aws::String m_basePathUpdate;
-    bool m_basePathUpdateHasBeenSet;
+    bool m_basePathUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportGroupTrendStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ReportGroupTrendStats
+  class ReportGroupTrendStats
   {
   public:
-    ReportGroupTrendStats();
-    ReportGroupTrendStats(Aws::Utils::Json::JsonView jsonValue);
-    ReportGroupTrendStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ReportGroupTrendStats();
+    AWS_CODEBUILD_API ReportGroupTrendStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ReportGroupTrendStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_average;
-    bool m_averageHasBeenSet;
+    bool m_averageHasBeenSet = false;
 
     Aws::String m_max;
-    bool m_maxHasBeenSet;
+    bool m_maxHasBeenSet = false;
 
     Aws::String m_min;
-    bool m_minHasBeenSet;
+    bool m_minHasBeenSet = false;
   };
 
 } // namespace Model

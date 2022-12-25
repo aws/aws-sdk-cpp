@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerAccessLog">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerAccessLog
+  class AwsElbLoadBalancerAccessLog
   {
   public:
-    AwsElbLoadBalancerAccessLog();
-    AwsElbLoadBalancerAccessLog(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerAccessLog();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerAccessLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -176,16 +176,16 @@ namespace Model
   private:
 
     int m_emitInterval;
-    bool m_emitIntervalHasBeenSet;
+    bool m_emitIntervalHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3BucketPrefix;
-    bool m_s3BucketPrefixHasBeenSet;
+    bool m_s3BucketPrefixHasBeenSet = false;
   };
 
 } // namespace Model

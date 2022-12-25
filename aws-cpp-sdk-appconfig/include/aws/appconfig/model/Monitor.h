@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Monitor">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API Monitor
+  class Monitor
   {
   public:
-    Monitor();
-    Monitor(Aws::Utils::Json::JsonView jsonValue);
-    Monitor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API Monitor();
+    AWS_APPCONFIG_API Monitor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Monitor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_alarmArn;
-    bool m_alarmArnHasBeenSet;
+    bool m_alarmArnHasBeenSet = false;
 
     Aws::String m_alarmRoleArn;
-    bool m_alarmRoleArnHasBeenSet;
+    bool m_alarmRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

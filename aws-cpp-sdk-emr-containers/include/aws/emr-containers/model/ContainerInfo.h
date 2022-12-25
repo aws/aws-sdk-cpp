@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ContainerInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API ContainerInfo
+  class ContainerInfo
   {
   public:
-    ContainerInfo();
-    ContainerInfo(Aws::Utils::Json::JsonView jsonValue);
-    ContainerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API ContainerInfo();
+    AWS_EMRCONTAINERS_API ContainerInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API ContainerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -71,7 +71,7 @@ namespace Model
   private:
 
     EksInfo m_eksInfo;
-    bool m_eksInfoHasBeenSet;
+    bool m_eksInfoHasBeenSet = false;
   };
 
 } // namespace Model

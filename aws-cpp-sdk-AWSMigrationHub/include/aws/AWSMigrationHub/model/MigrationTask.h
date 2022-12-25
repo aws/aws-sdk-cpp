@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/MigrationTask">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API MigrationTask
+  class MigrationTask
   {
   public:
-    MigrationTask();
-    MigrationTask(Aws::Utils::Json::JsonView jsonValue);
-    MigrationTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API MigrationTask();
+    AWS_MIGRATIONHUB_API MigrationTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API MigrationTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_progressUpdateStream;
-    bool m_progressUpdateStreamHasBeenSet;
+    bool m_progressUpdateStreamHasBeenSet = false;
 
     Aws::String m_migrationTaskName;
-    bool m_migrationTaskNameHasBeenSet;
+    bool m_migrationTaskNameHasBeenSet = false;
 
     Task m_task;
-    bool m_taskHasBeenSet;
+    bool m_taskHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDateTime;
-    bool m_updateDateTimeHasBeenSet;
+    bool m_updateDateTimeHasBeenSet = false;
 
     Aws::Vector<ResourceAttribute> m_resourceAttributeList;
-    bool m_resourceAttributeListHasBeenSet;
+    bool m_resourceAttributeListHasBeenSet = false;
   };
 
 } // namespace Model

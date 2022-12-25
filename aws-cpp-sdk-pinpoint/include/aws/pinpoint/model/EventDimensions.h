@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventDimensions">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventDimensions
+  class EventDimensions
   {
   public:
-    EventDimensions();
-    EventDimensions(Aws::Utils::Json::JsonView jsonValue);
-    EventDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventDimensions();
+    AWS_PINPOINT_API EventDimensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -281,13 +281,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeDimension> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SetDimension m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, MetricDimension> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_SESV2_API ListContactListsRequest : public SESV2Request
+  class ListContactListsRequest : public SESV2Request
   {
   public:
-    ListContactListsRequest();
+    AWS_SESV2_API ListContactListsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListContactLists"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SESV2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SESV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -142,10 +142,10 @@ namespace Model
   private:
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

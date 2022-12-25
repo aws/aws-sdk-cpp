@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACESWEB_API UpdateNetworkSettingsRequest : public WorkSpacesWebRequest
+  class UpdateNetworkSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    UpdateNetworkSettingsRequest();
+    AWS_WORKSPACESWEB_API UpdateNetworkSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNetworkSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -318,19 +318,19 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

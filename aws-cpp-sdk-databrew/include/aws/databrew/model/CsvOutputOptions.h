@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CsvOutputOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API CsvOutputOptions
+  class CsvOutputOptions
   {
   public:
-    CsvOutputOptions();
-    CsvOutputOptions(Aws::Utils::Json::JsonView jsonValue);
-    CsvOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API CsvOutputOptions();
+    AWS_GLUEDATABREW_API CsvOutputOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API CsvOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
   };
 
 } // namespace Model

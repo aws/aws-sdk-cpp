@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API ListTagsForResourceRequest : public OrganizationsRequest
+  class ListTagsForResourceRequest : public OrganizationsRequest
   {
   public:
-    ListTagsForResourceRequest();
+    AWS_ORGANIZATIONS_API ListTagsForResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ORGANIZATIONS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -214,10 +214,10 @@ namespace Model
   private:
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

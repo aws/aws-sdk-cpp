@@ -12,6 +12,7 @@
 #include <aws/medialive/model/MotionGraphicsActivateScheduleActionSettings.h>
 #include <aws/medialive/model/MotionGraphicsDeactivateScheduleActionSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
+#include <aws/medialive/model/Scte35InputScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35TimeSignalScheduleActionSettings.h>
@@ -39,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ScheduleActionSettings
+  class ScheduleActionSettings
   {
   public:
-    ScheduleActionSettings();
-    ScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ScheduleActionSettings();
+    AWS_MEDIALIVE_API ScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -266,6 +267,37 @@ namespace Model
 
 
     /**
+     * Action to specify scte35 input
+     */
+    inline const Scte35InputScheduleActionSettings& GetScte35InputSettings() const{ return m_scte35InputSettings; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline bool Scte35InputSettingsHasBeenSet() const { return m_scte35InputSettingsHasBeenSet; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline void SetScte35InputSettings(const Scte35InputScheduleActionSettings& value) { m_scte35InputSettingsHasBeenSet = true; m_scte35InputSettings = value; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline void SetScte35InputSettings(Scte35InputScheduleActionSettings&& value) { m_scte35InputSettingsHasBeenSet = true; m_scte35InputSettings = std::move(value); }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline ScheduleActionSettings& WithScte35InputSettings(const Scte35InputScheduleActionSettings& value) { SetScte35InputSettings(value); return *this;}
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline ScheduleActionSettings& WithScte35InputSettings(Scte35InputScheduleActionSettings&& value) { SetScte35InputSettings(std::move(value)); return *this;}
+
+
+    /**
      * Action to insert SCTE-35 return_to_network message
      */
     inline const Scte35ReturnToNetworkScheduleActionSettings& GetScte35ReturnToNetworkSettings() const{ return m_scte35ReturnToNetworkSettings; }
@@ -422,40 +454,43 @@ namespace Model
   private:
 
     HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
-    bool m_hlsId3SegmentTaggingSettingsHasBeenSet;
+    bool m_hlsId3SegmentTaggingSettingsHasBeenSet = false;
 
     HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
-    bool m_hlsTimedMetadataSettingsHasBeenSet;
+    bool m_hlsTimedMetadataSettingsHasBeenSet = false;
 
     InputPrepareScheduleActionSettings m_inputPrepareSettings;
-    bool m_inputPrepareSettingsHasBeenSet;
+    bool m_inputPrepareSettingsHasBeenSet = false;
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
-    bool m_inputSwitchSettingsHasBeenSet;
+    bool m_inputSwitchSettingsHasBeenSet = false;
 
     MotionGraphicsActivateScheduleActionSettings m_motionGraphicsImageActivateSettings;
-    bool m_motionGraphicsImageActivateSettingsHasBeenSet;
+    bool m_motionGraphicsImageActivateSettingsHasBeenSet = false;
 
     MotionGraphicsDeactivateScheduleActionSettings m_motionGraphicsImageDeactivateSettings;
-    bool m_motionGraphicsImageDeactivateSettingsHasBeenSet;
+    bool m_motionGraphicsImageDeactivateSettingsHasBeenSet = false;
 
     PauseStateScheduleActionSettings m_pauseStateSettings;
-    bool m_pauseStateSettingsHasBeenSet;
+    bool m_pauseStateSettingsHasBeenSet = false;
+
+    Scte35InputScheduleActionSettings m_scte35InputSettings;
+    bool m_scte35InputSettingsHasBeenSet = false;
 
     Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
-    bool m_scte35ReturnToNetworkSettingsHasBeenSet;
+    bool m_scte35ReturnToNetworkSettingsHasBeenSet = false;
 
     Scte35SpliceInsertScheduleActionSettings m_scte35SpliceInsertSettings;
-    bool m_scte35SpliceInsertSettingsHasBeenSet;
+    bool m_scte35SpliceInsertSettingsHasBeenSet = false;
 
     Scte35TimeSignalScheduleActionSettings m_scte35TimeSignalSettings;
-    bool m_scte35TimeSignalSettingsHasBeenSet;
+    bool m_scte35TimeSignalSettingsHasBeenSet = false;
 
     StaticImageActivateScheduleActionSettings m_staticImageActivateSettings;
-    bool m_staticImageActivateSettingsHasBeenSet;
+    bool m_staticImageActivateSettingsHasBeenSet = false;
 
     StaticImageDeactivateScheduleActionSettings m_staticImageDeactivateSettings;
-    bool m_staticImageDeactivateSettingsHasBeenSet;
+    bool m_staticImageDeactivateSettingsHasBeenSet = false;
   };
 
 } // namespace Model

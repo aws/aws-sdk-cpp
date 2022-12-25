@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PrivateDnsPropertiesMutable">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutable
+  class PrivateDnsPropertiesMutable
   {
   public:
-    PrivateDnsPropertiesMutable();
-    PrivateDnsPropertiesMutable(Aws::Utils::Json::JsonView jsonValue);
-    PrivateDnsPropertiesMutable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutable();
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API PrivateDnsPropertiesMutable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,7 +76,7 @@ namespace Model
   private:
 
     SOA m_sOA;
-    bool m_sOAHasBeenSet;
+    bool m_sOAHasBeenSet = false;
   };
 
 } // namespace Model

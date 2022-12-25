@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MANAGEDGRAFANA_API DisassociateLicenseRequest : public ManagedGrafanaRequest
+  class DisassociateLicenseRequest : public ManagedGrafanaRequest
   {
   public:
-    DisassociateLicenseRequest();
+    AWS_MANAGEDGRAFANA_API DisassociateLicenseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateLicense"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -107,10 +107,10 @@ namespace Model
   private:
 
     LicenseType m_licenseType;
-    bool m_licenseTypeHasBeenSet;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

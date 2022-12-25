@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/TimestampValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API TimestampValue
+  class TimestampValue
   {
   public:
-    TimestampValue();
-    TimestampValue(Aws::Utils::Json::JsonView jsonValue);
-    TimestampValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API TimestampValue();
+    AWS_IOTEVENTSDATA_API TimestampValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API TimestampValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -58,7 +58,7 @@ namespace Model
   private:
 
     long long m_timeInMillis;
-    bool m_timeInMillisHasBeenSet;
+    bool m_timeInMillisHasBeenSet = false;
   };
 
 } // namespace Model

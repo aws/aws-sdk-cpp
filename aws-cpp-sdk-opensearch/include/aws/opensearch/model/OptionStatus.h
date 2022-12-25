@@ -25,46 +25,46 @@ namespace Model
 {
 
   /**
-   * <p>Provides the current status of the entity.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the current status of an entity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/OptionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API OptionStatus
+  class OptionStatus
   {
   public:
-    OptionStatus();
-    OptionStatus(Aws::Utils::Json::JsonView jsonValue);
-    OptionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API OptionStatus();
+    AWS_OPENSEARCHSERVICE_API OptionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API OptionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline OptionStatus& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The timestamp of when the entity was created.</p>
+     * <p>The timestamp when the entity was created.</p>
      */
     inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
@@ -122,72 +122,72 @@ namespace Model
 
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline const OptionState& GetState() const{ return m_state; }
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline void SetState(const OptionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline void SetState(OptionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline OptionStatus& WithState(const OptionState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Provides the <code>OptionState</code> for the domain. </p>
+     * <p>The state of the entity.</p>
      */
     inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the domain is being deleted.</p>
+     * <p>Indicates whether the entity is being deleted.</p>
      */
     inline bool GetPendingDeletion() const{ return m_pendingDeletion; }
 
     /**
-     * <p>Indicates whether the domain is being deleted.</p>
+     * <p>Indicates whether the entity is being deleted.</p>
      */
     inline bool PendingDeletionHasBeenSet() const { return m_pendingDeletionHasBeenSet; }
 
     /**
-     * <p>Indicates whether the domain is being deleted.</p>
+     * <p>Indicates whether the entity is being deleted.</p>
      */
     inline void SetPendingDeletion(bool value) { m_pendingDeletionHasBeenSet = true; m_pendingDeletion = value; }
 
     /**
-     * <p>Indicates whether the domain is being deleted.</p>
+     * <p>Indicates whether the entity is being deleted.</p>
      */
     inline OptionStatus& WithPendingDeletion(bool value) { SetPendingDeletion(value); return *this;}
 
   private:
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateDate;
-    bool m_updateDateHasBeenSet;
+    bool m_updateDateHasBeenSet = false;
 
     int m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
 
     OptionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     bool m_pendingDeletion;
-    bool m_pendingDeletionHasBeenSet;
+    bool m_pendingDeletionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CloudWatchMetricsDataSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API CloudWatchMetricsDataSummary
+  class CloudWatchMetricsDataSummary
   {
   public:
-    CloudWatchMetricsDataSummary();
-    CloudWatchMetricsDataSummary(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchMetricsDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API CloudWatchMetricsDataSummary();
+    AWS_DEVOPSGURU_API CloudWatchMetricsDataSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API CloudWatchMetricsDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Vector<TimestampMetricValuePair> m_timestampMetricValuePairList;
-    bool m_timestampMetricValuePairListHasBeenSet;
+    bool m_timestampMetricValuePairListHasBeenSet = false;
 
     CloudWatchMetricDataStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

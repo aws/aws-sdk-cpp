@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Permission">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Permission
+  class Permission
   {
   public:
-    Permission();
-    Permission(Aws::Utils::Json::JsonView jsonValue);
-    Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Permission();
+    AWS_ELASTICTRANSCODER_API Permission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -329,13 +329,13 @@ namespace Model
   private:
 
     Aws::String m_granteeType;
-    bool m_granteeTypeHasBeenSet;
+    bool m_granteeTypeHasBeenSet = false;
 
     Aws::String m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_access;
-    bool m_accessHasBeenSet;
+    bool m_accessHasBeenSet = false;
   };
 
 } // namespace Model

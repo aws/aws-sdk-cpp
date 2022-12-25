@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupRuleInput">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupRuleInput
+  class BackupRuleInput
   {
   public:
-    BackupRuleInput();
-    BackupRuleInput(Aws::Utils::Json::JsonView jsonValue);
-    BackupRuleInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupRuleInput();
+    AWS_BACKUP_API BackupRuleInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupRuleInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -199,25 +199,29 @@ namespace Model
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
      * <p>A value in minutes after a backup is scheduled before a job will be canceled
-     * if it doesn't start successfully. This value is optional.</p>
+     * if it doesn't start successfully. This value is optional. If this value is
+     * included, it must be at least 60 minutes to avoid errors.</p>
      */
     inline BackupRuleInput& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
@@ -255,9 +259,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -272,9 +275,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -289,9 +291,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -306,9 +307,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -323,9 +323,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -340,9 +339,8 @@ namespace Model
      * days. Therefore, the “retention” setting must be 90 days greater than the
      * “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold.</p>
-     * <p>Only resource types that support full Backup management can transition their
-     * backups to cold storage. Those resource types are listed in the "Full Backup
-     * management" section of the <a
+     * <p>Resource types that are able to be transitioned to cold storage are listed in
+     * the "Lifecycle to cold storage" section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      * Feature availability by resource</a> table. Backup ignores this expression for
      * other resource types.</p>
@@ -509,31 +507,31 @@ namespace Model
   private:
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::String m_targetBackupVaultName;
-    bool m_targetBackupVaultNameHasBeenSet;
+    bool m_targetBackupVaultNameHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     long long m_startWindowMinutes;
-    bool m_startWindowMinutesHasBeenSet;
+    bool m_startWindowMinutesHasBeenSet = false;
 
     long long m_completionWindowMinutes;
-    bool m_completionWindowMinutesHasBeenSet;
+    bool m_completionWindowMinutesHasBeenSet = false;
 
     Lifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-    bool m_recoveryPointTagsHasBeenSet;
+    bool m_recoveryPointTagsHasBeenSet = false;
 
     Aws::Vector<CopyAction> m_copyActions;
-    bool m_copyActionsHasBeenSet;
+    bool m_copyActionsHasBeenSet = false;
 
     bool m_enableContinuousBackup;
-    bool m_enableContinuousBackupHasBeenSet;
+    bool m_enableContinuousBackupHasBeenSet = false;
   };
 
 } // namespace Model

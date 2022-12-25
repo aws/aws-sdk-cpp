@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/LatLonOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API LatLonOptions
+  class LatLonOptions
   {
   public:
-    LatLonOptions();
-    LatLonOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LatLonOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API LatLonOptions();
+    AWS_CLOUDSEARCH_API LatLonOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API LatLonOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -194,22 +194,22 @@ namespace Model
   private:
 
     Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet;
+    bool m_defaultValueHasBeenSet = false;
 
     Aws::String m_sourceField;
-    bool m_sourceFieldHasBeenSet;
+    bool m_sourceFieldHasBeenSet = false;
 
     bool m_facetEnabled;
-    bool m_facetEnabledHasBeenSet;
+    bool m_facetEnabledHasBeenSet = false;
 
     bool m_searchEnabled;
-    bool m_searchEnabledHasBeenSet;
+    bool m_searchEnabledHasBeenSet = false;
 
     bool m_returnEnabled;
-    bool m_returnEnabledHasBeenSet;
+    bool m_returnEnabledHasBeenSet = false;
 
     bool m_sortEnabled;
-    bool m_sortEnabledHasBeenSet;
+    bool m_sortEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,18 +24,20 @@ namespace Model
 {
 
   /**
-   * <p>Object specifying a stream’s audio configuration.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Object specifying a stream’s audio configuration, as set up by the
+   * broadcaster (usually in an encoder). This is part of the
+   * <a>IngestConfiguration</a> object and used for monitoring stream
+   * health.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/AudioConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API AudioConfiguration
+  class AudioConfiguration
   {
   public:
-    AudioConfiguration();
-    AudioConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AudioConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API AudioConfiguration();
+    AWS_IVS_API AudioConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API AudioConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,16 +150,16 @@ namespace Model
   private:
 
     long long m_channels;
-    bool m_channelsHasBeenSet;
+    bool m_channelsHasBeenSet = false;
 
     Aws::String m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     long long m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     long long m_targetBitrate;
-    bool m_targetBitrateHasBeenSet;
+    bool m_targetBitrateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyRole">AWS API
    * Reference</a></p>
    */
-  class AWS_IAM_API PolicyRole
+  class PolicyRole
   {
   public:
-    PolicyRole();
-    PolicyRole(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyRole();
+    AWS_IAM_API PolicyRole(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IAM_API PolicyRole& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_roleName;
-    bool m_roleNameHasBeenSet;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_roleId;
-    bool m_roleIdHasBeenSet;
+    bool m_roleIdHasBeenSet = false;
   };
 
 } // namespace Model

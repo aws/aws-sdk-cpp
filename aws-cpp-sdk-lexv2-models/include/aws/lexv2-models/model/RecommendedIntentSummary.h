@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/RecommendedIntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API RecommendedIntentSummary
+  class RecommendedIntentSummary
   {
   public:
-    RecommendedIntentSummary();
-    RecommendedIntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecommendedIntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API RecommendedIntentSummary();
+    AWS_LEXMODELSV2_API RecommendedIntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API RecommendedIntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_intentId;
-    bool m_intentIdHasBeenSet;
+    bool m_intentIdHasBeenSet = false;
 
     Aws::String m_intentName;
-    bool m_intentNameHasBeenSet;
+    bool m_intentNameHasBeenSet = false;
 
     int m_sampleUtterancesCount;
-    bool m_sampleUtterancesCountHasBeenSet;
+    bool m_sampleUtterancesCountHasBeenSet = false;
   };
 
 } // namespace Model

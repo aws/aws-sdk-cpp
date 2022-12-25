@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API ReEncryptRequest : public KMSRequest
+  class ReEncryptRequest : public KMSRequest
   {
   public:
-    ReEncryptRequest();
+    AWS_KMS_API ReEncryptRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ReEncrypt"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1049,28 +1049,28 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_ciphertextBlob;
-    bool m_ciphertextBlobHasBeenSet;
+    bool m_ciphertextBlobHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceEncryptionContext;
-    bool m_sourceEncryptionContextHasBeenSet;
+    bool m_sourceEncryptionContextHasBeenSet = false;
 
     Aws::String m_sourceKeyId;
-    bool m_sourceKeyIdHasBeenSet;
+    bool m_sourceKeyIdHasBeenSet = false;
 
     Aws::String m_destinationKeyId;
-    bool m_destinationKeyIdHasBeenSet;
+    bool m_destinationKeyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_destinationEncryptionContext;
-    bool m_destinationEncryptionContextHasBeenSet;
+    bool m_destinationEncryptionContextHasBeenSet = false;
 
     EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm;
-    bool m_sourceEncryptionAlgorithmHasBeenSet;
+    bool m_sourceEncryptionAlgorithmHasBeenSet = false;
 
     EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm;
-    bool m_destinationEncryptionAlgorithmHasBeenSet;
+    bool m_destinationEncryptionAlgorithmHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_grantTokens;
-    bool m_grantTokensHasBeenSet;
+    bool m_grantTokensHasBeenSet = false;
   };
 
 } // namespace Model

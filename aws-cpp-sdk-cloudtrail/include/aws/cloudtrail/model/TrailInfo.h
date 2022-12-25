@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/TrailInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API TrailInfo
+  class TrailInfo
   {
   public:
-    TrailInfo();
-    TrailInfo(Aws::Utils::Json::JsonView jsonValue);
-    TrailInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API TrailInfo();
+    AWS_CLOUDTRAIL_API TrailInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API TrailInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_trailARN;
-    bool m_trailARNHasBeenSet;
+    bool m_trailARNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
   };
 
 } // namespace Model

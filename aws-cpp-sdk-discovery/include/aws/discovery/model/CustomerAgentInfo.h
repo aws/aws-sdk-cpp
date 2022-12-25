@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CustomerAgentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo
+  class CustomerAgentInfo
   {
   public:
-    CustomerAgentInfo();
-    CustomerAgentInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerAgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -184,25 +184,25 @@ namespace Model
   private:
 
     int m_activeAgents;
-    bool m_activeAgentsHasBeenSet;
+    bool m_activeAgentsHasBeenSet = false;
 
     int m_healthyAgents;
-    bool m_healthyAgentsHasBeenSet;
+    bool m_healthyAgentsHasBeenSet = false;
 
     int m_blackListedAgents;
-    bool m_blackListedAgentsHasBeenSet;
+    bool m_blackListedAgentsHasBeenSet = false;
 
     int m_shutdownAgents;
-    bool m_shutdownAgentsHasBeenSet;
+    bool m_shutdownAgentsHasBeenSet = false;
 
     int m_unhealthyAgents;
-    bool m_unhealthyAgentsHasBeenSet;
+    bool m_unhealthyAgentsHasBeenSet = false;
 
     int m_totalAgents;
-    bool m_totalAgentsHasBeenSet;
+    bool m_totalAgentsHasBeenSet = false;
 
     int m_unknownAgents;
-    bool m_unknownAgentsHasBeenSet;
+    bool m_unknownAgentsHasBeenSet = false;
   };
 
 } // namespace Model

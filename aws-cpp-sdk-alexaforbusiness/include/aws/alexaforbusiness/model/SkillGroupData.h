@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SkillGroupData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SkillGroupData
+  class SkillGroupData
   {
   public:
-    SkillGroupData();
-    SkillGroupData(Aws::Utils::Json::JsonView jsonValue);
-    SkillGroupData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SkillGroupData();
+    AWS_ALEXAFORBUSINESS_API SkillGroupData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SkillGroupData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_skillGroupArn;
-    bool m_skillGroupArnHasBeenSet;
+    bool m_skillGroupArnHasBeenSet = false;
 
     Aws::String m_skillGroupName;
-    bool m_skillGroupNameHasBeenSet;
+    bool m_skillGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,10 +26,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API CreateResourcePolicyStatementRequest : public LexModelsV2Request
+  class CreateResourcePolicyStatementRequest : public LexModelsV2Request
   {
   public:
-    CreateResourcePolicyStatementRequest();
+    AWS_LEXMODELSV2_API CreateResourcePolicyStatementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResourcePolicyStatement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_LEXMODELSV2_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -530,25 +530,25 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Effect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::Vector<Principal> m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_condition;
-    bool m_conditionHasBeenSet;
+    bool m_conditionHasBeenSet = false;
 
     Aws::String m_expectedRevisionId;
-    bool m_expectedRevisionIdHasBeenSet;
+    bool m_expectedRevisionIdHasBeenSet = false;
   };
 
 } // namespace Model

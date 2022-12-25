@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ServiceCatalogProvisioningDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ServiceCatalogProvisioningDetails
+  class ServiceCatalogProvisioningDetails
   {
   public:
-    ServiceCatalogProvisioningDetails();
-    ServiceCatalogProvisioningDetails(Aws::Utils::Json::JsonView jsonValue);
-    ServiceCatalogProvisioningDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ServiceCatalogProvisioningDetails();
+    AWS_SAGEMAKER_API ServiceCatalogProvisioningDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ServiceCatalogProvisioningDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_provisioningArtifactId;
-    bool m_provisioningArtifactIdHasBeenSet;
+    bool m_provisioningArtifactIdHasBeenSet = false;
 
     Aws::String m_pathId;
-    bool m_pathIdHasBeenSet;
+    bool m_pathIdHasBeenSet = false;
 
     Aws::Vector<ProvisioningParameter> m_provisioningParameters;
-    bool m_provisioningParametersHasBeenSet;
+    bool m_provisioningParametersHasBeenSet = false;
   };
 
 } // namespace Model

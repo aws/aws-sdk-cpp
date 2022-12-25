@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionListItem
+  class ExecutionListItem
   {
   public:
-    ExecutionListItem();
-    ExecutionListItem(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionListItem();
+    AWS_SFN_API ExecutionListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -302,25 +302,133 @@ namespace Model
      */
     inline ExecutionListItem& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline ExecutionListItem& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline ExecutionListItem& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Map Run. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API
+     * action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.</p>
+     */
+    inline ExecutionListItem& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+
+
+    /**
+     * <p>The total number of items processed in a child workflow execution. This field
+     * is returned only if <code>mapRunArn</code> was specified in the
+     * <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was
+     * specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.</p>
+     */
+    inline int GetItemCount() const{ return m_itemCount; }
+
+    /**
+     * <p>The total number of items processed in a child workflow execution. This field
+     * is returned only if <code>mapRunArn</code> was specified in the
+     * <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was
+     * specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.</p>
+     */
+    inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
+
+    /**
+     * <p>The total number of items processed in a child workflow execution. This field
+     * is returned only if <code>mapRunArn</code> was specified in the
+     * <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was
+     * specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.</p>
+     */
+    inline void SetItemCount(int value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
+
+    /**
+     * <p>The total number of items processed in a child workflow execution. This field
+     * is returned only if <code>mapRunArn</code> was specified in the
+     * <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was
+     * specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.</p>
+     */
+    inline ExecutionListItem& WithItemCount(int value) { SetItemCount(value); return *this;}
+
   private:
 
     Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet;
+    bool m_executionArnHasBeenSet = false;
 
     Aws::String m_stateMachineArn;
-    bool m_stateMachineArnHasBeenSet;
+    bool m_stateMachineArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ExecutionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopDate;
-    bool m_stopDateHasBeenSet;
+    bool m_stopDateHasBeenSet = false;
+
+    Aws::String m_mapRunArn;
+    bool m_mapRunArnHasBeenSet = false;
+
+    int m_itemCount;
+    bool m_itemCountHasBeenSet = false;
   };
 
 } // namespace Model

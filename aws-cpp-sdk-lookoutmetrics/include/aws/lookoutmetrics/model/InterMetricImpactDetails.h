@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/InterMetricImpactDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API InterMetricImpactDetails
+  class InterMetricImpactDetails
   {
   public:
-    InterMetricImpactDetails();
-    InterMetricImpactDetails(Aws::Utils::Json::JsonView jsonValue);
-    InterMetricImpactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails();
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -192,16 +192,16 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_anomalyGroupId;
-    bool m_anomalyGroupIdHasBeenSet;
+    bool m_anomalyGroupIdHasBeenSet = false;
 
     RelationshipType m_relationshipType;
-    bool m_relationshipTypeHasBeenSet;
+    bool m_relationshipTypeHasBeenSet = false;
 
     double m_contributionPercentage;
-    bool m_contributionPercentageHasBeenSet;
+    bool m_contributionPercentageHasBeenSet = false;
   };
 
 } // namespace Model

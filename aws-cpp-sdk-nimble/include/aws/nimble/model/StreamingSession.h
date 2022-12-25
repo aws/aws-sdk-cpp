@@ -6,10 +6,15 @@
 #pragma once
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/nimble/model/AutomaticTerminationMode.h>
+#include <aws/nimble/model/SessionBackupMode.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/nimble/model/SessionPersistenceMode.h>
 #include <aws/nimble/model/StreamingSessionState.h>
 #include <aws/nimble/model/StreamingSessionStatusCode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/nimble/model/VolumeConfiguration.h>
+#include <aws/nimble/model/VolumeRetentionMode.h>
 #include <utility>
 
 namespace Aws
@@ -33,83 +38,213 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSession">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamingSession
+  class StreamingSession
   {
   public:
-    StreamingSession();
-    StreamingSession(Aws::Utils::Json::JsonView jsonValue);
-    StreamingSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamingSession();
+    AWS_NIMBLESTUDIO_API StreamingSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamingSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingSession& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingSession& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and
+     * uniquely identifies it. ARNs are unique across all Regions.</p>
      */
     inline StreamingSession& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline const AutomaticTerminationMode& GetAutomaticTerminationMode() const{ return m_automaticTerminationMode; }
+
+    /**
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline bool AutomaticTerminationModeHasBeenSet() const { return m_automaticTerminationModeHasBeenSet; }
+
+    /**
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline void SetAutomaticTerminationMode(const AutomaticTerminationMode& value) { m_automaticTerminationModeHasBeenSet = true; m_automaticTerminationMode = value; }
+
+    /**
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline void SetAutomaticTerminationMode(AutomaticTerminationMode&& value) { m_automaticTerminationModeHasBeenSet = true; m_automaticTerminationMode = std::move(value); }
+
+    /**
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline StreamingSession& WithAutomaticTerminationMode(const AutomaticTerminationMode& value) { SetAutomaticTerminationMode(value); return *this;}
+
+    /**
+     * <p>Indicates if a streaming session created from this launch profile should be
+     * terminated automatically or retained without termination after being in a
+     * <code>STOPPED</code> state.</p> <ul> <li> <p>When <code>ACTIVATED</code>, the
+     * streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in
+     * <code>maxStoppedSessionLengthInMinutes</code>.</p> </li> <li> <p>When
+     * <code>DEACTIVATED</code>, the streaming session can remain in the
+     * <code>STOPPED</code> state indefinitely.</p> </li> </ul> <p>This parameter is
+     * only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * When allowed, the default value for this parameter is
+     * <code>DEACTIVATED</code>.</p>
+     */
+    inline StreamingSession& WithAutomaticTerminationMode(AutomaticTerminationMode&& value) { SetAutomaticTerminationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline const SessionBackupMode& GetBackupMode() const{ return m_backupMode; }
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline bool BackupModeHasBeenSet() const { return m_backupModeHasBeenSet; }
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline void SetBackupMode(const SessionBackupMode& value) { m_backupModeHasBeenSet = true; m_backupMode = value; }
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline void SetBackupMode(SessionBackupMode&& value) { m_backupModeHasBeenSet = true; m_backupMode = std::move(value); }
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline StreamingSession& WithBackupMode(const SessionBackupMode& value) { SetBackupMode(value); return *this;}
+
+    /**
+     * <p>Shows the current backup setting of the session.</p>
+     */
+    inline StreamingSession& WithBackupMode(SessionBackupMode&& value) { SetBackupMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StreamingSession& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
+     * <p>The ISO timestamp in seconds for when the resource was created.</p>
      */
     inline StreamingSession& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -246,6 +381,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of backups of a streaming session that you can have. When
+     * the maximum number of backups is reached, the oldest backup is deleted.</p>
+     */
+    inline int GetMaxBackupsToRetain() const{ return m_maxBackupsToRetain; }
+
+    /**
+     * <p>The maximum number of backups of a streaming session that you can have. When
+     * the maximum number of backups is reached, the oldest backup is deleted.</p>
+     */
+    inline bool MaxBackupsToRetainHasBeenSet() const { return m_maxBackupsToRetainHasBeenSet; }
+
+    /**
+     * <p>The maximum number of backups of a streaming session that you can have. When
+     * the maximum number of backups is reached, the oldest backup is deleted.</p>
+     */
+    inline void SetMaxBackupsToRetain(int value) { m_maxBackupsToRetainHasBeenSet = true; m_maxBackupsToRetain = value; }
+
+    /**
+     * <p>The maximum number of backups of a streaming session that you can have. When
+     * the maximum number of backups is reached, the oldest backup is deleted.</p>
+     */
+    inline StreamingSession& WithMaxBackupsToRetain(int value) { SetMaxBackupsToRetain(value); return *this;}
+
+
+    /**
      * <p>The user ID of the user that owns the streaming session. The user that owns
      * the session will be logging into the session and interacting with the virtual
      * workstation.</p>
@@ -344,32 +504,75 @@ namespace Model
 
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline const SessionPersistenceMode& GetSessionPersistenceMode() const{ return m_sessionPersistenceMode; }
+
+    /**
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline bool SessionPersistenceModeHasBeenSet() const { return m_sessionPersistenceModeHasBeenSet; }
+
+    /**
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline void SetSessionPersistenceMode(const SessionPersistenceMode& value) { m_sessionPersistenceModeHasBeenSet = true; m_sessionPersistenceMode = value; }
+
+    /**
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline void SetSessionPersistenceMode(SessionPersistenceMode&& value) { m_sessionPersistenceModeHasBeenSet = true; m_sessionPersistenceMode = std::move(value); }
+
+    /**
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline StreamingSession& WithSessionPersistenceMode(const SessionPersistenceMode& value) { SetSessionPersistenceMode(value); return *this;}
+
+    /**
+     * <p>Determine if a streaming session created from this launch profile can
+     * configure persistent storage. This means that <code>volumeConfiguration</code>
+     * and <code>automaticTerminationMode</code> are configured.</p>
+     */
+    inline StreamingSession& WithSessionPersistenceMode(SessionPersistenceMode&& value) { SetSessionPersistenceMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline StreamingSession& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
 
     /**
-     * <p>The time the session entered START_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>START_IN_PROGRESS</code> state.</p>
      */
     inline StreamingSession& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
@@ -413,6 +616,47 @@ namespace Model
      * <p>The user ID of the user that started the streaming session.</p>
      */
     inline StreamingSession& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
+
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline const Aws::String& GetStartedFromBackupId() const{ return m_startedFromBackupId; }
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline bool StartedFromBackupIdHasBeenSet() const { return m_startedFromBackupIdHasBeenSet; }
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline void SetStartedFromBackupId(const Aws::String& value) { m_startedFromBackupIdHasBeenSet = true; m_startedFromBackupId = value; }
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline void SetStartedFromBackupId(Aws::String&& value) { m_startedFromBackupIdHasBeenSet = true; m_startedFromBackupId = std::move(value); }
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline void SetStartedFromBackupId(const char* value) { m_startedFromBackupIdHasBeenSet = true; m_startedFromBackupId.assign(value); }
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline StreamingSession& WithStartedFromBackupId(const Aws::String& value) { SetStartedFromBackupId(value); return *this;}
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline StreamingSession& WithStartedFromBackupId(Aws::String&& value) { SetStartedFromBackupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The backup ID used to restore a streaming session.</p>
+     */
+    inline StreamingSession& WithStartedFromBackupId(const char* value) { SetStartedFromBackupId(value); return *this;}
 
 
     /**
@@ -556,32 +800,32 @@ namespace Model
 
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline const Aws::Utils::DateTime& GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline void SetStoppedAt(Aws::Utils::DateTime&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = std::move(value); }
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline StreamingSession& WithStoppedAt(const Aws::Utils::DateTime& value) { SetStoppedAt(value); return *this;}
 
     /**
-     * <p>The time the session entered STOP_IN_PROGRESS state.</p>
+     * <p>The time the session entered <code>STOP_IN_PROGRESS</code> state.</p>
      */
     inline StreamingSession& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(std::move(value)); return *this;}
 
@@ -669,79 +913,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline StreamingSession& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -785,32 +1029,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline StreamingSession& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the resource was updated.</p>
+     * <p>The ISO timestamp in seconds for when the resource was updated.</p>
      */
     inline StreamingSession& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -855,67 +1099,168 @@ namespace Model
      */
     inline StreamingSession& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
 
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline const VolumeConfiguration& GetVolumeConfiguration() const{ return m_volumeConfiguration; }
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline bool VolumeConfigurationHasBeenSet() const { return m_volumeConfigurationHasBeenSet; }
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline void SetVolumeConfiguration(const VolumeConfiguration& value) { m_volumeConfigurationHasBeenSet = true; m_volumeConfiguration = value; }
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline void SetVolumeConfiguration(VolumeConfiguration&& value) { m_volumeConfigurationHasBeenSet = true; m_volumeConfiguration = std::move(value); }
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline StreamingSession& WithVolumeConfiguration(const VolumeConfiguration& value) { SetVolumeConfiguration(value); return *this;}
+
+    /**
+     * <p>Custom volume configuration for the root volumes that are attached to
+     * streaming sessions.</p> <p>This parameter is only allowed when
+     * <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+     */
+    inline StreamingSession& WithVolumeConfiguration(VolumeConfiguration&& value) { SetVolumeConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline const VolumeRetentionMode& GetVolumeRetentionMode() const{ return m_volumeRetentionMode; }
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline bool VolumeRetentionModeHasBeenSet() const { return m_volumeRetentionModeHasBeenSet; }
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline void SetVolumeRetentionMode(const VolumeRetentionMode& value) { m_volumeRetentionModeHasBeenSet = true; m_volumeRetentionMode = value; }
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline void SetVolumeRetentionMode(VolumeRetentionMode&& value) { m_volumeRetentionModeHasBeenSet = true; m_volumeRetentionMode = std::move(value); }
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline StreamingSession& WithVolumeRetentionMode(const VolumeRetentionMode& value) { SetVolumeRetentionMode(value); return *this;}
+
+    /**
+     * <p>Determine if an EBS volume created from this streaming session will be backed
+     * up.</p>
+     */
+    inline StreamingSession& WithVolumeRetentionMode(VolumeRetentionMode&& value) { SetVolumeRetentionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
+
+    AutomaticTerminationMode m_automaticTerminationMode;
+    bool m_automaticTerminationModeHasBeenSet = false;
+
+    SessionBackupMode m_backupMode;
+    bool m_backupModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_ec2InstanceType;
-    bool m_ec2InstanceTypeHasBeenSet;
+    bool m_ec2InstanceTypeHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
+
+    int m_maxBackupsToRetain;
+    bool m_maxBackupsToRetainHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
+
+    SessionPersistenceMode m_sessionPersistenceMode;
+    bool m_sessionPersistenceModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
+
+    Aws::String m_startedFromBackupId;
+    bool m_startedFromBackupIdHasBeenSet = false;
 
     StreamingSessionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StreamingSessionStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopAt;
-    bool m_stopAtHasBeenSet;
+    bool m_stopAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     Aws::String m_stoppedBy;
-    bool m_stoppedByHasBeenSet;
+    bool m_stoppedByHasBeenSet = false;
 
     Aws::String m_streamingImageId;
-    bool m_streamingImageIdHasBeenSet;
+    bool m_streamingImageIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminateAt;
-    bool m_terminateAtHasBeenSet;
+    bool m_terminateAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
+
+    VolumeConfiguration m_volumeConfiguration;
+    bool m_volumeConfigurationHasBeenSet = false;
+
+    VolumeRetentionMode m_volumeRetentionMode;
+    bool m_volumeRetentionModeHasBeenSet = false;
   };
 
 } // namespace Model

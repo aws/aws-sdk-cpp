@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTSERVERLESS_API ListUsageLimitsRequest : public RedshiftServerlessRequest
+  class ListUsageLimitsRequest : public RedshiftServerlessRequest
   {
   public:
-    ListUsageLimitsRequest();
+    AWS_REDSHIFTSERVERLESS_API ListUsageLimitsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListUsageLimits"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline ListUsageLimitsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline ListUsageLimitsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>If your initial <code>ListUsageLimits</code> operation returns a
      * <code>nextToken</code>, you can include the returned <code>nextToken</code> in
-     * subsequent <code>ListUsageLimits</code> operations, which returns results in the
+     * following <code>ListUsageLimits</code> operations, which returns results in the
      * next page. </p>
      */
     inline ListUsageLimitsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
@@ -211,16 +211,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     UsageLimitUsageType m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

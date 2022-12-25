@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ObjectTypes">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ObjectTypes
+  class ObjectTypes
   {
   public:
-    ObjectTypes();
-    ObjectTypes(Aws::Utils::Json::JsonView jsonValue);
-    ObjectTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ObjectTypes();
+    AWS_CODECOMMIT_API ObjectTypes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ObjectTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -133,13 +133,13 @@ namespace Model
   private:
 
     ObjectTypeEnum m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     ObjectTypeEnum m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     ObjectTypeEnum m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

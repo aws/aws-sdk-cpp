@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseBlueprint">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseBlueprint
+  class RelationalDatabaseBlueprint
   {
   public:
-    RelationalDatabaseBlueprint();
-    RelationalDatabaseBlueprint(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseBlueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint();
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -283,22 +283,22 @@ namespace Model
   private:
 
     Aws::String m_blueprintId;
-    bool m_blueprintIdHasBeenSet;
+    bool m_blueprintIdHasBeenSet = false;
 
     RelationalDatabaseEngine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_engineDescription;
-    bool m_engineDescriptionHasBeenSet;
+    bool m_engineDescriptionHasBeenSet = false;
 
     Aws::String m_engineVersionDescription;
-    bool m_engineVersionDescriptionHasBeenSet;
+    bool m_engineVersionDescriptionHasBeenSet = false;
 
     bool m_isEngineDefault;
-    bool m_isEngineDefaultHasBeenSet;
+    bool m_isEngineDefaultHasBeenSet = false;
   };
 
 } // namespace Model

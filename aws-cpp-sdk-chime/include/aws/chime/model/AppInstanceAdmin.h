@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdmin">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AppInstanceAdmin
+  class AppInstanceAdmin
   {
   public:
-    AppInstanceAdmin();
-    AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AppInstanceAdmin();
+    AWS_CHIME_API AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Identity m_admin;
-    bool m_adminHasBeenSet;
+    bool m_adminHasBeenSet = false;
 
     Aws::String m_appInstanceArn;
-    bool m_appInstanceArnHasBeenSet;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
-    bool m_createdTimestampHasBeenSet;
+    bool m_createdTimestampHasBeenSet = false;
   };
 
 } // namespace Model

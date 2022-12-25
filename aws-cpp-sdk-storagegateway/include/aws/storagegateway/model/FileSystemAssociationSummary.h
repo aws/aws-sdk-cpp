@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileSystemAssociationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API FileSystemAssociationSummary
+  class FileSystemAssociationSummary
   {
   public:
-    FileSystemAssociationSummary();
-    FileSystemAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API FileSystemAssociationSummary();
+    AWS_STORAGEGATEWAY_API FileSystemAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API FileSystemAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_fileSystemAssociationId;
-    bool m_fileSystemAssociationIdHasBeenSet;
+    bool m_fileSystemAssociationIdHasBeenSet = false;
 
     Aws::String m_fileSystemAssociationARN;
-    bool m_fileSystemAssociationARNHasBeenSet;
+    bool m_fileSystemAssociationARNHasBeenSet = false;
 
     Aws::String m_fileSystemAssociationStatus;
-    bool m_fileSystemAssociationStatusHasBeenSet;
+    bool m_fileSystemAssociationStatusHasBeenSet = false;
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
   };
 
 } // namespace Model

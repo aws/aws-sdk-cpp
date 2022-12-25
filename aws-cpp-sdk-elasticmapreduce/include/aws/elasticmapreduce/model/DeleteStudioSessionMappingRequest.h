@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EMR_API DeleteStudioSessionMappingRequest : public EMRRequest
+  class DeleteStudioSessionMappingRequest : public EMRRequest
   {
   public:
-    DeleteStudioSessionMappingRequest();
+    AWS_EMR_API DeleteStudioSessionMappingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteStudioSessionMapping"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EMR_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -293,16 +293,16 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_identityId;
-    bool m_identityIdHasBeenSet;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_identityName;
-    bool m_identityNameHasBeenSet;
+    bool m_identityNameHasBeenSet = false;
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
   };
 
 } // namespace Model

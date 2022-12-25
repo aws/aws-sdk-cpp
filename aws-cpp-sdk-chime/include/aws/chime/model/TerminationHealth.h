@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TerminationHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API TerminationHealth
+  class TerminationHealth
   {
   public:
-    TerminationHealth();
-    TerminationHealth(Aws::Utils::Json::JsonView jsonValue);
-    TerminationHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API TerminationHealth();
+    AWS_CHIME_API TerminationHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API TerminationHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
   };
 
 } // namespace Model

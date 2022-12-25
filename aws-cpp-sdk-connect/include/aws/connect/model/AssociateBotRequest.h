@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECT_API AssociateBotRequest : public ConnectRequest
+  class AssociateBotRequest : public ConnectRequest
   {
   public:
-    AssociateBotRequest();
+    AWS_CONNECT_API AssociateBotRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AssociateBot"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     LexBot m_lexBot;
-    bool m_lexBotHasBeenSet;
+    bool m_lexBotHasBeenSet = false;
 
     LexV2Bot m_lexV2Bot;
-    bool m_lexV2BotHasBeenSet;
+    bool m_lexV2BotHasBeenSet = false;
   };
 
 } // namespace Model

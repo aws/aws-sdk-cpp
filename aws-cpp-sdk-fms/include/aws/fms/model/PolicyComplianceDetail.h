@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PolicyComplianceDetail
+  class PolicyComplianceDetail
   {
   public:
-    PolicyComplianceDetail();
-    PolicyComplianceDetail(Aws::Utils::Json::JsonView jsonValue);
-    PolicyComplianceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PolicyComplianceDetail();
+    AWS_FMS_API PolicyComplianceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PolicyComplianceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -354,25 +354,25 @@ namespace Model
   private:
 
     Aws::String m_policyOwner;
-    bool m_policyOwnerHasBeenSet;
+    bool m_policyOwnerHasBeenSet = false;
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_memberAccount;
-    bool m_memberAccountHasBeenSet;
+    bool m_memberAccountHasBeenSet = false;
 
     Aws::Vector<ComplianceViolator> m_violators;
-    bool m_violatorsHasBeenSet;
+    bool m_violatorsHasBeenSet = false;
 
     bool m_evaluationLimitExceeded;
-    bool m_evaluationLimitExceededHasBeenSet;
+    bool m_evaluationLimitExceededHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiredAt;
-    bool m_expiredAtHasBeenSet;
+    bool m_expiredAtHasBeenSet = false;
 
     Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
-    bool m_issueInfoMapHasBeenSet;
+    bool m_issueInfoMapHasBeenSet = false;
   };
 
 } // namespace Model

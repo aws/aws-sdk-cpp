@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/WAFEntityMigrationException">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API WAFEntityMigrationException
+  class WAFEntityMigrationException
   {
   public:
-    WAFEntityMigrationException();
-    WAFEntityMigrationException(Aws::Utils::Json::JsonView jsonValue);
-    WAFEntityMigrationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API WAFEntityMigrationException();
+    AWS_WAF_API WAFEntityMigrationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API WAFEntityMigrationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
@@ -122,13 +122,13 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     MigrationErrorType m_migrationErrorType;
-    bool m_migrationErrorTypeHasBeenSet;
+    bool m_migrationErrorTypeHasBeenSet = false;
 
     Aws::String m_migrationErrorReason;
-    bool m_migrationErrorReasonHasBeenSet;
+    bool m_migrationErrorReasonHasBeenSet = false;
   };
 
 } // namespace Model

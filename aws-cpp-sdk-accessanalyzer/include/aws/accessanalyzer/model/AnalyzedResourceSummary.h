@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AnalyzedResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AnalyzedResourceSummary
+  class AnalyzedResourceSummary
   {
   public:
-    AnalyzedResourceSummary();
-    AnalyzedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    AnalyzedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AnalyzedResourceSummary();
+    AWS_ACCESSANALYZER_API AnalyzedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AnalyzedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_resourceOwnerAccount;
-    bool m_resourceOwnerAccountHasBeenSet;
+    bool m_resourceOwnerAccountHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

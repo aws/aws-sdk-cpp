@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZoneRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneRequest : public Route53Request
+  class ListTrafficPolicyInstancesByHostedZoneRequest : public Route53Request
   {
   public:
-    ListTrafficPolicyInstancesByHostedZoneRequest();
+    AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTrafficPolicyInstancesByHostedZone"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -375,16 +375,16 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_trafficPolicyInstanceNameMarker;
-    bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
     RRType m_trafficPolicyInstanceTypeMarker;
-    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
   };
 
 } // namespace Model

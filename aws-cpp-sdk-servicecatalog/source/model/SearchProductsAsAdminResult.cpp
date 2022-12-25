@@ -30,7 +30,7 @@ SearchProductsAsAdminResult& SearchProductsAsAdminResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProductViewDetails"))
   {
-    Array<JsonView> productViewDetailsJsonList = jsonValue.GetArray("ProductViewDetails");
+    Aws::Utils::Array<JsonView> productViewDetailsJsonList = jsonValue.GetArray("ProductViewDetails");
     for(unsigned productViewDetailsIndex = 0; productViewDetailsIndex < productViewDetailsJsonList.GetLength(); ++productViewDetailsIndex)
     {
       m_productViewDetails.push_back(productViewDetailsJsonList[productViewDetailsIndex].AsObject());

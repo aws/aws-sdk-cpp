@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SqsAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API SqsAction
+  class SqsAction
   {
   public:
-    SqsAction();
-    SqsAction(Aws::Utils::Json::JsonView jsonValue);
-    SqsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SqsAction();
+    AWS_IOT_API SqsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SqsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -143,13 +143,13 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     bool m_useBase64;
-    bool m_useBase64HasBeenSet;
+    bool m_useBase64HasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,21 +24,21 @@ namespace Model
 
   /**
    * <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP
-   * response header and the header’s value.</p> <p>For more information about the
+   * response header and the header's value.</p> <p>For more information about the
    * <code>Referrer-Policy</code> HTTP response header, see <a
    * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
    * in the MDN Web Docs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyReferrerPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy
+  class ResponseHeadersPolicyReferrerPolicy
   {
   public:
-    ResponseHeadersPolicyReferrerPolicy();
-    ResponseHeadersPolicyReferrerPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyReferrerPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyReferrerPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -157,10 +157,10 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     ReferrerPolicyList m_referrerPolicy;
-    bool m_referrerPolicyHasBeenSet;
+    bool m_referrerPolicyHasBeenSet = false;
   };
 
 } // namespace Model

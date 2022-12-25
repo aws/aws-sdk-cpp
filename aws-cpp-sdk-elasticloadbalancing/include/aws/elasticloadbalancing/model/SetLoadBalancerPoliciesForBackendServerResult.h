@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServerOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerResult
+  class SetLoadBalancerPoliciesForBackendServerResult
   {
   public:
-    SetLoadBalancerPoliciesForBackendServerResult();
-    SetLoadBalancerPoliciesForBackendServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetLoadBalancerPoliciesForBackendServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerResult();
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

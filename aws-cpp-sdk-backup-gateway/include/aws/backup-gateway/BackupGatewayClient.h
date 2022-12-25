@@ -5,148 +5,16 @@
 
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
-#include <aws/backup-gateway/BackupGatewayErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/backup-gateway/model/AssociateGatewayToServerResult.h>
-#include <aws/backup-gateway/model/CreateGatewayResult.h>
-#include <aws/backup-gateway/model/DeleteGatewayResult.h>
-#include <aws/backup-gateway/model/DeleteHypervisorResult.h>
-#include <aws/backup-gateway/model/DisassociateGatewayFromServerResult.h>
-#include <aws/backup-gateway/model/GetGatewayResult.h>
-#include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
-#include <aws/backup-gateway/model/ListGatewaysResult.h>
-#include <aws/backup-gateway/model/ListHypervisorsResult.h>
-#include <aws/backup-gateway/model/ListTagsForResourceResult.h>
-#include <aws/backup-gateway/model/ListVirtualMachinesResult.h>
-#include <aws/backup-gateway/model/PutMaintenanceStartTimeResult.h>
-#include <aws/backup-gateway/model/TagResourceResult.h>
-#include <aws/backup-gateway/model/TestHypervisorConfigurationResult.h>
-#include <aws/backup-gateway/model/UntagResourceResult.h>
-#include <aws/backup-gateway/model/UpdateGatewayInformationResult.h>
-#include <aws/backup-gateway/model/UpdateGatewaySoftwareNowResult.h>
-#include <aws/backup-gateway/model/UpdateHypervisorResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace BackupGateway
 {
-
-namespace Model
-{
-        class AssociateGatewayToServerRequest;
-        class CreateGatewayRequest;
-        class DeleteGatewayRequest;
-        class DeleteHypervisorRequest;
-        class DisassociateGatewayFromServerRequest;
-        class GetGatewayRequest;
-        class ImportHypervisorConfigurationRequest;
-        class ListGatewaysRequest;
-        class ListHypervisorsRequest;
-        class ListTagsForResourceRequest;
-        class ListVirtualMachinesRequest;
-        class PutMaintenanceStartTimeRequest;
-        class TagResourceRequest;
-        class TestHypervisorConfigurationRequest;
-        class UntagResourceRequest;
-        class UpdateGatewayInformationRequest;
-        class UpdateGatewaySoftwareNowRequest;
-        class UpdateHypervisorRequest;
-
-        typedef Aws::Utils::Outcome<AssociateGatewayToServerResult, BackupGatewayError> AssociateGatewayToServerOutcome;
-        typedef Aws::Utils::Outcome<CreateGatewayResult, BackupGatewayError> CreateGatewayOutcome;
-        typedef Aws::Utils::Outcome<DeleteGatewayResult, BackupGatewayError> DeleteGatewayOutcome;
-        typedef Aws::Utils::Outcome<DeleteHypervisorResult, BackupGatewayError> DeleteHypervisorOutcome;
-        typedef Aws::Utils::Outcome<DisassociateGatewayFromServerResult, BackupGatewayError> DisassociateGatewayFromServerOutcome;
-        typedef Aws::Utils::Outcome<GetGatewayResult, BackupGatewayError> GetGatewayOutcome;
-        typedef Aws::Utils::Outcome<ImportHypervisorConfigurationResult, BackupGatewayError> ImportHypervisorConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListGatewaysResult, BackupGatewayError> ListGatewaysOutcome;
-        typedef Aws::Utils::Outcome<ListHypervisorsResult, BackupGatewayError> ListHypervisorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BackupGatewayError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListVirtualMachinesResult, BackupGatewayError> ListVirtualMachinesOutcome;
-        typedef Aws::Utils::Outcome<PutMaintenanceStartTimeResult, BackupGatewayError> PutMaintenanceStartTimeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, BackupGatewayError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestHypervisorConfigurationResult, BackupGatewayError> TestHypervisorConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, BackupGatewayError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, BackupGatewayError> UpdateGatewayInformationOutcome;
-        typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, BackupGatewayError> UpdateGatewaySoftwareNowOutcome;
-        typedef Aws::Utils::Outcome<UpdateHypervisorResult, BackupGatewayError> UpdateHypervisorOutcome;
-
-        typedef std::future<AssociateGatewayToServerOutcome> AssociateGatewayToServerOutcomeCallable;
-        typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
-        typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
-        typedef std::future<DeleteHypervisorOutcome> DeleteHypervisorOutcomeCallable;
-        typedef std::future<DisassociateGatewayFromServerOutcome> DisassociateGatewayFromServerOutcomeCallable;
-        typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
-        typedef std::future<ImportHypervisorConfigurationOutcome> ImportHypervisorConfigurationOutcomeCallable;
-        typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
-        typedef std::future<ListHypervisorsOutcome> ListHypervisorsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListVirtualMachinesOutcome> ListVirtualMachinesOutcomeCallable;
-        typedef std::future<PutMaintenanceStartTimeOutcome> PutMaintenanceStartTimeOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TestHypervisorConfigurationOutcome> TestHypervisorConfigurationOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
-        typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
-        typedef std::future<UpdateHypervisorOutcome> UpdateHypervisorOutcomeCallable;
-} // namespace Model
-
-  class BackupGatewayClient;
-
-    typedef std::function<void(const BackupGatewayClient*, const Model::AssociateGatewayToServerRequest&, const Model::AssociateGatewayToServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateGatewayToServerResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DeleteHypervisorRequest&, const Model::DeleteHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHypervisorResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::DisassociateGatewayFromServerRequest&, const Model::DisassociateGatewayFromServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGatewayFromServerResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ImportHypervisorConfigurationRequest&, const Model::ImportHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHypervisorConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListHypervisorsRequest&, const Model::ListHypervisorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHypervisorsResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::ListVirtualMachinesRequest&, const Model::ListVirtualMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualMachinesResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::PutMaintenanceStartTimeRequest&, const Model::PutMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMaintenanceStartTimeResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::TestHypervisorConfigurationRequest&, const Model::TestHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestHypervisorConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
-    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateHypervisorRequest&, const Model::UpdateHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHypervisorResponseReceivedHandler;
-
   /**
    * <p><fullname>Backup gateway</fullname> <p>Backup gateway connects Backup to your
    * hypervisor, so you can create, store, and restore backups of your virtual
@@ -160,32 +28,60 @@ namespace Model
    * navigate to the Backup console, choose <b>Gateways</b>, then choose <b>Create
    * gateway</b>.</p></p>
    */
-  class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient
+  class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BackupGatewayClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BackupGatewayClient(const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration(),
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BackupGatewayClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BackupGatewayClient(const Aws::Auth::AWSCredentials& credentials,
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BackupGatewayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider = Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::BackupGateway::BackupGatewayClientConfiguration& clientConfiguration = Aws::BackupGateway::BackupGatewayClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BackupGatewayClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BackupGatewayClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        BackupGatewayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~BackupGatewayClient();
-
 
         /**
          * <p>Associates a backup gateway with your server. After you complete the
@@ -279,6 +175,26 @@ namespace Model
         virtual void DisassociateGatewayFromServerAsync(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the bandwidth rate limit schedule for a specified gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth rate
+         * limit schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBandwidthRateLimitScheduleOutcome GetBandwidthRateLimitSchedule(const Model::GetBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBandwidthRateLimitScheduleOutcomeCallable GetBandwidthRateLimitScheduleCallable(const Model::GetBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * An Async wrapper for GetBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBandwidthRateLimitScheduleAsync(const Model::GetBandwidthRateLimitScheduleRequest& request, const GetBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>By providing the ARN (Amazon Resource Name), this API returns the
          * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">AWS
@@ -295,6 +211,64 @@ namespace Model
          * An Async wrapper for GetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action requests information about the specified hypervisor to which the
+         * gateway will connect. A hypervisor is hardware, software, or firmware that
+         * creates and manages virtual machines, and allocates resources to
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHypervisorOutcome GetHypervisor(const Model::GetHypervisorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetHypervisor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHypervisorOutcomeCallable GetHypervisorCallable(const Model::GetHypervisorRequest& request) const;
+
+        /**
+         * An Async wrapper for GetHypervisor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHypervisorAsync(const Model::GetHypervisorRequest& request, const GetHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action retrieves the property mappings for the specified hypervisor. A
+         * hypervisor property mapping displays the relationship of entity properties
+         * available from the on-premises hypervisor to the properties available in Amazon
+         * Web Services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHypervisorPropertyMappingsOutcome GetHypervisorPropertyMappings(const Model::GetHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetHypervisorPropertyMappings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHypervisorPropertyMappingsOutcomeCallable GetHypervisorPropertyMappingsCallable(const Model::GetHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetHypervisorPropertyMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHypervisorPropertyMappingsAsync(const Model::GetHypervisorPropertyMappingsRequest& request, const GetHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>By providing the ARN (Amazon Resource Name), this API returns the virtual
+         * machine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVirtualMachineOutcome GetVirtualMachine(const Model::GetVirtualMachineRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVirtualMachine that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVirtualMachineOutcomeCallable GetVirtualMachineCallable(const Model::GetVirtualMachineRequest& request) const;
+
+        /**
+         * An Async wrapper for GetVirtualMachine that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVirtualMachineAsync(const Model::GetVirtualMachineRequest& request, const GetVirtualMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connect to a hypervisor by importing its configuration.</p><p><h3>See
@@ -386,6 +360,46 @@ namespace Model
         virtual void ListVirtualMachinesAsync(const Model::ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action sets the bandwidth rate limit schedule for a specified gateway.
+         * By default, gateways do not have a bandwidth rate limit schedule, which means no
+         * bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth
+         * rate limit schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBandwidthRateLimitScheduleOutcome PutBandwidthRateLimitSchedule(const Model::PutBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBandwidthRateLimitScheduleOutcomeCallable PutBandwidthRateLimitScheduleCallable(const Model::PutBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * An Async wrapper for PutBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBandwidthRateLimitScheduleAsync(const Model::PutBandwidthRateLimitScheduleRequest& request, const PutBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action sets the property mappings for the specified hypervisor. A
+         * hypervisor property mapping displays the relationship of entity properties
+         * available from the on-premises hypervisor to the properties available in Amazon
+         * Web Services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutHypervisorPropertyMappingsOutcome PutHypervisorPropertyMappings(const Model::PutHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutHypervisorPropertyMappings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutHypervisorPropertyMappingsOutcomeCallable PutHypervisorPropertyMappingsCallable(const Model::PutHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * An Async wrapper for PutHypervisorPropertyMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutHypervisorPropertyMappingsAsync(const Model::PutHypervisorPropertyMappingsRequest& request, const PutHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Set the maintenance start time for a gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime">AWS
          * API Reference</a></p>
@@ -401,6 +415,24 @@ namespace Model
          * An Async wrapper for PutMaintenanceStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutMaintenanceStartTimeAsync(const Model::PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action sends a request to sync metadata across the specified virtual
+         * machines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartVirtualMachinesMetadataSyncOutcome StartVirtualMachinesMetadataSync(const Model::StartVirtualMachinesMetadataSyncRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartVirtualMachinesMetadataSync that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartVirtualMachinesMetadataSyncOutcomeCallable StartVirtualMachinesMetadataSyncCallable(const Model::StartVirtualMachinesMetadataSyncRequest& request) const;
+
+        /**
+         * An Async wrapper for StartVirtualMachinesMetadataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartVirtualMachinesMetadataSyncAsync(const Model::StartVirtualMachinesMetadataSyncRequest& request, const StartVirtualMachinesMetadataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tag the resource.</p><p><h3>See Also:</h3>   <a
@@ -514,30 +546,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateGatewayToServerAsyncHelper(const Model::AssociateGatewayToServerRequest& request, const AssociateGatewayToServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGatewayAsyncHelper(const Model::CreateGatewayRequest& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteGatewayAsyncHelper(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHypervisorAsyncHelper(const Model::DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateGatewayFromServerAsyncHelper(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetGatewayAsyncHelper(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportHypervisorConfigurationAsyncHelper(const Model::ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHypervisorsAsyncHelper(const Model::ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVirtualMachinesAsyncHelper(const Model::ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutMaintenanceStartTimeAsyncHelper(const Model::PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestHypervisorConfigurationAsyncHelper(const Model::TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateGatewayInformationAsyncHelper(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateGatewaySoftwareNowAsyncHelper(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateHypervisorAsyncHelper(const Model::UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;
+      void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      BackupGatewayClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace BackupGateway

@@ -30,42 +30,42 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/EulaAcceptance">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API EulaAcceptance
+  class EulaAcceptance
   {
   public:
-    EulaAcceptance();
-    EulaAcceptance(Aws::Utils::Json::JsonView jsonValue);
-    EulaAcceptance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API EulaAcceptance();
+    AWS_NIMBLESTUDIO_API EulaAcceptance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API EulaAcceptance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline const Aws::Utils::DateTime& GetAcceptedAt() const{ return m_acceptedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline bool AcceptedAtHasBeenSet() const { return m_acceptedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline void SetAcceptedAt(const Aws::Utils::DateTime& value) { m_acceptedAtHasBeenSet = true; m_acceptedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline void SetAcceptedAt(Aws::Utils::DateTime&& value) { m_acceptedAtHasBeenSet = true; m_acceptedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline EulaAcceptance& WithAcceptedAt(const Aws::Utils::DateTime& value) { SetAcceptedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline EulaAcceptance& WithAcceptedAt(Aws::Utils::DateTime&& value) { SetAcceptedAt(std::move(value)); return *this;}
 
@@ -236,19 +236,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_acceptedAt;
-    bool m_acceptedAtHasBeenSet;
+    bool m_acceptedAtHasBeenSet = false;
 
     Aws::String m_acceptedBy;
-    bool m_acceptedByHasBeenSet;
+    bool m_acceptedByHasBeenSet = false;
 
     Aws::String m_accepteeId;
-    bool m_accepteeIdHasBeenSet;
+    bool m_accepteeIdHasBeenSet = false;
 
     Aws::String m_eulaAcceptanceId;
-    bool m_eulaAcceptanceIdHasBeenSet;
+    bool m_eulaAcceptanceIdHasBeenSet = false;
 
     Aws::String m_eulaId;
-    bool m_eulaIdHasBeenSet;
+    bool m_eulaIdHasBeenSet = false;
   };
 
 } // namespace Model

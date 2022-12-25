@@ -48,7 +48,7 @@ namespace Model
    * to return, use the <code>FaceAttributes</code> input parameter for
    * <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations
    * return only the default attributes. The corresponding Start operations don't
-   * have a <code>FaceAttributes</code> input parameter.</p> <ul> <li>
+   * have a <code>FaceAttributes</code> input parameter:</p> <ul> <li>
    * <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li>
    * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image
    * <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial
@@ -59,13 +59,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API FaceDetail
+  class FaceDetail
   {
   public:
-    FaceDetail();
-    FaceDetail(Aws::Utils::Json::JsonView jsonValue);
-    FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API FaceDetail();
+    AWS_REKOGNITION_API FaceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -643,49 +643,49 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     AgeRange m_ageRange;
-    bool m_ageRangeHasBeenSet;
+    bool m_ageRangeHasBeenSet = false;
 
     Smile m_smile;
-    bool m_smileHasBeenSet;
+    bool m_smileHasBeenSet = false;
 
     Eyeglasses m_eyeglasses;
-    bool m_eyeglassesHasBeenSet;
+    bool m_eyeglassesHasBeenSet = false;
 
     Sunglasses m_sunglasses;
-    bool m_sunglassesHasBeenSet;
+    bool m_sunglassesHasBeenSet = false;
 
     Gender m_gender;
-    bool m_genderHasBeenSet;
+    bool m_genderHasBeenSet = false;
 
     Beard m_beard;
-    bool m_beardHasBeenSet;
+    bool m_beardHasBeenSet = false;
 
     Mustache m_mustache;
-    bool m_mustacheHasBeenSet;
+    bool m_mustacheHasBeenSet = false;
 
     EyeOpen m_eyesOpen;
-    bool m_eyesOpenHasBeenSet;
+    bool m_eyesOpenHasBeenSet = false;
 
     MouthOpen m_mouthOpen;
-    bool m_mouthOpenHasBeenSet;
+    bool m_mouthOpenHasBeenSet = false;
 
     Aws::Vector<Emotion> m_emotions;
-    bool m_emotionsHasBeenSet;
+    bool m_emotionsHasBeenSet = false;
 
     Aws::Vector<Landmark> m_landmarks;
-    bool m_landmarksHasBeenSet;
+    bool m_landmarksHasBeenSet = false;
 
     Pose m_pose;
-    bool m_poseHasBeenSet;
+    bool m_poseHasBeenSet = false;
 
     ImageQuality m_quality;
-    bool m_qualityHasBeenSet;
+    bool m_qualityHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
   };
 
 } // namespace Model

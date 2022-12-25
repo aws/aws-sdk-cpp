@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExasolParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ExasolParameters
+  class ExasolParameters
   {
   public:
-    ExasolParameters();
-    ExasolParameters(Aws::Utils::Json::JsonView jsonValue);
-    ExasolParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ExasolParameters();
+    AWS_QUICKSIGHT_API ExasolParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ExasolParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

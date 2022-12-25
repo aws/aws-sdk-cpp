@@ -5,363 +5,16 @@
 
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
-#include <aws/auditmanager/AuditManagerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/auditmanager/model/AssociateAssessmentReportEvidenceFolderResult.h>
-#include <aws/auditmanager/model/BatchAssociateAssessmentReportEvidenceResult.h>
-#include <aws/auditmanager/model/BatchCreateDelegationByAssessmentResult.h>
-#include <aws/auditmanager/model/BatchDeleteDelegationByAssessmentResult.h>
-#include <aws/auditmanager/model/BatchDisassociateAssessmentReportEvidenceResult.h>
-#include <aws/auditmanager/model/BatchImportEvidenceToAssessmentControlResult.h>
-#include <aws/auditmanager/model/CreateAssessmentResult.h>
-#include <aws/auditmanager/model/CreateAssessmentFrameworkResult.h>
-#include <aws/auditmanager/model/CreateAssessmentReportResult.h>
-#include <aws/auditmanager/model/CreateControlResult.h>
-#include <aws/auditmanager/model/DeleteAssessmentResult.h>
-#include <aws/auditmanager/model/DeleteAssessmentFrameworkResult.h>
-#include <aws/auditmanager/model/DeleteAssessmentFrameworkShareResult.h>
-#include <aws/auditmanager/model/DeleteAssessmentReportResult.h>
-#include <aws/auditmanager/model/DeleteControlResult.h>
-#include <aws/auditmanager/model/DeregisterAccountResult.h>
-#include <aws/auditmanager/model/DeregisterOrganizationAdminAccountResult.h>
-#include <aws/auditmanager/model/DisassociateAssessmentReportEvidenceFolderResult.h>
-#include <aws/auditmanager/model/GetAccountStatusResult.h>
-#include <aws/auditmanager/model/GetAssessmentResult.h>
-#include <aws/auditmanager/model/GetAssessmentFrameworkResult.h>
-#include <aws/auditmanager/model/GetAssessmentReportUrlResult.h>
-#include <aws/auditmanager/model/GetChangeLogsResult.h>
-#include <aws/auditmanager/model/GetControlResult.h>
-#include <aws/auditmanager/model/GetDelegationsResult.h>
-#include <aws/auditmanager/model/GetEvidenceResult.h>
-#include <aws/auditmanager/model/GetEvidenceByEvidenceFolderResult.h>
-#include <aws/auditmanager/model/GetEvidenceFolderResult.h>
-#include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentResult.h>
-#include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentControlResult.h>
-#include <aws/auditmanager/model/GetInsightsResult.h>
-#include <aws/auditmanager/model/GetInsightsByAssessmentResult.h>
-#include <aws/auditmanager/model/GetOrganizationAdminAccountResult.h>
-#include <aws/auditmanager/model/GetServicesInScopeResult.h>
-#include <aws/auditmanager/model/GetSettingsResult.h>
-#include <aws/auditmanager/model/ListAssessmentControlInsightsByControlDomainResult.h>
-#include <aws/auditmanager/model/ListAssessmentFrameworkShareRequestsResult.h>
-#include <aws/auditmanager/model/ListAssessmentFrameworksResult.h>
-#include <aws/auditmanager/model/ListAssessmentReportsResult.h>
-#include <aws/auditmanager/model/ListAssessmentsResult.h>
-#include <aws/auditmanager/model/ListControlDomainInsightsResult.h>
-#include <aws/auditmanager/model/ListControlDomainInsightsByAssessmentResult.h>
-#include <aws/auditmanager/model/ListControlInsightsByControlDomainResult.h>
-#include <aws/auditmanager/model/ListControlsResult.h>
-#include <aws/auditmanager/model/ListKeywordsForDataSourceResult.h>
-#include <aws/auditmanager/model/ListNotificationsResult.h>
-#include <aws/auditmanager/model/ListTagsForResourceResult.h>
-#include <aws/auditmanager/model/RegisterAccountResult.h>
-#include <aws/auditmanager/model/RegisterOrganizationAdminAccountResult.h>
-#include <aws/auditmanager/model/StartAssessmentFrameworkShareResult.h>
-#include <aws/auditmanager/model/TagResourceResult.h>
-#include <aws/auditmanager/model/UntagResourceResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentControlResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentControlSetStatusResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentFrameworkResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentFrameworkShareResult.h>
-#include <aws/auditmanager/model/UpdateAssessmentStatusResult.h>
-#include <aws/auditmanager/model/UpdateControlResult.h>
-#include <aws/auditmanager/model/UpdateSettingsResult.h>
-#include <aws/auditmanager/model/ValidateAssessmentReportIntegrityResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/auditmanager/AuditManagerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AuditManager
 {
-
-namespace Model
-{
-        class AssociateAssessmentReportEvidenceFolderRequest;
-        class BatchAssociateAssessmentReportEvidenceRequest;
-        class BatchCreateDelegationByAssessmentRequest;
-        class BatchDeleteDelegationByAssessmentRequest;
-        class BatchDisassociateAssessmentReportEvidenceRequest;
-        class BatchImportEvidenceToAssessmentControlRequest;
-        class CreateAssessmentRequest;
-        class CreateAssessmentFrameworkRequest;
-        class CreateAssessmentReportRequest;
-        class CreateControlRequest;
-        class DeleteAssessmentRequest;
-        class DeleteAssessmentFrameworkRequest;
-        class DeleteAssessmentFrameworkShareRequest;
-        class DeleteAssessmentReportRequest;
-        class DeleteControlRequest;
-        class DeregisterAccountRequest;
-        class DeregisterOrganizationAdminAccountRequest;
-        class DisassociateAssessmentReportEvidenceFolderRequest;
-        class GetAccountStatusRequest;
-        class GetAssessmentRequest;
-        class GetAssessmentFrameworkRequest;
-        class GetAssessmentReportUrlRequest;
-        class GetChangeLogsRequest;
-        class GetControlRequest;
-        class GetDelegationsRequest;
-        class GetEvidenceRequest;
-        class GetEvidenceByEvidenceFolderRequest;
-        class GetEvidenceFolderRequest;
-        class GetEvidenceFoldersByAssessmentRequest;
-        class GetEvidenceFoldersByAssessmentControlRequest;
-        class GetInsightsRequest;
-        class GetInsightsByAssessmentRequest;
-        class GetOrganizationAdminAccountRequest;
-        class GetServicesInScopeRequest;
-        class GetSettingsRequest;
-        class ListAssessmentControlInsightsByControlDomainRequest;
-        class ListAssessmentFrameworkShareRequestsRequest;
-        class ListAssessmentFrameworksRequest;
-        class ListAssessmentReportsRequest;
-        class ListAssessmentsRequest;
-        class ListControlDomainInsightsRequest;
-        class ListControlDomainInsightsByAssessmentRequest;
-        class ListControlInsightsByControlDomainRequest;
-        class ListControlsRequest;
-        class ListKeywordsForDataSourceRequest;
-        class ListNotificationsRequest;
-        class ListTagsForResourceRequest;
-        class RegisterAccountRequest;
-        class RegisterOrganizationAdminAccountRequest;
-        class StartAssessmentFrameworkShareRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAssessmentRequest;
-        class UpdateAssessmentControlRequest;
-        class UpdateAssessmentControlSetStatusRequest;
-        class UpdateAssessmentFrameworkRequest;
-        class UpdateAssessmentFrameworkShareRequest;
-        class UpdateAssessmentStatusRequest;
-        class UpdateControlRequest;
-        class UpdateSettingsRequest;
-        class ValidateAssessmentReportIntegrityRequest;
-
-        typedef Aws::Utils::Outcome<AssociateAssessmentReportEvidenceFolderResult, AuditManagerError> AssociateAssessmentReportEvidenceFolderOutcome;
-        typedef Aws::Utils::Outcome<BatchAssociateAssessmentReportEvidenceResult, AuditManagerError> BatchAssociateAssessmentReportEvidenceOutcome;
-        typedef Aws::Utils::Outcome<BatchCreateDelegationByAssessmentResult, AuditManagerError> BatchCreateDelegationByAssessmentOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteDelegationByAssessmentResult, AuditManagerError> BatchDeleteDelegationByAssessmentOutcome;
-        typedef Aws::Utils::Outcome<BatchDisassociateAssessmentReportEvidenceResult, AuditManagerError> BatchDisassociateAssessmentReportEvidenceOutcome;
-        typedef Aws::Utils::Outcome<BatchImportEvidenceToAssessmentControlResult, AuditManagerError> BatchImportEvidenceToAssessmentControlOutcome;
-        typedef Aws::Utils::Outcome<CreateAssessmentResult, AuditManagerError> CreateAssessmentOutcome;
-        typedef Aws::Utils::Outcome<CreateAssessmentFrameworkResult, AuditManagerError> CreateAssessmentFrameworkOutcome;
-        typedef Aws::Utils::Outcome<CreateAssessmentReportResult, AuditManagerError> CreateAssessmentReportOutcome;
-        typedef Aws::Utils::Outcome<CreateControlResult, AuditManagerError> CreateControlOutcome;
-        typedef Aws::Utils::Outcome<DeleteAssessmentResult, AuditManagerError> DeleteAssessmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteAssessmentFrameworkResult, AuditManagerError> DeleteAssessmentFrameworkOutcome;
-        typedef Aws::Utils::Outcome<DeleteAssessmentFrameworkShareResult, AuditManagerError> DeleteAssessmentFrameworkShareOutcome;
-        typedef Aws::Utils::Outcome<DeleteAssessmentReportResult, AuditManagerError> DeleteAssessmentReportOutcome;
-        typedef Aws::Utils::Outcome<DeleteControlResult, AuditManagerError> DeleteControlOutcome;
-        typedef Aws::Utils::Outcome<DeregisterAccountResult, AuditManagerError> DeregisterAccountOutcome;
-        typedef Aws::Utils::Outcome<DeregisterOrganizationAdminAccountResult, AuditManagerError> DeregisterOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateAssessmentReportEvidenceFolderResult, AuditManagerError> DisassociateAssessmentReportEvidenceFolderOutcome;
-        typedef Aws::Utils::Outcome<GetAccountStatusResult, AuditManagerError> GetAccountStatusOutcome;
-        typedef Aws::Utils::Outcome<GetAssessmentResult, AuditManagerError> GetAssessmentOutcome;
-        typedef Aws::Utils::Outcome<GetAssessmentFrameworkResult, AuditManagerError> GetAssessmentFrameworkOutcome;
-        typedef Aws::Utils::Outcome<GetAssessmentReportUrlResult, AuditManagerError> GetAssessmentReportUrlOutcome;
-        typedef Aws::Utils::Outcome<GetChangeLogsResult, AuditManagerError> GetChangeLogsOutcome;
-        typedef Aws::Utils::Outcome<GetControlResult, AuditManagerError> GetControlOutcome;
-        typedef Aws::Utils::Outcome<GetDelegationsResult, AuditManagerError> GetDelegationsOutcome;
-        typedef Aws::Utils::Outcome<GetEvidenceResult, AuditManagerError> GetEvidenceOutcome;
-        typedef Aws::Utils::Outcome<GetEvidenceByEvidenceFolderResult, AuditManagerError> GetEvidenceByEvidenceFolderOutcome;
-        typedef Aws::Utils::Outcome<GetEvidenceFolderResult, AuditManagerError> GetEvidenceFolderOutcome;
-        typedef Aws::Utils::Outcome<GetEvidenceFoldersByAssessmentResult, AuditManagerError> GetEvidenceFoldersByAssessmentOutcome;
-        typedef Aws::Utils::Outcome<GetEvidenceFoldersByAssessmentControlResult, AuditManagerError> GetEvidenceFoldersByAssessmentControlOutcome;
-        typedef Aws::Utils::Outcome<GetInsightsResult, AuditManagerError> GetInsightsOutcome;
-        typedef Aws::Utils::Outcome<GetInsightsByAssessmentResult, AuditManagerError> GetInsightsByAssessmentOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationAdminAccountResult, AuditManagerError> GetOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<GetServicesInScopeResult, AuditManagerError> GetServicesInScopeOutcome;
-        typedef Aws::Utils::Outcome<GetSettingsResult, AuditManagerError> GetSettingsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentControlInsightsByControlDomainResult, AuditManagerError> ListAssessmentControlInsightsByControlDomainOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentFrameworkShareRequestsResult, AuditManagerError> ListAssessmentFrameworkShareRequestsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentFrameworksResult, AuditManagerError> ListAssessmentFrameworksOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentReportsResult, AuditManagerError> ListAssessmentReportsOutcome;
-        typedef Aws::Utils::Outcome<ListAssessmentsResult, AuditManagerError> ListAssessmentsOutcome;
-        typedef Aws::Utils::Outcome<ListControlDomainInsightsResult, AuditManagerError> ListControlDomainInsightsOutcome;
-        typedef Aws::Utils::Outcome<ListControlDomainInsightsByAssessmentResult, AuditManagerError> ListControlDomainInsightsByAssessmentOutcome;
-        typedef Aws::Utils::Outcome<ListControlInsightsByControlDomainResult, AuditManagerError> ListControlInsightsByControlDomainOutcome;
-        typedef Aws::Utils::Outcome<ListControlsResult, AuditManagerError> ListControlsOutcome;
-        typedef Aws::Utils::Outcome<ListKeywordsForDataSourceResult, AuditManagerError> ListKeywordsForDataSourceOutcome;
-        typedef Aws::Utils::Outcome<ListNotificationsResult, AuditManagerError> ListNotificationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AuditManagerError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RegisterAccountResult, AuditManagerError> RegisterAccountOutcome;
-        typedef Aws::Utils::Outcome<RegisterOrganizationAdminAccountResult, AuditManagerError> RegisterOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<StartAssessmentFrameworkShareResult, AuditManagerError> StartAssessmentFrameworkShareOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, AuditManagerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, AuditManagerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentResult, AuditManagerError> UpdateAssessmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentControlResult, AuditManagerError> UpdateAssessmentControlOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentControlSetStatusResult, AuditManagerError> UpdateAssessmentControlSetStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentFrameworkResult, AuditManagerError> UpdateAssessmentFrameworkOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentFrameworkShareResult, AuditManagerError> UpdateAssessmentFrameworkShareOutcome;
-        typedef Aws::Utils::Outcome<UpdateAssessmentStatusResult, AuditManagerError> UpdateAssessmentStatusOutcome;
-        typedef Aws::Utils::Outcome<UpdateControlResult, AuditManagerError> UpdateControlOutcome;
-        typedef Aws::Utils::Outcome<UpdateSettingsResult, AuditManagerError> UpdateSettingsOutcome;
-        typedef Aws::Utils::Outcome<ValidateAssessmentReportIntegrityResult, AuditManagerError> ValidateAssessmentReportIntegrityOutcome;
-
-        typedef std::future<AssociateAssessmentReportEvidenceFolderOutcome> AssociateAssessmentReportEvidenceFolderOutcomeCallable;
-        typedef std::future<BatchAssociateAssessmentReportEvidenceOutcome> BatchAssociateAssessmentReportEvidenceOutcomeCallable;
-        typedef std::future<BatchCreateDelegationByAssessmentOutcome> BatchCreateDelegationByAssessmentOutcomeCallable;
-        typedef std::future<BatchDeleteDelegationByAssessmentOutcome> BatchDeleteDelegationByAssessmentOutcomeCallable;
-        typedef std::future<BatchDisassociateAssessmentReportEvidenceOutcome> BatchDisassociateAssessmentReportEvidenceOutcomeCallable;
-        typedef std::future<BatchImportEvidenceToAssessmentControlOutcome> BatchImportEvidenceToAssessmentControlOutcomeCallable;
-        typedef std::future<CreateAssessmentOutcome> CreateAssessmentOutcomeCallable;
-        typedef std::future<CreateAssessmentFrameworkOutcome> CreateAssessmentFrameworkOutcomeCallable;
-        typedef std::future<CreateAssessmentReportOutcome> CreateAssessmentReportOutcomeCallable;
-        typedef std::future<CreateControlOutcome> CreateControlOutcomeCallable;
-        typedef std::future<DeleteAssessmentOutcome> DeleteAssessmentOutcomeCallable;
-        typedef std::future<DeleteAssessmentFrameworkOutcome> DeleteAssessmentFrameworkOutcomeCallable;
-        typedef std::future<DeleteAssessmentFrameworkShareOutcome> DeleteAssessmentFrameworkShareOutcomeCallable;
-        typedef std::future<DeleteAssessmentReportOutcome> DeleteAssessmentReportOutcomeCallable;
-        typedef std::future<DeleteControlOutcome> DeleteControlOutcomeCallable;
-        typedef std::future<DeregisterAccountOutcome> DeregisterAccountOutcomeCallable;
-        typedef std::future<DeregisterOrganizationAdminAccountOutcome> DeregisterOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<DisassociateAssessmentReportEvidenceFolderOutcome> DisassociateAssessmentReportEvidenceFolderOutcomeCallable;
-        typedef std::future<GetAccountStatusOutcome> GetAccountStatusOutcomeCallable;
-        typedef std::future<GetAssessmentOutcome> GetAssessmentOutcomeCallable;
-        typedef std::future<GetAssessmentFrameworkOutcome> GetAssessmentFrameworkOutcomeCallable;
-        typedef std::future<GetAssessmentReportUrlOutcome> GetAssessmentReportUrlOutcomeCallable;
-        typedef std::future<GetChangeLogsOutcome> GetChangeLogsOutcomeCallable;
-        typedef std::future<GetControlOutcome> GetControlOutcomeCallable;
-        typedef std::future<GetDelegationsOutcome> GetDelegationsOutcomeCallable;
-        typedef std::future<GetEvidenceOutcome> GetEvidenceOutcomeCallable;
-        typedef std::future<GetEvidenceByEvidenceFolderOutcome> GetEvidenceByEvidenceFolderOutcomeCallable;
-        typedef std::future<GetEvidenceFolderOutcome> GetEvidenceFolderOutcomeCallable;
-        typedef std::future<GetEvidenceFoldersByAssessmentOutcome> GetEvidenceFoldersByAssessmentOutcomeCallable;
-        typedef std::future<GetEvidenceFoldersByAssessmentControlOutcome> GetEvidenceFoldersByAssessmentControlOutcomeCallable;
-        typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
-        typedef std::future<GetInsightsByAssessmentOutcome> GetInsightsByAssessmentOutcomeCallable;
-        typedef std::future<GetOrganizationAdminAccountOutcome> GetOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<GetServicesInScopeOutcome> GetServicesInScopeOutcomeCallable;
-        typedef std::future<GetSettingsOutcome> GetSettingsOutcomeCallable;
-        typedef std::future<ListAssessmentControlInsightsByControlDomainOutcome> ListAssessmentControlInsightsByControlDomainOutcomeCallable;
-        typedef std::future<ListAssessmentFrameworkShareRequestsOutcome> ListAssessmentFrameworkShareRequestsOutcomeCallable;
-        typedef std::future<ListAssessmentFrameworksOutcome> ListAssessmentFrameworksOutcomeCallable;
-        typedef std::future<ListAssessmentReportsOutcome> ListAssessmentReportsOutcomeCallable;
-        typedef std::future<ListAssessmentsOutcome> ListAssessmentsOutcomeCallable;
-        typedef std::future<ListControlDomainInsightsOutcome> ListControlDomainInsightsOutcomeCallable;
-        typedef std::future<ListControlDomainInsightsByAssessmentOutcome> ListControlDomainInsightsByAssessmentOutcomeCallable;
-        typedef std::future<ListControlInsightsByControlDomainOutcome> ListControlInsightsByControlDomainOutcomeCallable;
-        typedef std::future<ListControlsOutcome> ListControlsOutcomeCallable;
-        typedef std::future<ListKeywordsForDataSourceOutcome> ListKeywordsForDataSourceOutcomeCallable;
-        typedef std::future<ListNotificationsOutcome> ListNotificationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RegisterAccountOutcome> RegisterAccountOutcomeCallable;
-        typedef std::future<RegisterOrganizationAdminAccountOutcome> RegisterOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<StartAssessmentFrameworkShareOutcome> StartAssessmentFrameworkShareOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAssessmentOutcome> UpdateAssessmentOutcomeCallable;
-        typedef std::future<UpdateAssessmentControlOutcome> UpdateAssessmentControlOutcomeCallable;
-        typedef std::future<UpdateAssessmentControlSetStatusOutcome> UpdateAssessmentControlSetStatusOutcomeCallable;
-        typedef std::future<UpdateAssessmentFrameworkOutcome> UpdateAssessmentFrameworkOutcomeCallable;
-        typedef std::future<UpdateAssessmentFrameworkShareOutcome> UpdateAssessmentFrameworkShareOutcomeCallable;
-        typedef std::future<UpdateAssessmentStatusOutcome> UpdateAssessmentStatusOutcomeCallable;
-        typedef std::future<UpdateControlOutcome> UpdateControlOutcomeCallable;
-        typedef std::future<UpdateSettingsOutcome> UpdateSettingsOutcomeCallable;
-        typedef std::future<ValidateAssessmentReportIntegrityOutcome> ValidateAssessmentReportIntegrityOutcomeCallable;
-} // namespace Model
-
-  class AuditManagerClient;
-
-    typedef std::function<void(const AuditManagerClient*, const Model::AssociateAssessmentReportEvidenceFolderRequest&, const Model::AssociateAssessmentReportEvidenceFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAssessmentReportEvidenceFolderResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::BatchAssociateAssessmentReportEvidenceRequest&, const Model::BatchAssociateAssessmentReportEvidenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateAssessmentReportEvidenceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::BatchCreateDelegationByAssessmentRequest&, const Model::BatchCreateDelegationByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateDelegationByAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::BatchDeleteDelegationByAssessmentRequest&, const Model::BatchDeleteDelegationByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDelegationByAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::BatchDisassociateAssessmentReportEvidenceRequest&, const Model::BatchDisassociateAssessmentReportEvidenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::BatchImportEvidenceToAssessmentControlRequest&, const Model::BatchImportEvidenceToAssessmentControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchImportEvidenceToAssessmentControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::CreateAssessmentRequest&, const Model::CreateAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::CreateAssessmentFrameworkRequest&, const Model::CreateAssessmentFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssessmentFrameworkResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::CreateAssessmentReportRequest&, const Model::CreateAssessmentReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssessmentReportResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::CreateControlRequest&, const Model::CreateControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeleteAssessmentRequest&, const Model::DeleteAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeleteAssessmentFrameworkRequest&, const Model::DeleteAssessmentFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentFrameworkResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeleteAssessmentFrameworkShareRequest&, const Model::DeleteAssessmentFrameworkShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentFrameworkShareResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeleteAssessmentReportRequest&, const Model::DeleteAssessmentReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssessmentReportResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeleteControlRequest&, const Model::DeleteControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeregisterAccountRequest&, const Model::DeregisterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterAccountResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DeregisterOrganizationAdminAccountRequest&, const Model::DeregisterOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::DisassociateAssessmentReportEvidenceFolderRequest&, const Model::DisassociateAssessmentReportEvidenceFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetAccountStatusRequest&, const Model::GetAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountStatusResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetAssessmentRequest&, const Model::GetAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetAssessmentFrameworkRequest&, const Model::GetAssessmentFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentFrameworkResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetAssessmentReportUrlRequest&, const Model::GetAssessmentReportUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentReportUrlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetChangeLogsRequest&, const Model::GetChangeLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeLogsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetControlRequest&, const Model::GetControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetDelegationsRequest&, const Model::GetDelegationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDelegationsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceRequest&, const Model::GetEvidenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceByEvidenceFolderRequest&, const Model::GetEvidenceByEvidenceFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceByEvidenceFolderResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFolderRequest&, const Model::GetEvidenceFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFolderResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFoldersByAssessmentRequest&, const Model::GetEvidenceFoldersByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFoldersByAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetEvidenceFoldersByAssessmentControlRequest&, const Model::GetEvidenceFoldersByAssessmentControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvidenceFoldersByAssessmentControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetInsightsByAssessmentRequest&, const Model::GetInsightsByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsByAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetOrganizationAdminAccountRequest&, const Model::GetOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetServicesInScopeRequest&, const Model::GetServicesInScopeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServicesInScopeResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::GetSettingsRequest&, const Model::GetSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSettingsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentControlInsightsByControlDomainRequest&, const Model::ListAssessmentControlInsightsByControlDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentControlInsightsByControlDomainResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentFrameworkShareRequestsRequest&, const Model::ListAssessmentFrameworkShareRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentFrameworkShareRequestsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentFrameworksRequest&, const Model::ListAssessmentFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentFrameworksResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentReportsRequest&, const Model::ListAssessmentReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentReportsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListAssessmentsRequest&, const Model::ListAssessmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssessmentsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListControlDomainInsightsRequest&, const Model::ListControlDomainInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlDomainInsightsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListControlDomainInsightsByAssessmentRequest&, const Model::ListControlDomainInsightsByAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlDomainInsightsByAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListControlInsightsByControlDomainRequest&, const Model::ListControlInsightsByControlDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlInsightsByControlDomainResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListControlsRequest&, const Model::ListControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListControlsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListKeywordsForDataSourceRequest&, const Model::ListKeywordsForDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeywordsForDataSourceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListNotificationsRequest&, const Model::ListNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotificationsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::RegisterAccountRequest&, const Model::RegisterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterAccountResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::RegisterOrganizationAdminAccountRequest&, const Model::RegisterOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::StartAssessmentFrameworkShareRequest&, const Model::StartAssessmentFrameworkShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssessmentFrameworkShareResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentRequest&, const Model::UpdateAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentControlRequest&, const Model::UpdateAssessmentControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentControlSetStatusRequest&, const Model::UpdateAssessmentControlSetStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentControlSetStatusResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentFrameworkRequest&, const Model::UpdateAssessmentFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentFrameworkResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentFrameworkShareRequest&, const Model::UpdateAssessmentFrameworkShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentFrameworkShareResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateAssessmentStatusRequest&, const Model::UpdateAssessmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssessmentStatusResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateControlRequest&, const Model::UpdateControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateControlResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::UpdateSettingsRequest&, const Model::UpdateSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSettingsResponseReceivedHandler;
-    typedef std::function<void(const AuditManagerClient*, const Model::ValidateAssessmentReportIntegrityRequest&, const Model::ValidateAssessmentReportIntegrityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateAssessmentReportIntegrityResponseReceivedHandler;
-
   /**
    * <p>Welcome to the Audit Manager API reference. This guide is for developers who
    * need detailed information about the Audit Manager API operations, data types,
@@ -390,32 +43,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html">
    * Audit Manager User Guide</a>.</p>
    */
-  class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AuditManagerClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AuditManagerClient(const Aws::AuditManager::AuditManagerClientConfiguration& clientConfiguration = Aws::AuditManager::AuditManagerClientConfiguration(),
+                           std::shared_ptr<AuditManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AuditManagerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AuditManagerClient(const Aws::Auth::AWSCredentials& credentials,
+                           std::shared_ptr<AuditManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::AuditManager::AuditManagerClientConfiguration& clientConfiguration = Aws::AuditManager::AuditManagerClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AuditManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<AuditManagerEndpointProviderBase> endpointProvider = Aws::MakeShared<AuditManagerEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::AuditManager::AuditManagerClientConfiguration& clientConfiguration = Aws::AuditManager::AuditManagerClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AuditManagerClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AuditManagerClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AuditManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AuditManagerClient();
-
 
         /**
          * <p> Associates an evidence folder to an assessment report in a Audit Manager
@@ -508,8 +189,25 @@ namespace Model
         virtual void BatchDisassociateAssessmentReportEvidenceAsync(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Uploads one or more pieces of evidence to a control in an Audit Manager
-         * assessment. </p><p><h3>See Also:</h3>   <a
+         * <p>Uploads one or more pieces of evidence to a control in an Audit Manager
+         * assessment. You can upload manual evidence from any Amazon Simple Storage
+         * Service (Amazon S3) bucket by specifying the S3 URI of the evidence. </p> <p>You
+         * must upload manual evidence to your S3 bucket before you can upload it to your
+         * assessment. For instructions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+         * in the <i>Amazon Simple Storage Service API Reference.</i> </p> <p>The following
+         * restrictions apply to this action:</p> <ul> <li> <p>Maximum size of an
+         * individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual
+         * evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See
+         * <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+         * file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p>
+         * </li> </ul> <p>For more information about Audit Manager service restrictions,
+         * see <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+         * and restrictions for Audit Manager</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl">AWS
          * API Reference</a></p>
          */
@@ -752,12 +450,26 @@ namespace Model
 
         /**
          * <p>Removes the specified Amazon Web Services account as a delegated
-         * administrator for Audit Manager. </p>  <p>When you remove a delegated
+         * administrator for Audit Manager. </p> <p>When you remove a delegated
          * administrator from your Audit Manager settings, you continue to have access to
          * the evidence that you previously collected under that account. This is also the
          * case when you deregister a delegated administrator from Organizations. However,
          * Audit Manager will stop collecting and attaching evidence to that delegated
-         * administrator account moving forward.</p>   <p>When you
+         * administrator account moving forward.</p>  <p>Keep in mind the
+         * following cleanup task if you use evidence finder:</p> <p>Before you use your
+         * management account to remove a delegated administrator, make sure that the
+         * current delegated administrator account signs in to Audit Manager and disables
+         * evidence finder first. Disabling evidence finder automatically deletes the event
+         * data store that was created in their account when they enabled evidence finder.
+         * If this task isn’t completed, the event data store remains in their account. In
+         * this case, we recommend that the original delegated administrator goes to
+         * CloudTrail Lake and manually <a
+         * href="https://docs.aws.amazon.com/userguide/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes
+         * the event data store</a>.</p> <p>This cleanup task is necessary to ensure that
+         * you don't end up with multiple event data stores. Audit Manager will ignore an
+         * unused event data store after you remove or change a delegated administrator
+         * account. However, the unused event data store continues to incur storage costs
+         * from CloudTrail Lake if you don't delete it.</p>  <p>When you
          * deregister a delegated administrator account for Audit Manager, the data for
          * that account isn’t deleted. If you want to delete resource data for a delegated
          * administrator account, you must perform that task separately before you
@@ -789,8 +501,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting
          * a custom control</a> in the <i>Audit Manager User Guide</i>)</p> </li> </ul>
          * <p>At this time, Audit Manager doesn't provide an option to delete evidence. All
-         * available delete operations are listed above.</p> <p><h3>See Also:</h3>  
-         * <a
+         * available delete operations are listed above.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -1091,8 +802,13 @@ namespace Model
         virtual void GetOrganizationAdminAccountAsync(const Model::GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of the in-scope Amazon Web Services for the specified
-         * assessment. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of all of the Amazon Web Services that you can choose to
+         * include in your assessment. When you <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
+         * an assessment</a>, specify which of these services you want to include to narrow
+         * the assessment's <a
+         * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">AWS
          * API Reference</a></p>
          */
@@ -1634,73 +1350,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AuditManagerEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateAssessmentReportEvidenceFolderAsyncHelper(const Model::AssociateAssessmentReportEvidenceFolderRequest& request, const AssociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchAssociateAssessmentReportEvidenceAsyncHelper(const Model::BatchAssociateAssessmentReportEvidenceRequest& request, const BatchAssociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchCreateDelegationByAssessmentAsyncHelper(const Model::BatchCreateDelegationByAssessmentRequest& request, const BatchCreateDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteDelegationByAssessmentAsyncHelper(const Model::BatchDeleteDelegationByAssessmentRequest& request, const BatchDeleteDelegationByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDisassociateAssessmentReportEvidenceAsyncHelper(const Model::BatchDisassociateAssessmentReportEvidenceRequest& request, const BatchDisassociateAssessmentReportEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchImportEvidenceToAssessmentControlAsyncHelper(const Model::BatchImportEvidenceToAssessmentControlRequest& request, const BatchImportEvidenceToAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAssessmentAsyncHelper(const Model::CreateAssessmentRequest& request, const CreateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAssessmentFrameworkAsyncHelper(const Model::CreateAssessmentFrameworkRequest& request, const CreateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAssessmentReportAsyncHelper(const Model::CreateAssessmentReportRequest& request, const CreateAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateControlAsyncHelper(const Model::CreateControlRequest& request, const CreateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAssessmentAsyncHelper(const Model::DeleteAssessmentRequest& request, const DeleteAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAssessmentFrameworkAsyncHelper(const Model::DeleteAssessmentFrameworkRequest& request, const DeleteAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAssessmentFrameworkShareAsyncHelper(const Model::DeleteAssessmentFrameworkShareRequest& request, const DeleteAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAssessmentReportAsyncHelper(const Model::DeleteAssessmentReportRequest& request, const DeleteAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteControlAsyncHelper(const Model::DeleteControlRequest& request, const DeleteControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterAccountAsyncHelper(const Model::DeregisterAccountRequest& request, const DeregisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterOrganizationAdminAccountAsyncHelper(const Model::DeregisterOrganizationAdminAccountRequest& request, const DeregisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateAssessmentReportEvidenceFolderAsyncHelper(const Model::DisassociateAssessmentReportEvidenceFolderRequest& request, const DisassociateAssessmentReportEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAccountStatusAsyncHelper(const Model::GetAccountStatusRequest& request, const GetAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssessmentAsyncHelper(const Model::GetAssessmentRequest& request, const GetAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssessmentFrameworkAsyncHelper(const Model::GetAssessmentFrameworkRequest& request, const GetAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssessmentReportUrlAsyncHelper(const Model::GetAssessmentReportUrlRequest& request, const GetAssessmentReportUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChangeLogsAsyncHelper(const Model::GetChangeLogsRequest& request, const GetChangeLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetControlAsyncHelper(const Model::GetControlRequest& request, const GetControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDelegationsAsyncHelper(const Model::GetDelegationsRequest& request, const GetDelegationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvidenceAsyncHelper(const Model::GetEvidenceRequest& request, const GetEvidenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvidenceByEvidenceFolderAsyncHelper(const Model::GetEvidenceByEvidenceFolderRequest& request, const GetEvidenceByEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvidenceFolderAsyncHelper(const Model::GetEvidenceFolderRequest& request, const GetEvidenceFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvidenceFoldersByAssessmentAsyncHelper(const Model::GetEvidenceFoldersByAssessmentRequest& request, const GetEvidenceFoldersByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEvidenceFoldersByAssessmentControlAsyncHelper(const Model::GetEvidenceFoldersByAssessmentControlRequest& request, const GetEvidenceFoldersByAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightsAsyncHelper(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightsByAssessmentAsyncHelper(const Model::GetInsightsByAssessmentRequest& request, const GetInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOrganizationAdminAccountAsyncHelper(const Model::GetOrganizationAdminAccountRequest& request, const GetOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServicesInScopeAsyncHelper(const Model::GetServicesInScopeRequest& request, const GetServicesInScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSettingsAsyncHelper(const Model::GetSettingsRequest& request, const GetSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssessmentControlInsightsByControlDomainAsyncHelper(const Model::ListAssessmentControlInsightsByControlDomainRequest& request, const ListAssessmentControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssessmentFrameworkShareRequestsAsyncHelper(const Model::ListAssessmentFrameworkShareRequestsRequest& request, const ListAssessmentFrameworkShareRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssessmentFrameworksAsyncHelper(const Model::ListAssessmentFrameworksRequest& request, const ListAssessmentFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssessmentReportsAsyncHelper(const Model::ListAssessmentReportsRequest& request, const ListAssessmentReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssessmentsAsyncHelper(const Model::ListAssessmentsRequest& request, const ListAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListControlDomainInsightsAsyncHelper(const Model::ListControlDomainInsightsRequest& request, const ListControlDomainInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListControlDomainInsightsByAssessmentAsyncHelper(const Model::ListControlDomainInsightsByAssessmentRequest& request, const ListControlDomainInsightsByAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListControlInsightsByControlDomainAsyncHelper(const Model::ListControlInsightsByControlDomainRequest& request, const ListControlInsightsByControlDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListControlsAsyncHelper(const Model::ListControlsRequest& request, const ListControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListKeywordsForDataSourceAsyncHelper(const Model::ListKeywordsForDataSourceRequest& request, const ListKeywordsForDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListNotificationsAsyncHelper(const Model::ListNotificationsRequest& request, const ListNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterAccountAsyncHelper(const Model::RegisterAccountRequest& request, const RegisterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterOrganizationAdminAccountAsyncHelper(const Model::RegisterOrganizationAdminAccountRequest& request, const RegisterOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartAssessmentFrameworkShareAsyncHelper(const Model::StartAssessmentFrameworkShareRequest& request, const StartAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentAsyncHelper(const Model::UpdateAssessmentRequest& request, const UpdateAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentControlAsyncHelper(const Model::UpdateAssessmentControlRequest& request, const UpdateAssessmentControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentControlSetStatusAsyncHelper(const Model::UpdateAssessmentControlSetStatusRequest& request, const UpdateAssessmentControlSetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentFrameworkAsyncHelper(const Model::UpdateAssessmentFrameworkRequest& request, const UpdateAssessmentFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentFrameworkShareAsyncHelper(const Model::UpdateAssessmentFrameworkShareRequest& request, const UpdateAssessmentFrameworkShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAssessmentStatusAsyncHelper(const Model::UpdateAssessmentStatusRequest& request, const UpdateAssessmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateControlAsyncHelper(const Model::UpdateControlRequest& request, const UpdateControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSettingsAsyncHelper(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ValidateAssessmentReportIntegrityAsyncHelper(const Model::ValidateAssessmentReportIntegrityRequest& request, const ValidateAssessmentReportIntegrityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>;
+      void init(const AuditManagerClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AuditManagerClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AuditManagerEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AuditManager

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ResourceRecord
+  class ResourceRecord
   {
   public:
-    ResourceRecord();
-    ResourceRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ResourceRecord();
+    AWS_ROUTE53_API ResourceRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ResourceRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -146,7 +146,7 @@ namespace Model
   private:
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

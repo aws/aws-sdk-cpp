@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DecisionTaskCompletedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DecisionTaskCompletedEventAttributes
+  class DecisionTaskCompletedEventAttributes
   {
   public:
-    DecisionTaskCompletedEventAttributes();
-    DecisionTaskCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DecisionTaskCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API DecisionTaskCompletedEventAttributes();
+    AWS_SWF_API DecisionTaskCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API DecisionTaskCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_executionContext;
-    bool m_executionContextHasBeenSet;
+    bool m_executionContextHasBeenSet = false;
 
     long long m_scheduledEventId;
-    bool m_scheduledEventIdHasBeenSet;
+    bool m_scheduledEventIdHasBeenSet = false;
 
     long long m_startedEventId;
-    bool m_startedEventIdHasBeenSet;
+    bool m_startedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

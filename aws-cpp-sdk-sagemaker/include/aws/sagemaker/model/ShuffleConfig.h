@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ShuffleConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ShuffleConfig
+  class ShuffleConfig
   {
   public:
-    ShuffleConfig();
-    ShuffleConfig(Aws::Utils::Json::JsonView jsonValue);
-    ShuffleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ShuffleConfig();
+    AWS_SAGEMAKER_API ShuffleConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ShuffleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -72,7 +72,7 @@ namespace Model
   private:
 
     long long m_seed;
-    bool m_seedHasBeenSet;
+    bool m_seedHasBeenSet = false;
   };
 
 } // namespace Model

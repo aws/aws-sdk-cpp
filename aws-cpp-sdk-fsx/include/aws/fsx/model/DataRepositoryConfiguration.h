@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryConfiguration
+  class DataRepositoryConfiguration
   {
   public:
-    DataRepositoryConfiguration();
-    DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryConfiguration();
+    AWS_FSX_API DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -469,22 +469,22 @@ namespace Model
   private:
 
     DataRepositoryLifecycle m_lifecycle;
-    bool m_lifecycleHasBeenSet;
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_importPath;
-    bool m_importPathHasBeenSet;
+    bool m_importPathHasBeenSet = false;
 
     Aws::String m_exportPath;
-    bool m_exportPathHasBeenSet;
+    bool m_exportPathHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     DataRepositoryFailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
   };
 
 } // namespace Model

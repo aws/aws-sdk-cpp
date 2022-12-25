@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHLOGS_API GetLogRecordRequest : public CloudWatchLogsRequest
+  class GetLogRecordRequest : public CloudWatchLogsRequest
   {
   public:
-    GetLogRecordRequest();
+    AWS_CLOUDWATCHLOGS_API GetLogRecordRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetLogRecord"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -106,10 +106,46 @@ namespace Model
      */
     inline GetLogRecordRequest& WithLogRecordPointer(const char* value) { SetLogRecordPointer(value); return *this;}
 
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool GetUnmask() const{ return m_unmask; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
+
+    /**
+     * <p>Specify <code>true</code> to display the log event fields with all sensitive
+     * data unmasked and visible. The default is <code>false</code>.</p> <p>To use this
+     * operation with this parameter, you must be signed into an account with the
+     * <code>logs:Unmask</code> permission.</p>
+     */
+    inline GetLogRecordRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
+
   private:
 
     Aws::String m_logRecordPointer;
-    bool m_logRecordPointerHasBeenSet;
+    bool m_logRecordPointerHasBeenSet = false;
+
+    bool m_unmask;
+    bool m_unmaskHasBeenSet = false;
   };
 
 } // namespace Model

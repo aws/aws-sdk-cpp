@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API UpdateTaskSetRequest : public ECSRequest
+  class UpdateTaskSetRequest : public ECSRequest
   {
   public:
-    UpdateTaskSetRequest();
+    AWS_ECS_API UpdateTaskSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTaskSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -221,16 +221,16 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_taskSet;
-    bool m_taskSetHasBeenSet;
+    bool m_taskSetHasBeenSet = false;
 
     Scale m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
   };
 
 } // namespace Model

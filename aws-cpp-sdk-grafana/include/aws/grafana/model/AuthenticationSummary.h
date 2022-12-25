@@ -26,65 +26,65 @@ namespace Model
 {
 
   /**
-   * <p>A structure that describes whether the workspace uses SAML, Amazon Web
-   * Services SSO, or both methods for user authentication, and whether that
-   * authentication is fully configured.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that describes whether the workspace uses SAML, IAM Identity
+   * Center, or both methods for user authentication, and whether that authentication
+   * is fully configured.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AuthenticationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AuthenticationSummary
+  class AuthenticationSummary
   {
   public:
-    AuthenticationSummary();
-    AuthenticationSummary(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary();
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetProviders() const{ return m_providers; }
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline void SetProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_providersHasBeenSet = true; m_providers = value; }
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline void SetProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_providersHasBeenSet = true; m_providers = std::move(value); }
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline AuthenticationSummary& WithProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetProviders(value); return *this;}
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline AuthenticationSummary& WithProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetProviders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline AuthenticationSummary& AddProviders(const AuthenticationProviderTypes& value) { m_providersHasBeenSet = true; m_providers.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both
+     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline AuthenticationSummary& AddProviders(AuthenticationProviderTypes&& value) { m_providersHasBeenSet = true; m_providers.push_back(std::move(value)); return *this; }
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<AuthenticationProviderTypes> m_providers;
-    bool m_providersHasBeenSet;
+    bool m_providersHasBeenSet = false;
 
     SamlConfigurationStatus m_samlConfigurationStatus;
-    bool m_samlConfigurationStatusHasBeenSet;
+    bool m_samlConfigurationStatusHasBeenSet = false;
   };
 
 } // namespace Model

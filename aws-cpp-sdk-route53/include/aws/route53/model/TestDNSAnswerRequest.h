@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswerRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API TestDNSAnswerRequest : public Route53Request
+  class TestDNSAnswerRequest : public Route53Request
   {
   public:
-    TestDNSAnswerRequest();
+    AWS_ROUTE53_API TestDNSAnswerRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TestDNSAnswer"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -411,22 +411,22 @@ namespace Model
   private:
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     Aws::String m_recordName;
-    bool m_recordNameHasBeenSet;
+    bool m_recordNameHasBeenSet = false;
 
     RRType m_recordType;
-    bool m_recordTypeHasBeenSet;
+    bool m_recordTypeHasBeenSet = false;
 
     Aws::String m_resolverIP;
-    bool m_resolverIPHasBeenSet;
+    bool m_resolverIPHasBeenSet = false;
 
     Aws::String m_eDNS0ClientSubnetIP;
-    bool m_eDNS0ClientSubnetIPHasBeenSet;
+    bool m_eDNS0ClientSubnetIPHasBeenSet = false;
 
     Aws::String m_eDNS0ClientSubnetMask;
-    bool m_eDNS0ClientSubnetMaskHasBeenSet;
+    bool m_eDNS0ClientSubnetMaskHasBeenSet = false;
   };
 
 } // namespace Model

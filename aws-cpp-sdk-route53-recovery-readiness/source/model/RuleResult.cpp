@@ -48,7 +48,7 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("messages"))
   {
-    Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
+    Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
     for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
@@ -79,12 +79,12 @@ JsonValue RuleResult::Jsonize() const
 
   if(m_lastCheckedTimestampHasBeenSet)
   {
-   payload.WithString("lastCheckedTimestamp", m_lastCheckedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("lastCheckedTimestamp", m_lastCheckedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_messagesHasBeenSet)
   {
-   Array<JsonValue> messagesJsonList(m_messages.size());
+   Aws::Utils::Array<JsonValue> messagesJsonList(m_messages.size());
    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
    {
      messagesJsonList[messagesIndex].AsObject(m_messages[messagesIndex].Jsonize());

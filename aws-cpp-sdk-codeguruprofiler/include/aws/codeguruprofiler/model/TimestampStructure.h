@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TimestampStructure">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API TimestampStructure
+  class TimestampStructure
   {
   public:
-    TimestampStructure();
-    TimestampStructure(Aws::Utils::Json::JsonView jsonValue);
-    TimestampStructure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API TimestampStructure();
+    AWS_CODEGURUPROFILER_API TimestampStructure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API TimestampStructure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,7 +84,7 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

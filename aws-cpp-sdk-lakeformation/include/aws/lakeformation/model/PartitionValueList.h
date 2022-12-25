@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PartitionValueList">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API PartitionValueList
+  class PartitionValueList
   {
   public:
-    PartitionValueList();
-    PartitionValueList(Aws::Utils::Json::JsonView jsonValue);
-    PartitionValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API PartitionValueList();
+    AWS_LAKEFORMATION_API PartitionValueList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API PartitionValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

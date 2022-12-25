@@ -11,6 +11,7 @@
 #include <aws/ssm/model/MaintenanceWindowTaskInvocationParameters.h>
 #include <aws/ssm/model/LoggingInfo.h>
 #include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -31,12 +32,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateMaintenanceWindowTaskResult
+  class UpdateMaintenanceWindowTaskResult
   {
   public:
-    UpdateMaintenanceWindowTaskResult();
-    UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult();
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -621,6 +622,37 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfiguration = value; }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskResult& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The details for the CloudWatch alarm you applied to your maintenance window
+     * task.</p>
+     */
+    inline UpdateMaintenanceWindowTaskResult& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -650,6 +682,8 @@ namespace Model
     Aws::String m_description;
 
     MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
+
+    AlarmConfiguration m_alarmConfiguration;
   };
 
 } // namespace Model

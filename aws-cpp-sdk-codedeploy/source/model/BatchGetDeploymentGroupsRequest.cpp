@@ -30,7 +30,7 @@ Aws::String BatchGetDeploymentGroupsRequest::SerializePayload() const
 
   if(m_deploymentGroupNamesHasBeenSet)
   {
-   Array<JsonValue> deploymentGroupNamesJsonList(m_deploymentGroupNames.size());
+   Aws::Utils::Array<JsonValue> deploymentGroupNamesJsonList(m_deploymentGroupNames.size());
    for(unsigned deploymentGroupNamesIndex = 0; deploymentGroupNamesIndex < deploymentGroupNamesJsonList.GetLength(); ++deploymentGroupNamesIndex)
    {
      deploymentGroupNamesJsonList[deploymentGroupNamesIndex].AsString(m_deploymentGroupNames[deploymentGroupNamesIndex]);

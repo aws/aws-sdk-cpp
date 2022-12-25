@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API DeclineHandshakeRequest : public OrganizationsRequest
+  class DeclineHandshakeRequest : public OrganizationsRequest
   {
   public:
-    DeclineHandshakeRequest();
+    AWS_ORGANIZATIONS_API DeclineHandshakeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeclineHandshake"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ORGANIZATIONS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -101,7 +101,7 @@ namespace Model
   private:
 
     Aws::String m_handshakeId;
-    bool m_handshakeIdHasBeenSet;
+    bool m_handshakeIdHasBeenSet = false;
   };
 
 } // namespace Model

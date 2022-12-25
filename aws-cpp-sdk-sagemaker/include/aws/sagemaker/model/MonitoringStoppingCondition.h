@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringStoppingCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringStoppingCondition
+  class MonitoringStoppingCondition
   {
   public:
-    MonitoringStoppingCondition();
-    MonitoringStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringStoppingCondition();
+    AWS_SAGEMAKER_API MonitoringStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     int m_maxRuntimeInSeconds;
-    bool m_maxRuntimeInSecondsHasBeenSet;
+    bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

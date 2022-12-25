@@ -29,47 +29,47 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/IdentityProviderConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API IdentityProviderConfigResponse
+  class IdentityProviderConfigResponse
   {
   public:
-    IdentityProviderConfigResponse();
-    IdentityProviderConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProviderConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API IdentityProviderConfigResponse();
+    AWS_EKS_API IdentityProviderConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API IdentityProviderConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline const OidcIdentityProviderConfig& GetOidc() const{ return m_oidc; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline bool OidcHasBeenSet() const { return m_oidcHasBeenSet; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline void SetOidc(const OidcIdentityProviderConfig& value) { m_oidcHasBeenSet = true; m_oidc = value; }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline void SetOidc(OidcIdentityProviderConfig&& value) { m_oidcHasBeenSet = true; m_oidc = std::move(value); }
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline IdentityProviderConfigResponse& WithOidc(const OidcIdentityProviderConfig& value) { SetOidc(value); return *this;}
 
     /**
-     * <p>An object that represents an OpenID Connect (OIDC) identity provider
+     * <p>An object representing an OpenID Connect (OIDC) identity provider
      * configuration.</p>
      */
     inline IdentityProviderConfigResponse& WithOidc(OidcIdentityProviderConfig&& value) { SetOidc(std::move(value)); return *this;}
@@ -77,7 +77,7 @@ namespace Model
   private:
 
     OidcIdentityProviderConfig m_oidc;
-    bool m_oidcHasBeenSet;
+    bool m_oidcHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API SuppressedDestinationAttributes
+  class SuppressedDestinationAttributes
   {
   public:
-    SuppressedDestinationAttributes();
-    SuppressedDestinationAttributes(Aws::Utils::Json::JsonView jsonValue);
-    SuppressedDestinationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API SuppressedDestinationAttributes();
+    AWS_SESV2_API SuppressedDestinationAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API SuppressedDestinationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_feedbackId;
-    bool m_feedbackIdHasBeenSet;
+    bool m_feedbackIdHasBeenSet = false;
   };
 
 } // namespace Model

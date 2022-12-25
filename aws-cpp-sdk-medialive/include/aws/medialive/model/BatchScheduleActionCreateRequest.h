@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionCreateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchScheduleActionCreateRequest
+  class BatchScheduleActionCreateRequest
   {
   public:
-    BatchScheduleActionCreateRequest();
-    BatchScheduleActionCreateRequest(Aws::Utils::Json::JsonView jsonValue);
-    BatchScheduleActionCreateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BatchScheduleActionCreateRequest();
+    AWS_MEDIALIVE_API BatchScheduleActionCreateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BatchScheduleActionCreateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<ScheduleAction> m_scheduleActions;
-    bool m_scheduleActionsHasBeenSet;
+    bool m_scheduleActionsHasBeenSet = false;
   };
 
 } // namespace Model

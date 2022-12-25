@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AggregationType">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AggregationType
+  class AggregationType
   {
   public:
-    AggregationType();
-    AggregationType(Aws::Utils::Json::JsonView jsonValue);
-    AggregationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AggregationType();
+    AWS_IOT_API AggregationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AggregationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -118,10 +118,10 @@ namespace Model
   private:
 
     AggregationTypeName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

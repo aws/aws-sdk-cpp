@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/SourceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API SourceMetadata
+  class SourceMetadata
   {
   public:
-    SourceMetadata();
-    SourceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API SourceMetadata();
+    AWS_NETWORKFIREWALL_API SourceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API SourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,10 +158,10 @@ namespace Model
   private:
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::String m_sourceUpdateToken;
-    bool m_sourceUpdateTokenHasBeenSet;
+    bool m_sourceUpdateTokenHasBeenSet = false;
   };
 
 } // namespace Model

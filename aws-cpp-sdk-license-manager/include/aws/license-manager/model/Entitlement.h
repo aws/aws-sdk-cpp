@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API Entitlement();
+    AWS_LICENSEMANAGER_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -217,22 +217,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     long long m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     bool m_overage;
-    bool m_overageHasBeenSet;
+    bool m_overageHasBeenSet = false;
 
     EntitlementUnit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     bool m_allowCheckIn;
-    bool m_allowCheckInHasBeenSet;
+    bool m_allowCheckInHasBeenSet = false;
   };
 
 } // namespace Model

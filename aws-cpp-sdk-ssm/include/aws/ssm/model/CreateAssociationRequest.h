@@ -12,8 +12,10 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -25,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API CreateAssociationRequest : public SSMRequest
+  class CreateAssociationRequest : public SSMRequest
   {
   public:
-    CreateAssociationRequest();
+    AWS_SSM_API CreateAssociationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAssociation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -1371,61 +1373,159 @@ namespace Model
      */
     inline CreateAssociationRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Adds or overwrites one or more tags for a State Manager association.
+     * <i>Tags</i> are metadata that you can assign to your Amazon Web Services
+     * resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. </p>
+     */
+    inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     InstanceAssociationOutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_associationName;
-    bool m_associationNameHasBeenSet;
+    bool m_associationNameHasBeenSet = false;
 
     Aws::String m_automationTargetParameterName;
-    bool m_automationTargetParameterNameHasBeenSet;
+    bool m_automationTargetParameterNameHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     AssociationComplianceSeverity m_complianceSeverity;
-    bool m_complianceSeverityHasBeenSet;
+    bool m_complianceSeverityHasBeenSet = false;
 
     AssociationSyncCompliance m_syncCompliance;
-    bool m_syncComplianceHasBeenSet;
+    bool m_syncComplianceHasBeenSet = false;
 
     bool m_applyOnlyAtCronInterval;
-    bool m_applyOnlyAtCronIntervalHasBeenSet;
+    bool m_applyOnlyAtCronIntervalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_calendarNames;
-    bool m_calendarNamesHasBeenSet;
+    bool m_calendarNamesHasBeenSet = false;
 
     Aws::Vector<TargetLocation> m_targetLocations;
-    bool m_targetLocationsHasBeenSet;
+    bool m_targetLocationsHasBeenSet = false;
 
     int m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-    bool m_targetMapsHasBeenSet;
+    bool m_targetMapsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

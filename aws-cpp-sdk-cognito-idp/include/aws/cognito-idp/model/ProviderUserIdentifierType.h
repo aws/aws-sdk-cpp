@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderUserIdentifierType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType
+  class ProviderUserIdentifierType
   {
   public:
-    ProviderUserIdentifierType();
-    ProviderUserIdentifierType(Aws::Utils::Json::JsonView jsonValue);
-    ProviderUserIdentifierType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType();
+    AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_providerName;
-    bool m_providerNameHasBeenSet;
+    bool m_providerNameHasBeenSet = false;
 
     Aws::String m_providerAttributeName;
-    bool m_providerAttributeNameHasBeenSet;
+    bool m_providerAttributeNameHasBeenSet = false;
 
     Aws::String m_providerAttributeValue;
-    bool m_providerAttributeValueHasBeenSet;
+    bool m_providerAttributeValueHasBeenSet = false;
   };
 
 } // namespace Model

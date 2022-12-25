@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ServiceSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ServiceSetting
+  class ServiceSetting
   {
   public:
-    ServiceSetting();
-    ServiceSetting(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ServiceSetting();
+    AWS_SSM_API ServiceSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ServiceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -338,22 +338,22 @@ namespace Model
   private:
 
     Aws::String m_settingId;
-    bool m_settingIdHasBeenSet;
+    bool m_settingIdHasBeenSet = false;
 
     Aws::String m_settingValue;
-    bool m_settingValueHasBeenSet;
+    bool m_settingValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;
-    bool m_lastModifiedUserHasBeenSet;
+    bool m_lastModifiedUserHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

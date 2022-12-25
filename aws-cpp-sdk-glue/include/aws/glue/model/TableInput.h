@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableInput">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API TableInput
+  class TableInput
   {
   public:
-    TableInput();
-    TableInput(Aws::Utils::Json::JsonView jsonValue);
-    TableInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TableInput();
+    AWS_GLUE_API TableInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TableInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -619,43 +619,43 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessTime;
-    bool m_lastAccessTimeHasBeenSet;
+    bool m_lastAccessTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTime;
-    bool m_lastAnalyzedTimeHasBeenSet;
+    bool m_lastAnalyzedTimeHasBeenSet = false;
 
     int m_retention;
-    bool m_retentionHasBeenSet;
+    bool m_retentionHasBeenSet = false;
 
     StorageDescriptor m_storageDescriptor;
-    bool m_storageDescriptorHasBeenSet;
+    bool m_storageDescriptorHasBeenSet = false;
 
     Aws::Vector<Column> m_partitionKeys;
-    bool m_partitionKeysHasBeenSet;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::String m_viewOriginalText;
-    bool m_viewOriginalTextHasBeenSet;
+    bool m_viewOriginalTextHasBeenSet = false;
 
     Aws::String m_viewExpandedText;
-    bool m_viewExpandedTextHasBeenSet;
+    bool m_viewExpandedTextHasBeenSet = false;
 
     Aws::String m_tableType;
-    bool m_tableTypeHasBeenSet;
+    bool m_tableTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     TableIdentifier m_targetTable;
-    bool m_targetTableHasBeenSet;
+    bool m_targetTableHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API UpdateEndpointRequest : public SageMakerRequest
+  class UpdateEndpointRequest : public SageMakerRequest
   {
   public:
-    UpdateEndpointRequest();
+    AWS_SAGEMAKER_API UpdateEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -321,22 +321,22 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointConfigName;
-    bool m_endpointConfigNameHasBeenSet;
+    bool m_endpointConfigNameHasBeenSet = false;
 
     bool m_retainAllVariantProperties;
-    bool m_retainAllVariantPropertiesHasBeenSet;
+    bool m_retainAllVariantPropertiesHasBeenSet = false;
 
     Aws::Vector<VariantProperty> m_excludeRetainedVariantProperties;
-    bool m_excludeRetainedVariantPropertiesHasBeenSet;
+    bool m_excludeRetainedVariantPropertiesHasBeenSet = false;
 
     DeploymentConfig m_deploymentConfig;
-    bool m_deploymentConfigHasBeenSet;
+    bool m_deploymentConfigHasBeenSet = false;
 
     bool m_retainDeploymentConfig;
-    bool m_retainDeploymentConfigHasBeenSet;
+    bool m_retainDeploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

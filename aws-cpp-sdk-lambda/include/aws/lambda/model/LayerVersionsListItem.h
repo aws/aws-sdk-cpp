@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/LayerVersionsListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API LayerVersionsListItem
+  class LayerVersionsListItem
   {
   public:
-    LayerVersionsListItem();
-    LayerVersionsListItem(Aws::Utils::Json::JsonView jsonValue);
-    LayerVersionsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API LayerVersionsListItem();
+    AWS_LAMBDA_API LayerVersionsListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API LayerVersionsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -335,25 +335,25 @@ namespace Model
   private:
 
     Aws::String m_layerVersionArn;
-    bool m_layerVersionArnHasBeenSet;
+    bool m_layerVersionArnHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Vector<Runtime> m_compatibleRuntimes;
-    bool m_compatibleRuntimesHasBeenSet;
+    bool m_compatibleRuntimesHasBeenSet = false;
 
     Aws::String m_licenseInfo;
-    bool m_licenseInfoHasBeenSet;
+    bool m_licenseInfoHasBeenSet = false;
 
     Aws::Vector<Architecture> m_compatibleArchitectures;
-    bool m_compatibleArchitecturesHasBeenSet;
+    bool m_compatibleArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

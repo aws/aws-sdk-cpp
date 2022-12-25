@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Profile">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Profile
+  class Profile
   {
   public:
-    Profile();
-    Profile(Aws::Utils::Json::JsonView jsonValue);
-    Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Profile();
+    AWS_ALEXAFORBUSINESS_API Profile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -526,49 +526,49 @@ namespace Model
   private:
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_profileName;
-    bool m_profileNameHasBeenSet;
+    bool m_profileNameHasBeenSet = false;
 
     bool m_isDefault;
-    bool m_isDefaultHasBeenSet;
+    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
 
     DistanceUnit m_distanceUnit;
-    bool m_distanceUnitHasBeenSet;
+    bool m_distanceUnitHasBeenSet = false;
 
     TemperatureUnit m_temperatureUnit;
-    bool m_temperatureUnitHasBeenSet;
+    bool m_temperatureUnitHasBeenSet = false;
 
     WakeWord m_wakeWord;
-    bool m_wakeWordHasBeenSet;
+    bool m_wakeWordHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     bool m_setupModeDisabled;
-    bool m_setupModeDisabledHasBeenSet;
+    bool m_setupModeDisabledHasBeenSet = false;
 
     int m_maxVolumeLimit;
-    bool m_maxVolumeLimitHasBeenSet;
+    bool m_maxVolumeLimitHasBeenSet = false;
 
     bool m_pSTNEnabled;
-    bool m_pSTNEnabledHasBeenSet;
+    bool m_pSTNEnabledHasBeenSet = false;
 
     bool m_dataRetentionOptIn;
-    bool m_dataRetentionOptInHasBeenSet;
+    bool m_dataRetentionOptInHasBeenSet = false;
 
     Aws::String m_addressBookArn;
-    bool m_addressBookArnHasBeenSet;
+    bool m_addressBookArnHasBeenSet = false;
 
     MeetingRoomConfiguration m_meetingRoomConfiguration;
-    bool m_meetingRoomConfigurationHasBeenSet;
+    bool m_meetingRoomConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

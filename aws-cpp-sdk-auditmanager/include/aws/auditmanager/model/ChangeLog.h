@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ChangeLog">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ChangeLog
+  class ChangeLog
   {
   public:
-    ChangeLog();
-    ChangeLog(Aws::Utils::Json::JsonView jsonValue);
-    ChangeLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ChangeLog();
+    AWS_AUDITMANAGER_API ChangeLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ChangeLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -239,19 +239,19 @@ namespace Model
   private:
 
     ObjectTypeEnum m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     Aws::String m_objectName;
-    bool m_objectNameHasBeenSet;
+    bool m_objectNameHasBeenSet = false;
 
     ActionEnum m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

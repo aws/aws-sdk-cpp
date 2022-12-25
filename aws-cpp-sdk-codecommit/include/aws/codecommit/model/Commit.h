@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Commit">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Commit
+  class Commit
   {
   public:
-    Commit();
-    Commit(Aws::Utils::Json::JsonView jsonValue);
-    Commit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Commit();
+    AWS_CODECOMMIT_API Commit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Commit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -370,25 +370,25 @@ namespace Model
   private:
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
 
     Aws::String m_treeId;
-    bool m_treeIdHasBeenSet;
+    bool m_treeIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_parents;
-    bool m_parentsHasBeenSet;
+    bool m_parentsHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     UserInfo m_author;
-    bool m_authorHasBeenSet;
+    bool m_authorHasBeenSet = false;
 
     UserInfo m_committer;
-    bool m_committerHasBeenSet;
+    bool m_committerHasBeenSet = false;
 
     Aws::String m_additionalData;
-    bool m_additionalDataHasBeenSet;
+    bool m_additionalDataHasBeenSet = false;
   };
 
 } // namespace Model

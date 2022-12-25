@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Cvss">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Cvss
+  class Cvss
   {
   public:
-    Cvss();
-    Cvss(Aws::Utils::Json::JsonView jsonValue);
-    Cvss& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Cvss();
+    AWS_SECURITYHUB_API Cvss(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Cvss& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     double m_baseScore;
-    bool m_baseScoreHasBeenSet;
+    bool m_baseScoreHasBeenSet = false;
 
     Aws::String m_baseVector;
-    bool m_baseVectorHasBeenSet;
+    bool m_baseVectorHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Adjustment> m_adjustments;
-    bool m_adjustmentsHasBeenSet;
+    bool m_adjustmentsHasBeenSet = false;
   };
 
 } // namespace Model

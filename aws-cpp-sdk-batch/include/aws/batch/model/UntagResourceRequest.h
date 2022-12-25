@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API UntagResourceRequest : public BatchRequest
+  class UntagResourceRequest : public BatchRequest
   {
   public:
-    UntagResourceRequest();
+    AWS_BATCH_API UntagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,16 +38,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BATCH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline UntagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline UntagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
@@ -103,7 +103,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
      * Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.</p>
+     * and multi-node parallel (MNP) jobs aren't supported.</p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeys;
-    bool m_tagKeysHasBeenSet;
+    bool m_tagKeysHasBeenSet = false;
   };
 
 } // namespace Model

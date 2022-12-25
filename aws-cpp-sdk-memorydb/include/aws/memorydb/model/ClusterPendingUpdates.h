@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ClusterPendingUpdates">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ClusterPendingUpdates
+  class ClusterPendingUpdates
   {
   public:
-    ClusterPendingUpdates();
-    ClusterPendingUpdates(Aws::Utils::Json::JsonView jsonValue);
-    ClusterPendingUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ClusterPendingUpdates();
+    AWS_MEMORYDB_API ClusterPendingUpdates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ClusterPendingUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     ReshardingStatus m_resharding;
-    bool m_reshardingHasBeenSet;
+    bool m_reshardingHasBeenSet = false;
 
     ACLsUpdateStatus m_aCLs;
-    bool m_aCLsHasBeenSet;
+    bool m_aCLsHasBeenSet = false;
 
     Aws::Vector<PendingModifiedServiceUpdate> m_serviceUpdates;
-    bool m_serviceUpdatesHasBeenSet;
+    bool m_serviceUpdatesHasBeenSet = false;
   };
 
 } // namespace Model

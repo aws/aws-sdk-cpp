@@ -25,10 +25,10 @@ namespace Model
 
   /**
    */
-  class AWS_POLLY_API SynthesizeSpeechRequest : public PollyRequest
+  class SynthesizeSpeechRequest : public PollyRequest
   {
   public:
-    SynthesizeSpeechRequest();
+    AWS_POLLY_API SynthesizeSpeechRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,10 +36,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SynthesizeSpeech"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_POLLY_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_POLLY_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 
@@ -619,31 +619,31 @@ namespace Model
   private:
 
     Engine m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lexiconNames;
-    bool m_lexiconNamesHasBeenSet;
+    bool m_lexiconNamesHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
 
     Aws::String m_sampleRate;
-    bool m_sampleRateHasBeenSet;
+    bool m_sampleRateHasBeenSet = false;
 
     Aws::Vector<SpeechMarkType> m_speechMarkTypes;
-    bool m_speechMarkTypesHasBeenSet;
+    bool m_speechMarkTypesHasBeenSet = false;
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     TextType m_textType;
-    bool m_textTypeHasBeenSet;
+    bool m_textTypeHasBeenSet = false;
 
     VoiceId m_voiceId;
-    bool m_voiceIdHasBeenSet;
+    bool m_voiceIdHasBeenSet = false;
   };
 
 } // namespace Model

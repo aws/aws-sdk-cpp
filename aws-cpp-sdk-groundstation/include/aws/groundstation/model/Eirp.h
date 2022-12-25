@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Eirp">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API Eirp
+  class Eirp
   {
   public:
-    Eirp();
-    Eirp(Aws::Utils::Json::JsonView jsonValue);
-    Eirp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API Eirp();
+    AWS_GROUNDSTATION_API Eirp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Eirp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -91,10 +91,10 @@ namespace Model
   private:
 
     EirpUnits m_units;
-    bool m_unitsHasBeenSet;
+    bool m_unitsHasBeenSet = false;
 
     double m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEDIATAILOR_API ListAlertsRequest : public MediaTailorRequest
+  class ListAlertsRequest : public MediaTailorRequest
   {
   public:
-    ListAlertsRequest();
+    AWS_MEDIATAILOR_API ListAlertsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,81 +33,89 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAlerts"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MEDIATAILOR_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
-     * <p>Upper bound on number of records to return. The maximum number of results is
-     * 100.</p>
+     * <p>The maximum number of alerts that you want MediaTailor to return in response
+     * to the current request. If there are more than <code>MaxResults</code> alerts,
+     * use the value of <code>NextToken</code> in the response to get the next page of
+     * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Upper bound on number of records to return. The maximum number of results is
-     * 100.</p>
+     * <p>The maximum number of alerts that you want MediaTailor to return in response
+     * to the current request. If there are more than <code>MaxResults</code> alerts,
+     * use the value of <code>NextToken</code> in the response to get the next page of
+     * results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Upper bound on number of records to return. The maximum number of results is
-     * 100.</p>
+     * <p>The maximum number of alerts that you want MediaTailor to return in response
+     * to the current request. If there are more than <code>MaxResults</code> alerts,
+     * use the value of <code>NextToken</code> in the response to get the next page of
+     * results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Upper bound on number of records to return. The maximum number of results is
-     * 100.</p>
+     * <p>The maximum number of alerts that you want MediaTailor to return in response
+     * to the current request. If there are more than <code>MaxResults</code> alerts,
+     * use the value of <code>NextToken</code> in the response to get the next page of
+     * results.</p>
      */
     inline ListAlertsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListAlertsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListAlertsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token from the GET list request. Use the token to fetch the next
-     * page of results.</p>
+     * <p>Pagination token returned by the list request when results exceed the maximum
+     * allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListAlertsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -155,13 +163,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
   };
 
 } // namespace Model

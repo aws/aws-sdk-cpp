@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectEnvironmentRegistryCredential">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential
+  class AwsCodeBuildProjectEnvironmentRegistryCredential
   {
   public:
-    AwsCodeBuildProjectEnvironmentRegistryCredential();
-    AwsCodeBuildProjectEnvironmentRegistryCredential(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectEnvironmentRegistryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentRegistryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_credential;
-    bool m_credentialHasBeenSet;
+    bool m_credentialHasBeenSet = false;
 
     Aws::String m_credentialProvider;
-    bool m_credentialProviderHasBeenSet;
+    bool m_credentialProviderHasBeenSet = false;
   };
 
 } // namespace Model

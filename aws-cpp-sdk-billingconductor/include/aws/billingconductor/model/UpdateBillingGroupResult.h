@@ -25,12 +25,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult
+  class UpdateBillingGroupResult
   {
   public:
-    UpdateBillingGroupResult();
-    UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult();
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -244,17 +244,17 @@ namespace Model
 
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p> The most recent time the billing group was modified. </p>
+     * <p> The most recent time when the billing group was modified. </p>
      */
     inline UpdateBillingGroupResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

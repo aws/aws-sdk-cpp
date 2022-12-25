@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptionsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutConfigurationSetDeliveryOptionsRequest : public PinpointEmailRequest
+  class PutConfigurationSetDeliveryOptionsRequest : public PinpointEmailRequest
   {
   public:
-    PutConfigurationSetDeliveryOptionsRequest();
+    AWS_PINPOINTEMAIL_API PutConfigurationSetDeliveryOptionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutConfigurationSetDeliveryOptions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PINPOINTEMAIL_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
 
     Aws::String m_sendingPoolName;
-    bool m_sendingPoolNameHasBeenSet;
+    bool m_sendingPoolNameHasBeenSet = false;
   };
 
 } // namespace Model

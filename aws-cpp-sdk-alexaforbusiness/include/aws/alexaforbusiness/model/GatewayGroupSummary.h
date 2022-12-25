@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GatewayGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API GatewayGroupSummary
+  class GatewayGroupSummary
   {
   public:
-    GatewayGroupSummary();
-    GatewayGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    GatewayGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API GatewayGroupSummary();
+    AWS_ALEXAFORBUSINESS_API GatewayGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API GatewayGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

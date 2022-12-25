@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MxfSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MxfSettings
+  class MxfSettings
   {
   public:
-    MxfSettings();
-    MxfSettings(Aws::Utils::Json::JsonView jsonValue);
-    MxfSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MxfSettings();
+    AWS_MEDIACONVERT_API MxfSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MxfSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,13 +212,13 @@ namespace Model
   private:
 
     MxfAfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     MxfProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
 
     MxfXavcProfileSettings m_xavcProfileSettings;
-    bool m_xavcProfileSettingsHasBeenSet;
+    bool m_xavcProfileSettingsHasBeenSet = false;
   };
 
 } // namespace Model

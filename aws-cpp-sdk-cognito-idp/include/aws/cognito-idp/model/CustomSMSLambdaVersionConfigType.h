@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CustomSMSLambdaVersionConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType
+  class CustomSMSLambdaVersionConfigType
   {
   public:
-    CustomSMSLambdaVersionConfigType();
-    CustomSMSLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
-    CustomSMSLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API CustomSMSLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     CustomSMSSenderLambdaVersionType m_lambdaVersion;
-    bool m_lambdaVersionHasBeenSet;
+    bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;
-    bool m_lambdaArnHasBeenSet;
+    bool m_lambdaArnHasBeenSet = false;
   };
 
 } // namespace Model

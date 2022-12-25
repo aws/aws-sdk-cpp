@@ -19,7 +19,12 @@ PutCompositeAlarmRequest::PutCompositeAlarmRequest() :
     m_alarmRuleHasBeenSet(false),
     m_insufficientDataActionsHasBeenSet(false),
     m_oKActionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_actionsSuppressorHasBeenSet(false),
+    m_actionsSuppressorWaitPeriod(0),
+    m_actionsSuppressorWaitPeriodHasBeenSet(false),
+    m_actionsSuppressorExtensionPeriod(0),
+    m_actionsSuppressorExtensionPeriodHasBeenSet(false)
 {
 }
 
@@ -88,6 +93,21 @@ Aws::String PutCompositeAlarmRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_actionsSuppressorHasBeenSet)
+  {
+    ss << "ActionsSuppressor=" << StringUtils::URLEncode(m_actionsSuppressor.c_str()) << "&";
+  }
+
+  if(m_actionsSuppressorWaitPeriodHasBeenSet)
+  {
+    ss << "ActionsSuppressorWaitPeriod=" << m_actionsSuppressorWaitPeriod << "&";
+  }
+
+  if(m_actionsSuppressorExtensionPeriodHasBeenSet)
+  {
+    ss << "ActionsSuppressorExtensionPeriod=" << m_actionsSuppressorExtensionPeriod << "&";
   }
 
   ss << "Version=2010-08-01";

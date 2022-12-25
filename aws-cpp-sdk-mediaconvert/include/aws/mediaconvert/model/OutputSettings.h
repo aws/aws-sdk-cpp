@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/OutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API OutputSettings
+  class OutputSettings
   {
   public:
-    OutputSettings();
-    OutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API OutputSettings();
+    AWS_MEDIACONVERT_API OutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -70,7 +70,7 @@ namespace Model
   private:
 
     HlsSettings m_hlsSettings;
-    bool m_hlsSettingsHasBeenSet;
+    bool m_hlsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

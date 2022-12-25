@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API FacetAttribute
+  class FacetAttribute
   {
   public:
-    FacetAttribute();
-    FacetAttribute(Aws::Utils::Json::JsonView jsonValue);
-    FacetAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API FacetAttribute();
+    AWS_CLOUDDIRECTORY_API FacetAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API FacetAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     FacetAttributeDefinition m_attributeDefinition;
-    bool m_attributeDefinitionHasBeenSet;
+    bool m_attributeDefinitionHasBeenSet = false;
 
     FacetAttributeReference m_attributeReference;
-    bool m_attributeReferenceHasBeenSet;
+    bool m_attributeReferenceHasBeenSet = false;
 
     RequiredAttributeBehavior m_requiredBehavior;
-    bool m_requiredBehaviorHasBeenSet;
+    bool m_requiredBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

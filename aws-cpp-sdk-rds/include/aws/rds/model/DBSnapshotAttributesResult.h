@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshotAttributesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBSnapshotAttributesResult
+  class DBSnapshotAttributesResult
   {
   public:
-    DBSnapshotAttributesResult();
-    DBSnapshotAttributesResult(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBSnapshotAttributesResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSnapshotAttributesResult();
+    AWS_RDS_API DBSnapshotAttributesResult(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSnapshotAttributesResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_dBSnapshotIdentifier;
-    bool m_dBSnapshotIdentifierHasBeenSet;
+    bool m_dBSnapshotIdentifierHasBeenSet = false;
 
     Aws::Vector<DBSnapshotAttribute> m_dBSnapshotAttributes;
-    bool m_dBSnapshotAttributesHasBeenSet;
+    bool m_dBSnapshotAttributesHasBeenSet = false;
   };
 
 } // namespace Model

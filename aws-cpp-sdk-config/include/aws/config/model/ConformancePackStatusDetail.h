@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackStatusDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackStatusDetail
+  class ConformancePackStatusDetail
   {
   public:
-    ConformancePackStatusDetail();
-    ConformancePackStatusDetail(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackStatusDetail();
+    AWS_CONFIGSERVICE_API ConformancePackStatusDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -381,28 +381,28 @@ namespace Model
   private:
 
     Aws::String m_conformancePackName;
-    bool m_conformancePackNameHasBeenSet;
+    bool m_conformancePackNameHasBeenSet = false;
 
     Aws::String m_conformancePackId;
-    bool m_conformancePackIdHasBeenSet;
+    bool m_conformancePackIdHasBeenSet = false;
 
     Aws::String m_conformancePackArn;
-    bool m_conformancePackArnHasBeenSet;
+    bool m_conformancePackArnHasBeenSet = false;
 
     ConformancePackState m_conformancePackState;
-    bool m_conformancePackStateHasBeenSet;
+    bool m_conformancePackStateHasBeenSet = false;
 
     Aws::String m_stackArn;
-    bool m_stackArnHasBeenSet;
+    bool m_stackArnHasBeenSet = false;
 
     Aws::String m_conformancePackStatusReason;
-    bool m_conformancePackStatusReasonHasBeenSet;
+    bool m_conformancePackStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateRequestedTime;
-    bool m_lastUpdateRequestedTimeHasBeenSet;
+    bool m_lastUpdateRequestedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateCompletedTime;
-    bool m_lastUpdateCompletedTimeHasBeenSet;
+    bool m_lastUpdateCompletedTimeHasBeenSet = false;
   };
 
 } // namespace Model

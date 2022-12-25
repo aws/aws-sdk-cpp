@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/AnomalyScore">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API AnomalyScore
+  class AnomalyScore
   {
   public:
-    AnomalyScore();
-    AnomalyScore(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API AnomalyScore();
+    AWS_COSTEXPLORER_API AnomalyScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API AnomalyScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -84,10 +84,10 @@ namespace Model
   private:
 
     double m_maxScore;
-    bool m_maxScoreHasBeenSet;
+    bool m_maxScoreHasBeenSet = false;
 
     double m_currentScore;
-    bool m_currentScoreHasBeenSet;
+    bool m_currentScoreHasBeenSet = false;
   };
 
 } // namespace Model

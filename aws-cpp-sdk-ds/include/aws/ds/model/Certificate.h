@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Certificate();
+    AWS_DIRECTORYSERVICE_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -339,28 +339,28 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     CertificateState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
-    bool m_stateReasonHasBeenSet;
+    bool m_stateReasonHasBeenSet = false;
 
     Aws::String m_commonName;
-    bool m_commonNameHasBeenSet;
+    bool m_commonNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_registeredDateTime;
-    bool m_registeredDateTimeHasBeenSet;
+    bool m_registeredDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiryDateTime;
-    bool m_expiryDateTimeHasBeenSet;
+    bool m_expiryDateTimeHasBeenSet = false;
 
     CertificateType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     ClientCertAuthSettings m_clientCertAuthSettings;
-    bool m_clientCertAuthSettingsHasBeenSet;
+    bool m_clientCertAuthSettingsHasBeenSet = false;
   };
 
 } // namespace Model

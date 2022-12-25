@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSM_API StartSessionRequest : public SSMRequest
+  class StartSessionRequest : public SSMRequest
   {
   public:
-    StartSessionRequest();
+    AWS_SSM_API StartSessionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartSession"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -78,74 +78,98 @@ namespace Model
 
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline StartSessionRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline StartSessionRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SSM document to define the parameters and plugin settings for
-     * the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call
-     * the <a>GetDocument</a> API to verify the document exists before attempting to
-     * start a session. If no document name is provided, a shell to the managed node is
-     * launched by default.</p>
+     * <p>The name of the SSM document you want to use to define the type of session,
+     * input parameters, or preferences for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API
+     * to verify the document exists before attempting to start a session. If no
+     * document name is provided, a shell to the managed node is launched by default.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start
+     * a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline StartSessionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
@@ -282,16 +306,16 @@ namespace Model
   private:
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     Aws::String m_documentName;
-    bool m_documentNameHasBeenSet;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_reason;
-    bool m_reasonHasBeenSet;
+    bool m_reasonHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

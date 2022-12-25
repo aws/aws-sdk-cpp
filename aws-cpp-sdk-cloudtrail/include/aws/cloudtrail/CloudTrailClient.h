@@ -5,203 +5,16 @@
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
-#include <aws/cloudtrail/CloudTrailErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cloudtrail/model/AddTagsResult.h>
-#include <aws/cloudtrail/model/CancelQueryResult.h>
-#include <aws/cloudtrail/model/CreateEventDataStoreResult.h>
-#include <aws/cloudtrail/model/CreateTrailResult.h>
-#include <aws/cloudtrail/model/DeleteEventDataStoreResult.h>
-#include <aws/cloudtrail/model/DeleteTrailResult.h>
-#include <aws/cloudtrail/model/DescribeQueryResult.h>
-#include <aws/cloudtrail/model/DescribeTrailsResult.h>
-#include <aws/cloudtrail/model/GetEventDataStoreResult.h>
-#include <aws/cloudtrail/model/GetEventSelectorsResult.h>
-#include <aws/cloudtrail/model/GetInsightSelectorsResult.h>
-#include <aws/cloudtrail/model/GetQueryResultsResult.h>
-#include <aws/cloudtrail/model/GetTrailResult.h>
-#include <aws/cloudtrail/model/GetTrailStatusResult.h>
-#include <aws/cloudtrail/model/ListEventDataStoresResult.h>
-#include <aws/cloudtrail/model/ListPublicKeysResult.h>
-#include <aws/cloudtrail/model/ListQueriesResult.h>
-#include <aws/cloudtrail/model/ListTagsResult.h>
-#include <aws/cloudtrail/model/ListTrailsResult.h>
-#include <aws/cloudtrail/model/LookupEventsResult.h>
-#include <aws/cloudtrail/model/PutEventSelectorsResult.h>
-#include <aws/cloudtrail/model/PutInsightSelectorsResult.h>
-#include <aws/cloudtrail/model/RemoveTagsResult.h>
-#include <aws/cloudtrail/model/RestoreEventDataStoreResult.h>
-#include <aws/cloudtrail/model/StartLoggingResult.h>
-#include <aws/cloudtrail/model/StartQueryResult.h>
-#include <aws/cloudtrail/model/StopLoggingResult.h>
-#include <aws/cloudtrail/model/UpdateEventDataStoreResult.h>
-#include <aws/cloudtrail/model/UpdateTrailResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cloudtrail/CloudTrailServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudTrail
 {
-
-namespace Model
-{
-        class AddTagsRequest;
-        class CancelQueryRequest;
-        class CreateEventDataStoreRequest;
-        class CreateTrailRequest;
-        class DeleteEventDataStoreRequest;
-        class DeleteTrailRequest;
-        class DescribeQueryRequest;
-        class DescribeTrailsRequest;
-        class GetEventDataStoreRequest;
-        class GetEventSelectorsRequest;
-        class GetInsightSelectorsRequest;
-        class GetQueryResultsRequest;
-        class GetTrailRequest;
-        class GetTrailStatusRequest;
-        class ListEventDataStoresRequest;
-        class ListPublicKeysRequest;
-        class ListQueriesRequest;
-        class ListTagsRequest;
-        class ListTrailsRequest;
-        class LookupEventsRequest;
-        class PutEventSelectorsRequest;
-        class PutInsightSelectorsRequest;
-        class RemoveTagsRequest;
-        class RestoreEventDataStoreRequest;
-        class StartLoggingRequest;
-        class StartQueryRequest;
-        class StopLoggingRequest;
-        class UpdateEventDataStoreRequest;
-        class UpdateTrailRequest;
-
-        typedef Aws::Utils::Outcome<AddTagsResult, CloudTrailError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CancelQueryResult, CloudTrailError> CancelQueryOutcome;
-        typedef Aws::Utils::Outcome<CreateEventDataStoreResult, CloudTrailError> CreateEventDataStoreOutcome;
-        typedef Aws::Utils::Outcome<CreateTrailResult, CloudTrailError> CreateTrailOutcome;
-        typedef Aws::Utils::Outcome<DeleteEventDataStoreResult, CloudTrailError> DeleteEventDataStoreOutcome;
-        typedef Aws::Utils::Outcome<DeleteTrailResult, CloudTrailError> DeleteTrailOutcome;
-        typedef Aws::Utils::Outcome<DescribeQueryResult, CloudTrailError> DescribeQueryOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrailsResult, CloudTrailError> DescribeTrailsOutcome;
-        typedef Aws::Utils::Outcome<GetEventDataStoreResult, CloudTrailError> GetEventDataStoreOutcome;
-        typedef Aws::Utils::Outcome<GetEventSelectorsResult, CloudTrailError> GetEventSelectorsOutcome;
-        typedef Aws::Utils::Outcome<GetInsightSelectorsResult, CloudTrailError> GetInsightSelectorsOutcome;
-        typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudTrailError> GetQueryResultsOutcome;
-        typedef Aws::Utils::Outcome<GetTrailResult, CloudTrailError> GetTrailOutcome;
-        typedef Aws::Utils::Outcome<GetTrailStatusResult, CloudTrailError> GetTrailStatusOutcome;
-        typedef Aws::Utils::Outcome<ListEventDataStoresResult, CloudTrailError> ListEventDataStoresOutcome;
-        typedef Aws::Utils::Outcome<ListPublicKeysResult, CloudTrailError> ListPublicKeysOutcome;
-        typedef Aws::Utils::Outcome<ListQueriesResult, CloudTrailError> ListQueriesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, CloudTrailError> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ListTrailsResult, CloudTrailError> ListTrailsOutcome;
-        typedef Aws::Utils::Outcome<LookupEventsResult, CloudTrailError> LookupEventsOutcome;
-        typedef Aws::Utils::Outcome<PutEventSelectorsResult, CloudTrailError> PutEventSelectorsOutcome;
-        typedef Aws::Utils::Outcome<PutInsightSelectorsResult, CloudTrailError> PutInsightSelectorsOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, CloudTrailError> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<RestoreEventDataStoreResult, CloudTrailError> RestoreEventDataStoreOutcome;
-        typedef Aws::Utils::Outcome<StartLoggingResult, CloudTrailError> StartLoggingOutcome;
-        typedef Aws::Utils::Outcome<StartQueryResult, CloudTrailError> StartQueryOutcome;
-        typedef Aws::Utils::Outcome<StopLoggingResult, CloudTrailError> StopLoggingOutcome;
-        typedef Aws::Utils::Outcome<UpdateEventDataStoreResult, CloudTrailError> UpdateEventDataStoreOutcome;
-        typedef Aws::Utils::Outcome<UpdateTrailResult, CloudTrailError> UpdateTrailOutcome;
-
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<CancelQueryOutcome> CancelQueryOutcomeCallable;
-        typedef std::future<CreateEventDataStoreOutcome> CreateEventDataStoreOutcomeCallable;
-        typedef std::future<CreateTrailOutcome> CreateTrailOutcomeCallable;
-        typedef std::future<DeleteEventDataStoreOutcome> DeleteEventDataStoreOutcomeCallable;
-        typedef std::future<DeleteTrailOutcome> DeleteTrailOutcomeCallable;
-        typedef std::future<DescribeQueryOutcome> DescribeQueryOutcomeCallable;
-        typedef std::future<DescribeTrailsOutcome> DescribeTrailsOutcomeCallable;
-        typedef std::future<GetEventDataStoreOutcome> GetEventDataStoreOutcomeCallable;
-        typedef std::future<GetEventSelectorsOutcome> GetEventSelectorsOutcomeCallable;
-        typedef std::future<GetInsightSelectorsOutcome> GetInsightSelectorsOutcomeCallable;
-        typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
-        typedef std::future<GetTrailOutcome> GetTrailOutcomeCallable;
-        typedef std::future<GetTrailStatusOutcome> GetTrailStatusOutcomeCallable;
-        typedef std::future<ListEventDataStoresOutcome> ListEventDataStoresOutcomeCallable;
-        typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
-        typedef std::future<ListQueriesOutcome> ListQueriesOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<ListTrailsOutcome> ListTrailsOutcomeCallable;
-        typedef std::future<LookupEventsOutcome> LookupEventsOutcomeCallable;
-        typedef std::future<PutEventSelectorsOutcome> PutEventSelectorsOutcomeCallable;
-        typedef std::future<PutInsightSelectorsOutcome> PutInsightSelectorsOutcomeCallable;
-        typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
-        typedef std::future<RestoreEventDataStoreOutcome> RestoreEventDataStoreOutcomeCallable;
-        typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
-        typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
-        typedef std::future<StopLoggingOutcome> StopLoggingOutcomeCallable;
-        typedef std::future<UpdateEventDataStoreOutcome> UpdateEventDataStoreOutcomeCallable;
-        typedef std::future<UpdateTrailOutcome> UpdateTrailOutcomeCallable;
-} // namespace Model
-
-  class CloudTrailClient;
-
-    typedef std::function<void(const CloudTrailClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::CancelQueryRequest&, const Model::CancelQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::CreateEventDataStoreRequest&, const Model::CreateEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventDataStoreResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::CreateTrailRequest&, const Model::CreateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrailResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::DeleteEventDataStoreRequest&, const Model::DeleteEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventDataStoreResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::DeleteTrailRequest&, const Model::DeleteTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrailResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::DescribeQueryRequest&, const Model::DescribeQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::DescribeTrailsRequest&, const Model::DescribeTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrailsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetEventDataStoreRequest&, const Model::GetEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventDataStoreResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetEventSelectorsRequest&, const Model::GetEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSelectorsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetInsightSelectorsRequest&, const Model::GetInsightSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightSelectorsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetTrailRequest&, const Model::GetTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::GetTrailStatusRequest&, const Model::GetTrailStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailStatusResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::ListEventDataStoresRequest&, const Model::ListEventDataStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventDataStoresResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::ListPublicKeysRequest&, const Model::ListPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeysResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::ListQueriesRequest&, const Model::ListQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueriesResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::ListTrailsRequest&, const Model::ListTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrailsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::LookupEventsRequest&, const Model::LookupEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::PutEventSelectorsRequest&, const Model::PutEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventSelectorsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::PutInsightSelectorsRequest&, const Model::PutInsightSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInsightSelectorsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::RestoreEventDataStoreRequest&, const Model::RestoreEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreEventDataStoreResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::StartLoggingRequest&, const Model::StartLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLoggingResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::StopLoggingRequest&, const Model::StopLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLoggingResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::UpdateEventDataStoreRequest&, const Model::UpdateEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventDataStoreResponseReceivedHandler;
-    typedef std::function<void(const CloudTrailClient*, const Model::UpdateTrailRequest&, const Model::UpdateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrailResponseReceivedHandler;
-
   /**
    * <fullname>CloudTrail</fullname> <p>This is the CloudTrail API Reference. It
    * provides descriptions of actions, data types, common parameters, and common
@@ -223,32 +36,60 @@ namespace Model
    * User Guide</a> for information about the data that is included with each Amazon
    * Web Services API call listed in the log files.</p>
    */
-  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudTrailClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudTrailClient(const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration(),
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudTrailClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudTrailClient(const Aws::Auth::AWSCredentials& credentials,
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudTrailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         std::shared_ptr<CloudTrailEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudTrailEndpointProvider>(ALLOCATION_TAG),
+                         const Aws::CloudTrail::CloudTrailClientConfiguration& clientConfiguration = Aws::CloudTrail::CloudTrailClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudTrailClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudTrailClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudTrailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                         const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudTrailClient();
-
 
         /**
          * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
@@ -382,6 +223,24 @@ namespace Model
         virtual void DeleteTrailAsync(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes CloudTrail delegated administrator permissions from a member account
+         * in an organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcome DeregisterOrganizationDelegatedAdmin(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterOrganizationDelegatedAdminOutcomeCallable DeregisterOrganizationDelegatedAdminCallable(const Model::DeregisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for DeregisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterOrganizationDelegatedAdminAsync(const Model::DeregisterOrganizationDelegatedAdminRequest& request, const DeregisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns metadata about a query, including query run time in milliseconds,
          * number of events scanned and matched, and query status. You must specify an ARN
          * for <code>EventDataStore</code>, and a value for
@@ -420,6 +279,28 @@ namespace Model
         virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns information about a specific channel. Amazon Web Services services
+         * create service-linked channels to get information about CloudTrail events on
+         * your behalf. For more information about service-linked channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetChannelOutcomeCallable GetChannelCallable(const Model::GetChannelRequest& request) const;
+
+        /**
+         * An Async wrapper for GetChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetChannelAsync(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about an event data store specified as either an ARN or
          * the ID portion of the ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">AWS
@@ -445,10 +326,12 @@ namespace Model
          * data events.</p> </li> <li> <p>If your event selector includes management
          * events.</p> </li> <li> <p>If your event selector includes data events, the
          * resources on which you are logging data events.</p> </li> </ul> <p>For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * Data and Management Events for Trails </a> in the <i>CloudTrail User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * information about logging management and data events, see the following topics
+         * in the <i>CloudTrail User Guide</i>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+         * management events for trails </a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+         * data events for trails </a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -463,6 +346,23 @@ namespace Model
          * An Async wrapper for GetEventSelectors that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information about a specific import. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImportOutcome GetImport(const Model::GetImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImportOutcomeCallable GetImportCallable(const Model::GetImportRequest& request) const;
+
+        /**
+         * An Async wrapper for GetImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImportAsync(const Model::GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the settings for the Insights event selectors that you configured
@@ -548,6 +448,29 @@ namespace Model
         virtual void GetTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists the channels in the current account, and their source names. Amazon
+         * Web Services services create service-linked channels get information about
+         * CloudTrail events on your behalf. For more information about service-linked
+         * channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about all event data stores in the account, in the
          * current region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">AWS
@@ -564,6 +487,43 @@ namespace Model
          * An Async wrapper for ListEventDataStores that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEventDataStoresAsync(const Model::ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of failures for the specified import. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportFailuresOutcome ListImportFailures(const Model::ListImportFailuresRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImportFailures that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportFailuresOutcomeCallable ListImportFailuresCallable(const Model::ListImportFailuresRequest& request) const;
+
+        /**
+         * An Async wrapper for ListImportFailures that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportFailuresAsync(const Model::ListImportFailuresRequest& request, const ListImportFailuresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns information on all imports, or a select set of imports by
+         * <code>ImportStatus</code> or <code>Destination</code>. </p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListImports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
@@ -703,8 +663,10 @@ namespace Model
          * <code>InvalidHomeRegionException</code> exception is thrown.</p> <p>You can
          * configure up to five event selectors for each trail. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-         * data and management events for trails </a> and <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+         * management events for trails </a>, <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+         * data events for trails </a>, and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
          * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
          * advanced event selectors, and conditions for your advanced event selectors, up
@@ -754,6 +716,24 @@ namespace Model
         virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers an organization’s member account as the CloudTrail delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcome RegisterOrganizationDelegatedAdmin(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterOrganizationDelegatedAdmin that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterOrganizationDelegatedAdminOutcomeCallable RegisterOrganizationDelegatedAdminCallable(const Model::RegisterOrganizationDelegatedAdminRequest& request) const;
+
+        /**
+         * An Async wrapper for RegisterOrganizationDelegatedAdmin that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterOrganizationDelegatedAdminAsync(const Model::RegisterOrganizationDelegatedAdminRequest& request, const RegisterOrganizationDelegatedAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes the specified tags from a trail or event data store.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
@@ -793,6 +773,39 @@ namespace Model
         virtual void RestoreEventDataStoreAsync(const Model::RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Starts an import of logged trail events from a source S3 bucket to a
+         * destination event data store. By default, CloudTrail only imports events
+         * contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+         * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other
+         * Amazon Web Services services. If you want to import CloudTrail events contained
+         * in another prefix, you must include the prefix in the
+         * <code>S3LocationUri</code>. For more considerations about importing trail
+         * events, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>.
+         * </p> <p> When you start a new import, the <code>Destinations</code> and
+         * <code>ImportSource</code> parameters are required. Before starting a new import,
+         * disable any access control lists (ACLs) attached to the source S3 bucket. For
+         * more information about disabling ACLs, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+         * ownership of objects and disabling ACLs for your bucket</a>. </p> <p> When you
+         * retry an import, the <code>ImportID</code> parameter is required. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
+
+        /**
+         * An Async wrapper for StartImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the recording of Amazon Web Services API calls and log file delivery
          * for a trail. For a trail that is enabled in all regions, this operation must be
          * called from the region in which the trail was created. This operation cannot be
@@ -815,8 +828,9 @@ namespace Model
 
         /**
          * <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code>
-         * parameter provides your SQL query, enclosed in single quotation
-         * marks.</p><p><h3>See Also:</h3>   <a
+         * parameter provides your SQL query, enclosed in single quotation marks. Use the
+         * optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an
+         * S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">AWS
          * API Reference</a></p>
          */
@@ -831,6 +845,23 @@ namespace Model
          * An Async wrapper for StartQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartQueryAsync(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Stops a specified import. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopImportOutcome StopImport(const Model::StopImportRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopImport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopImportOutcomeCallable StopImportCallable(const Model::StopImportRequest& request) const;
+
+        /**
+         * An Async wrapper for StopImport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopImportAsync(const Model::StopImportRequest& request, const StopImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Suspends the recording of Amazon Web Services API calls and log file delivery
@@ -861,7 +892,7 @@ namespace Model
          * is an ARN or the ID portion of the ARN. Other parameters are optional, but at
          * least one optional parameter must be specified, or CloudTrail throws an error.
          * <code>RetentionPeriod</code> is in days, and valid values are integers between
-         * 90 and 2555. By default, <code>TerminationProtection</code> is enabled.
+         * 90 and 2557. By default, <code>TerminationProtection</code> is enabled.
          * <code>AdvancedEventSelectors</code> includes or excludes management and data
          * events in your event data store; for more information about
          * <code>AdvancedEventSelectors</code>, see
@@ -907,41 +938,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelQueryAsyncHelper(const Model::CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEventDataStoreAsyncHelper(const Model::CreateEventDataStoreRequest& request, const CreateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTrailAsyncHelper(const Model::CreateTrailRequest& request, const CreateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEventDataStoreAsyncHelper(const Model::DeleteEventDataStoreRequest& request, const DeleteEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTrailAsyncHelper(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeQueryAsyncHelper(const Model::DescribeQueryRequest& request, const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTrailsAsyncHelper(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEventDataStoreAsyncHelper(const Model::GetEventDataStoreRequest& request, const GetEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEventSelectorsAsyncHelper(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInsightSelectorsAsyncHelper(const Model::GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQueryResultsAsyncHelper(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTrailAsyncHelper(const Model::GetTrailRequest& request, const GetTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTrailStatusAsyncHelper(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEventDataStoresAsyncHelper(const Model::ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPublicKeysAsyncHelper(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListQueriesAsyncHelper(const Model::ListQueriesRequest& request, const ListQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTrailsAsyncHelper(const Model::ListTrailsRequest& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void LookupEventsAsyncHelper(const Model::LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutEventSelectorsAsyncHelper(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutInsightSelectorsAsyncHelper(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreEventDataStoreAsyncHelper(const Model::RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartLoggingAsyncHelper(const Model::StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartQueryAsyncHelper(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopLoggingAsyncHelper(const Model::StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEventDataStoreAsyncHelper(const Model::UpdateEventDataStoreRequest& request, const UpdateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTrailAsyncHelper(const Model::UpdateTrailRequest& request, const UpdateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
+      void init(const CloudTrailClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudTrailClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudTrail

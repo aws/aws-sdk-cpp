@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API SchedulingPolicyDetail
+  class SchedulingPolicyDetail
   {
   public:
-    SchedulingPolicyDetail();
-    SchedulingPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
-    SchedulingPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API SchedulingPolicyDetail();
+    AWS_BATCH_API SchedulingPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API SchedulingPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -301,16 +301,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     FairsharePolicy m_fairsharePolicy;
-    bool m_fairsharePolicyHasBeenSet;
+    bool m_fairsharePolicyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

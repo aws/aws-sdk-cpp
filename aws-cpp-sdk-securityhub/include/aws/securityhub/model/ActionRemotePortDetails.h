@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ActionRemotePortDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ActionRemotePortDetails
+  class ActionRemotePortDetails
   {
   public:
-    ActionRemotePortDetails();
-    ActionRemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActionRemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ActionRemotePortDetails();
+    AWS_SECURITYHUB_API ActionRemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ActionRemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_portName;
-    bool m_portNameHasBeenSet;
+    bool m_portNameHasBeenSet = false;
   };
 
 } // namespace Model

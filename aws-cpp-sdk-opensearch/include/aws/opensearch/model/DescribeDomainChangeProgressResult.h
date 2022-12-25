@@ -26,46 +26,46 @@ namespace Model
 {
   /**
    * <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains
-   * the progress information of the requested domain change. </p><p><h3>See
-   * Also:</h3>   <a
+   * progress information for the requested domain change.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgressResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DescribeDomainChangeProgressResult
+  class DescribeDomainChangeProgressResult
   {
   public:
-    DescribeDomainChangeProgressResult();
-    DescribeDomainChangeProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDomainChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DescribeDomainChangeProgressResult();
+    AWS_OPENSEARCHSERVICE_API DescribeDomainChangeProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API DescribeDomainChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
+     * <p>Container for information about the stages of a configuration change
+     * happening on a domain.</p>
      */
     inline const ChangeProgressStatusDetails& GetChangeProgressStatus() const{ return m_changeProgressStatus; }
 
     /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
+     * <p>Container for information about the stages of a configuration change
+     * happening on a domain.</p>
      */
     inline void SetChangeProgressStatus(const ChangeProgressStatusDetails& value) { m_changeProgressStatus = value; }
 
     /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
+     * <p>Container for information about the stages of a configuration change
+     * happening on a domain.</p>
      */
     inline void SetChangeProgressStatus(ChangeProgressStatusDetails&& value) { m_changeProgressStatus = std::move(value); }
 
     /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
+     * <p>Container for information about the stages of a configuration change
+     * happening on a domain.</p>
      */
     inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(const ChangeProgressStatusDetails& value) { SetChangeProgressStatus(value); return *this;}
 
     /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
+     * <p>Container for information about the stages of a configuration change
+     * happening on a domain.</p>
      */
     inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(ChangeProgressStatusDetails&& value) { SetChangeProgressStatus(std::move(value)); return *this;}
 

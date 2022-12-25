@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSecurityGroupEc2SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup
+  class AwsRdsDbSecurityGroupEc2SecurityGroup
   {
   public:
-    AwsRdsDbSecurityGroupEc2SecurityGroup();
-    AwsRdsDbSecurityGroupEc2SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSecurityGroupEc2SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup();
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_ec2SecurityGroupId;
-    bool m_ec2SecurityGroupIdHasBeenSet;
+    bool m_ec2SecurityGroupIdHasBeenSet = false;
 
     Aws::String m_ec2SecurityGroupName;
-    bool m_ec2SecurityGroupNameHasBeenSet;
+    bool m_ec2SecurityGroupNameHasBeenSet = false;
 
     Aws::String m_ec2SecurityGroupOwnerId;
-    bool m_ec2SecurityGroupOwnerIdHasBeenSet;
+    bool m_ec2SecurityGroupOwnerIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

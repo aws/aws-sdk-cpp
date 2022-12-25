@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ImageFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API ImageFailure
+  class ImageFailure
   {
   public:
-    ImageFailure();
-    ImageFailure(Aws::Utils::Json::JsonView jsonValue);
-    ImageFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API ImageFailure();
+    AWS_ECRPUBLIC_API ImageFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API ImageFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -145,13 +145,13 @@ namespace Model
   private:
 
     ImageIdentifier m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     ImageFailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet;
+    bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest
+  class SetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest
   {
   public:
-    SetUserMFAPreferenceRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUserMFAPreferenceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SetUserMFAPreference"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -68,32 +68,32 @@ namespace Model
 
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
 
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;
-    bool m_sMSMfaSettingsHasBeenSet;
+    bool m_sMSMfaSettingsHasBeenSet = false;
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-    bool m_softwareTokenMfaSettingsHasBeenSet;
+    bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

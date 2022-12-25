@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_WORKSPACESWEB_API DeleteUserSettingsRequest : public WorkSpacesWebRequest
+  class DeleteUserSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    DeleteUserSettingsRequest();
+    AWS_WORKSPACESWEB_API DeleteUserSettingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteUserSettings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_userSettingsArn;
-    bool m_userSettingsArnHasBeenSet;
+    bool m_userSettingsArnHasBeenSet = false;
   };
 
 } // namespace Model

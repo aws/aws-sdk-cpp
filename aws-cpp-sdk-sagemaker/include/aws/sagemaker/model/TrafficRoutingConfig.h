@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrafficRoutingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrafficRoutingConfig
+  class TrafficRoutingConfig
   {
   public:
-    TrafficRoutingConfig();
-    TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
-    TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrafficRoutingConfig();
+    AWS_SAGEMAKER_API TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -213,16 +213,16 @@ namespace Model
   private:
 
     TrafficRoutingConfigType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_waitIntervalInSeconds;
-    bool m_waitIntervalInSecondsHasBeenSet;
+    bool m_waitIntervalInSecondsHasBeenSet = false;
 
     CapacitySize m_canarySize;
-    bool m_canarySizeHasBeenSet;
+    bool m_canarySizeHasBeenSet = false;
 
     CapacitySize m_linearStepSize;
-    bool m_linearStepSizeHasBeenSet;
+    bool m_linearStepSizeHasBeenSet = false;
   };
 
 } // namespace Model

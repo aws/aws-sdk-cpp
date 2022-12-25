@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/EthernetPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API EthernetPayload
+  class EthernetPayload
   {
   public:
-    EthernetPayload();
-    EthernetPayload(Aws::Utils::Json::JsonView jsonValue);
-    EthernetPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API EthernetPayload();
+    AWS_PANORAMA_API EthernetPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API EthernetPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     StaticIpConnectionInfo m_staticIpConnectionInfo;
-    bool m_staticIpConnectionInfoHasBeenSet;
+    bool m_staticIpConnectionInfoHasBeenSet = false;
   };
 
 } // namespace Model

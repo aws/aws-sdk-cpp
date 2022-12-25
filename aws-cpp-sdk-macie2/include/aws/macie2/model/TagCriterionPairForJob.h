@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagCriterionPairForJob">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API TagCriterionPairForJob
+  class TagCriterionPairForJob
   {
   public:
-    TagCriterionPairForJob();
-    TagCriterionPairForJob(Aws::Utils::Json::JsonView jsonValue);
-    TagCriterionPairForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API TagCriterionPairForJob();
+    AWS_MACIE2_API TagCriterionPairForJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API TagCriterionPairForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

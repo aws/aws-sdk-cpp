@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneySchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneySchedule
+  class JourneySchedule
   {
   public:
-    JourneySchedule();
-    JourneySchedule(Aws::Utils::Json::JsonView jsonValue);
-    JourneySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneySchedule();
+    AWS_PINPOINT_API JourneySchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -243,13 +243,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_timezone;
-    bool m_timezoneHasBeenSet;
+    bool m_timezoneHasBeenSet = false;
   };
 
 } // namespace Model

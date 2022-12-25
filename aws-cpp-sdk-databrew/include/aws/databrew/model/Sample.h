@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Sample">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Sample
+  class Sample
   {
   public:
-    Sample();
-    Sample(Aws::Utils::Json::JsonView jsonValue);
-    Sample& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Sample();
+    AWS_GLUEDATABREW_API Sample(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Sample& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -92,10 +92,10 @@ namespace Model
   private:
 
     int m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     SampleType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

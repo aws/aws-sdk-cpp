@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ACLPendingChanges">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ACLPendingChanges
+  class ACLPendingChanges
   {
   public:
-    ACLPendingChanges();
-    ACLPendingChanges(Aws::Utils::Json::JsonView jsonValue);
-    ACLPendingChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ACLPendingChanges();
+    AWS_MEMORYDB_API ACLPendingChanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ACLPendingChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_userNamesToRemove;
-    bool m_userNamesToRemoveHasBeenSet;
+    bool m_userNamesToRemoveHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userNamesToAdd;
-    bool m_userNamesToAddHasBeenSet;
+    bool m_userNamesToAddHasBeenSet = false;
   };
 
 } // namespace Model

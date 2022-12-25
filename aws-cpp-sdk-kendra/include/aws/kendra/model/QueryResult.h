@@ -29,53 +29,53 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API QueryResult
+  class QueryResult
   {
   public:
-    QueryResult();
-    QueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API QueryResult();
+    AWS_KENDRA_API QueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API QueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline const Aws::String& GetQueryId() const{ return m_queryId; }
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline void SetQueryId(const Aws::String& value) { m_queryId = value; }
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline void SetQueryId(Aws::String&& value) { m_queryId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline void SetQueryId(const char* value) { m_queryId.assign(value); }
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline QueryResult& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline QueryResult& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the search. You use <code>QueryId</code> to
-     * identify the search when using the feedback API.</p>
+     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
+     * search when using the feedback API.</p>
      */
     inline QueryResult& WithQueryId(const char* value) { SetQueryId(value); return *this;}
 

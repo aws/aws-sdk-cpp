@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/BoundingBox">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API BoundingBox
+  class BoundingBox
   {
   public:
-    BoundingBox();
-    BoundingBox(Aws::Utils::Json::JsonView jsonValue);
-    BoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API BoundingBox();
+    AWS_TEXTRACT_API BoundingBox(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API BoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -149,16 +149,16 @@ namespace Model
   private:
 
     double m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
 
     double m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     double m_left;
-    bool m_leftHasBeenSet;
+    bool m_leftHasBeenSet = false;
 
     double m_top;
-    bool m_topHasBeenSet;
+    bool m_topHasBeenSet = false;
   };
 
 } // namespace Model

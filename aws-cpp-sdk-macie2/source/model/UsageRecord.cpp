@@ -20,6 +20,7 @@ namespace Model
 
 UsageRecord::UsageRecord() : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
     m_freeTrialStartDateHasBeenSet(false),
     m_usageHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ UsageRecord::UsageRecord() :
 
 UsageRecord::UsageRecord(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
     m_freeTrialStartDateHasBeenSet(false),
     m_usageHasBeenSet(false)
 {
@@ -42,6 +44,13 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     m_accountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("automatedDiscoveryFreeTrialStartDate"))
+  {
+    m_automatedDiscoveryFreeTrialStartDate = jsonValue.GetString("automatedDiscoveryFreeTrialStartDate");
+
+    m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("freeTrialStartDate"))
   {
     m_freeTrialStartDate = jsonValue.GetString("freeTrialStartDate");
@@ -51,7 +60,7 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("usage"))
   {
-    Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
+    Aws::Utils::Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
     for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
     {
       m_usage.push_back(usageJsonList[usageIndex].AsObject());
@@ -72,14 +81,19 @@ JsonValue UsageRecord::Jsonize() const
 
   }
 
+  if(m_automatedDiscoveryFreeTrialStartDateHasBeenSet)
+  {
+   payload.WithString("automatedDiscoveryFreeTrialStartDate", m_automatedDiscoveryFreeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_freeTrialStartDateHasBeenSet)
   {
-   payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("freeTrialStartDate", m_freeTrialStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_usageHasBeenSet)
   {
-   Array<JsonValue> usageJsonList(m_usage.size());
+   Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
    for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
    {
      usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());

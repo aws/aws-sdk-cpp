@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/OTAJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API OTAJobConfig
+  class OTAJobConfig
   {
   public:
-    OTAJobConfig();
-    OTAJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    OTAJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API OTAJobConfig();
+    AWS_PANORAMA_API OTAJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API OTAJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_imageVersion;
-    bool m_imageVersionHasBeenSet;
+    bool m_imageVersionHasBeenSet = false;
   };
 
 } // namespace Model

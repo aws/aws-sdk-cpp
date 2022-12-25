@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DropDuplicates">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DropDuplicates
+  class DropDuplicates
   {
   public:
-    DropDuplicates();
-    DropDuplicates(Aws::Utils::Json::JsonView jsonValue);
-    DropDuplicates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DropDuplicates();
+    AWS_GLUE_API DropDuplicates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DropDuplicates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_columns;
-    bool m_columnsHasBeenSet;
+    bool m_columnsHasBeenSet = false;
   };
 
 } // namespace Model

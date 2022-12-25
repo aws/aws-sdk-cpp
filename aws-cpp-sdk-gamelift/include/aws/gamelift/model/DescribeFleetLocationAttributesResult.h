@@ -26,18 +26,12 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request operation.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationAttributesOutput">AWS
-   * API Reference</a></p>
-   */
-  class AWS_GAMELIFT_API DescribeFleetLocationAttributesResult
+  class DescribeFleetLocationAttributesResult
   {
   public:
-    DescribeFleetLocationAttributesResult();
-    DescribeFleetLocationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetLocationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeFleetLocationAttributesResult();
+    AWS_GAMELIFT_API DescribeFleetLocationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeFleetLocationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -88,8 +82,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
@@ -98,8 +91,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
 
@@ -108,8 +100,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
 
@@ -118,8 +109,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
 
@@ -128,8 +118,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline DescribeFleetLocationAttributesResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
@@ -138,8 +127,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline DescribeFleetLocationAttributesResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
@@ -148,51 +136,43 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
      * are unique across all Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-     * </p>
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline DescribeFleetLocationAttributesResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline const Aws::Vector<LocationAttributes>& GetLocationAttributes() const{ return m_locationAttributes; }
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline void SetLocationAttributes(const Aws::Vector<LocationAttributes>& value) { m_locationAttributes = value; }
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline void SetLocationAttributes(Aws::Vector<LocationAttributes>&& value) { m_locationAttributes = std::move(value); }
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline DescribeFleetLocationAttributesResult& WithLocationAttributes(const Aws::Vector<LocationAttributes>& value) { SetLocationAttributes(value); return *this;}
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline DescribeFleetLocationAttributesResult& WithLocationAttributes(Aws::Vector<LocationAttributes>&& value) { SetLocationAttributes(std::move(value)); return *this;}
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline DescribeFleetLocationAttributesResult& AddLocationAttributes(const LocationAttributes& value) { m_locationAttributes.push_back(value); return *this; }
 
     /**
-     * <p> Location-specific information on the requested fleet's remote locations.
-     * </p>
+     * <p> Location-specific information on the requested fleet's remote locations.</p>
      */
     inline DescribeFleetLocationAttributesResult& AddLocationAttributes(LocationAttributes&& value) { m_locationAttributes.push_back(std::move(value)); return *this; }
 

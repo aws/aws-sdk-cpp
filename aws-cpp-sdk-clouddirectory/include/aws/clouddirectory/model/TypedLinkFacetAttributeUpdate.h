@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkFacetAttributeUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate
+  class TypedLinkFacetAttributeUpdate
   {
   public:
-    TypedLinkFacetAttributeUpdate();
-    TypedLinkFacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
-    TypedLinkFacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate();
+    AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -102,10 +102,10 @@ namespace Model
   private:
 
     TypedLinkAttributeDefinition m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     UpdateActionType m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

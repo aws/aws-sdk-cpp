@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociationExecutionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AssociationExecutionFilter
+  class AssociationExecutionFilter
   {
   public:
-    AssociationExecutionFilter();
-    AssociationExecutionFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssociationExecutionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AssociationExecutionFilter();
+    AWS_SSM_API AssociationExecutionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AssociationExecutionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -144,13 +144,13 @@ namespace Model
   private:
 
     AssociationExecutionFilterKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     AssociationFilterOperatorType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

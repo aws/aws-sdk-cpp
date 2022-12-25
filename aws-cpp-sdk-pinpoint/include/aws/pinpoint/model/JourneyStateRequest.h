@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyStateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyStateRequest
+  class JourneyStateRequest
   {
   public:
-    JourneyStateRequest();
-    JourneyStateRequest(Aws::Utils::Json::JsonView jsonValue);
-    JourneyStateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyStateRequest();
+    AWS_PINPOINT_API JourneyStateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyStateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -148,7 +148,7 @@ namespace Model
   private:
 
     State m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

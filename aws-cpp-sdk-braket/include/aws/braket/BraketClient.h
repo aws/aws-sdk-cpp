@@ -5,123 +5,16 @@
 
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
-#include <aws/braket/BraketErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/braket/model/CancelJobResult.h>
-#include <aws/braket/model/CancelQuantumTaskResult.h>
-#include <aws/braket/model/CreateJobResult.h>
-#include <aws/braket/model/CreateQuantumTaskResult.h>
-#include <aws/braket/model/GetDeviceResult.h>
-#include <aws/braket/model/GetJobResult.h>
-#include <aws/braket/model/GetQuantumTaskResult.h>
-#include <aws/braket/model/ListTagsForResourceResult.h>
-#include <aws/braket/model/SearchDevicesResult.h>
-#include <aws/braket/model/SearchJobsResult.h>
-#include <aws/braket/model/SearchQuantumTasksResult.h>
-#include <aws/braket/model/TagResourceResult.h>
-#include <aws/braket/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/braket/BraketServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Braket
 {
-
-namespace Model
-{
-        class CancelJobRequest;
-        class CancelQuantumTaskRequest;
-        class CreateJobRequest;
-        class CreateQuantumTaskRequest;
-        class GetDeviceRequest;
-        class GetJobRequest;
-        class GetQuantumTaskRequest;
-        class ListTagsForResourceRequest;
-        class SearchDevicesRequest;
-        class SearchJobsRequest;
-        class SearchQuantumTasksRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CancelJobResult, BraketError> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CancelQuantumTaskResult, BraketError> CancelQuantumTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, BraketError> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreateQuantumTaskResult, BraketError> CreateQuantumTaskOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceResult, BraketError> GetDeviceOutcome;
-        typedef Aws::Utils::Outcome<GetJobResult, BraketError> GetJobOutcome;
-        typedef Aws::Utils::Outcome<GetQuantumTaskResult, BraketError> GetQuantumTaskOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BraketError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<SearchDevicesResult, BraketError> SearchDevicesOutcome;
-        typedef Aws::Utils::Outcome<SearchJobsResult, BraketError> SearchJobsOutcome;
-        typedef Aws::Utils::Outcome<SearchQuantumTasksResult, BraketError> SearchQuantumTasksOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, BraketError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, BraketError> UntagResourceOutcome;
-
-        typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
-        typedef std::future<CancelQuantumTaskOutcome> CancelQuantumTaskOutcomeCallable;
-        typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
-        typedef std::future<CreateQuantumTaskOutcome> CreateQuantumTaskOutcomeCallable;
-        typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
-        typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
-        typedef std::future<GetQuantumTaskOutcome> GetQuantumTaskOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<SearchDevicesOutcome> SearchDevicesOutcomeCallable;
-        typedef std::future<SearchJobsOutcome> SearchJobsOutcomeCallable;
-        typedef std::future<SearchQuantumTasksOutcome> SearchQuantumTasksOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class BraketClient;
-
-    typedef std::function<void(const BraketClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::CancelQuantumTaskRequest&, const Model::CancelQuantumTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelQuantumTaskResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::CreateQuantumTaskRequest&, const Model::CreateQuantumTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuantumTaskResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::GetQuantumTaskRequest&, const Model::GetQuantumTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuantumTaskResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::SearchDevicesRequest&, const Model::SearchDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDevicesResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::SearchJobsRequest&, const Model::SearchJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchJobsResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::SearchQuantumTasksRequest&, const Model::SearchQuantumTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuantumTasksResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BraketClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>The Amazon Braket API Reference provides information about the operations and
    * structures supported in Amazon Braket.</p> <p>Additional Resources:</p> <ul>
@@ -129,32 +22,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">Amazon
    * Braket Developer Guide</a> </p> </li> </ul>
    */
-  class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient
+  class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BraketClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BraketClient(const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration(),
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BraketClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BraketClient(const Aws::Auth::AWSCredentials& credentials,
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BraketClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<BraketEndpointProviderBase> endpointProvider = Aws::MakeShared<BraketEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BraketClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BraketClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        BraketClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~BraketClient();
-
 
         /**
          * <p>Cancels an Amazon Braket job.</p><p><h3>See Also:</h3>   <a
@@ -390,25 +311,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelQuantumTaskAsyncHelper(const Model::CancelQuantumTaskRequest& request, const CancelQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateQuantumTaskAsyncHelper(const Model::CreateQuantumTaskRequest& request, const CreateQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetQuantumTaskAsyncHelper(const Model::GetQuantumTaskRequest& request, const GetQuantumTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchDevicesAsyncHelper(const Model::SearchDevicesRequest& request, const SearchDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchJobsAsyncHelper(const Model::SearchJobsRequest& request, const SearchJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchQuantumTasksAsyncHelper(const Model::SearchQuantumTasksRequest& request, const SearchQuantumTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;
+      void init(const BraketClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      BraketClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<BraketEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Braket

@@ -24,21 +24,21 @@ namespace Model
 
   /**
    * <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web
-   * Services account ID that it’s associated with. The distribution and account IDs
+   * Services account ID that it's associated with. The distribution and account IDs
    * are partially hidden, which allows you to identify the distributions and
    * accounts that you own, but helps to protect the information of ones that you
-   * don’t own.</p><p><h3>See Also:</h3>   <a
+   * don't own.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ConflictingAlias
+  class ConflictingAlias
   {
   public:
-    ConflictingAlias();
-    ConflictingAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConflictingAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAlias();
+    AWS_CLOUDFRONT_API ConflictingAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -133,62 +133,62 @@ namespace Model
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline ConflictingAlias& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline ConflictingAlias& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that’s associated with the alias.</p>
+     * distribution that's associated with the alias.</p>
      */
     inline ConflictingAlias& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_distributionId;
-    bool m_distributionIdHasBeenSet;
+    bool m_distributionIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
   };
 
 } // namespace Model

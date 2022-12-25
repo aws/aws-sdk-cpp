@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReferenceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ReferenceSummary
+  class ReferenceSummary
   {
   public:
-    ReferenceSummary();
-    ReferenceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ReferenceSummary();
+    AWS_CONNECT_API ReferenceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ReferenceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,22 +268,22 @@ namespace Model
   private:
 
     UrlReference m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     AttachmentReference m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     StringReference m_string;
-    bool m_stringHasBeenSet;
+    bool m_stringHasBeenSet = false;
 
     NumberReference m_number;
-    bool m_numberHasBeenSet;
+    bool m_numberHasBeenSet = false;
 
     DateReference m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     EmailReference m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
   };
 
 } // namespace Model

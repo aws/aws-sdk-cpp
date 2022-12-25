@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/SingleMasterConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API SingleMasterConfiguration
+  class SingleMasterConfiguration
   {
   public:
-    SingleMasterConfiguration();
-    SingleMasterConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SingleMasterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API SingleMasterConfiguration();
+    AWS_KINESISVIDEO_API SingleMasterConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API SingleMasterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -63,7 +63,7 @@ namespace Model
   private:
 
     int m_messageTtlSeconds;
-    bool m_messageTtlSecondsHasBeenSet;
+    bool m_messageTtlSecondsHasBeenSet = false;
   };
 
 } // namespace Model

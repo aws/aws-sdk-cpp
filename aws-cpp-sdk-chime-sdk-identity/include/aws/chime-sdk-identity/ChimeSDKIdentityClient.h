@@ -5,173 +5,16 @@
 
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
-#include <aws/chime-sdk-identity/ChimeSDKIdentityErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/chime-sdk-identity/model/CreateAppInstanceResult.h>
-#include <aws/chime-sdk-identity/model/CreateAppInstanceAdminResult.h>
-#include <aws/chime-sdk-identity/model/CreateAppInstanceUserResult.h>
-#include <aws/chime-sdk-identity/model/DescribeAppInstanceResult.h>
-#include <aws/chime-sdk-identity/model/DescribeAppInstanceAdminResult.h>
-#include <aws/chime-sdk-identity/model/DescribeAppInstanceUserResult.h>
-#include <aws/chime-sdk-identity/model/DescribeAppInstanceUserEndpointResult.h>
-#include <aws/chime-sdk-identity/model/GetAppInstanceRetentionSettingsResult.h>
-#include <aws/chime-sdk-identity/model/ListAppInstanceAdminsResult.h>
-#include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsResult.h>
-#include <aws/chime-sdk-identity/model/ListAppInstanceUsersResult.h>
-#include <aws/chime-sdk-identity/model/ListAppInstancesResult.h>
-#include <aws/chime-sdk-identity/model/ListTagsForResourceResult.h>
-#include <aws/chime-sdk-identity/model/PutAppInstanceRetentionSettingsResult.h>
-#include <aws/chime-sdk-identity/model/RegisterAppInstanceUserEndpointResult.h>
-#include <aws/chime-sdk-identity/model/UpdateAppInstanceResult.h>
-#include <aws/chime-sdk-identity/model/UpdateAppInstanceUserResult.h>
-#include <aws/chime-sdk-identity/model/UpdateAppInstanceUserEndpointResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ChimeSDKIdentity
 {
-
-namespace Model
-{
-        class CreateAppInstanceRequest;
-        class CreateAppInstanceAdminRequest;
-        class CreateAppInstanceUserRequest;
-        class DeleteAppInstanceRequest;
-        class DeleteAppInstanceAdminRequest;
-        class DeleteAppInstanceUserRequest;
-        class DeregisterAppInstanceUserEndpointRequest;
-        class DescribeAppInstanceRequest;
-        class DescribeAppInstanceAdminRequest;
-        class DescribeAppInstanceUserRequest;
-        class DescribeAppInstanceUserEndpointRequest;
-        class GetAppInstanceRetentionSettingsRequest;
-        class ListAppInstanceAdminsRequest;
-        class ListAppInstanceUserEndpointsRequest;
-        class ListAppInstanceUsersRequest;
-        class ListAppInstancesRequest;
-        class ListTagsForResourceRequest;
-        class PutAppInstanceRetentionSettingsRequest;
-        class RegisterAppInstanceUserEndpointRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAppInstanceRequest;
-        class UpdateAppInstanceUserRequest;
-        class UpdateAppInstanceUserEndpointRequest;
-
-        typedef Aws::Utils::Outcome<CreateAppInstanceResult, ChimeSDKIdentityError> CreateAppInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateAppInstanceAdminResult, ChimeSDKIdentityError> CreateAppInstanceAdminOutcome;
-        typedef Aws::Utils::Outcome<CreateAppInstanceUserResult, ChimeSDKIdentityError> CreateAppInstanceUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceAdminOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeleteAppInstanceUserOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> DeregisterAppInstanceUserEndpointOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppInstanceResult, ChimeSDKIdentityError> DescribeAppInstanceOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppInstanceAdminResult, ChimeSDKIdentityError> DescribeAppInstanceAdminOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppInstanceUserResult, ChimeSDKIdentityError> DescribeAppInstanceUserOutcome;
-        typedef Aws::Utils::Outcome<DescribeAppInstanceUserEndpointResult, ChimeSDKIdentityError> DescribeAppInstanceUserEndpointOutcome;
-        typedef Aws::Utils::Outcome<GetAppInstanceRetentionSettingsResult, ChimeSDKIdentityError> GetAppInstanceRetentionSettingsOutcome;
-        typedef Aws::Utils::Outcome<ListAppInstanceAdminsResult, ChimeSDKIdentityError> ListAppInstanceAdminsOutcome;
-        typedef Aws::Utils::Outcome<ListAppInstanceUserEndpointsResult, ChimeSDKIdentityError> ListAppInstanceUserEndpointsOutcome;
-        typedef Aws::Utils::Outcome<ListAppInstanceUsersResult, ChimeSDKIdentityError> ListAppInstanceUsersOutcome;
-        typedef Aws::Utils::Outcome<ListAppInstancesResult, ChimeSDKIdentityError> ListAppInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKIdentityError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutAppInstanceRetentionSettingsResult, ChimeSDKIdentityError> PutAppInstanceRetentionSettingsOutcome;
-        typedef Aws::Utils::Outcome<RegisterAppInstanceUserEndpointResult, ChimeSDKIdentityError> RegisterAppInstanceUserEndpointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKIdentityError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAppInstanceResult, ChimeSDKIdentityError> UpdateAppInstanceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAppInstanceUserResult, ChimeSDKIdentityError> UpdateAppInstanceUserOutcome;
-        typedef Aws::Utils::Outcome<UpdateAppInstanceUserEndpointResult, ChimeSDKIdentityError> UpdateAppInstanceUserEndpointOutcome;
-
-        typedef std::future<CreateAppInstanceOutcome> CreateAppInstanceOutcomeCallable;
-        typedef std::future<CreateAppInstanceAdminOutcome> CreateAppInstanceAdminOutcomeCallable;
-        typedef std::future<CreateAppInstanceUserOutcome> CreateAppInstanceUserOutcomeCallable;
-        typedef std::future<DeleteAppInstanceOutcome> DeleteAppInstanceOutcomeCallable;
-        typedef std::future<DeleteAppInstanceAdminOutcome> DeleteAppInstanceAdminOutcomeCallable;
-        typedef std::future<DeleteAppInstanceUserOutcome> DeleteAppInstanceUserOutcomeCallable;
-        typedef std::future<DeregisterAppInstanceUserEndpointOutcome> DeregisterAppInstanceUserEndpointOutcomeCallable;
-        typedef std::future<DescribeAppInstanceOutcome> DescribeAppInstanceOutcomeCallable;
-        typedef std::future<DescribeAppInstanceAdminOutcome> DescribeAppInstanceAdminOutcomeCallable;
-        typedef std::future<DescribeAppInstanceUserOutcome> DescribeAppInstanceUserOutcomeCallable;
-        typedef std::future<DescribeAppInstanceUserEndpointOutcome> DescribeAppInstanceUserEndpointOutcomeCallable;
-        typedef std::future<GetAppInstanceRetentionSettingsOutcome> GetAppInstanceRetentionSettingsOutcomeCallable;
-        typedef std::future<ListAppInstanceAdminsOutcome> ListAppInstanceAdminsOutcomeCallable;
-        typedef std::future<ListAppInstanceUserEndpointsOutcome> ListAppInstanceUserEndpointsOutcomeCallable;
-        typedef std::future<ListAppInstanceUsersOutcome> ListAppInstanceUsersOutcomeCallable;
-        typedef std::future<ListAppInstancesOutcome> ListAppInstancesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutAppInstanceRetentionSettingsOutcome> PutAppInstanceRetentionSettingsOutcomeCallable;
-        typedef std::future<RegisterAppInstanceUserEndpointOutcome> RegisterAppInstanceUserEndpointOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAppInstanceOutcome> UpdateAppInstanceOutcomeCallable;
-        typedef std::future<UpdateAppInstanceUserOutcome> UpdateAppInstanceUserOutcomeCallable;
-        typedef std::future<UpdateAppInstanceUserEndpointOutcome> UpdateAppInstanceUserEndpointOutcomeCallable;
-} // namespace Model
-
-  class ChimeSDKIdentityClient;
-
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceRequest&, const Model::CreateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceAdminRequest&, const Model::CreateAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceAdminResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::CreateAppInstanceUserRequest&, const Model::CreateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppInstanceUserResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceRequest&, const Model::DeleteAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceAdminRequest&, const Model::DeleteAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceAdminResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeleteAppInstanceUserRequest&, const Model::DeleteAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppInstanceUserResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DeregisterAppInstanceUserEndpointRequest&, const Model::DeregisterAppInstanceUserEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterAppInstanceUserEndpointResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceRequest&, const Model::DescribeAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceAdminRequest&, const Model::DescribeAppInstanceAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceAdminResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceUserRequest&, const Model::DescribeAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceUserResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::DescribeAppInstanceUserEndpointRequest&, const Model::DescribeAppInstanceUserEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppInstanceUserEndpointResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::GetAppInstanceRetentionSettingsRequest&, const Model::GetAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppInstanceRetentionSettingsResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstanceAdminsRequest&, const Model::ListAppInstanceAdminsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceAdminsResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstanceUserEndpointsRequest&, const Model::ListAppInstanceUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceUserEndpointsResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstanceUsersRequest&, const Model::ListAppInstanceUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstanceUsersResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListAppInstancesRequest&, const Model::ListAppInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppInstancesResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::PutAppInstanceRetentionSettingsRequest&, const Model::PutAppInstanceRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAppInstanceRetentionSettingsResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::RegisterAppInstanceUserEndpointRequest&, const Model::RegisterAppInstanceUserEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterAppInstanceUserEndpointResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UpdateAppInstanceRequest&, const Model::UpdateAppInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UpdateAppInstanceUserRequest&, const Model::UpdateAppInstanceUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceUserResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKIdentityClient*, const Model::UpdateAppInstanceUserEndpointRequest&, const Model::UpdateAppInstanceUserEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppInstanceUserEndpointResponseReceivedHandler;
-
   /**
    * <p>The Amazon Chime SDK Identity APIs in this section allow software developers
    * to create and manage unique instances of their messaging applications. These
@@ -180,32 +23,60 @@ namespace Model
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Identity.html">Amazon
    * Chime SDK identity</a>.</p>
    */
-  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ChimeSDKIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ChimeSDKIdentityClient(const Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration& clientConfiguration = Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration(),
+                               std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ChimeSDKIdentityClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ChimeSDKIdentityClient(const Aws::Auth::AWSCredentials& credentials,
+                               std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration& clientConfiguration = Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ChimeSDKIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG),
+                               const Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration& clientConfiguration = Aws::ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ChimeSDKIdentityClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ChimeSDKIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKIdentityClient();
-
 
         /**
          * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
@@ -649,36 +520,14 @@ namespace Model
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ChimeSDKIdentityEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAppInstanceAsyncHelper(const Model::CreateAppInstanceRequest& request, const CreateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAppInstanceAdminAsyncHelper(const Model::CreateAppInstanceAdminRequest& request, const CreateAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAppInstanceUserAsyncHelper(const Model::CreateAppInstanceUserRequest& request, const CreateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppInstanceAsyncHelper(const Model::DeleteAppInstanceRequest& request, const DeleteAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppInstanceAdminAsyncHelper(const Model::DeleteAppInstanceAdminRequest& request, const DeleteAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppInstanceUserAsyncHelper(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterAppInstanceUserEndpointAsyncHelper(const Model::DeregisterAppInstanceUserEndpointRequest& request, const DeregisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAppInstanceAsyncHelper(const Model::DescribeAppInstanceRequest& request, const DescribeAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAppInstanceAdminAsyncHelper(const Model::DescribeAppInstanceAdminRequest& request, const DescribeAppInstanceAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAppInstanceUserAsyncHelper(const Model::DescribeAppInstanceUserRequest& request, const DescribeAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAppInstanceUserEndpointAsyncHelper(const Model::DescribeAppInstanceUserEndpointRequest& request, const DescribeAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAppInstanceRetentionSettingsAsyncHelper(const Model::GetAppInstanceRetentionSettingsRequest& request, const GetAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppInstanceAdminsAsyncHelper(const Model::ListAppInstanceAdminsRequest& request, const ListAppInstanceAdminsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppInstanceUserEndpointsAsyncHelper(const Model::ListAppInstanceUserEndpointsRequest& request, const ListAppInstanceUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppInstanceUsersAsyncHelper(const Model::ListAppInstanceUsersRequest& request, const ListAppInstanceUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppInstancesAsyncHelper(const Model::ListAppInstancesRequest& request, const ListAppInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAppInstanceRetentionSettingsAsyncHelper(const Model::PutAppInstanceRetentionSettingsRequest& request, const PutAppInstanceRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterAppInstanceUserEndpointAsyncHelper(const Model::RegisterAppInstanceUserEndpointRequest& request, const RegisterAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAppInstanceAsyncHelper(const Model::UpdateAppInstanceRequest& request, const UpdateAppInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAppInstanceUserAsyncHelper(const Model::UpdateAppInstanceUserRequest& request, const UpdateAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAppInstanceUserEndpointAsyncHelper(const Model::UpdateAppInstanceUserEndpointRequest& request, const UpdateAppInstanceUserEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>;
+      void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ChimeSDKIdentityClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ChimeSDKIdentity

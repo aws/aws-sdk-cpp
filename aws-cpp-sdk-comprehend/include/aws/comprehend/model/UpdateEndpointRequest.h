@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_COMPREHEND_API UpdateEndpointRequest : public ComprehendRequest
+  class UpdateEndpointRequest : public ComprehendRequest
   {
   public:
-    UpdateEndpointRequest();
+    AWS_COMPREHEND_API UpdateEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COMPREHEND_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_desiredModelArn;
-    bool m_desiredModelArnHasBeenSet;
+    bool m_desiredModelArnHasBeenSet = false;
 
     int m_desiredInferenceUnits;
-    bool m_desiredInferenceUnitsHasBeenSet;
+    bool m_desiredInferenceUnitsHasBeenSet = false;
 
     Aws::String m_desiredDataAccessRoleArn;
-    bool m_desiredDataAccessRoleArnHasBeenSet;
+    bool m_desiredDataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchSegmentJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchSegmentJobSummary
+  class BatchSegmentJobSummary
   {
   public:
-    BatchSegmentJobSummary();
-    BatchSegmentJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    BatchSegmentJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchSegmentJobSummary();
+    AWS_PERSONALIZE_API BatchSegmentJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchSegmentJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_batchSegmentJobArn;
-    bool m_batchSegmentJobArnHasBeenSet;
+    bool m_batchSegmentJobArnHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet;
+    bool m_solutionVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

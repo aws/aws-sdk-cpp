@@ -30,7 +30,7 @@ DescribeProjectsResult& DescribeProjectsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProjectDescriptions"))
   {
-    Array<JsonView> projectDescriptionsJsonList = jsonValue.GetArray("ProjectDescriptions");
+    Aws::Utils::Array<JsonView> projectDescriptionsJsonList = jsonValue.GetArray("ProjectDescriptions");
     for(unsigned projectDescriptionsIndex = 0; projectDescriptionsIndex < projectDescriptionsJsonList.GetLength(); ++projectDescriptionsIndex)
     {
       m_projectDescriptions.push_back(projectDescriptionsJsonList[projectDescriptionsIndex].AsObject());

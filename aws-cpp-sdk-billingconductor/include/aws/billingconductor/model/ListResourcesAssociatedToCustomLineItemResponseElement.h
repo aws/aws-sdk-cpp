@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItemResponseElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement
+  class ListResourcesAssociatedToCustomLineItemResponseElement
   {
   public:
-    ListResourcesAssociatedToCustomLineItemResponseElement();
-    ListResourcesAssociatedToCustomLineItemResponseElement(Aws::Utils::Json::JsonView jsonValue);
-    ListResourcesAssociatedToCustomLineItemResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -116,13 +116,57 @@ namespace Model
      */
     inline ListResourcesAssociatedToCustomLineItemResponseElement& WithRelationship(CustomLineItemRelationship&& value) { SetRelationship(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline const Aws::String& GetEndBillingPeriod() const{ return m_endBillingPeriod; }
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline bool EndBillingPeriodHasBeenSet() const { return m_endBillingPeriodHasBeenSet; }
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline void SetEndBillingPeriod(const Aws::String& value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod = value; }
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline void SetEndBillingPeriod(Aws::String&& value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod = std::move(value); }
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline void SetEndBillingPeriod(const char* value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod.assign(value); }
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(const Aws::String& value) { SetEndBillingPeriod(value); return *this;}
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(Aws::String&& value) { SetEndBillingPeriod(std::move(value)); return *this;}
+
+    /**
+     * <p>The end billing period of the associated resource.</p>
+     */
+    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(const char* value) { SetEndBillingPeriod(value); return *this;}
+
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     CustomLineItemRelationship m_relationship;
-    bool m_relationshipHasBeenSet;
+    bool m_relationshipHasBeenSet = false;
+
+    Aws::String m_endBillingPeriod;
+    bool m_endBillingPeriodHasBeenSet = false;
   };
 
 } // namespace Model
